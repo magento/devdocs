@@ -20,41 +20,15 @@ This topic provides guidelines on what directories to clear and when to clear th
 
 When you're developing Magento components (modules, themes, and language packages), the following directories contain temporary or generated files you can clear periodically:
 
-<table>
-	<col width="25%" />
-	<col width="75%" />
-	<tbody>
-		<tr>
-			<th>Directory</th>
-			<th>What it contains</th>
-		</tr>
-	<tr>
-		<td>var/page_cache</td>
-		<td>Cached pages from the full page cache mechanism. (This directory is empty if you use a third-party HTTP accelerator like Varnish.)</td>
-	</tr>
-	<tr>
-		<td>var/cache</td>
-		<td>All cacheable objects <em>except</em> the page cache. (This directory is empty if you use a third-party cache storage like Redis.)</td>
-	</tr>
-	<tr>
-		<td>var/composer_home</td>
-		<td><p>Home directory for the Setup Wizard artifacts. Typically, you shouldn't touch this directory; clear it only if you're an experienced developer and are familiar with the Magento plug-in.</p>
-			<p>For example, if the Component Manager or System Upgrade web-based utilities cannot find the correct components you can try clearing this directory; however, doing so adversely affects the performance of those utilities.</p></td>
-	</tr>
-	<tr>
-		<td>var/generation</td>
-		<td>Contains <a href="{{ page.baseurl }}/extension-dev-guide/code-generation.html">generated code</a>.</td>
-	</tr>
-	<tr>
-		<td>var/di</td>
-		<td>Contains the compiled dependency injection configuration for all modules.</td>
-	</tr>
-	<tr>
-		<td>var/view_preprocessed</td>
-	<td>Minified templates and compiled LESS (meaning LESS, CSS, and HTML).</td>
-	</tr>
-</tbody>
-</table>
+Directory | Description
+--- | ---
+`pub/static`| Contains `js` and `html` files for each store view.
+`var/cache` | All cacheable objects <em>except</em> the page cache. (This directory is empty if you use a third-party cache storage like Redis.)
+`var/composer_home` | Home directory for the Setup Wizard artifacts. Typically, you shouldn't touch this directory; clear it only if you're an experienced developer and are familiar with the Magento plug-in. For example, if the Component Manager or System Upgrade web-based utilities cannot find the correct components you can try clearing this directory; however, doing so adversely affects the performance of those utilities.
+`var/di` | Contains the compiled dependency injection configuration for all modules.
+`var/generation` | Contains [generated code]({{ page.baseurl }}/extension-dev-guide/code-generation.html)".
+`var/page_cache` | Cached pages from the full page cache mechanism. (This directory is empty if you use a third-party HTTP accelerator like Varnish.)
+`var/view_preprocessed` | Minified templates and compiled LESS (meaning LESS, CSS, and HTML).
 
 ## What directories to clear {#howdoi-clear-what}
 
@@ -68,7 +42,7 @@ The following table provides guidelines on what you should clear and when.
 		</tr>
 	<tr>
 		<td><ul><li>Change a class if there is a plug-in related to it.</li>
-		<li>A change that results in generated factories or proxies (for example, a non-existent [factory]({{ site.mage2000url }}app/code/Magento/Catalog/Controller/Adminhtml/Category/Add.php#L22){:target="_blank"} declared in a class or a proxy declared in <a href="{{ site.mage2000url }}app/etc/di.xml#L25" target="_blank"><code>di.xml</code></a>)</li></ul> </td>
+		<li>A change that results in generated factories or proxies (for example, a non-existent [factory]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/Controller/Adminhtml/Category/Add.php#L22){:target="_blank"} declared in a class or a proxy declared in <a href="{{ site.mage2bloburl }}/{{ page.guide_version }}/app/etc/di.xml#L25" target="_blank"><code>di.xml</code></a>)</li></ul> </td>
 		<td>var/di, var/generation</td>
 	</tr>
 	<tr>
@@ -88,6 +62,10 @@ The following table provides guidelines on what you should clear and when.
 		<td>var/view_preprocessed, var/cache, var/page_cache as well</td>
 	</tr>
 	<tr>
+		<td>Change `*.js` or `*.html` files</td>
+		<td>pub/static</td>
+	</tr>
+	<tr>
 		<td>Add or edit a CMS page, cacheable block, or use the Magento Admin to change the configuration</td>
 		<td>var/cache, var/page_cache</td>
 	</tr>
@@ -98,7 +76,9 @@ The following table provides guidelines on what you should clear and when.
 
 To only clear directories and not perform other actions, log in to the Magento server as the <a href="{{ page.baseurl }}/install-gde/prereq/apache-user.html">Magento file system owner</a> and clear directories using a command like the following:
 
-	rm -rf <your Magento install dir>/var/di/* <your Magento install dir>/var/generation/*
+```bash
+rm -rf <magento_root>/var/di/* <magento_root>/var/generation/*
+```
 
 You can also use the following command-line tools clear some directories for you. These commands perform other tasks as well; consult the linked documentation for more details.
 

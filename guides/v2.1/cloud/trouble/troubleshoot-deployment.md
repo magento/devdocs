@@ -22,16 +22,18 @@ In this section, we assume that your project has a `master` branch only (`master
 
 To redeploy with the correct authentication keys:
 
-1.	Log in to the machine that has your {{site.data.var.ece}} SSH keys.
-2.	Log in to the project:
+1. Log in to the machine that has your {{site.data.var.ece}} SSH keys.
+2. Log in to the project:
 
 		magento-cloud login
-3.	Create a branch to update code with the name `auth`:
+3. Create a branch to update code with the name `auth`:
 
       magento-cloud environment:branch auth master
-4.	Change to the project root directory.
-5.	Open `auth.json` in a text editor.
+      
+4. Change to the project root directory.
+5. Open `auth.json` in a text editor.
 
+    ```json
     {
        "http-basic": {
           "repo.magento.com": {
@@ -40,14 +42,24 @@ To redeploy with the correct authentication keys:
           }
        }
     }
+    ```
 
-6.	Add the correct authentication keys.
-7.	Save your changes and exit the text editor.
-8.	Commit and merge your changes.
+6. Add the correct authentication keys.
+7. Save your changes and exit the text editor.
+8. Commit and merge your changes.
 
-		git add -A
-		git commit -m "<description of change>"
-		git push origin master
-9.	Wait for the deployment to complete.
+    ```bash
+    git add -A
+    ```
+    
+    ```bash
+    git commit -m "<description of change>"
+    ```
+    
+    ```bash
+    git push origin master
+    ```
+
+9. Wait for the deployment to complete.
 
 Messages indicate whether deployment was successful. You can confirm a successful deployment by going to one of the **Environment routes** displayed on your screen.

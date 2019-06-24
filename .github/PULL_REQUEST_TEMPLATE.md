@@ -1,33 +1,27 @@
-## Scope of this PR
+## Purpose of this pull request
 
-We set [labels](https://devdocs.magento.com/guides/v2.3/contributor-guide/contributing.html#devdocs) based on the scope of changes with a PR.
+<!-- REQUIRED Describe the goal and the type of changes this pull request covers. -->
 
-- New Topic: Entirely new documents
-- Major Update: Significant new info: new section in existing topic, etc.
-- Technical: Changes to technical content/code/processes/naming conventions (any change to technical content)
-- Editorial: Typos, grammatical inconsistencies, or minor rewrites
+This pull request (PR) ...
 
-Note the scope of this PR by leaving one of the options and deleting the others.
+## Affected DevDocs pages
 
-## Purpose of this PR (required)
-
-Describe the goal and the type of changes this PR covers.
-
-## Affected URLs (required)
+<!-- REQUIRED List the affected pages on devdocs.magento.com (URLs). Not needed for large numbers of files. -->
 
 - ...
 - ...
 
-## Links to source code (remove if unused)
+## Links to Magento source code
 
-If this PR references a file in a Magento codebase repository, add it here.
+<!--  OPTIONAL - REMOVE THIS SECTION IF NOT USED. If this pull request references a file in a Magento codebase repository, add it here. -->
 
 - ...
 - ...
 
 <!-- 
-If you are fixing a Github issue, note it in the following format and the issue will automatically close when this PR is merged:
-Fixes #<IssueNumber>
+If you are fixing a GitHub issue, note it using GitHub keyword format (https://help.github.com/en/articles/closing-issues-using-keywords#closing-an-issue-in-a-different-repository) to close the issue when this pull request is merged. Example: `Fixes #1234`
 
-`master` is the default branch. PRs to this branch should be for current devdocs content. Merged PRs to master go live on the site automatically. Work for future releases generally goes in the `develop` branch. Work with the devdocs team if you are unsure where to submit your PR.
+`master` is the default branch. Merged pull requests to `master` go live on the site automatically. Any requested changes to content on the `master` branch must be related to the released codebase. Any content related to future releases goes in the `develop` branch.
+
+See Contribution guidelines (https://github.com/magento/devdocs/blob/master/.github/CONTRIBUTING.md) for more information.
 -->

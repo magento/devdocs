@@ -4,7 +4,7 @@ title: Magento Open Source 2.3.1 Release Notes
 ---
 
 
-*Release notes published on March 26, 2019 and last edited on April 5, 2019.*
+*Release notes published on March 26, 2019 and last edited on April 18, 2019.*
 
 
 We are pleased to present Magento Open Source 2.3.1. This release includes over 200 functional fixes to the core product, over 500 pull requests contributed by the community, and  over 30 security enhancements. 
@@ -72,9 +72,6 @@ The Multi-Source Inventory (MSI) community project has added multiple new featur
 
 ### Improved developer experience
 
-#### Automation of upgrade process dependency assessment
-
-A new composer plugin `magento/composer-root-update-plugin` automatically updates all dependencies in `composer.json` during a Magento 2.x upgrade.  <!--- MC-5465-->
 
 
 
@@ -102,7 +99,7 @@ This release includes over 30 security enhancements that help close cross-site s
 
 * Magento now displays the list of additional customer addresses contained in the storefront customer address book  as a grid, which has improved performance for customers with many additional addresses associated with their accounts. [Address Book](https://docs.magento.com/m2/ee/user_guide/customers/account-dashboard-address-book.html) describes how to use this enhanced feature. <!--- MAGETWO-94347-->
 
-* The shipping and billing data that a user enters during checkout nows persists if the user interrupts checkout to continue shopping. Previously, checkout data was deleted after a cart update. <!-- MAGETWO-95067 -->
+* The shipping and billing data that a user enters during checkout now persists if the user interrupts checkout to continue shopping. Previously, checkout data was deleted after a cart update. <!-- MAGETWO-95067 -->
 
 
 ### Infrastructure improvements
@@ -198,7 +195,6 @@ We've fixed hundreds of issues in the Magento 2.3.1 core code.
 
 ### Installation, upgrade, deployment
 
-<!--- MC-5465-->* A new composer plugin `magento/composer-root-update-plugin` automatically updates all dependencies in `composer.json` during a Magento 2.x upgrade. Previously, developers had to perform this step manually by running the `https://devdocs.magento.com/guides/v2.3/comp-mgr/cli/cli-upgrade.html#upgrade-cli-script` upgrade script. 
 
 <!--- ENGCOM-3291-->* Magento now sets the `id_prefix` option on prefix cache keys for the cache frontend during installation. If this option is not set, Magento uses the first 12 bits of the md5 hash of the absolute path to the Magento `app/etc` directory. But if this value is not exactly the same on all web servers, cache invalidation will not work.  *Fix submitted by [Fabian Schmengler](https://github.com/schmengler) in pull request [18641](https://github.com/magento/magento2/pull/18641)*. [GitHub-15828](https://github.com/magento/magento2/issues/15828)
 
@@ -956,7 +952,7 @@ Previously, when you reopened these categories, no checkboxes were checked.
 
 ### Gift message
 
-<!--- MAGETWO-67269-->* Magento no longer displays unselected gift options when a customer selects **Check Out with Multiple Addresses** for an order. Previouisly, Magento displayed unselected gift options for the order. 
+<!--- MAGETWO-67269-->* Magento no longer displays unselected gift options when a customer selects **Check Out with Multiple Addresses** for an order. Previously, Magento displayed unselected gift options for the order. 
 
 <!--- ENGCOM-3985-->* Fixed misalignment of the **Edit** and **Remove** buttons on the gift option popup that Magento displays when a customer adds a product to the shopping cart. *Fix submitted by [Ajay Ajabale](https://github.com/ajay2jcommerce) in pull request [20605](https://github.com/magento/magento2/pull/20605)*. [GitHub-20604](https://github.com/magento/magento2/issues/20604)
 

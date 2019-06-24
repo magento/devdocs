@@ -11,20 +11,20 @@ functional_areas:
 Integration tests require the Magento runtime environment, so they need a little preparation before they can be executed.
 After preparing the system, you can execute tests using the command line interface or within an IDE like PhpStorm.
 
-### Set up the integration test framework
+## Set up the integration test framework
 
 To run integration tests, you must create and configure a test database.
 You may also want to adjust the PHPUnit configuration, depending on your requirements.
 
 See [Preparing Integration Test Execution][setup].
 
-### Command Line Interface (CLI)
+## Command Line Interface (CLI)
 
 This option can be used for running tests locally during development or on remote servers during continuous integration.
 
 See [Running Integration Tests in the CLI][cli run].
 
-### PhpStorm IDE
+## PhpStorm IDE
 
 Running integration tests inside an IDE, like PhpStorm, is convenient during development. This is mostly used when writing a new integration test.
 
@@ -37,11 +37,11 @@ See [Running Integration Tests in PhpStorm][phpstorm run].
 Before you can use the Magento integration test framework, you must prepare the test environment.
 Prerequisites for the test environment include the following:
 
-* A dedicated integration test database
-* The test framework database configuration
-* The PHPUnit configuration matches the purpose of the integration test execution
+- A dedicated integration test database
+- The test framework database configuration
+- The PHPUnit configuration matches the purpose of the integration test execution
 
-### Integration test database
+## Integration test database
 
 By default, for every integration test run, the test framework installs a fresh Magento test database.
 
@@ -99,7 +99,7 @@ Leave all the settings that do not start with `db-` and `amqp-` at their default
 You can include additional setup options—available to the `setup:install` command—in the test configuration file. A
 complete list of options is available [here]({{ page.baseurl }}/install-gde/install/cli/install-cli-install.html#instgde-install-cli-magento).
 
-### Adjust the PHPUnit configuration file
+## Adjust the PHPUnit configuration file
 
 See the `dev/tests/integration/phpunit.xml.dist` file for the default integration test configuration.
 
@@ -111,7 +111,7 @@ There are many settings in the file.
 This guide will only describe three common adjustments.
 See [PHPUnit documentation] and comments in the default file for more information about the available configuration settings.
 
-#### TESTS_CLEANUP constant
+### TESTS_CLEANUP constant
 
 Default value:
 
@@ -121,7 +121,7 @@ Default value:
 
 If this constant is set to `enabled`, the integration test framework cleans the test database and reinstalls Magento on every test run.
 This way, any new modules will be automatically picked up and any artifacts left behind by previous test runs will be removed.
-It also causes the test framework to flush the test Magento configuration, the {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %}, and the code generation before executing any tests.
+It also causes the test framework to flush the test Magento configuration, the [cache](https://glossary.magento.com/cache), and the code generation before executing any tests.
 
 The downside of setting `TEST_CLEANUP` to `enabled` is that the reinstallation of Magento takes time; the exact time depends on the host you are using to run the integration tests and the Magento version.
 
@@ -139,7 +139,7 @@ To force the test framework to regenerate the cache and the other files, remove 
 rm -r dev/tests/integration/tmp/sandbox-*
 ```
 
-#### RABBITMQ_MANAGEMENT_PORT constant
+### RABBITMQ_MANAGEMENT_PORT constant
 
 Default value:
 
@@ -152,10 +152,10 @@ This constant provides the configuration value when the test environment is not 
 Tests depending on `Magento\TestFramework\Helper\Amqp`, often used for validating queue and exchange status, depend on the management plugin being enabled.
 Beginning in 2.3.1, the helper no longer assumes RabbitMQ is running on `localhost` and will use the connection configuration defined in `env.php`.
 
-#### PHP memory_limit
+### PHP memory_limit
 
 The default `phpunit.xml.dist` file does not contain any PHP `memory_limit` settings.
-However, sometimes the {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} configuration restricts the amount of memory PHP may consume.
+However, sometimes the [PHP](https://glossary.magento.com/php) configuration restricts the amount of memory PHP may consume.
 This can make it impossible to run the integration tests.
 
 You can turn off the PHP memory limit by adding the following configuration to the `<php>` section of the integration test `phpunit.xml` file:
@@ -164,7 +164,7 @@ You can turn off the PHP memory limit by adding the following configuration to t
 <ini name="memory_limit" value="-1"/>
 ```
 
-#### Execute third party integration tests
+## Execute third party integration tests
 
 Magento code integration tests reside in the `dev/tests/integration/testsuite` directory.
 For core tests, it makes sense that the integration tests do not reside within individual modules, because most integration tests execute code from many different modules.
@@ -172,7 +172,7 @@ For core tests, it makes sense that the integration tests do not reside within i
 Specific integration tests for shop implementation could also be placed within a different subdirectory of `dev/tests/integration/testsuite`, and then would be executed together with the core tests.
 
 However, third-party Magento extensions are contained within a single directory and might supply custom integration tests too.
-These tests usually reside in the `Test/Integration/` subdirectory within the {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} folder.
+These tests usually reside in the `Test/Integration/` subdirectory within the [module](https://glossary.magento.com/module) folder.
 
 These third-party integration tests are not picked up by the default integration test configuration.
 You can add a test suite configuration, like the following, to the `<testsuites>` section of the `phpunit.xml` file so they are included during test execution.
@@ -223,7 +223,7 @@ Configuration read from /var/www/magento2/dev/tests/integration/phpunit.xml
 ..........................
 ```
 
-The path to the `phpunit` executable installed by {% glossarytooltip d85e2d0a-221f-4d03-aa43-0cda9f50809e %}Composer{% endglossarytooltip %} into the vendor directory is used.
+The path to the `phpunit` executable installed by [Composer](https://glossary.magento.com/composer) into the vendor directory is used.
 
 ### Run only a custom testsuite
 
@@ -275,20 +275,20 @@ cd dev/tests/integration
 ../../../vendor/bin/phpunit --filter 'testOnlyThisOneIsExecuted' ../../../app/code/Acme/Example/Test/Integration/ExampleTest.php
 ```
 
-### Common mistakes
+## Common mistakes
 
-#### Can't read files specified as arguments
+### Could not read files specified as arguments
 
 This happens if the integration tests are executed from the wrong directory.
 
-#### Could not read "dev/tests/integration/phpunit.xml"
+### Could not read "dev/tests/integration/phpunit.xml"
 
 This error happens if the integration tests are executed from a different directory than `dev/tests/integration`.
 To fix the issue, change to the `dev/tests/integration` directory, adjust any relative paths accordingly, and run the tests again.
 
-#### Unable to connect to MySQL
+### Unable to connect to MySQL
 
-The {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} interpreter must be able to connect to the test database. By default, this means the tests have to run on the same host as the MySQL server.
+The [PHP](https://glossary.magento.com/php) interpreter must be able to connect to the test database. By default, this means the tests have to run on the same host as the MySQL server.
 This problem most commonly occurs during development with Vagrant or Docker, where the Magento database is running on a virtual machine.
 If the tests then are executed using a PHP interpreter on the host system, the database might not be accessible.
 
@@ -319,11 +319,26 @@ Setting up a run configuration for integration tests is very similar to creating
 See [Running Unit Tests in PhpStorm][phpstorm run] for instructions on creating a basic run configuration.
 Then, configure the integration test to use the configuration file.
 
-#### Use the integration test configuration file
+### Use the integration test configuration file
 
 The only difference in the run configuration is that the integration test `phpunit.xml.dist` or `phpunit.xml` configuration file from the `dev/tests/integration` directory must be selected.
 
 ![Integration Test Class run configuration]({{ site.baseurl }}/common/images/phpstorm_run_config_class_integration_tests.png){: width="600px"}
+
+## Integration tests file structure
+
+The root folder for the Magento integration tests suite —`<magento_root>/dev/tests/integration`—contains the following sub-folders and files:
+
+This folder contains the following sub-folders and files:
+
+- `framework/` – Integration testing framework scripts, configuration files and classes.
+- `Magento/` – A set of classes that implement the Magento integration tests framework.
+- `bootstrap.php` – The PHPUnit bootstrap script.
+- `etc/install-config-<db_vendor>.php` – A configuration file that provides values for installing the Magento application.
+- `testsuite/` – The test suite.
+- `tmp/` – A writable directory for storing temporary data during test execution.
+- `sandbox-<hash>/` – The folder where each Magento instance stores temporary and configuration data.
+- `phpunit.xml.dist` – A PHPUnit configuration file.
 
 <!-- LINK DEFINITIONS -->
 

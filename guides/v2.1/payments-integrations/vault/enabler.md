@@ -9,7 +9,7 @@ functional_areas:
 ---
 
 Store customers must have the ability to enable and disable credit cards details storing.
-Magento out-of-the-box provides mechanisms for adding this ability, but you still need to add modifications in your {% glossarytooltip 422b0fa8-b181-4c7c-93a2-c553abb34efd %}payment method{% endglossarytooltip %} implementation.
+Magento out-of-the-box provides mechanisms for adding this ability, but you still need to add modifications in your [payment method](https://glossary.magento.com/payment-method) implementation.
 
 These modifications are the following:
 
@@ -23,11 +23,11 @@ The following paragraphs describe these points in details.
 
 Add the vault enabling controls to the payment form. In the following example, a checkbox bound to the Vault enabler is added.
 
-Example ([Magento/Braintree/view/frontend/web/template/payment/form.html]({{ site.mage2100url }}app/code/Magento/Braintree/view/frontend/web/template/payment/form.html)):
+Example ([Magento/Braintree/view/frontend/web/template/payment/form.html]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Braintree/view/frontend/web/template/payment/form.html)):
 
-{% highlight html %}
+```html
 <form id="co-transparent-form-braintree" class="form" data-bind="" method="post" action="#" novalidate="novalidate">
-    <fieldset data-bind="attr: {class: 'fieldset payment items' + getCode(), id: 'payment_form_' + getCode()}">
+    <fieldset data-bind="attr: {class: 'fieldset payment items ccard' + getCode(), id: 'payment_form_' + getCode()}">
         <legend class="legend">
             <span><!-- ko i18n: 'Credit Card Information'--><!-- /ko --></span>
         </legend>
@@ -47,17 +47,17 @@ Example ([Magento/Braintree/view/frontend/web/template/payment/form.html]({{ sit
     </fieldset>
     ...
 </form>
-{% endhighlight %}
+```
 
 ## Modifying the payment component
 
-The payment component must process the state of the vault-enabling control and update payment `additional_data` before it is sent to the {% glossarytooltip 74d6d228-34bd-4475-a6f8-0c0f4d6d0d61 %}backend{% endglossarytooltip %}. 
+The payment component must process the state of the vault-enabling control and update payment `additional_data` before it is sent to the [backend](https://glossary.magento.com/backend). 
 
-Magento has a default vault enabler {% glossarytooltip 9bcc648c-bd08-4feb-906d-1e24c4f2f422 %}UI component{% endglossarytooltip %} (`Magento_Vault/js/view/payment/vault-enabler`). In the payment component, you just need to call its `visitAdditionalData` to update the `additional_data` property. The rest is done by the [`\Magento\Vault\Observer\VaultEnableAssigner`]({{ site.mage2100url }}app/code/Magento/Vault/Observer/VaultEnableAssigner.php) observer.
+Magento has a default vault enabler [UI component](https://glossary.magento.com/ui-component) (`Magento_Vault/js/view/payment/vault-enabler`). In the payment component, you just need to call its `visitAdditionalData` to update the `additional_data` property. The rest is done by the [`\Magento\Vault\Observer\VaultEnableAssigner`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Vault/Observer/VaultEnableAssigner.php) observer.
 
-Example: [the Braintree payment UI component]({{ site.mage2100url }}app/code/Magento/Braintree/view/frontend/web/js/view/payment/method-renderer/hosted-fields.js)
+Example: [the Braintree payment UI component]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Braintree/view/frontend/web/js/view/payment/method-renderer/hosted-fields.js)
 
-{% highlight javascript %}
+```javascript
 define([
     ...
     'Magento_Braintree/js/view/payment/method-renderer/cc-form',
@@ -106,7 +106,7 @@ define([
         }
     });
 });
-{% endhighlight %}
+```
 
 ## Add request data builder
 
@@ -116,7 +116,7 @@ You can create a new request builder, or update the existing request builder of 
 
 In the Braintree request builder, to pass the data, we set `storeInVaultOnSuccess` in transaction request:
 
-``` php?start_inline=1
+```php
 class VaultDataBuilder implements BuilderInterface
 {
     /**
@@ -147,7 +147,7 @@ class VaultDataBuilder implements BuilderInterface
 The builder must be added to the payment authorize request in the DI configuration. 
 Example from the Braintree `di.xml`:
 
-{% highlight xml %}
+```xml
 <virtualType name="BraintreeAuthorizeRequest" type="Magento\Payment\Gateway\Request\BuilderComposite">
     <arguments>
         <argument name="builders" xsi:type="array">
@@ -156,7 +156,7 @@ Example from the Braintree `di.xml`:
         </argument>
     </arguments>
 </virtualType>
-{% endhighlight %}
+```
 
 ## What's next
 

@@ -8,12 +8,11 @@ level3_subgroup: msi-tutorial
 return_to:
   title: REST Tutorials
   url: rest/tutorials/index.html
-redirect_from: /guides/v2.3/rest/tutorials/msi-order-processing/create-cart-add-products.html
 functional_areas:
   - Integration
 ---
 
-Next, we'll create a cart and add the items that we modified in [Reassign products to custom sources](reassign-products-to-another-source.html.
+Next, we'll create a cart and add the items that we modified in [Step 5. Reassign products to custom sources](reassign-products-to-another-source.html).
 
 ## Create a cart
 
@@ -43,7 +42,7 @@ The response is the `quoteId`: 3
 
 ## Check for product availability
 
-In [Step 6. Reassign products to another source](reassign-products-to-another-source.html), we defined the quantities of products `24-WB01` and `24-WB03` for the US source as follows:
+In [Step 5. Reassign products to custom sources](reassign-products-to-another-source.html), we defined the quantities of products `24-WB01` and `24-WB03` for the US source as follows:
 
 Product | Baltimore Warehouse | Austin Warehouse  | Reno Warehouse
 --- | --- | --- | ---
@@ -129,7 +128,7 @@ In this call, we'll add 20 `24-WB01` items. This portion of the order can be ful
 
 **Payload**
 
-``` json
+```json
 {
   "cartItem": {
     "sku": "24-WB01",
@@ -143,7 +142,7 @@ In this call, we'll add 20 `24-WB01` items. This portion of the order can be ful
 
 Note the `item_id` for use in subsequent steps.
 
-``` json
+```json
 {
     "item_id": 5,
     "sku": "24-WB01",
@@ -160,7 +159,7 @@ Use the same endpoint to add 50 items of `24-WB03` to the cart. Multiple sources
 
 **Payload**
 
-``` json
+```json
 {
   "cartItem": {
     "sku": "24-WB03",
@@ -174,7 +173,7 @@ Use the same endpoint to add 50 items of `24-WB03` to the cart. Multiple sources
 Note the `item_id` for use in subsequent steps.
 
 
-``` json
+```json
 {
     "item_id": 6,
     "sku": "24-WB03",
@@ -192,7 +191,7 @@ Finally, we'll add a single instance of a downloadable product to the cart.
 
 **Payload**
 
-``` json
+```json
 {
   "cartItem": {
     "sku": "240-LV06",
@@ -204,7 +203,7 @@ Finally, we'll add a single instance of a downloadable product to the cart.
 
 **Response**
 
-``` json
+```json
 {
     "item_id": 7,
     "sku": "240-LV06",

@@ -46,7 +46,7 @@ Only one stock can be mapped to each sales channel. If you assign a sales channe
 
 **Payload**
 
-``` json
+```json
 {
   "stock": {
     "name": "Central Stock",
@@ -78,7 +78,7 @@ If you change a sales channel between stocks, we recommend that you first comple
 
 **Payload**
 
-``` json
+```json
 {
   "stock": {
     "name": "St. Louis Stock",
@@ -112,7 +112,7 @@ None
 
 **Response**
 
-``` json
+```json
 {
   "stock": {
     "name": "St. Louis Stock",
@@ -163,7 +163,7 @@ None
 **Response**
 
 {% collapsible Show code sample %}
-``` json
+```json
 {
     "items": [
         {

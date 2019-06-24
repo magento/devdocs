@@ -9,7 +9,6 @@ level3_subgroup: msi-tutorial
 return_to:
   title: REST Tutorials
   url: rest/tutorials/index.html
-redirect_from: /guides/v2.3/rest/tutorials/msi-order-processing/reassign-products-to-another-source.html
 functional_areas:
   - Integration
 ---
@@ -49,7 +48,7 @@ When you unassign a source from a product, all source data including inventory a
 
 **Payload**
 
-``` json
+```json
 {
 	"sourceItems": [{
 		"sku": "24-WB01",
@@ -91,7 +90,7 @@ Now we can assign each product to one or more sources. The `POST V1/inventory/so
 
 **Payload**
 
-``` json
+```json
 {
   "sourceItems": [{
   	"sku": "24-WB01",

@@ -19,7 +19,7 @@ All negotiable quote calls require an admin authorization token.
 
 **REST Endpoints**
 
-``` json
+```json
 POST /V1/negotiableQuote/request
 POST /V1/negotiableQuote/submitToCustomer
 POST /V1/negotiableQuote/decline
@@ -74,7 +74,7 @@ Requesting a negotiable quote requires an admin authorization token.
 
 **Payload**
 
-``` json
+```json
 {
   "quoteId": 3,
   "quoteName": "First quote",
@@ -120,7 +120,7 @@ When the quote is submitted to the buyer:
 
 **Payload**
 
-``` json
+```json
 {
   "quoteId": 3,
   "comment": "It'd be our pleasure. Please proceed with your order."
@@ -147,7 +147,7 @@ The request can be applied to one or more quotes at the same time.
 
 **Payload**
 
-``` json
+```json
 {
   "quoteIds": [3]
 }
@@ -167,7 +167,7 @@ To set the shipping method, the quote must be in the `created`, `processing_by_a
 
 **Payload**
 
-``` json
+```json
 {
   "shippingMethod": "fixedrate"
 }
@@ -195,7 +195,7 @@ When you decline a quote, all custom pricing will be removed from the quote. The
 
 **Payload**
 
-``` json
+```json
 {
   "quoteId": 80,
   "reason": "Your order is too large. "
@@ -224,7 +224,7 @@ Not applicable
 
 **Response**
 
-``` json
+```json
 [
   {
     "entity_id": 6,
@@ -319,7 +319,7 @@ Not applicable
 
 **Response**
 
-``` json
+```json
 {
   "quoteId": 2,
   "quoteName": "First quote",

@@ -38,6 +38,7 @@ If you're not sure that Composer is installed, see [Install Composer][].
 ```bash
 cd <magento2_root_dir>/dev/tests/functional/
 ```
+
 ```bash
 composer install
 ```
@@ -54,6 +55,7 @@ Check whether the `vendor` directory exists in `<magento2_root_dir>/dev/tests/fu
 ```bash
 cd <magento2_root_dir>/dev/tests/functional/
 ```
+
 ```bash
 ls
 ```
@@ -63,6 +65,7 @@ Find the `mtf` directory.
 ```bash
 cd vendor/magento
 ```
+
 ```bash
 ls
 ```

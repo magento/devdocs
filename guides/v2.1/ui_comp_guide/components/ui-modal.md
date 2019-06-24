@@ -3,14 +3,13 @@ group: ui-components-guide
 subgroup: components
 title: Modal component
 menu_title: Modal component
-redirect_from: /guides/v2.0/ui-components/ui-modal.html
 ---
 
-The Modal {% glossarytooltip 9bcc648c-bd08-4feb-906d-1e24c4f2f422 %}UI component{% endglossarytooltip %} implements a secondary window that opens on top of the main window. It uses the [modal widget]({{ page.baseurl }}/javascript-dev-guide/widgets/widget_modal.html).
+The Modal [UI component](https://glossary.magento.com/ui-component) implements a secondary window that opens on top of the main window. It uses the [modal widget]({{ page.baseurl }}/javascript-dev-guide/widgets/widget_modal.html).
 
 Similar to the widget's configuration, the component's configuration allows you to set the window type and the behavior of action buttons (including linking action buttons to methods of the other UI components).
 
-The Modal component can be used for both {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} and storefronts.
+The Modal component can be used for both [Admin](https://glossary.magento.com/admin) and storefronts.
 
 For recommendations about modal windows usage from the UX point of view, see the corresponding topic in the [Magento Admin pattern library]({{ page.baseurl }}/pattern-library/containers/slideouts-modals-overlays/slideouts-modals-overalys.html).
 
@@ -18,7 +17,7 @@ For recommendations about modal windows usage from the UX point of view, see the
 
 Component's options are set in the configuration `.xml` file as follows:
 
-{%highlight xml%}
+```xml
  <modal name="test_modal">
     <argument name="data" xsi:type="array">
         <item name="config" xsi:type="array">
@@ -29,7 +28,7 @@ Component's options are set in the configuration `.xml` file as follows:
         </item>
     </argument>
 </modal>
-{%endhighlight%}
+```
 
 <table>
   <tr>
@@ -82,7 +81,7 @@ Component's options are set in the configuration `.xml` file as follows:
 
 The following sample is an example of the configuration for a simple modal window containing one text field and a standard set of action buttons (**Cancel**, **Clear**, **Done**):
 
-{%highlight xml%}
+```xml
 <modal name="test_modal">
     <argument name="data" xsi:type="array">
         <item name="config" xsi:type="array">
@@ -141,14 +140,14 @@ The following sample is an example of the configuration for a simple modal windo
         </item>
     </argument>
 </button>
-{%endhighlight%}
+```
 
 ## Source files
 
 Extends [`uiCollection`]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uicollection_concept.html):
 
-- [`Magento_Ui_module_dir/view/base/web/js/modal/modal-component.js`]({{ site.mage2100url }}app/code/Magento/Ui/view/base/web/js/modal/modal-component.js)
-- [`Magento_Ui_module_dir/view/base/web/templates/modal/modal-component.html`]({{ site.mage2100url }}app/code/Magento/Ui/view/base/web/templates/modal/modal-component.html)
+- [`Magento_Ui_module_dir/view/base/web/js/modal/modal-component.js`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/modal/modal-component.js)
+- [`Magento_Ui_module_dir/view/base/web/templates/modal/modal-component.html`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/templates/modal/modal-component.html)
 
 ### Methods and events
 

@@ -52,14 +52,10 @@ Use [RFC2119] to interpret keywords like:
 2.2. Object MUST be ready for use after instantiation. No additional public initialization methods are allowed.
 
 {% collapsible Examples: %}
-<table>
-    <tr>
-        <th><span style="color: red">Not recommended</span></th>
-        <th><span style="color: green">Recommended</span></th>
-    </tr>
-    <tr>
-        <td>
-{% highlight php %}
+
+### Not recommended
+
+```php
 class Config
 {
     private $data;
@@ -74,10 +70,11 @@ class Config
         return $this->data[$key];
     }
 }
-{% endhighlight %}
-        </td>
-        <td>
-{% highlight php %}
+```
+
+### Recommended
+
+```php
 class Config
 {
     private $data;
@@ -91,11 +88,10 @@ class Config
         return $this->data[$key];
     }
 }
-{% endhighlight %}
-        </td>
-    </tr>
-</table>
+```
+
 {% endcollapsible %}
+
 ---
 
 {:start="2.3"}
@@ -104,7 +100,8 @@ class Config
 2.3.1. Constructor SHOULD throw an exception when validation of an argument has failed.
 
 {% collapsible Example: %}
-``` php?start_inline=1
+
+``` php
 class Composite
 {
     /**
@@ -129,22 +126,19 @@ class Composite
     }
 }
 ```
+
 {% endcollapsible %}
+
 ---
 
 {:start="3.2"}
 2.3.2. Events MUST NOT be triggered in constructors.
 
 {% collapsible Examples: %}
-<table>
-    <tr>
-        <th><span style="color: red">Not recommended</span></th>
-        <th><span style="color: green">Recommended</span></th>
-    </tr>
-    <tr>
-        <td>
-{% highlight php %}
 
+### Not recommended
+
+```php
 class Config
 {
     private $data;
@@ -155,10 +149,11 @@ class Config
         $eventManager->dispatch('config_read_after');
     }
 }
-{% endhighlight %}
-        </td>
-        <td>
-{% highlight php %}
+```
+
+### Recommended
+
+```php
 class Config
 {
     private $fileReader;
@@ -180,10 +175,8 @@ class Config
         return $this->data[$key];
     }
 }
-{% endhighlight %}
-        </td>
-    </tr>
-</table>
+```
+
 {% endcollapsible %}
 
 ---
@@ -192,14 +185,10 @@ class Config
 2.4. All dependencies MUST be requested by the most generic type that is required by the client object.
 
 {% collapsible Examples: %}
-<table>
-    <tr>
-        <th><span style="color: red">Not recommended</span></th>
-        <th><span style="color: green">Recommended</span></th>
-    </tr>
-    <tr>
-        <td>
-{% highlight php %}
+
+### Not recommended
+
+```php
 interface SessionAdapterInterface
 {}
 
@@ -213,10 +202,11 @@ class SessionManager
 }
 
 // Breaks polymorphism principle, restricts what types can be passed at the runtime.
-{% endhighlight %}
-        </td>
-        <td>
-{% highlight php %}
+```
+
+### Recommended
+
+```php
 interface SessionAdapterInterface
 {}
 
@@ -228,10 +218,8 @@ class SessionManager
     public function __construct(SessionAdapterInterface $sessionAdapter)
     {}
 }
-{% endhighlight %}
-        </td>
-    </tr>
-</table>
+```
+
 {% endcollapsible %}
 
 ---
@@ -240,14 +228,10 @@ class SessionManager
 
 2.6. Inheritance SHOULD NOT be used. Composition SHOULD be used for code reuse.
 {% collapsible Examples: %}
-<table>
-    <tr>
-        <th><span style="color: red">Not recommended</span></th>
-        <th><span style="color: green">Recommended</span></th>
-    </tr>
-    <tr>
-        <td>
-{% highlight php %}
+
+### Not Recommended
+
+```php
 class AbstractController extends Action
 {
     // ...
@@ -278,11 +262,11 @@ class Edit extends AbstractController
 }
 
 // Smaller classes, one responsibility, more flexible, easy to understand, more testable.
+```
 
-{% endhighlight %}
-        </td>
-        <td>
-{% highlight php %}
+### Recommended
+
+```php
 class Edit extends Action
 {
     public function __constructor(
@@ -297,11 +281,8 @@ class Edit extends Action
         $hash = $this->hashGenerator->generateHash($request);
     }
 }
+```
 
-{% endhighlight %}
-        </td>
-    </tr>
-</table>
 {% endcollapsible %}
 
 ---
@@ -322,28 +303,24 @@ class Edit extends Action
 
 2.14. [Temporal coupling] MUST be avoided
 {% collapsible Example #1: %}
-<table>
-    <tr>
-        <th><span style="color: red">Not recommended</span></th>
-        <th><span style="color: green">Recommended</span></th>
-    </tr>
-    <tr>
-        <td>
-{% highlight php %}
+
+### Not recommended
+
+```php
 $url = new Url();
 $url->setBaseUrl($baseUrl);
 echo $url->get('custom/path'); // prints full URL
 
-// Developer forgot or didn’t know that you need to call setBaseUrl
+// Developer forgot or did not know that you need to call setBaseUrl
 $url = new Url();
-echo $url->get('custom/path'); // Throws exception, which makes issue smaller. If it doesn't throw and exception, it could lead to a hidden bug more likely.
+echo $url->get('custom/path'); // Throws exception, which makes issue smaller. If it does not throw an exception, it could lead to a hidden bug more likely.
 
-// Method with out parameters that doesn’t return anything could be sign of temporal coupling.
+// Method with out parameters that does not return anything could be sign of temporal coupling.
+```
 
-{% endhighlight %}
-        </td>
-        <td>
-{% highlight php %}
+### Recommended
+
+```php
 $url = new Url($baseUrl);
 echo $url->get('custom/path');
 
@@ -352,24 +329,17 @@ $url = new Url();
 echo $url->get($baseUrl, 'custom/path');
 
 // Only one way to use API, no temporal coupling.
+```
 
-{% endhighlight %}
-        </td>
-    </tr>
-</table>
 {% endcollapsible %}
 
 ---
 
 {% collapsible Example #2: %}
-<table>
-    <tr>
-        <th><span style="color: red">Not recommended</span></th>
-        <th><span style="color: green">Recommended</span></th>
-    </tr>
-    <tr>
-        <td>
-{% highlight php %}
+
+### Not recommended
+
+```php
 class Edit extends Action
 {
     public function execute()
@@ -388,11 +358,11 @@ class View extends Template
         return $product->getName();
     }
 }
+```
 
-{% endhighlight %}
-        </td>
-        <td>
-{% highlight php %}
+### Recommended
+
+```php
 class Edit extends Action
 {
     public function execute()
@@ -412,8 +382,7 @@ class View extends Template
     }
 }
 // More flexible, no dependencies between classes, no temporal coupling.
-
-{% endhighlight %}
+```
 
 {% endcollapsible %}
 
@@ -429,9 +398,12 @@ class View extends Template
 
 2.17.2. Composites SHOULD be used when there is a need to work with a tree as a single object.
 
- {% collapsible Example: %}
- You need to read configuration from different sources (like database or filesystem) and want to make the reading process configurable: allow extensions to add more configuration sources. In this case, you can create a `ConfigReaderInterface` with a composite implementation - `ConfigReaderComposite`, and configure particular readers as children of a composite reader.
+{% collapsible Example: %}
+
+You need to read configuration from different sources (like database or filesystem) and want to make the reading process configurable: allow extensions to add more configuration sources. In this case, you can create a `ConfigReaderInterface` with a composite implementation - `ConfigReaderComposite`, and configure particular readers as children of a composite reader.
+
  {% endcollapsible %}
+
 ---
 2.17.3. Strategy SHOULD be used when there are multiple algorithms for performing an operation.
 
@@ -439,7 +411,7 @@ class View extends Template
 
 3.1. There SHOULD be no circular dependencies between objects.
 
-3.2. The `app/etc/di.xml` file MUST contain only framework-level {% glossarytooltip 2be50595-c5c7-4b9d-911c-3bf2cd3f7beb %}Dependency Injection{% endglossarytooltip %} (DI) settings.
+3.2. The `app/etc/di.xml` file MUST contain only framework-level [Dependency Injection](https://glossary.magento.com/dependency-injection) (DI) settings.
 
 3.3. All modular DI settings (except for Presentation layer configuration) SHOULD be stored in `<module_dir>/etc/di.xml`.
 
@@ -449,26 +421,28 @@ class View extends Template
 
 4.1. Around-plugins SHOULD only be used when behavior of an original method is supposed to be substituted in certain scenarios.
 
-4.2. Plugins SHOULD NOT be used within own {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}.
+4.2. Plugins SHOULD NOT be used within own [module](https://glossary.magento.com/module).
 
 4.3. Plugins SHOULD NOT be added to data objects.
 
 4.4. Plugins MUST be stateless.
 
+4.5. Plugins SHOULD NOT change the state of an intercepted object (Intercepted object is `$subject`).
+
 ## 5. Exceptions
 
 5.1. All exceptions that are surfaced to the end user MUST produce error messages in the following format:
 
-- Symptom
+* Symptom
 
-- Details
+* Details
 
-- Solution or workaround
+* Solution or workaround
 
 {:start="5.2"}
 5.2. Exceptions MUST NOT be handled in the same function where they are thrown.
 
-5.3. If a function A calls function B, and function B might throw an exception, this {% glossarytooltip 53da11f1-d0b8-4a7e-b078-1e099462b409 %}exception{% endglossarytooltip %} MUST be either processed by function A or declared by the @throws annotation in the documentation block of function A.
+5.3. If a function A calls function B, and function B might throw an exception, this [exception](https://glossary.magento.com/exception) MUST be either processed by function A or declared by the @throws annotation in the documentation block of function A.
 
 5.4. Exceptions MUST NOT handle message output. It is the processing code that decides how to process an exception.
 
@@ -480,7 +454,7 @@ class View extends Template
 
 5.8. All direct communications with third-party libraries MUST be wrapped with a try/catch statement.
 
-5.9. `\Exception` SHOULD be caught only in the code that calls third-party libraries, in addition to catching specific exceptions thrown by the {% glossarytooltip 08968dbb-2eeb-45c7-ae95-ffca228a7575 %}library{% endglossarytooltip %}.
+5.9. `\Exception` SHOULD be caught only in the code that calls third-party libraries, in addition to catching specific exceptions thrown by the [library](https://glossary.magento.com/library).
 
 5.10. `\Exception` SHOULD NOT be thrown in Front Controller and Action Controllers.
 
@@ -506,9 +480,11 @@ class View extends Template
 
 6.1.1. Application SHOULD be structured in compliance with the [CQRS principle].
 
-6.1.2. Every application layer (Presentation, Service Contracts, Data Access) MUST process (handle or re-throw) exceptions of the underlying layer.
+6.1.2. Every application layer (Presentation, Service Contracts, Data Access)
+    MUST process (handle or re-throw) exceptions of the underlying layer.
 
-6.2.5. Configuration for the presentation layer MUST be declared in the corresponding application area. This includes events and plugins that customize the presentation layer.
+6.1.3. A layer MUST NOT depend on a layer that invokes (above) it. A layer MUST only depend on a layer directly below it.
+![Magento architecture layers]({{site.baseurl}}/common/images/archi_diagrams_layers_alt4.jpg)
 
 ### 6.2. Presentation layer
 
@@ -516,7 +492,7 @@ class View extends Template
 
 * **Command** for Actions
 
-* **Query** for {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}Layout{% endglossarytooltip %} and its elements (Blocks and UI Components)
+* **Query** for [Layout](https://glossary.magento.com/layout) and its elements (Blocks and UI Components)
 
 6.2.2. Request, Response, Session, Store Manager and Cookie objects MUST be used only in the Presentation layer.
 
@@ -524,7 +500,10 @@ class View extends Template
 
 6.2.4. Actions MUST NOT reference blocks declared in layout.
 
-###  6.3. Data Access (Persistence) layer
+6.2.5. Configuration for the presentation layer MUST be declared in the corresponding application area.
+    This includes events and plugins that customize the presentation layer.
+
+### 6.3. Data Access (Persistence) layer
 
 6.3.1. Entities MAY have fields scoped differently (in product, EAV --- per store, options --- per website).
 
@@ -538,11 +517,11 @@ class View extends Template
 
 6.4.1. Location of API interfaces
 
-6.4.1.1. Service contract interfaces SHOULD be placed in separate API modules. The other modules will depend on the API module, and implementations could be easily swapped via `di.xml`. API module namess must end with the `Api` suffix. For example, if a module is named `MyModule`, its APIs SHOULD be declared in a module named `MyModuleApi`.
+6.4.1.1. Service contract interfaces SHOULD be placed in separate API modules, except when an existing module already contains Service Contracts in the `Api` folder. Other modules will depend on the API module, and implementations could be easily swapped via `di.xml`. API module names must end with the `Api` suffix. For example, if a module is named `MyModule`, its APIs SHOULD be declared in a module named `MyModuleApi`.
 
 6.4.1.2. Service interfaces that should be exposed as web APIs MUST be placed under the `MyModuleApi/Api` directory. Service data interfaces MUST be placed under `MyModuleApi/Api/Data`. Directories under `MyModuleApi/Api` SHOULD NOT be nested.
 
-6.4.1.3. All other APIs, including explicit extension points such as Chain or Composite implementations, MUST be placed under `MyModuleApi/Model`. 
+6.4.1.3. All other APIs, including explicit extension points such as Chain or Composite implementations, MUST be placed under `MyModuleApi/Model`.
 
 6.4.2. Service Interface Structure
 
@@ -566,7 +545,7 @@ class View extends Template
 
 * `void`
 
-6.4.3.2. Service contracts SHOULD support batch data processing. For example, an entity persisting method SHOULD accept an array of entities to persist instead of a single entity. Customizations implemented through plugins SHOULD be adjusted respectively. 
+6.4.3.2. Service contracts SHOULD support batch data processing. For example, an entity persisting method SHOULD accept an array of entities to persist instead of a single entity. Customizations implemented through plugins SHOULD be adjusted respectively.
 
 6.4.3.3. Batch retrieval operations MUST accept `SearchCriteriaInterface` and return `SearchResultInterface` to support pagination.
 
@@ -578,7 +557,7 @@ class View extends Template
 
 * An array of items with non-retriable errors
 
-6.4.3.5. Batch operations that modify state SHOULD be implemented in the most performant manner and SHOULD NOT load modified entities to generate response. 
+6.4.3.5. Batch operations that modify state SHOULD be implemented in the most performant manner and SHOULD NOT load modified entities to generate response.
 
 6.4.3.6. Asynchronous invocation of the command services SHOULD be supported by the web API framework.
 
@@ -594,11 +573,11 @@ class View extends Template
 
 6.4.4.3. Service implementations and plugins MUST NOT rely on storage-specific integrity features, such as foreign key constraints.
 
-6.4.4.4. Replacement strategy SHOULD be used to persist main entity fields/attributes, child entities, and relation links. 
+6.4.4.4. Replacement strategy SHOULD be used to persist main entity fields/attributes, child entities, and relation links.
 
 6.4.4.5. During update operations, web APIs using the`PATCH` HTTP method and all action controllers that accept entities SHOULD pre-load them first, then merge the request data, and provide the full data to the service.
 
-6.4.4.6. If a service method needs to modify the argument, the original argument object MUST NOT be modified and its copy SHOULD be modified instead. 
+6.4.4.6. If a service method needs to modify the argument, the original argument object MUST NOT be modified and its copy SHOULD be modified instead.
 
 6.4.4.7. Services SHOULD NOT apply ACL rules to methods or returned data.
 
@@ -614,6 +593,8 @@ class View extends Template
 
 6.4.4.13. A service contract MUST NOT rely on the execution context (application area). The service implementation MUST NOT depend on the application state.
 
+6.4.4.14. A service contract SHOULD be an [idempotent method](https://tools.ietf.org/html/rfc7231#section-4.2.2).
+
 ## 7. Configuration
 
 7.1. An Application Instance consists of:
@@ -628,9 +609,9 @@ class View extends Template
 
 * application codebase
 
-* {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %} configuration
+* [XML](https://glossary.magento.com/xml) configuration
 
-* generated code and {% glossarytooltip 363662cb-73f1-4347-a15e-2d2adabeb0c2 %}static files{% endglossarytooltip %}
+* generated code and [static files](https://glossary.magento.com/static-files)
 
 * database structure
 
@@ -638,11 +619,11 @@ class View extends Template
 
 * configuration scopes (stores/store groups/websites)
 
-* {% glossarytooltip f3944faf-127e-4097-9918-a2e9c647d44f %}CMS{% endglossarytooltip %} entities
+* [CMS](https://glossary.magento.com/cms) entities
 
 7.3. Environment Configuration includes information about application services connection.
 
-7.4. Data includes the business {% glossarytooltip a9027f5d-efab-4662-96aa-c2999b5ab259 %}entity{% endglossarytooltip %} data.
+7.4. Data includes the business [entity](https://glossary.magento.com/entity) data.
 
 7.5. Code and Environment Configuration MUST not be stored in Data Storage.
 
@@ -664,7 +645,7 @@ class View extends Template
 
 8.5. Only the `@api` code of any module can be referenced by other modules.
 
-8.6. A module MUST NOT contain references to {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} resources.
+8.6. A module MUST NOT contain references to [theme](https://glossary.magento.com/theme) resources.
 
 8.7. A component MUST NOT rely either on dependencies of dependencies or on dependencies of the project it is included in (e.g., Magento application). All component dependencies MUST be stated explicitly.
 
@@ -672,15 +653,15 @@ class View extends Template
 
 9.1. All Client-Server calls must follow the [HTTP Protocol].
 
-9.2. All customer-agnostic data (Products, Categories, CMS Pages) MUST be rendered on a server and cached in a public {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %} server (Varnish).
+9.2. All customer-agnostic data (Products, Categories, CMS Pages) MUST be rendered on a server and cached in a public [cache](https://glossary.magento.com/cache) server (Varnish).
 
-9.3. All customer-specific data MUST be rendered on the browser side using a {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} (JS) application.
+9.3. All customer-specific data MUST be rendered on the browser side using a [JavaScript](https://glossary.magento.com/javascript) (JS) application.
 
-9.4. {% glossarytooltip a2aff425-07dd-4bd6-9671-29b7edefa871 %}HTML{% endglossarytooltip %} {% glossarytooltip 8f407f13-4350-449b-9dc5-217dcf01bc42 %}markup{% endglossarytooltip %} generated on server MUST NOT contain user-specific data.
+9.4. [HTML](https://glossary.magento.com/html) [markup](https://glossary.magento.com/markup) generated on server MUST NOT contain user-specific data.
 
 9.5. HTML markup generated on server MUST NOT contain session-specific data (e.g. a form element with a CSRF token).
 
-9.6. A JS application MAY receive customer-specific data using the CustomerData JS {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %}.
+9.6. A JS application MAY receive customer-specific data using the CustomerData JS [API](https://glossary.magento.com/api).
 
 9.7. All state-modifying requests from a browser SHOULD be performed with AJAX requests.
 
@@ -694,7 +675,7 @@ class View extends Template
 
 ## 10. JavaScript (JS) application
 
-10.1. The Magento 2 {% glossarytooltip 9bcc648c-bd08-4feb-906d-1e24c4f2f422 %}UI Component{% endglossarytooltip %} framework MUST be used to build frontend applications.
+10.1. The Magento 2 [UI Component](https://glossary.magento.com/ui-component) framework MUST be used to build frontend applications.
 
 10.2. Only private content SHOULD be rendered in browser.
 
@@ -738,7 +719,7 @@ class View extends Template
 
 12.1. Both REST and SOAP API's MUST be exposed.
 
-12.2. All {% glossarytooltip 377dc0a3-b8a7-4dfa-808e-2de37e4c0029 %}Web API{% endglossarytooltip %} GET endpoints MUST return lists of entities.
+12.2. All [Web API](https://glossary.magento.com/web-api) GET endpoints MUST return lists of entities.
 
 ## 13. Command line interface (CLI)
 
@@ -752,16 +733,20 @@ class View extends Template
 
 ## 14. Events
 
-14.1. All values (including objects) passed to an {% glossarytooltip c57aef7c-97b4-4b2b-a999-8001accef1fe %}event{% endglossarytooltip %} MUST NOT be modified in the event observer. Instead, plugins SHOULD BE used for modifying the input or output of a function.
+14.1. All values (including objects) passed to an [event](https://glossary.magento.com/event) MUST NOT be modified in the event observer. Instead, plugins SHOULD BE used for modifying the input or output of a function.
 
 {% collapsible Example: %}
-``` php?start_inline=1
-class SampleEventObserverThatModifiesInputs
+
+``` php
+use Magento\Framework\Event\ObserverInterface;
+use Magento\Framework\Event\Observer;
+
+class SampleEventObserverThatModifiesInputs implements ObserverInterface
 {
     /**
-     * @param \Magento\Framework\Event\Observer $observer
+     * @param Observer $observer
      */
-    public function execute(\Magento\Framework\Event\Observer $observer)
+    public function execute(Observer $observer)
     {
         /** @var \Magento\Framework\App\DataObject $transport */
         $transport = $observer->getData('transport');
@@ -777,11 +762,15 @@ class SampleEventObserverThatModifiesInputs
     }
 }
 ```
+
 {% endcollapsible %}
+
 ---
 
 {:start="14.2"}
 14.2. Events used SHOULD be observed as specifically as possible. A `global` subscription to an event SHOULD NOT be used when the area impacted is just `frontend`.
+
+14.3. Events SHOULD NOT change a state of observable objects.
 
 ## 15. Security
 
@@ -859,9 +848,13 @@ class SampleEventObserverThatModifiesInputs
 
 15.12. Files MUST be secured by a web server configuration (e.g., `.htaccess` or `nginx.conf`), except files that are intended to be publicly accessible.
 
-## 16. Services
+## 16. Cron
 
-16.1. New features with limited customization scenarios SHOULD be implemented as thin Magento extension that will communicate to a service that contains business logic. This will allow to release features independently from Magento and make upgrades of features easier.
+16.1. Cron job SHOULD be an [idempotent method](https://tools.ietf.org/html/rfc7231#section-4.2.2).
+
+## 17. Services
+
+17.1. New features with limited customization scenarios SHOULD be implemented as thin Magento extension that will communicate to a service that contains business logic. This will allow to release features independently from Magento and make upgrades of features easier.
 
 <!-- LINKS: DEFINITIONS AND ADDRESSES -->
 
@@ -873,5 +866,5 @@ class SampleEventObserverThatModifiesInputs
 [HTTP Protocol]: https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol
 [HTTP Status Code]: https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html
 [W3C Content Security Policy]: https://w3c.github.io/webappsec-csp/
-[rules]: {{ site.mage2100url }}dev/tests/static/testsuite/Magento/Test/Js/_files/eslint/.eslintrc-magento
+[rules]: {{ site.mage2bloburl }}/{{ page.guide_version }}/dev/tests/static/testsuite/Magento/Test/Js/_files/eslint/.eslintrc-magento
 [CLI Command Naming Guidelines]: {{ page.baseurl }}/extension-dev-guide/cli-cmds/cli-naming-guidelines.html

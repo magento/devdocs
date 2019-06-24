@@ -7,7 +7,7 @@ functional_areas:
 ---
 
 Use Magento's [ESLint Rules][eslint-rules] to make sure your code adheres to Magento's coding standards.
-Developers writing {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} and {% glossarytooltip 5bfa8a8e-6f3e-4fed-a43e-62339916f02e %}jQuery{% endglossarytooltip %} code for Magento must adhere to these guidelines and follow the standards listed in this document.
+Developers writing [JavaScript](https://glossary.magento.com/javascript) and [jQuery](https://glossary.magento.com/jquery) code for Magento must adhere to these guidelines and follow the standards listed in this document.
 
 Use [RFC 2119](http://www.ietf.org/rfc/rfc2119.txt) to interpret the "must," "must not," "required," "shall," "shall not," "should," "should not," "recommended," "may," and "optional" keywords.
 
@@ -28,9 +28,9 @@ It can use custom rules to enforce specific coding standards.
 
 ### Anonymous function calls
 
-When you declare an anonymous function as an argument in a function call, indent the body of the function by *four* spaces from the left edge of the statement or function {% glossarytooltip caa46cea-25d7-4e4f-bce1-11430ada59dc %}keyword{% endglossarytooltip %} to increase readability.
+When you declare an anonymous function as an argument in a function call, indent the body of the function by *four* spaces from the left edge of the statement or function [keyword](https://glossary.magento.com/keyword) to increase readability.
 
-``` javascript
+```javascript
 myObject.myFunction(param1, function (a,b) {
     //Function logic
     return a > b;
@@ -59,7 +59,7 @@ The recommended max line length is 80 characters.
 
 Source code lines must not exceed 120 characters.
 
-Comment lines that contain an example command or a literal {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} longer than 120 characters may exceed the 120 character limit for ease of cutting and pasting.
+Comment lines that contain an example command or a literal [URL](https://glossary.magento.com/url) longer than 120 characters may exceed the 120 character limit for ease of cutting and pasting.
 
 Do not be concerned about header guards that exceed 120 characters.
 
@@ -75,7 +75,7 @@ Lines must end with a single linefeed(LF) character represented as ordinal 10 or
 
 Use string concatenation for multi-line string literals:
 
-``` javascript
+```javascript
 var myString = 'JavaScript was originally developed in Netscape, by Brendan Eich. ' +
     'Battling with Microsoft over the Internet, Netscape considered their client-server solution ' +
     'as a distributed OS, running a portable version of Sun Microsystem&#8217;s Java. ' +
@@ -98,7 +98,7 @@ Never use parentheses for:
 
 Use braces with all multiline blocks. May only omit braces if entire block can be written in one line and improves readability.
 
-``` javascript
+```javascript
 // Wrong
 if (true)
     blah();
@@ -128,7 +128,7 @@ Always put semicolons as statement terminators.
 
 The following code examples show the dangers of missing semicolons:
 
-``` javascript
+```javascript
 // Example 1: JavaScript Error
 MyClass.prototype.myMethod = function() {
     return 42;
@@ -142,7 +142,7 @@ MyClass.prototype.myMethod = function() {
 Since there is semicolon to end the first statement, the first function returns 42 and the script interprets 42 as a function.
 When the script tries to call 42 as a function with the second function as a parameter, an error occurs.
 
-``` javascript
+```javascript
 // Example 2: Trying to do one thing on Internet Explorer and another on Firefox.
 var x = {
     'i': 1,
@@ -154,7 +154,7 @@ var x = {
 
 A 'no such property in undefined' error appears during runtime when the script tries to call `x[ffVersion][isIE]()`.
 
-``` javascript
+```javascript
 
 // Example 3: Conditional execution a la bash
 var THINGS_TO_EAT = [apples, oysters, sprayOnCheese]  // <-- Missing semicolon
@@ -179,7 +179,7 @@ JavaScript never ends a statement if the next token is an infix or bracket opera
 Use single quotes instead of double quotes for consistency.
 
 This is helpful when creating strings that include HTML:
-``` javascript
+```javascript
 var msg = '<span class="text">Hello World!</div>';
 ```
 
@@ -195,7 +195,7 @@ var msg = '<span class="text">Hello World!</div>';
 
 * Class method names should start with an English verb in its infinitive form that describes the method.
 * Names for accessors for instance or static variables should always have the `get` or `set` prefix.
-* In {% glossarytooltip 53755359-9916-4677-bff2-f7d26025095a %}design pattern{% endglossarytooltip %} classes, implementation method names should contain the pattern name where practical to provide better behavior description.
+* In [design pattern](https://glossary.magento.com/design-pattern) classes, implementation method names should contain the pattern name where practical to provide better behavior description.
 * Methods that return status flags or Boolean values should have the `has` or `is` prefix.
 
 ### Variables and properties
@@ -217,7 +217,7 @@ This method must always succeed without side effects.
 
 Use a variable initialized with a function expression to define a function within a block.
 
-``` javascript
+```javascript
 // Wrong
 if (x) {
     function foo() {}
@@ -236,7 +236,7 @@ You cannot avoid exceptions if you are doing something non-trivial (using an app
 Without custom exceptions, returning error information from a function that also returns a value can be tricky, not to mention inelegant.
 Bad solutions include passing in a reference type to hold error information or always returning Objects with a potential error member.
 
-These basically amount to a primitive {% glossarytooltip 53da11f1-d0b8-4a7e-b078-1e099462b409 %}exception{% endglossarytooltip %} handling hack.
+These basically amount to a primitive [exception](https://glossary.magento.com/exception) handling hack.
 Feel free to use custom exceptions when appropriate.
 
 ### Standard features {#standard-features}
@@ -249,7 +249,7 @@ For example, `string.charAt(3)` instead of `string[3]`, and element access with 
 
 There are several ways to attach methods and properties to a constructor, but the preferred style is:
 
-``` javascript
+```javascript
 Foo.prototype.bar = function() {
     // ...
 };
@@ -257,7 +257,7 @@ Foo.prototype.bar = function() {
 
 Do not use:
 
-``` javascript
+```javascript
 Foo.prototype = {
     bar: function() {
         // ...
@@ -275,7 +275,7 @@ Assignment operations to constructor prototypes creating temporal coupling and s
 
 A closure keeps a pointer to its enclosing scope, so attaching a closure to a DOM element can create a circular reference and thus, a memory leak.
 
-``` javascript
+```javascript
 // Wrong
 function foo(element, a, b) {
     element.onclick = function() {
@@ -289,7 +289,7 @@ The function closure keeps references to elements "a" and "b" even if it never u
 Because elements also keep references to the closure, it is a cycle that will not be cleaned up by garbage collection.
 In these situations, the code can be structured as follows:
 
-``` javascript
+```javascript
 // Correct
 function foo(element, a, b) {
     element.onclick = bar(a, b);
@@ -308,7 +308,7 @@ function bar(a, b) {
 
 Single-line array and object initializers are allowed when they fit on a line as follows:
 
-``` javascript
+```javascript
     var arr = [1, 2, 3];  // No space after [ or before ].
     var obj = {a: 1, b: 2, c: 3};  // No space after { or before }.  
 ```
@@ -317,7 +317,7 @@ Long identifiers or values present problems for aligned initialization lists, so
 
 For example:
 
-``` javascript
+```javascript
 Object.prototype = {
     a: 0,
     b: 1,
@@ -349,7 +349,7 @@ Declare a variable with `var` wherever possible to avoid overwriting existing gl
 
 Using only one var per scope promotes readability.
 
-``` javascript
+```javascript
 var foo = 'bar',
     num = 1,
     arr = [1, 2, 3];
@@ -360,5 +360,5 @@ var foo = 'bar',
 [jquery-widget-coding-standard]: {{ page.baseurl }}/coding-standards/code-standard-jquery-widgets.html
 [eslint]: http://eslint.org/
 [jscs]: http://jscs.info/
-[eslint-rules]: {{ site.mage2000url }}dev/tests/static/testsuite/Magento/Test/Js/_files/eslint/.eslintrc-magento
-[jscs-rules]: {{ site.mage2000url }}dev/tests/static/testsuite/Magento/Test/Js/_files/jscs/.jscsrc
+[eslint-rules]: {{ site.mage2bloburl }}/{{ page.guide_version }}/dev/tests/static/testsuite/Magento/Test/Js/_files/eslint/.eslintrc-magento
+[jscs-rules]: {{ site.mage2bloburl }}/{{ page.guide_version }}/dev/tests/static/testsuite/Magento/Test/Js/_files/jscs/.jscsrc

@@ -5,9 +5,9 @@ landing-page: Pattern Library
 ---
 ## What is a design pattern?
 
-Design patterns can be simple elements or complex pieces of functionality - like buttons, scroll bars, data tables and forms - that are standardized to be easily repeated and reused across a {% glossarytooltip a3c8f20f-b067-414e-9781-06378c193155 %}website{% endglossarytooltip %} or application.
+Design patterns can be simple elements or complex pieces of functionality - like buttons, scroll bars, data tables, and forms - that are standardized to be easily repeated and reused across a [website](https://glossary.magento.com/website) or application.
 
-Patterns include definitions, examples, instructions and specifications that break down spatial relationships and interactions / behaviors.
+Patterns include definitions, examples, instructions and specifications that break down spatial relationships, and interactions/behaviors.
 
 ## Why use patterns?
 
@@ -15,7 +15,7 @@ Using patterns enhances customer experience through maintaining consistency and 
 
 Patterns libraries are designed to evolve over time, never going out of date. Changes should be communicated, as they occur, to the design community.
 
-Find more details about the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} {% glossarytooltip 53755359-9916-4677-bff2-f7d26025095a %}Design Pattern{% endglossarytooltip %} {% glossarytooltip 08968dbb-2eeb-45c7-ae95-ffca228a7575 %}Library{% endglossarytooltip %} in the following topic:
+Find more details about the [Admin](https://glossary.magento.com/admin) [Design Pattern](https://glossary.magento.com/design-pattern) [Library](https://glossary.magento.com/library) in the following topic:
 
 ### Container
 

@@ -9,7 +9,7 @@ functional_areas:
 
 ## Overview
 
-To help prevent [clickjacking](https://www.owasp.org/index.php/Clickjacking) exploits, we added an option to use the [X-Frame-Options](https://tools.ietf.org/html/rfc7034) HTTP request header in requests to your {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %}.
+To help prevent [clickjacking](https://www.owasp.org/index.php/Clickjacking) exploits, we added an option to use the [X-Frame-Options](https://tools.ietf.org/html/rfc7034) HTTP request header in requests to your [storefront](https://glossary.magento.com/storefront).
 
 The `X-Frame-Options` header enables you to specify whether or not a browser should be allowed to render a page in a `<frame>`, `<iframe>`, or `<object>` as follows:
 
@@ -25,7 +25,7 @@ The Chrome and Safari browsers do not support the `ALLOW-FROM` option. [Browser 
 
 ## Implement `X-Frame-Options`
 
-Set a value for `X-Frame-Options` in `<your Magento install dir>/app/etc/env.php`. Following is the default value:
+Set a value for `X-Frame-Options` in `<magento_root>/app/etc/env.php`. Following is the default value:
 
 	  'x-frame-options' => 'SAMEORIGIN',
 
@@ -33,7 +33,7 @@ If you want to allow any website to load page, you can use `*`:
 
 	  'x-frame-options' => '*',
 
-We require you to edit `env.php` because it's more secure than setting a value in the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %}.
+We require you to edit `env.php` because it's more secure than setting a value in the [Magento Admin](https://glossary.magento.com/magento-admin).
 
 ## Verify your setting for `X-Frame-Options`
 

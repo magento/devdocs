@@ -13,13 +13,14 @@ Learn more about the cron setup in [Configure the Magento application].
 
 ## Clone the updater
 
-Clone the [Magento 2 updater](https://github.com/magento/magento2-updater) to `<your Magento install dir>/update`.
+Clone the [Magento 2 updater](https://github.com/magento/magento2-updater) to `<magento_root>/update`.
 
 Example:
 
 ```bash
 cd ~/magento2
 ```
+
 ```bash
 git clone git@github.com:magento/magento2-updater.git update
 ```
@@ -32,6 +33,7 @@ Install the dependencies using Composer:
 ```bash
 cd update
 ```
+
 ```bash
 composer install
 ```

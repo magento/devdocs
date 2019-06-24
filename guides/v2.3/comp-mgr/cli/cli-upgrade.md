@@ -12,7 +12,7 @@ functional_areas:
 
 You can upgrade Magento from the command line if you installed the software by:
 
-* Downloading the {% glossarytooltip 7490850a-0654-4ce1-83ff-d88c1d7d07fa %}metapackage{% endglossarytooltip %} using `composer create-project`.
+* Downloading the [metapackage](https://glossary.magento.com/metapackage) using `composer create-project`.
 * Installing the compressed archive.
 
 There are two ways to upgrade your Magento application to the 2.3 version:
@@ -31,12 +31,12 @@ If you cloned the Magento 2 GitHub repository, you **cannot** use this method to
 
 Complete the following prerequisites to prepare your environment before starting the upgrade process:
 * **Complete the Update and upgrade checklist**—To avoid possible errors during installation or upgrading, complete the [Update and upgrade checklist].
-* **Set the `pub` directory root**—If you set the Magento root directory to `<your Magento install dir>/pub`, create another subdomain or docroot that uses the Magento installation directory as its root, and run the [System Upgrade utility] using that subdomain.
+* **Set the `pub` directory root**—If you set the Magento root directory to `<magento_root>/pub`, create another subdomain or docroot that uses the Magento installation directory as its root, and run the [System Upgrade utility] using that subdomain.
 * **Check PHP and environment settings**—Verify that your PHP and other environment settings are compatible with the [system requirements].
 * **Switch to maintenance mode**—To prevent access to your store while it's being upgraded, switch your store to maintenance mode:
 
     ```bash
-    php <your Magento install dir>/bin/magento maintenance:enable
+    php <magento_root>/bin/magento maintenance:enable
     ```
 
     See [Enable or disable maintenance mode] for additional options.
@@ -126,7 +126,7 @@ Open `composer.json` and edit the `"autoload": "psr-4"` section to include `"Zen
 
 _Optional_—If the Magento updater is installed (it is located in `<Magento install dir>/update`) modify it:
 
-1. Backup and remove the old updater, in the `<Magento install dir>/update` directory.
+1. Backup `<Magento install dir>/update` directory.
 1. Create a Composer project.
 
    _{{ ce }} version 2.3.0:_
@@ -195,13 +195,13 @@ If you use a cache storage other than the filesystem, such as Redis or Memcached
 ### Update the database schema and data
 
 ```bash
-php bin/magento setup:upgrade
+bin/magento setup:upgrade
 ```
 
 ### Disable maintenance mode
 
 ```bash
-php bin/magento maintenance:disable
+bin/magento maintenance:disable
 ```
 
 ### Restart Varnish
@@ -220,9 +220,9 @@ If the application fails with a  `We're sorry, an error has occurred while gener
 
 1. Reset [file system ownership and permissions] as a user with `root` privileges.
 1. Clear these directories:
-   * `<your Magento install dir>/var/cache`
-   * `<your Magento install dir>/var/page_cache`
-   * `<your Magento install dir>/generated/code`
+   * `<magento_root>/var/cache`
+   * `<magento_root>/var/page_cache`
+   * `<magento_root>/generated/code`
 1. Check your storefront in your web browser again.
 
 ## Upgrade using the script {#upgrade-cli-script}
@@ -285,13 +285,13 @@ If you use a cache storage other than the filesystem, such as Redis or Memcached
 ### Update the database schema and data
 
 ```bash
-php bin/magento setup:upgrade
+bin/magento setup:upgrade
 ```
 
 ### Disable maintenance mode
 
 ```bash
-php bin/magento maintenance:disable
+bin/magento maintenance:disable
 ```
 
 ### Restart Varnish
@@ -310,9 +310,9 @@ If the application fails with a  `We're sorry, an error has occurred while gener
 
 1. Reset [file system ownership and permissions] as a user with `root` privileges.
 1. Clear these directories:
-   * `<your Magento install dir>/var/cache`
-   * `<your Magento install dir>/var/page_cache`
-   * `<your Magento install dir>/generated/code`
+   * `<magento_root>/var/cache`
+   * `<magento_root>/var/page_cache`
+   * `<magento_root>/generated/code`
 1. Check your storefront in your web browser again.
 
 <!-- Link definitions -->

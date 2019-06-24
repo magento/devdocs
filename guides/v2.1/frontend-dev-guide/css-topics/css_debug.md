@@ -20,20 +20,31 @@ Magento has built-in Grunt tasks configured, but there are still several prerequ
 1. Install [node.js] to any location on your machine.
 
 2. Install the Grunt CLI globally:
+
     ```bash
     npm install -g grunt-cli
     ```
+    
 3. Rename the following files in your Magento root directory:
     -   `package.json.sample` to `package.json`
     -   `Gruntfile.js.sample` to `Gruntfile.js`
 
 4. Install (or refresh) the `node.js` project dependency, including Grunt, for your Magento instance. To do this, run the following commands in a command prompt:
-    ```
+    
+    ```bash
     cd <your_Magento_instance_directory>
+    ```
+    
+    ```bash
     npm install
+    ```
+    
+    ```bash
     npm update
     ```
-5. Add your {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} to Grunt configuration. To do this, in the `dev/tools/grunt/configs/themes.js` file, add your theme to `module.exports` like following:
+    
+5. Add your [theme](https://glossary.magento.com/theme) to Grunt configuration. To do this, in the `dev/tools/grunt/configs/themes.js` file, add your theme to `module.exports` like following:
+   
     ```javascript
     module.exports = {
 
@@ -73,14 +84,15 @@ grunt watch | Tracks the changes in the source files, recompiles `.css` files, a
 
 The following shows which Grunt tasks to use for debugging:
 
--   After you switch the compilation mode from client-side to server-side, run the `exec` command.
--   After you customize the content of any `.less` file, except the root source files, run the `less` task and reload the page.
--   After you [customize the root source files or move the files included to the root files]({{ page.baseurl }}/frontend-dev-guide/css-topics/css-preprocess.html), run the `exec` command and reload the page.
--   After you run the `exec` command, run the `clear` command to `clear` the Magento cache, then run the `watch` command. Running the commands in this order will ensure that any custom jQuery attributes like product sliders, banners, etc are loaded correctly.
+- After you switch the compilation mode from client-side to server-side, run the `exec` command.
+- After you customize the content of any `.less` file, except the root source files, run the `less` task and reload the page.
+- After you [customize the root source files or move the files included to the root files]({{ page.baseurl }}/frontend-dev-guide/css-topics/css-preprocess.html), run the `exec` command and reload the page.
+- After you run the `bin/magento setup:upgrade` command, run the `exec` command.
+- After you run the `exec` command, run the `clear` command to `clear` the Magento cache, then run the `watch` command. Running the commands in this order will ensure that any custom jQuery attributes like product sliders, banners, etc are loaded correctly.
 
 If you have LiveReload installed, run the `grunt watch` command, and the flow is even simpler:
--   After you customize the content of any `.less` file, changes are applied and the page reloads automatically. No additional changes are required.
--   After you [customize the root source files or move the files included to the root files]({{ page.baseurl }}/frontend-dev-guide/css-topics/css-preprocess.html), run the `clean` and `exec` commands, and the browser page reloads automatically.
+- After you customize the content of any `.less` file, changes are applied and the page reloads automatically. No additional changes are required.
+- After you [customize the root source files or move the files included to the root files]({{ page.baseurl }}/frontend-dev-guide/css-topics/css-preprocess.html), run the `clean` and `exec` commands, and the browser page reloads automatically.
 
 
 ## CSS source maps {#source_maps}
@@ -101,7 +113,6 @@ The path to the CSS source maps configuration differs, depending on the browser.
 
 In Google Chrome, to enable source maps generation, go to **Inspect** > **Settings** > **Preferences** > **Enable CSS source maps**.   
 
-
 Magento has a base set of variables that define commonly used aspects of a theme; such as colors, fonts, style of page titles, and so on. 
 
 The `<magento-root>/lib/web/css/source/lib/variables` directory contains LESS files that define values assigned to variables for many of the common elements in Magento.
@@ -110,11 +121,11 @@ To change or override any of these variables, simply create a file in `<theme-di
 
 ![node declaration autocomplete]({{ site.baseurl }}/common/images/fdg/lib-map.png){:width="610px"}
 
-```
+```css
 @navigation__background: @secondary__color__light; 
 @font-family__sans-serif: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 ```
 
 [inherits]: {{page.baseurl}}/frontend-dev-guide/themes/theme-inherit.html
 [LiveReload extension]: http://livereload.com/extensions/
-[node.js]: https://github.com/joyent/node/wiki/installing-node.js-via-package-manager
+[node.js]: https://github.com/nodejs/node/wiki

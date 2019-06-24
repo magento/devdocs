@@ -33,7 +33,7 @@ The topic describes how stylesheets are preprocessed and compiled to CSS in the 
         included in layout</a> are compiled.
         </p>
         <p>
-        For example, in one of the <a href="{{ site.mage2000url }}app/design/frontend/Magento/blank/Magento_Theme/layout/default_head_blocks.xml"> layout files of the Magento Blank theme</a>, the following <code>.css</code> files are included:
+        For example, in one of the <a href="{{ site.mage2bloburl }}/{{ page.guide_version }}/app/design/frontend/Magento/blank/Magento_Theme/layout/default_head_blocks.xml"> layout files of the Magento Blank theme</a>, the following <code>.css</code> files are included:
         </p>
         <pre>
 
@@ -47,17 +47,17 @@ The topic describes how stylesheets are preprocessed and compiled to CSS in the 
         <ul>
         <li>
             <code><a href=
-            "{{ site.mage2000url }}app/design/frontend/Magento/blank/web/css/styles-m.less"
+            "{{ site.mage2bloburl }}/{{ page.guide_version }}/app/design/frontend/Magento/blank/web/css/styles-m.less"
             target="_blank">/web/css/styles-m.less</a></code>
         </li>
         <li>
             <code><a href=
-            "{{ site.mage2000url }}app/design/frontend/Magento/blank/web/css/styles-l.less"
+            "{{ site.mage2bloburl }}/{{ page.guide_version }}/app/design/frontend/Magento/blank/web/css/styles-l.less"
             target="_blank">/web/css/styles-l.less</a></code>
         </li>
         <li>
             <code><a href=
-            "{{ site.mage2000url }}app/design/frontend/Magento/blank/web/css/print.less"
+            "{{ site.mage2bloburl }}/{{ page.guide_version }}/app/design/frontend/Magento/blank/web/css/print.less"
             target="_blank">/web/css/print.less</a></code>
         </li>
         </ul>
@@ -78,7 +78,7 @@ To set the compilation mode:
 2.  In the **Store View** dropdown field, select **Default Config**.
 3.  Under **Frontend development workflow**, in the **Workflow type** field, select the compilation mode.
 4.  Click **Save Config**.
-5.  Make sure that the same compilation mode is set for each configuration scope. Switch the **Store View** dropdown field to the website scope, and then to the {% glossarytooltip ca5a9ff1-8182-4fc4-a34b-9b3f831dbf3f %}store view{% endglossarytooltip %}, to check the **Frontend development workflow** option. Change the option to match the default config if it is different.
+5.  Make sure that the same compilation mode is set for each configuration scope. Switch the **Store View** dropdown field to the website scope, and then to the [store view](https://glossary.magento.com/store-view), to check the **Frontend development workflow** option. Change the option to match the default config if it is different.
 
 ### Server-side Less compilation {#server-side}
 
@@ -86,14 +86,14 @@ This section describes how the Less preprocessor works in server-side compilatio
 For each CSS file included in the layouts, Less preprocessor:
 
 1.  Checks if the requested `.css` file is found. If it is found, the pre-processor stops its execution. Otherwise, it proceeds to the next step.
-2.  Changes the {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} of the requested file to `.less` and tries to find the file using the [Magento fallback mechanism]({{ page.baseurl }}/frontend-dev-guide/themes/theme-inherit.html#theme-inherit-static). If the `.less` file is not found, the Less pre-processor stops its execution. Otherwise, it proceeds to the next step.
+2.  Changes the [extension](https://glossary.magento.com/extension) of the requested file to `.less` and tries to find the file using the [Magento fallback mechanism]({{ page.baseurl }}/frontend-dev-guide/themes/theme-inherit.html#theme-inherit-static). If the `.less` file is not found, the Less pre-processor stops its execution. Otherwise, it proceeds to the next step.
 3.  Reads `.less` file contents and resolves [`@magento_import`](#fedg_css-magento-import) and default Less `@import` directives.
 4.  Resolves all paths in `.less` files to relative paths in the system using the Magento fallback mechanism. All files resolved by the Less pre-processor are copied to `var/view_preprocessed/less`. Imported files are processed recursively.
-5.  All source files are passed to the {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} Less compiler. The resulting compiled `.css` files are published to `pub/static/frontend/<Vendor>/<theme>/<locale>`.
+5.  All source files are passed to the [PHP](https://glossary.magento.com/php) Less compiler. The resulting compiled `.css` files are published to `pub/static/frontend/<Vendor>/<theme>/<locale>`.
 
 #### Styles debugging in server-side compilation mode {#css_debug_server}
 
-In server-side Less compilation mode, to have your changes applied, clear `pub/static/frontend/<Vendor>/<theme>/<locale>` by deleting the directory in the file system, and reload the store pages to trigger compilation and publication.
+In server-side Less compilation mode, to have your changes applied, clear `pub/static/frontend/<Vendor>/<theme>/<locale>` by deleting the directory in the file system (excluding .htaccess), and reload the store pages to trigger compilation and publication.
 
 {:.bs-callout .bs-callout-info}
 You might also need to clear the `var/cache` and `var/view_preprocessed` directories.
@@ -114,7 +114,7 @@ Symlink is not created, and a copy of the processed file is published to `pub/st
 
 #### Styles debugging in client-side compilation mode {#css_debug_client}
 
-Client-side Less compilation is implemented using the native `less.js` {% glossarytooltip 08968dbb-2eeb-45c7-ae95-ffca228a7575 %}library{% endglossarytooltip %}. The default configuration is set in `lib/web/less/config.less.js`. You can change it as needed.
+Client-side Less compilation is implemented using the native `less.js` [library](https://glossary.magento.com/library). The default configuration is set in `lib/web/less/config.less.js`. You can change it as needed.
 
 Find detailed information about the configuration and other options of the `less.js` used in a browser at [http://lesscss.org/usage/#using-less-in-the-browser](http://lesscss.org/usage/#using-less-in-the-browser).
 
@@ -162,7 +162,7 @@ In this instance, Magento will skip the `@import` directive while resolving path
 
 `@magento_import` is a Magento-specific Less directive that allows including multiple files by a name pattern. It is used to include files with the same name from the different locations, such as different modules. The standard `@import` directive includes a single file, which is found according to the [static files fallback]({{ page.baseurl }}/frontend-dev-guide/themes/theme-inherit.html#theme-inherit-static).
 
-`@magento_import`can be used in the root source files of a {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} only.
+`@magento_import`can be used in the root source files of a [theme](https://glossary.magento.com/theme) only.
 
 ### `@magento_import` rules of usage {#magento-import-usage}
 

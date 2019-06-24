@@ -7,7 +7,6 @@ menu_order: 19
 ee_only: True
 level3_menu_node: level3child
 level3_subgroup: mq
-redirect_from: /guides/v2.1/config-guide/mq/queue-migration.html
 functional_areas:
   - Configuration
   - System
@@ -16,7 +15,7 @@ functional_areas:
 
 ### Migrate from Magento 2.0 to 2.1 ###
 
-The `communication.xml` file was not changed between Magento 2.0 and 2.1. Replace the `queue.xml` file for each {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} that sends messages to the message queue.
+The `communication.xml` file was not changed between Magento 2.0 and 2.1. Replace the `queue.xml` file for each [module](https://glossary.magento.com/module) that sends messages to the message queue.
 
 #### Replace the `queue.xml` file ####
 

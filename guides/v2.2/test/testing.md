@@ -64,19 +64,19 @@ Until the porting to MFTF is finished, the FTF can still be run to ensure comple
 
 ## API Functional
 
-The Web {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} testing framework enables you to test the Magento {% glossarytooltip 377dc0a3-b8a7-4dfa-808e-2de37e4c0029 %}Web API{% endglossarytooltip %} from the client application point of view.
+The Web [API](https://glossary.magento.com/api) testing framework enables you to test the Magento [Web API](https://glossary.magento.com/web-api) from the client application point of view.
 
 For more information, see the [Web API functional testing][].
   
 ## Integration
 
-Integration tests run Magento {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} code in varying degrees of isolation. They tend to be a lot more low-level then functional tests. Because they do not utilize a browser to execute the tests, they can be a lot more granular in what they test. They also tend to run a lot quicker then functional tests.
+Integration tests run Magento [PHP](https://glossary.magento.com/php) code in varying degrees of isolation. They tend to be a lot more low-level then functional tests. Because they do not utilize a browser to execute the tests, they can be a lot more granular in what they test. They also tend to run a lot quicker then functional tests.
 
 For more information, see [Running Integration Tests][].
   
 ## JavaScript
 
-Much of the functionality in Magento 2 is provided with the help of sophisticated {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %}. JavaScript tests ensure the {% glossarytooltip b00459e5-a793-44dd-98d5-852ab33fc344 %}frontend{% endglossarytooltip %} portion of Magento functions as expected.  
+Much of the functionality in Magento 2 is provided with the help of sophisticated [JavaScript](https://glossary.magento.com/javascript). JavaScript tests ensure the [frontend](https://glossary.magento.com/frontend) portion of Magento functions as expected.  
 
 For more information, please see the [Extension Developer Guide on JavaScript Tests][].
   
@@ -144,7 +144,7 @@ MFTF tests are kept within its respective Module folder:
 [Integration]: https://devdocs.magento.com/guides/v2.3/test/integration/integration_test_execution.html
 [performance toolkit]: https://devdocs.magento.com/guides/v2.3/config-guide/cli/config-cli-subcommands-perf-data.html
 [JavaScript]: https://devdocs.magento.com/guides/v2.3/test/js/jasmine.html
-[PhpCs]: https://devdocs.magento.com/guides/v2.3/coding-standards/code-standard-sniffers.html
+[PhpCs]: https://devdocs.magento.com/guides/v2.3/coding-standards/code-standard-php.html
 [PhpMd]: https://phpmd.org/
 [Magento backward compatibility policy]: https://devdocs.magento.com/guides/v2.3/contributor-guide/backward-compatible-development/
 [Functional Testing Framework]: {{ page.baseurl }}/mtf/mtf_introduction.html

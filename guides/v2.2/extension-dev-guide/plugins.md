@@ -14,7 +14,7 @@ A plugin, or interceptor, is a class that modifies the behavior of public class 
 
 Extensions that wish to intercept and change the behavior of a *public method* can create a `Plugin` class.
 
-This {% glossarytooltip deea5a5a-e9e5-4591-b141-b849458feb1a %}interception{% endglossarytooltip %} approach reduces conflicts among extensions that change the behavior of the same class or method. Your `Plugin` class implementation changes the behavior of a class function, but it does not change the class itself. Magento calls these interceptors sequentially according to a configured sort order, so they do not conflict with one another.
+This [interception](https://glossary.magento.com/interception) approach reduces conflicts among extensions that change the behavior of the same class or method. Your `Plugin` class implementation changes the behavior of a class function, but it does not change the class itself. Magento calls these interceptors sequentially according to a configured sort order, so they do not conflict with one another.
 
 #### Limitations
 
@@ -30,9 +30,9 @@ Plugins can not be used on following:
 
 ### Declaring a plugin
 
-The <code>di.xml</code> file in your {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} declares a plugin for a class object:
+The <code>di.xml</code> file in your [module](https://glossary.magento.com/module) declares a plugin for a class object:
 
-``` xml 
+```xml 
 <config>
     <type name="{ObservedType}">
       <plugin name="{pluginName}" type="{PluginClassName}" sortOrder="1" disabled="false" />
@@ -66,6 +66,7 @@ You can use before methods to change the arguments of an observed method by retu
 Below is an example of a before method modifying the `$name` argument before passing it on to the observed `setName` method.
 
 ```php
+<?php
 namespace My\Module\Plugin;
 
 class ProductAttributesUpdater
@@ -86,7 +87,7 @@ You can use these methods to change the result of an observed method by modifyin
 Below is an example of an after method modifying the return value `$result` of an observed methods call.
 
 ```php
-
+<?php
 namespace My\Module\Plugin;
 
 class ProductAttributesUpdater
@@ -100,9 +101,10 @@ class ProductAttributesUpdater
 
 After methods have access to all the arguments of their observed methods. When the observed method completes, Magento passes the result and arguments to the next after method that follows. If observed method does not return a result (`@return void`), then it passes `null` to the next after method.
 
-Below is an example of an after method that accepts the `null` result and arguments from the observed `login` method for [`Magento\Backend\Model\Auth`]({{ site.mage2100url }}app/code/Magento/Backend/Model/Auth.php){:target="_blank"}:
+Below is an example of an after method that accepts the `null` result and arguments from the observed `login` method for [`Magento\Backend\Model\Auth`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Backend/Model/Auth.php){:target="_blank"}:
 
 ```php
+<?php
 namespace My\Module\Plugin;
 
 class AuthLogger
@@ -130,7 +132,7 @@ class AuthLogger
 
 After methods do not need to declare all the arguments of their observed methods except those that the method uses and any arguments from the observed method that come before those used arguments.
 
-The following example is a class with an after method for [`\Magento\Catalog\Model\Product\Action::updateWebsites($productIds, $websiteIds, $type)`]({{ site.mage2100url }}app/code/Magento/Catalog/Model/Product/Action.php){:target="_blank"}:
+The following example is a class with an after method for [`\Magento\Catalog\Model\Product\Action::updateWebsites($productIds, $websiteIds, $type)`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/Model/Product/Action.php){:target="_blank"}:
 
 ```php
 
@@ -173,6 +175,7 @@ If the around method does not call the `callable`, it will prevent the execution
 Below is an example of an around method adding behavior before and after an observed method:
 
 ```php
+<?php
 namespace My\Module\Plugin;
 
 class ProductAttributesUpdater
@@ -200,6 +203,7 @@ When you wrap a method which accepts arguments, your plugin must also accept tho
 For example, the following code defines a parameter of type <code>SomeType</code> which is nullable:
 
 ```php
+<?php
 namespace My\Module\Model;
 
 class MyUtility
@@ -214,6 +218,7 @@ class MyUtility
 You should wrap this method with a plugin like below:
 
 ```php
+<?php
 namespace My\Module\Plugin;
 
 class MyUtilityUpdater
@@ -225,11 +230,12 @@ class MyUtilityUpdater
 }
 ```
 
-Note if you miss <code>= null</code> and Magento calls the original method with <code>null</code>, {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} would throw a fatal error as your plugin does not accept <code>null</code>.
+Note if you miss <code>= null</code> and Magento calls the original method with <code>null</code>, [PHP](https://glossary.magento.com/php) would throw a fatal error as your plugin does not accept <code>null</code>.
 
 You are responsible for forwarding the arguments from the plugin to the <code>proceed</code> callable. If you are not using/modifying the arguments, you could use variadics and argument unpacking to achieve this:
 
 ```php
+<?php
 namespace My\Module\Plugin;
 
 class MyUtilityUpdater
@@ -296,7 +302,7 @@ Classes and interfaces that are implementations of or inherit from classes that 
 
 Magento uses plugins defined in the global scope when the system is in a specific area (i.e. frontend, backend, etc). You can also extend or override these global plugin configuration via an area's `di.xml`.
 
-For example, the developer can disable a global plugin in the {% glossarytooltip 74d6d228-34bd-4475-a6f8-0c0f4d6d0d61 %}backend{% endglossarytooltip %} area by disabling it in the specific `di.xml` file for the backend area.
+For example, the developer can disable a global plugin in the [backend](https://glossary.magento.com/backend) area by disabling it in the specific `di.xml` file for the backend area.
 
 ### Related topics
 

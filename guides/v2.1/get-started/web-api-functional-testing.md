@@ -10,7 +10,7 @@ menu_node: parent
 ## Web API functional testing
 {:.no_toc}
 
-The Web {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} testing framework allows you to test Magento {% glossarytooltip 377dc0a3-b8a7-4dfa-808e-2de37e4c0029 %}Web API{% endglossarytooltip %} from the client application point of view. The tests can be used with either REST or SOAP. The REST or SOAP {% glossarytooltip edb42858-1ff8-41f9-80a6-edf0d86d7e10 %}adapter{% endglossarytooltip %} that runs the tests is specified in PHPUnit configuration. See [How to Run the Tests](#howto) for more information.
+The Web [API](https://glossary.magento.com/api) testing framework allows you to test Magento [Web API](https://glossary.magento.com/web-api) from the client application point of view. The tests can be used with either REST or SOAP. The REST or SOAP [adapter](https://glossary.magento.com/adapter) that runs the tests is specified in PHPUnit configuration. See [How to Run the Tests](#howto) for more information.
 
 ## Implementation Details {#details}
 
@@ -33,7 +33,7 @@ To keep your test environment clean, clear all entities created in fixture files
 
 All Web API functional tests should inherit from the generic test case `Magento\TestFramework\TestCase\WebapiAbstract`. It defines the `_webApiCall()` method, which should be used to perform Web API calls from tests. Clients of `_webApiCall()` are unaware of which adapter will be used to perform the remote call.
 
-{% highlight php inline=true %}
+```php
 namespace Magento\Webapi\Routing;
 
 class CoreRoutingTest extends \Magento\TestFramework\TestCase\WebapiAbstract
@@ -56,11 +56,11 @@ class CoreRoutingTest extends \Magento\TestFramework\TestCase\WebapiAbstract
         $this->assertEquals('testProduct1', $item['name'], "Item was retrieved unsuccessfully");
     }
 }
-{% endhighlight %}
+```
 
 The test above should be able to test SOAP and REST, depending on what adapter is currently used by the testing framework. The format of `$serviceInfo` is defined by the Web API client adapter interface:
 
-{% highlight php inline=true %}
+```php
 namespace Magento\TestFramework\TestCase\Webapi;
 
 interface AdapterInterface
@@ -90,18 +90,18 @@ interface AdapterInterface
      */
     public function call($serviceInfo, $arguments = [], $storeCode = null, $integration = null);
 }
-{% endhighlight %}
+```
 
 ## How to Run the Tests {#howto}
 ### Prerequisites {#prereq}
 
-1. Install the {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} Soap {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %}.
+1. Install the [PHP](https://glossary.magento.com/php) Soap [extension](https://glossary.magento.com/extension).
 
 	Copy `php_soap.dll` or `php_soap.so` to your PHP extensions directory. Edit your `php.ini` file and enable the PHP Soap extension. Usually this means deleting the leading semi-colon in front of the extension. Then restart Apache.
 
 	`extension=php_soap.dll`
 
-2. Before running the functional tests you need to clear your {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %}.
+2. Before running the functional tests you need to clear your [cache](https://glossary.magento.com/cache).
 Now you are ready to run the tests.
 
 ### Running the Tests {#running}

@@ -3,8 +3,6 @@ group: rest-api
 title: Manage prices for multiple products
 functional_areas:
   - Integration
-redirect_from: /guides/v2.2/rest/catalog-pricing.html
-
 ---
 
 Magento provides REST endpoints that allow you to update multiple special prices, tier prices, base prices, or cost values with a single call.
@@ -60,7 +58,7 @@ You can set multiple special prices in a single call, as shown in the example be
 
 **Payload**
 
-``` json
+```json
 {
   "prices": [
     {
@@ -103,7 +101,7 @@ The following call returns the special price information for three SKU values.
 
 **Payload**
 
-``` json
+```json
 {
   "skus": [
     "24-WB06",
@@ -115,7 +113,7 @@ The following call returns the special price information for three SKU values.
 
 **Response**
 
-``` json
+```json
 [
     {
         "price": 29.949999999999999,
@@ -151,7 +149,7 @@ If any item to be deleted has an invalid `price`, `store_id`, `sku` or date, Mag
 
 **Payload**
 
-``` json
+```json
 {
   "prices": [
     {
@@ -232,7 +230,7 @@ The `POST /V1/products/tier-prices` call adds new tier prices or updates existin
 
 **Payload**
 
-``` json
+```json
 
 {
   "prices": [
@@ -280,7 +278,7 @@ The following example removes the $10 tier price for `sku` 24-UG04 and changes t
 
 **Payload**
 
-``` json
+```json
 {
   "prices": [
     {
@@ -317,7 +315,7 @@ Magento returns all active tier prices for the specified list of `skus`.
 
 **Payload**
 
-``` json
+```json
 {
   "skus": [
     "24-UG04",
@@ -328,7 +326,7 @@ Magento returns all active tier prices for the specified list of `skus`.
 
 **Response**
 
-``` json
+```json
 [
     {
         "price": 8,
@@ -375,7 +373,7 @@ You must specify each tier price that is to be deleted. You can delete multiple 
 
 **Payload**
 
-``` json
+```json
 {
   "prices": [
     {
@@ -435,7 +433,7 @@ The following example sets the base price for a simple and a downloadable produc
 
 **Payload**
 
-``` json
+```json
 {
   "prices": [
   {
@@ -465,7 +463,7 @@ The following example returns the base prices for a simple and a downloadable pr
 `POST <host>/rest/<store_code>/V1/products/base-prices-information`
 
 **Payload**
-``` json
+```json
 {
   "skus": [
     "24-UG04",
@@ -476,7 +474,7 @@ The following example returns the base prices for a simple and a downloadable pr
 
 **Response**
 
-``` json
+```json
 [
   {
     "price": 12,
@@ -529,7 +527,7 @@ The following example sets the cost value for a simple and a downloadable produc
 
 **Payload**
 
-``` json
+```json
 {
   "prices": [
     {
@@ -559,7 +557,7 @@ The following example returns the cost values for a simple and a downloadable pr
 `POST <host>/rest/<store_code>/V1/products/cost-information`
 
 **Payload**
-``` json
+```json
 {
   "skus": [
     "24-WB03",
@@ -570,7 +568,7 @@ The following example returns the cost values for a simple and a downloadable pr
 
 **Response**
 
-``` json
+```json
 [
   {
     "cost": 18,
@@ -594,7 +592,7 @@ The following example deletes the previously-defined cost values for a simple an
 `POST <host>/rest/<store_code>/V1/products/cost-delete`
 
 **Payload**
-``` json
+```json
 {
   "skus": [
     "24-WB03",

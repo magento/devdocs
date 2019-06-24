@@ -103,6 +103,9 @@ bin/magento setup:install \
 --use-rewrites=1
 ```
 
+{: .bs-callout .bs-callout-info }
+For `--backend-frontname` we recommend a random URI for security purposes. A random URI is harder for hackers or malicious software to exploit.
+
 {:.bs-callout .bs-callout-tip}
 For a full description of the CLI install options, refer to [Install the Magento software from the command line]({{page.baseurl}}/install-gde/install/cli/install-cli-install.html#instgde-install-cli-magento).
 

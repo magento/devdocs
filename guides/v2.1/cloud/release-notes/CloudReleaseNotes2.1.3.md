@@ -7,8 +7,6 @@ menu_order: 385
 menu_node:
 level3_menu_node: level3child
 level3_subgroup: mccloud-relnotes
-redirect_from:
-  - /guides/v2.2/cloud/release-notes/CloudReleaseNotes2.1.3.html
 functional_areas:
   - Cloud
 ---
@@ -198,5 +196,5 @@ Note the following issue in this release:
 * The `magento setup:install` command (used for deployment) succeeds in either a staging or production system if a Magento database already exists.
 
 ### {{site.data.var.ee}} Release Notes
-* [{{site.data.var.ee}} 2.0.11 Release Notes]({{ site.gdeurl }}release-notes/ReleaseNotes2.0.11EE.html)
+
 * [{{site.data.var.ee}} 2.1.3 Release Notes]({{ site.gdeurl21 }}release-notes/ReleaseNotes2.1.3EE.html)

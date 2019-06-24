@@ -52,7 +52,7 @@ pages:
         - label: SSH and sFTP
           url: /cloud/env/environments-ssh.html
 
-        - label: New Relic APM
+        - label: New Relic
           url: /cloud/project/new-relic.html
 
         - label: Blackfire.io
@@ -65,19 +65,6 @@ pages:
     - label: Local development setup
       url: /cloud/setup/first-time-setup.html
       children:
-        - label: Docker development
-          url: /cloud/docker/docker-development.html
-          exclude_versions: ["2.0"]
-          children:
-            - label: Launch Docker
-              url: /cloud/docker/docker-config.html
-
-            - label: Configure Xdebug for Docker
-              url: /cloud/docker/docker-development-debug.html
-
-            - label: Docker quick reference
-              url: /cloud/docker/docker-quick-reference.html
-
         - label: Prepare for manual setup
           url: /cloud/before/before-workspace.html
           children:
@@ -99,11 +86,27 @@ pages:
             - label: First time deployment
               url: /cloud/setup/first-time-deploy.html
 
+        - label: Optional - Configure Xdebug
+          url: /cloud/howtos/debug.html
+
         - label: Optional - Install sample data
           url: /cloud/howtos/sample-data.html
 
-        - label: Optional - Configure Xdebug
-          url: /cloud/howtos/debug.html
+    - label: Docker development
+      url: /cloud/docker/docker-development.html
+      exclude_versions: ["2.0"]
+      children:
+        - label: Launch Docker
+          url: /cloud/docker/docker-config.html
+
+        - label: Configure Xdebug for Docker
+          url: /cloud/docker/docker-development-debug.html
+
+        - label: Connect to the database
+          url: /cloud/docker/docker-database.html
+
+        - label: Docker quick reference
+          url: /cloud/docker/docker-quick-reference.html
 
     - label: Integrations
       url: /cloud/integrations/cloud-integrations.html

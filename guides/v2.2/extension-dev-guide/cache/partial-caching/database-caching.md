@@ -2,11 +2,9 @@
 group: php-developer-guide
 title: Create custom cache engines
 redirect_from:
-  -  /guides/v2.0/config-guide/database/database.html
   -  /guides/v2.1/config-guide/database/database.html
   -  /guides/v2.2/config-guide/database/database.html
   -  /guides/v2.3/config-guide/database/database.html
-  -  /guides/v2.0/config-guide/cache/caching-database.html
   -  /guides/v2.1/config-guide/cache/caching-database.html
   -  /guides/v2.2/config-guide/cache/caching-database.html
   -  /guides/v2.3/config-guide/cache/caching-database.html
@@ -19,7 +17,7 @@ This topic discusses how to use the Magento 2 database for caching. After you co
 This topic discusses how to set up database caching and how to verify database caching is working. We discuss the following options:
 
 *	Using the `default` cache frontend, in which case you modify `di.xml` only.
-*	Using a custom {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %} frontend, in which case you modify `env.php` only.
+*	Using a custom [cache](https://glossary.magento.com/cache) frontend, in which case you modify `env.php` only.
 
 {:.bs-callout .bs-callout-warning}
 Database caching&mdash;like file-based caching&mdash; works well in a development environment but we _strongly recommend_ you use [Varnish] in production instead.
@@ -27,20 +25,20 @@ Varnish is designed to accelerate the HTTP protocol.
 
 ## Prerequisites {#mage-cache-db-prereq}
 
-Before you continue, if you're using your own frontend cache, make sure you [associate cache frontends with cache types]. If you're using the `default` {% glossarytooltip b00459e5-a793-44dd-98d5-852ab33fc344 %}frontend{% endglossarytooltip %} cache, you don't have to do that.
+Before you continue, if you're using your own frontend cache, make sure you [associate cache frontends with cache types]. If you're using the `default` [frontend](https://glossary.magento.com/frontend) cache, you don't have to do that.
 
 We provide [sample configurations] at the end of this topic.
 
 ## Database caching using the `default` cache frontend {#mage-cache-db-di}
 
-To enable database caching using the `default` frontend, you must modify `<your Magento install dir>/app/etc/di.xml`, which is the global deployment injection configuration for the Magento application.
+To enable database caching using the `default` frontend, you must modify `<magento_root>/app/etc/di.xml`, which is the global deployment injection configuration for the Magento application.
 
 To modify `di.xml`:
 
 1.	Log in to the Magento server as, or switch to, the [Magento file system owner].
 2.	Enter the following commands to make a copy of `di.xml`:
 
-		cd <your Magento install dir>/app/etc
+		cd <magento_root>/app/etc
 		cp di.xml di.xml.bak
 
 3.	Open `di.xml` in a text editor and locate the following block:
@@ -100,17 +98,17 @@ To modify `di.xml`:
 
 ## Database caching using a custom cache frontend {#mage-cache-db-env}
 
-This section discusses how to set up database caching with a custom {% glossarytooltip ca5ad9ac-9d39-45b5-80b1-e90d192f20d0 %}cache frontend{% endglossarytooltip %}.
+This section discusses how to set up database caching with a custom [cache frontend](https://glossary.magento.com/cache-frontend).
 
 {:.bs-callout .bs-callout-info #info}
 Due to a known issue, a custom cache frontend still results in some objects being cached to the file system; however, fewer assets are cached compared to file system caching.
 
-To enable database caching using a custom cache frontend, you must modify `<your Magento install dir>/app/etc/env.php` as follows:
+To enable database caching using a custom cache frontend, you must modify `<magento_root>/app/etc/env.php` as follows:
 
 1.	Log in to the Magento server as, or switch to, the [Magento file system owner].
 2.	Enter the following commands to make a copy of `env.php`:
 
-		cd <your Magento install dir>/app/etc
+		cd <magento_root>/app/etc
 		cp env.php env.php.bak
 
 3.	Open `env.php` in a text editor and add the following anywhere, such as before `'cache_types' =>`:
@@ -148,16 +146,16 @@ Use the following steps:
 2.	Clear the current cache directories:
 
     ```bash
-		rm -rf <your Magento install dir>/var/cache/* <your Magento install dir>/var/page_cache/* <your Magento install dir>/generated/metadata/* <your Magento install dir>/generated/code/*
+		rm -rf <magento_root>/var/cache/* <magento_root>/var/page_cache/* <magento_root>/generated/metadata/* <magento_root>/generated/code/*
     ```
 
-3.	In a web browser, go to any cacheable page (such as the {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} front door page).
+3.	In a web browser, go to any cacheable page (such as the [storefront](https://glossary.magento.com/storefront) front door page).
 
 	If exceptions display, verify `di.xml` syntax and try again. (To see exceptions in the browser, you must [enable developer mode].)
 4.	Enter the following commands:
 
-		ls <your Magento install dir>/var/cache/*
-		ls <your Magento install dir>/var/page_cache/*
+		ls <magento_root>/var/cache/*
+		ls <magento_root>/var/page_cache/*
 
     {:.bs-callout .bs-callout-info #info}
     Due to a known issue, a custom cache frontend still results in some objects being cached to the file system; however, fewer assets are cached compared to file system caching.
@@ -184,7 +182,7 @@ This section contains code sample snippets to refer to when configuring database
 
 `di.xml` snippet:
 
-``` xml
+```xml
 <type name="Magento\Framework\App\Cache\Frontend\Pool">
     <arguments>
         <argument name="frontendSettings" xsi:type="array">
@@ -209,7 +207,7 @@ This section contains code sample snippets to refer to when configuring database
 ### Sample `env.php` for a custom cache frontend {#mage-cache-db-config-custom}
 `env.php` snippet that enables all cache types with a custom frontend named `magento_cache`:
 
-{% highlight php startinline=true %}
+```php
  'cache' => [
      'frontend' => [
         'magento_cache' => [
@@ -258,7 +256,7 @@ This section contains code sample snippets to refer to when configuring database
           ],
       ],
   ],
-{% endhighlight %}
+```
 
 <!-- Link references -->
 [Varnish]: {{ page.baseurl }}/config-guide/varnish/config-varnish.html

@@ -9,12 +9,12 @@ The following properties are used for linking observable properties and methods 
 
 - `exports`
 - `imports`
-- `links` 
+- `links`
 - `listens`
 
 These properties are processed by the `initLinks()` method of the [`uiElement` class]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uielement_concept.html) which is called at the moment of a component's instantiation.
 
-Linking properties are set in [UI components configuration files]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_config_flow_concept.html): XML, JS or {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %}. 
+Linking properties are set in [UI components configuration files]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_config_flow_concept.html): XML, JS or [PHP](https://glossary.magento.com/php). 
 
 ## List of linking properties 
 
@@ -50,7 +50,7 @@ Example of setting `exports` in a component's configuration `.xml` file:
 </argument>
 ```
 
-For an example of `exports` usage in Magento code see [`product_form.xml`, line 81]({{ site.mage2100url }}app/code/Magento/CatalogInventory/view/adminhtml/ui_component/product_form.xml#L81)
+For an example of `exports` usage in Magento code see [`product_form.xml`, line 81]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/CatalogInventory/view/adminhtml/ui_component/product_form.xml#L81)
 
 ### `imports`
 
@@ -83,7 +83,7 @@ Example of using `imports` in a component's configuration `.xml` file:
 </argument>
 ```
 
-For an example of `imports` usage in Magento code see [`product_form.xml`, line 103]({{ site.mage2100url }}app/code/Magento/CatalogInventory/view/adminhtml/ui_component/product_form.xml#L103)
+For an example of `imports` usage in Magento code see [`product_form.xml`, line 103]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/CatalogInventory/view/adminhtml/ui_component/product_form.xml#L103)
 
 ### `links`
 
@@ -116,14 +116,14 @@ Example of using `links` in a component's configuration `.xml` file:
 </argument>
 ```
 
-For an example of `links` usage in Magento code see [`text.js`, line 19]({{ site.mage2100url }}app/code/Magento/Ui/view/base/web/js/form/element/text.js#L19)
+For an example of `links` usage in Magento code see [`text.js`, line 19]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/form/element/text.js#L19)
 
 ### `listens`
 
 The `listens` property is used to track the changes of a component's property. `listens`'s value is an object, composed of the following:
 
-  - `key`: name of the observable property or method which is tracked for changes. Can use [string templates](#string_templ).
-  - `value`: name of the internal method or property which listens to the changes.
+- `key`: name of the observable property or method which is tracked for changes. Can use [string templates](#string_templ).
+- `value`: name of the internal method or property which listens to the changes.
 
 Example of using `listens` in a component's `.js` file :
 
@@ -138,7 +138,6 @@ Example of using `listens` in a component's `.js` file :
 Here the local `visibilityChanged` property is a method that will be called when the `visibility` property of the `provider` component changes. It receives the new value as an argument. If the local property is not a function, it will be set to the new value.
 The external property has to be an observable in order for `listens` to have any effect.
 
-
 Example of using `listens` in a component's configuration `.xml` file:
 
 ```xml
@@ -151,7 +150,7 @@ Example of using `listens` in a component's configuration `.xml` file:
 </argument>
 ```
 
-For example of `listens` usage in Magento code see [`new_category_form.xml`, line 92]({{ site.mage2100url }}app/code/Magento/Catalog/view/adminhtml/ui_component/new_category_form.xml#L92)
+For example of `listens` usage in Magento code see [`new_category_form.xml`, line 92]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/view/adminhtml/ui_component/new_category_form.xml#L92)
 
 ## Template strings usage {#string_templ}
 
@@ -159,29 +158,30 @@ The options of linking properties can contain template strings in the `'${...}'`
 
 So if we put a variable name in `'${...}'`, it is processed into a string representation of the variable’s value.
 
-When working with UI components, we often need to use the string representation of a certain property of the {% glossarytooltip 9bcc648c-bd08-4feb-906d-1e24c4f2f422 %}UI component{% endglossarytooltip %}. To address a property of the UI component in the scope of this component, the `$.someProperty` syntax is used.
+When working with UI components, we often need to use the string representation of a certain property of the [UI component](https://glossary.magento.com/ui-component). To address a property of the UI component in the scope of this component, the `$.someProperty` syntax is used.
 
 As a result, if the component's property is the variable for the template string, we get notation similar to the following:
 
-    '${ $.provider }:foo' 
-    
+    '${ $.provider }:foo'
+
 If the string would be built at runtime it would be equivalent to `this.provider + ':foo'`.
 
 We can also build complex templates strings using this syntax, as follows:
 
 - Using variables from the other component:
 
-    ``` 
-    '${ $.provider }:${ $.dataScope }' // 'provider' is the full name of the other component
-    ```
+```javascript
+'${ $.provider }:${ $.dataScope }' // 'provider' is the full name of the other component
+```
+
 - Calling several functions in one string: 
 
-    ```
-    '${ $.provider }:data.overload': 'overload reset validate'// we call 'overload', 'reset', 'validate'
-    ```
+```javascript
+'${ $.provider }:data.overload': 'overload reset validate'// we call 'overload', 'reset', 'validate'
+```
 
 - Using inline conditions:
 
-    ```
-    '${ $.provider }:${ $.customScope ? $.customScope + "." : ""}data.validate': 'validate'
-    ``` 
+```javascript
+'${ $.provider }:${ $.customScope ? $.customScope + "." : ""}data.validate': 'validate'
+```

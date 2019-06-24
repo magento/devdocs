@@ -78,7 +78,7 @@ Configuration of an XML.
 |Attribute|Description|Constant value|Use|
 |---|---|---|---|
 |`xmlns:xsi`|Default namespace declaration|`"http://www.w3.org/2001/XMLSchema-instance"`|Required|
-|`xsi:noNamespaceSchemaLocation`|An XML Schema document that does not have a target namespace|`"urn:magento:module:Magento_Analytics:etc/reports.xsd"`|Required|
+|`xsi:noNamespaceSchemaLocation`|An XML Schema document that does not have a target namespace|`"urn:magento:module:Magento_Analytics:etc/analytics.xsd"`|Required|
 
 ### `<file>`
 

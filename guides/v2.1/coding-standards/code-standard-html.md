@@ -9,7 +9,7 @@ functional_areas:
   - Standards
 ---
 
-This style guide defines Magento internal requirements for {% glossarytooltip a2aff425-07dd-4bd6-9671-29b7edefa871 %}HTML{% endglossarytooltip %} code style for teams that develop Less and {% glossarytooltip 6c5cb4e9-9197-46f2-ba79-6147d9bfe66d %}CSS{% endglossarytooltip %} code. We recommend that developers who create Magento extensions and customizations also use these standards.
+This style guide defines Magento internal requirements for [HTML](https://glossary.magento.com/html) code style for teams that develop Less and [CSS](https://glossary.magento.com/css) code. We recommend that developers who create Magento extensions and customizations also use these standards.
 
 The guide is based on the [Google HTML/CSS Style Guide](https://google.github.io/styleguide/htmlcssguide.xml) with certain modifications that are described further.
 
@@ -22,12 +22,12 @@ Use only spaces for indentation:
 * Continuation indent: 4 spaces
 
 **Recommended**
-{%highlight html%}
+```html
 <ul>
     <li>One</li>
     <li>Two</li>
 </ul>
-{%endhighlight%}
+```
 
 ## End of file
 
@@ -38,30 +38,30 @@ Add a blank line at the end of file.
 Always close self-closing tags.
 
 **Inappropriate**
-{%highlight html%}
+```html
 <br>
 <img src="image.png" alt="image">
 <input type="text" name="username">
-{%endhighlight%}
+```
 
 **Recommended**
-{%highlight html%}
+```html
 <br />
 <img src="image.png" alt="image" />
 <input type="text" name="username" />
-{%endhighlight%}
+```
 
 ## Line length
 
 Avoid code lines longer than 120 characters. When using an editor, it is inconvenient to scroll right and left to read the HTML code. Align tag attributes one under another to increase code readability.
 
 **Inappropriate**
-{%highlight html%}
+```html
 <input data-bind="attr: { id: 'cart-item-'+item_id+'-qty', 'data-cart-item': item_id, 'data-item-qty': qty }, value: qty" type="number" size="4" class="item-qty cart-item-qty" maxlength="12"/>
-{%endhighlight%}
+```
 
 **Recommended**
-{%highlight html%}
+```html
 <input data-bind="attr: {
        id: 'cart-item-'+item_id+'-qty',
        'data-cart-item': item_id,
@@ -71,36 +71,36 @@ Avoid code lines longer than 120 characters. When using an editor, it is inconve
        size="4"
        class="item-qty cart-item-qty"
        maxlength="12"/>
-{%endhighlight%}
+```
 
 ## Spaces around equals sign ("=")
 
 Spaces around equals sign ("=") are acceptable, but not recommended. The code without spaces is easier to read.
 
 **Not recommended**
-{%highlight html%}
+```html
 <link rel = "stylesheet" href = "styles.css">
-{%endhighlight%}
+```
 
 **Recommended**
-{%highlight html%}
+```html
 <link rel="stylesheet" href="styles.css">
-{%endhighlight%}
+```
 
 ## Spaces and colon in attributes
 
 Use no space before the colon and one space after the colon for the sake of readability.
 
 **Not recommended**
-{%highlight html%}
+```html
 <span data-bind="i18n : 'Update'"></span>
 <span data-bind="i18n:'Update'"></span>
-{%endhighlight%}
+```
 
 **Recommended**
-{%highlight html%}
+```html
 <span data-bind="i18n: 'Update'"></span>
-{%endhighlight%}
+```
 
 ## Block-level elements
 
@@ -113,15 +113,15 @@ Use appropriate HTML5 elements for blocks. The following diagram shows how to de
 Use semantic class names and IDs. Avoid presentational class names.
 
 **Inappropriate**
-{%highlight html%}
+```html
 <button type="submit" class="button-green">Submit</button>
-{%endhighlight%}
+```
 
 **Recommended**
-{%highlight html%}
+```html
 
 <button type="submit" class="action-primary">Submit</button>
-{%endhighlight%}
+```
 
 ## Accessibility
 
