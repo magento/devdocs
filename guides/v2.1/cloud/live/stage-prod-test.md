@@ -212,7 +212,7 @@ We recommend that you review the [Magento Performance Toolkit]({{ site.mage2blob
 
 For best results, we recommend the following tools:
 
-* [Magento application performance test]({{ page.baseurl }}/cloud/env/variables-post-deploy#ttfb_tested_pages)—Test Magento application performance by configuring the TTFB_TESTED_PAGES envrionment variable to test site response time.
+* [Magento application performance test]({{ page.baseurl }}/cloud/env/variables-post-deploy.html#ttfb_tested_pages)—Test Magento application performance by configuring the TTFB_TESTED_PAGES envrionment variable to test site response time.
 * [Siege](https://www.joedog.org/siege-home/)—Traffic shaping and testing software to push your store to the limit. Hit your site with a configurable number of simulated clients. Siege supports basic authentication, cookies, HTTP, HTTPS and FTP protocols.
 * [Jmeter](http://jmeter.apache.org/)—Excellent load testing to help gauge performance for spiked traffic, like for flash sales. Create custom tests to run against your site.
 * New Relic (provided): Helps locate processes and areas of the site causing slow performance with tracked time spent per action like transmitting data, queries, Redis, and so on.
