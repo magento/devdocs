@@ -110,6 +110,18 @@ To change or override any of these variables, simply create a file in `<theme-di
 @navigation__background: @secondary__color__light; 
 @font-family__sans-serif: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 ```
+## Port issue using grunt tool
+
+While working on theme development with grunt tool sometime we are getting such error "Port 35729 is already in use by another process" to resolve this configured following setting from `magento/dev/tools/grunt/configs/watch.js`. 
+
+    ```javascript
+        'reload': {
+            'files': '<%= path.pub %>/**/*.css',
+            'options': {
+                livereload: false
+            }
+        }
+    ```
 
 [inherits]: {{page.baseurl}}/frontend-dev-guide/themes/theme-inherit.html
 [LiveReload extension]: http://livereload.com/extensions/
