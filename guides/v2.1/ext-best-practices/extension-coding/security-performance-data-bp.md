@@ -52,9 +52,10 @@ For a list of discouraged low-level functions, review the [`Magento2/Sniffs/Func
 ### Always encrypt sensitive data or configurations
   Never store sensitive information in clear text within a resource that might be accessible to another control sphere. This type of information should be encrypted or otherwise protected.
 
-### Avoid running unneeded logic
+### Avoid unnecessary logic execution
 
-  Make sure that you never run some code that it won't be used in the next step. <br><br>
+  Make sure that you never run some code that it won't be used in the next step.
+  
   Check the below example where we always get the `customerId` and `storeId`, but we're not always going to use them.
 
 #### Example
