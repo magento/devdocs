@@ -35,9 +35,9 @@ Follow these steps to download and apply this patch:
 
 ### Merchant tool enhancements
 
-* **Inventory Management (provided by [Multi Source Inventory (MSI)](https://github.com/magento-engcom/msi))** is now available with Magento 2.3.0. It lets merchants manage inventory for all product types in a single warehouse and across complex shipping networks. Merchants can manage these locations as sources, tracking on-hand inventory quantities per product. Stocks map these sources and sales channels (websites) to provide an accurate, salable quantity as inventory pools for concurrent checkout and product reservations. Inventory Management also updates order and shipment options, giving you full control over your stock. 
+* **Inventory Management (provided by [Magento Inventory (was MSI)](https://github.com/magento/inventory))** is now available with Magento 2.3.0. It lets merchants manage inventory for all product types in a single warehouse and across complex shipping networks. Merchants can manage these locations as sources, tracking on-hand inventory quantities per product. Stocks map these sources and sales channels (websites) to provide an accurate, salable quantity as inventory pools for concurrent checkout and product reservations. Inventory Management also updates order and shipment options, giving you full control over your stock. 
   	
-	MSI is a Magento Community Engineering special project open to contributors. To take part and contribute, see the [MSI GitHub](https://github.com/magento-engcom/msi) repository and [wiki](https://github.com/magento-engcom/msi/wiki) to get started. Join us in our [Slack](https://magentocommeng.slack.com/messages/C5FU5E2HY) channel (or [self signup](https://tinyurl.com/engcom-slack)) to discuss the project.
+	Magento Inventory is a Magento Community Engineering special project open to contributors. To take part and contribute, see the [Magento Inventory GitHub](https://github.com/magento/inventory) repository and [wiki](https://github.com/magento/inventory/wiki) to get started. Join us in our [Slack](https://magentocommeng.slack.com/messages/C5FU5E2HY) channel (or [self signup](https://tinyurl.com/engcom-slack)) to discuss the project.
    * [Inventory Management overview](https://devdocs.magento.com/guides/v2.3/inventory/index.html) for developer documentation 
    * [Managing Inventory](https://docs.magento.com/m2/ce/user_guide/catalog/inventory-management.html) for merchant information and instructions 
 
@@ -2248,7 +2248,7 @@ See [Magento Security Center](https://magento.com/security/patches/magento-2.2.7
 
 **Known issue:** Magento throws the following error when you try to use the API to create two products with the same name without specifying the URL key: `URL key for specified store already exists.`  However, when you try to create these products through the Admin, Magento does not throw an error, but instead appends a number to the converted URL key if two products have the same name.
 
-<!-- https://github.com/magento-engcom/msi/issues/1890  -->**Known issue:** For Inventory Management, ElasticSearch is  supported only in Single Source mode for the Default Source. It is not supported in Multi Source mode with custom sources.
+<!-- https://github.com/magento/inventory/issues/1890  -->**Known issue:** For Inventory Management, ElasticSearch is  supported only in Single Source mode for the Default Source. It is not supported in Multi Source mode with custom sources.
 
 
 **Known issue:** For Inventory Management, Single Source merchants may experience performance degradation with all products assigned to the Default Source and Default Stock. As a workaround for best performance, we recommend creating and assigning all products to one custom source and stock. This will affect bundled products support. To continue with bundled products, continue using Default Source and Stock in Single Source mode. We plan to have a resolution and bundled product multi-sourcing support in a later release. This does not affect Multi Source merchants. For details, see [Inventory Management](https://docs.magento.com/m2/ce/user_guide/catalog/inventory-management.html).

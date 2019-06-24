@@ -56,7 +56,7 @@ extension:
           2.3.1: not supported
           2.3.2: not supported
   -
-    name: Multi Source Inventory
+    name: Magento Inventory
     versions:
       -
         name: 1.1.2
