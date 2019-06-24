@@ -3,7 +3,7 @@ group: graphql
 title: Wishlist endpoint
 ---
 
-The Wishlist endpoint defines the contents of a customer's wish list.
+The Wishlist endpoint defines the contents of a customer's wish list. [Get customer authorization token]({{page.baseurl}}/graphql/get-customer-authorization-token.html) describes how to supply an authorization token for a specific customer.
 
 ## Query
 Use Wishlist queries to retrieve information about a customer's wish list. 
