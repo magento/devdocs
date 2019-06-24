@@ -68,7 +68,7 @@ $("#element").loader("show");
 
 Hide the loader.
 
-Invoke the show method:
+Invoke the hide method:
 
 ```javascript
 $("#element").loader("hide");
@@ -83,8 +83,20 @@ Loader is subscribed to the following events:
 ### `processStart` {#l_processStart}
 Display the loader. Can be triggered on any page element.
 
+Start show loading:
+
+```javascript
+$("body").trigger('processStart');
+```
+
 ### `processStop` {#l_processStop}
 Hide the loader. Can be triggered on any page element.
+
+Stop show loading:
+
+```javascript
+$("body").trigger('processStop');
+```
 
 [lib/web/mage/loader.js]: {{ site.mage2bloburl }}/{{ page.guide_version }}/lib/web/mage/loader.js
 [JavaScript initialization]: {{page.baseurl}}/javascript-dev-guide/javascript/js_init.html
