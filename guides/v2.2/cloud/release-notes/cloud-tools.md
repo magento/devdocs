@@ -19,6 +19,12 @@ The release notes include:
 
 ## v2002.0.20
 
+-   {:.new}**Docker Updates**—
+
+    -   {:.new}<!-- MAGECLOUD-3129/3684 -->You can now perform functional testing using the `{{site.data.var.ct}}` package in the Docker environment. See [Functional testing in Docker]({{page.baseurl}}/cloud/docker/docker-development-testing.html).
+    
+    -   {:.fix}<!-- MAGECLOUD-3582 -->Corrected the default path for Magento root when using the Docker environment. Previously, the Magento root was accessible in the `var/www/magento` directory. Now, the Magento root is in the `/app` directory, as expected.
+
 -   {:.new}**Environment variable updates**—
 
     -   {:.new}<!-- MAGECLOUD-2901 -->Added support for database table prefixes using the [DATABASE_CONFIGURATION environment variable]({{page.baseurl}}/cloud/env/variables-deploy.html#database_configuration).
@@ -37,7 +43,7 @@ The release notes include:
 
 -   {:.fix}<!-- MAGECLOUD-3075 -->Fixed an issue that caused a deployment failure if the Magento base URL did not exist in the database.
 
--   {:.new}<!-- MAGECLOUD-3451 -->Added a new command to the `{{site.data.var.ct}}` package that displays environment services, routes, or variables. See [Services, routes, and variable]({{page.baseurl}}/cloud/reference/ece-tools-reference.html#services-routes-and-variables). [Feature submitted by Vladimir Kerkhoff](https://github.com/magento/ece-tools/pull/486).
+-   {:.new}<!-- MAGECLOUD-3451 -->Added a new command to the `{{site.data.var.ct}}` package that displays environment services, routes, or variables. See [Services, routes, and variables]({{page.baseurl}}/cloud/reference/ece-tools-reference.html#services-routes-and-variables). [Feature submitted by Vladimir Kerkhoff](https://github.com/magento/ece-tools/pull/486).
 
 ## v2002.0.19
 
