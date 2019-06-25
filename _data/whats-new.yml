@@ -4,8 +4,20 @@ description: |
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: /whats-new.html
 thread: /whatsnew-feed.xml
-updated: Mon Jun 17 11:55:49 2019
+updated: Mon Jun 24 10:57:15 2019
 entries:
+- description: Completed the reference list and added a 'Code sample' section to the
+    [Prompt Widget](https://devdocs.magento.com/guides/v2.3/javascript-dev-guide/widgets/widget_prompt.html)
+    topic.
+  versions: 2.2.x, 2.3.x
+  type: Major update
+  date: June 19, 2019
+  link: https://github.com/magento/devdocs/pull/4782
+- description: Added a new topic for the [Redirect Widget](https://devdocs.magento.com/guides/v2.3/javascript-dev-guide/widgets/widget_redirectUrl.html).
+  versions: 2.1.x, 2.3.x, 2.x
+  type: New topic
+  date: June 18, 2019
+  link: https://github.com/magento/devdocs/pull/4771
 - description: Added the [Data Provider Annotation](https://devdocs.magento.com/guides/v2.3/test/unit/annotations/data-provider.html)
     topic to the PHP Unit Testing guide.
   versions: 2.1.x, 2.2.x, 2.3.x
