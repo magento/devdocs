@@ -23,23 +23,12 @@ The **10-step tutorial** generally takes **30 minutes**.
 
 The checkout process in GraphQl consists of 10 steps. Magento GraphQL is designed to run queries and perform actions on behalf of a customer. Magento GraphQL does not perform backend tasks, such as manage invoices or shipments.
 
-[Create a customer]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-customer.html) (create customer, use a registered customer account or place order as guest)
-[Create an empty cart]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-shopping-cart.html)
-[Add product to cart]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-add-product-to-cart.html)
-[Set the shipping address]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-shipping-address.html)
-[Set billing address]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-billing-address.html)
-[Set the shipping method]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-shipping-method.html)
-[Set the payment method]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-payment-method.html)
-[Apply a coupon]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-coupon.html)
-[Set email on the cart (guest customers only)]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-quote-email.html)
-[Place order]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-place-order.html)
-
 ### Before you begin
 {:.tutorial-before}
 
 Complete the following prerequisites:
 
-* Install a Magento 2.3 (or later) instance with sample data.
+* Install a Magento 2.3.2 instance with sample data.
 
   The sample data defines a functional store, called Luma, that sells fitness clothing and accessories. The store does not provide any sandbox accounts for testing credit card payments, so transactions will be simulated using an offline {% glossarytooltip 422b0fa8-b181-4c7c-93a2-c553abb34efd %}payment method{% endglossarytooltip %}.
 
