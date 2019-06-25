@@ -18,7 +18,7 @@ See [Magento Security Center](https://magento.com/security/patches/magento-2.2.6
 
 ## Highlights
 
-Magento 2.1.15 conrtains 25 security fixes and enhancements.  See [Magento Security Center](https://magento.com/security/patches/magento-2.2.6-and-2.1.15-security-update) for more information.
+Magento 2.1.15 contains 25 security fixes and enhancements.  See [Magento Security Center](https://magento.com/security/patches/magento-2.2.6-and-2.1.15-security-update) for more information.
 
 ## Fixed issues
 In addition to security enhancements, this release contains the following functional fixes. 

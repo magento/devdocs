@@ -5,11 +5,8 @@ title: Codebase changes
 menu_title: Codebase changes
 menu_order: 1300
 redirect_from:
-  - /guides/v2.0/architecture/back-compatibility.html
   - /guides/v2.1/architecture/back-compatibility.html	
-  - /guides/v2.0/extension-dev-guide/backward-compatibility.html
   - /guides/v2.1/extension-dev-guide/backward-compatibility.html	
-
 ---
 
 Every Magento version release include a change in the codebase.
@@ -18,7 +15,7 @@ The scope of the change determines whether the MAJOR, MINOR, or PATCH number inc
 ## Public vs private code changes
 
 A Magento module's codebase consists of public and private code.
-Public code includes Public {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %}(indicated by the `@api` docblock tag) and Public Customization Points.
+Public code includes Public [API](https://glossary.magento.com/api)(indicated by the `@api` docblock tag) and Public Customization Points.
 Private code is not accessible via the API: classes and constants marked as [private][].
 
 Changes in public code always trigger MINOR or MAJOR version increases.
@@ -37,7 +34,7 @@ Modifications that break the API will trigger an increase in a module's MAJOR ve
 Modules customize or replace Customization Points to customize existing application scenarios.
 Modifications that break Customization Points will trigger an increase in a module's MINOR version.
 
-An interface or a {% glossarytooltip 058b2be4-3247-4cb0-860d-6292ce75d1f0 %}virtual type{% endglossarytooltip %} represent either an API or Customization Point.
+An interface or a [virtual type](https://glossary.magento.com/virtual-type) represent either an API or Customization Point.
 
 This policy allows third-party module developers to declare more granular dependencies depending on their module's interaction with Magento modules.
 
@@ -73,6 +70,7 @@ Use this table to understand what changes Magento can make and which version num
 | | Interface removed| MAJOR|
 | | Method removed | MAJOR|
 | | New required method argument | MAJOR|
+| | New optional method argument | MAJOR|
 | | Removed the last argument for a method | MINOR|
 | | Changed a method signature (excluding last argument removal) | MAJOR|
 | | New method exception (excluding subtypes of existing exceptions) | MAJOR|
@@ -82,8 +80,10 @@ Use this table to understand what changes Magento can make and which version num
 | | Class removed| MAJOR|
 | | Method removed | MAJOR|
 | | New required method argument | MAJOR|
+| | New optional method argument | MINOR|
 | | Removed a non-last argument| MAJOR|
 | | New required constructor object argument | MINOR|
+| | New optional constructor argument | MINOR|
 | | New required constructor scalar argument (without pre-configured value)| MAJOR|
 | | Removed a non-last constructor argument| MAJOR|
 | | Removed a last constructor argument| PATCH|

@@ -12,7 +12,7 @@ Magento installs modules in the following order:
 
 ## Two types of dependencies {#m2devgde-moddep-declare-dep}
 
-There are two types of Magento {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} dependencies: hard and soft.
+There are two types of Magento [module](https://glossary.magento.com/module) dependencies: hard and soft.
 
 ### Hard dependencies
 
@@ -29,7 +29,7 @@ A module with a *soft dependency* on another module can function properly withou
 
 * Directly check another module's availability.
 * Extend another module's configuration.
-* Extend another module's {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %}.
+* Extend another module's [layout](https://glossary.magento.com/layout).
 
 {:.bs-callout .bs-callout-tip} 
 If a module uses code from another module, it should declare the dependency explicitly.
@@ -57,7 +57,7 @@ In this case, using interfaces is preferable to using classes. You can build dep
 
 A module belonging to the application layer cannot be used in the Magento Framework.
 
-You can build dependencies between classes in the application layer, but these classes must belong to the same module. Dependencies between the modules of the application layer should be built only by the {% glossarytooltip cdf644c4-bc99-4550-a954-dd5ae165785a %}service contract{% endglossarytooltip %} or the service provider interface (SPI).
+You can build dependencies between classes in the application layer, but these classes must belong to the same module. Dependencies between the modules of the application layer should be built only by the [service contract](https://glossary.magento.com/service-contract) or the service provider interface (SPI).
 
 ## Related topics {#m2arch-module-related}
 

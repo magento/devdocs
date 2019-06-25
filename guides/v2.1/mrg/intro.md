@@ -4,7 +4,7 @@ title: Introduction to Module Reference Guide
 landing-page: Module Reference Guide
 ---
 
-The {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}Module{% endglossarytooltip %} Reference Guide contains information about Magento modules of {{site.data.var.ce}}
+The [Module](https://glossary.magento.com/module) Reference Guide contains information about Magento modules of {{site.data.var.ce}}
  and {{site.data.var.ee}}.
 
 The information includes:

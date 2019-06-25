@@ -5,7 +5,7 @@ title: Hidden component
 menu_title: Hidden component
 ---
 
-The Hidden component is a form element that implements the {% glossarytooltip a2aff425-07dd-4bd6-9671-29b7edefa871 %}HTML{% endglossarytooltip %} `<input type="hidden">` field.
+The Hidden component is a form element that implements the [HTML](https://glossary.magento.com/html) `<input type="hidden">` field.
 
 ## Configuration options
 

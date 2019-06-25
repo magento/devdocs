@@ -5,7 +5,7 @@ title: File component
 menu_title: File component
 ---
 
-The File component implements the {% glossarytooltip a2aff425-07dd-4bd6-9671-29b7edefa871 %}HTML{% endglossarytooltip %} `<input type="file">` form field.
+The File component implements the [HTML](https://glossary.magento.com/html) `<input type="file">` form field.
 
 ## Configuration options
 

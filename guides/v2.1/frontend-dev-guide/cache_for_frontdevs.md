@@ -37,7 +37,7 @@ For more details about working with cache, see [Manage the cache]({{ page.baseur
 
 You can clean generated static view files in any of the following ways:
 
--   In the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %}. Go to **System** > **Tools** > **Cache Management** and click **Flush {% glossarytooltip 363662cb-73f1-4347-a15e-2d2adabeb0c2 %}Static Files{% endglossarytooltip %} Cache**.
+-   In the [Magento Admin](https://glossary.magento.com/magento-admin). Go to **System** > **Tools** > **Cache Management** and click **Flush [Static Files](https://glossary.magento.com/static-files) Cache**.
 
     {:.bs-callout .bs-callout-info}
     This option is only available in `developer` mode. Refer to the [static view files overview]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html#config-cli-static-overview) for more information.

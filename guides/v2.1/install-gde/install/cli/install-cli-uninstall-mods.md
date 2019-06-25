@@ -1,8 +1,6 @@
 ---
 group: installation-guide
 title: Uninstall modules
-redirect_from:
-  - /guides/v2.0/install-gde/install/install-cli-uninstall-mods.html
 functional_areas:
   - Install
   - System
@@ -20,7 +18,7 @@ This section discusses how to uninstall one or more modules. During uninstallati
 You should uninstall a module only if you're certain you won't use it. Instead of uninstalling a module, you can disable it as discussed in [Enable or disable modules]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-enable.html).
 
 {:.bs-callout .bs-callout-info}
-This command checks _only_ dependencies declared in the `composer.json` file. If you uninstall a {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} that is _not_ defined in the `composer.json` file, this command uninstalls the module without checking for dependencies. This command does _not_, however, remove the module's code from the Magento file system. You must use file system tools to remove the module's code (for example, `rm -rf <path to module>`). As an alternative, you can [disable]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-enable.html) non-Composer modules.
+This command checks _only_ dependencies declared in the `composer.json` file. If you uninstall a [module](https://glossary.magento.com/module) that is _not_ defined in the `composer.json` file, this command uninstalls the module without checking for dependencies. This command does _not_, however, remove the module's code from the Magento file system. You must use file system tools to remove the module's code (for example, `rm -rf <path to module>`). As an alternative, you can [disable]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-enable.html) non-Composer modules.
 
 ## First steps {#instgde-cli-before}
 {% include install/first-steps-cli.md %}
@@ -37,7 +35,7 @@ where `{ModuleName}` specifies the module name in `<VendorName>_<ModuleName>` fo
 
 The module uninstall command performs the following tasks:
 
-1.	Verifies that the specified modules exist in the code base and are packages installed by {% glossarytooltip d85e2d0a-221f-4d03-aa43-0cda9f50809e %}Composer{% endglossarytooltip %}.
+1.	Verifies that the specified modules exist in the code base and are packages installed by [Composer](https://glossary.magento.com/composer).
 
 	This command works *only* with modules defined as Composer packages.
 
@@ -66,7 +64,7 @@ The module uninstall command performs the following tasks:
 	{:.bs-callout .bs-callout-info}
   Uninstalling a module _always_ runs `composer remove`. The `--remove-data` option removes database data and schema defined by the module's `Uninstall` class.
 
-5.	Cleans the {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %}.
+5.	Cleans the [cache](https://glossary.magento.com/cache).
 6.	Updates generated classes.
 6.	If `--clear-static-content` is specified, cleans [generated static view files]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html#config-cli-static-overview).
 7.	Takes the store out of maintenance mode.
@@ -77,7 +75,7 @@ For example, if you attempt to uninstall a module that another module depends on
 		Cannot uninstall module 'Magento_SampleMinimal' because the following module(s) depend on it:
         Magento_SampleModifyContent
 
-One alternative is to uninstall both modules after backing up the Magento module file system, `pub/media` files, and database tables but *not* removing the module's {% glossarytooltip 66b924b4-8097-4aea-93d9-05a81e6cc00c %}database schema{% endglossarytooltip %} or data:
+One alternative is to uninstall both modules after backing up the Magento module file system, `pub/media` files, and database tables but *not* removing the module's [database schema](https://glossary.magento.com/database-schema) or data:
 
 	magento module:uninstall Magento_SampleMinimal Magento_SampleModifyContent --backup-code --backup-media --backup-db
 

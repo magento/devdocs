@@ -18,6 +18,8 @@ When the [@api] and [@deprecated] doc blocks tags are added to the code base, th
 
 {% include backward-incompatible-changes/open-source/2.3.1-2.3-develop.html %}
 
+### {{site.data.var.ee}} only changes
+
 {% include backward-incompatible-changes/commerce/2.3.1-2.3-develop.html %}
 
 ## 2.3.0 - 2.3.1

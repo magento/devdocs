@@ -7,7 +7,7 @@ functional_areas:
 
 You can upgrade Magento from the command line if you installed the software using any of the following:
 
-* Downloaded the {% glossarytooltip 7490850a-0654-4ce1-83ff-d88c1d7d07fa %}metapackage{% endglossarytooltip %} using `composer create-project`
+* Downloaded the [metapackage](https://glossary.magento.com/metapackage) using `composer create-project`
 * Installed the compressed archive
 
 {: .bs-callout .bs-callout-info }

@@ -13,7 +13,7 @@ The `uiCollection` library class should be used as a base class by any component
 
 The `uiCollection` class implements the following methods:
 
-* The `initElement()` method allows you to add custom functionality to a child UI component or to the current UI component at the moment when the child UI component initializes. The `initElement()` method gets the child {% glossarytooltip 9bcc648c-bd08-4feb-906d-1e24c4f2f422 %}UI component{% endglossarytooltip %} instance as a parameter.
+* The `initElement()` method allows you to add custom functionality to a child UI component or to the current UI component at the moment when the child UI component initializes. The `initElement()` method gets the child [UI component](https://glossary.magento.com/ui-component) instance as a parameter.
 
   Example:
 

@@ -1,8 +1,6 @@
 ---
 group: installation-guide
 title: Back up and roll back the file system, media, and database
-redirect_from:
-  - /guides/v2.0/install-gde/install/install-cli-backup.html
 functional_areas:
   - Install
   - System

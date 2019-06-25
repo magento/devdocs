@@ -6,7 +6,7 @@ menu_title: Gateway Client
 menu_order: 5
 ---
 
-Gateway Client is a component of the Magento {% glossarytooltip 5b963536-8f03-45c4-963b-688021f4eea7 %}payment gateway{% endglossarytooltip %} that transfers the payload to the payment provider and gets the response.
+Gateway Client is a component of the Magento [payment gateway](https://glossary.magento.com/payment-gateway) that transfers the payload to the payment provider and gets the response.
 
 ## Basic interface
 
@@ -57,7 +57,7 @@ The similar example of factory might looks like this:
 
 In this example transfer factory simply sets request data using Transfer Builder and returns the created object.
 
-Following is an example of a more complicated behavior. Here transfer factory sets all required data to process requests using {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} credentials and all data is sent in JSON format.
+Following is an example of a more complicated behavior. Here transfer factory sets all required data to process requests using [API](https://glossary.magento.com/api) credentials and all data is sent in JSON format.
 
 ```php
 public function create(array $request)

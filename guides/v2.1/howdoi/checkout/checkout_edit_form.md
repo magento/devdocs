@@ -10,7 +10,7 @@ functional_areas:
   - Checkout
 ---
 
-This topic describes how to replace the {% glossarytooltip a2aff425-07dd-4bd6-9671-29b7edefa871 %}HTML{% endglossarytooltip %} template for a form field on the {% glossarytooltip 278c3ce0-cd4c-4ffc-a098-695d94d73bde %}Checkout{% endglossarytooltip %} page. You might need to replace the template in order to add elements displayed with the field, change the {% glossarytooltip 6c5cb4e9-9197-46f2-ba79-6147d9bfe66d %}CSS{% endglossarytooltip %} class assigned to it, add attributes and so on.
+This topic describes how to replace the [HTML](https://glossary.magento.com/html) template for a form field on the [Checkout](https://glossary.magento.com/checkout) page. You might need to replace the template in order to add elements displayed with the field, change the [CSS](https://glossary.magento.com/css) class assigned to it, add attributes and so on.
 
 The forms used on the Checkout page are implemented using Knockout JS.
 
@@ -24,7 +24,7 @@ To change the template of the form field, do the following:
 
 [Set Magento to the developer mode]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html) when performing all customizations and debugging.
 
-For the sake of compatibility, upgradability, and easy maintenance, do not edit the default Magento code. Instead, add your customizations in a separate {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}. For your checkout customization to be applied correctly, your custom module should [depend]({{ page.baseurl }}/extension-dev-guide/build/composer-integration.html) on the Magento_Checkout module.
+For the sake of compatibility, upgradability, and easy maintenance, do not edit the default Magento code. Instead, add your customizations in a separate [module](https://glossary.magento.com/module). For your checkout customization to be applied correctly, your custom module should [depend]({{ page.baseurl }}/extension-dev-guide/build/composer-integration.html) on the Magento_Checkout module.
 
 Do not use `Ui` for your custom module name, because `%Vendor%_Ui` notation, required when specifying paths, might cause issues.
 

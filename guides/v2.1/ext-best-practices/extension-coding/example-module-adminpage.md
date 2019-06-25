@@ -10,7 +10,7 @@ functional_areas:
 
 ### Overview
 
-This tutorial gives instructions for the creation of a {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} that displays a simple page in the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento admin{% endglossarytooltip %}.
+This tutorial gives instructions for the creation of a [module](https://glossary.magento.com/module) that displays a simple page in the [Magento admin](https://glossary.magento.com/magento-admin).
 
 For the purposes of this tutorial MyCompany is the name of the company associated with a module named ExampleAdminNewPage.
 
@@ -32,7 +32,7 @@ These initial boilerplate files are the bare essential files needed for any Mage
 
 #### `composer.json`
 {:.no_toc}
-In the module's root directory, create the file `composer.json`. This file gives {% glossarytooltip d85e2d0a-221f-4d03-aa43-0cda9f50809e %}composer{% endglossarytooltip %} the ability to install this module and its dependencies.
+In the module's root directory, create the file `composer.json`. This file gives [composer](https://glossary.magento.com/composer) the ability to install this module and its dependencies.
 For more information see: [`composer.json`]({{ page.baseurl }}/extension-dev-guide/build/composer-integration.html).
 
 {% collapsible File content for composer.json %}
@@ -100,7 +100,7 @@ For more information on this topic, see: [routing]({{ page.baseurl }}/extension-
 
 #### `etc/adminhtml/menu.xml`
 {:.no_toc}
-Under the created `etc` directory, create a new directory called `adminhtml`. Under that directory, create the file `menu.xml`. This {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %} file adds new menu items to the Magento {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}admin{% endglossarytooltip %}.
+Under the created `etc` directory, create a new directory called `adminhtml`. Under that directory, create the file `menu.xml`. This [XML](https://glossary.magento.com/xml) file adds new menu items to the Magento [admin](https://glossary.magento.com/admin).
 
 The `menu.xml` file provided below adds two items in the Content section of the left navigation:
 
@@ -214,7 +214,7 @@ These files belong in the `view/adminhtml` directory because the Magento admin a
 #### `view/adminhtml/layout/exampleadminnewpage_helloworld_index.xml`
 {:.no_toc}
 
-This file defines the {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %} and structure of the index page for the HelloWorld controller. It sets the title to "Greetings" and instructs Magento to use the `helloworld.phtml` template as the content in a `Magento\Backend\Block\Template` block class.
+This file defines the [layout](https://glossary.magento.com/layout) and structure of the index page for the HelloWorld controller. It sets the title to "Greetings" and instructs Magento to use the `helloworld.phtml` template as the content in a `Magento\Backend\Block\Template` block class.
 
 The name of this file uses the following pattern: *routeId*\_*controller*\_*action*.xml
 
