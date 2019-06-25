@@ -481,4 +481,4 @@ Sample generic layout:
     </container>
 </layout>
 ```
-
+XML files are merged into a large XML document and saved to the cache. [see the layout merging process](https://github.com/magento/devdocs/edit/master/guides/v2.1/frontend-dev-guide/layouts/layout-types.md)
