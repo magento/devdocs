@@ -21,13 +21,15 @@ The release notes include:
 
 -   {:.new}**Environment variable updates**—
 
+    -   {:.new}<!-- MAGECLOUD-2901 -->Added support for database table prefixes using the [DATABASE_CONFIGURATION environment variable]({{page.baseurl}}/cloud/env/variables-deploy.html#database_configuration).
+
     -   {:.fix}<!-- MAGECLOUD-3258 -->You can configure the **WARM_UP_PAGES** environment variable to cache single pages, multiple domains, and multiple pages. See the expanded definition in the [post-deploy variables]({{page.baseurl}}/cloud/env/variables-post-deploy.html#warm_up_pages) content.
 
-    -   {:.new}<!-- MAGECLOUD-3602-->Added the **FORCE_UPDATE_URLS** deploy variable to update Magento base URLs when deploying to Pro and Starter production and staging environments. See the definition in the [deploy variables]({{ page.baseurl }}/cloud/env/variables-deploy.html#force_update_urls) content.
+    -   {:.new}<!-- MAGECLOUD-3602 -->Added the **FORCE_UPDATE_URLS** deploy variable to update Magento base URLs when deploying to Pro and Starter production and staging environments. See the definition in the [deploy variables]({{page.baseurl}}/cloud/env/variables-deploy.html#force_update_urls) content.
 
-    -   {:.new}<!-- MAGECLOUD-2901 -->Added support for database table prefixes using the [DATABASE_CONFIGURATION environment variable]({{page.baseurl}}/cloud/env/variables-deploy.html#database_configuration).
-    
-    -  {:.new}<!-- MAGECLOUD-3643-->Added the **TTFB_TESTED_PAGES** post-deploy variable to configure _Time to First Byte_  page tests to check Magento Commerce application performance for sites deployed to Cloud infrastructure. See the variable description in [post-deploy variables]({{ page.baseurl }}/cloud/env/variables-post-deploy.html).
+    -   {:.fix}<!-- MAGECLOUD-3611 -->Fixed an issue with multi-threaded SCD, which caused random failures in static content deployment. The workaround involved setting the **SCD_THREADS** variable to `1`. You can now increase the count as needed. See the definitions in the [deploy variables]({{ page.baseurl }}/cloud/env/variables-deploy.html#scd_threads) and the [build variables]({{ page.baseurl }}/cloud/env/variables-build.html#scd_threads).
+
+    -   {:.new}<!-- MAGECLOUD-3643 -->Added the **TTFB_TESTED_PAGES** post-deploy variable to configure _Time to First Byte_  page tests to check Magento Commerce application performance on sites deployed to Cloud infrastructure. See the variable description in [post-deploy variables]({{ page.baseurl }}/cloud/env/variables-post-deploy.html).
 
 -   {:.fix}<!-- MAGECLOUD-3545/Github#455 -->Added the `pub/static/.htaccess` file to the exclude list. [Fix submitted by Björn Kraus of PHOENIX MEDIA GmbH](https://github.com/magento/ece-tools/pull/455).
 
@@ -63,7 +65,7 @@ The release notes include:
 
 -   {:.fix}<!-- MAGECLOUD-3172 -->Fixed an issue that assigned Redis `session`, `default`, and `page_cache` cache storage to the same database ID.
 
--   {:.fix}<!-- MAGECLOUD-3382 -->Changed the **SCD_THREAD** environment variable default values to automatically determine the optimal value based on the detected CPU thread count. See the updated definitions in the [deploy variables]({{ page.baseurl }}/cloud/env/variables-deploy.html#scd_threads) and the [build variables]({{ page.baseurl }}/cloud/env/variables-build.html#scd_threads).
+-   {:.fix}<!-- MAGECLOUD-3382 -->Changed the **SCD_THREADS** environment variable default values to automatically determine the optimal value based on the detected CPU thread count. See the updated definitions in the [deploy variables]({{ page.baseurl }}/cloud/env/variables-deploy.html#scd_threads) and the [build variables]({{ page.baseurl }}/cloud/env/variables-build.html#scd_threads).
 
 -   {:.fix}<!-- MAGECLOUD-3383 -->Fixed an issue with a patch for DB Isolation Mechanism that caused an error when upgrading to {{site.data.var.ece}} version 2002.0.16.
 
