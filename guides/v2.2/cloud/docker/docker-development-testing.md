@@ -39,9 +39,9 @@ Before you run functional tests, you must prepare your environment with the foll
 
 ## Run tests
 
-The `codeception.dist.yml` file contains the global testing configuration and is located in the `{{site.data.var.ct}}` root directory. See it in the [`{{site.data.var.ct}}` repository](https://github.com/magento/ece-tools/blob/develop/codeception.dist.yml).
+The `codeception.dist.yml` file in the `{{site.data.var.ct}}` root directory contains the global testing configuration. See the [`{{site.data.var.ct}}` repository](https://github.com/magento/ece-tools/blob/develop/codeception.dist.yml).
 
-By default, the functional tests produce a short output. If you need a more detailed output, you can edit the `codeception.dist.yml` file and set the `printOutput:` property to `true`. 
+By default, functional tests produce a short output. You can receive a more detailed output by editing the `codeception.dist.yml` file to set the `printOutput:` property to `true`. 
 
 ```yaml
 modules:
@@ -54,7 +54,7 @@ modules:
 
 ### Run a specific test
 
-Use the following format to run a specific functional test:
+Use the following command format to run a specific functional test:
 
 ```bash
 ./vendor/bin/codecept run Acceptance <TestName>Cest
@@ -86,7 +86,7 @@ PostDeployCest: Test post deploy | {"ADMIN_EMAIL":"admin@example.com"}
 
 ### Run all tests
 
-There is a different script, or set of scripts, to run all available tests for each version of PHP.
+The following list provides the commands to run all available tests for each version of PHP. 
 
 -  **PHP 7.0**
 

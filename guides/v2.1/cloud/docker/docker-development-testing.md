@@ -41,7 +41,7 @@ Before you run functional tests, you must prepare your environment with the foll
 
 The `codeception.dist.yml` file in the `{{site.data.var.ct}}` root directory contains the global testing configuration. See the [`{{site.data.var.ct}}` repository](https://github.com/magento/ece-tools/blob/develop/codeception.dist.yml).
 
-By default, the functional tests produce a short output. If you need a more detailed output, you can edit the `codeception.dist.yml` file and set the `printOutput:` property to `true`. 
+By default, functional tests produce a short output. You can receive a more detailed output by editing the `codeception.dist.yml` file to set the `printOutput:` property to `true`. 
 
 ```yaml
 modules:
