@@ -45,6 +45,10 @@ The release notes include:
 
 -   {:.new}<!-- MAGECLOUD-3451 -->Added a new command to the `{{site.data.var.ct}}` package that displays environment services, routes, or variables. See [Services, routes, and variables]({{page.baseurl}}/cloud/reference/ece-tools-reference.html#services-routes-and-variables). [Feature submitted by Vladimir Kerkhoff](https://github.com/magento/ece-tools/pull/486).
 
+-   {:.fix}<!-- MAGECLOUD-3665 -->Fixed an issue that caused a critical error when attempting to install Magento 2.2.6 or earlier with `{{site.data.var.ct}}` develop after shell refactoring.
+
+-   {:.fix}<!-- MAGECLOUD-3704 -->Fixed an issue that caused Magento 2.1.x and 2.2.x installations to fail with a warning about using a deprecated version of Carbon.
+
 ## v2002.0.19
 
 -   {:.fix}<!-- MAGECLOUD-3668 -->Fixed an issue that overwrites the `env.php` file during a deploy, resulting in a loss of custom configurations.  This update ensures that {{site.data.var.ece}} updates the `env.php` file with every deployment, while preserving custom configurations.
