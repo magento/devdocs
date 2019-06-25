@@ -29,9 +29,8 @@ The `{{site.data.var.ct}}` package imports and processes the SQL file the next t
 Although it is a more complex approach, you can use GZIP by _sharing_ the `.sql.gz` file using the `.docker/mnt` directory and importing it inside the Docker container.
 
 ## CLI containers
-**FPM**<br>PHP-CLI: version 7<br>PHP-FPM: version 7 | [magento/magento-cloud-docker-php](https://hub.docker.com/r/magento/magento-cloud-docker-php)
 
-The following CLI containers, which are based on a PHP-CLI image, provide `magento-cloud` and `{{site.data.var.ct}}` commands to perform file system operations:
+The following CLI containers, which are based on a [PHP-CLI version 7 image](https://hub.docker.com/r/magento/magento-cloud-docker-php), provide `magento-cloud` and `{{site.data.var.ct}}` commands to perform file system operations:
 
 -  `build`—extends the CLI container to perform operations with writable filesystem, similar to the build phase
 -  `deploy`—extends the CLI container to use read-only file system, similar to the deploy phase
@@ -67,7 +66,7 @@ docker-compose run deploy bash -c "cat /app/var/cron.log"
 
 ### Node container
 
-The Node container is based on the [official Node Docker image](https://hub.docker.com/_/node/). It can be used to install NPM dependencies, such as [Gulp](), or run any Node-based command line tools.
+The Node container is based on the [official Node Docker image](https://hub.docker.com/_/node/). It can be used to install NPM dependencies, such as Gulp, or run any Node-based command line tools.
 
 ## PHP-FPM container
 
