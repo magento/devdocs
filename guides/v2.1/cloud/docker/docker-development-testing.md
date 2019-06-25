@@ -60,7 +60,7 @@ Use the following format to run a specific functional test:
 ./vendor/bin/codecept run Acceptance <TestName>Cest
 ```
 
-For example, the following test verifies the post-deploy task runs to completion.
+For example, the following test verifies that the post-deploy task runs successfully.
 
 ```bash
 ./vendor/bin/codecept run Acceptance PostDeployCest
