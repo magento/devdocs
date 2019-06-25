@@ -4,13 +4,12 @@ Share your knowledge with the community by contributing to Magento DevDocs!
 You can contribute by creating an issue or pull request (PR) on our [DevDocs](https://github.com/magento/devdocs) GitHub repository.
 We welcome all types of contributions; from minor typo fixes to new topics.
 
-Magento's tech writer team and [Community Maintainers](https://devdocs.magento.com/guides/v2.3/contributor-guide/contributors.html#/community-maintainers) review issues and pull requests on a regular basis, and we do our best to address all issues as soon as possible.
-Working through the backlog takes time, though, so we appreciate your patience.
+DevDocs staff members and [Community Maintainers](https://devdocs.magento.com/guides/v2.3/contributor-guide/contributors.html#/community-maintainers) review issues and pull requests on a regular basis. We do our best to address all issues as soon as possible, but working through the backlog takes time. We appreciate your patience.
 
 ## Rewards for contributions
 
 DevDocs works with Magento Community Engineering teams and projects.
-As you contribute PRs, you gain [Contribution Points](https://devdocs.magento.com/guides/v2.3/contributor-guide/contributing.html#points). We track [Contributors](https://devdocs.magento.com/guides/v2.3/contributor-guide/contributors.html#/individual-contributors) and [Maintainers](https://devdocs.magento.com/guides/v2.3/contributor-guide/maintainers.html) with Community Engineering.
+As you contribute PRs, you gain [Contribution Points](https://devdocs.magento.com/guides/v2.3/contributor-guide/contributing.html#points).
 
 If you write and contribute a full topic, we will add your name (or your company's name) at the top of the DevDocs page and link it to your blog or website!
 
@@ -18,73 +17,93 @@ If you write and contribute a full topic, we will add your name (or your company
 
 ![Get started workflow](https://devdocs.magento.com/common/images/contribute-prerequisites.png)
 
-1. Make sure you have a [GitHub account](https://github.com/signup/free) with [Two-Factor Authentication](https://devdocs.magento.com/guides/v2.3/contributor-guide/contributing.html#two-factor)(2FA) to your account. Partners are required to add 2FA protection when contributing to Magento repositories.
-1. Sign the [Magento Contributor Agreement](https://magento.com/content/magento-contributor-agreement).
+1. Make sure you have a [GitHub account](https://github.com/signup/free).
+
+    **Note for partners:** Add [2FA](https://devdocs.magento.com/guides/v2.3/contributor-guide/contributing.html#two-factor) protection when contributing to Magento repositories.
+
 1. [Fork](https://help.github.com/articles/fork-a-repo/) the [DevDocs repository](https://github.com/magento/devdocs). Remember to [sync your fork](https://help.github.com/articles/syncing-a-fork/) and update branches as needed.
 1. Review the [DevDocs guidelines](#contribution-guidelines).
 
-## Contribute docs
+## Contribute documentation
+
+The following diagram shows the contribution workflow:
 
 ![Contributing workflow](https://devdocs.magento.com/common/images/contribute-write-submit-pr.png)
 
-1. Create a new branch on your fork. Use a name that best describes the work, or references a GitHub issue number.
+**Tip!** If you are not sure where to start contributing, search for issues with the [`help wanted`](https://github.com/magento/devdocs/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22), [`good first issue`](https://github.com/magento/devdocs/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22), and [`groomed`](https://github.com/magento/devdocs/issues?q=is:issue+is:open+label:%22groomed%22) labels. These issues receive higher priority for processing.
+
+### Create a branch
+
+1. Create a new branch from your fork using a name that best describes the work or references a GitHub issue number.
 1. Edit or create markdown (`.md`) files in your branch.
-1. When ready, push your branch to your fork.
+1. Push your branch to your fork.
 
 ### Create a pull request
 
-Create a PR to the [magento/devdocs repository](https://github.com/magento/devdocs). Fill out as much information as possible and link any GitHub issues.
+1. Create a pull request to the [magento/devdocs](https://github.com/magento/devdocs) repository.
 
-In general, you should use `master` as the base branch when creating a PR. If your contribution is related to a release that is in progress, use a version-specific integration branch, such as `develop`.
+   In general, you should use `master` as the base branch when creating a PR. If your contribution is related to a release that is in progress, use a version-specific integration branch, such as `develop`.
 
-Provide links to devdocs for the files you are changing. This is not required if the list is long.
+1. Complete the pull request template.
 
-If you are updating an example from source code, include a link to the file in the repository.
+    **We will close your pull request if you do not complete the template.**
 
-The DevDocs team and Maintainers will review the PR and help with formatting and navigation.
+1. After creating a pull request, a DevDocs staff member or maintainer will review it and may ask you to make revisions.
 
-**Note:** If you have not signed the [Magento Contributor Agreement](https://magento.com/content/magento-contributor-agreement), the PR provides a link. We require a signed form and agreement to the terms for contribution.
+    **We will close your pull request if you do not respond to feedback in two weeks.**
 
-**Tip!** If you are not sure where to start contributing, check out our GitHub issues labeled [help wanted](https://github.com/magento/devdocs/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22) and [good first issue](https://github.com/magento/devdocs/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22).
+**Note:** If you have not signed the [Magento Contributor Agreement](https://magento.com/content/magento-contributor-agreement), the pull request provides a link. Magento requires a signed form and agreement to the terms for contribution.
 
 ## Contribution guidelines
 
-Write content using [kramdown](https://kramdown.gettalong.org/), which is a simple markup language. We use kramdown, Liquid, and [Jekyll](https://jekyllrb.com/) to generate a static site hosted through [GH Pages](https://help.github.com/articles/what-is-github-pages/). Check [Templates](#templates) for examples of styles and markdown.
-
-You can update existing or add new topics in their respective Magento 2 versioned directories (2.1, 2.2, 2.3, and onward). If you need help finding a directory for your content, we can help in your PR.
-
 The following guidelines may answer most of your questions and help you get started:
 
-1. Check [existing pull requests](https://github.com/magento/devdocs/pulls) and make sure you are not duplicating work!
-1. For large contributions or changes that include multiple files, [open an issue](#report-an-issue) and discuss it with us first. This may further prevent duplicate or unnecessary effort.
-1. [Chunk many small/medium changes](#tips-for-writing-content) into one or two PRs. This helps us to efficiently and effectively facilitate your contribution.
-1. Familiarize yourself with the existing documentation. Look through and search the guides to decide where to add your topics.
+- Write content using Markdown. See the [Templates](#templates) section for examples.
+- Review existing [pull requests](https://github.com/magento/devdocs/pulls) and [issues](https://github.com/magento/devdocs/issues) to avoid duplicating work.
+- For large contributions, or changes that include multiple files, [open an issue](#report-an-issue) and discuss it with us first. This helps prevent duplicate or unnecessary work.
+- Do not make global find-and-replace changes without first creating an issue and discussing it with us. Global changes can have unintended consequences.
+- Combine multiple small changes (such as minor editorial and technical changes) into a single pull request. This helps us efficiently and effectively facilitate your contribution.
+- Familiarize yourself with the organization and conventions of our existing documentation before creating a pull request. Changes that are consistent with our style and conventions have a higher acceptance rate.
 
-    - The DevDocs team can find the best home for your new topics and add it to the navigation.
-    - If a topic has a symlink, you can remove it with Git commands and add a new file. Copy and paste a previous version of the topic to get started.
+    - If you need to update the site navigation, ask for help in Slack ([#devdocs](https://magentocommeng.slack.com/messages/CAN932A3H)).
+    - We use symbolic links for topics that are the same across versions of Magento. Remove the symbolic link and add a new file if your changes are unique to a specific version. Copy and paste a previous version of the topic to get started.
+
+        For example:
+
+        ```bash
+        git rm guides/v2.2/install-gde/composer.md
+        ```
+
+        ```bash
+        cp guides/v2.1/install-gde/composer.md guides/v2.2/install-gde/composer.md
+        ```
+
+- Make sure that you update the correct version(s) of documentation (v2.1, v2.2, v2.3). If you are not sure what directory to put your content in, just do your best. We can help re-locate it (if necessary) during the review process.
+- Review your work for basic typos, formatting errors, or ambiguous sentences before opening a pull request.
+- Revise pull requests according to review feedback. We will close pull requests that require an inordinate amount of time to review and process (especially for minor changes) if you fail to make revisions according to review feedback.
+- Do not directly contact DevDocs team members or maintainers on Slack to review your pull request unless it has been open for more than five days. We have a process and queue for pull requests that everyone must follow.
 
 ## Tips for writing content
 
-Focus on the content with useful information, code samples, and important notes for your fellow Magento developers and community members. Don't forget to review your work for typos, formatting errors, or sentences that need clarifying before opening a pull request.
-
 Use the following guidelines to help you with the writing process:
 
+- Focus your efforts on providing useful information for your fellow Magento developers and community members. For example, consider providing or revising code samples, important notes, and clarifying vague or ambiguous content.
 - Define the goal of your topic. What exactly do you want to teach the reader?
 - Make the title of your topic reflect the content.
 - Keep your sentences concise. Separate conceptual information from procedural steps.
-- Batch several small changes into a single pull request (instead of separate ones) to ensure your contributions get approved and merged quickly. Have several typo fixes across several areas of documentation? Batch them into one PR.
-- Remember to use active voice (not passive), write in the present tense, and use a friendly tone in second person. For example, _"The log captures commands, output..."_.
+- Batch several small changes into a single pull request (instead of separate ones) to ensure your contributions are approved and merged quickly. Have several typo fixes across several areas of documentation? Combine them into a single PR.
+- Remember to write in present tense, use the second person, and use active voice (not passive). For example, _"The log captures commands, output..."_.
 - Use notes to alert readers about important details.
-- Use cross-references to other topics if appropriate. We can help you with the syntax if it is not clear. The template provides an example you can use.
+- Use cross-references to other topics sparingly. We can help you with the syntax if it is not clear. The template provides an example you can use.
 - Need help with markdown? See our [templates](#templates).
 
-### Preview your work on local
+### Review changes locally
 
-Optional. To preview your changes in HTML output, follow the instructions in the [README](https://github.com/magento/devdocs/blob/master/README.md) to build the devdocs site locally using Jekyll.
+_(Optional)_ To review your changes in HTML output, follow the instructions in the [README](https://github.com/magento/devdocs/blob/master/README.md) to build the devdocs site locally using Jekyll.
 
 ### Templates
 
-We provide templates to help you started writing new content and understanding markdown formatting:
+We provide templates to help you get started writing new content and understanding Markdown formatting:
 
 - **General topic template** - [Markdown](https://github.com/magento/devdocs/blob/master/guides/v2.1/contributor-guide/templates/basic_template.md) | [HTML](https://devdocs.magento.com/guides/v2.3/contributor-guide/templates/basic_template.html): This is a template for writing any topic with example formats and styles.
 - **Tutorial templates**: These templates provide example formats and styles for step-by-step instructions (like how-tos). Each file adds navigation buttons when content is generated. Templates include:
@@ -107,17 +126,18 @@ title: Continue with your installation
 
 | Property  | Description |
 | ------------- | ---------- |
-| `group`       | Defines the topic's guide. Use the table of contents `.yml` file name. This loads your left-side navigation. We will help during the PR process to add new files to the `.yml` file. |
-| `title`       | Sets the title of the page in the HTML meta and the main title on the page.  |
+| `group`       | Defines the topic's guide or section. Use the table of contents `.yml` file name. This loads your left-side navigation. We will help during the PR process to add new files to the `.yml` file. |
+| `title`       | Sets the title of the page in the HTML metadata and the main title on the page.  |
 
 ## Report an issue
 
-If you find a typo or errors in Magento DevDocs, you can either fix it with a pull request (as described above) or you can report it by creating an issue in the DevDocs GitHub repository. 
-Enter as much information as you can including content corrections, steps to reproduce, command or code updates, or questions for clarifications.
+If you find a typo or errors in Magento DevDocs, you can either fix it with a pull request (as described above) or you can report it by creating an issue in the DevDocs GitHub repository.
 
-**Note:** Check the [existing issues](https://github.com/magento/devdocs/issues) on GitHub to see if someone has already reported the issue.
+You must complete the issue template. We will close your issue if you fail to complete the template. Enter as much information as you can, including content corrections, steps to reproduce, command or code updates, or questions for clarifications.
 
-You have a couple of options to enter an issue:
+**Note:** Check the existing [issues](https://github.com/magento/devdocs/issues) on GitHub to see if someone has already reported the issue.
+
+You can provide feedback using the following options:
 
 - Have general feedback? Create an issue on [GitHub DevDocs](https://github.com/magento/devdocs/issues/new/choose).
 - Have feedback on a specific DevDocs page? Click the **Give us feedback** link at the top right of the page to report on the currently open topic.

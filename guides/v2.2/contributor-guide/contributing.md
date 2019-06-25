@@ -1,7 +1,6 @@
 ---
 group: contributor-guide
 title: Code Contributions
-redirect_from: /guides/v2.0/contributor-guide/contributing.html
 ---
 
 The following topics are included in this guide:
@@ -143,7 +142,7 @@ When you need to verify an issue or pull request, enter a command to generate an
 **Command:** To deploy a vanilla Magento instance, add the following command as a comment to the GitHub Pull Request or Issue:
 
 ```
-@magento-engcom-team give me {$version} instance
+@magento give me {$version} instance
 ```
 
 For `version`, the currently supported values are [version tags](https://github.com/magento/magento2/tags) and develop branches starting with 2.2.0 and 2.2-develop.
@@ -156,7 +155,7 @@ For `version`, the currently supported values are [version tags](https://github.
 
 **Admin access:**
 
-- http://i-xxx.engcom.dev.magento.com/admin
+- https://pr-{$id_pr}.instances.magento-community.engineering/admin
 - Admin Credentials:
     - Username: admin
     - Password: 123123q
@@ -172,7 +171,7 @@ To verify and test changes completed in a pull request, enter a command to gener
 **Command:** To deploy, [Community Maintainers](https://github.com/orgs/magento/teams/open-source-maintainers/members), a [Magento EngCom Team](https://github.com/orgs/magento/teams/core-maintainers/members) member, or contributor under the existing Pull Request enters the following command as a comment to the pull request:
 
 ```
-@magento-engcom-team give me test instance
+@magento give me test instance
 ```
 
 **Actions:**
@@ -199,10 +198,10 @@ To optimize the pull request queue, enter a command with a series of related pul
 **Command:** To combine pull requests, a member of the [Community Maintainers](https://github.com/orgs/magento/teams/open-source-maintainers/members) or [Magento EngCom Team](https://github.com/orgs/magento/teams/core-maintainers/members) under the existing Pull Request enters the following command:
 
 ```
-@magento-engcom-team combine {xxx} {yyy} {zzz}
+@magento combine {xxx} {yyy} {zzz}
 ```
 
-The command merges the listed related pull requests (`xxx`, `yyy`, `zzz`) into the current pull request. For example: `@magento-engcom-team combine 1234 1238 1239`
+The command merges the listed related pull requests (`xxx`, `yyy`, `zzz`) into the current pull request. For example: `@magento combine 1234 1238 1239`
 
 **actions:** When all conditions are passed, all related pull requests will be closed and merged to the current PR:
 

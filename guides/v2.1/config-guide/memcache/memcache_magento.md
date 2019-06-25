@@ -9,7 +9,7 @@ functional_areas:
 
 To configure Magento to use memcache:
 
-1.	Open `<your Magento install dir>/app/etc/env.php` in a text editor.
+1.	Open `<magento_root>/app/etc/env.php` in a text editor.
 2.	Locate the following:
 
         'session' =>
@@ -46,9 +46,9 @@ To verify memcached works with Magento:
 
         rm -rf var/cache/* var/page_cache/* var/session/*
 
-2.  Go to any page on the {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %}.
+2.  Go to any page on the [storefront](https://glossary.magento.com/storefront).
 
-3.  Log in to the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} and browse to several pages.
+3.  Log in to the [Magento Admin](https://glossary.magento.com/magento-admin) and browse to several pages.
 
     If no errors display, congratulations! memcached is working! You can optionally look at memcached storage as discussed in the next step.
 

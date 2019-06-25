@@ -4,20 +4,21 @@ subgroup: 03_Build
 title: Enable or disable your component
 menu_title: Enable or disable your component
 menu_order: 8000
-redirect_from: /guides/v2.0/extension-dev-guide/enable-module.html
 ---
 
 After you have built the component and are ready to enable it in your Magento environment, do the following:
 
-1. Disable the {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %} under `System->Cache Management`.
+1. Disable the [cache](https://glossary.magento.com/cache) under `System->Cache Management`.
 1. Enter the following in the command line:
 
    ```bash
    bin/magento module:enable --clear-static-content Component_Name
    ```
+   
    ```bash
    bin/magento setup:upgrade
    ```
+   
    ```bash
    bin/magento cache:clean
    ```

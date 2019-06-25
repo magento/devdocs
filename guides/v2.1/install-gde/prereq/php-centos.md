@@ -17,7 +17,8 @@ If you must install both Apache and PHP, [Install Apache]({{ page.baseurl }}/ins
 
 ## PHP versions supported {#php-support}
 
-{% include install/php_2.1.md %}
+<!--{% assign supported_php_versions = site.data.codebase.v2_1.open-source.composer_lock.platform.php | split: "|" %}-->
+{% include install/php-versions-template.md %}
 
 {:.bs-callout .bs-callout-info}
 For versions 2.1.16 and later, Magento supports PHP 7.1 for the 2.1.x release line. The other supported PHP versions remain valid and unchanged.
@@ -33,7 +34,7 @@ If you're new to all this and need some help getting started, we suggest the fol
 
 ## Verify PHP is installed {#centos-verify-php}
 
-To verify if PHP is installed already, enter `php -v`. If {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} is installed, messages similar to the following display:
+To verify if PHP is installed already, enter `php -v`. If [PHP](https://glossary.magento.com/php) is installed, messages similar to the following display:
 
 	PHP 5.6.4 (cli) (built: Dec 20 2014 17:30:46)
 	Copyright (c) 1997-2014 The PHP Group

@@ -5,13 +5,13 @@ functional_areas:
   - Integration
 ---
 
-The REST documentation on the Magento devdocs {% glossarytooltip a3c8f20f-b067-414e-9781-06378c193155 %}website{% endglossarytooltip %} is generated with [Swagger UI](http://swagger.io) using a schema derived from the latest build of Magento 2. However, the REST {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} documentation on devdocs is static in that the Magento Developers website is not running an instance of Magento, and there is no live data.
+The REST documentation on the Magento devdocs [website](https://glossary.magento.com/website) is generated with [Swagger UI](http://swagger.io) using a schema derived from the latest build of Magento 2. However, the REST [API](https://glossary.magento.com/api) documentation on devdocs is static in that the Magento Developers website is not running an instance of Magento, and there is no live data.
 
 Magento provides two ways to get detailed information about the structure of the REST endpoints, as described below.
 
 ## Generate a full REST reference locally
 
-The Swagger UI is installed automatically on your server. As a result, you can generate live REST API documentation that can include {{site.data.var.ee}} modules, third-party modules, and {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} attributes that have been installed on your system. To view this documentation, go to:
+The Swagger UI is installed automatically on your server. As a result, you can generate live REST API documentation that can include {{site.data.var.ee}} modules, third-party modules, and [extension](https://glossary.magento.com/extension) attributes that have been installed on your system. To view this documentation, go to:
 
 `http://<magento_host>/swagger`
 
@@ -23,11 +23,11 @@ To view the Swagger documentation for a specific store view, use this URL:
 
  * `default`
  * The assigned store code
- * `all`. This value only applies to the {% glossarytooltip f3944faf-127e-4097-9918-a2e9c647d44f %}CMS{% endglossarytooltip %} and Product modules. If this value is specified, the API call affects all the merchant's stores.
+ * `all`. This value only applies to the [CMS](https://glossary.magento.com/cms) and Product modules. If this value is specified, the API call affects all the merchant's stores.
 
 By default, Magento returns documentation for resources available to anonymous users across all stores. If you specify a valid value in the `api_key` text box in the upper right corner, Swagger returns documentation for all the endpoints the user has access to. To generate an API key, call the `POST /V1/integration/customer/token` or `POST /V1/integration/admin/token` as directed in [Token-based authentication]({{ page.baseurl }}/get-started/authentication/gs-authentication-token.html).
 
-The generated Swagger documentation provides the capability to test REST requests. A user can enter a sample request, then press the **Try it out!** button, and Swagger returns information such as a `curl` command, a request URL, a response body, a response code, and the response header. The **Try it out!** button will not work unless a bearer {% glossarytooltip 34ecb0ab-b8a3-42d9-a728-0b893e8c0417 %}authorization{% endglossarytooltip %} token has been specified.
+The generated Swagger documentation provides the capability to test REST requests. A user can enter a sample request, then press the **Try it out!** button, and Swagger returns information such as a `curl` command, a request URL, a response body, a response code, and the response header. The **Try it out!** button will not work unless a bearer [authorization](https://glossary.magento.com/authorization) token has been specified.
 
 {:.bs-callout .bs-callout-info}
 The **Try it out!** feature is not available on Swagger documentation published on the Magento devdocs website.
@@ -42,7 +42,7 @@ Swagger returns information about all resources available for asynchronous REST 
 
 ## Return the JSON schema for one or more services
 
-You can use a REST client to generate the JSON schema for one or more services. In the client, set the method to `GET` and the {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} to
+You can use a REST client to generate the JSON schema for one or more services. In the client, set the method to `GET` and the [URL](https://glossary.magento.com/url) to
 
 `http://<magento_host>/rest/<store_code>/schema?services=<serviceName1,serviceName2,..>`
 
@@ -55,7 +55,7 @@ To return information about all services:
 `http://<magento_host>/rest/<store_code>/schema`
 
 {:.bs-callout .bs-callout-info}
-You must specify an authorization token for an {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}admin{% endglossarytooltip %} user to return information for most endpoints. See [Token-based authentication]({{ page.baseurl }}/get-started/authentication/gs-authentication-token.html) for more information.
+You must specify an authorization token for an [admin](https://glossary.magento.com/admin) user to return information for most endpoints. See [Token-based authentication]({{ page.baseurl }}/get-started/authentication/gs-authentication-token.html) for more information.
 
 
 ## Return the complete JSON schema

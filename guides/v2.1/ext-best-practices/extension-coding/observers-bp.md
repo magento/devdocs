@@ -17,7 +17,7 @@ We encourage you to follow these best practices aimed towards reducing problems 
 
 #### Make your observer efficient
 
-Try to keep your observer small and efficient by avoiding complex computations, if possible. This is especially important when your observer is listening to an {% glossarytooltip c57aef7c-97b4-4b2b-a999-8001accef1fe %}event{% endglossarytooltip %} that is frequently dispatched. Having complex computations in your observer can slow down application processes.
+Try to keep your observer small and efficient by avoiding complex computations, if possible. This is especially important when your observer is listening to an [event](https://glossary.magento.com/event) that is frequently dispatched. Having complex computations in your observer can slow down application processes.
 
 #### Do not include business logic
 

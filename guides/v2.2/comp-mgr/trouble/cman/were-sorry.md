@@ -21,11 +21,11 @@ See one of the following sections for possible solutions:
 
 ### Problem: you're not authenticated {#not-auth}
 
-You might not have entered your authentication keys in the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %}.
+You might not have entered your authentication keys in the [Magento Admin](https://glossary.magento.com/magento-admin).
 
 #### Solution
 
-Enter your [authentication keys]({{ page.baseurl }}/install-gde/prereq/connect-auth.html) in the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %}. Try your upgrade again.
+Enter your [authentication keys]({{ page.baseurl }}/install-gde/prereq/connect-auth.html) in the [Admin](https://glossary.magento.com/admin). Try your upgrade again.
 
 If that doesn't work, try generating [new authentication keys]({{ page.baseurl }}/install-gde/prereq/connect-auth.html) and enter those in the Admin. Then try your upgrade again.
 

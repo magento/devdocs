@@ -7,7 +7,7 @@ functional_areas:
   - Setup
 ---
 
-This tutorial shows you step-by-step how to create a custom cron job and optionally a cron group in a sample {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}. You can use a module you already have or you can use a sample module from our [`magento2-samples` repository](https://github.com/magento/magento2-samples).
+This tutorial shows you step-by-step how to create a custom cron job and optionally a cron group in a sample [module](https://glossary.magento.com/module). You can use a module you already have or you can use a sample module from our [`magento2-samples` repository](https://github.com/magento/magento2-samples).
 
 Running the cron job results in a row being added to the `cron_schedule` table with the name of the cron job, `custom_cron`.
 
@@ -228,7 +228,7 @@ For a description of what the options mean, see [Configure custom cron jobs and 
 
 ## Step 7 (optional): Verify your custom cron group
 
-This step shows how to verify your custom cron group using the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %}.
+This step shows how to verify your custom cron group using the [Magento Admin](https://glossary.magento.com/magento-admin).
 
 {% collapsible To verify your custom cron group: %}
 

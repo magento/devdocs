@@ -1,9 +1,6 @@
 ---
 group: php-developer-guide
 title: Name your component
-redirect_from:
-  - /guides/v2.0/extension-dev-guide/create_module.html
-  - /guides/v2.0/extension-dev-guide/create_component.html
 ---
 
 You give a name to your component in its `composer.json` and `module.xml` files. These files also contain other required configuration parameters, such as the module's schema version.
@@ -30,7 +27,7 @@ The smallest working `module.xml` file would look something like this:
 </config>
 ```
 
-Here `name`  is the name of your component, and `setup_version` is your module's {% glossarytooltip 66b924b4-8097-4aea-93d9-05a81e6cc00c %}database schema{% endglossarytooltip %} version. Both of these attributes are required.
+Here `name`  is the name of your component, and `setup_version` is your module's [database schema](https://glossary.magento.com/database-schema) version. Both of these attributes are required.
 
 Avoid using "Ui" for your custom module name because the <code>%Vendor%_Ui</code> notation, required when specifying paths, might cause issues.
 
@@ -39,7 +36,7 @@ Avoid using "Ui" for your custom module name because the <code>%Vendor%_Ui</code
 
 In addition, the [Component Manager]({{ page.baseurl }}/comp-mgr/module-man/compman-start.html) looks for a `composer.json` in a component's root directory and can perform actions on the component and its dependencies:
 
-* If a component has `composer.json` *and* the component was installed using {% glossarytooltip d85e2d0a-221f-4d03-aa43-0cda9f50809e %}Composer{% endglossarytooltip %} (including from packagist, the Magento Marketplace, or other source), the Component Manager can update, uninstall, enable, or disable the component.
+* If a component has `composer.json` *and* the component was installed using [Composer](https://glossary.magento.com/composer) (including from packagist, the Magento Marketplace, or other source), the Component Manager can update, uninstall, enable, or disable the component.
 * If the component has `composer.json` but was *not* installed using Composer (for example, custom code a developer wrote), Component Manager can still enable or disable the component.
 * We strongly recommend you include `composer.json` in your component's root directory whether or not you intend to distribute it to other Magento merchants.
 
@@ -81,7 +78,7 @@ In this example:
 * `description` is a concise explanation of your component's purpose.
 * `require` lists any components your component depends on.
 * `suggest` lists soft dependencies. The component can operate without them, but if the components are active, this component might impact their functionality. `Suggest` does not affect component load order.
-* `type` determines what the {% glossarytooltip 3425e9ae-5edf-4fc6-b645-06023e9e5e5b %}Magento component{% endglossarytooltip %} type. Choose from *magento2-theme*, *magento2-language*, or *magento2-module*.
+* `type` determines what the [Magento component](https://glossary.magento.com/magento-component) type. Choose from *magento2-theme*, *magento2-language*, or *magento2-module*.
 * `version` lists the version of the component.
 * `license` lists applicable licenses that apply to your component.
 * `autoload` instructs Composer to load the specified files.

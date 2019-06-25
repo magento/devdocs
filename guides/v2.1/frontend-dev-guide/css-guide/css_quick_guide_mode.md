@@ -8,7 +8,7 @@ functional_areas:
 After you [create a theme], you need to decide which Less compilation mode to use before changing styles. You can choose between [two compilation modes]:
 
 - Server-side compilation mode (default)
-- Client-side compilation mode (recommended for {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} development)
+- Client-side compilation mode (recommended for [theme](https://glossary.magento.com/theme) development)
 
 The examples in this topic use the [simple approach]({{ page.baseurl }}/frontend-dev-guide/css-guide/css_quick_guide_approach.html#simple_extend) for customizing theme styles. You make changes to the `_extend.less` file.
 
@@ -19,7 +19,7 @@ In our examples, we will change the color and font of the primary buttons. The d
 ## Before you begin
 
 1. [Create a theme]({{ page.baseurl }}/frontend-dev-guide/themes/theme-create.html). In your `theme.xml` file, specify Magento Luma or Magento Blank as the parent theme.
-2. [Apply your theme]({{ page.baseurl }}/frontend-dev-guide/themes/theme-apply.html#theme-apply-apply) in the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %}.
+2. [Apply your theme]({{ page.baseurl }}/frontend-dev-guide/themes/theme-apply.html#theme-apply-apply) in the [Magento Admin](https://glossary.magento.com/magento-admin).
 
 ## Using server-side compilation mode
 
@@ -147,7 +147,7 @@ If you are using server-side compilation mode, you must [clean generated static 
     ![Admin login page where the font of the buttons was changed]({{ site.baseurl }}/common/images/extend_less_screenshot221.png)
 
 {:.bs-callout .bs-callout-info}
-Simple changes are applied immediately in client-side compilation mode. For more sophisticated changes, you might need to manually clean the theme sub-directory in the `pub/static/frontend` directory. See [Styles debugging]({{ page.baseurl }}/frontend-dev-guide/css-topics/css_debug.html).
+When your Magento instance is in client-side Less compilation mode, simple changes are applied after saving or refreshing the page. For more sophisticated changes, you may need to manually clean the theme sub-directory in the `pub/static/frontend` directory and generate a new deployment. See [Styles debugging]({{ page.baseurl }}/frontend-dev-guide/css-topics/css_debug.html).
 
 
 [create a theme]: {{page.baseurl}}/frontend-dev-guide/themes/theme-create.html

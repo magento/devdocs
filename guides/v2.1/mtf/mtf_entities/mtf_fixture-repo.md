@@ -5,8 +5,8 @@ title: Fixture repository
 
 The repository stores pre-defined data for the fixture.
 It contains only data sets that are used in the test along with the associated field data.
-Repositories are stored in the `Repository` directory in the {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} to which they belong.
-Reference to the repository is placed in the fixture {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %} file in attribute named `repository`.
+Repositories are stored in the `Repository` directory in the [module](https://glossary.magento.com/module) to which they belong.
+Reference to the repository is placed in the fixture [XML](https://glossary.magento.com/xml) file in attribute named `repository`.
 
 In this topic you will learn how to create, use, and merge a repository.
 
@@ -69,7 +69,7 @@ Also `layout` and `widgetOptions` fields use `<magento2>/dev/tests/functional/te
 
 [ Learn how to create repository for the fixture field](#mtf_repository_create-field).
 
-We want to specify data sets for two cases of submitting {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}Widget{% endglossarytooltip %} forms: `default` with minimum data, and `cms_page_link` with data needed to create new {% glossarytooltip f3944faf-127e-4097-9918-a2e9c647d44f %}CMS{% endglossarytooltip %} page link.
+We want to specify data sets for two cases of submitting [Widget](https://glossary.magento.com/widget) forms: `default` with minimum data, and `cms_page_link` with data needed to create new [CMS](https://glossary.magento.com/cms) page link.
 
 To create a new CMS page link the user must enter data of all required fields. The widget has three forms with fields to specify: [**Settings**](#mtf_repo_ex_set), [**Storefront Properties**](#mtf_repo_ex_store), [**Frontend Apps Options**](#mtf_repo_ex_front). The following text along with screenshots gives an example of how to create a data set of the repository.
 
@@ -236,7 +236,7 @@ In the preceding section, the Widget fixture code contains fields with the links
 
 The repository value is a reference to the repository XML file. Therefore, we should create `<magento2>/dev/tests/functional/tests/app/Magento/Widget/Test/Repository/Widget/LayoutUpdates.xml`. The XML structure of this repository is the same as of [repository for the entire fixture](#mtf_repository_create).
 
-Assume that we want to provide data for the {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}Layout{% endglossarytooltip %} Update block for the following cases shown on the screenshots (name of data sets have orange font, fields defined in repository are highlighted in orange).
+Assume that we want to provide data for the [Layout](https://glossary.magento.com/layout) Update block for the following cases shown on the screenshots (name of data sets have orange font, fields defined in repository are highlighted in orange).
 
 Case 1. **all_pages** data set:
 
@@ -305,9 +305,9 @@ The repository code for these cases follows:
 
 ## Configuration repository {#mtf_repository_config}
 
-The configuration repository stores predefined data sets for Magento configuration settings. It is the repository for the [Magento\_Config module]({{ site.mage2000url }}app/code/Magento/Config) and is named `ConfigData.xml`.
+The configuration repository stores predefined data sets for Magento configuration settings. It is the repository for the [Magento\_Config module]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Config) and is named `ConfigData.xml`.
 
-Let's see the following example of configuration settings for [Authorize.Net module]({{ site.mage2000url }}app/code/Magento/Authorizenet) `<magento2>/dev/tests/functional/tests/app/Magento/Authorizenet/Test/Repository/ConfigData.xml`.
+Let's see the following example of configuration settings for [Authorize.Net module]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Authorizenet) `<magento2>/dev/tests/functional/tests/app/Magento/Authorizenet/Test/Repository/ConfigData.xml`.
 
 ```xml
 
@@ -377,7 +377,7 @@ Let's see the following example of configuration settings for [Authorize.Net mod
 
 ```
 
-Path to the `Authorizenet` UI form in {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} is **STORES > Settings > Configuration > SALES > Payment Methods > Authorize.net Direct Post**.
+Path to the `Authorizenet` UI form in [Admin](https://glossary.magento.com/admin) is **STORES > Settings > Configuration > SALES > Payment Methods > Authorize.net Direct Post**.
 
 This repository contains two data sets: `authorizenet` that covers seven fields, and `authorizenet_rollback` that covers one field.
 
@@ -413,7 +413,7 @@ Modules that require configuration adjustment store `ConfigData.xml` in their `R
 
 [![]({{ site.baseurl }}/common/images/ftf/mtf_repo_merge_ex.png)]({{ site.baseurl }}/common/images/ftf/mtf_repo_merge_ex.png)
 
-As you can see, the `ConfigData.xml` of the [`Magento_Authorizenet` module]({{ site.mage2000url }}app/code/Magento/Authorizenet) and the `ConfigData.xml` of the [`Magento_Backend` module]({{ site.mage2000url }}app/code/Magento/Backend) have the same reference to the repository class; that is `Magento\Config\Test\Repository\ConfigData`.
+As you can see, the `ConfigData.xml` of the [`Magento_Authorizenet` module]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Authorizenet) and the `ConfigData.xml` of the [`Magento_Backend` module]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Backend) have the same reference to the repository class; that is `Magento\Config\Test\Repository\ConfigData`.
 
 `ConfigData.php` will be generated in `<magento2>/dev/tests/functional/generated/Magento/Config/Test/Repository`. This PHP repository will contain repository data sets from all Magento modules that have a `ConfigData.xml` repository.
 
@@ -500,7 +500,7 @@ As you can see, a repository with the name `default` contains data from the `cus
 
 Credentials are stored in an `*.xml` file that is specified in `phpunit.xml`.
 
-You can find a template for credentials in [`<magento2>/dev/tests/functional/credentials.xml.dist`]({{ site.mage2000url }}dev/tests/functional/credentials.xml.dist).
+You can find a template for credentials in [`<magento2>/dev/tests/functional/credentials.xml.dist`]({{ site.mage2bloburl }}/{{ page.guide_version }}/dev/tests/functional/credentials.xml.dist).
 
 Credentials always should stay invisible for security reasons. The FTF implicitly pastes credentials during the test run only.
 There are two ways to paste credentials:

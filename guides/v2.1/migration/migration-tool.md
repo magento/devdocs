@@ -21,7 +21,7 @@ The Tool operates in three modes:
 
 2. **Data**: bulk migrates main data in the database
 
-3. **Delta**: transfers incremental data updates, added to Magento 1 {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} and {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} Panel while running previous migration modes
+3. **Delta**: transfers incremental data updates, added to Magento 1 [storefront](https://glossary.magento.com/storefront) and [Admin](https://glossary.magento.com/admin) Panel while running previous migration modes
 
 ## Steps
 

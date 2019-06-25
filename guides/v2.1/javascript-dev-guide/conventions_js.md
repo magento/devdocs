@@ -11,11 +11,11 @@ The following relative paths are used for modules and themes:
 
 **- `<theme_dir>`**
 
-{% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}Theme{% endglossarytooltip %} directory. Usually used when talking about custom themes, or any theme in general.
+[Theme](https://glossary.magento.com/theme) directory. Usually used when talking about custom themes, or any theme in general.
 
-For Magento out of the box {% glossarytooltip b00459e5-a793-44dd-98d5-852ab33fc344 %}frontend{% endglossarytooltip %} themes, usually one of the following:
+For Magento out of the box [frontend](https://glossary.magento.com/frontend) themes, usually one of the following:
 
- - `app/design/frontend/Magento/<theme>`
+ - `app/design/frontend/<Vendor>/<theme>`
  - `vendor/magento/theme-frontend-<theme>`
 
 **- `<module_dir>`**
@@ -24,5 +24,5 @@ Module directory. When talking about a particular Magento module, also notation 
 
 For Magento modules, the absolute path is usually one of the following:
 
- - `app/code/Magento/<Module>`
+ - `app/code/<Vendor>/<Module>`
  - `vendor/magento/module-<module>-<name>`

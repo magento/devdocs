@@ -15,7 +15,7 @@ functional_areas:
 
 ## Elasticsearch overview {#overview}
 
-In Magento 2.2, you can use [Elasticsearch][] for searching your {% glossarytooltip 8d40d668-4996-4856-9f81-b1386cf4b14f %}catalog{% endglossarytooltip %}.
+In Magento 2.2, you can use [Elasticsearch][] for searching your [catalog](https://glossary.magento.com/catalog).
 
 * Elasticsearch performs quick and advanced searches on products in the catalog
 * Elasticsearch Analyzers support multiple languages

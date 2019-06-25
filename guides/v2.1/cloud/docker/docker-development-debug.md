@@ -18,27 +18,28 @@ If you use Microsoft Windows, take the following steps before continuing:
 
 ## Enable Xdebug
 
-To enable Xdebug, you must configure your `docker/global.php` file at the time you configure your local workstation to [Launch Docker]({{ page.baseurl }}/cloud/docker/docker-config.html) and **before** you convert the PHP configuration files to Docker ENV files. 
+To enable Xdebug, you must configure your `docker-compose.yaml` file at the time you configure your local workstation to [Launch Docker]({{ page.baseurl }}/cloud/docker/docker-config.html).
 
-Add or update the following variables in the `docker/global.php` file:
-
-```php
-<?php
-
-return [
-    // Enable Xdebug
-    'PHP_ENABLE_XDEBUG' => true,
-    // Add the name of the server created in the IDE
-    'PHP_IDE_CONFIG' => 'serverName=myServer',
-    // Modify the remote Docker host according to your OS
-    'XDEBUG_CONFIG' => 'remote_host=host.docker.internal',
-];
+```yaml
+generic:
+  image: alpine
+  environment:
+    - PHP_MEMORY_LIMIT=2048M
+    - DEBUG=false
+    - ENABLE_SENDMAIL=false
+    - UPLOAD_MAX_FILESIZE=64M
+    - MAGENTO_ROOT=/app
+    - PHP_ENABLE_XDEBUG=false
+    - PHP_IDE_CONFIG=serverName=magento_cloud_docker
+    - XDEBUG_CONFIG=remote_host=host.docker.internal
+  env_file:
+    - ./docker/config.env
 ```
 
 You can change any Xdebug configuration using the`XDEBUG_CONFIG` option. For example, to change the `xdebug.remote_port` option:
 
-```
-'XDEBUG_CONFIG' => 'remote_host=host.docker.internal remote_port=9002',
+```yaml
+XDEBUG_CONFIG='remote_host=host.docker.internal remote_port=9002'
 ```
 
 #### To configure PhpStorm to work with Xdebug:
@@ -54,14 +55,14 @@ You can change any Xdebug configuration using the`XDEBUG_CONFIG` option. For exa
 
 1.  Configure the following settings for the new server configuration:
 
-    -  **Name**—Enter the name used for the `serverName` in `PHP_IDE_CONFIG` option from `docker/global.php` file.
+    -  **Name**—Enter the name used for the `serverName` in `PHP_IDE_CONFIG` option from `docker-compose.yml` file.
     -  **Host**—Enter `localhost`.
     -  **Port**—Enter `80`.
     -  **Debugger**—Select `Xdebug`.
 
 1.  Select **Use path mappings**. In the _File/Directory_ pane, the root of the project for the `serverName` displays.
 
-1.  In the **Absolute path on the server** column, click ![Edit]({{ site.baseurl }}/common/images/install_docker_php-storm-edit.png){:width="15px"} and add a value to the `MAGENTO_ROOT` option. The default value is `/var/www/magento`
+1.  In the **Absolute path on the server** column, click ![Edit]({{ site.baseurl }}/common/images/install_docker_php-storm-edit.png){:width="15px"} and add a value to the `MAGENTO_ROOT` option. The default value is `/app`
 
 1.  Change the Xdebug port to 9001 in the **Languages & Frameworks** > **PHP** > **Debug** > **Xdebug** > **Debug Port** panel.
 

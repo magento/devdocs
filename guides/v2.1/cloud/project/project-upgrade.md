@@ -46,7 +46,7 @@ You can upgrade the core {{site.data.var.ee}} code base to version 2.1. If you n
 1.  Verify the upgrade in your Integration, Staging, or Production environment by using SSH to log in and check the version.
 
     ```bash
-      php bin/magento --version
+    php bin/magento --version
     ```
 
 ## Verify and upgrade your extensions {#extensions}

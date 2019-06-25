@@ -117,6 +117,7 @@ The following walk-through shows you how to create regular VCL snippet files and
    ```bash
    export FASTLY_SERVICE_ID=<Service ID>
    ```
+   
    ```bash
    export FASTLY_API_TOKEN=<API Token>
    ```
@@ -172,6 +173,7 @@ Save the active version number in a bash environment variable for use in subsequ
 ```bash
 export FASTLY_VERSION_ACTIVE=<Version>
 ```
+
 #### Step 2: Clone the active VCL version and all snippets {#clone}
 
 Before you can add or modify custom VCL snippets, you must create a copy of the active VCL version for editing. Use the Fastly API [clone ](https://docs.fastly.com/api/config#version_7f4937d0663a27fbb765820d4c76c709) operation:  
@@ -179,6 +181,7 @@ Before you can add or modify custom VCL snippets, you must create a copy of the 
 ```bash
 curl -H "Fastly-Key: $FASTLY_API_TOKEN" https://api.fastly.com/service/$FASTLY_SERVICE_ID/version/$FASTLY_VERSION_ACTIVE/clone -X PUT
 ```	
+
 In the JSON response, the version number is incremented, and the *active* key value is `false`. You can modify the new, inactive VCL version locally.
 
 ```json
