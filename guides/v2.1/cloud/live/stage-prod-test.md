@@ -215,9 +215,9 @@ For best results, we recommend the following tools:
 * [Magento application performance test]({{ page.baseurl }}/cloud/env/variables-post-deploy.html#ttfb_tested_pages)—Test Magento application performance by configuring the `TTFB_TESTED_PAGES` environment variable to test site response time.
 * [Siege](https://www.joedog.org/siege-home/)—Traffic shaping and testing software to push your store to the limit. Hit your site with a configurable number of simulated clients. Siege supports basic authentication, cookies, HTTP, HTTPS and FTP protocols.
 * [Jmeter](http://jmeter.apache.org/)—Excellent load testing to help gauge performance for spiked traffic, like for flash sales. Create custom tests to run against your site.
-* New Relic (provided): Helps locate processes and areas of the site causing slow performance with tracked time spent per action like transmitting data, queries, Redis, and so on.
-* [Blackfire]({{ page.baseurl }}/cloud/project/project-integrate-blackfire.html) (provided)x— Helps track through the issues New Relic finds and helps you dig deeper into the issue for specifics. Blackfire profiles the environment and helps locate bottlenecks indepth: process, method call, query, load, and so on.
-* [WebPageTest](https://www.webpagetest.org/) and [Pingdom](https://www.pingdom.com/)— Real-time analysis of your site pages load time with different origin locations. Pingdom may cost a fee. WebPageTest is a free tool.
+* New Relic (provided)—Helps locate processes and areas of the site causing slow performance with tracked time spent per action like transmitting data, queries, Redis, and so on.
+* [Blackfire]({{ page.baseurl }}/cloud/project/project-integrate-blackfire.html) (provided)— Helps track through the issues New Relic finds and helps you dig deeper into the issue for specifics. Blackfire profiles the environment and helps locate bottlenecks indepth: process, method call, query, load, and so on.
+* [WebPageTest](https://www.webpagetest.org/) and [Pingdom](https://www.pingdom.com/)—Real-time analysis of your site pages load time with different origin locations. Pingdom may require a fee. WebPageTest is a free tool.
 
 ## Set up Magento Security Scan Tool {#security-scan}
 
