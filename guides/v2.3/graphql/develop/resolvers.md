@@ -139,7 +139,7 @@ type Mutation {
 
 Notice that a `MutationQueryInput` parameter is not specified here and `MutationQueryOutput` is defined as `String` type.
 
-The next query creates a customer's account
+The mutation to create a customer's account is more complex:
 
 ```text
 type Mutation {
