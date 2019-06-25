@@ -1,7 +1,7 @@
 ---
 layout: tutorial
 group: graphql
-title: Step 3. Add product to cart
+title: Step 3. Add products to the cart
 subtitle: GraphQL checkout tutorial
 level3_subgroup: graphql-checkout
 return_to:
@@ -24,14 +24,11 @@ If you add a product to the shopping cart as a registered customer, be sure to s
 
 `{ CART_ID }` is the unique shopping cart ID from [Step 2. Create empty cart]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-add-product-to-cart.html).
 
-## Add a simple product into shopping cart
+## Add a simple product into the shopping cart
 
 The following mutation adds a **simple product** into shopping cart.
 
 **Request**
-
-{:.bs-callout .bs-callout-info}
-For logged-in customers, send the customer's authorization token in the `Authorization` parameter of the header. See ["Get customer authorization token"]({{ page.baseurl }}/graphql/get-customer-authorization-token.html) for more information.
 
 ```text
 mutation {  
@@ -85,14 +82,11 @@ mutation {
 }
 ```
 
-## Add a virtual product into shopping cart
+## Add a virtual product into the shopping cart
 
 The following mutation adds a **virtual product** into shopping cart.
 
 **Request**
-
-{:.bs-callout .bs-callout-info}
-For logged-in customers, send the customer's authorization token in the `Authorization` parameter of the header. See ["Get customer authorization token"]({{ page.baseurl }}/graphql/get-customer-authorization-token.html) for more information.
 
 ```text
 mutation {  
