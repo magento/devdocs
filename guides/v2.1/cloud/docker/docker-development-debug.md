@@ -18,9 +18,9 @@ If you use Microsoft Windows, take the following steps before continuing:
 
 ## Enable Xdebug
 
-To enable Xdebug, you must add `xdebug` to `.magento.app.yaml` file.
+To enable Xdebug for your project, add `xdebug` to the `runtime:extensions` section of the `.magento.app.yaml` file.
+
 ```yaml
-# Enable extensions required by Magento 2
 runtime:
     extensions:
         - redis
@@ -29,31 +29,34 @@ runtime:
         - blackfire
         - newrelic
         - xdebug
-
-```
-After, you must rebuild your `docker-compose.yaml` file, using cli command `php ./vendor/bin/ece-tools docker:build` at the time you configure your local workstation to [Launch Docker]({{ page.baseurl }}/cloud/docker/docker-config.html).
-
-```yaml
-generic:
-  image: alpine
-  environment:
-    - PHP_MEMORY_LIMIT=2048M
-    - DEBUG=false
-    - ENABLE_SENDMAIL=false
-    - UPLOAD_MAX_FILESIZE=64M
-    - MAGENTO_ROOT=/app
-    - PHP_ENABLE_XDEBUG=false
-    - PHP_IDE_CONFIG=serverName=magento_cloud_docker
-    - XDEBUG_CONFIG=remote_host=host.docker.internal
-  env_file:
-    - ./.docker/config.env
 ```
 
-You can change any Xdebug configuration using the`XDEBUG_CONFIG` option. For example, to change the `xdebug.remote_port` option:
+## Configure Xdebug
 
-```yaml
-XDEBUG_CONFIG='remote_host=host.docker.internal remote_port=9002'
-```
+1.  Rebuild the `docker-compose.yml` file by continuing to configure your local workstation to [launch the Docker environment]({{ page.baseurl }}/cloud/docker/docker-config.html). The following is an excerpt from the `docker-compose.yml` file that shows Docker global variables.
+
+    ```yaml
+    generic:
+        image: alpine
+        environment:
+            - PHP_MEMORY_LIMIT=2048M
+            - DEBUG=false
+            - ENABLE_SENDMAIL=false
+            - UPLOAD_MAX_FILESIZE=64M
+            - MAGENTO_ROOT=/app
+            - PHP_ENABLE_XDEBUG=false
+            - PHP_IDE_CONFIG=serverName=magento_cloud_docker
+            - XDEBUG_CONFIG=remote_host=host.docker.internal
+        env_file:
+            - ./.docker/config.env
+    ```
+    {:.no-copy}
+
+1.  Change any Xdebug configuration using the`XDEBUG_CONFIG` option. For example, to change the `xdebug.remote_port` option:
+
+    ```yaml
+    XDEBUG_CONFIG='remote_host=host.docker.internal remote_port=9002'
+    ```
 
 #### To configure PhpStorm to work with Xdebug:
 
@@ -81,7 +84,7 @@ XDEBUG_CONFIG='remote_host=host.docker.internal remote_port=9002'
 
 1.  Click **Apply**.
 
-## Using Xdebug
+## Use Xdebug
 
 The following steps describe debugging web requests and CLI commands.
 
