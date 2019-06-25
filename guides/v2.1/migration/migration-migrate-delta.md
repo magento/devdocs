@@ -13,9 +13,12 @@ functional_areas:
 
 The incremental migration tool installs deltalog tables (with prefix `m2_cl_*`) and triggers (for tracking changes) in the Magento 1 database during the [migration of data]({{ page.baseurl }}/migration/migration-migrate-data.html). These deltalog tables and triggers are essential to ensuring that you migrate only the changes made in Magento 1 since the last time you migrated data. These changes are:
 
-* data that customers added via {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} (created orders, reviews, changes in customer profiles, etc.)
+* data that customers added via [storefront](https://glossary.magento.com/storefront) (created orders, reviews, changes in customer profiles, etc.)
 
-* all operations with orders in the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} panel
+* all operations with orders in the [Magento Admin](https://glossary.magento.com/magento-admin) panel
+
+{: .bs-callout .bs-callout-info }
+All new or updated entities entered through the Admin panel, like products and categories, are not included in incremental migration and will not be migrated.
 
 ## Before you start: routine preparations
 
@@ -44,7 +47,7 @@ Incremental migration runs continuously until you stop it by pressing CTRL+C.
 
 In the `Delta` mode, the Data Migration Tool migrates data created only by Magento's own modules and is not responsible for the code or extensions made by third-party developers. If these extensions created data in the storefront database and the merchant wants to have this data in Magento 2 --- config files of the Data Migration Tool should be created and modified accordingly.
 
-If an {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} has its own tables, and you need to track their changes for delta migration, follow these steps:
+If an [extension](https://glossary.magento.com/extension) has its own tables, and you need to track their changes for delta migration, follow these steps:
 
 1. Add the tables to be tracked to the `deltalog.xml` file
 

@@ -7,7 +7,6 @@ menu_node:
 menu_order: 9
 level3_menu_node: level3child
 level3_subgroup: step3
-redirect_from: /guides/v2.0/comp-mgr/compman-new-purchase.html
 functional_areas:
   - Upgrade
 ---
@@ -16,12 +15,13 @@ When you're installing new purchases from Magento Marketplace, the page displays
 
 ![]({{ site.baseurl }}/common/images/compman_new-purchases-step3install.png){: width="500px"}
 
+## Install the component
 
 If the list of purchases is correct, click **Install**.
 
 Messages display in the Console Log as your new purchases are installed. Following is a sample of some of these messages:
 
-{% highlight xml %}
+```terminal
 [2016-04-07 09:37:06 CDT] Job "maintenance_mode {"enable":true}" has been started
 [2016-04-07 09:37:06 CDT] Magento maintenance mode is enabled.
 [2016-04-07 09:37:06 CDT] Job "maintenance_mode {"enable":true}" has successfully completed
@@ -70,7 +70,7 @@ Please re-run Magento compile command
 [2016-04-07 14:38:15 UTC] Clearing cache...
 [2016-04-07 14:38:15 UTC] Cleaning static view files
 [2016-04-07 14:38:15 UTC] Job "setup:static:regenerate []" has been successfully completed
-{% endhighlight %}
+```
 
 When the installation is complete, a page similar to the following displays:
 
@@ -78,3 +78,11 @@ When the installation is complete, a page similar to the following displays:
 
 
 Click **Back to Setup Tool**.
+
+## Clean the cache
+
+Clean the cache by clicking **System** > **Cache Management** > **Flush Magento Cache** or by entering the following command:
+
+```bash
+bin/magento cache:clean
+```

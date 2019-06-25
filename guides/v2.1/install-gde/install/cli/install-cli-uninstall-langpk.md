@@ -1,9 +1,6 @@
 ---
 group: installation-guide
 title: Uninstall language packages
-redirect_from:
-  - /guides/v1.0/install-gde/install/install-cli-uninstall-langpk.html
-  - /guides/v2.0/install-gde/install/install-cli-uninstall-langpk.html
 functional_areas:
   - Install
   - System
@@ -15,7 +12,7 @@ functional_areas:
 
 This section discusses how to uninstall one or more language packages, optionally including the language packages' code from the file system. You can create backups first so you can restore the data at a later time.
 
-This command uninstalls *only* language packages that are specified in `composer.json`; in other words, language packages that are provided as {% glossarytooltip d85e2d0a-221f-4d03-aa43-0cda9f50809e %}Composer{% endglossarytooltip %} packages. If your {% glossarytooltip 9c4c7b9b-43f0-4454-8e8c-fb62ad40c35f %}language package{% endglossarytooltip %} is not a Composer package, you must uninstall it manually by removing language package code from the file system.
+This command uninstalls *only* language packages that are specified in `composer.json`; in other words, language packages that are provided as [Composer](https://glossary.magento.com/composer) packages. If your [language package](https://glossary.magento.com/language-package) is not a Composer package, you must uninstall it manually by removing language package code from the file system.
 
 You can restore backups at any time using the [magento setup:rollback]({{ page.baseurl }}/install-gde/install/cli/install-cli-uninstall-mods.html#instgde-cli-uninst-mod-roll) command.
 
@@ -36,7 +33,7 @@ The language package uninstall command performs the following tasks:
 	To work around this, you can either uninstall all dependent language packages at the same time or you can uninstall the depending language packages first.
 2.	If `--backup code` is specified, backs up the Magento file system (excluding `var` and `pub/static` directories) to `var/backups/<timestamp>_filesystem.tgz`
 3.	Removes language packages files from the codebase using `composer remove`.
-4.	Cleans the {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %}.
+4.	Cleans the [cache](https://glossary.magento.com/cache).
 
 For example, if you attempt to uninstall a language package that another language package depends on, the following message displays:
 

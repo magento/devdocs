@@ -18,11 +18,11 @@ The Schema Listener tool listens for schema changes and attempts to change Magen
 To convert your install or upgrade script, run one of the following commands:
 
 ```bash
-magento setup:install --convert-old-scripts=1
+bin/magento setup:install --convert-old-scripts=1
 ```
 
 ```bash
-magento setup:upgrade --convert-old-scripts=1
+bin/magento setup:upgrade --convert-old-scripts=1
 ```
 
 {: .bs-callout .bs-callout-info }
@@ -44,7 +44,7 @@ Old data scripts cannot be converted automatically. The following steps help mak
 1. Generate a patch stub.
 
     ```bash
-    setup:db-declaration:generate-patch [options] <module-name> <patch-name>
+    bin/magento setup:db-declaration:generate-patch [options] <module-name> <patch-name>
     ```
     where `[options]` can be any of the following:
 
@@ -57,7 +57,7 @@ Old data scripts cannot be converted automatically. The following steps help mak
 
 
 2. All released modules that previously used upgrade scripts must support backward compatibility by implementing
-`\Magento\Setup\Model\Patch\PatchVersionInterface` and the `getVersion` method. This method allows you to skip changes that were applied in previous versions and were done by old scripts. The returned value of the `getVersion` method in this case should be equal to the value of a version in `version_compare` function in old scripts. When the `InstallData.php` script does not have any versions to compare, you can specify the first version of your module. See [Develop declarative data and schema patches]({{ page.baseurl }}/extension-dev-guide/declarative-schema/data-patches.html) for more information.
+`\Magento\Framework\Setup\Patch\PatchVersionInterface` and the `getVersion` method. This method allows you to skip changes that were applied in previous versions and were done by old scripts. The returned value of the `getVersion` method in this case should be equal to the value of a version in `version_compare` function in old scripts. When the `InstallData.php` script does not have any versions to compare, you can specify the first version of your module. See [Develop declarative data and schema patches]({{ page.baseurl }}/extension-dev-guide/declarative-schema/data-patches.html) for more information.
 
 ## Dry run mode
 
@@ -66,8 +66,10 @@ It is important that declarative installation/upgrade does not break anything. A
 To enable dry run mode, run one of the following commands:
 
 ```bash
-setup:install --dry-run=1
-setup:upgrade --dry-run=1
+bin/magento setup:install --dry-run=1
+```
+```bash
+bin/magento setup:upgrade --dry-run=1
 ```
 
 As a result of specifying the `--dry-run=1` flag, Magento writes a log file at `<Magento_Root>/var/log/dry-run-installation.log`. This file contains all the DDL SQL statements that are generated during installation. You can use these SQL statements for debugging and optimizing performance processes.
@@ -80,9 +82,9 @@ To help prevent data loss, you can specify command line options that dump all th
 
 Magento provides options to the `setup:install` and `setup:upgrade` commands that enable safe installations and rollbacks:
 
-`--safe-mode` - Creates a data dump during the installation or upgrade process.
+`--safe-mode=1` - Creates a data dump during the installation or upgrade process.
 
-`--data-restore` - (Used with the `setup:upgrade` command only.) Performs a rollback. Before you rollback, you must first check out code to the previous version of Magento. Then run `setup:upgrade  --data-restore`.
+`--data-restore=1` - (Used with the `setup:upgrade` command only.) Performs a rollback. Before you rollback, you must first check out code to the previous version of Magento. Then run `setup:upgrade  --data-restore=1`.
 
 
 Several types of operations have an effect on data dumps and rollbacks.
@@ -106,17 +108,17 @@ Each CSV file contains a row that defines the column (or other database entity) 
 
 ![Dump Example]({{ page.baseurl }}/extension-dev-guide/declarative-schema/images/dump_example.png)
 
-## Maintain backward compatibility
+## Create a schema whitelist {#create-whitelist}
 
-Backward compatibility must be maintained. Therefore, declarative schema does not automatically delete database tables, columns or keys that are not defined in a `db_schema.xml` file. Declarative schema can't delete these elements because these items can be declared somewhere else, such as in an `Setup/UpgradeSchema.php` file.
+Backward compatibility must be maintained. Therefore, declarative schema does not automatically delete database tables, columns or keys that are not defined in a `db_schema.xml` file. Declarative schema cannot delete these elements because these items can be declared somewhere else, such as in an `Setup/UpgradeSchema.php` file.
 
-The `<module_vendor>/<module_name>/etc/db_schema_whitelist.json` file provides a history of all tables, columns, keys added with declarative schema. It can be generated manually or created automatically with the following command:
+The `<module_vendor>/<module_name>/etc/db_schema_whitelist.json` file provides a history of all tables, columns, and keys added with declarative schema. It is required to allow drop operations. It can be generated manually or created automatically with the following command:
 
 ```bash
-magento setup:db-declaration:generate-whitelist [options]
+bin/magento setup:db-declaration:generate-whitelist [options]
 ```
 
-where `[options]` can be:
+`[options]` can be:
 
 `--module-name[=MODULE-NAME]` specifies which module to generate a whitelist for. If no module name is specified, then the default behavior is to generate a whitelist for all modules. You can also explicitly set `--module-name=all`.
 
@@ -125,5 +127,49 @@ In Magento 2.3 Alpha, the `setup:db-declaration:generate-whitelist` command was 
 
 As a best practice, you should generate a new whitelist file for each release. You must generate the whitelist  in any release that contains changes in the `db_schema.xml` file.
 
+The following code sample shows a sample `db_schema_whitelist.json` file:
+
+```json
+{
+    "adminnotification_inbox": {
+        "column": {
+            "notification_id": true,
+            "severity": true,
+            "date_added": true,
+            "title": true,
+            "description": true,
+            "url": true,
+            "is_read": true,
+            "is_remove": true
+        },
+        "index": {
+            "ADMINNOTIFICATION_INBOX_SEVERITY": true,
+            "ADMINNOTIFICATION_INBOX_IS_READ": true,
+            "ADMINNOTIFICATION_INBOX_IS_REMOVE": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    },
+    "admin_system_messages": {
+        "column": {
+            "identity": true,
+            "severity": true,
+            "created_at": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}
+```
+
 {: .bs-callout .bs-callout-info }
 This file is a temporary solution. It will be removed in the future, when upgrade scripts are no longer supported.
+
+## Resolve reference IDs
+
+The sample `db_schema_whitelist.json` file above contains system-generated constraint and index names. [Configure your `db_schema.xml` file]({{ page.baseurl }}/extension-dev-guide/declarative-schema/db-schema.html) so that the `referenceId` attributes match these values. 
+
+{: .bs-callout .bs-callout-info }
+In Magento 2.3.0, the identifying attribute for constraints and index definitions is `referenceId`. In pre-release versions, the attribute was `name`. 

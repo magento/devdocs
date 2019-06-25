@@ -3,19 +3,29 @@ group: installation-guide
 title: Modify docroot to improve security
 ---
 
-If you installed Magento in Apache's default docroot `/var/www/html`, the Magento file system is vulnerable because it's accessible from a browser. This topic describes how to change the Apache [docroot]({{ page.baseurl }}/install-gde/basics/basics_docroot.html) on an existing Magento instance to serve files from the Magento `pub/` directory, which is more secure.
+In a standard installation with an Apache web server, Magento is installed to the default web root: `/var/www/html/magento2`.
+Within the `magento2` folder are:
+- /pub/
+- /setup/
+- /var/
+- other folders
 
-Serving files from the `pub/` directory prevents site visitors from accessing the Web Setup Wizard and other sensitive areas of the Magento file system from a browser.
+
+ 
+The Magento app is served from `/var/www/html/magento2/pub`. The rest of the Magento file system is vulnerable because it is accessible from a browser. 
+Setting the webroot to the `pub/` directory prevents site visitors from accessing the Web Setup Wizard and other sensitive areas of the Magento file system from a browser.
+
+This topic describes how to change the Apache [docroot]({{ page.baseurl }}/install-gde/basics/basics_docroot.html) on an existing Magento instance to serve files from the Magento `pub/` directory, which is more secure.
 
 {: .bs-callout .bs-callout-warning }
-If you're accustomed to using the Web Setup Wizard during development, be aware that you won't be able to access it when serving files from the `pub/` directory.
+If you're accustomed to using the Web Setup Wizard during development, be aware that you will not be able to access it when serving files from the `pub/` directory.
 
 ## A note about nginx
 
-If you're using [nginx]({{ page.baseurl }}/install-gde/prereq/nginx.html) and the [`nginx.conf.sample`]({{ site.mage2200url }}nginx.conf.sample){:target="_blank"} file included in the Magento installation directory, you're probably already serving files from the `pub/` directory.
+If you are using [nginx]({{ page.baseurl }}/install-gde/prereq/nginx.html) and the [`nginx.conf.sample`]({{ site.mage2bloburl }}/{{ page.guide_version }}/nginx.conf.sample) file included in the Magento installation directory, you are probably already serving files from the `pub/` directory.
 
-The sample configuration overrides your server's docroot settings to serve files from Magento's `pub/` directory; assuming you've referenced the `nginx.conf.sample` in the server block that defines your site. For example, see the last line in the following configuration:
-
+When used in your server block that defines your site, the `nginx.conf.sample` configuration overrides your server's docroot settings to serve files from Magento's `pub/` directory. For example, see the last line in the following configuration:
+```bash
     # /etc/nginx/sites-available/magento
 
     upstream fastcgi_backend {
@@ -29,10 +39,11 @@ The sample configuration overrides your server's docroot settings to serve files
               set $MAGE_ROOT /var/www/html/magento2ce;
               include /var/www/html/magento2ce/nginx.conf.sample;
     }
+```
 
 ## Before you begin
 
-To complete this tutorial, you'll need access to a working Magento installation running on a [LAMP](https://en.wikipedia.org/wiki/LAMP_(software_bundle)){:target="_blank"} stack:
+To complete this tutorial, you will need access to a working Magento installation running on a [LAMP](https://en.wikipedia.org/wiki/LAMP_(software_bundle)){:target="_blank"} stack:
 
 -   Linux
 -   Apache (2.2+)
@@ -45,13 +56,13 @@ Refer to [Prerequisites]({{ page.baseurl }}/install-gde/prereq/prereq-overview.h
 
 ## 1. Edit your server configuration
 
-The name and location of your virtual host file depends on which version of Apache you're running. This example shows the name and location of the virtual host file on Apache v2.4.
+The name and location of your virtual host file depends on which version of Apache you are running. This example shows the name and location of the virtual host file on Apache v2.4.
 
 1.  Log in to your Magento server.
 2.  Edit your virtual host file:
-
+```bash
         vim /etc/apache2/sites-available/000-default.conf
-
+```
 3.  Add the path to your Magento `pub/` directory to the `DocumentRoot` directive:
 
     ```
@@ -69,9 +80,9 @@ The name and location of your virtual host file depends on which version of Apac
     </VirtualHost>
     ```
 4.  Restart Apache:
-
+```bash
         systemctl restart apache2  
-
+```
 ## 2. Update your base URL
 
 If you appended a directory name to your server's hostname or IP address to create the base URL when you installed Magento (for example `http://192.168.33.10/magento2`), you'll need to remove it.
@@ -98,21 +109,21 @@ Switching between modes is an important step in verifying that your server confi
 
 1.  Go to your Magento installation directory.
 2.  Switch to `production` mode.
-
+```bash
         bin/magento deploy:mode:set production
         bin/magento cache:flush
-
+```
 3.  Refresh your browser and verify that the storefront displays properly.
 4.  Switch to `developer` mode.
-
+```bash
         bin/magento deploy:mode:set developer
         bin/magento cache:flush
-
+```
 5.  Refresh your browser and verify that the storefront displays properly.
 
 ## 4. Verify the storefront
 
-Go to the {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} in a web browser to verify that everything is working.
+Go to the [storefront](https://glossary.magento.com/storefront) in a web browser to verify that everything is working.
 
 1.  Open a web browser and enter your server's hostname or IP address in the address bar. For example, http://192.168.33.10.
 
@@ -130,4 +141,3 @@ Go to the {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{%
 
 ## Congratulations! You're finished.
 {:.no_toc}
-

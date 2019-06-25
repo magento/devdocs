@@ -28,7 +28,7 @@ Magento 2.1.4 contains more than 20 functional fixes and enhancements, and one s
 
 ## Security enhancement
 
-This release includes an important enhancement to the security of your Magento software. While there are no confirmed attacks related to the Zend framework `Zend_Mail` {% glossarytooltip 08968dbb-2eeb-45c7-ae95-ffca228a7575 %}library{% endglossarytooltip %} vulnerability to date, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. We recommend that you upgrade your existing Magento software to the latest version as soon as possible.
+This release includes an important enhancement to the security of your Magento software. While there are no confirmed attacks related to the Zend framework `Zend_Mail` [library](https://glossary.magento.com/library) vulnerability to date, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. We recommend that you upgrade your existing Magento software to the latest version as soon as possible.
  
 
 ## Functional fixes and enhancements
@@ -37,10 +37,10 @@ We address the following functional issues in this release.
 
 ### Catalog
 
-<!--- 58437-->* The {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} gallery now displays all the images associated with a {% glossarytooltip 2fd4d100-28d2-45ca-bec1-128444ea98e6 %}configurable product{% endglossarytooltip %}. Previously, when you clicked on the swatches associated with a configurable product, the gallery displayed only one of several possible images.  [(GITHUB-6195)](https://github.com/magento/magento2/issues/6195){:target="_blank"}, [(GITHUB-4101)](https://github.com/magento/magento2/issues/4101){:target="_blank"}
+<!--- 58437-->* The [storefront](https://glossary.magento.com/storefront) gallery now displays all the images associated with a [configurable product](https://glossary.magento.com/configurable-product). Previously, when you clicked on the swatches associated with a configurable product, the gallery displayed only one of several possible images.  [(GITHUB-6195)](https://github.com/magento/magento2/issues/6195){:target="_blank"}, [(GITHUB-4101)](https://github.com/magento/magento2/issues/4101){:target="_blank"}
 
 
-<!---57832 -->* Magento now displays the **This is a required field** message immediately adjacent to the product options as needed during {% glossarytooltip 278c3ce0-cd4c-4ffc-a098-695d94d73bde %}checkout{% endglossarytooltip %}. Previously, Magento displayed this message at the bottom of the checkout form. 
+<!---57832 -->* Magento now displays the **This is a required field** message immediately adjacent to the product options as needed during [checkout](https://glossary.magento.com/checkout). Previously, Magento displayed this message at the bottom of the checkout form. 
 
 ### Checkout 
 
@@ -53,31 +53,31 @@ We address the following functional issues in this release.
 <!--- 59853-->* The Magento flat indexer now collects correct product data for `ROW_ID`.
 
 
-<!--- 58559-->* The Magento flat indexer no longer throws an error after flat tables are enabled and reindexed. This fix applies to both product and {% glossarytooltip 8d40d668-4996-4856-9f81-b1386cf4b14f %}catalog{% endglossarytooltip %} tables. 
+<!--- 58559-->* The Magento flat indexer no longer throws an error after flat tables are enabled and reindexed. This fix applies to both product and [catalog](https://glossary.magento.com/catalog) tables. 
 
 ### Installation, configuration, and deployment
 
 <!--- 62400-->* Third-party command line tools no longer fail when you run `setup:di:compile`.
 
-<!--- 62648-->* Magento now correctly applies {% glossarytooltip a3c8f20f-b067-414e-9781-06378c193155 %}website{% endglossarytooltip %} configuration parameters to the corresponding {% glossarytooltip ca5a9ff1-8182-4fc4-a34b-9b3f831dbf3f %}store view{% endglossarytooltip %}. [(GITHUB-7943)](https://github.com/magento/magento2/issues/7943){:target="_blank"}
+<!--- 62648-->* Magento now correctly applies [website](https://glossary.magento.com/website) configuration parameters to the corresponding [store view](https://glossary.magento.com/store-view). [(GITHUB-7943)](https://github.com/magento/magento2/issues/7943){:target="_blank"}
 
 ### Miscellaneous
 
 <!--- 62229-->* Magento now displays the price of out-of-stock products on the product page.  
 
-<!--- 62721-->*  The **Allow Gift Wrapping for Order Items** setting now works as expected. Previously, when **Stores > Configuration > Sales > Gift Options** was set to **No**, users  saw the Gift Option link under each product in their {% glossarytooltip c7ecb18d-cefe-452d-83e2-3c4d5e355db9 %}shopping cart{% endglossarytooltip %}.  
+<!--- 62721-->*  The **Allow Gift Wrapping for Order Items** setting now works as expected. Previously, when **Stores > Settings > Configuration > Sales > Gift Options** was set to **No**, users  saw the Gift Option link under each product in their [shopping cart](https://glossary.magento.com/shopping-cart).  
 
 
 <!--- 60248-->* Information set by the **Default Billing Address** and **Default Shipping Address** checkboxes on the Customer page are now saved correctly.
 
-<!---59416 -->* {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} users with appropriate permissions can now reset the passwords of more than one customer at a time. [(GITHUB-5260)](https://github.com/magento/magento2/issues/5260){:target="_blank"}
+<!---59416 -->* [Admin](https://glossary.magento.com/admin) users with appropriate permissions can now reset the passwords of more than one customer at a time. [(GITHUB-5260)](https://github.com/magento/magento2/issues/5260){:target="_blank"}
 
 
 <!---59142 -->* Admin interface forms now load data as expected after initializing all components. Previously, under certain conditions, the load indicator would spin indefinitely, and Magento would not load data. 
 
 
 
-<!--- 58895-->* If you remove an item from the Compare Items list that is displayed on any {% glossarytooltip 50e49338-1e6c-4473-8527-9e401d67ea2b %}Category{% endglossarytooltip %} page, Magento no longer redirects you to the Compare Products page.
+<!--- 58895-->* If you remove an item from the Compare Items list that is displayed on any [Category](https://glossary.magento.com/category) page, Magento no longer redirects you to the Compare Products page.
 
 
 <!--- 58832-->* The order comments history no longer duplicates the time that a comment was made. Previously, the time that a comment was made was listed twice.
@@ -88,13 +88,13 @@ We address the following functional issues in this release.
 
 <!--- 58376-->* PayPal Payflow Pro now uses the currency you've specified in your store settings. Previously, Magento converted the total price into U.S. dollars, no matter which currency was specified in the store settings. 
 
-<!--- 55612-->* Magento no longer displays the **No {% glossarytooltip 422b0fa8-b181-4c7c-93a2-c553abb34efd %}Payment method{% endglossarytooltip %} available** message when a customer tries to ship items to a billing-restricted country. 
+<!--- 55612-->* Magento no longer displays the **No [Payment method](https://glossary.magento.com/payment-method) available** message when a customer tries to ship items to a billing-restricted country. 
 
 <!--- 62669-->* Third-party payment gateways are now visible from the Admin.  [(GITHUB-7891)](https://github.com/magento/magento2/issues/7891){:target="_blank"}
 
-<!--- 62428-->* Magento now updates you as expected on order comments and order history after you initiate a refund using Braintree. Previously, when you clicked the **Refund** button (to initiate a refund), Magento did not {% glossarytooltip 510de766-1ebd-4546-bf38-c618c9c945d2 %}redirect{% endglossarytooltip %} you to order comments and history information.
+<!--- 62428-->* Magento now updates you as expected on order comments and order history after you initiate a refund using Braintree. Previously, when you clicked the **Refund** button (to initiate a refund), Magento did not [redirect](https://glossary.magento.com/redirect) you to order comments and history information.
 
-<!--- 59036-->* We've fixed an issue with using PayPal Express Checkout to order products with custom options. Previously, although an Admin user could create and configure “File type” custom options, customers could not upload and store files within the order {% glossarytooltip 77e19d0d-e7b1-4d3d-9bad-e92fbb9fb59a %}quote{% endglossarytooltip %}. [(GITHUB-5434)](https://github.com/magento/magento2/issues/5434){:target="_blank"}
+<!--- 59036-->* We've fixed an issue with using PayPal Express Checkout to order products with custom options. Previously, although an Admin user could create and configure “File type” custom options, customers could not upload and store files within the order [quote](https://glossary.magento.com/quote). [(GITHUB-5434)](https://github.com/magento/magento2/issues/5434){:target="_blank"}
 
 ### Travis builds
 
@@ -192,14 +192,14 @@ We address the following functional issues in this release.
 <!---60616-->* **Issue**: Magento fails to validate a customer address or customer attributes as expected during checkout. 
 
 
-<!---60781-->* **Issue**: Installing with Varnish can result in products not appearing on the {% glossarytooltip b00459e5-a793-44dd-98d5-852ab33fc344 %}frontend{% endglossarytooltip %} even after you purge the {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %}. 
+<!---60781-->* **Issue**: Installing with Varnish can result in products not appearing on the [frontend](https://glossary.magento.com/frontend) even after you purge the [cache](https://glossary.magento.com/cache). 
 
 
 <!---60553-->* **Issue**: When editing a product, you cannot edit customizable options on the storeview level. Consequently, a change to one option affects products on all stores. Also, the **Use Default Value** checkbox for the option title does not work. Clearing this checkbox, and then changing the option title affects all storeviews. 
 
 
 
-<!---60599-->* **Issue**: You cannot use a negative value in the **Quantity** field for a product, even when you activate back orders (**Stores > Configuration > Catalog > Inventory > Product Stock Options > Backorders = Allow Qty Below 0**) [(GITHUB-7401)](https://github.com/magento/magento2/issues/7401){:target="_blank"}
+<!---60599-->* **Issue**: You cannot use a negative value in the **Quantity** field for a product, even when you activate back orders (**Stores > Settings > Configuration > Catalog > Inventory > Product Stock Options > Backorders = Allow Qty Below 0**) [(GITHUB-7401)](https://github.com/magento/magento2/issues/7401){:target="_blank"}
 
 
   
@@ -211,17 +211,17 @@ We address the following functional issues in this release.
 
 
 
-<!---60902-->* **Issue**: You cannot re-enable a previously disabled `Magento_AdminGws` {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} without causing a range of {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} errors. Here is a sample error:
+<!---60902-->* **Issue**: You cannot re-enable a previously disabled `Magento_AdminGws` [module](https://glossary.magento.com/module) without causing a range of [JavaScript](https://glossary.magento.com/javascript) errors. Here is a sample error:
 
 	```[PDOException] 
 	SQLSTATE[42S02]: Base table or view not found: 1146 Table 'magento.quote_item' doesn't exist```
 
 
 
-<!---60408-->* **Issue**: If you move a product update from one scheduled update to another, Magento will no longer track {% glossarytooltip a9027f5d-efab-4662-96aa-c2999b5ab259 %}entity{% endglossarytooltip %} changes. 
+<!---60408-->* **Issue**: If you move a product update from one scheduled update to another, Magento will no longer track [entity](https://glossary.magento.com/entity) changes. 
 
 
-<!---59775-->* **Issue**: You cannot generate secure content if you deploy {% glossarytooltip a3e37235-4e8b-464f-a19d-4a120560206a %}static content{% endglossarytooltip %} under these conditions: 
+<!---59775-->* **Issue**: You cannot generate secure content if you deploy [static content](https://glossary.magento.com/static-content) under these conditions: 
 
 	* `pub/static` is in read-only mode
 
@@ -242,7 +242,7 @@ We address the following functional issues in this release.
 
 ## System requirements
 
-Our technology stack is built on {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} and MySQL. For more information, see
+Our technology stack is built on [PHP](https://glossary.magento.com/php) and MySQL. For more information, see
 [System Requirements]({{ page.baseurl }}/install-gde/system-requirements.html){:target="_blank"}.
 
 

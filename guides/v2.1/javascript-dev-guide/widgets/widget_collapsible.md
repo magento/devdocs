@@ -2,9 +2,6 @@
 group: javascript-developer-guide
 subgroup: 3_Widgets
 title: Collapsible widget
-redirect_from:
- - /guides/v2.0/frontend-dev-guide/javascript/widget_collapsible.html
- - /guides/v1.0/frontend-dev-guide/javascript/widget_collapsible.html
 ---
 
 ## Overview
@@ -32,7 +29,6 @@ Where `#element` is the element's selector.
 If you need to be able to save the expanded/collapsed state, the element must have the `id` attribute specified. 
 
 The element's `id` is also used in deep linking: if the `id` of the content or the `id` of the element that appends the content is specified as an anchor, the content for that element is automatically expanded.
-
 
 Similar to the accordion widget, the header, title and content for collapsible can be defined by the child elements' attributes or passed as widget options. See [Accordion widget initialization] for details.
 
@@ -194,7 +190,6 @@ Selector for the content element, searched for using `.find()` on the main colla
 
 **Default value**: `[data-role=content]`
 
-
 Initialize the collapsible with the content option specified:
 
 ```javascript
@@ -277,7 +272,6 @@ $("#element").collapsible("option","disabledState","disabled");
 ### `header` {#fedg_collaps_header}
 Selector for the header element, searched for using `.find()` on the main collapsible element. If the element with the specified selector is not found on the main collapsible element, the main element becomes a header.
 
-
 **Type**: 
 - String
 - jQuery Object
@@ -307,7 +301,6 @@ The classes for icons to be used in headers. If no classes are specified, icons 
 
 **Default value**: `{ activeHeader: null, header: null }`
 
-
 Initialize the collapsible with the `icons` option specified:
 ```javascript
 $("#element").collapsible({ icons: {"header": "plus", "activeHeader": "minus"}});
@@ -325,7 +318,6 @@ $("#element").collapsible("option","icons",{"header": "plus", "activeHeader": "m
 
 ### `loadingClass` {#fedg_collaps_loadingClass}
 Specifies the class that is assigned to the main collapsible element when requesting data using Ajax.
-
 
 **Type**: String
 
@@ -399,7 +391,7 @@ Specifies if the state is saved in the local storage if the browser supports it.
 
 **Type**: Boolean
 
-**Default value**: `true`
+**Default value**: `false`
 
 Initialize the collapsible widget with the `saveState` option specified:
 ```javascript
@@ -447,7 +439,6 @@ $("#element").collapsible("option","trigger",".trigger");
 -   [forceActivate()](#collaps_forceActivate)
 -   [forceDeactivate()](#collaps_forceDeactivate)
 
-
 ### `activate()` {#collaps_activate}
 Expand the content when this method is called.
 
@@ -468,7 +459,6 @@ Invoke the deactivate method:
 $("#element").collapsible("deactivate");
 ```
 
-
 ### `disable()` {#collaps_disable}
 Disable the panel.
 This method does not accept any arguments.
@@ -477,7 +467,6 @@ Invoke the disable method:
 ```javascript
 $("#element").collapsible("disable");
 ```
-
 
 ### `enable()` {#collaps_enable}
 Enable the panel.
@@ -514,11 +503,79 @@ $("#element").collapsible("forceDeactivate");
 ### `beforeOpen callback` {#c_beforeOpen}
 Called before the content is opened. 
 
+Example of adding a callback to `beforeOpen` events:
+
+```javascript
+$("#element").on("beforeOpen", function () {
+    // do something before opening the content
+});
+```
+
 ### `dimensionsChanged` {#c_dimensionsChanged}
 Called after content is opened or closed.
 
+Example of adding a callback to `dimensionsChanged` events:
+
+```javascript
+$("#element").on("dimensionsChanged", function (event, data) {
+    var opened = data.opened;
+
+    if (opened) {
+        // do something when the content is opened
+        return;
+    }
+
+    // do something when the content is closed
+});
+```
+
+#### Code sample
+
+The following example shows how to initialize the collapsible widget and pass options during the initialization.
+
+```html
+<div data-mage-init='{
+    "collapsible":{
+        "collapsible": true,
+        "openedState": "active",
+        "active": true 
+    }}'>
+    <div data-role="title">
+        <h4>Fruit</h4>
+    </div>
+    <div data-role="content">
+        <ul>
+            <li>Orange</li>
+            <li>Apple</li>
+            <li>Banana</li>
+        </ul>
+    </div>
+</div>
+<div data-mage-init='{
+    "collapsible":{ 
+        "animate":{ "duration" :1000, "easing":"easeOutCubic"}
+    }}'>
+    <div data-role="title">
+        <h4>Exams</h4>
+    </div>
+    <div data-role="content">
+        <ul>
+            <li>Maths</li>
+            <li>English</li>
+            <li>Science</li>
+        </ul>
+    </div>
+</div>
+```
+
+### Result
+
+The result is two sections with separate collapsible content.
+
+![Collapsible Widget]({{ site.baseurl }}/common/images/widget/collapsible-widget-result-initial.png)
+![Collapsible Widget]({{ site.baseurl }}/common/images/widget/collapsible-widget-result-animate.png)
 
 [`collateral`]: #fedg_collaps_collateral
-[lib/web/mage/collapsible.js]: {{site.mage2000url}}lib/web/mage/collapsible.js
+[lib/web/mage/collapsible.js]: {{ site.mage2bloburl }}/{{ page.guide_version }}/lib/web/mage/collapsible.js
 [Accordion widget initialization]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_accordion.html#accordion_init
 [JavaScript initialization]: {{page.baseurl}}/javascript-dev-guide/javascript/js_init.html#data_mage_init

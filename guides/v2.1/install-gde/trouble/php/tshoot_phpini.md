@@ -20,7 +20,7 @@ During or after installation, a  message similar to the following displays:
 
 ### Solution
 
-This is commonly caused by a different instance of {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} being used by the PHP command line compared to the web server. In particular, `mysql.sock` might be misconfigured if this is the case.
+This is commonly caused by a different instance of [PHP](https://glossary.magento.com/php) being used by the PHP command line compared to the web server. In particular, `mysql.sock` might be misconfigured if this is the case.
 
 To determine whether or not you're using one instance of PHP:
 

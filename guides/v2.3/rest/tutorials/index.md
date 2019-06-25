@@ -11,9 +11,11 @@ The REST tutorials provide an introduction to Magento web APIs. In general, the 
 
 * The [**order processing** tutorial]({{ page.baseurl }}/rest/tutorials/orders/order-intro.html) demonstrates the lifecycle of an order. Major steps include creating a quote, converting it to an order, issuing an invoice, and shipping the order.
 
-* The [**order processing with Inventory Management**]({{ page.baseurl }}/rest/tutorials/msi-order-processing/index.html) tutorial builds upon the original order processing tutorial. It also configures sources and stocks and other Inventory Management features.
+* The [**order processing with Inventory Management**]({{ page.baseurl }}/rest/tutorials/inventory/index.html) tutorial builds upon the original order processing tutorial. It also configures sources and stocks and other Inventory Management features.
 
 * The [**configurable product** tutorial]({{ page.baseurl }}/rest/tutorials/configurable-product/config-product-intro.html) helps you plan then create a configurable product and its component simple products.
+
+* The [**bulk API configurable product** tutorial]({{ page.baseurl }}/rest/tutorials/bulk-configurable-product/config-product-intro.html) demonstrates how to create configurable products using bulk APIs.
 
 ## Complete these prerequisites
 
@@ -21,9 +23,9 @@ Before you begin any tutorial, make sure you know the basics about {{site.data.v
 
 * Install a Magento 2.3 (or later) instance with sample data.
 
-  The sample data defines a functional store, called Luma, that sells fitness clothing and accessories. The store does not provide any sandbox accounts for testing credit card payments, so transactions will be simulated using an offline {% glossarytooltip 422b0fa8-b181-4c7c-93a2-c553abb34efd %}payment method{% endglossarytooltip %}.
+  The sample data defines a functional store, called Luma, that sells fitness clothing and accessories. The store does not provide any sandbox accounts for testing credit card payments, so transactions will be simulated using an offline [payment method](https://glossary.magento.com/payment-method).
 
-* Install a REST client. You can use any REST client to send calls to Magento. [Postman](https://www.getpostman.com/){:target="_blank"} is recommended.
+* Install a REST client. You can use any REST client to send calls to Magento. [Postman](https://www.getpostman.com/) is recommended.
 
 * Know how to construct a REST call in Magento. See [Construct a request]({{ page.baseurl }}/get-started/gs-web-api-request.html) for details.
 

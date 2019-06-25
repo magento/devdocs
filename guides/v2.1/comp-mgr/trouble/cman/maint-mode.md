@@ -11,7 +11,7 @@ functional_areas:
 
 This topic discusses how you can create a custom maintenance page to display to users while your Magento application is being upgraded. Creating a custom page is optional but recommended because your site is accessible during part of the upgrade.
 
-Creating a custom page to which to {% glossarytooltip 510de766-1ebd-4546-bf38-c618c9c945d2 %}redirect{% endglossarytooltip %} users prevents any access to the site and also informs your users that the site is undergoing maintenance.
+Creating a custom page to which to [redirect](https://glossary.magento.com/redirect) users prevents any access to the site and also informs your users that the site is undergoing maintenance.
 
 {:.bs-callout .bs-callout-info}
 You must perform the tasks in this section as a user with `root` privileges.
@@ -27,11 +27,11 @@ See one of the following sections for more information:
 To create a maintenance page and redirect to it, first create a maintenance page named:
 
 *	Apache: `<web server docroot>/maintenance.html`
-*	nginx: `<your Magento install dir>/maintenance.html`
+*	nginx: `<magento_root>/maintenance.html`
 
 Add to it the following contents:
 
-{% highlight html %}
+```html
 <!DOCTYPE html>
 <html>
 <head>
@@ -53,7 +53,7 @@ body
 <p>We're down for a short time to perform maintenance on our site to give you the best possible experience. Check back soon!</p>
 </body>
 </html>
-{% endhighlight %}
+```
 
 ## Custom maintenance page for Apache {#compman-trouble-maint-apache}
 
@@ -102,7 +102,7 @@ This section discusses how to create a custom maintenance page and how to redire
 
 To redirect traffic to a custom maintenance page:
 
-1.	Use a text editor to open the {% glossarytooltip b14ef3d8-51fd-48fe-94df-ed069afb2cdc %}nginx{% endglossarytooltip %} configuration file that contains your server block.
+1.	Use a text editor to open the [nginx](https://glossary.magento.com/nginx) configuration file that contains your server block.
 2.	Add the following to the server block (`server` is shown for clarity only; don't add a second server block).
 
 	The following whitelists IP address 192.0.2.110 and 192.0.2.115 on a system where Magento is installed in `/var/www/html/magento2`:
@@ -138,7 +138,7 @@ To redirect traffic to a custom maintenance page:
 		}
 4. Enter the following command:
 
-		touch <your Magento install dir>/maintenance.enable
+		touch <magento_root>/maintenance.enable
 3. Reload the nginx configuration:
 
 		service nginx reload

@@ -9,27 +9,27 @@ ee_only: true
 ---
 
 
-The Magento_Staging {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} enables you to work with the future [campaigns](#campaign) in {{site.data.var.ee}}.
+The Magento_Staging [module](https://glossary.magento.com/module) enables you to work with the future [campaigns](#campaign) in {{site.data.var.ee}}.
 
 With the Magento_Staging module you can:
 
 - Manage future campaigns
     - Using the Staging Dashboard in Admin
     - Using APIs
-- Preview a future campaign in {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %}
+- Preview a future campaign in [Admin](https://glossary.magento.com/admin)
 
 Moreover, the Magento_Staging module is a framework for other [staging](#staging) modules. It declares basic scenarios over the content, while other staging modules perform them. (You can recognize a staging modules by name, each ends with "Staging" and starts with a name of a module, which it extends. For example, Magento_CatalogStaging module extends functionality of Magento_Catalog module.)
 
 You can work with the following entities out of the box:
 
 - Product
-- {% glossarytooltip 50e49338-1e6c-4473-8527-9e401d67ea2b %}Category{% endglossarytooltip %}
-- {% glossarytooltip 8d40d668-4996-4856-9f81-b1386cf4b14f %}Catalog{% endglossarytooltip %} Price Rule
-- {% glossarytooltip c7ecb18d-cefe-452d-83e2-3c4d5e355db9 %}Shopping Cart{% endglossarytooltip %} Price Rule
-- {% glossarytooltip f3944faf-127e-4097-9918-a2e9c647d44f %}CMS{% endglossarytooltip %} Block
+- [Category](https://glossary.magento.com/category)
+- [Catalog](https://glossary.magento.com/catalog) Price Rule
+- [Shopping Cart](https://glossary.magento.com/shopping-cart) Price Rule
+- [CMS](https://glossary.magento.com/cms) Block
 - CMS Page
 
-And you can extend the list adding your own {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} modules.
+And you can extend the list adding your own [extension](https://glossary.magento.com/extension) modules.
 
 ## Glossary
 
@@ -46,7 +46,7 @@ And you can extend the list adding your own {% glossarytooltip 55774db9-bf9d-40f
 : a set of functionality that enables you to schedule the store changes in Magento database. You can configure the particular state of the database to be applied in the future
 
 <a name="scheduled-update"><b>scheduled update</b></a>, <a name="update"><b>update</b></a>
-: scheduled change of a Magento store {% glossarytooltip a9027f5d-efab-4662-96aa-c2999b5ab259 %}entity{% endglossarytooltip %}
+: scheduled change of a Magento store [entity](https://glossary.magento.com/entity)
 
 <a name="permanent-update"><b>permanent update</b></a>
 : scheduled update that has start date and doesn’t have end date
@@ -80,7 +80,7 @@ You can customize a grid using the standard grid settings located above the grid
 
 #### Timeline/Grid view UI components
 
-You can manipulate the timeline view and the grid view of a dashboard in the `app\code\Magento\Staging\view\adminhtml\ui_component\staging_update_grid.xml` configuration file as a [simple grid](devdocs.magento.com/guides/v2.2/ui_comp_guide/components/ui-listing-grid.html) with the following custom settings:
+You can manipulate the timeline view and the grid view of a dashboard in the `app\code\Magento\Staging\view\adminhtml\ui_component\staging_update_grid.xml` configuration file as a [simple grid]({{ site.gdeurl22 }}ui_comp_guide/components/ui-listing-grid.html) with the following custom settings:
 
 - in `listingToolbar`
     - `template` declares a legend for a timeline, which is an overloading template that provides a grid/timeline view switcher.
@@ -120,14 +120,14 @@ Also, staged entity displays the campaigns it has been assigned to. In preview m
 
 #### Preview a campaign
 
-You can preview scheduled elements on {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} (as if it were live website) in order to make sure that all planned updates are correct before publishing.
+You can preview scheduled elements on [storefront](https://glossary.magento.com/storefront) (as if it were live website) in order to make sure that all planned updates are correct before publishing.
 
 Staging preview enables you to use the following functionality:
 
 - View a store on certain future date and time with all corresponding updates applied
 - View and manage a timeline with all future campaigns
-- Change a {% glossarytooltip a3c8f20f-b067-414e-9781-06378c193155 %}website{% endglossarytooltip %} and a {% glossarytooltip ca5a9ff1-8182-4fc4-a34b-9b3f831dbf3f %}store view{% endglossarytooltip %}
-- Add product to cart and proceed with {% glossarytooltip 278c3ce0-cd4c-4ffc-a098-695d94d73bde %}checkout{% endglossarytooltip %} till "Submit Order" step
+- Change a [website](https://glossary.magento.com/website) and a [store view](https://glossary.magento.com/store-view)
+- Add product to cart and proceed with [checkout](https://glossary.magento.com/checkout) till "Submit Order" step
 
 Note that you cannot create an order in a preview mode, use layered navigation and search.
 
@@ -218,11 +218,11 @@ The options of how you can remove an update:
 
 ## Preview mode
 
-In this mode, the Magento_Staging module builds a view of a store for a specific future date. You can surf the storefront, add products to the cart, go to checkout, apply gift certificates and discounts, order {% glossarytooltip c8f00e9d-7f70-4561-9773-60da604ba5c9 %}shipment{% endglossarytooltip %}. Payment methods and placing an order are not available in a preview mode.
+In this mode, the Magento_Staging module builds a view of a store for a specific future date. You can surf the storefront, add products to the cart, go to checkout, apply gift certificates and discounts, order [shipment](https://glossary.magento.com/shipment). Payment methods and placing an order are not available in a preview mode.
 
 ### Different websites
 
-Preview mode is also available for a multi website store. Switching between different website views is available in scope of Admin {% glossarytooltip 41aee03b-a5d5-49c2-8839-894090ef4e86 %}domain{% endglossarytooltip %}. Server builds a view of an open page only using its scheduled parameters. (Without redirection to another domain.)
+Preview mode is also available for a multi website store. Switching between different website views is available in scope of Admin [domain](https://glossary.magento.com/domain). Server builds a view of an open page only using its scheduled parameters. (Without redirection to another domain.)
 
 NOTE All websites must use the same type of the protocol: HTTP or HTTPS. You cannot mix HTTP and HTTPS websites.
 NOTE **Product in Websites** tab is inactive in the Schedule Update form and cannot be edit.
@@ -259,7 +259,7 @@ You can extend and override layouts in the `view/adminhtml/layout` directory. Fo
 
 ## Additional information
 
-You can track [backward incompatible changes made in a {{site.data.var.ee}} mainline after the Magento 2.0 release]({{ site.baseurl }}/guides/v2.0/release-notes/backward-incompatible-changes/commerce.html).
+You can track [backward incompatible changes made in a {{site.data.var.ee}} mainline after the Magento 2.0 release]({{ page.baseurl }}/release-notes/backward-incompatible-changes/commerce.html).
 
 ### cron options
 
@@ -277,11 +277,11 @@ cron group configuration is set in `etc/crontab.xml`.
 
 When update is applied, the indexer handles it according to the actual indexing mode. In a preview mode, indexing is not applied. Data is loaded for the open page only.
 
-[Learn more about indexing in Magento.]({{ page.baseurl }}/mrg/indexing.html)
+[Learn more about indexing in Magento.]({{ site.gdeurl22 }}extension-dev-guide/indexing.html)
 
 ### Data migration
 
-The Magento_Staging module uses the `\Magento\Staging\Setup\BasicSetup` class during installation. This class changes {% glossarytooltip 66b924b4-8097-4aea-93d9-05a81e6cc00c %}database schema{% endglossarytooltip %} and migrates data.
+The Magento_Staging module uses the `\Magento\Staging\Setup\BasicSetup` class during installation. This class changes [database schema](https://glossary.magento.com/database-schema) and migrates data.
 
 #### Migration of attributes with range
 

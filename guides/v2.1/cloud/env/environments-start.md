@@ -2,10 +2,8 @@
 group: cloud-guide
 title: Manage branches with the CLI
 redirect_from:
-  - /guides/v2.0/cloud/before/integration-ip-addr.html
   - /guides/v2.1/cloud/before/integration-ip-addr.html
   - /guides/v2.2/cloud/before/integration-ip-addr.html
-  - /guides/v2.0/cloud/env/environment-tutorial-env-merge.html
   - /guides/v2.1/cloud/env/environment-tutorial-env-merge.html
   - /guides/v2.2/cloud/env/environment-tutorial-env-merge.html
 functional_areas:
@@ -230,7 +228,7 @@ If you have a corporate firewall that blocks outgoing SSH connections, you can a
 </td>
 </tr>
 </table>
-{:style="table-layout:auto;"}
+
 
 ## Interact with environments via the Magento Cloud CLI {#commands}
 

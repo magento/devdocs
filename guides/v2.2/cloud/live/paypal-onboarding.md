@@ -29,7 +29,7 @@ PayPal on-boarding supports connecting with the following accounts:
 
 If you do not have an existing PayPal account, you have an option to create a new one. Enter an e-mail address for a new account. If a matching PayPal account is not found, you will be prompted to create a new PayPal Business account. Or you can create an account directly through [PayPal](https://www.paypal.com/us/webapps/mpp/account-selection).
 
-Please note the [PayPal account limitations](#limitations) for further information.
+See [PayPal account limitations](#limitations) for further information.
 
 ![Log in to PayPal]({{ site.baseurl }}/common/images/cloud_paypal-access.png){:width="336px"}
 
@@ -40,7 +40,7 @@ PayPal supports connecting PayPal Express Checkout for countries across the glob
 * India, and Japan (future PayPal updates may support these accounts)
 * Israel
 
-For Brazil, you must have an existing PayPal business account to connect. You cannot convert an existing personal PayPal account for Brazil during this process. If you need an account, please create a new business PayPal account through [their website](https://www.paypal.com/us/webapps/mpp/account-selection).
+For Brazil, you must have an existing PayPal business account to connect. You cannot convert an existing personal PayPal account for Brazil during this process. If you need an account, create a new business PayPal account through [their website](https://www.paypal.com/us/webapps/mpp/account-selection).
 
 ## Configure PayPal Express Checkout
 

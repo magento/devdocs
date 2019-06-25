@@ -36,7 +36,7 @@ Magento 2.1.8 contains over 100 functional fixes and enhancements as well as pul
 
 With this release, we're inaugurating a new feature of our release notes: descriptions of community-supplied code fixes that were submitted through the Community Engineering program. Thank you, community members!
 
-If a community member has provided a fix, we identify the fix with the phrase, "*Fix provided by community member @member_name*". We've also included a table that identifes the GitHub issue, PR, and community member who created that PR.
+If a community member has provided a fix, we identify the fix with the phrase, "*Fix provided by community member @member_name*". We've also included a table that identifies the GitHub issue, PR, and community member who created that PR.
 
 ## Fixed issues and enhancements
 
@@ -122,7 +122,7 @@ This release includes both improvements we've made internally and those submitte
 
 ### General
 
-<!--- 64238 -->* Reindexing no longer fails due to mmap memory allocation issues when reindexing many (1,000,000) customers. Previously, when initiating reindexing through **System > Index management**, reindexing failed.
+<!--- 64238 -->* Reindexing no longer fails due to mmap memory allocation issues when reindexing many (1,000,000) customers. Previously, when initiating reindexing through **System** > Tools > **Index Management**, reindexing failed.
 
 
 <!--- 57291 -->* Magento now successfully uploads the thumbnail images for email logos that are used in transactional emails. Previously, these thumbnail images were not displayed.
@@ -213,7 +213,7 @@ This release includes both improvements we've made internally and those submitte
 
 <!--- 69152 -->* Resolved issue with selecting widgets in TinyMCE. [GitHub-9655](https://github.com/magento/magento2/issues/9655), [GitHub-9518](https://github.com/magento/magento2/issues/9518)  *Fix submitted by community member [Pieter Hoste](https://github.com/hostep){:target="_blank"} in pull request [9540](https://github.com/magento/magento2/pull/9540){:target="_blank"}.*
 
-<!--- 69236 -->* The Store Configuration page (**Stores > Configuration**) now loads templates for Change Email and for Change Email and Password forms. *Fix submitted by community member [Rafael Kassner](https://github.com/kassner){:target="_blank"} in pull request [9661](https://github.com/magento/magento2/pull/9661){:target="_blank"}.*
+<!--- 69236 -->* The Store Configuration page (**Stores > Settings > Configuration**) now loads templates for Change Email and for Change Email and Password forms. *Fix submitted by community member [Rafael Kassner](https://github.com/kassner){:target="_blank"} in pull request [9661](https://github.com/magento/magento2/pull/9661){:target="_blank"}.*
 
 ### Import/Export
 

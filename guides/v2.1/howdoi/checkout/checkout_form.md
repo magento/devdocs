@@ -4,15 +4,15 @@ group: how-do-i
 subgroup:
 title: Add a new input form to checkout
 subtitle: Customize Checkout
-menu_order: 8
+menu_order: 9
 level3_subgroup: checkout-tutorial
 functional_areas:
   - Checkout
 ---
 
-This topic describes how to add a custom input form (implemented as a UI component) to the {% glossarytooltip 278c3ce0-cd4c-4ffc-a098-695d94d73bde %}Checkout{% endglossarytooltip %} page.
+This topic describes how to add a custom input form (implemented as a UI component) to the [Checkout](https://glossary.magento.com/checkout) page.
 
-Most of the elements, including the default forms on the Checkout page are implemented as UI components. And we recommend your custom form to be a UI component, extending the default [Magento_Ui/js/form/form]({{ site.mage2000url }}app/code/Magento/Ui/view/base/web/js/form/form.js) component.
+Most of the elements, including the default forms on the Checkout page are implemented as UI components. And we recommend your custom form to be a UI component, extending the default [Magento_Ui/js/form/form]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/form/form.js) component.
 
 Magento provides the ability to add a custom form to any of the checkout steps: Shipping Information, Review and Payment Information, or custom. In order to add a custom form that is a UI component, take the following steps:
 
@@ -30,7 +30,7 @@ Do not use `Ui` for your custom module name, because `%Vendor%_Ui` notation, req
 
 ## Step 1: Create the JS implementation of the form UI component {#component}
 
-In your `<your_module_dir>/view/frontend/web/js/view/` directory, create a `.js` file implementing the form.
+In your `<your_module_dir>/view/frontend/web/js/view/` directory, create a `custom-checkout-form.js` file implementing the form.
 
 Example of extending the default form component:
 
@@ -71,7 +71,7 @@ define([
 
 ## Step 2: Create the HTML template {#template}
 
-Add the `knockout.js` HTML template for the form component under the `<your_module_dir>/view/frontend/web/template` directory.
+Add the `knockout.js` HTML template for the form component under the `<your_module_dir>/view/frontend/web/template` directory called `custom-checkout-form.html`.
 
 Example:
 
@@ -94,18 +94,11 @@ Example:
 </div>
 ```
 
-### Clear files after modification {#modify}
-
-If you modify your custom `.html` template after it was applied on the store pages, the changes will not apply until you do the following:
-
-1. Delete all files in the `pub/static/frontend` and `var/view_preprocessed` directories.
-2. Reload the pages.
-
 ## Step 3: Declare the form in the checkout page layout {#layout}
 
 Certain default checkout templates declare regions where additional content can be inserted. You can add your custom form in any of these regions. These regions are provided with corresponding comments in the default Checkout page layout file `<Checkout_module_dir>/view/frontend/layout/checkout_index_index.xml`.
 
-Also you locate the regions in the `.html` templates of the blocks used in this {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %} file.
+Also you locate the regions in the `.html` templates of the blocks used in this [layout](https://glossary.magento.com/layout) file.
 For example, the shipping JS component (see `<Magento_Checkout_module_dir>/view/frontend/web/template/shipping.html`) provides the `before-form` region and corresponding UI container.
 
 Any content added here is rendered before the Shipping Address form on the Shipping Information step. To add content to this region, create a `checkout_index_index.xml` layout update in the `<your_module_dir>/view/frontend/layout/`.
@@ -130,7 +123,14 @@ It should be similar to the following:
                                                     <item name="children" xsi:type="array">
                                                         <item name="before-form" xsi:type="array">
                                                             <item name="children" xsi:type="array">
-                                                                <!-- Your form declaration here -->
+                                                                <item name="custom-form" xsi:type="array">
+                                                                    <!-- Add this item to configure your js file  -->
+                                                                    <item name="component" xsi:type="string">VendorName_ModuleName/js/view/custom-checkout-form</item>
+                                                                    <item name="config" xsi:type="array">
+                                                                        <!-- And this to add your html template  -->
+                                                                        <item name="template" xsi:type="string">VendorName_ModuleName/custom-checkout-form</item>
+                                                                    </item>
+                                                                </item>
                                                             </item>
                                                         </item>
                                                     </item>
@@ -149,9 +149,16 @@ It should be similar to the following:
 </page>
 ```
 
+### Clear files after modification {#modify}
+
+If you modify your custom `.html` template after it was applied on the store pages, the changes will not apply until you do the following:
+
+1. Delete all files in the `pub/static/frontend` and `var/view_preprocessed` directories.
+2. Reload the pages.
+
 ### Static forms {#static_form}
 
-The term static refers to the forms where all the fields are already known/predefined and do not depend on any settings in the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %}. Compare to [dynamic forms](#dynamic_form).
+The term static refers to the forms where all the fields are already known/predefined and do not depend on any settings in the [Admin](https://glossary.magento.com/admin). Compare to [dynamic forms](#dynamic_form).
 
 The fields of static forms are not generated dynamically, so they can be defined in a layout.
 
@@ -160,9 +167,11 @@ The following code sample shows configuration of the form that contains four fie
 
 ```xml
 <item name="custom-checkout-form-container" xsi:type="array">
+    <!-- Your JS file previously created -->
     <item name="component" xsi:type="string">%your_module_dir%/js/view/custom-checkout-form</item>
     <item name="provider" xsi:type="string">checkoutProvider</item>
     <item name="config" xsi:type="array">
+        <!-- Your HTML file previously created -->
         <item name="template" xsi:type="string">%your_module_dir%/custom-checkout-form</item>
     </item>
     <item name="children" xsi:type="array">
@@ -182,7 +191,7 @@ The following code sample shows configuration of the form that contains four fie
                     </item>
                     <item name="provider" xsi:type="string">checkoutProvider</item>
                     <item name="dataScope" xsi:type="string">customCheckoutForm.text_field</item>
-                    <item name="label" xsi:type="string">Text Field</item>
+                    <item name="label" xsi:type="string" translate="true">Text Field</item>
                     <item name="sortOrder" xsi:type="string">1</item>
                     <item name="validation" xsi:type="array">
                         <item name="required-entry" xsi:type="string">true</item>
@@ -198,7 +207,7 @@ The following code sample shows configuration of the form that contains four fie
                     </item>
                     <item name="provider" xsi:type="string">checkoutProvider</item>
                     <item name="dataScope" xsi:type="string">customCheckoutForm.checkbox_field</item>
-                    <item name="label" xsi:type="string">Checkbox Field</item>
+                    <item name="label" xsi:type="string" translate="true">Checkbox Field</item>
                     <item name="sortOrder" xsi:type="string">3</item>
                 </item>
                 <item name="select_field" xsi:type="array">
@@ -211,15 +220,15 @@ The following code sample shows configuration of the form that contains four fie
                     </item>
                     <item name="options" xsi:type="array">
                         <item name="0" xsi:type="array">
-                            <item name="label" xsi:type="string">Please select value</item>
+                            <item name="label" xsi:type="string" translate="true">Please select value</item>
                             <item name="value" xsi:type="string"></item>
                         </item>
                         <item name="1" xsi:type="array">
-                            <item name="label" xsi:type="string">Value 1</item>
+                            <item name="label" xsi:type="string" translate="true">Value 1</item>
                             <item name="value" xsi:type="string">value_1</item>
                         </item>
                         <item name="2" xsi:type="array">
-                            <item name="label" xsi:type="string">Value 2</item>
+                            <item name="label" xsi:type="string" translate="true">Value 2</item>
                             <item name="value" xsi:type="string">value_2</item>
                         </item>
                     </item>
@@ -227,7 +236,7 @@ The following code sample shows configuration of the form that contains four fie
                     <item name="value" xsi:type="string">value_2</item>
                     <item name="provider" xsi:type="string">checkoutProvider</item>
                     <item name="dataScope" xsi:type="string">customCheckoutForm.select_field</item>
-                    <item name="label" xsi:type="string">Select Field</item>
+                    <item name="label" xsi:type="string" translate="true">Select Field</item>
                     <item name="sortOrder" xsi:type="string">2</item>
                 </item>
                 <item name="date_field" xsi:type="array">
@@ -240,7 +249,7 @@ The following code sample shows configuration of the form that contains four fie
                     </item>
                     <item name="provider" xsi:type="string">checkoutProvider</item>
                     <item name="dataScope" xsi:type="string">customCheckoutForm.date_field</item>
-                    <item name="label" xsi:type="string">Date Field</item>
+                    <item name="label" xsi:type="string" translate="true">Date Field</item>
                     <item name="validation" xsi:type="array">
                         <item name="required-entry" xsi:type="string">true</item>
                     </item>
@@ -253,7 +262,7 @@ The following code sample shows configuration of the form that contains four fie
 
 ### Dynamically defined forms {#dynamic_form}
 
-Dynamically defined, or dynamic, forms are the forms where the set or type of fields can change. For example, the fields displayed on the checkout form depend on the Admin settings: depending on the **Admin > Stores > Configuration > Customers > Customer Configuration > Name and Address Options**.
+Dynamically defined, or dynamic, forms are the forms where the set or type of fields can change. For example, the fields displayed on the checkout form depend on the Admin settings: depending on the **Admin > Stores > Settings > Configuration > Customers > Customer Configuration > Name and Address Options**.
 
 For such forms, you must implement a [plugin]({{ page.baseurl }}/extension-dev-guide/plugins.html) for the `\Magento\Checkout\Block\Checkout\LayoutProcessor::process` method.
 A plugin can add custom fields definitions to layout at run-time. The format of the field definition is the same as for fields defined in layout.

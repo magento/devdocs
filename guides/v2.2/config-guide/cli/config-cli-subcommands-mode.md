@@ -18,7 +18,7 @@ Production mode also has better performance because static view files are popula
 {:.bs-callout .bs-callout-info}
 -   In version 2.0.6 and later, Magento does not explicitly set file or directory permissions when you switch between default, develop, and production modes.
 -   Unlike other Magento modes, developer and production modes are set in `env.php`.
--   [{{site.data.var.ece}}]({{ page.baseurl }}/cloud/bk-cloud.html) supports production mode only.
+-   [{{site.data.var.ece}}]({{ page.baseurl }}/cloud/bk-cloud.html) supports production and maintenance modes only.
 
 Refer to [Magento ownership and permissions in development and production]({{ page.baseurl }}/config-guide/prod/prod_file-sys-perms.html) for more information.
 
@@ -44,21 +44,25 @@ The easiest way to do that is to run this command as the [Magento file system ow
 
 Command usage:
 
-``` bash
+```bash
 bin/magento deploy:mode:show
 ```
 
 A message similar to the following displays:
 
+```terminal
+Current application mode: {mode}. (Note: Environment variables may override this value.)
 ```
-Current application mode: developer.
-```
+
+where:
+
+  -   **`{mode}`** can be either `default`, `developer`, or `production`
 
 ## Change modes {#config-mode-change}
 
 Command usage:
 
-``` bash
+```bash
 bin/magento deploy:mode:set {mode} [-s|--skip-compilation]
 ```
 
@@ -72,7 +76,7 @@ Examples follow.
 
 ### Change to production mode
 
-``` bash
+```bash
 bin/magento deploy:mode:set production
 ```
 
@@ -102,8 +106,8 @@ Messages similar to the following display:
 	New version of deployed files: 1440461332
 	Static content deployment complete
 Gathering css/styles-m.less sources.
-Successfully processed LESS and/or {% glossarytooltip 45f1f76d-91cd-4789-a8b5-1e3f321a6280 %}Sass{% endglossarytooltip %} files
-{% glossarytooltip 6c5cb4e9-9197-46f2-ba79-6147d9bfe66d %}CSS{% endglossarytooltip %} deployment complete
+Successfully processed LESS and/or [Sass](https://glossary.magento.com/sass) files
+[CSS](https://glossary.magento.com/css) deployment complete
 Generated classes:
         Magento\Sales\Api\Data\CreditmemoCommentInterfacePersistor
         Magento\Sales\Api\Data\CreditmemoCommentInterfaceFactory
@@ -121,19 +125,23 @@ When you change from production to developer mode, you should clear generated cl
 
 1.  If you're changing from production mode to developer mode, delete the contents of the `generated/code` and `generated/metadata` directories:
 
-		rm -rf <your Magento install dir>/generated/metadata/* <your Magento install dir>/generated/code/*
-
+    ```bash
+    rm -rf <magento_root>/generated/metadata/* <magento_root>/generated/code/*
+    ```
+    
 2.  Set the mode:
 
-		bin/magento deploy:mode:set developer
+    ```bash
+    bin/magento deploy:mode:set developer
+    ```
 
-	The following message displays:
+The following message displays:
 
-		Switched to developer mode.
+	Enabled developer mode.
 
 ### Change to default mode
 
-``` bash
+```bash
 bin/magento deploy:mode:set default
 ```
 

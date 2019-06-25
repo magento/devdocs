@@ -26,9 +26,9 @@ We recommend the following best practices for {{site.data.var.ece}} environments
 * Keep your branches updated with the latest code for all developers to access and pull
 * Maintain commit comments to share with your developers and track branch work
 * Keep Staging as close to Production as possible with configurations, code, services, and data
-* Don't overfill a branch of development work, keep it streamlined to carefully implement and test code, extensions, etc
+* Do not overfill a branch of development work, keep it streamlined to carefully implement and test code, extensions, etc
 * Keep track of the order you follow for adding extensions to your code. Some extensions require very specific installation orders.
-* Don't push all of your extensions at once into Staging and Production. Add, push, and test extensions in groups to ensure they are stable.
+* Do not push all of your extensions at once into Staging and Production. Add, push, and test extensions in groups to ensure they are stable.
 * Use Magento Configuration Management to ensure configuration consistency
 
 ## Deployment best practices

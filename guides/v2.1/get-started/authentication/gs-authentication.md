@@ -11,15 +11,15 @@ functional_areas:
 
 ## Web API authentication overview
 
-Magento allows developers to define web {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} resources and their permissions in a configuration file <code>webapi.xml</code>.
+Magento allows developers to define web [API](https://glossary.magento.com/api) resources and their permissions in a configuration file <code>webapi.xml</code>.
 Here are more details on exposing [services as Web APIs]({{ page.baseurl }}/extension-dev-guide/service-contracts/service-to-web-service.html).
 
-Before you can make {% glossarytooltip 377dc0a3-b8a7-4dfa-808e-2de37e4c0029 %}web API{% endglossarytooltip %} calls, you must authenticate your identity and have necessary permissions (authorization) to access the API resource. Authentication allows Magento to identify the caller's user type. Based on the user's (administrator, integration, customer or guest) access rights, API calls' resource accessibility is determined.
+Before you can make [web API](https://glossary.magento.com/web-api) calls, you must authenticate your identity and have necessary permissions (authorization) to access the API resource. Authentication allows Magento to identify the caller's user type. Based on the user's (administrator, integration, customer or guest) access rights, API calls' resource accessibility is determined.
 
 ### Accessible resources
 
 The list of resources that you can access depends on your user type. All customers have the same permissions, and as a result the same resources accessible. The preceding statement is true for guest users as well.
-Each administrator or integration user can have a unique set of permissions which is configured in the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %}.
+Each administrator or integration user can have a unique set of permissions which is configured in the [Magento Admin](https://glossary.magento.com/magento-admin).
 Permissions required to access particular resource are configured in the `webapi.xml` file. This table lists the resources that each user type can access:
 
 
@@ -28,22 +28,22 @@ User type | Accessible resources (defined in webapi.xml)
 Administrator or Integration | Resources for which administrators or integrators are authorized. For example, if administrators are authorized for the `Magento_Customer::group` resource, they can make a `GET /V1/customerGroups/:id` call.
 Customer | Resources with `anonymous` or `self` permission
 Guest user | Resources with `anonymous` permission
-{:style="table-layout:auto;"}
+
 
 ### Relation between acl.xml and webapi.xml
 
-The <code>acl.xml</code> file defines the access control list (ACL) for a given {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}. It defines available set of permissions to access the resources.
-`acl.xml` files across all Magento modules are consolidated to build an ACL tree which is used to select allowed {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} role resources or third party Integration's access (**System** > **Extension** > **Integration** > **Add New Integration** > **Available APIs**).
+The <code>acl.xml</code> file defines the access control list (ACL) for a given [module](https://glossary.magento.com/module). It defines available set of permissions to access the resources.
+`acl.xml` files across all Magento modules are consolidated to build an ACL tree which is used to select allowed [Admin](https://glossary.magento.com/admin) role resources or third party Integration's access (**System** > **Extension** > **Integration** > **Add New Integration** > **Available APIs**).
 
 #### Sample customer acl.xml
 
-For example, account management, customer configuration, and customer group resource permissions are defined in the Customer module's [`acl.xml`]({{ site.mage2000url }}app/code/Magento/Customer/etc/acl.xml).
+For example, account management, customer configuration, and customer group resource permissions are defined in the Customer module's [`acl.xml`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Customer/etc/acl.xml).
 
 When a developer creates the Web API configuration file (<code>webapi.xml</code>), the permissions defined in acl.xml are referenced to create access rights for each API resource.
 
 #### Sample (truncated) customer webapi.xml
 
-``` xml
+```xml
 <routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
     <!-- Customer Group -->
@@ -69,7 +69,7 @@ When a developer creates the Web API configuration file (<code>webapi.xml</code>
             <resource ref="anonymous"/>
         </resources>
     </route>
-    <route url="/V1/customers/:id" method="PUT">
+    <route url="/V1/customers/:customerId" method="PUT">
         <service class="Magento\Customer\Api\CustomerRepositoryInterface" method="save"/>
         <resources>
             <resource ref="Magento_Customer::manage"/>
@@ -91,7 +91,7 @@ When a developer creates the Web API configuration file (<code>webapi.xml</code>
 
 For example, in the preceding `webapi.xml` for the customerGroups resource, only a user with `Magento_Customer::group` authorization can `GET /V1/customerGroups/:id`. On the other hand, you can create a customer using `POST /V1/customers` anonymously (or by a guest).
 
-{% glossarytooltip 34ecb0ab-b8a3-42d9-a728-0b893e8c0417 %}Authorization{% endglossarytooltip %} is granted to either an administrator (or an integration) defined in the Magento Admin with the customer group selected as one of the resources in the ACL tree.
+[Authorization](https://glossary.magento.com/authorization) is granted to either an administrator (or an integration) defined in the Magento Admin with the customer group selected as one of the resources in the ACL tree.
 
 {:.bs-callout .bs-callout-info}
 A guest or anonymous is a special permission that doesn't need to be defined in `acl.xml` (and will not show up in the permissions tree in the Magento Admin). It just indicates that the current resource in `webapi.xml` can be accessed without the need for authentication.
@@ -175,7 +175,7 @@ Proceed to the authentication method for your preferred client:
 
 * Third-party application. [OAuth-based authentication]({{ page.baseurl }}/get-started/authentication/gs-authentication-oauth.html).
 
-* JavaScript {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} on the Magento Admin or {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %}. [Session-based authentication]({{ page.baseurl }}/get-started/authentication/gs-authentication-session.html).
+* JavaScript [widget](https://glossary.magento.com/widget) on the Magento Admin or [storefront](https://glossary.magento.com/storefront). [Session-based authentication]({{ page.baseurl }}/get-started/authentication/gs-authentication-session.html).
 
 * [Extension attribute authentication]({{ page.baseurl }}/extension-dev-guide/attributes.html)
 

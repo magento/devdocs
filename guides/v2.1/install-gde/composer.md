@@ -26,7 +26,7 @@ functional_areas:
 
 Before you continue, you must do the following:
 
--   Set up a server that meets our [system requirements]({{ page.baseurl }}/install-gde/system-requirements2.html)
+-   Set up a server that meets our [system requirements]({{ page.baseurl }}/install-gde/system-requirements.html)
 -   Create the [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html)
 -   [Install Composer](https://getcomposer.org/download/){:target="_blank"}
 -   Obtain [authentication keys]({{page.baseurl}}/install-gde/prereq/connect-auth.html) for the Magento code repository
@@ -41,15 +41,20 @@ To get the Magento metapackage:
 
     **{{site.data.var.ce}}**
     ```bash
-    composer create-project --repository=https://repo.magento.com/ magento/project-community-edition <install-directory-name>
+    composer create-project --repository=https://repo.magento.com/ magento/project-community-edition:<version-tag> <install-directory-name>
     ```
 
     **{{site.data.var.ee}}**
     ```bash
-    composer create-project --repository=https://repo.magento.com/ magento/project-enterprise-edition <install-directory-name>
+    composer create-project --repository=https://repo.magento.com/ magento/project-enterprise-edition:<version-tag> <install-directory-name>
     ```
 
     When prompted, enter your Magento authentication keys. Your _public key_ is your username; your _private key_ is your password.
+
+    To install {{site.data.var.ce}} version 2.2.2 run in current folder:
+    ```bash
+    composer create-project --repository=https://repo.magento.com/ magento/project-community-edition:2.2.2 .
+    ```
 
     If you encounter errors, such as `Could not find package...` or `...no matching package found`, make sure there are no typos in your command. If you still encounter errors, you may not be authorized to download {{site.data.var.ee}}. Contact [Magento support](https://magento.com/support) for help.
 
@@ -63,7 +68,7 @@ You must set read-write permissions for the web server group before you install 
 cd /var/www/html/<magento install directory>
 find var generated vendor pub/static pub/media app/etc -type f -exec chmod g+w {} +
 find var generated vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} +
-chown -R :www-data . // Ubuntu
+chown -R :www-data . # Ubuntu
 chmod u+x bin/magento
 ```
 
@@ -97,6 +102,9 @@ bin/magento setup:install \
 --timezone=America/Chicago \
 --use-rewrites=1
 ```
+
+{: .bs-callout .bs-callout-info }
+For `--backend-frontname` we recommend a random URI for security purposes. A random URI is harder for hackers or malicious software to exploit.
 
 {:.bs-callout .bs-callout-tip}
 For a full description of the CLI install options, refer to [Install the Magento software from the command line]({{page.baseurl}}/install-gde/install/cli/install-cli-install.html#instgde-install-cli-magento).

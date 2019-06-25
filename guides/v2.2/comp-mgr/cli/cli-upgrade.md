@@ -7,7 +7,7 @@ functional_areas:
 
 You can upgrade Magento from the command line if you installed the software using any of the following:
 
-* Downloaded the {% glossarytooltip 7490850a-0654-4ce1-83ff-d88c1d7d07fa %}metapackage{% endglossarytooltip %} using `composer create-project`
+* Downloaded the [metapackage](https://glossary.magento.com/metapackage) using `composer create-project`
 * Installed the compressed archive
 
 {: .bs-callout .bs-callout-info }
@@ -19,10 +19,10 @@ If you cloned the Magento 2 GitHub repository, you **cannot** use this method to
 
 ## Prerequisite: `pub` directory root {#upgrade-cli-pub}
 
-This section applies to you *only* if you set the Magento root directory to `<your Magento install dir>/pub`.
+This section applies to you *only* if you set the Magento root directory to `<magento_root>/pub`.
 If you did not do this, skip this section and continue with the next section.
 
-If you use pub as your Magento root directory: 
+If you use pub as your Magento root directory:
 
 * For the upgrade, create another subdomain or docroot that uses the Magento installation directory as its root.
 
@@ -41,7 +41,7 @@ To enable maintenance mode:
 1. Log in to your Magento server as, or switch to, the Magento file system owner.
 2. Enter the following command:
    ```bash
-   php <your Magento install dir>/bin/magento maintenance:enable
+   php <magento_root>/bin/magento maintenance:enable
    ```
 
    For additional options, see [Enable or disable maintenance mode]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-maint.html).
@@ -79,6 +79,13 @@ To enable maintenance mode:
    ```
 
 4. If prompted, enter your [authentication keys]({{ page.baseurl }}/install-gde/prereq/connect-auth.html).
+
+5. Clean the Magento cache:
+
+   ```bash
+   bin/magento cache:clean
+   ```
+
 5. Manually clear `var` subdirectories:
    ```bash
    rm -rf <Magento install dir>/var/cache/*
@@ -89,20 +96,27 @@ To enable maintenance mode:
         If you use a cache storage other than filesystem (e.g., Redis, Memcached, etc.) you need to manually clear the cache there too.
     </div>
 6. Update the database schema and data:
+   
    ```bash
    php bin/magento setup:upgrade
    ```
+   
 7. Put your storefront online (that is, cancel maintenance mode):
+   
    ```bash
    php bin/magento maintenance:disable
    ```
+   
 8. Restart Varnish if you use it for page caching.
+   
    ```bash
    service varnish restart
    ```
+   
 9. Access your storefront.
 
    The following error might display:
+   
    ```terminal
    We're sorry, an error has occurred while generating this email.
    ```
@@ -111,6 +125,6 @@ To enable maintenance mode:
 
    1. Reset [file system ownership and permissions]({{ page.baseurl }}/install-gde/prereq/file-system-perms.html) as a user with `root` privileges.
    2. Clear the following directories and try again:
-      * `<your Magento install dir>/var/cache`
-	  * `<your Magento install dir>/var/page_cache`
-	  * `<your Magento install dir>/generated/code`
+      * `<magento_root>/var/cache`
+	  * `<magento_root>/var/page_cache`
+	  * `<magento_root>/generated/code`

@@ -30,7 +30,7 @@ After successfully creating and testing the local installation to use multiple s
 Magento Enterprise Edition *routes* define how incoming URLs are processed. The way you configure routes depends on how you want your site to operate. We suggest configuring routes for integration as follows. You can edit the values later if your needs change.
 
 {:.bs-callout .bs-callout-info}
-To set up routes in a staging or production environment, you must create a [Support ticket]({{ page.baseurl }}/cloud/trouble/trouble.html).
+For Pro, you must create a [Support ticket]({{ page.baseurl }}/cloud/trouble/trouble.html) to set up routes in the Staging or Production environment.
 
 #### To configure routes in an integration environment:
 
@@ -42,21 +42,23 @@ To set up routes in a staging or production environment, you must create a [Supp
 
 1.  Replace the contents with the following:
 
-		"http://{default}/":
-    		type: upstream
-    		upstream: "mymagento:php"
+    ```yaml
+    "http://{default}/":
+        type: upstream
+        upstream: "mymagento:php"
 
-		"https://{default}/":
-    		type: upstream
-    		upstream: "mymagento:php"
+    "https://{default}/":
+        type: upstream
+        upstream: "mymagento:php"
 
-		"http://*.{default}/":
-    		type: upstream
-    		upstream: "mymagento:php"
+    "http://*.{default}/":
+        type: upstream
+        upstream: "mymagento:php"
 
-		"https://*.{default}/":
-    		type: upstream
-    		upstream: "mymagento:php"
+    "https://*.{default}/":
+        type: upstream
+        upstream: "mymagento:php"
+    ```
 
 1.  Save your changes to the `routes.yaml` file.
 
@@ -64,7 +66,7 @@ To set up routes in a staging or production environment, you must create a [Supp
 
 In the Admin panel, set up your {{site.data.var.ee}} websites, stores, and store views. See [Set up multiple websites, stores, and store views in the Admin]({{ page.baseurl }}/config-guide/multi-site/ms_websites.html).
 
-Make sure you name your websites, stores, and store views in your Cloud Admin the same as you did when you set up your local installation.
+It is important to name your websites, stores, and store views in your Cloud Admin the same as you did when you set up your local installation.
 
 ### Modify the `magento-vars.php` file
 
@@ -88,7 +90,7 @@ Instead of configuring an NGINX virtual host, pass the `MAGE_RUN_CODE` and `MAGE
         if (!isset($_SERVER['HTTP_HOST'])) {
            return false;
         }
-           return strpos(str_replace('.', '.', $_SERVER['HTTP_HOST']), $host) === 0;
+           return strpos(str_replace('---', '.', $_SERVER['HTTP_HOST']), $host) === 0;
     }
     if (isHttpHost("example.com")) {
         $_SERVER["MAGE_RUN_CODE"] = "default";
@@ -101,7 +103,7 @@ Instead of configuring an NGINX virtual host, pass the `MAGE_RUN_CODE` and `MAGE
     From:
 
     ```php
-    return strpos(str_replace('.', '.', $_SERVER['HTTP_HOST']), $host) === 0;
+    return strpos(str_replace('---', '.', $_SERVER['HTTP_HOST']), $host) === 0;
     ```
 
     To:

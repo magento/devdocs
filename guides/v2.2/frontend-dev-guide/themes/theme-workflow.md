@@ -14,7 +14,7 @@ Continue From:
 In the Magento root directory, run:
 
 ```php
-php bin/magento deploy:mode:set developer
+bin/magento deploy:mode:set developer
 ```
 
 See:
@@ -24,7 +24,7 @@ See:
 {:.bs-callout .bs-callout-tip}
 To check the current mode of your Magento instance, in the root directory, run:
 ```bash
-php bin/magento deploy:mode:show
+bin/magento deploy:mode:show
 ```
 
 ### Create basic theme files
@@ -97,7 +97,7 @@ When you finish developing and your styles are ready to go to production, you ca
 
 In the Magento root directory, run:
 ```php
-php bin/magento deploy:mode:set production
+bin/magento deploy:mode:set production
 ```
 
 See [Magento modes]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html#production-mode) for details.

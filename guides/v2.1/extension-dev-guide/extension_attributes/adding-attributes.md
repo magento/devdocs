@@ -6,19 +6,17 @@ menu_title: Adding extension attributes to entity
 menu_order: 20
 ---
 
-Third party developers cannot change {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} Data interface in the Magento Core, so the one way to affect interfaces
-using configuration is to add {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} attributes.
+Third-party developers cannot change the [API](https://glossary.magento.com/api) Data interfaces defined in the Magento Core code.  However, most of these entities have a feature called [extension attributes](https://glossary.magento.com/extension-attributes).  Check the interface for the methods `getExtensionAttributes()` and `setExtensionAttributes()` to determine if they are available for the entity.
 
 {: .bs-callout .bs-callout-info }
-We will demonstrate this on Product entity, Product Repository and {% glossarytooltip 377dc0a3-b8a7-4dfa-808e-2de37e4c0029 %}Web Api{% endglossarytooltip %} example.
+We will demonstrate how to add extension attributes to a Product entity, Product Repository and [Web Api](https://glossary.magento.com/web-api) example.
 
-
-In order to get product or list of products by Magento API you need to do API request to appropriate service (Product Repository in our case).
-In Response we got object with next structure:
+In order to retrieve a product or a list of products from the Magento API, you need to make an API request to the appropriate service (the Product Repository in this case).  
+The response to these requests will return objects with the following structure:
 
 ### Product response:
 
-``` xml
+```xml
 <product>
     <id>1</id>
     <sku>some-sku</sku>
@@ -29,7 +27,7 @@ In Response we got object with next structure:
 
 ### Product list response:
 
-``` xml
+```xml
 <products>
     <item>
         <id>1</id>
@@ -48,14 +46,14 @@ In Response we got object with next structure:
 
 ## Add plugin to product repository
 
-In order to add attributes, we need to use after plugin on Product Repository.
-Plugin should listen next methods: save, get, getList.
+In order to add extension attributes, we need to use an after plugin on Product Repository.
+The plugin should follow the methods: save, get, getList.
 
 We can add scalar and non-scalar extension attributes.
 Scalar is a simple attribute.
 Non-scalar attributes can be represented by Data Object.
 
-``` php
+```php
 public function afterGet
 (
     \Magento\Catalog\Api\ProductRepositoryInterface $subject,
@@ -71,14 +69,16 @@ public function afterGet
 }
 ```
 
-It is the easiest way to add custom attributes. Because we need to know if {% glossarytooltip a9027f5d-efab-4662-96aa-c2999b5ab259 %}entity{% endglossarytooltip %} already has extension attributes.
-Also we need to check whether we already has our {% glossarytooltip 45013f4a-21a9-4010-8166-e3bd52d56df3 %}extension attribute{% endglossarytooltip %}.
+This is the simplest way to add extension attributes without causing a conflict:  
+- We get the [entity's](https://glossary.magento.com/entity's) extension attributes, if they are already set.
+ - We add our [extension attribute](https://glossary.magento.com/extension-attribute).
+- Finally set the extension attribute on the entity with ours included.  
 
 AfterGetList is similar to afterGet.
 
-Likewise afterSave plugin should take data from entity and do some manipulations:
+Likewise, the `afterSave` plugin should manipulate the entity data before returning it:
 
-``` php
+```php
 public function afterSave
 (
     \Magento\Catalog\Api\ProductRepositoryInterface $subject,
@@ -92,11 +92,11 @@ public function afterSave
 }
 ```
 
-But if some entity doesn't have implementation to fetch extension attributes, we will always retrieve `null` and each time when we fetch extension attributes we need to check if they are `null` - need to create them. To avoid such code duplication, we need to create `afterGet` plugin for our entity with extension attributes.
+But if some entity doesn't have implementation to fetch extension attributes, we will always retrieve `null` and each time when we fetch extension attributes we need to check if they are `null`. If so, then we need to create them. To avoid such code duplication, we need to create `afterGet` plugin for our entity with extension attributes.
 
-Let's assume the product entity doesn't have any implementation of extension attributes, so our plugin might looks like this:
+Let's assume the product entity doesn't have any implementation of extension attributes, so our plugin might look like this:
 
-``` php?start_inline=1
+```php
 
 use Magento\Catalog\Api\Data\ProductExtensionInterface;
 use Magento\Catalog\Api\Data\ProductInterface;
@@ -138,9 +138,9 @@ class ProductAttributesLoad
 
 ```
 
-And now need to bind our plugin to `ProductInterface`:
+Now we need to bind our plugin to `ProductInterface`:
 
-``` xml
+```xml
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
     <type name="Magento\Catalog\Api\Data\ProductInterface">
         <plugin name="ProductExtensionAttributeOperations" type="Magento\Catalog\Plugin\ProductAttributesLoad"/>
@@ -151,7 +151,7 @@ And now need to bind our plugin to `ProductInterface`:
 ## Extension Attributes Configuration:
 
 For scalar attributes we can use next configuration:
-``` xml
+```xml
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Api/etc/extension_attributes.xsd">
     <extension_attributes for="Magento\Catalog\Api\Data\ProductInterface">
         <attribute code="first_custom_attribute" type="Magento\SomeModule\Api\Data\CustomDataInterface" />
@@ -161,7 +161,7 @@ For scalar attributes we can use next configuration:
 ```
 
 For non-scalar attributes:
-``` xml
+```xml
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Api/etc/extension_attributes.xsd">
     <extension_attributes for="Magento\Catalog\Api\Data\ProductInterface">
         <attribute code="our_custom_data" type="Magento\SomeModule\Api\Data\CustomDataInterface[]" />
@@ -171,7 +171,7 @@ For non-scalar attributes:
 
 In first case we will get the next result:
 
-``` xml
+```xml
 <product>
     <id>1</id>
     <sku>some-sku</sku>
@@ -184,7 +184,7 @@ In first case we will get the next result:
 ```
 
 In second one:
-``` xml
+```xml
 <product>
     <id>1</id>
     <sku>some-sku</sku>

@@ -25,7 +25,7 @@ The following shows a `crontab` group entry:
 </group>
 ```
 
-{:.bs-callout bs-callout-tip}
+{: .bs-callout .bs-callout-tip }
 How often you check message queues depends on your business logic and available system resources. In general, you'll probably want to check for newly created customers and send welcome emails more frequently than a more resource intensive process (e.g., updating your catalog). You should define `cron` schedules according to your business needs. See [Configure and run cron]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cron.html) for more information about using `cron` with Magento.
 
 You can also use a process manager such as [Supervisor](http://supervisord.org/index.html) to monitor the status of processes. The manager can use the command line to restart the processes as needed.
@@ -37,7 +37,7 @@ You can also use a process manager such as [Supervisor](http://supervisord.org/i
 Use the `magento` command to start message queue consumers. You can start multiple consumers simultaneously.
 
 ```bash
-./bin/magento queue:consumers:start <consumer_name> [--max-messages=<value>]
+./bin/magento queue:consumers:start [--max-messages=<value>] [--batch-size=<value>] [--pid-file-path=<value>] [--area-code=<value>] <consumer_name> 
 ```
 
 Where `<consumer_name>` is the consumer to start and `--max-messages=<value>` specifies the maximum number of messages to consume per invocation.

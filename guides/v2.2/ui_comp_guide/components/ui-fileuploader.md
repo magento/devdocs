@@ -3,7 +3,7 @@ group: ui-components-guide
 title: FileUploader component
 ---
 
-The File Uploader component is an {% glossarytooltip edb42858-1ff8-41f9-80a6-edf0d86d7e10 %}adapter{% endglossarytooltip %} for the [jQuery-File-Upload](https://github.com/blueimp/jQuery-File-Upload/wiki) plugin used in Magento. This component integrates file upload functionality with UI components.
+The File Uploader component is an [adapter](https://glossary.magento.com/adapter) for the [jQuery-File-Upload](https://github.com/blueimp/jQuery-File-Upload/wiki) plugin used in Magento. This component integrates file upload functionality with UI components.
 
 ## Configuration options
 
@@ -197,7 +197,7 @@ The File Uploader component is an {% glossarytooltip edb42858-1ff8-41f9-80a6-edf
 
 Here is an example of how File Uploader component integrates with [Form]({{ page.baseurl }}/ui_comp_guide/components/ui-form.html) component:
 
-{% highlight xml %}
+```xml
 <form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     ...
     <fieldset name="foo">
@@ -221,13 +221,13 @@ Here is an example of how File Uploader component integrates with [Form]({{ page
         </field>
     </fieldset>
 </form>
-{% endhighlight %}
+```
 
 ## Source files
 
 Extends `abstract`:
 
-- [`<Magento_Ui_module_dir>/view/base/web/js/form/element/file-uploader.js`]({{ site.mage2200url }}app/code/Magento/Ui/view/base/web/js/form/element/file-uploader.js)
-- [`jquery/fileUploader/jquery.fileupload-fp`]({{ site.mage2200url }}lib/web/jquery/fileUploader/jquery.fileupload-fp.js)
-- [`<Magento_Ui_module_dir>/view/base/web/templates/form/element/uploader/uploader.html`]({{ site.mage2200url }}app/code/Magento/Ui/view/base/web/templates/form/element/uploader/uploader.html)
-- [`<Magento_Ui_module_dir>/view/base/web/templates/form/element/uploader/preview.html`]({{ site.mage2200url }}app/code/Magento/Ui/view/base/web/templates/form/element/uploader/preview.html)
+- [`<Magento_Ui_module_dir>/view/base/web/js/form/element/file-uploader.js`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/form/element/file-uploader.js)
+- [`jquery/fileUploader/jquery.fileupload-fp`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/web/jquery/fileUploader/jquery.fileupload-fp.js)
+- [`<Magento_Ui_module_dir>/view/base/web/templates/form/element/uploader/uploader.html`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/templates/form/element/uploader/uploader.html)
+- [`<Magento_Ui_module_dir>/view/base/web/templates/form/element/uploader/preview.html`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/templates/form/element/uploader/preview.html)

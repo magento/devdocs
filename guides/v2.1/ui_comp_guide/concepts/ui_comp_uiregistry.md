@@ -10,30 +10,50 @@ menu_order: 110
 
 ## JS debugging using uiRegistry {#debug_uiregistry}
 
-To debug the UI component JS, we first need to get a `uiRegistry` instance from the browser console. To do so, use the [RequireJs ID]({{ page.baseurl }}/javascript-dev-guide/javascript/requirejs_concept.html) `uiRegistry`.
+To debug the UI component JS, we first need to get a `uiRegistry` instance from the browser console. To do so, use the [RequireJs ID]({{ page.baseurl }}/javascript-dev-guide/javascript/js-resources.html) `uiRegistry`.
 
 In the browser console enter the following:
 
-{%highlight js%}
+```javascript
 var registry = require('uiRegistry');
-{%endhighlight%}
+```
 
 Now we have `uiRegistry` instance in the `registry` variable. We can use it to get an instance of any component.
 
-{%highlight js%}
+```javascript
 var component = registry.get('%componentName%');
-{%endhighlight%}
+```
 
-For example:
+The `uiRegistry` instance allows you to search for components using property values.
+If you know a unique property value of a component that you need to find, you can use the following code to get the component:
 
-{%highlight js%}
+```javascript
+var component = registry.get('%property% = %propertyValue%');
+```
+
+**Examples**
+
+The following code shows how to get a component by a full component name:
+
+```javascript
 // Admin > Products > Catalog > Add Product
 var fieldName = registry.get('product_form.product_form.product-details.container_name.name');
-{%endhighlight%}
+```
+
+The following code shows how to get a component by a property value:
+
+```javascript
+// Admin > Products > Catalog > Add Product
+var fieldName = registry.get('index = name');
+// or 
+fieldName = registry.get('inputName = product[name]');
+```
+
+The previous example gets the same JS component as using the full component name.
 
 Lets look what we have in component variable. It keeps component context with all properties, we can see component file, component name and so on.
 
-{%highlight js%}
+```javascript
 console.log(fieldName.name); // product_form.product_form.product-details.container_name.name
 
 fieldName.trigger('validate'); // will invoke validation
@@ -41,4 +61,4 @@ fieldName.visible(false); // will hide field from page
 fieldName.visible(true);  // will show field again
 fieldName.value(); // will show current field value
 fieldName.value('New string value'); // will change field value to string 'New string value'
-{%endhighlight%}
+```

@@ -57,20 +57,20 @@ Dependencies. If one module depends on another, the `module.xml` file will have 
 
 Using the following command-line code, create the folder `app/code/Learning/FirstUnit/etc`:
 
-```
+```bash
 mkdir app/code/Learning/FirstUnit/etc
 ```
 
 Then put the following code into it:
 
-{% highlight xml %}
+```xml
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
 <module name="Learning_FirstUnit" setup_version="0.0.1"> <sequence>
 <module name="Magento_Catalog"/> </sequence>
     </module>
 </config>
-{% endhighlight %}
+```
 
 
 Note that in the XML file we specified:
@@ -84,12 +84,12 @@ Note that in the XML file we specified:
 Each module must have this file, which tells Magento how to locate the module. Continuing our example, create the file
 `app/code/Learning/FirstUnit/registration.php`. Then put the following content into it:
 
-{% highlight php %}
+```php
 <?php \Magento\Framework\Component\ComponentRegistrar::register(
 \Magento\Framework\Component\ComponentRegistrar::MODULE, 'Learning_FirstUnit',
 __DIR__
 );
-{% endhighlight %}
+```
 
 The `registration.php` is a standardized file that follows the same pattern for all modules.
 
@@ -99,7 +99,7 @@ The only thing that varies is the module name, which in our case is `Learning_Fi
 
 Running this command makes your new module active, notifying Magento of its presence.
 
-```
+```bash
 php bin/magento setup:upgrade
 ```
 
@@ -111,7 +111,7 @@ So far, we haven't added any useful code to our module – it is still empty (an
 
 Never change this list manually!
 
-```
+```bash
 grep Learning_FirstUnit app/etc/config.php
 ```
 

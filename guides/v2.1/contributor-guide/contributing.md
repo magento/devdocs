@@ -154,7 +154,7 @@ For `version`, the currently supported values are [version tags](https://github.
 
 **Admin access:**
 
-- http://i-xxx.engcom.dev.magento.com/admin
+- https://pr-{$id_pr}.instances.magento-community.engineering/admin
 - Admin Credentials:
     - Username: admin
     - Password: 123123q
@@ -226,7 +226,7 @@ We provide two options to create back-ports and up-ports for your code contribut
 - [Manual porting](#porting-manual) - Manual process requiring a strong understanding of Git
 
 {: .bs-callout .bs-callout-info }
-Creating back-ports and up-ports are recommended and a best practice, but not required to contribute code. Anyone can create a back-port and up-port for an already merged pull request.
+Creating back-ports and up-ports are recommended and a best practice, but not required to contribute code. Anyone can create a back-port and up-port for a merged pull request, however, original pull request authors receive higher priority if there are duplicate ports.
 
 ### What are up-ports and back-ports?
 
@@ -272,7 +272,7 @@ The tool includes configuration settings through the gear icon located top right
 
 ![Magento Porting Tool Settings]({{ site.baseurl }}/common/images/porting-tool-setting.png){:width="600px"}
 
-### Manual porting {#manual-porting}
+### Manual porting {#porting-manual}
 
 When manually porting, you use Git commands to create branches and pull requests. This option may require a strong understanding of Git.
 

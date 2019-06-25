@@ -13,7 +13,7 @@ functional_areas:
 
 You can run the following types of reports:
 
--   {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}**Module**{% endglossarytooltip %} dependencies: Shows the total number of dependencies between modules and whether the dependencies are hard or soft.
+-   [**Module**](https://glossary.magento.com/**Module**) dependencies: Shows the total number of dependencies between modules and whether the dependencies are hard or soft.
 -   **Circular dependencies:** Shows the total number of dependency chains and the number and list of circular dependencies for each module.
 -   **Framework dependencies:** Shows the total number of dependencies on the Magento framework by module (including the total number of framework entries for each library).
 
@@ -23,7 +23,7 @@ A dependency in a comment is also a dependency.
 
 Command options:
 
-	magento info:dependencies:{show-modules|show-modules-circular|show-framework} [-d|--directory="<path>"] [-o|--output="<path and filename"]
+	bin/magento info:dependencies:{show-modules|show-modules-circular|show-framework} [-d|--directory="<path>"] [-o|--output="<path and filename"]
 
 The following table explains this command's options, parameters, and values.
 
@@ -34,7 +34,7 @@ The following table explains this command's options, parameters, and values.
 | `show-framework`        | Framework dependencies report.                                                                                       | Yes       |
 | `-d --directory`        | Path to the base directory to start searching for report data.                                                       | No        |
 | `-o --output`           | Specifies the absolute file system path and file name of the comma-separated value (csv) output file for the report. | No        |
-{:style="table-layout:auto;"}
+
 
 If no directory or filename is passed as an argument, the following application root is used as the default directory, and the following default filenames are used:
 
@@ -43,7 +43,7 @@ If no directory or filename is passed as an argument, the following application 
 | `magento info:dependencies:show-modules`          | `modules-dependencies.csv`          |
 | `magento info:dependencies:show-modules-circular` | `modules-circular-dependencies.csv` |
 | `magento info:dependencies:show-framework`        | `framework-dependencies.csv`        |
-{:style="table-layout:auto;"}
+
 
 ### Sample module dependencies report
 

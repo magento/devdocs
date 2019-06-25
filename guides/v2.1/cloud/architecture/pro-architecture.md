@@ -2,10 +2,8 @@
 group: cloud-guide
 title: Pro architecture
 redirect_from:
-  - /guides/v2.0/cloud/discover-arch.html
   - /guides/v2.1/cloud/discover-arch.html
   - /guides/v2.2/cloud/discover-arch.html
-  - /guides/v2.0/cloud/reference/discover-arch.html
   - /guides/v2.1/cloud/reference/discover-arch.html
   - /guides/v2.2/cloud/reference/discover-arch.html
   - /guides/v2.3/cloud/reference/discover-arch.html
@@ -69,10 +67,10 @@ The following table summarizes the differences between environments:
      <td>Yes</td>
    </tr>
    <tr>
-     <td>Includes New Relic APM</td>
-     <td>Yes (Only one branch)</td>
-     <td>Yes</td>
-     <td>Yes</td>
+     <td>Includes New Relic</td>
+     <td>No</td>
+     <td>APM</td>
+     <td>APM + NRI</td>
    </tr>
   </tbody>
 </table>
@@ -103,7 +101,7 @@ Do **not** create a branch from Global Master. Use the Integration environment b
 
 ## Staging environment {#cloud-arch-stage}
 
-The Staging environment provides a near-production environment to test your site. This environment includes all services used in the Production environment—including Fastly CDN, New Relic APM, Blackfire Profiler, and search—and shares the same dedicated IaaS hardware as the Production environment.
+The Staging environment provides a near-production environment to test your site. This environment includes all services, such as Fastly CDN, New Relic APM, Blackfire Profiler, and search—and shares the same dedicated IaaS hardware as the Production environment.
 
 You cannot create a branch from the Staging environment branch. You must push code changes from the Integration environment branch to the Staging environment branch.
 
@@ -112,15 +110,15 @@ We highly recommend testing every merchant and customer interaction in the Stagi
 
 ## Production environment {#cloud-arch-prod}
 
-The Production environment runs your public-facing Magento single and multi-site storefronts. This environment runs on dedicated IaaS hardware featuring triple-redundant, high-availability nodes for continuous access and failover protection for your customers.
+The Production environment runs your public-facing Magento single and multi-site storefronts. This environment runs on dedicated IaaS hardware featuring redundant, high-availability nodes for continuous access and failover protection for your customers. The Production environment includes all services in the Staging environment, plus the [New Relic Infrastructure (NRI)](https://newrelic.com/products/infrastructure) service, which automatically connects with the application data and performance analytics to provide dynamic server monitoring.
 
 You cannot create a branch from the Production environment branch. You must push code changes from the Staging environment branch to the Production environment branch.
 
 ### Redundant hardware
 
-Rather than running a traditional, active-passive master or a master-slave setup, {{site.data.var.ece}} runs a triple-redundant architecture where all three instances accept reads and writes. This architecture offers zero downtime when scaling and provides guaranteed transactional integrity.
+Rather than running a traditional, active-passive master or a master-slave setup, {{site.data.var.ece}} runs a redundant architecture where all three instances accept reads and writes. This architecture offers zero downtime when scaling and provides guaranteed transactional integrity.
 
-Because of our unique, triple-redundant hardware, we can provide you with three gateway servers. Most external services enable you to {% glossarytooltip 34f8f61d-2b48-4628-be06-aaa6e32ddc1f %}whitelist{% endglossarytooltip %} multiple IP addresses, so having more than one fixed IP address is not a problem.
+Because of our unique, redundant hardware, we can provide you with three gateway servers. Most external services enable you to [whitelist](https://glossary.magento.com/whitelist) multiple IP addresses, so having more than one fixed IP address is not a problem.
 
 The three gateways map to the three servers in your Production environment cluster and retain static IP addresses. It is fully redundant and highly available at every level:
 
@@ -134,9 +132,8 @@ The three gateways map to the three servers in your Production environment clust
 Your Pro plan backup and recovery approach uses a high-availability architecture combined with full-system backups. We replicate each Project—all data, code, and assets—across three separate AWS Availability Zones, each zone with a separate data center.
 
 In addition to the redundancy of the high-availability architecture, {{site.data.var.ece}} provides
-incremental backups every hour for the first 24 hours of operation. After the
-initial period, full backups which include the file system and the database.
-We retain the backups according to the following schedule:
+incremental backups, which include the file system and the database, every hour for the last 24 hours of operation. After the
+24-hour period, we retain the backups according to the following schedule:
 
 Time Period | Backup Retention Policy
 --- | ---
@@ -146,12 +143,11 @@ Weeks 2 to 6 | One backup per week
 Weeks 8 to 12 | One bi-weekly backup
 Weeks 12 to 22 | One backup per month
 
+
 {{site.data.var.ece}} creates the backup using snapshots to encrypted elastic block storage (EBS) volumes. An EBS snapshot is immediate, but the time it takes to write to the simple storage service (S3) depends on the volume of changes.
 
--  **Recovery Point Objective (RPO)**—is 1 hour for the first 24 hours; after
-the initial period, the RPO is 6 hours (maximum time to last backup).
--  **Recover Time Objective (RTO)**—depends on the size of the storage. Large
-EBS volumes take more time to restore.
+-   **Recovery Point Objective (RPO)**—is 1 hour for the first 24 hours; after which, the RPO is 6 hours (maximum time to last backup).
+-   **Recovery Time Objective (RTO)**—depends on the size of the storage. Large EBS volumes take more time to restore.
 
 ### Production technology stack
 
@@ -166,7 +162,6 @@ The Production environment has three virtual machines (VMs) behind an Elastic Lo
     -   `app/etc`
 -   **Redis**—one server per VM with only one active and the other two as replicas
 -   **Elasticsearch**—search for {{site.data.var.ece}} 2.1 and later
--   **Solr**—search for {{site.data.var.ece}} 2.0 only
 -   **Galera**—database cluster with one MariaDB MySQL database per node with an auto-increment setting of three for unique IDs across every database
 
 The following figure shows the technologies used in the Production environment:
@@ -177,12 +172,12 @@ The following figure shows the technologies used in the Production environment:
 -   Pro12 offers a 12-CPU (4 x 3 nodes) and 48GB RAM (16 x 3 nodes)
 -   Pro120 offers 120 CPU (40 x 3 nodes) up to 480GB RAM (160 x 3 nodes)
 
-Our triple-redundant architecture means we can offer upscaling without downtime. When upscaling, we rotate each of the three instances to upgrade capacity without impacting site operation.
+Our redundant architecture means we can offer upscaling without downtime. When upscaling, we rotate each of the three instances to upgrade capacity without impacting site operation.
 
-<!-- [//]: # (HG—careful: In addition, you can add extra web servers to an existing cluster should the constriction be at the {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} level rather than the database level. This provides _horizontal scaling_ to complement the vertical scaling provided by extra CPUs on the database level.) -->
+<!-- [//]: # (HG—careful: In addition, you can add extra web servers to an existing cluster should the constriction be at the [PHP](https://glossary.magento.com/php) level rather than the database level. This provides _horizontal scaling_ to complement the vertical scaling provided by extra CPUs on the database level.) -->
 
 ## Software versions {#cloud-arch-software}
-{{site.data.var.ece}} uses the Debian GNU/Linux 8 (jessie) operating system and the {% glossarytooltip b14ef3d8-51fd-48fe-94df-ed069afb2cdc %}NGINX{% endglossarytooltip %} 1.8 web server. You cannot upgrade this software, but you can configure versions for the following:
+{{site.data.var.ece}} uses the Debian GNU/Linux 8 (jessie) operating system and the [NGINX](https://glossary.magento.com/nginx) 1.8 web server. You cannot upgrade this software, but you can configure versions for the following:
 
 -   [PHP]({{ page.baseurl }}/cloud/project/project-conf-files_magento-app.html)
 -   [MySQL]({{ page.baseurl }}/cloud/project/project-conf-files_services-mysql.html)
@@ -197,4 +192,4 @@ Edit the following YAML files to configure specific software versions to use in 
 -   [`.magento.app.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_magento-app.html)—application build and deployment
 -   [`routes.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_routes.html)—url processing
 -   [`services.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_services.html)—supported services
--   [`.magento.env.yaml`]({{ page.baseurl }}/cloud/project/magento-env-yaml.html)—unified configs for {{site.data.var.ece}} 2.2
+-   [`.magento.env.yaml`]({{ page.baseurl }}/cloud/project/magento-env-yaml.html)—unified configs for {{site.data.var.ece}} 2.2 and later

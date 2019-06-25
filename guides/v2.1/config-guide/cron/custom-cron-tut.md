@@ -7,7 +7,7 @@ functional_areas:
   - Setup
 ---
 
-This tutorial shows you step-by-step how to create a custom cron job and optionally a cron group in a sample {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}. You can use a module you already have or you can use a sample module from our [`magento2-samples` repository](https://github.com/magento/magento2-samples).
+This tutorial shows you step-by-step how to create a custom cron job and optionally a cron group in a sample [module](https://glossary.magento.com/module). You can use a module you already have or you can use a sample module from our [`magento2-samples` repository](https://github.com/magento/magento2-samples).
 
 Running the cron job results in a row being added to the `cron_schedule` table with the name of the cron job, `custom_cron`.
 
@@ -60,7 +60,15 @@ If you already have a sample module, you can use it; skip this step and the next
         drwxrwsr-x.   3 magento_user apache  4096 Oct 30 13:19 Test
 6.  Update the Magento database and schema:
 
-        php /var/www/html/magento2/bin/magento setup:upgrade
+    ```bash
+    bin/magento setup:upgrade
+    ```
+
+7. Clean the cache:
+
+   ```bash
+   bin/magento cache:clean
+   ```
 
 {% endcollapsible %}
 
@@ -71,7 +79,7 @@ Before you continue, make sure the sample module is registered and enabled.
 {% collapsible To verify the sample module: %}
 
 1.  Log in to the Magento Admin as an administrator.
-2.  Click **Stores** > **Configuration** > ADVANCED > **Advanced**.
+2.  Click **Stores** > **Settings** > **Configuration** > ADVANCED > **Advanced**.
 3.  In the right pane, under Disable Modules Output, look for **Magento_SampleMinimal** as the following figure shows.
 
     ![Verify your sample module]({{ site.baseurl }}/common/images/config_module-enabled.png){:width="900px"}
@@ -91,7 +99,7 @@ This step shows a simple class to create a cron job. The class only writes a row
         mkdir /var/www/html/magento2/app/code/Magento/SampleMinimal/Cron && cd /var/www/html/magento2/app/code/Magento/SampleMinimal/Cron
 2.  Created a file named `Test.php` in that directory with the following contents:
 
-{% highlight php %}
+```php
 <?php
 namespace Magento\SampleMinimal\Cron;
 use \Psr\Log\LoggerInterface;
@@ -114,7 +122,7 @@ class Test {
     }
 
 }
-{% endhighlight %}
+```
 
 <!-- ?> -->
 
@@ -127,7 +135,7 @@ class Test {
 
 Create `crontab.xml` as follows in the `/var/www/html/magento2/app/code/Magento/SampleMinimal/etc` directory:
 
-{% highlight xml %}
+```xml
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Cron:etc/crontab.xsd">
     <group id="default">
@@ -136,7 +144,7 @@ Create `crontab.xml` as follows in the `/var/www/html/magento2/app/code/Magento/
         </job>
     </group>
 </config>
-{% endhighlight %}
+```
 
 The preceding `crontab.xml` runs the `Magento/SampleMinimal/Cron/Test.php` class once per minute, resulting in a row being added to the `cron_schedule` table.
 
@@ -190,7 +198,7 @@ If the SQL command and system log contain no entries, run the `magento cron:run`
 
 ## Step 6 (optional): Set up a custom cron group
 
-This step shows how to optionally set up a custom cron group. You should set up a custom cron group you want your custom cron job to run on a different schedule than other cron jobs (typically, once per minute) or if you want several custom cron jobs to run with different settings.
+ This step shows how to optionally set up a custom cron group. You should set up a custom cron group if you want your custom cron job to run on a different schedule than other cron jobs (typically, once per minute) or if you want several custom cron jobs to run with different settings.
 
 {% collapsible To set up a custom cron group: %}
 
@@ -199,7 +207,7 @@ This step shows how to optionally set up a custom cron group. You should set up 
 3.  Exit the text editor.
 4.  Create `/var/www/html/magento2/app/code/Magento/SampleMinimal/etc/cron_groups.xml` with the following contents:
 
-{% highlight xml %}
+```xml
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Cron:etc/cron_groups.xsd">
     <group id="custom_crongroup">
@@ -212,7 +220,7 @@ This step shows how to optionally set up a custom cron group. You should set up 
         <use_separate_process>1</use_separate_process>
     </group>
 </config>
-{% endhighlight %}
+```
 
 For a description of what the options mean, see [Configure custom cron jobs and cron groups reference]({{ page.baseurl }}/config-guide/cron/custom-cron-ref.html).
 
@@ -220,7 +228,7 @@ For a description of what the options mean, see [Configure custom cron jobs and 
 
 ## Step 7 (optional): Verify your custom cron group
 
-This step shows how to verify your custom cron group using the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %}.
+This step shows how to verify your custom cron group using the [Magento Admin](https://glossary.magento.com/magento-admin).
 
 {% collapsible To verify your custom cron group: %}
 
@@ -233,13 +241,11 @@ This step shows how to verify your custom cron group using the {% glossarytoolti
 
         php /var/www/html/magento2/bin/magento cache:clean
 2.  Log in to the Magento Admin as an administrator.
-3.  Click **Stores** > **Configuration** > **Advanced** > **System**.
+3.  Click **Stores** > **Settings** > **Configuration** > **Advanced** > **System**.
 4.  In the right pane, expand **Cron**.
 
     Your cron group displays as follows:
 
     ![Your custom cron group]({{ site.baseurl }}/common/images/config_cron-group.png)
-
-
 
 {% endcollapsible %}

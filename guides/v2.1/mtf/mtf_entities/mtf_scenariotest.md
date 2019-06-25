@@ -3,25 +3,25 @@ group: functional-testing-framework-guide
 title: Scenario test
 ---
 
-Scenario test is a case of separate test steps where each step is a distinct class. Test steps can be grouped in any order that makes functional testing more agile comparatively with [injectable test].  
+A scenario test is a case of separate test steps where each step is a distinct class. Test steps can be grouped in any order that makes functional testing more agile comparable to [injectable test].  
 
-Scenario test has the following advantages:
+A scenario test has the following advantages:
 
-- Each step in the scenario is a separate {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} class that is placed in the {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} it belongs to.
-- Scenario test reduces code duplication because each step can be used multiple times.
+- Each step in the scenario is a separate [PHP](https://glossary.magento.com/php) class that is placed in the [module](https://glossary.magento.com/module) it belongs to.
+- A scenario test reduces code duplication because each step can be used multiple times.
 - Scenario tests are flexible and support Magento modularity.
-- New test can be easily created using existing steps.
+- A new test can be easily created using existing steps.
 
-Scenario test is split into four logical components:
+A scenario test is split into four logical components:
 
-- [test case], which executes tests steps in the order defined in a tests scenario
-- [data set], which contains variations of data and constraints for test steps 
-- [test scenario], which defines order of test steps
-- [test step], which contains a test flow
+- [test case], which executes tests steps in the order defined in a tests scenario.
+- [data set], which contains variations of data and constraints for test steps.
+- [test scenario], which defines order of test steps.
+- [test step], which contains a test flow.
 
 ## Test case class   {#test-case}
 
-Test cases are located in `<magento2 root dir>/dev/tests/functional/tests/app/Magento/<module>/Test/TestCase` along with corresponding data sets. Each test case is a PHP class that only runs corresponding scenario, it doesn't contain any other logic than that. In general, the difference between scenario test case and injectable test case is that all test logic is moved to distinct test steps, and their sequence is defined separately in {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %} file.
+Test cases are located in `<magento2 root dir>/dev/tests/functional/tests/app/Magento/<module>/Test/TestCase` along with the corresponding data sets. Each test case is a PHP class that runs the corresponding scenario. It does not contain any other logic. In general, the difference between a scenario test case and an injectable test case is that all test logic is moved to distinct test steps, and their sequence is defined separately in a [XML](https://glossary.magento.com/xml) file.
  
 Implementation of a scenario test is always the same. You have to change the name of your test case only.
 
@@ -57,11 +57,11 @@ class FunctionalityYouWantToTest extends Scenario
 
 ```
 
-Scenario test case is a PHP class that extends the `\Magento\Mtf\TestCase\Scenario\` class and implements the `test()` method that calls `executeScenario()`. However, the `Scenario` class is not an interface, so the method can have any other name than `test()`.
+A scenario test case is a PHP class that extends the `\Magento\Mtf\TestCase\Scenario\` class and implements the `test()` method that calls `executeScenario()`. However, the `Scenario` class is not an interface, so the method can have any name other than `test()`.
 
 ## Test scenario    {#test-scenario}
  
-Test scenario is a sequence of test steps. Each scenario test case has its own scenario. All scenarios for a module are collected in an XML file located in `<magento2 root dir>dev/tests/functional/tests/app/Magento/<module>/Test/etc/testcase.xml`.
+A test scenario is a sequence of test steps. Each scenario test case has its own scenario. All scenarios for a module are collected in an XML file located in `<magento2 root dir>dev/tests/functional/tests/app/Magento/<module>/Test/etc/testcase.xml`.
 
 ```xml
 <?xml version="1.0"?>
@@ -96,7 +96,7 @@ The example declares a scenario for `TestCase/OnePageCheckoutTest.php` where `<s
 
 ### `<step>` element    {#step-element}
 
-Each scenario contains test steps as `<step>` child elements. Each `<step>` requires `name` and `module` to define the name of a test step and the module to which it belongs to. All test steps are located in `<module>/Test/TestStep`.
+Each scenario contains test steps as `<step>` child elements. Each `<step>` requires `name` and `module` to define the name of a test step and the module to which it belongs. All test steps are located in `<module>/Test/TestStep`.
 
 Example:
 
@@ -112,9 +112,7 @@ The example defines the following test steps:
 
 #### `next` and `prev` attributes   {#next-prev-attributes}
 
-Using `next` and `prev` attributes you can specify previous or next test step as part of the node.
-
-The following examples show tangled structure to demonstrate logic of the attributes.
+Use `next` and `prev` attributes to specify previous or next test steps as part of the node.
 
 ```xml
 <scenario name="OnePageCheckoutTest" firstStep="setupConfiguration">
@@ -140,7 +138,7 @@ Both examples define the following test steps and their sequence:
 Sometimes you want to use the same test step more then once in your scenario. In this case, you can use the `alias` attribute to define another name for a step that has been already listed as `<step>`.
  
 {: .bs-callout .bs-callout-info }
-Note that you can use `<step>` with the same name in a scenario only once.
+You can only use a `<step>` with the same name within a scenario once.
 
 Example:
 
@@ -160,10 +158,9 @@ The example defines the following test steps and their sequence:
 
 ## Test step class  {#test-step}
 
-All test steps are located in `<module>/Test/TestStep` as PHP classes in the following format:
+The `<module>/Test/TestStep` directory contains each test step as a PHP class with the following format:
 
 ```php
-
 <?php
 
 namespace Magento\YourModule\Test\TestStep;
@@ -174,9 +171,9 @@ class YourTestStep implements TestStepInterface
 {
     public function __construct
     (
-        // data that are required for this step along with other dependencies.
+        // data and other dependencies required for this step.
     ) {
-        // all required classes (fixtures, pages, etc.) have to be assigned here.
+        // all required classes (fixtures, pages, etc.) are assigned here.
     };
     
     public function run()
@@ -190,16 +187,15 @@ class YourTestStep implements TestStepInterface
     }
     
 }
-
 ```
 
-A tests step must implement `Magento\Mtf\TestStep\TestStepInterface` and define:
+A test step must implement `Magento\Mtf\TestStep\TestStepInterface` and define:
 
  - constructor (optional)
  - public method `run()` (required)
  - public method `cleanup()` (optional)
  
-Let's see a test step on the example with `Magento\Customer\Test\TestStep\LoginCustomerOnFrontendStep`.
+An example with `Magento\Customer\Test\TestStep\LoginCustomerOnFrontendStep`:
  
 {% collapsible Show/hide example %}
 
@@ -298,14 +294,14 @@ class LoginCustomerOnFrontendStep implements TestStepInterface
  
 ### `constructor()` method  {#constructor-method}
 
-You can optionally use the `constructor()` method which injects data to be used by `run()`. The data may include classes like pages, variation data, data returned by previous executed steps, etc.
+Optionally, you may use the `constructor()` method, which injects data to be used by `run()`. The data may include classes like pages, variation data, data returned by previous executed steps, etc.
 
 On the previous example the `constructor()`:
 
-- injects the `CmsIndex` and `CustomerAccountLogin` pages
-- injects the `LogoutCustomerOnFrontendStep` step
-- injects the `Customer` fixture data
-- assigns arguments to corresponding class properties
+- injects the `CmsIndex` and `CustomerAccountLogin` pages.
+- injects the `LogoutCustomerOnFrontendStep` step.
+- injects the `Customer` fixture data.
+- assigns arguments to corresponding class properties.
 
 ### `run()` method  {#run-method}
 
@@ -313,17 +309,17 @@ The `run()` method is required to perform a test step and contains logic of the 
 
 On the previous example the `run()` method:
 
-- logs out if the customer was logged in
-- clicks 'Sign In' on the `LinksBlock` of the `cmsIndex` page
-- waits for requested page loading
-- logs in the customer on the `customerAccountLogin` page
-- waits for logging in the customer
+- logs out if the customer was logged in.
+- clicks 'Sign In' on the `LinksBlock` of the `cmsIndex` page.
+- waits for requested page loading.
+- logs in the customer on the `customerAccountLogin` page.
+- waits for logging in the customer.
 
 ### `cleanup()` method  {#cleanup-method}
 
-The `cleanup()` method is optional. It serves to reset Magento to initial state or execute any other logic after each variation of a test step.
+The `cleanup()` method is optional. It serves to reset Magento to an initial state or executes any other logic after each variation of a test step.
 
-On the previous example the `clean()` method:
+On the previous example, the `clean()` method:
 
 - logs out the customer
 

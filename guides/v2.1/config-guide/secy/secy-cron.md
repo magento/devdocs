@@ -71,8 +71,8 @@ Contents of the file:
 
 To secure cron in Magento's `.htaccess` file:
 
-1.	Log in to your Magento server as, or switch to, the {% glossarytooltip 5e7de323-626b-4d1b-a7e5-c8d13a92c5d3 %}Magento file system owner{% endglossarytooltip %}.
-2.	Open `<your Magento install dir>/pub/.htaccess` in a text editor.
+1.	Log in to your Magento server as, or switch to, the [Magento file system owner](https://glossary.magento.com/magento-file-system-owner).
+2.	Open `<magento_root>/pub/.htaccess` in a text editor.
 
 	(Because `cron.php` is located in the `pub` directory, edit this `.htaccess` only.)
 
@@ -98,7 +98,7 @@ To secure cron in Magento's `.htaccess` file:
 
 ## Secure cron with nginx
 
-This section discusses how to secure cron using the {% glossarytooltip b14ef3d8-51fd-48fe-94df-ed069afb2cdc %}nginx{% endglossarytooltip %} web server. You must perform the following tasks:
+This section discusses how to secure cron using the [nginx](https://glossary.magento.com/nginx) web server. You must perform the following tasks:
 
 1.	Set up an encrypted password file for nginx
 2.	Modify your nginx configuration to reference the password file when accessing `pub/cron.php`
@@ -114,7 +114,7 @@ Consult one of the following resources to create a password file before continui
 
 Magento provides an optimized sample nginx configuration file out of the box. We recommend modifying it to secure cron.
 
-1.  Add the following to your Magento [`nginx.sample.conf`]({{ site.mage2000url }}nginx.conf.sample){:target="_blank"} file:
+1.  Add the following to your Magento [`nginx.sample.conf`]({{ site.mage2bloburl }}/{{ page.guide_version }}/nginx.conf.sample){:target="_blank"} file:
 
     ```terminal
     #Securing cron
@@ -219,8 +219,8 @@ If you're using an Apache web server, you must remove the restriction from the `
 1.	Log in to your Magento server as a user with permissions to write to the Magento file system.
 2.	Open any of the following in a text editor (depending on your entry point to Magento):
 
-		<your Magento install dir>/pub/.htaccess
-		<your Magento install dir>/.htaccess
+		<magento_root>/pub/.htaccess
+		<magento_root>/.htaccess
 
 3.	Delete or comment out the following:
 

@@ -72,7 +72,7 @@ did not change after you selected **Disable product**.
 
 ### Customers
 
-<!--- MAGETWO-85674 -->* `window.checkout.customerLoginUrl` now contains a URL that includes the referer in base64 encoding (for example, https://myshop.com/customer/account/login/referer/aHR0cHM6Ly9teXNob3AuY29tL2NoZWNrb3V0). Previously, the login URL did not include a referer (for example, https://myshop.com/customer/account/login). *Fix submitted by [Tommy Quissens](https://github.com/quisse) in pull request 12629*. [GitHub-12627](https://github.com/magento/magento2/issues/12627)
+<!--- MAGETWO-85674 -->* `window.checkout.customerLoginUrl` now contains a URL that includes the referrer in base64 encoding (for example, https://myshop.com/customer/account/login/referrer/aHR0cHM6Ly9teXNob3AuY29tL2NoZWNrb3V0). Previously, the login URL did not include a referrer (for example, https://myshop.com/customer/account/login). *Fix submitted by [Tommy Quissens](https://github.com/quisse) in pull request 12629*. [GitHub-12627](https://github.com/magento/magento2/issues/12627)
 
 <!--- MAGETWO-84861 -->*  Administrators can now reset customer passwords as expected when the **max wait time between password resets** setting has been disabled.  Previously, when an administrator attempted to reset a customer's password from the Admin, Magento displayed this error, `Too many password reset requests`, even when the **max wait time between password resets** setting had been disabled. *Fix submitted by [adrian-martinez-interactiv4](https://github.com/adrian-martinez-interactiv4) in pull request 11436*. [GitHub-12627](https://github.com/magento/magento2/issues/12627)
 
@@ -158,7 +158,7 @@ did not change after you selected **Disable product**.
 
 ### Reports
 
-<!--- MAGETWO-84476 -->*  When generating the output of **Reports > Marketing > Products in Cart**, Magento no longer calls the data of products that have been deleted from the cart. *Fix submitted by [angelo983](https://github.com/angelo983) in pull request 12321*.
+<!--- MAGETWO-84476 -->*  When generating the output of **Reports** > Marketing > **Products in Cart**, Magento no longer calls the data of products that have been deleted from the cart. *Fix submitted by [angelo983](https://github.com/angelo983) in pull request 12321*.
 
 
 <!--- MAGETWO-83539 -->* The Admin's Most Viewed Products tab now displays all relevant information about products, even when they are not in the default attribute set. [GitHub-9768](https://github.com/magento/magento2/issues/9768)
@@ -417,7 +417,7 @@ The following table identifies contributions from our community members. This ta
 
 ## System requirements
 
-Our technology stack is built on PHP and MySQL. For more information, see [System Requirements]({{ site.baseurl }}/guides/v2.1/install-gde/system-requirements2.html){:target="_blank"}.
+Our technology stack is built on PHP and MySQL. For more information, see [System Requirements]({{ site.baseurl }}/guides/v2.1/install-gde/system-requirements.html){:target="_blank"}.
 
 ## Installation
 

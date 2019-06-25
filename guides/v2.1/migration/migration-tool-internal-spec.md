@@ -19,7 +19,7 @@ Data Migration Tool repository [migration-tool](https://github.com/magento/data-
 
 ### System requirements {#system-requirements}
 
-Same as for [Magento 2]({{ site.baseurl }}/guides/v1.0/install-gde/system-requirements.html){:target="_blank"}
+Same as for [Magento 2]({{ page.baseurl }}/install-gde/system-requirements.html){:target="_blank"}
 
 ## Internal structure {#migrate-is}
 
@@ -64,7 +64,7 @@ The following diagram represents directory structure of Data Migration Tool:
 │       │   ├── Data.php
 │       │   ├── Delta.php
 │       │   └── Settings.php
-│       ├── ResourceModel                   --- contains {% glossarytooltip edb42858-1ff8-41f9-80a6-edf0d86d7e10 %}adapter{% endglossarytooltip %} for connection to data storage and classes to work with structured data
+│       ├── ResourceModel                   --- contains [adapter](https://glossary.magento.com/adapter) for connection to data storage and classes to work with structured data
 │       │   ├── Adapter
 │       │   │   └── Mysql.php
 │       │   ├── AbstractCollection.php
@@ -76,7 +76,7 @@ The following diagram represents directory structure of Data Migration Tool:
 │       │   ├── Source.php
 │       │   └── Structure.php
 │       ├── Config.php
-│       ├── {% glossarytooltip 53da11f1-d0b8-4a7e-b078-1e099462b409 %}Exception{% endglossarytooltip %}.php
+│       ├── [Exception](https://glossary.magento.com/exception).php
 │       └── Step                            --- functionality for migrating specific data
 │           ├── Eav
 │           │   ├── Data.php
@@ -113,7 +113,7 @@ The Schema for configuration file `config.xsd` is placed under `etc/directory`. 
 Default configuration file can be replaced by custom one using CLI (see [--config `<value>` parameter]({{ page.baseurl }}/migration/migration-migrate.html)).
 
 Configuration file has the following structure:
-{% highlight xml %}
+```xml
 <config xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="config.xsd">
     <steps mode="settings">
         <step title="Settings step">
@@ -152,7 +152,7 @@ Configuration file has the following structure:
         ...
     </options>
 </config>
-{% endhighlight %}
+```
 
 * steps - describes all steps that are processed during migration
 
@@ -172,13 +172,13 @@ The migration process consists of steps.
 
 Step is a unit that provides functionality required for migration some separated data. Step can consist of one or more stages e.g. integrity check, data, volume check, delta.
 
-By default, there are several steps (Map, EAV, {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} Rewrites, and so on). You can optionally add your own steps as well.
+By default, there are several steps (Map, EAV, [URL](https://glossary.magento.com/url) Rewrites, and so on). You can optionally add your own steps as well.
 
 Steps related classes are located in the src/Migration/Step directory.
 
 To execute a Step class, the class must be defined in config.xml file.
 
-{% highlight xml %}
+```xml
 <config xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="config.xsd">
     <steps mode="mode_name">
         <step title="Step Name">
@@ -190,7 +190,7 @@ To execute a Step class, the class must be defined in config.xml file.
     </steps>
     ...
 </config>
-{% endhighlight %}
+```
 
 Every stage class must implement StageInterface.
 
@@ -214,11 +214,11 @@ Visualization of the running step is provided by Symfony's ProgressBar component
 
 Main methods for use are:
 
-{% highlight xml %}
+```xml
 $this->progress->start();
 $this->progress->advance();
 $this->progress->finish();
-{% endhighlight %}
+```
 
 ## Stages
 
@@ -257,7 +257,7 @@ Settings migration mode of this tool is used to transfer following entities:
 
 All store configuration keeps its data in core_config_data table in database. settings.xml file contains rules for this table that are applied during migration process. This file describes settings that should be ignored, renamed or should change their values. settings.xml file has the following structure:
 
-{% highlight xml %}
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <settings xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="settings.xsd">
     <key>
@@ -276,7 +276,7 @@ All store configuration keeps its data in core_config_data table in database. se
         </transform>
     </value>
 </settings>
-{% endhighlight %}
+```
 
 Under node <code>&lt;key&gt;</code> there are rules that work with 'path' column of core_config_data table. <code>&lt;ignore&gt;</code> rules make the tool not to transfer some setting. Wildcards can be used in this node. All other settings not listed in <code>&lt;ignore&gt;</code> node, will be migrated. If path of some setting is changed in Magento 2, it should be added to //key/rename node, where old path indicates in //key/rename/path node and new path indicates in //key/rename/to node.
 
@@ -288,11 +288,11 @@ In this mode most of the data will be migrated. Before data migration the integr
 
 #### Map Step
 
-Map step is responsible for transferring most of data from Magento 1 to Magento 2. This step reads instructions from map.xml file (located in etc dir). The file describes differences between data structures of source (Magento 1) and destination (Magento 2). In case Magento 1 contains tables or fields that belong to some {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} that does not exist in Magento 2, then these entities can be placed here to ignore them by Map Step. Otherwise it will show an error message.
+Map step is responsible for transferring most of data from Magento 1 to Magento 2. This step reads instructions from map.xml file (located in etc dir). The file describes differences between data structures of source (Magento 1) and destination (Magento 2). In case Magento 1 contains tables or fields that belong to some [extension](https://glossary.magento.com/extension) that does not exist in Magento 2, then these entities can be placed here to ignore them by Map Step. Otherwise it will show an error message.
 
 Map file has the next format:
 
-{% highlight xml %}
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <map xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="map.xsd">
     <source>
@@ -342,7 +342,7 @@ Map file has the next format:
         </field_rules>
     </destination>
 </map>
-{% endhighlight %}
+```
 
 Areas:
 
@@ -432,7 +432,7 @@ Here is a class diagram of these classes:
 
 ## Logging {#logging}
 
-In order to implement output of migration process and control all possible levels PSR logger, which is used in Magento, is applied. \Migration\Logger\Logger class was implemented to provide logging functionality. To use the logger you should inject it via constructor {% glossarytooltip 2be50595-c5c7-4b9d-911c-3bf2cd3f7beb %}dependency injection{% endglossarytooltip %}.
+In order to implement output of migration process and control all possible levels PSR logger, which is used in Magento, is applied. \Migration\Logger\Logger class was implemented to provide logging functionality. To use the logger you should inject it via constructor [dependency injection](https://glossary.magento.com/dependency-injection).
 
 <pre><code>class SomeClass
 {
@@ -486,7 +486,7 @@ As for now manipulation with logger, adding handler(s), processor(s) to it and p
 
 ### Custom Resource Type of Source
 
-By default Data Migration Tool works with MySQL DB of Magento 1 as source of data to transfer it to Magento 2. But source data type can be changed to {% glossarytooltip 6341499b-ead9-4836-9794-53d95eb48ea5 %}CSV{% endglossarytooltip %} as an example. There is resource_adapter_class_name option in config.xml that can hold custom class name to resource adapter which can be implemented to work with CSV as an example or any other data type.
+By default Data Migration Tool works with MySQL DB of Magento 1 as source of data to transfer it to Magento 2. But source data type can be changed to [CSV](https://glossary.magento.com/csv) as an example. There is resource_adapter_class_name option in config.xml that can hold custom class name to resource adapter which can be implemented to work with CSV as an example or any other data type.
 
 ### Map Step configuration
 

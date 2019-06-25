@@ -7,9 +7,7 @@ menu_node:
 menu_order: 30
 level3_menu_node: level3child
 level3_subgroup: umask
-redirect_from:
- - /guides/v2.0/install-gde/prereq/apache-user.html
- - /guides/v2.1/install-gde/prereq/apache-user.html
+redirect_from: /guides/v2.1/install-gde/prereq/apache-user.html
 functional_areas:
   - Install
   - System

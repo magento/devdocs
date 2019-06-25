@@ -6,7 +6,7 @@ functional_areas:
   - Configuration
 ---
 
-The following _build_ variables control actions in the build phase and can inherit and override values from the [Global stage]({{ page.baseurl }}/cloud/env/variables-intro.html#global-variables). Insert these variables in the `build` stage of the `.magento.env.yaml` file:
+The following _build_ variables control actions in the build phase and can inherit and override values from the [Global variables]({{ page.baseurl }}/cloud/env/variables-global.html). Insert these variables in the `build` stage of the `.magento.env.yaml` file:
 
 ```yaml
 stage:
@@ -14,12 +14,10 @@ stage:
     BUILD_VARIABLE_NAME: value
 ```
  
-For more information about customizing the build and deploy process:
+{% include cloud/customize-build-deploy.md %}
 
--  [Manage build and deploy actions]({{ page.baseurl }}/cloud/project/magento-env-yaml.html)
--  [Deployment process]({{ page.baseurl }}/cloud/reference/discover-deploy.html)
-
-{% include note.html type="info" content="You can still use the `build_options.ini` file, but we recommend using the `.magento.env.yaml` file instead because it centralizes the management of build and deploy actions across all of your environments—including Pro Staging and Production—without requiring a support ticket." %}
+{: .bs-callout .bs-callout-info}
+You can still use the `build_options.ini` file, but we recommend using the `.magento.env.yaml` file instead because it centralizes the management of build and deploy actions across all of your environments—including Pro Staging and Production—without requiring a support ticket.
 
 The following variables were removed in v2.2:
 
@@ -39,7 +37,23 @@ stage:
     SCD_COMPRESSION_LEVEL: 4
 ```
 
+### `SCD_COMPRESSION_TIMEOUT`
+
+-  **Default**—`600`
+-  **Version**—Magento 2.1.4 and later
+
+When the time it takes to compress the static assets exceeds the compression timeout limit, it interrupts the deployment process. Set the maximum execution time, in seconds, for the static content compression command.
+
+```yaml
+stage:
+  build:
+    SCD_COMPRESSION_TIMEOUT: 800
+```
+
 ### `SCD_EXCLUDE_THEMES`
+
+{: .bs-callout .bs-callout-warning }
+The `SCD_EXCLUDE_THEMES` environment variable is deprecated in [ece-tools version 2002.0.16]({{ page.baseurl }}/cloud/release-notes/cloud-tools.html#v2002016). Use the [SCD_MATRIX variable](#scd_matrix) to control theme configuration.
 
 -  **Default**—_Not set_
 -  **Version**—Magento 2.1.4 and later
@@ -81,6 +95,21 @@ stage:
       "magento/backend": [ ]
 ```
 
+### `SCD_MAX_EXECUTION_TIME` 
+
+-  **Default**—_Not set_
+-  **Version**—Magento 2.2.0 and later
+
+Allows you to increase the maximum expected execution time for static content deployment. 
+
+By default, Magento Commerce sets the maximum expected execution to 400 seconds, but in some scenarios you might need more time to complete the static content deployment for a Cloud project.
+
+```yaml
+stage:
+  build:
+    SCD_MAX_EXECUTION_TIME: 3600
+```
+
 ### `SCD_STRATEGY`
 
 -  **Default**—`quick`
@@ -102,12 +131,10 @@ stage:
 
 ### `SCD_THREADS`
 
--  **Default**: 
-    -  `1`—Starter environments and Pro Integration environments
-    -  `3`—Pro Staging and Production environments
+-  **Default**—Automatic
 -  **Version**—Magento 2.1.4 and later
 
-Sets the number of threads for static content deployment. Increasing the number of threads speeds up static content deployment; decreasing the number of threads slows it down.
+Sets the number of threads for static content deployment. The default value is set based on the detected CPU thread count and does not exceed a value of 4. Increasing the number of threads speeds up static content deployment; decreasing the number of threads slows it down. You can set the thread value, for example:
 
 ```yaml
 stage:
@@ -124,9 +151,9 @@ To further reduce deployment time, we recommend using [Configuration Management]
 
 Set to `true` to skip static content deployment during the build phase.
 
-If you are already deploying static content during the build phase with [Configuration Management]({{ page.baseurl }}/cloud/live/sens-data-over.html), you may want to turn it off for a quick build test.
+If you already deploy static content during the build phase with [Configuration Management]({{ page.baseurl }}/cloud/live/sens-data-over.html), you can skip static content deployment for a quick build test.
 
-We do not recommend using this option, because running static content deployment during the deployment phase can greatly increase deployment times and downtime for your live site.
+We do not recommend setting this option to `true` because running static content deployment during the deploy phase can significantly increase deployment times and downtime for your live site.
 
 ```yaml
 stage:

@@ -7,8 +7,6 @@ menu_order: 360
 menu_node:
 level3_menu_node: level3child
 level3_subgroup: mccloud-relnotes
-redirect_from:
-  - /guides/v2.2/cloud/release-notes/CloudReleaseNotes101.8.html
 functional_areas:
   - Cloud
 ---
@@ -23,7 +21,7 @@ In `magento-cloud-configuration` releases 101.8.0 and 101.8.1, we provide the fo
 
 ## 101.8.1 changes
 
-<!--- MAGECLOUD-1005 -->* We’ve added support for the latest version of Redis and for PHP-Redis 3.1.3. For more information on this update, and for guidance on Redis troubleshooting on {{site.data.var.ece}}, see [Redis troubleshooting]({{ site.baseurl }}/guides/v2.0/cloud/trouble/redis-troubleshooting.html).
+<!--- MAGECLOUD-1005 -->* We’ve added support for the latest version of Redis and for PHP-Redis 3.1.3. For more information on this update, and for guidance on Redis troubleshooting on {{site.data.var.ece}}, see [Redis troubleshooting]({{ page.baseurl }}/cloud/trouble/redis-troubleshooting.html).
 
 ## 101.8.0 changes
 

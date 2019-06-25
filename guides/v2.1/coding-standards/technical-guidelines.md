@@ -47,13 +47,15 @@ Use [RFC2119] to interpret keywords like:
 
 {% collapsible Examples: %}
 <table>
-    <tr>
-        <th><span style="color: red">Not recommended</span></th>
-        <th><span style="color: green">Recommended</span></th>
-    </tr>
-    <tr>
-        <td>
-{% highlight php %}
+  <tr>
+    <th><span style="color: red">Not recommended</span></th>
+    <th><span style="color: green">Recommended</span></th>
+  </tr>
+  <tr>
+      <td markdown="1">
+            
+```php
+            
 class Config
 {
     private $data;
@@ -68,10 +70,12 @@ class Config
         return $this->data[$key];
     }
 }
-{% endhighlight %}
-        </td>
-        <td>
-{% highlight php %}
+```
+
+   </td>
+   <td markdown="1">
+        
+```php
 class Config
 {
     private $data;
@@ -85,9 +89,10 @@ class Config
         return $this->data[$key];
     }
 }
-{% endhighlight %}
-        </td>
-    </tr>
+```
+
+   </td>
+   </tr>
 </table>
 {% endcollapsible %}
 ---
@@ -98,29 +103,30 @@ class Config
 2.3.1. Constructor SHOULD throw an exception when validation of an argument has failed.
 
 {% collapsible Example: %}
-``` php?start_inline=1
+
+```php
 class Composite
 {
-    /**
-     * @var RendererInterface[]
-     */
-    private $renderers;
+  /**
+    * @var RendererInterface[]
+    */
+  private $renderers;
 
-    /**
-     * @param RendererInterface[] $renderers
-     * @throws InvalidArgumentException
-     */
-    public function __construct(array $renderers)
-    {
-        foreach ($renderers as $renderer) {
-            if (!$renderer instanceof RendererInterface) {
-                throw new InvalidArgumentException(
-                    sprintf('Instance of the phrase renderer is expected, got %s instead.', get_class($renderer))
-                );
-            }
-        }
-        $this->renderers = $renderers;
-    }
+  /**
+    * @param RendererInterface[] $renderers
+    * @throws InvalidArgumentException
+    */
+  public function __construct(array $renderers)
+  {
+      foreach ($renderers as $renderer) {
+          if (!$renderer instanceof RendererInterface) {
+              throw new InvalidArgumentException(
+                  sprintf('Instance of the phrase renderer is expected, got %s instead.', get_class($renderer))
+              );
+          }
+      }
+      $this->renderers = $renderers;
+  }
 }
 ```
 {% endcollapsible %}
@@ -136,8 +142,9 @@ class Composite
         <th><span style="color: green">Recommended</span></th>
     </tr>
     <tr>
-        <td>
-{% highlight php %}
+      <td markdown="1">
+          
+```php
 
 class Config
 {
@@ -149,10 +156,12 @@ class Config
         $eventManager->dispatch('config_read_after');
     }
 }
-{% endhighlight %}
-        </td>
-        <td>
-{% highlight php %}
+```
+
+ </td>
+ <td markdown="1">
+  
+```php
 class Config
 {
     private $fileReader;
@@ -174,9 +183,10 @@ class Config
         return $this->data[$key];
     }
 }
-{% endhighlight %}
-        </td>
-    </tr>
+```
+
+   </td>
+   </tr>
 </table>
 {% endcollapsible %}
 
@@ -187,13 +197,14 @@ class Config
 
 {% collapsible Examples: %}
 <table>
-    <tr>
-        <th><span style="color: red">Not recommended</span></th>
-        <th><span style="color: green">Recommended</span></th>
-    </tr>
-    <tr>
-        <td>
-{% highlight php %}
+  <tr>
+    <th><span style="color: red">Not recommended</span></th>
+    <th><span style="color: green">Recommended</span></th>
+  </tr>
+  <tr>
+    <td markdown="1">
+
+```php
 interface SessionAdapterInterface
 {}
 
@@ -202,15 +213,17 @@ RedisSessionAdapter implements SessionAdapterInterface
 
 class SessionManager
 {
-    public function __construct(RedisSessionAdapter $sessionAdapter)
-    {}
+  public function __construct(RedisSessionAdapter $sessionAdapter)
+  {}
 }
+// Breaks polymorphism principle,
+// restricts what types can be passed at the runtime.
+```
 
-// Breaks polymorphism principle, restricts what types can be passed at the runtime.
-{% endhighlight %}
-        </td>
-        <td>
-{% highlight php %}
+   </td>
+   <td markdown="1">
+
+```php
 interface SessionAdapterInterface
 {}
 
@@ -219,12 +232,13 @@ RedisSessionAdapter implements SessionAdapterInterface
 
 class SessionManager
 {
-    public function __construct(SessionAdapterInterface $sessionAdapter)
-    {}
+  public function __construct(SessionAdapterInterface $sessionAdapter)
+  {}
 }
-{% endhighlight %}
-        </td>
-    </tr>
+```
+
+   </td>
+   </tr>
 </table>
 {% endcollapsible %}
 
@@ -235,13 +249,14 @@ class SessionManager
 2.6. Inheritance SHOULD NOT be used. Composition SHOULD be used for code reuse.
 {% collapsible Examples: %}
 <table>
-    <tr>
-        <th><span style="color: red">Not recommended</span></th>
-        <th><span style="color: green">Recommended</span></th>
-    </tr>
-    <tr>
-        <td>
-{% highlight php %}
+  <tr>
+    <th><span style="color: red">Not recommended</span></th>
+    <th><span style="color: green">Recommended</span></th>
+  </tr>
+  <tr>
+    <td markdown="1">
+
+```php
 class AbstractController extends Action
 {
     // ...
@@ -270,31 +285,32 @@ class Edit extends AbstractController
         // ...
     }
 }
+// Smaller classes, one responsibility,
+// more flexible, easy to understand, more testable.
+```
 
-// Smaller classes, one responsibility, more flexible, easy to understand, more testable.
-
-{% endhighlight %}
-        </td>
-        <td>
-{% highlight php %}
+  </td>
+  <td markdown="1">
+    
+```php
 class Edit extends Action
 {
-    public function __constructor(
-        ValidatorInterface $validator,
-        HashGeneratorInterface $hashGenerator
-    ) {}
+  public function __constructor(
+      ValidatorInterface $validator,
+      HashGeneratorInterface $hashGenerator
+  ) {}
 
-    public function execute()
-    {
-        $errors = $this->validator->validate($request);
-        // ...
-        $hash = $this->hashGenerator->generateHash($request);
-    }
+  public function execute()
+  {
+      $errors = $this->validator->validate($request);
+      // ...
+      $hash = $this->hashGenerator->generateHash($request);
+  }
 }
+```
 
-{% endhighlight %}
-        </td>
-    </tr>
+   </td>
+  </tr>
 </table>
 {% endcollapsible %}
 
@@ -322,34 +338,38 @@ class Edit extends Action
         <th><span style="color: green">Recommended</span></th>
     </tr>
     <tr>
-        <td>
-{% highlight php %}
+        <td markdown="1">
+            
+```php
 $url = new Url();
 $url->setBaseUrl($baseUrl);
 echo $url->get('custom/path'); // prints full URL
 
 // Developer forgot or didn’t know that you need to call setBaseUrl
 $url = new Url();
-echo $url->get('custom/path'); // Throws exception, which makes issue smaller. If it doesn't throw and exception, it could lead to a hidden bug more likely.
+echo $url->get('custom/path'); // Throws exception,
+// which makes issue smaller. If it doesn't throw and exception,
+// it could lead to a hidden bug more likely.
 
-// Method with out parameters that doesn’t return anything could be sign of temporal coupling.
+// Method with out parameters that doesn’t
+// return anything could be sign of temporal coupling.
 
-{% endhighlight %}
-        </td>
-        <td>
-{% highlight php %}
+```
+  </td>
+  <td markdown="1">
+    
+```php
 $url = new Url($baseUrl);
 echo $url->get('custom/path');
 
 // Or
 $url = new Url();
 echo $url->get($baseUrl, 'custom/path');
-
 // Only one way to use API, no temporal coupling.
+```
 
-{% endhighlight %}
-        </td>
-    </tr>
+   </td>
+   </tr>
 </table>
 {% endcollapsible %}
 
@@ -362,31 +382,33 @@ echo $url->get($baseUrl, 'custom/path');
         <th><span style="color: green">Recommended</span></th>
     </tr>
     <tr>
-        <td>
-{% highlight php %}
+        <td markdown="1">
+
+```php
 class Edit extends Action
 {
-    public function execute()
-    {
-        // ...
-        $product = $productResource->load($product, $productSku, 'sku');
-        $this->registry->register('product', $product);
-    }
+  public function execute()
+  {
+      // ...
+      $product = $productResource->load($product, $productSku, 'sku');
+      $this->registry->register('product', $product);
+  }
 }
 
 class View extends Template
 {
-    public function getProductName()
-    {
-        $product = $this->registry->get('product');
-        return $product->getName();
-    }
+  public function getProductName()
+  {
+      $product = $this->registry->get('product');
+      return $product->getName();
+  }
 }
+```
 
-{% endhighlight %}
-        </td>
-        <td>
-{% highlight php %}
+   </td>
+   <td markdown="1">
+
+```php
 class Edit extends Action
 {
     public function execute()
@@ -405,9 +427,9 @@ class View extends Template
         return $product->getName();
     }
 }
-// More flexible, no dependencies between classes, no temporal coupling.
-
-{% endhighlight %}
+// More flexible, no dependencies between classes,
+// no temporal coupling.
+```
 
 {% endcollapsible %}
 
@@ -423,7 +445,7 @@ class View extends Template
 
 2.17.2. Composites SHOULD be used when there is a need to work with a tree as a single object.
 
- {% collapsible Example: %}
+{% collapsible Example: %}
  You need to read configuration from different sources (like database or filesystem) and want to make the reading process configurable: allow extensions to add more configuration sources. In this case, you can create a `ConfigReaderInterface` with a composite implementation - `ConfigReaderComposite`, and configure particular readers as children of a composite reader.
  {% endcollapsible %}
 ---
@@ -433,7 +455,7 @@ class View extends Template
 
 3.1. There SHOULD be no circular dependencies between objects.
 
-3.2. The `app/etc/di.xml` file MUST contain only framework-level {% glossarytooltip 2be50595-c5c7-4b9d-911c-3bf2cd3f7beb %}Dependency Injection{% endglossarytooltip %} (DI) settings.
+3.2. The `app/etc/di.xml` file MUST contain only framework-level [Dependency Injection](https://glossary.magento.com/dependency-injection) (DI) settings.
 
 3.3. All modular DI settings (except for Presentation layer configuration) SHOULD be stored in `<module_dir>/etc/di.xml`.
 
@@ -443,7 +465,7 @@ class View extends Template
 
 4.1. Around-plugins SHOULD only be used when behavior of an original method is supposed to be substituted in certain scenarios.
 
-4.2. Plugins SHOULD NOT be used within own {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}.
+4.2. Plugins SHOULD NOT be used within own [module](https://glossary.magento.com/module).
 
 4.3. Plugins SHOULD NOT be added to data objects.
 
@@ -453,16 +475,14 @@ class View extends Template
 
 5.1. All exceptions that are surfaced to the end user MUST produce error messages in the following format:
 
-- Symptom
-
-- Details
-
-- Solution or workaround
+* Symptom
+* Details
+* Solution or workaround
 
 {:start="5.2"}
 5.2. Exceptions MUST NOT be handled in the same function where they are thrown.
 
-5.3. If a function A calls function B, and function B might throw an exception, this {% glossarytooltip 53da11f1-d0b8-4a7e-b078-1e099462b409 %}exception{% endglossarytooltip %} MUST be either processed by function A or declared by the @throws annotation in the documentation block of function A.
+5.3. If a function A calls function B, and function B might throw an exception, this [exception](https://glossary.magento.com/exception) MUST be either processed by function A or declared by the @throws annotation in the documentation block of function A.
 
 5.4. Exceptions MUST NOT handle message output. It is the processing code that decides how to process an exception.
 
@@ -474,7 +494,7 @@ class View extends Template
 
 5.8. All direct communications with third-party libraries MUST be wrapped with a try/catch statement.
 
-5.9. `\Exception` SHOULD be caught only in the code that calls third-party libraries, in addition to catching specific exceptions thrown by the {% glossarytooltip 08968dbb-2eeb-45c7-ae95-ffca228a7575 %}library{% endglossarytooltip %}.
+5.9. `\Exception` SHOULD be caught only in the code that calls third-party libraries, in addition to catching specific exceptions thrown by the [library](https://glossary.magento.com/library).
 
 5.10. `\Exception` SHOULD NOT be thrown in Front Controller and Action Controllers.
 
@@ -506,7 +526,7 @@ class View extends Template
 
 * **Command** for Actions
 
-* **Query** for {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}Layout{% endglossarytooltip %} and its elements (Blocks and UI Components)
+* **Query** for [Layout](https://glossary.magento.com/layout) and its elements (Blocks and UI Components)
 
 6.2.2. Request, Response, Session, Store Manager and Cookie objects MUST be used only in the Presentation layer.
 
@@ -514,7 +534,9 @@ class View extends Template
 
 6.2.4. Actions MUST NOT reference blocks declared in layout.
 
-###  6.3. Data Access (Persistence) layer
+6.2.5. Configuration for the presentation layer MUST be declared in the corresponding application area. This includes events and plugins that customize the presentation layer.
+
+### 6.3. Data Access (Persistence) layer
 
 6.3.1. Entities MAY have fields scoped differently (in product, EAV --- per store, options --- per website).
 
@@ -542,9 +564,9 @@ We are reviewing this section and will publish it soon.
 
 * application codebase
 
-* {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %} configuration
+* [XML](https://glossary.magento.com/xml) configuration
 
-* generated code and {% glossarytooltip 363662cb-73f1-4347-a15e-2d2adabeb0c2 %}static files{% endglossarytooltip %}
+* generated code and [static files](https://glossary.magento.com/static-files)
 
 * database structure
 
@@ -552,11 +574,11 @@ We are reviewing this section and will publish it soon.
 
 * configuration scopes (stores/store groups/websites)
 
-* {% glossarytooltip f3944faf-127e-4097-9918-a2e9c647d44f %}CMS{% endglossarytooltip %} entities
+* [CMS](https://glossary.magento.com/cms) entities
 
 7.3. Environment Configuration includes information about application services connection.
 
-7.4. Data includes the business {% glossarytooltip a9027f5d-efab-4662-96aa-c2999b5ab259 %}entity{% endglossarytooltip %} data.
+7.4. Data includes the business [entity](https://glossary.magento.com/entity) data.
 
 7.5. Code and Environment Configuration MUST not be stored in Data Storage.
 
@@ -578,7 +600,7 @@ We are reviewing this section and will publish it soon.
 
 8.5. Only the `@api` code of any module can be referenced by other modules.
 
-8.6. A module MUST NOT contain references to {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} resources.
+8.6. A module MUST NOT contain references to [theme](https://glossary.magento.com/theme) resources.
 
 8.7. A component MUST NOT rely neither on dependencies of dependencies nor on dependencies of the project it is included in (e.g., Magento application). All component dependencies MUST be stated explicitly.
 
@@ -586,15 +608,15 @@ We are reviewing this section and will publish it soon.
 
 9.1. All Client-Server calls must follow the [HTTP Protocol].
 
-9.2. All customer-agnostic data (Products, Categories, CMS Pages) MUST be rendered on a server and cached in a public {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %} server (Varnish).
+9.2. All customer-agnostic data (Products, Categories, CMS Pages) MUST be rendered on a server and cached in a public [cache](https://glossary.magento.com/cache) server (Varnish).
 
-9.3. All customer-specific data MUST be rendered on the browser side using a {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} (JS) application.
+9.3. All customer-specific data MUST be rendered on the browser side using a [JavaScript](https://glossary.magento.com/javascript) (JS) application.
 
-9.4. {% glossarytooltip a2aff425-07dd-4bd6-9671-29b7edefa871 %}HTML{% endglossarytooltip %} {% glossarytooltip 8f407f13-4350-449b-9dc5-217dcf01bc42 %}markup{% endglossarytooltip %} generated on server MUST NOT contain user-specific data.
+9.4. [HTML](https://glossary.magento.com/html) [markup](https://glossary.magento.com/markup) generated on server MUST NOT contain user-specific data.
 
 9.5. HTML markup generated on server MUST NOT contain session-specific data (e.g. a form element with a CSRF token).
 
-9.6. A JS application MAY receive customer-specific data using the CustomerData JS {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %}.
+9.6. A JS application MAY receive customer-specific data using the CustomerData JS [API](https://glossary.magento.com/api).
 
 9.7. All state-modifying requests from a browser SHOULD be performed with AJAX requests.
 
@@ -608,7 +630,7 @@ We are reviewing this section and will publish it soon.
 
 ## 10. JavaScript (JS) application
 
-10.1. The Magento 2 {% glossarytooltip 9bcc648c-bd08-4feb-906d-1e24c4f2f422 %}UI Component{% endglossarytooltip %} framework MUST be used to build frontend applications.
+10.1. The Magento 2 [UI Component](https://glossary.magento.com/ui-component) framework MUST be used to build frontend applications.
 
 10.2. Only private content SHOULD be rendered in browser.
 
@@ -650,7 +672,7 @@ We are reviewing this section and will publish it soon.
 
 12.1. Both REST and SOAP API's MUST be exposed.
 
-12.2. All {% glossarytooltip 377dc0a3-b8a7-4dfa-808e-2de37e4c0029 %}Web API{% endglossarytooltip %} GET endpoints MUST return lists of entities.
+12.2. All [Web API](https://glossary.magento.com/web-api) GET endpoints MUST return lists of entities.
 
 ## 13. Command line interface (CLI)
 
@@ -664,16 +686,20 @@ We are reviewing this section and will publish it soon.
 
 ## 14. Events
 
-14.1. All values (including objects) passed to an {% glossarytooltip c57aef7c-97b4-4b2b-a999-8001accef1fe %}event{% endglossarytooltip %} MUST NOT be modified in the event observer. Instead, plugins SHOULD BE used for modifying the input or output of a function.
+14.1. All values (including objects) passed to an [event](https://glossary.magento.com/event) MUST NOT be modified in the event observer. Instead, plugins SHOULD BE used for modifying the input or output of a function.
 
 {% collapsible Example: %}
-``` php?start_inline=1
-class SampleEventObserverThatModifiesInputs
+
+``` php
+use Magento\Framework\Event\ObserverInterface;
+use Magento\Framework\Event\Observer;
+
+class SampleEventObserverThatModifiesInputs implements ObserverInterface
 {
     /**
-     * @param \Magento\Framework\Event\Observer $observer
+     * @param Observer $observer
      */
-    public function execute(\Magento\Framework\Event\Observer $observer)
+    public function execute(Observer $observer)
     {
         /** @var \Magento\Framework\App\DataObject $transport */
         $transport = $observer->getData('transport');
@@ -689,11 +715,88 @@ class SampleEventObserverThatModifiesInputs
     }
 }
 ```
+
 {% endcollapsible %}
 ---
 
 {:start="14.2"}
 14.2. Events used SHOULD be observed as specifically as possible. A `global` subscription to an event SHOULD NOT be used when the area impacted is just `frontend`.
+
+## 15. Security
+
+15.1. Use prepared statements for SQL queries.
+
+15.2. Broken Authentication protection.
+
+15.2.1. Where possible, implement multi-factor authentication to prevent automated, credential stuffing, brute force, and stolen credential re-use attacks.
+
+15.2.2. Do not ship or deploy with any default credentials, particularly for admin users.
+
+15.2.3. Implement weak-password checks, such as testing new or changed passwords against a list of the [top 10000 worst passwords](https://github.com/danielmiessler/SecLists/tree/master/Passwords).
+
+15.2.4. Align password length, complexity, and rotation policies with [NIST 800-63 B's guidelines in section 5.1.1 for Memorized Secrets](https://pages.nist.gov/800-63-3/sp800-63b.html#memsecret) or other modern, evidence-based password policies.
+
+15.2.5. Ensure registration, credential recovery, and API pathways are hardened against account enumeration attacks by using the same messages for all outcomes.
+
+15.2.6. Limit or increasingly delay failed login attempts. Log all failures and alert administrators when credential stuffing, brute force, or other attacks are detected.
+
+15.2.7. Use a server-side, secure, built-in session manager that generates a new random session ID with high entropy after login. Session IDs should not be in the URL, be securely stored and invalidated after logout, idle, and absolute timeouts.
+
+15.3. Cross-Site Scripting (XSS) protection.
+
+15.3.1. Sanitize input; escape output.
+
+15.3.2. Follow [templates XSS security guidelines]({{ page.baseurl }}/frontend-dev-guide/templates/template-security.html) for escaping output.
+
+15.3.3. Incoming data should be casted to the expected type. String data should be validated/sanitized.
+
+15.3.4. Incoming string data length should be checked.
+
+15.3.5. Special characters, like null byte characters, should be dropped from Incoming string data.
+
+15.4. A module that introduces Admin Panel functionality should have ACL.
+
+15.5. Misconfiguration protection.
+
+15.5.1. Do not include/require unused libraries/frameworks.
+
+15.5.2. A segmented application architecture that provides effective, secure separation between components or tenants, with segmentation, containerization, or cloud security groups (ACLs).
+
+15.5.3. Sending security directives to clients, e.g. [Security Headers](https://www.owasp.org/index.php/OWASP_Secure_Headers_Project).
+
+15.6. Sensitive Data Exposure protection.
+
+15.6.1. Exceptions/Notices/Warnings should be caught and logged.
+
+15.6.2. Error output should not be displayed to the user. Display standard messages to inform the user.
+
+15.6.3. Logs should not be excessive, e.g. PDO exception contains MySQL credentials that should not be logged.
+
+15.7. Cross-Site Request Forgery (CSRF) protection.
+
+15.7.1. CSRF tokens mechanism should be utilized.
+
+15.7.2. All data manipulation requests should be made with POST requests.
+
+15.8. Frequently update third-party libraries used in the project/component to eliminate known vulnerabilities.
+
+15.9.1. User-submitted requests containing path and file name SHOULD NOT be trusted.
+
+15.9.2. User-submitted path and file values SHOULD be sanitized to remove dot-dot-slash from the request.
+
+15.10. Remote Code Execution (RCE) protection.
+
+15.10.1. `eval()`, `passthru()`, `system()`, `shell_exec()`, `serialize()`, `unserialize()`, `md5()`, `srand()`, `mt_srand()` SHOULD NOT be used.
+
+15.10.2. User-submitted values SHOULD NOT be passed directly to `include*()`, `require*()`, `create_function()`, `fopen()`, `preg_replace()`.
+
+15.10.3. The pattern parameter (first argument) of `preg_replace()` MUST BE escaped with `preg_quote()` if it has a user-submitted value. A user-submitted value can be passed directly as a second parameter, but MUST BE escaped before it is used later in the application.
+
+15.10.4. Variable functions SHOULD NOT be used if the variable values are submitted by the user.
+
+15.11. Security capabilities SHOULD be implemented either on the Magento Framework level or in a dedicated module(s) and utilized by the entire application in a centralize manner.
+
+15.12. Files MUST be secured by a web server configuration (e.g., `.htaccess` or `nginx.conf`), except files that are intended to be publicly accessible.
 
 <!-- LINKS: DEFINITIONS AND ADDRESSES -->
 
@@ -705,5 +808,5 @@ class SampleEventObserverThatModifiesInputs
 [HTTP Protocol]: https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol
 [HTTP Status Code]: https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html
 [W3C Content Security Policy]: https://w3c.github.io/webappsec-csp/
-[rules]: {{ site.mage2100url }}dev/tests/static/testsuite/Magento/Test/Js/_files/eslint/.eslintrc-magento
+[rules]: {{ site.mage2bloburl }}/{{ page.guide_version }}/dev/tests/static/testsuite/Magento/Test/Js/_files/eslint/.eslintrc-magento
 [CLI Command Naming Guidelines]: {{ page.baseurl }}/extension-dev-guide/cli-cmds/cli-naming-guidelines.html

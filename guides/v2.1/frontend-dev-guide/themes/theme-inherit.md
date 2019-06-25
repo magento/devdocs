@@ -8,11 +8,11 @@ functional_areas:
 
 ## What's in this topic {#theme-inherit-over}
 
-{% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}Theme{% endglossarytooltip %} inheritance enables you to easily extend themes and minimize the maintenance efforts. You can use an existing theme as a basis for customizations, or minor store design updates, like holidays decoration. Rather than copy extensive theme files and modify what you want to change, you can add overriding and extending files.
+[Theme](https://glossary.magento.com/theme) inheritance enables you to easily extend themes and minimize the maintenance efforts. You can use an existing theme as a basis for customizations, or minor store design updates, like holidays decoration. Rather than copy extensive theme files and modify what you want to change, you can add overriding and extending files.
 
 The level of theme inheritance is not limited.
 
-Theme inheritance is based on the fallback mechanism, which guarantees that if a view file is not found in the current theme, the system searches in the ancestor themes, {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} view files or {% glossarytooltip 08968dbb-2eeb-45c7-ae95-ffca228a7575 %}library{% endglossarytooltip %}.
+Theme inheritance is based on the fallback mechanism, which guarantees that if a view file is not found in the current theme, the system searches in the ancestor themes, [module](https://glossary.magento.com/module) view files or [library](https://glossary.magento.com/library).
 
 The fallback order is slightly different for static assets (CSS, JavaScript, fonts and images) and other theme files, layouts and templates. The article describes the fallback for each type of theme files, and provides an overview of how to override ancestor themes and module designs.
 
@@ -38,6 +38,14 @@ The Orange theme by OrangeCo inherits from the Magento Blank theme. The inherita
 {:.bs-callout .bs-callout-info}
 A parent and a child theme can belong to different vendors. For example, your custom theme can inherit from the Magento Blank theme.
 
+## Differences between parent and child themes
+
+* A child theme inherits view configuration, templates, layouts, and static file from its parents.
+
+* A child theme is used first, whereas the parent theme is only indirectly active; its static file, layout, templates will be used if not overridden by the child theme.
+
+* Any theme can be chosen to display, whether or not it specifies a parent theme in `theme.xml`.
+
 ## Override view.xml file
 
 If your theme does not contain a `view.xml` configuration file, it will be inherited from the parent theme. If you add the `<theme_dir>/etc/view.xml` file in your theme, it overrides the parent's file.
@@ -52,7 +60,7 @@ The particular directories, where the system searches in the course of the fallb
 
 If module context is not defined for a file:
 
-1. Current theme {% glossarytooltip 363662cb-73f1-4347-a15e-2d2adabeb0c2 %}static files{% endglossarytooltip %} for a specific locale (the locale set for the storefront): `<theme_dir>/web/i18n/<locale>`
+1. Current theme [static files](https://glossary.magento.com/static-files) for a specific locale (the locale set for the storefront): `<theme_dir>/web/i18n/<locale>`
 2. Current theme static files: `<theme_dir>/web/`
 2. Ancestor's static files, recursively, until a theme with no parent is reached:
 - `<parent_theme_dir>/web/i18n/<locale>`
@@ -82,9 +90,9 @@ In the Orange theme there is a footer background image located at `app/design/fr
 
 ![]({{ site.baseurl }}/common/images/inh-background1.jpg)
 
-OrangeCo wants it to be replaced with a holiday one, so it places a new background image with exactly the same name and {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} in `app/design/frontend/OrangeCo/orange_winter/web/images/background.jpg`
+OrangeCo wants it to be replaced with a holiday one, so it places a new background image with exactly the same name and [extension](https://glossary.magento.com/extension) in `app/design/frontend/OrangeCo/orange_winter/web/images/background.jpg`
 
-Once the Orange Winter theme is [applied]({{ page.baseurl }}/frontend-dev-guide/themes/theme-apply.html), the new holiday image overrides the one from Orange, so on {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} the holiday background is visible.
+Once the Orange Winter theme is [applied]({{ page.baseurl }}/frontend-dev-guide/themes/theme-apply.html), the new holiday image overrides the one from Orange, so on [storefront](https://glossary.magento.com/storefront) the holiday background is visible.
 
 ![]({{ site.baseurl }}/common/images/inh-background2.jpg)
 
@@ -102,7 +110,7 @@ So if you need to customize a certain template, you need to create an overriding
 For example, if you must override the `<Magento_Catalog_module_dir>/view/frontend/templates/category/widget/link/link_block.phtml` template, the `<path_to_template>` is `category/widget/link/`
 
 **Example**
-By default, according to the module template, in the mini {% glossarytooltip c7ecb18d-cefe-452d-83e2-3c4d5e355db9 %}shopping cart{% endglossarytooltip %} products are listed under the Go to {% glossarytooltip 278c3ce0-cd4c-4ffc-a098-695d94d73bde %}Checkout{% endglossarytooltip %} button:
+By default, according to the module template, in the mini [shopping cart](https://glossary.magento.com/shopping-cart) products are listed under the Go to [Checkout](https://glossary.magento.com/checkout) button:
 
 ![In the minishopping cart products are listed under the Go to Checkout button]({{ site.baseurl }}/common/images/inherit_mini1.png)
 
@@ -119,15 +127,15 @@ You can find out what exactly code changes are required to perform this and othe
 
 ## Extend layouts {#theme-inherit-layout}
 
-The layouts processing mechanism does not involve fallback. The system collects {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %} files in the following order:
+The layouts processing mechanism does not involve fallback. The system collects [layout](https://glossary.magento.com/layout) files in the following order:
 
-1. Current theme layouts: `<theme_dir>/<Vendor>_<Module>/layout/`
-2. Ancestor themes layouts, starting from the  most distant ancestor, recursively until a theme with no parent is reached: `<parent_theme_dir>/<Vendor>_<Module>/layout/`
-3. Module layouts for the `frontend` area: `<module_dir>/view/frontend/layout/`
-4. Module layouts for the `base` area: `<module_dir>/view/base/layout/`
+1. All modules layout files in sequence defined in `app/etc/config.php` respecting the [component load order]({{ page.baseurl }}/extension-dev-guide/build/module-load-order.html). For each module:
+- Layout files for the `base` area: `<module_dir>/view/base/layout/`
+- Layout files for the `frontend` area: `<module_dir>/view/frontend/layout/`
+1. Ancestor theme layouts, starting from the most distant ancestor, recursively until a theme with no parent is reached: `<parent_theme_dir>/<Vendor>_<Module>/layout/`
+2. Current theme layouts: `<theme_dir>/<Vendor>_<Module>/layout/`
 
 Unlike templates or images, layout can be not only overridden, but also extended. And the recommended way to customize layout is to extend it by creating theme extending layout files.
-
 
 To add an extending layout file:
 
@@ -156,7 +164,7 @@ To override the instructions from an ancestor theme layout file:
 
 * Create a layout file with the same name in the `<theme_dir>/<Vendor>_<Module>/layout/override/theme/<Vendor>/<ancestor_theme>` directory.
 
-To override module {% glossarytooltip bcbc9bf8-3251-4b3c-a802-07417770af3b %}layout instructions{% endglossarytooltip %} (base layout):
+To override module [layout instructions](https://glossary.magento.com/layout-instructions) (base layout):
 
 * Create a layout file with the same name in the `<theme_dir>/<Vendor>_<Module>/layout/override/base` directory.
 

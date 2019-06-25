@@ -11,7 +11,6 @@ functional_areas:
   - Setup
 ---
 
-{% include install/archives-php-issue.md %}
 
 {% include install/get-software_zip.md %}
 

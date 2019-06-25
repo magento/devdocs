@@ -1,9 +1,6 @@
 ---
 group: installation-guide
 title: Back up and roll back the file system, media, and database
-redirect_from:
-  - /guides/v1.0/install-gde/install/install-cli-backup.html
-  - /guides/v2.0/install-gde/install/install-cli-backup.html
 functional_areas:
   - Install
   - System
@@ -26,6 +23,19 @@ After backing up, you can [roll back](#instgde-cli-uninst-roll) at a later time.
 {% include install/first-steps-cli.md %}
 In addition to the command arguments discussed here, see [Common arguments]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common).
 
+## Enable backups
+
+The Magento backup feature is disabled by default. To enable, enter the following CLI command:
+
+```bash
+bin/magento config:set system/backup/functionality_enabled 1
+```
+
+{:.bs-callout .bs-callout-warning}
+**Deprecation Notice**
+Magento backup functionality is deprecated as of 2.1.16, 2.2.7, and 2.3.0. We recommend investigating additional backup technologies and binary backup tools (such as Percona XtraBackup).
+
+
 ## Set ulimit for the web server user {#instgde-cli-ulimit}
 {% include install/ulimit.md %}
 
@@ -45,7 +55,7 @@ The command performs the following tasks:
     |`--code`|Backs up the Magento file system (excluding var and pub/static directories).|var/backups/<timestamp>\_filesystem.tgz|
     |`--media`|Back up the pub/media directory.|var/backups/<timestamp>\_filesystem_media.tgz|
     |`--db`|Back up the Magento 2 database.|var/backups/<timestamp>\_db.sql|
-    {:style="table-layout:auto;"}
+    
 
 3.	Takes the store out of maintenance mode.
 

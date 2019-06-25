@@ -4,20 +4,17 @@ subgroup: 03_Build
 title: The composer.json file
 menu_title: The composer.json file
 menu_order: 1000
-redirect_from:
-  - /guides/v1.0/extension-dev-guide/composer-integration.html
-  - /guides/v2.0/extension-dev-guide/composer-integration.html
 ---
 
 ## Overview
 
-Magento 2 uses [Composer][0]{:target="_blank"}, a {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} dependency manager, to package components and product editions.
+Magento 2 uses [Composer][0]{:target="_blank"}, a [PHP](https://glossary.magento.com/php) dependency manager, to package components and product editions.
 
 Composer reads a `composer.json` file in Magento's root directory to download third-party dependencies listed in the file.
 
 The [Component Manager][1] uses the `composer.json` file in an extension's root directory to perform the following actions:
 
-*	The Component Manager can update, uninstall, enable, or disable an {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} if installed using Composer (including from [Packagist][2]{:target="_blank"}, [Magento Marketplace][6]{:target="_blank"}, or other source) *and* it has a `composer.json` file.
+*	The Component Manager can update, uninstall, enable, or disable an [extension](https://glossary.magento.com/extension) if installed using Composer (including from [Packagist][2]{:target="_blank"}, [Magento Marketplace][6]{:target="_blank"}, or other source) *and* it has a `composer.json` file.
 *	The Component Manager can still enable or disable an extension *not* installed using Composer (e.g. custom code) if it has a `composer.json` file.
 
 We recommend you include `composer.json` in your component's root directory even if you do not intend to distribute it to other merchants using Magento.
@@ -27,7 +24,7 @@ Magento does not support the [`path`][3] repository.
 
 ## Composer binary location {#composer-binary}
 
-Magento uses the composer binary in the `<Magento root>/vendor/composer` directory instead of a globally installed {% glossarytooltip d85e2d0a-221f-4d03-aa43-0cda9f50809e %}composer{% endglossarytooltip %}.
+Magento uses the composer binary in the `<Magento root>/vendor/composer` directory instead of a globally installed [composer](https://glossary.magento.com/composer).
 
 Keep this in mind while customizing, updating, or troubleshooting composer while working with Magento 2.
 
@@ -101,7 +98,7 @@ The Magento application uses this `composer.json` file for its framework package
 
 **Type:** `magento2-module`
 
-The `composer.json` file for a {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} extension declares external dependencies that it needs to function.
+The `composer.json` file for a [module](https://glossary.magento.com/module) extension declares external dependencies that it needs to function.
 
 ----
 
@@ -116,7 +113,7 @@ The `composer.json` file for a {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b14
 
 **Type:** `magento2-theme`
 
-The `composer.json` file for a {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} component contains parent theme dependencies the extension needs to inherit.
+The `composer.json` file for a [theme](https://glossary.magento.com/theme) component contains parent theme dependencies the extension needs to inherit.
 
 ----
 
@@ -196,11 +193,11 @@ Where:
 [Define your configuration files]({{ page.baseurl }}/extension-dev-guide/build/required-configuration-files.html)
 
 [0]: https://getcomposer.org/
-[1]: {{ page.baseurl }}/comp-mgr/compman-start.html
+[1]: {{ page.baseurl }}/comp-mgr/module-man/compman-start.html
 [2]: https://packagist.org/
 [3]: https://getcomposer.org/doc/05-repositories.md#path
 [4]: https://www.iso.org/iso-639-language-codes.html
-[5]: http://docs.magento.com/marketplace/user_guide/getting-started-seller.html
+[5]: https://docs.magento.com/marketplace/user_guide/sellers/company-profile.html
 [6]: https://marketplace.magento.com/
 [7]: https://marketplace.magento.com
 [8]: {{ page.baseurl }}/extension-dev-guide/package/package_module.html#package-metapackage

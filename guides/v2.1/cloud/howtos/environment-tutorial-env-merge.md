@@ -49,7 +49,7 @@ To merge an environment:
 
 ## Optionally delete the environment {#tut-env-delete}
 
-Before you delete an environment, make sure you don't need it anymore. You cannot recover a deleted environment later.
+You need to verify that you do not need an environment before you delete it. You cannot recover a deleted environment later.
 
 {:.bs-callout .bs-callout-info}
 You cannot delete the `master` environment of any project.

@@ -22,7 +22,7 @@ Before you enable the integration, you must have the following:
 
 ## Prepare your repository
 
-You need to clone your {{site.data.var.ece}} project from an existing environment and migrate the project branches to a new, empty Bitbucket repository, preserving the same branch names.  It is **critical** to retain an identical Git tree, so that you do not lose any existing environments or branches in your {{site.data.var.ece}} project.
+You need to clone your {{site.data.var.ece}} project from an existing environment and migrate the project branches to a new, empty Bitbucket repository, preserving the same branch names. It is **critical** to retain an identical Git tree, so that you do not lose any existing environments or branches in your {{site.data.var.ece}} project.
 
 1.  From the terminal, log in to your {{site.data.var.ece}} project.
 

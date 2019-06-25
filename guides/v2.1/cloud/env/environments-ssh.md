@@ -22,7 +22,7 @@ To use SSH, you need to:
 You create an SSH key pair including a public and private key:
 
 * The _public key_ is safe to provide for accessing a site, [SSH](#ssh), and [sFTP](#sftp).
-* The _private key_ should remain private on your workspace that you use for remote accessing environments. **Never share your private key.** Don't add it to a ticket, copy it to a chat, or attach it to emails.
+* The _private key_ should remain private on your workspace that you use for remote accessing environments. **Never share your private key.** Do not add it to a ticket, copy it to a chat, or attach it to emails.
 
 ## How SSH keys work {#work}
 

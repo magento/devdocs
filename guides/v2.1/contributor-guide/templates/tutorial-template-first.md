@@ -30,7 +30,7 @@ Parameter | Description
 `functional_areas:`  |  Optional. Adds facets for search results. Available facets include: sales, products, carts, customers, marketing, account, content, reports, stores, system, catalog, orders, frontend, theme, staging, search, configurations, integration, services, tools, setup, testing or test, standards, install, upgrade, B2B, cloud, and bundled extensions.
 `redirect_from`  | Optional. Add a list of other pages in DevDocs that should redirect to this page. The link should start with the `/guides` directory. For an example, see the source code for this template page.  |  
 `ee_only:` | Optional. If set to `true`, graphics/cues indicating that the article applies to {{site.data.var.ee}} are displayed on devdocs.
-{:style="table-layout:auto;"}
+
 
 The following example shows the completed frontmatter section for an index page:
 

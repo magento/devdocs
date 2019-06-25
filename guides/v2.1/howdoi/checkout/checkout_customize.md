@@ -10,17 +10,17 @@ functional_areas:
   - Checkout
 ---
 
-This topic contains the basic information about how to customize the view of an existing {% glossarytooltip 278c3ce0-cd4c-4ffc-a098-695d94d73bde %}checkout{% endglossarytooltip %} step. In the Magento application, checkout is implemented using UI components. You can customize each step by [changing the {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} implementation or template](#change-component) for a component, [adding](#add), [disabling](#disable), or [removing](#remove) a component.
+This topic contains the basic information about how to customize the view of an existing [checkout](https://glossary.magento.com/checkout) step. In the Magento application, checkout is implemented using UI components. You can customize each step by [changing the [JavaScript](https://glossary.magento.com/javascript) implementation or template](#change-component) for a component, [adding](#add), [disabling](#disable), or [removing](#remove) a component.
 
 ## Change the component's .js implementation and template {#change-component}
 
-To change the `.js` implementation and template used for components rendering, you need to declare the new files in the checkout page {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %}. To do this, take the following steps:
+To change the `.js` implementation and template used for components rendering, you need to declare the new files in the checkout page [layout](https://glossary.magento.com/layout). To do this, take the following steps:
 
-1. In your custom module directory, create the following new file: `<your_module_dir>/view/frontend/layout/checkout_index_index.xml`. (For your checkout customization to be applied correctly, your custom {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} should depend on the Magento_Checkout module.)
+1. In your custom module directory, create the following new file: `<your_module_dir>/view/frontend/layout/checkout_index_index.xml`. (For your checkout customization to be applied correctly, your custom [module](https://glossary.magento.com/module) should depend on the Magento_Checkout module.)
 2. In this file, add the following:
 
 ```xml
-<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceBlock name="checkout.root">
                 <arguments>
@@ -46,7 +46,7 @@ The Magento_Shipping module adds a component rendered as a link to the Shipping 
 
 
 ```xml
-<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceBlock name="checkout.root">
             <arguments>
@@ -81,11 +81,12 @@ The Magento_Shipping module adds a component rendered as a link to the Shipping 
         </referenceBlock>
     </body>
 </page>
+
 ```
 
 ## Add the new component to the checkout page layout {#add}
 
-Any {% glossarytooltip 9bcc648c-bd08-4feb-906d-1e24c4f2f422 %}UI component{% endglossarytooltip %} is added in the `checkout_index_index.xml` similar to the way a [checkout step component is added]({{ page.baseurl }}/howdoi/checkout/checkout_new_step.html#add-your-step-to-the-checkout-page-layout).
+Any [UI component](https://glossary.magento.com/ui-component) is added in the `checkout_index_index.xml` similar to the way a [checkout step component is added]({{ page.baseurl }}/howdoi/checkout/checkout_new_step.html#checkout).
 
 Make sure that you declare a component so that it is rendered correctly by the parent component. If a parent component is a general UI component (referenced by the `uiComponent` alias), its child components are rendered without any conditions. But if a parent component is an extension of a general UI components, then children rendering might be restricted in certain way. For example a component can render only children from a certain `displayArea`.
 
@@ -115,4 +116,4 @@ return $jsLayout;
 If you want to use this sample in your code, replace the `%path_to_target_node%` placeholder with real value.
 
 {: .bs-callout .bs-callout-info" }
-Disable vs remove a component: If you disable a component, it is loaded but not rendered. If you remove a component, it is not loaded.
+Disable vs remove a component: If you disable a component, it is loaded but not rendered. If you remove a component, it is removed and not loaded.

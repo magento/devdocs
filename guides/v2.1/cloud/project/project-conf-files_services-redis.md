@@ -1,12 +1,6 @@
 ---
 group: cloud-guide
-subgroup: 090_configure
 title: Set up Redis service
-menu_title: Set up Redis service
-menu_order: 65
-menu_node:
-level3_menu_node: level3child
-level3_subgroup: services
 functional_areas:
   - Cloud
   - Setup
@@ -14,7 +8,7 @@ functional_areas:
 
 [Redis](http://redis.io) is an optional, backend cache solution that replaces the Zend Framework [Zend_Cache_Backend_File](http://framework.zend.com/apidoc/1.0/Zend_Cache/Backend/Zend_Cache_Backend_File.html), which is used in Magento 2 by default.
 
-We support Redis versions 2.8 and 3.0. Redis 3.0 supports up to 64 different databases per instance of the service, while 2.8 allows for only a single database. See [Configure Redis]({{ page.baseurl }}/config-guide/redis/config-redis.html).
+We support Redis versions 2.8, 3.0, and 5.0. Redis 3.0 supports up to 64 different databases per instance of the service, while 2.8 allows for only a single database. See [Configure Redis]({{ page.baseurl }}/config-guide/redis/config-redis.html).
 
 {% include cloud/service-config-integration-starter.md %}
 
@@ -51,28 +45,7 @@ Merge and deploy the code to set the configurations for Redis. For information o
 
 We use the {{site.data.var.ece}} environment variable [`$MAGENTO_CLOUD_RELATIONSHIPS`]({{ page.baseurl }}/cloud/env/environment-vars_cloud.html), a JSON object, to retrieve environment-related relationships.
 
-To verify this information used for configurations and settings:
-
-1.  Use SSH to connect to the Integration environment with Redis installed and configured.
-1.  Create `pretty-print` connection information for Redis.
-
-    ```
-    php -r 'print_r(json_decode(base64_decode($_ENV["MAGENTO_CLOUD_RELATIONSHIPS"])));'
-    ```
-
-    The response includes all relationships for services and configuration data for that environment, similar to the following for Redis:
-
-    ```json
-    {
-        "redis": [
-            {
-                "host": "192.0.2.55",
-                "scheme": "redis",
-                "port": 6379
-            }
-        ]
-    }
-    ```
+{% include cloud/pretty-print-services.md %}
 
 ## Using the Redis CLI
 

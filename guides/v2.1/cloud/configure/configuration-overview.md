@@ -18,7 +18,7 @@ You can set up [multiple websites and stores]({{ page.baseurl }}/cloud/project/p
 
 The following options, tools, and features can be set up and configured in your store:
 
-* [Fastly]({{ page.baseurl }}/cloud/cdn/configure-fastly.html) for caching and CDN in Staging and Production environments
+* [Fastly CDN]({{ page.baseurl }}/cloud/cdn/configure-fastly.html) for caching, security, and image optimization services in Staging and Production environments
 * [PayPal On-Boarding tool]({{ site.baseurl }}/guides/v2.1/cloud/live/paypal-onboarding.html) provides PayPal payment gateway checkout by connecting to your PayPal merchant account
 * [cron jobs]({{ page.baseurl }}/cloud/configure/setup-cron-jobs.html) details how to create and configure Magento cron jobs in all environments
 * [Multiple websites or stores]({{ page.baseurl }}/cloud/project/project-multi-sites.html) details how to create and configure multi-sites for your store, for example multiple locales including English, French, and Spanish
@@ -39,7 +39,7 @@ After fully configuring your store, you should configure your deployment. This i
 We also provide integrations with:
 
 * [Blackfire Profiler]({{ page.baseurl }}/cloud/project/project-integrate-blackfire.html) configuration for tracking and investigating issues for bottleneck issues in processes, method calls, queries, loads, and so on
-* [New Relic APM]({{ page.baseurl }}/cloud/project/new-relic.html) configuration for application and performance analysis in 3 instances or environments
+* [New Relic]({{ page.baseurl }}/cloud/project/new-relic.html) configuration for application and performance analysis
 * [Fastly]({{ page.baseurl }}/cloud/basic-information/cloud-fastly.html) configuration for CDN and caching
 * [GitHub]({{ page.baseurl }}/cloud/integrations/github-integration.html) for managing your Git branches and code
 

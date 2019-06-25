@@ -15,7 +15,7 @@ The last page of a tutorial should acknowledge the reader has completed the tuto
 
 ## Metadata parameters
 
-The {% glossarytooltip 3f0f2ef1-ad38-41c6-bd1e-390daaa71d76 %}metadata{% endglossarytooltip %} parameters for the last page of a tutorial are the same as a middle page.
+The [metadata](https://glossary.magento.com/metadata) parameters for the last page of a tutorial are the same as a middle page.
 
 Parameter | Description
 --- | ---
@@ -27,7 +27,7 @@ Parameter | Description
 `menu_order:` | The sequence number of the topic. For the index page in a multi-step tutorial, set this 0. Otherwise set it to the step number.
 `return_to:` | Defines the tutorial's parent page. The parent page title is displayed in the left navigation above the tutorial steps. Do not specify a value for the `return_to:` parameter. Instead, specify values for these second-level parameters:<br/><br/>`title:` The title of the parent topic<br/><br/>`url:` The URL of the parent topic
 `ee_only:` | Optional. If set to `true`, graphics/cues indicating that the article applies to {{site.data.var.ee}} are displayed on devdocs.
-{:style="table-layout:auto;"}
+
 
 Example:
 

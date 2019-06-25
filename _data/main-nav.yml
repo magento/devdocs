@@ -1,24 +1,35 @@
 - label: Cloud
   children:
 
-    - label: Cloud Guide
-      url: /cloud/bk-cloud.html
+    - label: Cloud basics
+      children:
+        - label: Cloud Guide
+          url: /cloud/bk-cloud.html
 
-    - label: Cloud Architecture
-      url: /cloud/architecture/cloud-architecture.html
+        - label: Cloud Architecture
+          url: /cloud/architecture/cloud-architecture.html
 
-    - label: Local Development
-      url: /cloud/setup/first-time-setup.html
+        - label: Upgrades and Patches
+          url: /cloud/project/project-upgrade-parent.html
 
-    - label: Configure Environments
-      url: /cloud/env/environments.html
+        - label: Release Notes
+          url: /cloud/release-notes/cloud-tools.html
 
-    - label: Upgrades and Patches
-      url: /cloud/project/project-upgrade-parent.html
+    - label: Cloud development
+      children:
+        - label: Local development
+          url: /cloud/setup/first-time-setup.html
 
-    - label: Release Notes
-      url: /cloud/release-notes/cloud-tools.html
-      exclude_versions: ['2.0']
+        - label: Launch Docker
+          url: /cloud/docker/docker-config.html
+          exclude_versions: ["2.0"]
+
+        - label: Docker quick reference
+          url: /cloud/docker/docker-quick-reference.html
+          exclude_versions: ["2.0"]
+
+        - label: Configure Environments
+          url: /cloud/env/environments.html
 
 - label: Setup
   children:
@@ -26,7 +37,11 @@
     - label: Installation Guide
       url: /install-gde/bk-install-guide.html
 
-    - label: Extension Update and System Upgrade Guide
+    - label: Magento Extensions Guide
+      url: /extensions/
+      versionless: true
+
+    - label: Software Update Guide
       url: /comp-mgr/bk-compman-upgrade-guide.html
       exclude_versions: ['2.0', '2.1']
 
@@ -44,11 +59,11 @@
     - label: Migration Guide
       url: /migration/bk-migration-guide.html
 
-    - label: Magento Commerce (Cloud) Guide
-      url: /cloud/bk-cloud.html
-
     - label: Release Information
       url: /release-notes/bk-release-notes.html
+
+    - label: Command-line Tools Reference
+      url: /reference/cli/magento.html
 
 - label: Development
   children:
@@ -97,9 +112,14 @@
         - label: Admin Style Guide
           url: /design-styleguide/bk-styleguide.html
 
-        - label: Magento PWA Documentation Site
+        - label: PWA Documentation Site
           url: https://magento-research.github.io/pwa-studio/
           include_versions: ['2.3']
+
+        - label: Page Builder Developer Guide
+          url: /page-builder/docs/index.html
+          exclude_versions: ['2.0', '2.1', '2.2']
+          versionless: true
 
     - label: API
       children:
@@ -121,9 +141,11 @@
           url: /marketplace/eqp/api.html
           exclude_versions: ['2.0']
 
-        - label: Magento BI Import REST API
-          url: https://developers.rjmetrics.com/
+        - label: Business Intelligence Import API
+          url: /mbi/docs/getting-started.html
           exclude_versions: ['2.0']
+          versionless: true
+
 
 - label: Testing
   children:
@@ -131,14 +153,9 @@
     - label: Magento Testing Guide
       url: /test/testing.html
 
-    - label: Functional Acceptance Testing
-      url: /mftf/2.2/introduction.html
-      include_versions: ['2.2']
-      versionless: true
-
-    - label: Functional Acceptance Testing
-      url: /mftf/2.3/introduction.html
-      include_versions: ['2.3']
+    - label: Functional Acceptance Testing (MFTF)
+      url: /mftf/docs/introduction.html
+      exclude_versions: ['2.0', '2.1']
       versionless: true
 
     - label: Functional Testing
@@ -178,6 +195,11 @@
 
     - label: Order Management
       url: http://omsdocs.magento.com/en/
+
+    - label: Page Builder
+      url: /page-builder/docs/index.html
+      exclude_versions: ['2.0', '2.1', '2.2']
+      versionless: true
 
     - label: Payment Integrations
       url: /payments-integrations/bk-payments-integrations.html

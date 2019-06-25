@@ -5,7 +5,7 @@ functional_areas:
   - Cloud
   - Configuration
 ---
-The following _post\_deploy_ variables control actions in the post-deploy phase and can inherit and override values from the [Global stage]({{ page.baseurl }}/cloud/env/variables-intro.html#global-variables).  Insert these variables in the `post-deploy` stage of the `.magento.env.yaml` file:
+The following _post\_deploy_ variables control actions in the post-deploy phase and can inherit and override values from the [Global variables]({{ page.baseurl }}/cloud/env/variables-global.html). Insert these variables in the `post-deploy` stage of the `.magento.env.yaml` file:
 
 ```yaml
 stage:
@@ -13,10 +13,7 @@ stage:
     POST-DEPLOY_VARIABLE_NAME: value
 ```
 
-For more information about customizing the build and deploy process:
-
--  [Manage build and deploy actions]({{ page.baseurl }}/cloud/project/magento-env-yaml.html)
--  [Deployment process]({{ page.baseurl }}/cloud/reference/discover-deploy.html)
+{% include cloud/customize-build-deploy.md %}
 
 ### `WARM_UP_PAGES`
 
@@ -29,6 +26,19 @@ Customize the list of pages used to preload the cache in the `post_deploy` stage
 stage:
   post-deploy: 
     WARM_UP_PAGES:
-       - "index.php"
-       - "index.php/customer/account/create"
+      - "index.php"
+      - "index.php/customer/account/create"
+```
+
+You must configure the post-deploy hook. See [hooks section of the `.magento.app.yaml` file]({{ page.baseurl }}/cloud/project/project-conf-files_magento-app.html#hooks).
+
+Also, you can configure the cache to preload pages for [multiple domains]({{ page.baseurl }}/cloud/project/project-multi-sites.html).
+
+```yaml
+stage:
+  post-deploy:
+    WARM_UP_PAGES:
+      - 'test'
+      - 'http://example1.com/test'
+      - 'http://example2.com/test'
 ```

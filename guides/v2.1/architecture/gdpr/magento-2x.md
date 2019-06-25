@@ -59,7 +59,7 @@ Magento 2 stores these customer attributes:
 
 #### `customer_entity` and reference tables
 
-The following columns in the `customer_entity`table contain customer information:
+The following columns in the `customer_entity` table contain customer information:
 
 Column | Data type
 --- | ---
@@ -84,7 +84,7 @@ Table | Column | Data type
 
 #### `customer_grid_flat` table
 
-The following columns in the `customer_grid_flat`table contain customer information:
+The following columns in the `customer_grid_flat` table contain customer information:
 
 Column | Data type
 --- | ---

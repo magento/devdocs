@@ -13,7 +13,7 @@ Now that you're using the `default.vcl` generated for you by Magento, you can pe
 
 Use `curl` or another utility to view HTTP response headers when you visit any Magento page in a web browser.
 
-First, make sure you are using Magento's [developer mode]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html#config-mode-change); otherwise, you won't see the headers.
+First, make sure you are using Magento's [developer mode]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html#change-to-developer-mode); otherwise, you won't see the headers.
 
 For example,
 
@@ -30,7 +30,7 @@ This value is also acceptable: `X-Magento-Cache-Debug: HIT`.
 
 ### Check page load times {#config-varnish-final-response}
 
-If Varnish is working, any Magento page with cacheable blocks should load in less than 150ms. Examples of such pages are the front door and {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} {% glossarytooltip 50e49338-1e6c-4473-8527-9e401d67ea2b %}category{% endglossarytooltip %} pages.
+If Varnish is working, any Magento page with cacheable blocks should load in less than 150ms. Examples of such pages are the front door and [storefront](https://glossary.magento.com/storefront) [category](https://glossary.magento.com/category) pages.
 
 Use a browser inspector to measure page load times.
 
@@ -41,7 +41,7 @@ For example, to use the Chrome inspector:
 3.	From the pop-up menu, click **Inspect Element**
 4.	In the inspector pane, click the **Network** tab.
 5.	Refresh the page.
-6.	Scroll to the top of the inspector pane so you can see the {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} of the page you are viewing.
+6.	Scroll to the top of the inspector pane so you can see the [URL](https://glossary.magento.com/url) of the page you are viewing.
 
 	The following figure shows an example of loading the `magento2` index page.<br><br>
 	![Click the page you're viewing]({{ site.baseurl }}/common/images/config_varnish_inspector.png)
@@ -54,12 +54,12 @@ For example, to use the Chrome inspector:
 
 ### Verify the Magento cache {#config-varnish-final-verify-cache}
 
-Make sure the `<your Magento install dir>/var/page_cache` directory is empty:
+Make sure the `<magento_root>/var/page_cache` directory is empty:
 
-1.	Log in to your Magento server, or switch to, the {% glossarytooltip 5e7de323-626b-4d1b-a7e5-c8d13a92c5d3 %}Magento file system owner{% endglossarytooltip %}.
+1.	Log in to your Magento server, or switch to, the [Magento file system owner](https://glossary.magento.com/magento-file-system-owner).
 2.	Enter the following command:
 
-		rm -rf <your Magento install dir>/var/page_cache/*
+		rm -rf <magento_root>/var/page_cache/*
 
 3.	Access one or more cacheable Magento pages.
 4.	Check the `var/page_cache/` directory.

@@ -149,7 +149,7 @@ For more information, see [Deployment workflow](#deploy).
 
 If you need some example data when developing your store, you can install our sample data. This data simulates an active Magento store, including customers, products, and other data. This sample data works best with a "blank site" {{site.data.var.ece}} template installation when creating your project.
 
-We recommend installing sample data in your local and Integration environments. If you use this data in the Staging or Production environment, make sure to clear out the information and products before going live.
+We recommend installing sample data in your local and Integration environments. If you use this data in the Staging or Production environment, you need to remove the sample information and products before going live.
 
 For instructions, see [Install optional sample data]({{ page.baseurl }}/cloud/howtos/sample-data.html).
 
@@ -198,7 +198,7 @@ To learn more, see [Deployment process]({{ page.baseurl }}/cloud/reference/disco
 
 ### Push to Staging and test {#staging}
 
-You should always push all of your code in iterations to your Staging environment for full testing. The first time you use this environment, you must configure a few services including [Fastly]({{ page.baseurl }}/cloud/basic-information/cloud-fastly.html), [Blackfire Profiler]({{ page.baseurl }}/cloud/project/project-integrate-blackfire.html), and [New Relic APM]({{ page.baseurl }}/cloud/project/new-relic.html). We also recommend configuring payment gateways, shipping, notifications, and other vital services with sandbox or testing credentials.
+You should always push all of your code in iterations to your Staging environment for full testing. The first time you use this environment, you must configure a few services including [Fastly]({{ page.baseurl }}/cloud/basic-information/cloud-fastly.html), [Blackfire Profiler]({{ page.baseurl }}/cloud/project/project-integrate-blackfire.html), and [New Relic]({{ page.baseurl }}/cloud/project/new-relic.html). We also recommend configuring payment gateways, shipping, notifications, and other vital services with sandbox or testing credentials.
 
 Staging is a pre-production environment, providing all services and settings as close to the Production environment as possible. Thoroughly test every service, verify your performance testing tools, perform UAT testing as an administrator and customers, until you feel your store is ready to be deployed to the Production environment.
 

@@ -5,7 +5,7 @@ title: WYSIWYG component
 menu_title: WYSIWYG component
 ---
 
-The WYSIWYG component is an {% glossarytooltip edb42858-1ff8-41f9-80a6-edf0d86d7e10 %}adapter{% endglossarytooltip %} for [TinyMCE v4](https://www.tinymce.com/){:target="_blank"} that integrates an editor instance with the [form component]({{ page.baseurl }}/ui_comp_guide/components/ui-form.html). It expects a complete {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} declaration in the `content` option, which should contain both {% glossarytooltip 8f407f13-4350-449b-9dc5-217dcf01bc42 %}markup{% endglossarytooltip %} and the script responsible for creating the editor's instance.
+The WYSIWYG component is an [adapter](https://glossary.magento.com/adapter) for [TinyMCE v4](https://www.tinymce.com/){:target="_blank"} that integrates an editor instance with the [form component]({{ page.baseurl }}/ui_comp_guide/components/ui-form.html). It expects a complete [widget](https://glossary.magento.com/widget) declaration in the `content` option, which should contain both [markup](https://glossary.magento.com/markup) and the script responsible for creating the editor's instance.
 
 Magento supports all selector, plugin, and toolbar/menu configuration options supported by the TinyMCE v4 `tinymce.init()` method. However, Magento doesn't validate TinyMCE configuration options or flag invalid values before adding the editor to a page.
 
@@ -50,11 +50,9 @@ Wysiwyg-specific options:
     <td><code>ui/form/element/wysiwyg</code></td>
   </tr>
   <tr>
-    <td><code>links</code>
-<li>
-<code>value</code>
-</li>
-</td>
+    <td><div><code>links</code></div>
+        <div><code>value</code></div>
+    </td>
     <td><a href="{{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_linking_concept.html">Links</a> the component's <code>value</code> property with the provider, using the path that is declared in the <code>dataScope</code> property.</td>
     <td>Object<br />String</td>
     <td><code>${ $.provider }:${ $.dataScope }</code></td>
@@ -251,6 +249,9 @@ Your form must then use a data provider that inherits from `ModifierPoolDataProv
  */
 namespace Test\Module\Model;
 
+use Magento\Ui\DataProvider\Modifier\PoolInterface;
+use Test\Module\Model\ResourceModel\WysiwygContent\CollectionFactory;
+
 /**
  * Class DataProvider
  */
@@ -260,10 +261,10 @@ class DataProvider extends \Magento\Ui\DataProvider\ModifierPoolDataProvider
         $name,
         $primaryFieldName,
         $requestFieldName,
-        Test\Module\Model\ResourceModel\WysiwygContent\CollectionFactory $collectionFactory,
+        CollectionFactory $collectionFactory,
         array $meta = [],
         array $data = [],
-        \Magento\Ui\DataProvider\Modifier\PoolInterface $pool
+        PoolInterface $pool = null
     ) {
         parent::__construct($name, $primaryFieldName, $requestFieldName, $meta, $data, $pool);
         $this->collection = $collectionFactory->create();

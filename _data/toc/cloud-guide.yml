@@ -52,7 +52,7 @@ pages:
         - label: SSH and sFTP
           url: /cloud/env/environments-ssh.html
 
-        - label: New Relic APM
+        - label: New Relic
           url: /cloud/project/new-relic.html
 
         - label: Blackfire.io
@@ -65,13 +65,6 @@ pages:
     - label: Local development setup
       url: /cloud/setup/first-time-setup.html
       children:
-        - label: Docker development
-          url: /cloud/docker/docker-development.html
-          exclude_versions: ["2.0"]
-          children:
-            - label: Launch Docker
-              url: /cloud/docker/docker-config.html
-
         - label: Prepare for manual setup
           url: /cloud/before/before-workspace.html
           children:
@@ -93,11 +86,27 @@ pages:
             - label: First time deployment
               url: /cloud/setup/first-time-deploy.html
 
+        - label: Optional - Configure Xdebug
+          url: /cloud/howtos/debug.html
+
         - label: Optional - Install sample data
           url: /cloud/howtos/sample-data.html
 
-        - label: Optional - Configure Xdebug
-          url: /cloud/howtos/debug.html
+    - label: Docker development
+      url: /cloud/docker/docker-development.html
+      exclude_versions: ["2.0"]
+      children:
+        - label: Launch Docker
+          url: /cloud/docker/docker-config.html
+
+        - label: Configure Xdebug for Docker
+          url: /cloud/docker/docker-development-debug.html
+
+        - label: Connect to the database
+          url: /cloud/docker/docker-database.html
+
+        - label: Docker quick reference
+          url: /cloud/docker/docker-quick-reference.html
 
     - label: Integrations
       url: /cloud/integrations/cloud-integrations.html
@@ -156,6 +165,10 @@ pages:
       children:
         - label: Set up Fastly
           url: /cloud/cdn/configure-fastly.html
+          exclude_versions: ["2.0"]
+          children:
+            - label: Customize error pages
+              url: /cloud/cdn/cloud-fastly-custom-response.html
 
         - label: Managed Cloud WAF
           url: /cloud/cdn/fastly-waf-service.html
@@ -165,21 +178,21 @@ pages:
           url: /cloud/cdn/fastly-image-optimization.html
           exclude_versions: ["2.0"]
 
-        - label: Custom Fastly VCL snippets
+        - label: Custom VCL snippets
           url: /cloud/cdn/cloud-vcl-custom-snippets.html
           exclude_versions: ["2.0"]
           children:
-            - label: Custom whitelist VCL
+            - label: Set up redirects to WordPress
+              url: /cloud/cdn/fastly-vcl-wordpress.html
+
+            - label: Block referral spam
+              url: /cloud/cdn/fastly-vcl-badreferer.html
+
+            - label: Secure access to the Magento Admin UI
               url: /cloud/cdn/fastly-vcl-whitelist.html
 
             - label: Custom blacklist VCL
               url: /cloud/cdn/fastly-vcl-blacklist.html
-
-            - label: Custom redirect to WordPress VCL
-              url: /cloud/cdn/fastly-vcl-wordpress.html
-
-            - label: Custom block bad referer VCL
-              url: /cloud/cdn/fastly-vcl-badreferer.html
 
         - label: Fastly troubleshooting
           url: /cloud/cdn/trouble-fastly.html
@@ -200,14 +213,15 @@ pages:
             - label: Logging handlers
               url: /cloud/env/log-handlers.html
 
-            - label: Smart wizards
-              url: /cloud/env/smart-wizards.html
-
         - label: Environment variables
           url: /cloud/env/variables-intro.html
           children:
             - label: ADMIN variables
               url: /cloud/env/environment-vars_magento.html
+
+            - label: Global variables
+              url: /cloud/env/variables-global.html
+              exclude_versions: ["2.0"]
 
             - label: Build variables
               url: /cloud/env/variables-build.html
@@ -289,6 +303,21 @@ pages:
 
         - label: Snapshots and backup management
           url: /cloud/project/project-webint-snap.html
+
+    - label: Optimize deployment
+      url: /cloud/deploy/optimize-cloud-deployment.html
+      children:
+        - label: Cloud deployment process
+          url: /cloud/deploy/cloud-deployment-process.html
+
+        - label: Zero downtime deployment
+          url: /cloud/deploy/reduce-downtime.html
+
+        - label: Static content deployment
+          url: /cloud/deploy/static-content-deployment.html
+
+        - label: Smart wizards
+          url: /cloud/deploy/smart-wizards.html
 
     - label: Deploy your store
       url: /cloud/live/stage-prod-live.html

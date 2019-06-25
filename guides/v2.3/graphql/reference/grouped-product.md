@@ -7,23 +7,24 @@ The `GroupedProduct` endpoint defines which grouped product-specific attributes 
 
 ## GroupedProduct
 
-Field | Type | Description
+Attribute | Type | Description
 --- | --- | ---
-`items` | `GroupedProductItem` | An array containing grouped product items
+`items` | [[GroupedProductItem]](#GroupedProductItem) | An array containing grouped product items
 
-## GroupedProductItem
+## GroupedProductItem {#GroupedProductItem}
 
-Field | Type | Description
+Attribute | Type | Description
 --- | --- | ---
-`qty` | Float | The quantity of this grouped product item
 `position` | Int | The relative position of this item compared to the other group items
-`product` | `ProductInterface` | The ProductInterface object, which contains details about this product option
+`product` | <a href="{{ page.baseurl }}/graphql/reference/products.html#ProductInterface">ProductInterface</a> | The ProductInterface contains attributes that are common to all types of products. Note that descriptions may not be available for custom and EAV attributes
+ | The ProductInterface object, which contains details about this product option
+`qty` | Float | The quantity of this grouped product item
 
 ## Sample Query
 
 The following query returns information about downloadable product `24-WG085_Group`, which is defined in the sample data.
 
-{% highlight json %}
+``` text
 {
   products(filter:
     {sku: {eq: "24-WG085_Group"}}
@@ -49,4 +50,4 @@ The following query returns information about downloadable product `24-WG085_Gro
     }
   }
 }
-{% endhighlight %}
+```

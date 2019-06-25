@@ -2,19 +2,16 @@
 group: javascript-developer-guide
 subgroup: 1_Javascript
 title: Calling and initializing JavaScript
-redirect_from:
- - /guides/v2.0/frontend-dev-guide/javascript/js_init.html
- - /guides/v1.0/frontend-dev-guide/javascript/js_init.html
 ---
 
 ## Overview {#js_init_overview}
 
 This topic describes different ways to call and initialize JavaScript in Magento 2:
 
-- Insert a [JavaScript component]({{ site.gdeurl }}javascript-dev-guide/bk-javascript-dev-guide.html#js_terms) in `.phtml` page templates.
+- Insert a [JavaScript component]({{ page.baseurl }}/javascript-dev-guide/bk-javascript-dev-guide.html#js_terms) in `.phtml` page templates.
 - Call Javascript components that require initialization in Javascript (`.js`) files.
 
-We strongly recommend that you use the described approaches and do not add inline {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %}.
+We strongly recommend that you use the described approaches and do not add inline [JavaScript](https://glossary.magento.com/javascript).
 
 ## Insert a JS component in a PHTML template {#init_phtml}
 
@@ -22,7 +19,7 @@ Depending on your task, you can use declarative or imperative notation to insert
 
 ### Declarative notation
 
-Using the declarative notation to insert a JS component prepares all the configuration on the {% glossarytooltip 74d6d228-34bd-4475-a6f8-0c0f4d6d0d61 %}backend{% endglossarytooltip %} and outputs it to page source using standard tools. Use declarative notation if your JavaScript component requires initialization.
+Using the declarative notation to insert a JS component prepares all the configuration on the [backend](https://glossary.magento.com/backend) and outputs it to page source using standard tools. Use declarative notation if your JavaScript component requires initialization.
 
 In Magento 2, you have two options for specifying declarative notation:
  - using the `data-mage-init` attribute
@@ -70,9 +67,9 @@ To call a JS component on an HTML element without direct access to the element o
 <script type="text/x-magento-init">
 {
     // components initialized on the element defined by selector
-	"<element_selector>": {
-		"<js_component1>": ...,
-		"<js_component2>": ...
+    "<element_selector>": {
+        "<js_component1>": ...,
+        "<js_component2>": ...
     },
     // components initialized without binding to an element
     "*": {
@@ -129,21 +126,21 @@ require([
 
 ## Calling JS components requiring initialization in JS files {#js_widget_init}
 
-To call a widget in JS code, use a notation similar to the following ([accordion]({{ site.gdeurl }}frontend-dev-guide/javascript/widget_accordion.html) widget is intiialized on the `[data-role=example]` element as illustration):
+To call a widget in JS code, use a notation similar to the following ([accordion]({{ page.baseurl }}/javascript-dev-guide/widgets/widget_accordion.html) widget is intiialized on the `[data-role=example]` element as illustration):
 
 ```javascript
 $('[data-role=example]').accordion();
 ```
 
-To initialize a {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} with options, use notation similar to the following:
+To initialize a [widget](https://glossary.magento.com/widget) with options, use notation similar to the following:
 
 ```javascript
 $(function () { // to ensure that code evaluates on page load
     $('[data-role=example]')  // we expect that page contains markup <tag data-role="example">..</tag>
         .accordion({ // now we can use "accordion" as jQuery plugin
             header:  '[data-role=header]',
-	    content: '[data-role=content]',
-	    trigger: '[data-role=trigger]',
+            content: '[data-role=content]',
+            trigger: '[data-role=trigger]',
             ajaxUrlElement: 'a'
         });
 });

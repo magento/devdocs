@@ -15,8 +15,10 @@ functional_areas:
 1.  Log in to the Magento server as, or switch to, the [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html).
 2.  Change to the following directory:
 
-        cd <your Magento install dir>/bin
-
+    ```bash
+    cd <magento_root>/bin
+    ```
+    
     Examples:
 
       - Ubuntu: `cd /var/www/magento2/bin`
@@ -25,11 +27,11 @@ functional_areas:
 You can run the commands in any of the following ways:
 -   `php magento <command>`
 -   `./magento <command>`
--   `magento <command>` (after [adding](http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables) `<your Magento install dir>/bin` to your system `PATH`)
+-   `magento <command>` (after [adding](http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables) `<magento_root>/bin` to your system `PATH`)
 
 ## Command summary {#config-cli-summary}
 
-The following table summarizes the available commands. Commands are shown in summary form only; for more information about a command, click the link in the Command column.
+The following table summarizes some of the available commands. Commands are shown in summary form only; for more information about a command, click the link in the Command column.
 
 {:.bs-callout .bs-callout-info}
 Before you run any of these commands, you must either [install the Magento application]({{ page.baseurl }}/install-gde/install/cli/install-cli-install.html) or [enable some modules]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-enable.html).
@@ -48,6 +50,8 @@ Before you run any of these commands, you must either [install the Magento appli
 |[`magento dev:xml:convert`]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-layout-xml.html)|Update your layout XML files to match the new Extensible Stylesheet Language Transformations (XSLT) stylesheet|
 |[`magento setup:perf:generate-fixtures`]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-perf-data.html)|Generate data to use for performance testing.|
 |[`magento sampledata:install`]({{ page.baseurl }}/install-gde/install/sample-data.html)|Installs optional Magento sample data after you install the Magento application.<br><br>For more details about Magento sample data, see [Optional Magento sample data]({{ page.baseurl }}/install-gde/install/sample-data.html).|
+|[`bin/magento admin:user:{create/unlock}`]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-admin.html)| Creates/edits/unlocks admin users. |
+|[`bin/magento dev:template-hints:{enable/disable`}]({{ page.baseurl }}/frontend-dev-guide/themes/debug-theme.html)|Enables/disables developer template hints.| 
 
 ## Help commands {#config-cli-help}
 {% include install/cli_help-commands.md %}

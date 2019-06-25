@@ -5,9 +5,6 @@ title: The PHP mcrypt extension is not installed properly
 menu_title: The PHP mcrypt extension is not installed properly
 menu_node:
 menu_order: 355
-redirect_from:
-  - /guides/v1.0/install-gde/trouble/tshoot_mcrypt.html
-  - /guides/v2.0/install-gde/trouble/tshoot_mcrypt.html
 functional_areas:
   - Install
   - System
@@ -19,14 +16,14 @@ functional_areas:
 Errors can include the following:
 
 ```terminal
-exception 'Exception' with message 'PHP Warning: {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} Startup: Unable to load dynamic {% glossarytooltip 08968dbb-2eeb-45c7-ae95-ffca228a7575 %}library{% endglossarytooltip %} '/usr/lib/php5/20121212/mcrypt.so' - /usr/lib/php5/20121212/mcrypt.so: cannot open shared object file: No such file or directory
+exception 'Exception' with message 'PHP Warning: [PHP](https://glossary.magento.com/php) Startup: Unable to load dynamic [library](https://glossary.magento.com/library) '/usr/lib/php5/20121212/mcrypt.so' - /usr/lib/php5/20121212/mcrypt.so: cannot open shared object file: No such file or directory
 ```
 
 ```terminal
 Installing data fixtures:
 /usr/bin/php -f '/Users/username/www/magento/dev/shell/run_data_fixtures.php' -- --bootstrap='MAGE_DIRS[base][path]=/Users/username/www/magento' 2>&1
-[ERROR] {% glossarytooltip 53da11f1-d0b8-4a7e-b078-1e099462b409 %}exception{% endglossarytooltip %} 'Exception' with message '
-Fatal error: Uncaught exception 'Exception' with message 'Module 'Magento_Core' depends on 'mcrypt' PHP {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} that is not loaded.'
+[ERROR] [exception](https://glossary.magento.com/exception) 'Exception' with message '
+Fatal error: Uncaught exception 'Exception' with message 'Module 'Magento_Core' depends on 'mcrypt' PHP [extension](https://glossary.magento.com/extension) that is not loaded.'
 ```
 ```terminal
 ======================================================================

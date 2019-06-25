@@ -42,7 +42,7 @@ PHPUnit has many additional command line options. Please refer to the [PHPUnit d
 
 One possible reason for this to happen might be if you are trying to execute PHPUnit inside a Virtual Box VM with shared folders that don't allow modifying permissions.
 
-Whatever the reason, if you encounter the `permission denied: vendor/bin/phpunit` error, you can prefix the command with the {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} interpreter, so your system knows what binary to use to run the tests.  
+Whatever the reason, if you encounter the `permission denied: vendor/bin/phpunit` error, you can prefix the command with the [PHP](https://glossary.magento.com/php) interpreter, so your system knows what binary to use to run the tests.  
 
 ```bash
 php -f vendor/bin/phpunit -- -c dev/tests/unit/phpunit.xml.dist
@@ -76,15 +76,15 @@ Copy the PHPUnit configuration file `dev/tests/unit/phpunit.xml.dist` to `dev/te
 
 Find the following section:
 
-{%highlight xml%}
+```xml
 <php>
     <ini name="date.timezone" value="America/Los_Angeles"/>
     <ini name="xdebug.max_nesting_level" value="200"/>
 </php>
-{%endhighlight%}
+```
 
 Add the following line in the `<php>` block to disable the PHP memory limit during test execution.
 
-{%highlight xml%}
+```xml
 <ini name="memory_limit" value="-1"/>
-{%endhighlight%}
+```

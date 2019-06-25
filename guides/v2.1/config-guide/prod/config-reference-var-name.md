@@ -107,7 +107,7 @@ The following table summarizes how to find website or store view value in the Ad
 | Description  | Path in Magento Admin | Variable name |
 |--------------|--------------|----------------------|
 | Create, edit, delete store views | **Stores** > **All Stores** | `CONFIG__STORES__<STORE_VIEW_CODE>__<SYSTEM__VARIABLE__NAME>`  |
-| Create, edit, delete websites | **Stores** > **All Stores**  | `CONFIG__WEBSITE__<WEBSITE_CODE>__<SYSTEM__VARIABLE__NAME>` |
+| Create, edit, delete websites | **Stores** > **All Stores**  | `CONFIG__WEBSITES__<WEBSITE_CODE>__<SYSTEM__VARIABLE__NAME>` |
 
 For example, to find a website or store view scope value in the Admin:
 
@@ -125,7 +125,7 @@ For example, to find a website or store view scope value in the Admin:
 
 To get these values from the database:
 
-1.	If you haven't done so already, log in to your development system as the {% glossarytooltip 5e7de323-626b-4d1b-a7e5-c8d13a92c5d3 %}Magento file system owner{% endglossarytooltip %}.
+1.	If you haven't done so already, log in to your development system as the [Magento file system owner](https://glossary.magento.com/magento-file-system-owner).
 2.	Enter the following command:
 
 		mysql -u <magento database username> -p
@@ -172,7 +172,7 @@ This section discusses how to set system variables.
 
 The following table shows a few sample variables.
 
-| Description  | Path in Magento Admin (omitting **Stores** > **Configuration**) | Variable name |
+| Description  | Path in Magento Admin (omitting **Stores** > **Settings** > **Configuration**) | Variable name |
 |--------------|--------------|----------------------|
 | Elasticsearch server hostname  | Catalog > **Catalog**, **Elasticsearch Server Hostname**   |  `<SCOPE>__CATALOG__SEARCH__ELASTICSEARCH_SERVER_HOSTNAME` |
 | Elasticsearch server port |  Catalog > **Catalog**, **Elasticsearch Server Port** | `<SCOPE>__CATALOG__SEARCH__ELASTICSEARCH_SERVER_PORT`  |
@@ -203,10 +203,10 @@ To find the variable name for the shipping country origin:
 
 	Find the scope in the [database](#deploy-system-vars-scopes) as discussed in Step 1: Find the website or store view scope value. (You can also find the value in the Admin as shown in the [table in Step 2: Set global, website, or store view variables](#cloud-system-vars-sys).
 
-	For example, the scope might be `CONFIG__WEBSITE__DEFAULT`.
+	For example, the scope might be `CONFIG__WEBSITES__DEFAULT`.
 2.	The rest of the variable name is `SHIPPING__ORIGIN__COUNTRY_ID`.
 
-**Result**: The variable name is `CONFIG__WEBSITE__DEFAULT__SHIPPING__ORIGIN__COUNTRY_ID`
+**Result**: The variable name is `CONFIG__WEBSITES__DEFAULT__SHIPPING__ORIGIN__COUNTRY_ID`
 
 ## How to use environment variables
 

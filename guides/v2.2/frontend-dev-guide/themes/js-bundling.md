@@ -16,9 +16,9 @@ JavaScript bundling does not work unless Magento is in [production mode][product
 1. From the Magento root directory, switch to production mode:
 
     ```bash
-    php bin/magento deploy:mode:set production
+    bin/magento deploy:mode:set production
     ```
- 
+
 2. Enable JavaScript bundling:
 
     ```bash
@@ -30,7 +30,7 @@ JavaScript bundling does not work unless Magento is in [production mode][product
     ```bash
     php -f bin/magento config:set dev/js/minify_files 1
     ```
- 
+
 4. Enable cache busting on static file URLs. This ensures users get the latest version of the assets anytime they update:
 
     ```bash
@@ -41,7 +41,7 @@ JavaScript bundling does not work unless Magento is in [production mode][product
 
 ## How bundling works in Magento
 
-When you enable bundling, Magento combines hundreds of JavaScript files into just a few JavaScript bundles and downloads those bundles for each page. Because the browser downloads the bundles sychronously, page rendering *is* blocked until all bundles finish downloading. But the time saved from reducing server requests from hundreds to just a few, usually offsets the cost of downloading the bundles synchronously.
+When you enable bundling, Magento combines hundreds of JavaScript files into just a few JavaScript bundles and downloads those bundles for each page. Because the browser downloads the bundles synchronously, page rendering *is* blocked until all bundles finish downloading. But the time saved from reducing server requests from hundreds to just a few, usually offsets the cost of downloading the bundles synchronously.
 
 ### Excluding files
 
@@ -54,7 +54,7 @@ The following code snippet from [Magento's Luma theme][luma-view-xml] shows the 
 
 {% collapsible Show example %}
 
-{% highlight xml %}
+```xml
 <vars module="Js_Bundle">
     <var name="bundle_size">1MB</var>
 </vars>
@@ -108,7 +108,7 @@ The following code snippet from [Magento's Luma theme][luma-view-xml] shows the 
     <item type="directory">Lib::mage/adminhtml</item>
     <item type="directory">Lib::mage/backend</item>
 </exclude>
-{% endhighlight %}
+```
 
 {% endcollapsible %}
 
@@ -135,4 +135,4 @@ Follow these steps to help you identify which JavaScript files to bundle for you
 
 [production-mode]:{{ page.baseurl }}/config-guide/bootstrap/magento-modes.html#production-mode
 [Advanced-JavaScript-Bundling]:https://devdocs.magento.com/guides/v2.3/performance-best-practices/advanced-js-bundling.html
-[luma-view-xml]:https://github.com/magento/magento2/blob/2.2.3/app/design/frontend/Magento/luma/etc/view.xml#L270
+[luma-view-xml]:{{ site.mage2bloburl }}/{{ page.guide_version }}/app/design/frontend/Magento/luma/etc/view.xml#L270

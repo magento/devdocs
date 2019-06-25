@@ -1,15 +1,13 @@
 ---
 group: testing
 title: JavaScript unit testing with Jasmine
-redirect_from:
-  - /guides/v2.0/extension-dev-guide/test/test_js-unit.html
-  - /guides/v2.1/extension-dev-guide/test/test_js-unit.html
+redirect_from: /guides/v2.1/extension-dev-guide/test/test_js-unit.html
 functional_areas:
   - Testing
   - test
 ---
 
-Magento uses a custom [Grunt] task named `spec` to run Jasmine tests. The task collects the tests from `<magento_root_dir>dev/tests/js/jasmine/tests` and can be run for a {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %}.
+Magento uses a custom [Grunt] task named `spec` to run Jasmine tests. The task collects the tests from `<magento_root_dir>dev/tests/js/jasmine/tests` and can be run for a [theme](https://glossary.magento.com/theme).
 
 ## Prepare environment
 
@@ -31,7 +29,7 @@ npm install
 {:#prepare-step6}
 
 ```bash
-php bin/magento setup:static-content:deploy -f
+bin/magento setup:static-content:deploy -f
 ```
 
 Note that normally you don't have permissions to `<magento_root_dir>/app/code/`, in fact the generated static view file is being tested.
@@ -89,7 +87,7 @@ in its static representations generated in [Step 6] previously:
 
 For convenience, we can reflect the directory structure of a file to test.
 
-A path to JS {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} that we want to cover with tests: `app/code/Magento/Ui/view/base/web/js/grid/columns/actions.js`
+A path to JS [module](https://glossary.magento.com/module) that we want to cover with tests: `app/code/Magento/Ui/view/base/web/js/grid/columns/actions.js`
 
 A path to a test of the module: `app/code/Magento/Ui/base/js/grid/columns/actions.test.js`
 
@@ -266,11 +264,11 @@ npm install
 <!-- LINK DEFINITIONS -->
 
 <!-- External -->
-[`<magento_root_dir>/app/code/Magento/Ui/view/base/web/js/grid/columns/actions.js`]: {{ site.mage2100url }}app/code/Magento/Ui/view/base/web/js/grid/columns/actions.js
+[`<magento_root_dir>/app/code/Magento/Ui/view/base/web/js/grid/columns/actions.js`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/grid/columns/actions.js
 {:target="_blank"}
-[`app/code/Magento/Ui/base/js/grid/columns/actions.test.js`]: {{ site.mage2100url }}dev/tests/js/jasmine/tests/app/code/Magento/Ui/base/js/grid/columns/actions.test.js
+[`app/code/Magento/Ui/base/js/grid/columns/actions.test.js`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/dev/tests/js/jasmine/tests/app/code/Magento/Ui/base/js/grid/columns/actions.test.js
 {:target="_blank"}
-[Deploy static view files]: {{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html#config-cli-subcommands-xlate-dict
+[Deploy static view files]: {{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html
 {:target="_blank"}
 [fontconfig library]: https://www.freedesktop.org/wiki/Software/fontconfig/
 {:target="_blank"}

@@ -35,6 +35,18 @@ pages:
               url: /redoc/2.3/guest-rest-api.html
               versionless: true
 
+            - label: Asynchronous Admin REST endpoints
+              url: /redoc/2.3/async-admin-rest-api.html
+              versionless: true
+
+            - label: Asynchronous Customer REST endpoints
+              url: /redoc/2.3/async-customer-rest-api.html
+              versionless: true
+
+            - label: Asynchronous Guest REST endpoints
+              url: /redoc/2.3/async-guest-rest-api.html
+              versionless: true
+
         - label: List of REST endpoints by module
           url: /rest/list.html
 
@@ -56,19 +68,19 @@ pages:
           url: /rest/anonymous-api-security.html
 
         - label: Asynchronous web endpoints
-          include_versions: ["2.3"]
+          include_versions: ["2.2", "2.3"]
           url: /rest/asynchronous-web-endpoints.html
 
         - label: Bulk endpoints
-          include_versions: ["2.3"]
+          include_versions: ["2.2", "2.3"]
           url: /rest/bulk-endpoints.html
 
         - label: Bulk operation status endpoints
-          include_versions: ["2.3"]
+          include_versions: ["2.2", "2.3"]
           url: /rest/operation-status-endpoints.html
 
         - label: Search for the status of a bulk operation
-          include_versions: ["2.3"]
+          include_versions: ["2.2", "2.3"]
           url: /rest/operation-status-search.html
 
         - label: Parameters in URLs
@@ -93,13 +105,18 @@ pages:
 
       - label: Order processing with Inventory Management
         class: tutorial
-        url: /rest/tutorials/msi-order-processing/index.html
+        url: /rest/tutorials/inventory/index.html
         include_versions: ["2.3"]
 
       - label: Create configurable products
         class: tutorial
         url: /rest/tutorials/configurable-product/config-product-intro.html
         include_versions: ["2.2", "2.3"]
+
+      - label: Create a configurable product using bulk APIs
+        class: tutorial
+        url: /rest/tutorials/bulk-configurable-product/config-product-intro.html
+        include_versions: ["2.3"]
 
     - label: Modules
       children:

@@ -28,7 +28,7 @@ In particular,
 
 *   Interceptor classes are automatically generated to facilitate Magento's plugin system. An interceptor class extends a type and is returned by the Object Manager to allow multiple plugin classes to inject logic into different methods. Interceptors work behind the scenes and are _not_ directly referenced in application code.
 
-You can also use the [code compiler] to generate code at any time.  In Magento 2, "compiling" your application means performing code generation for any eligible class encountered by the configuration/code scanner, as well as performing a number of different {% glossarytooltip 2be50595-c5c7-4b9d-911c-3bf2cd3f7beb %}dependency injection{% endglossarytooltip %} optimizations.
+You can also use the [code compiler] to generate code at any time.  In Magento 2, "compiling" your application means performing code generation for any eligible class encountered by the configuration/code scanner, as well as performing a number of different [dependency injection](https://glossary.magento.com/dependency-injection) optimizations.
 
 ### Why should you regenerate code? {#codegen-over-why}
 
@@ -50,10 +50,10 @@ Code generation is required in Magento 2. Generating code assures you of the fol
 
 When code changes as discussed in the preceding section, the Object Manager compiles it.
 
-The code compiler creates `generated/metadata/global.php`, which is a PHP serialized map of all constructor definitions mixed with object linking configuration defined in di.xml. `di.xml` is the dependency injection configuration. There is a global `app/etc/di.xml` and there can one defined for every {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}.
+The code compiler creates `generated/metadata/global.php`, which is a PHP serialized map of all constructor definitions mixed with object linking configuration defined in di.xml. `di.xml` is the dependency injection configuration. There is a global `app/etc/di.xml` and there can one defined for every [module](https://glossary.magento.com/module).
 
 <!-- Link Definitions -->
-[Magento/Customer/Model/Resource/AddressRepository]: {{ site.mage2000url }}/app/code/Magento/Customer/Model/ResourceModel/AddressRepository.php
+[Magento/Customer/Model/Resource/AddressRepository]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Customer/Model/ResourceModel/AddressRepository.php
 {:target="_blank"}
 [production mode]: {{ page.baseurl }}/config-guide/bootstrap/magento-modes.html#production-mode
 [Instantiating objects with factories]: {{ page.baseurl }}/extension-dev-guide/factories.html

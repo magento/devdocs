@@ -10,7 +10,7 @@ functional_areas:
   - Setup
 ---
 
-We recommend using Xdebug for your PHP debugging. The following sections detail how to configure Xdebug and PhpStorm to work locally with settings in your environments. You can use any IDE of your choice. Please see the vendor documentation for those applications for further configuration information.
+We recommend using Xdebug for your PHP debugging. The following sections detail how to configure Xdebug and PhpStorm to work locally with settings in your environments. You can use any IDE of your choice. See the vendor documentation for those applications for further configuration information.
 
 To set up Xdebug, you need to [configure](#configure) a file in your Git repo, configure your IDE PhpStorm, and set up port forwarding. You will configure settings in the `magento.app.yaml` file. After editing, you can push the Git changes across all Starter environments and Pro Integration environments to enable Xdebug. To push these settings to Pro plan Staging and Production environments, you must enter a ticket.
 
@@ -144,11 +144,11 @@ To troubleshoot the connection:
 
 #### Port forwarding on Windows {#portwindows}
 
-To set up port forwarding (SSH tunneling) on Windows, you will configure your Windows terminal application. For this example, we walk through creating an SSH tunnel using [Putty](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html). You can use other applications such as Cygwin. For more information on other applications, please see the vendor documentation provided with those applications.
+To set up port forwarding (SSH tunneling) on Windows, you must configure your Windows terminal application. For this example, we walk through creating an SSH tunnel using [Putty](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html). You can use other applications such as Cygwin. For more information on other applications, see the vendor documentation provided with those applications.
 
 To set up an SSH tunnel on Windows using Putty:
 
-1.	If you haven't already done so, download [Putty](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html).
+1.	If you have not already done so, download [Putty](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html).
 2.	Start Putty.
 3.	In the Category pane, click **Session**.
 4.	Enter the following information:
@@ -204,7 +204,7 @@ For example,
 
 To use Xdebug specifically on Pro plan Staging and Production environment, you create a separate SSH tunnel and web session only you have access to. This usage differs from typical access, only providing access to you and not to all users.
 
-You will need the following:
+You need the following:
 
 * SSH commands for accessing the environments. You can get this information, through the [Project Web Interface]({{ page.baseurl }}/cloud/project/projects.html) and your project spreadsheet.
 * The `xdebug_key` value we set when configuring the Staging and Pro environments
@@ -231,7 +231,8 @@ To start debugging, use the following commands with the environment URL:
 
         ?XDEBUG_SESSION_STOP=KEY
 
-Please note, `XDEBUG_SESSION_START`passed by `POST` requests are not supported at this time.
+{: .bs-callout .bs-callout-info}
+The `XDEBUG_SESSION_START` passed by `POST` requests are not supported at this time.
 
 ## Debug CLI commands {#debugcli}
 
@@ -288,7 +289,7 @@ The method you choose is up to you. You have the following options:
 
 *	Check out code from Git and run `composer install`
 
-	This method works unless `composer.json` references packages in private repositories to which you don't have access. This method results in getting the entire Magento codebase.
+	This method works unless `composer.json` references packages in private repositories to which you do not have access. This method results in getting the entire Magento codebase.
 
 *	Copy the `vendor`, `app`, `pub`, `lib`, and `setup` directories
 

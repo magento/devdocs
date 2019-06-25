@@ -106,7 +106,7 @@ For these environments, you are pushing code from repository to repository: Inte
 
 ## Migrate static files {#cloud-live-migrate-static}
 
-You will migrate {% glossarytooltip 363662cb-73f1-4347-a15e-2d2adabeb0c2 %}static files{% endglossarytooltip %} from your `pub/media` directory to Staging or Production.
+You will migrate [static files](https://glossary.magento.com/static-files) from your `pub/media` directory to Staging or Production.
 
 We recommend using the Linux remote synchronization and file transfer command [`rsync`](https://en.wikipedia.org/wiki/Rsync). rsync uses an algorithm that minimizes the amount of data by moving only the portions of files that have changed; in addition, it supports compression.
 
@@ -132,7 +132,7 @@ To migrate static files from your local machine:
 						
 To migrate static files from remote-to-remote environments directly (fast approach):
 
-**Note** In order to transfer media from remote-to-remote environments directly you need to enable ssh agent forwarding, please refer to this [GitHub guidance](https://developer.github.com/v3/guides/using-ssh-agent-forwarding/)
+**Note** In order to transfer media from remote-to-remote environments directly you need to enable ssh agent forwarding, see [GitHub guidance](https://developer.github.com/v3/guides/using-ssh-agent-forwarding/)
 
 1.	SSH into the environment you want to transfer from (you can find ssh link in your Cloud UI -> select the branch -> Access Site -> SSH access):
 
@@ -146,7 +146,7 @@ To migrate static files from remote-to-remote environments directly (fast approa
 
 ## Migrate the database {#cloud-live-migrate-db}
 
-**Prerequisite:** A database dump (see Step 3) should include database triggers. For dumping them, make sure you have the [TRIGGER privilege](https://dev.mysql.com/doc/refman/5.7/en/privileges-provided.html#priv_trigger).
+**Prerequisite:** A database dump (see Step 3) should include database triggers. For dumping them, confirm you have the [TRIGGER privilege](https://dev.mysql.com/doc/refman/5.7/en/privileges-provided.html#priv_trigger).
 
 **Important:** The Integration environment database is strictly for development testing and may include data you may not want to migrate into Staging and Production.
 
@@ -154,7 +154,7 @@ For continuous integration deployments, we **do not recommend** migrating data f
 
 We **do recommend** migrating data from Production into Staging to fully test your site and store(s) in a near-production environment with all services and settings.
 
-**Note** In order to transfer media from remote-to-remote environments directly you need to enable ssh agent forwarding, please refer to this [GitHub guidance](https://developer.github.com/v3/guides/using-ssh-agent-forwarding/)
+**Note** In order to transfer media from remote-to-remote environments directly you need to enable ssh agent forwarding, see [GitHub guidance](https://developer.github.com/v3/guides/using-ssh-agent-forwarding/)
 
 To migrate a database:
 

@@ -18,7 +18,7 @@ However, some objects have a vast number of attributes, or they could have a set
 
 Any model that uses an EAV resource has its attributes spread out over a number of MySQL tables.
 
-The `Customer`,`Catalog` and `Order` resource models use EAV attributes.
+The `Customer`, `Catalog` and `Order` resource models use EAV attributes.
 
 ## Related topics {#related}
 

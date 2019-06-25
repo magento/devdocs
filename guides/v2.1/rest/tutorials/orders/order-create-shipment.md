@@ -27,7 +27,7 @@ If the call is successful on a full shipment, Magento changes the status of an o
 
 **Endpoint**
 
-`POST http://<host>/rest/default/V1/order/3/ship`
+`POST <host>/rest/<store_code>/V1/order/3/ship`
 
 where `3` is the order id.
 
@@ -39,11 +39,11 @@ where `3` is the order id.
 
 **Payload**
 
-The `tracks` array optionally allows you to include one or more tracking numbers for the {% glossarytooltip c8f00e9d-7f70-4561-9773-60da604ba5c9 %}shipment{% endglossarytooltip %}.
+The `tracks` array optionally allows you to include one or more tracking numbers for the [shipment](https://glossary.magento.com/shipment).
 
 {% collapsible Show code sample %}
-{% highlight json %}
 
+```json
 {
   "items": [
     {
@@ -67,8 +67,8 @@ The `tracks` array optionally allows you to include one or more tracking numbers
     }
   ]
 }
+```
 
-{% endhighlight %}
 {% endcollapsible %}
 
 **Response**
@@ -77,4 +77,4 @@ A shipment ID, such as `3`.
 
 ## Verify this step
 
-Log in to {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %}. Click **Sales** > **Shipments**. The shipment is displayed in the grid. Then click **Sales** > **Orders**. The status is Complete.
+Log in to [Admin](https://glossary.magento.com/admin). Click **Sales** > **Shipments**. The shipment is displayed in the grid. Then click **Sales** > **Orders**. The status is Complete.

@@ -76,7 +76,7 @@ Check the returned response headers and values:
 To verify Fastly is enabled in Staging and Production, check the configuration in the Magento Admin for each environment:
 
 1. Log into the Admin console for Staging and Production using the URL with /admin (or the changed Admin URL).
-2. Navigate to **Stores** > **Configuration** > **Advanced** > **System**. Scroll and click **Full Page Cache**.
+2. Navigate to **Stores** > **Settings** > **Configuration** > **Advanced** > **System**. Scroll and click **Full Page Cache**.
 3. Ensure Fastly CDN is selected.
 4. Click on **Fastly Configuration**. Ensure the Fastly Service ID and Fastly API token are entered (your Fastly credentials). Verify you have the correct credentials entered for the Staging and Production environment. Click **Test credentials** to help.
 
@@ -203,9 +203,9 @@ If you encounter issues, save your reproduction steps, error messages, strange s
 
 Before launching, we highly recommend performing extensive traffic and performance testing on your Staging and Production environments.  You should consider performance testing for your frontend and backend processes.
 
-Before you begin testing, please enter a ticket with support advising the environments you are testing, what tools you are using, and the time frame. Update the ticket with results and information to track performance. When you complete testing, add your updated results and note in the ticket testing is complete with a date and time stamp.
+Before you begin testing, enter a ticket with support advising the environments you are testing, what tools you are using, and the time frame. Update the ticket with results and information to track performance. When you complete testing, add your updated results and note in the ticket testing is complete with a date and time stamp.
 
-We recommend that you review the [Magento Performance Toolkit](https://github.com/magento/magento2/tree/2.0/setup/performance-toolkit) options as part of your pre-launch readiness process.
+We recommend that you review the [Magento Performance Toolkit]({{ site.mage2bloburl }}/{{ page.guide_version }}/setup/performance-toolkit) options as part of your pre-launch readiness process.
 
 For best results, we recommend the following tools:
 

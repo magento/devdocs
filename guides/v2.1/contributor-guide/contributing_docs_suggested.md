@@ -3,13 +3,13 @@ group: contributor-guide
 title: Suggested topics for contribution
 redirect_from:
    - /guides/v2.1/contributor-guide/contributing_docs_suggested.html
-   - /guides/v2.1/howdoi/bk-how-do-i.html
+   - /guides/v2.1/howdoi/bk-how-do-i.html	
 
 ---
 
 Our goal is to provide the Magento community with comprehensive and quality technical documentation. We believe that to accomplish that goal we need developer experts from the community to contribute to the documentation.
 
-If you are interested in working on one of these projects, open a [pull request on this page](https://github.com/magento/devdocs/tree/develop/guides/v2.0/contributor-guide/contributing_docs_suggested.md){:target="_blank"}. You can also email us at <DL-Magento-Doc-Feedback@magento.com>, chat us at [Community Engineering Slack channel](https://magentocommeng.slack.com/messages/CAN932A3H){:target="_blank"} , or post a comment in the GitHub issue linked to the project title.
+If you are interested in working on one of these projects, open a [pull request on this page]({{ site.githuburl21 }}contributor-guide/contributing_docs_suggested.md){:target="_blank"}. You can also email us at <DL-Magento-Doc-Feedback@magento.com>, chat us at [Community Engineering Slack channel](https://magentocommeng.slack.com/messages/CAN932A3H){:target="_blank"} , or post a comment in the GitHub issue linked to the project title.
 
 The following GitHub issues are a great place to start:
 
@@ -44,7 +44,7 @@ If you take the issue and provide a PR to resolve it, make sure to add the link 
           <p><strong>Acceptance criteria:</strong></p>
             <ul>
               <li>Sample code showing the use of the menu widget.</li>
-              <li>Sample code showing the use of other widgets that are not documented, including <code><a href="{{ site.baseurl }}/guides/v2.0/javascript-dev-guide/widgets/widget_dialog.html">dropdowndialog</a></code> and <code><a href="{{ site.baseurl }}/guides/v2.0/javascript-dev-guide/widgets/widget_list.html">list</a></code>.</li>
+              <li>Sample code showing the use of other widgets that are not documented, including <code><a href="{{ page.baseurl }}/javascript-dev-guide/widgets/widget_dialog.html">dropdowndialog</a></code> and <code><a href="{{ page.baseurl }}/javascript-dev-guide/widgets/widget_list.html">list</a></code>.</li>
             </ul>
         </td>
         <td />

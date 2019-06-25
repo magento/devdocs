@@ -24,8 +24,8 @@ The fewer dependencies a class has and the more obvious they are, the easier it 
 
 We strongly recommend you do *not*:
 
-*   Use `new` to instantiate new objects, because that removes the flexibility the Magento dependency configuration offers.  
-*   Use the `ObjectManager` directly in production code.  
+* Use `new` to instantiate new objects, because that removes the flexibility the Magento dependency configuration offers.  
+* Use the `ObjectManager` directly in production code.  
 
 There always is a better alternative, usually a [generated]({{ page.baseurl }}/extension-dev-guide/code-generation.html) `Factory` class, or a [`Locator`](https://thephp.cc/news/2015/09/dependencies-in-disguise){:target="_blank"} class of sorts.  
 
@@ -36,28 +36,31 @@ This rule applies only to production code. When writing [integration tests]({{ p
 
 Whenever an external class property, class constant, or a class method is used in a file, this file depends on the class containing the method or constant. Even if the external class is not used as a instantiated object, the current class is still hard-wired to depend on it.  
 
-{% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} cannot execute the code unless it can load the external class, too. That is why such external classes are referred to as *dependencies*. Try to keep the number dependencies of to a minimum.  
+[PHP](https://glossary.magento.com/php) cannot execute the code unless it can load the external class, too. That is why such external classes are referred to as *dependencies*. Try to keep the number dependencies of to a minimum.  
 
-Collaborator instances should be passed into the class using [constructor injection]({{ page.baseurl }}/extension-dev-guide/depend-inj.html#dep-inj-preview-cons).
+Collaborator instances should be passed into the class using [constructor injection]({{ page.baseurl }}/extension-dev-guide/depend-inj.html#constructor-injection).
 
 ### The environment (file system, time, global variables)
 
 Whenever your code requires access to some part of the environment, try to use a collaborator class that can easily be replaced by a test double (also referred to as a *mock*) instead.
 
-For example, if you...
+For example, if you need...
 
-* ...need file system access?  
+* file system access?  
 
-  Use [`\Magento\Framework\Filesystem\Io\IoInterface`]({{ site.mage2000url }}lib/internal/Magento/Framework/Filesystem/Io/IoInterface.php){:target="_blank"} instead of `fopen()`, `dir()` or other native methods.
-* ...need the current time?  
+  Use [`\Magento\Framework\Filesystem\Io\IoInterface`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Filesystem/Io/IoInterface.php){:target="_blank"} instead of `fopen()`, `dir()` or other native methods.
+
+* the current time?  
 
    Inject a [`\DateTimeInterface`](http://php.net/manual/en/refs.calendar.php){:target="_blank"} instance (for example `\DateTimeImmutable`) and use that.
-* ...need the remote IP?  
 
-  Use [`\Magento\Framework\HTTP\PhpEnvironment\RemoteAddress`]({{ site.mage2000url }}lib/internal/Magento/Framework/HTTP/PhpEnvironment/RemoteAddress.php){:target="_blank"}.
-* ...need access to `$_SERVER`?  
+* the remote IP?  
 
-  Consider using [`\Magento\Framework\HTTP\PhpEnvironment\Request::getServerValue()`]({{ site.mage2000url }}lib/internal/Magento/Framework/HTTP/PhpEnvironment/Request.php){:target="_blank"}.
+  Use [`\Magento\Framework\HTTP\PhpEnvironment\RemoteAddress`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/HTTP/PhpEnvironment/RemoteAddress.php){:target="_blank"}.
+
+* access to `$_SERVER`?  
+
+  Consider using [`\Magento\Framework\HTTP\PhpEnvironment\Request::getServerValue()`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/HTTP/PhpEnvironment/Request.php){:target="_blank"}.
 
 Anything that can be easily replaced by a test double is preferable to using low level functions.
 
@@ -75,28 +78,28 @@ To illustrate, assume there is a theoretical `RequestInterface` with two methods
 
 For example:
 
-{%highlight php startinline=true %}
+```php
 interface RequestInterface
 {
     public function getPathInfo();
     public function getParam($name);
 }
-{%endhighlight%}
+```
 
-Let's also assume there is a concrete implementation `HttpRequest` that also has a public method `getParams()` in addition to the two interface methods.
+Assume there is a concrete implementation `HttpRequest` that also has a public method `getParams()` in addition to the two interface methods.
 
-{%highlight php startinline=true %}
+```php
 class HttpRequest implements RequestInterface
 {
     public function getPathInfo() {...}
     public function getParam($name) {...}
     public function getParams() {...}
 }
-{%endhighlight%}
+```
 
 Any code that depends on `RequestInterface` should avoid using the `getParams()` method, because it is not part of the interface.  
 
-{%highlight php startinline=true %}
+```php
 class MyClass
 {
     /**
@@ -116,11 +119,11 @@ class MyClass
         }
     }
 }
-{%endhighlight%}
+```
 
 This completely defeats the purpose of the interface. A better solution might be the following:
 
-{%highlight php startinline=true %}
+```php
 public function doSomething()
 {
     foreach (['foo', 'bar'] as $paramName) {
@@ -128,18 +131,18 @@ public function doSomething()
         // ... some more code
     }
 }
-{%endhighlight%}
+```
 
-The second example method `doSomething()` does not call the `getParams()` method. 
+The second example method `doSomething()` does not call the `getParams()` method.
 
 If `getParams()` had been called, the class `MyClass` would have instantly depended on the `HttpRequest` implementation and the benefit of having an interface would have been completely lost.  
 
 If cannot avoid using `getParams()`, you can do any of the following:
 
-*   Add the `getParams()` method to `RequestInterface` 
-*   Make `MyClass` dependent on `HttpRequest` directly instead of using `RequestInterface` as a constructor argument
+* Add the `getParams()` method to `RequestInterface`
+* Make `MyClass` dependent on `HttpRequest` directly instead of using `RequestInterface` as a constructor argument
 
-The benefit *interfaces* offer is that interfaces keep code decoupled from implementation details. This means that future changes won't cause your code to fail unless the interface is changed too.  
+The benefit *interfaces* offer is that interfaces keep code decoupled from implementation details. This means that future changes will not cause your code to fail unless the interface is changed too.  
 
 Also, interfaces can very easily be replaced by test doubles (also referred to as *mocks*). Mocking concrete classes can be much more complex.
 
@@ -151,6 +154,61 @@ Shorter methods do less, which in turn means they are easier to test. The same i
 
 As a rule of thumb, try to keep methods to five or fewer lines of code.
 
+### Each function has one single purpose
+
+Functions should do only one thing and they should do it very well.
+
+Once you respect the [single responsibility principle][]{:target="_blank"}, you will know exactly what you are testing and your functions will be smaller and clearer.
+Have a look at the following examples:
+
+```php
+// Wrong
+
+public function execute($customer)
+{
+    $this->notifyCustomer($customer);
+}
+
+/**
+ * Save customer and notify by email
+ */
+public function notifyCustomer($customer)
+{
+    $this->customerRepository->save($customer);
+    $this->email->sendEmail($customer->getEmail());
+}
+```
+
+In the above example, the `notifyCustomer` method does more than the method's name suggests. Such methods will be harder to maintain and can have some side effects you would not assume by its name.
+
+```php
+// Correct
+
+public function execute($customer)
+{
+    $this->saveCustomer($customer);
+    $this->notifyCustomer($customer->getEmail());
+}
+
+/**
+ * Save Customer
+ */
+public function saveCustomer($customer)
+{
+    $this->customerRepository->save($customer);
+}
+
+/**
+ * Notify customer by email
+ */
+public function notifyCustomer($email)
+{
+    $this->email->sendEmail($email);
+}
+```
+
+In the correct example, the `notifyCustomer` method is slightly refactored, and the only thing it does is to notify the customer by email. The rest of the logic was moved into a separate method, which has a clear name.
+
 ### Testing private and protected methods
 
 When you see the need to write tests for `private` scope methods, it usually is a sign that the class under test is doing too much.  
@@ -161,37 +219,37 @@ Consider extracting the private functionality into a separate class and using th
 
 Many good practices for software development in general and object oriented programming in particular have been formulated as principles over the last decades. Applying these rules of thumb helps to keep code in good shape and also leads to more easily testable code.  
 
-The following list principles are by no means complete, but they might serve as a starting point when you start to write testable code.
+The following list principles are by no means complete, but they can serve as a starting point when you start to write testable code.
 
-### Tell, don't ask
+### Tell, do not ask
 
 Try to use a few getters as possible. Instead, use methods that tell the objects directly what to do. Asking for object values is a sign of misplaced responsibilities. [Kent Beck](https://en.wikipedia.org/wiki/Kent_Beck){:target="_blank"} called that "feature envy".
 
 Consider moving the code in that needs the value into a class that has the data available as the following example shows:
 
-{%highlight php startinline=true %}
+```php
 function extractMatchingDocuments(Document $searchDoc, array $documents)
 {
     return array_filter($documents, function (Document $doc) use ($searchDoc){
         return $doc->getFieldValue() === $searchDoc->getFieldValue();
     });
 }
-{%endhighlight%}
+```
 
 The following example moves the comparison into a `matches()` method on the `Document` class instead.
 
-{%highlight php startinline=true %}
+```php
 function extractMatchingDocuments(Document $searchDoc, array $documents)
 {
     return array_filter($documents, function (Document $doc) use ($searchDoc){
         return $searchDoc->matches($doc);
     });
 }
-{%endhighlight%}
+```
 
 ### The Law of Demeter
 
-The [Law of Demeter](https://en.wikipedia.org/wiki/Law_of_Demeter){:target="_blank"} principle is sometimes stated as "Talk to friends only" or "Don't talk to strangers." It states that code can call methods only on objects that it received in one of the following ways:
+The [Law of Demeter](https://en.wikipedia.org/wiki/Law_of_Demeter){:target="_blank"} principle is sometimes stated as "Talk to friends only" or "Do not talk to strangers." It states that code can call methods only on objects that it received in one of the following ways:
 
 * Objects received as constructor arguments
 * Objects received as arguments to the current method
@@ -201,29 +259,32 @@ The principle explicitly states that no method can be called on objects that are
 
 The following example violates the Law of Demeter by calling the method `getByName()` on the return value of `getHeaders()`.
 
-{%highlight php startinline=true %}
+```php
 function isJsonResponse(Response $response)
 {
     $headers = $response->getHeaders();
     return $headers->getByName('Content-Type') === 'application/json';
 }
-{%endhighlight%}
+```
 
 The solution is to add the method `isJsonResponse()` to the response object instead.
 
 Method chaining (for example, `$foo->getSomething()->setThat($x)->doBar()`) is often a sign of this problem. When testing this type of code, you must often create test doubles that must be set up to return other test doubles and so on ("Mocks returning mocks...").
 
-### "I don't care"
+### "I do not care"
 
-An interesting approach to writing more testable code is to try to delegate as much as possible to other classes. Every time any currently not available resource is needed, just think "I don't care where that comes from" and add a collaborator class that provides it.  
+An interesting approach to writing more testable code is to try to delegate as much as possible to other classes. Every time any currently not available resource is needed, just think "I do not care where that comes from" and add a collaborator class that provides it.  
 
 At first this might seem like it causes the number of classes to explode, but in fact each one of the classes is very short and simple and usually has very limited responsibilities.  
 
 Almost as a side effect, those classes are very easy to test.
 
-#### For more information
+## For more information
 
 * [Rules of simple software design](http://martinfowler.com/bliki/BeckDesignRules.html){:target="_blank"} by Kent Beck
 * [Clean Code](https://books.google.com/books/about/Clean_Code.html?id=dwSfGQAACAAJ){:target="_blank"} by Robert C. Martin
 * [Refactoring](http://martinfowler.com/books/refactoring.html){:target="_blank"} by Martin Fowler
 * [Growing Object Oriented Software Guided by Tests](http://www.growing-object-oriented-software.com){:target="_blank"} by Steve Freeman and Nat Pryce
+
+<!-- Link definitions -->
+[single-responsibility-principle]: https://en.wikipedia.org/wiki/Single_responsibility_principle

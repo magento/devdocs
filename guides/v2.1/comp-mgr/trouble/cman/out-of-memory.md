@@ -9,7 +9,7 @@ functional_areas:
   - Upgrade
 ---
 
-Sometimes when you attempt to install or update, you can encounter an error due to your system running out of physical memory. We recommend you create a swap file to avoid this error.
+You may encounter an error, caused by your system running out of physical memory, when you attempt to install or update an extension or the latest Magento 2.3.x version. We recommend you create a swap file to avoid this error.
 
 ### Symptom
 
@@ -23,7 +23,7 @@ The error `proc_open(): fork failed - Cannot allocate memory` can also display o
 
 ### Description
 
-We recommend you allocate 2GB of memory to {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} to make sure your installation or upgrade succeeds. The error might mean you have exhausted the physical memory in your machine and your system has no swap file available. At minimum, we recommend you have at least 2GB of RAM and an enabled swap file.
+We recommend you allocate 2GB of memory to [PHP](https://glossary.magento.com/php) to make sure your installation or upgrade succeeds. The error might mean you have exhausted the physical memory in your machine and your system has no swap file available. At minimum, we recommend you have at least 2GB of RAM and an enabled swap file.
 
 ### Solution
 

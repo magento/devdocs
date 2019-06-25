@@ -33,11 +33,11 @@ Performance-tuning enhancements focus on catalog indexing and include:   
 
 <!-- MAGETWO-87430 -->* Category product indexer logic has been optimized, and re-indexing time has decreased up to 98%, from 40 minutes to one minute for 100,000 categories.  Previously, when your store contained many categories (100,0000), Magento could take up to 40 minutes to re-index product catalogs. 
 
-<!-- MAGETWO-91164 -->* The `catalog:image:resize` command execution time has been reduced by up to 90% in the release. However, this improvement necessitates these additional steps after upgrading your Magento instance to 2.2.6:
+<!-- MAGETWO-91164 -->* The `catalog:images:resize` command execution time has been reduced by up to 90% in the release. However, this improvement necessitates these additional steps after upgrading your Magento instance to 2.2.6:
 
     * Remove   `pub/media/catalog/product/cache` . (Removing this folder frees up space.)
 
-    * Run `bin/magento catalog:image:resize`  to generate a new image cache.  (This step is necessary because we’ve changed the path to cached images and must remove the previously cached images.)
+    * Run `bin/magento catalog:images:resize`  to generate a new image cache.  (This step is necessary because we’ve changed the path to cached images and must remove the previously cached images.)
 
 <!-- MAGETWO-47320 -->* The catalog rule re-indexing operation has been optimized, and the average re-indexing time (which depends on rule conditions) has improved by more than  80%.  Previously, a full catalog rule re-index operation on a medium B2C store took more than 20 minutes. 
 
@@ -181,7 +181,7 @@ Magento has removed the  Magento Social  Facebook integration, and no longer sup
 
 
 
-Looking for more information on these new features as well as many others? Check out [Magento Developer Documentation](http://devdocs.magento.com/guides/v2.2/) and the [Magento Commerce User Guide](http://docs.magento.com/m2/ee/user_guide/getting-started.html).
+Looking for more information on these new features as well as many others? Check out [Magento Developer Documentation]({{ site.baseurl }}/guides/v2.2/) and the [Magento Commerce User Guide](http://docs.magento.com/m2/ee/user_guide/getting-started.html).
 
 
 
@@ -460,7 +460,7 @@ Our community contributors have made many helpful, minor corrections to spelling
 
 #### Spelling corrections
 
-<!-- ENGCOM-2290 -->* Corrected misspelling of `formatedPrice` throughot the code base. *Fix submitted by [Arnoud Beekman](https://github.com/arnoudhgz) in pull request [16726](https://github.com/magento/magento2/pull/16726)*. 
+<!-- ENGCOM-2290 -->* Corrected misspelling of `formatedPrice` throughout the code base. *Fix submitted by [Arnoud Beekman](https://github.com/arnoudhgz) in pull request [16726](https://github.com/magento/magento2/pull/16726)*. 
 
 <!-- ENGCOM-2280 -->* Corrected return message from `ProductRuleTest.php`. *Fix submitted by [Namrata](https://github.com/sanganinamrata) in pull request [16721](https://github.com/magento/magento2/pull/16721)*. 
 
@@ -1136,7 +1136,7 @@ Our community contributors have made many helpful, minor corrections to spelling
 	* `app/code/Magento/Sales/view/adminhtml/templates/order/totals.phtml`. *Fix submitted by [Pratik Oza](https://github.com/mage2pratik) in pull request [16891](https://github.com/magento/magento2/pull/16891)*. 
 
 
-<!-- ENGCOM-2404 -->* Improved product gallery block helper code (`app/code//Catalog/Block/Adminhtml/Product/Helper/Form/Gallery.php`). *Fix submitted by [Valerij Ivashchenko](https://github.com/likemusic) in pull request [16889](https://github.com/magento/magento2/pull/16889)*. 
+<!-- ENGCOM-2404 -->* Improved product gallery block helper code (`app/code/Catalog/Block/Adminhtml/Product/Helper/Form/Gallery.php`). *Fix submitted by [Valerij Ivashchenko](https://github.com/likemusic) in pull request [16889](https://github.com/magento/magento2/pull/16889)*. 
 
 <!-- ENGCOM-2388 -->* Removed duplicated string from `app/code/Magento/ProductVideo/i18n/en_US.csv`. *Fix submitted by [Valerij Ivashchenko](https://github.com/likemusic) in pull request [16882](https://github.com/magento/magento2/pull/16882)*. 
 
@@ -1447,7 +1447,7 @@ Our community contributors have made many helpful, minor corrections to spelling
 
 ### Store
 
-<!--  ENGCOM-1706 -->* Magento now adds the correct store code to product URLs in stores with more than one store view when  **Stores** > **Configuration** > **General** > **Web** > **Add Store Code to Urls** is set to **yes**. *Fix submitted by [Elias Kotlyar](https://github.com/EliasKotlyar) in pull request [15566](https://github.com/magento/magento2/pull/15566)*. [GitHub-15565](https://github.com/magento/magento2/issues/15565)
+<!--  ENGCOM-1706 -->* Magento now adds the correct store code to product URLs in stores with more than one store view when  **Stores** > **Settings** > **Configuration** > **General** > **Web** > **Add Store Code to Urls** is set to **yes**. *Fix submitted by [Elias Kotlyar](https://github.com/EliasKotlyar) in pull request [15566](https://github.com/magento/magento2/pull/15566)*. [GitHub-15565](https://github.com/magento/magento2/issues/15565)
 
 
 <!--  ENGCOM-1249 -->* Magento now displays store views as expected when you select **Stores** > **Terms and Conditions**. *Fix submitted by [afirlejczyk](https://github.com/afirlejczyk) in pull request [14546](https://github.com/magento/magento2/pull/14546)*. [GitHub-13944](https://github.com/magento/magento2/issues/13944)
@@ -1913,7 +1913,7 @@ Our technology stack is built on PHP and MySQL. For details, see [Technology sta
 
 ### Installation and upgrade instructions
 
-See [How to get the Magento software](http://devdocs.magento.com/guides/v2.2/install-gde/bk-install-guide.html) for complete installation and upgrade information.
+See [How to get the Magento software]({{ site.baseurl }}/guides/v2.2/install-gde/bk-install-guide.html) for complete installation and upgrade information.
 
 ## Migration toolkits
 The <a href="{{ page.baseurl }}/migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="{{ page.baseurl }}/migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.

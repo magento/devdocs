@@ -21,6 +21,7 @@ Enter in terminal:
 ```bash
 cd <magento2_root_dir>/dev/tests/functional
 ```
+
 ```bash
 vendor/bin/phpunit
 ```
@@ -33,11 +34,12 @@ Enter in terminal:
 ```bash
 cd <magento2_root_dir>/dev/tests/functional
 ```
+
 ```bash
 vendor/bin/phpunit --filter <name of test>
 ```
 
-Name of test is the name of {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} file with test.
+Name of test is the name of [PHP](https://glossary.magento.com/php) file with test.
 
 Example:
 

@@ -1,11 +1,23 @@
-{% if page.guide_version == "2.0" %}
+{% if page.guide_version == "2.1" %}
+    <div class="message-banner">
+       <a href="http://devdocs.magento.com/guides/v2.1/release-notes/ReleaseNotes2.1.18CE.html" target="_blank">Magento 2.1.18</a> is the final 2.1.x release. After June 2019, Magento 2.1.x will no longer receive security patches, quality fixes, or documentation updates.</br>To maintain your site's performance, security, and PCI compliance, upgrade to the latest version of Magento.</a>
+    </div>
+{% endif %}
+
+{% if page.group == "inventory" %}
 <div class="message-banner">
-  <a href="http://devdocs.magento.com/guides/v2.0/release-notes/ReleaseNotes2.0.18CE.html" target="_blank">Magento 2.0.18</a> is the final 2.0.x release. After March 2018, Magento 2.0.x will no longer receive security patches, quality fixes, or documentation updates.</br> To maintain your site's performance, security, and PCI compliance, upgrade to the latest version of Magento.
+  This page may include updates for <a href="https://devdocs.magento.com/guides/v2.3/inventory/release-notes.html" target="_blank">Inventory Management (MSI) 1.1.2 Beta</a>. Content is subject to change.
 </div>
 {% endif %}
 
-{% if page.guide_version == "2.3" %}
+{% if page.title == "Inventory mass actions" %}
 <div class="message-banner">
-    This is the 2.3 Beta release version of Magento documentation. Content in this version is subject to change.
+  This page may include updates for <a href="https://devdocs.magento.com/guides/v2.3/inventory/release-notes.html" target="_blank">Inventory Management (MSI) 1.1.2 Beta</a>. Content is subject to change.
+</div>
+{% endif %}
+
+{% if page.title == "Install Inventory Management" %}
+<div class="message-banner">
+  This page may include updates for <a href="https://devdocs.magento.com/guides/v2.3/inventory/release-notes.html" target="_blank">Inventory Management (MSI) 1.1.2 Beta</a>. Content is subject to change.
 </div>
 {% endif %}

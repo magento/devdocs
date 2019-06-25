@@ -34,7 +34,7 @@ sudo apt install -y rabbitmq-server
 
 This command also installs the required Erlang packages.
 
-If you have an older version of Ubuntu, RabbitMQ recommends installing the package from their {% glossarytooltip a3c8f20f-b067-414e-9781-06378c193155 %}website{% endglossarytooltip %}.
+If you have an older version of Ubuntu, RabbitMQ recommends installing the package from their [website](https://glossary.magento.com/website).
 
 1. Download [rabbitmq-server_3.6.6-1_all.deb](https://www.rabbitmq.com/releases/rabbitmq-server/v3.6.6/rabbitmq-server_3.6.6-1_all.deb){:target="_blank"}.
 2. Install the package with `dpkg`.
@@ -53,6 +53,7 @@ Run the following commands to install this feature.
 ```bash
 wget http://packages.erlang-solutions.com/erlang-solutions-1.0-1.noarch.rpm
 ```
+
 ```bash
 rpm -Uvh erlang-solutions-1.0-1.noarch.rpm
 ```
@@ -67,6 +68,7 @@ The RabbitMQ server is included on CentOS, but the version is often old. RabbitM
 ```bash
 rpm --import https://www.rabbitmq.com/rabbitmq-signing-key-public.asc
 ```
+
 ```bash
 yum install rabbitmq-server-3.5.6-1.noarch.rpm
 ```
@@ -98,7 +100,7 @@ where:
 |`amqp-user`|The username for connecting to RabbitMQ. Do not use the default user `guest`.|
 |`amqp-password`|The password for connecting to RabbitMQ. Do not use the default password `guest`.|
 |`amqp-virtualhost`|The virtual host for connecting to RabbitMQ. The default is `/`.
-{:style="table-layout:auto;"}
+
 
 ## Start the message queue consumers
 

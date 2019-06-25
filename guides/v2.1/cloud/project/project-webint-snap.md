@@ -1,9 +1,7 @@
 ---
 group: cloud-guide
 title: Snapshots and backup management
-redirect_from:
-  - /guides/v2.0/cloud/admin/admin-snap.html
-  - /guides/v2.1/cloud/admin/admin-snap.html
+redirect_from: /guides/v2.1/cloud/admin/admin-snap.html
 functional_areas:
   - Cloud
 ---
@@ -86,7 +84,7 @@ We provide two methods for creating and managing snapshots:
 1.  List all available snapshots.
 
     ```
-    magento-cloud snapshots:list
+    magento-cloud snapshot:list
     ```
 
     The list returns information about the available snapshots:

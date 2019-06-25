@@ -10,7 +10,7 @@ functional_areas:
   - Deploy
 ---
 
-This topic discusses how to recover from a failed component deployment. Typical examples are components that have dependencies that are not met by your environment; for example, incompatible {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} versions.
+This topic discusses how to recover from a failed component deployment. Typical examples are components that have dependencies that are not met by your environment; for example, incompatible [PHP](https://glossary.magento.com/php) versions.
 
 You can recover from a failed deployment in any of the following ways:
 
@@ -50,7 +50,7 @@ To remove the component:
 
         composer remove <component-name>:<version>
 
-    If the following message displays, you don't need to do anything further:
+    If the following message displays, you do not need to do anything further:
 
     	Package "<name>:<version>" listed for update is not installed. Ignoring.
 

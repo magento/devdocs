@@ -10,9 +10,9 @@ menu_node:
 #### Previous step:
 [Prepare for local environment setup]({{ page.baseurl }}/cloud/before/before-workspace.html)
 
-To begin working with a project and develop your store, you should have received an e-mail invitation to [create a Mangento Enterprise Cloud Edition account](https://accounts.magento.cloud). The account provides access to your project for Magento development and deployment across all supported environments.
+To begin working with a project and develop your store, you should have received an e-mail invitation to [create a Magento Enterprise Cloud Edition account](https://accounts.magento.cloud). The account provides access to your project for Magento development and deployment across all supported environments.
 
-You should receive an e-mail invitation to verify and access the account. If you don't see the invitation, check your junk e-mail folder. Click the **Verify my account** option in the email to verify and access your account.
+You should receive an e-mail invitation to verify and access the account. If you do not see the invitation, check your junk e-mail folder. Click the **Verify my account** option in the email to verify and access your account.
 
 When logged in, you should see a project named and ready to access.
 

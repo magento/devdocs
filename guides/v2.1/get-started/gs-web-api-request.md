@@ -3,11 +3,11 @@ group: web-api
 title: Construct a request
 ---
 
-To configure a web API, developers define some of the elements of each API call in the `<module root dir>/vendor/<vendor-name>/<module-name>/etc/webapi.xml` file, where `<vendor-name>` is your vendor name (for example, `magento`) and `<module-name>` is your module name (which exactly matches its definition in `composer.json`). For example, the web API for the Customer service is defined in the `<your Magento install dir>/vendor/magento/module-customer/etc/webapi.xml` configuration file. Service data interfaces and builders define the required and optional parameters and the return values for the {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} calls.
+To configure a web API, developers define some of the elements of each API call in the `<module root dir>/vendor/<vendor-name>/<module-name>/etc/webapi.xml` file, where `<vendor-name>` is your vendor name (for example, `magento`) and `<module-name>` is your module name (which exactly matches its definition in `composer.json`). For example, the web API for the Customer service is defined in the `<magento_root>/vendor/magento/module-customer/etc/webapi.xml` configuration file. Service data interfaces and builders define the required and optional parameters and the return values for the [API](https://glossary.magento.com/api) calls.
 
 ## Overview {#request-overview}
 
-The following table and the sections that follow the table describe {% glossarytooltip 377dc0a3-b8a7-4dfa-808e-2de37e4c0029 %}web API{% endglossarytooltip %} call elements:
+The following table and the sections that follow the table describe [web API](https://glossary.magento.com/web-api) call elements:
 
 Element | Specifies
 --- | ---
@@ -35,7 +35,7 @@ A store code can have one of the following values.
 
 * The store's assigned store code.
 * `default`. This is the default value when no store code is provided.
-* `all`. This value only applies to endpoints defined in the {% glossarytooltip f3944faf-127e-4097-9918-a2e9c647d44f %}CMS{% endglossarytooltip %} and Product modules. If this value is specified, the {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} call affects all of the merchant's stores.
+* `all`. This value only applies to endpoints defined in the [CMS](https://glossary.magento.com/cms) and Product modules. If this value is specified, the [API](https://glossary.magento.com/api) call affects all of the merchant's stores.
 
 ### HTTP headers {#http-headers}
 
@@ -52,7 +52,7 @@ HTTP header | Description | Syntax
 
 ### Call payload {#payload}
 
-The call payload is set of input <i>parameters</i> and <i>attributes</i> that you supply with the request. API operations have both _required_ and _optional_ inputs.
+The call payload is a set of input <i>parameters</i> and <i>attributes</i> that you supply with the request. API operations have both _required_ and _optional_ inputs.
 
 You specify input parameters in the URI. For example, in the `GET/V1/customers/:customerId` URI, you must specify the `customerId` template parameter. This parameter filters the response by the specified customer ID.
 
@@ -60,31 +60,29 @@ You specify input attributes in a JSON- or XML-formatted request body. For examp
 
 ```json
 {
-    "customers": {
-        "customer": {
-            "email": "user@example.com",
+    "customer": {
+        "email": "user@example.com",
+        "firstname": "John",
+        "lastname": "Doe"
+    },
+    "addresses": [
+        {
+            "defaultShipping": true,
+            "defaultBilling": true,
             "firstname": "John",
-            "lastname": "Doe"
-        },
-        "addresses": [
-            {
-                "defaultShipping": true,
-                "defaultBilling": true,
-                "firstname": "John",
-                "lastname": "Doe",
-                "region": {
-                    "regionCode": "CA",
-                    "region": "California",
-                    "regionId": 12
-                },
-                "postcode": "90001",
-                "street": ["Zoe Ave"],
-                "city": "Los Angeles",
-                "telephone": "555-000-00-00",
-                "countryId": "US"
-            }
-        ]
-    }
+            "lastname": "Doe",
+            "region": {
+                "regionCode": "CA",
+                "region": "California",
+                "regionId": 12
+            },
+            "postcode": "90001",
+            "street": ["Zoe Ave"],
+            "city": "Los Angeles",
+            "telephone": "555-000-00-00",
+            "countryId": "US"
+        }
+    ]
 }
 ```
 
@@ -94,7 +92,7 @@ This JSON-formatted request body includes a `customer` object with the customer 
 
 This example shows you how to construct a REST web API call to create an account.
 
-1. Open the [Magento/Customer/etc/webapi.xml]({{ site.mage2000url }}app/code/Magento/Customer/etc/webapi.xml)
+1. Open the [Magento/Customer/etc/webapi.xml]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Customer/etc/webapi.xml)
 
 2. Find the route element that defines the `createAccount` call:
 
@@ -109,9 +107,9 @@ This example shows you how to construct a REST web API call to create an account
 
 3. Use the <code>method</code> and `url` values on the `route` element to construct the URI. In this example, the URI is POST `/V1/customers`.
 
-4. Use the `class` attribute on the `service` element to identify the service interface. In this example, the service interface is the `AccountManagementInterface` {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} file.
+4. Use the `class` attribute on the `service` element to identify the service interface. In this example, the service interface is the `AccountManagementInterface` [PHP](https://glossary.magento.com/php) file.
 
-   Open the [AccountManagementInterface.php]({{ site.mage2000url }}app/code/Magento/Customer/Api/AccountManagementInterface.php) file and find the <code>createAccount</code> method, as follows:
+   Open the [AccountManagementInterface.php]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Customer/Api/AccountManagementInterface.php) file and find the <code>createAccount</code> method, as follows:
 
    ```php?start_inline=1
    public function createAccount(
@@ -123,13 +121,13 @@ This example shows you how to construct a REST web API call to create an account
 
     The `createAccount` call requires a `customer` data object. The `password` and `redirectUrl` values are optional. The default `password` value is `null` and the default `redirectUrl` value is blank.
 
-5. To pass the <code>customer</code> data object in the POST call payload, specify [JSON](http://www.json.com/) or {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %} request body on the call.
+5. To pass the <code>customer</code> data object in the POST call payload, specify [JSON](http://www.json.com/) or [XML](https://glossary.magento.com/xml) request body on the call.
 
 ### Customers Search API request example {#customers-search-api-request-example}
 
 The following example builds a Customers Search request based on search criteria. It returns a list of customers that match given search criteria.
 
-1. Prepare `Authorization`, `Accept` and `Content-Type` headers to be passed to a request object. Use the {% glossarytooltip 34ecb0ab-b8a3-42d9-a728-0b893e8c0417 %}Authorization{% endglossarytooltip %} token returned by the Magento token service.
+1. Prepare `Authorization`, `Accept` and `Content-Type` headers to be passed to a request object. Use the [Authorization](https://glossary.magento.com/authorization) token returned by the Magento token service.
 
    ```php?start_inline=1
    $token = 'token';
@@ -141,10 +139,10 @@ The following example builds a Customers Search request based on search criteria
    ]);
 ```
 
-2. Open the [Magento/Customer/etc/webapi.xml]({{ site.mage2000url }}app/code/Magento/Customer/etc/webapi.xml)  configuration file and find the [CustomerRepositoryInterface]({{ site.mage2000url }}app/code/Magento/Customer/Api/CustomerRepositoryInterface.php) interface with the `getList` method.
+2. Open the [Magento/Customer/etc/webapi.xml]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Customer/etc/webapi.xml)  configuration file and find the [CustomerRepositoryInterface]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Customer/Api/CustomerRepositoryInterface.php) interface with the `getList` method.
 
 
-3. Set the headers, URI and method to a request object. Use URI `/V1/customers/search` and method `GET` values. Use the `searchCriteria` parameter to complete the Customer Search query. See [searchCriteria usage]({{ page.baseurl }}/rest/performing-searches.html). Also check [List of REST endpoints by module]({{ site.baseurl }}/rest/list.html).
+3. Set the headers, URI and method to a request object. Use URI `/V1/customers/search` and method `GET` values. Use the `searchCriteria` parameter to complete the Customer Search query. See [searchCriteria usage]({{ page.baseurl }}/rest/performing-searches.html). Also check [List of REST endpoints by module]({{ page.baseurl }}/rest/list.html).
 
    The following example finds customers whose first name contains "ver" or whose last name contains "Costello". 
 
@@ -277,7 +275,6 @@ This request returns a list of all customers in JSON format, as shown below. You
     "total_count": 1
 }
 ```
-
 
 ## Next step
 

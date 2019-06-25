@@ -7,8 +7,6 @@ menu_order: 385
 menu_node:
 level3_menu_node: level3child
 level3_subgroup: mccloud-relnotes
-redirect_from:
-  - /guides/v2.2/cloud/release-notes/CloudReleaseNotes2.1.3.html
 functional_areas:
   - Cloud
 ---
@@ -66,9 +64,9 @@ This section discusses how to update your [integration]({{ page.baseurl }}/cloud
 
 Elasticsearch is supported by Magento Cloud Enterprise Edition 2.1.x only.
 
-If you installed Magento Enterprise Cloud Edition 2.1.3 for the first time, you don't need to do this because Elasticsearch is already the default search engine.
+If you installed Magento Enterprise Cloud Edition 2.1.3 for the first time, you do not need to do this because Elasticsearch is already the default search engine.
 
-To use Elasticsearch on a [staging]({{ page.baseurl }}/cloud/architecture/cloud-architecture.html) or [production]({{ page.baseurl }}/cloud/architecture/cloud-architecture.html) system, open a [Support ticket]({{ page.baseurl }}/cloud/welcome/get-help.html) and request Elasticsearch.
+To use Elasticsearch on a [staging]({{ page.baseurl }}/cloud/architecture/cloud-architecture.html) or [production]({{ page.baseurl }}/cloud/architecture/cloud-architecture.html) system, open a [Support ticket]({{ page.baseurl }}/cloud/trouble/trouble.html) and request Elasticsearch.
 
 {: .bs-callout .bs-callout-warning}
 After installing Elasticsearch, you must do a full index of your fulltext index.
@@ -198,5 +196,5 @@ Note the following issue in this release:
 * The `magento setup:install` command (used for deployment) succeeds in either a staging or production system if a Magento database already exists.
 
 ### {{site.data.var.ee}} Release Notes
-* [{{site.data.var.ee}} 2.0.11 Release Notes]({{ site.gdeurl }}release-notes/ReleaseNotes2.0.11EE.html)
+
 * [{{site.data.var.ee}} 2.1.3 Release Notes]({{ site.gdeurl21 }}release-notes/ReleaseNotes2.1.3EE.html)

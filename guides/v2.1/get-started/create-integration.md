@@ -1,13 +1,12 @@
 ---
 group: web-api
 title: Create an integration
-redirect_from: /guides/v2.1/howdoi/webapi/integration.html
 ---
 
 
 An **integration** enables third-party services to call the Magento web APIs. The Magento APIs currently supports Accounting, Enterprise Resource Planning (ERP), Customer Relationship Management (CRM), Product Information Management (PIM), and marketing automation systems out of the box.
 
-Implementing a simple integration requires little knowledge of {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} or Magento internal processes. However, you will need a working knowledge of
+Implementing a simple integration requires little knowledge of [PHP](https://glossary.magento.com/php) or Magento internal processes. However, you will need a working knowledge of
 
 * [Magento REST or SOAP Web APIs]({{ page.baseurl }}/get-started/bk-get-started-api.html)
 * [Web API authentication]({{ page.baseurl }}/get-started/authentication/gs-authentication.html)
@@ -45,7 +44,7 @@ To develop a module, you must:
     --- | ---
     `name` | A string that uniquely identifies the module
     `setup_version` | The version of Magento the component uses
-    {:style="table-layout:auto;"}
+    
 
     The following example shows an example `etc/module.xml` file.
 
@@ -73,7 +72,7 @@ To develop a module, you must:
 
     The following example demonstrates a minimal `composer.json` file.
 
-    ``` json
+    ```json
       {
          "name": "Vendor1_Module1",
          "description": "create integration from config",
@@ -170,7 +169,7 @@ Magento provides the Integration module, which simplifies the process of definin
 * Maintaining OAuth authorizations and user data.
 * Managing security tokens and requests.
 
-To customize your module, you must create multiple {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %} files and read through others files to determine what resources existing Magento modules have access to.
+To customize your module, you must create multiple [XML](https://glossary.magento.com/xml) files and read through others files to determine what resources existing Magento modules have access to.
 
 The process for customizing your module includes
 
@@ -179,7 +178,7 @@ The process for customizing your module includes
 
 ### Define the required resources {#resources}
 
-The `etc/integration/api.xml` file defines which {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} resources the integration has access to.
+The `etc/integration/api.xml` file defines which [API](https://glossary.magento.com/api) resources the integration has access to.
 
 To determine which resources an integration needs access to, review the permissions defined in each module's `etc/acl.xml` file.
 
@@ -208,11 +207,11 @@ In the following example, the test integration requires access to the following 
 Your module can optionally provide a configuration file `config.xml` so that the integration can be automatically pre-configured with default values. To enable this feature, create the `config.xml` file in the `etc/integration` directory.
 
 {:.bs-callout .bs-callout-tip}
-If you pre-configure the integration, the values cannot be edited from the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}admin{% endglossarytooltip %} panel.
+If you pre-configure the integration, the values cannot be edited from the [admin](https://glossary.magento.com/admin) panel.
 
 The file defines which API resources the integration has access to.
 
-``` xml
+```xml
 <integrations>
    <integration name="TestIntegration">
        <email></email>
@@ -229,23 +228,30 @@ Element | Description
 `email` | An email to associate with this integration.
 `endpoint_url` | Optional. The URL where OAuth credentials can be sent when using OAuth for token exchange. We strongly recommend using `https://`. See [OAuth-based authentication]({{ page.baseurl }}/get-started/authentication/gs-authentication-oauth.html) for details.
 `identity_link_url` | Optional. The URL that redirects the user to link their 3rd party account with the Magento integration.
-{:style="table-layout:auto;"}
+
 
 ## Install your module {#install}
 
 Use the following steps to install your module:
 
-1. Run the following command to update the Magento {% glossarytooltip 66b924b4-8097-4aea-93d9-05a81e6cc00c %}database schema{% endglossarytooltip %} and data.
+1. Run the following command to update the Magento [database schema](https://glossary.magento.com/database-schema) and data.
 
     <code>bin/magento setup:upgrade</code>
 
 2. Run the following command to generate the new code.
 
-    <code>bin/magento setup:di:compile</code>
+   {: .bs-callout .bs-callout-info }
+   In Production mode, you may receive a message to 'Please rerun Magento compile command'.  Enter the command below. Magento does not prompt you to run the compile command in Developer mode.
+
+   <code>bin/magento setup:di:compile</code>
+
+3. Run the following command to clean the cache.
+
+   <code>bin/magento cache:clean</code>
 
 ## Check your integration {#check}
 
-Log in to Magento and navigate to **Settings > Extensions > Integrations**. The integration should be displayed in the grid.
+Log in to Magento and navigate to **System > Extensions > Integrations**. The integration should be displayed in the grid.
 
 ## Integrate with your application {#integrate}
 

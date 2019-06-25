@@ -5,8 +5,6 @@ title: Plugins (Interceptors)
 menu_title: Plugins (Interceptors)
 menu_order: 10
 redirect_from:
-  - /guides/v1.0/extension-dev-guide/plugins.html
-  - /guides/v1.0/config-guide/config/plugins.html
 ---
 
 ### Overview
@@ -15,7 +13,7 @@ A plugin, or interceptor, is a class that modifies the behavior of public class 
 
 Extensions that wish to intercept and change the behavior of a *public method* can create a `Plugin` class which are referred to as plugins.
 
-This {% glossarytooltip deea5a5a-e9e5-4591-b141-b849458feb1a %}interception{% endglossarytooltip %} approach reduces conflicts among extensions that change the behavior of the same class or method. Your `Plugin` class implementation changes the behavior of a class function, but it does not change the class itself. Because they can be called sequentially according to a configured sort order, these interceptors do not conflict with one another.
+This [interception](https://glossary.magento.com/interception) approach reduces conflicts among extensions that change the behavior of the same class or method. Your `Plugin` class implementation changes the behavior of a class function, but it does not change the class itself. Because they can be called sequentially according to a configured sort order, these interceptors do not conflict with one another.
 
 #### Limitations
 
@@ -32,15 +30,15 @@ Plugins cannot be used with any of the following:
 
 ### Declaring a plugin
 
-A plugin for a class object is declared in the <code>di.xml</code> file in your {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}.
+A plugin for a class object is declared in the <code>di.xml</code> file in your [module](https://glossary.magento.com/module).
 
-{% highlight xml %} 
+```xml 
 <config>
     <type name="{ObservedType}">
       <plugin name="{pluginName}" type="{PluginClassName}" sortOrder="1" />
     </type>
 </config>
-{% endhighlight %}
+```
 
 You must specify these elements:
 
@@ -68,7 +66,8 @@ You can use before methods to change the arguments of an observed method by retu
 
 Below is an example of a before method modifying the `$name` argument before passing it on to the observed `setName` method.
 
-{% highlight PHP inline=true %}
+```php 
+<?php
 namespace My\Module\Plugin;
 
 class ProductPlugin
@@ -78,7 +77,7 @@ class ProductPlugin
         return ['(' . $name . ')'];
     }
 }
-{% endhighlight %}
+```
 
 #### After methods
 
@@ -88,7 +87,8 @@ These methods can be used to modify the results of an observed method and are re
 
 Below is an example of an after method modifying the return value `$result` of an observed methods call.
 
-{% highlight PHP inline=true %}
+```php 
+<?php
 namespace My\Module\Plugin;
 
 class ProductPlugin
@@ -98,7 +98,7 @@ class ProductPlugin
         return '|' . $result . '|';
     }
 }
-{% endhighlight %}
+```
 
 #### Around methods
 
@@ -111,7 +111,8 @@ If the around method does not call the `callable`, it will prevent the execution
 
 Below is an example of an around method adding behavior before and after an observed method:
 
-{% highlight PHP inline=true %}
+```php 
+<?php
 namespace My\Module\Plugin;
 
 class ProductPlugin
@@ -126,13 +127,14 @@ class ProductPlugin
         return $returnValue;
     }
 }
-{% endhighlight %}
+```
 
 When you wrap a method which accepts arguments, your plugin must also accept those arguments and you must forward them when you invoke the <code>proceed</code> callable. You must be careful to match the original signature of the method with regards to default parameters and type hints.
 
 For example, the following code defines a parameter of type <code>SomeType</code> which is nullable:
 
-{% highlight PHP inline=true %}
+```php 
+<?php
 namespace My\Module\Model;
 
 class MyUtility
@@ -142,11 +144,12 @@ class MyUtility
         //do something
     }
 }
-{% endhighlight %}
+```
 
 If you wrapped this method with a plugin like below:
 
-{% highlight PHP inline=true %}
+```php 
+<?php
 namespace My\Module\Plugin;
 
 class MyUtilityPlugin
@@ -156,13 +159,14 @@ class MyUtilityPlugin
       //do something
     }
 }
-{% endhighlight %}
+```
 
-Note the missing <code>= null</code>. Now, if the original method was called with <code>null</code> {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} would throw a fatal error as your plugin does not accept <code>null</code>.
+Note the missing <code>= null</code>. Now, if the original method was called with <code>null</code> [PHP](https://glossary.magento.com/php) would throw a fatal error as your plugin does not accept <code>null</code>.
 
 It is also worth noting that you are responsible for forwarding the arguments from the plugin to the <code>proceed</code> callable. If you are not using/modifying the arguments, you could use variadics and argument unpacking to achieve this simply:
 
-{% highlight PHP inline=true %}
+```php 
+<?php
 namespace My\Module\Plugin;
 
 class MyUtilityPlugin
@@ -173,7 +177,7 @@ class MyUtilityPlugin
       $proceed(...$args);
     }
 }
-{% endhighlight %}
+```
 
 ### Prioritizing plugins
 
@@ -226,7 +230,7 @@ All plugins added for interfaces and inherited classes will be added to classes 
 
 Plugins defined in the global scope will be applied when the system is in a specific area (i.e. frontend, backend, etc). These global plugin configuration can also be extended or overridden via an area's `di.xml`.
 
-For example, the developer can disable a global plugin in the {% glossarytooltip 74d6d228-34bd-4475-a6f8-0c0f4d6d0d61 %}backend{% endglossarytooltip %} area by disabling it in the specific `di.xml` file for the backend area.
+For example, the developer can disable a global plugin in the [backend](https://glossary.magento.com/backend) area by disabling it in the specific `di.xml` file for the backend area.
 
 ### Related topics
 

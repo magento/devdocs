@@ -22,7 +22,11 @@ HTTP code | Error code | Text representation | Description
 401 | 11 | `token_revoke` | The token is revoked by the user who authorized it.
 401 | 12 | `token_rejected` | The token is not valid, or does not exist, or is not valid for using in the current type of request.
 401 | 13 | `verifier_invalid` |The confirmation string does not correspond to the token.
-{:style="table-layout:auto;"}
+403 | 14 | `permission_unknown` |The consumer permission is unknown.
+403 | 15 | `permission_denied` |The consumer does not authorized to access the resource.
+405 | 16 | `method_not_allowed` |The method is not supported or not allowed.
+403 | 17 | `consumer_key_invalid` |The Consumer Key is invalid.
+
 
 ## Related topic
 

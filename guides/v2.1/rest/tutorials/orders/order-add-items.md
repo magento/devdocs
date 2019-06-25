@@ -10,27 +10,25 @@ menu_order: 5
 level3_subgroup: order-tutorial
 redirect_from:
   - /guides/v2.1/get-started/order-tutorial/order-add-items.html
-  - /guides/v2.2/get-started/order-tutorial/order-add-items.html
-  - /guides/v2.3/get-started/order-tutorial/order-add-items.html
 functional_areas:
   - Integration
   - Orders
   - Catalog
 ---
 
-This article shows how to add a simple product, a downloadable product, and a {% glossarytooltip fbcfce51-68e2-482f-84d5-f28d84404cff %}bundle product{% endglossarytooltip %} to the cart.
+This article shows how to add a simple product, a downloadable product, and a [bundle product](https://glossary.magento.com/bundle-product) to the cart.
 
-All calls are performed on behalf of a customer, and the customer's token is specified in the {% glossarytooltip 34ecb0ab-b8a3-42d9-a728-0b893e8c0417 %}authorization{% endglossarytooltip %} header.
+All calls are performed on behalf of a customer, and the customer's token is specified in the [authorization](https://glossary.magento.com/authorization) header.
 
 ### Add a simple product to a cart {#add-simple}
 
-To add a {% glossarytooltip f85f36ad-2942-446e-b711-39f2a16f6364 %}simple product{% endglossarytooltip %} to a cart, you must provide a `sku`, the quantity, and the {% glossarytooltip 77e19d0d-e7b1-4d3d-9bad-e92fbb9fb59a %}quote{% endglossarytooltip %} ID, which was generated when the cart was created.
+To add a [simple product](https://glossary.magento.com/simple-product) to a cart, you must provide a `sku`, the quantity, and the [quote](https://glossary.magento.com/quote) ID, which was generated when the cart was created.
 
 The following example adds an orange medium-sized Radiant women's t-shirt (`sku`: `WS12-M-Orange`) to the cart.
 
 **Endpoint**
 
-`POST http://<host>/rest/default/V1/carts/mine/items`
+`POST <host>/rest/<store_code>/V1/carts/mine/items`
 
 **Headers**
 
@@ -40,7 +38,7 @@ The following example adds an orange medium-sized Radiant women's t-shirt (`sku`
 
 **Payload**
 
-{% highlight json %}
+```json
 {
   "cartItem": {
     "sku": "WS12-M-Orange",
@@ -48,11 +46,11 @@ The following example adds an orange medium-sized Radiant women's t-shirt (`sku`
     "quote_id": "4"
   }
 }
-{% endhighlight %}
+```
 
 **Response**
 
-{% highlight json %}
+```json
 {
   "item_id": 7,
   "sku": "WS12-M-Orange",
@@ -61,17 +59,17 @@ The following example adds an orange medium-sized Radiant women's t-shirt (`sku`
   "product_type": "simple",
   "quote_id": "4"
 }
-{% endhighlight %}
+```
 
 ### Add a downloadable product to a cart {#add-downloadable}
 
-The requirements for adding a {% glossarytooltip 38fc3629-ee25-4de5-ac7a-72db8e8de6de %}downloadable product{% endglossarytooltip %} to a cart are the same as a simple product. You must specify the `sku`, the quantity, and quote ID.
+The requirements for adding a [downloadable product](https://glossary.magento.com/downloadable-product) to a cart are the same as a simple product. You must specify the `sku`, the quantity, and quote ID.
 
 The following example adds the downloadable product Advanced Pilates & Yoga (`sku`: 240-LV08)
 
 **Endpoint**
 
-`POST http://<host>/rest/default/V1/carts/mine/items`
+`POST <host>/rest/<store_code>/V1/carts/mine/items`
 
 **Headers**
 
@@ -81,7 +79,7 @@ The following example adds the downloadable product Advanced Pilates & Yoga (`sk
 
 **Payload**
 
-{% highlight json %}
+```json
 {
   "cartItem": {
     "sku": "240-LV08",
@@ -89,11 +87,11 @@ The following example adds the downloadable product Advanced Pilates & Yoga (`sk
     "quote_id": "4"
   }
 }
-{% endhighlight %}
+```
 
 **Response**
 
-{% highlight json %}
+```json
 {
   "item_id": 8,
   "sku": "240-LV08",
@@ -112,7 +110,7 @@ The following example adds the downloadable product Advanced Pilates & Yoga (`sk
     }
   }
 }
-{% endhighlight %}
+```
 
 ### Add a configurable product to a cart {#add-configurable}
 
@@ -122,7 +120,7 @@ In this example, we'll add the Chaz Kangeroo Hoodie (`sku: MH01`) configurable p
 
 The `GET /V1/configurable-products/:sku/children` call returns information about each combination of color and size, 15 in all for `MH01`. The following sample shows the returned values for `size` and `color` for a small gray Chaz Kangeroo Hoodie.
 
-{% highlight json %}
+```json
 {
   "custom_attributes": [
     {
@@ -135,13 +133,13 @@ The `GET /V1/configurable-products/:sku/children` call returns information about
     }
   ]
 }
-{% endhighlight %}
+```
 
 We now know the values for `option_value` for `size` and `color` are `168` and `52`, so we're ready to add the product to the cart.
 
 **Endpoint**
 
-`POST http://<host>/rest/default/V1/carts/mine/items`
+`POST <host>/rest/<store_code>/V1/carts/mine/items`
 
 **Headers**
 
@@ -151,7 +149,7 @@ We now know the values for `option_value` for `size` and `color` are `168` and `
 
 **Payload**
 
-{% highlight json %}
+```json
 {
   "cartItem": {
     "sku": "MH01",
@@ -174,11 +172,11 @@ We now know the values for `option_value` for `size` and `color` are `168` and `
     "extension_attributes": {}
   }
 }
-{% endhighlight %}
+```
 
 **Response**
 
-{% highlight json %}
+```json
 {
     "item_id": 13,
     "sku": "MH01-S-Gray",
@@ -202,7 +200,7 @@ We now know the values for `option_value` for `size` and `color` are `168` and `
         }
     }
 }
-{% endhighlight %}
+```
 
 ### Add a bundle product to a cart {#add-bundle}
 
@@ -215,10 +213,11 @@ The sample data provides one bundled product, the Sprite Yoga Companion Kit (`sk
 
 To add a bundle product to a cart, you must specify the `sku` of the bundle product, but not the individual items. You add individual items to the bundle product by specifying the `id` defined in the item's `product_links` object. The `product_links` object primarily describes the ordering and placement of options on the customization page, but it also links an item's `sku` and `id` to the `sku` of the bundle product.
 
-The `GET http://<host>/rest/default/V1/bundle-products/24-WG080/options/all` call returns `id` values, as shown in the following simplified response:
+The `GET <host>/rest/<store_code>/V1/bundle-products/24-WG080/options/all` call returns `id` values, as shown in the following simplified response:
 
 {% collapsible Show code sample %}
-{% highlight json %}
+
+```json
 [
   {
     "option_id": 1,
@@ -309,7 +308,8 @@ The `GET http://<host>/rest/default/V1/bundle-products/24-WG080/options/all` cal
     ]
   }
 ]
-{% endhighlight %}
+```
+
 {% endcollapsible %}
 
 For this example, we'll configure the Sprite Yoga Companion Kit as follows:
@@ -322,7 +322,7 @@ For this example, we'll configure the Sprite Yoga Companion Kit as follows:
 
 **Endpoint**
 
-`POST http://<host>/rest/default/V1/carts/mine/items`
+`POST <host>/rest/<store_code>/V1/carts/mine/items`
 
 **Headers**
 
@@ -333,8 +333,8 @@ For this example, we'll configure the Sprite Yoga Companion Kit as follows:
 **Payload**
 
 {% collapsible Show code sample %}
-{% highlight json %}
 
+```json
 {
     "cartItem": {
         "sku": "24-WG080",
@@ -368,14 +368,15 @@ For this example, we'll configure the Sprite Yoga Companion Kit as follows:
         }
     }
 }
+```
 
-{% endhighlight %}
 {% endcollapsible %}
 
 **Response**
 
 {% collapsible Show code sample %}
-{% highlight json %}
+
+```json
 {
   "item_id": 9,
   "sku": "24-WG080-24-WG084-24-WG088-24-WG082-blue-24-WG086",
@@ -419,9 +420,10 @@ For this example, we'll configure the Sprite Yoga Companion Kit as follows:
     }
   }
 }
-{% endhighlight %}
+```
+
 {% endcollapsible %}
 
 ### Verify this step {#verify-step}
 
-{% glossarytooltip c3ce6f9b-a66a-4d81-ad4c-700f9dfaa9e2 %}Sign in{% endglossarytooltip %} as the customer and click on the {% glossarytooltip c7ecb18d-cefe-452d-83e2-3c4d5e355db9 %}shopping cart{% endglossarytooltip %}. All the items you added are displayed.
+[Sign in](https://glossary.magento.com/sign-in) as the customer and click on the [shopping cart](https://glossary.magento.com/shopping-cart). All the items you added are displayed.

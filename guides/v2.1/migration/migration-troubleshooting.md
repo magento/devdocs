@@ -15,13 +15,13 @@ This section is about the errors that might occur when you run the Data Migratio
 
 ### Source documents/fields not mapped
 
-{% highlight xml %}
+```xml
 Source documents are not mapped: <EXTENSION_TABLE>
-{% endhighlight %}
+```
 
-{% highlight xml %}
+```xml
 Source fields are not mapped. Document: <EXTENSION_TABLE>. Fields: <EXTENSION_FIELD>
-{% endhighlight %}
+```
 
 In rare cases, the message might mention `Destination documents` or `Destination fields` instead of source ones.
 
@@ -41,25 +41,25 @@ This message appears because the Data Migration Tool runs internal tests to veri
 
 To ignore database entities, add the `<ignore>` tag to an entity in the `map.xml` file, like this:
 
-{% highlight xml %}
+```xml
 <ignore>
    <field>sales_order_address_id</field>
 </ignore>
-{% endhighlight %}
+```
 
 {: .bs-callout .bs-callout-warning }
 Before ignoring entities, make sure you do not need the affected data in your Magento 2 store.
 
 ### Class does not exist but mentioned
 
-{% highlight xml %}
+```xml
 Class <extension/class_name> does not exist but mentioned in:
 <eav_attribute.frontend_model> for <attribute_id=196>
-{% endhighlight %}
+```
 
 #### Explanation
 
-A class from Magento 1 codebase could not be found in Magento 2 codebase during the [EAV migration step]({{ page.baseurl }}/migration/migration-tool-internal-spec.html#eav). In most cases, the missing class belongs to an {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %}.
+A class from Magento 1 codebase could not be found in Magento 2 codebase during the [EAV migration step]({{ page.baseurl }}/migration/migration-tool-internal-spec.html#eav). In most cases, the missing class belongs to an [extension](https://glossary.magento.com/extension).
 
 #### Possible solutions
 
@@ -75,11 +75,11 @@ A class from Magento 1 codebase could not be found in Magento 2 codebase during 
 
 #### Error message text
 
-{% highlight xml %}
+```xml
 Foreign key <KEY_NAME> constraint fails.
 Orphan records id: <id_1>, <id_2> from <child_table>.
 <field_id> has no referenced records in <parent_table>
-{% endhighlight %}
+```
 
 #### Explanation
 
@@ -93,11 +93,11 @@ To keep the records, disable the `Data Integrity Step` by modifying the Data Mig
 
 ### Duplicates in URL rewrites
 
-{% highlight xml %}
+```xml
 There are duplicates in URL rewrites:
 Request path: towel.html Store ID: 2 Target path: catalog/product/view/id/10
 Request path: towel.html Store ID: 2 Target path: catalog/product/view/id/12
-{% endhighlight %}
+```
 
 #### Explanation
 
@@ -107,13 +107,13 @@ The `Target path` in a URL rewrite must be specified by a unique pair of `Reques
 
 Enable the `auto_resolve_urlrewrite_duplicates` option in your `config.xml` file.
 
-This configuration adds a hash-string to the conflicting records of {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} rewrites, and shows the resolution result in your command line interface.
+This configuration adds a hash-string to the conflicting records of [URL](https://glossary.magento.com/url) rewrites, and shows the resolution result in your command line interface.
 
 ### Mismatch of entities
 
-{%highlight xml%}
+```xml
 Mismatch of entities in the document: <DOCUMENT>
-{%endhighlight%}
+```
 
 #### Explanation
 

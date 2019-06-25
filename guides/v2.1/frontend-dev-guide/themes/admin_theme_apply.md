@@ -7,13 +7,13 @@ functional_areas:
 ---
 ## What's in this topic {#favicon-intro}
 
-This topic describes how to apply your custom {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} for {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %}.
+This topic describes how to apply your custom [theme](https://glossary.magento.com/theme) for [Magento Admin](https://glossary.magento.com/magento-admin).
 
-## Prerequisites 
+## Prerequisites
 
-1. [Set]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html) your Magento application to the developer [mode]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html). The application mode influences the way {% glossarytooltip 363662cb-73f1-4347-a15e-2d2adabeb0c2 %}static files{% endglossarytooltip %} are cached by Magento. 
-2. [Create a custom theme for the Admin panel]({{ page.baseurl }}/frontend-dev-guide/themes/admin_theme_create.html). 
-3. [Add a new custom module]({{ page.baseurl }}/extension-dev-guide/build/build.html) or decide to use existing custom module. The module must load after the Magento_Theme module. To ensure this, add the following code in `<your_custom_module_dir>/etc/module.xml` (replace placeholders with your {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} information):
+1. [Set]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html) your Magento application to the developer [mode]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html). The application mode influences the way [static files](https://glossary.magento.com/static-files) are cached by Magento.
+2. [Create a custom theme for the Admin panel]({{ page.baseurl }}/frontend-dev-guide/themes/admin_theme_create.html).
+3. [Add a new custom module]({{ page.baseurl }}/extension-dev-guide/build/build.html) or decide to use existing custom module. The module must load after the Magento_Theme module. To ensure this, add the following code in `<your_custom_module_dir>/etc/module.xml` (replace placeholders with your [module](https://glossary.magento.com/module) information):
 
     ```xml
     <module name="%YourVendor_YourModule%" setup_version="2.0.1"> <!-- Example: "Magento_Backend" -->
@@ -31,7 +31,7 @@ If you decide to use the existing module, keep in mind, that theme declaring mig
 
 ## Apply a custom theme in Admin: Overview
 
-To apply the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} theme, take the following steps:
+To apply the [Admin](https://glossary.magento.com/admin) theme, take the following steps:
 
 2. [Specify the new Admin theme in your module's `di.xml`](#specify_di)
 3. Update the components by running the [`bin/magento setup:upgrade`]({{ page.baseurl }}/install-gde/install/cli/install-cli-uninstall.html#instgde-install-keep) command.
@@ -54,16 +54,16 @@ In `<your_module_dir>/etc/adminhtml/di.xml` add the following (replace the place
              <argument name="themes" xsi:type="array">
                  <item name="adminhtml" xsi:type="string">%Your_vendor_dir%/%your_theme_code%</item> <!-- Example: "Magento/backend" -->
              </argument>
-         </arguments> 
+         </arguments>
     </type>
     <!-- Admin theme. End -->
 </config>
 ```
 
-## Update components to actually apply the Admin theme
+## Update components to apply the Admin theme
 
-For your changes to take effect, you need to update Magento components. For this, 
-run the `bin/magento setup:upgrade` command in your command line. If prompted, also run `bin/magento setup:di:compile`.
+For your changes to take effect, you need to update Magento components. For this,
+run the `bin/magento setup:upgrade` command in your command line. If prompted, also run `bin/magento setup:di:compile`. Then run `bin/magento cache:clean` to clear the cache.
 
 
 For details about performing command line tasks, view the following topics:
@@ -77,6 +77,3 @@ The last step is to open the Admin in browser and view the new theme applied.
 ## See also
 
  * [Uninstall a theme]({{ page.baseurl }}/install-gde/install/cli/install-cli-theme-uninstall.html)
-
-
-

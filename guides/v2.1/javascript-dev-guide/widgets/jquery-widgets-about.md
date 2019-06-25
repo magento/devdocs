@@ -2,9 +2,6 @@
 group: javascript-developer-guide
 subgroup: 3_Widgets
 title: Magento jQuery widgets
-redirect_from:
- - /guides/v2.0/frontend-dev-guide/javascript/jquery-widgets-about.html
- - /guides/v1.0/frontend-dev-guide/javascript/jquery-widgets-about.html
 ---
 
 The Magento system uses a jQuery JavaScript library to implement client functionality. This includes a wide usage of standard, customized, and custom jQuery widgets.
@@ -24,6 +21,7 @@ This guide discusses the following widgets:
 -   [Navigation widget]
 -   [Prompt widget]
 -   [QuickSearch widget]
+-   [RedirectUrl widget]
 -   [Tabs widget]
 
 {:.bs-callout .bs-callout-info}
@@ -46,5 +44,6 @@ Magento out of the box does not contain jQuery UI styles. Also, it is not recomm
 [Navigation widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_navigation.html
 [Prompt widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_prompt.html
 [QuickSearch widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_quickSearch.html
+[RedirectUrl widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_redirectUrl.html
 [Tabs widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_tabs.html
 [jQuery UI 1.9.2]: http://blog.jqueryui.com/2012/11/jquery-ui-1-9-2/

@@ -6,5 +6,5 @@ functional_areas:
   - Theme
 ---
 
-The Themes chapter provides all information, including theoretical concepts and practical references, a {% glossarytooltip b00459e5-a793-44dd-98d5-852ab33fc344 %}frontend{% endglossarytooltip %} developer might need to efficiently create a new {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} for {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} or {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} in Magento application.
+The Themes chapter provides all information, including theoretical concepts and practical references, a [frontend](https://glossary.magento.com/frontend) developer might need to efficiently create a new [theme](https://glossary.magento.com/theme) for [storefront](https://glossary.magento.com/storefront) or [Admin](https://glossary.magento.com/admin) in Magento application.
 

@@ -10,14 +10,14 @@ functional_areas:
   - Checkout
 ---
 
-This topic describes how to create the {% glossarytooltip b00459e5-a793-44dd-98d5-852ab33fc344 %}frontend{% endglossarytooltip %} part of the component, implementing a checkout step, and how to add it to the checkout flow.
+This topic describes how to create the [frontend](https://glossary.magento.com/frontend) part of the component, implementing a checkout step, and how to add it to the checkout flow.
 
-The default Magento {% glossarytooltip 278c3ce0-cd4c-4ffc-a098-695d94d73bde %}Checkout{% endglossarytooltip %} consists of two steps:
+The default Magento [Checkout](https://glossary.magento.com/checkout) consists of two steps:
 
  - Shipping Information
  - Review and Payments Information
 
-You can add a custom checkout step, it should be implemented as a {% glossarytooltip 9bcc648c-bd08-4feb-906d-1e24c4f2f422 %}UI component{% endglossarytooltip %}. For the sake of compatibility, upgradability and easy maintenance, do not edit the default Magento code, add your customizations in a separate {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}.
+You can add a custom checkout step, it should be implemented as a [UI component](https://glossary.magento.com/ui-component). For the sake of compatibility, upgradability and easy maintenance, do not edit the default Magento code, add your customizations in a separate [module](https://glossary.magento.com/module).
 
 1. [Create the view part of the checkout step component](#create-view).
 2. [Add your step to the Checkout page layout](#checkout).
@@ -33,7 +33,7 @@ To create the view part of the new checkout step:
 
 ### Add the JavaScript file implementing the new step {#component}
 
-A new checkout step must be implemented as UI component. That is, its {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} implementation must be a JavaScript module.
+A new checkout step must be implemented as UI component. That is, its [JavaScript](https://glossary.magento.com/javascript) implementation must be a JavaScript module.
 
 The file must be stored under the `<your_module_dir>/view/frontend/web/js/view` directory.
 
@@ -103,12 +103,14 @@ define(
             },
 
             /**
-			* The navigate() method is responsible for navigation between checkout step
-			* during checkout. You can add custom logic, for example some conditions
-			* for switching to your custom step
-			*/
+	    * The navigate() method is responsible for navigation between checkout step
+	    * during checkout. You can add custom logic, for example some conditions
+	    * for switching to your custom step
+	    * When the user navigates to the custom step via url anchor or back button we_must show step manually here
+	    */
             navigate: function () {
 
+                this.isVisible(true);
             },
 
             /**
@@ -203,12 +205,12 @@ Create a mixin as follows:
     var config = {
     	'config': {
     	    'mixins': {
-    		     'Magento_Checkout/js/view/shipping': {
-    		        'Vendor_Module/js/view/shipping-payment-mixin': true
-    		        },
-    		     'Magento_Checkout/js/view/payment': {
-    		         'Vendor_Module/js/view/shipping-payment-mixin': true
-    		        }
+    	       'Magento_Checkout/js/view/shipping': {
+    	           'Vendor_Module/js/view/shipping-payment-mixin': true
+    	       },
+    	       'Magento_Checkout/js/view/payment': {
+    	           'Vendor_Module/js/view/shipping-payment-mixin': true
+    	       }
     	   }
     	}
     }

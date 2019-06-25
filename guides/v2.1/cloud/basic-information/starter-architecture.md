@@ -25,7 +25,7 @@ We highly recommend fully testing in your Staging environment and branch before 
 
 ## Staging branch and environment {#cloud-arch-stage}
 
-We recommend creating a branch called `staging` from `master`. The Staging environment is created from the `staging` branch to provide a pre-production environment to test code, modules and extensions, payment gateways, shipping, product data, and much more. This environment provides the configuration for all services to match the Production environment including Fastly, New Relic, Blackfire, and search.
+We recommend creating a branch called `staging` from `master`. The Staging environment is created from the `staging` branch to provide a pre-production environment to test code, modules and extensions, payment gateways, shipping, product data, and much more. This environment provides the configuration for all services to match the Production environment including Fastly, New Relic APM, Blackfire, and search.
 
 Additional sections in this guide provide instructions and walk-throughs for final code deployments and testing production level interactions in a safe Staging environment. For best performance and feature testing, replicate your Production database into the Staging environment.
 
@@ -48,7 +48,7 @@ You can have up to **two** active Integration environments on a grid for **two**
 You can have an unlimited number of inactive branches to store code. To access, view, and test inactive branches, you must activate them.
 
 {:.bs-callout .bs-callout-info}
-The Integration environment does not support all services. For example, Fastly CDN and New Relic are not accessible in an Integration environment.
+The Integration environment does not support all services. For example, Fastly CDN is not accessible in an Integration environment.
 
 The process for developing in Integration requires the following process:
 
@@ -67,11 +67,10 @@ The Production and Staging environments include the following technologies. You 
 * Nginx web server speaking to PHP-FPM, one instance with multiple workers
 * Redis server
 * Elasticsearch for searching for {{site.data.var.ece}} 2.1 and later
-* Solr search is supported for {{site.data.var.ece}} 2.0
 
 ### Services {#cloud-arch-services}
 
-{{site.data.var.ece}} currently supports the following services: PHP, MySQL (MariaDB), Solr (Magento 2.0.x), Elasticsearch (Magento 2.1.x and later), Redis, and RabbitMQ.
+{{site.data.var.ece}} currently supports the following services: PHP, MySQL (MariaDB), Elasticsearch (Magento 2.1.x and later), Redis, and RabbitMQ.
 
 Each service runs in its own secure container. Containers are managed together in the project. Some services are built-in, such as the following:
 
@@ -87,18 +86,17 @@ You can even have multiple applications running in the same project. Building a 
 {{site.data.var.ece}} uses:
 
 *	Operating system: Debian GNU/Linux 8 (jessie)
-*	Web server: {% glossarytooltip b14ef3d8-51fd-48fe-94df-ed069afb2cdc %}nginx{% endglossarytooltip %} 1.8
+*	Web server: [nginx](https://glossary.magento.com/nginx) 1.8
 
 You cannot upgrade the operating system and web server software to a new version, but you can configure versions for the following software:
 
 * [PHP]({{ page.baseurl }}/cloud/project/project-conf-files_magento-app.html)
 * [MySQL]({{ page.baseurl }}/cloud/project/project-conf-files_services-mysql.html)
-* [Solr]({{ site.baseurl }}/guides/v2.0/cloud/project/project-conf-files_services-solr.html)
 * [Redis]({{ page.baseurl }}/cloud/project/project-conf-files_services-redis.html)
 * [RabbitMQ]({{ page.baseurl }}/cloud/project/project-conf-files_services-rabbit.html)
 * [Elasticsearch]({{ page.baseurl }}/cloud/project/project-conf-files_services-elastic.html)
 
-In the Staging and Production environments, you use Fastly for CDN and caching. We recommend installing Fastly module 1.2.33 or later. See [Fastly in Cloud]({{ page.baseurl }}/cloud/basic-information/cloud-fastly.html).
+In the Staging and Production environments, you use Fastly for CDN and caching. When your environment is initially provisioned, we install the latest version of the Fastly CDN extension for Magento. You can upgrade the extension to get the latest bug fixes and improvements. See [Fastly CDN module for Magento 2]({{ page.baseurl }}/cloud/cdn/cloud-fastly.html#fastly-cdn-module-for-magento-2).
 
 You use the following files to configure the software versions that you want to use in your implementation.
 

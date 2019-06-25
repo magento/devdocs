@@ -5,7 +5,7 @@ functional_areas:
   - Cloud
   - Configuration
 ---
-The following _deploy_ variables control actions in the deploy phase and can inherit and override values from the [Global stage]({{ page.baseurl }}/cloud/env/variables-intro.html#global-variables). Also, you can override the [ADMIN variables]({{ page.baseurl }}/cloud/env/environment-vars_magento.html). Insert these variables in the `deploy` stage of the `.magento.env.yaml` file:
+The following _deploy_ variables control actions in the deploy phase and can inherit and override values from the [Global variables]({{ page.baseurl }}/cloud/env/variables-global.html). Also, you can override the [ADMIN variables]({{ page.baseurl }}/cloud/env/environment-vars_magento.html). Insert these variables in the `deploy` stage of the `.magento.env.yaml` file:
 
 ```yaml
 stage:
@@ -13,10 +13,7 @@ stage:
     DEPLOY_VARIABLE_NAME: value
 ```
 
-For more information about customizing the build and deploy process:
-
--  [Manage build and deploy actions]({{ site.baseurl }}/guides/v2.1/cloud/project/magento-env-yaml.html)
--  [Deployment process]({{ page.baseurl }}/cloud/reference/discover-deploy.html)
+{% include cloud/customize-build-deploy.md %}
 
 ### `CACHE_CONFIGURATION`
 
@@ -106,6 +103,27 @@ stage:
       _merge: true
 ```
 
+### `ENABLE_GOOGLE_ANALYTICS`
+
+-  **Default**—`false`
+-  **Version**—Magento 2.1.4 and later
+
+Enables and disables Google Analytics when deploying to Staging and Integration environments. By default, Google Analytics is true only for the Production environment. Set this value to `true` to enable Google Analytics in the Staging and Integration environments.
+
+-   **`true`**—Enables Google Analytics on Staging and Integration environments.
+-   **`false`**—Disables Google Analytics on Staging and Integration environments.
+
+Add the `ENABLE_GOOGLE_ANALYTICS` environment variable to the `deploy` stage in the `.magento.env.yaml` file:
+
+```yaml
+stage:
+  deploy:
+    ENABLE_GOOGLE_ANALYTICS: true 
+```
+
+{:.bs-callout .bs-callout-info}
+The {{ site.data.var.ece }} deploy process always enables Google Analytics on Production environments.
+
 ### `GENERATED_CODE_SYMLINK`
 
 -  **Default**—`true`
@@ -161,23 +179,23 @@ The following example merges new values to an existing configuration:
 ```yaml
 stage:
   deploy:
-        QUEUE_CONFIGURATION:
-          _merge: true
-          amqp:
-            host: changed1.host
-            port: 5672
-          amqp2:
-            host: changed2.host2
-            port: 12345
-          mq:
-            host: changedmq.host
-            port: 1234
+    QUEUE_CONFIGURATION:
+      _merge: true
+      amqp:
+        host: changed1.host
+        port: 5672
+      amqp2:
+        host: changed2.host2
+        port: 12345
+      mq:
+        host: changedmq.host
+        port: 1234
 ```
 
 ### `REDIS_USE_SLAVE_CONNECTION`
 
 -  **Default**—`false`
--  **Version**—Magento 2.1.4 and later
+-  **Version**—Magento 2.1.16 and later
 
 Magento can read multiple Redis instances asynchronously. Set to `true` to automatically use a _read-only_ connection to a Redis instance to receive read-only traffic on a non-master node. This improves performance through load balancing, because only one node needs to handle read-write traffic. Set to `false` to remove any existing read-only connection array from the `env.php` file.
 
@@ -189,11 +207,33 @@ stage:
 
 You must have a Redis service configured in the `.magento.app.yaml` file and in the `services.yaml` file.
 
+[ece-tools version 2002.0.18]({{ page.baseurl }}/cloud/release-notes/cloud-tools.html#v2002018) and later uses more fault-tolerant settings. If Magento 2 cannot read data from the Redis _slave_ instance, then it reads data from the Redis _master_ instance.
+
 The read-only connection is not available for use in the Integration environment or if you use the [`CACHE_CONFIGURATION` variable](#cache_configuration).
+
+### `RESOURCE_CONFIGURATION`
+
+-  **Default**—Not set
+-  **Version**—Magento 2.1.4 and later
+
+Maps a resource name to a database connection. This configuration corresponds to the `resource` section of the `env.php` file.
+
+{% include cloud/merge-configuration.md %}
+
+The following example merges new values to an existing configuration:
+
+```yaml
+stage:
+  deploy:
+    RESOURCE_CONFIGURATION: 
+      _merge: false 
+      default_setup:
+        connection: default
+```
 
 ### `SCD_COMPRESSION_LEVEL`
 
--  **Default**—`6`
+-  **Default**—`4`
 -  **Version**—Magento 2.1.4 and later
 
 Specifies which [gzip](https://www.gnu.org/software/gzip) compression level (`0` to `9`) to use when compressing static content; `0` disables compression.
@@ -201,10 +241,26 @@ Specifies which [gzip](https://www.gnu.org/software/gzip) compression level (`0`
 ```yaml
 stage:
   deploy:
-    SCD_COMPRESSION_LEVEL: 4
+    SCD_COMPRESSION_LEVEL: 5
 ```
 
-### `SCD_EXCLUDE_THEMES`
+### `SCD_COMPRESSION_TIMEOUT`
+
+-  **Default**—`600`
+-  **Version**—Magento 2.1.4 and later
+
+When the time it takes to compress the static assets exceeds the compression timeout limit, it interrupts the deployment process. Set the maximum execution time, in seconds, for the static content compression command.
+
+```yaml
+stage:
+  deploy:
+    SCD_COMPRESSION_TIMEOUT: 800
+```
+
+### `SCD_EXCLUDE_THEMES` 
+
+{: .bs-callout .bs-callout-warning }
+The `SCD_EXCLUDE_THEMES` environment variable is deprecated in [ece-tools version 2002.0.16]({{ page.baseurl }}/cloud/release-notes/cloud-tools.html#v2002016). Use the [SCD_MATRIX variable](#scd_matrix) to control theme configuration.
 
 -  **Default**—_Not set_
 -  **Version**—Magento 2.1.4 and later
@@ -224,13 +280,13 @@ stage:
 
 You can configure specific locales per theme as long as the theme is not excluded using the `SCD_EXCLUDE_THEMES` variable during deployment. This is ideal if you want to speed up the deployment process by reducing the amount of unnecessary theme files. For example, you can deploy the _magento/backend_ theme in English and a custom theme in other languages.
 
-The following example deploys the `magento/backend` theme with three locales:
+The following example deploys the `Magento/backend` theme with three locales:
 
 ```yaml
 stage:
   deploy:
     SCD_MATRIX:
-      "magento/backend":
+      "Magento/backend":
         language:
           - en_US
           - fr_FR
@@ -243,23 +299,23 @@ Also, you can choose to _not_ deploy a theme:
 stage:
   deploy:
     SCD_MATRIX:
-      "magento/backend": [ ]
+      "Magento/backend": [ ]
 ```
 
 ### `SCD_THREADS`
 
--  **Default**:
-    -  `1`—Starter environments and Pro Integration environments
-    -  `3`—Pro Staging and Production environments
--  **Version**—Available in all versions
+-  **Default**—Automatic
+-  **Version**—Magento 2.1.4 and later
 
-Sets the number of threads for static content deployment. Increasing the number of threads speeds up static content deployment; decreasing the number of threads slows it down.
+Sets the number of threads for static content deployment. The default value is set based on the detected CPU thread count and does not exceed a value of 4. Increasing the number of threads speeds up static content deployment; decreasing the number of threads slows it down. You can set the thread value, for example:
 
 ```yaml
 stage:
   deploy:
     SCD_THREADS: 2
 ```
+
+For Magento version 2.1.11 and earlier, the default value is 1.
 
 To further reduce deployment time, we recommend using [Configuration Management]({{ page.baseurl }}/cloud/live/sens-data-over.html) with the `scd-dump` command to move static deployment into the build phase.
 
@@ -338,7 +394,7 @@ stage:
 
 Set to `true` to skip static content deployment during the deploy phase.
 
-We recommend using this option, because running static content deployment during the deployment phase can greatly increase deployment times and downtime for your live site.
+We recommend setting this option to `true` because running static content deployment during the deploy phase can significantly increase deployment times and downtime for your live site.
 
 ```yaml
 stage:
@@ -351,7 +407,11 @@ stage:
 -  **Default**—`true`
 -  **Version**—Magento 2.1.4 and later
 
-Generates symlinks for static content. This setting is vital in the Pro Production environment for the three-node cluster. When this variable is set to `false`, it must copy every file during the deployment, which increases deployment time. Setting `SCD_ON_DEMAND` to `true` disables this variable.
+Generates symlinks for static content. This setting is vital in the Pro Production environment for the three-node cluster. When this variable is set to `false`, it must copy every file during the deployment, which increases deployment time.
+
+If you generate static content during the build phase, it creates a symlink to the content folder.
+If you generate static content during the deploy phase, it writes directly to the content folder.
+Generating static content on demand disables this variable.
 
 ```yaml
 stage:

@@ -17,7 +17,7 @@ Before you use this command, you must [install the Magento software]({{ page.bas
 
 ## Upgrade the Magento database schema and data {#instgde-cli-db-upgr}
 
-Anytime you perform an action that causes the Magento {% glossarytooltip 66b924b4-8097-4aea-93d9-05a81e6cc00c %}database schema{% endglossarytooltip %} or data to change, you must update them by running the command discussed in this section. A partial list of reasons follows:
+Anytime you perform an action that causes the Magento [database schema](https://glossary.magento.com/database-schema) or data to change, you must update them by running the command discussed in this section. A partial list of reasons follows:
 
 *	You upgraded the Magento software using the command line
 *	You installed or updated a component using the command line
@@ -28,8 +28,16 @@ Note the following:
 *	If you used the Web Setup Wizard to do any of the preceding, you don't have to use the command discussed in this topic.
 *	A Magento *component* can be a module, theme, or language pack; it doesn't matter whether the component comes from the Magento Marketplace or not
 
-Command usage:
+1. Start the upgrade:
 
-	magento setup:upgrade [--keep-generated]
+	 ```bash
+   magento setup:upgrade [--keep-generated]
+   ```
 
-where `--keep-generated` is an optional argument that does not update [static view files]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html). This optional argument is for use *only* in limited circumstances by experienced system integrators. It should be used *only* in [production mode]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html#production-mode). It should *not* be used in [developer mode]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html#developer-mode).
+   where `--keep-generated` is an optional argument that does not update [static view files]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html). This optional argument is for use *only* in limited circumstances by experienced system integrators. It should be used *only* in [production mode]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html#production-mode). It should *not* be used in [developer mode]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html#developer-mode).
+
+2. Clean the cache:
+
+   ```bash
+   bin/magento cache:clean
+   ```

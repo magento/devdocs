@@ -28,14 +28,14 @@ This tutorial creates an order by a logged-in user. Magento provides additional 
 
 ### Create a customer account
 
-Creating a customer account requires {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}admin{% endglossarytooltip %} permissions.
+Creating a customer account requires [admin](https://glossary.magento.com/admin) permissions.
 
 {:.bs-callout .bs-callout-info}
 This example shows a simplified way of creating a customer account. Typically, you would not define a customer password using plain text. Instead, you would specify the payload without the `password` parameter. By default if the call is successful, Magento sends a "Welcome" email to the customer that includes a request to set the password. You could also initiate a password reset email by calling `PUT /V1/customers/password`.
 
 **Endpoint**
 
-`POST http://<host>/rest/default/V1/customers`
+`POST <host>/rest/<store_code>/V1/customers`
 
 **Headers**
 
@@ -48,7 +48,7 @@ This example shows a simplified way of creating a customer account. Typically, y
 It is recommended that you substitute the value of the `email` parameter with a real email address so that you receive all notifications.
 
 {% collapsible Show code sample %}
-``` json
+```json
 {
 	"customer": {
 		"email": "jdoe@example.com",
@@ -81,7 +81,7 @@ It is recommended that you substitute the value of the `email` parameter with a 
 Magento assigned this user `id` value of `2`.
 
 {% collapsible Show code sample %}
-``` json
+```json
 {
   "id": 2,
   "group_id": 1,
@@ -127,14 +127,14 @@ You can log in to the Luma store using the username `jdoe@example.com` and passw
 
 ### Get the customer's access token {#get-token}
 
-To get a customer's access token, you must specify the customer's username and password in the payload. You do not need to specify an admin {% glossarytooltip 34ecb0ab-b8a3-42d9-a728-0b893e8c0417 %}authorization{% endglossarytooltip %} token.
+To get a customer's access token, you must specify the customer's username and password in the payload. You do not need to specify an admin [authorization](https://glossary.magento.com/authorization) token.
 
-By default, a customer token is valid for 1 hour. To change this value, log in to Admin and go to **Configuration** > **Services** > **OAuth** > **Access Token Expiration**.
+By default, a customer token is valid for 1 hour. To change this value, log in to Admin and go to **Stores** > Settings > **Configuration** > **Services** > **OAuth** > **Access Token Expiration**.
 
 
 **Endpoint**
 
-`POST http://<host>/rest/default/V1/integration/customer/token`
+`POST <host>/rest/<store_code>/V1/integration/customer/token`
 
 **Headers**
 
@@ -142,7 +142,7 @@ By default, a customer token is valid for 1 hour. To change this value, log in t
 
 **Payload**
 
-``` json
+```json
 {
 "username": "jdoe@example.com",
 "password": "Password1"
@@ -157,6 +157,6 @@ Magento returns the customer's access token. This token must be specified in the
 
 ### Verify this step {#verify-step}
 
-1. Log in to the Luma {% glossarytooltip a3c8f20f-b067-414e-9781-06378c193155 %}website{% endglossarytooltip %} using the email `jdoe@example.com` and password `Password1`.
+1. Log in to the Luma [website](https://glossary.magento.com/website) using the email `jdoe@example.com` and password `Password1`.
 2. Click the account name (Jane) in the upper right corner and select **My Account**.
 3. Click **Address Book** to view the default billing and shipping addresses.

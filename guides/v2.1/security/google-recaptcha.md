@@ -17,17 +17,27 @@ Google reCAPTCHA reduces potential user error when entering a Captcha code and e
 
 ## Install Module
 
+{:.bs-callout .bs-callout-info}
+The Google reCAPTCHA extension is bundled and installed with {{site.data.var.ce}} and {{site.data.var.ee}} 2.1.18 and 2.2.9 and later. 
+
 Install the extension using the following Composer command:
 
-``` bash
-composer require msp/recaptcha:2.0.0
+```bash
+composer require msp/recaptcha
 ```
 
 To complete installation in an existing Magento instance, run the following commands to enable the module:
 
-``` bash
-php bin/magento module:enable --all
-php bin/magento setup:upgrade
+```bash
+bin/magento module:enable MSP_ReCaptcha
+```
+
+```bash
+bin/magento setup:upgrade
+```
+
+```bash
+bin/magento cache:clean
 ```
 
 ## Configure reCAPTCHA
@@ -38,6 +48,6 @@ See the [Magento Admin User Guide](https://docs.magento.com/m2/ce/user_guide/sto
 
 The extension supports a command line option for disabling reCAPTCHA. Use this command when you cannot access the Magento Admin UI.
 
-``` bash
-php bin/magento msp:security:recaptcha:disable
+```bash
+bin/magento msp:security:recaptcha:disable
 ```

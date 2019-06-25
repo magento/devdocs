@@ -17,10 +17,11 @@ If you must install both Apache and PHP, [install Apache]({{ page.baseurl }}/ins
 
 ## PHP versions supported {#php-support}
 
-{% include install/php_2.1.md %}
+<!--{% assign supported_php_versions = site.data.codebase.v2_1.open-source.composer_lock.platform.php | split: "|" %}-->
+{% include install/php-versions-template.md %}
 
 {:.bs-callout .bs-callout-info}
-Magento 2.1.x does not support PHP 5.5.
+For versions 2.1.16 and later, Magento supports PHP 7.1 for the 2.1.x release line. The other supported PHP versions remain valid and unchanged.
 
 ## Help if you're just starting out {#php-ubuntu-help-beginner}
 

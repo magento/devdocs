@@ -9,10 +9,10 @@ functional_areas:
 
 For a particular page, its layout is defined by two major layout components: *page layout* file and *page configuration* file. 
 
-A page layout file defines the page wireframe, for example, one-column layout. Technically page layout is an .xml file defining the structure inside the `<body>` section of the HTML page markup. Page layouts feature only [containers]({{ page.baseurl }}/frontend-dev-guide/layouts/layout-overview.html#layout_overview_blocks). 
+A page layout file defines the page wireframe, for example, one-column layout. Technically page layout is an .xml file defining the structure inside the `<body>` section of the HTML page markup. Page layouts feature only [containers]({{ page.baseurl }}/frontend-dev-guide/layouts/layout-overview.html). 
 All page layouts used for page rendering should be declared in the page layout declaration file.
 
-Page configuration is also an .xml file. It defines the detailed structure (page header, footer, etc.), contents and page meta information, including the page layout used. Page configuration features both main elements, [blocks of particular classes]({{ page.baseurl }}/frontend-dev-guide/layouts/layout-overview.html#layout_overview_blocks) and containers.
+Page configuration is also an .xml file. It defines the detailed structure (page header, footer, etc.), contents and page meta information, including the page layout used. Page configuration features both main elements, [blocks of particular classes]({{ page.baseurl }}/frontend-dev-guide/layouts/layout-overview.html) and containers.
 
 We also distinguish the third type of layout files, *generic layouts*. They are .xml files which define the contents and detailed structure inside the `<body>` section of the HTML page markup. These files are used for pages returned by AJAX requests, emails, HTML snippets and so on.
 
@@ -85,6 +85,31 @@ Sample page layout declaration file: `<Magento_Theme_module_dir>/view/frontend/l
     </layout>
 </page_layouts>
 ```
+
+Use the `layout` attribute in the `page` section to define a layout type for the page. The following example shows how to use the `3 columns` page layout type for the [Wish List Sharing]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Wishlist/view/frontend/layout/wishlist_index_share.xml#L8) page:
+
+```xml
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="3columns" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <update handle="customer_account"/>
+    <body>
+        <referenceContainer name="content">
+            <block class="Magento\Wishlist\Block\Customer\Sharing" name="wishlist.sharing" template="Magento_Wishlist::sharing.phtml" cacheable="false"/>
+        </referenceContainer>
+    </body>
+</page>
+```
+
+![Wish List Sharing. 3 columns layout page type]({{ page.baseurl }}/frontend-dev-guide/images/wish-list-sharing.png)
+
+{:.bs-callout .bs-callout-info}
+By default, Magento provides 5 page layout types for the frontend (`empty`, `1column`, `2columns-left`, `2columns-right`, and `3columns`) and 3 page layout types for the backend (`admin-empty`, `admin-1column`, and `admin-2columns-left`).
 
 ## Page configuration {#layout-types-conf}
 
@@ -428,7 +453,7 @@ none
       <td colspan="1">
 <ul>
 <li><code>name="root"</code></li>
-<li>For complete list of attributes, see <a href="{{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html#container">Layout instructions</a></li>
+<li>For complete list of attributes, see <a href="{{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_cont">Layout instructions</a></li>
 </ul>
 </td>
       <td colspan="1">

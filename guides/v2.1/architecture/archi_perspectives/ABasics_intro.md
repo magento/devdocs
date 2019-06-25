@@ -23,4 +23,4 @@ The following discussion focuses on how these topics apply directly to Magento:
 
 [Stack basics]({{page.baseurl}}/architecture/tech-stack.html)
 
-[Versioning]({{page.baseurl}}/architecture/versioning.html)
+[Versioning]({{page.baseurl}}/extension-dev-guide/versioning/)
