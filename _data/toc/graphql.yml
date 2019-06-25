@@ -49,7 +49,7 @@ pages:
       children:
             - label: CMS endpoint
               url: /graphql/reference/cms.html
-              
+
             - label: CustomAttributeMetadata endpoint
               url: /graphql/reference/custom-attribute-metadata.html
 
@@ -143,6 +143,10 @@ pages:
 
             - label: Wishlist endpoint
               url: /graphql/reference/wishlist.html
-              
+
+    - label: Tutorial
+      class: tutorial
+      url: /graphql/tutorials/checkout/index.html
+
     - label: Release Notes
       url: /graphql/release-notes.html
