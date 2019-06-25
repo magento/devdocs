@@ -47,7 +47,7 @@ In addition to security enhancements, this release contains the following functi
 
 <!--- ENGCOM-1172 -->* Magento no longer displays HTML tags in product meta descriptions. *Fix submitted by [Victor Seager](https://github.com/vseager) in pull request 14436*.
 
-<!--- ENGCOM-820 -->* The layout of `catalog_rule_promo_catalog_edit.xml` has been changed to adjust sidebar settings. Specifically, he tlayout attribute value has been changed from  `admin-2columns-left` to `admin-1column`. *Fix submitted by [Karla Saaremäe](https://github.com/Karlasa) in pull request 14022*.
+<!--- ENGCOM-820 -->* The layout of `catalog_rule_promo_catalog_edit.xml` has been changed to adjust sidebar settings. Specifically, the layout attribute value has been changed from  `admin-2columns-left` to `admin-1column`. *Fix submitted by [Karla Saaremäe](https://github.com/Karlasa) in pull request 14022*.
 
 <!--- MAGETWO-87573 -->* The Catalog Price rule's `contains` condition now works as expected when the `contains` condition allows multiple options. *Fix submitted by [Pieter Hoste](https://github.com/hostep) in pull request 13546*. [GitHub-7723](https://github.com/magento/magento2/issues/7723)
 
