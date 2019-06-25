@@ -28,7 +28,6 @@ The URL to the loader image. This image is displayed when the widget is active; 
 
 **Default value**: No image by default.
 
-
 ### `template` {#l_template}
 HTML wrapper for the output, or a DOM element selector. 
 
@@ -69,7 +68,7 @@ $("#element").loader("show");
 
 Hide the loader.
 
-Invoke the show method:
+Invoke the hide method:
 
 ```javascript
 $("#element").loader("hide");
@@ -84,8 +83,20 @@ Loader is subscribed to the following events:
 ### `processStart` {#l_processStart}
 Display the loader. Can be triggered on any page element.
 
+Start show loading:
+
+```javascript
+$("body").trigger('processStart');
+```
+
 ### `processStop` {#l_processStop}
 Hide the loader. Can be triggered on any page element.
+
+Stop show loading:
+
+```javascript
+$("body").trigger('processStop');
+```
 
 [lib/web/mage/loader.js]: {{ site.mage2bloburl }}/{{ page.guide_version }}/lib/web/mage/loader.js
 [JavaScript initialization]: {{page.baseurl}}/javascript-dev-guide/javascript/js_init.html
