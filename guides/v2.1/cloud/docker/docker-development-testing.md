@@ -86,7 +86,7 @@ PostDeployCest: Test post deploy | {"ADMIN_EMAIL":"admin@example.com"}
 
 ### Run all tests
 
-There is a different script or set of scripts to run all available tests for each version of PHP.
+There is a different script, or set of scripts, to run all available tests for each version of PHP.
 
 -  **PHP 7.0**
 

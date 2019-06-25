@@ -39,7 +39,18 @@ Before you run functional tests, you must prepare your environment with the foll
 
 ## Run tests
 
-By default, tests produce a short output. If you need a more detailed output, you can edit the `codeception.dist.yml` file and set the `printOutput:` property to `true`. !!! need location and example of `codeception.dist.yml`
+The `codeception.dist.yml` file contains the global testing configuration and is located in the `{{site.data.var.ct}}` root directory. See it in the [`{{site.data.var.ct}}` repository](https://github.com/magento/ece-tools/blob/develop/codeception.dist.yml).
+
+By default, the functional tests produce a short output. If you need a more detailed output, you can edit the `codeception.dist.yml` file and set the `printOutput:` property to `true`. 
+
+```yaml
+modules:
+  config:
+    Magento\MagentoCloud\Test\Functional\Codeception\Docker:
+      ...
+      printOutput: true
+```
+{:.no-copy}
 
 ### Run a specific test
 
@@ -49,7 +60,7 @@ Use the following format to run a specific functional test:
 ./vendor/bin/codecept run Acceptance <TestName>Cest
 ```
 
-For example, the following runs a test on the post deploy...explain more here...
+For example, the following test verifies that the post-deploy task runs successfully.
 
 ```bash
 ./vendor/bin/codecept run Acceptance PostDeployCest
@@ -58,13 +69,24 @@ For example, the following runs a test on the post deploy...explain more here...
 Sample response:
 
 ```terminal
-Need sample output here.
+Codeception PHP Testing Framework v2.5.6
+Powered by PHPUnit 6.5.14 by Sebastian Bergmann and contributors.
+Running with seed:
+Acceptance Tests (1) -----------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
+PostDeployCest: Test post deploy | {"ADMIN_EMAIL":"admin@example.com"}
+ [Magento\MagentoCloud\Test\Functional\Robo\Tasks\GenerateDockerCompose] Running ./bin/ece-tools docker:build 
+ --mode=functional --php=7.2
+...
+...
+✔ PostDeployCest: Test post deploy | {"ADMIN_EMAIL":"admin@example.com"} (210.41s)
 ```
 {: .no-copy}
 
 ### Run all tests
 
-The following lists the scripts to run all tests for each version of PHP.
+There is a different script, or set of scripts, to run all available tests for each version of PHP.
 
 -  **PHP 7.0**
 
