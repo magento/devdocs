@@ -7,6 +7,9 @@ title: Magento Open Source 2.3.2 Release Notes
 
 We are pleased to present Magento Open Source 2.3.2.  This release includes over 200 functional fixes to the core product, over 350 pull requests contributed by the community, and  over 75 security enhancements. It includes significant contributions from our community members. 
 
+## Other release information
+
+Although code for these features is bundled with quarterly releases of the Magento core code, several of these projects (for example, Page Builder, Inventory Management, and Progressive Web Applications (PWA) Studio) are also released independently. Bug fixes for these projects are documented in separate, project-specific release information which is available in the documentation for each project.
 
 ## Highlights
 
@@ -58,6 +61,7 @@ Magento now performs the following tasks as **asynchronous background processes*
 
 * Data export. Previously, connection timeouts occurred during export of large data sets (for example, the export of 200,000 products). See [Export](https://docs.magento.com/m2/b2b/user_guide/system/data-export.html) for more information. 
  <!--- MC-5953-->
+
 ### Inventory Management enhancements
 
 * **New commands** allow merchants to check for reservation inconsistencies and resolve any that occur. See [Inventory CLI reference](https://devdocs.magento.com/guides/v2.3/inventory/inventory-cli-reference.html).
@@ -77,7 +81,7 @@ Magento now performs the following tasks as **asynchronous background processes*
 
 ### GraphQL
 
-GraphQL performance improvements include these enhancements:
+Graph enhancements include:
 
 * **GraphQL caching**. GraphQL can now cache the `category`, `cmsBlocks`, `cmsPage`, `products`, and `urlResolver` queries, which improves response times.  To enable this feature, send these queries using HTTP GET. You can send all other queries with HTTP GET, but they are not cached.
 

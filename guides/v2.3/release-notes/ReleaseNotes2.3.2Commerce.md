@@ -79,7 +79,7 @@ Magento now performs the following tasks as **asynchronous background processes*
 
 ### GraphQL
 
-GraphQL performance improvements include these enhancements:
+GraphQL enhancements include:
 
 * **GraphQL caching**. GraphQL can now cache the `category`, `cmsBlocks`, `cmsPage`, `products`, and `urlResolver` queries, which improves response times.  To enable this feature, send these queries using HTTP GET. You can send all other queries with HTTP GET, but they are not cached.
 
