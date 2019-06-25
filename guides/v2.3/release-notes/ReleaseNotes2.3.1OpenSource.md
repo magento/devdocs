@@ -62,7 +62,7 @@ The Admin order creation workflow has been refactored to eliminate delays when e
 
 #### Inventory Management 1.1.0 (Community-developed feature!)
 
-The Multi-Source Inventory (MSI) community project has added multiple new features to this release of Inventory Management. See [Inventory Management Release Notes](https://devdocs.magento.com/guides/v2.3/inventory/release-notes.html) for information about specific fixes and acknowledgements to community contributors.
+The Magento Inventory (was MSI) community project has added multiple new features to this release of Inventory Management. See [Inventory Management Release Notes](https://devdocs.magento.com/guides/v2.3/inventory/release-notes.html) for information about specific fixes and acknowledgements to community contributors.
 
 * **Support for Elasticsearch and Inventory Management**. All site searches now return correct products and quantities when Elasticsearch is used as the search engine. (As of this release, only default option from 2.3+)  Searches return results from stock assigned to the website. Advanced features are supported, including filtering search results. Community-developed feature! 
 
