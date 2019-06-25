@@ -108,6 +108,9 @@ pages:
         - label: Connect to the database
           url: /cloud/docker/docker-database.html
 
+        - label: Functional testing in Docker
+          url: /cloud/docker/docker-development-testing.html
+
         - label: Docker quick reference
           url: /cloud/docker/docker-quick-reference.html
 

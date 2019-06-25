@@ -37,6 +37,8 @@ The release notes include:
 
 -   {:.new}<!-- MAGECLOUD-3451 -->Added a new command to the `{{site.data.var.ct}}` package that displays environment services, routes, or variables. See [Services, routes, and variable]({{page.baseurl}}/cloud/reference/ece-tools-reference.html#services-routes-and-variables). [Feature submitted by Vladimir Kerkhoff](https://github.com/magento/ece-tools/pull/486).
 
+-   {:.new}<!-- MAGECLOUD-3129/3684 -->You can now perform functional testing using the `{{site.data.var.ct}}` package in the Docker environment. See [Functional testing in Docker]({{page.baseurl}}/cloud/docker/docker-development-testing.html).
+
 ## v2002.0.19
 
 -   {:.fix}<!-- MAGECLOUD-3668 -->Fixed an issue that overwrites the `env.php` file during a deploy, resulting in a loss of custom configurations.  This update ensures that {{site.data.var.ece}} updates the `env.php` file with every deployment, while preserving custom configurations.
