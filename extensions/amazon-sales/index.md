@@ -22,7 +22,7 @@ Amazon Sales Channel install is a `.zip` file available from the Magento Marketp
 1. For the component name and version, click **Technical Details**.
 1. Click **Download**.
 1. Export the contents to your Magento root.
-1. Follow all instructions for Extension [Installation]({{site.baseurl}}/extensions/install/).
+1. Follow all instructions for Extension [Installation]({{ site.baseurl }}/extensions/install/).
 1. Update the services connector entry in your `composer.json` file
     - Add the extension’s name and version to your composer.json file:
     - Navigate to your Magento project directory and update your composer.json file.
