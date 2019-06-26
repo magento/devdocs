@@ -61,12 +61,12 @@ To develop a module, you must:
 
    ```xml
    <?xml version="1.0"?>
-   <!--
-      /**
-      * Copyright © 2015 Magento. All rights reserved.
-      * See COPYING.txt for license details.
-      */
-      -->
+    <!--
+    /**
+     * Copyright © Magento, Inc. All rights reserved.
+     * See COPYING.txt for license details.
+     */
+    -->
       <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
           <module name="Vendor1_Module1" setup_version="2.0.0">
                <sequence>
@@ -109,11 +109,10 @@ To develop a module, you must:
 4. **Create a `registration.php` file** The `registration.php` registers the module with the Magento system. It must be placed in the module's root directory.
 
       ```php
-      <?php
         /**
-        * Copyright © 2015 Magento. All rights reserved.
-        * See COPYING.txt for license details.
-        */
+         * Copyright © Magento, Inc. All rights reserved.
+         * See COPYING.txt for license details.
+         */
 
         \Magento\Framework\Component\ComponentRegistrar::register(
         \Magento\Framework\Component\ComponentRegistrar::MODULE,
