@@ -43,9 +43,9 @@ You have options for using the translated dictionary:
 
 Command options:
 
-    ```bash
+```bash
     bin/magento i18n:collect-phrases [-o|--output="<csv file path and name>"] [-m|--magento] <path to directory to translate>
-    ```
+```
 
 The following table explains this command's parameters and values:
 
