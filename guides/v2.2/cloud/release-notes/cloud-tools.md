@@ -25,6 +25,8 @@ The release notes include:
     
     -   {:.fix}<!-- MAGECLOUD-3582 -->Corrected the default path for Magento root when using the Docker environment. Previously, the Magento root was accessible in the `var/www/magento` directory. Now, the Magento root is in the `/app` directory, as expected.
 
+    -   {:.fix}<!-- MAGECLOUD-3832 -->Updated the Sodium library from version 1.0.11 to version 1.0.18, and updated the Sodium PHP extension.
+
 -   {:.new}**Environment variable updates**—
 
     -   {:.new}<!-- MAGECLOUD-2901 -->Added support for database table prefixes using the [DATABASE_CONFIGURATION environment variable]({{page.baseurl}}/cloud/env/variables-deploy.html#database_configuration).
