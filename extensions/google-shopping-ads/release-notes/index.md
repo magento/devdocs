@@ -21,23 +21,23 @@ The release notes include:
 
 Google Shopping ads Channel 2.0.0 is generally available for versions 2.2.4+ and 2.3.x of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}.
 
+- {:.new} **Magento Log Exceptions**: <!--CHAN-3439-->Implemented **Enable Services Logs** feature to help in troubleshooting. See the [Channels](https://docs.magento.com/m2/ce/user_guide/configuration/services/channels.html) topic in the Configuration Reference.
+
 - {:.fix} **Resolved Configurable Product Issues**: Configurable product (parent/child) handling has been improved.
-    - <!--3372-->Corrected an issue preventing child products from inheriting the parent description and causing Google to disapprove products for missing descriptions
-    - <!--3297, 3341, 3410-->Corrected and improved the gtag (pageview) trigger when selecting options for a child product and when viewing a child product in the cart
+    - <!--CHAN-3372-->Corrected an issue preventing child products from inheriting the parent description and causing Google to disapprove products for missing descriptions.
+    - <!--CHAN-3297, CHAN-3341, CHAN-3410-->Corrected and improved the gtag (pageview) trigger when selecting options for a child product and when viewing a child product in the cart.
 
 - {:.fix} **Index Management Improvements**: Indexing processes between Magento and Google have been updated for increased efficiency and performance.
-    <!--3004, 3298, 3343, 3480, 3481, 3465, 3472-->
-    - Consolidated and rebuilt indexer for communicating with Google
-    - Set indexer to run on schedule by default
-    - Adjusted indexer logic to only send product data changes, instead of all data for a changed product
+    <!--CHAN-3004, CHAN-3298, CHAN-3343, CHAN-3480, CHAN-3481, CHAN-3465, CHAN-3472-->
+    - Consolidated and rebuilt indexer for communicating with Google.
+    - Set indexer to run on schedule by default.
+    - Adjusted indexer logic to only send product data changes, instead of all data for a changed product.
 
-- {:.fix} **Security Updates**: <!--3380-->Updated security whitelist and implemented Content Security Policy (CSP) when communicating with Google.
+- {:.fix} **Security Updates**: <!--CHAN-3380-->Updated security whitelist and implemented Content Security Policy (CSP) when communicating with Google.
 
-- {:.fix} **Update to Product Linking**: <!--3463-->Updated communication between Google and Magento to ensure use of the same product link to prevent product disapprovals in the Google Merchant Account (GMC).
+- {:.fix} **Update to Product Linking**: <!--CHAN-3463-->Updated communication between Google and Magento to ensure use of the same product link to prevent product disapprovals in the Google Merchant Account (GMC).
 
-- {:.fix} **Product Attribute Updates**: <!--3485-->Updated attribute management to allow the deletion of the Google Merchant Center Category attribute, which can be created by the Google application.
-
-- {:.new} **Magento Log Exceptions**: <!--3439-->Implemented **Enable Services Logs** feature to help in troubleshooting. See the [Channels](https://docs.magento.com/m2/ce/user_guide/configuration/services/channels.html) topic in the Configuration Reference.
+- {:.fix} **Product Attribute Updates**: <!--CHAN-3485-->Updated attribute management to allow the deletion of the Google Merchant Center Category attribute, which can be created by the Google application.
 
 
 ### v1.1.2
