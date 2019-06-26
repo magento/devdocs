@@ -27,6 +27,8 @@ The release notes include:
 
     -   {:.fix}<!-- MAGECLOUD-3832 -->Updated the Sodium library from version 1.0.11 to version 1.0.18, and updated the Sodium PHP extension.
 
+    -   {:.fix}<!-- MAGECLOUD-3446 -->Added the `analysis-icu` and the `analysis-phonetic` Elasticsearch plugins to all Docker images.
+
 -   {:.new}**Environment variable updates**—
 
     -   {:.new}<!-- MAGECLOUD-2901 -->Added support for database table prefixes using the [DATABASE_CONFIGURATION environment variable]({{page.baseurl}}/cloud/env/variables-deploy.html#database_configuration).
@@ -50,6 +52,8 @@ The release notes include:
 -   {:.fix}<!-- MAGECLOUD-3665 -->Fixed an issue that caused a critical error when attempting to install Magento 2.2.6 or earlier with `{{site.data.var.ct}}` develop after shell refactoring.
 
 -   {:.fix}<!-- MAGECLOUD-3704 -->Fixed an issue that caused Magento 2.1.x and 2.2.x installations to fail with a warning about using a deprecated version of Carbon.
+
+-   {:.fix}<!-- MAGECLOUD-3277 -->Decreased the `cloud.log` log level for shell output from `info` to `debug`.
 
 ## v2002.0.19
 
