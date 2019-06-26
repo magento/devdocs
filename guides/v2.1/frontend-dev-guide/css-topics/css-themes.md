@@ -102,7 +102,7 @@ To include an external CSS file, add `<css src="URL to External Source" src_type
 </page>
 ```
 
-The `<link/>` tag can be use to insert `CSS` file in layout XML.
+The `<link/>` tag can be used to insert `CSS` file in layout XML.
 
 ```xml
 <link src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css" src_type="url" rel="stylesheet" type="text/css"/>
