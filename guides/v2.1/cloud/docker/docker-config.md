@@ -285,9 +285,9 @@ You can use the built-in extension mechanism of Docker to [specify multiple comp
     ```yaml
     version: '2'
     services:
-        deploy:
-          environment:
-            - ENABLE_SENDMAIL=true
+      deploy:
+        environment:
+          - ENABLE_SENDMAIL=true
     ```
 
 1.  Pass both configuration files while executing your commands. For example:

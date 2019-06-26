@@ -37,18 +37,18 @@ runtime:
 
     ```yaml
     generic:
-        image: alpine
-        environment:
-            - PHP_MEMORY_LIMIT=2048M
-            - DEBUG=false
-            - ENABLE_SENDMAIL=false
-            - UPLOAD_MAX_FILESIZE=64M
-            - MAGENTO_ROOT=/app
-            - PHP_ENABLE_XDEBUG=false
-            - PHP_IDE_CONFIG=serverName=magento_cloud_docker
-            - XDEBUG_CONFIG=remote_host=host.docker.internal
-        env_file:
-            - ./.docker/config.env
+      image: alpine
+      environment:
+        - PHP_MEMORY_LIMIT=2048M
+        - DEBUG=false
+        - ENABLE_SENDMAIL=false
+        - UPLOAD_MAX_FILESIZE=64M
+        - MAGENTO_ROOT=/app
+        - PHP_ENABLE_XDEBUG=false
+        - PHP_IDE_CONFIG=serverName=magento_cloud_docker
+        - XDEBUG_CONFIG=remote_host=host.docker.internal
+      env_file:
+        - ./.docker/config.env
     ```
     {:.no-copy}
 
