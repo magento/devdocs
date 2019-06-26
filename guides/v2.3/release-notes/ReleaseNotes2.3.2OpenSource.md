@@ -3,13 +3,19 @@ group: release-notes
 title: Magento Open Source 2.3.2 Release Notes
 ---
 
-*Release notes published June 25, 2019.*
+*Patch code and release notes published on June 25, 2019. Release notes last updated on June 26, 2019.*
 
 We are pleased to present Magento Open Source 2.3.2.  This release includes over 200 functional fixes to the core product, over 350 pull requests contributed by the community, and  over 75 security enhancements. It includes significant contributions from our community members. 
 
 ## Other release information
 
 Although code for these features is bundled with quarterly releases of the Magento core code, several of these projects (for example, Page Builder, Inventory Management, and Progressive Web Applications (PWA) Studio) are also released independently. Bug fixes for these projects are documented in separate, project-specific release information which is available in the documentation for each project.
+ 
+
+## Apply the Scope parameter for Async/Bulk API patch to address an issue with the Async/Bulk REST API
+
+In certain versions of Magento Open Source and Magento Commerce, the Asynchronous and Bulk REST endpoints support the default store view scope only. After this patch is applied to deployments running those versions of Magento, the current Magento message queue implementation 
+will factor in the store that executes queue operations. See [Patch for Magento Framework Message Queue and Store Scopes](https://community.magento.com/t5/Magento-DevBlog/Patch-for-Magento-Framework-Message-Queue-and-Store-Scopes/ba-p/135209) for a full discussion of this scope-related issue and patch contents. See [Applying patches](https://devdocs.magento.com/guides/v2.3/comp-mgr/patching.html) for specific instructions on downloading and applying Magento patches. Navigate to the [Magento Security Center](https://magento.com/security/patches), and select the patch associated with the version of Magento you are running. 
 
 ## Highlights
 
@@ -61,48 +67,6 @@ Magento now performs the following tasks as **asynchronous background processes*
 
 * Data export. Previously, connection timeouts occurred during export of large data sets (for example, the export of 200,000 products). See [Export](https://docs.magento.com/m2/b2b/user_guide/system/data-export.html) for more information. 
  <!--- MC-5953-->
-
-### Inventory Management enhancements
-
-* **New commands** allow merchants to check for reservation inconsistencies and resolve any that occur. See [Inventory CLI reference](https://devdocs.magento.com/guides/v2.3/inventory/inventory-cli-reference.html).
-
-* Improved user interface for assigning sources to products. This redesigned interface includes:
-
-  * Support for decimal order quantity
-  * New test scenarios created to cover Credit Memo use cases
-  * New InventoryGraphQl module provides attributes that return correct information about product quantities
-  * Single product save (using asynchronous synchronization with legacy catalog inventory)
-  * Multiple product save
-  * Bulk inventory transfer
-
-* **New endpoint** for Bulk Partial Stock Transfer to bulk transfer a custom product quantity between sources. See [Inventory Bulk Actions](https://devdocs.magento.com/guides/v2.3/rest/modules/inventory/bulk-inventory.html).
-
-* Fixes to multiple  bugs. See [Inventory Management release notes](https://devdocs.magento.com/guides/v2.3/inventory/release-notes.html).
-
-### GraphQL
-
-Graph enhancements include:
-
-
-* **Improvements to GraphQL coverage**.  Improved coverage for cart and checkout operations include mutations that provide support for the following actions:
-
-  * Support for simple and virtual products
-  * Add, update, and delete cart items
-  * Set shipping addresses (with address book support)
-  * Set the billing address (with address book support)
-  * Set shipping methods
-  * Set the payment method (offline methods only)
-  * Place an order
-
-* **GraphQL caching**. GraphQL can now cache the `category`, `cmsBlocks`, `cmsPage`, `products`, and `urlResolver` queries, which improves response times.  To enable this feature, send these queries using HTTP GET. You can send all other queries with HTTP GET, but they are not cached.
-
-* **GraphQL performance test scenario coverage**. We have added PWA GraphQL test scenarios for critical checkout and catalog browsing to the performance builds. GraphQL community developers can use the new scenarios to measure storefront performance. <!--- MC-15826, 15922-->
-
-See [Release notes](https://devdocs.magento.com/guides/v2.3/graphql/release-notes.html) for a more detailed discussion of recent GraphQL bug fixes.
-
-### Progressive Web Apps (PWA)
-
-* **Improved modular component library**. PWA Studio continues to build out the concept for functional and data components through the Peregrine library. Components can now be reused and scaled for frontend needs. Magento has planned a phased rollout for Peregrine functional and data components, starting with the Search component which is launching with this release.
 
 ### Vendor-developed extension enhancements
 
