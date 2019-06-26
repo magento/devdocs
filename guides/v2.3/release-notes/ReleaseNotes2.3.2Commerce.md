@@ -79,9 +79,8 @@ Magento now performs the following tasks as **asynchronous background processes*
 
 ### GraphQL
 
-GraphQL performance improvements include these enhancements:
+GraphQL enhancements include:
 
-* **GraphQL caching**. GraphQL can now cache the `category`, `cmsBlocks`, `cmsPage`, `products`, and `urlResolver` queries, which improves response times.  To enable this feature, send these queries using HTTP GET. You can send all other queries with HTTP GET, but they are not cached.
 
 * **Improvements to GraphQL coverage**.  Improved coverage for cart and checkout operations include mutations that provide support for the following actions:
 
@@ -92,6 +91,8 @@ GraphQL performance improvements include these enhancements:
   * Set shipping methods
   * Set the payment method (offline methods only)
   * Place an order
+
+* **GraphQL caching**. GraphQL can now cache the `category`, `cmsBlocks`, `cmsPage`, `products`, and `urlResolver` queries, which improves response times.  To enable this feature, send these queries using HTTP GET. You can send all other queries with HTTP GET, but they are not cached.
 
 * **GraphQL performance test scenario coverage**. We have added PWA GraphQL test scenarios for critical checkout and catalog browsing to the performance builds. GraphQL community developers can use the new scenarios to measure storefront performance. <!--- MC-15826, 15922-->
 
