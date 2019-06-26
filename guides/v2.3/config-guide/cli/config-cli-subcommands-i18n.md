@@ -300,7 +300,7 @@ Similar to the preceding example, generate a `.csv` file, but instead of specify
     <?xml version="1.0"?>
     <!--
     /**
-     * Copyright © 2015 Magento. All rights reserved.
+     * Copyright © Magento, Inc. All rights reserved.
      * See COPYING.txt for license details.
      */
     -->
