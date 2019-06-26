@@ -47,6 +47,34 @@ require([
 
 Most options, methods, and events for the calendar widget correspond to the jQuery [Datepicker Widget] options.
 
+## Code sample
+
+The following example shows how to initialize the calendar widget and you can also pass the differnt options during the initialization.
+
+```html
+<div class="field">
+    <label>Date : </label>
+    <input type="text" class="input-text" id="example-date" style="width: auto" name="example-date" />
+</div>
+
+<script>
+    require([
+        'jquery',
+        'mage/calendar'
+        ], function ($) {
+            $('#example-date').calendar();
+    })
+</script>
+```
+
+### Result
+
+The result is a calendar and a icon(_Click Here_) that opens the calendar.
+
+![Calendar Widget]({{ site.baseurl }}/common/images/widget/calendar-widget-initial.png)
+![Calendar Widget]({{ site.baseurl }}/common/images/widget/calendar-widget-open.png)
+![Calendar Widget]({{ site.baseurl }}/common/images/widget/calendar-widget-result.png)
+
 [Datepicker Widget]: http://api.jQueryui.com/datepicker/
 [global configuration]: #fedg_calendar_config
 [lib/web/mage/calendar.js]: {{ site.mage2bloburl }}/{{ page.guide_version }}/lib/web/mage/calendar.js
