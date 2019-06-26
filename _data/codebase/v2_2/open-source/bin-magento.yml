@@ -273,6 +273,152 @@ commands:
         is_multiple: false
         description: Do not ask any interactive question
         default: false
+- name: admin:user:unlock
+  usage:
+  - admin:user:unlock <username>
+  description: Unlock Admin Account
+  help: |-
+    This command unlocks an admin account by its username.
+    To unlock:
+          <comment>bin/magento admin:user:unlock username</comment>
+  definition:
+    arguments:
+      username:
+        name: username
+        is_required: true
+        is_array: false
+        description: The admin username to unlock
+        default: 
+    options:
+      help:
+        name: "--help"
+        shortcut: "-h"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this help message
+        default: false
+      quiet:
+        name: "--quiet"
+        shortcut: "-q"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not output any message
+        default: false
+      verbose:
+        name: "--verbose"
+        shortcut: "-v|-vv|-vvv"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: 'Increase the verbosity of messages: 1 for normal output, 2 for
+          more verbose output and 3 for debug'
+        default: false
+      version:
+        name: "--version"
+        shortcut: "-V"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this application version
+        default: false
+      ansi:
+        name: "--ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Force ANSI output
+        default: false
+      no-ansi:
+        name: "--no-ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Disable ANSI output
+        default: false
+      no-interaction:
+        name: "--no-interaction"
+        shortcut: "-n"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not ask any interactive question
+        default: false
+- name: app:config:dump
+  usage:
+  - app:config:dump [<config-types>]...
+  description: Create dump of application
+  help: Create dump of application
+  definition:
+    arguments:
+      config-types:
+        name: config-types
+        is_required: false
+        is_array: true
+        description: Space-separated list of config types or omit to dump all [scopes,
+          system, themes, i18n]
+        default: []
+    options:
+      help:
+        name: "--help"
+        shortcut: "-h"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this help message
+        default: false
+      quiet:
+        name: "--quiet"
+        shortcut: "-q"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not output any message
+        default: false
+      verbose:
+        name: "--verbose"
+        shortcut: "-v|-vv|-vvv"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: 'Increase the verbosity of messages: 1 for normal output, 2 for
+          more verbose output and 3 for debug'
+        default: false
+      version:
+        name: "--version"
+        shortcut: "-V"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this application version
+        default: false
+      ansi:
+        name: "--ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Force ANSI output
+        default: false
+      no-ansi:
+        name: "--no-ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Disable ANSI output
+        default: false
+      no-interaction:
+        name: "--no-interaction"
+        shortcut: "-n"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not ask any interactive question
+        default: false
 - name: app:config:import
   usage:
   - app:config:import
@@ -281,6 +427,2181 @@ commands:
   definition:
     arguments: []
     options:
+      help:
+        name: "--help"
+        shortcut: "-h"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this help message
+        default: false
+      quiet:
+        name: "--quiet"
+        shortcut: "-q"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not output any message
+        default: false
+      verbose:
+        name: "--verbose"
+        shortcut: "-v|-vv|-vvv"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: 'Increase the verbosity of messages: 1 for normal output, 2 for
+          more verbose output and 3 for debug'
+        default: false
+      version:
+        name: "--version"
+        shortcut: "-V"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this application version
+        default: false
+      ansi:
+        name: "--ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Force ANSI output
+        default: false
+      no-ansi:
+        name: "--no-ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Disable ANSI output
+        default: false
+      no-interaction:
+        name: "--no-interaction"
+        shortcut: "-n"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not ask any interactive question
+        default: false
+- name: app:config:status
+  usage:
+  - app:config:status
+  description: Checks if config propagation requires update
+  help: Checks if config propagation requires update
+  definition:
+    arguments: []
+    options:
+      help:
+        name: "--help"
+        shortcut: "-h"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this help message
+        default: false
+      quiet:
+        name: "--quiet"
+        shortcut: "-q"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not output any message
+        default: false
+      verbose:
+        name: "--verbose"
+        shortcut: "-v|-vv|-vvv"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: 'Increase the verbosity of messages: 1 for normal output, 2 for
+          more verbose output and 3 for debug'
+        default: false
+      version:
+        name: "--version"
+        shortcut: "-V"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this application version
+        default: false
+      ansi:
+        name: "--ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Force ANSI output
+        default: false
+      no-ansi:
+        name: "--no-ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Disable ANSI output
+        default: false
+      no-interaction:
+        name: "--no-interaction"
+        shortcut: "-n"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not ask any interactive question
+        default: false
+- name: cache:clean
+  usage:
+  - cache:clean [--bootstrap BOOTSTRAP] [--] [<types>]...
+  description: Cleans cache type(s)
+  help: Cleans cache type(s)
+  definition:
+    arguments:
+      types:
+        name: types
+        is_required: false
+        is_array: true
+        description: Space-separated list of cache types or omit to apply to all cache
+          types.
+        default: []
+    options:
+      bootstrap:
+        name: "--bootstrap"
+        shortcut: ''
+        accept_value: true
+        is_value_required: true
+        is_multiple: false
+        description: add or override parameters of the bootstrap
+        default: 
+      help:
+        name: "--help"
+        shortcut: "-h"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this help message
+        default: false
+      quiet:
+        name: "--quiet"
+        shortcut: "-q"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not output any message
+        default: false
+      verbose:
+        name: "--verbose"
+        shortcut: "-v|-vv|-vvv"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: 'Increase the verbosity of messages: 1 for normal output, 2 for
+          more verbose output and 3 for debug'
+        default: false
+      version:
+        name: "--version"
+        shortcut: "-V"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this application version
+        default: false
+      ansi:
+        name: "--ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Force ANSI output
+        default: false
+      no-ansi:
+        name: "--no-ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Disable ANSI output
+        default: false
+      no-interaction:
+        name: "--no-interaction"
+        shortcut: "-n"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not ask any interactive question
+        default: false
+- name: cache:disable
+  usage:
+  - cache:disable [--bootstrap BOOTSTRAP] [--] [<types>]...
+  description: Disables cache type(s)
+  help: Disables cache type(s)
+  definition:
+    arguments:
+      types:
+        name: types
+        is_required: false
+        is_array: true
+        description: Space-separated list of cache types or omit to apply to all cache
+          types.
+        default: []
+    options:
+      bootstrap:
+        name: "--bootstrap"
+        shortcut: ''
+        accept_value: true
+        is_value_required: true
+        is_multiple: false
+        description: add or override parameters of the bootstrap
+        default: 
+      help:
+        name: "--help"
+        shortcut: "-h"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this help message
+        default: false
+      quiet:
+        name: "--quiet"
+        shortcut: "-q"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not output any message
+        default: false
+      verbose:
+        name: "--verbose"
+        shortcut: "-v|-vv|-vvv"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: 'Increase the verbosity of messages: 1 for normal output, 2 for
+          more verbose output and 3 for debug'
+        default: false
+      version:
+        name: "--version"
+        shortcut: "-V"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this application version
+        default: false
+      ansi:
+        name: "--ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Force ANSI output
+        default: false
+      no-ansi:
+        name: "--no-ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Disable ANSI output
+        default: false
+      no-interaction:
+        name: "--no-interaction"
+        shortcut: "-n"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not ask any interactive question
+        default: false
+- name: cache:enable
+  usage:
+  - cache:enable [--bootstrap BOOTSTRAP] [--] [<types>]...
+  description: Enables cache type(s)
+  help: Enables cache type(s)
+  definition:
+    arguments:
+      types:
+        name: types
+        is_required: false
+        is_array: true
+        description: Space-separated list of cache types or omit to apply to all cache
+          types.
+        default: []
+    options:
+      bootstrap:
+        name: "--bootstrap"
+        shortcut: ''
+        accept_value: true
+        is_value_required: true
+        is_multiple: false
+        description: add or override parameters of the bootstrap
+        default: 
+      help:
+        name: "--help"
+        shortcut: "-h"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this help message
+        default: false
+      quiet:
+        name: "--quiet"
+        shortcut: "-q"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not output any message
+        default: false
+      verbose:
+        name: "--verbose"
+        shortcut: "-v|-vv|-vvv"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: 'Increase the verbosity of messages: 1 for normal output, 2 for
+          more verbose output and 3 for debug'
+        default: false
+      version:
+        name: "--version"
+        shortcut: "-V"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this application version
+        default: false
+      ansi:
+        name: "--ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Force ANSI output
+        default: false
+      no-ansi:
+        name: "--no-ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Disable ANSI output
+        default: false
+      no-interaction:
+        name: "--no-interaction"
+        shortcut: "-n"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not ask any interactive question
+        default: false
+- name: cache:flush
+  usage:
+  - cache:flush [--bootstrap BOOTSTRAP] [--] [<types>]...
+  description: Flushes cache storage used by cache type(s)
+  help: Flushes cache storage used by cache type(s)
+  definition:
+    arguments:
+      types:
+        name: types
+        is_required: false
+        is_array: true
+        description: Space-separated list of cache types or omit to apply to all cache
+          types.
+        default: []
+    options:
+      bootstrap:
+        name: "--bootstrap"
+        shortcut: ''
+        accept_value: true
+        is_value_required: true
+        is_multiple: false
+        description: add or override parameters of the bootstrap
+        default: 
+      help:
+        name: "--help"
+        shortcut: "-h"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this help message
+        default: false
+      quiet:
+        name: "--quiet"
+        shortcut: "-q"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not output any message
+        default: false
+      verbose:
+        name: "--verbose"
+        shortcut: "-v|-vv|-vvv"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: 'Increase the verbosity of messages: 1 for normal output, 2 for
+          more verbose output and 3 for debug'
+        default: false
+      version:
+        name: "--version"
+        shortcut: "-V"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this application version
+        default: false
+      ansi:
+        name: "--ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Force ANSI output
+        default: false
+      no-ansi:
+        name: "--no-ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Disable ANSI output
+        default: false
+      no-interaction:
+        name: "--no-interaction"
+        shortcut: "-n"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not ask any interactive question
+        default: false
+- name: cache:status
+  usage:
+  - cache:status [--bootstrap BOOTSTRAP]
+  description: Checks cache status
+  help: Checks cache status
+  definition:
+    arguments: []
+    options:
+      bootstrap:
+        name: "--bootstrap"
+        shortcut: ''
+        accept_value: true
+        is_value_required: true
+        is_multiple: false
+        description: add or override parameters of the bootstrap
+        default: 
+      help:
+        name: "--help"
+        shortcut: "-h"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this help message
+        default: false
+      quiet:
+        name: "--quiet"
+        shortcut: "-q"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not output any message
+        default: false
+      verbose:
+        name: "--verbose"
+        shortcut: "-v|-vv|-vvv"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: 'Increase the verbosity of messages: 1 for normal output, 2 for
+          more verbose output and 3 for debug'
+        default: false
+      version:
+        name: "--version"
+        shortcut: "-V"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this application version
+        default: false
+      ansi:
+        name: "--ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Force ANSI output
+        default: false
+      no-ansi:
+        name: "--no-ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Disable ANSI output
+        default: false
+      no-interaction:
+        name: "--no-interaction"
+        shortcut: "-n"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not ask any interactive question
+        default: false
+- name: catalog:images:resize
+  usage:
+  - catalog:images:resize
+  description: Creates resized product images
+  help: Creates resized product images
+  definition:
+    arguments: []
+    options:
+      help:
+        name: "--help"
+        shortcut: "-h"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this help message
+        default: false
+      quiet:
+        name: "--quiet"
+        shortcut: "-q"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not output any message
+        default: false
+      verbose:
+        name: "--verbose"
+        shortcut: "-v|-vv|-vvv"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: 'Increase the verbosity of messages: 1 for normal output, 2 for
+          more verbose output and 3 for debug'
+        default: false
+      version:
+        name: "--version"
+        shortcut: "-V"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this application version
+        default: false
+      ansi:
+        name: "--ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Force ANSI output
+        default: false
+      no-ansi:
+        name: "--no-ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Disable ANSI output
+        default: false
+      no-interaction:
+        name: "--no-interaction"
+        shortcut: "-n"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not ask any interactive question
+        default: false
+- name: catalog:product:attributes:cleanup
+  usage:
+  - catalog:product:attributes:cleanup
+  description: Removes unused product attributes.
+  help: Removes unused product attributes.
+  definition:
+    arguments: []
+    options:
+      help:
+        name: "--help"
+        shortcut: "-h"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this help message
+        default: false
+      quiet:
+        name: "--quiet"
+        shortcut: "-q"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not output any message
+        default: false
+      verbose:
+        name: "--verbose"
+        shortcut: "-v|-vv|-vvv"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: 'Increase the verbosity of messages: 1 for normal output, 2 for
+          more verbose output and 3 for debug'
+        default: false
+      version:
+        name: "--version"
+        shortcut: "-V"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this application version
+        default: false
+      ansi:
+        name: "--ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Force ANSI output
+        default: false
+      no-ansi:
+        name: "--no-ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Disable ANSI output
+        default: false
+      no-interaction:
+        name: "--no-interaction"
+        shortcut: "-n"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not ask any interactive question
+        default: false
+- name: config:sensitive:set
+  usage:
+  - config:sensitive:set [-i|--interactive] [--scope [SCOPE]] [--scope-code [SCOPE-CODE]]
+    [--] [<path>] [<value>]
+  description: Set sensitive configuration values
+  help: Set sensitive configuration values
+  definition:
+    arguments:
+      path:
+        name: path
+        is_required: false
+        is_array: false
+        description: Configuration path for example group/section/field_name
+        default: 
+      value:
+        name: value
+        is_required: false
+        is_array: false
+        description: Configuration value
+        default: 
+    options:
+      interactive:
+        name: "--interactive"
+        shortcut: "-i"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Enable interactive mode to set all sensitive variables
+        default: false
+      scope:
+        name: "--scope"
+        shortcut: ''
+        accept_value: true
+        is_value_required: false
+        is_multiple: false
+        description: Scope for configuration, if not set use 'default'
+        default: default
+      scope-code:
+        name: "--scope-code"
+        shortcut: ''
+        accept_value: true
+        is_value_required: false
+        is_multiple: false
+        description: Scope code for configuration, empty string by default
+        default: ''
+      help:
+        name: "--help"
+        shortcut: "-h"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this help message
+        default: false
+      quiet:
+        name: "--quiet"
+        shortcut: "-q"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not output any message
+        default: false
+      verbose:
+        name: "--verbose"
+        shortcut: "-v|-vv|-vvv"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: 'Increase the verbosity of messages: 1 for normal output, 2 for
+          more verbose output and 3 for debug'
+        default: false
+      version:
+        name: "--version"
+        shortcut: "-V"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this application version
+        default: false
+      ansi:
+        name: "--ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Force ANSI output
+        default: false
+      no-ansi:
+        name: "--no-ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Disable ANSI output
+        default: false
+      no-interaction:
+        name: "--no-interaction"
+        shortcut: "-n"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not ask any interactive question
+        default: false
+- name: config:set
+  usage:
+  - config:set [--scope SCOPE] [--scope-code SCOPE-CODE] [-le|--lock-env] [-lc|--lock-config]
+    [-l|--lock] [--] <path> <value>
+  description: Change system configuration
+  help: Change system configuration
+  definition:
+    arguments:
+      path:
+        name: path
+        is_required: true
+        is_array: false
+        description: Configuration path in format section/group/field_name
+        default: 
+      value:
+        name: value
+        is_required: true
+        is_array: false
+        description: Configuration value
+        default: 
+    options:
+      scope:
+        name: "--scope"
+        shortcut: ''
+        accept_value: true
+        is_value_required: true
+        is_multiple: false
+        description: Configuration scope (default, website, or store)
+        default: default
+      scope-code:
+        name: "--scope-code"
+        shortcut: ''
+        accept_value: true
+        is_value_required: true
+        is_multiple: false
+        description: Scope code (required only if scope is not 'default')
+        default: 
+      lock-env:
+        name: "--lock-env"
+        shortcut: "-le"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Lock value which prevents modification in the Admin (will be
+          saved in app/etc/env.php)
+        default: false
+      lock-config:
+        name: "--lock-config"
+        shortcut: "-lc"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Lock and share value with other installations, prevents modification
+          in the Admin (will be saved in app/etc/config.php)
+        default: false
+      lock:
+        name: "--lock"
+        shortcut: "-l"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Deprecated, use the --lock-env option instead.
+        default: false
+      help:
+        name: "--help"
+        shortcut: "-h"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this help message
+        default: false
+      quiet:
+        name: "--quiet"
+        shortcut: "-q"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not output any message
+        default: false
+      verbose:
+        name: "--verbose"
+        shortcut: "-v|-vv|-vvv"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: 'Increase the verbosity of messages: 1 for normal output, 2 for
+          more verbose output and 3 for debug'
+        default: false
+      version:
+        name: "--version"
+        shortcut: "-V"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this application version
+        default: false
+      ansi:
+        name: "--ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Force ANSI output
+        default: false
+      no-ansi:
+        name: "--no-ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Disable ANSI output
+        default: false
+      no-interaction:
+        name: "--no-interaction"
+        shortcut: "-n"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not ask any interactive question
+        default: false
+- name: config:show
+  usage:
+  - config:show [--scope [SCOPE]] [--scope-code [SCOPE-CODE]] [--] [<path>]
+  description: Shows configuration value for given path. If path is not specified,
+    all saved values will be shown
+  help: Shows configuration value for given path. If path is not specified, all saved
+    values will be shown
+  definition:
+    arguments:
+      path:
+        name: path
+        is_required: false
+        is_array: false
+        description: Configuration path, for example section_id/group_id/field_id
+        default: 
+    options:
+      scope:
+        name: "--scope"
+        shortcut: ''
+        accept_value: true
+        is_value_required: false
+        is_multiple: false
+        description: Scope for configuration, if not specified, then 'default' scope
+          will be used
+        default: default
+      scope-code:
+        name: "--scope-code"
+        shortcut: ''
+        accept_value: true
+        is_value_required: false
+        is_multiple: false
+        description: Scope code (required only if scope is not `default`)
+        default: ''
+      help:
+        name: "--help"
+        shortcut: "-h"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this help message
+        default: false
+      quiet:
+        name: "--quiet"
+        shortcut: "-q"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not output any message
+        default: false
+      verbose:
+        name: "--verbose"
+        shortcut: "-v|-vv|-vvv"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: 'Increase the verbosity of messages: 1 for normal output, 2 for
+          more verbose output and 3 for debug'
+        default: false
+      version:
+        name: "--version"
+        shortcut: "-V"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this application version
+        default: false
+      ansi:
+        name: "--ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Force ANSI output
+        default: false
+      no-ansi:
+        name: "--no-ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Disable ANSI output
+        default: false
+      no-interaction:
+        name: "--no-interaction"
+        shortcut: "-n"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not ask any interactive question
+        default: false
+- name: cron:install
+  usage:
+  - cron:install [-f|--force]
+  description: Generates and installs crontab for current user
+  help: Generates and installs crontab for current user
+  definition:
+    arguments: []
+    options:
+      force:
+        name: "--force"
+        shortcut: "-f"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Force install tasks
+        default: false
+      help:
+        name: "--help"
+        shortcut: "-h"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this help message
+        default: false
+      quiet:
+        name: "--quiet"
+        shortcut: "-q"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not output any message
+        default: false
+      verbose:
+        name: "--verbose"
+        shortcut: "-v|-vv|-vvv"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: 'Increase the verbosity of messages: 1 for normal output, 2 for
+          more verbose output and 3 for debug'
+        default: false
+      version:
+        name: "--version"
+        shortcut: "-V"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this application version
+        default: false
+      ansi:
+        name: "--ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Force ANSI output
+        default: false
+      no-ansi:
+        name: "--no-ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Disable ANSI output
+        default: false
+      no-interaction:
+        name: "--no-interaction"
+        shortcut: "-n"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not ask any interactive question
+        default: false
+- name: cron:remove
+  usage:
+  - cron:remove
+  description: Removes tasks from crontab
+  help: Removes tasks from crontab
+  definition:
+    arguments: []
+    options:
+      help:
+        name: "--help"
+        shortcut: "-h"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this help message
+        default: false
+      quiet:
+        name: "--quiet"
+        shortcut: "-q"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not output any message
+        default: false
+      verbose:
+        name: "--verbose"
+        shortcut: "-v|-vv|-vvv"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: 'Increase the verbosity of messages: 1 for normal output, 2 for
+          more verbose output and 3 for debug'
+        default: false
+      version:
+        name: "--version"
+        shortcut: "-V"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this application version
+        default: false
+      ansi:
+        name: "--ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Force ANSI output
+        default: false
+      no-ansi:
+        name: "--no-ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Disable ANSI output
+        default: false
+      no-interaction:
+        name: "--no-interaction"
+        shortcut: "-n"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not ask any interactive question
+        default: false
+- name: cron:run
+  usage:
+  - cron:run [--group GROUP] [--bootstrap BOOTSTRAP]
+  description: Runs jobs by schedule
+  help: Runs jobs by schedule
+  definition:
+    arguments: []
+    options:
+      group:
+        name: "--group"
+        shortcut: ''
+        accept_value: true
+        is_value_required: true
+        is_multiple: false
+        description: Run jobs only from specified group
+        default: 
+      bootstrap:
+        name: "--bootstrap"
+        shortcut: ''
+        accept_value: true
+        is_value_required: true
+        is_multiple: false
+        description: Add or override parameters of the bootstrap
+        default: 
+      help:
+        name: "--help"
+        shortcut: "-h"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this help message
+        default: false
+      quiet:
+        name: "--quiet"
+        shortcut: "-q"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not output any message
+        default: false
+      verbose:
+        name: "--verbose"
+        shortcut: "-v|-vv|-vvv"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: 'Increase the verbosity of messages: 1 for normal output, 2 for
+          more verbose output and 3 for debug'
+        default: false
+      version:
+        name: "--version"
+        shortcut: "-V"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this application version
+        default: false
+      ansi:
+        name: "--ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Force ANSI output
+        default: false
+      no-ansi:
+        name: "--no-ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Disable ANSI output
+        default: false
+      no-interaction:
+        name: "--no-interaction"
+        shortcut: "-n"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not ask any interactive question
+        default: false
+- name: customer:hash:upgrade
+  usage:
+  - customer:hash:upgrade
+  description: Upgrade customer's hash according to the latest algorithm
+  help: Upgrade customer's hash according to the latest algorithm
+  definition:
+    arguments: []
+    options:
+      help:
+        name: "--help"
+        shortcut: "-h"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this help message
+        default: false
+      quiet:
+        name: "--quiet"
+        shortcut: "-q"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not output any message
+        default: false
+      verbose:
+        name: "--verbose"
+        shortcut: "-v|-vv|-vvv"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: 'Increase the verbosity of messages: 1 for normal output, 2 for
+          more verbose output and 3 for debug'
+        default: false
+      version:
+        name: "--version"
+        shortcut: "-V"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this application version
+        default: false
+      ansi:
+        name: "--ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Force ANSI output
+        default: false
+      no-ansi:
+        name: "--no-ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Disable ANSI output
+        default: false
+      no-interaction:
+        name: "--no-interaction"
+        shortcut: "-n"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not ask any interactive question
+        default: false
+- name: deploy:mode:set
+  usage:
+  - deploy:mode:set [-s|--skip-compilation] [--] <mode>
+  description: Set application mode.
+  help: Set application mode.
+  definition:
+    arguments:
+      mode:
+        name: mode
+        is_required: true
+        is_array: false
+        description: The application mode to set. Available options are "developer"
+          or "production"
+        default: 
+    options:
+      skip-compilation:
+        name: "--skip-compilation"
+        shortcut: "-s"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Skips the clearing and regeneration of static content (generated
+          code, preprocessed CSS, and assets in pub/static/)
+        default: false
+      help:
+        name: "--help"
+        shortcut: "-h"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this help message
+        default: false
+      quiet:
+        name: "--quiet"
+        shortcut: "-q"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not output any message
+        default: false
+      verbose:
+        name: "--verbose"
+        shortcut: "-v|-vv|-vvv"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: 'Increase the verbosity of messages: 1 for normal output, 2 for
+          more verbose output and 3 for debug'
+        default: false
+      version:
+        name: "--version"
+        shortcut: "-V"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this application version
+        default: false
+      ansi:
+        name: "--ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Force ANSI output
+        default: false
+      no-ansi:
+        name: "--no-ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Disable ANSI output
+        default: false
+      no-interaction:
+        name: "--no-interaction"
+        shortcut: "-n"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not ask any interactive question
+        default: false
+- name: deploy:mode:show
+  usage:
+  - deploy:mode:show
+  description: Displays current application mode.
+  help: Displays current application mode.
+  definition:
+    arguments: []
+    options:
+      help:
+        name: "--help"
+        shortcut: "-h"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this help message
+        default: false
+      quiet:
+        name: "--quiet"
+        shortcut: "-q"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not output any message
+        default: false
+      verbose:
+        name: "--verbose"
+        shortcut: "-v|-vv|-vvv"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: 'Increase the verbosity of messages: 1 for normal output, 2 for
+          more verbose output and 3 for debug'
+        default: false
+      version:
+        name: "--version"
+        shortcut: "-V"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this application version
+        default: false
+      ansi:
+        name: "--ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Force ANSI output
+        default: false
+      no-ansi:
+        name: "--no-ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Disable ANSI output
+        default: false
+      no-interaction:
+        name: "--no-interaction"
+        shortcut: "-n"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not ask any interactive question
+        default: false
+- name: dev:di:info
+  usage:
+  - dev:di:info <class>
+  description: Provides information on Dependency Injection configuration for the
+    Command.
+  help: Provides information on Dependency Injection configuration for the Command.
+  definition:
+    arguments:
+      class:
+        name: class
+        is_required: true
+        is_array: false
+        description: Class name
+        default: 
+    options:
+      help:
+        name: "--help"
+        shortcut: "-h"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this help message
+        default: false
+      quiet:
+        name: "--quiet"
+        shortcut: "-q"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not output any message
+        default: false
+      verbose:
+        name: "--verbose"
+        shortcut: "-v|-vv|-vvv"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: 'Increase the verbosity of messages: 1 for normal output, 2 for
+          more verbose output and 3 for debug'
+        default: false
+      version:
+        name: "--version"
+        shortcut: "-V"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this application version
+        default: false
+      ansi:
+        name: "--ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Force ANSI output
+        default: false
+      no-ansi:
+        name: "--no-ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Disable ANSI output
+        default: false
+      no-interaction:
+        name: "--no-interaction"
+        shortcut: "-n"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not ask any interactive question
+        default: false
+- name: dev:profiler:disable
+  usage:
+  - dev:profiler:disable
+  description: Disable the profiler.
+  help: Disable the profiler.
+  definition:
+    arguments: []
+    options:
+      help:
+        name: "--help"
+        shortcut: "-h"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this help message
+        default: false
+      quiet:
+        name: "--quiet"
+        shortcut: "-q"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not output any message
+        default: false
+      verbose:
+        name: "--verbose"
+        shortcut: "-v|-vv|-vvv"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: 'Increase the verbosity of messages: 1 for normal output, 2 for
+          more verbose output and 3 for debug'
+        default: false
+      version:
+        name: "--version"
+        shortcut: "-V"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this application version
+        default: false
+      ansi:
+        name: "--ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Force ANSI output
+        default: false
+      no-ansi:
+        name: "--no-ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Disable ANSI output
+        default: false
+      no-interaction:
+        name: "--no-interaction"
+        shortcut: "-n"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not ask any interactive question
+        default: false
+- name: dev:profiler:enable
+  usage:
+  - dev:profiler:enable [<type>]
+  description: Enable the profiler.
+  help: Enable the profiler.
+  definition:
+    arguments:
+      type:
+        name: type
+        is_required: false
+        is_array: false
+        description: Profiler type
+        default: html
+    options:
+      help:
+        name: "--help"
+        shortcut: "-h"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this help message
+        default: false
+      quiet:
+        name: "--quiet"
+        shortcut: "-q"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not output any message
+        default: false
+      verbose:
+        name: "--verbose"
+        shortcut: "-v|-vv|-vvv"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: 'Increase the verbosity of messages: 1 for normal output, 2 for
+          more verbose output and 3 for debug'
+        default: false
+      version:
+        name: "--version"
+        shortcut: "-V"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this application version
+        default: false
+      ansi:
+        name: "--ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Force ANSI output
+        default: false
+      no-ansi:
+        name: "--no-ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Disable ANSI output
+        default: false
+      no-interaction:
+        name: "--no-interaction"
+        shortcut: "-n"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not ask any interactive question
+        default: false
+- name: dev:query-log:disable
+  usage:
+  - dev:query-log:disable
+  description: Disable DB query logging
+  help: Disable DB query logging
+  definition:
+    arguments: []
+    options:
+      help:
+        name: "--help"
+        shortcut: "-h"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this help message
+        default: false
+      quiet:
+        name: "--quiet"
+        shortcut: "-q"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not output any message
+        default: false
+      verbose:
+        name: "--verbose"
+        shortcut: "-v|-vv|-vvv"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: 'Increase the verbosity of messages: 1 for normal output, 2 for
+          more verbose output and 3 for debug'
+        default: false
+      version:
+        name: "--version"
+        shortcut: "-V"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this application version
+        default: false
+      ansi:
+        name: "--ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Force ANSI output
+        default: false
+      no-ansi:
+        name: "--no-ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Disable ANSI output
+        default: false
+      no-interaction:
+        name: "--no-interaction"
+        shortcut: "-n"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not ask any interactive question
+        default: false
+- name: dev:query-log:enable
+  usage:
+  - dev:query-log:enable [--include-all-queries [INCLUDE-ALL-QUERIES]] [--query-time-threshold
+    [QUERY-TIME-THRESHOLD]] [--include-call-stack [INCLUDE-CALL-STACK]]
+  description: Enable DB query logging
+  help: Enable DB query logging
+  definition:
+    arguments: []
+    options:
+      include-all-queries:
+        name: "--include-all-queries"
+        shortcut: ''
+        accept_value: true
+        is_value_required: false
+        is_multiple: false
+        description: Log all queries. [true|false]
+        default: 'true'
+      query-time-threshold:
+        name: "--query-time-threshold"
+        shortcut: ''
+        accept_value: true
+        is_value_required: false
+        is_multiple: false
+        description: Query time thresholds.
+        default: '0.001'
+      include-call-stack:
+        name: "--include-call-stack"
+        shortcut: ''
+        accept_value: true
+        is_value_required: false
+        is_multiple: false
+        description: Include call stack. [true|false]
+        default: 'true'
+      help:
+        name: "--help"
+        shortcut: "-h"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this help message
+        default: false
+      quiet:
+        name: "--quiet"
+        shortcut: "-q"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not output any message
+        default: false
+      verbose:
+        name: "--verbose"
+        shortcut: "-v|-vv|-vvv"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: 'Increase the verbosity of messages: 1 for normal output, 2 for
+          more verbose output and 3 for debug'
+        default: false
+      version:
+        name: "--version"
+        shortcut: "-V"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this application version
+        default: false
+      ansi:
+        name: "--ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Force ANSI output
+        default: false
+      no-ansi:
+        name: "--no-ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Disable ANSI output
+        default: false
+      no-interaction:
+        name: "--no-interaction"
+        shortcut: "-n"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not ask any interactive question
+        default: false
+- name: dev:source-theme:deploy
+  usage:
+  - dev:source-theme:deploy [--type TYPE] [--locale LOCALE] [--area AREA] [--theme
+    THEME] [--] [<file>]...
+  description: Collects and publishes source files for theme.
+  help: Collects and publishes source files for theme.
+  definition:
+    arguments:
+      file:
+        name: file
+        is_required: false
+        is_array: true
+        description: Files to pre-process (file should be specified without extension)
+        default:
+        - css/styles-m
+        - css/styles-l
+    options:
+      type:
+        name: "--type"
+        shortcut: ''
+        accept_value: true
+        is_value_required: true
+        is_multiple: false
+        description: 'Type of source files: [less]'
+        default: less
+      locale:
+        name: "--locale"
+        shortcut: ''
+        accept_value: true
+        is_value_required: true
+        is_multiple: false
+        description: 'Locale: [en_US]'
+        default: en_US
+      area:
+        name: "--area"
+        shortcut: ''
+        accept_value: true
+        is_value_required: true
+        is_multiple: false
+        description: 'Area: [frontend|adminhtml]'
+        default: frontend
+      theme:
+        name: "--theme"
+        shortcut: ''
+        accept_value: true
+        is_value_required: true
+        is_multiple: false
+        description: 'Theme: [Vendor/theme]'
+        default: Magento/luma
+      help:
+        name: "--help"
+        shortcut: "-h"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this help message
+        default: false
+      quiet:
+        name: "--quiet"
+        shortcut: "-q"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not output any message
+        default: false
+      verbose:
+        name: "--verbose"
+        shortcut: "-v|-vv|-vvv"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: 'Increase the verbosity of messages: 1 for normal output, 2 for
+          more verbose output and 3 for debug'
+        default: false
+      version:
+        name: "--version"
+        shortcut: "-V"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this application version
+        default: false
+      ansi:
+        name: "--ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Force ANSI output
+        default: false
+      no-ansi:
+        name: "--no-ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Disable ANSI output
+        default: false
+      no-interaction:
+        name: "--no-interaction"
+        shortcut: "-n"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not ask any interactive question
+        default: false
+- name: dev:template-hints:disable
+  usage:
+  - dev:template-hints:disable
+  description: Disable frontend template hints. A cache flush might be required.
+  help: Disable frontend template hints. A cache flush might be required.
+  definition:
+    arguments: []
+    options:
+      help:
+        name: "--help"
+        shortcut: "-h"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this help message
+        default: false
+      quiet:
+        name: "--quiet"
+        shortcut: "-q"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not output any message
+        default: false
+      verbose:
+        name: "--verbose"
+        shortcut: "-v|-vv|-vvv"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: 'Increase the verbosity of messages: 1 for normal output, 2 for
+          more verbose output and 3 for debug'
+        default: false
+      version:
+        name: "--version"
+        shortcut: "-V"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this application version
+        default: false
+      ansi:
+        name: "--ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Force ANSI output
+        default: false
+      no-ansi:
+        name: "--no-ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Disable ANSI output
+        default: false
+      no-interaction:
+        name: "--no-interaction"
+        shortcut: "-n"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not ask any interactive question
+        default: false
+- name: dev:template-hints:enable
+  usage:
+  - dev:template-hints:enable
+  description: Enable frontend template hints. A cache flush might be required.
+  help: Enable frontend template hints. A cache flush might be required.
+  definition:
+    arguments: []
+    options:
+      help:
+        name: "--help"
+        shortcut: "-h"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this help message
+        default: false
+      quiet:
+        name: "--quiet"
+        shortcut: "-q"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not output any message
+        default: false
+      verbose:
+        name: "--verbose"
+        shortcut: "-v|-vv|-vvv"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: 'Increase the verbosity of messages: 1 for normal output, 2 for
+          more verbose output and 3 for debug'
+        default: false
+      version:
+        name: "--version"
+        shortcut: "-V"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this application version
+        default: false
+      ansi:
+        name: "--ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Force ANSI output
+        default: false
+      no-ansi:
+        name: "--no-ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Disable ANSI output
+        default: false
+      no-interaction:
+        name: "--no-interaction"
+        shortcut: "-n"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not ask any interactive question
+        default: false
+- name: dev:tests:run
+  usage:
+  - dev:tests:run [-c|--arguments ARGUMENTS] [--] [<type>]
+  description: Runs tests
+  help: Runs tests
+  definition:
+    arguments:
+      type:
+        name: type
+        is_required: false
+        is_array: false
+        description: 'Type of test to run. Available types: all, unit, integration,
+          integration-all, static, static-all, integrity, legacy, default'
+        default: default
+    options:
+      arguments:
+        name: "--arguments"
+        shortcut: "-c"
+        accept_value: true
+        is_value_required: true
+        is_multiple: false
+        description: 'Additional arguments for PHPUnit. Example: "-c''--filter=MyTest''"
+          (no spaces)'
+        default: ''
+      help:
+        name: "--help"
+        shortcut: "-h"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this help message
+        default: false
+      quiet:
+        name: "--quiet"
+        shortcut: "-q"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not output any message
+        default: false
+      verbose:
+        name: "--verbose"
+        shortcut: "-v|-vv|-vvv"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: 'Increase the verbosity of messages: 1 for normal output, 2 for
+          more verbose output and 3 for debug'
+        default: false
+      version:
+        name: "--version"
+        shortcut: "-V"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this application version
+        default: false
+      ansi:
+        name: "--ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Force ANSI output
+        default: false
+      no-ansi:
+        name: "--no-ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Disable ANSI output
+        default: false
+      no-interaction:
+        name: "--no-interaction"
+        shortcut: "-n"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not ask any interactive question
+        default: false
+- name: dev:urn-catalog:generate
+  usage:
+  - dev:urn-catalog:generate [--ide IDE] [--] <path>
+  description: Generates the catalog of URNs to *.xsd mappings for the IDE to highlight
+    xml.
+  help: Generates the catalog of URNs to *.xsd mappings for the IDE to highlight xml.
+  definition:
+    arguments:
+      path:
+        name: path
+        is_required: true
+        is_array: false
+        description: Path to file to output the catalog. For PhpStorm use .idea/misc.xml
+        default: 
+    options:
+      ide:
+        name: "--ide"
+        shortcut: ''
+        accept_value: true
+        is_value_required: true
+        is_multiple: false
+        description: 'Format in which catalog will be generated. Supported: [phpstorm]'
+        default: phpstorm
+      help:
+        name: "--help"
+        shortcut: "-h"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this help message
+        default: false
+      quiet:
+        name: "--quiet"
+        shortcut: "-q"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not output any message
+        default: false
+      verbose:
+        name: "--verbose"
+        shortcut: "-v|-vv|-vvv"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: 'Increase the verbosity of messages: 1 for normal output, 2 for
+          more verbose output and 3 for debug'
+        default: false
+      version:
+        name: "--version"
+        shortcut: "-V"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this application version
+        default: false
+      ansi:
+        name: "--ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Force ANSI output
+        default: false
+      no-ansi:
+        name: "--no-ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Disable ANSI output
+        default: false
+      no-interaction:
+        name: "--no-interaction"
+        shortcut: "-n"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not ask any interactive question
+        default: false
+- name: dev:xml:convert
+  usage:
+  - dev:xml:convert [-o|--overwrite] [--] <xml-file> <processor>
+  description: Converts XML file using XSL style sheets
+  help: Converts XML file using XSL style sheets
+  definition:
+    arguments:
+      xml-file:
+        name: xml-file
+        is_required: true
+        is_array: false
+        description: Path to XML file that going to be transformed
+        default: 
+      processor:
+        name: processor
+        is_required: true
+        is_array: false
+        description: Path to XSL style sheet that going to be applied to XML file
+        default: 
+    options:
+      overwrite:
+        name: "--overwrite"
+        shortcut: "-o"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Overwrite XML file
+        default: false
       help:
         name: "--help"
         shortcut: "-h"
@@ -465,6 +2786,661 @@ commands:
         description: Use the --allow-duplicates parameter to allow saving duplicates
           of translate. Otherwise omit the parameter.
         default: false
+      help:
+        name: "--help"
+        shortcut: "-h"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this help message
+        default: false
+      quiet:
+        name: "--quiet"
+        shortcut: "-q"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not output any message
+        default: false
+      verbose:
+        name: "--verbose"
+        shortcut: "-v|-vv|-vvv"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: 'Increase the verbosity of messages: 1 for normal output, 2 for
+          more verbose output and 3 for debug'
+        default: false
+      version:
+        name: "--version"
+        shortcut: "-V"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this application version
+        default: false
+      ansi:
+        name: "--ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Force ANSI output
+        default: false
+      no-ansi:
+        name: "--no-ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Disable ANSI output
+        default: false
+      no-interaction:
+        name: "--no-interaction"
+        shortcut: "-n"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not ask any interactive question
+        default: false
+- name: i18n:uninstall
+  usage:
+  - i18n:uninstall [-b|--backup-code] [--] <package> (<package>)...
+  description: Uninstalls language packages
+  help: Uninstalls language packages
+  definition:
+    arguments:
+      package:
+        name: package
+        is_required: true
+        is_array: true
+        description: Language package name
+        default: []
+    options:
+      backup-code:
+        name: "--backup-code"
+        shortcut: "-b"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Take code and configuration files backup (excluding temporary
+          files)
+        default: false
+      help:
+        name: "--help"
+        shortcut: "-h"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this help message
+        default: false
+      quiet:
+        name: "--quiet"
+        shortcut: "-q"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not output any message
+        default: false
+      verbose:
+        name: "--verbose"
+        shortcut: "-v|-vv|-vvv"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: 'Increase the verbosity of messages: 1 for normal output, 2 for
+          more verbose output and 3 for debug'
+        default: false
+      version:
+        name: "--version"
+        shortcut: "-V"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this application version
+        default: false
+      ansi:
+        name: "--ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Force ANSI output
+        default: false
+      no-ansi:
+        name: "--no-ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Disable ANSI output
+        default: false
+      no-interaction:
+        name: "--no-interaction"
+        shortcut: "-n"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not ask any interactive question
+        default: false
+- name: indexer:info
+  usage:
+  - indexer:info
+  description: Shows allowed Indexers
+  help: Shows allowed Indexers
+  definition:
+    arguments: []
+    options:
+      help:
+        name: "--help"
+        shortcut: "-h"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this help message
+        default: false
+      quiet:
+        name: "--quiet"
+        shortcut: "-q"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not output any message
+        default: false
+      verbose:
+        name: "--verbose"
+        shortcut: "-v|-vv|-vvv"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: 'Increase the verbosity of messages: 1 for normal output, 2 for
+          more verbose output and 3 for debug'
+        default: false
+      version:
+        name: "--version"
+        shortcut: "-V"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this application version
+        default: false
+      ansi:
+        name: "--ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Force ANSI output
+        default: false
+      no-ansi:
+        name: "--no-ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Disable ANSI output
+        default: false
+      no-interaction:
+        name: "--no-interaction"
+        shortcut: "-n"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not ask any interactive question
+        default: false
+- name: indexer:reindex
+  usage:
+  - indexer:reindex [<index>]...
+  description: Reindexes Data
+  help: Reindexes Data
+  definition:
+    arguments:
+      index:
+        name: index
+        is_required: false
+        is_array: true
+        description: Space-separated list of index types or omit to apply to all indexes.
+        default: []
+    options:
+      help:
+        name: "--help"
+        shortcut: "-h"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this help message
+        default: false
+      quiet:
+        name: "--quiet"
+        shortcut: "-q"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not output any message
+        default: false
+      verbose:
+        name: "--verbose"
+        shortcut: "-v|-vv|-vvv"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: 'Increase the verbosity of messages: 1 for normal output, 2 for
+          more verbose output and 3 for debug'
+        default: false
+      version:
+        name: "--version"
+        shortcut: "-V"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this application version
+        default: false
+      ansi:
+        name: "--ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Force ANSI output
+        default: false
+      no-ansi:
+        name: "--no-ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Disable ANSI output
+        default: false
+      no-interaction:
+        name: "--no-interaction"
+        shortcut: "-n"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not ask any interactive question
+        default: false
+- name: indexer:reset
+  usage:
+  - indexer:reset [<index>]...
+  description: Resets indexer status to invalid
+  help: Resets indexer status to invalid
+  definition:
+    arguments:
+      index:
+        name: index
+        is_required: false
+        is_array: true
+        description: Space-separated list of index types or omit to apply to all indexes.
+        default: []
+    options:
+      help:
+        name: "--help"
+        shortcut: "-h"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this help message
+        default: false
+      quiet:
+        name: "--quiet"
+        shortcut: "-q"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not output any message
+        default: false
+      verbose:
+        name: "--verbose"
+        shortcut: "-v|-vv|-vvv"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: 'Increase the verbosity of messages: 1 for normal output, 2 for
+          more verbose output and 3 for debug'
+        default: false
+      version:
+        name: "--version"
+        shortcut: "-V"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this application version
+        default: false
+      ansi:
+        name: "--ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Force ANSI output
+        default: false
+      no-ansi:
+        name: "--no-ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Disable ANSI output
+        default: false
+      no-interaction:
+        name: "--no-interaction"
+        shortcut: "-n"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not ask any interactive question
+        default: false
+- name: indexer:set-dimensions-mode
+  usage:
+  - indexer:set-dimensions-mode [<indexer>] [<mode>]
+  description: Set Indexer Dimensions Mode
+  help: Set Indexer Dimensions Mode
+  definition:
+    arguments:
+      indexer:
+        name: indexer
+        is_required: false
+        is_array: false
+        description: Indexer name [catalog_product_price]
+        default: 
+      mode:
+        name: mode
+        is_required: false
+        is_array: false
+        description: 'Indexer dimension modes catalog_product_price          none,website,customer_group,website_and_customer_group '
+        default: 
+    options:
+      help:
+        name: "--help"
+        shortcut: "-h"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this help message
+        default: false
+      quiet:
+        name: "--quiet"
+        shortcut: "-q"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not output any message
+        default: false
+      verbose:
+        name: "--verbose"
+        shortcut: "-v|-vv|-vvv"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: 'Increase the verbosity of messages: 1 for normal output, 2 for
+          more verbose output and 3 for debug'
+        default: false
+      version:
+        name: "--version"
+        shortcut: "-V"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this application version
+        default: false
+      ansi:
+        name: "--ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Force ANSI output
+        default: false
+      no-ansi:
+        name: "--no-ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Disable ANSI output
+        default: false
+      no-interaction:
+        name: "--no-interaction"
+        shortcut: "-n"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not ask any interactive question
+        default: false
+- name: indexer:set-mode
+  usage:
+  - indexer:set-mode [<mode>] [<index>]...
+  description: Sets index mode type
+  help: Sets index mode type
+  definition:
+    arguments:
+      mode:
+        name: mode
+        is_required: false
+        is_array: false
+        description: Indexer mode type [realtime|schedule]
+        default: 
+      index:
+        name: index
+        is_required: false
+        is_array: true
+        description: Space-separated list of index types or omit to apply to all indexes.
+        default: []
+    options:
+      help:
+        name: "--help"
+        shortcut: "-h"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this help message
+        default: false
+      quiet:
+        name: "--quiet"
+        shortcut: "-q"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not output any message
+        default: false
+      verbose:
+        name: "--verbose"
+        shortcut: "-v|-vv|-vvv"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: 'Increase the verbosity of messages: 1 for normal output, 2 for
+          more verbose output and 3 for debug'
+        default: false
+      version:
+        name: "--version"
+        shortcut: "-V"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this application version
+        default: false
+      ansi:
+        name: "--ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Force ANSI output
+        default: false
+      no-ansi:
+        name: "--no-ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Disable ANSI output
+        default: false
+      no-interaction:
+        name: "--no-interaction"
+        shortcut: "-n"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not ask any interactive question
+        default: false
+- name: indexer:show-dimensions-mode
+  usage:
+  - indexer:show-dimensions-mode [<indexer>]...
+  description: Shows Indexer Dimension Mode
+  help: Shows Indexer Dimension Mode
+  definition:
+    arguments:
+      indexer:
+        name: indexer
+        is_required: false
+        is_array: true
+        description: Space-separated list of index types or omit to apply to all indexes
+          (catalog_product_price)
+        default: []
+    options:
+      help:
+        name: "--help"
+        shortcut: "-h"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this help message
+        default: false
+      quiet:
+        name: "--quiet"
+        shortcut: "-q"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not output any message
+        default: false
+      verbose:
+        name: "--verbose"
+        shortcut: "-v|-vv|-vvv"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: 'Increase the verbosity of messages: 1 for normal output, 2 for
+          more verbose output and 3 for debug'
+        default: false
+      version:
+        name: "--version"
+        shortcut: "-V"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this application version
+        default: false
+      ansi:
+        name: "--ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Force ANSI output
+        default: false
+      no-ansi:
+        name: "--no-ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Disable ANSI output
+        default: false
+      no-interaction:
+        name: "--no-interaction"
+        shortcut: "-n"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not ask any interactive question
+        default: false
+- name: indexer:show-mode
+  usage:
+  - indexer:show-mode [<index>]...
+  description: Shows Index Mode
+  help: Shows Index Mode
+  definition:
+    arguments:
+      index:
+        name: index
+        is_required: false
+        is_array: true
+        description: Space-separated list of index types or omit to apply to all indexes.
+        default: []
+    options:
+      help:
+        name: "--help"
+        shortcut: "-h"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this help message
+        default: false
+      quiet:
+        name: "--quiet"
+        shortcut: "-q"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not output any message
+        default: false
+      verbose:
+        name: "--verbose"
+        shortcut: "-v|-vv|-vvv"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: 'Increase the verbosity of messages: 1 for normal output, 2 for
+          more verbose output and 3 for debug'
+        default: false
+      version:
+        name: "--version"
+        shortcut: "-V"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this application version
+        default: false
+      ansi:
+        name: "--ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Force ANSI output
+        default: false
+      no-ansi:
+        name: "--no-ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Disable ANSI output
+        default: false
+      no-interaction:
+        name: "--no-interaction"
+        shortcut: "-n"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not ask any interactive question
+        default: false
+- name: indexer:status
+  usage:
+  - indexer:status [<index>]...
+  description: Shows status of Indexer
+  help: Shows status of Indexer
+  definition:
+    arguments:
+      index:
+        name: index
+        is_required: false
+        is_array: true
+        description: Space-separated list of index types or omit to apply to all indexes.
+        default: []
+    options:
       help:
         name: "--help"
         shortcut: "-h"
@@ -1834,6 +4810,90 @@ commands:
         is_multiple: false
         description: Do not ask any interactive question
         default: false
+- name: newrelic:create:deploy-marker
+  usage:
+  - newrelic:create:deploy-marker <message> <changelog> [<user>]
+  description: Check the deploy queue for entries and create an appropriate deploy
+    marker.
+  help: Check the deploy queue for entries and create an appropriate deploy marker.
+  definition:
+    arguments:
+      message:
+        name: message
+        is_required: true
+        is_array: false
+        description: Deploy Message?
+        default: 
+      changelog:
+        name: changelog
+        is_required: true
+        is_array: false
+        description: Change Log?
+        default: 
+      user:
+        name: user
+        is_required: false
+        is_array: false
+        description: Deployment User
+        default: 
+    options:
+      help:
+        name: "--help"
+        shortcut: "-h"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this help message
+        default: false
+      quiet:
+        name: "--quiet"
+        shortcut: "-q"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not output any message
+        default: false
+      verbose:
+        name: "--verbose"
+        shortcut: "-v|-vv|-vvv"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: 'Increase the verbosity of messages: 1 for normal output, 2 for
+          more verbose output and 3 for debug'
+        default: false
+      version:
+        name: "--version"
+        shortcut: "-V"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this application version
+        default: false
+      ansi:
+        name: "--ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Force ANSI output
+        default: false
+      no-ansi:
+        name: "--no-ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Disable ANSI output
+        default: false
+      no-interaction:
+        name: "--no-interaction"
+        shortcut: "-n"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not ask any interactive question
+        default: false
 - name: sampledata:deploy
   usage:
   - sampledata:deploy [--no-update]
@@ -1923,6 +4983,71 @@ commands:
         is_multiple: false
         description: Update composer.json without executing composer update
         default: false
+      help:
+        name: "--help"
+        shortcut: "-h"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this help message
+        default: false
+      quiet:
+        name: "--quiet"
+        shortcut: "-q"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not output any message
+        default: false
+      verbose:
+        name: "--verbose"
+        shortcut: "-v|-vv|-vvv"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: 'Increase the verbosity of messages: 1 for normal output, 2 for
+          more verbose output and 3 for debug'
+        default: false
+      version:
+        name: "--version"
+        shortcut: "-V"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this application version
+        default: false
+      ansi:
+        name: "--ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Force ANSI output
+        default: false
+      no-ansi:
+        name: "--no-ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Disable ANSI output
+        default: false
+      no-interaction:
+        name: "--no-interaction"
+        shortcut: "-n"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not ask any interactive question
+        default: false
+- name: sampledata:reset
+  usage:
+  - sampledata:reset
+  description: Reset all sample data modules for re-installation
+  help: Reset all sample data modules for re-installation
+  definition:
+    arguments: []
+    options:
       help:
         name: "--help"
         shortcut: "-h"
@@ -2144,7 +5269,7 @@ commands:
         is_value_required: true
         is_multiple: false
         description: Database server host
-        default: localhost
+        default: 
       db-name:
         name: "--db-name"
         shortcut: ''
@@ -2152,7 +5277,7 @@ commands:
         is_value_required: true
         is_multiple: false
         description: Database name
-        default: magento2
+        default: 
       db-user:
         name: "--db-user"
         shortcut: ''
@@ -2160,7 +5285,7 @@ commands:
         is_value_required: true
         is_multiple: false
         description: Database server username
-        default: root
+        default: 
       db-engine:
         name: "--db-engine"
         shortcut: ''
@@ -2176,7 +5301,7 @@ commands:
         is_value_required: true
         is_multiple: false
         description: Database server password
-        default: ''
+        default: 
       db-prefix:
         name: "--db-prefix"
         shortcut: ''
@@ -2184,7 +5309,7 @@ commands:
         is_value_required: true
         is_multiple: false
         description: Database table prefix
-        default: ''
+        default: 
       db-model:
         name: "--db-model"
         shortcut: ''
@@ -2224,7 +5349,7 @@ commands:
         is_value_required: true
         is_multiple: false
         description: Session save handler
-        default: files
+        default: 
       session-save-redis-host:
         name: "--session-save-redis-host"
         shortcut: ''
@@ -3020,7 +6145,7 @@ commands:
         is_value_required: true
         is_multiple: false
         description: Database server host
-        default: localhost
+        default: 
       db-name:
         name: "--db-name"
         shortcut: ''
@@ -3028,7 +6153,7 @@ commands:
         is_value_required: true
         is_multiple: false
         description: Database name
-        default: magento2
+        default: 
       db-user:
         name: "--db-user"
         shortcut: ''
@@ -3036,7 +6161,7 @@ commands:
         is_value_required: true
         is_multiple: false
         description: Database server username
-        default: root
+        default: 
       db-engine:
         name: "--db-engine"
         shortcut: ''
@@ -3052,7 +6177,7 @@ commands:
         is_value_required: true
         is_multiple: false
         description: Database server password
-        default: ''
+        default: 
       db-prefix:
         name: "--db-prefix"
         shortcut: ''
@@ -3060,7 +6185,7 @@ commands:
         is_value_required: true
         is_multiple: false
         description: Database table prefix
-        default: ''
+        default: 
       db-model:
         name: "--db-model"
         shortcut: ''
@@ -3100,7 +6225,7 @@ commands:
         is_value_required: true
         is_multiple: false
         description: Session save handler
-        default: files
+        default: 
       session-save-redis-host:
         name: "--session-save-redis-host"
         shortcut: ''
@@ -4364,6 +7489,340 @@ commands:
         is_multiple: false
         description: Do not ask any interactive question
         default: false
+- name: store:list
+  usage:
+  - store:list
+  description: Displays the list of stores
+  help: Displays the list of stores
+  definition:
+    arguments: []
+    options:
+      help:
+        name: "--help"
+        shortcut: "-h"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this help message
+        default: false
+      quiet:
+        name: "--quiet"
+        shortcut: "-q"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not output any message
+        default: false
+      verbose:
+        name: "--verbose"
+        shortcut: "-v|-vv|-vvv"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: 'Increase the verbosity of messages: 1 for normal output, 2 for
+          more verbose output and 3 for debug'
+        default: false
+      version:
+        name: "--version"
+        shortcut: "-V"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this application version
+        default: false
+      ansi:
+        name: "--ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Force ANSI output
+        default: false
+      no-ansi:
+        name: "--no-ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Disable ANSI output
+        default: false
+      no-interaction:
+        name: "--no-interaction"
+        shortcut: "-n"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not ask any interactive question
+        default: false
+- name: store:website:list
+  usage:
+  - store:website:list
+  description: Displays the list of websites
+  help: Displays the list of websites
+  definition:
+    arguments: []
+    options:
+      help:
+        name: "--help"
+        shortcut: "-h"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this help message
+        default: false
+      quiet:
+        name: "--quiet"
+        shortcut: "-q"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not output any message
+        default: false
+      verbose:
+        name: "--verbose"
+        shortcut: "-v|-vv|-vvv"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: 'Increase the verbosity of messages: 1 for normal output, 2 for
+          more verbose output and 3 for debug'
+        default: false
+      version:
+        name: "--version"
+        shortcut: "-V"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this application version
+        default: false
+      ansi:
+        name: "--ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Force ANSI output
+        default: false
+      no-ansi:
+        name: "--no-ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Disable ANSI output
+        default: false
+      no-interaction:
+        name: "--no-interaction"
+        shortcut: "-n"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not ask any interactive question
+        default: false
+- name: theme:uninstall
+  usage:
+  - theme:uninstall [--backup-code] [-c|--clear-static-content] [--] <theme> (<theme>)...
+  description: Uninstalls theme
+  help: Uninstalls theme
+  definition:
+    arguments:
+      theme:
+        name: theme
+        is_required: true
+        is_array: true
+        description: Path of the theme. Theme path should be specified as full path
+          which is area/vendor/name. For example, frontend/Magento/blank
+        default: []
+    options:
+      backup-code:
+        name: "--backup-code"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Take code backup (excluding temporary files)
+        default: false
+      clear-static-content:
+        name: "--clear-static-content"
+        shortcut: "-c"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Clear generated static view files.
+        default: false
+      help:
+        name: "--help"
+        shortcut: "-h"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this help message
+        default: false
+      quiet:
+        name: "--quiet"
+        shortcut: "-q"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not output any message
+        default: false
+      verbose:
+        name: "--verbose"
+        shortcut: "-v|-vv|-vvv"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: 'Increase the verbosity of messages: 1 for normal output, 2 for
+          more verbose output and 3 for debug'
+        default: false
+      version:
+        name: "--version"
+        shortcut: "-V"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this application version
+        default: false
+      ansi:
+        name: "--ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Force ANSI output
+        default: false
+      no-ansi:
+        name: "--no-ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Disable ANSI output
+        default: false
+      no-interaction:
+        name: "--no-interaction"
+        shortcut: "-n"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not ask any interactive question
+        default: false
+- name: varnish:vcl:generate
+  usage:
+  - varnish:vcl:generate [--access-list ACCESS-LIST] [--backend-host BACKEND-HOST]
+    [--backend-port BACKEND-PORT] [--export-version EXPORT-VERSION] [--grace-period
+    GRACE-PERIOD] [--output-file OUTPUT-FILE]
+  description: Generates Varnish VCL and echos it to the command line
+  help: Generates Varnish VCL and echos it to the command line
+  definition:
+    arguments: []
+    options:
+      access-list:
+        name: "--access-list"
+        shortcut: ''
+        accept_value: true
+        is_value_required: true
+        is_multiple: true
+        description: IPs access list that can purge Varnish
+        default:
+        - localhost
+      backend-host:
+        name: "--backend-host"
+        shortcut: ''
+        accept_value: true
+        is_value_required: true
+        is_multiple: false
+        description: Host of the web backend
+        default: localhost
+      backend-port:
+        name: "--backend-port"
+        shortcut: ''
+        accept_value: true
+        is_value_required: true
+        is_multiple: false
+        description: Port of the web backend
+        default: 8080
+      export-version:
+        name: "--export-version"
+        shortcut: ''
+        accept_value: true
+        is_value_required: true
+        is_multiple: false
+        description: The version of Varnish file
+        default: '4'
+      grace-period:
+        name: "--grace-period"
+        shortcut: ''
+        accept_value: true
+        is_value_required: true
+        is_multiple: false
+        description: Grace period in seconds
+        default: 300
+      output-file:
+        name: "--output-file"
+        shortcut: ''
+        accept_value: true
+        is_value_required: true
+        is_multiple: false
+        description: Path to the file to write vcl
+        default: 
+      help:
+        name: "--help"
+        shortcut: "-h"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this help message
+        default: false
+      quiet:
+        name: "--quiet"
+        shortcut: "-q"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not output any message
+        default: false
+      verbose:
+        name: "--verbose"
+        shortcut: "-v|-vv|-vvv"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: 'Increase the verbosity of messages: 1 for normal output, 2 for
+          more verbose output and 3 for debug'
+        default: false
+      version:
+        name: "--version"
+        shortcut: "-V"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this application version
+        default: false
+      ansi:
+        name: "--ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Force ANSI output
+        default: false
+      no-ansi:
+        name: "--no-ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Disable ANSI output
+        default: false
+      no-interaction:
+        name: "--no-interaction"
+        shortcut: "-n"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not ask any interactive question
+        default: false
 namespaces:
 - id: _global
   commands:
@@ -4372,13 +7831,68 @@ namespaces:
 - id: admin
   commands:
   - admin:user:create
+  - admin:user:unlock
 - id: app
   commands:
+  - app:config:dump
   - app:config:import
+  - app:config:status
+- id: cache
+  commands:
+  - cache:clean
+  - cache:disable
+  - cache:enable
+  - cache:flush
+  - cache:status
+- id: catalog
+  commands:
+  - catalog:images:resize
+  - catalog:product:attributes:cleanup
+- id: config
+  commands:
+  - config:sensitive:set
+  - config:set
+  - config:show
+- id: cron
+  commands:
+  - cron:install
+  - cron:remove
+  - cron:run
+- id: customer
+  commands:
+  - customer:hash:upgrade
+- id: deploy
+  commands:
+  - deploy:mode:set
+  - deploy:mode:show
+- id: dev
+  commands:
+  - dev:di:info
+  - dev:profiler:disable
+  - dev:profiler:enable
+  - dev:query-log:disable
+  - dev:query-log:enable
+  - dev:source-theme:deploy
+  - dev:template-hints:disable
+  - dev:template-hints:enable
+  - dev:tests:run
+  - dev:urn-catalog:generate
+  - dev:xml:convert
 - id: i18n
   commands:
   - i18n:collect-phrases
   - i18n:pack
+  - i18n:uninstall
+- id: indexer
+  commands:
+  - indexer:info
+  - indexer:reindex
+  - indexer:reset
+  - indexer:set-dimensions-mode
+  - indexer:set-mode
+  - indexer:show-dimensions-mode
+  - indexer:show-mode
+  - indexer:status
 - id: info
   commands:
   - info:adminuri
@@ -4401,10 +7915,14 @@ namespaces:
   - module:enable
   - module:status
   - module:uninstall
+- id: newrelic
+  commands:
+  - newrelic:create:deploy-marker
 - id: sampledata
   commands:
   - sampledata:deploy
   - sampledata:remove
+  - sampledata:reset
 - id: setup
   commands:
   - setup:backup
@@ -4421,3 +7939,13 @@ namespaces:
   - setup:store-config:set
   - setup:uninstall
   - setup:upgrade
+- id: store
+  commands:
+  - store:list
+  - store:website:list
+- id: theme
+  commands:
+  - theme:uninstall
+- id: varnish
+  commands:
+  - varnish:vcl:generate
