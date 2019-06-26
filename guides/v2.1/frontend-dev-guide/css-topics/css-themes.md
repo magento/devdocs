@@ -102,6 +102,12 @@ To include an external CSS file, add `<css src="URL to External Source" src_type
 </page>
 ```
 
+The `<link/>` tag can be use to insert `CSS` file in layout XML.
+
+```xml
+<link src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css" src_type="url" rel="stylesheet" type="text/css"/>
+```
+
 {:.bs-callout .bs-callout-info}
 If the system does not find the included CSS files, it searches for the same file names with a `.less` extension. This is part of the built-in preprocessing mechanism. You can find more information about it in the [CSS Preprocessing] topic.
 
