@@ -74,7 +74,7 @@ defaults:
       path: mftf/docs
     values:
       group: mftf
-      github_files: https://github.com/magento/magento2-functional-testing-framework/blob/develop/
+      github_files: https://github.com/magento/magento2-functional-testing-framework/blob/master/
       github_repo: https://github.com/magento/magento2-functional-testing-framework/
       functional_areas:
         - Test
@@ -178,15 +178,6 @@ algolia:
   application_id: E642SEDTHL
   index_name: devdocs
   api_key: d2d0f33ab73e291ef8d88d8b565e754c
-  files_to_exclude:
-    - guides/m1x/**/*.html
-    - guides/m1x/**/*.md
-    - swagger
-    - redoc
-  # Index HTML elements, especially code samples.
-  nodes_to_index: 'p,li,td,code'
-  # Override 10KB default and use our allowed max of 20KB
-  max_record_size: 20000
 
 google:
   analytics: UA-66243208-1

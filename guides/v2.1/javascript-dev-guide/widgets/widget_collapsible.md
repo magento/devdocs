@@ -30,7 +30,6 @@ If you need to be able to save the expanded/collapsed state, the element must ha
 
 The element's `id` is also used in deep linking: if the `id` of the content or the `id` of the element that appends the content is specified as an anchor, the content for that element is automatically expanded.
 
-
 Similar to the accordion widget, the header, title and content for collapsible can be defined by the child elements' attributes or passed as widget options. See [Accordion widget initialization] for details.
 
 ### Initialize collapsible with header only
@@ -191,7 +190,6 @@ Selector for the content element, searched for using `.find()` on the main colla
 
 **Default value**: `[data-role=content]`
 
-
 Initialize the collapsible with the content option specified:
 
 ```javascript
@@ -274,7 +272,6 @@ $("#element").collapsible("option","disabledState","disabled");
 ### `header` {#fedg_collaps_header}
 Selector for the header element, searched for using `.find()` on the main collapsible element. If the element with the specified selector is not found on the main collapsible element, the main element becomes a header.
 
-
 **Type**: 
 - String
 - jQuery Object
@@ -304,7 +301,6 @@ The classes for icons to be used in headers. If no classes are specified, icons 
 
 **Default value**: `{ activeHeader: null, header: null }`
 
-
 Initialize the collapsible with the `icons` option specified:
 ```javascript
 $("#element").collapsible({ icons: {"header": "plus", "activeHeader": "minus"}});
@@ -322,7 +318,6 @@ $("#element").collapsible("option","icons",{"header": "plus", "activeHeader": "m
 
 ### `loadingClass` {#fedg_collaps_loadingClass}
 Specifies the class that is assigned to the main collapsible element when requesting data using Ajax.
-
 
 **Type**: String
 
@@ -444,7 +439,6 @@ $("#element").collapsible("option","trigger",".trigger");
 -   [forceActivate()](#collaps_forceActivate)
 -   [forceDeactivate()](#collaps_forceDeactivate)
 
-
 ### `activate()` {#collaps_activate}
 Expand the content when this method is called.
 
@@ -465,7 +459,6 @@ Invoke the deactivate method:
 $("#element").collapsible("deactivate");
 ```
 
-
 ### `disable()` {#collaps_disable}
 Disable the panel.
 This method does not accept any arguments.
@@ -474,7 +467,6 @@ Invoke the disable method:
 ```javascript
 $("#element").collapsible("disable");
 ```
-
 
 ### `enable()` {#collaps_enable}
 Enable the panel.
