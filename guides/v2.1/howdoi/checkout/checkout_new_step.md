@@ -106,9 +106,11 @@ define(
 	    * The navigate() method is responsible for navigation between checkout step
 	    * during checkout. You can add custom logic, for example some conditions
 	    * for switching to your custom step
+	    * When the user navigates to the custom step via url anchor or back button we_must show step manually here
 	    */
             navigate: function () {
 
+                this.isVisible(true);
             },
 
             /**
