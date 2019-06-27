@@ -31,10 +31,10 @@ pages:
 
     - label: Coding Standards
       url: /coding-standards/bk-coding-standards.html
-      
-   - label: Magento Framework
+
+    - label: Magento Framework
       url: /architecture/archi_perspectives/framework.html
-    
+
     - label: Modules and Extensibility
       url: /architecture/extensibility.html
       children:
