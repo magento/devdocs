@@ -1,7 +1,6 @@
 ---
 group: php-developer-guide
 subgroup: Versioning
-title: Codebase changes
 menu_title: Codebase changes
 menu_order: 1300
 redirect_from:
