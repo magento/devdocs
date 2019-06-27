@@ -69,6 +69,7 @@ Use this table to understand what changes Magento can make and which version num
 | | Interface removed| MAJOR|
 | | Method removed | MAJOR|
 | | New required method argument | MAJOR|
+| | New optional method argument | MAJOR|
 | | Removed the last argument for a method | MINOR|
 | | Changed a method signature (excluding last argument removal) | MAJOR|
 | | New method exception (excluding subtypes of existing exceptions) | MAJOR|
@@ -78,6 +79,7 @@ Use this table to understand what changes Magento can make and which version num
 | | Class removed| MAJOR|
 | | Method removed | MAJOR|
 | | New required method argument | MAJOR|
+| | New optional method argument | MINOR|
 | | Removed a non-last argument| MAJOR|
 | | New required constructor object argument | MINOR|
 | | New optional constructor argument | MINOR|

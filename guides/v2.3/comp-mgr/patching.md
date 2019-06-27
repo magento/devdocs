@@ -34,7 +34,9 @@ When the [patch][] program is run, this file is read in and the specified change
 1. Login to the server as the [Magento admin user][] and verify the file is in the correct directory.
 1. In the command line interface, run the following commands according to the patch extension:
 
-        patch < patch_file_name.patch
+   ```bash
+   patch < patch_file_name.patch
+   ```
 
    The command assumes the file to be patched is located relative to the patch file.
 
@@ -55,7 +57,7 @@ Please refer to the [Magento Help Center][] for details on how to use Composer t
 <!-- Link Definitions -->
 [Magento Security Center]:https://magento.com/security/patches
 [-p1 instead of -p0]:http://man7.org/linux/man-pages/man1/patch.1.html
-[Back up and roll back the file system]:https://devdocs.magento.com/guides/v2.3/install-gde/install/cli/install-cli-backup.html
+[Back up and roll back the file system]:{{ page.baseurl }}/install-gde/install/cli/install-cli-backup.html
 [patch]:https://en.wikipedia.org/wiki/Patch_(Unix)
 [Magento Help Center]:https://support.magento.com/hc/en-us/articles/360005484154-Create-a-patch-for-a-Magento-2-Composer-installation-from-a-GitHub-commit
-[Magento Admin user]:https://devdocs.magento.com/guides/v2.3/config-guide/cli/config-cli.html#config-install-cli-first
+[Magento Admin user]:{{ page.baseurl }}/config-guide/cli/config-cli.html#config-install-cli-first
