@@ -25,7 +25,7 @@ The articles in this chapter describe the particular approaches used in the Blan
 
 ## Terms used {#fedg_rwd_terms}
   Term           Description
-  -------------- ---------------------------------------------------------------------------------
+  ------------------------------------------------------------------------------------------------
   *Breakpoint*   The width of the user's screen that causes your responsive layout to change.
 
 
