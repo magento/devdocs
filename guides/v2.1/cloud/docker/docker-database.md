@@ -7,9 +7,9 @@ functional_areas:
   - Configuration
 ---
 
-There are two ways to connect to the database. Before you begin, you can find the database credentials in the `database` section of the `docker/config.php` file. The examples use the following default credentials:
+There are two ways to connect to the database. Before you begin, you can find the database credentials in the `database` section of the `.docker/config.php` file. The examples use the following default credentials:
 
-> Filename: `docker/config.php`
+> Filename: `.docker/config.php`
 
 ```php?start_inline=1
 return [
