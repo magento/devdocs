@@ -47,7 +47,7 @@ The `routes.yaml` file is a list of templated routes and their configurations. Y
   ```
   {: .no-copy}
 
-  In a non-production branch, the `{default}` placeholder resolves to the project ID and environment ID.
+  In a non-production branch, the project ID and environment ID replace the `{default}` placeholder when the project is deployed.
 
 - `{all}` represents all the domain names configured for the project. For example, if you have a project with `example.com` and `example1.com` domains, the route templates `http://www.{all}/` and `https://{all}/blog` resolve to routes for all domains in the project:
 
@@ -64,7 +64,7 @@ The `routes.yaml` file is a list of templated routes and their configurations. Y
 
   The `{all}` placeholder is useful for projects configured for multiple domains. In a non-production branch `{all}` is replaced with the project ID and environment ID for each domain.
 
-  If a project does not have any domains configured which is common during development, the `{all}` placeholder behaves in the same way as the `{default}` placeholder.
+  If a project does not have any domains configured, which is common during development, the `{all}` placeholder behaves in the same way as the `{default}` placeholder.
 
 {{site.data.var.ee}} also generates URLs for every active environment, so you can test that system. In a test system, `{default}` is replaced with the following domain name:
 
@@ -83,7 +83,7 @@ https://refactorcss-mswy7hzcuhcjw.us.magentosite.cloud/blog
   {: .no-copy}
 
 {:.bs-callout-info}
-{{site.data.var.ece}} also supports [multiple applications]({{ page.baseurl }}/cloud/project/project-conf-multi.html) per project. Each project has a single `routes.yaml` file that defines which request is routed to which application.
+{{site.data.var.ece}} also supports [multiple applications]({{ page.baseurl }}/cloud/project/project-conf-multi-sites.html) per project. Each project has a single `routes.yaml` file that defines which request is routed to which application.
 
 ## Route options
 
