@@ -18,15 +18,15 @@ The Magento Framework has adopted conventions that regulate the escaping of data
 
 Starting in version 2.0.6, Magento no longer explicitly sets file system permissions. Instead, we recommend that certain files and directories be writable in a development environment and read-only in a production environment.
 
-To provide you with a simple way to restrict access to the file system in production, we provide the flexibility for you to further restrict those permissions using a [umask](http://www.cyberciti.biz/tips/understanding-linux-unix-umask-value-usage.html).
+To provide you with a simple way to restrict access to the file system in production, we provide the flexibility for you to further restrict those permissions using a [umask][].
 
-For an overview, see [Overview of ownership and permissions]({{page.baseurl}}/install-gde/prereq/file-sys-perms-over.html).
+For an overview, see [Overview of ownership and permissions][].
 
 For details about ownership and permissions in development and production, see [Magento ownership and permissions in development and production]({{page.baseurl}}).
 
 ## Improved prevention of clickjacking exploits
 
-Magento safeguards your store from clickjacking attacks by using an X-Frame-Options HTTP request header. For more information, see [X-Frame-Options header]({{page.baseurl}}/config-guide/secy/secy-xframe.html).
+Magento safeguards your store from clickjacking attacks by using an X-Frame-Options HTTP request header. For more information, see [X-Frame-Options header][].
 
 ## Use of non-default Magento Admin URL
 
@@ -41,4 +41,13 @@ Although the use of a non-default admin URL will not secure the site, its use wi
 
 ## Related topics
 
-[Configuration Guide]({{page.baseurl}}/config-guide/bk-config-guide.html)
+[Configuration Guide][]
+
+<!-- Link Definitions -->
+
+[Security measures against XSS attacks]: {{page.baseurl}}/frontend-dev-guide/templates/template-security.html
+[umask]: http://www.cyberciti.biz/tips/understanding-linux-unix-umask-value-usage.html
+[Overview of ownership and permissions]: {{page.baseurl}}/install-gde/prereq/file-sys-perms-over.html
+[X-Frame-Options header]: {{page.baseurl}}/config-guide/secy/secy-xframe.html
+[Display or change the Admin URI]: {{page.baseurl}}/install-gde/install/cli/install-cli-adminurl.html
+[Configuration Guide]: {{page.baseurl}}/config-guide/bk-config-guide.html

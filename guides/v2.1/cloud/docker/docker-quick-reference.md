@@ -22,31 +22,23 @@ Resume Docker environment | `docker-compose start`
 List images | `docker-compose images`
 List containers and ports | `docker-compose ps`, or `docker ps`
 
-## ece-tools
-
-Action | Command
-:----- | :------
-Builds the docker environment in [production mode]({{page.baseurl}}/cloud/docker/docker-config.html#launch-modes) by default and verifies configured service versions. | `docker:build`
-Builds the docker environment in [developer mode]({{page.baseurl}}/cloud/docker/docker-config.html#launch-modes). | `docker:build --mode="developer"`
-Convert PHP configuration files to Docker ENV files. | `docker:config:convert`
-
-The following example lists the `{{site.data.var.ct}}` Docker commands:
-
-```bash
-php ./vendor/bin/ece-tools list | grep docker
-```
-
-```terminal
- docker
-  docker:build              Build docker configuration
-  docker:build:integration  Build test docker configuration
-  docker:config:convert     Convert raw config to .env files configuration
-```
-{: .no-copy}
-
 ### Build options
 
 | Option       | Key              | Available values
 | ------------ | ---------------- | ------------------
 | Mode         | `--mode`, `-m`   | production, developer
 
+## bin/docker
+
+Action | Command
+:----- | :------
+Pull latest images | pull
+Destroy, re-create and start containers | up
+Destroy containers | down
+Build application | build
+Deploy application | up
+Re-build and re-deploy application | redeploy
+Connect to bash | bash
+Stop containers | stop
+Start containers | start
+Restart containers | restart
