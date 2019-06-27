@@ -93,7 +93,7 @@ Any new design related to Web API must satisfy the following constraints to keep
 1. Field filtration must be performed with SQL queries. Do not filter on the application layer after you've fetched all possible fields.
 1. Third-party customizations must be done separately for Service Contracts and for GraphQL
 1. For modularity purposes, GraphQL configuration must be declared in a separate module. For example, to expose GraphQL for the module `MyModule`, you must create the `schema.graphqls` file in the `MyModuleGraphQl` module.
-1. GraphQL is primarily designed for store-front one-page apps and mobile applications. It supports token and cookie authentication, as well as guest access to public queries
+1. GraphQL is primarily designed for store-front, one-page apps and mobile applications. It supports token and cookie authentication, as well as guest access to public queries
 1. All queries must return the 200 HTTP status code. If an error occurs, return the error in the response body. A 500 status code is allowed when an exception occurs when generating a schema, but not during requests.
 1. The Store code should be passed via headers.
 
