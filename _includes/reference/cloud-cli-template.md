@@ -7,8 +7,7 @@
 # Magento CLI
 {% endif %}
 
-This reference contains {{ commands | size }} commands available through the `magento/magento-cloud-cli` command-line tool.
-Generate the initial command list using `magento-cloud list` command at the {{ site.data.var.ece }} edition.
+This reference contains {{ commands | size }} {{ site.data.var.ece }} commands available through the `magento/magento-cloud-cli` command-line tool. Use the `magento-cloud list` command to generate the list.
 
 {% for command in commands %}
   {% assign arguments = command.definition.arguments %}
