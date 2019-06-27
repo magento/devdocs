@@ -235,7 +235,7 @@ There are alternatives methods that automate parts of the upgrade process:
 2. EXPERIMENTAL: [Upgrade using the custom Composer plugin][]
    We are developing a solution that would enhance the semi-automated process by a [custom composer plugin][] implementation.
 
-The upgrading scenario is the same for each of these options (both utilize Composer and a command line interface) from the system point of view.
+The upgrading scenario is the same for each of these options. Both use Composer and a command line interface.
 
 {: .bs-callout-warning }
 All scenarios require that you comply with the [Prerequisites].
