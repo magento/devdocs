@@ -948,7 +948,7 @@ has been changed to `<argument name="resourceStockItem" xsi:type="object">Magent
 * Screen readers can now identify the `label` elements that are linked to  `input` fields for street address fields on the checkout page. Previously, screen readers could not identify these fields because the elements were not populated.  *Fix submitted by [Scott Buchanan](https://github.com/scottsb) in pull request [21484](https://github.com/magento/magento2/pull/21484)*. [GitHub-10893](https://github.com/magento/magento2/issues/10893)
 
 <!--- ENGCOM-4596-->
-* Product gallery images no longer open unexpectedly when you move ove a product image while moving to another page element. *Fix submitted by [Denis Kopylov ](https://github.com/Den4ik) in pull request [21790](https://github.com/magento/magento2/pull/21790)*. [GitHub-21789](https://github.com/magento/magento2/issues/21789)
+* Product gallery images no longer open unexpectedly when you move over a product image while moving to another page element. *Fix submitted by [Denis Kopylov ](https://github.com/Den4ik) in pull request [21790](https://github.com/magento/magento2/pull/21790)*. [GitHub-21789](https://github.com/magento/magento2/issues/21789)
 
 <!--- ENGCOM-4703-->
 * Magento now cancels previous scrolling actions as expected when you click **Add to cart** on a product page. Previously, Magento scrolled back to the `qty` input box the same number of times as you clicked  **Add to cart**. *Fix submitted by [Vechirko Yurii](https://github.com/yvechirko) in pull request [22117](https://github.com/magento/magento2/pull/22117)*. [GitHub-21715](https://github.com/magento/magento2/issues/21715)
