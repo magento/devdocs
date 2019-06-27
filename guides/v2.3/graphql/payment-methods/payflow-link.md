@@ -1,6 +1,6 @@
 ---
 group: graphql
-title: Paypal Payflow Link payment method
+title: PayPal Payflow Link payment method
 ---
 
 PayPal [PayFlow Link](https://developer.paypal.com/docs/classic/payflow/integration-guide/) is available for merchants in the United States and Canada only. Customers are not required to have a personal PayPal account. Instead, customers enter their credit card information in a form that is hosted by PayPal.
