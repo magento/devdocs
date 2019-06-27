@@ -170,7 +170,7 @@ The {{ site.data.var.ece }} deploy process always enables Google Analytics on Pr
 -  **Default**—`true`
 -  **Version**—Magento 2.1.4 and later
 
-On deployment to Pro and Starter staging and production environments, this variable replaces Magento base URLs in the database with the project URLs specified by the [`MAGENTO_CLOUD_ROUTES`]({{ page.baseurl}}/cloud/env/variables-cloud.html) variable. Use this setting to override the default behavior of the [UPDATE_URLS](#update_urls) variable which is ignored when deploying to staging and production environments. 
+On deployment to Pro and Starter Staging and Production environments, this variable replaces Magento base URLs in the database with the project URLs specified by the [`MAGENTO_CLOUD_ROUTES`]({{ page.baseurl}}/cloud/env/variables-cloud.html) variable. Use this setting to override the default behavior, which is to ignore the [UPDATE_URLS](#update_urls) variable when deploying to Staging and Production environments. 
 
 ```yaml
 stage:
@@ -332,7 +332,7 @@ stage:
 -  **Default**—_Not set_
 -  **Version**—Magento 2.1.4 and later
 
-You can configure specific locales per theme as long as the theme is not excluded using the [`SCD_EXCLUDE_THEMES` variable](#scd_exclude_themes) during deployment. This is ideal if you want to speed up the deployment process by reducing the amount of unnecessary theme files. For example, you can deploy the _magento/backend_ theme in English and a custom theme in other languages.
+You can configure specific locales per theme as long as the theme is not excluded using the [`SCD_EXCLUDE_THEMES` variable](#scd_exclude_themes) during deployment. This configuration is ideal to speed up the deployment process by reducing the amount of unnecessary theme files. For example, you can deploy the _magento/backend_ theme in English and a custom theme in other languages.
 
 The following example deploys the `Magento/backend` theme with three locales:
 

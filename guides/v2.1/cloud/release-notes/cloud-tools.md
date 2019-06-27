@@ -41,7 +41,7 @@ The release notes include:
 
     -   {:.new}<!-- MAGECLOUD-2901 -->Added support for database table prefixes using the [DATABASE_CONFIGURATION environment variable]({{page.baseurl}}/cloud/env/variables-deploy.html#database_configuration).
 
-    -   {:.new}<!-- MAGECLOUD-3602 -->Added the **FORCE_UPDATE_URLS** deploy variable to update Magento base URLs when deploying to Pro and Starter production and staging environments. See the definition in the [deploy variables]({{page.baseurl}}/cloud/env/variables-deploy.html#force_update_urls) content.
+    -   {:.new}<!-- MAGECLOUD-3602 -->Added the **FORCE_UPDATE_URLS** deploy variable to update Magento base URLs when deploying to Pro and Starter Staging and Production environments. See the definition in the [deploy variables]({{page.baseurl}}/cloud/env/variables-deploy.html#force_update_urls) content.
 
     -   {:.new}<!-- MAGECLOUD-3643 -->Added the **TTFB_TESTED_PAGES** post-deploy variable to configure _Time to First Byte_  page tests to check Magento Commerce application performance on sites deployed to Cloud infrastructure. See the variable description in [post-deploy variables]({{ page.baseurl }}/cloud/env/variables-post-deploy.html).
 
