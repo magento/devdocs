@@ -1,3 +1,9 @@
+<!-- # IMPORTANT
+
+We are no longer accepting pull requests to update v2.1 devdoc files.
+
+Magento 2.1.18 is the final 2.1.x release. After the [June 2019 end-of-support date](https://magento.com/sites/default/files/magento-software-lifecycle-policy.pdf), Magento  will no longer apply security patches, quality fixes, or documentation updates to v2.1.x . To maintain your site's performance, security, and PCI compliance, [upgrade](https://devdocs.magento.com/guides/v2.3/comp-mgr/bk-compman-upgrade-guide.html) to the latest version of Magento. -->
+
 ## Purpose of this pull request
 
 <!-- REQUIRED Describe the goal and the type of changes this pull request covers. -->
