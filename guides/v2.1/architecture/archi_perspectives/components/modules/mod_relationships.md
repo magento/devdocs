@@ -49,5 +49,3 @@ If module A replaces module B, it needs to be able to do so in such a way that o
 ## Related topics {#m2arch-module-related}
 
 [Module overview]({{page.baseurl}}/architecture/archi_perspectives/components/modules/mod_intro.html)
-
-
