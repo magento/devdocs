@@ -231,7 +231,7 @@ There are alternatives methods that automate parts of the upgrade process:
 
 1. [Upgrade using the script][] (semi-automated process)
    Upgrading using the script process is a bit easier and less intensive if you have not made updates to values that the script affects.
-   In case you previously made the updates, do not upgrade using the script, because this will override the affected values.
+   If you previously made updates, do not upgrade using the script. The script will override your updates.
 2. EXPERIMENTAL: [Upgrade using the custom composer plugin][] (with a custom composer plugin)
    We are developing a solution that would enhance the semi-automated process by a [custom composer plugin][] implementation.
 
