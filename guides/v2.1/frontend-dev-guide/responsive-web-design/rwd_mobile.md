@@ -4,7 +4,6 @@ title: Create a responsive mobile theme based on a default theme
 functional_areas:
   - Frontend
 ---
-## What's in this topic
 
 The topic describes how to create a responsive mobile-specific theme using the default Magento approaches. 
 
@@ -15,7 +14,7 @@ To use all the responsive approaches implemented in the Magento out-of-the-box B
 To create a mobile-specific theme:
 
 1. Create a theme as described in [Create a theme]({{ page.baseurl }}/frontend-dev-guide/themes/theme-create.html), having specified Blank or Luma as a parent theme.
-2. Add a `<theme_dir>/Magento_Theme/layout/default_head_blocks.xml` [layout](https://glossary.magento.com/layout) file with the following content:
+1. Add a `<theme_dir>/Magento_Theme/layout/default_head_blocks.xml` [layout](https://glossary.magento.com/layout) file with the following content:
 
 ```xml
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
@@ -29,7 +28,7 @@ This will remove the desktop-specific files from your theme.
 
 ## Applying mobile-specific style 
 
-Used `styles-m.less` to generate mobile-specific styles.
+Use `styles-m.less` to generate mobile-specific styles.
 
 ```xml
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
