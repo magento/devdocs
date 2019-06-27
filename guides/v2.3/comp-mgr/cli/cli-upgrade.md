@@ -219,7 +219,7 @@ Open your storefront URL in a web browser to check whether the upgrade was succe
 If the application fails with a  `We're sorry, an error has occurred while generating this email.` error:
 
 1. Reset [file system ownership and permissions] as a user with `root` privileges.
-2. Clear these directories:
+2. Clear the following directories:
    - `var/cache/`
    - `var/page_cache/`
    - `generated/code/`
