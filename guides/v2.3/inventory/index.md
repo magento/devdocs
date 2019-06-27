@@ -15,7 +15,7 @@ landing-page: Inventory
 
 Merchants install {{site.data.var.im}} as part of v2.3.x and upgrades with the name `magento/inventory-composer-metapackage`. For details, see [Install {{site.data.var.im}}]({{site.baseurl}}/extensions/inventory-management/).
 
-**Magento Community Contribution** – Magento thanks the many contributors to the [Multi Source Inventory (MSI) project](https://github.com/magento-engcom/msi), developing these features as part of the Magento Community Engineering program.
+**Magento Community Contribution** – Magento thanks the many contributors to the [Magento Inventory (was MSI) project](https://github.com/magento/inventory), developing these features as part of the Magento Community Engineering program.
 
 ## Terminology
 
