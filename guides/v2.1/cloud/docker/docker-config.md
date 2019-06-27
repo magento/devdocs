@@ -61,7 +61,9 @@ For example, the following command starts the Docker configuration generator for
         -  [php@7.2](https://formulae.brew.sh/formula/php@7.2)
     -  [Composer](https://getcomposer.org)
     -  [Docker](https://www.docker.com/get-started)
-    -  [docker-sync](https://docker-sync.readthedocs.io/en/latest/getting-started/installation.html)—file synchronization is required for developer mode
+    -  File synchronization required for developer mode—use one of the following:
+       -  [docker-sync](https://docker-sync.readthedocs.io/en/latest/getting-started/installation.html)
+       -  [mutagen](https://mutagen.io/documentation/installation/#installation)
 
 1.  Update the hosts file.
 
@@ -205,8 +207,16 @@ The `{{site.data.var.ct}}` version 2002.0.18 and later supports developer mode.
 
 1.  Start the file synchronization.
 
+    For the `docker-sync` tool:
+
     ```bash
     docker-sync start
+    ```
+
+    For the `mutagen` tool:
+
+    ```bash
+    bash ./mutagen.sh 
     ```
 
 1.  Build files to containers and run in the background.

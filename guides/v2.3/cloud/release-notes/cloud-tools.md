@@ -25,11 +25,17 @@ The release notes include:
 
     -   {:.new}<!-- MAGECLOUD-3357 -->Added support for configuring PHP modules using the `.magento.app.yaml` file. Any [PHP Extensions specified in the `.magento.app.yaml` file]({{page.baseurl}}/cloud/project/project-conf-files_magento-app.html#php-extensions) become available in the Docker PHP containers.
 
-    -   {:.fix}<!-- MAGECLOUD-3582 -->Corrected the default path for Magento root when using the Docker environment. Previously, the Magento root was accessible in the `var/www/magento` directory. Now, the Magento root is in the `/app` directory, as expected.
+    -   {:.new}<!-- MAGECLOUD-3569 -->There are new commands available to improve the Docker command line experience. See the [`bin/docker` section of the Docker reference]({{page.baseurl}}/cloud/docker/docker-quick-reference.html#bindocker).
+
+    -   {:.new}<!-- MAGECLOUD-3559 -->Added the ability to use Mutagen.io to synchronize files during development between the local host and Docker. See [Docker prerequisites]({{page.baseurl}}/cloud/docker/docker-config.html#prerequisites).
+
+    -   {:.fix}<!-- MAGECLOUD-3582 -->Corrected the default path when using the Docker environment. Now, when you use SSH to log in to the Docker container, you are at the Magento root in the `/app` directory, as expected.
 
     -   {:.fix}<!-- MAGECLOUD-3832 -->Updated the Sodium library from version 1.0.11 to version 1.0.18, and updated the Sodium PHP extension.
 
     -   {:.fix}<!-- MAGECLOUD-3446 -->Added the `analysis-icu` and the `analysis-phonetic` Elasticsearch plugins to all Docker images.
+
+    -   {:.fix}<!-- MAGECLOUD-3486 & MAGECLOUD-3678 -->Improved validations: When using options for the `docker:build` command, you must provide a value when using an option. Also, added validation for the Node version when using the `docker:build run` command.
 
 -   {:.new}**Environment variable updates**—
 
@@ -52,6 +58,8 @@ The release notes include:
 -   {:.new}<!-- MAGECLOUD-3451 -->Added a new **`env:config:show` command** to the `{{site.data.var.ct}}` package that displays environment services, routes, or variables. See [Services, routes, and variables]({{page.baseurl}}/cloud/reference/ece-tools-reference.html#services-routes-and-variables). [Feature submitted by Vladimir Kerkhoff](https://github.com/magento/ece-tools/pull/486).
 
 -   {:.fix}<!-- MAGECLOUD-3277 -->Decreased the `cloud.log` log level for shell output from `info` to `debug`.
+
+-   {:.fix}<!-- MAGECLOUD-3510 -->Added the `--remove-definers (-d)` option to the `ece-tools db-dump` command to remove definers from the dump file.
 
 ## v2002.0.19
 
