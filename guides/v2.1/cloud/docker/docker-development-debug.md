@@ -44,7 +44,6 @@ runtime:
         - ENABLE_SENDMAIL=false
         - UPLOAD_MAX_FILESIZE=64M
         - MAGENTO_ROOT=/app
-        - PHP_ENABLE_XDEBUG=false
         - PHP_IDE_CONFIG=serverName=magento_cloud_docker
         - XDEBUG_CONFIG=remote_host=host.docker.internal
       env_file:
