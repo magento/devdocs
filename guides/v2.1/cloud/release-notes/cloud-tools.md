@@ -22,7 +22,9 @@ The release notes include:
 -   {:.new}**Docker Updates**—
 
     -   {:.new}<!-- MAGECLOUD-3129/3684 -->You can now perform functional testing using the `{{site.data.var.ct}}` package in the Docker environment. See [Functional testing in Docker]({{page.baseurl}}/cloud/docker/docker-development-testing.html).
-    
+
+    -   {:.new}<!-- MAGECLOUD-3357 -->Added support for configuring PHP modules using the `.magento.app.yaml` file. Any PHP Extensions specified in the `.magento.app.yaml` file become available in the Docker PHP containers.
+
     -   {:.fix}<!-- MAGECLOUD-3582 -->Corrected the default path for Magento root when using the Docker environment. Previously, the Magento root was accessible in the `var/www/magento` directory. Now, the Magento root is in the `/app` directory, as expected.
 
     -   {:.fix}<!-- MAGECLOUD-3832 -->Updated the Sodium library from version 1.0.11 to version 1.0.18, and updated the Sodium PHP extension.
