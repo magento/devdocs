@@ -6,18 +6,19 @@ functional_areas:
   - Setup
 ---
 
-{{site.data.var.ee}} processes an incoming URL using a *route*. The `routes.yaml` file—located at `.magento/routes.yaml` in your project—defines routes for the Integration, Staging, and Production environments. The deploy script uses values defined in the configuration files in the `.magento` directory and deletes the directory after deployment. Your local workspace is not affected.
+The `routes.yaml` file in the `.magento/routes.yaml` directory defines routes for your {{ site.data.var.ece }} Integration, Staging, and Production environments. Routes determine how Magento processes incoming HTTP requests.
 
 {% include cloud/note-pro-missing-self-service-options.md %}
 
-The following is the default `routes.yaml` file:
+The default `routes.yaml` file contains the following code:
 
 ```yaml
 "http://{default}/":
-    type: upstream
+  type: upstream
     upstream: "mymagento:php"
 ```
 
+By default, Magento routes all HTTP requests to the {{ site.data.var.ee }} application.
 If you do not create a custom `routes.yaml` file, the automated deployment uses the default file.
 
 #### To list the configured routes:
@@ -31,8 +32,11 @@ magento-cloud environment:routes
 | http://{default}/ | upstream | mymagento:php |
 +-------------------+----------+---------------+
 ```
+{: .no-copy}
 
-The `routes.yaml` file is a list of templated routes and their configurations. You can use the following placeholders in a route template:
+## Route templates
+
+The `routes.yaml` file is a list of templated routes and their configurations. You can use the following placeholders in route templates:
 
 - `{default}` represents the qualified domain name configured as the default for the project. For example, if you have a project with the default domain `example.com`, the route templates `http://www.{default}/` and `https://{default}/blog` resolve to the following URLs in a production environment:
 
@@ -41,6 +45,7 @@ The `routes.yaml` file is a list of templated routes and their configurations. Y
 
   http://www.example.com/blog
   ```
+  {: .no-copy}
 
   In a non-production branch, the `{default}` placeholder resolves to the project ID and environment ID.
 
@@ -55,6 +60,7 @@ The `routes.yaml` file is a list of templated routes and their configurations. Y
 
   http://www.example1.com/blog
   ```
+  {: .no-copy}
 
   The `{all}` placeholder is useful for projects configured for multiple domains. In a non-production branch `{all}` is replaced with the project ID and environment ID for each domain.
 
@@ -65,18 +71,19 @@ The `routes.yaml` file is a list of templated routes and their configurations. Y
 ```text
 [branch]-[project-id].[region].magentosite.cloud
 ```
+{: .no-copy}
 
 For example, the `refactorcss` branch for the `mswy7hzcuhcjw` project hosted in the `us` cluster has the following the domains: 
 
 ```text
 http://www-refactorcss-mswy7hzcuhcjw.us.magentosite.cloud/
-```
 
-```text
 https://refactorcss-mswy7hzcuhcjw.us.magentosite.cloud/blog
 ```
+  {: .no-copy}
 
-<!-- {{site.data.var.ece}} also supports [multiple applications]({{ page.baseurl }}/cloud/project/project-conf-multi.html) per project. Each project has a single `routes.yaml` file that defines which request is routed to which application. -->
+{:.bs-callout-info}
+{{site.data.var.ece}} also supports [multiple applications]({{ page.baseurl }}/cloud/project/project-conf-multi.html) per project. Each project has a single `routes.yaml` file that defines which request is routed to which application.
 
 ## Route options
 
@@ -90,10 +97,9 @@ Property         | Description
 `redirects:`     | Controls [redirect rules]({{ page.baseurl }}/cloud/project/project-routes-more-redir.html).
 `ssi:`           | Controls enabling of [Server Side Includes]({{ page.baseurl }}/cloud/project/project-routes-more-ssi.html).
 
-
 ## Simple routes
 
-The following sample routes the apex domain and the `www` subdomain to the `frontend`application. This route does not redirect HTTPS:
+The following sample routes the apex domain and the `www` subdomain to the `frontend`application. This route does not redirect HTTPS requests:
 
 ```yaml
 "http://{default}/":
@@ -137,18 +143,20 @@ If you define a `http://www.{default}/` route, the route becomes `http://www.add
 
 You can put any subdomain before the dot and the route resolves. In this example, the route is defined as `http://*.{default}/`, so both of the following URLs work:
 
--  `http://foo.add-theme-projectID.us.magentosite.cloud/`
--  `http://bar.add-theme-projectID.us.magentosite.cloud/`
+- `http://foo.add-theme-projectID.us.magentosite.cloud/`
+- `http://bar.add-theme-projectID.us.magentosite.cloud/`
 
 If you examine the routes of this sample application, you see:
 
 ```bash
 echo $MAGENTO_CLOUD_RELATIONSHIPS | base64 --decode | json_pp
 ```
+{: .no-copy}
 
 ```terminal
 https://*.add-theme-projectID.us.magentosite.cloud/
 ```
+{: .no-copy}
 
 {: .bs-callout .bs-callout-info}
 Some projects provisioned before December 8, 2017, use the triple dash (\-\-\-) as a separator for the subdomain.
