@@ -154,7 +154,7 @@ _Optional_—If the Magento updater is installed, modify it (it is located in th
 
 ### Update metadata
 
-Update the `"name"`, `"version"`, and `"description"` fields in the `composer.json` file as desired.
+Update the `"name"`, `"version"`, and `"description"` fields in the `composer.json` file as needed.
 
 {: .bs-callout-info }
 Updating the metadata in `composer.json` file is entirely superficial, not functional.
