@@ -22,6 +22,11 @@ pages:
         - label: GraphQL Caching
           url: /graphql/caching.html
 
+    - label: Payment methods
+      children:
+        - label: PayPal Payflow Pro
+          url: /graphql/payment-methods/payflow-pro.html
+
     - label: Development
       children:
         - label: Define the GraphQL schema for a module
@@ -61,6 +66,12 @@ pages:
 
             - label: Paypal endpoint
               url: /graphql/reference/paypal.html
+
+            - label: PayPal createPayflowProToken mutation
+              url: /graphql/reference/paypal-create-payflow-pro-token.html
+
+            - label: PayPal handlePayflowProResponse mutation
+              url: /graphql/reference/paypal-handle-payflow-pro-response.html
 
             - label: Products endpoint
               url: /graphql/reference/products.html
