@@ -13,11 +13,11 @@ The following diagram shows the workflow for placing an order when Payflow Link 
 
 ![PayPal Payflow Link sequence diagram]({{page.baseurl}}/graphql/images/paypal-payflow-link.svg)
 
-1. The PWA client uses the `setPaymentMethodOnCart` mutation to set the payment method to `payflow_link`.
+1. The PWA client uses the [`setPaymentMethodOnCart`]({{page.baseurl}}/reference/quote-payment-method.html) mutation to set the payment method to `payflow_link`.
 
 2. The mutation returns a `Cart` object.
 
-3. The client runs the `placeOrder` mutation, which creates an order in Magento and begins the authorization process.
+3. The client runs the [`placeOrder`]({{page.baseurl}}/reference/quote-place-order.html) mutation, which creates an order in Magento and begins the authorization process.
 
 4. Magento requests a secure token from the Payflow Link gateway.
 
@@ -25,7 +25,7 @@ The following diagram shows the workflow for placing an order when Payflow Link 
 
 6. The `placeOrder` mutation returns an order ID. Magento does not return secure token information. The order has the status `payment pending`.
 
-7. The client runs the  `getPayflowLinkToken` mutation to retrieve the secure token information.
+7. The client runs the [`getPayflowLinkToken`]({{page.baseurl}}/reference/paypal-get-payflow-link-token.html) mutation to retrieve the secure token information.
 
 8. Magento returns the token information.
 
@@ -33,7 +33,7 @@ The following diagram shows the workflow for placing an order when Payflow Link 
 
 10. After PayPal processes the payment, the gateway runs a silent post request against the Magento server. As a result, Magento sets the order status to pending, and the order is ready to be invoiced.
 
-11. The Payflow gateway returns control of the customer's browser to the client. 
+11. The Payflow gateway returns control of the customer's browser to the client.
 
 ## Additional Payment  information
 
@@ -47,7 +47,7 @@ Attribute |  Data Type | Description
 
 ## Example setPaymentMethodOnCart mutation
 
-The following example shows the [`setPaymentMethodOnCart`]({{page.baseurl}}/reference/quote-payment-method.html) mutation constructed for the Payflow Link payment method. 
+The following example shows the [`setPaymentMethodOnCart`]({{page.baseurl}}/reference/quote-payment-method.html) mutation constructed for the Payflow Link payment method.
 
 **Request**
 
