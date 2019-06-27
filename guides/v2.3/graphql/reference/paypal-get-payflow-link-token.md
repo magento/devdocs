@@ -47,7 +47,7 @@ The following example requests a token in a Payflow Link transaction.
 
 ### PayflowLinkTokenInput {#PayflowLinkTokenInput}
 
-The `PayflowLinkTokenInput` object defines the attributes required to receive a Payflow Link  token from PayPal.
+The `PayflowLinkTokenInput` object defines the attributes required to receive a Payflow Link token from PayPal.
 
 Attribute |  Data Type | Description
 --- | --- | ---
@@ -57,7 +57,7 @@ Attribute |  Data Type | Description
 
 ### PayflowLinkToken
 
-The `PaypalExpressToken` object contains a token returned by PayPal and a set of URLs that allow the buyer to authorize payment and adjust checkout details.
+The `PayflowLinkToken` object contains a token returned by PayPal and a set of URLs that allow the buyer to authorize payment and adjust checkout details.
 
 Attribute |  Data Type | Description
 --- | --- | ---
