@@ -105,7 +105,7 @@ Any new design related to Web API must satisfy the following constraints to keep
 1. POST should be used to create an entity.
    PUT should be used to update an entity.
    PATCH should be used to patch (update only selected fields) an update to an entity or entities.
-1. REST is designed for system integrations, mobile app integrations, as well as for one-page apps. It supports tokens, cookies and OAuth 1.0 with token exchange. It also supports guest access to public resources.
+1. REST is designed for system integrations, mobile app integrations, as well as for one-page apps. It supports tokens, cookies, and OAuth 1.0 with token exchange. It also supports guest access to public resources.
 1. Responses must return responses with standard [HTTP status codes](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes).
 1. The store code must be passed via URL. For example `GET /rest/frenchStoreView/V1/products`. Persistence operations that should be performed for all stores at once, should have 'all' store code in the URL.
 
