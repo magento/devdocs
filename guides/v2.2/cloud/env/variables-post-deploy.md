@@ -20,7 +20,7 @@ stage:
 - **Default**— `[]` (an empty array)
 - **Version**—Magento 2.1.4 and later
 
-Configure _Time To First Byte_ (TTFB) testing for specified pages to test your {{ site.data.var.ece }} site performance. For each page to page to test, specify the absolute path reference or an absolute URL with protocol and host.
+Configure _Time To First Byte_ (TTFB) testing for specified pages to test your {{ site.data.var.ece }} site performance. Specify an absolute path reference, or URL with protocol and host, for each page that requires the test.
 
 ```yaml
 stage:
@@ -37,6 +37,7 @@ After you specify the pages to test and commit your changes, the _Time To First 
 [2019-06-20 20:42:22] INFO: TTFB test result: 0.313s {"url":"https://staging-tkyicst-xkmwgjkwmwfuk.us-4.magentosite.cloud/customer/account/create","status":200}
 [2019-06-20 20:42:22] INFO: TTFB test result: 0.408s {"url":"https://staging-tkyicst-xkmwgjkwmwfuk.us-4.magentosite.cloud/checkout/cart","status":200}
 ```
+{: .no-copy}
 
 For redirected paths, the log reports the path of the redirect target instead of the one configured in the environment variable. If you specify an invalid path, the log displays a warning message.
 
