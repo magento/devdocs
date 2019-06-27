@@ -9,17 +9,17 @@ functional_areas:
 
 ### Static content cache
 
-To improve performance, Magento sets the `Expires` headers for static resources such as images, JavaScript, and {% glossarytooltip 6c5cb4e9-9197-46f2-ba79-6147d9bfe66d %}CSS{% endglossarytooltip %} files.
-Setting the `Expires` header on a static resource tells the browser to {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %} the resource at that {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} and serve the cached version until it expires.
+To improve performance, Magento sets the `Expires` headers for static resources such as images, JavaScript, and [CSS](https://glossary.magento.com/css) files.
+Setting the `Expires` header on a static resource tells the browser to [cache](https://glossary.magento.com/cache) the resource at that [URL](https://glossary.magento.com/url) and serve the cached version until it expires.
 This is a common [best practice](https://developer.yahoo.com/performance/rules.html#expires=) for caching static resources.
 
 When the browser caches a static resource and that resource changes on the server, you need to clear the browser cache so it can download the new version.
-Manually clearing the browser cache works if you are a {% glossarytooltip a3c8f20f-b067-414e-9781-06378c193155 %}website{% endglossarytooltip %} administrator, but this is not an appropriate request to make of your users when you want them to download new versions of a static resource.
+Manually clearing the browser cache works if you are a [website](https://glossary.magento.com/website) administrator, but this is not an appropriate request to make of your users when you want them to download new versions of a static resource.
 
 ### Static content signing
 
-{% glossarytooltip a3e37235-4e8b-464f-a19d-4a120560206a %}Static content{% endglossarytooltip %} signing is a Magento feature that allows you to invalidate the browser cache for static resources.
-Magento accomplishes this by adding a deployment version to the URL of {% glossarytooltip 363662cb-73f1-4347-a15e-2d2adabeb0c2 %}static files{% endglossarytooltip %}.
+[Static content](https://glossary.magento.com/static-content) signing is a Magento feature that allows you to invalidate the browser cache for static resources.
+Magento accomplishes this by adding a deployment version to the URL of [static files](https://glossary.magento.com/static-files).
 
 The following is an example of a URL signed with a version:
 

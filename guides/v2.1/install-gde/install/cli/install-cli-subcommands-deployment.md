@@ -1,8 +1,6 @@
 ---
 group: installation-guide
 title: Create or update the deployment configuration
-redirect_from:
-  - /guides/v2.0/install-gde/install/install-cli-subcommands-deployment.html
 functional_areas:
   - Install
   - System

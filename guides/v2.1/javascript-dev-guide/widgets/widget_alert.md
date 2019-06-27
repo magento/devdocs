@@ -9,7 +9,7 @@ The Magento alert widget implements a modal pop-up window with a confirmation bu
 
 The alert widget source is [`<Magento_Ui_module_dir>/view/base/web/js/modal/alert.js`].
 
-The widget can be used for implementing alert windows for both Admin and {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %}. The design patterns for the pop-up modal windows in the Admin are described in the [Magento Admin Pattern Library, the Slide-out Panels, Modal Windows, and Overlays topic.]
+The widget can be used for implementing alert windows for both Admin and [storefront](https://glossary.magento.com/storefront). The design patterns for the pop-up modal windows in the Admin are described in the [Magento Admin Pattern Library, the Slide-out Panels, Modal Windows, and Overlays topic.]
 
 ## Initialize the alert widget {#alert_initialize}
 
@@ -19,8 +19,8 @@ The alert widget can be initialized with or without binding to a certain element
 
 ```javascript
 $('#init_element').alert({
-    title: 'Warning',
-    content: 'Warning content',
+    title: $.mage.__('Warning'),
+    content: $.mage.__('Warning content'),
     actions: {
         always: function(){}
     }
@@ -34,8 +34,8 @@ require([
 ], function(alert) { // Variable that represents the `alert` function
  
     alert({
-        title: 'Some title',
-        content: 'Some content',
+        title: $.mage.__('Some title'),
+        content: $.mage.__('Some content'),
         actions: {
             always: function(){}
         }
@@ -56,6 +56,7 @@ The alert widget has the following options:
 -   [content]
 -   [focus]
 -   [title]
+-   [modalClass]
 
 ### `actions` {#alert_actions}
 Widget callbacks.
@@ -88,7 +89,6 @@ Close the alert window when a user clicks on the overlay.
 ### `content` {#alert_content}
 The text displayed in the alert window.
 
-
 **Type**: String.
 
 ### `focus` {#alert_focus}
@@ -102,19 +102,86 @@ If `focus` is not specified or set to empty string, the focus is on the close bu
 ### `title` {#alert_title}
 The title of the alert window.
 
-
 **Type**: String.
 
 **Default value**: `''`
 
+### `modalClass` {#alert_modalClass}
+The CSS class of the alert window.
+
+**Type**: String.
+
+**Default value**: `'confirm'`
+
 ## Events {#alert_events}
 
 The alert widget implements a single event: the `always` callback.
+The `always` callback is invoked when a modal window is closed.
 
 ## Keyboard navigation {#alert_key_navigation}
 
 The keyboard navigation for the alert windows is similar to the [navigation of the modal widget].
 
+## Code Sample
+
+### Code sample of standalone initialization
+
+```html
+<div class="alert-modal-content">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci amet aut consequuntur culpa cum, distinctio earum harum, iste magnam nobis numquam pariatur tempora ullam vero vitae. Hic ipsam itaque velit.</p>
+</div>
+
+<script>
+require([
+    'jquery',
+    'Magento_Ui/js/modal/alert'
+], function ($, alert) {
+    'use strict';
+    
+    alert({
+        title: 'Alert Title',
+        content: $('.alert-modal-content'),
+        modalClass: 'alert',
+        actions: {
+            always: function() {
+                // do something when the modal is closed
+            }
+        }
+    });
+});
+</script>
+```
+
+### Code sample of initialization on an element
+
+```html
+<div class="alert-modal-content">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci amet aut consequuntur culpa cum, distinctio earum harum, iste magnam nobis numquam pariatur tempora ullam vero vitae. Hic ipsam itaque velit.</p>
+</div>
+
+<script>
+require([
+    'jquery',
+    'Magento_Ui/js/modal/alert'
+], function ($) {
+    'use strict';
+    
+    $('.alert-modal-content').alert({
+        title: 'Alert Title',
+        modalClass: 'alert',
+        actions: {
+            always: function() {
+                // do something when the modal is closed
+            }
+        }
+    });
+});
+</script>
+```
+
+## Result
+
+![Alert Widget]({{ site.baseurl }}/common/images/widget/alert-widget-result.png)
 
 [Magento modal widget]: {{ page.baseurl }}/javascript-dev-guide/widgets/widget_modal.html
 [`<Magento_Ui_module_dir>/view/base/web/js/modal/alert.js`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/modal/alert.js
@@ -126,4 +193,5 @@ The keyboard navigation for the alert windows is similar to the [navigation of t
 [content]: #alert_content
 [focus]: #alert_focus
 [title]: #alert_title
+[modalClass]: #alert_modalClass
 [navigation of the modal widget]: {{ page.baseurl }}/javascript-dev-guide/widgets/widget_modal.html#key_navigation

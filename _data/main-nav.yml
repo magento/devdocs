@@ -62,6 +62,9 @@
     - label: Release Information
       url: /release-notes/bk-release-notes.html
 
+    - label: Command-line Tools Reference
+      url: /reference/cli/magento.html
+
 - label: Development
   children:
 
@@ -112,6 +115,11 @@
         - label: PWA Documentation Site
           url: https://magento-research.github.io/pwa-studio/
           include_versions: ['2.3']
+
+        - label: Page Builder Developer Guide
+          url: /page-builder/docs/index.html
+          exclude_versions: ['2.0', '2.1', '2.2']
+          versionless: true
 
     - label: API
       children:

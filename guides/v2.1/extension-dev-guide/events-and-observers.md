@@ -8,7 +8,7 @@ menu_order: 6
 
 ### Overview
 
-Working with events and observers is one of the main ways to extend Magento functionality. The events and observers implementation in Magento 2 is based on the [publish-subscribe pattern](https://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern){:target="_self"}. Using events and observers, you can run your custom code in response to a specific Magento {% glossarytooltip c57aef7c-97b4-4b2b-a999-8001accef1fe %}event{% endglossarytooltip %} or even a custom event.
+Working with events and observers is one of the main ways to extend Magento functionality. The events and observers implementation in Magento 2 is based on the [publish-subscribe pattern](https://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern){:target="_self"}. Using events and observers, you can run your custom code in response to a specific Magento [event](https://glossary.magento.com/event) or even a custom event.
 
 ### Events
 
@@ -116,7 +116,7 @@ class AnotherObserver implements ObserverInterface
 
 Observers can be configured to watch certain events in the `events.xml` file.
 
-The `observer` {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}xml{% endglossarytooltip %} element has the following properties:
+The `observer` [xml](https://glossary.magento.com/xml) element has the following properties:
 
 * `name` (required) - The name of the observer for the event definition.
 * `instance` (required) - The fully qualified class name of the observer.

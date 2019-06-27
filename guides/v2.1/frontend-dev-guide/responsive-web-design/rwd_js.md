@@ -53,12 +53,11 @@ The `mediaCheck` call looks as follows:
     }); /*...*/
 ```
 
-For example, `responsive.js` changes the view of the {% glossarytooltip 278c3ce0-cd4c-4ffc-a098-695d94d73bde %}checkout{% endglossarytooltip %} progress block on the checkout page:
+For example, `responsive.js` changes the view of the [checkout](https://glossary.magento.com/checkout) progress block on the checkout page:
 
 -   For the desktop view, the checkout progress block is permanently
     displayed on the left-hand side.
--   For the mobile view, it is moved by {% glossarytooltip
-    6c5cb4e9-9197-46f2-ba79-6147d9bfe66d %}CSS{% endglossarytooltip %}
+-   For the mobile view, it is moved by [CSS](https://glossary.magento.com/css)
     to be displayed under the checkout steps. `responsive.js` makes it
     a toggled block: by default, the checkout progress information is
     hidden in the **Your Checkout Progress** section and it is visible
@@ -69,13 +68,9 @@ For example, `responsive.js` changes the view of the {% glossarytooltip 278c3ce0
 In a mobile view, on the 768px breakpoint, `menu.js` changes the navigation menu look and behavior the following way: 
 -   Category menu items are not displayed, but are accessible after
     clicking the menu icon.
--   The behavior of a {% glossarytooltip
-    50e49338-1e6c-4473-8527-9e401d67ea2b %}category{% endglossarytooltip
-    %} link depends on whether the category has sub-categories:
+-   The behavior of a [category](https://glossary.magento.com/category) link depends on whether the category has sub-categories:
     -   If sub-categories exist, the category link behaves as
-        collapsible block. Clicking a category link does not {%
-        glossarytooltip 510de766-1ebd-4546-bf38-c618c9c945d2
-        %}redirect{% endglossarytooltip %} to the category page
+        collapsible block. Clicking a category link does not [redirect](https://glossary.magento.com/redirect) to the category page
         immediately. Instead it opens a list of sub-categories,
         including the **All category products** option.
     -   If there are no sub-categories, the category link behaves as

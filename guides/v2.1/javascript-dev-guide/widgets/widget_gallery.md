@@ -175,7 +175,6 @@ Define whether images are displayed in a loop.
 
 **Default value**: `false`
 
-
 #### `options/maxheight` {#gallery_maxheight}
 
 Maximum height of the preview block in pixels or percent.
@@ -233,7 +232,6 @@ Sliding direction of thumbnails.
 
 Display navigation arrows for thumbnails.
 
-
 **Type**: Boolean
 
 #### `options/navtype` {#gallery_navtype}
@@ -287,7 +285,6 @@ Height of thumbnails.
 
 **Type**: Number, String
 
-
 #### `options/transition` {#gallery_transitioneffect}
 
 Sets the transition effect for slides changing.
@@ -324,7 +321,7 @@ Display navigation arrows on the sides of previews in the fullscreen view.
 **Type**: Boolean
 
 #### `fullscreen/caption` {#full_caption}
-Display {% glossarytooltip 9122e7d4-7db9-48b2-ad27-1af26bad1215 %}alt text{% endglossarytooltip %} as image title in the fullscreen view.
+Display [alt text](https://glossary.magento.com/alt-text) as image title in the fullscreen view.
 
 **Type**: Boolean
 
@@ -333,7 +330,6 @@ Display {% glossarytooltip 9122e7d4-7db9-48b2-ad27-1af26bad1215 %}alt text{% end
 Switch on/off the keyboard navigation in the fullscreen mode.
 
 **Type**: Boolean
-
 
 #### `fullscreen/loop` {#full_loop}
 
@@ -391,7 +387,6 @@ Display navigation thumbnails as carousel in the fullscreen view.
 
 Enable view of caption in the fullscreen mode. Can be for initialized for specific image. Can work globally.
 
-
 **Type**: Boolean
 
 #### `fullscreen/thumbwidth` {#full_thumbwidth}
@@ -420,7 +415,6 @@ Sets the transition effect for slides changing in the fullscreen view.
 Sets transition duration in milliseconds in the fullscreen view.
 
 **Type**: Number
-
 
 ### `breakpoints` {#breakpoints}
 Set of options that could be dynamically set while page is resizing.
@@ -486,10 +480,9 @@ var api = $(element).data('gallery');
 var api = $('[data-gallery-role="gallery"]').data('gallery');
 ```
 
-This method returns JS object that contains {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} functions.
+This method returns JS object that contains [API](https://glossary.magento.com/api) functions.
 
-
-To ensure that the gallery is fully formed, wrap your code with {% glossarytooltip c57aef7c-97b4-4b2b-a999-8001accef1fe %}event{% endglossarytooltip %} handler function and add it to the `gallery:loaded` event:
+To ensure that the gallery is fully formed, wrap your code with [event](https://glossary.magento.com/event) handler function and add it to the `gallery:loaded` event:
 
 ```javascript
 $(element).on('gallery:loaded', function () {
@@ -555,7 +548,6 @@ Behavior:
 * `seek(-1)` displays the last image.
 * If the argument is a number bigger than the number of items, or less than "-(number of items)" the gallery shows the modulus of the following division: total images number divided by the argument number.  
 
-
 #### `updateData()` {#gallery_updateData}
 
 Add new items to the gallery.
@@ -578,7 +570,6 @@ api.updateOptions([{
     nav: 'dots'
 }]);
 ```
-
 
 [Fotorama widget]: http://fotorama.io/
 [lib/web/mage/gallery/gallery.js]: {{ site.mage2bloburl }}/{{ page.guide_version }}/lib/web/mage/gallery/gallery.js

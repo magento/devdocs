@@ -26,8 +26,8 @@ Customize the list of pages used to preload the cache in the `post_deploy` stage
 stage:
   post-deploy: 
     WARM_UP_PAGES:
-       - "index.php"
-       - "index.php/customer/account/create"
+      - "index.php"
+      - "index.php/customer/account/create"
 ```
 
 You must configure the post-deploy hook. See [hooks section of the `.magento.app.yaml` file]({{ page.baseurl }}/cloud/project/project-conf-files_magento-app.html#hooks).

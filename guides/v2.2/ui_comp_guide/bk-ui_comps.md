@@ -15,9 +15,9 @@ redirect_from:
 
 *Magento UI components are used to represent distinct UI elements, such as tables, buttons, dialogs, and others*.
 
-They are designed for simple and flexible user interface (UI) rendering. Components are responsible for rendering result page fragments and providing/supporting further interactions of {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} components and server.
+They are designed for simple and flexible user interface (UI) rendering. Components are responsible for rendering result page fragments and providing/supporting further interactions of [JavaScript](https://glossary.magento.com/javascript) components and server.
 
-Magento UI components are implemented as a standard {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} named Magento_UI.
+Magento UI components are implemented as a standard [module](https://glossary.magento.com/module) named Magento_UI.
 
 To use UI components in your custom module, you need to add a dependency for the Magento_UI module in [your component's composer.json file]({{ page.baseurl }}/extension-dev-guide/build/composer-integration.html).
 
@@ -25,7 +25,7 @@ The following XSD file contains rules and limitations shared between all compone
 
 `<your module root dir>/Magento/Ui/etc/ui_definition.xsd`
 
-{% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}Extension{% endglossarytooltip %} developers cannot extend this XSD scheme and introduce new components, but can customize existing ones.
+[Extension](https://glossary.magento.com/extension) developers cannot extend this XSD scheme and introduce new components, but can customize existing ones.
 
 ### General structure
 
@@ -40,7 +40,7 @@ All other UI components are secondary.
 
 Basic components are declared in the [page layout files]({{ page.baseurl }}/frontend-dev-guide/layouts/layout-types.html#layout-types-page); secondary components are declared in the top-level components’ instances configuration files.
 
-All components can be configured both for {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} and {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %}.
+All components can be configured both for [Admin](https://glossary.magento.com/admin) and [storefront](https://glossary.magento.com/storefront).
 
 {: .bs-callout .bs-callout-info }
 You need to configure styles manually for components on storefront.
@@ -49,13 +49,13 @@ You need to configure styles manually for components on storefront.
 
 With Magento, you may apply different approaches to implementing a UI element, and use:
 
-* {% glossarytooltip ae0f1f68-c466-4189-88fd-6cd8b23c804f %}PHTML{% endglossarytooltip %} template with inline JavaScript
+* [PHTML](https://glossary.magento.com/phtml) template with inline JavaScript
 
-* PHTML template with declaration of related JavaScript file via {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %} {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %}
+* PHTML template with declaration of related JavaScript file via [XML](https://glossary.magento.com/xml) [layout](https://glossary.magento.com/layout)
 
-* {% glossarytooltip 5bfa8a8e-6f3e-4fed-a43e-62339916f02e %}jQuery{% endglossarytooltip %} {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %}
+* [jQuery](https://glossary.magento.com/jquery) [widget](https://glossary.magento.com/widget)
 
-* Magento 2 {% glossarytooltip 9bcc648c-bd08-4feb-906d-1e24c4f2f422 %}UI component{% endglossarytooltip %}
+* Magento 2 [UI component](https://glossary.magento.com/ui-component)
 
 We recommend using UI components as much as possible and tend to do the same in Magento core.
 
@@ -92,7 +92,7 @@ The picture below shows how the JavaScript class of a UI component is implemente
 
 ### Templates
 
-A UI component can be bound to one or more {% glossarytooltip a2aff425-07dd-4bd6-9671-29b7edefa871 %}HTML{% endglossarytooltip %} templates using the KnockoutJS bindings.
+A UI component can be bound to one or more [HTML](https://glossary.magento.com/html) templates using the KnockoutJS bindings.
 
 ## Configuring a UI component
 
@@ -102,6 +102,30 @@ A particular instance of a UI component is defined primarily by the following:
 2. [UI component's XML declaration]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_xmldeclaration_concept.html).
 3. [Backend/PHP modifiers]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_modifier_concept.html).
 4. Configuration inside the JavaScript classes.
+
+## UI component used in the frontend design area
+
+* Configured through layout XML.
+
+* The `jsLayout` argument is used to specify information.
+
+```xml
+<block name="block-name" template="Magento_Module::path_to_template.phtml">
+  <arguments>
+    <argument name="jsLayout" xsi:type="array">
+      <item name="components" xsi:type="array">
+        ...
+      </item>
+    </argument>
+  </arguments>
+</block>
+```
+
+## UI component used in the Adminhtml area
+
+* Configured through dedicated XML file (view/.../ui_component/[ui_component_name.xml])
+
+* Included in layout XML with uiComponent tag
 
 ## Things to remember when working with UI components
 

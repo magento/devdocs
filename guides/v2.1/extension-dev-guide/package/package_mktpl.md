@@ -5,9 +5,7 @@ title: Upload your component to the Magento Marketplace
 menu_title: Upload your component to the Magento Marketplace
 menu_order: 100
 menu_node:
-redirect_from:
-  - /guides/v2.0/mktpl-quickstart/mktpl-intro.html
-  - /guides/v2.2/mktpl-quickstart/mktpl-intro.html
+redirect_from: /guides/v2.2/mktpl-quickstart/mktpl-intro.html
 ---
 
 When component development is complete, upload your components to the Magento Marketplace using the instructions in the [Magento Marketplace User Guide](http://docs.magento.com/marketplace/user_guide/getting-started.html){:target="_blank"}.

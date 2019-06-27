@@ -23,7 +23,7 @@ Step 1.    To avoid conflicts with the previous version, remove directory `<mage
 Step 2.    Remove file `<magento2_root_dir>/dev/tests/functional/composer.lock`.
 
 {: .bs-callout .bs-callout-info }
-**Why:** {% glossarytooltip d85e2d0a-221f-4d03-aa43-0cda9f50809e %}Composer{% endglossarytooltip %} reads dependencies from `composer.lock` instead of reading `composer.json`. File `composer.lock` currently is not maintained.
+**Why:** [Composer](https://glossary.magento.com/composer) reads dependencies from `composer.lock` instead of reading `composer.json`. File `composer.lock` currently is not maintained.
 
 Step 3.    [Perform and check installation.]({{ page.baseurl }}/mtf/mtf_installation.html#mtf_install_perform)
 

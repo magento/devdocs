@@ -118,8 +118,8 @@ For an example of `links` usage in Magento code see [`text.js`, line 19]({{ site
 ## `listens` property
 The `listens` property is used to track the changes of a component's property. `listens`'s value is an object, composed of the following:
 
-  - `key`: name of the observable property or method which is tracked for changes. 
-  - `value`: name of the internal method or property which listens to the changes. Can use [string templates](#string_templ).
+  - `key`: name of the observable property or method which is tracked for changes. Can use [string templates](#string_templ).
+  - `value`: name of the internal method or property which listens to the changes.
 
 Example of using `listens` in a component's `.js` file :
 

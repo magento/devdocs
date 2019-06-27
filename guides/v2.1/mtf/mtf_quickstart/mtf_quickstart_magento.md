@@ -5,9 +5,9 @@ title: Quick start. Prepare Magento application
 
 ## Change WYSIWYG settings
 
-A Selenium web-driver cannot enter data to fields with {% glossarytooltip 98cf4fd5-59b6-4610-9c1f-b84c8c0abd97 %}WYSIWYG{% endglossarytooltip %}. This option disables the WYSIWYG and enables the web-driver to process these fields as simple text areas.
+A Selenium web-driver cannot enter data to fields with [WYSIWYG](https://glossary.magento.com/wysiwyg). This option disables the WYSIWYG and enables the web-driver to process these fields as simple text areas.
 
-1. Log in to the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} as an administrator.
+1. Log in to the [Magento Admin](https://glossary.magento.com/magento-admin) as an administrator.
 2. Follow **Stores &gt; Configuration &gt; General &gt; Content Management &gt; WYSIWYG Options**.
 3. Set **Enable WYSIWYG Editor** to **Disabled Completely**.
 4. Click **Save Config**.
@@ -18,7 +18,7 @@ A Selenium web-driver cannot enter data to fields with {% glossarytooltip 98cf4f
 
 Enable the **Admin Account Sharing** setting to avoid unpredictable logout during testing session. And disable the **Add Secret Key in URLs** setting to open pages using direct URLs.
 
-1. Follow **Stores &gt; Configuration &gt; Advanced &gt; {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} &gt; Security**.
+1. Follow **Stores &gt; Configuration &gt; Advanced &gt; [Admin](https://glossary.magento.com/admin) &gt; Security**.
 2. Set **Admin Account Sharing** to **Yes**.
 3. Set **Add Secret Key to URLs** to **No**.
 

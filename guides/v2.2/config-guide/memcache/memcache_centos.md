@@ -25,10 +25,10 @@ To install memcached on CentOS, perform the following tasks as a user with `root
         yum install -y memcached
         yum install -y php-pecl-memcached
 
-    {:.bs-callout .bs-callout-info}
-    The syntax of the preceding commands might depend on what package repositories you use. For example, if you use webtatic and PHP 5.6, enter <code>yum install -y php56w-pecl-memcache</code>. Use `yum search memcache|grep php` to find the appropriate package name.
+{:.bs-callout .bs-callout-info}
+The syntax of the preceding commands might depend on what package repositories you use. For example, if you use webtatic and PHP 5.6, enter <code>yum install -y php56w-pecl-memcache</code>. Use `yum search memcache|grep php` to find the appropriate package name.
 
-1. Change the memcached configuration setting for `CACHESIZE` and `OPTIONS`:
+2. Change the memcached configuration setting for `CACHESIZE` and `OPTIONS`:
 
     1. Open `/etc/sysconfig/memcached` in a text editor.
     1. Locate the value for `CACHESIZE` and change it to at least 1GB. For example
@@ -72,7 +72,7 @@ To verify memcached is recognized by the web server:
 
 1. Make sure memcache displays as follows:
 
-  ![Confirm memcache is recognized by the web server]({{ site.baseurl }}/common/images/config_memcache.png)
+   ![Confirm memcache is recognized by the web server]({{ site.baseurl }}/common/images/config_memcache.png)
 
   Verify you're using memcached version 3.0.5 or later.
 
@@ -80,7 +80,7 @@ To verify memcached is recognized by the web server:
 
 ### Create a memcache test consisting of a MySQL database and PHP script
 
-The test uses a MySQL database, table, and data to verify you can retrieve the database data and store it in memcache. A {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} script first searches the {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %}. If the result does not exist, the script queries database. After the query has been fulfilled by the original database, the script stores the result in memcache, using the `set` command.
+The test uses a MySQL database, table, and data to verify you can retrieve the database data and store it in memcache. A [PHP](https://glossary.magento.com/php) script first searches the [cache](https://glossary.magento.com/cache). If the result does not exist, the script queries database. After the query has been fulfilled by the original database, the script stores the result in memcache, using the `set` command.
 
 [More details about this test](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-memcache-on-ubuntu-12-04)
 
@@ -90,14 +90,14 @@ Create the MySQL database:
 
 At the `mysql` prompt, enter the following commands:
 
-    ```sql
-    create database memcache_test;
-    GRANT ALL ON memcache_test.* TO memcache_test@localhost IDENTIFIED BY 'memcache_test';
-    use memcache_test;
-    create table example (id int, name varchar(30));
-    insert into example values (1, "new_data");
-    exit
-    ```
+```sql
+create database memcache_test;
+GRANT ALL ON memcache_test.* TO memcache_test@localhost IDENTIFIED BY 'memcache_test';
+use memcache_test;
+create table example (id int, name varchar(30));
+insert into example values (1, "new_data");
+exit
+```
 
 Create `cache-test.php` in your web server's docroot:
 
