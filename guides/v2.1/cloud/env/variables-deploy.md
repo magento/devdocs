@@ -481,7 +481,7 @@ stage:
 On deployment, replace Magento base URLs in the database with the project URLs specified by the [`MAGENTO_CLOUD_ROUTES`]({{ page.baseurl }}/cloud/env/variables-cloud.html) variable. This is useful for local development, where base URLs are set up for your local environment. 
 When you deploy to a Cloud environment, we change the URLs so you can access your storefront and Magento Admin using project URLs.
 
-If you need to update URLs when deploying to Pro or Starter staging and production environments,  use the [`FORCE_UPDATE_URLS`](#force_update_urls) variable. 
+If you need to update URLs when deploying to Pro or Starter Staging and Production environments,  use the [`FORCE_UPDATE_URLS`](#force_update_urls) variable. 
 
 ```yaml
 stage:
