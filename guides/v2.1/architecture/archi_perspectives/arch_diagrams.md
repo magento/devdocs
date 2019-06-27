@@ -10,7 +10,7 @@ Depending upon your role and purpose for learning more about Magento, there are 
 
 ## Architecture layers diagram {#archi-layers}
 
-The following diagram illustrates the components of Magento, and shows the "layers" or tiers in the Magento product.
+The following diagram illustrates the components and shows the "layers" or tiers in Magento.
 
 ![]({{site.baseurl}}/common/images/archi_diagrams_current.png)
 
