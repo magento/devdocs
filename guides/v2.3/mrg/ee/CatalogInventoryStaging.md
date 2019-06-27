@@ -27,4 +27,4 @@ You can interact with the Magento_CatalogInventoryStaging module using the Magen
 
 ## Additional information
 
-You can track [backward incompatible changes]({{ page.baseurl }}/release-notes/backward-incompatible-changes/).
+You can track [backward incompatible changes made in a Magento EE mainline after the Magento 2.0 release](http://devdocs.magento.com/guides/v2.0/release-notes/changes/ee_changes.html).

@@ -38,7 +38,7 @@ Each area declares itself within a module. All resources specific for an area ar
 
 You can enable or disable an area within a module. If this module is enabled, it injects an area's routers into the general application's routing process. If this module is disabled, Magento will not load an area's routers and, as a result, an area's resources and specific functionality are not available.
 
-### Quick view of module/area interactions
+### Module/area interaction guidelines
 
 * Modules should not depend on other modules' areas.
 
@@ -52,9 +52,8 @@ Magento processes a URL request by first stripping off the base URL. The first p
 
 After the area name, the URI segment specifies the *frontname*. When an HTTP request arrives, Magento extracts the handle from the URL and interprets it as follows: `[frontName]/[controller folder]/[controller class]` where `frontName` is a value defined in the module. For example, in `catalog/product/view`, `catalog` is the name of the module used, `product` is the controller folder, and `view` is the controller class.   For deeper directory structures, the controller folders are separated with `_` (for example, `catalog/product_compare/add` for `Magento/Catalog/Controller/Product/Compare/Add.php`).
 
-Note that only the **execute()** method of any given controller is executed. 
+Note that only the **execute()** method of any given controller is executed.
 
 ## Related topics {#m2arch-module-related}
 
 [Module overview]({{page.baseurl}}/architecture/archi_perspectives/components/modules/mod_intro.html)
-
