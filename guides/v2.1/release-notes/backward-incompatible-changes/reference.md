@@ -14,8 +14,11 @@ The changes are aggregated into two tables:
 1. **Changes in classes** that contains backward incompatible changes made to the Magento classes
 2. **Changes in interfaces** that contains backward incompatible changes made to the Magento interfaces
 
-{: .bs-callout .bs-callout-warning }
-When the [@api] and [@deprecated] doc blocks tags are added to the code base, they are recognized as _Class was added_ or _Method has been added_.
+## 2.1.17 - 2.1.18    {#releases-2_1_17-2_1_18}
+
+{% include backward-incompatible-changes/open-source/2.1.17-2.1.18.md %}
+
+{% include backward-incompatible-changes/commerce/2.1.17-2.1.18.md %}
 
 ## 2.1.16 - 2.1.17    {#releases-2_1_16-2_1_17}
 
@@ -130,5 +133,3 @@ When the [@api] and [@deprecated] doc blocks tags are added to the code base, th
 <!-- LINK DEFINITIONS -->
 
 [magento/magento2]: https://github.com/magento/magento2
-[@api]: {{ page.baseurl }}/coding-standards/docblock-standard-general.html#api
-[@deprecated]: {{ page.baseurl }}/coding-standards/docblock-standard-general.html#deprecated
