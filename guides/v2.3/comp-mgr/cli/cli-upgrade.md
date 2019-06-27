@@ -121,7 +121,7 @@ Open `composer.json` and edit the `"autoload": "psr-4"` section to include `"Zen
 
 _Optional_—If the Magento updater is installed, modify it (it is located in the `update/` directory):
 
-1. Backup `update/` directory.
+1. Backup the `update/` directory.
 2. Create a Composer project.
 
    _{{ ce }} version {{ page.guide_version }}.2:_
