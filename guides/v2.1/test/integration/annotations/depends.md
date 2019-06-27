@@ -18,7 +18,7 @@ Please note that dependencies don't define the order in which the test methods a
 
 ### Example 1
 
-Lets check the following basic example.
+Let's check the following basic example.
 
 ```php
 /**
@@ -46,7 +46,7 @@ public function testNumber($number)
 ### Example 2
 
 {:.bs-callout .bs-callout-info}
-Using more than one dependencies, arguments will be passed in the annotations' defined order.
+If using multiple dependencies, arguments are passed in the annotations' defined order.
 
 ```php
 /**
@@ -87,7 +87,7 @@ public function testNumber(int $one, int $two)
 
 ### Example 3
 
-Let's check the following practical example, where we'll be checking the customer email by customer id.
+Let's check the following practical example, where we'll be checking the customer email by customer ID.
 
 ```php
 use Magento\Customer\Api\CustomerRepositoryInterface;
@@ -118,4 +118,4 @@ public function testEmail(CustomerInterface $customer)
 }
 ```
 
-You can read more about PHPUnit Depends annotation [here](https://phpunit.readthedocs.io/en/8.2/annotations.html#depends){:target="_blank"}.
+You can read more about PHPUnit dependency annotation [here](https://phpunit.readthedocs.io/en/8.2/annotations.html#depends){:target="_blank"}.
