@@ -48,6 +48,10 @@ You can clean generated static view files in any of the following ways:
 
         rm -R pub/static/*
 
+    To clear the `var/view_preprocessed`, enter the following command:
+
+        rm -R var/view_preprocessed
+
 -   Several commands support an optional parameter `--clear-static-content`, which cleans generated static view files:
 
     -   [`magento module:enable` and `magento module:disable`]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-enable.html)
