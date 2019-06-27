@@ -227,7 +227,7 @@ If the application fails with a  `We're sorry, an error has occurred while gener
 
 ## Alternatives
 
-There are alternative ways that provide some automation to the upgrading process:
+There are alternatives methods that automate parts of the upgrade process:
 
 1. [Upgrade using the script][] (semi-automated process)
    Upgrading using the script process is a bit easier and less intensive, if you have not made updates to values that the script affects.
