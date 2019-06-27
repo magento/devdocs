@@ -33,7 +33,7 @@ A module with a *hard dependency* on another module cannot function without the 
 
 ### Soft dependencies
 
-A module with a *soft dependency* on another module can function properly without the other module, even if they have a dependency upon it. These modules:
+A module with a *soft dependency* on another module can function properly without the other module, even if it has a dependency on the other module. These modules:
 
 * Directly check another module's availability.
 * Extend another module's configuration.
