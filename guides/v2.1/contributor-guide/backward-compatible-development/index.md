@@ -12,7 +12,7 @@ The core Magento team and contributing developers work in two release types
 
 1. New and significant release (product's MINOR release)
    - Necessary MAJOR and MINOR changes are allowed, but the Magento architecture team ultimately decides what is allowed.
-2. New patch release (product's PATCH release)
+1. New patch release (product's PATCH release)
    - PATCH changes are allowed, but MAJOR and MINOR changes are not allowed.
 
 {: .bs-callout .bs-callout-info }
@@ -80,10 +80,10 @@ Declare the new method as private if possible.
 
 Example code:
 
-```php?start_inline=1
+```php
 /**
- * @deprecated This method is not intended for usage in child classes
- * @see updateScopedPrice($price, $storeId)
+- @deprecated This method is not intended for usage in child classes
+- @see updateScopedPrice($price, $storeId)
  */
 protected function updatePrice($price)
 {
@@ -124,7 +124,7 @@ In the constructor body, if the new dependency is not provided (i.e. the value o
 
 {% collapsible Example Code %}
 
-```php?start_inline=1
+```php
 class ExistingClass
 {
     /** @var \New\Dependency\Interface */
@@ -202,7 +202,7 @@ Instead of changing argument name or type, introduce new event argument with new
 
 Example code:
 
-```php?start_inline=1
+```php
 $transportObject = new DataObject($transport);
 
 /**
@@ -306,13 +306,13 @@ Adding an argument to an event is allowed.
    For example, the module data/schema version for all patch releases of Magento 2.0 can change prior to the release of Magento 2.1.
    After 2.1 releases, the version cannot change for 2.0 patch releases, but it can change for 2.1 patch releases until Magento 2.2.
 
-2. Deliver fixes that bump the module setup/data version in the current, unpublished version before delivering it to previous minor versions.
+1. Deliver fixes that bump the module setup/data version in the current, unpublished version before delivering it to previous minor versions.
    In cases where an urgent fix was delivered in a previous minor version, treat the fix for the current unpublished version as a high priority task.
 
    For example, issue fixes that change the setup/upgrade version in the unreleased `develop` branch are delivered first before being ported into the released branches.
    If the fix was made for a released branch, a pull request for porting it into the `develop` branch must be created with a high priority and delivered as soon as possible.
 
-3. The setup version of a module must be higher than previous releases of the same module.
+1. The setup version of a module must be higher than previous releases of the same module.
 
    For example, the setup version for a fix for the Magento_Catalog module is higher in the `develop` branch (2.1.3) than previous branch versions (2.0.2 and 2.1.2 for versions 2.0 and 2.1).
 
@@ -422,6 +422,10 @@ These backward incompatible changes do not need manual documentation:
 - Modifying a method signature
 - Adding/removing a class/interface constant
 - Adding removing a class property
+
+Auto-generated [{{site.data.var.ce}} changes]({{ page.baseurl }}/release-notes/backward-incompatible-changes/open-source.html)
+
+Auto-generated [{{site.data.var.ee}} changes]({{ page.baseurl }}/release-notes/backward-incompatible-changes/commerce.html)
 
 ### Where to document
 

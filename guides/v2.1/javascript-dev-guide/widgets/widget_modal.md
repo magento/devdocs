@@ -12,7 +12,6 @@ The Magento modal [widget](https://glossary.magento.com/widget) implements a sec
 -   Controlling stack of modal widgets
 -   Setting buttons for action bar
 
-
 The modal widget source is [`<Magento_Ui_module_dir>/view/base/web/js/modal/modal.js`].
 
 The widget uses the following templates:
@@ -83,10 +82,11 @@ buttons: [{
 **Default value**:
 ```javascript
 buttons: [{
-    text: 'Ok',
+    text: $.mage.__('Ok'),
     class: '',
-    click: function() {
-        this.closeModal();
+    attr: {},
+    click: function (event) {
+        this.closeModal(event);
     }
 }]
 ```
@@ -99,7 +99,6 @@ Close the modal window when a user clicks on the overlay.
 
 **Default value**: `true`
 
-
 ### `closeText` {#modal_closeText}
 
 The close button text.
@@ -108,16 +107,13 @@ The close button text.
 
 **Default value**: `$.mage.__('Close')`
 
-
 ### `focus` {#modal_focus}
 
 Selector to focusing when a modal window opens or 'none' if focusing is not necessary.
 
-
 **Type**: String 
 
 **Default value**: `''`
-
 
 ### `innerScroll` {#modal_innerScroll}
 
@@ -211,16 +207,13 @@ The modal widget has the following methods:
 
 Open the modal window.
 
-
 ### `closeModal()` {#modal_close}
 
 Close the modal window.
 
-
 ### `keyEventSwitcher()` {#modal_keyEventSwitcher}
 
 Listens for key events and calls handler function if it exists.
-
 
 ### `toggleModal()` {#modal_toggleModal}
 
@@ -282,7 +275,7 @@ The following example shows how to initialize the modal widget and pass options 
             'trigger': '[data-trigger=trigger]',
             'responsive': true,
             'buttons': [{
-                text: 'Submit',
+                text: $.mage.__('Submit'),
                 class: 'action'
             }]
         }}">
