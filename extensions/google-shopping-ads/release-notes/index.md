@@ -15,6 +15,20 @@ The release notes include:
 
 -   {:.new}New features
 -   {:.fix}Fixes and improvements
+-   {:.bug}Known issues
+
+
+### v2.0.1
+
+Google Shopping ads Channel 2.0.1 is generally available for versions 2.2.4+ and 2.3.x of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}.
+
+- {:.fix} **Resolved Update/Install Issue**: Corrected a problem with the update package that prevented Google Shopping ads Channel v2.0.0 from installing correctly.
+
+### v2.0.0
+
+Google Shopping ads Channel 2.0.0 is generally available for versions 2.2.4+ and 2.3.x of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}.
+
+- {:.fix} **Resolved Database Issue**: Corrected a database issue that caused some users to experience delayed processing times.
 
 ### v1.1.2
 
