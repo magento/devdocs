@@ -4,8 +4,179 @@ description: |
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: /whats-new.html
 thread: /whatsnew-feed.xml
-updated: Mon Jun 24 10:57:15 2019
+updated: Thu Jun 27 16:05:11 2019
 entries:
+- description: Updated the [Module Reference Guide](https://devdocs.magento.com/guides/v2.3/mrg/intro.html).
+  versions: 2.3.2
+  type: Major update
+  date: June 27, 2019
+  link: https://github.com/magento/devdocs/pull/4862
+- description: Added new topic about using the [depends annotation](https://devdocs.magento.com/guides/v2.3/test/integration/annotations/depends.html)
+    when writing integration tests.
+  versions: 2.1.x, 2.2.x, 2.3.x
+  type: New topic
+  date: June 27, 2019
+  link: https://github.com/magento/devdocs/pull/4807
+- description: Updated data for [bin/magento CLI reference](https://devdocs.magento.com/guides/v2.3/reference/cli/magento.html)
+    and data for Magento packages for [Open Source](https://devdocs.magento.com/guides/v2.3/release-notes/packages-open-source.html),
+    [Commerce](https://devdocs.magento.com/guides/v2.3/release-notes/packages-commerce.html),
+    and [Cloud](https://devdocs.magento.com/guides/v2.3/release-notes/packages-cloud.html).
+  versions: 2.1.x, 2.2.x, 2.3.x
+  type: Major update
+  date: June 27, 2019
+  link: https://github.com/magento/devdocs/pull/4838
+- description: Updated the Cloud Release notes for [ece-tools version 2002.0.20](https://devdocs.magento.com/guides/v2.3/cloud/release-notes/cloud-tools.html#v2002020).<br/>-  New
+    [`ece-tools` reference](https://devdocs.magento.com/guides/v2.3/cloud/reference/ece-tools-reference.html)
+    topic.<br/>-  New [Functional testing in Docker](https://devdocs.magento.com/guides/v2.3/cloud/docker/docker-development-testing)
+    environment.<br/>-  Updated the [Application configuration PHP extensions](https://devdocs.magento.com/guides/v2.3/cloud/project/project-conf-files_magento-app.html#php-extensions)
+    section.<br/>-  Multiple updates to the Environment variables, including a new
+    [Post-deploy variable for Time to First Byte](https://devdocs.magento.com/guides/v2.3/cloud/env/variables-post-deploy.html).<br/>-  Credited
+    community members that contributed to the ece-tools code.
+  versions: 2.1.x, 2.2.x, 2.3.x
+  type: Major update
+  date: June 27, 2019
+  link: https://github.com/magento/devdocs/pull/4839
+- description: Updated backward incompatible changes reference with the changes introduced
+    into [2.3.2](https://devdocs.magento.com/guides/v2.3/release-notes/backward-incompatible-changes/reference.html),
+    [2.2.9](https://devdocs.magento.com/guides/v2.2/release-notes/backward-incompatible-changes/reference.html),
+    [2.1.18](https://devdocs.magento.com/guides/v2.3/release-notes/backward-incompatible-changes/reference.html).
+  versions: 2.1.17, 2.2.9, 2.3.2
+  type: Major update
+  date: June 27, 2019
+  link: https://github.com/magento/devdocs/pull/4854
+- description: Added the '11.3. Functional Testing' section to [Technical Guidelines](https://devdocs.magento.com/guides/v2.3/coding-standards/technical-guidelines.html).
+  versions: 2.3.x
+  type: Major update
+  date: June 26, 2019
+  link: https://github.com/magento/devdocs/pull/4677
+- description: Added the [GraphQL checkout tutorial](https://devdocs.magento.com/guides/2.3/graphql/tutorials/checkout/index.html),
+    which provides an overview of the steps you need place an order on behalf of a
+    guest or logged-in user.
+  versions: 2.3.2
+  type: Major update
+  date: June 25, 2019
+  link: https://github.com/magento/devdocs/pull/4271
+- description: Added 'New optional method argument' to both `PHP Interface` and to
+    `PHP Class` in [Codebase Changes](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/versioning/codebase-changes.html).
+  versions: 2.1.x, 2.2.x, 2.3.x
+  type: Major update
+  date: June 25, 2019
+  link: https://github.com/magento/devdocs/pull/4676
+- description: Published all documentation updates related to the Q2 Commerce and
+    Open Source release.
+  versions: 2.1.x, 2.2.x, 2.3.x
+  type: Major update
+  date: June 25, 2019
+  link: https://github.com/magento/devdocs/pull/4825
+- description: Added release notes for [Magento Commerce 1.14.4.2](https://devdocs.magento.com/guides/m1x/ce19-ee114/ee1.14_release-notes.html)
+    and [Magento Open Source 1.9.4.2](https://devdocs.magento.com/guides/m1x/ce19-ee114/ce1.9_release-notes.html).
+  versions: 1.9.4.2
+  type: Major update
+  date: June 25, 2019
+  link: https://github.com/magento/devdocs-m1/pull/9
+- description: Added the [GraphQL checkout tutorial](https://devdocs.magento.com/guides/2.3/graphql/tutorials/checkout/index.html),
+    which provides an overview of the steps you need place an order on behalf of a
+    guest or logged-in user.
+  versions: 2.3.2
+  type: Major update
+  date: June 25, 2019
+  link: https://github.com/magento/devdocs/pull/4271
+- description: Added 'Code Sample' section to the [Confirm Widget](https://devdocs.magento.com/guides/v2.3/javascript-dev-guide/widgets/widget_confirm.html)
+    topic.
+  versions: 2.1.x, 2.2.x, 2.3.x
+  type: Major update
+  date: June 24, 2019
+  link: https://github.com/magento/devdocs/pull/4802
+- description: Added Commerce 2.3.2 to the [release information page](https://devdocs.magento.com/release/).
+  versions: 2.3.x
+  type: Major update
+  date: June 22, 2019
+  link: https://github.com/magento/devdocs/pull/4824
+- description: Updated the REST schema for [2.3.2](https://devdocs.magento.com/redoc/2.3/)
+    and [2.2.9](https://devdocs.magento.com/swagger/index_22.html).
+  versions: 2.2.9, 2.3.2
+  type: Major update
+  date: June 22, 2019
+  link: https://github.com/magento/devdocs/pull/4816
+- description: Added release notes for [Magento Commerce 2.1.1.8](https://devdocs.magento.com/guides/v2.1/release-notes/ReleaseNotes2.1.18EE.html).
+  versions: 2.1.18
+  type: New topic
+  date: June 22, 2019
+  link: https://github.com/magento/devdocs/pull/4773
+- description: GraphQL supports the [Vault endpoint](https://devdocs.magento.com/guides/v2.3/graphql/reference/vault.html),
+    which allows customers to store payment information with a service such as Braintree
+    Vault.
+  versions: 2.3.2
+  type: New topic
+  date: June 22, 2019
+  link: https://github.com/magento/devdocs/pull/4760
+- description: Updated the [GraphQL release notes](https://devdocs.magento.com/guides/v2.3/graphql/release-notes.html)
+    for 2.3.2.
+  versions: 2.3.2
+  type: Major update
+  date: June 22, 2019
+  link: https://github.com/magento/devdocs/pull/4725
+- description: Added release notes for [Magento Commerce](https://devdocs.magento.com/guides/v2.3/release-notes/ReleaseNotes2.3.2EE.html)
+    and [Magento Open Source](https://devdocs.magento.com/guides/v2.3/release-notes/ReleaseNotes2.3.2CE.html)
+    version 2.3.2.
+  versions: 2.3.2
+  type: New topic
+  date: June 22, 2019
+  link: https://github.com/magento/devdocs/pull/4722
+- description: Added release notes for [Magento Commerce](https://devdocs.magento.com/guides/v2.2/release-notes/ReleaseNotes2.2.9EE.html)
+    and [Magento Open Source](https://devdocs.magento.com/guides/v2.2/release-notes/ReleaseNotes2.2.9CE.html)
+    version 2.2.9.
+  versions: 2.2.9
+  type: New topic
+  date: June 22, 2019
+  link: https://github.com/magento/devdocs/pull/4721
+- description: Added Google reCAPTCHA installation information for Magento Open Source
+    and Commerce v[2.3.2](https://devdocs.magento.com/guides/v2.3/security/google-recaptcha.html),
+    [2.2.9](https://devdocs.magento.com/guides/v2.2/security/google-recaptcha.html),
+    and [2.1.18](https://devdocs.magento.com/guides/v2.1/security/google-recaptcha.html).
+  versions: 2.1.18, 2.2.9, 2.3.2
+  type: Technical changes
+  date: June 22, 2019
+  link: https://github.com/magento/devdocs/pull/4698
+- description: Added information about the [PoisonPill interface](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/message-queues/refresh-config.html).
+  versions: 2.3.2
+  type: New topic
+  date: June 22, 2019
+  link: https://github.com/magento/devdocs/pull/4428
+- description: Added the `isEmailAvailable` query to the GraphQL [customer endpoint](https://devdocs.magento.com/guides/v2.3/graphql/reference/customer.html).
+  versions: 2.3.2
+  type: Major update
+  date: June 22, 2019
+  link: https://github.com/magento/devdocs/pull/4556
+- description: The [GraphQL quote endpoint](https://devdocs.magento.com/guides/v2.3/graphql/reference/quote.html)
+    adds numerous mutations for 2.3.2. Each mutation is documented separately. The
+    [GraphQL release notes](https://devdocs.magento.com/guides/v2.3/graphql/release-notes.html)
+    lists these new mutations.
+  versions: 2.3.2
+  type: New topic
+  date: June 22, 2019
+  link: https://github.com/magento/devdocs/pull/4502
+- description: Added a feature to configure the lock provider to prevent the launch
+    of duplicate cron jobs and cron groups. In previous releases, Magento used the
+    database to save locks. Now you have the option to manage locks using the database,
+    Zookeeper, or file locks. See [Configure the lock provider](https://devdocs.magento.com/guides/v2.3/install-gde/install/cli/install-cli-subcommands-lock.html).
+  versions: 2.2.9, 2.3.2
+  type: New topic
+  date: June 22, 2019
+  link: https://github.com/magento/devdocs/pull/4409
+- description: Added topics about [GraphQL caching](https://devdocs.magento.com/guides/v2.3/graphql/caching.html)
+    and [identity classes](https://devdocs.magento.com/guides/v2.3/graphql/develop/identity-class.html).
+  versions: 2.3.2
+  type: New topic
+  date: June 22, 2019
+  link: https://github.com/magento/devdocs/pull/4402
+- description: Added the `only_x_left_in_stock` and `stock_status` attributes to the
+    [Products endpoint](https://devdocs.magento.com/guides/v2.3/graphql/reference/products.html).
+    These attributes were added to support Inventory Management orders.
+  versions: 2.3.2
+  type: Technical changes
+  date: June 22, 2019
+  link: https://github.com/magento/devdocs/pull/4340
 - description: Completed the reference list and added a 'Code sample' section to the
     [Prompt Widget](https://devdocs.magento.com/guides/v2.3/javascript-dev-guide/widgets/widget_prompt.html)
     topic.
