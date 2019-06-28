@@ -14,7 +14,7 @@ The presentation layer contains both view elements **(layouts, blocks, templates
 
 Magento uses *areas* to efficiently make web service calls, loading only the dependent code that is required for the particular type of user. Three types of Magento users interact with presentation layer code:
 
-* **Web users** interact with the storefront, where they can see the View model of data displayed by Magento and interact with product UI elements to request data for view and manipulation. These users work within the (`frontend`) area.
+* **Web users** interact with the storefront, where they can see the View model of data displayed by Magento and interact with product UI elements to request data for view and manipulation. These users work within the `frontend` area.
 
 * **System administrators** customizing a [storefront](https://glossary.magento.com/storefront) can indirectly manipulate the presentation layer by, for example, adding themes or widgets to the frontend.
 
@@ -27,7 +27,21 @@ Magento themes organize both the visual aspect of your storefront and certain as
 
 Each [theme](https://glossary.magento.com/theme) resides in a unique directory and contains custom page layouts, templates, skins, and language files that work together to create a distinct user experience.
 
-For an extensive introduction to theme elements and an overview of how to extend and override the default Magento themes, see the [Frontend Developer Guide]({{page.baseurl}}/frontend-dev-guide/bk-frontend-dev-guide.html).
+For an extensive introduction to theme elements and an overview of how to extend and override the default Magento themes, see the [Frontend Developer Guide][].
+
+## GraphQL
+
+GraphQL is a data query language developed internally by Facebook in 2012 before being publicly released in 2015. Magento implements GraphQL to provide an alternative to REST and SOAP web APIs for frontend development.
+
+GraphQL allows you to define the structure of the data that you need, and the server returns only the data you request. Each GraphQL-capable module contains a declarative schema that defines the syntax for queries that the module supports, as well as the attributes that can be returned. If you run a REST call such as GET /V1/products/:sku on a simple product, the system might fetch more than 100 lines of data. If all you need is the current price, the call has returned significantly more information than you need. With GraphQL, a query against the same SKU could return just the price.
+
+More information can be found in the [GraphQL Developer Guide][]
+
+## Progressive Web Apps
+
+The Magento Progressive Web App (PWA) Studio project is a set of developer tools that allow you to develop, deploy, and maintain a PWA storefront on top of Magento 2.
+
+You can read more about how PWA works with Magento in the [PWA Studio docs][]
 
 ## View model
 
@@ -52,6 +66,13 @@ For example, the [Admin](https://glossary.magento.com/admin) UI screens are ofte
 
 The View layer calls code from the Model to get information about the state of the application (for example, the price of a product). Typically, the way it accesses the Model is through service contracts.
 
+## Progressive web apps
+
+Progressive Web Apps (PWA) is a way to present a Magento storefront via a set of React javascript components.
+Using Magento as a headless backend, you can use PWA components to make mobile friendly frontends.
+
+Read more about [Magento PWA][].
+
 ## Presentation layer flow
 
 Web users interact with components of the presentation layer to select actions that initiate calls to the underlying layers.
@@ -62,3 +83,9 @@ Presentation layer components make calls to the service layer, which in turn sen
 [Architectural diagrams]({{page.baseurl}}/architecture/archi_perspectives/arch_diagrams.html)
 
 [Architectural layers overview]({{page.baseurl}}/architecture/archi_perspectives/ALayers_intro.html)
+
+<!-- Link definitions -->
+[Frontend Developer Guide]: {{page.baseurl}}/frontend-dev-guide/bk-frontend-dev-guide.html
+[GraphQL Developer Guide]: https://devdocs.magento.com/guides/v2.3/graphql/
+[Magento PWA]: https://magento-research.github.io/pwa-studio/technologies/overview/
+[PWA Studio docs]: https://magento-research.github.io/pwa-studio/
