@@ -83,7 +83,7 @@ https://refactorcss-mswy7hzcuhcjw.us.magentosite.cloud/blog
   {: .no-copy}
 
 {:.bs-callout-info}
-{{site.data.var.ece}} also supports [multiple applications]({{ page.baseurl }}/cloud/project/project-conf-multi-sites.html) per project. Each project has a single `routes.yaml` file that defines which request is routed to which application.
+{{site.data.var.ece}} also supports [multiple applications]({{ page.baseurl }}/cloud/project/project-multi-sites.html) per project. Each project has a single `routes.yaml` file that defines which request is routed to which application.
 
 ## Route options
 
