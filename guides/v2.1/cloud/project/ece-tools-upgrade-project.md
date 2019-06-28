@@ -92,9 +92,10 @@ To upgrade your project to use the `{{site.data.var.ct}}` package, you need to u
     composer.json
     composer.lock
     ```
+    {:.no-copy}
 
 1.  Push your code changes to the remote server and merge this branch with the `integration` branch.
 
     ```bash
-    git push origin <branch name>
+    git push origin <branch-name>
     ```

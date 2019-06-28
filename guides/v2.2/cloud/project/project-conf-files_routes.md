@@ -18,7 +18,6 @@ The default `routes.yaml` file contains the following code:
     upstream: "mymagento:php"
 ```
 
-By default, Magento routes all HTTP requests to the {{ site.data.var.ee }} application.
 If you do not create a custom `routes.yaml` file, the automated deployment uses the default file.
 
 #### To list the configured routes:
@@ -101,6 +100,7 @@ Property         | Description
 
 The following sample routes the apex domain and the `www` subdomain to the `frontend`application. This route does not redirect HTTPS requests:
 
+
 ```yaml
 "http://{default}/":
     type: upstream
@@ -128,10 +128,10 @@ In the first sample, the server responds directly to a request of the form `http
 ## Wildcard routes
 {{site.data.var.ece}} supports wildcard routes, so you can map multiple subdomains to the same application. This works for [redirect](https://glossary.magento.com/redirect) and upstream routes. You prefix the route with an asterisk (\*). For example, the following routes to the same application:
 
-- `*.example.com`
-- `www.example.com`
-- `blog.example.com`
-- `us.example.com`
+-  `*.example.com`
+-  `www.example.com`
+-  `blog.example.com`
+-  `us.example.com`
 
 This functions as a catch-all domain in a live environment.
 
@@ -143,8 +143,8 @@ If you define a `http://www.{default}/` route, the route becomes `http://www.add
 
 You can put any subdomain before the dot and the route resolves. In this example, the route is defined as `http://*.{default}/`, so both of the following URLs work:
 
-- `http://foo.add-theme-projectID.us.magentosite.cloud/`
-- `http://bar.add-theme-projectID.us.magentosite.cloud/`
+-  `http://foo.add-theme-projectID.us.magentosite.cloud/`
+-  `http://bar.add-theme-projectID.us.magentosite.cloud/`
 
 If you examine the routes of this sample application, you see:
 
@@ -157,6 +157,7 @@ echo $MAGENTO_CLOUD_RELATIONSHIPS | base64 --decode | json_pp
 https://*.add-theme-projectID.us.magentosite.cloud/
 ```
 {: .no-copy}
+
 
 {: .bs-callout .bs-callout-info}
 Some projects provisioned before December 8, 2017, use the triple dash (\-\-\-) as a separator for the subdomain.
