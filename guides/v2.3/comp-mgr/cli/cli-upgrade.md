@@ -92,7 +92,7 @@ composer show magento/product-enterprise-edition {{ page.guide_version }}.* --al
 #### Specify additional packages
 
 ```bash
-composer require --dev phpunit/phpunit:~6.2.0 friendsofphp/php-cs-fixer:~2.10.1 lusitanian/oauth:~0.8.10 pdepend/pdepend:2.5.2 sebastian/phpcpd:~3.0.0 squizlabs/php_codesniffer:3.2.2 --no-update
+composer require --dev allure-framework/allure-phpunit:~1.2.0 friendsofphp/php-cs-fixer:~2.13.0 lusitanian/oauth:~0.8.10 magento/magento-coding-standard:~1.0.0 magento/magento2-functional-testing-framework:~2.3.14 pdepend/pdepend:2.5.2 phpunit/phpunit:~6.5.0 sebastian/phpcpd:~3.0.0 squizlabs/php_codesniffer:3.2.2 --sort-packages --no-update
 ```
 
 #### Remove unused packages
