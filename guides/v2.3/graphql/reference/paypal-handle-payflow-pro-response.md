@@ -3,7 +3,7 @@ group: graphql
 title: handlePayflowProResponse mutation
 ---
 
-The `handlePayflowProResponse` mutation sends the silent post data that the client received from the Payflow Pro gateway to the Magento server. The contents of this payload varies based on factors such as the merchant's location, the items purchased, and the billing/shipping addresses. The following is an example payload:
+The `handlePayflowProResponse` mutation sends the silent post data that the client received from the Payflow Pro gateway to the Magento server. The content of this payload varies based on factors such as the merchant's location, the items purchased, and the billing/shipping addresses. The following is an example payload:
 
 ```text
 'BILLTOCITY=CityM&AMT=0.00&BILLTOSTREET=Green+str,+67&VISACARDLEVEL=12&SHIPTOCITY=CityM'

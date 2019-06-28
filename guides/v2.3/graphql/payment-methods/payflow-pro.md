@@ -23,7 +23,7 @@ The following diagram shows the workflow for placing an order when Payflow Pro i
 
 6. Magento returns the secure token, a secure token ID, and result codes and descriptions in response to the `createPayflowProToken` mutation.
 
-7. The client uses a hidden iframe to send a silent post request directly to the PayFlow Pro gateway for account verification. For live requests, send the silent post to `https://payflowlink.paypal.com`. Send test requests `https://pilot-payflowlink.paypal.com`.
+7. The client uses a hidden iframe to send a silent post request directly to the PayFlow Pro gateway for account verification. For live requests, send the silent post to `https://payflowlink.paypal.com`. Send test requests to `https://pilot-payflowlink.paypal.com`.
 
 8. The gateway responds directly to the client. The response contains a payload that includes secure token information and billing and shipping information. 
 
