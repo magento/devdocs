@@ -69,17 +69,17 @@ pages:
             - label: Directory endpoint
               url: /graphql/reference/directory.html
 
-            - label: Paypal endpoint
-              url: /graphql/reference/paypal.html
+            - label: Payflow Link getPayflowLinkToken query
+              url: /graphql/reference/paypal-get-payflow-link-token.html
 
-            - label: PayPal createPayflowProToken mutation
+            - label: Payflow Pro createPayflowProToken mutation
               url: /graphql/reference/paypal-create-payflow-pro-token.html
 
-            - label: PayPal handlePayflowProResponse mutation
+            - label: Payflow Pro handlePayflowProResponse mutation
               url: /graphql/reference/paypal-handle-payflow-pro-response.html
 
-            - label: Payflow getPayflowLinkToken query
-              url: /graphql/reference/paypal-get-payflow-link-token.html
+            - label: Paypal endpoint
+              url: /graphql/reference/paypal.html
 
             - label: Products endpoint
               url: /graphql/reference/products.html
