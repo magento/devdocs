@@ -77,3 +77,31 @@ Magento generates a `bulk_uuid` for each asynchronous request. Use the `bulk_uui
 }
 ```
 
+## Store Scopes
+
+Asynchronous API also can be used to work with particular store. Way of work is exactly the same as for usual synchronous REST API.
+
+Store Code have to be defined before `async` prefix:
+
+```
+POST /<store_code>/async/V1/products
+PUT /<store_code>/async/V1/products/:sku
+```
+
+This will lead to behaviour that only values for respective store will be updated.
+
+In addition can be used `all` prefix which will update values for all existed stores:
+
+```
+POST /all/async/V1/products
+PUT /all/async/V1/products/:sku
+```
+
+### Store Scopes fallback and object creation / update
+
+Stores usage has a next fallback in case if it's used for creating or updating new objects. For example products.
+
+* If no store code is set while creating new product - new object will be created with all values set globally for each scope
+* If no store code is set while updating product - then by fallback Magento will update values only for default store 
+* If `all` parameter is transferred, then values for all store scopes will be updated (in case if particular store don't have yet own value set)
+* If `<store_code>` parameter is set, then values for only defined store will be updated 
