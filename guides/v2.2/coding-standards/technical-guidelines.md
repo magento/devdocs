@@ -750,13 +750,13 @@ You need to read configuration from different sources (like database or filesyst
 
 11.3.3.1. All element selectors MUST follow these [best practices](https://devdocs.magento.com/mftf/docs/best-practices.html).
 
-11.3.3.2. The element's `name` MUST be unique in the `<section>`.
+11.3.3.2. The element `name` MUST be unique within the `<section>`.
 
-11.3.3.3. The element's `name` SHOULD be written in [camelCase](http://wiki.c2.com/?CamelCase).
+11.3.3.3. The element `name` SHOULD be written in [camelCase](http://wiki.c2.com/?CamelCase).
 
-11.3.3.4. Element selectors SHOULD be written in CSS instead of Xpath.
+11.3.3.4. Element selectors SHOULD be written in CSS instead of XPath.
 
-11.3.3.5. CSS and Xpath selectors MUST NOT reference `@data-bind`.
+11.3.3.5. CSS and XPath selectors MUST NOT reference `@data-bind`.
 
 11.3.3.6. Parameterized selectors MUST use descriptive names for their parameters.
 
@@ -776,7 +776,7 @@ You need to read configuration from different sources (like database or filesyst
 
 ## 12. Web API
 
-12.1. Both REST and SOAP API's MUST be exposed.
+12.1. Both REST and SOAP APIs MUST be exposed.
 
 12.2. All [Web API](https://glossary.magento.com/web-api) GET endpoints MUST return lists of entities.
 
