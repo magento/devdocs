@@ -12,6 +12,7 @@ functional_areas:
 ---
 
 #### Previous step:
+
 [Migrate data and static files]({{ page.baseurl }}/cloud/live/stage-prod-migrate.html)
 
 When your code, files, and data is successfully migrated to Staging or Production, use the environment URLs to test your site(s) and store(s). For a list of your URLs, see [Starter]({{ page.baseurl }}/cloud/live/stage-prod-migrate-prereq.html#starter-urls) and [Pro]({{ page.baseurl }}/cloud/live/stage-prod-migrate-prereq.html#pro-urls) access information.
@@ -49,7 +50,9 @@ The following examples use Pro URLs. You can use any URL with the `dig` command.
 
 Next, use a `curl` command to verify X-Magento-Tags exist and additional header information. The format for the command is:
 
-	curl http[s]://<full site URL> -H "host: <url>" -k -vo /dev/null -HFastly-Debug:1
+```bash
+curl http[s]://<full site URL> -H "host: <url>" -k -vo /dev/null -HFastly-Debug:1
+```
 
 For Starter, enter the full site URL from your environment [Access info]({{ page.baseurl }}/cloud/live/stage-prod-migrate-prereq.html#starter-urls) in the command to view the headers.
 
@@ -58,20 +61,20 @@ For Pro Staging and Production, the command differs per server:
 * Staging: `curl http[s]://staging.<your domain>.c.<instanceid>.ent.magento.cloud -H "host: <url>" -k -vo /dev/null -HFastly-Debug:1`
 * Production:
 
-	* The load balancer: `curl http[s]://<your domain>.c.<project ID>.ent.magento.cloud -H "host: <url>" -k -vo /dev/null -HFastly-Debug:1`
-	* A direct Origin node: `curl http[s]://<your domain>.{1|2|3}.<project ID>.ent.magento.cloud -H "host: <url>" -k -vo /dev/null -HFastly-Debug:1`
+  * The load balancer: `curl http[s]://<your domain>.c.<project ID>.ent.magento.cloud -H "host: <url>" -k -vo /dev/null -HFastly-Debug:1`
+  * A direct Origin node: `curl http[s]://<your domain>.{1|2|3}.<project ID>.ent.magento.cloud -H "host: <url>" -k -vo /dev/null -HFastly-Debug:1`
 
 After you are live, you can also check your live site: `curl https://<your domain> -k -vo /dev/null -HFastly-Debug:1`. You can also add `--resolve` if your live URL is not set up with DNS.
 
 Check the returned response headers and values:
 
-*	`Fastly-Magento-VCL-Uploaded` should be present
-*	`X-Magento-Tags` should be returned
-*	`Fastly-Module-Enabled` should be either `Yes` or the Fastly extension version number
-*	`X-Cache` should be either `HIT` or `HIT, HIT`
-*	`x-cache-hits` should be 1,1
-*	[`Cache-Control: max-age`](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9) should be greater than 0
-*	[`Pragma`](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.32) should be `cache`
+* `Fastly-Magento-VCL-Uploaded` should be present
+* `X-Magento-Tags` should be returned
+* `Fastly-Module-Enabled` should be either `Yes` or the Fastly extension version number
+* `X-Cache` should be either `HIT` or `HIT, HIT`
+* `x-cache-hits` should be 1,1
+* [`Cache-Control: max-age`](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9) should be greater than 0
+* [`Pragma`](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.32) should be `cache`
 
 To verify Fastly is enabled in Staging and Production, check the configuration in the Magento Admin for each environment:
 
@@ -209,11 +212,12 @@ We recommend that you review the [Magento Performance Toolkit]({{ site.mage2blob
 
 For best results, we recommend the following tools:
 
-* [Siege](https://www.joedog.org/siege-home/): Traffic shaping and testing software to push your store to the limit. Hit your site with a configurable number of simulated clients. Siege supports basic authentication, cookies, HTTP, HTTPS and FTP protocols.
-* [Jmeter](http://jmeter.apache.org/): Excellent load testing to help gauge performance for spiked traffic, like for flash sales. Create custom tests to run against your site.
-* New Relic (provided): Helps locate processes and areas of the site causing slow performance with tracked time spent per action like transmitting data, queries, Redis, and so on.
-* [Blackfire]({{ page.baseurl }}/cloud/project/project-integrate-blackfire.html) (provided): Helps track through the issues New Relic finds and helps you dig deeper into the issue for specifics. Blackfire profiles the environment and helps locate bottlenecks indepth: process, method call, query, load, and so on.
-* [WebPageTest](https://www.webpagetest.org/) and [Pingdom](https://www.pingdom.com/): Real-time analysis of your site pages load time with different origin locations. Pingdom may cost a fee. WebPageTest is a free tool.
+* [Magento application performance test]({{ page.baseurl }}/cloud/env/variables-post-deploy.html#ttfb_tested_pages)—Test Magento application performance by configuring the `TTFB_TESTED_PAGES` environment variable to test site response time.
+* [Siege](https://www.joedog.org/siege-home/)—Traffic shaping and testing software to push your store to the limit. Hit your site with a configurable number of simulated clients. Siege supports basic authentication, cookies, HTTP, HTTPS and FTP protocols.
+* [Jmeter](http://jmeter.apache.org/)—Excellent load testing to help gauge performance for spiked traffic, like for flash sales. Create custom tests to run against your site.
+* New Relic (provided)—Helps locate processes and areas of the site causing slow performance with tracked time spent per action like transmitting data, queries, Redis, and so on.
+* [Blackfire]({{ page.baseurl }}/cloud/project/project-integrate-blackfire.html) (provided)— Helps track through the issues New Relic finds and helps you dig deeper into the issue for specifics. Blackfire profiles the environment and helps locate bottlenecks indepth: process, method call, query, load, and so on.
+* [WebPageTest](https://www.webpagetest.org/) and [Pingdom](https://www.pingdom.com/)—Real-time analysis of your site pages load time with different origin locations. Pingdom may require a fee. WebPageTest is a free tool.
 
 ## Set up Magento Security Scan Tool {#security-scan}
 
