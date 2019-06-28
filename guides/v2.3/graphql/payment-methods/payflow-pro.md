@@ -64,7 +64,7 @@ Attribute |  Data Type | Description
 
 ## Example setPaymentMethodOnCart mutation
 
-The following example shows the `setPaymentMethodOnCart` mutation constructed for the Payflow Link payment method.
+The following example shows the `setPaymentMethodOnCart` mutation constructed for the Payflow Pro payment method.
 
 **Request**
 
