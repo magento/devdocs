@@ -6,7 +6,7 @@ functional_areas:
   - Setup
 ---
 
-[Server side includes](http://nginx.org/en/docs/http/ngx_http_ssi_module.html){:target="_site"} (SSI) are directives in [HTML](https://glossary.magento.com/html) pages that get evaluated on the server while the pages are being rendered. Use of [server side](https://glossary.magento.com/server-side) includes enables you to add dynamically generated content to an existing HTML page without having to serve the entire page.
+[Server side includes](http://nginx.org/en/docs/http/ngx_http_ssi_module.html) (SSI) are directives in [HTML](https://glossary.magento.com/html) pages that get evaluated on the server while the pages are being rendered. Use of [server side](https://glossary.magento.com/server-side) includes enables you to add dynamically generated content to an existing HTML page without having to serve the entire page.
 
 {% include cloud/note-route-all-placeholder.md %}
 
