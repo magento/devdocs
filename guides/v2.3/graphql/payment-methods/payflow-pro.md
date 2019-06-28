@@ -11,7 +11,7 @@ The following diagram shows the workflow for placing an order when Payflow Pro i
 
 (Graphic to be added later.)
 
-1. On the checkout page, the customer selects **Credit Card** as the payment method and enters the credit card information as well as the billing and shipping addresses. When the customer clicks **Place Order**, the PWA client uses the [`setPaymentMethodOnCart`]({{page.baseurl}}/graphql/reference/quote-payment-method.html) mutation to set the payment method to `payflow_link`.
+1. On the checkout page, the customer selects **Credit Card** as the payment method and enters the credit card information as well as the billing and shipping addresses. When the customer clicks **Place Order**, the PWA client uses the [`setPaymentMethodOnCart`]({{page.baseurl}}/graphql/reference/quote-payment-method.html) mutation to set the payment method to `payflowpro`.
 
 2. The mutation returns a `Cart` object.
 
