@@ -135,7 +135,6 @@ Command options:
 bin/magento cache:enable [type] ... [type]
 bin/magento cache:disable [type] ... [type]
 ```
-
 Where omitting `[type]` enables or disables all cache types at the same time. The `type` option is a space-separated list of cache types.
 
 <!-- `--bootstrap=` is a URL-encoded associative array of Magento [application bootstrap parameters]({{ page.baseurl }}/config-guide/bootstrap/magento-how-to-set.html#config-bootparam-overview) and values. -->
