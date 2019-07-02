@@ -80,6 +80,35 @@ Attribute |  Data Type | Description
 `no_route` | String | Contains the URL of the default page that you want to appear when if a 404 “Page not Found” error occurs
 `show_cms_breadcrumbs` | Int | Determines if a breadcrumb trail appears on all CMS pages in the catalog. Options: `0` (No) or `1` (Yes)
 
+### Extend Config Data
+
+Easily add your own configuration to the `Store` endpoint within your own module.
+
+You can configure the constructor argument extendedConfigData in your area specific `etc/graphql/di.xml` in the argument node.
+
+The following example adds an array-item to the extendedConfigData array within the construct of the `StoreConfigDataProvider`.
+
+```xml
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+	<type name="Magento\StoreGraphQl\Model\Resolver\Store\StoreConfigDataProvider">
+		<arguments xsi:type="array">
+			<argument name="extendedConfigData">
+				<item name="section_group_field" xsi:type="string">section/group/field</item>
+			</argument>
+		</arguments>
+	</type>
+</config>
+```
+
+Besides configuring the constructor argument you have to extend the type `StoreConfig` within in the `etc/schema.graphqls` as shown below
+
+```text
+type StoreConfig {
+    section_group_field : String  @doc(description: "Extendend Config Data - section/group/field")
+}
+```
+
 ## Example usage
 
 ### Query a store's configuation
