@@ -82,7 +82,7 @@ In this example, you can see that the plugin checks `application_headers` and ad
 
 [Consumers]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-queue.html) pick up messages from the RabbitMQ queue and process them. 
 
-So on a step when consumer reads message, extension executes around plugin in: 
+On a step when a consumer reads a message, the extension executes an around plugin, as shown here: 
 
 ```php
 Magento\AmqpStore\Plugin\AsynchronousOperations\MassConsumerEnvelopeCallback::aroundExecute(SubjectMassConsumerEnvelopeCallback $subject, callable $proceed, EnvelopeInterface $message) 
