@@ -12,7 +12,7 @@ The `Magento_AmqpStore` module provides the ability for message queues to proces
 For support of store scopes extension `Magento_AmqpStore` is responsible. 
 
 {: .bs-callout .bs-callout-warning }
-Support of stores and mentioned extension is only available starting from Magento 2.3.3 version. If you are using version 2.3.1 or 2.3.2, then you can use Magento [PATCH]:https://magento.com/tech-resources/download#download2312
+You must install the [Scope parameter for Async/Bulk API patch](https://magento.com/tech-resources/download#download2312) to enable asynchronous requests on specific stores. Without this patch, asynchronous requests apply to the default store only.
 
 ### Messages Processing 
 
