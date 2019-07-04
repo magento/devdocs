@@ -14,7 +14,7 @@ For support of store scopes extension `Magento_AmqpStore` is responsible.
 {: .bs-callout .bs-callout-warning }
 You must install the [Scope parameter for Async/Bulk API patch](https://magento.com/tech-resources/download#download2312) to enable asynchronous requests on specific stores. Without this patch, asynchronous requests apply to the default store only.
 
-### Messages Processing 
+### Processing messages 
 
 First system have to process message that is send to Magento Message Queue Framework and add to this message information about current store.  
  
