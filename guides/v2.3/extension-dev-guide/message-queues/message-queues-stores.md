@@ -7,7 +7,7 @@ functional_areas:
   - Services
 ---
 
-One of the key features of Message Queues - is a possibility of processing all asynchronous requests only for particular stores.
+The `Magento_AmqpStore` module provides the ability for message queues to process asynchronous requests for specific stores.
 
 For support of store scopes extension `Magento_AmqpStore` is responsible. 
 
