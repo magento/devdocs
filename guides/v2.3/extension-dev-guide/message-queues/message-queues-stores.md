@@ -9,16 +9,12 @@ functional_areas:
 
 The `Magento_AmqpStore` module provides the ability for message queues to process asynchronous requests for specific stores.
 
-For support of store scopes extension `Magento_AmqpStore` is responsible. 
-
 {: .bs-callout .bs-callout-warning }
 You must install the [Scope parameter for Async/Bulk API patch](https://magento.com/tech-resources/download#download2312) to enable asynchronous requests on specific stores. Without this patch, asynchronous requests apply to the default store only.
 
 ### Processing messages 
 
-First system have to process message that is send to Magento Message Queue Framework and add to this message information about current store.  
- 
-Implementation if this can be found in plugin:
+Magento processes each message that is sent to the Message Queue Framework, adding information about the current store. The following plugin implements this behavior:
 
 ```php
 app/code/Magento/AmqpStore/Plugin/Framework/Amqp/Bulk/Exchange.php
