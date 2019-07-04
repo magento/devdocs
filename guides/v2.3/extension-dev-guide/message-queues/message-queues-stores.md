@@ -80,7 +80,7 @@ In this example, you can see that the plugin checks `application_headers` and ad
 
 ### Processing by consumer
 
-[Consumers]:https://devdocs.magento.com/guides/v2.3/config-guide/cli/config-cli-subcommands-queue.html are picking up messages from RabbitMQ queue and processing them. 
+[Consumers]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-queue.html) pick up messages from the RabbitMQ queue and process them. 
 
 So on a step when consumer reads message, extension executes around plugin in: 
 
