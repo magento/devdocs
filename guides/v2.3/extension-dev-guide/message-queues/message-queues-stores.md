@@ -76,7 +76,7 @@ public function beforeEnqueue(SubjectExchange $subject, $topic, array $envelopes
 }
 ```
 
-From example before you can see that plugin checks `application_headers` and add there `store_id` parameter. If headers are not exist, then plugin will create them. In this way RabbitMQ message will receive information for which store requrest have to be processed.
+In this example, you can see that the plugin checks `application_headers` and adds the `store_id` parameter. If the headers do not exist, then plugin creates them. As a result, each RabbitMQ message receives information about the store that is affected by an asynchronous request.
 
 ### Processing by consumer
 
