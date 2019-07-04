@@ -1,6 +1,6 @@
 ---
 group: php-developer-guide
-title: Architecture of Message Queues
+title: Message queues and stores
 contributor_name: Comwrap GmbH
 contributor_link: https://www.comwrap.com
 functional_areas:
