@@ -9,7 +9,7 @@ The `cmsPage` and `cmsBlock` endpoints return information about content pages an
 
 Return the contents of a CMS page:
 
-`cmsPage(id: Int): CmsPage`
+`cmsPage(identifier: String): CmsPage`
 
 Return the contents of one or more CMS blocks:
 
@@ -19,11 +19,11 @@ Return the contents of one or more CMS blocks:
 
 Attribute | Data type | Description
 --- | --- | ---
-`id` | Int | The ID of a CMS page
+`id` | Int | Deprecated. Use `identifier` instead.
+`identifier` | String | The identifier of a CMS page
 `identifiers` | [String] | An array containing a comma-separated list of block identifiers
 
-
-### CmsPage output attributes 
+### CmsPage output attributes
 
 The `CmsPage` object can contain the following attributes:
 
@@ -38,8 +38,7 @@ Attribute | Data type | Description
 `title` | String | The name that appears in the breadcrumb trail navigation and in the browser title bar and tab
 `url_key` |String | The URL key of the CMS page, which is often based on the `content_heading`
 
-
-###  CmsBlocks output attributes
+### CmsBlocks output attributes
 
 The `CmsBlocks` object contains an array of `items`, each of which can contain the following attributes:
 
@@ -49,18 +48,17 @@ Attribute | Data type | Description
 `identifier` | String | The CMS block identifier
 `title` | String | The title assigned to the CMS block
 
-
 ## Example usage
 
 ### Query a CMS page
 
 The following query returns information about the "404 Not Found" CMS page:
 
-**Request** 
+**Request**
 
-```
+```text
 {
-  cmsPage(id: 1) {
+  cmsPage(identifier: 1) {
     url_key
     title
     content
@@ -96,9 +94,9 @@ The following query returns information about the "404 Not Found" CMS page:
 
 The following query returns information about the `login-data` block:
 
-**Request** 
+**Request**
 
-```
+```text
 {
   cmsBlocks(identifiers: "login-data") {
     items {
