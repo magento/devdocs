@@ -33,8 +33,22 @@ Example of setting `exports` in a component's `.js` file:
   }
 }
 ```
-
 Here `visible` is the `key`, `${ $.provider }:visibility` is the `value`. The value of the local `visible` property is assigned to the `visibility` property of the `provider` component. The latter is changed automatically if the value of `visible` changes if the local `visible` property is observable (which it isn't given only the code example above).
+
+If you want to use directly, you can use the destination component name:
+
+```json
+{
+  "exports": {
+   "items": "checkout.sidebar.summary.cart_items:items"
+  }
+}
+```
+
+This name is created by the hierarchy in the XML handle. Put all parents name together with "." (dot) and, at the end, add the component name.
+
+{:.bs-callout .bs-callout-info}
+To easily catch the full name, open your browser devtools, select the element that you want on the "Elements" tab, go to the "Console" tab and execute the following code: require('ko').contextFor($0).$data.name.
 
 Example of setting `exports` in a component's configuration `.xml` file:
 
