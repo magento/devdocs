@@ -105,6 +105,7 @@ The following example declares the `$cart_id` variable. It is referenced in the 
 
 ```text
 query myCartQueryWithVariable($cart_id: String!) {
+  cart(cart_id: $cart_id) {
     items {
       id
       quantity
