@@ -7,7 +7,9 @@ functional_areas:
   - Configuration
 ---
 
-You can use the `{{site.data.var.ct}}` package to run functional tests in the Docker environment. Functional tests are in the `src/Test/Functional/Acceptance` folder. See an example in the [ece-tools repository](https://github.com/magento/ece-tools/tree/develop/src/Test/Functional/Acceptance).
+You can use the `{{site.data.var.ct}}` package to run functional tests in the Docker environment, which is helpful when testing code intended for `{{site.data.var.ct}}` contribution. Functional tests are in the `src/Test/Functional/Acceptance` folder. See an example in the [ece-tools repository](https://github.com/magento/ece-tools/tree/develop/src/Test/Functional/Acceptance).
+
+For testing the Magento application, see the [Magento Functional Testing Framework (MFTF)]({{site.baseurl}}/mftf/docs/commands/mftf.html).
 
 ## Prerequisites
 
