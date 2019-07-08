@@ -24,8 +24,13 @@ pages:
 
     - label: Payment methods
       children:
+
         - label: PayPal Payflow Link
           url: /graphql/payment-methods/payflow-link.html
+          
+        - label: PayPal Payflow Pro
+          url: /graphql/payment-methods/payflow-pro.html
+
 
     - label: Development
       children:
@@ -64,11 +69,17 @@ pages:
             - label: Directory endpoint
               url: /graphql/reference/directory.html
 
+            - label: Payflow Link getPayflowLinkToken query
+              url: /graphql/reference/paypal-get-payflow-link-token.html
+
+            - label: Payflow Pro createPayflowProToken mutation
+              url: /graphql/reference/paypal-create-payflow-pro-token.html
+
+            - label: Payflow Pro handlePayflowProResponse mutation
+              url: /graphql/reference/paypal-handle-payflow-pro-response.html
+
             - label: Paypal endpoint
               url: /graphql/reference/paypal.html
-
-            - label: Payflow getPayflowLinkToken query
-              url: /graphql/reference/paypal-get-payflow-link-token.html
 
             - label: Products endpoint
               url: /graphql/reference/products.html
@@ -99,7 +110,7 @@ pages:
 
             - label: Quote endpoint (cart query)
               url: /graphql/reference/quote.html
-              children: 
+              children:
 
                 - label: addSimpleProductsToCart mutation
                   url: /graphql/reference/quote-add-simple-products.html
