@@ -48,7 +48,7 @@ If you want to use directly, you can use the destination component name:
 The syntax for the destination component name is determined by the hierarchy in the XML handle. Separate parent names with a "." (dot) followed by the component name.
 
 {:.bs-callout .bs-callout-info}
-To easily catch the full name, open your browser devtools, select the element that you want on the "Elements" tab, go to the "Console" tab and execute the following code: require('ko').contextFor($0).$data.name.
+To retrieve the full name of the destination component name, open your browser in developer mode, select the element that you want on the **Elements** tab, go to the **Console** tab, and execute the following code: `require('ko').contextFor($0).$data.name`.
 
 Example of setting `exports` in a component's configuration `.xml` file:
 
