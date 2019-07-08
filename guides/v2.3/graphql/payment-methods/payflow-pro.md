@@ -9,7 +9,7 @@ Payflow Pro is a payment gateway that processes debit and credit card payments. 
 
 The following diagram shows the workflow for placing an order when Payflow Pro is the selected payment method.
 
-(Graphic to be added later.)
+![PayPal Payflow Pro sequence diagram]({{page.baseurl}}/graphql/images/paypal-payflow-pro.svg)
 
 1. On the checkout page, the customer selects **Credit Card** as the payment method and enters the credit card information as well as the billing and shipping addresses. When the customer clicks **Place Order**, the PWA client uses the [`setPaymentMethodOnCart`]({{page.baseurl}}/graphql/reference/quote-payment-method.html) mutation to set the payment method to `payflowpro`.
 
@@ -19,13 +19,13 @@ The following diagram shows the workflow for placing an order when Payflow Pro i
 
 4. Magento requests a secure token from the PayFlow Pro gateway. The request also contains billing and shipping information, which Magento extracts from the `Cart` object.
 
-5. The gateway response includes a secure token, a secure token ID, and result codes and descriptions. 
+5. The gateway response includes a secure token, a secure token ID, and result codes and descriptions.
 
 6. Magento returns the secure token, a secure token ID, and result codes and descriptions in response to the `createPayflowProToken` mutation.
 
 7. The client uses a hidden iframe to send a silent post request directly to the PayFlow Pro gateway for account verification. For live requests, send the silent post to `https://payflowlink.paypal.com`. Send test requests to `https://pilot-payflowlink.paypal.com`.
 
-8. The gateway responds directly to the client. The response contains a payload that includes secure token information and billing and shipping information. 
+8. The gateway responds directly to the client. The response contains a payload that includes secure token information and billing and shipping information.
 
 9. The client uses the [`handlePayflowProResponse`]({{page.baseurl}}/graphql/reference/paypal-handle-payflow-pro-response.html) mutation to send the payload to Magento. Magento stores this information without modifying the cart.
 
