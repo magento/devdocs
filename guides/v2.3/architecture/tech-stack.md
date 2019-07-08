@@ -25,16 +25,16 @@ If you are interested in participating in Magento Community projects we welcome 
 
 ### Database
 
-*	MySQL
-*	MySQL Percona
+* MySQL
+* MySQL Percona
 
 ### HTTP accelerator
 
-*	Varnish
+* Varnish
 
 ### Cache Storage
 
-*	Redis
+* Redis
 
 ### Search
 
@@ -52,9 +52,9 @@ If you are interested in participating in Magento Community projects we welcome 
 
 ### Optional stack components
 
-*	Varnish (caching)
-*	Redis (used for page caching)
-*	Elasticsearch (search engine)
+* Varnish (caching)
+* Redis (used for page caching)
+* Elasticsearch (search engine)
 * RabbitMQ (message queue)
 
 Magento 2.2+ does not support HipHop Virtual Machine (HHVM).
