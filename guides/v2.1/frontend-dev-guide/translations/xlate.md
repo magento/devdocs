@@ -52,6 +52,7 @@ Depending on your needs, you can use the existing [language packages](#m2devgde-
 ## Programming notes
 
 * It is recommended, but not enforced, that you do not place variables inside `__()` functions or `new Phrase()` calls. The scanner that collects the phrases from the code cannot interpret and collect the value of the variable when it is in these locations. Instead, you should place the full text in the `__()` function or `new Phrase()` call. If you need to specify a variable in these cases, ensure that it is translated correctly wherever it is defined as a string literal.
+* It is recommended that, whenever possible, the preferred gender of any nouns be supplied as a variable.  This helps languages with gendered conjugations translate phrases more smoothly.
 * The [language package](https://glossary.magento.com/language-package) (`i18n` directory) can be saved to any directory of your [extension](https://glossary.magento.com/extension).
 * The phrases for translations are enabled in the [Phrase] class.
 

@@ -180,7 +180,7 @@ algolia:
   api_key: d2d0f33ab73e291ef8d88d8b565e754c
 
 google:
-  analytics: UA-66243208-1
+  gtm: GTM-KRCLXBB
 
 # Toggles the _plugin/html-check-hook.rb script that checks links in the generated HTML
 #

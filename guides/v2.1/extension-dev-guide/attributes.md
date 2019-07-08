@@ -113,60 +113,16 @@ You must create a `<Module>/etc/extension_attributes.xml` file to define a modul
 
 where:
 
-<table>
-<thead>
-<th>Keyword</th>
-<th>Description</th>
-<th>Example</th>
-</thead>
-<tbody>
-<tr>
-<td><p>for</p></td>
-<td><p>The fully-qualified type name with the [namespace](https://glossary.magento.com/namespace) that processes the extensions. The value must be a type that implements `ExtensibleDataInterface`. The interface can be in a different module.</p> </td>
-<td><code>Magento\Quote\Api\Data\TotalsInterface</code></td>
-</tr>
-<tr>
-<td><p>code</p></td>
-<td><p>The name of the attribute. The attribute name should be in snake case (the first letter in each word should be in lowercase, with each word separated by an underscore). </p></td>
-<td><code>gift_cards_amount_used</code></td>
-</tr>
-<tr>
-<td><p>type</p></td>
-<td><p>The data type. This can be a simple data type, such as string or integer, or complex type, such as an interface.</p></td>
-<td><code>float <br />Magento\CatalogInventory\Api\Data\StockItemInterface</code></td>
-</tr>
-<tr>
-<td><p>ref</p></td>
-<td><p>Optional. Restricts access to the [extension attribute](https://glossary.magento.com/extension-attribute) to users with the specified permission.</p></td>
-<td><code>Magento_CatalogInventory::cataloginventory</code></td>
-</tr>
-<tr>
-<td><p>reference_table</p></td>
-<td>
-<p>The table involved in a join operation. See <a href="#search">Searching extension attributes</a> for details.</p>
-</td>
-<td><code>admin_user</code></td>
-</tr>
-<tr>
-<td><p>reference_field</p></td>
-<td><p>Column in the reference_table</p></td>
-<td><code>user_id</code></td>
-</tr>
-<tr>
-<td><p>join_on_field</p></td>
-<td><p>The column of the table associated with the interface specified in the <code>for</code> [keyword](https://glossary.magento.com/keyword) that will be used in the join operation.</p></td>
-<td><code>store_id</code></td>
-</tr>
-<tr>
-<td><p>field</p></td>
-<td><p>One or more fields present in the interface specified in the <code>type</code> keyword.</p>
-<p>You can specify the <code>column=""</code> keyword to define the column in the reference_table to use. The field value specifies the property on the <code>interface</code> which should be set.</p></td>
-<td><code><field>firstname</field><br /><field>lastname</field><br /><field>email</field><br /><br />
-<field column="customer_group_code">code</field></code></td>
-</tr>
-</tbody>
-
-</table>
+|Keyword|Description|Example|
+|--- |--- |--- |
+| for | The fully-qualified type name with the [namespace](https://glossary.magento.com/namespace) that processes the extensions. The value must be a type that implements `ExtensibleDataInterface`. The interface can be in a different module. | `Magento\Quote\Api\Data\TotalsInterface` |
+| code | The name of the attribute. The attribute name should be in snake case (the first letter in each word should be in lowercase, with each word separated by an underscore). | `gift_cards_amount_used` |
+| type | The data type. This can be a simple data type, such as string or integer, or complex type, such as an interface. | `float`<br />`Magento\CatalogInventory\Api\Data\StockItemInterface` |
+| ref | Optional. Restricts access to the extension attribute to users with the specified permission. | `Magento_CatalogInventory::cataloginventory` |
+| reference_table | The table involved in a join operation. See [Searching extension attributes](#search) for details. | `admin_user` |
+| reference_field | Column in the `reference_table`. | `user_id` |
+| join_on_field | The column of the table associated with the interface specified in the `for` keyword that will be used in the join operation. | `store_id` |
+| field | One or more fields present in the interface specified in the `type` keyword.<br />You can specify the `column=""` keyword to define the column in the reference_table to use. The field value specifies the property on the `interface` which should be set. | `<field>firstname</field>`<br />`<field>lastname</field>`<br />`<field>email</field>`<br /><br />`<field column="customer_group_code">code</field>` |
 
 ### Searching extension attributes {#search}
 
