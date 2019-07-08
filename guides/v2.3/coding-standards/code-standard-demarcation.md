@@ -17,11 +17,10 @@ Some parts of Magento code might not comply with the standard, but we are workin
 
 The standard was developed in the scope of our efforts to ensure the following:
 
-   - Decouple visual (CSS) layer from the functional (JavaScript) layer.
-   - Decouple functional (JavaScript) layer from the [markup](https://glossary.magento.com/markup) (HTML).
-   - Reinstate emphasis on using of [jQuery](https://glossary.magento.com/jquery) templates.
-   - Reinstate emphasis on decoupling HTML, [CSS](https://glossary.magento.com/css) and JS from [PHP](https://glossary.magento.com/php) classes.
-
+- Decouple visual (CSS) layer from the functional (JavaScript) layer.
+- Decouple functional (JavaScript) layer from the [markup](https://glossary.magento.com/markup) (HTML).
+- Reinstate emphasis on using of [jQuery](https://glossary.magento.com/jquery) templates.
+- Reinstate emphasis on decoupling HTML, [CSS](https://glossary.magento.com/css) and JS from [PHP](https://glossary.magento.com/php) classes.
 
 Use [RFC 2119](http://www.ietf.org/rfc/rfc2119.txt) to interpret the "MUST," "MUST NOT," "REQUIRED," "SHALL," "SHALL NOT," "SHOULD," "SHOULD NOT," "RECOMMENDED," "MAY," and "OPTIONAL" keywords.
 
@@ -29,9 +28,10 @@ Use [RFC 2119](http://www.ietf.org/rfc/rfc2119.txt) to interpret the "MUST," "MU
 
 ### For attribute names and values you must use meaningful unabbreviated lowercase words comprised of Latin characters concatenated with a hyphen (`-`)
 
-   - Helps simplify and unify naming conventions that are used to apply visual styles to page elements.
+- Helps simplify and unify naming conventions that are used to apply visual styles to page elements.
 
 **Acceptable**
+
 ```html
 <section id="information-dialog-tree">
    <p> ... </p>
@@ -41,6 +41,7 @@ Use [RFC 2119](http://www.ietf.org/rfc/rfc2119.txt) to interpret the "MUST," "MU
 ```
 
 **Unacceptable**
+
 ```html
 <section id="some_id">
    <p> ... </p>
@@ -55,12 +56,12 @@ Use [RFC 2119](http://www.ietf.org/rfc/rfc2119.txt) to interpret the "MUST," "MU
 
 ### Semantic representation may rely on ID attribute
 
-   - Forces engineers to think about reusable page components instead of unique singleton components.
-   - Reduces long-term maintenance efforts.
+- Forces engineers to think about reusable page components instead of unique singleton components.
+- Reduces long-term maintenance efforts.
 
 **Acceptable [PHTML](https://glossary.magento.com/phtml) template**
 
-<p>The following acceptable example is terse and uses an Accessible Rich Internet Applications (ARIA) approach.</p>
+The following acceptable example is terse and uses an Accessible Rich Internet Applications (ARIA) approach.
 
 ```html
 <ul>
@@ -75,14 +76,13 @@ Use [RFC 2119](http://www.ietf.org/rfc/rfc2119.txt) to interpret the "MUST," "MU
 <a href="#some-id">Scroll to text</a>
 ```
 
-
 **Unacceptable combination of PHTML, JavaScript, and CSS files**
 
 The following unacceptable example replaces a single PHTML file with a combination of a PHTML, JavaScript, and CSS files.
 
 **PHTML file**
 
-```php?start_inline=1
+```php
 <ul id="my-special-menu">
    <li id="buttonId1" class="first" type="button">button 1</li>
    <li id="buttonId2" type="button">button 2</li>
@@ -97,12 +97,13 @@ $('#my-special-menu').on('click','li[id^="button"]', function() { ... })
 ```
 
 **CSS file**
+
 ```css
 #my-special-menu { ... }
 #my-special-menu > li { ... }
 ```
 
-### You must follow the separation of presentation and content methodology.
+### You must follow the separation of presentation and content methodology
 
 The following list will help you make a distinction between the actual meaning of a document, and how this meaning is presented to its readers:
 
@@ -124,7 +125,7 @@ The following list will help you make a distinction between the actual meaning o
 - visualization
 - view
 
-### You must use semantic HTML markup only, and must not use presentation markup.
+### You must use semantic HTML markup only, and must not use presentation markup
 
 **Acceptable**:
 
@@ -146,10 +147,10 @@ The following list will help you make a distinction between the actual meaning o
 
 As the first option, you are required to use [HTML](https://glossary.magento.com/html) class attributes. In case this option is not applicable then it is recommended to use HTML tags and form element's type attribute.
 
-   - Enforces clean, strict separation between visual and business logic layers.
-   - Allows [frontend](https://glossary.magento.com/frontend) and [backend](https://glossary.magento.com/backend) teams to work independently.
-   - Allows changing look and feel without affecting business functionality, and vice versa.
-   - Enables frontend teams to clean up old styles quickly and easily when refactoring.
+- Enforces clean, strict separation between visual and business logic layers.
+- Allows [frontend](https://glossary.magento.com/frontend) and [backend](https://glossary.magento.com/backend) teams to work independently.
+- Allows changing look and feel without affecting business functionality, and vice versa.
+- Enables frontend teams to clean up old styles quickly and easily when refactoring.
 
 **Acceptable CSS selectors**
 
@@ -221,13 +222,13 @@ this.element.on('click', function() {
 
 **Acceptable PHTML template**
 
-```php?start_inline=1
+```php
 <div class="no-display"> ... </div>
 ```
 
 **Unacceptable PHTML template**
 
-```php?start_inline=1
+```php
 <div style="display: none;"> ... </div>
 ```
 
@@ -241,7 +242,7 @@ this.element.on('click', function() {
 
 **Acceptable PHTML template**
 
-```php?start_inline=1
+```php
 <div data-action="delete" data-mage-init="{myWidget: [option1: 'string']}"></div>
 <div data-role="tooltip">More details</div>
 ```
@@ -264,7 +265,7 @@ $( this.options.tooltip).tooltip();  // Globally for ALL tooltip elements
 
 **Unacceptable PHTML file**
 
-```php?start_inline=1
+```html
 <div id="my-widget"></div>
 ```
 
@@ -277,7 +278,7 @@ $('form').validate();
 $('[role="menu"]').navigation();
 ```
 
-### You must assign HTML helper classes in JavaScript to modify presentation layer.
+### You must assign HTML helper classes in JavaScript to modify presentation layer
 
 HTML helper class names added in JavaScript REQUIRE underscore symbol ("_") at the beginning and must be written in lowercase.
 
@@ -331,7 +332,7 @@ this.element.parent().find('[data-action="edit"]').data('entity_id');
 
 **Acceptable PHP file**
 
-```php?start_inline=1
+```php
 ...
 public function getSelectorOptions()
 {
@@ -342,7 +343,7 @@ public function getSelectorOptions()
 
 **Acceptable PHTML template**
 
-```php?start_inline=1
+```php
 ...
 <div data-mage-init="{treeSuggest: [<?php echo $this->getSelectorOptions(); ?>]}"></div>
 ...
@@ -352,7 +353,7 @@ or
 
 **Acceptable PHTML template**
 
-```php?start_inline=1
+```php
 ...
 <div data-role="treeSuggest"></div>
 <script type="text/x-magento-init">
@@ -367,7 +368,7 @@ or
 
 **Unacceptable PHP file**
 
-```php?start_inline=1
+```php
 ...
 public function getAfterElementHtml()
 {
@@ -380,7 +381,7 @@ jQuery('#{$htmlId}-suggest').treeSuggest({$selectorOptions});
 
 **Unacceptable PHTML template**
 
-```php?start_inline=1
+```php
 <?php echo $this->getAfterElementHtml(); ?>
 ```
 
@@ -394,7 +395,7 @@ jQuery('#{$htmlId}-suggest').treeSuggest({$selectorOptions});
 
 **Acceptable PHP file**
 
-```php?start_inline=1
+```php
 ...
 $fieldset->addField('new_category_parent', 'text', array(
     'label'    => Mage::helper('Mage_Catalog_Helper_Data')->__('Parent Category'),
@@ -407,7 +408,7 @@ $fieldset->addField('new_category_parent', 'text', array(
 
 **Unacceptable PHP file**
 
-```php?start_inline=1
+```php
 ...
 $fieldset->addField('new_category_parent', 'text', array(
     'label'    => Mage::helper('Mage_Catalog_Helper_Data')->__('Parent Category'),
@@ -425,7 +426,7 @@ $fieldset->addField('new_category_parent', 'text', array(
 
 **Acceptable PHP file**
 
-```php?start_inline=1
+```php
 ...
 public function getSelectorOptions()
 {
@@ -436,7 +437,7 @@ public function getSelectorOptions()
 
 **Acceptable PHTML template**
 
-```php?start_inline=1
+```php
 ...
 <div data-mage-init="{treeSuggest: [<?php echo $this->getSelectorOptions(); ?>]}"></div>
 ...
@@ -444,7 +445,7 @@ public function getSelectorOptions()
 
 **Unacceptable PHP file**
 
-```php?start_inline=1
+```php
 ...
 public function getAfterElementHtml()
 {
@@ -456,7 +457,8 @@ jQuery('#{$htmlId}-suggest').treeSuggest({$selectorOptions});
 ```
 
 **Unacceptable PHTML template**
-```php?start_inline=1
+
+```php
 <?php echo $this->getAfterElementHtml(); ?>
 ```
 
@@ -467,7 +469,7 @@ jQuery('#{$htmlId}-suggest').treeSuggest({$selectorOptions});
 
 **Acceptable PHP file**
 
-```php?start_inline=1
+```php
 ...
 public function getAttributeName($element)
 {
@@ -483,7 +485,7 @@ public function getAttributeId($element)
 
 **Acceptable PHTML template**
 
-```php?start_inline=1
+```php
 <span class="attribute-change-checkbox">
 <label>
    <input type="checkbox"
@@ -497,7 +499,7 @@ public function getAttributeId($element)
 
 **Unacceptable PHP file**
 
-```php?start_inline=1
+```php
 ...
 public function getCheckbox($elementName){
     $elementNameTag = $this->getAttributeName($elementName) ? 'name="' . $this->getAttributeName($elementName) . '"' : NULL;
@@ -509,7 +511,7 @@ public function getCheckbox($elementName){
 
 **Unacceptable PHTML template**
 
-```php?start_inline=1
+```php
 <span class="attribute-change-checkbox">
 	<label>
 		<?php echo $this->getCheckbox($element)?>
