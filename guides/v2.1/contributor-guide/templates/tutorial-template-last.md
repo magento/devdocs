@@ -15,7 +15,7 @@ The last page of a tutorial should acknowledge the reader has completed the tuto
 
 ## Metadata parameters
 
-The {% glossarytooltip 3f0f2ef1-ad38-41c6-bd1e-390daaa71d76 %}metadata{% endglossarytooltip %} parameters for the last page of a tutorial are the same as a middle page.
+The [metadata](https://glossary.magento.com/metadata) parameters for the last page of a tutorial are the same as a middle page.
 
 Parameter | Description
 --- | ---

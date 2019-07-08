@@ -109,8 +109,8 @@ The `setCurrentPage` function sets the current page:
 
 ```php
 $searchCriteria
-    ->setCurrentPage(20)
-    ->setCurrentPage(15); //will show entities from 15-th to 20-th
+    ->setPageSize(20)
+    ->setCurrentPage(2); //show the 21st to 40th entity
 
 ```
 
@@ -171,7 +171,7 @@ The method applies custom filters for some fields, otherwise it applies `$collec
 {% endcollapsible %}
 
 You can configure this class to use a specific custom field mapping and custom filter in the `di.xml` file.
-The example below uses {% glossarytooltip 2be50595-c5c7-4b9d-911c-3bf2cd3f7beb %}dependency injection{% endglossarytooltip %} to create a {% glossarytooltip 058b2be4-3247-4cb0-860d-6292ce75d1f0 %}virtual type{% endglossarytooltip %} from a Filter Processor that applies the module-specific [`ProductCategoryFilter`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/Model/Api/SearchCriteria/CollectionProcessor/FilterProcessor/ProductCategoryFilter.php){:target="_blank"} on a particular field mapping.
+The example below uses [dependency injection](https://glossary.magento.com/dependency-injection) to create a [virtual type](https://glossary.magento.com/virtual-type) from a Filter Processor that applies the module-specific [`ProductCategoryFilter`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/Model/Api/SearchCriteria/CollectionProcessor/FilterProcessor/ProductCategoryFilter.php){:target="_blank"} on a particular field mapping.
 
 ```xml
     <virtualType name="Magento\Customer\Model\Api\SearchCriteria\CollectionProcessor\GroupFilterProcessor" type="Magento\Framework\Api\SearchCriteria\CollectionProcessor\FilterProcessor">

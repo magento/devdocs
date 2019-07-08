@@ -5,7 +5,7 @@ functional_areas:
   - Integration
 ---
 
-To make a web {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} call from a client such as a mobile application, you must supply an *access token* on the call. The token acts like an electronic key that lets you access the API.
+To make a web [API](https://glossary.magento.com/api) call from a client such as a mobile application, you must supply an *access token* on the call. The token acts like an electronic key that lets you access the API.
 
 Magento issues the following types of access tokens:
 
@@ -47,7 +47,7 @@ Get an admin token | `POST /V1/integration/admin/token` | `integrationAdminToken
 Get a customer token | `POST /V1/integration/customer/token` | `integrationCustomerTokenServiceV1`
 
 
-For most {% glossarytooltip 377dc0a3-b8a7-4dfa-808e-2de37e4c0029 %}web API{% endglossarytooltip %} calls, you supply this token in the `Authorization` request header with the `Bearer` HTTP {% glossarytooltip 34ecb0ab-b8a3-42d9-a728-0b893e8c0417 %}authorization{% endglossarytooltip %} scheme to prove your identity. By default, an admin token is valid for 4 hours, while a customer token is valid for 1 hour. You can change these values from Admin by selecting **Stores** > **Settings** > **Configuration** > **Services** > **OAuth** > **Access Token Expiration**.
+For most [web API](https://glossary.magento.com/web-api) calls, you supply this token in the `Authorization` request header with the `Bearer` HTTP [authorization](https://glossary.magento.com/authorization) scheme to prove your identity. By default, an admin token is valid for 4 hours, while a customer token is valid for 1 hour. You can change these values from Admin by selecting **Stores** > **Settings** > **Configuration** > **Services** > **OAuth** > **Access Token Expiration**.
 
 A cron job that runs hourly removes all expired tokens.
 
@@ -64,7 +64,7 @@ Credentials | The username and password for a Magento account.<br/><br/>To speci
 
 #### Examples {#token-example}
 
-The following image shows a token request for the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}admin{% endglossarytooltip %} account using a REST client:
+The following image shows a token request for the [admin](https://glossary.magento.com/admin) account using a REST client:
 
 ![REST client]({{ page.baseurl }}/get-started/authentication/images/gs_auth_token1.png)
 
@@ -76,7 +76,7 @@ curl -X POST "https://magento.host/index.php/rest/V1/integration/customer/token"
      -d "{"username":"customer1@example.com", "password":"customer1pw"}"
 ```
 
-The following example makes the same request with {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %} for a customer account token:
+The following example makes the same request with [XML](https://glossary.magento.com/xml) for a customer account token:
 
 ```
 curl -X POST "http://magento.vg/index.php/rest/V1/integration/customer/token" \

@@ -91,7 +91,7 @@ Example: `<Magento_Sales_module_dir>/view/adminhtml/ui_component/sales_order_gri
 </listing>
 ```
 
-By default Magento allows {% glossarytooltip 6341499b-ead9-4836-9794-53d95eb48ea5 %}CSV{% endglossarytooltip %} and Excel {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %} export data formats.
+By default Magento allows [CSV](https://glossary.magento.com/csv) and Excel [XML](https://glossary.magento.com/xml) export data formats.
 
 ### Add new export format
 

@@ -40,7 +40,7 @@ After fully configuring your store, you should configure your deployment. This i
 We also provide integrations with:
 
 * [Blackfire Profiler]({{ page.baseurl }}/cloud/project/project-integrate-blackfire.html) configuration for tracking and investigating issues for bottleneck issues in processes, method calls, queries, loads, and so on
-* [New Relic APM]({{ page.baseurl }}/cloud/project/new-relic.html) configuration for application and performance analysis in 3 instances or environments
+* [New Relic]({{ page.baseurl }}/cloud/project/new-relic.html) configuration for application and performance analysis
 * [Fastly]({{ page.baseurl }}/cloud/basic-information/cloud-fastly.html) configuration for CDN and caching
 * [GitHub]({{ page.baseurl }}/cloud/integrations/github-integration.html) for managing your Git branches and code
 

@@ -3,7 +3,7 @@ group: functional-testing-framework-guide
 title: Block
 ---
 
-In functional tests we use Page Object {% glossarytooltip 53755359-9916-4677-bff2-f7d26025095a %}Design Pattern{% endglossarytooltip %}. Under this pattern, a block is an area of the UI that a test interacts with, and a [page]({{ page.baseurl }}/mtf/mtf_entities/mtf_page.html) is a container for blocks.
+In functional tests we use Page Object [Design Pattern](https://glossary.magento.com/design-pattern). Under this pattern, a block is an area of the UI that a test interacts with, and a [page]({{ page.baseurl }}/mtf/mtf_entities/mtf_page.html) is a container for blocks.
 
 The Page Object Design Pattern is used to avoid unnecessary duplication of code and to make tests easier to support.
 
@@ -216,7 +216,7 @@ This code uses `_rootElement` to search the button element by the `$this->addLay
 
 ## Form mapping {#mtf_block_mapping}
 
-Often, you need to test a Magento block that contains a form. And of course, tests require entering data in the forms. The Functional Testing Framework (FTF) has a [`Magento\Mtf\Block\Form`][] class that enables you to fill the forms automatically. One of the advantages of using this class is that you can list elements that must be automatically filled. These elements can be grouped in separate {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %} files. In the FTF we call this process "a mapping". You can use mapping to transfer data to the block from the [fixture]({{ page.baseurl }}/mtf/mtf_entities/mtf_fixture.html).
+Often, you need to test a Magento block that contains a form. And of course, tests require entering data in the forms. The Functional Testing Framework (FTF) has a [`Magento\Mtf\Block\Form`][] class that enables you to fill the forms automatically. One of the advantages of using this class is that you can list elements that must be automatically filled. These elements can be grouped in separate [XML](https://glossary.magento.com/xml) files. In the FTF we call this process "a mapping". You can use mapping to transfer data to the block from the [fixture]({{ page.baseurl }}/mtf/mtf_entities/mtf_fixture.html).
 
 A mapping file is an XML file which has the same name and path as the block does, and contains fields that represent form fields. Field name in the mapping file shall match the one in the fixture.
 
@@ -334,7 +334,7 @@ See the following table to understand the node's purpose.
 <tr><th><code>tabs</code> nodes </th><th>Description</th></tr>
 <tr><td><code>wrapper</code> </td><td>Automatically adds <code>group_name</code> to the <code>selector</code> of the field, when <code>selector</code> has not been specified.</td></tr>
 <tr><td><code>class</code> </td><td>Reference to the class that handles tab’s behavior.</td></tr>
-<tr><td><code>selector</code> </td><td>Identifier for the selector of the tab in the {% glossarytooltip a2aff425-07dd-4bd6-9671-29b7edefa871 %}HTML{% endglossarytooltip %} code, used to open the tab.</td></tr>
+<tr><td><code>selector</code> </td><td>Identifier for the selector of the tab in the [HTML](https://glossary.magento.com/html) code, used to open the tab.</td></tr>
 <tr><td><code>strategy</code> </td><td>Strategy of the selector. Can be <code>css selector</code> or <code>xpath</code>.</td></tr>
 <tr><td><code>fields</code> </td><td>List of fields with parameters, that are the same as in the <a href="#mtf_block_form_xml_nodes">form mapping</a>. Also field in tab can include more then one field, in this case add <code>field</code> attribute <code>composite="1"</code>.</td></tr>
 </tbody>
@@ -367,7 +367,7 @@ The general structure of the form tab mapping file:
 
 ## Merging form tab mapping files {#mtf_block_map_form_tab_merge}
 
-When you test a {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} that extends the functionality of the other module by adding a tab to the testing module entity, you can merge their form tab mapping files.
+When you test a [module](https://glossary.magento.com/module) that extends the functionality of the other module by adding a tab to the testing module entity, you can merge their form tab mapping files.
 
 The form tab mapping files that have the same name and path inside different modules are merged automatically.
 
@@ -394,15 +394,15 @@ A basic flow is the following:
 #### How to determine a block name and a path {#mtf_block_path}
 
 The block name and path in the Magento functional tests (`<magento2_root_dir>/dev/tests/functional/tests/app`) should reflect a corresponding block in the Magento code base for your convenience.
-For example, you develop a functional test for the {% glossarytooltip fbcfce51-68e2-482f-84d5-f28d84404cff %}bundle product{% endglossarytooltip %} creation, that uses the Bundle Items section. In the Magento code base, the block, which is responsible for the bundle option, is the `.../Magento/Bundle/Block/Adminhtml/Catalog/Product/Edit/Tab/Bundle/Option.php`, so in the Magento functional tests you can create a new file `.../Magento/Bundle/Block/Test/Adminhtml/Catalog/Product/Edit/Tab/Bundle/Option.php`.
+For example, you develop a functional test for the [bundle product](https://glossary.magento.com/bundle-product) creation, that uses the Bundle Items section. In the Magento code base, the block, which is responsible for the bundle option, is the `.../Magento/Bundle/Block/Adminhtml/Catalog/Product/Edit/Tab/Bundle/Option.php`, so in the Magento functional tests you can create a new file `.../Magento/Bundle/Block/Test/Adminhtml/Catalog/Product/Edit/Tab/Bundle/Option.php`.
 
-Magento can show you a full class name of the block and path to the {% glossarytooltip ae0f1f68-c466-4189-88fd-6cd8b23c804f %}PHTML{% endglossarytooltip %} template on the Magento page (changes web page design) or implicitly in the HTML code of the page.
+Magento can show you a full class name of the block and path to the [PHTML](https://glossary.magento.com/phtml) template on the Magento page (changes web page design) or implicitly in the HTML code of the page.
 
 ##### Get the name and the path of blocks in UI {#mtf_block_path_ui}
 
 To enable this feature follow:
 
-1. Log in to {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} as administrator
+1. Log in to [Magento Admin](https://glossary.magento.com/magento-admin) as administrator
 1. Follow **STORES > Settings > Configuration**
 1. Change **Store View** to **Main Website** (the template path and block name will only appear for current website)
 1. Follow **ADVANCED > Developer**
@@ -558,7 +558,7 @@ Let's create render for the bundle product.
 
 Details:
 
-* The {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} class for the page will be generated in the Magento_Catalog module, because we did not mention module attribute in the `page` node
+* The [PHP](https://glossary.magento.com/php) class for the page will be generated in the Magento_Catalog module, because we did not mention module attribute in the `page` node
 * In the `block`, we indicate `name` attribute only
 
 **Step 4**. Run the page generator
@@ -605,7 +605,7 @@ $this->getCustomOptionsBlock()->getOptions($product);
 
 There are some rules that should be followed to define a selector:
 
-1. Use {% glossarytooltip 6c5cb4e9-9197-46f2-ba79-6147d9bfe66d %}CSS{% endglossarytooltip %} and XPath strategies.
+1. Use [CSS](https://glossary.magento.com/css) and XPath strategies.
 2. To work with forms, use the `name` attribute as a selector.
 3. If an attribute is static (not auto-generated), use the `id` attribute.
 4. If you cannot use `id`, use `data-*` attributes.
@@ -613,9 +613,7 @@ There are some rules that should be followed to define a selector:
 6. Do not use complex hard-coded structures like `//div/div[2]//tbody//tr[1]/td[0]`, they can be unpredictably changed.
 7. Do not use enclosed text such as button or label names like `//button[contains(., "Sign in")]`
 
- 
 <!-- LINK DEFINITIONS -->
- 
 [page]: {{ page.baseurl }}/mtf/mtf_entities/mtf_page.html
 [`Catalog/Test/Page/Product/CatalogProductView.xml`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/dev/tests/functional/tests/app/Magento/Catalog/Test/Page/Product/CatalogProductView.xml
 [`Magento\Mtf\Block\Form`]: https://github.com/magento/mtf/blob/develop/Magento/Mtf/Block/Form.php

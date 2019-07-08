@@ -9,7 +9,7 @@ functional_areas:
 
 Magento enables you to configure alternatives to the default file system caching. This guide discusses some of those alternatives; namely,
 
-*   Set up the following {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %} mechanisms in the Magento configuration:
+*   Set up the following [cache](https://glossary.magento.com/cache) mechanisms in the Magento configuration:
 
     *   [Database]({{ page.baseurl }}/extension-dev-guide/cache/partial-caching/database-caching.html)
     *   [Redis]({{ page.baseurl }}/config-guide/redis/config-redis.html)
@@ -31,7 +31,7 @@ Magento uses the following caching terminology:
 
 This topic discusses the following options for configuring caching:
 
-*   Modifying the provided `default` cache frontend, which means you modify only `<magento_root>/app/etc/di.xml` (the Magento application's global {% glossarytooltip 2be50595-c5c7-4b9d-911c-3bf2cd3f7beb %}dependency injection{% endglossarytooltip %} configuration)
+*   Modifying the provided `default` cache frontend, which means you modify only `<magento_root>/app/etc/di.xml` (the Magento application's global [dependency injection](https://glossary.magento.com/dependency-injection) configuration)
 *   Configuring your own custom cache frontend, which means you modify only `<magento_root>/app/etc/env.php` because it overrides the equivalent configuration in `di.xml`
 
 {:.bs-callout .bs-callout-info}

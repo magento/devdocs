@@ -26,7 +26,7 @@ You need the following information to import code into your project:
 
 - [Encryption key]({{ page.baseurl }}/cloud/setup/first-time-setup-import-prepare.html) from your {{site.data.var.ee}} system
 
-- SSH or HTTPS {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} for your {{site.data.var.ee}} installation Git repository.
+- SSH or HTTPS [URL](https://glossary.magento.com/url) for your {{site.data.var.ee}} installation Git repository.
 
 ## Create a remote Git reference {#cloud-import-ref}
 
@@ -291,20 +291,20 @@ bin/magento magento setup:static-content:deploy
 bin/magento cache:clean
 ```
 
-After the {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %} flushes, enter `exit` to close the SSH tunnel.
+After the [cache](https://glossary.magento.com/cache) flushes, enter `exit` to close the SSH tunnel.
 
 ## Verify the import {#verify}
 
 To verify everything imported properly, perform the following tasks in your local Cloud development environment:
 
-1.  On your Cloud environment, enter the following commands to find the information to log in to the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} and to view the storefront:
+1.  On your Cloud environment, enter the following commands to find the information to log in to the [Magento Admin](https://glossary.magento.com/magento-admin) and to view the storefront:
 
     ```
     magento-cloud environment:url
     ```
 
-1.  Log in to the Magento {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} using the username and password of your {{site.data.var.ee}} system.
+1.  Log in to the Magento [Admin](https://glossary.magento.com/admin) using the username and password of your {{site.data.var.ee}} system.
 1.  Verify that the settings in the Admin are the same as your {{site.data.var.ee}} system.
-1.  Access the {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %}.
+1.  Access the [storefront](https://glossary.magento.com/storefront).
 1.  Confirm that categories, products, and other content display as expected.
 1.  Test everything thoroughly.

@@ -59,7 +59,7 @@ Below are the possible ways to handle these errors.
 
 ### Fix errors: Install corresponding Magento 2 extensions
 
-Visit [Magento Marketplace](https://marketplace.magento.com/){:target:"_blank"} to find the latest {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} versions or contact your extension provider.
+Visit [Magento Marketplace](https://marketplace.magento.com/){:target:"_blank"} to find the latest [extension](https://glossary.magento.com/extension) versions or contact your extension provider.
 
 ### Fix errors: Ignore entities
 

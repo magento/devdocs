@@ -14,7 +14,7 @@ functional_areas:
   - Configuration
 ---
 
-[Fastly]({{ page.baseurl }}/cloud/basic-information/cloud-fastly.html) is required for {{site.data.var.ece}}, and is used in Staging and Production environments. It works with Varnish to provide fast caching capabilities and a {% glossarytooltip f83f1fa7-7a64-467b-b629-c2d0c25d2e7f %}Content Delivery Network{% endglossarytooltip %} (CDN) for static assets. Fastly is not available in Integration environments.
+[Fastly]({{ page.baseurl }}/cloud/basic-information/cloud-fastly.html) is required for {{site.data.var.ece}}, and is used in Staging and Production environments. It works with Varnish to provide fast caching capabilities and a [Content Delivery Network](https://glossary.magento.com/content-delivery-network) (CDN) for static assets. Fastly is not available in Integration environments.
 
 This information gets you started with installing and configuring Fastly.
 We provide additional information for configuring backends and Origin shields, customizing
@@ -183,7 +183,7 @@ Complete the following configuration steps in Staging and Production environment
 
 1.	Log in to your Magento Admin UI.
 
-1.	Click **Stores** > **Settings** > **Configuration** > **Advanced** > **System** and expand **Full Page Cache**.
+1.	Click **Stores** > Settings > **Configuration** > **Advanced** > **System** and expand **Full Page Cache**.
 
 	![Expand to select Fastly]({{ site.baseurl }}/common/images/cloud_fastly_menu.png){:width="650px"}
 
@@ -195,7 +195,7 @@ Complete the following configuration steps in Staging and Production environment
 
 1.	After configuring the caching options, click **Save Config** at the top of the page.
 
-1.	Clear the cache according to the notification. Then, navigate back to **Stores** > **Settings** > **Configuration** > **Advanced** > **System** >
+1.	Clear the cache according to the notification. Then, navigate back to **Stores** > Settings > **Configuration** > **Advanced** > **System** > **Full Page Cache** >
 **Fastly Configuration** to continue configuring Fastly.
 
 Configure the following features and enable additional [configuration options](https://github.com/fastly/fastly-magento2/blob/master/Documentation/CONFIGURATION.md#further-configuration-options):

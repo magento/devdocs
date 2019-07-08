@@ -55,9 +55,9 @@ elasticsearch:
     type: elasticsearch:5.2
     disk: 1024
     configuration:
-    plugins:
-        - analysis-icu
-        - lang-python
+        plugins:
+            - analysis-icu
+            - lang-python
 ```
 
 The following are supported Elasticsearch plugins for version 2.4:
@@ -78,10 +78,10 @@ The following are supported Elasticsearch plugins for version 2.4:
 -  `mapper-murmur3`: Murmur3 mapper plugin for computing hashes at index-time
 -  `mapper-size`: Size mapper plugin, enables the `_size` meta field
 
-{:.bs-callout .bs-callout-info}
-Magento does not support the ElasticSuite third-party plugin.
-
 See [Elasticsearch plugin documentation](https://www.elastic.co/guide/en/elasticsearch/plugins/2.4/index.html).
+
+{:.bs-callout-info}
+If you use the ElasticSuite third-party plugin, you must [update the `{{site.data.var.ct}}` package]({{page.baseurl}}/cloud/project/ece-tools-update.html) to version 2002.0.19 or later.
 
 ## Verify relationships
 
@@ -89,5 +89,5 @@ See [Elasticsearch plugin documentation](https://www.elastic.co/guide/en/elastic
 
 {% include cloud/pretty-print-services.md %}
 
-{:.bs-callout .bs-callout-warning}
-The Staging and Production environments share a single Elasticsearch instance; therefore, you must specify a unique Elasticsearch prefix for each environment.
+{: .bs-callout-warning}
+Staging and Production environments that are in the same cluster share a single Elasticsearch instance, so you must specify a unique Elasticsearch prefix for each of these environments.

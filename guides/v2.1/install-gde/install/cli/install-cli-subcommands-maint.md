@@ -1,8 +1,6 @@
 ---
 group: installation-guide
 title: Enable or disable maintenance mode
-redirect_from:
-  - /guides/v2.0/install-gde/install/install-cli-subcommands-maint.html
 functional_areas:
   - Install
   - System

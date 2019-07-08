@@ -8,7 +8,7 @@ functional_areas:
   - Integration
 ---
 
-This section describes how to configure vault {% glossarytooltip 422b0fa8-b181-4c7c-93a2-c553abb34efd %}payment method{% endglossarytooltip %} and create payment actions, like authorize, sale (authorize & capture), capture and so on.
+This section describes how to configure vault [payment method](https://glossary.magento.com/payment-method) and create payment actions, like authorize, sale (authorize & capture), capture and so on.
 
 ## Add vault payment facade
 
@@ -27,7 +27,7 @@ Example of the vault payment facade configuration for Braintree:
 </virtualType>
 ```
 
-This {% glossarytooltip 058b2be4-3247-4cb0-860d-6292ce75d1f0 %}virtual type{% endglossarytooltip %} is similar to the [payment method facade]({{ page.baseurl }}/payments-integrations/base-integration/facade-configuration.html). The main difference is the `vaultProvider` argument. As the Vault payment in the general case is a proxy, the specific payment provider must be specified.
+This [virtual type](https://glossary.magento.com/virtual-type) is similar to the [payment method facade]({{ page.baseurl }}/payments-integrations/base-integration/facade-configuration.html). The main difference is the `vaultProvider` argument. As the Vault payment in the general case is a proxy, the specific payment provider must be specified.
 
 ## Extend payment method configuration
 
@@ -135,6 +135,6 @@ There are two ways to add command manager to the pool:
 </virtualType>
 ```
 
-In the first case, this pool can be used in any {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} to perform vault payment commands. In the second case, only specific vault payment integration can use this pool. 
+In the first case, this pool can be used in any [module](https://glossary.magento.com/module) to perform vault payment commands. In the second case, only specific vault payment integration can use this pool. 
 
 You can use the samples as templates for your command manager configuration. You only need to change the Braintree-related names to your custom ones.

@@ -20,16 +20,16 @@ This example shows how to use the [recommended procedure]({{ page.baseurl }}/clo
     3. Re-create and push the updated `config.local.php` to the Integration environment.
 
 <!-- {:.bs-callout .bs-callout-info}
-This example shows how you can set and lock configuration values for everything _except_ sensitive settings. You must set sensitive settings either as configuration variables or in the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %}. For more information, see [Sensitive and system-specific]({{ page.baseurl }}/config-guide/prod/config-reference-sens.html).
+This example shows how you can set and lock configuration values for everything _except_ sensitive settings. You must set sensitive settings either as configuration variables or in the [Magento Admin](https://glossary.magento.com/magento-admin). For more information, see [Sensitive and system-specific]({{ page.baseurl }}/config-guide/prod/config-reference-sens.html).
 -->
 
 For example, you may want to set the following settings:
 
-* Disable {% glossarytooltip 05099dbb-d491-4e33-a065-16035cb2d4d9 %}locale{% endglossarytooltip %} and static file optimization settings in your Integration environment
+* Disable [locale](https://glossary.magento.com/locale) and static file optimization settings in your Integration environment
 * Enable static file optimization in Staging and Production environments
 * Configure Fastly in Staging and Production with specific credentials for each
 
-_Static file optimization_ means merging and minifying {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} and Cascading Style Sheets, and minifying {% glossarytooltip a2aff425-07dd-4bd6-9671-29b7edefa871 %}HTML{% endglossarytooltip %} templates.
+_Static file optimization_ means merging and minifying [JavaScript](https://glossary.magento.com/javascript) and Cascading Style Sheets, and minifying [HTML](https://glossary.magento.com/html) templates.
 
 ## Prerequisites {#prereqs}
 
@@ -180,7 +180,7 @@ To change values in the Integration environment Magento Admin:
 
 1. If you haven't done so already, log out of the Integration Admin.
 1. Log in to the Integration Admin.
-   For URL and credentials, see [Find Admin login information]({{ site.baseurl }}/guides/v2.0/cloud/release-notes/CloudReleaseNotes2.1.3.html#cloud-es-config-mg).
+   For URL and credentials, see [Find Admin login information]({{ site.baseurl }}/guides/v2.1/cloud/release-notes/CloudReleaseNotes2.1.3.html#cloud-es-config-mg).
 1. Click **Stores** > Settings > **Configuration** > **Advanced** > **Developer**.
 1. In the right pane, expand **Template Settings**.
 1. Clear the **Use default value** checkbox next to the **Minify Html** list.

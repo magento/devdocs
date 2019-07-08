@@ -6,13 +6,13 @@ This page describes rules and best practices for backward compatible development
 
 ## Backward Compatibility Policy
 
-See the [versioning][versioning] documentation for the definitions of MAJOR and MINOR changes and how it impacts {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} developers.
+See the [versioning][versioning] documentation for the definitions of MAJOR and MINOR changes and how it impacts [extension](https://glossary.magento.com/extension) developers.
 
 The core Magento team and contributing developers work in two release types
 
 1. New and significant release (product's MINOR release)
    - Necessary MAJOR and MINOR changes are allowed, but the Magento architecture team ultimately decides what is allowed.
-2. New patch release (product's PATCH release)
+1. New patch release (product's PATCH release)
    - PATCH changes are allowed, but MAJOR and MINOR changes are not allowed.
 
 {: .bs-callout .bs-callout-info }
@@ -27,13 +27,13 @@ The rules listed do not apply to customization code (e.g. Plugins, Observers, JS
 
 ### Composer
 
-#### Introducing a new dependency from an existing module
+#### Introducing a new dependency between modules
 
-Introducing a new dependency from an existing module is a backward incompatible change because we cannot guarantee when Magento will enable the required module. As a result, we cannot satisfy the dependency in this way.
+Introducing a new dependency on another Magento module from an existing module is a backward incompatible change because we cannot guarantee whether an existing instance of Magento will have the target module enabled.
 
 ### PHP
 
-The following is a list of prohibited {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} code changes and possible alternative implementations.
+The following is a list of prohibited [PHP](https://glossary.magento.com/php) code changes and possible alternative implementations.
 
 #### Interface/class removal
 
@@ -80,10 +80,10 @@ Declare the new method as private if possible.
 
 Example code:
 
-```php?start_inline=1
+```php
 /**
- * @deprecated This method is not intended for usage in child classes
- * @see updateScopedPrice($price, $storeId)
+- @deprecated This method is not intended for usage in child classes
+- @see updateScopedPrice($price, $storeId)
  */
 protected function updatePrice($price)
 {
@@ -98,7 +98,7 @@ private function updateScopedPrice($price, $storeId)
 
 #### Modifying the default values of optional arguments in public and protected methods
 
-This is forbidden because the default argument values of public or protected methods are part of the {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} of the class/interface.
+This is forbidden because the default argument values of public or protected methods are part of the [API](https://glossary.magento.com/api) of the class/interface.
 
 As an alternative, Create a new method with new interface following the alternative implementation for creating a new method for a class or interface.
 
@@ -110,7 +110,7 @@ Do not modify a method argument type.
 
 #### Modifying the types of thrown exceptions
 
-Do not modify the types of thrown exceptions unless a new {% glossarytooltip 53da11f1-d0b8-4a7e-b078-1e099462b409 %}exception{% endglossarytooltip %} is a sub-type of the old one.
+Do not modify the types of thrown exceptions unless a new [exception](https://glossary.magento.com/exception) is a sub-type of the old one.
 
 #### Throwing a new type of exception from an existing method
 
@@ -124,7 +124,7 @@ In the constructor body, if the new dependency is not provided (i.e. the value o
 
 {% collapsible Example Code %}
 
-```php?start_inline=1
+```php
 class ExistingClass
 {
     /** @var \New\Dependency\Interface */
@@ -196,13 +196,13 @@ Do not remove or rename constants.
 
 #### Removing, renaming, or changing the type of event arguments
 
-Do not remove or rename {% glossarytooltip c57aef7c-97b4-4b2b-a999-8001accef1fe %}event{% endglossarytooltip %} arguments.
+Do not remove or rename [event](https://glossary.magento.com/event) arguments.
 Do not change argument types.
 Instead of changing argument name or type, introduce new event argument with new name or type and deprecate the old argument by adding `@deprecated` annotation before dispatching the event.
 
 Example code:
 
-```php?start_inline=1
+```php
 $transportObject = new DataObject($transport);
 
 /**
@@ -230,7 +230,7 @@ The following is a list of prohibited JS code changes:
 
 ### XML Schema
 
-The following is a list of prohibited {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %} Schema changes:
+The following is a list of prohibited [XML](https://glossary.magento.com/xml) Schema changes:
 
 - Adding an obligatory node
 - Adding an obligatory attribute
@@ -258,7 +258,7 @@ The following is a list of prohibited CSS/Less changes:
 The following is a list of prohibited Magento API changes:
 
 - Removing or renaming an event
-- Removing or renaming a {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %} handle
+- Removing or renaming a [layout](https://glossary.magento.com/layout) handle
 - Removing or renaming a store configuration path
 - Modifying the directory structure
 - Removing an @api annotation
@@ -288,7 +288,7 @@ Changing the value of a constant is itself a backward compatible change.
 Even if client code saves the value in permanent storage or use it as input or output of a method, it is the responsibility of that code to ensure that it is a reliable implementation.
 
 The client code should have enough control over the constant's value.
-Do not rely on a value of a constant from another {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} or another vendor.
+Do not rely on a value of a constant from another [module](https://glossary.magento.com/module) or another vendor.
 
 #### Stop setting a value to the Registry
 
@@ -306,13 +306,13 @@ Adding an argument to an event is allowed.
    For example, the module data/schema version for all patch releases of Magento 2.0 can change prior to the release of Magento 2.1.
    After 2.1 releases, the version cannot change for 2.0 patch releases, but it can change for 2.1 patch releases until Magento 2.2.
 
-2. Deliver fixes that bump the module setup/data version in the current, unpublished version before delivering it to previous minor versions.
+1. Deliver fixes that bump the module setup/data version in the current, unpublished version before delivering it to previous minor versions.
    In cases where an urgent fix was delivered in a previous minor version, treat the fix for the current unpublished version as a high priority task.
 
    For example, issue fixes that change the setup/upgrade version in the unreleased `develop` branch are delivered first before being ported into the released branches.
    If the fix was made for a released branch, a pull request for porting it into the `develop` branch must be created with a high priority and delivered as soon as possible.
 
-3. The setup version of a module must be higher than previous releases of the same module.
+1. The setup version of a module must be higher than previous releases of the same module.
 
    For example, the setup version for a fix for the Magento_Catalog module is higher in the `develop` branch (2.1.3) than previous branch versions (2.0.2 and 2.1.2 for versions 2.0 and 2.1).
 
@@ -422,6 +422,10 @@ These backward incompatible changes do not need manual documentation:
 - Modifying a method signature
 - Adding/removing a class/interface constant
 - Adding removing a class property
+
+Auto-generated [{{site.data.var.ce}} changes]({{ page.baseurl }}/release-notes/backward-incompatible-changes/open-source.html)
+
+Auto-generated [{{site.data.var.ee}} changes]({{ page.baseurl }}/release-notes/backward-incompatible-changes/commerce.html)
 
 ### Where to document
 

@@ -6,13 +6,15 @@ functional_areas:
   - Setup
 ---
 
-Managing redirection rules is a common requirement for web applications, especially in cases where you do not want to lose incoming links that have changed or been removed over time. The following demonstrates how to manage redirection rules on your {{site.data.var.ece}} projects.
+Managing redirection rules is a common requirement for web applications, especially in cases where you do not want to lose incoming links that have changed or been removed over time.
 
-If the redirection methods discussed in this topic do not work for you, you can use caching headers to do the same thing.
+The following demonstrates how to manage redirection rules on your {{site.data.var.ece}} projects using the `routes.yaml` configuration file. If the redirection methods discussed in this topic do not work for you, you can use caching headers to do the same thing.
+
+{% include cloud/note-route-all-placeholder.md %}
 
 ## Whole-route redirects {#cloud-route-whole}
 
-Using whole-route redirects, you can define very basic routes using the `routes.yaml` file. For example, you can redirect from a naked domain to a `www` subdomain as follows:
+Using whole-route redirects, you can define simple routes using the `routes.yaml` file. For example, you can redirect from an apex domain to a `www` subdomain as follows:
 
 ```yaml
 http://{default}/:
@@ -20,128 +22,111 @@ http://{default}/:
     to: http://www.{default}/
 ```
 
-## Partial redirects {#cloud-route-partial}
+## Partial-route redirects {#cloud-route-partial}
 
-In the [`.magento/routes.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_routes.html) file you can also add partial {% glossarytooltip 510de766-1ebd-4546-bf38-c618c9c945d2 %}redirect{% endglossarytooltip %} rules
-to existing routes:
+In the [`.magento/routes.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_routes.html) file, you can also add partial redirect rules to existing routes based on pattern matching:
 
 ```yaml
 http://{default}/:
     redirects:
         expires: 1d
         paths:
-            "/from": { "to": "http://example.com/" }
-            "/regexp/(.*)/matching": { "to": "http://example.com/$1", regexp: true }
+          "/from": { to: "http://example.com/" }
+          "/regexp/(.*)/matching": { to: "http://example.com/$1", regexp: true }
 ```
 
-This format is more rich and works with any type of route, including routes served directly by the application.
+Partial redirects work with any type of route, including routes served directly by the application.
 
 Two keys are available under `redirects`:
 
--  `expires`: Optional, the duration that the redirect is cached.
-    Examples of valid values include `3600s`, `1d`, `2w`, `3m`.
+- **expires**—Optional, specifies the amount of time to cache the redirect in the browser. Examples of valid values include `3600s`, `1d`, `2w`, `3m`.
 
--  `paths`: The paths to apply the redirects to.
+- **paths**—One or more key-value pairs that specify the configuration for partial-route redirect rules.
 
-The following defines each rule under `paths`:
+  For each redirect rule, the key is an expression to filter request paths for redirection. The value is an object that specifies the target destination for the redirect and options for processing the redirect.
 
--  A key that describes the expression to match against the request path
--  A value object describing both the destination to redirect to with detail on how to handle the redirection.
+  The value object has the following properties:
 
-The value object is defined with the following keys:
+  Property  | Description
+  ----------| -----------
+  `to`      | Required, a partial absolute path, URL with protocol and host, or pattern that specifies the target destination for the redirect rule.
+  `regexp`| Optional, defaults to `false`. Specifies whether the path key should be interpreted as a PCRE regular expression.
+  `prefix` | Specifies whether the redirect applies to both the path and all its children, or just the path itself. Defaults to `true`. This value is not supported if `regexp` is `true`.
+  `append_suffix`| Determines if the suffix is carried over with the redirect. Defaults to `true`. This value is not supported if the `regexp` key is `true` *or* if the `prefix` key is `false`.
+  `code`    | Specifies the HTTP status code. Valid status codes are [`301` (Moved Permanently)](https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.3.2), [`302`](https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.3.3), [`307`](https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.3.8), and [`308`](https://tools.ietf.org/html/rfc7238). Defaults to `302`.
+  `expires`| Optional, specifies the amount of time to cache the redirect in the browser. Defaults to the `expires` value defined directly under the `redirects` key, but at this level you can fine-tune the cache expiration for individual partial redirects.
 
--  [`to`](#cloud-route-partial-to)
--  [`regexp`](#cloud-route-partial-regexp)
--  [`prefix`](#cloud-route-partial-prefix)
--  [`append_suffix`](#cloud-route-partial-append)
--  [`code`](#cloud-route-partial-code)
+### Examples
 
-### `to` {#cloud-route-partial-to}
+The following examples show how to specify partial-route redirects in the `routes.yaml` file using various `paths` configuration options.
 
-Required, a partial (`"/destination"` or `"//destination"`) or full URL (`"http://example.com/"`).
+#### Regular expression pattern matching {#redirect-with-regex}
 
-### `regexp` {#cloud-route-partial-regexp}
-
-Optional, defaults to `false`. Specifies whether the path key should be interpreted asa PCRE regular expression.
-
-{% collapsible Click to show/hide content %}
-
-In the following example, a request to `http://example.com/regexp/a/b/c/match` redirects to `http://example.com/a/b/c`:
+Use the following format to configure redirect requests based on a regular expression.
 
 ```yaml
 http://{default}/:
     type: upstream
     redirects:
-        paths:
-            "/regexp/(.*)/match":
-                to: "http://example.com/$1"
-                regexp: true
+    paths:
+        "/regexp/(.*)/match": { to: "http://example.com/$1", regexp: true }
 ```
 
-{% endcollapsible %}
+This configuration filters request paths against a regular expression and redirects matching requests to `https://example.com`. For example, a request to `https://example.com/regexp/a/b/c/match` redirects to `https://example.com/a/b/c`.
 
-### `prefix` {#cloud-route-partial-prefix}
-Specifies whether or not to redirect both the path and all its children or just the path itself. Defaults to `true`, but is not supported if `regexp` is `true`.
+#### Prefix pattern matching {#redirect-with-prefix}
 
-{% collapsible Click to show/hide content %}
-
-For example,
+Use the following format to configure redirect requests for paths that begin with a specified prefix pattern.
 
 ```yaml
 http://{default}/:
     type: upstream
     redirects:
-        paths:
-            "/from":
-                to: "http://{default}/to"
-                prefix: true
+    paths:
+        "/from": { to: "https://{default}/to", prefix: true }
 ```
 
-In the preceding example, if `prefix` is set to `true`, `/from` redirects to `/to` and `/from/another/path` will redirect to `/to/another/path`
+This configuration works as follows:
 
-If `prefix` is set to `false`, `/from` triggers a redirect, but `/from/another/path` does not.
+- Redirects requests that match the pattern `/from` to the path `http://{default}/to`.
 
-{% endcollapsible %}
+- Redirects requests that match the pattern `/from/another/path` to `https://{default}/to/another/path`.
 
-### `append_suffix` {#cloud-route-partial-append}
-Determines if the suffix is carried over with the redirect. Defaults to `true`, but not supported if `regexp` is `true` *or* if `prefix` is `false`.
+- If you change the `prefix` property to `false`, requests that match the pattern  `/from` trigger a redirect, but requests that match the pattern `/from/another/path` does not.
 
-{% collapsible Click to show/hide content %}
+#### Suffix pattern matching {#redirect-with-suffix}
 
-For example,
+Use the following format to configure redirect requests which append the path suffix from the request to the target destination.
 
 ```yaml
 http://{default}/:
     type: upstream
     redirects:
-        paths:
-            "/from":
-                to: "http://{default}/to"
-                append_suffix: false
+    paths: { "/from": { to: "https://{default}/to", append_suffix: false }
 ```
 
-The preceding example results in `/from/path/suffix` redirecting to just `/to`.
+This configuration works as follows:
 
-If `append_suffix` is set to its default value of `true`, `/from/path/suffix` redirects to `/to/path/suffix`.
+- Redirects requests that match the pattern `/from/path/suffix` to the path `https://{default}/to`.
 
-{% endcollapsible %}
+- If you change the `append_suffix` property to `true`, then requests that match `/from/path/suffix`  redirect to the path `https://{default}/to/path/suffix`.
 
-### `code` {#cloud-route-partial-code}
+#### Path-specific cache configuration {#redirect-with-custom-cache}
 
-Specifies the HTTP status code. Valid status codes are [`301` (Moved Permanently)](https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.3.2), [`302`](https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.3.3), [`307`](https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.3.8), and [`308`](https://tools.ietf.org/html/rfc7238). Defaults to `302`.
-
-### `expires` {#cloud-route-partial-expires}
-
-Optional, the duration to cache redirect. Defaults to the `expires` value defined directly under the `redirects` key, but at this level you can fine-tune the expiration of individual partial redirects:
+ Use the following format to customize the time to cache a redirect from a specific path:
 
 ```yaml
 http://{default}/:
     type: upstream
     redirects:
-        expires: 1d
-        paths:
-            "/from": { "to": "http://example.com/" }
-            "/here": { "to": "http://example.com/there", "expires": "2w" }
-```
+    expires: 1d
+    paths:
+        "/from": { to: "https://example.com/" }
+        "/here": { to: "https://example.com/there", expires: "2w" }
+  ```
 
-In the preceding example, redirects from `/from` expire in one day, but redirects from `/here` expire in two weeks.
+This configuration works as follows:
+
+- Redirects from the first path (`/from`) are cached for 1 day.
+
+- Redirects from the second path (`/here`) are cached for 2 weeks.

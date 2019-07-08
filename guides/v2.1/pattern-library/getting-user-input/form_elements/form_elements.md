@@ -14,7 +14,7 @@ _* "best" is a relative term, but there are User Experience principles and best 
 
 ## Form Labels
 
-In most cases every text field, text box, radio button group, checkbox or checkbox group, drop down selector and multi-select box will have a label. There are two variations of form {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %} – "label-left" and "label-top". Depending on the layout of the page and/or task-at-hand, either of these may be implemented, but whichever layout is deemed appropriate it should be used consistency throughout a given task.
+In most cases every text field, text box, radio button group, checkbox or checkbox group, drop down selector and multi-select box will have a label. There are two variations of form [layout](https://glossary.magento.com/layout) – "label-left" and "label-top". Depending on the layout of the page and/or task-at-hand, either of these may be implemented, but whichever layout is deemed appropriate it should be used consistency throughout a given task.
 
 **Example of label-top**
 
@@ -26,7 +26,7 @@ In most cases every text field, text box, radio button group, checkbox or checkb
 
 ## "Required" Indicator
 
-As a matter of best practices, any input that is required in order to be successfully submitted should clearly bear an indication. This is achieved by including an asterisk in relation to the form element. The asterisk should precede the label whenever the label appears above the form field.However, for left-aligned form labels the asterisk should follow the label, thus appearing between the label and form field –this improves scannability making it less likely that the user will overlook the required fields.
+As a matter of best practices, any input that is required in order to be successfully submitted should clearly bear an indication. This is achieved by including an asterisk in relation to the form element. The asterisk should precede the label whenever the label appears above the form field. However, for left-aligned form labels the asterisk should follow the label, thus appearing between the label and form field –this improves scanability making it less likely that the user will overlook the required fields.
 
 ![](img/required.png)
 
@@ -96,7 +96,7 @@ Checkboxes should be used in cases where one or many options may be selected. A 
 
 ![](img/checkboxes.png)
 
-If there is a _parent-child_ relationship of associated checkboxes there should be some visual distinction for the user between "some" checked and "all" checked, in the {% glossarytooltip c57aef7c-97b4-4b2b-a999-8001accef1fe %}event{% endglossarytooltip %} that the child elements are hidden from view as in a expandable section.
+If there is a _parent-child_ relationship of associated checkboxes there should be some visual distinction for the user between "some" checked and "all" checked, in the [event](https://glossary.magento.com/event) that the child elements are hidden from view as in a expandable section.
 
 ![](img/tri-check.png)
 
