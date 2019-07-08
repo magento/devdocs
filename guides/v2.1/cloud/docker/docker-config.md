@@ -52,38 +52,44 @@ For example, the following command starts the Docker configuration generator for
 ./vendor/bin/ece-tools docker:build --mode="developer" --php 7.2
 ```
 
-### Prerequisites
+## Prerequisites
 
-You must have the following software installed on your local workstation:
+1.  You must have the following software installed on your local workstation:
 
--  PHP version 7.1 or later
-    -  [php@7.1](https://formulae.brew.sh/formula/php@7.1)
-    -  [php@7.2](https://formulae.brew.sh/formula/php@7.2)
--  [Composer](https://getcomposer.org)
--  [Docker](https://www.docker.com/get-started)
--  [docker-sync](https://docker-sync.readthedocs.io/en/latest/getting-started/installation.html)—file synchronization is required for developer mode
+    -  PHP version 7.1 or later
+        -  [php@7.1](https://formulae.brew.sh/formula/php@7.1)
+        -  [php@7.2](https://formulae.brew.sh/formula/php@7.2)
+    -  [Composer](https://getcomposer.org)
+    -  [Docker](https://www.docker.com/get-started)
+    -  File synchronization required for developer mode—use one of the following:
+       -  [docker-sync](https://docker-sync.readthedocs.io/en/latest/getting-started/installation.html)
+       -  [mutagen](https://mutagen.io/documentation/installation/#installation)
 
-Before you begin, you must add the following hostname to your `/etc/hosts` file:
+1.  Update the hosts file.
 
-```
-127.0.0.1 magento2.docker
-```
+    Before you begin, you must add the following hostname to your `/etc/hosts` file:
 
-Alternatively, you can run the following command to add it to the file:
+    ```
+    127.0.0.1 magento2.docker
+    ```
 
-```bash
-echo "127.0.0.1 magento2.docker" | sudo tee -a /etc/hosts
-```
+    Alternatively, you can run the following command to add it to the file:
 
-### Stopping default Apache instance on Mac OS
+    ```bash
+    echo "127.0.0.1 magento2.docker" | sudo tee -a /etc/hosts
+    ```
 
-Because Mac OS provides built-in Apache service, and may occupy port `80`, you must stop the service with the following command:
+1.  Stop the default Apache instance on Mac OS.
 
-```bash
-sudo apachectl stop
-```
+    Because Mac OS provides built-in Apache service, and may occupy port `80`, you must stop the service with the following command:
 
-#### To launch Docker:
+    ```bash
+    sudo apachectl stop
+    ```
+
+1.  Optionally, [enable Xdebug]({{page.baseurl}}/cloud/docker/docker-development-debug.html#enable-xdebug).
+
+## Launch the Docker environment
 
 1.  Download a Magento application template from the [Magento Cloud repository](https://github.com/magento/magento-cloud). Be careful to select the branch that corresponds with the Magento version.
 
@@ -110,7 +116,7 @@ Continue launching your Docker environment in the default _production_ mode.
 1.  _Optional_: If you have a custom PHP configuration file, copy the default configuration DIST file to your custom configuration file and make any necessary changes.
 
     ```bash
-    cp docker/config.php.dist docker/config.php
+    cp .docker/config.php.dist .docker/config.php
     ```
 
     Convert custom PHP configuration files to Docker ENV files.
@@ -121,12 +127,12 @@ Continue launching your Docker environment in the default _production_ mode.
 
     This generates the following Docker ENV files:
 
-    * `docker/config.env`
+    * `.docker/config.env`
 
     {: .bs-callout .bs-callout-info}
     The `{{site.data.var.ct}}` version 2002.0.12 package does not support the `docker:config:convert` command.
 
-1.  _Optional_: Configure the Docker global variables in the `docker-compose.yml` file. For example, you can [enable and configure Xdebug]({{ page.baseurl }}/cloud/docker/docker-development-debug.html).
+1.  _Optional_: Configure the Docker global variables in the `docker-compose.yml` file. For example, you can [configure Xdebug]({{ page.baseurl }}/cloud/docker/docker-development-debug.html#configure-xdebug).
 
 1.  Build files to containers and run in the background.
 
@@ -138,15 +144,15 @@ Continue launching your Docker environment in the default _production_ mode.
 
     - Build Magento in the Docker container:
 
-        ```bash
-        docker-compose run build cloud-build
-        ```
+      ```bash
+      docker-compose run build cloud-build
+      ```
 
     - Deploy Magento in the Docker container:
 
-        ```bash
-        docker-compose run deploy cloud-deploy
-        ```
+      ```bash
+      docker-compose run deploy cloud-deploy
+      ```
 
     {: .bs-callout .bs-callout-info}
     For `{{site.data.var.ct}}` v2002.0.12, install Magento with the `docker-compose run cli magento-installer` command.
@@ -184,7 +190,7 @@ The `{{site.data.var.ct}}` version 2002.0.18 and later supports developer mode.
 1.  _Optional_: If you have a custom PHP configuration file, copy the default configuration DIST file to your custom configuration file and make any necessary changes.
 
     ```bash
-    cp docker/config.php.dist docker/config.php
+    cp .docker/config.php.dist .docker/config.php
     ```
 
     Convert custom PHP configuration files to Docker ENV files.
@@ -195,14 +201,22 @@ The `{{site.data.var.ct}}` version 2002.0.18 and later supports developer mode.
 
     This generates the following Docker ENV files:
 
-    * `docker/config.env`
+    * `.docker/config.env`
 
 1.  _Optional_: Configure the Docker global variables in the `docker-compose.yml` file. For example, you can [enable and configure Xdebug]({{ page.baseurl }}/cloud/docker/docker-development-debug.html).
 
 1.  Start the file synchronization.
 
+    For the `docker-sync` tool:
+
     ```bash
     docker-sync start
+    ```
+
+    For the `mutagen` tool:
+
+    ```bash
+    bash ./mutagen.sh 
     ```
 
 1.  Build files to containers and run in the background.
@@ -272,11 +286,11 @@ docker-sync stop
 
 ## Advanced usage
 
-### Extending docker-compose.yml configuration
+### Extend the Docker configuration
 
-You can use Docker's built-in [extension mechanism](https://docs.docker.com/compose/reference/overview/#specifying-multiple-compose-files).
+You can use the built-in extension mechanism of Docker to [specify multiple compose files](https://docs.docker.com/compose/reference/overview/#specifying-multiple-compose-files). The following example replaces the default value of the `ENABLE_SENDMAIL` environment variable.
 
-1.  Create a `docker-compose-dev.yml` file inside your project's root directory and add the following content:
+1.  Create a `docker-compose-dev.yml` file inside your project root directory and add the following content:
 
     ```yaml
     version: '2'
@@ -285,8 +299,6 @@ You can use Docker's built-in [extension mechanism](https://docs.docker.com/comp
         environment:
           - ENABLE_SENDMAIL=true
     ```
-
-    This replaces the default value of the `ENABLE_SENDMAIL` environment variable.
 
 1.  Pass both configuration files while executing your commands. For example:
 
