@@ -3,7 +3,7 @@ group: release-notes
 title: Magento Open Source 2.3.2 Release Notes
 ---
 
-*Patch code and release notes published on June 25, 2019. Release notes last updated o, 2019.*
+*Patch code and release notes published on June 25, 2019. Release notes last updated July 8, 2019.*
 
 We are pleased to present Magento Open Source 2.3.2.  This release includes over 200 functional fixes to the core product, over 350 pull requests contributed by the community, and  over 75 security enhancements. It includes significant contributions from our community members. 
 

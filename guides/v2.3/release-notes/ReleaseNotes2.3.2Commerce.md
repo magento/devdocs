@@ -3,7 +3,7 @@ group: release-notes
 title: Magento Commerce 2.3.2 Release Notes
 ---
 
-*Patch code and release notes published on June 25, 2019. Release notes last updated on July 7, 2019.*
+*Patch code and release notes published on June 25, 2019. Release notes last updated on July 8, 2019.*
 
 We are pleased to present Magento Commerce 2.3.2.  This release includes over 200 functional fixes to the core product, over 350 pull requests contributed by the community, and  over 75 security enhancements. It includes  contributions from our community members. These contributions range from minor clean-up of core code to significant enhancements to Inventory Management and GraphQL.
 
