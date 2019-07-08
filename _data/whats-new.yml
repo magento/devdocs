@@ -4,7 +4,7 @@ description: |
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: /whats-new.html
 thread: /whatsnew-feed.xml
-updated: Mon Jul 8 10:58:42 2019
+updated: Mon Jul 8 11:33:16 2019
 entries:
 - description: Added the 'Product view page available containers' section to [Product
     Layouts](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/layouts/product-layouts.html).
@@ -12,8 +12,8 @@ entries:
   type: Major update
   date: July 8, 2019
   link: https://github.com/magento/devdocs/pull/4630
-- description: Clarified the Functional testing for Docker is for ece-tools and not
-    for the Magento application.
+- description: Clarified that the [Functional testing in Docker](https://devdocs.magento.com/guides/v2.3/cloud/docker/docker-development-testing.html)
+    is for ece-tools and not for the Magento application.
   versions: 2.x
   type: Technical changes
   date: June 29, 2019
