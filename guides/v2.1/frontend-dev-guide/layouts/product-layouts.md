@@ -21,6 +21,24 @@ Layout file | Description
 `catalog_product_view_type_simple.xml` | Layout from this file is applied to `simple` product only
 `catalog_product_view_type_virtual.xml` | Layout from this file is applied to `virtual` product only
 
+## Product view page available containers 
+
+Magento provides many containers on the product page to display additional information, making it much easier for developer
+
+- `content`
+- `product.info.main`
+- `product.info.price`
+- `product.info.stock.sku`
+- `product.info.type`
+- `alert.urls`
+- `product.info.form.content`
+- `product.info.extrahint`
+- `product.info.social`
+- `product.info.media`
+- `skip_gallery_before.wrapper`
+- `skip_gallery_after.wrapper`
+
+
 ## Checkout cart configure page
 
 Layout file | Description
