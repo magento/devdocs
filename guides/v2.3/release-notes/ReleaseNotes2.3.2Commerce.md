@@ -3,7 +3,7 @@ group: release-notes
 title: Magento Commerce 2.3.2 Release Notes
 ---
 
-*Patch code and release notes published on June 25, 2019. Release notes last updated on June 26, 2019.*
+*Patch code and release notes published on June 25, 2019. Release notes last updated on July 7, 2019.*
 
 We are pleased to present Magento Commerce 2.3.2.  This release includes over 200 functional fixes to the core product, over 350 pull requests contributed by the community, and  over 75 security enhancements. It includes  contributions from our community members. These contributions range from minor clean-up of core code to significant enhancements to Inventory Management and GraphQL.
 
@@ -740,6 +740,8 @@ has been changed to `<argument name="resourceStockItem" xsi:type="object">Magent
 * Magento now validates CSV files that are created by custom adapters when you click **Check Data** if column and data are available. Previously, Magento threw an error. *Fix submitted by [Jaimin Sutariya](https://github.com/jaimin-ktpl) in pull request [19765](https://github.com/magento/magento2/pull/19765)*. [GitHub-19761](https://github.com/magento/magento2/issues/19761)
 
 ### Infrastructure
+
+* The default behavior of view models has changed in this release. Instances of view models are now shared by default. As a result, you must add the `attribute shared="false"` on the argument node of the `layout.xml` file if you want a new instance of a view model.
 
 <!--- ENGCOM-4474-->
 * The `FrontController` now explicitly requires actions to specify if they respond to `HEAD` requests. `HEAD` action mapping has also been changed to the  `GET` action interface, which results in `HEAD` requests returning `200` instead of `404`. *Fix submitted by [Matti Vapa](https://github.com/mattijv) in pull request [21378](https://github.com/magento/magento2/pull/21378)*. [GitHub-21299](https://github.com/magento/magento2/issues/21299)
