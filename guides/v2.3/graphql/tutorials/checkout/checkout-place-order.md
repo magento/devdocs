@@ -1,7 +1,7 @@
 ---
 layout: tutorial
 group: graphql
-title: Step 10. Place order
+title: Step 10. Place the order
 subtitle: GraphQL checkout tutorial
 level3_subgroup: graphql-checkout
 return_to:
