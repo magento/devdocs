@@ -4,7 +4,7 @@ description: |
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: /whats-new.html
 thread: /whatsnew-feed.xml
-updated: Mon Jul 8 11:33:16 2019
+updated: Mon Jul 8 13:39:43 2019
 entries:
 - description: Added the 'Product view page available containers' section to [Product
     Layouts](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/layouts/product-layouts.html).
@@ -18,26 +18,27 @@ entries:
   type: Technical changes
   date: June 29, 2019
   link: https://github.com/magento/devdocs/pull/4874
+- description: Updated the route configuration instructions for Magento Commerce Pro
+    and Starter projects using the `routes.yaml` file.<br/>- Documented the `{all}`
+    route template option for the `routes.yaml` which simplifies route configuration
+    for projects with multiple domains. See [Configure routes](https://devdocs.magento.com/guides/v2.3/cloud/project/project-conf-files_routes.html).<br/>-
+    Updated the route configuration documentation to indicate that customers can update
+    route configuration using the `routes.yaml` file on Pro Integration, Staging,
+    and Production environments. Previously, customers had to submit a support ticket
+    to update route configuration on Pro Staging and Production environments.
+  versions: 2.1.x, 2.2.x
+  type: Major update
+  date: June 28, 2019
+  link: https://github.com/magento/devdocs/pull/4795
 - description: Release Notes for the Google Shopping ads Channel extension have been
     updated to include version 2.0.0. The Upcoming Releases page has also been updated.
   versions: 2.0 Google Shopping ads
   type: Major update
   date: June 28, 2019
   link: https://github.com/magento/devdocs/pull/4850
-- description: "- Documented the `{all}` route template option for the `routes.yaml`
-    which simplifies route configuration for Magento Commerce Pro and Starter projects
-    with multiple domains. See [Configure routes](https://devdocs.magento.com/guides/v2.3/cloud/project/project-conf-files_routes.html).<br/>-
-    Updated the route configuration documentation to indicate that customers can update
-    route configuration using the `routes.yaml` file on Pro Integration, Staging,
-    and Production environments. Previously, customers had to submit a support ticket
-    to update route configuration on Pro Staging and Production environments."
-  versions: 2.1.x, 2.2.x
-  type: Major update
-  date: June 28, 2019
-  link: https://github.com/magento/devdocs/pull/4795
-- description: Added a [new way of the CLI upgrade ](https://devdocs.magento.com/guides/v2.3/comp-mgr/cli/upgrade-with-plugin.html)(yet
-    experimental) that suggests using the Magento composer root plugin to resolve
-    conflicts in dependencies during the upgrade.
+- description: Added a [new way to upgrade the Magento CLI ](https://devdocs.magento.com/guides/v2.3/comp-mgr/cli/upgrade-with-plugin.html)(yet
+    experimental) using the Magento composer root plugin to resolve conflicts in dependencies
+    during the upgrade.
   versions: 2.3.x
   type: New topic
   date: June 28, 2019
