@@ -39,6 +39,7 @@ To create a mobile-specific theme:
 
 Media queries `@media-common`, `max screen__s` and `max` `screen__m` will be added to `styles-m.css`.
 
+
 This will remove the desktop-specific files from your theme.
 
 ## Recommended reading

@@ -4,9 +4,7 @@ title: Global features that support extensibility
 menu_title: Global features that support extensibility
 ---
 
-## Overview
 
-Essential qualities foster extensibility throughout the entire set of Magento components. This discussion focuses on:
 
 * Modularity
 * Reliance on popular design patterns
@@ -16,15 +14,12 @@ Essential qualities foster extensibility throughout the entire set of Magento co
 * Service contracts and [dependency injection](https://glossary.magento.com/dependency-injection)
 * Plug-ins
 
-### Modularity
 
 The concept of the *module* is the heart of Magento [extension](https://glossary.magento.com/extension) development, and modular design of software components (in particular, modules, themes, and language packages) is a core architectural principle of the product. Self-contained modules of discrete code are organized by feature, thereby reducing each module's external dependencies.
 
 If a [module](https://glossary.magento.com/module) is self-contained, then you can modify or replace it without affecting other areas of the code. This *loose coupling* of software components reduces the ripple effects throughout your code base of changing code.
 
- See the [PHP Developer Guide]({{ page.baseurl }}/extension-dev-guide/bk-extension-dev-guide.html) for detailed instructions on how to create modules.
 
-### Reliance on popular design patterns
 
 Reliance on known architectural and programming structures helps [PHP](https://glossary.magento.com/php) developers orient themselves to the specific development issues that affect coding in a particular product ecosystem. This can reduce the learning curve for new Magento developers.
 

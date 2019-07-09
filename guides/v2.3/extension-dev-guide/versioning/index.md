@@ -1,7 +1,6 @@
 ---
 group: php-developer-guide
 subgroup: Versioning
-title: Versioning
 menu_title: Versioning
 menu_order: 1000
 menu_node: parent
