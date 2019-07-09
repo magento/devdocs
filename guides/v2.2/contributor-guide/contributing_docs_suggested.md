@@ -9,7 +9,7 @@ redirect_from:
 
 Our goal is to provide the Magento community with comprehensive and quality technical documentation. We believe that to accomplish that goal we need developer experts from the community to contribute to the documentation.
 
-If you are interested in working on one of these projects, open a [pull request on this page]({{ site.githuburl21 }}contributor-guide/contributing_docs_suggested.md){:target="_blank"}. You can also email us at <DL-Magento-Doc-Feedback@magento.com>, chat us at [Community Engineering Slack channel](https://magentocommeng.slack.com/messages/CAN932A3H){:target="_blank"} , or post a comment in the GitHub issue linked to the project title.
+If you are interested in working on one of these projects, open a [pull request on this page]({{ site.githuburl23 }}contributor-guide/contributing_docs_suggested.md){:target="_blank"}. You can also email us at <DL-Magento-Doc-Feedback@magento.com>, chat us at [Community Engineering Slack channel](https://magentocommeng.slack.com/messages/CAN932A3H){:target="_blank"} , or post a comment in the GitHub issue linked to the project title.
 
 The following GitHub issues are a great place to start:
 
