@@ -25,20 +25,19 @@ To create a mobile-specific theme:
 </page>
 ```
 
-## Applying mobile-specific style 
+## Applying mobile-specific styles 
 
- Used `styles-m.less` to generate mobile-specific styles.
+Use `styles-m.less` to generate mobile-specific styles.
 
  ```xml
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
-    <head>
-        <css src="css/styles-m.css" />
-    </head>
+  <head>
+    <css src="css/styles-m.css" />
+  </head>
 </page>
 ```
 
 Media queries `@media-common`, `max screen__s` and `max` `screen__m` will be added to `styles-m.css`.
-
 
 This will remove the desktop-specific files from your theme.
 
