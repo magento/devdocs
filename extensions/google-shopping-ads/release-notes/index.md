@@ -21,7 +21,7 @@ The release notes include:
 
 Google Shopping ads Channel 3.0.0 is generally available for versions 2.2.4+ and 2.3.x of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}.
 
-- {:.new} **Magento Log Exceptions**: <!--CHAN-3439-->Implemented **Enable Services Logs** feature to help in troubleshooting. See the [Channels](https://docs.magento.com/m2/ce/user_guide/configuration/services/channels.html) topic in the Configuration Reference.
+- {:.new} **Magento Log Exceptions**: <!--CHAN-3439-->Implemented **Enable Services Logs** feature to help with troubleshooting. See the [Channels](https://docs.magento.com/m2/ce/user_guide/configuration/services/channels.html) topic in the Configuration Reference.
 
 - {:.fix} **Resolved Configurable Product Issues**: Configurable product (parent/child) handling has been improved.
     - <!--CHAN-3372-->Corrected an issue preventing child products from inheriting the parent description and causing Google to disapprove products for missing descriptions.
