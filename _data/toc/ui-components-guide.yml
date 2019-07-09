@@ -26,6 +26,7 @@ pages:
           url: /ui_comp_guide/components/ui-checkboxset.html
 
         - label: ColorPicker component
+          include_versions: ["2.3"]
           url: /ui_comp_guide/components/ui-colorpicker.html
 
         - label: Column component
