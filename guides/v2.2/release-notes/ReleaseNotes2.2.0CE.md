@@ -1113,7 +1113,7 @@ This release includes substantial improvements to Magento caching, image process
 
 <!---56914-->* Versioning of [static files](https://glossary.magento.com/static-files) (including CSS, JS, font, and image files) is now enabled by default.
 
-<!---57904-->* We've improved the speed of static asset deployment. See [Deploy static view files]({{ site.baseurl }}/guides/v2.1/config-guide/cli/config-cli-subcommands-static-view.html){: target="_blank"} for more information about available options.
+<!---57904-->* We've improved the speed of static asset deployment. See [Deploy static view files]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html){: target="_blank"} for more information about available options.
 
 <!--- 52614 -->* The `setup:static-content:deploy` command now provides flags that you can use to exclude or include individual themes, areas, and locales. For more information, see [GitHub-4294](https://github.com/magento/magento2/issues/4294).
 
