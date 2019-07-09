@@ -49,7 +49,7 @@ Most options, methods, and events for the calendar widget correspond to the jQue
 
 ## Code sample
 
-The following example shows how to initialize the calendar widget and you can also pass the differnt options during the initialization.
+This example shows how to initialize the calendar widget, including custom parameters.
 
 ```html
 <div class="field">
@@ -58,11 +58,11 @@ The following example shows how to initialize the calendar widget and you can al
 </div>
 
 <script>
-    require([
-        'jquery',
-        'mage/calendar'
-        ], function ($) {
-            $('#example-date').calendar();
+  require([
+    'jquery',
+    'mage/calendar'
+    ], function ($) {
+      $('#example-date').calendar();
     })
 </script>
 ```
