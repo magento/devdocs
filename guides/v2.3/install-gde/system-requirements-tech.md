@@ -80,7 +80,6 @@ For more information, see [Required PHP settings]({{ page.baseurl }}/install-gde
 * Transport Layer Security (TLS) requirement - PayPal and `repo.magento.com` both require TLS 1.1 or later:
 
   * [More information about PayPal]({{page.baseurl}}/install-gde/system-requirements_tls1-2.html)
-  * [More information about `repo.magento.com`]({{ site.baseurl }}/guides/v2.1/release-notes/tech_bull_tls-repo.html)
 
 ### Required system dependencies
 
