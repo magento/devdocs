@@ -157,10 +157,36 @@ If you completed all the steps described in the previous sections, Magento will 
 You can set/get these attributes values by creating an instance of the  `Magento/Quote/Api/Data/AddressInterface.php interface`.
 
 ```php
-$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
-$addressInformation = $objectManager->create('Magento\Checkout\Api\Data\ShippingInformationInterface');
-$extAttributes = $addressInformation->getExtensionAttributes();
-$selectedShipping = $extAttributes->getCustomShippingCharge(); //get custom attribute data.
+<?php
+
+// ... //
+use Magento\Framework\View\Element;
+use Magento\Checkout\Api\Data;
+
+class MyBlock extends Template {
+
+    private $_addressInformation;
+
+    /**
+     * @param ShippingInformationInterface $addressInformation
+     */
+    public function __construct(
+      ShippingInformationInterface $addressInformation
+    ) {
+      $this->_addressInformation = $addressInformation;
+    }
+    
+    /**
+     * Get custom Shipping Charge
+     *
+     * @return String
+     */
+    public function getShippingCharge()
+    {
+      $extAttributes = $addressInformation->getExtensionAttributes();
+      return $extAttributes->getCustomShippingCharge(); //get custom attribute data.
+    }
+}
 ```
 
 ### Related topics
