@@ -996,7 +996,7 @@ Thanks to our hardworking Magento Open Source community members for the followin
 
 ### Payment methods
 
-<!--- 72305-->* We’ve added support for the change to the USPS API that USPS implemented on September 1, 2017. After installing or upgrading to this release, Magento will display the Domestic rate for USPS, First-Class Mail Parcel as expected. Previously, the USPS First-Class Mail Parcel option was not available after September 1, 2017 on installations running Magento 2.x unless you applied the workaround described [here]({{ site.baseurl }}/guides/v2.1/release-notes/tech_bull_USPS-patch-Sept2017.html). 
+<!--- 72305-->* We’ve added support for the change to the USPS API that USPS implemented on September 1, 2017. After installing or upgrading to this release, Magento will display the Domestic rate for USPS, First-Class Mail Parcel as expected. Previously, the USPS First-Class Mail Parcel option was not available after September 1, 2017 on installations running Magento 2.x.
 
 <!--- 56695-->* You can now successfully complete Paypal checkout with products that have custom options. [GitHub-5938](https://github.com/magento/magento2/issues/5938)
 

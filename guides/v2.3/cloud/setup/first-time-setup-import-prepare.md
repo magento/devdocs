@@ -78,7 +78,7 @@ When you push your code, all services are configured into the associated environ
 
 You must have an authentication key to access the {{site.data.var.ee}} repository and to enable install and update commands for your {{site.data.var.ece}} project. There are two methods for specifying Composer authorization credentials.
 
--  **authentication file**—You must have an `auth.json` file that contains your {{site.data.var.ee}} [authorization credentials]({{ site.baseurl }}/guides/v2.1/install-gde/prereq/connect-auth.html) in your {{site.data.var.ece}} root directory.
+-  **authentication file**—You must have an `auth.json` file that contains your {{site.data.var.ee}} [authorization credentials]({{ page.baseurl }}/install-gde/prereq/connect-auth.html) in your {{site.data.var.ece}} root directory.
 -  **environment variable**—Alternatively, you can use an environment variable to set up authentication keys in your {{site.data.var.ece}} project to prevent accidental exposure.
 
 #### To create a new `auth.json` file:
