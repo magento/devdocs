@@ -51,8 +51,3 @@ Developers who contribute to the Open Source codebase can [upgrade manually]({{ 
 1.	Go to the [Contributing Developers]({{ page.baseurl }}/install-gde/install/cli/dev_update-magento.html) page.
 
 2.	Follow the instructions to pull the updates from the repository and update using Composer.
-
-### Other upgrades {#upgrade-other}
-{:.no_toc}
-
-Other types of upgrades are discussed in [Upgrade to Magento version 2.1 (June 22, 2016)]({{ site.baseurl }}/guides/v2.1/release-notes/tech_bull_21-upgrade.html).

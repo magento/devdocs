@@ -106,7 +106,7 @@ define(
 
 The `getData()` method returns data what we need and depending on payment integration the returned data can be more
 complicated. we need last step to retrieve data from [storefront](https://glossary.magento.com/storefront) in the backend. Magento provides some
-mechanisms called [Observers]({{ page.baseurl }}extension-dev-guide/events-and-observers.html).
+mechanisms called [Observers]({{ page.baseurl }}/extension-dev-guide/events-and-observers.html).
  
 #### Read additional data
 

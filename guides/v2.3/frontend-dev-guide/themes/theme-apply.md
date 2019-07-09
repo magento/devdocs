@@ -13,11 +13,11 @@ Also, it gives information how to add a theme independent logo for your store.
 
 ## Prerequisites
 
-Make sure that you [set]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-mode.html) your Magento application to the developer [mode]({{ page.baseurl }}config-guide/bootstrap/magento-modes.html).
+Make sure that you [set]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html) your Magento application to the developer [mode]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html).
 
 ## Apply a theme {#theme-apply-apply}
 
-After you [add your theme to the file system]({{ page.baseurl }}frontend-dev-guide/themes/theme-create.html), you can apply it to your store. You apply a theme in [Admin](https://glossary.magento.com/admin).
+After you [add your theme to the file system]({{ page.baseurl }}/frontend-dev-guide/themes/theme-create.html), you can apply it to your store. You apply a theme in [Admin](https://glossary.magento.com/admin).
 
 To apply a theme:
 
@@ -78,7 +78,7 @@ A system message notifies you that invalidated cache types must be refreshed.
 
 ## Troubleshooting (if the changes do not get applied)
 
-If the changes you configure in the Admin are not applied after you clear the cache and reload the page, delete all files in the `pub/static/frontend` and `var/view_preprocessed` directories, then reload the pages. You can delete the files manually or run the `grunt clean:<theme_name>` command in CLI. For details about using Grunt in Magento see [Installing and configuring Grunt]({{ page.baseurl }}frontend-dev-guide/css-topics/css_debug.html#prerequisites).
+If the changes you configure in the Admin are not applied after you clear the cache and reload the page, delete all files in the `pub/static/frontend` and `var/view_preprocessed` directories, then reload the pages. You can delete the files manually or run the `grunt clean:<theme_name>` command in CLI. For details about using Grunt in Magento see [Installing and configuring Grunt]({{ page.baseurl }}/frontend-dev-guide/css-topics/css_debug.html#prerequisites).
 
 
 [Design Configuration page]: {{site.baseurl}}/common/images/design_conf1.png
