@@ -10,7 +10,7 @@
 This reference contains {{ commands | size }} commands available through the `bin/magento` command-line tool.
 The initial list is auto generated using `bin/magento list` command at the {{ site.data.var.ce }} edition.
 
-Please note, Magento allows a short command name instead of a full one. For example, `bin/magento setup:upgrade` can be called via `bin/magento s:up`, `bin/magento s:upg`, etc.
+Please note, Magento CLI allows a short command name instead of a full one. For example, `bin/magento setup:upgrade` can be called via `bin/magento s:up`, `bin/magento s:upg`, etc.
 
 {% for command in commands %}
   {% assign arguments = command.definition.arguments %}
