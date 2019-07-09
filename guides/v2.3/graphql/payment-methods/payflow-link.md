@@ -37,7 +37,7 @@ The following diagram shows the workflow for placing an order when Payflow Link 
 
 ## Additional Payment information
 
-When you set the payment method to Payflow Link in the [`setPaymentMethodOnCart`]({{page.baseurl}}/graphql/reference/quote-payment-method.html) mutation, the `additional_data` object must contain a `payflow_link` object, which defines the following objects:
+When you set the payment method to Payflow Link in the [`setPaymentMethodOnCart`]({{page.baseurl}}/graphql/reference/quote-payment-method.html) mutation, the `payment_method` object must contain a `payflow_link` object, which defines the following objects:
 
 Attribute |  Data Type | Description
 --- | --- | ---
@@ -56,12 +56,10 @@ mutation {
     setPaymentMethodOnCart(input: {
         payment_method: {
             code: "payflow_link"
-            additional_data: {
-                payflow_link: {
-                  return_url: "https://www.example.com/payflow/test/return"
-                  error_url: "https://www.example.com/payflow/test/error"
-                  cancel_url: "https://www.example.com/payflow/test/cancel"
-                }
+            payflow_link: {
+                return_url: "https://www.example.com/payflow/test/return"
+                error_url: "https://www.example.com/payflow/test/error"
+                cancel_url: "https://www.example.com/payflow/test/cancel"
             }
         }
         cart_id: "IeTUiU0oCXjm0uRqGCOuhQ2AuQatogjG"

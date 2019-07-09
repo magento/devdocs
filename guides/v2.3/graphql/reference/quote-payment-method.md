@@ -38,14 +38,12 @@ mutation {
     cart_id: "lvdqOLzryManseE2artECZuPClxFgG1o"
     payment_method: {
       code: "authorizenet_acceptjs"
-      additional_data: {
-        authorizenet_acceptjs: {
-          cc_last_4: 1111
-          opaque_data_descriptor: "COMMON.ACCEPT.INAPP.PAYMENT"
-          opaque_data_value: "<nonce_value>"
-          }
-        }
+      authorizenet_acceptjs: {
+        cc_last_4: 1111
+        opaque_data_descriptor: "COMMON.ACCEPT.INAPP.PAYMENT"
+        opaque_data_value: "<nonce_value>"
       }
+    }
   }) {
     cart {
       selected_payment_method {
@@ -136,19 +134,15 @@ Attribute |  Data Type | Description
 `opaque_data_descriptor` | String! | Authorize.Net's description of the transaction request
 `opaque_data_value` | String! | The nonce returned by Authorize.Net
 
-### PaymentMethodAdditionalDataInput attributes {#PaymentMethodAdditionalDataInput}
-
-`authorizenet_acceptjs` | [AuthorizenetInput](#AuthorizenetInput) | Defines the required attributes for Authorize.Net payments
-
 ### PaymentMethodInput attributes {#PaymentMethodInput}
 
 The `PaymentMethodInput` object can contain the following attributes:
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`additional_data` | [PaymentMethodAdditionalDataInput](#PaymentMethodAdditionalDataInput) | Additional payment data
 `code` | String! | The internal name for the payment method
 `purchase_order_number` | String | The purchase order number. Optional for most payment methods
+`authorizenet_acceptjs` | [AuthorizenetInput](#AuthorizenetInput) | Defines the required attributes for Authorize.Net payments
 
 ## Output attributes
 
