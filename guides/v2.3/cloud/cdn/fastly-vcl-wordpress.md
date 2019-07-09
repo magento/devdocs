@@ -1,9 +1,7 @@
 ---
 group: cloud-guide
-subgroup: 090_configure
 title: Set up redirects to WordPress using Fastly
 redirect_from:
-   - /guides/v2.1/cloud/configure/fastly-vcl-wordpress.html
    - /guides/v2.2/cloud/configure/fastly-vcl-wordpress.html
    - /guides/v2.3/cloud/configure/fastly-vcl-wordpress.html
 functional_areas:
