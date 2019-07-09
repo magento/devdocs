@@ -43,9 +43,9 @@ You have options for using the translated dictionary:
 
 Command options:
 
-    ```bash
+```bash
     bin/magento i18n:collect-phrases [-o|--output="<csv file path and name>"] [-m|--magento] <path to directory to translate>
-    ```
+```
 
 The following table explains this command's parameters and values:
 
@@ -300,7 +300,7 @@ Similar to the preceding example, generate a `.csv` file, but instead of specify
     <?xml version="1.0"?>
     <!--
     /**
-     * Copyright © 2015 Magento. All rights reserved.
+     * Copyright © Magento, Inc. All rights reserved.
      * See COPYING.txt for license details.
      */
     -->

@@ -3,13 +3,19 @@ group: release-notes
 title: Magento Open Source 2.3.2 Release Notes
 ---
 
-*Release notes published June 25, 2019.*
+*Patch code and release notes published on June 25, 2019. Release notes last updated July 8, 2019.*
 
 We are pleased to present Magento Open Source 2.3.2.  This release includes over 200 functional fixes to the core product, over 350 pull requests contributed by the community, and  over 75 security enhancements. It includes significant contributions from our community members. 
 
 ## Other release information
 
 Although code for these features is bundled with quarterly releases of the Magento core code, several of these projects (for example, Page Builder, Inventory Management, and Progressive Web Applications (PWA) Studio) are also released independently. Bug fixes for these projects are documented in separate, project-specific release information which is available in the documentation for each project.
+ 
+
+## Apply the Scope parameter for Async/Bulk API patch to address an issue with the Async/Bulk REST API
+
+In certain versions of Magento Open Source and Magento Commerce, the Asynchronous and Bulk REST endpoints support the default store view scope only. After this patch is applied to deployments running those versions of Magento, the current Magento message queue implementation 
+will factor in the store that executes queue operations. See [Patch for Magento Framework Message Queue and Store Scopes](https://community.magento.com/t5/Magento-DevBlog/Patch-for-Magento-Framework-Message-Queue-and-Store-Scopes/ba-p/135209) for a full discussion of this scope-related issue and patch contents. See [Applying patches](https://devdocs.magento.com/guides/v2.3/comp-mgr/patching.html) for specific instructions on downloading and applying Magento patches. Navigate to the [Magento Security Center](https://magento.com/security/patches), and select the patch associated with the version of Magento you are running. 
 
 ## Highlights
 
@@ -61,48 +67,6 @@ Magento now performs the following tasks as **asynchronous background processes*
 
 * Data export. Previously, connection timeouts occurred during export of large data sets (for example, the export of 200,000 products). See [Export](https://docs.magento.com/m2/b2b/user_guide/system/data-export.html) for more information. 
  <!--- MC-5953-->
-
-### Inventory Management enhancements
-
-* **New commands** allow merchants to check for reservation inconsistencies and resolve any that occur. See [Inventory CLI reference](https://devdocs.magento.com/guides/v2.3/inventory/inventory-cli-reference.html).
-
-* Improved user interface for assigning sources to products. This redesigned interface includes:
-
-  * Support for decimal order quantity
-  * New test scenarios created to cover Credit Memo use cases
-  * New InventoryGraphQl module provides attributes that return correct information about product quantities
-  * Single product save (using asynchronous synchronization with legacy catalog inventory)
-  * Multiple product save
-  * Bulk inventory transfer
-
-* **New endpoint** for Bulk Partial Stock Transfer to bulk transfer a custom product quantity between sources. See [Inventory Bulk Actions](https://devdocs.magento.com/guides/v2.3/rest/modules/inventory/bulk-inventory.html).
-
-* Fixes to multiple  bugs. See [Inventory Management release notes](https://devdocs.magento.com/guides/v2.3/inventory/release-notes.html).
-
-### GraphQL
-
-Graph enhancements include:
-
-
-* **Improvements to GraphQL coverage**.  Improved coverage for cart and checkout operations include mutations that provide support for the following actions:
-
-  * Support for simple and virtual products
-  * Add, update, and delete cart items
-  * Set shipping addresses (with address book support)
-  * Set the billing address (with address book support)
-  * Set shipping methods
-  * Set the payment method (offline methods only)
-  * Place an order
-
-* **GraphQL caching**. GraphQL can now cache the `category`, `cmsBlocks`, `cmsPage`, `products`, and `urlResolver` queries, which improves response times.  To enable this feature, send these queries using HTTP GET. You can send all other queries with HTTP GET, but they are not cached.
-
-* **GraphQL performance test scenario coverage**. We have added PWA GraphQL test scenarios for critical checkout and catalog browsing to the performance builds. GraphQL community developers can use the new scenarios to measure storefront performance. <!--- MC-15826, 15922-->
-
-See [Release notes](https://devdocs.magento.com/guides/v2.3/graphql/release-notes.html) for a more detailed discussion of recent GraphQL bug fixes.
-
-### Progressive Web Apps (PWA)
-
-* **Improved modular component library**. PWA Studio continues to build out the concept for functional and data components through the Peregrine library. Components can now be reused and scaled for frontend needs. Magento has planned a phased rollout for Peregrine functional and data components, starting with the Search component which is launching with this release.
 
 ### Vendor-developed extension enhancements
 
@@ -685,11 +649,13 @@ has been changed to `<argument name="resourceStockItem" xsi:type="object">Magent
 
 ### Infrastructure
 
+* The default behavior of view models has changed in this release. Instances of view models are now shared by default. As a result, you must add the `attribute shared="false"` on the argument node of the `layout.xml` file if you want a new instance of a view model.
+
 <!--- ENGCOM-4474-->
 * The `FrontController` now explicitly requires actions to specify if they respond to `HEAD` requests. `HEAD` action mapping has also been changed to the  `GET` action interface, which results in `HEAD` requests returning `200` instead of `404`. *Fix submitted by [Matti Vapa](https://github.com/mattijv) in pull request [21378](https://github.com/magento/magento2/pull/21378)*. [GitHub-21299](https://github.com/magento/magento2/issues/21299)
 
 <!--- ENGCOM-4482-->
-* Logic has been removed from the constructor of `Magento\Sales\Model\Order\Address\Validator`. Previously, installation of the product could fail if this class was injected in the constructor through a command in a custom module when this class contined logic. *Fix submitted by [Dharmesh Vaja](https://github.com/Dharmeshvaja91) in pull request [21693](https://github.com/magento/magento2/pull/21693)*. [GitHub-21692](https://github.com/magento/magento2/issues/21692), [GitHub-21752](https://github.com/magento/magento2/issues/21752)
+* Logic has been removed from the constructor of `Magento\Sales\Model\Order\Address\Validator`. Previously, installation of the product could fail if this class was injected in the constructor through a command in a custom module when this class contined logic. *Fix submitted by [Bartłomiej Szubert](https://github.com/Bartlomiejsz) in pull request [21693](https://github.com/magento/magento2/pull/21693)*. [GitHub-21692](https://github.com/magento/magento2/issues/21692), [GitHub-21752](https://github.com/magento/magento2/issues/21752)
 
 <!--- ENGCOM-4543-->
 * The `productAvailabilityChecks` argument has been added to `Magento\Sales\Model\Order\Reorder\OrderedProductAvailabilityChecker`. Previously, this required argument was missing. *Fix submitted by [Roman Kis](https://github.com/kisroman) in pull request [21820](https://github.com/magento/magento2/pull/21820)*. [GitHub-20825](https://github.com/magento/magento2/issues/20825)
@@ -984,7 +950,7 @@ has been changed to `<argument name="resourceStockItem" xsi:type="object">Magent
 * Screen readers can now identify the `label` elements that are linked to  `input` fields for street address fields on the checkout page. Previously, screen readers could not identify these fields because the elements were not populated.  *Fix submitted by [Scott Buchanan](https://github.com/scottsb) in pull request [21484](https://github.com/magento/magento2/pull/21484)*. [GitHub-10893](https://github.com/magento/magento2/issues/10893)
 
 <!--- ENGCOM-4596-->
-* Product gallery images no longer open unexpectedly when you move ove a product image while moving to another page element. *Fix submitted by [Denis Kopylov ](https://github.com/Den4ik) in pull request [21790](https://github.com/magento/magento2/pull/21790)*. [GitHub-21789](https://github.com/magento/magento2/issues/21789)
+* Product gallery images no longer open unexpectedly when you move over a product image while moving to another page element. *Fix submitted by [Denis Kopylov ](https://github.com/Den4ik) in pull request [21790](https://github.com/magento/magento2/pull/21790)*. [GitHub-21789](https://github.com/magento/magento2/issues/21789)
 
 <!--- ENGCOM-4703-->
 * Magento now cancels previous scrolling actions as expected when you click **Add to cart** on a product page. Previously, Magento scrolled back to the `qty` input box the same number of times as you clicked  **Add to cart**. *Fix submitted by [Vechirko Yurii](https://github.com/yvechirko) in pull request [22117](https://github.com/magento/magento2/pull/22117)*. [GitHub-21715](https://github.com/magento/magento2/issues/21715)
@@ -1049,9 +1015,10 @@ label, types and disabled, but the actual `file-content` was not replaced with t
 * You can now insert widgets that contain a WYSIWYG field into a form. Previously, widgets with a `WYSIWYG` parameter failed when inserting them into a WYSIWYG in a form. *Fix submitted by [James Dinsdale](https://github.com/molovo) in pull request [20174](https://github.com/magento/magento2/pull/20174)*. [GitHub-19742](https://github.com/magento/magento2/issues/19742)
 
 
-# Known issues
+## Known issues
 
-* **Issue**: The Async/Bulk Web APIs support only the default store view. A hot fix for this issue will be available in the near future. 
+* **Issue**: The Async/Bulk Web APIs support only the default store view. A hot fix for this issue will be available in the near future. This issue has been resolved with the Scope parameter for Async/Bulk API patch, which is now available. See [Patch for Magento Framework Message Queue and Store Scopes](https://community.magento.com/t5/Magento-DevBlog/Patch-for-Magento-Framework-Message-Queue-and-Store-Scopes/ba-p/135209) for a full discussion of this scope-related issue and patch contents.
+ 
 
 * **Issue**: The security enhancements that are part of Magento 2.3.2 require the installation of libsodium version 1.0.13 or higher. You will not be able to successfully install Magento Commerce 2.3.2 without first ensuring that your server runs  version 1.0.13 or higher. See [Libsodium releases](https://github.com/jedisct1/libsodium/releases) for a description of the available releases and installation instructions. 
 
@@ -1066,6 +1033,8 @@ label, types and disabled, but the actual `file-content` was not replaced with t
 ### Partner contributions
 
 The following table highlights contributions made by Partners. This table lists the Partner who contributed the pull request, the external pull request, and the GitHub issue number associated with it (if available). 
+
+{% include release-notes/engcomm-2-3-2-partner.md %}
 
 ### Individual contributor contributions
 
