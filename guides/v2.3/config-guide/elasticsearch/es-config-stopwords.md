@@ -12,7 +12,7 @@ functional_areas:
 
 In general, *stopwords* are a language's most common words that search engines filter out after processing text. Originally, when disk space and memory were extremely limited, every kilobyte saved meant a significant improvement in performance. Therefore, search engines achieved performance gains by ignoring certain words and keeping the index small.
 
-Although we have more storage today, performance is still important. Elasticsearch, like other search engines, still use stopwords to improve performance.
+Although we have more storage today, performance is still important. Elasticsearch, like other search engines, still uses stopwords to improve performance.
 
 You must manage your Elasticsearch stopwords using `.csv` files located in the `<magento_root>/vendor/magento/module-elasticsearch/etc/stopwords` directory or the `<magento_root>/app/code/Magento/Elasticsearch/etc/stopwords/` directory, depending on how you installed the Magento software.
 
@@ -27,7 +27,7 @@ For more information about how Elasticsearch uses stopwords, see the following r
 
 Elasticsearch stopwords are located in the `<magento_root>/vendor/magento/module-elasticsearch/etc/stopwords` directory. Magento ships with one `.csv` file containing stopwords for our default locales and an additional file, `stopwords.csv`, which has stopwords for any locale that is not represented by another `.csv` file.
 
-The default lifetime for stopwords file {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %} is 15 minutes.
+The default lifetime for stopwords file [cache](https://glossary.magento.com/cache) is 15 minutes.
 
 See one of the following topics for more information:
 
@@ -54,7 +54,7 @@ To edit stopwords:
 	*	Command line: As the Magento file system owner, enter the following command:
 
 			php <magento_root>/bin/magento magento cache:clean config
-6.	Check the results by searching for terms on your {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %}.
+6.	Check the results by searching for terms on your [storefront](https://glossary.magento.com/storefront).
 
 ### Create stopwords for a new locale {#config-create-stopwords}
 

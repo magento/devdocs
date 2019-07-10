@@ -3,6 +3,7 @@ pages:
   - label: Introduction
     url: /mrg/intro.html
   - label: Open Source
+    include_versions: ["2.3"]
     children:
     
       - label: AdminNotification
@@ -200,6 +201,9 @@ pages:
       - label: GraphQl
         url: /mrg/ce/GraphQl.html
     
+      - label: GraphQlCache
+        url: /mrg/ce/GraphQlCache.html
+    
       - label: GroupedCatalogInventory
         url: /mrg/ce/GroupedCatalogInventory.html
     
@@ -265,6 +269,9 @@ pages:
     
       - label: Paypal
         url: /mrg/ce/Paypal.html
+    
+      - label: PaypalCaptcha
+        url: /mrg/ce/PaypalCaptcha.html
     
       - label: Persistent
         url: /mrg/ce/Persistent.html
@@ -416,6 +423,9 @@ pages:
       - label: Vault
         url: /mrg/ce/Vault.html
     
+      - label: VaultGraphQl
+        url: /mrg/ce/VaultGraphQl.html
+    
       - label: Version
         url: /mrg/ce/Version.html
     
@@ -497,6 +507,12 @@ pages:
       - label: CatalogUrlRewriteStaging
         url: /mrg/ee/CatalogUrlRewriteStaging.html
     
+      - label: CheckoutAddressSearch
+        url: /mrg/ee/CheckoutAddressSearch.html
+    
+      - label: CheckoutAddressSearchGiftRegistry
+        url: /mrg/ee/CheckoutAddressSearchGiftRegistry.html
+    
       - label: CheckoutStaging
         url: /mrg/ee/CheckoutStaging.html
     
@@ -526,6 +542,9 @@ pages:
     
       - label: DownloadableStaging
         url: /mrg/ee/DownloadableStaging.html
+    
+      - label: ElasticsearchCatalogPermissions
+        url: /mrg/ee/ElasticsearchCatalogPermissions.html
     
       - label: Enterprise
         url: /mrg/ee/Enterprise.html
@@ -688,6 +707,9 @@ pages:
       - label: BundleSharedCatalog
         url: /mrg/b2b/BundleSharedCatalog.html
     
+      - label: CheckoutAddressSearchNegotiableQuote
+        url: /mrg/b2b/CheckoutAddressSearchNegotiableQuote.html
+    
       - label: Company
         url: /mrg/b2b/Company.html
     
@@ -738,4 +760,3 @@ pages:
     
       - label: SharedCatalog
         url: /mrg/b2b/SharedCatalog.html
-    
