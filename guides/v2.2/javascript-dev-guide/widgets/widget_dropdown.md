@@ -166,7 +166,7 @@ Whenever to close or not the dropdown menu when the click is performed outside o
 
 A jQuery selector for the arrow that expresses the state of the dropdown.
 The widget changes given element's text to '+' or '-", depending on the dropdown state.
-It's not required the element to be present into the dropdown HTML markup. It works
+It's not required the element to be present in the dropdown HTML markup. It works
 just fine without it as well.
 
 **Type**: String
