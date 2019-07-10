@@ -48,7 +48,7 @@ New modules for Inventory Management 1.1.2 Beta include:
         'Magento_InventoryGraphQl' => 1,
         'Magento_InventoryReservations' => 1,
         'Magento_InventoryReservationsApi' => 1,
-        'Magento_InventoryReservationsCli' => 1,
+        'Magento_InventoryReservationCli' => 1,
         'Magento_InventoryExportStock' => 0,
         'Magento_InventoryExportStockApi' => 0,
 ```
