@@ -12,10 +12,6 @@ Widget source file is [lib/web/mage/dropdowns.js].
 The dropdown widget allows to show show on storefront a select box with custom
 content for each of available options.
 
-{:.bs-callout .bs-callout-info} Dropdown widget is not meant to replace default
-HTML select element. By replacing default select in store forms don't expect
-the store to work 100% the same as before changes.
-
 
 **Usages:**
 - [Shipping policy]
@@ -50,8 +46,8 @@ the store to work 100% the same as before changes.
 
 ### Styles
 
-By default the dropdown is not styled. But, there is a handy
-[LESS mixin `.lib-dropdown()`] that comes to the rescue:
+The dropdown widget is not styled out of the box.
+Use [LESS mixin `.lib-dropdown()`] to customize it.
 
 ```less
 //
@@ -186,9 +182,7 @@ Looking at the HTML markup, given element has to be inside the `parent` option.
 
 ### `activeClass`   {#d_activeClass}
 
-The CSS class that reflects the current state of the dropdown widget.
-Given class is added to the element widget was initialized when the dropdown
-menu should be visible.
+Given class is added to the widget element when the menu is visible.
 
 **Type**: String
 
@@ -199,4 +193,4 @@ menu should be visible.
 
 The result is a custom select dropdown with custom content as options.
 
-![Dropdown Widget]({{ page.baseurl }}/javascript-dev-guide/widgets/images/dropdown-widget-result.png)
+![Dropdown Widget]({{ site.baseurl }}/common/images/widget/dropdown-widget-result.jpg)
