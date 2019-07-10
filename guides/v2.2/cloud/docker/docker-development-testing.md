@@ -21,7 +21,19 @@ Before you run functional tests, you must prepare your environment with the foll
     -  `443`—web, tls
     -  `3306`—apache, mysql
     
-1.  Add `127.0.0.1     web` to `/etc/hosts` file.
+1.  Update the hosts file.
+
+    Before you begin, you must add the following hostname to your `/etc/hosts` file:
+
+    ```
+    127.0.0.1 web
+    ```
+
+    Alternatively, you can run the following command to add it to the file:
+
+    ```bash
+    echo "127.0.0.1 web" | sudo tee -a /etc/hosts
+    ```
 
 1.  Switch to the preferred PHP version for running tests.
 
