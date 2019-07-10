@@ -9,7 +9,7 @@ functional_areas: frontend,theme,dropdown
 
 Widget source file is [lib/web/mage/dropdowns.js].
 
-The dropdown widget allows to show show on storefront a select box with custom
+The dropdown widget allows to show on storefront a select box with custom
 content for each of available options.
 
 {:.bs-callout .bs-callout-info} Dropdown widget is not meant to replace default
