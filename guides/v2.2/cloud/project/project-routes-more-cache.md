@@ -8,6 +8,8 @@ functional_areas:
 
 {{site.data.var.ee}} enables you to use caching in your environment. If you disable caching, {{site.data.var.ee}} directly serves the files.
 
+{% include cloud/note-route-all-placeholder.md %}
+
 ## Set up caching {#cloud-cache-setup}
 
 Enable caching in your Magento application's `.magento/routes.yaml` as follows:
