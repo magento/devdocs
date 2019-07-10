@@ -9,7 +9,7 @@ functional_areas: frontend,theme,dropdown
 
 Widget source file is [lib/web/mage/dropdowns.js].
 
-The dropdown widget allows to show show on storefront a select box with custom
+The dropdown widget allows to show on storefront a select box with custom
 content for each of available options.
 
 
@@ -151,7 +151,7 @@ the widget finds it himself with jQuery method `.parent()`.
 
 ### `autoclose`   {#d_autoclose}
 
-Whenever to close or not the dropdown menu when mouse is clicked outside of dropdown scope.
+Whenever to close or not the dropdown menu when the click is performed outside of dropdown scope.
 
 **Type**: Boolean
 
@@ -162,7 +162,7 @@ Whenever to close or not the dropdown menu when mouse is clicked outside of drop
 
 A jQuery selector for the arrow that expresses the state of the dropdown.
 The widget changes given element's text to '+' or '-", depending on the dropdown state.
-It's not required the element to be present into the dropdown HTML markup. It works
+It's not required the element to be present in the dropdown HTML markup. It works
 just fine without it as well.
 
 **Type**: String
