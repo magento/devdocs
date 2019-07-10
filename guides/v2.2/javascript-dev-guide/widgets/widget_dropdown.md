@@ -155,7 +155,7 @@ the widget finds it himself with jQuery method `.parent()`.
 
 ### `autoclose`   {#d_autoclose}
 
-Whenever to close or not the dropdown menu when mouse is clicked outside of dropdown scope.
+Whenever to close or not the dropdown menu when the click is performed outside of dropdown scope.
 
 **Type**: Boolean
 
