@@ -3,7 +3,7 @@ title: Release policy
 group: release
 ---
 
-{{site.data.var.ee}} uses [semantic versioning](https://semver.org/). For example:
+{{site.data.var.ee}} uses [semantic versioning](https://semver.org/) on the individual module level (for example magento/framework 101.1.1) but not for the Magento marketing version number. For example:
 
 - **MAJOR**—2
 - **MINOR**—2.3

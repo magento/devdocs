@@ -8,10 +8,10 @@ functional_areas:
 
 ## What's in this topic {#theme-structure-intro}
 
-A [design theme]({{ page.baseurl }}/frontend-dev-guide/themes/theme-general.html) is an important part of the Magento application. This topic describes the file structure of a Magento {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %}.
+A [design theme]({{ page.baseurl }}/frontend-dev-guide/themes/theme-general.html) is an important part of the Magento application. This topic describes the file structure of a Magento [theme](https://glossary.magento.com/theme).
 
 ## Magento theme location {#theme-structure-loc}
-{% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}Storefront{% endglossarytooltip %} themes are conventionally located under `app/design/frontend/<Vendor>/`. Though technically they can reside in other directories. For example Magento built-in themes can be located under `vendor/magento/theme-frontend-<theme_code>` when a Magento instance is deployed from the {% glossarytooltip d85e2d0a-221f-4d03-aa43-0cda9f50809e %}Composer{% endglossarytooltip %} repository.
+[Storefront](https://glossary.magento.com/storefront) themes are conventionally located under `app/design/frontend/<Vendor>/`. Though technically they can reside in other directories. For example Magento built-in themes can be located under `vendor/magento/theme-frontend-<theme_code>` when a Magento instance is deployed from the [Composer](https://glossary.magento.com/composer) repository.
 
 Each theme must be stored in a separate directory:
 
@@ -83,7 +83,7 @@ The directories and files structure described below is the most extended one. It
         optional
       </td>
       <td colspan="1">
-          Module-specific styles (<code>.css</code> and/or <code>.less</code> files). General styles for the module are in the <code>_module.less</code> file, and styles for widgets are in <code>_widgets.less</code><br/><br/>Ex: [Module_Theme]({{ site.mage2300url }}app/code/Magento/Theme/view/frontend/web/css) or description field should be corrected.
+          Module-specific styles (<code>.css</code> and/or <code>.less</code> files). General styles for the module are in the <code>_module.less</code> file, and styles for widgets are in <code>_widgets.less</code><br/><br/>Ex: [Module_Theme]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Theme/view/frontend/web/css) or description field should be corrected.
       </td>
     </tr>
     <tr>
@@ -230,7 +230,7 @@ The directories and files structure described below is the most extended one. It
       </td>
       <td colspan="1">optional</td>
       <td colspan="1">
-        Describes the theme dependencies and some meta-information. Will be here if your theme is a Composer package.
+        Describes the theme dependencies and some meta-information. Will be here if your theme is a Composer package. The "name" field must be in the format <code>"&lt;vendor-name&gt;/theme-&lt;area&gt;-&lt;theme-name&gt;"</code>.
       </td>
     </tr>
     <tr>
@@ -248,7 +248,7 @@ The directories and files structure described below is the most extended one. It
       </td>
       <td colspan="1">required</td>
       <td colspan="1">
-        The file is mandatory as it declares a theme as a system component. It contains the basic meta-information, like the theme name and the parent theme name, if the theme is inherited from an existing theme. The file is used by the Magento system to recognize the theme.
+        The file is mandatory as it declares a theme as a system component. It contains the basic meta-information, like the theme title and the parent theme name, if the theme is inherited from an existing theme. The file is used by the Magento system to recognize the theme.
       </td>
     </tr>
   </tbody>
@@ -256,7 +256,7 @@ The directories and files structure described below is the most extended one. It
 
 ## Theme files {#theme-structure-files}
 
-Apart from the configuration file and theme {% glossarytooltip 3f0f2ef1-ad38-41c6-bd1e-390daaa71d76 %}metadata{% endglossarytooltip %} file, all theme files fall into the following two categories:
+Apart from the configuration file and theme [metadata](https://glossary.magento.com/metadata) file, all theme files fall into the following two categories:
 
 * Static view files
 * Dynamic view files
@@ -265,7 +265,7 @@ Apart from the configuration file and theme {% glossarytooltip 3f0f2ef1-ad38-41c
 
 A set of theme files that are returned by the server to a browser as is, without any processing, are called the *static files* of a theme.
 
-{% glossarytooltip 363662cb-73f1-4347-a15e-2d2adabeb0c2 %}Static files{% endglossarytooltip %} can be located in a theme directory as follows:
+[Static files](https://glossary.magento.com/static-files) can be located in a theme directory as follows:
 
 ```tree
 <theme_dir>/

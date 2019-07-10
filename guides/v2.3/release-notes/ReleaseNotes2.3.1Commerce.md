@@ -4,14 +4,18 @@ title: Magento Commerce 2.3.1 Release Notes
 ---
 
 
-*Release notes published on March 26, 2019 and last edited on April 18, 2019.*
+*Release notes published on March 26, 2019 and last edited on June 26, 2019.*
 
 We are pleased to present Magento Commerce 2.3.1.  This release includes over 200 functional fixes to the core product, over 500 pull requests contributed by the community, and  over 30 security enhancements. 
 
 This release includes significant contributions from our community members. These contributions range from minor clean-up of core code to the development of substantial features such as Inventory Management and GraphQL. Although code for these features is bundled with quarterly releases of the Magento core code, several of these projects (for example, Page Builder and Progressive Web Applications (PWA) Studio) are also released independently. Bug fixes for these projects are not documented in these core release notes but in separate project-specific sets of notes.
 
+## Apply the Scope parameter for Async/Bulk API patch to address an issue with the Async/Bulk REST API
 
-## Apply patch PRODSECBUG-2198 to address critical SQL injection vulnerability
+In certain versions of Magento Open Source and Magento Commerce, the Asynchronous and Bulk REST endpoints support the default store view scope only. After this patch is applied to deployments running those versions of Magento, the current Magento message queue implementation 
+will factor in the store that executes queue operations. See [Patch for Magento Framework Message Queue and Store Scopes](https://community.magento.com/t5/Magento-DevBlog/Patch-for-Magento-Framework-Message-Queue-and-Store-Scopes/ba-p/135209) for a full discussion of this scope-related issue and patch contents. See [Applying patches](https://devdocs.magento.com/guides/v2.3/comp-mgr/patching.html) for specific instructions on downloading and applying Magento patches. To apply the patch, navigate to the [Magento Security Center](https://magento.com/security/patches), and select the patch associated with the version of Magento you are running. 
+
+## Apply the PRODSECBUG-2198 patch to address critical SQL injection vulnerability
 
 A critical SQL injection vulnerability has been identified in 2.3.x Magento code. A fix for this issue is included in Magento 2.3.1. If you cannot immediately apply the full patch, you can quickly protect your store from this vulnerability by installing patch PRODSECBUG-2198.  However, **we strongly encourage all merchants to stay up-to-date on security patches**. See the description of  PRODSECBUG-2198  in the  [Magento Security Center](https://magento.com/security/patches/magento-2.3.1-2.2.8-and-2.1.17-security-update) for information on this vulnerability. 
 
@@ -75,7 +79,7 @@ The Admin order creation workflow has been refactored to eliminate delays when e
 
 #### Inventory Management 1.1.0 (Community-developed feature!)
 
-The Multi-Source Inventory (MSI) community project has added multiple new features to this release of Inventory Management. See [Inventory Management Release Notes](https://devdocs.magento.com/guides/v2.3/inventory/release-notes.html) for information about specific fixes and acknowledgements to community contributors.
+The Magento Inventory (was MSI) community project has added multiple new features to this release of Inventory Management. See [Inventory Management Release Notes](https://devdocs.magento.com/guides/v2.3/inventory/release-notes.html) for information about specific fixes and acknowledgements to community contributors.
 
 * **Support for Elasticsearch and Inventory Management**. All site searches now return correct products and quantities when Elasticsearch is used as the search engine. (As of this release, only default option from 2.3+)  Searches return results from stock assigned to the website. Advanced features are supported, including filtering search results. Community-developed feature! 
 
@@ -116,7 +120,7 @@ This release includes over 30 security enhancements that help close cross-site s
 * Magento now displays the list of additional customer addresses contained in the storefront customer address book  as a grid, which has improved performance for customers with many additional addresses associated with their accounts. [Address Book](https://docs.magento.com/m2/ee/user_guide/customers/account-dashboard-address-book.html) describes how to use this enhanced feature. <!--- MAGETWO-94347-->
 
 
-* The shipping and billing data that a user enters during checkout nows persists if the user interrupts checkout to continue shopping. Previously, checkout data was deleted after a cart update. <!-- MAGETWO-95067 -->
+* The shipping and billing data that a user enters during checkout now persists if the user interrupts checkout to continue shopping. Previously, checkout data was deleted after a cart update. <!-- MAGETWO-95067 -->
 
 
 ### Infrastructure improvements
@@ -591,7 +595,7 @@ Previously, when you reopened these categories, no checkboxes were checked.
 
 <!--- ENGCOM-3573-->* Fixed misalignment of the tax rate checkbox on the Add New Tax Rate page. *Fix submitted by [suryakant-krish](https://github.com/suryakant-krish) in pull request [19413](https://github.com/magento/magento2/pull/19413)*. [GitHub-19379](https://github.com/magento/magento2/issues/19379)
 
-<!--- ENGCOM-3571-->* Fixed misalignemnt of the attribute set name heading border on the Attribute sets pop-up window. *Fix submitted by [suryakant-krish](https://github.com/suryakant-krish) in pull request [19414](https://github.com/magento/magento2/pull/19414)*. [GitHub-19371](https://github.com/magento/magento2/issues/19371)
+<!--- ENGCOM-3571-->* Fixed misalignment of the attribute set name heading border on the Attribute sets pop-up window. *Fix submitted by [suryakant-krish](https://github.com/suryakant-krish) in pull request [19414](https://github.com/magento/magento2/pull/19414)*. [GitHub-19371](https://github.com/magento/magento2/issues/19371)
 
 <!--- ENGCOM-3960-->* Fixed misalignment of elements on the shipping information page that Magento displays when you click **Check Out with Multiple Addresses** from the shopping cart. *Fix submitted by [Arvinda kumar](https://github.com/cedarvinda) in pull request [20564](https://github.com/magento/magento2/pull/20564)*. [GitHub-20563](https://github.com/magento/magento2/issues/20563)
 
@@ -943,7 +947,7 @@ Previously, when you reopened these categories, no checkboxes were checked.
 
 #### Configuration framework
 
-<!--- MAGETWO-97247-->* You can now enable shared catalogs using the `config:set` command. Previously, this comamnd enabled the shared catalog but did not create the necessary permissions to access it. 
+<!--- MAGETWO-97247-->* You can now enable shared catalogs using the `config:set` command. Previously, this command enabled the shared catalog but did not create the necessary permissions to access it. 
 
 #### Data framework
 
@@ -1211,7 +1215,7 @@ Previously, when you reopened these categories, no checkboxes were checked.
 
 <!--- ENGCOM-3219-->* Magento now populates the estimated billing address  field  on the checkout page with the default billing address as expected when the cart contains virtual products only. Previously, when a signed-in customer with different default shipping and billing addresses had a cart containing only virtual products, the cart estimation field was populated with the default shipping address information  instead of the default billing address information. *Fix submitted by [Lucas Calazans](https://github.com/LucasCalazans) in pull request [18095](https://github.com/magento/magento2/pull/18095)*. [GitHub-17744](https://github.com/magento/magento2/issues/17744)
 
-<!--- ENGCOM-3393-->* Invoice PDFs now include a populated FTP (Fixed Product Tax) amount field for orders when using Weee tax and FPT is enabled. Prviously, this information was displayed in order and invoice views, bot not captured in the PDF. *Fix submitted by [Mahesh Singh](https://github.com/maheshWebkul721) in pull request [19061](https://github.com/magento/magento2/pull/19061)*. [GitHub-18617](https://github.com/magento/magento2/issues/18617)
+<!--- ENGCOM-3393-->* Invoice PDFs now include a populated FTP (Fixed Product Tax) amount field for orders when using Weee tax and FPT is enabled. Previously, this information was displayed in order and invoice views, bot not captured in the PDF. *Fix submitted by [Mahesh Singh](https://github.com/maheshWebkul721) in pull request [19061](https://github.com/magento/magento2/pull/19061)*. [GitHub-18617](https://github.com/magento/magento2/issues/18617)
 
 <!--- MAGETWO-96475-->*  When an order placed with PayPal fails during checkout, Magento no longer processes payment for the order. Previously, orders that failed during  checkout when being processed through PayPal were processed. 
 
@@ -1244,7 +1248,7 @@ Previously, when you reopened these categories, no checkboxes were checked.
 
 ### Performance
 
-<!--- MAGETWO-95249 94346-->* New customer address handling improves the processing of many addresses on the Admin customer details page. This functionality was rewritten with UI components to increase platform performance, which in turn faciliates the management of customers with 3000 and more addresses. This refactoring includes these changes:
+<!--- MAGETWO-95249 94346-->* New customer address handling improves the processing of many addresses on the Admin customer details page. This functionality was rewritten with UI components to increase platform performance, which in turn facilitates the management of customers with 3000 and more addresses. This refactoring includes these changes:
 
 	* All actions on the Customer Addresses tab are now performed asynchronously with AJAX. This tab now contains the default billing address and default shipping address UI component blocks, customer addresses listing or grid, and customer address form in a modal window.
 
@@ -1668,6 +1672,7 @@ If UPS Type is set to `United Parcel Service` in the UPS Shipping Method Config
 
 3. Tap **Save Config**.
 
+* **Issue**: The Async/Bulk Web APIs support only the default store view. A hot fix for this issue will be available in the near future. This issue has been resolved with the Scope parameter for Async/Bulk API patch, which is now available. See [Patch for Magento Framework Message Queue and Store Scopes](https://community.magento.com/t5/Magento-DevBlog/Patch-for-Magento-Framework-Message-Queue-and-Store-Scopes/ba-p/135209) for a full discussion of this scope-related issue and patch contents.
 
 
 

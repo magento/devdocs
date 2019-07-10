@@ -1,8 +1,8 @@
 content_map:
 -
-  directory: guides/v2.0
+  directory: guides/v2.1
   repository: magento/devdocs
-  branch: 2.0
+  branch: 2.1
   filter: false
 -
   directory: guides/m1x
@@ -17,7 +17,7 @@ content_map:
 -
   directory: mftf
   repository: magento/magento2-functional-testing-framework
-  branch: develop
+  branch: master
   filter: true
 -
   directory: page-builder
