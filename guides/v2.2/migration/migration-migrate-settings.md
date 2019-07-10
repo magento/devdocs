@@ -21,7 +21,7 @@ According to our data migration [order]({{ page.baseurl }}/migration/migration-m
 2. Change to the Magento `/bin` directory or make sure it is added to your system PATH.
 
 {: .bs-callout .bs-callout-info }
-Make sure Magento is deployed in default mode. Developer mode can cause validation errors in the migration tool.
+Ensure Magento is deployed in default mode. Developer mode can cause validation errors in the migration tool.
 
 See the [First steps]({{ page.baseurl }}/migration/migration-migrate.html#migration-command-run-first) section for more details.
 
