@@ -25,6 +25,9 @@ pages:
     - label: Payment methods
       children:
 
+        - label: Authorize.Net
+          url: /graphql/payment-methods/authorize-net.html
+          
         - label: PayPal Payflow Link
           url: /graphql/payment-methods/payflow-link.html
           
