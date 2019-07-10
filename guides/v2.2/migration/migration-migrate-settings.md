@@ -68,7 +68,7 @@ You may ignore, rename or change the system configurations when migrating settin
 
 1. Make your changes in `settings.xml`.
 
-1. Specify the new name of the settings file for mapping. To do that, change the `<settings_map_file>` tag in the `path/to/config.xml` file.
+1. To specify the new name of the settings file for mapping change the `<settings_map_file>` tag in the `path/to/config.xml` file.
 
 For more details, see the [Settings migration mode]({{ page.baseurl }}/migration/migration-tool-internal-spec.html#settings-migration-mode) section of the Tool's [specification]({{ page.baseurl }}/migration/migration-tool-internal-spec.html).
 
