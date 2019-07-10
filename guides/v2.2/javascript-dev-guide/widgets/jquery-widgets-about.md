@@ -12,6 +12,7 @@ This guide discusses the following widgets:
 -   [Calendar widget]
 -   [Collapsible widget]
 -   [Confirm widget]
+-   [Dropdown widget]
 -   [DropdownDialog widget]
 -   [Gallery widget]
 -   [List widget]
@@ -35,6 +36,7 @@ Magento out of the box does not contain jQuery UI styles. Also, it is not recomm
 [Calendar widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_calendar.html
 [Collapsible widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_collapsible.html
 [Confirm widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_confirm.html
+[Dropdown widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_dropdown.html
 [DropdownDialog widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_dialog.html
 [Gallery widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_gallery.html
 [List widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_list.html
