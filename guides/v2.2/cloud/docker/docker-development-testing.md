@@ -20,6 +20,8 @@ Before you run functional tests, you must prepare your environment with the foll
     -  `80`—varnish
     -  `443`—web, tls
     -  `3306`—apache, mysql
+    
+1.  Add `127.0.0.1     web` to `/etc/hosts` file.
 
 1.  Switch to the preferred PHP version for running tests.
 
