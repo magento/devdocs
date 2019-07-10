@@ -80,6 +80,22 @@ Attribute |  Data Type | Description
 `no_route` | String | Contains the URL of the default page that you want to appear when if a 404 “Page not Found” error occurs
 `show_cms_breadcrumbs` | Int | Determines if a breadcrumb trail appears on all CMS pages in the catalog. Options: `0` (No) or `1` (Yes)
 
+### Supported Catalog attributes
+
+Use the `catalog` attributes to retrieve information about the store's catalog. These attributes are defined in the `CatalogGraphQl` module.
+
+Attribute |  Data Type | Description
+--- | --- | ---
+`product_url_suffix` | String | Product URL Suffix | `.html`
+`category_url_suffix` | String | Category URL Suffix | `.html`
+`title_separator` | String | Page Title Separator | `-`
+`list_mode` | String  | List Mode | `grid-list`
+`grid_per_page_values` | String | Products per Page on Grid Allowed Values | `9,15,30`
+`list_per_page_values` | String | Products per Page on List Allowed Values | `5,10,15,20,25`
+`grid_per_page` | Integer | Products per Page on Grid Default Value | `9`
+`list_per_page` | Integer | Products per Page on List Default Value | `10`
+`catalog_default_sort_by` | String | Default Sort By | `position`
+
 ## Example usage
 
 ### Query a store's configuation
@@ -199,6 +215,48 @@ The following query returns information about the store's content pages.
       "cms_no_route": "no-route",
       "cms_no_cookies": "enable-cookies",
       "show_cms_breadcrumbs": 1
+    }
+  }
+}
+```
+
+### Query a store's Catalog configuration
+
+The following query returns information about the store's catalog configuration.
+
+**Request**
+
+```text
+{
+  storeConfig {
+    product_url_suffix,
+    category_url_suffix,
+    title_separator,
+    list_mode,
+    grid_per_page_values,
+    list_per_page_values,
+    grid_per_page,
+    list_per_page,
+    catalog_default_sort_by
+  }
+}
+```
+
+**Response**
+
+```json
+{
+  "data": {
+    "storeConfig": {
+      "product_url_suffix": ".html",
+      "category_url_suffix": ".html",
+      "title_separator": "-",
+      "list_mode": "grid-list",
+      "grid_per_page_values": "9,15,30",
+      "list_per_page_values": "5,10,15,20,25",
+      "grid_per_page": 9,
+      "list_per_page": 10,
+      "catalog_default_sort_by": "position"
     }
   }
 }
