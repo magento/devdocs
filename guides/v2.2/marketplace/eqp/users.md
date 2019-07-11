@@ -392,5 +392,5 @@ GET /rest/v1/users/:mage_id/reports/sales
 GET /rest/v1/users/:mage_id/reports/refunds
 ```
 
-{: .bs-callout .bs-callout-info }
+{: .bs-callout-info }
 The Reports API specification is under design review. More details will be announced in the future..

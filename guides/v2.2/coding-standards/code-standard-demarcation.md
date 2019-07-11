@@ -180,7 +180,7 @@ section[role="main"] { ... }
 
 ### You must not hard-code CSS styles in JavaScript files
 
-{: .bs-callout .bs-callout-info }
+{: .bs-callout-info }
 Exception: CSS attributes where values must be calculated beyond the css-topics/LESS code.
 <ul>
    <li>Simplifies change of the default look and feel by adding CSS classes to and removing them from elements.</li>

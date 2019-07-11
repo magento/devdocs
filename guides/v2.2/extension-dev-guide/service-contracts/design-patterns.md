@@ -9,7 +9,7 @@ menu_order: 4
 <p>In the programming community, a <i>design pattern</i> is a recommended way of writing code that includes when to use, or not use, the pattern. Think of a [design pattern](https://glossary.magento.com/design-pattern) as a best practice with conditions.</p>
 <p>Design patterns for service contracts tell you which types of interfaces to define, and how and where to define and implement those  interfaces.</p>
 
-{: .bs-callout .bs-callout-info }
+{: .bs-callout-info }
 Service contract data interfaces are now mutable.
 
 ## Interface types and locations {#top-level-msc}
