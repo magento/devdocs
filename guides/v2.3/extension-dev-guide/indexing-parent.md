@@ -1,1 +1,1 @@
-../../v2.2/extension-dev-guide/indexing-parent.md
+../../../guides/v2.2/extension-dev-guide/indexing-parent.md

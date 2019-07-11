@@ -1,1 +1,1 @@
-../../../v2.2/architecture/archi_perspectives/ABasics_intro.md
+../../../../guides/v2.2/architecture/archi_perspectives/ABasics_intro.md

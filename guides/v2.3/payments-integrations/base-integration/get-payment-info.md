@@ -1,1 +1,1 @@
-../../../v2.2/payments-integrations/base-integration/get-payment-info.md
+../../../../guides/v2.2/payments-integrations/base-integration/get-payment-info.md

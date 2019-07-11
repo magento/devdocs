@@ -1,1 +1,1 @@
-../../../v2.2/frontend-dev-guide/layouts/layout-types.md
+../../../../guides/v2.2/frontend-dev-guide/layouts/layout-types.md

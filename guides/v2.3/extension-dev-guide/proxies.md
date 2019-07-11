@@ -1,1 +1,1 @@
-../../v2.2/extension-dev-guide/proxies.md
+../../../guides/v2.2/extension-dev-guide/proxies.md

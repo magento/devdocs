@@ -1,1 +1,1 @@
-../../../v2.2/config-guide/bootstrap/magento-how-to-set.md
+../../../../guides/v2.2/config-guide/bootstrap/magento-how-to-set.md

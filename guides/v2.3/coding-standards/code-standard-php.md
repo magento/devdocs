@@ -1,1 +1,1 @@
-../../v2.2/coding-standards/code-standard-php.md
+../../../guides/v2.2/coding-standards/code-standard-php.md

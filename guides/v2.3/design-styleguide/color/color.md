@@ -1,1 +1,1 @@
-../../../v2.2/design-styleguide/color/color.md
+../../../../guides/v2.2/design-styleguide/color/color.md

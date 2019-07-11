@@ -1,1 +1,1 @@
-../../../v2.2/frontend-dev-guide/css-topics/css-practice.md
+../../../../guides/v2.2/frontend-dev-guide/css-topics/css-practice.md

@@ -13,6 +13,9 @@ pages:
           url: /test/integration/annotations.html
           children:
 
+          - label: '@depends'
+            url: /test/integration/annotations/depends.html
+
           - label: '@magentoAppArea'
             url: /test/integration/annotations/magento-app-area.html
 
