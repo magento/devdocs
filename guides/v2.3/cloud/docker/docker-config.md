@@ -239,7 +239,7 @@ The `{{site.data.var.ct}}` version 2002.0.18 and later supports developer mode.
         ```
        
     {: .bs-callout .bs-callout-info}
-    If you use `docker-sync` you should skip this step.
+    If you use `docker-sync` for file synchronization, skip this step.
 
 1. Install Magento in your Docker environment.
 
