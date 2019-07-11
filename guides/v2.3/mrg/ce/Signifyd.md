@@ -53,7 +53,7 @@ The following interfaces (marked with the `@api` annotation) provide methods tha
 
 - might be used by `Magento\Signifyd\Api\CaseRepositoryInterface` to retrieve a list of case entities by specific conditions
 
-For information about a public API in Magento 2, see [Public interfaces & APIs](https://devdocs.magento.com/guides/v2.1/extension-dev-guide/api-concepts.html).
+For information about a public API in Magento 2, see [Public interfaces & APIs]({{ page.baseurl }}/extension-dev-guide/api-concepts.html).
 
 ## Additional information
 
@@ -73,7 +73,7 @@ The Debug Mode may be enabled in the module configuration. This logs the communi
 
 The Magento_Signifyd module does not introduce backward incompatible changes.
 
-You can track [backward incompatible changes in patch releases]({{ page.baseurl }}/release-notes/backward-incompatible-changes/).
+You can track [backward incompatible changes in patch releases](https://devdocs.magento.com/guides/v2.0/release-notes/changes/ee_changes.html).
 
 ### Processing supplementary payment information
 

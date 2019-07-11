@@ -1,1 +1,1 @@
-../../../v2.2/payments-integrations/base-integration/admin-integration.md
+../../../../guides/v2.2/payments-integrations/base-integration/admin-integration.md

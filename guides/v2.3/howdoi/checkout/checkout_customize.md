@@ -1,1 +1,1 @@
-../../../v2.2/howdoi/checkout/checkout_customize.md
+../../../../guides/v2.2/howdoi/checkout/checkout_customize.md

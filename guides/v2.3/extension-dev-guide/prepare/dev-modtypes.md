@@ -1,1 +1,1 @@
-../../../v2.2/extension-dev-guide/prepare/dev-modtypes.md
+../../../../guides/v2.2/extension-dev-guide/prepare/dev-modtypes.md

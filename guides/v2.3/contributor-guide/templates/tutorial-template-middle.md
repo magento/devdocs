@@ -1,1 +1,1 @@
-../../../v2.2/contributor-guide/templates/tutorial-template-middle.md
+../../../../guides/v2.2/contributor-guide/templates/tutorial-template-middle.md

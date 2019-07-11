@@ -1,1 +1,1 @@
-../../../v2.2/cloud/project/ece-tools-upgrade-project.md
+../../../../guides/v2.2/cloud/project/ece-tools-upgrade-project.md

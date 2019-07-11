@@ -6,7 +6,7 @@ redirect_from: guides/v2.3/comp-mgr/install-extensions/inventory-management-inst
 
 {{site.data.var.im}} modules provide all inventory features and options for Single and Multi Source merchants to manage product quantities and stock for sales channels. These features are available in 2.3.x {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}.
 
-These features and extensions were developed as part of the [Multi Source Inventory (MSI) project](https://github.com/magento-engcom/msi) through the Magento Community Engineering program.
+These features and extensions were developed as part of the [Magento Inventory (MSI) project](https://github.com/magento/inventory) through the Magento Community Engineering program.
 
 {{site.data.var.im}} installs with Magento {{site.data.var.ce}} and {{site.data.var.ee}} with all features enabled by default. No additional steps are required for enabling these inventory features. Upgrades from v2.1.x or 2.2.x may require additional steps. See [Upgrade Inventory Management](#upgrade-inventory-management).
 
@@ -57,7 +57,7 @@ The {{site.data.var.im}} installation process adds all modules to the `<Magento_
         'Magento_InventoryProductAlert' => 0,
         'Magento_InventoryReservations' => 0,
         'Magento_InventoryReservationsApi' => 0,
-        'Magento_InventoryReservationsCli' => 0,
+        'Magento_InventoryReservationCli' => 0,
         'Magento_InventorySales' => 0,
         'Magento_InventorySalesAdminUi' => 0,
         'Magento_InventorySalesApi' => 0,
@@ -121,7 +121,7 @@ To disable {{site.data.var.im}}, see the instructions for [Enable or disable mod
         'Magento_InventoryProductAlert' => 0,
         'Magento_InventoryReservations' => 0,
         'Magento_InventoryReservationsApi' => 0,
-        'Magento_InventoryReservationsCli' => 0,
+        'Magento_InventoryReservationCli' => 0,
         'Magento_InventorySales' => 0,
         'Magento_InventorySalesAdminUi' => 0,
         'Magento_InventorySalesApi' => 0,
@@ -174,30 +174,6 @@ See the following guides for more information on upgrades:
 
 * [Software Update Guide]({{site.baseurl}}/guides/v2.3/comp-mgr/bk-compman-upgrade-guide.html)
 * [Enable or disable modules]({{site.baseurl}}/guides/v2.3/install-gde/install/cli/install-cli-subcommands-enable.html)
-
-### Upgrade to v1.1.2 Beta
-
-Before installing, review the {{site.data.var.im}} [compatibility information]({{site.baseurl}}/release) for your Magento installation.
-
-The Composer minimum stability has to be changed to `beta` to support this pre-release: `"minimum-stability": "beta"`.
-
-To install 1.1.2-beta with Magento v2.3.0, update the package version in Composer. The following commands update and install beta:
-
-```terminal
-composer config minimum-stability beta
-composer config prefer-stable true
-composer require --no-update "magento/inventory-composer-metapackage:1.1.2-beta2"
-composer update
-```
-
-Magento v2.3.1 release has a strict version constraint for the Inventory Management package. The following commands adjust the Composer file with an inline alias, overriding the existing constraint, and update and install beta:
-
-```terminal
-composer config minimum-stability beta
-composer config prefer-stable true
-composer require --no-update "magento/inventory-composer-metapackage:1.1.2-beta2 as 1.1.1"
-composer update
-```
 
 ## Additional information
 

@@ -1,1 +1,1 @@
-../../../v2.2/install-gde/install/get-help.md
+../../../../guides/v2.2/install-gde/install/get-help.md
