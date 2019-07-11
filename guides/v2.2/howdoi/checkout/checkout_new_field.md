@@ -160,22 +160,29 @@ You can set/get these attributes values by creating an instance of the  `Magento
 <?php
 
 // ... //
-use Magento\Framework\View\Element;
-use Magento\Checkout\Api\Data;
+
+use Magento\Framework\View\Element\Template;
+use Magento\Framework\View\Element\Template\Context;
+use Magento\Checkout\Api\Data\ShippingInformationInterface;
 
 class MyBlock extends Template {
 
-    private $_addressInformation;
+    private $addressInformation;
 
     /**
+     * @param Context $context
      * @param ShippingInformationInterface $addressInformation
+     * @param array $data
      */
     public function __construct(
-      ShippingInformationInterface $addressInformation
+        Context $context,
+        ShippingInformationInterface $addressInformation,
+        array $data = []
     ) {
-      $this->_addressInformation = $addressInformation;
+        $this->addressInformation = $addressInformation;
+        parent::__construct($context, $data);
     }
-    
+
     /**
      * Get custom Shipping Charge
      *
@@ -183,8 +190,8 @@ class MyBlock extends Template {
      */
     public function getShippingCharge()
     {
-      $extAttributes = $addressInformation->getExtensionAttributes();
-      return $extAttributes->getCustomShippingCharge(); //get custom attribute data.
+        $extAttributes = $this->addressInformation->getExtensionAttributes();
+        return $extAttributes->getCustomField(); //get custom attribute data.
     }
 }
 ```
