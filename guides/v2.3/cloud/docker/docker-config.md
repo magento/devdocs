@@ -190,7 +190,7 @@ The `{{site.data.var.ct}}` version 2002.0.18 and later supports developer mode.
     ```
     
     By default, the docker-compose configuration will be adapted to use 'docker-sync' for file synchronization.
-    If you want to use 'mutagen.io', you must run the command with the option `--sync-engine=mutagen`
+    To use 'mutagen.io' for file synchronization, you must run the command with the `--sync-engine=mutagen` option.
     
     For example:
     
