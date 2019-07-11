@@ -1,13 +1,6 @@
 ---
 group: php-developer-guide
-subgroup: 02_Prepare
 title: Roadmap for developing and packaging components
-menu_title: Roadmap for developing and packaging components
-menu_order: 50
-menu_node:
-redirect_from:
-  - /guides/v2.1/mktpl-quickstart/dev-summary.html	
-  - /guides/v2.1/mktpl-quickstart/dev-intro.html	
 ---
 
 To develop your component, use the following steps:
