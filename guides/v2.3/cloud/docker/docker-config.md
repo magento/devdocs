@@ -189,7 +189,7 @@ The `{{site.data.var.ct}}` version 2002.0.18 and later supports developer mode.
     ./vendor/bin/ece-tools docker:build --mode="developer"
     ```
     
-    By default, the docker-compose configuration will be adapted to use 'docker-sync' for file synchronization.
+    By default, the docker-compose configuration uses 'docker-sync' for file synchronization.
     To use 'mutagen.io' for file synchronization, you must run the command with the `--sync-engine=mutagen` option.
     
     For example:
