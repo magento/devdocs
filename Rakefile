@@ -62,24 +62,10 @@ desc 'Pull docs from external repositories'
 task init: %w[multirepo:init]
 
 desc 'Run checks (image optimization).'
-task check: %w[check:image_optim] 
+task check: %w[check:image_optim check:mdl] 
 
 desc 'Generate data for the weekly digest.'
 task :whatsnew do
   print 'Generating data for the weekly digest: $ '.magenta
   sh 'whatsup_github'
-end
-
-desc 'Check Markdown syntax in modified files or in a particular file or directory by path (e.g. path=mftf)'
-task :lint do
-  path = ENV['path']
-  unless path
-    staged_files = `git ls-files -m`.split("\n")
-    staged_md_files = staged_files.select { |file| File.extname(file) == '.md' }
-    abort 'Cannot find any modified .md files.' if staged_md_files.empty?
-    path = staged_md_files.join(' ')
-  end
-  report = `bin/mdl #{path}`
-  puts report.yellow
-  puts 'The rules are defined in _checks/md_style'
 end
