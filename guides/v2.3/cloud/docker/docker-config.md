@@ -224,7 +224,7 @@ The `{{site.data.var.ct}}` version 2002.0.18 and later supports developer mode.
     If it is the first installation you should wait a few minutes for synchronization files
     
     {: .bs-callout .bs-callout-info}
-    If you want to use `mutagen.io` you should skip this step. `Mutagen` should be launched after deploying docker containers
+    If you use `mutagen.io` for file synchronization, skip this step. You start `mutagen.io` _after_ deploying the docker containers.
 
 1.  Build files to containers and run in the background.
 
