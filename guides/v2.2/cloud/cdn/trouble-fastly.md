@@ -2,7 +2,6 @@
 group: cloud-guide
 title: Fastly troubleshooting
 redirect_from:
-   - /guides/v2.1/cloud/trouble/trouble_fastly.html
    - /guides/v2.2/cloud/trouble/trouble_fastly.html
    - /guides/v2.3/cloud/trouble/trouble_fastly.html
 functional_areas:

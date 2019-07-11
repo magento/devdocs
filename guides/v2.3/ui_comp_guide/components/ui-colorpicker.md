@@ -7,33 +7,11 @@ The ColorPicker component uses the [Spectrum](https://bgrins.github.io/spectrum/
 The ColorPicker component must be a child of the [Listing]({{ page.baseurl }}/ui_comp_guide/components/ui-listing-grid.html) or [Form]({{ page.baseurl }}/ui_comp_guide/components/ui-form.html) components.
 
 ## Configuration options
-
-<table>
-  <tr>
-    <th>Option</th>
-    <th>Description</th>
-    <th>Type</th>
-    <th>Default Value</th>
-  </tr>
-  <tr>
-    <td><code>colorFormat</code></td>
-    <td>Defines the color format displayed in the selection tool and input field. Valid formats: <code>hex</code>, <code>rgb</code>, <code>hsl</code>, <code>hsv</code>, <code>name</code>, <code>none</code></td>
-    <td><code>string</code></td>
-    <td>-</td>
-  </tr>
-  <tr>
-    <td><code>colorPickerMode</code></td>
-    <td>Defines the mode that affects the available color picker functionality. Valid modes: <code>simple</code>, <code>full</code>, <code>noalpha</code>, <code>palette</code></td>
-    <td><code>string</code></td>
-    <td><code>-</code></td>
-  </tr>
-  <tr>
-    <td><code>elementTmpl</code></td>
-    <td>The path to the <code>.html</code> template of the particular field type (color-picker).</td>
-    <td><code>String</code></td>
-    <td><code>ui/form/element/email</code></td>
-  </tr>
-</table>
+|Option|Description|Type|Default Value|
+|--- |--- |--- |--- |
+|`colorFormat`|Defines the color format displayed in the selection tool and input field. Valid formats: `hex`, `rgb`, `hsl`, `hsv`, `name`, `none`|`string`|`-`|
+|`colorPickerMode`|Defines the mode that affects the available color picker functionality. Valid modes: `simple`, `full`, `noalpha`, `palette`|`string`|`-`|
+|`elementTmpl`|The path to the `.html` template of the particular field type (color-picker).|`string`|`ui/form/element/email`|
 
 ## Sources files
 
@@ -61,4 +39,3 @@ The ColorPicker component must be a child of the [Listing]({{ page.baseurl }}/ui
     ...
     </form>
 ```
-
