@@ -2,7 +2,6 @@
 group: cloud-guide
 title: Smart wizards
 redirect_from:
-  - /guides/v2.1/cloud/env/smart-wizards.html
   - /guides/v2.2/cloud/env/smart-wizards.html
   - /guides/v2.3/cloud/env/smart-wizards.html
 functional_areas:
