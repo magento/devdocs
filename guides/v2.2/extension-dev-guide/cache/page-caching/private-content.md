@@ -1,16 +1,9 @@
 ---
 group: php-developer-guide
-subgroup: 09_Full page caching
 title: Private content
-menu_title: Private content
-menu_order: 18
-menu_node:
 redirect_from:
-  - /guides/v2.1/config-guide/cache/cache-priv-priv.html
   - /guides/v2.2/config-guide/cache/cache-priv-priv.html
-  - /guides/v2.1/config-guide/cache/cache-priv-context.html
   - /guides/v2.2/config-guide/cache/cache-priv-context.html
-  - /guides/v2.1/config-guide/cache/cache-priv-inval.html
   - /guides/v2.2/config-guide/cache/cache-priv-inval.html
 ---
 

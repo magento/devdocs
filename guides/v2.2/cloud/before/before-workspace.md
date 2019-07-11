@@ -1,14 +1,7 @@
 ---
 group: cloud-guide
-subgroup: 080_setup
 title: Prepare for local environment setup
-menu_title: Prepare for local environment setup
-menu_order: 5
-menu_node:
 redirect_from:
-  - /guides/v2.1/cloud/access-acct/set-up-env.html
-  - /guides/v2.1/cloud/access-acct/set-up-env.html
-  - /guides/v2.1/cloud/access-acct/first-time-setup_template.html
   - /guides/v2.2/cloud/access-acct/first-time-setup_template.html
 functional_areas:
   - Cloud
