@@ -101,7 +101,7 @@ The following example adds an array-item to the `extendedConfigData` array withi
 </config>
 ```
 
-Besides configuring the constructor argument you have to extend the type `StoreConfig` within in the `etc/schema.graphqls` as shown below
+You must also extend the type `StoreConfig` within in the `etc/schema.graphqls` file, as shown below:
 
 ```text
 type StoreConfig {
