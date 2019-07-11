@@ -1,6 +1,5 @@
 ---
 group: javascript-developer-guide
-subgroup: 3_Widgets
 title: ToggleAdvanced widget
 contributor_name: Atwix
 contributor_link: https://www.atwix.com/
@@ -8,9 +7,9 @@ contributor_link: https://www.atwix.com/
 
 ## Overview
 
-The ToggleAdvanced {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} is used to toggle HTML class for selectors by click on a toggle element.
+Use the ToggleAdvanced [widget](https://glossary.magedevteam.com/widget) to toggle the HTML class for selectors by clicking on a toggle element.
 
-Also, it allows toggling a clicked element class and a clicked element text if an element is toggled.
+The widget also allows toggling a clicked element class and clicked element text if an element is toggled.
 
 The ToggleAdvanced widget source is [lib/web/mage/toggle.js].
 
@@ -18,7 +17,7 @@ The ToggleAdvanced widget source is [lib/web/mage/toggle.js].
 
 For information about how to initialize a widget in a JS component or `.phtml` template, see the [Initialize JavaScript] topic.
 
-Generally the ToggleAdvanced widget is instantiated like following:
+To instantiate the ToggleAdvanced widget:
 
 ```javascript
 $("#element").toggleAdvanced();
@@ -55,7 +54,7 @@ The ToggleAdvanced widget has the following options:
 
 ### `baseToggleClass`
 
-The class used to be toggled on clicked element.
+The class used to toggle on a clicked element.
 
 **Type**: String
 
