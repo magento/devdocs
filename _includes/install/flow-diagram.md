@@ -6,7 +6,6 @@ The diagram shows the following:
 
 	Install the prerequisite software, including PHP, Apache, and MySQL. Consult the system requirements for specific information:
 
-	*	[2.1.x system requirements]({{ site.gdeurl21 }}install-gde/system-requirements-tech.html)
 	*	[2.2.x system requirements]({{ site.gdeurl22 }}install-gde/system-requirements-tech.html)
 	*	[2.3.x system requirements]({{ site.gdeurl23 }}install-gde/system-requirements-tech.html)
 

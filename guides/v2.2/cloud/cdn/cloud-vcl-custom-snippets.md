@@ -1,9 +1,7 @@
 ---
 group: cloud-guide
-subgroup: 090_configure
 title: Custom Fastly VCL snippets
 redirect_from:
-   - /guides/v2.1/cloud/configure/cloud-vcl-custom-snippets.html
    - /guides/v2.2/cloud/configure/cloud-vcl-custom-snippets.html
    - /guides/v2.3/cloud/configure/cloud-vcl-custom-snippets.html
 functional_areas:
