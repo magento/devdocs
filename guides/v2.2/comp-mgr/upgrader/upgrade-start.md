@@ -13,9 +13,6 @@ functional_areas:
 
 Before continuing, complete all tasks discussed in [Prerequisites]({{ page.baseurl }}/comp-mgr/prereq/prereq_compman.html).
 
-{:.bs-callout .bs-callout-warning}
-If you're upgrading to version 2.1, see [Upgrade to Magento version 2.1 (June 22, 2016)]({{ site.baseurl }}/guides/v2.1/release-notes/tech_bull_21-upgrade.html).
-
 ## Optional custom maintenance page
 
 During the time you're upgrading, your [storefront](https://glossary.magento.com/storefront) is partially available. Users can see a list of files and so on but cannot shop or check out.
