@@ -1,6 +1,5 @@
 ---
 group: coding-standards
-title: Technical guidelines
 redirect_from:
     - /guides/v2.2/coding-standards/technical-guidelines/technical-guidelines.html
 functional_areas:
@@ -43,7 +42,7 @@ Use [RFC2119] to interpret keywords like:
 
 1.3. Type hints for scalar arguments SHOULD be used.
 
-1.3.1. All new PHP files MUST have strict type mode enabled by starting with `declare(strict_types=1);`. All updated PHP files SHOULD have strict type mode enabled. PHP interfaces SHOULD NOT have this declaration.
+1.3.1. All new PHP files MUST have strict type mode enabled by starting with `declare(strict_types=1);`. All updated PHP files SHOULD have strict type mode enabled. PHP interfaces MAY have this declaration.
 
 ## 2. Class design
 
@@ -714,6 +713,37 @@ You need to read configuration from different sources (like database or filesyst
 11.2.2. `ObjectManager` MUST NOT be used in unit tests.
 
 11.2.3. `ObjectManagerHelper` MAY BE used to automatically mock all dependencies of the object under test.
+
+### 11.3. Functional Testing
+
+#### 11.3.1. Pages
+
+11.3.1.1. Page file names MUST follow this pattern:
+
+* {Admin or Storefront}{Description}Page.xml, where {Description} briefly describes the page under test.
+* Use [PascalCase](http://wiki.c2.com/?PascalCase).
+* Example: AdminProductAttributeGridPage.xml
+
+11.3.1.2. Page `name` attribute MUST be the same as the file name.
+
+11.3.1.3. Page `module` attribute MUST follow this pattern:
+
+* {VendorName}_{ModuleName}
+* Example: Magento_Backend
+
+11.3.1.4. There MUST be only one `<page>` entity per file.
+
+#### 11.3.2. Sections
+
+11.3.2.1. Section file names MUST follow this pattern:
+
+* {Admin or Storefront}{Description}Section.xml, where {Description} briefly describes the section under test.
+* Use [PascalCase](http://wiki.c2.com/?PascalCase).
+* Example: StorefrontCheckoutCartSummarySection.xml
+
+11.3.2.2. Section `name` attribute MUST be the same as the file name.
+
+11.3.2.3. There MUST be only one `<section>` entity per file.
 
 ## 12. Web API
 

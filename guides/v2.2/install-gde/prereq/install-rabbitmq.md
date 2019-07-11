@@ -118,7 +118,7 @@ To configure support for SSL, edit the `ssl` and `ssl_options` parameters in the
       'user' => 'magento',
       'password' => 'magento',
       'virtualhost' => '/',
-      'ssl' => true,
+      'ssl' => 'true',
       'ssl_options' => [
             'cafile' =>  '/etc/pki/tls/certs/DigiCertCA.crt',
             'certfile' => '/path/to/magento/app/etc/ssl/test-rabbit.crt',

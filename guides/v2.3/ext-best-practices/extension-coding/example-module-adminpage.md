@@ -31,6 +31,7 @@ This command creates the `MyCompany` company directory and the `ExampleAdminNewP
 These initial boilerplate files are the bare essential files needed for any Magento module.
 
 ### `composer.json`
+
 {:.no_toc}
 In the module's root directory, create the file `composer.json`. This file gives [composer](https://glossary.magento.com/composer) the ability to install this module and its dependencies.
 For more information see: [`composer.json`]({{ page.baseurl }}/extension-dev-guide/build/composer-integration.html).
@@ -60,6 +61,7 @@ For more information see: [`composer.json`]({{ page.baseurl }}/extension-dev-gui
 {% endcollapsible %}
 
 ### `registration.php`
+
 {:.no_toc}
 In the module's root directory, create the file `registration.php`. This file registers the module `MyCompany_ExampleAdminNewPage` with Magento.
 
