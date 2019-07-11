@@ -2,9 +2,7 @@
 group: cloud-guide
 title: Pro architecture
 redirect_from:
-  - /guides/v2.1/cloud/discover-arch.html
   - /guides/v2.2/cloud/discover-arch.html
-  - /guides/v2.1/cloud/reference/discover-arch.html
   - /guides/v2.2/cloud/reference/discover-arch.html
   - /guides/v2.3/cloud/reference/discover-arch.html
 functional_areas:

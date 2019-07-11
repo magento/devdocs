@@ -855,7 +855,7 @@ Thanks to our hardworking Magento Open Source community members for the followin
 
 ### Payment methods
 
-<!--- 72305-->* We’ve added support for the change to the USPS API that USPS implemented on September 1, 2017. After installing or upgrading to this release, Magento will display the Domestic rate for USPS, First-Class Mail Parcel as expected. Previously, the USPS First-Class Mail Parcel option was not available after September 1, 2017 on installations running Magento 2.x unless you applied the workaround described [here]({{ site.baseurl }}/guides/v2.1/release-notes/tech_bull_USPS-patch-Sept2017.html). 
+<!--- 72305-->* We’ve added support for the change to the USPS API that USPS implemented on September 1, 2017. After installing or upgrading to this release, Magento will display the Domestic rate for USPS, First-Class Mail Parcel as expected. Previously, the USPS First-Class Mail Parcel option was not available after September 1, 2017 on installations running Magento 2.x. 
 
 <!--- 56695-->* You can now successfully complete Paypal checkout with products that have custom options. [GitHub-5938](https://github.com/magento/magento2/issues/5938)
 
@@ -1113,7 +1113,7 @@ This release includes substantial improvements to Magento caching, image process
 
 <!---56914-->* Versioning of [static files](https://glossary.magento.com/static-files) (including CSS, JS, font, and image files) is now enabled by default.
 
-<!---57904-->* We've improved the speed of static asset deployment. See [Deploy static view files]({{ site.baseurl }}/guides/v2.1/config-guide/cli/config-cli-subcommands-static-view.html){: target="_blank"} for more information about available options.
+<!---57904-->* We've improved the speed of static asset deployment. See [Deploy static view files]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html){: target="_blank"} for more information about available options.
 
 <!--- 52614 -->* The `setup:static-content:deploy` command now provides flags that you can use to exclude or include individual themes, areas, and locales. For more information, see [GitHub-4294](https://github.com/magento/magento2/issues/4294).
 
