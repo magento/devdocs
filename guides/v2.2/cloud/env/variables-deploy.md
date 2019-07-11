@@ -98,8 +98,9 @@ By default, the deployment process overwrites all settings in the `env.php` file
 
 #### To see a list of message queue consumers:
 
-    ./bin/magento queue:consumers:list
-
+```bash
+./bin/magento queue:consumers:list
+```
 ### `CRYPT_KEY`
 
 -  **Default**—_Not set_
@@ -132,6 +133,48 @@ stage:
       some_config: 'some_new_value'
       _merge: true
 ```
+
+Also, you can configure a table prefix. 
+
+{: .bs-callout .bs-callout-warning}
+If you do not use the merge option with the table prefix, you must provide default connection settings or the deploy fails validation.
+
+The following example uses the `ece_` table prefix with default connection settings instead of using the `_merge` option:
+
+```yaml
+stage:
+  deploy:
+    DATABASE_CONFIGURATION:
+      connection:
+        default:
+          username: user 
+          host: host
+          dbname: magento
+          password: password
+      table_prefix: 'ece_'
+```
+
+Sample output:
+
+```terminal
+MariaDB [main]> SHOW TABLES;
++-------------------------------------+
+| Tables_in_main                      |
++-------------------------------------+
+| ece_admin_passwords                 |
+| ece_admin_system_messages           |
+| ece_admin_user                      |
+| ece_admin_user_session              |
+| ece_adminnotification_inbox         |
+| ece_amazon_customer                 |
+| ece_authorization_rule              |
+| ece_cache                           |
+| ece_cache_tag                       |
+| ece_captcha_log                     |
+.....
+```
+{: .no-copy}
+
 
 ### `ELASTICSUITE_CONFIGURATION`
 
@@ -193,6 +236,19 @@ stage:
 
 {:.bs-callout .bs-callout-info}
 The {{ site.data.var.ece }} deploy process always enables Google Analytics on Production environments.
+
+### `FORCE_UPDATE_URLS`
+
+-  **Default**—`true`
+-  **Version**—Magento 2.1.4 and later
+
+On deployment to Pro or Starter Staging and Production environments, this variable replaces Magento base URLs in the database with the project URLs specified by the [`MAGENTO_CLOUD_ROUTES`]({{page.baseurl}}/cloud/env/variables-cloud.html) variable. Use this setting to override the default behavior of the [UPDATE_URLS](#update_urls) deploy variable which is ignored when deploying to Staging or Production environments. 
+
+```yaml
+stage:
+  deploy:
+    FORCE_UPDATE_URLS: true
+```
 
 ### `MYSQL_USE_SLAVE_CONNECTION`
 
@@ -335,7 +391,7 @@ stage:
 -  **Default**—_Not set_
 -  **Version**—Magento 2.1.4 and later
 
-You can configure multiple locales per theme as long as the theme is not excluded using the `SCD_EXCLUDE_THEMES` variable during deployment. This is ideal if you want to speed up the deployment process by reducing the amount of unnecessary theme files. For example, you can deploy the _magento/backend_ theme in English and a custom theme in other languages.
+You can configure multiple locales per theme as long as the theme is not excluded using the [`SCD_EXCLUDE_THEMES` variable](#scd_exclude_themes) during deployment. This configuration is ideal to speed up the deployment process by reducing the amount of unnecessary theme files. For example, you can deploy the _magento/backend_ theme in English and a custom theme in other languages.
 
 The following example deploys the `Magento/backend` theme with three locales:
 
@@ -495,7 +551,7 @@ stage:
 -  **Default**—`true`
 -  **Version**—Magento 2.1.4 and later
 
-Generates symlinks for static content. This setting is vital in the Pro Production environment for the three-node cluster. When this variable is set to `false`, it must copy every file during the deployment, which increases deployment time. Setting `SCD_ON_DEMAND` to `true` disables this variable.
+Generates symlinks for static content. This setting is vital in the Pro Production environment for the three-node cluster. When this variable is set to `false`, it must copy every file during the deployment, which increases deployment time. Setting the [`SCD_ON_DEMAND` variable]({{page.baseurl}}/cloud/env/variables-global.html#scd_on_demand) to `true` disables this variable.
 
 If you generate static content during the build phase, it creates a symlink to the content folder.
 If you generate static content during the deploy phase, it writes directly to the content folder.
@@ -512,15 +568,15 @@ stage:
 -  **Default**—`true`
 -  **Version**—Magento 2.1.4 and later
 
-On deployment, replace Magento base URLs in the database with project URLs. This is useful for local development, where base URLs are set up for your local environment. When you deploy to a Cloud environment, we change the URLs so you can access your storefront and Magento Admin using project URLs.
+On deployment, replace Magento base URLs in the database with the project URLs specified by the [`MAGENTO_CLOUD_ROUTES`]({{page.baseurl}}/cloud/env/variables-cloud.html) variable. This configuration is useful for local development, where base URLs are set up for your local environment. When you deploy to a Cloud environment, we change the URLs so you can access your storefront and Magento Admin using project URLs.
+
+If you need to update URLs when deploying to Pro or Starter Staging and Production environments,  use the [`FORCE_UPDATE_URLS`](#force_update_urls) variable. 
 
 ```yaml
 stage:
   deploy:
     UPDATE_URLS: false
 ```
-
-You should set this variable to `false` _only_ in Staging or Production environments, where the base URLs cannot change. For Pro, we already set this to `false` for you.
 
 ### `VERBOSE_COMMANDS`
 

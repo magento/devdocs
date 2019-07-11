@@ -17,7 +17,7 @@ Upgrading the Magento applications and extensions you obtain from Magento Market
 
 ### Composer (latest stable version)
 
-{% glossarytooltip d85e2d0a-221f-4d03-aa43-0cda9f50809e %}Composer{% endglossarytooltip %} is required for developers who wish to contribute to the Magento 2 codebase or anyone who wishes to develop Magento extensions.
+[Composer](https://glossary.magento.com/composer) is required for developers who wish to contribute to the Magento 2 codebase or anyone who wishes to develop Magento extensions.
 
 ### Web servers
 
@@ -63,13 +63,11 @@ For more information, see [Required PHP settings]({{ page.baseurl }}/install-gde
 
 ### SSL
 
-* A valid {% glossarytooltip 363d6806-6a7d-4cb6-bc47-efc62bc26a1c %}security certificate{% endglossarytooltip %} is required for HTTPS.
+* A valid [security certificate](https://glossary.magento.com/security-certificate) is required for HTTPS.
 * Self-signed SSL certificates are not supported.
 * Transport Layer Security (TLS) requirement - PayPal and `repo.magento.com` both require TLS 1.1 or later:
 
   * [More information about PayPal]({{ page.baseurl }}/install-gde/system-requirements_tls1-2.html)
-
-  * [More information about `repo.magento.com`]({{ site.baseurl }}/guides/v2.1/release-notes/tech_bull_tls-repo.html)
 
 ### Mail server
 

@@ -35,9 +35,9 @@ Follow these steps to download and apply this patch:
 
 ### Merchant tool enhancements
 
-* **Inventory Management (provided by [Multi Source Inventory (MSI)](https://github.com/magento-engcom/msi))** is now available with Magento 2.3.0. It lets merchants manage inventory for all product types in a single warehouse and across complex shipping networks. Merchants can manage these locations as sources, tracking on-hand inventory quantities per product. Stocks map these sources and sales channels (websites) to provide an accurate, salable quantity as inventory pools for concurrent checkout and product reservations. Inventory Management also updates order and shipment options, giving you full control over your stock. 
+* **Inventory Management (provided by [Magento Inventory (was MSI)](https://github.com/magento/inventory))** is now available with Magento 2.3.0. It lets merchants manage inventory for all product types in a single warehouse and across complex shipping networks. Merchants can manage these locations as sources, tracking on-hand inventory quantities per product. Stocks map these sources and sales channels (websites) to provide an accurate, salable quantity as inventory pools for concurrent checkout and product reservations. Inventory Management also updates order and shipment options, giving you full control over your stock. 
   	
-	MSI is a Magento Community Engineering special project open to contributors. To take part and contribute, see the [MSI GitHub](https://github.com/magento-engcom/msi) repository and [wiki](https://github.com/magento-engcom/msi/wiki) to get started. Join us in our [Slack](https://magentocommeng.slack.com/messages/C5FU5E2HY) channel (or [self signup](https://tinyurl.com/engcom-slack)) to discuss the project.
+	Magento Inventory is a Magento Community Engineering special project open to contributors. To take part and contribute, see the [Magento Inventory GitHub](https://github.com/magento/inventory) repository and [wiki](https://github.com/magento/inventory/wiki) to get started. Join us in our [Slack](https://magentocommeng.slack.com/messages/C5FU5E2HY) channel (or [self signup](https://tinyurl.com/engcom-slack)) to discuss the project.
    * [Inventory Management overview](https://devdocs.magento.com/guides/v2.3/inventory/index.html) for developer documentation 
    * [Managing Inventory](https://docs.magento.com/m2/ce/user_guide/catalog/inventory-management.html) for merchant information and instructions 
 
@@ -1138,7 +1138,7 @@ See [Magento Security Center](https://magento.com/security/patches/magento-2.2.7
 
 <!---MAGETWO-85662 -->* The **Modified** date field is now updated as expected when you save a page in a deployment running Magento 2.2.1.  *Fix submitted by [Oscar Recio](https://github.com/osrecio) in pull request  [12637](https://github.com/magento/magento2/pull/12637)*. [GitHub-12625](https://github.com/magento/magento2/issues/12625)
 
-<!--- MAGETWO-85673-->* When the **Redirect Customer to Account Dashboard after Logging in** setting is disabled, Magento now includes the login URL (including the referer in base64 encoding) from the `window.checkout` object as expected (for example, https://myshop.com/customer/account/login/referer/aHR0cHM6Ly9teXNob3AuY29tL2NoZWNrb3V0). 
+<!--- MAGETWO-85673-->* When the **Redirect Customer to Account Dashboard after Logging in** setting is disabled, Magento now includes the login URL (including the referrer in base64 encoding) from the `window.checkout` object as expected (for example, https://myshop.com/customer/account/login/referrer/aHR0cHM6Ly9teXNob3AuY29tL2NoZWNrb3V0). 
 
 <!--- MAGETWO-85539-->* Magento now correctly handles `file` or `image` type customer attributes. Previously, when you tried to save customer information when one of these customer attributes were set, Magento threw an exception and did not save the file. *Fix submitted by [Franciszek Wawrzak](https://github.com/fsw) in pull request  [11267](https://github.com/magento/magento2/pull/11267)*. [GitHub-11252](https://github.com/magento/magento2/issues/11252)
 
@@ -1523,7 +1523,7 @@ See [Magento Security Center](https://magento.com/security/patches/magento-2.2.7
 
 <!-- MAGETWO-80287 -->* A new static test detects blocks without the `name` attribute. 
 
-<!-- MAGETWO-87524 -->*  The [Contribution Guide](https://devdocs.magento.com/guides/v2.0/contributor-guide/backward-compatible-development/ )  now suggests that contributors specify possible replacements for deprecated code. [GitHub-10133](https://github.com/magento/magento2/issues/10133)
+<!-- MAGETWO-87524 -->*  The [Contribution Guide](https://devdocs.magento.com/guides/v2.3/contributor-guide/backward-compatible-development/ )  now suggests that contributors specify possible replacements for deprecated code. [GitHub-10133](https://github.com/magento/magento2/issues/10133)
 
 
 <!---MAGETWO-87056 -->*  You can now use the command-line interface to create a new administrator. Previously, Magento did not recognize configured tableprefix, which prevented Magento from creating the new user. [GitHub-11176](https://github.com/magento/magento2/issues/11176)
@@ -1913,7 +1913,7 @@ See [Magento Security Center](https://magento.com/security/patches/magento-2.2.7
 
 <!---ENGCOM-1815 -->* You can now use the **Enter** key to submit a search form. *Fix submitted by [Vishal Gelani](https://github.com/vgelani) in pull request [15696](https://github.com/magento/magento2/pull/15696)*. [GitHub-13793](https://github.com/magento/magento2/issues/13793)
 
-<!---ENGCOM-1910 -->* Search on MySQL-based entities has been improved. (This improvment does not provide a fulltext search, but simply the best way to search when a `SearchCriteria` with `fulltext` condition is provided over a MySQL table.) *Fix submitted by [Riccardo Tempesta](https://github.com/phoenix128) in pull request [15685](https://github.com/magento/magento2/pull/15685)*. [GitHub-1221](https://github.com/magento/magento2/issues/1221)
+<!---ENGCOM-1910 -->* Search on MySQL-based entities has been improved. (This improvement does not provide a fulltext search, but simply the best way to search when a `SearchCriteria` with `fulltext` condition is provided over a MySQL table.) *Fix submitted by [Riccardo Tempesta](https://github.com/phoenix128) in pull request [15685](https://github.com/magento/magento2/pull/15685)*. [GitHub-1221](https://github.com/magento/magento2/issues/1221)
 
 <!---ENGCOM-2588 -->* Magento now displays validation messages as needed on advanced searches. Previously, Magento did not display a message even after a customer submitted the advanced search form with no entries. *Fix submitted by [Torben Höhn](https://github.com/torhoehn) in pull request [17210](https://github.com/magento/magento2/pull/17210)*. [GitHub-8131](https://github.com/magento/magento2/issues/8131)
 
@@ -2248,7 +2248,7 @@ See [Magento Security Center](https://magento.com/security/patches/magento-2.2.7
 
 **Known issue:** Magento throws the following error when you try to use the API to create two products with the same name without specifying the URL key: `URL key for specified store already exists.`  However, when you try to create these products through the Admin, Magento does not throw an error, but instead appends a number to the converted URL key if two products have the same name.
 
-<!-- https://github.com/magento-engcom/msi/issues/1890  -->**Known issue:** For Inventory Management, ElasticSearch is  supported only in Single Source mode for the Default Source. It is not supported in Multi Source mode with custom sources.
+<!-- https://github.com/magento/inventory/issues/1890  -->**Known issue:** For Inventory Management, ElasticSearch is  supported only in Single Source mode for the Default Source. It is not supported in Multi Source mode with custom sources.
 
 
 **Known issue:** For Inventory Management, Single Source merchants may experience performance degradation with all products assigned to the Default Source and Default Stock. As a workaround for best performance, we recommend creating and assigning all products to one custom source and stock. This will affect bundled products support. To continue with bundled products, continue using Default Source and Stock in Single Source mode. We plan to have a resolution and bundled product multi-sourcing support in a later release. This does not affect Multi Source merchants. For details, see [Inventory Management](https://docs.magento.com/m2/ce/user_guide/catalog/inventory-management.html).

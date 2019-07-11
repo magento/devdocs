@@ -1,7 +1,6 @@
 ---
 group: configuration-guide
 title: Pipeline Deployment
-redirect_from: /guides/v2.2/config-guide/prod/prod_deploy.html
 functional_areas:
   - Configuration
   - Deploy
@@ -35,7 +34,7 @@ The following topics are organized to help you get started quickly. If you're ne
 	*	[Sensitive and system-specific configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-sens.html)
 	*	[Payment configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-payment.html)
 	*	[Other configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-most.html)
-	*	[Magento Enteprise B2B Extension configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-b2b.html)
+	*	[Magento Enterprise B2B Extension configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-b2b.html)
 	*	[Use environment variables to override configuration settings]({{ page.baseurl }}/config-guide/prod/config-reference-var-name.html)
 	*	[.gitignore reference]({{ page.baseurl }}/config-guide/prod/config-reference-gitignore.html)
 	*	[config.php reference]({{ page.baseurl }}/config-guide/prod/config-reference-configphp.html)
