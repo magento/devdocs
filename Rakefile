@@ -15,6 +15,7 @@ require 'colorator'
 require_relative 'rakelib/lib/link-checker.rb'
 require_relative 'rakelib/lib/converter.rb'
 require_relative 'rakelib/lib/double-slash-check.rb'
+require_relative 'rakelib/lib/doc-config.rb'
 
 desc "Same as 'rake', 'rake preview'"
 task default: %w[preview]
@@ -59,3 +60,12 @@ end
 
 desc 'Pull docs from external repositories'
 task init: %w[multirepo:init]
+
+desc 'Run checks (image optimization).'
+task check: %w[check:image_optim] 
+
+desc 'Generate data for the weekly digest.'
+task :whatsnew do
+  print 'Generating data for the weekly digest: $ '.magenta
+  sh 'whatsup_github'
+end

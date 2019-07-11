@@ -10,16 +10,19 @@ For more information about file system ownership and permissions, see [Overview 
 If you run the Magento application as one user (which is typical of shared hosting environments), change file system permissions and ownership as follows:
 
 ```bash
-cd <your Magento install dir>
+cd <magento_root>
 ```
+
 ```bash
 chmod -R g+w var vendor pub/static pub/media app/etc
 ```
+
 ```bash
 chmod u+x bin/magento
 ```
 
 To optionally enter all commands on one line, enter the following assuming Magento is installed in `/var/www/html/magento2`:
+
 ```bash
 cd /var/www/html/magento2 && chmod -R g+w var vendor pub/static pub/media app/etc && chmod u+x bin/magento
 ```
@@ -27,6 +30,7 @@ cd /var/www/html/magento2 && chmod -R g+w var vendor pub/static pub/media app/et
 After you set file system permissions, manually clear the `var/cache`, `var/page_cache`, and `var/generation` directories.
 
 A sample command follows:
+
 ```bash
 rm -rf var/cache/* var/page_cache/* var/generation/*
 ```
@@ -36,22 +40,27 @@ rm -rf var/cache/* var/page_cache/* var/generation/*
 If you run the Magento application with two users, enter the following commands as a user with `root` privileges:
 
 ```bash
-cd <your Magento install dir>
+cd <magento_root>
 ```
+
 ```bash
 find var vendor pub/static pub/media app/etc -type f -exec chmod g+w {} +
 ```
+
 ```bash
 find var vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} +
 ```
+
 ```bash
 chown -R :<web server group> .
 ```
+
 ```bash
 chmod u+x bin/magento
 ```
 
 To optionally enter all commands on one line, enter the following assuming Magento is installed in `/var/www/html/magento2` and the web server group name is `apache`:
+
 ```bash
 cd /var/www/html/magento2 && find var vendor pub/static pub/media app/etc -type f -exec chmod g+w {} + && find var vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} + && chown -R :apache . && chmod u+x bin/magento
 ```

@@ -57,3 +57,6 @@ pages:
 
         - label: Creating a Magento admin page
           url: /ext-best-practices/extension-coding/example-module-adminpage.html
+
+        - label: Creating a dynamic row system config
+          url: /ext-best-practices/tutorials/dynamic-row-system-config.html

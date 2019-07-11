@@ -8,7 +8,7 @@ redirect_from:
 A GraphQL query retrieves data from the Magento server in a similar manner as a REST GET call. The current set of Magento GraphQL queries allow a mobile app or browser to render a wide variety of information, including the following:
 
 * A set of products to be displayed. This can include the entire catalog or those that match customer-specified criteria.
-* Customer data. With a customer token, a query can retrieve basic information about a customer as well as billing and shipping addresses, wishlists, order history, and other sensitive data.
+* Customer data. With a customer token, a query can retrieve basic information about a customer as well as billing and shipping addresses, wish lists, order history, and other sensitive data.
 * Shopping cart contents. GraphQL supports both guest and logged-in customer carts.
 * Store configuration values, including theme and CMS settings, the currency code, and supported countries.
 
@@ -41,10 +41,9 @@ Now let's fully define a query:
 ```text
 query myCartQuery{
   cart(cart_id: "1WxKm8WUm3uFKXLlHXezew5WREfVRPAn") {
-    cart_id
     items {
       id
-      qty
+      quantity
     }
     billing_address {
       firstname
@@ -68,11 +67,10 @@ The following example shows the query response:
 {
   "data": {
     "cart": {
-      "cart_id": "1WxKm8WUm3uFKXLlHXezew5WREfVRPAn",
       "items": [
         {
           "id": "5",
-          "qty": 1
+          "quantity": 1
         }
       ],
       "billing_address": {
@@ -108,10 +106,9 @@ The following example declares the `$cart_id` variable. It is referenced in the 
 ```text
 query myCartQueryWithVariable($cart_id: String!) {
   cart(cart_id: $cart_id) {
-    cart_id
     items {
       id
-      qty
+      quantity
     }
     billing_address {
       firstname
@@ -185,9 +182,9 @@ Magento GraphQL clause | SQL equivalent
 `from: "value1"` `to: "value2"` | <code><i>field</i> BETWEEN 'value1' AND 'value2'</code>
 `finset: [1, 2, 3]` | <code>FINSET(<i>field</i>, '1, 2, 3')</code>
 
-`to` and `from` must always be used together. These condition types can be used in the same search term. For example, `qty: {from: "10" to: "20"}`.
+`to` and `from` must always be used together. These condition types can be used in the same search term. For example, `quantity: {from: "10" to: "20"}`.
 
-`gt` and `lt` can be used in the same search term. For example, `qty: {gt: "10" lt: "20"}`.
+`gt` and `lt` can be used in the same search term. For example, `quantity: {gt: "10" lt: "20"}`.
 
 ### Specifying pagination
 
@@ -435,7 +432,7 @@ The query returns 8 items.
 
 #### Logical AND and OR search
 
-This query searches for products that have `name` that ends with `Short` or has a `sku` that indicates the product is a pair of women’s shorts in size 10 (`WSH%10%`). The system performs a logical AND to restrict the results to those that cost from $40 to $49.99.
+This query searches for products that have `name` that ends with `Short` or has a `sku` that indicates the product is a pair of women’s pants (`WP%`). The system performs a logical AND to restrict the results to those that cost from $40 to $49.99.
 
 ``` text
 {
@@ -444,12 +441,12 @@ This query searches for products that have `name` that ends with `Short` or has 
       price: {
         from: "40" to: "49.99"
       }
-      name: {
-        like: "%Short"
-      }
       or: {
+        name: {
+          like: "%Short"
+        }      
         sku: {
-          like: "WSH%10%"
+          like: "WP%"
         }
       }
     }
@@ -479,4 +476,4 @@ This query searches for products that have `name` that ends with `Short` or has 
 }
 ```
 
-The query returns 1 item.
+The query returns 14 item.

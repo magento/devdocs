@@ -51,7 +51,7 @@ The [XML configuration file][ui-component-declaration] for UI components shows t
 ```xml
 <listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
     ...
-    <datasource>
+    <dataSource>
         <!-- 
             DataProvider should retrieve information about product. In our case will be good to retrieve
             formatted prices with currency code, etc... and raw prices.
@@ -80,7 +80,7 @@ The [XML configuration file][ui-component-declaration] for UI components shows t
                 <primaryFieldName/>
             </settings>
         </dataProvider>
-    </datasource>
+    </dataSource>
     <columns name="some_columns" component="SomeVendor_SomeComponent/js/product/list/listing">
         <!-- 
             Price columns is composite component (it has children),
@@ -322,8 +322,8 @@ The following is sample template code that is rendered for the tax adjustment co
 
 [form-component]: {{ page.baseurl }}/ui_comp_guide/components/ui-form.html
 [listing-component]: {{ page.baseurl }}/ui_comp_guide/components/ui-listing-grid.html
-[special-price-html]: {{ site.mage2200url }}app/code/Magento/Catalog/view/base/web/template/product/price/special_price.html
-[widget-recently-viewed-xml]: {{ site.mage2200url }}app/code/Magento/Catalog/view/frontend/ui_component/widget_recently_viewed.xml
+[special-price-html]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/view/base/web/template/product/price/special_price.html
+[widget-recently-viewed-xml]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/view/frontend/ui_component/widget_recently_viewed.xml
 [ui-component-declaration]: {{ page.baseurl }}/ui_comp_guide/howto/new_component_declaration.html
-[price-box]: {{ site.mage2200url }}app/code/Magento/Catalog/view/base/web/js/product/list/columns/price-box.js
-[final-price]: {{ site.mage2200url }}app/code/Magento/Catalog/view/base/web/js/product/list/columns/final-price.js
+[price-box]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/view/base/web/js/product/list/columns/price-box.js
+[final-price]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/view/base/web/js/product/list/columns/final-price.js

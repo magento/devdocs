@@ -53,7 +53,6 @@ Attribute | Type | Description
 `attribute_code` | String | A string that identifies the attribute
 `attribute_id` | String | The ID assigned to the attribute
 `id` | Int | The configurable option ID number assigned by the system
-`is_use_default` | Boolean | Indicates whether the option is the default
 `label` | String | A string that describes the configurable product option. It is displayed on the UI.
 `position` | Int | A number that indicates the order in which the attribute is displayed
 `product_id` | Int | This is the same as a product's 'id' field
@@ -679,7 +678,7 @@ The following `products` query returns `ConfigurableProduct` information about t
 
 
 ## Mutation
-Use the `addConfigurableProductsToCart` muatation to add configurable products to a specific cart.
+Use the `addConfigurableProductsToCart` mutation to add configurable products to a specific cart.
 
 
 ### Syntax
@@ -691,7 +690,7 @@ The `AddConfigurableProductsToCartInput` object contains the following attribute
 
 Attribute | Type | Description
 --- | --- | ---
-`cartItems` | [[ConfigurableProductCartItemInput]](#configProdCartItemInput) | An array of configurable items to add to the cart
+`cart_items` | [[ConfigurableProductCartItemInput]](#configProdCartItemInput) | An array of configurable items to add to the cart
 `cart_id` | String | The unique ID that identifies the customer's cart
 
 ### Configurable product cart item input {#configProdCartItemInput}
@@ -700,7 +699,7 @@ The `ConfigurableProductCartItemInput` object contains the following attributes:
 Attribute | Type | Description
 --- | --- | ---
 `customizable_options` | [CustomizableOptionInput](#customOptionInput) | An object that contains the ID and value of the product
-`data` | [CartItemDetailsInput](#cartItemDetailsInput) | An object that contains the quantity and SKU of the configurable product
+`data` | [CartItemInput](#cartItemInput) | An object that contains the quantity and SKU of the configurable product
 `variant_sku` | String | The SKU of the simple product
 
 ### Customizable option input {#customOptionInput}
@@ -711,17 +710,17 @@ Attribute | Type | Description
 `id` | Int | The ID of the customizable option
 `value` | String | The value of the customizable option. For example, if color was the customizable option, a possible value could be `black`
 
-### Cart item details input {#cartItemDetailsInput}
-The `CartItemDetailsInput` object contains the following attributes:
+### Cart item input {#cartItemInput}
+The `CartItemInput` object contains the following attributes:
 
 Attribute | Type | Description
 --- | --- | ---
-`qty` | Float | The number of configurable items to add to the cart
+`quantity` | Float | The number of configurable items to add to the cart
 `sku` | String | The SKU of the configurable product
 
 
 ### Example usage
-The following example adds two black Teton Pullover Hoodies size extra-small to the specified shopping cart. The `cart_id` used in this example was [generated]({{ page.baseurl }}/graphql/reference/quote.html#createEmptyCart) by creating an empty cart.
+The following example adds two black Teton Pullover Hoodies size extra-small to the specified shopping cart. The `cart_id` used in this example was [generated]({{ page.baseurl }}/graphql/reference/quote-create-cart.html) by creating an empty cart.
 
 **Request**
 
@@ -730,11 +729,11 @@ mutation {
   addConfigurableProductsToCart(
     input: {
       cart_id: "4JQaNVJokOpFxrykGVvYrjhiNv9qt31C"
-      cartItems: [
+      cart_items: [
         {
           variant_sku: "MH02"
           data: {
-            qty: 2
+            quantity: 2
             sku: "MH02-XS-Black"
           }
         }
@@ -744,7 +743,7 @@ mutation {
     cart {
       items {
         id
-        qty
+        quantity
         product {
           name
           sku
@@ -770,7 +769,7 @@ mutation {
         "items": [
           {
             "id": "26",
-            "qty": 2,
+            "quantity": 2,
             "product": {
               "name": "Teton Pullover Hoodie-XS-Black",
               "sku": "MH02-XS-Black"

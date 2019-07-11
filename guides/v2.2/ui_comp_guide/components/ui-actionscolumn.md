@@ -41,7 +41,7 @@ The ActionsColumns component implements a table's column responsible for display
   <tr>
     <td><code>templates.actions</code></td>
     <td>A list of actions that will be displayed in column's fields.</td>
-    <td>{[name: String]: <code>ActionItem</code>}</code></td>
+    <td>{[name: String]: <code>ActionItem</code>}</td>
     <td>-</td>
   </tr>
 </table>
@@ -91,4 +91,4 @@ The ActionsColumns component implements a table's column responsible for display
 
 Extends [`Column`]({{ page.baseurl }}/ui_comp_guide/components/ui-column.html):
 
-- [`app/code/Magento/Ui/view/base/web/js/grid/columns/actions.js`]({{ site.mage2200url }}app/code/Magento/Ui/view/base/web/js/grid/columns/actions.js)
+- [`app/code/Magento/Ui/view/base/web/js/grid/columns/actions.js`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/grid/columns/actions.js)

@@ -70,4 +70,4 @@ An array cannot be imported by more than one importer.
 * [config.php reference]({{ page.baseurl }}/config-guide/prod/config-reference-configphp.html)
 * [env.php reference]({{ page.baseurl }}/config-guide/prod/config-reference-envphp.html)
 
-[importer-interface]:{{ site.mage2200url }}lib/internal/Magento/Framework/App/DeploymentConfig/ImporterInterface.php
+[importer-interface]:{{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/App/DeploymentConfig/ImporterInterface.php

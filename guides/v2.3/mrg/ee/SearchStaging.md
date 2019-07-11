@@ -22,12 +22,12 @@ You can find the list of modules that have dependencies on the Magento_SearchSta
 
 ## Extension points
 
-Extension points enable extension developers to interact with the Magento_SearchStaging module. [The Magento dependency injection mechanism](http://devdocs.magento.com/guides/v2.1/extension-dev-guide/depend-inj.html) enables you to override the functionality of the Magento_SearchStaging module.
+Extension points enable extension developers to interact with the Magento_SearchStaging module. [The Magento dependency injection mechanism]({{ page.baseurl }}/extension-dev-guide/depend-inj.html) enables you to override the functionality of the Magento_SearchStaging module.
 
 ### Layouts
 
 You can extend and override layouts in the `Magento/SearchStaging/view/frontend/layout/` directory.
-For more information about layouts, see the [Layout documentation](http://devdocs.magento.com/guides/v2.1/frontend-dev-guide/layouts/layout-overview.html).
+For more information about layouts, see the [Layout documentation]({{ page.baseurl }}/frontend-dev-guide/layouts/layout-overview.html).
 
 ## Additional information
 

@@ -68,6 +68,9 @@ pages:
         - label: Layout file types
           url: /frontend-dev-guide/layouts/layout-types.html
 
+        - label: Product layouts
+          url: /frontend-dev-guide/layouts/product-layouts.html
+
         - label: Extend a layout
           url: /frontend-dev-guide/layouts/layout-extend.html
 

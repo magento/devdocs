@@ -2,21 +2,16 @@
 ######################
 /*.db
 .DS_Store
+.vscode
 
 # Config and output files #
 ###########################
 
 /_site/
 
-/.*
-!/.github
-!/.github/**
-
-/*.yml
-!/_config.yml
-!/_config.prod.yml
-!/_config.checks.yml
-!/_config.stage.yml
+_config.local.yml
+.jekyll-metadata
+.whatsup.yml
 
 *.bat
 /tmp/
@@ -38,3 +33,4 @@ _algolia_api_key
 ###################################
 
 /guides/v2.0/
+/guides/v2.1/
