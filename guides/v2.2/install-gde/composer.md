@@ -2,10 +2,6 @@
 group: installation-guide
 title: Install Magento using Composer
 redirect_from:
-  - guides/v2.1/install-gde/prereq/integrator_install.html
-  - guides/v2.1/install-gde/prereq/integrator_install_composer.html
-  - guides/v2.1/install-gde/prereq/integrator_install_ce.html
-  - guides/v2.1/install-gde/prereq/integrator_install_ee.html
   - guides/v2.2/install-gde/prereq/integrator_install.html
   - guides/v2.2/install-gde/prereq/integrator_install_composer.html
   - guides/v2.2/install-gde/prereq/integrator_install_ce.html

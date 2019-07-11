@@ -11,7 +11,7 @@ functional_areas:
   - Checkout
 ---
 
-Magento [checkout](https://glossary.magento.com/checkout) is implemented using the [UI components]({{ site.baseurl }}/guides/v2.1/ui_comp_guide/bk-ui_comps.html).
+Magento [checkout](https://glossary.magento.com/checkout) is implemented using the [UI components]({{ page.baseurl }}/ui_comp_guide/bk-ui_comps.html).
 Out of the box, the checkout consists of two steps:
 
  - Shipping Information

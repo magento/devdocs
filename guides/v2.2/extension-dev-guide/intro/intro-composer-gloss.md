@@ -1,12 +1,7 @@
 ---
 group: php-developer-guide
-subgroup: 01_Introduction
 title: Glossary of common terms
-menu_title: Glossary of common terms
-menu_order: 5
-menu_node:
 redirect_from:
-  - /guides/v2.1/mktpl-quickstart/intro-composer-gloss.html
   - /guides/v2.2/mktpl-quickstart/intro-composer-gloss.html
 ---
 
