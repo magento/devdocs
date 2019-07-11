@@ -82,7 +82,7 @@ Attribute |  Data Type | Description
 
 ### Extend Config Data
 
-Easily add your own configuration to the `Store` endpoint within your own module.
+You can add your own configuration to the `Store` endpoint within your own module.
 
 To do this, configure the constructor argument `extendedConfigData` in the `argument` node in your area-specific `etc/graphql/di.xml` file.
 
