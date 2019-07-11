@@ -86,7 +86,7 @@ Easily add your own configuration to the `Store` endpoint within your own module
 
 You can configure the constructor argument extendedConfigData in your area specific `etc/graphql/di.xml` in the argument node.
 
-The following example adds an array-item to the extendedConfigData array within the construct of the `StoreConfigDataProvider`.
+The following example adds an array-item to the `extendedConfigData` array within the construct of the `StoreConfigDataProvider`.
 
 ```xml
 <?xml version="1.0" ?>
