@@ -39,7 +39,9 @@ We have [channels][] for each project, but the following channels are recommende
 - [devdocs][]: Documentation contribution support
 
 ## Resources and guides
-
+- *Blog posts* [Aheadworks Blog][58] by Aheadworks
+- *Blog posts* [Useful Magento Resources][59] by Hyper Smash
+- *Blog posts* [MageWorx Blog][60] by MageWorx
 - *Video* [How to contribute during Magento Contribution Days][57] by [Max Pronko][35]
 - *GitHub* [Magento Resources][23] curated list by [Alessandro Ronchi][30]
 - *Blog posts* [Thoughts on Magento, PHP, JavaScript, Laravel, React, Docker, and user interface design][56] by [Mark Shust][38]
@@ -164,4 +166,7 @@ We have [channels][] for each project, but the following channels are recommende
 [55]: https://alanstorm.com/
 [56]: https://markshust.com/
 [57]: https://www.youtube.com/watch?v=ceNeYpCEmys
+[58]: https://www.aheadworks.com/blog/
+[59]: https://www.hypersmash.com/magento-resources/
+[60]: https://www.mageworx.com/blog/
 [channels]: https://github.com/magento/magento2/wiki/Slack-Channels
