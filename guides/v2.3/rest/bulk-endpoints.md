@@ -121,7 +121,7 @@ POST /<store_code>/async/bulk/V1/products
 PUT /<store_code>/async/bulk/V1/products/:sku
 ```
 
-This will lead to behaviour that only values for respective store will be updated.
+As a result, the asynchronous calls update the products on the specific store, instead of the default store.
 
 You can specify the `all` store code to perform operations on all existing stores:
 
