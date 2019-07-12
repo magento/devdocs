@@ -133,7 +133,6 @@ $('.magento__dropdown-widget').dropdown();
 -  [menu](#d_menu)
 -  [activeClass](#d_activeClass)
 
-Description of each option as follows below location.
 
 ### `parent`   {#d_parent}
 
