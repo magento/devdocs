@@ -1,1 +1,1 @@
-../../../v2.2/install-gde/install/sample-data.md
+../../../../guides/v2.2/install-gde/install/sample-data.md

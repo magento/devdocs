@@ -128,6 +128,9 @@ To define web API components, set these attributes on these XML elements in the
             <li>
                `secure`. Optional. Boolean. Indicates that the route is accessible over only HTTPS. Any attempts to access this route over non-secure causes an exception.
             </li>
+            <li>
+               <p><code>soapOperation</code>. Optional. String. Specifies the SOAP operation name to use instead of the interface's method name. Use this element to create multiple operations for the same service contract.</p>
+            </li>
          </ul>
       </td>
    </tr>

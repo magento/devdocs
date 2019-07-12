@@ -1,1 +1,1 @@
-../../../v2.2/cloud/live/stage-prod-test.md
+../../../../guides/v2.2/cloud/live/stage-prod-test.md

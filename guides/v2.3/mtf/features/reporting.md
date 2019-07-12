@@ -1,1 +1,1 @@
-../../../v2.2/mtf/features/reporting.md
+../../../../guides/v2.2/mtf/features/reporting.md

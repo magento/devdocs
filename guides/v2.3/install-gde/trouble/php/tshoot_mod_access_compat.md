@@ -1,1 +1,1 @@
-../../../../v2.2/install-gde/trouble/php/tshoot_mod_access_compat.md
+../../../../../guides/v2.2/install-gde/trouble/php/tshoot_mod_access_compat.md

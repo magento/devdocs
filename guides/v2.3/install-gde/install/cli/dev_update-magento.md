@@ -1,1 +1,1 @@
-../../../../v2.2/install-gde/install/cli/dev_update-magento.md
+../../../../../guides/v2.2/install-gde/install/cli/dev_update-magento.md

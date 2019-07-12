@@ -1,1 +1,1 @@
-../../v2.2/migration/migration-migrate-delta.md
+../../../guides/v2.2/migration/migration-migrate-delta.md
