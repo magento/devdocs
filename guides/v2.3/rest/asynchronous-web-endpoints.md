@@ -90,7 +90,7 @@ PUT /<store_code>/async/V1/products/:sku
 
 As a result, the asynchronous calls update the products on the specific store, instead of the default store.
 
-In addition can be used `all` prefix which will update values for all existed stores:
+You can specify the `all` store code to perform operations on all existing stores:
 
 ```
 POST /all/async/V1/products
