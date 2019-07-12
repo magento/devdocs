@@ -103,5 +103,5 @@ Stores usage has a next fallback in case if it's used for creating or updating n
 
 * If you do not set the store code while creating a new product, Magento creates a new object with all values set globally for each scope.
 * If you do not set the store code while updating a product, then by fallback, Magento updates values for the default store only.
-* If `all` parameter is transferred, then values for all store scopes will be updated (in case if particular store don't have yet own value set)
+* If you include the `all` parameter, then Magento updates values for all store scopes (in case a particular store doesn't yet have its own value set).
 * If `<store_code>` parameter is set, then values for only defined store will be updated 
