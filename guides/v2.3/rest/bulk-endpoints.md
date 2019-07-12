@@ -114,8 +114,6 @@ The response contains an array that indicates whether the call successfully adde
 
 You can specify a store code in the route of an asynchronous endpoint so that it operates on a specific store, as shown below:
 
-Store Code have to be defined before `async` prefix:
-
 ```
 POST /<store_code>/async/bulk/V1/products
 PUT /<store_code>/async/bulk/V1/products/:sku
