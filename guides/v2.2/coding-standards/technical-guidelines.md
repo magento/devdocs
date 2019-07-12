@@ -754,13 +754,9 @@ You need to read configuration from different sources (like database or filesyst
 
 11.3.3.3. The element `name` SHOULD be written in [camelCase](http://wiki.c2.com/?CamelCase).
 
-11.3.3.4. Element selectors SHOULD be written in CSS instead of XPath.
+11.3.3.4. Parameterized selectors MUST use descriptive names for their parameters.
 
-11.3.3.5. CSS and XPath selectors MUST NOT reference `@data-bind`.
-
-11.3.3.6. Parameterized selectors MUST use descriptive names for their parameters.
-
-11.3.3.7. Elements SHOULD use the `timeout` attribute to wait after interactions.
+11.3.3.5. Elements SHOULD use the `timeout` attribute to wait after interactions.
 
 #### 11.3.4. Data Entities
 
