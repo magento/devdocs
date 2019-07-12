@@ -102,6 +102,6 @@ PUT /all/async/V1/products/:sku
 Stores usage has a next fallback in case if it's used for creating or updating new objects. For example products.
 
 * If you do not set the store code while creating a new product, Magento creates a new object with all values set globally for each scope.
-* If no store code is set while updating product - then by fallback Magento will update values only for default store 
+* If you do not set the store code while updating a product, then by fallback, Magento updates values for the default store only.
 * If `all` parameter is transferred, then values for all store scopes will be updated (in case if particular store don't have yet own value set)
 * If `<store_code>` parameter is set, then values for only defined store will be updated 
