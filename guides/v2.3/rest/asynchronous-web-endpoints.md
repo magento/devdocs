@@ -99,7 +99,7 @@ PUT /all/async/V1/products/:sku
 
 ### Fallback and creating/updating objects when setting store scopes 
 
-Stores usage has a next fallback in case if it's used for creating or updating new objects. For example products.
+The following rules apply when you create or update an object, such as a product.
 
 * If you do not set the store code while creating a new product, Magento creates a new object with all values set globally for each scope.
 * If you do not set the store code while updating a product, then by fallback, Magento updates values for the default store only.
