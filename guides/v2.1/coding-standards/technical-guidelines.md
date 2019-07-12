@@ -798,10 +798,6 @@ class SampleEventObserverThatModifiesInputs implements ObserverInterface
 
 15.12. Files MUST be secured by a web server configuration (e.g., `.htaccess` or `nginx.conf`), except files that are intended to be publicly accessible.
 
-## 16. Services
-
-16.1. New features with limited customization scenarios SHOULD be implemented as thin Magento extension that will communicate to a service that contains business logic. This will allow to release features independently from Magento and make upgrades of features easier.
-
 <!-- LINKS: DEFINITIONS AND ADDRESSES -->
 
 [RFC2119]: https://tools.ietf.org/html/rfc2119
