@@ -123,7 +123,7 @@ PUT /<store_code>/async/bulk/V1/products/:sku
 
 This will lead to behaviour that only values for respective store will be updated.
 
-In addition can be used `all` prefix which will update values for all existed stores:
+You can specify the `all` store code to perform operations on all existing stores:
 
 ```
 POST /all/async/bulk/V1/products
