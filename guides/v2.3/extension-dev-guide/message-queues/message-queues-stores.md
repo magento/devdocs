@@ -119,7 +119,7 @@ public function aroundExecute(SubjectMassConsumerEnvelopeCallback $subject, call
     }
 ```
 
-The plugin checks the message headers and set the current store value in `storeManager` to the received `store_id` value.
+The plugin checks the message headers and sets the current store value in `storeManager` to the received `store_id` value.
 
 #### Related Topics
 
