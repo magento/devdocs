@@ -130,7 +130,7 @@ POST /all/async/bulk/V1/products
 PUT /all/async/bulk/V1/products/:sku
 ```
 
-### Store Scopes fallback and object creation / update
+### Fallback and creating/updating objects when setting store scopes
 
 The following rules apply when you create or update an object, such as a product.
 
