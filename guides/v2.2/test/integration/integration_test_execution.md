@@ -3,10 +3,6 @@ group: testing
 title: Running Integration Tests
 contributor_name: Vinai Kopp
 contributor_link: http://vinaikopp.com/
-redirect_from:
- - /guides/v2.1/test/integration/integration_test_setup.html	
- - /guides/v2.1/test/integration/integration_test_execution_cli.html	
- - /guides/v2.1/test/integration/integration_test_execution_phpstorm.html	
 functional_areas:
   - Testing
   - test
