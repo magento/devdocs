@@ -882,6 +882,10 @@ class SampleEventObserverThatModifiesInputs implements ObserverInterface
 
 16.1. Cron job SHOULD be an [idempotent method](https://tools.ietf.org/html/rfc7231#section-4.2.2).
 
+## 17. Services
+
+17.1. New features with limited customization scenarios SHOULD be implemented as a thin Magento extension that will communicate to a service that contains business logic. This allows developers to release features independently of Magento and makes feature upgrades easier.
+
 <!-- LINKS: DEFINITIONS AND ADDRESSES -->
 
 [RFC2119]: https://tools.ietf.org/html/rfc2119

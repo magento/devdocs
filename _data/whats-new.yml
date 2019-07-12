@@ -36,13 +36,12 @@ entries:
   type: Major update
   date: June 28, 2019
   link: https://github.com/magento/devdocs/pull/4850
-- description: Added a [new way to upgrade the Magento CLI ](https://devdocs.magento.com/guides/v2.3/comp-mgr/cli/upgrade-with-plugin.html)(yet
-    experimental) using the Magento composer root plugin to resolve conflicts in dependencies
-    during the upgrade.
+- description: Added a [new command-line upgrade method](https://devdocs.magento.com/guides/v2.3/comp-mgr/cli/upgrade-with-plugin.html)
+    (yet experimental) using the Magento composer root plugin to resolve conflicts
+    in dependencies during the upgrade.
   versions: 2.3.x
   type: New topic
   date: June 28, 2019
-  link: https://github.com/magento/devdocs/pull/4679
 - description: Updated the [Module Reference Guide](https://devdocs.magento.com/guides/v2.3/mrg/intro.html).
   versions: 2.3.2
   type: Major update
