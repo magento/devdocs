@@ -97,7 +97,7 @@ POST /all/async/V1/products
 PUT /all/async/V1/products/:sku
 ```
 
-### Store Scopes fallback and object creation / update
+### Fallback and creating/updating objects when setting store scopes 
 
 Stores usage has a next fallback in case if it's used for creating or updating new objects. For example products.
 
