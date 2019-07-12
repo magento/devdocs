@@ -77,7 +77,7 @@ Magento generates a `bulk_uuid` for each asynchronous request. Use the `bulk_uui
 }
 ```
 
-## Store Scopes
+## Store scopes
 
 You can specify a store code in the route of an asynchronous endpoint so that it operates on a specific store, as shown below:
 
