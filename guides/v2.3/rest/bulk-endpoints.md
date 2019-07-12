@@ -110,7 +110,7 @@ The response contains an array that indicates whether the call successfully adde
 }
 ```
 
-## Store Scopes
+## Store scopes
 
 You can specify a store code in the route of an asynchronous endpoint so that it operates on a specific store, as shown below:
 
