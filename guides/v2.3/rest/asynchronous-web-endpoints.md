@@ -79,7 +79,7 @@ Magento generates a `bulk_uuid` for each asynchronous request. Use the `bulk_uui
 
 ## Store Scopes
 
-Asynchronous API also can be used to work with particular store. Way of work is exactly the same as for usual synchronous REST API.
+You can specify a store code in the route of an asynchronous endpoint so that it operates on a specific store, as shown below:
 
 Store Code have to be defined before `async` prefix:
 
