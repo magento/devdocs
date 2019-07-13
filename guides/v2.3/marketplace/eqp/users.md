@@ -1,1 +1,1 @@
-../../../v2.2/marketplace/eqp/users.md
+../../../../guides/v2.2/marketplace/eqp/users.md

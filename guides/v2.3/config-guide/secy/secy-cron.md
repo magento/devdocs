@@ -1,1 +1,1 @@
-../../../v2.2/config-guide/secy/secy-cron.md
+../../../../guides/v2.2/config-guide/secy/secy-cron.md

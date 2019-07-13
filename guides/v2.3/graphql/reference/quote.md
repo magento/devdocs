@@ -1,500 +1,577 @@
 ---
 group: graphql
-title: quote endpoint
+title: Quote endpoint
 ---
 
-A quote represents the contents of a customer's shopping cart. It is responsible for performing tasks such as:
+A Quote represents the contents of a customer's shopping cart. It is responsible for performing tasks such as:
 
 * Tracking each item in the cart, including the quantity and base cost
 * Determining estimated shipping costs
 * Calculating subtotals, computing additional costs, applying coupons, and determining the payment method
 
-{:.bs-callout .bs-callout-tip}
-Except for `createEmptyCart`, the mutations defined in this topic are available in the 2.3-develop branch of the [graphql-ce repository](https://github.com/magento/graphql-ce).
+## cart Query {#cart}
 
-## Query
-Use the `Cart` query to retrieve information about a particular cart.
+Use the `cart` query to retrieve information about a particular cart.
 
 ### Syntax
 
 `{cart(cart_id: String!) {Cart}}`
 
-### Cart attributes
-The `Cart` object can contain the following attributes:
-
-Attribute |  Data Type | Description
---- | --- | ---
-`applied_coupon` | code | Contains the coupon code if used 
-`billing_address` | [CartAddress](#cartAddressAttributes) | Contains the billing address specified in the customer's cart
-`cart_id` | String | The unique ID that identifies the customer's cart
-`items` | [CartItemInterface](#cartItemsInterface) | Contains the items in the customer's cart
-`shipping_addresses` | [CartAddress](#cartAddressAttributes) | Contains one or more shipping addresses
-
-### Cart address attributes {#cartAddressAttributes}
-The `CartAddress` object can contain the following attributes:
-
-Attribute |  Data Type | Description
---- | --- | ---
-`address_type` | AddressTypeEnum | Specifies if the type of address is SHIPPING or BILLING
-`cart_items` | CartItemQuantity | Contains the cart item IDs and quantity of each item
-`city` | String | The city specified for the shipping or billing address 
-`company` | String | The company specified for the shipping or billing address
-`country` | [CartAddressCountry] | The country code and label for the shipping or billing address
-`customer_notes` | String | Comments made to the customer that accompanies the order
-`firstname` | String | The customer's first name
-`items_weight` | Float | The total weight of the items in the cart
-`lastname` | String | The customer's last name
-`postcode` | String | The postal code for the shipping or billing address
-`region` | CartAddressRegion | An object containing the region name, region code, and region ID
-`street` | [String] | The street for the shipping or billing address
-`telephone` | String | The telephone number for the shipping or billing address
-
-### Cart item interface attributes {#cartItemsInterface}
-The `CartItemInterface` object can contain the following attributes:
-
-Attribute |  Data Type | Description
---- | --- | ---
-`id` | String | ID of the item
-`product` | [ProductInterface]({{ page.baseurl }}/graphql/reference/product-interface-implementations.html) | Contains attributes that are common to all types of products
-`qty` | Float | The number of items in the cart
-
 ### Example usage
 
-The following returns information about a cart given a `cart_id`. Note that the `cart_id` specified is for demonstration purposes only. You will need to [generate](#createEmptyCart) your own `cart_id` for this example to work.
+The following query shows the status of a cart that is ready to be converted into an order.
 
 **Request**
 
-``` text
-{
-  cart(cart_id: "4JQaNVJokOpFxrykGVvYrjhiNv9qt31C") {
-    cart_id
+```text
+query {
+  cart(cart_id: "IeTUiU0oCXjm0uRqGCOuhQ2AuQatogjG") 
+  {
+    email
     billing_address {
+     city
+     country {
+      code
+      label
+      }
+     firstname
       lastname
-      firstname
       postcode
-    }
-    items {
-      id
-      qty
+      region {
+        code
+        label
+      }
+      street
+      telephone
     }
     shipping_addresses {
-      company
-      postcode
-      lastname
       firstname
+      lastname
+      street
+      city
+      region {
+        code
+        label
+      }
+      country {
+        code
+        label
+      }
+      telephone
+      available_shipping_methods {
+        amount {
+          currency
+          value
+        }
+        available
+        base_amount {
+          value
+          currency
+        }
+        carrier_code
+        carrier_title
+        error_message
+        method_code
+        method_title
+        price_excl_tax {
+          value
+          currency
+        }
+        price_incl_tax {
+          value
+          currency
+        }
+      }
+      selected_shipping_method {
+        amount {
+          value
+          currency
+        }
+        base_amount {
+          value
+          currency
+        }
+        carrier_code
+        carrier_title
+        method_code
+        method_title
+      }
+
     }
-  }
+    items {
+        id
+        product {
+          name
+          sku
+        }
+        quantity
+      }
+    available_payment_methods {
+      code
+      title
+    }
+    selected_payment_method {
+      code
+      title
+    }
+    applied_coupon {
+      code
+    }
+      prices {
+        grand_total{
+          value
+          currency
+        }
+      }
+  } 
 }
 ```
+
 **Response**
 
 ```json
 {
   "data": {
     "cart": {
-      "cart_id": "4JQaNVJokOpFxrykGVvYrjhiNv9qt31C",
-      "items": [
-        {
-         "id": "22",
-         "qty": 1
-        }
-      ],
-      "billing_address": 
-      {
-        "lastname": "Roll",
+      "email": "mshaw@example.com",
+      "billing_address": {
+        "city": "Calder",
+        "country": {
+          "code": "US",
+          "label": "US"
+        },
         "firstname": "Bob",
-        "postcode": "78759"
+        "lastname": "Roll",
+        "postcode": "49628",
+        "region": {
+          "code": "MI",
+          "label": "Michigan"
+        },
+        "street": [
+          "Magento Pkwy",
+          "Main Street"
+        ],
+        "telephone": "8675309"
       },
       "shipping_addresses": [
         {
-         "company": "Magento",
-         "postcode": "78759",
-         "lastname": "Roll",
-         "firstname": "Bob"
-        }
-      ]
-    }
-  }
-}
-```
-
-## Mutations
-
-### Create an empty cart {#createEmptyCart}
-
-The `createEmptyCart` mutation creates an empty shopping cart for a guest or logged in customer. If you are creating a cart for a logged in customer, you must include the customer's authorization token in the header of the request.
-
-#### Syntax
-
-`mutation: {createEmptyCart: String}`
-
-**Request**
-
-``` text
-mutation {
-  createEmptyCart
-}
-```
-
-**Response**
-
-The response is the quote ID, which is sometimes called the cart ID. The remaining examples in this topic will use this cart ID.
-
-```json
-{
-  "data": {
-    "createEmptyCart": "4JQaNVJokOpFxrykGVvYrjhiNv9qt31C"}
-  }
-}
-```
-
-### Adding simple products to a cart
-
-Adds simple items to a specific cart.
-
-### Add simple products to cart attributes
-The `addSimpleProductsToCart` object can contain the following attributes:
-
-Attribute |  Data Type | Description
---- | --- | ---
-`cartItems` | SimpleProductCartItemInput | The list of items to add to the cart
-`cart_id` | String | The unique ID that identifies the customer's cart
-
-#### Syntax
-
-`mutation: {addSimpleProductsToCart(input: AddSimpleProductsToCartInput) {AddSimpleProductsToCartOutput}}`
-
-#### Example usage
-
-The following example adds two Joust Duffle Bags to the cart.
-
-**Request**
-
-``` text
-mutation {
-  addSimpleProductsToCart(
-    input: {
-      cart_id: "4JQaNVJokOpFxrykGVvYrjhiNv9qt31C", 
-      cartItems: [
-        {
-          data: {
-            qty: 2
-            sku: "24-MB01"
-          }
-        }
-       ]
-    }
-  ) {
-    cart {
-      cart_id
-      items {
-        product {
-          name
-        }
-        qty
-      }
-    }
-  }
-}
-```
-
-**Response**
-
-```json
-{
-  "data": {
-    "addSimpleProductsToCart": {
-      "cart": {
-        "cart_id": "4JQaNVJokOpFxrykGVvYrjhiNv9qt31C",
-        "items": [
-          {
-            "product": {
-              "name": "Joust Duffle Bag"
-            },
-            "qty": 2
-          }
-        ]
-      }
-    }
-  }
-}
-```
-
-### Updating billing and shipping information
-{:.no_toc}
-
-You can set the billing and shipping addresses on a cart.
-
-### Set the billing address on cart attributes
-The `SetBillingAddressOnCart` object can contain the following attributes:
-
-Attribute |  Data Type | Description
---- | --- | ---
-`billing_address` | [BillingAddressInput](#billingAddressInput) | The billing address for a specific cart
-`cart_id` | String | The unique ID that identifies the customer's cart
-
-### Set the billing address input attributes {#billingAddressInput}
-The `SetBillingAddressInput` object can contain the following attributes:
-
-Attribute |  Data Type | Description
---- | --- | ---
-`address` | [CartAddressInput](#cartAddressInput) | The billing address for the cart
-`customer_address_id` | Int | The unique ID that identifies the customer's address
-`use_for_shipping` | Boolean | Specifies whether to use the billing address for the shipping address (`True`/`False`)
-
-### Cart address input attributes {#cartAddressInput}
-The `CartAddressInput` object can contain the following attributes:
-
-Attribute |  Data Type | Description
---- | --- | ---
-`city` | String | The city specified for the billing address 
-`company` | String | The company specified for the billing address
-`country_code` | String | The country code and label for the billing address
-`customer_notes` | String | Comments made to the customer that accompanies the order
-`firstname` | String | The customer's first name
-`lastname` | String | The customer's last name
-`postcode` | String | The postal code for the billing address
-`region` | String | The region code and label for the billing address
-`save_in_address_book` | Boolean | Specifies whether to save the address (`True`/`False`)
-`street` | [String] | The street for the billing address
-`telephone` | String | The telephone number for the billing address
-
-### Set the billing address on a cart
-
-Use the `setBillingAddressOnCart` mutation to set a new billing address for a specific cart.
-
-#### Syntax
-
-`mutation: {setBillingAddressOnCart(input: SetBillingAddressOnCartInput) {SetBillingAddressOnCartOutput}}`
-
-#### Example usage
-
-The following example creates a new billing address for a specific cart.
-
-**Request**
-
-``` text
-mutation {
-  setBillingAddressOnCart(
-    input: {
-      cart_id: "4JQaNVJokOpFxrykGVvYrjhiNv9qt31C"
-      billing_address: {
-        address: {
-          firstname: "Bob"
-          lastname: "Roll"
-          company: "Magento"
-          street: ["Magento Pkwy", "Main Street"]
-          city: "Austin"
-          region: "TX"
-          postcode: "78758"
-          country_code: "US"
-          telephone: "8675309"
-          save_in_address_book: False
-        }
-      }
-    }
-  ) {
-    cart {
-      billing_address {
-        firstname
-        lastname
-        company
-        street
-        city
-        postcode
-        telephone
-      }
-    }
-  }
-}
-```
-
-**Response**
-
-```json
-{
-  "data": {
-    "setBillingAddressOnCart": {
-      "cart": {
-        "billing_address": {
           "firstname": "Bob",
           "lastname": "Roll",
-          "company": "Magento",
           "street": [
             "Magento Pkwy",
             "Main Street"
           ],
           "city": "Austin",
-          "postcode": "78758",
-          "telephone": "8675309"
-        }
-      }
-    }
-  }
-}
-```
-
-### Set the shipping address on a cart
-
-Use the `setShippingAddressesOnCart` mutation to set a new shipping address for a specific cart.
-
-#### Syntax
-
-`mutation: {setShippingAddressesOnCart(input: SetShippingAddressesOnCartInput) {SetShippingAddressesOnCartOutput}}`
-
-#### Example usage
-
-The following example creates a new shipping address for a specific cart.
-
-**Request**
-
-``` text
-mutation {
-  setShippingAddressesOnCart(
-    input: {
-      cart_id: "4JQaNVJokOpFxrykGVvYrjhiNv9qt31C"
-      shipping_addresses: [
-        {
-          address: {
-            firstname: "Bob"
-            lastname: "Roll"
-            company: "Magento"
-            street: ["Magento Pkwy", "Main Street"]
-            city: "Austin"
-            region: "TX"
-            postcode: "78758"
-            country_code: "US"
-            telephone: "8675309"
-            save_in_address_book: False
+          "region": {
+            "code": "TX",
+            "label": "Texas"
+          },
+          "country": {
+            "code": "US",
+            "label": "US"
+          },
+          "telephone": "8675309",
+          "available_shipping_methods": [
+            {
+              "amount": {
+                "currency": "USD",
+                "value": 20
+              },
+              "available": true,
+              "base_amount": {
+                "value": 20,
+                "currency": "USD"
+              },
+              "carrier_code": "flatrate",
+              "carrier_title": "Flat Rate",
+              "error_message": "",
+              "method_code": "flatrate",
+              "method_title": "Fixed",
+              "price_excl_tax": {
+                "value": 20,
+                "currency": "USD"
+              },
+              "price_incl_tax": {
+                "value": 20,
+                "currency": "USD"
+              }
+            },
+            {
+              "amount": {
+                "currency": "USD",
+                "value": 5
+              },
+              "available": true,
+              "base_amount": {
+                "value": 5,
+                "currency": "USD"
+              },
+              "carrier_code": "tablerate",
+              "carrier_title": "Best Way",
+              "error_message": "",
+              "method_code": "bestway",
+              "method_title": "Table Rate",
+              "price_excl_tax": {
+                "value": 5,
+                "currency": "USD"
+              },
+              "price_incl_tax": {
+                "value": 5,
+                "currency": "USD"
+              }
+            },
+            {
+              "amount": {
+                "currency": "USD",
+                "value": 11.41
+              },
+              "available": true,
+              "base_amount": {
+                "value": 11.41,
+                "currency": "USD"
+              },
+              "carrier_code": "ups",
+              "carrier_title": "United Parcel Service",
+              "error_message": "",
+              "method_code": "03",
+              "method_title": "UPS Ground",
+              "price_excl_tax": {
+                "value": 11.41,
+                "currency": "USD"
+              },
+              "price_incl_tax": {
+                "value": 11.41,
+                "currency": "USD"
+              }
+            },
+            {
+              "amount": {
+                "currency": "USD",
+                "value": 26.81
+              },
+              "available": true,
+              "base_amount": {
+                "value": 26.81,
+                "currency": "USD"
+              },
+              "carrier_code": "ups",
+              "carrier_title": "United Parcel Service",
+              "error_message": "",
+              "method_code": "12",
+              "method_title": "UPS Three-Day Select",
+              "price_excl_tax": {
+                "value": 26.81,
+                "currency": "USD"
+              },
+              "price_incl_tax": {
+                "value": 26.81,
+                "currency": "USD"
+              }
+            },
+            {
+              "amount": {
+                "currency": "USD",
+                "value": 34.27
+              },
+              "available": true,
+              "base_amount": {
+                "value": 34.27,
+                "currency": "USD"
+              },
+              "carrier_code": "ups",
+              "carrier_title": "United Parcel Service",
+              "error_message": "",
+              "method_code": "02",
+              "method_title": "UPS Second Day Air",
+              "price_excl_tax": {
+                "value": 34.27,
+                "currency": "USD"
+              },
+              "price_incl_tax": {
+                "value": 34.27,
+                "currency": "USD"
+              }
+            },
+            {
+              "amount": {
+                "currency": "USD",
+                "value": 76.12
+              },
+              "available": true,
+              "base_amount": {
+                "value": 76.12,
+                "currency": "USD"
+              },
+              "carrier_code": "ups",
+              "carrier_title": "United Parcel Service",
+              "error_message": "",
+              "method_code": "01",
+              "method_title": "UPS Next Day Air",
+              "price_excl_tax": {
+                "value": 76.12,
+                "currency": "USD"
+              },
+              "price_incl_tax": {
+                "value": 76.12,
+                "currency": "USD"
+              }
+            },
+            {
+              "amount": {
+                "currency": "USD",
+                "value": 108.52
+              },
+              "available": true,
+              "base_amount": {
+                "value": 108.52,
+                "currency": "USD"
+              },
+              "carrier_code": "ups",
+              "carrier_title": "United Parcel Service",
+              "error_message": "",
+              "method_code": "14",
+              "method_title": "UPS Next Day Air Early A.M.",
+              "price_excl_tax": {
+                "value": 108.52,
+                "currency": "USD"
+              },
+              "price_incl_tax": {
+                "value": 108.52,
+                "currency": "USD"
+              }
+            }
+          ],
+          "selected_shipping_method": {
+            "amount": {
+              "value": 5,
+              "currency": "USD"
+            },
+            "base_amount": {
+              "value": 5,
+              "currency": "USD"
+            },
+            "carrier_code": "tablerate",
+            "carrier_title": "Best Way",
+            "method_code": "bestway",
+            "method_title": "Table Rate"
           }
         }
-      ]
-    }
-  ) {
-    cart {
-      shipping_addresses {
-        firstname
-        lastname
-        company
-        street
-        city
-        postcode
-        telephone
+      ],
+      "items": [
+        {
+          "id": "13",
+          "product": {
+            "name": "Strive Shoulder Pack",
+            "sku": "24-MB04"
+          },
+          "quantity": 4
+        }
+      ],
+      "available_payment_methods": [
+        {
+          "code": "cashondelivery",
+          "title": "Cash On Delivery"
+        },
+        {
+          "code": "banktransfer",
+          "title": "Bank Transfer Payment"
+        },
+        {
+          "code": "purchaseorder",
+          "title": "Purchase Order"
+        },
+        {
+          "code": "checkmo",
+          "title": "Check / Money order"
+        }
+      ],
+      "selected_payment_method": {
+        "code": "banktransfer",
+        "title": "Bank Transfer Payment"
+      },
+      "applied_coupon": null,
+      "prices": {
+        "grand_total": {
+          "value": 133,
+          "currency": "USD"
+        }
       }
     }
   }
 }
 ```
 
-**Response**
-
-```json
-{
-  "data": {
-    "createEmptyCart": "6XZA7q1ooLEI0jLz8DfFrfruEqgxGzlt"
-  }
-}
-```
-
-### Add and remove coupons from a cart
-{:.no_toc}
-
-You can use mutations to add or remove coupons from a specified cart.
-
-### Coupon attributes
-{:.no_toc}
-The add and remove coupon from cart objects can contain the following attributes:
+### Input attributes
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`cart_id` | String | The unique ID that identifies the customer's cart
-`coupon_code` | String | The coupon code
+`cart_id` | String | A 32-character string that is created when you [create a cart]({{page.baseurl}}/graphql/reference/quote-create-cart.html)
 
-### Apply coupon to cart
+### Output attributes {#cart-output}
 
-Adds a coupon code to a cart.
+The top-level `Cart` object is listed first. All child objects are listed in alphabetical order.
 
-#### Syntax
+#### Cart object
 
-`mutation: {applyCouponToCart(input: ApplyCouponToCartInput) {ApplyCouponToCartOutput}}`
+The `Cart` object can contain the following attributes:
 
-#### Example usage
+{% include graphql/cart-object.md %}
 
-The following call adds a coupon code called `test2019` to a cart.
 
-**Request**
+#### AppliedCoupon object {#AppliedCoupon}
 
-``` text
-mutation {
-  applyCouponToCart(
-    input: {
-      cart_id: "4JQaNVJokOpFxrykGVvYrjhiNv9qt31C"
-      coupon_code: "test2019"
-    }
-  ) {
-    cart {
-      applied_coupon {
-        code
-      }
-    }
-  }
-}
-```
+The `AppliedCoupon` object must contain the following attributes:
 
-**Response**
+Attribute |  Data Type | Description
+--- | --- | ---
+`code` | String! | The coupon code applied to the order
 
-```json
-{
-  "data": {
-    "applyCouponToCart": {
-      "cart": {
-        "applied_coupon": {
-          "code": "test2019"
-        }
-      }
-    }
-  }
-}
-```
+#### AvailablePaymentMethod object {#AvailablePaymentMethod}
 
-### Remove coupon from cart
+The `AvailablePaymentMethod` object must contain the following attributes:
 
-Removes a coupon from the specified cart.
+Attribute |  Data Type | Description
+--- | --- | ---
+`code` |  String! | The payment method code
+`title` | String! | The payment method title
 
-#### Syntax
+#### AvailableShippingMethod object {#AvailableShippingMethod}
 
-`mutation: {removeCouponFromCart(input: RemoveCouponFromCartInput){ RemoveCouponFromCartOutput}}`
+The `AvailableShippingMethod` object can contain the following attributes:
 
-#### Example usage
+Attribute |  Data Type | Description
+--- | --- | ---
+`amount` | Money! | The cost of shipping using this shipping method
+`available` | Boolean! | Indicates whether this shipping method can be applied to the cart
+`base_amount` | Money | The base shipping cost, not including taxes or other cost adjustment. Could be null if method is not available
+`carrier_code` | String! | A string that identifies a commercial carrier or an offline shipping method
+`carrier_title` | String! | The label for the carrier code
+`error_message` | String | Describes an error condition
+`method_code` | String | A shipping method code associated with a carrier. Could be null if method is not available
+`method_title` | String | The label for the method code. Could be null if method is not available
+`price_excl_tax` | Money! | The cost of shipping using this shipping method, excluding tax
+`price_incl_tax` | Money! | The cost of shipping using this shipping method, excluding tax
 
-The following example removes a coupon from the cart.
+#### BillingCartAddress object {#BillingCartAddress}
 
-**Request**
+The `BillingCartAddress` object can contain the following attributes:
 
-``` text
-mutation {
-  removeCouponFromCart(input: { cart_id: "4JQaNVJokOpFxrykGVvYrjhiNv9qt31C" }) {
-    cart {
-      applied_coupon {
-        code
-      }
-    }
-  }
-}
-```
+Attribute |  Data Type | Description
+--- | --- | ---
+`city` | String | The city specified for the billing address 
+`company` | String | The company specified for the billing address
+`country` | [CartAddressCountry](#CartAddressCountry) | The country code and label for the billing address
+`customer_notes` | String | Comments made to the customer that accompanies the order
+`firstname` | String | The customer's first name
+`lastname` | String | The customer's last name
+`postcode` | String | The postal code for the billing address
+`region` | [CartAddressRegion](#CartAddressRegion) | An object containing the region label and code
+`street` | [String] | The street for the billing address
+`telephone` | String | The telephone number for the billing address
 
-**Response**
+#### CartAddressCountry object {#CartAddressCountry}
 
-```json
-{
-  "data": {
-    "removeCouponFromCart": {
-      "cart": {
-        "applied_coupon": {
-          "code": "test2019"
-        }
-      }
-    }
-  }
-}
-```
+The `CartAddressCountry` object can contain the following attributes:
+
+Attribute |  Data Type | Description
+--- | --- | ---
+`code` | String | The country code
+`label` | String | The display label for the country
+
+#### CartAddressRegion object {#CartAddressRegion}
+
+The `CartAddressRegion` object can contain the following attributes:
+
+Attribute |  Data Type | Description
+--- | --- | ---
+`code` | String | The state or province code
+`label` | String | The display label for the region
+
+#### CartItemInterface object {#CartItemInterface}
+
+The `CartItemInterface` object can contain the following attributes:
+
+Attribute |  Data Type | Description
+--- | --- | ---
+`id` | String | ID of the item
+`product` | [ProductInterface]({{ page.baseurl }}/graphql/reference/product-interface-implementations.html) | Contains attributes that are common to all types of products
+`quantity` | Float | The number of items in the cart
+
+#### CartItemQuantity object {#CartItemQuantity}
+
+The `CartItemQuantity` object must contain the following attributes:
+
+Attribute |  Data Type | Description
+--- | --- | ---
+`cart_item_id` | Int! | The unique ID assigned when a customer places an item in the cart
+`quantity` | Float! | The quantity of this item selected
+
+#### CartPrices object {#CartPrices}
+
+The `CartPrices` object can contain the following attributes:
+
+Attribute |  Data Type | Description
+--- | --- | ---
+`applied_taxes` | [[CartTaxItem]](#CartTaxItem) | An array containing the names and amounts of taxes applied to the item
+`grand_total` | Money | The total, including discounts, taxes, shipping, and other fees
+`subtotal_excluding_tax` | Money | Subtotal without taxes
+`subtotal_including_tax` | Money | Subtotal with taxes
+`subtotal_with_discount_excluding_tax` | Money | Subtotal with any discounts applied, but not taxes
+
+#### CartTaxItem object {#CartTaxItem}
+
+The `CartTaxItem` object must contain the following attributes:
+
+Attribute |  Data Type | Description
+--- | --- | ---
+`amount` | Money! | The amount of tax applied to the item
+`label` | String! | The description of the tax
+
+#### SelectedPaymentMethod object {#SelectedPaymentMethod}
+
+The `SelectedPaymentMethod` object can contain the following attributes:
+
+Attribute |  Data Type | Description
+--- | --- | ---
+`code` | String! | The payment method code 
+`purchase_order_number` | String | The purchase order number
+`title` | String! | The payment method title
+
+#### SelectedShippingMethod object {#SelectedShippingMethod}
+
+The `SelectedShippingMethod` object can contain the following attributes:
+
+Attribute |  Data Type | Description
+--- | --- | ---
+`amount` | Money | The cost of shipping using this shipping method
+`base_amount` | Money | The base shipping cost, not including taxes or other cost adjustment
+`carrier_code` | String | A string that identifies a commercial carrier or an offline shipping method
+`carrier_title` | String | The label for the carrier code
+`method_code` | String | A shipping method code associated with a carrier
+`method_title` | String | The label for the method code
+
+#### ShippingCartAddress object {#ShippingCartAddress}
+
+The `ShippingCartAddress` object can contain the following attributes:
+
+Attribute |  Data Type | Description
+--- | --- | ---
+`available_shipping_methods` | [[AvailableShippingMethod]](#AvailableShippingMethod) | An array that lists the shipping methods that can be applied to the cart
+`cart_items` | [[CartItemQuantity]](#CartItemQuantity) | An array that lists the items in the cart
+`city` | String | The city specified for the shipping address 
+`company` | String | The company specified for the shipping address
+`country` | [CartAddressCountry](#CartAddressCountry) | The country code and label for the shipping address
+`customer_notes` | String | Comments made to the customer that will accompany the order
+`firstname` | String | The recipient's first name
+`items_weight` | Float | The weight of all items in the cart
+`lastname` | String | The recipient's last name
+`postcode` | String | The postal code for the shipping address
+`region` | [CartAddressRegion](#CartAddressRegion) | An object containing the region label and code
+`selected_shipping_method` | [SelectedShippingMethod](#SelectedShippingMethod) | An object that describes the selected shipping method
+`street` | [String] | The street for the shipping address
+`telephone` | String | The telephone number for the shipping address
+
+
+## Mutations
+
+Refer to the left navigation for information about the mutations defined in the `QuoteGraphQl` module.

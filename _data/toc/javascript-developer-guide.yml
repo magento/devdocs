@@ -85,5 +85,11 @@ pages:
         - label: QuickSearch widget
           url: /javascript-dev-guide/widgets/widget_quickSearch.html
 
+        - label: RedirectUrl widget
+          url: /javascript-dev-guide/widgets/widget_redirectUrl.html
+
         - label: Tabs widget
           url: /javascript-dev-guide/widgets/widget_tabs.html
+
+        - label: ToggleAdvanced widget
+          url: /javascript-dev-guide/widgets/widget_toggle.html

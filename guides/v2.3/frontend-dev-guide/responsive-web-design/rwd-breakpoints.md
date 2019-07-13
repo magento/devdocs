@@ -1,1 +1,1 @@
-../../../v2.2/frontend-dev-guide/responsive-web-design/rwd-breakpoints.md
+../../../../guides/v2.2/frontend-dev-guide/responsive-web-design/rwd-breakpoints.md

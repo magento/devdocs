@@ -380,37 +380,16 @@ Options:
 * *handler* - describes transformation behavior for fields. To call the handler you need to specify a handler class name in a <handler> tag. Use <param> tag with the parameter name and value data to pass it to handler
 
 **Source** available operations:
-<table>
-<tbody>
-	<tr>
-		<th>Document</th>
-		<th>Field</th>
-	</tr>
-<tr>
-	<td>ignore
-    	rename</td>
-	<td>ignore
-		move
-		transform</td>
-</tr>
-</tbody>
-</table>
+
+|Document|Field|
+|--- |--- |
+|ignore rename|ignore move transform|
 
 **Destination** available operations:
 
-<table>
-<tbody>
-	<tr>
-		<th>Document</th>
-		<th>Field</th>
-	</tr>
-<tr>
-	<td>ignore</td>
-	<td>ignore
-		transform</td>
-</tr>
-</tbody>
-</table>
+|Document|Field|
+|--- |--- |
+|ignore|ignore transform|
 
 #### Wildcards
 
@@ -451,7 +430,8 @@ Here is a class diagram of these classes:
 
 In order to implement output of migration process and control all possible levels PSR logger, which is used in Magento, is applied. \Migration\Logger\Logger class was implemented to provide logging functionality. To use the logger you should inject it via constructor [dependency injection](https://glossary.magento.com/dependency-injection).
 
-<pre><code>class SomeClass
+```php
+class SomeClass
 {
     ...
     protected $logger;
@@ -462,15 +442,16 @@ In order to implement output of migration process and control all possible level
     }
     ...
 }
-</code></pre>
+```
 
 After that you can use this class for logging of some events:
 
-<pre><code>$this->logger->info("Some information message");
+```php
+$this->logger->info("Some information message");
 $this->logger->debug("Some debug message");
 $this->logger->error("Message about error operation");
 $this->logger->warning("Some warning message");
-</code></pre>
+```
 
 There is a possibility to customize where log information should be written. You can do that by adding handler to logger using pushHandler() method of the logger. Each handler should implement \Monolog\Handler\HandlerInterface interface. As for now there are two handlers:
 
@@ -480,18 +461,20 @@ There is a possibility to customize where log information should be written. You
 
 Also it is possible to implement any additional handler. There is a set of handlers in Magento framework. Example of adding handlers to logger:
 
-<pre><code>// $this->consoleHandler is the object of Migration\Logger\ConsoleHandler class
+```php
+// $this->consoleHandler is the object of Migration\Logger\ConsoleHandler class
 // $this->logger is the object of Migration\Logger\Logger class
 $this->logger->pushHandler($this->consoleHandler);
-</code></pre>
+```
 
 To set additional data for logger (e.g. current mode, table name e.t.c) you can use logger processors. There is one existing processor (MessageProcessor). It's created to add "extra" data for logging messages and will be called each time when log method is executed. MessageProcessor has protected $extra var, which contain empty values for 'mode', 'stage', 'step' and 'table'. Extra data can be passed to processor as a second parameter (context) for log method. Currently additional data sets to processor in AbstractStep->runStage (pass current mode, stage and step to processor) method and data classes where used logger->debug method (pass migrating table name). Example of adding processors to logger:
 
-<pre><code>// $this->processoris the object of Migration\Logger\messageProcessor class
+```php
+// $this->processoris the object of Migration\Logger\messageProcessor class
 // $this->logger is the object of Migration\Logger\Logger class
 $this->logger->pushProcessor([$this->processor, 'setExtra']);
 // As a second array value you need to pass method that should be executed when processor called
-</code></pre>
+```
 
 There is a possibility to set the level of verbosity. As for now there are 3 levels: ERROR(writes only errors to the log), INFO(only important information is written to the log, default value), DEBUG(everything is written). Verbosity log level can be set for each handler separately by calling setLevel() method. If you want to set verbosity level via command line parameter, you should change 'verbose' option at application launch.
 
@@ -503,11 +486,14 @@ As for now manipulation with logger, adding handler(s), processor(s) to it and p
 
 There are 3 types of tests in Data Migration Tool: static, unit and integration tests. They all are located in tests/ directory of the tool and they are located in folders, which are the same as the type of the test (e.g. unit tests are located in tests/unit folder). To launch the test you should have phpunit installed. In such case you should change current folder to the folder of test and launch phpunit. See the example below.
 
-<pre><code>[10:32 AM]-[vagrant@debian-70rc1-x64-vbox4210]-[/var/www/magento2/vendor/magento/migration-tool]-[git master]
+```bash
+[10:32 AM]-[vagrant@debian-70rc1-x64-vbox4210]-[/var/www/magento2/vendor/magento/data-migration-tool]-[git master]
 $ cd tests/unit
+```
 
-[10:33 AM]-[vagrant@debian-70rc1-x64-vbox4210]-[/var/www/magento2/vendor/magento/migration-tool/tests/unit]-[git master]
+```bash
+[10:33 AM]-[vagrant@debian-70rc1-x64-vbox4210]-[/var/www/magento2/vendor/magento/data-migration-tool/tests/unit]-[git master]
 $ phpunit
 PHPUnit 4.1.0 by Sebastian Bergmann.
 ....
-</code></pre>
+```

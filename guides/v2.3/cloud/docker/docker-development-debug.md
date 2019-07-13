@@ -1,1 +1,1 @@
-../../../v2.2/cloud/docker/docker-development-debug.md
+../../../../guides/v2.2/cloud/docker/docker-development-debug.md

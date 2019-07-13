@@ -1,1 +1,1 @@
-../../../v2.2/config-guide/varnish/config-varnish-final.md
+../../../../guides/v2.2/config-guide/varnish/config-varnish-final.md

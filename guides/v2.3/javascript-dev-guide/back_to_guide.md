@@ -1,1 +1,1 @@
-../../v2.2/javascript-dev-guide/back_to_guide.md
+../../../guides/v2.2/javascript-dev-guide/back_to_guide.md
