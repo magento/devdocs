@@ -103,6 +103,6 @@ Now you are ready to run the tests.
 
 3. Copy `/dev/tests/api-functional/config/install-config-mysql.php.dist` to `/dev/tests/api-functional/config/install-config-mysql.php`.
 
-4. Configure your DB connection and install settings in `/dev/tests/api-functional/config/install-config-mysql.php`. Specify the Magento database. The base URL to access this Magento instance must be specified copied file i.e. `phpunit_rest.xml` or `phpunit_soap.xml`.
+4. Configure your DB connection and install settings in `/dev/tests/api-functional/config/install-config-mysql.php`. Specify the Magento database. The base URL to access this Magento instance must be the same specified in file `phpunit_rest.xml` or `phpunit_soap.xml`.
 
 5. Run `phpunit` using the `/dev/tests/api-functional/phpunit_rest.xml` or `/dev/tests/api-functional/phpunit_soap.xml` configuration file.
