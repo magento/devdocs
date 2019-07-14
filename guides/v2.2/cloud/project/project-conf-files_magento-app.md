@@ -274,7 +274,7 @@ A cron job is well suited for the following tasks:
 -  Or it is long, but can be easily divided into many small queued tasks.
 -  A delay between when a task is registered and when it actually happens is acceptable.
 
-A sample Magento cron job follows:
+By default, every Cloud project has the following default crons configuration to run the default Magento cron jobs:
 
 ```yaml
 crons:
@@ -285,7 +285,7 @@ crons:
 
 For {{site.data.var.ece}} 2.1.X, you can use only [workers](#workers) and [cron jobs](#crons). For {{site.data.var.ece}} 2.2.X, cron jobs launch consumers to process batches of messages, and do not require additional configuration.
 
-For more information, see [Set up cron jobs]({{ page.baseurl }}/cloud/configure/setup-cron-jobs.html).
+If your project requires custom cron jobs, you can add them to the default cron configuration. See [Set up cron jobs]({{ page.baseurl }}/cloud/configure/setup-cron-jobs.html).
 
 ## Variables
 
