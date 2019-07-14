@@ -6,8 +6,8 @@ title: PasswordStrengthIndicator widget
 
 ## Overview {#password_strength_indicator_overview}
 
-Magento password strength indicator {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} show the user immediate feedback on the validity and strength of a password while it is being typed.
-If the password is not strong enough the UI asks the user to choose a new password.
+The Magento password strength indicator {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} provides immediate feedback on the validity and strength of a password while it is being typed.
+If the password is not strong enough, Magento prompts the user to choose a new password.
 
 The password strength indicator widget source is [`<Magento_Customer_module_dir>/view/frontend/web/js/password-strength-indicator.js`].
 
@@ -29,7 +29,7 @@ $('#password-input').passwordStrengthIndicator({
 });
 ```
 
-For details about how to initialize the widget in a`.phtml` template, refer to the [JavaScript initialization] topic.
+For details about how to initialize the widget in a`.phtml` template, refer to the [JavaScript initialization]({{ page.baseurl }}/javascript-dev-guide/javascript/js_init.html){:target="_blank"} topic.
 
 ## Options {#password_strength_indicator_options}
 
@@ -82,7 +82,7 @@ The selector for the email input.
 
 ## Events {#password_strength_indicator_events}
 
-The password strength indicator widget listens `change`, `keyup` and `paste` events on the password and the email inputs. Listening to the email input is optional.
+The password strength indicator widget listens for `change`, `keyup`, and `paste` events on the password and the email inputs. Listening to the email input is optional.
 
 ## Code sample
 
@@ -118,6 +118,6 @@ The following example shows how to initialize the password strength indicator wi
 
 ### Result
 
-The result is a user aware of typed password strength and prevented from using weak one.
+The result is an indication of the strength of the user's password.
 
 ![Password Strength Indicator Widget]({{ site.baseurl }}/common/images/widget/password-strength-indicator-widget-result.png)
