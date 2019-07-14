@@ -7,7 +7,7 @@ level3_subgroup: graphql-checkout
 return_to:
   title: GraphQL Overview
   url: graphql/index.html
-menu_order: 90
+menu_order: 80
 functional_areas:
   - Integration
 contributor_name: Atwix
