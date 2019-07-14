@@ -1,7 +1,7 @@
 ---
 layout: tutorial
 group: graphql
-title: Step 9. Set email on the cart (guest customers only)
+title: Step 8. Set email on the cart (guest customers only)
 subtitle: GraphQL checkout tutorial
 level3_subgroup: graphql-checkout
 return_to:

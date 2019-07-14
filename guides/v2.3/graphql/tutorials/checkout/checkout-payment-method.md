@@ -1,7 +1,7 @@
 ---
 layout: tutorial
 group: graphql
-title: Step 7. Set the payment method
+title: Step 9. Set the payment method
 subtitle: GraphQL checkout tutorial
 level3_subgroup: graphql-checkout
 return_to:

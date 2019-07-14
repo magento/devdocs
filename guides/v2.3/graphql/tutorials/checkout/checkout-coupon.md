@@ -1,7 +1,7 @@
 ---
 layout: tutorial
 group: graphql
-title: Step 8. Apply a coupon
+title: Step 7. Apply a coupon
 subtitle: GraphQL checkout tutorial
 level3_subgroup: graphql-checkout
 return_to:
