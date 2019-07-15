@@ -12,7 +12,7 @@ Static content deployment (SCD) has a significant impact on the store deployment
 
 You can improve the SCD load time during the deployment process if you skip copying the static view files in the `var/view_preprocessed` directory and generate _minified_ HTML when requested. You can activate this by setting the [SKIP_HTML_MINIFICATION]({{page.baseurl}}/cloud/env/variables-global.html#skip_html_minification) global environment variable to `true` in the `.magento.env.yaml` file.
 
-{: .bs-callout .bs-callout-info}
+{: .bs-callout-info }
 Beginning with the `{{site.data.var.ct}}` package version 2002.0.13, the default value for the SKIP_HTML_MINIFICATION variable is set to `true`.
 
 You can save **more** deployment time and disk space by reducing the amount of unnecessary theme files. For example, you can deploy the `magento/backend` theme in English and a custom theme in other languages. You can configure these theme settings with the [SCD_MATRIX]({{page.baseurl}}/cloud/env/variables-deploy.html#scd_matrix) environment variable.

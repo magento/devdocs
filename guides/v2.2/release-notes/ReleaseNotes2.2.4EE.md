@@ -730,7 +730,7 @@ Users of the CyberSource payment method should note that CyberSource uses the Ma
 
 ### Shipping
 
-{: .bs-callout .bs-callout-info }
+{: .bs-callout-info }
 You can find Magento Shipping-specific release notes in [Magento Shipping Release Notes]({{ page.baseurl }}/release-notes/ReleaseNotesMagentoShipping2.2.x.html).
 
 
