@@ -436,6 +436,15 @@ Attribute |  Data Type | Description
 `current_balance` | Money | Current balance remaining on the gift card
 `expiration_date` | String | Gift card expiration date
 
+#### AppliedStoreCredit object {#AppliedStoreCredit}
+
+The `AppliedStoreCredit` object can contain the following attributes:
+
+Attribute |  Data Type | Description
+--- | --- | ---
+`applied_balance` | Money | The amount of store credit applied to the current cart
+`current_balance` | Money | The customer's store credit balance before applying store credit to the cart
+
 #### AvailablePaymentMethod object {#AvailablePaymentMethod}
 
 The `AvailablePaymentMethod` object must contain the following attributes:

@@ -22,19 +22,6 @@ pages:
         - label: GraphQL Caching
           url: /graphql/caching.html
 
-    - label: Payment methods
-      children:
-
-        - label: Authorize.Net
-          url: /graphql/payment-methods/authorize-net.html
-          
-        - label: PayPal Payflow Link
-          url: /graphql/payment-methods/payflow-link.html
-          
-        - label: PayPal Payflow Pro
-          url: /graphql/payment-methods/payflow-pro.html
-
-
     - label: Development
       children:
         - label: Define the GraphQL schema for a module
@@ -57,6 +44,14 @@ pages:
 
     - label: Functional testing
       url: /graphql/functional-testing.html
+
+    - label: Mutations
+      children:
+        - label: applyStoreCreditToCart mutation
+          url: /graphql/mutations/apply-store-credit.html
+
+        - label: removeStoreCreditFromCart mutation
+          url: /graphql/mutations/remove-store-credit.html
 
     - label: Reference
       children:
@@ -180,6 +175,18 @@ pages:
 
             - label: Wishlist endpoint
               url: /graphql/reference/wishlist.html
+
+    - label: Payment methods
+      children:
+
+        - label: Authorize.Net
+          url: /graphql/payment-methods/authorize-net.html
+          
+        - label: PayPal Payflow Link
+          url: /graphql/payment-methods/payflow-link.html
+          
+        - label: PayPal Payflow Pro
+          url: /graphql/payment-methods/payflow-pro.html
 
     - label: Tutorial
       class: tutorial
