@@ -69,7 +69,7 @@ States to report (--states)
 A list of states to report, e.g. pending, in_progress, complete
 Default: complete
 Enter comma-separated values (or leave this blank)
-> 
+>
 ```
 {: .no-copy}
 
@@ -80,12 +80,12 @@ Included environments (--environments)
 The environment IDs to include
 Default: *
 Enter comma-separated values (or leave this blank)
-> 
+>
 
 Excluded environments (--excluded-environments)
 The environment IDs to exclude
 Enter comma-separated values (or leave this blank)
-> 
+>
 ```
 {: .no-copy}
 
