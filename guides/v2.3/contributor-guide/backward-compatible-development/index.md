@@ -8,23 +8,27 @@ This page describes rules and best practices for backward compatible development
 
 See the [versioning][versioning] documentation for the definitions of MAJOR and MINOR changes and how it impacts [extension](https://glossary.magento.com/extension) developers.
 
-The core Magento team and contributing developers work in two release types
+{: .bs-callout-info}
+ Note that the 'marketing version' (Magento 2.3) is different than the official version number. v2.2 -> v2.3 represents a MAJOR release for Magento, even though semantically, it is a MINOR increase to the 'marketing version' number.
+
+The core Magento team and contributing developers work in two release types:
 
 1. New and significant release (product's MINOR release)
+
    - Necessary MAJOR and MINOR changes are allowed, but the Magento architecture team ultimately decides what is allowed.
 
 1. New patch release (product's PATCH release)
 
    - PATCH changes are allowed, but MAJOR and MINOR changes are not allowed.
 
-{: .bs-callout .bs-callout-info }
+{: .bs-callout-info }
 Backward Compatibility Policy is not applied to Plugins, Observers and Setup Scripts.
 
 ## Prohibited code changes
 
 The following modifications are forbidden for `@api` code without the approval of the **Magento architect**, **Product Manager** and **Engineering Manager** assigned to the component.
 
-{: .bs-callout .bs-callout-info }
+{: .bs-callout-info }
 The rules listed do not apply to customization code (e.g. Plugins, Observers, JS Mixins, etc.).
 
 ### Composer
@@ -446,9 +450,8 @@ In order to update the page, create a PR to the DevDocs repository with your cha
 
 ## GraphQl backward compatibility policy
 
-* In GraphQL, the schema is the only code that can be counted as a contract.
-* Only the schema should be taken into account for backward compatibility.
-* The GraphQL codebase should NOT follow the restrictions described in this topic. For example, skip all the `backward compatibility` restrictions for the GraphQL PHP codebase.
+* For backward compatibility, the GraphQL schema should be considered an API.
+* To allow for the evolution of GraphQL, we allow MINOR changes to be added within a PATCH. This may change in the future.
 
 <!-- Link definitions -->
 
