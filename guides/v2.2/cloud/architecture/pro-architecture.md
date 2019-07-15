@@ -88,7 +88,7 @@ Developers use the Integration environment to develop, deploy, and test:
 
 The Integration environment runs in a Linux container (LXC) on a grid of servers known as Platform-as-a-Service (PaaS). Each environment includes a web server and database to test your site.
 
-{: .bs-callout .bs-callout-info}
+{: .bs-callout-info }
 The Integration environment does not support all services. For example, the Fastly CDN is not accessible in an Integration environment.
 
 ### Global Master

@@ -180,7 +180,6 @@ Magento GraphQL clause | SQL equivalent
 `lteq: "value"` | <code><i>field</i> <= 'value'</code>
 `moreq: "value"` | <code><i>field</i> >= 'value'</code>
 `from: "value1"` `to: "value2"` | <code><i>field</i> BETWEEN 'value1' AND 'value2'</code>
-`finset: [1, 2, 3]` | <code>FINSET(<i>field</i>, '1, 2, 3')</code>
 
 `to` and `from` must always be used together. These condition types can be used in the same search term. For example, `quantity: {from: "10" to: "20"}`.
 
