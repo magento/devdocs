@@ -6,7 +6,7 @@ ee_only: true
 
 The `applyStoreCreditToCart` mutation applies store credit to the specified cart.
 
-Store credit is an amount that is restored to a customer account. Customers can use their store credit to pay for purchases, and administrators can use store credit for cash refunds.
+Store credit is an amount that the merchant applies to a customer account as a result of a refund or similar transaction. A customer can use store credit to pay for purchases.
 
 ## Syntax
 
