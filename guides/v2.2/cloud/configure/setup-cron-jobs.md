@@ -88,7 +88,7 @@ crons:
     cmd: "/usr/bin/php /app/abc123edf890/bin/magento export:start catalog_category_product"
 ```
 
-In this example, `<path to php binary>` is `/usr/bin/php`. The install directory which includes the Project ID is `/app/abc123edf890/bin/magento`, and the script action is `import:start catalog_category_product`.
+In this example, `<path-to-php-binary>` is `/usr/bin/php`. The install directory, which includes the Project ID is `/app/abc123edf890/bin/magento`, and the script action is `export:start catalog_category_product`.
 
 ## Add custom cron jobs to your project {#add-cron}
 
