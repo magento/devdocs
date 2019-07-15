@@ -57,7 +57,7 @@ mutation {
           },
           "current_balance": {
             "currency": "USD",
-            "value": 100
+            "value": 10
           }
         },
         "prices": {
