@@ -11,5 +11,5 @@ GET /rest/v1/reports/metrics/:metric_name
 ```
 
 
-{: .bs-callout .bs-callout-info }
+{: .bs-callout-info }
 The Reports API specification is under design review. More details will be announced in the future.

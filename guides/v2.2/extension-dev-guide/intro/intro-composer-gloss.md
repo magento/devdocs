@@ -22,7 +22,7 @@ You can *package* your components as follows:
 
 	More information about metapackages can be found in the next section.
 
-{: .bs-callout .bs-callout-info }
+{: .bs-callout-info }
 Magento Marketplace uses the blanket term *product* to refer to a component or a [metapackage](https://glossary.magento.com/metapackage).
 
 ### Metapackage {#gloss-meta}

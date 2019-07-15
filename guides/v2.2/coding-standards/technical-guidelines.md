@@ -745,9 +745,33 @@ You need to read configuration from different sources (like database or filesyst
 
 11.3.2.3. There MUST be only one `<section>` entity per file.
 
+#### 11.3.3. Elements
+
+11.3.3.1. All element selectors MUST follow these [best practices](https://devdocs.magento.com/mftf/docs/best-practices.html).
+
+11.3.3.2. The element `name` MUST be unique within the `<section>`.
+
+11.3.3.3. The element `name` SHOULD be written in [camelCase](http://wiki.c2.com/?CamelCase).
+
+11.3.3.4. Parameterized selectors MUST use descriptive names for their parameters.
+
+11.3.3.5. Elements SHOULD use the `timeout` attribute to wait after interactions.
+
+#### 11.3.4. Data Entities
+
+11.3.4.1. Data entity file names MUST follow this pattern:
+
+* {Type}Data.xml, where {Type} describes the type of entities.
+* Use [PascalCase](http://wiki.c2.com/?PascalCase).
+* Examples: ProductData.xml or CustomerData.xml
+
+11.3.4.2. Data entities SHOULD make use of `unique="suffix"` or `unique="prefix"` to ensure that tests using the entity can be repeatedly ran against the same environment.
+
+11.3.4.3. Changes to existing data entities MUST be compatible with existing tests.
+
 ## 12. Web API
 
-12.1. Both REST and SOAP API's MUST be exposed.
+12.1. Both REST and SOAP APIs MUST be exposed.
 
 12.2. All [Web API](https://glossary.magento.com/web-api) GET endpoints MUST return lists of entities.
 
