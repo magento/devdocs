@@ -7,23 +7,13 @@ The Input component implements the [HTML](https://glossary.magento.com/html) `<i
 
 ## Configuration options
 
-<table>
-  <tr>
-    <th>Option </th>
-    <th>Description</th>
-    <th>Type</th>
-    <th>Default</th>
-  </tr>
-  <tr>
-    <td><code>component</code></td>
-    <td>The path to the component’s <code>.js</code> file in terms of RequireJS.</td>
-    <td>String</td>
-    <td><code>Magento_Ui/js/form/element/abstract</code></td>
-  </tr>
-  <tr>
-    <td><code>template</code></td>
-    <td>The path to the component’s <code>.html</code> template.</td>
-    <td>String</td>
-    <td><code>ui/form/field</code></td>
-  </tr>
-</table>
+|Option|Description|Type|Default|
+|--- |--- |--- |--- |
+|`class`|Path to the PHP class responsible for the backend implementation of the component.|String| - |
+|`component`|The path to the component’s `.js` file in terms of RequireJS.|String|`Magento_Ui/js/form/element/abstract`|
+|`displayArea`|Renders the component in the location that was declared in the layout.|String| - |
+|`extends`|Extends configuration from specified component.|String| - |
+|`formElement`|Form Element.|`hidden`, `file`, `input`, `date`, `boolean`, `checkbox`, `checkboxset`, `email`, `select`, `multiselect`, `text`, `textarea`, `price`, `radioset`, `wysiwyg`|`input`|
+|`provider`|Reference to component.|String| - |
+|`sortOrder`|Element's position in the collection|Int| - |
+|`template`|The path to the component’s `.html` template.|String|`ui/form/field`|
