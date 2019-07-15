@@ -1,1 +1,1 @@
-../../../../v2.2/pattern-library/navigation/links/links.md
+../../../../../guides/v2.2/pattern-library/navigation/links/links.md

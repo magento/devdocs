@@ -1,1 +1,1 @@
-../../../v2.2/cloud/env/log-handlers.md
+../../../../guides/v2.2/cloud/env/log-handlers.md

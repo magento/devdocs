@@ -1,1 +1,1 @@
-../../../v2.2/cloud/trouble/site-availability.md
+../../../../guides/v2.2/cloud/trouble/site-availability.md

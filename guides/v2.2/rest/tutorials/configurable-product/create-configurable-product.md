@@ -29,7 +29,7 @@ Before you using this code sample, verify that the attribute values are the same
 
 **Payload**
 
-``` json
+```json
 {
   "product": {
     "sku": "MS-Champ",
@@ -84,7 +84,7 @@ Before you using this code sample, verify that the attribute values are the same
 **Response**
 
 {% collapsible Show code sample %}
-``` json
+```json
 {
     "id": 2078,
     "sku": "MS-Champ",

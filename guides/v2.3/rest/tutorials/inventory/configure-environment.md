@@ -8,7 +8,6 @@ level3_subgroup: msi-tutorial
 return_to:
   title: REST Tutorials
   url: rest/tutorials/index.html
-redirect_from: /guides/v2.3/rest/tutorials/msi-order-processing/configure-environment.html
 functional_areas:
   - Integration
 ---
@@ -23,13 +22,13 @@ In this tutorial, we'll create the infrastructure needed to implement a US and a
 
 ### Create the North America website
 
-1. Log in to Admin and select **Stores** > **All Stores**. Click **Create Website**, then assign the following values:
+1. Log in to Admin and select **Stores** > Settings > **All Stores**. Click **Create Website**, then assign the following values:
 
    Field | Value
    --- | ---
    Name | North America Site
    Code | `na_site`
-   {:style="table-layout:auto;"}
+   
 
    Click **Save Web Site**.
 
@@ -41,7 +40,7 @@ In this tutorial, we'll create the infrastructure needed to implement a US and a
    Name | North America Store
    Code | `na_store`
    Root Category | Default Category
-   {:style="table-layout:auto;"}
+   
 
    Click **Save Store**.
 
@@ -53,19 +52,19 @@ In this tutorial, we'll create the infrastructure needed to implement a US and a
    Name | US Store View
    Code | `us`
    Status | Enabled
-   {:style="table-layout:auto;"}
+   
 
    Click **Save Store View**.
 
 ### Create the Europe website
 
-1. Select **Stores** > **All Stores** and click the **Create Website** button. Assign the following values:
+1. Select **Stores** > Settings > **All Stores** and click the **Create Website** button. Assign the following values:
 
    Field | Value
    --- | ---
    Name | Europe Site
    Code | `eu_site`
-   {:style="table-layout:auto;"}
+   
 
    Click **Save Web Site**.
 
@@ -77,7 +76,7 @@ In this tutorial, we'll create the infrastructure needed to implement a US and a
    Name | Europe Store
    Code | `eu_store`
    Root Category | Default Category
-   {:style="table-layout:auto;"}
+   
 
    Click **Save Store**.
 
@@ -89,7 +88,7 @@ In this tutorial, we'll create the infrastructure needed to implement a US and a
    Name | Germany Store View
    Code | `de`
    Status | Enabled
-   {:style="table-layout:auto;"}
+   
 
    Click **Save Store View**.
 
@@ -97,7 +96,7 @@ In this tutorial, we'll create the infrastructure needed to implement a US and a
 
 To make it easier to locate products and log in as a customer later in this tutorial, configure Magento to add the store code to the URL.
 
-1. Click **Stores** > **Configuration** > **Web** and expand the **Url Options** section.
+1. Click **Stores** > Setting* > **Configuration** > **Web** and expand the **Url Options** section.
 2. Change the value of **Add Store Code to Urls** to **Yes**.
 3. Click **Save Config**.
 
@@ -117,10 +116,10 @@ For this tutorial, we'll assume that payment and shipping methods are configured
 
 **Required:** Perform a full reindex and flush the cache.
 
-``` bash
-bin/magento indexer:reindex && php bin/magento cache:flush
+```bash
+bin/magento indexer:reindex && bin/magento cache:flush
 ```
 
 ## Verify this step
 
-Click **Stores** > **All Stores**. The websites, stores, and store views are displayed in the grid.
+Click **Stores** > Settings > **All Stores**. The websites, stores, and store views are displayed in the grid.

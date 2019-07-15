@@ -1,1 +1,1 @@
-../../../v2.2/frontend-dev-guide/translations/translate_practice.md
+../../../../guides/v2.2/frontend-dev-guide/translations/translate_practice.md

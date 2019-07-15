@@ -7,15 +7,37 @@ title: Magento Open Source 2.3.0 Release Notes
 
 We are pleased to present {{site.data.var.ce}} 2.3.0 General Availability. This release includes numerous functional fixes and enhancements.
 
+## Apply patch PRODSECBUG-2198 to address critical SQL injection vulnerability
+
+A SQL injection vulnerability has been identified in pre-2.2.8 Magento code. To quickly protect your store from this vulnerability only, install patch PRODSECBUG-2198.  However, to protect against this vulnerability and others, you must upgrade to Magento Commerce or Open Source  2.2.8. **We strongly suggest that you install these full patches as soon as you can**.
+ 
+See the description of  PRODSECBUG-2198  in the  [Magento Security Center](https://magento.com/security/patches/magento-2.3.1-2.2.8-and-2.1.17-security-update) for information on this vulnerability. 
+
+
+Follow these steps to download and apply this patch:
+
+1. Access the Downloads page [here](https://magento.com/tech-resources/download#download2288).
+
+2. Select the Git-based option from **Select your format**.
+
+4. Download the patch and upload to a specific directory in your Magento installation such as `m2-hotfixes` (confirm  that the directory is not accessible publicly).
+
+5. From your project root, apply the patch.  `git apply ./m2-hotfixes/<patch-file-name>`.
+
+6. Refresh the cache from the Admin (**System** > **Cache Management**).
+
 ## Highlights
 
 {{site.data.var.ce}} 2.3.0 includes a wealth of new features as well as hundreds of enhancements and fixes to the core product. Look for the following highlights in this release:
 
+
+
+
 ### Merchant tool enhancements
 
-* **Inventory Management (provided by [Multi Source Inventory (MSI)](https://github.com/magento-engcom/msi))** is now available with Magento 2.3.0. It lets merchants manage inventory for all product types in a single warehouse and across complex shipping networks. Merchants can manage these locations as sources, tracking on-hand inventory quantities per product. Stocks map these sources and sales channels (websites) to provide an accurate, salable quantity as inventory pools for concurrent checkout and product reservations. Inventory Management also updates order and shipment options, giving you full control over your stock. 
+* **Inventory Management (provided by [Magento Inventory (was MSI)](https://github.com/magento/inventory))** is now available with Magento 2.3.0. It lets merchants manage inventory for all product types in a single warehouse and across complex shipping networks. Merchants can manage these locations as sources, tracking on-hand inventory quantities per product. Stocks map these sources and sales channels (websites) to provide an accurate, salable quantity as inventory pools for concurrent checkout and product reservations. Inventory Management also updates order and shipment options, giving you full control over your stock. 
   	
-	MSI is a Magento Community Engineering special project open to contributors. To take part and contribute, see the [MSI GitHub](https://github.com/magento-engcom/msi) repository and [wiki](https://github.com/magento-engcom/msi/wiki) to get started. Join us in our [Slack](https://magentocommeng.slack.com/messages/C5FU5E2HY) channel (or [self signup](https://tinyurl.com/engcom-slack)) to discuss the project.
+	Magento Inventory is a Magento Community Engineering special project open to contributors. To take part and contribute, see the [Magento Inventory GitHub](https://github.com/magento/inventory) repository and [wiki](https://github.com/magento/inventory/wiki) to get started. Join us in our [Slack](https://magentocommeng.slack.com/messages/C5FU5E2HY) channel (or [self signup](https://tinyurl.com/engcom-slack)) to discuss the project.
    * [Inventory Management overview](https://devdocs.magento.com/guides/v2.3/inventory/index.html) for developer documentation 
    * [Managing Inventory](https://docs.magento.com/m2/ce/user_guide/catalog/inventory-management.html) for merchant information and instructions 
 
@@ -223,7 +245,7 @@ See [Magento Security Center](https://magento.com/security/patches/magento-2.2.7
 
 <!---MAGETWO-87449 -->* Magento now displays a more informative message you update a module and then switch to a different branch of source control that contains a lower version of that module. [GitHub-9981](https://github.com/magento/magento2/issues/9981)   
 
-<!---MAGETWO-87154 -->*  Disabling the **State is Required for** field from **Admin** > **Stores** > **Configuration** > **General** now works as expected. [GitHub-12894](https://github.com/magento/magento2/issues/12894)
+<!---MAGETWO-87154 -->*  Disabling the **State is Required for** field from **Admin** > **Stores** > **Settings** > **Configuration** > **General** now works as expected. [GitHub-12894](https://github.com/magento/magento2/issues/12894)
 
 
 
@@ -1116,7 +1138,7 @@ See [Magento Security Center](https://magento.com/security/patches/magento-2.2.7
 
 <!---MAGETWO-85662 -->* The **Modified** date field is now updated as expected when you save a page in a deployment running Magento 2.2.1.  *Fix submitted by [Oscar Recio](https://github.com/osrecio) in pull request  [12637](https://github.com/magento/magento2/pull/12637)*. [GitHub-12625](https://github.com/magento/magento2/issues/12625)
 
-<!--- MAGETWO-85673-->* When the **Redirect Customer to Account Dashboard after Logging in** setting is disabled, Magento now includes the login URL (including the referer in base64 encoding) from the `window.checkout` object as expected (for example, https://myshop.com/customer/account/login/referer/aHR0cHM6Ly9teXNob3AuY29tL2NoZWNrb3V0). 
+<!--- MAGETWO-85673-->* When the **Redirect Customer to Account Dashboard after Logging in** setting is disabled, Magento now includes the login URL (including the referrer in base64 encoding) from the `window.checkout` object as expected (for example, https://myshop.com/customer/account/login/referrer/aHR0cHM6Ly9teXNob3AuY29tL2NoZWNrb3V0). 
 
 <!--- MAGETWO-85539-->* Magento now correctly handles `file` or `image` type customer attributes. Previously, when you tried to save customer information when one of these customer attributes were set, Magento threw an exception and did not save the file. *Fix submitted by [Franciszek Wawrzak](https://github.com/fsw) in pull request  [11267](https://github.com/magento/magento2/pull/11267)*. [GitHub-11252](https://github.com/magento/magento2/issues/11252)
 
@@ -1191,7 +1213,7 @@ See [Magento Security Center](https://magento.com/security/patches/magento-2.2.7
 
 <!--- ENGCOM-2375 -->* Store view home pages in multistore deployments no longer display breadcrumbs. Previously, the first store view in a multistore deployment looked fine, but the other store views included unnecessary breadcrumbs on the home page. [GitHub-6504](https://github.com/magento/magento2/issues/6504)
 
-<!--- ENGCOM-2729 -->* You can now enable logs as expected (through the use of **Stores** > **Configuration** > **Advanced** > **Developer** > **Debug** > **Log to file**) when switching from production mode to developer mode.
+<!--- ENGCOM-2729 -->* You can now enable logs as expected (through the use of **Stores** > **Settings** > **Configuration** > **Advanced** > **Developer** > **Debug** > **Log to file**) when switching from production mode to developer mode.
 
 <!--- ENGCOM-2505 -->*  `magnifier.js` now works no matter which mode is set. (`magnifier.js` offers the option of setting mode to 'inside' for an in-frame zoom.) [GitHub-4977](https://github.com/magento/magento2/issues/4977)
 
@@ -1227,7 +1249,7 @@ See [Magento Security Center](https://magento.com/security/patches/magento-2.2.7
 
 <!-- MAGETWO-87064 -->*  `health_check.php` has been added into the `nginx.conf.sample` file.  [GitHub-11157](https://github.com/magento/magento2/issues/11157)  
 
-<!---ENGCOM-1229 -->* The Google Analytics block code has been moved to the  <code><head></code> tag on the **Stores** > **Configuration** > **Sales** > **Google API** page.   [GitHub-8837](https://github.com/magento/magento2/issues/8837)  
+<!---ENGCOM-1229 -->* The Google Analytics block code has been moved to the  <code><head></code> tag on the **Stores** > **Settings** > **Configuration** > **Sales** > **Google API** page.   [GitHub-8837](https://github.com/magento/magento2/issues/8837)  
 
 <!--- MAGETWO-88018-->*    Magento now displays a more helpful message when you misspell the name of a new module in `registration.php`.  *Fix submitted by [Malyovanets Nickolas](https://github.com/nmalevanec) in pull request [13731](https://github.com/magento/magento2/pull/13731)*.
 
@@ -1314,7 +1336,7 @@ See [Magento Security Center](https://magento.com/security/patches/magento-2.2.7
 
 ### Image
 
-<!---ENGCOM-2955 -->* You can now set values for `MAX_IMAGE_WIDTH` and `MAX_IMAGE_HEIGHT` in **Stores** > **Configuration** > **Advanced** > **System** > **Images Configuration**, which supports the upload of larger images.  *Fix submitted by [Malyovanets Nickolas](https://github.com/nmalevanec) in pull request [17826](https://github.com/magento/magento2/pull/17826)*. [GitHub-13747](https://github.com/magento/magento2/issues/13747)
+<!---ENGCOM-2955 -->* You can now set values for `MAX_IMAGE_WIDTH` and `MAX_IMAGE_HEIGHT` in **Stores** > **Settings** > **Configuration** > **Advanced** > **System** > **Images Configuration**, which supports the upload of larger images.  *Fix submitted by [Malyovanets Nickolas](https://github.com/nmalevanec) in pull request [17826](https://github.com/magento/magento2/pull/17826)*. [GitHub-13747](https://github.com/magento/magento2/issues/13747)
 
 
 <!---ENGCOM-2956 -->* `.png` images from the GD2 image library that have transparent backgrounds now retain their  transparent backgrounds after upload. Previously, these transparent backgrounds were rendered black when you displayed these images after upload. *Fix submitted by [Eduard Chitoraga](https://github.com/eduard13) in pull request [17857](https://github.com/magento/magento2/pull/17857)*. [GitHub-14248](https://github.com/magento/magento2/issues/14248)
@@ -1501,7 +1523,7 @@ See [Magento Security Center](https://magento.com/security/patches/magento-2.2.7
 
 <!-- MAGETWO-80287 -->* A new static test detects blocks without the `name` attribute. 
 
-<!-- MAGETWO-87524 -->*  The [Contribution Guide](https://devdocs.magento.com/guides/v2.0/contributor-guide/backward-compatible-development/ )  now suggests that contributors specify possible replacements for deprecated code. [GitHub-10133](https://github.com/magento/magento2/issues/10133)
+<!-- MAGETWO-87524 -->*  The [Contribution Guide](https://devdocs.magento.com/guides/v2.3/contributor-guide/backward-compatible-development/ )  now suggests that contributors specify possible replacements for deprecated code. [GitHub-10133](https://github.com/magento/magento2/issues/10133)
 
 
 <!---MAGETWO-87056 -->*  You can now use the command-line interface to create a new administrator. Previously, Magento did not recognize configured tableprefix, which prevented Magento from creating the new user. [GitHub-11176](https://github.com/magento/magento2/issues/11176)
@@ -1603,7 +1625,7 @@ See [Magento Security Center](https://magento.com/security/patches/magento-2.2.7
 
 <!--- MAGETWO-84980-->* The Products in Cart report no longer tries to retrieve the data of deleted products. Previously, when Magento tried to generate this report, it threw an exception. *Fix submitted by [angelo983](https://github.com/angelo983) in pull request [12540](https://github.com/magento/magento2/pull/12540)*.
 
-<!--- MAGETWO-82176-->* Magento no longer throws a fatal error when you search for a customer from  **Reports > By Customers**. *Fix submitted by [Oscar Recio](https://github.com/osrecio) in pull request [11524](https://github.com/magento/magento2/pull/11524)*. [GitHub-10301](https://github.com/magento/magento2/issues/10301)
+<!--- MAGETWO-82176-->* Magento no longer throws a fatal error when you search for a customer from  **Reports** > Reviews > **By Customers**. *Fix submitted by [Oscar Recio](https://github.com/osrecio) in pull request [11524](https://github.com/magento/magento2/pull/11524)*. [GitHub-10301](https://github.com/magento/magento2/issues/10301)
 
 <!--- MAGETWO-86260 -->* The cancel order and restore quote methods now accurately calculate the amount of stock to be returned to inventory when an order is canceled. Previously, when you canceled an order, some of these methods did not accurately calculate the amount of restored stock.  *Fix submitted by [Danny Verkade](https://github.com/dverkade) in pull request [12952](https://github.com/magento/magento2/pull/12952)*. [GitHub-9969](https://github.com/magento/magento2/issues/9969)
 
@@ -1627,7 +1649,7 @@ See [Magento Security Center](https://magento.com/security/patches/magento-2.2.7
 <!-- MAGETWO-87351 -->* New orders are now being saved as expected to the order grid. [GitHub-10128](https://github.com/magento/magento2/issues/10128)    
 
 
-<!---ENGCOM-1999 -->* Magento now correctly applies the designated frontend controller when store view URLs contain store codes (**Stores** > **Configuration’** > **General**  > **Web** > **Add Store Code to Urls** is set to **yes**).  *Fix submitted by [Vishal Gelani](https://github.com/gelanivishal) in pull request [15759](https://github.com/magento/magento2/pull/15759)*. [GitHub-15565](https://github.com/magento/magento2/issues/15565)
+<!---ENGCOM-1999 -->* Magento now correctly applies the designated frontend controller when store view URLs contain store codes (**Stores** > **Settings** > **Configuration** > **General**  > **Web** > **Add Store Code to Urls** is set to **yes**).  *Fix submitted by [Vishal Gelani](https://github.com/gelanivishal) in pull request [15759](https://github.com/magento/magento2/pull/15759)*. [GitHub-15565](https://github.com/magento/magento2/issues/15565)
 
 <!--- MAGETWO-80095-->* Magento now checks if an invoice has been previously  canceled before canceling it. 
 
@@ -1756,7 +1778,7 @@ See [Magento Security Center](https://magento.com/security/patches/magento-2.2.7
 
 <!---ENGCOM-2169 -->*  The timezone has been removed from the date when Magento retrieves the current month from a UTC timestamp. *Fix submitted by [Michael Wylde](https://github.com/michaelwylde) in pull request [16492](https://github.com/magento/magento2/pull/16492)*. [GitHub-15940](https://github.com/magento/magento2/issues/15940)
 
-<!--- ENGCOM-2765 -->* The **Year-to-date** dropdown accessed from **Stores** > **Configuration** > **General** > **Reports** > **Dashboard** now displays a numerical list that ranges from 01 to 12 as expected.  *Fix submitted by [Ronak Patel](https://github.com/ronak2ram) in pull request [17495](https://github.com/magento/magento2/pull/17495)*. [GitHub-17289](https://github.com/magento/magento2/issues/17289)
+<!--- ENGCOM-2765 -->* The **Year-to-date** dropdown accessed from **Stores** > **Settings** > **Configuration** > **General** > **Reports** > **Dashboard** now displays a numerical list that ranges from 01 to 12 as expected.  *Fix submitted by [Ronak Patel](https://github.com/ronak2ram) in pull request [17495](https://github.com/magento/magento2/pull/17495)*. [GitHub-17289](https://github.com/magento/magento2/issues/17289)
 
 
 <!--- MAGETWO-84811 -->* A valid  XML layout update handle is now preinstalled in the home page.  *Fix submitted by [adrian-martinez-interactiv4](https://github.com/adrian-martinez-interactiv4) in pull request [11891](https://github.com/magento/magento2/pull/11891)*. 
@@ -1891,7 +1913,7 @@ See [Magento Security Center](https://magento.com/security/patches/magento-2.2.7
 
 <!---ENGCOM-1815 -->* You can now use the **Enter** key to submit a search form. *Fix submitted by [Vishal Gelani](https://github.com/vgelani) in pull request [15696](https://github.com/magento/magento2/pull/15696)*. [GitHub-13793](https://github.com/magento/magento2/issues/13793)
 
-<!---ENGCOM-1910 -->* Search on MySQL-based entities has been improved. (This improvment does not provide a fulltext search, but simply the best way to search when a `SearchCriteria` with `fulltext` condition is provided over a MySQL table.) *Fix submitted by [Riccardo Tempesta](https://github.com/phoenix128) in pull request [15685](https://github.com/magento/magento2/pull/15685)*. [GitHub-1221](https://github.com/magento/magento2/issues/1221)
+<!---ENGCOM-1910 -->* Search on MySQL-based entities has been improved. (This improvement does not provide a fulltext search, but simply the best way to search when a `SearchCriteria` with `fulltext` condition is provided over a MySQL table.) *Fix submitted by [Riccardo Tempesta](https://github.com/phoenix128) in pull request [15685](https://github.com/magento/magento2/pull/15685)*. [GitHub-1221](https://github.com/magento/magento2/issues/1221)
 
 <!---ENGCOM-2588 -->* Magento now displays validation messages as needed on advanced searches. Previously, Magento did not display a message even after a customer submitted the advanced search form with no entries. *Fix submitted by [Torben Höhn](https://github.com/torhoehn) in pull request [17210](https://github.com/magento/magento2/pull/17210)*. [GitHub-8131](https://github.com/magento/magento2/issues/8131)
 
@@ -1956,7 +1978,7 @@ See [Magento Security Center](https://magento.com/security/patches/magento-2.2.7
 
 <!---ENGCOM-2606 -->* The `getUrlInStore()` method no longer returns URLs that contain the store code, which has shortened the extremely long URLs it previously returned. *Fix submitted by [Pratik Oza](https://github.com/mage2pratik) in pull request [17261](https://github.com/magento/magento2/pull/17261)*. [GitHub-16273](https://github.com/magento/magento2/issues/16273)
 
-<!--- MAGETWO-87615 -->*  You can now use an `admin_system_config_changed_section` event to subscribe to changes for all sections in **Stores** > **Configuration**. [GitHub-5035](https://github.com/magento/magento2/issues/5035)  
+<!--- MAGETWO-87615 -->*  You can now use an `admin_system_config_changed_section` event to subscribe to changes for all sections in **Stores** > **Settings** > **Configuration**. [GitHub-5035](https://github.com/magento/magento2/issues/5035)  
 
 <!--- MAGETWO-87938 -->*  TinyMCE now loads successfully due to a refactoring of  the use of  `minify_exclude` configuration. *Fix submitted by [Pieter Hoste](https://github.com/hostep) in pull request [13687](https://github.com/magento/magento2/pull/13687)*. [GitHub-11577](https://github.com/magento/magento2/issues/11577)
 
@@ -2054,7 +2076,7 @@ See [Magento Security Center](https://magento.com/security/patches/magento-2.2.7
 
 <!--- MAGETWO-88264 -->* The forced setting of `cache_lifetime` to `false`  has been changed to a default `cache_lifetime` value of 3600 for `Magento\Theme\Block\Html\Footer`. [GitHub-13595](https://github.com/magento/magento2/issues/13595)
 
-<!--- ENGCOM-959 -->* The default storefront welcome message now works as expected when the **Translate Inline**  (**Stores > Configuration > Advanced > Developer >**) setting is enabled.  *Fix submitted by [Dmytro Paidych](https://github.com/dimonovp) in pull request [14177](https://github.com/magento/magento2/pull/14177)*.  [GitHub-12711](https://github.com/magento/magento2/issues/12711)
+<!--- ENGCOM-959 -->* The default storefront welcome message now works as expected when the **Translate Inline**  (**Stores > Settings > Configuration > Advanced > Developer >**) setting is enabled.  *Fix submitted by [Dmytro Paidych](https://github.com/dimonovp) in pull request [14177](https://github.com/magento/magento2/pull/14177)*.  [GitHub-12711](https://github.com/magento/magento2/issues/12711)
 
 <!--- ENGCOM-775 -->* We've improved the display of the Payment Methods section of the checkout page on mobile devices. Previously, the layout of page elements was not correctly spaced.  *Fix submitted by [Marcin Kwiatkowski](https://github.com/Frodigo) in pull request [13979](https://github.com/magento/magento2/pull/13979)*. [GitHub-13315](https://github.com/magento/magento2/issues/13315)
 
@@ -2226,7 +2248,7 @@ See [Magento Security Center](https://magento.com/security/patches/magento-2.2.7
 
 **Known issue:** Magento throws the following error when you try to use the API to create two products with the same name without specifying the URL key: `URL key for specified store already exists.`  However, when you try to create these products through the Admin, Magento does not throw an error, but instead appends a number to the converted URL key if two products have the same name.
 
-<!-- https://github.com/magento-engcom/msi/issues/1890  -->**Known issue:** For Inventory Management, ElasticSearch is  supported only in Single Source mode for the Default Source. It is not supported in Multi Source mode with custom sources.
+<!-- https://github.com/magento/inventory/issues/1890  -->**Known issue:** For Inventory Management, ElasticSearch is  supported only in Single Source mode for the Default Source. It is not supported in Multi Source mode with custom sources.
 
 
 **Known issue:** For Inventory Management, Single Source merchants may experience performance degradation with all products assigned to the Default Source and Default Stock. As a workaround for best performance, we recommend creating and assigning all products to one custom source and stock. This will affect bundled products support. To continue with bundled products, continue using Default Source and Stock in Single Source mode. We plan to have a resolution and bundled product multi-sourcing support in a later release. This does not affect Multi Source merchants. For details, see [Inventory Management](https://docs.magento.com/m2/ce/user_guide/catalog/inventory-management.html).

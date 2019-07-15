@@ -8,5 +8,3 @@ title: Magento_WeeeGraphQl module
 
 **WeeeGraphQl** provides type information for the GraphQl module
 to generate wee tax fields for catalog and product information endpoints.
-
-

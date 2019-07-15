@@ -23,5 +23,3 @@ Depending on how many orders are being placed, there might be consideration for 
 
 ## Install
 The Magento_Sales module is installed automatically (using the native Magento install mechanism) without any additional actions.
-
-

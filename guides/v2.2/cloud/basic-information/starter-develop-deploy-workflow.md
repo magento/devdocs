@@ -41,10 +41,13 @@ This process assumes that you have set up your [local developer workspace]({{ pa
 For a new Starter Plan project, a `master` branch was cloned from the {{site.data.var.ece}} Git repository. To start branching and working with code, you need to clone the `master` branch to your local environment.
 
 The format of the Git clone command is:
+```bash
+git fetch origin
+```
 
-    git fetch origin
-    git pull origin <environment ID>
-
+```bash
+git pull origin <environment ID>
+```
 The first time you start working in branches for your Starter project, you need to create a `staging` branch. This creates a code branch matching the `master` branch that deploys to a Staging environment to test configuration and code changes before deploying to the Production environment.
 
 Next, create branches from `staging` to develop code, add extensions, and configure 3rd party integrations. Anytime you need to develop custom code, add extensions, integrate with a 3rd party service, work in a development branch created from the `staging` branch. You will have four active Integration environments available. When you push an active branch, one of these Integration environments automatically deploys your code to test.
@@ -52,13 +55,13 @@ Next, create branches from `staging` to develop code, add extensions, and config
 We walk you through the process when you [set up your local]({{ page.baseurl }}/cloud/setup/first-time-setup.html) environment.
 
 The format of the Git branch command is:
-
-    git checkout <branch name>
-
+```bash
+git checkout <branch name>
+```
 The format of the Magento Cloud CLI branch command is:
-
-    magento-cloud environment:branch <environment name> <parent environment ID>
-
+```bash
+magento-cloud environment:branch <environment name> <parent environment ID>
+```
 
 ![Branch from Master]({{ site.baseurl }}/common/images/cloud_workflow-branching.png)
 
@@ -192,7 +195,7 @@ To learn more, see [Deployment process]({{ page.baseurl }}/cloud/reference/disco
 
 ### Push to Staging and test {#staging}
 
-You should always push all of your code in iterations to your Staging environment for full testing. The first time you use this environment, you will need to configure a few services including [Fastly]({{ page.baseurl }}/cloud/basic-information/cloud-fastly.html), [Blackfire Profiler]({{ page.baseurl }}/cloud/project/project-integrate-blackfire.html), and [New Relic APM]({{ page.baseurl }}/cloud/project/new-relic.html). We also recommend configuring payment gateways, shipping, notifications, and other vital services with sandbox or testing credentials.
+You should always push all of your code in iterations to your Staging environment for full testing. The first time you use this environment, you will need to configure a few services including [Fastly]({{ page.baseurl }}/cloud/basic-information/cloud-fastly.html), [Blackfire Profiler]({{ page.baseurl }}/cloud/project/project-integrate-blackfire.html), and [New Relic]({{ page.baseurl }}/cloud/project/new-relic.html). We also recommend configuring payment gateways, shipping, notifications, and other vital services with sandbox or testing credentials.
 
 Staging is a pre-production environment, providing all services and settings as close to Production as possible. Thoroughly test every service, verify your performance testing tools, perform UAT testing as an administrator and customers, until you feel your store is ready for Production.
 

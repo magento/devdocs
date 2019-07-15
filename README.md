@@ -13,7 +13,6 @@ Our goal is to provide the Magento community with comprehensive and quality tech
 You can build this site locally in the following ways:
 
 - [Installing the project dependencies locally](#build-using-jekyll) (Mac, Linux)
-
 - [Using a Vagrant virtual machine](#build-using-vagrant) (Mac, Linux, Windows)
 - [Build DevDocs in Windows](#build-devdocs-in-windows) (Windows 7 & 10)
 
@@ -38,7 +37,7 @@ $ ruby -v
    $ brew install ruby
    ```
 
-**Unix, Windows and other OS users**
+**Unix, Windows, and other OS users**
 
 See the [Ruby site](https://www.ruby-lang.org/en/documentation/installation) for instructions.
 
@@ -142,9 +141,73 @@ The following example will generate Magento 2.2 documentation only.
    This command:
    * Checks your environment according to the dependencies in `Gemfile.lock`.
    * Removes the `_site/` directory, which contains previously generated preview files.
-   * Generates a new preview and opens the landing page in a web browsers.
+   * Generates a new preview and opens the landing page in a web browser.
 
 If you don't have the `_config.local.yml` file at the root of your `devdocs/` directory, the rake will generate all versions of the documentation.
+
+### To build v2.0 documentation
+
+Magento 2.0.18 was the final 2.0.x release. After March 2018, Magento 2.0.x stopped receiving security patches, quality fixes, and documentation updates.
+
+To ensure the quality of our public documentation for versions of Magento that are still supported and to avoid potential confusion about 2.0.x support, we removed all 2.0.x content from our public documentation websites on May 31, 2019.
+
+To build v2.0 documentation:
+
+> Also, you can use the GitHub interface to read the source Markdown files instead of building the site locally. Navigate to the [`2.0`](https://github.com/magento/devdocs/tree/2.0) branch and click the file you want to view.
+
+1. Add an entry for 2.0 in the `Docfile.yml` file.
+
+    ```yaml
+    -
+      directory: guides/v2.0
+      repository: magento/devdocs
+      branch: 2.0
+      filter: false
+    ```
+
+1. Initialize the `2.0` branch in your local devdocs repository.
+
+    ```shell
+    rake init
+    ```
+
+1. Run the preview command.
+
+    ```shell
+    rake preview
+    ```
+
+### To build v2.1 documentation
+
+Magento 2.1.18 was the final 2.1.x release. After June 2019, Magento 2.1.x stopped receiving security patches, quality fixes, and documentation updates.
+
+To ensure the quality of our public documentation for versions of Magento that are still supported and to avoid potential confusion about 2.1.x support, we removed all 2.1.x content from our public documentation websites on July 11, 2019.
+
+To build v2.1 documentation:
+
+> Also, you can use the GitHub interface to read the source Markdown files instead of building the site locally. Navigate to the [`2.1`](https://github.com/magento/devdocs/tree/2.1) branch and click the file you want to view.
+
+1. Add an entry for 2.1 in the `Docfile.yml` file.
+
+    ```yaml
+    -
+      directory: guides/v2.1
+      repository: magento/devdocs
+      branch: 2.1
+      filter: false
+    ```
+
+1. Initialize the `2.1` branch in your local devdocs repository.
+
+    ```shell
+    rake init
+    ```
+
+1. Run the preview command.
+
+    ```shell
+    rake preview
+    ```
 
 ## Build using Vagrant
 
@@ -154,11 +217,11 @@ You can deploy the devdocs site locally using [this Vagrant project](https://git
 
 If you have questions, open an issue and ask us. We're looking forward to hearing from you!
 
-*	<a href="https://twitter.com/MagentoDevDocs" class="twitter-follow-button" data-show-count="false">Follow @MagentoDevDocs</a>
+*    <a href="https://twitter.com/MagentoDevDocs" class="twitter-follow-button" data-show-count="false">Follow @MagentoDevDocs</a>
 
-*	<a href="mailto:DL-Magento-Doc-Feedback@magento.com">E-mail us</a>
+*    <a href="mailto:DL-Magento-Doc-Feedback@magento.com">E-mail us</a>
 
-*	<a href="https://devdocs.magento.com">Visit our documentation site</a>, built using [GitHub pages](https://pages.github.com/).
+*    <a href="https://devdocs.magento.com">Visit our documentation site</a>, built using [GitHub pages](https://pages.github.com/).
 
 ## Build DevDocs in Windows
 

@@ -1,1 +1,1 @@
-../../../v2.2/extension-dev-guide/prepare/dev-summary.md
+../../../../guides/v2.2/extension-dev-guide/prepare/dev-summary.md

@@ -40,6 +40,7 @@ Now create two files:
 {% collapsible Show source code %}
 
 ```php?start_inline=1
+<?php
 \Magento\Framework\Component\ComponentRegistrar::register(
     \Magento\Framework\Component\ComponentRegistrar::MODULE,
     'Learning_Js',

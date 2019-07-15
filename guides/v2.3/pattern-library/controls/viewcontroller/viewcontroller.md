@@ -1,1 +1,1 @@
-../../../../v2.2/pattern-library/controls/viewcontroller/viewcontroller.md
+../../../../../guides/v2.2/pattern-library/controls/viewcontroller/viewcontroller.md

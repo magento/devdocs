@@ -14,13 +14,7 @@ functional_areas:
 *   Supports stop words and synonyms
 *   Indexing does not impact customers until the reindex operation completes
 
-{{site.data.var.ee}} supports Elasticsearch version 5.2.
-
-{:.bs-callout .bs-callout-info}
-Elasticsearch 5.2 is only available for 2.2.3 and later. If you are upgrading to {{site.data.var.ee}} 2.1.3, you must change your configuration as discussed in [the 2.1.3 Release Notes]({{ site.baseurl }}/guides/v2.1/cloud/release-notes/CloudReleaseNotes2.1.3.html#cloud-rn-213-es). See [Elasticsearch information]({{ page.baseurl }}/config-guide/elasticsearch/es-overview.html) to learn more.
-
-{:.bs-callout .bs-callout-warning}
-If you prefer using an existing search service, such as Elasticsearch, instead of relying on the default Cloud configuration, you can use the [`SEARCH_CONFIGURATION`]({{ page.baseurl }}/cloud/env/variables-deploy.html#search_configuration) environment variable to connect it to your site.
+{{site.data.var.ee}} supports [Elasticsearch]({{ site.baseurl }}/guides/v2.2/config-guide/elasticsearch/es-overview.html) version 5.2 and 6.x (supported by Magento version 2.3.1 and later).
 
 #### To enable Elasticsearch:
 
@@ -28,7 +22,7 @@ If you prefer using an existing search service, such as Elasticsearch, instead o
 
     ```yaml
     elasticsearch:
-        type: elasticsearch:5.2
+        type: elasticsearch:6.5
         disk: 1024
     ```
 
@@ -55,18 +49,18 @@ Optionally, you can add plugins with the `.magento/services.yaml` file. For exam
 
 ```yaml
 elasticsearch:
-   type: elasticsearch:5.2
-   disk: 1024
-   configuration:
-    plugins:
-      - analysis-icu
-      - lang-python
+    type: elasticsearch:6.5
+    disk: 1024
+    configuration:
+        plugins:
+            - analysis-icu
+            - lang-python
 ```
 
-{:.bs-callout .bs-callout-info}
-ElasticSuite is a third-party plugin and is not officially supported by Magento. If you use [Smile ElasticSuite](https://github.com/Smile-SA/elasticsuite), you must add the `analysis-icu` and `analysis-phonetic` plugins to the `services.yaml` file.
+See [Elasticsearch plugin documentation](https://www.elastic.co/guide/en/elasticsearch/plugins/current/index.html).
 
-See [Elasticsearch plugin documentation](https://www.elastic.co/guide/en/elasticsearch/plugins/5.2/index.html).
+{:.bs-callout-info}
+If you use the ElasticSuite third-party plugin, you must [update the `{{site.data.var.ct}}` package]({{page.baseurl}}/cloud/project/ece-tools-update.html) to version 2002.0.19 or later.
 
 ## Verify relationships
 
@@ -92,5 +86,5 @@ The response includes all relationships for services and configuration data for 
 ```
 {: .no-copy}
 
-{:.bs-callout .bs-callout-warning}
-The Staging and Production environments share a single Elasticsearch instance; therefore, you must specify a unique Elasticsearch prefix for each environment.
+{: .bs-callout-warning}
+Staging and Production environments that are in the same cluster share a single Elasticsearch instance, so you must specify a unique Elasticsearch prefix for each of these environments.

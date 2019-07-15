@@ -28,7 +28,7 @@ You can specify any of the following fields to filter on operation statuses:
 The following call returns bulk operations that contain an error that cannot be retried.
 
 ```
-GET http://<magento_host>/rest/V1/bulk/?
+GET <host>/rest/<store_code>/V1/bulk/?
 searchCriteria[filter_groups][0][filters][0][field]=status&
 searchCriteria[filter_groups][0][filters][0][value]=3&
 searchCriteria[filter_groups][0][filters][0][condition_type]=eq
@@ -40,7 +40,7 @@ See [Search using REST APIs]({{ page.baseurl }}/rest/performing-searches.html) f
 
 The operation with bulk UUID `c43ed402-3dd3-4100-92e2-dc5852d3009b` contains a `status` code of 3.
 
-``` json
+```json
 {
     "items": [
         {
@@ -49,7 +49,7 @@ The operation with bulk UUID `c43ed402-3dd3-4100-92e2-dc5852d3009b` contains a `
             },
             "id": 4,
             "bulk_uuid": "c43ed402-3dd3-4100-92e2-dc5852d3009b",
-            "topic_name": "async.V1.customers.POST",
+            "topic_name": "async.magento.customer.api.accountmanagementinterface.createaccount.post",
             "serialized_data": "{\"entity_id\":null,\"entity_link\":\"\",\"meta_information\":\"{\\\"customer\\\":{\\\"email\\\":\\\"mshaw@example.com\\\",\\\"firstname\\\":\\\"Melanie Shaw\\\",\\\"lastname\\\":\\\"Doe\\\"},\\\"password\\\":\\\"Password1\\\",\\\"redirectUrl\\\":\\\"\\\"}\"}",
             "result_serialized_data": null,
             "status": 3,
@@ -62,7 +62,7 @@ The operation with bulk UUID `c43ed402-3dd3-4100-92e2-dc5852d3009b` contains a `
             },
             "id": 5,
             "bulk_uuid": "c43ed402-3dd3-4100-92e2-dc5852d3009b",
-            "topic_name": "async.V1.customers.POST",
+            "topic_name": "async.magento.customer.api.accountmanagementinterface.createaccount.post",
             "serialized_data": "{\"entity_id\":null,\"entity_link\":\"\",\"meta_information\":\"{\\\"customer\\\":{\\\"email\\\":\\\"bmartin@example.com\\\",\\\"firstname\\\":\\\"Bryce\\\",\\\"lastname\\\":\\\"Martin\\\"},\\\"password\\\":\\\"Password1\\\",\\\"redirectUrl\\\":\\\"\\\"}\"}",
             "result_serialized_data": null,
             "status": 3,
@@ -75,7 +75,7 @@ The operation with bulk UUID `c43ed402-3dd3-4100-92e2-dc5852d3009b` contains a `
             },
             "id": 6,
             "bulk_uuid": "c43ed402-3dd3-4100-92e2-dc5852d3009b",
-            "topic_name": "async.V1.customers.POST",
+            "topic_name": "async.magento.customer.api.accountmanagementinterface.createaccount.post",
             "serialized_data": "{\"entity_id\":null,\"entity_link\":\"\",\"meta_information\":\"{\\\"customer\\\":{\\\"email\\\":\\\"bmartin@example.com\\\",\\\"firstname\\\":\\\"Bryce\\\",\\\"lastname\\\":\\\"Martin\\\"},\\\"password\\\":\\\"Password1\\\",\\\"redirectUrl\\\":\\\"\\\"}\"}",
             "result_serialized_data": null,
             "status": 3,
@@ -88,7 +88,7 @@ The operation with bulk UUID `c43ed402-3dd3-4100-92e2-dc5852d3009b` contains a `
             },
             "id": 7,
             "bulk_uuid": "c43ed402-3dd3-4100-92e2-dc5852d3009b",
-            "topic_name": "async.V1.customers.POST",
+            "topic_name": "async.magento.customer.api.accountmanagementinterface.createaccount.post",
             "serialized_data": "{\"entity_id\":null,\"entity_link\":\"\",\"meta_information\":\"{\\\"customer\\\":{\\\"email\\\":\\\"tgomez@example.com\\\",\\\"firstname\\\":\\\"Teresa\\\",\\\"lastname\\\":\\\"Gomez\\\"},\\\"password\\\":\\\"Password1\\\",\\\"redirectUrl\\\":\\\"\\\"}\"}",
             "result_serialized_data": null,
             "status": 3,
@@ -101,7 +101,7 @@ The operation with bulk UUID `c43ed402-3dd3-4100-92e2-dc5852d3009b` contains a `
             },
             "id": 10,
             "bulk_uuid": "799a59c0-09ca-4d60-b432-2953986c1c38",
-            "topic_name": "async.V1.customers.POST",
+            "topic_name": "async.magento.customer.api.accountmanagementinterface.createaccount.post",
             "serialized_data": "{\"entity_id\":null,\"entity_link\":\"\",\"meta_information\":\"{\\\"customer\\\":{\\\"email\\\":\\\"bmartin@example.com\\\",\\\"firstname\\\":\\\"Bryce\\\",\\\"lastname\\\":\\\"Martin\\\"},\\\"password\\\":\\\"Password1\\\",\\\"redirectUrl\\\":\\\"\\\"}\"}",
             "result_serialized_data": null,
             "status": 3,

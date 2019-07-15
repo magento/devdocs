@@ -30,5 +30,3 @@ Magento installation with existing products with FPT:
 
 New Magento installation:
 * Can be removed without additional actions
-
-

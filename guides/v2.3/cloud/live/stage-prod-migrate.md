@@ -1,1 +1,1 @@
-../../../v2.2/cloud/live/stage-prod-migrate.md
+../../../../guides/v2.2/cloud/live/stage-prod-migrate.md

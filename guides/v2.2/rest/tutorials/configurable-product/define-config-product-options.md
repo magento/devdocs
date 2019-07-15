@@ -27,7 +27,7 @@ The value assigned to the `value_index` must be unique within the system.
 
 **Payload**
 
-``` json
+```json
 {
   "option": {
     "attribute_id": "141",
@@ -57,7 +57,7 @@ The call to link a simple (child) product to the configurable product accepts on
 
 **Payload**
 
-``` json
+```json
 {
 	"childSku": "MS-Champ-S"
 }

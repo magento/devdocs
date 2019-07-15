@@ -1,1 +1,1 @@
-../../../v2.2/cloud/deploy/smart-wizards.md
+../../../../guides/v2.2/cloud/deploy/smart-wizards.md

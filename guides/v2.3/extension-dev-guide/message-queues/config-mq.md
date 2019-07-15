@@ -1,16 +1,15 @@
 ---
 group: php-developer-guide
 title: Configure message queues
-redirect_from: /guides/v2.3/config-guide/mq/config-mq.html
 functional_areas:
   - Configuration
   - System
   - Setup
 ---
 
-The message queue topology is a {{site.data.var.ce}} feature. It can be included as part of {{site.data.var.ce}} installation, or you can add it existing modules.
+The message queue topology is a {{site.data.var.ce}} feature. It can be included as part of {{site.data.var.ce}} installation, or you can add it to existing modules.
 
-### Overview ###
+### Overview
 
 Configuring the message queue topology involves creating and modifying the following configuration files in the `<module>/etc` directory:
 
@@ -19,7 +18,7 @@ Configuring the message queue topology involves creating and modifying the follo
 * [`queue_topology.xml`](#queuetopologyxml) - Defines the message routing rules and declares queues and exchanges.
 * [`queue_publisher.xml`](#queuepublisherxml) - Defines the exchange where a topic is published.
 
-### Use Cases ###
+### Use Cases
 
 Depending on your needs, you may only need to create and configure `communication.xml` and one or two of these files.
 
@@ -37,7 +36,7 @@ The `<module>/etc/communication.xml` file defines aspects of the message queue s
 
 The following sample defines two synchronous topics. The first topic is for RPC calls. The second uses a custom service interface.
 
-{% highlight xml %}
+```xml
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Communication/etc/communication.xsd">
   <topic name="synchronous.rpc.test" request="string" response="string">
@@ -47,9 +46,9 @@ The following sample defines two synchronous topics. The first topic is for RPC 
     <handler name="processRemoteRequest" type="Magento\TestModuleSynchronousAmqp\Model\RpcRequestHandler" method="process"/>
   </topic>
 </config>
-{% endhighlight %}
+```
 
-### topic element###
+### topic element
 {:.no_toc}
 Topic configuration is flexible in that you can switch the transport layer for topics at deployment time. These values can be overwritten in the `env.php` file.
 
@@ -62,7 +61,7 @@ request | Specifies the data type of the topic.
 response | Specifies the format of the response. This parameter is required if you are defining a synchronous topic. Omit this parameter if you are defining an asynchronous topic.
 schema | The interface that describes the structure of the message. The format must be  `<module>\Api\<ServiceName>::<methodName>`.
 
-### handler element ###
+### handler element
 {:.no_toc}
 The `handler` element specifies the class where the logic for handling messages exists and the method it executes.
 
@@ -76,19 +75,19 @@ disabled | Determines whether this handler is disabled. The default value is `fa
 ### `queue_consumer.xml` {#queueconsumerxml}
 The `queue_consumer.xml` file contains one or more `consumer` elements:
 
-#### Example `queue_consumer` file ####
+#### Example `queue_consumer` file
 {:.no_toc}
 
-{% highlight xml %}
+```xml
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework-message-queue:etc/consumer.xsd">
     <consumer name="basic.consumer" queue="basic.consumer.queue" handler="LoggerClass::log"/>
     <consumer name="synchronous.rpc.test" queue="synchronous.rpc.test.queue" handler="LoggerClass::log"/>
     <consumer name="rpc.test" queue="queue.for.rpc.test.unused.queue" consumerInstance="Magento\Framework\MessageQueue\BatchConsumer" connection="amqp"/>
 </config>
-{% endhighlight %}
+```
 
-#### `consumer` element ####
+#### `consumer` element
 {:.no_toc}
 
 | Attribute        | Description |
@@ -112,7 +111,7 @@ The `queue_topology.xml` file defines the message routing rules and declares que
 #### Example `queue_topology.xml` file
 {:.no_toc}
 
-{% highlight xml %}
+```xml
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework-message-queue:etc/topology.xsd">
   <exchange name="magento-topic-based-exchange1" type="topic" connection="db">
@@ -133,9 +132,9 @@ The `queue_topology.xml` file defines the message routing rules and declares que
     </arguments>
   </exchange>
 </config>
-{% endhighlight %}
+```
 
-#### `exchange` element ####
+#### `exchange` element
 {:.no_toc}
 
 | Attribute      | Description |
@@ -147,7 +146,7 @@ The `queue_topology.xml` file defines the message routing rules and declares que
  autoDelete | Boolean value indicating whether the exchange is deleted when all queues have finished using it. The default is `false`.
  internal | Boolean value. If set to true, the exchange may not be used directly by publishers, but only when bound to other exchanges. The default is `false`.
 
-#### `binding` element ####
+#### `binding` element
 {:.no_toc}
 
 The `binding` element is a subnode of the `exchange` element.
@@ -169,7 +168,7 @@ Example topic names that include wildcards:
 `mytopic.#` | Matches any topic name that begins with `mytopic` and has a period afterward. |  `mytopic.success`, `mytopic.createOrder.error` | `new.mytopic.success`,
 `*.Order.#` | There must be one string before __.Order__. There can be any number of strings (including 0) after that.  | `mytopic.Order`, `mytopic.Order.Create`, `newtopic.Order.delete.success` |
 
-#### `arguments` element ####
+#### `arguments` element
 {:.no_toc}
 
 The `arguments` element is an optional element that contains one or more `argument` elements. These arguments define key/value pairs that are passed to the broker for processing.
@@ -183,25 +182,25 @@ Each `argument` definition must have the following parameters:
 
 The following illustrates an `arguments` block:
 
-{% highlight xml %}
+```xml
 <arguments>
     <argument name="warehouseId" xsi:type="int">1</argument>
     <argument name="carrierName" xsi:type="string">USPS</argument>
 </arguments>
-{% endhighlight %}
+```
 
 
 ### `queue_publisher.xml` {#queuepublisherxml}
 
 The `queue_publisher.xml` file defines which connection and exchange to use to publish messages for a specific topic. It contains the following elements:
 
-* {% glossarytooltip d5777fe2-f786-45d9-b052-cca8a10120d9 %}publisher{% endglossarytooltip %}
+* [publisher](https://glossary.magento.com/publisher)
 * publisher/connection
 
 #### Example `queue_publisher.xml` file
 {:.no_toc}
 
-{% highlight xml %}
+```xml
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework-message-queue:etc/publisher.xsd">
     <publisher topic="magento.testModuleSynchronousAmqp.api.serviceInterface.execute" disabled="true" />
@@ -210,7 +209,7 @@ The `queue_publisher.xml` file defines which connection and exchange to use to p
         <connection name="db" exchange="exch1" disabled="true"/>
     </publisher>
 </config>
-{% endhighlight %}
+```
 
 #### `publisher` element
 {:.no_toc}

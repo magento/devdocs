@@ -1,1 +1,1 @@
-../../../v2.2/comp-mgr/upgrader/upgrade-rc1.md
+../../../../guides/v2.2/comp-mgr/upgrader/upgrade-rc1.md

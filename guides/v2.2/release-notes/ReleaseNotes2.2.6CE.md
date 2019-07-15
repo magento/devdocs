@@ -460,7 +460,7 @@ Our community contributors have made many helpful, minor corrections to spelling
 
 #### Spelling corrections
 
-<!-- ENGCOM-2290 -->* Corrected misspelling of `formatedPrice` throughot the code base. *Fix submitted by [Arnoud Beekman](https://github.com/arnoudhgz) in pull request [16726](https://github.com/magento/magento2/pull/16726)*. 
+<!-- ENGCOM-2290 -->* Corrected misspelling of `formatedPrice` throughout the code base. *Fix submitted by [Arnoud Beekman](https://github.com/arnoudhgz) in pull request [16726](https://github.com/magento/magento2/pull/16726)*. 
 
 <!-- ENGCOM-2280 -->* Corrected return message from `ProductRuleTest.php`. *Fix submitted by [Namrata](https://github.com/sanganinamrata) in pull request [16721](https://github.com/magento/magento2/pull/16721)*. 
 
@@ -1447,7 +1447,7 @@ Our community contributors have made many helpful, minor corrections to spelling
 
 ### Store
 
-<!--  ENGCOM-1706 -->* Magento now adds the correct store code to product URLs in stores with more than one store view when  **Stores** > **Configuration** > **General** > **Web** > **Add Store Code to Urls** is set to **yes**. *Fix submitted by [Elias Kotlyar](https://github.com/EliasKotlyar) in pull request [15566](https://github.com/magento/magento2/pull/15566)*. [GitHub-15565](https://github.com/magento/magento2/issues/15565)
+<!--  ENGCOM-1706 -->* Magento now adds the correct store code to product URLs in stores with more than one store view when  **Stores** > **Settings** > **Configuration** > **General** > **Web** > **Add Store Code to Urls** is set to **yes**. *Fix submitted by [Elias Kotlyar](https://github.com/EliasKotlyar) in pull request [15566](https://github.com/magento/magento2/pull/15566)*. [GitHub-15565](https://github.com/magento/magento2/issues/15565)
 
 
 <!--  ENGCOM-1249 -->* Magento now displays store views as expected when you select **Stores** > **Terms and Conditions**. *Fix submitted by [afirlejczyk](https://github.com/afirlejczyk) in pull request [14546](https://github.com/magento/magento2/pull/14546)*. [GitHub-13944](https://github.com/magento/magento2/issues/13944)

@@ -98,8 +98,9 @@ By default, the deployment process overwrites all settings in the `env.php` file
 
 #### To see a list of message queue consumers:
 
-    ./bin/magento queue:consumers:list
-
+```bash
+./bin/magento queue:consumers:list
+```
 ### `CRYPT_KEY`
 
 -  **Default**—_Not set_
@@ -133,6 +134,88 @@ stage:
       _merge: true
 ```
 
+Also, you can configure a table prefix. 
+
+{: .bs-callout .bs-callout-warning}
+If you do not use the merge option with the table prefix, you must provide default connection settings or the deploy fails validation.
+
+The following example uses the `ece_` table prefix with default connection settings instead of using the `_merge` option:
+
+```yaml
+stage:
+  deploy:
+    DATABASE_CONFIGURATION:
+      connection:
+        default:
+          username: user 
+          host: host
+          dbname: magento
+          password: password
+      table_prefix: 'ece_'
+```
+
+Sample output:
+
+```terminal
+MariaDB [main]> SHOW TABLES;
++-------------------------------------+
+| Tables_in_main                      |
++-------------------------------------+
+| ece_admin_passwords                 |
+| ece_admin_system_messages           |
+| ece_admin_user                      |
+| ece_admin_user_session              |
+| ece_adminnotification_inbox         |
+| ece_amazon_customer                 |
+| ece_authorization_rule              |
+| ece_cache                           |
+| ece_cache_tag                       |
+| ece_captcha_log                     |
+.....
+```
+{: .no-copy}
+
+
+### `ELASTICSUITE_CONFIGURATION`
+
+-  **Default**—_Not set_
+-  **Version**—Magento 2.2.0 and later
+
+Retains customized ElasticSuite service settings between deployments and uses it in the 'system/default/smile_elasticsuite_core_base_settings' section of the main ElasticSuite configuration. If the ElasticSuite composer package is installed, this is configured automatically.
+
+```yaml
+stage:
+  deploy:
+    ELASTICSUITE_CONFIGURATION:
+      es_client:
+        servers: 'remote-host:9200'
+      indices_settings:
+        number_of_shards: 1
+        number_of_replicas: 0
+```
+
+{% include cloud/merge-configuration.md %}
+
+The following example merges a new value to the existing configuration:
+
+```yaml
+stage:
+  deploy:
+    ELASTICSUITE_CONFIGURATION:
+      indices_settings:
+        number_of_shards: 3
+        number_of_replicas: 3
+        _merge: true
+```
+
+**Known limitations**—
+
+-   Changing the search engine to any type other than `elasticsuite` causes a deploy failure accompanied by an appropriate validation error
+-   Removing the ElasticSearch service causes a deploy failure accompanied by an appropriate validation error
+
+{:.bs-callout .bs-callout-info}
+Magento does not support the ElasticSuite third-party plugin.
+
 ### `ENABLE_GOOGLE_ANALYTICS`
 
 -  **Default**—`false`
@@ -153,6 +236,19 @@ stage:
 
 {:.bs-callout .bs-callout-info}
 The {{ site.data.var.ece }} deploy process always enables Google Analytics on Production environments.
+
+### `FORCE_UPDATE_URLS`
+
+-  **Default**—`true`
+-  **Version**—Magento 2.1.4 and later
+
+On deployment to Pro or Starter Staging and Production environments, this variable replaces Magento base URLs in the database with the project URLs specified by the [`MAGENTO_CLOUD_ROUTES`]({{page.baseurl}}/cloud/env/variables-cloud.html) variable. Use this setting to override the default behavior of the [UPDATE_URLS](#update_urls) deploy variable which is ignored when deploying to Staging or Production environments. 
+
+```yaml
+stage:
+  deploy:
+    FORCE_UPDATE_URLS: true
+```
 
 ### `MYSQL_USE_SLAVE_CONNECTION`
 
@@ -196,23 +292,23 @@ The following example merges new values to an existing configuration:
 ```yaml
 stage:
   deploy:
-        QUEUE_CONFIGURATION:
-          _merge: true
-          amqp:
-            host: changed1.host
-            port: 5672
-          amqp2:
-            host: changed2.host2
-            port: 12345
-          mq:
-            host: changedmq.host
-            port: 1234
+    QUEUE_CONFIGURATION:
+      _merge: true
+      amqp:
+        host: changed1.host
+        port: 5672
+      amqp2:
+        host: changed2.host2
+        port: 12345
+      mq:
+        host: changedmq.host
+        port: 1234
 ```
 
 ### `REDIS_USE_SLAVE_CONNECTION`
 
 -  **Default**—`false`
--  **Version**—Magento 2.1.4 and later
+-  **Version**—Magento 2.1.16 and later
 
 Magento can read multiple Redis instances asynchronously. Set to `true` to automatically use a _read-only_ connection to a Redis instance to receive read-only traffic on a non-master node. This improves performance through load balancing, because only one node needs to handle read-write traffic. Set to `false` to remove any existing read-only connection array from the `env.php` file.
 
@@ -224,11 +320,33 @@ stage:
 
 You must have a Redis service configured in the `.magento.app.yaml` file and in the `services.yaml` file.
 
+[ece-tools version 2002.0.18]({{ page.baseurl }}/cloud/release-notes/cloud-tools.html#v2002018) and later uses more fault-tolerant settings. If Magento 2 cannot read data from the Redis _slave_ instance, then it reads data from the Redis _master_ instance.
+
 The read-only connection is not available for use in the Integration environment or if you use the [`CACHE_CONFIGURATION` variable](#cache_configuration).
+
+### `RESOURCE_CONFIGURATION`
+
+-  **Default**—Not set
+-  **Version**—Magento 2.1.4 and later
+
+Maps a resource name to a database connection. This configuration corresponds to the `resource` section of the `env.php` file.
+
+{% include cloud/merge-configuration.md %}
+
+The following example merges new values to an existing configuration:
+
+```yaml
+stage:
+  deploy:
+    RESOURCE_CONFIGURATION: 
+      _merge: false 
+      default_setup:
+        connection: default
+```
 
 ### `SCD_COMPRESSION_LEVEL`
 
--  **Default**—`6`
+-  **Default**—`4`
 -  **Version**—Magento 2.1.4 and later
 
 Specifies which [gzip](https://www.gnu.org/software/gzip) compression level (`0` to `9`) to use when compressing static content; `0` disables compression.
@@ -236,10 +354,26 @@ Specifies which [gzip](https://www.gnu.org/software/gzip) compression level (`0`
 ```yaml
 stage:
   deploy:
-    SCD_COMPRESSION_LEVEL: 4
+    SCD_COMPRESSION_LEVEL: 5
+```
+
+### `SCD_COMPRESSION_TIMEOUT`
+
+-  **Default**—`600`
+-  **Version**—Magento 2.1.4 and later
+
+When the time it takes to compress the static assets exceeds the compression timeout limit, it interrupts the deployment process. Set the maximum execution time, in seconds, for the static content compression command.
+
+```yaml
+stage:
+  deploy:
+    SCD_COMPRESSION_TIMEOUT: 800
 ```
 
 ### `SCD_EXCLUDE_THEMES`
+
+{: .bs-callout .bs-callout-warning }
+The `SCD_EXCLUDE_THEMES` environment variable is deprecated in [ece-tools version 2002.0.16]({{ page.baseurl }}/cloud/release-notes/cloud-tools.html#v2002016). Use the [SCD_MATRIX variable](#scd_matrix) to control theme configuration.
 
 -  **Default**—_Not set_
 -  **Version**—Magento 2.1.4 and later
@@ -257,7 +391,7 @@ stage:
 -  **Default**—_Not set_
 -  **Version**—Magento 2.1.4 and later
 
-You can configure multiple locales per theme as long as the theme is not excluded using the `SCD_EXCLUDE_THEMES` variable during deployment. This is ideal if you want to speed up the deployment process by reducing the amount of unnecessary theme files. For example, you can deploy the _magento/backend_ theme in English and a custom theme in other languages.
+You can configure multiple locales per theme as long as the theme is not excluded using the [`SCD_EXCLUDE_THEMES` variable](#scd_exclude_themes) during deployment. This configuration is ideal to speed up the deployment process by reducing the amount of unnecessary theme files. For example, you can deploy the _magento/backend_ theme in English and a custom theme in other languages.
 
 The following example deploys the `Magento/backend` theme with three locales:
 
@@ -281,6 +415,20 @@ stage:
       "Magento/backend": [ ]
 ```
 
+### `SCD_MAX_EXECUTION_TIME` 
+
+-  **Default**—_Not set_
+-  **Version**—Magento 2.2.0 and later
+
+Allows you to increase the maximum expected execution time for static content deployment. 
+
+By default, Magento Commerce sets the maximum expected execution to 400 seconds, but in some scenarios you might need more time to complete the static content deployment for a Cloud project.                                                                                
+```yaml
+stage:
+  deploy:
+    SCD_MAX_EXECUTION_TIME: 3600
+```
+
 ### `SCD_STRATEGY`
 
 -  **Default**—`quick`
@@ -302,12 +450,10 @@ stage:
 
 ### `SCD_THREADS`
 
--  **Default**:
-    -  `1`—Starter environments and Pro Integration environments
-    -  `3`—Pro Staging and Production environments
+-  **Default**—Automatic
 -  **Version**—Magento 2.1.4 and later
 
-Sets the number of threads for static content deployment. Increasing the number of threads speeds up static content deployment; decreasing the number of threads slows it down.
+Sets the number of threads for static content deployment. The default value is set based on the detected CPU thread count and does not exceed a value of 4. Increasing the number of threads speeds up static content deployment; decreasing the number of threads slows it down. You can set the thread value, for example:
 
 ```yaml
 stage:
@@ -405,7 +551,7 @@ stage:
 -  **Default**—`true`
 -  **Version**—Magento 2.1.4 and later
 
-Generates symlinks for static content. This setting is vital in the Pro Production environment for the three-node cluster. When this variable is set to `false`, it must copy every file during the deployment, which increases deployment time. Setting `SCD_ON_DEMAND` to `true` disables this variable.
+Generates symlinks for static content. This setting is vital in the Pro Production environment for the three-node cluster. When this variable is set to `false`, it must copy every file during the deployment, which increases deployment time. Setting the [`SCD_ON_DEMAND` variable]({{page.baseurl}}/cloud/env/variables-global.html#scd_on_demand) to `true` disables this variable.
 
 If you generate static content during the build phase, it creates a symlink to the content folder.
 If you generate static content during the deploy phase, it writes directly to the content folder.
@@ -422,15 +568,15 @@ stage:
 -  **Default**—`true`
 -  **Version**—Magento 2.1.4 and later
 
-On deployment, replace Magento base URLs in the database with project URLs. This is useful for local development, where base URLs are set up for your local environment. When you deploy to a Cloud environment, we change the URLs so you can access your storefront and Magento Admin using project URLs.
+On deployment, replace Magento base URLs in the database with the project URLs specified by the [`MAGENTO_CLOUD_ROUTES`]({{page.baseurl}}/cloud/env/variables-cloud.html) variable. This configuration is useful for local development, where base URLs are set up for your local environment. When you deploy to a Cloud environment, we change the URLs so you can access your storefront and Magento Admin using project URLs.
+
+If you need to update URLs when deploying to Pro or Starter Staging and Production environments,  use the [`FORCE_UPDATE_URLS`](#force_update_urls) variable. 
 
 ```yaml
 stage:
   deploy:
     UPDATE_URLS: false
 ```
-
-You should set this variable to `false` _only_ in Staging or Production environments, where the base URLs cannot change. For Pro, we already set this to `false` for you.
 
 ### `VERBOSE_COMMANDS`
 

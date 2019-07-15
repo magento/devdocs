@@ -13,7 +13,6 @@ Prepare your environment with the following tasks:
 -  Upgrade your PHP version to 7.1 or later
 -  Create a new `config.php` file
 -  Update the `.magento.app.yaml` file with new settings for hooks and environment variables
--  Verify or set the `ADMIN_EMAIL` variable
 -  Upgrade to the latest supported version of Fastly
 -  Add the new generated directory to the `.gitignore` file
 
@@ -118,7 +117,7 @@ If you are upgrading to 2.2.X, you need to also update your [.magento.app.yaml](
 1.  Verify the upgrade in your Integration, Staging, or Production environment by using SSH to log in and check the version.
 
     ```bash
-      php bin/magento --version
+    php bin/magento --version
     ```
 
 ## Create a new config.php file

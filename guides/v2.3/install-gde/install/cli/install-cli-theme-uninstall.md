@@ -1,1 +1,1 @@
-../../../../v2.2/install-gde/install/cli/install-cli-theme-uninstall.md
+../../../../../guides/v2.2/install-gde/install/cli/install-cli-theme-uninstall.md

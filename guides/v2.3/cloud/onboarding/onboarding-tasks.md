@@ -1,1 +1,1 @@
-../../../v2.2/cloud/onboarding/onboarding-tasks.md
+../../../../guides/v2.2/cloud/onboarding/onboarding-tasks.md

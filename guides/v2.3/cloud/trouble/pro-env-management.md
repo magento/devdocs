@@ -1,1 +1,1 @@
-../../../v2.2/cloud/trouble/pro-env-management.md
+../../../../guides/v2.2/cloud/trouble/pro-env-management.md

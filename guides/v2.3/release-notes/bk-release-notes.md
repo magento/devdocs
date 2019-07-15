@@ -6,10 +6,16 @@ title: 2.3.x Release Information
 
 ## Magento 2.3.x Release Notes
 
+* [{{site.data.var.ce}} 2.3.2 Release Notes]({{page.baseurl}}/release-notes/ReleaseNotes2.3.2OpenSource.html)
+* [{{site.data.var.ee}} 2.3.2 Release Notes]({{page.baseurl}}/release-notes/ReleaseNotes2.3.2Commerce.html)
+
+* [{{site.data.var.ce}} 2.3.1 Release Notes]({{page.baseurl}}/release-notes/ReleaseNotes2.3.1OpenSource.html)
+* [{{site.data.var.ee}} 2.3.1 Release Notes]({{page.baseurl}}/release-notes/ReleaseNotes2.3.1Commerce.html)
+
 * [{{site.data.var.ce}} 2.3.0 Release Notes]({{page.baseurl}}/release-notes/ReleaseNotes2.3.0OpenSource.html)
 * [{{site.data.var.ee}} 2.3.0 Release Notes]({{page.baseurl}}/release-notes/ReleaseNotes2.3.0Commerce.html)
 
-Interested in the Magento 2.1.x and 2.2.x releases? Check out the [2.1.x]({{ site.baseurl }}/guides/v2.1/release-notes/bk-release-notes.html) and [2.2.x]({{ site.baseurl }}/guides/v2.2/release-notes/bk-release-notes.html) Release Information pages.  
+Interested in the Magento 2.2.x releases? Check out the [2.2.x]({{ site.baseurl }}/guides/v2.2/release-notes/bk-release-notes.html) Release Information pages.  
 
 ## Backward-incompatible changes
 
@@ -27,6 +33,6 @@ We recommend installing full {{site.data.var.ece}} upgrades for important securi
 
 ## Third-party license agreements
 
-*	[{{site.data.var.ce}} third-party licenses]({{page.baseurl}}/release-notes/thirdparty_ce.html)
-*	[{{site.data.var.ee}} third-party licenses]({{page.baseurl}}/release-notes/thirdparty_ee.html)
-*	[{{site.data.var.ece}} third-party licenses]({{page.baseurl}}/release-notes/thirdparty-mccloud.html)
+*	[{{site.data.var.ce}} third-party licenses]({{page.baseurl}}/release-notes/packages-open-source.html)
+*	[{{site.data.var.ee}} third-party licenses]({{page.baseurl}}/release-notes/packages-commerce.html)
+*	[{{site.data.var.ece}} third-party licenses]({{page.baseurl}}/release-notes/packages-cloud.html)

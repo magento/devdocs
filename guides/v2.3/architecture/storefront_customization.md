@@ -1,1 +1,1 @@
-../../v2.2/architecture/storefront_customization.md
+../../../guides/v2.2/architecture/storefront_customization.md

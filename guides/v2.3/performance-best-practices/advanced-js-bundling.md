@@ -19,7 +19,7 @@ In a modular application, the number of server requests can reach into the hundr
 
 ### Magento merging and bundling
 
-Out of the box, Magento provides two ways to reduce the number of server requests: merging and bundling. These settings are turned off by default. You can turn them on within Magento's Admin UI in **Stores** > **Configuration** > **Advanced** > **Developer** > **JavaScript Settings**, or from the command line.
+Out of the box, Magento provides two ways to reduce the number of server requests: merging and bundling. These settings are turned off by default. You can turn them on within Magento's Admin UI in **Stores** > **Settings** > **Configuration** > **Advanced** > **Developer** > **JavaScript Settings**, or from the command line.
 
 ![bundlingImage](images/bundlingImage.png)
 

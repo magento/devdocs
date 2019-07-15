@@ -33,7 +33,7 @@ Look for the following {{site.data.var.ece}} highlights in this release:
 
 * **Improvements to the {{site.data.var.ece}} deployment process**. This release includes new build and deployment variables. Users of earlier versions of {{site.data.var.ece}} will note that MCC has been replaced by ece-tools and ece-patches, which allows for patching your {{site.data.var.ece}} without requiring a full installation of base code and the patch. For more information, see [Magento application environment variables]({{ site.baseurl }}/guides/v2.2/cloud/env/environment-vars_magento.html), [Composer]({{ site.baseurl }}/guides/v2.2/cloud/reference/cloud-composer.html), and [Changes in Deployment](#deploy).
 
-* **Upgraded technology stack.**  {{site.data.var.ece}} recommends Fastly 1.2.33 and dropped support for PHP 5.6 and Varnish 3.  We now support PHP 7.1 and Varnish 5, along with Redis 3.2 and MySQL 5.7. All [third-party libraries]({{ site.baseurl }}/guides/v2.2/release-notes/thirdparty-mccloud.html) have been upgraded to the latest stable version.
+* **Upgraded technology stack.**  {{site.data.var.ece}} recommends Fastly 1.2.33 and dropped support for PHP 5.6 and Varnish 3.  We now support PHP 7.1 and Varnish 5, along with Redis 3.2 and MySQL 5.7. All [third-party libraries]({{ site.baseurl }}/guides/v2.2/release-notes/packages-cloud.html) have been upgraded to the latest stable version.
 
 * **Pipeline deployment**, a new deployment process, enables build and deployment stages to minimize production system downtime for site updates. This deployment expands on the previous Configuration Management for {{site.data.var.ece}}. To learn more, see [Configuration Management]({{ site.baseurl }}/guides/v2.2/cloud/live/sens-data-over.html) and [Pipeline Deployment]({{ page.baseurl }}/config-guide/deployment/pipeline/).
 
@@ -41,7 +41,7 @@ Look for the following {{site.data.var.ece}} highlights in this release:
 
 * **Integrated Signifyd fraud protection**. You can learn more about this fraud protection service, which can help merchants eliminate liability for any losses or fees from fraudulent orders, in [Signifyd fraud protection]({{ site.baseurl }}/guides/v2.2/payments-integrations/signifyd/signifyd.html).
 
-* **Significant enhancements in platform security and developer experience**. Security improvements include the removal of unserialize calls and protection of this functionality to increase resilence against dangerous code execution attacks. We have also continued to review and improve our protection against Cross-Site Scripting (XSS) attacks.
+* **Significant enhancements in platform security and developer experience**. Security improvements include the removal of unserialize calls and protection of this functionality to increase resilience against dangerous code execution attacks. We have also continued to review and improve our protection against Cross-Site Scripting (XSS) attacks.
 
 * **Performance gains from improvements in indexing, cart, and cache operations**. Customers can browse and shop on a storefront while indexers are running with no visible impact to their experience. Additionally, long-running indexers operate in batches to better manage memory and run times. Cart improvements enable a buyer to create a cart with more than 300 line items, and merchants can process a cart with at least 300 line items. Varnish cache configuration now includes saint and grace mode to ensure Varnish is always presenting a cached page to a shop’s customers.  Enhancements to cache invalidation logic and optimization of edge side include blocks for frequently changing data that significantly boost cache hit ratios.
 
@@ -120,7 +120,7 @@ We are grateful to the wider Magento community and would like to acknowledge the
 
 For {{site.data.var.ece}} requirements, see [Technologies and Requirements]({{ site.baseurl }}/guides/v2.2/cloud/requirements/cloud-requirements.html).
 
-The {{site.data.var.ee}} technology stack is built on PHP and MySQL. For details, see [Technology stack requirements]({{ page.baseurl }}/install-gde/system-requirements-tech.html) and [System Requirements]({{ site.baseurl }}/magento-system-requirements.html).
+The {{site.data.var.ee}} technology stack is built on PHP and MySQL. For details, see [Technology stack requirements]({{ page.baseurl }}/install-gde/system-requirements-tech.html) and [System Requirements]({{ page.baseurl }}/install-gde/system-requirements.html).
 
 ## Installation and upgrade instructions {#install-upgrade}
 

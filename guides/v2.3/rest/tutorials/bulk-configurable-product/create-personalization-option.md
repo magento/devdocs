@@ -24,7 +24,7 @@ contributor_link: http://comwrap.com/
  `POST <host>/rest/default/async/bulk/V1/products/options`
 
  **Payload**
-``` json
+```json
 [{
   "option": {
     "product_sku": "MS-Champ",
@@ -42,7 +42,7 @@ contributor_link: http://comwrap.com/
 
  **Response**
 
- ``` json
+ ```json
 {
     "bulk_uuid": "53ef1382-904a-4ba0-bb72-ebc5edd47da5",
     "request_items": [

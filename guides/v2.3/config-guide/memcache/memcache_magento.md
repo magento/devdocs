@@ -1,1 +1,1 @@
-../../../v2.2/config-guide/memcache/memcache_magento.md
+../../../../guides/v2.2/config-guide/memcache/memcache_magento.md
