@@ -1,1 +1,1 @@
-../../v2.2/mtf/mtf_introduction.md
+../../../guides/v2.2/mtf/mtf_introduction.md

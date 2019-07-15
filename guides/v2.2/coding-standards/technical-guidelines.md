@@ -1,6 +1,5 @@
 ---
 group: coding-standards
-title: Technical guidelines
 redirect_from:
     - /guides/v2.2/coding-standards/technical-guidelines/technical-guidelines.html
 functional_areas:
@@ -43,7 +42,7 @@ Use [RFC2119] to interpret keywords like:
 
 1.3. Type hints for scalar arguments SHOULD be used.
 
-1.3.1. All new PHP files MUST have strict type mode enabled by starting with `declare(strict_types=1);`. All updated PHP files SHOULD have strict type mode enabled. PHP interfaces SHOULD NOT have this declaration.
+1.3.1. All new PHP files MUST have strict type mode enabled by starting with `declare(strict_types=1);`. All updated PHP files SHOULD have strict type mode enabled. PHP interfaces MAY have this declaration.
 
 ## 2. Class design
 
@@ -906,6 +905,10 @@ class SampleEventObserverThatModifiesInputs implements ObserverInterface
 ## 16. Cron
 
 16.1. Cron job SHOULD be an [idempotent method](https://tools.ietf.org/html/rfc7231#section-4.2.2).
+
+## 17. Services
+
+17.1. New features with limited customization scenarios SHOULD be implemented as a thin Magento extension that will communicate to a service that contains business logic. This allows developers to release features independently of Magento and makes feature upgrades easier.
 
 <!-- LINKS: DEFINITIONS AND ADDRESSES -->
 

@@ -1,1 +1,1 @@
-../../../v2.2/install-gde/basics/basics_module.md
+../../../../guides/v2.2/install-gde/basics/basics_module.md

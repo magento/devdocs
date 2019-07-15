@@ -1,1 +1,1 @@
-../../../v2.2/cloud/deploy/continuous-deployment.md
+../../../../guides/v2.2/cloud/deploy/continuous-deployment.md

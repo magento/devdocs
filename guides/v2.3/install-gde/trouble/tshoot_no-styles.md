@@ -1,1 +1,1 @@
-../../../v2.2/install-gde/trouble/tshoot_no-styles.md
+../../../../guides/v2.2/install-gde/trouble/tshoot_no-styles.md

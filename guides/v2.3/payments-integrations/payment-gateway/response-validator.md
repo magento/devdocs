@@ -1,1 +1,1 @@
-../../../v2.2/payments-integrations/payment-gateway/response-validator.md
+../../../../guides/v2.2/payments-integrations/payment-gateway/response-validator.md

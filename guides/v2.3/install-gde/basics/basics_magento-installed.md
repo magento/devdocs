@@ -1,1 +1,1 @@
-../../../v2.2/install-gde/basics/basics_magento-installed.md
+../../../../guides/v2.2/install-gde/basics/basics_magento-installed.md

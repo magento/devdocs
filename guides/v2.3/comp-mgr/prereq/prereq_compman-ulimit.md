@@ -1,1 +1,1 @@
-../../../v2.2/comp-mgr/prereq/prereq_compman-ulimit.md
+../../../../guides/v2.2/comp-mgr/prereq/prereq_compman-ulimit.md
