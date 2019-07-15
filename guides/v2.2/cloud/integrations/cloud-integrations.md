@@ -49,9 +49,9 @@ magento-cloud integration:add --type=webhook --url=https://hook-url.example.com
 -  `type`—Specify the `webhook` integration type.
 -  `url`—Provide the webhook URL that can receive JSON messages.
 
-The sample response shows a series of prompts that provide an opportunity to customize the integration. Using the default (blank) response sends all events on all environments in a project.
+The sample response shows a series of prompts that provide an opportunity to customize the integration. Using the default (blank) response sends messages about all events on all environments in a project.
 
-You can customize the integration to report specific [events](#events-to-report), such as pushing code to a branch. For example, you can specify the `environment.push` event sends a message when a user pushes code to a branch:
+You can customize the integration to report specific [events](#events-to-report), such as pushing code to a branch. For example, you can specify the `environment.push` event to send a message when a user pushes code to a branch:
 
 ```terminal
 Events to report (--events)
@@ -109,7 +109,7 @@ Created integration integration-ID (type: webhook)
 
 ### Update existing integration
 
-You can update an existing integration. For example, to change the states from `complete` to `pending` using the following:
+You can update an existing integration. For example, change the states from `complete` to `pending` using the following:
 
 ```bash
 magento-cloud integration:update --states=pending <integration-ID>
