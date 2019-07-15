@@ -29,7 +29,7 @@ In `php.ini` file, make sure `extension=php_openssl.dll` is not commented out.
 
 The Functional Testing Framework requires Composer, which downloads libraries defined in `<magento2_root_dir>/dev/tests/functional/composer.json`.
 
-{: .bs-callout .bs-callout-info }
+{: .bs-callout-info }
 If you're not sure that Composer is installed, see [Install Composer][].
 
 1. [Open a command prompt][].
@@ -43,7 +43,7 @@ cd <magento2_root_dir>/dev/tests/functional/
 composer install
 ```
 
-{: .bs-callout .bs-callout-info }
+{: .bs-callout-info }
 If the command execution failed, check if [Composer][] is installed [globally][].
 
 ## Check the installation {#mtf_install_check}

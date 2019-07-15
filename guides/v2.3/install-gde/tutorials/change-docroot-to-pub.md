@@ -87,7 +87,7 @@ The name and location of your virtual host file depends on which version of Apac
 
 If you appended a directory name to your server's hostname or IP address to create the base URL when you installed Magento (for example `http://192.168.33.10/magento2`), you'll need to remove it.
 
-{: .bs-callout .bs-callout-info }
+{: .bs-callout-info }
 Replace `192.168.33.10` with your server's hostname.
 
 1.  Log in to the Magento database:

@@ -218,7 +218,7 @@ In the following example, the test integration requires access to the following 
 
 Your module can optionally provide a configuration file `config.xml` so that the integration can be automatically pre-configured with default values. To enable this feature, create the `config.xml` file in the `etc/integration` directory.
 
-{: .bs-callout .bs-callout-info }
+{: .bs-callout-info }
 If you pre-configure the integration, the values cannot be edited from the [admin](https://glossary.magento.com/admin) panel.
 
 The  file defines which API resources the integration has access to.
@@ -271,7 +271,7 @@ Use the following steps to install your module:
 
 2. Run the following command to generate the new code.
 
-   {: .bs-callout .bs-callout-info }
+   {: .bs-callout-info }
    In Production mode, you may receive a message to 'Please rerun Magento compile command'.  Enter the command below. Magento does not prompt you to run the compile command in Developer mode.
 
    <code>bin/magento setup:di:compile</code>
