@@ -74,7 +74,7 @@ For example:
 
 When determining the scheduling of custom cron jobs, consider the time it takes to complete the task. For example, if you run a job every three hours and the task takes 40 minutes to complete, you may consider changing the scheduled timing.
 
-On the Magento Cloud platform, you add custom cron job configuration to the `.magento.app.yaml` in the `crons` section. The general format is `spec` for scheduling and `cmd` to specify the command or custom script to run.
+On the Magento Cloud platform, you add custom cron job configuration to the `.magento.app.yaml` file in the `crons` section. The general format is `spec` for scheduling and `cmd` to specify the command or custom script to run.
 
 For the command script, the format includes:
 
@@ -92,7 +92,7 @@ In this example, `<path to php binary>` is `/usr/bin/php`. The install directory
 
 ## Add custom cron jobs to your project {#add-cron}
 
-On the Magento Cloud platform, you configure custom cron jobs by adding them to the [`.magento.app.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_magento-app.html) file in the `crons` section.
+On the {{ site.data.var.ece }} platform, you configure custom cron jobs by adding them to the [`.magento.app.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_magento-app.html) file in the `crons` section.
 
 {:.bs-callout .bs-callout-info}
 The default cron interval for all environments provisioned in the US-3, EU-3, and AP-3 regions is 1 minute. The default cron interval in all other regions is 5 minutes for Pro Integration environments and 1 minute for Pro Staging and Production environments. You cannot configure more frequent intervals than the default minimums.
