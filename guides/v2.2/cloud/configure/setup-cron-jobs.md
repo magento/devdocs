@@ -70,7 +70,7 @@ Magento uses a five value specification for a cron job. The numbers per each `* 
 For example:
 `00 */3 * * *` runs every 3 hours at the first minute (12:00 am, 3:00 am, 6:00 am, and so on) `20 */8 * * *` runs every 8 hours at minute 20 (12:20 am, 8:20 am, 4:20 pm, and so on) `00 00 * * *` runs once a day at midnight `00 * * * 1` runs once a week on Monday at midnight.
 
-When determining the scheduling of custom cron jobs, consider the time it takes to complete the task. For example, if you run a job every three hours and the task takes 40 minutes to complete, you may want to change the scheduled timing.
+When determining the scheduling of custom cron jobs, consider the time it takes to complete the task. For example, if you run a job every three hours and the task takes 40 minutes to complete, you may consider changing the scheduled timing.
 
 On the Magento Cloud platform, you add custom cron job configuration to the `.magento.app.yaml` in the `crons` section. The general format is `spec` for scheduling and `cmd` to specify the command or custom script to run.
 
