@@ -78,7 +78,7 @@ On the Magento Cloud platform, you add custom cron job configuration to the `.ma
 
 For the command script, the format includes:
 
-`<path to php binary> <magento install dir>/<script with command>`
+`<path-to-php-binary> <magento install dir>/<script with command>`
 
 The following is an example cron job:
 
