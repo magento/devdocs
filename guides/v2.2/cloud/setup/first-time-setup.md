@@ -2,13 +2,8 @@
 group: cloud-guide
 title: Local development
 redirect_from:
-  - /guides/v2.1/cloud/before/before-setup-env-overview.html
   - /guides/v2.2/cloud/before/before-setup-env-overview.html
   - /guides/v2.3/cloud/before/before-setup-env-overview.html
-  - /guides/v2.1/cloud/howtos/environment-tutorial-set-mage-vars.html
-  - /guides/v2.1/cloud/env/environment-tutorial-set-mage-vars.html
-  - /guides/v2.1/cloud/access-acct/admin-env-vars.html
-  - /guides/v2.1/cloud/access-acct/first-time-setup.html
   - /guides/v2.2/cloud/access-acct/first-time-setup.html
   - /guides/v2.3/cloud/access-acct/first-time-setup.html
 functional_areas:

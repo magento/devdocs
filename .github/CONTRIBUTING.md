@@ -71,14 +71,14 @@ The following guidelines may answer most of your questions and help you get star
         For example:
 
         ```bash
-        git rm guides/v2.2/install-gde/composer.md
+        git rm guides/v2.3/install-gde/composer.md
         ```
 
         ```bash
-        cp guides/v2.1/install-gde/composer.md guides/v2.2/install-gde/composer.md
+        cp guides/v2.2/install-gde/composer.md guides/v2.3/install-gde/composer.md
         ```
 
-- Make sure that you update the correct version(s) of documentation (v2.1, v2.2, v2.3). If you are not sure what directory to put your content in, just do your best. We can help re-locate it (if necessary) during the review process.
+- Make sure that you update the correct version(s) of documentation (v2.2, v2.3). If you are not sure what directory to put your content in, just do your best. We can help re-locate it (if necessary) during the review process.
 - Review your work for basic typos, formatting errors, or ambiguous sentences before opening a pull request.
 - Revise pull requests according to review feedback. We will close pull requests that require an inordinate amount of time to review and process (especially for minor changes) if you fail to make revisions according to review feedback.
 - Do not directly contact DevDocs team members or maintainers on Slack to review your pull request unless it has been open for more than five days. We have a process and queue for pull requests that everyone must follow.
@@ -105,11 +105,11 @@ _(Optional)_ To review your changes in HTML output, follow the instructions in t
 
 We provide templates to help you get started writing new content and understanding Markdown formatting:
 
-- **General topic template** - [Markdown](https://github.com/magento/devdocs/blob/master/guides/v2.1/contributor-guide/templates/basic_template.md) | [HTML](https://devdocs.magento.com/guides/v2.3/contributor-guide/templates/basic_template.html): This is a template for writing any topic with example formats and styles.
+- **General topic template** - [Markdown](https://github.com/magento/devdocs/blob/master/guides/v2.3/contributor-guide/templates/basic_template.md) | [HTML](https://devdocs.magento.com/guides/v2.3/contributor-guide/templates/basic_template.html): This is a template for writing any topic with example formats and styles.
 - **Tutorial templates**: These templates provide example formats and styles for step-by-step instructions (like how-tos). Each file adds navigation buttons when content is generated. Templates include:
-  - First introduction topic - [Markdown](https://github.com/magento/devdocs/blob/master/guides/v2.1/contributor-guide/templates/tutorial-template-first.md) | [HTML](https://devdocs.magento.com/guides/v2.3/contributor-guide/templates/tutorial-template-first.html): Introduction to a tutorial for prerequisites and listing steps
-  - Middle topic - [Markdown](https://github.com/magento/devdocs/blob/master/guides/v2.1/contributor-guide/templates/tutorial-template-middle.md) |  [HTML](https://devdocs.magento.com/guides/v2.3/contributor-guide/templates/tutorial-template-middle.html): Use for each step in a tutorial.
-  - Final step topic - [Markdown](https://github.com/magento/devdocs/blob/master/guides/v2.1/contributor-guide/templates/tutorial-template-last.md) | [HTML](https://devdocs.magento.com/guides/v2.3/contributor-guide/templates/tutorial-template-last.html): Use for the last step of the tutorial.
+  - First introduction topic - [Markdown](https://github.com/magento/devdocs/blob/master/guides/v2.3/contributor-guide/templates/tutorial-template-first.md) | [HTML](https://devdocs.magento.com/guides/v2.3/contributor-guide/templates/tutorial-template-first.html): Introduction to a tutorial for prerequisites and listing steps
+  - Middle topic - [Markdown](https://github.com/magento/devdocs/blob/master/guides/v2.3/contributor-guide/templates/tutorial-template-middle.md) |  [HTML](https://devdocs.magento.com/guides/v2.3/contributor-guide/templates/tutorial-template-middle.html): Use for each step in a tutorial.
+  - Final step topic - [Markdown](https://github.com/magento/devdocs/blob/master/guides/v2.3/contributor-guide/templates/tutorial-template-last.md) | [HTML](https://devdocs.magento.com/guides/v2.3/contributor-guide/templates/tutorial-template-last.html): Use for the last step of the tutorial.
 
 ### Edit metadata
 

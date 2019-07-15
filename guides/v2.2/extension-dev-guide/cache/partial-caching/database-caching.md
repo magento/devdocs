@@ -2,10 +2,8 @@
 group: php-developer-guide
 title: Create custom cache engines
 redirect_from:
-  -  /guides/v2.1/config-guide/database/database.html
   -  /guides/v2.2/config-guide/database/database.html
   -  /guides/v2.3/config-guide/database/database.html
-  -  /guides/v2.1/config-guide/cache/caching-database.html
   -  /guides/v2.2/config-guide/cache/caching-database.html
   -  /guides/v2.3/config-guide/cache/caching-database.html
 ---

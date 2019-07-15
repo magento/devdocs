@@ -149,6 +149,9 @@ pages:
                 - label: setPaymentMethodOnCart mutation
                   url: /graphql/reference/quote-payment-method.html
 
+                - label: setPaymentMethodAndPlaceOrder mutation
+                  url: /graphql/reference/quote-set-payment-place-order.html
+
                 - label: setShippingAddressesOnCart mutation
                   url: /graphql/reference/quote-set-shipping-address.html
 

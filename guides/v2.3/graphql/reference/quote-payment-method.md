@@ -86,7 +86,7 @@ The `PaymentMethodInput` object can contain the following attributes:
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`additional_data` | [PaymentMethodAdditionalDataInput](#PaymentMethodAdditionalDataInput) | Additional payment data
+`additional_data` | PaymentMethodAdditionalDataInput | Additional payment data
 `code` | String! | The internal name for the payment method
 `purchase_order_number` | String | The purchase order number. Optional for most payment methods
 
