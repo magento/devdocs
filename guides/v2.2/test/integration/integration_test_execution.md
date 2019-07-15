@@ -86,7 +86,7 @@ return [
 ];
 ```
 
-{: .bs-callout .bs-callout-info }
+{: .bs-callout-info }
 Leave all the settings that do not start with `db-` at their default values.
 
 ## Adjust the PHPUnit configuration file
