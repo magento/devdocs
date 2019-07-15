@@ -128,7 +128,7 @@ Continue launching your Docker environment in the default _production_ mode.
 
     * `.docker/config.env`
 
-    {: .bs-callout .bs-callout-info}
+    {: .bs-callout-info }
     The `{{site.data.var.ct}}` version 2002.0.12 package does not support the `docker:config:convert` command.
 
 1.  _Optional_: Configure the Docker global variables in the `docker-compose.yml` file. For example, you can [configure Xdebug]({{ page.baseurl }}/cloud/docker/docker-development-debug.html#configure-xdebug).
@@ -153,7 +153,7 @@ Continue launching your Docker environment in the default _production_ mode.
       docker-compose run deploy cloud-deploy
       ```
 
-    {: .bs-callout .bs-callout-info}
+    {: .bs-callout-info }
     For `{{site.data.var.ct}}` v2002.0.12, install Magento with the `docker-compose run cli magento-installer` command.
 
 1.  Configure and connect Varnish.
@@ -174,7 +174,7 @@ Continue launching your Docker environment in the default _production_ mode.
 
 Continue launching your Docker environment in the _developer_ mode. The developer mode supports active development on your local environment.
 
-{: .bs-callout .bs-callout-info}
+{: .bs-callout-info }
 The `{{site.data.var.ct}}` version 2002.0.18 and later supports developer mode.
 
 
@@ -233,7 +233,7 @@ The `{{site.data.var.ct}}` version 2002.0.18 and later supports developer mode.
         docker-compose run deploy magento-command deploy:mode:set developer
         ```
 
-    {: .bs-callout .bs-callout-info}
+    {: .bs-callout-info }
     Developer mode does not require the `build` operation.
 
 1.  Configure and connect Varnish.

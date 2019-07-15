@@ -28,8 +28,10 @@ Example of setting `exports` in a component's `.js` file:
 
 ```json
 {
-  "exports": {
-   "visible": "${ $.provider }:visibility"
+  "defaults": {
+    "exports": {
+      "visible": "${ $.provider }:visibility"
+    }
   }
 }
 ```
@@ -39,8 +41,10 @@ Example of setting `exports` directly using the destination component name:
 
 ```json
 {
-  "exports": {
-   "items": "checkout.sidebar.summary.cart_items:items"
+  "defaults": {
+    "exports": {
+      "items": "checkout.sidebar.summary.cart_items:items"
+    }
   }
 }
 ```
@@ -74,8 +78,10 @@ Example of using `imports` in a component's `.js` file:
 
 ```json
 {
-  "imports": {
-   "visible": "${ $.provider }:visibility"
+  "defaults": {
+    "imports": {
+      "visible": "${ $.provider }:visibility"
+    }
   }
 }
 ```
@@ -107,8 +113,10 @@ Example of using `links` in a component's `.js` file:
 
 ```json
 {
-  "links": {
-   "visible": "${ $.provider }:visibility"
+  "defaults": {
+    "links": {
+      "visible": "${ $.provider }:visibility"
+    }
   }
 }
 ```
@@ -139,8 +147,10 @@ Example of using `listens` in a component's `.js` file :
 
 ```json
 {
-  "listens": {
-   "${ $.provider }:visibility": "visibilityChanged"
+  "defaults": {  
+    "listens": {
+      "${ $.provider }:visibility": "visibilityChanged"
+    }
   }
 }
 ```
