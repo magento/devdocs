@@ -99,7 +99,7 @@ The default cron interval for all environments provisioned in the US-3, EU-3, an
 
 ### Prerequisite
 
-Your {{site.data.var.ece}} project must have the [auto-crons feature](#verify-cron-configuration) before you can add custom cron jobs to Staging and Production environments. If it is not enabled, submit a Magento Support ticket.
+The  [auto-crons feature](#verify-cron-configuration) must be enabled on your {{site.data.var.ece}} project before you can add custom cron jobs to Staging and Production environments using `.magento.app.yaml`. If this feature is not enabled, submit a Magento Support ticket.
 
 #### To add custom crons
 
