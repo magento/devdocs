@@ -53,8 +53,6 @@ Quarterly patch releases do not introduce backward-incompatible changes, archite
 * [{{site.data.var.ee}} 2.2.0 Release Notes]({{page.baseurl}}/release-notes/ReleaseNotes2.2.0EE.html)
 * [{{site.data.var.ece}} 2.2.0 Release Notes]({{page.baseurl}}/cloud/release-notes/CloudReleaseNotes2.2.html)
 
-Interested in the Magento 2.1.x releases? Check out the and [2.1.x]({{site.baseurl}}/guides/v2.1/release-notes/bk-release-notes.html) Release Information pages.  
-
 ## Backward-incompatible changes
 
 *	Overview of [backward-incompatible changes]({{page.baseurl}}/release-notes/backward-incompatible-changes/index.html) between the 2.1 and 2.2 releases
