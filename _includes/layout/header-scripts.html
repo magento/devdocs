@@ -4,14 +4,13 @@
     id : "{{ site.algolia.application_id}}",
     index:  "{{ site.algolia.index_name}}",
     key:  "{{ site.algolia.api_key}}",
-    facetFilters: [["guide_version: {% if page.guide_version == nil %}{{ site.version }}{% else %}{{ page.guide_version }}{% endif %}", "versionless: true"]]
   };
 
   var indices = [
     {
       label: "DevDocs",
       name: "devdocs",
-      facets: ["guide_version: {% if page.guide_version == nil %}{{ site.version }}{% else %}{{ page.guide_version }}{% endif %}"],
+      facetFilters: [["guide_version: {% if page.guide_version == nil %}{{ site.version }}{% else %}{{ page.guide_version }}{% endif %}", "versionless: true"]],
       refinements: [
         {
           label: "Functional areas",
@@ -29,6 +28,11 @@
       label: "Order Management",
       name: "oms-en",
       baseUrl: "https://omsdocs.magento.com"
+    },
+    {
+      label: "User Guide",
+      name: "merchdocs_ce",
+      baseUrl: "https://docs.magento.com/m2/ce/user_guide"
     }
   ];
 </script>
