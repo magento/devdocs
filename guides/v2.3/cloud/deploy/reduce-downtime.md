@@ -1,1 +1,1 @@
-../../../v2.2/cloud/deploy/reduce-downtime.md
+../../../../guides/v2.2/cloud/deploy/reduce-downtime.md

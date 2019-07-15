@@ -1,1 +1,1 @@
-../../../v2.2/extension-dev-guide/test/test_object-mgr.md
+../../../../guides/v2.2/extension-dev-guide/test/test_object-mgr.md

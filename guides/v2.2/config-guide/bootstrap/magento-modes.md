@@ -32,7 +32,8 @@ You can run Magento in any of the following *modes*:
 				<li>Enables <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-compiler.html">automatic code compilation</a></li>
 				<li>Enables enhanced debugging</li>
 				<li>Shows custom <code>X-Magento-*</code> HTTP request and response headers</li>
-				<li>Results in the slowest performance (because of the preceding)</li></ul>
+				<li>Results in the slowest performance</li>
+				<li>Does not show errors on the frontend</li></ul>
     </td>
 	</tr>
 	<tr>

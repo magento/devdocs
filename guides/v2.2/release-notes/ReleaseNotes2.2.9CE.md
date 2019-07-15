@@ -41,7 +41,7 @@ In addition to security enhancements, this release contains the following functi
 * Magento no longer throws an error when executing `setup:static-content:deploy` in parallel mode if theme or locale deployment takes more than 400 seconds. Previously, Magento threw this error under these conditions, `2436; Status: 0`.
 
 <!-- MAGETWO-76424 -->
-* Magento no longer displays an extraneous blank option in the country drop-down menu. 
+* Magento no longer displays an extraneous blank option in the country drop-down menu on the Country Options page for store configuration settings (**Stores** > **Settings** > **Configuration** > **General** > **Country Options**).
 
 <!-- ENGCOM-4741 -->
 * Magento no longer throws an error when executing `setup:static-content:deploy` in parallel mode if theme or locale deployment takes more than 400 seconds. Previously, Magento threw the following error under these conditions: `2436; Status: 0`. *Fix submitted by [David Alger](https://github.com/davidalger) in pull request [22282](https://github.com/magento/magento2/pull/22282)*. [GitHub-15090](https://github.com/magento/magento2/issues/15090)
@@ -50,7 +50,7 @@ In addition to security enhancements, this release contains the following functi
 * All fields are now hidden with appropriate dependencies as assigned in the backup configuration settings. *Fix submitted by [Keyur Kanani](https://github.com/keyuremipro) in pull request [22499](https://github.com/magento/magento2/pull/22499)*. [GitHub-22474](https://github.com/magento/magento2/issues/22474)
 
 <!-- ENGCOM-4791 -->
-* Magento now sets the id_prefix option on prefix cache keys for the cache frontend during installation. If this option is not set, Magento uses the first 12 bits of the md5 hash of the absolute path to the Magento app/etcdirectory. But if this falue is not exactly the same on all web servers, cache invalidation will not work. *Fix submitted by [Cash and Carry Furniture](https://github.com/Ctucker9233) in pull request [22439](https://github.com/magento/magento2/pull/22439)*. [GitHub-15828](https://github.com/magento/magento2/issues/15828)
+* Magento now sets the `id_prefix` option on prefix cache keys for the cache front end during installation. If this option is not set, Magento uses the first 12 bits of the md5 hash of the absolute path to the Magento `app/etc` directory. But if this value is not exactly the same on all web servers, cache invalidation will not work. *Fix submitted by [Cash and Carry Furniture](https://github.com/Ctucker9233) in pull request [22439](https://github.com/magento/magento2/pull/22439)*. [GitHub-15828](https://github.com/magento/magento2/issues/15828)
 
 ### Backend
 
@@ -180,7 +180,7 @@ In addition to security enhancements, this release contains the following functi
 * Magento no longer increments stock for products for which stock managing has been disabled. Previously, Magento increased the product quantity count when an order failed if **Manage Stock** was disabled. *Fix submitted by [Amol Chaudhari](https://github.com/amol2jcommerce) in pull request [20644](https://github.com/magento/magento2/pull/20644)*. [GitHub-19482](https://github.com/magento/magento2/issues/19482)
 
 <!-- ENGCOM-4514 -->
-* * We have replaced the incorrect proxy `resourceStock` argument for the `\Magento\CatalogInventory\Observer\UpdateItemsStockUponConfigChangeObserver` in `di.xml`. (Specifically, `<argument name="resourceStock" xsi:type="object">Magento\CatalogInventory\Model\ResourceModel\Stock\Proxy</argument>`
+* We have replaced the incorrect proxy `resourceStock` argument for the `\Magento\CatalogInventory\Observer\UpdateItemsStockUponConfigChangeObserver` in `di.xml`. (Specifically, `<argument name="resourceStock" xsi:type="object">Magento\CatalogInventory\Model\ResourceModel\Stock\Proxy</argument>`
  with the following argument:
   `<argument name="resourceStockItem" xsi:type="object">Magento\CatalogInventory\Model\ResourceModel\Stock\Item\Proxy</argument>`. ) *Fix submitted by [Vitaliy](https://github.com/VitaliyBoyko) in pull request [21793](https://github.com/magento/magento2/pull/21793)*. [GitHub-167](https://github.com/magento/magento2/issues/167)
 
@@ -779,6 +779,9 @@ The following table identifies contributions from our community members. This ta
 ### Partner contributions
 
 The following table highlights contributions made by Partners. This table lists the Partner who contributed the pull request, the external pull request, and the GitHub issue number associated with it (if available). 
+
+{% include release-notes/engcomm-2-2-9-partner.md %}
+
 
 
 ### System requirements

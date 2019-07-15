@@ -1,1 +1,1 @@
-../../../v2.2/cloud/project/project-upgrade-parent.md
+../../../../guides/v2.2/cloud/project/project-upgrade-parent.md

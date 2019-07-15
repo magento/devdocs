@@ -1,1 +1,1 @@
-../../../v2.2/comp-mgr/upgrader/upgrade-backup.md
+../../../../guides/v2.2/comp-mgr/upgrader/upgrade-backup.md

@@ -1,1 +1,1 @@
-../../../v2.2/cloud/cdn/fastly-waf-service.md
+../../../../guides/v2.2/cloud/cdn/fastly-waf-service.md

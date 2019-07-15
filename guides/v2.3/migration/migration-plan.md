@@ -1,1 +1,1 @@
-../../v2.2/migration/migration-plan.md
+../../../guides/v2.2/migration/migration-plan.md
