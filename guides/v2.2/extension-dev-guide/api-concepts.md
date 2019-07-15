@@ -11,7 +11,7 @@ menu_order: 3
 <p>A <i>public interface</i> is a set of code that third-party developers can call, implement, or build as a [plug-in](https://glossary.magento.com/plug-in). Magento guarantees that this code will not change in subsequent releases without a major version change.</p>
 <p>Public interfaces for a [module](https://glossary.magento.com/module) are marked with <code>@api</code> annotation.</p>
 
-{: .bs-callout .bs-callout-info }
+{: .bs-callout-info }
 Third-party developers should use only these interfaces, that is, interfaces with the `@api` annotation. You can use other interfaces but those may be modified or removed in subsequent Magento releases. For more information, see [Backward compatibility]({{ page.baseurl }}/contributor-guide/backward-compatible-development/).
 
 ## What is an API? {#api-definition}

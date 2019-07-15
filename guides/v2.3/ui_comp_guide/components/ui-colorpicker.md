@@ -7,6 +7,7 @@ The ColorPicker component uses the [Spectrum](https://bgrins.github.io/spectrum/
 The ColorPicker component must be a child of the [Listing]({{ page.baseurl }}/ui_comp_guide/components/ui-listing-grid.html) or [Form]({{ page.baseurl }}/ui_comp_guide/components/ui-form.html) components.
 
 ## Configuration options
+
 |Option|Description|Type|Default Value|
 |--- |--- |--- |--- |
 |`colorFormat`|Defines the color format displayed in the selection tool and input field. Valid formats: `hex`, `rgb`, `hsl`, `hsv`, `name`, `none`|`string`|`-`|
