@@ -9,8 +9,6 @@ return_to:
   url: rest/tutorials/index.html
 menu_order: 6
 level3_subgroup: order-tutorial
-redirect_from:
-  - /guides/v2.1/get-started/order-tutorial/order-prepare-checkout.html
 functional_areas:
   - Integration
   - Orders

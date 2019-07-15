@@ -1,12 +1,7 @@
 ---
 group: installation-guide
-subgroup: Getting Started
 title: How to get the Magento software
 landing-page: Installation Guide
-menu_title: How to get the Magento software
-menu_node:
-menu_order: 1
-redirect_from: /guides/v2.1/install-gde/continue.html
 functional_areas:
   - Install
   - System
