@@ -108,7 +108,7 @@ If the operation is successful, the response contains the code of the selected p
 
 ### Set payment method and place order {#setPaymentMethodAndPlaceOrder}
 
-Use the `setPaymentMethodAndPlaceOrder` mutation to set the payment method for your order.
+Use the `setPaymentMethodAndPlaceOrder` mutation to set the payment method and place the order.
 
 **Request**
 
