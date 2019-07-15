@@ -251,9 +251,6 @@ Template values specified as attributes have higher priority during layout gener
 
 ## Modify block arguments {#layout_markup_modify-block}
 
-{: .bs-callout-info }
-Magento 2.3.2 added a `shared` attribute. Now, instances of the view models are shared by default. If a view model is required to be a new instance each time, you must add the attribute `shared="false"` on the argument node in the layout xml file.
-
 To modify block arguments, use the `<referenceBlock>` instruction.
 
 **Example:** change the value of the existing block argument and add a new argument.
