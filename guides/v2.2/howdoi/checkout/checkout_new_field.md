@@ -167,7 +167,10 @@ use Magento\Checkout\Api\Data\ShippingInformationInterface;
 
 class MyBlock extends Template {
 
-    private $addressInformation;
+    /**
+     * @var ShippingInformationInterface
+     */
+    private $_addressInformation;
 
     /**
      * @param Context $context
@@ -179,7 +182,7 @@ class MyBlock extends Template {
         ShippingInformationInterface $addressInformation,
         array $data = []
     ) {
-        $this->addressInformation = $addressInformation;
+        $this->_addressInformation = $addressInformation;
         parent::__construct($context, $data);
     }
 
@@ -190,7 +193,7 @@ class MyBlock extends Template {
      */
     public function getShippingCharge()
     {
-        $extAttributes = $this->addressInformation->getExtensionAttributes();
+        $extAttributes = $this->_addressInformation->getExtensionAttributes();
         return $extAttributes->getCustomField(); //get custom attribute data.
     }
 }
