@@ -29,7 +29,7 @@ We use only one cron for {{site.data.var.ece}} projects because of the nature of
 
 ## Verify cron configuration
 
-Magento added an auto-crons configuration feature to view and manage the cron configuration from the `.magento.app.yaml` file on all environments without requiring a support ticket–including Pro Staging and Production. This feature improves cron processing and simplifies the process to verify cron configuration and review cron processing information.
+Magento added an auto-crons configuration feature to support self-service cron configuration options from the `.magento.app.yaml` file on all environments–including Pro Staging and Production, without requiring a support ticket.  If this feature is enabled, you can use `crontab -l` to review the cron configuration for each environment.
 
 ####  To review cron configuration
 
