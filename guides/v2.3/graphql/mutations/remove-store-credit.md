@@ -1,6 +1,6 @@
 ---
 group: graphql
-title: applyStoreCreditToCart mutation
+title: removeStoreCreditFromCart mutation
 ee_only: true
 ---
 
@@ -86,7 +86,7 @@ The `RemoveStoreCreditFromCartOutput` object contains the `Cart` object.
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`cart` |[ Cart!](#CartObject) | Describes the contents of the specified shopping cart
+`cart` |[Cart!](#CartObject) | Describes the contents of the specified shopping cart
 
 ### Cart object {#CartObject}
 
