@@ -11,9 +11,9 @@ Magento uses cron jobs for numerous features to schedule activities. This topic 
 
 The `.magento.app.yaml` file specifies the configuration for the default Magento cron jobs as well as any custom crons that you add to the following environments.
 
-* Starter: All environments you push to including `Master`
+* Starter plan–All environments including `Master`
 
-* Pro: Integration, Staging, and Production environments you push to including `Master`.
+* Pro plan–Integration, Staging, and Production environments including `Master`.
 
 The `.magento.app.yaml` file includes the following default crons configuration, which runs the default Magento processes specified in the Magento crontab.
 
@@ -25,13 +25,15 @@ crons:
 ```
 
 {:.bs-callout .bs-callout-info}
-We use only this one cron for cloud projects due to the read-only nature of the environments. This configuration is different from {{site.data.var.ee}} which has three default cron jobs. See [Configure and run crons]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cron.html) in the {{ site.data.var.ee }} documentation.
+We use only one cron for {{site.data.var.ece}} projects because of the nature of read-only environments. This configuration is different from {{site.data.var.ee}}, which has three default cron jobs. See [Configure and run crons]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cron.html) in the {{ site.data.var.ee }} documentation.
 
-## Verify that crons are working
+## Verify cron configuration
 
-You can use the `crontab` command to view the cron processes configured in the `magento.app.yml` file.
+Magento added an auto-crons configuration feature to view and manage the cron configuration from the `.magento.app.yaml` file on all environments without requiring a support ticket–including Pro Staging and Production. This feature improves cron processing and simplifies the process to verify cron configuration and review cron processing information.
 
-1. Log in to the Cloud project environment as a user with root privileges using [SSH]({{ page.baseurl }}/cloud/env/environments-ssh.html#ssh).
+####  To review cron configuration
+
+1. Log in to the {{site.data.var.ece}} project environment using [SSH]({{ page.baseurl }}/cloud/env/environments-ssh.html#ssh).
 
 1. List the scheduled cron processes.
 
@@ -53,7 +55,7 @@ MAILTO=""
 ```
 
 {:.bs-callout .bs-callout-info}
-If the command returns a `Command not found` error, submit a support ticket requesting a {{ site.data.var.ece }} project update to enable the _self-managed crons_ feature on the Cloud infrastructure.  This update allows you to use the Magento crontab and also allows you to update and manage crons on all Pro plan Integration, Staging, and Production environments without requiring a support ticket.
+If the command returns a `Command not found` error, submit a support ticket to enable the auto-crons feature on the Cloud infrastructure for your {{ site.data.var.ece }} project.
 
 ## Build a cron job {#build}
 
@@ -61,7 +63,7 @@ A cron job includes the schedule and timing specification and the command to run
 
 Magento uses a five value specification for a cron job. The numbers per each `* * * * *` is as follows:
 
-* Minute (0-59)  For all Start environments and Pro Integration environments, the minimum frequency supported for crons is five minutes. You may need to configure settings in your Magento Admin.
+* Minute (0-59)  For all Starter and Pro environments, the minimum frequency supported for crons is five minutes. You may need to configure settings in your Magento Admin.
 * Hour (0-23)
 * Day of month (1 - 31)
 * Month (1 - 12)
@@ -70,7 +72,7 @@ Magento uses a five value specification for a cron job. The numbers per each `* 
 For example:
 `00 */3 * * *` runs every 3 hours at the first minute (12:00 am, 3:00 am, 6:00 am, and so on) `20 */8 * * *` runs every 8 hours at minute 20 (12:20 am, 8:20 am, 4:20 pm, and so on) `00 00 * * *` runs once a day at midnight `00 * * * 1` runs once a week on Monday at midnight.
 
-When determining the scheduling of custom cron jobs, consider the time it takes to complete the task. For example, if you run a job every three hours and the task takes 40 minutes to complete, you may want to change the scheduled timing.
+When determining the scheduling of custom cron jobs, consider the time it takes to complete the task. For example, if you run a job every three hours and the task takes 40 minutes to complete, you may consider changing the scheduled timing.
 
 On the Magento Cloud platform, you add custom cron job configuration to the `.magento.app.yaml` in the `crons` section. The general format is `spec` for scheduling and `cmd` to specify the command or custom script to run.
 
@@ -95,26 +97,33 @@ On the Magento Cloud platform, you configure custom cron jobs by adding them to 
 {:.bs-callout .bs-callout-info}
 The default cron interval for all environments provisioned in the US-3, EU-3, and AP-3 regions is 1 minute. The default cron interval in all other regions is 5 minutes for Pro Integration environments and 1 minute for Pro Staging and Production environments. You cannot configure more frequent intervals than the default minimums.
 
-1. Edit `.magento.app.yaml` in the root directory of the Magento code in the Git branch.
+### Prerequisite
+
+Your {{site.data.var.ece}} project must have the [auto-crons feature](#verify-cron-configuration) before you can add custom cron jobs to Staging and Production environments. If it is not enabled, submit a Magento Support ticket.
+
+#### To add custom crons
+
+1. In your local development environment, edit the `.magento.app.yaml` file in the Magento `/app` directory.
 
 1. Locate the `crons` section in the file and add your custom cron code.
 
-    For example, you could add a custom cron job to export the product catalog that runs every eight hours, 20 minutes after the hour (such as 12:20 am, 8:20 am, and so on):
+   For example, you could add a custom cron job to export the product catalog that runs every eight hours, 20 minutes after the hour (such as 12:20 am, 8:20 am, and so on):
 
-    ```yaml
-    crons:
-        magento:
-            spec: '* * * * *'
-            cmd: 'php bin/magento cron:run'
+   ```yaml
+   crons:
+    magento:
+        spec: '* * * * *'
+        cmd: 'php bin/magento cron:run'
         productcatalog:
             spec: '20 */8 * * *'
             cmd: 'bin/magento export:start catalog_product_category'
     ```
 
-1. Save the file and push updates to the Git branch to redeploy your Cloud project with the latest cron configuration settings.
+1. Add, commit, and push code changes.
 
-{:.bs-callout .bs-callout-info}
-If you discover that configuration changes are not applied to Staging and Production sites after you redeploy and do not see any related error messages in the log, submit a Support ticket that describes the attempted configuration changes. Include any updated YAML configuration files in the ticket.
+   ```bash
+   git add -A && git commit -m "cron config updates" && git push origin <branch-name>
+   ```
 
 ## Update custom cron jobs {#update}
 
@@ -122,9 +131,9 @@ To add, remove, or update a custom cron job, change the configuration in the `cr
 
 ## Troubleshooting cron jobs
 
-Magento has updated the ece-tools package to optimize cron processing on the Cloud platform and to fix cron-related issues. If you are having problems with cron processing, make sure that your project is using the most current version of the ece-tools package. See [Upgrades and patches]({{ page.baseurl }}/cloud/project/project-upgrade-parent.html).
+Magento has updated the {{site.data.var.ece}} package to optimize cron processing on the {{site.data.var.ece} platform and to fix cron-related issues. If you are having problems with cron processing, make sure that your project is using the most current version of the ece-tools package. See [Upgrades and patches]({{ page.baseurl }}/cloud/project/project-upgrade-parent.html).
 
-You can review cron processing information in the application-level log files for each environment. See [Application logs]( {{ page.baseurl }}/cloud/trouble/environments-logs.html#app-log)).
+You can review cron processing information in the application-level log files for each environment. See [Application logs]({{ page.baseurl }}/cloud/trouble/environments-logs.html#app-log)).
 
 See the following Magento Support articles for help troubleshooting cron-related problems:
 
