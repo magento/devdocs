@@ -15,6 +15,6 @@ The Input component implements the [HTML](https://glossary.magento.com/html) `<i
 |`extends`|Extends configuration from specified component.|String| - |
 |`formElement`|Form Element.|`hidden`, `file`, `input`, `date`, `boolean`, `checkbox`, `checkboxset`, `email`, `select`, `multiselect`, `text`, `textarea`, `price`, `radioset`, `wysiwyg`|`input`|
 |`name`|Element's index in the scope of the current collection that will be used to build its unique identifier.|String| - |
-|`provider`|Reference to component.|String| - |
+|`provider`|Reference to component data provider. For example, for the "New Customer" page on the back-end side it will be equal to `customer_form.customer_form_data_source` |String| - |
 |`sortOrder`|Element's position in the collection|Int| `0` |
 |`template`|The path to the component’s `.html` template.|String|`ui/form/field`|
