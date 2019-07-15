@@ -55,7 +55,7 @@ MAILTO=""
 ```
 
 {:.bs-callout .bs-callout-info}
-If the command returns a `Command not found` error, submit a support ticket to enable the auto-crons feature on the Cloud infrastructure for your {{ site.data.var.ece }} project.
+If the command returns a `Command not found` error, submit a support ticket to enable the auto-crons feature on the Cloud infrastructure for your {{site.data.var.ece}} project.
 
 ## Build a cron job {#build}
 
