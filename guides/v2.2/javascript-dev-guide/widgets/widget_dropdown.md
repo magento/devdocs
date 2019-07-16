@@ -9,21 +9,20 @@ functional_areas:
 
 ## Overview
 
-Widget source file is [lib/web/mage/dropdowns.js].
+Use the dropdown widget to display custom content on the storefront.
 
-The dropdown widget allows to show on storefront a select box with custom
-content for each of available options.
+Widget source file is [lib/web/mage/dropdowns.js].
 
 
 **Usages:**
 - [Shipping policy]
 - [Customer menu]
-- [UI Tooltip]
+- [UI tooltip]
 
 [lib/web/mage/dropdowns.js]: {{ site.mage2bloburl }}/{{ page.guide_version }}/lib/web/mage/dropdowns.js
 [Shipping policy]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Shipping/view/frontend/web/template/checkout/shipping/shipping-policy.html
 [Customer menu]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Customer/view/frontend/templates/account/customer.phtml
-[UI Tooltip]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/frontend/web/templates/form/element/helper/tooltip.html
+[UI tooltip]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/frontend/web/templates/form/element/helper/tooltip.html
 
 ### HTML markup
 
@@ -48,8 +47,7 @@ content for each of available options.
 
 ### Styles
 
-The dropdown widget is not styled out of the box.
-Use [LESS mixin `.lib-dropdown()`] to customize it.
+Because the dropdown widget is not formatted by default, use [LESS mixin `.lib-dropdown()`] to customize it.
 
 ```less
 //
@@ -105,7 +103,7 @@ Use [LESS mixin `.lib-dropdown()`] to customize it.
 
 ## Initialize the dropdown widget {#dropdown_init}
 
-The loader widget is initialized as described in [JavaScript initialization].
+The dropdown widget is initialized as described in [JavaScript initialization]({{ page.baseurl }}/javascript-dev-guide/javascript/js_init.html).
 
 ### Initialize with `data-mage-init` attribute
 
@@ -136,10 +134,9 @@ $('.magento__dropdown-widget').dropdown();
 -  [activeClass](#d_activeClass)
 
 
-### `parent`   {#d_parent}
+### `parent` {#d_parent}
 
-The parent of element on which the widget was initialized. If not specified,
-the widget finds it himself with jQuery method `.parent()`.
+The parent element that initialized the widget. If not specified, the widget locates the element using the `.parent()` jQuery method.
 
 **Type**:
 
@@ -150,38 +147,34 @@ the widget finds it himself with jQuery method `.parent()`.
 **Default value**: `null`
 
 
-### `autoclose`   {#d_autoclose}
+### `autoclose` {#d_autoclose}
 
-Whenever to close or not the dropdown menu when the click is performed outside of dropdown scope.
+Determines whether to close the dropdown menu when the user clicks outside of the dropdown scope.
 
 **Type**: Boolean
 
 **Default value**: `true`
 
 
-### `btnArrow`   {#d_btnArrow}
+### `btnArrow` {#d_btnArrow}
 
-A jQuery selector for the arrow that expresses the state of the dropdown.
-The widget changes given element's text to '+' or '-", depending on the dropdown state.
-It's not required the element to be present in the dropdown HTML markup. It works
-just fine without it as well.
+(Optional) A jQuery selector that updates the arrow to `+` or `-` based on the state of the dropdown.
 
 **Type**: String
 
 **Default value**: `.arrow`
 
 
-### `menu`   {#d_menu}
+### `menu` {#d_menu}
 
-A jQuery selector that represents the dropdown's menu element.
-Looking at the HTML markup, given element has to be inside the `parent` option.
+A jQuery selector that represents the dropdown's menu element. `menu` must be inside the `parent` element.
 
 **Type**: String
 
 **Default value**: `[data-target="dropdown"]`
 
 
-### `activeClass`   {#d_activeClass}
+### `activeClass` {#d_activeClass}
 
 Given class is added to the widget element when the menu is visible.
 
