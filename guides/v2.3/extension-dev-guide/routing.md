@@ -165,7 +165,7 @@ $this->_forward('action', 'controller', 'Other_Module')
 {: .bs-callout .bs-callout-tip }
 Use the [`ActionFactory`] in your router to create an instance of an `Action` class.
 
-{: .bs-callout .bs-callout-info }
+{: .bs-callout-info }
 Action class should return a `result object`.
 
 ## Result object
