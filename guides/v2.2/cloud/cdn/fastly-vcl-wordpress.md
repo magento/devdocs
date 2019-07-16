@@ -1,9 +1,7 @@
 ---
 group: cloud-guide
-subgroup: 090_configure
 title: Set up redirects to WordPress using Fastly
 redirect_from:
-   - /guides/v2.1/cloud/configure/fastly-vcl-wordpress.html
    - /guides/v2.2/cloud/configure/fastly-vcl-wordpress.html
    - /guides/v2.3/cloud/configure/fastly-vcl-wordpress.html
 functional_areas:
@@ -14,7 +12,7 @@ functional_areas:
 The following example shows how to use a [Fastly Edge Dictionary](https://docs.fastly.com/guides/edge-dictionaries/working-with-dictionaries-using-the-api) with a custom VCL snippet to redirect incoming requests from a {{ site.data.var.ee }} store (`staging.example.com`) to a separate WordPress site (`customer.example.com`) that hosts related content like blog posts and customer stories.
 
 
-{: .bs-callout .bs-callout-info}
+{: .bs-callout-info }
 We recommend adding custom VCL configurations to a Staging environment where you can test them before running against Production.
 
 **Prerequisites**
@@ -150,7 +148,7 @@ Fastly validates the updated version of the VCL code during the upload process. 
 {% include cloud/cloud-fastly-manage-vcl-from-admin.md %}
 
 
-{: .bs-callout .bs-callout-info}
+{: .bs-callout-info }
 Instead of manually uploading custom VCL snippets, you can add snippets to the `$MAGENTO_CLOUD_APP_DIR/var/vcl_snippets_custom` directory in your environment. Snippets in this directory upload automatically when you click *upload VCL to Fastly* in the Magento Admin UI. See [Automated custom VCL snippets deployment](https://github.com/fastly/fastly-magento2/blob/master/Documentation/Guides/CUSTOM-VCL-SNIPPETS.md#automated-custom-vcl-snippets-deployment) in the Fastly CDN for Magento 2 module documentation. 
 
 

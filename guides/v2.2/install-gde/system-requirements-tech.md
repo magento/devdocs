@@ -33,7 +33,7 @@ MySQL 5.6, 5.7
 
 Magento is also compatible with MySQL NDB Cluster 7.4.&#42;, MariaDB 10.0, 10.1, 10.2, Percona 5.7, and other binary-compatible MySQL technologies.
 
-{: .bs-callout .bs-callout-info }
+{: .bs-callout-info }
 Magento only uses MySQL features compatible with MariaDB. MariaDB may not be compatible with all MySQL features, however, so be sure to research compatibility issues before using a feature in your Magento module.
 
 ### PHP
@@ -43,7 +43,7 @@ Magento only uses MySQL features compatible with MariaDB. MariaDB may not be com
 
 #### Required PHP extensions
 
-{: .bs-callout .bs-callout-info }
+{: .bs-callout-info }
 The [CentOS]({{ page.baseurl }}/install-gde/prereq/php-centos.html) and [Ubuntu]({{ page.baseurl }}/install-gde/prereq/php-ubuntu.html) PHP installation instructions include a step for installing these extensions.
 
 <!--{% assign platform-req = site.data.codebase.v2_2.open-source.composer_lock.platform %}-->
@@ -68,8 +68,6 @@ For more information, see [Required PHP settings]({{ page.baseurl }}/install-gde
 * Transport Layer Security (TLS) requirement - PayPal and `repo.magento.com` both require TLS 1.1 or later:
 
   * [More information about PayPal]({{ page.baseurl }}/install-gde/system-requirements_tls1-2.html)
-
-  * [More information about `repo.magento.com`]({{ site.baseurl }}/guides/v2.1/release-notes/tech_bull_tls-repo.html)
 
 ### Mail server
 

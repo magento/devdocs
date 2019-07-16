@@ -1,10 +1,5 @@
 content_map:
 -
-  directory: guides/v2.1
-  repository: magento/devdocs
-  branch: 2.1
-  filter: false
--
   directory: guides/m1x
   repository: magento/devdocs-m1
   branch: master
