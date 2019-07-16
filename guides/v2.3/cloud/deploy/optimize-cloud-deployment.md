@@ -1,1 +1,1 @@
-../../../v2.2/cloud/deploy/optimize-cloud-deployment.md
+../../../../guides/v2.2/cloud/deploy/optimize-cloud-deployment.md

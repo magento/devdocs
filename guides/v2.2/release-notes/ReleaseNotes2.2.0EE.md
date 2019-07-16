@@ -15,7 +15,7 @@ Magento Commerce 2.2.0 includes a wealth of new, exciting features, and hundreds
 
 * **B2B Commerce functionality** is designed to meet the needs of merchants whose primary customers are companies, rather than consumers. Companies can create and maintain their own accounts, each with teams of buyers with various roles and levels of permission. B2B Commerce functionality also includes a flexible API that integrates with a variety of ERP solutions from Magento partners. See [B2B Quick Start](http://docs.magento.com/m2/b2b/user_guide/quick-tour/b2b-quick-start.html) for an overview of the rich B2B feature set we're introducing in this release, and [Getting Started with Magento Commerce for B2B](http://docs.magento.com/m2/b2b/user_guide/getting-started.html) for a more complete exploration of these new features.
 
-* **Magento Commerce Starter.** In addition to our Pro version, Magento Cloud (Commerce) now comes in a smaller, platform-as-a-service version — Magento Commerce Starter. This subscription plan differs from our Enterprise Cloud version in some key ways. For an overview of these versions, see [Welcome to Magento Commerce Cloud]({{ site.baseurl }}/guides/v2.1/cloud/bk-cloud.html).
+* **Magento Commerce Starter.** In addition to our Pro version, Magento Cloud (Commerce) now comes in a smaller, platform-as-a-service version — Magento Commerce Starter. This subscription plan differs from our Enterprise Cloud version in some key ways. For an overview of these versions, see [Welcome to Magento Commerce Cloud]({{ page.baseurl }}/cloud/bk-cloud.html).
 
 * **Improvements to the Magento Commerce (Cloud) deployment process**. This release includes new build and deployment variables. Users of earlier versions of Magento Commerce (Cloud) will note that MCC has been replaced by ece-tools and ece-patches, which allows for patching your Magento Commerce (Cloud) without requiring a full installation of base code and the patch.
 
@@ -276,7 +276,7 @@ This release contains hundreds of fixes and enhancements.
 
 <!--- 63635-->* Checkout now loads as expected in Safari private mode. [GitHub-7942](https://github.com/magento/magento2/issues/7942), [GitHub-7329](https://github.com/magento/magento2/issues/7329), [GitHub-8358](https://github.com/magento/magento2/issues/8358)
 
-<!--- 61368-->* Minicart now shows all products you’ve added, whether you added them while signed-in or not. Previously, the minicar contained only products that you added while signed in. [GitHub-7500](https://github.com/magento/magento2/issues/7500)
+<!--- 61368-->* Minicart now shows all products you’ve added, whether you added them while signed-in or not. Previously, the minicart contained only products that you added while signed in. [GitHub-7500](https://github.com/magento/magento2/issues/7500)
 
 <!--- 59807-->* Magento now displays the ”Thank you for your purchase!" on the checkout success page.
 
@@ -996,7 +996,7 @@ Thanks to our hardworking Magento Open Source community members for the followin
 
 ### Payment methods
 
-<!--- 72305-->* We’ve added support for the change to the USPS API that USPS implemented on September 1, 2017. After installing or upgrading to this release, Magento will display the Domestic rate for USPS, First-Class Mail Parcel as expected. Previously, the USPS First-Class Mail Parcel option was not available after September 1, 2017 on installations running Magento 2.x unless you applied the workaround described [here]({{ site.baseurl }}/guides/v2.1/release-notes/tech_bull_USPS-patch-Sept2017.html). 
+<!--- 72305-->* We’ve added support for the change to the USPS API that USPS implemented on September 1, 2017. After installing or upgrading to this release, Magento will display the Domestic rate for USPS, First-Class Mail Parcel as expected. Previously, the USPS First-Class Mail Parcel option was not available after September 1, 2017 on installations running Magento 2.x.
 
 <!--- 56695-->* You can now successfully complete Paypal checkout with products that have custom options. [GitHub-5938](https://github.com/magento/magento2/issues/5938)
 
@@ -1174,7 +1174,7 @@ This release includes substantial improvements to Magento caching, image process
 
 <!--- 62405 -->* Magento no longer discounts items that belong to an excluded category. Previously, you were unable to exclude products assigned to a specific category due to the cart price rule.
 
-<!--- 58677 -->* The Cart Price rule nows affects coupon life as expected. Previously, coupons did not persist longer than the current date if they did not have a designated end-date.
+<!--- 58677 -->* The Cart Price rule now affects coupon life as expected. Previously, coupons did not persist longer than the current date if they did not have a designated end-date.
 
 <!--- 60756 -->* Customers can no longer apply a coupon code twice. Previously, the "Uses per Coupon" limit did not work for auto-generated coupons.
 
@@ -1335,7 +1335,7 @@ This release includes substantial improvements to Magento caching, image process
 
 <!---56914-->* Versioning of [static files](https://glossary.magento.com/static-files) (including CSS, JS, font, and image files) is now enabled by default.
 
-<!---57904-->* We've improved the speed of static asset deployment. See [Deploy static view files]({{ site.baseurl }}/guides/v2.1/config-guide/cli/config-cli-subcommands-static-view.html){: target="_blank"} for more information about available options.
+<!---57904-->* We've improved the speed of static asset deployment. See [Deploy static view files]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html){: target="_blank"} for more information about available options.
 
 <!--- 52614 -->* The `setup:static-content:deploy` command now provides flags that you can use to exclude or include individual themes, areas, and locales. For more information, see [GitHub-4294](https://github.com/magento/magento2/issues/4294).
 

@@ -16,9 +16,6 @@ functional_areas:
 
 {{site.data.var.ee}} supports [Elasticsearch]({{ site.baseurl }}/guides/v2.2/config-guide/elasticsearch/es-overview.html) versions 1.4, 1.7, 2.4, and 5.2 (requires {{site.data.var.ee}} v2.2.3 or later). The recommended version is 5.2.
 
-{:.bs-callout .bs-callout-info}
-If you are upgrading to {{site.data.var.ee}} 2.1.3, you must change your configuration to replace Solr with Elasticsearch as discussed in [the 2.1.3 Release Notes]({{ site.baseurl }}/guides/v2.1/cloud/release-notes/CloudReleaseNotes2.1.3.html#cloud-rn-213-es).
-
 #### To enable Elasticsearch:
 
 1.  Add the `elasticsearch` service to the `.magento/services.yaml` file with the Elasticsearch version and allocated disk space in MB.
@@ -78,10 +75,10 @@ The following are supported Elasticsearch plugins for version 2.4:
 -  `mapper-murmur3`: Murmur3 mapper plugin for computing hashes at index-time
 -  `mapper-size`: Size mapper plugin, enables the `_size` meta field
 
-{:.bs-callout .bs-callout-info}
-Magento does not support the ElasticSuite third-party plugin.
-
 See [Elasticsearch plugin documentation](https://www.elastic.co/guide/en/elasticsearch/plugins/2.4/index.html).
+
+{:.bs-callout-info}
+If you use the ElasticSuite third-party plugin, you must [update the `{{site.data.var.ct}}` package]({{page.baseurl}}/cloud/project/ece-tools-update.html) to version 2002.0.19 or later.
 
 ## Verify relationships
 
@@ -89,5 +86,5 @@ See [Elasticsearch plugin documentation](https://www.elastic.co/guide/en/elastic
 
 {% include cloud/pretty-print-services.md %}
 
-{:.bs-callout .bs-callout-warning}
-The Staging and Production environments share a single Elasticsearch instance; therefore, you must specify a unique Elasticsearch prefix for each environment.
+{: .bs-callout-warning}
+Staging and Production environments that are in the same cluster share a single Elasticsearch instance, so you must specify a unique Elasticsearch prefix for each of these environments.

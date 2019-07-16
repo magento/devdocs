@@ -302,7 +302,7 @@ We do not recommend upgrading to Magento 2.2.4 if you deploy across multiple web
 
 <!--- MAGETWO-85741 -->* The storefront **Back to Sign in** button now works as expected. Previously, when you clicked that button, Magento simply reloaded the current page. *Fix submitted by [StasKozar](https://github.com/StasKozar) in pull request 12759*. [GitHub-12715](https://github.com/magento/magento2/issues/12715)
 
-<!--- MAGETWO-85672 -->* The `window.checkout.customerLoginUrl` now contains a URL that includes the referer in base64 encoding (for example, https://myShop.com/customer/account/login/referer/aHR0cHM6Ly9teXNob3AuY29tL2NoZWNrb3V0). Previously, the login URL did not include a referer (for example, https://myShop.com/customer/account/login). *Fix submitted by [Tommy Quissens](https://github.com/quisse) in pull request 12630*. [GitHub-12627](https://github.com/magento/magento2/issues/12627)
+<!--- MAGETWO-85672 -->* The `window.checkout.customerLoginUrl` now contains a URL that includes the referrer in base64 encoding (for example, https://myShop.com/customer/account/login/referrer/aHR0cHM6Ly9teXNob3AuY29tL2NoZWNrb3V0). Previously, the login URL did not include a referrer (for example, https://myShop.com/customer/account/login). *Fix submitted by [Tommy Quissens](https://github.com/quisse) in pull request 12630*. [GitHub-12627](https://github.com/magento/magento2/issues/12627)
 
 <!--- MAGETWO-86989 -->* When you are on the cart page and click a product's  **Edit** link, the product page now correctly displays the product quantity currently in the cart. *Fix submitted by [Arnoud Beekman](https://github.com/arnoudhgz) in pull request 13310*.
 
@@ -730,7 +730,7 @@ Users of the CyberSource payment method should note that CyberSource uses the Ma
 
 ### Shipping
 
-{: .bs-callout .bs-callout-info }
+{: .bs-callout-info }
 You can find Magento Shipping-specific release notes in [Magento Shipping Release Notes]({{ page.baseurl }}/release-notes/ReleaseNotesMagentoShipping2.2.x.html).
 
 

@@ -1,1 +1,1 @@
-../../v2.2/install-gde/install-resource-diagram.md
+../../../guides/v2.2/install-gde/install-resource-diagram.md

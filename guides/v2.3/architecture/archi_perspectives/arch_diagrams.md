@@ -1,1 +1,1 @@
-../../../v2.2/architecture/archi_perspectives/arch_diagrams.md
+../../../../guides/v2.2/architecture/archi_perspectives/arch_diagrams.md

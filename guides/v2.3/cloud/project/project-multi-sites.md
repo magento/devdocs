@@ -1,1 +1,1 @@
-../../../v2.2/cloud/project/project-multi-sites.md
+../../../../guides/v2.2/cloud/project/project-multi-sites.md

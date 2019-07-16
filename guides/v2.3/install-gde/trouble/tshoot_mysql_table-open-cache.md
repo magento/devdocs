@@ -1,1 +1,1 @@
-../../../v2.2/install-gde/trouble/tshoot_mysql_table-open-cache.md
+../../../../guides/v2.2/install-gde/trouble/tshoot_mysql_table-open-cache.md

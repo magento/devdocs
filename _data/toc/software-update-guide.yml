@@ -121,7 +121,15 @@ pages:
       url: /comp-mgr/cli/cli-upgrade.html
       children:
 
-        - label: Command-line upgrade with sample data
+        - label: (Optional) Upgrade using the custom script
+          url: /comp-mgr/cli/upgrade-with-script.html
+          include_versions: ["2.3"]
+          
+        - label: (Experimental) Upgrade using the composer plugin
+          url: /comp-mgr/cli/upgrade-with-plugin.html
+          include_versions: ["2.3"]
+
+        - label: Upgrade with sample data
           url: /comp-mgr/cli/cli-rc1-samp.html
 
     - label: Run System Upgrade
@@ -143,6 +151,9 @@ pages:
         - label: Step 4. Upgrade
           url: /comp-mgr/upgrader/upgrade.html
 
+    - label: Applying patches
+      url: /comp-mgr/patching.html
+    
     - label: Update the updater application
       url: /comp-mgr/updater/update-updater.html
       children:

@@ -1,1 +1,1 @@
-../../v2.2/migration/migration-manually.md
+../../../guides/v2.2/migration/migration-manually.md

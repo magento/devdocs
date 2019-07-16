@@ -1,1 +1,1 @@
-../../v2.2/extension-dev-guide/Contribute_edg.md
+../../../guides/v2.2/extension-dev-guide/Contribute_edg.md

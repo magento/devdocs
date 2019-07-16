@@ -1,1 +1,1 @@
-../../../../v2.2/pattern-library/graphics/iconography/iconography.md
+../../../../../guides/v2.2/pattern-library/graphics/iconography/iconography.md

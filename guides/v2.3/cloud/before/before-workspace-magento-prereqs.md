@@ -1,14 +1,8 @@
 ---
 group: cloud-guide
-subgroup: 080_setup
 title: Install Magento prerequisites
-menu_title: Install Magento prerequisites
-menu_order: 15
-menu_node:
 redirect_from:
-  - /guides/v2.1/cloud/before/before-workspace-php.html
   - /guides/v2.2/cloud/before/before-workspace-php.html
-  - /guides/v2.1/cloud/before/before-workspace-cli.html
   - /guides/v2.2/cloud/before/before-workspace-cli.html
 functional_areas:
   - Cloud
@@ -25,7 +19,7 @@ To begin, install and set up a VM on your host computer (Windows, Mac OS, Linux-
 
 When you install and configure software on your local (or VM), you will first SSH into the VM and then complete installations. Follow the SSH instructions and commands for the VM software you install. For example, you would install PHP, Nginx, and database on the VM via SSH.
 
-{: .bs-callout .bs-callout-info }
+{: .bs-callout-info }
 Magento documentation provides installation instructions for installing software on CentOS or Ubuntu only. For installation information on Windows or MacOS, consult a community resource.
 
 ## Virtual machine or container (host) {#vm}

@@ -1,1 +1,1 @@
-../../../../v2.2/install-gde/install/web/install-web_2-db.md
+../../../../../guides/v2.2/install-gde/install/web/install-web_2-db.md
