@@ -390,6 +390,16 @@ $shoppingCartUrl = $block->getData('shopping_cart_url');
 $helperMethodResult = $block->getData('helper_method_result');
 ```
 
+### arguments {#arguments}
+
+`<arguments>` is a required container for `<argument>`. It does not have its own attributes.
+
+```xml
+<arguments>
+    <argument name="css_class" xsi:type="string">header links</argument>
+</arguments>
+```
+
 ## Common arguments for blocks
 
 The following are common arguments for block instructions:
@@ -421,16 +431,6 @@ The following are common arguments for block instructions:
       </arguments>
     </block>
     ```
-
-### arguments {#arguments}
-
-`<arguments>` is a required container for `<argument>`. It does not have its own attributes.
-
-```xml
-<arguments>
-    <argument name="css_class" xsi:type="string">header links</argument>
-</arguments>
-```
 
 [page layout]: {{page.baseurl}}/frontend-dev-guide/layouts/layout-types.html#layout-types-page
 [page configuration]: {{page.baseurl}}/frontend-dev-guide/layouts/layout-types.html#layout-types-conf
