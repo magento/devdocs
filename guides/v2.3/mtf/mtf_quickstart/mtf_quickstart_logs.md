@@ -1,1 +1,1 @@
-../../../v2.2/mtf/mtf_quickstart/mtf_quickstart_logs.md
+../../../../guides/v2.2/mtf/mtf_quickstart/mtf_quickstart_logs.md

@@ -1,1 +1,1 @@
-../../../v2.2/cloud/trouble/trouble_comp-deploy-fail.md
+../../../../guides/v2.2/cloud/trouble/trouble_comp-deploy-fail.md

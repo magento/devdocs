@@ -1,1 +1,1 @@
-../../../v2.2/cloud/trouble/trouble-crypt-key-variable.md
+../../../../guides/v2.2/cloud/trouble/trouble-crypt-key-variable.md

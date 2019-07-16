@@ -1,1 +1,1 @@
-../../../v2.2/frontend-dev-guide/layouts/product-layouts.md
+../../../../guides/v2.2/frontend-dev-guide/layouts/product-layouts.md

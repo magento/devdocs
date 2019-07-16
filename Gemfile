@@ -4,11 +4,13 @@ source 'https://rubygems.org'
 
 gem 'devdocs', git: 'https://github.com/magento-devdocs/devdocs-theme.git'
 gem 'jekyll'
+gem 'whatsup_github'
 
 gem 'wdm', platform: :mswin
 
 group :test do
   gem 'html-proofer'
+  gem 'mdl'
   gem 'launchy'
 end
 

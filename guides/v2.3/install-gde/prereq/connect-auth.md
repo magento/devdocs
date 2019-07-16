@@ -1,1 +1,1 @@
-../../../v2.2/install-gde/prereq/connect-auth.md
+../../../../guides/v2.2/install-gde/prereq/connect-auth.md

@@ -1,1 +1,1 @@
-../../../v2.2/javascript-dev-guide/javascript/js_init.md
+../../../../guides/v2.2/javascript-dev-guide/javascript/js_init.md

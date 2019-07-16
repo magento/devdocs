@@ -1,1 +1,1 @@
-../../../v2.2/install-gde/install/sample-data-after-magento.md
+../../../../guides/v2.2/install-gde/install/sample-data-after-magento.md

@@ -1,1 +1,1 @@
-../../v2.2/coding-standards/docblock-standard-general.md
+../../../guides/v2.2/coding-standards/docblock-standard-general.md

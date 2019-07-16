@@ -62,4 +62,10 @@ desc 'Pull docs from external repositories'
 task init: %w[multirepo:init]
 
 desc 'Run checks (image optimization).'
-task check: %w[check:image_optim] 
+task check: %w[check:image_optim check:mdl] 
+
+desc 'Generate data for the weekly digest.'
+task :whatsnew do
+  print 'Generating data for the weekly digest: $ '.magenta
+  sh 'whatsup_github'
+end

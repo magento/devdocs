@@ -1,1 +1,1 @@
-../../../v2.2/frontend-dev-guide/themes/theme-apply.md
+../../../../guides/v2.2/frontend-dev-guide/themes/theme-apply.md

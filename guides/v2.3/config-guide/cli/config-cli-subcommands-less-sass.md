@@ -1,1 +1,1 @@
-../../../v2.2/config-guide/cli/config-cli-subcommands-less-sass.md
+../../../../guides/v2.2/config-guide/cli/config-cli-subcommands-less-sass.md

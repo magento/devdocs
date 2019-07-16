@@ -1,0 +1,1 @@
+../../../../guides/v2.2/javascript-dev-guide/widgets/widget_redirectUrl.md
