@@ -13,7 +13,7 @@ The `.magento.app.yaml` file specifies the configuration for the default Magento
 mae-MAGECLOUD-3825-cron-changes
 * Starter plan–All environments including `Master`
 
-* Pro plan–Integration, Staging, and Production environments including `Master`.
+* Pro plan–Integration, Staging, and Production environments including `Master`
 
 The `.magento.app.yaml` file includes the following default crons configuration, which runs the default Magento processes specified in the Magento crontab.
 
@@ -107,7 +107,7 @@ The  [auto-crons feature](#verify-cron-configuration) must be enabled on your {{
 
 1. Add your custom cron code to the `crons` section in the file.
 
-   For example, you can add a custom cron job to export the product catalog and configure it to run every eight hours, 20 minutes after the hour (such as 12:20 am, 8:20 am, and so on):
+For example, you can add a custom cron job to export the product catalog and configure it to run every eight hours, 20 minutes after the hour.
 
    ```yaml
    crons:
