@@ -33,6 +33,9 @@ The release notes include:
 
     -   {:.fix}<!-- MAGECLOUD-3832 -->Updated the Sodium library from version 1.0.11 to version 1.0.18, and updated the Sodium PHP extension.
 
+        {:.bs-callout-warning}
+        {{site.data.var.ece}} customers must submit a support ticket to upgrade the libsodium package on Pro Production and Staging environments prior to upgrading to {{site.data.var.ee}} 2.3.2. Currently, you cannot upgrade Starter environments to {{site.data.var.ee}} 2.3.2.
+
     -   {:.fix}<!-- MAGECLOUD-3446 -->Added the `analysis-icu` and the `analysis-phonetic` Elasticsearch plugins to all Docker images.
 
     -   {:.fix}<!-- MAGECLOUD-3486 & MAGECLOUD-3678 -->Improved validations: When using options for the `docker:build` command, you must provide a value when using an option. Also, added validation for the Node version when using the `docker:build run` command.
