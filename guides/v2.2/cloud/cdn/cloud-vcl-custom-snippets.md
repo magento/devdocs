@@ -1,9 +1,7 @@
 ---
 group: cloud-guide
-subgroup: 090_configure
 title: Custom Fastly VCL snippets
 redirect_from:
-   - /guides/v2.1/cloud/configure/cloud-vcl-custom-snippets.html
    - /guides/v2.2/cloud/configure/cloud-vcl-custom-snippets.html
    - /guides/v2.3/cloud/configure/cloud-vcl-custom-snippets.html
 functional_areas:
@@ -30,7 +28,7 @@ We recommend using custom VCL snippets with Edge Dictionaries and Access Control
 
 The dictionary and ACL data is deployed to the Fastly Edge nodes accessible across network regions. Additionally, the data can be updated dynamically across the network without requiring you to redeploy the VCL code for your staging or production environment.
 
-{: .bs-callout .bs-callout-info}
+{: .bs-callout-info }
 You must [set up Fastly]({{ page.baseurl }}/cloud/cdn/configure-fastly.html) before you can add custom VCL snippets.
 
 ## Custom VCL snippet examples and tutorials
@@ -267,7 +265,7 @@ After you add a custom VCL snippet, Fastly inserts the snippet in the VCL versio
 
 These API request examples use exported environment variables to provide the credentials to authenticate with Fastly. For details on these commands, see the [Fastly API reference](https://docs.fastly.com/api/config#vcl).
 
-{: .bs-callout .bs-callout-info}
+{: .bs-callout-info }
 Use these commands to manage snippets that you added using the Fastly API. If you added snippets from the Magento Admin UI, see [Manage VCL snippets using the Admin UI](#manage-custom-vcl-snippets-from-the-magento-admin-ui).
 
 - **Get active VCL version number**

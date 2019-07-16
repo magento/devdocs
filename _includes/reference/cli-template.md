@@ -10,6 +10,9 @@
 This reference contains {{ commands | size }} commands available through the `bin/magento` command-line tool.
 The initial list is auto generated using `bin/magento list` command at the {{ site.data.var.ce }} edition.
 
+{: .bs-callout-info }
+You can call Magento CLI commands using shortcuts instead of the full command name. For example, you can call `bin/magento setup:upgrade` using `bin/magento s:up`, `bin/magento s:upg`, etc. See [shortcut syntax](https://symfony.com/doc/current/components/console/usage.html#shortcut-syntax) to understand how to use shortcuts with any Magento CLI command.
+
 {% for command in commands %}
   {% assign arguments = command.definition.arguments %}
   {% assign options = command.definition.options %}

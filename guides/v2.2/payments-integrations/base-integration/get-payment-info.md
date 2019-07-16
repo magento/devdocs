@@ -53,7 +53,7 @@ class PaymentDataBuilder implements BuilderInterface
 
 As you can see, we get the payment nonce from payment additional information. And so any specific data (like credit card information) can be retrieved.
 
-{: .bs-callout .bs-callout-info }
+{: .bs-callout-info }
 You should remove any sensitive data (like credit card details) from payment additional information when you do not use it in your code. You can remove it in request builder, after reading, or in response handler, after processing response. In other case it will be stored in database.
 
 ## Getting payment information from frontend to backend 
@@ -106,7 +106,7 @@ define(
 
 The `getData()` method returns data what we need and depending on payment integration the returned data can be more
 complicated. we need last step to retrieve data from [storefront](https://glossary.magento.com/storefront) in the backend. Magento provides some
-mechanisms called [Observers]({{ site.gdeurl21 }}extension-dev-guide/events-and-observers.html).
+mechanisms called [Observers]({{ page.baseurl }}/extension-dev-guide/events-and-observers.html).
  
 #### Read additional data
 

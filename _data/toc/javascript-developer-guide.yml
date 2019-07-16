@@ -93,3 +93,6 @@ pages:
 
         - label: Tabs widget
           url: /javascript-dev-guide/widgets/widget_tabs.html
+
+        - label: ToggleAdvanced widget
+          url: /javascript-dev-guide/widgets/widget_toggle.html
