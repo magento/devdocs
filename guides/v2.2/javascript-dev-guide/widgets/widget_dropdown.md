@@ -2,7 +2,9 @@
 group: javascript-developer-guide
 subgroup: 3_Widgets
 title: Dropdown widget
-functional_areas: frontend,theme,dropdown
+functional_areas:
+ - Frontend
+ - Theme
 ---
 
 ## Overview
