@@ -39,7 +39,7 @@ Add the following to your component's [dependency injection](https://glossary.ma
 
 To render private content, create a block and a template to display user-agnostic data; this data is replaced with user-specific data by the [UI component](https://glossary.magento.com/ui-component).
 
-{: .bs-callout .bs-callout-info }
+{: .bs-callout-info }
 Do _not_ use the `$_isScopePrivate` property in your blocks. This property is obsolete and won't work properly.
 
 Replace private data in blocks with placeholders (using [Knockout](http://knockoutjs.com/documentation/introduction.html){:target="_blank"} syntax). The init scope on the root element is `data-bind="scope: 'compareProducts'"`, where you define the scope name (`compareProducts` in this example) in your [layout](https://glossary.magento.com/layout).
