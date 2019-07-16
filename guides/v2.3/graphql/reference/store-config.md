@@ -80,7 +80,7 @@ Attribute |  Data Type | Description
 `no_route` | String | Contains the URL of the default page that you want to appear when if a 404 “Page not Found” error occurs
 `show_cms_breadcrumbs` | Int | Determines if a breadcrumb trail appears on all CMS pages in the catalog. Options: `0` (No) or `1` (Yes)
 
-### Extend Config Data
+### Extend configuration data
 
 You can add your own configuration to the `Store` endpoint within your own module.
 
