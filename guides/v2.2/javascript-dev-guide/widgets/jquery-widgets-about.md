@@ -12,6 +12,7 @@ This guide discusses the following widgets:
 -   [Calendar widget]
 -   [Collapsible widget]
 -   [Confirm widget]
+-   [Dropdown widget]
 -   [DropdownDialog widget]
 -   [Gallery widget]
 -   [List widget]
@@ -23,6 +24,7 @@ This guide discusses the following widgets:
 -   [QuickSearch widget]
 -   [RedirectUrl widget]
 -   [Tabs widget]
+-   [ToggleAdvanced widget]
 
 {:.bs-callout .bs-callout-info}
 Magento 2 supports [jQuery UI 1.9.2], widget options added in later versions might be unavailable.
@@ -35,6 +37,7 @@ Magento out of the box does not contain jQuery UI styles. Also, it is not recomm
 [Calendar widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_calendar.html
 [Collapsible widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_collapsible.html
 [Confirm widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_confirm.html
+[Dropdown widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_dropdown.html
 [DropdownDialog widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_dialog.html
 [Gallery widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_gallery.html
 [List widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_list.html
@@ -46,4 +49,5 @@ Magento out of the box does not contain jQuery UI styles. Also, it is not recomm
 [QuickSearch widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_quickSearch.html
 [RedirectUrl widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_redirectUrl.html
 [Tabs widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_tabs.html
+[ToggleAdvanced widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_toggle.html
 [jQuery UI 1.9.2]: http://blog.jqueryui.com/2012/11/jquery-ui-1-9-2/
