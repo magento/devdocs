@@ -1,1 +1,1 @@
-../../../v2.2/cloud/live/live-prot.md
+../../../../guides/v2.2/cloud/live/live-prot.md

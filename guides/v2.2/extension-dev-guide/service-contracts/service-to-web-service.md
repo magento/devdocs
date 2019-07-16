@@ -77,7 +77,7 @@ Following are some examples of various types and what they would look like in th
 
   - @return \Magento\Customer\Api\Data\CustomerInterface[]
 
-{: .bs-callout .bs-callout-info }
+{: .bs-callout-info }
 If a service method argument is called `item`, there will be a problem during SOAP processing. All item nodes are removed during SOAP request processing. This is done to unwrap array items that are wrapped by the SOAP server into an `item` element.
 
 ## webapi.xml configuration options {#configuration-options}
@@ -127,6 +127,9 @@ To define web API components, set these attributes on these XML elements in the
             </li>
             <li>
                `secure`. Optional. Boolean. Indicates that the route is accessible over only HTTPS. Any attempts to access this route over non-secure causes an exception.
+            </li>
+            <li>
+               <p><code>soapOperation</code>. Optional. String. Specifies the SOAP operation name to use instead of the interface's method name. Use this element to create multiple operations for the same service contract.</p>
             </li>
          </ul>
       </td>

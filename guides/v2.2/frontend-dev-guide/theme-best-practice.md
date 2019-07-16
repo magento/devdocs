@@ -29,4 +29,4 @@ Some other customizations that can be performed using layout instructions are th
 5. If you need to change the wording in user interface, [add custom CSV dictionary files]({{ page.baseurl }}/frontend-dev-guide/translations/theme_dictionary.html) instead of overriding `.phtml` templates. 
 6. Use [CSS critical path]({{ page.baseurl }}/frontend-dev-guide/css-topics/css-critical-path.html) to get the page to render much faster.
 
-Keep in mind, that after Magento instances, updates or upgrades something can change in default templates, layouts, and styles. So it is recommended to check if the changes effected the files overridden in your theme and copy changes if any, to your templates, layouts, and styles.
+Keep in mind that, after updating or upgrading Magento instances, there may be changes to default templates, layouts, and styles. So it is recommended to check if those changes affect any files overridden in your theme and if so, copy the changes to your templates, layouts, and styles.

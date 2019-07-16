@@ -24,7 +24,7 @@ To ensure the stability of your customizations and prevent upgrades from overwri
         @family-name:'<any_font_name>',
         @font-path: '@{baseDir}fonts/<path_to_font_file>',
         @font-weight: <font_weight>,
-        @font-style: <font_style>,
+        @font-style: <font_style>
         @font-display: <auto|block|fallback|option|swap>
     );
     ```
@@ -42,10 +42,11 @@ To ensure the stability of your customizations and prevent upgrades from overwri
         src: url('../fonts/opensans/light/opensans-300.eot');
         src: url('../fonts/opensans/light/opensans-300.eot?#iefix') format('embedded-opentype'), url('../fonts/opensans/light/opensans-300.woff2') format('woff2'), url('../fonts/opensans/light/opensans-300.woff') format('woff'), url('../fonts/opensans/light/opensans-300.ttf') format('truetype'), url('../fonts/opensans/light/opensans-300.svg#Open Sans') format('svg');
         font-weight: 300;
-        font-style: normal;
+        font-style: normal
         font-display: swap;
     }
     ```
+    
     `@font-display: swap` is declared by default for Magento Blank theme in `app/design/frontend/Magento/blank/web/css/source/_typography.less`.
     
     Fallback web fonts that are used by default in Magento are located in `lib/web/css/source/lib/variables/_typography.less`.

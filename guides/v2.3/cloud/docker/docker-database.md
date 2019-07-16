@@ -1,1 +1,1 @@
-../../../v2.2/cloud/docker/docker-database.md
+../../../../guides/v2.2/cloud/docker/docker-database.md

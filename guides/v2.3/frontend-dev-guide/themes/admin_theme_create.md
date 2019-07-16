@@ -71,6 +71,24 @@ In the default `Magento/backend` theme `lib/web/images/magento-logo.svg` is used
 To override it, in your theme directory, create a `web/images` sub-directory, and add your custom file named `magento-logo.svg`. 
 If you want to use the file with other name and/or format, you need to additionally declare it as described in [Declaring theme logo]({{ page.baseurl }}/frontend-dev-guide/themes/theme-create.html#logo_declare).
 
+To customize the Admin theme logo:
+
+1. Create a new XML file in the theme named `app/design/adminhtml/<Vendor>/<theme>/Magento_Backend/layout/admin_login.xml`. 
+
+2. Add the following sample code to the new file.
+     ```xml
+    <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="admin-login" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+        <body>
+            <referenceBlock name="logo">
+                <arguments>
+                    <argument name="logo_image_src" xsi:type="string">images/custom-logo.svg</argument>
+                </arguments>
+            </referenceBlock>
+        </body>
+    </page>
+    ```
+3. Add your custom logo to the `app/design/adminhtml/<Vendor>/<theme>/web/images/` directory.
+
 ## Theme registration {#register_theme}
 
 Once you open the Magento Admin (or reload any  Magento Admin page) having added the theme files to the files system, your theme gets registered and added to the database.

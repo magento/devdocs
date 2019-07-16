@@ -1,1 +1,1 @@
-../../../v2.2/config-guide/cron/custom-cron-ref.md
+../../../../guides/v2.2/config-guide/cron/custom-cron-ref.md

@@ -1,1 +1,1 @@
-../../../v2.2/javascript-dev-guide/javascript/js_debug.md
+../../../../guides/v2.2/javascript-dev-guide/javascript/js_debug.md

@@ -1,1 +1,1 @@
-../../../v2.2/extension-dev-guide/package/package.md
+../../../../guides/v2.2/extension-dev-guide/package/package.md
