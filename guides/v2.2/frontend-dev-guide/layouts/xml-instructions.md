@@ -406,7 +406,7 @@ The following are common arguments for block instructions:
    </referenceBlock>
    ```
 
-- `translate_inline`: `true' = disable translation for this block.
+- `translate_inline`: `true' = enable translation for this block.
 
    ```xml
    <argument xsi:type="string" translate="true">{strValue}</argument>
