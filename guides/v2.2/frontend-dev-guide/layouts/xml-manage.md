@@ -472,9 +472,9 @@ class Product
 }
 ```
 
-## Manage my account dashboard navigation links
+## Manage the 'My Account' dashboard navigation links
 
- By using the following example, you can remove navigation links from My Account dashboard on the storefront. Also, the list of references below can be used for performing different actions on the links (i.e. moving).
+ You can remove navigation links from the 'My Account' dashboard on the storefront by setting the `remove` attribute.
 
   ```xml
 <!-- File:  app/design/frontend/<Vendor>/<theme>/Magento_Customer/layout/customer_account.xml -->
