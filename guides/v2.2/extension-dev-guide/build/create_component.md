@@ -83,7 +83,7 @@ In this example:
 * `license` lists applicable licenses that apply to your component.
 * `autoload` instructs Composer to load the specified files.
 
-{: .bs-callout .bs-callout-info}
+{: .bs-callout-info }
 Magento does not currently support the [`path`](https://getcomposer.org/doc/05-repositories.md#path) repository.
 
 #### Next

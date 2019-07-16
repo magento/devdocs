@@ -159,7 +159,7 @@ https://*.add-theme-projectID.us.magentosite.cloud/
 {: .no-copy}
 
 
-{: .bs-callout .bs-callout-info}
+{: .bs-callout-info }
 Some projects provisioned before December 8, 2017, use the triple dash (\-\-\-) as a separator for the subdomain.
 
 See more information about [caching]({{ page.baseurl }}/cloud/project/project-routes-more-cache.html).
