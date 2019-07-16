@@ -20,7 +20,7 @@ Magento processes each message that is sent to the Message Queue Framework, addi
 app/code/Magento/AmqpStore/Plugin/Framework/Amqp/Bulk/Exchange.php
 ```
 
-Plugin executes before `enqueue` method of `Magento\Framework\Amqp\Bulk\Exchange`.
+The plugin executes before the `enqueue` method in `Magento\Framework\Amqp\Bulk\Exchange`.
 
 Each AMQP message by default contains list of properties. We are interesting in `application_headers`. Those headers are used for transfer current `store_id` into the RabbiMQ queue.  
 
