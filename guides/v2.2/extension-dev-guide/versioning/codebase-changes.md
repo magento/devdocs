@@ -145,7 +145,8 @@ Use this table to understand what changes Magento can make and which version num
 | | Unique key added/removed | MAJOR|
 | | Index added/changed| PATCH|
 | | Foreign key added| MAJOR|
-| | Temporary tables added/removed/changed | PATCH|
+| | Temporary tables (both MySQL temporary and permanent `_tmp` tables) added/removed/changed | PATCH|
+| | Engine changed | MAJOR|
   
   
 [private]: http://php.net/manual/en/language.oop5.visibility.php
