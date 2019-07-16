@@ -29,7 +29,7 @@ We use only one cron for {{site.data.var.ece}} projects because of the nature of
 
 ## Verify cron configuration
 
-Magento added an auto-crons configuration feature to support self-service cron configuration options from the `.magento.app.yaml` file on all environments–including Pro Staging and Production, without requiring a support ticket.  If this feature is enabled, you can use `crontab -l` to review the cron configuration for each environment.
+Magento added an auto-crons configuration feature to support self-service cron configuration updates from the `.magento.app.yaml` file on all environments–including Pro Staging and Production. If this feature is enabled, you can use `crontab -l` to review the cron configuration for each environment.
 
 ####  To review cron configuration
 
@@ -55,7 +55,7 @@ MAILTO=""
 ```
 
 {:.bs-callout .bs-callout-info}
-If the command returns a `Command not found` error, submit a support ticket to enable the auto-crons feature on the Cloud infrastructure for your {{site.data.var.ece}} project.
+If the command returns a `Command not found` error, contact your Magento account manager or CSM about enabling the auto-crons self-service configuration feature on the Cloud infrastructure for your {{site.data.var.ece}} project.
 
 ## Build a cron job {#build}
 
@@ -99,15 +99,15 @@ The default cron interval for all environments provisioned in the US-3, EU-3, an
 
 ### Prerequisite
 
-The  [auto-crons feature](#verify-cron-configuration) must be enabled on your {{site.data.var.ece}} project before you can add custom cron jobs to Staging and Production environments using `.magento.app.yaml`. If this feature is not enabled, submit a Magento Support ticket.
+The  [auto-crons feature](#verify-cron-configuration) must be enabled on your {{site.data.var.ece}} project before you can add custom cron jobs to Staging and Production environments using `.magento.app.yaml`. If this feature is not enabled, contact your Magento account manager or CSM.
 
 #### To add custom crons
 
 1. In your local development environment, edit the `.magento.app.yaml` file in the Magento `/app` directory.
 
-1. Locate the `crons` section in the file and add your custom cron code.
+1. Add your custom cron code to the `crons` section in the file.
 
-   For example, you could add a custom cron job to export the product catalog that runs every eight hours, 20 minutes after the hour (such as 12:20 am, 8:20 am, and so on):
+   For example, you can add a custom cron job to export the product catalog and configure it to run every eight hours, 20 minutes after the hour (such as 12:20 am, 8:20 am, and so on):
 
    ```yaml
    crons:
