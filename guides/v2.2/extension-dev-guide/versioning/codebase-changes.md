@@ -150,4 +150,4 @@ Use this table to understand what changes Magento can make and which version num
   
   
 [private]: http://php.net/manual/en/language.oop5.visibility.php
-[extendable-api]: {{ page.baseurl }}/guides/v2.2/contributor-guide/contributing_dod.html#review
+[extendable-api]: {{ site.baseurl }}/guides/v2.2/contributor-guide/contributing_dod.html#review
