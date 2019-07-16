@@ -161,9 +161,9 @@ You can set/get these attributes values by creating an instance of the  `Magento
 
 // ... //
 
+use Magento\Checkout\Api\Data\ShippingInformationInterface;
 use Magento\Framework\View\Element\Template;
 use Magento\Framework\View\Element\Template\Context;
-use Magento\Checkout\Api\Data\ShippingInformationInterface;
 
 class MyBlock extends Template {
 
