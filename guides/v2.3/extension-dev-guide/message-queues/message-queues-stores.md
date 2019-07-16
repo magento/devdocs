@@ -22,7 +22,7 @@ app/code/Magento/AmqpStore/Plugin/Framework/Amqp/Bulk/Exchange.php
 
 The plugin executes before the `enqueue` method in `Magento\Framework\Amqp\Bulk\Exchange`.
 
-Each AMQP message by default contains list of properties. We are interesting in `application_headers`. Those headers are used for transfer current `store_id` into the RabbiMQ queue.  
+By default, each AMQP message contains a list of properties. One of these properties is `application_headers`, and these headers are used for transfer the current `store_id` into the RabbitMQ queue.  
 
 ```php
 public function beforeEnqueue(SubjectExchange $subject, $topic, array $envelopes)
