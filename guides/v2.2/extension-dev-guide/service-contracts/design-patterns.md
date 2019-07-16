@@ -49,7 +49,7 @@ Service interfaces include several interface subtypes:
 - Management interfaces
 - Metadata interfaces
 
-For file names and coding standards, follow the defined [PHP coding standards]("{{ page.baseurl }}/coding-standards/code-standard-php.html).
+For file names and coding standards, follow the defined [PHP coding standards]({{ page.baseurl }}/coding-standards/code-standard-php.html).
 
 Place service interfaces in the top-level `Api` directory for a module.
 
