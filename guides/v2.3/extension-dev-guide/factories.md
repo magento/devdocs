@@ -1,1 +1,1 @@
-../../v2.2/extension-dev-guide/factories.md
+../../../guides/v2.2/extension-dev-guide/factories.md

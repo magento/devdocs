@@ -7,7 +7,7 @@ functional_areas:
 
 ## What's in this topic {#preproc_over}
 
-The topic describes how stylesheets are preprocessed and compiled to {% glossarytooltip 6c5cb4e9-9197-46f2-ba79-6147d9bfe66d %}CSS{% endglossarytooltip %} in the Magento application. It provides the theoretical background a {% glossarytooltip b00459e5-a793-44dd-98d5-852ab33fc344 %}frontend{% endglossarytooltip %} developer needs to debug stylesheets effectively.
+The topic describes how stylesheets are preprocessed and compiled to [CSS](https://glossary.magento.com/css) in the Magento application. It provides the theoretical background a [frontend](https://glossary.magento.com/frontend) developer needs to debug stylesheets effectively.
 
 ## Terms used {#css_preprocess_terms}
 
@@ -25,7 +25,7 @@ The topic describes how stylesheets are preprocessed and compiled to {% glossary
             <p>Root source files</p>
         </td>
         <td>
-            The <code>.less</code> files from which the <code>.css</code> files <a href="{{ page.baseurl }}/frontend-dev-guide/css-topics/css-themes.html">included in layout</a> are compiled. For example, in one of the <a href="{{site.mage2bloburl}}2.2/app/design/frontend/Magento/blank/Magento_Theme/layout/default_head_blocks.xml">layout files of the Magento Blank theme</a>, the following <code>.css</code> files are included in the <code>head</code>:
+            The <code>.less</code> files from which the <code>.css</code> files <a href="{{ page.baseurl }}/frontend-dev-guide/css-topics/css-themes.html">included in layout</a> are compiled. For example, in one of the <a href="{{ site.mage2bloburl }}/2.2/app/design/frontend/Magento/blank/Magento_Theme/layout/default_head_blocks.xml">layout files of the Magento Blank theme</a>, the following <code>.css</code> files are included in the <code>head</code>:
             
 <pre>
 &lt;head&gt;
@@ -37,9 +37,9 @@ The topic describes how stylesheets are preprocessed and compiled to {% glossary
             
             The root source files for the Blank theme:
             <ul>
-                <li><a href="{{ site.mage2000url }}app/design/frontend/Magento/blank/web/css/styles-m.less">Magento_Blank_theme_dir/web/css/styles-m.less</a></li>
-                <li><a href="{{ site.mage2000url }}app/design/frontend/Magento/blank/web/css/styles-l.less">Magento_Blank_theme_dir/web/css/styles-l.less</a></li>
-                <li><a href="{{ site.mage2000url }}app/design/frontend/Magento/blank/web/css/print.less">Magento_Blank_theme_dir/web/css/print.less</a></li>
+                <li><a href="{{ site.mage2bloburl }}/{{ page.guide_version }}/app/design/frontend/Magento/blank/web/css/styles-m.less">Magento_Blank_theme_dir/web/css/styles-m.less</a></li>
+                <li><a href="{{ site.mage2bloburl }}/{{ page.guide_version }}/app/design/frontend/Magento/blank/web/css/styles-l.less">Magento_Blank_theme_dir/web/css/styles-l.less</a></li>
+                <li><a href="{{ site.mage2bloburl }}/{{ page.guide_version }}/app/design/frontend/Magento/blank/web/css/print.less">Magento_Blank_theme_dir/web/css/print.less</a></li>
             </ul>
         </td>
     </tr>
@@ -83,9 +83,9 @@ For each CSS file included in the layouts, Less preprocessor does the following:
 
 In server-side Less compilation mode, to have your changes applied, you need to do the following:
 
-1. Clear `pub/static/frontend/<Vendor>/<theme>/<locale>` by deleting the directory in the file system.
+1. Clear `pub/static/frontend/<Vendor>/<theme>/<locale>` by deleting the directory in the file system (excluding .htaccess).
 2. Clear the `var/cache` and `var/view_preprocessed` directories by deleting the directory in the file system. (if they already existed there).
-2. Trigger {% glossarytooltip 363662cb-73f1-4347-a15e-2d2adabeb0c2 %}static files{% endglossarytooltip %} compilation and publication. This can be done in one of the following ways:
+2. Trigger [static files](https://glossary.magento.com/static-files) compilation and publication. This can be done in one of the following ways:
 
 	-  Reloading the page where the modified styles are applied.
 	-  Running the [static files deployment tool]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html).
@@ -94,7 +94,15 @@ Reloading the page only triggers compilation and publication of the styles used 
 
 ##### Debugging using the static view files deployment tool
 
-Once you save your changes and run the `magento setup:static-content:deploy` cli command from the `<your_Magento_instance>/bin` directory, the tool pre-processes (including compilation) and publishes the static view files.
+Once you save your changes, run the following command from your `<Magento_root>` directory:
+
+```bash
+bin/magento setup:static-content:deploy
+``` 
+The tool pre-processes (including compilation) and publishes the static view files.
+
+{:.bs-callout .bs-callout-info}
+Manual static content deployment is not required in "default" and "developer" modes. If you still want to deploy in these modes, use the -f option: `bin/magento setup:static-content:deploy -f`
 
 All errors occurring during `.less` files compilation are handled by the [`oyejorge/less.php`](https://github.com/oyejorge/less.php) third party library.
 
@@ -140,6 +148,8 @@ You can find the detailed information about the configuration and other options 
 
 In client-side compilation mode, most of the stylesheet customizations display immediately after you reload a page in a browser.
 
+With client-side compilation mode enabled, LESS files are compiled on every page load. This reduces page-loading performance.
+
 ##### When you need to clean static view files {#css_exception}
 
 There are certain types of changes, that require you to clear the `pub/static/frontend/<Vendor>/<theme>/<locale>` directory and trigger the compilation and [publication] processes anew.
@@ -176,6 +186,7 @@ If you need to import a remote CSS file in your `.less` source, use `url()` nota
 ```less
 @import url('//fonts.googleapis.com/css?family=Titillium+Web:400,300,200,600.css');
 ```
+To [include the font]({{ page.baseurl }}/frontend-dev-guide/css-topics/using-fonts.html) in your theme's CSS files, use the `@font-face` CSS rule for the fastest loading time.
 
 This way Magento will skip the `@import` directive while resolving paths to the local resources.
 

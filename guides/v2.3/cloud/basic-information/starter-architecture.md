@@ -1,1 +1,1 @@
-../../../v2.2/cloud/basic-information/starter-architecture.md
+../../../../guides/v2.2/cloud/basic-information/starter-architecture.md

@@ -1,1 +1,1 @@
-../../../v2.2/mtf/features/modularity.md
+../../../../guides/v2.2/mtf/features/modularity.md

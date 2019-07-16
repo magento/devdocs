@@ -12,5 +12,3 @@ Google Experiment functionality is available on pages of products, categories an
 This allows to save different codes for products and categories on different store views.
 This functionality can be switched on and off on the configuration page (Stores -> Configuration -> General -> Google Api -> Google Analytics).
 Also this functionality depends on Google Analytics module and configuration options.
-
-

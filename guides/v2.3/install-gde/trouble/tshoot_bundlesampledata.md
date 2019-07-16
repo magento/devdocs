@@ -1,1 +1,1 @@
-../../../v2.2/install-gde/trouble/tshoot_bundlesampledata.md
+../../../../guides/v2.2/install-gde/trouble/tshoot_bundlesampledata.md

@@ -52,6 +52,7 @@ Now create two files:
 {% collapsible Show code %}
 
 ```php?start_inline=1
+<?php
 /**
 * Copyright © 2016 Magento. All rights reserved.
 * See COPYING.txt for license details.
@@ -101,6 +102,7 @@ Create the file `Setup/InstallSchema.php`.
 {% collapsible Show code %}
 
 ```php?start_inline=1
+<?php
 /**
 * Copyright © 2016 Magento. All rights reserved.
 * See COPYING.txt for license details.
@@ -166,6 +168,7 @@ Let’s create the `Setup/InstallData.php` file:
 {% collapsible Show code %}
 
 ```php
+<?php
 /**
  * Copyright © 2016 Magento. All rights reserved.
  * See COPYING.txt for license details.
@@ -275,6 +278,7 @@ Then create the file `Setup/UpgradeSchema.php`:
 {% collapsible Show code %}
 
 ```php?start_inline=1
+<?php
 /**
  * Copyright © 2016 Magento. All rights reserved.
  * See COPYING.txt for license details.
@@ -329,6 +333,7 @@ To create the `Setup/UpgradeData.php` file:
 {% collapsible Show code %}
 
 ```php?start_inline=1
+<?php
 /**
  * Copyright © 2016 Magento. All rights reserved.
  * See COPYING.txt for license details.

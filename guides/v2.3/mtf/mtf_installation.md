@@ -26,7 +26,7 @@ To install the Magento application, see <a href="{{page.baseurl }}/install-gde/b
 For more details about PHP verification, installation and configuration (<a href="{{page.baseurl }}/install-gde/prereq/php-centos-ubuntu.html#php-for-ubuntu">Ubuntu</a>, <a href="{{page.baseurl }}/install-gde/prereq/php-centos-ubuntu.html#php-for-centos">CentOS</a>).
 
 {: .bs-callout .bs-callout-warning }
-In `php.ini` file, make sure `extension=php_openssl.dll` is not commented out. Note: The Windows environment is not oficially supported.
+In `php.ini` file, make sure `extension=php_openssl.dll` is not commented out. Note: The Windows environment is not officially supported.
 
 #### Check if the Functional Testing Framework has been already installed {#mtf_install_pre_mtf-check}
 
@@ -37,7 +37,7 @@ In `php.ini` file, make sure `extension=php_openssl.dll` is not commented out. N
 
 The Functional Testing Framework requires Composer, which downloads libraries defined in `<magento2_root_dir>/dev/tests/functional/composer.json`.
 
-{: .bs-callout .bs-callout-info }
+{: .bs-callout-info }
 If you're not sure that Composer is installed, see [Install Composer]({{page.baseurl }}/install-gde/prereq/dev_install.html#instgde-prereq-compose-install).
 
 1.    <a href="{{page.baseurl }}/install-gde/basics/basics_login.html">Open a command prompt</a>.

@@ -10,6 +10,18 @@ pages:
         - label: Component Status
           url: /release-notes/component-status.html
 
+        - label: Magento Open Source 2.3.2 Release Notes
+          url: /release-notes/ReleaseNotes2.3.2OpenSource.html
+
+        - label: Magento Commerce 2.3.2 Release Notes
+          url: /release-notes/ReleaseNotes2.3.2Commerce.html
+
+        - label: Magento Open Source 2.3.1 Release Notes
+          url: /release-notes/ReleaseNotes2.3.1OpenSource.html
+
+        - label: Magento Commerce 2.3.1 Release Notes
+          url: /release-notes/ReleaseNotes2.3.1Commerce.html
+
         - label: Magento Open Source 2.3.0 Release Notes
           url: /release-notes/ReleaseNotes2.3.0OpenSource.html
 
@@ -19,6 +31,12 @@ pages:
     - label: 2.2 Release Notes
       include_versions: ["2.2"]
       children:
+
+        - label: Magento Open Source 2.2.8 Release Notes
+          url: /release-notes/ReleaseNotes2.2.8CE.html
+
+        - label: Magento Commerce 2.2.8 Release Notes
+          url: /release-notes/ReleaseNotes2.2.8EE.html
 
         - label: Magento Open Source 2.2.7 Release Notes
           url: /release-notes/ReleaseNotes2.2.7CE.html
@@ -81,6 +99,12 @@ pages:
         - label: Magento Open Source 2.1.x Release Notes
           children:
 
+            - label: Magento Open Source 2.1.18 Release Notes
+              url: /release-notes/ReleaseNotes2.1.18CE.html
+
+            - label: Magento Open Source 2.1.17 Release Notes
+              url: /release-notes/ReleaseNotes2.1.17CE.html
+
             - label: Magento Open Source 2.1.16 Release Notes
               url: /release-notes/ReleaseNotes2.1.16CE.html
 
@@ -134,6 +158,12 @@ pages:
 
         - label: Magento Commerce 2.1.x Release Notes
           children:
+
+            - label: Magento Commerce 2.1.18 Release Notes
+              url: /release-notes/ReleaseNotes2.1.18EE.html
+
+            - label: Magento Commerce 2.1.17 Release Notes
+              url: /release-notes/ReleaseNotes2.1.17EE.html
 
             - label: Magento Commerce 2.1.16 Release Notes
               url: /release-notes/ReleaseNotes2.1.16EE.html
@@ -230,36 +260,47 @@ pages:
               url: /release-notes/cbe-support-info.html
 
     - label: Backward incompatible changes
-      url: /release-notes/backward-incompatible-changes/index.html
       children:
 
-        - label: Magento Open Source changes
-          url: /release-notes/backward-incompatible-changes/open-source.html
+        - label: Highlights
+          url: /release-notes/backward-incompatible-changes/index.html
 
-        - label: Magento Commerce changes
-          url: /release-notes/backward-incompatible-changes/commerce.html
+        - label: Reference
+          url: /release-notes/backward-incompatible-changes/reference.html
 
-        - label: Magento Commerce for B2B changes
-          url: /release-notes/changes/b2b_changes.html
-          include_versions: ["2.2"]
-
-    - label: Third-party licenses
+    - label: Packages
       children:
 
-        - label: Magento Open Source third-party licenses
-          url: /release-notes/thirdparty_ce.html
+        - label: Magento Open Source packages
+          url: /release-notes/packages-open-source.html
 
-        - label: Magento Commerce third-party licenses
-          url: /release-notes/thirdparty_ee.html
+        - label: Magento Commerce packages
+          url: /release-notes/packages-commerce.html
 
-        - label: Magento Commerce (Cloud) third-party licenses
-          url: /release-notes/thirdparty-mccloud.html
-    
-    - label: Inventory management
-      url: /release-notes/inventory-management.html
+        - label: Magento Commerce Cloud packages
+          url: /release-notes/packages-cloud.html
+
+    - label: GraphQL
+      url: /graphql/release-notes.html
+      exclude_versions: ["2.0", "2.1", "2.2"]
+
+    - label: Inventory Management
+      url: /inventory/release-notes.html
       exclude_versions: ["2.0", "2.1", "2.2"]
 
     - label: Page Builder
       url: /page-builder/docs/release-notes.html
       exclude_versions: ["2.0", "2.1", "2.2"]
       versionless: true
+    
+    - label: Sales Channels
+      exclude_versions: ["2.0", "2.1",]  
+      children:
+      
+        - label: Amazon
+          url: /extensions/amazon-sales/release-notes/
+          versionless: true
+
+        - label: Google Shopping ads
+          url: /extensions/google-shopping-ads/release-notes/
+          versionless: true

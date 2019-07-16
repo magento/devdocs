@@ -13,7 +13,7 @@ You can install optional sample data in any of the following ways:
 |--- |--- |--- |
 |Using Composer|[Run `magento sampledata:deploy` to modify Magento's root `composer.json`]({{ page.baseurl }}/install-gde/install/sample-data-before-composer.html) to enable sample data modules.|Requires Composer knowledge and access to the Magento file system.|
 |Cloning repositories|[Clone the Magento 2 repository]({{ page.baseurl }}/install-gde/install/sample-data-before-clone.html) and the sample data repository, then link them together.|For contributing developers only. Everyone else should use one of the preceding methods.|
-{:style="table-layout:auto;"}
+
 
 <!-- ABBREVIATIONS -->
 

@@ -1,1 +1,1 @@
-../../../v2.2/config-guide/bootstrap/mage-dirs.md
+../../../../guides/v2.2/config-guide/bootstrap/mage-dirs.md

@@ -9,5 +9,3 @@ The Magento_OfflinePayments module implements the payment methods which do not r
 *Cash on delivery
 *Check / Money Order
 *Purchase order
-
-

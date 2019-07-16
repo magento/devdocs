@@ -27,6 +27,18 @@ pages:
     url: /page-builder/docs/extend-existing-content-type/overview.html
     versionless: true
 
+  - label: Step 1. Create extension module
+    url: /page-builder/docs/extend-existing-content-type/step-1-create-extension-module.html
+    versionless: true
+
+  - label: Step 2. Extend appearances
+    url: /page-builder/docs/extend-existing-content-type/step-2-extend-appearances.html
+    versionless: true
+
+  - label: Step 3. Extend forms
+    url: /page-builder/docs/extend-existing-content-type/step-3-extend-forms.html
+    versionless: true
+
 - label: 'Create a content type'
   versionless: true
   children:
@@ -58,51 +70,15 @@ pages:
     url: /page-builder/docs/create-custom-content-type/step-6-add-icon.html
     versionless: true
 
-  - label: What's next?
-    url: /page-builder/docs/create-custom-content-type/whats-next.html
+  - label: Summary
+    url: /page-builder/docs/create-custom-content-type/summary.html
     versionless: true
 
 - label: How-Tos
   versionless: true
   children:
-  - label: How to add additional configurations
-    url: /page-builder/docs/how-to/how-to-add-additional-configurations.html
-    versionless: true
-
   - label: How to customize the panel
     url: /page-builder/docs/how-to/how-to-customize-panel.html
-    versionless: true
-
-  - label: How to add icons and images
-    url: /page-builder/docs/how-to/how-to-add-icons-images.html
-    versionless: true
-
-  - label: How to add a block chooser
-    url: /page-builder/docs/how-to/how-to-add-block-chooser.html
-    versionless: true
-
-  - label: How to use full-width layouts
-    url: /page-builder/docs/how-to/how-to-use-full-width-layouts.html
-    versionless: true
-
-  - label: How to change breakpoints
-    url: /page-builder/docs/how-to/how-to-change-breakpoints.html
-    versionless: true
-
-  - label: How to customize selectors
-    url: /page-builder/docs/how-to/how-to-customize-selectors.html
-    versionless: true
-
-  - label: How to apply product conditions
-    url: /page-builder/docs/how-to/how-to-apply-product-conditions.html
-    versionless: true
-
-  - label: How to use server-side previews
-    url: /page-builder/docs/how-to/how-to-use-server-side-previews.html
-    versionless: true
-
-  - label: How to create a container content type
-    url: /page-builder/docs/how-to/how-to-create-container-content-type.html
     versionless: true
 
   - label: How to add an image uploader
@@ -121,12 +97,76 @@ pages:
     url: /page-builder/docs/how-to/how-to-add-custom-toolbar.html
     versionless: true
 
+  - label: How to add icons and images
+    url: /page-builder/docs/how-to/how-to-add-icons-images.html
+    versionless: true
+
+  - label: How to change breakpoints
+    url: /page-builder/docs/how-to/how-to-change-breakpoints.html
+    versionless: true
+
+  - label: How to add additional configurations
+    url: /page-builder/docs/how-to/how-to-add-additional-configurations.html
+    versionless: true
+
+  - label: How to add a block chooser
+    url: /page-builder/docs/how-to/how-to-add-block-chooser.html
+    versionless: true
+
+  - label: How to use full-width layouts
+    url: /page-builder/docs/how-to/how-to-use-full-width-layouts.html
+    versionless: true
+
+  - label: How to customize selectors
+    url: /page-builder/docs/how-to/how-to-customize-selectors.html
+    versionless: true
+
+  - label: How to apply product conditions
+    url: /page-builder/docs/how-to/how-to-apply-product-conditions.html
+    versionless: true
+
+  - label: How to use server-side previews
+    url: /page-builder/docs/how-to/how-to-use-server-side-previews.html
+    versionless: true
+
+#  - label: How to create a container content type
+#    url: /page-builder/docs/how-to/how-to-create-container-content-type.html
+#    versionless: true
+
   - label: How to use Page Builder for product attributes
     url: /page-builder/docs/how-to/how-to-use-pagebuilder-for-product-attributes.html
     versionless: true
 
   - label: How to deactivate Page Builder
     url: /page-builder/docs/how-to/how-to-deactivate-pagebuilder.html
+    versionless: true
+
+- label: BlueFoot content migration
+  versionless: true
+  children:
+
+  - label: Overview of content migration
+    url: /page-builder-migration/docs/
+    versionless: true
+
+  - label: Install the migration module
+    url: /page-builder-migration/docs/install-migration-module.html
+    versionless: true
+
+  - label: Run the migration module
+    url: /page-builder-migration/docs/run-migration-module.html
+    versionless: true
+
+  - label: How content migration works
+    url: /page-builder-migration/docs/how-content-migration-works.html
+    versionless: true
+
+  - label: Migrate content from custom blocks
+    url: /page-builder-migration/docs/migrate-content-custom-blocks.html
+    versionless: true
+
+  - label: Migrate other BlueFoot content
+    url: /page-builder-migration/docs/migrate-other-bluefoot-content.html
     versionless: true
 
 - label: Reference
@@ -161,5 +201,5 @@ pages:
   versionless: true
 
 - label: Contribution guide
-  url: https://github.com/magento/magento2-page-builder/blob/develop/CONTRIBUTING.md
+  url: https://github.com/magento/magento2-page-builder/blob/1.0-develop/CONTRIBUTING.md
   versionless: true

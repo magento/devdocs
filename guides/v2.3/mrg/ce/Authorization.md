@@ -8,5 +8,3 @@ title: Magento_Authorization module
 
 **Authorization** enables management of access control list roles and
 rules in the application.
-
-

@@ -10,10 +10,10 @@ The `customAttributeMetadata` endpoint returns the attribute type, given an attr
 Attribute |  Data Type | Description
 --- | --- | ---
 `attribute_code` | String | The unique identifier for an attribute code. This value should be in lowercase letters without spaces.
-`entity_type` | String | The type of entity that defines the attribute
-`attribute_type` | String | The data type of the attribute (Response only)
 `attribute_options` | `AttributeOption` | A list of attribute options
-{:style="table-layout:auto;"}
+`attribute_type` | String | The data type of the attribute (Response only)
+`entity_type` | String | The type of entity that defines the attribute
+
 
 ### AttributeOption object
 
@@ -21,7 +21,7 @@ Attribute |  Data Type | Description
 --- | --- | ---
 `label` | String | The name of an attribute option
 `value` | String | The value assigned to an attribute option
-{:style="table-layout:auto;"}
+
 
 ## Example usage
 
@@ -29,7 +29,7 @@ The following query returns the attribute type for various custom and EAV attrib
 
 **Request**
 
-{% highlight json %}
+```text
 {
  customAttributeMetadata(
    attributes: {
@@ -48,11 +48,11 @@ The following query returns the attribute type for various custom and EAV attrib
    }
  }
 }
- {% endhighlight %}
+```
 
 **Response**
 
-{% highlight json %}
+```json
 {
   "data": {
     "customAttributeMetadata": {
@@ -128,4 +128,4 @@ The following query returns the attribute type for various custom and EAV attrib
     }
   }
 }
-{% endhighlight %}
+```

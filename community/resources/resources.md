@@ -1,11 +1,11 @@
 ---
 group: community
 title: Community Resources
-redirect_from: 
+redirect_from:
   - /community/resources/index.html
 ---
 
-This Community collection of resources links to blog posts, podcasts, presentations, and books created by members of the {% glossarytooltip cadefd6b-0e85-4a8c-909a-5f967c56d35f %}Magento{% endglossarytooltip %} community and core developers separated into popular topics.
+This Community collection of resources links to blog posts, podcasts, presentations, and books created by members of the [Magento](https://glossary.magento.com/magento) community and core developers separated into popular topics.
 
 New items will be added incrementally, and older links rotated out. Keep an eye on this space for the latest community resources!
 
@@ -28,7 +28,7 @@ See our collection of best and leading practices, common solutions, and more in 
 To connect with Magento and the Community, join us on the [Magento Community Engineering Slack][]. If you are interested in joining Slack, or a specific channel, send us a request at [engcom@adobe.com](mailto:engcom@adobe.com) or [self signup][].
 
 
-We have channels for each project. These channels are recommended for new members:
+We have [channels][] for each project, but the following channels are recommended for new members:
 
 - [announcements][]: Introduce yourself and get quick updates for Magento Community Engineering
 - [general][]: Open chat for introductions and Magento 2 questions
@@ -43,8 +43,8 @@ We have channels for each project. These channels are recommended for new member
 - *Video* [How to contribute during Magento Contribution Days][57] by [Max Pronko][35]
 - *GitHub* [Magento Resources][23] curated list by [Alessandro Ronchi][30]
 - *Blog posts* [Thoughts on Magento, PHP, JavaScript, Laravel, React, Docker, and user interface design][56] by [Mark Shust][38]
-- *Videos* [Mage2.tv][24] 
-- *Podcast* [MageTalk][25] by [Phillip Jackson and Kalen][27] 
+- *Videos* [Mage2.tv][24] by [Vinai Kopp][48]
+- *Podcast* [MageTalk][25] by [Phillip Jackson and Kalen][27]
 - *Vlog* [eCommerceAholic][26] by [TJ Gamble][28]
 - *Statistics* [Magestats][32] by [Marcel Hauri][33]
 - *Videos* [Magento Dev Channel with Max Pronko][34] by [Max Pronko][35]
@@ -92,7 +92,7 @@ We have channels for each project. These channels are recommended for new member
 
 ## Performance
 
--  *Presentation* [Premium performance with PHP 7 and Varnish][15] by Miguel Balparda 
+-  *Presentation* [Premium performance with PHP 7 and Varnish][15] by Miguel Balparda
 
 [contribute]: https://github.com/magento/devdocs/blob/master/.github/CONTRIBUTING.md
 [technical guidelines]: https://devdocs.magento.com/guides/v2.3/coding-standards/technical-guidelines.html
@@ -106,7 +106,7 @@ We have channels for each project. These channels are recommended for new member
 [appdesign]: https://magentocommeng.slack.com/messages/CBSL1DF8B
 [coding-standards]: https://magentocommeng.slack.com/messages/CFC88F1C6
 [announcements]: https://magentocommeng.slack.com/messages/C7FA71S3V
-[0]: https://github.com/DavidLambauer/awesome-magento2 
+[0]: https://github.com/DavidLambauer/awesome-magento2
 [1]: https://github.com/magento/devdocs/blob/master/.github/CONTRIBUTING.md
 [2]: http://www.slideshare.net/StaceyWhitney1/mage-titans-usa-2016-joshua-warren-magento-2-integrations
 [3]: http://www.slideshare.net/vrann/mage-titans-usa-2016-magentofacebookrabbitmq
@@ -164,3 +164,4 @@ We have channels for each project. These channels are recommended for new member
 [55]: https://alanstorm.com/
 [56]: https://markshust.com/
 [57]: https://www.youtube.com/watch?v=ceNeYpCEmys
+[channels]: https://github.com/magento/magento2/wiki/Slack-Channels

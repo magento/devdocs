@@ -16,7 +16,7 @@ functional_areas:
   - Sales
 ---
 
-Magento 2.1.3 introduced two endpoints that streamline the process of issuing a refund by creating a creditmemo and updating the order or {% glossarytooltip 631b9627-a367-4a56-b3b1-0f6ca8fe6e02 %}invoice{% endglossarytooltip %} in one call.
+Magento 2.1.3 introduced two endpoints that streamline the process of issuing a refund by creating a creditmemo and updating the order or [invoice](https://glossary.magento.com/invoice) in one call.
 
 Endpoint | Description
 --- | ---
@@ -35,7 +35,7 @@ The `return_to_stock_items` array specifies which `order_item_id`s can be return
 
 **Endpoint**
 
-`POST http://<host>/rest/default/V1/order/5/refund`
+`POST <host>/rest/<store_code>/V1/order/5/refund`
 
 **Headers**
 
@@ -69,11 +69,11 @@ The `return_to_stock_items` array specifies which `order_item_id`s can be return
 
 **Response**
 
-A {% glossarytooltip 6a9783a3-cdec-4fed-843d-8eda12819804 %}credit memo{% endglossarytooltip %} id, such as `3`.
+A [credit memo](https://glossary.magento.com/credit-memo) id, such as `3`.
 
 ### Verify this step {#verify-step}
 
-Log in to {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %}. Click **Sales** > **Credit memos**. The credit memo is displayed in the grid.
+Log in to [Admin](https://glossary.magento.com/admin). Click **Sales** > **Credit Memos**. The credit memo is displayed in the grid.
 
 ## Congratulations! You've finished.
 {:.no_toc}

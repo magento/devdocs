@@ -1,1 +1,1 @@
-../../../v2.2/cloud/trouble/troubleshoot-deployment.md
+../../../../guides/v2.2/cloud/trouble/troubleshoot-deployment.md

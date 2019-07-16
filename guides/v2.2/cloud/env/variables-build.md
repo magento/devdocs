@@ -16,7 +16,7 @@ stage:
  
 {% include cloud/customize-build-deploy.md %}
 
-{: .bs-callout .bs-callout-info}
+{: .bs-callout-info }
 You can still use the `build_options.ini` file, but we recommend using the `.magento.env.yaml` file instead because it centralizes the management of build and deploy actions across all of your environments—including Pro Staging and Production—without requiring a support ticket.
 
 The following variables were removed in v2.2:
@@ -35,6 +35,19 @@ Specifies which [gzip](https://www.gnu.org/software/gzip) compression level (`0`
 stage:
   build:
     SCD_COMPRESSION_LEVEL: 4
+```
+
+### `SCD_COMPRESSION_TIMEOUT`
+
+-  **Default**—`600`
+-  **Version**—Magento 2.1.4 and later
+
+When the time it takes to compress the static assets exceeds the compression timeout limit, it interrupts the deployment process. Set the maximum execution time, in seconds, for the static content compression command.
+
+```yaml
+stage:
+  build:
+    SCD_COMPRESSION_TIMEOUT: 800
 ```
 
 ### `SCD_EXCLUDE_THEMES`
@@ -82,6 +95,21 @@ stage:
       "magento/backend": [ ]
 ```
 
+### `SCD_MAX_EXECUTION_TIME` 
+
+-  **Default**—_Not set_
+-  **Version**—Magento 2.2.0 and later
+
+Allows you to increase the maximum expected execution time for static content deployment. 
+
+By default, Magento Commerce sets the maximum expected execution to 400 seconds, but in some scenarios you might need more time to complete the static content deployment for a Cloud project.
+
+```yaml
+stage:
+  build:
+    SCD_MAX_EXECUTION_TIME: 3600
+```
+
 ### `SCD_STRATEGY`
 
 -  **Default**—`quick`
@@ -103,12 +131,10 @@ stage:
 
 ### `SCD_THREADS`
 
--  **Default**: 
-    -  `1`—Starter environments and Pro Integration environments
-    -  `3`—Pro Staging and Production environments
+-  **Default**—Automatic
 -  **Version**—Magento 2.1.4 and later
 
-Sets the number of threads for static content deployment. Increasing the number of threads speeds up static content deployment; decreasing the number of threads slows it down.
+Sets the number of threads for static content deployment. The default value is set based on the detected CPU thread count and does not exceed a value of 4. Increasing the number of threads speeds up static content deployment; decreasing the number of threads slows it down. You can set the thread value, for example:
 
 ```yaml
 stage:

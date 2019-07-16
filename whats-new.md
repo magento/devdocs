@@ -2,8 +2,6 @@
 layout: full-width
 title: What's new on DevDocs
 redirect_from:
-  - /guides/v2.0/magento-devdocs-whatsnew.html
-  - /guides/v2.1/magento-devdocs-whatsnew.html
   - /guides/v2.2/magento-devdocs-whatsnew.html
   - /guides/v2.3/magento-devdocs-whatsnew.html
 ---
@@ -24,7 +22,7 @@ redirect_from:
 
 ## {{ group.name }}
 
-{:style="table-layout:auto;"}
+
 Description |	Versions |	Type	| Date
 ---|---|---|---{% for item in group.items %}
 {{ item.description }} | {{ item.versions }} | {{ item.type }} |

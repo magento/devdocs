@@ -1,1 +1,1 @@
-../../../../v2.2/install-gde/install/cli/install-cli-sample-data-other.md
+../../../../../guides/v2.2/install-gde/install/cli/install-cli-sample-data-other.md

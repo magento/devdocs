@@ -1,6 +1,6 @@
 ---
 group: graphql
-title: Overview
+title: GraphQL Overview
 landing-page: GraphQL Developer's Guide
 ---
 
@@ -15,7 +15,7 @@ GraphQL allows you to define the structure of the data that you need, and the se
 A GraphQL-enabled module handles externally-defined attributes differently than other Magento modules. We used the following techniques to manage product-related attributes, but you are free to use alternate methods:
 
 * **EAV attributes** are explicitly declared in the `schema.graphqls` files.
-For example, the [`Catalogschema.graphqls`]({{ site.mage2300url }}app/code/Magento/CatalogGraphQl/etc/schema.graphqls) file declares multiple EAV attributes.
+For example, the Catalog [`schema.graphqls`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/CatalogGraphQl/etc/schema.graphqls) file declares multiple EAV attributes.
 
 * **Custom attributes** are treated as dynamic attributes that might or might not be present. Therefore, they are not declared in the schema. Instead, we've implemented a reader that queries the database and gets any declared custom attributes. These attributes can be declared in the schema if you know they'll always be present.
 
@@ -26,7 +26,7 @@ You can explicitly define EAV attributes in the schema, while a module's attribu
 The current GraphQL codebase also supports the following features:
 
 * You can perform full text searches on products in a similar manner as REST and SOAP calls. You can also simultaneously perform a full text search and filter the results. This is new functionality available only with GraphQL.
-* All product types are supported. Currently, previous versions supported simple and configurable products only.
+* All product types are supported. Previous versions support only simple and configurable products.
 * A product query returns complex price objects that include the amount, the currency code, and any adjustments.
 * You can query attributes of a logged-in customer. A session token provides authorization.
 * The REST and SOAP APIs had separate endpoints for searching across all products and individual products. In GraphQL, all product searches use the `products` query.
@@ -49,7 +49,7 @@ GraphiQL is an in-browser tool for writing, validating, and testing GraphQL quer
 
 ![GraphiQL browser]({{ page.baseurl }}/graphql/images/graphql-browser.png)
 
-To begin using GraphiQL, set the GraphQL endpoint by entering `http://<magento2-3-server>/graphql` in the URL bar, then click **Set endpoint**. You can use the browser in the right column to determine how to set up a query. Additional examples are also available at [Searches and pagination in GraphQL]({{ page.baseurl }}/graphql/search-pagination.html).
+To begin using GraphiQL, set the GraphQL endpoint by entering `http://<magento2-3-server>/graphql` in the URL bar, then click **Set endpoint**. You can use the browser in the right column to determine how to set up a query. Additional examples are also available in [Queries]({{ page.baseurl }}/graphql/queries.html).
 
 
 {:.bs-callout .bs-callout-info}

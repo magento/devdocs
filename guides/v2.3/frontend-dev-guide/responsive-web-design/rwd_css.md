@@ -1,1 +1,1 @@
-../../../v2.2/frontend-dev-guide/responsive-web-design/rwd_css.md
+../../../../guides/v2.2/frontend-dev-guide/responsive-web-design/rwd_css.md

@@ -1,1 +1,1 @@
-../../../v2.2/frontend-dev-guide/themes/theme-general.md
+../../../../guides/v2.2/frontend-dev-guide/themes/theme-general.md

@@ -9,7 +9,6 @@ level3_subgroup: msi-tutorial
 return_to:
   title: REST Tutorials
   url: rest/tutorials/index.html
-redirect_from: /guides/v2.3/rest/tutorials/msi-order-processing/reassign-products-to-another-source.html
 functional_areas:
   - Integration
 ---
@@ -24,7 +23,7 @@ Name | Type | SKU | Quantity
 Voyage Yoga Bag | Simple | 24-WB01 | 100
 Driven Backpack | Simple | 24-WB03 | 100
 Yoga Adventure | Downloadable | 240-LV06 | Not applicable
-{:style="table-layout:auto;"}
+
 
 ## Unassign products from the default source
 
@@ -35,7 +34,7 @@ When you unassign a source from a product, all source data including inventory a
 
 **Endpoint**
 
-`POST http://<host>/rest/all/V1/inventory/source-items-delete`
+`POST <host>/rest/all/V1/inventory/source-items-delete`
 
 **Scope**
 
@@ -49,7 +48,7 @@ When you unassign a source from a product, all source data including inventory a
 
 **Payload**
 
-``` json
+```json
 {
 	"sourceItems": [{
 		"sku": "24-WB01",
@@ -78,7 +77,7 @@ Now we can assign each product to one or more sources. The `POST V1/inventory/so
 
 **Endpoint**
 
-`POST http://<host>/rest/all/V1/inventory/source-items`
+`POST <host>/rest/all/V1/inventory/source-items`
 
 **Scope**
 
@@ -91,7 +90,7 @@ Now we can assign each product to one or more sources. The `POST V1/inventory/so
 
 **Payload**
 
-``` json
+```json
 {
   "sourceItems": [{
   	"sku": "24-WB01",

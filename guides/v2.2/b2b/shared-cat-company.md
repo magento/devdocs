@@ -25,7 +25,7 @@ GET  /V1/sharedCatalog/:sharedCatalogId/companies
 
 **Company parameters**
 
-{: .bs-callout .bs-callout-info }
+{: .bs-callout-info }
 Although you can specify other parameters defined within a `categories` object, the `id` is the only one used to assign or unassign a category to a shared catalog.
 
 Name | Description | Format | Requirements
@@ -40,7 +40,7 @@ If a specified company is already assigned to a different shared catalog, this r
 
 **Sample usage**
 
-`POST /V1/sharedCatalog/2/assignCompanies`
+`POST <host>/rest/<store_code>/V1/sharedCatalog/2/assignCompanies`
 
 **Payload**
 
@@ -67,7 +67,7 @@ When you unassign a company from a custom catalog, the system automatically assi
 
 **Sample usage**
 
-`POST /V1/sharedCatalog/2/unassignCompanies`
+`POST <host>/rest/<store_code>/V1/sharedCatalog/2/unassignCompanies`
 
 **Payload**
 
@@ -91,7 +91,7 @@ The `GET` call returns an array of company IDs.
 
 **Sample Usage**
 
-`GET  /V1/sharedCatalog/2/companies`
+`GET <host>/rest/<store_code>/V1/sharedCatalog/2/companies`
 
 **Payload**
 

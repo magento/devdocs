@@ -1,1 +1,1 @@
-../../../../v2.2/rest/tutorials/orders/order-create-shipment.md
+../../../../../guides/v2.2/rest/tutorials/orders/order-create-shipment.md

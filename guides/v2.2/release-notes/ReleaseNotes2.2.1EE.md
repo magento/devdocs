@@ -387,14 +387,11 @@ Our technology stack is built on PHP and MySQL. For details, see [Technology sta
 
 
 
-For more information, [System Requirements]({{ site.baseurl }}/magento-system-requirements.html).
+For more information, [System Requirements]({{ page.baseurl }}/install-gde/system-requirements.html).
 
 ### Installation and upgrade instructions
 
-You can install Magento Commerce 2.2 General Availability (GA) using Composer.
-
-
-{% include install/releasenotes/ee_install_21.md %}
+You can install Magento Commerce 2.2 General Availability (GA) [using Composer]({{ page.baseurl }}/comp-mgr/cli/cli-upgrade.html).
 
 ## Migration toolkits
 

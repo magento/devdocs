@@ -8,12 +8,11 @@ level3_subgroup: msi-tutorial
 return_to:
   title: REST Tutorials
   url: rest/tutorials/index.html
-redirect_from: /guides/v2.3/rest/tutorials/msi-order-processing/create-invoice.html
 functional_areas:
   - Integration
 ---
 
-You create an {% glossarytooltip 631b9627-a367-4a56-b3b1-0f6ca8fe6e02 %}invoice{% endglossarytooltip %} after you receive payment for an order. In this example, the order was paid offline via a bank transfer. Therefore, you must tell Magento that payment for the order has been captured.
+You create an [invoice](https://glossary.magento.com/invoice) after you receive payment for an order. In this example, the order was paid offline via a bank transfer. Therefore, you must tell Magento that payment for the order has been captured.
 
 After you submit the invoice, Magento adjusts the Quantity per Source value for non-physical products.
 
@@ -23,7 +22,7 @@ This example creates a full invoice.
 
 **Endpoint**
 
-`POST http://<host>/rest/us/V1/order/3/invoice`
+`POST <host>/rest/us/V1/order/3/invoice`
 
 where `3` is the `orderid`
 
@@ -39,7 +38,7 @@ where `3` is the `orderid`
 
 **Payload**
 
-``` json
+```json
 {
   "capture": true,
   "notify": true

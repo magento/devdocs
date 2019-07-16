@@ -8,7 +8,7 @@ This topic describes how REST calls can be used to place items in a shopping car
 
 ## Prerequisites
 
-* You have [installed and enabled]({{ page.baseurl }}/comp-mgr/install-extensions/b2b-installation.html) {{site.data.var.b2b}}.
+* You have [installed and enabled]({{ site.baseurl }}/extensions/b2b/) {{site.data.var.b2b}}.
 * You have [created a company]({{ page.baseurl }}/b2b/company-object.html) and a [company user]({{ page.baseurl }}/b2b/company-object.html).
 * You have an integration or [admin authorization token]({{ page.baseurl }}/rest/tutorials/orders/order-admin-token.html) to make calls on behalf of seller, and a [customer token]({{ page.baseurl }}/rest/tutorials/orders/order-create-customer.html#get-token) to make calls on behalf of the company user.
 
@@ -45,7 +45,7 @@ This example adds 15 Pursuit Lumaflex Tone Bands and 10 Harmony Lumaflex Strengt
 
 **Endpoint**
 
-`POST V1/carts/mine`
+`POST <host>/rest/default/V1/carts/mine`
 
 **Headers**
 
@@ -113,7 +113,7 @@ You can determine shipping costs after initiating a negotiable quote, but doing 
 
 **Endpoint**
 
-`POST V1/carts/mine/estimate-shipping-methods`
+`POST <host>/rest/default/V1/carts/mine/estimate-shipping-methods`
 
 **Headers**
 
@@ -595,7 +595,7 @@ None
 
 In this example, the buyer requests a negotiable quote. The seller applies a discount to the quote and returns the quote to the buyer. The buyer accepts the discount and completes the order.
 
-{: .bs-callout .bs-callout-info }
+{: .bs-callout-info }
 All negotiable quote calls require an admin authorization token.
 
 ### Initiate a negotiable quote
@@ -606,7 +606,7 @@ Initiating a negotiable quote places it in the `processing_by_admin` state.
 
 **Endpoint**
 
-`POST V1/negotiableQuote/request`
+`POST <host>/rest/default/V1/negotiableQuote/request`
 
 **Headers**
 

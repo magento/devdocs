@@ -7,7 +7,11 @@ functional_areas:
   - Setup
 ---
 
+## Prerequisite
+
 You must [install Redis]({{ page.baseurl }}/config-guide/redis/config-redis.html#config-redis-install) before continuing.
+
+## Configure Magento to use Redis for session storage
 
 Magento now provides command line options to configure Redis session storage. In previous releases, you edited the `<Magento install dir>app/etc/env.php` file. The command line provides validation and is the recommended configuration method, but you can still edit the `env.php` file.
 
@@ -29,9 +33,9 @@ where
 |session-save-redis-port|port|Redis server listen port.|6379|
 |session-save-redis-password|password|Specifies a password if your Redis server requires authentication.|empty|
 |session-save-redis-timeout|timeout|Connection timeout, in seconds.|2.5|
-|session-save-redis-persistent-id|persistent_identifier|Unique string to enable persistent connections (for example, sess-db0).<br/>[Known issues with phpredis and php-fpm](https://github.com/nicolasff/phpredis/issues/70").
-|session-save-redis-db|database|Unique Redis database number, which is recommended to protect against data loss.<br/><br/>Important: If you use Redis for more than one type of caching, the database numbers must be different. It is recommended that you assign the default caching database number to 0, the page caching database number to 1, and the session storage database number to 2.|0|
-|session-save-redis-compression-threshold|compression_threshold|Set to 0 to disable compression (recommended when [suhosin.session.encrypt = On](http://suhosin.org/stories/howtos.html#encryption-features). Known issue with strings of more than 64KB.|2048|
+|session-save-redis-persistent-id|persistent_identifier|Unique string to enable persistent connections (for example, sess-db0).<br/>[Known issues with phpredis and php-fpm](https://github.com/nicolasff/phpredis/issues/70).
+|session-save-redis-db|database|Unique Redis database number, which is recommended to protect against data loss.<br/><br/>**Important**: If you use Redis for more than one type of caching, the database numbers must be different. It is recommended that you assign the default caching database number to 0, the page caching database number to 1, and the session storage database number to 2.|0|
+|session-save-redis-compression-threshold|compression_threshold|Set to 0 to disable compression (recommended when [suhosin.session.encrypt = On](http://suhosin.org/stories/howtos.html#encryption-features)).<br/>[Known issue with strings of more than 64KB](https://github.com/colinmollenhour/Cm_Cache_Backend_Redis/issues/18).|2048|
 |session-save-redis-compression-lib|compression_library|Options: gzip, lzf, lz4 or snappy.|gzip|
 |session-save-redis-log-level|log_level|Set to any of the following, listed in order from least verbose to most verbose:<br/>0 (emergency: only the most severe errors)<br/>1 (alert: immediate action required)<br/>2 (critical: application component unavailable)<br/>3 (error: runtime errors, not critical but must be monitored)<br/>4 (warning: additional information, recommended)<br/>5 (notice: normal but significant condition)<br/>6 (info: informational messages)<br/>7 (debug: the most information for development or testing only)|1|
 |session-save-redis-max-concurrency|max_concurrency|Maximum number of processes that can wait for a lock on one session. For large production clusters, set this to at least 10% of the number of PHP processes.|6|
@@ -43,7 +47,7 @@ where
 |session-save-redis-disable-locking|disable_locking|Disable session locking entirely.|0 (false)|
 |session-save-redis-min-lifetime|min_lifetime|Minimum session lifetime, in seconds.|60|
 |session-save-redis-max-lifetime|max_lifetime|Maximum session lifetime, in seconds.|2592000 (720 hours)|
-{:style="table-layout:auto;"}
+
 
 ### Example command
 
@@ -55,7 +59,7 @@ bin/magento setup:config:set --session-save=redis --session-save-redis-host=127.
 
 ### Result
 
-Magento adds lines similar to the following to `<your Magento install dir>app/etc/env.php`:
+Magento adds lines similar to the following to `<magento_root>app/etc/env.php`:
 
 ```php?start_inline=1
     'session' =>
@@ -85,6 +89,7 @@ Magento adds lines similar to the following to `<your Magento install dir>app/et
     ),
 ```
 
+{: .bs-callout-info }
 TTL for session records use the value for Cookie Lifetime, which is configured in Admin. If Cookie Lifetime is set to 0 (the default is 3600), then Redis sessions expire in the number of seconds specified in min_lifetime (the default is 60). This discrepancy is due to differences in how Redis and session cookies interpret a lifetime value of 0. If that behavior is not desired, increase the value of min_lifetime.
 
 ## Basic verification {#redis-verify}
