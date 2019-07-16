@@ -2,7 +2,7 @@ Attribute |  Data Type | Description
 --- | --- | ---
 `applied_coupon` | [`AppliedCoupon`][AppliedCoupon] | The `AppliedCoupon` object contains the `code` text attribute, which specifies the coupon code
 `applied_gift_cards` | [[`AppliedGiftCard`]][AppliedGiftCard] | An array of `AppliedGiftCard` objects. An `AppliedGiftCard` object contains the `code` text attribute, which specifies the gift card code. `applied_gift_cards` is a Commerce-only attribute, defined in the GiftCardAccountGraphQl module
-`applied_store_credit` | [[`AppliedStoreCredit`]][AppliedStoreCredit] | Contains store credit information applied to the cart. `applied_store_credit` is a Commerce-only attribute, defined in the CustomerBalanceGraphQl module
+`applied_store_credit` | [`AppliedStoreCredit`][AppliedStoreCredit] | Contains store credit information applied to the cart. `applied_store_credit` is a Commerce-only attribute, defined in the CustomerBalanceGraphQl module
 `available_payment_methods` | [AvailablePaymentMethod][AvailablePaymentMethod] | Available payment methods
 `billing_address` | [BillingCartAddress][BillingCartAddress] | Contains the billing address specified in the customer's cart
 `email` | String | The customer's email address
