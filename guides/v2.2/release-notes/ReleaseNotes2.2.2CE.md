@@ -370,7 +370,7 @@ Looking for more information on these new features as well as many others? Check
 
 ### Shipping
 
-{: .bs-callout .bs-callout-info }
+{: .bs-callout-info }
 can find Magento Shipping-specific release notes in [Magento Shipping Release Notes]({{ page.baseurl }}/release-notes/ReleaseNotesMagentoShipping2.2.x.html).
  
 

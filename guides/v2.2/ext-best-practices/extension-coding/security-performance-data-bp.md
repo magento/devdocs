@@ -23,15 +23,12 @@ Make sure that your Magento application does not directly use any PHP supergloba
   ```php
   $GLOBALS, $_SERVER, $_GET, $_POST, $_FILES, $_COOKIE, $_SESSION, $_REQUEST, $_ENV
   ```
+
 Instead use the [`Magento\Framework\HTTP\PhpEnvironment\Request`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/HTTP/PhpEnvironment/Request.php){:target="_blank"} wrapper class to safely access these values.
 
 ## Use the correct MySQL data types
 
 MySQL offers a range of numeric, string, and time data types. If you are storing a date, use a DATE or DATETIME field. Using an INTEGER or STRING can make SQL queries more complicated, if not impossible. It is often tempting to invent your own data formats; for example, storing serialized PHP objects in string. Database management may be easier, but MySQL will become a dumb data store and it may lead to problems later.
-
-## Get the correct data from the correct object
-
-Be sure to retrieve data from the correct object. For example, get [$1](https://glossary.magento.com/$1) data from the Product instead of the Order object.
 
 ## Avoid raw SQL queries
 
