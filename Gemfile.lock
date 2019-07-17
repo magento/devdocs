@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/magento-devdocs/devdocs-theme.git
-  revision: e84dcca94454d8ed0afe0aac297385a9a09a7169
+  revision: 40e3f9148a0a34ca0559149cff81f7cb720c8cb6
   branch: yb_federated-search
   specs:
     devdocs (2)
