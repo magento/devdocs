@@ -20,6 +20,7 @@ The `isEmailAvailable` query checks whether the specified email has already been
 `{isEmailAvailable (email): {IsEmailAvailableOutput}}`
 
 ### Customer attributes {#customerAttributes}
+
 The customer object can contain the following attributes:
 
 Attribute |  Data Type | Description
@@ -79,7 +80,9 @@ Attribute |  Data Type | Description
 `region` | String | The state or province name
 `region_id` | Int | Uniquely identifies the region
 
-### isEmailAvailable query attribute
+### isEmailAvailable attribute
+
+The `isEmailAvailable` object can contain the following attributes:
 
 Attribute |  Data Type | Description
 --- | --- | ---
@@ -90,6 +93,42 @@ Attribute |  Data Type | Description
 Attribute |  Data Type | Description
 --- | --- | ---
 `is_email_available` | Boolean | A value of `true` indicates the email address is available, and the customer can use the email address to create an account
+
+### Store credit attributes
+
+In {{ ee }}, the merchant can assign store credit to customers. Magento maintains the history of all changes to the balance of store credit available to the customer. The customer must be logged in to access the store credit history and balance.
+
+Attribute |  Data Type | Description
+--- | --- | ---
+`store_credit` | CustomerStoreCredit | Contains the store credit information for the logged in customer
+
+### store_credit attributes
+
+The `store_credit` object contains store credit information, including the balance and history.
+
+Attribute |  Data Type | Description
+--- | --- | ---
+`current_balance` | Money | The current store credit balance
+`balance_history` | [`CustomerStoreCreditHistory`](#CustomerStoreCreditHistory) | Lists changes to the amount of store credit available to the customer. You can specify the following optional parameters to control paging in the output.<br/><br/>`pageSize` - An integer that specifies the maximum number of results to return at once. The default value is 20.<br/><br/>`currentPage` - An integer that Specifies which page of the results to return. The default value is 1
+
+### CustomerStoreCreditHistory attributes {#CustomerStoreCreditHistory}
+
+The `CustomerStoreCreditHistory` object contains an array of store credit items and paging information.
+
+Attribute |  Data Type | Description
+--- | --- | ---
+`items` | [[`CustomerStoreCreditHistoryItem`](#CustomerStoreCreditHistoryItem) | An array of products that match the specified search criteria
+`page_info` | SearchResultPageInfo | An object that includes the pageSize and currentPage values specified in the query
+`total_count` | Int | The number of items returned
+
+### CustomerStoreCreditHistoryItem attributes {#CustomerStoreCreditHistoryItem}
+
+Attribute |  Data Type | Description
+--- | --- | ---
+`action` | String | The action taken on the customer's store credit
+`actual_balance` | Money | The store credit available to the customer as a result of this action
+`balance_change` | Money | The amount added to or subtracted from the store credit as a result of this action
+`date_time_changed` | String | Date and time when the store credit change was made
 
 ### Example usage
 
@@ -125,7 +164,7 @@ The following call returns information about the logged-in customer. Provide the
 
 **Response**
 
-```
+```json
 {
   "data": {
     "customer": {
@@ -157,6 +196,102 @@ The following call returns information about the logged-in customer. Provide the
 }
 ```
 
+The following example returns the store credit history for the logged in user.
+
+**Request**
+
+```text
+query {
+  customer {
+    firstname
+    lastname
+    store_credit {
+      balance_history(pageSize: 10) {
+        items {
+          action
+          actual_balance {
+            currency
+            value
+          }
+          balance_change {
+            currency
+            value
+          }
+          date_time_changed
+        }
+        page_info {
+          page_size
+          current_page
+          total_pages
+        }
+        total_count
+      }
+    }
+  }
+}
+```
+
+**Response**
+
+```json
+{
+  "data": {
+    "customer": {
+      "firstname": "John",
+      "lastname": "Doe",
+      "store_credit": {
+        "balance_history": {
+          "items": [
+            {
+              "action": "Updated",
+              "actual_balance": {
+                "currency": "USD",
+                "value": 10
+              },
+              "balance_change": {
+                "currency": "USD",
+                "value": -100
+              },
+              "date_time_changed": "2019-07-15 21:47:59"
+            },
+            {
+              "action": "Updated",
+              "actual_balance": {
+                "currency": "USD",
+                "value": 110
+              },
+              "balance_change": {
+                "currency": "USD",
+                "value": 10
+              },
+              "date_time_changed": "2019-07-15 21:47:18"
+            },
+            {
+              "action": "Created",
+              "actual_balance": {
+                "currency": "USD",
+                "value": 100
+              },
+              "balance_change": {
+                "currency": "USD",
+                "value": 100
+              },
+              "date_time_changed": "2019-07-15 16:31:05"
+            }
+          ],
+          "page_info": {
+            "page_size": 10,
+            "current_page": 1,
+            "total_pages": 1
+          },
+          "total_count": 3
+        }
+      }
+    }
+  }
+}
+```
+
 The following example checks whether the email address `customer@example.com` is available to create a customer account.
 
 **Request**
@@ -182,6 +317,7 @@ The following example checks whether the email address `customer@example.com` is
 ```
 
 ## Mutations
+
 Use mutations to update server-side data, such as adding a new customer or modifying attributes for an existing customer.
 
 ### Manage customers
@@ -208,6 +344,7 @@ Attribute |  Data Type | Description
 `taxvat` | String | The customer’s Tax/VAT number (for corporate customers)
 
 ### Create a customer
+
 Creates a new customer account.
 
 #### Syntax
@@ -259,6 +396,7 @@ mutation {
   }
 }
 ```
+
 ### Update a customer
 
 Updates the customer's personal information.
@@ -467,6 +605,7 @@ mutation {
   }
 }
 ```
+
 ### Delete customer address
 
 Deletes the specified customer address.
@@ -497,7 +636,7 @@ mutation {
 }
 ```
 
-### Manage customer tokens
+### Manage customer tokens 
 {:.no_toc}
 
 Use these mutations to create or revoke a customer's token.
