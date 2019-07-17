@@ -77,7 +77,7 @@ pages:
               url: /graphql/reference/paypal-handle-payflow-pro-response.html
 
             - label: Paypal endpoint
-              url: /graphql/reference/paypal.html
+              url: /graphql/payment-methods/paypal-express-checkout.html
 
             - label: Products endpoint
               url: /graphql/reference/products.html

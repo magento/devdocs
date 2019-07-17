@@ -12,8 +12,8 @@ Cash on Delivery | `cashondelivery`
 Check / Money order | `checkmo`
 Credit Card (Authorize.Net) | `authorizenet_acceptjs`
 No Payment Information Required | `free`
-[PayPal Express Checkout]({{ page.baseurl}}/graphql/reference/paypal.html) | `paypal_express`
-[PayPal Express Checkout Payflow Edition]({{ page.baseurl}}/graphql/reference/paypal.html) | `payflow_express`
+[PayPal Express Checkout]({{ page.baseurl}}/graphql/payment-methods/paypal-express-checkout.html) | `paypal_express`
+[PayPal Express Checkout Payflow Edition]({{ page.baseurl}}/graphql/payment-methods/paypal-express-checkout.html) | `payflow_express`
 PayPal Payflow Pro | `payflowpro`
 PayPal Payflow Link | `payflow_link`
 Purchase Order | `purchaseorder`
