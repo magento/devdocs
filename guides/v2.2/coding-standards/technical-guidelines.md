@@ -48,7 +48,9 @@ Use [RFC2119] to interpret keywords like:
 
 2.1. Object decomposition MUST follow the [SOLID principles].
 
-2.2. Object MUST be ready for use after instantiation. No additional public initialization methods are allowed.
+2.2. Object instantiation
+
+2.2.1. An object MUST be ready for use after instantiation. No additional public initialization methods are allowed.
 
 {% collapsible Examples: %}
 
@@ -92,6 +94,11 @@ class Config
 {% endcollapsible %}
 
 ---
+
+2.2.2. Factories SHOULD be used for object instantiation instead of `new` keyword. An object SHOULD be replaceable for testing or extensibility purposes.
+Exception: [DTOs](https://en.wikipedia.org/wiki/Data_transfer_object). There is no behavior in DTOs, so there is no reason for its replaceability.
+Tests can create real DTOs for stubs. 
+Data interfaces,  Exceptions and `Zend_Db_Expr` are examples of DTOs.
 
 {:start="2.3"}
 2.3. Class constructor can have only dependency assignment operations and/or argument validation operations. No other operations are allowed.
