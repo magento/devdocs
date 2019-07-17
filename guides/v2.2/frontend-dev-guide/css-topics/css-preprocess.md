@@ -87,8 +87,8 @@ In server-side Less compilation mode, to have your changes applied, you need to 
 2. Clear the `var/cache` and `var/view_preprocessed` directories by deleting the directory in the file system. (if they already existed there).
 2. Trigger [static files](https://glossary.magento.com/static-files) compilation and publication. This can be done in one of the following ways:
 
-	-  Reloading the page where the modified styles are applied.
-	-  Running the [static files deployment tool]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html).
+  -  Reloading the page where the modified styles are applied.
+  -  Running the [static files deployment tool]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html).
 
 Reloading the page only triggers compilation and publication of the styles used on this very page, and does not give you the information about the errors if any. So if you made changes in `.less` files used on many pages, and want to debug them, using the deployment tool is the better option.
 
@@ -102,7 +102,7 @@ bin/magento setup:static-content:deploy
 The tool pre-processes (including compilation) and publishes the static view files.
 
 {:.bs-callout .bs-callout-info}
-Manual static content deployment is not required in "default" and "developer" modes. If you still want to deploy in these modes, use the -f option: `bin/magento setup:static-content:deploy -f [<languages>]` (Default language is en_US).
+Manual static content deployment is not required in "default" and "developer" modes. If you still want to deploy in these modes, use the -f option: bin/magento setup:static-content:deploy -f. Check more details about the command in the [Deploy static view files]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html) section.
 
 All errors occurring during `.less` files compilation are handled by the [`oyejorge/less.php`](https://github.com/oyejorge/less.php) third party library.
 
