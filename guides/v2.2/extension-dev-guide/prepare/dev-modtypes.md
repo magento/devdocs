@@ -1,12 +1,7 @@
 ---
 group: php-developer-guide
-subgroup: 02_Prepare
 title: Component types
-menu_title: Component types
-menu_order: 2
-menu_node:
 redirect_from:
-  - /guides/v2.1/mktpl-quickstart/dev-modtypes.html
   - /guides/v2.2/mktpl-quickstart/dev-modtypes.html
 ---
 

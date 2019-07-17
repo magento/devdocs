@@ -23,9 +23,9 @@ You can find the list of modules that have dependencies on the Magento_WeeeStagi
 
 ## Extension points
 
-Extension points enable extension developers to interact with the Magento_WeeeStaging module. [The Magento dependency injection mechanism](http://devdocs.magento.com/guides/v2.1/extension-dev-guide/depend-inj.html) enables you to override the functionality of the module.
+Extension points enable extension developers to interact with the Magento_WeeeStaging module. [The Magento dependency injection mechanism]({{ page.baseurl }}/extension-dev-guide/depend-inj.html) enables you to override the functionality of the module.
 
-[The Magento dependency injection mechanism](http://devdocs.magento.com/guides/v2.1/extension-dev-guide/depend-inj.html) enables you to override the functionality of the Magento_WeeeStaging module.
+[The Magento dependency injection mechanism]({{ page.baseurl }}/extension-dev-guide/depend-inj.html) enables you to override the functionality of the Magento_WeeeStaging module.
 
 ## Additional information
 
