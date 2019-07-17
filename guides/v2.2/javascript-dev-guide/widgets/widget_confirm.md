@@ -183,7 +183,26 @@ require([
             always: function() {
                 // do something when the modal is closed
             }
-        }
+        },
+        buttons: [{
+            text: $.mage.__('Cancel'),
+            class: 'action-secondary action-dismiss',
+            click: function (event) {
+                this.closeModal(event);
+            }
+        }, {
+            text: $.mage.__('OK'),
+            class: 'action-primary action-accept',
+            click: function (event) {
+                this.closeModal(event, true);
+            }
+        }, {
+            text: $.mage.__('New Action'),
+            class: 'action primary action-new',
+            click: function (event) {
+                // New action
+            }
+        }]
     });
 });
 </script>
@@ -215,7 +234,26 @@ require([
             always: function() {
                 // do something when the modal is closed
             }
-        }
+        },
+        buttons: [{
+            text: $.mage.__('Cancel'),
+            class: 'action-secondary action-dismiss',
+            click: function (event) {
+                this.closeModal(event);
+            }
+        }, {
+            text: $.mage.__('OK'),
+            class: 'action primary action-accept',
+            click: function (event) {
+                this.closeModal(event, true);
+            }
+        }, {
+            text: $.mage.__('New Action'),
+            class: 'action new',
+            click: function (event) {
+                // New action
+            }
+        }]
     });
 });
 </script>
