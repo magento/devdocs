@@ -175,6 +175,172 @@ Name | Description
 `layout` | View result. You can use a generic layout response to render any kind of layout. The layout comprises a response body from its layout elements and sets it to the HTTP response
 `page` | View result. Encapsulates page type, page configuration, and imposes certain layout handles. `page` triggers `layout.xml` to render into HTML
 
+## Example of routing usage
+
+Declaring a new route:
+
+```xml
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
+    <router id="standard">
+        <route id="routing" frontName="routing">
+            <module name="OrangeCompany_RoutingExample" />
+        </route>
+    </router>
+</config>
+```
+
+Declaring the layout handler for our new route:
+```xml
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="page.main.title">
+            <action method="setPageTitle">
+                <argument translate="true" name="title" xsi:type="string">Routing Page</argument>
+            </action>
+        </referenceBlock>
+    </body>
+</page>
+```
+
+Defining a new custom router:
+
+```xml
+<type name="Magento\Framework\App\RouterList">
+    <arguments>
+        <argument name="routerList" xsi:type="array">
+            <item name="routingExample" xsi:type="array">
+                <item name="class" xsi:type="string">OrangeCompany\RoutingExample\Controller\Router</item>
+                <item name="disable" xsi:type="boolean">false</item>
+                <item name="sortOrder" xsi:type="string">40</item>
+            </item>
+        </argument>
+    </arguments>
+</type>
+```
+
+Creating the controller that will handle the `routing` route. 
+
+```php
+<?php
+declare(strict_types=1);
+
+namespace OrangeCompany\RoutingExample\Controller\Index;
+
+use Magento\Framework\App\Action\Action;
+use Magento\Framework\App\Action\Context;
+use Magento\Framework\App\ResponseInterface;
+use Magento\Framework\Controller\ResultInterface;
+use Magento\Framework\View\Result\Page;
+use Magento\Framework\View\Result\PageFactory;
+
+/**
+ * Class Index
+ */
+class Index extends Action
+{
+    /**
+     * @var PageFactory
+     */
+    private $pageFactory;
+
+    /**
+     * @param Context $context
+     * @param PageFactory $pageFactory
+     */
+    public function __construct(
+        Context $context,
+        PageFactory $pageFactory
+    ) {
+        parent::__construct($context);
+
+        $this->pageFactory = $pageFactory;
+    }
+
+    /**
+     * @return ResponseInterface|ResultInterface|Page
+     */
+    public function execute()
+    {
+        return $this->pageFactory->create();
+    }
+}
+```
+
+In the end, let's create the router class, that will match the custom route name `learning` with the existing `routing` route.
+
+```php
+<?php
+declare(strict_types=1);
+
+namespace OrangeCompany\RoutingExample\Controller;
+
+use Magento\Framework\App\Action\Forward;
+use Magento\Framework\App\ActionFactory;
+use Magento\Framework\App\ActionInterface;
+use Magento\Framework\App\RequestInterface;
+use Magento\Framework\App\ResponseInterface;
+use Magento\Framework\App\RouterInterface;
+
+/**
+ * Class Router
+ */
+class Router implements RouterInterface
+{
+    /**
+     * @var ActionFactory
+     */
+    private $actionFactory;
+
+    /**
+     * @var ResponseInterface
+     */
+    private $response;
+
+    /**
+     * Router constructor.
+     *
+     * @param ActionFactory $actionFactory
+     * @param ResponseInterface $response
+     */
+    public function __construct(
+        ActionFactory $actionFactory,
+        ResponseInterface $response
+    ) {
+        $this->actionFactory = $actionFactory;
+        $this->response = $response;
+    }
+
+    /**
+     * @param RequestInterface $request
+     * @return ActionInterface|null
+     */
+    public function match(RequestInterface $request): ?ActionInterface
+    {
+        $identifier = trim($request->getPathInfo(), '/');
+
+        if (strpos($identifier, 'learning') !== false) {
+            $request->setModuleName('routing');
+            $request->setControllerName('index');
+            $request->setActionName('index');
+
+            return $this->actionFactory->create(Forward::class, ['request' => $request]);
+        }
+
+        return null;
+    }
+}
+```
+
+As a result, by accessing the `http://site.com/learning` route, the `http://site.com/routing/index/index` route is loaded.
+
+![Routing Result]({{ site.baseurl }}/common/images/routing-result.png)
+
 [`FrontController` class]: {{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/App/FrontController.php
 [FrontController]: #frontcontroller-class
 [Router class]: {{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/App/RouterInterface.php

@@ -55,6 +55,9 @@ pages:
         - label: Confirmation widget
           url: /javascript-dev-guide/widgets/widget_confirm.html
 
+        - label: Dropdown widget
+          url: /javascript-dev-guide/widgets/widget_dropdown.html
+
         - label: DropdownDialog widget
           url: /javascript-dev-guide/widgets/widget_dialog.html
 
