@@ -57,6 +57,7 @@ The alert widget has the following options:
 -   [focus]
 -   [title]
 -   [modalClass]
+-   [buttons]
 
 ### `actions` {#alert_actions}
 Widget callbacks.
@@ -70,7 +71,7 @@ actions: {
 }
 ```
 
-### autoOpen {#alert_autoopen}
+### `autoOpen` {#alert_autoopen}
 
 Automatically open the alert window when the widget is initialized.
 
@@ -78,7 +79,24 @@ Automatically open the alert window when the widget is initialized.
 
 **Default value**: `false`
 
-### clickableOverlay {#alert_clickableOverlay}
+### `buttons` {#alert_buttons}
+The buttons list.
+
+**Type**: Object.
+
+**Default value**: 
+
+```javascript
+[{
+    text: $.mage.__('OK'),
+    class: 'action-primary action-accept',
+    click: function () {
+        this.closeModal(true);
+    }
+}]
+```
+
+### `clickableOverlay` {#alert_clickableOverlay}
 
 Close the alert window when a user clicks on the overlay.
 
@@ -116,7 +134,7 @@ The CSS class of the alert window.
 ## Events {#alert_events}
 
 The alert widget implements a single event: the `always` callback.
-The `always` callback is invoked when a modal window is closed.
+The `always` callback is invoked when a modal window is opened and closed.
 
 ## Keyboard navigation {#alert_key_navigation}
 
@@ -144,9 +162,30 @@ require([
         modalClass: 'alert',
         actions: {
             always: function() {
-                // do something when the modal is closed
+                // do something when the modal is opened and closed
             }
-        }
+        },
+        buttons: [{
+            text: $.mage.__('Accept'),
+            class: 'action primary accept',
+    
+            /**
+             * Click handler.
+             */
+            click: function () {
+                this.closeModal(true);
+            }
+        }, {
+            text: $.mage.__('New Action'),
+            class: 'action',
+    
+            /**
+             * Click handler.
+             */
+            click: function () {
+                // New action
+            }
+        }]
     });
 });
 </script>
@@ -171,9 +210,30 @@ require([
         modalClass: 'alert',
         actions: {
             always: function() {
-                // do something when the modal is closed
+                // do something when the modal is opened and closed
             }
-        }
+        },
+        buttons: [{
+            text: $.mage.__('Accept'),
+            class: 'action primary accept',
+    
+            /**
+             * Click handler.
+             */
+            click: function () {
+                this.closeModal(true);
+            }
+        }, {
+            text: $.mage.__('New Action'),
+            class: 'action',
+    
+            /**
+             * Click handler.
+             */
+            click: function () {
+                // New action
+            }
+        }]
     });
 });
 </script>
@@ -194,4 +254,5 @@ require([
 [focus]: #alert_focus
 [title]: #alert_title
 [modalClass]: #alert_modalClass
+[buttons]: #alert_buttons
 [navigation of the modal widget]: {{ page.baseurl }}/javascript-dev-guide/widgets/widget_modal.html#key_navigation
