@@ -82,12 +82,12 @@ Automatically open the alert window when the widget is initialized.
 ### `buttons` {#alert_buttons}
 The buttons list.
 
-**Type**: Object.
+**Type**: Array of Objects.
 
 **Default value**: 
 
 ```javascript
-[{
+buttons: [{
     text: $.mage.__('OK'),
     class: 'action-primary action-accept',
     click: function () {

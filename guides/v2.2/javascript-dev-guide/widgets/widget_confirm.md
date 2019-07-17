@@ -88,12 +88,12 @@ Automatically open the confirmation window when the widget is initialized.
 ### `buttons` {#confirm_buttons}
 The buttons list.
 
-**Type**: Object.
+**Type**: Array of Objects.
 
 **Default value**: 
 
 ```javascript
-[{
+buttons: [{
     text: $t('Cancel'),
     class: 'action-secondary action-dismiss',
     click: function (event) {
