@@ -276,7 +276,7 @@ class Index extends Action
 }
 ```
 
-In the end, let's create the router class, that will match the our custom route name `learning` with the existing `routing` route.
+In the end, let's create the router class, that will match the custom route name `learning` with the existing `routing` route.
 
 ```php
 <?php
@@ -341,7 +341,7 @@ class Router implements RouterInterface
 }
 ```
 
-As result, by accessing the `http://site.com/learning` route, the `http://site.com/routing/index/index` route is loaded.
+As a result, by accessing the `http://site.com/learning` route, the `http://site.com/routing/index/index` route is loaded.
 
 ![Routing Result]({{ site.baseurl }}/common/images/routing-result.png)
 
