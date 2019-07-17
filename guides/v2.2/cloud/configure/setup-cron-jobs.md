@@ -54,7 +54,7 @@ MAILTO=""
 * * * * *           cronrun
 ```
 
-{:.bs-callout .bs-callout-info}
+{: .bs-callout-info}
 If the command returns a `Command not found` error, contact your Magento account manager or CSM about enabling the auto-crons self-service configuration feature on the Cloud infrastructure for your {{site.data.var.ece}} project.
 
 ## Build a cron job {#build}
