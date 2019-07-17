@@ -102,7 +102,7 @@ bin/magento setup:static-content:deploy
 The tool pre-processes (including compilation) and publishes the static view files.
 
 {:.bs-callout .bs-callout-info}
-Manual static content deployment is not required in "default" and "developer" modes. If you still want to deploy in these modes, use the -f option: `bin/magento setup:static-content:deploy -f`
+Manual static content deployment is not required in "default" and "developer" modes. If you still want to deploy in these modes, use the -f option: `bin/magento setup:static-content:deploy -f [<languages>]` (Default language is en_US).
 
 All errors occurring during `.less` files compilation are handled by the [`oyejorge/less.php`](https://github.com/oyejorge/less.php) third party library.
 
