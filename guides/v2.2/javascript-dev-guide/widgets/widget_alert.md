@@ -134,7 +134,7 @@ The CSS class of the alert window.
 ## Events {#alert_events}
 
 The alert widget implements a single event: the `always` callback.
-The `always` callback is invoked when a modal window is opened and closed.
+The `always` callback is invoked when a modal window is closed.
 
 ## Keyboard navigation {#alert_key_navigation}
 
@@ -162,7 +162,7 @@ require([
         modalClass: 'alert',
         actions: {
             always: function() {
-                // do something when the modal is opened and closed
+                // do something when the modal is closed
             }
         },
         buttons: [{
@@ -210,7 +210,7 @@ require([
         modalClass: 'alert',
         actions: {
             always: function() {
-                // do something when the modal is opened and closed
+                // do something when the modal is closed
             }
         },
         buttons: [{
