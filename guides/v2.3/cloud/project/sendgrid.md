@@ -1,1 +1,1 @@
-../../../v2.2/cloud/project/sendgrid.md
+../../../../guides/v2.2/cloud/project/sendgrid.md

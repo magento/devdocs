@@ -1,1 +1,1 @@
-../../../v2.2/javascript-dev-guide/widgets/widget_navigation.md
+../../../../guides/v2.2/javascript-dev-guide/widgets/widget_navigation.md

@@ -1,1 +1,1 @@
-../../../v2.2/design-styleguide/pagegrid/pagegrid.md
+../../../../guides/v2.2/design-styleguide/pagegrid/pagegrid.md

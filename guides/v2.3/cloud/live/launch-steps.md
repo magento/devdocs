@@ -1,1 +1,1 @@
-../../../v2.2/cloud/live/launch-steps.md
+../../../../guides/v2.2/cloud/live/launch-steps.md

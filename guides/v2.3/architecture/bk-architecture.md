@@ -1,1 +1,1 @@
-../../v2.2/architecture/bk-architecture.md
+../../../guides/v2.2/architecture/bk-architecture.md

@@ -1,1 +1,1 @@
-../../../v2.2/ext-best-practices/extension-coding/coding-best-practices.md
+../../../../guides/v2.2/ext-best-practices/extension-coding/coding-best-practices.md

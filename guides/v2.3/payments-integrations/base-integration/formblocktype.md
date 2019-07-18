@@ -1,1 +1,1 @@
-../../../v2.2/payments-integrations/base-integration/formblocktype.md
+../../../../guides/v2.2/payments-integrations/base-integration/formblocktype.md

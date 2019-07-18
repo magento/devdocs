@@ -1,1 +1,1 @@
-../../../v2.2/cloud/trouble/restore-configuration-files.md
+../../../../guides/v2.2/cloud/trouble/restore-configuration-files.md

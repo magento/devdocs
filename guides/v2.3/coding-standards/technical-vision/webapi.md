@@ -1,1 +1,1 @@
-../../../v2.2/coding-standards/technical-vision/webapi.md
+../../../../guides/v2.2/coding-standards/technical-vision/webapi.md

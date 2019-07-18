@@ -1,1 +1,1 @@
-../../v2.2/migration/extend-the-tool.md
+../../../guides/v2.2/migration/extend-the-tool.md

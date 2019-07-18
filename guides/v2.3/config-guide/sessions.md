@@ -1,1 +1,1 @@
-../../v2.2/config-guide/sessions.md
+../../../guides/v2.2/config-guide/sessions.md
