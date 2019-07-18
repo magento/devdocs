@@ -44,7 +44,7 @@ cd <magento2_root_dir>/dev/tests/functional/utils
 php -f generateFixtureXml.php -- --name widget --entity_type widget_instance --collection Magento\\Widget\\Model\\Resource\\Widget\\Instance\\Collection
 ```
 
-{: .bs-callout .bs-callout-info }
+{: .bs-callout-info }
 Please note that the generateFixtureXml tool does not replace an existing XML fixture. For example, if you already have `Widget.xml` fixture, you cannot create new one with the same name.
 
 {: .bs-callout .bs-callout-warning}

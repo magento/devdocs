@@ -2,7 +2,6 @@
 group: cloud-guide
 title: Cloud variables
 redirect_from:
-  - /guides/v2.1/cloud/env/environment-vars_cloud.html
   - /guides/v2.2/cloud/env/environment-vars_cloud.html
   - /guides/v2.3/cloud/env/environment-vars_cloud.html
 functional_areas:

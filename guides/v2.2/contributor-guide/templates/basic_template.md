@@ -1,9 +1,6 @@
 ---
 group: contributor-guide
 title: Basic template
-redirect_from:
-   - /guides/v2.1/contributor-guide/basic_template.html
-   - /guides/v2.1/howdoi/howdoi_template.html
 ---
 
 Introductory text that gives an overview of the topic you will be writing about.
@@ -225,7 +222,7 @@ content='This is a tip callout. These can be used to provide useful tips or inte
 
 You can use the collapsible content tag for large code samples in your content. Any content in a collapse is blocked from searching on page.
 
-{: .bs-callout .bs-callout-info }
+{: .bs-callout-info }
 The `{%raw%}{% collapsible %}{%endraw%}` tag must be preceded by a blank line.
 
 *Example:*

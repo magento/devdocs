@@ -50,7 +50,7 @@ where:
 
 3. `{<path to config.xml>}` is the absolute file system path to `config.xml`; this argument is required.
 
-{: .bs-callout .bs-callout-info }
+{: .bs-callout-info }
 Logs are written to the `<magento_root>/var/` directory.
 
 ## Migration order {#migration_order}
