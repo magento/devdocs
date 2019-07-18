@@ -137,18 +137,18 @@ Integration integration-ID (webhook) updated
 
 Event | Description
 ----- | :-----------
-`environment.access.add`    | A new user has been granted access to the environment
+`environment.access.add`    | A user has been granted access to the environment
 `environment.access.remove` | A user has been removed from the environment
 `environment.activate`      | A branch has been "activated" with an environment
 `environment.backup`        | A user triggered a snapshot
-`environment.branch`        | A new branch has been created using the management console
+`environment.branch`        | A branch has been created using the management console
 `environment.deactivate`    | A branch has been "deactivated". The code is still there but the environment was destroyed
 `environment.delete`        | A branch has been deleted
 `environment.initialize`    | The master branch of the project initialized with a first commit
 `environment.merge`         | An active branch has been merged using the management console or API
 `environment.push`          | A user pushed code to a branch
 `environment.restore`       | A user restored a snapshot
-`environment.route.create`  | A new route has been created using the management console
+`environment.route.create`  | A route has been created using the management console
 `environment.route.delete`  | A route has been deleted using the management console
 `environment.route.update`  | A route has been modified using the management console
 `environment.subscription.update` | The master environment has been resized because the subscription has changed, but here are no content changes
@@ -156,9 +156,9 @@ Event | Description
 `environment.update.http_access` | HTTP access rules for an environment have been modified
 `environment.update.restrict_robots` | The block-all-robots feature has been enabled or disabled
 `environment.update.smtp`   | Sending of emails has been enabled or disabled for an environment
-`environment.variable.create` | A new variable has been created
+`environment.variable.create` | A variable has been created
 `environment.variable.delete` | A variable has been deleted
 `environment.variable.update` | A variable has been modified
-`project.domain.create`     | A new domain has been created and added to the project
+`project.domain.create`     | A domain has been created and added to the project
 `project.domain.delete`     | A domain associated with the project has been removed
 `project.domain.update`     | A domain associated with the project has been updated
