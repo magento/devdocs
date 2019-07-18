@@ -472,6 +472,59 @@ class Product
 }
 ```
 
+## Manage the 'My Account' dashboard navigation links
+
+ You can remove navigation links from the 'My Account' dashboard on the storefront by setting the `remove` attribute.
+
+  ```xml
+<!-- File:  app/design/frontend/<Vendor>/<theme>/Magento_Customer/layout/customer_account.xml -->
+
+ <!-- Store credit -->
+<referenceBlock name="customer-account-navigation-customer-balance-link" remove="true"/>
+
+  <!-- Downloadable product link -->
+<referenceBlock name="customer-account-navigation-downloadable-products-link" remove="true"/>
+
+  <!-- Subscription link -->
+<referenceBlock name="customer-account-navigation-newsletter-subscriptions-link" remove="true"/>
+
+  <!-- Billing agreement link -->
+<referenceBlock name="customer-account-navigation-billing-agreements-link" remove="true"/>
+
+  <!-- Product review link -->
+<referenceBlock name="customer-account-navigation-product-reviews-link" remove="true"/>
+
+  <!-- My credit card link -->
+<referenceBlock name="customer-account-navigation-my-credit-cards-link" remove="true"/>
+
+  <!-- Account link -->
+<referenceBlock name="customer-account-navigation-account-link" remove="true"/>
+
+  <!-- Account edit link -->
+<referenceBlock name="customer-account-navigation-account-edit-link" remove="true"/>
+
+  <!-- Address link -->
+<referenceBlock name="customer-account-navigation-address-link" remove="true"/>
+
+  <!-- Orders link -->
+<referenceBlock name="customer-account-navigation-orders-link" remove="true"/>
+
+  <!-- Wish list link -->
+<referenceBlock name="customer-account-navigation-wish-list-link" remove="true"/>
+
+  <!-- Gift card link -->
+<referenceBlock name="customer-account-navigation-gift-card-link" remove="true"/>
+
+  <!-- Gift registry -->
+<referenceBlock name="customer-account-navigation-giftregistry-link" remove="true"/>
+
+  <!-- Reward points -->
+<referenceBlock name="customer-account-navigation-reward-link" remove="true"/>
+
+  <!-- Order by SKU -->
+<referenceBlock name="customer-account-navigation-checkout-sku-link" remove="true"/>
+```
+
 ### Related topics
 
 - [Layout instructions]
