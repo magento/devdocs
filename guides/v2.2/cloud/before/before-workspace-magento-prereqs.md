@@ -6,9 +6,7 @@ menu_title: Install Magento prerequisites
 menu_order: 15
 menu_node:
 redirect_from:
-  - /guides/v2.1/cloud/before/before-workspace-php.html
   - /guides/v2.2/cloud/before/before-workspace-php.html
-  - /guides/v2.1/cloud/before/before-workspace-cli.html
   - /guides/v2.2/cloud/before/before-workspace-cli.html
 functional_areas:
   - Cloud
