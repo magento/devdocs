@@ -20,7 +20,7 @@ Typically, an _update_ includes patches and available hotfixes as part of the `m
     composer update magento/ece-tools
     ```
 
-    {: .bs-callout .bs-callout-info}
+    {: .bs-callout-info }
     If you cannot update beyond `{{site.data.var.ct}}` version 2002.0.8, follow the [upgrade steps]({{page.baseurl}}/cloud/project/ece-tools-upgrade-project.html).
 
 1.  Add, commit, and push your code changes.
