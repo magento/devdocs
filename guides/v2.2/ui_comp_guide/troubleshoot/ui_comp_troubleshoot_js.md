@@ -101,6 +101,22 @@ After setting the breakpoint, refresh the page. Now, let's explore the script tr
 
 As result, you can see the input parameter values and what the function returns. Moreover, we're also able to change the function's values on the fly.
 
+### Invoking the DevTools
+
+To use the DevTools you can follow the previously described steps, or you can even use the `debugger` keyword in your JavaScript code to invoke the browser's DevTools.
+
+```javascript
+function sum(a, b) {
+    var sum = a + b;
+    debugger;   
+    return sum;
+}
+```
+
+Then, just make sure that your method is called and wait until the debugger is paused at the specified point.
+
+![Debugger]({{ site.baseurl }}/common/images/debugger.png)
+
 ## See also
 
 [Debug using uiRegistry]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uiregistry.html#debug_uiregistry)
