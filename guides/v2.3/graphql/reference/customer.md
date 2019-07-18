@@ -118,7 +118,7 @@ The `CustomerStoreCreditHistory` object contains an array of store credit items 
 Attribute |  Data Type | Description
 --- | --- | ---
 `items` | [[`CustomerStoreCreditHistoryItem`](#CustomerStoreCreditHistoryItem) | An array of products that match the specified search criteria
-`page_info` | SearchResultPageInfo | An object that includes the pageSize and currentPage values specified in the query
+`page_info` | SearchResultPageInfo | An object that includes the `page_size` and `current_page` values specified in the query
 `total_count` | Int | The number of items returned
 
 ### CustomerStoreCreditHistoryItem attributes {#CustomerStoreCreditHistoryItem}
@@ -226,6 +226,10 @@ query {
         }
         total_count
       }
+      current_balance {
+        currency
+        value
+      }
     }
   }
 }
@@ -237,8 +241,8 @@ query {
 {
   "data": {
     "customer": {
-      "firstname": "John",
-      "lastname": "Doe",
+      "firstname": "Veronica",
+      "lastname": "Costello",
       "store_credit": {
         "balance_history": {
           "items": [
@@ -285,6 +289,10 @@ query {
             "total_pages": 1
           },
           "total_count": 3
+        },
+        "current_balance": {
+          "currency": "USD",
+          "value": 10
         }
       }
     }
