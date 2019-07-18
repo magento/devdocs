@@ -1,1 +1,1 @@
-../../../v2.2/config-guide/secy/secy-headers.md
+../../../../guides/v2.2/config-guide/secy/secy-headers.md

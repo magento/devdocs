@@ -1,1 +1,1 @@
-../../../v2.2/cloud/project/project-webint-snap.md
+../../../../guides/v2.2/cloud/project/project-webint-snap.md

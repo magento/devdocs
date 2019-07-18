@@ -16,7 +16,7 @@ stage:
  
 {% include cloud/customize-build-deploy.md %}
 
-{: .bs-callout .bs-callout-info}
+{: .bs-callout-info }
 You can still use the `build_options.ini` file, but we recommend using the `.magento.env.yaml` file instead because it centralizes the management of build and deploy actions across all of your environments—including Pro Staging and Production—without requiring a support ticket.
 
 The following variables were removed in v2.2:

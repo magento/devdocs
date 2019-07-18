@@ -1,1 +1,1 @@
-../../v2.2/pattern-library/bk-pattern.md
+../../../guides/v2.2/pattern-library/bk-pattern.md

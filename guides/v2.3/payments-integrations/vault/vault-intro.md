@@ -1,1 +1,1 @@
-../../../v2.2/payments-integrations/vault/vault-intro.md
+../../../../guides/v2.2/payments-integrations/vault/vault-intro.md

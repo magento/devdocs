@@ -1,1 +1,1 @@
-../../../v2.2/cloud/howtos/debug.md
+../../../../guides/v2.2/cloud/howtos/debug.md

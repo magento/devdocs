@@ -1,9 +1,6 @@
 ---
 group: cloud-guide
 title: Application
-redirect_from:
-  - /guides/v2.1/cloud/before/before-setup-env-cron.html
-  - /guides/v2.2/cloud/before/before-setup-env-cron.html
 functional_areas:
   - Cloud
   - Setup
@@ -85,9 +82,9 @@ You can specify the following attributes for the `web` property:
 
 Attribute | Description
 --------- | -----------
-`document_root` | The path relative to the root of the application that is exposed on the web. Typical values include `/public` and `/web`.
+`root` | The path relative to the root of the application that is exposed on the web. Typical values include `/public` and `/web`.
 `passthru` | The URL used in the event that a static file or PHP file cannot be found. This URL is typically the front controller for your applications, often `/index.php` or `/app.php`.
-`index_files` | Static files, such as `index.html`, to serve your application. This key expects a collection. You must include the static file(s) in the whitelist as an index file, like `- \.html$`.
+`index` | Static files, such as `index.html`, to serve your application. This key expects a collection. You must include the static file(s) in the whitelist as an index file, like `- \.html$`.
 `blacklist` | A list of files that should never be executed. Has no effect on static files.
 `whitelist` | A list of static files (as regular expressions) that can be served. Dynamic files (for example, PHP files) are treated as static files and have their source code served, but they are not executed.
 `expires` | The number of seconds to cache whitelisted content in the browser. This attribute enables the cache-control and expires headers for static content. If this value is not set, the `expires` directive and resulting headers are not included when serving static content files.
@@ -206,7 +203,7 @@ Use the `hooks` section to run shell commands during the build, deploy, and post
 
 -   **`deploy`**—Execute commands _after_ packaging and deploying your application. You can access other services at this point. Since the default `php ./vendor/bin/ece-tools` command copies the `app/etc` directory to the correct location, you must add custom commands _after_ the deploy command to prevent custom commands from failing.
 
--   **`post_deploy`**—Execute commands _after_ deploying your application and _after_ the container begins accepting connections. The `post_deploy` hook clears the cache and preloads (warms) the cache. You can customize the list of pages using the `WARM_UP_PAGES` variable in the [Post-deploy stage]({{ site.baseurl }}/guides/v2.1/cloud/env/variables-post-deploy.html). It is available only for Pro projects that contain [Staging and Production environments in the Project Web UI]({{ page.baseurl }}/cloud/trouble/pro-env-management.html) and for Starter projects. Although not required, this works in tandem with the `SCD_ON_DEMAND` environment variable.
+-   **`post_deploy`**—Execute commands _after_ deploying your application and _after_ the container begins accepting connections. The `post_deploy` hook clears the cache and preloads (warms) the cache. You can customize the list of pages using the `WARM_UP_PAGES` variable in the [Post-deploy stage]({{ page.baseurl }}/cloud/env/variables-post-deploy.html). It is available only for Pro projects that contain [Staging and Production environments in the Project Web UI]({{ page.baseurl }}/cloud/trouble/pro-env-management.html) and for Starter projects. Although not required, this works in tandem with the `SCD_ON_DEMAND` environment variable.
 
 Add CLI commands under the `build`, `deploy`, or `post_deploy` sections _before_ the `ece-tools` command:
 
@@ -277,7 +274,7 @@ A cron job is well suited for the following tasks:
 -  Or it is long, but can be easily divided into many small queued tasks.
 -  A delay between when a task is registered and when it actually happens is acceptable.
 
-A sample Magento cron job follows:
+By default, every Cloud project has the following default crons configuration to run the default Magento cron jobs:
 
 ```yaml
 crons:
@@ -288,7 +285,7 @@ crons:
 
 For {{site.data.var.ece}} 2.1.X, you can use only [workers](#workers) and [cron jobs](#crons). For {{site.data.var.ece}} 2.2.X, cron jobs launch consumers to process batches of messages, and do not require additional configuration.
 
-For more information, see [Set up cron jobs]({{ page.baseurl }}/cloud/configure/setup-cron-jobs.html).
+If your project requires custom cron jobs, you can add them to the default cron configuration. See [Set up cron jobs]({{ page.baseurl }}/cloud/configure/setup-cron-jobs.html).
 
 ## Variables
 
@@ -316,83 +313,124 @@ type: php:7.1
 
 ### PHP extensions
 
-You can define additional PHP extensions to enable or disable:
+You can enable additional PHP extensions in the `runtime:extension` section. Also, the extensions specified become available in the Docker PHP containers.
 
 > .magento.app.yaml
 
 ```yaml
 runtime:
     extensions:
-        - xdebug
-        - redis
+        - sockets
+        - sodium
         - ssh2
     disabled_extensions:
-        - sqlite3
+        - bcmath
+        - bz2
+        - calendar
+        - exif
 ```
 
 #### To view the current list of PHP extensions:
 
-Use SSH to log in to your environment and list the PHP extensions as follows:
+Use SSH to log in to an environment and list the PHP extensions.
 
 ```bash
 php -m
 ```
 
-Magento requires the following PHP extensions that are enabled by default:
+For details about a specific PHP extension, see the [PHP Extension List](https://www.php.net/manual/en/extensions.alphabetical.php).
 
--  [curl](http://php.net/manual/en/book.curl.php)
--  [gd](http://php.net/manual/en/book.image.php)
--  [intl](http://php.net/manual/en/book.intl.php)
--  PHP 7 only:  
-    -  [json](http://php.net/manual/en/book.json.php)
-    -  [iconv](http://php.net/manual/en/book.iconv.php)
+{{site.data.var.ece}} supports the following extensions:
 
--  [mcrypt](http://php.net/manual/en/book.mcrypt.php)
--  [PDO/MySQL](http://php.net/manual/en/ref.pdo-mysql.php)
--  [bc-math](http://php.net/manual/en/book.bc.php)
--  [mbstring](http://php.net/manual/en/book.mbstring.php)
--  [mhash](http://php.net/manual/en/book.mhash.php)
--  [openssl](http://php.net/manual/en/book.openssl.php)
--  [SimpleXML](http://php.net/manual/en/book.simplexml.php)
--  [soap](http://php.net/manual/en/book.soap.php)
--  [xml](http://php.net/manual/en/book.xml.php)
--  [zip](http://php.net/manual/en/book.zip.php)
+-  Default extensions:
+    -  `bcmath`
+    -  `bz2`
+    -  `calendar`
+    -  `exif`
+    -  `gd`
+    -  `gettext`
+    -  `intl`
+    -  `mysqli`
+    -  `pcntl`
+    -  `pdo_mysql`
+    -  `soap`
+    -  `sockets`
+    -  `sysvmsg`
+    -  `sysvsem`
+    -  `sysvshm`
+    -  `opcache`
+    -  `zip`
 
-You must install the following extensions:
+-  Extensions that are installed and cannot be uninstalled:
+    -  `ctype`
+    -  `curl`
+    -  `date`
+    -  `dom`
+    -  `fileinfo`
+    -  `filter`
+    -  `ftp`
+    -  `hash`
+    -  `iconv`
+    -  `json`
+    -  `mbstring`
+    -  `mysqlnd`
+    -  `openssl`
+    -  `pcre`
+    -  `pdo`
+    -  `pdo_sqlite`
+    -  `phar`
+    -  `posix`
+    -  `readline`
+    -  `session`
+    -  `sqlite3`
+    -  `tokenizer`
+    -  `xml`
+    -  `xmlreader`
+    -  `xmlwriter`
 
--  [ImageMagick](http://php.net/manual/en/book.imagick.php) 6.3.7 (or later), ImageMagick can optionally be used with the `gd` extension
--  [xsl](http://php.net/manual/en/book.xsl.php)
--  [redis](https://pecl.php.net/package/redis)
+-  Extensions that can be installed and uninstalled as needed:
+    -  `bcmath`
+    -  `bz2`
+    -  `calendar`
+    -  `exif`
+    -  `gd`
+    -  `geoip`
+    -  `gettext`
+    -  `gmp`
+    -  `igbinary`
+    -  `imagick`
+    -  `imap`
+    -  `intl`
+    -  `ldap`
+    -  `mailparse`
+    -  `mcrypt`
+    -  `msgpack`
+    -  `mysqli`
+    -  `oauth`
+    -  `opcache`
+    -  `pdo_mysql`
+    -  `propro`
+    -  `pspell`
+    -  `raphf`
+    -  `recode`
+    -  `redis`
+    -  `shmop`
+    -  `soap`
+    -  `sockets`
+    -  `sodium`
+    -  `ssh2`
+    -  `sysvmsg`
+    -  `sysvsem`
+    -  `sysvshm`
+    -  `tidy`
+    -  `xdebug`
+    -  `xmlrpc`
+    -  `xsl`
+    -  `yaml`
+    -  `zip`
+    -  `pcntl`
 
-In addition, we strongly recommend you enable `opcache`.
-
-Optional PHP extensions available to install:
-
--  [apcu](http://php.net/manual/en/book.apcu.php)
--  [blackfire](https://blackfire.io/docs/up-and-running/installation)
--  [enchant](http://php.net/manual/en/book.enchant.php)
--  [gearman](http://php.net/manual/en/book.gearman.php)
--  [geoip](http://php.net/manual/en/book.geoip.php)
--  [imap](http://php.net/manual/en/book.imap.php)
--  [ioncube](https://www.ioncube.com/loaders.php)
--  [pecl-http](https://pecl.php.net/package/pecl_http)
--  [pinba](http://pinba.org)
--  [propro](https://pecl.php.net/package/propro)
--  [pspell](http://php.net/manual/en/book.pspell.php)
--  [raphf](https://pecl.php.net/package/raphf)
--  [readline](http://php.net/manual/en/book.readline.php)
--  [recode](http://php.net/manual/en/book.recode.php)
--  [snmp](http://php.net/manual/en/book.snmp.php)
--  [sqlite3](http://php.net/manual/en/book.sqlite3.php)
--  [ssh2](http://php.net/manual/en/book.ssh2.php)
--  [tidy](http://php.net/manual/en/book.tidy.php)
--  [xcache](https://xcache.lighttpd.net)
--  [xdebug](https://xdebug.org)
--  [xhprof](http://php.net/manual/en/book.xhprof.php)
--  [xmlrpc](http://php.net/manual/en/book.xmlrpc.php)
-
-
-{:.bs-callout .bs-callout-warning}
+{: .bs-callout-warning}
 PHP compiled with debug is not supported and the Probe may conflict with XDebug or XHProf. Disable those extensions when enabling the Probe. The Probe conflicts with some PHP extensions like Pinba or IonCube.
 
 ### Customize `php.ini` settings

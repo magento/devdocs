@@ -1,1 +1,1 @@
-../../../v2.2/config-guide/cache/cache-types.md
+../../../../guides/v2.2/config-guide/cache/cache-types.md

@@ -1,1 +1,1 @@
-../../../v2.2/cloud/env/environments-ssh.md
+../../../../guides/v2.2/cloud/env/environments-ssh.md

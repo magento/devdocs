@@ -1,1 +1,1 @@
-../../v2.2/migration/migration-migrate-follow-up.md
+../../../guides/v2.2/migration/migration-migrate-follow-up.md

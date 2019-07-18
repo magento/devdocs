@@ -1,1 +1,1 @@
-../../v2.2/install-gde/install-resources-parent.md
+../../../guides/v2.2/install-gde/install-resources-parent.md

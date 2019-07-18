@@ -400,6 +400,38 @@ $helperMethodResult = $block->getData('helper_method_result');
 </arguments>
 ```
 
+## Common arguments for blocks
+
+The following are common arguments for block instructions:
+
+- `cache_key`: key for saving/retrieving cached information. This is helpful if the block needs to be cached: [example]({{ page.baseurl }}/cloud/project/project-routes-more-cache.html).
+
+- `template`: sets the template for the block.
+
+    ```xml
+    <referenceBlock name="page.main.title">
+     <arguments>
+       <argument name="template" xsi:type="string">%Namespace_Module::new_template.phtml%</argument>
+     </arguments>
+   </referenceBlock>
+   ```
+
+- `translate_inline`: `true' = enable translation for this block.
+
+   ```xml
+   <argument xsi:type="string" translate="true">{strValue}</argument>
+   ```
+
+- `module_name`: sets the module for the block. Usually this is determined automatically.
+
+    ```xml
+    <block class="Namespace_Module_Block_Type" name="block.example">
+      <arguments>
+        <argument name="label" xsi:type="string">Block Label</argument>
+      </arguments>
+    </block>
+    ```
+
 [page layout]: {{page.baseurl}}/frontend-dev-guide/layouts/layout-types.html#layout-types-page
 [page configuration]: {{page.baseurl}}/frontend-dev-guide/layouts/layout-types.html#layout-types-conf
 [generic layout]: {{page.baseurl}}/frontend-dev-guide/layouts/layout-types.html#layout-types-gen

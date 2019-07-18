@@ -1,1 +1,1 @@
-../../../v2.2/cloud/trouble/message-queues.md
+../../../../guides/v2.2/cloud/trouble/message-queues.md

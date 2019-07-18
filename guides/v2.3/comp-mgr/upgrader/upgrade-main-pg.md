@@ -1,1 +1,1 @@
-../../../v2.2/comp-mgr/upgrader/upgrade-main-pg.md
+../../../../guides/v2.2/comp-mgr/upgrader/upgrade-main-pg.md
