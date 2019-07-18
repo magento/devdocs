@@ -92,6 +92,11 @@ Magento 2 has the following [cache](https://glossary.magento.com/cache) types:
       <td><p>config_webservice</p></td>
       <td><p>Web API structure.</p></td>
     </tr>
+    <tr>
+      <td><p>Vertex</p></td>
+      <td><p>vertex</p></td>
+      <td><p>Vertex is a cloud-based solution that robotizes your sales and use charge consistence, and produces a signature-ready PDF for your month to month returns. To begin, you need a Vertex account, at that point complete configuration settings.</p></td>
+    </tr>
 
   </tbody>
 </table>
@@ -120,6 +125,7 @@ A sample follows:
     config_integration: 1
 config_integration_api: 1
      config_webservice: 1
+                vertex: 1
 ```
 
 ## Enable or disable cache types {#config-cli-subcommands-cache-en}
@@ -206,6 +212,7 @@ Sample result:
 	config_integration
 	config_integration_api
 	config_webservice
+  	vertex
 ```
 
 {:.bs-callout .bs-callout-info}
