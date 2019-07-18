@@ -36,7 +36,7 @@ The following diagram illustrates the relationship between source stocks, aggreg
 
 ![Source and aggregate stock](images/inventory-diagram-stock.png)
 
-In this diagram, a bicycle merchant has inventory for a touring bike in a warehouse and two stores. He has three stocks with configured website sales channels and sources. When a customer shops through the UK website, Magento aggregates bike inventory from the warehouse and flagship store sources for a salable quantity of 50. The touring bike can be shipped from either the warehouse or the flagship store, but not the King Street store. The German (DE) web store same stock draws from the same aggregate stock as the UK web store.
+In this diagram, a bicycle merchant has inventory for a touring bike in a warehouse and two stores. He has three stocks with configured website sales channels and sources. When a customer shops through the UK website, Magento aggregates bike inventory from the warehouse and flagship store sources for a salable quantity of 95. The touring bike can be shipped from either the warehouse or the flagship store, but not the US store. Amazon Marketplace web store same stock draws from the same aggregate stock as the UK web store.
 
 
 ## Important {{site.data.var.im}} objects
