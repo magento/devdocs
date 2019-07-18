@@ -1,9 +1,7 @@
 ---
 group: cloud-guide
-subgroup: 090_configure
 title: Secure access to Magento Admin UI by client IP address
 redirect_from:
-   - /guides/v2.1/cloud/configure/fastly-vcl-whitelist.html
    - /guides/v2.2/cloud/configure/fastly-vcl-whitelist.html
    - /guides/v2.3/cloud/configure/fastly-vcl-whitelist.html
 functional_areas:
