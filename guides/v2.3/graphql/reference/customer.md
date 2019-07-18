@@ -100,7 +100,7 @@ In {{site.data.var.ee}}, the merchant can assign store credit to customers. Mage
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`store_credit` | [CustomerStoreCredit](#CustomerStoreCredit) | Contains the store credit information for the logged in customer
+`store_credit` | [CustomerStoreCredit](#CustomerStoreCredit) | Contains the store credit information for the logged-in customer
 
 ### CustomerStoreCredit attributes {#CustomerStoreCredit}
 
@@ -109,7 +109,7 @@ The `store_credit` object contains store credit information, including the balan
 Attribute |  Data Type | Description
 --- | --- | ---
 `current_balance` | Money | The current store credit balance
-`balance_history` | [`CustomerStoreCreditHistory`](#CustomerStoreCreditHistory) | Lists changes to the amount of store credit available to the customer. You can specify the following optional parameters to control paging in the output.<br/><br/>`pageSize` - An integer that specifies the maximum number of results to return at once. The default value is 20.<br/><br/>`currentPage` - An integer that Specifies which page of the results to return. The default value is 1
+`balance_history` | [`CustomerStoreCreditHistory`](#CustomerStoreCreditHistory) | Lists changes to the amount of store credit available to the customer. You can specify the following optional parameters to control paging in the output.<br/><br/>`pageSize` - An integer that specifies the maximum number of results to return at once. The default value is 20.<br/><br/>`currentPage` - An integer that specifies which page of the results to return. The default value is 1
 
 ### CustomerStoreCreditHistory attributes {#CustomerStoreCreditHistory}
 
@@ -196,7 +196,7 @@ The following call returns information about the logged-in customer. Provide the
 }
 ```
 
-The following example returns the store credit history for the logged in user.
+The following example returns the store credit history for the logged-in user.
 
 **Request**
 
