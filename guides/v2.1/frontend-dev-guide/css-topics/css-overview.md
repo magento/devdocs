@@ -32,8 +32,6 @@ There are a couple options to help with CSS and site performance.
 
 * Minification of CSS files reduces the file size being sent. It does this by stripping white space within the file.
 
-* Make sure that you set your Magento application to the developer mode because merge CSS option not available in production mode, after merging CSS you can set developer to production mode.
-
 To enable / disable these settings, go into Admin > **Stores** > Setting > **Configuration** > **Advanced** > **Developer** > **CSS Settings**.
 
 ## Change styles: walkthrough {#css_walk}
