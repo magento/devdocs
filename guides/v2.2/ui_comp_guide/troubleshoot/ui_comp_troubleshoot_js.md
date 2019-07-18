@@ -120,4 +120,4 @@ Then, just make sure that your method is called and wait until the debugger is p
 ## See also
 
 [Debug using uiRegistry]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uiregistry.html#debug_uiregistry)
-[DevTools]: https://developers.google.com/web/tools/chrome-devtools/javascript/
+[DevTools](https://developers.google.com/web/tools/chrome-devtools/javascript/)
