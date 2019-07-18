@@ -62,7 +62,7 @@ Enter comma-separated values (or leave this blank)
 ```
 {: .no-copy}
 
-You can filter states, which can be `pending`, `in_progress`, or `complete`:
+You can choose to report events in a `pending`, `in_progress`, or `complete` state:
 
 ```terminal
 States to report (--states)
@@ -148,17 +148,17 @@ Event | Description
 `environment.merge`         | An active branch has been merged using the management console or API
 `environment.push`          | A user pushed code to a branch
 `environment.restore`       | A user restored a snapshot
-`environment.route.create`  | A new route has been created using the management console.
-`environment.route.delete`  | A route has been deleted using the management console.
-`environment.route.update`  | A route has been modified using the management console.
-`environment.subscription.update` | The master environment has been resized because the subscription has changed. There are no content changes.
-`environment.synchronize`   | An environment has had data or code re-copied from its parent environment.
-`environment.update.http_access` | HTTP access rules for an environment have been modified.
-`environment.update.restrict_robots` | The block-all-robots feature has been enabled or disabled.
-`environment.update.smtp`   | Sending of emails has been enabled or disabled for an environment.
-`environment.variable.create` | A new variable has been created.
-`environment.variable.delete` | A variable has been deleted.
-`environment.variable.update` | A variable has been modified.
-`project.domain.create`     | A new domain has been created and added to the project.
-`project.domain.delete`     | A domain associated with the project has been removed.
-`project.domain.update`     | A domain associated with the project has been updated.
+`environment.route.create`  | A new route has been created using the management console
+`environment.route.delete`  | A route has been deleted using the management console
+`environment.route.update`  | A route has been modified using the management console
+`environment.subscription.update` | The master environment has been resized because the subscription has changed, but here are no content changes
+`environment.synchronize`   | An environment has had data or code re-copied from its parent environment
+`environment.update.http_access` | HTTP access rules for an environment have been modified
+`environment.update.restrict_robots` | The block-all-robots feature has been enabled or disabled
+`environment.update.smtp`   | Sending of emails has been enabled or disabled for an environment
+`environment.variable.create` | A new variable has been created
+`environment.variable.delete` | A variable has been deleted
+`environment.variable.update` | A variable has been modified
+`project.domain.create`     | A new domain has been created and added to the project
+`project.domain.delete`     | A domain associated with the project has been removed
+`project.domain.update`     | A domain associated with the project has been updated
