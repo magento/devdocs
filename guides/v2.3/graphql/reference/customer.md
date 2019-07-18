@@ -96,13 +96,13 @@ Attribute |  Data Type | Description
 
 ### Store credit attributes
 
-In {{ ee }}, the merchant can assign store credit to customers. Magento maintains the history of all changes to the balance of store credit available to the customer. The customer must be logged in to access the store credit history and balance.
+In {{site.data.var.ee}}, the merchant can assign store credit to customers. Magento maintains the history of all changes to the balance of store credit available to the customer. The customer must be logged in to access the store credit history and balance.
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`store_credit` | CustomerStoreCredit | Contains the store credit information for the logged in customer
+`store_credit` | [CustomerStoreCredit](#CustomerStoreCredit) | Contains the store credit information for the logged in customer
 
-### store_credit attributes
+### CustomerStoreCredit attributes {#CustomerStoreCredit}
 
 The `store_credit` object contains store credit information, including the balance and history.
 
@@ -117,7 +117,7 @@ The `CustomerStoreCreditHistory` object contains an array of store credit items 
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`items` | [[`CustomerStoreCreditHistoryItem`](#CustomerStoreCreditHistoryItem) | An array of products that match the specified search criteria
+`items` | [[`CustomerStoreCreditHistoryItem`](#CustomerStoreCreditHistoryItem)] | An array of products that match the specified search criteria
 `page_info` | SearchResultPageInfo | An object that includes the `page_size` and `current_page` values specified in the query
 `total_count` | Int | The number of items returned
 
@@ -644,7 +644,7 @@ mutation {
 }
 ```
 
-### Manage customer tokens 
+### Manage customer tokens
 {:.no_toc}
 
 Use these mutations to create or revoke a customer's token.
