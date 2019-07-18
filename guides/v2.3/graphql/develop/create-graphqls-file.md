@@ -135,6 +135,6 @@ This `cacheable` argument is intended to disable caching for queries that are de
 `@cache(cacheable: false)`
 
 Specifying `@cache(cacheable: false)` or `@cache(cacheable: true)` on a query without a `cacheIdentity` class has no effect: the query will not be cached.
-If a query should **no**t be cached, no `@cache` directive at all should be specified. Specifying `@cache(cacheable: false)`  is superfluous when no `cacheIdentity` is present.
+If a query should **not** be cached, do not specify the `@cache` directive. Specifying `@cache(cacheable: false)`  is superfluous when no `cacheIdentity` is present.
 
 See [Create a cache type]({{page.baseurl}}/extension-dev-guide/cache/partial-caching/create-cache-type.html) for information about enabling caching for custom modules.
