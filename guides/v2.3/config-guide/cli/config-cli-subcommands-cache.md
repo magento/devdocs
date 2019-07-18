@@ -29,6 +29,7 @@ Magento 2 has the following [cache](https://glossary.magento.com/cache) types:
 |Integration API configuration|config_integration_api|Compiled integration APIs configuration of the Store’s Integrations.|
 |Web services configuration|config_webservice|Caching the Web API Structure.|
 |Customer Notification|customer_notification|Temporary notifications that appear in the user interface.|
+|Vertex|vertex|Vertex is a cloud-based solution that robotizes your sales and use charge consistence, and produces a signature-ready PDF for your month to month returns. To begin, you need a Vertex account, at that point complete configuration settings.|
 
 
 ## View the cache status
@@ -58,6 +59,7 @@ config_integration_api: 1
              full_page: 1
      config_webservice: 1
              translate: 1
+                vertex: 1
 ```
 
 ## Enable or disable cache types {#config-cli-subcommands-cache-en}
@@ -156,6 +158,7 @@ Sample result:
    full_page
    config_webservice
    translate
+   vertex
 ```
 
 {:.bs-callout .bs-callout-info}
