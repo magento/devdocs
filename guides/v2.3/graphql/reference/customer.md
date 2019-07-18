@@ -123,6 +123,8 @@ Attribute |  Data Type | Description
 
 ### CustomerStoreCreditHistoryItem attributes {#CustomerStoreCreditHistoryItem}
 
+The `CustomerStoreCreditHistoryItem` object contains information about a specific change to the customer's store credit.
+
 Attribute |  Data Type | Description
 --- | --- | ---
 `action` | String | The action taken on the customer's store credit
