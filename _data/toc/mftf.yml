@@ -16,6 +16,7 @@ pages:
       - label: Best practices
         url: /mftf/docs/best-practices.html
         versionless: true
+        
       - label: Tips and tricks
         url: /mftf/docs/tips-tricks.html
         versionless: true
@@ -140,6 +141,10 @@ pages:
 
       - label: Assertions
         url: /mftf/docs/test/assertions.html
+        versionless: true
+
+      - label: Functional Test List
+        url: /mftf/docs/test/mftf-tests.html
         versionless: true
 
   - label: Troubleshooting
