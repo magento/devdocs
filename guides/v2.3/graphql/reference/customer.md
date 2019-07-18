@@ -425,8 +425,8 @@ CX | Christmas Island
 CC | Cocos (Keeling) Islands
 CO | Colombia
 KM | Comoros
-CG | Congo - Brazzaville
-CD | Congo - Kinshasa
+CG | Congo-Brazzaville
+CD | Congo-Kinshasa
 CK | Cook Islands
 CR | Costa Rica
 CI | Côte d’Ivoire
