@@ -78,7 +78,7 @@ General labels include a variety of tasks and definitions for pull requests and 
 * `help wanted` - Indicates the creator or author needs help with a decision, advice for resolving, and so on.
 * `triage wanted` - Indicates the issues are under triage. See this information to learn more about the [Triage Wanted program](https://github.com/magento/magento2/wiki/Triage-Wanted).
 
-### Issue Resolution Status
+### Issue resolution status
 {:.no_toc}
 
 Labels applied to issues through verification and completion. For details on the process, see [GitHub Issues Processing Workflow](https://github.com/magento/magento2/wiki/GitHub-Issues-Processing-Workflow).
