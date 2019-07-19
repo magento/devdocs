@@ -185,13 +185,13 @@ We provide two options to create back-ports and up-ports for your code contribut
 {: .bs-callout-info }
 Creating back-ports and up-ports are recommended and a best practice, but not required to contribute code. Anyone can create a back-port and up-port for a merged pull request, however, original pull request authors receive higher priority if there are duplicate ports.
 
-### What are up-ports and back-ports?
+### What are forward-ports and back-ports?
 
 As a best practice, we recommend creating back-ports and up-ports for your code contributions.
 
-**Back-ports** (or Backports) contribute your code and fixes to a lower release line. You want to create a back-port if the issue exists in a lower release line. If you fixed an issue in a release line and there is a supported lower version, create a pull request to that lower release line to address the issue. For example, you may have contributed a fix to 2.3 and back-port to 2.2 and 2.1.
+**Back-ports** (or backports) contribute your code and fixes to a lower release line. You want to create a back-port if the issue exists in a lower release line. If you fixed an issue in a release line and there is a supported lower version, create a pull request to that lower release line to address the issue. For example, you may have contributed a fix to 2.3 and back-port to 2.2 and 2.1.
 
-**Up-ports** (or Forwardports) contribute your code and fixes to a higher release line. You want to create an up-port if the issue exists in a higher release line. If you have an issue fixed in a non-latest release line, create a pull request to the latest branch in order to address that issue in an upcoming minor release. For example, you may have contributed a fix to 2.2 and up-port to 2.3. We recommend contributors create an up-port for every pull request delivered to a lower release line.
+**Forward-ports** (or up-ports) contribute your code and fixes to a more current release line. Create a forward port if you fix an issue in an earlier release that also affects a more current release line. For example, if you have fixed an issue in 2.2, create a pull request to the latest release branch to address that issue in an upcoming minor release. If you contribute a fix to 2.2, create a pull request to forward port the change to the 2.3 branch. We recommend that contributors create a pull request to forward port every fix delivered to an earlier release line.
 
 ### Magento Porting Tool {#porting-tool}
 
