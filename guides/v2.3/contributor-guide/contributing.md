@@ -68,7 +68,7 @@ Please review the following supported and accepted pull request rules. We define
   * Unit/integration test coverage (we will be releasing more information about writing test coverage in the near future).
   * Follow the [Magento DevDocs contribution work flow and guidelines](https://github.com/magento/devdocs/blob/master/.github/CONTRIBUTING.md) to submit proposed documentation updates to the [Magento DevDocs Github repository](https://github.com/magento/devdocs).
 1. For large features or changes, [open an issue](https://github.com/magento/magento2/issues) to discuss your proposal first.  Notifying us in advance can prevent duplicate or unnecessary effort, and also offers an opportunity to get additional background information and help from other contributors. 
-1. To report a bug, please [open an issue](https://github.com/magento/magento2/issues), and follow these [guidelines about bugfix issues](https://github.com/magento/magento2/wiki/Issue-reporting-guidelines).
+1. To report a bug, [open an issue](https://github.com/magento/magento2/issues), and follow the [Issue reporting guidelines](https://github.com/magento/magento2/wiki/Issue-reporting-guidelines).
 1. Verify that all automated tests on your pull request pass successfully–all builds on [Travis CI](https://travis-ci.org/magento/magento2) must be green.
 
 ## Forks and Pull Requests
