@@ -6,11 +6,11 @@ title: Code Contributions
 The following topics are included in this guide:
 
 - [Contribute to Magento 2 code](#contribute)
-- [GitHub and Two-Factor Authentication](#two-factor)
+- [GitHub and Two-Factor authentication](#two-factor)
 - [Questions or enhancement requests?](#question)
 - [Accepted pull requests and ported code](#rules)
 - [Contribution requirements](#requirements)
-- [Forks and Pull Requests](#forks-and-pull-requests)
+- [Forks and pull requests](#forks-and-pull-requests)
 - [Magento Contributor Assistant](#contributor-assist)
 - [Porting code contributions across Magento versions](#porting)
 - [Report an issue](#report)
@@ -34,7 +34,7 @@ When the Community Engineering Team works on reviewing the suggested changes, we
 {:.bs-callout .bs-callout-tip}
 Refer to [Magento Contributor Agreement](http://www.magento.com/legaldocuments/mca) for detailed information about the License Agreement. All contributors are required to submit a click-through form to agree to the terms.
 
-## GitHub and Two-Factor Authentication {#two-factor}
+## GitHub and Two-Factor authentication {#two-factor}
 
 When setting up access and tokens for Magento GitHub repositories, we recommend adding Two-Factor Authentication (2FA) to enhance security. 2FA adds an additional layer of security beyond just a username/password when you access GitHub, to protect your private and public repositories.
 
@@ -81,7 +81,7 @@ For complete information about contributing to Magento projects, see the [Beginn
 - Create tests
 - Submit a pull request
 
-## Magento Contributor Assistant {#contributor-assist}
+## Magento contributor assistant {#contributor-assist}
 
 The Magento Contributor Assistant is a bot that currently runs on the GitHub `magento/magento2` repository. It helps automate different issue and pull request workflows using commands entered as comments.
 
