@@ -68,6 +68,7 @@ mutation {
           code
           label
         }
+        address_type
       }
     }
   }
@@ -102,7 +103,8 @@ mutation {
             "country": {
               "code": "US",
               "label": "US"
-            }
+            },
+            "address_type": "SHIPPING"
           }
         ]
       }
@@ -195,6 +197,7 @@ mutation {
           code
           label
         }
+        address_type
       }
     }
   }
@@ -227,7 +230,8 @@ mutation {
             "country": {
               "code": "US",
               "label": "US"
-            }
+            },
+            "address_type": "SHIPPING"
           }
         ]
       }

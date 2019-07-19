@@ -45,8 +45,7 @@ mutation {
         selected_shipping_method {
           carrier_code
           method_code
-          carrier_title
-          method_title
+          label
         }
       }
     }
@@ -66,8 +65,7 @@ mutation {
             "selected_shipping_method": {
               "carrier_code": "ups",
               "method_code": "GND",
-              "carrier_title": "United Parcel Service",
-              "method_title": "Ground"
+              "label": "United Parcel Service - Ground"
             }
           }
         ]
