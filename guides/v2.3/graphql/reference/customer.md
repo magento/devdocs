@@ -108,8 +108,9 @@ The `store_credit` object contains store credit information, including the balan
 
 Attribute |  Data Type | Description
 --- | --- | ---
+`balance_history` | [`CustomerStoreCreditHistory`](#CustomerStoreCreditHistory) | Lists changes to the amount of store credit available to the customer. If the history or store credit feature is disabled, then a null value will be returned.<br/><br/>You can specify the following optional parameters to control paging in the output.<br/><br/>`pageSize` - An integer that specifies the maximum number of results to return at once. The default value is 20.<br/><br/>`currentPage` - An integer that Specifies which page of the results to return. The default value is 1
 `current_balance` | Money | The current store credit balance
-`balance_history` | [`CustomerStoreCreditHistory`](#CustomerStoreCreditHistory) | Lists changes to the amount of store credit available to the customer. You can specify the following optional parameters to control paging in the output.<br/><br/>`pageSize` - An integer that specifies the maximum number of results to return at once. The default value is 20.<br/><br/>`currentPage` - An integer that Specifies which page of the results to return. The default value is 1
+`enabled` | Boolean | Indicates whether store credits are enabled. If the feature is disabled, then the balance will not be returned
 
 ### CustomerStoreCreditHistory attributes {#CustomerStoreCreditHistory}
 
@@ -206,6 +207,7 @@ query {
     firstname
     lastname
     store_credit {
+      enabled
       balance_history(pageSize: 10) {
         items {
           action
@@ -241,9 +243,10 @@ query {
 {
   "data": {
     "customer": {
-      "firstname": "Veronica",
-      "lastname": "Costello",
+      "firstname": "John",
+      "lastname": "Doe",
       "store_credit": {
+        "enabled": true,
         "balance_history": {
           "items": [
             {

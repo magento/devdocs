@@ -6,9 +6,12 @@ ee_only: true
 
 The `applyStoreCreditToCart` mutation applies store credit to the specified cart.
 
-Store credit is an amount that the merchant applies to a customer account as a result of a refund or similar transaction. A customer can use store credit to pay for purchases.
+Store credit is an amount that the merchant applies to a customer account as a result of a refund or similar transaction. If gift cards are enabled for a store, then a customer receives store credit when redeeming a gift card. No matter how the customer obtains store credit, these funds can be used to pay for purchases.
 
 The amount returned in the `current_balance` indicates how much store credit at the time you run the `applyStoreCreditToCart` mutation. This amount is not decreased until you place the order.
+
+{:.bs-callout .bs-callout-info}
+If the amount of available store credit equals or exceeds the grand total of the quote, set the payment method to `free` in the `setPaymentMethodOnCart` mutation.
 
 ## Syntax
 
