@@ -25,7 +25,7 @@ Connect with Magento Contributors and Maintainers to learn more about Magento co
 
 We use the [fork and pull](#forks-and-pull-requests) model to contribute to the Magento 2 codebase. This method allows contributors to maintain their own copy of the forked codebase, which can be easily synced with the main copy. The forked repository is then used to submit a pull request to the base repository to merge a set of changes from the fork into the main repository.
 
-Contributions can take the form of new components or features, changes to existing features, tests, documentation (such as developer guides, user guides, examples, or specifications), bug fixes, optimizations, or just good suggestions. We recommend also creating back-ports and forward-ports (up-ports) as needed with your pull requests if the issue occurs in higher or lower line releases.
+Contributions can take the form of new components or features, changes to existing features, tests, documentation (such as developer guides, user guides, examples, or specifications), bug fixes, optimizations, or just good suggestions. We also recommend creating pull requests to back-port and forward-port (up-ports) your code changes to other releases as needed. See [Porting code contributions across Magento versions](#porting).
 
 The Community Engineering Team reviews all issues and contributions submitted by the community developers. During the review we might require clarifications from the contributor. If there is no response from the contributor in two weeks (14 days) time, the issue is closed.
 
@@ -35,7 +35,6 @@ When the Community Engineering Team works on reviewing the suggested changes, we
 Refer to [Magento Contributor Agreement](http://www.magento.com/legaldocuments/mca) for detailed information about the License Agreement. All contributors are required to submit a click-through form to agree to the terms.
 
 ## GitHub and Two-Factor authentication {#two-factor}
-
 
 Magento **requires all Partners** who contribute code to enable 2FA on their GitHub accounts. You can use a mobile device or 2FA application for added protection. See [Configuring two-factor authentication](https://help.github.com/en/articles/configuring-two-factor-authentication) in the GitHub help.
 
@@ -52,7 +51,7 @@ Submit feature requests or enhancement suggestions to the [Magento 2 Feature Req
 
 {% include contributor/2-2-submission.md %}
 
-Please review the following supported and accepted pull request rules. We defined these rules to simplify and accelerate your submissions, follow code consistency, manage current and backlog tasks, and so on.
+Review the following supported and accepted pull request rules. We defined these rules to simplify and accelerate your submissions, ensure code consistency, manage current and backlog tasks, and so on.
 
 {% include contributor/pull-request-table.md %}
 
@@ -174,29 +173,30 @@ The command merges the listed related pull requests (`xxx`, `yyy`, `zzz`) into t
 
 ## Porting code contributions across Magento versions {#porting}
 
-To maintain consistency between Magento release lines (2.2, 2.3, etc), there are two techniques of code delivery: back-port and/or up-port. Every Magento contributor who wants to deliver their solution across all Magento versions faces the same problem. How do you port fixes easily?
+To maintain consistency between Magento releases (2.2, 2.3, and so on), there are two techniques of code delivery: back-port and/or forward-port (up-port). Every Magento contributor who wants to deliver their solution across all Magento versions faces the same problem. How do you port fixes easily?
 
-We provide two options to create back-ports and up-ports for your code contributions:
+We provide two options to create back-ports and forward-ports for your code contributions:
 
 - [Magento Porting Tool](#porting-tool) - Quick and easy method with a few clicks in a Magento tool
 - [Manual porting](#porting-manual) - Manual process requiring a strong understanding of Git
 
 {: .bs-callout-info }
-Creating back-ports and up-ports are recommended and a best practice, but not required to contribute code. Anyone can create a back-port and up-port for a merged pull request, however, original pull request authors receive higher priority if there are duplicate ports.
+Creating back-ports and forward-ports are recommended and a best practice, but not required to contribute code. Anyone can create a back-port and forward-port for a merged pull request, however, original pull request authors receive higher priority if there are duplicate ports.
 
 ### What are forward-ports and back-ports?
 
-As a best practice, we recommend creating back-ports and up-ports for your code contributions.
+As a best practice, we recommend creating back-ports and forward-ports for your code contributions.
 
-**Back-ports** (or backports) contribute your code and fixes to previous releases. Create a back-port if you fix an issue in the current release that also affects an earlier release. For example, if you fix an issue in 2.3, create a pull request to the 2.2 release branch to backport your changes to that release. 
+**Back-ports** (or backports) contribute your code and fixes to previous release lines. Create a back-port if you fix an issue in the current release line that also affects an earlier release. For example, if you fix an issue in 2.3, create a pull request against the 2.2 
+branch to apply your changes to that release. 
 
-**Forward-ports** (or up-ports) contribute your code and fixes to a more current release line. Create a forward port if you fix an issue in an earlier release that also affects a more current release line. For example, if you have fixed an issue in 2.2, create a pull request to the latest release branch to address that issue in an upcoming minor release. If you contribute a fix to 2.2, create a pull request to forward port the change to the 2.3 branch. We recommend that contributors create a pull request to forward port every fix delivered to an earlier release line.
+**Forward-ports** (or up-ports) contribute your code and fixes to a more current release line. Create a forward port if you fix an issue in an earlier release line that also affects a more current release. For example, if you have fixed an issue in 2.2, create a pull request against the latest release branch to address that issue in an upcoming minor release. If you contribute a fix to 2.2, create a pull request against the 2.3 release branch to apply your changes to that release. We recommend that contributors create a pull request to forward port every fix delivered to an older release line.
 
 ### Magento porting tool {#porting-tool}
 
-This tool ports fixes automatically across versions with a few simple steps. It allows you to create ports only for _merged_ pull requests.
+This tool ports fixes automatically across release lines with a few simple steps. It allows you to create ports only for _merged_ pull requests.
 
-Access the tool at [porting.engcom.dev.magento.com](https://porting.engcom.dev.magento.com/). The first time you visit, you must log in and authorize with GitHub credentials. The tool performs all actions using your token.
+Access the tool at [porting.engcom.dev.magento.com](https://porting.engcom.dev.magento.com/). The first time you visit, you must log in and authenticate with GitHub credentials. The tool performs all actions using your token.
 
 1. Visit [porting.engcom.dev.magento.com](https://porting.engcom.dev.magento.com/) and **Login with GitHub**.
 1. Copy and paste the pull request URL in **Select Pull Request for porting** and click **Next**.
