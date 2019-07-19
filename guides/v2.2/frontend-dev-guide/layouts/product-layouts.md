@@ -30,7 +30,7 @@ Layout file | Description
 `checkout_cart_configure_type_configurable.xml` | Layout from this file is applied to `configurable` product only
 `checkout_cart_configure_type_downloadable.xml` | Layout from this file is applied to `downloadable` product only
 `checkout_cart_configure_type_simple.xml` | Layout from this file is applied to `simple` product only
-`checkout_cart_item_renderers.xml` | Layout from this file is applied to renderers cart page items
+`checkout_cart_item_renderers.xml` | Layout from this file is applied to renderer's cart page items
 
 ## Wishlist item configure page
 
