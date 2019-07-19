@@ -1,1 +1,1 @@
-../../../v2.2/cloud/env/setup-notifications.md
+../../../../guides/v2.2/cloud/env/setup-notifications.md

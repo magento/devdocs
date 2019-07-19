@@ -1,1 +1,1 @@
-../../../v2.2/cloud/setup/first-time-setup-import-first-steps.md
+../../../../guides/v2.2/cloud/setup/first-time-setup-import-first-steps.md

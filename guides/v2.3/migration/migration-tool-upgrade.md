@@ -1,1 +1,1 @@
-../../v2.2/migration/migration-tool-upgrade.md
+../../../guides/v2.2/migration/migration-tool-upgrade.md

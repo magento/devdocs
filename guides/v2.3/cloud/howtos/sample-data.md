@@ -1,1 +1,1 @@
-../../../v2.2/cloud/howtos/sample-data.md
+../../../../guides/v2.2/cloud/howtos/sample-data.md

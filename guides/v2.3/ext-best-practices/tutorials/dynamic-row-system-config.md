@@ -1,1 +1,1 @@
-../../../v2.2/ext-best-practices/tutorials/dynamic-row-system-config.md
+../../../../guides/v2.2/ext-best-practices/tutorials/dynamic-row-system-config.md

@@ -1,1 +1,1 @@
-../../../../v2.2/comp-mgr/trouble/cman/doc.md
+../../../../../guides/v2.2/comp-mgr/trouble/cman/doc.md

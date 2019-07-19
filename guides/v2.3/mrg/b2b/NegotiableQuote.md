@@ -31,9 +31,9 @@ The module does not create any backward incompatible changes. Can be deactivated
  
 ## Extensibility
  
-Magento_NegotiableQuote uses Extensible attributes to extend Magento_Quote. For more information about the Magento extensible attributes, see [Adding extension attributes to entity](http://devdocs.magento.com/guides/v2.1/extension-dev-guide/extension_attributes/adding-attributes.html).
+Magento_NegotiableQuote uses Extensible attributes to extend Magento_Quote. For more information about the Magento extensible attributes, see [Adding extension attributes to entity]({{ page.baseurl }}/extension-dev-guide/extension_attributes/adding-attributes.html).
 
-Extension developers can interact with the Magento_NegotiableQuote module. For more information about the Magento extension mechanism, see [Magento plug-ins](http://devdocs.magento.com/guides/v2.2/extension-dev-guide/plugins.html).
+Extension developers can interact with the Magento_NegotiableQuote module. For more information about the Magento extension mechanism, see [Magento plug-ins]({{ page.baseurl }}/extension-dev-guide/plugins.html).
  
 [The Magento dependency injection mechanism](http://devdocs.magento.com/guides/v2.2/extension-dev-guide/depend-inj.html) enables you to override the functionality of the Magento_NegotiableQuote module.
 

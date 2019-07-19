@@ -10,7 +10,7 @@ functional_areas:
   - Checkout
 ---
 
-You can add new fields to default {% glossarytooltip 278c3ce0-cd4c-4ffc-a098-695d94d73bde %}checkout{% endglossarytooltip %} forms, such as shipping address or billing address forms. To illustrate this ability, this topic describes adding a field to the shipping address form.
+You can add new fields to default [checkout](https://glossary.magento.com/checkout) forms, such as shipping address or billing address forms. To illustrate this ability, this topic describes adding a field to the shipping address form.
 
 To add your custom field to the checkout address form and access its value on the client side:
 
@@ -52,6 +52,7 @@ $customField = [
     'filterBy' => null,
     'customEntry' => null,
     'visible' => true,
+    'value' => '' // value field is used to set a default value of the attribute
 ];
 
 $jsLayout['components']['checkout']['children']['steps']['children']['shipping-step']['children']['shippingAddress']['children']['shipping-address-fieldset']['children'][$customAttributeCode] = $customField;
@@ -59,7 +60,7 @@ $jsLayout['components']['checkout']['children']['steps']['children']['shipping-s
 
 Via the previous example, the field is added to the `customAttributes` property of `'Magento_Checkout/js/model/new-customer-address.js`, a JavaScript object that lists all predefined address attributes and matches the corresponding server-side interface `\Magento\Quote\Api\Data\AddressInterface`.
 
-The `customAttributes` property was designed to contain custom EAV address attributes and is related to the `\Magento\Quote\Model\Quote\Address\CustomAttributeListInterface::getAttributes` method. The sample code above will automatically handle local storage persistence on the {% glossarytooltip b00459e5-a793-44dd-98d5-852ab33fc344 %}frontend{% endglossarytooltip %}.
+The `customAttributes` property was designed to contain custom EAV address attributes and is related to the `\Magento\Quote\Model\Quote\Address\CustomAttributeListInterface::getAttributes` method. The sample code above will automatically handle local storage persistence on the [frontend](https://glossary.magento.com/frontend).
 
 Optionally, instead of adding a plugin, you can use a [dependency injection (DI)]({{ page.baseurl }}/extension-dev-guide/depend-inj.html). To use a DI, add the `LayoutProcessor`, which adds the custom field to the address form class, to the `<your_module_dir>/Block/Checkout/` directory. The class must implement the `\Magento\Checkout\Block\Checkout\LayoutProcessorInterface` interface. Use the code sample above as an example of the `\Magento\Checkout\Block\Checkout\LayoutProcessorInterface::process()` method implementation.
 
@@ -77,7 +78,7 @@ To add your `LayoutProcessor` class the corresponding pool of processors, specif
 
 ## Step 2: Add a JS mixin to modify data submission {#mixin}
 
-Add a JS {% glossarytooltip 1a305bdb-9be8-44aa-adad-98758821d6a7 %}mixin{% endglossarytooltip %}, to the {% glossarytooltip ebe2cd14-d6d4-4d75-b3d7-a4f2384e5af9 %}server side{% endglossarytooltip %}, to change the behavior of the component responsible for the data submission.
+Add a JS [mixin](https://glossary.magento.com/mixin), to the [server side](https://glossary.magento.com/server-side), to change the behavior of the component responsible for the data submission.
 
 In your custom module, define a mixin as a separate AMD module that returns a callback function. Add the mixin file anywhere in the `<your_module_dir>/view/frontend/web` directory. There are no strict requirements for the mixin file naming.
 
@@ -111,7 +112,7 @@ define([
 
 When adding a field to the billing address form, you must modify the behavior of the `Magento_Checkout/js/action/place-order` or `Magento_Checkout/js/action/set-payment-information` component, depending on when do you need the custom field valued to be passed to the server side.
 
-To see an example of a mixing that modifies one of these components, see the [place-order-mixin.js]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/CheckoutAgreements/view/frontend/web/js/model/place-order-mixin.js) in the Magento_CheckoutAgreements {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}.
+To see an example of a mixing that modifies one of these components, see the [place-order-mixin.js]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/CheckoutAgreements/view/frontend/web/js/model/place-order-mixin.js) in the Magento_CheckoutAgreements [module](https://glossary.magento.com/module).
 
 ## Step 3: Load your mixin {#load_mixin}
 
@@ -156,10 +157,46 @@ If you completed all the steps described in the previous sections, Magento will 
 You can set/get these attributes values by creating an instance of the  `Magento/Quote/Api/Data/AddressInterface.php interface`.
 
 ```php
-$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
-$addressInformation = $objectManager->create('Magento\Checkout\Api\Data\ShippingInformationInterface');
-$extAttributes = $addressInformation->getExtensionAttributes();
-$selectedShipping = $extAttributes->getCustomShippingCharge(); //get custom attribute data.
+<?php
+
+// ... //
+
+use Magento\Checkout\Api\Data\ShippingInformationInterface;
+use Magento\Framework\View\Element\Template;
+use Magento\Framework\View\Element\Template\Context;
+
+class MyBlock extends Template {
+
+    /**
+     * @var ShippingInformationInterface
+     */
+    private $_addressInformation;
+
+    /**
+     * @param Context $context
+     * @param ShippingInformationInterface $addressInformation
+     * @param array $data
+     */
+    public function __construct(
+        Context $context,
+        ShippingInformationInterface $addressInformation,
+        array $data = []
+    ) {
+        $this->_addressInformation = $addressInformation;
+        parent::__construct($context, $data);
+    }
+
+    /**
+     * Get custom Shipping Charge
+     *
+     * @return String
+     */
+    public function getShippingCharge()
+    {
+        $extAttributes = $this->_addressInformation->getExtensionAttributes();
+        return $extAttributes->getCustomField(); //get custom attribute data.
+    }
+}
 ```
 
 ### Related topics

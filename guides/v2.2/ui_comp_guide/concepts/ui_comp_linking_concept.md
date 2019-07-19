@@ -28,13 +28,31 @@ Example of setting `exports` in a component's `.js` file:
 
 ```json
 {
-  "exports": {
-   "visible": "${ $.provider }:visibility"
+  "defaults": {
+    "exports": {
+      "visible": "${ $.provider }:visibility"
+    }
+  }
+}
+```
+Here `visible` is the `key`, `${ $.provider }:visibility` is the `value`. The value of the local `visible` property is assigned to the `visibility` property of the `provider` component. The latter is changed automatically if the value of `visible` changes if the local `visible` property is observable (which it isn't given only the code example above).
+
+Example of setting `exports` directly using the destination component name:
+
+```json
+{
+  "defaults": {
+    "exports": {
+      "items": "checkout.sidebar.summary.cart_items:items"
+    }
   }
 }
 ```
 
-Here `visible` is the `key`, `${ $.provider }:visibility` is the `value`. The value of the local `visible` property is assigned to the `visibility` property of the `provider` component. The latter is changed automatically if the value of `visible` changes if the local `visible` property is observable (which it isn't given only the code example above).
+The syntax for the destination component name is determined by the hierarchy in the XML handle. Separate parent names with a `.` (dot) followed by the component name.
+
+{:.bs-callout .bs-callout-info}
+To retrieve the full name of the destination component name, open your browser in developer mode, select the element that you want on the **Elements** tab, go to the **Console** tab, and execute the following code: `require('ko').contextFor($0).$data.name`.
 
 Example of setting `exports` in a component's configuration `.xml` file:
 
@@ -60,8 +78,10 @@ Example of using `imports` in a component's `.js` file:
 
 ```json
 {
-  "imports": {
-   "visible": "${ $.provider }:visibility"
+  "defaults": {
+    "imports": {
+      "visible": "${ $.provider }:visibility"
+    }
   }
 }
 ```
@@ -93,8 +113,10 @@ Example of using `links` in a component's `.js` file:
 
 ```json
 {
-  "links": {
-   "visible": "${ $.provider }:visibility"
+  "defaults": {
+    "links": {
+      "visible": "${ $.provider }:visibility"
+    }
   }
 }
 ```
@@ -118,15 +140,17 @@ For an example of `links` usage in Magento code see [`text.js`, line 19]({{ site
 ## `listens` property
 The `listens` property is used to track the changes of a component's property. `listens`'s value is an object, composed of the following:
 
-  - `key`: name of the observable property or method which is tracked for changes. 
-  - `value`: name of the internal method or property which listens to the changes. Can use [string templates](#string_templ).
+  - `key`: name of the observable property or method which is tracked for changes. Can use [string templates](#string_templ).
+  - `value`: name of the internal method or property which listens to the changes.
 
 Example of using `listens` in a component's `.js` file :
 
 ```json
 {
-  "listens": {
-   "${ $.provider }:visibility": "visibilityChanged"
+  "defaults": {  
+    "listens": {
+      "${ $.provider }:visibility": "visibilityChanged"
+    }
   }
 }
 ```

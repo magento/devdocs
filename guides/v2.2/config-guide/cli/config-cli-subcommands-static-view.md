@@ -11,11 +11,11 @@ functional_areas:
 
 ## Overview of static view files deployment {#config-cli-static-overview}
 
-The static view files deployment command enables you to write {% glossarytooltip 363662cb-73f1-4347-a15e-2d2adabeb0c2 %}static files{% endglossarytooltip %} to the Magento file system when the Magento software is set for [production mode]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html#production-mode).
+The static view files deployment command enables you to write [static files](https://glossary.magento.com/static-files) to the Magento file system when the Magento software is set for [production mode]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html#production-mode).
 
 The term *static view file* refers to the following:
 
--   "Static" means it can be cached for a site (that is, the file is not dynamically generated). Examples include images and {% glossarytooltip 6c5cb4e9-9197-46f2-ba79-6147d9bfe66d %}CSS{% endglossarytooltip %} generated from LESS.
+-   "Static" means it can be cached for a site (that is, the file is not dynamically generated). Examples include images and [CSS](https://glossary.magento.com/css) generated from LESS.
 -   "View" refers to presentation layer (from MVC).
 
 Static view files are located in the `<magento_root>/pub/static` directory, and some are cached in the `<magento_root>/var/view_preprocessed` directory as well.
@@ -34,7 +34,7 @@ You must write static view files to the Magento file system manually using the c
 
 To deploy static view files:
 
-1.  Log in to the Magento server as, or [switch to]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html), the {% glossarytooltip 5e7de323-626b-4d1b-a7e5-c8d13a92c5d3 %}Magento file system owner{% endglossarytooltip %}.
+1.  Log in to the Magento server as, or [switch to]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html), the [Magento file system owner](https://glossary.magento.com/magento-file-system-owner).
 2.  Delete the contents of `<magento_root>/pub/static`, except for the `.htaccess` file. Do not delete this file.
 3.  Run the static view files deployment tool `<magento_root>/bin/magento setup:static-content:deploy`.
 <!-- 4.	Set read-only file permissions for the `pub/static` directory, its subdirectories, and files. -->
@@ -272,7 +272,7 @@ Following are some example commands.
 
 #### Excluding a theme and HTML minification
 
-The following command deploys {% glossarytooltip a3e37235-4e8b-464f-a19d-4a120560206a %}static content{% endglossarytooltip %} for the US English (`en_US`) language, excludes the Luma {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} provided with Magento, and does not minify {% glossarytooltip a2aff425-07dd-4bd6-9671-29b7edefa871 %}HTML{% endglossarytooltip %} files.
+The following command deploys [static content](https://glossary.magento.com/static-content) for the US English (`en_US`) language, excludes the Luma [theme](https://glossary.magento.com/theme) provided with Magento, and does not minify [HTML](https://glossary.magento.com/html) files.
 
     bin/magento setup:static-content:deploy en_US --exclude-theme Magento/luma --no-html-minify
 
@@ -295,7 +295,7 @@ Sample output:
 
 #### Generating static view files for one theme and one area
 
-The following command generates static view files for all languages, the {% glossarytooltip b00459e5-a793-44dd-98d5-852ab33fc344 %}frontend{% endglossarytooltip %} area only, the Magento Luma theme only, without generating fonts:
+The following command generates static view files for all languages, the [frontend](https://glossary.magento.com/frontend) area only, the Magento Luma theme only, without generating fonts:
 
     bin/magento setup:static-content:deploy --area frontend --no-fonts --theme Magento/luma
 

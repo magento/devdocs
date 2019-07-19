@@ -1,1 +1,1 @@
-../../../v2.2/extension-dev-guide/build/component-registration.md
+../../../../guides/v2.2/extension-dev-guide/build/component-registration.md

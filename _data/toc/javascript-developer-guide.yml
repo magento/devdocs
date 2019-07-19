@@ -55,6 +55,9 @@ pages:
         - label: Confirmation widget
           url: /javascript-dev-guide/widgets/widget_confirm.html
 
+        - label: Dropdown widget
+          url: /javascript-dev-guide/widgets/widget_dropdown.html
+
         - label: DropdownDialog widget
           url: /javascript-dev-guide/widgets/widget_dialog.html
 
@@ -79,7 +82,7 @@ pages:
         - label: Navigation widget
           url: /javascript-dev-guide/widgets/widget_navigation.html
 
-        - label: PasswordStrengthIndicator widge
+        - label: PasswordStrengthIndicator widget
           url: /javascript-dev-guide/widgets/widget_password_strength_indicator.html
 
         - label: Prompt widget
@@ -88,5 +91,11 @@ pages:
         - label: QuickSearch widget
           url: /javascript-dev-guide/widgets/widget_quickSearch.html
 
+        - label: RedirectUrl widget
+          url: /javascript-dev-guide/widgets/widget_redirectUrl.html
+
         - label: Tabs widget
           url: /javascript-dev-guide/widgets/widget_tabs.html
+
+        - label: ToggleAdvanced widget
+          url: /javascript-dev-guide/widgets/widget_toggle.html

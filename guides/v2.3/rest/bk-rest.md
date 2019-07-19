@@ -1,7 +1,7 @@
 ---
 group: rest-api
 subgroup: A_rest
-title: Overview
+title: REST API Overview
 landing-page: REST API
 menu_title: Overview
 menu_order: 1
@@ -10,7 +10,7 @@ functional_areas:
   - Integration
 ---
 
-The [REST API documentation][] published here on the Magento 2 Developer Documentation {% glossarytooltip a3c8f20f-b067-414e-9781-06378c193155 %}website{% endglossarytooltip %} describes the REST APIs that are available on the latest release of Magento 2.
+The [REST API documentation][] published here on the Magento 2 Developer Documentation [website](https://glossary.magento.com/website) describes the REST APIs that are available on the latest release of Magento 2.
 
 This documentation uses [ReDoc][] to organize and present schema files that follow an [Open-API specifications][].
 The schema files this tool uses are generated from a running instance of Magento {{page.guide_version}}, and

@@ -1,1 +1,1 @@
-../../v2.2/get-started/gs-curl.md
+../../../guides/v2.2/get-started/gs-curl.md

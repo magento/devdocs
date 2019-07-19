@@ -1,1 +1,1 @@
-../../v2.2/extension-dev-guide/module-development.md
+../../../guides/v2.2/extension-dev-guide/module-development.md
