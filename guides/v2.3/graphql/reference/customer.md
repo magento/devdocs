@@ -100,7 +100,7 @@ In {{site.data.var.ee}}, the merchant can assign store credit to customers. Mage
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`store_credit` | [CustomerStoreCredit](#CustomerStoreCredit) | Contains the store credit information for the logged in customer
+`store_credit` | [CustomerStoreCredit](#CustomerStoreCredit) | Contains the store credit information for the logged-in customer
 
 ### CustomerStoreCredit attributes {#CustomerStoreCredit}
 
@@ -123,6 +123,8 @@ Attribute |  Data Type | Description
 `total_count` | Int | The number of items returned
 
 ### CustomerStoreCreditHistoryItem attributes {#CustomerStoreCreditHistoryItem}
+
+The `CustomerStoreCreditHistoryItem` object contains information about a specific change to the customer's store credit.
 
 Attribute |  Data Type | Description
 --- | --- | ---
@@ -197,7 +199,7 @@ The following call returns information about the logged-in customer. Provide the
 }
 ```
 
-The following example returns the store credit history for the logged in user.
+The following example returns the store credit history for the logged-in user.
 
 **Request**
 
