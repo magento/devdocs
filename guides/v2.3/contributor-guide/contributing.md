@@ -6,11 +6,11 @@ title: Code Contributions
 The following topics are included in this guide:
 
 - [Contribute to Magento 2 code](#contribute)
-- [GitHub and Two-Factor Authentication](#two-factor)
+- [GitHub and Two-Factor authentication](#two-factor)
 - [Questions or enhancement requests?](#question)
 - [Accepted pull requests and ported code](#rules)
 - [Contribution requirements](#requirements)
-- [Forks and Pull Requests](#forks-and-pull-requests)
+- [Forks and pull requests](#forks-and-pull-requests)
 - [Magento Contributor Assistant](#contributor-assist)
 - [Porting code contributions across Magento versions](#porting)
 - [Report an issue](#report)
@@ -36,7 +36,6 @@ Refer to [Magento Contributor Agreement](http://www.magento.com/legaldocuments/m
 
 ## GitHub and Two-Factor Authentication {#two-factor}
 
-When setting up access and tokens for Magento GitHub repositories, we recommend adding Two-Factor Authentication (2FA) to enhance security. 2FA adds an additional layer of security beyond just a username/password when you access GitHub, to protect your private and public repositories.
 
 Magento **requires all Partners** who contribute code to enable 2FA on their Github accounts. You can use a mobile device or 2FA application for added protection. See [Configuring two-factor authentication](https://help.github.com/en/articles/configuring-two-factor-authentication) in the GitHub help.
 
@@ -70,7 +69,7 @@ Please review the following supported and accepted pull request rules. We define
 1. To report a bug, [open an issue](https://github.com/magento/magento2/issues), and follow the [Issue reporting guidelines](https://github.com/magento/magento2/wiki/Issue-reporting-guidelines).
 1. Verify that all automated tests on your pull request pass successfully–all builds on [Travis CI](https://travis-ci.org/magento/magento2) must be green.
 
-## Forks and Pull Requests
+## Forks and pull requests
 
 For complete information about contributing to Magento projects, see the [Beginner Guides](https://github.com/magento/magento2/wiki/Getting-Started) on the Magento 2 repository. These guides help you:
 

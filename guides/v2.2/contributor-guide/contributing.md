@@ -36,7 +36,6 @@ Refer to [Magento Contributor Agreement](http://www.magento.com/legaldocuments/m
 
 ## GitHub and Two-Factor authentication {#two-factor}
 
-When setting up access and tokens for Magento GitHub repositories, we recommend adding Two-Factor Authentication (2FA) to enhance security. 2FA adds an additional layer of security beyond just a username/password when you access GitHub, to protect your private and public repositories.
 
 Magento **requires all Partners** who contribute code to enable 2FA on their GitHub accounts. You can use a mobile device or 2FA application for added protection. See [Configuring two-factor authentication](https://help.github.com/en/articles/configuring-two-factor-authentication) in the GitHub help.
 
@@ -193,7 +192,7 @@ As a best practice, we recommend creating back-ports and up-ports for your code 
 
 **Forward-ports** (or up-ports) contribute your code and fixes to a more current release line. Create a forward port if you fix an issue in an earlier release that also affects a more current release line. For example, if you have fixed an issue in 2.2, create a pull request to the latest release branch to address that issue in an upcoming minor release. If you contribute a fix to 2.2, create a pull request to forward port the change to the 2.3 branch. We recommend that contributors create a pull request to forward port every fix delivered to an earlier release line.
 
-### Magento Porting Tool {#porting-tool}
+### Magento porting tool {#porting-tool}
 
 This tool ports fixes automatically across versions with a few simple steps. It allows you to create ports only for _merged_ pull requests.
 
