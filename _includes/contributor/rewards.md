@@ -76,8 +76,8 @@ Each PR can earn one of the following additional achievements. If you entered an
 
 Achievement | Points | Description
 | ------------ | --- | --- |
-New topic | 30 | New topic submissions for content that has never existed on DevDocs such as tutorials, references, instructions, etc
+New topic | 30 | New topic submissions for content that has never existed on DevDocs such as tutorials, references, instructions, and so on
 Major update | 20 | Significant updates to existing content, such as a new section or examples with sample code
-Technical | 10 | Updates to code or processes that alter the technical content of the document such as code snippets, reference documentation, parameter names and values, etc
+Technical | 10 | Updates to code or processes that alter the technical content of the document such as code snippets, reference documentation, parameter names and values, and so on
 
 If the PR earns recognition for significant updates and additions to the documentation, it may also receive a special achievement for an additional 20 points.
