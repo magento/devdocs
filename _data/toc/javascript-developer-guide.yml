@@ -79,6 +79,9 @@ pages:
         - label: Navigation widget
           url: /javascript-dev-guide/widgets/widget_navigation.html
 
+        - label: PasswordStrengthIndicator widge
+          url: /javascript-dev-guide/widgets/widget_password_strength_indicator.html
+
         - label: Prompt widget
           url: /javascript-dev-guide/widgets/widget_prompt.html
 
