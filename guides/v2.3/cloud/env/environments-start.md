@@ -1,1 +1,1 @@
-../../../v2.2/cloud/env/environments-start.md
+../../../../guides/v2.2/cloud/env/environments-start.md

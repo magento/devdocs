@@ -1,1 +1,1 @@
-../../v2.2/install-gde/continue-to-verify.md
+../../../guides/v2.2/install-gde/continue-to-verify.md

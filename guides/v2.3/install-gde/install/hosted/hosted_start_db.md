@@ -1,1 +1,1 @@
-../../../../v2.2/install-gde/install/hosted/hosted_start_db.md
+../../../../../guides/v2.2/install-gde/install/hosted/hosted_start_db.md

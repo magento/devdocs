@@ -1,1 +1,1 @@
-../../../v2.2/payments-integrations/vault/enabler.md
+../../../../guides/v2.2/payments-integrations/vault/enabler.md

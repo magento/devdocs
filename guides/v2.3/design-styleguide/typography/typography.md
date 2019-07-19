@@ -1,1 +1,1 @@
-../../../v2.2/design-styleguide/typography/typography.md
+../../../../guides/v2.2/design-styleguide/typography/typography.md

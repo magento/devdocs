@@ -1,1 +1,1 @@
-../../../../v2.2/pattern-library/getting-user-input/select_from_list/select_from_list.md
+../../../../../guides/v2.2/pattern-library/getting-user-input/select_from_list/select_from_list.md

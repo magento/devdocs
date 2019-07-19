@@ -1,1 +1,1 @@
-../../../v2.2/cloud/before/before-workspace-cloud-account.md
+../../../../guides/v2.2/cloud/before/before-workspace-cloud-account.md

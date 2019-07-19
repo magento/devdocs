@@ -1,1 +1,1 @@
-../../../v2.2/mtf/mtf_entities/mtf_handler.md
+../../../../guides/v2.2/mtf/mtf_entities/mtf_handler.md

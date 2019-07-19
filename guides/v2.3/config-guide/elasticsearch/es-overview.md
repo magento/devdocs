@@ -14,7 +14,7 @@ functional_areas:
 
 ## Elasticsearch overview {#overview}
 
-Using [Elasticsearch][] as your {% glossarytooltip 8d40d668-4996-4856-9f81-b1386cf4b14f %}catalog{% endglossarytooltip %} search solution provides the following benefits:
+Using [Elasticsearch][] as your [catalog](https://glossary.magento.com/catalog) search solution provides the following benefits:
 
 * Quick and advanced searches on products in the catalog
 * Support for multiple languages

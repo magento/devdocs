@@ -1,1 +1,1 @@
-../../../v2.2/get-started/authentication/oauth-errors.md
+../../../../guides/v2.2/get-started/authentication/oauth-errors.md

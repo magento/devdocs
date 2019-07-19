@@ -1,1 +1,1 @@
-../../../v2.2/payments-integrations/vault/token-ui-component-provider.md
+../../../../guides/v2.2/payments-integrations/vault/token-ui-component-provider.md

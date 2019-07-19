@@ -4,14 +4,13 @@ subgroup: Web APIs
 title: Create an integration
 menu_title: Create an integration
 menu_order: 1
-redirect_from: /guides/v2.2/howdoi/webapi/integration.html
 
 ---
 
 
 An **integration** enables third-party services to call the Magento web APIs. The Magento APIs currently supports Accounting, Enterprise Resource Planning (ERP), Customer Relationship Management (CRM), Product Information Management (PIM), and marketing automation systems out of the box.
 
-Implementing a simple integration requires little knowledge of {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} or Magento internal processes. However, you will need a working knowledge of
+Implementing a simple integration requires little knowledge of [PHP](https://glossary.magento.com/php) or Magento internal processes. However, you will need a working knowledge of
 
 * [Magento REST or SOAP Web APIs]({{ page.baseurl }}/get-started/bk-get-started-api.html)
 * [Web API authentication]({{ page.baseurl }}/get-started/authentication/gs-authentication.html)
@@ -51,7 +50,7 @@ To develop a module, you must:
    </tr>
    <tr>
    <td>name</td>
-   <td>A string that uniquely identifies the {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}.</td>
+   <td>A string that uniquely identifies the [module](https://glossary.magento.com/module).</td>
    </tr>
    <tr>
    <td>setup_version</td>
@@ -182,7 +181,7 @@ Magento provides the Integration module, which simplifies the process of definin
 * Maintaining OAuth authorizations and user data.
 * Managing security tokens and requests.
 
-To customize your module, you must create multiple {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %} files and read through others files to determine what resources existing Magento modules have access to.
+To customize your module, you must create multiple [XML](https://glossary.magento.com/xml) files and read through others files to determine what resources existing Magento modules have access to.
 
 The process for customizing your module includes
 
@@ -212,8 +211,8 @@ Also, you can define your own `etc/acl.xml` file with a custom resource.
 Your module can optionally provide a configuration file `integration.xml` so that the integration can be automatically pre-configured with default values.
 To enable this feature, create the `integration.xml` file in the `etc` directory.
 
-{: .bs-callout .bs-callout-info }
-If you pre-configure the integration, the values cannot be edited from the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}admin{% endglossarytooltip %} panel.
+{: .bs-callout-info }
+If you pre-configure the integration, the values cannot be edited from the [admin](https://glossary.magento.com/admin) panel.
 
 The  file defines which API resources the integration has access to.
 In the following example, the test integration requires access to the following resources in the Sales module:
@@ -252,7 +251,7 @@ In the following example, the test integration requires access to the following 
 </tr>
 <tr>
 <td>endpoint_url</td>
-<td><p>Optional. The {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} where OAuth credentials can be sent when using OAuth for token exchange. We strongly recommend using <code>https://</code>.</p>
+<td><p>Optional. The [URL](https://glossary.magento.com/url) where OAuth credentials can be sent when using OAuth for token exchange. We strongly recommend using <code>https://</code>.</p>
 <p>See <a href="{{ page.baseurl }}/get-started/authentication/gs-authentication-oauth.html">OAuth-based authentication</a> for details.</p></td>
 </tr>
 <tr>
@@ -273,13 +272,13 @@ In the following example, the test integration requires access to the following 
 
 Use the following steps to install your module:
 
-1. Run the following command to update the Magento {% glossarytooltip 66b924b4-8097-4aea-93d9-05a81e6cc00c %}database schema{% endglossarytooltip %} and data.
+1. Run the following command to update the Magento [database schema](https://glossary.magento.com/database-schema) and data.
 
     <code>bin/magento setup:upgrade</code>
 
 2. Run the following command to generate the new code.
 
-   {: .bs-callout .bs-callout-info }
+   {: .bs-callout-info }
    In Production mode, you may receive a message to 'Please rerun Magento compile command'.  Enter the command below. Magento does not prompt you to run the compile command in Developer mode.
 
     <code>bin/magento setup:di:compile</code>

@@ -1,1 +1,1 @@
-../../v2.2/architecture/extensibility.md
+../../../guides/v2.2/architecture/extensibility.md
