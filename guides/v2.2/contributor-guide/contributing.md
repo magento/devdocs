@@ -25,7 +25,7 @@ Connect with Magento Contributors and Maintainers to learn more about Magento co
 
 We use the [fork and pull](#forks-and-pull-requests) model to contribute to the Magento 2 codebase. This method allows contributors to maintain their own copy of the forked codebase, which can be easily synced with the main copy. The forked repository is then used to submit a pull request to the base repository to merge a set of changes from the fork into the main repository.
 
-Contributions can take the form of new components or features, changes to existing features, tests, documentation (such as developer guides, user guides, examples, or specifications), bug fixes, optimizations, or just good suggestions. We recommend also creating back-ports and up-ports as needed with your pull requests if the issue occurs in higher or lower line releases.
+Contributions can take the form of new components or features, changes to existing features, tests, documentation (such as developer guides, user guides, examples, or specifications), bug fixes, optimizations, or just good suggestions. We recommend also creating back-ports and forward-ports (up-ports) as needed with your pull requests if the issue occurs in higher or lower line releases.
 
 The Community Engineering Team reviews all issues and contributions submitted by the community developers. During the review we might require clarifications from the contributor. If there is no response from the contributor in two weeks (14 days) time, the issue is closed.
 
@@ -189,7 +189,7 @@ Creating back-ports and up-ports are recommended and a best practice, but not re
 
 As a best practice, we recommend creating back-ports and up-ports for your code contributions.
 
-**Back-ports** (or backports) contribute your code and fixes to a lower release line. You want to create a back-port if the issue exists in a lower release line. If you fixed an issue in a release line and there is a supported lower version, create a pull request to that lower release line to address the issue. For example, you may have contributed a fix to 2.3 and back-port to 2.2 and 2.1.
+**Back-ports** (or backports) contribute your code and fixes to previous releases. Create a back-port if you fix an issue in the current release that also affects an earlier release. For example, if you fix an issue in 2.3, create a pull request to the 2.2 release branch to backport your changes to that release. 
 
 **Forward-ports** (or up-ports) contribute your code and fixes to a more current release line. Create a forward port if you fix an issue in an earlier release that also affects a more current release line. For example, if you have fixed an issue in 2.2, create a pull request to the latest release branch to address that issue in an upcoming minor release. If you contribute a fix to 2.2, create a pull request to forward port the change to the 2.3 branch. We recommend that contributors create a pull request to forward port every fix delivered to an earlier release line.
 
