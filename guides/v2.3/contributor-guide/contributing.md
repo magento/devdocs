@@ -40,8 +40,7 @@ When setting up access and tokens for Magento GitHub repositories, we recommend 
 
 Magento **requires all Partners** who contribute code to enable 2FA on their Github accounts. You can use a mobile device or 2FA application for added protection. See [Configuring two-factor authentication](https://help.github.com/en/articles/configuring-two-factor-authentication) in the Github help.
 
-We also recommend creating a personal access token for your account to use when interacting with GitHub in scripts and on the command line. See [Creating a personal access token for the command line](https://github.com/magento/devdocs/pull/4551/files) in the GitHub help.
-
+We also recommend creating a personal access token for your account to use when interacting with GitHub in scripts and on the command line. See [Creating a personal access token for the command line](https://help.github.com/en/articles/creating-a-personal-access-token-for-the-command-line) in the GitHub help.
 
 ## Questions or enhancement requests? {#question}
 
@@ -269,7 +268,6 @@ Before creating an issue:
 1. Read the [issue reporting guidelines](https://github.com/magento/magento2/wiki/Issue-reporting-guidelines) to learn how to create an issue that can be processed in a timely manner.
 1. Check the [documentation]({{site.baseurl}}/) to make sure the behavior you are reporting is really a bug, not a feature.
 1. Review the [existing issues](https://github.com/magento/magento2/issues) to make sure you are not duplicating another contributor's work.
-
 
 To add an issue:
 
