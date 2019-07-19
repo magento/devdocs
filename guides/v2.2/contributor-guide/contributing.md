@@ -40,7 +40,7 @@ When setting up access and tokens for Magento GitHub repositories, we recommend 
 
 Magento **requires all Partners** who contribute code to enable 2FA on their Github accounts. You can use a mobile device or 2FA application for added protection. See [Configuring two-factor authentication](https://help.github.com/en/articles/configuring-two-factor-authentication) in the Github help.
 
-We also recommend creating a personal access token for your account to use when interacting with GitHub in scripts and on the command line. See [Creating a personal access token for the command line](https://github.com/magento/devdocs/pull/4551/files) in the GitHub help.
+We also recommend creating a personal access token for your account to use when interacting with GitHub in scripts and on the command line. See [Creating a personal access token for the command line](https://help.github.com/en/articles/creating-a-personal-access-token-for-the-command-line) in the GitHub help.
 
 
 ## Questions or enhancement requests? {#question}
@@ -175,7 +175,7 @@ The command merges the listed related pull requests (`xxx`, `yyy`, `zzz`) into t
 
 ## Porting code contributions across Magento versions {#porting}
 
-In order to keep consistency between Magento release lines (2.1, 2.2, 2.3, etc), there are two techniques of code delivery: back-port and/or up-port. Every Magento Contributor, who wants to deliver their solution across all Magento versions, faces the same problem. How do you port fixes easily?
+In order to keep consistency between Magento release lines (2.2, 2.3, etc), there are two techniques of code delivery: back-port and/or up-port. Every Magento Contributor, who wants to deliver their solution across all Magento versions, faces the same problem. How do you port fixes easily?
 
 We provide two options to create back-ports and up-ports for your code contributions:
 
@@ -191,7 +191,7 @@ As a best practice, we recommend creating back-ports and up-ports for your code 
 
 **Back-ports** (or Backports) contribute your code and fixes to a lower release line. You want to create a back-port if the issue exists in a lower release line. If you fixed an issue in a release line and there is a supported lower version, create a pull request to that lower release line to address the issue. For example, you may have contributed a fix to 2.3 and back-port to 2.2 and 2.1.
 
-**Up-ports** (or Forwardports) contribute your code and fixes to a higher release line. You want to create an up-port if the issue exists in a higher release line. If you have an issue fixed in a non-latest release line, create a pull request to the latest branch in order to address that issue in an upcoming minor release. For example, you may have contributed a fix to 2.1 and up-port to 2.2 and 2.3. We recommend contributors create an up-port for every pull request delivered to a lower release line.
+**Up-ports** (or Forwardports) contribute your code and fixes to a higher release line. You want to create an up-port if the issue exists in a higher release line. If you have an issue fixed in a non-latest release line, create a pull request to the latest branch in order to address that issue in an upcoming minor release. For example, you may have contributed a fix to 2.2 and up-port to 2.3. We recommend contributors create an up-port for every pull request delivered to a lower release line.
 
 ### Magento Porting Tool {#porting-tool}
 
@@ -269,7 +269,6 @@ Before creating an issue:
 1. Read the [issue reporting guidelines](https://github.com/magento/magento2/wiki/Issue-reporting-guidelines) to learn how to create an issue that can be processed in a timely manner.
 1. Check the [documentation]({{site.baseurl}}/) to make sure the behavior you are reporting is really a bug, not a feature.
 1. Review the [existing issues](https://github.com/magento/magento2/issues) to make sure you are not duplicating another contributor's work.
-
 
 To add an issue:
 
