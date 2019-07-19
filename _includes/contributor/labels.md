@@ -101,7 +101,7 @@ Labels applied to issues through verification and completion. For details on the
 
 All [contributions to DevDocs](https://github.com/magento/devdocs/blob/master/.github/CONTRIBUTING.md) receive the following labels:
 
-* `New topic`- New topic submissions for content that has never existed on DevDocs such as tutorials, references, instructions, etc
+* `New topic`- New topic submissions for content that has never existed on DevDocs such as tutorials, references, instructions, and so on
 * `Major update` - Significant updates to existing content, such as a new section or examples with sample code
 * `Technical` - Updates to the code or processes that alter the technical content of the document such as code snippets, reference documentation, parameter names and values, etc
 * `Editorial` - Fixes for typos, grammatical inconsistencies, or minor rewrites to correct inaccuracies
