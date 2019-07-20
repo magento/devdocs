@@ -3,8 +3,6 @@ group: release-notes
 title: Component Status
 ---
 
-**Last Updated: October 17, 2018**
-
 This page shows the status of each component for the Magento 2.3.x release and is intended to show you the readiness of different components.
 
 Each status color indicates the severity and amount of 2.3-related issues for a particular component.
