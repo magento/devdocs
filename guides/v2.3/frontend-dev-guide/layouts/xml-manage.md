@@ -479,9 +479,10 @@ class Product
 
 You can remove navigation links from the 'My Account' dashboard on the storefront by setting the `remove` attribute.
 
+
 ```xml
 <!-- ################################## -->
-<!-- Magento version: Community Edition -->
+<!-- Magento version: Open Source -->
 <!-- ################################## -->
 
 <!-- File:  app/design/frontend/<Vendor>/<theme>/Magento_Customer/layout/customer_account.xml -->
@@ -523,7 +524,7 @@ You can remove navigation links from the 'My Account' dashboard on the storefron
 <referenceBlock name="customer-account-navigation-wish-list-link" remove="true"/>
 
 <!-- ################################### -->
-<!-- Magento version: Enterprise edition -->
+<!-- Magento version: Commerce -->
 <!-- ################################### -->
 
 <!-- File:  app/design/frontend/<Vendor>/<theme>/Magento_AdvancedCheckout/layout/customer_account.xml -->
