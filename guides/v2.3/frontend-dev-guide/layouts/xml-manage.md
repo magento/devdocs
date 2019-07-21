@@ -530,7 +530,7 @@ You can remove navigation links from the 'My Account' dashboard on the storefron
 <!-- "Order by SKU" link -->
 <referenceBlock name="customer-account-navigation-checkout-sku-link" remove="true"/>
 
-<!-- File:  app/design/frontend/<Vendor>/<theme>/Magento_CustomerBlance/layout/customer_account.xml -->
+<!-- File:  app/design/frontend/<Vendor>/<theme>/Magento_CustomerBalance/layout/customer_account.xml -->
 <!-- "Store credit" link -->
 <referenceBlock name="customer-account-navigation-customer-balance-link" remove="true"/>
 
@@ -538,13 +538,13 @@ You can remove navigation links from the 'My Account' dashboard on the storefron
 <!-- "Gift card" link -->
 <referenceBlock name="customer-account-navigation-gift-card-link" remove="true"/>
 
-<!-- File:  app/design/frontend/<Vendor>/<theme>/Magento_Invitation/layout/customer_account.xml -->
-<!-- "My Invitations" link -->
-<referenceBlock name="customer-account-navigation-magento-invitation-link" remove="true"/>
-
 <!-- File:  app/design/frontend/<Vendor>/<theme>/Magento_GiftRegistry/layout/customer_account.xml -->
 <!-- "Gift Registry" link -->
 <referenceBlock name="customer-account-navigation-giftregistry-link" remove="true"/>
+
+<!-- File:  app/design/frontend/<Vendor>/<theme>/Magento_Invitation/layout/customer_account.xml -->
+<!-- "My Invitations" link -->
+<referenceBlock name="customer-account-navigation-magento-invitation-link" remove="true"/>
 
 <!-- File:  app/design/frontend/<Vendor>/<theme>/Magento_Reward/layout/customer_account.xml -->
 <!-- "Reward Points" link -->
