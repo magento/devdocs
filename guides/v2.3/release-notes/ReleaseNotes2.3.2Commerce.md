@@ -3,7 +3,7 @@ group: release-notes
 title: Magento Commerce 2.3.2 Release Notes
 ---
 
-*Patch code and release notes published on June 25, 2019. Release notes last updated on June 26, 2019.*
+*Patch code and release notes published on June 25, 2019. Release notes last updated on July 8, 2019.*
 
 We are pleased to present Magento Commerce 2.3.2.  This release includes over 200 functional fixes to the core product, over 350 pull requests contributed by the community, and  over 75 security enhancements. It includes  contributions from our community members. These contributions range from minor clean-up of core code to significant enhancements to Inventory Management and GraphQL.
 
@@ -741,11 +741,13 @@ has been changed to `<argument name="resourceStockItem" xsi:type="object">Magent
 
 ### Infrastructure
 
+* The default behavior of view models has changed in this release. Instances of view models are now shared by default. As a result, you must add the `attribute shared="false"` on the argument node of the `layout.xml` file if you want a new instance of a view model.
+
 <!--- ENGCOM-4474-->
 * The `FrontController` now explicitly requires actions to specify if they respond to `HEAD` requests. `HEAD` action mapping has also been changed to the  `GET` action interface, which results in `HEAD` requests returning `200` instead of `404`. *Fix submitted by [Matti Vapa](https://github.com/mattijv) in pull request [21378](https://github.com/magento/magento2/pull/21378)*. [GitHub-21299](https://github.com/magento/magento2/issues/21299)
 
 <!--- ENGCOM-4482-->
-* We removed the Logic class from the constructor of `Magento\Sales\Model\Order\Address\Validator`. Previously, installation of the product could fail if this class was injected in the constructor through a command in a custom module when this class continued logic. *Fix submitted by [Dharmesh Vaja](https://github.com/Dharmeshvaja91) in pull request [21693](https://github.com/magento/magento2/pull/21693)*. [GitHub-21692](https://github.com/magento/magento2/issues/21692), [GitHub-21752](https://github.com/magento/magento2/issues/21752)
+* We removed the Logic class from the constructor of `Magento\Sales\Model\Order\Address\Validator`. Previously, installation of the product could fail if this class was injected in the constructor through a command in a custom module when this class continued logic. *Fix submitted by [Bartłomiej Szubert](https://github.com/Bartlomiejsz) in pull request [21693](https://github.com/magento/magento2/pull/21693)*. [GitHub-21692](https://github.com/magento/magento2/issues/21692), [GitHub-21752](https://github.com/magento/magento2/issues/21752)
 
 <!--- ENGCOM-4543-->
 * The `productAvailabilityChecks` argument has been added to `Magento\Sales\Model\Order\Reorder\OrderedProductAvailabilityChecker`. Previously, this required argument was missing. *Fix submitted by [Roman Kis](https://github.com/kisroman) in pull request [21820](https://github.com/magento/magento2/pull/21820)*. [GitHub-20825](https://github.com/magento/magento2/issues/20825)
@@ -1130,7 +1132,10 @@ label, types, and disabled settings, but the actual `file-content` was not repla
 
 * **Issue**: The Async/Bulk Web APIs support only the default store view. A hot fix for this issue will be available in the near future. This issue has been resolved with the Scope parameter for Async/Bulk API patch, which is now available. See [Patch for Magento Framework Message Queue and Store Scopes](https://community.magento.com/t5/Magento-DevBlog/Patch-for-Magento-Framework-Message-Queue-and-Store-Scopes/ba-p/135209) for a full discussion of this scope-related issue and patch contents.
 
-* **Issue**: The security enhancements that are part of Magento 2.3.2 require the installation of libsodium version 1.0.13 or higher. You will not be able to successfully install Magento Commerce 2.3.2 without first ensuring that your server runs  version 1.0.13 or higher. See [Libsodium releases](https://github.com/jedisct1/libsodium/releases) for a description of the available releases and installation instructions. 
+* **Issue**: The security enhancements that are part of Magento 2.3.2 require the installation of libsodium version 1.0.13 or higher. You will not be able to successfully install Magento Commerce 2.3.2 without first ensuring that your server runs  version 1.0.13 or higher. See [Libsodium releases](https://github.com/jedisct1/libsodium/releases) for a description of the available releases and installation instructions.
+
+  {:.bs-callout-warning}
+  {{site.data.var.ece}} customers must submit a support ticket to upgrade the libsodium package on Pro Production and Staging environments prior to upgrading to {{site.data.var.ee}} 2.3.2. Currently, you cannot upgrade Starter environments to {{site.data.var.ee}} 2.3.2.
 
 ## Community contributions
 

@@ -41,10 +41,9 @@ Now let's fully define a query:
 ```text
 query myCartQuery{
   cart(cart_id: "1WxKm8WUm3uFKXLlHXezew5WREfVRPAn") {
-    cart_id
     items {
       id
-      qty
+      quantity
     }
     billing_address {
       firstname
@@ -68,11 +67,10 @@ The following example shows the query response:
 {
   "data": {
     "cart": {
-      "cart_id": "1WxKm8WUm3uFKXLlHXezew5WREfVRPAn",
       "items": [
         {
           "id": "5",
-          "qty": 1
+          "quantity": 1
         }
       ],
       "billing_address": {
@@ -108,10 +106,9 @@ The following example declares the `$cart_id` variable. It is referenced in the 
 ```text
 query myCartQueryWithVariable($cart_id: String!) {
   cart(cart_id: $cart_id) {
-    cart_id
     items {
       id
-      qty
+      quantity
     }
     billing_address {
       firstname
@@ -183,11 +180,10 @@ Magento GraphQL clause | SQL equivalent
 `lteq: "value"` | <code><i>field</i> <= 'value'</code>
 `moreq: "value"` | <code><i>field</i> >= 'value'</code>
 `from: "value1"` `to: "value2"` | <code><i>field</i> BETWEEN 'value1' AND 'value2'</code>
-`finset: [1, 2, 3]` | <code>FINSET(<i>field</i>, '1, 2, 3')</code>
 
-`to` and `from` must always be used together. These condition types can be used in the same search term. For example, `qty: {from: "10" to: "20"}`.
+`to` and `from` must always be used together. These condition types can be used in the same search term. For example, `quantity: {from: "10" to: "20"}`.
 
-`gt` and `lt` can be used in the same search term. For example, `qty: {gt: "10" lt: "20"}`.
+`gt` and `lt` can be used in the same search term. For example, `quantity: {gt: "10" lt: "20"}`.
 
 ### Specifying pagination
 

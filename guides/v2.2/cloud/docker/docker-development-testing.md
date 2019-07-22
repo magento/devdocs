@@ -7,7 +7,9 @@ functional_areas:
   - Configuration
 ---
 
-You can use the `{{site.data.var.ct}}` package to run functional tests in the Docker environment. Functional tests are in the `src/Test/Functional/Acceptance` folder. See an example in the [ece-tools repository](https://github.com/magento/ece-tools/tree/develop/src/Test/Functional/Acceptance).
+You can use the `{{site.data.var.ct}}` package to run functional tests in the Docker environment, which is helpful when testing code intended for `{{site.data.var.ct}}` contribution. Functional tests are in the `src/Test/Functional/Acceptance` folder. See an example in the [ece-tools repository](https://github.com/magento/ece-tools/tree/develop/src/Test/Functional/Acceptance).
+
+For testing the Magento application, see the [Magento Functional Testing Framework (MFTF)]({{site.baseurl}}/mftf/docs/commands/mftf.html).
 
 ## Prerequisites
 
@@ -18,6 +20,20 @@ Before you run functional tests, you must prepare your environment with the foll
     -  `80`—varnish
     -  `443`—web, tls
     -  `3306`—apache, mysql
+    
+1.  Update the hosts file.
+
+    Before you begin, you must add the following hostname to your `/etc/hosts` file:
+
+    ```
+    127.0.0.1 web
+    ```
+
+    Alternatively, you can run the following command to add it to the file:
+
+    ```bash
+    echo "127.0.0.1 web" | sudo tee -a /etc/hosts
+    ```
 
 1.  Switch to the preferred PHP version for running tests.
 

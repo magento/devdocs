@@ -2,9 +2,7 @@
 group: cloud-guide
 title: Update ece-tools version
 redirect_from:
-  - guides/v2.1/cloud/composer-packages/ece-tools.html
   - guides/v2.2/cloud/composer-packages/ece-tools.html
-  - guides/v2.1/cloud/composer-packages/ece-tools-update.html
   - guides/v2.2/cloud/composer-packages/ece-tools-update.html
 functional_areas:
   - Cloud
@@ -22,7 +20,7 @@ Typically, an _update_ includes patches and available hotfixes as part of the `m
     composer update magento/ece-tools
     ```
 
-    {: .bs-callout .bs-callout-info}
+    {: .bs-callout-info }
     If you cannot update beyond `{{site.data.var.ct}}` version 2002.0.8, follow the [upgrade steps]({{page.baseurl}}/cloud/project/ece-tools-upgrade-project.html).
 
 1.  Add, commit, and push your code changes.
