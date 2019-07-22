@@ -1,36 +1,32 @@
 ---
 group: graphql
-title: Directory endpoint
+title: checkoutAgreements query
 contributor_name: Something Digital
 contributor_link: https://www.somethingdigital.com/
 ---
 
-To retrieve enabled checkout agreements. The query will always return an empty array when
-`checkout/options/enable_agreements` is disabled.
+The `checkoutAgreements` query retrieves checkout agreements. The query will always return an empty array when the
+**Enable Terms and Conditions** option is set to **No**.  (The config path is `checkout/options/enable_agreements`.)
 
-### CheckoutAgreement attributes {#countryAttributes}
+### CheckoutAgreement attributes {#checkoutAgreementAttributes}
 
 The `CheckoutAgreement` object provides the following attributes:
 
 Attribute | Data type | Description
 --- | --- | ---
-`agreement_id` | Integer | Checkout Agreement identifier
-`name` | String | Checkout Agreement name
-`content` | String | Checkout Agreement plaintext or HTML content
+`agreement_id` | Integer! | Checkout Agreement identifier
+`checkbox_text` | String! | Label of the Checkout Agreement checkbox
+`content` | String! | The content of the Checkout Agreement. The value can be in  plain text or in HTML
 `content_height` | String | CSS height of Checkout Agreement
-`checkbox_text` | String | Checkout Agreement checkbox label
-`is_html` | Boolean | Is Checkout Agreement content in HTML format
-`mode` | [CheckoutAgreementMode](#checkoutAgreementMode) | An array of regions within a particular country
+`is_html` | Boolean! | Is Checkout Agreement content in HTML format
+`mode` | String! | Indicates whether terms and conditions are applied manually (`MANUAL`) or automatically (`AUTO`)
+`name` | String! | Checkout Agreement name
 
-### CheckoutAgreementMode enumerable {#checkoutAgreementMode}
-- AUTO
-- MANUAL
-
-#### Syntax
+## Syntax
 
 `{checkoutAgreements {CheckoutAgreement}}`
 
-### Example usage
+## Example usage
 
 The following query returns enabled checkout agreements.
 
@@ -69,3 +65,7 @@ The following query returns enabled checkout agreements.
   }
 }
 ```
+
+## Output attributes
+
+The `CheckoutAgreements` object contains an array of [`CheckoutAgreement`](#checkoutAgreementAttributes) objects.
