@@ -1,12 +1,7 @@
 ---
 group: cloud-guide
-subgroup: 160_deploy
 title: Deploy your store
-menu_title: Deploy your store
-menu_order: 1
-menu_node: parent
 redirect_from:
-  - /guides/v2.1/cloud/live/stage-prod-over.html
   - /guides/v2.2/cloud/live/stage-prod-over.html
 functional_areas:
   - Cloud

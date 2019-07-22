@@ -1,10 +1,1 @@
----
-group:
-subgroup:
-title: Build a Module
-menu_title: Build a Module
-menu_order: 1
-
----
-
-build_a_simple_module
+../../../guides/v2.2/extension-dev-guide/build_a_simple_module.md
