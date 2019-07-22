@@ -41,12 +41,12 @@ $ ruby -v
 
 See the [Ruby site](https://www.ruby-lang.org/en/documentation/installation) for instructions.
 
-### Install Bundler
+### Upgrade RubyGems
 
-Install the [Bundler](https://bundler.io/) gem, which helps with Ruby dependencies:
+Upgrade [RubyGems](https://github.com/rubygems/rubygems), which helps with dependencies (gems):
 
 ```
-$ gem install bundler
+$ gem update --system
 ```
 
 Once you have completed preparing your environment, you can build locally and review the site in your browser.

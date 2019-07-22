@@ -42,7 +42,7 @@ JS resources are accessed using relative paths.
 - Called in script:
     ```javascript
     require(["Magento_ConfigurableProduct/js/configurable"], function(Configurable){
-       });
+    });
     ```
 
 
@@ -53,7 +53,7 @@ JS resources are accessed using relative paths.
 - Called in script:
     ```javascript
     require(["js/theme.js"], function(){
-       });
+    });
     ```
 
 
@@ -64,7 +64,7 @@ JS resources are accessed using relative paths.
 - Called in script:
     ```javascript
     require(["jquery"], function($){
-       });
+    });
     ```
 
 
