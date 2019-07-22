@@ -42,7 +42,7 @@ The `routes.yaml` file is a list of templated routes and their configurations. Y
   ```text
   http://www.example.com/
 
-  http://www.example.com/blog
+  https://www.example.com/blog
   ```
   {: .no-copy}
 
@@ -55,9 +55,9 @@ The `routes.yaml` file is a list of templated routes and their configurations. Y
 
   http://www.example.com/blog
 
-  http://www.example1.com/
+  https://www.example1.com/
 
-  http://www.example1.com/blog
+  https://www.example1.com/blog
   ```
   {: .no-copy}
 
@@ -65,7 +65,7 @@ The `routes.yaml` file is a list of templated routes and their configurations. Y
 
   If a project does not have any domains configured, which is common during development, the `{all}` placeholder behaves in the same way as the `{default}` placeholder.
 
-{{site.data.var.ee}} also generates URLs for every active environment, so you can test that system. In a test system, `{default}` is replaced with the following domain name:
+{{site.data.var.ee}} also generates routes for every active Integration environment. For Integration environments, `{default}` is replaced with the following domain name:
 
 ```text
 [branch]-[project-id].[region].magentosite.cloud
