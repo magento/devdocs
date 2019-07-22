@@ -72,4 +72,4 @@ To review other application logs in Staging or Production, you can access and re
 
 For Staging, the project ID has `_stg` at the end. For example, if you receive 500 errors in Staging and want to review the nginx logs, you can SSH to the Staging environment and locate the logs in `/var/log/platform/<project ID>_stg`.
 
-Remember, when viewing the logs for Production, you have three nodes to check.
+Remember, when viewing the logs for Production and dedicated Staging environments, you have three nodes to check.
