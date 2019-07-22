@@ -107,6 +107,7 @@ Assembling the preceding `pt_BR.csv` files across all modules and the current th
 
 You can generate a translation dictionary to use by itself (for example, to translate words and phrases in a custom module) or for use by a [language package](https://glossary.magento.com/language-package). For more information, see [dictionary generator tool - We intend to publish more information on this technique at a later time].
 
+
 ## Language packages {#m2devgde-xlate-languagepack}
 
 Magento enables you to create the following types of language packages:
