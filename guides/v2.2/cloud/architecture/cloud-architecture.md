@@ -7,7 +7,7 @@ functional_areas:
 
 {{site.data.var.ece}} has a Starter and a Pro plan. Each plan has a unique architecture to drive your {{site.data.var.ee}} development and deployment process. Both the Starter plan and the Pro plan architecture deploy databases, web server, and caching servers across multiple environments for end-to-end testing while supporting continuous integration.
 
-For comparison, each plan includes the following infrastructure features and supported products.
+For comparison, each plan includes the following infrastructure features and supported products:
 
 <table>
   <tbody>
