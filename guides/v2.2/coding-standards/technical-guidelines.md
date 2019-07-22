@@ -520,7 +520,7 @@ class View extends Template
 
 6.2.4. Actions MUST NOT reference blocks declared in layout.
 
-6.2.5 Blocks MUST NOT assume user input has been validated in an action and, if they use user input directly, must validate it themselves.
+6.2.5 Blocks MUST NOT assume a specific or any controller has been invoked for current request
 
 ###  6.3. Data Access (Persistence) layer
 
@@ -776,6 +776,8 @@ class SampleEventObserverThatModifiesInputs
 15.11. Security capabilities SHOULD be implemented either on the Magento Framework level or in a dedicated module(s) and utilized by the entire application in a centralize manner.
 
 15.12. Files MUST be secured by a web server configuration (e.g., `.htaccess` or `nginx.conf`), except files that are intended to be publicly accessible.
+ 
+15.13 Presentation layer classes that access user input directly MUST NOT assume it has been validated
 
 <!-- LINKS: DEFINITIONS AND ADDRESSES -->
 
