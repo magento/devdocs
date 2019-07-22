@@ -28,6 +28,7 @@ $('#init_element').alert({
 ```
 
 **Example2**: standalone initialization
+
 ```javascript
 require([
     'Magento_Ui/js/modal/alert'
@@ -50,21 +51,23 @@ For details about how to initialize a widget in a`.phtml` template, refer to the
 
 The alert widget has the following options:
 
--   [actions]
--   [autoOpen]
--   [clickableOverlay]
--   [content]
--   [focus]
--   [title]
--   [modalClass]
--   [buttons]
+- [actions]
+- [autoOpen]
+- [clickableOverlay]
+- [content]
+- [focus]
+- [title]
+- [modalClass]
+- [buttons]
 
 ### `actions` {#alert_actions}
+
 Widget callbacks.
 
 **Type**: Object.
 
 **Default value**: 
+
 ```javascript
 actions: {
     always: function(){}
@@ -80,6 +83,7 @@ Automatically open the alert window when the widget is initialized.
 **Default value**: `false`
 
 ### `buttons` {#alert_buttons}
+
 The buttons list.
 
 **Type**: Array of Objects.
@@ -105,6 +109,7 @@ Close the alert window when a user clicks on the overlay.
 **Default value**: `true`
 
 ### `content` {#alert_content}
+
 The text displayed in the alert window.
 
 **Type**: String.
@@ -118,6 +123,7 @@ If `focus` is not specified or set to empty string, the focus is on the close bu
 **Default value**: `''`
 
 ### `title` {#alert_title}
+
 The title of the alert window.
 
 **Type**: String.
@@ -125,6 +131,7 @@ The title of the alert window.
 **Default value**: `''`
 
 ### `modalClass` {#alert_modalClass}
+
 The CSS class of the alert window.
 
 **Type**: String.
@@ -146,7 +153,7 @@ The keyboard navigation for the alert windows is similar to the [navigation of t
 
 ```html
 <div class="alert-modal-content">
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci amet aut consequuntur culpa cum, distinctio earum harum, iste magnam nobis numquam pariatur tempora ullam vero vitae. Hic ipsam itaque velit.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
 </div>
 
 <script>
@@ -195,7 +202,7 @@ require([
 
 ```html
 <div class="alert-modal-content">
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci amet aut consequuntur culpa cum, distinctio earum harum, iste magnam nobis numquam pariatur tempora ullam vero vitae. Hic ipsam itaque velit.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
 </div>
 
 <script>
