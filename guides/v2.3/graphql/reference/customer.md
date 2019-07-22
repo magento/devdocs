@@ -98,6 +98,8 @@ Attribute |  Data Type | Description
 
 In {{site.data.var.ee}}, the merchant can assign store credit to customers. Magento maintains the history of all changes to the balance of store credit available to the customer. The customer must be logged in to access the store credit history and balance.
 
+Store credits must be enabled to return store credit attributes. If store credits are disabled after previously being enabled, the query returns customer's current balance as null.
+
 Attribute |  Data Type | Description
 --- | --- | ---
 `store_credit` | [CustomerStoreCredit](#CustomerStoreCredit) | Contains the store credit information for the logged-in customer
@@ -114,7 +116,7 @@ Attribute |  Data Type | Description
 
 ### CustomerStoreCreditHistory attributes {#CustomerStoreCreditHistory}
 
-The `CustomerStoreCreditHistory` object contains an array of store credit items and paging information.
+The `CustomerStoreCreditHistory` object contains an array of store credit items and paging information. If the store credit or store credit history feature is disabled, then a null value will be returned.
 
 Attribute |  Data Type | Description
 --- | --- | ---
