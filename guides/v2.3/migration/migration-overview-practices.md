@@ -1,1 +1,1 @@
-../../v2.2/migration/migration-overview-practices.md
+../../../guides/v2.2/migration/migration-overview-practices.md

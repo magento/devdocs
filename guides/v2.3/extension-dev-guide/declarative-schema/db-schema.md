@@ -50,7 +50,7 @@ The following example, extracted from the `Catalog/etc/db_schema.xml` file, defi
 
 The `<Module_Vendor>/<Module_Name>/etc/db_schema.xml` file declares a module's database structure.
 
-{: .bs-callout .bs-callout-info }
+{: .bs-callout-info }
 If you have enabled [URN highlighting]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-urn.html), you can use the PhpStorm autocomplete feature after choosing a node's `xsi:type`. This will also allow you to view which attributes are available on each line of your `db_schema.xml` file
 
 ### Top-level node
@@ -148,8 +148,10 @@ A column can have the following attributes:
 </tr>
 </table>
 
-For more information about each type, refer to the annotations in the corresponding XSD file. The XSD files are located in the `<Magento_root_directory/setup/src/Magento/Setup/Model/Declaration/Schema/etc` directory.
+For more information about each type, refer to the annotations in the corresponding XSD file. The location of the XSD file depends on how you installed Magento.
 
+- [Archive download]({{page.baseurl}}/install-gde/prereq/zip_install.html): `<Magento_root_directory/vendor/magento/framework/Setup/Declaration/Schema/etc` 
+- [Composer]({{page.baseurl}}/install-gde/composer.html) or [GitHub]({{page.baseurl}}/install-gde/prereq/dev_install.html) installation: `<Magento_root_directory/lib/internal/Magento/Framework/Setup/Declaration/Schema/etc`
 
 Example:
 
@@ -234,6 +236,8 @@ The following example creates the `declarative_table` table with four columns. T
 </schema>
 ```
 
+When creating a new table, remember to [generate]({{ page.baseurl}}/extension-dev-guide/declarative-schema/migration-commands.html#create-whitelist) the `db_schema_whitelist.json` file.
+
 ### Drop a table
 
 In the following example, the `declarative_table` table was completely removed from the `db-schema.xml` file.
@@ -305,6 +309,8 @@ The following example adds the `date_closed` column.
 </schema>
 ```
 
+When adding a new column into table, remember to [generate]({{ page.baseurl}}/extension-dev-guide/declarative-schema/migration-commands.html#create-whitelist) the `db_schema_whitelist.json` file.
+
 ### Drop a column from a table
 
 The following example removes the  `date_closed` column by deleting its `column` node. To drop a column declared in another module, redeclare it with the `disabled` attribute set to `true`.
@@ -324,6 +330,8 @@ The following example removes the  `date_closed` column by deleting its `column`
     </table>
 </schema>
 ```
+{: .bs-callout-info }
+It is possible to drop a column only if it exists in the `db_schema_whitelist.json` file.
 
 ### Change the column type
 
@@ -418,6 +426,9 @@ The following example removes the  `FL_ALLOWED_SEVERITIES` foreign key by deleti
     </table>
 </schema>
 ```
+
+{: .bs-callout-info }
+It is possible to drop a foreign key only if it exists in the `db_schema_whitelist.json` file.
 
 ### Recreate a foreign key
 

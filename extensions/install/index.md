@@ -1,7 +1,10 @@
 ---
 group: extensions
 title: General CLI installation
-redirect_from: guides/v2.1/comp-mgr/install-extensions.html
+redirect_from: 
+ - guides/v2.2/comp-mgr/install-extensions.html
+ - guides/v2.3/comp-mgr/install-extensions.html
+
 ---
 
 Code that extends or customizes Magento behavior is called an extension. You can optionally package and distribute extensions on the [Magento Marketplace](https://marketplace.magento.com) or another Magento extension distribution system.
@@ -9,11 +12,11 @@ Code that extends or customizes Magento behavior is called an extension. You can
 Extensions include:
 
 - Modules (extend Magento capabilities)
-- Themes (change the look and feel of your {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} and Admin)
+- Themes (change the look and feel of your [storefront](https://glossary.magento.com/storefront) and Admin)
 - Language packages (localize the storefront and Admin)
 
 {: .bs-callout .bs-callout-tip }
-This topic explains how to use the command line to install extensions you purchase from the Magento Marketplace. You can use the same procedure to install _any_ extension; all you need is the extension's {% glossarytooltip d85e2d0a-221f-4d03-aa43-0cda9f50809e %}Composer{% endglossarytooltip %} name and version. To find it, open the extension's `composer.json` file and note the values for `"name"` and `"version"`.
+This topic explains how to use the command line to install extensions you purchase from the Magento Marketplace. You can use the same procedure to install _any_ extension; all you need is the extension's [Composer](https://glossary.magento.com/composer) name and version. To find it, open the extension's `composer.json` file and note the values for `"name"` and `"version"`.
 
 Prior to installation, you may want to:
 
@@ -52,7 +55,6 @@ To get the extension's Composer name and version from the Magento Marketplace:
 
     ![Technical details shows the extension's Composer name]({{ site.baseurl }}/common/images/marketplace-extension-technical-details.png){:width="200px"}
 
-
 {: .bs-callout .bs-callout-tip }
 Alternatively, you can find the Composer name and version of _any_ extension (whether you purchased it on Magento Marketplace or somewhere else) in the extension's `composer.json` file.
 
@@ -83,6 +85,7 @@ Add the extension's name and version to your `composer.json` file:
     Writing lock file
     Generating autoload files
     ```
+    {: .no-copy}
 
 ## Verify the extension
 
@@ -175,22 +178,22 @@ To update or upgrade an extension:
 
 1. If a composer package exists for the extension, run one of the following.
 
-  Update per module name:
+    Update per module name:
 
-  ```bash
-  composer update vendor/module-name
-  ```
+    ```bash
+    composer update vendor/module-name
+    ```
 
-  Updater per version:
+    Updater per version:
 
-  ```bash
-  composer require vendor/module-name ^x.x.x
-  ```
+    ```bash
+    composer require vendor/module-name ^x.x.x
+    ```
 
 1. Run the following commands to upgrade, deploy, and clean the cache.
 
-  ```bash
-  php bin/magento setup:upgrade --keep-generated
-  php bin/magento setup:static-content:deploy
-  php bin/magento cache:clean
-  ```
+    ```bash
+    php bin/magento setup:upgrade --keep-generated
+    php bin/magento setup:static-content:deploy
+    php bin/magento cache:clean
+    ```

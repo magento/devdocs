@@ -1,1 +1,1 @@
-../../../v2.2/cloud/integrations/bitbucket-integration.md
+../../../../guides/v2.2/cloud/integrations/bitbucket-integration.md

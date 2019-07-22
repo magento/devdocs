@@ -56,7 +56,7 @@ To change versions after cloning:
 2.	Create a [new database instance]({{ page.baseurl }}/install-gde/prereq/mysql.html#instgde-prereq-mysql-config) for your installation.
 2.	[Back up]({{ page.baseurl }}/install-gde/install/cli/install-cli-backup.html#instgde-cli-uninst-back) the Magento file system, database, and media files:
 
-		php <your Magento install dir>/bin/magento setup:backup --code --media --db
+		php <magento_root>/bin/magento setup:backup --code --media --db
 3.	Change to [release tag](https://github.com/magento/magento2/tags) as follows:
 
 		git checkout tags/<tag name>  [-b <branch name>]
@@ -67,7 +67,7 @@ To change versions after cloning:
 
 4.	Manually clear Magento `var` directories:
 
-		rm -rf <your Magento install dir>/var/cache/* <your Magento install dir>/var/page_cache/* <your Magento install dir>/generated/code/*
+		rm -rf <magento_root>/var/cache/* <magento_root>/var/page_cache/* <magento_root>/generated/code/*
 5.	Install the Magento software in your new database instance.
 
 	You can install using either the [command line]({{ page.baseurl }}/install-gde/install/cli/install-cli-install.html) or [Setup Wizard]({{ page.baseurl }}/install-gde/install/web/install-web.html).

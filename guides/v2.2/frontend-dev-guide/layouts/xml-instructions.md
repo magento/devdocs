@@ -8,12 +8,21 @@ functional_areas:
 ## What's in this topic {#fedg_layout_xml-instruc_overview}
 
 There are two possible ways to customize page layout in Magento:
-* Changing {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %} files 
-* Altering templates
+
+* Changing [layout](https://glossary.magento.com/layout) files.
+* Altering templates.
 
 To change the page wireframe, modify the [page layout] files; all other customizations are performed in the [page configuration] or [generic layout] files. 
 
-Use these {% glossarytooltip bcbc9bf8-3251-4b3c-a802-07417770af3b %}layout instructions{% endglossarytooltip %} to:
+## Manage layouts
+
+To make layout changes available on every page, modify the `default.xml` file.
+For example, layout changes added to `app/code/Vendor/Module/view/frontend/layout/default.xml` are loaded on all pages.
+To add layout changes to a specific page, use a layout file that corresponds to the page's path. 
+For example, changes to the `app/code/Vendor/Module/view/frontend/layout/catalog_product_view.xml` page are loaded on the product details page.
+
+Use these [layout instructions](https://glossary.magento.com/layout-instructions) to:
+
 *  Move a page element to another parent element.
 *  Add content.
 *  Remove a page element.
@@ -33,6 +42,8 @@ Use the following layout instructions to customize your layout:
 * [`<remove>`](#fedg_layout_xml-instruc_ex_rmv)
 * [`<update>`](#fedg_layout_xml-instruc_ex_upd)
 * [`<argument>`](#argument)
+* [`<block vs container>`](#block_vs_container)
+
 
 ### block {#fedg_layout_xml-instruc_ex_block}
 
@@ -40,10 +51,12 @@ Defines a block.
 
 **Details:** A block is a unit of page output that renders some distinctive content (anything visually tangible for the end-user), such as a piece of information or a user interface element.
 
-Blocks employ templates to generate HTML. Examples of blocks include a {% glossarytooltip 50e49338-1e6c-4473-8527-9e401d67ea2b %}category{% endglossarytooltip %} list, a mini cart, product tags, and product listing.
+Blocks are a foundational building unit for layouts in Magento. They are the link between a PHP block class (which contains logic) and a template (which renders content). Blocks can have children and grandchildren (and so on). Information can be passed from layout XML files to blocks using the `<arguments/>` child node. 
+
+Blocks employ templates to generate HTML. Examples of blocks include a [category](https://glossary.magento.com/category) list, a mini cart, product tags, and product listing.
 
 {:.bs-callout .bs-callout-info}
-The `class` attribute is no longer required in versions `2.2.1` and above as it will default to `Magento\Framework\View\Element\Template`. **In versions lower than `2.2.1`, the `class` attribute is still required.**
+The `class` attribute is no longer required in versions `2.2.1` and above as it will default to `Magento\Framework\View\Element\Template`. **In versions lower than `2.2.1`, the `class` attribute is still required**.
 
 {:.bs-callout .bs-callout-info}
 We recommend always adding a `name` to blocks. Otherwise, it is given a random name.
@@ -62,10 +75,11 @@ We recommend always adding a `name` to blocks. Otherwise, it is given a random n
 To pass parameters use the [`<argument></argument>`](#argument) instruction. 
 
 ### container {#fedg_layout_xml-instruc_ex_cont}
+
 A structure without content that holds other layout elements such as blocks and containers.
 
 **Details:** 
-A container renders child elements during view output generation. It can be empty or it can contain an arbitrary set of `<container>` and `<block>` elements.
+A container renders child elements during view output generation. It can be empty or it can contain an arbitrary set of `<container>` and `<block>` elements. If the `<container>` is empty, and there is no child `<block>` available, it will not be displayed in the frontend source code. 
 
 {:.bs-callout .bs-callout-info}
 We recommend always adding a `name` to containers. Otherwise, it is given a random name.
@@ -84,6 +98,7 @@ We recommend always adding a `name` to containers. Otherwise, it is given a rand
 
 
 Sample of usage in layout:
+
 ```xml
 <container name="div.sidebar.additional" htmlTag="div" htmlClass="sidebar sidebar-additional" after="div.sidebar.main">
     <container name="sidebar.additional" as="sidebar_additional" label="Sidebar Additional"/>
@@ -91,6 +106,12 @@ Sample of usage in layout:
 ```
 
 This would add a new column to the page layout.
+
+### block vs. container {#block_vs_container}
+
+* Blocks represents the end of the chain in rendering HTML for Magento.
+* Containers contain blocks and can wrap them in an HTML tag.
+* Containers do not render any output if there are no children assigned to them.
 
 ### before and after attributes {#fedg_xml-instrux_before-after}
 
@@ -128,9 +149,6 @@ Calls public methods on the block API.
 
 **Details:** Used to set up the execution of a certain method of the block during block generation; the `<action>` node must be located in the scope of the `<block>` node.
 
-
-Example:
-
 ```xml
 <block class="Magento\Module\Block\Class" name="block">
     <action method="setText">
@@ -152,9 +170,10 @@ Example:
 To pass parameters, use the [`<argument></argument>`](#argument) instruction.
 
 ### referenceBlock and referenceContainer {#fedg_layout_xml-instruc_ex_ref}
+
 Updates in `<referenceBlock>` and `<referenceContainer>` are applied to the corresponding `<block>` or `<container>`.
 
-For example, if you make a reference by `<referenceBlock name="right">`, you're targeting the block `<block name="right">`.
+For example, if you make a reference by `<referenceBlock name="right">`, you are targeting the block `<block name="right">`.
 
 To pass parameters to a block use the [`<argument></argument>`](#argument) instruction.
 
@@ -163,12 +182,10 @@ To pass parameters to a block use the [`<argument></argument>`](#argument) instr
 | `remove` | Allows to remove or cancel the removal of the element. When a container is removed, its child elements are removed as well. | true/false | no |
 | `display` | Allows you to disable rendering of specific block or container with all its children (both set directly and by reference). The block's/container's and its children' respective PHP objects are still generated and available for manipulation. | true/false | no |
 
-
 - The `remove` attribute is optional and its default value is `false`.
 
     This implementation allows you to remove a block or container in your layout by setting the remove attribute value to `true`, or to cancel the removal of a block or container by setting the value to `false`.
      
-    Example:
     ```xml
     <referenceBlock name="block.name" remove="true" />
     ```
@@ -178,14 +195,13 @@ To pass parameters to a block use the [`<argument></argument>`](#argument) instr
     You are always able to overwrite this value in your layout.
     In situation when remove value is true, the display attribute is ignored.
      
-    Example:
     ```xml
     <referenceContainer name="container.name" display="false" />
     ```
 
 ### move {#fedg_layout_xml-instruc_ex_mv}
+
 Sets the declared block or container element as a child of another element in the specified order.
-**Example:**
 
 ```xml
 <move element="name.of.an.element" destination="name.of.destination.element" as="new_alias" after="name.of.element.after" before="name.of.element.before"/>
@@ -208,20 +224,18 @@ Sets the declared block or container element as a child of another element in th
 `<remove>` is used only to remove the static resources linked in a page `<head>` section.
 For removing blocks or containers, use the `remove` attribute for [`<referenceBlock>` and `<referenceContainer>`](#fedg_layout_xml-instruc_ex_ref).
 
-Example of usage:
-
 ```xml
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
    <head>
-        <!-- Remove local resources -->
-        <remove src="css/styles-m.css" />
-        <remove src="my-js.js"/>
-        <remove src="Magento_Catalog::js/compare.js" />
-								
-        <!-- Remove external resources -->
-        <remove src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css"/>
-        <remove src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"/>
-        <remove src="http://fonts.googleapis.com/css?family=Montserrat" /> 
+      <!-- Remove local resources -->
+      <remove src="css/styles-m.css" />
+      <remove src="my-js.js"/>
+      <remove src="Magento_Catalog::js/compare.js" />
+
+      <!-- Remove external resources -->
+      <remove src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css"/>
+      <remove src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"/>
+      <remove src="http://fonts.googleapis.com/css?family=Montserrat" /> 
    </head>
 </page>
 ```
@@ -230,8 +244,6 @@ Example of usage:
 
 Includes a certain layout file.
 
-Used as follows:
-
 ```xml
 <update handle="{name_of_handle_to_include}"/>
 ```
@@ -239,16 +251,17 @@ Used as follows:
 The specified [handle] is "included" and executed recursively.
 
 ### argument {#argument}
+
 Used to pass an argument. Must be always enclosed in [`<arguments>`](#arguments).
  
 | Attribute | Description | Values | Required? |
 |:------- |:------ |:------ |:------ |
 | `name` | Argument name. | unique | yes |
-| `xsi:type` | Argument type. | `string|boolean|object|number|null|array` | yes |
+| `xsi:type` | Argument type. | `string|boolean|object|number|null|array|options|url|helper` | yes |
 | `translate` | | `true|false` | no |
 
-
 To pass multiple arguments use the following construction:
+
 ```xml
 <arguments>
    <argument name="item1" xsi:type="string">Custom string</argument>
@@ -257,7 +270,63 @@ To pass multiple arguments use the following construction:
 </arguments>
 ```
 
-To pass an argument that is an array use the following construction:
+Arguments values set in a layout file can be accessed in [templates] using the `getData('{ArgumentName}')` and `hasData('{ArgumentName}')` methods. The latter returns a boolean defining whether there's any value set. 
+`{ArgumentName}` is obtained from the `name` attribute the following way: for getting the value of `<argument name="some_string">` the method name is `getData('some_string')`.
+
+**Example**:
+
+Setting a value of `css_class` in the `[app/code/Magento/Theme/view/frontend/layout/default.xml]` layout file:
+
+```xml
+<arguments>
+    <argument name="css_class" xsi:type="string">header links</argument>
+</arguments>
+```
+
+Using the value of `css_class` in `[app/code/Magento/Theme/view/frontend/templates/html/title.phtml]`:
+
+```php
+$cssClass = $this->hasCssClass() ? ' ' . $this->getCssClass() : '';
+```
+
+#### Argument types examples
+
+As was described above the argument attribute can be added with different types.
+There are examples of all argument types.
+
+- The *string* type:
+
+```xml
+<argument name="some_string" xsi:type="string" >Some String</argument>
+```
+
+- The *boolean* type:
+
+```xml
+<argument name="is_active" xsi:type="boolean" >true</argument>
+```
+
+- The *object* type:
+
+```xml
+<argument name="viewModel" xsi:type="object" >Vendor\CustomModule\ViewModel\Class</argument>
+```
+
+The `Vendor\CustomModule\ViewModel\Class` class should implement the `\Magento\Framework\View\Element\Block\ArgumentInterface` interface.
+
+- The *number* type:
+
+```xml
+<argument name="some_number" xsi:type="number" >100</argument>
+```
+
+- The *null* type:
+
+```xml
+<argument name="null_value" xsi:type="null" />
+```
+
+- The *array* type:
 
 ```xml
 <argument name="custom_array" xsi:type="array">
@@ -267,43 +336,107 @@ To pass an argument that is an array use the following construction:
 </argument>
 ```
 
-Arguments values set in a layout file can be accessed in [templates] using the `get{ArgumentName}()` and `has{ArgumentName}()` methods. The latter returns a boolean defining whether there's any value set. 
-`{ArgumentName}` is obtained from the `name` attribute the following way: for getting the value of `<argument name="some_string">` the method name is `getSomeString()`.
-
-Example:
-Setting a value of `css_class` in the `[app/code/Magento/Theme/view/frontend/layout/default.xml]` layout file:
+- The *options* type:
 
 ```xml
-<arguments>
-    <argument name="css_class" xsi:type="string">header links</argument>
-</arguments>
+<argument name="options" xsi:type="options" >Vendor\CustomModule\Source\Options\Class</argument>
 ```
 
+The `Vendor\CustomModule\Source\Options\Class` class should implement the `\Magento\Framework\Data\OptionSourceInterface` interface.
 
-Using the value of `css_class` in `[app/code/Magento/Theme/view/frontend/templates/html/title.phtml]`:
+- The *url* type:
+
+```xml
+<argument name="shopping_cart_url" xsi:type="url" path="checkout/cart/index" />
+```
+
+- The *helper* type:
+
+```xml
+<argument name="helper_method_result" xsi:type="helper" helper="Vendor\CustomModule\Helper\Class::someMethod" >
+  <param name="paramName">paramName</param>
+    ...
+</argument>
+```
+
+The *helper* can use only public methods. In this example the `someMethod()` method should be public.
+The argument with *helper* type can contain `param` items which can be passed as a helper method parameters.
+
+#### Obtain arguments examples in template
+
+These argument examples can be taken in the template like in the following example:
 
 ```php
-$cssClass = $this->hasCssClass() ? ' ' . $this->getCssClass() : '';
+<?php
+/** @var \Magento\Framework\View\Element\Template $block */
+
+/** @var string $someString */
+$someString = $block->getData('some_string');
+/** @var bool $isActive */
+$isActive = $block->getData('is_active');
+/** @var Vendor\CustomModule\ViewModel\Class|\Magento\Framework\View\Element\Block\ArgumentInterface $viewModel */
+$viewModel = $block->getData('viewModel');
+/** @var string|int|float $someNumber */
+$someNumber = $block->getData('some_number');
+/** @var null $nullValue */
+$nullValue = $block->getData('null_value');
+/** @var array $customArray */
+$customArray = $block->getData('custom_array');
+/** @var array $options */
+$options = $block->getData('options');
+/** @var string $shoppingCartUrl */
+$shoppingCartUrl = $block->getData('shopping_cart_url');
+/** @var mixed $helperMethodResult */
+$helperMethodResult = $block->getData('helper_method_result');
 ```
 
 ### arguments {#arguments}
 
 `<arguments>` is a required container for `<argument>`. It does not have its own attributes.
 
-Example:
-
 ```xml
 <arguments>
     <argument name="css_class" xsi:type="string">header links</argument>
 </arguments>
 ```
 
+## Common arguments for blocks
+
+The following are common arguments for block instructions:
+
+- `cache_key`: key for saving/retrieving cached information. This is helpful if the block needs to be cached: [example]({{ page.baseurl }}/cloud/project/project-routes-more-cache.html).
+
+- `template`: sets the template for the block.
+
+    ```xml
+    <referenceBlock name="page.main.title">
+     <arguments>
+       <argument name="template" xsi:type="string">%Namespace_Module::new_template.phtml%</argument>
+     </arguments>
+   </referenceBlock>
+   ```
+
+- `translate_inline`: `true' = enable translation for this block.
+
+   ```xml
+   <argument xsi:type="string" translate="true">{strValue}</argument>
+   ```
+
+- `module_name`: sets the module for the block. Usually this is determined automatically.
+
+    ```xml
+    <block class="Namespace_Module_Block_Type" name="block.example">
+      <arguments>
+        <argument name="label" xsi:type="string">Block Label</argument>
+      </arguments>
+    </block>
+    ```
+
 [page layout]: {{page.baseurl}}/frontend-dev-guide/layouts/layout-types.html#layout-types-page
 [page configuration]: {{page.baseurl}}/frontend-dev-guide/layouts/layout-types.html#layout-types-conf
 [generic layout]: {{page.baseurl}}/frontend-dev-guide/layouts/layout-types.html#layout-types-gen
 [handle]: {{page.baseurl}}/frontend-dev-guide/layouts/layout-overview.html#layout-over-terms
 [templates]: {{page.baseurl}}/frontend-dev-guide/templates/template-overview.html
-[app/code/Magento/Theme/view/frontend/layout/default.xml]: {{site.mage2000url}}app/code/Magento/Theme/view/frontend/layout/default.xml
-[app/code/Magento/Theme/view/frontend/templates/html/title.phtml]: {{site.mage2000url}}app/code/Magento/Theme/view/frontend/templates/html/title.phtml
+[app/code/Magento/Theme/view/frontend/layout/default.xml]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Theme/view/frontend/layout/default.xml
+[app/code/Magento/Theme/view/frontend/templates/html/title.phtml]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Theme/view/frontend/templates/html/title.phtml
 [Layout file types]: {{page.baseurl}}/frontend-dev-guide/layouts/layout-types.html
-

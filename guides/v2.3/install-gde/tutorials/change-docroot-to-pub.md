@@ -22,7 +22,7 @@ If you're accustomed to using the Web Setup Wizard during development, be aware 
 
 ## A note about nginx
 
-If you are using [nginx]({{ page.baseurl }}/install-gde/prereq/nginx.html) and the [`nginx.conf.sample`]({{ site.mage2200url }}nginx.conf.sample) file included in the Magento installation directory, you are probably already serving files from the `pub/` directory.
+If you are using [nginx]({{ page.baseurl }}/install-gde/prereq/nginx.html) and the [`nginx.conf.sample`]({{ site.mage2bloburl }}/{{ page.guide_version }}/nginx.conf.sample) file included in the Magento installation directory, you are probably already serving files from the `pub/` directory.
 
 When used in your server block that defines your site, the `nginx.conf.sample` configuration overrides your server's docroot settings to serve files from Magento's `pub/` directory. For example, see the last line in the following configuration:
 ```bash
@@ -87,7 +87,7 @@ The name and location of your virtual host file depends on which version of Apac
 
 If you appended a directory name to your server's hostname or IP address to create the base URL when you installed Magento (for example `http://192.168.33.10/magento2`), you'll need to remove it.
 
-{: .bs-callout .bs-callout-info }
+{: .bs-callout-info }
 Replace `192.168.33.10` with your server's hostname.
 
 1.  Log in to the Magento database:
@@ -123,7 +123,7 @@ Switching between modes is an important step in verifying that your server confi
 
 ## 4. Verify the storefront
 
-Go to the {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} in a web browser to verify that everything is working.
+Go to the [storefront](https://glossary.magento.com/storefront) in a web browser to verify that everything is working.
 
 1.  Open a web browser and enter your server's hostname or IP address in the address bar. For example, http://192.168.33.10.
 

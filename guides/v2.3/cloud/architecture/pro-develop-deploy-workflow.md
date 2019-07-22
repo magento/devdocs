@@ -1,1 +1,1 @@
-../../../v2.2/cloud/architecture/pro-develop-deploy-workflow.md
+../../../../guides/v2.2/cloud/architecture/pro-develop-deploy-workflow.md

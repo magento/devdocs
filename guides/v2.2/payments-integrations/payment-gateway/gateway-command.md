@@ -7,12 +7,12 @@ menu_node:
 menu_order: 2 
 ---
 
-Gateway Command is a component of the Magento {% glossarytooltip 5b963536-8f03-45c4-963b-688021f4eea7 %}payment gateway{% endglossarytooltip %} that takes the [payload]({{ page.baseurl }}/payments-integrations/payment-gateway/payment-gateway-intro.html#terms) required for a particular payment provider and sends, receives, and processes the provider's response. 
+Gateway Command is a component of the Magento [payment gateway](https://glossary.magento.com/payment-gateway) that takes the [payload]({{ page.baseurl }}/payments-integrations/payment-gateway/payment-gateway-intro.html#terms) required for a particular payment provider and sends, receives, and processes the provider's response. 
 For each operation (authorization, capture and so on) of a certain payment provider - a separate gateway command is added.
 
 ## Interface
 
-Basic interface for a gateway command is [`\Magento\Payment\Gateway\CommandInterface`]({{ site.mage2000url }}app/code/Magento/Payment/Gateway/CommandInterface.php). It implements the [Command design pattern](http://designpatternsphp.readthedocs.io/en/latest/Behavioral/Command/README.html).
+Basic interface for a gateway command is [`\Magento\Payment\Gateway\CommandInterface`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Payment/Gateway/CommandInterface.php). It implements the [Command design pattern](http://designpatternsphp.readthedocs.io/en/latest/Behavioral/Command/README.html).
 
 ## Basic implementation
 
@@ -22,7 +22,7 @@ The `\Magento\Payment\Gateway\Command\GatewayCommand` class is the default `Comm
 
 For each particular integration with a payment provider, gateway commands are added using virtual types in [dependency injection (DI)]({{ page.baseurl }}/extension-dev-guide/depend-inj.html) configuration.
 
-In the following example the `BraintreeAuthorizeCommand` gateway command is added. The command implements the "authorize" operation for the Braintree payment provider ([`app/code/Magento/Braintree/etc/di.xml#131`]({{ site.mage2100url }}app/code/Magento/Braintree/etc/di.xml#L131)):
+In the following example the `BraintreeAuthorizeCommand` gateway command is added. The command implements the "authorize" operation for the Braintree payment provider ([`app/code/Magento/Braintree/etc/di.xml#131`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Braintree/etc/di.xml#L131)):
 
 ```xml
 <virtualType name="BraintreeAuthorizeCommand" type="Magento\Payment\Gateway\Command\GatewayCommand">
@@ -50,5 +50,4 @@ A gateway command must be configured with the following arguments:
 Optional arguments :
 
 * `handler`: [response handler]({{ page.baseurl }}/payments-integrations/payment-gateway/response-handler.html), changes the order and payment status depending on the payment provider response. 
-* `validator`: [response validator]({{ page.baseurl }}/payments-integrations/payment-gateway/response-validator.html), validates the provider response. 
-
+* `validator`: [response validator]({{ page.baseurl }}/payments-integrations/payment-gateway/response-validator.html), validates the provider response.

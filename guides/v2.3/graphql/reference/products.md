@@ -148,7 +148,7 @@ This example adds `field_to_sort` and `other_field_to_sort` attributes to the `a
 ## ProductInterface {#ProductInterface}
 
 Any type that implements `ProductInterface` contains all the base attributes necessary for the frontend of the product model.
-The `items` that are returned in a `ProductInterface` array can also contain attributes from resources external to the CatalogGraphQl module:
+The `items` that are returned in a `ProductInterface` array can also contain attributes from resources external to the `CatalogGraphQl` module:
 
 * Custom and extension attributes defined in any attribute set
 * The attribute is defined in the [PhysicalProductInterface](#PhysicalProductInterface) or [CustomizableOptionInterface]({{ page.baseurl }}/graphql/reference/customizable-option-interface.html)
@@ -170,8 +170,8 @@ Attribute | Data type | Description
 `description` | ComplexTextValue | An object that contains detailed information about the product. The object can include simple HTML tags
 `gift_message_available` | String | Indicates whether a gift message is available
 `id` | Int | The ID number assigned to the product
-`image` | ProductImage | An object that contains the URL and label for the main image on the product page
-`is_returnable` | String | Indicates whether the product can be returned. This attribute is defined in the Rma module.
+`image` | [ProductImage](#ProductImage) | An object that contains the URL and label for the main image on the product page
+`is_returnable` | String | Indicates whether the product can be returned. This attribute is defined in the `RmaGraphQl` module.
 `manufacturer` | Int | A number representing the product's manufacturer
 `media_gallery_entries` | [MediaGalleryEntry] | An array of [MediaGalleryEntry](#MediaGalleryEntry) objects
 `meta_description` | String | A brief overview of the product for search results listings, maximum 255 characters
@@ -180,26 +180,28 @@ Attribute | Data type | Description
 `name` | String | The product name. Customers use this name to identify the product.
 `new_from_date` | String | The beginning date for new product listings, and determines if the product is featured as a new product
 `new_to_date` | String | The end date for new product listings
+`only_x_left_in_stock` | Float | The "Only X left Threshold" assigned to the product. This attribute is defined in the `InventoryGraphQl` module.
 `options_container` | String | If the product has multiple options, determines where they appear on the product page
 `price` | ProductPrices | The price of an item. A `ProductPrice` object is returned. See [ProductPrices](#ProductPrices) for more information.
 `product_links` | [ProductLinksInterface] | An array of [ProductLinks](#ProductLinks) objects
 `short_description` | ComplexTextValue | An object that contains a short description of the product. Its use depends on the store's theme. The object can include simple HTML tags
 `sku` | String | A number or code assigned to a product to identify the product, options, price, and manufacturer
-`small_image` | ProductImage | An object that contains the URL and label for the small image used on catalog pages
+`small_image` | [ProductImage](#ProductImage) | An object that contains the URL and label for the small image used on catalog pages
 `special_from_date` | String | The beginning date that a product has a special price
 `special_price` | Float |  The discounted price of the product
 `special_to_date` | String | The end date that a product has a special price
-`swatch_image` | String | The file name of a swatch image. This attribute is defined in the Swatches module.
-`tax_class_id` | Int | An ID assigned to a tax class. This attribute is defined in the Tax module.
-`thumbnail` | ProductImage | An object that contains the URL and label for the product's thumbnail image
+`stock_status` | ProductStockStatus | The status of the stock. `ProductStockStatus` is an enumeration that can have the value of `IN_STOCK` or `OUT_OF_STOCK`. This attribute is defined in the `InventoryGraphQl` module.
+`swatch_image` | String | The file name of a swatch image. This attribute is defined in the `SwatchesGraphQl` module.
+`tax_class_id` | Int | An ID assigned to a tax class. This attribute is defined in the `TaxGraphQl` module.
+`thumbnail` | [ProductImage](#ProductImage) | An object that contains the URL and label for the product's thumbnail image
 `tier_price` | Float | The price when tier pricing is in effect and the items purchased threshold has been reached
 `tier_prices` | [ProductTierPrices] | An array of [ProductTierPrices](#ProductTier) objects
 `type_id` | String | One of `simple`, `virtual`, `bundle`, `downloadable`,`grouped`, `configurable`
 `updated_at` | String | The timestamp indicating when the product was last updated
-`url_key` | String | The part of the URL that identifies the product. This attribute is defined in the `CatalogUrlRewrite` module
-`url_path` | String | The part of the URL that precedes the `url_key`. This attribute is defined in the `CatalogUrlRewrite` module
+`url_key` | String | The part of the URL that identifies the product. This attribute is defined in the `CatalogUrlRewriteGraphQl` module
+`url_path` | String | The part of the URL that precedes the `url_key`. This attribute is defined in the `CatalogUrlRewriteGraphQl` module
 `url_rewrites` | [UrlRewrite] | A list of URL rewrites. See [UrlRewrite endpoint]({{ page.baseurl }}/graphql/reference/url-resolver.html#UrlRewrite) for more information and an example query
-`websites` | [Website] | An array of websites in which the product is available
+`websites` | [Website] | An array of websites in which the product is available. See [Store endpoint]({{ page.baseurl }}/graphql/reference/store-config.html#supported-website-attributes) for more information.
 
 ### ProductPrices object {#ProductPrices}
 
@@ -253,6 +255,15 @@ Attribute | Type | Description
 `linked_product_type` | String | The type of linked product (`simple`, `virtual`, `bundle`, `downloadable`,`grouped`, `configurable`)
 `position` | Int | The position within the list of product links
 `sku` | String | The identifier of the linked product
+
+### ProductImage object {#ProductImage}
+
+`ProductImage` contains information about image URL and label.
+
+Attribute | Type | Description
+--- | --- | ---
+`url` | String | The URL for the product image
+`label` | String | The label for the product image
 
 ### MediaGalleryEntry object {#MediaGalleryEntry}
 

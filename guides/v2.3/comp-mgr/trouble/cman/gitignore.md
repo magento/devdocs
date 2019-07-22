@@ -1,1 +1,1 @@
-../../../../v2.2/comp-mgr/trouble/cman/gitignore.md
+../../../../../guides/v2.2/comp-mgr/trouble/cman/gitignore.md

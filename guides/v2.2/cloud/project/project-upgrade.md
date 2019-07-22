@@ -27,7 +27,7 @@ Prepare your environment with the following tasks:
 * [Migrating PHP](http://php.net/manual/en/migration71.php)
 * [Magento 2.2.x technology stack requirements]({{ site.baseurl }}/guides/v2.2/install-gde/system-requirements-tech.html#php)
 
-{: .bs-callout .bs-callout-info}
+{: .bs-callout-info }
 For Pro projects **created before October 23, 2017**, you must open a [support ticket]({{ page.baseurl }}/cloud/trouble/trouble.html) to use PHP 7.1 on your Pro Staging and Production environments.
 
 ### Configuration management
@@ -117,7 +117,7 @@ If you are upgrading to 2.2.X, you need to also update your [.magento.app.yaml](
 1.  Verify the upgrade in your Integration, Staging, or Production environment by using SSH to log in and check the version.
 
     ```bash
-      php bin/magento --version
+    php bin/magento --version
     ```
 
 ## Create a new config.php file

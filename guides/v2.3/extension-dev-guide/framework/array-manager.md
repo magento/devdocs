@@ -1,0 +1,1 @@
+../../../../guides/v2.2/extension-dev-guide/framework/array-manager.md

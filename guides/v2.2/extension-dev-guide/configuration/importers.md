@@ -61,7 +61,7 @@ The sample code in the preceding example registers the importer `Vendor\Module\M
 
 The `i18n` array has a queue order of 110, which means this importer runs after importers that have value of sort order less than 110 has and if values in the section `i18n` were changed.
 
-{: .bs-callout .bs-callout-info }
+{: .bs-callout-info }
 An array cannot be imported by more than one importer.
 
 ## More information
@@ -70,4 +70,4 @@ An array cannot be imported by more than one importer.
 * [config.php reference]({{ page.baseurl }}/config-guide/prod/config-reference-configphp.html)
 * [env.php reference]({{ page.baseurl }}/config-guide/prod/config-reference-envphp.html)
 
-[importer-interface]:{{ site.mage2200url }}lib/internal/Magento/Framework/App/DeploymentConfig/ImporterInterface.php
+[importer-interface]:{{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/App/DeploymentConfig/ImporterInterface.php

@@ -9,12 +9,11 @@ level3_subgroup: msi-tutorial
 return_to:
   title: REST Tutorials
   url: rest/tutorials/index.html
-redirect_from: /guides/v2.3/rest/tutorials/msi-order-processing/assign-source-to-stock.html
 functional_areas:
   - Integration
 ---
 
-This step links the sources we created in Step 2 with the stocks we created in Step 3.
+This step links the sources we created in [Step 2. Create sources]({{page.baseurl}}/rest/tutorials/inventory/create-sources.html) with the stocks we created in [Step 3. Create stocks]({{page.baseurl}}/rest/tutorials/inventory/create-stock.html).
 
 Each stock can be assigned one or more sources. Magento uses these associations to calculate the virtual aggregated inventory per product. 
 

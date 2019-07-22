@@ -1,50 +1,50 @@
 <!-- Main Navigation -->
-{% assign sections = site.data.main-nav %}
+{%- assign sections = site.data.main-nav -%}
 
 <ul class="nav-main" role="menubar">
 
-{% for section in sections %}
-{% assign subsections = section.children %}
+{%- for section in sections -%}
+{%- assign subsections = section.children -%}
 
-  {% if section.label %}
+  {%- if section.label -%}
   <li class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
     <span tabindex="-1">{{ section.label }}</span>
 
-    {% if subsections %}
+    {%- if subsections -%}
       <div class="nav-popup">
 
-      {% capture nav %}
-        {% for subsection in subsections %}
-          {% assign subchildren = subsection.children %}
-          {% if subchildren %}
+      {%- capture nav -%}
+        {%- for subsection in subsections -%}
+          {%- assign subchildren = subsection.children -%}
+          {%- if subchildren -%}
             <div class="nav-section">
               <div class="nav-section-title">{{ subsection.label }}</div>
               <ul>
-              {% for item in subchildren %}
-                {% include layout/nav-item.html section=item %}
-              {% endfor%}
+              {%- for item in subchildren -%}
+                {%- include layout/nav-item.html section=item -%}
+              {%- endfor-%}
               </ul>
             </div>
-          {% else if %}
-            {% include layout/nav-item.html section=subsection %}
-          {% endif %}
-        {% endfor %}
-      {% endcapture %}
+          {%- else if -%}
+            {%- include layout/nav-item.html section=subsection -%}
+          {%- endif -%}
+        {%- endfor -%}
+      {%- endcapture -%}
 
-      {% if subchildren %}
+      {%- if subchildren -%}
         {{ nav }}
-      {% else if %}
+      {%- else if -%}
         <ul>{{ nav }}</ul>
-      {% endif %}
+      {%- endif -%}
 
       </div>
-    {% endif %}
+    {%- endif -%}
 
   </li>
-  {% else if %}
+  {%- else if -%}
   <li class="nav-main-separator"></li>
-  {% endif %}
+  {%- endif -%}
 
-{% endfor %}
+{%- endfor -%}
 
 </ul><!-- /.nav-main -->
