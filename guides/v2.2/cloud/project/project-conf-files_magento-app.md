@@ -1,9 +1,6 @@
 ---
 group: cloud-guide
 title: Application
-redirect_from:
-  - /guides/v2.1/cloud/before/before-setup-env-cron.html
-  - /guides/v2.2/cloud/before/before-setup-env-cron.html
 functional_areas:
   - Cloud
   - Setup
@@ -85,9 +82,9 @@ You can specify the following attributes for the `web` property:
 
 Attribute | Description
 --------- | -----------
-`document_root` | The path relative to the root of the application that is exposed on the web. Typical values include `/public` and `/web`.
+`root` | The path relative to the root of the application that is exposed on the web. Typical values include `/public` and `/web`.
 `passthru` | The URL used in the event that a static file or PHP file cannot be found. This URL is typically the front controller for your applications, often `/index.php` or `/app.php`.
-`index_files` | Static files, such as `index.html`, to serve your application. This key expects a collection. You must include the static file(s) in the whitelist as an index file, like `- \.html$`.
+`index` | Static files, such as `index.html`, to serve your application. This key expects a collection. You must include the static file(s) in the whitelist as an index file, like `- \.html$`.
 `blacklist` | A list of files that should never be executed. Has no effect on static files.
 `whitelist` | A list of static files (as regular expressions) that can be served. Dynamic files (for example, PHP files) are treated as static files and have their source code served, but they are not executed.
 `expires` | The number of seconds to cache whitelisted content in the browser. This attribute enables the cache-control and expires headers for static content. If this value is not set, the `expires` directive and resulting headers are not included when serving static content files.
@@ -206,7 +203,7 @@ Use the `hooks` section to run shell commands during the build, deploy, and post
 
 -   **`deploy`**—Execute commands _after_ packaging and deploying your application. You can access other services at this point. Since the default `php ./vendor/bin/ece-tools` command copies the `app/etc` directory to the correct location, you must add custom commands _after_ the deploy command to prevent custom commands from failing.
 
--   **`post_deploy`**—Execute commands _after_ deploying your application and _after_ the container begins accepting connections. The `post_deploy` hook clears the cache and preloads (warms) the cache. You can customize the list of pages using the `WARM_UP_PAGES` variable in the [Post-deploy stage]({{ site.baseurl }}/guides/v2.1/cloud/env/variables-post-deploy.html). It is available only for Pro projects that contain [Staging and Production environments in the Project Web UI]({{ page.baseurl }}/cloud/trouble/pro-env-management.html) and for Starter projects. Although not required, this works in tandem with the `SCD_ON_DEMAND` environment variable.
+-   **`post_deploy`**—Execute commands _after_ deploying your application and _after_ the container begins accepting connections. The `post_deploy` hook clears the cache and preloads (warms) the cache. You can customize the list of pages using the `WARM_UP_PAGES` variable in the [Post-deploy stage]({{ page.baseurl }}/cloud/env/variables-post-deploy.html). It is available only for Pro projects that contain [Staging and Production environments in the Project Web UI]({{ page.baseurl }}/cloud/trouble/pro-env-management.html) and for Starter projects. Although not required, this works in tandem with the `SCD_ON_DEMAND` environment variable.
 
 Add CLI commands under the `build`, `deploy`, or `post_deploy` sections _before_ the `ece-tools` command:
 
@@ -277,7 +274,7 @@ A cron job is well suited for the following tasks:
 -  Or it is long, but can be easily divided into many small queued tasks.
 -  A delay between when a task is registered and when it actually happens is acceptable.
 
-A sample Magento cron job follows:
+By default, every Cloud project has the following default crons configuration to run the default Magento cron jobs:
 
 ```yaml
 crons:
@@ -288,7 +285,7 @@ crons:
 
 For {{site.data.var.ece}} 2.1.X, you can use only [workers](#workers) and [cron jobs](#crons). For {{site.data.var.ece}} 2.2.X, cron jobs launch consumers to process batches of messages, and do not require additional configuration.
 
-For more information, see [Set up cron jobs]({{ page.baseurl }}/cloud/configure/setup-cron-jobs.html).
+If your project requires custom cron jobs, you can add them to the default cron configuration. See [Set up cron jobs]({{ page.baseurl }}/cloud/configure/setup-cron-jobs.html).
 
 ## Variables
 

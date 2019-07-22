@@ -16,9 +16,6 @@ functional_areas:
 
 {{site.data.var.ee}} supports [Elasticsearch]({{ site.baseurl }}/guides/v2.2/config-guide/elasticsearch/es-overview.html) versions 1.4, 1.7, 2.4, and 5.2 (requires {{site.data.var.ee}} v2.2.3 or later). The recommended version is 5.2.
 
-{:.bs-callout .bs-callout-info}
-If you are upgrading to {{site.data.var.ee}} 2.1.3, you must change your configuration to replace Solr with Elasticsearch as discussed in [the 2.1.3 Release Notes]({{ site.baseurl }}/guides/v2.1/cloud/release-notes/CloudReleaseNotes2.1.3.html#cloud-rn-213-es).
-
 #### To enable Elasticsearch:
 
 1.  Add the `elasticsearch` service to the `.magento/services.yaml` file with the Elasticsearch version and allocated disk space in MB.
