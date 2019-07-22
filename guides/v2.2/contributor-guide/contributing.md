@@ -192,7 +192,7 @@ branch to apply your changes to that release.
 
 **Forward-ports** (or up-ports) contribute your code and fixes to a more current release line. Create a forward port if you fix an issue in an earlier release line that also affects a more current release. For example, if you have fixed an issue in 2.2, create a pull request against the latest release branch to address that issue in an upcoming minor release. If you contribute a fix to 2.2, create a pull request against the 2.3 release branch to apply your changes to that release. We recommend that contributors create a pull request to forward port every fix delivered to an older release line.
 
-### Magento Porting Tool {#porting-tool}
+### Magento porting tool {#porting-tool}
 
 This tool ports fixes automatically across release lines with a few simple steps. It allows you to create ports only for _merged_ pull requests.
 
