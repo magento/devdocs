@@ -675,15 +675,6 @@ See [Magento Security Center](https://magento.com/security/patches/magento-2.2.7
 
 
 
-
-
-### Cookies
-
-<!-- MAGETWO-93790 -->* Customer data is now fully loaded after restarting the browser during an unexpired user session. Previously,  the `section_data_ids` section of the session cookie was not properly completed. [GitHub-14912](https://github.com/magento/magento2/issues/14912)
-
-<!--- ENGCOM-1089 -->* Cookies can now be modified by extension. *Fix submitted by [Rostyslav](https://github.com/rostyslav-hymon) in pull request [14366](https://github.com/magento/magento2/pull/14366)*. 
-
-
 ### CMS content
 
 
