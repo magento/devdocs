@@ -84,17 +84,17 @@ Attribute |  Data Type | Description
 
 Use the `catalog` attributes to retrieve information about the store's catalog. These attributes are defined in the `CatalogGraphQl` module.
 
-Attribute |  Data Type | Description
+Attribute |  Data Type | Description | Example
 --- | --- | ---
-`product_url_suffix` | String | Product URL Suffix | `.html`
-`category_url_suffix` | String | Category URL Suffix | `.html`
-`title_separator` | String | Page Title Separator | `-`
-`list_mode` | String  | List Mode | `grid-list`
-`grid_per_page_values` | String | Products per Page on Grid Allowed Values | `9,15,30`
-`list_per_page_values` | String | Products per Page on List Allowed Values | `5,10,15,20,25`
-`grid_per_page` | Integer | Products per Page on Grid Default Value | `9`
-`list_per_page` | Integer | Products per Page on List Default Value | `10`
-`catalog_default_sort_by` | String | Default Sort By | `position`
+`catalog_default_sort_by` | String | The default sort order of the search results list | `position`
+`category_url_suffix` | String | The suffix applied to category pages, such as `.htm` or `.html` | `.html`
+`grid_per_page` | Integer | The default number of products per page in Grid View | `9`
+`grid_per_page_values` | A list of numbers that define how many products can be displayed in List View  | `9,15,30`
+`list_mode` | String  | The format of the search results list | `grid-list`
+`list_per_page` | Integer | The default number of products per page in List View | `10`
+`list_per_page_values` | String | A list of numbers that define how many products can be displayed in List View | `5,10,15,20,25`
+`product_url_suffix` | String | The suffix applied to product pages, such as `.htm` or `.html` | `.html`
+`title_separator` | String | Identifies the character that separates the category name and subcategory in the browser title bar | `-`
 
 ## Example usage
 
@@ -229,14 +229,14 @@ The following query returns information about the store's catalog configuration.
 ```text
 {
   storeConfig {
-    product_url_suffix,
-    category_url_suffix,
-    title_separator,
-    list_mode,
-    grid_per_page_values,
-    list_per_page_values,
-    grid_per_page,
-    list_per_page,
+    product_url_suffix
+    category_url_suffix
+    title_separator
+    list_mode
+    grid_per_page_values
+    list_per_page_values
+    grid_per_page
+    list_per_page
     catalog_default_sort_by
   }
 }
