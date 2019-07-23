@@ -123,6 +123,9 @@ pages:
       url: /extension-dev-guide/module-development.html
       children:
 
+        - label: Asynchronous/deferred operations
+          url: /extension-dev-guide/async-operations.html
+
         - label: Service contracts
           url: /extension-dev-guide/service-contracts/service-contracts.html
 
