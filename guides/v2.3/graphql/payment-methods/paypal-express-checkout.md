@@ -1,39 +1,45 @@
 ---
 group: graphql
-title: Paypal endpoint
+title: PayPal Express payment method
 ---
 
-The `Paypal` endpoint provides support for the following PayPal payment methods:
+The PayPal Express Checkout payment method enables customers to pay by credit card or from the security of their personal PayPal accounts. During checkout, the customer is redirected to the secure PayPal site to complete the payment information. The customer is then returned to your store to complete the remainder of the checkout process. 
 
-* PayPal Express Checkout
-* PayPal Payflow Pro and PayPal Payflow Link
+The merchant can use PayPal Express Checkout as a standalone option, or combine it with one of these other PayPal payment solutions:
 
-The following steps describe the flow of calls required to complete a typical PayPal checkout transaction. A successful purchase requires that you send three mutations to PayPal, and the buyer must approve the purchase by logging in to PayPal.
+* PayPal Payflow Link
+* PayPal Payment Standard
+* Website Payments Standard (Australia only)
+* Website Payments Standard (United Kingdom only)
 
-1. **Send a token request.** When the buyer clicks a PayPal button, the frontend executes the `createPaypalExpressToken` mutation. The Magento `PaypalGraphQl` module gathers information in the specified cart and sends this information to PayPal.
+When these other payment solutions are combined with PayPal Express Checkout, they use the same workflow as PayPal Express Checkout. From the GraphQL perspective, the only difference is the payment method `code` specified in the `setPaymentMethodOnCart` mutation.
+
+## PayPal Express Checkout workflow
+
+The following steps describe the flow of calls required to complete a typical PayPal Express Checkout authorization. A successful purchase requires that you send three mutations to PayPal, and the buyer must approve the purchase by logging in to PayPal.
+
+1. **Send a token request.** When the buyer clicks a PayPal button, the frontend executes the [`createPaypalExpressToken`]({{page.baseurl}}/mutations/create-paypal-express-token.html) mutation. The Magento `PaypalGraphQl` module gathers information in the specified cart and sends this information to PayPal.
 
 2. **PayPal returns a token.** If the token request succeeds, PayPal returns a token and a payer ID. PayPal also sends payment-related data that is outside the scope of GraphQL. You must include this token in subsequent steps. The buyer is redirected to the payment confirmation page, which was specified in the token request.
 
-3. **Redirect the customer to PayPal for approval.** Depending on your implementation, the buyer is either redirected to the PayPal login screen, or the buyer enters their credentials in-context. 
+3. **Redirect the customer to PayPal for approval.** Depending on your implementation, the buyer is either redirected to the PayPal login screen, or the buyer enters their credentials in-context.
 
 4. **PayPal redirects the customer back to your site.** If the customer approves the payment, PayPal directs the customer back to the payment confirmation page.
 
-5. **Set the payment method.** The frontend runs the `setPaymentMethodOnCart` mutation. The payload includes the PayPal token and the payer ID. The cart may have been updated since the token was requested with shipping costs, taxes, and other adjustments. Magento submits the updated cart to PayPal.
+5. **Set the payment method.** The frontend runs the [`setPaymentMethodOnCart`({{page.baseurl}}/reference/quote-payment-method.html) mutation. The payload includes the PayPal token and the payer ID. The cart may have been updated since the token was requested with shipping costs, taxes, and other adjustments. Magento submits the updated cart to PayPal.
 
-6. **Complete the transaction.** Place the order with the `placeOrder` mutation. PayPal captures the payment by transferring the funds from the customer account to the appropriate merchant account. Magento creates an order, ready for fulfillment.
+6. **Complete the transaction.** Place the order with the [`placeOrder`]({{page.baseurl}}/reference/quote-place-order.html) mutation. PayPal captures the payment by transferring the funds from the customer account to the appropriate merchant account. Magento creates an order, ready for fulfillment.
 
-## Mutation
+## Additional Payment information
 
-The `createPaypalExpressToken` mutation initiates a PayPal checkout transaction and receives a token. You must specify this token when setting a PayPal payment method.
+The value of the payment method `code` in the [`setPaymentMethodOnCart`({{page.baseurl}}/reference/quote-payment-method.html) mutation can be one of the following:
 
-## Syntax
+[PayPal Express Checkout]({{page.baseurl}}/graphql/payment-methods/paypal-express-checkout.html) | `paypal_express`
+[PayPal Express Checkout Payflow Edition]({{page.baseurl}}/graphql/payment-methods/paypal-express-checkout.html) | `payflow_express`
 
-`createPaypalExpressToken(input: PaypalExpressTokenInput): PaypalExpressToken`
 
-## Examples
-
-These examples show all the mutations required to complete a PayPal purchase.
-
+Attribute |  Data Type | Description
+--- | --- | ---
 
 ### Set the payment method
 

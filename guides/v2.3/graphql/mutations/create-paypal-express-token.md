@@ -6,9 +6,8 @@ title: createPaypalExpressToken mutation
 The `createPaypalExpressToken` mutation begins the authorization process for the following payment methods:
 
 * PayPal Express Checkout
-* PayPal Something 1
-* PayPal Something 2
-* PayPal Something 3
+* PayPal Payflow Pro with Express Checkout
+* PayPal Payflow Link with Express Checkout
 
 This mutation requires as input the cart ID, the payment method code, and a set of URLs that PayPal uses to respond to the token request. If the request is successful, PayPal returns a token. The `setPaymentMethodOnCart` mutation uses this token later in the authorization process. 
 
@@ -107,7 +106,20 @@ Attribute |  Data Type | Description
 
 ## Output attributes
 
-The `createPaypalExpressToken` object contains .
+### PaypalExpressToken {#PaypalExpressToken}
+
+The `PaypalExpressToken` object contains a token returned by PayPal and a set of URLs that allow the buyer to authorize payment and adjust checkout details.
 
 Attribute |  Data Type | Description
 --- | --- | ---
+`paypal_urls` | [PaypalExpressUrlList](#PaypalExpressUrlList) | A set of URLs that allow the buyer to authorize payment and adjust checkout details
+`token` | String | The token returned by PayPal
+
+### PaypalExpressUrlList {#PaypalExpressUrlList}
+
+The `PaypalExpressUrlList` object defines a set of URLs that allow the buyer to authorize payment and adjust checkout details.
+
+Attribute |  Data Type | Description
+--- | --- | ---
+`edit` | String | The PayPal URL that allows the buyer to edit their checkout details
+`start` | String | The URL to the PayPal login page
