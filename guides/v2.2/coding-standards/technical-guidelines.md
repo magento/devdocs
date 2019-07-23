@@ -520,7 +520,7 @@ class View extends Template
 
 6.2.4. Actions MUST NOT reference blocks declared in layout.
 
-6.2.5 Blocks MUST NOT assume a specific or any controller has been invoked for current request
+6.2.5 Blocks MUST NOT assume that a specific, or any, controller has been invoked for current request.
 
 ###  6.3. Data Access (Persistence) layer
 
@@ -777,7 +777,7 @@ class SampleEventObserverThatModifiesInputs
 
 15.12. Files MUST be secured by a web server configuration (e.g., `.htaccess` or `nginx.conf`), except files that are intended to be publicly accessible.
  
-15.13 Presentation layer classes that access user input directly MUST NOT assume it has been validated
+15.13 Presentation layer classes that access user input directly MUST NOT assume it has been validated.
 
 <!-- LINKS: DEFINITIONS AND ADDRESSES -->
 
