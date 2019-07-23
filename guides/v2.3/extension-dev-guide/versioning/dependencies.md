@@ -1,6 +1,7 @@
 ---
 group: php-developer-guide
 subgroup: Versioning
+title: Module version dependencies
 menu_title: Module version dependencies
 menu_order: 1200
 redirect_from:
