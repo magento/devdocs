@@ -20,6 +20,7 @@ This guide discusses the following widgets:
 -   [Menu widget]
 -   [Modal widget]
 -   [Navigation widget]
+-   [PasswordStrengthIndicator widget]
 -   [Prompt widget]
 -   [QuickSearch widget]
 -   [RedirectUrl widget]
@@ -45,6 +46,7 @@ Magento out of the box does not contain jQuery UI styles. Also, it is not recomm
 [Menu widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_menu.html
 [Modal widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_modal.html
 [Navigation widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_navigation.html
+[PasswordStrengthIndicator widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_password_strength_indicator.html
 [Prompt widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_prompt.html
 [QuickSearch widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_quickSearch.html
 [RedirectUrl widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_redirectUrl.html
