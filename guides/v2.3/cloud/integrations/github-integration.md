@@ -1,1 +1,1 @@
-../../../v2.2/cloud/integrations/github-integration.md
+../../../../guides/v2.2/cloud/integrations/github-integration.md

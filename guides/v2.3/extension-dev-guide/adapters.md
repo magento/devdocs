@@ -1,1 +1,1 @@
-../../v2.2/extension-dev-guide/adapters.md
+../../../guides/v2.2/extension-dev-guide/adapters.md

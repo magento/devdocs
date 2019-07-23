@@ -1,1 +1,1 @@
-../../../v2.2/cloud/cdn/fastly-vcl-wordpress.md
+../../../../guides/v2.2/cloud/cdn/fastly-vcl-wordpress.md

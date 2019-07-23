@@ -1,1 +1,1 @@
-../../../v2.2/cloud/trouble/trouble.md
+../../../../guides/v2.2/cloud/trouble/trouble.md

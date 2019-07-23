@@ -1,1 +1,1 @@
-../../../v2.2/install-gde/basics/basics-parent.md
+../../../../guides/v2.2/install-gde/basics/basics-parent.md

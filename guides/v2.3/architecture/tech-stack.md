@@ -12,11 +12,11 @@ Magento's highly modular structure includes the following open-source technologi
 ### Web servers
 
 *	Apache
-*	{% glossarytooltip b14ef3d8-51fd-48fe-94df-ed069afb2cdc %}nginx{% endglossarytooltip %}
+*	[nginx](https://glossary.magento.com/nginx)
 
 ### PHP
 
-*	{% glossarytooltip d85e2d0a-221f-4d03-aa43-0cda9f50809e %}Composer{% endglossarytooltip %} (dependency management package for PHP)
+*	[Composer](https://glossary.magento.com/composer) (dependency management package for PHP)
 
 {:.bs-callout .bs-callout-info }
 Magento, with assistance from our community, is implementing PHP 7.2 compatibility for our upcoming 2.3.0 release. Any backward-incompatibility issues will be resolved in this release, and all 3rd party libraries now support PHP 7.2. Fully tested 7.2 support will be delivered in following patch releases.
@@ -25,26 +25,26 @@ If you are interested in participating in Magento Community projects we welcome 
 
 ### Database
 
-*	MySQL
-*	MySQL Percona
+* MySQL
+* MySQL Percona
 
 ### HTTP accelerator
 
-*	Varnish
+* Varnish
 
 ### Cache Storage
 
-*	Redis
+* Redis
 
 ### Search
 
-* Elasticsearch ({{site.data.var.ee}} versions 2.1.x and 2.2.x, and Magento Open Source version 2.3x)
+* Elasticsearch ({{site.data.var.ee}} versions 2.1.x and 2.2.x, and Magento Open Source version 2.3.x)
 
 ### Additional technologies
 
 *	HTML5
-*	CSS3 (LESS {% glossarytooltip 6c5cb4e9-9197-46f2-ba79-6147d9bfe66d %}CSS{% endglossarytooltip %} pre-processor)
-*	{% glossarytooltip 5bfa8a8e-6f3e-4fed-a43e-62339916f02e %}jQuery{% endglossarytooltip %} (primary {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} library)
+*	CSS3 (LESS [CSS](https://glossary.magento.com/css) pre-processor)
+*	[jQuery](https://glossary.magento.com/jquery) (primary [JavaScript](https://glossary.magento.com/javascript) library)
 *	RequireJS (library that helps load JavaScript resources on demand)
 *	Knockout.js (simplifies JavaScript UIs with the Model-View-View Model pattern)
 *	Third-party libraries (Zend Framework 1, Zend Framework 2, Symfony)
@@ -52,9 +52,9 @@ If you are interested in participating in Magento Community projects we welcome 
 
 ### Optional stack components
 
-*	Varnish (caching)
-*	Redis (used for page caching)
-*	Elasticsearch (search engine)
+* Varnish (caching)
+* Redis (used for page caching)
+* Elasticsearch (search engine)
 * RabbitMQ (message queue)
 
 Magento 2.2+ does not support HipHop Virtual Machine (HHVM).

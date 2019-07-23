@@ -1,1 +1,1 @@
-../../v2.2/coding-standards/code-standard-less.md
+../../../guides/v2.2/coding-standards/code-standard-less.md

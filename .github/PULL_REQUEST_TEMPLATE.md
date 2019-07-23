@@ -1,37 +1,31 @@
-## This PR is a:
+<!-- # IMPORTANT
 
-- [ ] New topic
-- [ ] Content update
-- [ ] Content fix or rewrite
-- [ ] Bug fix or improvement
+We are no longer accepting pull requests to update v2.1 devdoc files.
 
-## Summary
+Magento 2.1.18 is the final 2.1.x release. After the [June 2019 end-of-support date](https://magento.com/sites/default/files/magento-software-lifecycle-policy.pdf), Magento will no longer apply security patches, quality fixes, or documentation updates to v2.1.x. To maintain your site's performance, security, and PCI compliance, [upgrade](https://devdocs.magento.com/guides/v2.3/comp-mgr/bk-compman-upgrade-guide.html) to the latest version of Magento. -->
 
-When this pull request is merged, it will...
+## Purpose of this pull request
 
-<!-- (REQUIRED) What does this PR change? -->
+<!-- REQUIRED Describe the goal and the type of changes this pull request covers. -->
 
-## Additional information
+This pull request (PR) ...
 
-List all affected URLs 
+## Affected DevDocs pages
+
+<!-- REQUIRED List the affected pages on devdocs.magento.com (URLs). Not needed for large numbers of files. -->
 
 - ...
+
+## Links to Magento source code
+
+<!--  OPTIONAL - REMOVE THIS SECTION IF NOT USED. If this pull request references a file in a Magento codebase repository, add it here. -->
+
 - ...
 
-<!-- (REQUIRED) The Url that this PR will modify -->
+<!-- 
+If you are fixing a GitHub issue, note it using GitHub keyword format (https://help.github.com/en/articles/closing-issues-using-keywords#closing-an-issue-in-a-different-repository) to close the issue when this pull request is merged. Example: `Fixes #1234`
 
-<!-- (OPTIONAL) What other information can you provide about this PR? -->
+`master` is the default branch. Merged pull requests to `master` go live on the site automatically. Any requested changes to content on the `master` branch must be related to the released codebase. Any content related to future releases goes in the `develop` branch.
 
-<!--
-Thank you for your contribution!
-
-Before submitting this pull request, please make sure you have read our Contribution Guidelines and your PR meets our contribution standards:
-https://github.com/magento/devdocs/blob/master/.github/CONTRIBUTING.md
-
-Please fill out as much information as you can about your PR to help speed up the review process.
-If your PR addresses an existing GitHub Issue, please refer to it in the title or Additional Information section to make the connection.
-
-We may ask you for changes in your PR in order to meet the standards set in our Contribution Guidelines. PR's that do not comply with our guidelines may be closed at the maintainers' discretion.
-
-Feel free to remove this section before creating this PR.
+See Contribution guidelines (https://github.com/magento/devdocs/blob/master/.github/CONTRIBUTING.md) for more information.
 -->

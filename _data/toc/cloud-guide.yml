@@ -38,6 +38,9 @@ pages:
         - label: Magento Cloud CLI
           url: /cloud/reference/cli-ref-topic.html
 
+        -  label: ece-tools package
+           url: /cloud/reference/ece-tools-reference.html
+
         - label: Git
           url: /cloud/reference/git-integration.html
 
@@ -52,7 +55,7 @@ pages:
         - label: SSH and sFTP
           url: /cloud/env/environments-ssh.html
 
-        - label: New Relic APM
+        - label: New Relic
           url: /cloud/project/new-relic.html
 
         - label: Blackfire.io
@@ -65,16 +68,6 @@ pages:
     - label: Local development setup
       url: /cloud/setup/first-time-setup.html
       children:
-        - label: Docker development
-          url: /cloud/docker/docker-development.html
-          exclude_versions: ["2.0"]
-          children:
-            - label: Launch Docker
-              url: /cloud/docker/docker-config.html
-
-            - label: Docker quick reference
-              url: /cloud/docker/docker-quick-reference.html
-
         - label: Prepare for manual setup
           url: /cloud/before/before-workspace.html
           children:
@@ -96,11 +89,30 @@ pages:
             - label: First time deployment
               url: /cloud/setup/first-time-deploy.html
 
+        - label: Optional - Configure Xdebug
+          url: /cloud/howtos/debug.html
+
         - label: Optional - Install sample data
           url: /cloud/howtos/sample-data.html
 
-        - label: Optional - Configure Xdebug
-          url: /cloud/howtos/debug.html
+    - label: Docker development
+      url: /cloud/docker/docker-development.html
+      exclude_versions: ["2.0"]
+      children:
+        - label: Launch Docker
+          url: /cloud/docker/docker-config.html
+
+        - label: Configure Xdebug for Docker
+          url: /cloud/docker/docker-development-debug.html
+
+        - label: Connect to the database
+          url: /cloud/docker/docker-database.html
+
+        - label: Functional testing in Docker
+          url: /cloud/docker/docker-development-testing.html
+
+        - label: Docker quick reference
+          url: /cloud/docker/docker-quick-reference.html
 
     - label: Integrations
       url: /cloud/integrations/cloud-integrations.html
@@ -161,7 +173,7 @@ pages:
           url: /cloud/cdn/configure-fastly.html
           exclude_versions: ["2.0"]
           children:
-            - label: Customize response pages
+            - label: Customize error pages
               url: /cloud/cdn/cloud-fastly-custom-response.html
 
         - label: Managed Cloud WAF
@@ -172,21 +184,21 @@ pages:
           url: /cloud/cdn/fastly-image-optimization.html
           exclude_versions: ["2.0"]
 
-        - label: Custom Fastly VCL snippets
+        - label: Custom VCL snippets
           url: /cloud/cdn/cloud-vcl-custom-snippets.html
           exclude_versions: ["2.0"]
           children:
-            - label: Custom whitelist VCL
+            - label: Set up redirects to WordPress
+              url: /cloud/cdn/fastly-vcl-wordpress.html
+
+            - label: Block referral spam
+              url: /cloud/cdn/fastly-vcl-badreferer.html
+
+            - label: Secure access to the Magento Admin UI
               url: /cloud/cdn/fastly-vcl-whitelist.html
 
             - label: Custom blacklist VCL
               url: /cloud/cdn/fastly-vcl-blacklist.html
-
-            - label: Custom redirect to WordPress VCL
-              url: /cloud/cdn/fastly-vcl-wordpress.html
-
-            - label: Custom block bad referer VCL
-              url: /cloud/cdn/fastly-vcl-badreferer.html
 
         - label: Fastly troubleshooting
           url: /cloud/cdn/trouble-fastly.html
@@ -303,6 +315,9 @@ pages:
       children:
         - label: Cloud deployment process
           url: /cloud/deploy/cloud-deployment-process.html
+
+        - label: Zero downtime deployment
+          url: /cloud/deploy/reduce-downtime.html
 
         - label: Static content deployment
           url: /cloud/deploy/static-content-deployment.html

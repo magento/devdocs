@@ -25,7 +25,7 @@ If you have SSH keys, a directory listing is displayed similar to the following:
 
 	id_rsa  id_rsa.pub  known_hosts
 
-If you don't have SSH keys, you need to generate the keys for adding to your Magento ECE account and GitHub account. See [Create a new SSH key pair](#ssh-create-new-key-pair).
+If you do not have SSH keys, you need to generate the keys for adding to your Magento ECE account and GitHub account. See [Create a new SSH key pair](#ssh-create-new-key-pair).
 
 If you already have SSH keys, continue to:
 * [Add a public SSH key to your Magento account](#ssh-add-to-account) section
@@ -35,46 +35,58 @@ If you already have SSH keys, continue to:
 
 Use the `ssh-keygen` command to create an SSH key pair. `ssh-keygen` is typically installed on Linux systems.
 
-To create an SSH key pair:
+#### To create an SSH key pair:
 
-1. The command syntax follows, entering the email used for your GitHub account:
+1.  The command syntax follows, entering the email used for your GitHub account:
 
-		ssh-keygen -t rsa
+    ```bash
+    ssh-keygen -t rsa
+    ```
 
-	GitHub also uses the key length `-b 4096` in the command.
-	Follow the prompts to complete the key.
+    GitHub also uses the key length `-b 4096` in the command. Follow the prompts to complete the key.
 
-2. When prompted to "Enter a file in which to save the key," press Enter to save the file to the default location. The prompt displays the location.
+1.  When prompted to "Enter a file in which to save the key," press **Enter** to save the file to the default location. The prompt displays the location.
 
-3. When prompted to enter a secure passphrase, enter a phrase to use like a password. Make note of this passphrase. You may be requested to enter it depending on tasks you complete using a terminal during development.
+1.  When prompted to enter a secure passphrase, enter a phrase to use like a password. Make note of this passphrase. You may be requested to enter it depending on tasks you complete using a terminal during development.
 
-4. After creating the SSH key pair, start the ssh-agent:
+1.  After creating the SSH key pair, start the ssh-agent:
 
-	For Mac or Linux:
+    For Mac or Linux:
 
-		$ eval "$(ssh-agent -s)"
-	For Mac, you may also want to edit the  `~/.ssh/config` file to automatically load keys into the ssh-agent and store passphrases in your keychain.
+    ```bash
+    eval "$(ssh-agent -s)"
+    ```
+	
+    For Mac, you can edit the  `~/.ssh/config` file to automatically load keys into the ssh-agent and store passphrases in your keychain.
 
-		Host *
-			AddKeysToAgent yes
-			UseKeychain yes
-			IdentityFile ~/.ssh/id_rsa
+    ```
+    Host *
+        AddKeysToAgent yes
+        UseKeychain yes
+        IdentityFile ~/.ssh/id_rsa
+    ```
 
-	For Windows:
+    For Windows:
 
-		$ eval $(ssh-agent -s)
+    ```shell
+    eval $(ssh-agent -s)
+    ```
 
-5. Add the SSH key to the ssh-agent. If you used a different name for the key file name, replace `id_rsa` with that file name.
+1.  Add the SSH key to the ssh-agent. If you used a different name for the key file name, replace `id_rsa` with that file name.
 
-	For Mac:
+    For Mac:
 
-		ssh-add -K ~/.ssh/id_rsa
+    ```bash
+    ssh-add -K ~/.ssh/id_rsa
+    ```
 
-	For Windows or Linux:
+    For Windows or Linux:
 
-		ssh-add ~/.ssh/id_rsa
+    ```shell
+    ssh-add ~/.ssh/id_rsa
+    ```
 
-6. [Add your SSH key to your GitHub account.](https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/) The instructions include Mac, Windows, and Linux.
+1.  [Add your SSH key to your GitHub account.](https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/) The instructions include Mac, Windows, and Linux.
 
 ### Test the SSH keys {#test}
 
@@ -121,7 +133,7 @@ To add an SSH key using the Project Web Interface:
 
 1.	Copy your SSH public key to the clipboard.
 
-	If you don't already have SSH keys on that machine, see [GitHub documentation](https://help.github.com/articles/generating-an-ssh-key) to create them.
+	If you do not already have SSH keys on that machine, see [GitHub documentation](https://help.github.com/articles/generating-an-ssh-key) to create them.
 2.	Login and access your project through the [Project Web Interface](https://accounts.magento.cloud).
 3.	In your selected branch, an icon displays if you do not have an SSH key added.
 

@@ -2,14 +2,6 @@
 group: installation-guide
 title: Install Magento using Composer
 redirect_from:
-  - guides/v2.1/install-gde/prereq/integrator_install.html
-  - guides/v2.1/install-gde/prereq/integrator_install_composer.html
-  - guides/v2.1/install-gde/prereq/integrator_install_ce.html
-  - guides/v2.1/install-gde/prereq/integrator_install_ee.html
-  - guides/v2.2/install-gde/prereq/integrator_install.html
-  - guides/v2.2/install-gde/prereq/integrator_install_composer.html
-  - guides/v2.2/install-gde/prereq/integrator_install_ce.html
-  - guides/v2.2/install-gde/prereq/integrator_install_ee.html
   - guides/v2.3/install-gde/prereq/integrator_install.html
   - guides/v2.3/install-gde/prereq/integrator_install_composer.html
   - guides/v2.3/install-gde/prereq/integrator_install_ce.html
@@ -28,7 +20,7 @@ functional_areas:
 
 Before you continue, you must do the following:
 
--   Set up a server that meets our [system requirements]({{ page.baseurl }}/install-gde/system-requirements2.html)
+-   Set up a server that meets our [system requirements]({{ page.baseurl }}/install-gde/system-requirements.html)
 -   Create the [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html)
 -   [Install Composer](https://getcomposer.org/download/){:target="_blank"}
 -   Obtain [authentication keys]({{page.baseurl}}/install-gde/prereq/connect-auth.html) for the Magento code repository
@@ -65,7 +57,7 @@ You must set read-write permissions for the web server group before you install 
 cd /var/www/html/<magento install directory>
 find var generated vendor pub/static pub/media app/etc -type f -exec chmod g+w {} +
 find var generated vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} +
-chown -R :www-data . // Ubuntu
+chown -R :www-data . # Ubuntu
 chmod u+x bin/magento
 ```
 
@@ -99,6 +91,9 @@ bin/magento setup:install \
 --timezone=America/Chicago \
 --use-rewrites=1
 ```
+
+{: .bs-callout-info }
+For `--backend-frontname` we recommend a random URI for security purposes. A random URI is harder for hackers or malicious software to exploit.
 
 {:.bs-callout .bs-callout-tip}
 For a full description of the CLI install options, refer to [Install the Magento software from the command line]({{page.baseurl}}/install-gde/install/cli/install-cli-install.html#instgde-install-cli-magento).

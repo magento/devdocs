@@ -17,10 +17,10 @@ Messages similar to the following display if any readiness check fails.
 
 ![You must resolve all readiness check failures before you continue]({{ site.baseurl }}/common/images/cman_readiness-fail-ex.png)
 
-{: .bs-callout .bs-callout-info }
+{: .bs-callout-info }
 If you're updating multiple extensions, see [Readiness check with multiple extension updates]({{ page.baseurl }}/comp-mgr/extens-man/extensman-readiness-multi.html#extensman-readiness-multi-fail) instead.
 
-In the {% glossarytooltip c57aef7c-97b4-4b2b-a999-8001accef1fe %}event{% endglossarytooltip %} of failure, see one of the following sections:
+In the [event](https://glossary.magento.com/event) of failure, see one of the following sections:
 
 *	<a href="{{ page.baseurl }}/comp-mgr/trouble/cman/updater.html">Updater check failure</a>
 *	<a href="{{ page.baseurl }}/comp-mgr/trouble/cman/cron.html">Cron script check failure</a>

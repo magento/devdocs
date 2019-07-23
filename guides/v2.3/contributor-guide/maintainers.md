@@ -1,1 +1,1 @@
-../../v2.2/contributor-guide/maintainers.md
+../../../guides/v2.2/contributor-guide/maintainers.md

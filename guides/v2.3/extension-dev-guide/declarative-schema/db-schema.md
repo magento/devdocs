@@ -24,7 +24,7 @@ The following example, extracted from the `Catalog/etc/db_schema.xml` file, defi
     <column xsi:type="int" name="value_id" padding="11" unsigned="false" nullable="false" identity="true" comment="Value ID"/>
     <column xsi:type="smallint" name="attribute_id" padding="5" unsigned="true" nullable="false" identity="false" default="0" comment="Attribute ID"/>
     <column xsi:type="smallint" name="store_id" padding="5" unsigned="true" nullable="false" identity="false" default="0" comment="Store ID"/>
-    <column xsi:type="int" name="entity_id" padding="10" unsigned="true" nullable="false" identity="false" default="0"/>
+    <column xsi:type="int" name="entity_id" padding="10" unsigned="true" nullable="false" identity="false" default="0" comment="Entity ID"/>
     <column xsi:type="datetime" name="value" on_update="false" nullable="true" comment="Value"/>
     <constraint xsi:type="primary" referenceId="PRIMARY">
         <column name="value_id"/>
@@ -50,7 +50,7 @@ The following example, extracted from the `Catalog/etc/db_schema.xml` file, defi
 
 The `<Module_Vendor>/<Module_Name>/etc/db_schema.xml` file declares a module's database structure.
 
-{: .bs-callout .bs-callout-info }
+{: .bs-callout-info }
 If you have enabled [URN highlighting]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-urn.html), you can use the PhpStorm autocomplete feature after choosing a node's `xsi:type`. This will also allow you to view which attributes are available on each line of your `db_schema.xml` file
 
 ### Top-level node
@@ -69,9 +69,9 @@ Attribute | Description
 --- | ---
 `name` | The name of the table
 `engine` | SQL engine. This value must be `innodb` or `memory`.
-`resource` | The database shard on which to install the table. This value must be `default`, `quote`, or `sales`.
+`resource` | The database shard on which to install the table. This value must be `default`, `checkout`, or `sales`.
 `comment` | Table comment
-{:style="table-layout:auto;"}
+
 
  A `table` node can contain three types of subnodes:
 
@@ -148,8 +148,10 @@ A column can have the following attributes:
 </tr>
 </table>
 
-For more information about each type, refer to the annotations in the corresponding XSD file. The XSD files are located in the `<Magento_root_directory/setup/src/Magento/Setup/Model/Declaration/Schema/etc` directory.
+For more information about each type, refer to the annotations in the corresponding XSD file. The location of the XSD file depends on how you installed Magento.
 
+- [Archive download]({{page.baseurl}}/install-gde/prereq/zip_install.html): `<Magento_root_directory/vendor/magento/framework/Setup/Declaration/Schema/etc` 
+- [Composer]({{page.baseurl}}/install-gde/composer.html) or [GitHub]({{page.baseurl}}/install-gde/prereq/dev_install.html) installation: `<Magento_root_directory/lib/internal/Magento/Framework/Setup/Declaration/Schema/etc`
 
 Example:
 
@@ -185,7 +187,7 @@ Attribute | Description
 `referenceTable` | The table being referenced
 `referenceColumn`| A column in the `referenceTable`
 `onDelete` | Foreign key trigger. The value must be `CASCADE`, `SET NULL`, or `NO ACTION`
-{:style="table-layout:auto;"}
+
 
 Example:
 
@@ -201,7 +203,7 @@ Attribute | Description
 --- | ---
 `referenceId` |  A custom identifier that is used only for relation mapping in the scope of `db_schema.xml` files. The real entity in the database has a system-generated name. The most convenient way to set the value of this attribute is to use the value that is written in the module's `db_schema_whitelist.json`  file when you [run the `generate-whitelist` command]({{ page.baseurl}}/extension-dev-guide/declarative-schema/migration-commands.html#create-whitelist).
 `indexType` | The value must be `btree`, `fulltext`, or `hash`
-{:style="table-layout:auto;"}
+
 
 Example:
 
@@ -234,9 +236,11 @@ The following example creates the `declarative_table` table with four columns. T
 </schema>
 ```
 
+When creating a new table, remember to [generate]({{ page.baseurl}}/extension-dev-guide/declarative-schema/migration-commands.html#create-whitelist) the `db_schema_whitelist.json` file.
+
 ### Drop a table
 
-In the following example, the `declarative_table` table was completely removed from the `db-schema.xml` file. To drop a table declared in another module, redeclare it with the `disabled` attribute set to `true`.
+In the following example, the `declarative_table` table was completely removed from the `db-schema.xml` file.
 
 ```diff
 <schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -255,7 +259,35 @@ In the following example, the `declarative_table` table was completely removed f
 
 ### Rename a table
 
-Table renaming is not supported. However, you can remove an unneeded table declaration and add a new one. Data will be persisted in a CSV dump, but the data will not be added to the new table automatically. You can add the data manually by using data/recurring patches.
+Table renaming is supported. The declarative schema will create a new table with the new name and drop the table with the old name.  
+Renaming a table via `RENAME TABLE` is *NOT* supported.  
+To migrate data from another table, specify the `onCreate` attribute on the `table` declaration, and add specify the source table name:
+
+```xml
+onCreate="migrateDataFromAnotherTable(catalog_category_entity)"
+```
+
+Please note that migrating data from another table and renaming columns at the same time is not supported.
+
+This declarative process of renaming a table is not fast. If you need to migrate lots of data quickly you can create a CSV table dump using the `--safe-mode=1` and add the data manually by using data/recurring patches.
+
+```diff
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                 xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
++    <table name="new_declarative_table" onCreate="migrateDataFromAnotherTable(declarative_table)">
+-    <table name="declarative_table">
+        <column xsi:type="int" name="id_column" padding="10" unsigned="true" nullable="false" comment="Entity Id"/>
+        <column xsi:type="int" name="severity" padding="10" unsigned="true" nullable="false" comment="Severity code"/>
+        <column xsi:type="varchar" name="title" nullable="false" length="255" comment="Title"/>
+        <column xsi:type="timestamp" name="time_occurred" padding="10" comment="Time of event"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="id_column"/>
+        </constraint>
+    </table>
+</schema>
+```
+
+When renaming a table, remember to regenerate the `db_schema_whitelist.json` file so it contains the new name in addition to the old one.
 
 ### Add a column to table
 
@@ -277,6 +309,8 @@ The following example adds the `date_closed` column.
 </schema>
 ```
 
+When adding a new column into table, remember to [generate]({{ page.baseurl}}/extension-dev-guide/declarative-schema/migration-commands.html#create-whitelist) the `db_schema_whitelist.json` file.
+
 ### Drop a column from a table
 
 The following example removes the  `date_closed` column by deleting its `column` node. To drop a column declared in another module, redeclare it with the `disabled` attribute set to `true`.
@@ -296,6 +330,8 @@ The following example removes the  `date_closed` column by deleting its `column`
     </table>
 </schema>
 ```
+{: .bs-callout-info }
+It is possible to drop a column only if it exists in the `db_schema_whitelist.json` file.
 
 ### Change the column type
 
@@ -319,17 +355,12 @@ The following example changes the `type` of the `title` column from `varchar` to
 
 ### Rename a column
 
-To rename a column, delete the original column declaration and create a new one. In the new declaration, use the `onCreate` attribute to specify which column to migrate data from. Use the following construction to migrate data from the same table.
+To rename a column, delete the original column declaration and create a new one. In the new column declaration, use the `onCreate` attribute to specify which column to migrate data from. Use the following construction to migrate data from the same table.
 
 ```xml
 onCreate="migrateDataFrom(entity_id)"
 ```
-
-To migrate data from another table, specify a value similar to the following:
-
-```xml
-onCreate="migrateDataFromAnotherTable(catalog_category_entity,entity_id)"
-```
+When renaming a column, remember to regenerate the `db_schema_whitelist.json` file so it contains the new name in addition to the old one.
 
 ### Add an index
 
@@ -346,7 +377,7 @@ The following example adds the `INDEX_SEVERITY` index to the `declarative_table`
         <constraint xsi:type="primary" referenceId="PRIMARY">
             <column name="id_column"/>
         </constraint>
-+       <index name="INDEX_SEVERITY" indexType="btree">
++       <index referenceId="INDEX_SEVERITY" indexType="btree">
 +           <column name="severity"/>
 +       </index>
     </table>
@@ -391,10 +422,13 @@ The following example removes the  `FL_ALLOWED_SEVERITIES` foreign key by deleti
         </constraint>
 -       <constraint xsi:type="foreign" referenceId="FL_ALLOWED_SEVERITIES" table="declarative_table" 
 -               column="severity" referenceTable="severities" referenceColumn="severity_identifier" 
--               HonDelete="CASCADE"/>
+-               onDelete="CASCADE"/>
     </table>
 </schema>
 ```
+
+{: .bs-callout-info }
+It is possible to drop a foreign key only if it exists in the `db_schema_whitelist.json` file.
 
 ### Recreate a foreign key
 
@@ -435,7 +469,8 @@ Module B disables the original primary key and sets a new primary key with a `re
 
 ### Disable a module
 
-When a module is disabled from the Admin console, its database schema configuration is no longer read on upgrade or install. As a result, subsequent system upgrades rebuild the database schema without the module's tables, columns, or other elements.
+When a module is disabled in `app/etc/config.php`, its database schema configuration is no longer read on upgrade or install. As a result, subsequent system upgrades rebuild the database schema without the module's tables, columns, or other elements.
+Please note that the `db_schema_whitelist.json` file of disabled modules is still read during upgrades of installs, so the declarative schema system can perform the necessary operations.
 
 
 [How to generate urns?]:{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-urn.html

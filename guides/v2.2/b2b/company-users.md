@@ -1,12 +1,7 @@
 ---
 group: b2b-developer-guide
-subgroup: 10_REST
 title: Manage company users
-menu_title: Manage company users
-menu_order: 13
-ee_only: True
-level3_menu_node: level3child
-level3_subgroup: company
+ee_only: true
 functional_areas:
   - B2B
   - Integration
@@ -14,7 +9,7 @@ functional_areas:
 
 A company user is a customer (buyer) that is assigned extended attributes that identify the company the user belongs to. Use the `POST /V1/customers` call, which is included with {{site.data.var.ce}} and {{site.data.var.ee}}, and specify the `company_attributes` extended attributes to create a company user.
 
-{: .bs-callout .bs-callout-info }
+{: .bs-callout-info }
 This topic discusses only the features of the `customerCustomerRepositoryV1` service that are specific to B2B. See [Create a customer]({{ page.baseurl }}/rest/tutorials/orders/order-create-customer.html) for an example of creating a standard customer.
 
 ## Manage company users
@@ -27,10 +22,10 @@ This section describes the REST endpoints used to manage company users.
 
 **REST Endpoints**
 
-{% highlight json %}
+```
 POST /V1/customers/
 PUT /V1/customers/:customerId
-{% endhighlight %}
+```
 
 **Company user parameters**
 
@@ -40,7 +35,7 @@ Name | Description | Format | Requirements
 --- | --- | --- | ---
 `customer_id` | System-generated customer ID. | integer | Not applicable for create operations.
 `company_id` | System-generated company ID. | integer | Required to create or update a company user.
-`job_title` | A string that describes the company user's responsibilities. | Required to create or update a company.
+`job_title` | A string that describes the company user's responsibilities. | string | Required to create or update a company.
 `status` | Indicates whether the company user is active or inactive | integer | `0` - inactive; `1` - active
 `telephone`  |  Telephone number | string | Required to create a company user.
 
@@ -50,14 +45,13 @@ The `POST /V1/customers` call creates a Magento customer. B2B extends the `custo
 
 **Sample Usage**
 
-`POST /V1/customers`
+`POST <host>/rest/<store_code>/V1/customers`
 
 **Payload**
 
 Add the `company_attributes` code block to the payload that is required to create a standard customer.
 
-{% highlight json %}
-
+```json
 "extension_attributes": {
    "company_attributes": {
    "company_id": 2,
@@ -66,11 +60,11 @@ Add the `company_attributes` code block to the payload that is required to creat
    "telephone": "512-555-3322"
    }
 }
-{% endhighlight %}
+```
 
 Full example:
 
-{% highlight json %}
+```json
 {
 	"customer": {
 		"email": "mshaw@example.com",
@@ -86,11 +80,11 @@ Full example:
 		}
 	}
 }
-{% endhighlight %}
+```
 
 **Response**
 
-{% highlight json %}
+```json
 {
   "id": 13,
   "group_id": 1,
@@ -114,7 +108,7 @@ Full example:
     }
   }
 }
-{% endhighlight %}
+```
 
 ### Modify a company user
 
@@ -125,11 +119,11 @@ If you change the `status` to inactive, the account is locked. If the company us
 
 **Sample Usage**
 
-`PUT /V1/customers/13`
+`PUT <host>/rest/<store_code>/V1/customers/13`
 
 **Payload**
 
-{% highlight json %}
+```json
 {
   "customer": {
     "id": 13,
@@ -145,11 +139,11 @@ If you change the `status` to inactive, the account is locked. If the company us
       }
   }
 }
-{% endhighlight %}
+```
 
 **Response**
 
-{% highlight json %}
+```json
 {
   "id": 13,
   "group_id": 1,
@@ -171,7 +165,7 @@ If you change the `status` to inactive, the account is locked. If the company us
     }
   }
 }
-{% endhighlight %}
+```
 
 ### Delete a company user
 
@@ -181,7 +175,7 @@ Magento locks the deleted user's quotes and changes their status to Closed. The 
 
 **Sample Usage**
 
-`DELETE /V1/customers/13`
+`DELETE <host>/rest/<store_code>/V1/customers/13`
 
 **Payload**
 

@@ -1,9 +1,9 @@
-First, check  if Composer is already installed: 
+First, check if Composer is already installed:
 
 In a command prompt, enter any of the following commands:
 
-*	`composer --help`
-*	`composer list --help`
+- `composer --help`
+- `composer list --help`
 
 If command help displays, Composer is already installed.
 
@@ -18,4 +18,4 @@ To install Composer:
 		curl -sS https://getcomposer.org/installer | php
 		mv composer.phar /usr/local/bin/composer
 
-	For additional installation options, see the [Composer installation documentation](https://getcomposer.org/download/).
+For additional installation options, see the [Composer installation documentation](https://getcomposer.org/download/).

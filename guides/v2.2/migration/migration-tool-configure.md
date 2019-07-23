@@ -42,7 +42,7 @@ To create a configuration file:
 
 5.	Specify the following at minimum:
 
-``` xml
+```xml
 <source>
     <database host="127.0.0.1" name="magento1" user="root"/>
 </source>
@@ -64,7 +64,7 @@ Optional parameters:
 
 For example, if your database owner's username is `root` with password `pass` and you use the prefix `magento1` in your Magento 1 database, use the following in `config.xml`:
 
-``` xml
+```xml
 <source>
     <database host="127.0.0.1" name="magento1" user="root" password="pass"/>
 </source>
@@ -89,7 +89,7 @@ You can also connect to a database using the TLS protocol (i.e., using public/pr
 
 For example:
 
-``` xml
+```xml
 <source>
     <database host="localhost" name="magento1" user="root" ssl_ca="/path/to/file" ssl_cert="/path/to/file" ssl_key="/path/to/file"/>
 </source>
@@ -114,7 +114,7 @@ Mapping files for supported Magento versions are located in subdirectories of `<
 
 To use the mapping files:
 
-1.	Rename or copy them to remove the `.dist` {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %}.
+1.	Rename or copy them to remove the `.dist` [extension](https://glossary.magento.com/extension).
 
 2.	Edit them using the schema located in
 

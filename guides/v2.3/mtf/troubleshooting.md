@@ -1,1 +1,1 @@
-../../v2.2/mtf/troubleshooting.md
+../../../guides/v2.2/mtf/troubleshooting.md

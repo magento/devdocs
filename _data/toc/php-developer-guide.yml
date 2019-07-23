@@ -123,6 +123,10 @@ pages:
       url: /extension-dev-guide/module-development.html
       children:
 
+        - label: Asynchronous/deferred operations
+          include_versions: ["2.3"]
+          url: /extension-dev-guide/async-operations.html
+          
         - label: Service contracts
           url: /extension-dev-guide/service-contracts/service-contracts.html
 
@@ -198,6 +202,9 @@ pages:
             - label: Set custom routes
               url: /extension-dev-guide/webapi/custom-routes.html
 
+            - label: WebApi request processors pool
+              url: /extension-dev-guide/webapi/request-processor-pool.html
+
         - label: Message Queues
           children:
 
@@ -207,10 +214,14 @@ pages:
             - label: Configure message Queues
               url: /extension-dev-guide/message-queues/config-mq.html
 
+            - label: Handling outdated in-memory object states
+              include_versions: ["2.3"]
+              url: /extension-dev-guide/message-queues/refresh-config.html
+            
             - label: Migrate message queue configuration
               include_versions: ["2.1", "2.2", "2.3"]
               url: /extension-dev-guide/message-queues/queue-migration.html
-
+              
             - label: Bulk operations
               include_versions: ["2.2", "2.3"]
               url: /extension-dev-guide/message-queues/bulk-operations.html
@@ -230,6 +241,10 @@ pages:
         - label: Configure services as web APIs
           include_versions: ["2.0", "2.1", "2.2"]
           url: /extension-dev-guide/service-contracts/service-to-web-service.html
+
+        - label: WebApi request processors pool
+          include_versions: ["2.2"]
+          url: /extension-dev-guide/webapi/request-processor-pool.html
 
         - label: Clear directories during development
           url: /howdoi/php/php_clear-dirs.html
@@ -251,10 +266,13 @@ pages:
           url: /extension-dev-guide/configuration/importers.html
 
     - label: Framework
-      include_versions: ["2.2", "2.3"]
       children:
         - label: Serialize Library
+          include_versions: ["2.2", "2.3"]
           url: /extension-dev-guide/framework/serializer.html
+
+        - label: Array Manager
+          url: /extension-dev-guide/framework/array-manager.html
 
     - label: Security
       children:
@@ -269,6 +287,9 @@ pages:
     - label: Versioning
       url: /extension-dev-guide/versioning/
       children:
+
+        - label: Check the Magento version
+          url: /extension-dev-guide/versioning/check-version.html
 
         - label: Module version dependencies
           url: /extension-dev-guide/versioning/dependencies.html

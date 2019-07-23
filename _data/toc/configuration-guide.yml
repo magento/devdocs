@@ -16,11 +16,9 @@ pages:
 
         - label: Two-Factor Authentication
           url: /security/two-factor-authentication.html
-          include_versions: ["2.1", "2.2"]
 
         - label: Google reCAPTCHA
           url: /security/google-recaptcha.html
-          include_versions: ["2.1", "2.2"]
 
     - label: Magento application initialization and bootstrap
       url: /config-guide/bootstrap/magento-bootstrap.html
@@ -316,6 +314,9 @@ pages:
         - label: Configure Magento to use Elasticsearch
           url: /config-guide/elasticsearch/configure-magento.html
 
+        - label: Change the Elasticsearch client
+          url: /config-guide/elasticsearch/es-downgrade.html
+
     - label: Install and configure Elasticsearch
       include_versions: ["2.3"]
       url: /config-guide/elasticsearch/es-overview.html
@@ -332,6 +333,9 @@ pages:
 
         - label: Configure Magento to use Elasticsearch
           url: /config-guide/elasticsearch/configure-magento.html
+
+        - label: Change the Elasticsearch client
+          url: /config-guide/elasticsearch/es-downgrade.html
 
     - label: Message Queues (Magento Commerce only)
       include_versions: ["2.0","2.1", "2.2"]
@@ -411,3 +415,12 @@ pages:
         - label: Development environment recommendations
           include_versions: ["2.1"]
           url: /config-guide/prod/development-environment.html
+          
+    - label: GDPR compliance
+      include_versions: ["2.1", "2.2", "2.3"]
+      children:
+        - label: Magento 2.x
+          url:  /architecture/gdpr/magento-2x.html
+
+        - label: Magento 1.x
+          url:  /architecture/gdpr/magento-1x.html

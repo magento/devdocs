@@ -25,7 +25,7 @@ Although it's not required, the simple product payload also includes `stock_item
 
 ## Create the first simple product
 
-{: .bs-callout .bs-callout-info }
+{: .bs-callout-info }
 Before you using this code sample, verify that the attribute values are the same in your installation. See [Get the list of attributes defined in an attribute searchCriteria]({{ page.baseurl }}/rest/tutorials/configurable-product/plan-product.html#get-attributes) for more information.
 
 **Endpoint**
@@ -34,7 +34,7 @@ Before you using this code sample, verify that the attribute values are the same
 
 **Payload**
 
-{% highlight json %}
+```json
 {
   "product": {
     "sku": "MS-Champ-S",
@@ -93,13 +93,13 @@ Before you using this code sample, verify that the attribute values are the same
     ]
   }
 }
-
-{% endhighlight  %}
+```
 
 **Response**
 
 {% collapsible Show code sample %}
-{% highlight json %}
+
+```json
 {
     "id": 2079,
     "sku": "MS-Champ-S",
@@ -214,7 +214,8 @@ Before you using this code sample, verify that the attribute values are the same
         }
     ]
 }
-{% endhighlight  %}
+```
+
 {% endcollapsible %}
 
 ## Create the other simple products

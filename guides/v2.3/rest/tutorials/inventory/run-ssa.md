@@ -1,30 +1,29 @@
 ---
 layout: tutorial
-title: Step 11. Run the Source Selection Algorithm
+title: Step 11. Run the Source Selection Algorithms
 subtitle: Order processing with Inventory Management
-menu_title: Step 11. Run the Source Selection Algorithm
+menu_title: Step 11. Run the Source Selection Algorithms
 menu_order: 110
 level3_subgroup: msi-tutorial
 return_to:
   title: REST Tutorials
   url: rest/tutorials/index.html
-redirect_from: /guides/v2.3/rest/tutorials/msi-order-processing/run-ssa.html
 functional_areas:
   - Integration
 ---
 
-One of the most significant parts of Inventory Management is the Source Selection Algorithm (SSA). SSA analyzes and determines the best match for sources and shipping based on the priorities you specified in [Step 4. Link stocks and sources
-]({{ page.baseurl }}/rest/tutorials/inventory/assign-source-to-stock.html). The algorithm also provides a list of source items with quantities to deduct per each source item.
+One of the most significant parts of Inventory Management is the Source Selection Algorithm (SSA). The Source Priority SSA analyzes and determines the best match for sources and shipping based on the priorities you specified in [Step 4. Link stocks and sources
+]({{ page.baseurl }}/rest/tutorials/inventory/assign-source-to-stock.html). The Distance Priority SSA calculates the distance between the sources and the shipping address. Both algorithms also provide a list of source items with quantities to deduct per each source item.
 
-For more information about shipping and SSAs, see the Wiki topic [Shipment and Order Management](https://github.com/magento-engcom/msi/wiki/Shipment-and-Order-Management).
+For more information about shipping and SSAs, see [About Source Selection Algorithm and Reservations](https://docs.magento.com/m2/ce/user_guide/catalog/inventory-about-ssa.html) in the _Magento User Guide_.
 
 ## Get the list of algorithms
 
-Currently, Magento supports only the default SSA for priority. Third-party developers and future releases may add support for additional algorithms.
+Currently, Magento supports SSAs based on priority and on distance. Third-party developers and future releases may add support for additional algorithms.
 
 **Endpoint**
 
-`GET http://<host>/rest/us/V1/inventory/source-selection-algorithm-list`
+`GET <host>/rest/us/V1/inventory/source-selection-algorithm-list`
 
 **Scope**
 
@@ -42,8 +41,13 @@ Not applicable
 
 **Response**
 
-``` json
+```json
 [
+    {
+        "code": "distance",
+        "title": "Distance Priority",
+        "description": "Algorithm which provides Source Selections based on shipping address distance from the source"
+    },
     {
         "code": "priority",
         "title": "Source Priority",
@@ -52,16 +56,15 @@ Not applicable
 ]
 ```
 
-## Run the SSA
+## Run an SSA
 
-The `POST V1/inventory/source-selection-algorithm-result` endpoint uses the algorithm defined by the `algorithmCode` attribute to calculate the recommended sources and quantities for each item defined in the `items` array.
+The `POST V1/inventory/source-selection-algorithm-result` endpoint uses the algorithm defined by the `algorithmCode` attribute to calculate the recommended sources and quantities for each item defined in the `items` array. In this example, we'll select the `priority` SSA. [Manage source selection algorithms]({{ page.baseurl }}/rest/modules/inventory/manage-source-selection.html) includes an example using the `distance` priority.
 
 This tutorial does not consider complications such selling out of products or back ordering. We can ask the SSA to determine the best way to immediately ship all the items ordered (20 items of product `24-WB01` and 50 items of product `24-WB03`). If the `shippable` attribute in the response is `false`, there are not enough salable items to complete a full shipment, but the merchant can still perform a partial shipment.
 
-
 **Endpoint**
 
-`POST http://<host>/rest/us/V1/inventory/source-selection-algorithm-result`
+`POST <host>/rest/us/V1/inventory/source-selection-algorithm-result`
 
 **Scope**
 
@@ -75,7 +78,7 @@ This tutorial does not consider complications such selling out of products or ba
 
 **Payload**
 
-``` json
+```json
 {
     "inventoryRequest": {
         "stockId": 2,
@@ -101,10 +104,10 @@ Product | Source | Quantity
 `24-WB01` | Baltimore | 20
 `24-WB03` | Baltimore | 19
 `24-WB03` | Reno | 31
-{:style="table-layout:auto;"}
 
 
-``` json
+
+```json
 {
     "source_selection_items": [
         {

@@ -45,7 +45,7 @@ Ordered | The buyer has purchased the quote, and Magento converts the quote to a
 Closed | The buyer has cancelled the quote and thus stopped the negotiation process. Neither the seller nor the buyer can edit the quote. <br/><br/>The buyer clicks the **Close** button from the Quote details page. (Not available using Web API) | View
 Declined | The seller has declined the quote. All custom pricing (if any) is removed from the quote. In admin panel, the quote is locked for editing. | View
 Expired | The quote is on the buyer's side, and the quote's expiration date has passed. | View
-{:style="table-layout:auto;"}
+
 
 The following table maps the internal Magento system state to the statuses displayed on the Storefront and Admin.
 
@@ -60,7 +60,7 @@ Ordered | Ordered | Ordered
 Expired | Expired | Expired
 Declined | Declined | Declined
 Closed | Closed | Closed
-{:style="table-layout:auto;"}
+
 
 The following diagram shows the negotiable quote lifecycle from the perspective of statuses.
 

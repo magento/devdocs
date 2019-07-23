@@ -13,7 +13,6 @@ Prepare your environment with the following tasks:
 -  Upgrade your PHP version to 7.1 or later
 -  Create a new `config.php` file
 -  Update the `.magento.app.yaml` file with new settings for hooks and environment variables
--  Verify or set the `ADMIN_EMAIL` variable
 -  Upgrade to the latest supported version of Fastly
 -  Add the new generated directory to the `.gitignore` file
 
@@ -22,13 +21,13 @@ Prepare your environment with the following tasks:
 {% include cloud/note-ece-tools-package.md %}
 
 ### Upgrade PHP version
-{{site.data.var.ece}} 2.2 supports PHP 7.1 and later. Make sure to upgrade the version of PHP on your local development workspace as well. For more information, see the following:
+{{site.data.var.ece}} 2.2 supports PHP 7.1 and later. You can upgrade the version of PHP on your local development workspace.
 
 * [PHP]({{ site.baseurl }}/guides/v2.2/cloud/before/before-workspace-magento-prereqs.html#php) information for your local Magento workstation
 * [Migrating PHP](http://php.net/manual/en/migration71.php)
 * [Magento 2.2.x technology stack requirements]({{ site.baseurl }}/guides/v2.2/install-gde/system-requirements-tech.html#php)
 
-{: .bs-callout .bs-callout-info}
+{: .bs-callout-info }
 For Pro projects **created before October 23, 2017**, you must open a [support ticket]({{ page.baseurl }}/cloud/trouble/trouble.html) to use PHP 7.1 on your Pro Staging and Production environments.
 
 ### Configuration management
@@ -118,7 +117,7 @@ If you are upgrading to 2.2.X, you need to also update your [.magento.app.yaml](
 1.  Verify the upgrade in your Integration, Staging, or Production environment by using SSH to log in and check the version.
 
     ```bash
-      php bin/magento --version
+    php bin/magento --version
     ```
 
 ## Create a new config.php file

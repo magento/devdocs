@@ -24,11 +24,12 @@ design_config_grid                       Design Config Grid
 customer_grid                            Customer Grid
 catalog_category_product                 Category Products
 catalog_product_category                 Product Categories
-catalog_product_price                    Product Price
-catalog_product_attribute                Product EAV
 catalogrule_rule                         Catalog Rule Product
+catalog_product_attribute                Product EAV
+inventory                                Inventory
 catalogrule_product                      Catalog Product Rule
 cataloginventory_stock                   Stock
+catalog_product_price                    Product Price
 catalogsearch_fulltext                   Catalog Search
 ```
 
@@ -68,6 +69,7 @@ Sample result:
 | Category Products    | Reindex required | Schedule  | idle (0 in backlog) | 2018-06-28 09:45:53 |
 | Customer Grid        | Ready            | Schedule  | idle (0 in backlog) | 2018-06-28 09:45:52 |
 | Design Config Grid   | Ready            | Schedule  | idle (0 in backlog) | 2018-06-28 09:45:52 |
+| Inventory            | Ready            | Save      |                     |
 | Product Categories   | Reindex required | Schedule  | idle (0 in backlog) | 2018-06-28 09:45:53 |
 | Product EAV          | Reindex required | Save      |                     |                     |
 | Product Price        | Reindex required | Save      |                     |                     |
@@ -105,13 +107,16 @@ bin/magento indexer:reindex
 Sample result:
 
 ```
+Design Config Grid index has been rebuilt successfully in <time>
+Customer Grid index has been rebuilt successfully in <time>
 Category Products index has been rebuilt successfully in <time>
 Product Categories index has been rebuilt successfully in <time>
-Product Price index has been rebuilt successfully in <time>
-Product EAV index has been rebuilt successfully in <time>
-Stock index has been rebuilt successfully in <time>
 Catalog Rule Product index has been rebuilt successfully in <time>
+Product EAV index has been rebuilt successfully in <time>
+Inventory index has been rebuilt successfully in <time>
 Catalog Product Rule index has been rebuilt successfully in <time>
+Stock index has been rebuilt successfully in <time>
+Product Price index has been rebuilt successfully in <time>
 Catalog Search index has been rebuilt successfully in <time>
 ```
 
@@ -143,7 +148,7 @@ Only use the environment variable in the indexer command. Do not save the variab
 
 Use this command to set the following indexer options:
 
-*  **Update on save (`realtime`):** Indexed data is updated as soon as a change is made in the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %}. (For example, the {% glossarytooltip 50e49338-1e6c-4473-8527-9e401d67ea2b %}category{% endglossarytooltip %} products index is reindex after products are added to a category in the Admin.) This is the default.
+*  **Update on save (`realtime`):** Indexed data is updated as soon as a change is made in the [Admin](https://glossary.magento.com/admin). (For example, the [category](https://glossary.magento.com/category) products index is reindex after products are added to a category in the Admin.) This is the default.
 * **Update by schedule (`schedule`):** Data is indexed according to the schedule set by your Magento cron job.
 
 [Learn more about indexing]({{ page.baseurl }}/extension-dev-guide/indexing.html)
@@ -165,13 +170,16 @@ bin/magento indexer:show-mode
 Sample result:
 
 ```
+Design Config Grid:                                Update on Save
+Customer Grid:                                     Update on Save
 Category Products:                                 Update on Save
 Product Categories:                                Update on Save
-Product Price:                                     Update on Save
-Product EAV:                                       Update on Save
-Stock:                                             Update on Save
 Catalog Rule Product:                              Update on Save
+Product EAV:                                       Update on Save
+Inventory:                                         Update on Save
 Catalog Product Rule:                              Update on Save
+Stock:                                             Update on Save
+Product Price:                                     Update on Save
 Catalog Search:                                    Update on Save
 ```
 

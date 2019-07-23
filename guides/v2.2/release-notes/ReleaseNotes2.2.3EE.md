@@ -9,7 +9,7 @@ title: Magento Commerce 2.2.3 Release Notes
 
 We are pleased to present Magento Commerce 2.2.3. This release includes 35 enhancements to product security, a change to the Magento Admin to support recent USPS shipping changes, and a copyright update. And thanks to our community members, it also includes support for Elasticsearch 5.x and enhancements to ACL control for cache management through Magento Admin.
 
-{: .bs-callout .bs-callout-info }
+{: .bs-callout-info }
 For security reasons, this release limits the ability to use symlinks for `/media` and other folders. If you are using symlinks for deployment, or if your `/media` is using symlinks, you may experience problems uploading or removing images. Magento will announce a fix for this issue when available. See [GitHub-13929](https://github.com/magento/magento2/issues/13929){: target="_blank"} for more information.
 
 ## Highlights
@@ -38,14 +38,11 @@ Our technology stack is built on PHP and MySQL. For details, see [Technology sta
 
 
 
-For more information, [System Requirements]({{ site.baseurl }}/magento-system-requirements.html).
+For more information, [System Requirements]({{ page.baseurl }}/install-gde/system-requirements.html).
 
 ### Installation and upgrade instructions
 
-You can install Magento Commerce 2.2.x using Composer.
-
-
-{% include install/releasenotes/ee_install_21.md %}
+You can install Magento Commerce 2.2.x [using Composer]({{ page.baseurl }}/comp-mgr/cli/cli-upgrade.html).
 
 ## Migration toolkits
 

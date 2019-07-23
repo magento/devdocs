@@ -20,12 +20,6 @@ baseurl: ""
 version: "2.3"
 versions:
    -
-      name: "2.0"
-      url: /guides/v2.0/
-   -
-      name: "2.1"
-      url: /guides/v2.1/
-   -
       name: "2.2"
       url: /guides/v2.2/
    -
@@ -64,21 +58,39 @@ defaults:
     values:
       layout: video
 
-  -
+  - 
     scope:
-      path: mftf/2.2
+      path: mbi
     values:
-      group: magento-functional-testing-framework-guide
-      functional_areas:
-        - Test
+      group: mbi
+      github_files: https://github.com/magento/devdocs-mbi/blob/master/
+      github_repo: https://github.com/magento/devdocs-mbi/
 
   -
     scope:
-      path: mftf/2.3
+      path: mftf/docs
     values:
-      group: magento-functional-testing-framework-guide-2_3
+      group: mftf
+      github_files: https://github.com/magento/magento2-functional-testing-framework/blob/master/
+      github_repo: https://github.com/magento/magento2-functional-testing-framework/
       functional_areas:
         - Test
+
+  - 
+    scope:
+      path: page-builder
+    values:
+      group: page-builder
+      github_link: false
+      feedback_link: false
+
+  - 
+      scope:
+        path: page-builder-migration
+      values:
+        group: page-builder
+        github_link: false
+        feedback_link: false
 
   -
     scope:
@@ -87,16 +99,7 @@ defaults:
       group: module-reference-guide-2_3
       github_link: false
       feedback_link: false
-  -
-    scope:
-      path: guides/v2.0
-    values:
-      sitemap: false
-  -
-    scope:
-      path: guides/v2.1
-    values:
-      sitemap: false
+
   -
     scope:
       path: guides/v2.2
@@ -112,10 +115,36 @@ defaults:
 # This list doesn't include custom plugins.
 #
 plugins:
-  - jekyll-last-modified-at
   - jekyll-sitemap
   - jekyll-redirect-from
   - jekyll-titles-from-headings
+  - jekyll-optional-front-matter
+  - jekyll-relative-links
+
+optional_front_matter:
+  remove_originals: true
+
+# Configuration options for the jekyll-relative-links plugin. 
+# Exclude all .md directories and files except page-builder/ to prevent painfully long build times.
+
+relative_links:
+  exclude:
+    - _includes
+    - _videos
+    - codelinks
+    - community
+    - extensions
+    - guides
+    - redoc
+    - release
+    - tmp
+    - 404.md
+    - availability.md
+    - magento-techbull.md
+    - magento-third-party.md
+    - search
+    - system-requirements.md
+    - whats-new.md
 
 # Settings for the jekyll-titles-from-headings plugin.
 # For more details about the plugin, refer to https://github.com/benbalter/jekyll-titles-from-headings
@@ -131,11 +160,10 @@ kramdown:
   toc_levels: 2..3
   syntax_highlighter_opts:
     css_class: highlighter
-
-# LiveReload monitors changes in the file system and refreshes browser when Jekyll is in serving mode.
-# http://livereload.com/
-#
-livereload: true
+    span:
+      line_numbers: false
+    block:
+      line_numbers: true
 
 # Search engine settings. For more details, refer to https://github.com/algolia/jekyll-algolia
 #
@@ -143,14 +171,9 @@ algolia:
   application_id: E642SEDTHL
   index_name: devdocs
   api_key: d2d0f33ab73e291ef8d88d8b565e754c
-  files_to_exclude:
-    - guides/m1x/**/*.html
-    - guides/m1x/**/*.md
-    - swagger
-    - redoc
 
 google:
-  analytics: UA-66243208-1
+  gtm: GTM-KRCLXBB
 
 # Toggles the _plugin/html-check-hook.rb script that checks links in the generated HTML
 #
@@ -161,31 +184,19 @@ check_links: true
 #############
 #
 # Magento 2 repository variable
-mage2bloburl: https://github.com/magento/magento2/blob/
-
-# 2.0 variables
-gdeurl: /guides/v2.0/
-githuburl: https://github.com/magento/devdocs/tree/master/guides/v2.0/
-mage2000url: https://github.com/magento/magento2/blob/2.0/
+mage2bloburl: https://github.com/magento/magento2/blob
 
 # 1.x variables
-m1xgdeurl: /guides/m1x/
-m1xgithuburl: https://github.com/magento/devdocs/blob/master/
-
-# 2.1 variables
-gdeurl21: /guides/v2.1/
-githuburl21: https://github.com/magento/devdocs/tree/master/guides/v2.1/
-mage2100url: https://github.com/magento/magento2/blob/2.1/
+m1xgdeurl: /guides/m1x
+m1xgithuburl: https://github.com/magento/devdocs/blob/master
 
 # 2.2 variables
 gdeurl22: /guides/v2.2/
 githuburl22: https://github.com/magento/devdocs/tree/master/guides/v2.2/
-mage2200url: https://github.com/magento/magento2/blob/2.2/
 
 # 2.3 variables
 gdeurl23: /guides/v2.3/
 githuburl23: https://github.com/magento/devdocs/tree/master/guides/v2.3/
-mage2300url: https://github.com/magento/magento2/blob/2.3/
 
 
 ##########
@@ -203,7 +214,6 @@ exclude:
   - .idea
   - Gemfile
   - Gemfile.lock
-  - gulpfile.js
   - package.json
   - package-lock.json
   - Rakefile

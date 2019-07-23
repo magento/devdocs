@@ -8,12 +8,11 @@ level3_subgroup: msi-tutorial
 return_to:
   title: REST Tutorials
   url: rest/tutorials/index.html
-redirect_from: /guides/v2.3/rest/tutorials/msi-order-processing/prepare-for-checkout.html
 functional_areas:
   - Integration
 ---
 
-Now that all the items have been added to the cart, we can prepare the quote for {% glossarytooltip 278c3ce0-cd4c-4ffc-a098-695d94d73bde %}checkout{% endglossarytooltip %}. This process includes the following steps:
+Now that all the items have been added to the cart, we can prepare the quote for [checkout](https://glossary.magento.com/checkout). This process includes the following steps:
 
 * Estimate shipping costs
 * Set shipping and billing information
@@ -24,7 +23,7 @@ Magento calculates shipping costs for each shipping method that can be applied t
 
 **Endpoint**
 
-`POST http://<host>/rest/us/V1/carts/mine/estimate-shipping-methods`
+`POST <host>/rest/us/V1/carts/mine/estimate-shipping-methods`
 
 **Scope**
 
@@ -40,7 +39,7 @@ Magento calculates shipping costs for each shipping method that can be applied t
 
 The payload contains the shipping address.
 
-``` json
+```json
 {  "address": {
       "region": "New York",
       "region_id": 43,
@@ -65,7 +64,7 @@ The payload contains the shipping address.
 
 The cost for the `flatrate` shipping method is $350 (70 items x $5 each). The downloadable item does not have a shipping charge because it is not a physical product.
 
-``` json
+```json
 [
     {
         "carrier_code": "flatrate",
@@ -90,7 +89,7 @@ Magento returns a list of payment options and calculates the order totals.
 
 **Endpoint**
 
-`POST http://<host>/rest/us/V1/carts/mine/shipping-information`
+`POST <host>/rest/us/V1/carts/mine/shipping-information`
 
 **Scope**
 
@@ -104,7 +103,7 @@ Magento returns a list of payment options and calculates the order totals.
 
 **Payload**
 
-``` json
+```json
 {
 "addressInformation": {
     "shipping_address": {
@@ -147,10 +146,10 @@ Magento returns a list of payment options and calculates the order totals.
 
 The subtotal of the order is $2462, and shipping charges are $350. The grand total is $2812.
 
-The available payment methods are `banktransfer` and `checkmo`. The customer will specify a {% glossarytooltip 422b0fa8-b181-4c7c-93a2-c553abb34efd %}payment method{% endglossarytooltip %} in the next step.
+The available payment methods are `banktransfer` and `checkmo`. The customer will specify a [payment method](https://glossary.magento.com/payment-method) in the next step.
 
 
-``` json
+```json
 {
     "payment_methods": [
         {
@@ -188,7 +187,7 @@ The available payment methods are `banktransfer` and `checkmo`. The customer wil
         "items_qty": 71,
         "items": [
             {
-                "item_id": 3,
+                "item_id": 5,
                 "price": 32,
                 "base_price": 32,
                 "qty": 20,
@@ -211,7 +210,7 @@ The available payment methods are `banktransfer` and `checkmo`. The customer wil
                 "name": "Voyage Yoga Bag"
             },
             {
-                "item_id": 4,
+                "item_id": 6,
                 "price": 36,
                 "base_price": 36,
                 "qty": 50,
@@ -234,7 +233,7 @@ The available payment methods are `banktransfer` and `checkmo`. The customer wil
                 "name": "Driven Backpack"
             },
             {
-                "item_id": 5,
+                "item_id": 7,
                 "price": 22,
                 "base_price": 22,
                 "qty": 1,
@@ -318,6 +317,6 @@ The available payment methods are `banktransfer` and `checkmo`. The customer wil
 
 ### Verify this step {#verify-step}
 
-{% glossarytooltip c3ce6f9b-a66a-4d81-ad4c-700f9dfaa9e2 %}Sign in{% endglossarytooltip %} to the US store (`http://<host>/us`) as the customer and go to the checkout page.
+[Sign in](https://glossary.magento.com/sign-in) to the US store (`http://<host>/us`) as the customer and go to the checkout page.
 
 The payment method is Bank Transfer, the billing and shipping addresses are displayed, and the shipping charges and shipping charges calculate and display.

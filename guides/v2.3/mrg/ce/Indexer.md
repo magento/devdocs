@@ -16,4 +16,3 @@ It allows:
 
 There are 2 modes of the Indexers: "Update on save" and "Update by schedule".
 Manual full reindex can be performed via console by running `php -f bin/magento indexer:reindex` console command.
-

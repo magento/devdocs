@@ -1,1 +1,1 @@
-../../../v2.2/cloud/howtos/environment-tutorial-env-merge.md
+../../../../guides/v2.2/cloud/howtos/environment-tutorial-env-merge.md

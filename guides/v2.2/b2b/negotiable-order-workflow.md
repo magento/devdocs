@@ -1,19 +1,14 @@
 ---
 group: b2b-developer-guide
-subgroup: 10_REST
 title: Place a negotiable quote order
-menu_title: Place a negotiable quote order
-menu_order: 35
 ee_only: true
-level3_menu_node: level3child
-level3_subgroup: nq
 ---
 
 This topic describes how REST calls can be used to place items in a shopping cart, initiate and complete the process of negotiating a quote, and reimbursing the buyer's credit upon receipt of payment.
 
 ## Prerequisites
 
-* You have [installed and enabled]({{ page.baseurl }}/comp-mgr/install-extensions/b2b-installation.html) {{site.data.var.b2b}}.
+* You have [installed and enabled]({{ site.baseurl }}/extensions/b2b/) {{site.data.var.b2b}}.
 * You have [created a company]({{ page.baseurl }}/b2b/company-object.html) and a [company user]({{ page.baseurl }}/b2b/company-object.html).
 * You have an integration or [admin authorization token]({{ page.baseurl }}/rest/tutorials/orders/order-admin-token.html) to make calls on behalf of seller, and a [customer token]({{ page.baseurl }}/rest/tutorials/orders/order-create-customer.html#get-token) to make calls on behalf of the company user.
 
@@ -50,7 +45,7 @@ This example adds 15 Pursuit Lumaflex Tone Bands and 10 Harmony Lumaflex Strengt
 
 **Endpoint**
 
-`POST V1/carts/mine`
+`POST <host>/rest/default/V1/carts/mine`
 
 **Headers**
 
@@ -60,7 +55,8 @@ Authorization Bearer <customer token>
 ```
 
 **Payload 1**
-{% highlight json %}
+
+```json
 {
   "cartItem": {
     "sku": "24-UG02",
@@ -68,11 +64,11 @@ Authorization Bearer <customer token>
     "quote_id": "5"
   }
 }
-{% endhighlight %}
+```
 
 **Response 1**
 
-{% highlight json %}
+```json
 {
     "item_id": 12,
     "sku": "24-UG02",
@@ -82,11 +78,11 @@ Authorization Bearer <customer token>
     "product_type": "simple",
     "quote_id": "5"
 }
-{% endhighlight %}
+```
 
 **Payload 2**
 
-{% highlight json %}
+```json
 {
   "cartItem": {
     "sku": "24-UG03",
@@ -94,12 +90,12 @@ Authorization Bearer <customer token>
     "quote_id": "5"
   }
 }
-{% endhighlight %}
+```
 
 
 **Response 2**
 
-{% highlight json %}
+```json
 {
     "item_id": 13,
     "sku": "24-UG03",
@@ -109,7 +105,7 @@ Authorization Bearer <customer token>
     "product_type": "simple",
     "quote_id": "5"
 }
-{% endhighlight %}
+```
 
 ### Set the shipping address
 
@@ -117,7 +113,7 @@ You can determine shipping costs after initiating a negotiable quote, but doing 
 
 **Endpoint**
 
-`POST V1/carts/mine/estimate-shipping-methods`
+`POST <host>/rest/default/V1/carts/mine/estimate-shipping-methods`
 
 **Headers**
 
@@ -128,7 +124,7 @@ Authorization Bearer <customer token>
 
 **Payload**
 
-{% highlight json %}
+```json
 {  "address": {
       "region": "California",
       "region_id": 12,
@@ -147,11 +143,11 @@ Authorization Bearer <customer token>
       "same_as_billing": 1
   }
 }
-{% endhighlight %}
+```
 
 **Response**
 
-{% highlight json %}
+```json
 [
     {
         "carrier_code": "flatrate",
@@ -178,7 +174,7 @@ Authorization Bearer <customer token>
         "price_incl_tax": 5
     }
 ]
-{% endhighlight %}
+```
 
 ### Set shipping and billing information
 
@@ -188,9 +184,16 @@ You can also set shipping and billing information after initiating a negotiable 
 
 `POST /V1/carts/mine/shipping-information`
 
+**Headers**
+
+```
+Content-Type application/json
+Authorization Bearer <customer token>
+```
+
 **Payload**
 
-{% highlight json %}
+```json
 {
 "addressInformation": {
   "shipping_address": {
@@ -227,12 +230,13 @@ You can also set shipping and billing information after initiating a negotiable 
   "shipping_method_code": "bestway"
   }
 }
-{% endhighlight %}
+```
 
 **Response**
 
 {% collapsible Show code sample %}
-{% highlight json %}
+
+```json
 {
     "payment_methods": [
         {
@@ -378,7 +382,8 @@ You can also set shipping and billing information after initiating a negotiable 
         }
     }
 }
-{% endhighlight %}
+```
+
 {% endcollapsible %}
 
 ### View the cart
@@ -403,8 +408,8 @@ None
 **Response**
 
 {% collapsible Show code sample %}
-{% highlight json %}
 
+```json
 {
     "id": 5,
     "created_at": "2017-09-14 21:14:15",
@@ -582,15 +587,15 @@ None
         }
     }
 }
+```
 
-{% endhighlight %}
 {% endcollapsible %}
 
 ## Complete a Negotiable Quote
 
 In this example, the buyer requests a negotiable quote. The seller applies a discount to the quote and returns the quote to the buyer. The buyer accepts the discount and completes the order.
 
-{: .bs-callout .bs-callout-info }
+{: .bs-callout-info }
 All negotiable quote calls require an admin authorization token.
 
 ### Initiate a negotiable quote
@@ -601,7 +606,7 @@ Initiating a negotiable quote places it in the `processing_by_admin` state.
 
 **Endpoint**
 
-`POST V1/negotiableQuote/request`
+`POST <host>/rest/default/V1/negotiableQuote/request`
 
 **Headers**
 
@@ -612,13 +617,13 @@ Authorization Bearer <admin token>
 
 **Payload**
 
-{% highlight json %}
+```json
 {
   "quoteId": 5,
   "quoteName": "Discount request",
   "comment": "Requesting a 2.5% discount"
 }
-{% endhighlight %}
+```
 
 **Response**
 
@@ -641,7 +646,7 @@ Authorization Bearer <admin token>
 
 **Payload**
 
-{% highlight json %}
+```json
 {
   "quote": {
       "id": 5,
@@ -653,7 +658,7 @@ Authorization Bearer <admin token>
       }
     }
 }
-{% endhighlight %}
+```
 
 **Response**
 
@@ -678,12 +683,12 @@ Authorization Bearer <admin token>
 
 **Payload**
 
-{% highlight json %}
+```json
 {
   "quoteId": 5,
   "comment": "We have applied a 2.5% discount to your order."
 }
-{% endhighlight %}
+```
 
 **Response**
 
@@ -711,8 +716,8 @@ None
 **Response**
 
 {% collapsible Show code sample %}
-{% highlight json %}
 
+```json
 {
     "id": 4,
     "created_at": "2017-09-14 20:30:38",
@@ -926,8 +931,8 @@ None
         }
     }
 }
+```
 
-{% endhighlight %}
 {% endcollapsible %}
 
 ### Set the payment information and place the order
@@ -947,13 +952,13 @@ Authorization Bearer <admin token>
 
 **Payload**
 
-{% highlight json %}
+```json
 {  "paymentMethod": {
     "po_number": "12345",
     "method": "companycredit"
   }
 }
-{% endhighlight %}
+```
 
 **Response**
 
@@ -979,14 +984,14 @@ Authorization Bearer <admin token>
 
 **Payload**
 
-{% highlight json %}
+```json
 {
   "value": 363.80,
   "currency": "USD",
   "operationType": 4,
   "comment": "Order #3 reimbursed"
 }
-{% endhighlight %}
+```
 
 **Response**
 

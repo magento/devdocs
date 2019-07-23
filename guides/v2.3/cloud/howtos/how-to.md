@@ -1,1 +1,1 @@
-../../../v2.2/cloud/howtos/how-to.md
+../../../../guides/v2.2/cloud/howtos/how-to.md

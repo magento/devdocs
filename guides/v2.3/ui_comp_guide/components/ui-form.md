@@ -27,7 +27,7 @@ The following components can be used in the scope of the Form component:
 * Select
 * Text
 * Textarea
-* {% glossarytooltip 98cf4fd5-59b6-4610-9c1f-b84c8c0abd97 %}Wysiwyg{% endglossarytooltip %}
+* [Wysiwyg](https://glossary.magento.com/wysiwyg)
 
 ## Configuration options
 
@@ -213,11 +213,11 @@ For more details see the <a href="{{ page.baseurl }}/ui_comp_guide/concepts/ui_c
 To create an instance of the Form component, you need to do the following:
 
 1. In your custom module, add a configuration file for the instance, for example: `customer_form.xml`.
-2. Add a set of fields (the Fieldset component with the component of the Field) for {% glossarytooltip a9027f5d-efab-4662-96aa-c2999b5ab259 %}entity{% endglossarytooltip %} or     to implement the upload of meta info in the DataProvider.
+2. Add a set of fields (the Fieldset component with the component of the Field) for [entity](https://glossary.magento.com/entity) or     to implement the upload of meta info in the DataProvider.
 3. Create the DataProvider class for the entity that implements DataProviderInterface
-* Add a component in Magento {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %} as a node: `<uiComponent name="customer_form"/>`
+* Add a component in Magento [layout](https://glossary.magento.com/layout) as a node: `<uiComponent name="customer_form"/>`
 
-{% highlight xml %}
+```xml
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceContainer name="content">
@@ -226,7 +226,7 @@ To create an instance of the Form component, you need to do the following:
         </referenceContainer>
     </body>
 </page>
-{% endhighlight %}
+```
 
 ### Configure the component
 
@@ -237,68 +237,78 @@ Component could be configured in two ways:
 
 Create configuration file: `<your module root dir>view/base/ui_component/customer_form.xml`
 
-{% highlight xml%}
+```xml
 <form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
     <argument name="data" xsi:type="array">
         <item name="js_config" xsi:type="array">
-            <item name="config" xsi:type="array">
-                <item name="provider" xsi:type="string">customer_form.customer_form_data_source</item>
-            </item>
-            <item name="deps" xsi:type="string">customer_form.customer_form_data_source</item>
+            <item name="provider" xsi:type="string">customer_form.customer_form_data_source</item>
         </item>
         <item name="label" xsi:type="string" translate="true">Customer Information</item>
-        <item name="layout" xsi:type="array">
-            <item name="type" xsi:type="string">tabs</item>
-            <item name="navContainerName" xsi:type="string">left</item>
-        </item>
+        <item name="reverseMetadataMerge" xsi:type="boolean">true</item>
+    </argument>
+    <settings>
+        <buttons>
+            <button name="save_and_continue" class="Magento\Customer\Block\Adminhtml\Edit\SaveAndContinueButton"/>
+            <button name="save" class="Magento\Customer\Block\Adminhtml\Edit\SaveButton"/>
+            <button name="reset" class="Magento\Customer\Block\Adminhtml\Edit\ResetButton"/>
+            <button name="order" class="Magento\Customer\Block\Adminhtml\Edit\OrderButton"/>
+            <button name="resetPassword" class="Magento\Customer\Block\Adminhtml\Edit\ResetPasswordButton"/>
+            <button name="unlock" class="Magento\Customer\Block\Adminhtml\Edit\UnlockButton"/>
+            <button name="invalidateToken" class="Magento\Customer\Block\Adminhtml\Edit\InvalidateTokenButton"/>
+            <button name="delete" class="Magento\Customer\Block\Adminhtml\Edit\DeleteButton"/>
+            <button name="back" class="Magento\Customer\Block\Adminhtml\Edit\BackButton"/>
+        </buttons>
+        <layout>
+            <navContainerName>left</navContainerName>
+            <type>tabs</type>
+        </layout>
+        <deps>
+            <dep>customer_form.customer_form_data_source</dep>
+        </deps>
 ...
-{% endhighlight%}
+```
 
 Nodes are optional and contain parameters required for component:
 
-* js_config -> deps - sets the dependency on component initialization
+* settings -> deps - sets the dependency on component initialization
 
-* js_config -> config -> provider - specifies the name of the component data
+* js_config -> provider - specifies the name of the component data
 
-* layout - configuration class meets the visualization component. Names for deps and provider are specified with a complete path from the root component with the separator "."
+* settings -> layout - configuration class meets the visualization component. Names for deps and provider are specified with a complete path from the root component with the separator "."
 
 Add a description of the fields in the form using components and Field Fieldset:
 
-{%highlight xml%}
+```xml
 ...
 <fieldset name="customer">
-   <argument name="data" xsi:type="array">
-       <item name="config" xsi:type="array">
-           <item name="label" xsi:type="string" translate="true">Account Information</item>
-       </item>
-   </argument>
-   <field name="entity_id">
-       <argument name="data" xsi:type="array">
-               <item name="config" xsi:type="array">
-               <item name="visible" xsi:type="boolean">false</item>
-               <item name="dataType" xsi:type="string">text</item>
-               <item name="formElement" xsi:type="string">input</item>
-               <item name="source" xsi:type="string">customer</item>
-           </item>
+    <settings>
+        <label translate="true">Account Information</label>
+    </settings>
+    <field name="entity_id" formElement="input">
+        <argument name="data" xsi:type="array">
+            <item name="config" xsi:type="array">
+                <item name="source" xsi:type="string">customer</item>
+            </item>
         </argument>
+        <settings>
+            <dataType>text</dataType>
+            <visible>false</visible>
+        </settings>
     </field>
 …
-{% endhighlight%}
+```
 
 To group components you can use the component container as in example below:
 
-{% highlight xml%}
-<container name="container_group">
+```xml
+<container name="container_group" component="Magento_Ui/js/form/components/group" sortOrder="20">
     <argument name="data" xsi:type="array">
         <item name="type" xsi:type="string">group</item>
-        <item name="js_config" xsi:type="array">
-            <item name="component" xsi:type="string">Magento_Ui/js/form/components/group</item>
-        </item>
         <item name="config" xsi:type="array">
             <item name="label" xsi:type="string" translate="true">Group</item>
             <item name="required" xsi:type="boolean">true</item>
             <item name="dataScope" xsi:type="boolean">false</item>
-            <item name="sortOrder" xsi:type="number">20</item>
+            <item name="validateWholeGroup" xsi:type="boolean">true</item>
         </item>
     </argument>
     <field name="group_id">
@@ -308,7 +318,7 @@ To group components you can use the component container as in example below:
     ...
     </field>
 </container>
-{% endhighlight %}
+```
 
 ### Configure DataSource
 
@@ -318,47 +328,30 @@ DataSource aggregates an object of class implements the interface `\Magento\Fram
 
 An example of the configuration of the DataSource object:
 
-{% highlight xml%}
+```xml
 <form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
     <argument name="data" xsi:type="array">
         ...
     </argument>
     <dataSource name="customer_form_data_source">
-        <argument name="dataProvider" xsi:type="configurableObject">
-            <argument name="class" xsi:type="string">Magento\Customer\Model\Customer\DataProvider</argument>
-            <argument name="primaryFieldName" xsi:type="string">entity_id</argument>
-            <argument name="requestFieldName" xsi:type="string">id</argument>
-            <argument name="meta" xsi:type="array">
-                <item name="customer" xsi:type="array">
-                    <item name="config" xsi:type="array">
-                        <item name="label" xsi:type="string" translate="true">Account Information</item>
-                    </item>
-                </item>
-                <item name="address" xsi:type="array">
-                    <item name="is_collection" xsi:type="boolean">true</item>
-                    <item name="config" xsi:type="array">
-                        <item name="label" xsi:type="string" translate="true">Addresses</item>
-                    </item>
-                </item>
-            </argument>
-            <argument name="data" xsi:type="array">
-                <item name="js_config" xsi:type="array">
-                    <item name="component" xsi:type="string">Magento_Ui/js/grid/provider</item>
-                </item>
-                <item name="config" xsi:type="array">
-                    <item name="submit_url" xsi:type="string">customer/index/save</item>
-                    <item name="validate_url" xsi:type="string">customer/index/validate</item>
-                </item>
-            </argument>
-        </argument>
         <argument name="data" xsi:type="array">
             <item name="js_config" xsi:type="array">
                 <item name="component" xsi:type="string">Magento_Ui/js/form/provider</item>
             </item>
         </argument>
+        <settings>
+            <validateUrl path="customer/index/validate"/>
+            <submitUrl path="customer/index/save"/>
+        </settings>
+        <dataProvider class="Magento\Customer\Model\Customer\DataProvider" name="customer_form_data_source">
+            <settings>
+                <requestFieldName>id</requestFieldName>
+                <primaryFieldName>entity_id</primaryFieldName>
+            </settings>
+        </dataProvider>
     </dataSource>
 </form>
-{% endhighlight %}
+```
 
 Component configuration:
 
@@ -368,11 +361,11 @@ Component configuration:
 
 Data provided by data source is shared and available for all components in the Assembly (in this case for all child components of UI Form).
 
-Data Source is another {% glossarytooltip 9bcc648c-bd08-4feb-906d-1e24c4f2f422 %}UI Component{% endglossarytooltip %} that provides data in specific format which is shared among all UI Components.
+Data Source is another [UI Component](https://glossary.magento.com/ui-component) that provides data in specific format which is shared among all UI Components.
 
 ### Replace instances of component
 
-{: .bs-callout .bs-callout-info }
+{: .bs-callout-info }
 Replacing principles are the same for all UI Components.
 
 #### Global replacement
@@ -381,7 +374,7 @@ To replace all instances, globally, of a UI Form with a custom implementation re
 
 `app/code/Magento/Ui/view/base/ui_component/etc/definition.xml`
 
-{% highlight xml%}
+```xml
 <form class="Magento\Ui\Component\Form">
     <argument name="data" xsi:type="array">
         <item name="js_config" xsi:type="array">
@@ -389,7 +382,7 @@ To replace all instances, globally, of a UI Form with a custom implementation re
         </item>
     </argument>
 </form>
-{% endhighlight %}
+```
 
 #### Single replacement
 
@@ -397,7 +390,7 @@ To replace one instance of a UI Form Component redefine link to a constructor in
 
 `app/code/Magento/Customer/view/base/ui_component/customer_form.xml`
 
-{% highlight xml%}
+```xml
 <form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Ui/etc/ui_configuration.xsd">
     <argument name="data" xsi:type="array">
         <item name="js_config" xsi:type="array">
@@ -405,10 +398,10 @@ To replace one instance of a UI Form Component redefine link to a constructor in
         </item>
         </argument>
 </form>
-{% endhighlight %}
+```
 
 ## Source files
 
 Extends [`uiCollection`]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uicollection_concept.html):
 
-- [app/code/Magento/Ui/view/base/web/js/form/form.js]({{ site.mage2200url }}app/code/Magento/Ui/view/base/web/js/form/form.js)
+- [app/code/Magento/Ui/view/base/web/js/form/form.js]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/form/form.js)

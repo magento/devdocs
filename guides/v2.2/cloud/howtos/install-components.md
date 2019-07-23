@@ -54,6 +54,9 @@ To update `composer.json`:
 
     ```bash
     composer require <component-name>:<version> --no-update
+    ```
+    
+    ```bash
     composer update
     ```
 
@@ -61,6 +64,9 @@ To update `composer.json`:
 
     ```bash
     composer require pixlee/magento2:1.0.1 --no-update
+    ```
+    
+    ```bash
     composer update
     ```
 
@@ -69,7 +75,13 @@ To update `composer.json`:
 
     ```bash
     git add -A
+    ```
+    
+    ```bash
     git commit -m "<message>"
+    ```
+    
+    ```bash
     git push magento <environment ID>
     ```
 
@@ -80,7 +92,7 @@ When installing and adding the module, you must add the `composer.lock` to your 
 
 ### Step 3: Verify the extension {#verify}
 
-To verify the extension installed properly, you can check its functionality in the Magento Admin or you can make sure it is enabled as follows:
+To verify the extension installed properly, you can check its functionality in the Magento Admin or you can view enabled modules using the CLI:
 
 1.  Open a terminal.
 1.  [Checkout the branch]({{ page.baseurl }}/cloud/before/before-setup-env-2_clone.html#branch) where the module is installed.
@@ -135,7 +147,7 @@ Trying to enable and disable extensions not following this method can lead to pe
 
 ### Modify configurations {#configure}
 
-You will update configurations according to [Configuration Management]({{ site.baseurl }}/guides/v2.2/cloud/live/sens-data-over.html#cloud-clp-settings) for `config.php`.
+You update configurations according to [Configuration Management]({{ site.baseurl }}/guides/v2.2/cloud/live/sens-data-over.html#cloud-clp-settings) for `config.php`.
 
 ## Upgrade an extension {#update}
 

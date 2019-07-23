@@ -1,1 +1,1 @@
-../../../v2.2/cloud/setup/first-time-setup.md
+../../../../guides/v2.2/cloud/setup/first-time-setup.md
