@@ -1,13 +1,15 @@
 # Asynchronous and deferred operations
-Asynchronous operations are not something native to PHP but it still is possible to execute some heavy
-operations simultaneously or delay them until they absolutely have to be finished.
+
+Asynchronous operations are not native to PHP but it is still possible to execute heavy
+operations simultaneously, or delay them until they absolutely have to be finished.
  
-To make writing asynchronous code easier Magento provides DeferredInterface to use
-as the result of asynchronous operations to allow client code to work with such
-operations as it would with usual values.
+To make writing asynchronous code easier, Magento provides the `DeferredInterface` to use with asynchronous operations.
+This allows client code to work with asynchronous operations just as it would with standard operations.
  
 ## DeferredInterface
-_Magento\Framework\Async\DeferredInterface_ is rather simple:
+
+`_Magento\Framework\Async\DeferredInterface_` is quite simple:
+
 ```php
 interface DeferredInterface
 {
@@ -20,15 +22,18 @@ interface DeferredInterface
     public function isDone(): bool;
 }
 ```
-When client code needs the result _get()_ method will be called to retrieve the result
-and if it's possible to wait _isDone()_ can be used to see whether the wait is needed.
+
+When the client code needs the result, the `_get()_` method will be called to retrieve the result.
+`_isDone()_` can be used to see whether the code has completed.
  
-There are 2 types of asynchronous operations where _DeferredInterface_ can be used to describe the result:
-* Asynchronous operations in progress, calling _get()_ would wait for them to finish and return their result
-* Deferred operations, _get()_ would actually start an operation, wait for it to finish and return the result
+There are 2 types of asynchronous operations where `_DeferredInterface_` can be used to describe the result:
+
+* With asynchronous operations in progress, calling `_get()_` would wait for them to finish and return their result.
+* With deferred operations, `_get()_` would actually start the operation, wait for it to finish, and then return the result.
  
-Sometimes developers require more control over long asynchronous operations that's why
-there is an extended deferred variant - Magento\Framework\Async\CancelableDeferredInterface:
+Sometimes developers require more control over long asynchronous operations.
+That is why there is an extended deferred variant - `Magento\Framework\Async\CancelableDeferredInterface`:
+
 ```php
 interface CancelableDeferredInterface extends DeferredInterface
 {
@@ -45,15 +50,18 @@ interface CancelableDeferredInterface extends DeferredInterface
     public function isCancelled(): bool;
 }
 ```
+
 This interface is for operations that may take too long and can be canceled.
  
-#### Client code
-Now let's see how client code of an asynchronous operations would look like.
-Assume _serviceA, serviceB and serviceC_ all execute asynchronous operations (like sending HTTP requests)
+### Client code
+
+Assumeing that `_serviceA`, `serviceB` and `serviceC_` all execute asynchronous operations, such as HTTP requests, the client code would look like:
+
 ```php
 public function aMethod() {
     //Started executing 1st operation
     $operationA = $serviceA->executeOp();
+    
     //Executing 2nd operations at the same time
     $operationB = $serviceB->executeOp2();
 
@@ -65,18 +73,19 @@ public function aMethod() {
     return $operationB;
 }
 ```
-And no callback in sight!
+
+And not a callback in sight!
  
-With deferred client code can start multiple operations at the same time, wait for operations required to finish
-and pass promise of a result to another method.
+With the deferred client, the code can start multiple operations at the same time, wait for operations required to finish and pass the promise of a result to another method.
  
-## Deferred proxy
-When writing a module or an extension you may not want to burden other developers
-with knowing that your method is performing an asynchronous operation and there is a way to hide it -
-_Magento\Framework\Async\ProxyDeferredFactory_, With it's help you can return values that seem like regular objects
+## ProxyDeferredFactory
+
+When writing a module or an extension, you may not want to burden other developers with having to know that your method is performing an asynchronous operation.
+There is a way to hide it: `_Magento\Framework\Async\ProxyDeferredFactory_`. With its help, you can return values that seem like regular objects
 but are in fact deferred results.
  
-Example:
+For example:
+
 ```php
 public function doARemoteCall(string $uniqueValue): CallResult
 {
@@ -103,11 +112,12 @@ public function doCallsAndProcess(): Result
 ```
  
 ## Using DeferredInterface for background operations
-As mentioned above the 1st type of asynchronous operations are operations executing in a background.
-DeferredInterface can be used here to give client code a promise of a not yet received
-result and wait for it by calling the _get()_ method.
+
+As mentioned above, the first type of asynchronous operations are operations executing in a background.
+`DeferredInterface` can be used to give client code a promise of a not-yet-received result and wait for it by calling the `_get()_` method.
  
-Take a look at the example - creating shipments for multiple products:
+Take a look at an example: creating shipments for multiple products:
+
 ```php
 class DeferredShipment implements DeferredInterface
 {
@@ -175,20 +185,17 @@ class ShipController
 }
 ```
  
-Here multiple shipment requests are being sent at the same time with their results
-gathered later. If you don't want to write your own _DeferredInterface_ implementations processing
-results of asynchronous calls you can use _CallbackDeferred_ to provide callbacks that will be used
-when _get()_ is called.
+Here, multiple shipment requests are being sent at the same time with their results gathered later.
+If you do not want to write your own `_DeferredInterface_` implementation, you can use `_CallbackDeferred_` to provide callbacks that will be used when `_get()_` is called.
  
 ## Using DeferredInterface for deferred operations
-2nd type of asynchronous operations are operations that are being postponed and executed only when a result is
-absolutely needed.
+
+The second type of asynchronous operations are operations that are being postponed and executed only when a result is absolutely needed.
  
-Let's see the next example:
+An example:
  
-Assume you are creating a repository for an entity, you have a method that returns a singular entity
-by ID, you want to make a performance optimization for cases when multiple entities are requested
-during the same request-response process so you wouldn't load each one separately.
+Assume you are creating a repository for an entity and you have a method that returns a singular entity by ID.
+You want to make a performance optimization for cases when multiple entities are requested during the same request-response process, so you would not load them separately.
  
 ```php
 class EntityRepository
@@ -263,6 +270,5 @@ class EntitiesController
 ```
  
 ## Examples in Magento
-Please see our asynchronous HTTP client _Magento\Framework\HTTP\AsyncClientInterface_
-and _Magento\Shipping\Model\Shipping_ with various _Magento\Shipping\Model\Carrier\AbstractCarrierOnline_
-implementations to see how DeferredInterface can be used to work with asynchronous code.
+
+Please see our asynchronous HTTP client` _Magento\Framework\HTTP\AsyncClientInterface_` and `_Magento\Shipping\Model\Shipping_` with various `_Magento\Shipping\Model\Carrier\AbstractCarrierOnline_` implementations to see how `DeferredInterface` can be used to work with asynchronous code.
