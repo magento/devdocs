@@ -6,7 +6,7 @@ title: PasswordStrengthIndicator widget
 
 ## Overview {#password_strength_indicator_overview}
 
-The Magento password strength indicator {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} provides immediate feedback on the validity and strength of a password while it is being typed.
+The Magento password strength indicator [widget](https://glossary.magento.com/widget) provides immediate feedback on the validity and strength of a password while it is being typed.
 If the password is not strong enough, Magento prompts the user to choose a new password.
 
 The password strength indicator widget source is [`<Magento_Customer_module_dir>/view/frontend/web/js/password-strength-indicator.js`].
