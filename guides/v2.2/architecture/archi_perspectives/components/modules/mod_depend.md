@@ -31,7 +31,7 @@ A module with a *hard dependency* on another module cannot function without the 
 * Deserializes an object declared in another module.
 * Uses or modifies the database tables used by another module.
 
-Module hard dependency defines in the `require` section of `app/code/<Vendor>/<Module>/composer.json` file. For example, :
+The `require` section of `app/code/<Vendor>/<Module>/composer.json` file contains hard dependency definitions for the module. For example, :
 
 ```json
   ...
@@ -57,7 +57,7 @@ A module with a *soft dependency* on another module can function properly withou
 * Extend another module's configuration.
 * Extend another module's [layout](https://glossary.magento.com/layout).
 
-Module hard dependency defines in the `<sequence>` section of `app/code/<Vendor>/<Module>/etc/module.xml` file. For example, :
+The `<sequence>` section of `app/code/<Vendor>/<Module>/etc/module.xml` file contains soft dependency definitions for the module. For example, :
 
 ```xml
 ...
