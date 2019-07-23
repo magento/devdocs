@@ -1,1 +1,1 @@
-../../v2.2/migration/migration-overview-supported.md
+../../../guides/v2.2/migration/migration-overview-supported.md

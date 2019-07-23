@@ -15,7 +15,7 @@ landing-page: Inventory
 
 Merchants install {{site.data.var.im}} as part of v2.3.x and upgrades with the name `magento/inventory-composer-metapackage`. For details, see [Install {{site.data.var.im}}]({{site.baseurl}}/extensions/inventory-management/).
 
-**Magento Community Contribution** – Magento thanks the many contributors to the [Multi Source Inventory (MSI) project](https://github.com/magento-engcom/msi), developing these features as part of the Magento Community Engineering program.
+**Magento Community Contribution** – Magento thanks the many contributors to the [Magento Inventory (was MSI) project](https://github.com/magento/inventory), developing these features as part of the Magento Community Engineering program.
 
 ## Terminology
 
@@ -36,7 +36,7 @@ The following diagram illustrates the relationship between source stocks, aggreg
 
 ![Source and aggregate stock](images/inventory-diagram-stock.png)
 
-In this diagram, a bicycle merchant has inventory for a touring bike in a warehouse and two stores. He has three stocks with configured website sales channels and sources. When a customer shops through the UK website, Magento aggregates bike inventory from the warehouse and flagship store sources for a salable quantity of 50. The touring bike can be shipped from either the warehouse or the flagship store, but not the King Street store. The German (DE) web store same stock draws from the same aggregate stock as the UK web store.
+In this diagram, a bicycle merchant has inventory for a touring bike in a warehouse and two stores. He has three stocks with configured website sales channels and sources. When a customer shops through the UK website, Magento aggregates bike inventory from the warehouse and flagship store sources for a salable quantity of 95. The touring bike can be shipped from either the warehouse or the flagship store, but not the US store. Amazon Marketplace web store same stock draws from the same aggregate stock as the UK web store.
 
 
 ## Important {{site.data.var.im}} objects

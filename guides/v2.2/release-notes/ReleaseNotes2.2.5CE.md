@@ -151,7 +151,7 @@ In addition to security enhancements, this release contains the following functi
 
 ### Shipping
 
-{: .bs-callout .bs-callout-info }
+{: .bs-callout-info }
 You can find Magento Shipping-specific release notes in [Magento Shipping Release Notes]({{page.baseurl}}/release-notes/ReleaseNotesMagentoShipping2.2.x.html).
 
 <!--- MAGETWO-84257 -->* Merchants can now choose whether to request and include tax information from UPS in the rate charged to the customer during checkout.  (This permits merchants  to pass on the tax costs to their customer as part of the overall shipping rate.) *Fix submitted by [gwharton](https://github.com/gwharton) in pull request 11707*. 

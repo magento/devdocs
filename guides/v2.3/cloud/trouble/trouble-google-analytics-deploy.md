@@ -1,1 +1,1 @@
-../../../v2.2/cloud/trouble/trouble-google-analytics-deploy.md
+../../../../guides/v2.2/cloud/trouble/trouble-google-analytics-deploy.md

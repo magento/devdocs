@@ -1,1 +1,1 @@
-../../../v2.2/install-gde/install/legacy-file-system-perms.md
+../../../../guides/v2.2/install-gde/install/legacy-file-system-perms.md

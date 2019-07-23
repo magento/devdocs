@@ -1,1 +1,1 @@
-../../../v2.2/cloud/project/project-routes-more-redir.md
+../../../../guides/v2.2/cloud/project/project-routes-more-redir.md

@@ -1,1 +1,1 @@
-../../v2.2/mtf/features.md
+../../../guides/v2.2/mtf/features.md

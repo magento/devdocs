@@ -1,1 +1,1 @@
-../../../v2.2/install-gde/prereq/php-parent.md
+../../../../guides/v2.2/install-gde/prereq/php-parent.md
