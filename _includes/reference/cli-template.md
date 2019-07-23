@@ -2,14 +2,15 @@
 
 {% assign commands = file.commands %}
 
+{% if app.version %}
+**Version**: {{ app.version }}
+{: style="color:gray; font-size: 120%"}
+{% endif %}
+
 This reference contains {{ commands | size }} commands available through the `{{ tool }}` command-line tool.
 The initial list is auto generated using the `{{ tool }} list` command at the {{ edition }} edition.
 
 {{ intro }}
-
-{% if app.version %}
-version {{ app.version }}
-{% endif %}
 
 {% for command in commands %}
   {% assign arguments = command.definition.arguments %}
@@ -20,7 +21,7 @@ version {{ app.version }}
 {{ command.description }}
 
 ```bash
-bin/magento {{ command.usage }}
+{{ tool }} {{ command.usage }}
 ```
 
   {% unless arguments.size == 0 %}
