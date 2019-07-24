@@ -31,20 +31,20 @@ A module with a *hard dependency* on another module cannot function without the 
 * Deserializes an object declared in another module.
 * Uses or modifies the database tables used by another module.
 
-The `require` section of `app/code/<Vendor>/<Module>/composer.json` file contains hard dependency definitions for the module. For example, :
+The `require` section of `app/code/<Vendor>/<Module>/composer.json` file contains hard dependency definitions for the module. For example:
 
 ```json
   ...
   "require": {
-        "magento/module-catalog": "103.0.*",
-        "magento/module-email": "101.0.*",
-        "magento/module-media-storage": "100.3.*",
-        "magento/module-store": "101.0.*",
-        "magento/module-theme": "101.0.*",
-        "magento/module-ui": "101.1.*",
-        "magento/module-variable": "100.3.*",
-        "magento/module-widget": "101.1.*",
-        "magento/module-authorization": "100.3.*"
+    "magento/module-catalog": "103.0.*",
+    "magento/module-email": "101.0.*",
+    "magento/module-media-storage": "100.3.*",
+    "magento/module-store": "101.0.*",
+    "magento/module-theme": "101.0.*",
+    "magento/module-ui": "101.1.*",
+    "magento/module-variable": "100.3.*",
+    "magento/module-widget": "101.1.*",
+    "magento/module-authorization": "100.3.*"
    },
    ...
 ```
@@ -57,18 +57,16 @@ A module with a *soft dependency* on another module can function properly withou
 * Extend another module's configuration.
 * Extend another module's [layout](https://glossary.magento.com/layout).
 
-The `<sequence>` section of `app/code/<Vendor>/<Module>/etc/module.xml` file contains soft dependency definitions for the module. For example, :
+The `<sequence>` section of `app/code/<Vendor>/<Module>/etc/module.xml` file contains soft dependency definitions for the module. For example:
 
 ```xml
-...
-    <module name="Magento_Cms">
-        <sequence>
-            <module name="Magento_Store"/>
-            <module name="Magento_Theme"/>
-            <module name="Magento_Variable"/>
-        </sequence>
-    </module>
-...
+  <module name="Magento_Cms">
+     <sequence>
+        <module name="Magento_Store"/>
+        <module name="Magento_Theme"/>
+        <module name="Magento_Variable"/>
+     </sequence>
+  </module>
 ```
 
 {:.bs-callout .bs-callout-tip}
