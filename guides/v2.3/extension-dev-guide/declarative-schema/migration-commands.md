@@ -50,7 +50,7 @@ Old data scripts cannot be converted automatically. The following steps help mak
 
     `--revertable[=true | false]` - Determines whether the patch is revertable. The default value is `false`.
 
-    `--type[=<type>]` - Specifies what type of patch to generate. The default is `data`.
+    `--type[=<type>]` - Specifies what type of patch to generate. Available types: `data` and `schema`. The default is `data`. 
 
     {: .bs-callout-info }
     In Magento 2.3 Alpha, the `setup:db-declaration:generate-patch` command was named `dev:generate:patch`.
