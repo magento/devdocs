@@ -2,9 +2,7 @@
 group: cloud-guide
 title: Pro develop and deploy workflow
 redirect_from:
-  - /guides/v2.1/cloud/discover-workflow.html
   - /guides/v2.2/cloud/discover-workflow.html
-  - /guides/v2.1/cloud/welcome/discover-workflow.html
   - /guides/v2.2/cloud/welcome/discover-workflow.html
   - /guides/v2.3/cloud/welcome/discover-workflow.html
 functional_areas:

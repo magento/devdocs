@@ -162,7 +162,7 @@ curl -X POST \
 ]
 ```
 
-{: .bs-callout .bs-callout-info }
+{: .bs-callout-info }
 The response is the list of files in the same order sent during the upload request.
 
 Each record in the list has the following fields:
