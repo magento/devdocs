@@ -148,7 +148,7 @@ The following code is an example of an `extension_attributes.xml` file:
 </config>
 ```
 
-Clear the `var/generated/code` directory when you run the `setup:di:compile` command. New getter and setter methods will be added in `/var/generated/code/Magento/Quote/Api/Data/AddressInterface.php` file.
+Clear the `generated/code` directory when you run the `setup:di:compile` command. New getter and setter methods will be added in `generated/code/Magento/Quote/Api/Data/AddressExtension.php` file.
 
 ## Step 5: Access the value of the custom field on server side {#access}
 
