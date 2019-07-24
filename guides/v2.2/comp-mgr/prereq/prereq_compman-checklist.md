@@ -50,7 +50,7 @@ After your upgrade completes, you can unset the variable as follows:
 unset DATA_CONVERTER_BATCH_SIZE
 ```
 
-{: .bs-callout .bs-callout-info}
+{: .bs-callout-info }
 `DATA_CONVERTER_BATCH_SIZE` requires memory; avoid setting it to a very large value (approximately 1GB) without testing it first.
 
 ### Magento file system owner and group {#magento-owner-group}

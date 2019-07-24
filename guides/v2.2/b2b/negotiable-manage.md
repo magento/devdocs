@@ -14,7 +14,7 @@ functional_areas:
 
 This topic describes the calls required to initiate a negotiable quote and to prepare it to be converted to an order.
 
-{: .bs-callout .bs-callout-info }
+{: .bs-callout-info }
 All negotiable quote calls require an admin authorization token.
 
 **REST Endpoints**
