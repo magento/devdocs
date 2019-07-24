@@ -8,13 +8,9 @@ functional_areas:
 
 The `services.yaml` file defines the services supported and used by {{site.data.var.ece}}, such as MySQL, Redis, and ElasticSearch. You do not need to subscribe to external service providers. This file is in the `.magento` directory of your project.
 
-The deploy script uses the values defined in configuration files in the `.magento` directory. After deployment, the script deletes the directory and its contents. Your local development environment is not affected.
-
 {% include cloud/note-pro-using-yaml-support.md %}
 
-## How this file works {#howitworks}
-
-A service becomes available to your application when configure in the `relationships` property of the `.magento.app.yaml` file. The `.magento.app.yaml` and `services.yaml` files set the services, applications, and configurations to build and include in an environment. Changing a service causes a deployment to provision the environment with the update services.
+The deploy script uses the configuration files in the `.magento` directory to provision the environment with the configured services. A service becomes available to your application if it is included in the `relationships` property of the `.magento.app.yaml` file. The `services.yaml` file contains the service name, type, and disk values. Changing a service configuration causes a deployment to provision the environment with the updated services.
 
 This affects the following environments:
 
