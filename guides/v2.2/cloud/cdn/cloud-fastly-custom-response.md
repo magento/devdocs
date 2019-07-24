@@ -60,7 +60,7 @@ Verify that the modified source displays correctly in the browser. Then, add the
 
 1.  [Log in to the Magento Admin UI]({{ page.baseurl }}/cloud/onboarding/onboarding-tasks.html#admin).
 
-2.  Click **Stores** > **Settings** > **Configuration** > **Advanced** > **System**.
+1.  Click **Stores** > **Settings** > **Configuration** > **Advanced** > **System**.
 
 3.  In the right pane, expand **Full Page Cache** > **Fastly Configuration** > **Custom Synthetic Pages**.
 
