@@ -61,7 +61,7 @@ mutation {
       "cart": {
         "selected_payment_method": {
           "code": "payflow_advanced",
-          "title": "PayPal Payments Advanced"
+          "title": "Credit Card"
         }
       }
     }
