@@ -19,8 +19,8 @@ To consume several services, you must specify them in the WSDL endpoint [URL](ht
 
 | Service | WSDL endpoint URL | Available services |
 | --------- | ---------- | ------------------------------------------ |
-| customer | http://magentohost/soap?wsdl&services=customerV1 | \Magento\Customer\Service\V1\CustomerService |
-| customer, catalogProduct | http://magentohost/soap/custom_store?wsdl&services=customerCustomerAccountServiceV1,catalogProductV2 | \Magento\Customer\Service\V1\CustomerAccountServiceInterface, \Magento\Catalog\Service\V2\ProductInterface |
+| customer | http://magentohost/soap?wsdl&services=customerCustomerRepositoryV1 | \Magento\Customer\Api\Data\CustomerInterface |
+| customer, catalogProduct | http://magentohost/soap/custom_store?wsdl&services=customerCustomerRepositoryV1,catalogProductRepositoryV1 | \Magento\Customer\Api\Data\CustomerInterface, \Magento\Catalog\Api\Data\ProductInterface |
 
 The WSDL URL follows the following pattern:
 
@@ -30,7 +30,7 @@ You must specify each service version in the endpoint URL.
 
 This way, you can have a strict contract between your application and the service provider.
 
-If you want an overview to all the available Web Services, just use the following url format to get a list of all SOAP Services:
+If you want an overview to all the available Web Services, use the following URL format to get a list of all SOAP Services:
 
 `http://<magento.host>/soap/all?wsdl_list=1`
 
@@ -62,8 +62,8 @@ Service names use the following conventions:
 
 | Original Service Interface Name | Service Name |
 |----------
-| \Magento\Customer\Service\V1\CustomerInterface | customerV1 |
-| \Magento\Customer\Service\V1\CustomerAccountServiceInterface | customerCustomerAccountServiceV1 |
+| \Magento\Customer\Api\Data\CustomerInterface | customerCustomerRepositoryV1 |
+| \Magento\Customer\Api\AccountManagementInterface | customerAccountManagementV1 |
 | \Enterprise\Customer\Service\V3\Customer\AddressInterface | enterpriseCustomerAddressV3 |
 
 ## Authentication {#auth}
