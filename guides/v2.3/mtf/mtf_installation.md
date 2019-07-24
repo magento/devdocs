@@ -23,7 +23,7 @@ To install the Magento application, see <a href="{{page.baseurl }}/install-gde/b
 
 #### PHP {#mtf_install_pre_tools_php}
 
-For more details about PHP verification, installation and configuration (<a href="{{page.baseurl }}/install-gde/prereq/php-centos-ubuntu.html#php-for-ubuntu">Ubuntu</a>, <a href="{{page.baseurl }}/install-gde/prereq/php-centos-ubuntu.html#php-for-centos">CentOS</a>).
+For more details about PHP verification, installation and configuration (<a href="{{page.baseurl }}/install-gde/prereq/php-settings.html#php-for-ubuntu">PHP</a>).
 
 {: .bs-callout .bs-callout-warning }
 In `php.ini` file, make sure `extension=php_openssl.dll` is not commented out. Note: The Windows environment is not officially supported.
@@ -40,8 +40,8 @@ The Functional Testing Framework requires Composer, which downloads libraries de
 {: .bs-callout-info }
 If you're not sure that Composer is installed, see [Install Composer]({{page.baseurl }}/install-gde/prereq/dev_install.html#instgde-prereq-compose-install).
 
-1.    <a href="{{page.baseurl }}/install-gde/basics/basics_login.html">Open a command prompt</a>.
-1.    Log in to your Magento server as a user with permissions to modify the Magento file system. (This is typically <a href="{{page.baseurl }}/install-gde/prereq/apache-user.html">the Magento file system owner</a>.)
+1. <a href="{{page.baseurl }}/install-gde/basics/basics_login.html">Open a command prompt</a>.
+1. Log in to your Magento server as a user with permissions to modify the Magento file system. (This is typically <a href="{{page.baseurl }}/install-gde/prereq/apache-user.html">the Magento file system owner</a>.)
 
     cd <magento2_root_dir>/dev/tests/functional/
     composer install
@@ -50,9 +50,9 @@ If you're not sure that Composer is installed, see [Install Composer]({{page.bas
 
 If command failed, maybe [Composer](https://getcomposer.org) hasn't been installed globally.  
 
-* Copy `composer.phar` to `/usr/local/bin/composer`.  
-* To run it locally put `composer.phar` into directory, where `composer.json` file is located (that is, `<magento2>/dev/tests/functional/`).  
-* And run from this directory `php composer.phar install`.
+- Copy `composer.phar` to `/usr/local/bin/composer`.  
+- To run it locally put `composer.phar` into directory, where `composer.json` file is located (that is, `<magento2>/dev/tests/functional/`).  
+- And run from this directory `php composer.phar install`.
 
 ## Check the installation {#mtf_install_check}
 
@@ -73,4 +73,5 @@ Find the `mtf` directory.
 Open `<magento2_root_dir>/dev/tests/functional/vendor/magento/mtf/CHANGELOG.md`. The latest version in `CHANGELOG.md` is version of the FTF you installed.
 
 ## Next Steps {#mtf_install_next} 
+
 [Adjust the FTF configuration ]({{ page.baseurl }}/mtf/mtf_quickstart/mtf_quickstart_config.html)

@@ -41,6 +41,10 @@ Magento only uses MySQL features compatible with MariaDB. MariaDB may not be com
 <!--{% assign supported_php_versions = site.data.codebase.v2_2.open-source.composer_lock.platform.php | split: "|" %}-->
 {% include install/php-versions-template.md %}
 
+The Magento 2.2.10 patch enables support for PHP 7.2.
+Supported PHP versions for Magento 2.2.x are 7.2 and 7.1.
+PHP 7.0 is no longer supported.
+
 #### Required PHP extensions
 
 {: .bs-callout-info }
