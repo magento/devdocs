@@ -37,18 +37,6 @@ The process for configuring Fastly includes:
 Before you can set up and use Fastly services for your project, Magento needs to link your project to the Fastly service account for {{ site.data.var.ece }} and add the Fastly account credentials to your project environment configurations.
 
 
-{:.bs-callout .bs-callout-warning}
-If your project domains link to an existing Fastly service account, you must modify the configuration for the existing account before requesting Fastly credentials for your {{ site.data.var.ece }} project. See [Multiple Fastly accounts and assigned domains](#domain).
-
-#### To add your project to the Fastly service account:
-
-Submit a [support ticket]({{ page.baseurl }}/cloud/trouble/trouble.html) to add your environments to the Fastly service account for {{ site.data.var.ece }}:
-
--  For Pro projects, include the URLs for your Production and Staging sites.
-
--  For Starter projects, include the URLs for your Master and Staging sites.
-
-
 ####  To view your Fastly credentials:
 
 When we provision your project environments for Fastly services, we add the Fastly credentials to your project environment configuration. You can get these credentials using any of the following methods:
@@ -73,35 +61,6 @@ When we provision your project environments for Fastly services, we add the Fast
 
 {:.bs-callout .bs-callout-info}
 If you need to change the Fastly API key credential for a project environment for security reasons, you can request a new API key from support.  See [Change Fastly credentials](https://support.magento.com/hc/en-us/articles/360006935271-Change-account-owner-access-credentials-via-API-tokens-for-Fastly-on-Cloud).
-
-### Multiple Fastly accounts and assigned domains {#domain}
-
-Fastly only allows you to assign an apex domain and associated subdomains to one Fastly service and account. If you have an existing Fastly account that links the same apex and subdomains used for your {{ site.data.var.ece }}, you have the following options:
-
--  Remove the apex and subdomains from the existing account before requesting Fastly service credentials for your {{ site.data.var.ece}} project environments. See [Working with Domains](https://docs.fastly.com/guides/basic-configuration/working-with-domains) in the Fastly documentation.
-
-   Use this option to link the apex domain and all subdomains to the Fastly service account for {{ site.data.var.ece }}. 
-
--  Submit a support ticket to request domain delegation so that apex and subdomains can be linked to different accounts. 
-
-   Use this option if your apex domain has multiple subdomains for Magento and non-Magento sites that you want to link to different Fastly accounts.
-
-#### Request domain delegation
-
-*Scenario 1*
-
-The apex domain (`testweb.com` and `www.testweb.com`) is linked to an existing Fastly account. You have a {{ site.data.var.ece }} project configured with the following subdomains: `mcstaging.testweb.com` and `mcprod.testweb.com`. You do not want to move the apex domain to the Fastly service account for {{ site.data.var.ece }} Magento.
-
-Submit a [Fastly support ticket](https://docs.fastly.com/guides/detailed-product-descriptions/support-description-and-sla#support-requests) requesting that the subdomains be delegated from the existing Fastly account to the Fastly account for {{ site.data.var.ece }}. Include your Magento project ID in the ticket.
-
-After the delegation is complete, your project subdomains can be added to the Fastly service account for {{ site.data.var.ece }}. See [Get Fastly credentials](#cloud-fastly-creds).
-
-
-*Scenario 2*
-
-The apex domain (`testweb.com` and `www.testweb.com`) is linked to the {{ site.data.var.ece }} Fastly service account. You want to manage Fastly services for the `service.testweb.com` and `product-updates.testweb.com` subdomains from a different Fastly account. 
-
-Submit a [Magento support ticket](https://support.magento.com/hc/en-us/articles/360000913794#submit-ticket) requesting that the subdomains be delegated from the {{ site.data.var.ece }} Fastly service account to the Fastly account. Include the service ID for the Fastly account in the ticket.
 
 ## Get started {#cloud-fastly-start}
 
