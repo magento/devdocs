@@ -8,20 +8,6 @@ contributor_link: https://www.somethingdigital.com/
 The `checkoutAgreements` query retrieves checkout agreements. The query will always return an empty array when the
 **Enable Terms and Conditions** option is set to **No**.  (The config path is `checkout/options/enable_agreements`.)
 
-### CheckoutAgreement attributes {#checkoutAgreementAttributes}
-
-The `CheckoutAgreement` object provides the following attributes:
-
-Attribute | Data type | Description
---- | --- | ---
-`agreement_id` | Integer! | Checkout Agreement identifier
-`checkbox_text` | String! | Label of the Checkout Agreement checkbox
-`content` | String! | The content of the Checkout Agreement. The value can be in  plain text or in HTML
-`content_height` | String | CSS height of Checkout Agreement
-`is_html` | Boolean! | Is Checkout Agreement content in HTML format
-`mode` | String! | Indicates whether terms and conditions are applied manually (`MANUAL`) or automatically (`AUTO`)
-`name` | String! | Checkout Agreement name
-
 ## Syntax
 
 `{checkoutAgreements {CheckoutAgreement}}`
@@ -69,3 +55,17 @@ The following query returns enabled checkout agreements.
 ## Output attributes
 
 The `CheckoutAgreements` object contains an array of [`CheckoutAgreement`](#checkoutAgreementAttributes) objects.
+
+### CheckoutAgreement attributes {#checkoutAgreementAttributes}
+
+The `CheckoutAgreement` object provides the following attributes:
+
+Attribute | Data type | Description
+--- | --- | ---
+`agreement_id` | Integer! | Checkout Agreement identifier
+`checkbox_text` | String! | Label of the Checkout Agreement checkbox
+`content` | String! | The content of the Checkout Agreement. The value can be in  plain text or in HTML
+`content_height` | String | CSS height of Checkout Agreement
+`is_html` | Boolean! | Is Checkout Agreement content in HTML format
+`mode` | String! | Indicates whether terms and conditions are applied manually (`MANUAL`) or automatically (`AUTO`)
+`name` | String! | Checkout Agreement name
