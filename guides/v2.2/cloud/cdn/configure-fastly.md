@@ -2,8 +2,6 @@
 group: cloud-guide
 title: Set up Fastly
 redirect_from:
-   - /guides/v2.2/cloud/configure/fastly-vcl-extend-timeout.html
-   - /guides/v2.3/cloud/configure/fastly-vcl-extend-timeout.html
    - /guides/v2.2/cloud/access-acct/fastly.html
    - /guides/v2.3/cloud/access-acct/fastly.html
 functional_areas:
@@ -142,7 +140,7 @@ You cannot use the Fastly service in Integration environments.
 3.	Enter the following command to fully update and clear the cache:
 
 		php bin/magento setup:upgrade && php bin/magento cache:clean
-4. Edit your composer.json and ensure the Fastly module is included with version.
+1. Edit your composer.json and ensure the Fastly module is included with version.
 
 	* In the "require" section, you should have `"fastly/magento2": <version number>`
 	* In the "repositories" section, you should have:

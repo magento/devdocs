@@ -6,10 +6,6 @@ redirect_from:
   - guides/v2.2/install-gde/prereq/integrator_install_composer.html
   - guides/v2.2/install-gde/prereq/integrator_install_ce.html
   - guides/v2.2/install-gde/prereq/integrator_install_ee.html
-  - guides/v2.3/install-gde/prereq/integrator_install.html
-  - guides/v2.3/install-gde/prereq/integrator_install_composer.html
-  - guides/v2.3/install-gde/prereq/integrator_install_ce.html
-  - guides/v2.3/install-gde/prereq/integrator_install_ee.html
 functional_areas:
   - Install
   - System
@@ -32,8 +28,8 @@ Before you continue, you must do the following:
 To get the Magento metapackage:
 
 1.  Log in to your Magento server as, or switch to, the [Magento file system owner]({{page.baseurl}}/install-gde/prereq/file-sys-perms-over.html).
-1.  Change to the web server docroot directory or a directory that you have configured as a virtual host docroot.
-1.  Create a new Composer project using the {{site.data.var.ce}} or {{site.data.var.ee}} metapackage.
+2.  Change to the web server docroot directory or a directory that you have configured as a virtual host docroot.
+3.  Create a new Composer project using the {{site.data.var.ce}} or {{site.data.var.ee}} metapackage.
 
     **{{site.data.var.ce}}**
     ```bash

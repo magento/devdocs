@@ -4,9 +4,6 @@ title: Customize error pages
 redirect_from:
    - /guides/v2.2/cloud/configure/fastly-vcl-extend-timeout.html
    - /guides/v2.3/cloud/configure/fastly-vcl-extend-timeout.html
-   - /guides/v2.2/cloud/access-acct/fastly.html
-   - /guides/v2.3/cloud/access-acct/fastly.html
-
 functional_areas:
   - Cloud
   - Setup
@@ -63,9 +60,9 @@ Verify that the modified source displays correctly in the browser. Then, add the
 
 1.  [Log in to the Magento Admin UI]({{ page.baseurl }}/cloud/onboarding/onboarding-tasks.html#admin).
 
-1.  Click **Stores** > **Settings** > **Configuration** > **Advanced** > **System**.
+2.  Click **Stores** > **Settings** > **Configuration** > **Advanced** > **System**.
 
-1.  In the right pane, expand **Full Page Cache** > **Fastly Configuration** > **Custom Synthetic Pages**.
+3.  In the right pane, expand **Full Page Cache** > **Fastly Configuration** > **Custom Synthetic Pages**.
 
     ![Edit 503 error page]
 
