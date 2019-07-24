@@ -513,8 +513,19 @@ The `CartItemInterface` object can contain the following attributes.
 Attribute |  Data Type | Description
 --- | --- | ---
 `id` | String | ID of the item
+`prices` | [CartItemPrices](#CartItemPrices) | The prices of this item
 `product` | [ProductInterface]({{ page.baseurl }}/graphql/reference/product-interface-implementations.html) | Contains attributes that are common to all types of products
 `quantity` | Float | The number of items in the cart
+
+#### CartItemPrices object {#CartItemPrices}
+
+The `CartItemPrices` object must contain the following attributes.
+
+Attribute |  Data Type | Description
+--- | --- | ---
+`price` | Money! | The unit price of this item
+`row_total` | Money! | The row total of this item
+`row_total_including_tax` | Money! | The row total including tax of this item
 
 #### CartItemQuantity object {#CartItemQuantity}
 
