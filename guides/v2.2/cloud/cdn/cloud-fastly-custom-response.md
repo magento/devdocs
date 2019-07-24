@@ -62,7 +62,7 @@ Verify that the modified source displays correctly in the browser. Then, add the
 
 1.  Click **Stores** > **Settings** > **Configuration** > **Advanced** > **System**.
 
-3.  In the right pane, expand **Full Page Cache** > **Fastly Configuration** > **Custom Synthetic Pages**.
+1.  In the right pane, expand **Full Page Cache** > **Fastly Configuration** > **Custom Synthetic Pages**.
 
     ![Edit 503 error page]
 
