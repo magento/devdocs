@@ -27,6 +27,8 @@ The process for configuring Fastly includes:
 * Advanced configurations including VCL snippets
 * Enable and configure the Fastly image optimization feature (Fastly IO)
 
+{: .bs-callout-info }
+Fastly caching services are not available on your {{ site.var.data.ee }} Staging and Production sites until you enable the Fastly module and complete the initial upload of the default Fastly VCL code.
 
 ## Get Fastly credentials {#cloud-fastly-creds}
 

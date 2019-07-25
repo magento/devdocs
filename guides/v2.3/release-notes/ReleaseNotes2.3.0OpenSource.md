@@ -675,15 +675,6 @@ See [Magento Security Center](https://magento.com/security/patches/magento-2.2.7
 
 
 
-
-
-### Cookies
-
-<!-- MAGETWO-93790 -->* Customer data is now fully loaded after restarting the browser during an unexpired user session. Previously,  the `section_data_ids` section of the session cookie was not properly completed. [GitHub-14912](https://github.com/magento/magento2/issues/14912)
-
-<!--- ENGCOM-1089 -->* Cookies can now be modified by extension. *Fix submitted by [Rostyslav](https://github.com/rostyslav-hymon) in pull request [14366](https://github.com/magento/magento2/pull/14366)*. 
-
-
 ### CMS content
 
 
@@ -1048,35 +1039,7 @@ See [Magento Security Center](https://magento.com/security/patches/magento-2.2.7
 
 #### Database framework
 
-<!---MAGETWO-94306 -->* The `getSize` function now reflects item and page count totals for filtered product collections on the category page. 
-
-
-
-
-
-
-
-<!--- MAGETWO-85096-->* Magento now displays video and images as expected when you select a video or click to view a full-screen image for a configurable product. *Fix submitted by [Chumak Roman](https://github.com/roma84) in pull request [12556](https://github.com/magento/magento2/pull/12556)*. [GitHub-12268](https://github.com/magento/magento2/issues/12268)
-
-<!---MAGETWO-81426 -->* We've removed duplicate parameters from a Magento UI LESS library mixin. *Fix submitted by [Bartek Igielski](https://github.com/Igloczek) in pull request  [11276](https://github.com/magento/magento2/pull/11276)*.
-
-<!---ENGCOM-1456 -->* You can now disable the full-screen gallery on mobile devices. [GitHub-12490](https://github.com/magento/magento2/issues/12490), [GitHub-12285](https://github.com/magento/magento2/issues/12285)
-
-
-<!---ENGCOM-2105 -->*  The calendar widget (`jQuery UI DatePicker`) now correctly displays more than one month. [GitHub-7379](https://github.com/magento/magento2/issues/7379)
-
-
-<!---ENGCOM-2895 -->*  JavaScript files are now located inside the `web/js` directory. 
-
-<!---ENGCOM-1793 -->*  Menus with nested elements now align correctly. [GitHub-7897](https://github.com/magento/magento2/issues/7897)
-
-<!---MAGETWO-71647 -->* Magento no longer incorrectly overly encodes UTF-8 files when JavaScript Bundling is enabled. Previously, this issue resulted in poor character encoding on the storefront. [GitHub-10562](https://github.com/magento/magento2/issues/10562), [GitHub-6733](https://github.com/magento/magento2/issues/6733)
-
-<!--- ENGCOM-774 -->* `jquery.mobile.custom.js` is now compatible with jQuery 3.x. *Fix submitted by [Kirill Morozov](https://github.com/kirmorozov) in pull request  [13688](https://github.com/magento/magento2/pull/13688)*.
-
-<!---ENGCOM-1006 -->* The Fotorama gallery now works as expected on Android devices. *Fix submitted by [Danilo Argentiero](https://github.com/DaniloEmpire) in pull request  [14123](https://github.com/magento/magento2/pull/14123)*. [GitHub-7906](https://github.com/magento/magento2/issues/7906)
-
-
+<!---MAGETWO-94306 -->* The `getSize` function now reflects item and page count totals for filtered product collections on the category page.
 
 #### JavaScript framework
 
