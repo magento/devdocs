@@ -216,7 +216,6 @@ The command merges the listed related pull requests (`xxx`, `yyy`, `zzz`) into t
 - [Community Maintainers](https://github.com/orgs/magento/teams/open-source-maintainers/members)
 - [Magento EngCom Team](https://github.com/orgs/magento/teams/core-maintainers/members)
 
-
 ## Porting code contributions across Magento versions {#porting}
 
 In order to keep consistency between Magento release lines (2.2, 2.3, etc), there are two techniques of code delivery: back-port and/or up-port. Every Magento Contributor, who wants to deliver their solution across all Magento versions, faces the same problem. How do you port fixes easily?
