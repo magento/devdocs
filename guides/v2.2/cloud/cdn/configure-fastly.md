@@ -39,7 +39,7 @@ You need the Fastly credentials to configure Fastly CDN services from the Magent
 
 Use the following methods to find and save the Fastly service ID and API token for your environment:
 
-- IaaS mounted shared directory—On Pro projects, use SSH to connect to your server and get the Fastly credentials from the `/mnt/shared/fastly_tokens.txt` file.
+- IaaS-mounted shared directory—On Pro projects, use SSH to connect to your server and get the Fastly credentials from the `/mnt/shared/fastly_tokens.txt` file.
 
 - Local workspace—From the command line, use the Magento Cloud CLI to [list and review]({{ page.baseurl }}/cloud/before/before-setup-env-2_clone.html#variablelist) Fastly environment variables.
 
@@ -47,7 +47,7 @@ Use the following methods to find and save the Fastly service ID and API token f
     magento-cloud variable:get -e <environment ID>
     ```
 
-- Project Web UI—Check the following environment variables in the *[Environment configuration]({{ page.baseurl }}/cloud/project/projects.html#environment-configuration-variables)* section.
+- Project Web UI—Check the following environment variables in the *[Environment configuration variables]({{ page.baseurl }}/cloud/project/projects.html#environment-configuration-variables)* section.
 
   - `CONFIG__DEFAULT__SYSTEM__FULL_PAGE_CACHE__FASTLY__FASTLY_API_KEY`
 
@@ -64,7 +64,7 @@ If you cannot find the Fastly credentials for the Staging or Production environm
 
 - [Fastly credentials](#cloud-fastly-creds) for {{ site.data.var.ece }} Staging and Production environments
 
-#### To enable Fastly CDN caching in Staging and Production
+#### To enable Fastly CDN caching in Staging and Production:
 
 {% include cloud/admin-ui-login-step.md %}
 
@@ -72,7 +72,7 @@ If you cannot find the Fastly credentials for the Staging or Production environm
 
    ![Expand to select Fastly]({{ site.baseurl }}/common/images/cloud_fastly_menu.png){:width="650px"}
 
-1. In the **Caching Application** section, remove the selection from **Use system value**, and then select **Fastly CDN** from the drop-down list.
+1. In the _Caching Application_ section, remove the selection from **Use system value**, and then select **Fastly CDN** from the drop-down list.
 
    ![Choose Fastly]({{ site.baseurl }}/common/images/cloud-fastly_enable-admin.png){:width="550px"}
 
@@ -114,7 +114,7 @@ Fastly caching services do not work until you complete the initial upload of the
 
 #### To upload the Fastly VCL:
 
-1. In the **Fastly Configuration** section, click **Upload VCL to Fastly** as
+1. In the _Fastly Configuration_ section, click **Upload VCL to Fastly** as
    the following figure shows.
 
     ![Upload a Magento VCL to Fastly]({{ site.baseurl }}/common/images/cloud_upload-vcl-to-fastly.png)
@@ -291,11 +291,11 @@ You need to update the DNS configuration to  your:
 - Set the zone’s root resource record to address the hostname
 - Lower the value for the Time-to-Live (TTL) to refresh DNS information to correctly point customers faster to the Production store
 
-We recommend a significantly lower TTL value when switching the DNS record. This value tells the DNS how long to cache the DNS record. When shortened, it refreshes the DNS faster. For example, changing this value from 3 days to 10 minutes. Be advised, this adds load to the web server.
+We recommend a significantly lower TTL value when switching the DNS record. This value tells the DNS how long to cache the DNS record. When shortened, it refreshes the DNS faster. For example, you can change the TTL value from 3 days to 10 minutes when you are testing your site. Be advised that shortening the TTL value  adds load to the web server.
 
 After checking with your registrar about where to change your DNS settings, add a CNAME record for your website that points to the Fastly service: `prod.magentocloud.map.fastly.net`. If you use multiple hostnames for your site, you must add a CNAME record for each one.
 
-CNAMES cannot be set for apex domains, also referred to as a naked or base domains. You must use `A` records for this.
+CNAME records cannot be set for apex domains, also referred to as a naked or base domains. You must use `A` records for this.
 `A` records map a domain name to the following Fastly IP addresses:
 
 - `151.101.1.124`
