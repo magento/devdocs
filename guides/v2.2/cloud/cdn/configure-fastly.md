@@ -285,11 +285,11 @@ for customized geolocation coding.
 
 ## DNS configuration {#dns}
 
-You need to update the DNS configuration to  your:
+You need make the following changes to the DNS configuration for your site:
 
 - Set all necessary redirects, especially if you are migrating from an existing site
 - Set the zone’s root resource record to address the hostname
-- Lower the value for the Time-to-Live (TTL) to refresh DNS information to correctly point customers faster to the Production store
+- Lower the value for the Time-to-Live (TTL) to refresh DNS information to point customers to the correct Production store more
 
 We recommend a significantly lower TTL value when switching the DNS record. This value tells the DNS how long to cache the DNS record. When shortened, it refreshes the DNS faster. For example, you can change the TTL value from 3 days to 10 minutes when you are testing your site. Be advised that shortening the TTL value  adds load to the web server.
 
