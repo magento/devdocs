@@ -79,7 +79,7 @@ For example, the following command starts the Docker configuration generator for
     ```
     
     {: .bs-callout-tip }
-    If you want to change the host used on the project, change all `magento2.docker` matches on these files: `.docker/config.php.dist` `docker-compose.yml`
+To change the `magento2.docker` hostname for your project, you must update the host in three files: `.docker/config.php`, `docker-compose.yml`, and `/etc/hosts`
 
 1.  Stop the default Apache instance on Mac OS.
 
