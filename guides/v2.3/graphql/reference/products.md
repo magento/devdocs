@@ -170,9 +170,10 @@ Attribute | Data type | Description
 `description` | ComplexTextValue | An object that contains detailed information about the product. The object can include simple HTML tags
 `gift_message_available` | String | Indicates whether a gift message is available
 `id` | Int | The ID number assigned to the product
-`image` | [ProductImage](#ProductImage) | An object that contains the URL and label for the main image on the product page
+`image` | [MediaGalleryInterface](#MediaGalleryInterface) | An object that contains the URL and label for the main image on the product page
 `is_returnable` | String | Indicates whether the product can be returned. This attribute is defined in the `RmaGraphQl` module.
 `manufacturer` | Int | A number representing the product's manufacturer
+`media_gallery` | [[MediaGalleryInterface]](#MediaGalleryInterface) | An array of media gallery objects
 `media_gallery_entries` | [MediaGalleryEntry] | An array of [MediaGalleryEntry](#MediaGalleryEntry) objects
 `meta_description` | String | A brief overview of the product for search results listings, maximum 255 characters
 `meta_keyword` | String | A comma-separated list of keywords that are visible only to search engines
@@ -186,14 +187,14 @@ Attribute | Data type | Description
 `product_links` | [ProductLinksInterface] | An array of [ProductLinks](#ProductLinks) objects
 `short_description` | ComplexTextValue | An object that contains a short description of the product. Its use depends on the store's theme. The object can include simple HTML tags
 `sku` | String | A number or code assigned to a product to identify the product, options, price, and manufacturer
-`small_image` | [ProductImage](#ProductImage) | An object that contains the URL and label for the small image used on catalog pages
+`small_image` | [MediaGalleryInterface](#MediaGalleryInterface) | An object that contains the URL and label for the small image used on catalog pages
 `special_from_date` | String | The beginning date that a product has a special price
 `special_price` | Float |  The discounted price of the product
 `special_to_date` | String | The end date that a product has a special price
 `stock_status` | ProductStockStatus | The status of the stock. `ProductStockStatus` is an enumeration that can have the value of `IN_STOCK` or `OUT_OF_STOCK`. This attribute is defined in the `InventoryGraphQl` module.
 `swatch_image` | String | The file name of a swatch image. This attribute is defined in the `SwatchesGraphQl` module.
 `tax_class_id` | Int | An ID assigned to a tax class. This attribute is defined in the `TaxGraphQl` module.
-`thumbnail` | [ProductImage](#ProductImage) | An object that contains the URL and label for the product's thumbnail image
+`thumbnail` | [MediaGalleryInterface](#MediaGalleryInterface) | An object that contains the URL and label for the product's thumbnail image
 `tier_price` | Float | The price when tier pricing is in effect and the items purchased threshold has been reached
 `tier_prices` | [ProductTierPrices] | An array of [ProductTierPrices](#ProductTier) objects
 `type_id` | String | One of `simple`, `virtual`, `bundle`, `downloadable`,`grouped`, `configurable`
@@ -256,14 +257,32 @@ Attribute | Type | Description
 `position` | Int | The position within the list of product links
 `sku` | String | The identifier of the linked product
 
+### MediaGalleryInterface {#MediaGalleryInterface}
+
+The `MediaGalleryInterface` contains basic information about a product image or video.
+
+Attribute | Type | Description
+--- | --- | ---
+`label` | String | The label for the product image
+`url` | String | The URL for the product image
+
 ### ProductImage object {#ProductImage}
 
-`ProductImage` contains information about image URL and label.
+`ProductImage` implements `MediaGalleryInterface`. It contains information about an image's URL and label.
 
 Attribute | Type | Description
 --- | --- | ---
 `url` | String | The URL for the product image
 `label` | String | The label for the product image
+
+### ProductVideo object {#ProductVideo}
+
+`ProductVideo` implements `MediaGalleryInterface` and contains information about a product video.
+
+`description` | String | A description of the video
+`metadata` | String  | Optional data about the video
+`provider` | String | Describes the video source
+`title` | String  | The title of the video
 
 ### MediaGalleryEntry object {#MediaGalleryEntry}
 
@@ -280,7 +299,6 @@ Attribute | Type | Description
 `position` | Int | The media item's position after it has been sorted
 `types` | [String] | Array of image types. It can have the following values: `image`, `small_image`, `thumbnail`
 `video_content` | ProductMediaGalleryEntriesVideoContent | Contains a [ProductMediaGalleryEntriesVideoContent](#ProductMediaGalleryEntriesVideoContent) object
-
 
 #### ProductMediaGalleryEntriesContent object {#ProductMediaGalleryEntriesContent}
 
