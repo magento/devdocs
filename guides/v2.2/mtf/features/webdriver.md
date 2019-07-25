@@ -34,7 +34,7 @@ cd <magento2_root_dir>/dev/tests/functional
 composer update
 ```
 
-{: .bs-callout .bs-callout-info }
+{: .bs-callout-info }
 You still need to [run the Selenium Server]({{ page.baseurl }}/mtf/mtf_quickstart/mtf_quickstart_environment.html#mtf_quickstart_env_selenium) in order to run the tests, because at this point the test run procedure is not yet changed.
 
 ## Add and setup a custom web driver
@@ -57,7 +57,7 @@ cd <magento2_root_dir>/dev/tests/functional
 composer update
 ```
 
-{: .bs-callout .bs-callout-info }
+{: .bs-callout-info }
 You still need to [run the Selenium Server]({{ page.baseurl }}/mtf/mtf_quickstart/mtf_quickstart_environment.html#mtf_quickstart_env_selenium) in order to run the tests, because at this point the test run procedure is not yet changed.
 
 <!-- LINKS DEFINITION -->

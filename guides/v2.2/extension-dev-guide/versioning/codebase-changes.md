@@ -77,7 +77,8 @@ Use this table to understand what changes Magento can make and which version num
 | | New optional method argument | MINOR|
 | | Removed a non-last argument| MAJOR|
 | | New required constructor object argument | MINOR|
-| | New optional constructor argument | MINOR|
+| | New optional constructor argument for [extendable @api][extendable-api]{:target="_blank"} | MINOR|
+| | New optional constructor argument | PATCH|
 | | New required constructor scalar argument (without pre-configured value)| MAJOR|
 | | Removed a non-last constructor argument| MAJOR|
 | | Removed a last constructor argument| PATCH|
@@ -149,3 +150,4 @@ Use this table to understand what changes Magento can make and which version num
   
   
 [private]: http://php.net/manual/en/language.oop5.visibility.php
+[extendable-api]: {{ site.baseurl }}/guides/v2.2/contributor-guide/contributing_dod.html#review

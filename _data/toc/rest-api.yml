@@ -5,13 +5,6 @@ pages:
 
     - label: Quick reference
       children:
-        - label: REST Endpoints (Swagger)
-          include_versions: ["2.0"]
-          url: http://devdocs.magento.com/swagger/index_20.html
-
-        - label: REST Endpoints (Swagger)
-          include_versions: ["2.1"]
-          url: http://devdocs.magento.com/swagger/index_21.html
 
         - label: REST Endpoints (Swagger)
           include_versions: ["2.2"]

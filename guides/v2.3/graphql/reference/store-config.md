@@ -80,6 +80,51 @@ Attribute |  Data Type | Description
 `no_route` | String | Contains the URL of the default page that you want to appear when if a 404 “Page not Found” error occurs
 `show_cms_breadcrumbs` | Int | Determines if a breadcrumb trail appears on all CMS pages in the catalog. Options: `0` (No) or `1` (Yes)
 
+### Supported Catalog attributes
+
+Use the `catalog` attributes to retrieve information about the store's catalog. These attributes are defined in the `CatalogGraphQl` module.
+
+Attribute |  Data Type | Description | Example
+--- | --- | ---
+`catalog_default_sort_by` | String | The default sort order of the search results list | `position`
+`category_url_suffix` | String | The suffix applied to category pages, such as `.htm` or `.html` | `.html`
+`grid_per_page` | Integer | The default number of products per page in Grid View | `9`
+`grid_per_page_values` | A list of numbers that define how many products can be displayed in List View  | `9,15,30`
+`list_mode` | String  | The format of the search results list | `grid-list`
+`list_per_page` | Integer | The default number of products per page in List View | `10`
+`list_per_page_values` | String | A list of numbers that define how many products can be displayed in List View | `5,10,15,20,25`
+`product_url_suffix` | String | The suffix applied to product pages, such as `.htm` or `.html` | `.html`
+`title_separator` | String | Identifies the character that separates the category name and subcategory in the browser title bar | `-`
+
+### Extend configuration data
+
+You can add your own configuration to the `Store` endpoint within your own module.
+
+To do this, configure the constructor argument `extendedConfigData` in the `argument` node in your area-specific `etc/graphql/di.xml` file.
+
+The following example adds an array-item to the `extendedConfigData` array within the construct of the `StoreConfigDataProvider`.
+
+```xml
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+	<type name="Magento\StoreGraphQl\Model\Resolver\Store\StoreConfigDataProvider">
+		<arguments xsi:type="array">
+			<argument name="extendedConfigData">
+				<item name="section_group_field" xsi:type="string">section/group/field</item>
+			</argument>
+		</arguments>
+	</type>
+</config>
+```
+
+You must also extend the type `StoreConfig` within in the `etc/schema.graphqls` file, as shown below:
+
+```text
+type StoreConfig {
+    section_group_field : String  @doc(description: "Extendend Config Data - section/group/field")
+}
+```
+
 ## Example usage
 
 ### Query a store's configuation
@@ -199,6 +244,48 @@ The following query returns information about the store's content pages.
       "cms_no_route": "no-route",
       "cms_no_cookies": "enable-cookies",
       "show_cms_breadcrumbs": 1
+    }
+  }
+}
+```
+
+### Query a store's Catalog configuration
+
+The following query returns information about the store's catalog configuration.
+
+**Request**
+
+```text
+{
+  storeConfig {
+    product_url_suffix
+    category_url_suffix
+    title_separator
+    list_mode
+    grid_per_page_values
+    list_per_page_values
+    grid_per_page
+    list_per_page
+    catalog_default_sort_by
+  }
+}
+```
+
+**Response**
+
+```json
+{
+  "data": {
+    "storeConfig": {
+      "product_url_suffix": ".html",
+      "category_url_suffix": ".html",
+      "title_separator": "-",
+      "list_mode": "grid-list",
+      "grid_per_page_values": "9,15,30",
+      "list_per_page_values": "5,10,15,20,25",
+      "grid_per_page": 9,
+      "list_per_page": 10,
+      "catalog_default_sort_by": "position"
     }
   }
 }
