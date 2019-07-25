@@ -4,8 +4,38 @@ description: |
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: /whats-new.html
 thread: /whatsnew-feed.xml
-updated: Mon Jul 8 13:39:43 2019
+updated: Mon Jul 15 16:39:29 2019
 entries:
+- description: Added the 'Elements' and 'Data Entities' sections to the [Functional
+    Testing](https://devdocs.magento.com/guides/v2.3/coding-standards/technical-guidelines.html#113-functional-testing)
+    section of Technical Guidelines.
+  versions: 2.2.x, 2.3.x
+  type: Major update
+  date: July 15, 2019
+  link: https://github.com/magento/devdocs/pull/4869
+- description: Partner Atwix added a [new topic](https://devdocs.magento.com/guides/v2.3/javascript-dev-guide/widgets/widget_toggle.html)
+    describing the `ToggleAdvanced` widget.
+  versions: 2.1.x, 2.2.x, 2.3.x
+  type: New topic
+  date: July 12, 2019
+  link: https://github.com/magento/devdocs/pull/4780
+- description: Updated the [Google Shopping ads Install documentation](https://devdocs.magento.com/extensions/google-shopping-ads/)
+    and [Release Notes](https://devdocs.magento.com/extensions/google-shopping-ads/release-notes/)
+    for version 3.0.
+  versions: 2.0 Google Shopping ads
+  type: Major update
+  date: July 10, 2019
+  link: https://github.com/magento/devdocs/pull/4849
+- description: Added information and example about how to use the [ColorPicker component](https://devdocs.magento.com/guides/v2.3/ui_comp_guide/components/ui-colorpicker.html).
+  versions: 2.3.x
+  type: New topic
+  date: July 9, 2019
+  link: https://github.com/magento/devdocs/pull/4885
+- description: Added a `Code sample` section to [Calendar Widget](https://devdocs.magento.com/guides/v2.3/javascript-dev-guide/widgets/widget_calendar.html).
+  versions: 2.2.x, 2.3.x
+  type: Major update
+  date: July 9, 2019
+  link: https://github.com/magento/devdocs/pull/4851
 - description: Added the 'Product view page available containers' section to [Product
     Layouts](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/layouts/product-layouts.html).
   versions: 2.1.x, 2.2.x, 2.3.x
@@ -36,13 +66,12 @@ entries:
   type: Major update
   date: June 28, 2019
   link: https://github.com/magento/devdocs/pull/4850
-- description: Added a [new way to upgrade the Magento CLI ](https://devdocs.magento.com/guides/v2.3/comp-mgr/cli/upgrade-with-plugin.html)(yet
-    experimental) using the Magento composer root plugin to resolve conflicts in dependencies
-    during the upgrade.
+- description: Added a [new command-line upgrade method](https://devdocs.magento.com/guides/v2.3/comp-mgr/cli/upgrade-with-plugin.html)
+    (yet experimental) using the Magento composer root plugin to resolve conflicts
+    in dependencies during the upgrade.
   versions: 2.3.x
   type: New topic
   date: June 28, 2019
-  link: https://github.com/magento/devdocs/pull/4679
 - description: Updated the [Module Reference Guide](https://devdocs.magento.com/guides/v2.3/mrg/intro.html).
   versions: 2.3.2
   type: Major update

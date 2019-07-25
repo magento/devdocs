@@ -18,7 +18,7 @@ The Magento application is made up of *Modules*, *Themes*, and *Language Package
 
 * [**Language packages**]({{ page.baseurl }}/frontend-dev-guide/translations/xlate.html) assist in internationalization(i18n) and localization by providing translations for strings that display on the storefront and Admin.
 
-{: .bs-callout .bs-callout-info }
+{: .bs-callout-info }
 You must follow a [PSR-4 compliant](http://www.php-fig.org/psr/psr-4/) structure when building a module.
 
 #### Related topics

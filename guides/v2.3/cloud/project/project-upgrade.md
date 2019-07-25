@@ -28,7 +28,7 @@ If you use PHP version 7.2, you must remove the `mcrypt` extension from the [`ex
     composer require "magento/magento-cloud-metapackage":">=2.3.1 <2.3.2" --no-update
     ```
     
-    {: .bs-callout .bs-callout-info}
+    {: .bs-callout-info }
     You must use the version constraint syntax to successfully update the `{{site.data.var.ct}}` package.
 
 1.  Update the project.
