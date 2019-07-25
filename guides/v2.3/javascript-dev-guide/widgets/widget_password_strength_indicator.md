@@ -1,0 +1,1 @@
+../../../../guides/v2.2/javascript-dev-guide/widgets/widget_password_strength_indicator.md
