@@ -1,1 +1,2 @@
 style '_checks/md_style'
+ignore_front_matter true
