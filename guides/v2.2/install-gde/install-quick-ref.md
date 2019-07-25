@@ -44,9 +44,8 @@ If not, see the [Installation overview]({{ page.baseurl }}/install-gde/bk-instal
 2. If your system lacks any requirements, see the prerequisites documentation:
 
    * [Apache]({{ page.baseurl }}/install-gde/prereq/apache.html)
-   * [PHP (Ubuntu)]({{ page.baseurl }}/install-gde/prereq/php-ubuntu.html)
-   * [PHP (CentOS)]({{ page.baseurl }}/install-gde/prereq/php-centos.html)
-   * MySQL]({{ page.baseurl }}/install-gde/prereq/mysql.html)
+   * [PHP]({{ page.baseurl }}/install-gde/prereq/php-settings.html)
+   * [MySQL]({{ page.baseurl }}/install-gde/prereq/mysql.html)
 
 3. ust as importantly, set up the [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html) on the server.
 4. Switch to the [Magento file system owner](https://glossary.magento.com/magento-file-system-owner).

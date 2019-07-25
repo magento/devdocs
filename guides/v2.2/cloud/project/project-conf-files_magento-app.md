@@ -39,33 +39,33 @@ The `build` property determines what happens by default when building the projec
 
 ```yaml
 build:
-    flavor: composer
+  flavor: composer
 ```
 
 ### `access`
 
 The _access_ property indicates a minimum user role level that is allowed SSH access to the environments. The available user roles are:
 
--  `admin`—Can change settings and execute actions in the environment. Also has _contributor_ and _viewer_ rights.
--  `contributor`—Can push code to this environment and branch from the environment. Also has _viewer_ rights.
--  `viewer`—Can view the environment only.
+- `admin`—Can change settings and execute actions in the environment. Also has _contributor_ and _viewer_ rights.
+- `contributor`—Can push code to this environment and branch from the environment. Also has _viewer_ rights.
+- `viewer`—Can view the environment only.
 
 The default user role is `contributor`, which restricts the SSH access from users with only _viewer_ rights. You can change the user role to `viewer` to allow SSH access for users with only _viewer_ rights:
 
 ```yaml
 access:
-    ssh: viewer
+  ssh: viewer
 ```
 
 ### `relationships`
 
 Defines the service mapping in your application.
 
-The left-hand side is the name of the relationship as it will be exposed to the application in the `MAGENTO_CLOUD_RELATIONSHIPS` environment variable. The right-hand side is in the form `<service-name>:<endpoint-name>`, where `<service-name>` comes from `.magento/services.yaml` and  `<endpoint-name>` should be the same as the value of `type`  declared in that same file.
+The left-hand side is the name of the relationship as it will be exposed to the application in the `MAGENTO_CLOUD_RELATIONSHIPS` environment variable. The right-hand side is in the form `<service-name>:<endpoint-name>`, where `<service-name>` comes from `.magento/services.yaml` and `<endpoint-name>` should be the same as the value of `type`  declared in that same file.
 
 Example of valid options are:
 
-```
+```yaml
 database: "mysql:mysql"
 database2: "mysql2:mysql"
 cache: "arediscache:redis"
@@ -93,45 +93,45 @@ Contrary to standard `.htaccess` approaches that accept a _blacklist_ and allow 
 
 Our default configuration allows the following:
 
--  From the root (`/`) path, only web and media can be accessed
--  From the `~/pub/static` and `~/pub/media` paths, any file can be accessed
+- From the root (`/`) path, only web and media can be accessed
+- From the `~/pub/static` and `~/pub/media` paths, any file can be accessed
 
 The following example shows the default configuration for a set of web-accessible locations associated with an entry in the  [`mounts` property](#mounts):
 
 ```yaml
  # The configuration of app when it is exposed to the web.
 web:
-    locations:
-        "/":
-            # The public directory of the app, relative to its root.
-            root: "pub"
-            # The front-controller script to send non-static requests to.
-            passthru: "/index.php"
-            index:
-                - index.php
-            expires: -1
-            scripts: true
-            allow: false
-            rules:
-                \.(css|js|map|hbs|gif|jpe?g|png|tiff|wbmp|ico|jng|bmp|svgz|midi?|mp?ga|mp2|mp3|m4a|ra|weba|3gpp?|mp4|mpe?g|mpe|ogv|mov|webm|flv|mng|asx|asf|wmv|avi|ogx|swf|jar|ttf|eot|woff|otf|html?)$:
-                    allow: true
-                ^/sitemap(.*)\.xml$:
-                    passthru: "/media/sitemap$1.xml"
-        "/media":
-            root: "pub/media"
-            allow: true
-            scripts: false
-            expires: 1y
-            passthru: "/get.php"
-        "/static":
-            root: "pub/static"
-            allow: true
-            scripts: false
-            expires: 1y
-            passthru: "/front-static.php"
-            rules:
-                ^/static/version\d+/(?<resource>.*)$:
-                    passthru: "/static/$resource"
+  locations:
+  "/":
+  # The public directory of the app, relative to its root.
+  root: "pub"
+  # The front-controller script to send non-static requests to.
+  passthru: "/index.php"
+  index:
+  - index.php
+  expires: -1
+  scripts: true
+  allow: false
+  rules:
+  \.(css|js|map|hbs|gif|jpe?g|png|tiff|wbmp|ico|jng|bmp|svgz|midi?|mp?ga|mp2|mp3|m4a|ra|weba|3gpp?|mp4|mpe?g|mpe|ogv|mov|webm|flv|mng|asx|asf|wmv|avi|ogx|swf|jar|ttf|eot|woff|otf|html?)$:
+  allow: true
+  ^/sitemap(.*)\.xml$:
+  passthru: "/media/sitemap$1.xml"
+  "/media":
+  root: "pub/media"
+  allow: true
+  scripts: false
+  expires: 1y
+  passthru: "/get.php"
+  "/static":
+  root: "pub/static"
+  allow: true
+  scripts: false
+  expires: 1y
+  passthru: "/front-static.php"
+  rules:
+  ^/static/version\d+/(?<resource>.*)$:
+  passthru: "/static/$resource"
 
 ```
 
@@ -153,20 +153,20 @@ An object whose keys are paths relative to the root of the application. The moun
 ```yaml
  # The mounts that will be performed when the package is deployed.
 mounts:
-    "var": "shared:files/var"
-    "app/etc": "shared:files/etc"
-    "pub/media": "shared:files/media"
-    "pub/static": "shared:files/static"
+  "var": "shared:files/var"
+  "app/etc": "shared:files/etc"
+  "pub/media": "shared:files/media"
+  "pub/static": "shared:files/static"
 ```
 
 The format for adding your mount to this list is as follows:
 
-```
+```yaml
 "/public/sites/default/files": "shared:files/files"
 ```
 
--  `shared`—Shares a volume between your applications inside an environment.
--  `disk`—Defines the size available for the shared volume.
+- `shared`—Shares a volume between your applications inside an environment.
+- `disk`—Defines the size available for the shared volume.
 
 {:.bs-callout .bs-callout-warning}
 The subpath portion of the mount is the unique identifier of the files area. If changed, files at the old location will be permanently lost. Do not change this value once your site has data unless you really want to lose all existing data.
@@ -180,15 +180,15 @@ Enables you to specify dependencies that your application might need during the 
 {{site.data.var.ee}} supports dependencies on the following
 languages:
 
--  PHP
--  Ruby
--  NodeJS
+- PHP
+- Ruby
+- NodeJS
 
 Those dependencies are independent of the eventual dependencies of your application, and are available in the `PATH`, during the build process and in the runtime environment of your application.
 
 You can specify those dependencies as follows:
 
-```
+```yaml
 ruby:
    sass: "~3.4"
 nodejs:
@@ -199,42 +199,42 @@ nodejs:
 
 Use the `hooks` section to run shell commands during the build, deploy, and post-deploy phases:
 
--   **`build`**—Execute commands _before_ packaging your application. Services, such as the database or Redis, are not available at this time since the application has not been deployed yet. You must add custom commands _before_ the default `php ./vendor/bin/ece-tools` command so that custom-generated content continues to the deployment phase.
+- **`build`**—Execute commands _before_ packaging your application. Services, such as the database or Redis, are not available at this time since the application has not been deployed yet. You must add custom commands _before_ the default `php ./vendor/bin/ece-tools` command so that custom-generated content continues to the deployment phase.
 
--   **`deploy`**—Execute commands _after_ packaging and deploying your application. You can access other services at this point. Since the default `php ./vendor/bin/ece-tools` command copies the `app/etc` directory to the correct location, you must add custom commands _after_ the deploy command to prevent custom commands from failing.
+- **`deploy`**—Execute commands _after_ packaging and deploying your application. You can access other services at this point. Since the default `php ./vendor/bin/ece-tools` command copies the `app/etc` directory to the correct location, you must add custom commands _after_ the deploy command to prevent custom commands from failing.
 
--   **`post_deploy`**—Execute commands _after_ deploying your application and _after_ the container begins accepting connections. The `post_deploy` hook clears the cache and preloads (warms) the cache. You can customize the list of pages using the `WARM_UP_PAGES` variable in the [Post-deploy stage]({{ page.baseurl }}/cloud/env/variables-post-deploy.html). It is available only for Pro projects that contain [Staging and Production environments in the Project Web UI]({{ page.baseurl }}/cloud/trouble/pro-env-management.html) and for Starter projects. Although not required, this works in tandem with the `SCD_ON_DEMAND` environment variable.
+- **`post_deploy`**—Execute commands _after_ deploying your application and _after_ the container begins accepting connections. The `post_deploy` hook clears the cache and preloads (warms) the cache. You can customize the list of pages using the `WARM_UP_PAGES` variable in the [Post-deploy stage]({{ page.baseurl }}/cloud/env/variables-post-deploy.html). It is available only for Pro projects that contain [Staging and Production environments in the Project Web UI]({{ page.baseurl }}/cloud/trouble/pro-env-management.html) and for Starter projects. Although not required, this works in tandem with the `SCD_ON_DEMAND` environment variable.
 
 Add CLI commands under the `build`, `deploy`, or `post_deploy` sections _before_ the `ece-tools` command:
 
 ```yaml
 hooks:
-    # We run build hooks before your application has been packaged.
-    build: |
-        php ./vendor/bin/ece-tools build
-    # We run deploy hook after your application has been deployed and started.
-    deploy: |
-        php ./vendor/bin/ece-tools deploy
-    # We run post deploy hook to clean and warm the cache. Available with ECE-Tools 2002.0.10.
-    post_deploy: |
-        php ./vendor/bin/ece-tools post-deploy
+  # We run build hooks before your application has been packaged.
+  build: |
+  php ./vendor/bin/ece-tools build
+  # We run deploy hook after your application has been deployed and started.
+  deploy: |
+  php ./vendor/bin/ece-tools deploy
+  # We run post deploy hook to clean and warm the cache. Available with ECE-Tools 2002.0.10.
+  post_deploy: |
+  php ./vendor/bin/ece-tools post-deploy
 ```
 
 Also, you can customize the build phase further by using the `generate` and `transfer` commands to perform additional actions when specifically building code or moving files.
 
 ```yaml
 hooks:
-    # We run build hooks before your application has been packaged.
-    build: |
-        set -e
-        php ./vendor/bin/ece-tools build:generate
-        # php /path/to/your/script
-        php ./vendor/bin/ece-tools build:transfer
+  # We run build hooks before your application has been packaged.
+  build: |
+  set -e
+  php ./vendor/bin/ece-tools build:generate
+  # php /path/to/your/script
+  php ./vendor/bin/ece-tools build:transfer
 ```
 
--  `set -e`—causes hooks to fail on the first failed command, instead of the final failed command.
--  `build:generate`—applies patches, validates configuration, generates DI, and generates static content if SCD is enabled for build phase.
--  `build:transfer`—transfers generated code and static content to the final destination.
+- `set -e`—causes hooks to fail on the first failed command, instead of the final failed command.
+- `build:generate`—applies patches, validates configuration, generates DI, and generates static content if SCD is enabled for build phase.
+- `build:transfer`—transfers generated code and static content to the final destination.
 
 The commands run from the application (`/app`) directory. You can use the `cd` command to change the directory. The hooks fail if the final command in them fails. To cause them to fail on the first failed command, add `set -e` to the beginning of the hook.
 
@@ -242,18 +242,18 @@ The commands run from the application (`/app`) directory. You can use the `cd` c
 
 ```yaml
 dependencies:
-    ruby:
-        sass: "3.4.7"
-    nodejs:
-        grunt-cli: "~0.1.13"
+  ruby:
+  sass: "3.4.7"
+  nodejs:
+  grunt-cli: "~0.1.13"
 
 hooks:
-    build: |
-        cd public/profiles/project_name/themes/custom/theme_name
-        npm install
-        grunt
-        cd
-        php ./vendor/bin/ece-tools
+  build: |
+  cd public/profiles/project_name/themes/custom/theme_name
+  npm install
+  grunt
+  cd
+  php ./vendor/bin/ece-tools
 ```
 
 You must compile Sass files using `grunt` before static content deployment, which happens during the build. Place the `grunt` command before the `build` command.
@@ -264,23 +264,23 @@ Describes processes that are triggered on a schedule. We recommend you run `cron
 
 `crons` support the following:
 
--  `spec`—The cron specification. For Starter environments and Pro Integration environments, the minimum interval is once per five minutes and once per one minute in Pro Staging and Production environments. You need to complete [additional configurations]({{ page.baseurl }}/cloud/configure/setup-cron-jobs.html#add-cron) for crons in those environments.
--  `cmd`—The command to execute.
+- `spec`—The cron specification. For Starter environments and Pro Integration environments, the minimum interval is once per five minutes and once per one minute in Pro Staging and Production environments. You need to complete [additional configurations]({{ page.baseurl }}/cloud/configure/setup-cron-jobs.html#add-cron) for crons in those environments.
+- `cmd`—The command to execute.
 
 A cron job is well suited for the following tasks:
 
--  They need to happen on a fixed schedule, not continually.
--  The task itself is not especially long, as a running cron job will block a new deployment.
--  Or it is long, but can be easily divided into many small queued tasks.
--  A delay between when a task is registered and when it actually happens is acceptable.
+- They need to happen on a fixed schedule, not continually.
+- The task itself is not especially long, as a running cron job will block a new deployment.
+- Or it is long, but can be easily divided into many small queued tasks.
+- A delay between when a task is registered and when it actually happens is acceptable.
 
 By default, every Cloud project has the following default crons configuration to run the default Magento cron jobs:
 
 ```yaml
 crons:
-    cronrun:
-        spec: "* * * * *"
-        cmd: "php bin/magento cron:run"
+  cronrun:
+  spec: "* * * * *"
+  cmd: "php bin/magento cron:run"
 ```
 
 For {{site.data.var.ece}} 2.1.X, you can use only [workers](#workers) and [cron jobs](#crons). For {{site.data.var.ece}} 2.2.X, cron jobs launch consumers to process batches of messages, and do not require additional configuration.
@@ -293,17 +293,17 @@ The following environment variables are included in `.magento.app.yaml`. These a
 
 ```yaml
 variables:
-    env:
-        CONFIG__DEFAULT__PAYPAL_ONBOARDING__MIDDLEMAN_DOMAIN: 'payment-broker.magento.com'
-        CONFIG__STORES__DEFAULT__PAYMENT__BRAINTREE__CHANNEL: 'Magento_Enterprise_Cloud_BT'
-        CONFIG__STORES__DEFAULT__PAYPAL__NOTATION_CODE: 'Magento_Enterprise_Cloud'
+  env:
+  CONFIG__DEFAULT__PAYPAL_ONBOARDING__MIDDLEMAN_DOMAIN: 'payment-broker.magento.com'
+  CONFIG__STORES__DEFAULT__PAYMENT__BRAINTREE__CHANNEL: 'Magento_Enterprise_Cloud_BT'
+  CONFIG__STORES__DEFAULT__PAYPAL__NOTATION_CODE: 'Magento_Enterprise_Cloud'
 ```
 
 ## Configure PHP options
 
 You can choose which version of PHP to run in your `.magento.app.yaml` file:
 
-```
+```yaml
 name: mymagento
 type: php:7.1
 ```
@@ -315,19 +315,19 @@ type: php:7.1
 
 You can enable additional PHP extensions in the `runtime:extension` section. Also, the extensions specified become available in the Docker PHP containers.
 
-> .magento.app.yaml
+`.magento.app.yaml`
 
 ```yaml
 runtime:
-    extensions:
-        - sockets
-        - sodium
-        - ssh2
-    disabled_extensions:
-        - bcmath
-        - bz2
-        - calendar
-        - exif
+  extensions:
+  - sockets
+  - sodium
+  - ssh2
+  disabled_extensions:
+  - bcmath
+  - bz2
+  - calendar
+  - exif
 ```
 
 #### To view the current list of PHP extensions:
@@ -342,93 +342,93 @@ For details about a specific PHP extension, see the [PHP Extension List](https:/
 
 {{site.data.var.ece}} supports the following extensions:
 
--  Default extensions:
-    -  `bcmath`
-    -  `bz2`
-    -  `calendar`
-    -  `exif`
-    -  `gd`
-    -  `gettext`
-    -  `intl`
-    -  `mysqli`
-    -  `pcntl`
-    -  `pdo_mysql`
-    -  `soap`
-    -  `sockets`
-    -  `sysvmsg`
-    -  `sysvsem`
-    -  `sysvshm`
-    -  `opcache`
-    -  `zip`
+- Default extensions:
+  - `bcmath`
+  - `bz2`
+  - `calendar`
+  - `exif`
+  - `gd`
+  - `gettext`
+  - `intl`
+  - `mysqli`
+  - `pcntl`
+  - `pdo_mysql`
+  - `soap`
+  - `sockets`
+  - `sysvmsg`
+  - `sysvsem`
+  - `sysvshm`
+  - `opcache`
+  - `zip`
 
--  Extensions that are installed and cannot be uninstalled:
-    -  `ctype`
-    -  `curl`
-    -  `date`
-    -  `dom`
-    -  `fileinfo`
-    -  `filter`
-    -  `ftp`
-    -  `hash`
-    -  `iconv`
-    -  `json`
-    -  `mbstring`
-    -  `mysqlnd`
-    -  `openssl`
-    -  `pcre`
-    -  `pdo`
-    -  `pdo_sqlite`
-    -  `phar`
-    -  `posix`
-    -  `readline`
-    -  `session`
-    -  `sqlite3`
-    -  `tokenizer`
-    -  `xml`
-    -  `xmlreader`
-    -  `xmlwriter`
+- Extensions that are installed and cannot be uninstalled:
+  - `ctype`
+  - `curl`
+  - `date`
+  - `dom`
+  - `fileinfo`
+  - `filter`
+  - `ftp`
+  - `hash`
+  - `iconv`
+  - `json`
+  - `mbstring`
+  - `mysqlnd`
+  - `openssl`
+  - `pcre`
+  - `pdo`
+  - `pdo_sqlite`
+  - `phar`
+  - `posix`
+  - `readline`
+  - `session`
+  - `sqlite3`
+  - `tokenizer`
+  - `xml`
+  - `xmlreader`
+  - `xmlwriter`
 
--  Extensions that can be installed and uninstalled as needed:
-    -  `bcmath`
-    -  `bz2`
-    -  `calendar`
-    -  `exif`
-    -  `gd`
-    -  `geoip`
-    -  `gettext`
-    -  `gmp`
-    -  `igbinary`
-    -  `imagick`
-    -  `imap`
-    -  `intl`
-    -  `ldap`
-    -  `mailparse`
-    -  `mcrypt`
-    -  `msgpack`
-    -  `mysqli`
-    -  `oauth`
-    -  `opcache`
-    -  `pdo_mysql`
-    -  `propro`
-    -  `pspell`
-    -  `raphf`
-    -  `recode`
-    -  `redis`
-    -  `shmop`
-    -  `soap`
-    -  `sockets`
-    -  `sodium`
-    -  `ssh2`
-    -  `sysvmsg`
-    -  `sysvsem`
-    -  `sysvshm`
-    -  `tidy`
-    -  `xdebug`
-    -  `xmlrpc`
-    -  `xsl`
-    -  `yaml`
-    -  `zip`
-    -  `pcntl`
+- Extensions that can be installed and uninstalled as needed:
+  - `bcmath`
+  - `bz2`
+  - `calendar`
+  - `exif`
+  - `gd`
+  - `geoip`
+  - `gettext`
+  - `gmp`
+  - `igbinary`
+  - `imagick`
+  - `imap`
+  - `intl`
+  - `ldap`
+  - `mailparse`
+  - `mcrypt`
+  - `msgpack`
+  - `mysqli`
+  - `oauth`
+  - `opcache`
+  - `pdo_mysql`
+  - `propro`
+  - `pspell`
+  - `raphf`
+  - `recode`
+  - `redis`
+  - `shmop`
+  - `soap`
+  - `sockets`
+  - `sodium`
+  - `ssh2`
+  - `sysvmsg`
+  - `sysvsem`
+  - `sysvshm`
+  - `tidy`
+  - `xdebug`
+  - `xmlrpc`
+  - `xsl`
+  - `yaml`
+  - `zip`
+  - `pcntl`
 
 {: .bs-callout-warning}
 PHP compiled with debug is not supported and the Probe may conflict with XDebug or XHProf. Disable those extensions when enabling the Probe. The Probe conflicts with some PHP extensions like Pinba or IonCube.
@@ -481,11 +481,11 @@ A basic, common worker configuration could look like this:
 
 ```
 workers:
-    queue:
-        size: S
-        commands:
-            start: |
-                php worker.php
+  queue:
+  size: S
+  commands:
+  start: |
+  php worker.php
 ```
 
 This example defines a single worker named queue, with a "small" container, and runs the command `php worker.php` on startup. If `worker.php` exits, it is automatically restarted.

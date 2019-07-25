@@ -12,7 +12,7 @@ functional_areas:
 
 ## Apache versions supported {#apache-support}
 
-Magento requires Apache 2.2.x or 2.4.x.
+Magento supports Apache 2.4.x.
 
 ## Help if you are just starting out {#apache-help-beginner}
 
@@ -96,7 +96,7 @@ To install the default version of Apache (Ubuntu 14, 16&mdash;Apache 2.4, Ubuntu
 #### Next steps
 
 * [Solving 403 (Forbidden) errors](#apache-error)
-* Continue with the next prerequisite ([PHP]({{page.baseurl }}/install-gde/prereq/php-settings.html))
+* Continue with the next prerequisite ([PHP][]
 * [Determine your installation or upgrade path]({{ page.baseurl }}/install-gde/bk-install-guide.html)
 {% endcollapsible %}
 
@@ -138,7 +138,7 @@ If the 'apt-get install' command fails because of unmet dependencies, consult a 
 #### Next steps
 
 * [Solving 403 (Forbidden) errors](#apache-error)
-* Continue with the next prerequisite ([PHP]({{page.baseurl }}/install-gde/prereq/php-settings.html))
+* Continue with the next prerequisite [PHP]
 * [Determine your installation or upgrade path]({{ page.baseurl }}/install-gde/bk-install-guide.html)
 {% endcollapsible %}
 
@@ -151,7 +151,7 @@ Installing and configuring Apache is basically a three-step process: install the
 
 ### Installing Apache {#apache-install-centos}
 
-1. Install Apache 2 if you haven't already done so.
+1. Install Apache 2.4 if you haven't already done so.
 
     yum -y install httpd
 
@@ -161,8 +161,8 @@ Installing and configuring Apache is basically a three-step process: install the
 
   Messages similar to the following display to confirm the installation was successful:
 
-    Server version: Apache/2.2.15 (Unix)
-    Server built: Oct 16 2014 14:48:21
+    Server version: Apache/2.4.0 (Unix)
+    Server built: Oct 16 2017 14:48:21
 
 1. Continue with the next section.
 
@@ -176,7 +176,7 @@ Even though Apache 2.4 is provided by default with CentOS 7, you configure it li
 #### Next steps
 
 * [Solving 403 (Forbidden) errors](#apache-error)
-* Continue with the next prerequisite ([PHP]({{page.baseurl }}/install-gde/prereq/php-settings.html#))
+* Continue with the next prerequisite [PHP][]
 * [Determine your installation or upgrade path]({{ page.baseurl }}/install-gde/bk-install-guide.html)
 {% endcollapsible %}
 
@@ -223,8 +223,8 @@ The preceding values for `Order` might not work in all cases. For more informati
 
 #### Related topics
 
-* [PHP]({{page.baseurl }}/install-gde/prereq/php-settings.html)
-* [MySQL]({{page.baseurl }}/install-gde/prereq/mysql.html)
+* [PHP]({{page.baseurl}}/install-gde/prereq/php-settings.html)
+* [MySQL]({{page.baseurl}}/install-gde/prereq/mysql.html)
 * [Configuring security options]({{page.baseurl }}/install-gde/prereq/security.html)
 * [Installing optional software]({{page.baseurl }}/install-gde/prereq/optional.html)
 * [Determine your installation or upgrade path]({{ page.baseurl }}/install-gde/bk-install-guide.html)

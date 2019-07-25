@@ -50,7 +50,8 @@ Although {{ site.data.var.ee }} supports the Apache web server, {{ site.data.var
 
 ## PHP (local) {#php}
 
-Install [PHP](https://glossary.magento.com/php) on your local. We recommend PHP 7.0. For information on installing PHP, see these instructions for [CentOS]({{ page.baseurl }}/install-gde/prereq/php-centos.html) and [Ubuntu]({{ page.baseurl }}/install-gde/prereq/php-ubuntu.html). For instructions for another OS, see the [PHP documentation](http://php.net/manual/en/install.php).
+Install [PHP](https://glossary.magento.com/php) on your local. We recommend PHP 7.2.
+For information on installing PHP, see these instructions for [PHP]({{ page.baseurl }}/install-gde/prereq/php-settings.html). For instructions for another OS, see the [PHP documentation](http://php.net/manual/en/install.php).
 
 The following packages may also be helpful for your PHP installation:
 

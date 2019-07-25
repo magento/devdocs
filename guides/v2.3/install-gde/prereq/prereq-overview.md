@@ -56,11 +56,11 @@ CentOS: `httpd -v`
 
 Ubuntu: `apache2 -v`
 
-You must run Apache version 2.2 or 2.4 as the following result indicates:
+Magento supports Apache version 2.4 as the following result indicates:
 
 ```terminal
-Server version: Apache/2.2.15 (Unix)
-Server built:   Jul 23 2014 14:17:29
+Server version: Apache/2.4.0 (Unix)
+Server built:   Jul 23 2017 14:17:29
 ```
 
 To install or upgrade Apache, see [Apache]({{page.baseurl}}/install-gde/prereq/apache.html).
@@ -86,7 +86,7 @@ Copyright (c) 1997-2017 The PHP Group
 Zend Engine v3.1.0, Copyright (c) 1998-2018 Zend Technologies with Zend OPcache v7.1.6, Copyright (c) 1999-2018, by Zend Technologies
 ```
 
-See [PHP](/guides/v2.3/install-gde/prereq/php-settings.html) for info on installing PHP.
+See [PHP](/guides/v2.3/install-gde/prereq/php-settings.html) for info on PHP requirements.
 
 ### MySQL
 

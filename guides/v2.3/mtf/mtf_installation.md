@@ -23,7 +23,7 @@ To install the Magento application, see <a href="{{page.baseurl }}/install-gde/b
 
 #### PHP {#mtf_install_pre_tools_php}
 
-For more details about PHP verification, installation and configuration (<a href="{{page.baseurl }}/install-gde/prereq/php-settings.html#php-for-ubuntu">PHP</a>).
+For more details about PHP verification, installation and configuration (<a href="{{page.baseurl }}/install-gde/prereq/php-settings.html">PHP</a>).
 
 {: .bs-callout .bs-callout-warning }
 In `php.ini` file, make sure `extension=php_openssl.dll` is not commented out. Note: The Windows environment is not officially supported.

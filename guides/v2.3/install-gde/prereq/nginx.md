@@ -214,7 +214,7 @@ After completing the following sections and [installing Magento]({{page.baseurl 
 
 ### Install and configure php-fpm
 
-Magento requires several [PHP extensions](php-settings.html) to function properly. In addition to these extensions, you must also install and configure the `php-fpm` extension if you're using nginx.
+Magento requires several [PHP](php-settings.html) extensions to function properly. In addition to these extensions, you must also install and configure the `php-fpm` extension if you're using nginx.
 
 1. Install `php-fpm`:
 
