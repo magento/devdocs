@@ -25,8 +25,7 @@ The process for configuring Fastly includes:
 - Get Fastly credentials for Staging and Production environments
 - Enable Fastly CDN caching in your environment
 - Upload Fastly VCL snippets
-- Advanced configurations including VCL snippets
-- Enable and configure the Fastly image optimization feature (Fastly IO)
+- Advanced configurations including VCL snippets, as needed for your {{ site.data.var.ee }} sites
 
 ## Get Fastly credentials {#cloud-fastly-creds}
 
@@ -122,6 +121,10 @@ Fastly caching services do not work until you complete the initial upload of the
 
 
 ## Custom configuration
+
+{: .bs-callout-info}
+Before adding [custom](#custom-configuration) or advanced configuration settings like [updating purge settings]({{ page.baseurl and configuring [Fastly image optimization (Fastly IO)]({{ page.baseurl }}/cloud/cdn/fastly-image-optimization.html), [verify]({{ page.baseurl }}/cloud/cdn/trouble-fastly.html) that the Fastly caching service works with the default configuration.
+
 Configure the following features and enable additional [configuration options](https://github.com/fastly/fastly-magento2/blob/master/Documentation/CONFIGURATION.md#further-configuration-options) as needed:
 
 * [Upload Fastly VCL snippets](#upload-vcl-snippets)
