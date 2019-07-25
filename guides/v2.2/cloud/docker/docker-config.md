@@ -77,6 +77,9 @@ For example, the following command starts the Docker configuration generator for
     ```bash
     echo "127.0.0.1 magento2.docker" | sudo tee -a /etc/hosts
     ```
+    
+    {: .bs-callout-tip }
+To change the `magento2.docker` hostname for your project, you must update the host in three files: `.docker/config.php`, `docker-compose.yml`, and `/etc/hosts`
 
 1.  Stop the default Apache instance on Mac OS.
 
