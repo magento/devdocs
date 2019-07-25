@@ -103,7 +103,7 @@ Mail Transfer Agent (MTA) or an SMTP server
 
 * [Redis]({{page.baseurl}}/config-guide/redis/config-redis.html) versions 3.2, 4.0, 5.0 (compatible with 2.4+) for page caching and session storage.
   Version 5.0 is highly recommended.
-* [Varnish]({{page.baseurl}}/config-guide/varnish/config-varnish.html) version 4.x or 5.2
+* [Varnish]({{page.baseurl}}/config-guide/varnish/config-varnish.html) version 4.x, 5.2 or 6.x
 * [Elasticsearch]({{page.baseurl}}/config-guide/elasticsearch/es-overview.html)
 
   {{site.data.var.ee}} version 2.3.x supports the following Elasticsearch versions:
