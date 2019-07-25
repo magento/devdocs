@@ -14,7 +14,7 @@ functional_areas:
 
 [Fastly]({{ page.baseurl }}/cloud/basic-information/cloud-fastly.html) is required for {{site.data.var.ece}}, and is used in Staging and Production environments. It works with Varnish to provide fast caching capabilities and a [Content Delivery Network](https://glossary.magento.com/content-delivery-network) (CDN) for static assets. Fastly is not available in Integration environments.
 
-This information gets you started with installing and configuring Fastly.
+This information gets you started with enabling and configuring Fastly.
 We provide additional information for configuring backends and Origin shields, customizing
 error pages, and adding custom VCL snippets.
 
@@ -53,7 +53,7 @@ Use the following methods to find and save the Fastly service ID and API token f
 
   - `CONFIG__DEFAULT__SYSTEM__FULL_PAGE_CACHE__FASTLY__FASTLY_SERVICE_ID`
 
-{:.bs-callout .bs-callout-info}
+{: .bs-callout-info}
 If you cannot find the Fastly credentials for the Staging or Production environments, contact your Magento Technical Account Manager.
 
 ## Enable Fastly caching for your Cloud environments {#cloud-fastly-config}
@@ -123,7 +123,7 @@ Fastly caching services do not work until you complete the initial upload of the
 
 
 ## Custom configuration
-Configure the following features and enable additional [configuration options](https://github.com/fastly/fastly-magento2/blob/master/Documentation/CONFIGURATION.md#further-configuration-options):
+Configure the following features and enable additional [configuration options](https://github.com/fastly/fastly-magento2/blob/master/Documentation/CONFIGURATION.md#further-configuration-options) as needed:
 
 * [Upload Fastly VCL snippets](#upload-vcl-snippets)
 * [Configure backends and Origin shielding](#backend)
@@ -142,15 +142,18 @@ and provides it. If it is not cached, it continues to the Shield POP, then to
 the Origin server which caches the content. The shields reduce traffic directly
 to the origin.
 
-You can add multiple backends. Repeat these instructions to create multiple
-backends. For example, you may need a backend specifically for
-[Wordpress]({{ page.baseurl }}/cloud/cdn/fastly-vcl-wordpress.html) to
-handle your blog.
+The default Fastly VCL code specifies default values for Origin shielding and timeouts for your {{ site.data.var.ece }} sites. We recommend using the default values. In some case, you might need to modify the default values. For example, if you are getting a lot of time to first byte (TTFB) errors, you might need to adjust the _first byte timeout_ value.
+
+{:.bs-callout-info}
+If you need to integrate additional backends into your site such as a backend to serve blog content from a 
+[Wordpress]({{ page.baseurl }}/cloud/cdn/fastly-vcl-wordpress.html) site, you must customize your Fastly service configuration to add the backend and handle the redirects from your {{ site.data.var.ee }} store to the Wordpress backend. See the [Fastly Edge Modules - Other CMS/Backend integration](https://github.com/fastly/fastly-magento2/blob/master/Documentation/Guides/Edge-Modules/EDGE-MODULE-OTHER-CMS-INTEGRATION.md)topic in the Fastly module documentation.
+
+**To review the backend settings configuration:**
 
 1. Access and expand **Fastly Configuration**.
 
-1. Expand **Backend settings** and click the gear to configure the default
-   backend. A modal opens with options to select and configure.
+1. Expand **Backend settings** and click the gear to check the default
+   backend. A modal opens that shows current settings with options to change them.
 
 	![Modify the backend]({{ site.baseurl }}/common/images/cloud_fastly-backend.png){:width="600px"}
 
@@ -159,7 +162,7 @@ handle your blog.
    (us-west-1), select the `sjc-ca-us` Fastly shield location. This is the POP
    that provides caching services.
 
-	The following list shows which Faslty shield locations to use based an AWS
+   The following list shows which Fastly shield locations to use based an AWS
   region:
 
 	- ap-northeast-1 => tokyo-jp2
@@ -180,7 +183,7 @@ handle your blog.
    shield, time between bytes, and time for the first byte. We recommend keeping
    the default timeout settings.
   
-1. Optionally, select to Activate the backend and Shield after editing or saving.
+1. Optionally, select to **Activate the backend and Shield after editing or saving**.
 
 1. Click **Upload** to save. The settings are communicated to Fastly.
 
