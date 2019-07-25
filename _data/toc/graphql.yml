@@ -191,6 +191,9 @@ pages:
         - label: PayPal Payflow Pro
           url: /graphql/payment-methods/payflow-pro.html
 
+        - label: PayPal Payments Advanced
+          url: /graphql/payment-methods/payments-advanced.html
+
     - label: Tutorial
       class: tutorial
       url: /graphql/tutorials/checkout/index.html
