@@ -49,14 +49,14 @@ elasticsearch:
 You must provide name and type for each service, and a disk value if the service uses persistent storage. For example:
 
 ```yaml
-name:
-    type: name:<version>
-    disk: value
+<name>:
+    type: <name>:<version>
+    disk: <value-MB>
 ```
 
 ### `name`
 
-The `name` value identifies the service in the project and consists only of lower case alphanumeric characters: `a` to `z` and `0` to `9`, such as `redis`. You can have multiple instances of each service type. For example, we use multiple Redis instances, one for session and one for cache.
+The `name` value identifies the service in the project. You can only use lower case alphanumeric characters: `a` to `z` and `0` to `9`, such as `redis`. You can name multiple instances of each service type. For example, we could use multiple Redis instances—one for session and one for cache.
 
 ```yaml
 redis:
@@ -66,6 +66,13 @@ redis2:
     type: redis:<version>
 ```
 
+This name value is used in the `relationships` property of the `.magento.app.yaml` configuration file:
+
+```yaml
+relationships:
+    database: "<name>:redis"
+```
+
 Renaming a service in the `services.yaml` file **permanently removes** the following:
 
 -  The existing service before creating a new service with the new name you specify.
@@ -73,13 +80,18 @@ Renaming a service in the `services.yaml` file **permanently removes** the follo
 
 ### `type`
 
-The `type` value specifies the version of your service. Use the format: `type:version`
+The `type` value specifies the version of the service. For example:
+
+```yaml
+mysql:
+    type: mysql:10.2
+```
 
 ### `disk`
 
-The `disk` value specifies the size of the persistent disk storage (in MB) to allocate to the service. Services that use persistent storage must provide a disk value.
+The `disk` value specifies the size of the persistent disk storage (in MB) to allocate to the service. Services that use persistent storage must provide a disk value. A service that uses memory instead of persistent storage, such as Redis, does not require a disk value.
 
-For example, the current default storage amount per project is 5GB, or 5120MB. You can distribute this amount between your application and each of its services.
+The current default storage amount per project is 5GB, or 5120MB. You can distribute this amount between your application and each of its services.
 
 ## Using the services
 
