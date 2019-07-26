@@ -45,14 +45,6 @@ pages:
     - label: Functional testing
       url: /graphql/functional-testing.html
 
-    - label: Mutations
-      children:
-        - label: applyStoreCreditToCart mutation
-          url: /graphql/mutations/apply-store-credit.html
-
-        - label: removeStoreCreditFromCart mutation
-          url: /graphql/mutations/remove-store-credit.html
-
     - label: Queries
       children:
         - label: cmsBlock query
@@ -60,6 +52,14 @@ pages:
 
         - label: cmsPage query
           url: /graphql/queries/cms-page.html
+        
+    - label: Mutations
+      children:
+        - label: applyStoreCreditToCart mutation
+          url: /graphql/mutations/apply-store-credit.html
+
+        - label: removeStoreCreditFromCart mutation
+          url: /graphql/mutations/remove-store-credit.html
     
     - label: Reference
       children:

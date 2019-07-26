@@ -1,9 +1,9 @@
 ---
 group: graphql
-title: cmsBlock endpoint
+title: cmsBlock query
 ---
 
-The `cmsBlock` endpoint returns information about blocks that were developed with the Magento Content Management System (CMS).
+The `cmsBlock` query returns information about blocks that were developed with the Magento Content Management System (CMS).
 
 ## Syntax
 
@@ -66,4 +66,4 @@ Attribute | Data type | Description
 
 ## Related topics
 
-[cmsPage endpoint](({{page.baseurl}}/graphql/reference/queries/cms-page.html}}) provides information about the `cmsPage` object.
+[cmsPage query]({{page.baseurl}}/graphql/queries/cms-page.html) provides information about the `cmsPage` object.

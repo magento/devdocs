@@ -1,11 +1,11 @@
 ---
 group: graphql
-title: cmsPage endpoint
+title: cmsPage query
 redirect_from:
   - /guides/v2.3/graphql/reference/cms.html
 ---
 
-The `cmsPage` endpoint returns information about content pages that were developed with the Magento Content Management System (CMS).
+The `cmsPage` query returns information about content pages that were developed with the Magento Content Management System (CMS).
 
 ## Syntax
 
@@ -77,4 +77,4 @@ Attribute | Data type | Description
 
 ## Related topics
 
-[cmsBlock endpoint]((({{page.baseurl}}/graphql/reference/queries/cms-block.html}})) provides information about the `cmsBlock` object.
+[cmsBlock query]({{page.baseurl}}/graphql/queries/cms-block.html) provides information about the `cmsBlock` object.
