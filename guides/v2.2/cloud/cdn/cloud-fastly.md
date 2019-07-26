@@ -69,7 +69,7 @@ The apex domain (`testweb.com` and `www.testweb.com`) is linked to an existing F
 
 Submit a [Fastly support ticket](https://docs.fastly.com/guides/detailed-product-descriptions/support-description-and-sla#support-requests) requesting that the subdomains be delegated from the existing Fastly account to the Fastly account for {{ site.data.var.ece }}. Include your Magento project ID in the ticket.
 
-After the delegation is complete, your project subdomains can be added to the Fastly service account for {{ site.data.var.ece }}. See [Get Fastly credentials](#cloud-fastly-creds).
+After the delegation is complete, your project subdomains can be added to the Fastly service account for {{ site.data.var.ece }}. See [Get Fastly credentials]({{ page.baseurl }}/cloud/cdn/configure-fastly.html#cloud-fastly-creds).
 
 *Scenario 2*
 
