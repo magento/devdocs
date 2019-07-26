@@ -1246,7 +1246,7 @@ The following table identifies contributions from our community members. This ta
     <td><a target="_blank" href="https://github.com/serhii-balko">Serhii</a></td>
   </tr>
 <tr>
-    <td><a target="_blank" href="https://github.com/magento-engcom/magento2ce/pull/1007">1007</a></td>
+    <td>magento-engcom/magento2ce/pull/1007</a></td>
     <td><a href="https://github.com/magento/magento2/issues/12378" target="_blank">12378</a></td>
     <td><a target="_blank" href="https://github.com/p-bystritsky">p-bystritsky</a></td>
   </tr>
