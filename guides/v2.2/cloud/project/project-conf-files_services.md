@@ -70,7 +70,7 @@ This name value is used in the `relationships` property of the `.magento.app.yam
 
 ```yaml
 relationships:
-    database: "<name>:redis"
+    redis: "<name>:redis"
 ```
 
 Renaming a service in the `services.yaml` file **permanently removes** the following:
@@ -89,7 +89,7 @@ mysql:
 
 ### `disk`
 
-The `disk` value specifies the size of the persistent disk storage (in MB) to allocate to the service. Services that use persistent storage, such as mySQL, must provide a disk value. Services that use memory instead of persistent storage, such as Redis, do not require a disk value.
+The `disk` value specifies the size of the persistent disk storage (in MB) to allocate to the service. Services that use persistent storage, such as MySQL, must provide a disk value. Services that use memory instead of persistent storage, such as Redis, do not require a disk value.
 
 ```yaml
 mysql:
