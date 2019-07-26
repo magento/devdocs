@@ -53,11 +53,16 @@ pages:
         - label: removeStoreCreditFromCart mutation
           url: /graphql/mutations/remove-store-credit.html
 
+    - label: Queries
+      children:
+        - label: cmsBlock query
+          url: /graphql/queries/cms-block.html
+
+        - label: cmsPage query
+          url: /graphql/queries/cms-page.html
+    
     - label: Reference
       children:
-            - label: CMS endpoint
-              url: /graphql/reference/cms.html
-
             - label: CustomAttributeMetadata endpoint
               url: /graphql/reference/custom-attribute-metadata.html
 
