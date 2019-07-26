@@ -80,7 +80,7 @@ Highlights of community contributions include these fixes:
 
 <!-- MAGETWO-86712 -->* The email server no longer throws an exception when a customer places an order using a PayPal payment method. Previously, when a customer checked out using PayPal, Magento placed the order, but the email server threw an exception. Thanks to community member [Jason Woods](https://github.com/driskell)!
 
-<!-- ENGCOM-2671 -->* You can now use REST to add a configurable product to a shopping cart without creating a duplicate product entry. Thanks to community member [zamboten](https://github.com/zamboten)! [GitHub-15028](https://github.com/magento/magento2/issues/15028)
+<!-- ENGCOM-2671 -->* You can now use REST to add a configurable product to a shopping cart without creating a duplicate product entry. Thanks to community member zamboten! [GitHub-15028](https://github.com/magento/magento2/issues/15028)
 
 <!-- ENGCOM-1832 -->* The price range displayed for bundle products now shows only valid prices. Previously, Magento displayed special prices that had expired, even though the price in the customization and summary area was correct. Thanks to community member [Riccardo Tempesta](https://github.com/phoenix128)! [GitHub-15457](https://github.com/magento/magento2/issues/15457) 
 
@@ -141,7 +141,7 @@ In addition to security enhancements, this release contains the following functi
 
 <!-- ENGCOM-2743 -->* Magento no longer displays an undefined string on the Order Summary page. *Fix submitted by [Vishal Gelani](https://github.com/gelanivishal) in pull request [17526](https://github.com/magento/magento2/pull/17526)*. [GitHub-17492](https://github.com/magento/magento2/issues/17492)
 
-<!-- ENGCOM-2901 -->* Magento now displays the wishlist icon on the shopping cart page on mobile devices. Previously, Magento cut off the wishlist icon on this page when viewed on a mobile device. *Fix submitted by [Hitesh](https://github.com/hitesh-wagento) in pull request [17877](https://github.com/magento/magento2/pull/17877)*. [GitHub-17851](https://github.com/magento/magento2/issues/17851)
+<!-- ENGCOM-2901 -->* Magento now displays the wishlist icon on the shopping cart page on mobile devices. Previously, Magento cut off the wishlist icon on this page when viewed on a mobile device. *Fix submitted by hitesh-wagento in pull request [17877](https://github.com/magento/magento2/pull/17877)*. [GitHub-17851](https://github.com/magento/magento2/issues/17851)
 
 <!-- ENGCOM-2789 -->* Magento no longer unchecks **My billing and shipping address are the same** checkbox when a customer uses an offline custom payment method for an order. Previously, when a customer used an offline custom payment method for an order, Magento unchecked this checkbox on the payment step if the shipping address was updated. *Fix submitted by [Eduard Chitoraga](https://github.com/eduard13) in pull request [17593](https://github.com/magento/magento2/pull/17593)*. [GitHub-14819](https://github.com/magento/magento2/issues/14819)
 
@@ -153,11 +153,11 @@ In addition to security enhancements, this release contains the following functi
 
 <!-- ENGCOM-2645 -->* Magento no longer adds an empty method to the cart summary. Previously, when the method html was empty, an empty list item resulted, which subsequently  resulted in an extra margin of 20px because of default styling. *Fix submitted by [Arnoud Beekman](https://github.com/arnoudhgz) in pull request [17189](https://github.com/magento/magento2/pull/17189)*. 
 
-<!-- ENGCOM-2636 -->* The sidebars for the wishlist on the catalog, my account, and checkout pages now render special characters correctly. Previously, the browser displayed `&trade;` instead of rendered special characters on these pages. *Fix submitted by [deepjoshi94](https://github.com/deepjoshi94) in pull request [17070](https://github.com/magento/magento2/pull/17070)*. 
+<!-- ENGCOM-2636 -->* The sidebars for the wishlist on the catalog, my account, and checkout pages now render special characters correctly. Previously, the browser displayed `&trade;` instead of rendered special characters on these pages. *Fix submitted by deepjoshi94 in pull request [17070](https://github.com/magento/magento2/pull/17070)*. 
 
 <!-- ENGCOM-2665 -->* The `disabled attribute` has been removed from the region list. *Fix submitted by [Daniel Ruf](https://github.com/DanielRuf) in pull request [16955](https://github.com/magento/magento2/pull/16955)*. 
 
-<!-- ENGCOM-2210 -->* The Admin checkout agreement controllers have been refactored to remove the use of `ObjectManager`. *Fix submitted by [AnshuMishra17](https://github.com/AnshuMishra17) in pull request [16505](https://github.com/magento/magento2/pull/16505)*. 
+<!-- ENGCOM-2210 -->* The Admin checkout agreement controllers have been refactored to remove the use of `ObjectManager`. *Fix submitted by AnshuMishra17 in pull request [16505](https://github.com/magento/magento2/pull/16505)*. 
 
 
 
@@ -168,7 +168,7 @@ In addition to security enhancements, this release contains the following functi
 
 <!-- MAGETWO-92036 -->* Magento now alerts you to an error when a merchant tries to save a product without completed required fields. 
 
-<!-- ENGCOM-2555 -->* A previous fix for a gallery template issue that was inadvertently reverted has been restored. *Fix submitted by [gwharton](https://github.com/gwharton) in pull request [16594](https://github.com/magento/magento2/pull/16594)*. [GitHub-15009](https://github.com/magento/magento2/issues/15009)
+<!-- ENGCOM-2555 -->* A previous fix for a gallery template issue that was inadvertently reverted has been restored. *Fix submitted by gwharton in pull request [16594](https://github.com/magento/magento2/pull/16594)*. [GitHub-15009](https://github.com/magento/magento2/issues/15009)
 
 <!-- ENGCOM-2650 -->* Parent theme image height settings (specified in `view.xml`) no longer override the height settings assigned to individual images. *Fix submitted by [Tommy Quissens](https://github.com/quisse) in pull request [14537](https://github.com/magento/magento2/pull/14537)*. [GitHub-12250](https://github.com/magento/magento2/issues/12250)
 
@@ -234,7 +234,7 @@ product, and hung indefinitely while trying to add the product.
 
 <!-- ENGCOM-2762 -->* Duplicate code in `app/code/Magento/Ui/view/base/web/js/dynamic-rows/dynamic-rows.js` has been removed. *Fix submitted by [Arnoud Beekman](https://github.com/arnoudhgz) in pull request [17505](https://github.com/magento/magento2/pull/17505)*.
 
-<!-- ENGCOM-2776 -->* The code generator for Proxy is no longer missing `returnType` in the method information definition. *Fix submitted by [adrian-martinez-interactiv4](https://github.com/adrian-martinez-interactiv4) in pull request [17552](https://github.com/magento/magento2/pull/17552)*.
+<!-- ENGCOM-2776 -->* The code generator for Proxy is no longer missing `returnType` in the method information definition. *Fix submitted by adrian-martinez-interactiv4 in pull request [17552](https://github.com/magento/magento2/pull/17552)*.
 
 
 <!-- ENGCOM-2748 -->* The `<script/>` tag has been replaced with `<script type="text/x-magento-init" /> `in  `app/code/Magento/Catalog/view/adminhtml/templates/catalog/product/attribute/form.phtml` and `app/code/Magento/Catalog/view/adminhtml/templates/catalog/product/edit/action/attribute.phtml`. Also,  a new JavaScript component with the callback function has been created.  *Fix submitted by [Yogesh Suhagiya](https://github.com/swnsma) in pull request [17527](https://github.com/magento/magento2/pull/17527)*.
@@ -261,7 +261,7 @@ product, and hung indefinitely while trying to add the product.
 
 ### Configurable products
 
-<!-- ENGCOM-2671 -->* You can now use REST to add a configurable product to a shopping cart without creating a duplicate product entry. *Fix submitted by [zamboten](https://github.com/zamboten) in pull request [15720](https://github.com/magento/magento2/pull/15720)*. [GitHub-15028](https://github.com/magento/magento2/issues/15028)
+<!-- ENGCOM-2671 -->* You can now use REST to add a configurable product to a shopping cart without creating a duplicate product entry. *Fix submitted by zamboten in pull request [15720](https://github.com/magento/magento2/pull/15720)*. [GitHub-15028](https://github.com/magento/magento2/issues/15028)
 
 <!-- MAGETWO-77742 -->* Magento now displays a descriptive error message when you try to upload a file in an unsupported format. Previously, Magento displayed an error that did not relate to the specific upload problem. 
 
@@ -283,7 +283,7 @@ product, and hung indefinitely while trying to add the product.
 
 ### EAV
 
-<!-- ENGCOM-2642 -->*  The Product Attribute Repository's incorrect return values have been replaced with values that now adhere to `Magento\Catalog\Api\ProductAttributeRepositoryInterface (extends Magento\Framework\Api\MetadataServiceInterface)` as expected. *Fix submitted by [julianvdrielen](https://github.com/julianvdrielen) in pull request [15691](https://github.com/magento/magento2/pull/15691)*. [GitHub-4803](https://github.com/magento/magento2/issues/4803)
+<!-- ENGCOM-2642 -->*  The Product Attribute Repository's incorrect return values have been replaced with values that now adhere to `Magento\Catalog\Api\ProductAttributeRepositoryInterface (extends Magento\Framework\Api\MetadataServiceInterface)` as expected. *Fix submitted by julianvdrielen in pull request [15691](https://github.com/magento/magento2/pull/15691)*. [GitHub-4803](https://github.com/magento/magento2/issues/4803)
 
 
 
@@ -293,7 +293,7 @@ product, and hung indefinitely while trying to add the product.
 
 
 
-<!-- ENGCOM-2787 -->* Magento can no longer send more than 50 emails per cronjob, which will reduce duplicate emails.  *Fix submitted by [iGerchak](https://github.com/iGerchak) in pull request [17484](https://github.com/magento/magento2/pull/15942)*. 
+<!-- ENGCOM-2787 -->* Magento can no longer send more than 50 emails per cronjob, which will reduce duplicate emails.  *Fix submitted by iGerchak in pull request [17484](https://github.com/magento/magento2/pull/15942)*. 
 
 
 
@@ -349,14 +349,14 @@ product, and hung indefinitely while trying to add the product.
 
 <!-- ENGCOM-2855 -->* The WYSIWYG editor now displays the backgrounds of .png thumbnail images as expected. Previously, transparent backgrounds were displayed as black.  *Fix submitted by [Eduard Chitoraga](https://github.com/eduard13) in pull request [16733](https://github.com/magento/magento2/pull/16733)*. [GitHub-14248](https://github.com/magento/magento2/issues/14248)
 
-<!-- ENGCOM-2860 -->*  Magento no longer duplicates events during delete operations. *Fix submitted by [p-bystritsky](https://github.com/p-bystritsky) in pull request [17718](https://github.com/magento/magento2/pull/17718)*. [GitHub-17715](https://github.com/magento/magento2/issues/17715)
+<!-- ENGCOM-2860 -->*  Magento no longer duplicates events during delete operations. *Fix submitted by p-bystritsky in pull request [17718](https://github.com/magento/magento2/pull/17718)*. [GitHub-17715](https://github.com/magento/magento2/issues/17715)
 
-<!-- ENGCOM-2322 -->* Magento now correctly displays the Datepicker widget when a user scrolls a  page containing it. *Fix submitted by [Hitesh](https://github.com/hitesh-wagento) in pull request [16775](https://github.com/magento/magento2/pull/16775)*. [GitHub-7903](https://github.com/magento/magento2/issues/7903)
+<!-- ENGCOM-2322 -->* Magento now correctly displays the Datepicker widget when a user scrolls a  page containing it. *Fix submitted by hitesh-wagento in pull request [16775](https://github.com/magento/magento2/pull/16775)*. [GitHub-7903](https://github.com/magento/magento2/issues/7903)
 
 <!-- ENGCOM-2628 -->* Magento now disables the **Shop By** button on the search page when a customer sets additional search filters. *Fix submitted by [Andrea Rivadossi](https://github.com/AndreaRivadossi) in pull request [15650](https://github.com/magento/magento2/pull/15650)*. [GitHub-13445](https://github.com/magento/magento2/issues/13445)
 
 
-<!-- ENGCOM-2875 -->* The `setterName` method is now correctly set. *Fix submitted by [insanityinside](https://github.com/insanityinside) in pull request [17773](https://github.com/magento/magento2/pull/17773)*. 
+<!-- ENGCOM-2875 -->* The `setterName` method is now correctly set. *Fix submitted by insanityinside in pull request [17773](https://github.com/magento/magento2/pull/17773)*. 
 
 
 <!-- ENGCOM-2896 -->* New templates have been added to the GitHub Issue Reporting section. These templates target a broad scope of possible problems, and the proposed descriptions are aimed at simplifying future fixes. *Fix submitted by [Eugene Shakhsuvarov](https://github.com/ishakhsuvarov) in pull request [17817](https://github.com/magento/magento2/pull/17817)*. 
@@ -386,7 +386,7 @@ product, and hung indefinitely while trying to add the product.
 
 <!-- ENGCOM-2644 -->* The `strval()` function has been replaced by the use of direct type casting to `(string)` throughout the code base. *Fix submitted by [Marcel Hauri](https://github.com/mhauri) in pull request [16849](https://github.com/magento/magento2/pull/16849)*.
 
-<!-- ENGCOM-2668 -->* The EU-VAT-Numbers `Countrycode`  prefixes have been removed for validation purposes. *Fix submitted by [Drischie](https://github.com/Drischie) in pull request [17385](https://github.com/magento/magento2/pull/17385)*.
+<!-- ENGCOM-2668 -->* The EU-VAT-Numbers `Countrycode`  prefixes have been removed for validation purposes. *Fix submitted by Drischie in pull request [17385](https://github.com/magento/magento2/pull/17385)*.
 
 <!-- ENGCOM-2634 -->* Missing `data-th` selectors have been added to tables. *Fix submitted by [Daniel Ruf](https://github.com/DanielRuf) in pull request [17327](https://github.com/magento/magento2/pull/17327)*.
 
@@ -411,7 +411,7 @@ product, and hung indefinitely while trying to add the product.
 
 <!-- MAGETWO-86650 -->* The `.csv` export of the Abandoned Cart report now contains information about all abandoned carts as expected. Previously, this `.csv` file contained only  the first 20 rows of the report. 
 
-<!-- ENGCOM-2724 -->* The **Year-to-date** dropdown accessed from **Stores** > **Settings** > **Configuration** > **General** > **Reports** > **Dashboard** now displays a numerical list that ranges from 01 to 12 as expected. *Fix submitted by [teddysie](https://github.com/teddysie) in pull request [17383](https://github.com/magento/magento2/pull/17383)*. [GitHub-17289](https://github.com/magento/magento2/issues/17289)
+<!-- ENGCOM-2724 -->* The **Year-to-date** dropdown accessed from **Stores** > **Settings** > **Configuration** > **General** > **Reports** > **Dashboard** now displays a numerical list that ranges from 01 to 12 as expected. *Fix submitted by teddysie in pull request [17383](https://github.com/magento/magento2/pull/17383)*. [GitHub-17289](https://github.com/magento/magento2/issues/17289)
 
 
 <!-- MAGETWO- 73585-->* Wishlist reports are available on the Admin as expected. 
@@ -450,7 +450,7 @@ product, and hung indefinitely while trying to add the product.
 ### Search
 
 
-<!-- ENGCOM-2415 -->* JavaScript files are now located inside the `web/js` directory. *Fix submitted by [Hitesh](https://github.com/hitesh-wagento) in pull request [16582](https://github.com/magento/magento2/pull/16582)*. [GitHub-16302](https://github.com/magento/magento2/issues/16302)
+<!-- ENGCOM-2415 -->* JavaScript files are now located inside the `web/js` directory. *Fix submitted by hitesh-wagento in pull request [16582](https://github.com/magento/magento2/pull/16582)*. [GitHub-16302](https://github.com/magento/magento2/issues/16302)
 
 <!-- MAGETWO-91063 -->* Search synonyms are now available for all search engines deployed in your Magento store. Previously, search synonyms did not appear in the Admin menu when Elasticsearch 5.0+ was deployed. 
 
@@ -533,7 +533,7 @@ product, and hung indefinitely while trying to add the product.
 
 <!-- ENGCOM-2817 -->* `translate="title"`  has been added to Admin menus. *Fix submitted by [Yogesh Suhagiya](https://github.com/Yogeshks) in pull request [17521](https://github.com/magento/magento2/pull/17521)*.
 
-<!-- ENGCOM-2799 -->* The custom attribute group name on customer and product pages can now be translated. *Fix submitted by [Grayson](https://github.com/GraysonChiang) in pull request [17602](https://github.com/magento/magento2/pull/17602)*.
+<!-- ENGCOM-2799 -->* The custom attribute group name on customer and product pages can now be translated. *Fix submitted by GraysonChiang in pull request [17602](https://github.com/magento/magento2/pull/17602)*.
 
 <!-- ENGCOM-2781 -->* Validation error messages can now be translated. *Fix submitted by [Yogesh Suhagiya](https://github.com/Yogeshks) in pull request [17575](https://github.com/magento/magento2/pull/17575)*.
 

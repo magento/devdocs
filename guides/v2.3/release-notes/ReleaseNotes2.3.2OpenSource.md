@@ -84,7 +84,7 @@ We've fixed hundreds of issues in the Magento 2.3.2 core code.
 ### Installation, upgrade, deployment
 
 <!--- ENGCOM-4602-->
-* `configFactory` `scope` and `scope_code` values are now passed to `configFactory`   as data arrays. *Fix submitted by [ochnygosch](https://github.com/ochnygosch) in pull request [22012](https://github.com/magento/magento2/pull/22012)*. [GitHub-21993](https://github.com/magento/magento2/issues/21993)
+* `configFactory` `scope` and `scope_code` values are now passed to `configFactory`   as data arrays. *Fix submitted by ochnygosch in pull request [22012](https://github.com/magento/magento2/pull/22012)*. [GitHub-21993](https://github.com/magento/magento2/issues/21993)
 
 <!--- ENGCOM-4582-->
 * Magento now renders the value of configuration variables (such as `{{unsecure_base_url}}`) as they are entered in  configuration files rather than saving the resolved value. Previously, Magento resolved the variable to its actual value, which lead to the overwriting the value in the database when the configuration was saved instead of storing the value in the variable. *Fix submitted by [Pieter Hoste ](https://github.com/hostep) in pull request [18067](https://github.com/magento/magento2/pull/18067)*. [GitHub-15972](https://github.com/magento/magento2/issues/15972)
@@ -176,7 +176,7 @@ We've fixed hundreds of issues in the Magento 2.3.2 core code.
 * Magento now persists customer-related values after a guest customer converts her account to a customer account after checkout. Previously, Magento saved these customer-related values as null during account creation after checkout. *Fix submitted by [Nazar Klovanych](https://github.com/Nazar65) in pull request [19191](https://github.com/magento/magento2/pull/19191)*. [GitHub-19166](https://github.com/magento/magento2/issues/19166)
 
 <!--- ENGCOM-4237-->
-* Guests can now complete checkout when a custom shipping carrier with underscores in the carrier code is used. Previously, Magento threw the following exception under these conditions: `Please specify a shipping method`. *Fix submitted by [vovsky](https://github.com/vovsky) in pull request [19505](https://github.com/magento/magento2/pull/19505)*. [GitHub-5021](https://github.com/magento/magento2/issues/5021)
+* Guests can now complete checkout when a custom shipping carrier with underscores in the carrier code is used. Previously, Magento threw the following exception under these conditions: `Please specify a shipping method`. *Fix submitted by vovsky in pull request [19505](https://github.com/magento/magento2/pull/19505)*. [GitHub-5021](https://github.com/magento/magento2/issues/5021)
 
 <!--- ENGCOM-3900-->
 * Fixed alignment of the **Update** button on the payment page of the checkout workflow. *Fix submitted by [Govind Sharma](https://github.com/GovindaSharma) in pull request [20307](https://github.com/magento/magento2/pull/20307)*. [GitHub-20305](https://github.com/magento/magento2/issues/20305)
@@ -312,7 +312,7 @@ This fix can degrade performance in deployments that implement flat catalogs. To
 <!--- ENGCOM-4490-->
 * We have fixed the wrong proxy `resourceStock` argument for the `\Magento\CatalogInventory\Observer\UpdateItemsStockUponConfigChangeObserver` in `di.xml`. (Specifically, `<argument name="resourceStock" xsi:type="object">Magento\CatalogInventory\Model\ResourceModel\Stock\Proxy</argument>`
 has been changed to `<argument name="resourceStockItem" xsi:type="object">Magento\CatalogInventory\Model\ResourceModel\Stock\Item\Proxy</argument>`.)
-*Fix submitted by [Vitaliy](https://github.com/VitaliyBoyko) in pull request [21731](https://github.com/magento/magento2/pull/21731)*. [GitHub-167](https://github.com/magento/magento2/issues/167)
+*Fix submitted by VitaliyBoyko in pull request [21731](https://github.com/magento/magento2/pull/21731)*. [GitHub-167](https://github.com/magento/magento2/issues/167)
 
 
 ### Catalog URL rewrite
@@ -330,13 +330,13 @@ has been changed to `<argument name="resourceStockItem" xsi:type="object">Magent
 * Corrected length of the customer login page input field in tablet view. *Fix submitted by [Nainesh Waghale](https://github.com/nainesh2jcommerce) in pull request [20173](https://github.com/magento/magento2/pull/20173)*. [GitHub-20172](https://github.com/magento/magento2/issues/20172)
 
 <!--- ENGCOM-3642-->
-* Fixed misalignment of the checkbox in the fields enclosure on **Admin** > **System** > **Export**. *Fix submitted by [suryakant-krish](https://github.com/suryakant-krish) in pull request [19631](https://github.com/magento/magento2/pull/19631)*. [GitHub-19630](https://github.com/magento/magento2/issues/19630)
+* Fixed misalignment of the checkbox in the fields enclosure on **Admin** > **System** > **Export**. *Fix submitted by suryakant-krish in pull request [19631](https://github.com/magento/magento2/pull/19631)*. [GitHub-19630](https://github.com/magento/magento2/issues/19630)
 
 <!--- ENGCOM-4174-->
-* Corrected misalignment of the products in category checkboxes on the Admin catalog categories page. *Fix submitted by [Priti](https://github.com/priti2jcommerce) in pull request [21022](https://github.com/magento/magento2/pull/21022)*. [GitHub-21021](https://github.com/magento/magento2/issues/21021)
+* Corrected misalignment of the products in category checkboxes on the Admin catalog categories page. *Fix submitted by priti2jcommerce in pull request [21022](https://github.com/magento/magento2/pull/21022)*. [GitHub-21021](https://github.com/magento/magento2/issues/21021)
 
 <!--- ENGCOM-4069-->
-* Corrected misalignment of the order item details label  in mobile view. *Fix submitted by [Priti](https://github.com/priti2jcommerce) in pull request [20466](https://github.com/magento/magento2/pull/20466)*. [GitHub-20299](https://github.com/magento/magento2/issues/20299)
+* Corrected misalignment of the order item details label  in mobile view. *Fix submitted by priti2jcommerce in pull request [20466](https://github.com/magento/magento2/pull/20466)*. [GitHub-20299](https://github.com/magento/magento2/issues/20299)
 
 <!--- ENGCOM-4154-->
 * Corrected misalignment of page elements on the Admin product reorder page. *Fix submitted by [Arvinda kumar](https://github.com/cedarvinda) in pull request [21009](https://github.com/magento/magento2/pull/21009)*. [GitHub-20919](https://github.com/magento/magento2/issues/20919)
@@ -348,7 +348,7 @@ has been changed to `<argument name="resourceStockItem" xsi:type="object">Magent
 * Added padding to the `shippingAddress` telephone tool tip on the shipping page of checkout. *Fix submitted by [Abrar Pathan](https://github.com/abrarpathan19) in pull request [20839](https://github.com/magento/magento2/pull/20839)*. [GitHub-20838](https://github.com/magento/magento2/issues/20838)
 
 <!--- ENGCOM-4269-->
-* Corrected misalignment of product prices in the order summary block of the checkout page in tablet view. *Fix submitted by [Dipti](https://github.com/dipti2jcommerce) in pull request [20856](https://github.com/magento/magento2/pull/20856)*. [GitHub-20855](https://github.com/magento/magento2/issues/20855)
+* Corrected misalignment of product prices in the order summary block of the checkout page in tablet view. *Fix submitted by dipti2jcommerce in pull request [20856](https://github.com/magento/magento2/pull/20856)*. [GitHub-20855](https://github.com/magento/magento2/issues/20855)
 
 <!--- ENGCOM-4318-->
 * Corrected size of the pagination drop-down on **Admin** > **Content** > **Blocks**. *Fix submitted by [Pratik Oza](https://github.com/mage2pratik) in pull request [21298](https://github.com/magento/magento2/pull/21298)*. [GitHub-21296](https://github.com/magento/magento2/issues/21296)
@@ -381,7 +381,7 @@ has been changed to `<argument name="resourceStockItem" xsi:type="object">Magent
 * The **Equalize product count** operation in Layered Navigation now works as expected. *Fix submitted by [Nazar Klovanych](https://github.com/Nazar65) in pull request [21968](https://github.com/magento/magento2/pull/21968)*. [GitHub-6715](https://github.com/magento/magento2/issues/6715)
 
 <!--- ENGCOM-4744-->
-* Corrected misalignment of page elements on the popup window that Magento displays when you edit an order that contains a downloadable product when **Links can be purchased separately** is enabled. *Fix submitted by [Ansari](https://github.com/ansari-krish) in pull request [22298](https://github.com/magento/magento2/pull/22298)*. [GitHub-20917](https://github.com/magento/magento2/issues/20917)
+* Corrected misalignment of page elements on the popup window that Magento displays when you edit an order that contains a downloadable product when **Links can be purchased separately** is enabled. *Fix submitted by ansari-krish in pull request [22298](https://github.com/magento/magento2/pull/22298)*. [GitHub-20917](https://github.com/magento/magento2/issues/20917)
 
 <!--- ENGCOM-4594-->
 * Fixed misalignment of the shipping method block on Order pages that are accessed through **Sales** > **Orders**. *Fix submitted by [Vishal Sutariya](https://github.com/vishal-7037) in pull request [21963](https://github.com/magento/magento2/pull/21963)*. [GitHub-21962](https://github.com/magento/magento2/issues/21962)
@@ -569,7 +569,7 @@ has been changed to `<argument name="resourceStockItem" xsi:type="object">Magent
 * `fatalErrorHandler` now returns `500` only on fatal errors. Previously, simple deprecation warnings on the page triggered an internal server error, which was invalid. *Fix submitted by [WEXO team](https://github.com/wexo-team) in pull request [22200](https://github.com/magento/magento2/pull/22200)*. [GitHub-22199](https://github.com/magento/magento2/issues/22199)
 
 <!--- ENGCOM-4774-->
-* CodeSniffer no longer marks correctly aligned `DocBlock` elements as code style violations. *Fix submitted by [p-bystritsky](https://github.com/p-bystritsky) in pull request [22321](https://github.com/magento/magento2/pull/22321)*. [GitHub-22317](https://github.com/magento/magento2/issues/22317)
+* CodeSniffer no longer marks correctly aligned `DocBlock` elements as code style violations. *Fix submitted by p-bystritsky in pull request [22321](https://github.com/magento/magento2/pull/22321)*. [GitHub-22317](https://github.com/magento/magento2/issues/22317)
 
 <!--- ENGCOM-4631-->
 * The Adminhtml `textarea` field now accepts the `maxlength` attribute. *Fix submitted by [Roman Kis](https://github.com/kisroman) in pull request [21816](https://github.com/magento/magento2/pull/21816)*. [GitHub-21779](https://github.com/magento/magento2/issues/21779)
@@ -637,7 +637,7 @@ has been changed to `<argument name="resourceStockItem" xsi:type="object">Magent
 * Magento now displays the correct import status data for an import that is created using **System** > **Import** > **Advanced Pricing** > **Add/Update**. *Fix submitted by [Denys Saltanakhmedov](https://github.com/DenisSaltanahmedov) in pull request [21476](https://github.com/magento/magento2/pull/21476)*. [GitHub-21192](https://github.com/magento/magento2/issues/21192)
 
 <!--- ENGCOM-3993-->
-* The `store_view_code` column now contains data from the chosen product store. Previously, Magento did not populate the `store_view_code` column. *Fix submitted by [Valant13](https://github.com/Valant13) in pull request [19395](https://github.com/magento/magento2/pull/19395)*. [GitHub-17784](https://github.com/magento/magento2/issues/17784), [GitHub-19786](https://github.com/magento/magento2/issues/19786)
+* The `store_view_code` column now contains data from the chosen product store. Previously, Magento did not populate the `store_view_code` column. *Fix submitted by Valant13 in pull request [19395](https://github.com/magento/magento2/pull/19395)*. [GitHub-17784](https://github.com/magento/magento2/issues/17784), [GitHub-19786](https://github.com/magento/magento2/issues/19786)
 
 ### Index
 
@@ -810,7 +810,7 @@ has been changed to `<argument name="resourceStockItem" xsi:type="object">Magent
 * Fixed display of the Luma theme My Account Order status tabs in mobile view.*Fix submitted by [Abrar Pathan](https://github.com/abrarpathan19) in pull request [21071](https://github.com/magento/magento2/pull/21071)*. [GitHub-21070](https://github.com/magento/magento2/issues/21070)
  
 <!--- ENGCOM-4241-->
-* You can now change customer groups when creating a new customer during order creation on the Admin. *Fix submitted by [gauravagarwal1001](https://github.com/gauravagarwal1001) in pull request [21145](https://github.com/magento/magento2/pull/21145)*. [GitHub-6162](https://github.com/magento/magento2/issues/6162), [GitHub-7974](https://github.com/magento/magento2/issues/7974), [GitHub-21144](https://github.com/magento/magento2/issues/21144)
+* You can now change customer groups when creating a new customer during order creation on the Admin. *Fix submitted by gauravagarwal1001 in pull request [21145](https://github.com/magento/magento2/pull/21145)*. [GitHub-6162](https://github.com/magento/magento2/issues/6162), [GitHub-7974](https://github.com/magento/magento2/issues/7974), [GitHub-21144](https://github.com/magento/magento2/issues/21144)
 
 <!--- ENGCOM-4321-->
 * You can now successfully re-order a virtual product. *Fix submitted by [Shikha Mishra](https://github.com/shikhamis11) in pull request [21335](https://github.com/magento/magento2/pull/21335)*. [GitHub-15059](https://github.com/magento/magento2/issues/15059)
@@ -831,7 +831,7 @@ has been changed to `<argument name="resourceStockItem" xsi:type="object">Magent
 * The DataProvider and Save Controller files have been edited to improve persistence of form data in cart price rules. *Fix submitted by [Aditya Yadav](https://github.com/realadityayadav) in pull request [20895](https://github.com/magento/magento2/pull/20895)*. [GitHub-20888](https://github.com/magento/magento2/issues/20888)
 
 <!--- ENGCOM-4406-->
-* Added a condition `type _Subtotal (Excl. Tax)` to the Cart Price Rule configuration so that you can configure a cart price discount rule discount based on minimum purchase amount that excludes tax. Previously, the subtotal was calculated only with tax included. *Fix submitted by [AleksLi](https://github.com/AleksLi) in pull request [21288](https://github.com/magento/magento2/pull/21288)*. [GitHub-12396](https://github.com/magento/magento2/issues/12396)
+* Added a condition `type _Subtotal (Excl. Tax)` to the Cart Price Rule configuration so that you can configure a cart price discount rule discount based on minimum purchase amount that excludes tax. Previously, the subtotal was calculated only with tax included. *Fix submitted by AleksLi in pull request [21288](https://github.com/magento/magento2/pull/21288)*. [GitHub-12396](https://github.com/magento/magento2/issues/12396)
 
 ### Search
 
@@ -860,7 +860,7 @@ has been changed to `<argument name="resourceStockItem" xsi:type="object">Magent
 
 
 <!--- ENGCOM-3601-->
-* Magento now provides quotes for DHL shipments when **DHL Content Type** is set to **Non Documents**. *Fix submitted by [gwharton](https://github.com/gwharton) in pull request [19487](https://github.com/magento/magento2/pull/19487)*. [GitHub-19485](https://github.com/magento/magento2/issues/19485)
+* Magento now provides quotes for DHL shipments when **DHL Content Type** is set to **Non Documents**. *Fix submitted by gwharton in pull request [19487](https://github.com/magento/magento2/pull/19487)*. [GitHub-19485](https://github.com/magento/magento2/issues/19485)
 
 <!--- MAGETWO-98947-->
 * The CGI URL gateway endpoint in the UPS module has been updated from HTTP to HTTPS in response to the disablement of the HTTP gateway by UPS in mid-2019. See [Magento User Guide](https://docs.magento.com/m2/ee/user_guide/shipping/ups.html) for a discussion of using the UPS shipment method. Shipping method configuration settings are described in the [Shipping methods] (https://docs.magento.com/m2/ee/user_guide/configuration/sales/shipping-methods.html#UPS).
@@ -915,7 +915,7 @@ has been changed to `<argument name="resourceStockItem" xsi:type="object">Magent
 ### Theme
 
 <!--- ENGCOM-3799-->
-* Logo files for transactional emails can now be successfully uploaded  using **Content** > **Configuration** > **Edit theme** > **Transactional Emails**. Previously, Magento did not upload the logo, but displayed this error, `A technical problem with the server created an error. Try again to continue what you were doing. If the problem persists, try again later.` *Fix submitted by [chaplynsky](https://github.com/chaplynsky) in pull request [20092](https://github.com/magento/magento2/pull/20092)*. [GitHub-20091](https://github.com/magento/magento2/issues/20091)
+* Logo files for transactional emails can now be successfully uploaded  using **Content** > **Configuration** > **Edit theme** > **Transactional Emails**. Previously, Magento did not upload the logo, but displayed this error, `A technical problem with the server created an error. Try again to continue what you were doing. If the problem persists, try again later.` *Fix submitted by chaplynsky in pull request [20092](https://github.com/magento/magento2/pull/20092)*. [GitHub-20091](https://github.com/magento/magento2/issues/20091)
 
 <!--- ENGCOM-4338-->
 * The horizontal scroll widget on the storefront search results page now works as expected with very long search strings. *Fix submitted by [Prince Patel](https://github.com/mageprince) in pull request [21360](https://github.com/magento/magento2/pull/21360)*. [GitHub-21359](https://github.com/magento/magento2/issues/21359)
@@ -962,7 +962,7 @@ has been changed to `<argument name="resourceStockItem" xsi:type="object">Magent
 * Magento now updates the `created_at` and `updated_at` columns in the `ui_bookmark` table as expected. *Fix submitted by [Shikha Mishra](https://github.com/shikhamis11) in pull request [22340](https://github.com/magento/magento2/pull/22340)*. [GitHub-18557](https://github.com/magento/magento2/issues/18557)
 
 <!--- ENGCOM-4775-->
-* Scrolling now works as expected in popup windows on devices running iOS. *Fix submitted by [Priti](https://github.com/priti2jcommerce) in pull request [21150](https://github.com/magento/magento2/pull/21150)*. [GitHub-21147](https://github.com/magento/magento2/issues/21147)
+* Scrolling now works as expected in popup windows on devices running iOS. *Fix submitted by priti2jcommerce in pull request [21150](https://github.com/magento/magento2/pull/21150)*. [GitHub-21147](https://github.com/magento/magento2/issues/21147)
 
 <!--- ENGCOM-3803-->
 * Magento now displays warning messages when validation fails on a form field that has a validation rule associated with it. Previously,  Magento displayed this error, `Javascript Error: Uncaught TypeError: msg.replace is not a function`, if validation failed on a form field. *Fix submitted by [Seth Daugherty](https://github.com/floorz) in pull request [20079](https://github.com/magento/magento2/pull/20079)*. [GitHub-20078](https://github.com/magento/magento2/issues/20078)
@@ -1007,7 +1007,7 @@ label, types and disabled, but the actual `file-content` was not replaced with t
 * The wishlist quantity field now has limits on both the type and number of characters that can be entered. Previously, you could enter both extremely large number and letters into this field, which resulted in undesirable, inaccurate changes in quantity.
 
 <!--- ENGCOM-3715-->
-* Magento now alerts you to the expected minimum quantity of product when you try to add a lesser product quantity to your shopping cart from the wishlist. *Fix submitted by [Khodu](https://github.com/khodu) in pull request [19653](https://github.com/magento/magento2/pull/19653)*. [GitHub-9155](https://github.com/magento/magento2/issues/9155)
+* Magento now alerts you to the expected minimum quantity of product when you try to add a lesser product quantity to your shopping cart from the wishlist. *Fix submitted by khodu in pull request [19653](https://github.com/magento/magento2/pull/19653)*. [GitHub-9155](https://github.com/magento/magento2/issues/9155)
 
 ### WYSIWYG
 

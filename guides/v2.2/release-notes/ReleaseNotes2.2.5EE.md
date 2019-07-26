@@ -118,7 +118,7 @@ In addition to security enhancements, this release contains the following functi
 
 ### General
 
-<!--- MAGETWO-85296 -->* The product repository now uses `store_id` (if set)  when saving attributes for an existing product. Previously, Magento always saved attribute values for an existing product at the default store level. *Fix submitted by [p-bystritsky](https://github.com/p-bystritsky) in pull request 967*. [GitHub-7720](https://github.com/magento/magento2/issues/7720), [GitHub-12395](https://github.com/magento/magento2/issues/12395), [GitHub-12186](https://github.com/magento/magento2/issues/12186)
+<!--- MAGETWO-85296 -->* The product repository now uses `store_id` (if set)  when saving attributes for an existing product. Previously, Magento always saved attribute values for an existing product at the default store level. *Fix submitted by p-bystritsky in pull request 967*. [GitHub-7720](https://github.com/magento/magento2/issues/7720), [GitHub-12395](https://github.com/magento/magento2/issues/12395), [GitHub-12186](https://github.com/magento/magento2/issues/12186)
 
 <!--- MAGETWO-82417 -->* The placement of Google Tag Manager code now follows the guidelines in the [Google Tag Manager Developer Guide](https://developers.google.com/tag-manager/devguide). (Previously, the Google Tag Manager code was inserted before the `dataLayer` variable was defined.)
 
@@ -163,7 +163,7 @@ In addition to security enhancements, this release contains the following functi
 {: .bs-callout-info }
 You can find Magento Shipping-specific release notes in [Magento Shipping Release Notes]({{page.baseurl}}/release-notes/ReleaseNotesMagentoShipping2.2.x.html).
 
-<!--- MAGETWO-84257 -->* Merchants can now choose whether to request and include tax information from UPS in the rate charged to the customer during checkout.  (This permits merchants  to pass on the tax costs to their customer as part of the overall shipping rate.) *Fix submitted by [gwharton](https://github.com/gwharton) in pull request 11707*. 
+<!--- MAGETWO-84257 -->* Merchants can now choose whether to request and include tax information from UPS in the rate charged to the customer during checkout.  (This permits merchants  to pass on the tax costs to their customer as part of the overall shipping rate.) *Fix submitted by gwharton in pull request 11707*. 
 
 ### Staging
 

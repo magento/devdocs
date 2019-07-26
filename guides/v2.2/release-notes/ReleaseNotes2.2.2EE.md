@@ -63,7 +63,7 @@ Looking for more information on these new features as well as many others? Check
 
 <!--- MAGETWO-82292 -->* The `htaccess` template now supports  `apache2.4` commands. *Fix submitted by [Jonas Hünig](https://github.com/jonashrem) in pull request 11459*. [GitHub-10810](https://github.com/magento/magento2/issues/10810) [GitHub-10810](https://github.com/magento/magento2/issues/10810)
 
-<!--- MAGETWO-82001 -->* `configVariables` now contains a variable for VAT numbers. *Fix submitted by [Jeroen](https://github.com/JeroenVanLeusden) in pull request 11486*.  [GitHub-10996](https://github.com/magento/magento2/issues/10996)
+<!--- MAGETWO-82001 -->* `configVariables` now contains a variable for VAT numbers. *Fix submitted by JeroenVanLeusden in pull request 11486*.  [GitHub-10996](https://github.com/magento/magento2/issues/10996)
 
 <!--- MAGETWO-82463 -->* We've fixed an issue with using the command line to install or remove `crontab`. Previously, installing or removing `crontab` via the command line appended `2>&1` to entries, even those not related to Magento. *Fix submitted by [@adrian-martinez-interactiv4](https://github.com/adrian-martinez-interactiv4) in pull request 11591*. [GitHub-11586](https://github.com/magento/magento2/issues/11586)
 
@@ -133,7 +133,7 @@ Looking for more information on these new features as well as many others? Check
 
 <!--- MAGETWO-81994 -->* Magento no longer sets the product price to zero when you use REST to add a product to an empty cart. Previously, Magento displayed an error when you used REST to populate an empty cart. *Fix submitted by [Peter Jaap Blaakmeer](https://github.com/peterjaap) in pull request 11458*. [GitHub-2991](https://github.com/magento/magento2/issues/2991), [GitHub-2991](https://github.com/magento/magento2/issues/2991)
 
-<!--- MAGETWO-81987 -->* You can now translate the placeholder text for the checkout password field.  *Fix submitted by [Jeroen](https://github.com/JeroenVanLeusden) in pull request 11493*.
+<!--- MAGETWO-81987 -->* You can now translate the placeholder text for the checkout password field.  *Fix submitted by JeroenVanLeusden in pull request 11493*.
 
 <!--- MAGETWO-83495 -->* Magento now redirects a user to the checkout page if he logs in after selecting the **Checkout** button. Previously,  a user was redirected to the store home page. *Fix submitted by [@p-bystritsky](https://github.com/p-bystritsky) in pull request 11876*. [GitHub-10834](https://github.com/magento/magento2/issues/10834)
 
@@ -153,7 +153,7 @@ Looking for more information on these new features as well as many others? Check
 
 <!--- MAGETWO-83024 -->* Magento now correctly handles all meta keywords and description in categories and in every product in locales that use non-Latin characters. [GitHub-10682](https://github.com/magento/magento2/issues/10682)
 
-<!--- MAGETWO-82851 -->* You can now include negative values in an XML export file and open the file with Office XML handler. Previously, the export files did not open correctly, and an Office XML handler error log was created.  *Fix submitted by [HausO](https://github.com/hauso) in pull request 11757*. [GitHub-11729](https://github.com/magento/magento2/issues/11729), [GitHub-11729](https://github.com/magento/magento2/issues/11729)
+<!--- MAGETWO-82851 -->* You can now include negative values in an XML export file and open the file with Office XML handler. Previously, the export files did not open correctly, and an Office XML handler error log was created.  *Fix submitted by hauso in pull request 11757*. [GitHub-11729](https://github.com/magento/magento2/issues/11729), [GitHub-11729](https://github.com/magento/magento2/issues/11729)
 
 <!--- MAGETWO-81977 -->* The Magento custom URL rewrite functionality now works as expected when you include redirection of Magento controllers. *Fix submitted by [Marc Rodriguez](https://github.com/mrodespin) in pull request 11470*. [GitHub-10231](https://github.com/magento/magento2/issues/10231), [GitHub-11469](https://github.com/magento/magento2/issues/11469), [GitHub-11471](https://github.com/magento/magento2/issues/11471)
 
@@ -166,7 +166,7 @@ Looking for more information on these new features as well as many others? Check
 <!--- MAGETWO-82665 -->* The TRAVIS_BRANCH variable is now surrounded by double-quotes instead of single-quotes . *Fix submitted by [@adrian-martinez-interactiv4](https://github.com/adrian-martinez-interactiv4) in pull request 11704*.
 
 
-<!--- MAGETWO-83035 -->* The doc block of `setValue` in FilterBuilder now reflects that the `setValue` method will accept an array. *Fix submitted by [bytecreation](https://github.com/ByteCreation) in pull request 11854*.
+<!--- MAGETWO-83035 -->* The doc block of `setValue` in FilterBuilder now reflects that the `setValue` method will accept an array. *Fix submitted by ByteCreation in pull request 11854*.
 
 <!--- MAGETWO-81515 -->* `htaccess` syntax now uses `Options -Indexes`  instead of `Options All -Indexes`. Previously, Magento used  `Options All -Indexes`, which resulted in Magento rendering a 500 error page because of high restrictions for Options overrides in shared hosting environments. *Fix submitted by [@Danny Verkade - Cream](https://github.com/dverkade) in pull request 11327*. [GitHub-10812](https://github.com/magento/magento2/issues/10812)
 
@@ -188,7 +188,7 @@ Looking for more information on these new features as well as many others? Check
 
 <!--- MAGETWO-84106 -->* We've removed the 30-second timeout limit for the session locking mechanism when Redis is used for session storage.
 
-<!--- MAGETWO-80912 -->* A typo in `sessionStorage` polyfill has been corrected.  *Fix submitted by [mszydlo](https://github.com/mszydlo) in pull request 11219*.
+<!--- MAGETWO-80912 -->* A typo in `sessionStorage` polyfill has been corrected.  *Fix submitted by mszydlo in pull request 11219*.
 
 #### Web API framework
 
@@ -212,7 +212,7 @@ Looking for more information on these new features as well as many others? Check
 
 <!--- MAGETWO-82431 -->* Magento now sets ISO-valid language code in the HTML header. *Fix submitted by [Cristian Sanclemente](https://github.com/crissanclick) in pull request 11561*. [GitHub-11540](https://github.com/magento/magento2/issues/11540)
 
-<!--- MAGETWO-82889 -->* Magento now validates CMS blocks before creating one.  *Fix submitted by [Thiago](https://github.com/thiagolima-bm) in pull request 11802*. [GitHub-8236](https://github.com/magento/magento2/issues/8236), [GitHub-4831](https://github.com/magento/magento2/issues/4831)
+<!--- MAGETWO-82889 -->* Magento now validates CMS blocks before creating one.  *Fix submitted by thiagolima-bm in pull request 11802*. [GitHub-8236](https://github.com/magento/magento2/issues/8236), [GitHub-4831](https://github.com/magento/magento2/issues/4831)
 
 <!--- MAGETWO-82537 -->* A custom field's name attribute no longer remains empty during form creation. *Fix submitted by [Paul Briscoe](https://github.com/briscoda) in pull request 11637*. [GitHub-9944](https://github.com/magento/magento2/issues/9944)
 
@@ -248,7 +248,7 @@ Looking for more information on these new features as well as many others? Check
 
 <!--- MAGETWO-82954 -->* You can now submit a form by pressing **Enter**. *Fix submitted by [Raul Encinas](https://github.com/bohemiorulo) in pull request 11827*. [GitHub-4696](https://github.com/magento/magento2/issues/4696)
 
-<!--- MAGETWO-81422 -->* The Store View switcher now works as expected. *Fix submitted by [Thiago](https://github.com/thiagolima-bm) in pull request 11337*. [GitHub-10908](https://github.com/magento/magento2/issues/10908), [GitHub-11211](https://github.com/magento/magento2/issues/11211)
+<!--- MAGETWO-81422 -->* The Store View switcher now works as expected. *Fix submitted by thiagolima-bm in pull request 11337*. [GitHub-10908](https://github.com/magento/magento2/issues/10908), [GitHub-11211](https://github.com/magento/magento2/issues/11211)
 
 <!--- MAGETWO-83490 -->*  We've removed object manager references as well as deprecated calls to `$messageManager`. *Fix submitted by [Atish Goswami](https://github.com/atishgoswami) in pull request 12061*.
 
@@ -376,7 +376,7 @@ You can find Magento Shipping-specific release notes in [Magento Shipping Releas
 
 <!--- MAGETWO-80191 -->* An invoice's `grand_total` and `base_grand_total` now match as expected. Previously, these values differed, leading to a rounding error when calculating the `base_grand_total`.
 
-<!--- MAGETWO-81673 -->* Magento now adds a customer note to a shipment invoice when the shipment is created by API and `appendComment` is set to **true**. *Fix submitted by [Jeroen](https://github.com/JeroenVanLeusden) in pull request 11383*. [GitHub-11207](https://github.com/magento/magento2/issues/11207)
+<!--- MAGETWO-81673 -->* Magento now adds a customer note to a shipment invoice when the shipment is created by API and `appendComment` is set to **true**. *Fix submitted by JeroenVanLeusden in pull request 11383*. [GitHub-11207](https://github.com/magento/magento2/issues/11207)
 
 <!--- MAGETWO-81830 -->* Shipping method radio buttons no longer have duplicate element IDs on the cart page. Previously, these radio buttons had duplicate IDs,  which made it impossible to select the second method. *Fix submitted by [Peter Jaap Blaakmeer](https://github.com/peterjaap) in pull request 11406*. [GitHub-10795](https://github.com/magento/magento2/issues/10795)
 
@@ -392,7 +392,7 @@ You can find Magento Shipping-specific release notes in [Magento Shipping Releas
 
 <!--- MAGETWO-72352 -->* You can now implement translations from themes (in contrast to translations from modules).
 
-<!--- MAGETWO-81970 -->* Previously missing translation strings have been added to the UI module. *Fix submitted by [Jeroen](https://github.com/JeroenVanLeusden) in pull request 11440*. [GitHub-5956](https://github.com/magento/magento2/issues/5956)
+<!--- MAGETWO-81970 -->* Previously missing translation strings have been added to the UI module. *Fix submitted by JeroenVanLeusden in pull request 11440*. [GitHub-5956](https://github.com/magento/magento2/issues/5956)
 
 <!--- MAGETWO-82651 -->* We've fixed an issue with the `<![CDATA[]]>` translate phrase in the `system.xml` file. [*Fix submitted by [Malyovanets Nickolas](https://github.com/nmalevanec) in pull request 11675*. [GitHub-7767](https://github.com/magento/magento2/issues/7767)
 

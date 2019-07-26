@@ -260,7 +260,7 @@ This release contains hundreds of fixes and enhancements.
 
 <!--- 69230-->* Magento no longer truncates bill-to names and shio-to names to 20 characters in the Admin.  *Fix submitted by community member [Isolde](https://github.com/SolsWebdesign){: target="_blank"} in pull request [9654](https://github.com/magento/magento2/pull/9654){: target="_blank"}.*
 
-<!--- 69375-->* You can now delete the last item in your cart when the Minimum Order setting is enabled. *Fix submitted by community member [storbahn](https://github.com/storbahn){: target="_blank"} in pull request [9714](https://github.com/magento/magento2/pull/9714){: target="_blank"}.*
+<!--- 69375-->* You can now delete the last item in your cart when the Minimum Order setting is enabled. *Fix submitted by community member storbahn in pull request [9714](https://github.com/magento/magento2/pull/9714){: target="_blank"}.*
 
 <!--- 69379-->* You can now create unique checkbox IDs for the Terms and Conditions part of the checkout process. *Fix submitted by community member [Bernhard](https://github.com/bka){: target="_blank"} in pull request [9717](https://github.com/magento/magento2/pull/9717){: target="_blank"}.*
 
@@ -393,7 +393,7 @@ This release contains hundreds of fixes and enhancements.
 <!---70256 -->* You can now create an `etc/view.xml` file containing an `images` tag with an attribute `module`. *Fix submitted by community member [Marius Strajeru](https://github.com/tzyganu){: target="_blank"} in pull request [10052](https://github.com/magento/magento2/pull/10052){: target="_blank"}.*
 
 
-<!--- 70345-->* Magento now displays the Category selection UI under Conditions when you select a rule for editing. *Fix submitted by community member [duckchip](https://github.com/duckchip){: target="_blank"} in pull request [10094](https://github.com/magento/magento2/pull/10094){: target="_blank"}.*
+<!--- 70345-->* Magento now displays the Category selection UI under Conditions when you select a rule for editing. *Fix submitted by community member duckchip in pull request [10094](https://github.com/magento/magento2/pull/10094){: target="_blank"}.*
 
 <!--- 63062-->* Magento now displays the correct image when you switch between a configurable product's options. Previously, Magento loaded product images from a different product.
 
@@ -527,7 +527,7 @@ This release contains hundreds of fixes and enhancements.
 <!---71257 -->* The ability to disable module output has been removed from Admin. If you disabled module output from Admin in a previous release, you must manually configure these settings. See [Disable module output]({{ page.baseurl }}/config-guide/config/disable-module-output.html) for details.
 
 
-<!---69868 -->* Static tests run in a Windows environment no longer fail due to file path mismatches. *Fix submitted by community member [Barbazul](https://github.com/barbazul){: target="_blank"} in pull request [9902](https://github.com/magento/magento2/pull/9902){: target="_blank"}.*
+<!---69868 -->* Static tests run in a Windows environment no longer fail due to file path mismatches. *Fix submitted by community member barbazul in pull request [9902](https://github.com/magento/magento2/pull/9902){: target="_blank"}.*
 
 <!---63154 -->* Magento now displays special characters in store names in email subject lines. Previously, special characters in the store name were converted to numerical character references in the email subject field. [GitHub-8094](https://github.com/magento/magento2/issues/8094)
 
@@ -596,7 +596,7 @@ Thanks to our hardworking Magento Open Source community members for the followin
 
 <!--- 69591-->* We’ve replaced `Zend_Log` with `Psr\Log\LoggerInterface`. *Fix submitted by community member [Timon de Groot](https://github.com/tdgroot){: target="_blank"} in pull request [9285](https://github.com/magento/magento2/pull/9285){: target="_blank"}.*
 
-<!--- 68770-->* Magento no longer throws a `Zend_Db_Statement_Exception` when a user opens an empty Category page. *Fix submitted by community member [adrian-martinez-interactiv4](https://github.com/adrian-martinez-interactiv4){: target="_blank"} in pull request [9400](https://github.com/magento/magento2/pull/9400){: target="_blank"}.*
+<!--- 68770-->* Magento no longer throws a `Zend_Db_Statement_Exception` when a user opens an empty Category page. *Fix submitted by community member adrian-martinez-interactiv4 in pull request [9400](https://github.com/magento/magento2/pull/9400){: target="_blank"}.*
 
 ### General fixes
 
@@ -684,11 +684,11 @@ Thanks to our hardworking Magento Open Source community members for the followin
 
 <!--- 65000-->* Fixed the location of the `wishlist.js` file. *Fix submitted by community member [Koen V.](https://github.com/koenner01){: target="_blank"} in pull request [8633](https://github.com/magento/magento2/pull/8633){: target="_blank"}.*
 
-<!--- 66506-->* You can no longer download products  after you’ve set order state to `STATE_CANCELED`.  *Fix submitted by community member [nazarpadalka](https://github.com/nazarpadalka){: target="_blank"} in pull request [8917](https://github.com/magento/magento2/pull/8917){: target="_blank"}.*
+<!--- 66506-->* You can no longer download products  after you’ve set order state to `STATE_CANCELED`.  *Fix submitted by community member nazarpadalka in pull request [8917](https://github.com/magento/magento2/pull/8917){: target="_blank"}.*
 
-<!--- 66232-->* Fixed a typo in the Pull Request Template. *Fix submitted by community member [tomislavsantek](https://github.com/tomislavsantek){: target="_blank"} in pull request [8908](https://github.com/magento/magento2/pull/8908){: target="_blank"}.*
+<!--- 66232-->* Fixed a typo in the Pull Request Template. *Fix submitted by community member tomislavsantek in pull request [8908](https://github.com/magento/magento2/pull/8908){: target="_blank"}.*
 
-<!--- 66694-->* You now receive an error message as expected if you try to submit a product review while not logged in. *Fix submitted by community member [quienti](https://github.com/quienti){: target="_blank"} in pull request [9001](https://github.com/magento/magento2/pull/9001){: target="_blank"}.*
+<!--- 66694-->* You now receive an error message as expected if you try to submit a product review while not logged in. *Fix submitted by community member quienti in pull request [9001](https://github.com/magento/magento2/pull/9001){: target="_blank"}.*
 
 <!--- 67042-->* Fixed grammar error in the customer dashboard. *Fix submitted by community member [Petar Sambolek](https://github.com/sambolek){: target="_blank"} in pull request [9080](https://github.com/magento/magento2/pull/9080){: target="_blank"}.*
 
@@ -703,9 +703,9 @@ Thanks to our hardworking Magento Open Source community members for the followin
 
 <!--- 69886-->* We’ve fixed the cron timestamp method. *Fix submitted by community member Anton Evers in pull request [9943](https://github.com/magento/magento2/pull/9943){: target="_blank"}.*
 
-<!--- 69373-->* You can now save customers with unique attributes. *Fix submitted by community member [storbahn](https://github.com/storbahn){: target="_blank"} in pull request [9712](https://github.com/magento/magento2/pull/9712){: target="_blank"}.*
+<!--- 69373-->* You can now save customers with unique attributes. *Fix submitted by community member storbahn in pull request [9712](https://github.com/magento/magento2/pull/9712){: target="_blank"}.*
 
-<!--- 69555-->* The `Magento_Framework/View/Layout/etc/elements.xsd` file `blockReferenceType` definition now allows for the optional argument template. *Fix submitted by community member [jissereitsma](https://github.com/jissereitsma){: target="_blank"} in pull request [9772](https://github.com/magento/magento2/pull/9772){: target="_blank"}.*
+<!--- 69555-->* The `Magento_Framework/View/Layout/etc/elements.xsd` file `blockReferenceType` definition now allows for the optional argument template. *Fix submitted by community member jissereitsma in pull request [9772](https://github.com/magento/magento2/pull/9772){: target="_blank"}.*
 
 <!--- 59135-->*  Customer sessions for different customers are no longer shared on installations on multiple websites. [GitHub-4842](https://github.com/magento/magento2/issues/4842), [GitHub-6468](https://github.com/magento/magento2/issues/6468)
 
@@ -751,7 +751,7 @@ Thanks to our hardworking Magento Open Source community members for the followin
 
 
 
-<!--- 69153-->* We’ve fixed inconsistent gift options checkbox labels in  both the  CSV file (`app\code\Magento\GiftMessage\i18n\en_US.csv`) and PHTML file (`app\code\Magento\GiftMessage\view\frontend\templates\inline.phtml`). *Fix submitted by community member [vpiyappan](https://github.com/vpiyappan){: target="_blank"} in pull request [9421](https://github.com/magento/magento2/pull/9421){: target="_blank"}.*
+<!--- 69153-->* We’ve fixed inconsistent gift options checkbox labels in  both the  CSV file (`app\code\Magento\GiftMessage\i18n\en_US.csv`) and PHTML file (`app\code\Magento\GiftMessage\view\frontend\templates\inline.phtml`). *Fix submitted by community member vpiyappan in pull request [9421](https://github.com/magento/magento2/pull/9421){: target="_blank"}.*
 
 ### Gift wrapping
 
@@ -1012,7 +1012,7 @@ Thanks to our hardworking Magento Open Source community members for the followin
 
 <!--- 69750-->* Magento now successfully completes checkout when a custom address attribute is added. Previously, an error occurred during checkout when the user added a required custom address attribute.
 
-<!--- 66959-->* Removed a duplicate method call to the `getLinkField` method in the `Magento\Catalog\Model\ResourceModel\Category` class. *Fixed by [will-b](https://github.com/will-b){: target="_blank"} in pull request [9057](https://github.com/magento/magento2/pull/9057){: target="_blank"}.*
+<!--- 66959-->* Removed a duplicate method call to the `getLinkField` method in the `Magento\Catalog\Model\ResourceModel\Category` class. *Fixed by will-b in pull request [9057](https://github.com/magento/magento2/pull/9057){: target="_blank"}.*
 
 <!--- 54412-->* During order creation, you can now continue with a payment after clicking the **Back** button to the payment selection window. [GitHub-4580](https://github.com/magento/magento2/issues/4580)
 

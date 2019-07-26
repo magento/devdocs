@@ -70,7 +70,7 @@ In addition to security enhancements, this release contains the following functi
 * Fixed alignment of reload CAPTCHA icon on the Admin  login  page. *Fix submitted by [Pratik Oza](https://github.com/mage2pratik) in pull request [21162](https://github.com/magento/magento2/pull/21162)*. [GitHub-20911](https://github.com/magento/magento2/issues/20911)
 
 <!-- ENGCOM-4768 -->
-* The web setup wizard now uses the correct base path to check if the setup folder exists. Previously, the wizard checked `base/data/web/magento2/pubsetup` instead of `/data/web/magento2/pub/setup`. *Fix submitted by [Jeroen](https://github.com/JeroenVanLeusden) in pull request [22369](https://github.com/magento/magento2/pull/22369)*. [GitHub-11892](https://github.com/magento/magento2/issues/11892), [GitHub-7623](https://github.com/magento/magento2/issues/7623)
+* The web setup wizard now uses the correct base path to check if the setup folder exists. Previously, the wizard checked `base/data/web/magento2/pubsetup` instead of `/data/web/magento2/pub/setup`. *Fix submitted by JeroenVanLeusden in pull request [22369](https://github.com/magento/magento2/pull/22369)*. [GitHub-11892](https://github.com/magento/magento2/issues/11892), [GitHub-7623](https://github.com/magento/magento2/issues/7623)
 
 ### Bundle products
 
@@ -182,7 +182,7 @@ In addition to security enhancements, this release contains the following functi
 <!-- ENGCOM-4514 -->
 * We have replaced the incorrect proxy `resourceStock` argument for the `\Magento\CatalogInventory\Observer\UpdateItemsStockUponConfigChangeObserver` in `di.xml`. (Specifically, `<argument name="resourceStock" xsi:type="object">Magento\CatalogInventory\Model\ResourceModel\Stock\Proxy</argument>`
  with the following argument:
-  `<argument name="resourceStockItem" xsi:type="object">Magento\CatalogInventory\Model\ResourceModel\Stock\Item\Proxy</argument>`. ) *Fix submitted by [Vitaliy](https://github.com/VitaliyBoyko) in pull request [21793](https://github.com/magento/magento2/pull/21793)*. [GitHub-167](https://github.com/magento/magento2/issues/167)
+  `<argument name="resourceStockItem" xsi:type="object">Magento\CatalogInventory\Model\ResourceModel\Stock\Item\Proxy</argument>`. ) *Fix submitted by VitaliyBoyko in pull request [21793](https://github.com/magento/magento2/pull/21793)*. [GitHub-167](https://github.com/magento/magento2/issues/167)
 
 <!-- MAGETWO-98794 --> 
 * You can now add a product to an order by using the **Add products by SKU** button. Previously, when you tried to add a product this way, Magento displayed this message, `The SKU was not found in the catalog.
@@ -457,7 +457,7 @@ In addition to security enhancements, this release contains the following functi
 ### General
 
 <!-- ENGCOM-2667 -->
-* Sorting on stores from the Admin (**Stores** > **All Stores**) now works as expected. *Fix submitted by [afirlejczyk](https://github.com/afirlejczyk) in pull request [17371](https://github.com/magento/magento2/pull/17371)*. [GitHub-7283](https://github.com/magento/magento2/issues/7283)
+* Sorting on stores from the Admin (**Stores** > **All Stores**) now works as expected. *Fix submitted by afirlejczyk in pull request [17371](https://github.com/magento/magento2/pull/17371)*. [GitHub-7283](https://github.com/magento/magento2/issues/7283)
 
 <!-- ENGCOM-4548 -->
 * Product attribute labels are no longer translated but maintain their store-specific valu *Fix submitted by [Pratik Oza](https://github.com/mage2pratik) in pull request [21864](https://github.com/magento/magento2/pull/21864)*. [GitHub-21750](https://github.com/magento/magento2/issues/21750)
@@ -520,7 +520,7 @@ In addition to security enhancements, this release contains the following functi
 ### Newsletter
 
 <!-- ENGCOM-4303 -->
-* The newsletter subscription input box now displays all text in mobile view. *Fix submitted by [Dipti](https://github.com/dipti2jcommerce) in pull request [20370](https://github.com/magento/magento2/pull/20370)*. [GitHub-20163](https://github.com/magento/magento2/issues/20163)
+* The newsletter subscription input box now displays all text in mobile view. *Fix submitted by dipti2jcommerce in pull request [20370](https://github.com/magento/magento2/pull/20370)*. [GitHub-20163](https://github.com/magento/magento2/issues/20163)
 
 <!-- MAGETWO-96957 -->
 * You can now change pages at an expected speed from the Admin newsletter subscribers page (**Marketing** > **Communications** > **Newsletter Subscribers**). Previously, it took excessively long to move off this page
@@ -599,7 +599,7 @@ In addition to security enhancements, this release contains the following functi
 *  Corrected misalignment of page elements on the Admin product reorder page. *Fix submitted by [Amol Chaudhari](https://github.com/amol2jcommerce) in pull request [21241](https://github.com/magento/magento2/pull/21241)*. [GitHub-20919](https://github.com/magento/magento2/issues/20919)
 
 <!-- ENGCOM-3968 -->
-* The `transportBuilderByStore` class has been removed. Previously, this class was the cause of undesired repeat emails. *Fix submitted by [gwharton](https://github.com/gwharton) in pull request [18472](https://github.com/magento/magento2/pull/18472)*. [GitHub-11740](https://github.com/magento/magento2/issues/11740), [GitHub-14945](https://github.com/magento/magento2/issues/14945), [GitHub-14952](https://github.com/magento/magento2/issues/14952), [GitHub-16355](https://github.com/magento/magento2/issues/16355)
+* The `transportBuilderByStore` class has been removed. Previously, this class was the cause of undesired repeat emails. *Fix submitted by gwharton in pull request [18472](https://github.com/magento/magento2/pull/18472)*. [GitHub-11740](https://github.com/magento/magento2/issues/11740), [GitHub-14945](https://github.com/magento/magento2/issues/14945), [GitHub-14952](https://github.com/magento/magento2/issues/14952), [GitHub-16355](https://github.com/magento/magento2/issues/16355)
 
 <!-- ENGCOM-4403 -->
 * You can now successfully re-order a virtual product. *Fix submitted by [Shikha Mishra](https://github.com/shikhamis11) in pull request [21513](https://github.com/magento/magento2/pull/21513)*. [GitHub-15059](https://github.com/magento/magento2/issues/15059)
@@ -608,7 +608,7 @@ In addition to security enhancements, this release contains the following functi
 * You can now change customer groups when creating a new customer during order creation on the Admin. *Fix submitted by [Amol Chaudhari](https://github.com/amol2jcommerce) in pull request [21239](https://github.com/magento/magento2/pull/21239)*. [GitHub-6162](https://github.com/magento/magento2/issues/6162)
 
 <!-- ENGCOM-4285 -->
-* Fixed display of the Luma theme My Account Order status tabs in mobile view. *Fix submitted by [suryakant-krish](https://github.com/suryakant-krish) in pull request [21250](https://github.com/magento/magento2/pull/21250)*. [GitHub-21070](https://github.com/magento/magento2/issues/21070)
+* Fixed display of the Luma theme My Account Order status tabs in mobile view. *Fix submitted by suryakant-krish in pull request [21250](https://github.com/magento/magento2/pull/21250)*. [GitHub-21070](https://github.com/magento/magento2/issues/21070)
 
 ### Sales rule
 
@@ -644,7 +644,7 @@ In addition to security enhancements, this release contains the following functi
 * The tracking pop-up window now displays an accurate value for the delivery date for FedEx shipments in transit.
 
 <!-- ENGCOM-3602 -->
-* Magento now provides quotes for DHL shipments when **DHL Content Type** is set to **Non Documents**.  *Fix submitted by [gwharton](https://github.com/gwharton) in pull request [19488](https://github.com/magento/magento2/pull/19488)*. [GitHub-19485](https://github.com/magento/magento2/issues/19485)
+* Magento now provides quotes for DHL shipments when **DHL Content Type** is set to **Non Documents**.  *Fix submitted by gwharton in pull request [19488](https://github.com/magento/magento2/pull/19488)*. [GitHub-19485](https://github.com/magento/magento2/issues/19485)
 
 <!-- ENGCOM-4361 -->
 * If you retrieve an order, and then use the `getShippingMethod` as an object function to retrieve the shipping method, Magento now returns `null` if no shipping method has been defined. Previously, this function returned an undefined index error if a shipping method was not available. *Fix submitted by [Mahesh Singh](https://github.com/maheshWebkul721) in pull request [20866](https://github.com/magento/magento2/pull/20866)*. [GitHub-20380](https://github.com/magento/magento2/issues/20380)
