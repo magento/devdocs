@@ -1,1 +1,0 @@
-../../../v2.2/install-gde/tutorials/create-patch-from-commit.md

@@ -439,8 +439,5 @@ pages:
 
     - label: How Tos
       children:
-        - label: Create a patch from a GitHub commit
-          url: /install-gde/tutorials/create-patch-from-commit.html
-
         - label: Modify docroot to improve security
           url: /install-gde/tutorials/change-docroot-to-pub.html
