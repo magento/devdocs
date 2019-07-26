@@ -59,11 +59,16 @@ access:
 
 ### `relationships`
 
-Defines the service mapping in your application.
+Defines the service mapping in the application.
 
-The key of a relationship is available to the application in the `MAGENTO_CLOUD_RELATIONSHIPS` environment variable. The key value is in the form `<service-name>:<endpoint-name>`, where `<service-name>` comes from `.magento/services.yaml` and  `<endpoint-name>` should be the same as the value of `type`  declared in that same file.
+The relationship `name` is available to the application in the `MAGENTO_CLOUD_RELATIONSHIPS` environment variable. The `<service-name>:<endpoint-name>` represent the name and type values defined in the `.magento/services.yaml` file.
 
-Example of valid options are:
+```yaml
+relationships:
+    <name>: "<service-name>:<endpoint-name>"
+```
+
+The following is an example of the default relationships:
 
 ```yaml
 relationships:
