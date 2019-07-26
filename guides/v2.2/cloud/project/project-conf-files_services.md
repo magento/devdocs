@@ -89,7 +89,13 @@ mysql:
 
 ### `disk`
 
-The `disk` value specifies the size of the persistent disk storage (in MB) to allocate to the service. Services that use persistent storage must provide a disk value. A service that uses memory instead of persistent storage, such as Redis, does not require a disk value.
+The `disk` value specifies the size of the persistent disk storage (in MB) to allocate to the service. Services that use persistent storage, such as mySQL, must provide a disk value. Services that use memory instead of persistent storage, such as Redis, do not require a disk value.
+
+```yaml
+mysql:
+    type: mysql:10.2
+    disk: 2048
+```
 
 The current default storage amount per project is 5GB, or 5120MB. You can distribute this amount between your application and each of its services.
 
