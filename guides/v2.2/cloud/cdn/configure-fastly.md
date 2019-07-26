@@ -123,7 +123,11 @@ Fastly caching services do not work until you complete the initial upload of the
 ## Custom configuration
 
 {: .bs-callout-info}
+<<<<<<< HEAD
 Before adding [custom](#custom-configuration) or advanced configuration settings like [updating purge settings]({{ page.baseurl and configuring [Fastly image optimization]({{ page.baseurl }}/cloud/cdn/fastly-image-optimization.html) (Fastly IO), [verify]({{ page.baseurl }}/cloud/cdn/trouble-fastly.html) that the Fastly caching service works with the default configuration.
+=======
+Before adding [custom](#custom-configuration) or advanced configuration settings like [updating purge settings]({{ page.baseurl and configuring [Fastly image optimization]({{ page.baseurl }}/cloud/cdn/fastly-image-optimization.html) ((Fastly IO)), [verify]({{ page.baseurl }}/cloud/cdn/trouble-fastly.html) that the Fastly caching service works with the default configuration.
+>>>>>>> - Cleaned up the Fastly module upgrade procedure
 
 Configure the following features and enable additional [configuration options](https://github.com/fastly/fastly-magento2/blob/master/Documentation/CONFIGURATION.md#further-configuration-options) as needed:
 
@@ -324,6 +328,7 @@ DNS provider. The domain validation process is executed by Fastly.
 For details on this TXT record, see the Fastly [DNS TXT record validation](https://docs.fastly.com/guides/securing-communications/domain-validation-for-tls-certificates#dns-text-record-verification).
 
 ## Upgrade the Fastly module {#upgrade}
+<<<<<<< HEAD
 
 Fastly updates the Fastly CDN for Magento 2 module to resolve issues, increase performance, and
 provide new features. You can find information about the latest release in the Fastly
@@ -350,6 +355,34 @@ When you upgrade the Fastly module, you get a new version of the default Fastly 
 
 After you verify Fastly services on the Staging site, repeat the upgrade process in the Production environment.
 
+=======
+
+Fastly updates the Fastly CDN for Magento 2 module to resolve issues, increase performance, and
+provide new features. You can find information about the latest release in the Fastly
+[Fastly release notes](https://github.com/fastly/fastly-magento2/releases) on GitHub.
+
+We recommend that you upgrade to the latest version of the Fastly module. See [Upgrade an extension]({{ page.baseurl }}/cloud/howtos/install-components.html):
+
+When you upgrade the Fastly module, you get a new version of the default Fastly VCL code that enables the integration with {{ site.data.var.ece }}. You must upload the new VCL code to apply the changes to the Fastly service configuration for your Staging and Production environments.
+
+#### To upgrade the Fastly module
+
+1. In your local Integration environment, use the following module information to [upgrade the Fastly module]({{ page.baseurl }}/cloud/howtos/install-components.html#update) to the latest version. The information 
+
+   ```text
+   module name: fastly/magento2
+   repository: https://github.com/fastly/fastly-magento2.git
+   ```
+
+1. Push your updates to the Staging environment.
+
+1. Log in to the Magento Admin UI for your Staging environment to [upload the VCL code](#upload-vcl-snippets). 
+
+1. [Verify Fastly services]({{ page.baseurl }}/cloud/cdn/trouble-fastly.html#verify-or-debug-fastly-services) on the {{ site.data.var.ee }} Staging site.
+
+After you verify Fastly services on the Staging site, repeat the upgrade process in the Production environment.
+
+>>>>>>> - Cleaned up the Fastly module upgrade procedure
 {: .bs-callout-warning}
 If you have uploaded a custom VCL snippet that has the same name as a default snippet,
 you may need to verify and update those snippets after you upgrade the Fastly module. We do not recommend replacing
