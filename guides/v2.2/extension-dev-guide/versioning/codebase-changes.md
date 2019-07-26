@@ -146,9 +146,11 @@ Use this table to understand what changes Magento can make and which version num
 | | Index added/changed| PATCH|
 | | Foreign key added| MAJOR|
 | | Temporary tables (both MySQL temporary and permanent `_tmp` tables) added/removed/changed | PATCH|
-| | Engine changed | MAJOR|
-| **Messages**| translatable phrase modified| MAJOR|
-| | translatable phrase added| MAJOR|
-| | translatable phrase removed| PATCH|
+| | Engine changed for permanent tables | MAJOR|
+| | Engine changed for temporary tables | MINOR|
+| **Messages**| Translatable phrase modified| MINOR|
+| | Translatable phrase added| MINOR|
+| | Translatable phrase removed| PATCH|
+| | Translation modified | PATCH|
   
 [private]: http://php.net/manual/en/language.oop5.visibility.php
