@@ -146,7 +146,7 @@ to the origin.
 The default Fastly VCL code specifies default values for Origin shielding and timeouts for your {{ site.data.var.ece }} sites. We recommend using the default values. In some case, you might need to modify the default values. For example, if you are getting a lot of time to first byte (TTFB) errors, you might need to adjust the _first byte timeout_ value.
 
 {:.bs-callout-info}
-If you need to integrate additional backends into your site such as a backend to serve blog content from a 
+If you need to integrate additional backends into your site, such as a backend to serve blog content from a 
 [Wordpress]({{ page.baseurl }}/cloud/cdn/fastly-vcl-wordpress.html) site, you must customize your Fastly service configuration to add the backend and handle the redirects from your {{ site.data.var.ee }} store to the Wordpress backend. See the [Fastly Edge Modules - Other CMS/Backend integration](https://github.com/fastly/fastly-magento2/blob/master/Documentation/Guides/Edge-Modules/EDGE-MODULE-OTHER-CMS-INTEGRATION.md)topic in the Fastly module documentation.
 
 **To review the backend settings configuration:**
