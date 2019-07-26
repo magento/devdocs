@@ -119,7 +119,7 @@ Steps can include four types of classes:
 - Delta delivering
 
 {: .bs-callout-info }
-Refer to [Configuration]({{ page.baseurl }}/migration/migration-tool-internal-spec.html#configuration), [Step internals]({{ page.baseurl }}/migration/migration-tool-internal-spec.html#step-internals), [Stages]({{ page.baseurl }}/migration/migration-tool-internal-spec.html#stages) and [Running modes]({{ page.baseurl }}/migration/migration-tool-internal-spec.html#running-modes) for more information.
+Refer to [Configuration]({{ page.baseurl }}/migration/migration-tool-internal-spec.html#configuration), [Step internals]({{ page.baseurl }}/migration/migration-tool-internal-spec.html#step-internals), [Stages]({{ page.baseurl }}/migration/migration-tool-internal-spec.html#step-stages) and [Running modes]({{ page.baseurl }}/migration/migration-tool-internal-spec.html#running-modes) for more information.
 
 Complex SQL queries can be assembled inside these classes to fetch data from the three tables and migrate into a single table. Also, note that these tables should be "ignored" in the [Map Step]({{ page.baseurl }}/migration/migration-tool-internal-spec.html#map-step) because it scans all existing tables and tries to migrate the data unless it is in the `<ignore>` tag of the `map.xml` file.
 
