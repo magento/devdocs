@@ -61,15 +61,15 @@ access:
 
 Defines the service mapping in your application.
 
-The left-hand side is the name of the relationship as it will be exposed to the application in the `MAGENTO_CLOUD_RELATIONSHIPS` environment variable. The right-hand side is in the form `<service-name>:<endpoint-name>`, where `<service-name>` comes from `.magento/services.yaml` and  `<endpoint-name>` should be the same as the value of `type`  declared in that same file.
+The key of a relationship is available to the application in the `MAGENTO_CLOUD_RELATIONSHIPS` environment variable. The key value is in the form `<service-name>:<endpoint-name>`, where `<service-name>` comes from `.magento/services.yaml` and  `<endpoint-name>` should be the same as the value of `type`  declared in that same file.
 
 Example of valid options are:
 
-```
-database: "mysql:mysql"
-database2: "mysql2:mysql"
-cache: "arediscache:redis"
-search: "searchengine:solr"
+```yaml
+relationships:
+    database: "mysql:mysql"
+    redis: "redis:redis"
+    elasticsearch: "elasticsearch:elasticsearch"
 ```
 
 See [Services]({{page.baseurl}}/cloud/project/project-conf-files_services.html) for a full list of currently supported service types and endpoints.
