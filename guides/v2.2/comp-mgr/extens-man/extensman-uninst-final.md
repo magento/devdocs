@@ -1,10 +1,6 @@
 ---
 group: software-update-guide
-subgroup: 06_UseExtMan
 title: Step 4. Uninstall
-menu_title: Step 4. Uninstall
-menu_node:
-menu_order: 100
 functional_areas:
   - Upgrade
 redirect_from: 
