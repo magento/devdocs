@@ -17,9 +17,9 @@ There are two types of patches:
 
 Patch (or diff) files are text files that note:
 
-* The file(s) to be changed.
-* The line number to begin the change and the number of lines to be changed.
-* The new code to swap in.
+- The file(s) to be changed.
+- The line number to begin the change and the number of lines to be changed.
+- The new code to swap in.
 
 When the [patch][] program is run, this file is read in and the specified changes are made to the file(s).
 
@@ -27,26 +27,9 @@ When the [patch][] program is run, this file is read in and the specified change
 
 You can find official Magento patches in the [Magento Security Center][]. Follow the instructions on the page to download the patch file, depending on your version and installation type.
 
-## Use the command line to apply a patch
-
-1. Upload the local file into the `<Magento_root>` on the server using FTP, SFTP, SSH or your normal transport method.  
-1. Login to the server as the [Magento admin user][] and verify the file is in the correct directory.
-1. In the command line interface, run the following commands according to the patch extension:
-
-        patch < patch_file_name.patch
-
-   The command assumes the file to be patched is located relative to the patch file.
-
-{: .bs-callout-info}
-If the command line shows: `File to patch:`, it means it cannot locate the intended file, even if the path seems correct.
-In the box displayed in the command line terminal, the first line shows the file to be patched.
-Copy the file path and paste it into the `File to patch:` prompt and press `Enter` and the patch should complete.
-
-1. For the changes to be reflected, refresh the cache in the Admin under **System** > Tools > **Cache Management**.
-
-Alternatively, the patch can be applied locally with the same command, then committed and pushed normally.
-
 ## Custom patches
+
+Sometimes it takes a while for the Magento Engineering Team to include a bug fix made on GitHub in a Magento 2 Composer release. In the meantime, you can create a patch from GitHub and use the [`cweagans/composer-patches`][1] plugin to apply it to your Composer-based Magento 2 installation.
 
 There are many ways to create patch files. The example below focuses on creating a patch from a known commit.
 
@@ -77,14 +60,38 @@ index c8a6fef58d31..7d01c195791e 100644
             },
 ```
 
-### Use Composer to apply a custom patch
+## Applying patches
 
-Sometimes it takes a while for the Magento Engineering Team to include a bug fix made on GitHub in a Magento 2 Composer release. In the meantime, you can create a patch from GitHub and use the [`cweagans/composer-patches`][1] plugin to apply it to your Composer-based Magento 2 installation.
+There are two ways to apply patches:
+
+- Using the command line
+- Using Composer
+
+### Command line
+
+1. Upload the local file into the `<Magento_root>` on the server using FTP, SFTP, SSH or your normal transport method.  
+1. Login to the server as the [Magento admin user][] and verify the file is in the correct directory.
+1. In the command line interface, run the following commands according to the patch extension:
+
+   ```bash
+   patch < patch_file_name.patch
+   ```
+
+   The command assumes the file to be patched is located relative to the patch file.
+
+   {: .bs-callout-info}
+   If the command line shows: `File to patch:`, it means it cannot locate the intended file, even if the path seems correct. In the box displayed in the command line terminal, the first line shows the file to be patched. Copy the file path and paste it into the `File to patch:` prompt and press `Enter` and the patch should complete.
+
+1. For the changes to be reflected, refresh the cache in the Admin under **System** > Tools > **Cache Management**.
+
+Alternatively, the patch can be applied locally with the same command, then committed and pushed normally.
+
+### Composer
 
 {:.bs-callout-warning}
 Always perform comprehensive testing before deploying any unreleased patch.
 
-To apply a custom patch:
+To apply a custom patch using Composer:
 
 1. Open your command line application and navigate to your project directory.
 1. Add the `cweagans/composer-patches` plugin to the `composer.json` file.
