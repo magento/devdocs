@@ -916,7 +916,7 @@ See [Magento Security Center](https://magento.com/security/patches/magento-2.2.7
 <!---MAGETWO-86645 -->* `Zend_Json` has been removed from the JSON result controller. [GitHub-9236](https://github.com/magento/magento2/issues/9236)
 
 
-<!---MAGETWO-86568 -->* `\Magento\TestFramework\Annotation\AppArea` no longer breaks when it encounters valid values. *Fix submitted by [Malyovanets Nickolas](https://github.com/nmalevanec) in pull request [12992](https://github.com/magento-engcom/magento2ce/pull/1194)*. [GitHub-2907](https://github.com/magento/magento2/issues/2907)
+<!---MAGETWO-86568 -->* `\Magento\TestFramework\Annotation\AppArea` no longer breaks when it encounters valid values. *Fix submitted by [Malyovanets Nickolas](https://github.com/nmalevanec) in pull request 12992*. [GitHub-2907](https://github.com/magento/magento2/issues/2907)
  
 
 <!---MAGETWO-86299 -->* `Zend_Service` has been upgraded from v.1 to v.2, including these specific changes: 
@@ -1354,7 +1354,7 @@ See [Magento Security Center](https://magento.com/security/patches/magento-2.2.7
 
 <!---MAGETWO-86044-->* Grouped products are now imported correctly. Previously, after import, simple products were no longer associated with their grouped products.  *Fix submitted by [Pieter Cappelle](https://github.com/PieterCappelle) in pull request [12853](https://github.com/magento/magento2/pull/12853)*. [GitHub-12793](https://github.com/magento/magento2/issues/12793)
 
-<!---MAGETWO-86884-->* Error reporting for product image import has been improved.   *Fix submitted by [Malyovanets Nickolas](https://github.com/nmalevanec) in pull request [1201](https://github.com/magento-engcom/magento2ce/pull/1201)*. [GitHub-4711](https://github.com/magento/magento2/issues/4711)
+<!---MAGETWO-86884-->* Error reporting for product image import has been improved.   *Fix submitted by [Malyovanets Nickolas](https://github.com/nmalevanec) in pull request 1201*. [GitHub-4711](https://github.com/magento/magento2/issues/4711)
 
 <!---ENGCOM-732 -->* You can now set `selection_can_change_qty` during the export or import of a bundle product with properties. *Fix submitted by [Adam Paterson](https://github.com/adam-paterson) in pull request [100](https://github.com/magento-engcom/import-export-improvements/pull/100)*. [GitHub-9342](https://github.com/magento/magento2/issues/9342)
 
@@ -1372,10 +1372,10 @@ See [Magento Security Center](https://magento.com/security/patches/magento-2.2.7
 <!--- MAGETWO-88240 -->* Magento now renames images during a bulk upload of products  with images. *Fix submitted by [Umar Chaudhry](https://github.com/umarch06) in pull request [99](https://github.com/magento-engcom/import-export-improvements/pull/99)*. [GitHub-11324](https://github.com/magento/magento2/issues/11324)
 
 
-<!--- MAGETWO-87933 -->* Report error CSV file now works when you  try to import a CSV file with a semicolon delimiter. *Fix submitted by [Malyovanets Nickolas](https://github.com/nmalevanec) in pull request [1203](https://github.com/magento-engcom/magento2ce/pull/1203)*.  [GitHub-5015](https://github.com/magento/magento2/issues/5015)
+<!--- MAGETWO-87933 -->* Report error CSV file now works when you  try to import a CSV file with a semicolon delimiter. *Fix submitted by [Malyovanets Nickolas](https://github.com/nmalevanec) in pull request 1203*.  [GitHub-5015](https://github.com/magento/magento2/issues/5015)
 
 
-<!---ENGCOM-2468 -->* Magento now provides a validation failure during import when multiselect columns contain duplicate values. *Fix submitted by [carstenpfeifer](https://github.com/pogster) in pull request [117](https://github.com/magento-engcom/magento2ce/pull/1203)*.  [GitHub-103](https://github.com/magento/magento2/issues/103)
+<!---ENGCOM-2468 -->* Magento now provides a validation failure during import when multiselect columns contain duplicate values. *Fix submitted by [carstenpfeifer](https://github.com/pogster) in pull request 117*.  [GitHub-103](https://github.com/magento/magento2/issues/103)
 
 
 
@@ -1800,14 +1800,14 @@ See [Magento Security Center](https://magento.com/security/patches/magento-2.2.7
 
 <!---MAGETWO-95315 -->* You can now filter orders by customer email. Previously, Magento threw an error when you tried to filter orders by customer email from **Sales** > **Orders**. 
 
-<!---MAGETWO-85522 -->* The wrong entity_model for `invoice` has been corrected in the `eav_entity_type` table.  *Fix submitted by [Malyovanets Nickolas](https://github.com/nmalevanec) in pull request [997](https://github.com/magento-engcom/magento2ce/pull/997)*. 
+<!---MAGETWO-85522 -->* The wrong entity_model for `invoice` has been corrected in the `eav_entity_type` table.  *Fix submitted by [Malyovanets Nickolas](https://github.com/nmalevanec) in pull request 997*. 
 
 <!--- ENGCOM-1054 -->* An incorrect return type in PHPdoc has been corrected. Previously, this return type resulted in multiple warnings in IDEs. *Fix submitted by julianvdrielen in pull request [14304](https://github.com/magento/magento2/pull/14304)*. [GitHub-13992](https://github.com/magento/magento2/issues/13992)
 
 
 <!-- MAGETWO-87064 -->*  Magento now syncs an order’s shipping and billing addresses as expected when a customer edits the billing address. [GitHub-10856](https://github.com/magento/magento2/issues/10856) 
 
-<!---ENGCOM-1466 -->* The transport variable can now be altered in the  `email_invoice_set_template_vars_before` event. *Fix submitted by gwharton in pull request [15039](https://github.com/magento-engcom/magento2ce/pull/15039)*. [GitHub-10210](https://github.com/magento/magento2/issues/10210)
+<!---ENGCOM-1466 -->* The transport variable can now be altered in the  `email_invoice_set_template_vars_before` event. *Fix submitted by gwharton in pull request 15039*. [GitHub-10210](https://github.com/magento/magento2/issues/10210)
 
 
 
