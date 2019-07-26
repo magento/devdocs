@@ -9,7 +9,7 @@
 | [nainesh2jcommerce](https://github.com/nainesh2jcommerce) | [#20173](https://github.com/magento/magento2/pull/20173) | [20172](https://github.com/magento/magento2/issues/20172) |
 | [maheshWebkul721](https://github.com/maheshWebkul721) | [#20381](https://github.com/magento/magento2/pull/20381) | [20380](https://github.com/magento/magento2/issues/20380) |
 | [serhiyzhovnir](https://github.com/serhiyzhovnir) | [#20461](https://github.com/magento/magento2/pull/20461) | [20376](https://github.com/magento/magento2/issues/20376) |
-| [amitcedcoss](https://github.com/amitcedcoss) | [#20556](https://github.com/magento/magento2/pull/20556) | [20555](https://github.com/magento/magento2/issues/20555) |
+| amitcedcoss | [#20556](https://github.com/magento/magento2/pull/20556) | [20555](https://github.com/magento/magento2/issues/20555) |
 | [nainesh2jcommerce](https://github.com/nainesh2jcommerce) | [#20992](https://github.com/magento/magento2/pull/20992) |  |
 | [awviraj](https://github.com/awviraj) | [#21055](https://github.com/magento/magento2/pull/21055) |  |
 | [ravi-chandra3197](https://github.com/ravi-chandra3197) | [#21120](https://github.com/magento/magento2/pull/21120) |  |

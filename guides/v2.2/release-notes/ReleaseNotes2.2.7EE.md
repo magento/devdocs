@@ -225,7 +225,7 @@ product, and hung indefinitely while trying to add the product.
 <!-- MAGETWO-93047 -->* The `PUT rest/all/V1/categories/:categoryId` endpoint now requires the `name` field.
 
 
-<!-- ENGCOM-2622 -->* Special price expressions now work as expected. Previously, `catalog_product_price` did not generate correct price data. *Fix submitted by [Dmitry Chukhnov](https://github.com/DmitryChukhnov) in pull request [16510](https://github.com/magento/magento2/pull/16510)*. 
+<!-- ENGCOM-2622 -->* Special price expressions now work as expected. Previously, `catalog_product_price` did not generate correct price data. *Fix submitted by Dmitry Chukhnov in pull request [16510](https://github.com/magento/magento2/pull/16510)*. 
 
 
 
@@ -509,7 +509,7 @@ product, and hung indefinitely while trying to add the product.
 
 ### Review
 
-<!-- ENGCOM-2720-->* Magento now displays a `404 page not found` error when a customer tries to navigate to a product review that is not accessible. Previously. Magento displayed a PHP error code. *Fix submitted by [Ananth](https://github.com/Ananth747) in pull request [15369](https://github.com/magento/magento2/pull/15369)*. [GitHub-13102](https://github.com/magento/magento2/issues/13102)
+<!-- ENGCOM-2720-->* Magento now displays a `404 page not found` error when a customer tries to navigate to a product review that is not accessible. Previously. Magento displayed a PHP error code. *Fix submitted by Ananth in pull request [15369](https://github.com/magento/magento2/pull/15369)*. [GitHub-13102](https://github.com/magento/magento2/issues/13102)
 
 
 

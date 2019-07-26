@@ -1106,7 +1106,7 @@ entries:
   link: https://github.com/magento/devdocs/pull/3833
 - description: 'Updated the [Cloud Release notes for ece-tools version 2002.0.16.](http://devdocs.magento.com/guides/v2.3/cloud/release-notes/cloud-tools.html#v2002016)<br/>-
     Updated the Cloud Docker content with information about using the [`sendmail`
-    service](http://devdocs.magento.com/cloud/docker/docker-development.html#sendmail-service).<br/>- Updated
+    service](http://devdocs.magento.com/guides/v2.3/cloud/docker/docker-development.html#sendmail-service).<br/>- Updated
     the Cloud Docker content to explain how to [configure Xdebug](http://devdocs.magento.com/guides/v2.3/cloud/docker/docker-development-debug.html).<br/>-
     Added two new environment variables: [RESOURCE_CONFIGURATION deploy variable](http://devdocs.magento.com/guides/v2.3/cloud/env/variables-deploy.html)
     and [X_FRAME_CONFIGURATION global variable](http://devdocs.magento.com/guides/v2.3/cloud/env/variables-global.html)<br/>-

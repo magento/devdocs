@@ -18,7 +18,7 @@
 | [DanielRuf](https://github.com/DanielRuf) | [#17291](https://github.com/magento/magento2/pull/17291) |  |
 | [AndreaRivadossi](https://github.com/AndreaRivadossi) | [#15650](https://github.com/magento/magento2/pull/15650) | [13445](https://github.com/magento/magento2/issues/13445) |
 | [Yogeshks](https://github.com/Yogeshks) | [#16354](https://github.com/magento/magento2/pull/16354) |  |
-| [DmitryChukhnov](https://github.com/DmitryChukhnov) | [#16510](https://github.com/magento/magento2/pull/16510) |  |
+| DmitryChukhnov | [#16510](https://github.com/magento/magento2/pull/16510) |  |
 | [hitesh-wagento](https://github.com/hitesh-wagento) | [#16582](https://github.com/magento/magento2/pull/16582) | [16302](https://github.com/magento/magento2/issues/16302) |
 | [dverkade](https://github.com/dverkade) | [#16656](https://github.com/magento/magento2/pull/16656) | [16653](https://github.com/magento/magento2/issues/16653), [16655](https://github.com/magento/magento2/issues/16655) |
 | [mhauri](https://github.com/mhauri) | [#16848](https://github.com/magento/magento2/pull/16848) |  |
@@ -60,7 +60,7 @@
 | [driskell](https://github.com/driskell) | [#13133](https://github.com/magento/magento2/pull/13133) |  |
 | [elioermini](https://github.com/elioermini) | [#14973](https://github.com/magento/magento2/pull/14973) | [12362](https://github.com/magento/magento2/issues/12362) |
 | [Madhumalak](https://github.com/Madhumalak) | [#15357](https://github.com/magento/magento2/pull/15357) | [6305](https://github.com/magento/magento2/issues/6305) |
-| [Ananth747](https://github.com/Ananth747) | [#15369](https://github.com/magento/magento2/pull/15369) | [13102](https://github.com/magento/magento2/issues/13102) |
+| Ananth747| [#15369](https://github.com/magento/magento2/pull/15369) | [13102](https://github.com/magento/magento2/issues/13102) |
 | [thomas-blackbird](https://github.com/thomas-blackbird) | [#16021](https://github.com/magento/magento2/pull/16021) |  |
 | [dannynimmo](https://github.com/dannynimmo) | [#17491](https://github.com/magento/magento2/pull/17491) | [17416](https://github.com/magento/magento2/issues/17416) |
 | [gelanivishal](https://github.com/gelanivishal) | [#17526](https://github.com/magento/magento2/pull/17526) | [17492](https://github.com/magento/magento2/issues/17492) |

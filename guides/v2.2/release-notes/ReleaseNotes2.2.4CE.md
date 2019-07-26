@@ -598,9 +598,9 @@ We do not recommend upgrading to Magento 2.2.4 if you deploy across multiple web
 <!--- MAGETWO-83410 -->*  You can now successfully open the Order edit page for orders that contain an address with extension attributes. Previously, when you tried to open this page, the page load failed with this error, `Recoverable Error: Object of class Magento\Sales\Api\Data\OrderAddressExtension could not be converted to string in .../module-sales/Model/AdminOrder/Create.php on line 503`.
 
 <!--- MAGETWO-83552 -->* Magento now saves an invoice ID on the credit memo when you create a credit memo from the invoice in the Admin. Previously,
-the invoice ID was not included.  *Fix submitted by [Anton Evers](https://github.com/ajpevers) in pull request 11067*. [GitHub-11669](https://github.com/magento/magento2/issues/11669)
+the invoice ID was not included.  *Fix submitted by Anton Evers in pull request 11067*. [GitHub-11669](https://github.com/magento/magento2/issues/11669)
 
-<!--- MAGETWO-83740 -->* Credit memos can have the state open (`\Magento\Sales\Model\Order\Creditmemo::STATE_OPEN`). As a result, you can create a credit memo with an ID that still has to be refunded, and existing credit memos should be refundable if their state is open. *Fix submitted by [Anton Evers](https://github.com/ajpevers) in pull request 11550*.
+<!--- MAGETWO-83740 -->* Credit memos can have the state open (`\Magento\Sales\Model\Order\Creditmemo::STATE_OPEN`). As a result, you can create a credit memo with an ID that still has to be refunded, and existing credit memos should be refundable if their state is open. *Fix submitted by Anton Evers in pull request 11550*.
 
 <!--- MAGETWO-83783 -->* The `Magento\Sales\Service\V1\OrderCreateTest` test now has the correct shipping method fixture. Previously, this test contained an incorrect shipping method fixture, which produced an error whenever an order's shipping method was treated an object. *Fix submitted by [andrew-garside-temando](https://github.com/andrew-garside-temando) in pull request 12227*.
 
@@ -814,7 +814,7 @@ You can find Magento Shipping-specific release notes in [Magento Shipping Releas
 
 <!--- MAGETWO-83293 -->* Magento has added verification for previously set filters in `Magento/Ui/Component/Filters`, which has eliminated duplication of filters in collection `where` conditions.
 
-<!--- MAGETWO-87994 -->* Inconsistency in the animation of the Admin spinner progress indicator has been corrected. *Fix submitted by [Neill Robson](https://github.com/RNanoware) in pull request 13700*.
+<!--- MAGETWO-87994 -->* Inconsistency in the animation of the Admin spinner progress indicator has been corrected. *Fix submitted by Neill Robson in pull request 13700*.
 
 ### URL rewrites
 
@@ -963,7 +963,7 @@ The following table identifies contributions from our community members. This ta
   <tr>
     <td><a target="_blank" href="https://github.com/magento/magento2/pull/11670">11670</a></td>
     <td><a href="https://github.com/magento/magento2/issues/11669" target="_blank">11669</a></td>
-    <td><a target="_blank" href="https://github.com/ajpevers">Anton Evers</a></td>
+    <td>Anton Evers</td>
   </tr>
   <tr>
     <td><a target="_blank" href="https://github.com/magento/magento2/pull/11992">11992</a></td>

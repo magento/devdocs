@@ -674,7 +674,7 @@ The following table identifies contributions from our community members. This ta
 <tr>
     <td><a target="_blank" href="https://github.com/magento/magento2/pull/14293">14293</a></td>
     <td><a href="https://github.com/magento/magento2/issues/8837" target="_blank">8837</a></td>
-    <td><a target="_blank" href="https://github.com/KravetsAndriy">Andriy Kravets</a></td>
+    <td>Andriy Kravets</td>
   </tr>
 <tr>
     <td><a target="_blank" href="https://github.com/magento/magento2/pull/14439">14439</a></td>
@@ -703,7 +703,7 @@ The following table identifies contributions from our community members. This ta
 <tr>
     <td><a target="_blank" href="https://github.com/magento/magento2/pull/14466">14466</a></td>
     <td>N/A</td>
-    <td><a target="_blank" href="https://github.com/NamrataChangani">NamrataChangani</a></td>
+    <td>NamrataChangani</td>
   </tr>
 
 <tr>

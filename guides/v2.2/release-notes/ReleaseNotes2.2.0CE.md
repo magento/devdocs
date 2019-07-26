@@ -213,7 +213,7 @@ This release contains hundreds of fixes and enhancements.
 
 <!--- 69533-->* Magento now correctly displays the coupon label in the shopping cart during checkout. *Fix submitted by community member [Sylvain Rayé](https://github.com/diglin){: target="_blank"} in pull request [9721](https://github.com/magento/magento2/pull/9721){: target="_blank"}.*
 
-<!--- 69848-->* Magento now pre-fills prefixes and suffixes in the quote shipping address *Fix submitted by community member [Anton Evers](https://github.com/ajpevers){: target="_blank"} in pull request [9925](https://github.com/magento/magento2/pull/9925){: target="_blank"}.*
+<!--- 69848-->* Magento now pre-fills prefixes and suffixes in the quote shipping address *Fix submitted by community member Anton Evers in pull request [9925](https://github.com/magento/magento2/pull/9925){: target="_blank"}.*
 
 <!--- 70052-->* The country drop-down box now correctly shows the countries for which the current store and customer account are configured. *Fix submitted by community member [Marcel](https://github.com/mimarcel){: target="_blank"} in pull request [9429](https://github.com/magento/magento2/pull/9429){: target="_blank"}.*
 
@@ -482,7 +482,7 @@ This release contains hundreds of fixes and enhancements.
 
 <!--- 64901 -->* Magento now supports new top level domains for email addresses. [GitHub-4547](https://github.com/magento/magento2/issues/4547)
 
-<!--- 70010 -->* Page titles in layout files are not translatable. *Fix submitted by community member [Anton Evers](https://github.com/ajpevers){: target="_blank"} in pull request [9992](https://github.com/magento/magento2/pull/9992){: target="_blank"}.*
+<!--- 70010 -->* Page titles in layout files are not translatable. *Fix submitted by community member Anton Evers in pull request [9992](https://github.com/magento/magento2/pull/9992){: target="_blank"}.*
 
 <!--- 67500 -->* The `setup:static-content:deploy`, `setup:di:compile` and `deploy:mode:set` commands now return non-zero exit code if an error occurs. *Fix submitted by community member [Pablo Ivulic](https://github.com/pivulic){: target="_blank"} in pull request [7780](https://github.com/magento/magento2/pull/7780){: target="_blank"}.*
 
@@ -633,9 +633,9 @@ Thanks to our hardworking Magento Open Source community members for the followin
 
 <!--- 70310-->* The Actions dropdown menu is now properly aligned in the Admin when the action column is not the last column. *Fix submitted by community member [Marius Strajeru](https://github.com/tzyganu){: target="_blank"} in pull request [10082](https://github.com/magento/magento2/pull/10082){: target="_blank"}.*
 
-<!--- 70029-->* Magento now deletes pending entries in `cron_schedule` when you reconfigure a cron job. *Fix submitted by community member [Anton Evers](https://github.com/ajpevers){: target="_blank"} in pull request [9957](https://github.com/magento/magento2/pull/9957){: target="_blank"}.*
+<!--- 70029-->* Magento now deletes pending entries in `cron_schedule` when you reconfigure a cron job. *Fix submitted by community member Anton Evers in pull request [9957](https://github.com/magento/magento2/pull/9957){: target="_blank"}.*
 
-<!--- 69886-->* We’ve fixed the cron timestamp method. *Fix submitted by community member [Anton Evers](https://github.com/ajpevers){: target="_blank"} in pull request [9943](https://github.com/magento/magento2/pull/9943){: target="_blank"}.*
+<!--- 69886-->* We’ve fixed the cron timestamp method. *Fix submitted by community member Anton Evers in pull request [9943](https://github.com/magento/magento2/pull/9943){: target="_blank"}.*
 
 <!--- 69373-->* You can now save customers with unique attributes. *Fix submitted by community member [storbahn](https://github.com/storbahn){: target="_blank"} in pull request [9712](https://github.com/magento/magento2/pull/9712){: target="_blank"}.*
 
@@ -831,7 +831,7 @@ Thanks to our hardworking Magento Open Source community members for the followin
 <!---69551 -->* Coupon codes are now included in  invoice print outs. *Fix submitted by community member  [Belgacem Naoui](https://github.com/naouibelgacem){: target="_blank"} in pull request [9780](https://github.com/magento/magento2/pull/9780){: target="_blank"}.*
 
 
-<!---69909 -->* The Orders grid now displays correct order dates. *Fix submitted by community member  [Anton Evers](https://github.com/ajpevers){: target="_blank"} in pull request [9941](https://github.com/magento/magento2/pull/9941){: target="_blank"}.*
+<!---69909 -->* The Orders grid now displays correct order dates. *Fix submitted by community member  Anton Evers in pull request [9941](https://github.com/magento/magento2/pull/9941){: target="_blank"}.*
 
 <!---68795 -->*  Magento now displays the correct order time in the Sales Order grid in the Admin panel. [GitHub-9426](https://github.com/magento/magento2/issues/9426)
 

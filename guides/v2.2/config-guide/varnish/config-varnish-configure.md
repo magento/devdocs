@@ -204,7 +204,7 @@ If headers like these do *not* display, stop Varnish, check your `default.vcl`, 
 
 #### Look at HTML response headers
 
-There are several ways to look at response headers, including using a browser [plug-in](https://glossary.magento.com/plug-in) like Live HTTP Headers ([Firefox](https://addons.mozilla.org/en-GB/firefox/addon/live-http-headers/)) or a browser inspector.
+There are several ways to look at response headers, including using a browser [plug-in](https://glossary.magento.com/plug-in) or a browser inspector.
 
 The following example uses `curl`. You can enter this command from any machine that can access the Magento server using HTTP.
 
