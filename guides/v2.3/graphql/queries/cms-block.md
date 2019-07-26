@@ -66,4 +66,4 @@ Attribute | Data type | Description
 
 ## Related topics
 
-[cmsPage query]({{page.baseurl}}/graphql/queries/cms-page.html) provides information about the `cmsPage` object.
+[cmsPage query]({{page.baseurl}}/graphql/queries/cms-page.html)

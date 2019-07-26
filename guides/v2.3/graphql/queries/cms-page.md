@@ -77,4 +77,4 @@ Attribute | Data type | Description
 
 ## Related topics
 
-[cmsBlock query]({{page.baseurl}}/graphql/queries/cms-block.html) provides information about the `cmsBlock` object.
+[cmsBlock query]({{page.baseurl}}/graphql/queries/cms-block.html)
