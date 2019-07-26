@@ -279,7 +279,7 @@ We've fixed hundreds of issues in the Magento 2.3.0 core code.
 
 <!--- MAGETWO-91616 -->*  Restricted Admins can now create and edit CMS blocks as expected. Previously, Magento displayed this error message when an administrator with restricted privileges tried to create a new CMS block: `Warning: array_intersect(): Argument #1 is not an array in /var/www/html/magento2ee/app/code/Magento/AdminGws/Model/Models.php on line 1075`.
 
-<!--- ENGCOM-1143 -->* The `Magento_Authorization` module is now installed after `Magento_Authorization` to satisfy `Magento_Authorization`'s dependency upon authorization tables. *Fix submitted by [Anton Evers](https://github.com/AntonEvers) in pull request [56](https://github.com/magento-partners/magento2ee/pull/56)*. 
+<!--- ENGCOM-1143 -->* The `Magento_Authorization` module is now installed after `Magento_Authorization` to satisfy `Magento_Authorization`'s dependency upon authorization tables. *Fix submitted by [Anton Evers](https://github.com/AntonEvers) in pull request 56 (magento-partners/magento2ee)*. 
 
 
 
@@ -1840,7 +1840,7 @@ We've fixed hundreds of issues in the Magento 2.3.0 core code.
 <!---ENGCOM-2858 -->* Magento now displays a `404 page not found` error when a customer tries to navigate to a product review that is not accessible. Previously, Magento displayed a PHP error code.  *Fix submitted by [Malyovanets Nickolas](https://github.com/nmalevanec) in pull request [17721](https://github.com/magento/magento2/pull/17721)*.  [GitHub-13102](https://github.com/magento/magento2/issues/13102)
 
 
-<!---ENGCOM-2380 -->* Magento no longer throws an error when a merchant edits a product from the Admin when reviews are disabled. *Fix submitted by [Oleksandr Kravchuk](https://github.com/swnsma) in pull request [71](https://github.com/magento-partners/magento2ee/pull/71)*. [GitHub-6264](https://github.com/magento/magento2/issues/6264)
+<!---ENGCOM-2380 -->* Magento no longer throws an error when a merchant edits a product from the Admin when reviews are disabled. *Fix submitted by [Oleksandr Kravchuk](https://github.com/swnsma) in pull request 71 (magento-partners/magento2ee)*. [GitHub-6264](https://github.com/magento/magento2/issues/6264)
 
 <!-- MAGETWO-91805 -->* When a customer creates a product review, the link to the product from the review in the customer's **My Account** > **My Product Review** is now SEO-friendly.
 
@@ -1954,7 +1954,7 @@ We've fixed hundreds of issues in the Magento 2.3.0 core code.
 <!--- MAGETWO-59305 -->*  Elasticsearch no longer includes out-of-stock product options in search results. 
 
 
-<!--- MAGETWO-72142 -->* Support for Elasticsearch 5.x has been added. See [Install and configure Elasticsearch]({{ site.baseurl }}/guides/v2.2/config-guide/elasticsearch/es-overview.html) for more information about using Elasticsearch with Magento. *Fix submitted by [Aurélien Foucret](https://github.com/afoucret) in pull request [2202](https://github.com/magento/magento2ce/pull/2202)*. 
+<!--- MAGETWO-72142 -->* Support for Elasticsearch 5.x has been added. See [Install and configure Elasticsearch]({{ site.baseurl }}/guides/v2.2/config-guide/elasticsearch/es-overview.html) for more information about using Elasticsearch with Magento. *Fix submitted by [Aurélien Foucret](https://github.com/afoucret) in pull request 2202 (magento/magento2ce)*. 
 
 <!--- ENGCOM-1057 -->* Magento no longer throws an error when a customer uses quick search to search on a term that does not exist in the search database. Previously, Magento returned this error, `TypeError: this._getFirstVisibleElement(...).addClass is not a function`.  *Fix submitted by [Dragan Atanasov](https://github.com/drashmk) in pull request [14301](https://github.com/magento/magento2/pull/14301)*. [GitHub-14274](https://github.com/magento/magento2/issues/14274)
 
@@ -2309,7 +2309,7 @@ We've fixed hundreds of issues in the Magento 2.3.0 core code.
 
 <!--- MAGETWO-86101 -->* Magento now stores product IDs and SKUs to locally stored customer data for wishlists. *Fix submitted by [James Halsall](https://github.com/jameshalsall) in pull request [12896](https://github.com/magento/magento2/pull/12896)*. 
 
-<!--- MAGETWO-90297 -->* `SearchCriteriaBuilder` now has a check to determine if sort order should be applied. Previously, `SearchCriteriaBuilder` built the wrong criteria (`ORDER BY part`). *Fix submitted by [Nickolas Malyovanets](https://github.com/nmalevanec) in pull request [1003](https://github.com/magento/magento2ce/pull/1003)*. [GitHub-5738](https://github.com/magento/magento2/issues/5738)
+<!--- MAGETWO-90297 -->* `SearchCriteriaBuilder` now has a check to determine if sort order should be applied. Previously, `SearchCriteriaBuilder` built the wrong criteria (`ORDER BY part`). *Fix submitted by [Nickolas Malyovanets](https://github.com/nmalevanec) in pull request 1003 (magento/magento2ce)*. [GitHub-5738](https://github.com/magento/magento2/issues/5738)
 
 <!--- MAGETWO-91615 -->*  Registered users can now create new wishlists as expected when multiple wishlists are enabled. Previously, Magento displayed an error.
 

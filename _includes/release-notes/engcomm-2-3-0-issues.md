@@ -463,8 +463,8 @@
 | Jakhotiya | [#16184](https://github.com/magento/magento2/issues/16184) | [magento/magento2#16603](https://github.com/magento/magento2/pull/16603) |
 | dicgf8 | [#100](https://github.com/magento/magento2/issues/100) | [magento/graphql-ce#102](https://github.com/magento/graphql-ce/pull/102) |
 | gondo | [#116](https://github.com/magento/magento2/issues/116) | [magento/graphql-ce#119](https://github.com/magento/graphql-ce/pull/119) |
-| thomvanderboon | [#6264](https://github.com/magento/magento2/issues/6264) | [magento-partners/magento2ee#71](https://github.com/magento-partners/magento2ee/pull/71) |
-| PingusPepan | [#6504](https://github.com/magento/magento2/issues/6504) | [magento-partners/magento2ee#73](https://github.com/magento-partners/magento2ee/pull/73) |
+| thomvanderboon | [#6264](https://github.com/magento/magento2/issues/6264) | magento-partners/magento2ee#71 (magento-partners/magento2ee) |
+| PingusPepan | [#6504](https://github.com/magento/magento2/issues/6504) | magento-partners/magento2ee#73 (magento-partners/magento2ee) |
 | careys7 | [#10346](https://github.com/magento/magento2/issues/10346) | [magento/magento2#16715](https://github.com/magento/magento2/pull/16715) |
 | kamilszewczyk | [#14035](https://github.com/magento/magento2/issues/14035) | [magento/magento2#16742](https://github.com/magento/magento2/pull/16742) |
 | DanielRuf | [#15848](https://github.com/magento/magento2/issues/15848) | [magento/magento2#16796](https://github.com/magento/magento2/pull/16796) |
