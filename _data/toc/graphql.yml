@@ -45,6 +45,14 @@ pages:
     - label: Functional testing
       url: /graphql/functional-testing.html
 
+    - label: Queries
+      children:
+        - label: cmsBlock query
+          url: /graphql/queries/cms-block.html
+
+        - label: cmsPage query
+          url: /graphql/queries/cms-page.html
+        
     - label: Mutations
       children:
         - label: applyStoreCreditToCart mutation
@@ -52,12 +60,9 @@ pages:
 
         - label: removeStoreCreditFromCart mutation
           url: /graphql/mutations/remove-store-credit.html
-
+    
     - label: Reference
       children:
-            - label: CMS endpoint
-              url: /graphql/reference/cms.html
-
             - label: CustomAttributeMetadata endpoint
               url: /graphql/reference/custom-attribute-metadata.html
 
@@ -190,6 +195,9 @@ pages:
           
         - label: PayPal Payflow Pro
           url: /graphql/payment-methods/payflow-pro.html
+
+        - label: PayPal Payments Advanced
+          url: /graphql/payment-methods/payments-advanced.html
 
     - label: Tutorial
       class: tutorial
