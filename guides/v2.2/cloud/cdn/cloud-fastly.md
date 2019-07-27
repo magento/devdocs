@@ -39,7 +39,7 @@ We highly recommend using Fastly for your CDN, security, and image optimization 
 
 ## Fastly CDN module for Magento 2
 
-Fastly services for {{ site.data.var.ece }} use the [Fastly CDN module for Magento 2](https://github.com/fastly/fastly-magento2) installed in the following environments: Pro Staging and Production, Starter Production (`master`) and Staging.
+Fastly services for {{ site.data.var.ece }} use the [Fastly CDN module for Magento 2](https://github.com/fastly/fastly-magento2) installed in the following environments: Pro Staging and Production, Starter Production (`master` branch).
 
 On initial provisioning or upgrade of your {{ site. data.var.ece }} project, we install the latest version of the Fastly CDN module in your Staging and Production environments. When Fastly releases module updates, you receive notifications in the Magento Admin UI for your environments. We recommend that you update your environments to use the latest release. See [Upgrade Fastly]({{ page.baseurl}}/cloud/cdn/configure-fastly.html#upgrade).
 
@@ -100,7 +100,6 @@ see [Fastly troubleshooting]({{ page.baseurl }}/cloud/cdn/trouble-fastly.html#ti
 
 Fastly can be bypassed for the Magento Admin to perform long running or bulk actions and API access to avoid 503s. For Fastly module 1.2.22 and later, the timeout for the Magento Admin was extended to three minutes. You can also update the Fastly configuration for your store to [extend the Fastly timeout for the Magento Admin]({{ page.baseurl }}/cloud/cdn/configure-fastly.html#bulkaction).
 
-
 ## Backends and Origin shields {#backend}
 
 Backend settings provide fine tuning for Fastly performance with Origin shielding
@@ -136,7 +135,6 @@ using edge and ACL dictionaries and VCL code.
 After you have [set up Fastly]({{ page.baseurl }}/cloud/cdn/configure-fastly.html),
 you can create [custom VCL snippets]({{ page.baseurl }}/cloud/cdn/cloud-vcl-custom-snippets.html)
 using these edge dictionaries and ACLs.
-
 
 ## Force TLS {#tls}
 
