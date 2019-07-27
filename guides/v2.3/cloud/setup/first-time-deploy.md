@@ -2,7 +2,6 @@
 group: cloud-guide
 title: First time deployment
 redirect_from:
-  - /guides/v2.2/cloud/access-acct/first-time-deploy.html
   - /guides/v2.3/cloud/access-acct/first-time-deploy.html
 functional_areas:
   - Cloud

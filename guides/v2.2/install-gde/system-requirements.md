@@ -1,10 +1,6 @@
 ---
 group: installation-guide
-subgroup: Getting Started
 title: System 2.2.x requirements
-menu_title: Magento 2.2.x system requirements
-menu_node: parent
-menu_order: 1
 redirect_from:
   - /magento-system-requirements.html
 functional_areas:
