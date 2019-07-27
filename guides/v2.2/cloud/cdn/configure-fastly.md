@@ -2,6 +2,8 @@
 group: cloud-guide
 title: Set up Fastly
 redirect_from:
+   - /guides/v2.2/cloud/configure/fastly-vcl-extend-timeout.html
+   - /guides/v2.3/cloud/configure/fastly-vcl-extend-timeout.html
    - /guides/v2.2/cloud/access-acct/fastly.html
    - /guides/v2.3/cloud/access-acct/fastly.html
 functional_areas:
@@ -23,14 +25,11 @@ The process for configuring Fastly includes:
 - Get Fastly credentials for Staging and Production environments
 - Enable Fastly CDN caching in your environment
 - Upload Fastly VCL snippets
-- Advanced configurations including VCL snippets, as needed
-
-{: .bs-callout-info }
-Fastly caching services are not available on your {{ site.var.data.ee }} Staging and Production sites until you enable the Fastly module and complete the initial upload of the default Fastly VCL code.
+- Advanced configurations including VCL snippets, as needed for your {{ site.data.var.ee }} sites
 
 ## Get Fastly credentials {#cloud-fastly-creds}
 
-During project provisioning, Magento adds your project to the [Fastly service account]({{ page.baseurl}}/cloud/cdn/cloud-fastly.html#fastly-service-account) for {{ site.data.var.ece }} and adds the Fastly account credentials to the configuration for the Staging and Production environments.
+During project provisioning, Magento adds your project to the [Fastly service account]({{ page.baseurl}}/cloud/cdn/cloud-fastly.html#fastly-service-account) for {{ site.data.var.ece }} and adds the Fastly account credentials to the Staging and Production environment configuration.
 
 You need the Fastly credentials to configure Fastly CDN services from the Magento Admin UI and to submit Fastly API requests.
 
@@ -59,7 +58,7 @@ If you cannot find the Fastly credentials for the Staging or Production environm
 
 **Prerequisites**
 
-- [Fastly CDN for Magento 2 module]({{ page.baseurl }}/cloud/cdn/cloud-fastly.html#fastly-cdn-module-for-magento-2) installed in the Staging and Production environment
+- Latest version of the [Fastly CDN for Magento 2 module]({{ page.baseurl }}/cloud/cdn/cloud-fastly.html#fastly-cdn-module-for-magento-2) installed in the Staging and Production environments. See [Upgrade Fastly](#upgrade).
 
 - [Fastly credentials](#cloud-fastly-creds) for {{ site.data.var.ece }} Staging and Production environments
 
@@ -79,7 +78,9 @@ If you cannot find the Fastly credentials for the Staging or Production environm
 
 1. After configuring the caching options, click **Save Config** at the top of the page.
 
-1. Clear the cache according to the notification. Then, navigate back to **Stores** > **Settings** > **Configuration** > **Advanced** > **System** > **Fastly Configuration** to continue configuring Fastly.
+1. Clear the cache according to the notification.
+
+1. Navigate back to **Stores** > **Settings** > **Configuration** > **Advanced** > **System** > **Fastly Configuration** to continue configuring Fastly.
 
 ### Test the Fastly credentials
 
@@ -123,11 +124,7 @@ Fastly caching services do not work until you complete the initial upload of the
 ## Custom configuration
 
 {: .bs-callout-info}
-<<<<<<< HEAD
-Before adding [custom](#custom-configuration) or advanced configuration settings like [updating purge settings]({{ page.baseurl and configuring [Fastly image optimization]({{ page.baseurl }}/cloud/cdn/fastly-image-optimization.html) (Fastly IO), [verify]({{ page.baseurl }}/cloud/cdn/trouble-fastly.html) that the Fastly caching service works with the default configuration.
-=======
-Before adding [custom](#custom-configuration) or advanced configuration settings like [updating purge settings]({{ page.baseurl and configuring [Fastly image optimization]({{ page.baseurl }}/cloud/cdn/fastly-image-optimization.html) ((Fastly IO)), [verify]({{ page.baseurl }}/cloud/cdn/trouble-fastly.html) that the Fastly caching service works with the default configuration.
->>>>>>> - Cleaned up the Fastly module upgrade procedure
+Before adding [custom](#custom-configuration) or advanced configuration settings like [updating purge settings](#purge) and configuring [Fastly image optimization]({{ page.baseurl }}/cloud/cdn/fastly-image-optimization.html)(Fastly IO), [verify]({{ page.baseurl }}/cloud/cdn/trouble-fastly.html) that the Fastly caching service works with the default configuration.
 
 Configure the following features and enable additional [configuration options](https://github.com/fastly/fastly-magento2/blob/master/Documentation/CONFIGURATION.md#further-configuration-options) as needed:
 
@@ -151,8 +148,8 @@ to the origin.
 The default Fastly VCL code specifies default values for Origin shielding and timeouts for your {{ site.data.var.ece }} sites. We recommend using the default values. In some case, you might need to modify the default values. For example, if you are getting a lot of time to first byte (TTFB) errors, you might need to adjust the _first byte timeout_ value.
 
 {:.bs-callout-info}
-If you need to integrate additional backends into your site, such as a backend to serve blog content from a 
-[Wordpress]({{ page.baseurl }}/cloud/cdn/fastly-vcl-wordpress.html) site, you must customize your Fastly service configuration to add the backend and handle the redirects from your {{ site.data.var.ee }} store to the Wordpress backend. See the [Fastly Edge Modules - Other CMS/Backend integration](https://github.com/fastly/fastly-magento2/blob/master/Documentation/Guides/Edge-Modules/EDGE-MODULE-OTHER-CMS-INTEGRATION.md)topic in the Fastly module documentation.
+If you need to integrate additional backends into your site such as a backend to serve blog content from a 
+[Wordpress]({{ page.baseurl }}/cloud/cdn/fastly-vcl-wordpress.html) site, you must customize your Fastly service configuration to add the backend and handle the redirects from your {{ site.data.var.ee }} store to the Wordpress backend. For details, see [Fastly Edge Modules - Other CMS/Backend integration](https://github.com/fastly/fastly-magento2/blob/master/Documentation/Guides/Edge-Modules/EDGE-MODULE-OTHER-CMS-INTEGRATION.md) in the Fastly module documentation.
 
 **To review the backend settings configuration:**
 
@@ -171,31 +168,30 @@ If you need to integrate additional backends into your site, such as a backend t
    The following list shows which Fastly shield locations to use based an AWS
   region:
 
-	- ap-northeast-1 => tokyo-jp2
-	- ap-southeast-1 => singapore-sg
-	- ap-southeast-2 => sydney-au
-	- ap-south-1 => singapore-sg
-	- eu-central-1 => frankfurt-de
-	- eu-west-1 => london-uk, london_city-uk
-	- eu-west-2 => london-uk, london_city-uk
-	- eu-west-3 => cdg-par-fr
-	- sa-east-1	=> gru-br-sa
-	- us-east-1 => iad-va-us
-	- us-east-2 => iad-va-us
-	- us-west-1 => sjc-ca-us
-	- us-west-2 => sea-wa-us
+	 - ap-northeast-1 => tokyo-jp2
+	 - ap-southeast-1 => singapore-sg
+	 - ap-southeast-2 => sydney-au
+	 - ap-south-1 => singapore-sg
+	 - eu-central-1 => frankfurt-de
+	 - eu-west-1 => london-uk, london_city-uk
+	 - eu-west-2 => london-uk, london_city-uk
+	 - eu-west-3 => cdg-par-fr
+	 - sa-east-1	=> gru-br-sa
+	 - us-east-1 => iad-va-us
+	 - us-east-2 => iad-va-us
+	 - us-west-1 => sjc-ca-us
+	 - us-west-2 => sea-wa-us
 
 1. Modify the timeout values (in microseconds) for the connection to the
-   shield, time between bytes, and time for the first byte. We recommend keeping
-   the default timeout settings.
+   shield, time between bytes, and time for the first byte. We recommend keeping the default timeout settings.
   
 1. Optionally, select to **Activate the backend and Shield after editing or saving**.
 
-1. Click **Upload** to save. The settings are communicated to Fastly.
+1. Click **Upload** to save your changes and upload them to the Fastly servers.
 
 1. In the Magento Admin, click **Save Config**.
 
-For more information from Fastly, see the Magento 2 [Backend settings guide](https://github.com/fastly/fastly-magento2/blob/21b61c8189971275589219d418332798efc7db41/Documentation/Guides/BACKEND-SETTINGS.md).
+For more information, see the Magento 2 [Backend settings guide](https://github.com/fastly/fastly-magento2/blob/21b61c8189971275589219d418332798efc7db41/Documentation/Guides/BACKEND-SETTINGS.md) in the Fastly module documentation.
 
 ### Configure purge options {#purge}
 
@@ -248,9 +244,7 @@ dictionaries or ACLs, see [Custom Fastly VCL snippets]({{ page.baseurl }}/cloud/
 
 ### Extend Fastly timeout for the Magento Admin {#bulkaction}
 
-Fastly sets a 180 second-timeout for HTTPS requests to the Magento Admin, so you
-may encounter timeouts if you need to complete bulk actions that take longer than
-3 minutes. You can manage timeouts using Fastly 1.2.41.
+Fastly sets a 180 second-timeout for HTTPS requests to the Magento Admin, so you may encounter timeouts if you need to complete bulk actions that take longer than 3 minutes. In these cases, update the Fastly service configuration to change the _Admin path timeout_.
 
 1.  In the *Fastly Configuration* section, expand **Advanced**.
 
@@ -262,15 +256,12 @@ may encounter timeouts if you need to complete bulk actions that take longer tha
 1.  After the page reloads, click **Upload VCL to Fastly** in the
    *Fastly Configuration* section.
 
-Since version 1.2.39, Fastly gets the Magento Admin path for generating the VCL
-file from the `app/etc/env.php` configuration file.
+Fastly gets the Magento Admin path for generating the VCL file from the `app/etc/env.php` configuration file.
 
 ### Configure GeoIP handling {#geoip}
 
 The Fastly module includes GeoIP handling to automatically redirect visitors or
-provide a list of stores matching their obtained country code. If you already use
-a Magento extension for GeoIP handling, you may need to verify the features with
-Fastly options.
+provide a list of stores matching their obtained country code. If you already use a Magento extension for GeoIP handling, you may need to verify the features with Fastly options.
 
 1. In the *Fastly Configuration* section, expand **Advanced**.
 
@@ -328,7 +319,6 @@ DNS provider. The domain validation process is executed by Fastly.
 For details on this TXT record, see the Fastly [DNS TXT record validation](https://docs.fastly.com/guides/securing-communications/domain-validation-for-tls-certificates#dns-text-record-verification).
 
 ## Upgrade the Fastly module {#upgrade}
-<<<<<<< HEAD
 
 Fastly updates the Fastly CDN for Magento 2 module to resolve issues, increase performance, and
 provide new features. You can find information about the latest release in the Fastly
@@ -340,7 +330,7 @@ When you upgrade the Fastly module, you get a new version of the default Fastly 
 
 #### To upgrade the Fastly module
 
-1. In your local Integration environment, use the following module information to [upgrade the Fastly module]({{ page.baseurl }}/cloud/howtos/install-components.html#update) to the latest version. The information 
+1. In your local Integration environment, use the following module information to [upgrade the Fastly module]({{ page.baseurl }}/cloud/howtos/install-components.html#update).
 
    ```text
    module name: fastly/magento2
@@ -349,42 +339,13 @@ When you upgrade the Fastly module, you get a new version of the default Fastly 
 
 1. Push your updates to the Staging environment.
 
-1. Log in to the Magento Admin UI for your Staging environment to [upload the VCL code](#upload-vcl-snippets). 
+1. Log in to the Magento Admin UI for your Staging environment to [upload the VCL code](#upload-vcl-snippets).
 
 1. [Verify Fastly services]({{ page.baseurl }}/cloud/cdn/trouble-fastly.html#verify-or-debug-fastly-services) on the {{ site.data.var.ee }} Staging site.
 
 After you verify Fastly services on the Staging site, repeat the upgrade process in the Production environment.
 
-=======
-
-Fastly updates the Fastly CDN for Magento 2 module to resolve issues, increase performance, and
-provide new features. You can find information about the latest release in the Fastly
-[Fastly release notes](https://github.com/fastly/fastly-magento2/releases) on GitHub.
-
-We recommend that you upgrade to the latest version of the Fastly module. See [Upgrade an extension]({{ page.baseurl }}/cloud/howtos/install-components.html):
-
-When you upgrade the Fastly module, you get a new version of the default Fastly VCL code that enables the integration with {{ site.data.var.ece }}. You must upload the new VCL code to apply the changes to the Fastly service configuration for your Staging and Production environments.
-
-#### To upgrade the Fastly module
-
-1. In your local Integration environment, use the following module information to [upgrade the Fastly module]({{ page.baseurl }}/cloud/howtos/install-components.html#update) to the latest version. The information 
-
-   ```text
-   module name: fastly/magento2
-   repository: https://github.com/fastly/fastly-magento2.git
-   ```
-
-1. Push your updates to the Staging environment.
-
-1. Log in to the Magento Admin UI for your Staging environment to [upload the VCL code](#upload-vcl-snippets). 
-
-1. [Verify Fastly services]({{ page.baseurl }}/cloud/cdn/trouble-fastly.html#verify-or-debug-fastly-services) on the {{ site.data.var.ee }} Staging site.
-
-After you verify Fastly services on the Staging site, repeat the upgrade process in the Production environment.
-
->>>>>>> - Cleaned up the Fastly module upgrade procedure
 {: .bs-callout-warning}
-If you have uploaded a custom VCL snippet that has the same name as a default snippet,
-you may need to verify and update those snippets after you upgrade the Fastly module. We do not recommend replacing
+If you have uploaded a custom VCL snippet that has the same name as a default snippet, you may need to verify and update those snippets after you upgrade the Fastly module. We do not recommend replacing
 existing default snippets with custom snippets of the same name. For details on
 custom VCL, see [Custom Fastly VCL snippets]({{ page.baseurl }}/cloud/cdn/cloud-vcl-custom-snippets.html).
