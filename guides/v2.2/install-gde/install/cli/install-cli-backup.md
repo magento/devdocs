@@ -43,7 +43,7 @@ Magento backup functionality is deprecated as of 2.1.16, 2.2.7, and 2.3.0. We re
 
 Command usage:
 
-	magento setup:backup [--code] [--media] [--db]
+	bin/magento setup:backup [--code] [--media] [--db]
 
 The command performs the following tasks:
 
@@ -61,7 +61,7 @@ The command performs the following tasks:
 
 For example, to back up the file system and database,
 
-	magento setup:backup --code --db
+	bin/magento setup:backup --code --db
 
 Messages similar to the following display:
 
@@ -82,17 +82,17 @@ This section discusses how to roll back to a backup you made previously. You mus
 
 To find the name of your backups, enter:
 
-	magento info:backups:list
+	bin/magento info:backups:list
 
 The first string in the backup file name is the timestamp.
 
 To roll back to a previous backup, enter:
 
-	magento setup:rollback [-c|--code-file="<name>"] [-m|--media-file="<name>"] [-d|--db-file="<name>"]
+	bin/magento setup:rollback [-c|--code-file "<name>"] [-m|--media-file "<name>"] [-d|--db-file "<name>"]
 
 For example, to restore a media backup named `1440611839_filesystem_media.tgz`, enter
 
-	magento setup:rollback -m 1440611839_filesystem_media.tgz
+	bin/magento setup:rollback -m 1440611839_filesystem_media.tgz
 
 Messages similar to the following display:
 
