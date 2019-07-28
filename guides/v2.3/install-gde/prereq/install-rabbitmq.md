@@ -7,9 +7,6 @@ functional_areas:
   - Setup
 ---
 
-{:.bs-callout .bs-callout-warning"}
-You must install and configure [RabbitMQ](http://rabbitmq.com) _before_ installing Magento.
-
 ## RabbitMQ Overview {#overview}
 
 RabbitMQ is an open source message broker that offers a reliable, highly available, scalable and portable messaging system.
@@ -84,9 +81,9 @@ Review the official RabbitMQ documentation to configure and manage RabbitMQ. Pay
 * Starting and stopping the broker
 * System limits
 
-## Connect RabbitMQ to {{site.data.var.ce}} or {{site.data.var.ee}}
+## Install Magento with RabbitMQ connection to {{site.data.var.ce}} or {{site.data.var.ee}} 
 
-Add the following command line parameters when you install {{site.data.var.ce}} or {{site.data.var.ee}}:
+If you installing Magento after you installed RabbitMQ, add the following command line parameters when you install {{site.data.var.ce}} or {{site.data.var.ee}}:
 
 `--amqp-host="<hostname>" --amqp-port="5672" --amqp-user="<user_name>" --amqp-password="<password>" --amqp-virtualhost="/"`
 
@@ -101,6 +98,24 @@ where:
 |`--amqp-virtualhost`|The virtual host for connecting to RabbitMQ. The default is `/`.
 |`--amqp-ssl`|Indicates whether to connect to RabbitMQ. The default is `false`. If you set the value to true, see Configure SSL for more information.|
 
+## Connect RabbitMQ to {{site.data.var.ce}} or {{site.data.var.ee}} 
+
+If you already had Magento installed and you want to connect it with RabbitMq, add `queue` section in the `<install_directory>/app/etc/env.php` file so that it is similar to the following:
+
+```php?start_inline=1
+
+'queue' =>
+  array (
+    'amqp' =>
+    array (
+      'host' => 'rabbitmq.example.com',
+      'port' => '11213',
+      'user' => 'magento',
+      'password' => 'magento',
+      'virtualhost' => '/'
+     ),
+  ),
+```
 
 ## Configure SSL
 
