@@ -117,6 +117,8 @@ If you already had Magento installed and you want to connect it with RabbitMq, a
   ),
 ```
 
+After, please run `bin/magento setup:upgrade` for apply changes and create required queues in RabbitMQ
+
 ## Configure SSL
 
 To configure support for SSL, edit the `ssl` and `ssl_options` parameters in the `<install_directory>/app/etc/env.php` file so that they are similar to the following:
