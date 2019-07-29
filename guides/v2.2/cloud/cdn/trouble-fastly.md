@@ -108,10 +108,9 @@ When a 503 error occurs, Fastly returns the reason on the error and maintenance 
 
 If the apex domain and subdomains for your {{ site.data.var.ece }} project are already associated with an existing Fastly account with an assigned Service ID, you cannot launch until you update your Fastly configuration:
 
-* Update the apex and subdomain configuration on the existing Fastly account. See [Multiple Fastly accounts and assigned domains]({{ page.baseurl }}/cloud/cdn/configure-fastly.html#domain).
+* Update the apex and subdomain configuration on the existing Fastly account. See [Multiple Fastly accounts and assigned domains]({{ page.baseurl }}/cloud/cdn/cloud-fastly.html#domain).
 
 * [Enable and configure Fastly]({{ page.baseurl }}/cloud/cdn/configure-fastly.html#cloud-fastly-config) and complete the [DNS configuration]({{ page.baseurl }}/cloud/live/go-live-checklist.html#dns) for your project environment.
-
 
 ## Verify or debug Fastly services
 
@@ -256,17 +255,14 @@ php bin/magento module:status Fastly_Cdn
 
 Based on the status returned, use the following instructions to update the Fastly configuration.
 
+-  `Module does not exist`—If the module does not exist [install and configure](https://github.com/fastly/fastly-magento2/blob/master/Documentation/INSTALLATION.md) the Fastly CDN Module for Magento 2 in an Integration branch. After installation completes, enable and configure the module. See [Set up Fastly]({{ page.baseurl }}/cloud/cdn/configure-fastly.html).
+
 -  `Module is disabled`—If the Fastly module is disabled, update the environment configuration on an Integration branch in your local environment to enable it. Then, push the changes to Staging and Production. See [Manage extensions]({{ page.baseurl }}/cloud/howtos/install-components.html#manage).
 
--  `Module does not exist`—If the module does not exist [install and configure the extension in an Integration branch]({{ page.baseurl }}/cloud/cdn/configure-fastly.html#cloud-fastly-start). After installation completes, enable and configure the module.
-  
-   If you use [Configuration Management]({{ page.baseurl }}/cloud/live/sens-data-over.html#cloud-config-specific-recomm), verify that Fastly CDN is enabled (`Fastly_CDN=> 1`) in the following configuration files before you push changes to the Production or Staging environment:
-
-   -  `app/etc/config.app.php` (version 2.0 - 2.1)
-   -  `app/etc/config.php` (version 2.2)
+   If you use [Configuration Management]({{ page.baseurl }}/cloud/live/sens-data-over.html#cloud-config-specific-recomm), check the Fastly CDN module status in the `app/etc/config.php` configuration file before you push changes to the Production or Staging environment.
 
    If the module is not enabled (`Fastly_CDN => 0`) in the `config.php` file, delete the file and run the following command to update `config.php` with the latest configuration settings.
-
+  
    ```bash
    bin/magento magento-cloud:scd-dump
    ```
