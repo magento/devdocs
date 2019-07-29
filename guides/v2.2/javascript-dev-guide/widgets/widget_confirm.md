@@ -61,6 +61,7 @@ For details about how to initialize a widget in a`.phtml` template, refer to the
 -   [focus](#confirm_focus)
 -   [title](#confirm_title)
 -   [modalClass](#confirm_modalClass)
+-   [buttons](#confirm_buttons)
 
 ### `actions` {#confirm_actions}
 Widget callbacks.
@@ -76,7 +77,7 @@ actions: {
 }
 ```
 
-### autoOpen {#confirm_autoopen}
+### `autoOpen` {#confirm_autoopen}
 
 Automatically open the confirmation window when the widget is initialized.
 
@@ -84,7 +85,30 @@ Automatically open the confirmation window when the widget is initialized.
 
 **Default value**: `false`
 
-### clickableOverlay {#confirm_clickableOverlay}
+### `buttons` {#confirm_buttons}
+The buttons list.
+
+**Type**: Array of Objects.
+
+**Default value**: 
+
+```javascript
+buttons: [{
+    text: $t('Cancel'),
+    class: 'action-secondary action-dismiss',
+    click: function (event) {
+        this.closeModal(event);
+    }
+}, {
+    text: $t('OK'),
+    class: 'action-primary action-accept',
+    click: function (event) {
+        this.closeModal(event, true);
+    }
+}]
+```
+
+### `clickableOverlay` {#confirm_clickableOverlay}
 
 Close the confirmation window when a user clicks on the overlay.
 
@@ -159,7 +183,26 @@ require([
             always: function() {
                 // do something when the modal is closed
             }
-        }
+        },
+        buttons: [{
+            text: $.mage.__('Cancel'),
+            class: 'action-secondary action-dismiss',
+            click: function (event) {
+                this.closeModal(event);
+            }
+        }, {
+            text: $.mage.__('OK'),
+            class: 'action-primary action-accept',
+            click: function (event) {
+                this.closeModal(event, true);
+            }
+        }, {
+            text: $.mage.__('New Action'),
+            class: 'action primary action-new',
+            click: function (event) {
+                // New action
+            }
+        }]
     });
 });
 </script>
@@ -191,7 +234,26 @@ require([
             always: function() {
                 // do something when the modal is closed
             }
-        }
+        },
+        buttons: [{
+            text: $.mage.__('Cancel'),
+            class: 'action-secondary action-dismiss',
+            click: function (event) {
+                this.closeModal(event);
+            }
+        }, {
+            text: $.mage.__('OK'),
+            class: 'action primary action-accept',
+            click: function (event) {
+                this.closeModal(event, true);
+            }
+        }, {
+            text: $.mage.__('New Action'),
+            class: 'action new',
+            click: function (event) {
+                // New action
+            }
+        }]
     });
 });
 </script>
