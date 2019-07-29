@@ -7,7 +7,7 @@ Use the `countries` query to return all countries in which the entity can do bus
 
 ## Syntax
 
-`{countries[country] {Countries}}`
+`{countries {Countries}}`
 
 ## Example usage
 
@@ -131,13 +131,7 @@ In this example, the response is intentionally truncated.
 }
 ```
 
-## Input attributes
-
-The `countries` object provides the following attributes:
-
-Attribute | Data type | Description
---- | --- | ---
-`Country` | [[Country]]({{page.baseurl}}/graphql/queries/directory-country.html#inputAttributes)| Provides information for all countries specified in the store
+{% include graphql/country-output.md %}
 
 ## Related topics
 

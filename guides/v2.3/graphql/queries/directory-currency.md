@@ -55,7 +55,7 @@ query {
 }
 ```
 
-## Input attributes
+## Output attributes
 
 The `currency` object provides the following attributes:
 
