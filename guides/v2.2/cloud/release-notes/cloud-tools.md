@@ -17,6 +17,16 @@ The release notes include:
 -   {:.new}New features
 -   {:.fix}Fixes and improvements
 
+## v2002.0.21
+
+-   {:.new}<!-- MAGECLOUD-2514 -->Added information about list of enabled modules to the module:refresh command and cloud.log.
+
+-   {:.new}<!-- MAGECLOUD-3535 -->Added version compatibility validation between Magento version and installed services, such as RabbitMq, Redis, and DB. Displays a warning message if the service version is not compatible.
+
+-   {:.fix}<!-- MAGECLOUD-3806 -->Fixed an issue when running the 'setup:upgrade` command that did not stop the deployment process if there was a failure during the `app:config:import` task.
+
+-   {:.fix}<!-- MAGECLOUD-3866 -->Fixed an issue affecting the WARM_UP_PAGES functionality that uses a default store URL. Now, if the `config:show:default-url` command cannot fetch a base URL, then the URL from the MAGENTO_CLOUD_ROUTES variable is used.
+
 ## v2002.0.20
 
 -   {:.new}**Docker Updates**—
