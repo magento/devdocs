@@ -148,3 +148,17 @@ The current default storage amount per project is 5GB, or 5120MB. You can distri
     ```
 
 1. Confirm the `service` and `type` from the response. The response provides connection information, such as the IP address and port number.
+
+## Service versions available
+
+The following table lists the services used in {{site.data.var.ece}} and their version compatibility with the Magento application.
+
+Service   | Supported Versions
+--------- | -------------------
+`mariadb` | 10.0 to 10.2
+`nginx`   | 1.9.0
+`node`    | 6, 8, 10, 11
+`redis`   | 3.2, 4.0, 5.0
+`php`     | Magento 2.3.0 and later: 7.1, 7.2<br>Magento 2.2.5 and later: 7.0, 7.1<br>Magento 2.2.4 and earlier: 7.0.2, 7.0.4, 7.0.6, 7.1.0
+`rabbitmq`| Magento 2.3.0 and later: 3.5.0, 3.7.0<br>Magento version earlier than 2.3.0: 3.5.0
+`varnish` | Magento 2.2.0 and later: 4.0, 5.0<br>Magento version earlier than 2.2.0: 3.5, 4.0
