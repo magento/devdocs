@@ -28,12 +28,6 @@ We support MariaDB version 10.2, which includes reimplemented features from MySQ
   mysql -h<db> -p<number> -u<username> -p<password>
   ```
 
-#### To verify environment-related relationships:
-
-Use the {{site.data.var.ece}} environment variable [`$MAGENTO_CLOUD_RELATIONSHIPS`]({{page.baseurl}}/cloud/env/environment-vars_cloud.html), a JSON object, to retrieve environment-related relationships.
-
-{% include cloud/pretty-print-services.md %}
-
 ## Enable MySQL
 
 1. Add the required name, type, and disk value (in MB) to the `.magento/services.yaml` file.
@@ -56,6 +50,8 @@ Use the {{site.data.var.ece}} environment variable [`$MAGENTO_CLOUD_RELATIONSHIP
   ```bash
   git add -A && git commit -m "Enable mysql service" && git push origin <branch-name>
   ```
+
+1. [Verify the relationships]({{page.baseurl}}/cloud/project/project-conf-files_services.html#service-relationships).
 
 {: .bs-callout-info }
 -  If you configure one MySQL user, you cannot use the [`DEFINER`](http://dev.mysql.com/doc/refman/5.6/en/show-grants.html) access control mechanism for stored procedures and views.

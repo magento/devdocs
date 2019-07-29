@@ -46,7 +46,7 @@ elasticsearch:
 
 ## Service values
 
-You must provide name and type for each service, and a disk value if the service uses persistent storage. For example:
+Minimally, you must provide a `name` and `type` value for each service. If the service uses persistent storage, then you must provide a `disk` value. Use the following format:
 
 ```yaml
 <name>:
@@ -56,7 +56,16 @@ You must provide name and type for each service, and a disk value if the service
 
 ### `name`
 
-The `name` value identifies the service in the project. You can only use lower case alphanumeric characters: `a` to `z` and `0` to `9`, such as `redis`. You can name multiple instances of each service type. For example, we could use multiple Redis instances—one for session and one for cache.
+The `name` value identifies the service in the project. You can only use lower case alphanumeric characters: `a` to `z` and `0` to `9`, such as `redis`.
+
+This name value is used in the `relationships` property of the `.magento.app.yaml` configuration file:
+
+```yaml
+relationships:
+    redis: "<name>:redis"
+```
+
+You can name multiple instances of each service type. For example, we could use multiple Redis instances—one for session and one for cache.
 
 ```yaml
 redis:
@@ -64,13 +73,6 @@ redis:
 
 redis2:
     type: redis:<version>
-```
-
-This name value is used in the `relationships` property of the `.magento.app.yaml` configuration file:
-
-```yaml
-relationships:
-    redis: "<name>:redis"
 ```
 
 Renaming a service in the `services.yaml` file **permanently removes** the following:
@@ -99,6 +101,44 @@ mysql:
 
 The current default storage amount per project is 5GB, or 5120MB. You can distribute this amount between your application and each of its services.
 
-## Using the services
+## Service relationships
 
-For services to be available to an application in your project, you must specify [*relationships*]({{ page.baseurl }}/cloud/project/project-conf-files_magento-app.html#relationships) between applications and services in the `.magento.app.yaml` file.
+{{site.data.var.ece}} uses the [`$MAGENTO_CLOUD_RELATIONSHIPS`]({{page.baseurl}}/cloud/env/environment-vars_cloud.html) environment variable to retrieve environment-related relationships. For services to be available to an application in your project, you must specify [*relationships*]({{ page.baseurl }}/cloud/project/project-conf-files_magento-app.html#relationships) between applications and services in the `.magento.app.yaml` file.
+
+#### To verify relationships in local environment:
+
+```bash
+magento-cloud relationships
+```
+
+**Abbreviated sample response**:
+
+```terminal
+redis:
+    -
+...
+        type: 'redis:3.2'
+        port: 6379
+elasticsearch:
+    -
+...
+        type: 'elasticsearch:6.5'
+        port: 9200
+database:
+    -
+...
+        type: 'mysql:10.0'
+        port: 3306
+
+```
+{:.no-copy}
+
+#### To verify relationships in remote environments:
+
+1.  Use SSH to log in to the remote environment.
+
+1.  Create `pretty-print` of all relationships for services and configuration data for that environment.
+
+    ```bash
+    php -r 'print_r(json_decode(base64_decode($_ENV["MAGENTO_CLOUD_RELATIONSHIPS"])));'
+    ```

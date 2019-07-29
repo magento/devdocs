@@ -45,11 +45,7 @@ We support Redis versions 2.8, 3.0, and 5.0. Redis 3.0 supports up to 64 differe
   git add -A && git commit -m "Enable redis service" && git push origin <branch-name>
   ```
 
-#### To verify environment-related relationships:
-
-We use the {{site.data.var.ece}} environment variable [`$MAGENTO_CLOUD_RELATIONSHIPS`]({{ page.baseurl }}/cloud/env/environment-vars_cloud.html), a JSON object, to retrieve environment-related relationships.
-
-{% include cloud/pretty-print-services.md %}
+1. [Verify the relationships]({{page.baseurl}}/cloud/project/project-conf-files_services.html#service-relationships).
 
 ## Using the Redis CLI
 
