@@ -5,7 +5,7 @@ redirect_from:
   - /guides/v2.3/graphql/reference/sales.html
 ---
 
-The Sales module performs a wide variety of functions, including order, invoice, and shipment management. However, most of these functions are performed on the backend, and the customer does not have access to this information. By returning a list of customer orders, the `customerOrders` query allows a customers to retrieve their order histories.
+The Sales module performs a wide variety of functions, including order, invoice, and shipment management. However, most of these functions are performed on the backend, and the customer does not have access to this information. By returning a list of customer orders, the `customerOrders` query allows a customer to retrieve their order histories.
 
 Magento recommends you use customer tokens in the header of your GraphQL calls. However, you also can use [session authentication]({{ page.baseurl }}/get-started/authentication/gs-authentication-session.html).
 
