@@ -4,9 +4,6 @@ title: Customize error pages
 redirect_from:
    - /guides/v2.2/cloud/configure/fastly-vcl-extend-timeout.html
    - /guides/v2.3/cloud/configure/fastly-vcl-extend-timeout.html
-   - /guides/v2.2/cloud/access-acct/fastly.html
-   - /guides/v2.3/cloud/access-acct/fastly.html
-
 functional_areas:
   - Cloud
   - Setup
