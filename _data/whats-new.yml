@@ -4,8 +4,106 @@ description: |
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: /whats-new.html
 thread: /whatsnew-feed.xml
-updated: Mon Jul 15 16:39:29 2019
+updated: Fri Jul 26 15:50:11 2019
 entries:
+- description: Updated changes in the 2.3.2 schema of the [customer endpoint](https://devdocs.magento.com/guides/v2.3/graphql/reference/customer.htm).
+  versions: 2.3.x
+  type: Major update
+  date: July 25, 2019
+  link: https://github.com/magento/devdocs/pull/4977
+- description: Added note to clarify that Fastly caching services for Magento Commerce
+    Cloud projects are available only after you upload the VCL code that enables the
+    Fastly integration. See [Set up Fastly](https://devdocs.magento.com/guides/v2.3/cloud/cdn/configure-fastly.html).
+  versions: 2.x
+  type: Technical changes
+  date: July 25, 2019
+  link: https://github.com/magento/devdocs/pull/5023
+- description: Added the [Asynchronous and deferred operations](http://devdocs.magento.com/guides/v2.3/extension-dev-guide/async-operations.md)
+    topic to the PHP Developer Guide.
+  versions: 2.3.x
+  type: Major update
+  date: July 23, 2019
+  link: https://github.com/magento/devdocs/pull/4820
+- description: Added the "Manage the 'My Account' dashboard navigation links" section
+    to  [Common layout customization tasks](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/layouts/xml-manage.html).
+  versions: 2.3.x
+  type: Major update
+  date: July 22, 2019
+  link: https://github.com/magento/devdocs/pull/5006
+- description: Updated the `bin/docker` command list in the [Docker quick reference](https://devdocs.magento.com/guides/v2.2/cloud/docker/docker-quick-reference.html#bindocker)
+    topic.
+  versions: 2.x
+  type: Technical changes
+  date: July 22, 2019
+  link: https://github.com/magento/devdocs/pull/5003
+- description: Added information about the [PasswordStrengthIndicator widget](https://devdocs.magento.com/guides/v2.3/javascript-dev-guide/widgets/widget_password_strength_indicator.html).
+  versions: 2.2.x, 2.3.x
+  type: New topic
+  date: July 22, 2019
+  link: https://github.com/magento/devdocs/pull/4733
+- description: Added the 'Invoking DevTools' section to [Debug UI components JavaScript](https://devdocs.magento.com/guides/v2.3/ui_comp_guide/troubleshoot/ui_comp_troubleshoot_js.html).
+  versions: 2.2.x, 2.3.x
+  type: Major update
+  date: July 19, 2019
+  link: https://github.com/magento/devdocs/pull/4996
+- description: Added the 'Applying mobile-specific styles' section to [Create a responsive
+    mobile theme based on a default theme](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/responsive-web-design/rwd_mobile.html).
+  versions: 2.2.x, 2.3.x
+  type: Technical changes
+  date: July 18, 2019
+  link: https://github.com/magento/devdocs/pull/4859
+- description: Described how to add custom store configuration attributes to the [storeConfig
+    query](https://devdocs.magento.com/guides/v2.3/graphql/reference/store-config.html).
+  versions: 2.3.x
+  type: Major update
+  date: July 18, 2019
+  link: https://github.com/magento/devdocs/pull/4883
+- description: Added a section in the Cloud [integrations topic](https://devdocs.magento.com/guides/v2.2/cloud/integrations/cloud-integrations.html#generic-webhooks)
+    about creating generic webhooks.
+  versions: 2.x
+  type: Major update
+  date: July 18, 2019
+  link: https://github.com/magento/devdocs/pull/4963
+- description: Updated the [Set up cron jobs](https://devdocs.magento.com/guides/v2.3/cloud/configure/setup-cron-jobs.html)
+    documentation to reflect availability of self-service cron configuration feature
+    on all Starter and Pro plan project environments, including Pro Production and
+    Staging. Previously, Magento customers on the Cloud platform had to submit a support
+    ticket to update cron configuration on Pro Staging and Production environments.
+  versions: 2.2.x, 2.3.x
+  type: Major update
+  date: July 17, 2019
+  link: https://github.com/magento/devdocs/pull/4953
+- description: Added example about how to [declare and load a new route](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/routing.html).
+  versions: 2.2.x, 2.3.x
+  type: Major update
+  date: July 17, 2019
+  link: https://github.com/magento/devdocs/pull/4923
+- description: Added '2.2. Object instantiation' section to [Technical Guidelines](https://devdocs.magento.com/guides/v2.3/coding-standards/technical-guidelines.html).
+  versions: 2.2.x, 2.3.x
+  type: Major update
+  date: July 16, 2019
+  link: https://github.com/magento/devdocs/pull/3982
+- description: Added the "GraphQl backward compatibility policy" section to [Backward
+    compatible development](https://devdocs.magento.com/guides/v2.3/contributor-guide/backward-compatible-development/)
+  versions: 2.3.x
+  type: Major update
+  date: July 16, 2019
+  link: https://github.com/magento/devdocs/pull/4493
+- description: Added information about the [JavaScript dropdown widget](https://devdocs.magento.com/guides/v2.2/javascript-dev-guide/widgets/jquery-widgets-about.html).
+  versions: 2.2.x, 2.3.x
+  type: New topic
+  date: July 16, 2019
+  link: https://github.com/magento/devdocs/pull/4928
+- description: Added additional UI `input` [options and descriptions](https://devdocs.magento.com/guides/v2.3/ui_comp_guide/components/ui-input.html).
+  versions: 2.2.x, 2.3.x
+  type: Major update
+  date: July 16, 2019
+  link: https://github.com/magento/devdocs/pull/4956
+- description: Added the 'Common arguments for blocks' section to [Layout Instructions](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/layouts/xml-instructions.html).
+  versions: 2.2.x, 2.3.x
+  type: Major update
+  date: July 16, 2019
+  link: https://github.com/magento/devdocs/pull/4629
 - description: Added the 'Elements' and 'Data Entities' sections to the [Functional
     Testing](https://devdocs.magento.com/guides/v2.3/coding-standards/technical-guidelines.html#113-functional-testing)
     section of Technical Guidelines.
@@ -31,6 +129,29 @@ entries:
   type: New topic
   date: July 9, 2019
   link: https://github.com/magento/devdocs/pull/4885
+- description: Added a 'Code sample' section to [Calendar Widget](https://devdocs.magento.com/guides/v2.3/javascript-dev-guide/widgets/widget_calendar.html).
+  versions: 2.2.x, 2.3.x
+  type: Major update
+  date: July 9, 2019
+  link: https://github.com/magento/devdocs/pull/4851
+- description: Added information and example about how to use the [ColorPicker component](https://devdocs.magento.com/guides/v2.3/ui_comp_guide/components/ui-colorpicker.html).
+  versions: 2.3.x
+  type: New topic
+  date: July 9, 2019
+  link: https://github.com/magento/devdocs/pull/4885
+- description: Added the 'Product view page available containers' section to [Product
+    Layouts](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/layouts/product-layouts.html).
+  versions: 2.1.x, 2.2.x, 2.3.x
+  type: Major update
+  date: July 8, 2019
+  link: https://github.com/magento/devdocs/pull/4630
+- description: Updated the [Release Notes](https://devdocs.magento.com/extensions/google-shopping-ads/release-notes/)
+    for Google Shopping ads Channel v2.0.2 and the [Upcoming releases](https://devdocs.magento.com/release/)
+    page.
+  versions: 2.0.2 Google Shopping ads Channel
+  type: Major update
+  date: July 8, 2019
+  link: https://github.com/magento/devdocs/pull/4902
 - description: Added a `Code sample` section to [Calendar Widget](https://devdocs.magento.com/guides/v2.3/javascript-dev-guide/widgets/widget_calendar.html).
   versions: 2.2.x, 2.3.x
   type: Major update
