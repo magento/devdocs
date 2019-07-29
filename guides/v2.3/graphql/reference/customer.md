@@ -91,7 +91,9 @@ Attribute |  Data Type | Description
 `attribute_code` | String | Attribute code
 `value` | String | Attribute value
 
-### isEmailAvailable query attribute
+### isEmailAvailable attribute
+
+The `isEmailAvailable` object can contain the following attributes:
 
 Attribute |  Data Type | Description
 --- | --- | ---

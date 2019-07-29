@@ -476,53 +476,80 @@ class Product
 
  You can remove navigation links from the 'My Account' dashboard on the storefront by setting the `remove` attribute.
 
-  ```xml
+```xml
+<!-- ################################## -->
+<!-- Magento version: Open Source -->
+<!-- ################################## -->
+
 <!-- File:  app/design/frontend/<Vendor>/<theme>/Magento_Customer/layout/customer_account.xml -->
-
- <!-- Store credit -->
-<referenceBlock name="customer-account-navigation-customer-balance-link" remove="true"/>
-
-  <!-- Downloadable product link -->
-<referenceBlock name="customer-account-navigation-downloadable-products-link" remove="true"/>
-
-  <!-- Subscription link -->
-<referenceBlock name="customer-account-navigation-newsletter-subscriptions-link" remove="true"/>
-
-  <!-- Billing agreement link -->
-<referenceBlock name="customer-account-navigation-billing-agreements-link" remove="true"/>
-
-  <!-- Product review link -->
-<referenceBlock name="customer-account-navigation-product-reviews-link" remove="true"/>
-
-  <!-- My credit card link -->
-<referenceBlock name="customer-account-navigation-my-credit-cards-link" remove="true"/>
-
-  <!-- Account link -->
+<!-- "My Account" link -->
 <referenceBlock name="customer-account-navigation-account-link" remove="true"/>
 
-  <!-- Account edit link -->
-<referenceBlock name="customer-account-navigation-account-edit-link" remove="true"/>
-
-  <!-- Address link -->
+<!-- "Address Book" link -->
 <referenceBlock name="customer-account-navigation-address-link" remove="true"/>
 
-  <!-- Orders link -->
+<!-- "Account Information" link -->
+<referenceBlock name="customer-account-navigation-account-edit-link" remove="true"/>
+
+<!-- File:  app/design/frontend/<Vendor>/<theme>/Magento_Downloadable/layout/customer_account.xml -->
+<!-- "My Downloadable Products" link -->
+<referenceBlock name="customer-account-navigation-downloadable-products-link" remove="true"/>
+
+<!-- File:  app/design/frontend/<Vendor>/<theme>/Magento_Newsletter/layout/customer_account.xml -->
+<!-- "Newsletter Subscriptions" link -->
+<referenceBlock name="customer-account-navigation-newsletter-subscriptions-link" remove="true"/>
+
+<!-- File:  app/design/frontend/<Vendor>/<theme>/Magento_Paypal/layout/customer_account.xml -->
+<!-- "Billing Agreements" link -->
+<referenceBlock name="customer-account-navigation-billing-agreements-link" remove="true"/>
+
+<!-- File:  app/design/frontend/<Vendor>/<theme>/Magento_Review/layout/customer_account.xml -->
+<!-- "My Product Reviews" link -->
+<referenceBlock name="customer-account-navigation-product-reviews-link" remove="true"/>
+
+<!-- File:  app/design/frontend/<Vendor>/<theme>/Magento_Sales/layout/customer_account.xml -->
+<!-- "My Orders" link -->
 <referenceBlock name="customer-account-navigation-orders-link" remove="true"/>
 
-  <!-- Wish list link -->
+<!-- File:  app/design/frontend/<Vendor>/<theme>/Magento_Vault/layout/customer_account.xml -->
+<!-- "Stored Payment Methods" link -->
+<referenceBlock name="customer-account-navigation-my-credit-cards-link" remove="true"/>
+
+<!-- File:  app/design/frontend/<Vendor>/<theme>/Magento_Wishlist/layout/customer_account.xml -->
+<!-- "My Wish List" link -->
 <referenceBlock name="customer-account-navigation-wish-list-link" remove="true"/>
 
-  <!-- Gift card link -->
+<!-- ################################### -->
+<!-- Magento version: Commerce -->
+<!-- ################################### -->
+
+<!-- File:  app/design/frontend/<Vendor>/<theme>/Magento_AdvancedCheckout/layout/customer_account.xml -->
+<!-- "Order by SKU" link -->
+<referenceBlock name="customer-account-navigation-checkout-sku-link" remove="true"/>
+
+<!-- File:  app/design/frontend/<Vendor>/<theme>/Magento_CustomerCustomAttributes/layout/customer_account.xml -->
+<!-- "Store credit" link -->
+<referenceBlock name="customer-account-navigation-customer-balance-link" remove="true"/>
+
+<!-- File:  app/design/frontend/<Vendor>/<theme>/Magento_GiftCardAccount/layout/customer_account.xml -->
+<!-- "Gift card" link -->
 <referenceBlock name="customer-account-navigation-gift-card-link" remove="true"/>
 
-  <!-- Gift registry -->
+<!-- File:  app/design/frontend/<Vendor>/<theme>/Magento_GiftRegistry/layout/customer_account.xml -->
+<!-- "Gift Registry" link -->
 <referenceBlock name="customer-account-navigation-giftregistry-link" remove="true"/>
 
-  <!-- Reward points -->
+<!-- File:  app/design/frontend/<Vendor>/<theme>/Magento_Invitation/layout/customer_account.xml -->
+<!-- "My Invitations" link -->
+<referenceBlock name="customer-account-navigation-magento-invitation-link" remove="true"/>
+
+<!-- File:  app/design/frontend/<Vendor>/<theme>/Magento_Reward/layout/customer_account.xml -->
+<!-- "Reward Points" link -->
 <referenceBlock name="customer-account-navigation-reward-link" remove="true"/>
 
-  <!-- Order by SKU -->
-<referenceBlock name="customer-account-navigation-checkout-sku-link" remove="true"/>
+<!-- File:  app/design/frontend/<Vendor>/<theme>/Magento_Rma/layout/customer_account.xml -->
+<!-- "My Returns" link -->
+<referenceBlock name="customer-account-navigation-return-history-link" remove="true"/>
 ```
 
 ### Related topics
