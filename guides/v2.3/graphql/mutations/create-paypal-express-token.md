@@ -9,7 +9,7 @@ The `createPaypalExpressToken` mutation begins the authorization process for the
 * PayPal Payflow Pro with Express Checkout
 * PayPal Payflow Link with Express Checkout
 
-This mutation requires as input the cart ID, the payment method code, and a set of URLs that PayPal uses to respond to the token request. If the request is successful, PayPal returns a token. The `setPaymentMethodOnCart` mutation uses this token later in the authorization process. 
+The input includes the cart ID, the payment method code, and a set of URLs that PayPal uses to respond to the token request. If the request is successful, PayPal returns a token. The `setPaymentMethodOnCart` mutation uses this token later in the authorization process.
 
 The raw response from PayPal also includes the payer ID in the URL. Extract the payer ID in your client code. You will also specify this value in the `setPaymentMethodOnCart` mutation.
 
@@ -17,7 +17,7 @@ The raw response from PayPal also includes the payer ID in the URL. Extract the 
 
 `mutation: {createPaypalExpressToken(input: PaypalExpressTokenInput!): {PaypalExpressToken}}`
 
-## Sample usage
+## Example usage
 
 **Request**
 
@@ -71,7 +71,7 @@ Attribute |  Data Type | Description
 `cart_id` | String! | The unique ID that identifies the customer's cart
 `code` | String! | Payment method code
 `express_button` | Boolean | Indicates whether the buyer selected the PayPal Express Checkout button. The default value is `false`
-`urls` | [`PaypalExpressUrlsInput`](#PaypalExpressUrlsInput)! | Defines a set of URLs to redirect to in response to the token request
+`urls` | [`PaypalExpressUrlsInput!`](#PaypalExpressUrlsInput)! | Defines a set of URLs to redirect to in response to the token request
 `use_paypal_credit` | Boolean | Indicates whether the buyer clicked the Paypal credit button. The default value is `false`
 
 ### PaypalExpressUrlsInput {#PaypalExpressUrlsInput}
@@ -84,25 +84,6 @@ Attribute |  Data Type | Description
 `pending_url` | String! | The URL to redirect for a pending transactions. Not applicable to most PayPal solutions
 `return_url` | String! | The URL of the final review page on your website where the buyer confirms the order and payment
 `success_url` | String! | The URL to redirect upon success. Not applicable to most PayPal solutions
-
-### PaymentMethodAdditionalDataInput {#PaymentMethodAdditionalDataInput}
-
-The `PaymentMethodAdditionalDataInput` data type attributes are used when setting a PayPal payment method. [setPaymentMethodOnCart mutation]({{ page.baseurl}}/graphql/reference/quote-payment-method.html) provides more context.
-
-Attribute |  Data Type | Description
---- | --- | ---
-`payflow_express` | [PayflowExpressInput](#PayflowExpressInput) | Required input for PayPal Payflow Express Checkout payments
-`paypal_express` | [PaypalExpressInput](#PaypalExpressInput) | Required input for PayPal Express Checkout payments
-
-### PaypalExpressInput {#PaypalExpressInput}
-
-The `PaypalExpressInput` object contains the required input for PayPal Express Checkout payments.
-
-Attribute |  Data Type | Description
---- | --- | ---
-`payer_id` | String! | The unique ID of the PayPal customer
-`token` | String! | The token returned by the createPaypalExpressToken mutation
-
 
 ## Output attributes
 
