@@ -8,6 +8,11 @@
   description: "Rewriting Store-level URL key of child category"
   repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/CatalogUrlRewrite/Test/Mftf/Test/RewriteStoreLevelUrlKeyOfChildCategoryTest.xml
 
+- testname: "StorefrontVerifySecureURLRedirectAuthorizenetTest.xml"
+  module: "Authorizenet"
+  description: "Verify that the Secure URL configuration applies to the Authorizenet pages on the Storefront"
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Authorizenet/Test/Mftf/Test/StorefrontVerifySecureURLRedirectAuthorizenetTest.xml
+
 - testname: "BraintreeCreditCardOnCheckoutTest.xml"
   module: "Braintree"
   description: "Use saved for Braintree credit card on checkout with selecting billing address"
@@ -27,6 +32,11 @@
   module: "Ups"
   description: "Default Configuration for UPS Type"
   repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Ups/Test/Mftf/Test/DefaultConfigForUPSTypeTest.xml
+
+- testname: "StorefrontVerifySecureURLRedirectContactTest.xml"
+  module: "Contact"
+  description: "Verify that the Secure URL configuration applies to the Contact pages on the Storefront"
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Contact/Test/Mftf/Test/StorefrontVerifySecureURLRedirectContactTest.xml
 
 - testname: "ProductsListWidgetTest.xml"
   module: "Widget"
@@ -148,6 +158,11 @@
   description: "Admin should be able to navigate to Sales > Invoices"
   repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Sales/Test/Mftf/Test/AdminSalesInvoicesNavigateMenuTest.xml
 
+- testname: "StorefrontVerifySecureURLRedirectSalesTest.xml"
+  module: "Sales"
+  description: "Verify that the Secure URL configuration applies to the Sales pages on the Storefront"
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Sales/Test/Mftf/Test/StorefrontVerifySecureURLRedirectSalesTest.xml
+
 - testname: "AdminSalesOrdersNavigateMenuTest.xml"
   module: "Sales"
   description: "Admin should be able to navigate to Sales > Orders"
@@ -183,6 +198,11 @@
   description: "Checking welcome message for persistent customer after logout"
   repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Persistent/Test/Mftf/Test/StorefrontCorrectWelcomeMessageAfterCustomerIsLoggedOutTest.xml
 
+- testname: "StorefrontVerifyThatInformationAboutViewingComparisonWishlistIsPersistedUnderLongTermCookieTest.xml"
+  module: "Persistent"
+  description: "Verify that information about viewing, comparison, wishlist and last ordered items is persisted under long-term cookie"
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Persistent/Test/Mftf/Test/StorefrontVerifyThatInformationAboutViewingComparisonWishlistIsPersistedUnderLongTermCookieTest.xml
+
 - testname: "ShippingQuotePersistedForGuestTest.xml"
   module: "Persistent"
   description: "Verify that 'Estimate Shipping and Tax' block sections on shipping cart saving correctly for Guest after switching to another page. And check that the shopping cart is cleared after reset persistent cookie."
@@ -207,6 +227,11 @@
   module: "Config"
   description: "Verify that Allow Dynamic Media URLs setting is removed from configuration page"
   repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Config/Test/Mftf/Test/ConfigurationTest.xml
+
+- testname: "AdminUserLockWhenCreatingNewUserTest.xml"
+  module: "Security"
+  description: "Runs Lock admin user when creating new user test."
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Security/Test/Mftf/Test/AdminUserLockWhenCreatingNewUserTest.xml
 
 - testname: "StorefrontGuestCheckoutDisabledProductTest.xml"
   module: "Quote"
@@ -1443,6 +1468,11 @@
   description: "Verifying adding of bundle options to the cart"
   repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Bundle/Test/Mftf/Test/StorefrontAddBundleOptionsToCartTest.xml
 
+- testname: "AdminResetUserPasswordFailedTest.xml"
+  module: "User"
+  description: "Admin user should not be able to trigger the password reset procedure twice"
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/User/Test/Mftf/Test/AdminResetUserPasswordFailedTest.xml
+
 - testname: "AdminSystemUserRolesNavigateMenuTest.xml"
   module: "User"
   description: "Admin should be able to navigate to System > User Roles"
@@ -1467,6 +1497,11 @@
   module: "Backend"
   description: "Check that attribute text swatches can be filed"
   repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Backend/Test/Mftf/Test/AdminAttributeTextSwatchesCanBeFiledTest.xml
+
+- testname: "AdminUserLoginWithStoreCodeInUrlTest.xml"
+  module: "Backend"
+  description: "Admin panel should be accessible with Add Store Code to URL setting enabled"
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Backend/Test/Mftf/Test/AdminUserLoginWithStoreCodeInUrlTest.xml
 
 - testname: "AdminContentScheduleNavigateMenuTest.xml"
   module: "Backend"
@@ -1537,6 +1572,11 @@
   module: "Downloadable"
   description: "Guest customer should be able to advance search Downloadable product with product name"
   repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Downloadable/Test/Mftf/Test/AdvanceCatalogSearchDownloadableProductTest.xml
+
+- testname: "StorefrontVerifySecureURLRedirectDownloadableTest.xml"
+  module: "Downloadable"
+  description: "Verify that the Secure URL configuration applies to the Downloadable pages on the Storefront"
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Downloadable/Test/Mftf/Test/StorefrontVerifySecureURLRedirectDownloadableTest.xml
 
 - testname: "AdminRemoveDefaultVideoDownloadableProductTest.xml"
   module: "Downloadable"
@@ -1643,6 +1683,11 @@
   description: "Check that top destinations can be removed after a selection was previously saved"
   repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Checkout/Test/Mftf/Test/CheckoutSpecificDestinationsTest.xml
 
+- testname: "StorefrontPersistentDataForGuestCustomerWithPhysicalQuoteTest.xml"
+  module: "Checkout"
+  description: "One can use Persistent Data for Guest Customer with physical quote"
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Checkout/Test/Mftf/Test/StorefrontPersistentDataForGuestCustomerWithPhysicalQuoteTest.xml
+
 - testname: "StorefrontProductNameMinicartOnCheckoutPageDifferentStoreViewsTest.xml"
   module: "Checkout"
   description: "Checking Product name in Minicart and on Checkout page with different store views"
@@ -1653,10 +1698,20 @@
   description: "Default billing address should be preselected on payments page on checkout if it exist"
   repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Checkout/Test/Mftf/Test/DefaultBillingAddressShouldBeCheckedOnPaymentPageTest.xml
 
+- testname: "StorefrontValidateEmailOnCheckoutTest.xml"
+  module: "Checkout"
+  description: "Email validation for Guest on checkout flow"
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Checkout/Test/Mftf/Test/StorefrontValidateEmailOnCheckoutTest.xml
+
 - testname: "ZeroSubtotalOrdersWithProcessingStatusTest.xml"
   module: "Checkout"
   description: "Created order should be in Processing status"
   repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Checkout/Test/Mftf/Test/ZeroSubtotalOrdersWithProcessingStatusTest.xml
+
+- testname: "StorefrontVerifySecureURLRedirectCheckoutTest.xml"
+  module: "Checkout"
+  description: "Verify that the Secure URL configuration applies to the Checkout pages on the Storefront"
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Checkout/Test/Mftf/Test/StorefrontVerifySecureURLRedirectCheckoutTest.xml
 
 - testname: "StorefrontUpdatePriceInShoppingCartAfterProductSaveTest.xml"
   module: "Checkout"
@@ -1747,6 +1802,11 @@
   module: "Checkout"
   description: "Checkout data should be persist after updating cart"
   repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Checkout/Test/Mftf/Test/StorefrontGuestCheckoutDataPersistTest.xml
+
+- testname: "AdminResetUserPasswordFailedTest.xml"
+  module: "Captcha"
+  description: ""
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Captcha/Test/Mftf/Test/AdminResetUserPasswordFailedTest.xml
 
 - testname: "StorefrontCaptchaEditCustomerEmailTest.xml"
   module: "Captcha"
@@ -1847,6 +1907,11 @@
   module: "GroupedProduct"
   description: "Admin should be able to add default video for a Grouped Product"
   repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/GroupedProduct/Test/Mftf/Test/AdminAddDefaultVideoGroupedProductTest.xml
+
+- testname: "StorefrontVerifySecureURLRedirectMultishippingTest.xml"
+  module: "Multishipping"
+  description: "Verify that the Secure URL configuration applies to the Multishipping pages on the Storefront"
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Multishipping/Test/Mftf/Test/StorefrontVerifySecureURLRedirectMultishippingTest.xml
 
 - testname: "StoreViewLanguageCorrectSwitchTest.xml"
   module: "Cms"
@@ -2103,6 +2168,11 @@
   description: "Admin should be able to navigate to Sales > Billing Agreements"
   repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Paypal/Test/Mftf/Test/AdminSalesBillingAgreementsNavigateMenuTest.xml
 
+- testname: "StorefrontVerifySecureURLRedirectPaypalTest.xml"
+  module: "Paypal"
+  description: "Verify that the Secure URL configuration applies to the Paypal pages on the Storefront"
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Paypal/Test/Mftf/Test/StorefrontVerifySecureURLRedirectPaypalTest.xml
+
 - testname: "AdminReportsPayPalSettlementNavigateMenuTest.xml"
   module: "Paypal"
   description: "Admin should be able to navigate to Reports > PayPal Settlement"
@@ -2112,6 +2182,11 @@
   module: "Review"
   description: "Admin should be able to navigate to Marketing > Reviews"
   repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Review/Test/Mftf/Test/AdminMarketingReviewsNavigateMenuTest.xml
+
+- testname: "StorefrontVerifySecureURLRedirectReviewTest.xml"
+  module: "Review"
+  description: "Verify that the Secure URL configuration applies to the Review pages on the Storefront"
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Review/Test/Mftf/Test/StorefrontVerifySecureURLRedirectReviewTest.xml
 
 - testname: "AdminReportsByProductsNavigateMenuTest.xml"
   module: "Review"
@@ -2228,6 +2303,11 @@
   description: "Admin should be able to create a catalog price rule applied as a percentage of original (for simple product)"
   repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/CatalogRule/Test/Mftf/Test/AdminCreateCatalogPriceRuleTest.xml
 
+- testname: "DeleteCustomerGroupTest.xml"
+  module: "CatalogRule"
+  description: ""
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/CatalogRule/Test/Mftf/Test/DeleteCustomerGroupTest.xml
+
 - testname: "AdminApplyCatalogRuleByCategoryTest.xml"
   module: "CatalogRule"
   description: "Admin should be able to apply the catalog rule by category"
@@ -2263,6 +2343,11 @@
   description: "Admin should see TinyMCEv4.6 is the native WYSIWYG on Newsletter"
   repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Newsletter/Test/Mftf/Test/VerifyTinyMCEv4IsNativeWYSIWYGOnNewsletterTest.xml
 
+- testname: "StorefrontVerifySecureURLRedirectNewsletterTest.xml"
+  module: "Newsletter"
+  description: "Verify that the Secure URL configuration applies to the Newsletter pages on the Storefront"
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Newsletter/Test/Mftf/Test/StorefrontVerifySecureURLRedirectNewsletterTest.xml
+
 - testname: "VerifySubscribedNewsletterDisplayedTest.xml"
   module: "Newsletter"
   description: "Newsletter subscription when user is registered on 2 stores"
@@ -2282,6 +2367,11 @@
   module: "ConfigurableProduct"
   description: "Admin should be able to create configurable product with creating new category and new attribute (required fields only)"
   repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/ConfigurableProduct/Test/Mftf/Test/AdminCreateConfigurableProductWithCreatingCategoryAndAttributeTest.xml
+
+- testname: "AdminAddingNewOptionsWithImagesAndPricesToConfigurableProductTest.xml"
+  module: "ConfigurableProduct"
+  description: "Test case verifies possibility to add new options for configurable attribute for existing configurable product."
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/ConfigurableProduct/Test/Mftf/Test/AdminAddingNewOptionsWithImagesAndPricesToConfigurableProductTest.xml
 
 - testname: "AdminCreateConfigurableProductWithTierPriceForOneItemTest.xml"
   module: "ConfigurableProduct"
@@ -2503,6 +2593,11 @@
   description: "Admin should be able to navigate to Marketing > Email Templates"
   repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Email/Test/Mftf/Test/AdminMarketingEmailTemplatesNavigateMenuTest.xml
 
+- testname: "AdminEmailTemplatePreviewTest.xml"
+  module: "Email"
+  description: "Check if email template preview works correctly"
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Email/Test/Mftf/Test/AdminEmailTemplatePreviewTest.xml
+
 - testname: "TransactionalEmailsLogoUploadTest.xml"
   module: "Email"
   description: "Transactional Emails Logo should be able to be uploaded in the admin and previewed"
@@ -2638,6 +2733,11 @@
   description: "Update Customer Info from Default to Non-Default in Admin"
   repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Customer/Test/Mftf/Test/AdminUpdateCustomerTest.xml
 
+- testname: "StorefrontVerifySecureURLRedirectCustomerTest.xml"
+  module: "Customer"
+  description: "Verify that the Secure URL configuration applies to the Customer pages on the Storefront"
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Customer/Test/Mftf/Test/StorefrontVerifySecureURLRedirectCustomerTest.xml
+
 - testname: "StorefrontAddCustomerAddressTest.xml"
   module: "Customer"
   description: "Storefront user should be able to create a new address via the storefront"
@@ -2698,6 +2798,11 @@
   description: "Test log in to Storefront and Verify No XSS Injection on Update Customer Information Add Address"
   repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Customer/Test/Mftf/Test/StorefrontVerifyNoXssInjectionOnUpdateCustomerInformationAddAddressTest.xml
 
+- testname: "DeleteCustomerGroupTest.xml"
+  module: "Customer"
+  description: "Delete a customer group"
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Customer/Test/Mftf/Test/DeleteCustomerGroupTest.xml
+
 - testname: "StorefrontUpdateCustomerAddressUKTest.xml"
   module: "Customer"
   description: "Test log in to Storefront and Update Customer Address (UK) in Storefront"
@@ -2738,10 +2843,20 @@
   description: "Test log in to Storefront and Update Customer Address (France) in Storefront"
   repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Customer/Test/Mftf/Test/StorefrontUpdateCustomerAddressFranceTest.xml
 
+- testname: "StorefrontVerifySecureURLRedirectVaultTest.xml"
+  module: "Vault"
+  description: "Verify that the Secure URL configuration applies to the Vault pages on the Storefront"
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Vault/Test/Mftf/Test/StorefrontVerifySecureURLRedirectVaultTest.xml
+
 - testname: "StorefrontRemoveProductsFromWishlistUsingSidebarTest.xml"
   module: "Wishlist"
   description: "Products removed from wishlist and a customer remains on the same page."
   repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Wishlist/Test/Mftf/Test/StorefrontRemoveProductsFromWishlistUsingSidebarTest.xml
+
+- testname: "StorefrontVerifySecureURLRedirectWishlistTest.xml"
+  module: "Wishlist"
+  description: "Verify that the Secure URL configuration applies to the Wishlist pages on the Storefront"
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Wishlist/Test/Mftf/Test/StorefrontVerifySecureURLRedirectWishlistTest.xml
 
 - testname: "StorefrontAddMultipleStoreProductsToWishlistTest.xml"
   module: "Wishlist"
@@ -2930,7 +3045,7 @@
 
 - testname: "AdminCreateStoreViewTest.xml"
   module: "Store"
-  description: "Admin should be able to create a store view"
+  description: "Admin shouldn't be able to create a Store View with the same code"
   repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Store/Test/Mftf/Test/AdminCreateStoreViewTest.xml
 
 - testname: "AdminMoveStoreToOtherGroupSameWebsiteTest.xml"
@@ -2942,6 +3057,11 @@
   module: "Store"
   description: "Test log in to Stores and Update Store View Test"
   repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Store/Test/Mftf/Test/AdminUpdateStoreViewTest.xml
+
+- testname: "StorefrontAddStoreCodeInUrlTest.xml"
+  module: "Store"
+  description: "Store code should be added to storefront URL if the corresponding configuration is enabled"
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Store/Test/Mftf/Test/StorefrontAddStoreCodeInUrlTest.xml
 
 - testname: "AdminUpdateStoreGroupAcceptAlertAndVerifyStoreViewFormTest.xml"
   module: "Store"
@@ -3027,6 +3147,11 @@
   module: "SalesRule"
   description: "Category nesting level must be the same as were created in categories."
   repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/SalesRule/Test/Mftf/Test/PriceRuleCategoryNestingTest.xml
+
+- testname: "DeleteCustomerGroupTest.xml"
+  module: "SalesRule"
+  description: ""
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/SalesRule/Test/Mftf/Test/DeleteCustomerGroupTest.xml
 
 - testname: "AdminCreateBuyXGetYFreeTest.xml"
   module: "SalesRule"
