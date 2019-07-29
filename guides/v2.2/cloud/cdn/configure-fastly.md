@@ -169,14 +169,14 @@ If you need to integrate additional backends into your site such as a backend to
   region:
 
     - ap-east-1 => hongkong-hk
-    - ap-northeast-1 => tyo-tokyo-jp, hnd-tokyo-jp,
-    - ap-northeast-2 => tyo-tokyo-jp, hnd-tokyo-jp,
-    - ap-southeast-1 => singapore-sg,
-    - ap-southeast-2 => sydney-au,
-    - ap-south-1 => singapore-sg,
-    - ca-central-1 => yul-montreal-ca, iad-va-us, dca-dc-us, bwi-va-us,
-    - eu-central-1 => frankfurt-de, hhn-frankfurt-de,
-    - eu-north-1 => stockholm-bma,
+    - ap-northeast-1 => tyo-tokyo-jp, hnd-tokyo-jp
+    - ap-northeast-2 => tyo-tokyo-jp, hnd-tokyo-jp
+    - ap-southeast-1 => singapore-sg
+    - ap-southeast-2 => sydney-au
+    - ap-south-1 => singapore-sg
+    - ca-central-1 => yul-montreal-ca, iad-va-us, dca-dc-us, bwi-va-us
+    - eu-central-1 => frankfurt-de, hhn-frankfurt-de
+    - eu-north-1 => stockholm-bma
     - eu-west-1 => london-uk, london_city-uk
     - eu-west-2 => london-uk, london_city-uk
     - eu-west-3 => cdg-par-fr
