@@ -10,7 +10,7 @@ The `services.yaml` file defines the services supported and used by {{site.data.
 
 {% include cloud/note-pro-using-yaml-support.md %}
 
-The deploy script uses the configuration files in the `.magento` directory to provision the environment with the configured services. A service becomes available to your application if it is included in the `relationships` property of the `.magento.app.yaml` file. The `services.yaml` file contains the service name, type, and disk values. Changing a service configuration causes a deployment to provision the environment with the updated services.
+The deploy script uses the configuration files in the `.magento` directory to provision the environment with the configured services. A service becomes available to your application if it is included in the `relationships` property of the `.magento.app.yaml` file. The `services.yaml` file contains the service _name_, _type_, and _disk_ values. Changing a service configuration causes a deployment to provision the environment with the updated services.
 
 This affects the following environments:
 
@@ -58,7 +58,7 @@ Minimally, you must provide a `name` and `type` value for each service. If the s
 
 The `name` value identifies the service in the project. You can only use lower case alphanumeric characters: `a` to `z` and `0` to `9`, such as `redis`.
 
-This name value is used in the `relationships` property of the `.magento.app.yaml` configuration file:
+This _name_ value is used in the `relationships` property of the `.magento.app.yaml` configuration file:
 
 ```yaml
 relationships:

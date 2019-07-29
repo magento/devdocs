@@ -71,7 +71,7 @@ Use a nested array to define the endpoints for specific user access. Each endpoi
 The valid permission levels are:
 
 -  `ro`: Only SELECT queries are allowed.
--  `rw`: SELECT queries and INSERT/UPDATE/DELETE queries are allowed.
+-  `rw`: SELECT queries and INSERT, UPDATE, and DELETE queries are allowed.
 -  `admin`: All queries are allowed, including DDL queries (CREATE TABLE, DROP TABLE, and so on).
 
 If no endpoints are defined, a single endpoint named `mysql` has `admin` access to the `main` database. For example:
@@ -96,7 +96,7 @@ mysql:
                     main: rw
 ```
 
-In the preceding example, the endpoint (user) `reporter` has read-only privileges to the `main` database and endpoint `importer` has read-write access to the `main` database. This means that:
+In the preceding example, the `admin` endpoint provides admin-level access to the `main` database, the `reporter` endpoint provides read-only access, and the `importer` endpoint provides read-write access. This means that:
 
 -  The `admin` user has full control of the database.
 -  The `repoter` user has SELECT privileges only.
