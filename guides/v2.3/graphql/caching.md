@@ -37,7 +37,7 @@ Magento explicitly disallows caching the following queries.
 
 We recommend setting up Varnish as a reverse proxy to serve the full page cache in a production environment. See [Configure and use Varnish]({{page.baseurl}}/config-guide/varnish/config-varnish.html) for more information.
 
-Magento 2.3.2 updates the `vcl_hash` subroutine in the template `varnish.vcl` file and creates the `process_graphql_headers` subroutine for both Varnish 4.x and 5.x. (Magento 2.3.3 supports Varnish 6.2). To enable GraphQL caching, either generate a new template file, or edit the `default.vcl` file on your system to match the current default template.
+Magento 2.3.2 updates the `vcl_hash` subroutine in the template `varnish.vcl` file and creates the `process_graphql_headers` subroutine for both Varnish 4.x and 5.x. Magento 2.3.3 supports Varnish 6.2. To enable GraphQL caching, either generate a new template file, or edit the `default.vcl` file on your system to match the current default template.
 
 If you choose to edit an existing `default.vcl` file, update the `vcl_hash` subroutine to check whether the request URL contains `graphql`, as follows:
 
