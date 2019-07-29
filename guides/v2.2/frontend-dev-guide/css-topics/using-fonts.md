@@ -51,9 +51,9 @@ To ensure the stability of your customizations and prevent upgrades from overwri
     
     Fallback web fonts that are used by default in Magento are located in `lib/web/css/source/lib/variables/_typography.less`.
     
-### `<font>` head type
+## `<font>` head type
 
-`<font>` node is added to HTML `<head>` type for layout in `lib/internal/Magento/Framework/View/Layout/etc/head.xsd`. All resources added with `<font>` node will be downloaded with `preload` html attribute. Since preload does not use downloaded resource, you should ensure that this resource is used in CSS or HTML DOM.
+A `<font>` node is added to HTML `<head>` type for layout in `lib/internal/Magento/Framework/View/Layout/etc/head.xsd`. All resources added with `<font>` node will be downloaded with `preload` html attribute.
 
 ## Overview of Magento's Icon CSS
 
