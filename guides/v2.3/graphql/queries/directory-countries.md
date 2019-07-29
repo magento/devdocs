@@ -131,6 +131,10 @@ In this example, the response is intentionally truncated.
 }
 ```
 
+## Output attributes
+
+The query returns an array of `Country` objects.
+
 {% include graphql/country-output.md %}
 
 ## Related topics

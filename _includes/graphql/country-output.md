@@ -1,6 +1,4 @@
-## Output attributes
-
-The query returns a single `Country` object.
+### Country attributes
 
 Attribute | Data type | Description
 --- | --- | ---

@@ -92,13 +92,17 @@ query {
 }
 ```
 
-## Input attributes {#inputAttributes}
+## Input attributes
 
-The `Country` object requires the following input:
+The `country` query requires the following input:
 
 Attribute | Data type | Description
 --- | --- | ---
 `id` | String | A unique ID for the country
+
+## Output attributes
+
+The query returns a single `Country` object.
 
 {% include graphql/country-output.md %}
 
