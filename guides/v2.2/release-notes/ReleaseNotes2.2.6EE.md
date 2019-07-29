@@ -70,13 +70,13 @@ Performance-tuning enhancements focus on catalog indexing and include:   
 ### **Magento Cloud highlights**
 
 
-* We've added a [Docker Compose](https://devdocs.magento.com/guides/v2.2/cloud/reference/docker-config.html) configuration to the Cloud `ece-tools` repository for deploying a local development environment.
+* We've added a [Docker Compose]({{ page.baseurl }}/cloud/docker/docker-config.html) configuration to the Cloud `ece-tools` repository for deploying a local development environment.
 
-* Merchants can now [change store locales](https://devdocs.magento.com/guides/v2.2/cloud/live/sens-data-over.html#change-locales) without the exporting and importing configuration process.
+* Merchants can now [change store locales]({{ page.baseurl }}/cloud/live/sens-data-over.html#change-locales) without the exporting and importing configuration process.
 
-* A new [workflow](https://devdocs.magento.com/guides/v2.2/cloud/trouble/robots-sitemap.html) lets merchant add a `robots.txt` file and generate a `sitemap.xml` file for a single domain configuration without requiring a change to the infrastructure. 
+* A new [workflow]({{ page.baseurl }}/cloud/trouble/robots-sitemap.html) lets merchant add a `robots.txt` file and generate a `sitemap.xml` file for a single domain configuration without requiring a change to the infrastructure. 
 
-* Merchants can now define multiple locales for each theme using the new [`SCD_MATRIX`](https://devdocs.magento.com/guides/v2.2/cloud/env/variables-deploy.html#scd_matrix) environment variable, which reduces the amount of theme files to deploy.
+* Merchants can now define multiple locales for each theme using the new [`SCD_MATRIX`]({{ page.baseurl }}/cloud/env/variables-deploy.html#scd_matrix) environment variable, which reduces the amount of theme files to deploy.
 
 * Zero-downtime deployment has been implemented through a “connection holding” capability, which ensures no lost connections or site unavailability, providing smooth shopper experience even during deployments involving database schema changes.
 
@@ -108,7 +108,7 @@ This release includes many enhancements to our core bundled extensions:
 
 Enhancements to Amazon Pay include these features:
 
-* Implementation of the  [Magento payment provider gateway](https://devdocs.magento.com/guides/v2.2/payments-integrations/payment-gateway/payment-gateway-intro.html), which provides developers a mechanism for integrating stores with payment providers. 
+* Implementation of the  [Magento payment provider gateway]({{ page.baseurl }}/payments-integrations/payment-gateway/payment-gateway-intro.html), which provides developers a mechanism for integrating stores with payment providers. 
 
 * Improved handling of virtual products.
 
@@ -892,7 +892,7 @@ Our community contributors have made many helpful, minor corrections to spelling
 
 #### Cache framework
 
-<!-- MAGETWO-69847 -->* Magento no longer throws an exception when deploying static content on a deployment where Redis is used for cache management. See "Redis and static-content deployment" in [Redis troubleshooting](https://devdocs.magento.com/guides/v2.2/cloud/trouble/redis-troubleshooting.html) for more information. [GitHub-9287](https://github.com/magento/magento2/issues/9287)
+<!-- MAGETWO-69847 -->* Magento no longer throws an exception when deploying static content on a deployment where Redis is used for cache management. See "Redis and static-content deployment" in [Redis troubleshooting]({{ page.baseurl }}/cloud/trouble/redis-troubleshooting.html) for more information. [GitHub-9287](https://github.com/magento/magento2/issues/9287)
 
 <!-- MAGETWO-84109 -->* When a layout is loaded from the cache, Magento now repopulates the list of applied layout handles to prevent any chance of a layout handle being reapplied later. *Fix submitted by [Scott Buchanan](https://github.com/scottsb) in pull request [12314](https://github.com/magento/magento2/pull/12314)*.
 
@@ -1346,7 +1346,7 @@ Our community contributors have made many helpful, minor corrections to spelling
 <!-- MAGETWO-86143 -->* Merchants can now improve store performance by disabling Magento Report functionality if business function does not require this capability. A new configuration setting  (**System Configuration**: **General** > **Reports** > **General Options**) allows merchants to disable Magento Reports, which is recommended practice  if a merchant's business function does not require this capability.
 
 
-<!-- MAGETWO-92154 -->* You can change store locale without the exporting and importing configuration process. While Magento is in Production and the `SCD_ON_DEMAND` is enabled, the Magento store and admin locale options are available. See [Change locales](https://devdocs.magento.com/guides/v2.2/cloud/live/sens-data-over.html#change-locales).
+<!-- MAGETWO-92154 -->* You can change store locale without the exporting and importing configuration process. While Magento is in Production and the `SCD_ON_DEMAND` is enabled, the Magento store and admin locale options are available. See [Change locales]({{ page.baseurl }}/cloud/live/sens-data-over.html#change-locales).
 
 <!-- MAGETWO-90572 -->* The time required to load category or product pages for products that are configured with many attributes (more than 500) has been significantly reduced. Refactoring the logic for product attribute retrieval has resulted in a reduction of load time of almost 90% for certain scenarios. 
 

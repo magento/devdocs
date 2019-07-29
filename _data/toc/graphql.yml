@@ -45,19 +45,50 @@ pages:
     - label: Functional testing
       url: /graphql/functional-testing.html
 
+    - label: Queries
+      children:
+        - label: cmsBlock query
+          url: /graphql/queries/cms-block.html
+
+        - label: cmsPage query
+          url: /graphql/queries/cms-page.html
+        
+        - label: countries query
+          url: /graphql/queries/directory-countries.html
+          
+        - label: country query
+          url: /graphql/queries/directory-country.html
+          
+        - label: currency query
+          url: /graphql/queries/directory-currency.html  
+        
+    - label: Mutations
+      children:
+        - label: applyStoreCreditToCart mutation
+          url: /graphql/mutations/apply-store-credit.html
+
+        - label: removeStoreCreditFromCart mutation
+          url: /graphql/mutations/remove-store-credit.html
+    
     - label: Reference
       children:
-            - label: CMS endpoint
-              url: /graphql/reference/cms.html
-
             - label: CustomAttributeMetadata endpoint
               url: /graphql/reference/custom-attribute-metadata.html
 
             - label: Customer endpoint
               url: /graphql/reference/customer.html
 
-            - label: Directory endpoint
-              url: /graphql/reference/directory.html
+            - label: Payflow Link getPayflowLinkToken query
+              url: /graphql/reference/paypal-get-payflow-link-token.html
+
+            - label: Payflow Pro createPayflowProToken mutation
+              url: /graphql/reference/paypal-create-payflow-pro-token.html
+
+            - label: Payflow Pro handlePayflowProResponse mutation
+              url: /graphql/reference/paypal-handle-payflow-pro-response.html
+
+            - label: Paypal endpoint
+              url: /graphql/reference/paypal.html
 
             - label: Products endpoint
               url: /graphql/reference/products.html
@@ -88,7 +119,7 @@ pages:
 
             - label: Quote endpoint (cart query)
               url: /graphql/reference/quote.html
-              children: 
+              children:
 
                 - label: addSimpleProductsToCart mutation
                   url: /graphql/reference/quote-add-simple-products.html
@@ -99,14 +130,23 @@ pages:
                 - label: applyCouponToCart mutation
                   url: /graphql/reference/quote-apply-coupon.html
 
+                - label: applyGiftCardToCart mutation
+                  url: /graphql/reference/quote-apply-giftcard.html
+
                 - label: createEmptyCart mutation
                   url: /graphql/reference/quote-create-cart.html
+
+                - label: giftCardAccount query
+                  url: /graphql/reference/quote-giftcard-account.html
 
                 - label: placeOrder mutation
                   url: /graphql/reference/quote-place-order.html
 
                 - label: removeCouponFromCart mutation
                   url: /graphql/reference/quote-remove-coupon.html
+
+                - label: removeGiftCardFromCart mutation
+                  url: /graphql/reference/quote-remove-giftcard.html
 
                 - label: removeItemFromCart mutation
                   url: /graphql/reference/quote-remove-item.html
@@ -120,6 +160,9 @@ pages:
                 - label: setPaymentMethodOnCart mutation
                   url: /graphql/reference/quote-payment-method.html
 
+                - label: setPaymentMethodAndPlaceOrder mutation
+                  url: /graphql/reference/quote-set-payment-place-order.html
+
                 - label: setShippingAddressesOnCart mutation
                   url: /graphql/reference/quote-set-shipping-address.html
 
@@ -128,6 +171,9 @@ pages:
 
                 - label: updateCartItems mutation
                   url: /graphql/reference/quote-update-cart-items.html
+
+            - label: redeemGiftCardBalanceAsStoreCredit mutation
+              url: /graphql/reference/redeem-giftcard-balance.html
 
             - label: Sales endpoint
               url: /graphql/reference/sales.html
@@ -143,6 +189,21 @@ pages:
 
             - label: Wishlist endpoint
               url: /graphql/reference/wishlist.html
+
+    - label: Payment methods
+      children:
+
+        - label: Authorize.Net
+          url: /graphql/payment-methods/authorize-net.html
+          
+        - label: PayPal Payflow Link
+          url: /graphql/payment-methods/payflow-link.html
+          
+        - label: PayPal Payflow Pro
+          url: /graphql/payment-methods/payflow-pro.html
+
+        - label: PayPal Payments Advanced
+          url: /graphql/payment-methods/payments-advanced.html
 
     - label: Tutorial
       class: tutorial

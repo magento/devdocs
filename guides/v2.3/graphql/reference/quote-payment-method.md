@@ -10,7 +10,12 @@ Title | Code
 Bank Transfer Payment | `banktransfer`
 Cash on Delivery | `cashondelivery`
 Check / Money order | `checkmo`
+Credit Card (Authorize.Net) | `authorizenet_acceptjs`
 No Payment Information Required | `free`
+[PayPal Express Checkout]({{ page.baseurl}}/graphql/reference/paypal.html) | `paypal_express`
+[PayPal Express Checkout Payflow Edition]({{ page.baseurl}}/graphql/reference/paypal.html) | `payflow_express`
+PayPal Payflow Pro | `payflowpro`
+PayPal Payflow Link | `payflow_link`
 Purchase Order | `purchaseorder`
 
 Apply the `setPaymentMethodOnCart` mutation after setting the shipping address, shipping method, and after applying any discounts to the cart.
@@ -20,6 +25,8 @@ Apply the `setPaymentMethodOnCart` mutation after setting the shipping address, 
 `mutation: {setPaymentMethodOnCart(input: SetPaymentMethodOnCartInput): SetPaymentMethodOnCartOutput}}`
 
 ## Example usage
+
+### Offline payment method
 
 The following example assigns the `banktransfer` payment method to the specified cart.
 
@@ -79,6 +86,7 @@ The `PaymentMethodInput` object can contain the following attributes:
 
 Attribute |  Data Type | Description
 --- | --- | ---
+`additional_data` | PaymentMethodAdditionalDataInput | Additional payment data
 `code` | String! | The internal name for the payment method
 `purchase_order_number` | String | The purchase order number. Optional for most payment methods
 

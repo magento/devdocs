@@ -167,6 +167,7 @@ Attribute | Data type | Description
 `categories` | [CategoryInterface] | The categories assigned to the product. See [categories endpoint]({{ page.baseurl }}/graphql/reference/categories.html) for more information
 `country_of_manufacture` | String | The product's country of origin
 `created_at` | String | Timestamp indicating when the product was created
+`crosssell_products` | [[ProductInterface](#ProductInterface)] | An array of cross-sell products
 `description` | ComplexTextValue | An object that contains detailed information about the product. The object can include simple HTML tags
 `gift_message_available` | String | Indicates whether a gift message is available
 `id` | Int | The ID number assigned to the product
@@ -184,6 +185,7 @@ Attribute | Data type | Description
 `options_container` | String | If the product has multiple options, determines where they appear on the product page
 `price` | ProductPrices | The price of an item. A `ProductPrice` object is returned. See [ProductPrices](#ProductPrices) for more information.
 `product_links` | [ProductLinksInterface] | An array of [ProductLinks](#ProductLinks) objects
+`related_products` | [[ProductInterface](#ProductInterface)] | An array of related products
 `short_description` | ComplexTextValue | An object that contains a short description of the product. Its use depends on the store's theme. The object can include simple HTML tags
 `sku` | String | A number or code assigned to a product to identify the product, options, price, and manufacturer
 `small_image` | [ProductImage](#ProductImage) | An object that contains the URL and label for the small image used on catalog pages
@@ -198,6 +200,7 @@ Attribute | Data type | Description
 `tier_prices` | [ProductTierPrices] | An array of [ProductTierPrices](#ProductTier) objects
 `type_id` | String | One of `simple`, `virtual`, `bundle`, `downloadable`,`grouped`, `configurable`
 `updated_at` | String | The timestamp indicating when the product was last updated
+`upsell_products` | [[ProductInterface](#ProductInterface)] | An array of up-sell products
 `url_key` | String | The part of the URL that identifies the product. This attribute is defined in the `CatalogUrlRewriteGraphQl` module
 `url_path` | String | The part of the URL that precedes the `url_key`. This attribute is defined in the `CatalogUrlRewriteGraphQl` module
 `url_rewrites` | [UrlRewrite] | A list of URL rewrites. See [UrlRewrite endpoint]({{ page.baseurl }}/graphql/reference/url-resolver.html#UrlRewrite) for more information and an example query
