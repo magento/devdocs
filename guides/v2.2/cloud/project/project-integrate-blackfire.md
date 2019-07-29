@@ -262,7 +262,7 @@ When you configure at least one way of triggering builds with Blackfire, you can
 
 ## Change account owner
 
-Your Magento Customer Success Manager (CSM) must submit a request to Blackfire on your behalf to change the Blackfire.io account owner on your {{site.data.var.ece}} project. We recommend contacting your CSM directly, but you may also [submit a support ticket][1].
+Your Magento Customer Success Manager (CSM) must submit a request to Blackfire on your behalf to change the Blackfire.io account owner on your {{site.data.var.ece}} project. We recommend contacting your CSM directly, but you can also [submit a support ticket][1].
 
 You must provide your CSM with the following information:
 
