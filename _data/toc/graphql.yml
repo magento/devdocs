@@ -60,7 +60,10 @@ pages:
           url: /graphql/queries/directory-country.html
           
         - label: currency query
-          url: /graphql/queries/directory-currency.html  
+          url: /graphql/queries/directory-currency.html
+
+        - label: customerOrders query
+          url: /graphql/queries/customer-orders.html
         
     - label: Mutations
       children:
