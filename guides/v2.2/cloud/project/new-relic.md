@@ -154,7 +154,7 @@ You can use the high-level data captured by New Relic APM to see what is happeni
 
 See [New Relic's documentation][1].
 
-Make sure the user that you want to assign the Owner role to is listed on your {{site.data.var.ece}} account. See [Add a new user][2]. If a user needs to be added, but no existing Owner or Admin on the account can help, any Magento user who has access to New Relic's [Magento Partnership Owner Account][3] can add users on the customer's behalf.
+Before assigning the Owner role to a user, verify the user exists on your {{site.data.var.ece}} account. See [Add a new user][2]. If you need to add the user, but an existing account Owner or Admin cannot help, any Magento user with access to New Relic's [Magento Partnership Owner Account][3] can add users on the behalf of the customer.
 
 [1]: https://docs.newrelic.com/docs/accounts/accounts/roles-permissions/change-account-owner
 [2]: https://docs.newrelic.com/docs/accounts/accounts/roles-permissions/add-update-users#adding_users
