@@ -28,6 +28,7 @@ $('#init_element').alert({
 ```
 
 **Example2**: standalone initialization
+
 ```javascript
 require([
     'Magento_Ui/js/modal/alert'
@@ -50,27 +51,30 @@ For details about how to initialize a widget in a`.phtml` template, refer to the
 
 The alert widget has the following options:
 
--   [actions]
--   [autoOpen]
--   [clickableOverlay]
--   [content]
--   [focus]
--   [title]
--   [modalClass]
+- [actions]
+- [autoOpen]
+- [clickableOverlay]
+- [content]
+- [focus]
+- [title]
+- [modalClass]
+- [buttons]
 
 ### `actions` {#alert_actions}
+
 Widget callbacks.
 
 **Type**: Object.
 
 **Default value**: 
+
 ```javascript
 actions: {
     always: function(){}
 }
 ```
 
-### autoOpen {#alert_autoopen}
+### `autoOpen` {#alert_autoopen}
 
 Automatically open the alert window when the widget is initialized.
 
@@ -78,7 +82,25 @@ Automatically open the alert window when the widget is initialized.
 
 **Default value**: `false`
 
-### clickableOverlay {#alert_clickableOverlay}
+### `buttons` {#alert_buttons}
+
+The buttons list.
+
+**Type**: Array of Objects.
+
+**Default value**: 
+
+```javascript
+buttons: [{
+    text: $.mage.__('OK'),
+    class: 'action-primary action-accept',
+    click: function () {
+        this.closeModal(true);
+    }
+}]
+```
+
+### `clickableOverlay` {#alert_clickableOverlay}
 
 Close the alert window when a user clicks on the overlay.
 
@@ -87,6 +109,7 @@ Close the alert window when a user clicks on the overlay.
 **Default value**: `true`
 
 ### `content` {#alert_content}
+
 The text displayed in the alert window.
 
 **Type**: String.
@@ -100,6 +123,7 @@ If `focus` is not specified or set to empty string, the focus is on the close bu
 **Default value**: `''`
 
 ### `title` {#alert_title}
+
 The title of the alert window.
 
 **Type**: String.
@@ -107,6 +131,7 @@ The title of the alert window.
 **Default value**: `''`
 
 ### `modalClass` {#alert_modalClass}
+
 The CSS class of the alert window.
 
 **Type**: String.
@@ -128,7 +153,7 @@ The keyboard navigation for the alert windows is similar to the [navigation of t
 
 ```html
 <div class="alert-modal-content">
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci amet aut consequuntur culpa cum, distinctio earum harum, iste magnam nobis numquam pariatur tempora ullam vero vitae. Hic ipsam itaque velit.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
 </div>
 
 <script>
@@ -146,7 +171,28 @@ require([
             always: function() {
                 // do something when the modal is closed
             }
-        }
+        },
+        buttons: [{
+            text: $.mage.__('Accept'),
+            class: 'action primary accept',
+    
+            /**
+             * Click handler.
+             */
+            click: function () {
+                this.closeModal(true);
+            }
+        }, {
+            text: $.mage.__('New Action'),
+            class: 'action',
+    
+            /**
+             * Click handler.
+             */
+            click: function () {
+                // New action
+            }
+        }]
     });
 });
 </script>
@@ -156,7 +202,7 @@ require([
 
 ```html
 <div class="alert-modal-content">
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci amet aut consequuntur culpa cum, distinctio earum harum, iste magnam nobis numquam pariatur tempora ullam vero vitae. Hic ipsam itaque velit.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
 </div>
 
 <script>
@@ -173,7 +219,28 @@ require([
             always: function() {
                 // do something when the modal is closed
             }
-        }
+        },
+        buttons: [{
+            text: $.mage.__('Accept'),
+            class: 'action primary accept',
+    
+            /**
+             * Click handler.
+             */
+            click: function () {
+                this.closeModal(true);
+            }
+        }, {
+            text: $.mage.__('New Action'),
+            class: 'action',
+    
+            /**
+             * Click handler.
+             */
+            click: function () {
+                // New action
+            }
+        }]
     });
 });
 </script>
@@ -194,4 +261,5 @@ require([
 [focus]: #alert_focus
 [title]: #alert_title
 [modalClass]: #alert_modalClass
+[buttons]: #alert_buttons
 [navigation of the modal widget]: {{ page.baseurl }}/javascript-dev-guide/widgets/widget_modal.html#key_navigation

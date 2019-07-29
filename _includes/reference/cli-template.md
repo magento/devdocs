@@ -1,14 +1,16 @@
 {% assign app = file.application %}
 
 {% assign commands = file.commands %}
-{% if app %}
-# {{ app.name }} (version {{ app.version }})
-{% else %}
-# Magento CLI
+
+{% if app.version %}
+**Version**: {{ app.version }}
+{: style="color:gray; font-size: 120%"}
 {% endif %}
 
-This reference contains {{ commands | size }} commands available through the `bin/magento` command-line tool.
-The initial list is auto generated using `bin/magento list` command at the {{ site.data.var.ce }} edition.
+This reference contains {{ commands | size }} commands available through the `{{ tool }}` command-line tool.
+The initial list is auto generated using the `{{ tool }} list` command at the {{ edition }} edition.
+
+{{ intro }}
 
 {% for command in commands %}
   {% assign arguments = command.definition.arguments %}
@@ -19,7 +21,7 @@ The initial list is auto generated using `bin/magento list` command at the {{ si
 {{ command.description }}
 
 ```bash
-bin/magento {{ command.usage }}
+{{ tool }} {{ command.usage }}
 ```
 
   {% unless arguments.size == 0 %}
@@ -30,7 +32,7 @@ bin/magento {{ command.usage }}
   {% for argument in arguments %}
   {% for item in argument %}
   {% if item.name %}
-  
+
   {% if item.default == empty %}
   {% endif %}
 
@@ -59,6 +61,7 @@ bin/magento {{ command.usage }}
 
  {% for option in options %}
  {% assign opt = option[1] %}
+
 #### {{ option[0] }}
 
 - Option: `{{ opt.name }}`

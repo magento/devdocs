@@ -1,9 +1,6 @@
 ---
 group: php-developer-guide
 title: PHP Developer Guide
-landing-page: PHP Developer Guide
-redirect_from:
-  - /guides/v2.2/mktpl-quickstart/intro-moreinfo.html
 ---
 
 The [PHP](https://glossary.magento.com/php) Developer Guide contains information for developers who want to know more about developing or modifying Magento components. With this knowledge you can extend or customize any of the existing components in the Magento application. You can also create components that introduce new functionality and distribute them to merchants.
@@ -18,7 +15,7 @@ The Magento application is made up of *Modules*, *Themes*, and *Language Package
 
 * [**Language packages**]({{ page.baseurl }}/frontend-dev-guide/translations/xlate.html) assist in internationalization(i18n) and localization by providing translations for strings that display on the storefront and Admin.
 
-{: .bs-callout .bs-callout-info }
+{: .bs-callout-info }
 You must follow a [PSR-4 compliant](http://www.php-fig.org/psr/psr-4/) structure when building a module.
 
 #### Related topics

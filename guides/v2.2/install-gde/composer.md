@@ -6,10 +6,6 @@ redirect_from:
   - guides/v2.2/install-gde/prereq/integrator_install_composer.html
   - guides/v2.2/install-gde/prereq/integrator_install_ce.html
   - guides/v2.2/install-gde/prereq/integrator_install_ee.html
-  - guides/v2.3/install-gde/prereq/integrator_install.html
-  - guides/v2.3/install-gde/prereq/integrator_install_composer.html
-  - guides/v2.3/install-gde/prereq/integrator_install_ce.html
-  - guides/v2.3/install-gde/prereq/integrator_install_ee.html
 functional_areas:
   - Install
   - System
@@ -99,7 +95,7 @@ bin/magento setup:install \
 --use-rewrites=1
 ```
 
-{: .bs-callout .bs-callout-info }
+{: .bs-callout-info }
 For `--backend-frontname` we recommend a random URI for security purposes. A random URI is harder for hackers or malicious software to exploit.
 
 {:.bs-callout .bs-callout-tip}
