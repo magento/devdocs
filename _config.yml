@@ -184,7 +184,7 @@ check_links: true
 #############
 #
 # Magento 2 repository variable
-mage2bloburl: https://github.com/magento/magento2/tree
+mage2bloburl: https://github.com/magento/magento2/blob
 
 # 1.x variables
 m1xgdeurl: /guides/m1x

@@ -17,7 +17,7 @@ Look for the following highlights in this release:
 
     * **Amazon Pay** provides a trusted, familiar way for customers to check in and check out. See [Amazon pay](https://pay.amazon.com/us/merchant) for a full description of the advantages this solution offers merchants and their customers.
 
-    * **Vertex** simplifies and automates the complexity of calculating sales tax. For more information on Vertex products, see [Vertex Release Notes](https://marketplace.magento.com/pixafy-tax.html#product.info.details.release_notes). Check out the Magento User Guide discussion of [Vertex](http://docs.magento.com/m2/ce/user_guide/tax/vertex.html), too.
+    * **Vertex** simplifies and automates the complexity of calculating sales tax. Check out the Magento User Guide discussion of [Vertex](http://docs.magento.com/m2/ce/user_guide/tax/vertex.html), too.
 
     * **Klarna Payments** is a new payment method. With Klarna Payments, merchants can provide customers with the option to pay now, pay later, or pay by installment for their purchases. See  [Magento User Guide](http://docs.magento.com/m2/ce/user_guide/payment/klarna.html) for information on using Klarna with Magento. For more information on Klarna products, see [Klarna Payments](https://marketplace.magento.com/klarna-m2-payments.html#product.info.details.release_notes).
 
@@ -411,7 +411,7 @@ We do not recommend upgrading to Magento 2.2.4 if you deploy across multiple web
 
 #### Session framework
 
-<!--- MAGETWO-83373 -->* The Setup Wizard page now loads successfully when the session storage method is Memcache.  Previously, Magento returned an HTTP 500 error when you navigated to **System > Tools > Web Setup Wizard Setup Wizard**  in installations where you've configured the session storage method to Memcache in `env.php`. *Fix submitted by [Marty S](https://github.com/sylink) in pull request 11608*. [GitHub-9633](https://github.com/magento/magento2/issues/9633)
+<!--- MAGETWO-83373 -->* The Setup Wizard page now loads successfully when the session storage method is Memcache.  Previously, Magento returned an HTTP 500 error when you navigated to **System > Tools > Web Setup Wizard Setup Wizard**  in installations where you've configured the session storage method to Memcache in `env.php`. *Fix submitted by Marty S in pull request 11608*. [GitHub-9633](https://github.com/magento/magento2/issues/9633)
 
 <!--- MAGETWO-83287 -->* When you add a product to your wish list after logging out, Magento now redirects you to your account Wish list page and adds the product. Previously, you were redirected to your wishlist page, but Magento did not add the product. *Fix submitted by [Oscar Recio](https://github.com/osrecio) in pull request 12038*. [GitHub-11825](https://github.com/magento/magento2/issues/11825)
 
@@ -1092,7 +1092,7 @@ The following table identifies contributions from our community members. This ta
  <tr>
     <td><a target="_blank" href="https://github.com/magento/magento2/pull/11608">11608</a></td>
     <td><a href="https://github.com/magento/magento2/issues/9633" target="_blank">9633</a></td>
-    <td><a target="_blank" href="https://github.com/sylink">Marty S</a></td>
+    <td>Marty S</td>
  </tr>
 <tr>
     <td><a target="_blank" href="https://github.com/magento/magento2/pull/11617">11617</a></td>

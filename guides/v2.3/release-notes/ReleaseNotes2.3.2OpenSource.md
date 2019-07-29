@@ -290,7 +290,7 @@ This fix can degrade performance in deployments that implement flat catalogs. To
 * Magento now increments product quantity correctly when you add products to your cart first as a guest user, and then logged in. Previously, Magento added items separately instead. *Fix submitted by [Jitheesh V O](https://github.com/Jitheesh) in pull request [21501](https://github.com/magento/magento2/pull/21501)*. [GitHub-21375](https://github.com/magento/magento2/issues/21375)
 
 <!--- ENGCOM-4180-->
-* **Meta Keywords** and **Meta Description** are now defined as `textarea` throughout  product forms. *Fix submitted by [Amit Vishvakarma](https://github.com/amitcedcoss) in pull request [20556](https://github.com/magento/magento2/pull/20556)*. [GitHub-20555](https://github.com/magento/magento2/issues/20555)
+* **Meta Keywords** and **Meta Description** are now defined as `textarea` throughout  product forms. *Fix submitted by Amit Vishvakarma in pull request [20556](https://github.com/magento/magento2/pull/20556)*. [GitHub-20555](https://github.com/magento/magento2/issues/20555)
 
 <!--- MAGETWO-99027-->
 * Magento now saves customizable option price input on the store-view level when Catalog Price Scope is set to **Global**. Previously, customizable option prices were not saved on the store-view level when Catalog Price Scope was to **Global**.

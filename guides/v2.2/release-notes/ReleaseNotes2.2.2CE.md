@@ -282,7 +282,7 @@ Looking for more information on these new features as well as many others? Check
 
 <!--- MAGETWO-82956 -->* Magento now provides better error reporting when an error occurs during the import of a CSV file with a semicolon delimiter. Previously, Magento stopped import, but did not provide a link to the error report CSV file. [GitHub-5015](https://github.com/magento/magento2/issues/5015)
 
-<!--- MAGETWO-81594 -->*  Exception message was passed as a exception description argument instead of exception message. *Fix submitted by [Tim Bezhashvyly](https://github.com/tim-bezhashvyly) in pull request 11363*. [GitHub-6924](https://github.com/magento/magento2/issues/6924)
+<!--- MAGETWO-81594 -->*  Exception message was passed as a exception description argument instead of exception message. *Fix submitted by Tim Bezhashvyly in pull request 11363*. [GitHub-6924](https://github.com/magento/magento2/issues/6924)
 
 <!--- MAGETWO-83310 -->* Importing an import file to update customer data no longer results in the `entity fields` being removed if the columns were not present on the imported file. *Fix submitted by [Juan Alonso](https://github.com/jalogut) in pull request 11968*.
 
@@ -759,7 +759,7 @@ The following table identifies contributions from our community members. This ta
   <tr>
     <td><a target="_blank" href="https://github.com/magento/magento2/pull/11363">11363</a></td>
     <td><a href="https://github.com/magento/magento2/issues/6924" target="_blank">6924</a></td>
-    <td><a target="_blank" href="https://github.com/tim-bezhashvyly">Tim Bezhashvyly</a></td>
+    <td>Tim Bezhashvyly</td>
   </tr>
   <tr>
     <td><a target="_blank" href="https://github.com/magento/magento2/pull/11425">11425</a></td>

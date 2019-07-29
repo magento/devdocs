@@ -899,7 +899,7 @@ Thanks to our hardworking Magento Open Source community members for the followin
 
 <!--- 56940-->* Kount and 3D Secure now work as expected for Braintree Vault.
 
-<!--- 62428-->* Magento now updates you as expected on order comments and order history after you initiate a refund using Braintree. Previously, when you clicked the **Refund** button (to initiate a refund), Magento did not [redirect](https://glossary.magento.com/redirect) you to order comments and history information.
+<!--- 62428-->* Magento now updates you as expected on order comments and order history after you initiate a refund using Braintree. Previously, when you clicked the **Refund** button (to initiate a refund), Magento did not redirect you to order comments and history information.
 
 
 <!--- 54721-->* You can now use Braintree as a payment method when applying reward points or store credit to an order.

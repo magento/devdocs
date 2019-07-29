@@ -96,7 +96,7 @@ This should display error messages.
 If Varnish does not start as a service, you must configure SELinux rules to allow it to run. Consult the following resources:<br><br>
 -   [flatlinesecurity](http://flatlinesecurity.com/posts/varnish-4-selinux/)
 -   [CentOS wiki](https://wiki.centos.org/HowTos/SELinux)</li>
--   [CentOS documentation](https://www.centos.org/docs/5/html/Deployment_Guide-en-US/sec-sel-policy-customizing.html)
+-   [CentOS documentation](https://www.centos.org)
 
 ## Verify Varnish is working {#config-varnish-verify}
 

@@ -81,7 +81,7 @@ More information:
 
 Magento requires an e-mail server. We don't recommend a particular server but you can try any of the following:
 
-*	Postfix for CentOS ([digitalocean tutorial](https://www.digitalocean.com/community/tutorials/how-to-install-postfix-on-centos-6), [CentOS documentation](https://www.centos.org/docs/5/html/Deployment_Guide-en-US/ch-email.html))
+*	Postfix for CentOS ([digitalocean tutorial](https://www.digitalocean.com/community/tutorials/how-to-install-postfix-on-centos-6), [CentOS documentation](https://www.centos.org))
 *	Postfix for Ubuntu ([digitalocean tutorial](https://www.digitalocean.com/community/tutorials/how-to-install-and-setup-postfix-on-ubuntu-14-04), [Ubuntu documentation](https://help.ubuntu.com/community/MailServer))
 
 ## Settings for {{site.data.var.ee}} only {#post-install-ee}

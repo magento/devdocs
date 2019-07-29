@@ -634,7 +634,7 @@ Our community contributors have made many helpful, minor corrections to spelling
 <!-- ENGCOM-1409-->* Removed extra spaces from a key-value pair in the `en_US.csv`language file. *Fix submitted by [Yogesh Suhagiya](https://github.com/Yogeshks) in pull request [14896](https://github.com/magento/magento2/pull/14896)*. 
 
 
-<!-- ENGCOM-1306-->* Cleaned up `foreach` and `break` statements in `app/code/Magento/Rule/Model/Condition/AbstractCondition.php`. *Fix submitted by [Thomas Klein](https://github.com/thomas-blackbird) in pull request [14609](https://github.com/magento/magento2/pull/14609)*. 
+<!-- ENGCOM-1306-->* Cleaned up `foreach` and `break` statements in `app/code/Magento/Rule/Model/Condition/AbstractCondition.php`. *Fix submitted by Thomas Klein in pull request [14609](https://github.com/magento/magento2/pull/14609)*. 
 
 <!--  ENGCOM-1384 -->* Corrected grammar in `README.md`. *Fix submitted by [Stanislav Idolov](https://github.com/sidolov) in pull request [14844](https://github.com/magento/magento2/pull/14844)*. 
 
@@ -1400,7 +1400,7 @@ Our community contributors have made many helpful, minor corrections to spelling
 
 <!-- MAGETWO-89220 -->* A cart rule that uses  a `subselection` condition now works as executed. Previously, cart rules with this condition automatically granted a discount. 
 
-<!-- ENGCOM-1961 -->* The retrieval of first array elements in the following files has been improved: `app/code/Magento/Rule/Model/Action/AbstractAction.php` and `app/code/Magento/Rule/Model/Condition/Combine.php`. *Fix submitted by [Thomas Klein](https://github.com/thomas-blackbird) in pull request [16053](https://github.com/magento/magento2/pull/16053)*. [GitHub-15940](https://github.com/magento/magento2/issues/15940)
+<!-- ENGCOM-1961 -->* The retrieval of first array elements in the following files has been improved: `app/code/Magento/Rule/Model/Action/AbstractAction.php` and `app/code/Magento/Rule/Model/Condition/Combine.php`. *Fix submitted by Thomas Klein in pull request [16053](https://github.com/magento/magento2/pull/16053)*. [GitHub-15940](https://github.com/magento/magento2/issues/15940)
 
 <!-- ENGCOM-1583 -->* The condition category chooser now handles multiple nested categories as expected. Previously,  if a cart rule contained several nested categories, no categories appeared on the page, the page  became unresponsive,  and  eventually crashed. *Fix submitted by [Keith Bentrup](https://github.com/keithbentrup) in pull request [15265](https://github.com/magento/magento2/pull/15265)*. [GitHub-15121](https://github.com/magento/magento2/issues/15121)
 
@@ -1425,12 +1425,12 @@ Our community contributors have made many helpful, minor corrections to spelling
 
 <!-- ENGCOM-2085 -->* The Invoices grid now reflects changes in invoice state as expected. *Fix submitted by JeroenVanLeusden in pull request [16286](https://github.com/magento/magento2/pull/16286)*. 
 
-<!-- ENGCOM-1892 -->* You can now set the `is_visible_on_front` parameter from the `addStatusHistoryComment` of the order mode. Previously, you could set the `is_visible_on_front` parameter  from the Admin only. *Fix submitted by [Mark Shust](https://github.com/markoshust) in pull request [15637](https://github.com/magento/magento2/pull/15637)*. 
+<!-- ENGCOM-1892 -->* You can now set the `is_visible_on_front` parameter from the `addStatusHistoryComment` of the order mode. Previously, you could set the `is_visible_on_front` parameter  from the Admin only. *Fix submitted by Mark Shust in pull request [15637](https://github.com/magento/magento2/pull/15637)*. 
 
-<!-- ENGCOM-2024 -->* Module name space is now declared before the template pathname in `Magento_Sales::order/info.phtml`. *Fix submitted by [Ronak Patel](https://github.com/markoshust) in pull request [16206](https://github.com/magento/magento2/pull/16206)*. 
+<!-- ENGCOM-2024 -->* Module name space is now declared before the template pathname in `Magento_Sales::order/info.phtml`. *Fix submitted by Ronak Patel in pull request [16206](https://github.com/magento/magento2/pull/16206)*. 
 
 
-<!-- ENGCOM-1529 -->* The `addFieldToFilter` has been added to `addressCollection` in  `app/code/Magento/Sales/Setup/UpgradeData.php`, which optimizes the process of collecting addresses during upgrade. *Fix submitted by [Dmytro Cheshun](https://github.com/markoshust) in pull request [15615](https://github.com/magento/magento2/pull/15615)*. 
+<!-- ENGCOM-1529 -->* The `addFieldToFilter` has been added to `addressCollection` in  `app/code/Magento/Sales/Setup/UpgradeData.php`, which optimizes the process of collecting addresses during upgrade. *Fix submitted by Dmytro Cheshun in pull request [15615](https://github.com/magento/magento2/pull/15615)*. 
 
 <!-- ENGCOM-1623 -->* Invoice prefixes now contain the correct store ID when Magento is deployed in a multistore environment. Previously, Magento always created the invoice number using the default store view ID. *Fix submitted by [Sanjay Patel](https://github.com/sanjay-wagento) in pull request [15615](https://github.com/magento/magento2/pull/15615)*. [GitHub-14063](https://github.com/magento/magento2/issues/14063)
 

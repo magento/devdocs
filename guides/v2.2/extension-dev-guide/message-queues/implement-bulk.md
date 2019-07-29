@@ -13,7 +13,7 @@ functional_areas:
 
 This document describes how bulk operations can be implemented. There are three primary tasks to accomplish this:
 
-* Create a [publisher](https://glossary.magento.com/publisher) that sends messages to the message queue
+* Create a [publisher](https://glossary.magento.com/publisher-subscriber-pattern) that sends messages to the message queue
 * Create a consumer that receives and processes messages
 * Configure the message queues
 

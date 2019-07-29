@@ -931,7 +931,7 @@ See [Magento Security Center](https://magento.com/security/patches/magento-2.2.7
 
 <!---MAGETWO-85063 -->* The ReleaseNotification module has been added to support the display of new release highlights. 
 
-<!---MAGETWO-81339 -->* Magento now saves date and time correctly for different timezones and locales. *Fix submitted by [Raul Mateos](https://github.com/raumatbel) in pull request [11306](https://github.com/magento/magento2/pull/11306)*. [GitHub-10485](https://github.com/magento/magento2/issues/10485), [GitHub-10580](https://github.com/magento/magento2/issues/10580), [GitHub-10686](https://github.com/magentomagento2/issues/10686), [GitHub-10754](https://github.com/magento/magento2/issues/10754)
+<!---MAGETWO-81339 -->* Magento now saves date and time correctly for different timezones and locales. *Fix submitted by [Raul Mateos](https://github.com/raumatbel) in pull request [11306](https://github.com/magento/magento2/pull/11306)*. [GitHub-10485](https://github.com/magento/magento2/issues/10485), [GitHub-10580](https://github.com/magento/magento2/issues/10580), [GitHub-10686](https://github.com/magento/magento2/issues/10686), [GitHub-10754](https://github.com/magento/magento2/issues/10754)
 
 <!---MAGETWO-70886 -->* The `Zend_Feed::importArray` static call has been replaced with a new interface. This concrete class takes the `Zend_Feed` object and returns its own result in the form of a wrapper around `Zend_Feed_Abstract`. *Fix submitted by [Dusan Lukic](https://github.com/ldusan84) in pull request [9347](https://github.com/magento/magento2/pull/9347)*.  [GitHub-9240](https://github.com/magento/magento2/issues/9240)
 
@@ -1111,7 +1111,7 @@ See [Magento Security Center](https://magento.com/security/patches/magento-2.2.7
 
 <!--- MAGETWO-84317 -->* The `\Magento\Quote\Model\ResourceModel\Quote\Item\Collection` now returns items that have only existing relations in the `catalog_product_entity` table. Previously, Magento loaded quote items with non-existing products.
 
-<!---MAGETWO-81969 -->* Magento now correctly renders the download link in invoice emails. *Fix submitted by [Jakob Meissner](https://github.com/skymeissner) in pull request   [11024](https://github.com/magento/magento2/pull/11024)*.
+<!---MAGETWO-81969 -->* Magento now correctly renders the download link in invoice emails. *Fix submitted by Jakob Meissner in pull request   [11024](https://github.com/magento/magento2/pull/11024)*.
 
 <!--- MAGETWO-82342-->* `AuthenticationInterface` now contains API interceptors that enhance user authentication, making it possible (for example) to implement a different hashing algorithm for non-Magento to Magento migrations. *Fix submitted by [Navarr Barnier](https://github.com/navarr) in pull request 11546*.
 
@@ -1874,7 +1874,7 @@ See [Magento Security Center](https://magento.com/security/patches/magento-2.2.7
 
 <!--- MAGETWO-88082 -->* Search terms from the same synonym group now return the same results.
 
-<!---ENGCOM-1815 -->* You can now use the **Enter** key to submit a search form. *Fix submitted by [Vishal Gelani](https://github.com/vgelani) in pull request [15696](https://github.com/magento/magento2/pull/15696)*. [GitHub-13793](https://github.com/magento/magento2/issues/13793)
+<!---ENGCOM-1815 -->* You can now use the **Enter** key to submit a search form. *Fix submitted by Vishal Gelani in pull request [15696](https://github.com/magento/magento2/pull/15696)*. [GitHub-13793](https://github.com/magento/magento2/issues/13793)
 
 <!---ENGCOM-1910 -->* Search on MySQL-based entities has been improved. (This improvement does not provide a fulltext search, but simply the best way to search when a `SearchCriteria` with `fulltext` condition is provided over a MySQL table.) *Fix submitted by [Riccardo Tempesta](https://github.com/phoenix128) in pull request [15685](https://github.com/magento/magento2/pull/15685)*. [GitHub-1221](https://github.com/magento/magento2/issues/1221)
 
