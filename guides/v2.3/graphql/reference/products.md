@@ -170,7 +170,7 @@ Attribute | Data type | Description
 `description` | ComplexTextValue | An object that contains detailed information about the product. The object can include simple HTML tags
 `gift_message_available` | String | Indicates whether a gift message is available
 `id` | Int | The ID number assigned to the product
-`image` | [MediaGalleryInterface](#MediaGalleryInterface) | An object that contains the URL and label for the main image on the product page
+`image` | [ProductImage](#ProductImage) | An object that contains the URL and label for the main image on the product page
 `is_returnable` | String | Indicates whether the product can be returned. This attribute is defined in the `RmaGraphQl` module.
 `manufacturer` | Int | A number representing the product's manufacturer
 `media_gallery` | [[MediaGalleryInterface]](#MediaGalleryInterface) | An array of media gallery objects
@@ -188,14 +188,14 @@ Attribute | Data type | Description
 `related_products` | [[ProductInterface](#ProductInterface)] | An array of related products
 `short_description` | ComplexTextValue | An object that contains a short description of the product. Its use depends on the store's theme. The object can include simple HTML tags
 `sku` | String | A number or code assigned to a product to identify the product, options, price, and manufacturer
-`small_image` | [MediaGalleryInterface](#MediaGalleryInterface) | An object that contains the URL and label for the small image used on catalog pages
+`small_image` | [ProductImage](#ProductImage) | An object that contains the URL and label for the small image used on catalog pages
 `special_from_date` | String | The beginning date that a product has a special price
 `special_price` | Float |  The discounted price of the product
 `special_to_date` | String | The end date that a product has a special price
 `stock_status` | ProductStockStatus | The status of the stock. `ProductStockStatus` is an enumeration that can have the value of `IN_STOCK` or `OUT_OF_STOCK`. This attribute is defined in the `InventoryGraphQl` module.
 `swatch_image` | String | The file name of a swatch image. This attribute is defined in the `SwatchesGraphQl` module.
 `tax_class_id` | Int | An ID assigned to a tax class. This attribute is defined in the `TaxGraphQl` module.
-`thumbnail` | [MediaGalleryInterface](#MediaGalleryInterface) | An object that contains the URL and label for the product's thumbnail image
+`thumbnail` | [ProductImage](#ProductImage) | An object that contains the URL and label for the product's thumbnail image
 `tier_price` | Float | The price when tier pricing is in effect and the items purchased threshold has been reached
 `tier_prices` | [ProductTierPrices] | An array of [ProductTierPrices](#ProductTier) objects
 `type_id` | String | One of `simple`, `virtual`, `bundle`, `downloadable`,`grouped`, `configurable`
@@ -262,26 +262,20 @@ The `MediaGalleryInterface` contains basic information about a product image or 
 
 Attribute | Type | Description
 --- | --- | ---
-`label` | String | The label for the product image
-`url` | String | The URL for the product image
+`label` | String | The label for the product image or video
+`url` | String | The URL for the product image or video
 
 ### ProductImage object {#ProductImage}
 
-`ProductImage` implements `MediaGalleryInterface`. It contains information about an image's URL and label.
-
-Attribute | Type | Description
---- | --- | ---
-`url` | String | The URL for the product image
-`label` | String | The label for the product image
+`ProductImage` implements [`MediaGalleryInterface`](#MediaGalleryInterface), which contains information about an image's URL and label.
 
 ### ProductVideo object {#ProductVideo}
 
-`ProductVideo` implements `MediaGalleryInterface` and contains information about a product video.
+`ProductVideo` implements [`MediaGalleryInterface`](#MediaGalleryInterface) and contains information about a product video.
 
-`description` | String | A description of the video
-`metadata` | String  | Optional data about the video
-`provider` | String | Describes the video source
-`title` | String  | The title of the video
+Attribute | Type | Description
+--- | --- | ---
+`video_content` | ProductMediaGalleryEntriesVideoContent | Contains a [ProductMediaGalleryEntriesVideoContent](#ProductMediaGalleryEntriesVideoContent) object
 
 ### MediaGalleryEntry object {#MediaGalleryEntry}
 
@@ -316,11 +310,11 @@ Attribute | Type | Description
 Attribute | Type | Description
 --- | --- | ---
 `media_type` | String | Must be `external-video`
-`video_provider` | String | Optionally describes the video source
-`video_url` | String | Required. The URL to the video
-`video_title` | String | Required. The title of the video
 `video_description` | String | A description of the video
 `video_metadata` | String | Optional data about the video
+`video_provider` | String | Optionally describes the video source
+`video_title` | String | The title of the video
+`video_url` | String | The URL to the video
 
 ### ProductTierPrices object {#ProductTier}
 
@@ -383,9 +377,11 @@ Attribute | Type | Description
 
 You can review several general interest `products` queries at [Queries]({{ page.baseurl }}/graphql/queries.html).
 
+### Layered navigation
+
 The following query returns layered navigation for products that have a `sku` containing the string `24-WB`.
 
-```text
+```graphql
 {
   products(
     filter: { sku: { like: "24-WB%" } }
@@ -405,6 +401,85 @@ The following query returns layered navigation for products that have a `sku` co
         value_string
         items_count
       }
+    }
+  }
+}
+```
+
+### Media gallery search
+
+The following query returns media gallery information about the product with the `sku` of `24-MB01`.
+
+**Request**
+
+```graphql
+query {
+  productDetail: products(
+    pageSize: 5
+    filter: {
+       sku: { eq: "24-MB01" }
+    }
+  ) {
+    total_count
+    items {
+      sku
+      id
+      name
+      image {
+        url
+        label
+      }
+      small_image{
+          url
+          label
+      }
+      media_gallery {
+          url
+          label
+          ... on ProductVideo {
+              video_content {
+                  media_type
+                  video_provider
+                  video_url
+                  video_title
+                  video_description
+                  video_metadata
+              }
+          }
+      }
+    }
+  }
+}
+```
+
+**Response**
+
+```json
+{
+  "data": {
+    "productDetail": {
+      "total_count": 1,
+      "items": [
+        {
+          "sku": "24-MB01",
+          "id": 1,
+          "name": "Joust Duffle Bag",
+          "image": {
+            "url": "http://magento2.vagrant130/pub/media/catalog/product/cache/fd3509f20f1e8c87464fb5042a4927e6/m/b/mb01-blue-0.jpg",
+            "label": "Joust Duffle Bag"
+          },
+          "small_image": {
+            "url": "http://magento2.vagrant130/pub/media/catalog/product/cache/fd3509f20f1e8c87464fb5042a4927e6/m/b/mb01-blue-0.jpg",
+            "label": "Joust Duffle Bag"
+          },
+          "media_gallery": [
+            {
+              "url": "http://magento2.vagrant130/pub/media/catalog/product/cache/07660f0f9920886e0f9d3257a9c68f26/m/b/mb01-blue-0.jpg",
+              "label": "Image"
+            }
+          ]
+        }
+      ]
     }
   }
 }
