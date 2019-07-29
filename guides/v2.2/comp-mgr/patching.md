@@ -23,11 +23,11 @@ Patch (or diff) files are text files that note:
 
 When the [patch][] program is run, this file is read in and the specified changes are made to the file(s).
 
-### Official patches
+## Official patches
 
 You can find official Magento patches in the [Magento Security Center][]. Follow the instructions on the page to download the patch file, depending on your version and installation type.
 
-### Custom patches
+## Custom patches
 
 Sometimes it takes a while for the Magento Engineering Team to include a bug fix made on GitHub in a Magento 2 Composer release. In the meantime, you can create a patch from GitHub and use the [`cweagans/composer-patches`][1] plugin to apply it to your Composer-based Magento 2 installation.
 
