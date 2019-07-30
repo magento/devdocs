@@ -87,7 +87,6 @@ Use this table to set the appropriate version dependency on a module based on ho
 | | Subscribe to an event| MINOR|
 | **Virtual Type (marked with `@api`)**| Use an existing virtual type in the `di.xml` file as a class dependency | MAJOR|
 | **URL Paths** | Link to a URL from custom pages | MAJOR|
-| | Submit a POST request to the URL | MAJOR|
 | **Console commands and their arguments**| Called in custom shell scripts| MAJOR|
 | **Less variables and mixins** | Use in Less declarations| MAJOR|
 | **Message queue topics and data types** | Consume a topic/message | MINOR|

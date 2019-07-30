@@ -108,7 +108,7 @@ Any change not listed below is considered a PATCH level change.
 | | Changed event ordering | MAJOR|
 | **Virtual Type (marked with `@api`)**| Virtual type removed | MAJOR|
 | | Virtual type added | MINOR|
-| **URL Paths (Store-Front and Admin, any HTTP method)** | Path removed | MAJOR|
+| **URL Paths (Store-Front and Admin, GET)** | Path removed | MAJOR|
 | | Removed/renamed a request parameter | MAJOR|
 | | New required request parameter | MAJOR|
 | | New optional request parameter | MINOR|
