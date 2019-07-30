@@ -78,8 +78,8 @@ Any change not listed below is considered a PATCH level change.
 | | New optional method argument | MINOR|
 | | Removed a non-last argument| MAJOR|
 | | New required constructor object argument | MINOR|
-| | New optional constructor argument in a class intended for extension | MINOR|
-| | New optional constructor argument in a class not intended for extension | PATCH|
+| | New optional constructor argument in a class [intended for extension](#php-classes-intended-for-extension) | MINOR|
+| | New optional constructor argument in a class not [intended for extension](#php-classes-intended-for-extension) | PATCH|
 | | New required constructor scalar argument (without pre-configured value)| MAJOR|
 | | Removed a non-last constructor argument| MAJOR|
 | | Removed a last constructor argument| PATCH|
