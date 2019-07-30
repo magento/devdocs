@@ -107,7 +107,7 @@ The current default storage amount per project is 5GB, or 5120MB. You can distri
 
 #### To verify relationships in local environment:
 
-1. Use SSH to log in to the remote environment.
+1. In your local environment, show the relationships for the active environment.
 
     ```bash
     magento-cloud relationships
@@ -141,7 +141,7 @@ The current default storage amount per project is 5GB, or 5120MB. You can distri
 
 1. Use SSH to log in to the remote environment.
 
-1. Create `pretty-print` of all relationships for services and configuration data for that environment.
+1. Create `pretty-print` to show all relationships for services and configuration data for that environment.
 
     ```bash
     php -r 'print_r(json_decode(base64_decode($_ENV["MAGENTO_CLOUD_RELATIONSHIPS"])));'
