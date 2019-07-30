@@ -45,93 +45,6 @@ The following query returns information about the URL containing `joust-duffle-b
 }
 ```
 
-### Query a URL's rewrite information
-
-The following product query returns URL rewrite information about the Joust Duffle Bag.
-
-**Request**
-
-```graphql
-{
-  products(search: "Joust") {
-    items {
-      name
-      sku
-      url_rewrites {
-        url
-        parameters {
-          name
-          value
-        }
-      }
-    }
-  }
-}
-```
-
-**Response**
-
-```json
-{
-  "data": {
-    "products": {
-      "items": [
-        {
-          "name": "Joust Duffle Bag",
-          "sku": "24-MB01",
-          "url_rewrites": [
-            {
-              "url": "no-route",
-              "parameters": [
-                {
-                  "name": "page_id",
-                  "value": "1"
-                }
-              ]
-            },
-            {
-              "url": "joust-duffle-bag.html",
-              "parameters": [
-                {
-                  "name": "id",
-                  "value": "1"
-                }
-              ]
-            },
-            {
-              "url": "gear/joust-duffle-bag.html",
-              "parameters": [
-                {
-                  "name": "id",
-                  "value": "1"
-                },
-                {
-                  "name": "category",
-                  "value": "3"
-                }
-              ]
-            },
-            {
-              "url": "gear/bags/joust-duffle-bag.html",
-              "parameters": [
-                {
-                  "name": "id",
-                  "value": "1"
-                },
-                {
-                  "name": "category",
-                  "value": "4"
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    }
-  }
-}
-```
-
 ## Output attributes
 
 ### EntityUrl attributes
@@ -145,15 +58,6 @@ Attribute |  Data Type | Description
 `relative_url` | String | The internal relative URL. If the specified  `url` is a redirect, the query returns the redirected URL, not the original.
 `type` | UrlRewriteEntityTypeEnum | The value of `UrlRewriteEntityTypeEnum` is one of PRODUCT, CATEGORY, or CMS_PAGE.
 `url` | String | The URL to resolve. Magento stores product and category URLs with the `.html` extension.  CMS URLs do not contain the extension.
-
-### UrlRewrite object {#UrlRewrite}
-
-The `products` query can request details about the `UrlRewrite` object.
-
-Attribute | Type | Description
---- | --- | ---
-`parameters` | [[`HttpQueryParameter`]](#HttpQueryParameter) | An array of target path parameters
-`url` | String | The request URL
 
 ### HttpQueryParameter object {#HttpQueryParameter}
 
