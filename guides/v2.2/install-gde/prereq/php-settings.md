@@ -17,7 +17,7 @@ redirect_from:
 This topic discusses how to set required [PHP](https://glossary.magento.com/php) options.
 
 {:.bs-callout .bs-callout-info}
-All 3rd party libraries now support PHP 7.2.
+All third-party libraries now support PHP 7.2.
 If you are interested in participating in Magento Community projects we welcome your help! See our [ZenHub board](https://app.zenhub.com/workspace/o/magento-engcom/php-7.2-support/boards?repos=116423356,116426364,115111902) for a full list of outstanding issues.
 
 {% include install/php-versions-template.md %}
