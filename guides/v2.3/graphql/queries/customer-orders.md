@@ -19,7 +19,7 @@ The following query returns the order history of the logged in customer.
 
 **Request**
 
-```text
+```graphql
 {
   customerOrders {
     items {
