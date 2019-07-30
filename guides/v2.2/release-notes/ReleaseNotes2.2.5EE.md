@@ -20,7 +20,7 @@ Look for the following highlights in this release:
 
 * Enhancements that help close stored XSS, SQL injection, and cross-site request forgery (CSRF) vulnerabilities. See [Magento Security Center](https://magento.com/security/patches/magento-2.2.5-and-2.1.14-security-update) for more information.
 
-* Resolution of issues that customers were experiencing when upgrading to Magento 2.2.4 in deployments that span multiple websites. Magento multi-store installations were not using the store view-specific values from the store configuration settings if these settings differed from the global default configuration settings. Instead, Magento used the default configuration for all store views. See  [GitHub-15205](https://github.com/magento/magento2/issues/15205) and [GitHub-15245](https://github.com/magento/magento2/issues/15245) for more detailed discussions of the problems some customers encountered. *Fix submitted by [Francesco Marangi](https://github.com/fmarangi) in pull request 15929*. 
+* Resolution of issues that customers were experiencing when upgrading to Magento 2.2.4 in deployments that span multiple websites. Magento multi-store installations were not using the store view-specific values from the store configuration settings if these settings differed from the global default configuration settings. Instead, Magento used the default configuration for all store views. See  [GitHub-15205](https://github.com/magento/magento2/issues/15205) and [GitHub-15245](https://github.com/magento/magento2/issues/15245) for more detailed discussions of the problems some customers encountered. *Fix submitted by Francesco Marangi in pull request 15929*. 
 
 * Substantial improvements to indexing performance. 
 
@@ -74,7 +74,7 @@ In addition to security enhancements, this release contains the following functi
 
 ### Installation, setup, and deployment
 
-<!-- MAGETWO-88237 -->* Magento no longer permits you to re-run an already running cron job. *Fix submitted by [Paavo Pokkinen](https://github.com/paveq) in pull request 12497*. [GitHub-10650](https://github.com/magento/magento2/issues/10650)
+<!-- MAGETWO-88237 -->* Magento no longer permits you to re-run an already running cron job. *Fix submitted by Paavo Pokkinen in pull request 12497*. [GitHub-10650](https://github.com/magento/magento2/issues/10650)
 
 ### Bundle products
 
@@ -86,7 +86,7 @@ In addition to security enhancements, this release contains the following functi
 
 <!--- MAGETWO-88808 -->* Merchants can now run the catalog search full text indexer and category product indexer in parallel mode by store view.
 
-<!--- MAGETWO-88107 -->* The `Category\Collection::joinUrlRewrite` method now returns the URL of the store  whose `storeId` is set on the collection. Previously, this method returned the name of the default store. *Fix submitted by [Alessandro Pagnin](https://github.com/alepane21) in pull request 13716*. [GitHub-13704](https://github.com/magento/magento2/issues/13704)
+<!--- MAGETWO-88107 -->* The `Category\Collection::joinUrlRewrite` method now returns the URL of the store  whose `storeId` is set on the collection. Previously, this method returned the name of the default store. *Fix submitted by Alessandro Pagnin in pull request 13716*. [GitHub-13704](https://github.com/magento/magento2/issues/13704)
 
 <!--- MAGETWO-81957 -->* Sorting products by price now applies catalog rules as expected. 
 
@@ -140,9 +140,9 @@ In addition to security enhancements, this release contains the following functi
 
 ### Orders
 
-<!--- MAGETWO-87197 -->* Magento now filters recent orders by store on the customer account page  as expected. *Fix submitted by [Alexander Shkurko](https://github.com/Coderimus) in pull request 13257*. 
+<!--- MAGETWO-87197 -->* Magento now filters recent orders by store on the customer account page  as expected. *Fix submitted by Alexander Shkurko in pull request 13257*. 
 
-<!--- MAGETWO-86399 -->* The performance and logic of `Magento\Sales\Helper\Guest` has been improved. *Fix submitted by [Alexander Shkurko](https://github.com/Coderimus) in pull request 12893*. 
+<!--- MAGETWO-86399 -->* The performance and logic of `Magento\Sales\Helper\Guest` has been improved. *Fix submitted by Alexander Shkurko in pull request 12893*. 
 
 ### Payment methods
 
@@ -150,7 +150,7 @@ In addition to security enhancements, this release contains the following functi
 
 ### Performance
 
-<!--- MAGETWO-86745 -->* We've removed the `count()` method from the condition section for some loops in a small subset of backend files. When this method is used in a loop condition,  it will be executed at every iteration, which can degrade performance. *Fix submitted by [Alexander Shkurko](https://github.com/Coderimus) in pull request 13173*. 
+<!--- MAGETWO-86745 -->* We've removed the `count()` method from the condition section for some loops in a small subset of backend files. When this method is used in a loop condition,  it will be executed at every iteration, which can degrade performance. *Fix submitted by Alexander Shkurko in pull request 13173*. 
 
 ### Search
 
@@ -177,7 +177,7 @@ You can find Magento Shipping-specific release notes in [Magento Shipping Releas
 
 ### Swatches
 
-<!--- MAGETWO-86332 -->*  You can now use JavaScript mixins to extend swatch functionality in all supported browsers. *Fix submitted by [Renon Stewart](https://github.com/srenon) in pull request 12929*. [GitHub-10559](https://github.com/magento/magento2/issues/10559)
+<!--- MAGETWO-86332 -->*  You can now use JavaScript mixins to extend swatch functionality in all supported browsers. *Fix submitted by Renon Stewart in pull request 12929*. [GitHub-10559](https://github.com/magento/magento2/issues/10559)
 
 ### Testing
 
@@ -185,7 +185,7 @@ You can find Magento Shipping-specific release notes in [Magento Shipping Releas
 
 <!--- MAGETWO-87487 -->* The `phpunit.xml` configuration file is now blacklisted during schema validation static tests (particularly `Magento/Test/Integrity/Xml/SchemaTest.php`). 
 
-<!--- MAGETWO-81742 MAGETWO-89250 -->* The `\Magento\Test\Php\LiveCodeTest::testCodeStyle`  method now uses whitelist files. *Fix submitted by [Adrian Martinez](https://github.com/adrian-martinez-interactiv4) in pull request 11376*. [GitHub-10559](https://github.com/magento/magento2/issues/10559)
+<!--- MAGETWO-81742 MAGETWO-89250 -->* The `\Magento\Test\Php\LiveCodeTest::testCodeStyle`  method now uses whitelist files. *Fix submitted by Adrian Martinez in pull request 11376*. [GitHub-10559](https://github.com/magento/magento2/issues/10559)
 
 ### URL rewrites
 
