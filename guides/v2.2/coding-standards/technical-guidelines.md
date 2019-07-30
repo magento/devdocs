@@ -779,9 +779,9 @@ You need to read configuration from different sources (like database or filesyst
 
 11.3.5.1. Action group file names MUST follow this pattern:
 
-* If the action group is making an assertion, then use the following format: `Assert{Admin or Storefront}{Functionality}ActionGroup.xml` where `{Functionality}` briefly describes what the action group is doing.
-* Otherwise use this format: `{Admin or Storefront}{Functionality}ActionGroup.xml`
-* Example: `AssertStorefrontMinicartContainsProductActionGroup.xml`
+- If the action group is making an assertion, then use the following format: `Assert{Admin or Storefront}{Functionality}ActionGroup.xml` where `{Functionality}` briefly describes what the action group is doing.
+- Otherwise use this format: `{Admin or Storefront}{Functionality}ActionGroup.xml`
+- Example: `AssertStorefrontMinicartContainsProductActionGroup.xml`
 
 11.3.5.2. Action group arguments MUST specify the `type` attribute.
 
