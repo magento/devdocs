@@ -1,6 +1,6 @@
 ---
 group: php-developer-guide
-title: Versioning
+title: Magento versioning schema
 redirect_from:
   - /guides/v2.3/architecture/versioning.html
 ---
