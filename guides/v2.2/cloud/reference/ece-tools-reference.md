@@ -1,6 +1,6 @@
 ---
 group: cloud-guide
-title: ece-tools reference
+title: ece-tools package
 functional_areas:
   - Cloud
 ---
@@ -19,7 +19,9 @@ php ./vendor/bin/ece-tools list
 
 ## Build and deploy
 
-The `{{site.data.var.ct}}` package performs operations for the build, deploy, and post-deploy stages for launching your {{site.data.var.ece}} application. By default, these commands are in the [hooks property][hooks] of the `.magento.app.yaml` configuration file.
+The `{{site.data.var.ct}}` package contains commands to perform operations for the build, deploy, and post-deploy stages of launching your {{site.data.var.ece}} application. For example, the `php ./vendor/bin/ece-tools build` command begins the application build process.
+
+By default, these `{{site.data.var.ct}}` commands are in the [hooks property][hooks] of the `.magento.app.yaml` configuration file.
 
 ## Docker configuration generator
 
@@ -92,7 +94,7 @@ There is a set of verification commands available to help evaluate the configura
 #### To verify the ideal state of your project:
 
 ```bash
-./vendor/bin/ece-tools wizard:ideal-state
+php ./vendor/bin/ece-tools wizard:ideal-state
 ```
 
 Sample output:

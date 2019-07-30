@@ -444,6 +444,7 @@ Attribute |  Data Type | Description
 --- | --- | ---
 `applied_balance` | Money | The amount of store credit applied to the current cart
 `current_balance` | Money | The customer's store credit balance before applying store credit to the cart
+`enabled` | Boolean | Indicates whether store credits are enabled. If the feature is disabled, then the current balance will not be returned
 
 #### AvailablePaymentMethod object {#AvailablePaymentMethod}
 
