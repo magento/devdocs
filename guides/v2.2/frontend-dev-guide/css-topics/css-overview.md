@@ -32,6 +32,8 @@ There are a couple options to help with CSS and site performance.
 
 * Minification of CSS files reduces the file size being sent. It does this by stripping white space within the file.
 
+* Use CSS critical path to eliminate render-blocking CSS resources.
+
 To enable / disable these settings, go into Admin > **Stores** > Setting > **Configuration** > **Advanced** > **Developer** > **CSS Settings**.
 
 ## Change styles: walkthrough {#css_walk}
@@ -68,6 +70,7 @@ Other topics of this chapter describe the following:
 * [CSS Preprocessing]({{ page.baseurl }}/frontend-dev-guide/css-topics/css-preprocess.html): how stylesheets are preprocessed and compiled
 * [Magento UI Library]({{ page.baseurl }}/frontend-dev-guide/css-topics/theme-ui-lib.html): how to use the Magento styles [library](https://glossary.magento.com/library) in your custom themes
 * [Using Custom Fonts]({{ page.baseurl }}/frontend-dev-guide/css-topics/using-fonts.html): how to add custom fonts 
+* [CSS critical path]({{ page.baseurl }}/frontend-dev-guide/css-topics/css-critical-path.html): how to use CSS critical path
 * [Customizing styles illustration]({{ page.baseurl }}/frontend-dev-guide/css-topics/css-practice.html): how to change a theme's color scheme using Magento UI library.
 
 [The default view of a product page, with the orange Add to Cart button]: {{site.baseurl}}/common/images/css_over1.png
