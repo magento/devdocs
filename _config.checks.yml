@@ -18,8 +18,9 @@ html-proofer:
     :in_processes: 3
 
   # Ignore entirely the files which pathname matches a specified pattern 
-  # :file_ignore:
-  # - guides/v2.0
+  :file_ignore:
+  - !ruby/regexp /page-builder/
+  - !ruby/regexp /mrg/
 
   # Ignore any link that includes a specified pattern
   # :url_ignore:
