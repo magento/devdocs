@@ -53,6 +53,18 @@ pages:
         - label: cmsPage query
           url: /graphql/queries/cms-page.html
         
+        - label: countries query
+          url: /graphql/queries/directory-countries.html
+          
+        - label: country query
+          url: /graphql/queries/directory-country.html
+          
+        - label: currency query
+          url: /graphql/queries/directory-currency.html
+
+        - label: customerOrders query
+          url: /graphql/queries/customer-orders.html
+        
     - label: Mutations
       children:
         - label: applyStoreCreditToCart mutation
@@ -68,9 +80,6 @@ pages:
 
             - label: Customer endpoint
               url: /graphql/reference/customer.html
-
-            - label: Directory endpoint
-              url: /graphql/reference/directory.html
 
             - label: Payflow Link getPayflowLinkToken query
               url: /graphql/reference/paypal-get-payflow-link-token.html
@@ -168,9 +177,6 @@ pages:
 
             - label: redeemGiftCardBalanceAsStoreCredit mutation
               url: /graphql/reference/redeem-giftcard-balance.html
-
-            - label: Sales endpoint
-              url: /graphql/reference/sales.html
 
             - label: Store endpoint
               url: /graphql/reference/store-config.html

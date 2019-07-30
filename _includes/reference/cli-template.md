@@ -1,17 +1,16 @@
 {% assign app = file.application %}
 
 {% assign commands = file.commands %}
-{% if app %}
-# {{ app.name }} (version {{ app.version }})
-{% else %}
-# Magento CLI
+
+{% if app.version %}
+**Version**: {{ app.version }}
+{: style="color:gray; font-size: 120%"}
 {% endif %}
 
-This reference contains {{ commands | size }} commands available through the `bin/magento` command-line tool.
-The initial list is auto generated using the `bin/magento list` command at the {{ site.data.var.ce }} edition. Use the ["Add CLI commands"]({{ page.baseurl }}/extension-dev-guide/cli-cmds/cli-add.html) guide to add a custom Magento CLI command.
+This reference contains {{ commands | size }} commands available through the `{{ tool }}` command-line tool.
+The initial list is auto generated using the `{{ tool }} list` command at the {{ edition }} edition.
 
-{: .bs-callout-info }
-You can call Magento CLI commands using shortcuts instead of the full command name. For example, you can call `bin/magento setup:upgrade` using `bin/magento s:up`, `bin/magento s:upg`, etc. See [shortcut syntax](https://symfony.com/doc/current/components/console/usage.html#shortcut-syntax) to understand how to use shortcuts with any Magento CLI command.
+{{ intro }}
 
 {% for command in commands %}
   {% assign arguments = command.definition.arguments %}
@@ -22,7 +21,7 @@ You can call Magento CLI commands using shortcuts instead of the full command na
 {{ command.description }}
 
 ```bash
-bin/magento {{ command.usage }}
+{{ tool }} {{ command.usage }}
 ```
 
   {% unless arguments.size == 0 %}
@@ -33,7 +32,7 @@ bin/magento {{ command.usage }}
   {% for argument in arguments %}
   {% for item in argument %}
   {% if item.name %}
-  
+
   {% if item.default == empty %}
   {% endif %}
 
@@ -62,6 +61,7 @@ bin/magento {{ command.usage }}
 
  {% for option in options %}
  {% assign opt = option[1] %}
+
 #### {{ option[0] }}
 
 - Option: `{{ opt.name }}`

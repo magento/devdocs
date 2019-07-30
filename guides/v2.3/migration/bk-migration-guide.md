@@ -35,5 +35,5 @@ Magento 2 uses new approaches and technologies that give merchants an unmatched 
 ## Migration efforts {#migrate-efforts}
 
 Just like an upgrade between 1.x versions (for example, from v1.12 to v1.14), the level of effort to migrate from Magento 1 to Magento 2 depends upon how you have built your site and its level of customization.
-
 However, we are constantly improving the Data Migration Tool (see the [Changelog](https://github.com/magento/data-migration-tool/blob/2.3/CHANGELOG.md){:target="_blank"} for more details); so the migration efforts are continuously decreasing.
+
