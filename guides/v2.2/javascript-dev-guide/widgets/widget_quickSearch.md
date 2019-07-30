@@ -2,8 +2,6 @@
 group: javascript-developer-guide
 subgroup: 3_Widgets
 title: QuickSearch widget
-redirect_from:
- - /guides/v2.0/frontend-dev-guide/javascript/widget_quickSearch.html
 functional_areas:
   - Search
 ---
