@@ -36,12 +36,6 @@ relationships:
 
 Merge and deploy the code to set the configurations for RabbitMQ. For information on how these changes affect your environments, see [`services.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_services.html).
 
-## Verify environment-related relationships {#cloud-es-config-mg}
-
-We use the {{site.data.var.ece}} environment variable [`$MAGENTO_CLOUD_RELATIONSHIPS`]({{ page.baseurl }}/cloud/env/environment-vars_cloud.html), a JSON object, to retrieve environment-related relationships.
-
-{% include cloud/pretty-print-services.md %}
-
 ## Connect to RabbitMQ for debugging {#connect}
 
 For debugging purposes, it is useful to directly connect to a service instance in one of the following ways:
@@ -68,11 +62,7 @@ You can do this using [SSH tunneling]({{ page.baseurl }}/cloud/env/environments-
     magento-cloud tunnel:open
     ```
 
-1.  Pretty-print the relationships. This lets you see which username and password to use, and you can verify the remote service's port.
-
-    ```bash
-    php -r 'print_r(json_decode(base64_decode($_ENV["MAGENTO_CLOUD_RELATIONSHIPS"])));'
-    ```
+1.  [Verify the relationships]({{page.baseurl}}/cloud/project/project-conf-files_services.html#service-relationships).
 
 1.  Enable local port forwarding to RabbitMQ.
 
