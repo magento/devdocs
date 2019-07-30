@@ -15,9 +15,11 @@ You may encounter an error, caused by your system running out of physical memory
 
 When installing or updating the Magento application or components like extensions, themes, or language packages, an error similar to the following displays:
 
- Could not complete update {"components":[
- {"name":"magento/module-bundle-sample-data","version":"100.1.0"}
- ]} successfully: proc_open(): fork failed - Cannot allocate memory
+```terminal
+Could not complete update {"components":[
+{"name":"magento/module-bundle-sample-data","version":"100.1.0"}
+]} successfully: proc_open(): fork failed - Cannot allocate memory
+```
 
 The error `proc_open(): fork failed - Cannot allocate memory` can also display on the command line.
 
@@ -29,7 +31,7 @@ We recommend you allocate 2GB of memory to [PHP](https://glossary.magento.com/ph
 
 First, make sure you allocated [2GB of memory to PHP]({{ page.baseurl }}/install-gde/prereq/php-settings.html); otherwise, your installation or upgrade might still run out of memory.
 
-If you've already done that, create a swap file on your machine. A Linux machine uses *swap space* if it needs more memory resources and the RAM is full. The swap space is used for inactive pages in memory.
+If you have already done that, create a swap file on your machine. A Linux machine uses *swap space* if it needs more memory resources and the RAM is full. The swap space is used for inactive pages in memory.
 
 The following are suggestions only; other options might be available. Consult a network administrator or another knowledgeable resource before you continue. You must run the commands to create a swap file as a user with `root` privileges.
 
