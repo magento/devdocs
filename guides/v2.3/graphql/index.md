@@ -39,7 +39,6 @@ The current GraphQL codebase also supports the following features:
 In the near future, we'll roll out the following features:
 
 * A more performant data retrieval mechanism
-* Caching
 * Queries for other storefront entities like carts and orders
 * Support mutations to enable payments, checkout, and other operations
 

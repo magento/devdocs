@@ -12,7 +12,7 @@ The ColorPicker component must be a child of the [Listing]({{ page.baseurl }}/ui
 |--- |--- |--- |--- |
 |`colorFormat`|Defines the color format displayed in the selection tool and input field. Valid formats: `hex`, `rgb`, `hsl`, `hsv`, `name`, `none`|`string`|`-`|
 |`colorPickerMode`|Defines the mode that affects the available color picker functionality. Valid modes: `simple`, `full`, `noalpha`, `palette`|`string`|`-`|
-|`elementTmpl`|The path to the `.html` template of the particular field type (color-picker).|`string`|`ui/form/element/email`|
+|`elementTmpl`|The path to the `.html` template of the particular field type (color-picker).|`string`|`ui/form/element/color-picker`|
 
 ## Sources files
 
@@ -28,7 +28,7 @@ The ColorPicker component must be a child of the [Listing]({{ page.baseurl }}/ui
 ```xml
     <form>
     ...
-        <colorPicker name="colors_filter" class="Magento\Ui\Component\Form\Element\ColorPicker" component="Magento_Ui/js/form/element/color-picker" template="ui/form/field">
+        <colorPicker name="colors_filter" class="Magento\Ui\Component\Form\Element\ColorPicker" component="Magento_Ui/js/form/element/color-picker">
             <settings>
                 <label translate="true">Color</label>
                 <elementTmpl>ui/form/element/color-picker</elementTmpl>
