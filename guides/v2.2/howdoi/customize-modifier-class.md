@@ -43,7 +43,8 @@ class Example extends AbstractModifier
                     'config' => [
                         'label' => __('Label For Fieldset'),
                         'sortOrder' => 50,
-                        'collapsible' => true
+                        'collapsible' => true,
+                        'componentType' => 'fieldset'
                     ]
                 ]
             ],
