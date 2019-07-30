@@ -92,9 +92,9 @@ Highlights of community contributions include fixes that improve checkout flow a
 * Customers can now successfully complete an order when it contains a  configurable product with an option that is deleted after the product has been placed in the shopping cart. Previously, the shopping cart could not load the shopping cart after the configurable option was deleted.  Thanks to community member jonshipman!  [GitHub-15467](https://github.com/magento/magento2/issues/15467)
 
 
-* Magento now maintains the default sort order for products (“newest first”) when you upgrade your Magento deployment. Previously, after upgrade, the default product order in categories changed from “newest first” to “oldest first”.  Thanks to community member [Danny Verkade](https://github.com/dverkade)! [GitHub-15627](https://github.com/magento/magento2/issues/15627) 
+* Magento now maintains the default sort order for products (“newest first”) when you upgrade your Magento deployment. Previously, after upgrade, the default product order in categories changed from “newest first” to “oldest first”.  Thanks to community member Danny Verkade! [GitHub-15627](https://github.com/magento/magento2/issues/15627) 
 
-* Merchants can now successfully change the applied theme setting for a store view (**Content** > **Design** > **Configuration**).  Thanks to community member [Daniel Ruf](https://github.com/DanielRuf)! [GitHub-14968](https://github.com/magento/magento2/issues/14968)
+* Merchants can now successfully change the applied theme setting for a store view (**Content** > **Design** > **Configuration**).  Thanks to community member Daniel Ruf! [GitHub-14968](https://github.com/magento/magento2/issues/14968)
 
 
 * Magento loads pages faster because it no longer redundantly calculates product taxes when loading category pages. Thanks to community member JeroenVanLeusden! [GitHub-14941](https://github.com/magento/magento2/issues/14941)

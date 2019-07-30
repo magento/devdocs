@@ -97,11 +97,11 @@ Highlights of community contributions include these fixes:
 * **Bulk Web APIs**  allow all existing REST APIs to accept payloads with multiple entities. These community-contributed bulk APIs support more efficient and scalable implementations that eliminate round-trip network overhead. Like asynchronous APIs, bulk web APIs can be used in conjunction with queues that have also been migrated to {{site.data.var.ce}}. [See Bulk endpoints](https://devdocs.magento.com/guides/v2.3/rest/bulk-endpoints.html) for more information. 
 
 
-<!-- MAGETWO-86712 -->* The email server no longer throws an exception when a customer places an order using a PayPal payment method. Previously, when a customer checked out using PayPal, Magento placed the order, but the email server threw an exception. Thanks to community member [Jason Woods](https://github.com/driskell)!
+<!-- MAGETWO-86712 -->* The email server no longer throws an exception when a customer places an order using a PayPal payment method. Previously, when a customer checked out using PayPal, Magento placed the order, but the email server threw an exception. Thanks to community member Jason Woods!
 
 <!-- ENGCOM-2671 -->* You can now use REST to add a configurable product to a shopping cart without creating a duplicate product entry. Thanks to community member zamboten! [GitHub-15028](https://github.com/magento/magento2/issues/15028)
 
-<!-- ENGCOM-1832 -->* The price range displayed for bundle products now shows only valid prices. Previously, Magento displayed special prices that had expired, even though the price in the customization and summary area was correct. Thanks to community member [Riccardo Tempesta](https://github.com/phoenix128)! [GitHub-15457](https://github.com/magento/magento2/issues/15457) 
+<!-- ENGCOM-1832 -->* The price range displayed for bundle products now shows only valid prices. Previously, Magento displayed special prices that had expired, even though the price in the customization and summary area was correct. Thanks to community member Riccardo Tempesta! [GitHub-15457](https://github.com/magento/magento2/issues/15457) 
 
 
 

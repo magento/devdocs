@@ -133,7 +133,7 @@ Infrastructure improvements are core enhancements that underlie both merchant an
 
 * Accept.js library is now used for Authorize.NET payments.
 
-* Magento now supports **Elasticsearch 6.x**. *Fix submitted by community member  [Romain Ruaud](https://github.com/romainruaud) in pull request [21458](https://github.com/magento/magento2/pull/21458)*. Thank you, Romain! <!--- ENGCOM-4389 -->
+* Magento now supports **Elasticsearch 6.x**. *Fix submitted by community member Romain Ruaud in pull request [21458](https://github.com/magento/magento2/pull/21458)*. Thank you, Romain! <!--- ENGCOM-4389 -->
 
 * Update PayPal Express Checkout to `checkout.js v4`. This introduces a modernized checkout flow, faster checkout performance, and new payment options in a single integration that does not have to be updated as new payment methods become available. It also unlocks new payment options including Venmo and PayPal Credit. See [PayPal Express Checkout](https://docs.magento.com/m2/ce/user_guide/payment/paypal-express-checkout.html).
 
@@ -142,7 +142,7 @@ Infrastructure improvements are core enhancements that underlie both merchant an
 * Magento support for PHP has changed slightly as a result of expanding our Elasticsearch support in this release. Magento 2.3.1 is compatible with PHP 7.2.x  and certified  on PHP 7.2.11.
 
 
-* You can now isolate and extract MySQL Views from regular database tables with no negative effects on database backup and restoration. Support for MySQL Views was introduced in 2.3.0 with unexpected consequences to the default database backups and restore mechanism. This fix restores expected  backup and restore functionality while preserving MySQL View support the backward compatibility with legacy inventory. *Fix submitted by community member  [Stepan Furman](https://github.com/Stepa4man) in pull request [21151](https://github.com/magento/magento2/pull/21151)*. Thank you, Stepan!
+* You can now isolate and extract MySQL Views from regular database tables with no negative effects on database backup and restoration. Support for MySQL Views was introduced in 2.3.0 with unexpected consequences to the default database backups and restore mechanism. This fix restores expected  backup and restore functionality while preserving MySQL View support the backward compatibility with legacy inventory. *Fix submitted by community member Stepan Furman in pull request [21151](https://github.com/magento/magento2/pull/21151)*. Thank you, Stepan!
 
 
 * Magento now uses version 6.0 of the DHL XML Services schema for the DHL shipping method. <!--- MC-4245-->* 
@@ -1109,7 +1109,7 @@ Previously, when you reopened these categories, no checkboxes were checked.
 
 <!--- MC-5201 -->* Magento now supports Redis 5.0. 
 
-<!--- ENGCOM-4392 -->* Expected backup and restoration functionality has been restored and MySQL View support is supported while preserving backward compatibility with pre-existing modules. *Fix submitted by community member  [Stepan Furman](https://github.com/Stepa4man) in pull request [21151](https://github.com/magento/magento2/pull/21151)*. 
+<!--- ENGCOM-4392 -->* Expected backup and restoration functionality has been restored and MySQL View support is supported while preserving backward compatibility with pre-existing modules. *Fix submitted by community member Stepan Furman in pull request [21151](https://github.com/magento/magento2/pull/21151)*. 
 
 
 <!--- ENGCOM-3690-->* `transparent.js` has relocated, and orders can now be created from the Admin using PayflowPro and Authorize.Net. Previously, orders created from the Admin using PayflowPro failed, and Magento displayed an informative message indicating that an account number was invalid. *Fix submitted by [Patrick McLain](https://github.com/pmclain) in pull request [19764](https://github.com/magento/magento2/pull/19764)*. [GitHub-19763](https://github.com/magento/magento2/issues/19763)
