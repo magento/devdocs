@@ -51,22 +51,31 @@ To install MySQL 5.7 on Ubuntu 16:
 
 1. Enter this command:
 
+    ```bash
     sudo apt install -y mysql-server mysql-client
+    ```
 
 2. Start MySQL:
 
+    ```bash
     sudo service mysql start
+    ```
 
 3. Secure the installation:
 
+    ```bash
     sudo mysql_secure_installation
+    ```
 
 4. Test the installation:
 
+    ```bash
     mysql -u root -p
+    ```
 
   Sample output:
 
+    ```terminal
     Welcome to the MySQL monitor.  Commands end with ; or \g.
     Your MySQL connection id is 45
     Server version: 5.6.19-0ubuntu0.14.04.1 (Ubuntu)
@@ -80,6 +89,7 @@ To install MySQL 5.7 on Ubuntu 16:
     Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 
     mysql>
+    ```
 
 1. If you expect to import large numbers of products into Magento, you can increase the value for [`max_allowed_packet`](http://dev.mysql.com/doc/refman/5.6/en/program-variables.html){:target="_blank"} that is larger than the default, 16MB.
 
@@ -93,22 +103,31 @@ To install MySQL 5.6 on Ubuntu 14:
 
 1. Enter this command:
 
+    ```bash
     apt-get -y install mysql-server-5.6 mysql-client-5.6
+    ```
 
 2. Start MySQL:
 
+    ```bash
     sudo service mysql start
+    ```
 
 3. Secure the installation:
 
+    ```bash
     mysql_secure_installation
+    ```
 
 4. Test the installation by entering the following command:
 
+    ```bash
     mysql -u root -p
+    ```
 
   Sample output:
 
+    ```terminal
     Welcome to the MySQL monitor.  Commands end with ; or \g.
     Your MySQL connection id is 45
     Server version: 5.6.19-0ubuntu0.14.04.1 (Ubuntu)
@@ -122,6 +141,7 @@ To install MySQL 5.6 on Ubuntu 14:
     Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 
     mysql>
+    ```
 
 1. If you expect to import large numbers of products into Magento, you can increase the value for [`max_allowed_packet`](http://dev.mysql.com/doc/refman/5.6/en/program-variables.html){:target="_blank"} that is larger than the default, 16MB.
 
@@ -135,25 +155,34 @@ To install MySQL 5.6 on Ubuntu 12, use the following instructions from [askubunt
 
 1. Enter the following commands in the order shown:
 
+    ```bash
     apt-get -y update
     apt-add-repository ppa:ondrej/mysql-5.6
     apt-get -y update
     apt-get -y install mysql-server
+    ```
 
 2. Start MySQL:
 
+    ```bash
     sudo service mysql start
+    ```
 
 3. Secure the installation:
 
+    ```bash
     mysql_secure_installation
+    ```
 
 4. Test the installation:
 
+    ```bash
     mysql -u root -p
+    ```
 
   Messages similar to the following display:
 
+    ```terminal
     Welcome to the MySQL monitor.  Commands end with ; or \g.
     Your MySQL connection id is 43
     Server version: 5.6.21-1+deb.sury.org~precise+1 (Ubuntu)
@@ -167,6 +196,7 @@ To install MySQL 5.6 on Ubuntu 12, use the following instructions from [askubunt
     Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 
     mysql>
+    ```
 
 1. If you expect to import large numbers of products into Magento, you can increase the value for [`max_allowed_packet`](http://dev.mysql.com/doc/refman/5.6/en/program-variables.html){:target="_blank"} that is larger than the default, 16MB.
 
@@ -187,8 +217,10 @@ The following procedure is based on [How to Install Latest MySQL 5.7.9 on RHEL/C
 
 As a user with `root` privileges, enter the following commands in the order shown:
 
-  wget http://dev.mysql.com/get/mysql57-community-release-el7-7.noarch.rpm
-  yum -y localinstall mysql57-community-release-el7-7.noarch.rpm
+```bash
+wget http://dev.mysql.com/get/mysql57-community-release-el7-7.noarch.rpm
+yum -y localinstall mysql57-community-release-el7-7.noarch.rpm
+```
 
 Continue with [Install and configure MySQL 5.7 on CentOS 6 or 7](#mysql57-centos-config).
 
@@ -198,8 +230,10 @@ The following procedure is based on [How to Install Latest MySQL 5.7.9 on RHEL/C
 
 As a user with `root` privileges, enter the following commands in the order shown:
 
-  wget http://dev.mysql.com/get/mysql57-community-release-el6-7.noarch.rpm
-  yum -y localinstall mysql57-community-release-el6-7.noarch.rpm
+```bash
+wget http://dev.mysql.com/get/mysql57-community-release-el6-7.noarch.rpm
+yum -y localinstall mysql57-community-release-el6-7.noarch.rpm
+```
 
 Continue with the next section.
 
@@ -207,23 +241,34 @@ Continue with the next section.
 
 1. Enter the following commands in the order shown:
 
+    ```bash
     yum -y install mysql-community-server
     service mysqld start
+    ```
 
 2. Verify the version:
 
+    ```bash
     mysql --version
+    ```
 
   Sample output follows:
 
+    ```terminal
     mysql  Ver 14.14 Distrib 5.7.12, for Linux (x86_64) using  EditLine wrapper
+    ```
 
 1. Get the temporary database `root` user password:
 
+    ```bash
     grep 'temporary password' /var/log/mysqld.log
+    ```
+
 1. Secure the installation:
 
+    ```bash
     mysql_secure_installation
+    ```
 
   Follow the prompts on your screen to set a new password and configure other options.
 5. Configure MySQL 5.7 as discussed in [Configuring the Magento database instance](#instgde-prereq-mysql-config).
@@ -234,30 +279,41 @@ The following procedure is based on [Install MySQL Server 5.6 in CentOS 6.x and 
 
 1. *CentOS 6* Install the MySQL database:
 
+    ```bash
     yum -y update
     sudo wget http://repo.mysql.com/mysql-community-release-el6-5.noarch.rpm && sudo rpm -ivh mysql-community-release-el6-5.noarch.rpm
     sudo yum -y install mysql-server
+    ```
 
 1. *CentOS 7* Install the MySQL database:
 
+    ```bash
     yum -y update
     sudo wget http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm && sudo rpm -ivh mysql-community-release-el7-5.noarch.rpm
     sudo yum -y install mysql-server
+    ```
 
 1.Start MySQL:
 
+    ```bash
     service mysqld start
+    ```
 
 1. Set a password for the <tt>root</tt> user and set other security-related options. Enter the following command and follow the prompts on your screen to complete the configuration:
 
+    ```bash
     mysql_secure_installation
+    ```
 
 1. Verify the MySQL server version:
 
+    ```bash
     mysql -u root -p
+    ```
 
   Messages similar to the following display:
 
+    ```terminal
     Welcome to the MySQL monitor.  Commands end with ; or \g.
     Your MySQL connection id is 15
     Server version: 5.6.23 MySQL Community Server (GPL)
@@ -269,6 +325,7 @@ The following procedure is based on [Install MySQL Server 5.6 in CentOS 6.x and 
     owners.
 
     Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+    ```
 
 1. If you expect to import large numbers of products into Magento, you can configure MySQL to use the [`max_allowed_packet`](http://dev.mysql.com/doc/refman/5.6/en/program-variables.html){:target="_blank"} parameter. We recommend a value of at least 16MB.
 
@@ -285,21 +342,27 @@ To configure a MySQL database instance:
 1. Log in to your database server as any user.
 1. Get to a MySQL command prompt:
 
+    ```bash
     mysql -u root -p
+    ```
 
 1. Enter the MySQL `root` user's password when prompted.
 1. Enter the following commands in the order shown to create a database instance named `magento` with username `magento`:
 
+    ```sql
     create database magento;
     create user magento IDENTIFIED BY 'magento';
     GRANT ALL ON magento.* TO magento@localhost IDENTIFIED BY 'magento';
     flush privileges;
+    ```
 
 1. Enter `exit` to quit the command prompt.
 
 1. Verify the database:
 
+    ```bash
     mysql -u magento -p
+    ```
 
   If the MySQL monitor displays, you created the database properly. If an error displays, repeat the preceding commands.
 

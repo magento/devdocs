@@ -20,7 +20,10 @@ To increase your PHP memory limit:
 1. Log in to your Magento server.
 1. Locate your `php.ini` file using the following command:
 
+    ```bash
     php --ini
+    ```
+
 1. As a user with `root` privileges, use a text editor to open the `php.ini` specified by `Loaded Configuration File`.
 1. Locate `memory_limit`.
 1. Change it to a value of `2GB` for normal use and debugging.
@@ -54,7 +57,9 @@ See [During installation, xdebug maximum function nesting level error]({{ page.b
 
 Error text is typically:
 
-    Parse error: syntax error, unexpected 'data' (T_STRING)
+```php
+Parse error: syntax error, unexpected 'data' (T_STRING)
+```
 
 ### Solution: Set asp_tags = off in php.ini
 

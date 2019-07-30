@@ -44,7 +44,9 @@ Failure to enable these settings typically results in no styles displaying on yo
 
 To verify the Apache version you're currently running, enter:
 
-  apache2 -v
+```bash
+apache2 -v
+```
 
 The result displays similar to the following:
 
@@ -72,16 +74,22 @@ To install the default version of Apache (Ubuntu 14, 16&mdash;Apache 2.4, Ubuntu
 
 1. Install Apache
 
+    ```bash
     apt-get -y install apache2
+    ```
 
 1. Verify the installation.
 
+    ```bash
     apache2 -v
+    ```
 
   The result displays similar to the following:
 
+    ```terminal
     Server version: Apache/2.4.18 (Ubuntu)
     Server built: 2016-04-15T18:00:57
+    ```
 
 1. Enable rewrites and `.htaccess` as discussed in the following sections.
 
@@ -109,25 +117,33 @@ To upgrade to Apache 2.4:
 
 1. Add the `ppa:ondrej` repository, which has Apache 2.4:
 
+    ```bash
     apt-get -y update
     apt-add-repository ppa:ondrej/apache2
     apt-get -y update
+    ```
 
 1. Install Apache 2.4:
 
+    ```bash
     apt-get install -y apache2
+    ```
 
 {:.bs-callout .bs-callout-info}
 If the 'apt-get install' command fails because of unmet dependencies, consult a resource like [http://askubuntu.com](http://askubuntu.com/questions/140246/how-do-i-resolve-unmet-dependencies-after-adding-a-ppa){:target="_blank"}.
 
 1. Verify the installation.
 
+    ```bash
     apache2 -v
+    ```
 
   Messages similar to the following should display:
 
+    ```terminal
     Server version: Apache/2.4.10 (Ubuntu)
     Server built: Jul 22 2014 22:46:25
+    ```
 
 1. Continue with the next section.
 
@@ -153,16 +169,22 @@ Installing and configuring Apache is basically a three-step process: install the
 
 1. Install Apache 2.4 if you haven't already done so.
 
+    ```bash
     yum -y install httpd
+    ```
 
 1. Verify the installation:
 
+    ```bash
     httpd -v
+    ```
 
   Messages similar to the following display to confirm the installation was successful:
 
+    ```terminal
     Server version: Apache/2.4.0 (Unix)
     Server built: Oct 16 2017 14:48:21
+    ```
 
 1. Continue with the next section.
 
@@ -194,12 +216,14 @@ To enable website visitors to access your site, use one of the [Require directiv
 
 For example:
 
-  <Directory /var/www/>
-    Options Indexes FollowSymLinks MultiViews
-    AllowOverride <value from Apache site>
-    Order allow,deny
-    Require all granted
-  </Directory>
+```apache
+<Directory /var/www/>
+  Options Indexes FollowSymLinks MultiViews
+  AllowOverride <value from Apache site>
+  Order allow,deny
+  Require all granted
+</Directory>
+```
 
 {:.bs-callout .bs-callout-info}
 The preceding values for `Order` might not work in all cases. For more information, see the [Apache documentation](https://httpd.apache.org/docs/2.4/mod/mod_access_compat.html#order){:target="_blank"}.
@@ -210,12 +234,14 @@ To enable website visitors to access your site, use the [Allow directive](http:/
 
 For example:
 
-  <Directory /var/www/>
-    Options Indexes FollowSymLinks MultiViews
-    AllowOverride <value from Apache site>
-    Order allow,deny
-    Allow from all
-  </Directory>
+```apache
+<Directory /var/www/>
+  Options Indexes FollowSymLinks MultiViews
+  AllowOverride <value from Apache site>
+  Order allow,deny
+  Allow from all
+</Directory>
+```
 
 {:.bs-callout .bs-callout-info}
 The preceding values for `Order` might not work in all cases. For more information, see the [Apache documentation](https://httpd.apache.org/docs/2.2/mod/mod_authz_host.html#order){:target="_blank"}.

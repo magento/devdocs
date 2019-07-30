@@ -32,13 +32,17 @@ Enter the following commands as a user with `root` privileges:
 
 * Ubuntu
 
+    ```bash
     apt-get update
     apt-get upgrade
+    ```
 
 * CentOS
 
+    ```bash
     yum -y update
     yum -y upgrade
+    ```
 
 ## Prerequisite check {#instgde-prereq-check}
 
@@ -54,8 +58,10 @@ Ubuntu: `apache2 -v`
 
 as the following result indicates:
 
-  Server version: Apache/2.4.1 (Unix)
-  Server built: Jul 23 2017 14:17:29
+```terminal
+Server version: Apache/2.4.1 (Unix)
+Server built: Jul 23 2017 14:17:29
+```
 
 To install or upgrade Apache, see [Apache]({{ page.baseurl }}/install-gde/prereq/apache.html).
 
@@ -71,24 +77,29 @@ To check your PHP version, in the command line, enter:
  The result will be similar to:
 
 ```terminal
-  PHP 7.2.8-2 ( NTS )
-  Copyright (c) 1997-2018 The PHP Group
-  Zend Engine v3.0.0, Copyright (c) 1998-2018 Zend Technologies
-      with Zend OPcache v7.0.8-2, Copyright (c) 1999-2018, by Zend Technologies
+PHP 7.2.8-2 ( NTS )
+Copyright (c) 1997-2018 The PHP Group
+Zend Engine v3.0.0, Copyright (c) 1998-2018 Zend Technologies
+    with Zend OPcache v7.0.8-2, Copyright (c) 1999-2018, by Zend Technologies
 ```
 
 To install PHP, see [PHP]({{ page.baseurl }}/install-gde/prereq/php-settings.html).
 
 ### MySQL
 
-  mysql -u <database root user or database owner name> -p
+```bash
+mysql -u <database root user or database owner name> -p
+```
 
 For example:
 
-  mysql -u magento -p
+```bash
+mysql -u magento -p
+```
 
 You must run MySQL version 5.6 or later as the following result indicates:
 
+    ```terminal
     Welcome to the MySQL monitor. Commands end with ; or \g.
     Your MySQL connection id is 871
     Server version: 5.6.21 MySQL Community Server (GPL)
@@ -100,6 +111,7 @@ You must run MySQL version 5.6 or later as the following result indicates:
     owners.
 
     Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+    ```
 
 Enter `exit` at the `mysql>` prompt to exit.
 

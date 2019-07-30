@@ -31,7 +31,9 @@ See one of the following sections:
 
 Enter the following command to install NTP:
 
-  apt-get install ntp
+```bash
+apt-get install ntp
+```
 
 Continue with [Use NTP pool servers](#install-optional-ntp-servers)
 
@@ -41,17 +43,23 @@ To install and configure NTP:
 
 1.	Enter the following command to find the appropriate NTP software:
 
+    ```bash
     yum search ntp
+    ```
 
 2.	Select a package to install. For example, `ntp.x86_64`.
 
 2.	Install the package.
 
+    ```bash
     yum -y install ntp.x86_64
+    ```
 
 3.	Enter the following command so that NTP starts when the server starts.
 
+    ```bash
     chkconfig ntpd on
+    ```
 
 3.	Continue with the next section.
 
@@ -63,17 +71,21 @@ Selecting pool servers is up to you. If you use NTP pool servers, ntp.org recomm
 
 2.	Look for lines similar to the following:
 
+    ```apache
     server 0.centos.pool.ntp.org
     server 1.centos.pool.ntp.org
     server 2.centos.pool.ntp.org
+    ```
 
 3.	Replace those lines or add additional lines that specify your NTP pool server or other NTP servers. It's a good idea to specify more than one.
 
 4.	An example of using three United States-based NTP servers follows:
 
+    ```apache
     server 0.us.pool.ntp.org
     server 1.us.pool.ntp.org
     server 2.us.pool.ntp.org
+    ```
 
 5.	Save your changes to `/etc/ntp.conf` and exit the text editor.
 
@@ -98,16 +110,20 @@ Selecting pool servers is up to you. If you use NTP pool servers, ntp.org recomm
 Use `phpinfo.php` in a development system _only_. It can be a security issue in production.
 
 Add the following code anywhere in your web server's docroot:
-  
-  <?php
-  // Show all information, defaults to INFO_ALL
-  phpinfo();
+
+```php
+<?php
+// Show all information, defaults to INFO_ALL
+phpinfo();
+```
 
 For more information, see the [phpinfo manual page](http://php.net/manual/en/function.phpinfo.php){:target="_blank"}.
 
 To view the results, enter the following [URL](https://glossary.magento.com/url) in your browser's location or address field:
 
-  http://<web server host or IP>/phpinfo.php
+```html
+http://<web server host or IP>/phpinfo.php
+```
 
 If a 404 (Not Found) error displays, check the following:
 
@@ -134,13 +150,17 @@ To install phpmyadmin on Ubuntu:
 
 1.	Use the following command:
 
+    ```bash
     apt-get install phpmyadmin
+    ```
 
 2.	Follow the prompts on your screen to complete the installation.
 
 3.	To use phpmyadmin, enter the following URL in your browser's address or location field:
 
+    ````html
     http://<web server host or IP>/phpmyadmin
+    ```
 
 4.	When prompted, log in using your MySQL database `root` or administrative user's username and password.
 
@@ -150,19 +170,25 @@ To install phpmyadmin on CentOS:
 
 1.	Download the epel RPM for the version of CentOS you're using. A sample follows.
 
+    ```bash
     cd /tmp
     wget http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm
     rpm -ivh epel-release-6-8.noarch.rpm
+    ```
 
 2.	Install `phpmyadmin` as follows:
 
+    ```bash
     yum -y install phpmyadmin
+    ```
 
 3.	Authorize access to phpmyadmin from your machine's IP address.
 
   Open the following file for editing:
 
+    ```bash
     vim /etc/httpd/conf.d/phpMyAdmin.conf
+    ```
 
 3.	Replace the following IP address with your IP address
 
@@ -184,11 +210,15 @@ To install phpmyadmin on CentOS:
 
 6.	Restart Apache.
 
+    ```bash
     service httpd Restart
+    ```
 
 7.	To use phpmyadmin, enter the following command in your browser's address or location field:
 
+    ```html
     http://<web server host or IP>/phpmyadmin
+    ```
 
 8.	When prompted, log in using your MySQL database `root` or administrative user's username and password.
 

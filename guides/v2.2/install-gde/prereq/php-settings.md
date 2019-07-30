@@ -11,8 +11,6 @@ functional_areas:
   - System
   - Setup
 redirect_from: 
-  - /guides/v2.2/install-gde/prereq/php-settings.html
-  - /guides/v2.2/install-gde/prereq/php-settings.html
   - /guides/v2.2/install-gde/prereq/php-settings-ubuntu.html
 ---
 
@@ -80,7 +78,9 @@ The `bcmath` extension is required for {{site.data.var.ee}} only.
 
 - Set the system time zone for PHP; otherwise, errors like the following display during the installation and time-related operations like cron might not work:
 
+    ```terminal
     PHP Warning:  date(): It is not safe to rely on the system's timezone settings. [more messages follow]
+    ```
 
 - Set [`always_populate_raw_post_data = -1`](http://php.net/manual/en/ini.core.php#ini.always-populate-raw-post-data){:target="_blank"}
 
@@ -91,8 +91,10 @@ The `bcmath` extension is required for {{site.data.var.ee}} only.
     Our detailed recommendations are:
 
 - Compiling code or deploying static assets, `756M`
+
   - Installing and updating Magento components from Magento Marketplace, `2G`
   - Testing, `2G`
+
 - Disable [`asp_tags`](http://php.net/manual/en/ini.core.php#ini.asp-tags){:target="_blank"}
 
     If `asp_tags are` enabled, errors display when accessing PHTML templates.
@@ -161,7 +163,9 @@ If you have more than one `opcache.ini`, modify all of them.
 1. Locate your server's time zone in the available [time zone settings](http://php.net/manual/en/timezones.php){:target="_blank"}
 1. Locate the following setting and uncomment it if necessary:
 
+    ```php
     date.timezone =
+    ```
 
 1. Add the time zone setting you found in step 2.
 1. Change the value of `memory_limit` to one of the values at the beginning of this section.
@@ -170,11 +174,15 @@ If you have more than one `opcache.ini`, modify all of them.
 
 1. _Required for PHP 5.6, recommended for PHP 5.5_. Locate `always_populate_raw_post_data`, uncomment it if necessary, and set it as follows:
 
+    ```php
     always_populate_raw_post_data = -1
+    ```
 
 1. Locate the following setting:
 
+    ```php
     asp_tags =
+    ```
 
 1. Make sure its value is set to `Off`.
 1. Save your changes and exit the text editor.

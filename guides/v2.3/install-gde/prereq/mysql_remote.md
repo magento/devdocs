@@ -46,12 +46,16 @@ To create a remote connection:
 
   To locate it, enter the following command:
 
+    ```bash
     mysql --help
+    ```
 
   The location displays similar to the following:
 
+    ```terminal
     Default options are read from the following files in the given order:
     /etc/my.cnf /etc/mysql/my.cnf /usr/etc/my.cnf ~/.my.cnf
+    ```
 
     {:.bs-callout .bs-callout-info}
     On Ubuntu 16, the path is typically `/etc/mysql/mysql.conf.d/mysqld.cnf`.
@@ -88,11 +92,15 @@ To grant access to a database user:
 1. Connect to the MySQL database as the `root` user.
 1. Enter the following command:
 
+    ```sql
     GRANT ALL ON <local database name>.* TO <remote web node username>@<remote web node server ip address> IDENTIFIED BY '<database user password>';
+    ```
 
   For example,
 
+    ```sql
     GRANT ALL ON magento_remote.* TO dbuser@192.0.2.50 IDENTIFIED BY 'dbuserpassword';
+    ```
 
 {:.bs-callout .bs-callout-info}
 If your web server is clustered, enter the same command on every web server. You must use the same username for every web server.
@@ -101,21 +109,25 @@ If your web server is clustered, enter the same command on every web server. You
 
 On your web node host, enter the following command to verify the connection works:
 
-  mysql -u <local database username> -h <database server ip address> -p
+```bash
+mysql -u <local database username> -h <database server ip address> -p
+```
 
 If the MySQL monitor displays as follows, the database is ready for the Magento software:
 
-  Welcome to the MySQL monitor.  Commands end with ; or \g.
-  Your MySQL connection id is 213
-  Server version: 5.6.26 MySQL Community Server (GPL)
+```terminal
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 213
+Server version: 5.6.26 MySQL Community Server (GPL)
 
-  Copyright (c) 2000, 2015, Oracle and/or its affiliates. All rights reserved.
+Copyright (c) 2000, 2015, Oracle and/or its affiliates. All rights reserved.
 
-  Oracle is a registered trademark of Oracle Corporation and/or its
-  affiliates. Other names may be trademarks of their respective
-  owners.
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
 
-  Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+```
 
 If your web server is clustered, enter the command on each web server host.
 

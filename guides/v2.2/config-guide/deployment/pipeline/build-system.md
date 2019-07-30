@@ -53,18 +53,28 @@ To set up the build system:
 
   If you use Git, use the following command:
 
-    git clone [-b <branch name>] <repository URL>
+   ```bash
+  git clone [-b <branch name>] <repository URL>
+  ```
+
 1. Change to the Magento root directory and enter:
 
+    ```bash
     composer install
+    ```
+
 1. Wait for Magento dependencies to update.
 1. Set ownership:
 
+    ```bash
     chown -R <magento file system owner name>:<web server username> .
+    ```
 
   For example,
 
+    ```bash
     chown -R magento_user:apache .
+    ```
 
 1. If you use Git, open `.gitignore` in a text editor.
 1. Start each of the following lines with a `#` character to comment them out:
@@ -81,7 +91,9 @@ To set up the build system:
 1. Save your changes to `.gitignore` and exit the text editor.
 1. If you use Git, use the following commands to commit the change:
 
+    ```bash
     git add .gitignore && git commit -m "Modify .gitignore for build and production"
+    ```
 
   See the [`.gitignore` reference]({{ page.baseurl }}/config-guide/prod/config-reference-gitignore.html) for more information.
 

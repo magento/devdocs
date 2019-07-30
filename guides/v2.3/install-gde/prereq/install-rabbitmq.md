@@ -52,6 +52,7 @@ RabbitMQ was written using the Erlang programming language, which must be instal
 See [Manual installation](https://www.erlang-solutions.com/resources/download.html){:target="_blank"} for more information.
 
 Run the following commands to install this feature.
+
 ```bash
 wget http://packages.erlang-solutions.com/erlang-solutions-1.0-1.noarch.rpm
 ```
@@ -108,7 +109,7 @@ where:
 
 To configure support for SSL, edit the `ssl` and `ssl_options` parameters in the `<install_directory>/app/etc/env.php` file so that they are similar to the following:
 
-```php?start_inline=1
+```php
 
 'queue' =>
   array (
