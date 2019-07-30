@@ -61,7 +61,7 @@ access:
 
 Defines the service mapping in the application.
 
-The relationship `name` is available to the application in the `MAGENTO_CLOUD_RELATIONSHIPS` environment variable. The `<service-name>:<endpoint-name>` represent the name and type values defined in the `.magento/services.yaml` file.
+The relationship `name` is available to the application in the `MAGENTO_CLOUD_RELATIONSHIPS` environment variable. The `<service-name>:<endpoint-name>` relationship maps to the name and type values defined in the `.magento/services.yaml` file.
 
 ```yaml
 relationships:

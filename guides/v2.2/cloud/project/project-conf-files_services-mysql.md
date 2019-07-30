@@ -12,21 +12,19 @@ We support MariaDB version 10.2, which includes reimplemented features from MySQ
 
 #### To access the MariaDB database directly:
 
-1. Using SSH, log in to the remote server.
+Using SSH, log in to the remote server and connect to the database.
 
-1. Connect to the database.
+For Starter:
 
-  > For Starter:
+```bash
+mysql -h database.internal -u <username>
+```
 
-  ```bash
-  mysql -h database.internal -u <username>
-  ```
+For Pro, use the db, username, and password from the relationship:
 
-  > For Pro: use the db, username, and password from the relationship.
-
-  ```bash
-  mysql -h<db> -p<number> -u<username> -p<password>
-  ```
+```bash
+mysql -h<db> -p<number> -u<username> -p<password>
+```
 
 ## Enable MySQL
 
@@ -102,7 +100,7 @@ In the preceding example, the `admin` endpoint provides admin-level access to th
 -  The `repoter` user has SELECT privileges only.
 -  The `importer` user has SELECT, INSERT, UPDATE, and DELETE privileges.
 
-The endpoints defined in the above example must also exist in the `relationships` property of the `.magento.app.yaml` file. For example:
+You must add the endpoints defined in the above example to the `relationships` property of the `.magento.app.yaml` file. For example:
 
 ```yaml
 relationships:

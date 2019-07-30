@@ -107,38 +107,44 @@ The current default storage amount per project is 5GB, or 5120MB. You can distri
 
 #### To verify relationships in local environment:
 
-```bash
-magento-cloud relationships
-```
+1. Use SSH to log in to the remote environment.
 
-**Abbreviated sample response**:
+    ```bash
+    magento-cloud relationships
+    ```
 
-```terminal
-redis:
-    -
-...
-        type: 'redis:3.2'
-        port: 6379
-elasticsearch:
-    -
-...
-        type: 'elasticsearch:6.5'
-        port: 9200
-database:
-    -
-...
-        type: 'mysql:10.0'
-        port: 3306
+1. Confirm the `service` and `type` from the response. The response provides connection information, such as the IP address and port number.
 
-```
-{:.no-copy}
+    **Abbreviated sample response**:
+
+    ```terminal
+    redis:
+        -
+    ...
+            type: 'redis:3.2'
+            port: 6379
+    elasticsearch:
+        -
+    ...
+            type: 'elasticsearch:6.5'
+            port: 9200
+    database:
+        -
+    ...
+            type: 'mysql:10.0'
+            port: 3306
+
+    ```
+    {:.no-copy}
 
 #### To verify relationships in remote environments:
 
-1.  Use SSH to log in to the remote environment.
+1. Use SSH to log in to the remote environment.
 
-1.  Create `pretty-print` of all relationships for services and configuration data for that environment.
+1. Create `pretty-print` of all relationships for services and configuration data for that environment.
 
     ```bash
     php -r 'print_r(json_decode(base64_decode($_ENV["MAGENTO_CLOUD_RELATIONSHIPS"])));'
     ```
+
+1. Confirm the `service` and `type` from the response. The response provides connection information, such as the IP address and port number.
