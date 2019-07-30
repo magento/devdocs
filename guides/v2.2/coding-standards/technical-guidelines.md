@@ -775,7 +775,7 @@ You need to read configuration from different sources (like database or filesyst
 
 11.3.4.3. Changes to existing data entities MUST be compatible with existing tests.
 
-#### 11.3.5. Action Groups
+#### 11.3.5. Action groups
 
 11.3.5.1. Action group file names MUST follow this pattern:
 
