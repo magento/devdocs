@@ -609,7 +609,7 @@ product, and hung indefinitely while trying to add the product.
 
 <!-- ENGCOM-2772 -->* The `\Magento\Catalog\Test\Unit\Cron\AvailabilityCheckerTest ` and `\Magento\Catalog\Test\Unit\Cron\DeleteOutdatedPriceValuesTest` classes are now covered by unit tests. *Fix submitted by Dmytro Cheshun in pull request [17561](https://github.com/magento/magento2/pull/17561)*.
 
-<!-- ENGCOM-2715 -->* The `Magento\Braintree\Model\InstantPurchase\CreditCard\AvailabilityChecker` class is now covered by a unit test. [Dmytro Cheshun](https://github.com/dmytro-ch) in pull request [17454](https://github.com/magento/magento2/pull/17454)*
+<!-- ENGCOM-2715 -->* The `Magento\Braintree\Model\InstantPurchase\CreditCard\AvailabilityChecker` class is now covered by a unit test. Dmytro Cheshun in pull request [17454](https://github.com/magento/magento2/pull/17454)*
 
 
 <!-- ENGCOM-2680 -->* The instant purchase PayPal token formatter is now covered by a unit test. *Fix submitted by Yaroslav Rogoza in pull request [17405](https://github.com/magento/magento2/pull/17405)*.
