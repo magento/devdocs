@@ -203,7 +203,7 @@ In addition to security enhancements, this release contains the following functi
 
 <!-- MAGETWO-87120 -->* The `timestamp` fields in `oauth_nonce` now include indexes to avoid deadlocks while erasing old records. *Fix submitted by Carlos Lizaga in pull request [13328](https://github.com/magento/magento2/pull/13328)*. [GitHub-10346](https://github.com/magento/magento2/issues/10346)
 
-<!-- ENGCOM-1972 -->* Sorting has been disabled in the  `glob` and `scandir` functions to improve performance. *Fix submitted by [Leandro F. L.](https://github.com/lfluvisotto) in pull request [16052](https://github.com/magento/magento2/pull/16052)*. 
+<!-- ENGCOM-1972 -->* Sorting has been disabled in the  `glob` and `scandir` functions to improve performance. *Fix submitted by Leandro F. L. in pull request [16052](https://github.com/magento/magento2/pull/16052)*. 
 
 
 <!-- ENGCOM-2407 -->* The `nginx.config.sample` file no longer includes an option for PHP 5.x. (Magento 2.2.x is not compatible with PHP 5.x.) *Fix submitted by Sean Breeden in pull request [16883](https://github.com/magento/magento2/pull/16883)*. 
@@ -268,7 +268,7 @@ In addition to security enhancements, this release contains the following functi
 
 <!--  ENGCOM-1863-->* The `Magento_Bundle` module name has been added to the relevant template files to meet Magento standard coding format. *Fix submitted by Namrata in pull request [15825](https://github.com/magento/magento2/pull/15825)*. 
 
-<!--  ENGCOM-2176-->* The `option` variable has been renamed to `quoteItemOption` to improve code readability in `app/code/Magento/Bundle/Model/Product/Type.php`. *Fix submitted by [Leandro F. L.](https://github.com/lfluvisotto) in pull request [16143](https://github.com/magento/magento2/pull/16143)*. 
+<!--  ENGCOM-2176-->* The `option` variable has been renamed to `quoteItemOption` to improve code readability in `app/code/Magento/Bundle/Model/Product/Type.php`. *Fix submitted by Leandro F. L. in pull request [16143](https://github.com/magento/magento2/pull/16143)*. 
 
 <!-- MAGETWO-86218-->* Magento now accurately displays the status of bundle product stock when **Add to Cart** is enabled for bundle products. Previously, bundle products with the **User Defined** field unchecked could not be back ordered as expected.
 [GitHub-10061](https://github.com/magento/magento2/issues/10061)
@@ -283,7 +283,7 @@ In addition to security enhancements, this release contains the following functi
 
 <!-- ENGCOM-1617 -->* Breadcrumbs now work as expected when a product name contains quotation marks. Previously, the breadcrumbs on the product details page caused this syntax error to be thrown, `SyntaxError: Unexpected token x in JSON`. *Fix submitted by Jignesh Baldha in pull request [15347](https://github.com/magento/magento2/pull/15347)*. [GitHub-15037](https://github.com/magento/magento2/issues/15037)
 
-<!-- ENGCOM-1463 -->* Disabling a product now removes it from the flat index as expected. *Fix submitted by [Mr. Lewis](https://github.com/lewisvoncken) in pull request [15019](https://github.com/magento/magento2/pull/15019)*. [GitHub-14966](https://github.com/magento/magento2/issues/14966)
+<!-- ENGCOM-1463 -->* Disabling a product now removes it from the flat index as expected. *Fix submitted by Mr. Lewis in pull request [15019](https://github.com/magento/magento2/pull/15019)*. [GitHub-14966](https://github.com/magento/magento2/issues/14966)
 
 <!-- ENGCOM-1051 -->* The success message that Magento displays when a customer adds a product to the compare list now contains a link to the comparison list. *Fix submitted by Andreas von Studnitz in pull request [13862](https://github.com/magento/magento2/pull/13862)*. 
 
@@ -374,7 +374,7 @@ In addition to security enhancements, this release contains the following functi
 
 <!-- ENGCOM-2408-->* Deprecated methods in Message Manager have been replaced with valid methods. *Fix submitted by Tiago Sampaio in pull request [16924](https://github.com/magento/magento2/pull/16924)*. 
 
-<!-- ENGCOM-2390-->* Array short syntax usage has been standardized in these files: `app/code/Magento/Catalog/Test/Unit/Model/ProductTest.php`, `app/code/Magento/GroupedProduct/Test/Unit/Model/ProductTest.php`, and `setup/src/Magento/Setup/Module/Di/Code/Reader/FileScanner.php`. *Fix submitted by [Leandro F. L.](https://github.com/lfluvisotto) in pull request [16880](https://github.com/magento/magento2/pull/16880)*. 
+<!-- ENGCOM-2390-->* Array short syntax usage has been standardized in these files: `app/code/Magento/Catalog/Test/Unit/Model/ProductTest.php`, `app/code/Magento/GroupedProduct/Test/Unit/Model/ProductTest.php`, and `setup/src/Magento/Setup/Module/Di/Code/Reader/FileScanner.php`. *Fix submitted by Leandro F. L. in pull request [16880](https://github.com/magento/magento2/pull/16880)*. 
 
 
 <!-- ENGCOM-2132-->* The error message that Magento displayed when a duplicate error key occurred during product import has been improved. *Fix submitted by Vishal Gelani in pull request [16389](https://github.com/magento/magento2/pull/16389)*.
@@ -383,7 +383,7 @@ In addition to security enhancements, this release contains the following functi
 
 <!-- ENGCOM-1703-->* Breadcrumb JSON configuration has been moved to the view model and serialized using the Magento JSON serializer. *Fix submitted by Diederick Bruin in pull request [15521](https://github.com/magento/magento2/pull/15521)*. 
 
-<!-- ENGCOM-1464-->* `row_id` has been added to the flat action indexer,  ensuring that index values are not set to `0` for new products when using index on save. Previously, if you used `\Magento\Framework\Api\SearchCriteriaBuilder`, and the flat `product row_id` is set to `0`, Magento did not show the product in the `getList` of the `ProductRepository`. *Fix submitted by [Mr. Lewis](https://github.com/lewisvoncken) in pull request [15010](https://github.com/magento/magento2/pull/15010)*. 
+<!-- ENGCOM-1464-->* `row_id` has been added to the flat action indexer,  ensuring that index values are not set to `0` for new products when using index on save. Previously, if you used `\Magento\Framework\Api\SearchCriteriaBuilder`, and the flat `product row_id` is set to `0`, Magento did not show the product in the `getList` of the `ProductRepository`. *Fix submitted by Mr. Lewis in pull request [15010](https://github.com/magento/magento2/pull/15010)*. 
 
 <!-- ENGCOM-1444-->* Magento no longer inserts redundant links to the homepage  into breadcrumbs on the product page. *Fix submitted by Vova Yatsyuk in pull request [14994](https://github.com/magento/magento2/pull/14994)*. 
 
@@ -685,9 +685,9 @@ Our community contributors have made many helpful, minor corrections to spelling
 
 <!-- ENGCOM-2071 -->* Removed redundant `@throws` hinting and unused import for `AdvancedPricingImportExport` module classes. *Fix submitted by Dmytro Cheshun in pull request [15872](https://github.com/magento/magento2/pull/15872)*. 
 
-<!-- ENGCOM-2034 -->* Added missing PHPDoc to methods throughout the code base. *Fix submitted by [Leandro F. L.](https://github.com/lfluvisotto) in pull request [16215](https://github.com/magento/magento2/pull/16215)*. 
+<!-- ENGCOM-2034 -->* Added missing PHPDoc to methods throughout the code base. *Fix submitted by Leandro F. L. in pull request [16215](https://github.com/magento/magento2/pull/16215)*. 
 
-<!-- ENGCOM-2045 -->* Fixed mismatches in case between class and method name spellings. *Fix submitted by [Leandro F. L.](https://github.com/lfluvisotto) in pull request [16141](https://github.com/magento/magento2/pull/16141)*. 
+<!-- ENGCOM-2045 -->* Fixed mismatches in case between class and method name spellings. *Fix submitted by Leandro F. L. in pull request [16141](https://github.com/magento/magento2/pull/16141)*. 
 
 <!-- ENGCOM-1760 -->* Removed an unnecessary comma from the `translate` attribute in `app/code/Magento/Sales/etc/adminhtml/system.xml`. *Fix submitted by Dmytro Cheshun in pull request [15615](https://github.com/magento/magento2/pull/15615)*. 
 
@@ -874,7 +874,7 @@ Our community contributors have made many helpful, minor corrections to spelling
 #### Web API framework
 
 
-<!--  ENGCOM-2012 -->* The `array_push `function has been added to the list of forbidden functions. *Fix submitted by [Leandro F. L.](https://github.com/lfluvisotto) in pull request [16144](https://github.com/magento/magento2/pull/16144)*. 
+<!--  ENGCOM-2012 -->* The `array_push `function has been added to the list of forbidden functions. *Fix submitted by Leandro F. L. in pull request [16144](https://github.com/magento/magento2/pull/16144)*. 
 
 <!--  ENGCOM-1720 -->* A generated admin API token no longer expires immediately. Previously, when you created a token for an Admin user and have set   **Admin Token Lifetime (hours))**  to empty, Magento denied access  because the token immediately expired. *Fix submitted by Maikel Martens in pull request [15598](https://github.com/magento/magento2/pull/15598)*. [GitHub-15564](https://github.com/magento/magento2/issues/15564)
 

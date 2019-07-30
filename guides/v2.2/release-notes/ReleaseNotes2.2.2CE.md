@@ -62,7 +62,7 @@ Looking for more information on these new features as well as many others? Check
 
 <!--- MAGETWO-80209 -->* Static versioning and minification no longer  break email font styles. [GitHub-8241](https://github.com/magento/magento2/issues/8241)
 
-<!--- MAGETWO-82595 -->* You can now successfully upgrade from 2.1.x to 2.2.0. Previously, when you tried to upgrade from 2.1.9 to 2.2.0, Magento displayed the  **postcode is a required field** error message, and `setup:upgrade` failed. *Fix submitted by [Mr. Lewis](https://github.com/lewisvoncken) in pull request 11651*. [GitHub-11095](https://github.com/magento/magento2/issues/11095)
+<!--- MAGETWO-82595 -->* You can now successfully upgrade from 2.1.x to 2.2.0. Previously, when you tried to upgrade from 2.1.9 to 2.2.0, Magento displayed the  **postcode is a required field** error message, and `setup:upgrade` failed. *Fix submitted by Mr. Lewis in pull request 11651*. [GitHub-11095](https://github.com/magento/magento2/issues/11095)
 
 <!--- MAGETWO-82634 -->* We've replaced `FollowSymLinks` with `SymLinksIfOwnerMatch` in the `htaccess` templates. [GitHub-10811](https://github.com/magento/magento2/issues/10811)
 
@@ -80,7 +80,7 @@ Looking for more information on these new features as well as many others? Check
 
 <!--- MAGETWO-82234 -->* The `admin:user:create` command now asks for the input value if a required option is not passed. *Fix submitted by Christian Münch in pull request 11510*.
 
-<!--- MAGETWO-82747 -->* The `.user.ini` files at `/.user.ini` and `/pub/.user.ini` now specify a `memory_limit` value of at least 1G to 2G for debugging purposes. *Fix submitted by [Mr. Lewis](https://github.com/lewisvoncken) in pull request 11734*. [GitHub-11322](https://github.com/magento/magento2/issues/11322)
+<!--- MAGETWO-82747 -->* The `.user.ini` files at `/.user.ini` and `/pub/.user.ini` now specify a `memory_limit` value of at least 1G to 2G for debugging purposes. *Fix submitted by Mr. Lewis in pull request 11734*. [GitHub-11322](https://github.com/magento/magento2/issues/11322)
 
 <!--- MAGETWO-82754 -->* The `setup:install` command now has an `-i` flag. It validates parameters interactively. *Fix submitted by Denis Ristic in pull request 11425*.
 
@@ -90,7 +90,7 @@ Looking for more information on these new features as well as many others? Check
 
 <!--- MAGETWO-83498 -->* You can now enter strings that exceed 255 characters in Admin or frontend input fields. Previously, Magento  saved only the first 255 characters of a long input string. [GitHub-6238](https://github.com/magento/magento2/issues/6238)
 
-<!--- MAGETWO-83477 -->* Magento now renders color attribute swatches correctly for the search result page if sorting for color attribute is enabled.  *Fix submitted by [Roman K.](https://github.com/RomaKis) in pull request 12077*. [GitHub-10628](https://github.com/magento/magento2/issues/10628)
+<!--- MAGETWO-83477 -->* Magento now renders color attribute swatches correctly for the search result page if sorting for color attribute is enabled.  *Fix submitted by Roman K. in pull request 12077*. [GitHub-10628](https://github.com/magento/magento2/issues/10628)
 
 <!--- MAGETWO-83174, 83169 -->* The `\Magento\Quote\Model\ResourceModel\Quote\Item\Collection` now returns items that have only existing relations in the `catalog_product_entity` table. Previously, Magento loaded quote items with non-existing products.
 
@@ -107,7 +107,7 @@ Looking for more information on these new features as well as many others? Check
 
 <!--- MAGETWO-82755 -->* The **Add-to-cart** checkboxes in Related Products are no longer visible on the storefront when **$canItemsAddToCart** is set to **false**.  *Fix submitted by Marc Rodriguez in pull request 11610*. [GitHub-6891](https://github.com/magento/magento2/issues/6891)
 
-<!--- MAGETWO-83627 -->* You can now successfully save and duplicate a simple product. Previously, when you clicked the **Save and Duplicate** option for an existing simple product in the Catalog Manager, Magento did not duplicate the product, but threw an error. *Fix submitted by [Roman K.](https://github.com/RomaKis) in pull request 12001*. [GitHub-11532](https://github.com/magento/magento2/issues/11532)
+<!--- MAGETWO-83627 -->* You can now successfully save and duplicate a simple product. Previously, when you clicked the **Save and Duplicate** option for an existing simple product in the Catalog Manager, Magento did not duplicate the product, but threw an error. *Fix submitted by Roman K. in pull request 12001*. [GitHub-11532](https://github.com/magento/magento2/issues/11532)
 
 <!--- MAGETWO-81967 -->* The Magento Admin Product Edit page now displays product alerts as expected.  *Fix submitted by Raul Mateos in pull request 11445*. [GitHub-10007](https://github.com/magento/magento2/issues/10007)
 
@@ -229,15 +229,15 @@ Looking for more information on these new features as well as many others? Check
 
 <!--- MAGETWO-82999 -->* You can now add an HTML node to the page XML root of a theme without causing a validation error. [GitHub-11697](https://github.com/magento/magento2/issues/11697)
 
-<!--- MAGETWO-82652 -->* The `customer_data_object` firstname is no longer equal to `orig_customer_data_object` after you save an existing user account with a new name or address. *Fix submitted by [Roman K.](https://github.com/RomaKis) in pull request 11676*. [GitHub-7915](https://github.com/magento/magento2/issues/7915)
+<!--- MAGETWO-82652 -->* The `customer_data_object` firstname is no longer equal to `orig_customer_data_object` after you save an existing user account with a new name or address. *Fix submitted by Roman K. in pull request 11676*. [GitHub-7915](https://github.com/magento/magento2/issues/7915)
 
-<!--- MAGETWO-82658 -->*  A typo in  `Paypal/Test/TestCase/OnePageCheckoutTest.xml` has been fixed. *Fix submitted by [Mr. Lewis](https://github.com/lewisvoncken) in pull request 11673*. [GitHub-7591](https://github.com/magento/magento2/issues/7591)
+<!--- MAGETWO-82658 -->*  A typo in  `Paypal/Test/TestCase/OnePageCheckoutTest.xml` has been fixed. *Fix submitted by Mr. Lewis in pull request 11673*. [GitHub-7591](https://github.com/magento/magento2/issues/7591)
 
 <!--- MAGETWO-82761 -->* We’ve fixed the dashboard graph’s y-axis range. *Fix submitted by Oscar Recio in pull request 11751*. [GitHub-7927](https://github.com/magento/magento2/issues/7927)
 
 <!--- MAGETWO-83023 -->* Magento no longer throws an error when you try to load a quote item collection. [GitHub-8954](https://github.com/magento/magento2/issues/8954)
 
-<!--- MAGETWO-82645 -->* Customer Groups are now located in the Magento Admin under **Customers > Customer Groups**. *Fix submitted by [Mr. Lewis](https://github.com/lewisvoncken) in pull request 11677*.
+<!--- MAGETWO-82645 -->* Customer Groups are now located in the Magento Admin under **Customers > Customer Groups**. *Fix submitted by Mr. Lewis in pull request 11677*.
 
 <!--- MAGETWO-82810 -->* Magento now wraps long label text by word instead of letter. *Fix submitted by [@enriquei4](https://github.com/enriquei4) in pull request 11745*. [GitHub-7099](https://github.com/magento/magento2/issues/7099), [GitHub-711727](https://github.com/magento/magento2/issues/11727)
 
@@ -300,7 +300,7 @@ Looking for more information on these new features as well as many others? Check
 
 <!--- MAGETWO-82003 -->*  Integration tests now reset the integration test database when `TESTS_CLEANUP` is set to enabled. *Fix submitted by Joshua Warren in pull request 11499*. [GitHub-10025](https://github.com/magento/magento2/issues/10025)
 
-<!--- MAGETWO-82658 -->*  We fixed a typo in the `Paypal/Test/TestCase/OnePageCheckoutTest.xml`. *Fix submitted by [Mr. Lewis](https://github.com/lewisvoncken) in pull request 11673*. [GitHub-7591](https://github.com/magento/magento2/issues/7591)
+<!--- MAGETWO-82658 -->*  We fixed a typo in the `Paypal/Test/TestCase/OnePageCheckoutTest.xml`. *Fix submitted by Mr. Lewis in pull request 11673*. [GitHub-7591](https://github.com/magento/magento2/issues/7591)
 
 <!--- MAGETWO-83572 -->*  `FileClassScannerTest` no  longer has a dependency upon  `Magento_Catalog`. *Fix submitted by WEXO team in pull request 12144*. [GitHub-11230](https://github.com/magento/magento2/issues/11230)
 
@@ -320,9 +320,9 @@ Looking for more information on these new features as well as many others? Check
 
 <!--- MAGETWO-83084 -->* New orders now appear as expected in the Order table after migrating data. [GitHub-10185](https://github.com/magento/magento2/issues/10185)
 
-<!--- MAGETWO-83745 -->* You can now create an order from the Customer Edit page when working from the Admin. *Fix submitted by [Roman K.](https://github.com/RomaKis) in pull request 11952*. [GitHub-11832](https://github.com/magento/magento2/issues/11832)
+<!--- MAGETWO-83745 -->* You can now create an order from the Customer Edit page when working from the Admin. *Fix submitted by Roman K. in pull request 11952*. [GitHub-11832](https://github.com/magento/magento2/issues/11832)
 
-<!--- MAGETWO-83668 -->* The `getTracksCollection()` method  now returns collection objects. Previously, this method returned either  collections or arrays.  *Fix submitted by [Roman K.](https://github.com/RomaKis) in pull request 12173*. [GitHub-8022](https://github.com/magento/magento2/issues/8022)
+<!--- MAGETWO-83668 -->* The `getTracksCollection()` method  now returns collection objects. Previously, this method returned either  collections or arrays.  *Fix submitted by Roman K. in pull request 12173*. [GitHub-8022](https://github.com/magento/magento2/issues/8022)
 
 <!--- MAGETWO-82953 -->* References to `Zend_Pdf_Color_RGB`now correctly use the camel-case class name (`Zend_Pdf_Color_Rgb`). Previously, the former class name resulted in references to wrong or nonexistent classes. *Fix submitted by Danny Verkade - Cream in pull request 11830*. [GitHub-11581](https://github.com/magento/magento2/issues/11581)
 

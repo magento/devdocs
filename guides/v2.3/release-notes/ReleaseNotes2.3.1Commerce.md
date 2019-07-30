@@ -426,7 +426,7 @@ We've fixed hundreds of issues in the Magento 2.3.1 core code.
 
 <!--- ENGCOM-3242-->* You can now insert multiple catalog product list widgets into a CMS page. *Fix submitted by Burlacu Vasilii in pull request [18714](https://github.com/magento/magento2/pull/18714)*. [GitHub-4468](https://github.com/magento/magento2/issues/4468)
 
-<!--- ENGCOM-3202-->* You can now use REST to add a new attribute and configure it with settings such as `is_filterable`. *Fix submitted by [Mr. Lewis](https://github.com/lewisvoncken) in pull request [18622](https://github.com/magento/magento2/pull/18622)*. [GitHub-10205](https://github.com/magento/magento2/issues/10205)
+<!--- ENGCOM-3202-->* You can now use REST to add a new attribute and configure it with settings such as `is_filterable`. *Fix submitted by Mr. Lewis in pull request [18622](https://github.com/magento/magento2/pull/18622)*. [GitHub-10205](https://github.com/magento/magento2/issues/10205)
 
 <!--- ENGCOM-2998-->* Magento now provides a white-space trimming function for SKUs on the Admin. *Fix submitted by Bartosz Kubicki in pull request [18019](https://github.com/magento/magento2/pull/18019)*. [GitHub-16572](https://github.com/magento/magento2/issues/16572), [GitHub-12300](https://github.com/magento/magento2/issues/12300)
 
@@ -434,7 +434,7 @@ We've fixed hundreds of issues in the Magento 2.3.1 core code.
 
 <!--- ENGCOM-3142-->* The table rate shipping method no longer fails to return a quote when a customer uses a United States  postal code in the form of *five-digit zip - four-digit* extension (for example, 44444-1234). *Fix submitted by Vishal Gelani in pull request [18499](https://github.com/magento/magento2/pull/18499)*. [GitHub-17770](https://github.com/magento/magento2/issues/17770)
 
-<!--- ENGCOM-3129-->* You can now set a Boolean attribute to `is_filterable`, which allows these attributes to be included in layered navigation. *Fix submitted by [Mr. Lewis](https://github.com/lewisvoncken) in pull request [18434](https://github.com/magento/magento2/pull/18434)*. [GitHub-3283](https://github.com/magento/magento2/issues/3283)
+<!--- ENGCOM-3129-->* You can now set a Boolean attribute to `is_filterable`, which allows these attributes to be included in layered navigation. *Fix submitted by Mr. Lewis in pull request [18434](https://github.com/magento/magento2/pull/18434)*. [GitHub-3283](https://github.com/magento/magento2/issues/3283)
 
 <!--- ENGCOM-3047-->* `getStoreId()` now consistently returns `int`. Previously, Magento returned `string` for products but `int` for categories, which resulted in a fatal error. Fix submitted by sv3n in pull request [18303](https://github.com/magento/magento2/pull/18303)*. [GitHub-18079](https://github.com/magento/magento2/issues/18079)
 
@@ -708,7 +708,7 @@ Previously, when you reopened these categories, no checkboxes were checked.
 
 <!--- ENGCOM-4016-->* Fixed misalignment of values in the currency rate column in the Order & Account Information area of the New Memo page. *Fix submitted by dipti2jcommerce in pull request [20610](https://github.com/magento/magento2/pull/20610)*. [GitHub-20609](https://github.com/magento/magento2/issues/20609)
 
-<!--- ENGCOM-3952-->* Added missing PHPDoc comments for methods throughout the code base. *Fix submitted by [Leandro F. L.](https://github.com/lfluvisotto) in pull request [19826](https://github.com/magento/magento2/pull/19826)*. 
+<!--- ENGCOM-3952-->* Added missing PHPDoc comments for methods throughout the code base. *Fix submitted by Leandro F. L. in pull request [19826](https://github.com/magento/magento2/pull/19826)*. 
 
 <!--- ENGCOM-4168-->* Fixed misalignment of the My Account page's **Recently Ordered** check box in tab portrait view. *Fix submitted by Ajay Ajabale in pull request [20155](https://github.com/magento/magento2/pull/20155)*. [GitHub-20143](https://github.com/magento/magento2/issues/20143)
 
@@ -1301,7 +1301,7 @@ Previously, when you reopened these categories, no checkboxes were checked.
 
 <!--- MAGETWO-95491-->* The  **Save and Next** and **Save and Previous** buttons in **Marketing** > **Reviews** now work as expected.
 
-<!--- ENGCOM-3837-->* You can now add a product review from the Admin.  Previously, when you clicked **New Review**, Magento displayed this error, `Error message showing : A technical problem with the server created an error. Try again to continue what you were doing. If the problem persists, try again later`. *Fix submitted by [Suneet K.](https://github.com/suneet64) in pull request [20146](https://github.com/magento/magento2/pull/20146)*. [GitHub-20122](https://github.com/magento/magento2/issues/20122)
+<!--- ENGCOM-3837-->* You can now add a product review from the Admin.  Previously, when you clicked **New Review**, Magento displayed this error, `Error message showing : A technical problem with the server created an error. Try again to continue what you were doing. If the problem persists, try again later`. *Fix submitted by Suneet K. in pull request [20146](https://github.com/magento/magento2/pull/20146)*. [GitHub-20122](https://github.com/magento/magento2/issues/20122)
 
 <!--- ENGCOM-4096-->* Pending Reviews are now correctly labeled under **System** > **User Roles** > **Add New Role** > **Role Resources**, and Magento now displays a new Pending reviews menu under **Marketing** > **User Content**. Previously, Magento displayed the Reviews menu twice.  *Fix submitted by Piyush Dankhara in pull request [20936](https://github.com/magento/magento2/pull/20936)*. [GitHub-20924](https://github.com/magento/magento2/issues/20924)
 

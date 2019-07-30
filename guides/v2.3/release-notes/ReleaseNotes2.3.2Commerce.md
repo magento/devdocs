@@ -332,7 +332,7 @@ This fix can degrade performance in deployments that implement flat catalogs. To
 * The Magento implementation of the `CategoryManagementInterface::getTree($rootCategoryId)` now provides a tree that is populated with children instead of an empty array. *Fix submitted by Patrick McLain in pull request [18705](https://github.com/magento/magento2/pull/18705)*. [GitHub-17297](https://github.com/magento/magento2/issues/17297)
 
 <!--- ENGCOM-4400-->
-* Magento no longer empties the shopping cart when you click **Enter** after changing a product's quantity. *Fix submitted by [Leandro F. L.](https://github.com/lfluvisotto) in pull request [21509](https://github.com/magento/magento2/pull/21509)*. [GitHub-21499](https://github.com/magento/magento2/issues/21499)
+* Magento no longer empties the shopping cart when you click **Enter** after changing a product's quantity. *Fix submitted by Leandro F. L. in pull request [21509](https://github.com/magento/magento2/pull/21509)*. [GitHub-21499](https://github.com/magento/magento2/issues/21499)
 
 <!--- ENGCOM-4451-->
 * Fixed issue with excessive white space on  the related, cross sell and upsell product grids. *Fix submitted by Amol Chaudhari in pull request [21582](https://github.com/magento/magento2/pull/21582)*. [GitHub-21541](https://github.com/magento/magento2/issues/21541)
@@ -666,7 +666,7 @@ has been changed to `<argument name="resourceStockItem" xsi:type="object">Magent
 * You can now save an inactive admin user token by navigating to **System** > **Permissions** -> **All Users**, and clicking **Save User** on an inactive Admin user. Previously, if you tried to save an inactive Admin user token fom the Admin using this method, Magento threw an error and did not save the token. *Fix submitted by Pratik Oza in pull request [20772](https://github.com/magento/magento2/pull/20772)*. [GitHub-16513](https://github.com/magento/magento2/issues/16513)
 
 <!--- ENGCOM-4706-->
-* We updated `Magento\Msrp\Pricing\MsrpPriceCalculator` to add the `$msrpPriceCalculators` argument. Previously, this argument was missing, which caused Magento to throw a `MsrpPriceCalculator` exception after an upgrade. *Fix submitted by [Leandro F. L.](https://github.com/lfluvisotto) in pull request [22197](https://github.com/magento/magento2/pull/22197)*. [GitHub-22190](https://github.com/magento/magento2/issues/22190), [GitHub-22090](https://github.com/magento/magento2/issues/22090)
+* We updated `Magento\Msrp\Pricing\MsrpPriceCalculator` to add the `$msrpPriceCalculators` argument. Previously, this argument was missing, which caused Magento to throw a `MsrpPriceCalculator` exception after an upgrade. *Fix submitted by Leandro F. L. in pull request [22197](https://github.com/magento/magento2/pull/22197)*. [GitHub-22190](https://github.com/magento/magento2/issues/22190), [GitHub-22090](https://github.com/magento/magento2/issues/22090)
 
 <!--- ENGCOM-4681-->
 * The `stream_wrapper_unregister('phar')` function in `app/boostrap.php` is now run only when a stream wrapper is registered. Previously, calling `stream_wrapper_unregister('phar')` without checking to see if it was registered triggered a warning. *Fix submitted by Antoine Daudenthun in pull request [22171](https://github.com/magento/magento2/pull/22171)*. [GitHub-22190](https://github.com/magento/magento2/issues/22190), [GitHub-21973](https://github.com/magento/magento2/issues/21973)

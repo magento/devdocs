@@ -101,7 +101,7 @@ In addition to security enhancements, this release contains the following functi
 
 <!--- MAGETWO-88925 -->* Magento now displays the correct  status for a backordered configurable product on the order view page. 
 
-<!--- MAGETWO-86661 -->* Magento now displays the correct image for a configurable product on the wishlist. Previously, Magento displayed the image for the parent product rather than for the selected variant. *Fix submitted by [Roman K.](https://github.com/RomaKis) in pull request 1031*. [GitHub-8168](https://github.com/magento/magento2/issues/8168)
+<!--- MAGETWO-86661 -->* Magento now displays the correct image for a configurable product on the wishlist. Previously, Magento displayed the image for the parent product rather than for the selected variant. *Fix submitted by Roman K. in pull request 1031*. [GitHub-8168](https://github.com/magento/magento2/issues/8168)
 
 <!--- MAGETWO-87570 -->* The **Hide from Product Page** option now works for the child product of a configurable product. 
 

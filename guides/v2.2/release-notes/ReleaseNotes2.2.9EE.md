@@ -266,7 +266,7 @@ In addition to security enhancements, this release contains the following functi
 * Magento no longer displays the infinite loading indicator when you proceed to check out. Previously, Magento displayed the loading indicator, and threw the following JavaScript error: `Cannot read property 'quoteData' of undefined`. *Fix submitted by Amol Chaudhari in pull request [21432](https://github.com/magento/magento2/pull/21432)*. [GitHub-14412](https://github.com/magento/magento2/issues/14412)
 
 <!-- ENGCOM-4630 -->
-* Magento no longer empties the shopping cart when you click **Enter** after changing the product quantity. *Fix submitted by [Leandro F. L.](https://github.com/lfluvisotto) in pull request [21512](https://github.com/magento/magento2/pull/21512)*. [GitHub-21499](https://github.com/magento/magento2/issues/21499)
+* Magento no longer empties the shopping cart when you click **Enter** after changing the product quantity. *Fix submitted by Leandro F. L. in pull request [21512](https://github.com/magento/magento2/pull/21512)*. [GitHub-21499](https://github.com/magento/magento2/issues/21499)
 
 <!-- ENGCOM-4622 -->
 * Screen readers can now identify the `label` elements that are linked to `input` fields for street address fields on the checkout page. Previously, screen readers could not identify these fields because the elements were not populated. *Fix submitted by Amol Chaudhari in pull request [22070](https://github.com/magento/magento2/pull/22070)*. [GitHub-10893](https://github.com/magento/magento2/issues/10893)
@@ -328,7 +328,7 @@ In addition to security enhancements, this release contains the following functi
 * Fixed the alignment of fields on the Configure Product page that is accessed from the Wish List. *Fix submitted by Amol Chaudhari in pull request [21173](https://github.com/magento/magento2/pull/21173)*. [GitHub-20760](https://github.com/magento/magento2/issues/20760)
 
 <!-- ENGCOM-4092 -->
-* You can now successfully run `bin/magento setup:upgrade` to upgrade your Magento instance when your deployment lacks the `manufacturer` attribute. Previously, set up did not complete, and Magento displayed the following error: `Attribute with ID "Manufacturer" does not exist`. *Fix submitted by [Suneet K.](https://github.com/suneet64) in pull request [19551](https://github.com/magento/magento2/pull/19551)*. [GitHub-18134](https://github.com/magento/magento2/issues/18134)
+* You can now successfully run `bin/magento setup:upgrade` to upgrade your Magento instance when your deployment lacks the `manufacturer` attribute. Previously, set up did not complete, and Magento displayed the following error: `Attribute with ID "Manufacturer" does not exist`. *Fix submitted by Suneet K. in pull request [19551](https://github.com/magento/magento2/pull/19551)*. [GitHub-18134](https://github.com/magento/magento2/issues/18134)
 
 <!-- ENGCOM-4470 -->
 * Corrected the position of the labels in the configurable product variations table. *Fix submitted by Eduard Chitoraga in pull request [21691](https://github.com/magento/magento2/pull/21691)*. [GitHub-20527](https://github.com/magento/magento2/issues/20527)

@@ -214,12 +214,12 @@ In addition to security enhancements, this release contains the following functi
 
 <!-- ENGCOM-3047 -->* `getStoreId()` now consistently returns `int`. *Fix submitted by sv3n in pull request [18086](https://github.com/magento/magento2/pull/18086)*. [GitHub-18079](https://github.com/magento/magento2/issues/18079)
 
-<!-- ENGCOM-3097 -->* You can now set a Boolean attribute to `is_filterable`, which allows them to be included in layered navigation. *Fix submitted by [Mr. Lewis](https://github.com/lewisvoncken) in pull request [17823](https://github.com/magento/magento2/pull/17823)*. [GitHub-3283](https://github.com/magento/magento2/issues/3283)
+<!-- ENGCOM-3097 -->* You can now set a Boolean attribute to `is_filterable`, which allows them to be included in layered navigation. *Fix submitted by Mr. Lewis in pull request [17823](https://github.com/magento/magento2/pull/17823)*. [GitHub-3283](https://github.com/magento/magento2/issues/3283)
 
 <!-- ENGCOM-3050 -->* If you create a catalog price rule based on categories with a nesting level 4 or higher, these categories now maintain the status of their checkboxes when you re-open Category Chooser. 
 Previously, when you reopened these categories, no checkboxes were checked.  *Fix submitted by magently in pull request [18175](https://github.com/magento/magento2/pull/18175)*. [GitHub-17493](https://github.com/magento/magento2/issues/17493)
 
-<!-- ENGCOM-3133 -->* An incorrect return type in the `StockRegistryInterface` API has been corrected. *Fix submitted by [Mr. Lewis](https://github.com/lewisvoncken) in pull request [18427](https://github.com/magento/magento2/pull/18427)*. [GitHub-15085](https://github.com/magento/magento2/issues/15085)
+<!-- ENGCOM-3133 -->* An incorrect return type in the `StockRegistryInterface` API has been corrected. *Fix submitted by Mr. Lewis in pull request [18427](https://github.com/magento/magento2/pull/18427)*. [GitHub-15085](https://github.com/magento/magento2/issues/15085)
 
 <!-- ENGCOM-3158 -->* Magento no longer changes the attribute type of `backend_type` from `varchar` to `int` when the product associated with the attribute is saved or updated in the Admin. *Fix submitted by Bartosz Kubicki in pull request [18196](https://github.com/magento/magento2/pull/18196)*. [GitHub-9219](https://github.com/magento/magento2/issues/9219)
 
@@ -227,9 +227,9 @@ Previously, when you reopened these categories, no checkboxes were checked.  *Fi
 
 <!-- ENGCOM-3193 -->* When a new customer is created, Magento sets a value of zero for any custom attribute if no other value is explicitly provided. Previously, if no value was explicitly assigned, Magento did not save the custom attribute with any value. *Fix submitted by Oleksandr Kravchuk in pull request [16915](https://github.com/magento/magento2/pull/16915)*. [GitHub-14510](https://github.com/magento/magento2/issues/14510)
 
-<!-- ENGCOM-3230 -->*  `\Magento\Catalog\Model\Product::getQty()` now consistently returns float/double. *Fix submitted by [Mr. Lewis](https://github.com/lewisvoncken) in pull request [18424](https://github.com/magento/magento2/pull/18424)*. [GitHub-18094](https://github.com/magento/magento2/issues/18094)
+<!-- ENGCOM-3230 -->*  `\Magento\Catalog\Model\Product::getQty()` now consistently returns float/double. *Fix submitted by Mr. Lewis in pull request [18424](https://github.com/magento/magento2/pull/18424)*. [GitHub-18094](https://github.com/magento/magento2/issues/18094)
 
-<!-- ENGCOM-3254 -->* Magento no longer resets data entered from one WYSIWYG editor when you switch to a second editor when editing catalog categories. *Fix submitted by [m.matrafailo](https://github.com/k1las) in pull request [18535](https://github.com/magento/magento2/pull/18535)*. [GitHub-18534](https://github.com/magento/magento2/issues/18534)
+<!-- ENGCOM-3254 -->* Magento no longer resets data entered from one WYSIWYG editor when you switch to a second editor when editing catalog categories. *Fix submitted by m.matrafailo in pull request [18535](https://github.com/magento/magento2/pull/18535)*. [GitHub-18534](https://github.com/magento/magento2/issues/18534)
 
 <!-- ENGCOM-3261 -->* The **order by price** option for product listings on category pages now works as expected. *Fix submitted by Giel Berkers in pull request [18737](https://github.com/magento/magento2/pull/18737)*. [GitHub-18264](https://github.com/magento/magento2/issues/18264)
 
