@@ -3,32 +3,32 @@ group: payments-integrations
 title: CardinalCommerce 3-D Secure
 ---
 
-This document provides additional technical details for integrating Magento payment modules with the [CardinalCommerce](https://www.cardinalcommerce.com/). CardinalCommerce (a wholly owned subsidiary of Visa) offers a rules-based 3-D Secure (3DS) solution called [Cardinal Consumer Authentication](https://cardinaldocs.atlassian.net/wiki/spaces/CC/pages/196642/Consumer+Authentication#ConsumerAuthentication-CardinalConsumerAuthentication). Protect your web store from fraud, reduce false declines, reduce manual review of orders, and improve your authorizations.
+This document provides additional technical details for integrating Magento payment modules with the [CardinalCommerce][]. CardinalCommerce (a wholly owned subsidiary of Visa) offers a rules-based 3-D Secure (3DS) solution called [Cardinal Consumer Authentication][]. Protect your web store from fraud, reduce false declines, reduce manual review of orders, and improve your authorizations.
 
-The integration is based on the *Magento_CardinalCommerce* module that implements the [Cardinal Cruise Standard](https://cardinaldocs.atlassian.net/wiki/spaces/CC/pages/7929857/Cardinal+Cruise+Standard) integration approach.
+The integration is based on the *Magento_CardinalCommerce* module that implements the [Cardinal Cruise Standard][] integration approach.
 
-The Cardinal Cruise Standard integration is purely a JavaScript approach that is all encompassing. When enabling this approach for [Cardinal Consumer Authentication](https://cardinaldocs.atlassian.net/wiki/spaces/CC/pages/196642/Consumer+Authentication#ConsumerAuthentication-CardinalConsumerAuthentication), this integration will handle the device data collection, initiating the transaction for [CCA](https://cardinaldocs.atlassian.net/wiki/spaces/CC/pages/196642/Consumer+Authentication#ConsumerAuthentication-CardinalConsumerAuthentication), presenting the authentication session if required, and returning the results of authentication once completed. This is recommended integration approach for CCA.
+The Cardinal Cruise Standard integration is purely a JavaScript approach that is all encompassing. When enabling this approach for [Cardinal Consumer Authentication][], this integration will handle the device data collection, initiating the transaction for [CCA][], presenting the authentication session if required, and returning the results of authentication once completed. This is recommended integration approach for CCA.
 
 The following diagram shows a simplified 3-D Secure verification flow using Cardinal Cruise Standard integration approach provided by CardinalCommerce:
 
-![CardinalCommerce Interaction]({{ site.baseurl }}/common/images/payments-integrations/cardinal_flow.png)
+![CardinalCommerce Interaction]({{ site.baseurl }}/common/images/payments-integrations/cardinal_commerce.svg)
 
 ## Magento_CardinalCommerce module overview
 
-The *Magento_CardinalCommerce* [module](https://glossary.magento.com/module) allows you to:
+The *Magento_CardinalCommerce* [module][] allows you to:
 
-- Start [Cardinal Consumer Authentication](https://cardinaldocs.atlassian.net/wiki/spaces/CC/pages/196642/Consumer+Authentication#ConsumerAuthentication-CardinalConsumerAuthentication) for enabling card network programs including Verified by Visa®, MasterCard SecureCode® and Identity Check®, American Express SafeKey®, Discover ProtectBuy® and Diners International® and JCB J-Secure®.
-- Handle specific return values for [Cardinal Consumer Authentication](https://cardinaldocs.atlassian.net/wiki/spaces/CC/pages/196642/Consumer+Authentication#ConsumerAuthentication-CardinalConsumerAuthentication) on backend and storefront
+- Start `Cardinal Consumer Authentication` for enabling card network programs including Verified by Visa®, MasterCard SecureCode® and Identity Check®, American Express SafeKey®, Discover ProtectBuy® and Diners International® and JCB J-Secure®.
+- Handle specific return values for `Cardinal Consumer Authentication` on backend and storefront
 
 ## Payment method module integration with Magento_CardinalCommerce
 
-CardinalCommerce maintains a [list of compatible payment gateways](https://www.cardinalcommerce.com/partners/gateways).
+CardinalCommerce maintains a [list of compatible payment gateways][].
 
 ### CardinalCommerce configuration for payment method
 
-You need to add configuration parameter that will enable [Cardinal Consumer Authentication](https://cardinaldocs.atlassian.net/wiki/spaces/CC/pages/196642/Consumer+Authentication#ConsumerAuthentication-CardinalConsumerAuthentication) in the `config.xml` and `system.xml` files  of your [payment method](https://glossary.magento.com/payment-method) module:
+You need to add configuration parameter that will enable `Cardinal Consumer Authentication` in the `config.xml` and `system.xml` files  of your [payment method][] module:
 
-- `enabled_{payment_method_code}` - enables [CCA](https://cardinaldocs.atlassian.net/wiki/spaces/CC/pages/196642/Consumer+Authentication#ConsumerAuthentication-CardinalConsumerAuthentication) for custom payment method.
+- `enabled_{payment_method_code}` - enables CCA for custom payment method.
 
 The following example is the `config.xml` file of the AuthorizenetAcceptjs payment method:
 
@@ -198,15 +198,15 @@ define([
 });
 ```
 
-Once the response [JWT](https://en.wikipedia.org/wiki/JSON_Web_Token) is received after consumer authentication, you will need to send it to your backend to verify and extract the results. In the example above response JWT is added to payment additional data and passed to backend along with them.
+Once the response [JWT][] is received after consumer authentication, you will need to send it to your backend to verify and extract the results. In the example above response JWT is added to payment additional data and passed to backend along with them.
 
 ### CCA Results Extracting And Validation On Backend
 
-Cardinal Consumer Authentication results can be extracted from CardinalCommerce response JWT with `\Magento\CardinalCommerce\Model\Response\JwtParserInterface`. Basic implementation of this interface includes response JWT signature validation, and validation of parameters such as `ActionCode`, `ErrorNumber`, `ECIFlag`. You can find detailed information about these parameters in [API Reference](https://cardinaldocs.atlassian.net/wiki/spaces/CC/pages/98315/Response+Objects)
+Cardinal Consumer Authentication results can be extracted from CardinalCommerce response JWT with `\Magento\CardinalCommerce\Model\Response\JwtParserInterface`. Basic implementation of this interface includes response JWT signature validation, and validation of parameters such as `ActionCode`, `ErrorNumber`, `ECIFlag`. You can find detailed information about these parameters in [API Reference][].
 
 You can customize CCA results validation by creating your own implementation of `\Magento\CardinalCommerce\Model\Response\JwtPayloadValidatorInterface`.
 
-Below is an example of the extracting array content of a CardinalCommerce response JWT in [\Magento\AuthorizenetCardinal\Gateway\Request\Authorize3DSecureBuilder]({{ site.mage2bloburl }}/{{page.guide_version}}/app/code/Magento/AuthorizenetCardinal/Gateway/Request/Authorize3DSecureBuilder.php):
+Below is an example of the extracting array content of a CardinalCommerce response JWT in [\Magento\AuthorizenetCardinal\Gateway\Request\Authorize3DSecureBuilder][]:
 
 ```php
 use Magento\AuthorizenetAcceptjs\Gateway\SubjectReader;
@@ -288,3 +288,15 @@ Depending on the requirements of your payment gateway, you should include some o
 In our example, the `ECIFlag` and `CAVV` values were included in the transaction request to Authorize.Net.
 
 Then you can expect to see an additional field with a cardholder authentication verification response code in the response from your payment gateway. This code lets you know whether the information got back to the issuer. If the issuer recognizes this data as matching whatever they recorded earlier in the transaction when the cardholder was authenticating, they will respond with a successful code in this field.
+
+<!-- Link Definitions -->
+[CardinalCommerce]: https://www.cardinalcommerce.com/
+[Cardinal Consumer Authentication]: https://cardinaldocs.atlassian.net/wiki/spaces/CC/pages/196642/Consumer+Authentication#ConsumerAuthentication-CardinalConsumerAuthentication
+[Cardinal Cruise Standard]: https://cardinaldocs.atlassian.net/wiki/spaces/CC/pages/7929857/Cardinal+Cruise+Standard
+[list of compatible payment gateways]: https://www.cardinalcommerce.com/partners/gateways
+[module]: https://glossary.magento.com/module
+[payment method]: https://glossary.magento.com/payment-method
+[app\code\AuthorizenetCardinal\Model\Checkout\ConfigProvider.php]: {{ site.mage2bloburl }}/{{page.guide_version}}/app/code/Magento/AuthorizenetCardinal/Model/Checkout/ConfigProvider.php#L19
+[JWT]: https://en.wikipedia.org/wiki/JSON_Web_Token
+[API Reference]: https://cardinaldocs.atlassian.net/wiki/spaces/CC/pages/98315/Response+Objects
+[\Magento\AuthorizenetCardinal\Gateway\Request\Authorize3DSecureBuilder]: {{ site.mage2bloburl }}/{{page.guide_version}}/app/code/Magento/AuthorizenetCardinal/Gateway/Request/Authorize3DSecureBuilder.php
