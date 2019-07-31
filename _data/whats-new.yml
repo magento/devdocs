@@ -18,7 +18,7 @@ entries:
   type: Technical changes
   date: July 25, 2019
   link: https://github.com/magento/devdocs/pull/5023
-- description: Added the [Asynchronous and deferred operations](http://devdocs.magento.com/guides/v2.3/extension-dev-guide/async-operations.md)
+- description: Added the [Asynchronous and deferred operations](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/async-operations.md)
     topic to the PHP Developer Guide.
   versions: 2.3.x
   type: Major update
@@ -1043,8 +1043,8 @@ entries:
   type: Technical changes
   date: March  4, 2019
   link: https://github.com/magento/devdocs/pull/3863
-- description: Added a section about [Required System Dependencies](http://devdocs.magento.com/guides/v2.3/install-gde/system-requirements-tech.html#required-system-dependencies)<br/>Added
-    a section about [Unsupported Operating Systems](http://devdocs.magento.com/guides/v2.3/install-gde/system-requirements-tech.html#unsupported-operating-systems)
+- description: Added a section about [Required System Dependencies](https://devdocs.magento.com/guides/v2.3/install-gde/system-requirements-tech.html#required-system-dependencies)<br/>Added
+    a section about [Unsupported Operating Systems](https://devdocs.magento.com/guides/v2.3/install-gde/system-requirements-tech.html#unsupported-operating-systems)
   versions: 2.3.x
   type: Major update
   date: March  4, 2019
@@ -1092,17 +1092,17 @@ entries:
   type: Technical changes
   date: February 28, 2019
   link: https://github.com/magento/devdocs/pull/3814
-- description: Update Commerce, PWA, and Page Builder [product availability](https://devdocs.magento.com/availability)
+- description: Update Commerce, PWA, and Page Builder product availability.
   versions: 2.3.x
   type: Major update
   date: February 28, 2019
   link: https://github.com/magento/devdocs/pull/3833
-- description: 'Updated the [Cloud Release notes for ece-tools version 2002.0.16.](http://devdocs.magento.com/guides/v2.3/cloud/release-notes/cloud-tools.html#v2002016)<br/>-
+- description: 'Updated the [Cloud Release notes for ece-tools version 2002.0.16.](https://devdocs.magento.com/guides/v2.3/cloud/release-notes/cloud-tools.html#v2002016)<br/>-
     Updated the Cloud Docker content with information about using the [`sendmail`
-    service](http://devdocs.magento.com/guides/v2.3/cloud/docker/docker-development.html#sendmail-service).<br/>- Updated
-    the Cloud Docker content to explain how to [configure Xdebug](http://devdocs.magento.com/guides/v2.3/cloud/docker/docker-development-debug.html).<br/>-
-    Added two new environment variables: [RESOURCE_CONFIGURATION deploy variable](http://devdocs.magento.com/guides/v2.3/cloud/env/variables-deploy.html)
-    and [X_FRAME_CONFIGURATION global variable](http://devdocs.magento.com/guides/v2.3/cloud/env/variables-global.html)<br/>-
+    service](https://devdocs.magento.com/guides/v2.3/cloud/docker/docker-development.html#sendmail-service).<br/>- Updated
+    the Cloud Docker content to explain how to [configure Xdebug](https://devdocs.magento.com/guides/v2.3/cloud/docker/docker-development-debug.html).<br/>-
+    Added two new environment variables: [RESOURCE_CONFIGURATION deploy variable](https://devdocs.magento.com/guides/v2.3/cloud/env/variables-deploy.html)
+    and [X_FRAME_CONFIGURATION global variable](https://devdocs.magento.com/guides/v2.3/cloud/env/variables-global.html)<br/>-
     Updated the [ADMIN variables](https://devdocs.magento.com/guides/v2.3/cloud/env/environment-vars_magento.html)
     and clarified the usage of ADMIN variables in the [Access your Magento Admin panel](https://devdocs.magento.com/guides/v2.3/cloud/onboarding/onboarding-tasks.html)
     page.<br/>- Added an example for preloading pages from multiple domains in the
@@ -1129,7 +1129,7 @@ entries:
   type: Technical changes
   date: February 22, 2019
   link: https://github.com/magento/devdocs/pull/3802
-- description: Added the section [Merge action groups](http://devdocs.magento.com/mftf/docs/merging.html#merge-action-groups)
+- description: Added the section [Merge action groups](https://devdocs.magento.com/mftf/docs/merging.html#merge-action-groups)
     to the Merging page in the MFTF guide.
   versions: 2.3.x
   type: Major update
@@ -1306,7 +1306,7 @@ entries:
   type: Technical changes
   date: January 14, 2019
   link: https://github.com/magento/devdocs/pull/3570
-- description: Updated the [availability timeline](https://devdocs.magento.com/availability)
+- description: Updated the availability timeline.
     for the Amazon Sales Channel extension.
   versions: 'N/A'
   type: Major update
@@ -1695,9 +1695,9 @@ entries:
   versions: 2.1.x, 2.2.x, 2.3.x
   type: Major update
   date: September 27 2018
-- description: Updated the [Release notes for ece-tools version 2002.0.14.](http://devdocs.magento.com/guides/v2.2/cloud/release-notes/cloud-tools.html#v2002014)<br/>Renamed
+- description: Updated the [Release notes for ece-tools version 2002.0.14.](https://devdocs.magento.com/guides/v2.2/cloud/release-notes/cloud-tools.html#v2002014)<br/>Renamed
     Local environment setup to Local development. Added new [Docker development](https://devdocs.magento.com/guides/v2.2/cloud/docker/docker-development.html)
-    architecture.<br/>Added [Reset cron jobs](http://devdocs.magento.com/guides/v2.3/cloud/trouble/reset-cron-jobs.html)
+    architecture.<br/>Added [Reset cron jobs](https://devdocs.magento.com/guides/v2.3/cloud/trouble/reset-cron-jobs.html)
     topic to version 2.1.<br/>And other minor Cloud guide fixes for broken links and
     a bad redirect for the ece-tools update.
   versions: 2.1.x, 2.2.x, 2.3.x
@@ -1781,7 +1781,7 @@ entries:
   versions: 2.3.x
   type: Technical changes
   date: Sep 5 2018
-- description: You can specify [configuration types](http://devdocs.magento.com/guides/v2.2/config-guide/cli/config-cli-subcommands-config-mgmt-export.html)
+- description: You can specify [configuration types](https://devdocs.magento.com/guides/v2.2/config-guide/cli/config-cli-subcommands-config-mgmt-export.html)
     when running the `app:config:dump` command.
   versions: 2.2.x, 2.3.x
   type: Major update
@@ -3808,7 +3808,7 @@ entries:
   versions: 2.1.x
   type: New
   date: Oct 28 2016
-- description: '[Home page for Magento 2.x system requirements](https://devdocs.magento.com/magento-system-requirements.html)'
+- description: Home page for Magento 2.x system requirements
   versions: 2.x
   type: New
   date: Oct 28 2016
@@ -3816,7 +3816,7 @@ entries:
   versions: 2.x
   type: New
   date: Oct 28 2016
-- description: '[Home page for Magento 2.x third-party license agreements](https://devdocs.magento.com/magento-third-party.html)'
+- description: Home page for Magento 2.x third-party license agreements
   versions: 2.x
   type: New
   date: Oct 28 2016
@@ -3841,7 +3841,7 @@ entries:
   versions: 2.x
   type: Updated
   date: Oct 21 2016
-- description: '[System requirements home page](https://devdocs.magento.com/magento-system-requirements.html)'
+- description: System requirements home page
   versions: 2.x
   type: New
   date: Oct 21 2016

@@ -1626,7 +1626,7 @@ See [Magento Security Center](https://magento.com/security/patches/magento-2.2.7
 
 ### Payment methods
 
-<!--- MAGETWO-83340 -->* Merchants can now provide customized error messages when a transaction fails at the payment stage. Previously, Magento displayed this default message when an error occurred: `Transaction has been declined. Please try again later.` For more details, please, see http://devdocs.magento.com/guides/v2.3/payments-integrations/payment-gateway/error-code-mapper.html. 
+<!--- MAGETWO-83340 -->* Merchants can now provide customized error messages when a transaction fails at the payment stage. Previously, Magento displayed this default message when an error occurred: `Transaction has been declined. Please try again later.` For more details, please, see https://devdocs.magento.com/guides/v2.3/payments-integrations/payment-gateway/error-code-mapper.html. 
 
 
 <!-- MAGETWO-87154 -->*  Magento no longer throws a validation error at the payments step of check out when an agreements checkbox is present. [GitHub-11885](https://github.com/magento/magento2/issues/11885) 
