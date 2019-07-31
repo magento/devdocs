@@ -62,7 +62,7 @@ For example:
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Signifyd:etc/signifyd_payment_mapping.xsd">
     <payment_method_list>
-        <payment_method>
+        <payment_method name="custom_payment_code">
             <magento_code>custom_payment_code</magento_code>
             <signifyd_code>PAYMENT_CARD</signifyd_code>
         </payment_method>
@@ -71,6 +71,8 @@ For example:
 ```
 
 where:
+
+* `payment_method -> name` attribute is a required unique node identifier.
 
 * `magento_code` attribute value should be the code for a custom payment method (the same as in the payment's `config.xml`).
 
