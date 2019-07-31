@@ -17,7 +17,7 @@ content_map:
 -
   directory: page-builder
   repository: magento/magento2-page-builder
-  branch: 1.0-develop
+  branch: 1.1-develop
   filter: true
 -
   directory: page-builder-migration
