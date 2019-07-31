@@ -1,7 +1,6 @@
 ---
 group: architecture-guide
 title: Presentation Layer
-menu_title: Presentation layer
 ---
 
 ## What is the Magento Presentation layer?
