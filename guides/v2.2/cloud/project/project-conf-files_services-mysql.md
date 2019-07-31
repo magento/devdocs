@@ -50,7 +50,7 @@ mysql -h<db> -p<number> -u<username> -p<password>
 1. [Verify the relationships]({{page.baseurl}}/cloud/project/project-conf-files_services.html#service-relationships).
 
 {: .bs-callout-tip }
-MySQL errors such as `PDO Exception: MySQL server has gone away` may be a result of exhausting existing disk space. Verify that you allocated sufficient disk space to the service in the [`.magento/services.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_magento-app.html#disk) file.
+MySQL errors such as `PDO Exception: MySQL server has gone away` may be a result of exhausting existing disk space. Verify that you have allocated sufficient disk space to the service in the [`.magento/services.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_magento-app.html#disk) file.
 
 ## Set up multiple database users
 
