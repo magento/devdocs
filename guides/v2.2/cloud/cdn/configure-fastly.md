@@ -168,19 +168,23 @@ If you need to integrate additional backends into your site such as a backend to
    The following list shows which Fastly shield locations to use based an AWS
   region:
 
-	 - ap-northeast-1 => tokyo-jp2
-	 - ap-southeast-1 => singapore-sg
-	 - ap-southeast-2 => sydney-au
-	 - ap-south-1 => singapore-sg
-	 - eu-central-1 => frankfurt-de
-	 - eu-west-1 => london-uk, london_city-uk
-	 - eu-west-2 => london-uk, london_city-uk
-	 - eu-west-3 => cdg-par-fr
-	 - sa-east-1	=> gru-br-sa
-	 - us-east-1 => iad-va-us
-	 - us-east-2 => iad-va-us
-	 - us-west-1 => sjc-ca-us
-	 - us-west-2 => sea-wa-us
+    - ap-east-1 => hongkong-hk
+    - ap-northeast-1 => tyo-tokyo-jp, hnd-tokyo-jp
+    - ap-northeast-2 => tyo-tokyo-jp, hnd-tokyo-jp
+    - ap-southeast-1 => singapore-sg
+    - ap-southeast-2 => sydney-au
+    - ap-south-1 => singapore-sg
+    - ca-central-1 => yul-montreal-ca, iad-va-us, dca-dc-us, bwi-va-us
+    - eu-central-1 => frankfurt-de, hhn-frankfurt-de
+    - eu-north-1 => stockholm-bma
+    - eu-west-1 => london-uk, london_city-uk
+    - eu-west-2 => london-uk, london_city-uk
+    - eu-west-3 => cdg-par-fr
+    - sa-east-1 => gru-br-sa
+    - us-east-1 => iad-va-us, dca-dc-us, bwi-va-us
+    - us-east-2 => iad-va-us, dca-dc-us, bwi-va-us
+    - us-west-1 => sjc-ca-us, pao-ca-us
+    - us-west-2 => sea-wa-us
 
 1. Modify the timeout values (in microseconds) for the connection to the
    shield, time between bytes, and time for the first byte. We recommend keeping the default timeout settings.
