@@ -1018,7 +1018,7 @@ We've fixed hundreds of issues in the Magento 2.3.0 core code.
 
 <!---MAGETWO-85063 -->* The ReleaseNotification module has been added to support the display of new release highlights. 
 
-<!---MAGETWO-81339 -->* Magento now saves date and time correctly for different timezones and locales. *Fix submitted by Raul Mateos in pull request [11306](https://github.com/magento/magento2/pull/11306)*. [GitHub-10485](https://github.com/magento/magento2/issues/10485), [GitHub-10580](https://github.com/magento/magento2/issues/10580), [GitHub-10686](https://github.com/magento/magento2/issues/10686), [GitHub-10754](https://github.com/magento/magento2/issues/10754)
+<!---MAGETWO-81339 -->* Magento now saves date and time correctly for different timezones and locales. *Fix submitted by Raul Mateos in pull request [11306](https://github.com/magento/magento2/pull/11306)*. [GitHub-10485](https://github.com/magento/magento2/issues/10485), [GitHub-10580](https://github.com/magento/magento2/issues/10580), [GitHub-10754](https://github.com/magento/magento2/issues/10754)
 
 <!---MAGETWO-70886 -->* The `Zend_Feed::importArray` static call has been replaced with a new interface. This concrete class takes the `Zend_Feed` object and returns its own result in the form of a wrapper around `Zend_Feed_Abstract`. *Fix submitted by Dusan Lukic in pull request [9347](https://github.com/magento/magento2/pull/9347)*.  [GitHub-9240](https://github.com/magento/magento2/issues/9240)
 
@@ -1458,7 +1458,7 @@ We've fixed hundreds of issues in the Magento 2.3.0 core code.
 <!--- MAGETWO-88240 -->* Magento now renames images during a bulk upload of products  with images. *Fix submitted by Umar Chaudhry in pull request [99](https://github.com/magento-engcom/import-export-improvements/pull/99)*. [GitHub-11324](https://github.com/magento/magento2/issues/11324)
 
 
-<!--- MAGETWO-87933 -->* Report error CSV file now works when you  try to import a CSV file with a semicolon delimiter. *Fix submitted by Malyovanets Nickolas in pull request 1203*.  [GitHub-5015](https://github.com/magento/magento2/issues/5015)
+<!--- MAGETWO-87933 -->* Report error CSV file now works when you  try to import a CSV file with a semicolon delimiter. *Fix submitted by Malyovanets Nickolas*.  [GitHub-5015](https://github.com/magento/magento2/issues/5015)
 
 
 <!---ENGCOM-2468 -->* Magento now provides a validation failure during import when multiselect columns contain duplicate values. *Fix submitted by carstenpfeifer in pull request 117*.  [GitHub-103](https://github.com/magento/magento2/issues/103)
@@ -1845,7 +1845,7 @@ We've fixed hundreds of issues in the Magento 2.3.0 core code.
 <!---ENGCOM-2858 -->* Magento now displays a `404 page not found` error when a customer tries to navigate to a product review that is not accessible. Previously, Magento displayed a PHP error code.  *Fix submitted by Malyovanets Nickolas in pull request [17721](https://github.com/magento/magento2/pull/17721)*.  [GitHub-13102](https://github.com/magento/magento2/issues/13102)
 
 
-<!---ENGCOM-2380 -->* Magento no longer throws an error when a merchant edits a product from the Admin when reviews are disabled. *Fix submitted by Oleksandr Kravchuk in pull request 71 (magento-partners/magento2ee)*. [GitHub-6264](https://github.com/magento/magento2/issues/6264)
+<!---ENGCOM-2380 -->* Magento no longer throws an error when a merchant edits a product from the Admin when reviews are disabled. *Fix submitted by Oleksandr Kravchuk*. [GitHub-6264](https://github.com/magento/magento2/issues/6264)
 
 <!-- MAGETWO-91805 -->* When a customer creates a product review, the link to the product from the review in the customer's **My Account** > **My Product Review** is now SEO-friendly.
 
@@ -1916,14 +1916,14 @@ We've fixed hundreds of issues in the Magento 2.3.0 core code.
 
 <!---MAGETWO-95315 -->* You can now filter orders by customer email. Previously, Magento threw an error when you tried to filter orders by customer email from **Sales** > **Orders**. 
 
-<!---MAGETWO-85522 -->* The wrong entity_model for `invoice` has been corrected in the `eav_entity_type` table.  *Fix submitted by Malyovanets Nickolas in pull request 997*. 
+<!---MAGETWO-85522 -->* The wrong entity_model for `invoice` has been corrected in the `eav_entity_type` table.  *Fix submitted by Malyovanets Nickolas*. 
 
 <!--- ENGCOM-1054 -->* An incorrect return type in PHPdoc has been corrected. Previously, this return type resulted in multiple warnings in IDEs. *Fix submitted by julianvdrielen in pull request [14304](https://github.com/magento/magento2/pull/14304)*. [GitHub-13992](https://github.com/magento/magento2/issues/13992)
 
 
 <!-- MAGETWO-87064 -->*  Magento now syncs an order’s shipping and billing addresses as expected when a customer edits the billing address. [GitHub-10856](https://github.com/magento/magento2/issues/10856) 
 
-<!---ENGCOM-1466 -->* The transport variable can now be altered in the  `email_invoice_set_template_vars_before` event. *Fix submitted by gwharton in pull request 15039*. [GitHub-10210](https://github.com/magento/magento2/issues/10210)
+<!---ENGCOM-1466 -->* The transport variable can now be altered in the  `email_invoice_set_template_vars_before` event. *Fix submitted by gwharton*. [GitHub-10210](https://github.com/magento/magento2/issues/10210)
 
 
 
@@ -1959,7 +1959,7 @@ We've fixed hundreds of issues in the Magento 2.3.0 core code.
 <!--- MAGETWO-59305 -->*  Elasticsearch no longer includes out-of-stock product options in search results. 
 
 
-<!--- MAGETWO-72142 -->* Support for Elasticsearch 5.x has been added. See [Install and configure Elasticsearch]({{ site.baseurl }}/guides/v2.2/config-guide/elasticsearch/es-overview.html) for more information about using Elasticsearch with Magento. *Fix submitted by Aurélien Foucret in pull request 2202 (magento/magento2ce)*. 
+<!--- MAGETWO-72142 -->* Support for Elasticsearch 5.x has been added. See [Install and configure Elasticsearch]({{ site.baseurl }}/guides/v2.2/config-guide/elasticsearch/es-overview.html) for more information about using Elasticsearch with Magento. *Fix submitted by Aurélien Foucret*. 
 
 <!--- ENGCOM-1057 -->* Magento no longer throws an error when a customer uses quick search to search on a term that does not exist in the search database. Previously, Magento returned this error, `TypeError: this._getFirstVisibleElement(...).addClass is not a function`.  *Fix submitted by Dragan Atanasov in pull request [14301](https://github.com/magento/magento2/pull/14301)*. [GitHub-14274](https://github.com/magento/magento2/issues/14274)
 
@@ -2314,7 +2314,7 @@ We've fixed hundreds of issues in the Magento 2.3.0 core code.
 
 <!--- MAGETWO-86101 -->* Magento now stores product IDs and SKUs to locally stored customer data for wishlists. *Fix submitted by James Halsall in pull request [12896](https://github.com/magento/magento2/pull/12896)*. 
 
-<!--- MAGETWO-90297 -->* `SearchCriteriaBuilder` now has a check to determine if sort order should be applied. Previously, `SearchCriteriaBuilder` built the wrong criteria (`ORDER BY part`). *Fix submitted by Nickolas Malyovanets in pull request 1003 (magento/magento2ce)*. [GitHub-5738](https://github.com/magento/magento2/issues/5738)
+<!--- MAGETWO-90297 -->* `SearchCriteriaBuilder` now has a check to determine if sort order should be applied. Previously, `SearchCriteriaBuilder` built the wrong criteria (`ORDER BY part`). *Fix submitted by Nickolas Malyovanets*. [GitHub-5738](https://github.com/magento/magento2/issues/5738)
 
 <!--- MAGETWO-91615 -->*  Registered users can now create new wishlists as expected when multiple wishlists are enabled. Previously, Magento displayed an error.
 

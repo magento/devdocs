@@ -207,7 +207,7 @@ product, and hung indefinitely while trying to add the product.
 
 
 
-<!-- ENGCOM-2622 -->* Special price expressions now work as expected. Previously, `catalog_product_price` did not generate correct price data. *Fix submitted by [Dmitry Chukhnov](https://github.com/DmitryChukhnov) in pull request [16510](https://github.com/magento/magento2/pull/16510)*. 
+<!-- ENGCOM-2622 -->* Special price expressions now work as expected. Previously, `catalog_product_price` did not generate correct price data. *Fix submitted by Dmitry Chukhnov in pull request [16510](https://github.com/magento/magento2/pull/16510)*. 
 
 
 ### Catalog rule
@@ -229,7 +229,7 @@ product, and hung indefinitely while trying to add the product.
 
 <!-- ENGCOM-2594 -->* Files in `/lib` have been cleaned up. *Fix submitted by [Pratik Oza](https://github.com/mage2pratik) in pull request [17103](https://github.com/magento/magento2/pull/17103)*.
 
-<!-- ENGCOM-2619 -->* Unused IDs in `app/code/Magento/Checkout/view/frontend/web/template/billing-address/form.html` and `app/code/Magento/Checkout/Test/Mftf/Section/CheckoutPaymentSection.xml` have been removed. *Fix submitted by [Daniel Ruf](https://github.com/DanielRuf) in pull request [163541](https://github.com/magento/magento2/pull/163541)*.
+<!-- ENGCOM-2619 -->* Unused IDs in `app/code/Magento/Checkout/view/frontend/web/template/billing-address/form.html` and `app/code/Magento/Checkout/Test/Mftf/Section/CheckoutPaymentSection.xml` have been removed. *Fix submitted by [Daniel Ruf](https://github.com/DanielRuf) in pull request [17291](https://github.com/magento/magento2/pull/17291)*.
 
 
 <!-- ENGCOM-2118 -->* Removed unnecessary translation of HTML tags in `app/code/Magento/Catalog/Block/Adminhtml/Form/Renderer/Config/YearRange.php` and `app/code/Magento/Catalog/i18n/en_US.csv`. *Fix submitted by [Yogesh Suhagiya](https://github.com/Yogeshks) in pull request [17291](https://github.com/magento/magento2/pull/17291)*.
@@ -256,7 +256,7 @@ product, and hung indefinitely while trying to add the product.
 
 ### CMS content
 
-<!-- ENGCOM-2734 -->* A new `OptionSource` of blocks has been added. *Fix submitted by [Thomas Klein](https://github.com/thomas-blackbird) in pull request [16021](https://github.com/magento/magento2/pull/16021)*.
+<!-- ENGCOM-2734 -->* A new `OptionSource` of blocks has been added. *Fix submitted by Thomas Klein in pull request [16021](https://github.com/magento/magento2/pull/16021)*.
 
 <!-- MAGETWO-73359 -->* You can successfully save a CMS page with the same URL key as another store on a different website but with the same hierarchy. 
 
@@ -425,7 +425,7 @@ product, and hung indefinitely while trying to add the product.
 
 ### Review
 
-<!-- ENGCOM-2720-->* Magento now displays a `404 page not found` error when a customer tries to navigate to a product review that is not accessible. Previously. Magento displayed a PHP error code. *Fix submitted by [Ananth](https://github.com/Ananth747) in pull request [15369](https://github.com/magento/magento2/pull/15369)*. [GitHub-13102](https://github.com/magento/magento2/issues/13102)
+<!-- ENGCOM-2720-->* Magento now displays a `404 page not found` error when a customer tries to navigate to a product review that is not accessible. Previously. Magento displayed a PHP error code. *Fix submitted by Ananth in pull request [15369](https://github.com/magento/magento2/pull/15369)*. [GitHub-13102](https://github.com/magento/magento2/issues/13102)
 
 
 
@@ -546,7 +546,7 @@ product, and hung indefinitely while trying to add the product.
 
 ### UI
 
-<!-- ENGCOM-2812 -->* The JavaScript  validation rule used to validate AM/PM time settings now works as expected when JavaScript is minified. *Fix submitted by [Mark Shust](https://github.com/markoshust) in pull request [17652](https://github.com/magento/magento2/pull/17652)*. [GitHub-17648](https://github.com/magento/magento2/issues/17648)
+<!-- ENGCOM-2812 -->* The JavaScript  validation rule used to validate AM/PM time settings now works as expected when JavaScript is minified. *Fix submitted by Mark Shust in pull request [17652](https://github.com/magento/magento2/pull/17652)*. [GitHub-17648](https://github.com/magento/magento2/issues/17648)
 
 <!-- ENGCOM-2834 -->* The message list component message type now has a message type of `success`. Previously, this type was always `error` when the `parameters` property was specified. *Fix submitted by [Dmytro Cheshun](https://github.com/dmytro-ch) in pull request [17701](https://github.com/magento/magento2/pull/17701)*. [GitHub-17700](https://github.com/magento/magento2/issues/17700)
 
