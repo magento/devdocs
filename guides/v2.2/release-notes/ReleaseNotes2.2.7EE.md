@@ -373,7 +373,7 @@ product, and hung indefinitely while trying to add the product.
 
 <!-- ENGCOM-2070 -->* You can now set values for `MAX_IMAGE_WIDTH` and `MAX_IMAGE_HEIGHT` in **Stores** > **Settings** > **Configuration** > **Advanced** > **System** > **Images Configuration**, which supports the upload of larger images. *Fix submitted by [Eduard Chitoraga](https://github.com/eduard13) in pull request [15942](https://github.com/magento/magento2/pull/15942)*. [GitHub-13747](https://github.com/magento/magento2/issues/13747)
 
-<!-- ENGCOM-2915 -->* `functions.php` (which provides the custom Magento function <code>__()</code> to trigger translations) now resides in the Framework module. *Fix submitted by [Kristof, Fooman](https://github.com/fooman) in pull request [16800](https://github.com/magento/magento2/pull/16800)*. 
+<!-- ENGCOM-2915 -->* `functions.php`  now resides in the Framework module. *Fix submitted by [Kristof, Fooman](https://github.com/fooman) in pull request [16800](https://github.com/magento/magento2/pull/16800)*. 
 
 
 <!-- ENGCOM-2570 -->* FTP connections can  now use user or password strings with special characters (for example, @ or #). *Fix submitted by [Pratik Oza](https://github.com/mage2pratik) in pull request [17246](https://github.com/magento/magento2/pull/17246)*.
