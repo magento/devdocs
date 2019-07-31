@@ -18,7 +18,7 @@ html-proofer:
     :in_processes: 3
   
   :cache:
-    :timeframe: '2w'
+    :timeframe: 2w
 
   # Ignore entirely the files which pathname matches a specified pattern 
   :file_ignore:
