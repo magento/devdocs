@@ -209,7 +209,7 @@ Use `@magentoConfigFixture` annotation to set a custom config value. It supports
 ```
 
 where
-- `<store_code>` - Code of store. See `store`.`code` table
+- `<store_code>` - Store code. See the `store`.`code` database field value.
 - `<config_key>` - Config key. See `core_config_data`.`path` 
 - `<config_value>` - Config value. See `core_config_data`.`value`
 
@@ -230,7 +230,7 @@ The following example sets a store-scoped value `1` for the config key `checkout
     }
 ```
 
-In the background process, `@magentoConfigFixture` do the next before test execution:  
+In the background process, `@magentoConfigFixture` performs the following action before test execution:  
 
 ```sql
 INSERT INTO `core_config_data` (scope`, `scope_id`, `path`, `value`)
@@ -238,7 +238,7 @@ VALUES
 	('stores', 1, 'checkout/options/enable_agreements', '1');
 ```
 
-and automatically removes `checkout/options/enable_agreements` config key from database when test be completed.
+and automatically removes `checkout/options/enable_agreements` config key from the database after the test has been completed.
 
 ## Defining expected exceptions
 
