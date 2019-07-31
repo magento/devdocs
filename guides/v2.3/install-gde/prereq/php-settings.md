@@ -6,8 +6,6 @@ functional_areas:
   - System
   - Setup
 redirect_from: 
-  - /guides/v2.3/install-gde/prereq/php-settings.html
-  - /guides/v2.3/install-gde/prereq/php-settings.html
   - /guides/v2.3/install-gde/prereq/php-settings-ubuntu.html
 ---
 
