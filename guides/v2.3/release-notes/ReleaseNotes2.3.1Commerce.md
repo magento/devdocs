@@ -221,7 +221,7 @@ We've fixed hundreds of issues in the Magento 2.3.1 core code.
 
 ### Installation, upgrade, deployment
 
-<!--- MC-6275-->* The commands to enable and disable debug logging have changed to `bin/magento setup:config:set --enable-debug-logging=true | false`. The previous commands, `bin/magento config:set dev/debug/debug_logging 0 | 1` are no longer supported.  See [Logging](https://devdocs.magento.com/guides/v2.3/config-guide/logging.html). 
+<!--- MC-6275-->* The commands to enable and disable debug logging have changed to `bin/magento setup:config:set --enable-debug-logging=true | false`. The previous commands, `bin/magento config:set dev/debug/debug_logging 0 | 1` are no longer supported.  See [Logging](https://devdocs.magento.com/guides/v2.3/config-guide/cli/logging.html). 
 
 
 <!--- ENGCOM-3291-->* Magento now sets the `id_prefix` option on prefix cache keys for the cache frontend during installation. If this option is not set, Magento uses the first 12 bits of the md5 hash of the absolute path to the Magento `app/etc` directory. But if this value is not exactly the same on all web servers, cache invalidation will not work.  *Fix submitted by Fabian Schmengler in pull request [18641](https://github.com/magento/magento2/pull/18641)*. [GitHub-15828](https://github.com/magento/magento2/issues/15828)

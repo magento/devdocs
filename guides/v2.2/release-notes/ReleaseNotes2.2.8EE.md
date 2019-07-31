@@ -110,7 +110,7 @@ In addition to security enhancements, this release contains the following functi
 
 ### Installation, setup, and deployment
 
-<!-- MC-5926 -->* The `bin/magento setup:config:set --enable-syslog-logging=true|false` command now provides the functionality that Magento previously provided in .  See [Logging](https://devdocs.magento.com/guides/v2.3/config-guide/logging.html). 
+<!-- MC-5926 -->* The `bin/magento setup:config:set --enable-syslog-logging=true|false` command now provides the functionality that Magento previously provided in .  See [Logging](https://devdocs.magento.com/guides/v2.3/config-guide/cli/logging.html). 
 
 <!-- MAGETWO-83474 -->* The storefront now  uses HTTPS exclusively and the Admin  uses HTTP without resulting in excessive redirects. 
 

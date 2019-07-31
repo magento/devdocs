@@ -220,7 +220,7 @@ We've fixed hundreds of issues in the Magento 2.3.1 core code.
 
 <!--- MC-5620-->* The `bin/magento setup:upgrade --convert-old-scripts=1` command now supports the conversion of indexes and constraints.  
 
-<!--- MC-6275-->* The commands to enable and disable debug logging have changed to `bin/magento setup:config:set --enable-debug-logging=true | false`. The previous commands, `bin/magento config:set dev/debug/debug_logging 0 | 1` are no longer supported.  See [Logging](https://devdocs.magento.com/guides/v2.3/config-guide/logging.html). 
+<!--- MC-6275-->* The commands to enable and disable debug logging have changed to `bin/magento setup:config:set --enable-debug-logging=true | false`. The previous commands, `bin/magento config:set dev/debug/debug_logging 0 | 1` are no longer supported.  See [Logging](https://devdocs.magento.com/guides/v2.3/config-guide/cli/logging.html). 
 
 
 
