@@ -86,19 +86,12 @@ Any change not listed below is considered a PATCH level change.
 | | Changed format of the returned method result | MAJOR|
 | | New method exception (excluding subtypes of existing exceptions) | MAJOR|
 | | New method exception (subtypes of an existing one) | PATCH|
-| **JavaScript Interface** (marked with `@api`) | New interface| MINOR|
+| **JavaScript class** (marked with `@api`)| New class| MINOR|
 | | New method added | MINOR|
-| | Interface removed| MAJOR|
-| | Method removed | MAJOR|
-| | New required method argument | MAJOR|
-| | Changed method signature | MAJOR|
-| | Last argument added| MINOR|
-| **JavaScript class** (marked with `@api`| New class| MINOR|
-| | New method added | MINOR|
+| | New argument added | MINOR|
 | | Class removed| MAJOR|
 | | Method removed | MAJOR|
-| | New required method argument | MAJOR|
-| | New last method argument | MINOR|
+| | Argument removed | MAJOR|
 | | New event| MINOR|
 | | Renamed event| MAJOR|
 | | Removed event| MAJOR|
