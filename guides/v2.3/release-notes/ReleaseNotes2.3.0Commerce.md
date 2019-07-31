@@ -3,7 +3,7 @@ group: release-notes
 title: Magento Commerce 2.3.0 Release Notes
 ---
 
-*Release notes published November 28 and last updated on January 9, 2019.*
+*Release notes published November 28 and last updated on July 30, 2019.*
 
 We are pleased to present Magento Commerce 2.3.0 General Availability. This release includes numerous functional fixes and enhancements.  
 
@@ -11,6 +11,12 @@ We are pleased to present Magento Commerce 2.3.0 General Availability. This rele
 
 Magento Commerce 2.3.0 includes a wealth of new features as well as hundreds of enhancements and fixes to the core product. Look for the following highlights in this release:
 
+## Apply patch PRODSECBUG-2233 to address critical remote code execution vulnerability (RCE)
+
+An unauthenticated cross-site scripting vulnerability combined with an authenticated Phar deserialization vulnerability has left this version of Magento Commerce open to serious exploit. An attacker can use these vulnerabilities to inject JavaScript into the Magento Admin and subsequently launch malicious code in a store user’s browser.   **We strongly recommend that all users of the affected versions of Magento download and apply the appropriate patch as soon as possible**. 
+
+This issue and the available patches are discussed in the [Extending the June 25 Security Update to Older Versions of Magento](https://community.magento.com/t5/Magento-DevBlog/Extending-the-June-25-Security-Update-to-Older-Versions-of/ba-p/138231)
+blog post. You can directly access patch code through your Magento account for Magento Commerce. Locate the patch by the name. We provide both Git-based and Composer-based patches. 
 
 
 ## Apply patch PRODSECBUG-2198 to address critical SQL injection vulnerability

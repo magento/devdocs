@@ -7,7 +7,7 @@ title: Magento Open Source 2.2.8 Release Notes
 
 
 
-*Release notes published on March 26, 2019 and last edited on April 5, 2019.*
+*Release notes published on March 26, 2019 and last edited on July 30, 2019.*
 
 
 We are pleased to present Magento Open Source 2.2.8. This release includes over 30 critical enhancements to product security, over 150 core code fixes and enhancements, and 285 community-submitted pull requests. 
@@ -16,6 +16,12 @@ We are pleased to present Magento Open Source 2.2.8. This release includes over 
 Although this release includes these security enhancements, no confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions, so we recommend that you upgrade your Magento software to the latest version as soon as possible.
 
 See [Magento Security Center](https://magento.com/security/patches/magento-2.3.1-2.2.8-and-2.1.17-security-update) for a comprehensive discussion of these issues. All exploitable security issues fixed in this release (2.2.8) have been ported to 2.3.1, 2.1.17, 1.14.4.1, and 1.9.4.1, as appropriate.
+
+## Apply patch PRODSECBUG-2233 to address critical remote code execution vulnerability (RCE)
+
+An unauthenticated cross-site scripting vulnerability combined with an authenticated Phar deserialization vulnerability has left this version of Magento Open Source open to serious exploit. An attacker can use these vulnerabilities to inject JavaScript into the Magento Admin and subsequently launch malicious code in a store user’s browser.  **We strongly recommend that all users of the affected versions of Magento download and apply the appropriate patch as soon as possible**. This issue and the available patches are discussed in the [Extending the June 25 Security Update to Older Versions of Magento](https://community.magento.com/t5/Magento-DevBlog/Extending-the-June-25-Security-Update-to-Older-Versions-of/ba-p/138231)
+blog post. Locate the patch by the name. We provide Git-based and Composer-based patches. 
+
 
 ## Apply patch PRODSECBUG-2198 to address critical SQL injection vulnerability
 

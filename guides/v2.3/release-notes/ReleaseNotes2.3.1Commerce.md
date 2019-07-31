@@ -4,7 +4,7 @@ title: Magento Commerce 2.3.1 Release Notes
 ---
 
 
-*Release notes published on March 26, 2019 and last edited on June 26, 2019.*
+*Release notes published on March 26, 2019 and last edited on July 30, 2019.*
 
 We are pleased to present Magento Commerce 2.3.1.  This release includes over 200 functional fixes to the core product, over 500 pull requests contributed by the community, and  over 30 security enhancements. 
 
@@ -12,7 +12,10 @@ This release includes significant contributions from our community members. Thes
 
 ## Apply patch PRODSECBUG-2233 to address critical remote code execution vulnerability (RCE)
 
-An unauthenticated cross-site scripting vulnerability combined with an authenticated Phar deserialization vulnerability has left this version of Magento Commerce open to serious exploit. An attacker can use these vulnerabilities to inject JavaScript into the Magento Admin and subsequently launch malicious code in a store user’s browser.  **We strongly recommend that all users of the affected versions of Magento download and apply the appropriate patch as soon as possible**. This issue is discussed in the xxx blog post. You can directly access patch code through your Magento account for Magento Commerce. Locate the patch by the name. We provide Git-based and Composer-based patches. 
+An unauthenticated cross-site scripting vulnerability combined with an authenticated Phar deserialization vulnerability has left this version of Magento Commerce open to serious exploit. An attacker can use these vulnerabilities to inject JavaScript into the Magento Admin and subsequently launch malicious code in a store user’s browser.   **We strongly recommend that all users of the affected versions of Magento download and apply the appropriate patch as soon as possible**. 
+
+This issue and the available patches are discussed in the [Extending the June 25 Security Update to Older Versions of Magento](https://community.magento.com/t5/Magento-DevBlog/Extending-the-June-25-Security-Update-to-Older-Versions-of/ba-p/138231)
+blog post. You can directly access patch code through your Magento account for Magento Commerce. Locate the patch by the name. We provide both Git-based and Composer-based patches. 
 
 
 ## Apply the Scope parameter for Async/Bulk API patch to address an issue with the Async/Bulk REST API

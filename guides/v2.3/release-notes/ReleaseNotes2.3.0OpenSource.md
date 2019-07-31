@@ -3,9 +3,14 @@ group: release-notes
 title: Magento Open Source 2.3.0 Release Notes
 ---
 
-*Release notes published November 28 and last updated on December 13, 2018.*
+*Release notes published November 28 and last updated on July 30, 2019.*
 
 We are pleased to present {{site.data.var.ce}} 2.3.0 General Availability. This release includes numerous functional fixes and enhancements.
+
+## Apply patch PRODSECBUG-2233 to address critical remote code execution vulnerability (RCE)
+
+An unauthenticated cross-site scripting vulnerability combined with an authenticated Phar deserialization vulnerability has left this version of Magento Open Source open to serious exploit. An attacker can use these vulnerabilities to inject JavaScript into the Magento Admin and subsequently launch malicious code in a store user’s browser.  **We strongly recommend that all users of the affected versions of Magento download and apply the appropriate patch as soon as possible**. This issue and the available patches are discussed in the [Extending the June 25 Security Update to Older Versions of Magento](https://community.magento.com/t5/Magento-DevBlog/Extending-the-June-25-Security-Update-to-Older-Versions-of/ba-p/138231)
+blog post. Locate the patch by the name. We provide Git-based and Composer-based patches. 
 
 ## Apply patch PRODSECBUG-2198 to address critical SQL injection vulnerability
 
