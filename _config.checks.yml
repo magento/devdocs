@@ -16,11 +16,16 @@ html-proofer:
   # Use up to 3 parallel processes to speed up internal file checks.
   :parallel:
     :in_processes: 3
+  
+  :cache:
+    :timeframe: '2w'
 
   # Ignore entirely the files which pathname matches a specified pattern 
   :file_ignore:
-  - !ruby/regexp /page-builder/
-  - !ruby/regexp /mrg/
+    - !ruby/regexp /page-builder/
+
+  :internal_domains:
+    - devdocs.magento.com
 
   # Ignore any link that includes a specified pattern
   # :url_ignore:
