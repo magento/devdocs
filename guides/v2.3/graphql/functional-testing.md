@@ -198,7 +198,7 @@ $registry->register('isSecureArea', false);
 
 ### Fixture configs
 
-Use `@magentoConfigFixture` annotation to set a custom config value. It supports a `store` scope only.
+Use the `@magentoConfigFixture` annotation to set a custom config value. It supports a `store` scope only.
  
 #### Syntax
 
@@ -230,7 +230,7 @@ The following example sets a store-scoped value `1` for the config key `checkout
     }
 ```
 
-In the background process, `@magentoConfigFixture` performs the following action before test execution:  
+`@magentoConfigFixture` performs the following action as a background process before test execution:  
 
 ```sql
 INSERT INTO `core_config_data` (scope`, `scope_id`, `path`, `value`)
@@ -238,7 +238,7 @@ VALUES
 	('stores', 1, 'checkout/options/enable_agreements', '1');
 ```
 
-and automatically removes `checkout/options/enable_agreements` config key from the database after the test has been completed.
+The fixture automatically removes the `checkout/options/enable_agreements` config key from the database after the test has been completed.
 
 ## Defining expected exceptions
 
