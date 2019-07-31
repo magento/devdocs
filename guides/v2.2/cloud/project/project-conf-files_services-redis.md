@@ -12,40 +12,40 @@ We support Redis versions 2.8, 3.0, and 5.0. Redis 3.0 supports up to 64 differe
 
 {% include cloud/service-config-integration-starter.md %}
 
-## Add Redis in configuration files {#settings}
+## Enable Redis
 
-To enable Redis, add your installed version and allocated disk space in MB to `.magento/services.yaml` file:
+1. Add the required name and type to the `.magento/services.yaml` file.
 
-```yaml
-myredis:
-    type: redis:3.0
-```
+  ```yaml
+  redis:
+      type: redis:3.2
+  ```
 
-To provide your own Redis configuration, add a `core_config` key in your `.magento/services.yaml` file:
+  To provide your own Redis configuration, add a `core_config` key in your `.magento/services.yaml` file:
 
-```yaml
-cache:
-    type: redis:3.0
-```
+  ```yaml
+  cache:
+      type: redis:3.2
+  ```
 
-To configure relationships for an environment variable in your `.magento.app.yaml` file:
+1. Configure the relationships in the `.magento.app.yaml` file.
 
-```yaml
-runtime:
-    extensions:
-        - redis
+  ```yaml
+  runtime:
+      extensions:
+          - redis
 
-relationships:
-    redis: "myredis:redis"
-```
+  relationships:
+      redis: "redis:redis"
+  ```
 
-Merge and deploy the code to set the configurations for Redis. For information on how these changes affect your environments, see [`services.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_services.html).
+1. Add, commit, and push your code changes.
 
-## Verify environment-related relationships {#cloud-es-config-mg}
+  ```bash
+  git add -A && git commit -m "Enable redis service" && git push origin <branch-name>
+  ```
 
-We use the {{site.data.var.ece}} environment variable [`$MAGENTO_CLOUD_RELATIONSHIPS`]({{ page.baseurl }}/cloud/env/environment-vars_cloud.html), a JSON object, to retrieve environment-related relationships.
-
-{% include cloud/pretty-print-services.md %}
+1. [Verify the relationships]({{page.baseurl}}/cloud/project/project-conf-files_services.html#service-relationships).
 
 ## Using the Redis CLI
 

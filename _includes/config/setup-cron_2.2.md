@@ -29,9 +29,9 @@ To view the crontab, switch to the [Magento file system owner]({{ page.baseurl }
 A sample follows:
 
 	#~ MAGENTO START
-	* * * * * /usr/bin/php /var/www/html/magento2ce/bin/magento cron:run 2>&1 | grep -v Ran jobs by schedule >> /var/www/html/magento2ce/var/log/magento.cron.log
-	* * * * * /usr/bin/php /var/www/html/magento2ce/update/cron.php >> /var/www/html/magento2ce/var/log/update.cron.log
-	* * * * * /usr/bin/php /var/www/html/magento2ce/bin/magento setup:cron:run >> /var/www/html/magento2ce/var/log/setup.cron.log
+	* * * * * /usr/bin/php /var/www/html/magento2/bin/magento cron:run 2>&1 | grep -v Ran jobs by schedule >> /var/www/html/magento2/var/log/magento.cron.log
+	* * * * * /usr/bin/php /var/www/html/magento2/update/cron.php >> /var/www/html/magento2/var/log/update.cron.log
+	* * * * * /usr/bin/php /var/www/html/magento2/bin/magento setup:cron:run >> /var/www/html/magento2/var/log/setup.cron.log
 	#~ MAGENTO END
 
 #### Related topic
