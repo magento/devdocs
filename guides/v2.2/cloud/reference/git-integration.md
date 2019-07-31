@@ -2,7 +2,6 @@
 group: cloud-guide
 title: Git
 redirect_from:
-   - /guides/v2.1/cloud/project/admin-git-push.html
    - /guides/v2.2/cloud/project/admin-git-push.html
    - /guides/v2.3/cloud/project/admin-git-push.html
 ---

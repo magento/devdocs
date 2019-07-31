@@ -1,9 +1,7 @@
 ---
 group: cloud-guide
-subgroup: 090_configure
 title: Block referral spam
 redirect_from:
-   - /guides/v2.1/cloud/configure/fastly-vcl-badreferer.html
    - /guides/v2.2/cloud/configure/fastly-vcl-badreferer.html
    - /guides/v2.3/cloud/configure/fastly-vcl-badreferer.html
 functional_areas:
@@ -13,7 +11,7 @@ functional_areas:
 
 The following example shows how to configure [Fastly Edge Dictionary](https://docs.fastly.com/guides/edge-dictionaries/working-with-dictionaries-using-the-api) with a custom VCL snippet to block referral spam from your {{ site.data.var.ece }} site.
 
-{: .bs-callout .bs-callout-info}
+{: .bs-callout-info }
 We recommend adding custom VCL configurations to a Staging environment where you can test them before running them against the Production environment.
 
 **Prerequisites**
@@ -135,7 +133,7 @@ Fastly validates the updated VCL version during the upload process. If the valid
 {% include cloud/cloud-fastly-manage-vcl-from-admin.md %}
 
 
-{: .bs-callout .bs-callout-info}
+{: .bs-callout-info }
 Instead of manually uploading custom VCL snippets, you can add snippets to the `$MAGENTO_CLOUD_APP_DIR/var/vcl_snippets_custom` directory in your environment. Snippets in this directory upload automatically any time you click *upload VCL to Fastly* in the Admin UI. See [Automated custom VCL snippets deployment](https://github.com/fastly/fastly-magento2/blob/master/Documentation/Guides/CUSTOM-VCL-SNIPPETS.md#automated-custom-vcl-snippets-deployment) in the Fastly CDN module for Magento 2 documentation.
 
 

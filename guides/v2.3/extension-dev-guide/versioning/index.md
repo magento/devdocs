@@ -1,9 +1,6 @@
 ---
 group: php-developer-guide
-subgroup: Versioning
-menu_title: Versioning
-menu_order: 1000
-menu_node: parent
+title: Versioning
 redirect_from:
   - /guides/v2.3/architecture/versioning.html
 ---
@@ -21,10 +18,10 @@ The `version` field in a modules [`composer.json`][composer-json] file specifies
 
 `MAJOR.MINOR.PATCH`
 
-The format follows [Semantic Versioning][semantic-versioning] rules:
+The format follows [Semantic Versioning][semantic-versioning] rules for any `@api` annotated by `code`:
 
 * The MAJOR version increments when incompatible API changes are made.
-* The MINOR version increments when backward-compatible functionality has been added.
+* The MINOR version increments when backward-compatible functionality has been added or if the module's customization points have changed.
 * The PATCH version increments when backward-compatible bug fixes occur.
 
 ### Pre-release versions
@@ -62,7 +59,7 @@ Or it can be used to declare a dependency on a particular version of a component
 }
 ```
 
-{: .bs-callout .bs-callout-info }
+{: .bs-callout-info }
 If Magento is installed from GitHub without using Composer, the `version` is not included. Magento Admin displays the version as `Magento ver. dev-<GitHub-branch-name>`. In addition, Magento modules inside the `require` declaration  list a version of `*`. For example, `"magento/framework": "*"`
 
 ## Related Topics
@@ -72,8 +69,6 @@ If Magento is installed from GitHub without using Composer, the `version` is not
 [Codebase changes][codebase-changes] - Information on how changes in a Magento module's codebase affect versions.
 
 [Backward compatible development]({{ page.baseurl }}/contributor-guide/backward-compatible-development/index.html) - Information about MAJOR and MINOR changes and how they impact extension developers.
-
-
 
 [version-dependencies]: {{ page.baseurl }}/extension-dev-guide/versioning/dependencies.html
 [codebase-changes]: {{ page.baseurl }}/extension-dev-guide/versioning/codebase-changes.html

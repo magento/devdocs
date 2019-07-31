@@ -12,7 +12,6 @@ The following topics are included in this guide:
 - [Fork a repository](#fork)
 - [Create a pull request](#pull_request)
 - [Magento Contributor Assistant](#contributor-assist)
-- [Porting code contributions across Magento versions](#porting)
 - [Report an issue](#report)
 - [Help triage issues](#triage)
 - [Labels applied by the Community Engineering Team](#labels)
@@ -86,7 +85,7 @@ To fork a repository on GitHub:
 
 ### Update the fork with the latest changes {#sync}
 
-As community and Magento writers' changes are merged to the repository, your fork becomes outdated and pull requests might result in conflicts. To see if your fork is outdated, open the fork page in GitHub and if a `This branch is NUMBER commits behind magento:2.2-develop.` message is displayed at the top of the page. If so, your fork must be updated.
+As community and Magento writers' changes are merged to the repository, your fork becomes outdated and pull requests might result in conflicts. To see if your fork is outdated, open the fork page in GitHub and if a `This branch is NUMBER commits behind magento:2.3-develop.` message is displayed at the top of the page. If so, your fork must be updated.
 
 There are two ways to update your fork. The typical way is discussed in [GitHub documentation](https://help.github.com/articles/syncing-a-fork){:target="_blank"}. Make sure to update from the correct branch!
 
@@ -96,7 +95,7 @@ You can also use the GitHub interface to update forks, referred to as a *reverse
 
    ```terminal
    There isn’t anything to compare.
-   magento:2.2-develop is up to date with all commits from <your fork>:2.2-develop. Try switching the base for your comparison.
+   magento:2.3-develop is up to date with all commits from <your fork>:2.3-develop. Try switching the base for your comparison.
    ```
 
 1. Click the base link and then click **Create pull request**.
@@ -119,7 +118,7 @@ To create a pull request:
 1. In your repository, click **Pull requests** on the right, and then click **New pull request**.
 
     ![Create a Pull Request]({{ site.baseurl }}/common/images/pr.png)
-1. Ensure that you are creating a PR to the one of following  branches: `magento:2.3-develop` or `magento:2.2-develop`. We accept PRs to these branches only.
+1. Ensure that you are creating a PR to `magento:2.3-develop` branch. We accept PRs to this branch only.
 1. Review the changes, then click **Create pull request**.
 1. Fill out the PR form, and click **Create pull request** again to submit the PR&mdash;that’s it!
 
@@ -145,7 +144,7 @@ When you need to verify an issue or pull request, enter a command to generate an
 @magento give me {$version} instance
 ```
 
-For `version`, the currently supported values are [version tags](https://github.com/magento/magento2/tags) and develop branches starting with 2.2.0 and 2.2-develop.
+For `version`, the currently supported values are [version tags](https://github.com/magento/magento2/tags) and 2.3-develop branch.
 
 **Actions:** The following actions complete for the command:
 
@@ -216,94 +215,6 @@ The command merges the listed related pull requests (`xxx`, `yyy`, `zzz`) into t
 - [Community Maintainers](https://github.com/orgs/magento/teams/open-source-maintainers/members)
 - [Magento EngCom Team](https://github.com/orgs/magento/teams/core-maintainers/members)
 
-
-## Porting code contributions across Magento versions {#porting}
-
-In order to keep consistency between Magento release lines (2.2, 2.3, etc), there are two techniques of code delivery: back-port and/or up-port. Every Magento Contributor, who wants to deliver their solution across all Magento versions, faces the same problem. How do you port fixes easily?
-
-We provide two options to create back-ports and up-ports for your code contributions:
-
-- [Magento Porting Tool](#porting-tool) - Quick and easy method with a few clicks in a Magento tool
-- [Manual porting](#porting-manual) - Manual process requiring a strong understanding of git
-
-{: .bs-callout .bs-callout-info }
-Creating back-ports and up-ports are recommended and a best practice, but not required to contribute code. Anyone can create a back-port and up-port for a merged pull request, however, original pull request authors receive higher priority if there are duplicate ports.
-
-### What are up-ports and back-ports?
-
-As a best practice, we recommend creating back-ports and up-ports for your code contributions.
-
-**Back-ports** (or Backports) contribute your code and fixes to a lower release line. You want to create a back-port if the issue exists in a lower release line. If you fixed an issue in a release line and there is a supported lower version, create a pull request to that lower release line to address the issue. For example, you may have contributed a fix to 2.3 and back-port to 2.2.
-
-**Up-ports** (or Forwardports) contribute your code and fixes to a higher release line. You want to create an up-port if the issue exists in a higher release line. If you have an issue fixed in a non-latest release line, create a pull request to the latest branch in order to address that issue in an upcoming minor release. For example, you may have contributed a fix to 2.2 and up-port to 2.3. We recommend contributors create an up-port for every pull request delivered to a lower release line.
-
-### Magento Porting Tool {#porting-tool}
-
-This tool ports fixes automatically across versions with a few simple steps. It allows you to create ports only for _merged_ pull requests.
-
-Access the tool at [porting.engcom.dev.magento.com](https://porting.engcom.dev.magento.com/){:target="_blank"}. The first time you visit, you need to login and authorize with GitHub credentials. The tool performs all actions using your token.
-
-1. Visit [porting.engcom.dev.magento.com](https://porting.engcom.dev.magento.com/){:target="_blank"} and **Login with GitHub**.
-2. Copy and paste the pull request URL in **Select Pull Request for porting** and click **Next**.
-3. Select the target version for your port: **Up Port** or **Back Port**.
-4. Verify the summary of changes in **Port information**.
-5. Click **Create Job**. A job is created and started shortly after.
-
-![Magento Porting Tool]({{ site.baseurl }}/common/images/porting-tool-steps.png)
-
-The results of porting include the following:
-
-- Done - Your port has been successfully created.
-- Fail - The patch failed to apply automatically, usually due to merge conflict.
-
-In case of failure, porting artifacts will be available for download and review:
-
-- Log - Includes information on actions and results. Find the reason why the porting job failed.
-- Patch - Use to manually apply the patch and resolve all merge conflicts.
-
-The **Activity Log** provides a tracked list of all ported pull requests and details. You can track the port job status and view results. Refresh and review the list automatically per a selected interval (10 sec, 30 sec, 1 min, 5 min) or manually.
-
-The tool includes configuration settings through the gear icon located top right.
-
-- **Use my fork as target** - When checked, your fork is used to push the result. This is selected by default.
-- **Target options** - If you do not use your fork as a target (not checked), manually specify an organization and repository for ported commits.
-- **Porting strategy** - Sets the git commands and method for committing the code port:
-    - `git am` – Recommended. When selected, authorship and original commit message will be saved. This command is used to port.
-    - `git apply` – A new commit will be created with a default message. GitHub provided patch is applied with `git apply`. **Important**: This is an experimental strategy and results may vary.
-
-![Magento Porting Tool Settings]({{ site.baseurl }}/common/images/porting-tool-setting.png){:width="600px"}
-
-### Manual porting {#porting-manual}
-
-When manually porting, you use git commands to create branches and pull requests. This option may require a strong understanding of git.
-
-The following is an example "Forwardport" (up-port) pull request for https://github.com/magento/magento2/pull/13528 from the `2.2-develop` branch to the `2.3-develop` branch:
-
-1. Checkout the `2.3-develop` branch. Make sure that you have the latest changes from the magento/magento2 repository.
-1. Create a new branch for your fix: `git checkout -b up-port-pull-13528`.
-1. Apply changes from the existing pull request: `curl -L https://github.com/magento/magento2/pull/13528.patch | git am`.
-1. Push changes to your repository: `git push origin up-port-pull-13528:up-port-pull-13528`.
-1. Create a pull request from `<your-fork>:up-port-pull-13528` to `magento:2.3-develop`.
-1. In the up-port pull request description, add the full path to the original pull request (for example: https://github.com/magento/magento2/pull/13528) to help the Magento team link these pull requests.
-
-The following git commands detail how to up-port to `2.3-develop` branch from `2.2-develop` branch:
-
-```
-git checkout 2.3-develop
-git checkout -b up-port-pull-<PR_NUMBER>
-curl -L https://github.com/magento/magento2/pull/<PR_NUMBER>.patch | git am
-git push origin up-port-pull-<PR_NUMBER>:up-port-pull-<PR_NUMBER>
-```
-
-The following git commands detail how to back-port to `2.2-develop` branch from `2.3-develop` branch:
-
-```
-git checkout 2.2-develop
-git checkout -b back-port-pull-<PR_NUMBER>
-curl -L https://github.com/magento/magento2/pull/<PR_NUMBER>.patch | git am
-git push origin back-port-pull-<PR_NUMBER>:back-port-pull-<PR_NUMBER>
-```
-
 ## Report an issue {#report}
 
 If you find a bug in Magento 2 code, you can report it by creating an issue in the Magento 2 repository.
@@ -313,7 +224,6 @@ Before creating an issue:
 1. Read the [issue reporting guidelines](https://github.com/magento/magento2/wiki/Issue-reporting-guidelines) to learn how to create an issue that can be processed in a timely manner.
 1. Check the [documentation]({{site.baseurl}}/) to make sure the behavior you are reporting is really a bug, not a feature.
 1. Check the [existing issues](https://github.com/magento/magento2/issues){:target="_blank"} to make sure you are not duplicating somebody's work.
-
 
 To add an issue:
 

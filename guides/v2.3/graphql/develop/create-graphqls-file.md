@@ -127,8 +127,14 @@ Define cachable queries in the following manner:
 
 The `cacheIdentity` value points to the [class]({{page.baseurl}}/graphql/develop/identity-class.html) responsible for retrieving cache tags.
 
-Queries that explicitly cannot be cached are designated with the `@cache(cacheable: false)` directive.
+A query without a `cacheIdentity` will not be cached.
+
+To disable caching for queries declared in another module with a `cacheIdentity` class, the `@cache(cacheable: false)` directive can be used.
+This `cacheable` argument is intended to disable caching for queries that are defined in another module.
 
 `@cache(cacheable: false)`
+
+Specifying `@cache(cacheable: false)` or `@cache(cacheable: true)` on a query without a `cacheIdentity` class has no effect: the query will not be cached.
+If a query should **not** be cached, do not specify the `@cache` directive. Specifying `@cache(cacheable: false)`  is superfluous when no `cacheIdentity` is present.
 
 See [Create a cache type]({{page.baseurl}}/extension-dev-guide/cache/partial-caching/create-cache-type.html) for information about enabling caching for custom modules.

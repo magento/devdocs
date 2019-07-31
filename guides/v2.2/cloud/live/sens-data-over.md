@@ -166,7 +166,7 @@ Push the `config.php` file to Git. To push this file to the `master` Git branch,
 
 When you add the `config.php` file to Git, all build and deploy processes move static content deployment (SCD) to the _build_ phase. The method for the deployment uses the scope. The default option is [`quick`]({{ site.baseurl }}/guides/v2.2/config-guide/cli/config-cli-subcommands-static-deploy-strategies.html#static-file-quick). You can change the strategy by setting an environment variable for [`SCD_STRATEGY`]({{ site.baseurl }}/guides/v2.2/cloud/env/variables-deploy.html).
 
-{: .bs-callout .bs-callout-info}
+{: .bs-callout-info }
 Once you add this file to your code, you should not delete it. If you need to remove or edit settings, you must manually edit the file to make changes.
 
 ### Step 3 & 4: Push Git branch to Staging and Production {#push-git}

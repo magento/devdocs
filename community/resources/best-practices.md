@@ -14,7 +14,7 @@ Topics and areas include:
 * And much more
 
 {:.bs-callout .bs-callout-info}
-**Note:** Magento does not officially endorse these best practices. 
+Magento does not officially endorse these best practices. 
 They are available in DevDocs because the content has been well received within the Magento community.
 
 ## Magento approved best practices
