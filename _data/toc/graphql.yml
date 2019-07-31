@@ -195,6 +195,9 @@ pages:
 
         - label: Authorize.Net
           url: /graphql/payment-methods/authorize-net.html
+
+        - label: PayPal Express Checkout
+          url: /graphql/payment-methods/paypal-express-checkout.html
           
         - label: PayPal Payflow Link
           url: /graphql/payment-methods/payflow-link.html
