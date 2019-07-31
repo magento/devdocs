@@ -53,11 +53,18 @@ Attribute | Type | Description
 --- | --- | ---
 `url` | String | The requested URL
 
-## Output attributes {#HttpQueryParameter}
+## Output attributes
 
-The `HttpQueryParameter` object provides details about target path parameters.
+The `EntityUrl` output object contains the `id`, `relative_url`, and `type` attributes.
 
-Attribute | Type | Description
+Attribute |  Data Type | Description
 --- | --- | ---
-`name` | String | The parameter name, such as `id`
-`value` | String | The value assigned to the parameter
+`canonical_url` | String | Deprecated. Use `relative_url` instead.
+`id` | Int | The ID assigned to the object associated with the specified `url`. This could be a product ID, category ID, or page ID.
+`relative_url` | String | The internal relative URL. If the specified  `url` is a redirect, the query returns the redirected URL, not the original.
+`type` | UrlRewriteEntityTypeEnum | The value of `UrlRewriteEntityTypeEnum` is one of PRODUCT, CATEGORY, or CMS_PAGE.
+`url` | String | The URL to resolve. Magento stores product and category URLs with the `.html` extension.  CMS URLs do not contain the extension.
+
+## Related topics
+
+[Products endpoint]({{page.baseurl}}/graphql/reference/products.html)
