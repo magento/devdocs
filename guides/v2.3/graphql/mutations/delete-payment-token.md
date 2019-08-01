@@ -3,7 +3,7 @@ group: graphql
 title: deletePaymentToken mutation
 ---
 
-The `deletePaymentToken` mutation deletes a payment token from the system. Use the [customerPaymentTokens query](({{page.baseurl}}/graphql/queries/customer-payment-tokens.html)) to retrieve all stored payment methods associated with a particular customer.
+The `deletePaymentToken` mutation deletes a payment token from the system. Use the [customerPaymentTokens query]({{page.baseurl}}/graphql/queries/customer-payment-tokens.html) to retrieve all stored payment methods associated with a particular customer.
 
 {:.bs-callout .bs-callout-info}
 You must specify the customer's authorization token in the header of the call.
@@ -71,8 +71,6 @@ Attribute | Data Type | Description
 --- | --- | ---
 `customerPaymentTokens` | `CustomerPaymentTokens` | Contains an array of customer payment tokens
 `result` | Boolean | A value of `true` indicates the request was successful
-
-### CustomerPaymentTokens
 
 {% include graphql/customer-payment-tokens.md %}
 
