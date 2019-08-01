@@ -7,10 +7,10 @@ The PayPal Express Checkout payment method enables customers to pay by credit ca
 
 The merchant can use PayPal Express Checkout as a standalone option, or combine it with one of these other PayPal payment solutions:
 
-* PayPal Payflow Link
-* PayPal Payment Standard
-* Website Payments Standard (Australia only)
-* Website Payments Standard (United Kingdom only)
+- PayPal Payflow Link
+- PayPal Payment Standard
+- Website Payments Standard (Australia only)
+- Website Payments Standard (United Kingdom only)
 
 When these other payment solutions are combined with PayPal Express Checkout, they use the same workflow as PayPal Express Checkout. From the GraphQL perspective, the only difference is the payment method `code` specified in the `setPaymentMethodOnCart` mutation.
 

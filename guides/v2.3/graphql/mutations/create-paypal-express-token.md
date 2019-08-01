@@ -69,19 +69,19 @@ Attribute |  Data Type | Description
 `cart_id` | String! | The unique ID that identifies the customer's cart
 `code` | String! | Payment method code
 `express_button` | Boolean | Indicates whether the buyer selected the PayPal Express Checkout button. The default value is `false`
-`urls` | [`PaypalExpressUrlsInput!`](#PaypalExpressUrlsInput)! | Defines a set of URLs to redirect to in response to the token request
+`urls` | [`PaypalExpressUrlsInput!`](#PaypalExpressUrlsInput)! | A set of relative URLs that PayPal will use in response to various actions during the authorization process.
 `use_paypal_credit` | Boolean | Indicates whether the buyer clicked the Paypal credit button. The default value is `false`
 
 ### PaypalExpressUrlsInput {#PaypalExpressUrlsInput}
 
-The `PaypalExpressUrlsInput` object contains a set of URLs that PayPal uses to respond to a token request.
+The `PaypalExpressUrlsInput` object contains a set of relative URLs that PayPal will use in response to various actions during the authorization process. Magento prepends the base URL to this value to create a full URL. For example, if the full URL is `https://www.example.com/path/to/page.html`, the relative URL is `path/to/page.html`. Use this input for Express Checkout and Payments Standard payment methods.
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`cancel_url` | String! | The redirect URL when the buyer cancels the transaction. This should be the page on your website where the buyer initially chose PayPal as the payment type
-`pending_url` | String! | The URL to redirect for a pending transactions. Not applicable to most PayPal solutions
-`return_url` | String! | The URL of the final review page on your website where the buyer confirms the order and payment
-`success_url` | String! | The URL to redirect upon success. Not applicable to most PayPal solutions
+`cancel_url` | String! | The relative URL of the page that PayPal will redirect to when the buyer cancels the transaction in order to choose a different payment method. If the full URL to this page is `https://www.example.com/paypal/action/cancel.html`, the relative URL is `paypal/action/cancel.html`.
+`pending_url` | String! | The relative URL of the page that PayPal will redirect to when the payment has been put on hold for additional review. This condition mostly applies to ACH transactions, and is not applicable to most PayPal solutions. If the full URL to this page is `https://www.example.com/paypal/action/success_pending.html`, the relative URL is `paypal/action/success_pending.html`.
+`return_url` | String! | The relative URL of the final confirmation page that PayPal will redirect to upon payment success. If the full URL is `https://www.example.com/paypal/action/success_review.html`, the relative URL is `paypal/action/success_review.html`.
+`success_url` | String! | The relative URL of the order confirmation page that PayPal will redirect to when the payment is successful and additional confirmation is not needed. Not applicable to most PayPal solutions. If the full URL to this page is `https://www.example.com/paypal/action/success.html`, the relative URL is `paypal/action/success.html`.
 
 ## Output attributes
 

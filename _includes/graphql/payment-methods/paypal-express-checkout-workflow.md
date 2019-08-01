@@ -1,4 +1,4 @@
-1. Send a token request. When the buyer clicks a PayPal button, the frontend executes the [`createPaypalExpressToken`]({{page.baseurl}}/mutations/create-paypal-express-token.html) mutation.
+1. When the buyer clicks a PayPal button, the frontend executes the [`createPaypalExpressToken`]({{page.baseurl}}/mutations/create-paypal-express-token.html) mutation.
 
 1. Magento requests a secure token from PayPal. Magento gathers information in the specified cart and sends this information to PayPal as part of a request for a secure token.
 
@@ -16,7 +16,7 @@
 
 1. Place the order with the [`placeOrder`]({{page.baseurl}}/reference/quote-place-order.html) mutation.
 
-1. Magento sends the secure token, payer ID, and updated cart to PayPal.
+1. Magento sends the secure token, payer ID, and final cart information to PayPal.
 
 1. PayPal captures the payment by transferring the funds from the customer account to the appropriate merchant account.
 
