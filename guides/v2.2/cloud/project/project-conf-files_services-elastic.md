@@ -43,6 +43,18 @@ functional_areas:
 
 1. [Verify the relationships]({{page.baseurl}}/cloud/project/project-conf-files_services.html#service-relationships) and configure Elasticsearch in the Admin UI.
 
+1. Reindex the Catalog Search index.
+
+    ```bash
+    bin/magento indexer:reindex catalogsearch_fulltext
+    ```
+
+1. Clean the cache.
+
+    ```bash
+    bin/magento cache:clean
+    ```
+
 ### Add Elasticsearch plugins
 
 Optionally, you can add plugins with the `.magento/services.yaml` file. For example, to enable the ICU analysis plugin and Python script support plugin, add the `configuration:plugins` section with the listed plugin codes:
