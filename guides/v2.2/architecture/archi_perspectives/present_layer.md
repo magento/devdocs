@@ -78,4 +78,4 @@ Presentation layer components make calls to the service layer, which in turn sen
 <!-- Link definitions -->
 [Frontend Developer Guide]: {{page.baseurl}}/frontend-dev-guide/bk-frontend-dev-guide.html
 [Magento PWA]: http://pwastudio.io
-[PWA Studio docs]: https://magento-research.github.io/pwa-studio/
+[PWA Studio docs]: http://pwastudio.io
