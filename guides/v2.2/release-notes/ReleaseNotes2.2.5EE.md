@@ -20,7 +20,7 @@ Look for the following highlights in this release:
 
 * Enhancements that help close stored XSS, SQL injection, and cross-site request forgery (CSRF) vulnerabilities. See [Magento Security Center](https://magento.com/security/patches/magento-2.2.5-and-2.1.14-security-update) for more information.
 
-* Resolution of issues that customers were experiencing when upgrading to Magento 2.2.4 in deployments that span multiple websites. Magento multi-store installations were not using the store view-specific values from the store configuration settings if these settings differed from the global default configuration settings. Instead, Magento used the default configuration for all store views. See  [GitHub-15205](https://github.com/magento/magento2/issues/15205) and [GitHub-15245](https://github.com/magento/magento2/issues/15245) for more detailed discussions of the problems some customers encountered. *Fix submitted by [Francesco Marangi](https://github.com/fmarangi) in pull request 15929*. 
+* Resolution of issues that customers were experiencing when upgrading to Magento 2.2.4 in deployments that span multiple websites. Magento multi-store installations were not using the store view-specific values from the store configuration settings if these settings differed from the global default configuration settings. Instead, Magento used the default configuration for all store views. See  [GitHub-15205](https://github.com/magento/magento2/issues/15205) and [GitHub-15245](https://github.com/magento/magento2/issues/15245) for more detailed discussions of the problems some customers encountered. *Fix submitted by Francesco Marangi in pull request 15929*. 
 
 * Substantial improvements to indexing performance. 
 
@@ -74,7 +74,7 @@ In addition to security enhancements, this release contains the following functi
 
 ### Installation, setup, and deployment
 
-<!-- MAGETWO-88237 -->* Magento no longer permits you to re-run an already running cron job. *Fix submitted by [Paavo Pokkinen](https://github.com/paveq) in pull request 12497*. [GitHub-10650](https://github.com/magento/magento2/issues/10650)
+<!-- MAGETWO-88237 -->* Magento no longer permits you to re-run an already running cron job. *Fix submitted by Paavo Pokkinen in pull request 12497*. [GitHub-10650](https://github.com/magento/magento2/issues/10650)
 
 ### Bundle products
 
@@ -86,7 +86,7 @@ In addition to security enhancements, this release contains the following functi
 
 <!--- MAGETWO-88808 -->* Merchants can now run the catalog search full text indexer and category product indexer in parallel mode by store view.
 
-<!--- MAGETWO-88107 -->* The `Category\Collection::joinUrlRewrite` method now returns the URL of the store  whose `storeId` is set on the collection. Previously, this method returned the name of the default store. *Fix submitted by [Alessandro Pagnin](https://github.com/alepane21) in pull request 13716*. [GitHub-13704](https://github.com/magento/magento2/issues/13704)
+<!--- MAGETWO-88107 -->* The `Category\Collection::joinUrlRewrite` method now returns the URL of the store  whose `storeId` is set on the collection. Previously, this method returned the name of the default store. *Fix submitted by Alessandro Pagnin in pull request 13716*. [GitHub-13704](https://github.com/magento/magento2/issues/13704)
 
 <!--- MAGETWO-81957 -->* Sorting products by price now applies catalog rules as expected. 
 
@@ -106,7 +106,7 @@ In addition to security enhancements, this release contains the following functi
 
 <!--- MAGETWO-88925 -->* Magento now displays the correct  status for a backordered configurable product on the order view page. 
 
-<!--- MAGETWO-86661 -->* Magento now displays the correct image for a configurable product on the wishlist. Previously, Magento displayed the image for the parent product rather than for the selected variant. *Fix submitted by [Roman K.](https://github.com/RomaKis) in pull request 1031*. [GitHub-8168](https://github.com/magento/magento2/issues/8168)
+<!--- MAGETWO-86661 -->* Magento now displays the correct image for a configurable product on the wishlist. Previously, Magento displayed the image for the parent product rather than for the selected variant. *Fix submitted by Roman K. in pull request 1031*. [GitHub-8168](https://github.com/magento/magento2/issues/8168)
 
 <!--- MAGETWO-87570 -->* The **Hide from Product Page** option now works for the child product of a configurable product. 
 
@@ -118,7 +118,7 @@ In addition to security enhancements, this release contains the following functi
 
 ### General
 
-<!--- MAGETWO-85296 -->* The product repository now uses `store_id` (if set)  when saving attributes for an existing product. Previously, Magento always saved attribute values for an existing product at the default store level. *Fix submitted by [p-bystritsky](https://github.com/p-bystritsky) in pull request 967*. [GitHub-7720](https://github.com/magento/magento2/issues/7720), [GitHub-12395](https://github.com/magento/magento2/issues/12395), [GitHub-12186](https://github.com/magento/magento2/issues/12186)
+<!--- MAGETWO-85296 -->* The product repository now uses `store_id` (if set)  when saving attributes for an existing product. Previously, Magento always saved attribute values for an existing product at the default store level. *Fix submitted by p-bystritsky in pull request 967*. [GitHub-7720](https://github.com/magento/magento2/issues/7720), [GitHub-12395](https://github.com/magento/magento2/issues/12395), [GitHub-12186](https://github.com/magento/magento2/issues/12186)
 
 <!--- MAGETWO-82417 -->* The placement of Google Tag Manager code now follows the guidelines in the [Google Tag Manager Developer Guide](https://developers.google.com/tag-manager/devguide). (Previously, the Google Tag Manager code was inserted before the `dataLayer` variable was defined.)
 
@@ -140,9 +140,9 @@ In addition to security enhancements, this release contains the following functi
 
 ### Orders
 
-<!--- MAGETWO-87197 -->* Magento now filters recent orders by store on the customer account page  as expected. *Fix submitted by [Alexander Shkurko](https://github.com/Coderimus) in pull request 13257*. 
+<!--- MAGETWO-87197 -->* Magento now filters recent orders by store on the customer account page  as expected. *Fix submitted by Alexander Shkurko in pull request 13257*. 
 
-<!--- MAGETWO-86399 -->* The performance and logic of `Magento\Sales\Helper\Guest` has been improved. *Fix submitted by [Alexander Shkurko](https://github.com/Coderimus) in pull request 12893*. 
+<!--- MAGETWO-86399 -->* The performance and logic of `Magento\Sales\Helper\Guest` has been improved. *Fix submitted by Alexander Shkurko in pull request 12893*. 
 
 ### Payment methods
 
@@ -150,7 +150,7 @@ In addition to security enhancements, this release contains the following functi
 
 ### Performance
 
-<!--- MAGETWO-86745 -->* We've removed the `count()` method from the condition section for some loops in a small subset of backend files. When this method is used in a loop condition,  it will be executed at every iteration, which can degrade performance. *Fix submitted by [Alexander Shkurko](https://github.com/Coderimus) in pull request 13173*. 
+<!--- MAGETWO-86745 -->* We've removed the `count()` method from the condition section for some loops in a small subset of backend files. When this method is used in a loop condition,  it will be executed at every iteration, which can degrade performance. *Fix submitted by Alexander Shkurko in pull request 13173*. 
 
 ### Search
 
@@ -163,7 +163,7 @@ In addition to security enhancements, this release contains the following functi
 {: .bs-callout-info }
 You can find Magento Shipping-specific release notes in [Magento Shipping Release Notes]({{page.baseurl}}/release-notes/ReleaseNotesMagentoShipping2.2.x.html).
 
-<!--- MAGETWO-84257 -->* Merchants can now choose whether to request and include tax information from UPS in the rate charged to the customer during checkout.  (This permits merchants  to pass on the tax costs to their customer as part of the overall shipping rate.) *Fix submitted by [gwharton](https://github.com/gwharton) in pull request 11707*. 
+<!--- MAGETWO-84257 -->* Merchants can now choose whether to request and include tax information from UPS in the rate charged to the customer during checkout.  (This permits merchants  to pass on the tax costs to their customer as part of the overall shipping rate.) *Fix submitted by gwharton in pull request 11707*. 
 
 ### Staging
 
@@ -177,7 +177,7 @@ You can find Magento Shipping-specific release notes in [Magento Shipping Releas
 
 ### Swatches
 
-<!--- MAGETWO-86332 -->*  You can now use JavaScript mixins to extend swatch functionality in all supported browsers. *Fix submitted by [Renon Stewart](https://github.com/srenon) in pull request 12929*. [GitHub-10559](https://github.com/magento/magento2/issues/10559)
+<!--- MAGETWO-86332 -->*  You can now use JavaScript mixins to extend swatch functionality in all supported browsers. *Fix submitted by Renon Stewart in pull request 12929*. [GitHub-10559](https://github.com/magento/magento2/issues/10559)
 
 ### Testing
 
@@ -185,7 +185,7 @@ You can find Magento Shipping-specific release notes in [Magento Shipping Releas
 
 <!--- MAGETWO-87487 -->* The `phpunit.xml` configuration file is now blacklisted during schema validation static tests (particularly `Magento/Test/Integrity/Xml/SchemaTest.php`). 
 
-<!--- MAGETWO-81742 MAGETWO-89250 -->* The `\Magento\Test\Php\LiveCodeTest::testCodeStyle`  method now uses whitelist files. *Fix submitted by [Adrian Martinez](https://github.com/adrian-martinez-interactiv4) in pull request 11376*. [GitHub-10559](https://github.com/magento/magento2/issues/10559)
+<!--- MAGETWO-81742 MAGETWO-89250 -->* The `\Magento\Test\Php\LiveCodeTest::testCodeStyle`  method now uses whitelist files. *Fix submitted by Adrian Martinez in pull request 11376*. [GitHub-10559](https://github.com/magento/magento2/issues/10559)
 
 ### URL rewrites
 
@@ -575,7 +575,7 @@ The following table identifies contributions from our community members. This ta
 <tr>
     <td><a target="_blank" href="https://github.com/magento/magento2/pull/14303">14303</a></td>
     <td><a href="https://github.com/magento/magento2/issues/13992" target="_blank">13992</a></td>
-    <td><a target="_blank" href="https://github.com/cream-julian">cream-julian</a></td>
+    <td>cream-julian</td>
   </tr>
 
 <tr>
@@ -695,7 +695,7 @@ The following table identifies contributions from our community members. This ta
 <tr>
     <td><a target="_blank" href="https://github.com/magento/magento2/pull/14293">14293</a></td>
     <td><a href="https://github.com/magento/magento2/issues/8837" target="_blank">8837</a></td>
-    <td><a target="_blank" href="https://github.com/KravetsAndriy">Andriy Kravets</a></td>
+    <td>Andriy Kravets</td>
   </tr>
 <tr>
     <td><a target="_blank" href="https://github.com/magento/magento2/pull/14439">14439</a></td>
@@ -724,7 +724,7 @@ The following table identifies contributions from our community members. This ta
 <tr>
     <td><a target="_blank" href="https://github.com/magento/magento2/pull/14466">14466</a></td>
     <td>N/A</td>
-    <td><a target="_blank" href="https://github.com/NamrataChangani">NamrataChangani</a></td>
+    <td>NamrataChangani</td>
   </tr>
 
 <tr>
@@ -776,7 +776,7 @@ The following table identifies contributions from our community members. This ta
   </tr>
 
 <tr>
-    <td><a target="_blank" href="https://github.com/magento/magento2ce/pull/14176">14176</a></td>
+    <td>magento/magento2ce/pull/14176</td>
     <td><a href="https://github.com/magento/magento2/issues/14049" target="_blank">14049</a></td>
     <td><a target="_blank" href="https://github.com/joost-florijn-kega">joost-florijn-kega</a></td>
   </tr>
