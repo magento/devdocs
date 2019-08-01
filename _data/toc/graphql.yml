@@ -65,6 +65,9 @@ pages:
         - label: customerOrders query
           url: /graphql/queries/customer-orders.html
 
+        - label: customerPaymentTokens query
+          url: /graphql/queries/customer-payment-tokens.html
+
         - label: storeConfig query
           url: /graphql/queries/store-config.html
 
@@ -75,6 +78,9 @@ pages:
       children:
         - label: applyStoreCreditToCart mutation
           url: /graphql/mutations/apply-store-credit.html
+
+        - label: deletePaymentToken mutation
+          url: /graphql/mutations/delete-payment-token.html
 
         - label: removeStoreCreditFromCart mutation
           url: /graphql/mutations/remove-store-credit.html
@@ -183,9 +189,6 @@ pages:
 
             - label: redeemGiftCardBalanceAsStoreCredit mutation
               url: /graphql/reference/redeem-giftcard-balance.html
-
-            - label: Vault endpoint
-              url: /graphql/reference/vault.html
 
             - label: Wishlist endpoint
               url: /graphql/reference/wishlist.html
