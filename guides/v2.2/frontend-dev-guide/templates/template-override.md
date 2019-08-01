@@ -78,6 +78,12 @@ is the same as writing
 <?php echo $block->getAdjustmentsHtml() ?>
 ```
 
+## Display CMS Static Block in any template PHTML files.
+
+```phtml
+<?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('block_identifier')->toHtml(); ?> 
+```
+
 ## Related reading
 
 [Set a block's template]({{ page.baseurl }}/frontend-dev-guide/layouts/xml-manage.html#set_template)
