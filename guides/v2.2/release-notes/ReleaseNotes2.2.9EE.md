@@ -410,7 +410,7 @@ In addition to security enhancements, this release contains the following functi
 <!-- ENGCOM-4660 -->
 * `crontab` now updates all currency rates daily as expected. Previously, `crontab` updated only a subset of the enabled currencies. *Fix submitted by Denis Papec in pull request [18980](https://github.com/magento/magento2/pull/18980)*. [GitHub-18580](https://github.com/magento/magento2/issues/18580)
 
-  See [Configure the lock provider]({{ page.baseurl }}/install-gde/install/cli/Install-cli-subcommands-lock.html).
+  See [Configure the lock provider]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-lock.html).
 
 
 ### Customer custom attributes

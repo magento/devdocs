@@ -372,7 +372,7 @@ In addition to security enhancements, this release contains the following functi
 
 	* `--lock-file-path=LOCK-FILE-PATH` The path where file locks will be saved.
 
-	See [Configure the lock provider]({{ page.baseurl }}/install-gde/install/cli/Install-cli-subcommands-lock.html).
+	See [Configure the lock provider]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-lock.html).
 
 
 <!-- ENGCOM-4660 -->

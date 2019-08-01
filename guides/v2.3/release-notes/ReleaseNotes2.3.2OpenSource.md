@@ -423,7 +423,7 @@ has been changed to `<argument name="resourceStockItem" xsi:type="object">Magent
 
 	* `--lock-file-path=LOCK-FILE-PATH`—The path where file locks will be saved.
 
-	See [Install]({{ page.baseurl }}/install-gde/install/cli/Install-cli-subcommands-lock.html).
+	See [Install]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-lock.html).
 
 
 ### Customers
