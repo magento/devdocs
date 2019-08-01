@@ -14,7 +14,7 @@ Magento collects data and sends this information to the MBI for analytics.
 2. The domain must have a valid security (SSL) certificate.
 3. Magento must have been installed or upgraded successfully without error.
 4. In the Magento configuration, the [Base URL (Secure) setting][base url]{:target="_blank"} for the store view must point to the secure URL. For example https://yourdomain.com.
-5. In the Magento configuration, **Use Secure URLs on Storefront**, **and Use Secure URLs in Admin** must be [set to **Yes**]{:target="_blank"}.
+5. In the Magento configuration, **Use Secure URLs on Storefront**, **and Use Secure URLs in Admin** must be set to **Yes**.
 6. Make sure that [Magento crontab]{:target="_blank"} is created and cron jobs are running on the installed server.
 
 
@@ -47,4 +47,3 @@ Though the Analytics module provides API, it is used specifically to interchange
 [base url]: http://docs.magento.com/m2/ce/user_guide/stores/store-urls.html
 [Magento Business Intelligence]: https://magento.com/products/business-intelligence
 [Magento crontab]: {{ site.baseurl }}/guides/v2.2/config-guide/cli/config-cli-subcommands-cron.html
-[set to **Yes**]: http://docs.magento.com/m2/ce/user_guide/Resources/Images/config-general-web-base-urls-secure.png

@@ -363,7 +363,7 @@ To use the `editForm` block from the Magento_NewModule, we must follow:
 
 ```
 
-**Step 3.** Add blocks that you want to [redirect](https://glossary.magento.com/redirect).
+**Step 3.** Add blocks that you want to redirect.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
