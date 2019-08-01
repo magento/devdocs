@@ -294,6 +294,6 @@ Avoid this situation by not including dependencies in your uninstall event class
 [`ModuleDataSetupInterface`]: {{ site.mage2bloburl }}/{{page.guide_version}}/lib/internal/Magento/Framework/Setup/ModuleDataSetupInterface.php
 [Customer module's InstallData.php]: {{ site.mage2bloburl }}/{{page.guide_version}}/app/code/Magento/Customer/Setup/InstallData.php
 [`ModuleContextInterface`]: {{ site.mage2bloburl }}/{{page.guide_version}}/lib/internal/Magento/Framework/Setup/ModuleContextInterface.php
-[User module's UpgradeData.php]: {{ site.mage2bloburl }}/{{page.guide_version}}/app/code/Magento/User/Setup/UpgradeData.php
+[User module's UpgradeData.php]: {{ site.mage2bloburl }}/2.2/app/code/Magento/User/Setup/UpgradeData.php
 [Component Manager]: {{ page.baseurl }}/comp-mgr/module-man/compman-uninst-final.html
 [`UninstallInterface`]: {{ site.mage2bloburl }}/{{page.guide_version}}/lib/internal/Magento/Framework/Setup/UninstallInterface.php

@@ -3,8 +3,6 @@
 # For configuration defaults, refer to: https://github.com/gjtorikian/html-proofer/blob/master/lib/html-proofer/configuration.rb
 #
 html-proofer:
-  # Do not check external links.
-  :disable_external: true
 
   # Report only errors that fall within the 4xx status code range.
   :only_4xx: true
@@ -20,8 +18,9 @@ html-proofer:
     :in_processes: 3
 
   # Ignore entirely the files which pathname matches a specified pattern 
-  # :file_ignore:
-  # - guides/v2.0
+  :file_ignore:
+  - !ruby/regexp /page-builder/
+  - !ruby/regexp /mrg/
 
   # Ignore any link that includes a specified pattern
   # :url_ignore:

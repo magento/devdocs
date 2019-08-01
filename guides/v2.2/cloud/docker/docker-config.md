@@ -62,7 +62,7 @@ For example, the following command starts the Docker configuration generator for
     -  [Docker](https://www.docker.com/get-started)
     -  File synchronization required for developer mode—use one of the following:
        -  [docker-sync](https://docker-sync.readthedocs.io/en/latest/getting-started/installation.html)
-       -  [mutagen](https://mutagen.io/documentation/installation/#installation)
+       -  [mutagen](https://mutagen.io/documentation/introduction/installation)
 
 1.  Update the hosts file.
 

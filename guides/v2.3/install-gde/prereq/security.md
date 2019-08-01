@@ -53,7 +53,7 @@ To enable Apache to initiate a connection to another host with SELinux enabled:
 Depending on your security requirements, you might find it necessary to open port 80 and other ports in your firewall. Because of the sensitive nature of networking security, Magento strongly recommends you consult with your IT department before proceeding. Following are some suggested references:
 
 *	Ubuntu: [Ubuntu documentation page](https://help.ubuntu.com/community/IptablesHowTo)
-*	CentOS: [CentOS how-to](http://wiki.centos.org/HowTos/Network/IPTables) and [CentOS reference page](http://www.centos.org/docs/4/4.5/Security_Guide/s1-firewall-ipt-basic.html).
+*	CentOS: [CentOS how-to](http://wiki.centos.org/HowTos/Network/IPTables).
 
 #### Related topics:
 
