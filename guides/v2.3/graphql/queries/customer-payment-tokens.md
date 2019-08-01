@@ -18,11 +18,11 @@ You must specify the customer's authorization token in the header of the call.
 
 ## Example usage
 
-The following example returns all the current customer's payment tokens.
+The following example returns all the current customer's payment tokens. The `public_hash` output values will be unique to your application.
 
 **Request**
 
-```text
+```graphql
 query {
   customerPaymentTokens {
     items {
@@ -44,13 +44,13 @@ query {
       "items": [
         {
           "details": "{\"type\":\"VI\",\"maskedCC\":\"1111\",\"expirationDate\":\"09\\/2022\"}",
-          "public_hash": "f5816fe2ab7d200c3ff84d42804b65144f9cb0a2401ce1dad1b52d3b3115fd1a",
+          "public_hash": "377c1514e0...",
           "payment_method_code": "braintree",
           "type": "card"
         },
         {
           "details": "{\"type\":\"DI\",\"maskedCC\":\"1117\",\"expirationDate\":\"11\\/2023\"}",
-          "public_hash": "377c1514e0bce7107a9348ddf38bc059b2f1b9e0a8bedf168a98b04807e17ff5",
+          "public_hash": "f5816fe2ab...",
           "payment_method_code": "braintree",
           "type": "card"
         }
