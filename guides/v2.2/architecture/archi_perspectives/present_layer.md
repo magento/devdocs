@@ -28,12 +28,6 @@ Each [theme](https://glossary.magento.com/theme) resides in a unique directory a
 
 For an extensive introduction to theme elements and an overview of how to extend and override the default Magento themes, see the [Frontend Developer Guide][].
 
-## Progressive Web Apps
-
-The Magento Progressive Web App (PWA) Studio project is a set of developer tools that allow you to develop, deploy, and maintain a PWA storefront on top of Magento 2.
-
-You can read more about how PWA works with Magento in the [PWA Studio docs][]
-
 ## View model
 
 Magento generates the [HTML](https://glossary.magento.com/html) for a page to display to a user from a tree of view elements.
@@ -57,13 +51,6 @@ For example, the [Admin](https://glossary.magento.com/admin) UI screens are ofte
 
 The View layer calls code from the Model to get information about the state of the application (for example, the price of a product). Typically, the way it accesses the Model is through service contracts.
 
-## Progressive web apps
-
-Progressive Web Apps (PWA) is a way to present a Magento storefront via a set of React javascript components.
-Using Magento as a headless backend, you can use PWA components to make mobile friendly frontends.
-
-Read more about [Magento PWA][].
-
 ## Presentation layer flow
 
 Web users interact with components of the presentation layer to select actions that initiate calls to the underlying layers.
@@ -77,5 +64,3 @@ Presentation layer components make calls to the service layer, which in turn sen
 
 <!-- Link definitions -->
 [Frontend Developer Guide]: {{page.baseurl}}/frontend-dev-guide/bk-frontend-dev-guide.html
-[Magento PWA]: http://pwastudio.io
-[PWA Studio docs]: http://pwastudio.io
