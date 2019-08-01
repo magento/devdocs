@@ -28,7 +28,6 @@ Attribute |  Description
 `sort` | Specifies which attribute to sort on, and whether to return the results in ascending or descending order. See [Queries]({{ page.baseurl }}/graphql/queries.html) for more information.
 `Products` | An output object that contains the results of the query. See [Response](#Response) for details.
 
-
 ## ProductFilterInput object {#ProductFilterInput}
 
 The `ProductFilterInput` object defines the filters to be used in the search. A filter contains at least one attribute, a comparison operator, and the value that is being searched for. The following example filter searches for products that has a `sku` that contains the string `24-MB` with a `price` that's less than `50`.
@@ -203,8 +202,8 @@ Attribute | Data type | Description
 `upsell_products` | [[ProductInterface](#ProductInterface)] | An array of up-sell products
 `url_key` | String | The part of the URL that identifies the product. This attribute is defined in the `CatalogUrlRewriteGraphQl` module
 `url_path` | String | The part of the URL that precedes the `url_key`. This attribute is defined in the `CatalogUrlRewriteGraphQl` module
-`url_rewrites` | [UrlRewrite] | A list of URL rewrites. See [UrlRewrite endpoint]({{ page.baseurl }}/graphql/reference/url-resolver.html#UrlRewrite) for more information and an example query
-`websites` | [Website] | An array of websites in which the product is available. See [storeConfig]({{ page.baseurl }}/graphql/queries/store-config.html#supported-website-attributes) for more information.
+`url_rewrites` | [UrlRewrite] | A list of URL rewrites. See [UrlRewrite object](#urlRewriteObject) for more information and an [example query](#urlRewriteExample)
+`websites` | [Website] | An array of websites in which the product is available. See [Website object](#websiteObject) for more information and an [example query](#inclWebsiteInfoExample)
 
 ### ProductPrices object {#ProductPrices}
 
@@ -216,7 +215,6 @@ Attribute |  Data Type | Description
 `minimalPrice` | Price | Used for composite (bundle, configurable, grouped) products. This is the lowest possible final price for all the options defined within a composite product. If you're specifying a price range, this would be the "from" value.
 `regularPrice` | Price | The base price of a product.
 
-
 #### Price object {#Price}
 
 The `Price` object defines the price of a product as well as any tax-related adjustments.
@@ -225,7 +223,6 @@ Attribute |  Data Type | Description
 --- | --- | ---
 `amount` | Money | The price of the product and its currency code. See [Money object](#Money).
 `adjustments` | [PriceAdjustment] | An array of [PriceAdjustment](#PriceAdjustment) objects.
-
 
 ##### Money object {#Money}
 
@@ -245,7 +242,6 @@ Attribute |  Data Type | Description
 `amount` | Money | The amount of the price adjustment and its currency code. See [Money object](#Money).
 `code` | PriceAdjustmentCodesEnum | One of `tax`, `weee`, or `weee_tax`.
 `description` | PriceAdjustmentDescriptionEnum | Indicates whether the entity described by the code attribute is included or excluded from the adjustment.
-
 
 #### ProductLinks object {#ProductLinks}
 
@@ -284,7 +280,6 @@ Attribute | Type | Description
 `types` | [String] | Array of image types. It can have the following values: `image`, `small_image`, `thumbnail`
 `video_content` | ProductMediaGalleryEntriesVideoContent | Contains a [ProductMediaGalleryEntriesVideoContent](#ProductMediaGalleryEntriesVideoContent) object
 
-
 #### ProductMediaGalleryEntriesContent object {#ProductMediaGalleryEntriesContent}
 
 `ProductMediaGalleryEntriesContent` contains an image in base64 format and basic information about the image.
@@ -308,7 +303,6 @@ Attribute | Type | Description
 `video_description` | String | A description of the video
 `video_metadata` | String | Optional data about the video
 
-
 ### ProductTierPrices object {#ProductTier}
 
 The `ProductTierPrices` object defines a tier price, which is a quantity discount offered to a specific customer group.
@@ -321,7 +315,6 @@ Attribute | Type | Description
 `value` | Float | The price of the fixed price item
 `website_id` | Int | The ID assigned to the website
 
-
 ## PhysicalProductInterface {#PhysicalProductInterface}
 
 `PhysicalProductInterface`defines the weight of all tangible products.
@@ -329,7 +322,6 @@ Attribute | Type | Description
 Attribute | Type | Description
 --- | --- | ---
 `weight` | Float | The weight of the item, in units defined by the store
-
 
 ## LayerFilter object
 
@@ -361,13 +353,42 @@ Attribute | Type | Description
 `default` | String | The default sort field
 `options` | `SortField` | An array that contains all the fields you can use for sorting
 
-
 ### SortField object
 
 Attribute | Type | Description
 --- | --- | ---
 `label` | String | The attribute's label
 `value` | String | The attribute name or code to use as the sort field
+
+### Website object {#websiteObject}
+
+Use the `Website` attributes to retrieve information about the website's configuration, which includes the website name, website code, and default group ID.
+
+Attribute |  Data Type | Description
+--- | --- | ---
+`code` | String | A code assigned to the website to identify it
+`default_group_id` | String | The default group ID that the website has
+`id` | Integer | The ID number assigned to the store
+`name` | String | The website name. Websites use this name to identify it easier.
+`sort_order` | Integer | The attribute to use for sorting websites
+
+### UrlRewrite object {#urlRewriteObject}
+
+The `products` query can request details about the `UrlRewrite` object.
+
+Attribute | Type | Description
+--- | --- | ---
+`parameters` | [[`HttpQueryParameter`]](#HttpQueryParameter) | An array of target path parameters
+`url` | String | The request URL
+
+### HTTPQueryParameter object {#HttpQueryParameter}
+
+The `HttpQueryParameter` object provides details about target path parameters.
+
+Attribute | Type | Description
+--- | --- | ---
+`name` | String | The parameter name, such as `id`
+`value` | String | The value assigned to the parameter
 
 ## Sample query
 
@@ -395,6 +416,142 @@ The following query returns layered navigation for products that have a `sku` co
         value_string
         items_count
       }
+    }
+  }
+}
+```
+
+### Include website information with `products` query results {#inclWebsiteInfoExample}
+
+The [ProductInterface]({{ page.baseurl }}/graphql/reference/products.html#ProductInterface) can include information about the `Website` object.
+
+**Request**
+
+```graphql
+{
+    products(filter: {sku: {eq: "24-WB04"}})
+    {
+        items{
+            websites {
+              id
+              name
+              code
+              sort_order
+              default_group_id
+              is_default
+            }
+        }
+    }
+}
+```
+
+**Response**
+
+```json
+{
+  "data": {
+    "products": {
+      "items": [
+        {
+          "websites": [
+            {
+              "id": 1,
+              "name": "Main Website",
+              "code": "base",
+              "sort_order": 0,
+              "default_group_id": "1",
+              "is_default": true
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
+```
+
+### Query a URL's rewrite information {#urlRewriteExample}
+
+The following product query returns URL rewrite information about the Joust Duffle Bag.
+
+**Request**
+
+```graphql
+{
+  products(search: "Joust") {
+    items {
+      name
+      sku
+      url_rewrites {
+        url
+        parameters {
+          name
+          value
+        }
+      }
+    }
+  }
+}
+```
+
+**Response**
+
+```json
+{
+  "data": {
+    "products": {
+      "items": [
+        {
+          "name": "Joust Duffle Bag",
+          "sku": "24-MB01",
+          "url_rewrites": [
+            {
+              "url": "no-route",
+              "parameters": [
+                {
+                  "name": "page_id",
+                  "value": "1"
+                }
+              ]
+            },
+            {
+              "url": "joust-duffle-bag.html",
+              "parameters": [
+                {
+                  "name": "id",
+                  "value": "1"
+                }
+              ]
+            },
+            {
+              "url": "gear/joust-duffle-bag.html",
+              "parameters": [
+                {
+                  "name": "id",
+                  "value": "1"
+                },
+                {
+                  "name": "category",
+                  "value": "3"
+                }
+              ]
+            },
+            {
+              "url": "gear/bags/joust-duffle-bag.html",
+              "parameters": [
+                {
+                  "name": "id",
+                  "value": "1"
+                },
+                {
+                  "name": "category",
+                  "value": "4"
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
   }
 }

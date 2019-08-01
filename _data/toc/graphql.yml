@@ -67,6 +67,9 @@ pages:
 
         - label: storeConfig query
           url: /graphql/queries/store-config.html
+
+        - label: urlResolver query
+          url: /graphql/queries/url-resolver.html
         
     - label: Mutations
       children:
@@ -180,9 +183,6 @@ pages:
 
             - label: redeemGiftCardBalanceAsStoreCredit mutation
               url: /graphql/reference/redeem-giftcard-balance.html
-
-            - label: UrlRewrite endpoint
-              url: /graphql/reference/url-resolver.html
 
             - label: Vault endpoint
               url: /graphql/reference/vault.html
