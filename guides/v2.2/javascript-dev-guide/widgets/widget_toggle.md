@@ -7,7 +7,7 @@ contributor_link: https://www.atwix.com/
 
 ## Overview
 
-Use the ToggleAdvanced [widget](https://glossary.magedevteam.com/widget) to toggle the HTML class for selectors by clicking on a toggle element.
+Use the ToggleAdvanced [widget](https://glossary.magento.com/widget/) to toggle the HTML class for selectors by clicking on a toggle element.
 
 The widget also allows toggling a clicked element class and clicked element text if an element is toggled.
 
