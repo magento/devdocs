@@ -19,7 +19,7 @@ The input includes the cart ID, the payment method code, and a set of URLs that 
 
 **Request**
 
-```text
+```graphql
 mutation {
     createPaypalExpressToken(
         input: {
