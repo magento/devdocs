@@ -41,7 +41,7 @@ functional_areas:
 
     For information on how these changes affect your environments, see [Services]({{ page.baseurl }}/cloud/project/project-conf-files_services.html).
 
-1.  [Verify the relationships](#verify-relationships) and configure Elasticsearch in the Admin UI.
+1.  [Verify the relationships]({{page.baseurl}}/cloud/project/project-conf-files_services.html#service-relationships) and configure Elasticsearch in the Admin UI.
 
 ## Elasticsearch plugins
 
@@ -61,30 +61,6 @@ See [Elasticsearch plugin documentation](https://www.elastic.co/guide/en/elastic
 
 {:.bs-callout-info}
 If you use the ElasticSuite third-party plugin, you must [update the `{{site.data.var.ct}}` package]({{page.baseurl}}/cloud/project/ece-tools-update.html) to version 2002.0.19 or later.
-
-## Verify relationships
-
-{{site.data.var.ece}} uses the [MAGENTO_CLOUD_RELATIONSHIPS]({{ page.baseurl }}/cloud/env/variables-cloud.html) variable to retrieve the environment-related relationships. You must use this information when you [configure Elasticsearch through the Magento Admin]({{page.baseurl}}/config-guide/elasticsearch/configure-magento.html).
-
-#### To print the connection information for Elasticsearch:
-
-```bash
-php -r 'print_r(json_decode(base64_decode($_ENV["MAGENTO_CLOUD_RELATIONSHIPS"])));'
-```
-
-The response includes all relationships for services and configuration data for that environment; the Elasticsearch information is similar to the following:
-
-```terminal
-"elasticsearch" : [
-      {
-         "host" : "elasticsearch.internal",
-         "ip" : "250.0.97.96",
-         "scheme" : "http",
-         "port" : "9200"
-      }
-   ],
-```
-{: .no-copy}
 
 {: .bs-callout-warning}
 Staging and Production environments that are in the same cluster share a single Elasticsearch instance, so you must specify a unique Elasticsearch prefix for each of these environments.

@@ -12,7 +12,6 @@ The following topics are included in this guide:
 - [Contribution requirements](#requirements)
 - [Forks and pull requests](#forks-and-pull-requests)
 - [Magento Contributor Assistant](#contributor-assist)
-- [Porting code contributions across Magento versions](#porting)
 - [Report an issue](#report)
 - [Help triage issues](#triage)
 - [Labels applied by the Community Engineering team](#labels)
@@ -99,7 +98,7 @@ When you need to verify an issue or pull request, enter a command to generate an
 @magento give me {$version} instance
 ```
 
-For `version`, the currently supported values are [version tags](https://github.com/magento/magento2/tags) and develop branches starting with 2.2.0 and 2.2-develop.
+For `version`, the currently supported values are [version tags](https://github.com/magento/magento2/tags) and 2.3-develop branch.
 
 **Actions:** The following actions complete for the command:
 
@@ -169,7 +168,6 @@ The command merges the listed related pull requests (`xxx`, `yyy`, `zzz`) into t
 
 - [Community Maintainers](https://github.com/orgs/magento/teams/open-source-maintainers/members)
 - [Magento EngCom Team](https://github.com/orgs/magento/teams/core-maintainers/members)
-
 
 ## Porting code contributions across Magento versions {#porting}
 
