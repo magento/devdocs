@@ -207,7 +207,7 @@ The `{{site.data.var.ct}}` version 2002.0.18 and later supports developer mode.
 
 1.  _Optional_: Configure the Docker global variables in the `docker-compose.yml` file. For example, you can [enable and configure Xdebug]({{ page.baseurl }}/cloud/docker/docker-development-debug.html).
 
-1.  Start the file synchronization (Use one of the following).
+1.  Start the file synchronization (use one of the following).
 
     For the `docker-sync` tool:
 
