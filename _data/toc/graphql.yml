@@ -74,7 +74,7 @@ pages:
         - label: urlResolver query
           url: /graphql/queries/url-resolver.html
 
-        - label: wishlist endpoint
+        - label: wishlist query
           url: /graphql/queries/wishlist.html
         
     - label: Mutations
