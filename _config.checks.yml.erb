@@ -4,6 +4,10 @@
 #
 html-proofer:
 
+<% if ENV['BUILD_NUMBER'] %>	
+  :url_swap: "<%= ENV['BUILD_NUMBER'] %>:''"
+<% end %>
+
   # Do not check external links.	
   :disable_external: false
 
@@ -12,7 +16,7 @@ html-proofer:
 
   # Ignores images with empty alt tags.
   :empty_alt_ignore: true
-
+  
   # Sort errors by description in the report
   :error_sort: :desc
 
@@ -30,7 +34,7 @@ html-proofer:
 
   :internal_domains:
     - devdocs.magento.com
-    - devdocs.magedevteam.com
+    # - devdocs.magedevteam.com
 
   # Ignore any link that includes a specified pattern
   # :url_ignore:
