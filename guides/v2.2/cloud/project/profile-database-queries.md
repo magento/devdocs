@@ -7,9 +7,9 @@ functional_areas:
   - Services
 ---
 
-When making changes to a database, you may find it helpful to run profiling to identify the impact of those changes. Profiling maintains a log of database queries and increases run time precision.
+When making changes to a database, you may find it helpful to run profiling to identify the impact of those changes. Profiling maintains a log of database queries and increases run-time precision.
 
-To enable database query profiling:
+#### To enable database query profiling:
 
 1. [Log in to the database]({{page.baseurl}}/cloud/env/environments-start.html#commands).
 
@@ -37,6 +37,7 @@ To enable database query profiling:
 
 #### Example log
 
+{: .no-copy}
 ```sql
 MariaDB [6fck2obu3244c]> show profiles;
 +----------+------------+---------------------------------------------------------------------------------------------------------------------------------+
