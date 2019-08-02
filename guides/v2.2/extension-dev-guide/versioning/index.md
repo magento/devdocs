@@ -1,6 +1,6 @@
 ---
 group: php-developer-guide
-title: Versioning
+title: Magento versioning schema
 ---
 
 Magento software and Magento module releases have their own unique version number.
