@@ -17,4 +17,4 @@ It uses modern tools and libraries to create a build system and framework that a
 
 For more information, visit the **[Magento PWA Documentation site][]**.
 
-[Magento PWA Documentation site]: http://pwastudio.io
+[Magento PWA Documentation site]: https://magento.github.io/pwa-studio/

@@ -113,7 +113,7 @@
           url: /design-styleguide/bk-styleguide.html
 
         - label: PWA Documentation Site
-          url: http://pwastudio.io
+          url: https://magento.github.io/pwa-studio/
           include_versions: ['2.3']
 
         - label: Page Builder Developer Guide
