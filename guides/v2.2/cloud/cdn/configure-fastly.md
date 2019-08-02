@@ -126,11 +126,11 @@ Fastly caching services do not work until you complete the initial upload of the
 {: .bs-callout-info}
 Before adding [custom](#custom-configuration) or advanced configuration settings like [updating purge settings](#purge) and configuring [Fastly image optimization]({{ page.baseurl }}/cloud/cdn/fastly-image-optimization.html)(Fastly IO), [verify]({{ page.baseurl }}/cloud/cdn/trouble-fastly.html) that the Fastly caching service works with the default configuration.
 
-Configure the following features and enable additional [configuration options](https://github.com/fastly/fastly-magento2/blob/master/Documentation/CONFIGURATION.md#further-configuration-options) as needed:
+Configure the following features as needed:
 
-* [Upload Fastly VCL snippets](#upload-vcl-snippets)
 * [Configure backends and Origin shielding](#backend)
 * [Customize response pages]({{ page.baseurl }}/cloud/cdn/cloud-fastly-custom-response.html)
+* [Enable additional Fastly configuration options](https://github.com/fastly/fastly-magento2/blob/master/Documentation/CONFIGURATION.md#further-configuration-options)
 
 ### Configure backends and Origin shielding {#backend}
 
