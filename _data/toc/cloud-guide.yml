@@ -208,6 +208,9 @@ pages:
       children:
         - label: Application
           url: /cloud/project/project-conf-files_magento-app.html
+          children:
+            - label: Set cache for static files
+              url: /cloud/project/set-cache.html
 
         - label: Build and deploy
           url: /cloud/project/magento-env-yaml.html
