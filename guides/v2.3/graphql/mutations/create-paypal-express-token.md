@@ -27,8 +27,8 @@ mutation {
             code: "paypal_express"
             express_button: true
             urls: {
-                return_url: "http://magento.test/paypal/express/return/"
-                cancel_url: "http://magento.test/paypal/express/cancel/"
+                return_url: "paypal/action/return.html"
+                cancel_url: "paypal/action/cancel.html"
             }
         }
     )
@@ -79,9 +79,9 @@ The `PaypalExpressUrlsInput` object contains a set of relative URLs that PayPal 
 Attribute |  Data Type | Description
 --- | --- | ---
 `cancel_url` | String! | The relative URL of the page that PayPal will redirect to when the buyer cancels the transaction in order to choose a different payment method. If the full URL to this page is `https://www.example.com/paypal/action/cancel.html`, the relative URL is `paypal/action/cancel.html`.
-`pending_url` | String! | The relative URL of the page that PayPal will redirect to when the payment has been put on hold for additional review. This condition mostly applies to ACH transactions, and is not applicable to most PayPal solutions. If the full URL to this page is `https://www.example.com/paypal/action/success_pending.html`, the relative URL is `paypal/action/success_pending.html`.
+`pending_url` | String | The relative URL of the page that PayPal will redirect to when the payment has been put on hold for additional review. This condition mostly applies to ACH transactions, and is not applicable to most PayPal solutions. If the full URL to this page is `https://www.example.com/paypal/action/success_pending.html`, the relative URL is `paypal/action/success_pending.html`.
 `return_url` | String! | The relative URL of the final confirmation page that PayPal will redirect to upon payment success. If the full URL is `https://www.example.com/paypal/action/success_review.html`, the relative URL is `paypal/action/success_review.html`.
-`success_url` | String! | The relative URL of the order confirmation page that PayPal will redirect to when the payment is successful and additional confirmation is not needed. Not applicable to most PayPal solutions. If the full URL to this page is `https://www.example.com/paypal/action/success.html`, the relative URL is `paypal/action/success.html`.
+`success_url` | String | The relative URL of the order confirmation page that PayPal will redirect to when the payment is successful and additional confirmation is not needed. Not applicable to most PayPal solutions. If the full URL to this page is `https://www.example.com/paypal/action/success.html`, the relative URL is `paypal/action/success.html`.
 
 ## Output attributes
 
