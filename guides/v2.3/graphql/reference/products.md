@@ -203,8 +203,8 @@ Attribute | Data type | Description
 `upsell_products` | [[ProductInterface](#ProductInterface)] | An array of up-sell products
 `url_key` | String | The part of the URL that identifies the product. This attribute is defined in the `CatalogUrlRewriteGraphQl` module
 `url_path` | String | The part of the URL that precedes the `url_key`. This attribute is defined in the `CatalogUrlRewriteGraphQl` module
-`url_rewrites` | [UrlRewrite] | A list of URL rewrites. See [UrlRewrite endpoint]({{ page.baseurl }}/graphql/reference/url-resolver.html#UrlRewrite) for more information and an example query
-`websites` | [Website] | An array of websites in which the product is available. See [storeConfig]({{ page.baseurl }}/graphql/queries/store-config.html#supported-website-attributes) for more information.
+`url_rewrites` | [UrlRewrite] | A list of URL rewrites. See [UrlRewrite object](#urlRewriteObject) for more information and an [example query](#urlRewriteExample)
+`websites` | [Website] | An array of websites in which the product is available. See [Website object](#websiteObject) for more information and an [example query](#inclWebsiteInfoExample)
 
 ### ProductPrices object {#ProductPrices}
 
@@ -372,6 +372,36 @@ Attribute | Type | Description
 --- | --- | ---
 `label` | String | The attribute's label
 `value` | String | The attribute name or code to use as the sort field
+
+### Website object {#websiteObject}
+
+Use the `Website` attributes to retrieve information about the website's configuration, which includes the website name, website code, and default group ID.
+
+Attribute |  Data Type | Description
+--- | --- | ---
+`code` | String | A code assigned to the website to identify it
+`default_group_id` | String | The default group ID that the website has
+`id` | Integer | The ID number assigned to the store
+`name` | String | The website name. Websites use this name to identify it easier.
+`sort_order` | Integer | The attribute to use for sorting websites
+
+### UrlRewrite object {#urlRewriteObject}
+
+The `products` query can request details about the `UrlRewrite` object.
+
+Attribute | Type | Description
+--- | --- | ---
+`parameters` | [[`HttpQueryParameter`]](#HttpQueryParameter) | An array of target path parameters
+`url` | String | The request URL
+
+### HTTPQueryParameter object {#HttpQueryParameter}
+
+The `HttpQueryParameter` object provides details about target path parameters.
+
+Attribute | Type | Description
+--- | --- | ---
+`name` | String | The parameter name, such as `id`
+`value` | String | The value assigned to the parameter
 
 ## Sample query
 
