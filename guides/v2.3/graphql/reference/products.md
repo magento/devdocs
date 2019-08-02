@@ -203,7 +203,7 @@ Attribute | Data type | Description
 `upsell_products` | [[ProductInterface](#ProductInterface)] | An array of up-sell products
 `url_key` | String | The part of the URL that identifies the product. This attribute is defined in the `CatalogUrlRewriteGraphQl` module
 `url_path` | String | The part of the URL that precedes the `url_key`. This attribute is defined in the `CatalogUrlRewriteGraphQl` module
-`url_rewrites` | [[UrlRewrite]](#urlRewriteObject) | A list of URL rewrites
+`url_rewrites` | [[UrlRewrite]](#urlRewriteObject) | A list of URL rewrites. See [UrlRewrite object](#urlRewriteObject) for more information and an [example query](#urlRewriteExample)
 `websites` | [Website] | An array of websites in which the product is available. See [Website object](#websiteObject) for more information and an [example query](#inclWebsiteInfoExample)
 
 ### ProductPrices object {#ProductPrices}
@@ -506,6 +506,142 @@ query {
             {
               "url": "http://magento2.vagrant130/pub/media/catalog/product/cache/07660f0f9920886e0f9d3257a9c68f26/m/b/mb01-blue-0.jpg",
               "label": "Image"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
+```
+
+### Include website information with `products` query results {#inclWebsiteInfoExample}
+
+The [ProductInterface]({{ page.baseurl }}/graphql/reference/products.html#ProductInterface) can include information about the `Website` object.
+
+**Request**
+
+```graphql
+{
+    products(filter: {sku: {eq: "24-WB04"}})
+    {
+        items{
+            websites {
+              id
+              name
+              code
+              sort_order
+              default_group_id
+              is_default
+            }
+        }
+    }
+}
+```
+
+**Response**
+
+```json
+{
+  "data": {
+    "products": {
+      "items": [
+        {
+          "websites": [
+            {
+              "id": 1,
+              "name": "Main Website",
+              "code": "base",
+              "sort_order": 0,
+              "default_group_id": "1",
+              "is_default": true
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
+```
+
+### Query a URL's rewrite information {#urlRewriteExample}
+
+The following product query returns URL rewrite information about the Joust Duffle Bag.
+
+**Request**
+
+```graphql
+{
+  products(search: "Joust") {
+    items {
+      name
+      sku
+      url_rewrites {
+        url
+        parameters {
+          name
+          value
+        }
+      }
+    }
+  }
+}
+```
+
+**Response**
+
+```json
+{
+  "data": {
+    "products": {
+      "items": [
+        {
+          "name": "Joust Duffle Bag",
+          "sku": "24-MB01",
+          "url_rewrites": [
+            {
+              "url": "no-route",
+              "parameters": [
+                {
+                  "name": "page_id",
+                  "value": "1"
+                }
+              ]
+            },
+            {
+              "url": "joust-duffle-bag.html",
+              "parameters": [
+                {
+                  "name": "id",
+                  "value": "1"
+                }
+              ]
+            },
+            {
+              "url": "gear/joust-duffle-bag.html",
+              "parameters": [
+                {
+                  "name": "id",
+                  "value": "1"
+                },
+                {
+                  "name": "category",
+                  "value": "3"
+                }
+              ]
+            },
+            {
+              "url": "gear/bags/joust-duffle-bag.html",
+              "parameters": [
+                {
+                  "name": "id",
+                  "value": "1"
+                },
+                {
+                  "name": "category",
+                  "value": "4"
+                }
+              ]
             }
           ]
         }
