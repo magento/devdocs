@@ -369,7 +369,7 @@ entries:
   type: New topic
   date: June 22, 2019
   link: https://github.com/magento/devdocs/pull/4428
-- description: Added the /`isEmailAvailable` query to the GraphQL [customer endpoint](https://devdocs.magento.com/guides/v2.3/graphql/reference/customer.html).
+- description: Added the `isEmailAvailable` query to the GraphQL [customer endpoint](https://devdocs.magento.com/guides/v2.3/graphql/reference/customer.html).
   versions: 2.3.2
   type: Major update
   date: June 22, 2019
