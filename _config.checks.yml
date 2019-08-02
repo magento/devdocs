@@ -4,6 +4,9 @@
 #
 html-proofer:
 
+  # Do not check external links.	
+  :disable_external: true
+
   # Report only errors that fall within the 4xx status code range.
   :only_4xx: true
 
