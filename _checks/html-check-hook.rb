@@ -6,7 +6,6 @@
 #
 require 'html-proofer'
 require 'yaml'
-require 'erb'
 require_relative '../rakelib/lib/double-slash-check.rb'
 
 Jekyll::Hooks.register :site, :post_write do |site|
@@ -18,8 +17,7 @@ Jekyll::Hooks.register :site, :post_write do |site|
     # Check 'url_ignore' in '_config.checks.yml'
     # and add 'excludes' from Jekyll configurtiuon.
     #
-    template = ERB.new File.read '_config.checks.yml.erb'
-    checks_config = YAML.safe_load template.result(binding), permitted_classes: [Symbol, Regexp]
+    checks_config = YAML.load_file('_config.checks.yml')
     url_ignore = checks_config.dig('html-proofer', :url_ignore)
     jekyll_excludes = site.config['exclude']
     jekyll_excludes_as_regex = jekyll_excludes.map { |item| Regexp.new Regexp.escape(item) }

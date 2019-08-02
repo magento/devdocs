@@ -4,10 +4,6 @@
 #
 html-proofer:
 
-<% if ENV['BUILD_NUMBER'] %>
-  :url_swap: "<%= ENV['BUILD_NUMBER'] %>:''"
-<% end %>
-
   # Do not check external links.
   :disable_external: false
 
@@ -34,7 +30,6 @@ html-proofer:
 
   :internal_domains:
     - devdocs.magento.com
-    # - devdocs.magedevteam.com
 
   # Ignore any link that includes a specified pattern
   # :url_ignore:
