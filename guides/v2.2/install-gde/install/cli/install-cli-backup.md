@@ -77,10 +77,10 @@ Code backup path: /var/www/html/magento2/var/backups/1434133011_filesystem.tgz
 [SUCCESS]: Code backup completed successfully.
 DB backup is starting...
 DB backup filename: 1434133011_db.sql
-	DB backup path: /var/www/html/magento2/var/backups/1434133011_db.sql
-	[SUCCESS]: DB backup completed successfully.
-	Disabling maintenance mode
-	```
+DB backup path: /var/www/html/magento2/var/backups/1434133011_db.sql
+[SUCCESS]: DB backup completed successfully.
+Disabling maintenance mode
+```
 
 ## Roll back {#instgde-cli-uninst-roll}
 
