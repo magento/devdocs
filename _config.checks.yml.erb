@@ -4,11 +4,11 @@
 #
 html-proofer:
 
-<% if ENV['BUILD_NUMBER'] %>	
+<% if ENV['BUILD_NUMBER'] %>
   :url_swap: "<%= ENV['BUILD_NUMBER'] %>:''"
 <% end %>
 
-  # Do not check external links.	
+  # Do not check external links.
   :disable_external: false
 
   # Report only errors that fall within the 4xx status code range.
