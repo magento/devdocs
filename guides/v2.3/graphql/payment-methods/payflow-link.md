@@ -34,9 +34,9 @@ mutation {
             code: "payflow_link"
             additional_data: {
                 payflow_link: {
-                  return_url: "https://www.example.com/payflow/test/return"
-                  error_url: "https://www.example.com/payflow/test/error"
-                  cancel_url: "https://www.example.com/payflow/test/cancel"
+                  return_url: "paypal/action/return.html"
+                  error_url: "paypal/action/error.html"
+                  cancel_url: "paypal/action/cancel.html"
                 }
             }
         }
