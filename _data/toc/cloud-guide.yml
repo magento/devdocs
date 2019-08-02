@@ -310,6 +310,9 @@ pages:
         - label: Manage branches with the CLI
           url: /cloud/env/environments-start.html
 
+        - label: Profile database queries
+          url: /cloud/project/profile-database-queries.html
+
         - label: Snapshots and backup management
           url: /cloud/project/project-webint-snap.html
 
