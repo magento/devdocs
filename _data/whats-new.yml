@@ -12,7 +12,7 @@ entries:
   type: Major update
   date: August 2, 2019
   link: https://github.com/magento/devdocs/pull/5091
-- description: Added the `Backward Compatibility` section to the [Magento Definition
+- description: Added the 'Backward Compatibility' section to the [Magento Definition
     of Done](https://devdocs.magento.com/guides/v2.2/contributor-guide/contributing_dod.html).
   versions: 2.3.x
   type: Major update
