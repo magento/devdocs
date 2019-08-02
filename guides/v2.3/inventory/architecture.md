@@ -26,7 +26,7 @@ As a result of applying SRP to module responsibilities (while taking into accoun
 * Admin UI
 * Frontend UI
 
-The Admin and frontend UIs can be separated, because it's possible to have two different technology stacks. The Admin UI uses UI components, while the frontend UI can use the [PWA](https://magento-research.github.io/pwa-studio/) studio stack, consisting of technology such as webpack, React, Redux, and GraphQL. 
+The Admin and frontend UIs can be separated, because it's possible to have two different technology stacks. The Admin UI uses UI components, while the frontend UI can use the [PWA](https://magento.github.io/pwa-studio/) studio stack, consisting of technology such as webpack, React, Redux, and GraphQL. 
 
 Now, instead of creating one module that covers a specialized business domain, we create up to four modules, each one responsible for a dedicated layer of the system to provide high granularity for customizations. For example, in the standard Magento architecture, the `InventorySales` module would have contained all the APIs, business logic, and UI definitions. Now, these responsibilities are defined in the `InventorySales`,  `InventorySalesApi`, `InventorySalesAdminUI`, and `InventorySalesFrontendUI` modules.
 
