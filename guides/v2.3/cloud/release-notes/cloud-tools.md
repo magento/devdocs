@@ -14,18 +14,18 @@ The following updates describe the latest improvements to the `{{site.data.var.c
 
 The release notes include:
 
--   {:.new}New features
--   {:.fix}Fixes and improvements
+-  {:.new}New features
+-  {:.fix}Fixes and improvements
 
 ## v2002.0.21
 
--   {:.new}<!-- MAGECLOUD-3535 -->Added version compatibility validation between Magento version and installed services, such as RabbitMq, Redis, and DB. Displays a warning message if the service version is not compatible.
+-  {:.new}<!-- MAGECLOUD-3535 -->Added version compatibility validation between Magento version and installed services, such as RabbitMq, Redis, and DB. Displays a warning message if the service version is not compatible.
 
--   {:.fix}<!-- MAGECLOUD-3806 -->Fixed an issue when running the 'setup:upgrade` command that did not stop the deployment process if there was a failure during the `app:config:import` task.
+-  {:.fix}<!-- MAGECLOUD-3806 -->Fixed an issue when running the 'setup:upgrade` command that did not stop the deployment process if there was a failure during the `app:config:import` task.
 
--   {:.fix}<!-- MAGECLOUD-3866 -->Fixed an issue affecting the WARM_UP_PAGES functionality that uses a default store URL. Now, if the `config:show:default-url` command cannot fetch a base URL, then the URL from the MAGENTO_CLOUD_ROUTES variable is used.
+-  {:.fix}<!-- MAGECLOUD-3866 -->Fixed an issue affecting the WARM_UP_PAGES functionality that uses a default store URL. Now, if the `config:show:default-url` command cannot fetch a base URL, then the URL from the MAGENTO_CLOUD_ROUTES variable is used.
 
--   {:.new}<!-- MAGECLOUD-2514 -->Updated the logging information returned by the `module:refresh` command. Now, you can see a detailed list of enabled modules in the `cloud.log` file.
+-  {:.new}<!-- MAGECLOUD-2514 -->Updated the logging information returned by the `module:refresh` command. Now, you can see a detailed list of enabled modules in the `cloud.log` file.
 
 ## v2002.0.20
 
@@ -179,7 +179,7 @@ The `{{site.data.var.ct}}` version 2002.0.17 includes an important security patc
 
 -   {:.new}**New environment variables**—
 
-    -   <!-- MAGECLOUD-3026 & MAGECLOUD-2963-->**[RESOURCE_CONFIGURATION deploy variable]({{page.baseurl}}/cloud/env/variables-deploy.html#resource_configuration)**—Use this variable to map a resource name to a database connection. 
+    -   <!-- MAGECLOUD-3026 & MAGECLOUD-2963-->**[RESOURCE_CONFIGURATION deploy variable]({{page.baseurl}}/cloud/env/variables-deploy.html#resource_configuration)**—Use this variable to map a resource name to a database connection.
 
     -   <!-- MAGECLOUD-3048 -->**[X_FRAME_CONFIGURATION global variable]({{ page.baseurl }}/cloud/env/variables-global.html#x_frame_configuration)**—Use this variable to change the `X-Frame-Options` header configuration for rendering a {{ site.data.var.ee }} page in a `<frame>`, `<iframe>`, or `<object>`.
 
@@ -457,7 +457,7 @@ You must [upgrade the {{site.data.var.ece}} metapackage]({{ site.baseurl }}/guid
 
 -   {:.new}<!-- MAGECLOUD-1437 -->**Search, AMQP, and Redis service improvements**—We unified the service configuration flow so that it now behaves the same way for all services. Manually editing the `env.php` file to configure services is no longer supported. You must use environment variables or the `.magento.env.yaml` file instead.
 
--   {:.fix}**Environment variables**—  
+-   {:.fix}**Environment variables**—
 
     -   <!-- MAGECLOUD-1507 -->The use of `env:STATIC_CONTENT_THREADS` was deprecated and will be removed in a future release. Use the `STATIC_CONTENT_THREADS` environment variable instead.
     -   <!-- MAGECLOUD-1640 -->The `STATIC_CONTENT_EXCLUDE_THEMES` environment variable was deprecated. You must use the `SCD_EXCLUDE_THEMES` environment variable instead.
