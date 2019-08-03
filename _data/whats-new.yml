@@ -4,8 +4,54 @@ description: |
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: /whats-new.html
 thread: /whatsnew-feed.xml
-updated: Fri Jul 26 15:50:11 2019
+updated: Fri Aug 2 12:05:50 2019
 entries:
+- description: Added information about patch PRODSECBUG-2233 to the relevant release
+    notes for affected Magento versions.
+  versions: 2.2.8, 2.2.x, 2.3.0, 2.3.1, 2.3.x, 2.x
+  type: Major update
+  date: August 2, 2019
+  link: https://github.com/magento/devdocs/pull/5091
+- description: Added the 'Backward Compatibility' section to the [Magento Definition
+    of Done](https://devdocs.magento.com/guides/v2.2/contributor-guide/contributing_dod.html).
+  versions: 2.3.x
+  type: Major update
+  date: July 31, 2019
+  link: https://github.com/magento/devdocs/pull/4801
+- description: "Updated the [Services topic](https://devdocs.magento.com/guides/v2.2/cloud/project/project-conf-files_services.html)
+    in the Cloud guide.<br/>-  Clarified the disk value requirements.<br/>-  Simplified the
+    [relationships property](https://devdocs.magento.com/guides/v2.2/cloud/project/project-conf-files_magento-app.html#relationships)
+    in the application configuration."
+  versions: 2.x
+  type: Technical changes
+  date: July 30, 2019
+  link: https://github.com/magento/devdocs/pull/5039
+- description: Added the new topic [CSS Critical Path](https://devdocs.magento.com/guides/v2.2/frontend-dev-guide/css-topics/css-critical-path.html)
+    to the Frontend Developer Guide.
+  versions: 2.2.x, 2.3.x
+  type: New topic
+  date: July 30, 2019
+  link: https://github.com/magento/devdocs/pull/4726
+- description: Added steps for [creating a patch from a git commit](https://devdocs.magento.com/guides/v2.2/comp-mgr/patching.html#custom-patches).
+  versions: 2.2.x, 2.3.x
+  type: Major update
+  date: July 29, 2019
+  link: https://github.com/magento/devdocs/pull/5056
+- description: Added a new section about [changing the Blackfire account owner](https://devdocs.magento.com/guides/v2.3/cloud/project/project-integrate-blackfire.html#change-account-owner)
+    on a Magento Commerce (Cloud) project.
+  versions: 2.2.x, 2.3.x
+  type: Major update
+  date: July 29, 2019
+  link: https://github.com/magento/devdocs/pull/5070
+- description: Updated the [Fastly Set up](https://devdocs.magento.com/guides/v2.3/cloud/cdn/configure-fastly.html)
+    instructions to remove the requirement to install the Fastly CDN module for Magento
+    2 in Magento Commerce Cloud environments. The latest version of the Fastly module
+    is installed by default in Pro Staging and Production environments, and in the
+    Starter Production (`master`) environment.
+  versions: 2.2.x
+  type: Major update
+  date: July 27, 2019
+  link: https://github.com/magento/devdocs/pull/5025
 - description: Updated changes in the 2.3.2 schema of the [customer endpoint](https://devdocs.magento.com/guides/v2.3/graphql/reference/customer.html).
   versions: 2.3.x
   type: Major update
