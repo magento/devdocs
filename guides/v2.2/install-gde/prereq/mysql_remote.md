@@ -133,7 +133,6 @@ When you install the Magento software using either the command line or Setup Wiz
 
 *	[Installing optional software]({{ page.baseurl }}/install-gde/prereq/optional.html)
 *	[Apache]({{ page.baseurl }}/install-gde/prereq/apache.html)
-*	[PHP 5.5, 5.6, or 7.0—Ubuntu]({{ page.baseurl }}/install-gde/prereq/php-ubuntu.html)
-*	[PHP 5.5, 5.6, or 7.0—CentOS]({{ page.baseurl }}/install-gde/prereq/php-centos.html)
+*	[PHP]({{ page.baseurl }}/install-gde/prereq/php-settings.html)
 *	[Configuring security options]({{ page.baseurl }}/install-gde/prereq/security.html)
 *	[How to get the Magento software]({{ page.baseurl }}/install-gde/bk-install-guide.html)
