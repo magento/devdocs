@@ -6,7 +6,7 @@
 | MageSpecialist |  [15720](https://github.com/magento/magento2/pull/15720), [15535](https://github.com/magento/magento2/pull/15535) |  [15028](https://github.com/magento/magento2/issues/15028), [15457](https://github.com/magento/magento2/issues/15457) |
 | Wagento |  [16582](https://github.com/magento/magento2/pull/16582), [16775](https://github.com/magento/magento2/pull/16775), [17877](https://github.com/magento/magento2/pull/17877) |  [16302](https://github.com/magento/magento2/issues/16302), [7903](https://github.com/magento/magento2/issues/7903), [17851](https://github.com/magento/magento2/issues/17851) |
 | Krish TechnoLabs |  [17203](https://github.com/magento/magento2/pull/17203), [17217](https://github.com/magento/magento2/pull/17217), [17246](https://github.com/magento/magento2/pull/17246), [17103](https://github.com/magento/magento2/pull/17103), [17013](https://github.com/magento/magento2/pull/17013), [17870](https://github.com/magento/magento2/pull/17870) |  [16929](https://github.com/magento/magento2/issues/16929), [17789](https://github.com/magento/magento2/issues/17789) |
-| Comwrap |  [8](https://github.com/magento/bulk-api-ee/pull/8) |   |
+| Comwrap |  8: magento/bulk-api-ee/pull/8 |   |
 | Imagination Station |  [17217](https://github.com/magento/magento2/pull/17217) |   |
 | SNOW.DOG |  [17203](https://github.com/magento/magento2/pull/17203) |   |
 | Basecom |  [15606](https://github.com/magento/magento2/pull/15606) |  [10687](https://github.com/magento/magento2/issues/10687) |

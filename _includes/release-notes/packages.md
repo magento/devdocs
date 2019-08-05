@@ -3,7 +3,7 @@ The `composer.json` file declares the list of packages, whereas the `composer.lo
 
 ## Magento packages
 
-This section contains information about the [magento](https://github.com/magento/) packages for the latest {{ edition }} {{page.guide_version}} release.
+This section contains information about the `magento` dependencies for the latest {{ edition }} {{page.guide_version}} release.
 Click the **Name** links to view the repository and the license agreement.
 
 ### Required packages
