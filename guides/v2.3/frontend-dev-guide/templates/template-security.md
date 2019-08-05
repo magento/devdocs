@@ -36,15 +36,25 @@ The following code sample illustrates the XSS-safe output in templates:
 
 For the following output cases, use the specified function to generate XSS-safe output.
 
-**Case:** JSON output\\
+**Case:** JSON output in script context\\
 **Function:** No function needed for JSON output.
 
 
 ```html
   <!-- In this example $postData is a JSON string -->
-  <button class="action" data-post='<?php /* @noEscape */ echo $postData ?>' />
+  <script>
+    var postData = <?php /* @noEscape */ echo $postData ?>;
+  </script>
+  
 ```
+**Case:** JSON output in html/attribute context\\
+**Function:** `escapeHtml`
 
+
+```html
+  <!-- In this example $postData is a JSON string -->
+  <button class="action" data-post="<?php echo $block->escapeHtml($postData) ?>" />
+```
 
 **Case:** String output that should not contain HTML\\
 **Function:** `escapeHtml` 
