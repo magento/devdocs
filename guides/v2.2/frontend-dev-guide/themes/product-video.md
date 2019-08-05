@@ -67,7 +67,7 @@ Boolean
   </tbody>
 </table>
 
-You can configure these options in your custom [module's](https://glossary.magento.com/module's) `config.xml` file.
+You can configure these options in your custom [module's](https://glossary.magento.com/module) `config.xml` file.
 
 Example:
 

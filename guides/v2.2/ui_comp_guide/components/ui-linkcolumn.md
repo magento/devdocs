@@ -11,17 +11,12 @@ Constructor: [app/code/Magento/Ui/view/base/web/js/grid/columns/link.js]({{ site
 
 ## LinkColumn configuration
 
-<table>
-  <tr>
-    <th>Option</th>
-    <th>Description</th>
-    <th>Type</th>
-    <th>Default</th>
-  </tr>
-  <tr>
-    <td><code>link</code></td>
-    <td>The key in a field's record object that contains the link value.</td>
-    <td>String</td>
-    <td><code>link</code></td>
-  </tr>
-</table>
+| Option | Description | Type | Default |
+| --- | --- | --- | --- |
+| `link` | The key in a field's record object that contains the link value. | String | `link` |
+| `bodyTmpl` | Path to the template that is used to render a column's field in the table's body. | String | `ui/grid/cells/link` |
+
+## Source files
+
+Extends [Column component]({{ page.baseurl }}/ui_comp_guide/components/ui-column.html)
+- [`app/code/Magento/Ui/view/base/web/js/grid/columns/link.js`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/grid/columns/link.js)

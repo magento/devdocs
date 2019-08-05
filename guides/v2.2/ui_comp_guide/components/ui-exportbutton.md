@@ -7,61 +7,20 @@ The ExportButton component implements the ability to export grid data to the spe
 
 ## Configuration options
 
-<table>
-  <tr>
-    <th>Option</th>
-    <th>Description</th>
-    <th>Type</th>
-    <th>Default</th>
-  </tr>
-  <tr>
-    <td><code>additionalParams</code></td>
-    <td>List of additional parameters added to each performed request.</td>
-    <td>{<br />[name: string]: string<br />}</td>
-    <td>-</td>
-  </tr>
-  <tr>
-    <td><code>options</code></td>
-    <td>List of available formats in which the table's data can be exported.</td>
-    <td>Array<a href="#exportoption">&lt;<code>ExportOption</code>&gt;</a> </td>
-    <td><code>[{<br />value: "csv",<br />label: "CSV",<br />url: "mui/export/gridToCsv"<br />}, {<br />value: "xml",<br />label: "Excel XML",<br />url: "mui/export/gridToXml"<br />}]</code></td>
-  </tr>
-  <tr>
-    <td><code>template</code></td>
-    <td>Path to the component’s <code>.html</code> template.</td>
-    <td>String</td>
-    <td><code>ui/grid/exportButton</code></td>
-  </tr>
-</table>
+| Option | Description | Type | Default Value |
+| --- | --- | --- | --- |
+| `additionalParams` | List of additional parameters added to each performed request. | {<br />`[name: string]: string`<br />} | `[]` |
+| `options` | List of available formats in which the table's data can be exported. | Array[&lt;`ExportOption`&gt;](#exportoption) | [{<br />`value: "csv",`<br />`label: "CSV"`,<br />`url: "mui/export/gridToCsv"`<br />}, {<br />`value: "xml"`,<br />`label: "Excel XML",`<br />`url: "mui/export/gridToXml"`<br />}] |
+| `template` | Path to the component’s `.html` template. | String | `ui/grid/exportButton` |
+| `checked` | The checked data format to export. | String | `''` |
 
 ### ExportOption interface {#exportoption}
 
-<table>
-  <tr>
-    <th>Option</th>
-    <th>Description</th>
-    <th>Type</th>
-    <th>Required</th>
-  </tr>
-  <tr>
-    <td><code>label</code></td>
-    <td>Option's label.</td>
-    <td>String</td>
-    <td>Required</td>
-  </tr>
-  <tr>
-    <td><code>url</code></td>
-    <td>Path to controller that will process the request.</td>
-    <td>String</td>
-    <td>Required</td>
-  </tr>
-  <tr>
-    <td><code>value</code></td>
-    <td>Identifier of the export option.</td>
-    <td>String</td>
-    <td>Required</td>
-  </tr>
-</table>
+| Option | Description | Type | Required |
+| --- | --- | --- | --- |
+| `label` | Option's label. | String | Required |
+| `url` | Path to controller that will process the request. | String | Required |
+| `value` | Identifier of the export option. | String | Required |
 
 ## Examples
 
@@ -102,7 +61,7 @@ By default Magento allows [CSV](https://glossary.magento.com/csv) and Excel [XML
 
 To add new export format:
 
-* Add configuration data to ExportButton definition [`Magento/Ui/view/base/ui_component/etc/definition.xml`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/ui_component/etc/definition.xml)</a>
+* Add configuration data to ExportButton definition [`Magento/Ui/view/base/ui_component/etc/definition.xml`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/ui_component/etc/definition.xml)
 * Add controller for new format processing `\Magento\Ui\Controller\Adminhtml\Export\GridToFoo`
 * Add converter `\Magento\Ui\Model\Export\ConvertToFoo`
 
