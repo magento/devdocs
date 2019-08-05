@@ -23,7 +23,7 @@ The release notes include:
 
 -  {:.fix}<!-- MAGECLOUD-3806 -->Fixed an issue when running the `setup:upgrade` command that did not interrupt the deployment process when a failure occured during the `app:config:import` task.
 
--  {:.fix}<!-- MAGECLOUD-3866 -->Fixed an issue affecting the WARM_UP_PAGES functionality that uses a default store URL. Now, if the `config:show:default-url` command cannot fetch a base URL, then the URL from the MAGENTO_CLOUD_ROUTES variable is used.
+-  {:.fix}<!-- MAGECLOUD-3866 -->Fixed an issue affecting WARM_UP_PAGES functionality that uses a default store URL. Now, if the `config:show:default-url` command cannot fetch a base URL, then the URL from the MAGENTO_CLOUD_ROUTES variable is used.
 
 -  {:.new}<!-- MAGECLOUD-2514 -->Updated the logging information returned by the `module:refresh` command. Now, you can see a detailed list of enabled modules in the `cloud.log` file.
 
