@@ -4,7 +4,7 @@ title: Installation of the Functional Testing Framework Entities
 ---
 
 {: .bs-callout-info}
-The Magento Testing Framework (MTF) has been superseded by the Magento Functional Testing Framework ([MFTF][]).
+The Magento Testing Framework (MTF) is superseded by the Magento Functional Testing Framework ([MFTF][]).
 While the MTF is still functional, all MTF tests are being ported over to the MFTF. We recommend using the MFTF for testing.
 
 Well, you are on the way to install the Functional Testing Framework!
@@ -76,7 +76,7 @@ Find the `mtf` directory.
 
 Open `<magento2_root_dir>/dev/tests/functional/vendor/magento/mtf/CHANGELOG.md`. The latest version in `CHANGELOG.md` is version of the FTF you installed.
 
-## Next Steps {#mtf_install_next} 
+## Next steps {#mtf_install_next} 
 
 [Adjust the FTF configuration ]({{ page.baseurl }}/mtf/mtf_quickstart/mtf_quickstart_config.html)
 
