@@ -116,10 +116,6 @@ pages:
       - label: Locator functions
         url: /mftf/docs/section/locator-functions.html
         versionless: true
-      
-      - label: Selectors
-        url: /mftf/docs/selectors.html
-        versionless: true
 
   - label: Suite
     url: /mftf/docs/suite.html
@@ -144,10 +140,6 @@ pages:
 
       - label: Assertions
         url: /mftf/docs/test/assertions.html
-        versionless: true
-
-      - label: Functional Test Reference
-        url: /mftf/docs/mftf-tests.html
         versionless: true
 
   - label: Troubleshooting
