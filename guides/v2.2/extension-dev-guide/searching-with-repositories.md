@@ -117,7 +117,7 @@ $searchCriteria
 ### Search Result
 
 The `getList(SearchCriteria $searchCriteria)` method defined in your repository should return a Search Result object.
-This object is an instance of a class that implements the interface [`SearchResultInterface`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Api/SearchResultsInterface.php){:target="_blank"}.
+This object is an instance of a class that implements the interface [`SearchResultsInterface`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Api/SearchResultsInterface.php){:target="_blank"}.
 
 Search Result objects hold the Search Criteria object and the retrieved entities along with information about the total count of found entities regardless of any limitations set in the criteria.
 

@@ -23,9 +23,9 @@ mutation {
     input: {
       cart_id: "Po1WkfK7d3vZE0qga610NwJIbxgqllpt"
       urls: {
-        return_url: "http://localhost/paypal/return"
-        cancel_url: "http://localhost/paypal/cancel"
-        error_url: "http://localhost/paypal/error"
+        return_url: "paypal/action/return.html"
+        cancel_url: "paypal/action/cancel.html"
+        error_url: "paypal/action/error.html"
       }
     }
   ) {
@@ -69,13 +69,17 @@ Attribute |  Data Type | Description
 
 ### PayflowProUrlInput object
 
+The `PayflowProUrlInput` object contains a set of relative URLs that PayPal will use in response to various actions during the authorization process. Magento prepends the base URL to this value to create a full URL. For example, if the full URL is `https://www.example.com/path/to/page.html`, the relative URL is `path/to/page.html`. 
+
+Use this input for Payflow Pro and Payment Pro payment methods.
+
 The `PayflowProUrlInput` object must contain the following attributes:
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`cancel_url` | String! | The URL of the original page on your website where the buyer initially chose PayPal as  a payment type
-`error_url` | String! | The URL of the page on your website where any error in the transaction is handled
-`return_url` | String! | The URL of the final review page on your website where the buyer confirms the order and payment
+`cancel_url` | String! | The relative URL of the page that PayPal will redirect to when the buyer cancels the transaction in order to choose a different payment method. If the full URL to this page is `https://www.example.com/paypal/action/cancel.html`, the relative URL is `paypal/action/cancel.html`
+`error_url` | String! | The relative URL of the transaction error page that PayPal will redirect to upon payment error. If the full URL to this page is `https://www.example.com/paypal/action/error.html`, the relative URL is `paypal/action/error.html`
+`return_url` | String! | The relative URL of the final confirmation page that PayPal will redirect to upon payment success. If the full URL to this page is `https://www.example.com/paypal/action/return.html`, the relative URL is `paypal/action/return.html`
 
 ## Output attributes
 

@@ -174,7 +174,7 @@ Even though you will be working with `map.xml.dist` file most of the time, the f
 </tr>
 <tr>
 	<td><em>{{site.data.var.ee}} only</em>. map-sales.xml.dist</td>
-	<td>Map file that is used in SalesOrder step.</td>
+	<td>Map file that is used in SalesOrder Step.</td>
 </tr>
 <tr>
 	<td>map.xml.dist</td>
@@ -184,27 +184,46 @@ Even though you will be working with `map.xml.dist` file most of the time, the f
 	<td>settings.xml.dist</td>
 	<td>Setting migration configuration file that specifies rules required for migrating the <code>core_config_data</code> table.</td>
 </tr>
-
 <tr>
-	<td>customer-attribute-groups.xml</td>
+	<td>customer-attribute-groups.xml.dist</td>
 	<td>Contains list of attributes that are used in Customer Attributes Step.</td>
 </tr>
-
 <tr>
-	<td>customer-document-groups.xml</td>
+	<td>customer-document-groups.xml.dist</td>
 	<td>Contains list of tables that are used in Customer Attributes Step.</td>
 </tr>
-
 <tr>
-	<td>map-customer.xml</td>
+	<td>map-customer.xml.dist</td>
 	<td>Map file that is used in Customer Attributes Step.</td>
 </tr>
-
 <tr>
-	<td>order-grids-document-groups.xml</td>
+	<td>order-grids-document-groups.xml.dist</td>
 	<td>Contains list of tables that are used in OrderGrids Step.</td>
 </tr>
-
+<tr>
+	<td>map-document-groups.xml.dist</td>
+	<td>Defines what fields will be updated when duplications occurs on data insert</td>
+</tr>
+<tr>
+	<td>map-stores.xml.dist</td>
+	<td>Map file that is used in Stores Step.</td>
+</tr>
+<tr>
+	<td>map-tier-price.xml.dist</td>
+	<td>Map file that is used in Tier Price Step.</td>
+</tr>
+<tr>
+	<td><em>{{site.data.var.ee}} only</em>. visual_merchandiser_map.xml.dist</td>
+	<td>Map file that is used in VisualMerchandiser Step.</td>
+</tr>
+<tr>
+	<td><em>{{site.data.var.ee}} only</em>. visual_merchandiser_attribute_groups.xml.dist</td>
+	<td>Contains list of attributes that are used in VisualMerchandiser Step.</td>
+</tr>
+<tr>
+	<td><em>{{site.data.var.ee}} only</em>. visual_merchandiser_document_groups.xml.dist</td>
+	<td>Contains list of tables that are used in VisualMerchandiser Step.</td>
+</tr>
 </tbody>
 </table>
 

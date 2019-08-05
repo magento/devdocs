@@ -13,9 +13,8 @@ functional_areas:
 
 ### Details
 
-	PHP Fatal error:  Class 'PDO' not found in /var/www/html/magento2/setup/module/Magento/Setup/src/Module/Setup/ConnectionFactory.php on line 44
+PHP Fatal error:  Class 'PDO' not found in /var/www/html/magento2/setup/module/Magento/Setup/src/Module/Setup/ConnectionFactory.php on line 44
 
-### Solution:
+### Solution
 
-Make sure you installed all required PHP extensions ([Ubuntu]({{ page.baseurl }}/install-gde/prereq/php-centos.html) [CentOS]({{ page.baseurl }}/install-gde/prereq/php-ubuntu.html)). 
-
+Make sure you installed all required [PHP]({{ page.baseurl }}/install-gde/prereq/php-settings.html) extensions.

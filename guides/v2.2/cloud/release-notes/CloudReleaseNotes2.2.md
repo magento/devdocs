@@ -1,14 +1,6 @@
 ---
 group: release-notes
-subgroup: Release Notes
 title: Magento Commerce (Cloud) 2.2.0 Release Notes
-menu_title: Magento Commerce (Cloud) 2.2.0 Release Notes
-menu_order: 400
-level3_menu_node:
-level3_subgroup:
-redirect_from:
-  - /guides/v2.2/cloud/release-notes/CloudReleaseNotes.html
-
 ---
 
 We are pleased to present {{site.data.var.ece}} 2.2.0 General Availability. This release includes numerous functional fixes and enhancements.
@@ -91,7 +83,7 @@ This release contains numerous fixes and enhancements. This section includes onl
 
 When upgrading to {{site.data.var.ece}} 2.2, consider the following changes in deployment:
 
-* `ADMIN_EMAIL` variable must be set. We require the `ADMIN_EMAIL` environment variable configured for deployments. You can set this variable through the Project Web Interface. This is required for new installations and upgrades. For instructions, see [Add admin variables for Admin access]({{ site.baseurl }}/guides/v2.2/cloud/before/before-project-owner.html).
+* `ADMIN_EMAIL` variable must be set. We require the `ADMIN_EMAIL` environment variable configured for deployments. You can set this variable through the Project Web Interface. This is required for new installations and upgrades. For instructions, see [Add admin variables for Admin access]({{ site.baseurl }}/guides/v2.2/cloud/onboarding/onboarding-tasks.html).
 
 * Update and include `config.php` and add a list of all modules. If you use Configuration Management with a `config.local.php` file, you must create a `config.php` and add it to your code. For instructions, see [Configuration Management and upgrading]({{ site.baseurl }}/guides/v2.2/cloud/project/project-upgrade.html).
 
