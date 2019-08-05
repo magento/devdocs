@@ -75,7 +75,7 @@ Creating a root category is optional, but we show how to do it in this tutorial 
 
 	The following figure shows an example.
 
-	![Add a store]({{ site.baseurl }}/common/images/config_multi-site-store.png){:width="500px"}
+	![Add a store]({{ site.baseurl }}/common/images/config_multi-site-store.png)
 6.	Click **Save Store**.
 7.	Repeat these tasks as many times as necessary to create your stores.
 
