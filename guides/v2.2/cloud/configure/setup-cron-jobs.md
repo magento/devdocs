@@ -109,22 +109,22 @@ The  [auto-crons feature](#verify-cron-configuration) must be enabled on your {{
 
 For example, you can add a custom cron job to export the product catalog and configure it to run every eight hours, 20 minutes after the hour.
 
-   ```yaml
-   crons:
-    magento:
+    ```yaml
+    crons:
+      magento:
         spec: '* * * * *'
         cmd: 'php bin/magento cron:run'
-        productcatalog:
-            spec: '20 */8 * * *'
-            cmd: 'bin/magento export:start catalog_product_category'
-    ```
-    {: .no-copy }
+      productcatalog:
+        spec: '20 */8 * * *'
+        cmd: 'bin/magento export:start catalog_product_category'
+     ```
+     {: .no-copy }
 
 1. Add, commit, and push code changes.
 
-   ```bash
-   git add -A && git commit -m "cron config updates" && git push origin <branch-name>
-   ```
+    ```bash
+    git add -A && git commit -m "cron config updates" && git push origin <branch-name>
+    ```
 
 ## Update custom cron jobs {#update}
 
