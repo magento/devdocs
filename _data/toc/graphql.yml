@@ -62,11 +62,17 @@ pages:
         - label: currency query
           url: /graphql/queries/directory-currency.html
 
+        - label: customer query
+          url: /graphql/queries/customer.html
+
         - label: customerOrders query
           url: /graphql/queries/customer-orders.html
 
         - label: customerPaymentTokens query
           url: /graphql/queries/customer-payment-tokens.html
+
+        - label: isEmailAvailable query
+          url: /graphql/queries/is-email-available.html
 
         - label: storeConfig query
           url: /graphql/queries/store-config.html
@@ -82,19 +88,40 @@ pages:
         - label: applyStoreCreditToCart mutation
           url: /graphql/mutations/apply-store-credit.html
 
+        - label: changeCustomerPassword mutation
+          url: /graphql/mutations/change-customer-password.html
+
+        - label: createCustomerAddress mutation
+          url: /graphql/mutations/create-customer-address.html
+
+        - label: createCustomer mutation
+          url: /graphql/mutations/create-customer.html
+
+        - label: deleteCustomerAddress mutation
+          url: /graphql/mutations/delete-customer-address.html
+
         - label: deletePaymentToken mutation
           url: /graphql/mutations/delete-payment-token.html
 
+        - label: generateCustomerToken mutation
+          url: /graphql/mutations/generate-customer-token.html
+
         - label: removeStoreCreditFromCart mutation
           url: /graphql/mutations/remove-store-credit.html
+
+        - label: revokeCustomerToken mutation
+          url: /graphql/mutations/revoke-customer-token.html
+
+        - label: updateCustomerAddress mutation
+          url: /graphql/mutations/update-customer-address.html
+
+        - label: updateCustomer mutation
+          url: /graphql/mutations/update-customer.html
     
     - label: Reference
       children:
             - label: CustomAttributeMetadata endpoint
               url: /graphql/reference/custom-attribute-metadata.html
-
-            - label: Customer endpoint
-              url: /graphql/reference/customer.html
 
             - label: Payflow Link getPayflowLinkToken query
               url: /graphql/reference/paypal-get-payflow-link-token.html
