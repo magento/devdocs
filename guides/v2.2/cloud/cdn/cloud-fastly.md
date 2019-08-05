@@ -39,10 +39,43 @@ We highly recommend using Fastly for your CDN, security, and image optimization 
 
 ## Fastly CDN module for Magento 2
 
-Fastly services for {{ site.data.var.ece }} use the [Fastly CDN module for Magento 2](https://github.com/fastly/fastly-magento2) installed in the following environments: Pro Staging and Production, Starter Production (`master`) and Staging.
+Fastly services for {{ site.data.var.ece }} use the [Fastly CDN module for Magento 2](https://github.com/fastly/fastly-magento2) installed in the following environments: Pro Staging and Production, Starter Production (`master` branch).
 
-On initial provisioning or upgrade of your {{ site. data.var.ece }} project, we install the latest version of the Fastly CDN module. When Fastly releases module updates, you receive notifications in the Magento Admin UI for your environments. We recommend that you update your environments to use the latest release. See [Upgrade Fastly]({{ page.baseurl}}/cloud/cdn/configure-fastly.html#upgrade).
+On initial provisioning or upgrade of your {{ site. data.var.ece }} project, we install the latest version of the Fastly CDN module in your Staging and Production environments. When Fastly releases module updates, you receive notifications in the Magento Admin UI for your environments. We recommend that you update your environments to use the latest release. See [Upgrade Fastly]({{ page.baseurl}}/cloud/cdn/configure-fastly.html#upgrade).
 
+## Fastly service account
+
+{{ site.data.var.ece }} projects do not require a dedicated Fastly account or account owner. Instead, each project environment has unique Fastly credentials (API key and service ID) to configure and manage Fastly services from the Magento Admin UI. You also need the credentials to submit Fastly API requests.
+
+During project provisioning, Magento adds your project to the Fastly service account for {{ site.data.var.ece }} and adds the Fastly credentials to the configuration for the Staging and Production environments. See [Get Fastly credentials]({{ page.baseurl }}/cloud/cdn/configure-fastly.html#cloud-fastly-creds).
+
+### Multiple Fastly accounts and assigned domains {#domain}
+
+Fastly only allows you to assign an apex domain and associated subdomains to one Fastly service and account. If you have an existing Fastly account that links the same apex and subdomains used for your {{ site.data.var.ece }}, you have the following options:
+
+- Remove the apex and subdomains from the existing account before requesting Fastly service credentials for your {{ site.data.var.ece}} project environments. See [Working with Domains](https://docs.fastly.com/guides/basic-configuration/working-with-domains) in the Fastly documentation.
+
+  Use this option to link the apex domain and all subdomains to the Fastly service account for {{ site.data.var.ece }}. 
+
+- Submit a support ticket to request domain delegation so that apex and subdomains can be linked to different accounts.
+
+  Use this option if your apex domain has multiple subdomains for Magento and non-Magento sites that you want to link to different Fastly accounts.
+
+#### Request domain delegation
+
+*Scenario 1*
+
+The apex domain (`testweb.com` and `www.testweb.com`) is linked to an existing Fastly account. You have a {{ site.data.var.ece }} project configured with the following subdomains: `mcstaging.testweb.com` and `mcprod.testweb.com`. You do not want to move the apex domain to the Fastly service account for {{ site.data.var.ece }} Magento.
+
+Submit a [Fastly support ticket](https://docs.fastly.com/guides/detailed-product-descriptions/support-description-and-sla#support-requests) requesting that the subdomains be delegated from the existing Fastly account to the Fastly account for {{ site.data.var.ece }}. Include your Magento project ID in the ticket.
+
+After the delegation is complete, your project subdomains can be added to the Fastly service account for {{ site.data.var.ece }}. See [Get Fastly credentials]({{ page.baseurl }}/cloud/cdn/configure-fastly.html#cloud-fastly-creds).
+
+*Scenario 2*
+
+The apex domain (`testweb.com` and `www.testweb.com`) is linked to the {{ site.data.var.ece }} Fastly service account. You want to manage Fastly services for the `service.testweb.com` and `product-updates.testweb.com` subdomains from a different Fastly account. 
+
+Submit a [Magento support ticket](https://support.magento.com/hc/en-us/articles/360000913794#submit-ticket) requesting that the subdomains be delegated from the {{ site.data.var.ece }} Fastly service account to the Fastly account. Include the service ID for the Fastly account in the ticket.
 
 ## DDoS protection
 
@@ -66,7 +99,6 @@ shield URL and review logs to identify the source of the issue. For details,
 see [Fastly troubleshooting]({{ page.baseurl }}/cloud/cdn/trouble-fastly.html#timeouts).
 
 Fastly can be bypassed for the Magento Admin to perform long running or bulk actions and API access to avoid 503s. For Fastly module 1.2.22 and later, the timeout for the Magento Admin was extended to three minutes. You can also update the Fastly configuration for your store to [extend the Fastly timeout for the Magento Admin]({{ page.baseurl }}/cloud/cdn/configure-fastly.html#bulkaction).
-
 
 ## Backends and Origin shields {#backend}
 
@@ -103,7 +135,6 @@ using edge and ACL dictionaries and VCL code.
 After you have [set up Fastly]({{ page.baseurl }}/cloud/cdn/configure-fastly.html),
 you can create [custom VCL snippets]({{ page.baseurl }}/cloud/cdn/cloud-vcl-custom-snippets.html)
 using these edge dictionaries and ACLs.
-
 
 ## Force TLS {#tls}
 

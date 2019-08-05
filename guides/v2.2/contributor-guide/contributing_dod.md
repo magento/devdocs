@@ -15,12 +15,27 @@ At a high level, the criteria defined in our "definition of done" revolve around
 
 The following sections provide additional details about each of these criteria:
 
-## Functional Backward Compatibility
+## Backward Compatibility
+
+### Functional Backward Compatibility
+
+**Functional backward compatibility** means behaviour of the application is preserved.
 
 Existing product features and functionality must be retained during any changes to the code.
-If backward-incompatible functional changes are made, the documentation should explain the justification and provide the "business value".
+Any backward-incompatible functional changes must be approved by a product owner.
+The documentation should explain the justification and provide the "business value".
 
-For more information, see [Magento's backward compatibility policy][1].
+### Technical Backward Compatibility
+
+**Technical backward compatibility** means technical interfaces are preserved.
+Technical interfaces include PHP interfaces or classes, CLI commands, URLs or any other interfaces that can be used by 3rd-party developer, system integrator or user of Magento.
+Any change in the interfaces that can lead to a broken integration is a breaking technical change.
+Technical interfaces and corresponding level of change is described in [Code Changes][6] and [Module Version Dependencies][7] documents in more details.
+
+Technical backward compatibility must be retained between PATCH (marketing) versions of Magento products. It should also be retained between MINOR (marketing) releases if possible.
+Any breaking changes must be approved by an architect, product owner and release manager.
+
+For more information, see [Magento's backward compatibility policy][1] and [Versioning][5] documents.
 
 ## Documentation
 
@@ -159,26 +174,7 @@ Added/updated functionality should be covered by a functional Zephyr test(s) rel
 ## Review
 
 A task, when complete by the author, should be reviewed by another Magento community member through a process of formal code review.
-The reviewer should check whether the task meets the original acceptance criteria and verify that there are no code defects and that other points of this definition of done are met:
-
-* There are no unauthorized backward-incompatible functional changes
-* All backward-incompatible changes on code level are approved by an architect. The following cases currently cause SVC failures but do NOT require architect approval:
-  * Removal of private constant
-  * Override of the method defined in parent class
-  * Adding optional parameter to the constructor, except for the classes explicitly meant for extension, including the following ones:
-    * `\Magento\Framework\Model\AbstractExtensibleModel`
-    * `\Magento\Framework\Api\AbstractExtensibleObject`
-    * `\Magento\Framework\Api\AbstractSimpleObject`
-    * `\Magento\Framework\Model\AbstractModel`
-    * `\Magento\Framework\App\Action\Action`
-    * `\Magento\Backend\App\Action`
-    * `\Magento\Backend\App\AbstractAction`
-    * `\Magento\Framework\App\Action\AbstractAction`
-    * `\Magento\Framework\View\Element\AbstractBlock`
-    * `\Magento\Framework\View\Element\Template`
-* All changes are documented properly
-* All changes are covered with automated tests
-* Determine if code changes caused any failure in continuous integration builds
+The reviewer should check whether the task meets the original acceptance criteria and verify that there are no code defects and that all points of this definition of done are met.
 
 The work cannot be considered as complete unless all the criteria are verified.
 
@@ -188,3 +184,6 @@ The work cannot be considered as complete unless all the criteria are verified.
 [2]:{{ page.baseurl }}/test/testing.html
 [3]:{{ page.baseurl }}/test/integration/integration_test_execution.html
 [4]:https://github.com/magento/devdocs
+[5]:{{ page.baseurl }}/extension-dev-guide/versioning/index.html
+[6]:{{ page.baseurl }}/extension-dev-guide/versioning/codebase-changes.html
+[7]:{{ page.baseurl }}/extension-dev-guide/versioning/dependencies.html
