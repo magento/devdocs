@@ -27,5 +27,6 @@ Some other customizations that can be performed using layout instructions are th
 3. Reuse the markup and design patterns from the default Magento files by referencing the existing `.phtml` templates ([templates hints can help]({{ page.baseurl }}/frontend-dev-guide/themes/debug-theme.html#debug-theme-templ)) or copy-pasting HTML markup to your custom templates.
 4. Use `<theme_dir>/etc/view.xml` to change image types sizes or add your own types. See [Configure images properties]({{ page.baseurl }}/frontend-dev-guide/themes/theme-images.html) for details. Use this file also to [customize product gallery widget]({{ page.baseurl }}/javascript-dev-guide/widgets/widget_gallery.html)
 5. If you need to change the wording in user interface, [add custom CSV dictionary files]({{ page.baseurl }}/frontend-dev-guide/translations/theme_dictionary.html) instead of overriding `.phtml` templates. 
+6. Use [CSS critical path]({{ page.baseurl }}/frontend-dev-guide/css-topics/css-critical-path.html) to get the page to render much faster.
 
 Keep in mind that, after updating or upgrading Magento instances, there may be changes to default templates, layouts, and styles. So it is recommended to check if those changes affect any files overridden in your theme and if so, copy the changes to your templates, layouts, and styles.
