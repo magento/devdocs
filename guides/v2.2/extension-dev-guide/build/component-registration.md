@@ -87,19 +87,17 @@ After you create your `registration.php` file and you are creating [your compone
 
 ```json
 {
-    "name": "Acme-vendor/bar-component",
-    "autoload": {
-        "psr-4": { "AcmeVendor\\BarComponent\\": "" },
-        "files": [ "registration.php" ]
-    }
+ "name": "Acme-vendor/bar-component",
+ "autoload": {
+    "psr-4": { "AcmeVendor\\BarComponent\\": "" },
+    "files": [ "registration.php" ]
+ }
 }
 ```
 
 ### Sample `registration.php` file {#register-sample}
 
 ```php
-<?php
-
 use \Magento\Framework\Component\ComponentRegistrar;
 
 ComponentRegistrar::register(ComponentRegistrar::MODULE, 'Magento_AdminNotification', __DIR__);
