@@ -26,6 +26,7 @@ A basic message queue system can be implemented using cron instead of RabbitMQ. 
 ## Install RabbitMQ on Ubuntu {#ubuntu-install}
 
 To install RabbitMQ on Ubuntu 16 enter the following command:
+
 ```bash
 sudo apt install -y rabbitmq-server
 ```
@@ -48,9 +49,11 @@ RabbitMQ was written using the Erlang programming language, which must be instal
 See [Manual installation](https://www.erlang-solutions.com/resources/download.html){:target="_blank"} for more information.
 
 Run the following commands to install this feature.
+
 ```bash
 wget http://packages.erlang-solutions.com/erlang-solutions-1.0-1.noarch.rpm
 ```
+
 ```bash
 rpm -Uvh erlang-solutions-1.0-1.noarch.rpm
 ```
@@ -62,12 +65,13 @@ The RabbitMQ server is included on CentOS, but the version is often old. RabbitM
 1. Download [rabbitmq-server-3.5.6-1.noarch.rpm](https://www.rabbitmq.com/releases/rabbitmq-server/v3.5.6/rabbitmq-server-3.5.6-1.noarch.rpm){:target="_blank"}.
 2. Run the following commands as a user with root permissions:
 
-```bash
-rpm --import https://www.rabbitmq.com/rabbitmq-signing-key-public.asc
-```
-```bash
-yum install rabbitmq-server-3.5.6-1.noarch.rpm
-```
+    ```bash
+    rpm --import https://www.rabbitmq.com/rabbitmq-signing-key-public.asc
+    ```
+    
+    ```bash
+    yum install rabbitmq-server-3.5.6-1.noarch.rpm
+    ```
 
 Refer to [Installing on RPM-based Linux](https://www.rabbitmq.com/install-rpm.html){:target="_blank"} for more information.
 
@@ -102,8 +106,7 @@ where:
 
 If you already had Magento installed and you want to connect it with RabbitMq, add `queue` section in the `<install_directory>/app/etc/env.php` file so that it is similar to the following:
 
-```php?start_inline=1
-
+```php
 'queue' =>
   array (
     'amqp' =>
@@ -123,8 +126,7 @@ After, please run `bin/magento setup:upgrade` for apply changes and create requi
 
 To configure support for SSL, edit the `ssl` and `ssl_options` parameters in the `<install_directory>/app/etc/env.php` file so that they are similar to the following:
 
-```php?start_inline=1
-
+```php
 'queue' =>
   array (
     'amqp' =>
