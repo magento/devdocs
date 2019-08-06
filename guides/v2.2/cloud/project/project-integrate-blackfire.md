@@ -16,15 +16,12 @@ For full details on integrations, also review [Configuring Blackfire on Magento 
 
 Blackfire includes the following [environments](https://blackfire.io/docs/reference-guide/environments) through their site:
 
--  `Magento Cloud (<your-instance-reference>)`—Integration and Development
--  `Magento Cloud (<your-instance-reference>)`—Staging
--  `Magento Cloud (<your-instance-reference>)`—Production
+- `Magento Cloud (<your-instance-reference>)`—Integration and Development
+- `Magento Cloud (<your-instance-reference>)`—Staging
+- `Magento Cloud (<your-instance-reference>)`—Production
 
 **For Pro**:
 -  You must bypass the Fastly service in your Production environment when profiling with Blackfire. See [Bypassing Reverse Proxy, Cache, and Content Delivery Networks (CDN)](https://blackfire.io/docs/reference-guide/configuration#bypassing-reverse-proxy-cache-and-content-delivery-networks-cdn).
-
-{: .bs-callout .bs-callout-warning}
-For Pro projects **created before October 23, 2017**, the architecture is slightly different. You must enter a Support ticket with your Blackfire credentials to configure your Staging and Production environments with Blackfire. See [Pro architecture (legacy)]({{ page.baseurl }}/cloud/architecture/pro-architecture-legacy.html).
 
 ## Get your Blackfire login credentials
 

@@ -5,18 +5,19 @@ redirect_from:
   - /guides/v2.2/cloud/discover-arch.html
   - /guides/v2.2/cloud/reference/discover-arch.html
   - /guides/v2.3/cloud/reference/discover-arch.html
+  - /guides/v2.2/cloud/architecture/pro-architecture-legacy.html
+  - /guides/v2.3/cloud/architecture/pro-architecture-legacy.html
+
 functional_areas:
   - Cloud
 ---
 
 Your {{site.data.var.ece}} Pro architecture supports a maximum of **eight** environments that you can use to develop, test, and launch your store. Each environment contains a database and a web server:
 
--   **Integration**—Provides a single environment branch, and you can create up to four additional, environment branches. This allows for a maximum of five _active_ branches deployed to Platform-as-a-Service (PaaS) containers.
--   **Staging**—Provides a single environment branch deployed to dedicated Infrastructure-as-a-Service (IaaS) containers.
--   **Production**—Provides a single environment branch deployed to dedicated Infrastructure-as-a-Service (IaaS) containers.
--   **Global Master**—Provides a `master` branch deployed to Platform-as-a-Service (PaaS) containers.
-
-{% include cloud/note-pro-legacy.md %}
+- **Integration**—Provides a single environment branch, and you can create up to four additional, environment branches. This allows for a maximum of five _active_ branches deployed to Platform-as-a-Service (PaaS) containers.
+- **Staging**—Provides a single environment branch deployed to dedicated Infrastructure-as-a-Service (IaaS) containers.
+- **Production**—Provides a single environment branch deployed to dedicated Infrastructure-as-a-Service (IaaS) containers.
+- **Global Master**—Provides a `master` branch deployed to Platform-as-a-Service (PaaS) containers.
 
 The following table summarizes the differences between environments:
 

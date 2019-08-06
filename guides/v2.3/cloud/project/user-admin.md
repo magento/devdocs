@@ -8,8 +8,6 @@ functional_areas:
 
 {{site.data.var.ece}} enables you to administer users by assigning them one or more roles. A *role* provides access and improves security in your project. Different roles are authorized to do different things with your applications, environments, and users. You can add and manage user accounts for the entire project and permissions per available environment.
 
-{% include cloud/wings-management.md %}
-
 ## Account owner role {#cloud-role-acct-owner}
 
 The Account Owner is the only user with the Account Owner role. This user can perform any task in any project or environment, including deleting it. The account is associated with the email address, name, and information for the person who registered the {{site.data.var.ece}} account through the account creation process.
@@ -20,16 +18,16 @@ The account has super user access and additional capabilities for managing all a
 
 You can assign users to the following roles per project:
 
-* Project administrator (also referred to as *super user*) can change settings and execute actions on any environment, including creating and restoring snapshots.
-*  Project reader can view all environments in a project but cannot execute any actions on them.
+- Project administrator (also referred to as *super user*) can change settings and execute actions on any environment, including creating and restoring snapshots.
+- Project reader can view all environments in a project but cannot execute any actions on them.
 
 ## Environment-level roles {#cloud-role-env}
 
 A project reader can have one of the following roles per environment:
 
-* Environment administrator can change settings and execute actions on this environment, including merging with the parent environment.
-* Environment contributor can push code to this environment and branch the environment.
-* Environment reader can view this environment only.
+- Environment administrator can change settings and execute actions on this environment, including merging with the parent environment.
+- Environment contributor can push code to this environment and branch the environment.
+- Environment reader can view this environment only.
 
 {:.bs-callout .bs-callout-info}
 We recommend you limit the environment administrator role to as few users as possible.
@@ -53,18 +51,20 @@ You can use the {{site.data.var.ece}} command line client to fully manage your u
 
 Available commands:
 
-* `magento-cloud user:add` adds a user to the project
-* `magento-cloud user:delete` deletes a user
-* `magento-cloud user:list [users]` lists project users
-* `magento-cloud user:role` views or change a user's role
+- `magento-cloud user:add` adds a user to the project
+- `magento-cloud user:delete` deletes a user
+- `magento-cloud user:list [users]` lists project users
+- `magento-cloud user:role` views or change a user's role
 
 For example, the following command adds the project administrator (`admin`) role to `alice@example.com` and gives her `contributor` privileges to the `development` environment:
 
 The following prompts are displayed:
 
-<pre class="no-copy">magento-cloud user:add
+```terminal
+magento-cloud user:add
 
 Email address: alice@example.com
+
 The user's project role can be 'viewer' ('v') or 'admin' ('a').
 Project role [V/a]: a
 The user's environment-level roles can be 'viewer', 'contributor', or 'admin'.
@@ -74,46 +74,62 @@ Summary:
   Project role: contributor
 Adding users can result in additional charges.
 Are you sure you want to add this user? [Y/n]
-User alice@example.com created</pre>
+Adding the user to the project
+```
+{.no-copy}
 
-After this has been done, the user will receive an e-mail asking her to confirm
-her details and register an account name and a password.
+After you add the user, Magento sends a notification to the specified email address letting the user know that they have been added to the {{ site.data.ece }} project, with instructions for accesssing the project.
 
 To change Alice's role on the environment `development` to `admin`, use the following command:
 
-	magento-cloud user:role alice@example.com --level environment --environment development --role admin
+```bash
+magento-cloud user:role alice@example.com --level environment --environment development --role admin
+```
 
-Use `magento-cloud list` to get the full list of commands.
+{:.bs-callout-info}
+To list the available `magento-cloud` CLI commands, use the `magento-cloud list` command.
 
 ### Manage users with the Web Interface {#cloud-user-webinterface}
 
 To create user accounts using the Web Interface:
 
-1.  Log in to [your {{site.data.var.ece}} account](https://accounts.magento.cloud).
-2.  Click the **Projects** tab as the following figure shows.
+1. Log in to [your {{site.data.var.ece}} account](https://accounts.magento.cloud).
 
-	![Click the projects tab to access your Cloud project]({{ site.baseurl }}/common/images/cloud_account_project.png){:width="550px"}
-3.	Click the name of your project.
-4.	Click the configure project button next to project name in the top navigation bar as the following figure shows.
+1. Click the **Projects** tab as the following figure shows.
 
-	![Configure the project]({{ site.baseurl }}/common/images/cloud_project_gear.png){:width="184px"}
-5.	In the right pane, click **Add Users**.
+   ![Click the projects tab to access your Cloud project]({{ site.baseurl }}/common/images/cloud_account_project.png){:width="550px"}
 
-	![Start creating users]({{ site.baseurl }}/common/images/cloud_project-config.png){:width="500px"}
-6.	Click **Add User**.
+1. Click the name of your project.
 
-	![Add users]({{ site.baseurl }}/common/images/cloud_project-add-superuser.png){:width="500px"}
-7.	Enter the user's e-mail address.
-8.	Select the access for the account:
+1. Click the configure project button next to project name in the top navigation bar as the following figure shows.
 
-	*	For a project administrator account, select the **Super User** checkbox. This provides Admin rights for all settings and environments. If not selected, the account has only view options for all environments on a project.
-	*	Select permissions per specific environment (or branch) in the Integration environment: No access, Admin (change settings, execute action, merge code), Contributor (push code), or Reader (view only). As you add active environments, you can modify permissions per user.
-8.	Click **Add User**.
+   ![Configure the project]({{ site.baseurl }}/common/images/cloud_project_gear.png){:width="184px"}
 
-The users you add receive an e-mail inviting them to join the {{site.data.var.ece}} project. The user must follow the prompts to register an account and verify their e-mail address. They receive access based on the set project and environment permissions.
+1. In the right pane, click **Add Users**.
+
+   ![Start creating users]({{ site.baseurl }}/common/images/cloud_project-config.png){:width="500px"}
+
+1. Click **Add User**.
+
+   ![Add users]({{ site.baseurl }}/common/images/cloud_project-add-superuser.png){:width="500px"}
+
+1. Enter the user's e-mail address.
+1. Select the access for the account:
+
+   - For a project administrator account, select the **Super User** checkbox. This provides Admin rights for all settings and environments. If not selected, the account has only view options for all environments on a project.
+
+   - Select permissions per specific environment (or branch) in the Integration environment: No access, Admin (change settings, execute action, merge code), Contributor (push code), or Reader (view only). As you add active environments, you can modify permissions per user.
+
+1. Click **Add User**.
+
+The user you add receives an email inviting them to join the {{site.data.var.ece}} project with instructions for The registering for an account and verifying their email address.
 
 ## Rebuild the environment {#rebuild}
 
-After a new user is added to an environment, the environment must be rebuilt. Rebuilds are triggered when you push a new commit to an environment. To be able to rebuild without new code changes, use the command `git commit --allow-empty -m "redeploy" && git push <branch name>` to create an empty commit and "force" rebuilding the environment.
+After you add a new user to an environment, you must rebuild and deploy the environment. Rebuilds are triggered when you push a new commit to an environment. To trigger a rebuild without changing any code, use the the following command to to create an empty commit and "force" rebuilding the environment:
 
-When the environment rebuild is complete, allow a short time for the routes to update fully and for the new user to be able to use SSH access.
+```bash
+`git commit --allow-empty -m "redeploy" && git push <branch name>`
+```
+
+The new user cannot access the environment until the environment rebuild completes and redeploys.

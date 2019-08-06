@@ -13,12 +13,10 @@ Every time you push code from your local workstation to the remote environment o
 The build and deploy process is slightly different for each plan:
 
 -  **Starter plans**—For the Integration environment, every active branch build and deploys to a full environment for access and testing. Fully test your code after merging to the `staging` branch. To go live, push `staging` to `master` to deploy to Production. You have full access to all branches through the Project Web Interface and the CLI commands.
--  **Pro plans**—For the Integration environment, every _active_ branch builds and deploys to a full environment for access and testing. You must merge your code to the `integration` branch before you can merge to the Staging environment and then the Production environment. You can only merge to Staging and Production using CLI commands with SSH or using the Project Web Interface. If you do not see the Staging or Production environments in your Project Web Interface, then you need to [Add Staging and Production to Pro projects UI]({{ page.baseurl }}/cloud/trouble/pro-env-management.html).
+-  **Pro plans**—For the Integration environment, every _active_ branch builds and deploys to a full environment for access and testing. You must merge your code to the `integration` branch before you can merge to the Staging environment and then the Production environment. You can only merge to Staging and Production using CLI commands with SSH or using the Project Web Interface.
 
 {:.bs-callout .bs-callout-info}
 Verify the code for your site and stores is in the {{site.data.var.ece}} branch. If you point, or include hooks, to code in other branches, such as a private branch, you may encounter problems with the build and deploy process. For example, if you include a theme from a private repo in your branch, the theme will not build with the Magento code.
-
-{% include cloud/wings-management.md %}
 
 ## Track the process {#track}
 

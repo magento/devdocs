@@ -10,8 +10,6 @@ The `.magento.app.yaml` file controls the way your application builds and deploy
 
 The `.magento.app.yaml` has many default values, see [a sample `.magento.app.yaml` file](https://github.com/magento/magento-cloud/blob/master/.magento.app.yaml). Always review the `.magento.app.yaml` for your installed version. This file can differ across {{site.data.var.ece}} versions.
 
-{% include cloud/note-pro-using-yaml.md %}
-
 ## Properties
 
 Use the following properties to build your application configuration file. The `name`, `type`, `disk`, and one `web` or `worker` block is required.
@@ -98,8 +96,8 @@ Contrary to standard `.htaccess` approaches that accept a _blacklist_ and allow 
 
 Our default configuration allows the following:
 
--  From the root (`/`) path, only web and media can be accessed
--  From the `~/pub/static` and `~/pub/media` paths, any file can be accessed
+- From the root (`/`) path, only web and media can be accessed
+- From the `~/pub/static` and `~/pub/media` paths, any file can be accessed
 
 The following example shows the default configuration for a set of web-accessible locations associated with an entry in the  [`mounts` property](#mounts):
 
@@ -208,7 +206,7 @@ Use the `hooks` section to run shell commands during the build, deploy, and post
 
 -   **`deploy`**—Execute commands _after_ packaging and deploying your application. You can access other services at this point. Since the default `php ./vendor/bin/ece-tools` command copies the `app/etc` directory to the correct location, you must add custom commands _after_ the deploy command to prevent custom commands from failing.
 
--   **`post_deploy`**—Execute commands _after_ deploying your application and _after_ the container begins accepting connections. The `post_deploy` hook clears the cache and preloads (warms) the cache. You can customize the list of pages using the `WARM_UP_PAGES` variable in the [Post-deploy stage]({{ page.baseurl }}/cloud/env/variables-post-deploy.html). It is available only for Pro projects that contain [Staging and Production environments in the Project Web UI]({{ page.baseurl }}/cloud/trouble/pro-env-management.html) and for Starter projects. Although not required, this works in tandem with the `SCD_ON_DEMAND` environment variable.
+-   **`post_deploy`**—Execute commands _after_ deploying your application and _after_ the container begins accepting connections. The `post_deploy` hook clears the cache and preloads (warms) the cache. You can customize the list of pages using the `WARM_UP_PAGES` variable in the [Post-deploy stage]({{ page.baseurl }}/cloud/env/variables-post-deploy.html). Although not required, this works in tandem with the `SCD_ON_DEMAND` environment variable.
 
 Add CLI commands under the `build`, `deploy`, or `post_deploy` sections _before_ the `ece-tools` command:
 
@@ -310,11 +308,8 @@ You can choose which version of PHP to run in your `.magento.app.yaml` file:
 
 ```
 name: mymagento
-type: php:7.1
+type: php:7.2
 ```
-
-{:.bs-callout .bs-callout-info}
-{{site.data.var.ece}} supports PHP 7.1 and later. For Pro projects **created before October 23, 2017**, you must open a [support ticket]({{ page.baseurl }}/cloud/trouble/trouble.html) to use PHP 7.1 on your Pro Staging and Production environments.
 
 ### PHP extensions
 

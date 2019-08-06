@@ -13,7 +13,7 @@ The `.magento.app.yaml` file specifies the configuration for the default Magento
 mae-MAGECLOUD-3825-cron-changes
 * Starter plan–All environments including `Master`
 
-* Pro plan–Integration, Staging, and Production environments including `Master`
+* Pro plan–Integration, Staging, and Production environments including `Master`.
 
 The `.magento.app.yaml` file includes the following default crons configuration, which runs the default Magento processes specified in the Magento crontab.
 
@@ -31,7 +31,7 @@ We use only one cron for {{site.data.var.ece}} projects because of the nature of
 
 Magento added an auto-crons configuration feature to support self-service cron configuration updates from the `.magento.app.yaml` file on all environments–including Pro Staging and Production. If this feature is enabled, you can use `crontab -l` to review the cron configuration for each environment.
 
-####  To review cron configuration
+#### To review cron configuration
 
 1. Log in to the {{site.data.var.ece}} project environment using [SSH]({{ page.baseurl }}/cloud/env/environments-ssh.html#ssh).
 
@@ -41,20 +41,20 @@ Magento added an auto-crons configuration feature to support self-service cron c
    crontab -l
    ```
 
-   The following example shows the crontab output for an environment that has only the default crons configuration:
+The following example shows the crontab output for an environment that has only the default crons configuration:
 
-   ```terminal
-   username@hostname:~$ crontab -l
-   # Crontab is managed by the system, attempts to edit it directly will fail.
-   SHELL=/etc/platform/6fck2obu3244c/cron-run
-   MAILTO=""
+```terminal
+username@hostname:~$ crontab -l
+# Crontab is managed by the system, attempts to edit it directly will fail.
+SHELL=/etc/platform/6fck2obu3244c/cron-run
+MAILTO=""
 
-   # m h  dom mon dow  job_name
+# m h  dom mon dow  job_name
 
-   * * * * *           cronrun
-   ```
+* * * * *           cronrun
+```
 
-{: .bs-callout-info}
+{:.bs-callout-info}
 If the command returns a `Command not found` error, contact your Magento account manager or CSM about enabling the auto-crons self-service configuration feature on the Cloud infrastructure for your {{site.data.var.ece}} project.
 
 ## Build a cron job {#build}
@@ -99,7 +99,7 @@ The default cron interval for all environments provisioned in the US-3, EU-3, an
 
 ### Prerequisite
 
-The  [auto-crons feature](#verify-cron-configuration) must be enabled on your {{site.data.var.ece}} project before you can add custom cron jobs to Staging and Production environments using `.magento.app.yaml`. If this feature is not enabled, contact your Magento account manager or CSM.
+The [auto-crons feature](#verify-cron-configuration) must be enabled on your {{site.data.var.ece}} project before you can add custom cron jobs to Staging and Production environments using `.magento.app.yaml`. If this feature is not enabled, contact your Magento account manager or CSM.
 
 #### To add custom crons
 
@@ -107,7 +107,7 @@ The  [auto-crons feature](#verify-cron-configuration) must be enabled on your {{
 
 1. Add your custom cron code to the `crons` section in the file.
 
-For example, you can add a custom cron job to export the product catalog and configure it to run every eight hours, 20 minutes after the hour.
+   For example, you can add a custom cron job to export the product catalog and configure it to run every eight hours, 20 minutes after the hour:
 
    ```yaml
    crons:
@@ -118,7 +118,6 @@ For example, you can add a custom cron job to export the product catalog and con
             spec: '20 */8 * * *'
             cmd: 'bin/magento export:start catalog_product_category'
     ```
-    {: .no-copy }
 
 1. Add, commit, and push code changes.
 

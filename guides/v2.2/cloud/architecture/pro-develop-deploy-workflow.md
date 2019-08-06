@@ -15,8 +15,6 @@ The following graphic demonstrates the Pro develop and deploy workflow, which us
 
 ![High-level view of Pro architecture development workflow]({{ site.baseurl }}/common/images/cloud_pro-dev-workflow.png)
 
-{% include cloud/note-pro-legacy.md %}
-
 ## Development workflow {#develop}
 
 The Integration environment provides a single, base `integration` branch containing your {{site.data.var.ece}} code. You can create up to four additional branches for developing your custom code, extensions, and third party integrations. This allows for a maximum of five _active_ branches deployed to Platform-as-a-Service (PaaS) containers.

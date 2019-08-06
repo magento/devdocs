@@ -8,8 +8,6 @@ functional_areas:
 
 You can configure your Bitbucket repository to automatically build and deploy an environment when you push code changes. This integration synchronizes your Bitbucket repository with your {{site.data.var.ece}} account.
 
-For Pro projects **created before October 23, 2017**, this integration works on Integration environments _only_. You must [request an upgrade]({{ page.baseurl }}/cloud/trouble/pro-env-management.html) before you can use this integration on Staging and Production environments.
-
 {% include cloud/note-private-repo.md %}
 
 Before you enable the integration, you must have the following:
