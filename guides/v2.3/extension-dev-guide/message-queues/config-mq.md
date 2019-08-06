@@ -194,7 +194,7 @@ The following illustrates an `arguments` block:
 
 The `queue_publisher.xml` file defines which connection and exchange to use to publish messages for a specific topic. It contains the following elements:
 
-* [publisher](https://glossary.magento.com/publisher)
+* [publisher](https://glossary.magento.com/publisher-subscriber-pattern)
 * publisher/connection
 
 #### Example `queue_publisher.xml` file

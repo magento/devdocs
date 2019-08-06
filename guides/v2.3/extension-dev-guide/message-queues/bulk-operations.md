@@ -56,7 +56,7 @@ The `BulkManagementInterface::scheduleBulk` is responsible for publishing bulk o
 <td>The Admin user ID that executes this bulk operation.</td></tr>
 </table>
 
-See [Create a publisher]( {{page.baseurl}}/extension-dev-guide/message-queues/implement-bulk.html#createpublisher) for a detailed example of a [publisher](https://glossary.magento.com/publisher).
+See [Create a publisher]( {{page.baseurl}}/extension-dev-guide/message-queues/implement-bulk.html#createpublisher) for a detailed example of a [publisher](https://glossary.magento.com/publisher-subscriber-pattern).
 
 ### Consume messages
 
