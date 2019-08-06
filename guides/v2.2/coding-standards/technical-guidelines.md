@@ -506,10 +506,9 @@ You need to read configuration from different sources (like database or filesyst
 
 6.2.4. Actions MUST NOT reference blocks declared in layout.
 
-6.2.5. Configuration for the presentation layer MUST be declared in the corresponding application area.
-    This includes events and plugins that customize the presentation layer.
+6.2.5 Blocks MUST NOT assume that a specific, or any, controller has been invoked for current request.
 
-### 6.3. Data Access (Persistence) layer
+###  6.3. Data Access (Persistence) layer
 
 6.3.1. Entities MAY have fields scoped differently (in product, EAV --- per store, options --- per website).
 
@@ -727,16 +726,16 @@ You need to read configuration from different sources (like database or filesyst
 
 11.3.1.1. Page file names MUST follow this pattern:
 
-* {Admin or Storefront}{Description}Page.xml, where {Description} briefly describes the page under test.
+* `{Admin or Storefront}{Description}Page.xml`, where `{Description}` briefly describes the page under test.
 * Use [PascalCase](http://wiki.c2.com/?PascalCase).
-* Example: AdminProductAttributeGridPage.xml
+* Example: `AdminProductAttributeGridPage.xml`
 
 11.3.1.2. Page `name` attribute MUST be the same as the file name.
 
 11.3.1.3. Page `module` attribute MUST follow this pattern:
 
-* {VendorName}_{ModuleName}
-* Example: Magento_Backend
+* `{VendorName}_{ModuleName}`
+* Example: `Magento_Backend`
 
 11.3.1.4. There MUST be only one `<page>` entity per file.
 
@@ -744,9 +743,9 @@ You need to read configuration from different sources (like database or filesyst
 
 11.3.2.1. Section file names MUST follow this pattern:
 
-* {Admin or Storefront}{Description}Section.xml, where {Description} briefly describes the section under test.
+* `{Admin or Storefront}{Description}Section.xml`, where `{Description}` briefly describes the section under test.
 * Use [PascalCase](http://wiki.c2.com/?PascalCase).
-* Example: StorefrontCheckoutCartSummarySection.xml
+* Example: `StorefrontCheckoutCartSummarySection.xml`
 
 11.3.2.2. Section `name` attribute MUST be the same as the file name.
 
@@ -768,13 +767,29 @@ You need to read configuration from different sources (like database or filesyst
 
 11.3.4.1. Data entity file names MUST follow this pattern:
 
-* {Type}Data.xml, where {Type} describes the type of entities.
+* `{Type}Data.xml`, where `{Type}` describes the type of entities.
 * Use [PascalCase](http://wiki.c2.com/?PascalCase).
-* Examples: ProductData.xml or CustomerData.xml
+* Examples: `ProductData.xml` or `CustomerData.xml`
 
 11.3.4.2. Data entities SHOULD make use of `unique="suffix"` or `unique="prefix"` to ensure that tests using the entity can be repeatedly ran against the same environment.
 
 11.3.4.3. Changes to existing data entities MUST be compatible with existing tests.
+
+#### 11.3.5. Action groups
+
+11.3.5.1. Action group file names MUST follow this pattern:
+
+- If the action group is making an assertion, then use the following format: `Assert{Admin or Storefront}{Functionality}ActionGroup.xml` where `{Functionality}` briefly describes what the action group is doing.
+- Otherwise use this format: `{Admin or Storefront}{Functionality}ActionGroup.xml`
+- Example: `AssertStorefrontMinicartContainsProductActionGroup.xml`
+
+11.3.5.2. Action group arguments MUST specify the `type` attribute.
+
+11.3.5.3. Action groups MUST NOT have unused arguments.
+
+11.3.5.4. Action groups MUST NOT reference created data entities such as `$$createdOutOfScopeData.property$$` or `$createdOutOfScopeData.property$` that were created from outside of the action group scope. Instead, action groups MUST use arguments to access this out of scope data.
+
+11.3.5.5. Action group arguments SHOULD specify default values.
 
 ## 12. Web API
 
@@ -908,6 +923,8 @@ class SampleEventObserverThatModifiesInputs implements ObserverInterface
 15.11. Security capabilities SHOULD be implemented either on the Magento Framework level or in a dedicated module(s) and utilized by the entire application in a centralize manner.
 
 15.12. Files MUST be secured by a web server configuration (e.g., `.htaccess` or `nginx.conf`), except files that are intended to be publicly accessible.
+ 
+15.13 Presentation layer classes that access user input directly MUST NOT assume it has been validated.
 
 ## 16. Cron
 

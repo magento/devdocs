@@ -42,7 +42,7 @@ The `routes.yaml` file is a list of templated routes and their configurations. Y
   ```text
   http://www.example.com/
 
-  http://www.example.com/blog
+  https://www.example.com/blog
   ```
   {: .no-copy}
 
@@ -55,9 +55,9 @@ The `routes.yaml` file is a list of templated routes and their configurations. Y
 
   http://www.example.com/blog
 
-  http://www.example1.com/
+  https://www.example1.com/
 
-  http://www.example1.com/blog
+  https://www.example1.com/blog
   ```
   {: .no-copy}
 
@@ -65,7 +65,7 @@ The `routes.yaml` file is a list of templated routes and their configurations. Y
 
   If a project does not have any domains configured, which is common during development, the `{all}` placeholder behaves in the same way as the `{default}` placeholder.
 
-{{site.data.var.ee}} also generates URLs for every active environment, so you can test that system. In a test system, `{default}` is replaced with the following domain name:
+{{site.data.var.ee}} also generates routes for every active Integration environment. For Integration environments, `{default}` is replaced with the following domain name:
 
 ```text
 [branch]-[project-id].[region].magentosite.cloud
@@ -126,7 +126,7 @@ The following sample route does not redirect from the `www` to the apex domain; 
 In the first sample, the server responds directly to a request of the form `http://example.com/hello`, but it issues a _301 redirect_ for `http://www.example.com/mypath` (to `http://example.com/mypath`).
 
 ## Wildcard routes
-{{site.data.var.ece}} supports wildcard routes, so you can map multiple subdomains to the same application. This works for [redirect](https://glossary.magento.com/redirect) and upstream routes. You prefix the route with an asterisk (\*). For example, the following routes to the same application:
+{{site.data.var.ece}} supports wildcard routes, so you can map multiple subdomains to the same application. This works for redirect and upstream routes. You prefix the route with an asterisk (\*). For example, the following routes to the same application:
 
 -  `*.example.com`
 -  `www.example.com`
