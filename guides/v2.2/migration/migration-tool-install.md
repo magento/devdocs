@@ -99,4 +99,4 @@ If you've cloned Magento 2 from the GitHub repository, follow the steps below to
 * <a href="{{ page.baseurl }}/migration/migration-tool-configure.html">Configure migration</a>
 * <a href="{{ page.baseurl }}/migration/migration-tool-preconditions.html">Preconditions</a>
 
-[composer-json]: https://github.com/magento/data-migration-tool/blob/master/composer.json
+[composer-json]: https://github.com/magento/data-migration-tool/blob/{{ page.guide_version }}/composer.json

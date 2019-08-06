@@ -11,7 +11,7 @@ This allows client code to work with asynchronous operations just as it would wi
 
 ## DeferredInterface
 
-`_Magento\Framework\Async\DeferredInterface_` is quite simple:
+`Magento\Framework\Async\DeferredInterface` is quite simple:
 
 ```php
 interface DeferredInterface
@@ -26,13 +26,13 @@ interface DeferredInterface
 }
 ```
 
-When the client code needs the result, the `_get()_` method will be called to retrieve the result.
-`_isDone()_` can be used to see whether the code has completed.
+When the client code needs the result, the `get()` method will be called to retrieve the result.
+`isDone()` can be used to see whether the code has completed.
 
-There are 2 types of asynchronous operations where `_DeferredInterface_` can be used to describe the result:
+There are 2 types of asynchronous operations where `DeferredInterface` can be used to describe the result:
 
-* With asynchronous operations in progress, calling `_get()_` would wait for them to finish and return their result.
-* With deferred operations, `_get()_` would actually start the operation, wait for it to finish, and then return the result.
+* With asynchronous operations in progress, calling `get()` would wait for them to finish and return their result.
+* With deferred operations, `get()` would actually start the operation, wait for it to finish, and then return the result.
 
 Sometimes developers require more control over long asynchronous operations.
 That is why there is an extended deferred variant - `Magento\Framework\Async\CancelableDeferredInterface`:
@@ -58,7 +58,7 @@ This interface is for operations that may take too long and can be canceled.
 
 ### Client code
 
-Assuming that `_serviceA`, `serviceB` and `serviceC_` all execute asynchronous operations, such as HTTP requests, the client code would look like:
+Assuming that `serviceA`, `serviceB` and `serviceC` all execute asynchronous operations, such as HTTP requests, the client code would look like:
 
 ```php
 public function aMethod() {
@@ -84,7 +84,7 @@ With the deferred client, the code can start multiple operations at the same tim
 ## ProxyDeferredFactory
 
 When writing a module or an extension, you may not want to burden other developers with having to know that your method is performing an asynchronous operation.
-There is a way to hide it: `_Magento\Framework\Async\ProxyDeferredFactory_`. With its help, you can return values that seem like regular objects
+There is a way to hide it: `Magento\Framework\Async\ProxyDeferredFactory`. With its help, you can return values that seem like regular objects
 but are in fact deferred results.
 
 For example:
@@ -117,7 +117,7 @@ public function doCallsAndProcess(): Result
 ## Using DeferredInterface for background operations
 
 As mentioned above, the first type of asynchronous operations are operations executing in a background.
-`DeferredInterface` can be used to give client code a promise of a not-yet-received result and wait for it by calling the `_get()_` method.
+`DeferredInterface` can be used to give client code a promise of a not-yet-received result and wait for it by calling the `get()` method.
 
 Take a look at an example: creating shipments for multiple products:
 
@@ -189,7 +189,7 @@ class ShipController
 ```
 
 Here, multiple shipment requests are being sent at the same time with their results gathered later.
-If you do not want to write your own `_DeferredInterface_` implementation, you can use `_CallbackDeferred_` to provide callbacks that will be used when `_get()_` is called.
+If you do not want to write your own `DeferredInterface` implementation, you can use `CallbackDeferred` to provide callbacks that will be used when `get()` is called.
 
 ## Using DeferredInterface for deferred operations
 
@@ -274,4 +274,4 @@ class EntitiesController
 
 ## Examples in Magento
 
-Please see our asynchronous HTTP client `_Magento\Framework\HTTP\AsyncClientInterface_` and `_Magento\Shipping\Model\Shipping_` with various `_Magento\Shipping\Model\Carrier\AbstractCarrierOnline_` implementations to see how `DeferredInterface` can be used to work with asynchronous code.
+Please see our asynchronous HTTP client `Magento\Framework\HTTP\AsyncClientInterface` and `Magento\Shipping\Model\Shipping` with various `Magento\Shipping\Model\Carrier\AbstractCarrierOnline` implementations to see how `DeferredInterface` can be used to work with asynchronous code.

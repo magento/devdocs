@@ -44,9 +44,8 @@ If not, see the [Installation overview]({{ page.baseurl }}/install-gde/bk-instal
 2. If your system lacks any requirements, see the prerequisites documentation:
 
    * [Apache]({{ page.baseurl }}/install-gde/prereq/apache.html)
-   * [PHP (Ubuntu)]({{ page.baseurl }}/install-gde/prereq/php-ubuntu.html)
-   * [PHP (CentOS)]({{ page.baseurl }}/install-gde/prereq/php-centos.html)
-   * MySQL]({{ page.baseurl }}/install-gde/prereq/mysql.html)
+   * [PHP]({{ page.baseurl }}/install-gde/prereq/php-settings.html)
+   * [MySQL]({{ page.baseurl }}/install-gde/prereq/mysql.html)
 
 3. ust as importantly, set up the [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html) on the server.
 4. Switch to the [Magento file system owner](https://glossary.magento.com/magento-file-system-owner).
@@ -55,8 +54,10 @@ If not, see the [Installation overview]({{ page.baseurl }}/install-gde/bk-instal
 
 When all prerequisites have been met, get the Magento software using [Composer](https://glossary.magento.com/composer) as follows:
 
-    cd <web server docroot directory>
-    composer create-project --repository=https://repo.magento.com/ magento/project-community-edition magento2
+```bash
+cd <web server docroot directory>
+composer create-project --repository=https://repo.magento.com/ magento/project-community-edition magento2
+```
 
 You are required to authenticate; see [Get your authentication keys]({{ page.baseurl }}/install-gde/prereq/connect-auth.html) for details. This downloads Magento code only; it doesn't install the software for you.
 
@@ -93,16 +94,20 @@ The following example shows how to install using the command line with the follo
 * Default currency is U.S. dollars
 * Default time zone is U.S. Central (America/Chicago)
 
-      php /var/www/html/magento2/bin/magento setup:install --base-url=http://192.0.2.5/magento2/ \
-      --db-host=localhost --db-name=magento --db-user=magento --db-password=magento \
-      --admin-firstname=Magento --admin-lastname=User --admin-email=user@example.com \
-      --admin-user=admin --admin-password=admin123 --language=en_US \
-      --currency=USD --timezone=America/Chicago --use-rewrites=1
+    ```bash
+    php /var/www/html/magento2/bin/magento setup:install --base-url=http://192.0.2.5/magento2/ \
+    --db-host=localhost --db-name=magento --db-user=magento --db-password=magento \
+    --admin-firstname=Magento --admin-lastname=User --admin-email=user@example.com \
+    --admin-user=admin --admin-password=admin123 --language=en_US \
+    --currency=USD --timezone=America/Chicago --use-rewrites=1
+    ```
 
 Optionally switch to [developer mode]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html).
 
-    cd <magento_root>/bin
-    php magento deploy:mode:set developer
+```bash
+cd <magento_root>/bin
+php magento deploy:mode:set developer
+```
 
 {% endcollapsible %}
 
@@ -131,7 +136,9 @@ To run the Web Setup Wizard:
 
 1. Enter the following URL in your browser's address or location field:
 
-       http://192.0.2.5/magento2/setup
+    ```bash
+    http://192.0.2.5/magento2/setup
+    ``
 
 1. At the welcome page, click **Agree and Setup Magento**.
 
