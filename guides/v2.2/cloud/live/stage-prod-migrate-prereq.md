@@ -62,7 +62,7 @@ If you have **not modified** the default deployment hooks or configurations, ski
 
 ### Get your Pro access URLs  {#pro-urls}
 
-You can locate your URLs through the Project Web Interface. For each selected environment or branch, you will find an Access Site link.
+You can locate your URLs through the Project Web Interface. There is an Access Site link for each active environment.
 
 ![Access your project]({{ site.baseurl }}/common/images/cloud/cloud-pro-project-access.png)
  {:width="550px"}

@@ -48,7 +48,7 @@ For Starter, deploy the development branch you created to Staging and Production
 
 If you prefer to use CLI for deploying, you will need to configure additional SSH settings and Git remotes to use commands. You can SSH into the Staging and Production environments to push the `master` branch.
 
-You'll need the SSH and Git access information for your project.
+You need the SSH and Git access information for your project.
 
 - For Starter projects, locate the SSH and Git information through the Project Web Interface.
 - For Pro projects, locate the SSH and Git information through the Project Web Interface.
@@ -112,7 +112,7 @@ rsync -azvP local_machine/pub/media/ <environment_ssh_link@ssh.region.magento.cl
 {:.bs-callout-info}
 To transfer media from remote-to-remote environments directly, you must enable ssh agent forwarding, see [GitHub guidance](https://developer.github.com/v3/guides/using-ssh-agent-forwarding/)
 
-1. [Open an SSH connection]/{{page.baseurl}}/cloud/env/environments-ssh.html#ssh) to the environment you are transferring from (you can find the ssh link in your Project Web UI -> select the branch -> Access Site -> SSH access):
+1. [Open an SSH connection]/{{page.baseurl}}/cloud/env/environments-ssh.html#ssh) to the source environment. You can find the **SSH access** link in your Project Web UI by selecting the environment branch, and click **Access Site**:
 
     ```bash
     ssh -A <environment_ssh_link@ssh.region.magento.cloud>
@@ -148,7 +148,7 @@ To migrate a database:
    ssh -A <environment_ssh_link@ssh.region.magento.cloud>
    ```
 
-1. Find the database login information with the following command:
+1. List the environment relationships to find the database login information:
 
    ```bash
    php -r 'print_r(json_decode(base64_decode($_ENV["MAGENTO_CLOUD_RELATIONSHIPS"]))->database);'
