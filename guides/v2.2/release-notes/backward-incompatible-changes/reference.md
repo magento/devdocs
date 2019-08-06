@@ -5,6 +5,7 @@ redirect_from:
 - /guides/v2.2/release-notes/backward-incompatible-changes/commerce.html
 - /guides/v2.2/release-notes/backward-incompatible-changes/open-source.html
 - /guides/v2.2/release-notes/changes/b2b_changes.html
+- /guides/v2.2/release-notes/changes/ce_changes.html
 ---
 
 This topic provides details about backward incompatible changes related to {{site.data.var.ce}} 2.2.
