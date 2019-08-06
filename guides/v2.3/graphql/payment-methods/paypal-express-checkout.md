@@ -26,7 +26,7 @@ The following steps describe the flow of calls required to complete a typical Pa
 
 ## Additional Payment information
 
-When you set the payment method code to `paypal_express` in the `setPaymentMethodOnCart` mutation, you must also specify attributes specific to this payment method in `additional_data` object. These attributes are defined in the   `paypal_express` object:
+When you set the payment method code to `paypal_express` in the `setPaymentMethodOnCart` mutation, you must also specify attributes specific to this payment method in `additional_data` object. These attributes are defined in the  `paypal_express` object:
 
 {% include graphql/payment-methods/paypal-express-checkout-attributes.md %}
 
