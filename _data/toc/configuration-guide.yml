@@ -275,7 +275,7 @@ pages:
       url: /config-guide/multi-site/ms_over.html
       children:
 
-        - label: Change increment Id for a database entity on particular store
+        - label: Change increment ID for a database entity on particular store
           url: /config-guide/multi-site/change-increment-id.html
 
         - label: Set up multiple websites, stores, and store views in the Admin
