@@ -42,7 +42,7 @@ Magento added an auto-crons configuration option to support self-service cron co
    ```
 
    {: .bs-callout-info}
-   If the `crontab -l` command returns a `Command not found` error, contact your Magento account manager or CSM about enabling the auto-crons self-service configuration option on the Cloud infrastructure for your {{site.data.var.ece}} project.
+   If the `crontab -l` command returns a `Command not found` error, contact your Magento account manager or CSM about enabling the auto-crons self-service configuration option on your {{site.data.var.ece}} project.
 
    The following example shows the crontab output for an environment that has only the default crons configuration:
 
