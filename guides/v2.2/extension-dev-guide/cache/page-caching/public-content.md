@@ -1,10 +1,6 @@
 ---
 group: php-developer-guide
 title: Public content
-redirect_from:
-  - /guides/v2.2/config-guide/cache/cache-priv-priv.html
-  - /guides/v2.2/config-guide/cache/cache-priv-context.html
-  - /guides/v2.2/config-guide/cache/cache-priv-inval.html
 ---
 
 {::options syntax_highlighter="rouge" /}

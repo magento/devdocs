@@ -97,4 +97,4 @@ The following configuration overrides the default directory restriction for the 
 ``` 
 
 [`di.xml`]: {{page.baseurl }}/extension-dev-guide/build/di-xml-file.html
-[Storage class]: https://github.com/magento/magento2ce/blob/{{page.guide_version}}/app/code/Magento/Cms/Model/Wysiwyg/Images/Storage.php
+[Storage class]: {{ site.mage2bloburl }}/{{page.guide_version}}/app/code/Magento/Cms/Model/Wysiwyg/Images/Storage.php

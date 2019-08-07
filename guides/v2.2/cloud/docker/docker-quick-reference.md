@@ -30,15 +30,33 @@ List containers and ports | `docker-compose ps`, or `docker ps`
 
 ## bin/docker
 
+Run `bin/docker` commands using the following format:
+
+```bash
+./bin/docker <command>
+```
+
+For example, to connect to the bash shell:
+
+```terminal
+$ ./bin/docker bash
+Starting project_redis_1 ... done
+Starting project_db_1    ... done
+Starting project_elasticsearch_1 ... done
+[ ok ] Starting enhanced syslogd: rsyslogd.
+root@deploy:/app#
+```
+{: .no-copy}
+
 Action | Command
 :----- | :------
-Pull latest images | pull
-Destroy, re-create and start containers | up
-Destroy containers | down
-Build application | build
-Deploy application | up
-Re-build and re-deploy application | redeploy
-Connect to bash | bash
-Stop containers | stop
-Start containers | start
+Connect to bash shell | `bash`
+Pull the latest images | `pull`
+Build application | `ece-build`
+Deploy application | `ece-deploy`
+Re-build and re-deploy application | `ece-redeploy`
+Stop containers | `stop`
+Start containers | `start`
 Restart containers | restart
+Destroy containers | `down`
+Destroy, re-create, and start containers | `up`
