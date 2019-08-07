@@ -27,6 +27,8 @@ The release notes include:
 
 -  {:.new}<!-- MAGECLOUD-2514 -->Updated the logging information returned by the `module:refresh` command. Now, you can see a detailed list of enabled modules in the `cloud.log` file.
 
+-  {:.fix}<!-- MAGECLOUD-3957 -->Fixed an issue that caused an error with static content deployment during build. After a Magento installation and `{{site.data.var.ct}}` config dump, an error occurred if there was no locale specified for the admin user in the `config.php` file. Now, there is a default locale for the admin user in the `config.php` file.
+
 ## v2002.0.20
 
 -   {:.new}**Docker Updates**—
