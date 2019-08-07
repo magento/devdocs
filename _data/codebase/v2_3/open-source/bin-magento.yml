@@ -5107,7 +5107,11 @@ commands:
 
         <comment>bin/magento queue:consumers:start someConsumer --area-code='adminhtml'</comment>
 
-    To save PID enter path:
+    To do not run multiple copies of one consumer simultaneously:
+
+        <comment>%command.full_name% someConsumer --single-thread'</comment>
+
+    To save PID enter path (This option is deprecated, use --single-thread instead):
 
         <comment>bin/magento queue:consumers:start someConsumer --pid-file-path='/var/someConsumer.pid'</comment>
   definition:
@@ -5145,14 +5149,22 @@ commands:
         is_value_required: true
         is_multiple: false
         description: The preferred area (global, adminhtml, etc...) default is global.
-        default: 
+        default:
+      single-thread:
+        name: "--single-thread"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description:
+        default: false
       pid-file-path:
         name: "--pid-file-path"
         shortcut: ''
         accept_value: true
         is_value_required: true
         is_multiple: false
-        description: The file path for saving PID
+        description: The file path for saving PID (This option is deprecated, use --single-thread instead)
         default: 
       help:
         name: "--help"

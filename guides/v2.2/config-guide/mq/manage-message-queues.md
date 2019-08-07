@@ -78,9 +78,14 @@ Where:
 
 *   `--batch-size=<value>` specifies the number of messages to consume per batch. If specified, messages in a queue are consumed in batches of `<value>` each. This option is applicable for the batch consumer only. If `--batch-size` is not defined, the batch consumer receives all available messages in a queue.
 
-*   `--pid-file-path=<value>` the file path for saving PID of consumer process.
+*   `--pid-file-path=<value>` the file path for saving PID of consumer process. This option is deprecated, use `--single-thread` instead.
+
+*   `--single-thread` this option prevents running multiple copies of one consumer simultaneously.
 
 *   `--area-code=<value>` the area code preferred for consumer process.
+
+{: .bs-callout .bs-callout-warning }
+The option `--pid-file-path` was marked as deprecated in releases 2.2.10 and 2.3.3 and pid files won't be generated anymore.
 
 After consuming all available messages, the command terminates. You can run the command again manually or with a cron job. You can also run multiple instances of the `magento queue:consumers:start` command to process large message queues. For example, you can append `&` to the command to run it in the background, return to a prompt, and continue running commands (e.g., `bin/magento queue:consumers:start <consumer_name> &`).
 
