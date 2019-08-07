@@ -68,6 +68,9 @@ pages:
         - label: customerPaymentTokens query
           url: /graphql/queries/customer-payment-tokens.html
 
+        - label: getHostedProUrl query
+          url: /graphql/queries/get-hosted-pro-url.html
+
         - label: storeConfig query
           url: /graphql/queries/store-config.html
 
@@ -207,6 +210,9 @@ pages:
 
         - label: PayPal Payments Advanced
           url: /graphql/payment-methods/payments-advanced.html
+
+        - label: PayPal Website Payments Pro Hosted Solution
+          url: /graphql/payment-methods/hosted-pro.html
 
     - label: Tutorial
       class: tutorial
