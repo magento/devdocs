@@ -86,27 +86,10 @@ The `PaymentMethodInput` object can contain the following attributes:
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`additional_data` | PaymentMethodAdditionalDataInput | Additional payment data
 `code` | String! | The internal name for the payment method
 `purchase_order_number` | String | The purchase order number. Optional for most payment methods
 
-### PaymentMethodAdditionalDataInput {#PaymentMethodAdditionalDataInput}
-
-The `PaymentMethodAdditionalDataInput` data type attributes are used when setting a PayPal payment method. [setPaymentMethodOnCart mutation]({{ page.baseurl}}/graphql/reference/quote-payment-method.html) provides more context.
-
-Attribute |  Data Type | Description
---- | --- | ---
-`payflow_express` | [PayflowExpressInput](#PayflowExpressInput) | Required input for PayPal Payflow Express Checkout payments
-`paypal_express` | [PaypalExpressInput](#PaypalExpressInput) | Required input for PayPal Express Checkout payments
-
-### PaypalExpressInput {#PaypalExpressInput}
-
-The `PaypalExpressInput` object contains the required input for PayPal Express Checkout payments.
-
-Attribute |  Data Type | Description
---- | --- | ---
-`payer_id` | String! | The unique ID of the PayPal customer
-`token` | String! | The token returned by the createPaypalExpressToken mutation
+For all online payment methods, the payload must include an object that defines additional information specific to that payment method.
 
 ## Output attributes
 
