@@ -37,22 +37,25 @@ Magento added an auto-crons configuration feature to support self-service cron c
 
 1. List the scheduled cron processes.
 
-   ```bash
-   crontab -l
-   ```
+    ```bash
+    crontab -l
+    ```
 
-   The following example shows the crontab output for an environment that has only the default crons configuration:
+    {: .bs-callout-tip}
+    `crontab -l` is accessible on Pro Staging/Production with enabled auto-cron option (part of infra v3). With infra v3 you'll have staging and production branches control via UI (env variables, users etc) and possibility to use `routes.yaml` and `.magetno.app.yaml` `cron` section.
 
-   ```terminal
-   username@hostname:~$ crontab -l
-   # Crontab is managed by the system, attempts to edit it directly will fail.
-   SHELL=/etc/platform/6fck2obu3244c/cron-run
-   MAILTO=""
+    The following example shows the crontab output for an environment that has only the default crons configuration:
 
-   # m h  dom mon dow  job_name
+    ```terminal
+    username@hostname:~$ crontab -l
+    # Crontab is managed by the system, attempts to edit it directly will fail.
+    SHELL=/etc/platform/6fck2obu3244c/cron-run
+    MAILTO=""
 
-   * * * * *           cronrun
-   ```
+    # m h  dom mon dow  job_name
+
+    * * * * *           cronrun
+    ```
 
 {: .bs-callout-info}
 If the command returns a `Command not found` error, contact your Magento account manager or CSM about enabling the auto-crons self-service configuration feature on the Cloud infrastructure for your {{site.data.var.ece}} project.
