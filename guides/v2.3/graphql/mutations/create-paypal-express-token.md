@@ -69,8 +69,8 @@ Attribute |  Data Type | Description
 `cart_id` | String! | The unique ID that identifies the customer's cart
 `code` | String! | Payment method code
 `express_button` | Boolean | Indicates whether the buyer selected the PayPal Express Checkout button. The default value is `false`
-`urls` | [`PaypalExpressUrlsInput!`](#PaypalExpressUrlsInput)! | A set of relative URLs that PayPal will use in response to various actions during the authorization process.
-`use_paypal_credit` | Boolean | Indicates whether the buyer clicked the Paypal credit button. The default value is `false`
+`urls` | [`PaypalExpressUrlsInput!`](#PaypalExpressUrlsInput) | A set of relative URLs that PayPal will use in response to various actions during the authorization process.
+`use_paypal_credit` | Boolean | Indicates whether the buyer clicked the PayPal credit button. The default value is `false`
 
 ### PaypalExpressUrlsInput {#PaypalExpressUrlsInput}
 
