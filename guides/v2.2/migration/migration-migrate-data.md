@@ -37,7 +37,7 @@ To force the Data Migration Tool to run from the beginning, use the `--reset` ar
 
 ## Possible consistency errors {#migrate-command-data}
 
-While running, the Data Migration Tool may report inconsistencies between Magento 1 and Magento 2 databases, and display messages like this:
+While running, the Data Migration Tool may report inconsistencies between Magento 1 and Magento 2 databases, and display messages like the following:
 
 - `Source documents are missing: <EXTENSION_TABLE_1>,<EXTENSION_TABLE_2>,...<EXTENSION_TABLE_N>`
 - `Destination documents are missing: <EXTENSION_TABLE_1>,<EXTENSION_TABLE_2>,...<EXTENSION_TABLE_N>`
