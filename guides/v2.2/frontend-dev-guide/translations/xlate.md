@@ -166,7 +166,6 @@ If you need help understanding the context or meaning of a UI string, or have qu
 * [Example theme translation dictionary]
 * [Magento translations GitHub project]
 
-
 [Generate a translation dictionary]: {{page.baseurl}}/config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-dict
 [language inheritance]: {{page.baseurl}}/config-guide/cli/config-cli-subcommands-i18n.html#m2devgde-xlate-inheritancework
 [parent theme]: {{page.baseurl}}/frontend-dev-guide/themes/theme-inherit.html
