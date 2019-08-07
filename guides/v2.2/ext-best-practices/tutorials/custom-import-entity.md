@@ -5,7 +5,7 @@ contributor_name: Atwix
 contributor_link: https://www.atwix.com/
 ---
 
-This tutorial shows you how to add a new import entity, that can be used to import data into your custom module's table, by extending the [Magento/ImportExport/Model/Import/Entity/AbstractEntity][0]{:target="_blank"} class. 
+This tutorial shows you how to extend the [Magento/ImportExport/Model/Import/Entity/AbstractEntity][0]{:target="_blank"} class to import data into your custom module's table.
 The current import entities can be found in **System** > **Import**:
 
 - Advanced Pricing
@@ -14,13 +14,13 @@ The current import entities can be found in **System** > **Import**:
 - Customers Main File
 - Customer Addresses
 
-For the beginning let's suppose that we have a custom table with the following structure:
+To begin, let's suppose we have a custom table with the following structure:
 
 | entity_id | name | duration |
 | --- | --- | --- |
 |           |  |  |
 
-## Step 1: Adding a new Entity Type
+## Step 1: Adding a New Entity Type
 
 Declaring our new import entity:
 
@@ -34,7 +34,7 @@ Declaring our new import entity:
 </config>
 ```
 
-As we extend the **Magento_ImportExport** module, we should also add a dependency to it in `module.xml` file.
+As we extend the **Magento_ImportExport** module, we should also add a dependency to it in the `module.xml` file.
 
 > `etc/module.xml`
 
@@ -357,7 +357,7 @@ As result, we should be able to see the new Entity Type:
  
 ![Import Entity]({{ site.baseurl }}/common/images/ext-best-practices/import-entity.png)
  
- Here is a sample csv file that can be used for importing data into our table.
+ Here is a sample csv file we can use to import data into our table.
 
 ```text
 entity_id,name,duration
@@ -366,6 +366,6 @@ entity_id,name,duration
 ```
 
 {:.bs-callout .bs-callout-info}
-For updating the table's data, the `entity_id` value is required to be provided for the respectively row.
+For updating the table's data, you must provide the `entity_id` value for each row.
 
 [0]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/ImportExport/Model/Import/Entity/AbstractEntity.php
