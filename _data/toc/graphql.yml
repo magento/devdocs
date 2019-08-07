@@ -105,9 +105,6 @@ pages:
             - label: Payflow Pro handlePayflowProResponse mutation
               url: /graphql/reference/paypal-handle-payflow-pro-response.html
 
-            - label: Paypal endpoint
-              url: /graphql/reference/paypal.html
-
             - label: Products endpoint
               url: /graphql/reference/products.html
               children:
@@ -198,6 +195,9 @@ pages:
 
         - label: Authorize.Net
           url: /graphql/payment-methods/authorize-net.html
+
+        - label: PayPal Express Checkout
+          url: /graphql/payment-methods/paypal-express-checkout.html
           
         - label: PayPal Payflow Link
           url: /graphql/payment-methods/payflow-link.html
