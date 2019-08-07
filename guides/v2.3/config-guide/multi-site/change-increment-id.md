@@ -1,6 +1,6 @@
 ---
 group: configuration-guide
-title: Change increment Id for a database entity on particular store
+title: Change increment ID for a database entity on particular store
 functional_areas:
   - Configuration
   - System
