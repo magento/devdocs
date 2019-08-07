@@ -1,6 +1,6 @@
 ---
 group: configuration-guide
-title: Change increment Id for a database entity on particular store
+title: Change increment ID for a database entity on particular store
 functional_areas:
   - Configuration
   - System
@@ -78,7 +78,7 @@ Before executing the `ALTER TABLE` query on a production environment of Magento 
 
 <!-- Link Definitions -->
 [PayPal gateway rejected request - duplicate invoice issue]: https://support.magento.com/hc/en-us/articles/115002457473
-[Set up a remote MySQL database connection]: https://devdocs.magento.com/guides/v2.2/install-gde/prereq/mysql_remote.html
+[Set up a remote MySQL database connection]: {{ page.baseurl }}/install-gde/prereq/mysql_remote.html
 [Create a DB backup]: https://support.magento.com/hc/en-us/articles/360003254334
 [Create database dump on Cloud]: https://support.magento.com/hc/en-us/articles/360003254334
-[SSH to your environment]: http://devdocs.magento.com/guides/v2.2/cloud/env/environments-ssh.html#ssh
+[SSH to your environment]: {{ page.baseurl }}/cloud/env/environments-ssh.html#ssh
