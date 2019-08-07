@@ -101,4 +101,4 @@ pages:
           url: /javascript-dev-guide/widgets/widget_toggle.html
 
         - label: TrimInput widget
-          url: /javascript-dev-guide/widgets/widget_trimInput.html
+          url: /javascript-dev-guide/widgets/widget-trim-input.md.html

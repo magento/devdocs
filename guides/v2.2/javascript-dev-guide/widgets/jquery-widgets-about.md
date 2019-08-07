@@ -53,5 +53,5 @@ Magento out of the box does not contain jQuery UI styles. Also, it is not recomm
 [RedirectUrl widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_redirectUrl.html
 [Tabs widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_tabs.html
 [ToggleAdvanced widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_toggle.html
-[TrimInput widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_trimInput.html
+[TrimInput widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget-trim-input.html
 [jQuery UI 1.9.2]: http://blog.jqueryui.com/2012/11/jquery-ui-1-9-2/
