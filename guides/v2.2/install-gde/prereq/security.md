@@ -20,10 +20,12 @@ functional_areas:
 
 If you choose to enable SELinux, you might have issues running the installer unless you change the *security context* of some directories as follows:
 
+```bash
 	chcon -R --type httpd_sys_rw_content_t <magento_root>/app/etc
 	chcon -R --type httpd_sys_rw_content_t <magento_root>/var
 	chcon -R --type httpd_sys_rw_content_t <magento_root>/pub/media
 	chcon -R --type httpd_sys_rw_content_t <magento_root>/pub/static
+```
 
 The preceding commands work only with the Apache web server. Because of the variety of configurations and security requirements, we don't guarantee these commands work in all situations. For more information, see:
 
@@ -38,7 +40,9 @@ To enable Apache to initiate a connection to another host with SELinux enabled:
 
 1.	To determine if SELinux is enabled, use the following command:
 
+    ```bash
 		getenforce
+    ```
 
 	`Enforcing` displays to confirm that SELinux is running.
 
@@ -53,13 +57,12 @@ To enable Apache to initiate a connection to another host with SELinux enabled:
 Depending on your security requirements, you might find it necessary to open port 80 and other ports in your firewall. Because of the sensitive nature of networking security, Magento strongly recommends you consult with your IT department before proceeding. Following are some suggested references:
 
 *	Ubuntu: [Ubuntu documentation page](https://help.ubuntu.com/community/IptablesHowTo){:target="_blank"}.
-*	CentOS: [CentOS how-to](http://wiki.centos.org/HowTos/Network/IPTables){:target="_blank"} and [CentOS reference page](http://www.centos.org/docs/4/4.5/Security_Guide/s1-firewall-ipt-basic.html){:target="_blank"}.
+*	CentOS: [CentOS how-to](http://wiki.centos.org/HowTos/Network/IPTables){:target="_blank"}.
 
 #### Related topics:
 
 *	[Apache]({{ page.baseurl }}/install-gde/prereq/apache.html)
-*	[PHP 5.5, 5.6, or 7.0—Ubuntu]({{ page.baseurl }}/install-gde/prereq/php-ubuntu.html)
-*	[PHP 5.5, 5.6, or 7.0—CentOS]({{ page.baseurl }}/install-gde/prereq/php-centos.html)
+*	[PHP]({{ page.baseurl }}/install-gde/prereq/php-settings.html)
 *	[MySQL]({{ page.baseurl }}/install-gde/prereq/mysql.html)
 *	[Installing optional software]({{ page.baseurl }}/install-gde/prereq/optional.html)
 *	[How to get the Magento software]({{ page.baseurl }}/install-gde/bk-install-guide.html)

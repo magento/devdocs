@@ -173,7 +173,8 @@ Attribute | Data type | Description
 `image` | [ProductImage](#ProductImage) | An object that contains the URL and label for the main image on the product page
 `is_returnable` | String | Indicates whether the product can be returned. This attribute is defined in the `RmaGraphQl` module.
 `manufacturer` | Int | A number representing the product's manufacturer
-`media_gallery_entries` | [MediaGalleryEntry] | An array of [MediaGalleryEntry](#MediaGalleryEntry) objects
+`media_gallery` | [[MediaGalleryInterface]](#MediaGalleryInterface) | An array of media gallery objects
+`media_gallery_entries` | [MediaGalleryEntry] | Deprecated. Use `media_gallery` instead. 
 `meta_description` | String | A brief overview of the product for search results listings, maximum 255 characters
 `meta_keyword` | String | A comma-separated list of keywords that are visible only to search engines
 `meta_title` | String | A string that is displayed in the title bar and tab of the browser and in search results lists
@@ -202,7 +203,7 @@ Attribute | Data type | Description
 `upsell_products` | [[ProductInterface](#ProductInterface)] | An array of up-sell products
 `url_key` | String | The part of the URL that identifies the product. This attribute is defined in the `CatalogUrlRewriteGraphQl` module
 `url_path` | String | The part of the URL that precedes the `url_key`. This attribute is defined in the `CatalogUrlRewriteGraphQl` module
-`url_rewrites` | [UrlRewrite] | A list of URL rewrites. See [UrlRewrite object](#urlRewriteObject) for more information and an [example query](#urlRewriteExample)
+`url_rewrites` | [[UrlRewrite]](#urlRewriteObject) | A list of URL rewrites. See [UrlRewrite object](#urlRewriteObject) for more information and an [example query](#urlRewriteExample)
 `websites` | [Website] | An array of websites in which the product is available. See [Website object](#websiteObject) for more information and an [example query](#inclWebsiteInfoExample)
 
 ### ProductPrices object {#ProductPrices}
@@ -255,14 +256,26 @@ Attribute | Type | Description
 `position` | Int | The position within the list of product links
 `sku` | String | The identifier of the linked product
 
-### ProductImage object {#ProductImage}
+### MediaGalleryInterface {#MediaGalleryInterface}
 
-`ProductImage` contains information about image URL and label.
+The `MediaGalleryInterface` contains basic information about a product image or video.
 
 Attribute | Type | Description
 --- | --- | ---
-`url` | String | The URL for the product image
-`label` | String | The label for the product image
+`label` | String | The label for the product image or video
+`url` | String | The URL for the product image or video
+
+### ProductImage object {#ProductImage}
+
+`ProductImage` implements [`MediaGalleryInterface`](#MediaGalleryInterface), which contains information about an image's URL and label.
+
+### ProductVideo object {#ProductVideo}
+
+`ProductVideo` implements [`MediaGalleryInterface`](#MediaGalleryInterface) and contains information about a product video.
+
+Attribute | Type | Description
+--- | --- | ---
+`video_content` | ProductMediaGalleryEntriesVideoContent | Contains a [ProductMediaGalleryEntriesVideoContent](#ProductMediaGalleryEntriesVideoContent) object
 
 ### MediaGalleryEntry object {#MediaGalleryEntry}
 
@@ -297,11 +310,11 @@ Attribute | Type | Description
 Attribute | Type | Description
 --- | --- | ---
 `media_type` | String | Must be `external-video`
-`video_provider` | String | Optionally describes the video source
-`video_url` | String | Required. The URL to the video
-`video_title` | String | Required. The title of the video
 `video_description` | String | A description of the video
 `video_metadata` | String | Optional data about the video
+`video_provider` | String | Optionally describes the video source
+`video_title` | String | The title of the video
+`video_url` | String | The URL to the video
 
 ### ProductTierPrices object {#ProductTier}
 
@@ -394,9 +407,11 @@ Attribute | Type | Description
 
 You can review several general interest `products` queries at [Queries]({{ page.baseurl }}/graphql/queries.html).
 
+### Layered navigation
+
 The following query returns layered navigation for products that have a `sku` containing the string `24-WB`.
 
-```text
+```graphql
 {
   products(
     filter: { sku: { like: "24-WB%" } }
@@ -416,6 +431,85 @@ The following query returns layered navigation for products that have a `sku` co
         value_string
         items_count
       }
+    }
+  }
+}
+```
+
+### Media gallery search
+
+The following query returns media gallery information about the product with the `sku` of `24-MB01`.
+
+**Request**
+
+```graphql
+query {
+  productDetail: products(
+    pageSize: 5
+    filter: {
+       sku: { eq: "24-MB01" }
+    }
+  ) {
+    total_count
+    items {
+      sku
+      id
+      name
+      image {
+        url
+        label
+      }
+      small_image{
+          url
+          label
+      }
+      media_gallery {
+          url
+          label
+          ... on ProductVideo {
+              video_content {
+                  media_type
+                  video_provider
+                  video_url
+                  video_title
+                  video_description
+                  video_metadata
+              }
+          }
+      }
+    }
+  }
+}
+```
+
+**Response**
+
+```json
+{
+  "data": {
+    "productDetail": {
+      "total_count": 1,
+      "items": [
+        {
+          "sku": "24-MB01",
+          "id": 1,
+          "name": "Joust Duffle Bag",
+          "image": {
+            "url": "http://magento2.vagrant130/pub/media/catalog/product/cache/fd3509f20f1e8c87464fb5042a4927e6/m/b/mb01-blue-0.jpg",
+            "label": "Joust Duffle Bag"
+          },
+          "small_image": {
+            "url": "http://magento2.vagrant130/pub/media/catalog/product/cache/fd3509f20f1e8c87464fb5042a4927e6/m/b/mb01-blue-0.jpg",
+            "label": "Joust Duffle Bag"
+          },
+          "media_gallery": [
+            {
+              "url": "http://magento2.vagrant130/pub/media/catalog/product/cache/07660f0f9920886e0f9d3257a9c68f26/m/b/mb01-blue-0.jpg",
+              "label": "Image"
+            }
+          ]
+        }
+      ]
     }
   }
 }

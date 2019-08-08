@@ -208,6 +208,9 @@ pages:
       children:
         - label: Application
           url: /cloud/project/project-conf-files_magento-app.html
+          children:
+            - label: Set cache for static files
+              url: /cloud/project/set-cache.html
 
         - label: Build and deploy
           url: /cloud/project/magento-env-yaml.html
@@ -306,6 +309,9 @@ pages:
 
         - label: Manage branches with the CLI
           url: /cloud/env/environments-start.html
+
+        - label: Profile database queries
+          url: /cloud/project/profile-database-queries.html
 
         - label: Snapshots and backup management
           url: /cloud/project/project-webint-snap.html
