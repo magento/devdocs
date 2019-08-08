@@ -119,8 +119,8 @@ The [auto-crons feature](#verify-cron-configuration) must be enabled on your {{s
         productcatalog:
             spec: '20 */8 * * *'
             cmd: 'bin/magento export:start catalog_product_category'
-   ```
-   {:.no-copy }
+    ```
+    {:.no-copy }
 
 1. Add, commit, and push code changes.
 
