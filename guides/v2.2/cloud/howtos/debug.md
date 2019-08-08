@@ -63,6 +63,7 @@ You can enable Xdebug directly to all Starter environments and Pro Integration e
                     cat /etc/php/7.0/fpm/php-fpm.conf | sed -e 's/request_terminate_timeout.*//g' > /tmp/php-fpm.conf
                     /usr/sbin/php-fpm7.0 -y /tmp/php-fpm.conf
 		    
+    {: .bs-callout-info}
     Note that actual path to php-fpm can be different: check `/etc/alternatives/php` symlink on your cloud server.
 4. Save your changes to `.magento.app.yaml` and exit the text editor.
 5. Add, commit, and push the changes to redeploy the environment:
