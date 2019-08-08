@@ -1,6 +1,6 @@
 # This Jekyll hook runs Markdown linter (https://github.com/markdownlint/markdownlint)
 # on .md files that git tracks as 'modified' ('git ls-files -m').
-# '_checks/md_style' sets a style (https://github.com/markdownlint/markdownlint/blob/master/docs/creating_styles.md)
+# '_checks/styles/md_style' sets a style (https://github.com/markdownlint/markdownlint/blob/master/docs/creating_styles.md)
 # that is a set of rules to be applied when linting (https://github.com/markdownlint/markdownlint/blob/master/docs/RULES.md).
 # '.mdlrc' sets linting configuration (https://github.com/markdownlint/markdownlint/blob/master/docs/configuration.md).
 #
@@ -15,5 +15,5 @@ Jekyll::Hooks.register :site, :post_write do |site|
   staged_md_files_as_a_string = staged_md_files.join(' ')
   report = `bin/mdl #{staged_md_files_as_a_string}`
   puts report.yellow
-  puts 'The style is defined in _checks/md_style'.yellow
+  puts 'The style is defined in _checks/styles/style-rules-dev'.yellow
 end

@@ -6,7 +6,7 @@ namespace :test do
   task links: %w[build links_no_build]
 
   desc 'Check the existing _site for broken links on Jenkins'
-  task :cicd do
+  task cicd: %w[style] do
     puts 'Checking links with htmlproofer...'.magenta
 
     LinkChecker.check_site
@@ -27,9 +27,9 @@ namespace :test do
       # StandardError, rake will abort and won't run the convert task (https://stackoverflow.com/a/10048406).
       # Wrapping task in a begin-rescue block prevent rake from aborting.
       # Seems to prevent printing an error count though.
-    rescue StandardError => msg
+    rescue StandardError => e
       # Show how many lines contains the Markdown report
-      puts msg.to_s.red
+      puts e.to_s.red
       puts "To see the report, open the #{report} file.".red
     end
   end
@@ -38,5 +38,14 @@ namespace :test do
   task report: %w[links] do
     puts 'Converting the link check report to HTML...'.magenta
     Converter.to_html
+  end
+
+  desc 'Test Markdown style with mdl'
+  task :style do
+    puts 'Testing Markdown style with mdl ...'.magenta
+    output = `bin/mdl --style=_checks/styles/style-rules-prod --ignore-front-matter --git-recurse -- .`
+    puts output.yellow
+    abort "The Markdown linter has found #{output.lines.count} issues".red unless output.empty?
+    puts 'No issues found'.magenta
   end
 end

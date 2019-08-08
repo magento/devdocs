@@ -24,6 +24,6 @@ namespace :check do
     puts 'Running Markdown linter ...'.magenta
     report = `bin/mdl #{path}`
     puts report.yellow
-    puts 'The rules are defined in _checks/md_style'.magenta
+    puts 'The rules are defined in _checks/styles/md_style'.magenta
   end
 end
