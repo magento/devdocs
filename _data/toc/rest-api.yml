@@ -113,7 +113,7 @@ pages:
 
       - label: Create and manage grouped products
         class: tutorial
-        url: /rest/tutorials/grouped-products/create-and-manage-grouped-products.html
+        url: /rest/tutorials/grouped-product/create-and-manage-grouped-products.html
         include_versions: ["2.3"]
 
     - label: Modules
