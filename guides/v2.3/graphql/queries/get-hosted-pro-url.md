@@ -45,7 +45,7 @@ Attribute | Data type | Description
 
 ## Output attributes
 
-The query returns the PayPal URL that enable the customer to sign in to PayPal and complete the transaction.
+The query returns the PayPal URL that enables the customer to sign in to PayPal and complete the transaction.
 
 Attribute | Data type | Description
 --- | --- | ---

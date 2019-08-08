@@ -3,7 +3,12 @@ group: graphql
 title: PayPal Website Payments Pro Hosted Solution payment method
 ---
 
-PayPal's [Website Payments Pro Hosted Solution](https://developer.paypal.com/docs/classic/paypal-payments-pro/integration-guide/) allows merchants to accept credit cards, debit cards, and PayPal payments directly on their websites. The merchant must be based in the United Kingdom to create a new integration with this payment method. PayPal continues to support merchants with existing integrations outside the UK. 
+PayPal's [Website Payments Pro Hosted Solution](https://developer.paypal.com/docs/classic/paypal-payments-pro/integration-guide/) allows merchants to accept credit cards, debit cards, and PayPal payments directly on their websites. The merchant must be based in the United Kingdom to create a new integration with this payment method. PayPal continues to support merchants with existing integrations outside the UK.
+
+This payment method is applicable to Direct Payment and Express Checkout implementations of the Website Payments Pro Hosted Solution.
+
+PayPal's product name for this payment method varies from country to country. [PayPal Website Payments
+Pro Hosted Solution Integration Guide](https://www.paypalobjects.com/webstatic/en_GB/developer/docs/pdf/hostedsolution_uk.pdf) provides more information.
 
 ## Website Payments Pro Hosted Solution workflow
 
