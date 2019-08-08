@@ -19,9 +19,9 @@ The `.magento.app.yaml` file includes the following default crons configuration,
 
 ```yaml
 crons:
-    cronrun:
-        spec: "* * * * *"
-        cmd: "php bin/magento cron:run"
+   cronrun:
+     spec: "* * * * *"
+     cmd: "php bin/magento cron:run"
 ```
 
 {:.bs-callout .bs-callout-info}
@@ -41,18 +41,18 @@ Magento added an auto-crons configuration feature to support self-service cron c
    crontab -l
    ```
 
-   The following example shows the crontab output for an environment that has only the default crons configuration:
+The following example shows the crontab output for an environment that has only the default crons configuration:
 
-   ```terminal
-   username@hostname:~$ crontab -l
-   # Crontab is managed by the system, attempts to edit it directly will fail.
-   SHELL=/etc/platform/6fck2obu3244c/cron-run
-   MAILTO=""
+```terminal
+username@hostname:~$ crontab -l
+# Crontab is managed by the system, attempts to edit it directly will fail.
+SHELL=/etc/platform/6fck2obu3244c/cron-run
+MAILTO=""
 
-   # m h  dom mon dow  job_name
+# m h  dom mon dow  job_name
 
-   * * * * *           cronrun
-   ```
+* * * * *           cronrun
+```
 
 {: .bs-callout-info}
 If the command returns a `Command not found` error, contact your Magento account manager or CSM about enabling the auto-crons self-service configuration feature on the Cloud infrastructure for your {{site.data.var.ece}} project.
@@ -84,8 +84,8 @@ The following is an example cron job:
 
 ```yaml
 crons:
-    spec: "00 */8 * * *"
-    cmd: "/usr/bin/php /app/abc123edf890/bin/magento export:start catalog_category_product"
+  spec: "00 */8 * * *"
+  cmd: "/usr/bin/php /app/abc123edf890/bin/magento export:start catalog_category_product"
 ```
 
 In this example, `<path-to-php-binary>` is `/usr/bin/php`. The install directory, which includes the Project ID is `/app/abc123edf890/bin/magento`, and the script action is `export:start catalog_category_product`.
@@ -109,16 +109,16 @@ The  [auto-crons feature](#verify-cron-configuration) must be enabled on your {{
 
 For example, you can add a custom cron job to export the product catalog and configure it to run every eight hours, 20 minutes after the hour.
 
-    ```yaml
-    crons:
-      magento:
-        spec: '* * * * *'
-        cmd: 'php bin/magento cron:run'
-      productcatalog:
-        spec: '20 */8 * * *'
-        cmd: 'bin/magento export:start catalog_product_category'
-     ```
-     {: .no-copy }
+```yaml
+crons:
+  magento:
+    spec: '* * * * *'
+    cmd: 'php bin/magento cron:run'
+  productcatalog:
+    spec: '20 */8 * * *'
+    cmd: 'bin/magento export:start catalog_product_category'
+ ```
+ {: .no-copy }
 
 1. Add, commit, and push code changes.
 
@@ -139,5 +139,4 @@ You can review cron processing information in the application-level log files fo
 See the following Magento Support articles for help troubleshooting cron-related problems:
 
 * [Cron tasks lock tasks from other groups](https://support.magento.com/hc/en-us/articles/360029219812-Cron-tasks-lock-tasks-from-other-groups)
-
 * [Reset stuck cron jobs manually on the cloud](https://support.magento.com/hc/en-us/articles/360000097713-Reset-stuck-Magento-cron-jobs-manually-on-Cloud)
