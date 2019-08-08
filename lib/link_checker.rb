@@ -4,7 +4,7 @@
 module LinkChecker
   # Run html-proofer to check the generated HTML pages
   def self.check_site
-    HTMLProofer.check_directory('_ site', options).run
+    HTMLProofer.check_directory('_site', options).run
   end
 
   # Read options from the '_config.checks.yml'
