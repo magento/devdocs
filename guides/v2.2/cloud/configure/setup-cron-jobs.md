@@ -109,7 +109,7 @@ The [auto-crons feature](#verify-cron-configuration) must be enabled on your {{s
 
 1. Add your custom cron code to the `crons` section in the file.
 
-For example, you can add a custom cron job to export the product catalog and configure it to run every eight hours, 20 minutes after the hour.
+   For example, you can add a custom cron job to export the product catalog and configure it to run every eight hours, 20 minutes after the hour.
 
    ```yaml
    crons:
@@ -119,8 +119,8 @@ For example, you can add a custom cron job to export the product catalog and con
         productcatalog:
             spec: '20 */8 * * *'
             cmd: 'bin/magento export:start catalog_product_category'
-    ```
-    {: .no-copy }
+   ```
+   {:.no-copy }
 
 1. Add, commit, and push code changes.
 
