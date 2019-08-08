@@ -15,7 +15,7 @@ Although code for these features is bundled with quarterly releases of the Magen
 ## Apply the Scope parameter for Async/Bulk API patch to address an issue with the Async/Bulk REST API
 
 In certain versions of Magento Open Source and Magento Commerce, the Asynchronous and Bulk REST endpoints support the default store view scope only. After this patch is applied to deployments running those versions of Magento, the current Magento message queue implementation 
-will factor in the store that executes queue operations. See [Patch for Magento Framework Message Queue and Store Scopes](https://community.magento.com/t5/Magento-DevBlog/Patch-for-Magento-Framework-Message-Queue-and-Store-Scopes/ba-p/135209) for a full discussion of this scope-related issue and patch contents. See [Applying patches](https://devdocs.magento.com/guides/v2.3/comp-mgr/patching.html) for specific instructions on downloading and applying Magento patches. Navigate to the [Magento Security Center](https://magento.com/security/patches), and select the patch associated with the version of Magento you are running. 
+will factor in the store that executes queue operations. See [Patch for Magento Framework Message Queue and Store Scopes](https://community.magento.com/t5/Magento-DevBlog/Patch-for-Magento-Framework-Message-Queue-and-Store-Scopes/ba-p/135209) for a full discussion of this scope-related issue and patch contents. See [Applying patches]({{ page.baseurl }}/comp-mgr/patching.html) for specific instructions on downloading and applying Magento patches. Navigate to the [Magento Security Center](https://magento.com/security/patches), and select the patch associated with the version of Magento you are running. 
 
 ## Highlights
 
@@ -68,7 +68,7 @@ Magento now performs the following tasks as **asynchronous background processes*
 
 ### Inventory Management enhancements
 
-* **New commands** allow merchants to check for reservation inconsistencies and resolve any that occur. See [Inventory CLI reference](https://devdocs.magento.com/guides/v2.3/inventory/inventory-cli-reference.html).
+* **New commands** allow merchants to check for reservation inconsistencies and resolve any that occur. See [Inventory CLI reference]({{ page.baseurl }}/inventory/inventory-cli-reference.html).
 
 * Improved user interface for assigning sources to products. This redesigned interface includes:
 
@@ -79,9 +79,9 @@ Magento now performs the following tasks as **asynchronous background processes*
   * Multiple product save
   * Bulk inventory transfer
 
-* **New endpoint** for Bulk Partial Stock Transfer to bulk transfer a custom product quantity between sources. See [Inventory Bulk Actions](https://devdocs.magento.com/guides/v2.3/rest/modules/inventory/bulk-inventory.html).
+* **New endpoint** for Bulk Partial Stock Transfer to bulk transfer a custom product quantity between sources. See [Inventory Bulk Actions]({{ page.baseurl }}/rest/modules/inventory/bulk-inventory.html).
 
-* Fixes to multiple  bugs. See [Inventory Management release notes](https://devdocs.magento.com/guides/v2.3/inventory/release-notes.html).
+* Fixes to multiple  bugs. See [Inventory Management release notes]({{ page.baseurl }}/inventory/release-notes.html).
 
 ### GraphQL
 
@@ -101,7 +101,7 @@ GraphQL performance improvements include these enhancements:
 
 * **GraphQL performance test scenario coverage**. We have added PWA GraphQL test scenarios for critical checkout and catalog browsing to the performance builds. GraphQL community developers can use the new scenarios to measure storefront performance. <!--- MC-15826, 15922-->
 
-See [Release notes](https://devdocs.magento.com/guides/v2.3/graphql/release-notes.html) for a more detailed discussion of recent GraphQL bug fixes.
+See [Release notes]({{ page.baseurl }}/graphql/release-notes.html) for a more detailed discussion of recent GraphQL bug fixes.
 
 ### Progressive Web Apps (PWA)
 
@@ -510,7 +510,7 @@ has been changed to `<argument name="resourceStockItem" xsi:type="object">Magent
 
   * `--lock-file-path=LOCK-FILE-PATH`—The path where file locks will be saved.
 
-  See [Configure the lock provider](https://devdocs.magento.com/guides/v2.3/install-gde/install/cli/install-cli-subcommands-lock.html).
+  See [Configure the lock provider]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-lock.html).
 
 ### Customers
 

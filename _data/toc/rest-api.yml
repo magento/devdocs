@@ -8,7 +8,7 @@ pages:
 
         - label: REST Endpoints (Swagger)
           include_versions: ["2.2"]
-          url: http://devdocs.magento.com/swagger/index_22.html
+          url: https://devdocs.magento.com/swagger/index_22.html
 
         - label: REST Endpoints (ReDoc)
           include_versions: ["2.3"]
