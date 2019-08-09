@@ -1,15 +1,11 @@
 ---
 group: rest-api
-title: Create and manage grouped products
-level3_subgroup: grouped-product-tutorial
-return_to:
-  title: REST tutorials
-  url: rest/tutorials/index.html
+title: Create and manage grouped products tutorial
 functional_areas:
   - Integration
-group: 115001031574
-zendesk_id: 360005156133
 ---
+
+A grouped product consists of simple standalone products that are presented as a group. You can offer variations of a single product, or group them by season or theme.
 
 This tutorial describes how you can use the Magento REST API to create and manage grouped products.
 
