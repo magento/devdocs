@@ -139,10 +139,10 @@ Magento enables you to create the following types of language packages:
 In addition to the `.csv` file that contains the language dictionary, the language package contains meta-information:
 
 * `composer.json` that contains any dependencies for the language package and a mapping to its defined [locale](https://glossary.magento.com/locale)
-   [Sample composer.json](https://devdocs.magento.com/guides/v2.2/extension-dev-guide/package/package_module.html#sample-composerjson-file)
+   [Sample composer.json]({{ page.baseurl }}/extension-dev-guide/package/package_module.html#sample-composerjson-file)
 
 * `language.xml`, in which you declare a language package.
-   [Sample language.xml](https://devdocs.magento.com/guides/v2.2/config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-example2)
+   [Sample language.xml]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-example2)
 
 
 ## Community Engineering Translations project {#translations-project}
