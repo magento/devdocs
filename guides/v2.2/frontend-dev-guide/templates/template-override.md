@@ -80,6 +80,8 @@ is the same as writing
 
 ## Display CMS Static Block in any template PHTML files.
 
+Magento has the in-assembled feature called CMS static blocks that Admin can add `HTML `code to be shown in the frontend. while included this block in `PHTML`, you can simply manage your static content.
+
 ```phtml
 <?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('block_identifier')->toHtml(); ?> 
 ```
