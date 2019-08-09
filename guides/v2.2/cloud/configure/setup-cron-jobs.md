@@ -19,9 +19,9 @@ The `.magento.app.yaml` file includes the following default crons configuration,
 
 ```yaml
 crons:
-   cronrun:
-     spec: "* * * * *"
-     cmd: "php bin/magento cron:run"
+    cronrun:
+        spec: "* * * * *"
+        cmd: "php bin/magento cron:run"
 ```
 
 {:.bs-callout .bs-callout-info}
@@ -84,8 +84,8 @@ The following is an example cron job:
 
 ```yaml
 crons:
-  spec: "00 */8 * * *"
-  cmd: "/usr/bin/php /app/abc123edf890/bin/magento export:start catalog_category_product"
+    spec: "00 */8 * * *"
+    cmd: "/usr/bin/php /app/abc123edf890/bin/magento export:start catalog_category_product"
 ```
 
 In this example, `<path-to-php-binary>` is `/usr/bin/php`. The install directory, which includes the Project ID is `/app/abc123edf890/bin/magento`, and the script action is `export:start catalog_category_product`.
@@ -111,12 +111,12 @@ For example, you can add a custom cron job to export the product catalog and con
 
 ```yaml
 crons:
-  magento:
-    spec: '* * * * *'
-    cmd: 'php bin/magento cron:run'
-  productcatalog:
-    spec: '20 */8 * * *'
-    cmd: 'bin/magento export:start catalog_product_category'
+    magento:
+        spec: '* * * * *'
+        cmd: 'php bin/magento cron:run'
+    productcatalog:
+        spec: '20 */8 * * *'
+        cmd: 'bin/magento export:start catalog_product_category'
  ```
  {: .no-copy }
 
