@@ -198,6 +198,9 @@ pages:
 
         - label: PayPal Express Checkout
           url: /graphql/payment-methods/paypal-express-checkout.html
+
+        - label: Express Checkout for other PayPal solutions
+          url: /graphql/payment-methods/payflow-express.html
           
         - label: PayPal Payflow Link
           url: /graphql/payment-methods/payflow-link.html

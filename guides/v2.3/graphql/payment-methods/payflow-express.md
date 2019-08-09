@@ -1,18 +1,23 @@
 ---
 group: graphql
-title: PayPal Express Checkout payment method
+title: Express Checkout for other PayPal solutions
 ---
 
-The PayPal Express Checkout payment method enables customers to pay by credit card or from the security of their personal PayPal accounts. During checkout, the customer is redirected to the secure PayPal site to complete the payment information. The customer is then returned to the store to complete the remainder of the checkout process.
+Set the payment method code to `payflow_express` to process Express Checkout transactions when the payment method is set to any of the following:
 
-Some alternate PayPal solutions have the same GraphQL workflow when Express Checkout is enabled. The information in this topic also applies to the following PayPal solutions:
+-  Payflow Link
+-  Payflow Pro
+-  Payments Advanced
+-  Payments Pro
 
--  Payments Standard
--  Website Payments Standard
+PayPal Express Checkout enables customers to pay by credit card or from the security of their personal PayPal accounts. During checkout, the customer is redirected to the secure PayPal site to complete the payment information. The customer is then returned to the store to complete the remainder of the checkout process.
+
+From a GraphQL integration standpoint, this payment method is identical to the [PayPal Express Checkout]({{page.baseurl}}/graphql/payment-methods/payflow-link.html) payment method, with the exception of the payment method `code`.
+
 
 ## PayPal Express Checkout workflow
 
-The following diagram shows the workflow for placing an order when PayPal Express Checkout is the selected payment method.
+The following diagram shows the workflow for placing an order when `payflow_express` is the specified payment method.
 
 ![PayPal Express Checkout sequence diagram]({{site.baseurl}}/common/images/graphql/paypal-express-checkout.svg)
 
@@ -22,7 +27,7 @@ The following steps describe the flow of calls required to complete a typical Pa
 
 ## Additional Payment information
 
-When you set the payment method code to `paypal_express` in the `setPaymentMethodOnCart` mutation, you must also specify attributes specific to this payment method in `additional_data` object. These attributes are defined in the  `paypal_express` object:
+When you set the payment method code to ``payflow_express`` in the `setPaymentMethodOnCart` mutation, you must also specify attributes specific to this payment method in `additional_data` object. These attributes are defined in the  `paypal_express` object:
 
 {% include graphql/payment-methods/paypal-express-checkout-attributes.md %}
 
@@ -37,7 +42,7 @@ mutation {
   setPaymentMethodOnCart(input: {
     cart_id: "rMQdWEecBZr4SVWZwj2AF6y0dNCKQ8uH"
     payment_method: {
-        code: "paypal_express"
+        code: "payflow_express"
         additional_data: {
             paypal_express: {
                 payer_id: "<PayPal_PayerID>"
@@ -49,7 +54,6 @@ mutation {
     cart {
       selected_payment_method {
         code
-        title
       }
     }
   }
@@ -65,7 +69,6 @@ mutation {
       "cart": {
         "selected_payment_method": {
           "code": "paypal_express",
-          "title": "PayPal Express Checkout"
         }
       }
     }

@@ -5,6 +5,12 @@ title: PayPal Payflow Pro payment method
 
 Payflow Pro is a payment gateway that processes debit and credit card payments. It is available for customers of the United States, Canada, Australia, and New Zealand.
 
+Other PayPal solutions have the same GraphQL workflow as Payflow Pro. The information in this topic also applies to the following PayPal solution:
+
+-  Payments Pro
+
+If Payflow Pro has been configured to implement Express Checkout, use the [PayPal Express Checkout for Payflow payment method]({{page.baseurl}}/payment-methods/payflow-express.html) instead.
+
 ## Payflow Pro workflow
 
 The following diagram shows the workflow for placing an order when Payflow Pro is the selected payment method.
