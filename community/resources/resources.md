@@ -95,8 +95,8 @@ We have [channels][] for each project, but the following channels are recommende
 -  *Presentation* [Premium performance with PHP 7 and Varnish][15] by Miguel Balparda
 
 [contribute]: https://github.com/magento/devdocs/blob/master/.github/CONTRIBUTING.md
-[technical guidelines]: https://devdocs.magento.com/guides/v2.3/coding-standards/technical-guidelines.html
-[coding standards]: https://devdocs.magento.com/guides/v2.3/coding-standards/bk-coding-standards.html
+[technical guidelines]: {{ site.baseurl }}/guides/v2.3/coding-standards/technical-guidelines.html
+[coding standards]: {{ site.baseurl }}/guides/v2.3/coding-standards/bk-coding-standards.html
 [Magento Community Engineering Slack]: https://magentocommeng.slack.com
 [self signup]: https://tinyurl.com/engcom-slack
 [general]: https://magentocommeng.slack.com/messages/C4YS78WE6
