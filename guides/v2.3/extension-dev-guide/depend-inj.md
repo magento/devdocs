@@ -1,7 +1,6 @@
 ---
 group: php-developer-guide
 title: Dependency injection
-menu_title: Dependency injection
 ---
 
 Magento 2 uses [Dependency Injection] to replace functionality provided by the `Mage` class in Magento 1.x.
