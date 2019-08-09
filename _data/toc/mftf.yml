@@ -52,7 +52,7 @@ pages:
     versionless: true
 
   - label: Merge points for extensions
-    url: /mftf/docs/merge_points/introduction.html
+    url: /mftf/docs/test-prep.html
     versionless: true
     children:
 
@@ -100,6 +100,10 @@ pages:
     url: /mftf/docs/page.html
     versionless: true
 
+  - label: Preparing a test for MFTF
+    url: /mftf/docs/test-prep.html
+    versionless: true
+
   - label: Reporting
     url: /mftf/docs/reporting.html
     versionless: true
@@ -140,6 +144,10 @@ pages:
 
       - label: Assertions
         url: /mftf/docs/test/assertions.html
+        versionless: true
+
+      - label: MFTF Functional Test Reference
+        url: /mftf/docs/mftf-tests.html
         versionless: true
 
   - label: Troubleshooting
