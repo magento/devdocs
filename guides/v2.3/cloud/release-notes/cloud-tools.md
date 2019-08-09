@@ -19,6 +19,8 @@ The release notes include:
 
 ## v2002.0.21
 
+-  {:.new}<!-- MAGECLOUD-4052 -->Added the **LOCK_PROVIDER** deploy variable to configure the lock provider. See the definition in the [deploy variables]({{page.baseurl}}/cloud/env/variables-deploy.html#lock_provider) content.
+
 -  {:.new}<!-- MAGECLOUD-3535 -->Added version compatibility validation between Magento version and installed services, such as RabbitMq, Redis, and DB. Displays a warning message if the service version is not compatible.
 
 -  {:.fix}<!-- MAGECLOUD-3806 -->Fixed an issue when running the `setup:upgrade` command that did not interrupt the deployment process when a failure occured during the `app:config:import` task.
