@@ -14,7 +14,6 @@ PayPal Express Checkout enables customers to pay by credit card or from the secu
 
 From a GraphQL integration standpoint, this payment method is identical to the [PayPal Express Checkout]({{page.baseurl}}/graphql/payment-methods/payflow-link.html) payment method, with the exception that in the `setPaymentMethodOnCart` mutation, the payment method `code` is set to `payflow_express`.
 
-
 ## PayPal Express Checkout workflow
 
 The following diagram shows the workflow for placing an order when `payflow_express` is the specified payment method.

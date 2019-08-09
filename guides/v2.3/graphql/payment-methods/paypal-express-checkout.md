@@ -20,9 +20,9 @@ The following steps describe the flow of calls required to complete a typical Pa
 
 {% include graphql/payment-methods/paypal-express-checkout-workflow.md %}
 
-## Additional Payment information
+## `setPaymentMethodOnCart` mutation
 
-When you set the payment method code to `paypal_express` in the `setPaymentMethodOnCart` mutation, you must also specify attributes specific to this payment method in `additional_data` object. These attributes are defined in the  `paypal_express` object:
+When you set the payment method to Express Checkout, you must set the `code` attribute to `paypal_express`. In addition, the payload must contain a `paypal_express` object, which defines the following attributes:
 
 {% include graphql/payment-methods/paypal-express-checkout-attributes.md %}
 
@@ -38,11 +38,9 @@ mutation {
     cart_id: "rMQdWEecBZr4SVWZwj2AF6y0dNCKQ8uH"
     payment_method: {
         code: "paypal_express"
-        additional_data: {
-            paypal_express: {
-                payer_id: "<PayPal_PayerID>"
-                token: "<PayPal_Token>"
-            }
+        paypal_express: {
+            payer_id: "<PayPal_PayerID>"
+            token: "<PayPal_Token>"
         }
       }
   }) {
