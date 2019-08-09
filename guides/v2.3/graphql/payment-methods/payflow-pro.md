@@ -31,7 +31,7 @@ The following example shows the `setPaymentMethodOnCart` mutation constructed fo
 
 **Request**
 
-```text
+```graphql
 mutation {
   setPaymentMethodOnCart(input: {
     cart_id: "IeTUiU0oCXjm0uRqGCOuhQ2AuQatogjG"

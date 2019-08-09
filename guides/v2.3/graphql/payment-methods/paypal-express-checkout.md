@@ -37,12 +37,12 @@ mutation {
   setPaymentMethodOnCart(input: {
     cart_id: "rMQdWEecBZr4SVWZwj2AF6y0dNCKQ8uH"
     payment_method: {
-        code: "paypal_express"
-        paypal_express: {
-            payer_id: "<PayPal_PayerID>"
-            token: "<PayPal_Token>"
-        }
+      code: "paypal_express"
+      paypal_express: {
+        payer_id: "<PayPal_PayerID>"
+        token: "<PayPal_Token>"
       }
+    }
   }) {
     cart {
       selected_payment_method {

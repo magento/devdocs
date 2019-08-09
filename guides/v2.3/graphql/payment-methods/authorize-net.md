@@ -44,18 +44,16 @@ The following example assigns the `authorizenet_acceptjs` payment method to the 
 
 **Request**
 
-```text
+```graphql
 mutation {
   setPaymentMethodOnCart(input: {
     cart_id: "lvdqOLzryManseE2artECZuPClxFgG1o"
     payment_method: {
       code: "authorizenet_acceptjs"
-      additional_data: {
-        authorizenet_acceptjs: {
-          cc_last_4: 1111
-          opaque_data_descriptor: "COMMON.ACCEPT.INAPP.PAYMENT"
-          opaque_data_value: "<nonce_value>"
-          }
+      authorizenet_acceptjs: {
+        cc_last_4: 1111
+        opaque_data_descriptor: "COMMON.ACCEPT.INAPP.PAYMENT"
+        opaque_data_value: "<nonce_value>"
         }
       }
   }) {

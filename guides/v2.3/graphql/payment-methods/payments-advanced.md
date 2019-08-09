@@ -31,24 +31,24 @@ The following example shows the `setPaymentMethodOnCart` mutation constructed fo
 
 **Request**
 
-```text
+```graphql
 mutation {
-    setPaymentMethodOnCart(input: {
-        payment_method: {
-            code: "payflow_advanced"
-            payflow_link: {
-              return_url: "paypal/action/return.html"
-              error_url: "paypal/action/error.html"
-              cancel_url: "paypal/action/cancel.html"
-            }
+  setPaymentMethodOnCart(input: {
+    payment_method: {
+      code: "payflow_advanced"
+      payflow_link: {
+        return_url: "paypal/action/return.html"
+        error_url: "paypal/action/error.html"
+        cancel_url: "paypal/action/cancel.html"
         }
-        cart_id: "IeTUiU0oCXjm0uRqGCOuhQ2AuQatogjG"
+      }
+    cart_id: "IeTUiU0oCXjm0uRqGCOuhQ2AuQatogjG"
     }) {
         cart {
-            selected_payment_method {
-                code
-                title
-            }
+          selected_payment_method {
+            code
+            title
+          }
         }
     }
 }
