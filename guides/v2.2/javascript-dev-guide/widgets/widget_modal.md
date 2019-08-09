@@ -16,8 +16,8 @@ The modal widget source is [`<Magento_Ui_module_dir>/view/base/web/js/modal/moda
 
 The widget uses the following templates:
 
-- [`<Magento_Ui_module_dir>/view/base/web/templates/modal/modal-popup.html`] popup type template.
-- [`<Magento_Ui_module_dir>/view/base/web/templates/modal/modal-slide.html`] slide type template.
+-  [`<Magento_Ui_module_dir>/view/base/web/templates/modal/modal-popup.html`] popup type template.
+-  [`<Magento_Ui_module_dir>/view/base/web/templates/modal/modal-slide.html`] slide type template.
 
 The design patterns for the modal pop-up windows in the Admin are described in the [Magento Admin Pattern Library, the Slide-out Panels, Modal Windows, and Overlays topic.] 
 
@@ -68,6 +68,7 @@ Array of buttons for action pane.
 **Type**: Array 
 
 **Structure**:
+
 ```javascript
 buttons: [{
     text: '',
@@ -77,6 +78,7 @@ buttons: [{
 ```
 
 **Default value**:
+
 ```javascript
 buttons: [{
     text: 'Ok',
@@ -95,7 +97,6 @@ Close the modal window when a user clicks on the overlay.
 
 **Default value**: `true`
 
-
 ### `closeText` {#modal_closeText}
 The close button text.
 
@@ -103,15 +104,12 @@ The close button text.
 
 **Default value**: `$.mage.__('Close')`
 
-
 ### `focus` {#modal_focus}
 Selector to focusing when a modal window opens or 'none' if focusing is not necessary.
-
 
 **Type**: String 
 
 **Default value**: `''`
-
 
 ### `innerScroll` {#modal_innerScroll}
 Modal scroll position.
@@ -195,14 +193,11 @@ The modal widget has the following methods:
 ### `openModal()` {#modal_open}
 Open the modal window.
 
-
 ### `closeModal()` {#modal_close}
 Close the modal window.
 
-
 ### `keyEventSwitcher()` {#modal_keyEventSwitcher}
 Listens for key events and calls handler function if it exists.
-
 
 ### `toggleModal()` {#modal_toggleModal}
 Toggles the modal window.
@@ -225,6 +220,7 @@ modal.on( "modalclosed", function() {
 ```
 
 Or assign a callback as a property when creating a modal instance:
+
 ```javascript
 $('#modal_content').modal({
     ...
@@ -242,9 +238,9 @@ Called when the modal window is opened.
 
 ## Keyboard navigation {#key_navigation}
 
-- the ESC key: close the current modal window
-- the TAB key: set focus to the next focusable element (looped inside the modal window)
-- the SHIFT+TAB keys combination: set focus to the previous focusable element (looped inside the modal window)
+-  the ESC key: close the current modal window
+-  the TAB key: set focus to the next focusable element (looped inside the modal window)
+-  the SHIFT+TAB keys combination: set focus to the previous focusable element (looped inside the modal window)
 
 ## Code sample
 
