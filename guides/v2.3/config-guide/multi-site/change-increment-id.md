@@ -11,16 +11,16 @@ This article discusses how to change the increment ID for a Magento database (DB
 
 ## Affected versions
 
-- Magento Commerce (on premise): 2.x.x
-- Magento Commerce (Cloud): 2.x.x
-- MySQL: any supported version
+-  Magento Commerce (on premise): 2.x.x
+-  Magento Commerce (Cloud): 2.x.x
+-  MySQL: any supported version
 
 ## When would you need to change increment ID
 
 You might need to change the increment ID for new DB entities in these cases:
 
-- After a hard backup restore on a Live site
-- Some order records have been lost, but their IDs are already being used by payment gateways (like PayPal) for your current Merchant account. Such being the case, the payment  gateways stop processing new orders that have the same IDs, returning the "Duplicate invoice id" error
+-  After a hard backup restore on a Live site
+-  Some order records have been lost, but their IDs are already being used by payment gateways (like PayPal) for your current Merchant account. Such being the case, the payment  gateways stop processing new orders that have the same IDs, returning the "Duplicate invoice id" error
 
 {: .bs-callout-info}
 You may also fix the payment gateway issue for PayPal by allowing multiple payments per invoice ID in PayPal's Payment Receiving Preferences. See the Knowledge Base article: [PayPal gateway rejected request - duplicate invoice issue][] .
@@ -67,14 +67,14 @@ The next order placed at the store with `ID=1` will have the ID '#100002000'.
 
 Before executing the `ALTER TABLE` query on a production environment of Magento Commerce (Cloud), we strongly recommend performing these steps:
 
-- Test the entire procedure of changing the increment ID on your Staging environment
-- [Create a DB backup][] to restore your Production DB in case of failure
+-  Test the entire procedure of changing the increment ID on your Staging environment
+-  [Create a DB backup][] to restore your Production DB in case of failure
 
 ## Related documentation
 
-- [Set up a remote MySQL database connection][]
-- [Create database dump on Cloud][]
-- [SSH to your environment][]
+-  [Set up a remote MySQL database connection][]
+-  [Create database dump on Cloud][]
+-  [SSH to your environment][]
 
 <!-- Link Definitions -->
 [PayPal gateway rejected request - duplicate invoice issue]: https://support.magento.com/hc/en-us/articles/115002457473
