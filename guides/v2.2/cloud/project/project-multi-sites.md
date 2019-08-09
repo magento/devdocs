@@ -8,28 +8,42 @@ functional_areas:
   - Stores
 ---
 
-You can configure {{site.data.var.ee}} to have multiple websites or stores, such as an English store, a French store, and a German store. See [Understanding websites, stores, and store views]({{ page.baseurl }}/cloud/configure/configure-best-practices.html#sites). The process to set up multiple stores is as follows:
+You can configure {{site.data.var.ee}} to have multiple websites or stores, such as an English store, a French store, and a German store. See [Understanding websites, stores, and store views]({{ page.baseurl }}/cloud/configure/configure-best-practices.html#sites). The process to set up multiple stores depends on whether you choose to use unique domains or share the same domain.
 
-1. Configure and test your local installation.
-1. Configure {{site.data.var.ece}} routes and variables.
-1. Push the changes to an Integration environment and test.
+Multiple stores with unique domains:
 
-## Configure your local installation
+```terminal
+https://first.store.com/
+https://second.store.com/
+```
+{:.no-copy}
+
+Multiple stores with the same domain:
+
+```terminal
+https://store.com/first/
+https://store.com/second/
+```
+{:.no-copy}
+
+## Configure local installation
 
 To configure your local installation to use multiple stores, see [Multiple websites or stores]({{ page.baseurl }}/config-guide/multi-site/ms_over.html).
 
 After successfully creating and testing the local installation to use multiple stores, you must prepare your Integration environment:
 
-1. **Configure routes**—specify how incoming URLs are handled by {{site.data.var.ee}}
-1. **Set up websites, stores, and store views**—configure using the {{site.data.var.ee}} Admin panel
-1. **Modify `magento-vars.php` file**—specify the values of the `MAGE_RUN_TYPE` and `MAGE_RUN_CODE` variables
+1. **Configure routes or locations**—specify how incoming URLs are handled by {{site.data.var.ee}}
+   -  [Routes for separate domains](#routes)
+   -  [Locations for shared domains](#locations)
+1. **Set up websites, stores, and store views**—configure using the {{site.data.var.ee}} Admin UI
+1. **Modify Magento variables**—specify the values of the `MAGE_RUN_TYPE` and `MAGE_RUN_CODE` variables in the `magento-vars.php` file
 1. **Deploy**—deploy and test the `integration` branch
 
-### Configure routes
+### Configure routes for separate domains {#routes}
 
-Magento Enterprise Edition *routes* define how incoming URLs are processed. The way you configure routes depends on how you want your site to operate. We suggest configuring routes for integration as follows. You can edit the values later if your needs change.
+Routes define how to process incoming URLs. Multiple stores with unique domains requires you to define each domain in the `routes.yaml` file. The way you configure routes depends on how you want your site to operate.
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 For Pro, you must create a [Support ticket]({{ page.baseurl }}/cloud/trouble/trouble.html) to set up routes in the Staging or Production environment.
 
 #### To configure routes in an integration environment:
@@ -62,13 +76,58 @@ For Pro, you must create a [Support ticket]({{ page.baseurl }}/cloud/trouble/tro
 
 1. Save your changes to the `routes.yaml` file.
 
+### Configure locations for shared domains {#locations}
+
+Where routes defines how the URLs are processed, the `web` property in the `.magento.app.yaml` file defines how your application is exposed to the web. Web _locations_ allows more granularity for incoming requests. For example, if your domain is `store.com`, you can use `/first` and `/second` for requests to two different stores that share that domain.
+
+```yaml
+web:
+    locations:
+        "/": &app
+            # The public directory of the app, relative to its root.
+            root: "pub"
+            passthru: "/index.php"
+            index:
+            - index.php
+            ...
+        "/media":
+            root: "pub/media"
+            ...
+        "/static":
+            root: "pub/static"
+            allow: true
+            scripts: false
+            passthru: "/front-static.php"
+            rules:
+                /static/version\d+/(?<resource>.*)$:
+                    passthru: "/static/$resource"
+        "/second": *app
+          ...
+```
+
+You can also add the directory to the `static` location rules. For example:
+
+```yaml
+web:
+    locations:
+...
+        "/static":
+            root: "pub/static"
+            allow: true
+            scripts: false
+            passthru: "/front-static.php"
+            rules:
+                ^(/(second))?/static/version\d+/(?<resource>.*)$:
+                    passthru: "/static/$resource"
+```
+
 ### Set up websites, stores, and store views
 
 In the Admin panel, set up your {{site.data.var.ee}} websites, stores, and store views. See [Set up multiple websites, stores, and store views in the Admin]({{ page.baseurl }}/config-guide/multi-site/ms_websites.html).
 
 It is important to name your websites, stores, and store views in your Cloud Admin the same as you did when you set up your local installation.
 
-### Modify the `magento-vars.php` file
+### Modify Magento variables
 
 Instead of configuring an NGINX virtual host, pass the `MAGE_RUN_CODE` and `MAGE_RUN_TYPE` variables using the `magento-vars.php` file located in your project root directory.
 
@@ -93,7 +152,7 @@ Instead of configuring an NGINX virtual host, pass the `MAGE_RUN_CODE` and `MAGE
        }
           return strpos(str_replace('---', '.', $_SERVER['HTTP_HOST']), $host) === 0;
    }
-   if (isHttpHost("example.com")) {
+   if (isHttpHost("store.com")) {
        $_SERVER["MAGE_RUN_CODE"] = "default";
        $_SERVER["MAGE_RUN_TYPE"] = "store";
    }
@@ -114,7 +173,6 @@ Instead of configuring an NGINX virtual host, pass the `MAGE_RUN_CODE` and `MAGE
    ```
 
 1. Replace the following values in the `if (isHttpHost("example.com"))` block:
-
    -  `example.com`—with the base URL of your website
    -  `default`—with the unique code for your website or store view
    -  `store`—with one of the following values:
@@ -132,10 +190,37 @@ Instead of configuring an NGINX virtual host, pass the `MAGE_RUN_CODE` and `MAGE
        }
        return $_SERVER['HTTP_HOST'] ===  $host;
    }
-   if (isHttpHost("french.branch-sbg7pPa-f3dueAiM03tpy.us.magentosite.cloud"))
+   if (isHttpHost("second.store.com"))
    {
-       $_SERVER["MAGE_RUN_CODE"] = "french";
+       $_SERVER["MAGE_RUN_CODE"] = "second";
        $_SERVER["MAGE_RUN_TYPE"] = "website";
+   }
+   ```
+
+   For multiple sites with the same domain:
+
+   ```php
+   <?php
+   // enable, adjust and copy this code for each store you run
+   // Store #0, default one
+   function isHttpHost($host)
+   {
+       if (!isset($_SERVER['HTTP_HOST'])) {
+       return false;
+       }
+       return $_SERVER['HTTP_HOST'] ===  $host;
+   }
+   if (isHttpHost("store.com")) {
+      $code = "base";
+      $type = "website";
+
+      $uri = explode('/', $_SERVER['REQUEST_URI']);
+      if (isset($uri[1]) && $uri[1] == 'second') {
+        $code = 'second';
+        $type = 'website';
+      }
+      $_SERVER["MAGE_RUN_CODE"] = $code;
+      $_SERVER["MAGE_RUN_TYPE"] = $type;
    }
    ```
 
@@ -143,7 +228,7 @@ Instead of configuring an NGINX virtual host, pass the `MAGE_RUN_CODE` and `MAGE
 
 ### Deploy and test on the Integration server
 
-The final step is to push your changes to your {{site.data.var.ece}} server and test your site there.
+Push your changes to your {{site.data.var.ece}} Integration environment and test your site.
 
 1. Add, commit, and push code changes to the remote branch.
 
@@ -161,7 +246,7 @@ The final step is to push your changes to your {{site.data.var.ece}} server and 
 
 1. Test your site thoroughly and merge the code to the `integration` branch for further deployment.
 
-### Deploy to Staging and Production
+## Deploy to Staging and Production
 
 Follow the deployment process for [deploying to Staging and Production]({{ page.baseurl }}/cloud/live/stage-prod-migrate.html). For Starter and Pro environments, you use the Project Web Interface to push code across environments. For Pro accounts created before October 23, 2017 and not updated, you can use [SSH and CLI commands]({{ page.baseurl }}/cloud/live/stage-prod-migrate.html#classic).
 
