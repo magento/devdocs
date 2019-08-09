@@ -154,7 +154,8 @@ Sets a margin between slide modal windows.
 **Default value**: 45
 
 ### `responsive` {#modal_responsive}
-Turn popup modal window to slide panel on small screens. Available if the `type` option is set to `modal`.
+Turn popup modal window to slide panel on small screens. 
+Available if the type option is set to 'popup'.
 
 **Type**: Boolean 
 
