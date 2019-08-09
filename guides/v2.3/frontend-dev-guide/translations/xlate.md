@@ -139,10 +139,10 @@ Magento enables you to create the following types of language packages:
 In addition to the `.csv` file that contains the language dictionary, the language package contains meta-information:
 
 * `composer.json` that contains any dependencies for the language package and a mapping to its defined [locale](https://glossary.magento.com/locale)
-   [Sample composer.json](https://devdocs.magento.com/guides/v2.2/extension-dev-guide/package/package_module.html#sample-composerjson-file)
+   [Sample composer.json]({{ page.baseurl }}/extension-dev-guide/package/package_module.html#sample-composerjson-file)
 
 * `language.xml`, in which you declare a language package.
-   [Sample language.xml](https://devdocs.magento.com/guides/v2.2/config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-example2)
+   [Sample language.xml]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-example2)
 
 
 ## Community Engineering Translations project {#translations-project}
@@ -164,6 +164,7 @@ If you need help understanding the context or meaning of a UI string, or have qu
 * [Use translation dictionary to customize strings]
 * [Translate theme strings]
 * [Example theme translation dictionary]
+* [Magento translations GitHub project]
 
 [Generate a translation dictionary]: {{page.baseurl}}/config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-dict
 [language inheritance]: {{page.baseurl}}/config-guide/cli/config-cli-subcommands-i18n.html#m2devgde-xlate-inheritancework
@@ -184,3 +185,4 @@ If you need help understanding the context or meaning of a UI string, or have qu
 [Use translation dictionary to customize strings]: {{page.baseurl}}/frontend-dev-guide/translations/theme_dictionary.html
 [Translate theme strings]: {{page.baseurl}}/frontend-dev-guide/translations/translate_theory.html
 [Example theme translation dictionary]: {{page.baseurl}}/frontend-dev-guide/translations/translate_practice.html
+[Magento translations GitHub project]: https://github.com/magento-l10n
