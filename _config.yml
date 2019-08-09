@@ -212,7 +212,7 @@ exclude:
   - bin
   - node_modules
   - vendor
-  - .git
+  - .github
   - .idea
   - Gemfile
   - Gemfile.lock
@@ -222,3 +222,10 @@ exclude:
   - rakelib
   - README.md
   - _plugins
+  - tmp
+  - lib
+  - rakelib
+  - scripts
+  - redirects.json
+  - Docfile.yml
+
