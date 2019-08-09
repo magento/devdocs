@@ -10,12 +10,10 @@ require 'html-proofer'
 require 'kramdown'
 require 'launchy'
 require 'colorator'
+require 'erb'
 
-# Load ruby files with helper methods from the 'rakelib/' directory
-require_relative 'rakelib/lib/link-checker.rb'
-require_relative 'rakelib/lib/converter.rb'
-require_relative 'rakelib/lib/double-slash-check.rb'
-require_relative 'rakelib/lib/doc-config.rb'
+# Require helper methods from the 'rakelib/lib' directory
+Dir.glob('rakelib/lib/**/*.rb') { |file| require_relative(file) }
 
 desc "Same as 'rake', 'rake preview'"
 task default: %w[preview]

@@ -41,18 +41,18 @@ Magento added an auto-crons configuration feature to support self-service cron c
    crontab -l
    ```
 
-   The following example shows the crontab output for an environment that has only the default crons configuration:
+The following example shows the crontab output for an environment that has only the default crons configuration:
 
-   ```terminal
-   username@hostname:~$ crontab -l
-   # Crontab is managed by the system, attempts to edit it directly will fail.
-   SHELL=/etc/platform/6fck2obu3244c/cron-run
-   MAILTO=""
+```terminal
+username@hostname:~$ crontab -l
+# Crontab is managed by the system, attempts to edit it directly will fail.
+SHELL=/etc/platform/6fck2obu3244c/cron-run
+MAILTO=""
 
-   # m h  dom mon dow  job_name
+# m h  dom mon dow  job_name
 
-   * * * * *           cronrun
-   ```
+* * * * *           cronrun
+```
 
 {: .bs-callout-info}
 If the command returns a `Command not found` error, contact your Magento account manager or CSM about enabling the auto-crons self-service configuration feature on the Cloud infrastructure for your {{site.data.var.ece}} project.
@@ -109,22 +109,22 @@ The  [auto-crons feature](#verify-cron-configuration) must be enabled on your {{
 
 For example, you can add a custom cron job to export the product catalog and configure it to run every eight hours, 20 minutes after the hour.
 
-   ```yaml
-   crons:
+```yaml
+crons:
     magento:
         spec: '* * * * *'
         cmd: 'php bin/magento cron:run'
-        productcatalog:
-            spec: '20 */8 * * *'
-            cmd: 'bin/magento export:start catalog_product_category'
-    ```
-    {: .no-copy }
+    productcatalog:
+        spec: '20 */8 * * *'
+        cmd: 'bin/magento export:start catalog_product_category'
+ ```
+ {: .no-copy }
 
 1. Add, commit, and push code changes.
 
-   ```bash
-   git add -A && git commit -m "cron config updates" && git push origin <branch-name>
-   ```
+    ```bash
+    git add -A && git commit -m "cron config updates" && git push origin <branch-name>
+    ```
 
 ## Update custom cron jobs {#update}
 
@@ -139,5 +139,4 @@ You can review cron processing information in the application-level log files fo
 See the following Magento Support articles for help troubleshooting cron-related problems:
 
 * [Cron tasks lock tasks from other groups](https://support.magento.com/hc/en-us/articles/360029219812-Cron-tasks-lock-tasks-from-other-groups)
-
 * [Reset stuck cron jobs manually on the cloud](https://support.magento.com/hc/en-us/articles/360000097713-Reset-stuck-Magento-cron-jobs-manually-on-Cloud)

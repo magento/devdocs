@@ -11,7 +11,7 @@ functional_areas:
 
 This topic discusses how you can create a custom maintenance page to display to users while your Magento application is being upgraded. Creating a custom page is optional but recommended because your site is accessible during part of the upgrade.
 
-Creating a custom page to which to [redirect](https://glossary.magento.com/redirect) users prevents any access to the site and also informs your users that the site is undergoing maintenance.
+Creating a custom page to which to redirect users prevents any access to the site and also informs your users that the site is undergoing maintenance.
 
 {:.bs-callout .bs-callout-info}
 You must perform the tasks in this section as a user with `root` privileges.
