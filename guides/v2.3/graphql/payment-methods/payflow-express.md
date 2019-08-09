@@ -68,7 +68,7 @@ mutation {
     "setPaymentMethodOnCart": {
       "cart": {
         "selected_payment_method": {
-          "code": "paypal_express",
+          "code": "payflow_express",
         }
       }
     }
