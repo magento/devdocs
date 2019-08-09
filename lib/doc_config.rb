@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Read Docfile file and get configuration data for adding subrepositories
 class DocConfig
   attr_reader :config
