@@ -253,7 +253,7 @@ stage:
 ### `LOCK_PROVIDER`
 
 -  **Default**—`file`
--  **Version**—Magento 2.1.5 and later
+-  **Version**—Magento 2.2.5 and later
 
 The lock provider prevents the launch of duplicate cron jobs and cron groups. You must use the `file` lock provider in the Production environment. Starter environments and the Pro Integration environment do not use the [MAGENTO_CLOUD_LOCKS_DIR]({{page.baseurl}}/cloud/env/variables-cloud.html) variable, so `{{site.data.var.ct}}` applies the `db` lock provider automatically.
 
