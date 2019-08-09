@@ -30,7 +30,7 @@ The client's browser then posts the nonce to the Magento server along with all t
 
 ## Additional payment information
 
-When you set the payment method to `authorizenet_acceptjs` in the [`setPaymentMethodOnCart`]({{page.baseurl}}/graphql/reference/quote-payment-method.html) mutation, the `additional_data` object must contain an `authorizenet_acceptjs` object.
+When you set the payment method to `authorizenet_acceptjs` in the [`setPaymentMethodOnCart`]({{page.baseurl}}/graphql/reference/quote-payment-method.html) mutation, the payload must contain an `authorizenet_acceptjs` object.
 
 Attribute |  Data Type | Description
 --- | --- | ---
@@ -38,7 +38,7 @@ Attribute |  Data Type | Description
 `opaque_data_descriptor` | String! | Authorize.Net's description of the transaction request
 `opaque_data_value` | String! | The nonce returned by Authorize.Net
 
-## Example setPaymentMethodOnCart mutation
+### Example usage
 
 The following example assigns the `authorizenet_acceptjs` payment method to the specified cart.
 

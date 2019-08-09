@@ -21,7 +21,7 @@ When you set the payment method to Payflow Link in the [`setPaymentMethodOnCart`
 
 {% include graphql/payment-methods/payflow-link-attributes.md %}
 
-## Example setPaymentMethodOnCart mutation
+### Example usage
 
 The following example shows the `setPaymentMethodOnCart` mutation constructed for the Payflow Link payment method.
 

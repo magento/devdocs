@@ -26,7 +26,7 @@ When you set the payment method to Express Checkout, you must set the `code` att
 
 {% include graphql/payment-methods/paypal-express-checkout-attributes.md %}
 
-## Example setPaymentMethodOnCart mutation
+### Example usage
 
 The following example shows the `setPaymentMethodOnCart` mutation constructed for the PayPal Express payment method.
 

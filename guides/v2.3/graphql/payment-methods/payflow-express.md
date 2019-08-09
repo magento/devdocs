@@ -30,7 +30,7 @@ When you set the payment method to one of the Express Checkout payment solutions
 
 {% include graphql/payment-methods/paypal-express-checkout-attributes.md %}
 
-## Example setPaymentMethodOnCart mutation
+### Example usage
 
 The following example shows the `setPaymentMethodOnCart` mutation with the `code` set to `payflow_express`.
 
@@ -42,10 +42,10 @@ mutation {
     cart_id: "rMQdWEecBZr4SVWZwj2AF6y0dNCKQ8uH"
     payment_method: {
         code: "payflow_express"
-          payflow_express: {
-            payer_id: "<PayPal_PayerID>"
-            token: "<PayPal_Token>"
-          }
+        payflow_express: {
+          payer_id: "<PayPal_PayerID>"
+          token: "<PayPal_Token>"
+        }
       }
   }) {
     cart {
