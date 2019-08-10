@@ -21,7 +21,7 @@ The following diagram shows the workflow for placing an order when Payflow Pro i
 
 ## Additional Payment information
 
-When you set the payment method to Payflow Pro in the [`setPaymentMethodOnCart`]({{page.baseurl}}/graphql/reference/quote-payment-method.html) mutation, the `additional_data` object must contain a `payflowpro` object and a `CreditCardDetailsInput` object.
+When you set the payment method to Payflow Pro in the [`setPaymentMethodOnCart`]({{page.baseurl}}/graphql/reference/quote-payment-method.html) mutation, the `payment_method` object must contain a `payflowpro` object and a `CreditCardDetailsInput` object.
 
 {% include graphql/payment-methods/payflow-pro-attributes.md %}
 
@@ -37,14 +37,12 @@ mutation {
     cart_id: "IeTUiU0oCXjm0uRqGCOuhQ2AuQatogjG"
     payment_method: {
       code: "payflowpro"
-      additional_data: {
-        payflowpro: {
+      payflowpro: {
           cc_details: {
-            cc_exp_month: 12
-            cc_exp_year: 2021
-            cc_last_4: 1111
-            cc_type: "VI"
-          }
+          cc_exp_month: 12
+          cc_exp_year: 2021
+          cc_last_4: 1111
+          cc_type: "VI"
         }
       }
     }
