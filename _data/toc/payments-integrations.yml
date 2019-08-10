@@ -90,3 +90,7 @@ pages:
     - label: Signifyd fraud protection
       include_versions: ["2.2", "2.3"]
       url: /payments-integrations/signifyd/signifyd.html
+
+    - label: CardinalCommerce 3-D Secure
+      include_versions: ["2.2", "2.3"]
+      url: /payments-integrations/cardinal/cardinal.html

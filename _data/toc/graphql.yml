@@ -68,6 +68,9 @@ pages:
         - label: customerPaymentTokens query
           url: /graphql/queries/customer-payment-tokens.html
 
+        - label: getHostedProUrl query
+          url: /graphql/queries/get-hosted-pro-url.html
+
         - label: storeConfig query
           url: /graphql/queries/store-config.html
 
@@ -104,9 +107,6 @@ pages:
 
             - label: Payflow Pro handlePayflowProResponse mutation
               url: /graphql/reference/paypal-handle-payflow-pro-response.html
-
-            - label: Paypal endpoint
-              url: /graphql/reference/paypal.html
 
             - label: Products endpoint
               url: /graphql/reference/products.html
@@ -198,6 +198,12 @@ pages:
 
         - label: Authorize.Net
           url: /graphql/payment-methods/authorize-net.html
+
+        - label: PayPal Express Checkout
+          url: /graphql/payment-methods/paypal-express-checkout.html
+
+        - label: Express Checkout for other PayPal solutions
+          url: /graphql/payment-methods/payflow-express.html
           
         - label: PayPal Payflow Link
           url: /graphql/payment-methods/payflow-link.html
@@ -207,6 +213,9 @@ pages:
 
         - label: PayPal Payments Advanced
           url: /graphql/payment-methods/payments-advanced.html
+
+        - label: PayPal Website Payments Pro Hosted Solution
+          url: /graphql/payment-methods/hosted-pro.html
 
     - label: Tutorial
       class: tutorial

@@ -49,6 +49,7 @@ namespace :update do
     Dir.chdir 'page-builder-migration' do
       sh 'git remote -v'
       sh 'git pull'
+      sh 'git status -sb'
     end
   end
 

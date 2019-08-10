@@ -268,7 +268,7 @@ The following is a list of prohibited Magento API changes:
 
 ### Translatable phrases
 
-Do not modify any translatable phrase.
+Do not modify or add any translatable phrase.
 
 ### Magento functional and integration tests
 
