@@ -11,7 +11,7 @@ entries:
   type: New topic
   date: August 7, 2019
   link: https://github.com/magento/devdocs/pull/5007
-- description: Updated the label descriptions [devdocs contributions](https://devdocs.magento.com/guides/v2.3/contributor-guide/contributing.html#devdocs), corrected links, and added link to the [Beginner's Guide](https://github.com/magento/magento2/wiki/Getting-Started).
+- description: Updated the label descriptions for [devdocs contributions](https://devdocs.magento.com/guides/v2.3/contributor-guide/contributing.html#devdocs), corrected links, and added link to the [Beginner's Guide](https://github.com/magento/magento2/wiki/Getting-Started).
   versions: 2.2.x, 2.3.x
   type: Major update
   date: August 5, 2019
