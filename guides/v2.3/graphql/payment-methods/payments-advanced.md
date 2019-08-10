@@ -3,7 +3,7 @@ group: graphql
 title: PayPal Payments Advanced payment method
 ---
 
-The PayPal Payments Advanced payment solution allows merchants to enable their online stores to collect payments directly via credit card or from the PayPal Credit service. If Payments Advanced has been configured to implement Express Checkout, use the [PayPal Express Checkout for Payflow payment method]({{page.baseurl}}/payment-methods/payflow-express.html) instead.
+The PayPal Payments Advanced payment solution allows merchants to enable their online stores to collect payments directly via credit card or from the PayPal Credit service. If Payments Advanced has been configured to implement Express Checkout, use the [PayPal Express Checkout for Payflow payment method]({{page.baseurl}}/graphql/payment-methods/payflow-express.html) instead.
 
 From a GraphQL integration standpoint, PayPal Payments Advanced payment method is identical to the PayPal [Payflow Link]({{page.baseurl}}/graphql/payment-methods/payflow-link.html) payment method, with the exception of the payment method `code`. The PayPal [Payments Advanced documentation](https://developer.paypal.com/docs/classic/products/paypal-payments-advanced/) describes other ways in which the payment methods differ.
 

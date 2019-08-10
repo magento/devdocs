@@ -9,7 +9,7 @@ Other PayPal solutions have the same GraphQL workflow as Payflow Pro. The inform
 
 -  Payments Pro
 
-If Payflow Pro has been configured to implement Express Checkout, use the [PayPal Express Checkout for Payflow payment method]({{page.baseurl}}/payment-methods/payflow-express.html) instead.
+If Payflow Pro has been configured to implement Express Checkout, use the [PayPal Express Checkout for Payflow payment method]({{page.baseurl}}/graphql/payment-methods/payflow-express.html) instead.
 
 ## Payflow Pro workflow
 
