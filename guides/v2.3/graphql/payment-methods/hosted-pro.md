@@ -24,7 +24,7 @@ When you set the payment method for a Website Payments Pro Hosted Solution, you 
 
 {% include graphql/payment-methods/hosted-pro-attributes.md %}
 
-## Example setPaymentMethodOnCart mutation
+### Example usage
 
 The following example shows the `setPaymentMethodOnCart` mutation constructed for the Website Payments Pro Hosted Solution payment method.
 
