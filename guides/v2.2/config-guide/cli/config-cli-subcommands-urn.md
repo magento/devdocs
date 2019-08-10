@@ -36,3 +36,6 @@ bin/magento dev:urn-catalog:generate <path>
 ```
 
 Where `<path>` is the path to your PhpStorm `misc.xml` file, which is located relative to your project root. Typically, `<path>` is `.idea/misc.xml`.
+
+{: .bs-callout-info}
+Run `dev:urn-catalog:generate` command each time when you add/modify/remove Magento 2 modules which contain `*.xsd` files to keep your "Schemas and DTDs" up do date.
