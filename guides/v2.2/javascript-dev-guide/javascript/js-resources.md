@@ -136,6 +136,74 @@ To be available for the entire Magento instance, RequireJS library is included i
 
 * For the `frontend` area the similar configuration is located in [`app/code/Magento/Theme/view/frontend/layout/default.xml`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Theme/view/frontend/layout/default.xml).
 
+### Including third-party JavaScript Libraries
+
+For including a 3rd party library and use it in all the entire website, check the following steps where will be including the [Slick JS Library](https://github.com/kenwheeler/slick/) as an example. 
+
+1. Download the library and copy the `slick.min.js` to `<theme_path>/web/js` folder
+
+2. Copy the `slick.less` and `slick-theme.less` to `<theme_path>/web/css/source` folder. It is also required to include both files to `<theme_path>/web/css/source/_extend.less`.
+```less
+@import "slick.less";
+@import "slick-theme.less";
+```
+
+3. Create or update the theme's `requirejs-config.js` file
+> `<theme_path>/requirejs-config.js`
+
+```javascript
+var config = {
+    paths: {
+        slick: 'js/slick.min'
+    },
+    shim: {
+        slick: {
+            deps: ['jquery']
+        }
+    }
+};
+```
+
+After all these steps, clear the cache and deploy the files.
+
+#### Result
+
+Now we should be able to use the slick library on any list that we want to make it as a slider. 
+
+The following sample, shows how to apply the new added slick library on a list.
+
+```html
+<ul class="my-list">
+    <li>1st Element</li>
+    <li>2nd Element</li>
+    <li>3rd Element</li>
+    <li>4th Element</li>
+    <li>5th Element</li>
+    <li>6th Element</li>
+    <li>7th Element</li>
+    <li>8th Element</li>
+</ul>
+
+<script>
+    require([
+        'jquery',
+        'slick'
+    ], function ($) {
+        $(document).ready(function () {
+            $(".my_list").slick({
+                dots: true,
+                infinite: true,
+                speed: 300,
+                slidesToShow: 4,
+                slidesToScroll: 1
+            });
+        });
+    });
+</script>
+```
+
+![Slick Slider]({{ site.baseurl }}/common/images/js/slick-slider-result.png)
+
 ### Mapping JS resources {#m2devgde-js-resources-mapping}
 
 To make the configurations more precise and specific for different modules/themes, `requirejs-config.js` files can be placed in different [locations](#m2devgde-js-resources-configuring) depending on your needs.
