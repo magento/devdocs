@@ -93,7 +93,6 @@ Make sure that your observer or plugin is declared only in the appropriate area:
 - [`adminhtml`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Backend/etc/di.xml){:target="_blank"}
 - [`crontab`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Cron/etc/di.xml){:target="_blank"}
 - [`frontend`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Store/etc/di.xml){:target="_blank"}
-- [`graphql`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/GraphQl/etc/di.xml){:target="_blank"}
 - [`webapi_rest`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Webapi/etc/di.xml){:target="_blank"}
 - [`webapi_soap`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Webapi/etc/di.xml){:target="_blank"}
  
