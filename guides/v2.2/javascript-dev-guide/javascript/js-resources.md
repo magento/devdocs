@@ -164,7 +164,7 @@ var config = {
 };
 ```
 
-After all these steps, clear the cache and deploy the files.
+After all these steps, clear the cache and perform the static content deployment
 
 #### Result
 
