@@ -31,10 +31,12 @@ where:
 
 * `{<path to config.xml>}` is the absolute file system path to `config.xml`; this argument is required
 
-Within this step the Data Migration Tool creates the additional tables and triggers for the migration tables in Magento 1 database. They will be used in the [incremental/delta]({{ page.baseurl }}/migration/migration-migrate-delta.html) migration step. Each new table will have:
+Within this step the Data Migration Tool creates the additional tables and triggers for the migration tables in Magento 1 database. They will be used in the [incremental/delta]({{ page.baseurl }}/migration/migration-migrate-delta.html) migration step. Additional tables will contain information about the changed records after the last migration execution. The database triggers are used to fill these extra tables, so once a new operation is being performed on the particular table (a record is added/modified/removed), the database trigger added by the Data Migration Tool saves information about this operation to the extra table. If we run a delta migration process, the Data Migration Tool checks mentioned tables for the unprocessed records and migrates a necessary content into Magento 2 database.  
+
+Each new table will have:
  - `m2_cl` prefix
  - `INSERT`, `UPDATE`, `DELETE` event triggers.
- 
+  
 For example, for the `sales_flat_order` the Data Migration Tool creates:
  
  - `m2_cl_sales_flat_order` table:
