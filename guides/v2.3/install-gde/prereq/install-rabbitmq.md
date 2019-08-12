@@ -85,7 +85,7 @@ Review the official RabbitMQ documentation to configure and manage RabbitMQ. Pay
 * Starting and stopping the broker
 * System limits
 
-## Install Magento with RabbitMQ connection to {{site.data.var.ce}} or {{site.data.var.ee}} 
+## Install Magento with RabbitMQ and connect to {{site.data.var.ce}} or {{site.data.var.ee}} 
 
 If you installing Magento after you installed RabbitMQ, add the following command line parameters when you install {{site.data.var.ce}} or {{site.data.var.ee}}:
 
