@@ -8,7 +8,7 @@ contributor_link: https://www.atwix.com/
 
 ## Overview
 
-The PopupWindow [widget](https://glossary.magento.com/widget/) allows to open a popup window with content from any URL.
+The PopupWindow [widget](https://glossary.magento.com/widget/) allows you to open a popup window with content from any URL.
 
 The PopupWindow widget source is [lib/web/mage/popup-window.js][].
 
@@ -16,7 +16,7 @@ The PopupWindow widget source is [lib/web/mage/popup-window.js][].
 
 For information about how to initialize a widget in a JS component or `.phtml` template, see the [Initialize JavaScript][] topic.
 
-Generally the PopupWindow widget is instantiated like following:
+The PopupWindow widget is instantiated with:
 
 ```javascript
 $("#element").popupWindow({
@@ -33,7 +33,7 @@ $("#element").popupWindow({
 
 Where:
 
-- `#element` is the selector of the element for which PopupWindow is initialized.
+- `#element` is the selector of the element which will be the PopupWindow.
 
 Phtml template file examples using script:
 
@@ -63,24 +63,24 @@ Phtml template file examples using script:
 
 The PopupWindow widget has the following options:
 
-- [centerBrowser](#centerbrowser)
-- [centerScreen](#centerscreen)
-- [height](#height)
-- [left](#left)
-- [location](#location)
-- [menubar](#menubar)
-- [resizable](#resizable)
-- [scrollbars](#scrollbars)
-- [status](#status)
-- [width](#width)
-- [windowName](#windowname)
-- [windowURL](#windowurl)
-- [top](#top)
-- [toolbar](#toolbar)
+-  [centerBrowser](#centerbrowser)
+-  [centerScreen](#centerscreen)
+-  [height](#height)
+-  [left](#left)
+-  [location](#location)
+-  [menubar](#menubar)
+-  [resizable](#resizable)
+-  [scrollbars](#scrollbars)
+-  [status](#status)
+-  [width](#width)
+-  [windowName](#windowname)
+-  [windowURL](#windowurl)
+-  [top](#top)
+-  [toolbar](#toolbar)
 
 ### `centerBrowser`
 
-The option allows centering the popup window over a browser window. It overrides [top](#top) and [left](#left) options.
+Centers the popup window over a browser window. It overrides the [top](#top) and [left](#left) options.
 
 **Type**: Integer
 
@@ -88,7 +88,7 @@ The option allows centering the popup window over a browser window. It overrides
 
 ### `centerScreen`
 
-The option allows centering the popup window over the entire screen. It overrides [top](#top) and [left](#left) options.
+Centers the popup window over the entire screen. It overrides [top](#top) and [left](#left) options.
 
 **Type**: Integer
 
@@ -128,7 +128,7 @@ Determines whether the menu bar is displayed.
 
 ### `resizable`
 
-Whether the popup window can be resized.
+Allows the popup window to be resized.
 
 **Type**: Integer
 
@@ -136,7 +136,7 @@ Whether the popup window can be resized.
 
 ### `scrollbars`
 
-Determines whether scrollbars appear on the popup window.
+Controls whether scrollbars appear on the popup window.
 
 **Type**: Integer
 
@@ -144,7 +144,7 @@ Determines whether scrollbars appear on the popup window.
 
 ### `status`
 
-Whether a status line appears at the bottom of the popup window.
+Controls the status bar at the bottom of the popup window.
 
 **Type**: Integer
 
@@ -160,7 +160,7 @@ The width in pixels of the popup window.
 
 ### `windowName`
 
-Name of window set from the name attribute of the element that invokes the click.
+Name of the popup window. By default, it is set from the name attribute of the element that invokes the click.
 
 **Type**: String, Null
 
@@ -184,7 +184,7 @@ Top position when the window appears.
 
 ### `toolbar`
 
-Determines whether a toolbar is displayed.
+Determines whether the toolbar is displayed.
 
 **Type**: Integer
 
@@ -192,7 +192,7 @@ Determines whether a toolbar is displayed.
 
 ## Code sample
 
-The following example shows the *Open Customer Login* link and after clicking on this link the popup window is opened with *Customer Login* page.
+This example shows the *Open Customer Login* link, and after clicking on this link the popup window is opened with *Customer Login* page.
 
 ```html
 <a href="#" class="action" title="Open Customer Login"
