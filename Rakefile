@@ -11,11 +11,8 @@ require 'kramdown'
 require 'launchy'
 require 'colorator'
 
-# Load ruby files with helper methods from the 'rakelib/' directory
-require_relative 'rakelib/lib/link-checker.rb'
-require_relative 'rakelib/lib/converter.rb'
-require_relative 'rakelib/lib/double-slash-check.rb'
-require_relative 'rakelib/lib/doc-config.rb'
+# Require helper methods from the 'lib' directory
+Dir.glob('lib/**/*.rb') { |file| require_relative(file) }
 
 desc "Same as 'rake', 'rake preview'"
 task default: %w[preview]
@@ -62,10 +59,17 @@ desc 'Pull docs from external repositories'
 task init: %w[multirepo:init]
 
 desc 'Run checks (image optimization).'
-task check: %w[check:image_optim check:mdl] 
+task check: %w[check:image_optim check:mdl]
 
-desc 'Generate data for the weekly digest.'
+desc 'Generate data for a news digest. Default period is a week since today. For other period use "since" argument: since="jul 4"'
 task :whatsnew do
+  date = ENV['since']
   print 'Generating data for the weekly digest: $ '.magenta
-  sh 'whatsup_github'
+  if date.nil? or date.empty?
+    sh 'bin/whatsup_github'
+  elsif date.is_a? String
+    sh 'bin/whatsup_github', 'since', ENV['since'].to_s
+  else
+    puts 'The "since" argument must be a string/ Example: "jul 4"'
+  end
 end
