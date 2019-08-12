@@ -294,7 +294,7 @@ Before you can activate your integration in Magento, you must create two pages o
 
 ### Login page {#login}
 
-When a merchant clicks the **Activate** button in Admin, a pop-up login page for the third-party application displays. Magento sends values for `oauth_consumer_key` and `success_call_back` parameters. The application must store the value for`oauth_consumer_key` tie it to the login ID. Use the `success_call_back` parameter to return control back to Magento.
+When a merchant clicks the **Activate** button in Admin, a pop-up login page for the third-party application displays. Magento sends values for `oauth_consumer_key` and `success_call_back` parameters. The application must store the value for `oauth_consumer_key` to tie it to the login ID. Use the `success_call_back` parameter to return control back to Magento.
 
 ### Callback page {#callback}
 

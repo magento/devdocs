@@ -14,7 +14,7 @@ content='The list widget is deprecated since version 2.2.0. As an alternative co
 Provides a way to move items, typically a list, from one content section to another.
 The content can be moved using buttons and links. 
 
-The list {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} source file is [lib/web/mage/list.js].
+The list [widget](https://glossary.magento.com/widget) source file is [lib/web/mage/list.js].
 
 ## Initialize the list widget {#quicksearch_init}
 
