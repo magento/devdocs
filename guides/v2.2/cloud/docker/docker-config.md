@@ -170,7 +170,7 @@ Continue launching your Docker environment in the default _production_ mode.
     ```bash
     docker-compose run deploy magento-command cache:clean
     ```
-1. _Optional_: Restart services. In cases when static content didn't synchronize with all images after generation on build phase.
+1. _Optional_: Restart services if the static content does not synchronize with all images after generation on build phase.
 
     ```bash
     docker-compose restart
