@@ -65,13 +65,13 @@ The RabbitMQ server is included on CentOS, but the version is often old. RabbitM
 1. Download [rabbitmq-server-3.5.6-1.noarch.rpm](https://www.rabbitmq.com/releases/rabbitmq-server/v3.5.6/rabbitmq-server-3.5.6-1.noarch.rpm){:target="_blank"}.
 2. Run the following commands as a user with root permissions:
 
-```bash
-rpm --import https://www.rabbitmq.com/rabbitmq-signing-key-public.asc
-```
-
-```bash
-yum install rabbitmq-server-3.5.6-1.noarch.rpm
-```
+    ```bash
+    rpm --import https://www.rabbitmq.com/rabbitmq-signing-key-public.asc
+    ```
+    
+    ```bash
+    yum install rabbitmq-server-3.5.6-1.noarch.rpm
+    ```
 
 Refer to [Installing on RPM-based Linux](https://www.rabbitmq.com/install-rpm.html){:target="_blank"} for more information.
 
@@ -85,9 +85,9 @@ Review the official RabbitMQ documentation to configure and manage RabbitMQ. Pay
 * Starting and stopping the broker
 * System limits
 
-## Install Magento with RabbitMQ connection to {{site.data.var.ce}} or {{site.data.var.ee}} 
+## Install Magento with RabbitMQ and connect to {{site.data.var.ce}} or {{site.data.var.ee}} 
 
-If you installing Magento after you installed RabbitMQ, add the following command line parameters when you install {{site.data.var.ce}} or {{site.data.var.ee}}:
+If you installed Magento after you installed RabbitMQ, add the following command line parameters when you install {{site.data.var.ce}} or {{site.data.var.ee}}:
 
 `--amqp-host="<hostname>" --amqp-port="5672" --amqp-user="<user_name>" --amqp-password="<password>" --amqp-virtualhost="/"`
 
@@ -104,10 +104,9 @@ where:
 
 ## Connect RabbitMQ to {{site.data.var.ce}} or {{site.data.var.ee}} 
 
-If you already had Magento installed and you want to connect it with RabbitMq, add `queue` section in the `<install_directory>/app/etc/env.php` file so that it is similar to the following:
+If you already had Magento installed and you want to connect it to RabbitMQ, add a `queue` section in the `<install_directory>/app/etc/env.php` file so that it is similar to the following:
 
-```php?start_inline=1
-
+```php
 'queue' =>
   array (
     'amqp' =>
@@ -121,14 +120,13 @@ If you already had Magento installed and you want to connect it with RabbitMq, a
   ),
 ```
 
-After, please run `bin/magento setup:upgrade` for apply changes and create required queues in RabbitMQ
+Then, run `bin/magento setup:upgrade` to apply the changes and create the required queues in RabbitMQ.
 
 ## Configure SSL
 
 To configure support for SSL, edit the `ssl` and `ssl_options` parameters in the `<install_directory>/app/etc/env.php` file so that they are similar to the following:
 
 ```php
-
 'queue' =>
   array (
     'amqp' =>
