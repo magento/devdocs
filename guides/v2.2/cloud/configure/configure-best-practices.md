@@ -52,7 +52,7 @@ For additional steps, you can continue with instructions with [Schedule Changes 
 
 Price rules can include logic and conditions as limitless as your marketing imagination. Some popular examples include Buy One Get One Free, Buy One Get One 50% Off, a $25 dollars off on orders over $100 dollars, and so on.
 
-To create a Price Rule, see our [Magento 2 User Guide](http://docs.magento.com/m2/ee/user_guide/Search.html#search-price%20rules).
+To create a Price Rule, see our [Magento 2 User Guide](https://docs.magento.com/m2/ee/user_guide/search.html?query=price%20rules).
 
 The following provides an example of creating a Price Rule for a First Order Only discount. For this discount, you would want to:
 

@@ -1,10 +1,6 @@
 ---
 group: cloud-guide
-subgroup: 080_setup
 title: Install Magento prerequisites
-menu_title: Install Magento prerequisites
-menu_order: 15
-menu_node:
 redirect_from:
   - /guides/v2.2/cloud/before/before-workspace-php.html
   - /guides/v2.2/cloud/before/before-workspace-cli.html
@@ -50,7 +46,7 @@ Although {{ site.data.var.ee }} supports the Apache web server, {{ site.data.var
 
 ## PHP (local) {#php}
 
-Install [PHP](https://glossary.magento.com/php) on your local. We recommend PHP 7.0. For information on installing PHP, see these instructions for [CentOS]({{ page.baseurl }}/install-gde/prereq/php-centos.html) and [Ubuntu]({{ page.baseurl }}/install-gde/prereq/php-ubuntu.html). For instructions for another OS, see the [PHP documentation](http://php.net/manual/en/install.php).
+Install [PHP](https://glossary.magento.com/php) on your local workstation. For information on installing PHP, see [PHP Settings]({{ page.baseurl }}/install-gde/prereq/php-settings.html). For instructions for another OS, see the [PHP documentation](http://php.net/manual/en/install.php).
 
 The following packages may also be helpful for your PHP installation:
 

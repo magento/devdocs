@@ -10,7 +10,10 @@ We are pleased to present Magento Open Source 2.3.2.  This release includes over
 ## Other release information
 
 Although code for these features is bundled with quarterly releases of the Magento core code, several of these projects (for example, Page Builder, Inventory Management, and Progressive Web Applications (PWA) Studio) are also released independently. Bug fixes for these projects are documented in separate, project-specific release information which is available in the documentation for each project.
- 
+
+## Apply patch PRODSECBUG-2233 to address critical remote code execution vulnerability (RCE)
+
+An unauthenticated cross-site scripting vulnerability combined with an authenticated Phar deserialization vulnerability has left this version of Magento Open Source open to serious exploit. An attacker can use these vulnerabilities to inject JavaScript into the Magento Admin, and subsequently launch malicious code in a store user’s browser.  **We strongly recommend that all users of the affected versions of Magento download and apply the appropriate patch as soon as possible**. This issue is discussed in the xxx blog post. Patches are available from the [Magento Download](https://magento.com/tech-resources/download) page. Locate the patch by the name. We provide Git-based and Composer-based patches.  
 
 ## Apply the Scope parameter for Async/Bulk API patch to address an issue with the Async/Bulk REST API
 
@@ -290,7 +293,7 @@ This fix can degrade performance in deployments that implement flat catalogs. To
 * Magento now increments product quantity correctly when you add products to your cart first as a guest user, and then logged in. Previously, Magento added items separately instead. *Fix submitted by [Jitheesh V O](https://github.com/Jitheesh) in pull request [21501](https://github.com/magento/magento2/pull/21501)*. [GitHub-21375](https://github.com/magento/magento2/issues/21375)
 
 <!--- ENGCOM-4180-->
-* **Meta Keywords** and **Meta Description** are now defined as `textarea` throughout  product forms. *Fix submitted by [Amit Vishvakarma](https://github.com/amitcedcoss) in pull request [20556](https://github.com/magento/magento2/pull/20556)*. [GitHub-20555](https://github.com/magento/magento2/issues/20555)
+* **Meta Keywords** and **Meta Description** are now defined as `textarea` throughout  product forms. *Fix submitted by Amit Vishvakarma in pull request [20556](https://github.com/magento/magento2/pull/20556)*. [GitHub-20555](https://github.com/magento/magento2/issues/20555)
 
 <!--- MAGETWO-99027-->
 * Magento now saves customizable option price input on the store-view level when Catalog Price Scope is set to **Global**. Previously, customizable option prices were not saved on the store-view level when Catalog Price Scope was to **Global**.
@@ -1047,7 +1050,7 @@ The following table identifies contributions from our community members. This ta
 
 ### System requirements
 
-Our technology stack is built on PHP and MySQL. For more information, see [System Requirements]({{site.baseurl}}/magento-system-requirements.html).
+Our technology stack is built on PHP and MySQL. For more information, see [System Requirements]({{ page.baseurl }}/install-gde/system-requirements.html).
 
 ### Installation and upgrade instructions
 
