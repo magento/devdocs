@@ -104,7 +104,7 @@ where:
 
 ## Connect RabbitMQ to {{site.data.var.ce}} or {{site.data.var.ee}} 
 
-If you already had Magento installed and you want to connect it with RabbitMq, add `queue` section in the `<install_directory>/app/etc/env.php` file so that it is similar to the following:
+If you already had Magento installed and you want to connect it to RabbitMQ, add a `queue` section in the `<install_directory>/app/etc/env.php` file so that it is similar to the following:
 
 ```php
 'queue' =>
