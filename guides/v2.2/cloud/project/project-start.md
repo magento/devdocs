@@ -21,7 +21,6 @@ File                      | Description
 `composer.lock`           | Stores version dependencies for every package.
 `magento-vars.php`        | A file used to define [multiple stores]({{ page.baseurl }}/cloud/project/project-multi-sites.html#modify-magento-variables) and sites using [Magento variables]({{ page.baseurl }}/config-guide/multi-site/ms_over.html).
 
-http://127.0.0.1:4000/guides/v2.3/cloud/project/project-multi-sites.html#modify-magento-variables
 {: .bs-callout-info }
 When you push your local environment to the remote server, our deploy script uses the values defined by configuration files in the `.magento` directory, then the script deletes the directory and its contents. Your local development environment is not affected.
 

@@ -59,26 +59,26 @@ For Pro, you must create a [Support ticket]({{ page.baseurl }}/cloud/trouble/tro
    ```yaml
    "http://{default}/":
        type: upstream
-       upstream: "mymagento:php"
+       upstream: "mymagento:http"
 
    "https://{default}/":
        type: upstream
-       upstream: "mymagento:php"
+       upstream: "mymagento:https"
 
-   "http://*.{default}/":
+   "http://<second-site>.{default}/":
        type: upstream
-       upstream: "mymagento:php"
+       upstream: "mymagento:http"
 
-   "https://*.{default}/":
+   "https://<second-site>.{default}/":
        type: upstream
-       upstream: "mymagento:php"
+       upstream: "mymagento:https"
    ```
 
 1. Save your changes to the `routes.yaml` file.
 
 ### Configure locations for shared domains {#locations}
 
-Where routes defines how the URLs are processed, the `web` property in the `.magento.app.yaml` file defines how your application is exposed to the web. Web _locations_ allows more granularity for incoming requests. For example, if your domain is `store.com`, you can use `/first` and `/second` for requests to two different stores that share that domain.
+Where routes defines how the URLs are processed, the `web` property in the `.magento.app.yaml` file defines how your application is exposed to the web. Web _locations_ allows more granularity for incoming requests. For example, if your domain is `store.com`, you can use `/first` (default site) and `/second` for requests to two different stores that share that domain.
 
 ```yaml
 web:
@@ -99,9 +99,9 @@ web:
             scripts: false
             passthru: "/front-static.php"
             rules:
-                /static/version\d+/(?<resource>.*)$:
+                ^/static/version\d+/(?<resource>.*)$:
                     passthru: "/static/$resource"
-        "/second": *app
+        "/<second-site>": *app
           ...
 ```
 
@@ -117,8 +117,9 @@ web:
             scripts: false
             passthru: "/front-static.php"
             rules:
-                ^(/(second))?/static/version\d+/(?<resource>.*)$:
+                ^(/(<second-site>))?/static/version\d+/(?<resource>.*)$:
                     passthru: "/static/$resource"
+        "/<second-site>": *app
 ```
 
 ### Set up websites, stores, and store views
@@ -139,24 +140,25 @@ Instead of configuring an NGINX virtual host, pass the `MAGE_RUN_CODE` and `MAGE
 
 1. Move the entire block starting with `if (isHttpHost("example.com")` after `function isHttpHost($host)`.
 
-   The file should look like the following:
+   The [default `magento-vars.php` file](https://github.com/magento/magento-cloud/blob/master/magento-vars.php) should look like the following:
 
    ```php
    <?php
    // enable, adjust and copy this code for each store you run
    // Store #0, default one
+   //if (isHttpHost("example.com")) {
+   //    $_SERVER["MAGE_RUN_CODE"] = "default";
+   //    $_SERVER["MAGE_RUN_TYPE"] = "store";
+   //}
    function isHttpHost($host)
    {
        if (!isset($_SERVER['HTTP_HOST'])) {
-          return false;
+           return false;
        }
-          return strpos(str_replace('---', '.', $_SERVER['HTTP_HOST']), $host) === 0;
-   }
-   if (isHttpHost("store.com")) {
-       $_SERVER["MAGE_RUN_CODE"] = "default";
-       $_SERVER["MAGE_RUN_TYPE"] = "store";
+       return strpos(str_replace('---', '.', $_SERVER['HTTP_HOST']), $host) === 0;
    }
    ```
+   {:.no-copy}
 
 1. Change the following line:
 
@@ -181,8 +183,6 @@ Instead of configuring an NGINX virtual host, pass the `MAGE_RUN_CODE` and `MAGE
 
    ```php
    <?php
-   // enable, adjust and copy this code for each store you run
-   // Store #0, default one
    function isHttpHost($host)
    {
        if (!isset($_SERVER['HTTP_HOST'])) {
@@ -192,7 +192,10 @@ Instead of configuring an NGINX virtual host, pass the `MAGE_RUN_CODE` and `MAGE
    }
    if (isHttpHost("second.store.com"))
    {
-       $_SERVER["MAGE_RUN_CODE"] = "second";
+       $_SERVER["MAGE_RUN_CODE"] = "<second-site>";
+       $_SERVER["MAGE_RUN_TYPE"] = "website";
+   }elseif (isHttpHost("store.com")){
+       $_SERVER["MAGE_RUN_CODE"] = "base";
        $_SERVER["MAGE_RUN_TYPE"] = "website";
    }
    ```
@@ -201,8 +204,6 @@ Instead of configuring an NGINX virtual host, pass the `MAGE_RUN_CODE` and `MAGE
 
    ```php
    <?php
-   // enable, adjust and copy this code for each store you run
-   // Store #0, default one
    function isHttpHost($host)
    {
        if (!isset($_SERVER['HTTP_HOST'])) {
@@ -216,7 +217,7 @@ Instead of configuring an NGINX virtual host, pass the `MAGE_RUN_CODE` and `MAGE
 
       $uri = explode('/', $_SERVER['REQUEST_URI']);
       if (isset($uri[1]) && $uri[1] == 'second') {
-        $code = 'second';
+        $code = '<second-site>';
         $type = 'website';
       }
       $_SERVER["MAGE_RUN_CODE"] = $code;
