@@ -7,32 +7,12 @@ The OnOffColumn component is a decorator for [MultiselectColumn]({{ page.baseurl
 
 ## Configuration options
 
-<table>
-  <tr>
-    <th>Option</th>
-    <th>Description</th>
-    <th>Type</th>
-    <th>Default Value</th>
-  </tr>
-  <tr>
-    <td><code>bodyTmpl</code></td>
-    <td>Path to the template that is used to render a column's field in the table's body.</td>
-    <td>String</td>
-    <td><code>ui/grid/cells/onoff</code></td>
-  </tr>
-  <tr>
-    <td><code>fieldClass</code></td>
-    <td>Additional CSS classes added to the column's field elements.</td>
-    <td>{<br /><code>[name: string]: boolean</code><br />}</td>
-    <td>{<br />'<code>admin__scope-old': true,</code><br /><code>'data-grid-onoff-cell': true,</code><br /><code>'data-grid-checkbox-cell': false</code><br />}</td>
-  </tr>
-  <tr>
-    <td><code>headerTmpl</code></td>
-    <td>Path to the <code>.html</code> template for the column's header.</td>
-    <td>String</td>
-    <td><code>ui/grid/columns/onoff</code></td>
-  </tr>
-</table>
+| Option | Description | Type | Default Value |
+| --- | --- | --- | --- |
+| `component` | The path to the component’s `.js` file in terms of RequireJS. | String | `Magento_Ui/js/grid/columns/onoff` |
+| `bodyTmpl` | Path to the template that is used to render a column's field in the table's body. | String | `ui/grid/cells/onoff` |
+| `fieldClass` | Additional CSS classes added to the column's field elements. | {<br />`[name: string]: boolean`<br />} | {<br />'`admin__scope-old': true,`<br />`'data-grid-onoff-cell': true,`<br />`'data-grid-checkbox-cell': false`<br />} |
+| `headerTmpl` | Path to the `.html` template for the column's header. | String | `ui/grid/columns/onoff` |
 
 ## Source files
 

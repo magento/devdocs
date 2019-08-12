@@ -8,6 +8,8 @@ functional_areas:
 
 The `mysql` service provides persistent data storage based on [MariaDB](https://mariadb.com/) versions 10.0 and later, supporting the [XtraDB](https://www.percona.com/software/mysql-database/percona-server/xtradb) storage engine and reimplemented features from MySQL 5.6 and 5.7.
 
+{% include cloud/service-config-integration-starter.md %}
+
 #### To access the MariaDB database directly:
 
 Using SSH, log in to the remote server and connect to the database.

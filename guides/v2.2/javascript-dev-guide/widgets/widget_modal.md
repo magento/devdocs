@@ -6,7 +6,7 @@ title: Modal widget
 
 ## Overview {#modal_overview}
 
-The Magento modal [widget](https://glossary.magento.com/widget) implements a secondary window that opens on top of the main window. It contains the overlay and modal content. The modal widget configuration enables the following:
+The Magento modal widget implements a secondary window that opens on top of the main window. It contains the overlay and modal content. The modal widget configuration enables the following:
 
 -   Configuring as popup or slide
 -   Controlling stack of modal widgets
@@ -16,8 +16,8 @@ The modal widget source is [`<Magento_Ui_module_dir>/view/base/web/js/modal/moda
 
 The widget uses the following templates:
 
-- [`<Magento_Ui_module_dir>/view/base/web/templates/modal/modal-popup.html`] popup type template.
-- [`<Magento_Ui_module_dir>/view/base/web/templates/modal/modal-slide.html`] slide type template.
+-  [`<Magento_Ui_module_dir>/view/base/web/templates/modal/modal-popup.html`] popup type template.
+-  [`<Magento_Ui_module_dir>/view/base/web/templates/modal/modal-slide.html`] slide type template.
 
 The design patterns for the modal pop-up windows in the Admin are described in the [Magento Admin Pattern Library, the Slide-out Panels, Modal Windows, and Overlays topic.] 
 
@@ -68,6 +68,7 @@ Array of buttons for action pane.
 **Type**: Array 
 
 **Structure**:
+
 ```javascript
 buttons: [{
     text: '',
@@ -77,13 +78,13 @@ buttons: [{
 ```
 
 **Default value**:
+
 ```javascript
 buttons: [{
-    text: $.mage.__('Ok'),
+    text: 'Ok',
     class: '',
-    attr: {},
-    click: function (event) {
-        this.closeModal(event);
+    click: function() {
+        this.closeModal();
     }
 }]
 ```
@@ -153,7 +154,8 @@ Sets a margin between slide modal windows.
 **Default value**: 45
 
 ### `responsive` {#modal_responsive}
-Turn popup modal window to slide panel on small screens. Available if the `type` option is set to `modal`.
+Turn popup modal window to slide panel on small screens. 
+Available if the type option is set to 'popup'.
 
 **Type**: Boolean 
 
@@ -175,7 +177,7 @@ The element that triggers the modal.
 
 ### `type` {#modal_type}
 
-The type of window: popup or slide.
+The type of window: 'popup' or 'slide'.
 
 **Type**: String 
 
@@ -219,6 +221,7 @@ modal.on( "modalclosed", function() {
 ```
 
 Or assign a callback as a property when creating a modal instance:
+
 ```javascript
 $('#modal_content').modal({
     ...
@@ -236,9 +239,9 @@ Called when the modal window is opened.
 
 ## Keyboard navigation {#key_navigation}
 
-- the ESC key: close the current modal window
-- the TAB key: set focus to the next focusable element (looped inside the modal window)
-- the SHIFT+TAB keys combination: set focus to the previous focusable element (looped inside the modal window)
+-  the ESC key: close the current modal window
+-  the TAB key: set focus to the next focusable element (looped inside the modal window)
+-  the SHIFT+TAB keys combination: set focus to the previous focusable element (looped inside the modal window)
 
 ## Code sample
 
@@ -255,7 +258,7 @@ The following example shows how to initialize the modal widget and pass options 
             'trigger': '[data-trigger=trigger]',
             'responsive': true,
             'buttons': [{
-                text: $.mage.__('Submit'),
+                text: 'Submit',
                 class: 'action'
             }]
         }}">
