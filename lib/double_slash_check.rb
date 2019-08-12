@@ -1,8 +1,11 @@
-# Custom check for html-proofer to find double forward slashes in URLs.
+# frozen_string_literal: true
+
 module LinkChecker
+  # Custom check for html-proofer to find double forward slashes in URLs.
   class DoubleSlashCheck < ::HTMLProofer::Check
     def slash?
       return false if @link.href.nil?
+
       @link.href.match %r{\w//}
     end
 
@@ -12,7 +15,7 @@ module LinkChecker
         line = node.line
 
         if slash?
-          return add_issue("Remove double forward slashes from URLs", line: line)
+          return add_issue('Remove double forward slashes from URLs', line: line)
         end
       end
     end
