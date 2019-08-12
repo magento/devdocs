@@ -87,7 +87,7 @@ Review the official RabbitMQ documentation to configure and manage RabbitMQ. Pay
 
 ## Install Magento with RabbitMQ and connect to {{site.data.var.ce}} or {{site.data.var.ee}} 
 
-If you installing Magento after you installed RabbitMQ, add the following command line parameters when you install {{site.data.var.ce}} or {{site.data.var.ee}}:
+If you installed Magento after you installed RabbitMQ, add the following command line parameters when you install {{site.data.var.ce}} or {{site.data.var.ee}}:
 
 `--amqp-host="<hostname>" --amqp-port="5672" --amqp-user="<user_name>" --amqp-password="<password>" --amqp-virtualhost="/"`
 
