@@ -31,9 +31,53 @@ where:
 
 * `{<path to config.xml>}` is the absolute file system path to `config.xml`; this argument is required
 
-{:.bs-callout .bs-callout-info}
-The Data Migration Tool saves its current progress as it runs. If errors or user intervention stop it from running, the Tool resumes progress at the last known good state.
-To force the Data Migration Tool to run from the beginning, use the `--reset` argument. In that case, we recommend you restore your Magento 2 database dump to prevent duplicating previously migrated data.
+Within this step the Data Migration Tool creates the additional tables and triggers for the migration tables in Magento 1 database. They will be used in the [incremental/delta]({{ page.baseurl }}/migration/migration-migrate-delta.html) migration step. Each new table will have:
+ - `m2_cl` prefix
+ - `INSERT`, `UPDATE`, `DELETE` event triggers.
+ 
+For example, for the `sales_flat_order` the Data Migration Tool creates:
+ 
+ - `m2_cl_sales_flat_order` table:
+
+```sql
+CREATE TABLE `m2_cl_sales_flat_order` (
+  `entity_id` int(11) NOT NULL COMMENT 'Entity_id',
+  `operation` text COMMENT 'Operation',
+  `processed` tinyint(1) NOT NULL DEFAULT '0' COMMENT 'Processed',
+  PRIMARY KEY (`entity_id`)
+) COMMENT='m2_cl_sales_flat_order';
+```
+
+ - `trg_sales_flat_order_after_insert`, `trg_sales_flat_order_after_update`, `trg_sales_flat_order_after_delete` triggers:
+
+```sql
+DELIMITER ;;
+CREATE TRIGGER `trg_sales_flat_order_after_insert` AFTER INSERT ON `sales_flat_order` 
+  FOR EACH ROW 
+  BEGIN
+   INSERT INTO m2_cl_sales_flat_order (`entity_id`, `operation`) VALUES (NEW.entity_id, 'INSERT')ON DUPLICATE KEY UPDATE operation = 'INSERT';
+  END
+;;
+
+DELIMITER ;;
+CREATE TRIGGER `trg_sales_flat_order_after_update` AFTER UPDATE ON `sales_flat_order` 
+  FOR EACH ROW 
+  BEGIN
+   INSERT INTO m2_cl_sales_flat_order (`entity_id`, `operation`) VALUES (NEW.entity_id, 'UPDATE') ON DUPLICATE KEY UPDATE operation = 'UPDATE';
+  END
+;;
+
+DELIMITER ;;
+CREATE TRIGGER `trg_sales_flat_order_after_delete` AFTER DELETE ON `sales_flat_order` 
+  FOR EACH ROW 
+  BEGIN
+   INSERT INTO m2_cl_sales_flat_order (`entity_id`, `operation`) VALUES (OLD.entity_id, 'DELETE')ON DUPLICATE KEY UPDATE operation = 'DELETE';
+  END
+;;
+```
+
+{: .bs-callout-info }
+The Data Migration Tool saves its current progress as it runs. If errors or user intervention stop it from running, the Tool resumes progress at the last known good state. To force the Data Migration Tool to run from the beginning, use the `--reset` argument. In that case, we recommend you restore your Magento 2 database dump to prevent duplicating previously migrated data. 
 
 ## Possible consistency errors {#migrate-command-data}
 
