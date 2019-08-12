@@ -120,7 +120,7 @@ If you already had Magento installed and you want to connect it to RabbitMQ, add
   ),
 ```
 
-After, please run `bin/magento setup:upgrade` for apply changes and create required queues in RabbitMQ
+Then, run `bin/magento setup:upgrade` to apply the changes and create the required queues in RabbitMQ.
 
 ## Configure SSL
 
