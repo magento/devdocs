@@ -11,9 +11,9 @@ This article discusses how to change the increment ID for a Magento database (DB
 
 ## Affected versions
 
--  Magento Commerce (on premise): 2.x.x
--  Magento Commerce (Cloud): 2.x.x
--  MySQL: any supported version
+-  {{site.data.var.ee}} (on premise): 2.x.x
+-  {{site.data.var.ece}}: 2.x.x
+-  MySQL: [any supported version][]
 
 ## When would you need to change increment ID
 
@@ -23,20 +23,18 @@ You might need to change the increment ID for new DB entities in these cases:
 -  Some order records have been lost, but their IDs are already being used by payment gateways (like PayPal) for your current Merchant account. Such being the case, the payment  gateways stop processing new orders that have the same IDs, returning the "Duplicate invoice id" error
 
 {: .bs-callout-info}
-You may also fix the payment gateway issue for PayPal by allowing multiple payments per invoice ID in PayPal's Payment Receiving Preferences. See the Knowledge Base article: [PayPal gateway rejected request - duplicate invoice issue][] .
+You may also fix the payment gateway issue for PayPal by allowing multiple payments per invoice ID in PayPal's Payment Receiving Preferences. See [PayPal gateway rejected request - duplicate invoice issue][] in the _Knowledge Base_.
 
 ## Prerequisite steps
 
 1. Find stores and entities for which the new increment ID should be changed.
 1. Connect to your MySQL DB.
-   For Magento Commerce (Cloud), at first, you need to SSH to your environment.
-1. Check the current auto_increment value for the entity sequence table using the following query:
+   For {{site.data.var.ece}}, at first, you need to connect using SSH to your environment.
+1. Check the current `auto_increment` value for the entity sequence table using the following query:
 
     ```sql
     SHOW TABLE STATUS FROM `{database_name}` WHERE `name` LIKE 'sequence_{entity_type}_{store_id}';
     ```
-
-## Example
 
 If you are checking an auto increment for an order on the store with ID=1, the table name would be 'sequence_order_1'.
 
@@ -51,9 +49,7 @@ ALTER TABLE sequence_{entity_type}_{store_id} AUTO_INCREMENT = {new_increment_va
 ```
 
 {: .bs-callout-info}
-Important: The new increment value must be greater than the current one, not less.
-
-## Example
+Important: The new increment value must be greater than the current one.
 
 After executing the following query:
 
@@ -63,11 +59,11 @@ ALTER TABLE sequence_order_1 AUTO_INCREMENT = 2000;
 
 The next order placed at the store with `ID=1` will have the ID '#100002000'.
 
-## Additional recommended steps on production environments (cloud)
+## Additional recommended steps on cloud production environments
 
-Before executing the `ALTER TABLE` query on a production environment of Magento Commerce (Cloud), we strongly recommend performing these steps:
+Before executing the `ALTER TABLE` query on a production environment of {{site.data.var.ece}}, we strongly recommend performing these steps:
 
--  Test the entire procedure of changing the increment ID on your Staging environment
+-  Test the entire procedure of changing the increment ID on your staging environment
 -  [Create a DB backup][] to restore your Production DB in case of failure
 
 ## Related documentation
@@ -82,3 +78,4 @@ Before executing the `ALTER TABLE` query on a production environment of Magento 
 [Create a DB backup]: https://support.magento.com/hc/en-us/articles/360003254334
 [Create database dump on Cloud]: https://support.magento.com/hc/en-us/articles/360003254334
 [SSH to your environment]: {{ page.baseurl }}/cloud/env/environments-ssh.html#ssh
+[any supported version]: {{ page.baseurl }}/install-gde/prereq/mysql.html
