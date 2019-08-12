@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 
 namespace :test do
-  # Run htmlproofer to check for broken links
+  # Run html-proofer to check for broken links
   desc 'Build devdocs and check for broken links'
   task links: %w[build links_no_build]
 
   desc 'Check the existing _site for broken links on Jenkins'
   task cicd: %w[style] do
-    puts 'Checking links with htmlproofer...'.magenta
+    puts 'Checking links with html-proofer...'.magenta
 
     LinkChecker.check_site
   end
@@ -20,7 +20,7 @@ namespace :test do
       report = LinkChecker.md_report_path
       $stderr.reopen(report, 'w+')
 
-      puts 'Checking links with htmlproofer...'.magenta
+      puts 'Checking links with html-proofer...'.magenta
       LinkChecker.check_site
 
       # We're expecting link validation errors, but unless we rescue from
