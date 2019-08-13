@@ -106,8 +106,8 @@ The [auto-crons feature](#verify-cron-configuration) must be enabled on your {{s
 
 1. In your local development environment, edit the `.magento.app.yaml` file in the Magento `/app` directory. 
 
-1. The structure of `crons` section in the `.magento.app.yaml` is:
-   
+1. Add your custom cron code to the `crons` section in the configuration file using the following format:
+
    ```yaml
    crons:
        <cron_name_1>:
@@ -117,8 +117,6 @@ The [auto-crons feature](#verify-cron-configuration) must be enabled on your {{s
            spec: "<schedule_time>"
            cmd: "<schedule_command>"        
    ```
-
-1. Add your custom cron code to the `crons` section in the file.
 
    For example, you can add a custom cron job to export the product catalog and configure it to run every eight hours, 20 minutes after the hour.
 
