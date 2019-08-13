@@ -58,10 +58,10 @@ end
 desc 'Pull docs from external repositories'
 task init: %w[multirepo:init]
 
-desc 'Run checks (image optimization).'
+desc 'Run checks (image optimization and Markdown style linting).'
 task check: %w[check:image_optim check:mdl]
 
-desc 'Generate data for a news digest. Default period is a week since today. For other period use "since" argument: since="jul 4"'
+desc 'Generate data for a news digest. Default timeframe is a week since today. For other period, use "since" argument: since="jul 4"'
 task :whatsnew do
   date = ENV['since']
   print 'Generating data for the weekly digest: $ '.magenta
