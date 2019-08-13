@@ -4,6 +4,9 @@
 #
 html-proofer:
 
+  # Validate HTML
+  :check_html: true
+  
   # Do not check external links.
   :disable_external: true
 
