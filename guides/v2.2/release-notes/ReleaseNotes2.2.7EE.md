@@ -4,7 +4,7 @@ title: Magento Commerce 2.2.7 Release Notes
 
 ---
 
-*Release notes published November 28 and last updated on March 26, 2019.*
+*Release notes published November 28 and last updated on July 31, 2019.*
 
 
 
@@ -15,6 +15,12 @@ Although this release includes these security enhancements, no confirmed attacks
 
 See [Magento Security Center](https://magento.com/security/patches/magento-2.2.7-and-2.1.16-security-update) for a comprehensive discussion of these issues. All exploitable security issues fixed in this release (2.2.7) have been ported to 2.1.16, 1.14.4.0, and 1.9.4.0, as appropriate.
 
+## Apply patch PRODSECBUG-2233 to address critical remote code execution vulnerability (RCE)
+
+An unauthenticated cross-site scripting vulnerability combined with an authenticated Phar deserialization vulnerability has left this version of Magento Commerce open to serious exploit. An attacker can use these vulnerabilities to inject JavaScript into the Magento Admin and subsequently launch malicious code in a store user’s browser.   **We strongly recommend that all users of the affected versions of Magento download and apply the appropriate patch as soon as possible**. 
+
+This issue and the available patches are discussed in the [Extending the June 25 Security Update to Older Versions of Magento](https://community.magento.com/t5/Magento-DevBlog/Extending-the-June-25-Security-Update-to-Older-Versions-of/ba-p/138231)
+blog post. You can directly access patch code through your Magento account for Magento Commerce. Locate the patch by the name. We provide both Git-based and Composer-based patches. 
 
 ## Apply patch PRODSECBUG-2198 to address critical SQL injection vulnerability
 
@@ -94,7 +100,7 @@ This release includes improvements to general usability of the core code plus en
 
 Highlights of community contributions include these fixes:
 
-* **Bulk Web APIs**  allow all existing REST APIs to accept payloads with multiple entities. These community-contributed bulk APIs support more efficient and scalable implementations that eliminate round-trip network overhead. Like asynchronous APIs, bulk web APIs can be used in conjunction with queues that have also been migrated to {{site.data.var.ce}}. [See Bulk endpoints](https://devdocs.magento.com/guides/v2.3/rest/bulk-endpoints.html) for more information. 
+* **Bulk Web APIs**  allow all existing REST APIs to accept payloads with multiple entities. These community-contributed bulk APIs support more efficient and scalable implementations that eliminate round-trip network overhead. Like asynchronous APIs, bulk web APIs can be used in conjunction with queues that have also been migrated to {{site.data.var.ce}}. [See Bulk endpoints]({{ page.baseurl }}/rest/bulk-endpoints.html) for more information. 
 
 
 <!-- MAGETWO-86712 -->* The email server no longer throws an exception when a customer places an order using a PayPal payment method. Previously, when a customer checked out using PayPal, Magento placed the order, but the email server threw an exception. Thanks to community member [Jason Woods](https://github.com/driskell)!
@@ -117,7 +123,7 @@ In addition to security enhancements, this release contains the following functi
 
 ### Installation, setup, and deployment
 
-<!---MAGETWO-94174 -->* Magento backup functionality is no longer enabled by default, and the code has been deprecated. See [Back up and roll back the file system, media, and database](https://devdocs.magento.com/guides/v2.2/install-gde/install/cli/install-cli-backup.html) for more information on backup strategies. 
+<!---MAGETWO-94174 -->* Magento backup functionality is no longer enabled by default, and the code has been deprecated. See [Back up and roll back the file system, media, and database]({{ page.baseurl }}/install-gde/install/cli/install-cli-backup.html) for more information on backup strategies. 
 
 <!-- MAGETWO-95591 -->* Customer attribute management issues that merchants  experienced after upgrading to Magento 2.2.6 have been resolved. Previously, after upgrading their stores to Magento 2.2.6, merchants could not create and save a new multiselect or dropdown customer custom attribute, and  existing customer attributes  no longer appeared for editing within the customer's account on the storefront.
 
@@ -225,7 +231,7 @@ product, and hung indefinitely while trying to add the product.
 <!-- MAGETWO-93047 -->* The `PUT rest/all/V1/categories/:categoryId` endpoint now requires the `name` field.
 
 
-<!-- ENGCOM-2622 -->* Special price expressions now work as expected. Previously, `catalog_product_price` did not generate correct price data. *Fix submitted by [Dmitry Chukhnov](https://github.com/DmitryChukhnov) in pull request [16510](https://github.com/magento/magento2/pull/16510)*. 
+<!-- ENGCOM-2622 -->* Special price expressions now work as expected. Previously, `catalog_product_price` did not generate correct price data. *Fix submitted by Dmitry Chukhnov in pull request [16510](https://github.com/magento/magento2/pull/16510)*. 
 
 
 
@@ -276,7 +282,7 @@ product, and hung indefinitely while trying to add the product.
 
 <!-- ENGCOM-2594 -->* Files in `/lib` have been cleaned up. *Fix submitted by [Pratik Oza](https://github.com/mage2pratik) in pull request [17103](https://github.com/magento/magento2/pull/17103)*.
 
-<!-- ENGCOM-2619 -->* Unused IDs in `app/code/Magento/Checkout/view/frontend/web/template/billing-address/form.html` and `app/code/Magento/Checkout/Test/Mftf/Section/CheckoutPaymentSection.xml` have been removed. *Fix submitted by [Daniel Ruf](https://github.com/DanielRuf) in pull request [163541](https://github.com/magento/magento2/pull/163541)*.
+<!-- ENGCOM-2619 -->* Unused IDs in `app/code/Magento/Checkout/view/frontend/web/template/billing-address/form.html` and `app/code/Magento/Checkout/Test/Mftf/Section/CheckoutPaymentSection.xml` have been removed. *Fix submitted by [Daniel Ruf](https://github.com/DanielRuf) in pull request [17291](https://github.com/magento/magento2/pull/17291)*.
 
 
 <!-- ENGCOM-2118 -->* Removed unnecessary translation of HTML tags in `app/code/Magento/Catalog/Block/Adminhtml/Form/Renderer/Config/YearRange.php` and `app/code/Magento/Catalog/i18n/en_US.csv`. *Fix submitted by [Yogesh Suhagiya](https://github.com/Yogeshks) in pull request [17291](https://github.com/magento/magento2/pull/17291)*.
@@ -302,7 +308,7 @@ product, and hung indefinitely while trying to add the product.
 
 ### CMS content
 
-<!-- ENGCOM-2734 -->* A new `OptionSource` of blocks has been added. *Fix submitted by [Thomas Klein](https://github.com/thomas-blackbird) in pull request [16021](https://github.com/magento/magento2/pull/16021)*.
+<!-- ENGCOM-2734 -->* A new `OptionSource` of blocks has been added. *Fix submitted by Thomas Klein in pull request [16021](https://github.com/magento/magento2/pull/16021)*.
 
 <!-- MAGETWO-73359 -->* You can successfully save a CMS page with the same URL key as another store on a different website but with the same hierarchy. 
 
@@ -367,7 +373,7 @@ product, and hung indefinitely while trying to add the product.
 
 <!-- ENGCOM-2070 -->* You can now set values for `MAX_IMAGE_WIDTH` and `MAX_IMAGE_HEIGHT` in **Stores** > **Settings** > **Configuration** > **Advanced** > **System** > **Images Configuration**, which supports the upload of larger images. *Fix submitted by [Eduard Chitoraga](https://github.com/eduard13) in pull request [15942](https://github.com/magento/magento2/pull/15942)*. [GitHub-13747](https://github.com/magento/magento2/issues/13747)
 
-<!-- ENGCOM-2915 -->* `functions.php` (which provides the custom Magento function <code>__()</code> to trigger translations) now resides in the Framework module. *Fix submitted by [Kristof, Fooman](https://github.com/fooman) in pull request [16800](https://github.com/magento/magento2/pull/16800)*. 
+<!-- ENGCOM-2915 -->* `functions.php`  now resides in the Framework module. *Fix submitted by [Kristof, Fooman](https://github.com/fooman) in pull request [16800](https://github.com/magento/magento2/pull/16800)*. 
 
 
 <!-- ENGCOM-2570 -->* FTP connections can  now use user or password strings with special characters (for example, @ or #). *Fix submitted by [Pratik Oza](https://github.com/mage2pratik) in pull request [17246](https://github.com/magento/magento2/pull/17246)*.
@@ -509,7 +515,7 @@ product, and hung indefinitely while trying to add the product.
 
 ### Review
 
-<!-- ENGCOM-2720-->* Magento now displays a `404 page not found` error when a customer tries to navigate to a product review that is not accessible. Previously. Magento displayed a PHP error code. *Fix submitted by [Ananth](https://github.com/Ananth747) in pull request [15369](https://github.com/magento/magento2/pull/15369)*. [GitHub-13102](https://github.com/magento/magento2/issues/13102)
+<!-- ENGCOM-2720-->* Magento now displays a `404 page not found` error when a customer tries to navigate to a product review that is not accessible. Previously. Magento displayed a PHP error code. *Fix submitted by Ananth in pull request [15369](https://github.com/magento/magento2/pull/15369)*. [GitHub-13102](https://github.com/magento/magento2/issues/13102)
 
 
 
@@ -639,7 +645,7 @@ product, and hung indefinitely while trying to add the product.
 
 ### UI
 
-<!-- ENGCOM-2812 -->* The JavaScript  validation rule used to validate AM/PM time settings now works as expected when JavaScript is minified. *Fix submitted by [Mark Shust](https://github.com/markoshust) in pull request [17652](https://github.com/magento/magento2/pull/17652)*. [GitHub-17648](https://github.com/magento/magento2/issues/17648)
+<!-- ENGCOM-2812 -->* The JavaScript  validation rule used to validate AM/PM time settings now works as expected when JavaScript is minified. *Fix submitted by Mark Shust in pull request [17652](https://github.com/magento/magento2/pull/17652)*. [GitHub-17648](https://github.com/magento/magento2/issues/17648)
 
 <!-- ENGCOM-2834 -->* The message list component message type now has a message type of `success`. Previously, this type was always `error` when the `parameters` property was specified. *Fix submitted by [Dmytro Cheshun](https://github.com/dmytro-ch) in pull request [17701](https://github.com/magento/magento2/pull/17701)*. [GitHub-17700](https://github.com/magento/magento2/issues/17700)
 

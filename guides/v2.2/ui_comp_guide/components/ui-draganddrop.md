@@ -7,38 +7,12 @@ The DragAndDrop component is an [extension](https://glossary.magento.com/extensi
 
 ## Configuration options
 
-<table>
-  <tr>
-    <th>Option</th>
-    <th>Description</th>
-    <th>Type</th>
-    <th>Default</th>
-  </tr>
-  <tr>
-    <td><code>enabled</code></td>
-    <td>Whether the component is allowed to change the position of columns.</td>
-    <td>Boolean</td>
-    <td><code>true</code></td>
-  </tr>
-  <tr>
-    <td><code>fixedX</code></td>
-    <td>Whether the column has a fixed position on the X-axis. That is, whether it can be moved horizontally.</td>
-    <td>Boolean</td>
-    <td><code>false</code></td>
-  </tr>
-  <tr>
-    <td><code>fixedY</code></td>
-    <td>Whether the column has a fixed position on the Y-axis. That is, whether it can be moved vertically.</td>
-    <td>Boolean</td>
-    <td><code>true</code></td>
-  </tr>
-  <tr>
-    <td><code>noSelectClass</code></td>
-    <td>CSS class applied to the table when one of its columns is being dragged.</td>
-    <td>String</td>
-    <td><code>_no-select</code></td>
-  </tr>
-</table>
+|Option|Description|Type|Default Value|
+|--- |--- |--- |--- |
+|`enabled`|Whether the component is allowed to change the position of columns.|Boolean|`true`|
+|`fixedX`|Whether the column has a fixed position on the X-axis. That is, whether it can be moved horizontally.|Boolean|`false`|
+|`fixedY`|Whether the column has a fixed position on the X-axis. That is, whether it can be moved horizontally.|Boolean|`true`|
+|`noSelectClass`|CSS class applied to the table when one of its columns is being dragged.|String|`_no-select`|
 
 ## Source files
 

@@ -82,6 +82,12 @@ pages:
         - label: Navigation widget
           url: /javascript-dev-guide/widgets/widget_navigation.html
 
+        - label: PasswordStrengthIndicator widget
+          url: /javascript-dev-guide/widgets/widget_password_strength_indicator.html
+
+        - label: PopupWindow widget
+          url: /javascript-dev-guide/widgets/widget-popup-window.html
+
         - label: Prompt widget
           url: /javascript-dev-guide/widgets/widget_prompt.html
 

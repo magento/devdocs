@@ -3,6 +3,7 @@
 # For configuration defaults, refer to: https://github.com/gjtorikian/html-proofer/blob/master/lib/html-proofer/configuration.rb
 #
 html-proofer:
+
   # Do not check external links.
   :disable_external: true
 
@@ -11,17 +12,24 @@ html-proofer:
 
   # Ignores images with empty alt tags.
   :empty_alt_ignore: true
-
+  
   # Sort errors by description in the report
   :error_sort: :desc
 
   # Use up to 3 parallel processes to speed up internal file checks.
   :parallel:
     :in_processes: 3
+  
+  :cache:
+    :timeframe: 2w
 
   # Ignore entirely the files which pathname matches a specified pattern 
-  # :file_ignore:
-  # - guides/v2.0
+  :file_ignore:
+    - !ruby/regexp /page-builder/
+    - !ruby/regexp /guides\/v2\.3\/mrg/
+
+  :internal_domains:
+    - devdocs.magento.com
 
   # Ignore any link that includes a specified pattern
   # :url_ignore:
