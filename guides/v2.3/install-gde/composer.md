@@ -45,7 +45,7 @@ To get the Magento metapackage:
     composer create-project --repository=https://repo.magento.com/ magento/project-enterprise-edition <install-directory-name>
     ```
 
-    When prompted, enter your Magento authentication keys. Public and private keys are created and configured your [Magento Marketplace][].
+    When prompted, enter your Magento authentication keys. Public and private keys are created and configured in your [Magento Marketplace][].
 
     If you encounter errors, such as `Could not find package...` or `...no matching package found`, make sure there are no typos in your command. If you still encounter errors, you may not be authorized to download {{site.data.var.ee}}. Contact [Magento support](https://magento.com/support) for help.
 
