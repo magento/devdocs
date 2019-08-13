@@ -106,7 +106,7 @@ A 500 status code is allowed when an exception occurs when generating a schema, 
     The schema is the only contract between resolvers of different levels.
     Resolvers SHOULD NOT share state between themselves except allowed context.
 1. Query resolvers SHOULD support deferred execution to avoid the 
-    [N+1 problem](http://webonyx.github.io/graphql-php/data-fetching/#solving-n1-problem)
+    [N+1 problem](http://webonyx.github.io/graphql-php/data-fetching/#solving-n1-problem),
     unless this contradicts domain logic.
 1. Mutations SHOULD be designed to support batch mode, unless this contradicts domain logic.
 
