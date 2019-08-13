@@ -8,7 +8,7 @@ contributor_link: https://www.atwix.com/
 
 ## Overview
 
-The TrimInput [widget](https://glossary.magento.com/widget) allows trimming spaces for an input field.
+The TrimInput [widget](https://glossary.magento.com/widget) trims  whitespace in an input field.
 
 The TrimInput widget source is [lib/web/mage/trim-input.js][].
 
@@ -16,7 +16,7 @@ The TrimInput widget source is [lib/web/mage/trim-input.js][].
 
 For information about how to initialize a widget in a JS component or `.phtml` template, see the [Initialize JavaScript][] topic.
 
-Generally the TrimInput widget is instantiated like following:
+The TrimInput widget is instantiated with the following:
 
 ```javascript
 $('#element').trimInput();
@@ -24,7 +24,7 @@ $('#element').trimInput();
 
 Where:
 
-- `#element` is the selector of the input element for which TrimInput is initialized.
+- `#element` is the selector of the input element to be trimmed.
 
 Phtml template file examples using script:
 
@@ -43,7 +43,7 @@ Phtml template file examples using script:
 
 ## Code sample
 
-The following example shows how to initialize the TrimInput widget.
+This example shows how to initialize the TrimInput widget:
 
 ```html
 <input type="text" name="text" id="text" class="input-text" data-mage-init='{"mage/trim-input":{}}' placeholder="Type some text...">
@@ -51,7 +51,7 @@ The following example shows how to initialize the TrimInput widget.
 
 ## Result
 
-As a result, we have the text input field and the value of this input will be trimmed each time when it is changed.
+As a result, we have the text input field and the value of this input will be trimmed each time it is changed.
 
 ![TrimInput Input Example]({{ site.baseurl }}/common/images/widget/trimInput-widget-result.png)
 
