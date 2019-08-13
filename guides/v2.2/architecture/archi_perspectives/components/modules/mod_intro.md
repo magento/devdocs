@@ -38,7 +38,7 @@ Inside this folder, you will find all the code related to this module, including
 
 The following table shows the *recommended* location within the Magento file system for specific components.
 
-(A {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} must include a `registration.php` file in its root folder.)
+(A [module](https://glossary.magento.com/module) must include a `registration.php` file in its root folder.)
 
 We refer to a component's root directory as the top-level directory in which you develop component code. Typically, this directory is located in one of the following directories relative to the Magento root directory:
 

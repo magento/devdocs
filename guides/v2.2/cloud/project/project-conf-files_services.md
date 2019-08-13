@@ -8,8 +8,6 @@ functional_areas:
 
 The `services.yaml` file defines the services supported and used by {{site.data.var.ece}}, such as MySQL, Redis, and ElasticSearch. You do not need to subscribe to external service providers. This file is in the `.magento` directory of your project.
 
-{% include cloud/note-pro-using-yaml-support.md %}
-
 The deploy script uses the configuration files in the `.magento` directory to provision the environment with the configured services. A service becomes available to your application if it is included in the `relationships` property of the `.magento.app.yaml` file. The `services.yaml` file contains the service _name_, _type_, and _disk_ values. Changing a service configuration causes a deployment to provision the environment with the updated services.
 
 This affects the following environments:
@@ -18,7 +16,7 @@ This affects the following environments:
 -  Pro Integration environments
 
 {:.bs-callout-tip}
-For Pro, you must enter a [Support ticket]({{ page.baseurl }}/cloud/trouble/trouble.html) to install or update services in the Staging and Production environments. Indicate the service changes needed and your updated `.magento.app.yaml` and `services.yaml` files in the ticket.
+For Pro, you must enter a [Support ticket]({{ page.baseurl }}/cloud/trouble/trouble.html) to install or update services in the Staging and Production environments. Indicate the service changes needed and include your updated `.magento.app.yaml` and `services.yaml` files in the ticket.
 
 ## Default and supported services
 

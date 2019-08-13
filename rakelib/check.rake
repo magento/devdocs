@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 namespace :check do
   desc 'Optimize images in modified files, or by path (rake image_optim path=path/to/dir/or/file).'
   task :image_optim do
@@ -24,6 +26,6 @@ namespace :check do
     puts 'Running Markdown linter ...'.magenta
     report = `bin/mdl #{path}`
     puts report.yellow
-    puts 'The rules are defined in _checks/md_style'.magenta
+    puts 'The rules are defined in _checks/styles/style-rules-dev'.magenta
   end
 end
