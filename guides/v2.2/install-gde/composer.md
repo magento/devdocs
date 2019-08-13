@@ -43,7 +43,7 @@ To get the Magento metapackage:
     composer create-project --repository=https://repo.magento.com/ magento/project-enterprise-edition:<version-tag> <install-directory-name>
     ```
 
-    When prompted, enter your Magento authentication keys. Public and private keys are created and configured your [Magento Marketplace][].
+    When prompted, enter your Magento authentication keys. Public and private keys are created and configured in your [Magento Marketplace][].
 
     To install {{site.data.var.ce}} version 2.2.9 run in current folder:
 
