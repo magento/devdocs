@@ -8,7 +8,7 @@ functional_areas:
 
 ## Overview
 
-The quickSearch [widget](https://glossary.magento.com/widget) is a custom autocomplete widget that populates a list of suggested search terms for a given field. 
+The quickSearch [widget](https://glossary.magento.com/widget) is an autocomplete widget that populates a list of suggested search terms for a given field. 
 
 The suggest widget source is [`<Magento_Search_module_dir>/view/frontend/web/js/form-mini.js`].
 
@@ -32,6 +32,7 @@ For information about how to initialize a widget in a JS component or `.phtml` t
 -   [url](#q_url)
 
 ### `autocomplete` {#q_autocomplete}
+
 Attaches the `autocomplete` attribute to the search field.
 
 **Type**: String
@@ -41,6 +42,7 @@ Attaches the `autocomplete` attribute to the search field.
 **Accepted values**: `off`, `on`
 
 ### `destinationSelector` {#q_destinationSelector}
+
 The element's selector where the results will be added.
 
 **Type**: String
@@ -56,6 +58,7 @@ The isExpandable option is used to show and hide search input field on devices w
 **Default value**: `null`
 
 ### `formSelector` {#q_formSelector}
+
 The form selector containing the search input field.
 
 **Type**: String 
@@ -63,6 +66,7 @@ The form selector containing the search input field.
 **Default value**: No form by default.
 
 ### `minSearchLength` {#q_minSearchLength}
+
 Minimum number of characters required before the auto suggest triggers.
 
 **Type**: Integer
@@ -70,6 +74,7 @@ Minimum number of characters required before the auto suggest triggers.
 **Default value**: `2`
 
 ### `responseFieldElements` {#q_responseFieldElements}
+
 Selector for the response elements.
 
 **Type**: String
@@ -77,6 +82,7 @@ Selector for the response elements.
 **Default Value**: `ul li`
 
 ### `searchLabel` {#q_searchLabel}
+
 Selector of a search input label.
 
 **Type**: String
@@ -84,6 +90,7 @@ Selector of a search input label.
 **Default value**: `[data-role=minisearch-label]`
 
 ### `selectClass` {#q_selectClass}
+
 Class assigned to the selected suggested term.
 
 **Type**: String
@@ -91,6 +98,7 @@ Class assigned to the selected suggested term.
 **Default value**: `selected`
 
 ### `submitBtn` {#q_submitBtn}
+
 Disable the submit button. 
 
 **Type**: String
@@ -99,13 +107,14 @@ Disable the submit button.
 
 ### `suggestionDelay` {#q_suggestionDelay}
 
-The suggestionDelay option prevents spamming the server with requests by waiting till the user has stopped typing for the specified period of time.
+The `suggestionDelay` option prevents overloading the server with requests by waiting until the user has stopped typing for the specified period of time.
 
 **Type**: Integer
 
 **Default value**: `300`
 
 ### `template` {#q_template}
+
 Template responsible for rendering returned data (suggested terms).
 
 **Type**: String
@@ -124,6 +133,7 @@ Template responsible for rendering returned data (suggested terms).
 ```
 
 ### `url` {#q_url}
+
 The endpoint URL for processing the search query.
 
 **Type**: String
@@ -132,35 +142,34 @@ The endpoint URL for processing the search query.
 
 ## Code sample
 
-The following example shows how to initialize the quickSearch widget and pass options during the initialization.
-This example uses the action urls that are used on top mini search.
+This example shows how to initialize the quickSearch widget and pass options during the initialization.
 
 ```html
 <form class="" id="new_search_form" action="/catalogsearch/result/" method="get">
-    <div class="field search">
-        <div class="control">
-            <input id="new-search"
-                   data-mage-init='{"quickSearch":{
-                            "formSelector":"#new_search_form",
-                            "minSearchLength": 1,
-                            "url":"/search/ajax/suggest",
-                            "destinationSelector":"#search_results"}
-                       }'
-                   type="text"
-                   name="q"
-                   placeholder="<?= $block->escapeHtmlAttr(__('Search entire store here...')) ?>"
-                   class="input-text"/>
-            <div id="search_results" class="search-autocomplete"></div>
-        </div>
-    </div>
-    <div class="actions">
-        <button type="submit"
-                title="<?= $block->escapeHtml(__('Search')) ?>"
-                class="action search"
-                aria-label="Search">
-            <span><?= $block->escapeHtml(__('Search')) ?></span>
-        </button>
-    </div>
+   <div class="field search">
+      <div class="control">
+          <input id="new-search"
+              data-mage-init='{"quickSearch":{
+                     "formSelector":"#new_search_form",
+                     "minSearchLength": 1,
+                     "url":"/search/ajax/suggest",
+                     "destinationSelector":"#search_results"}
+                    }'
+              type="text"
+              name="q"
+              placeholder="<?= $block->escapeHtmlAttr(__('Search entire store here...')) ?>"
+              class="input-text"/>
+         <div id="search_results" class="search-autocomplete"></div>
+      </div>
+  </div>
+  <div class="actions">
+    <button type="submit"
+            title="<?= $block->escapeHtml(__('Search')) ?>"
+            class="action search"
+            aria-label="Search">
+      <span><?= $block->escapeHtml(__('Search')) ?></span>
+    </button>
+  </div>
 </form>
 ```
 
