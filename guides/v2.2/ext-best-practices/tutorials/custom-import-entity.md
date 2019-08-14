@@ -351,13 +351,13 @@ class Courses extends AbstractEntity
 
 {% endcollapsible %}
 
-## Result
+## Step 3. Providing the Sample File
 
-As result, we should be able to see the new Entity Type:
- 
-![Import Entity]({{ site.baseurl }}/common/images/ext-best-practices/import-entity.png)
- 
- Here is a sample csv file we can use to import data into our table.
+To add the possibility to download a sample csv file for our new entity, create the following file:
+
+``OrangeCompany/Learning/Files/Sample/learning.csv``
+
+With the following content:
 
 ```text
 entity_id,name,duration
@@ -368,4 +368,27 @@ entity_id,name,duration
 {:.bs-callout .bs-callout-info}
 For updating the table's data, you must provide the `entity_id` value for each row.
 
+Next, let's register the sample file for our entity. 
+
+> `etc/adminhtml/di.xml`
+
+```xml
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_ImportExport:etc/import.xsd">
+    <type name="Magento\ImportExport\Model\Import\SampleFileProvider">
+        <arguments>
+            <argument name="samples" xsi:type="array">
+                <item name="learning" xsi:type="string">OrangeCompany_Learning</item>
+            </argument>
+        </arguments>
+    </type>
+</config>
+```
+
+## Result
+
+As result, we should be able to see the new Entity Type and should be able to download the sample csv file:
+ 
+![Import Entity]({{ site.baseurl }}/common/images/ext-best-practices/import-entity.png)
+ 
 [0]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/ImportExport/Model/Import/Entity/AbstractEntity.php
