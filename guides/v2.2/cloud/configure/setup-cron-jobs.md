@@ -33,6 +33,9 @@ Magento added an auto-crons configuration option to support self-service cron co
 
 ####  To review cron configuration
 
+{: .bs-callout-info}
+You can use crontab to review the cron configuration for {{ site.data.var.ece }} projects; however, the Magento Cloud platform does not use crontab to run cron jobs.
+
 1. Log in to the {{site.data.var.ece}} project environment using [SSH]({{ page.baseurl }}/cloud/env/environments-ssh.html#ssh).
 
 1. List the scheduled cron processes.
