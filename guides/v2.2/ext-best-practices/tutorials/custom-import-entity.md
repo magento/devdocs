@@ -387,8 +387,8 @@ Next, let's register the sample file for our entity.
 
 ## Result
 
-As result, we should be able to see the new Entity Type and also to download the sample csv file:
- 
+As result, the new Entity Type and the sample CSV are available:
+
 ![Import Entity]({{ site.baseurl }}/common/images/ext-best-practices/import-entity.png)
  
 [0]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/ImportExport/Model/Import/Entity/AbstractEntity.php
