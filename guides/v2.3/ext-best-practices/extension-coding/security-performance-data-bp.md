@@ -86,9 +86,9 @@ public function getCustomerCart()
 }
 ```
 
-## Use the appropriate area
+## Use the proper area
 
-Make sure that your observer or plugin is declared only in the appropriate area:
+Make sure that your observer or plugin is declared in the proper area:
 
 - [`adminhtml`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Backend/etc/di.xml){:target="_blank"}
 - [`crontab`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Cron/etc/di.xml){:target="_blank"}
@@ -101,3 +101,5 @@ For that, the plugins and observers should be declared in `<module-dir>/etc/<are
 
 {:.bs-callout .bs-callout-info}
 The `global` area should be used only if the plugin/observer should be executed in multiple areas.
+
+Is `NOT RECOMMENDED` to register everything into `global` area, as the bootstrapping process will become much heavier and there will be needed to run and process additional checks for our plugin/observer.
