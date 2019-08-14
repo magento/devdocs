@@ -207,7 +207,7 @@ Instead of configuring an NGINX virtual host, pass the `MAGE_RUN_CODE` and `MAGE
    ```
    {:.no-copy}
 
-1. Move the commented `if` block so that it is _after_ the `function` block.
+1. Move the commented `if` block so that it is _after_ the `function` block and no longer commented.
 
    ```php
    <?php
