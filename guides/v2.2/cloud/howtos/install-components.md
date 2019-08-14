@@ -149,7 +149,7 @@ Trying to enable and disable extensions not following this method can lead to pe
 
 You update configurations according to [Configuration Management]({{ site.baseurl }}/guides/v2.2/cloud/live/sens-data-over.html#cloud-clp-settings) for `config.php`.
 
-## Upgrade an extension {#update}
+## Upgrade an extension
 
 You should have a branch to work in when updating your extension. These instructions use composer to update the files. Before you continue, you must:
 
