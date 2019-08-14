@@ -19,14 +19,17 @@ For information about how to initialize a widget in a JS component or `.phtml` t
 ## Options {#quicksearch_options}
 
 -   [autocomplete](#q_autocomplete)
+-   [destinationSelector](#q_destinationSelector)
+-   [isExpandable](#q_isExpandable)
 -   [formSelector](#q_formSelector)
 -   [minSearchLength](#q_minSearchLength)
 -   [responseFieldElements](#q_responseFieldElements)
 -   [searchLabel](#q_searchLabel)
 -   [selectClass](#q_selectClass)
 -   [submitBtn](#q_submitBtn)
+-   [suggestionDelay](#q_suggestionDelay)
 -   [template](#q_template)
--   [isExpandable](#q_isExpandable)
+-   [url](#q_url)
 
 ### `autocomplete` {#q_autocomplete}
 Attaches the `autocomplete` attribute to the search field.
@@ -36,6 +39,19 @@ Attaches the `autocomplete` attribute to the search field.
 **Default value**: `off`
 
 **Accepted values**: `off`, `on`
+
+### `destinationSelector` {#q_destinationSelector}
+The element's selector where the results will be added.
+
+**Type**: String
+
+### `isExpandable` {#q_isExpandable}
+
+The isExpandable option is used to show and hide search input field on devices with max width 768px.
+
+**Type**: Boolean
+
+**Default value**: `null`
 
 ### `formSelector` {#q_formSelector}
 The form selector containing the search input field.
@@ -79,6 +95,14 @@ Disable the submit button.
 
 **Default value**: `button[type="submit"]`
 
+### `suggestionDelay` {#q_suggestionDelay}
+
+The suggestionDelay option prevents spamming the server with requests by waiting till the user has stopped typing for period of time.
+
+**Type**: Integer
+
+**Default value**: `300`
+
 ### `template` {#q_template}
 Template responsible for rendering returned data (suggested terms).
 
@@ -97,21 +121,50 @@ Template responsible for rendering returned data (suggested terms).
 </li>
 ```
 
-### `isExpandable` {#q_isExpandable}
+### `url` {#q_url}
+The responsible url for processing the search query.
 
-The isExpandable option is used to show and hide search input field on devices with max width 768px.
+**Type**: String
 
-**Type**: Boolean
+## Code sample
 
-**Default value**: `null`
+The following example shows how to initialize the quickSearch widget and pass options during the initialization.
+This example uses the action urls that are used on top mini search.
 
-### `suggestionDelay` {#q_suggestionDelay}
+```html
+<form class="" id="new_search_form" action="/catalogsearch/result/" method="get">
+    <div class="field search">
+        <div class="control">
+            <input id="new-search"
+                   data-mage-init='{"quickSearch":{
+                            "formSelector":"#new_search_form",
+                            "minSearchLength": 1,
+                            "url":"/search/ajax/suggest",
+                            "destinationSelector":"#search_results"}
+                       }'
+                   type="text"
+                   name="q"
+                   placeholder="<?= $block->escapeHtmlAttr(__('Search entire store here...')) ?>"
+                   class="input-text"/>
+            <div id="search_results" class="search-autocomplete"></div>
+        </div>
+    </div>
+    <div class="actions">
+        <button type="submit"
+                title="<?= $block->escapeHtml(__('Search')) ?>"
+                class="action search"
+                aria-label="Search">
+            <span><?= $block->escapeHtml(__('Search')) ?></span>
+        </button>
+    </div>
+</form>
+```
 
-The suggestionDelay option prevents spamming the server with requests by waiting till the user has stopped typing for period of time.
+### Result
 
-**Type**: Integer
+The result is an input with autocomplete results, where the results will be returned by the `url` option that was provided on initialization, as shown here:
 
-**Default value**: `300`
+![Quick Search Widget]({{ site.baseurl }}/common/images/widget/quick-search-result.png)
 
 [`<Magento_Search_module_dir>/view/frontend/web/js/form-mini.js`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Search/view/frontend/web/js/form-mini.js
 [Initialize JavaScript]: {{page.baseurl}}/javascript-dev-guide/javascript/js_init.html
