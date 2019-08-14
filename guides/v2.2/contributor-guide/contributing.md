@@ -11,6 +11,7 @@ The following topics are included in this guide:
 - [Accepted pull requests and ported code](#rules)
 - [Contribution requirements](#requirements)
 - [Forks and pull requests](#forks-and-pull-requests)
+- [Squash commits](#squash-commits)
 - [Magento Contributor Assistant](#contributor-assist)
 - [Report an issue](#report)
 - [Help triage issues](#triage)
@@ -77,6 +78,10 @@ For complete information about contributing to Magento projects, see the [Beginn
 - Find and work issues
 - Create tests
 - Submit a pull request
+
+## Squash commits {#squash-commits}
+
+Sometimes your pull request may have more than one commit (the main commit, then changes to it after review, etc). A good practice is to deliver commits that bring finalized, functional parts/bugfixes. In that case, all intermediate commits like "static test fix", "typo fix", "minor refactoring" should be squashed into a single commit. This helps keep a clean history and makes the repo easier to read. There is no requirement to have only one commit per PR. However, the intermediate commits in most cases bring no value into the commits history, which is why it is a good to keep the history clean and useful.
 
 ## Magento contributor assistant {#contributor-assist}
 

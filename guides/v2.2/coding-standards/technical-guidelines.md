@@ -480,6 +480,8 @@ You need to read configuration from different sources (like database or filesyst
 
 5.18. `LocalizedException`s SHOULD be thrown in the presentation layer only.
 
+5.19. Each module or component MUST declare its own exceptions. Exceptions declared in other components SHOULD NOT be thrown.
+
 ## 6. Application layers
 
 ### 6.1. All layers
