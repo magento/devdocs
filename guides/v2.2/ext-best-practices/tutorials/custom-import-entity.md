@@ -387,7 +387,7 @@ Next, let's register the sample file for our entity.
 
 ## Result
 
-As result, we should be able to see the new Entity Type and should be able to download the sample csv file:
+As result, we should be able to see the new Entity Type and also to download the sample csv file:
  
 ![Import Entity]({{ site.baseurl }}/common/images/ext-best-practices/import-entity.png)
  
