@@ -37,7 +37,7 @@ After successfully creating and testing the local installation to use multiple s
    -  [Locations for shared domains](#locations)
 1. **Set up websites, stores, and store views**—configure using the {{site.data.var.ee}} Admin UI
 1. **Modify Magento variables**—specify the values of the `MAGE_RUN_TYPE` and `MAGE_RUN_CODE` variables in the `magento-vars.php` file
-1. **Deploy**—deploy and test the `integration` branch
+1. **Deploy and test environments**—deploy and test the `integration` branch
 
 ### Configure routes for separate domains {#routes}
 
@@ -48,85 +48,128 @@ For Pro, you must create a [Support ticket]({{ page.baseurl }}/cloud/trouble/tro
 
 #### To configure routes in an integration environment:
 
-1. On your local workstation, log in as the [Magento file system owner]({{ page.baseurl }}/cloud/before/before-workspace-file-sys-owner.html).
+1. On your local workstation, open the `.magento/routes.yaml` file in a text editor.
 
-1. Change to your {{site.data.var.ee}} base directory.
-
-1. Open the `.magento/routes.yaml` file in a text editor.
-
-1. Replace the contents with the following:
+1. Define the domain and subdomains. The `mymagento` upstream value is the same value as the name property in the `.magento.app.yaml` file.
 
    ```yaml
    "http://{default}/":
        type: upstream
        upstream: "mymagento:http"
 
-   "https://{default}/":
-       type: upstream
-       upstream: "mymagento:https"
-
    "http://<second-site>.{default}/":
        type: upstream
        upstream: "mymagento:http"
-
-   "https://<second-site>.{default}/":
-       type: upstream
-       upstream: "mymagento:https"
    ```
 
 1. Save your changes to the `routes.yaml` file.
 
+1. Continue to the [_Set up websites, stores, and store views_ section](#set-stores).
+
 ### Configure locations for shared domains {#locations}
 
-Where routes defines how the URLs are processed, the `web` property in the `.magento.app.yaml` file defines how your application is exposed to the web. Web _locations_ allows more granularity for incoming requests. For example, if your domain is `store.com`, you can use `/first` (default site) and `/second` for requests to two different stores that share that domain.
+Where the routes configuration defines how the URLs are processed, the `web` property in the `.magento.app.yaml` file defines how your application is exposed to the web. Web _locations_ allows more granularity for incoming requests. For example, if your domain is `store.com`, you can use `/first` (default site) and `/second` for requests to two different stores that share the same domain.
 
-```yaml
-web:
-    locations:
-        "/": &app
-            # The public directory of the app, relative to its root.
-            root: "pub"
-            passthru: "/index.php"
-            index:
-            - index.php
-            ...
-        "/media":
-            root: "pub/media"
-            ...
-        "/static":
-            root: "pub/static"
-            allow: true
-            scripts: false
-            passthru: "/front-static.php"
-            rules:
-                ^/static/version\d+/(?<resource>.*)$:
-                    passthru: "/static/$resource"
-        "/<second-site>": *app
-          ...
-```
+#### To configure a new web location:
 
-You can also add the directory to the `static` location rules. For example:
+1. Create an alias for the root (`/`). In this example, the alias is `&app` on line 3.
 
-```yaml
-web:
-    locations:
-...
-        "/static":
-            root: "pub/static"
-            allow: true
-            scripts: false
-            passthru: "/front-static.php"
-            rules:
-                ^(/(<second-site>))?/static/version\d+/(?<resource>.*)$:
-                    passthru: "/static/$resource"
-        "/<second-site>": *app
-```
+   ```yaml
+   web:
+       locations:
+           "/":&app
+               # The public directory of the app, relative to its root.
+               root: "pub"
+               passthru: "/index.php"
+               index:
+               - index.php
+               ...
+   ```
 
-### Set up websites, stores, and store views
+1. Create a pass for the website (`/website`) and reference the root using the alias from the previous step.
 
-In the Admin panel, set up your {{site.data.var.ee}} websites, stores, and store views. See [Set up multiple websites, stores, and store views in the Admin]({{ page.baseurl }}/config-guide/multi-site/ms_websites.html).
+   The alias allows `website` to access values from the root location. In this example, the website pass is on line 21.
 
-It is important to name your websites, stores, and store views in your Cloud Admin the same as you did when you set up your local installation.
+   ```yaml
+   web:
+       locations:
+           "/":&app
+               # The public directory of the app, relative to its root.
+               root: "pub"
+               passthru: "/index.php"
+               index:
+               - index.php
+               ...
+           "/media":
+               root: "pub/media"
+               ...
+           "/static":
+               root: "pub/static"
+               allow: true
+               scripts: false
+               passthru: "/front-static.php"
+               rules:
+                   ^/static/version\d+/(?<resource>.*)$:
+                       passthru: "/static/$resource"
+           "/<website>": *app
+             ...
+   ```
+
+1. Continue to the [_Set up websites, stores, and store views_ section](#set-stores).
+
+#### To configure a location with a different directory:
+
+1. Create an alias for the root (`/`) and for the static (`/static`) locations.
+
+   ```yaml
+   web:
+       locations:
+           "/":&root
+               # The public directory of the app, relative to its root.
+               root: "pub"
+               passthru: "/index.php"
+               index:
+               - index.php
+               ...
+           "/static":&static
+               root: "pub/static"
+   ```
+
+1. Create a pass through for the `index.php` file.
+
+   ```yaml
+   web:
+       locations:
+           "/":&root
+               # The public directory of the app, relative to its root.
+               root: "pub"
+               passthru: "/index.php"
+               index:
+               - index.php
+               ...
+           "/media":
+               root: "pub/media"
+               ...
+           "/static":&static
+               root: "pub/static"
+               allow: true
+               scripts: false
+               passthru: "/front-static.php"
+               rules:
+                   ^/static/version\d+/(?<resource>.*)$:
+                       passthru: "/static/$resource"
+           "/<website>":
+               <<: *root
+               passthru: "website/index.php"
+           "/<website>/static": *static
+             ...
+   ```
+
+### Set up websites, stores, and store views {#set-stores}
+
+In the _Admin UI_, set up your {{site.data.var.ee}} **Websites**, **Stores**, and **Store Views**. See [Set up multiple websites, stores, and store views in the Admin]({{ page.baseurl }}/config-guide/multi-site/ms_websites.html).
+
+It is important to use the same name and Code of your websites, stores, and store views from your Admin when you set up your local installation. You need these values when you update the `magento-vars.php` file.
 
 ### Modify Magento variables
 
@@ -135,10 +178,6 @@ Instead of configuring an NGINX virtual host, pass the `MAGE_RUN_CODE` and `MAGE
 #### To pass variables using the `magento-vars.php` file:
 
 1. Open the `magento-vars.php` file in a text editor.
-
-1. Uncomment everything after the first two lines.
-
-1. Move the entire block starting with `if (isHttpHost("example.com")` after `function isHttpHost($host)`.
 
    The [default `magento-vars.php` file](https://github.com/magento/magento-cloud/blob/master/magento-vars.php) should look like the following:
 
@@ -160,26 +199,43 @@ Instead of configuring an NGINX virtual host, pass the `MAGE_RUN_CODE` and `MAGE
    ```
    {:.no-copy}
 
-1. Change the following line:
+1. Change the `return` line in the `function` block.
 
-   From:
-
-   ```php?start_inline=1
-   return strpos(str_replace('---', '.', $_SERVER['HTTP_HOST']), $host) === 0;
+   ```diff
+   -   return strpos(str_replace('---', '.', $_SERVER['HTTP_HOST']), $host) === 0;
+   +   return $_SERVER['HTTP_HOST'] ===  $host;
    ```
+   {:.no-copy}
 
-   To:
+1. Move the commented `if` block so that it is _after_ the `function` block.
 
-   ```php?start_inline=1
-   return $_SERVER['HTTP_HOST'] ===  $host;
+   ```php
+   <?php
+   // enable, adjust and copy this code for each store you run
+   // Store #0, default one
+
+   function isHttpHost($host)
+   {
+       if (!isset($_SERVER['HTTP_HOST'])) {
+           return false;
+       }
+       return $_SERVER['HTTP_HOST'] ===  $host;
+   }
+
+   if (isHttpHost("example.com")) {
+       $_SERVER["MAGE_RUN_CODE"] = "default";
+       $_SERVER["MAGE_RUN_TYPE"] = "store";
+   }
    ```
 
 1. Replace the following values in the `if (isHttpHost("example.com"))` block:
-   -  `example.com`—with the base URL of your website
-   -  `default`—with the unique code for your website or store view
+   -  `example.com`—with the base URL of your _website_
+   -  `default`—with the unique CODE for your _website_ or _store view_
    -  `store`—with one of the following values:
-      -  `website`—load the website in the storefront
-      -  `store`—load a storeview in the storefront
+      -  `website`—load the _website_ in the storefront
+      -  `store`—load a _store view_ in the storefront
+
+   For multiple sites using unique domains:
 
    ```php
    <?php
@@ -190,8 +246,8 @@ Instead of configuring an NGINX virtual host, pass the `MAGE_RUN_CODE` and `MAGE
        }
        return $_SERVER['HTTP_HOST'] ===  $host;
    }
-   if (isHttpHost("second.store.com"))
-   {
+
+   if (isHttpHost("second.store.com")) {
        $_SERVER["MAGE_RUN_CODE"] = "<second-site>";
        $_SERVER["MAGE_RUN_TYPE"] = "website";
    }elseif (isHttpHost("store.com")){
@@ -200,7 +256,7 @@ Instead of configuring an NGINX virtual host, pass the `MAGE_RUN_CODE` and `MAGE
    }
    ```
 
-   For multiple sites with the same domain:
+   For multiple sites with the same domain, you have to check the _host_ and the _URI_:
 
    ```php
    <?php
@@ -211,6 +267,7 @@ Instead of configuring an NGINX virtual host, pass the `MAGE_RUN_CODE` and `MAGE
        }
        return $_SERVER['HTTP_HOST'] ===  $host;
    }
+
    if (isHttpHost("store.com")) {
       $code = "base";
       $type = "website";
@@ -239,11 +296,15 @@ Push your changes to your {{site.data.var.ece}} Integration environment and test
 
 1. Wait for deployment to complete.
 
-1. After deployment, open your site base URL in a web browser.
+1. After deployment, open your Store URL in a web browser.
 
-   Use the format: `http://<magento-run-code>.<site-URL>`
+   With a unique domain, use the format: `http://<magento-run-code>.<site-URL>`
 
    For example, `http://french.master-name-projectID.us.magentosite.cloud/`
+
+   With a shared domain, use the format: `http://<site-URL>/<magento-run-code>`
+
+   For example, `http://master-name-projectID.us.magentosite.cloud/french/`
 
 1. Test your site thoroughly and merge the code to the `integration` branch for further deployment.
 
