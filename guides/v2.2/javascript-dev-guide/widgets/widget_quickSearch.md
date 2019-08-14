@@ -45,6 +45,8 @@ The element's selector where the results will be added.
 
 **Type**: String
 
+**Default value**: `null`
+
 ### `isExpandable` {#q_isExpandable}
 
 The isExpandable option is used to show and hide search input field on devices with max width 768px.
@@ -97,7 +99,7 @@ Disable the submit button.
 
 ### `suggestionDelay` {#q_suggestionDelay}
 
-The suggestionDelay option prevents spamming the server with requests by waiting till the user has stopped typing for period of time.
+The suggestionDelay option prevents spamming the server with requests by waiting till the user has stopped typing for the specified period of time.
 
 **Type**: Integer
 
@@ -122,9 +124,11 @@ Template responsible for rendering returned data (suggested terms).
 ```
 
 ### `url` {#q_url}
-The responsible url for processing the search query.
+The endpoint URL for processing the search query.
 
 **Type**: String
+
+**Default value**: `null`
 
 ## Code sample
 
