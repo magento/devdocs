@@ -100,6 +100,10 @@ pages:
     url: /mftf/docs/page.html
     versionless: true
 
+  - label: Preparing a test for MFTF
+    url: /mftf/docs/test-prep.html
+    versionless: true
+
   - label: Reporting
     url: /mftf/docs/reporting.html
     versionless: true
@@ -140,6 +144,10 @@ pages:
 
       - label: Assertions
         url: /mftf/docs/test/assertions.html
+        versionless: true
+
+      - label: MFTF functional test reference
+        url: /mftf/docs/mftf-tests.html
         versionless: true
 
   - label: Troubleshooting
