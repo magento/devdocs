@@ -104,29 +104,39 @@ The [auto-crons feature](#verify-cron-configuration) must be enabled on your {{s
 
 #### To add custom crons
 
-1. In your local development environment, edit the `.magento.app.yaml` file in the Magento `/app` directory.
+1. In your local development environment, edit the `.magento.app.yaml` file in the Magento `/app` directory. 
 
-1. Add your custom cron code to the `crons` section in the file.
+1. Add your custom cron code to the `crons` section in the configuration file using the following format:
+
+   ```yaml
+   crons:
+       <cron_name_1>:
+           spec: "<schedule_time>"
+           cmd: "<schedule_command>"
+       <cron_name_2>:
+           spec: "<schedule_time>"
+           cmd: "<schedule_command>"        
+   ```
 
    For example, you can add a custom cron job to export the product catalog and configure it to run every eight hours, 20 minutes after the hour.
 
-```yaml
-crons:
-    magento:
-        spec: '* * * * *'
-        cmd: 'php bin/magento cron:run'
-        productcatalog:
-            spec: '20 */8 * * *'
-            cmd: 'bin/magento export:start catalog_product_category'
-    ```
-    {:.no-copy }
+   ```yaml
+   crons:
+       magento:
+           spec: '* * * * *'
+           cmd: 'php bin/magento cron:run'
+       productcatalog:
+           spec: '20 */8 * * *'
+           cmd: 'bin/magento export:start catalog_product_category'
+   ```
+   {:.no-copy }
 
 1. Add, commit, and push code changes.
 
     ```bash
     git add -A && git commit -m "cron config updates" && git push origin <branch-name>
     ```
-
+    
 ## Update custom cron jobs {#update}
 
 To add, remove, or update a custom cron job, change the configuration in the `crons` section of the `.magento.app.yaml` file for the Integration environment. Then, test the updates in the Integration environment before pushing the changes to the Production and Staging environments.
