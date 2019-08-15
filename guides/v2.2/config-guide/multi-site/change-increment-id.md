@@ -32,9 +32,9 @@ You may also fix the payment gateway issue for PayPal by allowing multiple payme
    For {{site.data.var.ece}}, at first, you need to connect using SSH to your environment.
 1. Check the current `auto_increment` value for the entity sequence table using the following query:
 
-    ```sql
-    SHOW TABLE STATUS FROM `{database_name}` WHERE `name` LIKE 'sequence_{entity_type}_{store_id}';
-    ```
+   ```sql
+   SHOW TABLE STATUS FROM `{database_name}` WHERE `name` LIKE 'sequence_{entity_type}_{store_id}';
+   ```
 
 If you are checking an auto increment for an order on the store with ID=1, the table name would be 'sequence_order_1'.
 
