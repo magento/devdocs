@@ -1,10 +1,6 @@
 ---
 group: installation-guide
-subgroup: R_General
 title: (Easy) Install the Magento archive on your server
-menu_title: (Easy) Install the Magento archive on your server
-menu_order: 1
-menu_node: parent
 functional_areas:
   - Install
   - System
@@ -90,7 +86,7 @@ The Magento software extracts to the directory you created. After the file has e
 
 {% include install/file-system-perms-before_22.md %}
 
-### Next step
+### Next step {#next-step-section}
 
 Install the Magento software:
 
