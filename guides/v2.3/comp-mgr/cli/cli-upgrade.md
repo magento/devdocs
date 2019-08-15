@@ -207,9 +207,9 @@ Manually clear caches and generated content.
    bin/magento maintenance:disable
    ```
 
-1. Restart Varnish.
+1. _(Optional)_ Restart Varnish.
 
-   _Optional_—If you use Varnish for page caching, restart it:
+   If you use Varnish for page caching, restart it:
 
    ```bash
    service varnish restart
