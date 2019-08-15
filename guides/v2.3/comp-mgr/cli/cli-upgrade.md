@@ -36,93 +36,93 @@ Complete the following prerequisites to prepare your environment before starting
     {: .bs-callout-info }
     Optionally, you can create a [custom maintenance mode page].
 
-## Upgrade using the command line {#upgrade-cli-upgr}
-
 Using the more manual process of upgrading via the command line allows you to track and control exactly what is being changed in the upgrade.
 
-### Backup `composer.json`
+## Manage packages
 
-Backup the existing `composer.json` file in the Magento installation directory.
+{:.bs-callout-info}
+See the examples at the end of this section for help specifying different release levels. For example, minor release, quality patch, and security patch. {{site.data.var.ee}} customers can access 2.3.x patches two weeks before the General Availability (GA) date.
 
-### Manage packages
+1. Backup the `composer.json` file.
 
-Specify needed packages and remove any unneeded ones before proceeding with the upgrade.
+   ```bash
+   cp composer.json composer.json.bak
+   ```
 
-#### Deactivate the {{ ce }} update (for edition upgrade only)
+1. Add or remove specific packages based on your needs.
 
-_Optional_—If you are upgrading from {{ ce }} to {{ ee }}, deactivate the {{ ce }} update:
+1. Deactivate the {{ ce }} update (for edition upgrade only). _Optional_—If you are upgrading from {{ ce }} to {{ ee }}, deactivate the {{ ce }} update:
 
-```bash
-composer remove magento/product-community-edition --no-update
-```
+   ```bash
+   composer remove magento/product-community-edition --no-update
+   ```
 
-#### Specify Magento packages
+1. Indicate the Magento packages, both the edition (`community` or `enterprise`) and the version (`{{ page.guide_version }}.3`), that you want to upgrade to.
 
-Indicate the Magento packages, both the edition (`community` or `enterprise`) and the version (`{{ page.guide_version }}.3`), that you want to upgrade to.
+   _{{ ce }}_:
 
-_{{ ce }}_:
+   `` `bash
+   composer require magento/product-community-edition={{ page.guide_version }}.3 --no-update
+   ```
 
-```bash
-composer require magento/product-community-edition={{ page.guide_version }}.3 --no-update
-```
+   _{{ ee }}_:
 
-_{{ ee }}_:
+   ```bash
+   composer require magento/product-enterprise-edition={{ page.guide_version }}.3 --no-update
+   ```
 
-```bash
-composer require magento/product-enterprise-edition={{ page.guide_version }}.3 --no-update
-```
+   <div class="bs-callout-tip" markdown="1">
+   To see the full list of available {{ page.guide_version }} version:
 
-<div class="bs-callout-tip" markdown="1">
-To see the full list of available {{ page.guide_version }} version:
+   _Magento Open Source_:
 
-_Magento Open Source_:
+   ```bash
+   composer show magento/product-community-edition {{ page.guide_version }}.* --all | grep -m 1 versions
+   ```
 
-```bash
-composer show magento/product-community-edition {{ page.guide_version }}.* --all | grep -m 1 versions
-```
+   _Magento Commerce_:
 
-_Magento Commerce_:
+   ```bash
+   composer show magento/product-enterprise-edition {{ page.guide_version }}.* --all | grep -m 1 versions
+   ```
 
-```bash
-composer show magento/product-enterprise-edition {{ page.guide_version }}.* --all | grep -m 1 versions
-```
+   </div>
 
-</div>
+1. Specify additional packages.
 
-#### Specify additional packages
+   ```bash
+   composer require --dev allure-framework/allure-phpunit:~1.2.0 friendsofphp/php-cs-fixer:~2.14.0 lusitanian/oauth:~0.8.10 magento/magento-coding-standard:~3.0.0 magento/magento2-functional-testing-framework:2.4.3 pdepend/pdepend:2.5.2 phpmd/phpmd:@stable phpunit/phpunit:~6.5.0 sebastian/phpcpd:~3.0.0 squizlabs/php_codesniffer:~3.4.0 --sort-packages --no-update
+   ```
 
-```bash
-composer require --dev allure-framework/allure-phpunit:~1.2.0 friendsofphp/php-cs-fixer:~2.14.0 lusitanian/oauth:~0.8.10 magento/magento-coding-standard:~3.0.0 magento/magento2-functional-testing-framework:2.4.3 pdepend/pdepend:2.5.2 phpmd/phpmd:@stable phpunit/phpunit:~6.5.0 sebastian/phpcpd:~3.0.0 squizlabs/php_codesniffer:~3.4.0 --sort-packages --no-update
-```
+1. Remove unused packages.
 
-#### Remove unused packages
+   If you are upgrading from 2.2.x to 2.3.x, remove unused packages with the following command. It is not needed if you are upgrading from 2.3.x.
 
-If you are upgrading from 2.2.x to 2.3.x, remove unused packages with the following command.
-It is not needed if you are upgrading from 2.3.x.
+   ```bash
+   composer remove --dev sjparkinson/static-review fabpot/php-cs-fixer --no-update
+   ```
 
-```bash
-composer remove --dev sjparkinson/static-review fabpot/php-cs-fixer --no-update
-```
+1. Update `autoload`.
 
-### Update `autoload`
+   Open `composer.json` and edit the `"autoload": "psr-4"` section to include `"Zend\\Mvc\\Controller\\": "setup/src/Zend/Mvc/Controller/"`:
 
-Open `composer.json` and edit the `"autoload": "psr-4"` section to include `"Zend\\Mvc\\Controller\\": "setup/src/Zend/Mvc/Controller/"`:
+   ```json
+   "autoload": {
+       "psr-4": {
+           "Magento\\Framework\\": "lib/internal/Magento/Framework/",
+           "Magento\\Setup\\": "setup/src/Magento/Setup/",
+           "Magento\\": "app/code/Magento/",
+           "Zend\\Mvc\\Controller\\": "setup/src/Zend/Mvc/Controller/"
+       },
+       //...
+   }
+   ```
 
-```json
-"autoload": {
-    "psr-4": {
-        "Magento\\Framework\\": "lib/internal/Magento/Framework/",
-        "Magento\\Setup\\": "setup/src/Magento/Setup/",
-        "Magento\\": "app/code/Magento/",
-        "Zend\\Mvc\\Controller\\": "setup/src/Zend/Mvc/Controller/"
-    },
-    //...
-}
-```
+{% include install/composer-examples.md %}
 
-### Modify the Magento updater
+## (_Optional)_ Modify the Magento updater
 
-_Optional_—If the Magento updater is installed, modify it (it is located in the `update/` directory):
+If the Magento updater is installed, modify it (it is located in the `update/` directory):
 
 1. Backup the `update/` directory.
 2. Create a Composer project.
@@ -155,67 +155,67 @@ _Optional_—If the Magento updater is installed, modify it (it is located in th
    rm -rf temp_dir
    ```
 
-### Update metadata
+## Update metadata
 
-Update the `"name"`, `"version"`, and `"description"` fields in the `composer.json` file as needed.
+1. Update the `"name"`, `"version"`, and `"description"` fields in the `composer.json` file as needed.
 
-{: .bs-callout-info }
-Updating the metadata in `composer.json` file is entirely superficial, not functional.
+   {: .bs-callout-info }
+   Updating the metadata in `composer.json` file is entirely superficial, not functional.
 
-### Apply updates
+1. Apply updates.
 
-```bash
-composer update
-```
+   ```bash
+   composer update
+   ```
 
-### Clean the Magento cache
+1. Clean the Magento cache.
 
-After applying an update, you must clean the cache.
+   ```bash
+   bin/magento cache:clean
+   ```
 
-```bash
-bin/magento cache:clean
-```
+## Clean up
 
-### Manually clear caches and generated content
+Manually clear caches and generated content.
 
-Clear the `var/` and `generated/` subdirectories:
+1. Clear the `var/` and `generated/` subdirectories:
 
-```bash
-rm -rf var/cache/*
-```
+   ```bash
+   rm -rf var/cache/*
+   ```
 
-```bash
-rm -rf var/page_cache/*
-```
+   ```bash
+   rm -rf var/page_cache/*
+   ```
 
-```bash
-rm -rf generated/code/*
-```
+   ```bash
+   rm -rf generated/code/*
+   ```
 
-{: .bs-callout-info }
-If you use a cache storage other than the filesystem, such as Redis or Memcached, you must manually clear the cache there too.
+   {: .bs-callout-info }
+   If you use a cache storage other than the filesystem, such as Redis or Memcached, you must manually clear the cache there too.
 
-### Update the database schema and data
+1. Update the database schema and data.
 
-```bash
-bin/magento setup:upgrade
-```
+   ```bash
+   bin/magento setup:upgrade
+   ```
 
-### Disable maintenance mode
+1. Disable maintenance mode.
 
-```bash
-bin/magento maintenance:disable
-```
+   ```bash
+   bin/magento maintenance:disable
+   ```
 
-### Restart Varnish
+1. Restart Varnish.
 
-_Optional_—If you use Varnish for page caching, restart it:
+   _Optional_—If you use Varnish for page caching, restart it:
 
-```bash
-service varnish restart
-```
+   ```bash
+   service varnish restart
+   ```
 
-### Check your work
+## Check your work
 
 Open your storefront URL in a web browser to check whether the upgrade was successful. If your upgrade was unsuccessful, your storefront will not load properly.
 
