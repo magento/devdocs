@@ -50,7 +50,7 @@ To get the Magento metapackage:
     See [troubleshooting]({{page.baseurl}}/install-gde/trouble/tshoot_composer-fail.html) for help with more errors.
 
     {:.bs-callout-info}
-    {{site.data.var.ee}} customers can access patches two weeks before the General Availability (GA) date.
+    {{site.data.var.ee}} customers can access 2.3.x patches two weeks before the General Availability (GA) date.
 
 ### Example - Minor release
 
