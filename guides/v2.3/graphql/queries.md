@@ -577,3 +577,55 @@ The following query shows how to get related products, Up-sells and Cross-sells 
   }
 }
 ```
+
+#### Filtering on a custom attribute
+
+You can filter by a custom attribute or by an attribute that is not defined in `ProductFilterInput` if the following properties are enabled from the Admin:
+
+-  **Use in Search**
+-  **Visible in Advanced Search**
+-  **Use in Layered Navigation**
+
+In this example, the custom attribute `volume` was assigned to the `bags` attribute group. Running the `customAttributeMetadata` mutation on this custom attribute reveals that the `label` and `value` values for the attribute's options are as follows:
+
+`label` | `value`
+--- | ---
+`Large` | `216`
+`Medium` | `217`
+`Small` | `218`
+
+In this scenario a `products` search filtered to return items where the `volume` attribute is set to `Large` would be similar to the following:
+
+**Request**
+
+```graphql
+{
+  products(filter: { volume: { eq: "216" } }) {
+    total_count
+    items {
+      name
+      sku
+    }
+  }
+}
+```
+
+**Response**
+
+The response might be similar to the following:
+
+```json
+{
+  "data": {
+    "products": {
+      "total_count": 1,
+      "items": [
+        {
+          "name": "Wayfarer Messenger Bag",
+          "sku": "24-MB05"
+        }
+      ]
+    }
+  }
+}
+```
