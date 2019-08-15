@@ -208,7 +208,7 @@ You also can use the `DELETE` endpoint to delete a simple product from the group
 
 ## 4. Add a grouped product to a cart
 
-You can now add this grouped product to a customer's cart. Refer to the [Order processing tutorial]({{ page.baseurl }}rest/tutorials/orders/order-intro.html) for more information about how to add items to a cart via REST.
+You can now add this grouped product to a customer's cart.
 
 ### Endpoint
 
@@ -239,6 +239,8 @@ You can now add this grouped product to a customer's cart. Refer to the [Order p
    "quote_id": "3"
 }
 ```
+
+Refer to the [Order processing tutorial]({{ page.baseurl }}/rest/tutorials/orders/order-intro.html) for more information about how to add items to a cart via REST.
 
 ## Related endpoints
 
