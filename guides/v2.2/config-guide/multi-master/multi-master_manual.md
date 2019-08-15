@@ -258,7 +258,7 @@ mysqldump -u <your database root username> -p <your main magento DB name> sequen
 
 This script restores sales data in your quote database.
 
-#### NDB requirement
+#### NDB requirement {#sql-sales-restore-ndb-req}
 
 If you are using a [Network Database (NDB)](http://dev.mysql.com/doc/refman/5.6/en/mysql-cluster.html) cluster:
 
