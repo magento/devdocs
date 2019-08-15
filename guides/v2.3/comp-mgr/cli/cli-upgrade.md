@@ -102,10 +102,8 @@ See the examples at the end of this section for help specifying different releas
    composer remove --dev sjparkinson/static-review fabpot/php-cs-fixer --no-update
    ```
 
-1. Update the `autoload` property.
 {: #update-autoload }
-
-   Open `composer.json` and edit the `"autoload": "psr-4"` section to include `"Zend\\Mvc\\Controller\\": "setup/src/Zend/Mvc/Controller/"`:
+1. Open the `composer.json` file and edit the `"autoload"` property to include `"Zend\\Mvc\\Controller\\": "setup/src/Zend/Mvc/Controller/"`.
 
    ```json
    "autoload": {
