@@ -8,21 +8,21 @@ contributor_link: https://www.atwix.com/
 This tutorial shows you how to extend the [Magento/ImportExport/Model/Import/Entity/AbstractEntity][0]{:target="_blank"} class to import data into your custom module's table.
 The current import entities can be found in **System** > **Import**:
 
-- Advanced Pricing
-- Products
-- Customers and Addresses (single file)
-- Customers Main File
-- Customer Addresses
+-  Advanced Pricing
+-  Products
+-  Customers and Addresses (single file)
+-  Customers Main File
+-  Customer Addresses
 
-To begin, let's suppose we have a custom table with the following structure:
+To begin, suppose we have a custom table with the following structure:
 
 | entity_id | name | duration |
 | --- | --- | --- |
 |           |  |  |
 
-## Step 1: Adding a New Entity Type
+## Step 1: Adding a new entity type
 
-Declaring our new import entity:
+Declare the new import entity:
 
 > `etc/import.xml`
 
@@ -34,7 +34,7 @@ Declaring our new import entity:
 </config>
 ```
 
-As we extend the **Magento_ImportExport** module, we should also add a dependency to it in the `module.xml` file.
+Extending the **Magento_ImportExport** module, we create a dependency to it in the `module.xml` file.
 
 > `etc/module.xml`
 
@@ -46,13 +46,13 @@ As we extend the **Magento_ImportExport** module, we should also add a dependenc
 ...
 ```
 
-## Step 2: Defining the Import Model
+## Step 2: Defining the import model
 
-As we extend the [Magento/ImportExport/Model/Import/Entity/AbstractEntity][0]{:target="_blank"}, we should implement the following abstract methods:
+As we extend the [Magento/ImportExport/Model/Import/Entity/AbstractEntity][0]{:target="_blank"}, we implement the following abstract methods:
 
-- `_importData` - Import data rows
-- `getEntityTypeCode` - EAV entity type code getter
-- `validateRow` - Validating the row
+-  `_importData` - Import data rows
+-  `getEntityTypeCode` - EAV entity type code getter
+-  `validateRow` - Validating the row
 
 > `OrangeCompany/Learning/Model/Import/Courses.php`
 
@@ -351,9 +351,9 @@ class Courses extends AbstractEntity
 
 {% endcollapsible %}
 
-## Step 3. Providing the Sample File
+## Step 3. Providing the sample file
 
-To add the possibility to download a sample csv file for our new entity, create the following file:
+To add the ability to download a sample csv file for our new entity, create the following file:
 
 ``OrangeCompany/Learning/Files/Sample/learning.csv``
 
@@ -366,9 +366,9 @@ entity_id,name,duration
 ```
 
 {:.bs-callout .bs-callout-info}
-For updating the table's data, you must provide the `entity_id` value for each row.
+When updating the table's data, you must provide the `entity_id` value for each row.
 
-Next, let's register the sample file for our entity. 
+Next, register the sample file for our entity. 
 
 > `etc/adminhtml/di.xml`
 
