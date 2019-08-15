@@ -22,16 +22,6 @@ pages:
         - label: GraphQL Caching
           url: /graphql/caching.html
 
-    - label: Payment methods
-      children:
-
-        - label: PayPal Payflow Link
-          url: /graphql/payment-methods/payflow-link.html
-          
-        - label: PayPal Payflow Pro
-          url: /graphql/payment-methods/payflow-pro.html
-
-
     - label: Development
       children:
         - label: Define the GraphQL schema for a module
@@ -55,19 +45,59 @@ pages:
     - label: Functional testing
       url: /graphql/functional-testing.html
 
+    - label: Queries
+      children:
+        - label: cmsBlock query
+          url: /graphql/queries/cms-block.html
+
+        - label: cmsPage query
+          url: /graphql/queries/cms-page.html
+        
+        - label: countries query
+          url: /graphql/queries/directory-countries.html
+          
+        - label: country query
+          url: /graphql/queries/directory-country.html
+          
+        - label: currency query
+          url: /graphql/queries/directory-currency.html
+
+        - label: customerOrders query
+          url: /graphql/queries/customer-orders.html
+
+        - label: customerPaymentTokens query
+          url: /graphql/queries/customer-payment-tokens.html
+
+        - label: getHostedProUrl query
+          url: /graphql/queries/get-hosted-pro-url.html
+
+        - label: storeConfig query
+          url: /graphql/queries/store-config.html
+
+        - label: urlResolver query
+          url: /graphql/queries/url-resolver.html
+
+        - label: wishlist query
+          url: /graphql/queries/wishlist.html
+        
+    - label: Mutations
+      children:
+        - label: applyStoreCreditToCart mutation
+          url: /graphql/mutations/apply-store-credit.html
+
+        - label: deletePaymentToken mutation
+          url: /graphql/mutations/delete-payment-token.html
+
+        - label: removeStoreCreditFromCart mutation
+          url: /graphql/mutations/remove-store-credit.html
+    
     - label: Reference
       children:
-            - label: CMS endpoint
-              url: /graphql/reference/cms.html
-
             - label: CustomAttributeMetadata endpoint
               url: /graphql/reference/custom-attribute-metadata.html
 
             - label: Customer endpoint
               url: /graphql/reference/customer.html
-
-            - label: Directory endpoint
-              url: /graphql/reference/directory.html
 
             - label: Payflow Link getPayflowLinkToken query
               url: /graphql/reference/paypal-get-payflow-link-token.html
@@ -77,9 +107,6 @@ pages:
 
             - label: Payflow Pro handlePayflowProResponse mutation
               url: /graphql/reference/paypal-handle-payflow-pro-response.html
-
-            - label: Paypal endpoint
-              url: /graphql/reference/paypal.html
 
             - label: Products endpoint
               url: /graphql/reference/products.html
@@ -151,6 +178,9 @@ pages:
                 - label: setPaymentMethodOnCart mutation
                   url: /graphql/reference/quote-payment-method.html
 
+                - label: setPaymentMethodAndPlaceOrder mutation
+                  url: /graphql/reference/quote-set-payment-place-order.html
+
                 - label: setShippingAddressesOnCart mutation
                   url: /graphql/reference/quote-set-shipping-address.html
 
@@ -163,20 +193,29 @@ pages:
             - label: redeemGiftCardBalanceAsStoreCredit mutation
               url: /graphql/reference/redeem-giftcard-balance.html
 
-            - label: Sales endpoint
-              url: /graphql/reference/sales.html
+    - label: Payment methods
+      children:
 
-            - label: Store endpoint
-              url: /graphql/reference/store-config.html
+        - label: Authorize.Net
+          url: /graphql/payment-methods/authorize-net.html
 
-            - label: UrlRewrite endpoint
-              url: /graphql/reference/url-resolver.html
+        - label: PayPal Express Checkout
+          url: /graphql/payment-methods/paypal-express-checkout.html
 
-            - label: Vault endpoint
-              url: /graphql/reference/vault.html
+        - label: Express Checkout for other PayPal solutions
+          url: /graphql/payment-methods/payflow-express.html
+          
+        - label: PayPal Payflow Link
+          url: /graphql/payment-methods/payflow-link.html
+          
+        - label: PayPal Payflow Pro
+          url: /graphql/payment-methods/payflow-pro.html
 
-            - label: Wishlist endpoint
-              url: /graphql/reference/wishlist.html
+        - label: PayPal Payments Advanced
+          url: /graphql/payment-methods/payments-advanced.html
+
+        - label: PayPal Website Payments Pro Hosted Solution
+          url: /graphql/payment-methods/hosted-pro.html
 
     - label: Tutorial
       class: tutorial

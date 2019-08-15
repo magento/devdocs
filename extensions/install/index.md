@@ -2,7 +2,6 @@
 group: extensions
 title: General CLI installation
 redirect_from: 
- - guides/v2.1/comp-mgr/install-extensions.html
  - guides/v2.2/comp-mgr/install-extensions.html
  - guides/v2.3/comp-mgr/install-extensions.html
 

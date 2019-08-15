@@ -2,7 +2,6 @@
 group: cloud-guide
 title: Launch Docker
 redirect_from:
-  - /guides/v2.1/cloud/reference/docker-config.html
   - /guides/v2.2/cloud/reference/docker-config.html
   - /guides/v2.3/cloud/reference/docker-config.html
 functional_areas:
@@ -63,7 +62,7 @@ For example, the following command starts the Docker configuration generator for
     -  [Docker](https://www.docker.com/get-started)
     -  File synchronization required for developer mode—use one of the following:
        -  [docker-sync](https://docker-sync.readthedocs.io/en/latest/getting-started/installation.html)
-       -  [mutagen](https://mutagen.io/documentation/installation/#installation)
+       -  [mutagen](https://mutagen.io/documentation/introduction/installation)
 
 1.  Update the hosts file.
 
@@ -78,6 +77,9 @@ For example, the following command starts the Docker configuration generator for
     ```bash
     echo "127.0.0.1 magento2.docker" | sudo tee -a /etc/hosts
     ```
+    
+    {: .bs-callout-tip }
+To change the `magento2.docker` hostname for your project, you must update the host in three files: `.docker/config.php`, `docker-compose.yml`, and `/etc/hosts`
 
 1.  Stop the default Apache instance on Mac OS.
 
@@ -129,7 +131,7 @@ Continue launching your Docker environment in the default _production_ mode.
 
     * `.docker/config.env`
 
-    {: .bs-callout .bs-callout-info}
+    {: .bs-callout-info }
     The `{{site.data.var.ct}}` version 2002.0.12 package does not support the `docker:config:convert` command.
 
 1.  _Optional_: Configure the Docker global variables in the `docker-compose.yml` file. For example, you can [configure Xdebug]({{ page.baseurl }}/cloud/docker/docker-development-debug.html#configure-xdebug).
@@ -154,7 +156,7 @@ Continue launching your Docker environment in the default _production_ mode.
       docker-compose run deploy cloud-deploy
       ```
 
-    {: .bs-callout .bs-callout-info}
+    {: .bs-callout-info }
     For `{{site.data.var.ct}}` v2002.0.12, install Magento with the `docker-compose run cli magento-installer` command.
 
 1.  Configure and connect Varnish.
@@ -175,7 +177,7 @@ Continue launching your Docker environment in the default _production_ mode.
 
 Continue launching your Docker environment in the _developer_ mode. The developer mode supports active development on your local environment.
 
-{: .bs-callout .bs-callout-info}
+{: .bs-callout-info }
 The `{{site.data.var.ct}}` version 2002.0.18 and later supports developer mode.
 
 
@@ -205,7 +207,7 @@ The `{{site.data.var.ct}}` version 2002.0.18 and later supports developer mode.
 
 1.  _Optional_: Configure the Docker global variables in the `docker-compose.yml` file. For example, you can [enable and configure Xdebug]({{ page.baseurl }}/cloud/docker/docker-development-debug.html).
 
-1.  Start the file synchronization.
+1.  Start the file synchronization (use one of the following).
 
     For the `docker-sync` tool:
 
@@ -234,7 +236,7 @@ The `{{site.data.var.ct}}` version 2002.0.18 and later supports developer mode.
         docker-compose run deploy magento-command deploy:mode:set developer
         ```
 
-    {: .bs-callout .bs-callout-info}
+    {: .bs-callout-info }
     Developer mode does not require the `build` operation.
 
 1.  Configure and connect Varnish.

@@ -10,7 +10,7 @@ Bundling accomplishes this by merging multiple JavaScript files together into on
 
 ## Enable JavaScript bundling
 
-{: .bs-callout .bs-callout-info }
+{: .bs-callout-info }
 JavaScript bundling does not work unless Magento is in [production mode][production-mode]. Once in production mode, JavaScript bundling can only be enabled using the CLI. Follow these steps to setup JavaScript bundling from the CLI.
 
 1. From the Magento root directory, switch to production mode:
@@ -19,24 +19,30 @@ JavaScript bundling does not work unless Magento is in [production mode][product
     bin/magento deploy:mode:set production
     ```
 
-2. Enable JavaScript bundling:
+1. Enable JavaScript bundling:
 
     ```bash
-    php -f bin/magento config:set dev/js/enable_js_bundling 1
+    bin/magento config:set dev/js/enable_js_bundling 1
     ```
 
-3. Optimize bundling by minifying JavaScript files:
+1. Optimize bundling by minifying JavaScript files:
 
     ```bash
-    php -f bin/magento config:set dev/js/minify_files 1
+    bin/magento config:set dev/js/minify_files 1
     ```
 
-4. Enable cache busting on static file URLs. This ensures users get the latest version of the assets anytime they update:
+1. Enable cache busting on static file URLs. This ensures users get the latest version of the assets anytime they update:
 
     ```bash
-    php -f bin/magento config:set dev/static/sign 1
+    bin/magento config:set dev/static/sign 1
     ```
+    
+1. To configure JavaScript bundling, you must disable Javascript file merging. Bundling will not work as the merging of files excludes bundling:
 
+    ```bash
+    bin/magento config:set dev/js/merge_files 0
+    ```    
+   
     For example, when `Sign Static Files` is disabled (which is the default: `config:set dev/static/sign 0`), the URL to a static file might look like this: `/static/frontend/Magento/luma/en_US/mage/dataPost.js`. But when you enable the setting (`config:set dev/static/sign 1`), the same URL might look something like this: `static/version40s2f9ef/frontend/Magento/luma/en_US/mage/dataPost.js`, with a version number added as shown. The next time this file is updated (with `bin/magento setup:static-content:deploy`), a new version will be generated, causing the browser to download a new file from the server, thus busting the browser's cache.
 
 ## How bundling works in Magento
@@ -130,9 +136,9 @@ For example, the Magento Luma theme is configured to work well for all pages, bu
 Follow these steps to help you identify which JavaScript files to bundle for your theme:
 
 1. Create a blank page with the layouts you would like to tune.
-2. Compare the JavaScript files loaded in the pages with the JavaScript files in Magento.
-3. Use the results of that comparison to build your exclude list.
+1. Compare the JavaScript files loaded in the pages with the JavaScript files in Magento.
+1. Use the results of that comparison to build your exclude list.
 
 [production-mode]:{{ page.baseurl }}/config-guide/bootstrap/magento-modes.html#production-mode
-[Advanced-JavaScript-Bundling]:https://devdocs.magento.com/guides/v2.3/performance-best-practices/advanced-js-bundling.html
+[Advanced-JavaScript-Bundling]:{{ page.baseurl }}/performance-best-practices/advanced-js-bundling.html
 [luma-view-xml]:{{ site.mage2bloburl }}/{{ page.guide_version }}/app/design/frontend/Magento/luma/etc/view.xml#L270

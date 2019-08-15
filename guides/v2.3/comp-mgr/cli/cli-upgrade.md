@@ -16,16 +16,16 @@ You can upgrade your Magento application from the command line if you installed 
 - Installing the compressed archive.
 
 Do not use this method to upgrade if you cloned the Magento 2 GitHub repository.
-Instead, see [Update the Magento application] for upgrade instructions.
+Instead, see [Update the Magento application][] for upgrade instructions.
 
 ## Prerequisites
 
 Complete the following prerequisites to prepare your environment before starting the upgrade process:
 
-- **Complete the Update and upgrade checklist**—To avoid possible errors during installation or upgrading, complete the [Update and upgrade checklist].
-- **Set the `pub/` directory root**—If you set the Magento root directory to `pub/`, create another subdomain or docroot that uses the Magento installation directory as its root, and run the [System Upgrade utility] using that subdomain.
-- **Check PHP and environment settings**—Verify that your PHP and other environment settings are compatible with the [system requirements].
-- **Switch to maintenance mode**—To prevent access to your store while it's being upgraded, switch your store to maintenance mode:
+- **Complete the Update and upgrade checklist**— To avoid possible errors during installation or upgrading, complete the [Update and upgrade checklist].
+- **Set the `pub/` directory root**— If you set the Magento root directory to `pub/`, create another subdomain or docroot that uses the Magento installation directory as its root, and run the [System Upgrade utility][] using that subdomain.
+- **Check PHP and environment settings**— Verify that your PHP and other environment settings are compatible with the [system requirements].
+- **Switch to maintenance mode**— To prevent access to your store while it is being upgraded, switch your store to maintenance mode:
 
     ```bash
     bin/magento maintenance:enable
@@ -38,7 +38,7 @@ Complete the following prerequisites to prepare your environment before starting
 
 ## Upgrade using the command line {#upgrade-cli-upgr}
 
-Using the more manual process of upgrading via the command line allows you to track and control exactly what's being changed in the upgrade.
+Using the more manual process of upgrading via the command line allows you to track and control exactly what is being changed in the upgrade.
 
 ### Backup `composer.json`
 
@@ -58,18 +58,18 @@ composer remove magento/product-community-edition --no-update
 
 #### Specify Magento packages
 
-Indicate the Magento packages, both the edition (`community` or `enterprise`) and the version (`{{ page.guide_version }}.2`), that you want to upgrade to.
+Indicate the Magento packages, both the edition (`community` or `enterprise`) and the version (`{{ page.guide_version }}.3`), that you want to upgrade to.
 
 _{{ ce }}_:
 
 ```bash
-composer require magento/product-community-edition={{ page.guide_version }}.2 --no-update
+composer require magento/product-community-edition={{ page.guide_version }}.3 --no-update
 ```
 
 _{{ ee }}_:
 
 ```bash
-composer require magento/product-enterprise-edition={{ page.guide_version }}.2 --no-update
+composer require magento/product-enterprise-edition={{ page.guide_version }}.3 --no-update
 ```
 
 <div class="bs-callout-tip" markdown="1">
@@ -92,10 +92,13 @@ composer show magento/product-enterprise-edition {{ page.guide_version }}.* --al
 #### Specify additional packages
 
 ```bash
-composer require --dev allure-framework/allure-phpunit:~1.2.0 friendsofphp/php-cs-fixer:~2.13.0 lusitanian/oauth:~0.8.10 magento/magento-coding-standard:~1.0.0 magento/magento2-functional-testing-framework:~2.3.14 pdepend/pdepend:2.5.2 phpunit/phpunit:~6.5.0 sebastian/phpcpd:~3.0.0 squizlabs/php_codesniffer:3.2.2 --sort-packages --no-update
+composer require --dev allure-framework/allure-phpunit:~1.2.0 friendsofphp/php-cs-fixer:~2.14.0 lusitanian/oauth:~0.8.10 magento/magento-coding-standard:~3.0.0 magento/magento2-functional-testing-framework:2.4.3 pdepend/pdepend:2.5.2 phpmd/phpmd:@stable phpunit/phpunit:~6.5.0 sebastian/phpcpd:~3.0.0 squizlabs/php_codesniffer:~3.4.0 --sort-packages --no-update
 ```
 
 #### Remove unused packages
+
+If you are upgrading from 2.2.x to 2.3.x, remove unused packages with the following command.
+It is not needed if you are upgrading from 2.3.x.
 
 ```bash
 composer remove --dev sjparkinson/static-review fabpot/php-cs-fixer --no-update
@@ -124,16 +127,16 @@ _Optional_—If the Magento updater is installed, modify it (it is located in th
 1. Backup the `update/` directory.
 2. Create a Composer project.
 
-   _{{ ce }} version {{ page.guide_version }}.2:_
+   _{{ ce }} version {{ page.guide_version }}.3:_
 
     ```bash
-    composer create-project --repository=https://repo.magento.com magento/project-community-edition={{ page.guide_version }}.2 temp_dir --no-install
+    composer create-project --repository=https://repo.magento.com magento/project-community-edition={{ page.guide_version }}.3 temp_dir --no-install
     ```
 
-    _{{ ee }} version {{ page.guide_version }}.2:_
+    _{{ ee }} version {{ page.guide_version }}.3:_
 
     ```bash
-    composer create-project --repository=https://repo.magento.com magento/project-enterprise-edition={{ page.guide_version }}.2 temp_dir --no-install
+    composer create-project --repository=https://repo.magento.com magento/project-enterprise-edition={{ page.guide_version }}.3 temp_dir --no-install
     ```
 
     {: .bs-callout-info }

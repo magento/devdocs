@@ -179,6 +179,7 @@ The following table describes the instructions specific for page configuration f
           <li><code>&lt;meta&gt;</code></li>
           <li><code>&lt;link&gt;</code></li>
           <li><code>&lt;css&gt;</code></li>
+          <li><code>&lt;font&gt;</code></li>
           <li><code>&lt;script&gt;</code></li>
         </ul>
       </td>

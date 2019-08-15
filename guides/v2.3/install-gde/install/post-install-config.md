@@ -62,7 +62,7 @@ Whether you have one server or many, you must open ports in the firewall to enab
 More information:
 
 *	Ubuntu: [Ubuntu documentation page](https://help.ubuntu.com/community/IptablesHowTo).
-*	CentOS: [CentOS how-to](http://wiki.centos.org/HowTos/Network/IPTables) and [CentOS reference page](http://www.centos.org/docs/4/4.5/Security_Guide/s1-firewall-ipt-basic.html).
+*	CentOS: [CentOS how-to](http://wiki.centos.org/HowTos/Network/IPTables).
 
 #### Security Enhanced Linux (SELinux) rules
 
@@ -77,7 +77,7 @@ More information:
 
 Magento requires an e-mail server. We don't recommend a particular server but you can try any of the following:
 
-*	Postfix for CentOS ([digitalocean tutorial](https://www.digitalocean.com/community/tutorials/how-to-install-postfix-on-centos-6), [CentOS documentation](https://www.centos.org/docs/5/html/Deployment_Guide-en-US/ch-email.html))
+*	Postfix for CentOS ([digitalocean tutorial](https://www.digitalocean.com/community/tutorials/how-to-install-postfix-on-centos-6), [CentOS documentation](https://www.centos.org))
 *	Postfix for Ubuntu ([digitalocean tutorial](https://www.digitalocean.com/community/tutorials/how-to-install-and-setup-postfix-on-ubuntu-14-04), [Ubuntu documentation](https://help.ubuntu.com/community/MailServer))
 
 #### Set up an Elasticsearch as search engine for enhanced performance:

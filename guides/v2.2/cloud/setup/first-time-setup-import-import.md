@@ -1,13 +1,7 @@
 ---
 group: cloud-guide
-subgroup: 080_setup
 title: Import Magento Commerce code into a Cloud project
-menu_order: 154
-menu_node:
-level3_menu_node: level3child
-level3_subgroup: import
 redirect_from:
-  - /guides/v2.1/cloud/access-acct/first-time-setup_import-import.html
   - /guides/v2.2/cloud/access-acct/first-time-setup_import-import.html
   - /guides/v2.3/cloud/access-acct/first-time-setup_import-import.html
 functional_areas:

@@ -1,13 +1,12 @@
 ---
 group: php-developer-guide
 title: Dependency injection
-menu_title: Dependency injection
 ---
 
 Magento 2 uses [Dependency Injection] to replace functionality provided by the `Mage` class in Magento 1.x.
 
 Dependency Injection is a design pattern that allows an object A to declare its dependencies to an external object B that supplies those dependencies.
-The dependencies declared by A are usually class interfaces and the dependencies B provides are the concrete implementations for those interfaces.
+The dependencies declared by A are usually class interfaces and the dependencies B provides are concrete implementations for those interfaces.
 
 This allows for loose coupling of code because object A no longer needs to be concerned with initializing its own dependencies.
 Object B decides which implementations to provide to object A based on a configuration or desired behavior.

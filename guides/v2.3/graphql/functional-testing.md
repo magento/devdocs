@@ -95,7 +95,7 @@ A fixture consists of two files:
 - The fixture file, which defines the test
 - A rollback file, which reverts the system to the state before the test was run
 
-{:.bs-callout .bs-callout-info}
+{: .bs-callout-info }
 Each fixture should have a corresponding rollback file.
 
 Magento provides fixtures in the `dev/tests/integration/testsuite/Magento/<ModuleName>/_files` directory. Use these fixtures whenever possible. When you create your own fixture, also create a proper rollback.
@@ -195,6 +195,50 @@ try {
 $registry->unregister('isSecureArea');
 $registry->register('isSecureArea', false);
 ```
+
+### Fixture configs
+
+Use the `@magentoConfigFixture` annotation to set a custom config value. It supports a `store` scope only.
+ 
+#### Syntax
+
+```php
+/**
+ * @magentoConfigFixture <store_code>_store <config_key> <config_value>
+ */
+```
+
+where
+- `<store_code>` - Store code. See the `store`.`code` database field value.
+- `<config_key>` - Config key. See `core_config_data`.`path` 
+- `<config_value>` - Config value. See `core_config_data`.`value`
+
+{: .bs-callout-info }
+`@magentoConfigFixture` does not require a roll-back.  
+
+#### Example usage 
+ 
+The following example sets a store-scoped value `1` for the config key `checkout/options/enable_agreements` for the `default` store in the `GetActiveAgreement()` test: 
+
+```php
+    /**
+     * @magentoConfigFixture default_store checkout/options/enable_agreements 1
+     */
+    public function testGetActiveAgreement()
+    {
+        ...
+    }
+```
+
+`@magentoConfigFixture` performs the following action as a background process before test execution:  
+
+```sql
+INSERT INTO `core_config_data` (scope`, `scope_id`, `path`, `value`)
+VALUES
+	('stores', 1, 'checkout/options/enable_agreements', '1');
+```
+
+The fixture automatically removes the `checkout/options/enable_agreements` config key from the database after the test has been completed.
 
 ## Defining expected exceptions
 

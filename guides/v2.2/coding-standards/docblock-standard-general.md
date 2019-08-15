@@ -33,7 +33,7 @@ The following is assumed by default:
 The documentation should follow two simple principles:
 
 1. Be as short as possible.
-2. Include all necessary information.
+2. Include all necessary information without duplication.
 
 ### Short documentation
 
@@ -119,7 +119,7 @@ If description or short description happens to be the first one after DocBlock o
 
 ### License Notice and Copyright
 
-{: .bs-callout .bs-callout-info }
+{: .bs-callout-info }
 This section is applicable to Magento core files only. Please follow it if you are a contributing developer.
 
 Any file in Magento source should have a header with license and copyright notice.
@@ -183,7 +183,7 @@ For example: namespace, class, interface, function, property, method, and so on.
 
 If the source code file has one and only one standalone structural element (class, interface, function, and so on), as it may be required by language-specific coding standard, the file DocBlock is to be reused for this element.
 
-So in general case, classes that are declared in dedicated files, must have one DocBlock, which refers to the class and file at the same time.
+So classes that are declared in dedicated files, must have either no DocBlock or exactly one DocBlock, which refers to the class and file at the same time.
 
 **DocBlock for a Class**
 
@@ -257,7 +257,9 @@ require_once __DIR__ . '/../../functions.php';
 ### Classes and interfaces
 {:#classes-interfaces}
 
-Classes and interfaces must have a short description that is a human-understandable intention of the class.
+Classes and interfaces should have a short description that is a human-understandable intention of the class.
+If the short description adds no additional information beyond what the type name already supplies, the
+short description must be omitted.
 
 **Good:**
 
@@ -288,7 +290,7 @@ use Magento\Stdlib\DateTime as StdlibDateTime;
 /**
  * @var Logger
  */
-protected $_logger;
+private $logger;
 
 /**
  * Description of method here.
@@ -297,7 +299,7 @@ protected $_logger;
  * @param StdlibDateTime $dateTime
  * @param int            $number
  */
-protected function doSomething(Random $mathRandom, StdlibDateTime $dateTime, $number)
+private function doSomething(Random $mathRandom, StdlibDateTime $dateTime, $number)
 {
 
 }
@@ -326,32 +328,33 @@ class Profiler
 ### Functions and methods
 {:#functions-methods}
 
-Functions and methods must have:
+In general, typed method signature must be preferred over PHPDoc annotations whenever possible.
 
-* Short description
-* Long description that explains the motivation behind the implementation.
+Functions and methods should have:
+
+* A short description in case it adds meaningful information beyond the method name.
+* If the purpose of the method is not obvious, a long description that explains the motivation behind the implementation.
+  The comment must describe why method is implemented and not how.
   For example:
 
    * If a workaround or hack is implemented, explain why it is necessary and include any other details necessary to understand the algorithm.
    * For non-obvious implementations where the implementation logic is complicated or does not correspond to the Technical Vision or other known best practices, include an explanation in the doc block's description.
      An implementation is non-obvious if another developer has questions about it.
 
-* Declaration of all arguments (if any) using `@param` tag.
-  Appropriate argument type must be specified.
-* Declaration of return type using `@return` tag.
-  If there is no such operator, the `@return` tag must have `void` as the return value.
+* The declaration of all arguments (if any) using `@param` tag, unless the argument type is indicated in the method signature.
+  All `@param` annotations must include the appropriate argument type.
+  If any argument requires a `@param` annotation, all arguments must be listed (all or none).  
+  The `@param` annotations must be in the same order as the method arguments.
+* The declaration of the return type using the `@return` tag must only be added if the method return type signature
+  does not supply all necessary information (see below for more information on return types).
 * Declaration of possibly thrown exception using `@throws` tag, if the actual body of function triggers throwing an exception.
-  All occurrences of `@throws` in a DocBlock must be after `@param` and `@return` (if any).
+  All occurrences of `@throws` in a DocBlock must be after `@param` and `@return` annotations.
 
 **Exceptions to these rules:**
 
-* Constructors may not have short and/or long description
+* Testing methods in Unit tests may have doc blocks to describe the purpose of the test, for example referencing github issues.
 
-* Testing methods in Unit tests may not have doc blocks if the test's method name follows the convention (test<MethodName>)
-
-   * If the test does not follow the convention, it should have a doc block describing the covered methods
-
-   * Non-testing methods should have a doc block with description. It includes data providers and any helper methods
+* Test method annotations may include data providers and other testing annotations.
 
 #### Things to include
 
@@ -364,7 +367,7 @@ Functions and methods must have:
     For example: `@return Config|null`.
     The DockBlock needs to explain what situations return `null`.
 
-    Another example: `@param FileInterface | null`.
+    Another example: `@param FileInterface|null`.
     The DocBlock needs to explain what happens when the value of the parameter is `null`.
 
     Ideally, implementations such as these should be avoided.
@@ -425,7 +428,7 @@ In general, use the `@throws` tag when the code uses *throw*:
  *
  * @param  string $elementId
  * @param  string $attribute
- * @param  mixed  $value
+ * @param  int|string|float|bool|object|null  $value
  * @return self
  * @throws \InvalidArgumentException
  */
@@ -492,25 +495,51 @@ public function deleteDirectory($path)
 #### @return tag
 {:#return}
 
-If there is no explicit return statement in a method or function, a `@return void` should be used in the documentation.
+In general method return type signatures should be prefered over `@return` type annotations.
+If that is not possible due to ambiguous return types or because of backward compatibility constraints, the `@return` type annotation must be used.
 
-If the method returns itself, `return $this` should be used.
+If there is no explicit return statement in a method or function or a return statement without a value, a `void` return type must be declared in the method signature. For example:
+
+```php
+function setName(string $name): void
+{
+   $this->name = $name;
+}
+```
+
+If the method returns itself, the method signature return type must be `self`. Here is an example:
+
+```php
+function withField(string $fieldName): self
+{
+   $this->fields[] = $fieldName;
+   return $this;
+}
+```
+
+If for backward compatibility reasons no return type can be added to the method signature, a `@return $this` annotation must be used.
+
 
 ### Constants
 {:#constants}
 
-Constants must have short description.
+Constants may have a short description.
+If the short description adds no additional information beyond what the constant name already supplies, the
+short description must be omitted.
 
 For example, a global constant:
 
 
 ```php
 /**
- * Directory separator shorthand
+ * Directory separator shorthand, intended to make code more readable.
  */
 define('DS', DIRECTORY_SEPARATOR);
+```
 
 Or constants in a class:
+
+```php
 class Profiler
 {
     /**
@@ -530,7 +559,7 @@ It's encouraged to replace existing DocBlock templates with regular DocBlock com
 ## Structure of documentation space
 {:#documentation-space}
 
-`@category`, `@package`, and `@subpackage` MUST NOT be used.
+`@author` ,`@category`, `@package`, and `@subpackage` MUST NOT be used.
 Documentation is organized with the use of namespaces.
 
 ## Other DocBlock tags
@@ -539,16 +568,12 @@ Documentation is organized with the use of namespaces.
 ### @inheritdoc tag
 {:#inheritdoc}
 
-Whenever possible the `@inheritdoc` tag MUST be used for children to avoid duplication of doc blocks.
-
-Even Though PHPDocumentor understands inheritance and uses the parent doc block by default (without `@inheritdoc` tag specified), including the tag helps ensure that the doc block is not missed at all.
-
-Rules for usage of the tag:
-
-* Use `@inheritdoc` (notice no braces around) to indicate that the entire doc block should be inherited from the parent method.
-* Use the inline `{@inheritdoc}` tag (with braces around) in long descriptions to reuse the parent's long description. The tagged method MUST have its own short description.
+The `@inheritdoc` tag SHOULD NOT be used.
+If a child class method requires a long description to explain its purpose, it may use `@inheritdoc` to indicate the new description is intended as an addition to the parent method description.
+In general such method overrides are a code smell and should be used as an incentive to make the code more self-documenting if possible.
 
 **DocBlock for the Interface**
+
 ```php
 /**
  * Interface for mutable value object for integer values
@@ -556,22 +581,16 @@ Rules for usage of the tag:
 interface MutableInterface
 {
     /**
-     * Get value
-     *
      * Returns 0, if no value is available
-     *
-     * @return int
      */
-    public function getVal();
+    public function getVal(): int;
 
     /**
-     * Set value
-     *
      * Sets 0 in case a non-integer value is passed
-     *
-     * @param int $value
+     * 
+     * @param int|string|bool|float|null $value
      */
-    public function setVal($value);
+    public function setVal($value): void;
 }
 ```
 
@@ -582,19 +601,16 @@ interface MutableInterface
  */
 class LimitedMutableClass implements MutableInterface
 {
-    /**
-     * @inheritdoc
-     */
-    public function getVal()
+    public function getVal(): int
     {
     }
-
+    
     /**
-     * Set value
-     *
-     * Sets 0 in case the value is bigger than max allowed value. {@inheritdoc}
+     * Sets 0 in case a non-integer value is passed
+     * 
+     * @param int|string|bool|float|null $value
      */
-    public function setVal($value)
+    public function setVal($value): void
     {
     }
 }

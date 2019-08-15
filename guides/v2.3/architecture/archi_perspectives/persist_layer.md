@@ -1,7 +1,6 @@
 ---
 group: architecture-guide
 title: Persistence layer
-menu_title: Persistence layer
 ---
 
 Magento uses an active record pattern strategy for persistence. In this system, the model object contains a *resource model* that maps an object to one or more database rows. A resource model is responsible for performing functions such as:
@@ -20,7 +19,7 @@ Any model that uses an EAV resource has its attributes spread out over a number 
 
 The `Customer`, `Catalog` and `Order` resource models use EAV attributes.
 
-## XML Declaritive schema
+## XML Declarative schema
 
 With Magento 2.3, we introduced Declaritive XML Schemas.
 These are XML files that are used to specify the final state of the database.
@@ -35,4 +34,4 @@ Read more about writing [declarative XML schemas][].
 [Architectural layers overview]({{page.baseurl}}/architecture/archi_perspectives/ALayers_intro.html)
 
 <!-- Link Definitions -->
-[declarative XML schemas]: https://devdocs.magento.com/guides/v2.3/extension-dev-guide/declarative-schema/db-schema.html
+[declarative XML schemas]: {{ page.baseurl }}/extension-dev-guide/declarative-schema/db-schema.html

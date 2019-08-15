@@ -42,13 +42,15 @@ Use [RFC2119] to interpret keywords like:
 
 1.3. Type hints for scalar arguments SHOULD be used.
 
-1.3.1. All new PHP files MUST have strict type mode enabled by starting with `declare(strict_types=1);`. All updated PHP files SHOULD have strict type mode enabled. PHP interfaces SHOULD NOT have this declaration.
+1.3.1. All new PHP files MUST have strict type mode enabled by starting with `declare(strict_types=1);`. All updated PHP files SHOULD have strict type mode enabled. PHP interfaces MAY have this declaration.
 
 ## 2. Class design
 
 2.1. Object decomposition MUST follow the [SOLID principles].
 
-2.2. Object MUST be ready for use after instantiation. No additional public initialization methods are allowed.
+2.2. Object instantiation
+
+2.2.1. An object MUST be ready for use after instantiation. No additional public initialization methods are allowed.
 
 {% collapsible Examples: %}
 
@@ -92,6 +94,11 @@ class Config
 {% endcollapsible %}
 
 ---
+
+2.2.2. Factories SHOULD be used for object instantiation instead of `new` keyword. An object SHOULD be replaceable for testing or extensibility purposes.
+Exception: [DTOs](https://en.wikipedia.org/wiki/Data_transfer_object). There is no behavior in DTOs, so there is no reason for its replaceability.
+Tests can create real DTOs for stubs. 
+Data interfaces,  Exceptions and `Zend_Db_Expr` are examples of DTOs.
 
 {:start="2.3"}
 2.3. Class constructor can have only dependency assignment operations and/or argument validation operations. No other operations are allowed.
@@ -499,10 +506,9 @@ You need to read configuration from different sources (like database or filesyst
 
 6.2.4. Actions MUST NOT reference blocks declared in layout.
 
-6.2.5. Configuration for the presentation layer MUST be declared in the corresponding application area.
-    This includes events and plugins that customize the presentation layer.
+6.2.5 Blocks MUST NOT assume that a specific, or any, controller has been invoked for current request.
 
-### 6.3. Data Access (Persistence) layer
+###  6.3. Data Access (Persistence) layer
 
 6.3.1. Entities MAY have fields scoped differently (in product, EAV --- per store, options --- per website).
 
@@ -720,16 +726,16 @@ You need to read configuration from different sources (like database or filesyst
 
 11.3.1.1. Page file names MUST follow this pattern:
 
-* {Admin or Storefront}{Description}Page.xml, where {Description} briefly describes the page under test.
+* `{Admin or Storefront}{Description}Page.xml`, where `{Description}` briefly describes the page under test.
 * Use [PascalCase](http://wiki.c2.com/?PascalCase).
-* Example: AdminProductAttributeGridPage.xml
+* Example: `AdminProductAttributeGridPage.xml`
 
 11.3.1.2. Page `name` attribute MUST be the same as the file name.
 
 11.3.1.3. Page `module` attribute MUST follow this pattern:
 
-* {VendorName}_{ModuleName}
-* Example: Magento_Backend
+* `{VendorName}_{ModuleName}`
+* Example: `Magento_Backend`
 
 11.3.1.4. There MUST be only one `<page>` entity per file.
 
@@ -737,17 +743,57 @@ You need to read configuration from different sources (like database or filesyst
 
 11.3.2.1. Section file names MUST follow this pattern:
 
-* {Admin or Storefront}{Description}Section.xml, where {Description} briefly describes the section under test.
+* `{Admin or Storefront}{Description}Section.xml`, where `{Description}` briefly describes the section under test.
 * Use [PascalCase](http://wiki.c2.com/?PascalCase).
-* Example: StorefrontCheckoutCartSummarySection.xml
+* Example: `StorefrontCheckoutCartSummarySection.xml`
 
 11.3.2.2. Section `name` attribute MUST be the same as the file name.
 
 11.3.2.3. There MUST be only one `<section>` entity per file.
 
+#### 11.3.3. Elements
+
+11.3.3.1. All element selectors MUST follow these [best practices](https://devdocs.magento.com/mftf/docs/best-practices.html).
+
+11.3.3.2. The element `name` MUST be unique within the `<section>`.
+
+11.3.3.3. The element `name` SHOULD be written in [camelCase](http://wiki.c2.com/?CamelCase).
+
+11.3.3.4. Parameterized selectors MUST use descriptive names for their parameters.
+
+11.3.3.5. Elements SHOULD use the `timeout` attribute to wait after interactions.
+
+#### 11.3.4. Data Entities
+
+11.3.4.1. Data entity file names MUST follow this pattern:
+
+* `{Type}Data.xml`, where `{Type}` describes the type of entities.
+* Use [PascalCase](http://wiki.c2.com/?PascalCase).
+* Examples: `ProductData.xml` or `CustomerData.xml`
+
+11.3.4.2. Data entities SHOULD make use of `unique="suffix"` or `unique="prefix"` to ensure that tests using the entity can be repeatedly ran against the same environment.
+
+11.3.4.3. Changes to existing data entities MUST be compatible with existing tests.
+
+#### 11.3.5. Action groups
+
+11.3.5.1. Action group file names MUST follow this pattern:
+
+- If the action group is making an assertion, then use the following format: `Assert{Admin or Storefront}{Functionality}ActionGroup.xml` where `{Functionality}` briefly describes what the action group is doing.
+- Otherwise use this format: `{Admin or Storefront}{Functionality}ActionGroup.xml`
+- Example: `AssertStorefrontMinicartContainsProductActionGroup.xml`
+
+11.3.5.2. Action group arguments MUST specify the `type` attribute.
+
+11.3.5.3. Action groups MUST NOT have unused arguments.
+
+11.3.5.4. Action groups MUST NOT reference created data entities such as `$$createdOutOfScopeData.property$$` or `$createdOutOfScopeData.property$` that were created from outside of the action group scope. Instead, action groups MUST use arguments to access this out of scope data.
+
+11.3.5.5. Action group arguments SHOULD specify default values.
+
 ## 12. Web API
 
-12.1. Both REST and SOAP API's MUST be exposed.
+12.1. Both REST and SOAP APIs MUST be exposed.
 
 12.2. All [Web API](https://glossary.magento.com/web-api) GET endpoints MUST return lists of entities.
 
@@ -877,10 +923,16 @@ class SampleEventObserverThatModifiesInputs implements ObserverInterface
 15.11. Security capabilities SHOULD be implemented either on the Magento Framework level or in a dedicated module(s) and utilized by the entire application in a centralize manner.
 
 15.12. Files MUST be secured by a web server configuration (e.g., `.htaccess` or `nginx.conf`), except files that are intended to be publicly accessible.
+ 
+15.13 Presentation layer classes that access user input directly MUST NOT assume it has been validated.
 
 ## 16. Cron
 
 16.1. Cron job SHOULD be an [idempotent method](https://tools.ietf.org/html/rfc7231#section-4.2.2).
+
+## 17. Services
+
+17.1. New features with limited customization scenarios SHOULD be implemented as a thin Magento extension that will communicate to a service that contains business logic. This allows developers to release features independently of Magento and makes feature upgrades easier.
 
 <!-- LINKS: DEFINITIONS AND ADDRESSES -->
 

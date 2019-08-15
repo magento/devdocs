@@ -13,7 +13,7 @@ The MQF uses [RabbitMQ](http://www.rabbitmq.com) as the messaging broker, which 
 We support RabbitMQ version 3.5.
 
 {:.bs-callout .bs-callout-warning}
-If you prefer using an existing AMQP-based service, like RabbitMQ, instead of relying on {{site.data.var.ece}} to create it for you, use the [`QUEUE_CONFIGURATION`]({{ site.baseurl }}/guides/v2.1/cloud/env/variables-deploy.html#queue_configuration) environment variable to connect it to your site.
+If you prefer using an existing AMQP-based service, like RabbitMQ, instead of relying on {{site.data.var.ece}} to create it for you, use the [`QUEUE_CONFIGURATION`]({{ page.baseurl }}/cloud/env/variables-deploy.html#queue_configuration) environment variable to connect it to your site.
 
 {% include cloud/service-config-integration-starter.md %}
 
@@ -35,12 +35,6 @@ relationships:
 ```
 
 Merge and deploy the code to set the configurations for RabbitMQ. For information on how these changes affect your environments, see [`services.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_services.html).
-
-## Verify environment-related relationships {#cloud-es-config-mg}
-
-We use the {{site.data.var.ece}} environment variable [`$MAGENTO_CLOUD_RELATIONSHIPS`]({{ page.baseurl }}/cloud/env/environment-vars_cloud.html), a JSON object, to retrieve environment-related relationships.
-
-{% include cloud/pretty-print-services.md %}
 
 ## Connect to RabbitMQ for debugging {#connect}
 
@@ -68,11 +62,7 @@ You can do this using [SSH tunneling]({{ page.baseurl }}/cloud/env/environments-
     magento-cloud tunnel:open
     ```
 
-1.  Pretty-print the relationships. This lets you see which username and password to use, and you can verify the remote service's port.
-
-    ```bash
-    php -r 'print_r(json_decode(base64_decode($_ENV["MAGENTO_CLOUD_RELATIONSHIPS"])));'
-    ```
+1.  [Verify the relationships]({{page.baseurl}}/cloud/project/project-conf-files_services.html#service-relationships).
 
 1.  Enable local port forwarding to RabbitMQ.
 

@@ -8,8 +8,6 @@ return_to:
   url: rest/tutorials/index.html
 menu_order: 5
 level3_subgroup: order-tutorial
-redirect_from:
-  - /guides/v2.1/get-started/order-tutorial/order-add-items.html
 functional_areas:
   - Integration
   - Orders
@@ -426,4 +424,4 @@ For this example, we'll configure the Sprite Yoga Companion Kit as follows:
 
 ### Verify this step {#verify-step}
 
-[Sign in](https://glossary.magento.com/sign-in) as the customer and click on the [shopping cart](https://glossary.magento.com/shopping-cart). All the items you added are displayed.
+[Sign in](https://glossary.magento.com/sign-in-sign-out) as the customer and click on the [shopping cart](https://glossary.magento.com/shopping-cart). All the items you added are displayed.

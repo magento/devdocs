@@ -5,7 +5,7 @@ title: Magento Commerce 2.2.8 Release Notes
 ---
 
 
-*Release notes published on March 26, 2019 and last edited on April 5, 2019.*
+*Release notes published on March 26, 2019 and last edited on July 31, 2019.*
 
 
 
@@ -17,6 +17,12 @@ Although this release includes these security enhancements, no confirmed attacks
 
 See [Magento Security Center](https://magento.com/security/patches/magento-2.3.1-2.2.8-and-2.1.17-security-update) for a comprehensive discussion of these issues. All exploitable security issues fixed in this release (2.2.8) have been ported to 2.3.1, 2.1.17, 1.14.4.1, and 1.9.4.1, as appropriate.
 
+## Apply patch PRODSECBUG-2233 to address critical remote code execution vulnerability (RCE)
+
+An unauthenticated cross-site scripting vulnerability combined with an authenticated Phar deserialization vulnerability has left this version of Magento Commerce open to serious exploit. An attacker can use these vulnerabilities to inject JavaScript into the Magento Admin and subsequently launch malicious code in a store user’s browser.   **We strongly recommend that all users of the affected versions of Magento download and apply the appropriate patch as soon as possible**. 
+
+This issue and the available patches are discussed in the [Extending the June 25 Security Update to Older Versions of Magento](https://community.magento.com/t5/Magento-DevBlog/Extending-the-June-25-Security-Update-to-Older-Versions-of/ba-p/138231)
+blog post. You can directly access patch code through your Magento account for Magento Commerce. Locate the patch by the name. We provide both Git-based and Composer-based patches. 
 
 ## Apply patch PRODSECBUG-2198 to address critical SQL injection vulnerability
 
@@ -110,7 +116,7 @@ In addition to security enhancements, this release contains the following functi
 
 ### Installation, setup, and deployment
 
-<!-- MC-5926 -->* The `bin/magento setup:config:set --enable-syslog-logging=true|false` command now provides the functionality that Magento previously provided in .  See [Logging](https://devdocs.magento.com/guides/v2.3/config-guide/logging.html). 
+<!-- MC-5926 -->* The `bin/magento setup:config:set --enable-syslog-logging=true|false` command now provides the functionality that Magento previously provided in .  See [Logging]({{ page.baseurl }}/config-guide/cli/logging.html). 
 
 <!-- MAGETWO-83474 -->* The storefront now  uses HTTPS exclusively and the Admin  uses HTTP without resulting in excessive redirects. 
 
@@ -1076,7 +1082,7 @@ Our technology stack is built on PHP and MySQL. For details, see [Technology sta
 
 ### Installation and upgrade instructions
 
-See [How to get the Magento software](http://devdocs.magento.com/guides/v2.2/install-gde/bk-install-guide.html) for complete installation and upgrade information.
+See [How to get the Magento software]({{ page.baseurl }}/install-gde/bk-install-guide.html) for complete installation and upgrade information.
 
 
 ## Migration toolkits

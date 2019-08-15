@@ -3,8 +3,6 @@ group: contributor-guide
 title: Maintainers
 version: 2.1
 github_link: contributor-guide/maintainers.md
-redirect_from:
-  - guides/v2.1/contributor-guide/devdocs-maintainers.html
 ---
 
 Magento trusts our active community members to review pull requests and accept or reject proposed code changes. [Community Maintainers](https://magento.com/magento-contributors#maintainers){:target="_blank"} take part in discussions, reviews, and help process pull requests.
@@ -33,4 +31,4 @@ Maintainers take part in these main activities:
 
 ## Guidelines for DevDocs
 
-In general, the same [guidelines](https://devdocs.magento.com/guides/v2.3/contributor-guide/maintainers.html) for [`magento/magento2`](https://github.com/magento/magento2) maintainers apply to DevDocs maintainers. However, there are some [additional guidelines](https://github.com/magento/devdocs/blob/master/.github/MAINTAINER_GUIDELINES.md) that apply to DevDocs.
+In general, the same [guidelines]({{ page.baseurl }}/contributor-guide/maintainers.html) for [`magento/magento2`](https://github.com/magento/magento2) maintainers apply to DevDocs maintainers. However, there are some [additional guidelines](https://github.com/magento/devdocs/blob/master/.github/MAINTAINER_GUIDELINES.md) that apply to DevDocs.

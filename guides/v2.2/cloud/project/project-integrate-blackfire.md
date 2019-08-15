@@ -260,6 +260,18 @@ Once you create and deploy your `.blackfire.yml` file, you can enable Blackfire 
 
 When you configure at least one way of triggering builds with Blackfire, you can be notified whenever a build report is available. Blackfire supports an integration with Slack, GitHub, BitBucket, email, and more. See [Scenario notification channels](https://blackfire.io/docs/reference-guide/notification-channels).
 
+## Change account owner
+
+Your Magento Customer Success Manager (CSM) must submit a request to Blackfire on your behalf to change the Blackfire.io account owner on your {{site.data.var.ece}} project. We recommend contacting your CSM directly, but you can also [submit a support ticket][1].
+
+You must provide your CSM with the following information:
+
+- Magento Commerce (Cloud) project ID
+- Name and email address of the new Blackfire.io account owner
+
+{:.bs-callout-info}
+You cannot contact Blackfire directly to change the account owner. To maintain the highest security standards and mitigate potential fraud on your {{site.data.var.ece}} project, Blackfire accepts account ownership change requests from Magento CSMs only.
+
 ## Blackfire support
 
 Blackfire provides [Enterprise support for Pro](https://support.blackfire.io/blackfire-on-magento-cloud/blackfire-enterprise-for-magento-cloud-pro) and [Premium support for Starter](https://support.blackfire.io/blackfire-on-magento-cloud/blackfire-premium-for-magento-cloud-starter).
@@ -316,3 +328,5 @@ Blackfire provides great information to better profile and investigate the resul
 -   [Writing Tests](https://blackfire.io/docs/cookbooks/tests)
 -   [Writing scenarios](https://blackfire.io/docs/cookbooks/scenarios)
 -   [Reference Guide](https://blackfire.io/docs/reference-guide/index)
+
+[1]: https://support.magento.com/hc/en-us/articles/360019088251
