@@ -48,10 +48,8 @@ Consult the following table for getting started with installing {{site.data.var.
 		<td><ol><li>Creates a Composer <em>project</em> that contains the list of components to use.</li>
 			<li>Uses Composer to update package dependencies; uses <code>composer create-project</code> to get the Magento metapackage.</li>
 			<li>Installs the Magento software using either a command line or the Setup Wizard.</li>
-		<li>Upgrades the Magento application and extensions using the Web Setup Wizard or command line.</li></ol>
+		<li>Upgrades the Magento application and extensions using the Web Setup Wizard or command line.</li></ol></td>
 		<td><p><a href="{{ page.baseurl }}/install-gde/composer.html">Get the metapackage</a></p></td>
-	</td>
-
 	</tr>
 	<tr>
 		<td><p>Contributing developer</p></td>
@@ -66,8 +64,6 @@ Consult the following table for getting started with installing {{site.data.var.
 			<li>Customizes code under the <code>app/code</code> directory.</li></ol></td>
 		<td><p><a href="{{ page.baseurl }}/install-gde/prereq/dev_install.html">Clone the Magento repository</a></p></td>
 	</tr>
-
-
 	</tbody>
 </table>
 
