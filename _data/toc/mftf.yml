@@ -9,6 +9,10 @@ pages:
     url: /mftf/docs/getting-started.html
     versionless: true
 
+ - label: Action group reference
+    url: /mftf/docs/actiongroup-list.html
+    versionless: true
+
   - label: Best practices
     versionless: true
     children:
@@ -49,6 +53,10 @@ pages:
 
   - label: Extending
     url: /mftf/docs/extending.html
+    versionless: true
+
+  - label: MFTF functional test reference
+    url: /mftf/docs/mftf-tests.html
     versionless: true
 
   - label: Merge points for extensions
@@ -144,10 +152,6 @@ pages:
 
       - label: Assertions
         url: /mftf/docs/test/assertions.html
-        versionless: true
-
-      - label: MFTF functional test reference
-        url: /mftf/docs/mftf-tests.html
         versionless: true
 
   - label: Troubleshooting
