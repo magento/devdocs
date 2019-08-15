@@ -9,32 +9,38 @@ Braintree is a payment gateway that processes debit and credit card payments.
 
 ## Braintree workflow
 
-1. Generate Braintree Client token using the [`createBraintreeClientToken`]({{page.baseurl}}/graphql/reference/braintree-create-client-token.html)
-   mutation
+1. The client uses [`createBraintreeClientToken`]({{page.baseurl}}/graphql/mutations/braintree-create-client-token.html)
 
-2. Initial [Braintree hosted fields](https://developers.braintreepayments.com/guides/hosted-fields/overview/javascript/v3)
+2. Initialize the [Braintree hosted fields](https://developers.braintreepayments.com/guides/hosted-fields/overview/javascript/v3)
    using the client token to collect and tokenize payment information via a secure iframe.
 
-3. On the checkout page, the customer selects **Credit Card** as the payment method and enters the credit card
-   information as well as the billing and shipping addresses.
+3. On the checkout page, the customer selects **Credit Card** as the payment method and inputs payment information using
+   the Braintree hosted fields.
 
-4. When the customer clicks **Place Order**, the PWA [creates a payment token](https://braintree.github.io/braintree-web/3.46.0/HostedFields.html#tokenize)
-   from the Braintree hosted fields.
+4. The customer clicks **Place Order**
 
-5. The client uses the [`setPaymentMethodOnCart`]({{page.baseurl}}/graphql/reference/quote-payment-method.html) mutation
+5. The client requests the Braintree SDK tokenize the user-input payment information.
+
+6. The Braintree SDK submits the payment information to Braintree client-side and returns a [payment token](https://braintree.github.io/braintree-web/3.46.0/HostedFields.html#tokenize)
+   to the client.
+
+7. The client extracts the payment nonce from the [Tokenized Payload](https://braintree.github.io/braintree-web/3.46.0/HostedFields.html#~tokenizePayload).
+
+8. The client uses the [`setPaymentMethodOnCart`]({{page.baseurl}}/graphql/reference/quote-payment-method.html) mutation
    to set the payment method to `braintree`. The payment method nonce is passed with other required and optional
    properties in the [`braintree`](#braintree-object).
 
-6. The client runs the [`placeOrder`]({{page.baseurl}}/graphql/reference/quote-place-order.html) mutation, which creates
-   an order in Magento and begins the authorization process.
+9. Magento returns a `Cart` object.
 
-7. Magento sends an authorization request to the gateway.
+10. The client uses the [`placeOrder`]({{page.baseurl}}/graphql/reference/quote-place-order.html) mutation.
 
-8. The gateway sends the response to Magento.
+11. Magento sends an authorization request to the gateway.
 
-9. Magento creates an order and sends an order ID in response to the `placeOrder` mutation.
+12. The gateway sends the response to Magento.
 
-## Additional Payment information
+13. Magento creates an order and sends an order ID in response to the `placeOrder` mutation.
+
+## `setPaymentMethodOnCart` mutation
 
 When you set the payment method to Braintree in the [`setPaymentMethodOnCart`]({{page.baseurl}}/graphql/reference/quote-payment-method.html)
 mutation, the `payment_method` object must contain a `braintree` object.
@@ -47,9 +53,9 @@ Attribute |  Data Type | Description
 --- | --- | ---
 `payment_method_nonce` | String! | Required input for Braintree client-side generated nonce
 `is_active_payment_token_enabler` | Boolean! | Required input dictating if payment should be stored in `Magento_Vault`
-`device_data` | String | Optional input json encoded device data for Kount integration
+`device_data` | String | Optional. JSON-encoded device data for Kount integration
 
-## Example setPaymentMethodOnCart mutation
+## Example Usage
 
 The following example shows the `setPaymentMethodOnCart` mutation constructed for the Braintree payment method.
 
