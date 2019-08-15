@@ -427,7 +427,10 @@ onModuleBundleComplete: function (data) {
        const contents = `require.config({
            bundles: ${JSON.stringify(bundleConfig)},
        });`;
-       fs.appendFile(fileName, contents);
+       fs.appendFile(fileName, contents, function (err) {
+           if (err) throw err;
+           console.log('Saved!');
+       });
    }
    onBundleComplete(config, data);
 }
