@@ -8,19 +8,18 @@ menu_order: 10001
 
 ## Overview
 
-The view model is an abstraction of the view exposing public properties and commands. It allows to offload features and 
-business logic from block classes into separate classes that are easier to maintain, test and reuse.
+A view model is an abstraction of the view exposing public properties and commands. It allows users to offload features and business logic from block classes into separate classes that are easier to maintain, test and reuse.
 
-## When to use
+## When to use view models
 
-Use this approach anytime you need to inject functionality into template files and your code doesn't need to be backwards compatible with Magento 2.1.
+Use this approach anytime you need to inject functionality into template files and your code does not need to be backwards compatible with Magento 2.1.
 
 {: .bs-callout-info }
-viewModels are available in Magento 2.2 onwards, if your code needs to be compatible with older versions of Magento consider adding your logic to blocks. For more information about backward compatibility see [Backward compatibility]({{ page.baseurl }}/contributor-guide/backward-compatible-development/)
+View models are available in Magento 2.2 onwards. If your code must be compatible with older versions of Magento, consider adding your logic to blocks. For more information about backward compatibility, see [Backward compatibility]({{ page.baseurl }}/contributor-guide/backward-compatible-development/).
 
-## How to write
+## How to write view models
 
-Let us say that we want to add functionality to a core template with custom logic using a ViewModel in the `cart/item/default.phtml` template found in `Magento/Checkout/view/frontend/layout/checkout_cart_item_renderers.xml`:
+We want to add functionality to a core template with custom logic using a View Model in the `cart/item/default.phtml` template found in `Magento/Checkout/view/frontend/layout/checkout_cart_item_renderers.xml`:
 
 ```xml
 <?xml version="1.0"?>
@@ -34,14 +33,13 @@ Let us say that we want to add functionality to a core template with custom logi
 </body>
 ```
 
-You would also have to implement the right interface in your viewModel class (i.e. `ArgumentInterface`):
+You must implement the right interface in your viewModel class (i.e. `ArgumentInterface`):
 
 ```php
 namespace Vendor\CustomModule\ViewModel;
 
 class MyClass implements \Magento\Framework\View\Element\Block\ArgumentInterface
 {
-
   public function getTitle()
   {
     return 'Hello World'
