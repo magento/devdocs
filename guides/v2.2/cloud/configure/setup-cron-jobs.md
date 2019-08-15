@@ -31,6 +31,9 @@ We use only one cron for {{site.data.var.ece}} projects because of the nature of
 
 Magento added an auto-crons configuration option to support self-service cron configuration updates from the `.magento.app.yaml` file on all environments–including Pro Staging and Production. If this option is enabled, you can use the Magento crontab to review the cron configuration for each environment.
 
+{: .bs-callout-info}
+You can use crontab to review the cron configuration for {{ site.data.var.ece }} projects; however, the Magento Cloud platform does not use crontab to run cron jobs.
+
 ####  To review cron configuration
 
 1. Log in to the {{site.data.var.ece}} project environment using [SSH]({{ page.baseurl }}/cloud/env/environments-ssh.html#ssh).
