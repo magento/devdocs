@@ -17,7 +17,7 @@ The following query returns the attribute type for various custom and EAV attrib
 
 **Request**
 
-```text
+```graphql
 {
  customAttributeMetadata(
    attributes: {
