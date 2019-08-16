@@ -73,7 +73,7 @@ namespace :update do
     sh 'git status -sb'
   end
 
-  desc 'Update devodcs and subrepositories'
+  desc 'Update devdocs and subrepositories'
   task all: %w[devdocs subrepos]
 
   desc 'Update subrepositories only'
