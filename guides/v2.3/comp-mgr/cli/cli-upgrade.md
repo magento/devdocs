@@ -49,9 +49,7 @@ See the examples at the end of this section for help specifying different releas
    cp composer.json composer.json.bak
    ```
 
-1. Add or remove specific packages based on your needs.
-
-1. Deactivate the {{ ce }} update (for edition upgrade only). _Optional_—If you are upgrading from {{ ce }} to {{ ee }}, deactivate the {{ ce }} update:
+1. Add or remove specific packages based on your needs. For example, if you are upgrading from {{ ce }} to {{ ee }}, remove the {{ ce }} package.
 
    ```bash
    composer remove magento/product-community-edition --no-update
@@ -61,7 +59,7 @@ See the examples at the end of this section for help specifying different releas
 
    _{{ ce }}_:
 
-   `` `bash
+   ```bash
    composer require magento/product-community-edition={{ page.guide_version }}.3 --no-update
    ```
 
@@ -72,15 +70,15 @@ See the examples at the end of this section for help specifying different releas
    ```
 
    <div class="bs-callout-tip" markdown="1">
-   To see the full list of available {{ page.guide_version }} version:
+   To see the full list of available {{ page.guide_version }} versions:
 
-   _Magento Open Source_:
+   _{{site.data.var.ce}}_:
 
    ```bash
    composer show magento/product-community-edition {{ page.guide_version }}.* --all | grep -m 1 versions
    ```
 
-   _Magento Commerce_:
+   _{{site.data.var.ce}}_:
 
    ```bash
    composer show magento/product-enterprise-edition {{ page.guide_version }}.* --all | grep -m 1 versions
@@ -102,29 +100,15 @@ See the examples at the end of this section for help specifying different releas
    composer remove --dev sjparkinson/static-review fabpot/php-cs-fixer --no-update
    ```
 
-1. Open the `composer.json` file and edit the `"autoload"` property to include `"Zend\\Mvc\\Controller\\": "setup/src/Zend/Mvc/Controller/"`.
-   {: #update-autoload }
-
-   ```json
-   "autoload": {
-       "psr-4": {
-           "Magento\\Framework\\": "lib/internal/Magento/Framework/",
-           "Magento\\Setup\\": "setup/src/Magento/Setup/",
-           "Magento\\": "app/code/Magento/",
-           "Zend\\Mvc\\Controller\\": "setup/src/Zend/Mvc/Controller/"
-       },
-       //...
-   }
-   ```
-
 {% include install/composer-examples.md %}
 
-## (_Optional)_ Modify the Magento updater
+## (_Optional)_ Recreate the Magento updater
 
-If the Magento updater is installed, modify it (it is located in the `update/` directory):
+If the Magento updater is installed, remove and recreate it. It is located in the `update/` directory.
 
 1. Backup the `update/` directory.
-2. Create a Composer project.
+
+1. Create a Composer project.
 
    _{{ ce }} version {{ page.guide_version }}.3:_
 
@@ -140,7 +124,8 @@ If the Magento updater is installed, modify it (it is located in the `update/` d
 
     {: .bs-callout-info }
     If you need to use a repository that contains non-public packages, such as internal sandboxes, change the URL in `--repository` accordingly.
-3. Remove the old `update/` directory and move `temp_dir/update/` to the `update/` directory:
+
+1. Remove the old `update/` directory and move `temp_dir/update/` to the `update/` directory:
 
    ```bash
    rm -rf update
