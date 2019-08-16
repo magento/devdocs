@@ -1317,6 +1317,22 @@ Magento now displays the correct product Short Description for the selected upda
 <!--- ENGCOM-5330-->*
 * Product URLs are now  updated as expected after Magento changes the URL key of the category  in multi-site deployment. *Fix submitted by Alastair Mucklow in pull request [23309](https://github.com/magento/magento2/pull/23309)*. [GitHub-23074](https://github.com/magento/magento2/issues/23074)
  
+### Vertex
+
+* Incorrect Customer Codes  are no longer sent when Vertex invoices are set to send during an order status change
+
+* Resolved an issue where assisted parameters were not requested and logged during Invoice calls made during Order Status Change
+
+* Calls to Vertex are now made when string values exceed the maximum allowed length in the Vertex SDK. 
+ 
+
+* Tax code, vertex tax code, and invoice text codes are now saved for orders created during Guest Checkout.
+  
+* Guest Orders are no longer invoiced twice if logging was enabled.
+ 
+* Shipping is now included on a Vertex invoice if that invoice was sent in the same request that its order was created in if that order was placed using guest checkout.
+  
+* Taxes for Magento Commerce gift wrap is now properly written to the Vertex tax journal.
 
 
 ### Visual Merchandiser
