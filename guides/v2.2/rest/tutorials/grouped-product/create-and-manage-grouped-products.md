@@ -5,7 +5,7 @@ functional_areas:
   - Integration
 ---
 
-A grouped product consists of simple standalone products that are presented as a group. You can offer variations of a single product, or group them by season or theme.
+A grouped product consists of simple standalone products that are presented as a group. A group can contain variations of a single product or a collection of products that are to be sold together.
 
 This tutorial describes how you can use the Magento REST API to create and manage grouped products.
 
@@ -23,13 +23,15 @@ This tutorial describes how you can use the Magento REST API to create and manag
 
 ## 1. Create an empty grouped product
 
+The first step is to create the grouped product container. In the next step, we'll add individual products to the grouped product.
+
 ### Endpoint
 
 `POST V1/products`
 
 ### Payload
 
-The `attribute_set_id: 11` line corresponds to gear.
+The `attribute_set_id: 11` line corresponds to gear. The value of `4` for the `visibility` attribute indicates the product will be displayed on the storefront and can be searched.
 
 ```json
     {
@@ -120,6 +122,8 @@ The `attribute_set_id: 11` line corresponds to gear.
 
 ## 2. Populate the grouped product with simple products
 
+Now that we have created a grouped product, we need to add simple items to it. In this example, we add three types of backpacks.
+
 ### Endpoint
 
 `POST V1/products/new-grouped/links`
@@ -169,6 +173,8 @@ The `attribute_set_id: 11` line corresponds to gear.
 
 ## 3. Add another simple product to the grouped product
 
+This step uses the `PUT /V1/products/new-grouped/links` endpoint to add an item to the grouped product.
+
 ### Endpoint
 
 `PUT /V1/products/new-grouped/links`
@@ -194,6 +200,10 @@ The `attribute_set_id: 11` line corresponds to gear.
 
 `true`
 
+{:.bs-callout-tip}
+You also can use the `DELETE` endpoint to delete a simple product from the group product:
+`DELETE /V1/products/{sku}/links/{type}/{linkedProductSku}`
+
 ## Verify the steps
 
 1. Log into the Magento Admin.
@@ -202,13 +212,14 @@ The `attribute_set_id: 11` line corresponds to gear.
 
   ![New grouped product]({{ page.baseurl }}/rest/images/new-grouped-product.png)
 
-You also can use the `DELETE` endpoint to delete a simple product from the group product:
+## Congratulations! You've finished.
+{:.no_toc}
 
-`DELETE /V1/products/{sku}/links/{type}/{linkedProductSku}`
+## Add a grouped product to a cart
 
-## 4. Add a grouped product to a cart
+Customers can now add this grouped products to their carts, as shown below.
 
-You can now add this grouped product to a customer's cart.
+Refer to the [Order processing tutorial]({{ page.baseurl }}/rest/tutorials/orders/order-intro.html) for more information about how to add items to a cart with REST.
 
 ### Endpoint
 
@@ -239,11 +250,3 @@ You can now add this grouped product to a customer's cart.
    "quote_id": "3"
 }
 ```
-
-Refer to the [Order processing tutorial]({{ page.baseurl }}/rest/tutorials/orders/order-intro.html) for more information about how to add items to a cart via REST.
-
-## Related endpoints
-
-* `catalogProductRepositoryV1`
-* `catalogProductLinkManagementV1`
-* `catalogProductLinkRepositoryV1`
