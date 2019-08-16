@@ -35,7 +35,7 @@ After you've installed and configured Varnish to work with Magento, the followin
 
 	You should refresh the cache and also periodically delete everything in the `generated/code` and `generated/metadata` directories. For information on refreshing the cache, see the next section.
 
-## Configure Magento to purge Varnish {#use-varnish-magento-purge}
+## Configure Magento to purge Varnish
 
 Magento purges Varnish hosts after you configure Varnish hosts using the [`magento setup:config:set`]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-deployment.html) command.
 
