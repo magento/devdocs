@@ -3,7 +3,7 @@ group: release-notes
 title: Magento Commerce 2.3.3 Release Notes
 ---
 
-*Patch code and release notes published on*
+*Patch code and release notes published on October 8, 2019*
 
 We are pleased to present Magento Commerce 2.3.3.  This release includes over  functional fixes to the core product, over  pull requests contributed by the community, and  over 75 security enhancements. It includes  contributions from our community members. These contributions range from minor clean-up of core code to significant enhancements to Inventory Management and GraphQL.
 
@@ -48,8 +48,13 @@ This release contains  enhancements to core quality, which improve the quality o
 
 ### GraphQL
 
-GraphQL performance improvements include these enhancements:
+Expanded GraphQL functionality improved coverage for PayPal payment integration, gift cards, and store credit features and include   queries that support these tasks:
 
+* Process payments through PayPal Express checkout, Payflow Pro and Link Express Checkout,  Authorize.net, and BrainTree
+* Redeem gift card and convert to store credit balance
+* Apply or remove gift card in shopping cart for guest users and check card balance
+* Apply or remove store credit in shopping cart and check store credit balance
+* Add configurable products to cart
 
 See [Release notes](https://devdocs.magento.com/guides/v2.3/graphql/release-notes.html) for a more detailed discussion of recent GraphQL bug fixes.
 
@@ -66,6 +71,16 @@ This release of Magento includes extensions developed by third-party vendors.
 #### Amazon Pay
 
 Amazon Pay is now compliant with the PSD2 directive for UK and Germany. See [Payment services (PSD 2) - Directive (EU)](https://ec.europa.eu/info/law/payment-services-psd-2-directive-eu-2015-2366_en) for an introduction to PSD2.
+
+#### Klarna
+
+
+
+#### Vertex
+
+<!--- BUNDLE-2151-->
+* You can now add custom fields to the Vertex connector.
+
 
 ## Fixed issues
 
@@ -197,7 +212,7 @@ We have fixed hundreds of issues in the Magento 2.3.3 core code.
 * Magento no longer displays the **Created/Last Updated from-to** fields for quotes that are not associated with the administrator that is currently logged-in. 
 
 <!--- MC-17642-->
-* Magento now displays an informative message when the site takes some time to process a user's attempt to use Quick Order to add an empty SKU to their shopping cart. Previously, users could not navigate to another page while the browser hung, and Magento did not display  message. 
+* Magento now displays an informative message when the site take time to process a user's attempt to use Quick Order to add an empty SKU to their shopping cart. Previously, users could not navigate to another page during the process, and Magento did not display a message to the user. 
 
 <!--- MC-18481-->
 * Magento now correctly updates SKU quantity when you use Quick Order and manually enter SKU in the **Enter Multiple SKU's** field when using Internet Explorer 11.x. 
@@ -206,7 +221,7 @@ We have fixed hundreds of issues in the Magento 2.3.3 core code.
 * The behavior of the Catalog page Requisition list menu has been corrected.  
 
 <!--- MAGETWO-99871-->
-* Magento now issues only a single request to the server when you change an order’s shipping address to a non-default address. Previously, Magento issued multiple requests to the server when you changed an order’s shipping address, which affected performance. 
+* Magento now issues  a single request to the server when you change an order’s shipping address to a non-default address. Previously, Magento issued multiple requests to the server when you changed an order’s shipping address, which negatively affected performance. 
 
 <!--- MAGETWO-99368-->
 * Non-administrative users who have been granted access privileges to catalogs and shared catalogs now also have access to the menu that permits them to manage these catalogs. Previously, these non-Admin users had permission to access the shared catalog, but not the menu that would permit them to manage the shared catalog. 
@@ -230,6 +245,9 @@ We have fixed hundreds of issues in the Magento 2.3.3 core code.
 * Magento now successfully saves customer segments after you've deleted a customer from the Admin. Previously, Magento threw an error and displayed this message: `We can't save the segment right now`.
   
 ### Cache
+
+<!--- MC-14863-->*
+* Varnish cache has been upgraded to 6.2.0.
 
 <!--- MAGETWO-98650-->
 * Full-page cache no longer clears out the checkout session data on uncached pages when the `Magento_Persistent` module was disabled.
@@ -812,6 +830,12 @@ We have fixed hundreds of issues in the Magento 2.3.3 core code.
 
 ### Infrastructure
 
+<!--- MC-14862-->
+* Magento 2.3.3 now supports PHP 7.3.x.
+
+<!--- MC-14863-->*
+* Varnish cache has been upgraded to 6.2.0.
+
 <!--- ENGCOM-5352-->
 * You can now use copy service on extension attributes for classes that extend Data Object. *Fix submitted by Oleksandr Kravchuk in pull request [23387](https://github.com/magento/magento2/pull/23387)*. [GitHub-23386](https://github.com/magento/magento2/issues/23386)
 
@@ -931,6 +955,19 @@ We have fixed hundreds of issues in the Magento 2.3.3 core code.
 <!--- ENGCOM-5324-->
 * Magento now displays the loading icon while processing a Braintree payment until the user is redirected to at the new Order page. *Fix submitted by Kunal Soni in pull request [22675](https://github.com/magento/magento2/pull/22675)*. [GitHub-20038](https://github.com/magento/magento2/issues/20038)
 
+### Performance
+
+<!--- MC-4244-->
+* Merchants now have the ability to turn off the automatic URL rewrite generation that occurs by default on products when the category they belong to is saved. The new Generate "category/product" URL Rewrites  configuration option controls this behavior. When this feature is enabled, Magento will generate lots of data when saving a category that contains many assigned products. This generated data is saved into rewrite tables that can degrade Magento performance. See xxx for more information on using this new configuration option. 
+
+<!--- MC-15763-->
+* Page load speeds have been improved by moving non-critical CSS elements to the bottom of the page.  This enables the browser to render and display a storefront page earlier. 
+
+<!--- MC-16887-->
+* The `jQuery/ui` library has been refactored into separate widgets so that core modules load only the widgets they need. As a result, you can experience improvement  in core storefront tasks including the loading of category, configurable product, home, and checkout pages.
+
+<!--- MC-4244-->
+* Merchants now have the ability to turn off the automatic URL rewrite generation that occurs by default on products when the category they belong to is saved. The new **Generate "category/product" URL Rewrites** configuration option controls this behavior. When this feature is enabled, Magento will generate an abundance of data when saving a category that contains many assigned products. This generated data is saved into rewrite tables that can degrade Magento performance. See xxx for more information on using this new configuration option. 
 
 
 ### Pricing
@@ -1157,6 +1194,13 @@ Magento now displays the correct product Short Description for the selected upda
 
 ### UI
 
+<!--- MC-15763-->
+* Page load speeds have been improved by moving non-critical CSS elements to the bottom of the page.  This enables the browser to render and display a storefront page earlier. 
+
+<!--- MC-16887-->
+* The `jQuery/ui` library has been refactored into separate widgets so that core modules load only the widgets they need. As a result, you can experience improvement  in core storefront tasks including the loading of category, configurable product, home, and checkout pages.
+
+
 <!--- MC-17922-->
 * The calendar date picker now updates values as expected when the linked input value is changed. 
 
@@ -1228,6 +1272,9 @@ Magento now displays the correct product Short Description for the selected upda
 * Magento now displays the Admin grid header as expected when there are no buttons in the toolbar.  *Fix submitted by [Shankar Konar](https://github.com/konarshankar07) in pull request [23247)(https://github.com/magento/magento2/pull/23247)*. 
 
 ### URL rewrites
+
+<!--- MC-4244-->
+* Merchants now have the ability to turn off the automatic URL rewrite generation that occurs by default on products when the category they belong to is saved. The new **Generate "category/product" URL Rewrites** configuration option controls this behavior. When this feature is enabled, Magento will generate an abundance of data when saving a category that contains many assigned products. This generated data is saved into rewrite tables that can degrade Magento performance. See xxx for more information on using this new configuration option. 
 
 <!--- MAGETWO-99830-->
 * Redundant URL rewrite operations that were triggered by category operations have been eliminated, and page load performance has been improved. Previously,  adding or deleting products to a category triggered URL rewrite regeneration for all products with changed positions. 
