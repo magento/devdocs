@@ -54,7 +54,7 @@ Use [RFC2119] to interpret keywords like:
 
 {% collapsible Examples: %}
 
-### Not recommended
+__Not recommended:__
 
 ```php
 class Config
@@ -73,7 +73,7 @@ class Config
 }
 ```
 
-### Recommended
+__Recommended:__
 
 ```php
 class Config
@@ -142,7 +142,7 @@ class Composite
 
 {% collapsible Examples: %}
 
-### Not recommended
+__Not recommended:__
 
 ```php
 class Config
@@ -157,7 +157,7 @@ class Config
 }
 ```
 
-### Recommended
+__Recommended:__
 
 ```php
 class Config
@@ -192,7 +192,7 @@ class Config
 
 {% collapsible Examples: %}
 
-### Not recommended
+__Not recommended:__
 
 ```php
 interface SessionAdapterInterface
@@ -210,7 +210,7 @@ class SessionManager
 // Breaks polymorphism principle, restricts what types can be passed at the runtime.
 ```
 
-### Recommended
+__Recommended:__
 
 ```php
 interface SessionAdapterInterface
@@ -235,7 +235,7 @@ class SessionManager
 2.6. Inheritance SHOULD NOT be used. Composition SHOULD be used for code reuse.
 {% collapsible Examples: %}
 
-### Not Recommended
+__Not recommended:__
 
 ```php
 class AbstractController extends Action
@@ -270,7 +270,7 @@ class Edit extends AbstractController
 // Smaller classes, one responsibility, more flexible, easy to understand, more testable.
 ```
 
-### Recommended
+__Recommended:__
 
 ```php
 class Edit extends Action
@@ -310,7 +310,7 @@ class Edit extends Action
 2.14. [Temporal coupling] MUST be avoided
 {% collapsible Example #1: %}
 
-### Not recommended
+__Not recommended:__
 
 ```php
 $url = new Url();
@@ -324,7 +324,7 @@ echo $url->get('custom/path'); // Throws exception, which makes issue smaller. I
 // Method with out parameters that does not return anything could be sign of temporal coupling.
 ```
 
-### Recommended
+__Recommended:__
 
 ```php
 $url = new Url($baseUrl);
@@ -343,7 +343,7 @@ echo $url->get($baseUrl, 'custom/path');
 
 {% collapsible Example #2: %}
 
-### Not recommended
+__Not recommended:__
 
 ```php
 class Edit extends Action
@@ -366,7 +366,7 @@ class View extends Template
 }
 ```
 
-### Recommended
+__Recommended:__
 
 ```php
 class Edit extends Action
@@ -479,6 +479,8 @@ You need to read configuration from different sources (like database or filesyst
 5.17. Exceptions which need to be displayed to the user MUST be sub-types of `LocalizedException`. Any other types of exceptions MUST be wrapped with `LocalizedException` before being displayed to the user.
 
 5.18. `LocalizedException`s SHOULD be thrown in the presentation layer only.
+
+5.19. Each module or component MUST declare its own exceptions. Exceptions declared in other components SHOULD NOT be thrown.
 
 ## 6. Application layers
 
