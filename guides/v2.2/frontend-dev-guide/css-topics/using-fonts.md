@@ -63,7 +63,7 @@ In addition to including custom fonts in your Magento Blank theme, you also can 
  
 By calling the `lib-icon-font` mixin, you can apply the icon font and character variables throughout the theme LESS code.
 
-To customize a font you import, consider using [IcoMoon](https://icomoon.io/app/).
+When your parent theme is 'Magento/Blank' to generate new icons copy all icons files from luma theme 'vendor\magento\theme-frontend-luma\web\fonts' and add to 'vendor/custom-theme', then you can generate custom icons from [IcoMoon](https://icomoon.io/app/).
 
 {:.bs-callout .bs-callout-info}
 If your theme does not use the Magento UI library, include the font in your theme's CSS files using the `@font-face` CSS rule.
