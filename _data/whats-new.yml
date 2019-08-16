@@ -1844,7 +1844,7 @@ entries:
   versions: 2.x
   type: Technical changes
   date: Sep 5 2018
-- description: Updated [CustomAttributeMetadata endpoint](https://devdocs.magento.com/guides/v2.3/graphql/reference/custom-attribute-metadata.html)
+- description: Updated [CustomAttributeMetadata endpoint](https://devdocs.magento.com/guides/v2.3/graphql/queries/custom-attribute-metadata.html)
     to include the new `attribute_options` object.
   versions: 2.3.x
   type: Technical changes

@@ -66,6 +66,9 @@ pages:
         - label: currency query
           url: /graphql/queries/directory-currency.html
 
+        - label: customAttributeMetadata query
+          url: /graphql/queries/custom-attribute-metadata.html
+
         - label: customerOrders query
           url: /graphql/queries/customer-orders.html
 
@@ -112,9 +115,6 @@ pages:
 
     - label: Reference
       children:
-            - label: CustomAttributeMetadata endpoint
-              url: /graphql/reference/custom-attribute-metadata.html
-
             - label: Customer endpoint
               url: /graphql/reference/customer.html
 
