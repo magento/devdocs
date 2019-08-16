@@ -154,6 +154,10 @@ pages:
         url: /mftf/docs/test/assertions.html
         versionless: true
 
+      - label: MFTF functional test reference
+        url: /mftf/docs/mftf-tests.html
+        versionless: true
+
   - label: Troubleshooting
     url: /mftf/docs/troubleshooting.html
     versionless: true 

@@ -279,7 +279,7 @@ Width of thumbnails.
 
 **Type**: Number, String
 
-#### `options/thumbheight` {#gallery_thumbwidth}
+#### `options/thumbheight` {#gallery_thumbheight}
 
 Height of thumbnails.
 
