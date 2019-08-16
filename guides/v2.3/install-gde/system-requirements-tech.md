@@ -152,7 +152,7 @@ There is a known issue with `xdebug` that can affect Magento installations or ac
 [php]: http://www.php.net/
 [sed]: https://www.gnu.org/software/sed/manual/sed.html
 [tar]: https://linux.die.net/man/1/tar
-[Change Elasticsearch Module]: https://devdocs.magento.com/guides/v2.3/config-guide/elasticsearch/es-downgrade.html
+[Change Elasticsearch Module]: {{ page.baseurl }}/config-guide/elasticsearch/es-downgrade.html
 [Composer]: https://glossary.magento.com/composer
 [Apache 2.4]: http://httpd.apache.org/download.cgi
 [`mod_rewrite`]: https://httpd.apache.org/docs/2.4/mod/mod_rewrite.html

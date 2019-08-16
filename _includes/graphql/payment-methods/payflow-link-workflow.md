@@ -16,6 +16,6 @@
 
 1. The client displays a payment form in an iframe rendered from the URL specified by the `paypal_url` from the `getPayflowLinkToken` mutation response. When the customer completes the form, the client sends the payment information directly to the PayPal gateway, bypassing the Magento server.
 
-1. After PayPal processes the payment, the gateway runs a silent post request against the Magento server. As a result, Magento sets the order status to pending, and the order is ready to be invoiced.
+1. After PayPal processes the payment, the gateway runs a silent post request against the Magento server. As a result, Magento sets the order status to processing, and the order is ready to be invoiced.
 
 1. The PayPal gateway returns control of the customer's browser to the client.

@@ -9,7 +9,7 @@ There are two types of attributes you can use to extend Magento functionality:
 
 	Custom attributes are a subset of EAV attributes. Objects that use EAV attributes typically store values in several MySQL tables. The `Customer` and `Catalog` modules are the primary models that use EAV attributes. Other modules, such as `ConfigurableProduct`, `GiftMessage`, and `Tax`, use the EAV functionality for `Catalog`.
 
-* [Extension attributes](https://glossary.magento.com/extension-attributes). Extension attributes are new in Magento 2. They are used to extend functionality and often use more [complex data](https://glossary.magento.com/complex-data) types than custom attributes. These attributes do not appear in the Magento Admin.
+* [Extension attributes](https://glossary.magento.com/extension-attribute). Extension attributes are new in Magento 2. They are used to extend functionality and often use more [complex data](https://glossary.magento.com/complex-data) types than custom attributes. These attributes do not appear in the Magento Admin.
 
 ## EAV and custom attributes {#custom}
 

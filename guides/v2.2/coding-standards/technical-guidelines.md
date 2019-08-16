@@ -54,7 +54,7 @@ Use [RFC2119] to interpret keywords like:
 
 {% collapsible Examples: %}
 
-### Not recommended
+__Not recommended:__
 
 ```php
 class Config
@@ -73,7 +73,7 @@ class Config
 }
 ```
 
-### Recommended
+__Recommended:__
 
 ```php
 class Config
@@ -142,7 +142,7 @@ class Composite
 
 {% collapsible Examples: %}
 
-### Not recommended
+__Not recommended:__
 
 ```php
 class Config
@@ -157,7 +157,7 @@ class Config
 }
 ```
 
-### Recommended
+__Recommended:__
 
 ```php
 class Config
@@ -192,7 +192,7 @@ class Config
 
 {% collapsible Examples: %}
 
-### Not recommended
+__Not recommended:__
 
 ```php
 interface SessionAdapterInterface
@@ -210,7 +210,7 @@ class SessionManager
 // Breaks polymorphism principle, restricts what types can be passed at the runtime.
 ```
 
-### Recommended
+__Recommended:__
 
 ```php
 interface SessionAdapterInterface
@@ -235,7 +235,7 @@ class SessionManager
 2.6. Inheritance SHOULD NOT be used. Composition SHOULD be used for code reuse.
 {% collapsible Examples: %}
 
-### Not Recommended
+__Not recommended:__
 
 ```php
 class AbstractController extends Action
@@ -270,7 +270,7 @@ class Edit extends AbstractController
 // Smaller classes, one responsibility, more flexible, easy to understand, more testable.
 ```
 
-### Recommended
+__Recommended:__
 
 ```php
 class Edit extends Action
@@ -310,7 +310,7 @@ class Edit extends Action
 2.14. [Temporal coupling] MUST be avoided
 {% collapsible Example #1: %}
 
-### Not recommended
+__Not recommended:__
 
 ```php
 $url = new Url();
@@ -324,7 +324,7 @@ echo $url->get('custom/path'); // Throws exception, which makes issue smaller. I
 // Method with out parameters that does not return anything could be sign of temporal coupling.
 ```
 
-### Recommended
+__Recommended:__
 
 ```php
 $url = new Url($baseUrl);
@@ -343,7 +343,7 @@ echo $url->get($baseUrl, 'custom/path');
 
 {% collapsible Example #2: %}
 
-### Not recommended
+__Not recommended:__
 
 ```php
 class Edit extends Action
@@ -366,7 +366,7 @@ class View extends Template
 }
 ```
 
-### Recommended
+__Recommended:__
 
 ```php
 class Edit extends Action
@@ -479,6 +479,8 @@ You need to read configuration from different sources (like database or filesyst
 5.17. Exceptions which need to be displayed to the user MUST be sub-types of `LocalizedException`. Any other types of exceptions MUST be wrapped with `LocalizedException` before being displayed to the user.
 
 5.18. `LocalizedException`s SHOULD be thrown in the presentation layer only.
+
+5.19. Each module or component MUST declare its own exceptions. Exceptions declared in other components SHOULD NOT be thrown.
 
 ## 6. Application layers
 
@@ -726,16 +728,16 @@ You need to read configuration from different sources (like database or filesyst
 
 11.3.1.1. Page file names MUST follow this pattern:
 
-* {Admin or Storefront}{Description}Page.xml, where {Description} briefly describes the page under test.
+* `{Admin or Storefront}{Description}Page.xml`, where `{Description}` briefly describes the page under test.
 * Use [PascalCase](http://wiki.c2.com/?PascalCase).
-* Example: AdminProductAttributeGridPage.xml
+* Example: `AdminProductAttributeGridPage.xml`
 
 11.3.1.2. Page `name` attribute MUST be the same as the file name.
 
 11.3.1.3. Page `module` attribute MUST follow this pattern:
 
-* {VendorName}_{ModuleName}
-* Example: Magento_Backend
+* `{VendorName}_{ModuleName}`
+* Example: `Magento_Backend`
 
 11.3.1.4. There MUST be only one `<page>` entity per file.
 
@@ -743,9 +745,9 @@ You need to read configuration from different sources (like database or filesyst
 
 11.3.2.1. Section file names MUST follow this pattern:
 
-* {Admin or Storefront}{Description}Section.xml, where {Description} briefly describes the section under test.
+* `{Admin or Storefront}{Description}Section.xml`, where `{Description}` briefly describes the section under test.
 * Use [PascalCase](http://wiki.c2.com/?PascalCase).
-* Example: StorefrontCheckoutCartSummarySection.xml
+* Example: `StorefrontCheckoutCartSummarySection.xml`
 
 11.3.2.2. Section `name` attribute MUST be the same as the file name.
 
@@ -767,13 +769,29 @@ You need to read configuration from different sources (like database or filesyst
 
 11.3.4.1. Data entity file names MUST follow this pattern:
 
-* {Type}Data.xml, where {Type} describes the type of entities.
+* `{Type}Data.xml`, where `{Type}` describes the type of entities.
 * Use [PascalCase](http://wiki.c2.com/?PascalCase).
-* Examples: ProductData.xml or CustomerData.xml
+* Examples: `ProductData.xml` or `CustomerData.xml`
 
 11.3.4.2. Data entities SHOULD make use of `unique="suffix"` or `unique="prefix"` to ensure that tests using the entity can be repeatedly ran against the same environment.
 
 11.3.4.3. Changes to existing data entities MUST be compatible with existing tests.
+
+#### 11.3.5. Action groups
+
+11.3.5.1. Action group file names MUST follow this pattern:
+
+- If the action group is making an assertion, then use the following format: `Assert{Admin or Storefront}{Functionality}ActionGroup.xml` where `{Functionality}` briefly describes what the action group is doing.
+- Otherwise use this format: `{Admin or Storefront}{Functionality}ActionGroup.xml`
+- Example: `AssertStorefrontMinicartContainsProductActionGroup.xml`
+
+11.3.5.2. Action group arguments MUST specify the `type` attribute.
+
+11.3.5.3. Action groups MUST NOT have unused arguments.
+
+11.3.5.4. Action groups MUST NOT reference created data entities such as `$$createdOutOfScopeData.property$$` or `$createdOutOfScopeData.property$` that were created from outside of the action group scope. Instead, action groups MUST use arguments to access this out of scope data.
+
+11.3.5.5. Action group arguments SHOULD specify default values.
 
 ## 12. Web API
 

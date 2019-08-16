@@ -24,7 +24,7 @@ We also accept [Community Engineering contributions] using CrowdIn for translati
 
 ## Generate a translation dictionary {#config-cli-subcommands-xlate-dict}
 
-You can generate a [translation dictionary] to customize existing strings, translate words and phrases in a custom module, localize a theme, or create  [language packages](https://glossary.magento.com/language-packages). 
+You can generate a [translation dictionary] to customize existing strings, translate words and phrases in a custom module, localize a theme, or create  [language packages](https://glossary.magento.com/language-package). 
 
 ### Work with translation dictionaries {#config-cli-subcommands-xlate-dict-dict}
 
@@ -328,7 +328,7 @@ Similar to the preceding example, generate a `.csv` file, but instead of specify
 [ISO 639-1]: http://www.iso.org/iso/home/standards/language_codes.htm
 [ISO 3166]: http://www.iso.org/iso/country_codes.htm
 [registers]: {{ page.baseurl }}/extension-dev-guide/build/component-registration.html
-[`de_de`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/i18n/magento/de_de/registration.php
+[`de_de`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/i18n/Magento/de_DE/registration.php
 [`composer.json`]: {{ page.baseurl }}/extension-dev-guide/build/composer-integration.html
 [`registration.php`]: {{ page.baseurl }}/extension-dev-guide/build/component-registration.html
 [Magento\Test\Integrity\App\Language\CircularDependencyTest]: {{ site.mage2bloburl }}/{{ page.guide_version }}/dev/tests/static/testsuite/Magento/Test/Integrity/App/Language/CircularDependencyTest.php

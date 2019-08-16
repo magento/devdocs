@@ -2,6 +2,8 @@
 group: release-notes
 subgroup: 2.3.x_Release_Information
 title: 2.3.x Release Information
+redirect_from:
+- /magento-release-information.html
 ---
 
 ## Magento 2.3.x Release Notes

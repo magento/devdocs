@@ -31,4 +31,4 @@ Maintainers take part in these main activities:
 
 ## Guidelines for DevDocs
 
-In general, the same [guidelines](https://devdocs.magento.com/guides/v2.3/contributor-guide/maintainers.html) for [`magento/magento2`](https://github.com/magento/magento2) maintainers apply to DevDocs maintainers. However, there are some [additional guidelines](https://github.com/magento/devdocs/blob/master/.github/MAINTAINER_GUIDELINES.md) that apply to DevDocs.
+In general, the same [guidelines]({{ page.baseurl }}/contributor-guide/maintainers.html) for [`magento/magento2`](https://github.com/magento/magento2) maintainers apply to DevDocs maintainers. However, there are some [additional guidelines](https://github.com/magento/devdocs/blob/master/.github/MAINTAINER_GUIDELINES.md) that apply to DevDocs.

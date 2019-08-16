@@ -25,7 +25,7 @@ The `<magento2_root_dir>/dev/tests/functional/phpunit.xml` contains PHPUnit conf
 | `app_backend_url` | URL to Magento Admin under test. | `"http://<name>.<domain>/<path to Admin>/"` | [Set URL for Magento Admin URL under test]({{ page.baseurl }}/mtf/mtf_quickstart/mtf_quickstart_config.html#mtf_quickstart_config_phpunitxml_backend){: target="_blank"} |
 | `testsuite_rule` | Test suite name to be run. | `"<test suite name>"` | [Set a test suite]({{ page.baseurl }}/mtf/features/test_suite.html#configure){: target="_blank"} |
 | `testsuite_rule_path` | Path to a test suite. | `"<path to test suite>"` | [Set a path to test suite]({{ page.baseurl }}/mtf/features/test_suite.html#configure){: target="_blank"} |
-| `log_directory` | Path to a directory with testing reports. | `"<path to the reporting directory>"` | [Set a reporting directory](http://localhost:4000/guides/v2.0/mtf/features/reporting.html#report-directory){: target="_blank"} |
+| `log_directory` | Path to a directory with testing reports. | `"<path to the reporting directory>"` | [Set a reporting directory]({{ page.baseurl }}/mtf/features/reporting.html#report-directory){: target="_blank"} |
 | `events_preset` | Name of a reporting event preset. | `"<event preset name>"` | [Set a preset]({{ page.baseurl }}/mtf/features/reporting.html#set-preset){: target="_blank"} |
 | `module_whitelist` | List of special FTF modules which are present in functional tests but are not enabled in the Magento application. | `"<names of modules>"` | Make listed modules (that are not enabled in Magento) visible for the FTF. |
 | `basedir` | A directory where PHPUnit reports are stored. | `"<directory for PHPUnit reports>"` |  |
