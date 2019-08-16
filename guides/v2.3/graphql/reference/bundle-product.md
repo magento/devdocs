@@ -40,8 +40,8 @@ Attribute | Type | Description
 `price_type` | PriceTypeEnum | One of FIXED, PERCENT, or DYNAMIC
 `price` | Float | The price of the selected option
 `product` | ProductInterface | The ProductInterface object, which contains details about this product option
-`quantity` | Float | Indicates the quantity of this specific bundle item
 `qty` | Float | Deprecated. Use `quantity` instead.
+`quantity` | Float | Indicates the quantity of this specific bundle item
 
 ## Sample Query
 
