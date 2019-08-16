@@ -4,8 +4,30 @@ description: |
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: /whats-new.html
 thread: /whatsnew-feed.xml
-updated: Fri Aug 2 12:05:50 2019
+updated: Fri Aug 9 23:29:50 2019
 entries:
+- description: Added information about how to [define a custom Import Entity](https://devdocs.magento.com/guides/v2.3/ext-best-practices/tutorials/custom-import-entity.html).
+  versions: 2.2.x, 2.3.x
+  type: New topic
+  date: August 7, 2019
+  link: https://github.com/magento/devdocs/pull/5007
+- description: Updated the label descriptions for [DevDocs contributions](https://devdocs.magento.com/guides/v2.3/contributor-guide/contributing.html#devdocs), corrected links, and added a link to the [Beginner's Guide](https://github.com/magento/magento2/wiki/Getting-Started).
+  versions: 2.2.x, 2.3.x
+  type: Major update
+  date: August 5, 2019
+  link: https://github.com/magento/devdocs/pull/4551
+- description: Added a new topic about [enabling database query profiling](https://devdocs.magento.com/guides/v2.3/cloud/project/profile-database-queries.html).
+  versions: 2.2.x, 2.3.x
+  type: New topic
+  date: August 2, 2019
+  link: https://github.com/magento/devdocs/pull/5111
+- description: Added a new task topic for [setting the cache time-to-live (TTL) for
+    static files](https://devdocs.magento.com/guides/v2.3/cloud/project/set-cache.html)
+    on Magento Commerce (Cloud).
+  versions: 2.2.x, 2.3.x
+  type: New topic
+  date: August 2, 2019
+  link: https://github.com/magento/devdocs/pull/5109
 - description: Added information about patch PRODSECBUG-2233 to the relevant release
     notes for affected Magento versions.
   versions: 2.2.8, 2.2.x, 2.3.0, 2.3.1, 2.3.x, 2.x
