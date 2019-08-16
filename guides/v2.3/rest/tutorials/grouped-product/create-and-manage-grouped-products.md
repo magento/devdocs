@@ -1,1 +1,1 @@
-../../../../guides/v2.2/rest/tutorials/grouped-product/create-and-manage-grouped-products.md
+../../../v2.2/rest/tutorials/grouped-product/create-and-manage-grouped-products.md
