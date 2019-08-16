@@ -40,13 +40,14 @@ Attribute | Type | Description
 `price_type` | PriceTypeEnum | One of FIXED, PERCENT, or DYNAMIC
 `price` | Float | The price of the selected option
 `product` | ProductInterface | The ProductInterface object, which contains details about this product option
-`qty` | Float | Indicates the quantity of this specific bundle item
+`quantity` | Float | Indicates the quantity of this specific bundle item
+`qty` | Float | Deprecated. Use `quantity` instead.
 
 ## Sample Query
 
 The following query returns information about bundle product `24-WG080`, which is defined in the sample data.
 
-```text
+```graphql
 {
    products(filter: {sku:
     {eq: "24-WG080"}
@@ -72,7 +73,7 @@ The following query returns information about bundle product `24-WG080`, which i
               sku
               options {
                 id
-                qty
+                quantity
                 position
                 is_default
                 price
