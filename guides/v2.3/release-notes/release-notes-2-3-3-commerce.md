@@ -22,6 +22,15 @@ Look for the following highlights in this release:
 
 This release includes extensive security enhancements:
 
+
+#### Core payment methods integrations are compliant with PSD2 regulation
+
+The European Union revised a regulation called Payment Services Directive (PSD) with an updated version PSD2. This regulation goes into effect on September 14, 2019, and has a significant impact on most payment processing involving credit cards or bank transfers.  See the Magento Forum DevBlog post 3D Secure 2.0 changes for more information on Magento Payment Provider Recommendations and a wealth of links to PSD2 regulation discussions.
+
+ * The **Braintree payment method now complies with  PSD2 regulations**. Its core integration API has been upgraded to the latest JavaScript SDK v3 API, a requirement for supporting native Braintree 3D Secure 2.0 adoption. Braintree transactions are now also verified by using the native Braintree 3D Secure 2.0 service. 
+
+* Authorize.net now provides the ability, through the chardholderAuthentication request field, to make 3D Secure verification via 3rd party services like CardinalCommerce. Starting from this release, **Authorize.net Accept.js integration will support 3DS 2.0 through CardinalCommerce**. 
+
 * **75 security enhancements** that help close cross-site scripting (XSS), remote code execution (RCE), and sensitive data disclosure vulnerabilities as well as other security issues. No confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. See [Magento Security Center](https://magento.com/security/patches/magento-2.3.3-2.2.10-security-update) for a comprehensive discussion of these issues. All known exploitable security issues fixed in this release (2.3.2) have been ported to 2.2.10, 1.14.4.3, and 1.9.4.3, as appropriate.
 
 
@@ -892,12 +901,20 @@ We have fixed hundreds of issues in the Magento 2.3.3 core code.
 
 ### Payment methods
 
+The following changes to core payment methods integrations support compliance with PSD2 regulations: 
+
+<!--- MAGEDTWO-99606 99867-->
+* The Braintree payment method now complies with  PSD2 regulations. Its core integration API has been upgraded to the latest JavaScript SDK v3 API, a requirement for supporting native Braintree 3D Secure 2.0 adoption. Braintree transactions are now also verified by using the native Braintree 3D Secure 2.0 service. 
+
+* Authorize.Net now provides the ability (through the `chardholderAuthentication` request field) to make 3D Secure verification through third-party services like CardinalCommerce. Starting from this release, Authorize.Net `accept.js` integration will support 3DS 2.0 through CardinalCommerce. 
+
 <!--- MC-17337-->
 * Magento now displays a more informative error message (`CVV verification failed` )when you enter an invalid CVV code while using the Braintree payment method. Previously, Magento displayed a generic error message.
 
 <!--- MAGETWO-99035-->
 * Customers can now successfully place an order when the order is partially paid for by gift card or when a discount is applied to the order. Previously, customers could not place an order, and Magento displayed this error: `error: Field format error: 10413-The totals of the cart item amounts do not match order amounts`.
 
+#### Other 
 <!--- MC-17462-->
 * Magento now successfully creates orders that contain both simple and virtual products and that are created with Braintree and with ** Checkout with Multiple Addresses** enabled. Previously, Magento listed an order created with these features as an empty order with a grand total of zero on the Orders list. 
 
