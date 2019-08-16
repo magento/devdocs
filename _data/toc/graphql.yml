@@ -93,16 +93,19 @@ pages:
           url: /graphql/mutations/apply-store-credit.html
 
         - label: createPayflowProToken mutation
-          url: /graphql/mutations/paypal-create-payflow-pro-token.html
+          url: /graphql/mutations/create-payflow-pro-token.html
 
         - label: deletePaymentToken mutation
           url: /graphql/mutations/delete-payment-token.html
 
         - label: handlePayflowProResponse mutation
-          url: /graphql/mutations/paypal-handle-payflow-pro-response.html
+          url: /graphql/mutations/handle-payflow-pro-response.html
 
         - label: redeemGiftCardBalanceAsStoreCredit mutation
           url: /graphql/mutations/redeem-giftcard-balance.html
+
+        - label: removeGiftCardFromCart mutation
+          url: /graphql/mutations/remove-giftcard.html
 
         - label: removeStoreCreditFromCart mutation
           url: /graphql/mutations/remove-store-credit.html
@@ -169,9 +172,6 @@ pages:
 
                 - label: removeCouponFromCart mutation
                   url: /graphql/reference/quote-remove-coupon.html
-
-                - label: removeGiftCardFromCart mutation
-                  url: /graphql/reference/quote-remove-giftcard.html
 
                 - label: removeItemFromCart mutation
                   url: /graphql/reference/quote-remove-item.html
