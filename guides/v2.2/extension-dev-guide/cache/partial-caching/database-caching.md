@@ -98,7 +98,7 @@ To modify `di.xml`:
 
 This section discusses how to set up database caching with a custom [cache frontend](https://glossary.magento.com/cache-frontend).
 
-{:.bs-callout .bs-callout-info #info}
+{:.bs-callout .bs-callout-info}
 Due to a known issue, a custom cache frontend still results in some objects being cached to the file system; however, fewer assets are cached compared to file system caching.
 
 To enable database caching using a custom cache frontend, you must modify `<magento_root>/app/etc/env.php` as follows:
@@ -155,7 +155,7 @@ Use the following steps:
 		ls <magento_root>/var/cache/*
 		ls <magento_root>/var/page_cache/*
 
-    {:.bs-callout .bs-callout-info #info}
+    {:.bs-callout .bs-callout-info }
     Due to a known issue, a custom cache frontend still results in some objects being cached to the file system; however, fewer assets are cached compared to file system caching.
     If you use the `default` cache frontend, you don't have this issue.
 

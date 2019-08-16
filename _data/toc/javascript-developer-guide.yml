@@ -102,3 +102,6 @@ pages:
 
         - label: ToggleAdvanced widget
           url: /javascript-dev-guide/widgets/widget_toggle.html
+
+        - label: TrimInput widget
+          url: /javascript-dev-guide/widgets/widget-trim-input.html
