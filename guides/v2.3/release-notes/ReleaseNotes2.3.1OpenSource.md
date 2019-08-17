@@ -230,8 +230,6 @@ We've fixed hundreds of issues in the Magento 2.3.1 core code.
 <!--- MC-1364-->
 * The **Allow Dynamic Media URLs in Products and Categories** configuration setting, which was previously accessed from **Stores** > **Configuration** > **Catalog** > **Storefront**, has been removed. The **Use Static URLs for Media Content in WYSIWYG** setting (**Stores** > **Configuration** > **General** > **Content management** > **WYSIWYG Options**) now applies to any media URLs that are entered through the WYSIWYG editor.
 
-
-
 ### Analytics
 
 <!--- ENGCOM-3263 -->* You can now save configuration from the **Admin**  > **Stores** > **Configuration** > **General** > **Advanced Reporting** without providing an industry value. Previously, Magento did not save configuration settings, and displayed this error:  `Please select a vertical.` *Fix submitted by Pratik Oza in pull request [18782](https://github.com/magento/magento2/pull/18782)*. [GitHub-15259](https://github.com/magento/magento2/issues/15259)

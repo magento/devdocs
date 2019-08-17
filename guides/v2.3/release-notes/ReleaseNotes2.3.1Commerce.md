@@ -4,7 +4,7 @@ title: Magento Commerce 2.3.1 Release Notes
 ---
 
 
-*Release notes published on March 26, 2019 and last edited on August 15, 2019.*
+*Release notes published on March 26, 2019 and last edited on August 16, 2019.*
 
 We are pleased to present Magento Commerce 2.3.1.  This release includes over 200 functional fixes to the core product, over 500 pull requests contributed by the community, and  over 30 security enhancements. 
 
@@ -243,9 +243,6 @@ We've fixed hundreds of issues in the Magento 2.3.1 core code.
 
 <!--- MC-1364-->
 * The **Allow Dynamic Media URLs in Products and Categories** configuration setting, which was previously accessed from **Stores** > **Configuration** > **Catalog** > **Storefront**, has been removed. The **Use Static URLs for Media Content in WYSIWYG** setting (**Stores** > **Configuration** > **General** > **Content management** > **WYSIWYG Options**) now applies to any media URLs that are entered through the WYSIWYG editor.
-
-
-
 
 ### AdminGWS
 
