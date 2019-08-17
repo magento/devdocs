@@ -57,6 +57,44 @@ By applying code before, after, or around a public method, a plugin extends or m
 
 The first argument for the before, after, and around methods is an object that provides access to all public methods of the observed method's class.
 
+### Plugin method naming convention 
+
+The best Magento practice declares to capitalize the first letter of the class method name, for which you want to create a plugin, before adding `before`, `around` or `after` prefixes to it. 
+
+For example, you want to create a plugin for `setName` method of some class: 
+
+```php
+...
+    public function setName($name)
+    {
+        ...
+    }
+...
+```
+
+In the plugin class, the `setName` method may have one of the following names:
+- `beforeSetName` 
+- `aroundSetName`
+- `afterSetName` 
+
+If the first letter in the name of the class method name, for which you want to create a plugin, is the `underscore` char then you do not need to capitalize it in the plugin class. 
+
+For example, you want to create a plugin for the `_construct` method of some class:  
+
+```php
+...
+    public function _construct()
+    {
+        ...
+    }
+...
+```
+
+Use the following method names for the `_construct` method in the plugin class: 
+- `before_construct` 
+- `around_construct`
+- `after_construct`
+
 #### Before methods
 
 Magento runs all before methods ahead of the call to an observed method. These methods must have the same name as the observed method with 'before' as the prefix.
