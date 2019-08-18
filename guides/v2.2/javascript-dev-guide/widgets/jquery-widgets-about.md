@@ -19,6 +19,7 @@ This guide discusses the following widgets:
 -   [Loader widget]
 -   [Menu widget]
 -   [Modal widget]
+-   [Multiselect widget]
 -   [Navigation widget]
 -   [PasswordStrengthIndicator widget]
 -   [PopupWindow widget]
@@ -47,6 +48,7 @@ Magento out of the box does not contain jQuery UI styles. Also, it is not recomm
 [Loader widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_loader.html
 [Menu widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_menu.html
 [Modal widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_modal.html
+[Multiselect widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget-multiselect.html
 [Navigation widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_navigation.html
 [PasswordStrengthIndicator widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_password_strength_indicator.html
 [PopupWindow widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget-popup-window.html
