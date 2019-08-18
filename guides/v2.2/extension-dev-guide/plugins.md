@@ -250,19 +250,19 @@ class MyUtilityUpdater
 
 ### Prioritizing plugins
 
-The `sortOrder` property for plugins determine when their before, after, or around methods get called when more than one plugins are observing the same method.
+The `sortOrder` property for plugins determine when their `before`, `around`, or `after` methods get called when more than one plugins are observing the same method.
 
 The prioritization rules for ordering plugins:
 
 * Before the execution of the observed method, Magento will execute plugins from lowest to greatest `sortOrder`.
 
-  * During each plugin execution, Magento executes the current plugin's before method.
-  * After the before plugin completes execution, the current plugin's around method will wrap and execute the next plugin or observed method.
+  * During each plugin execution, Magento executes the current plugin's `before` method.
+  * After the `before` plugin completes execution, the current plugin's `around` method will wrap and execute the next plugin or observed method.
 
 * Following the execution of the observed method, Magento will execute plugins from greatest to lowest `sortOrder`.
 
-  * During each plugin execution, the current plugin will first finish executing its around method.
-  * When the around method completes, the plugin executes its after method before moving on to the next plugin.
+  * During each plugin execution, the current plugin will first finish executing its `around` method.
+  * When the `around` method completes, the plugin executes its `after` method before moving on to the next plugin.
 
 **Example**
 
