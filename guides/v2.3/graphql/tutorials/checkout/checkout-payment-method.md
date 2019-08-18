@@ -129,7 +129,7 @@ mutation {
 
 **Response**
 
-If the operation is successful, the response contains the code of the selected payment method.
+If the operation is successful, the response contains the order ID.
 
 ```json
 {
@@ -142,7 +142,6 @@ If the operation is successful, the response contains the code of the selected p
   }
 }
 ```
-
 
 ## Verify this step {#verify-step}
 
