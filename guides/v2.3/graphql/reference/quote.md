@@ -25,7 +25,7 @@ The following query shows the status of a cart that is ready to be converted int
 
 ```text
 query {
-  cart(cart_id: "IeTUiU0oCXjm0uRqGCOuhQ2AuQatogjG") 
+  cart(cart_id: "IeTUiU0oCXjm0uRqGCOuhQ2AuQatogjG")
   {
     email
     billing_address {
@@ -123,7 +123,7 @@ query {
           currency
         }
       }
-  } 
+  }
 }
 ```
 
@@ -413,22 +413,42 @@ The top-level `Cart` object is listed first. All child objects are listed in alp
 
 #### Cart object
 
-The `Cart` object can contain the following attributes:
+The `Cart` object can contain the following attributes.
 
 {% include graphql/cart-object.md %}
 
-
 #### AppliedCoupon object {#AppliedCoupon}
 
-The `AppliedCoupon` object must contain the following attributes:
+The `AppliedCoupon` object must contain the following attributes.
 
 Attribute |  Data Type | Description
 --- | --- | ---
 `code` | String! | The coupon code applied to the order
 
+#### AppliedGiftCard object {#AppliedGiftCard}
+
+The `AppliedGiftCard` object can contain the following attributes.
+
+Attribute |  Data Type | Description
+--- | --- | ---
+`applied_balance` | Money | Applied balance to the current cart
+`code` | String | The gift card code applied to the order
+`current_balance` | Money | Current balance remaining on the gift card
+`expiration_date` | String | Gift card expiration date
+
+#### AppliedStoreCredit object {#AppliedStoreCredit}
+
+The `AppliedStoreCredit` object can contain the following attributes.
+
+Attribute |  Data Type | Description
+--- | --- | ---
+`applied_balance` | Money | The amount of store credit applied to the current cart
+`current_balance` | Money | The customer's store credit balance before applying store credit to the cart
+`enabled` | Boolean | Indicates whether store credits are enabled. If the feature is disabled, then the current balance will not be returned
+
 #### AvailablePaymentMethod object {#AvailablePaymentMethod}
 
-The `AvailablePaymentMethod` object must contain the following attributes:
+The `AvailablePaymentMethod` object must contain the following attributes.
 
 Attribute |  Data Type | Description
 --- | --- | ---
@@ -437,7 +457,7 @@ Attribute |  Data Type | Description
 
 #### AvailableShippingMethod object {#AvailableShippingMethod}
 
-The `AvailableShippingMethod` object can contain the following attributes:
+The `AvailableShippingMethod` object can contain the following attributes.
 
 Attribute |  Data Type | Description
 --- | --- | ---
@@ -454,11 +474,11 @@ Attribute |  Data Type | Description
 
 #### BillingCartAddress object {#BillingCartAddress}
 
-The `BillingCartAddress` object can contain the following attributes:
+The `BillingCartAddress` object can contain the following attributes.
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`city` | String | The city specified for the billing address 
+`city` | String | The city specified for the billing address
 `company` | String | The company specified for the billing address
 `country` | [CartAddressCountry](#CartAddressCountry) | The country code and label for the billing address
 `customer_notes` | String | Comments made to the customer that accompanies the order
@@ -471,7 +491,7 @@ Attribute |  Data Type | Description
 
 #### CartAddressCountry object {#CartAddressCountry}
 
-The `CartAddressCountry` object can contain the following attributes:
+The `CartAddressCountry` object can contain the following attributes.
 
 Attribute |  Data Type | Description
 --- | --- | ---
@@ -480,16 +500,26 @@ Attribute |  Data Type | Description
 
 #### CartAddressRegion object {#CartAddressRegion}
 
-The `CartAddressRegion` object can contain the following attributes:
+The `CartAddressRegion` object can contain the following attributes.
 
 Attribute |  Data Type | Description
 --- | --- | ---
 `code` | String | The state or province code
 `label` | String | The display label for the region
 
+
+#### CartDiscount object {#CartDiscount}
+
+The `CartDiscount` object must contain the following attributes.
+
+Attribute |  Data Type | Description
+--- | --- | ---
+`amount` | Money | The amount of all discounts applied to the cart
+`label` | [String!]! | A concatenated list of strings that describe each applied discount
+
 #### CartItemInterface object {#CartItemInterface}
 
-The `CartItemInterface` object can contain the following attributes:
+The `CartItemInterface` object can contain the following attributes.
 
 Attribute |  Data Type | Description
 --- | --- | ---
@@ -499,7 +529,7 @@ Attribute |  Data Type | Description
 
 #### CartItemQuantity object {#CartItemQuantity}
 
-The `CartItemQuantity` object must contain the following attributes:
+The `CartItemQuantity` object must contain the following attributes.
 
 Attribute |  Data Type | Description
 --- | --- | ---
@@ -508,11 +538,12 @@ Attribute |  Data Type | Description
 
 #### CartPrices object {#CartPrices}
 
-The `CartPrices` object can contain the following attributes:
+The `CartPrices` object can contain the following attributes.
 
 Attribute |  Data Type | Description
 --- | --- | ---
 `applied_taxes` | [[CartTaxItem]](#CartTaxItem) | An array containing the names and amounts of taxes applied to the item
+`discount` | CartDiscount | The total amount of all discounts applied to the cart
 `grand_total` | Money | The total, including discounts, taxes, shipping, and other fees
 `subtotal_excluding_tax` | Money | Subtotal without taxes
 `subtotal_including_tax` | Money | Subtotal with taxes
@@ -520,7 +551,7 @@ Attribute |  Data Type | Description
 
 #### CartTaxItem object {#CartTaxItem}
 
-The `CartTaxItem` object must contain the following attributes:
+The `CartTaxItem` object must contain the following attributes.
 
 Attribute |  Data Type | Description
 --- | --- | ---
@@ -529,17 +560,17 @@ Attribute |  Data Type | Description
 
 #### SelectedPaymentMethod object {#SelectedPaymentMethod}
 
-The `SelectedPaymentMethod` object can contain the following attributes:
+The `SelectedPaymentMethod` object can contain the following attributes.
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`code` | String! | The payment method code 
+`code` | String! | The payment method code
 `purchase_order_number` | String | The purchase order number
 `title` | String! | The payment method title
 
 #### SelectedShippingMethod object {#SelectedShippingMethod}
 
-The `SelectedShippingMethod` object can contain the following attributes:
+The `SelectedShippingMethod` object can contain the following attributes.
 
 Attribute |  Data Type | Description
 --- | --- | ---
@@ -552,13 +583,13 @@ Attribute |  Data Type | Description
 
 #### ShippingCartAddress object {#ShippingCartAddress}
 
-The `ShippingCartAddress` object can contain the following attributes:
+The `ShippingCartAddress` object can contain the following attributes.
 
 Attribute |  Data Type | Description
 --- | --- | ---
 `available_shipping_methods` | [[AvailableShippingMethod]](#AvailableShippingMethod) | An array that lists the shipping methods that can be applied to the cart
 `cart_items` | [[CartItemQuantity]](#CartItemQuantity) | An array that lists the items in the cart
-`city` | String | The city specified for the shipping address 
+`city` | String | The city specified for the shipping address
 `company` | String | The company specified for the shipping address
 `country` | [CartAddressCountry](#CartAddressCountry) | The country code and label for the shipping address
 `customer_notes` | String | Comments made to the customer that will accompany the order
@@ -570,7 +601,6 @@ Attribute |  Data Type | Description
 `selected_shipping_method` | [SelectedShippingMethod](#SelectedShippingMethod) | An object that describes the selected shipping method
 `street` | [String] | The street for the shipping address
 `telephone` | String | The telephone number for the shipping address
-
 
 ## Mutations
 

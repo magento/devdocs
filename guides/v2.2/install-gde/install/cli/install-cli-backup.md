@@ -43,7 +43,9 @@ Magento backup functionality is deprecated as of 2.1.16, 2.2.7, and 2.3.0. We re
 
 Command usage:
 
-	magento setup:backup [--code] [--media] [--db]
+```bash
+bin/magento setup:backup [--code] [--media] [--db]
+```
 
 The command performs the following tasks:
 
@@ -61,20 +63,24 @@ The command performs the following tasks:
 
 For example, to back up the file system and database,
 
-	magento setup:backup --code --db
+```bash
+bin/magento setup:backup --code --db
+```
 
 Messages similar to the following display:
 
-	Enabling maintenance mode
-	Code backup is starting...
-	Code backup filename: 1434133011_filesystem.tgz (The archive can be uncompressed with 7-Zip on Windows systems)
-	Code backup path: /var/www/html/magento2/var/backups/1434133011_filesystem.tgz
-	[SUCCESS]: Code backup completed successfully.
-	DB backup is starting...
-	DB backup filename: 1434133011_db.sql
-	DB backup path: /var/www/html/magento2/var/backups/1434133011_db.sql
-	[SUCCESS]: DB backup completed successfully.
-	Disabling maintenance mode
+```terminal
+Enabling maintenance mode
+Code backup is starting...
+Code backup filename: 1434133011_filesystem.tgz (The archive can be uncompressed with 7-Zip on Windows systems)
+Code backup path: /var/www/html/magento2/var/backups/1434133011_filesystem.tgz
+[SUCCESS]: Code backup completed successfully.
+DB backup is starting...
+DB backup filename: 1434133011_db.sql
+DB backup path: /var/www/html/magento2/var/backups/1434133011_db.sql
+[SUCCESS]: DB backup completed successfully.
+Disabling maintenance mode
+```
 
 ## Roll back {#instgde-cli-uninst-roll}
 
@@ -82,23 +88,31 @@ This section discusses how to roll back to a backup you made previously. You mus
 
 To find the name of your backups, enter:
 
-	magento info:backups:list
+```bash
+bin/magento info:backups:list
+```
 
 The first string in the backup file name is the timestamp.
 
 To roll back to a previous backup, enter:
 
-	magento setup:rollback [-c|--code-file="<name>"] [-m|--media-file="<name>"] [-d|--db-file="<name>"]
+```bash
+bin/magento setup:rollback [-c|--code-file="<name>"] [-m|--media-file="<name>"] [-d|--db-file="<name>"]
+```
 
 For example, to restore a media backup named `1440611839_filesystem_media.tgz`, enter
 
-	magento setup:rollback -m 1440611839_filesystem_media.tgz
+```bash
+bin/magento setup:rollback -m 1440611839_filesystem_media.tgz
+```
 
 Messages similar to the following display:
 
-	[SUCCESS]: Media rollback completed successfully.
-	Please set file permission of bin/magento to executable
-	Disabling maintenance mode
+```terminal
+[SUCCESS]: Media rollback completed successfully.
+Please set file permission of bin/magento to executable
+Disabling maintenance mode
+```
 
-{:.bs-callout .bs-callout-info}
+{: .bs-callout-info }
 If the command results in a `Segmentation fault` message, see [Segmentation fault during rollback]({{ page.baseurl }}/install-gde/trouble/tshoot_segfault.html).
