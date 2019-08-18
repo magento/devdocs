@@ -79,6 +79,9 @@ pages:
         - label: Modal widget
           url: /javascript-dev-guide/widgets/widget_modal.html
 
+        - label: Multiselect widget
+          url: /javascript-dev-guide/widgets/widget-multiselect.html
+
         - label: Navigation widget
           url: /javascript-dev-guide/widgets/widget_navigation.html
 
