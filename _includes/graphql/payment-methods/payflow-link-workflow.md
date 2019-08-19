@@ -10,7 +10,7 @@
 
 1. The `placeOrder` mutation returns an order ID. Magento does not return secure token information. The order has the status `payment pending`.
 
-1. The client runs the [`getPayflowLinkToken`]({{page.baseurl}}/graphql/reference/paypal-get-payflow-link-token.html) mutation to retrieve the secure token information.
+1. The client runs the [`getPayflowLinkToken`]({{page.baseurl}}/graphql/queries/get-payflow-link-token.html) mutation to retrieve the secure token information.
 
 1. Magento returns the token information.
 

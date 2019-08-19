@@ -47,6 +47,10 @@ pages:
 
     - label: Queries
       children:
+
+        - label: checkoutAgreements query
+          url: /graphql/queries/checkout-agreements.html
+
         - label: cmsBlock query
           url: /graphql/queries/cms-block.html
 
@@ -62,6 +66,9 @@ pages:
         - label: currency query
           url: /graphql/queries/directory-currency.html
 
+        - label: customAttributeMetadata query
+          url: /graphql/queries/custom-attribute-metadata.html
+
         - label: customerOrders query
           url: /graphql/queries/customer-orders.html
 
@@ -70,6 +77,9 @@ pages:
 
         - label: getHostedProUrl query
           url: /graphql/queries/get-hosted-pro-url.html
+
+        - label: getPayflowLinkToken query
+          url: /graphql/queries/get-payflow-link-token.html
 
         - label: storeConfig query
           url: /graphql/queries/store-config.html
@@ -85,28 +95,28 @@ pages:
         - label: applyStoreCreditToCart mutation
           url: /graphql/mutations/apply-store-credit.html
 
+        - label: createPayflowProToken mutation
+          url: /graphql/mutations/create-payflow-pro-token.html
+
         - label: deletePaymentToken mutation
           url: /graphql/mutations/delete-payment-token.html
 
+        - label: handlePayflowProResponse mutation
+          url: /graphql/mutations/handle-payflow-pro-response.html
+
+        - label: redeemGiftCardBalanceAsStoreCredit mutation
+          url: /graphql/mutations/redeem-giftcard-balance.html
+
+        - label: removeGiftCardFromCart mutation
+          url: /graphql/mutations/remove-giftcard.html
+
         - label: removeStoreCreditFromCart mutation
           url: /graphql/mutations/remove-store-credit.html
-    
+
     - label: Reference
       children:
-            - label: CustomAttributeMetadata endpoint
-              url: /graphql/reference/custom-attribute-metadata.html
-
             - label: Customer endpoint
               url: /graphql/reference/customer.html
-
-            - label: Payflow Link getPayflowLinkToken query
-              url: /graphql/reference/paypal-get-payflow-link-token.html
-
-            - label: Payflow Pro createPayflowProToken mutation
-              url: /graphql/reference/paypal-create-payflow-pro-token.html
-
-            - label: Payflow Pro handlePayflowProResponse mutation
-              url: /graphql/reference/paypal-handle-payflow-pro-response.html
 
             - label: Products endpoint
               url: /graphql/reference/products.html
@@ -163,9 +173,6 @@ pages:
                 - label: removeCouponFromCart mutation
                   url: /graphql/reference/quote-remove-coupon.html
 
-                - label: removeGiftCardFromCart mutation
-                  url: /graphql/reference/quote-remove-giftcard.html
-
                 - label: removeItemFromCart mutation
                   url: /graphql/reference/quote-remove-item.html
 
@@ -189,9 +196,6 @@ pages:
 
                 - label: updateCartItems mutation
                   url: /graphql/reference/quote-update-cart-items.html
-
-            - label: redeemGiftCardBalanceAsStoreCredit mutation
-              url: /graphql/reference/redeem-giftcard-balance.html
 
     - label: Payment methods
       children:
