@@ -8,7 +8,7 @@ Our goal is to provide the Magento community with comprehensive and quality tech
 
 ![](https://raw.githubusercontent.com/wiki/magento/magento2/images/dev_docs_contributors.png)
 
-# Building this site
+## Building this site
 
 You can build this site locally in the following ways:
 
