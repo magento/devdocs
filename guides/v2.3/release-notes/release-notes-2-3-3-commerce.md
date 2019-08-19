@@ -5,14 +5,13 @@ title: Magento Commerce 2.3.3 Release Notes
 
 *Patch code and release notes published on October 8, 2019*
 
-We are pleased to present Magento Commerce 2.3.3.  This release includes over  functional fixes to the core product, over  pull requests contributed by the community, and  over 75 security enhancements. It includes  contributions from our community members. These contributions range from minor clean-up of core code to significant enhancements to Inventory Management and GraphQL.
+Magento Commerce 2.3.3 offers significant platform upgrades, substantial security changes, and PSD2-compliant core payment methods.
+
+It includes over 170 functional fixes to the core product and  over 75 security enhancements. It includes over 200 contributions from our community members. These contributions range from minor clean-up of core code to significant enhancements to Inventory Management and GraphQL.
 
 ## Other release information
 
 Although code for these features is bundled with quarterly releases of the Magento core code, several of these projects (for example, Page Builder, Inventory Management, and Progressive Web Applications (PWA) Studio) are also released independently. Bug fixes for these projects are documented in separate, project-specific release information which is available in the documentation for each project.
-
-
-
 
 ## Highlights
 
@@ -20,27 +19,62 @@ Look for the following highlights in this release:
 
 ### Substantial security enhancements
 
-This release includes extensive security enhancements:
+This release includes extensive security enhancements, including
 
+* PSD2 compliance to core payment methods  
+* Fixes for 75 critical security issues. 
+* Significant platform-security enhancements that boost XSS (cross-site scripting) protection against future exploits. This effort is the culmination of a 
 
-#### Core payment methods integrations are compliant with PSD2 regulation
+#### Core payment methods integrations are now compliant with PSD2 regulation
 
 The European Union revised a regulation called Payment Services Directive (PSD) with an updated version PSD2. This regulation goes into effect on September 14, 2019, and has a significant impact on most payment processing involving credit cards or bank transfers.  See the Magento Forum DevBlog post [3D Secure 2.0 changes](https://community.magento.com/t5/Magento-DevBlog/3D-Secure-2-0-changes/ba-p/136460) for more information on Magento Payment Provider Recommendations and a wealth of links to PSD2 regulation discussions.
+
+This release contains the following major PSD-related changes:
 
  * The **Braintree payment method now complies with  PSD2 regulations**. Its core integration API has been upgraded to the latest JavaScript SDK v3 API, a requirement for supporting native Braintree 3D Secure 2.0 adoption. Braintree transactions are now also verified by using the native Braintree 3D Secure 2.0 service. 
 
 * Authorize.net now provides the ability, through the `chardholderAuthentication` request field, to make 3D Secure verification through third-party services such as CardinalCommerce. Starting from this release, **Authorize.net Accept.js integration will support 3DS 2.0 through CardinalCommerce**. 
 
+<!--- MAGEDTWO-99739 -->
+* The Cybersource and eWay payment modules have been deprecated in this release to comply with PSD2 SCA regulation, which takes effect on September 14, 2019.  Use the official Marketplace extensions for these features instead.
 
 #### Security enhancements and fixes to core code
 
-* **75 security enhancements** that help close cross-site scripting (XSS), remote code execution (RCE), and sensitive data disclosure vulnerabilities as well as other security issues. No confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. See [Magento Security Center](https://magento.com/security/patches/magento-2.3.3-2.2.10-security-update) for a comprehensive discussion of these issues. All known exploitable security issues fixed in this release (2.3.2) have been ported to 2.2.10, 1.14.4.3, and 1.9.4.3, as appropriate.
+* **75 security enhancements** that help close cross-site scripting (XSS) and remote code execution (RCE) vulnerabilities as well as other security issues. No confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. See [Magento Security Center](https://magento.com/security/patches/magento-2.3.3-2.2.10-security-update) for a comprehensive discussion of these issues. All known exploitable security issues fixed in this release (2.3.2) have been ported to 2.2.10, 1.14.4.3, and 1.9.4.3, as appropriate.
 
 
 {:.bs-callout .bs-callout-note}
 Starting with the release of Magento Commerce 2.3.2, Magento will  assign and publish indexed Common Vulnerabilities and Exposures (CVE) numbers with each security bug reported to us by external parties. This  will allows users of Magento Commerce to more easily identify unaddressed vulnerabilities in their deployment.
 
+### Platform upgrades
+
+The following upgrades to core platform components boost platform security and support PCI compliance:
+
+<!--- MC-14862-->
+* Magento 2.3.3 now supports PHP 7.3.8 and 7.2.21.
+
+<!--- MC-14863-->
+* Varnish cache has been upgraded to 6.2.0.
+  
+<!--- MC-14912-->
+* Zend Framework 2 Components upgraded to the Active/LTS versions. See [Support and Long Term Support Policies](https://framework.zend.com/long-term-support) for a discussion of Zend Framework long-term support policy.
+
 ### Performance boosts
+
+<!--- MC-4244-->
+* Merchants now have the ability to turn off the automatic URL rewrite generation that occurs by default on products when the category they belong to is saved. The new **Generate "category/product" URL Rewrites**  configuration option controls this behavior. When this feature is enabled, Magento will generate a lot of data when saving a category that contains many assigned products. This generated data is saved into rewrite tables that can degrade Magento performance. See xxx for more 
+ormation on using this new configuration option. 
+
+
+<!--- MC-15763-->
+* Page load speeds have been improved by moving non-critical CSS elements to the bottom of the page.  This enables the browser to render and display a storefront page earlier. 
+
+
+<!--- MC-16887-->
+* The `jQuery/ui` library has been refactored into separate widgets so that core modules load only the widgets they need. As a result, you can experience improvement  in core storefront tasks including the loading of category, configurable product, home, and checkout pages.
+
+<!--- MC-16046-->
+* Store pages now display text in readable system fonts while loading system fonts, which significantly increases page load speed.  Merchants who deploy stores that implement  large CSS files and many fonts will notice the greater improvement. 
 
 
 
@@ -48,9 +82,14 @@ Starting with the release of Magento Commerce 2.3.2, Magento will  assign and pu
 
 This release contains  enhancements to core quality, which improve the quality of the Framework and these modules: `Catalog`, `Sales`, `Checkout/One Page Checkout`,  `UrlRewrite`, `Customer/Customers`, and `UI`. Here are some additional core enhancements:
 
+* The WYSIWYG editor has been upgraded to TinyMCE v. 4.9.5​.
+
 
 ### Merchant tool enhancements
 
+
+<!--- MC-15298-->
+* Administrators can now opt out of analytics tracking on the Admin. See User Guide for more information.
 
 
 ### Inventory Management enhancements
@@ -70,12 +109,13 @@ Expanded GraphQL functionality and improved coverage for PayPal payment integrat
 
 See [Release notes](https://devdocs.magento.com/guides/v2.3/graphql/release-notes.html) for a more detailed discussion of recent GraphQL bug fixes.
 
+### Google Shopping ads Channel 
 
-
+The Google Shopping ads Channel Marketplace extension is now available as a bundled extension.
 
 ### Vendor-developed extension enhancements
 
-This release of Magento includes extensions developed by third-party vendors.
+This release of Magento includes extensions developed by third-party vendors. It introduces a new vendor-supplied extension -- Yotpot. 
 
 #### Amazon Pay
 
@@ -679,6 +719,10 @@ We have fixed hundreds of issues in the Magento 2.3.3 core code.
 
 ### Frameworks
 
+<!--- MC-14912-->
+* Zend Framework 2 Components upgraded to the Active/LTS versions. See [Support and Long Term Support Policies](https://framework.zend.com/long-term-support) for a discussion of Zend Framework long-term support policy.
+
+
 <!--- MAGETWO-99888-->
 * The `equalArrays` function in `lib/web/mage/utils/compare.js` has been refactored to remove quadratic complexity. Previously, this feature  significantly retarded  Admin operations that were performed  on large number of products  (for example, adding a product to category by SKU).
 
@@ -913,6 +957,9 @@ The following changes to core payment methods integrations support compliance wi
 <!--- MAGEDTWO-99736 -->
 * Authorize.Net now provides the ability (through the `chardholderAuthentication` request field) to make 3D Secure verification through third-party services such as CardinalCommerce. Starting from this release, Authorize.Net `accept.js` integration will support 3DS 2.0 through CardinalCommerce. 
 
+<!--- MAGEDTWO-99739 -->
+* The Cybersource and eWay payment modules have been deprecated in this release to comply with PSD2 SCA regulation, which takes effect on September 14, 2019.  Use the official Marketplace extensions for these features instead.
+
 
 #### Other payment issues
 
@@ -990,8 +1037,11 @@ The following changes to core payment methods integrations support compliance wi
 <!--- MC-16887-->
 * The `jQuery/ui` library has been refactored into separate widgets so that core modules load only the widgets they need. As a result, you can experience improvement  in core storefront tasks including the loading of category, configurable product, home, and checkout pages.
 
-<!--- MC-4244-->
-* Merchants now have the ability to turn off the automatic URL rewrite generation that occurs by default on products when the category they belong to is saved. The new **Generate "category/product" URL Rewrites** configuration option controls this behavior. When this feature is enabled, Magento will generate an abundance of data when saving a category that contains many assigned products. This generated data is saved into rewrite tables that can degrade Magento performance. See xxx for more information on using this new configuration option. 
+
+<!--- MC-16046-->
+* Store pages now display text in readable system fonts while loading system fonts, which significantly increases page load speed.  Merchants who deploy stores that implement  large CSS files and many fonts will notice the greater improvement. 
+
+
 
 
 ### Pricing
