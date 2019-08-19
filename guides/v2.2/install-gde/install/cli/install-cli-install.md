@@ -132,7 +132,7 @@ To enable or disable modules after installing Magento, see [Enable and disable m
 
 {% include install/sens-data.md %}
 
-###  Sample localhost installations {#install-cli-example}
+### Sample localhost installations {#install-cli-example}
 
 The following examples show the commands to complete install {{ site.data.var.ee }} locally with various options.
 

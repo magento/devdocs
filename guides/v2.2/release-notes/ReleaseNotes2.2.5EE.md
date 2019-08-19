@@ -255,7 +255,7 @@ The following Dotmailer behaviors have been observed when Magento Commerce for B
 
 <!-- BUNDLE--1448 -->*  A merchant can create multiple return shipments for an already shipped return.
 
-###  Vertex known issues
+### Vertex known issues
 
 <!-- BUNDLE--1446 -->* The order amount on Vertex Cloud differs from the order information displayed by Magento  when Catalog Price Rule is applied.
 

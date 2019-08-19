@@ -804,7 +804,7 @@ Previously, when you reopened these categories, no checkboxes were checked.  *Fi
 
 <!-- MAGETWO-91403 -->* WYSIWYG editor functionality is now available in all rows of the dynamic rows UI component. Previously, this functionality was available in the first row only.
 
-###  URL rewrite
+### URL rewrite
 
 <!-- MAGETWO-86419 -->* Product URLs are now based on the configuration information from the Admin, not the order of records in the database. Previously, the order of records in the database affected the generated URL, and some products showed category paths for product URLS when **Use Categories Path for Product URLs** was set to **no**.
 

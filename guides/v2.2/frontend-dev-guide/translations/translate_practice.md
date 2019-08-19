@@ -48,7 +48,7 @@ For example:
 
 ![Product page where the customized Compare string is displayed]
 
-##  Additional information
+## Additional information
 
 -   [Translations overview]
 -   [Translation dictionaries and language packages]

@@ -37,7 +37,7 @@ Attribute | Data type | Description
 `title` | String | The name that appears in the breadcrumb trail navigation and in the browser title bar and tab
 `url_key` |String | The URL key of the CMS page, which is often based on the `content_heading`
 
-###  CmsBlocks output attributes
+### CmsBlocks output attributes
 
 The `CmsBlocks` object contains an array of `items`, each of which can contain the following attributes:
 

@@ -510,7 +510,7 @@ You need to read configuration from different sources (like database or filesyst
 
 6.2.5 Blocks MUST NOT assume that a specific, or any, controller has been invoked for current request.
 
-###  6.3. Data Access (Persistence) layer
+### 6.3. Data Access (Persistence) layer
 
 6.3.1. Entities MAY have fields scoped differently (in product, EAV --- per store, options --- per website).
 

@@ -719,7 +719,7 @@ In addition to security enhancements, this release contains the following functi
 <!-- ENGCOM-4516 -->
 * Magento now properly renders double hyphens (--)  in attribute tags. Previously, Magento replaced the double hyphen (—-)  in classes with a single hyphen (-), which caused classes that contained the -- to be rewritten.  *Fix submitted by Amol Chaudhari in pull request [21804](https://github.com/magento/magento2/pull/21804)*. [GitHub-10645](https://github.com/magento/magento2/issues/10645)
 
-###  URL rewrite
+### URL rewrite
 
 <!-- ENGCOM-4621 -->
 * Magento now retains filter terms after you've applied a filter to the Admin `url_rewrites` table, then click the back button. *Fix submitted by Amol Chaudhari in pull request [21805](https://github.com/magento/magento2/pull/21805)*. [GitHub-21805](https://github.com/magento/magento2/issues/21805)
