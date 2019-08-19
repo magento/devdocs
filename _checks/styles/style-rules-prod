@@ -1,6 +1,6 @@
 exclude_rule 'MD001'
 exclude_rule 'MD002'
-exclude_rule 'MD003'
+rule 'MD003', :style => :atx
 exclude_rule 'MD004'
 exclude_rule 'MD005'
 exclude_rule 'MD006'

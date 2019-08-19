@@ -6,7 +6,7 @@ functional_areas:
   - Theme
 ---
 
-## What's in this topic ##
+## What's in this topic
 
 The properties of product images used on the [storefront](https://glossary.magento.com/storefront) are stored in the `view.xml` configuration file. This topic provides all details about what properties are available and how to configure them.
 

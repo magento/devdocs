@@ -126,7 +126,8 @@ var config = {
 };
 ```
 
-## Recommended reading ##
+## Recommended reading
+
 [Use custom JavaScript]
 
 
