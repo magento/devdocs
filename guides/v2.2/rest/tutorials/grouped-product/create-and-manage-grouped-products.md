@@ -212,9 +212,6 @@ You also can use the `DELETE` endpoint to delete a simple product from the group
 
   ![New grouped product]({{ page.baseurl }}/rest/images/new-grouped-product.png)
 
-## Congratulations! You've finished.
-{:.no_toc}
-
 ## Add a grouped product to a cart
 
 Customers can now add this grouped products to their carts, as shown below.
