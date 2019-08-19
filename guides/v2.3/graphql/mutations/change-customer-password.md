@@ -53,7 +53,7 @@ Attribute |  Data Type | Description
 
 ## Output attributes
 
-The `changeCustomerPassword` object returns the `customer` object.
+The `changeCustomerPassword` mutation returns the `customer` object.
 
 Attribute |  Data Type | Description
 --- | --- | ---
