@@ -1,13 +1,13 @@
 ---
 layout: tutorial
 group: graphql
-title: Step 8. Apply a coupon
+title: Step 7. Apply a coupon
 subtitle: GraphQL checkout tutorial
 level3_subgroup: graphql-checkout
 return_to:
   title: GraphQL Overview
   url: graphql/index.html
-menu_order: 80
+menu_order: 70
 functional_areas:
   - Integration
 contributor_name: Atwix
