@@ -113,7 +113,7 @@ These example instructions detail how to install and create a MariaDB database f
 		use magento;
 6. Exit when done.
 
-### Pro: Set up the auto-increment for MariaDB {#cloud-mysql}
+### Pro: Set up the auto-increment for MariaDB
 
 You need to set an auto-increment value for the MariaDB installation.
 

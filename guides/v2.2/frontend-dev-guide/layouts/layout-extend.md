@@ -34,7 +34,7 @@ To add an extending [page layout]({{ page.baseurl }}/frontend-dev-guide/layouts/
          |--<layout2>.xml
     ```
 
-## Processing extending layouts {#fedg_layout_extend_merge}
+## Processing extending layouts
 
 Magento merges layout files as follows:
 
