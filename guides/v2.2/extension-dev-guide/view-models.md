@@ -64,5 +64,3 @@ $viewModel = $block->getViewModel();
 ## Examples of ViewModels in Magento
 - [Magento_Catalog]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/view/frontend/layout/catalog_product_view.xml#L34){:target="_blank"}
 This viewModel is used to inject breadcrumb json with html escaped names into the template file.
-
-https://github.com/magento/magento2/blob/0a1a283cd6a0cf4b98a051867f90150c9490fcec/app/code/Magento/Catalog/view/frontend/layout/catalog_product_view.xml#L34
