@@ -55,7 +55,7 @@ Attribute |  Data Type | Description
 
 ## Output attributes
 
-The `updateCustomerAddress` object contains the `CustomerAddress` object.
+The `updateCustomerAddress` mutation returns the `CustomerAddress` object.
 
 Attribute |  Data Type | Description
 --- | --- | ---

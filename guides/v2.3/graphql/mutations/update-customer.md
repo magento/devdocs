@@ -56,7 +56,7 @@ The following table lists the attributes you can use as input for the `updateCus
 
 ## Output attributes
 
-The `updateCustomer` object contains the `CustomerOutput` object.
+The `updateCustomer` mutation returns the `CustomerOutput` object.
 
 Attribute |  Data Type | Description
 --- | --- | ---
