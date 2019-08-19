@@ -12,7 +12,7 @@ entries:
   type: New topic
   date: August 19, 2019
   link: https://github.com/magento/devdocs/pull/5155`1  
-- description: Update the [Set up multiple website or stores](https://devdocs.magento.com/guides/v2.3/cloud/project/project-multi-sites.html)
+- description: Updated the [Set up multiple website or stores](https://devdocs.magento.com/guides/v2.3/cloud/project/project-multi-sites.html)
     topic in the Cloud guide. Now, this topic differentiates between sites with a
     shared domain and sites with unique domains.
   versions: 2.x
@@ -45,7 +45,7 @@ entries:
   type: Major update
   date: August 13, 2019
   link: https://github.com/magento/devdocs/pull/5161
-- description: Added the [TrimInput widget](https://devdocs.magento.com//guides/v2.3/javascript-dev-guide/widgets/widget_trim-input.html)
+- description: Added documentation for the [TrimInput widget](https://devdocs.magento.com//guides/v2.3/javascript-dev-guide/widgets/widget_trim-input.html)
     topic.
   versions: 2.2.x, 2.3.x
   type: New topic
