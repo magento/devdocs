@@ -20,7 +20,7 @@ As a managed service, the Magento WAF provides the following benefits:
 Both the {{ site.data.var.ece }} Pro and Starter subscriptions include the Managed Cloud WAF at no additional cost. The WAF service is available only on Production environments.
 
 {:.bs-callout .bs-callout-tip}
-For additional information about maintaining PCI compliance for your {{ site.var.data.ece }} stores, see [Magento's Approach to PCI compliance ](https://magento.com/pci-compliance?_ga=2.43680032.406717297.1541547390-1020097258.1507670992).
+For additional information about maintaining PCI compliance for your {{ site.var.data.ece }} stores, see [Magento Approach to PCI compliance](https://magento.com/pci-compliance).
 
 ### Enabling the WAF
 

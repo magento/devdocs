@@ -166,7 +166,7 @@ export FASTLY_VERSION_ACTIVE=<Version>
 
 #### Step 2: Clone the active VCL version and all snippets {#clone}
 
-Before you can add or modify custom VCL snippets, you must create a copy of the active VCL version for editing. Use the Fastly API [clone ](https://docs.fastly.com/api/config#version_7f4937d0663a27fbb765820d4c76c709) operation:
+Before you can add or modify custom VCL snippets, you must create a copy of the active VCL version for editing. Use the Fastly API [clone](https://docs.fastly.com/api/config#version_7f4937d0663a27fbb765820d4c76c709) operation:
 
 ```bash
 curl -H "Fastly-Key: $FASTLY_API_TOKEN" https://api.fastly.com/service/$FASTLY_SERVICE_ID/version/$FASTLY_VERSION_ACTIVE/clone -X PUT

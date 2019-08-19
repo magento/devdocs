@@ -124,4 +124,4 @@ We review the infrastructure and settings, create user and environment variables
 
 ## Move your environment variables
 
-Optionally, after a successful conversion you can migrate specific environment variables into the Project Web Interface for Staging and Production. This is not required, but supported. See [Magento Help Center ](https://magento.zendesk.com/hc/en-us/articles/115002998873-Add-Staging-and-Production-to-Magento-Commerce-Cloud-Pro-projects-UI).
+Optionally, after a successful conversion you can migrate specific environment variables into the Project Web Interface for Staging and Production. This is not required, but supported. See [Magento Help Center](https://magento.zendesk.com/hc/en-us/articles/115002998873-Add-Staging-and-Production-to-Magento-Commerce-Cloud-Pro-projects-UI).
