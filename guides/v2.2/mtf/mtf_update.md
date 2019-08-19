@@ -3,6 +3,10 @@ group: functional-testing-framework-guide
 title: Update the Functional Testing Framework
 ---
 
+{: .bs-callout-info}
+The Magento Testing Framework (MTF) is superseded by the Magento Functional Testing Framework ([MFTF][]).
+While the MTF is still functional, all MTF tests are being ported over to the MFTF. We recommend using the MFTF for testing.
+
 Two types of updates are available.
 
 -     [Install a new version of the Functional Testing Framework](#mtf_update_install)
@@ -38,3 +42,5 @@ cd <magento2_root_dir>/dev/tests/functional/
 ```bash
 composer update
 ```
+
+[MFTF]: https://devdocs.magento.com/mftf/docs/introduction.html

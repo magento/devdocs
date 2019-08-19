@@ -140,5 +140,5 @@ Follow these steps to help you identify which JavaScript files to bundle for you
 1. Use the results of that comparison to build your exclude list.
 
 [production-mode]:{{ page.baseurl }}/config-guide/bootstrap/magento-modes.html#production-mode
-[Advanced-JavaScript-Bundling]:https://devdocs.magento.com/guides/v2.3/performance-best-practices/advanced-js-bundling.html
+[Advanced-JavaScript-Bundling]:{{ page.baseurl }}/performance-best-practices/advanced-js-bundling.html
 [luma-view-xml]:{{ site.mage2bloburl }}/{{ page.guide_version }}/app/design/frontend/Magento/luma/etc/view.xml#L270

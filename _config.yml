@@ -15,7 +15,7 @@ theme: devdocs
 # Base url that forms 
 baseurl: ""
 
-# Parameters for the version switcher. Numeric values must be wraped in quotes.
+# Parameters for the version switcher. Numeric values must be wrapped in quotes.
 #
 version: "2.3"
 versions:
@@ -43,9 +43,9 @@ defaults:
       layout: default
       github_repo: https://github.com/magento/devdocs/
       github_files: https://github.com/magento/devdocs/blob/master/
-      # Enables the 'Edit this page on GitHub' appearences on pages
+      # Enables the 'Edit this page on GitHub' appearances on pages
       github_link: true
-      # Enables the 'Give us feedback' appearences on pages
+      # Enables the 'Give us feedback' appearances on pages
       feedback_link: true
   -
     scope:
@@ -57,6 +57,8 @@ defaults:
       type: videos
     values:
       layout: video
+      github_link: false
+      feedback_link: false
 
   - 
     scope:
@@ -188,7 +190,7 @@ mage2bloburl: https://github.com/magento/magento2/blob
 
 # 1.x variables
 m1xgdeurl: /guides/m1x
-m1xgithuburl: https://github.com/magento/devdocs/blob/master
+m1xgithuburl: https://github.com/magento/devdocs-m1/tree/master
 
 # 2.2 variables
 gdeurl22: /guides/v2.2/
@@ -210,7 +212,7 @@ exclude:
   - bin
   - node_modules
   - vendor
-  - .git
+  - .github
   - .idea
   - Gemfile
   - Gemfile.lock
@@ -220,3 +222,10 @@ exclude:
   - rakelib
   - README.md
   - _plugins
+  - tmp
+  - lib
+  - rakelib
+  - scripts
+  - redirects.json
+  - Docfile.yml
+

@@ -73,7 +73,6 @@ class Some\EntityTest extends \PHPUnit\Framework\TestCase
 ## Test declaration
 
 To isolate changes made to database by a single test, enable the `@magentoDbIsolation` for the test.
-An example of a test from the [`dev/tests/integration/testsuite/Magento/Tax/Model/TaxClass/RepositoryTest.php`][RepositoryTest.php]:
 
 ```php?start_inline=1
 /**
@@ -88,7 +87,3 @@ public function testSave()
     $this->assertEquals(self::SAMPLE_TAX_CLASS_NAME, $this->taxClassModel->load($taxClassId)->getClassName());
 }
 ```
-
-<!-- Link definitions -->
-
-[RepositoryTest.php]: {{ site.mage2bloburl }}/{{ page.guide_version }}/tests/integration/testsuite/Magento/Tax/Model/TaxClass/RepositoryTest.php

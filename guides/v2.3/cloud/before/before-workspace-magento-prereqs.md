@@ -2,8 +2,8 @@
 group: cloud-guide
 title: Install Magento prerequisites
 redirect_from:
-  - /guides/v2.2/cloud/before/before-workspace-php.html
-  - /guides/v2.2/cloud/before/before-workspace-cli.html
+  - /guides/v2.3/cloud/before/before-workspace-php.html
+  - /guides/v2.3/cloud/before/before-workspace-cli.html
 functional_areas:
   - Cloud
   - Setup
@@ -46,7 +46,7 @@ We strongly recommend installing [Nginx]({{ page.baseurl }}/install-gde/prereq/n
 
 ## PHP (local) {#php}
 
-Install [PHP](https://glossary.magento.com/php) on your local. We recommend PHP 7.1.3+ or 7.2. For information on installing PHP on CentOS and Ubuntu see [PHP](../../../v2.3/install-gde/prereq/php-centos-ubuntu.html). For instructions for another OS, see the [PHP documentation](http://php.net/manual/en/install.php).
+Install [PHP](https://glossary.magento.com/php) on your local. For information on installing PHP see [PHP Settings]({{ page.baseurl }}/install-gde/prereq/php-settings.html). For instructions for another OS, see the [PHP documentation](http://php.net/manual/en/install.php).
 
 The following packages may also be helpful for your PHP installation:
 
@@ -113,7 +113,7 @@ These example instructions detail how to install and create a MariaDB database f
 		use magento;
 6. Exit when done.
 
-### Pro: Set up the auto-increment for MariaDB {#cloud-mysql}
+### Pro: Set up the auto-increment for MariaDB
 
 You need to set an auto-increment value for the MariaDB installation.
 

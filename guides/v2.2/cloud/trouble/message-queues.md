@@ -15,4 +15,4 @@ Message queue consumers fail to restart after you deploy code to an environment.
 
 ## Solution
 
-Use the [`CRON_CONSUMERS_RUNNER` environment variable](https://devdocs.magento.com/guides/v2.2/cloud/env/variables-deploy.html#cron_consumers_runner) to ensure that consumers are retrieving messages from the message queue.
+Use the [`CRON_CONSUMERS_RUNNER` environment variable]({{ page.baseurl }}/cloud/env/variables-deploy.html#cron_consumers_runner) to ensure that consumers are retrieving messages from the message queue.

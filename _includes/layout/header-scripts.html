@@ -4,8 +4,37 @@
     id : "{{ site.algolia.application_id}}",
     index:  "{{ site.algolia.index_name}}",
     key:  "{{ site.algolia.api_key}}",
-    facetFilters: [["guide_version: {% if page.guide_version == nil %}{{ site.version }}{% else %}{{ page.guide_version }}{% endif %}", "versionless: true"]]
   };
+
+  var indices = [
+    {
+      label: "DevDocs",
+      name: "devdocs",
+      facetFilters: [["guide_version: {% if page.guide_version == nil %}{{ site.version }}{% else %}{{ page.guide_version }}{% endif %}", "versionless: true"]],
+      refinements: [
+        {
+          label: "Functional areas",
+          attribute: "functional_areas"
+        }
+      ],
+      baseUrl: "https://devdocs.magento.com"
+    },
+    {
+      label: "User Guide",
+      name: "merchdocs_ee",
+      baseUrl: "https://docs.magento.com/m2/ee/user_guide"
+    },
+    {
+      label: "PWA",
+      name: "pwa-devdocs",
+      baseUrl: "https://magento.github.io/pwa-studio"
+    },
+    {
+      label: "Order Management",
+      name: "oms-en",
+      baseUrl: "https://omsdocs.magento.com"
+    }
+  ];
 </script>
 
 {% if site.environment == "public" %}

@@ -17,33 +17,10 @@ Each Magento service interface that is part of a [service contract](https://glos
 
 To consume several services, you must specify them in the WSDL endpoint [URL](https://glossary.magento.com/url).
 
-
-<table style="width:100%">
-   <colgroup>
-      <col width="20%" />
-      <col width="40%" />
-      <col width="40%" />
-   </colgroup>
-   <thead>
-      <tr>
-         <th>Service</th>
-         <th>WSDL endpoint URL</th>
-         <th>Available services</th>
-      </tr>
-   </thead>
-   <tbody>
-      <tr>
-         <td>customer</td>
-         <td>http://magentohost/soap?wsdl&services=customerV1</td>
-         <td>\Magento\Customer\Service\V1\CustomerService</td>
-      </tr>
-       <tr>
-         <td>customer, catalogProduct</td>
-         <td>http://magentohost/soap/custom_store?wsdl&services=customerCustomerAccountServiceV1,catalogProductV2</td>
-         <td>\Magento\Customer\Service\V1\CustomerAccountServiceInterface, \Magento\Catalog\Service\V2\ProductInterface</td>
-      </tr>
-   </tbody>
-</table>
+| Service | WSDL endpoint URL | Available services |
+| --------- | ---------- | ------------------------------------------ |
+| customer | http://magentohost/soap?wsdl&services=customerCustomerRepositoryV1 | \Magento\Customer\Api\Data\CustomerInterface |
+| customer, catalogProduct | http://magentohost/soap/custom_store?wsdl&services=customerCustomerRepositoryV1,catalogProductRepositoryV1 | \Magento\Customer\Api\Data\CustomerInterface, \Magento\Catalog\Api\Data\ProductInterface |
 
 The WSDL URL follows the following pattern:
 
@@ -52,6 +29,27 @@ The WSDL URL follows the following pattern:
 You must specify each service version in the endpoint URL.
 
 This way, you can have a strict contract between your application and the service provider.
+
+If you want an overview to all the available Web Services, use the following URL format to get a list of all SOAP Services:
+
+`http://<magento.host>/soap/all?wsdl_list=1`
+
+```xml
+<response>
+    ...
+    <storeStoreRepositoryV1>
+        <wsdl_endpoint>http://<magento.host>/soap/all?wsdl&services=storeStoreRepositoryV1</wsdl_endpoint>
+    </storeStoreRepositoryV1>
+    <storeGroupRepositoryV1>
+        <wsdl_endpoint>http://<magento.host>/soap/all?wsdl&services=storeGroupRepositoryV1</wsdl_endpoint>
+    </storeGroupRepositoryV1>
+    <storeWebsiteRepositoryV1>
+        <wsdl_endpoint>http://<magento.host>/soap/all?wsdl&services=storeWebsiteRepositoryV1</wsdl_endpoint>
+    </storeWebsiteRepositoryV1>
+    ...
+</response>
+```
+
 ### Service class-to-service name conversion rules
 
 Service names use the following conventions:
@@ -64,8 +62,8 @@ Service names use the following conventions:
 
 | Original Service Interface Name | Service Name |
 |----------
-| \Magento\Customer\Service\V1\CustomerInterface | customerV1 |
-| \Magento\Customer\Service\V1\CustomerAccountServiceInterface | customerCustomerAccountServiceV1 |
+| \Magento\Customer\Api\Data\CustomerInterface | customerCustomerRepositoryV1 |
+| \Magento\Customer\Api\AccountManagementInterface | customerAccountManagementV1 |
 | \Enterprise\Customer\Service\V3\Customer\AddressInterface | enterpriseCustomerAddressV3 |
 
 ## Authentication {#auth}
