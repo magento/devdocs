@@ -124,7 +124,7 @@ The `customAttributeMetadata` query requires the following attributes as input.
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`attribute_code` | String! | The unique identifier for an attribute code. This value should be in lowercase letters without spaces.
+`attribute_code` | String! | The unique identifier for an attribute code. This value should be in lowercase letters without spaces
 `entity_type` | String! | The type of entity that defines the attribute
 
 ## Output attributes
@@ -133,7 +133,7 @@ The `CustomAttributeMetadata` object is an array of `items`. The `items` object 
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`attribute_code` | String | The unique identifier for an attribute code. This value should be in lowercase letters without spaces.
+`attribute_code` | String | The unique identifier for an attribute code. This value should be in lowercase letters without spaces
 `attribute_options` | [`AttributeOption`] | An array of attribute options
 `attribute_type` | String | The data type of the attribute
 `entity_type` | String | The type of entity that defines the attribute
