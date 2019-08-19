@@ -155,7 +155,10 @@ For an upgrade, you delete the `config.php` file. Once this file is added to you
 
 ## Verify and upgrade your extensions {#extensions}
 
-If you need to upgrade any third-party extensions and modules that support version 2.2, we recommend working in a new Integration branch with your extensions disabled. Review your third-party extension and module pages in Marketplace or other company sites to verify support for {{site.data.var.ee}} and {{site.data.var.ece}} version 2.2.
+{: .bs-callout-info }
+Review your third-party extension and module pages in Marketplace or other company sites to verify support for {{site.data.var.ee}} and {{site.data.var.ece}} version 2.2.
+
+If you need to upgrade any third-party extensions and modules that support version 2.2, we recommend working in a new Integration branch with your extensions disabled.
 
 1.  Create a new branch on your local workstation.
 1.  Disable your extensions as needed.
