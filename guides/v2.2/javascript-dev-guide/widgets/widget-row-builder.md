@@ -160,7 +160,7 @@ Id prefix of a row element.
 
 ### `additionalRowClass`
 
-The additional row class is added to rows added after the first one.
+The additional row class name which is added after the main class name.
 
 **Type**: String
 
@@ -184,7 +184,7 @@ Default selectors for remove markup elements of a template.
 
 ### `hideFirstRowAddSeparator`
 
-This option allows adding first row delete option and a row separator.
+This option specifies if the [remove link](#btnremoveidprefix) and [additional row class](#additionalrowclass) are removed for the first row.
 
 **Type**: Boolean
 
