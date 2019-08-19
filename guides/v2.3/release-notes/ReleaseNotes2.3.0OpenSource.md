@@ -2606,7 +2606,7 @@ See [Magento Security Center](https://magento.com/security/patches/magento-2.2.7
 
 **Known issue:** After installing a module and running `setup:upgrade`, you must run `cache:clean config`.
 
-**Known issue:** When installing or upgrading Magento and upgrading PHP to 7.2, you must specify an encryption key value of 32 symbols (256 bits) or Magento will throw an error, and any sensitive, unsaved configuration data will be lost. When upgrading Magento and upgrading  PHP to 7.2, make sure that your encryption key is exactly 32 symbols. To do this, navigate to  **System** > **Other Settings ** > **Manage Encryption Key** and either enter a new key or generate a new one. To change the key, make sure that `app/etc/env.php` is writable.
+**Known issue:** When installing or upgrading Magento and upgrading PHP to 7.2, you must specify an encryption key value of 32 symbols (256 bits) or Magento will throw an error, and any sensitive, unsaved configuration data will be lost. When upgrading Magento and upgrading  PHP to 7.2, make sure that your encryption key is exactly 32 symbols. To do this, navigate to  **System** > **Other Settings** > **Manage Encryption Key** and either enter a new key or generate a new one. To change the key, make sure that `app/etc/env.php` is writable.
 
 **Known issue:** Magento throws the following error when you try to use the API to create two products with the same name without specifying the URL key: `URL key for specified store already exists.`  However, when you try to create these products through the Admin, Magento does not throw an error, but instead appends a number to the converted URL key if two products have the same name.
 
