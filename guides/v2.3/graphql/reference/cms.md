@@ -23,7 +23,7 @@ Attribute | Data type | Description
 `identifiers` | [String] | An array containing a comma-separated list of block identifiers
 
 
-### CmsPage output attributes 
+### CmsPage output attributes
 
 The `CmsPage` object can contain the following attributes:
 
@@ -56,7 +56,7 @@ Attribute | Data type | Description
 
 The following query returns information about the "404 Not Found" CMS page:
 
-**Request** 
+**Request**
 
 ```
 {
@@ -96,7 +96,7 @@ The following query returns information about the "404 Not Found" CMS page:
 
 The following query returns information about the `login-data` block:
 
-**Request** 
+**Request**
 
 ```
 {

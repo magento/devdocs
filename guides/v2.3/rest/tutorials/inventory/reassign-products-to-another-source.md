@@ -14,7 +14,7 @@ functional_areas:
 ---
 
 
-When you install or upgrade Magento, the system assigns all existing products to the default source. Magento also assigns all subsequently-created products to the default source. For this tutorial, we want to unassign three products from the default source and assign them to custom sources. 
+When you install or upgrade Magento, the system assigns all existing products to the default source. Magento also assigns all subsequently-created products to the default source. For this tutorial, we want to unassign three products from the default source and assign them to custom sources.
 
 The following table describes the products we'll use in this tutorial.
 

@@ -74,7 +74,7 @@ Use the `country` query to retrieve information about a specific country.
 
 The following query returns information about Australia.
 
-**Request** 
+**Request**
 
 ```text
 query {
@@ -162,7 +162,7 @@ Use the `countries` query to return all countries in which the entity can do bus
 
 The following query returns all countries listed for the current instance of Magento:
 
-**Request** 
+**Request**
 
 ```text
 query {
@@ -291,7 +291,7 @@ Use the `currency` query to return information about the store's currency config
 
 The following query returns the currency for the current instance of Magento:
 
-**Request** 
+**Request**
 
 ```text
 query {

@@ -95,7 +95,7 @@ Because the dropdown widget is not formatted by default, use [LESS mixin `.lib-d
     @_icon-font-vertical-align: @dropdown-toggle-icon__font-vertical-align,
     @_icon-font-text-hide: @dropdown-toggle-icon__text-hide
 ) {
-    // ... 
+    // ...
 }
 ```
 

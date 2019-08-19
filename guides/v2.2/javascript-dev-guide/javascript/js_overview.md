@@ -23,7 +23,7 @@ Topics of this chapter describe the following:
 ## Terms used {#js_terms}
 
 | Term                                  | Description                                        |
-| ------------------------------------- |--------------------------------------------------- | 
+| ------------------------------------- |--------------------------------------------------- |
 | *JavaScript component (JS component)* | Any separate `.js` file decorated as [AMD module]. |
 | *Ui component*                        | JS component located in the `Magento_Ui` module, in the [app/code/Magento/Ui/view] directory. |
 | *jQuery UI widget*                    | A JS component/widget provided by [jQuery UI library used in Magento]. |

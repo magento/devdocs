@@ -9,7 +9,7 @@ To add these environments to the Project Web Interface, review this entire docum
 
 {:.bs-callout .bs-callout-info}
 The Staging and Production environments for **New projects provisioned October 23, 2017 and later** are in the Project Web UI. You must contact your Customer Success Manager to convert a project created before this date.
- 
+
 ## New Features
 
 The new Project Web Interface provides the following features for the Pro plan Staging and Production environments:
@@ -81,8 +81,8 @@ When we convert your project to the new Project Web Interface, we add variables 
 1. Log in to [your {{site.data.var.ece}} account](https://accounts.magento.cloud).
 1. From your project, click the Integration `master` branch to view the environment information and settings.
 1. Click **Configure environment**.
-1. On the _Variables_ tab, review the environment variables.  
-    To create a new variable, click **Add Variable**.  
+1. On the _Variables_ tab, review the environment variables.
+    To create a new variable, click **Add Variable**.
     To update an existing variable, click **Edit** next to the variable.
 
 For environment-specific variables, including sensitive data and values, you can add those variables after we update your Project Web Interface. If you have environment variables in an `env.php` file, the file continues working after converting. You can add and manage these variables via SSH and CLI commands directly into the Staging and Production environments.

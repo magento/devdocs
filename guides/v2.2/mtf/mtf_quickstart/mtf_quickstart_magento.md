@@ -33,7 +33,7 @@ Enable the **Admin Account Sharing** setting to avoid unpredictable logout durin
 * Select the checkboxes next to **Configuration** and **Page Cache**.
 * From the **Actions** list in the upper left, click **Refresh**.
 * Click **Submit**.
-  
+
 ## Enable CLI commands
 
 Functional tests require access to utilities working with Magento during test run. Depending on a web server, use the following instructions to enable access to the commands.

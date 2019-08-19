@@ -27,7 +27,7 @@ To enable template hints:
 
 {:.bs-callout .bs-callout-info}
 You can also use the CLI to enable/disable template hints.
- 
+
 Use the `bin/magento dev:template-hints:enable` command to enable template hints and the `bin/magento dev:template-hints:disable` command to disable them. Do not forget to clear the cache after running the commands. For example:
 
 ```bash

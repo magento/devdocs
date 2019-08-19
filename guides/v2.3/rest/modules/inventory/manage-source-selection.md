@@ -3,7 +3,7 @@ group: rest-api
 title: Manage source selection algorithms
 ---
 
-Inventory Management uses the Source Selection Algorithm (SSA) to track the salable quantities of product inventory across all sources and make recommendations for partial and full shipments. 
+Inventory Management uses the Source Selection Algorithm (SSA) to track the salable quantities of product inventory across all sources and make recommendations for partial and full shipments.
 
 The SSA uses stocks and sources to check the sales channel for incoming product requests and determines the available inventory. The algorithm:
 
@@ -277,7 +277,7 @@ The `GET /V1/inventory/get-latlng-from-address` endpoint calculates the latitude
 **URL parameters**
 
 Name | Description
---- | --- 
+--- | ---
 address[country] | The country code of the shipping address
 address[postcode] | The postal code of the shipping address
 address[street] | The street of the shipping address

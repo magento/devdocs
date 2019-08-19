@@ -13,7 +13,7 @@ functional_areas:
 
 ## Hosted installation
 
-Before you can install the Magento software, you must get your hosted system ready.  
+Before you can install the Magento software, you must get your hosted system ready.
 
 If your hosted system is already set up, go to [Get the Magento software packages]({{ page.baseurl }}/install-gde/install/hosted/hosted_get-ftp.html).
 

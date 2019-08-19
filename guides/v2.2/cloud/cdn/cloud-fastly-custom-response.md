@@ -68,7 +68,7 @@ Verify that the modified source displays correctly in the browser. Then, add the
 
 1.	Click **Set HTML**.
 
-1.	Copy and paste the source code for your custom response page into the HTML field. 
+1.	Copy and paste the source code for your custom response page into the HTML field.
 
     ![Update 503 error page]
 
@@ -79,7 +79,7 @@ Verify that the modified source displays correctly in the browser. Then, add the
 1. Refresh the cache.
 
    - In the notification at the top of the page, click the *Cache Management* link.
-   
+
    - On the Cache Management page, click **Flush Magento Cache**.
 
 ## Customize the WAF error page
@@ -104,7 +104,7 @@ The following code sample shows the HTML source for the default page:
 </html>
 ```
 
-You can use the **Custom Synthetic Pages** > **Edit WAF page** option in the Fastly configuration menu to customize the default code for your {{ site.data.var.ece }} project. When you edit the code, retain the following line that provides the reference ID for the WAF blocking event: 
+You can use the **Custom Synthetic Pages** > **Edit WAF page** option in the Fastly configuration menu to customize the default code for your {{ site.data.var.ece }} project. When you edit the code, retain the following line that provides the reference ID for the WAF blocking event:
 
 ```html
 <p>"} req.http.x-request-id {"</p>
@@ -141,7 +141,7 @@ The Edit WAF option is available only if the Managed Cloud WAF service is enable
 1. Refresh the cache.
 
    - In the notification at the top of the page, click the **Cache Management** link.
-   
+
    - On the Cache Management page, click **Flush Magento Cache**.
 
 <!-- Link definitions -->

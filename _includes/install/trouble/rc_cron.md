@@ -8,7 +8,7 @@ To verify whether or not your crontab is set up:
 
 1.	Log in to your Magento server as, or switch to, the [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html).
 2.	See if the following file exists:
-    
+
     ```bash
 	ls -al <magento_root>/var/.setup_cronjob_status
 	```

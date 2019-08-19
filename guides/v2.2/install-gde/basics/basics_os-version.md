@@ -6,13 +6,13 @@ functional_areas:
   - System
   - Setup
 ---
- 
- 
-How can you tell what operating system and version your Magento server runs? 
 
-**Prerequisites**: You must access the server using a command prompt (an application that enables you to enter commands directly). 
 
-If you can log in directly to the machine, the application is usually called Terminal. 
+How can you tell what operating system and version your Magento server runs?
+
+**Prerequisites**: You must access the server using a command prompt (an application that enables you to enter commands directly).
+
+If you can log in directly to the machine, the application is usually called Terminal.
 
 If you cannot log in directly, you can [log in remotely]({{ page.baseurl }}/install-gde/basics/basics_login.html).
 

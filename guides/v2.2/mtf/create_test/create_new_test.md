@@ -621,7 +621,7 @@ Then we should add the block class to the `SynonymsNew.xml` page object. To iden
 
 The `save()` method from the [`\Magento\Backend\Test\Block\FormPageActions`][] block class allows you to click the "Save Synonym Group" button.
 
-The `SynonymsNew.xml` page must contain this class. The `.page-main-actions` css selector will help to identify a UI block with the button on the HTML page.  
+The `SynonymsNew.xml` page must contain this class. The `.page-main-actions` css selector will help to identify a UI block with the button on the HTML page.
 
 ```xml
 <block name="formPageActions" class="Magento\Backend\Test\Block\FormPageActions" locator=".page-main-actions" strategy="css selector" />

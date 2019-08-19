@@ -4,7 +4,7 @@ title: Magento Commerce 2.2.0 Release Notes
 menu_title: Magento Commerce 2.2.0 Release Notes
 ---
 
-*Release notes updated June 4, 2018.* 
+*Release notes updated June 4, 2018.*
 
 
 We are pleased to present Magento Commerce 2.2.0 General Availability. This release includes numerous functional fixes and enhancements.
@@ -100,7 +100,7 @@ This release contains hundreds of fixes and enhancements.
 
 ### Installation, upgrade, deployment
 
-<!--- 55357/53777/45357-->* You can now run `magento setup:upgrade --keep-generated` in production mode. Previously, Magento would throw an error when you ran `setup:upgrade` after compiling dependency injection. (This significantly curtailed your ability to deploy continuous integration.) [GitHub-4795](https://github.com/magento/magento2/issues/4795) 
+<!--- 55357/53777/45357-->* You can now run `magento setup:upgrade --keep-generated` in production mode. Previously, Magento would throw an error when you ran `setup:upgrade` after compiling dependency injection. (This significantly curtailed your ability to deploy continuous integration.) [GitHub-4795](https://github.com/magento/magento2/issues/4795)
 
 
 <!---56397, 58064-->* You can now upgrade your Magento installation when using multiple master databases for checkout, order management, and product data.
@@ -189,13 +189,13 @@ This release contains hundreds of fixes and enhancements.
 
 <!--- 58849-->* You can now disable the Review module without incurring an error in the Product Edit page. Previously, if you tried to edit a product after disabling the review module, Magento displayed this error: "Something went wrong". [GitHub-6704](https://github.com/magento/magento2/issues/6704)
 
-<!--- 56816-->* You can now use Component Manager to enable a previously disabled module. Previously, when you ran `bin/magento module:disable Magento_AnyModule`, then tried to re-enable  that module, Magento fails to enable it and any previously enabled cache types, and module installation fails. [GitHub-6078](https://github.com/magento/magento2/issues/6078) 
+<!--- 56816-->* You can now use Component Manager to enable a previously disabled module. Previously, when you ran `bin/magento module:disable Magento_AnyModule`, then tried to re-enable  that module, Magento fails to enable it and any previously enabled cache types, and module installation fails. [GitHub-6078](https://github.com/magento/magento2/issues/6078)
 
 <!--- 58132-->* We’ve fixed problems with the uninstall process. Previously, when Magento tries to uninstall a module using composer, it simultaneously tried to update the `symfony/process` version. However,  because the `module:uninstall`  command uses   `symfony/process`, the command stopped running. [GitHub-5797](https://github.com/magento/magento2/issues/5797)
 
 <!--- 58132-->* We’ve fixed problems with the uninstall process. Previously, when Magento tries to uninstall a module using composer, it simultaneously tried to update the `symfony/process` version. However,  because the `module:uninstall`  command uses   `symfony/process`, the command stopped running. [GitHub-5797](https://github.com/magento/magento2/issues/5797)
 
-### AMQP 
+### AMQP
 
 <!---58654, 57177-->* The `magento queue:consumers:start` command now works correctly when you provide the `max-messages` argument.
 
@@ -508,7 +508,7 @@ This release contains hundreds of fixes and enhancements.
 
 <!---57995 -->* Videos now play as expected on simple products as they do  for configurable products. Previously, simple product videos were displayed as thumbnail images only.[GitHub-6360](https://github.com/magento/magento2/issues/6360)
 
-<!---57279 -->* Users no longer lose configurable product data when you change the interface locale to Chinese (China) or Arabic (Egypt).   
+<!---57279 -->* Users no longer lose configurable product data when you change the interface locale to Chinese (China) or Arabic (Egypt).
 
 ### Email
 
@@ -531,13 +531,13 @@ This release contains hundreds of fixes and enhancements.
 
 <!---63154 -->* Magento now displays special characters in store names in email subject lines. Previously, special characters in the store name were converted to numerical character references in the email subject field. [GitHub-8094](https://github.com/magento/magento2/issues/8094)
 
-<!---56947 -->* You can now link a simple product to a configurable one. Previously, when you tried to use REST to link a simple product  to a configurable one, the products were not linked even though Magento responded, `Status Code: 200 OK`.  
+<!---56947 -->* You can now link a simple product to a configurable one. Previously, when you tried to use REST to link a simple product  to a configurable one, the products were not linked even though Magento responded, `Status Code: 200 OK`.
 
 #### Admin framework
 
 <!--- 57805 -->* You can no longer delete a currently logged-in user.
 
-<!--- 57629 -->* Inline editing in Admin now includes ACL checks. Previously, the Quick Edit editor did not respect permissions. 
+<!--- 57629 -->* Inline editing in Admin now includes ACL checks. Previously, the Quick Edit editor did not respect permissions.
 
 #### Application framework
 
@@ -552,7 +552,7 @@ This release contains hundreds of fixes and enhancements.
 
 <!---67260-->* `\Magento\Framework\Interception\Code\Generator\Interceptor` now supports interceptors for generating for methods that return references. [GitHub-9167](https://github.com/magento/magento2/issues/9167)
 
-<!---58394-->* The Magento Framework now makes its dependency upon the `zendframework/zend-stdlib` library explicit in `composer.json`. [(GITHUB-6442)](https://github.com/magento/magento2/issues/6442){: target="_blank"} 
+<!---58394-->* The Magento Framework now makes its dependency upon the `zendframework/zend-stdlib` library explicit in `composer.json`. [(GITHUB-6442)](https://github.com/magento/magento2/issues/6442){: target="_blank"}
 
 #### Configuration framework
 
@@ -634,7 +634,7 @@ Thanks to our hardworking Magento Open Source community members for the followin
 
 <!---59142 -->* Admin interface forms now load data as expected after initializing all components. Previously, under certain conditions, the load indicator would spin indefinitely, and Magento would not load data.
 
-<!---59810 -->* Showing reports on the **Reports > Coupons** page no longer throws an error when the user is in a non-default Admin locale.  [GitHub-7037](https://github.com/magento/magento2/issues/7037) 
+<!---59810 -->* Showing reports on the **Reports > Coupons** page no longer throws an error when the user is in a non-default Admin locale.  [GitHub-7037](https://github.com/magento/magento2/issues/7037)
 
 <!---70318 -->* You can now generate static content without a database connection. [GitHub-10041](https://github.com/magento/magento2/issues/10041)
 
@@ -711,9 +711,9 @@ Thanks to our hardworking Magento Open Source community members for the followin
 
 <!--- 63116-->* Magento now handles quotation marks in product names. Previously,  quotation marks in product names caused a JSON error on the Product page.  [GitHub-8059](https://github.com/magento/magento2/issues/8059)
 
-<!--- 59590-->* The website column in Customer Segment report now contains correct data. Previously, this column was blank in the **Reports > Customer > Segments** report. 
+<!--- 59590-->* The website column in Customer Segment report now contains correct data. Previously, this column was blank in the **Reports > Customer > Segments** report.
 
-<!--- 60962-->* When you add an address, new custom attributes are now displayed together, along with other address details. 
+<!--- 60962-->* When you add an address, new custom attributes are now displayed together, along with other address details.
 
 <!--- 60746-->* You can now edit the default store view and save it under a different name. [GitHub-7349](https://github.com/magento/magento2/issues/7349)
 
@@ -889,7 +889,7 @@ Thanks to our hardworking Magento Open Source community members for the followin
 
 
 
-<!---57470 -->* Magento no longer displays an indexing error when Elasticsearch is enabled. Previously, Magento displayed this indexing error when Elasticsearch was enabled:  `mapper_parsing_exception`. 
+<!---57470 -->* Magento no longer displays an indexing error when Elasticsearch is enabled. Previously, Magento displayed this indexing error when Elasticsearch was enabled:  `mapper_parsing_exception`.
 
 <!---58703-->* The category/product indexer now successfully completes a full reindexing of all indexes on large profiles with 500,000 or more products. Previously, Magento successfully generated a large profile, but failed to complete the reindexing of the categories or products, and displayed the following error:  "Error 1114: Table is full".
 
@@ -973,7 +973,7 @@ Thanks to our hardworking Magento Open Source community members for the followin
 
 <!--- 59586-->* Magento no longer creates unnecessary  loaders during checkout with an order that contains virtual products.
 
-<!--- 57846-->* New orders no longer stay in the processing state after you click the Place Order button. Previously, new orders stayed in the processing state even after you clicked Place Order. [GitHub-5860](https://github.com/magento/magento2/issues/5860) 
+<!--- 57846-->* New orders no longer stay in the processing state after you click the Place Order button. Previously, new orders stayed in the processing state even after you clicked Place Order. [GitHub-5860](https://github.com/magento/magento2/issues/5860)
 
 
 <!--- 60692-->*  You can now use either the parent order item ID or child product order item ID when using  the REST API (`/V1/order/:orderId/invoice : POST method API`)  to create an invoice for an order containing bundle products. [GitHub-6988](https://github.com/magento/magento2/issues/6988)
@@ -981,9 +981,9 @@ Thanks to our hardworking Magento Open Source community members for the followin
 <!--- 58722-->* We’ve increased the size of the `shipping_method` column in the `sales_order` and `quote_address` tables. [GitHub-6475](https://github.com/magento/magento2/issues/6475)
 
 
-<!--- 56938-->* Magento now creates the shipping address as expected when you  use REST to create an order.  Previously, when you used REST to create an order, then subsequently viewed the order from the Admin, Magento threw an error. 
+<!--- 56938-->* Magento now creates the shipping address as expected when you  use REST to create an order.  Previously, when you used REST to create an order, then subsequently viewed the order from the Admin, Magento threw an error.
 
-<!--- 53005-->* Magento now displays all tax details as expected on the Admin order page. Previously, Magento did not save the order tax rate information, and the full tax summary was incomplete. 
+<!--- 53005-->* Magento now displays all tax details as expected on the Admin order page. Previously, Magento did not save the order tax rate information, and the full tax summary was incomplete.
 
 <!--- 57880-->*  You can now cancel an order of a bundle product. [GitHub-5194](https://github.com/magento/magento2/issues/5194)
 
@@ -992,7 +992,7 @@ Thanks to our hardworking Magento Open Source community members for the followin
 <!--- 56014-->* The Admin’s Most Viewed Products tab now displays correct product prices. Previously, prices for products in Most Viewed Products tab were incorrectly listed as $0. [GitHub-5660](https://github.com/magento/magento2/issues/5660)
 
 
-<!--- 57846-->* New orders no longer stay in the processing state after you click the Place Order button. Previously, new orders stayed in the processing state even after you clicked Place Order. [GitHub-5860](https://github.com/magento/magento2/issues/5860) 
+<!--- 57846-->* New orders no longer stay in the processing state after you click the Place Order button. Previously, new orders stayed in the processing state even after you clicked Place Order. [GitHub-5860](https://github.com/magento/magento2/issues/5860)
 
 ### Payment methods
 
@@ -1204,7 +1204,7 @@ This release includes substantial improvements to Magento caching, image process
 
 <!---59953-->* The price you set on the website scope no longer overrides any local settings you set on configurable products at the store view level.
 
-<!---54458, 57003-->* The Product page scope selector now displays all related websites associated with a restricted user. 
+<!---54458, 57003-->* The Product page scope selector now displays all related websites associated with a restricted user.
 
 ### Search
 
@@ -1230,7 +1230,7 @@ This release includes substantial improvements to Magento caching, image process
 
 <!---59477 -->* Attribute weighting now works correctly for the MySQL adapter. [GitHub-9020](https://github.com/magento/magento2/issues/9020)
 
-<!---56097 -->* Magento no longer throws an indexing error when Elastic search is enabled. 
+<!---56097 -->* Magento no longer throws an indexing error when Elastic search is enabled.
 
 ### Shipping
 
@@ -1417,18 +1417,18 @@ This release includes substantial improvements to Magento caching, image process
 
 <!---56862 -->* Magento now rewrites URLs as expected when you save a product while running Magento in single-store mode. [GitHub-5929](https://github.com/magento/magento2/issues/5929)
 
-<!---56863 -->* Magento now rewrites URLs as expected when you save a CMS page while running Magento in single-store mode. [GitHub-5923](https://github.com/magento/magento2/issues/5923) 
+<!---56863 -->* Magento now rewrites URLs as expected when you save a CMS page while running Magento in single-store mode. [GitHub-5923](https://github.com/magento/magento2/issues/5923)
 
 <!---64295 -->* URL rewrites are now correctly generated for multiple store views during product import.  [GitHub-8396](https://github.com/magento/magento2/issues/8396)
 
-<!---56863 -->* Magento now rewrites URLs as expected when you save a CMS page while running Magento in single-store mode. [GitHub-5923](https://github.com/magento/magento2/issues/5923) 
+<!---56863 -->* Magento now rewrites URLs as expected when you save a CMS page while running Magento in single-store mode. [GitHub-5923](https://github.com/magento/magento2/issues/5923)
 
 ### Varnish
 
 <!---58362-->* We've changed the behavior of the Varnish X-header. Only the parent (meta) SKU is now included in the list -- not the SKUs of all child products. [GitHub-6401](https://github.com/magento/magento2/issues/6401)
 
 
-<!--- 69372-->* Varnish no longer caches Cookie Restriction Mode Overlay. *Fix submitted by community member Bernhard in pull request 9711.* 
+<!--- 69372-->* Varnish no longer caches Cookie Restriction Mode Overlay. *Fix submitted by community member Bernhard in pull request 9711.*
 
 
 * Varnish now supports `grace` and `saint` mode to ensure that customers always see cached pages.
@@ -1463,7 +1463,7 @@ This release includes substantial improvements to Magento caching, image process
 
 <!---63667 -->* Searching for products via REST API using a store code in the URL returns products from all stores. [GitHub-8121](https://github.com/magento/magento2/issues/8121)
 
-<!---58348 -->* You can now use the REST API to create a configurable product with a linked child product. [(GITHUB-5243)](https://github.com/magento/magento2/issues/5243){: target="_blank"} 
+<!---58348 -->* You can now use the REST API to create a configurable product with a linked child product. [(GITHUB-5243)](https://github.com/magento/magento2/issues/5243){: target="_blank"}
 
 <!---58338 -->* The REST API now successfully handles attribute options that start with a number. [GitHub-5715](https://github.com/magento/magento2/issues/5715)
 

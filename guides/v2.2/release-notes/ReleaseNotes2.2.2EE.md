@@ -27,7 +27,7 @@ Look for the following highlights in this release:
 
 * **Streamlined Instant Purchase checkout** (contributed by Creatuity). Our new streamlined Instant Purchase option uses previously stored payment credentials and shipping information to bypass steps in the checkout process. See [Instant Purchase module]({{ site.baseurl }}/guides/v2.2/mrg/ce/instant-purchase/) for more information.
 
-* **Integrated dotmailer marketing automation software**. Magento is one of the first ecommerce solutions to include the dotmailer marketing automation with their core product. See [Email Marketing Automation](http://docs.magento.com/m2/ce/user_guide/marketing/email-marketing-automation.html).  
+* **Integrated dotmailer marketing automation software**. Magento is one of the first ecommerce solutions to include the dotmailer marketing automation with their core product. See [Email Marketing Automation](http://docs.magento.com/m2/ce/user_guide/marketing/email-marketing-automation.html).
 
 * **Magento Functional Testing Framework**.  The Magento Functional Testing Framework (MFTF) is our open-source, cross-platform testing solution. Its purpose is to facilitate functional testing and minimize efforts to perform regression testing. See [Introduction to Magento Functional Testing Framework]({{ site.baseurl }}/mftf/docs/introduction.html).
 
@@ -446,7 +446,7 @@ We’ve identified the following unresolved issues with this version of Magento 
 MAGETWO-82748 MAGETWO-82707 MAGETWO-83013 MAGETWO-82991 MAGETWO-82978 MAGETWO-82976 MAGETWO-82952  MAGETWO-83171 MAGETWO-83135 MAGETWO-83132  MAGETWO-83128 MAGETWO-83490 MAGETWO-83428 MAGETWO-83310  MAGETWO-83563
  MAGETWO-83547 MAGETWO-83529 MAGETWO-83537  MAGETWO-83532 MAGETWO-83310  MAGETWO-83130 MAGETWO-83013 MAGETWO-82978 MAGETWO-82976 MAGETWO-82954   MAGETWO-82854 MAGETWO-82748  MAGETWO-83600 MAGETWO-70726 MAGETWO-80517 MAGETWO-84344 MAGETWO-84531
 MAGETWO-84321 MAGETWO-84091 MAGETWO-84051 MAGETWO-84000 MAGETWO-83914 MAGETWO-83898 MAGETWO-83870 MAGETWO-83184 MAGETWO-83004 MAGETWO-82596
-MAGETWO-82420 MAGETWO-80736 MAGETWO-72441 MAGETWO-81342-->*  
+MAGETWO-82420 MAGETWO-80736 MAGETWO-72441 MAGETWO-81342-->*
 
 <!--- WON'T FIX  MAGETWO-69032 MAGETWO-84421-->
 

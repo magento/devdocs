@@ -24,11 +24,11 @@ We also accept [Community Engineering contributions] using CrowdIn for translati
 
 ## Generate a translation dictionary {#config-cli-subcommands-xlate-dict}
 
-You can generate a [translation dictionary] to customize existing strings, translate words and phrases in a custom module, localize a theme, or create  [language packages](https://glossary.magento.com/language-package). 
+You can generate a [translation dictionary] to customize existing strings, translate words and phrases in a custom module, localize a theme, or create  [language packages](https://glossary.magento.com/language-package).
 
 ### Work with translation dictionaries {#config-cli-subcommands-xlate-dict-dict}
 
-To begin translating, use a command to generate a dictionary `.csv` file with a collected list of all existing phrases and words. 
+To begin translating, use a command to generate a dictionary `.csv` file with a collected list of all existing phrases and words.
 
 Generate the dictionary and translate:
 
@@ -64,20 +64,20 @@ To create a language pack from a translation dictionary, you *must* use the `-m|
 Use the following guidelines when translating words and phrases:
 
 -   Change the contents of the second column only. Translate the phrases from English (`US`) to the desired language.
--   When creating dictionaries for locales, use the default Magento strings. 
+-   When creating dictionaries for locales, use the default Magento strings.
 -   While translating, pay attention to placeholders like `%1`, `%2` and so on.
 
 Magento uses the placeholders to insert context values; they are *not* used for translations. For example:
 
     Product '%1' has been added to shopping cart.
-    
+
 Populates with a value:
 
     Product 'Multimeter-2000' has been added to shopping cart.
 
-The resulting phrase must contain at least one of each placeholder. 
-For example, suppose there are placeholders from `%1` to `%3` in the original phrase. 
- The translation can have as many of these placeholders in any order, but there must be at least one occurrence of `%1`, `%2`, and `%3`. 
+The resulting phrase must contain at least one of each placeholder.
+For example, suppose there are placeholders from `%1` to `%3` in the original phrase.
+ The translation can have as many of these placeholders in any order, but there must be at least one occurrence of `%1`, `%2`, and `%3`.
 The translation cannot contain placeholder values not present in the original value (for example, `%4`, `%5`, and so on).
 
 An example of translating a phrase:

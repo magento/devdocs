@@ -48,7 +48,7 @@ install [fontconfig library]:<br/>
 * Ubuntu:
   ```bash
   apt-get install fontconfig
-  ``` 
+  ```
 "
 %}
 
@@ -240,7 +240,7 @@ Warning: Task "spec" not found. Use --force to continue.
 ### Warning: Cannot read property 'pid' of undefined {#cannot-read-property-pid-warning}
 
 #### Issue:
- 
+
 An error message appears:
 
 ```terminal

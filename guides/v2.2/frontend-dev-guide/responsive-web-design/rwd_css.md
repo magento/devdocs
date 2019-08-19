@@ -45,7 +45,7 @@ The Blank and Luma theme styles are based on the [Magento UI library]. The libra
 The approach implemented in the Magento UI library, uses `@media-common` style group separation and `.media-width()` mixins which can be used in any `.less` file in a theme, as many times as needed, but it is invoked only once, in `lib/web/css/source/lib/_responsive.less`. The resulting `styles-m.css` and `styles-l.css` both have only one call of each media query with all the rules there, instead of multiple calls for the same query.
 
 - Media queries `@media-common`, `max screen__s` and `max screen__m` will be added to `styles-m.css`.
-- Media queries `min screen__m` and `min screen__l` will be added to `styles-l.css`.  
+- Media queries `min screen__m` and `min screen__l` will be added to `styles-l.css`.
 
 If working on a theme which inherits from either the Blank or Luma theme, it's recommended to use `.media-width()` and style groups separation.  Otherwise the style rules will be added twice, once to `styles-m.css` and once more to `styles-l.css`.
 

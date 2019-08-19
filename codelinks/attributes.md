@@ -4,7 +4,7 @@ menu_title: Retrieving detailed attributes
 ---
 
 Swagger and other types of code-generated documentation erroneously indicate several APIs that
-search across multiple objects return detailed information about individual objects. Detailed information, such as `extensionAttributes`,  `customAttributes`, and possibly other fields, are generally available only when requesting information on a single object.  
+search across multiple objects return detailed information about individual objects. Detailed information, such as `extensionAttributes`,  `customAttributes`, and possibly other fields, are generally available only when requesting information on a single object.
 
 This document lists the PHP, REST, and SOAP calls that indicate they return detailed information, but might not. It also provides the call that returns the detailed data.
 

@@ -30,10 +30,10 @@ Before you begin, complete the following steps:
 {:.bs-callout .bs-callout-info}
 You must install Magento from its `bin` subdirectory.
 
-You can run the installer multiple times with different options to complete installation tasks like the following: 
+You can run the installer multiple times with different options to complete installation tasks like the following:
 
 *  Install in phases—For example, after you configure your web server for Secure Sockets Layer (SSL), you can run the installer again to set SSL options.
-	
+
 *  Correct mistakes in previous installations.
 
 *  Install Magento in a different database instance.
@@ -75,7 +75,7 @@ Any options that contain spaces or special characters must be enclosed in either
 
 **Admin credentials**
 
-The following options specify the user information and credentials for the Magento admin user. 
+The following options specify the user information and credentials for the Magento admin user.
 
 In Magento Commerce version 2.2.8 and later, you can create the Magento admin user during or after installation. If you create the user during installation, all admin credential variables are required. See [Sample localhost installations](#install-cli-example).
 
@@ -198,9 +198,9 @@ For security, remove write permissions from these directories: '/var/www/html/ma
 [SUCCESS]: Admin Panel URI: /admin_puu71q
 ````
 
-After installation you can create an admin user using the `admin:user:create` command:	
+After installation you can create an admin user using the `admin:user:create` command:
 [Create or edit an administrator]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-admin.html#create-or-edit-an-administrator)
-	
+
 #### Example 3—Install with additional options
 
 The following example installs Magento with the following options:
@@ -247,7 +247,7 @@ Messages like the following display if the installation is successful:
 	[Progress: 274 / 274]
 	[SUCCESS]: Magento installation complete.
 	[SUCCESS]: Admin Panel URI: /admin_puu71q
-	
+
 
 #### Next step
 

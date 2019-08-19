@@ -4,7 +4,7 @@ title: Link and unlink stocks and sources
 
 ---
 
-In Admin, you can assign (link) sources to a stock when you create the stock. In REST, creating a stock and assigning sources to it are separate steps.  
+In Admin, you can assign (link) sources to a stock when you create the stock. In REST, creating a stock and assigning sources to it are separate steps.
 
 To link a source to a stock, you must specify the `source_code`, `stock_id`, and `priority` attributes. The `priority` value indicates where the source ranks in descending order. The Source Selection Algorithm uses this priority order when recommending order fulfillment. All sources linked to a stock are displayed in prioritized order in the Admin.
 

@@ -28,7 +28,7 @@ To apply a theme:
 2. In the configuration record corresponding to your store view, click **Edit**. The page with design configuration for the selected scope opens. For example:
 
     ![Design Configuration page for a particular scope]
-    
+
 4. On the **Default Theme** tab, in the **Applied Theme** drop-down, select your newly created theme.
 5. Click **Save Configuration**.
 6. If caching is enabled, [clear the cache](#theme-apply-clear).

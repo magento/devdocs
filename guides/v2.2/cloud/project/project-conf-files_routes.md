@@ -72,7 +72,7 @@ The `routes.yaml` file is a list of templated routes and their configurations. Y
 ```
 {: .no-copy}
 
-For example, the `refactorcss` branch for the `mswy7hzcuhcjw` project hosted in the `us` cluster has the following the domains: 
+For example, the `refactorcss` branch for the `mswy7hzcuhcjw` project hosted in the `us` cluster has the following the domains:
 
 ```text
 http://www-refactorcss-mswy7hzcuhcjw.us.magentosite.cloud/

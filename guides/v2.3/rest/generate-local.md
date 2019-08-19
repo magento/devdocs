@@ -34,7 +34,7 @@ The **Try it out!** feature is not available on Swagger documentation published 
 
 ### REST reference for Asynchronous API
 
-You can also use Swagger to generate live asynchronous API REST documentation. To create this documentation, add the `?type=async` parameter to the standard Swagger URL: 
+You can also use Swagger to generate live asynchronous API REST documentation. To create this documentation, add the `?type=async` parameter to the standard Swagger URL:
 
 `http://<magento_host>/swagger?type=async`
 

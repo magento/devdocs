@@ -12,7 +12,7 @@ return_to:
 functional_areas:
   - Integration
 contributor_name: comwrap GmbH
-contributor_link: http://comwrap.com/ 
+contributor_link: http://comwrap.com/
 ---
 
  To create a configurable product programmatically, you'll need to know the following:

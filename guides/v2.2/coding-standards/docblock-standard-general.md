@@ -343,7 +343,7 @@ Functions and methods should have:
 
 * The declaration of all arguments (if any) using `@param` tag, unless the argument type is indicated in the method signature.
   All `@param` annotations must include the appropriate argument type.
-  If any argument requires a `@param` annotation, all arguments must be listed (all or none).  
+  If any argument requires a `@param` annotation, all arguments must be listed (all or none).
   The `@param` annotations must be in the same order as the method arguments.
 * The declaration of the return type using the `@return` tag must only be added if the method return type signature
   does not supply all necessary information (see below for more information on return types).
@@ -587,7 +587,7 @@ interface MutableInterface
 
     /**
      * Sets 0 in case a non-integer value is passed
-     * 
+     *
      * @param int|string|bool|float|null $value
      */
     public function setVal($value): void;
@@ -604,10 +604,10 @@ class LimitedMutableClass implements MutableInterface
     public function getVal(): int
     {
     }
-    
+
     /**
      * Sets 0 in case a non-integer value is passed
-     * 
+     *
      * @param int|string|bool|float|null $value
      */
     public function setVal($value): void

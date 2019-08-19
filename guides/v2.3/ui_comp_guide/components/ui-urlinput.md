@@ -160,15 +160,15 @@ The option `class` implements `\Magento\Ui\Model\UrlInput\ConfigInterface` and p
  * Copyright © Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
- 
+
 declare(strict_types=1);
- 
+
 namespace Magento\Ui\Model\UrlInput;
- 
- 
+
+
 class MyLink implements ConfigInterface
 {
- 
+
     /**
      * {@inheritdoc}
      */

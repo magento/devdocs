@@ -65,7 +65,7 @@ Based on the output, you need to make the following corrections to your configur
 1.  Enable the Skip HTML minification variable.
 
     > .magento.env.yaml
-    
+
     ```yaml
     stage:
       global:
@@ -75,7 +75,7 @@ Based on the output, you need to make the following corrections to your configur
 1.  Configure the post-deploy hook.
 
     > .magento.app.yaml
-    
+
     ```yaml
         post_deploy: |
             php ./vendor/bin/ece-tools post-deploy

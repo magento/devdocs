@@ -39,7 +39,7 @@ class Example extends AbstractModifier
 {
     /**
     * @param array $meta
-    * 
+    *
     * @return array
     */
     public function modifyMeta(array $meta): array

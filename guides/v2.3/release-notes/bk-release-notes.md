@@ -17,7 +17,7 @@ redirect_from:
 * [{{site.data.var.ce}} 2.3.0 Release Notes]({{page.baseurl}}/release-notes/ReleaseNotes2.3.0OpenSource.html)
 * [{{site.data.var.ee}} 2.3.0 Release Notes]({{page.baseurl}}/release-notes/ReleaseNotes2.3.0Commerce.html)
 
-Interested in the Magento 2.2.x releases? Check out the [2.2.x]({{ site.baseurl }}/guides/v2.2/release-notes/bk-release-notes.html) Release Information pages.  
+Interested in the Magento 2.2.x releases? Check out the [2.2.x]({{ site.baseurl }}/guides/v2.2/release-notes/bk-release-notes.html) Release Information pages.
 
 ## Backward-incompatible changes
 

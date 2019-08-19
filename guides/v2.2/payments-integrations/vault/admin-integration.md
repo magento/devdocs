@@ -10,11 +10,11 @@ functional_areas:
 
 To be able to use vault in [Admin](https://glossary.magento.com/admin) order creation, you need to take at least the following steps:
 
-1. Create a token component provider and specify it in the `<your_module_dir>/etc/di.xml`. 
-2. Create a custom vault JS component and specify it in the component provider. 
+1. Create a token component provider and specify it in the `<your_module_dir>/etc/di.xml`.
+2. Create a custom vault JS component and specify it in the component provider.
 3. Create a `.phtml` template, specify it in the component provider and the corresponding [layout](https://glossary.magento.com/layout) file.
 
-There are more details about these steps in the following sections. 
+There are more details about these steps in the following sections.
 
 ## Component provider {#provider_admin}
 
@@ -52,7 +52,7 @@ class TokenUiComponentProvider implements TokenUiComponentProviderInterface
 
 ## Vault JS component
 
-There is no default component implementation for the Admin, so your component must implement all logic for validation and order placing.  
+There is no default component implementation for the Admin, so your component must implement all logic for validation and order placing.
 
 In the most cases, it is enough to implement getting payment code and setting public hash. This implementation might look like following:
 
@@ -100,12 +100,12 @@ This component will set public hash to a hidden input, when a user sets payment 
 
 ## Template
 
-Create a `.phtml` template for displaying token details and specify it in the [component provider](#provider_admin). 
+Create a `.phtml` template for displaying token details and specify it in the [component provider](#provider_admin).
 
 For reference, view the Magento default Vault template for Admin: [app/code/Magento/Vault/view/adminhtml/templates/form/vault.phtml]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Vault/view/adminhtml/templates/form/vault.phtml).
 
-In the billing form block for Admin layout (`%module_dir%/view/adminhtml/layout/sales_order_create_index.xml`) 
-specify the [payment method](https://glossary.magento.com/payment-method) code and path to the template. 
+In the billing form block for Admin layout (`%module_dir%/view/adminhtml/layout/sales_order_create_index.xml`)
+specify the [payment method](https://glossary.magento.com/payment-method) code and path to the template.
 
 Following is an example of such layout:
 
@@ -126,7 +126,7 @@ According to this configuration the Magento_Vault [module](https://glossary.mage
 
 ## Specific vault configuration for Admin
 
-You might have specific request builders, response handlers or other entities for the Admin panel. For example, in your implementation 3D Secure might not be available in Admin. In this case, you need to create corresponding virtual types for the `adminhtml` [area]({{ page.baseurl }}/architecture/archi_perspectives/components/modules/mod_and_areas.html) in `%module_dir%/etc/adminhtml/di.xml`. 
+You might have specific request builders, response handlers or other entities for the Admin panel. For example, in your implementation 3D Secure might not be available in Admin. In this case, you need to create corresponding virtual types for the `adminhtml` [area]({{ page.baseurl }}/architecture/archi_perspectives/components/modules/mod_and_areas.html) in `%module_dir%/etc/adminhtml/di.xml`.
 
 Example from the `app/code/Magento/Braintree/etc/adminhtml/di.xml`:
 

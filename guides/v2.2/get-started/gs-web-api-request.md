@@ -144,7 +144,7 @@ The following example builds a Customers Search request based on search criteria
 
 3. Set the headers, URI and method to a request object. Use URI `/V1/customers/search` and method `GET` values. Use the `searchCriteria` parameter to complete the Customer Search query. See [searchCriteria usage]({{ page.baseurl }}/rest/performing-searches.html). Also check [List of REST endpoints by module]({{ page.baseurl }}/rest/list.html).
 
-   The following example finds customers whose first name contains "ver" or whose last name contains "Costello". 
+   The following example finds customers whose first name contains "ver" or whose last name contains "Costello".
 
 
 
@@ -176,7 +176,7 @@ The following example builds a Customers Search request based on search criteria
         'current_page' => 1,
         'page_size' => 10
     ]);
-    
+
     $request->setQuery($params);
       ```
 4. Prepare a HTTP Curl client object and pass the request object to `Client::send()` method.
@@ -195,7 +195,7 @@ The following example builds a Customers Search request based on search criteria
    ```
 
 This request returns a list of all customers in JSON format, as shown below. You can also specify XML format by changing <code>Accept</code> header of the request.
-   
+
 ```json
 {
     "items": [

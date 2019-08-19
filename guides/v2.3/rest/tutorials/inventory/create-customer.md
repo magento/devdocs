@@ -81,7 +81,7 @@ The value of the `id` and `website_id` parameters for the US Store View is `2`.
 
 ## Create a customer
 
-We can use the same customer definition presented in [Step 3. Create a customer]({{ page.baseurl }}/rest/tutorials/orders/order-create-customer.html), with the only differences being the scope of the call (`us` instead of `default`) and inserting the `store_id` and `website_id` parameters into the payload. 
+We can use the same customer definition presented in [Step 3. Create a customer]({{ page.baseurl }}/rest/tutorials/orders/order-create-customer.html), with the only differences being the scope of the call (`us` instead of `default`) and inserting the `store_id` and `website_id` parameters into the payload.
 
 **Endpoint**
 

@@ -157,7 +157,7 @@ class GeneralResponseValidator extends AbstractValidator
     {
         /** @var Successful|Error $response */
         $response = $this->subjectReader->readResponseObject($validationSubject);
-    
+
         $isValid = true;
         $errorMessages = [];
 
@@ -170,7 +170,7 @@ class GeneralResponseValidator extends AbstractValidator
             }
         }
         $errorCodes = $this->errorCodeProvider->getErrorCodes($response);
-    
+
         return $this->createResult($isValid, $errorMessages, $errorCodes);
     }
 }

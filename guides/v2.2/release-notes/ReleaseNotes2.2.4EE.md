@@ -64,9 +64,9 @@ The dotmailer bundled extension features the following enhancements for this rel
 
 ## Known issue
 
-**Note**: The following known issue has been resolved in Magento Commerce and Open Source 2.2.5. We recommend that all users of 2.2.4 upgrade to 2.2.5 at their earliest convenience. If you are unable to upgrade to 2.2.5, [Patch MAGETWO-92926](https://magento.com/tech-resources/download#download2217) provides a fix for this issue. 
+**Note**: The following known issue has been resolved in Magento Commerce and Open Source 2.2.5. We recommend that all users of 2.2.4 upgrade to 2.2.5 at their earliest convenience. If you are unable to upgrade to 2.2.5, [Patch MAGETWO-92926](https://magento.com/tech-resources/download#download2217) provides a fix for this issue.
 
-Customers have reported the following behavior after upgrading to Magento 2.2.4 in deployments that span multiple websites: 
+Customers have reported the following behavior after upgrading to Magento 2.2.4 in deployments that span multiple websites:
 
 Magento multi-store installations do not use the store view-specific values from the store configuration settings if these settings have different values than the global default configuration settings.  Instead, Magento uses the default configuration for all store views. [GitHub-15205](https://github.com/magento/magento2/issues/15205),  [GitHub-15245](https://github.com/magento/magento2/issues/15245)
 
@@ -685,7 +685,7 @@ Users of the CyberSource payment method should note that CyberSource uses the Ma
 
 <!--- MAGETWO-86736 -->* We’ve optimized the initialization of the Product View block, which gives an 11% performance improvement for simple product views.
 
-<!--- MAGETWO-75769 -->* Magento now caches search results for faster response time on popular searches. A system administrator can configure how many top search queries can be cached. This enhancement can result in up to a 36% improvement for cacheable search terms. 
+<!--- MAGETWO-75769 -->* Magento now caches search results for faster response time on popular searches. A system administrator can configure how many top search queries can be cached. This enhancement can result in up to a 36% improvement for cacheable search terms.
 
 ### Quote
 
@@ -861,7 +861,7 @@ You can find Magento Shipping-specific release notes in [Magento Shipping Releas
 
 <!--- CANNOT REPRODUCE MAGETWO-58206 MAGETWO-84074  MAGETWO-73275-->
 
-## Known issue 
+## Known issue
 
 Merchants are unable to change a store view’s applied theme in Magento 2.2.4. When a merchant tries to change the **Applied theme** setting for a store view (**Content** > **Design** > **Configuration**), Magento does not change the theme, but instead displays this error: `Something went wrong while saving this configuration: Area is already set`. See [GitHub-14968](https://github.com/magento/magento2/issues/14968) for more information. **Workaround**:  Merchants who are running Magento 2.2.4 should **upgrade to 2.2.5, then apply [patch MAGETWO-93036]( https://magento.com/tech-resources/download#download2224)**.
 

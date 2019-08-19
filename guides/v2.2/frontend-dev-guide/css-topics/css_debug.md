@@ -60,8 +60,8 @@ To compile `.less` files, add your theme to `module.exports` in the Grunt config
 
 The following table describes the grunt commands you can use to perform different customization tasks. Run all commands from your Magento installation directory.
 
-Grunt task | Action 
----------- | ------- 
+Grunt task | Action
+---------- | -------
 grunt clean | Removes the theme related static files in the `pub/static` and `var` directories.
 grunt exec | Republishes symlinks to the source files to the `pub/static/frontend/` directory. Use `grunt exec:<theme>` to republish symlinks for a specific theme.
 grunt less | Compiles CSS files using the symlinks published in the `pub/static/frontend/` directory. Use `grunt less:<theme>` to use the symlinks published for a specific theme.
@@ -79,7 +79,7 @@ The following shows which Grunt tasks to use for debugging:
 
 If you have LiveReload installed, run the `grunt watch` command, and the flow is even simpler:
 
--   After you customize the content of any `.less` file, changes are applied and the page reloads automatically. No additional changes 
+-   After you customize the content of any `.less` file, changes are applied and the page reloads automatically. No additional changes
 -   After you [customize the root source files or move the files included to the root files]({{ page.baseurl }}/frontend-dev-guide/css-topics/css-preprocess.html#css_exception), run the `clean` and `exec` commands, which reloads the page in the browser.
 
 
@@ -96,9 +96,9 @@ CSS source maps solve this issue. They help to find the `.less` file, where the 
 ![node declaration autocomplete]({{ site.baseurl }}/common/images/fdg/with-map.png){:width="610px"}
 
 
-CSS source maps are generated automatically when you compile CSS for your theme using the `grunt less: <theme>` command. To use them, you need to enable the display of source maps in your browser. For example, in Chrome, you would open the Developer Tools, go to the **Settings** panel, select **Preferences**, then check the **Enable CSS source maps** checkbox. 
+CSS source maps are generated automatically when you compile CSS for your theme using the `grunt less: <theme>` command. To use them, you need to enable the display of source maps in your browser. For example, in Chrome, you would open the Developer Tools, go to the **Settings** panel, select **Preferences**, then check the **Enable CSS source maps** checkbox.
 
-Magento has a base set of variables that define commonly used aspects of a theme; such as colors, fonts, style of page titles, and so on. 
+Magento has a base set of variables that define commonly used aspects of a theme; such as colors, fonts, style of page titles, and so on.
 
 The `<magento-root>/lib/web/css/source/lib/variables` directory contains LESS files that define values assigned to variables for many of the common elements in Magento.
 
@@ -107,7 +107,7 @@ To change or override any of these variables, simply create a file in `<theme-di
 ![node declaration autocomplete]({{ site.baseurl }}/common/images/fdg/lib-map.png){:width="610px"}
 
 ```
-@navigation__background: @secondary__color__light; 
+@navigation__background: @secondary__color__light;
 @font-family__sans-serif: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 ```
 

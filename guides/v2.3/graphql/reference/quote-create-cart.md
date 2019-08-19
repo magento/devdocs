@@ -54,7 +54,7 @@ Attribute |  Data Type | Description
 
 ``` text
 mutation {
-  createEmptyCart(input: 
+  createEmptyCart(input:
      { cart_id: "x2345678901234567890123456789012"})
 }
 ```

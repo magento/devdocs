@@ -13,7 +13,7 @@ functional_areas:
 <!-- Referring file: contributing.md owned by core -->
 
 
-Like many large projects, Magento has coding standards. 
+Like many large projects, Magento has coding standards.
 
 Use Magento's coding standards when you contribute to Magento's codebase or create extensions.
 

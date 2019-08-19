@@ -30,8 +30,8 @@ You can delete custom VCL snippet code from your Fastly configuration by uploadi
 	- Save the configuration.
 
 	- Upload the VCL to Fastly to apply your changes.
-	
-- Use the Fastly API [Delete custom VCL snippet]({{ page.baseurl }}/cloud/cdn/cloud-vcl-custom-snippets.html#manage-vcl) operation 
+
+- Use the Fastly API [Delete custom VCL snippet]({{ page.baseurl }}/cloud/cdn/cloud-vcl-custom-snippets.html#manage-vcl) operation
  to delete the snippet completely, or submit a Magento support ticket to request deletion.
 
 

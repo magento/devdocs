@@ -28,7 +28,7 @@ This part is important because it means that JavaScript classes that extend `Cla
 
 #### The `:` separator
 
-Certain properties of the `defaults` object are processed by an additional core JavaScript class: `links.js` (located: `magento/module-ui/view/base/web/js/lib/core/element/links.js`). The object keys in `defaults` are: 
+Certain properties of the `defaults` object are processed by an additional core JavaScript class: `links.js` (located: `magento/module-ui/view/base/web/js/lib/core/element/links.js`). The object keys in `defaults` are:
 
 - `links`
 - `imports`

@@ -25,7 +25,7 @@ The topic describes how stylesheets are preprocessed and compiled to [CSS](https
             <p>Root source files</p>
         </td>
         <td>
-            The <code>.less</code> files from which the <code>.css</code> files <a href="{{ page.baseurl }}/frontend-dev-guide/css-topics/css-themes.html">included in layout</a> are compiled. For example, in one of the <a href="{{ site.mage2bloburl }}/2.2/app/design/frontend/Magento/blank/Magento_Theme/layout/default_head_blocks.xml">layout files of the Magento Blank theme</a>, the following <code>.css</code> files are included in the <code>head</code>:         
+            The <code>.less</code> files from which the <code>.css</code> files <a href="{{ page.baseurl }}/frontend-dev-guide/css-topics/css-themes.html">included in layout</a> are compiled. For example, in one of the <a href="{{ site.mage2bloburl }}/2.2/app/design/frontend/Magento/blank/Magento_Theme/layout/default_head_blocks.xml">layout files of the Magento Blank theme</a>, the following <code>.css</code> files are included in the <code>head</code>:
 <pre>
 &lt;head&gt;
     &lt;css src="css/styles-m.css"/&gt;
@@ -48,7 +48,7 @@ The topic describes how stylesheets are preprocessed and compiled to [CSS](https
 
 In the Magento application, the following modes of compiling `.less` files to CSS are implemented:
 
-1. Server-side Less compilation. 
+1. Server-side Less compilation.
 
     This is the default compilation mode, and is the only option in [production application mode]. In this case the compilation is performed on the server, using the [Less PHP library].
 
@@ -95,7 +95,7 @@ Once you save your changes, run the following command from your `<Magento_root>`
 
 ```bash
 bin/magento setup:static-content:deploy
-``` 
+```
 The tool pre-processes (including compilation) and publishes the static view files.
 
 {:.bs-callout .bs-callout-info}
@@ -203,17 +203,17 @@ To include a `.less` file using the `@magento_import` directive:
     **Example:**
     ```less
     //  Comment in a LESS document
-    
+
     //  Standard LESS import directive
     //  ---------------------------------------------
-    
+
     @import 'source/_reset';
     @import '_styles';
-    
+
     //
     //  Custom Magento LESS import directives
     //  ---------------------------------------------
-    
+
     //@magento_import 'source/_module.less'; // Theme modules
     //@magento_import 'source/_widgets.less'; // Theme widgets
     //@magento_import 'source/_extend.less'; // Extend for minor customization
@@ -239,8 +239,8 @@ Example of how `@magento_import` is used and processed in `<Magento_Blank_theme_
       </tr>
       <tr class="even">
          <td> In <code><Magento_Blank_theme_dir&gt;/web/css/styles-l.less</code> there's a following directive:
-<pre> 
-.. 
+<pre>
+..
  //@magento_import 'source/_widgets.less'; // Theme widgets
 ..
 </pre>

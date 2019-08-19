@@ -150,7 +150,7 @@ A column can have the following attributes:
 
 For more information about each type, refer to the annotations in the corresponding XSD file. The location of the XSD file depends on how you installed Magento.
 
-- [Archive download]({{page.baseurl}}/install-gde/prereq/zip_install.html): `<Magento_root_directory/vendor/magento/framework/Setup/Declaration/Schema/etc` 
+- [Archive download]({{page.baseurl}}/install-gde/prereq/zip_install.html): `<Magento_root_directory/vendor/magento/framework/Setup/Declaration/Schema/etc`
 - [Composer]({{page.baseurl}}/install-gde/composer.html) or [GitHub]({{page.baseurl}}/install-gde/prereq/dev_install.html) installation: `<Magento_root_directory/lib/internal/Magento/Framework/Setup/Declaration/Schema/etc`
 
 Example:
@@ -259,8 +259,8 @@ In the following example, the `declarative_table` table was completely removed f
 
 ### Rename a table
 
-Table renaming is supported. The declarative schema will create a new table with the new name and drop the table with the old name.  
-Renaming a table via `RENAME TABLE` is *NOT* supported.  
+Table renaming is supported. The declarative schema will create a new table with the new name and drop the table with the old name.
+Renaming a table via `RENAME TABLE` is *NOT* supported.
 To migrate data from another table, specify the `onCreate` attribute on the `table` declaration, and add specify the source table name:
 
 ```xml
@@ -398,8 +398,8 @@ In the following example, the selected `constraint` node defines the characteris
         <constraint xsi:type="primary" referenceId="PRIMARY">
             <column name="id_column"/>
         </constraint>
-+       <constraint xsi:type="foreign" referenceId="FL_ALLOWED_SEVERITIES" table="declarative_table" 
-+               column="severity" referenceTable="severities" referenceColumn="severity_identifier" 
++       <constraint xsi:type="foreign" referenceId="FL_ALLOWED_SEVERITIES" table="declarative_table"
++               column="severity" referenceTable="severities" referenceColumn="severity_identifier"
 +               onDelete="CASCADE"/>
     </table>
 </schema>
@@ -420,8 +420,8 @@ The following example removes the  `FL_ALLOWED_SEVERITIES` foreign key by deleti
         <constraint xsi:type="primary" referenceId="PRIMARY">
             <column name="id_column"/>
         </constraint>
--       <constraint xsi:type="foreign" referenceId="FL_ALLOWED_SEVERITIES" table="declarative_table" 
--               column="severity" referenceTable="severities" referenceColumn="severity_identifier" 
+-       <constraint xsi:type="foreign" referenceId="FL_ALLOWED_SEVERITIES" table="declarative_table"
+-               column="severity" referenceTable="severities" referenceColumn="severity_identifier"
 -               onDelete="CASCADE"/>
     </table>
 </schema>
@@ -432,7 +432,7 @@ It is possible to drop a foreign key only if it exists in the `db_schema_whiteli
 
 ### Recreate a foreign key
 
-In this example, Module A defines a new table with primary key `id_column`. Module B declares its own schema, in which it creates a new column (`new_id_column`) and changes the primary index to this column. 
+In this example, Module A defines a new table with primary key `id_column`. Module B declares its own schema, in which it creates a new column (`new_id_column`) and changes the primary index to this column.
 Module B disables the original primary key and sets a new primary key with a `referenceId` value that is different from PRIMARY. Although this value is different, the real name of the primary key in the database remains PRIMARY.
 
  **Module A declaration**

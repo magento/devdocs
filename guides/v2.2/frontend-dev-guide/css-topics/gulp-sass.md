@@ -80,12 +80,12 @@ For details about adding a custom preprocessor, see [Add custom CSS preprocessor
               .src([config.src])
               .pipe(plumber({errorHandler: onError}))
               .pipe(sass().on('error', sass.logError));
-    
+
           return stream
               .pipe(gulp.dest('./web/css/'));
       });
    ```
-   
+
    This task uses `styles.scss`, stored in the `app/design/frontend/<Vendor>/<theme>/web/css/` directory, as the source of Sass. It stores the generated CSS in `styles.css` in the `app/code/frontend/<Vendor>/<theme>` directory.
 
 5. Put the source `styles.scss` file in the `app/design/frontend/<Vendor>/<theme>/web/css/` directory.

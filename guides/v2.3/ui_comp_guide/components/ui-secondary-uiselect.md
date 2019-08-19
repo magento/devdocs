@@ -50,7 +50,7 @@ actions: [
     {
         value: 'deselectAll',
         label: $t('Deselect all')
-    }, 
+    },
     {
         value: 'selectPage',
         label: $t('Select all on this page')
@@ -63,10 +63,10 @@ actions: [
 ```
 </td>
     <td>Yes</td>
-  </tr>  
+  </tr>
 </table>
 
-### Optional configuration 
+### Optional configuration
 
 |Option|Description|Type|Default|Required|
 |--- |--- |--- |--- |--- |
@@ -103,7 +103,7 @@ The following configuration can be passed in as arguments:
 * Label to ui-select
 * Default caption
 * Caption if more than one element is selected
-    
+
 ## Modes
 
 ### **`simple` mode**

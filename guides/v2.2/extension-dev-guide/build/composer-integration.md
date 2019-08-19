@@ -33,7 +33,7 @@ Keep this in mind while customizing, updating, or troubleshooting composer while
 In Composer, a "project" package is a template used by the [`composer create-project`][9]{:target="_blank"} to set up the project structure.
 The [installation instructions for system integrators][10] use the {{site.data.var.ce}} and {{site.data.var.ee}} project packages to set up the Magento directory structure.
 
-A "product" package is the actual application pointed to by the `composer.json` file after you download and install the project package using `composer create-project`.  
+A "product" package is the actual application pointed to by the `composer.json` file after you download and install the project package using `composer create-project`.
 
 ## Descriptions of different composer.json files {#composerjson-overview}
 

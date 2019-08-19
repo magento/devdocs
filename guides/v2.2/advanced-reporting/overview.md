@@ -7,7 +7,7 @@ functional_areas:
 
 [Advanced reporting functionality]{:target="_blank"} is provided through integration of a Magento instance with the [Magento Business Intelligence]{:target="_blank"} (MBI).
 Magento collects data and sends this information to the MBI for analytics.
- 
+
 ## Prerequisites
 
 1. The website must run on a public web server.

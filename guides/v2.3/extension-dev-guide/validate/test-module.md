@@ -37,7 +37,7 @@ Before you publish your component, test installing it using the [Magento Compone
 
 		<IP or hostname of your GitHub repository> https://repo.magento.com
 
-1.	[Install your component], like a merchant. 
+1.	[Install your component], like a merchant.
 1.	Verify it installed correctly.
 
 ## More information

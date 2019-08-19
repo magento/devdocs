@@ -65,7 +65,7 @@ For example, `responsive.js` changes the view of the [checkout](https://glossary
 
 ## menu.js {#fedg_rwd_js_nav}
 
-In a mobile view, on the 768px breakpoint, `menu.js` changes the navigation menu look and behavior the following way: 
+In a mobile view, on the 768px breakpoint, `menu.js` changes the navigation menu look and behavior the following way:
 -   Category menu items are not displayed, but are accessible after
     clicking the menu icon.
 -   The behavior of a [category](https://glossary.magento.com/category) link depends on whether the category has sub-categories:
@@ -82,7 +82,7 @@ The following image illustrates the mobile-view navigation menu.
 
 ## Re-using Magento scripts in your theme {#rwd_js_reuse}
 
-You can use the `menu.js`, `responsive.js` and `matchMedia.js` to add responsive behavior in your custom theme. 
+You can use the `menu.js`, `responsive.js` and `matchMedia.js` to add responsive behavior in your custom theme.
 If your theme inherits from Blank or Luma, you do not even need to additionally include the script files in your theme.
 
 If your theme does not inherit from Blank or Luma, to be able to use the scripts, you must configure RequireJS for your theme.

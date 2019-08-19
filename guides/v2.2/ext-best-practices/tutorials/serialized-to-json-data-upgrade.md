@@ -207,7 +207,7 @@ $fieldDataConverter->convert(
 
 #### Use values from another table in the condition
 
-The following tables show how the `type` and `option_id` columns from the `catalog_product_option` table form the unique `code` value for custom options in the `quote_item_option` table.  
+The following tables show how the `type` and `option_id` columns from the `catalog_product_option` table form the unique `code` value for custom options in the `quote_item_option` table.
 
 > `catalog_product_option` table
 

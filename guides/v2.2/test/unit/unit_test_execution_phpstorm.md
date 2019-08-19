@@ -16,12 +16,12 @@ Running tests in PhpStorm requires following steps to setup the system.
 
 ### Configuring the PHP interpreter
 
-In the PhpStorm preferences, select the PHP interpreter PhpStorm should use to run tests with.  
+In the PhpStorm preferences, select the PHP interpreter PhpStorm should use to run tests with.
 
 ![PhpStorm PHP preference panel]({{ site.baseurl }}/common/images/phpstorm_php_language_preferences.png){: width="600px"}
 
 
-If you can not select a PHP interpreter because the dropdown is empty, you can add a one by clicking on the button with the three dots beside the dropdown.  
+If you can not select a PHP interpreter because the dropdown is empty, you can add a one by clicking on the button with the three dots beside the dropdown.
 
 Then, click the **+** (add) button in the top right to select the desired PHP binary on your file system.
 
@@ -49,7 +49,7 @@ Please refer to the PhpStorm documentation for further information on [enabling 
 
 ### Creating a run configuration
 
-The final step is to create a *run configuration* to execute the desired tests. 
+The final step is to create a *run configuration* to execute the desired tests.
 
 There are many ways to create run configurations in PhpStorm. Here we just show one of the option.
 
@@ -58,7 +58,7 @@ All start by creating a new run configuration. To do so, follow these steps:
 1.	Select the **Run > Edit Configurations** action from the top menu.
 2.	Click the **+** symbol on the top right and select **PHPUnit**.
 
-Depending on what tests should be included in the run configuration, the next steps differ.  
+Depending on what tests should be included in the run configuration, the next steps differ.
 
 #### Running all tests
 
@@ -92,13 +92,13 @@ Depending on what tests should be included in the run configuration, the next st
 ![Test Class run configuration]({{ site.baseurl }}/common/images/phpstorm_run_config_class_unit_tests.png){: width="600px"}
 
 
-A more convenient way to create a run configuration for a test class is to open the class in PhpStorm, and then right-clicking into the class and selecting **Create 'TestClassName'** or **Run 'TestClassName'**.  
+A more convenient way to create a run configuration for a test class is to open the class in PhpStorm, and then right-clicking into the class and selecting **Create 'TestClassName'** or **Run 'TestClassName'**.
 
 Note that the test class has to inherit from `\PHPUnit_Framework_TestCase` for PhpStorm to display that option.
 
 ### Executing the run configuration
 
-First select the run configuration to execute in the run configuration drop-down menu above the main editor window, then click the **Play** icon beside it.  
+First select the run configuration to execute in the run configuration drop-down menu above the main editor window, then click the **Play** icon beside it.
 
 By clicking the **Debug** icon (of a bug) next to the **Play** icon, it is possible to step-debug code during test execution, if the xdebug PHP [extension](https://glossary.magento.com/extension) is installed.
 

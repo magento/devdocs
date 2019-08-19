@@ -34,7 +34,7 @@ or
 </div>
 ```
 
-If you use the Magento syntax, the Magento wrapper replaces the Magento syntax with the matching Knockout comments or `data-bind` attributes during the loading of the HTML template. 
+If you use the Magento syntax, the Magento wrapper replaces the Magento syntax with the matching Knockout comments or `data-bind` attributes during the loading of the HTML template.
 
 ## Binding map
 

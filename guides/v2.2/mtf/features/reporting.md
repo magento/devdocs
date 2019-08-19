@@ -5,7 +5,7 @@ title: Reporting with the Functional Testing Framework
 
 The Functional Testing Framework (FTF) provides a reporting tool, which logs failures or any other information for you during test run.
 
-The following image demonstrates example of a general flow.  
+The following image demonstrates example of a general flow.
 
 ![Reporting mechanism diagram]({{ site.baseurl }}/common/images/ftf/ftf-reporting-diagram.png){:target="_blank"}
 
@@ -330,12 +330,12 @@ Step 2. [Dispatch][dispatch] an event `webapi_failed` in the `\Magento\Tax\Test\
 public function persist(FixtureInterface $fixture = null)
 {
     // Implementation of the method
-    // ...    
+    // ...
     if (empty($response['id'])) {
         $this->eventManager->dispatchEvent(['webapi_failed'], [$response]);
-        throw new \Exception('Tax rule creation by Web API handler was not successful!');     
+        throw new \Exception('Tax rule creation by Web API handler was not successful!');
      }
-     
+
     return ['id' => $response['id']];
 }
 ```

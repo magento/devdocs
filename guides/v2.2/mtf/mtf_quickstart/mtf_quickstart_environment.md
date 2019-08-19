@@ -37,7 +37,7 @@ java -jar <path_to_selenium_directory>/selenium-server.jar -Dwebdriver.chrome.dr
 ```
 
 ### Selenium 3
-    
+
 For Selenium 3 add the web driver to the directory where `selenium-server.jar` is located and run tests without additional argument:
 
 ```bash

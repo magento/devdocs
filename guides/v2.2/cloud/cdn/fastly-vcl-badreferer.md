@@ -16,7 +16,7 @@ We recommend adding custom VCL configurations to a Staging environment where you
 
 **Prerequisites**
 
--  Configure the {{ site.var.data.ece }} environment for Fastly services. See [Set up Fastly]({{ page.baseurl }}/cloud/cdn/configure-fastly.html). 
+-  Configure the {{ site.var.data.ece }} environment for Fastly services. See [Set up Fastly]({{ page.baseurl }}/cloud/cdn/configure-fastly.html).
 
 -  Get Admin credentials for your {{ site.data.var.ece }} environment.
 
@@ -46,16 +46,16 @@ Edge Dictionaries create key-value pairs accessible to VCL functions during VCL 
 
     -  Click the Settings icon for the `referrer_blocklist` dictionary.
 
-    -  Add and save key-value pairs in the new dictionary. For this example, each **Key** is the domain name of a referrer URL to block and **Value** is `true`. 
-       
+    -  Add and save key-value pairs in the new dictionary. For this example, each **Key** is the domain name of a referrer URL to block and **Value** is `true`.
+
        ![Add bad referrer dictionary items]
-	 
+
     -  Click **Cancel** to return to the system configuration page.
-	
+
 1.  Click **Save Config**.
 
 1.  Refresh the cache according to the notification at the top of the page.
-	
+
 For more information about Edge Dictionaries, see [Creating and using Edge Dictionaries](https://docs.fastly.com/guides/edge-dictionaries/working-with-dictionaries-using-the-api) and [custom VCL snippets](https://docs.fastly.com/guides/edge-dictionaries/working-with-dictionaries-using-the-api#custom-vcl-examples) in the Fastly documentation.
 
 ## Create a custom VCL snippet to block referrer spam
@@ -73,16 +73,16 @@ The following custom VCL snippet code (JSON format) checks incoming requests and
 }
 ```
 
-Review the example code and change values as needed: 
+Review the example code and change values as needed:
 
 -  `name`—Name for the VCL snippet. For this example, we used `block_bad_referrer`.
-  
+
 -  `dynamic`—Value 0 indicates a [regular snippet](https://docs.fastly.com/guides/vcl-snippets/using-regular-vcl-snippets) to upload to the versioned VCL for the Fastly configuration.
 
 -  `priority`—Determines when the VCL snippet runs. The priority  is `5` to run this snippet code before any of the default Magento VCL snippets (`magentomodule_*`) assigned a priority of 50.
 
 -  `type`—Specifies a location to insert the snippet in the VCL version. In this example, the VCL snippet is a `recv` snippet. When the snippet is inserted into the VCL version, it is added to the `vcl_recv` subroutine,  below the default Fastly VCL code and above any objects.
- 
+
 -  `content`—The snippet of VCL code to run in one line, without line breaks.
 
    In this example, the VCL code logic captures the host of a referrer website into a header, and then compares the host name to the list of URLs in the `referrer_blocklist` dictionary.
@@ -109,17 +109,17 @@ Add the custom VCL snippet to your Fastly service configuration from the Magento
     - **Type**—`recv`
 
     - **Priority**—`5`
-	
+
     - **VCL** snippet content—
 
       ```
-      set req.http.Referer-Host = regsub(req.http.Referer, 
+      set req.http.Referer-Host = regsub(req.http.Referer,
       "^https?://?([^:/\s]+).*$", "1");
-      if (table.lookup(referrer_blocklist, req.http.Referer-Host)) { 
-        error 403 "Forbidden"; 
+      if (table.lookup(referrer_blocklist, req.http.Referer-Host)) {
+        error 403 "Forbidden";
       }
       ```
-	  
+
 1.  Click **Create**.
 
     ![Create custom referrer block VCL snippet]

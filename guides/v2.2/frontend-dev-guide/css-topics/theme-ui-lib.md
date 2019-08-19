@@ -143,19 +143,19 @@ Use the accordion style for mobile and tab style for desktop.
 To set tabs and accordions using breakpoints, see the following example:
 
 ```css
-& when (@media-common = true) { 
+& when (@media-common = true) {
     .product.data.items {
         .lib-data-accordion();
     }
 }
 
-.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) { 
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
     .product.data.items {
         .lib-data-tabs();
     }
 }
 ```
-## Navigation set with CSS 
+## Navigation set with CSS
 
 Use the Navigation style for mobile and tab style for desktop.
 
@@ -166,7 +166,7 @@ To set navigation using breakpoints, see the following example:
 //  Mobile
 //  _____________________________________________
 
-.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) { 
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
     .lib-main-navigation();
 }
 
@@ -174,7 +174,7 @@ To set navigation using breakpoints, see the following example:
 //  Desktop
 //  _____________________________________________
 
-.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) { 
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
     .lib-main-navigation-desktop();
 }
 ```

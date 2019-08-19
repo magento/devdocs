@@ -9,7 +9,7 @@ functional_areas:
 
 #### Contents
 
-*	[Overview of the Varnish solution]  
+*	[Overview of the Varnish solution]
 *	[Varnish topology diagram]
 *	[Process overview]
 *	[Known issues]

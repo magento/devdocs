@@ -10,7 +10,7 @@ functional_areas:
 
 The request processors pool routes WebApi requests. It is located in the Magento_WebApi module: `Magento\Webapi\Controller\Rest\RequestProcessorPool`
 
-Magento defines the following processors: 
+Magento defines the following processors:
 
 {:.fixed}
 Processor name | Class | URL pattern | Description
@@ -27,7 +27,7 @@ Processor name | Class | URL pattern | Description
 
 ## Create a new processor
 
-To create a custom processor, you must perform the following tasks: 
+To create a custom processor, you must perform the following tasks:
 
 * Define the custom processor in `webapi_rest/di.xml`.
 * Create a processor class and implement the `Magento\Webapi\Controller\Rest\RequestProcessorInterface` interface.
@@ -92,7 +92,7 @@ interface RequestProcessorInterface
 }
 ```
 
-The `canProcess(\Magento\Framework\Webapi\Rest\Request $request)` method defines whether the current request can be processed. Currently, all implemented processors match current request URLs with the defined patterns. 
+The `canProcess(\Magento\Framework\Webapi\Rest\Request $request)` method defines whether the current request can be processed. Currently, all implemented processors match current request URLs with the defined patterns.
 
 For example, `Magento\WebapiAsync\Controller\Rest\AsynchronousRequestProcessor` processes asynchronous calls, such as `<host>/rest/async/V1/products`.
 
