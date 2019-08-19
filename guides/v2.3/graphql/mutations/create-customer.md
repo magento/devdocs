@@ -65,7 +65,7 @@ The following table lists the attributes you can use as input for the `createCus
 
 ## Output attributes
 
-The `createCustomer` object contains the `CustomerOutput` object.
+The `createCustomer` mutation returns the `CustomerOutput` object.
 
 Attribute |  Data Type | Description
 --- | --- | ---
