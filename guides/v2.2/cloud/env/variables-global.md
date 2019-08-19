@@ -30,7 +30,7 @@ stage:
 ```
 
 {: .bs-callout .bs-callout-warning }
-Doesn't effect log level for the file handler which is debug by default.
+The setting for the`MIN_LOGGING_LEVEL` variable does not change the log level configuration for the file handler, which is set to debug by default.
 
 ### `SCD_ON_DEMAND`
 
