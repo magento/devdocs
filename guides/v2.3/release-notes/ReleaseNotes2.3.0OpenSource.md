@@ -1155,7 +1155,7 @@ See [Magento Security Center](https://magento.com/security/patches/magento-2.2.7
 * We’ve replaced the usage of `Zend_Json::encode`  in the setup marketplace tests. [GitHub-9236](https://github.com/magento/magento2/issues/9236)
 
 <!---ENGCOM-1173 -->
-* The `Magento\Framework\Json\Helper\Data` class has been deprecated and removed from the` Magento\AdminNotification` module. [GitHub-10329](https://github.com/magento/magento2/issues/10329)
+* The `Magento\Framework\Json\Helper\Data` class has been deprecated and removed from the `Magento\AdminNotification` module. [GitHub-10329](https://github.com/magento/magento2/issues/10329)
 
 <!---MAGETWO-81276 -->
 * An entry for `compiled_config` cache  has been added to the `cache.xml` file. [GitHub-11295](https://github.com/magento/magento2/issues/11295)
@@ -1200,7 +1200,7 @@ See [Magento Security Center](https://magento.com/security/patches/magento-2.2.7
 * Categories are now populated as expected. Previously,   `catalog_category_product_index` did not contain all category product relations that are in `catalog_category_product`.The highest category IDs per type were missing from the index. *Fix submitted by Anton Evers in pull request [12624](https://github.com/magento/magento2/pull/12624)*.
 
 <!---MAGETWO-86653 -->
-* `vendor/magento/framework/composer.json` now declare a dependency on ` \Zend_Db_Select`.  *Fix submitted by Ihor Sviziev in pull request [12992](https://github.com/magento/magento2/pull/12992)*.  [GitHub-12967](https://github.com/magento/magento2/issues/12967)
+* `vendor/magento/framework/composer.json` now declare a dependency on `\Zend_Db_Select`.  *Fix submitted by Ihor Sviziev in pull request [12992](https://github.com/magento/magento2/pull/12992)*.  [GitHub-12967](https://github.com/magento/magento2/issues/12967)
 
 <!---MAGETWO-75326 -->
 * The Magento Admin no longer falls into a redirect loop when an administrator logs in with a role that has no resources assigned.  [GitHub-10611](https://github.com/magento/magento2/issues/10611)

@@ -515,7 +515,7 @@ Our community contributors have made many helpful, minor corrections to spelling
 
 <!--  ENGCOM-1384 -->* Corrected grammar in `README.md`. *Fix submitted by Stanislav Idolov in pull request [14844](https://github.com/magento/magento2/pull/14844)*.
 
-<!--  ENGCOM-2218 -->* Corrected type hints in `Webapi/Controller/Soap/Request/Handler.php` and `Webapi/Model/Plugin/GuestAuthorization.php. Also corrected case in property annotation  in `Soap\Server.php` and added undefined property `_appState in `Controller\Soap.php`. *Fix submitted by Prince Patel in pull request [16626](https://github.com/magento/magento2/pull/16626)*.
+<!--  ENGCOM-2218 -->* Corrected type hints in `Webapi/Controller/Soap/Request/Handler.php` and `Webapi/Model/Plugin/GuestAuthorization.php`. Also corrected case in property annotation  in `Soap\Server.php` and added undefined property `_appState` in `Controller\Soap.php`. *Fix submitted by Prince Patel in pull request [16626](https://github.com/magento/magento2/pull/16626)*.
 
 <!--  ENGCOM-2218 -->* Corrected `Magento\Webapi\Model\Soap\Fault::toXml()` method invocation in `Soap\FaultTest.php`. *Fix submitted by Prince Patel in pull request [16626](https://github.com/magento/magento2/pull/16626)*.
 
@@ -697,7 +697,7 @@ Our community contributors have made many helpful, minor corrections to spelling
 
 #### Web API framework
 
-<!--  ENGCOM-2012 -->* The `array_push `function has been added to the list of forbidden functions. *Fix submitted by Leandro F. L. in pull request [16144](https://github.com/magento/magento2/pull/16144)*.
+<!--  ENGCOM-2012 -->* The `array_push` function has been added to the list of forbidden functions. *Fix submitted by Leandro F. L. in pull request [16144](https://github.com/magento/magento2/pull/16144)*.
 
 <!--  ENGCOM-1720 -->* A generated admin API token no longer expires immediately. Previously, when you created a token for an Admin user and have set   **Admin Token Lifetime (hours))**  to empty, Magento denied access  because the token immediately expired. *Fix submitted by Maikel Martens in pull request [15598](https://github.com/magento/magento2/pull/15598)*. [GitHub-15564](https://github.com/magento/magento2/issues/15564)
 

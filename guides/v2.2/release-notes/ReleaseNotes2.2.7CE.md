@@ -201,7 +201,7 @@ product, and hung indefinitely while trying to add the product.
 
 <!-- ENGCOM-2776 -->* The code generator for Proxy is no longer missing `returnType` in the method information definition. *Fix submitted by [adrian-martinez-interactiv4](https://github.com/adrian-martinez-interactiv4) in pull request [17552](https://github.com/magento/magento2/pull/17552)*.
 
-<!-- ENGCOM-2748 -->* The `<script/>` tag has been replaced with `<script type="text/x-magento-init" /> `in  `app/code/Magento/Catalog/view/adminhtml/templates/catalog/product/attribute/form.phtml` and `app/code/Magento/Catalog/view/adminhtml/templates/catalog/product/edit/action/attribute.phtml`. Also,  a new JavaScript component with the callback function has been created.  *Fix submitted by [Yogesh Suhagiya](https://github.com/swnsma) in pull request [17527](https://github.com/magento/magento2/pull/17527)*.
+<!-- ENGCOM-2748 -->* The `<script/>` tag has been replaced with `<script type="text/x-magento-init" />` in  `app/code/Magento/Catalog/view/adminhtml/templates/catalog/product/attribute/form.phtml` and `app/code/Magento/Catalog/view/adminhtml/templates/catalog/product/edit/action/attribute.phtml`. Also, a new JavaScript component with the callback function has been created. *Fix submitted by [Yogesh Suhagiya](https://github.com/swnsma) in pull request [17527](https://github.com/magento/magento2/pull/17527)*.
 
 <!-- ENGCOM-2632 -->* The `$outputHelper` property declaration has been added to `app/code/Magento/Catalog/CustomerData/CompareProducts.php`. *Fix submitted by [Oleksandr Kravchuk](https://github.com/Yogeshks) in pull request [17250](https://github.com/magento/magento2/pull/17250)*.
 

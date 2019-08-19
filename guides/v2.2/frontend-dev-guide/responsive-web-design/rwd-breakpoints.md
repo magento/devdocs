@@ -62,7 +62,7 @@ Example:
 
 ## Add `.media-width()` calls for the new breakpoint
 
-Now you can add a new `.media-width()` mixin call where necessary in your theme `.less ` files.
+Now you can add a new `.media-width()` mixin call where necessary in your theme `.less` files.
 
 Example:
 ```less

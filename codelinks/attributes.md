@@ -69,7 +69,7 @@ SOAP | `quoteGuestPaymentMethodManagementV1GetList` | `quoteGuestPaymentMethodMa
 Language | Does not return detailed attributes | Returns detailed attributes
 --- | --- | ---
 PHP | `PaymentMethodManagementInterface::getList($cartId)` | `PaymentMethodManagementInterface::get($cartId)`
-REST |` /V1/carts/:cartId/payment-methods` |	`/V1/carts/:cartId/selected-payment-method`
+REST |`/V1/carts/:cartId/payment-methods` |	`/V1/carts/:cartId/selected-payment-method`
 SOAP | `quotePaymentMethodManagementV1GetList` | `quotePaymentMethodManagementV1Get`
 
 Language | Does not return detailed attributes | Returns detailed attributes

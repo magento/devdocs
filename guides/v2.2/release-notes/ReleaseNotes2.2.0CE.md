@@ -97,7 +97,7 @@ This release contains hundreds of fixes and enhancements.
 
 <!--- 69544-->* We've added the `dev:template-hints:enable` and `dev:template-hints:disable` commands to manage template hints. *Fix submitted by community member Miguel Balparda in pull request [9778](https://github.com/magento/magento2/pull/9778){: target="_blank"}.*
 
-<!--- 67501-->* We've added the `dev:query-log:enable` and  `dev:query-log:disable ` to manage database query logging.  *Fix submitted by community member Federico Rivollier in pull request [9264](https://github.com/magento/magento2/pull/9264){: target="_blank"}.*
+<!--- 67501-->* We've added the `dev:query-log:enable` and  `dev:query-log:disable` to manage database query logging.  *Fix submitted by community member Federico Rivollier in pull request [9264](https://github.com/magento/magento2/pull/9264){: target="_blank"}.*
 
 <!---67537 -->* We've added the `varnish:vcl:generate` command to create the Varnish VCL file. *Fix submitted by community member Piotr Kwiecinski in pull request [9286](https://github.com/magento/magento2/pull/9286){: target="_blank"}.*
 
@@ -415,7 +415,7 @@ This release contains hundreds of fixes and enhancements.
 
 <!--- 67500 -->* The `setup:static-content:deploy`, `setup:di:compile` and `deploy:mode:set` commands now return non-zero exit code if an error occurs. *Fix submitted by community member Pablo Ivulic in pull request [7780](https://github.com/magento/magento2/pull/7780){: target="_blank"}.*
 
-<!--- 67408-->* We've changed the `select `protected property to `query` in the AbstractSearchResult class. *Fix submitted by community member Alex Gusev in pull request [5043](https://github.com/magento/magento2/pull/5043){: target="_blank"}.*
+<!--- 67408-->* We've changed the `select` protected property to `query` in the AbstractSearchResult class. *Fix submitted by community member Alex Gusev in pull request [5043](https://github.com/magento/magento2/pull/5043){: target="_blank"}.*
 
 <!---67260-->* `\Magento\Framework\Interception\Code\Generator\Interceptor` now supports interceptors for generating for methods that return references. [GitHub-9167](https://github.com/magento/magento2/issues/9167)
 
@@ -543,7 +543,7 @@ Thanks to our hardworking Magento Open Source community members for the followin
 
 <!--- 67320-->* The popup window in the Safari browser now closes properly. *Fix submitted by community member Hans Schouten in pull request [8824](https://github.com/magento/magento2/pull/8824){: target="_blank"}.*
 
-<!--- 67054-->* We’ve fixed minor performance issues when you use `/pub `as `docroot`. *Fix submitted by community member Joseph Maxwell in pull request [9094](https://github.com/magento/magento2/pull/9094){: target="_blank"}.*
+<!--- 67054-->* We've fixed minor performance issues when you use `/pub` as `docroot`. *Fix submitted by community member Joseph Maxwell in pull request [9094](https://github.com/magento/magento2/pull/9094){: target="_blank"}.*
 
 <!--- 70310-->* The Actions dropdown menu is now properly aligned in the Admin when the action column is not the last column. *Fix submitted by community member Marius Strajeru in pull request [10082](https://github.com/magento/magento2/pull/10082){: target="_blank"}.*
 

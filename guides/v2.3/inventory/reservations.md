@@ -42,7 +42,7 @@ Parameter | Data type | Description
 `stock_id` | Integer | The ID of the stock the product is assigned to
 `sku` | String | The SKU of the product
 `quantity` | Float | The number of items in this reservation
-`metadata` | String | The event type, object type, and object ID for this reservation. For example, `{"event_type":"order_placed","object_type":"order","object_id":"8"} `
+`metadata` | String | The event type, object type, and object ID for this reservation. For example, `{"event_type":"order_placed","object_type":"order","object_id":"8"}`
 
 The metadata `event_type` can have the following values:
 
@@ -68,7 +68,7 @@ The following example shows the sequence of reservations generated for a simple 
    sku = SKU-1
    quantity = -25
    event_type = order_placed
-```
+   ```
 
 2. The customer sends an invoice for 20 items, essentially canceling 5 of the units ordered.
 

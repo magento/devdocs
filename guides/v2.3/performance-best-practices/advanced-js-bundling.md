@@ -124,7 +124,7 @@ Add the following RequireJS build configuration nodes, `deps`, `shim`, `paths`, 
 
 #### 3\. Aggregate the requirejs-config.js instance values
 
-In this step, you will need to aggregate all of the multiple `deps`, `shim`, `paths`, and `map ` configuration nodes from your store's `requirejs-config.js` file into the corresponding nodes in your `build.js` file. To do this, you can open the **Network** tab in your browser's Developer Tools panel and navigate to any page in your store, such as the homepage. In the Network tab, you will see your store's instance of the `requirejs-config.js` file near the top, highlighted here:
+In this step, you will need to aggregate all of the multiple `deps`, `shim`, `paths`, and `map` configuration nodes from your store's `requirejs-config.js` file into the corresponding nodes in your `build.js` file. To do this, you can open the **Network** tab in your browser's Developer Tools panel and navigate to any page in your store, such as the homepage. In the Network tab, you will see your store's instance of the `requirejs-config.js` file near the top, highlighted here:
 
 ![RequireJSConfig](images/RequireJSConfig.png)
 

@@ -100,7 +100,7 @@ We've fixed hundreds of issues in the Magento 2.3.2 core code.
 * All fields are now hidden with appropriate dependencies as assigned in the backup configuration settings. *Fix submitted by [Keyur Kanani](https://github.com/keyuremipro) in pull request [22475](https://github.com/magento/magento2/pull/22475)*. [GitHub-22474](https://github.com/magento/magento2/issues/22474)
 
 <!--- ENGCOM-4753-->
-* Updated the email template stylesheet for the Magento default and Luma themes to correctly specify the ` .no-link` selector. This update fixes the following less compilation error that displayed when compiling the `email-inline.less` file using less.js compiler v2.73: ` extend ' .no-link a' has no matches`. *Fix submitted by [Pieter Hoste](https://github.com/hostep) in pull request [22332](https://github.com/magento/magento2/pull/22332)*. [GitHub-22330](https://github.com/magento/magento2/issues/22330)
+* Updated the email template stylesheet for the Magento default and Luma themes to correctly specify the `.no-link` selector. This update fixes the following less compilation error that displayed when compiling the `email-inline.less` file using less.js compiler v2.73: `extend ' .no-link a' has no matches`. *Fix submitted by [Pieter Hoste](https://github.com/hostep) in pull request [22332](https://github.com/magento/magento2/pull/22332)*. [GitHub-22330](https://github.com/magento/magento2/issues/22330)
 
 ### Backend
 
@@ -965,7 +965,7 @@ has been changed to `<argument name="resourceStockItem" xsi:type="object">Magent
 
 <!--- ENGCOM-4786-->
 * `PUT /V1/products/:sku/media/:entryId` now updates product images as expected. Previously, this call updated
-label, types and disabled, but the actual `file-content` was not replaced with the values that were provided in ` base64_encoded_data`.  *Fix submitted by [Nazar Klovanych](https://github.com/Nazar65) in pull request [22424](https://github.com/magento/magento2/pull/22424)*. [GitHub-22402](https://github.com/magento/magento2/issues/22402)
+label, types and disabled, but the actual `file-content` was not replaced with the values that were provided in `base64_encoded_data`.  *Fix submitted by [Nazar Klovanych](https://github.com/Nazar65) in pull request [22424](https://github.com/magento/magento2/pull/22424)*. [GitHub-22402](https://github.com/magento/magento2/issues/22402)
 
 ### Wishlist
 
