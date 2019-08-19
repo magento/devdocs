@@ -61,7 +61,6 @@ There are two mutation queries in GraphQl which can be use to set the payment me
 |`setPaymentMethodOnCart`|Sets the payment method for your order|
 |`setPaymentMethodAndPlaceOrder`|Sets the payment method and then immediately places your order. In this case ["Step 10. Place the order"]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-place-order.html) can be skipped|
 
-
 ### Set payment method on cart {#setPaymentMethodOnCart}
 
 Use the `setPaymentMethodOnCart` mutation to set the payment method for your order. The value `checkmo` ("Check / Money order" payment method code) was returned in the query.
