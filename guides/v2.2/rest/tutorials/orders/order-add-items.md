@@ -424,4 +424,4 @@ For this example, we'll configure the Sprite Yoga Companion Kit as follows:
 
 ### Verify this step {#verify-step}
 
-[Sign in](https://glossary.magento.com/sign-in) as the customer and click on the [shopping cart](https://glossary.magento.com/shopping-cart). All the items you added are displayed.
+[Sign in](https://glossary.magento.com/sign-in-sign-out) as the customer and click on the [shopping cart](https://glossary.magento.com/shopping-cart). All the items you added are displayed.

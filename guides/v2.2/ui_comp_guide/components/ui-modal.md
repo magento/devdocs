@@ -17,7 +17,7 @@ For recommendations about modal windows usage from the UX point of view, see the
 Component's options are set in the configuration `.xml` file as follows:
 
 ```xml
- <modal name="test_modal">
+<modal name="test_modal">
     <argument name="data" xsi:type="array">
         <item name="config" xsi:type="array">
             <!-- Configurable options are specified here -->
@@ -29,50 +29,15 @@ Component's options are set in the configuration `.xml` file as follows:
 </modal>
 ```
 
-<table>
-  <tr>
-    <th>Option</th>
-    <th>Description</th>
-    <th>Type</th>
-    <th>Default</th>
-  </tr>
-  <tr>
-    <td><code>modalClass</code></td>
-    <td>CSS class applied to the root node of the component's <code>.html</code> template.</td>
-    <td>String</td>
-    <td><code>modal-component</code></td>
-  </tr>
-  <tr>
-    <td><code>onCancel</code></td>
-    <td>Name of the method invoked when a user attempts to close the modal window.</td>
-    <td>String</td>
-    <td><code>closeModal</code></td>
-  </tr>
-  <tr>
-    <td><code>options</code></td>
-    <td>Configuration passed to the <a href="{{ page.baseurl }}/javascript-dev-guide/widgets/widget_modal.html">modal widget</a>.</td>
-    <td>Object</td>
-    <td />
-  </tr>
-  <tr>
-    <td><code>subTitle</code></td>
-    <td>Subtitle of the modal window.</td>
-    <td>String</td>
-    <td />
-  </tr>
-  <tr>
-    <td><code>template</code></td>
-    <td>Path to the component's .html template.</td>
-    <td>String</td>
-    <td><code>ui/modal/modal-component</code></td>
-  </tr>
-  <tr>
-    <td><code>title</code></td>
-    <td>Label displayed in the header of the modal window.</td>
-    <td>String</td>
-    <td />
-  </tr>
-</table>
+| Option | Description | Type | Default |
+| --- | --- | --- | --- |
+| `modalClass` | CSS class applied to the root node of the component's `.html` template. | String | `modal-component` |
+| `onCancel` | Name of the method invoked when a user attempts to close the modal window. | String | `closeModal` |
+| `options` | Configuration passed to the [modal widget]({{ page.baseurl }}/javascript-dev-guide/widgets/widget_modal.html). | Object | ```{modalClass: '',title: '',subTitle: '',buttons: [],keyEventHandlers: {}}``` |
+| `subTitle` | Subtitle of the modal window. | String | `''` |
+| `template` | Path to the component's `.html` template. | String | `ui/modal/modal-component` |
+| `title` | Label displayed in the header of the modal window. | String | `''` |
+| `valid` | The modal validity value. | Boolean | `true` |
 
 ## Examples
 

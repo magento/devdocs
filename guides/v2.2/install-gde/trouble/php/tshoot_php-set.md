@@ -76,5 +76,5 @@ Edit `php.ini` and set `asp_tags = off`. For more information, see [Required PHP
 
 [Required PHP settings]: {{ page.baseurl }}/install-gde/prereq/php-settings.html
 [asp_tags]: http://php.net/manual/en/ini.core.php#ini.asp-tags
-[template]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/view/adminhtml/templates/product/edit/base_image.phtml
+[template]: {{ site.mage2bloburl }}/2.0/app/code/Magento/Catalog/view/adminhtml/templates/product/edit/base_image.phtml
 [`phpinfo.php`]: {{ page.baseurl }}/install-gde/prereq/optional.html#install-optional-phpinfo

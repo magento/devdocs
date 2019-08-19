@@ -22,21 +22,21 @@ Central to the Magento model of software development is the practice of replacin
 
 ### Reliance on popular design patterns
 
-Reliance on known architectural and programming structures helps {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} developers orient themselves to the specific development issues that affect coding in a particular product ecosystem. This can reduce the learning curve for new Magento developers.
+Reliance on known architectural and programming structures helps [PHP](https://glossary.magento.com/php) developers orient themselves to the specific development issues that affect coding in a particular product ecosystem. This can reduce the learning curve for new Magento developers.
 
 Design patterns are time-tested, widely recognized software architecture constructs. Magento product architecture incorporates many well known patterns, but Model-View-Controller (MVC) holds particular interest for extension developers.
 
 ### Modularity
 
-The concept of the *module* is the heart of Magento {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} development, and modular design of software components (in particular, modules, themes, and language packages) is a core architectural principle of the product. Self-contained modules of discrete code are organized by feature, thereby reducing each module's external dependencies.
+The concept of the *module* is the heart of Magento [extension](https://glossary.magento.com/extension) development, and modular design of software components (in particular, modules, themes, and language packages) is a core architectural principle of the product. Self-contained modules of discrete code are organized by feature, thereby reducing each module's external dependencies.
 
-If a {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} is self-contained, then you can modify or replace it without affecting other areas of the code. This *loose coupling* of software components reduces the ripple effects throughout your code base of changing code.
+If a [module](https://glossary.magento.com/module) is self-contained, then you can modify or replace it without affecting other areas of the code. This *loose coupling* of software components reduces the ripple effects throughout your code base of changing code.
 
  See the [PHP Developer Guide][] for detailed instructions on how to create modules.
 
 ### Rich product ecosystem
 
-The wider Magento ecosystem provides an extensive community and rich third-party marketplace for extensions. Visit [Magento Marketplace][] for an overview of the many modules and themes available for download and to buy modules and {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} packages, which offer more possibilities for extending your {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %}.
+The wider Magento ecosystem provides an extensive community and rich third-party marketplace for extensions. Visit [Magento Marketplace][] for an overview of the many modules and themes available for download and to buy modules and [theme](https://glossary.magento.com/theme) packages, which offer more possibilities for extending your [storefront](https://glossary.magento.com/storefront).
 
 ### Open-source software to create and manage extensions
 
@@ -52,7 +52,7 @@ Magento has well-defined upgrade and versioning strategies that can help you avo
 
 ### Web APIs
 
-Magento or third-party services can be configured as a web {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} (REST or SOAP) with some simple {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %}. You can use these services to integrate your Magento installation into third-party applications, such as CRM (Customer Relationship Management), ERP (Enterprise Resource Planning) back office systems, and {% glossarytooltip f3944faf-127e-4097-9918-a2e9c647d44f %}CMS{% endglossarytooltip %} (Content Management Systems).
+Magento or third-party services can be configured as a web [API](https://glossary.magento.com/api) (REST or SOAP) with some simple [XML](https://glossary.magento.com/xml). You can use these services to integrate your Magento installation into third-party applications, such as CRM (Customer Relationship Management), ERP (Enterprise Resource Planning) back office systems, and [CMS](https://glossary.magento.com/cms) (Content Management Systems).
 
 See [Getting Started with Magento Web APIs][] for more information.
 
@@ -69,11 +69,11 @@ You can enhance your storefront by adding unique attributes to the default produ
 
 Attribute types fall into three general categories:
 
-* **EAV (Entity-Attribute-Value) attributes** are site-specific attributes that you can define for a local site using the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %}.
+* **EAV (Entity-Attribute-Value) attributes** are site-specific attributes that you can define for a local site using the [Magento Admin](https://glossary.magento.com/magento-admin).
 
-* **Custom attributes** are a subset of EAV attributes. Objects that use EAV attributes typically store values in several MySQL tables. The Customer and {% glossarytooltip 8d40d668-4996-4856-9f81-b1386cf4b14f %}Catalog{% endglossarytooltip %} modules use EAV attributes.
+* **Custom attributes** are a subset of EAV attributes. Objects that use EAV attributes typically store values in several MySQL tables. The Customer and [Catalog](https://glossary.magento.com/catalog) modules use EAV attributes.
 
-* **Extension attributes** often use more {% glossarytooltip fd9ae55f-ccf5-480b-a7f3-bd2c80f0b2a4 %}complex data{% endglossarytooltip %} types than custom attributes. These attributes do not appear in the storefront. Extension attributes are introduced by modules.
+* **Extension attributes** often use more [complex data](https://glossary.magento.com/complex-data) types than custom attributes. These attributes do not appear in the storefront. Extension attributes are introduced by modules.
 
 See [PHP Developer Guide][] for information about using attributes.
 
@@ -91,7 +91,7 @@ See [PHP Developer Guide][] for information on both dependency injection and ser
 
 Plug-ins, like modules, are a mechanism for adding features to the core Magento product. Plug-ins enable you to make changes to the behavior of any public method in a Magento class. You can consider it a form of extension that uses the `Plugin` class.
 
-Plug-ins are also called *interceptors*. Applications use the {% glossarytooltip 9fceecbe-31be-4e49-aac7-11d155a85382 %}plug-in{% endglossarytooltip %} pattern to change method behavior without modifying the actual class. Plug-ins can typically intercept method processing before or after the method runs, or only when the method throws an {% glossarytooltip 53da11f1-d0b8-4a7e-b078-1e099462b409 %}exception{% endglossarytooltip %}.
+Plug-ins are also called *interceptors*. Applications use the [plug-in](https://glossary.magento.com/plug-in) pattern to change method behavior without modifying the actual class. Plug-ins can typically intercept method processing before or after the method runs, or only when the method throws an [exception](https://glossary.magento.com/exception).
 
 See [Plug-ins][] in [PHP Developer Guide][] for information on declaring and prioritizing plug-ins.
 

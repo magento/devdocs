@@ -20,7 +20,7 @@ Each Magento [module](https://glossary.magento.com/module) is responsible for a 
 
 ## Two types of dependencies {#m2devgde-moddep-declare-dep}
 
-There are two types of Magento {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} dependencies: hard and soft.
+There are two types of Magento [module](https://glossary.magento.com/module) dependencies: hard and soft.
 
 ### Hard dependencies
 
@@ -31,13 +31,43 @@ A module with a *hard dependency* on another module cannot function without the 
 * Deserializes an object declared in another module.
 * Uses or modifies the database tables used by another module.
 
+The `require` section of `app/code/<Vendor>/<Module>/composer.json` file contains hard dependency definitions for the module. For example:
+
+```json
+  ...
+  "require": {
+    "magento/module-catalog": "103.0.*",
+    "magento/module-email": "101.0.*",
+    "magento/module-media-storage": "100.3.*",
+    "magento/module-store": "101.0.*",
+    "magento/module-theme": "101.0.*",
+    "magento/module-ui": "101.1.*",
+    "magento/module-variable": "100.3.*",
+    "magento/module-widget": "101.1.*",
+    "magento/module-authorization": "100.3.*"
+   },
+   ...
+```
+
 ### Soft dependencies
 
 A module with a *soft dependency* on another module can function properly without the other module, even if it has a dependency on the other module. These modules:
 
 * Directly check another module's availability.
 * Extend another module's configuration.
-* Extend another module's {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %}.
+* Extend another module's [layout](https://glossary.magento.com/layout).
+
+The `<sequence>` section of `app/code/<Vendor>/<Module>/etc/module.xml` file contains soft dependency definitions for the module. For example:
+
+```xml
+  <module name="Magento_Cms">
+     <sequence>
+        <module name="Magento_Store"/>
+        <module name="Magento_Theme"/>
+        <module name="Magento_Variable"/>
+     </sequence>
+  </module>
+```
 
 {:.bs-callout .bs-callout-tip}
 If a module uses code from another module, it should declare the dependency explicitly.
@@ -85,7 +115,7 @@ In this case, using interfaces is preferable to using classes. You can build dep
 
 A module belonging to the application layer cannot be used in the Magento Framework.
 
-You can build dependencies between classes in the application layer, but these classes must belong to the same module. Dependencies between the modules of the application layer should be built only by the {% glossarytooltip cdf644c4-bc99-4550-a954-dd5ae165785a %}service contract{% endglossarytooltip %} or the service provider interface (SPI).
+You can build dependencies between classes in the application layer, but these classes must belong to the same module. Dependencies between the modules of the application layer should be built only by the [service contract](https://glossary.magento.com/service-contract) or the service provider interface (SPI).
 
 ## Managing module dependencies
 

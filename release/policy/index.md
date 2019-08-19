@@ -33,4 +33,4 @@ The following guidelines apply to patch releases:
 - Patches may include new features as long as they are not expected to break other code. The new feature can be included in the core code or as an extension, such as Page Builder.
 
 {:.bs-callout .bs-callout-info}
-See [Magento Software Lifecycle Policy](https://magento.com/sites/default/files/magento-software-lifecycle-policy.pdf) and [Versioning](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/versioning/).
+See [Magento Software Lifecycle Policy](https://magento.com/sites/default/files/magento-software-lifecycle-policy.pdf) and [Versioning]({{ site.baseurl }}/guides/v2.3/extension-dev-guide/versioning/).

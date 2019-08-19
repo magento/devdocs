@@ -2,8 +2,8 @@
 group: cloud-guide
 title: Install Magento prerequisites
 redirect_from:
-  - /guides/v2.2/cloud/before/before-workspace-php.html
-  - /guides/v2.2/cloud/before/before-workspace-cli.html
+  - /guides/v2.3/cloud/before/before-workspace-php.html
+  - /guides/v2.3/cloud/before/before-workspace-cli.html
 functional_areas:
   - Cloud
   - Setup
@@ -113,7 +113,7 @@ These example instructions detail how to install and create a MariaDB database f
 		use magento;
 6. Exit when done.
 
-### Pro: Set up the auto-increment for MariaDB {#cloud-mysql}
+### Pro: Set up the auto-increment for MariaDB
 
 You need to set an auto-increment value for the MariaDB installation.
 
