@@ -33,6 +33,5 @@ Use the following steps to reduce the amount of time it takes your store to depl
 1.  [Speed up static content deployment]({{page.baseurl}}/cloud/env/variables-deploy.html#scd_threads)
     You can speed up the deployment process by updating the  SCD\_THREADS environment variable to increase the number of threads for static content deployment.
 
-
 {:.bs-callout .bs-callout-info}
 You can validate your project configuration for optimal deployment by [running the ideal state wizard]({{page.baseurl}}/cloud/deploy/smart-wizards.html#verifying-an-ideal-configuration).

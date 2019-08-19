@@ -15,14 +15,12 @@ The Fieldset component implements a container for visually-grouped form elements
 | `additionalClasses` | Object  | {}      | Custom classes added to the component's DOM block.                                                                        |
 | `level`             | Integer |         | Explicitly indicates the level of nesting([date-level] attribute).                                                        |
 
-
 ### collapsible configuration
 
 | Title         | Type    | Default | Description                                                                       |
 | ------------- | ------- | ------- | --------------------------------------------------------------------------------- |
 | `collapsible` | Boolean | `false` | Enables/disables the collapsible functionality.                                   |
 | `opened`      | Boolean | `false` | Initial collapsible state. Applied when the collapsible functionality is enabled. |
-
 
 ## Source files
 

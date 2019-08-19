@@ -22,7 +22,6 @@ The conventional location of `view.xml` for a theme is:
 
 For example, here is the `view.xml` of the Magento Blank theme: [`app/design/frontend/Magento/blank/etc/view.xml`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/design/frontend/Magento/blank/etc/view.xml).
 
-
 In `view.xml`, image properties are configured in the scope of `<images module="Magento_Catalog">` element:
 
 ```xml

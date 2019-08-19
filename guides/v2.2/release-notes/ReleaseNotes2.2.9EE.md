@@ -31,13 +31,11 @@ This release contains 150 enhancements to core quality, which improve the qualit
 
 * **Google chart API updated to the Image-Charts**. Magento now uses the Image-Charts free service to render static charts in Admin dashboards. Earlier deployments used Google Image Charts, which was deprecated in 2012 and turned off on [March 18, 2019](https://developers.google.com/chart/image/docs/making_charts). <!--- MAGETWO-98833-->
 
-
 ## Functional fixes
 
 In addition to security enhancements, this release contains the following functional fixes.
 
 ### Installation, setup, and deployment
-
 
 <!-- MAGETWO-76424 -->
 * Magento no longer displays an extraneous blank option in the country drop-down menu on the Country Options page for store configuration settings (**Stores** > **Settings** > **Configuration** > **General** > **Country Options**).
@@ -215,7 +213,6 @@ In addition to security enhancements, this release contains the following functi
 <!-- ENGCOM-4823 -->
 * Magento now increments product quantity correctly when a guest user adds products to the cart and later logs in. Previously, Magento added items separately instead. *Fix submitted by Amol Chaudhari in pull request [22378](https://github.com/magento/magento2/pull/22378)*. [GitHub-21375](https://github.com/magento/magento2/issues/21375)
 
-
 <!-- ENGCOM-4253 -->
 * **Meta Keywords** and **Meta Description** are now defined as `textarea` throughout product forms. Previously, they were defined as `input`. *Fix submitted by Amol Chaudhari in pull request [21199](https://github.com/magento/magento2/pull/21199)*. [GitHub-20555](https://github.com/magento/magento2/issues/20555)
 
@@ -281,7 +278,6 @@ In addition to security enhancements, this release contains the following functi
 
 <!-- ENGCOM-4540 -->
 * Added a new condition type Subtotal (Excl. Tax) to configure discounts that exclude the sales tax when calculating the subtotal on a Total Amount cart rule.  See [Price rules](https://docs.magento.com/m2/ee/user_guide/marketing/price-rule-discount-minimum-purchase.html). *Fix submitted by Eduard Chitoraga in pull request [21845](https://github.com/magento/magento2/pull/21845)*. [GitHub-12396](https://github.com/magento/magento2/issues/12396)
-
 
 ### Checkout agreements
 
@@ -364,7 +360,6 @@ In addition to security enhancements, this release contains the following functi
 <!-- MAGETWO-93521 -->
 * Custom customer attributes now show as expected in the Admin customer create and edit forms. Previously, these attributes were not displayed unless configured for display on the Customer Registration or Customer Account Edit forms. [GitHub-14456](https://github.com/magento/magento2/issues/14456)
 
-
 <!-- ENGCOM-4132 -->
 * Removed an unneeded space from the title of the My Account page in mobile view. *Fix submitted by Amol Chaudhari in pull request [20782](https://github.com/magento/magento2/pull/20782)*. [GitHub-20723](https://github.com/magento/magento2/issues/20723)
 
@@ -406,12 +401,10 @@ In addition to security enhancements, this release contains the following functi
 
   * `--lock-file-path=LOCK-FILE-PATH`—The path where file locks will be saved.
 
-
 <!-- ENGCOM-4660 -->
 * `crontab` now updates all currency rates daily as expected. Previously, `crontab` updated only a subset of the enabled currencies. *Fix submitted by Denis Papec in pull request [18980](https://github.com/magento/magento2/pull/18980)*. [GitHub-18580](https://github.com/magento/magento2/issues/18580)
 
   See [Configure the lock provider]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-lock.html).
-
 
 ### Customer custom attributes
 
@@ -425,7 +418,6 @@ In addition to security enhancements, this release contains the following functi
 
 <!-- ENGCOM-4234 -->
 * The Swagger definition for `eav-data-attribute-option-interface` has been corrected. Previously, when you created a REST call to an endpoint that returns an object of `eav-data-attribute-option-interface` and `is_default` is set to `true`, `is_default` returns an object instead of the expected Boolean. *Fix submitted by Pratik Oza in pull request [21164](https://github.com/magento/magento2/pull/21164)*. [GitHub-18525](https://github.com/magento/magento2/issues/18525)
-
 
 ### Downloadable
 
@@ -485,7 +477,6 @@ In addition to security enhancements, this release contains the following functi
 <!-- ENGCOM-4183 -->
 * We corrected a syntax error in `magento2/lib/internal/Magento/Framework/Cache/Backend/Database.php`. *Fix submitted by Nirav Kadiya in pull request [21078](https://github.com/magento/magento2/pull/21078)*. [GitHub-13309](https://github.com/magento/magento2/issues/13309)
 
-
 #### JavaScript framework
 
 <!-- ENGCOM-4610 -->
@@ -504,7 +495,6 @@ In addition to security enhancements, this release contains the following functi
 
 <!-- MAGETWO-98000 -->
 * PayPal Express now creates a gift card as expected when payment for the card is captured. Previously, Magento did not create a gift card under these circumstances, even when payment action was set to **Authorize and Capture** and **Generate Gift Card Account when Order Item is** was set  to *Invoiced*.
-
 
 ### Gift card account
 
@@ -541,7 +531,6 @@ In addition to security enhancements, this release contains the following functi
 <!-- ENGCOM-4702 -->
 * Widget parameters can now contain multidimensional arrays. *Fix submitted by Stanislav Ilnytskyi in pull request [22214](https://github.com/magento/magento2/pull/22214)*. [GitHub-19909](https://github.com/magento/magento2/issues/19909)
 
-
 ### Layered navigation
 
 <!-- ENGCOM-4803 -->
@@ -551,7 +540,6 @@ In addition to security enhancements, this release contains the following functi
 
 <!-- MAGETWO-97595 -->
 * Editing a theme now creates an entry in the Admin action log as expected.
-
 
 ### MSRP
 
@@ -610,7 +598,6 @@ In addition to security enhancements, this release contains the following functi
 <!-- MAGETWO-96898 -->
 * Tier pricing for bundle products now works as expected: Magento displays the correct price in the cart, and reminds customers that they can buy a specific quantity of the product for a discount. Previously, Magento did not calculate the price correctly, and did not display any informative messages about tier pricing on the category and product pages.
 
-
 ### Reports
 
 <!-- MAGETWO-96883 -->
@@ -629,7 +616,6 @@ In addition to security enhancements, this release contains the following functi
 
 <!-- ENGCOM- 4539-->
 * Pending Reviews are now correctly labeled under **System** > **User Roles** > **Add New Role** > **Role Resources**, and Magento now displays a new Pending reviews menu under **Marketing** > **User Content**. Previously, Magento displayed the Reviews menu twice. *Fix submitted by Eduard Chitoraga in pull request [21849](https://github.com/magento/magento2/pull/21849)*. [GitHub-20924](https://github.com/magento/magento2/issues/20924)
-
 
 ### RMA
 
@@ -690,8 +676,6 @@ In addition to security enhancements, this release contains the following functi
 <!-- ENGCOM-4793 -->
 * The search icon on Admin page headers now works as expected. *Fix submitted by Saphal Jha in pull request [22441](https://github.com/magento/magento2/pull/22441)*. [GitHub-22152](https://github.com/magento/magento2/issues/22152)
 
-
-
 ### Shipping
 
 <!-- MAGETWO-96001 -->
@@ -730,7 +714,6 @@ In addition to security enhancements, this release contains the following functi
 
 <!-- ENGCOM-4625 -->
 * The shopping cart full tax summary now displays total tax as expected instead of individual tax values. *Fix submitted by Hiren Pandya in pull request [21961](https://github.com/magento/magento2/pull/21961)*. [GitHub-19701](https://github.com/magento/magento2/issues/19701), [GitHub-11358](https://github.com/magento/magento2/issues/11358)
-
 
 ### Testing
 

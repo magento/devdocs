@@ -175,7 +175,6 @@ MariaDB [main]> SHOW TABLES;
 ```
 {: .no-copy}
 
-
 ### `ELASTICSUITE_CONFIGURATION`
 
 -  **Default**—_Not set_

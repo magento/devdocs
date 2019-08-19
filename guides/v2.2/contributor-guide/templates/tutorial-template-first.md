@@ -31,7 +31,6 @@ Parameter | Description
 `redirect_from`  | Optional. Add a list of other pages in DevDocs that should redirect to this page. The link should start with the `/guides` directory. For an example, see the source code for this template page.  |
 `ee_only:` | Optional. If set to `true`, graphics/cues indicating that the article applies to {{site.data.var.ee}} are displayed on devdocs.
 
-
 The following example shows the completed frontmatter section for an index page:
 
 ```

@@ -19,7 +19,6 @@ In this step, we will create a customer account that is tied to the `us` web vie
 
 The `GET /V1/store/storeViews` endpoint returns an array of store view IDs, along with the corresponding website and store group IDs. When you create a customer, change the `id` parameter to the `store_id` parameter
 
-
 **Endpoint**
 
 `GET <host>/rest/all/V1/store/storeViews`
@@ -185,7 +184,6 @@ The customer `id` is `3`.
 To generate a customer's access token, you must specify the customer's username and password in the payload. You do not specify an admin [authorization](https://glossary.magento.com/authorization) token.
 
 By default, a customer token is valid for 1 hour. To change this value, click **Stores** > Settings > **Configuration** > **Services** > **OAuth** > **Access Token Expiration**. Then enter a new value for **Customer Token Lifetime (hours)**.
-
 
 **Endpoint**
 

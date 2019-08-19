@@ -283,7 +283,6 @@ npm install
 <!-- Internal -->
 [Step 6]: #prepare-step6
 
-
 <!-- Abbreviations -->
 
 *[FTF]: Functional Testing Framework

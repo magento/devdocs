@@ -30,7 +30,6 @@ In the Magento Admin, icons have a simple, flat, single-color, and two-dimension
 
 ![](img/Magento-icon-contact-sheet.png)
 
-
 ## Creating Icons
 
 ### Instructions
@@ -59,11 +58,9 @@ Here's one method to get started:
 
 ![](img/icon-construction-guide.png)
 
-
 Learn how to use the icon grid:
 
 ![](img/using-icon-grid.png)
-
 
 ## Icon Fonts
 

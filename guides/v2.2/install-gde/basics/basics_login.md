@@ -16,7 +16,6 @@ functional_areas:
 <!-- This topic is referred to from Magento 2 code! Don't change the [URL](https://glossary.magento.com/url) without informing engineering! -->
 <!-- Referring file: README.md owned by core -->
 
-
 To complete almost all of the tasks in this guide, you must remotely log in to your Magento server.
 
 **Prerequisites**: You must have:

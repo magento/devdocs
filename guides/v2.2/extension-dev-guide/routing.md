@@ -31,14 +31,12 @@ The following tables show the core routers that come with Magento:
 | [cms]        | 60         | Matches requests for CMS pages                    |
 | [default]    | 100        | The default router                                |
 
-
 **`adminhtml` area routers:**
 
 | Name      | Sort order | Description                                |
 | --------- | ---------- | ------------------------------------------ |
 | [admin]   | 10         | Matches requests in the Magento admin area |
 | [default] | 100        | The default router for the admin area      |
-
 
 ### Standard router
 
@@ -73,7 +71,6 @@ define the `match()` function in this class to use your own route matching logic
 
 If you need route configuration data, use the Route [`Config`] class.
 
-
 To add your custom router to the list of routers for the `FrontController`, add the following entry in your module's `di.xml` file:
 
 ```xml
@@ -96,7 +93,6 @@ Where:
 * `%classpath%` - The path to your router class.
     Example: [`Magento\Robots\Controller\Router`]
 * `%sortorder%` - The sort order of this entry in the router list.
-
 
 ## `routes.xml`
 
@@ -159,7 +155,6 @@ $this->_forward('action', 'controller', 'Other_Module')
 
 {: .bs-callout .bs-callout-tip }
 Use the [`ActionFactory`] in your router to create an instance of an `Action` class.
-
 
 {: .bs-callout-info }
 Action class should return a `result object`.

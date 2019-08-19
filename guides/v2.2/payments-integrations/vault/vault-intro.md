@@ -26,7 +26,6 @@ The main difference is that when vault is used, it defines what command is requi
 Magento vault implementation provides that vault is available as a separate payment method during order creation (storefront or admin). But technically it is tightly related to the corresponding payment provider integration.
 You do not need to create a new [module](https://glossary.magento.com/module) for vault implementation. All required configuration and entities are added to the module of the payment provider integration.
 
-
 The topics of this chapter describe how to add the vault functionality to a payment method (the payment method must be implemented using Magento payment gateway):
 
 1. [Add vault to module dependencies]({{ page.baseurl }}/payments-integrations/vault/module-configuration.html).

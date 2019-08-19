@@ -153,7 +153,6 @@ __Step 6.__ Declare all the test steps in the [test()](#test-method) method
 
 __Step 7.__ If you want to perform any actions after constraints, use a [tearDown()](#teardown-method) method
 
-
 <!-- LINK DEFINITIONS -->
 
 [data set]: {{ page.baseurl }}/mtf/mtf_entities/mtf_dataset.html

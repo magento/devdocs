@@ -35,7 +35,6 @@ See one of the following sections for more information:
 
 The `responsive.js` script implements specific responsive functions for the Blank and Luma themes. To manipulate JavaScript for the desktop or mobile view, `responsive.js` calls the `mediaCheck()` anonymous function from `matchMedia.js`.
 
-
 The `mediaCheck` call looks as follows:
 
 ```javascript
@@ -86,7 +85,6 @@ You can use the `menu.js`, `responsive.js` and `matchMedia.js` to add responsive
 If your theme inherits from Blank or Luma, you do not even need to additionally include the script files in your theme.
 
 If your theme does not inherit from Blank or Luma, to be able to use the scripts, you must configure RequireJS for your theme.
-
 
 [`matchMedia.js`]: https://github.com/paulirish/matchMedia.js/
 [responsive menu]: {{site.baseurl}}/common/images/js_rwd_menu.png

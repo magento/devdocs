@@ -44,7 +44,6 @@ Attribute |  Data Type | Description
 `name` | String | The website name. Websites use this name to identify it easier.
 `sort_order` | Integer | The attribute to use for sorting websites
 
-
 ### Supported theme attributes
 
 Use the `theme` attributes to retrieve information about the store's thematic elements; such as, footer and header information, copyright text, and logo information. These attributes are defined in the `ThemeGraphQl` module.

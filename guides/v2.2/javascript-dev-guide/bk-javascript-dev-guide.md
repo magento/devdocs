@@ -33,8 +33,6 @@ JavaScript automatic testing is described in a separate [JavaScript unit testing
 | *jQuery UI widget*                    | A JS component/widget provided by the [jQuery UI library used in Magento]. |
 | *jQuery widget*                       | Custom widget created using jQuery UI Widget Factory and decorated as AMD module. Many Magento JS components are the jQuery widgets. |
 
-
-
 [AMD module]: http://requirejs.org/docs/whyamd.html#amd
 [`Magento_Ui`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui
 [app/code/Magento/Ui/view]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view
@@ -51,7 +49,4 @@ JavaScript automatic testing is described in a separate [JavaScript unit testing
 [Magento jQuery widgets]: {{page.baseurl}}/javascript-dev-guide/widgets/jquery-widgets-about.html
 [Customizing JavaScript illustration]: {{page.baseurl}}/javascript-dev-guide/javascript/js_practice.html
 [JavaScript unit testing]: {{page.baseurl}}/test/js/jasmine.html
-
-
-
 

@@ -55,7 +55,6 @@ JS resources are accessed using relative paths.
     });
   ```
 
-
 **Example 3**
 
 -  File actual location: `lib/web/jquery.js`

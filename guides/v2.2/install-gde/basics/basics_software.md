@@ -16,8 +16,6 @@ functional_areas:
 <!-- This topic is referred to from Magento 2 code! Don't change the [URL](https://glossary.magento.com/url) without informing engineering! -->
 <!-- Referring file: README.md owned by core -->
 
-
-
 The full list of software is listed in [System Requirements]({{ page.baseurl }}/install-gde/system-requirements.html) but here are the essentials:
 
 *	Web server for providing access to web pages - Currently, we've documented [Apache](http://en.wikipedia.org/wiki/Apache_HTTP_Server){:target="_blank"} and plan to document other web servers in the near future.

@@ -9,12 +9,10 @@ redirect_from:
   - /guides/v2.2/release-notes/2.3.0-install.html
 ---
 
-
 {:.bs-callout .bs-callout-tip}
 With Magento 2.2.5, we are moving to a quarterly release cycle for  minor releases. Quarterly releases contain bug fixes, security enhancements, introduction of new bundled extensions, and community code contributions.
 
 Quarterly patch releases do not introduce backward-incompatible changes, architectural changes, or changes to underlying major components. Magento remains committed to restricting those changes to only major and minor releases that occur outside this quarterly cadence.
-
 
 ## Magento 2.2.x Release Notes
 
@@ -26,7 +24,6 @@ Quarterly patch releases do not introduce backward-incompatible changes, archite
 
 * [{{site.data.var.ce}} 2.2.7 Release Notes]({{page.baseurl}}/release-notes/ReleaseNotes2.2.7CE.html)
 * [{{site.data.var.ee}} 2.2.7 Release Notes]({{page.baseurl}}/release-notes/ReleaseNotes2.2.7EE.html)
-
 
 * [{{site.data.var.ce}} 2.2.6 Release Notes]({{page.baseurl}}/release-notes/ReleaseNotes2.2.6CE.html)
 * [{{site.data.var.ee}} 2.2.6 Release Notes]({{page.baseurl}}/release-notes/ReleaseNotes2.2.6EE.html)
@@ -43,11 +40,9 @@ Quarterly patch releases do not introduce backward-incompatible changes, archite
 * [{{site.data.var.ce}} 2.2.2 Release Notes]({{page.baseurl}}/release-notes/ReleaseNotes2.2.2CE.html)
 * [{{site.data.var.ee}} 2.2.2 Release Notes]({{page.baseurl}}/release-notes/ReleaseNotes2.2.2EE.html)
 
-
 * [{{site.data.var.ce}} 2.2.1 Release Notes]({{page.baseurl}}/release-notes/ReleaseNotes2.2.1CE.html)
 * [{{site.data.var.ee}} 2.2.1 Release Notes]({{page.baseurl}}/release-notes/ReleaseNotes2.2.1EE.html)
 * [{{site.data.var.ece}} 2.2.1 Release Notes]({{page.baseurl}}/cloud/release-notes/CloudReleaseNotes2.2.1.html)
-
 
 * [{{site.data.var.ce}} 2.2.0 Release Notes]({{page.baseurl}}/release-notes/ReleaseNotes2.2.0CE.html)
 * [{{site.data.var.ee}} 2.2.0 Release Notes]({{page.baseurl}}/release-notes/ReleaseNotes2.2.0EE.html)

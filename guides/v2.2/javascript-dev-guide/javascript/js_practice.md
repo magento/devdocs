@@ -130,7 +130,6 @@ var config = {
 
 [Use custom JavaScript]
 
-
 [Page source search result]: {{site.baseurl}}/common/images/fdg_js_pr1.png
 [`gallery.js`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/lib/web/mage/gallery/gallery.js
 [can be reached from the page source view or from the file system]: {{page.baseurl}}/javascript-dev-guide/javascript/custom_js.html#extend_js

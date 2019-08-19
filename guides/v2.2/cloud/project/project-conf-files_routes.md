@@ -100,7 +100,6 @@ Property         | Description
 
 The following sample routes the apex domain and the `www` subdomain to the `frontend`application. This route does not redirect HTTPS requests:
 
-
 ```yaml
 "http://{default}/":
     type: upstream
@@ -157,7 +156,6 @@ echo $MAGENTO_CLOUD_RELATIONSHIPS | base64 --decode | json_pp
 https://*.add-theme-projectID.us.magentosite.cloud/
 ```
 {: .no-copy}
-
 
 {: .bs-callout-info }
 Some projects provisioned before December 8, 2017, use the triple dash (\-\-\-) as a separator for the subdomain.

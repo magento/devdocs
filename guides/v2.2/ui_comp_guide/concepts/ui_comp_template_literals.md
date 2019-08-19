@@ -50,7 +50,6 @@ UI Components can have a `<item name="config" xsi:type="array">...</item>` node 
 
 Names of other registered modules can be added to the [server side](https://glossary.magento.com/server-side) configuration (XML or PHP) that is output through JSON. Those names can then be easily accessed in the JavaScript on the frontend. In the following example, the other UI Component's name will be obtained with a template literal in the `imports` object. When this JavaScript file is loaded, it will process the template literal and look up the name in the registry. If found, it will load that class. Because there is a colon (`:`), it will go on to find the property that is accessed in the other JavaScript class.
 
-
 ```javascript
 return Element.extend({
     defaults: {

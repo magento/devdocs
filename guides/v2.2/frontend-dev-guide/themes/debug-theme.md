@@ -98,7 +98,6 @@ After you located the necessary layout file, you can create your custom layout f
 To locate a CSS rule that is applied to a certain element, find the template for the page that contains the element. Or you can use browser debugging tools, to locate the class name.
 After you find the class name, use text search in the theme and module styles directories to locate the `.less` or `.css` file that defines the class. Perform the search according to the following fallback scheme:
 
-
 2. Theme styles `<current_theme_dir>/web/css/`
 2. Module theme styles `<current_theme_dir>/<Namespace>_<Module>/web/css/`
 3. Parent theme styles `<parent_theme_dir>/web/css/`

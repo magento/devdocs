@@ -81,4 +81,3 @@ Data used for a transaction. Might include the following:
 </tr>
 </table>
 
-

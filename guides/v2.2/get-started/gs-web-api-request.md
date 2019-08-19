@@ -141,12 +141,9 @@ The following example builds a Customers Search request based on search criteria
 
 2. Open the [Magento/Customer/etc/webapi.xml]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Customer/etc/webapi.xml)  configuration file and find the [CustomerRepositoryInterface]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Customer/Api/CustomerRepositoryInterface.php) interface with the `getList` method.
 
-
 3. Set the headers, URI and method to a request object. Use URI `/V1/customers/search` and method `GET` values. Use the `searchCriteria` parameter to complete the Customer Search query. See [searchCriteria usage]({{ page.baseurl }}/rest/performing-searches.html). Also check [List of REST endpoints by module]({{ page.baseurl }}/rest/list.html).
 
    The following example finds customers whose first name contains "ver" or whose last name contains "Costello".
-
-
 
     ```php?start_inline=1
     $request = new \Zend\Http\Request();

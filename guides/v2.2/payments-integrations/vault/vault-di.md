@@ -68,7 +68,6 @@ Example: a gateway command for the authorize action is added for the Braintree v
 </virtualType>
 ```
 
-
 This command is similar to the payment provider authorize command. But it uses own [request builders]({{ page.baseurl }}/payments-integrations/payment-gateway/request-builder.html) and [response handlers]({{ page.baseurl }}/payments-integrations/payment-gateway/response-handler.html).
 
 The following sample from Braintree configuration illustrates how to add the `authorize` payment action to command pool:
@@ -98,7 +97,6 @@ Example of adding a command manager for Braintree vault:
     </arguments>
 </virtualType>
 ```
-
 
 Command manager must be added to the command manager pool. This pool is available for vault instance and enables performing payment provider actions.
 

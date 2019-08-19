@@ -36,7 +36,6 @@ As a work-around, complete the following:
 
 2. Modify the setting for minify in the database with this command:
 
-
       update core_config_data set value=0 where path ='dev/template/minify_html'
 3. Flush all caches.
 

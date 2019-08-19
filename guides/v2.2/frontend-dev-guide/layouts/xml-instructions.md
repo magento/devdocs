@@ -44,7 +44,6 @@ Use the following layout instructions to customize your layout:
 * [`<argument>`](#argument)
 * [`<block vs container>`](#block_vs_container)
 
-
 ### block {#fedg_layout_xml-instruc_ex_block}
 
 Defines a block.
@@ -71,7 +70,6 @@ We recommend always adding a `name` to blocks. Otherwise, it is given a random n
 | `as` | An alias name that serves as identifier in the scope of the parent element. | 0-9, A-Z, a-z, underscore (_), period (.), dash (-). Case-sensitive. | no |
 | `cacheable` | Defines whether a block element is cacheable. This can be used for development purposes and to make needed elements of the page dynamic. | `true` or `false` | no |
 
-
 To pass parameters use the [`<argument></argument>`](#argument) instruction.
 
 ### container {#fedg_layout_xml-instruc_ex_cont}
@@ -95,7 +93,6 @@ We recommend always adding a `name` to containers. Otherwise, it is given a rand
 | `htmlTag` | Output parameter. If specified, the output is wrapped into specified HTML tag. | Any valid HTML 5 tag. | no |
 | htmlId | Output parameter. If specified, the value is added to the wrapper element. If there is no wrapper element, this attribute has no effect. | Any valid HTML 5 `id` value. | no |
 | `htmlClass` | Output parameter. If specified, the value is added to the wrapper element. If there is no wrapper element, this attribute has no effect. | Any valid HTML 5 `class` value. | no |
-
 
 Sample of usage in layout:
 
@@ -129,7 +126,6 @@ The following tables give a detailed description of the results you can get usin
 | `after` | [element name] | The block displays after the named element. |
 | `after` | empty value or [element name] is absent | Use the value of `before`. If that value is empty or absent as well, the block is considered as non-positioned. |
 
-
 #### Examples {#examples}
 
 | Situation | Result |
@@ -138,7 +134,6 @@ The following tables give a detailed description of the results you can get usin
 | Both `before` and `after` attributes are absent or empty | The element is considered as non-positioned. All other elements are positioned at their specified locations. The missing element displays at a random position that doesn't violate requirements for the positioned elements. |
 | Several elements have `before` or `after` set to dash (-) | All elements display at the top (or bottom, in case of the after attribute), but the ordering of group of these elements is undefined. |
 | The `before` or `after` attribute's value refers to an element that is not located in the parent node of the element being defined. | The element displays at a random location that doesn't violate requirements for the correctly positioned elements. |
-
 
 ### action {#fedg_layout_xml-instruc_ex_act}
 
@@ -165,7 +160,6 @@ Calls public methods on the block API.
 | Attribute | Description | Values | Required? |
 |:------- |:------ |:------ |:------ |
 | `method` | Name of the public method of the block class this tag is located in that is called during block generation. | block method name | yes |
-
 
 To pass parameters, use the [`<argument></argument>`](#argument) instruction.
 
@@ -217,7 +211,6 @@ Sets the declared block or container element as a child of another element in th
 | `destination` | Name of the target parent element. | element name | yes |
 | `as` | Alias name for the element in the new location. | 0-9, A-Z, a-z, underscore (_), period (.), dash (-). Case-sensitive. | no |
 | `after` or `before` | Specifies the element's position relative to siblings. Use dash (-) to position the block before or after all other siblings of its level of nesting. If the attribute is omitted, the element is placed after all siblings. | element name | no |
-
 
 ### remove {#fedg_layout_xml-instruc_ex_rmv}
 

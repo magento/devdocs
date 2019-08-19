@@ -386,6 +386,5 @@ In `<magento_2_root_dir>/dev/tests/functional/etc/events.xml`, add to a preset `
 [set]: #set-preset
 [tag]: #tags
 
-
 <!-- ABBREVIOTIONS -->
 *[FTF]: Functional Testing Framework

@@ -125,7 +125,6 @@ We know of the following issues with Varnish:
 
 [SSL termination proxy]: https://en.wikipedia.org/wiki/TLS_termination_proxy
 
-
 <!-- image Definitions -->
 [Basic Varnish diagram]: {{ site.baseurl }}/common/images/varnish_basic.png
 {:width="400px"}

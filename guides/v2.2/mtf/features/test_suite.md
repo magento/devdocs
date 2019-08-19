@@ -176,7 +176,6 @@ The class filter example:
 
 ```
 
-
 ### `scope = "testcase"` {#scope-testcase}
 
 In this scope, you can group test cases using tags.

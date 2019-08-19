@@ -92,7 +92,6 @@ define(
                 this.paymentMethodNonce = paymentMethodNonce;
             },
 
-
             beforePlaceOrder: function (data) {
                 this.setPaymentMethodNonce(data.nonce);
                 this.placeOrder();

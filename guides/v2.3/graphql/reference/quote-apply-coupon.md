@@ -99,7 +99,6 @@ Attribute |  Data Type | Description
 `cart_id` | String! | The unique ID that identifies the customer's cart
 `coupon_code` | String! | A valid coupon code
 
-
 ## Output attributes
 
 The `ApplyCouponToCartOutput` object contains the `Cart` object.

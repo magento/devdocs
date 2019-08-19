@@ -144,7 +144,6 @@ In addition to the `.csv` file that contains the language dictionary, the langua
 * `language.xml`, in which you declare a language package.
    [Sample language.xml]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-example2)
 
-
 ## Community Engineering Translations project {#translations-project}
 
 Community Engineering accepts translation contributions through the [Magento CrowdIn project] to localize all UI strings. Various Meet Magento and Contribution Day events include developers contributing translations.

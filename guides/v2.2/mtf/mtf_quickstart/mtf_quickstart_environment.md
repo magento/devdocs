@@ -62,7 +62,6 @@ php generate.php
 
 [&lt;&lt; Prepare Magento application]({{ page.baseurl }}/mtf/mtf_quickstart/mtf_quickstart_magento.html)| [ Test run &gt;&gt;]({{ page.baseurl }}/mtf/mtf_quickstart/mtf_quickstart_runtest.html)
 
-
 <!-- LINK DEFINITIONS -->
 
 <!-- Devdocs -->
@@ -73,7 +72,6 @@ php generate.php
 <!-- Internet -->
 [Selenium project website]: http://www.seleniumhq.org/download/
 [web driver]: http://docs.seleniumhq.org/about/platforms.jsp
-
 
 <!-- ABBREVIATIONS -->
 *[FTF]: Functional Testing Framework

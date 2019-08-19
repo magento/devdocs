@@ -29,7 +29,6 @@ In this example, `myCreateCustomer` identifies your implementation.  `CustomerIn
 
 Now let's take a look at a fully-defined mutation. This time, we'll specify the minimum fields needed as input to create a customer (`firstname`, `lastname`, `email`, and `password`). We could include the same fields in the output, but GraphQL allows you to return only the data you need, which is the customer `id`.
 
-
 ```text
 mutation myCreateCustomerNoVariables{
     createCustomer(

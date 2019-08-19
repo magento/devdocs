@@ -51,7 +51,6 @@ See these resources for testing in [PHP](https://glossary.magento.com/php) and v
 * [Extension Quality Program] in the Magento Marketplace User Guide
 * [01 The Module Skeleton Kata] (video) by [Mage2Katas]
 
-
 [Magento Testing Overview]: {{ page.baseurl }}/test/testing.html
 [Functional Testing Framework]: {{ page.baseurl }}/mtf/mtf_introduction.html
 [Magento Functional Testing Framework]: https://devdocs.magento.com/mftf/docs/introduction.html

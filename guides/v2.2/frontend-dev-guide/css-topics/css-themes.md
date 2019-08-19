@@ -78,7 +78,6 @@ For example, the following illustrates how stylesheets are included in the defau
 
 [`/Magento_Theme/layout/default_head_blocks.xml`]
 
-
 ```xml
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <head>
@@ -104,8 +103,6 @@ To include an external CSS file, add `<css src="URL to External Source" src_type
 
 {:.bs-callout .bs-callout-info}
 If the system does not find the included CSS files, it searches for the same file names with a `.less` extension. This is part of the built-in preprocessing mechanism. You can find more information about it in the [CSS Preprocessing] topic.
-
-
 
 [layout files]: {{page.baseurl}}/frontend-dev-guide/layouts/layout-overview.html
 [theme directory]: {{page.baseurl}}/frontend-dev-guide/themes/theme-structure.html

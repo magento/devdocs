@@ -102,7 +102,6 @@ A response validator verifies response codes from the payment gateway.
 It has different responsibilities and should not map messages, because it works on the lower layer of communication between Magento and the payment gateway.
 It is the responsibility of a gateway command to call an appropriate service.
 
-
 For example, Magento provides a response validator for Braintree: [`\Magento\Braintree\Gateway\Validator\GeneralResponseValidator`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Braintree/Gateway/Validator/GeneralResponseValidator.php).
 Its implementation allows to retrieve errors codes from a response.
 
@@ -136,7 +135,6 @@ class ErrorCodeProvider
     }
 }
 ```
-
 
 Then add the created provider as a dependency to the `GeneralResponseValidator` class:
 

@@ -200,7 +200,6 @@ It cannot contain any parameters.
 
  [Modules providing advanced reporting][modules]
 
-
 <!-- LINK DEFINITIONS -->
 
 [modules]: modules.html

@@ -19,7 +19,6 @@ In the basic Blank theme, the number of products in a row for each breakpoint is
 -   768px (tablet): three products
 -   640px and less (mobile): two products
 
-
 In their custom Orange theme, OrangeCo wants to have the least number of products in a row for the desktop and tablet view, namely:
 -   Desktop: three products
 -   Tablet: two products

@@ -18,7 +18,6 @@ Attribute | Data type | Description
 `sharing_code` | String | An encrypted code that Magento uses to link to the wish list
 `updated_at` | String | The time of the last modification to the wish list
 
-
 ### Wish list item attributes {#wishlistitem}
 
 Attribute | Data type | Description
@@ -28,7 +27,6 @@ Attribute | Data type | Description
 `id` | Int | The wish list item ID
 `product` | <a href="{{ page.baseurl }}/graphql/reference/products.html#ProductInterface">ProductInterface</a> | The ProductInterface contains attributes that are common to all types of products. Note that descriptions may not be available for custom and EAV attributes
 `qty` | Float | The quantity of this wish list item
-
 
 ## Syntax
 

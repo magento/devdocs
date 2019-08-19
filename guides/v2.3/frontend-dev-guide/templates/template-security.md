@@ -39,7 +39,6 @@ For the following output cases, use the specified function to generate XSS-safe 
 **Case:** JSON output in script context\\
 **Function:** No function needed for JSON output.
 
-
 ```html
   <!-- In this example $postData is a JSON string -->
   <script>
@@ -49,7 +48,6 @@ For the following output cases, use the specified function to generate XSS-safe 
 ```
 **Case:** JSON output in html/attribute context\\
 **Function:** `escapeHtml`
-
 
 ```html
   <!-- In this example $postData is a JSON string -->
@@ -75,10 +73,8 @@ If your text contains special characters, they must be encoded as HTML entities,
   <div id='my-element'><?php echo $block->escapeHtml(__('Only registered users can write reviews. Please <a href="%1">Sign in</a> or <a href="%2">create an account</a>', $block->getLoginUrl(), $block->getCreateAccountUrl()), ['a']) ?></div>
 ```
 
-
 **Case:** URL output\\
 **Function:** `escapeUrl`
-
 
 ```html
   <a href="<?php echo $block->escapeUrl($block->getCategoryUrl()) ?>">Some Link</a>
@@ -143,6 +139,5 @@ It covers the following cases:
 * Output in double quotes without variables (for example `echo "some text"`). Test is green.
 
 * Other of previously mentioned. Output is not escaped. Test is red.
-
 
 [XSS]: https://en.wikipedia.org/wiki/Cross-site_scripting

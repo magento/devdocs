@@ -27,7 +27,6 @@ log {"syslog"} req.service_id {" my_logging_endpoint_name :: "}
 ```
 You can use the same VCL for Production and Staging environments. See [How to configure vcl_log](https://support.fastly.com/hc/en-us/community/posts/360040447172-How-to-configure-vcl-log).
 
-
 ## Troubleshoot site performance, purge, and cache issues
 
 Use the following list to identify and troubleshoot issues related to the Fastly service configuration for your {{site.data.var.ece}} environment.
@@ -306,7 +305,6 @@ If the issue persists, another extension is likely resetting these headers. Repe
     Repeat this process for each extension. If the Fastly response headers no longer display, you have identified the extension causing issues with Fastly.
 
 After you identify the extension that is resetting Fastly headers, contact the extension developer for additional assistance. We cannot provide fixes or updates to make third-party extensions work with Fastly caching.
-
 
 ## Rollback Fastly configuration changes
 

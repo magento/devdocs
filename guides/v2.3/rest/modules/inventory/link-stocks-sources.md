@@ -33,7 +33,6 @@ Name | Description | Type | Requirements
 `source_code`	| Source code of the link | String | Required for POST operations
 `priority`	| Priority of the link | Integer | Required when linking a stock to a source
 
-
 ## Link stocks and sources
 
 If you specify a sales channel that is already assigned to another stock, Magento reassigns the sales channel from the previous stock to the current stock.

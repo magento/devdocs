@@ -82,7 +82,6 @@ Magento provides options to the `setup:install` and `setup:upgrade` commands tha
 
 `--data-restore=1` - (Used with the `setup:upgrade` command only.) Performs a rollback. Before you rollback, you must first check out code to the previous version of Magento. Then run `setup:upgrade  --data-restore=1`.
 
-
 Several types of operations have an effect on data dumps and rollbacks.
 
 * *Destructive operations (DO)* - SQL DDL operations that cause data deletion or data corruption. The following operations are destructive:

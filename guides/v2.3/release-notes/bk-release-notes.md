@@ -32,7 +32,6 @@ See [Release Notes for ece-tools]({{ page.baseurl }}/cloud/release-notes/cloud-t
 {: .bs-callout-info }
 We recommend installing full {{site.data.var.ece}} upgrades for important security updates. Full upgrades include all associated patches and hotfixes.
 
-
 ## Third-party license agreements
 
 *	[{{site.data.var.ce}} third-party licenses]({{page.baseurl}}/release-notes/packages-open-source.html)

@@ -156,7 +156,6 @@ project.MyClass.EmptyNodeList = function() {
 
 ```
 
-
 #### @interface {#frontend-dev-guide-javascript-js-coding-docblock-interface}
 
 Used to indicate that the function defines an interface.

@@ -19,7 +19,6 @@ To do this, they need to wrap the list of header links with a container and add 
 
 The Orange theme [inherits]({{ page.baseurl }}/frontend-dev-guide/themes/theme-inherit.html) from Blank, so by default the rendered header links look like following:
 
-
 ```html
 <div class="panel header">
     ...
@@ -289,7 +288,6 @@ To add quick basic styling and visual behavior to the "dropdown" menu, OrangeCo 
 As a result, the customer links look like following:
 
 ![layout screen2]
-
 
 [layout transform]: {{site.baseurl}}/common/images/layout_transform21.png
 [layout screen1]: {{site.baseurl}}/common/images/layout_screen221.png

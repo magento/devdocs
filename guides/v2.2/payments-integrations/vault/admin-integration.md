@@ -20,7 +20,6 @@ There are more details about these steps in the following sections.
 
 [Similar to the storefront vault implementation]({{ page.baseurl }}/payments-integrations/vault/token-ui-component-provider.html#token_provider), create a token component provider and specify it in the `di.xml`. The component provider must implement the [`TokenUiComponentProviderInterface`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Vault/Model/Ui/TokenUiComponentProviderInterface.php) interface.
 
-
 Following is an example of a component provider for Admin:
 
 ```php

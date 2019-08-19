@@ -55,7 +55,6 @@ The following table explains this command's parameters and values:
 |`-m --magento`|Required to create a language package from this translation dictionary. If used, searches the directories that contain bin/magento. This option adds themes or modules to each line in the dictionary.<br><br>A sample follows:<br><br>"No Items Found","No Items Found",module,Magento_Wishlist|No|
 |`-o --output="<path>"`|Specifies the absolute file system path and file name of the translation dictionary .csv file to create. The value you enter is case-sensitive. The name of the .csv file must exactly match the locale name, including the characters' case.<br><br>If you omit this parameter, the output is directed to stdout.|No|
 
-
 {:.bs-callout .bs-callout-info}
 To create a language pack from a translation dictionary, you *must* use the `-m|--magento` option.
 
@@ -113,7 +112,6 @@ The following table explains this command's parameters and values:
 |`<locale>`|[ISO 639-1] (language) and [ISO 3166] (country) identifier of language used as file name for all resulting .csv files. Examples: `de_DE`, `pt_PT`, `pt_BR`.|Yes|
 |`-m --mode`|If a target file already exists, specifies whether to replace the existing language package or merge with the new language pack. Merging overrides any phrases that existed and adds new ones. <br><br>Values: merge or replace (default).|No|
 |`-d --allow-duplicates`|Include this option to allow duplicates in the language pack. Otherwise, the command fails with an error if it encounters the same phrase in multiple entries with different translations.|No|
-
 
 ### Create directories and files {#m2devgde-xlate-files}
 
@@ -315,9 +313,6 @@ Similar to the preceding example, generate a `.csv` file, but instead of specify
 
 -   [Translations overview]
 -   [Translate theme strings]
-
-
-
 
 [Translate theme strings]: {{ page.baseurl }}/frontend-dev-guide/translations/translate_theory.html
 [Translations overview]: {{ page.baseurl }}/frontend-dev-guide/translations/xlate.html

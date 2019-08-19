@@ -62,7 +62,6 @@ For more information about Edge Dictionaries, see [Creating and using Edge Dicti
 
 The following custom VCL snippet code (JSON format) checks incoming requests and blocks requests from any referrer site included in the `referrer_blocklist` edge dictionary.
 
-
 ```json
 {
   "name": "block_bad_referrer",
@@ -88,7 +87,6 @@ Review the example code and change values as needed:
    In this example, the VCL code logic captures the host of a referrer website into a header, and then compares the host name to the list of URLs in the `referrer_blocklist` dictionary.
    If the host name matches, the request is blocked with a `403 Forbidden` error.
    See the [Fastly VCL reference](https://docs.fastly.com/vcl/reference/) for information about creating Fastly VCL code snippets.
-
 
 Add the custom VCL snippet to your Fastly service configuration from the Magento Admin UI (requires Fastly module 1.2.58 or later). If you cannot access the Admin UI, save the JSON code example in a file and upload it using the Fastly API. See [Creating a VCL snippet using the Fastly API]({{  page.baseurl }}/cloud/cdn/cloud-vcl-custom-snippets.html(#manage-custom-vcl-snippets-using-the-api).
 
@@ -132,11 +130,8 @@ Fastly validates the updated VCL version during the upload process. If the valid
 
 {% include cloud/cloud-fastly-manage-vcl-from-admin.md %}
 
-
 {: .bs-callout-info }
 Instead of manually uploading custom VCL snippets, you can add snippets to the `$MAGENTO_CLOUD_APP_DIR/var/vcl_snippets_custom` directory in your environment. Snippets in this directory upload automatically any time you click *upload VCL to Fastly* in the Admin UI. See [Automated custom VCL snippets deployment](https://github.com/fastly/fastly-magento2/blob/master/Documentation/Guides/CUSTOM-VCL-SNIPPETS.md#automated-custom-vcl-snippets-deployment) in the Fastly CDN module for Magento 2 documentation.
-
-
 
 <!-- Link definitions -->
 

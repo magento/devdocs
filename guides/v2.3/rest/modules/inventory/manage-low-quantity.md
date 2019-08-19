@@ -37,7 +37,6 @@ Name | Description | Type | Requirements
 `notify_stock_qty` | The threshold at which Magento notifies the merchant that the salable quantity of a product is low. | Float | Required to create a threshold
 `sku` | The SKU of the affected product   | String | Required for to create or delete a threshold
 
-
 ## Create a low quantity notification
 
 The `POST /V1/inventory/low-quantity-notification` endpoint accepts an array of values that map a SKU to a source and specify when to notify the merchant of a low stock quantity.
@@ -74,7 +73,6 @@ The `POST /V1/inventory/low-quantity-notification` endpoint accepts an array of 
 
 An empty array `[]`
 
-
 ## Return low-quantity notification information
 
 This call returns the `notify_stock_qty` for the specified source and SKU.
@@ -100,7 +98,6 @@ None
 ## Delete a low-quantity notification
 
 The `POST /V1/inventory/low-quantity-notifications-delete` endpoint deletes the notification threshold for an array of sourceItem objects. Each object specified a SKU amd source.
-
 
 **Sample usage**
 

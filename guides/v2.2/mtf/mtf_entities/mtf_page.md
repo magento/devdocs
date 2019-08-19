@@ -26,7 +26,6 @@ The general flow is the following:
 
 3. Run the page generator
 
-
 Let's see an example of the Magento [Widget](https://glossary.magento.com/widget) page:
 
 `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/Widget/Test/Page/Adminhtml/WidgetInstanceIndex.xml`

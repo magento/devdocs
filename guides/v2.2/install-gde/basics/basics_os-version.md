@@ -7,7 +7,6 @@ functional_areas:
   - Setup
 ---
 
-
 How can you tell what operating system and version your Magento server runs?
 
 **Prerequisites**: You must access the server using a command prompt (an application that enables you to enter commands directly).
@@ -47,6 +46,4 @@ The following sample output shows you're running Ubuntu 14:
 	Description:    Ubuntu 14.04.1 LTS
 	Release:        14.04
 	Codename:       trusty
-
-
 

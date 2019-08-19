@@ -188,7 +188,6 @@ The detailed information about the Magento UI library is embedded in the code re
 Each file is named after the mixin it describes, and contains detailed mixin description and navigation controls to access documentation for other mixins.
 The documentation is available in a convenient [HTML](https://glossary.magento.com/html) view in the following location in your Magento installation: `pub/static/frontend/Magento/blank/en_US/css/docs/index.html`.
 
-
 <!-- Link definitions -->
 
 [`lib/web/css/docs/source/README.md`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/lib/web/css/docs/source/README.md
@@ -212,5 +211,4 @@ The documentation is available in a convenient [HTML](https://glossary.magento.c
 
 [ui_lib1.png]: {{ site.baseurl }}/common/images/ui_lib1.png
 [ui_lib2.png]: {{ site.baseurl }}/common/images/ui_lib2.png
-
 

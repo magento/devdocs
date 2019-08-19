@@ -302,7 +302,6 @@ In addition to security enhancements, this release contains the following functi
 <!-- ENGCOM-4470 -->
 * Corrected the position of the labels in the configurable product variations table. *Fix submitted by Eduard Chitoraga in pull request [21691](https://github.com/magento/magento2/pull/21691)*. [GitHub-20527](https://github.com/magento/magento2/issues/20527)
 
-
 <!-- ENGCOM-4754 -->
 * Configurable products can now be successfully updated through the bulk API using the following API endpoint: rest/async/bulk/V1/configurable-products/bySku/child).  *Fix submitted by Amol Chaudhari in pull request [22295](https://github.com/magento/magento2/pull/22295)*. [GitHub-20366](https://github.com/magento/magento2/issues/20366)
 
@@ -373,7 +372,6 @@ In addition to security enhancements, this release contains the following functi
 	* `--lock-file-path=LOCK-FILE-PATH` The path where file locks will be saved.
 
 	See [Configure the lock provider]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-lock.html).
-
 
 <!-- ENGCOM-4660 -->
 * `crontab` now updates all currency rates daily as expected. Previously, `crontab` updated only a subset of the enabled currencies. *Fix submitted by Denis Papec in pull request [18980](https://github.com/magento/magento2/pull/18980)*. [GitHub-18580](https://github.com/magento/magento2/issues/18580)
@@ -497,7 +495,6 @@ In addition to security enhancements, this release contains the following functi
 
 <!-- ENGCOM-4702 -->
 * Widget parameters can now contain multidimensional arrays. *Fix submitted by Stanislav Ilnytskyi in pull request [22214](https://github.com/magento/magento2/pull/22214)*. [GitHub-19909](https://github.com/magento/magento2/issues/19909)
-
 
 ### Layered navigation
 
@@ -660,7 +657,6 @@ In addition to security enhancements, this release contains the following functi
 <!-- ENGCOM-4477 -->
 * When you configure a price rule for configurable products with swatches, Magento now a shows the special price for products that match the price rule. Previously, Magento displayed both the old price and the special price for the matching configurable products. *Fix submitted by Pratik Oza in pull request [21695](https://github.com/magento/magento2/pull/21695)*. [GitHub-19276](https://github.com/magento/magento2/issues/19276)
 
-
 ### Tax
 
 <!-- ENGCOM-4434 -->
@@ -677,8 +673,6 @@ In addition to security enhancements, this release contains the following functi
 
 <!-- ENGCOM-4625 -->
 * The shopping cart full tax summary now displays total tax as expected instead of individual tax values. *Fix submitted by Hiren Pandya in pull request [21961](https://github.com/magento/magento2/pull/21961)*. [GitHub-19701](https://github.com/magento/magento2/issues/19701), [GitHub-11358](https://github.com/magento/magento2/issues/11358)
-
-
 
 ### Testing
 
@@ -730,7 +724,6 @@ In addition to security enhancements, this release contains the following functi
 <!-- ENGCOM-4621 -->
 * Magento now retains filter terms after you've applied a filter to the Admin `url_rewrites` table, then click the back button. *Fix submitted by Amol Chaudhari in pull request [21805](https://github.com/magento/magento2/pull/21805)*. [GitHub-21805](https://github.com/magento/magento2/issues/21805)
 
-
 <!-- ENGCOM-4116 -->
 * The import process now retains permanent redirects for outdated product URLs as expected. Previously, the import process removed these redirects, and when you tried to open the changed product by the old URL key,  Magento displayed a 404 page. *Fix submitted by Shikha Mishra in pull request [20737](https://github.com/magento/magento2/pull/20737)*. [GitHub-20282](https://github.com/magento/magento2/issues/20282)
 
@@ -775,18 +768,14 @@ The following table identifies contributions from our community members. This ta
 
 {% include release-notes/engcomm-2-2-9-issues.md %}
 
-
 ### Partner contributions
 
 The following table highlights contributions made by Partners. This table lists the Partner who contributed the pull request, the external pull request, and the GitHub issue number associated with it (if available).
 
 {% include release-notes/engcomm-2-2-9-partner.md %}
 
-
-
 ### System requirements
 Our technology stack is built on PHP and MySQL. For details, see [Technology stack requirements]({{page.baseurl}}/install-gde/system-requirements-tech.html).
-
 
 ### Installation and upgrade instructions
 

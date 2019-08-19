@@ -3,7 +3,6 @@ group: inventory
 title: Inventory management architecture
 ---
 
-
 Magento 2 is a highly modular system that allows 3rd-party developers to extend and customize the system on many levels. As a result, a developer can replace or add any component (module) without affecting the rest of the system.
 
 Module interchangeability was one of the main reasons behind introducing [Service Layer]({{ page.baseurl }}/architecture/archi_perspectives/service_layer.html) in Magento 2. By using service contracts and providing extensions over them, 3rd-party developers can:
@@ -39,7 +38,6 @@ This approach implies additional code limitations in the modules:
 ## Module dependencies
 
 The list of Inventory Management dependencies varies, depending on whether the merchant has installed a headless version of Magento. These merchants have integrated Magento with external Enterprise Resource Planning (ERP) software, and they often consider the ERP software to be the "source of truth" for processes like order processing and inventory tracking. The ERP provides its own UI for managing information and processes. Attempting to use the Magento UI to manage the same things would be excessive and would lead to sophisticated bi-directional synchronization of all changed data.
-
 
 ### Dependencies in a standard installation
 

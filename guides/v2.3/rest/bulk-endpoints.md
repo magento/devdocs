@@ -23,7 +23,6 @@ POST /async/bulk/V1/customers
 
 Endpoint routes that contain input parameters require additional changes. For example, `PUT /V1/products/:sku/media/:entryId` contains the `:sku` and `:entryId` input parameters. The route of a bulk request cannot contain input parameters, so you must change the route so that it does not contain any. To do this, replace the colon (`:`) with `by` and change the first letter of the parameter to uppercase.
 
-
 The following table provides several examples:
 
 Synchronous route | Bulk route

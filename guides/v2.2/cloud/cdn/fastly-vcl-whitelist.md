@@ -51,7 +51,6 @@ Edge ACLs create IP address lists for managing access to your site. In this exam
 
 1.  Refresh the cache according to the notification at the top of the page.
 
-
 ## Create the custom vcl snippet to secure Magento Admin UI access {#vcl}
 
 The following custom VCL snippet code (JSON format) filters requests to the Magento Admin UI and allows access if the client IP address matches an address in the `allowlist` ACL.

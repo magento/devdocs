@@ -13,7 +13,6 @@ An unauthenticated cross-site scripting vulnerability combined with an authentic
 This issue and the available patches are discussed in the [Extending the June 25 Security Update to Older Versions of Magento](https://community.magento.com/t5/Magento-DevBlog/Extending-the-June-25-Security-Update-to-Older-Versions-of/ba-p/138231)
 blog post. You can directly access patch code through your Magento account for Magento Commerce. Locate the patch by the name. We provide both Git-based and Composer-based patches.
 
-
 ## Apply patch PRODSECBUG-2198 to address critical SQL injection vulnerability
 
 A critical SQL injection vulnerability has been identified in pre-2.3.1 Magento code. To quickly protect your store from this vulnerability only, install patch PRODSECBUG-2198.  However, to protect against this vulnerability and others, you must upgrade to Magento Commerce or Open Source  2.3.1. **We strongly suggest that you install these full patches as soon as you can**.
@@ -38,7 +37,6 @@ Follow these steps to download and apply this patch:
 
 Magento Commerce 2.3.0 includes a wealth of new features as well as hundreds of enhancements and fixes to the core product. Look for the following highlights in this release:
 
-
 ### Merchant tool enhancements
 
 * **Inventory Management (provided by [Magento Inventory (was MSI)](https://github.com/magento/inventory))** is now available with Magento 2.3.0. It lets merchants manage inventory for all product types in a single warehouse and across complex shipping networks. Merchants can manage these locations as sources, tracking on-hand inventory quantities per product. Stocks map these sources and sales channels (websites) to provide an accurate, salable quantity as inventory pools for concurrent checkout and product reservations. Inventory Management also updates order and shipment options, giving you full control over your stock.
@@ -46,7 +44,6 @@ Magento Commerce 2.3.0 includes a wealth of new features as well as hundreds of 
 	Magento Inventory is a Magento Community Engineering special project open to contributors. To take part and contribute, see the [Magento Inventory GitHub](https://github.com/magento/inventory) repository and [wiki](https://github.com/magento/inventory/wiki) to get started. Join us in our [Slack](https://magentocommeng.slack.com/messages/C5FU5E2HY) channel (or [self signup](https://tinyurl.com/engcom-slack)) to discuss the project.
    * [Inventory Management overview]({{ page.baseurl }}/inventory/index.html) for developer documentation
    * [Managing Inventory](https://docs.magento.com/m2/ce/user_guide/catalog/inventory-management.html) for merchant information and instructions
-
 
 * **CMS enhancements** include banner enhancements. You can now create banner content in native Magento WYSIWYG (or Page Builder. See the  `Page Builder` discussion below. (Within the product interface, we now use the term  “dynamic block” instead of  “banner”.) We've also updated the WYSIWYG editor to use TinyMCE 4.6. (TinyMCE is now integrated into Magento through an adapter that allows it to be replaced with any other WYSIWYG editor.)
 
@@ -56,19 +53,15 @@ Magento Commerce 2.3.0 includes a wealth of new features as well as hundreds of 
 
 * **PWA Studio** is a set of tools that support the development, deployment and maintenance of progressive web applications. See [Magento PWA documentation](https://magento.github.io/pwa-studio/) for information about this toolset as well as information about contributing to this ongoing project.
 
-
 * **Declarative schema** simplifies installation and upgrade procedures for Magento and extensions. Declarative schema reduce the need for many database scripts, eliminating the need to maintain these scripts. And here's a big advantage: This features enables Magento to roll out database schema changes in patch releases (not currently possible). This feature supports split and shared database structures and database structure validation.
 
 * **GraphQL API** is now available with Magento 2.3.0. This API provides an alternative to REST and SOAP web APIs for custom frontend development, including headless storefronts and PWAs. See [GraphQL Developer Guide]({{site.baseurl}}/guides/v2.3/graphql/index.html) for more information about Magento's implementation of this data query language. GraphQL is a Magento Community Engineering special project open to contributors. To take part and contribute, see the [GraphQL GitHub](https://github.com/magento/graphql-ce) repository and [wiki](https://github.com/magento/graphql-ce/wiki) to get started. Join us in our [Slack](https://magentocommeng.slack.com/messages/C8076E0KS) channel (or [self signup](https://tinyurl.com/engcom-slack)) to discuss the project.
 
 * **Asynchronous Web APIs** allow any previous Magento REST APIs to be called asynchronously. This community-contributed feature includes separate status APIs that have been created to check the status of each request. Developers can now use the asynchronous APIs  in conjunction with queues that have also been migrated to Magento Open Source.  See [Asynchronous web endpoints]({{ page.baseurl }}/rest/asynchronous-web-endpoints.html) for more information.
 
-
 * **Bulk Web APIs**  allow all existing REST APIs to accept payloads with multiple entities. These community-contributed bulk APIs support more efficient and scalable implementations that eliminate round-trip network overhead. Like asynchronous APIs, bulk web APIs can be used in conjunction with queues that have also been migrated to Magento Open Source. [See Bulk endpoints]({{ page.baseurl }}/rest/bulk-endpoints.html) for more information.
 
 * **Updates to Magento's tech stack (including upgraded PHP support to maintain PCI compliance)** include upgrades to Redis, MySQL, Elasticsearch, and compatibility with PHP 7.2.x.
-
-
 
 ### Substantial security enhancements
 
@@ -80,7 +73,6 @@ Magento Commerce 2.3.0 includes a wealth of new features as well as hundreds of 
 
 See [Magento Security Center](https://magento.com/security/patches/magento-2.2.7-and-2.1.16-security-update) for a comprehensive discussion of these issues. All exploitable security issues fixed in this release (2.3.0) have been ported to 2.2.7, 2.1.16, 1.14.4.0, and 1.9.4.0, as appropriate.
 
-
 ### Core bundled extension enhancements
 
 #### Amazon Payments
@@ -89,11 +81,9 @@ See [Magento Security Center](https://magento.com/security/patches/magento-2.2.7
 
 * Improved extension architecture and performance
 
-
 #### dotmailer
 
 * 	dotmailer now supports the Magento Commerce split database mode.
-
 
 #### Klarna Payments
 
@@ -109,7 +99,6 @@ See [Magento Security Center](https://magento.com/security/patches/magento-2.2.7
 
 * Added support for PHP 7.2 and dropped support for PHP 5.6
 
-
 #### Magento Shipping
 
 * The Magento Shipping **Click & Collect** feature offers merchants the ability to:
@@ -122,7 +111,6 @@ See [Magento Security Center](https://magento.com/security/patches/magento-2.2.7
 
 	* Customers can also select Click & Collect locations during checkout. This feature is supported by workflows and notifications for Click & Collect pick up, packing, and collection.
 
-
 * The batch details page now displays collection point addresses, as applicable
 
 * Activation notices can now be translated.
@@ -131,15 +119,11 @@ See [Magento Security Center](https://magento.com/security/patches/magento-2.2.7
 
 * The dispatch details page has been enhanced.
 
-
 #### Vertex
 
 * The Magento implementation of Vertex now supports Vertex O Series 7.0.
 
-
-
 ### Other improvements
-
 
 * **Elasticsearch support for Magento Open Source version**. Elasticsearch support was previously provided in Magento Commerce only.
 
@@ -149,13 +133,9 @@ See [Magento Security Center](https://magento.com/security/patches/magento-2.2.7
 
 * Upgrade of Magento Functional Test Framework (MFTF) to 2.3.6.
 
-
-
-
 ## Fixed issues
 
 We've fixed hundreds of issues in the Magento 2.3.0 core code.
-
 
 ### Installation, upgrade, deployment
 
@@ -213,7 +193,6 @@ We've fixed hundreds of issues in the Magento 2.3.0 core code.
 
 <!---MAGETWO-88017 -->
 * The list of IP addresses for maintenance status no longer includes commas, which facilitates directly copy and pasting the addresses as needed.  *Fix submitted by Malyovanets Nickolas in pull request [13727](https://github.com/magento/magento2/pull/13727)*.
-
 
 <!---MAGETWO-86567 -->
 * `PhpFormatter` has been refactored to recursively return the array representation using short array syntax `[]` instead of long `array()`. If the given variable is not an array, it uses the standard `var_export` behavior. This change supports Magento coding standards. *Fix submitted by Malyovanets Nickolas in pull request [1193](https://github.com/magento/magento2/pull/1193)*. [GitHub-758](https://github.com/magento/magento2/issues/758)
@@ -1149,7 +1128,6 @@ We've fixed hundreds of issues in the Magento 2.3.0 core code.
 
 * dotmailer now displays the first and last purchase categories in the customer sales data fields.
 
-
 ### EAV
 
 <!--- ENGCOM-2708 -->
@@ -1358,7 +1336,6 @@ We've fixed hundreds of issues in the Magento 2.3.0 core code.
 <!--- MAGETWO-71933-->
 *  Classes that contain a *–*  are now rendered as added to the XML. Previously,  *–*  were  replaced with a single *-*.  [GitHub-10645](https://github.com/magento/magento2/issues/10645)
 
-
 #### Configuration framework
 
 <!---MAGETWO-83083 -->
@@ -1478,7 +1455,6 @@ We've fixed hundreds of issues in the Magento 2.3.0 core code.
     * adding all missing parameters to the areas of the code where mixins are invoked
 
     * moving and simplifying mixins used only once. *Fix submitted by Bartek Igielski in pull request [11371](https://github.com/magento/magento2/pull/11371)*.
-
 
 <!---MAGETWO-82760 -->
 * The dashboard y-axis range has been enhanced by the addition of an index for y-axis range values. *Fix submitted by Oscar Recio in pull request [11752](https://github.com/magento/magento2/pull/11752)*. [GitHub-7927](https://github.com/magento/magento2/issues/7927)
@@ -1708,7 +1684,6 @@ We've fixed hundreds of issues in the Magento 2.3.0 core code.
 <!-- MAGETWO-87936 -->
 *  The WYSIWYG editor now displays image icons as expected. Previously, the WYSIWYG editor showed broken image icons only. [GitHub-10417](https://github.com/magento/magento2/issues/10417)
 
-
 ### Import/export
 
 <!--- MAGETWO-90313 -->
@@ -1802,7 +1777,6 @@ We've fixed hundreds of issues in the Magento 2.3.0 core code.
 
 <!--- MAGETWO-70835 -->
 * Tier pricing for a single product unit now works as expected. If a tier price is set for one product unit, and this price is lower than the product price or special price, then the product price index table is populated with the tier price.
-
 
 ### Infrastructure
 
@@ -2212,7 +2186,6 @@ We've fixed hundreds of issues in the Magento 2.3.0 core code.
 <!--- ENGCOM-1208 -->
 * An integrity constraint violation error no longer occurs after you reorder a product with custom options. *Fix submitted by Vinay Shah in pull request [13394](https://github.com/magento/magento2/pull/13394)*. [GitHub-12705](https://github.com/magento/magento2/issues/12705)
 
-
 ### Reports
 
 <!--- MAGETWO-90338 -->
@@ -2287,12 +2260,10 @@ We've fixed hundreds of issues in the Magento 2.3.0 core code.
 <!--- MAGETWO-94297 -->
 * The **Show/Hide** details button now works as expected on the Returns (RMA) page.
 
-
 ### Rule
 
 <!--- MAGETWO-90329-->
 *  Cart Price rules now correctly display  nesting levels for categories with nesting levels that exceed three levels.
-
 
 ### Sales
 
@@ -2443,7 +2414,6 @@ We've fixed hundreds of issues in the Magento 2.3.0 core code.
 <!---ENGCOM-2588 -->
 * Magento now displays validation messages as needed on advanced searches. Previously, Magento did not display a message even after a customer submitted the advanced search form with no entries. *Fix submitted by Torben Höhn in pull request [17210](https://github.com/magento/magento2/pull/17210)*. [GitHub-8131](https://github.com/magento/magento2/issues/8131)
 
-
 ### Shipping
 
 <!-- MAGETWO-93712 -->
@@ -2573,12 +2543,10 @@ We've fixed hundreds of issues in the Magento 2.3.0 core code.
 <!--- ENGCOM-2870 -->
 * You can now change attribute type from `swatch` to `dropdown`. *Fix submitted by Malyovanets Nickolas in pull request [17750](https://github.com/magento/magento2/pull/17750)*. [GitHub-12695](https://github.com/magento/magento2/issues/12695), [GitHub-11703](https://github.com/magento/magento2/issues/11703), [GitHub-9307](https://github.com/magento/magento2/issues/9307), [GitHub-11403](https://github.com/magento/magento2/issues/11403), [GitHub-9923](https://github.com/magento/magento2/issues/9923)
 
-
 ### Tax
 
 <!--- MAGETWO-83405 -->
 * Tax total amount is now equal to the sum of the tax details amounts. Previously, Magento displayed the wrong order tax amounts when using specific tax configurations. *Fix submitted by Pieter Cappelle in pull request [11594](https://github.com/magento/magento2/pull/11594)*. [GitHub-10347](https://github.com/magento/magento2/issues/10347)
-
 
 <!---MAGETWO-87511 -->
 *  `\Magento\Framework\Data\OptionSourceInterface::getAllOptions()` and `\Magento\Framework\Data\OptionSourceInterface::toOptionArray()` are now compatible with parent classes. *Fix submitted by Yevhen Sentiabov in pull request [34](https://github.com/magento-engcom/php-7.2-support/pull/34)*.
@@ -2768,7 +2736,6 @@ We've fixed hundreds of issues in the Magento 2.3.0 core code.
 <!---MAGETWO-87153 -->
 *  `range-word` validation for form fields now works as expected. [GitHub-6113](https://github.com/magento/magento2/issues/6113)
 
-
 ### URL rewrites
 
 <!--- MAGETWO-85026-->
@@ -2811,7 +2778,6 @@ We've fixed hundreds of issues in the Magento 2.3.0 core code.
 
 <!--- MAGETWO-84319 -->* Magento no longer creates duplicate shipments for orders created via API. Previously, Magento created duplicate shipments when a merchant created a shipment via the API under certain conditions (mainly with bundled products).
 
-
 <!--- MAGETWO-91540 -->*  Product searches using `GET V1/products` return `extension_attributes` for configurable products as expected.
 
 <!--- MAGETWO-91568 -->*  You can now include custom attributes when filtering the responses of REST calls.
@@ -2820,19 +2786,13 @@ We've fixed hundreds of issues in the Magento 2.3.0 core code.
 
 <!--- MAGETWO-81910 -->*   Magento now includes the filter groups and the sort order of the `$searchCriteria` parameter in the `searchCriteria` object that is provided for the EAV set repository. [GitHub-11022](https://github.com/magento/magento2/issues/11022)
 
-
 <!--- MAGETWO-82315 -->* Updating a product with the REST API (`PUT /rest/all/V1/products/example_sku`) no longer assigns the product to all websites automatically. (Automatic assignment to all websites now occurs only when you create the product in All Store Views scope.) [GitHub-11324](https://github.com/magento/magento2/issues/11324)
 
 <!--- ENGCOM-2066 -->* A generated Admin API token no longer expires immediately. Previously, when you created a token for an Admin user and have set   **Admin Token Lifetime (hours))**  to empty, Magento denied access  because the token immediately expired.  *Fix submitted by Vijay Golani in pull request [15564](https://github.com/magento/magento2/pull/15564)*. [GitHub-15564](https://github.com/magento/magento2/issues/15564)
 
-
-
 <!-- MAGETWO-87057 -->* Magento now checks for the uniqueness of attribute option values for attributes created via REST. [GitHub-8846](https://github.com/magento/magento2/issues/8846)
 
-
 <!--- MAGETWO-87152 -->*  `salesRefundInvoiceV1` now saves the invoice ID as expected for a credit memo. [GitHub-11669](https://github.com/magento/magento2/issues/11669)
-
-
 
 ### Wishlist
 
@@ -2852,7 +2812,6 @@ We've fixed hundreds of issues in the Magento 2.3.0 core code.
 
 **Known issue:** When installing or upgrading Magento and upgrading PHP to 7.2, you must specify an encryption key value of 32 symbols (256 bits) or Magento will throw an error, and any sensitive, unsaved configuration data will be lost. When upgrading Magento and upgrading  PHP to 7.2, make sure that your encryption key is exactly 32 symbols. To do this, navigate to  **System** > Other Settings > **Manage Encryption Key** and either enter a new key or generate a new one. To change the key, make sure that `app/etc/env.php` is writable.
 
-
 **Known issue:** Magento throws the following error when you try to use the API to create two products with the same name without specifying the URL key: `URL key for specified store already exists.`  However, when you try to create these products through the Admin, Magento does not throw an error, but instead appends a number to the converted URL key if two products have the same name.
 
 <!-- https://github.com/magento/inventory/issues/1890  -->**Known issue:** Currently, ElasticSearch is supported only in Single Source mode for the Default Source. It is not supported in Multi Source mode with custom sources.
@@ -2867,17 +2826,13 @@ We've fixed hundreds of issues in the Magento 2.3.0 core code.
 
 * Renaming of tables is not supported.
 
-
-
 ## Community contributions
 
  We are grateful to the wider Magento community and would like to acknowledge their contributions to this release. Check out the following ways you can learn about the community contributions to our current releases:
 
-
 * If a community member has provided a fix for this release, we identify the fix in the Fixed Issue section of these notes with the phrase, "*Fix provided by community member @member_name*".
 
 * The Magento Community Engineering team [Magento Contributors](https://magento.com/magento-contributors) maintains a list of top contributing individuals and partners by month, quarter, and year. From that Contributors page, you can follow links to their merged PRs on GitHub.
-
 
 ### Partner contributions
 
@@ -2895,7 +2850,6 @@ The following table identifies contributions from our community members. This ta
 
 Our technology stack is built on PHP and MySQL. For details, see [Technology stack requirements]({{page.baseurl}}/install-gde/system-requirements-tech.html)
 
-
 For more information, see [System Requirements]({{ page.baseurl }}/install-gde/system-requirements.html).
 
 ### Installation and upgrade instructions
@@ -2907,6 +2861,4 @@ You can install Magento Commerce 2.3.0  using Composer.
 The Data Migration Tool helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see [Install the Data Migration Tool]({{page.baseurl}}/migration/migration-tool-install.html). Consider exploring or contributing to the [Magento Data Migration repository](https://github.com/magento/data-migration-tool).
 
 The [Code Migration Toolkit](https://github.com/magento/code-migration) helps transfer existing Magento 1.x store extensions and customizations to Magento 2.0.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.
-
-
 

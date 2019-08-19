@@ -11,7 +11,6 @@ functional_areas:
 
 The following example shows how to use a [Fastly Edge Dictionary](https://docs.fastly.com/guides/edge-dictionaries/working-with-dictionaries-using-the-api) with a custom VCL snippet to redirect incoming requests from a {{ site.data.var.ee }} store (`staging.example.com`) to a separate WordPress site (`customer.example.com`) that hosts related content like blog posts and customer stories.
 
-
 {: .bs-callout-info }
 We recommend adding custom VCL configurations to a Staging environment where you can test them before running against Production.
 
@@ -33,7 +32,6 @@ We recommend adding custom VCL configurations to a Staging environment where you
       req.http.X-WP == “1”
      ```
      Incoming requests that match this request condition, which is set through the [custom VCL snippet](#vcl), redirect to the WordPress backend.
-
 
 ## Create an Edge Dictionary of WordPress paths {#edge-dictionary}
 
@@ -78,7 +76,6 @@ For more information about Edge Dictionaries, see [Creating and using Edge Dicti
 The following custom VCL snippet code (JSON format) evaluates incoming requests and redirects those matching a path
  in the `wordpress_urls` edge dictionary to the WordPress backend specified in the Fastly service configuration.
 
-
 ```json
 {
   "name": "wordpress_redirect",
@@ -104,7 +101,6 @@ Review the example code and change values as needed:
     In this example, the VCL code logic extracts the first segment of the path `/mypath/someotherpath`, and then compares the path (`mypath`) to the paths in the `wordpress_urls` dictionary. Requests with matching paths are redirected to the WordPress backend. See the [Fastly VCL reference](https://docs.fastly.com/vcl/reference/) for information about creating Fastly VCL code snippets.
 
 Add the custom VCL snippet to your Fastly service configuration from the Admin UI (requires Fastly module 1.2.58 or later). If you cannot access the Admin UI, save the JSON code example in a file and upload it using the Fastly API. See [Creating a VCL snippet using the Fastly API]({{  page.baseurl }}/cloud/cdn/cloud-vcl-custom-snippets.html#manage-custom-vcl-snippets-using-the-api).
-
 
 ## Add the custom VCL snippet
 
@@ -147,10 +143,8 @@ Fastly validates the updated version of the VCL code during the upload process. 
 
 {% include cloud/cloud-fastly-manage-vcl-from-admin.md %}
 
-
 {: .bs-callout-info }
 Instead of manually uploading custom VCL snippets, you can add snippets to the `$MAGENTO_CLOUD_APP_DIR/var/vcl_snippets_custom` directory in your environment. Snippets in this directory upload automatically when you click *upload VCL to Fastly* in the Magento Admin UI. See [Automated custom VCL snippets deployment](https://github.com/fastly/fastly-magento2/blob/master/Documentation/Guides/CUSTOM-VCL-SNIPPETS.md#automated-custom-vcl-snippets-deployment) in the Fastly CDN for Magento 2 module documentation.
-
 
 <!-- Link definitions -->
 

@@ -1,5 +1,4 @@
 
-
 ### Check your existing crontab
 
 This section discusses how to see if cron is currently running and to verify whether it's set up properly.

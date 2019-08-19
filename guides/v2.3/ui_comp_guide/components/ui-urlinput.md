@@ -151,7 +151,6 @@ By default, you can use `Magento\Ui\Model\UrlInput\LinksConfigProvider`, which p
 </type>
 ```
 
-
 The option `class` implements `\Magento\Ui\Model\UrlInput\ConfigInterface` and provides the child component configuration:
 
 ```
@@ -164,7 +163,6 @@ The option `class` implements `\Magento\Ui\Model\UrlInput\ConfigInterface` and p
 declare(strict_types=1);
 
 namespace Magento\Ui\Model\UrlInput;
-
 
 class MyLink implements ConfigInterface
 {

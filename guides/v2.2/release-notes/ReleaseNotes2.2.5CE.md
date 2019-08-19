@@ -34,7 +34,6 @@ This release includes significant performance improvements to the core Magento c
 
 * <!--- MAGETWO-74154 --> Refactoring of the catalog full text indexer has improved indexing performance up to 15% for very large profiles (600,000 products) and product catalogs with many configurable options (5,000 configurable products and 500 options).
 
-
 * <!--- MAGETWO-88775 -->  Improving the behavior of swatch product attributes has improved search result page performance up to 31% for catalogs with many configurable product options (for example, 5,000 configurable products and 500 options).
 
 ### Community contribution highlights
@@ -57,9 +56,7 @@ This release of Magento Shipping adds the following new capabilities:
 
 * Batch processing increases automation and merchant efficiency by making it easier to process a large volume of shipments in batches.
 
-
 * Collection points provide the ability for customers to designate a drop point rather than residence for delivery by carrier.
-
 
 This release of Magento Shipping also includes additional minor enhancements, such as pagination to improve the Admin experience and multiversion API.
 
@@ -196,11 +193,7 @@ You can find Magento Shipping-specific release notes in [Magento Shipping Releas
 
 <!--- BUNDLE-902 -->* Magento now displays the green checkmark and **Vertex invoice has been sent** message as expected when you set an order’s status to **Suspected Fraud**.
 
-
 <!--- BUNDLE-905 -->* Customers no longer receive a notice about negative tax amount after a merchant creates a refund on Vertex Cloud.
-
-
-
 
 <!--- NOT NEEDED
 MAGETWO-91014 MAGETWO-90943 MAGETWO-90541 MAGETWO-90413 MAGETWO-90362 MAGETWO-90071 MAGETWO-90067 MAGETWO-90041 MAGETWO-89974  MAGETWO-89613 MAGETWO-89610  MAGETWO-88890 MAGETWO-88817 MAGETWO-88812 MAGETWO-88646 MAGETWO-88643 MAGETWO-88601 MAGETWO-88509 MAGETWO-88436 MAGETWO-88326 MAGETWO-88289 MAGETWO-87467 MAGETWO-86990 MAGETWO-86046 MAGETWO-85871 MAGETWO-85135 MAGETWO-80093 MAGETWO-73694 MAGETWO-80908
@@ -210,16 +203,13 @@ MAGETWO-86046 MAGETWO-90074 MAGETWO-62150 MAGETWO-89547 MAGETWO-45775 MAGETWO-91
 
 Merchants are unable to change a store view’s applied theme in Magento 2.2.5. When a merchant tries to change the **Applied theme** setting for a store view (**Content** > **Design** > **Configuration**), Magento does not change the theme, but instead displays this error: `Something went wrong while saving this configuration: Area is already set`. See [GitHub-14968](https://github.com/magento/magento2/issues/14968) for more information. **Workaround**: Merchants who are running 2.2.5 should apply [patch MAGETWO-93036]( https://magento.com/tech-resources/download#download2224)  or  upgrade to 2.2.6 when it becomes available.
 
-
 The Amazon Pay, Magento Shipping, and Vertex extensions have the following known issues:
 
 ### Amazon Pay known issues
 
 * Clicking **Save Config** on the Payment Methods page while configuring your Amazon Pay settings can result in a JavaScript error. **Workaround**: Refresh the page.
 
-
 <!-- BUNDLE--1480 -->*  Magento throws the following exception during checkout if you disable Amazon Pay when installing Magento using the web wizard:  `Exception #0 (UnexpectedValueException): Payment model name is not provided in config!`.  Note that this error occurs only if one or two of the three Amazon modules shipped with Magento are disabled. If all three Amazon modules are disabled, this problem does not occur. [GitHub-16167](https://github.com/magento/magento2/issues/16167) <!--- BUNDLE-1480 -->
-
 
 <!-- BUNDLE--15453 -->*  Magento displays the Amazon Pay option during checkout with multiple addresses even though multi shipping is not supported with Amazon Pay.
 
@@ -239,11 +229,9 @@ The following Dotmailer behaviors have been observed when Magento Commerce for B
 
 <!-- BUNDLE--1390 -->* Customer, subscriber, and guest data are not being successfully synced. As a result, newly created contacts display the  **Not imported** status in the contact report, and the relevant address books in dotmailer remain empty.
 
-
 <!-- BUNDLE--1408 -->* Review remainder email cannot be sent to a subscribed customer if review remainder emails are not enabled for non-subscribed customers.
 
 <!-- BUNDLE--1398 -->* Magento cannot send Customer and Guest Abandoned Cart email if these emails are not allowed for non-subscribed contacts.
-
 
 <!-- BUNDLE--1389 -->* When a merchant clicks the **Run Contact Sync** button, Magento throws an exception when a merchant clicks the Run Contact Sync button.
 
@@ -252,8 +240,6 @@ The following Dotmailer behaviors have been observed when Magento Commerce for B
 ### Magento Shipping known issues
 
 <!-- BUNDLE--1448 -->*  A merchant can create multiple return shipments for an already shipped return.
-
-
 
 ###  Vertex known issues
 
@@ -283,15 +269,12 @@ We are grateful to the wider Magento community and would like to acknowledge the
 
 The following table identifies contributions from our community members. This table lists the external pull requests, the GitHub issue number associated with it (if available), and the community member who contributed the pull request.
 
-
 <table>
   <tr>
     <th>Pull request</th>
     <th>Related GitHub issue</th>
     <th>Contributing community member</th>
   </tr>
-
-
 
 <tr>
     <td><a target="_blank" href="https://github.com/magento/magento2/pull/15929">15929</a></td>
@@ -834,7 +817,6 @@ The following table identifies contributions from our community members. This ta
     <td><a target="_blank" href="https://github.com/ihor-sviziev">Ihor Sviziev</a></td>
   </tr>
 
-
 </table>
 
 ### Partner contributions
@@ -896,7 +878,6 @@ The following table highlights contributions made by Partners. This table lists 
     <td><a href="https://github.com/magento/magento2/issues/10057" target="_blank">10057</a></td>
   </tr>
 
-
   <tr>
     <td>MediaCT</td>
     <td><a target="_blank" href="https://github.com/magento/magento2/pull/14309">14309</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/14062">14062</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/14230">14230</a></td>
@@ -908,7 +889,6 @@ The following table highlights contributions made by Partners. This table lists 
     <td><a target="_blank" href="https://github.com/magento/magento2/pull/13898">13898</a></td>
     <td><a href="https://github.com/magento/magento2/issues/12792" target="_blank">12792</a>, <a href="https://github.com/magento/magento2/issues/13778" target="_blank">13778</a></td>
   </tr>
-
 
   <tr>
     <td>Vaimo</td>
@@ -922,8 +902,6 @@ The following table highlights contributions made by Partners. This table lists 
     <td><a target="_blank" href="https://github.com/magento/magento2/pull/14473">14473</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/13024">13024</a></td>
     <td><a href="https://github.com/magento/magento2/issues/3483" target="_blank">3483</a></td>
   </tr>
-
-
 
 </table>
 

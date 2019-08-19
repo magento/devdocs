@@ -66,4 +66,3 @@ The following options are available for all basic components:
   </tr>
 </table>
 
-

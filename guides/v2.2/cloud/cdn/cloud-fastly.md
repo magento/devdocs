@@ -149,7 +149,6 @@ handling manages visitor redirection (automatically) and store matching
 (select from list) based on their obtained country code. For more information,
 see the Fastly [GeoIP documentation](https://github.com/fastly/fastly-magento2/blob/21b61c8189971275589219d418332798efc7db41/Documentation/CONFIGURATION.md#geoip-handling).
 
-
 ## Installation and configuration {#install-configure}
 
 The installation and configuration process is:

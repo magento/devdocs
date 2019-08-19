@@ -44,7 +44,6 @@ The following directories contain extensible UI components:
 
 * `Magento\Company\view\frontend\ui_component` - company users listing, role listing
 
-
 For more information, see [UI Listing/Grid Component](http://devdocs.magento.com/guides/v2.2/ui-components/ui-listing-grid.html).
 
 ## Additional information

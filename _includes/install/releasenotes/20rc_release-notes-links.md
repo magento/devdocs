@@ -1,5 +1,4 @@
 
-
 {% collapsibleh3 Magento Open Source 2.1 Release Candidate Notes %}
 
 *	[Open Source 2.1 Release Candidate 3 (RC3)]({{ page.baseurl }}/release-notes/ReleaseNotes2.1_RC3EE.html){:target="_blank"}

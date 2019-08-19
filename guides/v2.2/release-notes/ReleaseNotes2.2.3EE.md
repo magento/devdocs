@@ -6,7 +6,6 @@ title: Magento Commerce 2.2.3 Release Notes
 
 *Release notes updated on March 22, 2018.*
 
-
 We are pleased to present Magento Commerce 2.2.3. This release includes 35 enhancements to product security, a change to the Magento Admin to support recent USPS shipping changes, and a copyright update. And thanks to our community members, it also includes support for Elasticsearch 5.x and enhancements to ACL control for cache management through Magento Admin.
 
 {: .bs-callout-info }
@@ -35,8 +34,6 @@ See [Magento Security Center](https://magento.com/security/patches/magento-223-2
 ### System requirements
 
 Our technology stack is built on PHP and MySQL. For details, see [Technology stack requirements]({{ page.baseurl }}/install-gde/system-requirements-tech.html)
-
-
 
 For more information, [System Requirements]({{ page.baseurl }}/install-gde/system-requirements.html).
 

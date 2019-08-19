@@ -35,7 +35,6 @@ This release is focused on substantial security enhancements:
 {:.bs-callout .bs-callout-note}
 Starting with the release of Magento Commerce 2.3.2, Magento will  assign and publish indexed Common Vulnerabilities and Exposures (CVE) numbers with each security bug reported to us by external parties. This  will allows users of Magento Commerce to more easily identify unaddressed vulnerabilities in their deployment.
 
-
 ### Performance boosts
 
 * **Significant improvement to storefront page response time**. The page response times for the catalog, search, and advanced search pages have been significantly improved under high load. <!--- MAGETWO-95294--->
@@ -46,7 +45,6 @@ Starting with the release of Magento Commerce 2.3.2, Magento will  assign and pu
 
 * **Improved page rendering through deferred loading and parsing of storefront JavaScript**. All non-critical JavaScript code has been relocated to the bottom of storefront pages, which speeds up page rendering and allows users to see the complete page sooner while nonessential elements remain inactive. To enable this performance enhancement, you must navigate to **Stores** > **Configuration** > **Developer** > **JavaScript Settings** and enable the **Move JS code to the bottom of the page** option.   <!--- MC-15439-->
 
-
 ### Infrastructure improvements
 
 This release contains 130 enhancements to core quality, which improve the quality of the Framework and these modules: `Catalog`, `Sales`, `Checkout/One Page Checkout`,  `UrlRewrite`, `Customer/Customers`, and `UI`. Here are some additional core enhancements:
@@ -56,8 +54,6 @@ This release contains 130 enhancements to core quality, which improve the qualit
 * **The CGI URL gateway in UPS module has been updated from HTTP to HTTPS**. The CGI URL gateway endpoint in the UPS module has been updated  from HTTP to HTTPS in response to the disablement of the HTTP gateway by UPS in mid-2019. See [Magento User Guide](https://docs.magento.com/m2/ee/user_guide/shipping/ups.html) for information about using the UPS shipment method. Shipping method configuration settings are described in  [Shipping methods](https://docs.magento.com/m2/ee/user_guide/configuration/sales/shipping-methods.html#UPS). <!--- MAGETWO-98947-->
 
 * **Google chart API updated to the Image-Charts**. Magento now uses the Image-Charts free service to render static charts in Admin dashboards. Earlier deployments used Google Image Charts, which was deprecated in 2012 and turned off on [March 18, 2019](https://developers.google.com/chart/image/docs/making_charts). <!--- MAGETWO-98833-->
-
-
 
 ### Merchant tool enhancements
 
@@ -83,7 +79,6 @@ Amazon Pay is now compliant with the PSD2 directive for UK and Germany. See [Pay
 
 We've fixed hundreds of issues in the Magento 2.3.2 core code.
 
-
 ### Installation, upgrade, deployment
 
 <!--- ENGCOM-4602-->
@@ -106,7 +101,6 @@ We've fixed hundreds of issues in the Magento 2.3.2 core code.
 
 <!--- ENGCOM-4753-->
 * Updated the email template stylesheet for the Magento default and Luma themes to correctly specify the ` .no-link` selector. This update fixes the following less compilation error that displayed when compiling the `email-inline.less` file using less.js compiler v2.73: ` extend ' .no-link a' has no matches`. *Fix submitted by [Pieter Hoste](https://github.com/hostep) in pull request [22332](https://github.com/magento/magento2/pull/22332)*. [GitHub-22330](https://github.com/magento/magento2/issues/22330)
-
 
 ### Backend
 
@@ -146,12 +140,10 @@ We've fixed hundreds of issues in the Magento 2.3.2 core code.
 <!--- ENGCOM-4397-->
 * Magento now redirects to you the Admin home page or a 404 page as expected when you try to access a nonexisting Admin page and **Stores** > **Configuration** > **Advanced** > **Admin** > **Security** > **Add Secret Key to URLs** is enabled. Previously,  redirects did not work properly, and Magento displayed the following message, `The page isn’t redirecting properly`. *Fix submitted by [Jitheesh V O](https://github.com/Jitheesh) in pull request [21455](https://github.com/magento/magento2/pull/21455)*. [GitHub-21454](https://github.com/magento/magento2/issues/21454)
 
-
 ### Back up
 
 <!--- ENGCOM-4782-->
 * Magento now creates the `var/.maintenance.flag`  file as expected when you start a database backup  (**System** > **Tools** > **Backups** > **Database Backup**). Previously, Magento did not create this  file, but instead displayed the following error: `Error: You need more permissions to activate maintenance mode right now. To create the backup, please deselect "Put store into maintenance mode" or update your permissions`. *Fix submitted by [Hiren Pandya](https://github.com/hiren0241) in pull request [19993](https://github.com/magento/magento2/pull/19993)*. [GitHub-19825](https://github.com/magento/magento2/issues/19825)
-
 
 ### Bundle
 
@@ -165,7 +157,6 @@ We've fixed hundreds of issues in the Magento 2.3.2 core code.
 
 <!--- ENGCOM-4745-->
 * CMS block cache keys now contain the appropriate store ID in deployments with multiple store views. Previously, Magento always loaded the cached version of the block for the first store view. *Fix submitted by [Marius Strajeru](https://github.com/tzyganu) in pull request [22302](https://github.com/magento/magento2/pull/22302)*. [GitHub-22299](https://github.com/magento/magento2/issues/22299)
-
 
 ### Cart and checkout
 
@@ -211,12 +202,10 @@ We've fixed hundreds of issues in the Magento 2.3.2 core code.
 <!--- MC-5681-->
 * The checkout page now provides the ability to search addresses instead of listing addresses only on the Select shipping and Billing address steps. This new search feature can substantially increase checkout performance for customers with thousands of addresses. It is disabled by default and  must be enabled from Admin.  See [Checkout](https://docs.magento.com/m2/ee/user_guide/configuration/sales/checkout.html#Checkout).
 
-
 ### Cart Price rules
 
 <!--- MAGETWO-98680-->
 * Magento now displays the Cart Price Rule code on an order details Admin page if free shipping applies. Previously, Magento did not display information about the Sales rule or why shipping was free.
-
 
 ### Catalog
 
@@ -317,12 +306,10 @@ This fix can degrade performance in deployments that implement flat catalogs. To
 has been changed to `<argument name="resourceStockItem" xsi:type="object">Magento\CatalogInventory\Model\ResourceModel\Stock\Item\Proxy</argument>`.)
 *Fix submitted by [Vitaliy](https://github.com/VitaliyBoyko) in pull request [21731](https://github.com/magento/magento2/pull/21731)*. [GitHub-167](https://github.com/magento/magento2/issues/167)
 
-
 ### Catalog URL rewrite
 
 <!--- ENGCOM-4386-->
 * URL rewrites are no longer overwritten in multisite deployments. *Fix submitted by [Anshu Mishra](https://github.com/AnshuMishra17) in pull request [21462](https://github.com/magento/magento2/pull/21462)*. [GitHub-21329](https://github.com/magento/magento2/issues/21329)
-
 
 ### Cleanup and simple code refactoring
 
@@ -392,7 +379,6 @@ has been changed to `<argument name="resourceStockItem" xsi:type="object">Magent
 <!--- ENGCOM-4797-->
 * In the Conditions section of the New Cart Price Rule page in the  Admin, the dropdown arrow in the `_If ALL of these conditions are TRUE _ field` now points in the correct direction. *Fix submitted by [Hiren Pandya](https://github.com/hiren0241) in pull request [22456](https://github.com/magento/magento2/pull/22456)*. [GitHub-20366](https://github.com/magento/magento2/issues/22434)
 
-
 ### Configurable products
 
 <!--- MAGETWO-98013-->
@@ -410,7 +396,6 @@ has been changed to `<argument name="resourceStockItem" xsi:type="object">Magent
 <!--- ENGCOM-4188-->
 * Configurable products can now be successfully updated through the bulk API (specifically, this API endpoint: `rest/async/bulk/V1/configurable-products/bySku/child`). *Fix submitted by [Pedro Sousa ](https://github.com/pedrosousa13) in pull request [21083](https://github.com/magento/magento2/pull/21083)*. [GitHub-20366](https://github.com/magento/magento2/issues/20366)
 
-
 ### cron
 
 <!--- MAGETWO-98151-->
@@ -427,7 +412,6 @@ has been changed to `<argument name="resourceStockItem" xsi:type="object">Magent
 	* `--lock-file-path=LOCK-FILE-PATH`—The path where file locks will be saved.
 
 	See [Install]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-lock.html).
-
 
 ### Customers
 
@@ -460,7 +444,6 @@ has been changed to `<argument name="resourceStockItem" xsi:type="object">Magent
 
 <!--- ENGCOM-4678-->
 * Customer accounts are now confirmed when a customer clicks the email activation link. Previously, Magento confirmed the customer account even when the customer did not click on the email activation link. *Fix submitted by [Shikha Mishra](https://github.com/shikhamis11) in pull request [22147](https://github.com/magento/magento2/pull/22147)*. [GitHub-22052](https://github.com/magento/magento2/issues/22052)
-
 
 ### Dashboard
 
@@ -507,7 +490,6 @@ has been changed to `<argument name="resourceStockItem" xsi:type="object">Magent
 <!--- ENGCOM-3810-->
 * Added an `is_array` parameter value check to the `getOptionText($value)` function in `app/code/Magento/Eav/Model/Entity/Attribute/Source/AbstractSource.php` to fix an error that caused Magento to throw a UI error when you make the `_quantity_and_stock_status (Qty)_` product attribute visible in the storefront properties. Previously, the `getOptionText($value)` function expected integer or string input and failed because the `quantity_and_stock_status (Qty)` configuration parameters were passed as an array.` *Fix submitted by [Aditi Singh](https://github.com/aditisinghcedcoss) in pull request [20001](https://github.com/magento/magento2/pull/20001)*. [GitHub-13612](https://github.com/magento/magento2/issues/13612)
 
-
 ### Email
 
 <!--- ENGCOM-4512-->
@@ -515,7 +497,6 @@ has been changed to `<argument name="resourceStockItem" xsi:type="object">Magent
 
 <!--- ENGCOM-4812-->
 * The Insert variable popup window that is accessed from the Email Template Information window is now populated as expected. *Fix submitted by [Bartłomiej Szubert](https://github.com/Bartlomiejsz) in pull request [22469](https://github.com/magento/magento2/pull/22469)*. [GitHub-20111](https://github.com/magento/magento2/issues/20111)
-
 
 ### Frameworks
 
@@ -542,7 +523,6 @@ has been changed to `<argument name="resourceStockItem" xsi:type="object">Magent
 
 <!--- ENGCOM-4333-->
 * Running the `php bin/magento setup:upgrade` command on modules that have a `db_schema.xml` without an `indexType` now creates the index, and subsequent runs result in no modifications as expected. Previously, running this command multiple times resulted in index creation followed by an error. *Fix submitted by [Milind Singh](https://github.com/milindsingh) in pull request [21328](https://github.com/magento/magento2/pull/21328)*. [GitHub-21322](https://github.com/magento/magento2/issues/21322)
-
 
 #### Cache framework
 
@@ -606,12 +586,10 @@ has been changed to `<argument name="resourceStockItem" xsi:type="object">Magent
 <!--- ENGCOM-4313-->
 * Google Analytics `Anonymize Ip` no longer always set to on. *Fix submitted by [Nazar Klovanych](https://github.com/Nazar65) in pull request [21303](https://github.com/magento/magento2/pull/21303)*. [GitHub-21292](https://github.com/magento/magento2/issues/21292)
 
-
 ### Google Chart API
 
 <!--- MAGETWO-98584 -->
 * The Google chart API has been updated to the Image-Charts. Magento now uses the Image-Charts free service to render static charts in Admin dashboards. Earlier deployments used Google Image Charts, which was deprecated in 2012 and turned off on [March 18, 2019](https://developers.google.com/chart/image/docs/making_charts). [GitHub-21599](https://github.com/magento/magento2/issues/21599)
-
 
 ### Import/export
 
@@ -694,7 +672,6 @@ has been changed to `<argument name="resourceStockItem" xsi:type="object">Magent
 
 	* this configuration is later updated by setting  `Qty Uses Decimals`  to **no**, and later updating the **Qty Uses Decimals** attribute in the product congiration to **no**. *Fix submitted by [Valerij Ivashchenko](https://github.com/likemusic) in pull request [21928](https://github.com/magento/magento2/pull/21928)*. [GitHub-21926](https://github.com/magento/magento2/issues/21926)
 
-
 ### Layered navigation
 
 <!--- ENGCOM-4637-->
@@ -725,7 +702,6 @@ has been changed to `<argument name="resourceStockItem" xsi:type="object">Magent
 <!--- ENGCOM-4634-->
 * Magento 2.x CLI command names are now reported in the transaction names in the New Relic APM Monitoring Data. The transaction name is based on the Magento CLI command name, for example `cli app:config:import`, `cli indexer:reindex`, and `cli cache:flush`. In previous releases, the New Relic transaction names for CLI commands initiated by Magento 2.x CLI command names was missing and reported as unknown. *Fix submitted by [Lukasz Bajsarowicz](https://github.com/lbajsarowicz) in pull request [22059](https://github.com/magento/magento2/pull/22059)*. [GitHub-22047](https://github.com/magento/magento2/issues/22047)
 
-
 ### Newsletter
 
 <!--- MAGETWO-98617-->
@@ -744,7 +720,6 @@ has been changed to `<argument name="resourceStockItem" xsi:type="object">Magent
 
 <!--- ENGCOM-4524-->
 * When you create new extension attributes for orders, these attributes are now correctly joined when querying orders. *Fix submitted by [Oleksandr Kravchuk]](https://github.com/swnsma) in pull request [21797](https://github.com/magento/magento2/pull/21797)*. [GitHub-8035](https://github.com/magento/magento2/issues/8035)
-
 
 ### Page cache
 
@@ -803,7 +778,6 @@ has been changed to `<argument name="resourceStockItem" xsi:type="object">Magent
 <!--- ENGCOM-4560-->
 * The  text for review-related headers under **User Content** on the Admin dashboard has been edited for clarity.  *Fix submitted by [Vishal Gelani ](https://github.com/gelanivishal) in pull request [21621](https://github.com/magento/magento2/pull/21621)*. [GitHub-21620](https://github.com/magento/magento2/issues/21620)
 
-
 ### Sales
 
 <!--- ENGCOM-4101-->
@@ -826,7 +800,6 @@ has been changed to `<argument name="resourceStockItem" xsi:type="object">Magent
 
 <!--- ENGCOM-3910-->
 * If you retrieve an order, and then use the `getShippingMethod` as object function to retrieve the shipping method, Magento now returns `null` if no shipping method has been defined. Previously, this function returned an undefined index error if a shipping method was not available. *Fix submitted by [Mahesh Singh](https://github.com/maheshWebkul721) in pull request [20381](https://github.com/magento/magento2/pull/20381)*. [GitHub-20380](https://github.com/magento/magento2/issues/20380)
-
 
 ### SalesRule
 
@@ -861,7 +834,6 @@ has been changed to `<argument name="resourceStockItem" xsi:type="object">Magent
 <!--- ENGCOM-4266-->
 * UPS (non-XML) endpoints are now HTTPS instead of HTTP. *Fix submitted by [Josh](https://github.com/wsajosh) in pull request [21511](https://github.com/magento/magento2/pull/21511)*.
 
-
 <!--- ENGCOM-3601-->
 * Magento now provides quotes for DHL shipments when **DHL Content Type** is set to **Non Documents**. *Fix submitted by [gwharton](https://github.com/gwharton) in pull request [19487](https://github.com/magento/magento2/pull/19487)*. [GitHub-19485](https://github.com/magento/magento2/issues/19485)
 
@@ -870,7 +842,6 @@ has been changed to `<argument name="resourceStockItem" xsi:type="object">Magent
 
 <!--- MAGETWO-98328-->
 * The tracking pop-up window now displays an accurate value for the delivery date for FedEx shipments in transit.
-
 
 ### Sitemap
 
@@ -888,7 +859,6 @@ has been changed to `<argument name="resourceStockItem" xsi:type="object">Magent
 <!--- ENGCOM-4296-->
 * You can now successfully preselect a configurable product swatch that contains an image. Previously, Magento tried to load the image into the product gallery before initialization completed and threw a JavaScript error. *Fix submitted by [Nirav Patel](https://github.com/niravkrish) in pull request [19635](https://github.com/magento/magento2/pull/19635)*. [GitHub-18017](https://github.com/magento/magento2/issues/18017)
 
-
 ### Tax
 
 <!--- MAGETWO-97396-->
@@ -905,7 +875,6 @@ has been changed to `<argument name="resourceStockItem" xsi:type="object">Magent
 
 <!--- ENGCOM-4480-->
 * You can now successfully search for a tax rule based on both the **Name** and **Tax Rate** fields. Previously, Magento threw an MySQL error. *Fix submitted by [Tuyen Nguyen](https://github.com/tuyennn) in pull request [21701](https://github.com/magento/magento2/pull/21701)*. [GitHub-21521](https://github.com/magento/magento2/issues/21521)
-
 
 ### Testing
 
@@ -928,7 +897,6 @@ has been changed to `<argument name="resourceStockItem" xsi:type="object">Magent
 
 <!--- ENGCOM-4800-->
 * Magento now successfully uploads files from the theme config edit form page when you click **Select from Gallery** button for the **Logo Image** field. *Fix submitted by [Vechirko Yurii](https://github.com/yvechirko) in pull request [22132](https://github.com/magento/magento2/pull/22132)*. [GitHub-21032](https://github.com/magento/magento2/issues/21032)
-
 
 ### Translation and locales
 
@@ -973,7 +941,6 @@ has been changed to `<argument name="resourceStockItem" xsi:type="object">Magent
 <!--- ENGCOM-3937-->
 * Magento no longer uploads images to the Category page unless the **Use Default Value** attribute is enabled. *Fix submitted by [Serhiy Zhovnir](https://github.com/serhiyzhovnir) in pull request [20461](https://github.com/magento/magento2/pull/20461)*. [GitHub-20376](https://github.com/magento/magento2/issues/20376)
 
-
 ### URL rewrites
 
 <!--- ENGCOM-4357-->
@@ -984,7 +951,6 @@ has been changed to `<argument name="resourceStockItem" xsi:type="object">Magent
 
 <!--- ENGCOM-4586-->
 * Magento now retains filter terms after you've applied a filter to the Admin `url_rewrites` table, then click the back button. *Fix submitted by [Vaibhav Bhalerao](https://github.com/vbmagento) in pull request [21834](https://github.com/magento/magento2/pull/21834)*. [GitHub-21805](https://github.com/magento/magento2/issues/21805)
-
 
 ### Web API framework
 
@@ -1017,11 +983,9 @@ label, types and disabled, but the actual `file-content` was not replaced with t
 <!--- ENGCOM-4664-->
 * You can now insert widgets that contain a WYSIWYG field into a form. Previously, widgets with a `WYSIWYG` parameter failed when inserting them into a WYSIWYG in a form. *Fix submitted by [James Dinsdale](https://github.com/molovo) in pull request [20174](https://github.com/magento/magento2/pull/20174)*. [GitHub-19742](https://github.com/magento/magento2/issues/19742)
 
-
 ## Known issues
 
 * **Issue**: The Async/Bulk Web APIs support only the default store view. A hot fix for this issue will be available in the near future. This issue has been resolved with the Scope parameter for Async/Bulk API patch, which is now available. See [Patch for Magento Framework Message Queue and Store Scopes](https://community.magento.com/t5/Magento-DevBlog/Patch-for-Magento-Framework-Message-Queue-and-Store-Scopes/ba-p/135209) for a full discussion of this scope-related issue and patch contents.
-
 
 * **Issue**: The security enhancements that are part of Magento 2.3.2 require the installation of libsodium version 1.0.13 or higher. You will not be able to successfully install Magento Commerce 2.3.2 without first ensuring that your server runs  version 1.0.13 or higher. See [Libsodium releases](https://github.com/jedisct1/libsodium/releases) for a description of the available releases and installation instructions.
 
@@ -1047,7 +1011,6 @@ The following table identifies contributions from our community members. This ta
 
 {% include release-notes/engcomm-2-3-2-issues.md %}
 
-
 ### System requirements
 
 Our technology stack is built on PHP and MySQL. For more information, see [System Requirements]({{ page.baseurl }}/install-gde/system-requirements.html).
@@ -1061,6 +1024,4 @@ You can install {{site.data.var.ee}} 2.3.2  using Composer.
 The Data Migration Tool helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see [Install the Data Migration Tool]({{page.baseurl}}/migration/migration-tool-install.html). Consider exploring or contributing to the [Magento Data Migration repository](https://github.com/magento/data-migration-tool).
 
 The [Code Migration Toolkit](https://github.com/magento/code-migration) helps transfer existing Magento 1.x store extensions and customizations to Magento 2.0.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.
-
-
 

@@ -11,5 +11,4 @@ functional_areas:
   - Setup
 ---
 
-
 {% include install/sampledata/sample-data-intro.md %}

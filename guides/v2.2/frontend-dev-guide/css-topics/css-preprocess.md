@@ -43,7 +43,6 @@ The topic describes how stylesheets are preprocessed and compiled to [CSS](https
  </tr>
 </table>
 
-
 ## Less compilation modes {#less_modes}
 
 In the Magento application, the following modes of compiling `.less` files to CSS are implemented:
@@ -74,7 +73,6 @@ For each CSS file included in the layouts, Less preprocessor does the following:
 1. Resolves all paths in `.less` files to relative paths in the system using the Magento fallback mechanism. All files resolved by the Less preprocessor are copied to `var/view_preprocessed/less`. Imported files are processed recursively.
 
 1. All source files are passed to the PHP Less compiler. The resulting compiled `.css` files are published to `pub/static/frontend/<Vendor>/<theme>/<locale>`.
-
 
 #### Styles debugging in server-side compilation mode {#css_debug_server}
 
@@ -194,7 +192,6 @@ The standard `@import` directive includes a single file, which is found accordin
 
 `@magento_import` can be used in the root source files of a theme only.
 
-
 ### @magento_import rules of usage {#magento-import-usage}
 
 To include a `.less` file using the `@magento_import` directive:
@@ -220,7 +217,6 @@ To include a `.less` file using the `@magento_import` directive:
     ```
 
 1. `@magento_import` must contain the file path. The path is specified relatively to the file, where the directive is called and put in either single ('') or double quotes (""). The best practice is to specify the file extension in the path, though technically you can omit this.
-
 
 ### @magento_import processing {#magento_import_example}
 
@@ -258,7 +254,6 @@ Example of how `@magento_import` is used and processed in `<Magento_Blank_theme_
    </tbody>
 </table>
 
-
 [production application mode]: {{page.baseurl}}/config-guide/bootstrap/magento-modes.html#production-mode
 [LESS PHP library]: https://github.com/oyejorge/less.php
 [native `less.js` library]: http://lesscss.org/usage/#using-less-in-the-browser
@@ -266,5 +261,4 @@ Example of how `@magento_import` is used and processed in `<Magento_Blank_theme_
 [publication]: {{page.baseurl}}/config-guide/cli/config-cli-subcommands-static-view.html#config-cli-static-overview
 [root source files]: {{page.baseurl}}/frontend-dev-guide/css-topics/css-preprocess.html#css_preprocess_terms
 [static files fallback]: {{page.baseurl}}/frontend-dev-guide/themes/theme-inherit.html#theme-inherit-static
-
 

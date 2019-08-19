@@ -35,7 +35,6 @@ Refer to [Magento Contributor Agreement](http://www.magento.com/legaldocuments/m
 
 ## GitHub and Two-Factor Authentication {#two-factor}
 
-
 Magento **requires all Partners** who contribute code to enable 2FA on their Github accounts. You can use a mobile device or 2FA application for added protection. See [Configuring two-factor authentication](https://help.github.com/en/articles/configuring-two-factor-authentication) in the GitHub help.
 
 We also recommend creating a personal access token for your account to use when interacting with GitHub in scripts and on the command line. See [Creating a personal access token for the command line](https://help.github.com/en/articles/creating-a-personal-access-token-for-the-command-line) in the GitHub help.

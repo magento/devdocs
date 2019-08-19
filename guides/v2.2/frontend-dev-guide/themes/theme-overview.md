@@ -26,5 +26,3 @@ Your new theme can be a standalone new theme, or it can inherit from the default
 
 [inherit other required files from a parent theme]: {{page.baseurl}}/frontend-dev-guide/themes/theme-inherit.html
 
-
-

@@ -92,7 +92,6 @@ We recommend using the Blackfire installation guide to walk you through the proc
 
 1.  Open the [Blackfire installation guide](https://blackfire.io/docs/up-and-running/installation), select the Operating System, and follow the instructions.
 
-
 ## Blackfire troubleshooting
 
 ### Bypassing Reverse Proxy, Cache, and Content Delivery Networks (CDN)

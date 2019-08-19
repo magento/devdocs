@@ -180,7 +180,6 @@ initPrices: function (row) {
     layout(prices); //layout is service (abstract factory), which create tree of Ui Components from JSON
 },
 
-
 /**
  * Sort callback to compare prices by sort order
  *

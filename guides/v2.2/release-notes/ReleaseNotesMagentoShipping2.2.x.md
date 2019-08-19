@@ -4,10 +4,7 @@ title: Magento Shipping Release Notes
 ---
 *Code and release notes updated on May 2, 2018.*
 
-
-
 The release information in this section describes changes to the Magento Shipping extension bundled with Magento 2.2.2.  Fixes and enhancements are listed by availability date.
-
 
 See the [Magento Commerce 2.2.2 Release Notes]({{ page.baseurl }}/release-notes/ReleaseNotes2.2.2CE.html) and [Magento Commerce 2.2.4 Release Notes]({{ page.baseurl }}/release-notes/ReleaseNotes2.2.4CE.html) for a comprehensive discussion of 2.2.2 and 2.2.4 fixes and enhancements.
 
@@ -16,7 +13,6 @@ See the [Magento Commerce 2.2.2 Release Notes]({{ page.baseurl }}/release-notes/
 Here are the enhancements available as of September 18, 2018:
 
 ### Enhancements
-
 
 * The **Click & Collect** feature offers merchants the ability to:
 
@@ -35,10 +31,6 @@ Consumers can also select Click & Collect locations during check-out. This featu
 	* Book shipments for a batch
 
 	* Generate documentation for individual shipments as well as all shipments within a batch
-
-
-
-
 
 ## Changes effective May 2, 2018 (Magento 2.2.4)
 
@@ -177,6 +169,4 @@ Here are the enhancements and fixes available as of January 5, 2018:
 #### USPS
 
 * Updated label size to A6 default in PNG.
-
-
 

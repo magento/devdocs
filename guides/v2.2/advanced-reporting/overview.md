@@ -17,7 +17,6 @@ Magento collects data and sends this information to the MBI for analytics.
 5. In the Magento configuration, **Use Secure URLs on Storefront**, **and Use Secure URLs in Admin** must be set to **Yes**.
 6. Make sure that [Magento crontab]{:target="_blank"} is created and cron jobs are running on the installed server.
 
-
 The merchant can now click on the Go to Advanced Reporting button on the Admin dashboard to launch the advanced reporting features at `https://advancedreporting.rjmetrics.com/report`.
 
 {: .bs-callout-info }
@@ -36,7 +35,6 @@ Though the Analytics module provides API, it is used specifically to interchange
 [Magento modules that implement the functionality][modules]{:target="_blank"}
 
 [Data collection configuration and settings][collection]{:target="_blank"}
-
 
 <!-- LINK DEFINITIONS -->
 

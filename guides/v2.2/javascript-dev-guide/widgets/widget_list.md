@@ -126,7 +126,6 @@ If the `maxItems` option is set, hides or displays the **Add** button.
 ### `removeItem()` {#list_removeItem}
 Removes an item from the list.
 
-
 [lib/web/mage/list.js]: {{ site.mage2bloburl }}/{{ page.guide_version }}/lib/web/mage/list.js
 [Initialize JavaScript]: {{page.baseurl}}/javascript-dev-guide/javascript/js_init.html
 [DynamicRows]:{{ page.baseurl }}/ui_comp_guide/components/ui-dynamicrows.html

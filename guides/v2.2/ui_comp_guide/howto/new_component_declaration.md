@@ -129,7 +129,6 @@ We copy the `<field>` configuration, remove the `<select>` node and its configur
 </form>
 ```
 
-
 <!-- Link Definitions -->
 
 [uiElement]: {{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uielement_concept.html

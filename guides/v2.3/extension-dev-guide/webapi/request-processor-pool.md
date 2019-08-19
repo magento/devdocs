@@ -33,11 +33,9 @@ To create a custom processor, you must perform the following tasks:
 * Define the processing rules in the `canProcess` method.
 * Create the processor logic in the `process` method.
 
-
 ### Define the custom processor
 
 Processors must be defined in a module's `webapi_rest/di.xml` file. The following example shows the definition of the default `sync` processor:
-
 
 ```xml
 <type name="Magento\Webapi\Controller\Rest\RequestProcessorPool">
@@ -94,7 +92,6 @@ interface RequestProcessorInterface
 The `canProcess(\Magento\Framework\Webapi\Rest\Request $request)` method defines whether the current request can be processed. Currently, all implemented processors match current request URLs with the defined patterns.
 
 For example, `Magento\WebapiAsync\Controller\Rest\AsynchronousRequestProcessor` processes asynchronous calls, such as `<host>/rest/async/V1/products`.
-
 
 ```php
 const PROCESSOR_PATH = "/^\\/async(\\/V.+)/";

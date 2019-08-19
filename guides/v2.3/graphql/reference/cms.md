@@ -22,7 +22,6 @@ Attribute | Data type | Description
 `id` | Int | The ID of a CMS page
 `identifiers` | [String] | An array containing a comma-separated list of block identifiers
 
-
 ### CmsPage output attributes
 
 The `CmsPage` object can contain the following attributes:
@@ -38,7 +37,6 @@ Attribute | Data type | Description
 `title` | String | The name that appears in the breadcrumb trail navigation and in the browser title bar and tab
 `url_key` |String | The URL key of the CMS page, which is often based on the `content_heading`
 
-
 ###  CmsBlocks output attributes
 
 The `CmsBlocks` object contains an array of `items`, each of which can contain the following attributes:
@@ -48,7 +46,6 @@ Attribute | Data type | Description
 `content` | String | The content of the CMS block in raw HTML
 `identifier` | String | The CMS block identifier
 `title` | String | The title assigned to the CMS block
-
 
 ## Example usage
 

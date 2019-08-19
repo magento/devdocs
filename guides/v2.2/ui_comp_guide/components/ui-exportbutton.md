@@ -38,7 +38,6 @@ To enable the ExportButton component, add the `exportButton` element with a `sel
 </exportButton>
 ```
 
-
 The following is an example of configuring the component using the`sales_order_grid` `selectProvider` item, `<Magento_Sales_module_dir>/view/adminhtml/ui_component/sales_order_grid.xml`.
 
 ```xml

@@ -29,7 +29,6 @@ Unless you changed Elasticsearch server settings, the defaults should work. Skip
 |**Elasticsearch Index Prefix**|Enter the Elasticsearch index prefix. If you use a single Elasticsearch instance for more than one Magento installation (Staging and Production environments), you must specify a unique prefix for each installation. Otherwise, you can use the default prefix magento2.|
 |**Enable Elasticsearch HTTP Auth**|Click **Yes** only if you enabled authentication for your Elasticsearch server. If so, provide a username and password in the provided fields.|
 
-
 {:start="4"}
 1. Click **Test Connection**.
 

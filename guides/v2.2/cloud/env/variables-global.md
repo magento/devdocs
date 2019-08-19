@@ -83,7 +83,6 @@ Enables or disables copying static view files to the `<magento_root>/init/` dire
 
 Add the `SKIP_HTML_MINIFICATION` environment variable to the `global` stage in the `.magento.env.yaml` file:
 
-
 ```yaml
 stage:
   global:

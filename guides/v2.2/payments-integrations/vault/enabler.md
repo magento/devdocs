@@ -162,4 +162,3 @@ Example from the Braintree `di.xml`:
 
 [Storing and processing the payment related data]({{ page.baseurl }}/payments-integrations/vault/payment-token.html)
 
-

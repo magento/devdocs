@@ -52,8 +52,6 @@ Mapping files are discussed in more detail in [Data Migration Tool Technical Spe
 
 ![Migration Flow]
 
-
-
 <!-- Link definitions -->
 [Data Migration Tool Technical Specification]: {{ page.baseurl }}/migration/migration-tool-internal-spec.html
 

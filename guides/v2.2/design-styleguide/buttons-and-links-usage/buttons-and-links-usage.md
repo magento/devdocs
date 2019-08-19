@@ -19,7 +19,6 @@ For more details, see [Title Case standards]({{ page.baseurl }}/design-styleguid
   <li>Yes – “Sign Up for Free Demo”</li>
 </ul>
 
-
 <ul style="list-style-type:none">
   <li><strong>No</strong> – “New Rule”</li>
   <li>Yes – “Add Rule”</li>

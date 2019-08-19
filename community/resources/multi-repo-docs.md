@@ -22,7 +22,6 @@ The DevDocs team :
 - Reviews, edits, and formats your docs.
 - Automates content publishing using our CI/CD process, without moving your files.
 
-
 ## How does it work?
 
 ![Multi-Repo and Writing Content]({{ site.baseurl }}/common/images/remote-doc-repo-developer.png)
@@ -53,6 +52,5 @@ To ensure quality documentation, your content must pass a quality review and acc
 ## What tech do you need?
 
 Use any IDE to write content. All IDEs support markdown files (.md), including extensions that check formatting as you write. We recommend using [Kramdown](https://kramdown.gettalong.org/syntax.html), which includes markdown formatting.
-
 
 We will add more technical information as we release Multi-Repo Doc support and features.

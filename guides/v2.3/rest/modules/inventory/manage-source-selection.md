@@ -92,8 +92,6 @@ Name | Description | Type | Requirements
 `region` | The region code of the shipping address | String | Required for the Distance Priority SSA
 `city` | The city of the shipping address | String | Required for the Distance Priority SSA
 
-
-
 ### Source Priority Algorithm
 
 **Payload**

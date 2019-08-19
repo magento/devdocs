@@ -7,7 +7,6 @@ Magento uses _reservations_ to calculate and keep track of the salable quantity 
 
 Reservations prevent the merchant from overselling products, even in cases where the latency between order placement and order processing is high. In addition, reservations are append-only operations that help prevent blocking operations and race conditions at the time of checkout.
 
-
 ## Reservation calculations
 
 Magento creates a reservation for each product when the following events occur:
@@ -44,7 +43,6 @@ Parameter | Data type | Description
 `sku` | String | The SKU of the product
 `quantity` | Float | The number of items in this reservation
 `metadata` | String | The event type, object type, and object ID for this reservation. For example, `{"event_type":"order_placed","object_type":"order","object_id":"8"} `
-
 
 The metadata `event_type` can have the following values:
 
@@ -171,7 +169,6 @@ Interface | Description
 `GetProductSalableQtyInterface` | Returns the salable product quantity for the specified stock ID
 `IsProductSalableInterface` | Checks whether the product is salable
 `IsProductSalableForRequestedQtyInterface` |  Checks whether there is enough salable quantity to fulfill an order or place the product into a shopping cart
-
 
 ## Web API support
 

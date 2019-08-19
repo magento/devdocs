@@ -22,13 +22,11 @@ Both the {{ site.data.var.ece }} Pro and Starter subscriptions include the Manag
 {:.bs-callout .bs-callout-tip}
 For additional information about maintaining PCI compliance for your {{ site.var.data.ece }} stores, see [Magento's Approach to PCI compliance ](https://magento.com/pci-compliance?_ga=2.43680032.406717297.1541547390-1020097258.1507670992).
 
-
 ### Enabling the WAF
 
 Fastly implements the managed web application firewall for {{ site.data.var.ece }} using the Fastly CDN service. You do not have to install or maintain any hardware or software.
 
 For new {{ site.data.var.ece }} accounts, your Magento technical account manager works with you during the onboarding and launch process to plan and schedule WAF enablement. For existing {{ site.data.var.ece }} projects, contact your account manager or CSM for help enabling the WAF. See [Managed Cloud WAF FAQ](https://support.magento.com/hc/en-us/articles/360016353452--Web-Application-Firewall-WAF-powered-by-Fastly-the-FAQ).
-
 
 {:.bs-callout .bs-callout-info}
 Before you can use the WAF, all external traffic to your {{ site.data.var.ece }} project must route through the Fastly service. See [Set up Fastly]({{ page.baseurl }}/cloud/cdn/configure-fastly.html).
@@ -67,8 +65,6 @@ The standard Magento Cloud WAF powered by Fastly does not support the following 
 
 Although the WAF does not allow you to block or allow traffic based on IP addresses, you can add access control lists (ACL) and custom VCL snippets to your Fastly service to specify the IP addresses and VCL logic for blocking or allowing traffic. See [Custom Fastly VCL snippets]({{ page.baseurl }}/cloud/cdn/cloud-vcl-custom-snippets.html).
 
-
 [WAF error page]: {{site.baseurl}}/common/images/cloud/cloud-fastly-waf-403-error.png
 {:width="550px"}
-
 

@@ -72,7 +72,6 @@ Attribute | Description
 `resource` | The database shard on which to install the table. This value must be `default`, `checkout`, or `sales`.
 `comment` | Table comment
 
-
  A `table` node can contain three types of subnodes:
 
  * `column`
@@ -188,7 +187,6 @@ Attribute | Description
 `referenceColumn`| A column in the `referenceTable`
 `onDelete` | Foreign key trigger. The value must be `CASCADE`, `SET NULL`, or `NO ACTION`
 
-
 Example:
 
 ```xml
@@ -203,7 +201,6 @@ Attribute | Description
 --- | ---
 `referenceId` |  A custom identifier that is used only for relation mapping in the scope of `db_schema.xml` files. The real entity in the database has a system-generated name. The most convenient way to set the value of this attribute is to use the value that is written in the module's `db_schema_whitelist.json`  file when you [run the `generate-whitelist` command]({{ page.baseurl}}/extension-dev-guide/declarative-schema/migration-commands.html#create-whitelist).
 `indexType` | The value must be `btree`, `fulltext`, or `hash`
-
 
 Example:
 
@@ -471,7 +468,6 @@ Module B disables the original primary key and sets a new primary key with a `re
 
 When a module is disabled in `app/etc/config.php`, its database schema configuration is no longer read on upgrade or install. As a result, subsequent system upgrades rebuild the database schema without the module's tables, columns, or other elements.
 Please note that the `db_schema_whitelist.json` file of disabled modules is still read during upgrades of installs, so the declarative schema system can perform the necessary operations.
-
 
 [How to generate urns?]:{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-urn.html
 [Db Schema Autocomplete]:{{ page.baseurl }}/extension-dev-guide/declarative-schema/images/db-schema-autocomplete.png

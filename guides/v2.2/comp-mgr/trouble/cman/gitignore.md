@@ -17,7 +17,6 @@ The following figure shows an example of this issue when using the Setup Wizard.
 
 ![]({{ site.baseurl }}/common/images/upgr_gitignore-err.png){: width="700px"}
 
-
 #### Solution
 
 To solve this issue:

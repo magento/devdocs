@@ -417,7 +417,6 @@ The `Cart` object can contain the following attributes:
 
 {% include graphql/cart-object.md %}
 
-
 #### AppliedCoupon object {#AppliedCoupon}
 
 The `AppliedCoupon` object must contain the following attributes:
@@ -570,7 +569,6 @@ Attribute |  Data Type | Description
 `selected_shipping_method` | [SelectedShippingMethod](#SelectedShippingMethod) | An object that describes the selected shipping method
 `street` | [String] | The street for the shipping address
 `telephone` | String | The telephone number for the shipping address
-
 
 ## Mutations
 

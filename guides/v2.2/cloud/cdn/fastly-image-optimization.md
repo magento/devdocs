@@ -16,7 +16,6 @@ Fastly image optimization (Fastly IO) provides real-time image manipulation and 
 
 You must set up your Fastly service and configure Origin shielding before you can enable and configure the Fastly IO option.
 
-
 Based on your configuration settings, the Fastly Image Optimization (Fastly IO) snippet inserts the VCL code to perform image optimization to speed up delivery of the product images included in your store. There are three steps to configure the Fastly IO: Enable, Configure, and Verify.
 
 ## Enable Fastly IO

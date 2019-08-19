@@ -47,7 +47,6 @@ To resolve these errors, perform the following tasks:
 
 3.	Run your upgrade again, making sure to complete _all tasks_ discussed in [Run System Upgrade]({{ page.baseurl }}/comp-mgr/upgrader/upgrade-start.html).
 
-
 ### `var/session` permissions failure {#compman-upgr-perms}
 If your Magento application is set to write session data to the `<magento_root>/var/session` directory, you must set permissions on that directory before you upgrade.
 

@@ -300,7 +300,6 @@ Although you can install Git using Chocolatey, we chose to install _Git for Wind
 
 1.  Follow the [Generating a new SSH](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/) instructions.
 
-
 ### Clone and build the DevDocs repository
 
 You may have to close and reopen the Git Bash application after the Choco installations.

@@ -60,7 +60,6 @@ To push best-selling products to the top of a category listing, process statisti
 
 Assuming your module is named `<VendorName>_Merchandizing`, you must write the appropriate code in the indexer class `Merchandizing/Model/Indexer/Popular.php`
 
-
 ```php
 <?php
 namespace <VendorName>\Merchandizing\Model\Indexer;
@@ -82,14 +81,12 @@ class Popular implements \Magento\Framework\Indexer\ActionInterface, \Magento\Fr
         //Should take into account all placed orders in the system
     }
 
-
     /*
      * Works with a set of entity changed (may be massaction)
      */
     public function executeList(array $ids){
         //Works with a set of placed orders (mass actions and so on)
     }
-
 
     /*
      * Works in runtime for a single entity using plugins

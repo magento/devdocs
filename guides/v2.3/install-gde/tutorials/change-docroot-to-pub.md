@@ -10,8 +10,6 @@ Within the `magento2` folder are:
 - /var/
 - other folders
 
-
-
 The Magento app is served from `/var/www/html/magento2/pub`. The rest of the Magento file system is vulnerable because it is accessible from a browser.
 Setting the webroot to the `pub/` directory prevents site visitors from accessing the Web Setup Wizard and other sensitive areas of the Magento file system from a browser.
 

@@ -123,7 +123,6 @@ Options:
 
 For additional options, see the [rsync man page](http://linux.die.net/man/1/rsync).
 
-
 To migrate static files from your local machine:
 
 	*	rsync the `pub/media` directory from your local Magento server to staging or production:
@@ -177,7 +176,6 @@ To migrate a database:
 	For Pro Staging and Production environments, the name of the database is in the `MAGENTO_CLOUD_RELATIONSHIPS` variable (typically the same as the application name and username):
 
 		mysqldump -h <database host> --user=<database username> --password=<password> --single-transaction --triggers <database name> | gzip - > /tmp/database.sql.gz
-
 
 4.	Transfer the database dump to another remote environment with an `rsync` command:
 

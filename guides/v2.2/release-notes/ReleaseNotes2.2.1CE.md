@@ -9,7 +9,6 @@ level3_subgroup:
 ---
 *Patch code and release notes published on November 7, 2017.*
 
-
 We are pleased to present Magento Open Source 2.2.1. This release includes numerous functional fixes and enhancements.
 
 ## Highlights
@@ -25,9 +24,6 @@ Look for the following highlights in this release:
 * Multiple enhancements to product security. See [Magento Security Center](https://magento.com/security/patches/magento-221-2110-and-2017-security-update) for more information.
 
 * Twenty-two community-submitted bug fixes and multiple pull requests.
-
-
-
 
 Looking for more information on these new features as well as many others? Check out  [Magento 2.2 Developer Documentation]({{ site.baseurl }}/guides/v2.2/).
 
@@ -69,15 +65,11 @@ See [Magento Security Center](https://magento.com/security/patches/magento-221-2
 
 <!--- 67097 -->* You can now run Magento in an environment where Redis cache is installed and the PHPRedis extension is enabled.
 
-
 <!--- 72860 -->* Magento now properly loads default values for `ArraySerialized` fields.
 
 <!--- 75458 -->* You can now set a default value to fields with config field type `image` or `file`. [GitHub-10253](https://github.com/magento/magento2/issues/10253)
 
-
 <!--- 80178, 80179, 80185  -->* We’ve removed `Zend_Json` from the data object, test suite, and package information. [GitHub-10306](https://github.com/magento/magento2/issues/10306), [GitHub-10320](https://github.com/magento/magento2/issues/10320), [GitHub-10340](https://github.com/magento/magento2/issues/10340)
-
-
 
 <!--- 80180 -->* We’ve replaced the usage of `Zend_Json::encode`  in the setup marketplace tests. [GitHub-10329](https://github.com/magento/magento2/issues/10329)
 
@@ -119,8 +111,6 @@ See [Magento Security Center](https://magento.com/security/patches/magento-221-2
 
 <!--- 72866 -->* We’ve fixed multiple issues where indexes were invalidated as a result of typical import, scheduled import, and catalog permission tasks.
 
-
-
 ### Orders
 
 <!--- 77966 -->* You can now use PayPal Express Checkout  to place an order in a split-database environment.
@@ -139,7 +129,6 @@ See [Magento Security Center](https://magento.com/security/patches/magento-221-2
 
 <!--- 77777 -->* Search terms from the same synonym group now return the same results.
 
-
 <!--- 75935 -->* A search query results are now more consistent. Previously, identical search terms entered in different browser tabs resulted in different search results.
 
 <!--- 71552 -->* You can now search for attribute values on the store-view level.
@@ -153,7 +142,6 @@ See [Magento Security Center](https://magento.com/security/patches/magento-221-2
 We are grateful to the wider Magento community and would like to acknowledge their contributions to this release.
 
 The following table identifies contributions from our community members. This table lists the external pull requests, the GitHub issue number associated with it (if available), and the community member who contributed the pull request.
-
 
 <table>
   <tr>
@@ -351,8 +339,6 @@ The following table identifies contributions from our community members. This ta
 ### System requirements
 
 Our technology stack is built on PHP and MySQL. For details, see [Technology stack requirements]({{ page.baseurl }}/install-gde/system-requirements-tech.html)
-
-
 
 For more information, [System Requirements]({{ page.baseurl }}/install-gde/system-requirements.html).
 

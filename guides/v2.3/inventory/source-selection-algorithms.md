@@ -180,7 +180,6 @@ class InventoryRequestFactory
 
 Configure your module's `etc/di.xml` file to register your SSA with `SourceSelectionServiceInterface` and `GetSourceSelectionAlgorithmList`.
 
-
 ```xml
 <type name="Magento\InventorySourceSelection\Model\SourceSelectionService">
     <arguments>

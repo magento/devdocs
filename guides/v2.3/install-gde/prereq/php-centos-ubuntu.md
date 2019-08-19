@@ -21,7 +21,6 @@ If you are interested in participating in Magento Community projects we welcome 
 <!--{% assign supported_php_versions = site.data.codebase.v2_3.open-source.composer_lock.platform.php | split: "||" %}-->
 {% include install/php-versions-template.md %}
 
-
 {:.bs-callout .bs-callout-info}
 If you must install both Apache and PHP, [install Apache]({{page.baseurl}}/install-gde/prereq/apache.html) first.
 
