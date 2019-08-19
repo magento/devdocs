@@ -482,7 +482,7 @@ You need to read configuration from different sources (like database or filesyst
 
 5.19. Each module or component MUST declare its own exceptions. Exceptions declared in other components SHOULD NOT be thrown.
 
-5.20 Observers and plugins MUST throw only exceptions that can be thrown by the method where event is triggered or by the method that is being pluginized.
+5.20. Plugin MUST throw only exceptions declared by the method to which the plugin is added. Observer MUST throw only exceptions declared by the method that triggers an event.
 
 ## 6. Application layers
 
