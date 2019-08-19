@@ -54,6 +54,14 @@ The following table lists the attributes you can use as input for the `updateCus
 
 {% include graphql/create-customer.md %}
 
+## Output attributes
+
+The `updateCustomer` object contains the `CustomerOutput` object.
+
+Attribute |  Data Type | Description
+--- | --- | ---
+`CustomerOutput` | [customer]({{page.baseurl}}/graphql/queries/customer.html#customerAttributes) | Information about the logged-in customer
+
 ## Related topics
 
 * [customer query]({{page.baseurl}}/graphql/queries/customer.html)

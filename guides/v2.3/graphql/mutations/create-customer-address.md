@@ -129,6 +129,12 @@ Attribute |  Data Type | Description
 `region` | String | The state or province name
 `region_id` | Int | Uniquely identifies the region
 
+## Output attributes
+
+Attribute |  Data Type | Description
+--- | --- | ---
+`CustomerAddress` | [CustomerAddress]({{page.baseurl}}/graphql/queries/customer.html#customerAddress) | Information about the customer’s addresses
+
 ## Related topics
 
 * [customer query]({{page.baseurl}}/graphql/queries/customer.html)

@@ -21,7 +21,7 @@ The following call updates the customer's city and postcode.
 mutation {
   updateCustomerAddress(id:3, input: {
     city: "New City"
-    postcode: "5555"
+    postcode: "55555"
   }) {
     id
     city
@@ -38,7 +38,7 @@ mutation {
     "updateCustomerAddress": {
       "id": 3,
       "city": "New City",
-      "postcode": 5555
+      "postcode": 55555
     }
   }
 }
@@ -52,6 +52,14 @@ Attribute |  Data Type | Description
 --- | --- | ---
 `id` | Int! | The ID assigned to the address object
 `CustomerAddressInput` | [CustomerAddress]({{page.baseurl}}/graphql/mutations/create-customer-address.html#customerAddressInput) | An array containing the customer’s shipping and billing addresses
+
+## Output attributes
+
+The `updateCustomerAddress` object contains the `CustomerAddress` object.
+
+Attribute |  Data Type | Description
+--- | --- | ---
+`CustomerAddress` | [CustomerAddress]({{page.baseurl}}/graphql/mutations/create-customer-address.html#customerAddress) | Information about the customer’s addresses
 
 ## Related topics
 

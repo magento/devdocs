@@ -20,7 +20,7 @@ The following call updates the customer's password.
 ```graphql
 mutation {
   changeCustomerPassword(
-    currentPassword: "roni_cost3@example.com",
+    currentPassword: "roni_cost3@example.com"
     newPassword: "roni_cost4@example.com"
   ) {
     id
@@ -50,6 +50,14 @@ Attribute |  Data Type | Description
 --- | --- | ---
 `currentPassword` | String | The customer's current password
 `newPassword` | String | The customer's new password
+
+## Output attributes
+
+The `changeCustomerPassword` object contains the `customer` object.
+
+Attribute |  Data Type | Description
+--- | --- | ---
+`customer` | [customer]({{page.baseurl}}/graphql/queries/customer.html#customerAttributes) | Information about the logged-in customer
 
 ## Related topics
 

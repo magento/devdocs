@@ -5,7 +5,7 @@ redirect_from:
   - /guides/v2.3/graphql/reference/customer.html
 ---
 
-The `customer` query returns information about the logged-in customer.
+The `customer` query returns information about the logged-in customer and store credit history.
 
 To return or modify information about a customer, Magento recommends you use customer tokens in the header of your GraphQL calls. However, you also can use [session authentication]({{ page.baseurl }}/get-started/authentication/gs-authentication-session.html).
 
@@ -218,7 +218,7 @@ Attribute |  Data Type | Description
 
 ### Customer address attributes {#customerAddress}
 
-The values assigned to attributes such as `firstname` and `lastname` in this object may be different from those defined in the Customer object.
+The values assigned to attributes such as `firstname` and `lastname` in this object may be different from those defined in the `Customer` object.
 
 Attribute |  Data Type | Description
 --- | --- | ---
