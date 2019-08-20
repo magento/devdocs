@@ -55,6 +55,9 @@ functional_areas:
     bin/magento cache:clean
     ```
 
+{: .bs-callout-info }
+Not possible to restart the [Elasticsearch](https://www.elastic.co) service itself without Magento's help.
+
 ### Add Elasticsearch plugins
 
 Optionally, you can add plugins with the `.magento/services.yaml` file. For example, to enable the ICU analysis plugin and Python script support plugin, add the `configuration:plugins` section with the listed plugin codes:
@@ -91,6 +94,9 @@ See [Elasticsearch plugin documentation](https://www.elastic.co/guide/en/elastic
 
 {:.bs-callout-info}
 If you use the ElasticSuite third-party plugin, you must [update the `{{site.data.var.ct}}` package]({{page.baseurl}}/cloud/project/ece-tools-update.html) to version 2002.0.19 or later.
+
+{: .bs-callout-info }
+You do have the ability to restart the [Elasticsearch](https://www.elastic.co) service itself without Magento's help.
 
 {: .bs-callout-warning}
 Staging and Production environments that are in the same cluster share a single Elasticsearch instance, so you must specify a unique Elasticsearch prefix for each of these environments.
