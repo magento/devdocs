@@ -4,14 +4,14 @@ description: |
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: /whats-new.html
 thread: /whatsnew-feed.xml
-updated: Mon Aug 19 16:06:34 2019
+updated: Tue Aug 20 11:10:17 2019
 entries:
 - description: Added a tutorial about how to create a [grouped product using the REST
     API](https://devdocs.magento.com/guides/v2.3/rest/tutorials/grouped-product/create-and-manage-grouped-products.html).
   versions: 2.3.x
   type: New topic
   date: August 19, 2019
-  link: https://github.com/magento/devdocs/pull/5155`1  
+  link: https://github.com/magento/devdocs/pull/5155
 - description: Updated the [Set up multiple website or stores](https://devdocs.magento.com/guides/v2.3/cloud/project/project-multi-sites.html)
     topic in the Cloud guide. Now, this topic differentiates between sites with a
     shared domain and sites with unique domains.
@@ -45,19 +45,18 @@ entries:
   type: Major update
   date: August 13, 2019
   link: https://github.com/magento/devdocs/pull/5161
-- description: Added documentation for the [TrimInput widget](https://devdocs.magento.com//guides/v2.3/javascript-dev-guide/widgets/widget_trim-input.html)
-    topic.
+- description: Added documentation for the [TrimInput widget](https://devdocs.magento.com/guides/v2.3/javascript-dev-guide/widgets/widget-trim-input.html).
   versions: 2.2.x, 2.3.x
   type: New topic
   date: August 13, 2019
   link: https://github.com/magento/devdocs/pull/5135
-- description: Added an optional step to the [Cloud Docker]( https://devdocs.magento.com/guides/v2.3/cloud/docker/docker-config.html)
+- description: Added an optional step to the [Cloud Docker](https://devdocs.magento.com/guides/v2.3/cloud/docker/docker-config.html)
     topic to restart services.
   versions: 2.x
   type: Technical changes
   date: August 12, 2019
   link: https://github.com/magento/devdocs/pull/5157
-- description: Added documentation for the [Popup Window widget](https://devdocs.magento.com//guides/v2.3/javascript-dev-guide/widgets/widget-popup-window.html).
+- description: Added documentation for the [Popup Window widget](https://devdocs.magento.com/guides/v2.3/javascript-dev-guide/widgets/widget-popup-window.html).
   versions: 2.2.x, 2.3.x
   type: New topic
   date: August 12, 2019
