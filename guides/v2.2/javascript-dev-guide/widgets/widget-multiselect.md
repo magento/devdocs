@@ -73,7 +73,7 @@ Multiselect items wrapper class.
 
 ### `mselectCheckedClass`
 
-Multiselect checked option class.
+Multiselect checked multiselect item class.
 
 **Type**: String
 
@@ -81,7 +81,7 @@ Multiselect checked option class.
 
 ### `containerClass`
 
-Container class.
+The class which is attached to the container with [multi-select container selector](#mselectcontainer).
 
 **Type**: String
 
@@ -105,7 +105,7 @@ Class of the selected items counter.
 
 ### `currentPage`
 
-Current page of options.
+Current page of multi-select items.
 
 **Type**: Integer
 
@@ -113,7 +113,7 @@ Current page of options.
 
 ### `lastAppendValue`
 
-The value of the last added option.
+The value of the last added multi-select item.
 
 **Type**: Integer, String
 
@@ -143,7 +143,7 @@ The example shows the multiselect field with search bar and *Add new value* butt
     </select>
     <script>
         require(['jquery', 'mage/multiselect'], function ($) {
-            $('#multiselect').multiselect2({selectedValues[2, 4]});
+            $('#multiselect').multiselect2({selectedValues: [2, 4]});
         });
     </script>
 </div>
