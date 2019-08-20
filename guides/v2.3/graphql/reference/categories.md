@@ -42,7 +42,6 @@ Attribute | Data type | Description
 `url_key`| String | The url key assigned to the category
 `url_path`| String | The url path assigned to the category
 
-
 #### CategoryProducts object
 
 The `products` attribute can contain the following attributes:

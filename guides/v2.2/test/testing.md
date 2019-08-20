@@ -138,15 +138,15 @@ MFTF tests are kept within its respective Module folder:
 ```
 
 <!-- Link Definitions -->
-[Magento definition of done]: https://devdocs.magento.com/guides/v2.3/contributor-guide/contributing_dod.html
-[Functional]: https://devdocs.magento.com/guides/v2.3/mtf/mtf_introduction.html
-[Web API Functional]: https://devdocs.magento.com/guides/v2.3/get-started/web-api-functional-testing.html
-[Integration]: https://devdocs.magento.com/guides/v2.3/test/integration/integration_test_execution.html
-[performance toolkit]: https://devdocs.magento.com/guides/v2.3/config-guide/cli/config-cli-subcommands-perf-data.html
-[JavaScript]: https://devdocs.magento.com/guides/v2.3/test/js/jasmine.html
-[PhpCs]: https://devdocs.magento.com/guides/v2.3/coding-standards/code-standard-php.html
+[Magento definition of done]: {{ page.baseurl }}/contributor-guide/contributing_dod.html
+[Functional]: {{ page.baseurl }}/mtf/mtf_introduction.html
+[Web API Functional]: {{ page.baseurl }}/get-started/web-api-functional-testing.html
+[Integration]: {{ page.baseurl }}/test/integration/integration_test_execution.html
+[performance toolkit]: {{ page.baseurl }}/config-guide/cli/config-cli-subcommands-perf-data.html
+[JavaScript]: {{ page.baseurl }}/test/js/jasmine.html
+[PhpCs]: {{ page.baseurl }}/coding-standards/code-standard-php.html
 [PhpMd]: https://phpmd.org/
-[Magento backward compatibility policy]: https://devdocs.magento.com/guides/v2.3/contributor-guide/backward-compatible-development/
+[Magento backward compatibility policy]: {{ page.baseurl }}/contributor-guide/backward-compatible-development/
 [Functional Testing Framework]: {{ page.baseurl }}/mtf/mtf_introduction.html
 [Magento Functional Testing Framework]: {{ site.baseurl }}/mftf/docs/introduction.html
 [Web API functional testing]: {{ page.baseurl }}/get-started/web-api-functional-testing.html

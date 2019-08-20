@@ -202,7 +202,7 @@ Attribute | Data type | Description
 `updated_at` | String | The timestamp indicating when the product was last updated
 `upsell_products` | [[ProductInterface](#ProductInterface)] | An array of up-sell products
 `url_key` | String | The part of the URL that identifies the product. This attribute is defined in the `CatalogUrlRewriteGraphQl` module
-`url_path` | String | The part of the URL that precedes the `url_key`. This attribute is defined in the `CatalogUrlRewriteGraphQl` module
+`url_path` | String | Deprecated. Use `canonical_url` instead
 `url_rewrites` | [[UrlRewrite]](#urlRewriteObject) | A list of URL rewrites. See [UrlRewrite object](#urlRewriteObject) for more information and an [example query](#urlRewriteExample)
 `websites` | [Website] | An array of websites in which the product is available. See [Website object](#websiteObject) for more information and an [example query](#inclWebsiteInfoExample)
 

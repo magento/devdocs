@@ -103,10 +103,10 @@ The `DownloadableProductSamples` object contains the following attributes:
 
 Attribute | Type | Description
 --- | --- | ---
-`id` | Int | The unique ID for the downloadable product sample
-`sample_file` | String | The relative path to the downloadable sample
-`sample_type` | DownloadableFileTypeEnum | Either FILE or URL
-`sample_url` | String | The relative URL to the downloadable sample
+`id` | Int | Deprecated. This information should not be exposed on frontend
+`sample_file` | String | Deprecated. Use `sample_url` instead
+`sample_type` | DownloadableFileTypeEnum | Deprecated. Use `sample_url` instead
+`sample_url` | String | The URL to the downloadable sample
 `sort_order` | Int | A number indicating the sort order
 `title` | String | The display name of the sample
 
@@ -115,14 +115,14 @@ The `DownloadableProductLinks` object contains the following attributes:
 
 Attribute | Type | Description
 --- | --- | ---
-`id` | Int | The unique ID for the link to the downloadable product
-`is_shareable` | Boolean | Indicates whether the link is shareable
-`link_type` | DownloadableFileTypeEnum | Either FILE or URL
-`number_of_downloads` | Int | The maximum number of times the product can be downloaded. A value of 0 means unlimited.
+`id` | Int | Deprecated. This information should not be exposed on frontend
+`is_shareable` | Boolean | Deprecated. This information should not be exposed on frontend
+`link_type` | DownloadableFileTypeEnum | Deprecated. Use `sample_url` instead
+`number_of_downloads` | Int | Deprecated. This information should not be exposed on frontend
 `price` | Float | The price of the downloadable product
-`sample_file` | String | The relative path to the downloadable sample
-`sample_type` | DownloadableFileTypeEnum | Either FILE or URL
-`sample_url` | String | The relative URL to the downloadable sample
+`sample_file` | String | Deprecated. Use `sample_url` instead
+`sample_type` | DownloadableFileTypeEnum | Deprecated. Use `sample_url` instead
+`sample_url` | String | The URL to the downloadable sample
 `sort_order` | Int | A number indicating the sort order
 `title` | String | The display name of the link
 
@@ -155,9 +155,6 @@ The following query returns information about downloadable product `240-LV04`, w
         downloadable_product_links {
           id
           sample_url
-          sample_type
-          is_shareable
-          number_of_downloads
           sort_order
           title
           link_type
@@ -166,8 +163,6 @@ The following query returns information about downloadable product `240-LV04`, w
         downloadable_product_samples {
           title
           sort_order
-          sort_order
-          sample_type
           sample_file
         }
       }
@@ -201,9 +196,6 @@ The following query returns information about downloadable product `240-LV04`, w
             {
               "id": 1,
               "sample_url": null,
-              "sample_type": null,
-              "is_shareable": false,
-              "number_of_downloads": 0,
               "sort_order": 1,
               "title": "Beginner's Yoga",
               "link_type": "FILE",
@@ -214,19 +206,16 @@ The following query returns information about downloadable product `240-LV04`, w
             {
               "title": "Trailer #1",
               "sort_order": 1,
-              "sample_type": "FILE",
               "sample_file": "/l/u/luma_background_-_model_against_fence_4_sec_.mp4"
             },
             {
               "title": "Trailer #2",
               "sort_order": 1,
-              "sample_type": "FILE",
               "sample_file": "/l/u/luma_background_-_model_against_fence_4_sec_.mp4"
             },
             {
               "title": "Trailer #3",
               "sort_order": 1,
-              "sample_type": "FILE",
               "sample_file": "/l/u/luma_background_-_model_against_fence_4_sec_.mp4"
             }
           ]

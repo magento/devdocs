@@ -58,7 +58,7 @@ When you are ready to deploy your site to production, you should remove write ac
 
 To update components, install new components, or to upgrade the Magento software, all of the preceding directories must be read-write.
 
-#### Make code files and directories read-only:
+#### Make code files and directories read-only {#make-files-readable-one-owner}
 
 To remove write permissions to files and directories from the web server user's group:
 
@@ -78,7 +78,7 @@ To remove write permissions to files and directories from the web server user's 
     find app/code var/view_preprocessed vendor pub/static app/etc generated/code generated/metadata \( -type f -or -type d \) -exec chmod u-w {} + && chmod o-rwx app/etc/env.php && chmod u+x bin/magento
     ```
 
-#### Make code files and directories writable:
+#### Make code files and directories writable {#make-files-writable-one-owner}
 
 To make files and directories writable so you can update components and upgrade the Magento software:
 
@@ -155,7 +155,7 @@ When you are ready to deploy your site to production, you should remove write ac
 *	`generated/metadata`
 *	`var/view_preprocessed`
 
-#### Make code files and directories read-only
+#### Make code files and directories read-only {#make-files-readable-two-owners}
 
 To remove writable permissions to files and directories from the web server user's group:
 
@@ -168,7 +168,7 @@ To remove writable permissions to files and directories from the web server user
 
 		find app/code lib pub/static app/etc generated/code generated/metadata var/view_preprocessed \( -type d -or -type f \) -exec chmod g-w {} + && chmod o-rwx app/etc/env.php
 
-#### Make code files and directories writable
+#### Make code files and directories writable {#make-files-writable-two-owners}
 
 To make files and directories writable so you can update components and upgrade the Magento software:
 

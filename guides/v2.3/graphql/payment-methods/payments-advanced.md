@@ -3,7 +3,9 @@ group: graphql
 title: PayPal Payments Advanced payment method
 ---
 
-The PayPal Payments Advanced payment solution allows merchants to enable their online stores to collect payments directly via credit card, PayPal Express Checkout, or PayPal's PayPal Credit service. From a GraphQL integration standpoint, PayPal Payments Advanced payment method is identical to the PayPal [Payflow Link]({{page.baseurl}}/graphql/payment-methods/payflow-link.html) payment method, with the exception of the payment method `code`. The PayPal [Payments Advanced documentation](https://developer.paypal.com/docs/classic/products/paypal-payments-advanced/) describes other ways in which the payment methods differ.
+The PayPal Payments Advanced payment solution allows merchants to enable their online stores to collect payments directly via credit card or from the PayPal Credit service. If Payments Advanced has been configured to implement Express Checkout, use the [PayPal Express Checkout for Payflow payment method]({{page.baseurl}}/graphql/payment-methods/payflow-express.html) instead.
+
+From a GraphQL integration standpoint, PayPal Payments Advanced payment method is identical to the PayPal [Payflow Link]({{page.baseurl}}/graphql/payment-methods/payflow-link.html) payment method, with the exception of the payment method `code`. The PayPal [Payments Advanced documentation](https://developer.paypal.com/docs/classic/products/paypal-payments-advanced/) describes other ways in which the payment methods differ.
 
 PayPal Payments Advanced is available in the US and Canada only.
 
@@ -17,36 +19,36 @@ The following diagram shows the workflow for placing an order when Payments Adva
 
 ## Additional Payment information
 
-When you set the payment method code to `payflow_advanced` in the [`setPaymentMethodOnCart`]({{page.baseurl}}/graphql/reference/quote-payment-method.html) mutation, the `additional_data` object must contain a `payflow_link` object, which defines the following attributes:
+## `setPaymentMethodOnCart` mutation
+
+When you set the payment method to PayPal Payments Advanced, you must set the `code` attribute to `payflow_advanced`. In addition, the payload must contain a `payflow_link` object, which defines the following attributes:
 
 {% include graphql/payment-methods/payflow-link-attributes.md %}
 
-## Example setPaymentMethodOnCart mutation
+### Example usage
 
 The following example shows the `setPaymentMethodOnCart` mutation constructed for the Payments Advanced payment method.
 
 **Request**
 
-```text
+```graphql
 mutation {
-    setPaymentMethodOnCart(input: {
-        payment_method: {
-            code: "payflow_advanced"
-            additional_data: {
-                payflow_link: {
-                  return_url: "paypal/action/return.html"
-                  error_url: "paypal/action/error.html"
-                  cancel_url: "paypal/action/cancel.html"
-                }
-            }
+  setPaymentMethodOnCart(input: {
+    payment_method: {
+      code: "payflow_advanced"
+      payflow_link: {
+        return_url: "paypal/action/return.html"
+        error_url: "paypal/action/error.html"
+        cancel_url: "paypal/action/cancel.html"
         }
-        cart_id: "IeTUiU0oCXjm0uRqGCOuhQ2AuQatogjG"
+      }
+    cart_id: "IeTUiU0oCXjm0uRqGCOuhQ2AuQatogjG"
     }) {
         cart {
-            selected_payment_method {
-                code
-                title
-            }
+          selected_payment_method {
+            code
+            title
+          }
         }
     }
 }

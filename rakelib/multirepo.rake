@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 namespace :multirepo do
   desc 'Create a file tree for devdocs website and get all required content'
   task :init do
