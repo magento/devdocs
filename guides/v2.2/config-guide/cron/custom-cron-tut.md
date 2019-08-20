@@ -84,6 +84,8 @@ Before you continue, make sure the sample module is registered and enabled.
 
 2. Make sure that the module's name is displaying under `List of enabled modules:`.
 
+If the module does not display, review [step 1](#cron-tut-get) carefully. Make sure your code is in the correct directory. Spelling and case are important; if anything is different, the module won't load. Also, don't forget to run `magento setup:upgrade`.
+
 ## Step 3: Create a class to run cron {#cron-tut-class}
 
 This step shows a simple class to create a cron job. The class only writes a row to the `cron_schedule` table that confirms it's set up successfully.
