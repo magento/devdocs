@@ -18,39 +18,42 @@ functional_areas:
 
 Before you continue, you must do the following:
 
--   Set up a server that meets our [system requirements]({{ page.baseurl }}/install-gde/system-requirements.html)
--   Create the [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html)
--   [Install Composer](https://getcomposer.org/download/){:target="_blank"}
--   Obtain [authentication keys]({{page.baseurl}}/install-gde/prereq/connect-auth.html) for the Magento code repository
+-  Set up a server that meets our [system requirements][]
+-  Create the [Magento file system owner][]
+-  [Install Composer][]{:target="_blank"}
+-  Obtain [authentication keys][] for the Magento code repository
 
 ## Get the metapackage
 
 To get the Magento metapackage:
 
-1.  Log in to your Magento server as, or switch to, the [Magento file system owner]({{page.baseurl}}/install-gde/prereq/file-sys-perms-over.html).
-1.  Change to the web server docroot directory or a directory that you have configured as a virtual host docroot.
-1.  Create a new Composer project using the {{site.data.var.ce}} or {{site.data.var.ee}} metapackage.
+1. Log in to your Magento server as, or switch to, the [Magento file system owner][].
+1. Change to the web server docroot directory or a directory that you have configured as a virtual host docroot.
+1. Create a new Composer project using the {{site.data.var.ce}} or {{site.data.var.ee}} metapackage.
 
     **{{site.data.var.ce}}**
+
     ```bash
     composer create-project --repository=https://repo.magento.com/ magento/project-community-edition:<version-tag> <install-directory-name>
     ```
 
     **{{site.data.var.ee}}**
+
     ```bash
     composer create-project --repository=https://repo.magento.com/ magento/project-enterprise-edition:<version-tag> <install-directory-name>
     ```
 
-    When prompted, enter your Magento authentication keys. Your _public key_ is your username; your _private key_ is your password.
+    When prompted, enter your Magento authentication keys. Public and private keys are created and configured in your [Magento Marketplace][].
 
-    To install {{site.data.var.ce}} version 2.2.2 run in current folder:
+    To install {{site.data.var.ce}} version 2.2.9 run in current folder:
+
     ```bash
-    composer create-project --repository=https://repo.magento.com/ magento/project-community-edition:2.2.2 .
+    composer create-project --repository=https://repo.magento.com/ magento/project-community-edition:2.2.9 .
     ```
 
     If you encounter errors, such as `Could not find package...` or `...no matching package found`, make sure there are no typos in your command. If you still encounter errors, you may not be authorized to download {{site.data.var.ee}}. Contact [Magento support](https://magento.com/support) for help.
 
-    See [troubleshooting]({{page.baseurl}}/install-gde/trouble/tshoot_composer-fail.html) for help with more errors.
+    See [troubleshooting][] for help with more errors.
 
 ## Set file permissions
 
@@ -72,7 +75,6 @@ There are two options for installing Magento:
 -  Web Setup Wizard
 
 ### Command line
-{:.no_toc}
 
 This example assumes that the Magento install directory is named `magento2ee`, the `db-host` is on the same machine (`localhost`), and that the `db-name`, `db-user`, and `db-password` are all `magento`:
 
@@ -99,17 +101,28 @@ bin/magento setup:install \
 For `--backend-frontname` we recommend a random URI for security purposes. A random URI is harder for hackers or malicious software to exploit.
 
 {:.bs-callout .bs-callout-tip}
-For a full description of the CLI install options, refer to [Install the Magento software from the command line]({{page.baseurl}}/install-gde/install/cli/install-cli-install.html#instgde-install-cli-magento).
+For a full description of the CLI install options, refer to [Install the Magento software from the command line][].
 
 ### Web Setup Wizard
-{:.no_toc}
 
 As an alternative to the CLI, use your browser to navigate to Magento's setup wizard:
 
 ```url
 http://<Magento-host-or-IP>/<path-to-magento-root>/setup
 ```
+
 For example: `http://localhost/magento2ee/setup`
 
 {:.bs-callout .bs-callout-warning}
-You cannot use the Web Setup Wizard if your docroot is set to the `pub/` directory. See [Modify docroot for security]({{page.baseurl}}/install-gde/tutorials/change-docroot-to-pub.html).
+You cannot use the Web Setup Wizard if your docroot is set to the `pub/` directory. See [Modify docroot for security][].
+
+<!-- Link Definitions -->
+[Magento Marketplace]: https://marketplace.magento.com/customer/accessKeys/
+[Modify docroot for security]: {{page.baseurl}}/install-gde/tutorials/change-docroot-to-pub.html
+[Install the Magento software from the command line]: {{page.baseurl}}/install-gde/install/cli/install-cli-install.html#instgde-install-cli-magento
+[troubleshooting]:{{page.baseurl}}/install-gde/trouble/tshoot_composer-fail.html
+[Magento file system owner]: {{page.baseurl}}/install-gde/prereq/file-sys-perms-over.html
+[authentication keys]: {{page.baseurl}}/install-gde/prereq/connect-auth.html
+[Install Composer]: https://getcomposer.org/download/
+[system requirements]: {{ page.baseurl }}/install-gde/system-requirements.html
+[Magento file system owner]: {{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html

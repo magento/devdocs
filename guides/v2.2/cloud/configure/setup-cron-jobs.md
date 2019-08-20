@@ -29,7 +29,10 @@ We use only one cron for {{site.data.var.ece}} projects because of the nature of
 
 ## Verify cron configuration
 
-Magento added an auto-crons configuration feature to support self-service cron configuration updates from the `.magento.app.yaml` file on all environments–including Pro Staging and Production. If this feature is enabled, you can use `crontab -l` to review the cron configuration for each environment.
+Magento added an auto-crons configuration option to support self-service cron configuration updates from the `.magento.app.yaml` file on all environments–including Pro Staging and Production. If this option is enabled, you can use the Magento crontab to review the cron configuration for each environment.
+
+{: .bs-callout-info}
+You can use crontab to review the cron configuration for {{ site.data.var.ece }} projects; however, the Magento Cloud platform does not use crontab to run cron jobs.
 
 #### To review cron configuration
 
@@ -87,6 +90,7 @@ crons:
     spec: "00 */8 * * *"
     cmd: "/usr/bin/php /app/abc123edf890/bin/magento export:start catalog_category_product"
 ```
+{:.no-copy}
 
 In this example, `<path-to-php-binary>` is `/usr/bin/php`. The install directory, which includes the Project ID is `/app/abc123edf890/bin/magento`, and the script action is `export:start catalog_category_product`.
 
@@ -103,27 +107,38 @@ The [auto-crons feature](#verify-cron-configuration) must be enabled on your {{s
 
 #### To add custom crons
 
-1. In your local development environment, edit the `.magento.app.yaml` file in the Magento `/app` directory.
+1. In your local development environment, edit the `.magento.app.yaml` file in the Magento `/app` directory. 
 
-1. Add your custom cron code to the `crons` section in the file.
-
-   For example, you can add a custom cron job to export the product catalog and configure it to run every eight hours, 20 minutes after the hour:
+1. Add your custom cron code to the `crons` section in the configuration file using the following format:
 
    ```yaml
    crons:
-    magento:
-        spec: '* * * * *'
-        cmd: 'php bin/magento cron:run'
-        productcatalog:
-            spec: '20 */8 * * *'
-            cmd: 'bin/magento export:start catalog_product_category'
-    ```
+       <cron_name_1>:
+           spec: "<schedule_time>"
+           cmd: "<schedule_command>"
+       <cron_name_2>:
+           spec: "<schedule_time>"
+           cmd: "<schedule_command>"
+   ```
+
+   For example, you can add a custom cron job to export the product catalog and configure it to run every eight hours, 20 minutes after the hour.
+
+   ```yaml
+   crons:
+       magento:
+           spec: '* * * * *'
+           cmd: 'php bin/magento cron:run'
+       productcatalog:
+           spec: '20 */8 * * *'
+           cmd: 'bin/magento export:start catalog_product_category'
+   ```
+   {:.no-copy }
 
 1. Add, commit, and push code changes.
 
-   ```bash
-   git add -A && git commit -m "cron config updates" && git push origin <branch-name>
-   ```
+    ```bash
+    git add -A && git commit -m "cron config updates" && git push origin <branch-name>
+    ```
 
 ## Update custom cron jobs {#update}
 
@@ -138,5 +153,4 @@ You can review cron processing information in the application-level log files fo
 See the following Magento Support articles for help troubleshooting cron-related problems:
 
 * [Cron tasks lock tasks from other groups](https://support.magento.com/hc/en-us/articles/360029219812-Cron-tasks-lock-tasks-from-other-groups)
-
 * [Reset stuck cron jobs manually on the cloud](https://support.magento.com/hc/en-us/articles/360000097713-Reset-stuck-Magento-cron-jobs-manually-on-Cloud)
