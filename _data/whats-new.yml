@@ -39,7 +39,7 @@ entries:
   type: Major update
   date: August 14, 2019
   link: https://github.com/magento/devdocs/pull/5167
-- description: Updated the Javascript resources topic with instructions for [including
+- description: Updated the JavaScript resources topic with instructions for [including
     third-party JavaScript libraries](https://devdocs.magento.com/guides/v2.3/javascript-dev-guide/javascript/js-resources.html#including-third-party-javascript-libraries).
   versions: 2.2.x, 2.3.x
   type: Major update
