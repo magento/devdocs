@@ -26,7 +26,7 @@ You cannot create branches from Pro plan Staging and Production `master`. These 
 Complete development of code and added extensions in a branch and, when complete, merge (`git push`) the branch with its parent or master.
 
 - For Starter, we recommend you create a `staging` branch from Master, then branch from `staging` for development.
-- For Pro, you want to branch from the development branch (Integration `master`).
+- For Pro, create a development branch from the Integration environment.
 
 For branching strategies, review [Starter]({{ page.baseurl }}/cloud/basic-information/starter-architecture.html) and [Pro]({{ page.baseurl }}/cloud/basic-information/starter-develop-deploy-workflow.html) architecture overviews.
 
@@ -121,9 +121,9 @@ For **Starter** environments, you can review build and deploy logs and the deplo
 
 For **Pro** environments, you can review the following logs per environment:
 
-- Integration: Build and deploy and deployment history
-- Staging: Build logs and deployment history. You need to SSH into the server to view deploy logs.
-- Production: Build logs and deployment history. You need to SSH into the server to view deploy logs.
+- Integration–Build and deploy and deployment history
+- Staging–Build logs and deployment history. You need to SSH into the server to view deploy logs.
+- Production–Build logs and deployment history. You need to SSH into the server to view deploy logs.
 
 1. [Log in to your project]({{ page.baseurl }}/cloud/project/project-webint-basic.html#project-access).
 2. In the left pane, click an environment to review logs for.

@@ -25,9 +25,7 @@ Prepare your environment with the following tasks:
 {{site.data.var.ece}} 2.2 supports PHP 7.1 and later. You can upgrade the version of PHP on your local development workspace.
 
 - [PHP]({{ site.baseurl }}/guides/v2.2/cloud/before/before-workspace-magento-prereqs.html#php) information for your local Magento workstation
-
 - [Migrating PHP](http://php.net/manual/en/migration71.php)
-
 - [Magento 2.2.x technology stack requirements]({{ site.baseurl }}/guides/v2.2/install-gde/system-requirements-tech.html#php)
 
 ### Configuration management
@@ -178,8 +176,7 @@ If you need to upgrade any third-party extensions and modules that support versi
 1. Push to the Staging environment to test in a pre-production environment.
 
 We strongly recommend upgrading your Production environment _before_ including the upgraded extensions in your go-live process.
-
-We strongly recommend upgrading your Fastly module to v1.2.33 or later for {{site.data.var.ece}} 2.2.
+We also recommend upgrading to the latest version of the Fastly CDN module for Magento 2.
 
 ## Troubleshoot upgrade
 

@@ -47,40 +47,48 @@ You can create and manage users using the Magento Cloud CLI or the Web Interface
 
 ### Manage users with the CLI {#cloud-user-mg-cli}
 
-You can use the {{site.data.var.ece}} command line client to fully manage your users and integrate this with any other automated system.
+You can use the {{site.data.var.ece}} command line client to manage users and integrate this with any other automated system.
 
 Available commands:
 
-- `magento-cloud user:add` adds a user to the project
-- `magento-cloud user:delete` deletes a user
-- `magento-cloud user:list [users]` lists project users
-- `magento-cloud user:role` views or change a user's role
+- `magento-cloud user:add`–adds a user to the project
+- `magento-cloud user:delete`–deletes a user
+- `magento-cloud user:list [users]`–lists project users
+- `magento-cloud user:role`–views or change the user role
 
-For example, the following command adds the project administrator (`admin`) role to `alice@example.com` and gives her `contributor` privileges to the `development` environment:
+The following examples show how to add a user and configure the project and environment-level role, and how to change he project and  user and change the role assigned to a user.
 
-The following prompts are displayed:
+#### To add a user and assign roles: 
 
-```terminal
-magento-cloud user:add
+1. Add the user:
 
-Email address: alice@example.com
+   ```bash
+   magento-cloud user:add
+   ```
 
-The user's project role can be 'viewer' ('v') or 'admin' ('a').
-Project role [V/a]: a
-The user's environment-level roles can be 'viewer', 'contributor', or 'admin'.
-development environment role [V/c/a]: c
-Summary:
+1. Follow the prompts to specify the user email address and to set the project and environment roles:
+
+  ```terminal
+  Enter the user's email address: alice@example.com
+
   Email address: alice@example.com
-  Project role: contributor
-Adding users can result in additional charges.
-Are you sure you want to add this user? [Y/n]
-Adding the user to the project
-```
-{.no-copy}
 
-After you add the user, Magento sends a notification to the specified email address letting the user know that they have been added to the {{ site.data.ece }} project, with instructions for accesssing the project.
+  The user's project role can be 'viewer' ('v') or 'admin' ('a').
+  Project role [V/a]: a
+  The user's environment-level roles can be 'viewer', 'contributor', or 'admin'.
+  development environment role [V/c/a]: c
+  Summary:
+    Email address: alice@example.com
+    Project role: contributor
+  Adding users can result in additional charges.
+  Are you sure you want to add this user? [Y/n]
+  Adding the user to the project
+  ```
+  {:.no-copy}
 
-To change Alice's role on the environment `development` to `admin`, use the following command:
+  After you add the user, Magento sends an email to the specified address with instructions for accessing the {{ site.data.var.ece }} project.
+
+#### To change the environment-level role assigned to a user:
 
 ```bash
 magento-cloud user:role alice@example.com --level environment --environment development --role admin

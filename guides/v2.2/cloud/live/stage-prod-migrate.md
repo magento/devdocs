@@ -16,7 +16,8 @@ To migrate your database and static files to Staging and Production:
 - [Migrate static files](#cloud-live-migrate-static)
 - [Migrate the database](#cloud-live-migrate-db)
 
-If you encounter errors or need to make changes, complete those updates on your local. Push the code changes to the Integration environment. Deploy the updated `master` branch again. See instructions in the [previous step]({{ page.baseurl }}/cloud/live/stage-prod-migrate.html).
+If you encounter errors or need to make changes, complete those updates in your local environment. Push the code changes to the Integration environment.
+Deploy the updated `master` branch again. See instructions in the [previous step]({{ page.baseurl }}/cloud/live/stage-prod-migrate.html).
 
 ## Deploy code to Staging and Production {#code}
 
@@ -24,7 +25,7 @@ You can also use the [Project Web Interface](#interface) or [SSH and CLI command
 
 ### Deploy code with the Project Web Interface {#interface}
 
-The Project Web Interface provides full features to create, manage, and deploy code branches in your Integration, Staging, and Production environments for Starter and Pro plans.
+The Project Web Interface provides features to create, manage, and deploy code in Integration, Staging, and Production environments for Starter and Pro plans.
 
 For Pro projects, deploy the Integration branch you created to Staging and Production:
 
@@ -46,7 +47,11 @@ For Starter, deploy the development branch you created to Staging and Production
 
 ### Deploy code with SSH and CLI {#ssh}
 
-If you prefer to use CLI for deploying, you will need to configure additional SSH settings and Git remotes to use commands. You can SSH into the Staging and Production environments to push the `master` branch.
+You can use the [Magento Cloud CLI commands]({{ page.baseurl }}/cloud/reference/cli-ref-topic.html) to deploy code to Starter and Pro environments.
+
+**Prerequisites**
+- [Add public SSH key to your Magento Cloud account
+- Pro Plan Pro SInterface provides features to create, manage, and deploy code in Integration, Staging, and Production environments for Starter and Pro plans.
 
 You need the SSH and Git access information for your project.
 
@@ -57,14 +62,64 @@ You need the SSH and Git access information for your project.
 
 To deploy to Pro projects, complete the following steps:
 
-1. Open an SSH connection to your Staging or Production environment using the SSH command.
+1. Log in to the project
+
+   ```bash
+   magento-cloud login
+   ```
+
+1. List your projects:
+
+   ```bash
+   magento-cloud project:list
+   ```
+
+1. Change to a project directory. For example, `cd /var/www/html/magento2`
+
+1. List the environments in the project:
+
+   ```bash
+   magento-cloud environment:list
+   ```
+
+1. Checkout, or switch to, the Integration environment:
+
+   ```bash
+   magento-cloud environment:checkout <environment ID>
+   ```
+
+1. Pull any updated code to your local environment
+
+   ```
+   git pull origin <environment ID>
+
+1. Create a snapshot of the environment as a backup:
+
+   ```bash
+   magento-cloud snapshot: create -e <environment ID>
+   ```
+
+1. Complete code in your local branch.
+
+1. Add, commit, and push changes to the environment.
+
+   ```bash
+   git add -A && git commit -m "Commit message" && git push origin <branch-name>
+   ```
+
+1. Merge with the parent envirionment
+
+   ```bash
+   magento-cloud environment:merge <environment ID>
+
+1. Use SSH to connect to your Staging or Production environment.
 
 1. Checkout your Staging or Production branch:
 
-   - Staging: `git checkout staging`
+   - Staging: ` checkout staging`
    - Production: `git checkout production`
 
-1. Pull the `master` branch from Integration. Remember, a pull performs a fetch and a merge in one step.
+1. Pull the `master` branch from Integration.
 
    ```bash
    git pull origin master
@@ -90,12 +145,12 @@ We suggest using the following syntax:
 rsync -azvP <source> <destination>
 ```
 
-Options:
+This command uses the following options:
 
-`a` archive
-`z` compress
-`v` verbose
-`P` partial progress
+- `a`–archive  
+- `z`–compress  
+- `v`–verbose  
+- `P`–partial progress  
 
 For additional options, see the [rsync man page](http://linux.die.net/man/1/rsync).
 
@@ -110,9 +165,11 @@ rsync -azvP local_machine/pub/media/ <environment_ssh_link@ssh.region.magento.cl
 #### To migrate static files from remote-to-remote environments directly (fast approach):
 
 {:.bs-callout-info}
-To transfer media from remote-to-remote environments directly, you must enable ssh agent forwarding, see [GitHub guidance](https://developer.github.com/v3/guides/using-ssh-agent-forwarding/)
+To transfer media from remote-to-remote environments directly, you must enable ssh agent forwarding, see [GitHub guidance](https://developer.github.com/v3/guides/using-ssh-agent-forwarding/).
 
-1. [Open an SSH connection]/{{page.baseurl}}/cloud/env/environments-ssh.html#ssh) to the source environment. You can find the **SSH access** link in your Project Web UI by selecting the environment branch, and click **Access Site**:
+1. [Open an SSH connection]({{page.baseurl}}/cloud/env/environments-ssh.html#ssh) to the source environment.
+
+   You can find the **SSH access** link in your Project Web Interface by selecting the environment branch, and click **Access Site**:
 
     ```bash
     ssh -A <environment_ssh_link@ssh.region.magento.cloud>
@@ -123,9 +180,6 @@ To transfer media from remote-to-remote environments directly, you must enable s
    ```bash
    rsync -azvP pub/media/ <destination_environment_ssh_link@ssh.region.magento.cloud>:pub/media/
    ```
-
-   {:.bs.callout-info}
-   You can find the SSH access link for the environment from the [Project Web Interface]/{{ page.baseurl }}/cloud/project/projects.html#project(#interface).
 
 ## Migrate the database {#cloud-live-migrate-db}
 

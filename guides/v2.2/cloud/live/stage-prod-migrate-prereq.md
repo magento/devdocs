@@ -28,7 +28,7 @@ You can deploy to your environments, including all YAML configuration files, mig
 To prepare your environments for full deployment, you need:
 
 1. Get your [access URLs and SSH](#starter-urls) information.
-2. Set up your [SSH agent](#ssh-agent) for easier file and data migration.
+2. Add your SSH keys to your Integration, Staging, and Production environments for easier file and data migration.
 
 ### Get your Starter access URLs and SSH information {#starter-urls}
 
@@ -39,7 +39,7 @@ You can locate your URLs through the Project Web Interface. For each selected en
 1. Click **Access site** to display the URL and SSH information.
 
    ![Access your project]({{ site.baseurl }}/common/images/cloud/cloud-starter-project-access.png)
-   {:width="550px"}
+   {:width="500px"}
 
 ## Pro plan projects {#pro}
 
@@ -49,9 +49,9 @@ For **first time setup** to migrate your database and deploy code to Staging or 
 
 1. Create a support ticket to [migrate deployment hooks](#pro-yaml). In this ticket, include your public SSH keys to add to Staging and Production.
 1. Get your [access URLs and SSH](#pro-urls) for Staging and Production.
-1. Set up your [SSH agent](#ssh-agent) for Staging and Production.
+1. [Add your public SSH key](#add-public-ssh-key) to your {{ site.data.var.ece }} project environments.
 
-If you have not done so already, upload any [Fastly VCL snippets]({{ page.baseurl }}/cloud/cdn/configure-fastly.html#upload-vcl-snippets) in your Integration environment `master` Magento Admin panel. Fastly is available in Staging and Production.
+If you have not done so already, set up [Fastly CDN services]({{ page.baseurl }}/cloud/cdn/cloud-fastly.html) on your Staging and Production environments. See [Fastly set up]({{ page.baseurl }}/cloud/cdn/configure-fastly.html#upload-vcl-snippets).
 
 ### Migrate your `.magento.app.yaml` file {#pro-yaml}
 
@@ -82,57 +82,33 @@ You can locate your URLs through the Project Web Interface. There is an Access S
   - Staging: `http[s]://<your domain>.c.staging-<project ID>.ent.magento.cloud`
   - Production: `http[s]://<your domain>.c.<project ID>.ent.magento.cloud`
 
-## Set up an SSH agent and add the SSH key {#ssh-agent}
+### Add SSH key to project environments {#add-public-ssh-key}
 
-You only need to set up the SSH agent on these servers once. The SSH agent is a background program that handles passwords for your SSH private keys.
+Add your SSH public key to {{ site.data.var.ece }} environments:
 
-**How it works!** After you configure the agent and settings, you can migrate files between servers using SSH and the `scp` (secure copy) command. The SSH agent forwards authentication requests from Staging or Production environments to your local with a working Magento system, so you can connect using your local private SSH key. After you use Git to push code, you can use SSH to connect to the Staging and Production environments to update code, data, and files.
+- Starter–Add to Master (Production) and any environments you create by branching from Master
+- Pro–Add to the Master Integration, Staging, and Production environments
 
-You can use any terminal client you prefer for SSH access, or see our [Recommended tools]({{ page.baseurl }}/cloud/before/before-workspace.html#recommended-tools). For these examples, we use the OpenSSH client.
+To add an SSH key using the Project Web Interface:
 
-To set up an SSH agent:
+1. Copy your SSH public key to the clipboard.
 
-1. In a terminal client, log in to your local system.
+   If you do not already have SSH keys on that machine, see [GitHub documentation](https://help.github.com/articles/generating-an-ssh-key) to create them.
 
-1. Enter the following command to check if the SSH agent is running and list fingerprints of all identities currently represented by the agent:
+1. Login and access your project through the [Project Web Interface](https://accounts.magento.cloud).
 
-   ```terminal
-   ssh-add -l
-   ```
+1. In your selected branch, an icon displays if you do not have an SSH key added.
 
-   One of the following messages displays:
+   ![No SSH key]({{ site.baseurl }}/common/images/cloud_ssh-key-install.png)
 
-   - Displays a working and running SSH agent: `2048 ab:de:56:94:e3:1e:71:c3:4f:df:e1:62:8d:29:a5:c0 /home/magento_user/.ssh/id_rsa (RSA)`
+1. Copy and paste the content of your public SSH key in the screen.
 
-     Skip to step 4.
+   ![Add SSH key]({{ site.baseurl }}/common/images/cloud_ssh-key-add.png)
 
-   - The SSH agent has not started: `Could not open a connection to your authentication agent.`
+1. Follow the prompts on your screen to complete the task.
 
-     Continue with step 3.
+You can also add an SSH key using the {{site.data.var.ece}} CLI. See [Add an SSH key using the CLI]({{ page.baseurl }}/cloud/before/before-workspace-ssh.html#add-key-cli).
 
-1. To start the SSH agent, enter the following command:
-  
-   ```terminal
-   eval $(ssh-agent -s)
-   ```
-
-  The agent starts and displays the process ID (PID).
-
-1. Add your public SSH key to the agent to SSH into environments and complete Git commands. This is the same SSH key you provided in a ticket for access to Staging and Production.
-
-   ```terminal
-   ssh-add ~/.ssh/id_rsa
-   ```
-
-   A message similar to the following displays:
-
-   ```terminal
-   Identity added: /home/magento_user/.ssh/id_rsa (/home/magento_user/.ssh/id_rsa)
-   ```
-   {: .no-copy}
-
-For more information on setting up SSH, see [Enable SSH keys]({{ page.baseurl }}/cloud/before/before-workspace-ssh.html) as part of your local setup. For Starter and Pro projects, you can add your SSH public key to all Integration, Staging and Production environments.
-
-#### Next step
+#### Next step:
 
 [Migrate and deploy]({{ page.baseurl }}/cloud/live/stage-prod-migrate.html)

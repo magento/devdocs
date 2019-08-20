@@ -410,7 +410,7 @@ The ece-tools version 2002.0.11 is required for 2.2.4 compatibility.
 
     -   <!-- MAGECLOUD-1738 -->**New environment variable**—Added the `SCD_ON_DEMAND` global environment variable to generate static content when requested.
 
-    -   <!-- MAGECLOUD-1788 -->**Post-deploy hook**—Added a `post_deploy` hook for the `.magento.app.yaml` file that clears the cache and pre-loads (warms) the cache _after_ the container begins accepting connections. It is available only for Pro projects that contain Staging and Production environments in the Project Web UI and for Starter projects. Although not required, this works in tandem with the `SCD_ON_DEMAND` environment variable.
+    -   <!-- MAGECLOUD-1788 -->**Post-deploy hook**—Added a `post_deploy` hook for the `.magento.app.yaml` file that clears the cache and pre-loads (warms) the cache _after_ the container begins accepting connections. It is available only for Pro projects that contain Staging and Production environments in the Project Web Interface and for Starter projects. Although not required, this works in tandem with the `SCD_ON_DEMAND` environment variable.
 
 -   {:.new}<!-- MAGECLOUD-1842 -->**Optimization**—Optimized moving or copying files during deployment to improve deployment speed and decrease loads on the file system.
 

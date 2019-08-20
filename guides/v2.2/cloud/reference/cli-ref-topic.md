@@ -5,7 +5,7 @@ functional_areas:
   - Cloud
 ---
 
-The Magento Cloud CLI is the utility for managing Magento Cloud projects and environments, which implements many features of the Project Web UI and more. This utility provides an advanced management interface for developers, DevOps and system administrators, for doing routines and automation tasks. You can install and use this utility for all {{site.data.var.ece}} Starter and Pro Integration environments. You cannot use these commands for the Pro Staging and Production environments which aren't listed in the cloud UI.
+The Magento Cloud CLI is the utility for managing Magento Cloud projects and environments, which implements many features of the Project Web Interface and more. This utility provides an advanced management interface for developers, DevOps and system administrators, for doing routines and automation tasks. You can install and use this utility for all {{site.data.var.ece}} Starter and Pro Integration environments. You cannot use these commands for the Pro Staging and Production environments which aren't listed in the cloud UI.
 
 You can install the Magento Cloud CLI when setting up your local environment for development:
 
