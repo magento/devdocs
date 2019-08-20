@@ -6,9 +6,9 @@ functional_areas:
   - Setup
 ---
 
-The `mysql` service provides persistent data storage. It is based on [MariaDB](https://mariadb.com/), supporting the [XtraDB](https://www.percona.com/software/mysql-database/percona-server/xtradb) storage engine.
+The `mysql` service provides persistent data storage based on [MariaDB](https://mariadb.com/) versions 10.0 and later, supporting the [XtraDB](https://www.percona.com/software/mysql-database/percona-server/xtradb) storage engine and reimplemented features from MySQL 5.6 and 5.7.
 
-We support MariaDB version 10.2, which includes reimplemented features from MySQL 5.6 and 5.7.
+{% include cloud/service-config-integration-starter.md %}
 
 #### To access the MariaDB database directly:
 
@@ -30,30 +30,29 @@ mysql -h<db> -p<number> -u<username> -p<password>
 
 1. Add the required name, type, and disk value (in MB) to the `.magento/services.yaml` file.
 
-  ```yaml
-  mysql:
-      type: mysql:10.2
-      disk: 2048
-  ```
+    ```yaml
+    mysql:
+        type: mysql:10.2
+        disk: 2048
+    ```
 
 1. Configure the relationships in the `.magento.app.yaml` file.
 
-  ```yaml
-  relationships:
-      database: "mysql:mysql"
-  ```
+    ```yaml
+    relationships:
+        database: "mysql:mysql"
+    ```
 
 1. Add, commit, and push your code changes.
 
-  ```bash
-  git add -A && git commit -m "Enable mysql service" && git push origin <branch-name>
-  ```
+    ```bash
+    git add -A && git commit -m "Enable mysql service" && git push origin <branch-name>
+    ```
 
 1. [Verify the relationships]({{page.baseurl}}/cloud/project/project-conf-files_services.html#service-relationships).
 
-{: .bs-callout-info }
--  If you configure one MySQL user, you cannot use the [`DEFINER`](http://dev.mysql.com/doc/refman/5.6/en/show-grants.html) access control mechanism for stored procedures and views.
--  MySQL errors such as `PDO Exception 'MySQL server has gone away` are usually the result of exhausting your existing disk space. Be sure you have sufficient space allocated to the service in [`.magento/services.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_magento-app.html#disk).
+{: .bs-callout-tip }
+MySQL errors such as `PDO Exception: MySQL server has gone away` may be a result of exhausting existing disk space. Verify that you have allocated sufficient disk space to the service in the [`.magento/services.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_magento-app.html#disk) file.
 
 ## Set up multiple database users
 
@@ -62,7 +61,7 @@ Optionally, you can set up multiple databases as well as multiple users with dif
 An _endpoint_ is a set of credentials (or users) with specific privileges. By default, there is one endpoint named `mysql` that has administrator access to all defined databases. To set up multiple databases and users, you must define multiple endpoints in the services.yaml file and declare the relationships in the .magento.app.yaml file.
 
 {: .bs-callout-warning}
-You cannot use multiple _databases_ with {{site.data.var.ee}} at this time. You **can** create multiple endpoints to restrict access to the `main` database.
+You cannot use multiple _databases_ with {{site.data.var.ee}} at this time, but you **can** create multiple endpoints to restrict access to the `main` database.
 
 Use a nested array to define the endpoints for specific user access. Each endpoint can designate access to one or more schemas (databases) and different levels of permission on each.
 
@@ -108,3 +107,6 @@ relationships:
     databasereporter: "mysql:reporter"
     databaseimporter: "mysql:importer"
 ```
+
+{: .bs-callout-info }
+If you configure one MySQL user, you cannot use the [`DEFINER`](http://dev.mysql.com/doc/refman/5.6/en/show-grants.html) access control mechanism for stored procedures and views.

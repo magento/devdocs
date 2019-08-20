@@ -66,7 +66,6 @@ mutation {
           code
           label
         }
-        address_type
       }
     }
   }
@@ -94,8 +93,7 @@ mutation {
           "country": {
             "code": "US",
             "label": "US"
-          },
-          "address_type": "BILLING"
+          }
         }
       }
     }
@@ -144,7 +142,6 @@ mutation {
           code
           label
         }
-        address_type
       }
       shipping_addresses {
         firstname
@@ -158,7 +155,6 @@ mutation {
           code
           label
         }
-        address_type
       }
     }
   }
@@ -186,8 +182,7 @@ mutation {
           "country": {
             "code": "US",
             "label": "US"
-          },
-          "address_type": "BILLING"
+          }
         },
         "shipping_addresses": [
           {
@@ -204,8 +199,7 @@ mutation {
             "country": {
               "code": "US",
               "label": "US"
-            },
-            "address_type": "SHIPPING"
+            }
           }
         ]
       }
@@ -278,7 +272,6 @@ mutation {
           code
           label
         }
-        address_type
       }
     }
   }
@@ -306,8 +299,7 @@ mutation {
           "country": {
             "code": "US",
             "label": "US"
-          },
-          "address_type": "BILLING"
+          }
         }
       }
     }

@@ -3,7 +3,7 @@
 #
 # This custom plugin dynamically sets the 'github_path' parameter
 # for each page except 'redirect.html' pages.
-# A value of the pararmeter is available as {{ page.last_modified_at }}.
+# A value of the parameter is available as {{ page.github_path }}.
 # The parameter contains a file path relative to its repository.
 #
 Jekyll::Hooks.register :pages, :post_init do |page|

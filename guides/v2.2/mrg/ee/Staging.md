@@ -1,11 +1,7 @@
 ---
 group: module-reference-guide
-subgroup: 20_Enterprise Edition
 ee_only: true
 title: Magento_Staging module
-menu_title: Staging
-menu_order: 2
-ee_only: true
 ---
 
 
@@ -159,7 +155,7 @@ Each one is a grid of corresponding entities assigned to the campaign.
 
 Only empty [campaign](#campaign) can be deleted, that is performed by the cron. In other words, if you delete all updates from the campaign, it will be deleted automatically according to the cron settings.
 
-### Update
+### Update {#scheduled-update-section}
 
 The [scheduled updates](#scheduled-update) functionality is implemented in [staging](#staging) modules. The Magento_Staging module only distributes to other staging modules a Schedule Update form and a grid of future campaigns.
 

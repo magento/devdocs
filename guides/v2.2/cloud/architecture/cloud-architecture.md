@@ -3,6 +3,8 @@ group: cloud-guide
 title: Magento Commerce Cloud architecture
 functional_areas:
   - Cloud
+redirect_from:
+  - /guides/v2.2/cloud/basic-information/cloud-plans.html
 ---
 
 {{site.data.var.ece}} has a Starter and a Pro plan. Each plan has a unique architecture to drive your {{site.data.var.ee}} development and deployment process. Both the Starter plan and the Pro plan architecture deploy databases, web server, and caching servers across multiple environments for end-to-end testing while supporting continuous integration.

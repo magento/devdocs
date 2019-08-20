@@ -16,6 +16,8 @@ functional_areas:
 
 {{site.data.var.ee}} supports [Elasticsearch]({{ site.baseurl }}/guides/v2.2/config-guide/elasticsearch/es-overview.html) version 5.2 and 6.x (supported by Magento version 2.3.1 and later).
 
+{% include cloud/service-config-integration-starter.md %}
+
 #### To enable Elasticsearch:
 
 1.  Add the `elasticsearch` service to the `.magento/services.yaml` file with the Elasticsearch version and allocated disk space in MB.
@@ -42,6 +44,18 @@ functional_areas:
     For information on how these changes affect your environments, see [Services]({{ page.baseurl }}/cloud/project/project-conf-files_services.html).
 
 1.  [Verify the relationships]({{page.baseurl}}/cloud/project/project-conf-files_services.html#service-relationships) and configure Elasticsearch in the Admin UI.
+
+1. Reindex the Catalog Search index.
+
+    ```bash
+    bin/magento indexer:reindex catalogsearch_fulltext
+    ```
+
+1. Clean the cache.
+
+    ```bash
+    bin/magento cache:clean
+    ```
 
 ## Elasticsearch plugins
 

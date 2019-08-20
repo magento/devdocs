@@ -73,7 +73,7 @@ To upgrade from Magento 2.0, you must create the following files in the `<module
 
 * `queue_consumer.xml` - Defines the relationship between an existing queue and its consumer.
 * `queue_topology.xml`- Defines the message routing rules.
-* `queue_publisher.xml` - Defines the relationship between a topic and its [publisher](https://glossary.magento.com/publisher).
+* `queue_publisher.xml` - Defines the relationship between a topic and its [publisher](https://glossary.magento.com/publisher-subscriber-pattern).
 
 The existing `queue.xml` file is deprecated.
 
