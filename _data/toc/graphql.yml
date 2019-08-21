@@ -203,6 +203,12 @@ pages:
         - label: Authorize.Net
           url: /graphql/payment-methods/authorize-net.html
 
+        - label: Braintree
+          url: /graphql/payment-methods/braintree.html
+
+        - label: Braintree Vault
+          url: /graphql/payment-methods/braintree-vault.html
+
         - label: PayPal Express Checkout
           url: /graphql/payment-methods/paypal-express-checkout.html
 
