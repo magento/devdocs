@@ -5162,7 +5162,7 @@ commands:
         accept_value: true
         is_value_required: true
         is_multiple: false
-        description: This option is deprecated. Use  the ```--single-thread`` option instead.
+        description: This option is deprecated. Use  the `--single-thread` option instead.
         default: 
       help:
         name: "--help"
