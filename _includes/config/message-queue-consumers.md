@@ -32,7 +32,7 @@ Parameter | Value | Required? | Default Value
 `--batch-size=<value>` | The number of messages to consume per batch. If specified, messages in a queue are consumed in batches of `<value>` each. This option is applicable for the batch consumer only. If `--batch-size` is not defined, the batch consumer receives all available messages in a queue. | No | 0
 `--pid-file-path=<value>` | This option is deprecated, use `--single-thread` instead. | No | 
 `--area-code=<value>` | The area code preferred for consumer process. | No | global
-`--single-thread` | This option prevents running multiple copies of one consumer simultaneously. | No | 
+`--single-thread` | This option prevents multiple copies of a consumer from running simultaneously. | No | 
 `<consumer_name>` | The consumer to start. | Yes | |
 
 {: .bs-callout .bs-callout-warning }
