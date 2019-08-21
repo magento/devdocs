@@ -46,6 +46,9 @@ pages:
         - label: Alert widget
           url: /javascript-dev-guide/widgets/widget_alert.html
 
+        - label: Breadcrumbs widget
+          url: /javascript-dev-guide/widgets/widget-breadcrumbs.html
+
         - label: Calendar widget
           url: /javascript-dev-guide/widgets/widget_calendar.html
 
