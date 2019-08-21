@@ -21,13 +21,11 @@ If you try to apply the service to an invoice created using an offline payment 
 
 The `salesRefundInvoice` service allows you to:
 
-* create a credit memo (complete or partial) for an invoice
-* add details about the refunded items to the order
-* change status and state of an order according to performed actions
-* notify a customer about the performed refund operation
-* designate whether the returned items are returned to stock
-
-See [RefundInvoice service]({{page.baseurl}}/mrg/ce/Sales.html#refundinvoice) for more information.
+* Create a credit memo (complete or partial) for an invoice
+* Add details about the refunded items to the order
+* Change status and state of an order according to performed actions
+* Notify a customer about the performed refund operation
+* Designate whether the returned items are returned to stock
 
 ## salesRefundOrderV1 service
 
@@ -36,8 +34,6 @@ This service performs the same operations as the `RefundInvoice` service, but ba
 ### Endpoint
 
 `POST V1/order/{orderId}/refund`
-
-See [RefundOrder service]({{page.baseurl}}mrg/ce/Sales.html#refundOrder) for more information.
 
 ## salesCreditmemoManagement service
 
@@ -70,4 +66,4 @@ For the correct refund shipment, these parameters are required:
 
 ## Related documentation
 
-* [Magento REST API documentation (Swagger)]({{page.baseurl}}/http://devdocs.magento.com/swagger/index.html#/)
+* [Magento REST API documentation (Swagger)](https://devdocs.magento.com/swagger/index.html)

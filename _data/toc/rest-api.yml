@@ -128,6 +128,9 @@ pages:
               url: /rest/modules/catalog-pricing.html
               include_versions: ["2.2", "2.3"]
 
+            - label: Refunds and credits
+              url: /rest/modules/refunds-credits.html
+
         - label: Inventory
           include_versions: ["2.3"]
           children:
