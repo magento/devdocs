@@ -244,7 +244,6 @@ The following procedure is based on [Install MySQL Server 5.6 in CentOS 6.x and 
 		sudo wget http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm && sudo rpm -ivh mysql-community-release-el7-5.noarch.rpm
 		sudo yum -y install mysql-server
 
-
 2.	Start MySQL:
 
 		service mysqld start
@@ -307,9 +306,9 @@ To configure a MySQL database instance:
 7.	If your web server and database server are on different hosts, perform the tasks discussed in this topic on the database server host then see [Set up a remote MySQL database connection]({{page.baseurl }}/install-gde/prereq/mysql_remote.html).
 
     We recommend you configure your database instance as appropriate for your business. When configuring your database, please keep the following in mind:
-    
+
     -   Indexers require higher `tmp_table_size` and `max_heap_table_size` values (e.g., 64M). If you configure the `batch_size` parameter, you can adjust that value along with the table size settings to improve indexer performance. Refer to the [Magento Optimization Guide]({{page.baseurl }}/performance-best-practices/configuration.html) for more information.
-    
+
     -   For optimal performance, make sure all MySQL and Magento index tables can be kept in memory (e.g., configure `innodb_buffer_pool_size`).
 
 #### Related topics

@@ -55,7 +55,7 @@ To configure notifications:
     ```bash
     git -A && git commit -m "Configure build/deploy notifications"
     ```
-    
+
     ```bash
     git push origin <branch-name>
     ```

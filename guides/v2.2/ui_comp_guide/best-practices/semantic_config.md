@@ -110,7 +110,6 @@ When editing XML configuration files in an IDE, you get visual notifications if 
 {:.bs-callout .bs-callout-info}
 To use the autocomplete and validation features in your IDE, generate the URN as described in the [URN highlighter] topic.
 
-
 <!--Link Declarations -->
 
 [declaring a custom UI component]: {{page.baseurl}}/ui_comp_guide/howto/new_component_declaration.html

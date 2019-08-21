@@ -3,7 +3,6 @@ group: graphql
 title: Create a custom GraphQL urlResolver service
 ---
 
-
 The `Magento\UrlRewrite` module converts URL rewrite requests to canonical URLs. As a result, your custom `urlResolver` module does not require its own class for performing these actions, but it must be able to save and delete entries in the `url_rewrite` table.
 
 ## Create observers

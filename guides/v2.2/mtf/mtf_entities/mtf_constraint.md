@@ -28,7 +28,7 @@ The constraint [PHP](https://glossary.magento.com/php) class must:
 
 * Extend the [Magento\Mtf\Constraint\AbstractConstraint](https://github.com/magento/mtf/blob/develop/Magento/Mtf/Constraint/AbstractConstraint.php) class.
 
-* Contain the following methods: 
+* Contain the following methods:
 
   * `processAssert()` which contains assertions. A `PHPUnit_Framework_Assert` class (`<magento2_root_dir>/dev/tests/functional/vendor/phpunit/phpunit/src/Framework/Assert.php`) can be used to simplify assertions.
   * `toString()` which returns a success message if the assertion is performed successfully
@@ -36,7 +36,7 @@ The constraint [PHP](https://glossary.magento.com/php) class must:
 ### Constraint arguments
 
 In the FTF, [data set][] values are shared with a test class and constraints. A node name in data set can be complex like `item1/item2/item3`. The argument name in `processAssert()` must be the same as the `item1` to transfer data from data set to constraint.
- 
+
 If a data set variable is used in the test, and is overwritten, it is transferred as altered to the constraint. Variables can be overwritten in the _injectable_ [test case][]  class in `test()`, `__inject()` and `__prepare()` methods, and then passed to the constraint class by `return`. Furthermore, any returned value of these methods can be used as an argument in constraint.
 
 An object that is not defined in the data set or isn't returned from the test case is created using the Object Manager.
@@ -45,16 +45,13 @@ Let's see the following images for the `CreateSimpleProductEntityTest` test and 
 
 ![]({{ site.baseurl }}/common/images/ftf/mtf_constraint_arguments_green.png){: width="800"}
 
-
 <span style="color: #21610B; font-weight:bold">Green arrows</span> show that `product` value is transferred to the test and the constraint.
 
 ![]({{ site.baseurl }}/common/images/ftf/mtf_constraint_arguments_orange.png){: width="800"}
 
-
 <span style="color: #FF8000; font-weight:bold">Orange arrows</span> show that `category` variable is transferred to the test directly, overwritten by `testCreate()` method and only then transferred to constraint.
 
 ![]({{ site.baseurl }}/common/images/ftf/mtf_constraint_arguments_blue.png){: width="800"}
-
 
 <span style="color: #0000FF; font-weight:bold">Blue arrow</span> shows that `price` value is transferred to the constraint only.
 
@@ -76,9 +73,9 @@ Constraints are performed in order they listed in the data set. However, you can
 A test can contain constraints from different modules.
 
 {:.bs-callout .bs-callout-warning}
-Be careful when you use constraints from another module. A module that is referred by constraint can be disabled, that fails in the test execution. It is safe to use constraints of different modules in one test case if that modules have hard dependencies.   
+Be careful when you use constraints from another module. A module that is referred by constraint can be disabled, that fails in the test execution. It is safe to use constraints of different modules in one test case if that modules have hard dependencies.
 
-The following example shows the `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/Widget/Test/TestCase/DeleteWidgetEntityTest.xml` [data set][] with two constraints. 
+The following example shows the `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/Widget/Test/TestCase/DeleteWidgetEntityTest.xml` [data set][] with two constraints.
 
 ```xml
 
@@ -139,12 +136,12 @@ For example, `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/Catalog
 Use case: We want to assert widget availability in a widget grid.
 
 Step 1. What module does it belong?
-  
+
   Widget grid and widget fixture are related to the Magento_Widget module.
   Thus, we need to create constraint in the Magento_Widget module, in `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/Widget/Test/Constraint`.
-  
+
 Step 2. What name should constraint have?
-  
+
   Using [constraint naming principle](#mtf_constraint_assert), the constraint should be named as `AssertWidgetInGrid`.
 
 Step 3. Create `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/Widget/Test/Constraint/AssertWidgetInGrid.php` with [required structure](#mtf_constraint_assert)
@@ -164,7 +161,7 @@ class AssertWidgetInGrid extends AbstractConstraint
 {
     /**
      * Assert widget availability in widget grid.
-     * 
+     *
      * @return void
      */
     public function processAssert()
@@ -206,7 +203,7 @@ class AssertWidgetInGrid extends AbstractConstraint
 {
     /**
      * Assert widget availability in widget grid.
-     * 
+     *
      * @return void
      */
     public function processAssert(Widget $widget, WidgetInstanceIndex $widgetInstanceIndex)
@@ -254,7 +251,7 @@ in the order that it must be performed.
             <data name="widget/data/parameters/dataset" xsi:type="string">cmsStaticBlock</data>
             <constraint name="Magento\Widget\Test\Constraint\AssertWidgetSuccessSaveMessage" />
             <constraint name="Magento\Widget\Test\Constraint\AssertWidgetInGrid" />
-            <constraint name="Magento\Widget\Test\Constraint\AssertWidgetOnFrontendInCatalog" />     
+            <constraint name="Magento\Widget\Test\Constraint\AssertWidgetOnFrontendInCatalog" />
         </variation>
     </testCase>
 </config>

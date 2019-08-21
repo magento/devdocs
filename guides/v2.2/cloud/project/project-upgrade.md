@@ -183,7 +183,7 @@ Exception printing is disabled by default for security reasons.
 
 #### To resolve the error:
 
-1.  Using SSH, log in to the remote server and open the `./app/var/report/<error number>` file. 
+1.  Using SSH, log in to the remote server and open the `./app/var/report/<error number>` file.
 
 1.  [Examine the logs]({{ page.baseurl }}/cloud/trouble/environments-logs.html) to determine the source of the issue.
 

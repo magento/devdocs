@@ -14,7 +14,7 @@ Each _Pro_ plan project supports a total of eight environments that you can use 
 {:.bs-callout .bs-callout-info}
 To manage Staging and Production environment settings through the Project Web Interface for Pro projects **created before October 23, 2017**, you must [request an update]({{ page.baseurl }}/cloud/trouble/pro-env-management.html). If you do not request the update, you must submit tickets to modify settings, variables, and routes.
 
-![High-level view of Pro architecture (legacy) flow]({{ site.baseurl }}/common/images/cloud_pro-branch-architecture-legacy.png)  
+![High-level view of Pro architecture (legacy) flow]({{ site.baseurl }}/common/images/cloud_pro-branch-architecture-legacy.png)
 
 The following table summarizes the differences between environments:
 
@@ -129,7 +129,7 @@ These three gateways map to the three servers in your Production environment clu
 
 ### Backup and disaster recovery
 
-Each production system cluster can withstand the loss of an entire server and all services running on it. A backup of your production system occurs automatically every six hours. 
+Each production system cluster can withstand the loss of an entire server and all services running on it. A backup of your production system occurs automatically every six hours.
 
 The coordinating agent that monitors your production system:
 

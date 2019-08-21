@@ -15,7 +15,6 @@ Integration | The merchant determines which Magento resources the integration ha
 Admin | The merchant determines which Magento resources an admin user has access to. | 4 hours
 Customer | Magento grants access to resources with the `anonymous` or `self` permission. Merchants cannot edit these settings. | 1 hour
 
-
 ## Integration tokens
 
 When a merchant creates and activates an integration, Magento generates a consumer key, consumer secret, access token, and access token secret. All of these entities are used for [OAuth-based authentication]({{ page.baseurl }}/get-started/authentication/gs-authentication-oauth.html), but token-based authentication requires only the access token.
@@ -46,7 +45,6 @@ Request|REST|SOAP
 Get an admin token | `POST /V1/integration/admin/token` | `integrationAdminTokenServiceV1`
 Get a customer token | `POST /V1/integration/customer/token` | `integrationCustomerTokenServiceV1`
 
-
 For most [web API](https://glossary.magento.com/web-api) calls, you supply this token in the `Authorization` request header with the `Bearer` HTTP [authorization](https://glossary.magento.com/authorization) scheme to prove your identity. By default, an admin token is valid for 4 hours, while a customer token is valid for 1 hour. You can change these values from Admin by selecting **Stores** > **Settings** > **Configuration** > **Services** > **OAuth** > **Access Token Expiration**.
 
 A cron job that runs hourly removes all expired tokens.
@@ -60,7 +58,6 @@ Component | Specifies
 Endpoint |  A combination of the _server_ that fulfills the request, the web service, and the `resource` against which the request is being made.<br/><br/>For example, in the `POST <host>/rest/<store_code>/V1/integration/customer/token` endpoint:<br/>The server is `magento.host/index.php/`,<br/> the web service is `rest`.<br/> and the resource is `/V1/integration/customer/token`.
 Content type | The content type of the request body. Set this value to either `"Content-Type:application/json"` or `"Content-Type:application/xml"`.
 Credentials | The username and password for a Magento account.<br/><br/>To specify these credentials in a JSON request body, include code similar to the following in the call: <br/><br/>`{"username":"<USER-NAME>;", "password":"<PASSWORD>"}`<br/><br/>To specify these credentials in XML, include code similar to the following in the call:<br/><br/>`<login><username>customer1@example.com</username><password>customer1pw</password></login>`
-
 
 #### Examples {#token-example}
 

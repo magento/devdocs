@@ -67,12 +67,12 @@ The following phases occur in your local development environment and the Integra
 
 Integration build and deployment consists of the following phases:
 
-[Phase 1: Configuration validation and code retrieval](#cloud-deploy-over-phases-conf)  
-[Phase 2: Build](#cloud-deploy-over-phases-build)  
-[Phase 3: Prepare slug](#cloud-deploy-over-phases-slug)  
-[Phase 4: Deploy slugs and cluster](#cloud-deploy-over-phases-slugclus)  
-[Phase 5: Deployment hooks](#cloud-deploy-over-phases-hook)  
-[Post-deployment: configure routing](#cloud-deploy-over-phases-route)  
+[Phase 1: Configuration validation and code retrieval](#cloud-deploy-over-phases-conf)
+[Phase 2: Build](#cloud-deploy-over-phases-build)
+[Phase 3: Prepare slug](#cloud-deploy-over-phases-slug)
+[Phase 4: Deploy slugs and cluster](#cloud-deploy-over-phases-slugclus)
+[Phase 5: Deployment hooks](#cloud-deploy-over-phases-hook)
+[Post-deployment: configure routing](#cloud-deploy-over-phases-route)
 
 For detailed instructions, see [Build and deploy full steps](#steps).
 

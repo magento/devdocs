@@ -13,7 +13,6 @@ The components you're upgrading are displayed. The following figure shows an exa
 
 ![Click upgrade to complete the task]({{ site.baseurl }}/common/images/upgr_upgrade.png){: width="550px"}
 
-
 To complete the upgrade, click **Upgrade**. If the upgrade is successful, a page similar to the following displays.
 
 ![Your upgrade was successful]({{ site.baseurl }}/common/images/upgr_success.png){: width="350px"}
