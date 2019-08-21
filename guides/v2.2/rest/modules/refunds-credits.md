@@ -14,7 +14,7 @@ With this service, you can initiate and process a refund based on an Invoice ID,
 
 ### Endpoint
 
-`POST V1/invoice/{invoiceId}/refund`
+`POST V1/invoice/:invoiceId/refund`
 
 {:.bs-callout-warning}
 If you try to apply the service to an invoice created using an offline payment method, the system will display a validation error.
@@ -33,7 +33,7 @@ This service performs the same operations as the `RefundInvoice` service, but ba
 
 ### Endpoint
 
-`POST V1/order/{orderId}/refund`
+`POST V1/order/:orderId/refund`
 
 ## salesCreditmemoManagement service
 
@@ -41,9 +41,9 @@ The service also allows you to initiate and process a refund but requires more 
 
 ### Endpoints
 
-* `Get V1/creditmemo/{id}/comments`
-* `PUT V1/creditmemo/{id}`
-* `POST V1/creditmemo/{id}/emails`
+* `Get V1/creditmemo/:id/comments`
+* `PUT V1/creditmemo/:id`
+* `POST V1/creditmemo/:id/emails`
 * `POST V1/creditmemo/refund`
 
 ## salesCreditmemoRepository service
@@ -52,7 +52,7 @@ This service is only for persistence operations with refunds. This service can 
 
 ### Endpoints
 
-* `GET V1/creditmemo/{id}`
+* `GET V1/creditmemo/:id`
 * `GET V1/creditmemos`
 * `POST V1/creditmemo`
 
