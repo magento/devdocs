@@ -55,9 +55,6 @@ functional_areas:
     bin/magento cache:clean
     ```
 
-{: .bs-callout-info }
-Not possible to restart the [Elasticsearch](https://www.elastic.co) service itself without Magento's help.
-
 ### Add Elasticsearch plugins
 
 Optionally, you can add plugins with the `.magento/services.yaml` file. For example, to enable the ICU analysis plugin and Python script support plugin, add the `configuration:plugins` section with the listed plugin codes:
