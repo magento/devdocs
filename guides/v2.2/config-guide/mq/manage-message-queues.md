@@ -80,7 +80,7 @@ Where:
 
 *   `--pid-file-path=<value>` the file path for saving PID of consumer process. This option is deprecated, use `--single-thread` instead.
 
-*   `--single-thread` this option prevents running multiple copies of one consumer simultaneously.
+*   `--single-thread` this option prevents multiple copies of a consumer from running simultaneously.
 
 *   `--area-code=<value>` the area code preferred for consumer process.
 
