@@ -36,7 +36,7 @@ Parameter | Value | Required? | Default Value
 `<consumer_name>` | The consumer to start. | Yes | |
 
 {: .bs-callout .bs-callout-warning }
-The option `--pid-file-path` was marked as deprecated in releases 2.2.10 and 2.3.3 and pid files won't be generated anymore.
+The `--pid-file-path` option is deprecated in releases 2.2.10 and 2.3.3. Magento will no longer generate pid files.
 
 
 After consuming all available messages, the command terminates. You can run the command again manually or with a cron job. You can also run multiple instances of the `magento queue:consumers:start` command to process large message queues. For example, you can append `&` to the command to run it in the background, return to a prompt, and continue running commands:
