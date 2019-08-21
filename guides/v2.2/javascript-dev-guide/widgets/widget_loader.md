@@ -14,7 +14,7 @@ The Loader widget source is [lib/web/mage/loader.js].
 
 For information about how to initialize a widget in a JS component or `.phtml` template, see the [Initialize JavaScript][] topic.
 
-The Loader widget is instantiated with the following:
+The Loader widget is instantiated with as in the following example:
 
 ```javascript
 $('#example').loader({
