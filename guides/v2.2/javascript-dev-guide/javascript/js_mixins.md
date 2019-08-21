@@ -155,5 +155,5 @@ The following is a list of files in the [`Magento_CheckoutAgreement`] module tha
 [`view/frontend/web/js/model/set-payment-information-mixin.js`]: {{ site.mage2bloburl }}/{{page.guide_version}}/app/code/Magento/CheckoutAgreements/view/frontend/web/js/model/set-payment-information-mixin.js
 [`Magento_CheckoutAgreement`]: {{ site.mage2bloburl }}/{{page.guide_version}}/app/code/Magento/CheckoutAgreements
 [About AMD modules and RequireJS]: {{ page.baseurl }}/javascript-dev-guide/javascript/js-resources.html#requirejs-library
-[modal widget]: {{ page.baseurl }}/javascript-dev-guide/javascript/widgets/widget_modal.html
+[modal widget]: {{ page.baseurl }}/javascript-dev-guide/widgets/widget_modal.html
 [Configure JS resources]: {{ page.baseurl }}/javascript-dev-guide/javascript/js-resources.html
