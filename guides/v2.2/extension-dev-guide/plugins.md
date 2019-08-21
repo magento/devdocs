@@ -250,7 +250,7 @@ class MyUtilityUpdater
 
 ### Prioritizing plugins
 
-The `sortOrder` property for plugins determine when their `before`, `around`, or `after` methods get called when more than one plugins are observing the same method.
+The `sortOrder` property for plugins determine when their `before`, `around`, or `after` methods get called when more than one plugin is observing the same method.
 
 The prioritization rules for ordering plugins:
 
@@ -264,9 +264,7 @@ The prioritization rules for ordering plugins:
   * During each plugin execution, the current plugin will first finish executing its `around` method.
   * When the `around` method completes, the plugin executes its `after` method before moving on to the next plugin.
 
-**Example**
-
-Given the following plugins observing the same method with the following properties:
+With the following plugins observing the same method with the following properties:
 
 |                          | PluginA          | PluginB                        | PluginC                        | Action           |
 | :----------------------: | :--------------: | :----------------------------: | :----------------------------: | :--------------: |
@@ -278,7 +276,7 @@ Given the following plugins observing the same method with the following propert
 | **after**                | afterDispatch()  | afterDispatch()                | afterDispatch()                |                  |
 | :----------------------: | :--------------: | :----------------------------: | :----------------------------: | :--------------: |
 
-The execution flow will be as follows:
+The execution flow is:
 
   * `PluginA::beforeDispatch()`
   * `PluginB::beforeDispatch()`
