@@ -132,7 +132,6 @@ This method is best to prevent accidental exposure of credentials, such as pushi
 
 1.  Remove the `auth.json` file from each environment.
 
-
 ## Edit `composer.json` {#composer-json}
 
 Before you push code to the {{site.data.var.ece}} Git repository, modify your `composer.json` for Cloud. You can also [view a sample `composer.json`](https://raw.githubusercontent.com/magento/magento-cloud/master/composer.json).

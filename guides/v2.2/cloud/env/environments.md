@@ -7,7 +7,7 @@ redirect_from:
 functional_areas:
   - Cloud
 ---
-After fully configuring your store, you need to configure your environments. Environments in {{site.data.var.ece}} include containers with applications, services, and a database to provide a complete system for your Magento application codebase and files. 
+After fully configuring your store, you need to configure your environments. Environments in {{site.data.var.ece}} include containers with applications, services, and a database to provide a complete system for your Magento application codebase and files.
 
 You can configure application settings, routes, build and deploy actions, and notifications to support your project environments using the following configuration files:
 

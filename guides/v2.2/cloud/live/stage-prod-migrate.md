@@ -199,8 +199,10 @@ To migrate a database:
 1. SSH into the environment you want to create a database dump from:
 
    ```bash
-   ssh -A <environment_ssh_link@ssh.region.magento.cloud>
+	ssh -A <environment_ssh_link@ssh.region.magento.cloud>
    ```
+
+1. Find the database login information with the following command:
 
 1. List the environment relationships to find the database login information:
 

@@ -50,6 +50,5 @@ GraphiQL is an in-browser tool for writing, validating, and testing GraphQL quer
 
 To begin using GraphiQL, set the GraphQL endpoint by entering `http://<magento2-3-server>/graphql` in the URL bar, then click **Set endpoint**. You can use the browser in the right column to determine how to set up a query. Additional examples are also available in [Queries]({{ page.baseurl }}/graphql/queries.html).
 
-
 {:.bs-callout .bs-callout-info}
 You can access the GraphQL introspection feature only if your Magento instance is in developer mode. [Set the Magento mode]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html) describes how to check and change the mode.

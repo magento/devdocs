@@ -50,7 +50,6 @@ EAV | No
 Custom | Yes
 Extension | No
 
-
 Attribute types fall into three general categories:
 
 * **EAV (Entity-Attribute-Value) attributes** are site-specific attributes that you can define for a local site using the [Magento Admin](https://glossary.magento.com/magento-admin).

@@ -97,7 +97,7 @@ class Config
 
 2.2.2. Factories SHOULD be used for object instantiation instead of `new` keyword. An object SHOULD be replaceable for testing or extensibility purposes.
 Exception: [DTOs](https://en.wikipedia.org/wiki/Data_transfer_object). There is no behavior in DTOs, so there is no reason for its replaceability.
-Tests can create real DTOs for stubs. 
+Tests can create real DTOs for stubs.
 Data interfaces,  Exceptions and `Zend_Db_Expr` are examples of DTOs.
 
 {:start="2.3"}
@@ -510,7 +510,7 @@ You need to read configuration from different sources (like database or filesyst
 
 6.2.5 Blocks MUST NOT assume that a specific, or any, controller has been invoked for current request.
 
-###  6.3. Data Access (Persistence) layer
+### 6.3. Data Access (Persistence) layer
 
 6.3.1. Entities MAY have fields scoped differently (in product, EAV --- per store, options --- per website).
 
@@ -925,7 +925,7 @@ class SampleEventObserverThatModifiesInputs implements ObserverInterface
 15.11. Security capabilities SHOULD be implemented either on the Magento Framework level or in a dedicated module(s) and utilized by the entire application in a centralize manner.
 
 15.12. Files MUST be secured by a web server configuration (e.g., `.htaccess` or `nginx.conf`), except files that are intended to be publicly accessible.
- 
+
 15.13 Presentation layer classes that access user input directly MUST NOT assume it has been validated.
 
 ## 16. Cron

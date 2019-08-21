@@ -35,7 +35,6 @@ bin/magento config:set system/backup/functionality_enabled 1
 **Deprecation Notice**
 Magento backup functionality is deprecated as of 2.1.16, 2.2.7, and 2.3.0. We recommend investigating additional backup technologies and binary backup tools (such as Percona XtraBackup).
 
-
 ## Set ulimit for the web server user {#instgde-cli-ulimit}
 {% include install/ulimit.md %}
 
@@ -57,7 +56,6 @@ The command performs the following tasks:
     |`--code`|Backs up the Magento file system (excluding var and pub/static directories).|var/backups/<timestamp>\_filesystem.tgz|
     |`--media`|Back up the pub/media directory.|var/backups/<timestamp>\_filesystem_media.tgz|
     |`--db`|Back up the Magento 2 database.|var/backups/<timestamp>\_db.sql|
-    
 
 3.	Takes the store out of maintenance mode.
 

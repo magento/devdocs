@@ -51,7 +51,7 @@ Example ([Magento/Braintree/view/frontend/web/template/payment/form.html]({{ sit
 
 ## Modifying the payment component
 
-The payment component must process the state of the vault-enabling control and update payment `additional_data` before it is sent to the [backend](https://glossary.magento.com/backend). 
+The payment component must process the state of the vault-enabling control and update payment `additional_data` before it is sent to the [backend](https://glossary.magento.com/backend).
 
 Magento has a default vault enabler [UI component](https://glossary.magento.com/ui-component) (`Magento_Vault/js/view/payment/vault-enabler`). In the payment component, you just need to call its `visitAdditionalData` to update the `additional_data` property. The rest is done by the [`\Magento\Vault\Observer\VaultEnableAssigner`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Vault/Observer/VaultEnableAssigner.php) observer.
 
@@ -110,7 +110,7 @@ define([
 
 ## Add request data builder
 
-Now when we have information about enabling or disabling vault, the payment must send it to the payment processor. This is done in the [request builder]({{ page.baseurl }}/payments-integrations/payment-gateway/request-builder.html). 
+Now when we have information about enabling or disabling vault, the payment must send it to the payment processor. This is done in the [request builder]({{ page.baseurl }}/payments-integrations/payment-gateway/request-builder.html).
 
 You can create a new request builder, or update the existing request builder of the payment method.
 
@@ -144,7 +144,7 @@ class VaultDataBuilder implements BuilderInterface
 }
 ```
 
-The builder must be added to the payment authorize request in the DI configuration. 
+The builder must be added to the payment authorize request in the DI configuration.
 Example from the Braintree `di.xml`:
 
 ```xml
@@ -161,5 +161,4 @@ Example from the Braintree `di.xml`:
 ## What's next
 
 [Storing and processing the payment related data]({{ page.baseurl }}/payments-integrations/vault/payment-token.html)
-
 

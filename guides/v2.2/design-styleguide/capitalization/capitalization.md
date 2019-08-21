@@ -35,13 +35,13 @@ However, many terms use lowercase including: merchant, developer, home page, sta
     <ul style="list-style-type:none">
       <li><strong>No</strong> – "Best-rated Platform Software"</li>
       <li>Yes – "Best-Rated Platform Software"</li>
-    </ul>  
+    </ul>
     <ul style="list-style-type:none">
       <li><strong>No</strong> – "Post-Launch Instructions"</li>
       <li>Yes – "Post-launch Instructions"</li>
-    </ul>  
+    </ul>
   </li>
-  <li><strong>All verbs.</strong> 
+  <li><strong>All verbs.</strong>
     <ul>
       <li><em>Capitalize even the little ones.</em></li>
       <li><em>Correct examples:</em> Is, Am, Are, Was, Were, Be, Being, and Been.</li>
@@ -72,13 +72,13 @@ However, many terms use lowercase including: merchant, developer, home page, sta
     <ul style="list-style-type:none">
       <li><strong>No</strong> – “The Key To Customer Service In An Omnichannel World"</li>
       <li>Yes – “The Key to Customer Service in an Omnichannel World”</li>
-    </ul>  
+    </ul>
     </li>
   <li><strong>Brand or company names that use a lowercase initial letter.</strong> ... <em>Tip:</em> Rephrase a heading or sentence to avoid starting with a lowercase letter. <em>See example:</em>
     <ul style="list-style-type:none">
       <li><strong>No</strong> – “EBay, IPod, IPhone"</li>
       <li>Yes – “eBay, iPod, iPhone”</li>
-    </ul>  
+    </ul>
   </li>
 </ul>
 

@@ -26,7 +26,6 @@ Look for the following {{site.data.var.ece}} highlights in this release:
 
 * **Onboarding Portal for new accounts helps merchants new to Magento Commerce (Cloud) get started with their project**. Quickly ramp up and get started with your project with our [Onboarding Portal]({{ site.baseurl }}/guides/v2.2/cloud/onboarding/onboarding-portal.html): assign a Technical Admin, preview your store, plan your local development environment, walk-through UAT tests, and prep for launching.
 
-
 Looking for more information on these new features as well as many others? Check out [Magento 2.2 Developer Documentation]({{ site.baseurl }}/guides/v2.2/).
 
 ## Security enhancements {#security}
@@ -39,8 +38,7 @@ In general, we’ve removed serialize/unserialize from most the code to improve 
 
 ### New Updates
 
-<!--- MAGECLOUD-1057 -->* Magento Commerce (Cloud) supports scopes and [static content deployment strategies]({{ site.baseurl }}/guides/v2.2/config-guide/cli/config-cli-subcommands-static-deploy-strategies.html). We have added the `–s` parameter with a default setting of quick for the static content deployment strategy. You can use the environment variable [SCD_STRATEGY]({{ site.baseurl }}/guides/v2.2/cloud/env/environment-vars_magento.html) to customize and use these strategies with your build and deploy actions. This variable supports the options standard quick, or compact. If you select compact, we override the `STATIC_CONTENT_THREADS` value with 1, which can slow deployment, especially in production environments.   
-
+<!--- MAGECLOUD-1057 -->* Magento Commerce (Cloud) supports scopes and [static content deployment strategies]({{ site.baseurl }}/guides/v2.2/config-guide/cli/config-cli-subcommands-static-deploy-strategies.html). We have added the `–s` parameter with a default setting of quick for the static content deployment strategy. You can use the environment variable [SCD_STRATEGY]({{ site.baseurl }}/guides/v2.2/cloud/env/environment-vars_magento.html) to customize and use these strategies with your build and deploy actions. This variable supports the options standard quick, or compact. If you select compact, we override the `STATIC_CONTENT_THREADS` value with 1, which can slow deployment, especially in production environments.
 
 * When you create a new project, we automatically provision the project with the latest Magento Commerce (Cloud) code. The steps include cloning the latest code repository, adding an environment variable for `ADMIN_EMAIL` using the License Owner’s email, setting a default randomized Magento Admin password, and sending emails to the License Owner to access the project and reset the default Magento Admin password. For details, see [Onboarding tasks]({{ site.baseurl }}/guides/v2.2/cloud/onboarding/onboarding-tasks.html).
 
@@ -54,7 +52,7 @@ For all known {{site.data.var.ee}} 2.2.1  issues, see [Magento Commerce 2.2.1 Re
 
 <!-- MAGECLOUD-1355 -->* You can now [manually reset stuck Magento cron jobs]({{ site.baseurl }}/guides/v2.2/cloud/trouble/reset-cron-jobs.html) using a CLI command in all environments via SSH access. The deployment process automatically resets cron jobs. You must [patch magento/ece-tools]({{ site.baseurl }}/guides/v2.2/cloud/project/project-patch.html) to get this update.
 
-<!--- MAGECLOUD-1121 -->* We resolved an issue with the ElasticSearch option being added and saved to `app/etc/env.php`. When ElasticSearch is configured and activated in your environment, the setting properly saves in the `env.php` file. For example:  
+<!--- MAGECLOUD-1121 -->* We resolved an issue with the ElasticSearch option being added and saved to `app/etc/env.php`. When ElasticSearch is configured and activated in your environment, the setting properly saves in the `env.php` file. For example:
 
 <code><?php
 //........

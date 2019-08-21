@@ -23,9 +23,8 @@ Command | Description
 `wizard:ideal-state` | Check that SCD is on the _build_ stage, the `SKIP_HTML_MINIFICATION` variable is `true`, and the post_deploy hook configured.
 `wizard:master-slave` | Check that the `REDIS_USE_SLAVE_CONNECTION` variable and the `MYSQL_USE_SLAVE_CONNECTION` variable is `true`.
 `wizard:scd-on-demand` | Check that the `SCD_ON_DEMAND` global environment variable is `true`.
-`wizard:scd-on-build ` | Check that the `SCD_ON_DEMAND` global environment variable is `false` and the `SKIP_SCD` environment variable is `false` for the _build_ stage. Verifies that the `config.php` file contains information for stores, store groups, and websites.
+`wizard:scd-on-build` | Check that the `SCD_ON_DEMAND` global environment variable is `false` and the `SKIP_SCD` environment variable is `false` for the _build_ stage. Verifies that the `config.php` file contains information for stores, store groups, and websites.
 `wizard:scd-on-deploy` | Check that the `SCD_ON_DEMAND` global environment variable is `false` and the `SKIP_SCD` environment variable is `false` for the _deploy_ stage. Verifies that the `config.php` file does _NOT_ contain the list of stores, store groups, and websites with related information.
-
 
 As an example, you can verify that your configuration properly enables the SCD on-demand feature:
 
@@ -65,7 +64,7 @@ Based on the output, you need to make the following corrections to your configur
 1.  Enable the Skip HTML minification variable.
 
     > .magento.env.yaml
-    
+
     ```yaml
     stage:
       global:
@@ -75,7 +74,7 @@ Based on the output, you need to make the following corrections to your configur
 1.  Configure the post-deploy hook.
 
     > .magento.app.yaml
-    
+
     ```yaml
         post_deploy: |
             php ./vendor/bin/ece-tools post-deploy

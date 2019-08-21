@@ -54,7 +54,7 @@ We recommend enabling Blackfire in all of your active environments, including th
 -   Set the `MAGENTO_CLOUD_APPLICATION` environment variable in Staging or Production environment.
 
     Use the following to verify the settings:
-    
+
     ```
     magento-cloud ssh 'PRO="$(env | grep -v SSH_ORIGINAL_COMMAND | grep MAGENTO_CLOUD_APPLICATION)"; [[ -n "$PRO" ]] && echo "MAGENTO_CLOUD_APPLICATION exists" || echo "MAGENTO_CLOUD_APPLICATION does not exist; contact {{site.data.var.ece}} support"'
     ```
@@ -88,7 +88,6 @@ We recommend using the Blackfire installation guide to walk you through the proc
 1.  Scroll to the bottom and locate the _Server ID_ and _Server Token_ for the environment. You need these values for the instructions.
 
 1.  Open the [Blackfire installation guide](https://blackfire.io/docs/up-and-running/installation), select the Operating System, and follow the instructions.
-
 
 ## Blackfire troubleshooting
 
@@ -160,7 +159,7 @@ We recommend working in a branch and creating a snapshot prior to installing. If
 #### Next, modify the `.magento.app.yaml` file:
 
 1.  Use a text editor to locate and edit the `<project root dir>/.magento.app.yaml` file in your branch.
-	
+
 1.  Enter `- name: blackfire` in the `extensions` block under `runtime`.
 
     ```
@@ -186,7 +185,7 @@ We recommend working in a branch and creating a snapshot prior to installing. If
 
 ### Changing from the default route {#route}
 
-Instead of using the default route, you can change the route in the Blackfire _Magento Cloud Integration_ page (expand _Advanced Settings_ to reveal the route selection setting) to the desired route from your `routes.yaml` file. 
+Instead of using the default route, you can change the route in the Blackfire _Magento Cloud Integration_ page (expand _Advanced Settings_ to reveal the route selection setting) to the desired route from your `routes.yaml` file.
 
 ## Profile your store {#profile}
 
@@ -311,7 +310,7 @@ You can disable logging by cleaning the temporary log file and removing the log 
 magento-cloud variable:delete php:blackfire.log_file
 ```
 
-```bash 
+```bash
 magento-cloud variable:delete php:blackfire.log_level
 ```
 

@@ -43,7 +43,6 @@ Name | Description | Format | Requirements
 `price_from` | The date and time the special price goes into effect. The date/time format is `YYYY-MM-DD hh:mm:ss`. The specified time must be later than the current time.  | string | Required in {{site.data.var.ee}}. Optional in {{site.data.var.ce}}.
 `price_to` | The date and time the special price ends. The date/time format is `YYYY-MM-DD hh:mm:ss` If no value is specified, the special price does not expire. | string | Optional
 
-
 ### Set special prices
 
 All calls to set special prices must include the `store_id`, `sku`, and `price` parameters. If the call is sent to an {{site.data.var.ee}} installation, the call must also include the `price_from` parameter. If the call is sent to a {{site.data.var.ce}} installation, then the `price_from` parameter is optional.
@@ -193,7 +192,6 @@ Simple | fixed, discount
 Bundle | discount
 Virtual | fixed, discount
 Downloadable | fixed, discount
-
 
 **Service Name**
 
@@ -415,7 +413,6 @@ Name | Description | Format | Requirements
 `sku` | The SKU of the product | string | Required to set a base price
 `skus` | An array of SKU values that is specified when retrieving a list of base prices | array | Required for retrievals
 
-
 ### Set base prices
 
 The `POST /V1/products/base-price` call can set base prices for the following types of products:
@@ -509,7 +506,6 @@ Name | Description | Format | Requirements
 `store_id` | The store ID  to apply the cost value | integer | Required to set or delete a cost value
 `sku` | The SKU of the product | string | Required to set or delete a cost value
 `skus` | An array of SKU values that is specified when retrieving a list of cost values | array | Required for retrievals
-
 
 ### Set cost values
 

@@ -8,7 +8,6 @@ menu_order: 2
 ee_only: true
 ---
 
-
 The Magento_LayeredNavigationStaging [module](https://glossary.magento.com/module) is a part of the staging functionality in {{site.data.var.ee}}.
 It restricts functionality of the Magento_LayeredNavigationStaging module in the staging preview mode.
 

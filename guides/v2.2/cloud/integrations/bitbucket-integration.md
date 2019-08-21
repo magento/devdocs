@@ -126,7 +126,7 @@ The Bitbucket integration requires an [OAuth consumer](https://confluence.atlass
 1.  Add the integration to your project using the `magento-cloud` CLI tool.
 
     {: .bs-callout .bs-callout-warning}
-    The following command overwrites _all_ code in your {{site.data.var.ece}} project with code from your Bitbucket repository. This includes all branches, including the Production branch. This action happens instantly and cannot be undone. As a best practice, it is very important to clone all of your branches from your {{site.data.var.ece}} project and push them to your Bitbucket repository **before** adding the Bitbucket integration. 
+    The following command overwrites _all_ code in your {{site.data.var.ece}} project with code from your Bitbucket repository. This includes all branches, including the Production branch. This action happens instantly and cannot be undone. As a best practice, it is very important to clone all of your branches from your {{site.data.var.ece}} project and push them to your Bitbucket repository **before** adding the Bitbucket integration.
 
     ```bash
     magento-cloud project:curl -p '<project-ID>' /integrations -i -X POST -d "$(< bitbucket.json)"
@@ -152,7 +152,7 @@ The Bitbucket integration requires an [OAuth consumer](https://confluence.atlass
     +----------+-----------+--------------------------------------------------------------------------------+
     ```
     {: .no-copy}
-    
+
     Make a note of the **Hook URL** to configure a webhook in BitBucket.
 
 ### Add a webhook in BitBucket
@@ -222,7 +222,7 @@ The Bitbucket integration cannot activate new environments in your {{site.data.v
     ```
 
     ```
-    Your environments are: 
+    Your environments are:
     +---------------------+----------------+--------+
     | ID                  | Name           | Status |
     +---------------------+----------------+--------+
