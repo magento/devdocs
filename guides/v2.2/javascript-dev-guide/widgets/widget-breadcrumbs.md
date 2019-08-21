@@ -96,8 +96,8 @@ The Breadcrumb List Items should have the following structure:
 | --- | --- | --- |
 | `name` | The class of a breadcrumb item. | String |
 | `link` | The URL link of a breadcrumb item. | String |
-| `title` | The title of a breadcrumb item link. | String |
-| `label` | The label of a breadcrumb item. | String |
+| `title` | The title option of a breadcrumb item is used as the `<a>` tag title attribute. | String |
+| `label` | The label option of a breadcrumb item is used as the text of `<a>` tag. | String |
 
 The Breadcrumb List Item Options in the [HTML](https://glossary.magento.com/html):
 
