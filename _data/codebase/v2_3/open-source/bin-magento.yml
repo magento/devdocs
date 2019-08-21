@@ -5107,7 +5107,7 @@ commands:
 
         <comment>bin/magento queue:consumers:start someConsumer --area-code='adminhtml'</comment>
 
-    To prevent multiple copies of a consumer from running at the same time, run the consumer with the `single-thread`option: 
+    To prevent multiple copies of a consumer from running at the same time, run the consumer with the `single-thread` option: 
 
         <comment>%command.full_name% someConsumer --single-thread'</comment>
 
