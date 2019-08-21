@@ -5111,7 +5111,6 @@ commands:
 
         <comment>%command.full_name% someConsumer --single-thread'</comment>
 
-    To save PID enter path (This option is deprecated, use --single-thread instead):
 
         <comment>bin/magento queue:consumers:start someConsumer --pid-file-path='/var/someConsumer.pid'</comment>
   definition:
