@@ -1,5 +1,4 @@
 
-
 | Contributing community member | Pull Requests | Related GitHub Issues |
 | ------- | ------- | ------- |
 | jissereitsma | [#16361](https://github.com/magento/magento2/pull/16361) | [15196](https://github.com/magento/magento2/issues/15196) |

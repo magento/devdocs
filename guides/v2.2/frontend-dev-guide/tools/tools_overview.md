@@ -6,7 +6,6 @@ functional_areas:
   - Tools
 ---
 
-
 This chapter describes how to install and use additional tools that can make your Magento frontend development tasks easier.
 
 **Chapter Contents**

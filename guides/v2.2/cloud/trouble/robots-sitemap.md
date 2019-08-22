@@ -48,11 +48,11 @@ This requires ECE-Tools version 2002.0.12 and later with an updated `.magento.ap
 Create a custom VCL snippet to rewrite the path for `sitemap.xml` to `/media/sitemap.xml` using the `type` and `content` key-value pairs.
 
 ```json
-{ 
+{
   "name": "sitemapxml_rewrite",
   "dynamic": "0",
   "type": "recv",
   "priority": "90",
-  "content": "if ( req.url.path ~ \"^/?sitemap.xml$\" ) { set req.url = \"/media/sitemap.xml\"; }" 
+  "content": "if ( req.url.path ~ \"^/?sitemap.xml$\" ) { set req.url = \"/media/sitemap.xml\"; }"
 }
 ```

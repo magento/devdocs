@@ -96,27 +96,27 @@ To enable maintenance mode:
         If you use a cache storage other than filesystem (e.g., Redis, Memcached, etc.) you need to manually clear the cache there too.
     </div>
 6. Update the database schema and data:
-   
+
    ```bash
    php bin/magento setup:upgrade
    ```
-   
+
 7. Put your storefront online (that is, cancel maintenance mode):
-   
+
    ```bash
    php bin/magento maintenance:disable
    ```
-   
+
 8. Restart Varnish if you use it for page caching.
-   
+
    ```bash
    service varnish restart
    ```
-   
+
 9. Access your storefront.
 
    The following error might display:
-   
+
    ```terminal
    We're sorry, an error has occurred while generating this email.
    ```

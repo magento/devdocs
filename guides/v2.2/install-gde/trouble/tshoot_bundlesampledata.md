@@ -13,9 +13,9 @@ functional_areas:
 
 ### Details
 
-During the installation, a  message similar to the following displays: 
+During the installation, a  message similar to the following displays:
 
-	[ERROR] exception 'LogicException' with message 'Unknown module in the requested list: 'Magento_BundleSampleData'' 
+	[ERROR] exception 'LogicException' with message 'Unknown module in the requested list: 'Magento_BundleSampleData''
 
 ### Solution
 

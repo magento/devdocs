@@ -76,7 +76,7 @@ For example, the following command starts the Docker configuration generator for
     ```bash
     echo "127.0.0.1 magento2.docker" | sudo tee -a /etc/hosts
     ```
-    
+
     {: .bs-callout-tip }
 To change the `magento2.docker` hostname for your project, you must update the host in three files: `.docker/config.php`, `docker-compose.yml`, and `/etc/hosts`
 
@@ -231,8 +231,14 @@ The `{{site.data.var.ct}}` version 2002.0.18 and later supports developer mode.
 
     If it is the first installation you should wait a few minutes for synchronization files
 
+<<<<<<< HEAD
     {: .bs-callout-info}
     If you use `mutagen.io` for file synchronization, skip this step. You start `mutagen.io` _after_ deploying the docker containers.
+=======
+    ```bash
+    bash ./mutagen.sh
+    ```
+>>>>>>> master
 
 1.  Build files to containers and run in the background.
 

@@ -10,8 +10,6 @@ The `.magento.app.yaml` file controls the way your application builds and deploy
 
 The `.magento.app.yaml` has many default values, see [a sample `.magento.app.yaml` file](https://github.com/magento/magento-cloud/blob/master/.magento.app.yaml). Always review the `.magento.app.yaml` for your installed version. This file can differ across {{site.data.var.ece}} versions.
 
-{% include cloud/note-pro-using-yaml.md %}
-
 ## Properties
 
 Use the following properties to build your application configuration file. The `name`, `type`, `disk`, and one `web` or `worker` block is required.
@@ -98,8 +96,8 @@ Contrary to standard `.htaccess` approaches that accept a _blacklist_ and allow 
 
 Our default configuration allows the following:
 
--  From the root (`/`) path, only web and media can be accessed
--  From the `~/pub/static` and `~/pub/media` paths, any file can be accessed
+- From the root (`/`) path, only web and media can be accessed
+- From the `~/pub/static` and `~/pub/media` paths, any file can be accessed
 
 The following example shows the default configuration for a set of web-accessible locations associated with an entry in the  [`mounts` property](#mounts):
 
@@ -166,7 +164,7 @@ mounts:
 
 The format for adding your mount to this list is as follows:
 
-```
+```bash
 "/public/sites/default/files": "shared:files/files"
 ```
 
@@ -193,7 +191,7 @@ Those dependencies are independent of the eventual dependencies of your applicat
 
 You can specify those dependencies as follows:
 
-```
+```yaml
 ruby:
    sass: "~3.4"
 nodejs:
@@ -204,11 +202,11 @@ nodejs:
 
 Use the `hooks` section to run shell commands during the build, deploy, and post-deploy phases:
 
--   **`build`**—Execute commands _before_ packaging your application. Services, such as the database or Redis, are not available at this time since the application has not been deployed yet. You must add custom commands _before_ the default `php ./vendor/bin/ece-tools` command so that custom-generated content continues to the deployment phase.
+-  **`build`**—Execute commands _before_ packaging your application. Services, such as the database or Redis, are not available at this time since the application has not been deployed yet. You must add custom commands _before_ the default `php ./vendor/bin/ece-tools` command so that custom-generated content continues to the deployment phase.
 
--   **`deploy`**—Execute commands _after_ packaging and deploying your application. You can access other services at this point. Since the default `php ./vendor/bin/ece-tools` command copies the `app/etc` directory to the correct location, you must add custom commands _after_ the deploy command to prevent custom commands from failing.
+-  **`deploy`**—Execute commands _after_ packaging and deploying your application. You can access other services at this point. Since the default `php ./vendor/bin/ece-tools` command copies the `app/etc` directory to the correct location, you must add custom commands _after_ the deploy command to prevent custom commands from failing.
 
--   **`post_deploy`**—Execute commands _after_ deploying your application and _after_ the container begins accepting connections. The `post_deploy` hook clears the cache and preloads (warms) the cache. You can customize the list of pages using the `WARM_UP_PAGES` variable in the [Post-deploy stage]({{ page.baseurl }}/cloud/env/variables-post-deploy.html). It is available only for Pro projects that contain [Staging and Production environments in the Project Web UI]({{ page.baseurl }}/cloud/trouble/pro-env-management.html) and for Starter projects. Although not required, this works in tandem with the `SCD_ON_DEMAND` environment variable.
+-  **`post_deploy`**—Execute commands _after_ deploying your application and _after_ the container begins accepting connections. The `post_deploy` hook clears the cache and preloads (warms) the cache. You can customize the list of pages using the `WARM_UP_PAGES` variable in the [Post-deploy stage]({{ page.baseurl }}/cloud/env/variables-post-deploy.html). Although not required, this works in tandem with the `SCD_ON_DEMAND` environment variable.
 
 Add CLI commands under the `build`, `deploy`, or `post_deploy` sections _before_ the `ece-tools` command:
 
@@ -308,13 +306,10 @@ variables:
 
 You can choose which version of PHP to run in your `.magento.app.yaml` file:
 
-```
+```yaml
 name: mymagento
-type: php:7.1
+type: php:7.2
 ```
-
-{:.bs-callout .bs-callout-info}
-{{site.data.var.ece}} supports PHP 7.1 and later. For Pro projects **created before October 23, 2017**, you must open a [support ticket]({{ page.baseurl }}/cloud/trouble/trouble.html) to use PHP 7.1 on your Pro Staging and Production environments.
 
 ### PHP extensions
 
@@ -348,92 +343,92 @@ For details about a specific PHP extension, see the [PHP Extension List](https:/
 {{site.data.var.ece}} supports the following extensions:
 
 -  Default extensions:
-    -  `bcmath`
-    -  `bz2`
-    -  `calendar`
-    -  `exif`
-    -  `gd`
-    -  `gettext`
-    -  `intl`
-    -  `mysqli`
-    -  `pcntl`
-    -  `pdo_mysql`
-    -  `soap`
-    -  `sockets`
-    -  `sysvmsg`
-    -  `sysvsem`
-    -  `sysvshm`
-    -  `opcache`
-    -  `zip`
+   -  `bcmath`
+   -  `bz2`
+   -  `calendar`
+   -  `exif`
+   -  `gd`
+   -  `gettext`
+   -  `intl`
+   -  `mysqli`
+   -  `pcntl`
+   -  `pdo_mysql`
+   -  `soap`
+   -  `sockets`
+   -  `sysvmsg`
+   -  `sysvsem`
+   -  `sysvshm`
+   -  `opcache`
+   -  `zip`
 
 -  Extensions that are installed and cannot be uninstalled:
-    -  `ctype`
-    -  `curl`
-    -  `date`
-    -  `dom`
-    -  `fileinfo`
-    -  `filter`
-    -  `ftp`
-    -  `hash`
-    -  `iconv`
-    -  `json`
-    -  `mbstring`
-    -  `mysqlnd`
-    -  `openssl`
-    -  `pcre`
-    -  `pdo`
-    -  `pdo_sqlite`
-    -  `phar`
-    -  `posix`
-    -  `readline`
-    -  `session`
-    -  `sqlite3`
-    -  `tokenizer`
-    -  `xml`
-    -  `xmlreader`
-    -  `xmlwriter`
+   -  `ctype`
+   -  `curl`
+   -  `date`
+   -  `dom`
+   -  `fileinfo`
+   -  `filter`
+   -  `ftp`
+   -  `hash`
+   -  `iconv`
+   -  `json`
+   -  `mbstring`
+   -  `mysqlnd`
+   -  `openssl`
+   -  `pcre`
+   -  `pdo`
+   -  `pdo_sqlite`
+   -  `phar`
+   -  `posix`
+   -  `readline`
+   -  `session`
+   -  `sqlite3`
+   -  `tokenizer`
+   -  `xml`
+   -  `xmlreader`
+   -  `xmlwriter`
 
 -  Extensions that can be installed and uninstalled as needed:
-    -  `bcmath`
-    -  `bz2`
-    -  `calendar`
-    -  `exif`
-    -  `gd`
-    -  `geoip`
-    -  `gettext`
-    -  `gmp`
-    -  `igbinary`
-    -  `imagick`
-    -  `imap`
-    -  `intl`
-    -  `ldap`
-    -  `mailparse`
-    -  `mcrypt`
-    -  `msgpack`
-    -  `mysqli`
-    -  `oauth`
-    -  `opcache`
-    -  `pdo_mysql`
-    -  `propro`
-    -  `pspell`
-    -  `raphf`
-    -  `recode`
-    -  `redis`
-    -  `shmop`
-    -  `soap`
-    -  `sockets`
-    -  `sodium`
-    -  `ssh2`
-    -  `sysvmsg`
-    -  `sysvsem`
-    -  `sysvshm`
-    -  `tidy`
-    -  `xdebug`
-    -  `xmlrpc`
-    -  `xsl`
-    -  `yaml`
-    -  `zip`
-    -  `pcntl`
+   -  `bcmath`
+   -  `bz2`
+   -  `calendar`
+   -  `exif`
+   -  `gd`
+   -  `geoip`
+   -  `gettext`
+   -  `gmp`
+   -  `igbinary`
+   -  `imagick`
+   -  `imap`
+   -  `intl`
+   -  `ldap`
+   -  `mailparse`
+   -  `mcrypt`
+   -  `msgpack`
+   -  `mysqli`
+   -  `oauth`
+   -  `opcache`
+   -  `pdo_mysql`
+   -  `propro`
+   -  `pspell`
+   -  `raphf`
+   -  `recode`
+   -  `redis`
+   -  `shmop`
+   -  `soap`
+   -  `sockets`
+   -  `sodium`
+   -  `ssh2`
+   -  `sysvmsg`
+   -  `sysvsem`
+   -  `sysvshm`
+   -  `tidy`
+   -  `xdebug`
+   -  `xmlrpc`
+   -  `xsl`
+   -  `yaml`
+   -  `zip`
+   -  `pcntl`
 
 {: .bs-callout-warning}
 PHP compiled with debug is not supported and the Probe may conflict with XDebug or XHProf. Disable those extensions when enabling the Probe. The Probe conflicts with some PHP extensions like Pinba or IonCube.
@@ -484,7 +479,7 @@ Use worker instances for background tasks including:
 
 A basic, common worker configuration could look like this:
 
-```
+```yaml
 workers:
     queue:
         size: S

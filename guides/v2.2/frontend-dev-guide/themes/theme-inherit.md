@@ -77,14 +77,12 @@ If module context is defined for a file:
 3. Module static view files for the `frontend` area: `<module_dir>/view/frontend/web/`
 4. Module static view files for the `base` area: `<module_dir>/view/base/web/`
 
-
 **Example**
 
 A company named OrangeCo created a theme named Orange. The theme files are located in `app/design/frontend/OrangeCo/orange`.
 Orange inherits from the Magento Blank theme.
 
 Let's imagine OrangeCo needs to add some winter holidays decor. So it creates a new `orange_winter` theme, which inherits from Orange. The theme is located in `app/design/frontend/OrangeCo/orange_winter`.
-
 
 In the Orange theme there is a footer background image located at `app/design/frontend/OrangeCo/orange/web/images/background.jpg`.
 
@@ -103,7 +101,6 @@ The fallback scheme for templates is the following (module context is always kno
 1. Current theme templates: `<theme_dir>/<Namespace>_<Module>/templates`
 2. Ancestors themes templates, recursively, until a theme with no ancestor is reached: `<parent_theme_dir>/<Namespace>_<Module>/templates`
 3. Module templates: `<module_dir>/view/frontend/templates`
-
 
 So if you need to customize a certain template, you need to create an overriding one with the same name in the `../templates/<path_to_template>` directory in the theme module files. Where `<path_to_template>` is the path to the original template.
 
@@ -153,7 +150,6 @@ To do this, they added an extending layout in `app/design/frontend/OrangeCo/oran
     </body>
 </page>
 ```
-
 
 For more information about extending layout refer to the [Extend a layout]({{ page.baseurl }}/frontend-dev-guide/layouts/layout-extend.html) article.
 

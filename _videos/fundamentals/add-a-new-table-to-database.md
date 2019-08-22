@@ -67,7 +67,6 @@ Now create two files:
 
 {% endcollapsible %}
 
-
 `Learning/GreetingMessage/etc/module.xml`
 
 {% collapsible Show code %}

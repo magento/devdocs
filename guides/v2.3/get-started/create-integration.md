@@ -7,7 +7,6 @@ menu_order: 1
 
 ---
 
-
 An **integration** enables third-party services to call the Magento web APIs. The Magento APIs currently supports Accounting, Enterprise Resource Planning (ERP), Customer Relationship Management (CRM), Product Information Management (PIM), and marketing automation systems out of the box.
 
 Implementing a simple integration requires little knowledge of [PHP](https://glossary.magento.com/php) or Magento internal processes. However, you will need a working knowledge of
@@ -15,7 +14,6 @@ Implementing a simple integration requires little knowledge of [PHP](https://glo
 * [Magento REST or SOAP Web APIs]({{ page.baseurl }}/get-started/bk-get-started-api.html)
 * [Web API authentication]({{ page.baseurl }}/get-started/authentication/gs-authentication.html)
 * [OAuth-based authentication]( {{ page.baseurl }}/get-started/authentication/gs-authentication-oauth.html )
-
 
 Before you begin creating a module, make sure that you have a working installation of Magento 2.0, and the [Magento System Requirements]({{ page.baseurl }}/install-gde/system-requirements.html).
 
@@ -78,7 +76,6 @@ To develop a module, you must:
 
    Module `Magento_Integration` is added to "sequence" to be loaded first. It helps to avoid the issue, when a module with integration config loaded, that leads to a malfunction.
 
-
 3. **Add your module's `composer.json` file.** Composer is a dependency manager for PHP. You must create a `composer.json` file for your module so that Composer can install and update the libraries your module relies on. Place the `composer.json` file in the `module-<module_name>` directory.
 
     The following example demonstrates a minimal `composer.json` file.
@@ -102,7 +99,6 @@ To develop a module, you must:
          }
       }
     ```
-
 
     For more information, see [Create a component]({{ page.baseurl }}/extension-dev-guide/build/create_component.html).
 
@@ -141,7 +137,6 @@ Change directories to your `Setup` directory. Create a `InstallData.php` file th
         /**
          * @var ConfigBasedIntegrationManager
          */
-
 
         private $integrationManager;
 
