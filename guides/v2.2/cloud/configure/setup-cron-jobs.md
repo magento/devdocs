@@ -15,7 +15,7 @@ The `.magento.app.yaml` file specifies the configuration for the default Magento
 
 - Pro plan–Integration, Staging, and Production environments including `Master`
 
-The `.magento.app.yaml` file includes the following default crons configuration, which runs the default Magento processes specified in the Magento crontab.
+The `.magento.app.yaml` file includes the following default crons configuration, which runs the default Magento cron jobs:
 
 ```yaml
 crons:
@@ -35,7 +35,7 @@ We use only one cron for {{site.data.var.ece}} projects because of the nature of
 
 ## Verify cron configuration on Pro projects
 
-Magento added an auto-crons configuration option to all Pro plan projects to support self-service cron configuration on Staging and Production environments using the `.magento.app.yaml` file. If this option is enabled, you can use the Magento crontab to review the cron configuration.
+Magento added an auto-crons configuration option to all Pro plan projects to support self-service cron configuration on Staging and Production environments using the `.magento.app.yaml` file. If this option is enabled, you can use crontab to review the cron configuration.
 
 {:.bs-callout-info}
 Although you can use crontab to review configuration on Pro plan projects, Magento does not use crontab to run cron jobs for {{ site.data.var.ee }} sites deployed on the Cloud platform.
