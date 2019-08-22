@@ -11,8 +11,8 @@ Magento is able to operate with a variety of prices, taxes, and product types.
 
 The following is a short list of Magento prices:
 
-1. Special Price. 
-2. Tier Price. 
+1. Special Price.
+2. Tier Price.
 3. Grouped Price.
 4. Minimum price of composite products
 5. Price range of composite products
@@ -52,7 +52,7 @@ The [XML configuration file][ui-component-declaration] for UI components shows t
 <listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
     ...
     <dataSource>
-        <!-- 
+        <!--
             DataProvider should retrieve information about product. In our case will be good to retrieve
             formatted prices with currency code, etc... and raw prices.
             So there will be 4 types of prices:
@@ -72,7 +72,7 @@ The [XML configuration file][ui-component-declaration] for UI components shows t
                 }
                 ...
             }
-         
+
         -->
         <dataProvider class="SomeVendor\SomeModule\Ui\DataProvider\Listing\DataProvider" name="datasource">
             <settings>
@@ -82,10 +82,10 @@ The [XML configuration file][ui-component-declaration] for UI components shows t
         </dataProvider>
     </dataSource>
     <columns name="some_columns" component="SomeVendor_SomeComponent/js/product/list/listing">
-        <!-- 
+        <!--
             Price columns is composite component (it has children),
             so it should have possibility to create those children by itself.
-            
+
             The structure of prices should be:
                 -- Price Box (collection of all prices)
                     --- Price (is responsible for specific price information, also price can hold the collection of adjustments)
@@ -148,7 +148,7 @@ In the following code sample, the `price-box` component aggregates and creates t
 getPrices: function (row) {
     var elems = this.elems() ? this.elems() : ko.getObservable(this, 'elems'),
         result;
-    this.initPrices(row);    
+    this.initPrices(row);
     result = _.filter(elems, function (elem) {
         return elem.productType === row.productType;
     });
@@ -179,7 +179,6 @@ initPrices: function (row) {
 
     layout(prices); //layout is service (abstract factory), which create tree of Ui Components from JSON
 },
-
 
 /**
  * Sort callback to compare prices by sort order

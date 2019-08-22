@@ -14,7 +14,7 @@ This primarily [PHP](https://glossary.magento.com/php) software component is org
 {:.bs-callout .bs-callout-tip}
 Don't confuse the Magento Framework with the Zend web application framework that ships with Magento.
 
-You should never modify Framework files, although if you are extending Magento, you must know how to call Framework libraries. Modules you create will typically inherit from classes and interfaces defined in the Framework directories.  
+You should never modify Framework files, although if you are extending Magento, you must know how to call Framework libraries. Modules you create will typically inherit from classes and interfaces defined in the Framework directories.
 
 ## Responsibilities
 

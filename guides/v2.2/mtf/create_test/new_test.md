@@ -40,12 +40,12 @@ There are two types of test data:
 
  - Data for the test, stored in a [data set][].
  - Preconditions:
-    - Sample data that is stored in a [fixture repository][]. In a data set, it is stored as a name of the fixture repository. 
+    - Sample data that is stored in a [fixture repository][]. In a data set, it is stored as a name of the fixture repository.
     - A sample test entity that can be created by a [handler][].
 
 #### Test flow {#test-flow}
 
-A test flow is a set of test steps that you want to perform under the test object to check required functionality. Test steps are defined in a [test case][]. Usually, a test step contains a set of actions. Each action is managed by a method defined in a [block][]. A [page][] is a container for blocks. It stores selectors to identify blocks on an [HTML](https://glossary.magento.com/html) page. 
+A test flow is a set of test steps that you want to perform under the test object to check required functionality. Test steps are defined in a [test case][]. Usually, a test step contains a set of actions. Each action is managed by a method defined in a [block][]. A [page][] is a container for blocks. It stores selectors to identify blocks on an [HTML](https://glossary.magento.com/html) page.
 
 #### Test assertions {#test-assertions}
 

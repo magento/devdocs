@@ -125,9 +125,9 @@ Marks a variable read-only and suitable for inlining. Generates warnings if it i
 ```javascript
 
 /** @const */ var DEFAULT_TIMEZONE = 'GMT';
- 
+
 /** @const */ MyClass.DEFAULT_TIMEZONE = 'GMT';
- 
+
 /**
  * My namespace's default timezone.
  *
@@ -156,7 +156,6 @@ project.MyClass.EmptyNodeList = function() {
 
 ```
 
-
 #### @interface {#frontend-dev-guide-javascript-js-coding-docblock-interface}
 
 Used to indicate that the function defines an interface.
@@ -170,7 +169,7 @@ Used to indicate that the function defines an interface.
  */
 function Shape() {};
 Shape.prototype.draw = function() {};
- 
+
 /**
  * A polygon.
  *
@@ -195,7 +194,7 @@ Used with `@constructor` to indicate that a class implements an interface.
  */
 function Shape() {};
 Shape.prototype.draw = function() {};
- 
+
 /**
  * @constructor
  * @implements {Shape}
@@ -324,7 +323,7 @@ This annotation can be used to declare an alias of a more complex type.
 
 /** @typedef {(string|number)} */
 namespace.NumberLike;
- 
+
 /** @param {namespace.NumberLike} x A number or a string. */
 namespace.readNumber = function(x) {
     // ...
@@ -462,7 +461,7 @@ So the key will always be a string in for...in loops. But the compiler will veri
 		<td>SomeClass</td>
 		<td><pre>/** @constructor */
 function SomeClass() {}
- 
+
 new SomeClass();</pre></td>
 		<td />
 	</tr>
@@ -470,7 +469,7 @@ new SomeClass();</pre></td>
 		<td>SomeInterface</td>
 		<td><pre>/** @interface */
 function SomeInterface() {}
- 
+
 SomeInterface.prototype.draw = function() {};</pre></td>
 		<td />
 	</tr>
@@ -478,7 +477,7 @@ SomeInterface.prototype.draw = function() {};</pre></td>
 		<td>project.MyClass</td>
 		<td><pre>/** @constructor */
 project.MyClass = function () {}
- 
+
 new project.MyClass()</pre></td>
 		<td />
 	</tr>

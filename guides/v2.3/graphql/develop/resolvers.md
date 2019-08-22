@@ -12,7 +12,7 @@ A resolver requires the following arguments:
 - $value
 - $args
 
-```php    
+```php
     /**
      * Fetches the data from persistence models and format it according to the GraphQL schema.
      *
@@ -38,7 +38,7 @@ Field | Type | Description
 $field | [`Magento\Framework\GraphQl\Config\Element\Field`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/GraphQl/Config/Element/Field.php) | Fields are used to describe possible values for a type/interface
 $context | [`Magento\Framework\GraphQl\Query\Resolver\ContextInterface`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/GraphQl/Query/Resolver/ContextInterface.php) | Resolver context is used as a shared data extensible object in all resolvers that implement [`ResolverInterface`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/GraphQl/Query/ResolverInterface.php).
 $info | [`Magento\Framework\GraphQl\Schema\Type\ResolveInfo`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/GraphQl/Schema/Type/ResolveInfo.php) | Structure containing information useful for field resolution process.
-$value | array | Contains additional query parameters. `Null` in most cases. 
+$value | array | Contains additional query parameters. `Null` in most cases.
 $args | array | Contains input arguments of query.
 
 A GraphQL resolver must implement the [`\Magento\Framework\GraphQl\Query\ResolverInterface`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/GraphQl/Query/ResolverInterface.php) interface. This interface returns [`\Magento\Framework\GraphQl\Query\Resolver\Value`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/GraphQl/Query/Resolver/Value.php) or any type of data (mixed). This value takes in a callable function to its constructor that will be invoked at the latest possible time for the resolver to require its data. As a result, a list of items being resolved can be retrieved all at once by establishing a buffer that contains all relevant parent data to filter and fetch for the children list data.
@@ -47,7 +47,7 @@ You can view an example inside the [`\Magento\BundleGraphQl\Model\Resolver\Bundl
 
 A `Value` object wraps a callable object, and you can use [`\Magento\Framework\GraphQl\Query\Resolver\ValueFactory`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/GraphQl/Query/Resolver/ValueFactory.php) to create a value.
 
-## Mutation requirements  
+## Mutation requirements
 
 Like queries, mutations are also defined within the `<module_name>/etc/schema.graphqls` file.
 
@@ -97,7 +97,7 @@ type InputParamsType {
 
 ### Resolver class
 Use the following sample code as a template for the GraphQl resolver query/mutation class
- 
+
 ```php
 <?php
 /**

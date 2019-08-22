@@ -44,7 +44,6 @@ The Magento_Shipping module adds a component rendered as a link to the Shipping 
 
 `<Magento_Shipping_module_dir>/view/frontend/layout/checkout_index_index.xml` looks like following:
 
-
 ```xml
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>

@@ -18,7 +18,7 @@ The following example removes a coupon from the cart.
 ``` text
 mutation {
   removeCouponFromCart(
-    input: 
+    input:
       { cart_id: "IeTUiU0oCXjm0uRqGCOuhQ2AuQatogjG" }
     ) {
     cart {
@@ -78,7 +78,7 @@ mutation {
 
 ## Input attributes
 
-The `removeCouponFromCart` mutation requires the `cart_id` attribute. 
+The `removeCouponFromCart` mutation requires the `cart_id` attribute.
 
 ### removeCouponFromCart object {#removeCouponFromCart}
 

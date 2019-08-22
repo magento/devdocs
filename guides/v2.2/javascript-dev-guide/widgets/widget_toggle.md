@@ -35,7 +35,7 @@ Phtml template file examples using script:
         'toggleAdvanced'
     ], function ($) {
         'use strict';
-        
+
         $("#element").toggleAdvanced();
     });
 </script>

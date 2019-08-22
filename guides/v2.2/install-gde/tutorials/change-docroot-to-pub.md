@@ -70,7 +70,7 @@ The name and location of your virtual host file depends on which version of Apac
     ```
 4.  Restart Apache:
 
-        systemctl restart apache2  
+        systemctl restart apache2
 
 ## 2. Update your base URL
 

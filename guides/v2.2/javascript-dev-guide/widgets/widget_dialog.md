@@ -18,7 +18,7 @@ The dropdownDialog widget source is located in [lib/web/mage/dropdown.js].
 For information about how to initialize a widget in a JS component or `.phtml` template, see the [Initialize JavaScript] topic.
 
 ## Options {#dialog_options}
- 
+
 Magento customized Dialog widget has default [jQuery UI Dialog widget](http://api.jqueryui.com/dialog/){:target="_blank"} options, plus several custom options:
 -   [autoPosition](#d_autoPosition)
 -   [autoSize](#d_autoSize)
@@ -38,9 +38,9 @@ Description of each option as follows below location.
 
 ### `autoPosition`   {#d_autoPosition}
 
-Specifies if the [`position`] option is used for calculating the drop-down offset. 
+Specifies if the [`position`] option is used for calculating the drop-down offset.
 
-If set to `false` (default value), then `position` rules are not used and the drop-down is positioned under the element for which the widget is initialized. Otherwise the drop-down offset is calculated using the `position` rules.  
+If set to `false` (default value), then `position` rules are not used and the drop-down is positioned under the element for which the widget is initialized. Otherwise the drop-down offset is calculated using the `position` rules.
 
 **Type**: Boolean
 
@@ -121,7 +121,7 @@ Name of the event that triggers the `open()` function for drop-down.
 ### `triggerTarget` {#d_triggerTarget}
 Element that triggers the drop-down.
 
-**Type**: 
+**Type**:
 
 - String
 - jQuery object
@@ -137,7 +137,7 @@ The number of milliseconds until the dropdown is closed after mouse pointer move
 
 ## Methods {#dialog_methods}
 
-Magento customized dropdownDialog widget has default [jQuery UI Dialog widget] methods, though some of them are customized. 
+Magento customized dropdownDialog widget has default [jQuery UI Dialog widget] methods, though some of them are customized.
 
 Customized public methods:
 -   [open()](#d_open)

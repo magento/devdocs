@@ -68,7 +68,6 @@ To add the Google API key:
 
 See [Onboarding Google Shopping ads](https://docs.magento.com/m2/ce/user_guide/sales-channels/google-ads/onboarding-google.html) to continue.
 
-
 ## Update
 
 If an update is available, a message displays when opening Google Shopping ads Channel.

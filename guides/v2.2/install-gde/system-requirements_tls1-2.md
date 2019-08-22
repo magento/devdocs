@@ -15,8 +15,3 @@ functional_areas:
 
 {% include install/paypal-tls1-2.md %}
 
-
-
-
-
-
