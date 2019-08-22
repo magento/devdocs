@@ -48,6 +48,6 @@ For details on MCC and the update command, see [Composer]({{ page.baseurl }}/clo
 
 ## Redis and static-content deployment {#static-content}
 
-If you receive a number of Redis connection errors in your production logs during static content deployment, update your {{ site.data.var.ece }} project to use the latest version of the ece-tools package and redeploy your environments. See [Upgrades and Patches]({{ page.baseurl }}/cloud/project/project-upgrade-parent.html).
+If you receive a number of Redis connection errors in your production logs during static content deployment, update your {{ site.data.var.ece }} project to use the latest version of the ece-tools package and redeploy your environment. See [Upgrades and Patches]({{ page.baseurl }}/cloud/project/project-upgrade-parent.html).
 
 
