@@ -112,9 +112,7 @@ The [Starter plan architecture]({{ page.baseurl }}/cloud/basic-information/start
 
 The [Pro plan architecture]({{ page.baseurl }}/cloud/architecture/pro-architecture.html) has a global master with three environments:
 
--  **Integration**—The Integration environment provides a testable environment that includes a database, web server, caching, some services, environment variables, and configurations. You can develop, deploy, and test your code before merging to the Staging environment.
-    -  _Inactive_—You can have an unlimited number of inactive branches based on the Integration environment.
--  **Staging**—The Staging environment is for pre-Production testing and includes a database, web server, caching, services, environment variables, configurations, and services, such as Fastly.
--  **Production**—The Production environment includes a three-node, high-availability architecture for your data, services, caching, and store. This is your live, public store environment with environment variables, configurations, and third-party services.
-
-{% include cloud/note-pro-legacy.md %}
+- **Integration**—The Integration environment provides a testable environment that includes a database, web server, caching, some services, environment variables, and configurations. You can develop, deploy, and test your code before merging to the Staging environment.
+  - _Inactive_—You can have an unlimited number of inactive branches based on the Integration environment.
+- **Staging**—The Staging environment is for pre-Production testing and includes a database, web server, caching, services, environment variables, configurations, and services, such as Fastly.
+- **Production**—The Production environment includes a three-node, high-availability architecture for your data, services, caching, and store. This is your live, public store environment with environment variables, configurations, and third-party services.
