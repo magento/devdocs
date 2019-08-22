@@ -10,17 +10,17 @@ You can configure your Bitbucket repository to automatically build and deploy an
 
 {% include cloud/note-private-repo.md %}
 
-Before you enable the integration, you must have the following:
+## Prerequisites
 
--  Administrator access to the {{site.data.var.ece}} project
--  [`magento-cloud` CLI]({{ page.baseurl }}/cloud/before/before-workspace-magento-prereqs.html#cloud-ssh-cli-cli-install) tool in your local environment
--  A Bitbucket account
--  Administrator access to the Bitbucket repository
--  An SSH access key for the Bitbucket repository
+- Administrator access to the {{site.data.var.ece}} project
+- [`magento-cloud` CLI]({{ page.baseurl }}/cloud/before/before-workspace-magento-prereqs.html#cloud-ssh-cli-cli-install) tool in your local environment
+- A Bitbucket account
+- Administrator access to the Bitbucket repository
+- An SSH access key for the Bitbucket repository
 
 ## Prepare your repository
 
-You need to clone your {{site.data.var.ece}} project from an existing environment and migrate the project branches to a new, empty Bitbucket repository, preserving the same branch names. It is **critical** to retain an identical Git tree, so that you do not lose any existing environments or branches in your {{site.data.var.ece}} project.
+You must clone your {{site.data.var.ece}} project from an existing environment and migrate the project branches to a new, empty Bitbucket repository, preserving the same branch names. It is **critical** to retain an identical Git tree, so that you do not lose any existing environments or branches in your {{site.data.var.ece}} project.
 
 1.  From the terminal, log in to your {{site.data.var.ece}} project.
 
@@ -74,7 +74,7 @@ You need to clone your {{site.data.var.ece}} project from an existing environmen
 
     If you are starting with a new Bitbucket repository, you may have to use the `-f` option, because the remote repository does not match your local copy.
 
-1.  Verify that your Bitbucket repository contains all of your project files.
+1. Verify that your Bitbucket repository contains all of your project files.
 
 ## Create an OAuth consumer
 
@@ -215,13 +215,13 @@ The Bitbucket integration cannot activate new environments in your {{site.data.v
     ```
     {: .no-copy}
 
-1.  Verify the environment is active.
+1. Verify the environment is active.
 
-    ```bash
+   ```bash
     magento-cloud environment:list
-    ```
+   ```
 
-    ```
+    ```terminal
     Your environments are:
     +---------------------+----------------+--------+
     | ID                  | Name           | Status |

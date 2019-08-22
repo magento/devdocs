@@ -52,6 +52,7 @@ We support Redis versions 3.2 and 5.0. See [Configure Redis]({{ page.baseurl }}/
 Assuming your Redis relationship is named `redis`, you can access it using the `redis-cli` tool.
 
 1. Use SSH to connect to the Integration environment with RabbitMQ installed and configured.
+
 1. Open an SSH tunnel to a host.
 
     ```bash

@@ -18,16 +18,16 @@ The account has super user access and additional capabilities for managing all a
 
 You can assign users to the following roles per project:
 
-- Project administrator (also referred to as *super user*) can change settings and execute actions on any environment, including creating and restoring snapshots.
-- Project reader can view all environments in a project but cannot execute any actions on them.
+-  Project administrator (also referred to as *super user*) can change settings and execute actions on any environment, including creating and restoring snapshots.
+-  Project reader can view all environments in a project but cannot execute any actions on them.
 
 ## Environment-level roles {#cloud-role-env}
 
 A project reader can have one of the following roles per environment:
 
-- Environment administrator can change settings and execute actions on this environment, including merging with the parent environment.
-- Environment contributor can push code to this environment and branch the environment.
-- Environment reader can view this environment only.
+-  Environment administrator can change settings and execute actions on this environment, including merging with the parent environment.
+-  Environment contributor can push code to this environment and branch the environment.
+-  Environment reader can view this environment only.
 
 {:.bs-callout .bs-callout-info}
 We recommend you limit the environment administrator role to as few users as possible.
@@ -51,14 +51,14 @@ You can use the {{site.data.var.ece}} command line client to manage users and in
 
 Available commands:
 
-- `magento-cloud user:add`–adds a user to the project
-- `magento-cloud user:delete`–deletes a user
-- `magento-cloud user:list [users]`–lists project users
-- `magento-cloud user:role`–views or change the user role
+-  `magento-cloud user:add`–adds a user to the project
+-  `magento-cloud user:delete`–deletes a user
+-  `magento-cloud user:list [users]`–lists project users
+-  `magento-cloud user:role`–views or change the user role
 
-The following examples show how to add a user and configure the project and environment-level role, and how to change he project and  user and change the role assigned to a user.
+The following examples show how to add a user and configure the project and environment-level role, and how to how to modify project assignments and assigned user roles.
 
-#### To add a user and assign roles: 
+#### To add a user and assign roles:
 
 1. Add the user:
 
@@ -124,9 +124,9 @@ To create user accounts using the Web Interface:
 1. Enter the user's e-mail address.
 1. Select the access for the account:
 
-   - For a project administrator account, select the **Super User** checkbox. This provides Admin rights for all settings and environments. If not selected, the account has only view options for all environments on a project.
+   -  For a project administrator account, select the **Super User** checkbox. This provides Admin rights for all settings and environments. If not selected, the account has only view options for all environments on a project.
 
-   - Select permissions per specific environment (or branch) in the Integration environment: No access, Admin (change settings, execute action, merge code), Contributor (push code), or Reader (view only). As you add active environments, you can modify permissions per user.
+   -  Select permissions per specific environment (or branch) in the Integration environment: No access, Admin (change settings, execute action, merge code), Contributor (push code), or Reader (view only). As you add active environments, you can modify permissions per user.
 
 1. Click **Add User**.
 
@@ -140,4 +140,4 @@ After you add a new user to an environment, you must rebuild and deploy the envi
 `git commit --allow-empty -m "redeploy" && git push <branch name>`
 ```
 
-The new user cannot access the environment until the environment rebuild completes and redeploys.
+The new user cannot access the environment until it is successfully built and deployed.

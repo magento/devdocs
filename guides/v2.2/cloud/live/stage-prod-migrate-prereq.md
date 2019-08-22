@@ -15,27 +15,29 @@ functional_areas:
 
 [Build and deploy on local]({{ page.baseurl }}/cloud/live/live-sanity-check.html)
 
-When you are ready to deploy your store, you must complete deployment and testing on Staging first, before you deploy to Production. The Staging environment provides a near-production environment with full services (including Fastly, New Relic, and Blackfire), database, web server, and more.
+When you are ready to deploy your store, you must complete deployment and testing on the Staging environment before deploying to Production. The Staging environment provides a near-production environment that includes a database, web server, and all services including Fastly, New Relic, and Blackfire.
 
-This information is broken down into prerequisite steps for [Starter](#starter) and [Pro](#pro) projects.
+The following information provides the prerequisites to deploy {{ site.data.var.ee }} [Starter](#starter) and [Pro](#pro) projects to the Cloud platform.
 
 ## Starter plan projects {#starter}
 
-For Starter, merge all code into one "staging" branch for testing prior to deploying to Production. All active branches and environments are part of the PaaS infrastructure and have access to information, such as store URLs and SSH link.
+For Starter, merge all code into a "staging" branch for testing prior to deploying to Production. All active branches and environments are part of the PaaS infrastructure and have access to information, such as store URLs and SSH link.
 
-You can deploy to your environments, including all YAML configuration files, migrate files and data, all through CLI commands using SSH.
+You can deploy to Starter environments from the Project Web Interface or using CLI commands.
 
-To prepare your environments for full deployment, you need:
+**Prerequisites**
 
 1. Get your [access URLs and SSH](#starter-urls) information.
-2. Add your SSH keys to your Integration, Staging, and Production environments for easier file and data migration.
+1. [Add your public SSH key](#add-public-ssh-key) to your project.
 
 ### Get your Starter access URLs and SSH information {#starter-urls}
 
-You can locate your URLs through the Project Web Interface. For each selected environment or branch, you have an Access Site link. Your environments begin with Master, which is Production, and any additional branches you create, including Staging (recommended) and development branches for custom code.
+You can find URLs and SSH connection information from the Project Web Interface. For each selected environment or branch, you have an Access Site link. Your initial project is provisioned with a `Master` environment, which is Production, and any additional branches you create, including Staging (recommended) and development branches for custom code.
 
 1. Log in to [your {{site.data.var.ece}} account](https://accounts.magento.cloud).
+
 1. Select an environment.
+
 1. Click **Access site** to display the URL and SSH information.
 
    ![Access your project]({{ site.baseurl }}/common/images/cloud/cloud-starter-project-access.png)
@@ -45,10 +47,12 @@ You can locate your URLs through the Project Web Interface. For each selected en
 
 For Pro plan projects, you must merge your completed development code to the `Integration` branch. Only the Integration environment branch can deploy to Staging, then Production.
 
-For **first time setup** to migrate your database and deploy code to Staging or Production, you will:
+For **first time setup** to migrate your database and deploy code to Staging or Production, complete the following steps:
 
 1. Create a support ticket to [migrate deployment hooks](#pro-yaml). In this ticket, include your public SSH keys to add to Staging and Production.
+
 1. Get your [access URLs and SSH](#pro-urls) for Staging and Production.
+
 1. [Add your public SSH key](#add-public-ssh-key) to your {{ site.data.var.ece }} project environments.
 
 If you have not done so already, set up [Fastly CDN services]({{ page.baseurl }}/cloud/cdn/cloud-fastly.html) on your Staging and Production environments. See [Fastly set up]({{ page.baseurl }}/cloud/cdn/configure-fastly.html#upload-vcl-snippets).
@@ -62,25 +66,25 @@ If you have **not modified** the default deployment hooks or configurations, ski
 
 ### Get your Pro access URLs  {#pro-urls}
 
-You can locate your URLs through the Project Web Interface. There is an Access Site link for each active environment.
+You can locate your URLs through the Project Web Interface. There is an _Access Site_ link for each active environment.
 
 ![Access your project]({{ site.baseurl }}/common/images/cloud/cloud-pro-project-access.png)
  {:width="550px"}
 
-- Git URL format:
+-  Git URL format:
 
-  - Staging: `git@git.<region>.magento.cloud:<project ID>_staging.git`
-  - Production: `git@git.<region>.magento.cloud:<project ID>.git`
+   -  Staging: `git@git.<region>.magento.cloud:<project ID>_staging.git`
+   -  Production: `git@git.<region>.magento.cloud:<project ID>.git`
 
-- SSH access:
+-  SSH access:
 
-  - Staging: `ssh <node>.ent-<project ID>-staging-<system ID>@ssh.<region>.magento.cloud`
-  - Production: `ssh <node>.ent-<project ID>-production-<system ID>@ssh.<region>.magento.cloud`
+   - Staging: `ssh <node>.ent-<project ID>-staging-<system ID>@ssh.<region>.magento.cloud`
+   - Production: `ssh <node>.ent-<project ID>-production-<system ID>@ssh.<region>.magento.cloud`
 
-- Web URL format:
+-  Web URL format:
 
-  - Staging: `http[s]://<your domain>.c.staging-<project ID>.ent.magento.cloud`
-  - Production: `http[s]://<your domain>.c.<project ID>.ent.magento.cloud`
+   -  Staging: `http[s]://<your domain>.c.staging-<project ID>.ent.magento.cloud`
+   -  Production: `http[s]://<your domain>.c.<project ID>.ent.magento.cloud`
 
 ### Add SSH key to project environments {#add-public-ssh-key}
 
@@ -89,11 +93,11 @@ Add your SSH public key to {{ site.data.var.ece }} environments:
 - Starter–Add to Master (Production) and any environments you create by branching from Master
 - Pro–Add to the Master Integration, Staging, and Production environments
 
-To add an SSH key using the Project Web Interface:
+#### To add an SSH key using the Project Web Interface:
 
 1. Copy your SSH public key to the clipboard.
 
-   If you do not already have SSH keys on that machine, see [GitHub documentation](https://help.github.com/articles/generating-an-ssh-key) to create them.
+   If you do not already have SSH keys on that machine, see the [GitHub documentation](https://help.github.com/articles/generating-an-ssh-key) to create them.
 
 1. Login and access your project through the [Project Web Interface](https://accounts.magento.cloud).
 

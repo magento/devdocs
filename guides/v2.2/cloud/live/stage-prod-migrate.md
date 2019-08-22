@@ -16,12 +16,11 @@ To migrate your database and static files to Staging and Production:
 - [Migrate static files](#cloud-live-migrate-static)
 - [Migrate the database](#cloud-live-migrate-db)
 
-If you encounter errors or need to make changes, complete those updates in your local environment. Push the code changes to the Integration environment.
-Deploy the updated `master` branch again. See instructions in the [previous step]({{ page.baseurl }}/cloud/live/stage-prod-migrate.html).
+If you encounter errors or need to change project configuration, complete the required updates in your local environment. Then, push the code changes to the Integration environment to deploy and test before pushing to Staging and Production environments.
 
 ## Deploy code to Staging and Production {#code}
 
-You can also use the [Project Web Interface](#interface) or [SSH and CLI commands](#ssh) to deploy your code to Staging and Production.
+You can use the [Project Web Interface](#interface) or [SSH and CLI commands](#ssh) to deploy your code to Staging and Production.
 
 ### Deploy code with the Project Web Interface {#interface}
 
@@ -47,99 +46,90 @@ For Starter, deploy the development branch you created to Staging and Production
 
 ### Deploy code with SSH and CLI {#ssh}
 
-You can use the [Magento Cloud CLI commands]({{ page.baseurl }}/cloud/reference/cli-ref-topic.html) to deploy code to Starter and Pro environments.
+You can use the [Magento Cloud CLI commands]({{ page.baseurl }}/cloud/reference/cli-ref-topic.html) to deploy code to Starter and Pro environments. You need SSH and Git access to your project. See [prepare for deployment]({{ page.baseurl}}/cloud/live/stage-prod-migrate-prereq.html).
 
 **Prerequisites**
-- [Add public SSH key to your Magento Cloud account
-- Pro Plan Pro SInterface provides features to create, manage, and deploy code in Integration, Staging, and Production environments for Starter and Pro plans.
 
-You need the SSH and Git access information for your project.
+- [Build and deploy on local]({{ page.baseurl }}/cloud/live/live-sanity-check.html)
+- [Prepare to deploy to Staging and Production]({{ page.baseurl }}/cloud/live/stage-prod-migrate-prereq.html)
 
-- For Starter projects, locate the SSH and Git information through the Project Web Interface.
-- For Pro projects, locate the SSH and Git information through the Project Web Interface.
+#### Step 1:  Deploy and test the Integration environment:
 
-#### Deploy to Pro
-
-To deploy to Pro projects, complete the following steps:
-
-1. Log in to the project
+1. After logging into the project, check out the Integration environment:
 
    ```bash
-   magento-cloud login
+   magento-cloud environment:checkout <environment-ID>
    ```
 
-1. List your projects:
+1. Synchronize your local Integration environment with the remote environment:
 
    ```bash
-   magento-cloud project:list
+   magento-cloud environment:synchronize <environment-ID>
    ```
-
-1. Change to a project directory. For example, `cd /var/www/html/magento2`
-
-1. List the environments in the project:
-
-   ```bash
-   magento-cloud environment:list
-   ```
-
-1. Checkout, or switch to, the Integration environment:
-
-   ```bash
-   magento-cloud environment:checkout <environment ID>
-   ```
-
-1. Pull any updated code to your local environment
-
-   ```
-   git pull origin <environment ID>
 
 1. Create a snapshot of the environment as a backup:
 
    ```bash
-   magento-cloud snapshot: create -e <environment ID>
+   magento-cloud snapshot: create -e <environment-ID>
    ```
 
-1. Complete code in your local branch.
+1. Update code in your local branch as needed.
 
 1. Add, commit, and push changes to the environment.
 
    ```bash
-   git add -A && git commit -m "Commit message" && git push origin <branch-name>
+   git add -A && git commit -m "Commit message" && git push magento <environment-ID>
    ```
 
-1. Merge with the parent envirionment
+1. Complete site testing.
+
+#### Step 2: Merge changes to Staging and deploy
+
+1. Check out the Staging environment:
 
    ```bash
-   magento-cloud environment:merge <environment ID>
-
-1. Use SSH to connect to your Staging or Production environment.
-
-1. Checkout your Staging or Production branch:
-
-   - Staging: ` checkout staging`
-   - Production: `git checkout production`
-
-1. Pull the `master` branch from Integration.
-
-   ```bash
-   git pull origin master
+   magento-cloud environment:checkout <environment-ID>
    ```
 
-   You merge this code as `staging` and `production` are branches of `master`.
-
-1. To fully update all code, then perform a push:
+1. Synchronize your local Staging environment with the remote environment:
 
    ```bash
-   git push origin
+   magento-cloud environment:synchronize <environment-ID>
    ```
+
+1. Create a snapshot of the environment as a backup:
+
+   ```bash
+   magento-cloud snapshot: create -e <environment-ID>
+   ```
+
+1. Merge the Integration environment to Staging to deploy:
+
+   ```bash
+   magento-cloud environment:merge <Integration-ID>
+   ```
+
+1. Complete site testing.
+
+#### Step 3: Deploy to Production:
+
+1. Check out, synchronize, and create a snapshot of your local Production environment.
+
+1. Merge the Staging environment to Production to deploy:
+
+   ```bash
+   magento-cloud environment:merge <Staging-ID>
+   ```
+
+1. Complete site testing.
 
 ## Migrate static files {#cloud-live-migrate-static}
 
 You migrate [static files](https://glossary.magento.com/static-files) from your `pub/media` directory to Staging or Production.
 
-We recommend using the Linux remote synchronization and file transfer command [`rsync`](https://en.wikipedia.org/wiki/Rsync). The rsync utility uses an algorithm that minimizes the amount of data by moving only the portions of files that have changed; in addition, it supports compression.
+We recommend using the Linux remote synchronization and file transfer command [`rsync`](https://en.wikipedia.org/wiki/Rsync). The rsync utility uses an algorithm that minimizes the amount of data by moving only the portions of files that have changed. Rsync also supports compression.
 
-We suggest using the following syntax:
+Use the following command to migrate files:
 
 ```bash
 rsync -azvP <source> <destination>
@@ -147,10 +137,10 @@ rsync -azvP <source> <destination>
 
 This command uses the following options:
 
-- `a`–archive  
-- `z`–compress  
-- `v`–verbose  
-- `P`–partial progress  
+- `a`–archive
+- `z`–compress
+- `v`–verbose
+- `P`–partial progress
 
 For additional options, see the [rsync man page](http://linux.die.net/man/1/rsync).
 
@@ -169,13 +159,13 @@ To transfer media from remote-to-remote environments directly, you must enable s
 
 1. [Open an SSH connection]({{page.baseurl}}/cloud/env/environments-ssh.html#ssh) to the source environment.
 
-   You can find the **SSH access** link in your Project Web Interface by selecting the environment branch, and click **Access Site**:
+   To find the **SSH access** link in your Project Web Interface, select the environment and click **Access Site**:
 
     ```bash
     ssh -A <environment_ssh_link@ssh.region.magento.cloud>
     ```
 
-2. Use the `rsync` command to copy the `pub/media` directory from your current environment to  another remote environment:
+1. Use the `rsync` command to copy the `pub/media` directory from your current environment to  another remote environment:
 
    ```bash
    rsync -azvP pub/media/ <destination_environment_ssh_link@ssh.region.magento.cloud>:pub/media/
@@ -185,7 +175,7 @@ To transfer media from remote-to-remote environments directly, you must enable s
 
 **Prerequisite:** A database dump (see Step 3) should include database triggers. For dumping them, confirm you have the [TRIGGER privilege](https://dev.mysql.com/doc/refman/5.7/en/privileges-provided.html#priv_trigger).
 
-**Important:** The Integration environment database is strictly for development testing and may include data you may not want to migrate into Staging and Production.
+**Important:** The Integration environment database is strictly for development testing and can include data that you do not want to migrate into Staging and Production.
 
 For continuous integration deployments, we **do not recommend** migrating data from Integration to Staging and Production. You could pass testing data or overwrite important data. Any vital configurations will be passed using the [configuration file]({{ page.baseurl }}/cloud/live/sens-data-over.html) and `setup:upgrade` command during build and deploy.
 
@@ -199,10 +189,8 @@ To migrate a database:
 1. SSH into the environment you want to create a database dump from:
 
    ```bash
-	ssh -A <environment_ssh_link@ssh.region.magento.cloud>
+   ssh -A <environment_ssh_link@ssh.region.magento.cloud>
    ```
-
-1. Find the database login information with the following command:
 
 1. List the environment relationships to find the database login information:
 
@@ -210,7 +198,7 @@ To migrate a database:
    php -r 'print_r(json_decode(base64_decode($_ENV["MAGENTO_CLOUD_RELATIONSHIPS"]))->database);'
    ```
 
-1. Create a database dump. The following command creates a database dump as a gzip file.
+1. Create a database dump file in `gzip format:
 
    For Starter environments and Pro Integration environments:
 
@@ -238,13 +226,13 @@ To migrate a database:
    ssh -A <destination_environment_ssh_link@ssh.region.magento.cloud>
    ```
 
-1. Import the database dump with the following command:
+1. Import the database dump:
 
    ```bash
    zcat /tmp/database.sql.gz | mysql -h <database_host> -u <username> -p<password> <database name>
    ```
 
-   The following is an example using information from step 2:
+   The following example references the gzip file created by the database dump operation:
 
    ```bash
    zcat /tmp/database.sql.gz | mysql -h database.internal -u user main
@@ -261,13 +249,13 @@ ERROR 1277 (42000) at line <number>: Access denied; you need (at least one of) t
 
 This error occurs because the DEFINER for the triggers in the SQL dump is the production user. This user requires administrative permissions.
 
-To solve this problem, you can generate a new database dump changing or removing the `DEFINER` clause. The following is one example of completing this change:
+To solve this problem, you can generate a new database dump changing or removing the `DEFINER` clause as shown in the following example:
 
 ```bash
 mysqldump -h <database host> --user=<database username> --password=<password> --single-transaction main  | sed -e 's/DEFINER[ ]*=[ ]*[^*]*\*/\*/' | gzip > /tmp/database_no-definer.sql.gz
 ```
 
-Use the database dump you just created to [migrate the database](#cloud-live-migrate-db).
+Use the database dump file to [migrate the database](#cloud-live-migrate-db).
 
 {:.bs-callout-info}
 After migrating the database, you can set up your stored procedures or views in Staging or Production the same way you did in your Integration environment.
