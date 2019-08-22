@@ -7,7 +7,7 @@ functional_areas:
 ---
 An attempt to generate and write the `sitemap.xml` file to the root directory results in the following error:
 
-```bash
+```terminal
 Please make sure that "/" is writable by the web-server.
 ```
 
