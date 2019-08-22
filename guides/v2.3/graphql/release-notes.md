@@ -59,10 +59,10 @@ These release notes can include:
   - Manage newsletter subscriptions
   - Create [wish lists]({{page.baseurl}}/graphql/reference/wishlist.html)
   - View [order history]({{page.baseurl}}/graphql/reference/sales.html)
-  - View [downloadable products]({{page.baseurl}}/graphql/reference/downloadable-product.html)
+  - View [downloadable products]({{page.baseurl}}/graphql/product/downloadable-product.html)
 
 - {:.new} **Added functionality to support complex Catalog features.** This version supports:
-  - Specifying absolute image paths for [products]({{page.baseurl}}/graphql/reference/products.html) and including extended image information
+  - Specifying absolute image paths for [products]({{page.baseurl}}/graphql/queries/products.html) and including extended image information
   - Rendering fields that use WYSIWYG text
   - URL rewrites for products​
 

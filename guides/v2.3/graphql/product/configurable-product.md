@@ -1,28 +1,20 @@
 ---
 group: graphql
-title: ConfigurableProduct endpoint
+title: Configurable product data types
+redirect_from:
+  - /guides/v2.3/graphql/reference/configurable-product.html
 ---
 
-The `ConfigurableProduct` endpoint extends the `ProductInterface` so that attributes that are specific to configurable products can be queried in a `products` search.
+The `ConfigurableProduct` data type implements the following interfaces:
 
-{:.bs-callout .bs-callout-tip}
-The mutation defined in this topic is available in the 2.3-develop branch of the [graphql-ce repository](https://github.com/magento/graphql-ce).
+-   `ProductInterface`
+-   `PhysicalProductInterface`
+-   `CustomizableProductInterface`
 
-## Query
-The `products` query returns configurable product-specific information when you perform a `products` search.
+Attributes that are specific to configurable products can be used when performing a [`products`]({{page.baseurl}}/graphql/queries/products.html) query.
 
-### Syntax
-Add the following inline fragment to the output section of your `products` query to return information specific to configurable products:
+## ConfigurableProduct object
 
-```text
-... on ConfigurableProduct {
-  configurable_options {
-   <attributes>
-  }
-}
-```
-
-### Configurable product
 The `ConfigurableProduct` object contains the following attributes:
 
 Attribute | Type | Description
@@ -30,14 +22,14 @@ Attribute | Type | Description
 `configurable_options` | [[ConfigurableProductOptions]](#configProdOptions) | An array of linked simple product items
 `variants` | ConfigurableVariant | An array of variants of products
 
-## ConfigurableVariant
+### ConfigurableVariant object
 
 Field | Type | Description
 --- | --- | ---
 `attributes` | ConfigurableAttributeOption | ConfigurableAttributeOption contains the value_index (and other related information) assigned to a configurable product option
 `product` | SimpleProduct | An array of linked simple products
 
-## ConfigurableAttributeOption
+### ConfigurableAttributeOption object
 
 Field | Type | Description
 --- | --- | ---
@@ -46,6 +38,7 @@ Field | Type | Description
 `value_index` | Int | A unique index number assigned to the configurable product option
 
 ### Configurable product options {#configProdOptions}
+
 The `ConfigurableProductOptions` object contains the following attributes:
 
 Attribute | Type | Description
@@ -60,6 +53,7 @@ Attribute | Type | Description
 `values` | [[ConfigurableProductOptionsValues]](#configProdOptionsValues) | An array that defines the `value_index` codes assigned to the configurable product
 
 ### Configurable product options values {#configProdOptionsValues}
+
 The `ConfigurableProductOptionsValues` object contains the following attribute:
 
 Attribute | Type | Description
@@ -70,7 +64,17 @@ Attribute | Type | Description
 `use_default_value` | Boolean | Indicates whether to use the default_label
 `value_index` | Int | A unique index number assigned to the configurable product option
 
-### Example usage
+## Sample query
+
+Add the following inline fragment to the output section of your `products` query to return information specific to configurable products:
+
+```text
+... on ConfigurableProduct {
+  configurable_options {
+   <attributes>
+  }
+}
+```
 
 The following `products` query returns `ConfigurableProduct` information about the `WH01` configurable product, which is defined in the sample data.
 
@@ -674,110 +678,5 @@ The following `products` query returns `ConfigurableProduct` information about t
   }
 }
 ```
+
 {% endcollapsible %}
-
-
-## Mutation
-Use the `addConfigurableProductsToCart` mutation to add configurable products to a specific cart.
-
-
-### Syntax
-
-`mutation: {addConfigurableProductsToCart(input: AddConfigurableProductsToCartInput) {AddConfigurableProductsToCartOutput}}`
-
-### Add configurable products to cart input
-The `AddConfigurableProductsToCartInput` object contains the following attributes:
-
-Attribute | Type | Description
---- | --- | ---
-`cart_items` | [[ConfigurableProductCartItemInput]](#configProdCartItemInput) | An array of configurable items to add to the cart
-`cart_id` | String | The unique ID that identifies the customer's cart
-
-### Configurable product cart item input {#configProdCartItemInput}
-The `ConfigurableProductCartItemInput` object contains the following attributes:
-
-Attribute | Type | Description
---- | --- | ---
-`customizable_options` | [CustomizableOptionInput](#customOptionInput) | An object that contains the ID and value of the product
-`data` | [CartItemInput](#cartItemInput) | An object that contains the quantity and SKU of the configurable product
-`variant_sku` | String | The SKU of the simple product
-
-### Customizable option input {#customOptionInput}
-The `CustomizableOptionInput` object contains the following attributes:
-
-Attribute | Type | Description
---- | --- | ---
-`id` | Int | The ID of the customizable option
-`value` | String | The value of the customizable option. For example, if color was the customizable option, a possible value could be `black`
-
-### Cart item input {#cartItemInput}
-The `CartItemInput` object contains the following attributes:
-
-Attribute | Type | Description
---- | --- | ---
-`quantity` | Float | The number of configurable items to add to the cart
-`sku` | String | The SKU of the configurable product
-
-
-### Example usage
-The following example adds two black Teton Pullover Hoodies size extra-small to the specified shopping cart. The `cart_id` used in this example was [generated]({{ page.baseurl }}/graphql/reference/quote-create-cart.html) by creating an empty cart.
-
-**Request**
-
-``` text
-mutation {
-  addConfigurableProductsToCart(
-    input: {
-      cart_id: "4JQaNVJokOpFxrykGVvYrjhiNv9qt31C"
-      cart_items: [
-        {
-          variant_sku: "MH02"
-          data: {
-            quantity: 2
-            sku: "MH02-XS-Black"
-          }
-        }
-      ]
-    }
-  ) {
-    cart {
-      items {
-        id
-        quantity
-        product {
-          name
-          sku
-        }
-        ... on ConfigurableCartItem {
-          configurable_options {
-            option_label
-          }
-        }
-      }
-    }
-  }
-}
-```
-
-**Response**
-
-```json
-{
-  "data": {
-    "addConfigurableProductsToCart": {
-      "cart": {
-        "items": [
-          {
-            "id": "26",
-            "quantity": 2,
-            "product": {
-              "name": "Teton Pullover Hoodie-XS-Black",
-              "sku": "MH02-XS-Black"
-            }
-          }
-        ]
-      }
-    }
-  }
-}
-```

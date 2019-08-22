@@ -7,12 +7,12 @@ Magento provides multiple product types, and most of these product types have sp
 
 Product type | Implements | Has product-specific attributes?
 --- | --- | ---
-* [BundleProduct]({{ page.baseurl }}/graphql/reference/bundle-product.html) | [ProductInterface]({{ page.baseurl }}/graphql/reference/products.html#ProductInterface), [PhysicalProductInterface]({{ page.baseurl }}/graphql/reference/products.html#PhysicalProductInterface), [CustomizableProductInterface]({{ page.baseurl }}/graphql/reference/customizable-option-interface.html) | Yes
-* [ConfigurableProduct]({{ page.baseurl }}/graphql/reference/configurable-product.html) | [ProductInterface]({{ page.baseurl }}/graphql/reference/products.html#ProductInterface), [PhysicalProductInterface]({{ page.baseurl }}/graphql/reference/products.html#PhysicalProductInterface), [CustomizableProductInterface]({{ page.baseurl }}/graphql/reference/customizable-option-interface.html) | Yes
-* [DownloadableProduct]({{ page.baseurl }}/graphql/reference/downloadable-product.html) | [ProductInterface]({{ page.baseurl }}/graphql/reference/products.html#ProductInterface),  [CustomizableProductInterface]({{ page.baseurl }}/graphql/reference/customizable-option-interface.html)  | Yes
-* [GroupedProduct]({{ page.baseurl }}/graphql/reference/grouped-product.html) | [ProductInterface]({{ page.baseurl }}/graphql/reference/products.html#ProductInterface), [PhysicalProductInterface]({{ page.baseurl }}/graphql/reference/products.html#PhysicalProductInterface), [CustomizableProductInterface]({{ page.baseurl }}/graphql/reference/customizable-option-interface.html) | Yes
-* SimpleProduct | [ProductInterface]({{ page.baseurl }}/graphql/reference/products.html#ProductInterface), [PhysicalProductInterface]({{ page.baseurl }}/graphql/reference/products.html#PhysicalProductInterface), [CustomizableProductInterface]({{ page.baseurl }}/graphql/reference/customizable-option-interface.html)  | No
-* VirtualProduct | [ProductInterface]({{ page.baseurl }}/graphql/reference/products.html#ProductInterface),  [CustomizableProductInterface]({{ page.baseurl }}/graphql/reference/customizable-option-interface.html)  | No
+* [BundleProduct]({{ page.baseurl }}/graphql/reference/bundle-product.html) | [ProductInterface]({{ page.baseurl }}/graphql/queries/products.html#ProductInterface), [PhysicalProductInterface]({{ page.baseurl }}/graphql/queries/products.html#PhysicalProductInterface), [CustomizableProductInterface]({{ page.baseurl }}/graphql/reference/customizable-option-interface.html) | Yes
+* [ConfigurableProduct]({{ page.baseurl }}/graphql/product/configurable-product.html) | [ProductInterface]({{ page.baseurl }}/graphql/queries/products.html#ProductInterface), [PhysicalProductInterface]({{ page.baseurl }}/graphql/queries/products.html#PhysicalProductInterface), [CustomizableProductInterface]({{ page.baseurl }}/graphql/reference/customizable-option-interface.html) | Yes
+* [DownloadableProduct]({{ page.baseurl }}/graphql/product/downloadable-product.html) | [ProductInterface]({{ page.baseurl }}/graphql/queries/products.html#ProductInterface),  [CustomizableProductInterface]({{ page.baseurl }}/graphql/reference/customizable-option-interface.html)  | Yes
+* [GroupedProduct]({{ page.baseurl }}/graphql/reference/grouped-product.html) | [ProductInterface]({{ page.baseurl }}/graphql/queries/products.html#ProductInterface), [PhysicalProductInterface]({{ page.baseurl }}/graphql/queries/products.html#PhysicalProductInterface), [CustomizableProductInterface]({{ page.baseurl }}/graphql/reference/customizable-option-interface.html) | Yes
+* SimpleProduct | [ProductInterface]({{ page.baseurl }}/graphql/queries/products.html#ProductInterface), [PhysicalProductInterface]({{ page.baseurl }}/graphql/queries/products.html#PhysicalProductInterface), [CustomizableProductInterface]({{ page.baseurl }}/graphql/reference/customizable-option-interface.html)  | No
+* VirtualProduct | [ProductInterface]({{ page.baseurl }}/graphql/queries/products.html#ProductInterface),  [CustomizableProductInterface]({{ page.baseurl }}/graphql/reference/customizable-option-interface.html)  | No
 
 ## Query for product-specific attributes
 
@@ -34,8 +34,8 @@ For example, to return `GroupedProduct` attributes, construct your query like th
 {
   products(filter:
     {sku: {eq: "24-WG085_Group"}}
-  	)
-  	{
+  )
+  {
     items {
       id
       name

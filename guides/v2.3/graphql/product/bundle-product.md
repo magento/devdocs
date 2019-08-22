@@ -1,9 +1,17 @@
 ---
 group: graphql
-title: BundleProduct endpoint
+title: Bundle product data types
+redirect_from:
+  - /guides/v2.3/graphql/reference/bundle-product.html
 ---
 
-The `BundleProduct` endpoint defines which bundle product-specific attributes are returned when performing a `products` search.
+The `BundleProduct` data type implements the following interfaces:
+
+-   `ProductInterface`
+-   `PhysicalProductInterface`
+-   `CustomizableProductInterface`
+
+Attributes that are specific to bundle products can be used when performing a [`products`]({{page.baseurl}}/graphql/queries/products.html) query.
 
 ## BundleProduct object
 
@@ -28,7 +36,7 @@ Attribute | Type | Description
 `title` | String | The display name of the item
 `type` | String | The input type that the customer uses to select the item. Examples include radio button and checkbox.
 
-##  BundleItemOption object
+## BundleItemOption object
 
 Attribute | Type | Description
 --- | --- | ---
@@ -49,47 +57,47 @@ The following query returns information about bundle product `24-WG080`, which i
 
 ```graphql
 {
-   products(filter: {sku:
+  products(filter: {sku:
     {eq: "24-WG080"}
-  	})
+  })
    {
-       items{
-           sku
-           type_id
-           id
-           name
-           ... on BundleProduct {
-           dynamic_sku
-            dynamic_price
-            dynamic_weight
-            price_view
-            ship_bundle_items
-            items {
-              option_id
-              title
-              required
-              type
+      items{
+         sku
+         type_id
+         id
+         name
+          ... on BundleProduct {
+          dynamic_sku
+          dynamic_price
+          dynamic_weight
+          price_view
+          ship_bundle_items
+          items {
+            option_id
+            title
+            required
+            type
+            position
+            sku
+            options {
+              id
+              quantity
               position
-              sku
-              options {
+              is_default
+              price
+              price_type
+              can_change_quantity
+              label
+              product {
                 id
-                quantity
-                position
-                is_default
-                price
-                price_type
-                can_change_quantity
-                label
-                product {
-                  id
-                  name
-                  sku
-                  type_id
-                   }
-                }
+                name
+                sku
+                type_id
+              }
             }
-           }
-       }
+          }
+        }
+      }
    }
 }
 ```
