@@ -12,11 +12,11 @@ You can configure your Bitbucket repository to automatically build and deploy an
 
 ## Prerequisites
 
-- Administrator access to the {{site.data.var.ece}} project
-- [`magento-cloud` CLI]({{ page.baseurl }}/cloud/before/before-workspace-magento-prereqs.html#cloud-ssh-cli-cli-install) tool in your local environment
-- A Bitbucket account
-- Administrator access to the Bitbucket repository
-- An SSH access key for the Bitbucket repository
+-  Administrator access to the {{site.data.var.ece}} project
+-  [`magento-cloud` CLI]({{ page.baseurl }}/cloud/before/before-workspace-magento-prereqs.html#cloud-ssh-cli-cli-install) tool in your local environment
+-  A Bitbucket account
+-  Administrator access to the Bitbucket repository
+-  An SSH access key for the Bitbucket repository
 
 ## Prepare your repository
 
@@ -74,7 +74,7 @@ You must clone your {{site.data.var.ece}} project from an existing environment a
 
     If you are starting with a new Bitbucket repository, you may have to use the `-f` option, because the remote repository does not match your local copy.
 
-1. Verify that your Bitbucket repository contains all of your project files.
+1.  Verify that your Bitbucket repository contains all of your project files.
 
 ## Create an OAuth consumer
 
@@ -169,9 +169,9 @@ In order to communicate events—such as a push—with your Cloud Git server, yo
 
 1.  In the _Add new webhook_ view, edit the following fields:
 
-    - **Title**: Magento Cloud Integration
-    - **URL**: Use the Hook URL from your `magento-cloud` integration list
-    - **Triggers**: The default is a basic _Repository push_
+    -  **Title**: Magento Cloud Integration
+    -  **URL**: Use the Hook URL from your `magento-cloud` integration list
+    -  **Triggers**: The default is a basic _Repository push_
 
 1.  Click **Save**.
 
@@ -215,11 +215,11 @@ The Bitbucket integration cannot activate new environments in your {{site.data.v
     ```
     {: .no-copy}
 
-1. Verify the environment is active.
+1.  Verify the environment is active.
 
-   ```bash
+    ```bash
     magento-cloud environment:list
-   ```
+    ```
 
     ```terminal
     Your environments are:
