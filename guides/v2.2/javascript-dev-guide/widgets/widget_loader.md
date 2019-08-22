@@ -49,7 +49,7 @@ The loader widget has the following options:
 
 The URL to the loader image. This image is displayed when the widget is active; that is, between the `ajaxSend` and `ajaxComplete` events. 
 
-**Type**: String 
+**Type**: String
 
 **Default value**: No image by default.
 

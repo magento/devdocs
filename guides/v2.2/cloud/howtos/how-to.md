@@ -24,7 +24,6 @@ Current topics:
 
 *	Environments
 
-	
 	*	[Merge and delete an environment]({{ page.baseurl }}/cloud/howtos/environment-tutorial-env-merge.html)
 
 *	[Install optional sample data]({{ page.baseurl }}/cloud/howtos/sample-data.html)

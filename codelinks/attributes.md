@@ -1,17 +1,12 @@
 ---
+layout: full-width
 title: Retrieving detailed attributes
-menu_title: Retrieving detailed attributes
 ---
 
 Swagger and other types of code-generated documentation erroneously indicate several APIs that
-search across multiple objects return detailed information about individual objects. Detailed information, such as `extensionAttributes`,  `customAttributes`, and possibly other fields, are generally available only when requesting information on a single object.  
+search across multiple objects return detailed information about individual objects. Detailed information, such as `extensionAttributes`,  `customAttributes`, and possibly other fields, are generally available only when requesting information on a single object.
 
 This document lists the PHP, REST, and SOAP calls that indicate they return detailed information, but might not. It also provides the call that returns the detailed data.
-
-## Contents
-
-* TOC
-{:toc}
 
 ## Customer module {#Customer}
 
@@ -74,7 +69,7 @@ SOAP | `quoteGuestPaymentMethodManagementV1GetList` | `quoteGuestPaymentMethodMa
 Language | Does not return detailed attributes | Returns detailed attributes
 --- | --- | ---
 PHP | `PaymentMethodManagementInterface::getList($cartId)` | `PaymentMethodManagementInterface::get($cartId)`
-REST |` /V1/carts/:cartId/payment-methods` |	`/V1/carts/:cartId/selected-payment-method`
+REST |`/V1/carts/:cartId/payment-methods` |	`/V1/carts/:cartId/selected-payment-method`
 SOAP | `quotePaymentMethodManagementV1GetList` | `quotePaymentMethodManagementV1Get`
 
 Language | Does not return detailed attributes | Returns detailed attributes

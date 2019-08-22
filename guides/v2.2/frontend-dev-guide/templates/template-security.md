@@ -39,15 +39,13 @@ For the following output cases, use the specified function to generate XSS-safe 
 **Case:** JSON output\\
 **Function:** No function needed for JSON output.
 
-
 ```html
   <!-- In this example $postData is a JSON string -->
   <button class="action" data-post='<?php /* @noEscape */ echo $postData ?>' />
 ```
 
-
 **Case:** String output that should not contain HTML\\
-**Function:** `escapeHtml` 
+**Function:** `escapeHtml`
 
 You can pass in an optional array of allowed tags that will not be escaped.
 
@@ -60,15 +58,13 @@ If your text contains special characters, they must be encoded as HTML entities,
 
 ```html
   <span class="label"><?php echo $block->escapeHtml($block->getLabel()) ?></span>
-  
+
   // Escaping translation
   <div id='my-element'><?php echo $block->escapeHtml(__('Only registered users can write reviews. Please <a href="%1">Sign in</a> or <a href="%2">create an account</a>', $block->getLoginUrl(), $block->getCreateAccountUrl()), ['a']) ?></div>
 ```
 
-
 **Case:** URL output\\
 **Function:** `escapeUrl`
-
 
 ```html
   <a href="<?php echo $block->escapeUrl($block->getCategoryUrl()) ?>">Some Link</a>
@@ -82,7 +78,7 @@ If your text contains special characters, they must be encoded as HTML entities,
 
 In cases where the JavaScript code outputs content onto the page, use the `escapeUrl` or the `escapeHtml` function where appropriate.
 
-For example, when a URL output string is inside a JavaScript context, use both `escapeJs` and `escapeUrl`. If you insert the output string from inside a JavaScript context into the DOM, use both `escapeJs` and `escapeHtml`. 
+For example, when a URL output string is inside a JavaScript context, use both `escapeJs` and `escapeUrl`. If you insert the output string from inside a JavaScript context into the DOM, use both `escapeJs` and `escapeHtml`.
 
 ```js
   var field<?php echo $block->escapeJs($block->getFieldNamePostfix()) ?> = window.document.getElementById('my-element');
@@ -92,9 +88,9 @@ For example, when a URL output string is inside a JavaScript context, use both `
   // Escaping content that will be inserted into DOM
   var string = <?php echo $block->escapeJs($block->escapeHtml(__('Only registered users can write reviews. Please <a href="%1">Sign in</a> or <a href="%2">create an account</a>', $block->getLoginUrl(), $block->getCreateAccountUrl()), ['a'])) ?>
   jQuery('#my-element').append(string);
- 
-  // Here we are not inserting the translated string into the DOM, so it is ok if the string contains non-allowed tags or 
-  // JavaScript because it will be handled as a string. Do not use escapeHtml here, the browser will display quotes 
+
+  // Here we are not inserting the translated string into the DOM, so it is ok if the string contains non-allowed tags or
+  // JavaScript because it will be handled as a string. Do not use escapeHtml here, the browser will display quotes
   // and other symbols as HTML entities (&#039;, &quot;, &amp;, etc)
   alert('<?php echo $block->escapeJs(__('You are not authorized to perform this action.')) ?>');
 ```
@@ -133,6 +129,5 @@ It covers the following cases:
 * Output in double quotes without variables (for example `echo "some text"`). Test is green.
 
 * Other of previously mentioned. Output is not escaped. Test is red.
-
 
 [XSS]: https://en.wikipedia.org/wiki/Cross-site_scripting

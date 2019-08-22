@@ -36,13 +36,13 @@ JavaScript bundling does not work unless Magento is in [production mode][product
     ```bash
     bin/magento config:set dev/static/sign 1
     ```
-    
+
 1. To configure JavaScript bundling, you must disable Javascript file merging. Bundling will not work as the merging of files excludes bundling:
 
     ```bash
     bin/magento config:set dev/js/merge_files 0
-    ```    
-   
+    ```
+
     For example, when `Sign Static Files` is disabled (which is the default: `config:set dev/static/sign 0`), the URL to a static file might look like this: `/static/frontend/Magento/luma/en_US/mage/dataPost.js`. But when you enable the setting (`config:set dev/static/sign 1`), the same URL might look something like this: `static/version40s2f9ef/frontend/Magento/luma/en_US/mage/dataPost.js`, with a version number added as shown. The next time this file is updated (with `bin/magento setup:static-content:deploy`), a new version will be generated, causing the browser to download a new file from the server, thus busting the browser's cache.
 
 ## How bundling works in Magento
@@ -54,7 +54,7 @@ When you enable bundling, Magento combines hundreds of JavaScript files into jus
 The `<exclude>` node in the `etc/view.xml` file for a theme specifies the files to exclude from the Magento JavaScript bundling process.
 JavaScript files excluded from bundling are loaded asynchronously by RequireJS as needed.
 
-As such, you should exclude the JavaScript files you use for testing or development so that they are not loaded on every page.  
+As such, you should exclude the JavaScript files you use for testing or development so that they are not loaded on every page.
 
 The following code snippet from [Magento's Luma theme][luma-view-xml] shows the types of files you should exclude from the bundling process.
 
@@ -129,7 +129,7 @@ As a rule of thumb, each bundle should be at least 100 kB.
 
 ## Fine tuning your theme
 
-There are many ways to tune your theme using the `etc/view.xml` file.  
+There are many ways to tune your theme using the `etc/view.xml` file.
 
 For example, the Magento Luma theme is configured to work well for all pages, but you can maximize browser performance for home, catalog, or product pages by adding items to or removing items from the `<exclude>` node.
 

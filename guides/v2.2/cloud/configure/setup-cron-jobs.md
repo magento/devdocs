@@ -34,7 +34,7 @@ Magento added an auto-crons configuration option to support self-service cron co
 {: .bs-callout-info}
 You can use crontab to review the cron configuration for {{ site.data.var.ece }} projects; however, the Magento Cloud platform does not use crontab to run cron jobs.
 
-####  To review cron configuration
+#### To review cron configuration
 
 1. Log in to the {{site.data.var.ece}} project environment using [SSH]({{ page.baseurl }}/cloud/env/environments-ssh.html#ssh).
 
@@ -107,7 +107,7 @@ The [auto-crons feature](#verify-cron-configuration) must be enabled on your {{s
 
 #### To add custom crons
 
-1. In your local development environment, edit the `.magento.app.yaml` file in the Magento `/app` directory. 
+1. In your local development environment, edit the `.magento.app.yaml` file in the Magento `/app` directory.
 
 1. Add your custom cron code to the `crons` section in the configuration file using the following format:
 
@@ -118,7 +118,7 @@ The [auto-crons feature](#verify-cron-configuration) must be enabled on your {{s
            cmd: "<schedule_command>"
        <cron_name_2>:
            spec: "<schedule_time>"
-           cmd: "<schedule_command>"        
+           cmd: "<schedule_command>"
    ```
 
    For example, you can add a custom cron job to export the product catalog and configure it to run every eight hours, 20 minutes after the hour.
@@ -139,7 +139,7 @@ The [auto-crons feature](#verify-cron-configuration) must be enabled on your {{s
     ```bash
     git add -A && git commit -m "cron config updates" && git push origin <branch-name>
     ```
-    
+
 ## Update custom cron jobs {#update}
 
 To add, remove, or update a custom cron job, change the configuration in the `crons` section of the `.magento.app.yaml` file for the Integration environment. Then, test the updates in the Integration environment before pushing the changes to the Production and Staging environments.

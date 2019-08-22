@@ -23,7 +23,7 @@ A payment provider integration can have multiple response validators, that shoul
 
 ## Example
 
-In the following example a response validator is implemented and added to the pool of the Braintree payment provider request validators.  
+In the following example a response validator is implemented and added to the pool of the Braintree payment provider request validators.
 
 ```php
 class AcceptValidator extends AbstractValidator

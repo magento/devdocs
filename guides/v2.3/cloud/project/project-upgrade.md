@@ -27,7 +27,7 @@ If you use PHP version 7.2, you must remove the `mcrypt` extension from the [`ex
     ```bash
     composer require "magento/magento-cloud-metapackage":">=2.3.1 <2.3.2" --no-update
     ```
-    
+
     {: .bs-callout-info }
     You must use the version constraint syntax to successfully update the `{{site.data.var.ct}}` package.
 
@@ -84,7 +84,7 @@ Exception printing is disabled by default for security reasons.
 
 #### To resolve the error:
 
-1.  Using SSH, log in to the remote server and open the `./app/var/report/<error number>` file. 
+1.  Using SSH, log in to the remote server and open the `./app/var/report/<error number>` file.
 
 1.  [Examine the logs]({{ page.baseurl }}/cloud/trouble/environments-logs.html) to determine the source of the issue.
 

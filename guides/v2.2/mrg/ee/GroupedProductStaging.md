@@ -8,7 +8,6 @@ menu_order: 2
 ee_only: true
 ---
 
-
 The Magento_GroupedProductStaging [module](https://glossary.magento.com/module) is a part of the staging functionality in {{site.data.var.ee}}. It enables you to stage products assigned to [grouped product](https://glossary.magento.com/grouped-product).
 
 ## Implementation details

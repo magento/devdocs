@@ -50,7 +50,7 @@ actions: [
     {
         value: 'deselectAll',
         label: $t('Deselect all')
-    }, 
+    },
     {
         value: 'selectPage',
         label: $t('Select all on this page')
@@ -63,10 +63,10 @@ actions: [
 ```
 </td>
     <td>Yes</td>
-  </tr>  
+  </tr>
 </table>
 
-### Optional configuration 
+### Optional configuration
 
 |Option|Description|Type|Default|Required|
 |--- |--- |--- |--- |--- |
@@ -94,8 +94,6 @@ actions: [
 |`showTree`|--- |Boolean|False|Optional|
 |`validationLoading`|Displays a loading icon to show that the chosen option is loading; icon will show if the display is set to true|Boolean|False|Optional|
 
-
-
 The following configuration can be passed in as arguments:
 
 * Link to any of the UI component templates
@@ -103,7 +101,7 @@ The following configuration can be passed in as arguments:
 * Label to ui-select
 * Default caption
 * Caption if more than one element is selected
-    
+
 ## Modes
 
 ### **`simple` mode**
@@ -123,7 +121,6 @@ The following configuration can be passed in as arguments:
 * `lastSelectable`
 * `optgroupLabels`
 * `labelsDecoration`
-
 
 ## Examples
 
@@ -154,7 +151,6 @@ The following configuration can be passed in as arguments:
 The following is an example of the configuration of a select component. It is used as a column filter with three levels of options, with no selectable label for every level, without checkboxes:
 
 ![view the configuration]({{site.baseurl}}/common/images/ui-select21.jpg)
-
 
 ## Navigation
 

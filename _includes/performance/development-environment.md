@@ -13,7 +13,7 @@ Remember to enable all caches during testing.
 In the development mode, do not run commands for compilation, code generation and static content deployment.
 These commands were built for use in production mode only.
 
-**Do not run** production commands in development mode:  
+**Do not run** production commands in development mode:
 
 * ```bash
   bin/magento setup:di:compile

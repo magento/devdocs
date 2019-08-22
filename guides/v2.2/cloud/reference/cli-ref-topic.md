@@ -18,7 +18,7 @@ You can install the Magento Cloud CLI when setting up your local environment for
 magento-cloud list
 ```
 
-Magento designed these commands to manage Cloud Integration environments. It is a best practice to run the Magento Cloud CLI from a project directory, because you can omit the `-p <project ID>` parameter. 
+Magento designed these commands to manage Cloud Integration environments. It is a best practice to run the Magento Cloud CLI from a project directory, because you can omit the `-p <project ID>` parameter.
 
 #### To log in to a project:
 
@@ -74,7 +74,7 @@ magento-cloud environment:checkout <ENVIRONMENT_ID>
 
 #### To redeploy the environment:
 
-Trigger a redeployment without using a push. You must verify and confirm the environment to redeploy. Do not use redeploy if there is a build in a pending state. 
+Trigger a redeployment without using a push. You must verify and confirm the environment to redeploy. Do not use redeploy if there is a build in a pending state.
 
 ```bash
 magento-cloud environment:redeploy
@@ -105,7 +105,7 @@ magento-cloud variable:list
 magento-cloud variable:set <VARIABLE_NAME> <VARIABLE_VALUE>
 ```
 
-## Common commands 
+## Common commands
 
 The listed commands are for Magento Cloud CLI version 1.11.1 and later.
 
@@ -152,13 +152,13 @@ Options:
 
 Help:
  The help command displays help for a given command:
- 
+
    php /Users/username/.magento-cloud/bin/magento-cloud help list
- 
+
  You can also output the help in other formats by using the --format option:
- 
+
    php /Users/username/.magento-cloud/bin/magento-cloud help --format=xml list
- 
+
  To display the list of available commands, please use the list command.
 ```
 

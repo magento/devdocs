@@ -12,7 +12,7 @@ return_to:
 functional_areas:
   - Integration
 contributor_name: comwrap GmbH
-contributor_link: http://comwrap.com/ 
+contributor_link: http://comwrap.com/
 ---
 
 By providing configurable and simple product information, you can use the bulk API to create all necessary products with a single call.
@@ -25,8 +25,7 @@ Some notes about the configurable product payload example:
 * The sample payload does not contain the price or the size, as these are defined in the simple products section.
 * The `visibility` attribute is set to 4, which allows customers to find the product by browsing or searching. Each simple product defined in the payload can override the `visibility` attribute.
 
-
-### Simple products 
+### Simple products
 
  The payloads for creating a simple product and a configurable product are identical, with the following exceptions:
 
@@ -280,7 +279,6 @@ The payload contains both the configurable product and the simple products.
 ```
 {% endcollapsible %}
 
-
  **Response**
 
 ```json
@@ -309,7 +307,6 @@ The payload contains both the configurable product and the simple products.
 
  {:.bs-callout .bs-callout-info}
 For information about response fields, see the [Bulk API]({{ page.baseurl }}/rest/bulk-endpoints.html) section. To check the status of operations, see the API for [Bulk operation status endpoints]({{ page.baseurl }}/rest/operation-status-endpoints.html).
-
 
 ## Verify this step
 

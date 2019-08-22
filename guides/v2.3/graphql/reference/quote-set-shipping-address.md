@@ -103,7 +103,6 @@ Attribute |  Data Type | Description
 `address` | [CartAddressInput](#CartAddressInputShip) | The shipping address for the cart
 `customer_address_id` | Int | The unique ID that identifies the customer's address
 
-
 ## Output attributes
 
 The `SetShippingAddressOnCartOutput` object contains the `Cart` object.
