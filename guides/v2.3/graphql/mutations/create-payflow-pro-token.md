@@ -11,13 +11,13 @@ See [Paypal Payflow Pro payment method]({{page.baseurl}}/graphql/payment-methods
 
 `createPayflowProToken(input: PayflowProTokenInput): PayflowProToken`
 
-## Example
+## Example usage
 
 The following example requests a token in a Payflow Pro transaction.
 
 **Request**
 
-```text
+```graphql
 mutation {
   createPayflowProToken(
     input: {

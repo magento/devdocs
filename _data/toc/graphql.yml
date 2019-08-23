@@ -47,6 +47,10 @@ pages:
 
     - label: Queries
       children:
+
+        - label: checkoutAgreements query
+          url: /graphql/queries/checkout-agreements.html
+
         - label: cmsBlock query
           url: /graphql/queries/cms-block.html
 
@@ -62,6 +66,9 @@ pages:
         - label: currency query
           url: /graphql/queries/directory-currency.html
 
+        - label: customAttributeMetadata query
+          url: /graphql/queries/custom-attribute-metadata.html
+          
         - label: customer query
           url: /graphql/queries/customer.html
 
@@ -70,6 +77,12 @@ pages:
 
         - label: customerPaymentTokens query
           url: /graphql/queries/customer-payment-tokens.html
+
+        - label: getHostedProUrl query
+          url: /graphql/queries/get-hosted-pro-url.html
+
+        - label: getPayflowLinkToken query
+          url: /graphql/queries/get-payflow-link-token.html
 
         - label: isEmailAvailable query
           url: /graphql/queries/is-email-available.html
@@ -97,6 +110,9 @@ pages:
         - label: createCustomer mutation
           url: /graphql/mutations/create-customer.html
 
+        - label: createPayflowProToken mutation
+          url: /graphql/mutations/create-payflow-pro-token.html
+          
         - label: deleteCustomerAddress mutation
           url: /graphql/mutations/delete-customer-address.html
 
@@ -105,6 +121,15 @@ pages:
 
         - label: generateCustomerToken mutation
           url: /graphql/mutations/generate-customer-token.html
+
+        - label: handlePayflowProResponse mutation
+          url: /graphql/mutations/handle-payflow-pro-response.html
+
+        - label: redeemGiftCardBalanceAsStoreCredit mutation
+          url: /graphql/mutations/redeem-giftcard-balance.html
+
+        - label: removeGiftCardFromCart mutation
+          url: /graphql/mutations/remove-giftcard.html
 
         - label: removeStoreCreditFromCart mutation
           url: /graphql/mutations/remove-store-credit.html
@@ -134,7 +159,9 @@ pages:
 
             - label: Paypal endpoint
               url: /graphql/reference/paypal.html
-
+              
+    - label: Reference
+      children:
             - label: Products endpoint
               url: /graphql/reference/products.html
               children:
@@ -190,9 +217,6 @@ pages:
                 - label: removeCouponFromCart mutation
                   url: /graphql/reference/quote-remove-coupon.html
 
-                - label: removeGiftCardFromCart mutation
-                  url: /graphql/reference/quote-remove-giftcard.html
-
                 - label: removeItemFromCart mutation
                   url: /graphql/reference/quote-remove-item.html
 
@@ -217,14 +241,17 @@ pages:
                 - label: updateCartItems mutation
                   url: /graphql/reference/quote-update-cart-items.html
 
-            - label: redeemGiftCardBalanceAsStoreCredit mutation
-              url: /graphql/reference/redeem-giftcard-balance.html
-
     - label: Payment methods
       children:
 
         - label: Authorize.Net
           url: /graphql/payment-methods/authorize-net.html
+
+        - label: PayPal Express Checkout
+          url: /graphql/payment-methods/paypal-express-checkout.html
+
+        - label: Express Checkout for other PayPal solutions
+          url: /graphql/payment-methods/payflow-express.html
           
         - label: PayPal Payflow Link
           url: /graphql/payment-methods/payflow-link.html
@@ -234,6 +261,9 @@ pages:
 
         - label: PayPal Payments Advanced
           url: /graphql/payment-methods/payments-advanced.html
+
+        - label: PayPal Website Payments Pro Hosted Solution
+          url: /graphql/payment-methods/hosted-pro.html
 
     - label: Tutorial
       class: tutorial

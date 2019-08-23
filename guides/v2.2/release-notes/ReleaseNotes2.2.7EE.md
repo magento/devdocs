@@ -100,7 +100,7 @@ This release includes improvements to general usability of the core code plus en
 
 Highlights of community contributions include these fixes:
 
-* **Bulk Web APIs**  allow all existing REST APIs to accept payloads with multiple entities. These community-contributed bulk APIs support more efficient and scalable implementations that eliminate round-trip network overhead. Like asynchronous APIs, bulk web APIs can be used in conjunction with queues that have also been migrated to {{site.data.var.ce}}. [See Bulk endpoints](https://devdocs.magento.com/guides/v2.3/rest/bulk-endpoints.html) for more information. 
+* **Bulk Web APIs**  allow all existing REST APIs to accept payloads with multiple entities. These community-contributed bulk APIs support more efficient and scalable implementations that eliminate round-trip network overhead. Like asynchronous APIs, bulk web APIs can be used in conjunction with queues that have also been migrated to {{site.data.var.ce}}. [See Bulk endpoints]({{ page.baseurl }}/rest/bulk-endpoints.html) for more information. 
 
 
 <!-- MAGETWO-86712 -->* The email server no longer throws an exception when a customer places an order using a PayPal payment method. Previously, when a customer checked out using PayPal, Magento placed the order, but the email server threw an exception. Thanks to community member [Jason Woods](https://github.com/driskell)!
@@ -123,7 +123,7 @@ In addition to security enhancements, this release contains the following functi
 
 ### Installation, setup, and deployment
 
-<!---MAGETWO-94174 -->* Magento backup functionality is no longer enabled by default, and the code has been deprecated. See [Back up and roll back the file system, media, and database](https://devdocs.magento.com/guides/v2.2/install-gde/install/cli/install-cli-backup.html) for more information on backup strategies. 
+<!---MAGETWO-94174 -->* Magento backup functionality is no longer enabled by default, and the code has been deprecated. See [Back up and roll back the file system, media, and database]({{ page.baseurl }}/install-gde/install/cli/install-cli-backup.html) for more information on backup strategies. 
 
 <!-- MAGETWO-95591 -->* Customer attribute management issues that merchants  experienced after upgrading to Magento 2.2.6 have been resolved. Previously, after upgrading their stores to Magento 2.2.6, merchants could not create and save a new multiselect or dropdown customer custom attribute, and  existing customer attributes  no longer appeared for editing within the customer's account on the storefront.
 

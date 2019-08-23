@@ -60,3 +60,6 @@ pages:
 
         - label: Creating a dynamic row system config
           url: /ext-best-practices/tutorials/dynamic-row-system-config.html
+
+        - label: Creating a custom import entity
+          url: /ext-best-practices/tutorials/custom-import-entity.html

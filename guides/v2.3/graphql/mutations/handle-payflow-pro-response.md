@@ -24,13 +24,13 @@ See [Paypal Payflow Pro payment method]({{page.baseurl}}/graphql/payment-methods
 
 `handlePayflowProResponse(input: PayflowProResponseInput!): PayflowProResponseOutput`
 
-## Example
+## Example usage
 
 The following example sends the Payflow Pro payload to Magento:
 
 **Request**
 
-```text
+```graphql
 mutation {
   handlePayflowProResponse(
     input: {

@@ -17,27 +17,25 @@ The following diagram shows the workflow for placing an order when Payflow Link 
 
 ## Additional Payment information
 
-When you set the payment method to Payflow Link in the [`setPaymentMethodOnCart`]({{page.baseurl}}/graphql/reference/quote-payment-method.html) mutation, the `additional_data` object must contain a `payflow_link` object, which defines the following objects:
+When you set the payment method to Payflow Link in the [`setPaymentMethodOnCart`]({{page.baseurl}}/graphql/reference/quote-payment-method.html) mutation, the `payment_method` object must contain a `payflow_link` object, which defines the following objects:
 
 {% include graphql/payment-methods/payflow-link-attributes.md %}
 
-## Example setPaymentMethodOnCart mutation
+### Example usage
 
 The following example shows the `setPaymentMethodOnCart` mutation constructed for the Payflow Link payment method.
 
 **Request**
 
-```text
+```graphql
 mutation {
     setPaymentMethodOnCart(input: {
         payment_method: {
             code: "payflow_link"
-            additional_data: {
-                payflow_link: {
-                  return_url: "paypal/action/return.html"
-                  error_url: "paypal/action/error.html"
-                  cancel_url: "paypal/action/cancel.html"
-                }
+            payflow_link: {
+                return_url: "paypal/action/return.html"
+                error_url: "paypal/action/error.html"
+                cancel_url: "paypal/action/cancel.html"
             }
         }
         cart_id: "IeTUiU0oCXjm0uRqGCOuhQ2AuQatogjG"

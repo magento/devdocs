@@ -23,8 +23,9 @@ If you are interested in participating in Magento Community projects we welcome 
 <!--{% assign supported_php_versions = site.data.codebase.v2_2.open-source.composer_lock.platform.php | split: "||" %}-->
 {% include install/php-versions-template.md %}
 
-Magento 2.2.10 supports PHP 7.2.
-Versions 7.1 and 7.0 are no longer supported in Magento 2.2.
+Magento 2.2.10 supports PHP 7.1 and 7.2.
+PHP version 7.0 is no longer supported in Magento 2.2.10.
+If you are on PHP 7.0 and plan on upgrading to v2.2.10, you must upgrade PHP to a supported version before upgrading Magento.
 
 ## Verify PHP is installed {#centos-verify-php}
 

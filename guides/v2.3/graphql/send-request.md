@@ -32,4 +32,4 @@ Header name | Value | Description
 `Authorization` | `Bearer <authorization_token>` | A customer token. [Get customer authorization token]({{ page.baseurl }}/graphql/get-customer-authorization-token.html) describes how to generate the token.
 `Content-Currency` | A valid currency code, such as `USD` | This header is required only if the currency is not the store view's default currency. 
 `Content-Type` | `application/json` | Required for all requests.
-`Store` | `<store_code>` | The store view code on which to perform the request. The value can be `default` or the code that is defined when a store view is created.
+`Store` | `<store_view_code>` | The store view code on which to perform the request. The value can be `default` or the code that is defined when a store view is created.
