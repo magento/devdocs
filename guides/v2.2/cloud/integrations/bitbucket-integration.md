@@ -8,11 +8,9 @@ functional_areas:
 
 You can configure your Bitbucket repository to automatically build and deploy an environment when you push code changes. This integration synchronizes your Bitbucket repository with your {{site.data.var.ece}} account.
 
-For Pro projects **created before October 23, 2017**, this integration works on Integration environments _only_. You must [request an upgrade]({{ page.baseurl }}/cloud/trouble/pro-env-management.html) before you can use this integration on Staging and Production environments.
-
 {% include cloud/note-private-repo.md %}
 
-Before you enable the integration, you must have the following:
+## Prerequisites
 
 -  Administrator access to the {{site.data.var.ece}} project
 -  [`magento-cloud` CLI]({{ page.baseurl }}/cloud/before/before-workspace-magento-prereqs.html#cloud-ssh-cli-cli-install) tool in your local environment
@@ -22,7 +20,7 @@ Before you enable the integration, you must have the following:
 
 ## Prepare your repository
 
-You need to clone your {{site.data.var.ece}} project from an existing environment and migrate the project branches to a new, empty Bitbucket repository, preserving the same branch names. It is **critical** to retain an identical Git tree, so that you do not lose any existing environments or branches in your {{site.data.var.ece}} project.
+You must clone your {{site.data.var.ece}} project from an existing environment and migrate the project branches to a new, empty Bitbucket repository, preserving the same branch names. It is **critical** to retain an identical Git tree, so that you do not lose any existing environments or branches in your {{site.data.var.ece}} project.
 
 1.  From the terminal, log in to your {{site.data.var.ece}} project.
 
@@ -171,9 +169,9 @@ In order to communicate events—such as a push—with your Cloud Git server, yo
 
 1.  In the _Add new webhook_ view, edit the following fields:
 
-    - **Title**: Magento Cloud Integration
-    - **URL**: Use the Hook URL from your `magento-cloud` integration list
-    - **Triggers**: The default is a basic _Repository push_
+    -  **Title**: Magento Cloud Integration
+    -  **URL**: Use the Hook URL from your `magento-cloud` integration list
+    -  **Triggers**: The default is a basic _Repository push_
 
 1.  Click **Save**.
 
@@ -223,7 +221,7 @@ The Bitbucket integration cannot activate new environments in your {{site.data.v
     magento-cloud environment:list
     ```
 
-    ```
+    ```terminal
     Your environments are:
     +---------------------+----------------+--------+
     | ID                  | Name           | Status |
