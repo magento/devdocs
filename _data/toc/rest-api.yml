@@ -129,13 +129,14 @@ pages:
               include_versions: ["2.2", "2.3"]
         
         - label: Sales
+          include_versions: ["2.3"]
           children:
 
             - label: Credits
-              url: /rest/modules/credits.html
+              url: /rest/modules/sales/credits.html
 
             - label: Refunds
-              url: /rest/modules/refunds.html
+              url: /rest/modules/sales/refunds.html
 
         - label: Inventory
           include_versions: ["2.3"]
