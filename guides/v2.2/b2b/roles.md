@@ -11,7 +11,6 @@ functional_areas:
   - B2B
 ---
 
-
 Within a company, customers may have different job roles, levels of responsibility, and access to information about their company. {{site.data.var.b2b}} defines several types of system resources, and the Company Admin (or an integration that operates on the behalf of the Company Admin) grants or denies access to these resources using company roles. The Company Admin has access to all resources.
 
 {{site.data.var.b2b}} defines the following types of resources:
@@ -54,7 +53,6 @@ Magento_Company::users_edit | Manage users and teams |  4
 Magento_Company::credit | Company credit | 2
 Magento_Company::credit_history | view | 3
 
-
 ## Manage company roles
 
 The Company Admin controls the possible actions for each customer within the company by creating common roles with embedded permissions and then assigning them to company users. In most cases, a few roles will be sufficient to cover all the different possible combinations of permissions needed for a company.
@@ -84,7 +82,6 @@ Name | Description | Format | Requirements
 `permissions` | A list of resources and permissions granted to the role. See the Permissions array table below for details. | Array[string] |  Required to create a role
 `company_id` | The company associated with this role  | integer | Required to create a role
 
-
 **Permissions array**
 
 Name | Description | Format | Requirements
@@ -93,7 +90,6 @@ Name | Description | Format | Requirements
 `role_id` | The role ID to which the permission applies.  | integer | Required to create a role
 `resource_id` | The internal name of a Magento resource, such as `Magento_Sales::place_order`. | string | Required
 `permission` | Either `allow` or `deny`. | string | Required
-
 
 ### Create a role
 

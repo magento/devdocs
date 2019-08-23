@@ -20,7 +20,7 @@ To satisfy the minimum required elements for creating or customizing your Magent
 	* Modules: [`module.xml`]({{ page.baseurl }}/extension-dev-guide/build/create_component.html)
 	* Themes: [`theme.xml`]({{ page.baseurl }}/frontend-dev-guide/themes/theme-create.html#fedg_create_theme_how-to_declare)
 	* Language packages: [`language.xml`]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-pack-meta-xml)
-  
+
 * Distribute your component:
 	* [Package your component]({{ page.baseurl }}/extension-dev-guide/package/package_module.html) in `.zip` format.
 

@@ -11,11 +11,10 @@ We are pleased to present Magento Commerce 2.3.2.  This release includes over 20
 
 Although code for these features is bundled with quarterly releases of the Magento core code, several of these projects (for example, Page Builder, Inventory Management, and Progressive Web Applications (PWA) Studio) are also released independently. Bug fixes for these projects are documented in separate, project-specific release information which is available in the documentation for each project.
 
-
 ## Apply the Scope parameter for Async/Bulk API patch to address an issue with the Async/Bulk REST API
 
-In certain versions of Magento Open Source and Magento Commerce, the Asynchronous and Bulk REST endpoints support the default store view scope only. After this patch is applied to deployments running those versions of Magento, the current Magento message queue implementation 
-will factor in the store that executes queue operations. See [Patch for Magento Framework Message Queue and Store Scopes](https://community.magento.com/t5/Magento-DevBlog/Patch-for-Magento-Framework-Message-Queue-and-Store-Scopes/ba-p/135209) for a full discussion of this scope-related issue and patch contents. See [Applying patches]({{ page.baseurl }}/comp-mgr/patching.html) for specific instructions on downloading and applying Magento patches. Navigate to the [Magento Security Center](https://magento.com/security/patches), and select the patch associated with the version of Magento you are running. 
+In certain versions of Magento Open Source and Magento Commerce, the Asynchronous and Bulk REST endpoints support the default store view scope only. After this patch is applied to deployments running those versions of Magento, the current Magento message queue implementation
+will factor in the store that executes queue operations. See [Patch for Magento Framework Message Queue and Store Scopes](https://community.magento.com/t5/Magento-DevBlog/Patch-for-Magento-Framework-Message-Queue-and-Store-Scopes/ba-p/135209) for a full discussion of this scope-related issue and patch contents. See [Applying patches]({{ page.baseurl }}/comp-mgr/patching.html) for specific instructions on downloading and applying Magento patches. Navigate to the [Magento Security Center](https://magento.com/security/patches), and select the patch associated with the version of Magento you are running.
 
 ## Highlights
 
@@ -58,10 +57,10 @@ This release contains 130 enhancements to core quality, which improve the qualit
 
 Magento now performs the following tasks as **asynchronous background processes** and sends system messages to alert Admin users when tasks complete. Moving these common administrative tasks to the background frees administrators to work on other tasks while the initial tasks are processing.
 
-* Discount coupon generation. See [Coupon Code](https://docs.magento.com/m2/ee/user_guide/marketing/price-rules-cart-coupon.html). 
+* Discount coupon generation. See [Coupon Code](https://docs.magento.com/m2/ee/user_guide/marketing/price-rules-cart-coupon.html).
 <!--- MC-13615-->
 
-* Mass editing of products. 
+* Mass editing of products.
 <!--- MC-13613-->
 
 * Data export. Previously, connection timeouts occurred during export of large data sets (for example, the export of 200,000 products). See [Export](https://docs.magento.com/m2/b2b/user_guide/system/data-export.html) for more information. <!--- MC-5953-->
@@ -135,9 +134,7 @@ We have fixed hundreds of issues in the Magento 2.3.2 core code.
 * Magento no longer throws an error when you use  `app:config:import` to import configuration settings. Previously, the import failed, and Magento threw the following error even when the imported file contained only minor changes to password or URL values: `Please specify the admin custom URL`. *Fix submitted by David Alger in pull request [22281](https://github.com/magento/magento2/pull/22281)*. [GitHub-15090](https://github.com/magento/magento2/issues/15090)
 
 <!--- MAGETWO-95675-->
-* Magento no longer throws an error when executing `bin/magento setup:static-content:deploy` in parallel mode if theme or locale deployment takes more than 400 seconds. Previously, Magento threw the following error under these conditions: `2436; Status: 0`. 
-
-
+* Magento no longer throws an error when executing `bin/magento setup:static-content:deploy` in parallel mode if theme or locale deployment takes more than 400 seconds. Previously, Magento threw the following error under these conditions: `2436; Status: 0`.
 
 <!--- ENGCOM-4794-->
 * Magento no longer throws an error during catalog set up when you run `bin/magento setup:upgrade`. Previously, set up failed, and Magento threw the following error even though no problems existed with your catalog, `Magento\Catalog\Setup\Media does not exist`. *Fix submitted by Pieter Hoste in pull request [22446](https://github.com/magento/magento2/pull/22446)*. [GitHub-22124](https://github.com/magento/magento2/issues/22124)
@@ -288,7 +285,7 @@ We have fixed hundreds of issues in the Magento 2.3.2 core code.
 
 <!--- MAGETWO-96429-->
 * Product search results now display the correct special price as set by a scheduled update. Previously, search results displayed the original special price, not the price set by the scheduled update.
-  
+
 {:.bs-callout .bs-callout-note}
 This fix can degrade performance in deployments that implement flat catalogs. To avoid this potential performance degradation, consider disabling flat catalogs.
 
@@ -397,7 +394,6 @@ has been changed to `<argument name="resourceStockItem" xsi:type="object">Magent
 
 <!--- ENGCOM-4386-->
 * URL rewrites are no longer overwritten in multisite deployments. *Fix submitted by Anshu Mishra in pull request [21462](https://github.com/magento/magento2/pull/21462)*. [GitHub-21329](https://github.com/magento/magento2/issues/21329)
-
 
 ### Cleanup and simple code refactoring
 
@@ -712,7 +708,7 @@ has been changed to `<argument name="resourceStockItem" xsi:type="object">Magent
 <!--- ENGCOM-4281-->
 * The import process  `replace` method now works as expected. *Fix submitted by Denys Saltanakhmedov in pull request [21189](https://github.com/magento/magento2/pull/21189)*. [GitHub-18761](https://github.com/magento/magento2/issues/18761)
 
-<!--- ENGCOM-4772--> 
+<!--- ENGCOM-4772-->
 * The import process now imports product quantity as expected.  *Fix submitted by Nazar Klovanych in pull request [22382](https://github.com/magento/magento2/pull/22382)*. [GitHub-22355](https://github.com/magento/magento2/issues/22355)
 
 <!--- ENGCOM-3761-->
@@ -802,13 +798,11 @@ has been changed to `<argument name="resourceStockItem" xsi:type="object">Magent
 <!--- ENGCOM-4505-->
 * Magento now creates a log entry if an observer does not implement `ObserverInterface` in modes other than developer mode.  Previously, Magento created a log entry when in developer mode only. *Fix submitted by Nazar Klovanych in pull request [21767](https://github.com/magento/magento2/pull/21767)*. [GitHub-21755](https://github.com/magento/magento2/issues/21755)
 
-
 ### Magento Shipping
 
 * Fixed issue with the event stream cron job.
-  
-* Fixed issue with retrieving shipping labels from some AWS environments.
 
+* Fixed issue with retrieving shipping labels from some AWS environments.
 
 ### New Relic reporting
 
@@ -943,22 +937,22 @@ has been changed to `<argument name="resourceStockItem" xsi:type="object">Magent
 
 <!--- MAGETWO-58764-->
 * Catalog search **Minimal Query Length** values are now enforced as expected.
- 
+
 <!--- MAGETWO-97209-->
 * The count of products in layered navigation now equals the number of  products found by search in deployments that run B2B. Previously, fewer products were identified by search than by layered navigation.
- 
+
 <!--- MAGETWO-97830-->
 * Elasticsearch quick search now works as expected when the default attribute set contains a `date` attribute that has been set to **Search = Yes**. Previously, the search page threw an exception and crashed.
- 
+
 <!--- ENGCOM-4109-->
 * The performance of layered navigation queries has been improved. *Fix submitted by Mads Nielsen in pull request [20971](https://github.com/magento/magento2/pull/20971)*. [GitHub-20969](https://github.com/magento/magento2/issues/20969)
-  
+
 <!--- ENGCOM-4481-->
 * The search REST API now returns the correct `total_count` of result items. Previously, the value of `total_count`  equaled `searchCriteria[pageSize]`,  not the total count of the search result items. *Fix submitted by Ronak Patel in pull request [21713](https://github.com/magento/magento2/pull/21713)*. [GitHub-17295](https://github.com/magento/magento2/issues/17295)
-  
+
 <!--- ENGCOM-4761-->
 * The search icon on Admin page headers now works as expected. *Fix submitted by Nirav Patel in pull request [22154](https://github.com/magento/magento2/pull/22154)*. [GitHub-22152](https://github.com/magento/magento2/issues/22152)
-  
+
 <!--- ENGCOM-4620-->
 * Magento now checks concrete class while applying plugins. Previously, when  the pluginized class was virtual-typed by a class with name ending with an autogenerated suffix and without the implementation of the base concrete class, the `di:compile` process failed.  *Fix submitted by Riccardo Tempesta in pull request [22046]
 (https://github.com/magento/magento2/pull/22046)*. [GitHub-21916](https://github.com/magento/magento2/issues/21916), [GitHub-21976](https://github.com/magento/magento2/issues/21976)
@@ -1150,7 +1144,6 @@ label, types, and disabled settings, but the actual `file-content` was not repla
 The following table highlights contributions made by Partners. This table lists the Partner who contributed the pull request, the external pull request, and the GitHub issue number associated with it (if available).
 
 {% include release-notes/engcomm-2-3-2-partner.md %}
-
 
 ### Individual contributor contributions
 

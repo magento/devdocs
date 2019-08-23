@@ -3,7 +3,7 @@ group: payments-integrations
 subgroup: A_gateway
 title: Gateway Command Pool
 menu_title:  Gateway Command Pool
-menu_node: 
+menu_node:
 menu_order: 3
 ---
 

@@ -52,10 +52,10 @@ If you're not sure that Composer is installed, see [Install Composer]({{page.bas
 
 ### Command fail
 
-If command failed, maybe [Composer](https://getcomposer.org) hasn't been installed globally.  
+If command failed, maybe [Composer](https://getcomposer.org) hasn't been installed globally.
 
-* Copy `composer.phar` to `/usr/local/bin/composer`.  
-* To run it locally put `composer.phar` into directory, where `composer.json` file is located (that is, `<magento2>/dev/tests/functional/`).  
+* Copy `composer.phar` to `/usr/local/bin/composer`.
+* To run it locally put `composer.phar` into directory, where `composer.json` file is located (that is, `<magento2>/dev/tests/functional/`).
 * And run from this directory `php composer.phar install`.
 
 ## Check the installation {#mtf_install_check}
@@ -76,7 +76,7 @@ Find the `mtf` directory.
 
 Open `<magento2_root_dir>/dev/tests/functional/vendor/magento/mtf/CHANGELOG.md`. The latest version in `CHANGELOG.md` is version of the FTF you installed.
 
-## Next steps {#mtf_install_next} 
+## Next steps {#mtf_install_next}
 
 [Adjust the FTF configuration ]({{ page.baseurl }}/mtf/mtf_quickstart/mtf_quickstart_config.html)
 

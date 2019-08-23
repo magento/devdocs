@@ -23,7 +23,7 @@ You can either add a `require` section to `composer.json` or you can use the `co
     ```bash
     cd /var/www/magento2
     ```
-    
+
 You have the following options:
 
 ### Get available module versions

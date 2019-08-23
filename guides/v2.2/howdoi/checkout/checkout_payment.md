@@ -84,7 +84,6 @@ Usually, your component will extend the default payment method component (defaul
    </tbody>
 </table>
 
-
 The general view of the payment method renderer is the following:
 
 ```js
@@ -105,7 +104,6 @@ define(
 ```
 
 If your payment method requires credit cards information, you might use the Magento renderer implementing a credit card form: [`<Magento_Payment_module_dir>/view/frontend/web/js/view/payment/cc-form.js`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Payment/view/frontend/web/js/view/payment/cc-form.js). It also extends the default payment renderer, but has the following own methods:
-
 
 <table>
    <tr>

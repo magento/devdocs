@@ -77,8 +77,7 @@ Log in to your Magento server as, or switch to, the [Magento file system owner](
 | ----------- | --------------------- |
 | `.tar.gz`   | `tar zxf <filename>`  |
 | `.zip`      | `unzip <filename>`    |
-| `.tar.bz2 ` | `tar jxf <filename> ` |
-
+| `.tar.bz2` | `tar jxf <filename>` |
 
 The Magento software extracts to the directory you created. After the file has extracted, either delete the Magento archive or move it to another directory.
 

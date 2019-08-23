@@ -30,7 +30,7 @@ All report files are located in the `etc` directory of a module:
 ```
 
 The following is a visualized XML Schema for `reports.xml`:
- 
+
 {% include_relative img/reports_xsd.svg %}
 
 Report files can be located in any module that depends on the `Analytics` module (e.g. the `SalesAnalytics` module created for the reports related to *Sales*).

@@ -25,7 +25,7 @@ bin/magento sampledata:deploy
 ```
 
 {:.bs-callout .bs-callout-warning}
-If you're installing sample data _after_ installing Magento, you must also run the following command to update the database and schema in the `<magento_root>` folder: 
+If you're installing sample data _after_ installing Magento, you must also run the following command to update the database and schema in the `<magento_root>` folder:
 
 ```bash
 bin/magento setup:upgrade
