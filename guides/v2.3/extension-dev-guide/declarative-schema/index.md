@@ -39,4 +39,4 @@ Once a module is converted to the declarative schema approach, it cannot be reve
   * Renaming tables, columns, and other entities
   * Adding partitions and options to a table
 
-* *Revertable schema patch* - A `schema patch` that contains a `revert()` method with a provided revert functionality. Like in the `Revertable data patch`, a revert functionality of the `schema patch` affects changes in the database only.
+* *Revertable schema patch* - A `schema patch` that contains a `revert()` method with the provided revert functionality. Like in the `Revertable data patch`, the revert functionality of the `schema patch` affects changes in the database only.
