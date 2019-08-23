@@ -55,6 +55,8 @@ Attribute |  Data Type | Description
 
 ### CustomerAddressInput {#customerAddressInput}
 
+The `CustomerAddressInput` object can contain the following attributes:
+
 {% include graphql/customer-address-input.md %}
 
 ## Output attributes

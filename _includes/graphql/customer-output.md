@@ -1,7 +1,3 @@
-### CustomerOutput
-
-The `customer` object returns the following attributes:
-
 Attribute |  Data Type | Description
 --- | --- | ---
 `addresses` | [CustomerAddress](#customerAddress)  | An array containing the customer's shipping and billing addresses

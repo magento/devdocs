@@ -1,10 +1,6 @@
-### Customer
-
-The `customer` object can contain the following attributes:
-
 Attribute |  Data Type | Description
 --- | --- | ---
-`addresses` | [CustomerAddress](#customerAddress)  | An array containing the customer's shipping and billing addresses
+`addresses` | [CustomerAddress](#customerAddress) | An array containing the customer's shipping and billing addresses
 `created_at` | String | Timestamp indicating when the account was created
 `default_billing` | String | The ID assigned to the billing address
 `default_shipping` | String | The ID assigned to the shipping address

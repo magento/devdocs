@@ -91,19 +91,9 @@ Attribute |  Data Type | Description
 
 {% include graphql/customer-address-input.md %}
 
-### Customer address attributes {#customerAddressAttributeInput}
-
-The `CustomerAddressAttributeInput` object can contain the following attributes:
-
-{% include graphql/customer-address-attribute.md %}
-
-### Customer address region input attributes {#customerAddressRegionInput}
-
-The `customerAddressRegionInput` object can contain the following attributes:
-
-{% include graphql/customer-address-region.md %}
-
 ## Output attributes
+
+The `createCustomerAddress` mutation returns the following attributes:
 
 {% include graphql/customer-address-output.md %}
 
