@@ -1,9 +1,11 @@
 ---
 group: graphql
-title: GroupedProduct endpoint
+title: Grouped product data types
+redirect_from:
+  - /guides/v2.3/graphql/reference/grouped-product.html
 ---
 
-The `GroupedProduct` endpoint defines which grouped product-specific attributes are returned when performing a `products` search.
+The `GroupedProduct` data type defines which grouped product-specific attributes are returned when performing a `products` query.
 
 ## GroupedProduct
 
