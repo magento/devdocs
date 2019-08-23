@@ -69,4 +69,4 @@ If you continue to encounter these issues after using this method of deployment,
     php bin/magento setup:static-content:deploy -j 1
     ```
 
-You can also set an environment variable for single thread deployment by default: `STATIC_CONTENT_THREADS = 1`.
+You can also set an environment variable for single thread deployment by default: `SCD_THREADS = 1`.
