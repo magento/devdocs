@@ -35,7 +35,7 @@ Static content deployment in the build phase also reduces downtime. The deploy p
 
 ### Solution
 
-Modify the deploy phase using the `STATIC_CONTENT_THREADS` environment variable and redeploy your site.
+Modify the deploy phase using the `SCD_THREADS` environment variable and redeploy your site.
 
 1. In a terminal, log in to your project.
 
@@ -43,6 +43,6 @@ Modify the deploy phase using the `STATIC_CONTENT_THREADS` environment variable 
 
 1. Set the variable.
 
-        magento-cloud variable:set STATIC_CONTENT_THREADS '1' -e <environment>
+        magento-cloud variable:set SCD_THREADS '1' -e <environment>
 
 Refer to [Manage variables]({{ page.baseurl }}/cloud/env/variables-intro.html) and [Redis and static-content deployment]({{ page.baseurl }}/cloud/trouble/redis-troubleshooting.html#static-content) for more information.
