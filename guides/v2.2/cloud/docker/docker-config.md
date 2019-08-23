@@ -217,28 +217,18 @@ The `{{site.data.var.ct}}` version 2002.0.18 and later supports developer mode.
 
 1.  _Optional_: Configure the Docker global variables in the `docker-compose.yml` file. For example, you can [enable and configure Xdebug]({{ page.baseurl }}/cloud/docker/docker-development-debug.html).
 
-<<<<<<< HEAD
-1.  Start the file synchronization with `docker-sync`.
-=======
-1.  Start the file synchronization (use one of the following).
+1.  Start the file synchronization.
 
     For the `docker-sync` tool:
->>>>>>> master
 
     ```bash
     docker-sync start
     ```
-
+    
     If it is the first installation you should wait a few minutes for synchronization files
 
-<<<<<<< HEAD
     {: .bs-callout-info}
     If you use `mutagen.io` for file synchronization, skip this step. You start `mutagen.io` _after_ deploying the docker containers.
-=======
-    ```bash
-    bash ./mutagen.sh
-    ```
->>>>>>> master
 
 1.  Build files to containers and run in the background.
 
