@@ -6,7 +6,7 @@ title: Loader widget
 
 ## Overview
 
-The Loader [widget](https://glossary.magento.com/widget) blocks page content (all content or a part of it). Its intended use is blocking content when an Ajax request is being sent. But it can be initialized for non-Ajax tasks as well. 
+The Loader [widget](https://glossary.magento.com/widget) blocks page content (all content or a part of it). Its intended use is blocking content when an Ajax request is being sent, but it can be initialized for non-Ajax tasks as well. 
 
 The Loader widget source is [lib/web/mage/loader.js].
 
@@ -14,7 +14,7 @@ The Loader widget source is [lib/web/mage/loader.js].
 
 For information about how to initialize a widget in a JS component or `.phtml` template, see the [Initialize JavaScript][] topic.
 
-The Loader widget is instantiated with as in the following example:
+The following example shows how to instantiate the Loader widget:
 
 ```javascript
 $('#example').loader({
@@ -135,7 +135,7 @@ Stop show loading:
 $("body").trigger('processStop');
 ```
 
-The following is an example of adding a callback to `processStop` event.
+The following is an example of adding a callback to a `processStop` event.
 
 ```javascript
 var callback = function () {
@@ -147,7 +147,7 @@ $("body").on('processStop', callback);
 
 ## Code Sample
 
-The following example show loader when `processStart` event triggers for the `#loader-example` element.
+The following example shows the loader when a `processStart` event triggers for the `#loader-example` element.
 
 ```html
 <div id="loader-example" data-mage-init='{"loader": { "icon": "{store URL}/static/{static version}/frontend/Magento/luma/en_US/images/loader-2.gif"}}'>
@@ -165,7 +165,7 @@ require(['jquery', 'loader', 'domReady!'], function ($) {
 
 ## Result
 
-The result is loader shows when the `processStart` event triggers for `#loader-example` element.
+The loader shows when a `processStart` event triggers for the `#loader-example` element.
 
 ![Loader Widget Example]({{ site.baseurl }}/common/images/widget/loader-widget-result.png)
 
