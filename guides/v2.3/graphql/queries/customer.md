@@ -195,73 +195,25 @@ query {
 
 The `customer` object can contain the following attributes:
 
-Attribute |  Data Type | Description
---- | --- | ---
-`addresses` | [CustomerAddress](#customerAddress)  | An array containing the customer's shipping and billing addresses
-`created_at` | String | Timestamp indicating when the account was created
-`default_billing` | String | The ID assigned to the billing address
-`default_shipping` | String | The ID assigned to the shipping address
-`dob` | String | The customer's date of birth
-`email` | String | The customer's email address
-`firstname` | String | The customer's first name
-`gender` | Int | The customer's gender (Male - 1, Female - 2)
-`group_id` | Int | The group assigned to the user. Default values are 0 (Not logged in), 1 (General), 2 (Wholesale), and 3 (Retailer)
-`id` | Int | The ID assigned to the customer
-`is_subscribed` | Boolean | Indicates whether the customer is subscribed to the company's newsletter
-`lastname` | String | The customer's family name
-`middlename` |String | The customer's middle name
-`prefix` | String | An honorific, such as Dr., Mr., or Mrs.
-`reward_update_notification` | Int | The number of the email template to use for notifications about reward updates. This attribute is defined in the Reward module.
-`reward_warning_notification` | Int | The number of the email template to use for notifications about rewards points expiring. This attribute is defined in the Reward module.
-`suffix` | String | A value such as Sr., Jr., or III
-`taxvat` | String | The customer's Tax/VAT number (for corporate customers)
+{% include graphql/customer-output.md %}
 
 ### Customer address attributes {#customerAddress}
 
 The values assigned to attributes such as `firstname` and `lastname` in this object may be different from those defined in the `Customer` object.
 
-Attribute |  Data Type | Description
---- | --- | ---
-`city` | String | The city or town
-`company` | String | The customer's company
-`country_id` | String | The customer's country
-`custom_attributes` | [CustomerAddressAttribute](#CustomerAddressAttribute) | Address custom attributes
-`customer_id` | Int | The customer ID
-`default_billing` | Boolean | Indicates whether the address is the default billing address
-`default_shipping` | Boolean | Indicates whether the address is the default shipping address
-`extension_attributes` | [CustomerAddressAttribute](#CustomerAddressAttribute) | Address extension attributes
-`fax` | String | The fax number
-`firstname` | String | The first name of the person associated with the shipping/billing address
-`id` | Int | The ID assigned to the address object
-`lastname` | String | The family name of the person associated with the shipping/billing address
-`middlename` | String | The middle name of the person associated with the shipping/billing address
-`postcode` | String | The customer's ZIP or postal code
-`prefix` | String | An honorific, such as Dr., Mr., or Mrs.
-`region` | [CustomerAddressRegion](#customerAddressRegion) | An object that defines the customer's state or province
-`region_id` | Int | A number that uniquely identifies the state, province, or other area
-`street` | [String] | An array of strings that define the street number and name
-`suffix` | String | A value such as Sr., Jr., or III
-`telephone` | String | The telephone number
-`vat_id` | String | The customer's Tax/VAT number (for corporate customers)
+{% include graphql/customer-address-attribute-output.md %}
 
 ### Customer address region attributes {#customerAddressRegion}
 
 The `CustomerAddressRegion` object can contain the following attributes:
 
-Attribute |  Data Type | Description
---- | --- | ---
-`region_code` | String | The address region code
-`region` | String | The state or province name
-`region_id` | Int | Uniquely identifies the region
+{% include graphql/customer-address-region-output.md %}
 
 ### Customer address attribute {#CustomerAddressAttribute}
 
 The `CustomerAddressAttribute` object consists of:
 
-Attribute |  Data Type | Description
---- | --- | ---
-`attribute_code` | String | Attribute code
-`value` | String | Attribute value
+{% include graphql/customer-address-attribute-output.md %}
 
 ### Store credit attributes
 

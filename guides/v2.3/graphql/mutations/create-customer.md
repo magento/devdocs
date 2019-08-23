@@ -67,9 +67,7 @@ The following table lists the attributes you can use as input for the `createCus
 
 The `createCustomer` mutation returns the `CustomerOutput` object.
 
-Attribute |  Data Type | Description
---- | --- | ---
-`CustomerOutput` | [customer]({{page.baseurl}}/graphql/queries/customer.html#customerAttributes) | Information about the logged-in customer
+{% include graphql/customer-output.md %}
 
 ## Related topics
 

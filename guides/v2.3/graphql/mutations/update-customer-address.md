@@ -51,15 +51,17 @@ The `updateCustomerAddress` object contains the following inputs:
 Attribute |  Data Type | Description
 --- | --- | ---
 `id` | Int! | The ID assigned to the address object
-`CustomerAddressInput` | [CustomerAddress]({{page.baseurl}}/graphql/mutations/create-customer-address.html#customerAddressInput) | An array containing the customer’s shipping and billing addresses
+`CustomerAddressInput` | [CustomerAddress](#customerAddressInput)| An array containing the customer’s shipping and billing addresses
+
+### CustomerAddressInput {#customerAddressInput}
+
+{% include graphql/customer-address-input.md %}
 
 ## Output attributes
 
 The `updateCustomerAddress` mutation returns the `CustomerAddress` object.
 
-Attribute |  Data Type | Description
---- | --- | ---
-`CustomerAddress` | [CustomerAddress]({{page.baseurl}}/graphql/mutations/create-customer-address.html#customerAddress) | Information about the customer’s addresses
+{% include graphql/customer-address-output.md %}
 
 ## Related topics
 

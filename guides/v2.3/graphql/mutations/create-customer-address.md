@@ -89,51 +89,23 @@ Attribute |  Data Type | Description
 
 ### Customer address input attributes {#customerAddressInput}
 
-Attribute |  Data Type | Description
---- | --- | ---
-`city` | String | The city or town
-`company` | String | The customer's company
-`country_id` | CountryCodeEnum | The customer's country
-`custom_attributes` | [CustomerAddressAttributeInput](#customerAddressAttributeInput) | Address custom attributes
-`customer_id` | Int | The customer ID
-`default_billing` | Boolean | Indicates whether the address is the default billing address
-`default_shipping` | Boolean | Indicates whether the address is the default shipping address
-`fax` | String | The fax number
-`firstname` | String | The first name of the person associated with the shipping/billing address
-`lastname` | String | The family name of the person associated with the shipping/billing address
-`middlename` | String | The middle name of the person associated with the shipping/billing address
-`postcode` | String | The customer's ZIP or postal code
-`prefix` | String | An honorific, such as Dr., Mr., or Mrs.
-`region` | [CustomerAddressRegionInput](#customerAddressRegionInput) | An object that defines the customer's state or province
-`street` | [String] | An array of strings that define the street number and name
-`suffix` | String | A value such as Sr., Jr., or III
-`telephone` | String | The telephone number
-`vat_id` | String | The customer's Tax/VAT number (for corporate customers)
+{% include graphql/customer-address-input.md %}
 
 ### Customer address attributes {#customerAddressAttributeInput}
 
 The `CustomerAddressAttributeInput` object can contain the following attributes:
 
-Attribute |  Data Type | Description
---- | --- | ---
-`attribute_code` | String | Attribute code
-`value` | String | Attribute value
+{% include graphql/customer-address-attribute.md %}
 
 ### Customer address region input attributes {#customerAddressRegionInput}
 
 The `customerAddressRegionInput` object can contain the following attributes:
 
-Attribute |  Data Type | Description
---- | --- | ---
-`region_code` | String | The address region code
-`region` | String | The state or province name
-`region_id` | Int | Uniquely identifies the region
+{% include graphql/customer-address-region.md %}
 
 ## Output attributes
 
-Attribute |  Data Type | Description
---- | --- | ---
-`CustomerAddress` | [CustomerAddress]({{page.baseurl}}/graphql/queries/customer.html#customerAddress) | Information about the customer’s addresses
+{% include graphql/customer-address-output.md %}
 
 ## Related topics
 
