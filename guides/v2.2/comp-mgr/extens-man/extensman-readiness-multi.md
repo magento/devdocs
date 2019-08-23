@@ -24,7 +24,7 @@ If you're updating multiple extensions, the readiness check displays success and
 You have the following options:
 
 *	Click **Update** or **Next** to continue to [Step 2. Backup]({{ page.baseurl }}/comp-mgr/extens-man/extensman-backup.html) with no changes
-*	To update the extension to a different version, select the desired version from the list 
+*	To update the extension to a different version, select the desired version from the list
 *	To remove the extension from the list and *not* update it, click ![Remove extension from the list]({{ site.baseurl }}/common/images/extensman_delete.png) (delete)
 
 If you make changes, click **Try Again**.
@@ -53,7 +53,7 @@ After you make your changes, click **Try Again**. Repeat the process as necessar
 
 {% collapsible Readiness check failure (other failures) %}
 
-Messages similar to the following display if a readiness check fails. 
+Messages similar to the following display if a readiness check fails.
 
 ![You must resolve all readiness check failures before you continue]({{ site.baseurl }}/common/images/cman_readiness-fail-ex.png)
 

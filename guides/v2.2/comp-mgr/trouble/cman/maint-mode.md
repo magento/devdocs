@@ -114,7 +114,7 @@ To redirect traffic to a custom maintenance page:
 		set $maintenance off;
 
 		if (-f $MAGE_ROOT/maintenance.enable) {
-		set $maintenance on; 
+		set $maintenance on;
 		}
 
 		if ($remote_addr ~ (192.0.2.110|192.0.2.115)) {

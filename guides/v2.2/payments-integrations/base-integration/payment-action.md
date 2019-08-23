@@ -46,7 +46,7 @@ Configuring the gateway command and adding it to command pool (`app/code/Magento
 ```
 
 In the command configuration we see that `BraintreeAuthorizeRequest` is specified as `requestBuilder`, that is a
-Let's look closer on the `requestBuilder` arguments. This argument value is a list of builders, builder composite.  
+Let's look closer on the `requestBuilder` arguments. This argument value is a list of builders, builder composite.
 
 The `BraintreeAuthorizeRequest` builder contains the following builders (`app/code/Magento/Braintree/etc/di.xml`):
 
@@ -69,7 +69,7 @@ The `BraintreeAuthorizeRequest` builder contains the following builders (`app/co
     </virtualType>
 ```
 
-The most important builder in this pool is `Magento\Braintree\Gateway\Request\PaymentDataBuilder`, the `payment` builder. It is responsible for the payment information part of the request.  
+The most important builder in this pool is `Magento\Braintree\Gateway\Request\PaymentDataBuilder`, the `payment` builder. It is responsible for the payment information part of the request.
 
 Please see the [Get payment information from frontend to backend]({{ page.baseurl }}/payments-integrations/base-integration/get-payment-info.html) for details about how payment information can be handled.
 

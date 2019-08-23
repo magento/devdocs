@@ -102,7 +102,7 @@ To create a new CMS page link the user must enter data of all required fields. T
     - Set the **Container** field to "Main content area". It corresponds to the following code in [the repository data set](#mtf_repo_widgetxml) `<item name="block" xsi:type="string">Main Content Area</item>`.
     - Set the **Template** field to "CMS Page Link Block Template". It corresponds to the following code in [the repository data set](#mtf_repo_widgetxml) `<item name="template" xsi:type="string">CMS Page Link Block Template</item>`.
 
-#### Frontend App Options {#mtf_repo_ex_front}  
+#### Frontend App Options {#mtf_repo_ex_front}
 
 ![cms_page_link "Frontend App Options" data set for entire fixture view on GUI]({{ site.baseurl }}/common/images/ftf/mtf_ent_fixt_repo_cms_set_ui_frontend-app.png)
 
@@ -213,7 +213,7 @@ Let's look at the repository structure.
   - In case of a fixture field repository, the full name of the class (including the namespace) must be built as `<path to module where the fixture is placed>\Repository\<directory with the name of fixture>\<file with the name of field>`. Example: `Magento\Widget\Test\Repository\Widget\LayoutUpdates`.
 - `<dataset>` specifies the name of data set in the required `name` attribute. This name serves as a reference to the data set that will be used in the test. Each data set contains fields.
 - `<field>` defines the value of the field. Field can contain either value, or items if the field is complex.
-    
+
 |`field` attribute   |Semantics   | Is required?  |
 |---|---|---|
 | `name`  | Field name in fixture |Required  |
@@ -426,19 +426,19 @@ The preceding is an example of repository merging. Using the approach from the e
 ### Data set replacement {#dataset-replacement}
 
 You can modify your data set without changing the name of the data set. Simply use a `replace` attribute. For example,
- 
+
  ```xml
- 
+
  <dataset name="customer_new_default" replace="default">
- 
+
  ```
- 
+
  This node means that `customer_new_default` data set replaces `default` data set.
- 
+
  Let's see a use case example. Assume that the Customer fixture in the Magento_Customer module has a repository with the `default` data set:
- 
+
   ```xml
-  
+
  <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../vendor/magento/mtf/Magento/Mtf/Repository/etc/repository.xsd">
      <repository class="Magento\Customer\Test\Repository\Customer">
          <dataset name="default">
@@ -453,13 +453,13 @@ You can modify your data set without changing the name of the data set. Simply u
          </dataset>
      </repository>
  </config>
-  
+
   ```
-  
+
 Later you installed a new module Magento_CustomerNew module that changed Customer fixture. You don't want to change the `default` data set name in the test. Instead, you can simply replace the `default` data set, without changing the name:
 
   ```xml
-  
+
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../vendor/magento/mtf/Magento/Mtf/Repository/etc/repository.xsd">
     <repository class="Magento\Customer\Test\Repository\Customer">
         <dataset name="customer_new_default" replace="default">
@@ -472,17 +472,17 @@ Later you installed a new module Magento_CustomerNew module that changed Custome
         </dataset>
     </repository>
 </config>
-  
+
   ```
 
-After the repository generation 
-    
+After the repository generation
+
     php <magento2>/dev/tests/functional/utils/generate.php
 
 you have the following code in the Customer repository (`<magento2>/dev/tests/functional/generated/Magento/Customer/Test/Repository/Customer.php`):
 
 ```php
-  
+
 $this->_data['default'] = [
   'firstname' => 'John',
   'lastname' => 'Doe',
@@ -491,7 +491,7 @@ $this->_data['default'] = [
   'password' => '123123q',
   'password_confirmation' => '123123q',
 ];
-  
+
 ```
 
 As you can see, a repository with the name `default` contains data from the `customer_new_default` repository.

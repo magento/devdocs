@@ -11,7 +11,6 @@ The Modal component can be used for both [Admin](https://glossary.magento.com/ad
 
 For recommendations about modal windows usage from the UX point of view, see the corresponding topic in the [Magento Admin pattern library]({{ page.baseurl }}/pattern-library/containers/slideouts-modals-overlays/slideouts-modals-overalys.html).
 
-
 ## Configuration options
 
 Component's options are set in the configuration `.xml` file as follows:

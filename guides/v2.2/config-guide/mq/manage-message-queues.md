@@ -9,7 +9,6 @@ functional_areas:
   - Setup
 ---
 
-
 If you don't want to implement the RabbitMQ solution, you can manage message queues with cron jobs (or an external process manager) and the command line to ensure that consumers are retrieving messages.
 
 ## Process management

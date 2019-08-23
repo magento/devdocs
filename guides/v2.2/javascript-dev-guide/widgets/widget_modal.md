@@ -19,7 +19,7 @@ The widget uses the following templates:
 -  [`<Magento_Ui_module_dir>/view/base/web/templates/modal/modal-popup.html`] popup type template.
 -  [`<Magento_Ui_module_dir>/view/base/web/templates/modal/modal-slide.html`] slide type template.
 
-The design patterns for the modal pop-up windows in the Admin are described in the [Magento Admin Pattern Library, the Slide-out Panels, Modal Windows, and Overlays topic.] 
+The design patterns for the modal pop-up windows in the Admin are described in the [Magento Admin Pattern Library, the Slide-out Panels, Modal Windows, and Overlays topic.]
 
 ## Initialize the modal widget {#modal_initialize}
 
@@ -58,14 +58,14 @@ The modal widget has the following options:
 
 Automatically open the modal window when the widget is initialized.
 
-**Type**: Boolean 
+**Type**: Boolean
 
 **Default value**: `false`
 
 ### `buttons` {#modal_buttons}
 Array of buttons for action pane.
 
-**Type**: Array 
+**Type**: Array
 
 **Structure**:
 
@@ -93,85 +93,85 @@ buttons: [{
 
 Close the modal window when a user clicks on the overlay.
 
-**Type**: Boolean 
+**Type**: Boolean
 
 **Default value**: `true`
 
 ### `closeText` {#modal_closeText}
 The close button text.
 
-**Type**: String 
+**Type**: String
 
 **Default value**: `$.mage.__('Close')`
 
 ### `focus` {#modal_focus}
 Selector to focusing when a modal window opens or 'none' if focusing is not necessary.
 
-**Type**: String 
+**Type**: String
 
 **Default value**: `''`
 
 ### `innerScroll` {#modal_innerScroll}
 Modal scroll position.
 
-**Type**: Boolean 
+**Type**: Boolean
 
 **Default value**: `false`
 
 ### `modalClass` {#modal_modalClass}
 Custom classes for modal window.
 
-**Type**: String 
+**Type**: String
 
 **Default value**: empty
 
 ### `modalAction` {#modal_modalAction}
 The selector for all the custom action buttons.
 
-**Type**: String 
+**Type**: String
 
 **Default value**: `[data-role="action"]`
 
 ### `modalCloseBtn` {#modal_modalCloseBtn}
 The selector for all the elements that can close the modal.
 
-**Type**: String 
+**Type**: String
 
 **Default value**: `[data-role="closeBtn"]`
 
 ### `modalContent` {#modal_modalContent}
 The selector for element that is used for the modal's content.
 
-**Type**: String 
+**Type**: String
 
 **Default value**: `[data-role="content"]`
 
 ### `modalLeftMargin` {#modal_modalLeftMargin}
 Sets a margin between slide modal windows.
 
-**Type**: Number 
+**Type**: Number
 
 **Default value**: 45
 
 ### `responsive` {#modal_responsive}
-Turn popup modal window to slide panel on small screens. 
+Turn popup modal window to slide panel on small screens.
 Available if the type option is set to 'popup'.
 
-**Type**: Boolean 
+**Type**: Boolean
 
 **Default value**: `false`
 
 ### `title` {#modal_title}
 Translated title for popup window.
 
-**Type**: String 
+**Type**: String
 
 **Default value**: empty
 
 ### `trigger` {#modal_trigger}
 The element that triggers the modal.
 
-**Type**: String 
+**Type**: String
 
 **Default value**: empty
 
@@ -179,7 +179,7 @@ The element that triggers the modal.
 
 The type of window: 'popup' or 'slide'.
 
-**Type**: String 
+**Type**: String
 
 **Default value**: `popup`
 

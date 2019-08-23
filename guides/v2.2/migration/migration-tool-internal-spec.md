@@ -393,7 +393,7 @@ Options:
 
 #### Wildcards
 
-To ignore documents with similar parts (e.g. document_name_1, document_name_2 e.t.c), you can use wildcard functionality. Just put * symbol instead of repeating part (e.g. document_name_*) and this mask will cover all source or destination documents that meet this mask.
+To ignore documents with similar parts (e.g. document_name_1, document_name_2 e.t.c), you can use wildcard functionality. Just put `*` symbol instead of repeating part (e.g. `document_name_*`) and this mask will cover all source or destination documents that meet this mask.
 
 #### URL Rewrite Step
 

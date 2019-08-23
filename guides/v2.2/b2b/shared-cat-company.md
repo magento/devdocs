@@ -14,7 +14,6 @@ A shared catalog must be assigned to one or more companies before it can be acce
 
 `sharedCatalogCompanyManagementV1`
 
-
 **REST endpoints**
 
 ```

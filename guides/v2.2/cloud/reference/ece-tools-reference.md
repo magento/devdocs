@@ -25,7 +25,7 @@ By default, these `{{site.data.var.ct}}` commands are in the [hooks property][ho
 
 ## Docker configuration generator
 
-The `{{site.data.var.ct}}` package provides all the commands necessary to [launch a Docker development environment]({{page.baseurl}}/cloud/docker/docker-config.html). 
+The `{{site.data.var.ct}}` package provides all the commands necessary to [launch a Docker development environment]({{page.baseurl}}/cloud/docker/docker-config.html).
 
 Command | Action
 :------ | :------
