@@ -127,9 +127,15 @@ pages:
             - label: Manage prices for multiple products
               url: /rest/modules/catalog-pricing.html
               include_versions: ["2.2", "2.3"]
+        
+        - label: Sales
+          children:
 
-            - label: Refunds and credits
-              url: /rest/modules/refunds-credits.html
+            - label: Credits
+              url: /rest/modules/credits.html
+
+            - label: Refunds
+              url: /rest/modules/refunds.html
 
         - label: Inventory
           include_versions: ["2.3"]
