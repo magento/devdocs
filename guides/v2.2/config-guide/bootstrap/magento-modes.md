@@ -33,7 +33,7 @@ You can run Magento in any of the following *modes*:
 				<li>Enables enhanced debugging</li>
 				<li>Shows custom <code>X-Magento-*</code> HTTP request and response headers</li>
 				<li>Results in the slowest performance</li>
-				<li>Show errors on the frontend</li></ul>
+				<li>Shows errors on the frontend</li></ul>
     </td>
 	</tr>
 	<tr>
