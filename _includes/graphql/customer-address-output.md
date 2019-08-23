@@ -1,13 +1,19 @@
+### CustomerAddress output {#customerAddressOutput}
+
+The values assigned to attributes such as `firstname` and `lastname` in this object may be different from those defined in the `Customer` object.
+
+The `CustomerAddress` output returns the following attributes:
+
 Attribute |  Data Type | Description
 --- | --- | ---
 `city` | String | The city or town
 `company` | String | The customer's company
 `country_id` | String | The customer's country
-`custom_attributes` | [CustomerAddressAttribute](#CustomerAddressAttributeOutput) | Address custom attributes
+`custom_attributes` | [CustomerAddressAttribute](#customerAddressAttributeOutput) | Address custom attributes
 `customer_id` | Int | The customer ID
 `default_billing` | Boolean | Indicates whether the address is the default billing address
 `default_shipping` | Boolean | Indicates whether the address is the default shipping address
-`extension_attributes` | [CustomerAddressAttribute](#CustomerAddressAttributeOutput) | Address extension attributes
+`extension_attributes` | [CustomerAddressAttribute](#customerAddressAttributeOutput) | Address extension attributes
 `fax` | String | The fax number
 `firstname` | String | The first name of the person associated with the shipping/billing address
 `id` | Int | The ID assigned to the address object
@@ -24,7 +30,7 @@ Attribute |  Data Type | Description
 
 ### CustomerAddressAttribute output {#customerAddressAttributeOutput}
 
-The `CustomerAddressAttributeOutput` object returns the following attributes:
+The `CustomerAddressAttribute` output returns the following attributes:
 
 Attribute |  Data Type | Description
 --- | --- | ---
@@ -33,7 +39,7 @@ Attribute |  Data Type | Description
 
 ### CustomerAddressRegion output {#customerAddressRegionOutput}
 
-The `customerAddressRegionOutput` object returns the following attributes:
+The `customerAddressRegion` output returns the following attributes:
 
 Attribute |  Data Type | Description
 --- | --- | ---

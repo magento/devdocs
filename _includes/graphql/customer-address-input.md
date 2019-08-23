@@ -1,3 +1,7 @@
+### CustomerAddress input {#customerAddressInput}
+
+The `CustomerAddress` input can contain the following attributes:
+
 Attribute |  Data Type | Description
 --- | --- | ---
 `city` | String | The city or town
@@ -24,7 +28,7 @@ Attribute |  Data Type | Description
 
 ### CustomerAddressAttribute input {#customerAddressAttributeInput}
 
-The `CustomerAddressAttributeInput` object can contain the following attributes:
+The `CustomerAddressAttribute` input can contain the following attributes:
 
 Attribute |  Data Type | Description
 --- | --- | ---
@@ -33,7 +37,7 @@ Attribute |  Data Type | Description
 
 ### CustomerAddressRegion input {#customerAddressRegionInput}
 
-The `customerAddressRegionInput` object can contain the following attributes:
+The `customerAddressRegion` input can contain the following attributes:
 
 Attribute |  Data Type | Description
 --- | --- | ---

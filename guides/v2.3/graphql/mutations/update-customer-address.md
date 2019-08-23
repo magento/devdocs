@@ -53,10 +53,6 @@ Attribute |  Data Type | Description
 `id` | Int! | The ID assigned to the address object
 `CustomerAddressInput` | [CustomerAddress](#customerAddressInput)| An array containing the customer’s shipping and billing addresses
 
-### CustomerAddressInput {#customerAddressInput}
-
-The `CustomerAddressInput` object can contain the following attributes:
-
 {% include graphql/customer-address-input.md %}
 
 ## Output attributes

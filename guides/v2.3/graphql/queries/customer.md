@@ -197,24 +197,6 @@ The `customer` object can contain the following attributes:
 
 {% include graphql/customer-output.md %}
 
-### Customer address attributes {#customerAddress}
-
-The values assigned to attributes such as `firstname` and `lastname` in this object may be different from those defined in the `Customer` object.
-
-{% include graphql/customer-address-attribute-output.md %}
-
-### Customer address region attributes {#customerAddressRegion}
-
-The `CustomerAddressRegion` object can contain the following attributes:
-
-{% include graphql/customer-address-region-output.md %}
-
-### Customer address attribute {#CustomerAddressAttribute}
-
-The `CustomerAddressAttribute` object consists of:
-
-{% include graphql/customer-address-attribute-output.md %}
-
 ### Store credit attributes
 
 In {{site.data.var.ee}}, the merchant can assign store credit to customers. Magento maintains the history of all changes to the balance of store credit available to the customer. The customer must be logged in to access the store credit history and balance.

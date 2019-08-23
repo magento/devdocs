@@ -1,6 +1,6 @@
 Attribute |  Data Type | Description
 --- | --- | ---
-`addresses` | [CustomerAddress](#customerAddress) | An array containing the customer's shipping and billing addresses
+`addresses` | [CustomerAddress](#customerAddressInput) | An array containing the customer's shipping and billing addresses
 `created_at` | String | Timestamp indicating when the account was created
 `default_billing` | String | The ID assigned to the billing address
 `default_shipping` | String | The ID assigned to the shipping address
@@ -16,3 +16,5 @@ Attribute |  Data Type | Description
 `prefix` | String | An honorific, such as Dr., Mr., or Mrs.
 `suffix` | String | A value such as Sr., Jr., or III
 `taxvat` | String | The customer's Tax/VAT number (for corporate customers)
+
+{% include graphql/customer-address-input.md %}
