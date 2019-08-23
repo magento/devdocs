@@ -69,7 +69,7 @@ define(function () {
 
 #### Extend jQuery Widget
 
-The following is an example of a mixin that extends the [modal widget] with a function that adds confirmation for a modal closing.
+The following is an example of a mixin that extends the [modal widget][] with a function that adds confirmation for a modal closing.
 
 **File:** `OrangeCompany/Sample/view/base/web/js/modal-widget-mixin.js`
 
@@ -114,7 +114,7 @@ The mixins configuration in the `requirejs-config.js` associates a target compon
 
 ### Example
 
-The following is an example of a `requirejs-config.js` file that adds the `columns-mixin` and `modal-widget-mixin` mixins, defined in the previous examples, to the [grid column component] and [modal widget].
+The following is an example of a `requirejs-config.js` file that adds the `columns-mixin` and `modal-widget-mixin` mixins, defined in the previous examples, to the [grid column component][] and [modal widget][].
 
 **File:** `OrangeCompany/Sample/view/base/requirejs-config.js`
 
