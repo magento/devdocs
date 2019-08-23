@@ -24,6 +24,8 @@ Attribute | Type | Description
 
 ### ConfigurableVariant object
 
+The `ConfigurableVariant` object contains the following attributes:
+
 Field | Type | Description
 --- | --- | ---
 `attributes` | ConfigurableAttributeOption | ConfigurableAttributeOption contains the value_index (and other related information) assigned to a configurable product option
@@ -31,13 +33,15 @@ Field | Type | Description
 
 ### ConfigurableAttributeOption object
 
+The `ConfigurableAttributeOption` object contains the following attributes:
+
 Field | Type | Description
 --- | --- | ---
 `code` | String | The ID assigned to the attribute
 `label` | String | A string that describes the configurable attribute option
 `value_index` | Int | A unique index number assigned to the configurable product option
 
-### Configurable product options {#configProdOptions}
+### ConfigurableProductOptions {#configProdOptions}
 
 The `ConfigurableProductOptions` object contains the following attributes:
 
@@ -52,7 +56,7 @@ Attribute | Type | Description
 `use_default` | Boolean | Indicates whether the option is the default
 `values` | [[ConfigurableProductOptionsValues]](#configProdOptionsValues) | An array that defines the `value_index` codes assigned to the configurable product
 
-### Configurable product options values {#configProdOptionsValues}
+### ConfigurableProductOptionsValues {#configProdOptionsValues}
 
 The `ConfigurableProductOptionsValues` object contains the following attribute:
 

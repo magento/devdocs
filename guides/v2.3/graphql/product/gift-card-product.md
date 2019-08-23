@@ -1,30 +1,38 @@
 ---
 group: graphql
 title: Gift card product data types
+ee_only: True
 redirect_from:
   - /guides/v2.3/graphql/reference/gift-card-product.html
 ---
 
-The `GiftCardProduct` data type defines which gift card-specific attributes are returned when performing a `products` query.
+The `GiftCardProduct` data type defines properties of a gift card, including the minimum and maximum values and an array that contains the current and past values on the specific gift card
+
+It implements the following interfaces:
+
+-   `ProductInterface`
+-   `PhysicalProductInterface`
+-   `CustomizableProductInterface`
 
 ## GiftCardProduct object
+
+The `GiftCardProduct` object contains the following attributes:
 
 Attribute | Type | Description
 --- | --- | ---
 `allow_message` | Boolean | Indicates whether the customer can provide a message to accompany the gift card
 `allow_open_amount` | Boolean | Indicates whether customers have the ability to set the value of the gift card
-`color` | Int | The color of the product
-`giftcard_amounts` | `GiftCardAmounts` | An array that contains information about the values and ID of a gift card
+`giftcard_amounts` | [`GiftCardAmounts`] | An array that contains information about the values and ID of a gift card
 `giftcard_type` | `GiftCardTypeEnum` | Either VIRTUAL, PHYSICAL, or COMBINED
 `is_redeemable` | Boolean | Indicates whether the customer can redeem the value on the card for cash
 `lifetime` | Int | The number of days after purchase until the gift card expires. A null value means there is no limit
-`manufacturer` | Int | The manufacturer of the product
 `message_max_length` | Int | The maximum number of characters a gift card message can contain
 `open_amount_max` | Float | The maximum acceptable value of an open amount gift card
 `open_amount_min` | Float | The minimum acceptable value of an open amount gift card
-`size` |  String | The size of the product
 
 ## GiftCardAmounts object
+
+The `GiftCardAmounts` object contains the following attributes:
 
 Attribute | Type | Description
 --- | --- | ---

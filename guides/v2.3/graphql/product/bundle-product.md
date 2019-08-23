@@ -15,21 +15,25 @@ Attributes that are specific to bundle products can be used when performing a [`
 
 ## BundleProduct object
 
+The `BundleProduct` object contains the following attributes:
+
 Attribute | Type | Description
 --- | --- | ---
 `dynamic_price` | Boolean | Indicates whether the bundle product has a dynamic price
 `dynamic_sku` | Boolean | Indicates whether the bundle product has a dynamic SKU
 `dynamic_weight` | Boolean | Indicates whether the bundle product has a dynamically calculated weight
-`items` | BundleItem | An array containing information about individual bundle items
+`items` | [BundleItem] | An array containing information about individual bundle items
 `price_view` | PriceViewEnum | One of PRICE_RANGE or AS_LOW_AS
-`ship_bundle_items` | ShipBundleItemsEnum | Indicates whether to ship bundle items together or individually
+`ship_bundle_items` | ShipBundleItemsEnum | Indicates whether to ship bundle items TOGETHER or SEPARATELY
 
 ## BundleItem object
+
+The `BundleItem` object contains the following attributes:
 
 Attribute | Type | Description
 --- | --- | ---
 `option_id` | Int | An ID assigned to each type of item in a bundle product
-`options`  | BundleItemOption | An array of additional options for this bundle item
+`options`  | [BundleItemOption] | An array of additional options for this bundle item
 `position` | Int | The relative position of this item compared to the other bundle items
 `required` | Boolean | Indicates whether the item must be included in the bundle
 `sku` | String | The SKU of the bundle product
@@ -37,6 +41,8 @@ Attribute | Type | Description
 `type` | String | The input type that the customer uses to select the item. Examples include radio button and checkbox.
 
 ## BundleItemOption object
+
+The `BundleItemOption` object contains the following attributes:
 
 Attribute | Type | Description
 --- | --- | ---
@@ -47,8 +53,8 @@ Attribute | Type | Description
 `position` | Int | When a bundle item contains multiple options, the relative position of this option compared to the other options
 `price_type` | PriceTypeEnum | One of FIXED, PERCENT, or DYNAMIC
 `price` | Float | The price of the selected option
-`product` | ProductInterface | The ProductInterface object, which contains details about this product option
-`qty` | Float | Deprecated. Use `quantity` instead.
+`product` | [ProductInterface]({{page.baseurl}}/graphql/queries/products.html#ProductInterface) | Contains details about this product option
+`qty` | Float | Deprecated. Use `quantity` instead
 `quantity` | Float | Indicates the quantity of this specific bundle item
 
 ## Sample Query

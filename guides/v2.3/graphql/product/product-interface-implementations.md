@@ -1,6 +1,8 @@
 ---
 group: graphql
 title: Product interface implementations
+redirect_from:
+  - /guides/v2.3/graphql/reference/product-interface-implementations.html
 ---
 
 Magento provides multiple product types, and most of these product types have specialized attributes that are not defined in the `ProductInterface`.
