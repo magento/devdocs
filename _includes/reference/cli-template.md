@@ -15,7 +15,7 @@ The initial list is auto generated using the `{{ tool }} list` command at the {{
 ## Reference
 
 {: .bs-callout-info }
-This reference is generated from the Magento codebase and, therefore, editing is not allowed in this topic. If you want to commit to the documentation, you can do so by editing the corresponding CLI command implementation in the codebase. For more details about contributing to the codebase, refer to [Magento Code Contributions]({{ page.baseurl] }}/contributor-guide/contributing.html).
+This reference is generated from the Magento codebase. To add or update the content, you must update the source code for the corresponding CLI command in the [Magento 2 codebase](https://github.com/magento/magento2) repository and submit them for review.  For contribution guidelines, see [Magento Code Contributions]({{ page.baseurl] }}/contributor-guide/contributing.html).
 
 {% for command in commands %}
   {% assign arguments = command.definition.arguments %}
