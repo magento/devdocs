@@ -21,7 +21,7 @@ We recommend using the following best practices when developing themes:
     * Change the HTML tag or CSS class for the existing container using the `<referenceContainer>` element.
     * Add fonts, images, and JavaScript files in the `<theme_dir>/web/` directory.
 
-   See the [Layout chapter of this Guide]({{ page.baseurl }}/frontend-dev-guide/layouts/layout-overview.html) for more information on working with layouts.
+  See the [Layout chapter of this Guide]({{ page.baseurl }}/frontend-dev-guide/layouts/layout-overview.html) for more information on working with layouts.
 
 1. Reuse the markup and design patterns from the default Magento files by referencing the existing `.phtml` templates ([templates hints can help]({{ page.baseurl }}/frontend-dev-guide/themes/debug-theme.html#debug-theme-templ)) or copy-pasting HTML markup to your custom templates.
 1. Use `<theme_dir>/etc/view.xml` to change image types sizes or add your own types. See [Configure images properties]({{ page.baseurl }}/frontend-dev-guide/themes/theme-images.html) for details. Use this file to also [customize the product gallery widget]({{ page.baseurl }}/javascript-dev-guide/widgets/widget_gallery.html).
