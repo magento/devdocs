@@ -129,7 +129,6 @@ pages:
               include_versions: ["2.2", "2.3"]
         
         - label: Sales
-          include_versions: ["2.3"]
           children:
 
             - label: Credits
