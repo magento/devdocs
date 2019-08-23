@@ -83,7 +83,7 @@ Before you continue, make sure the sample module is registered and enabled.
     ```
 
 2. Make sure that the module's name is displaying under `List of enabled modules:`.
-    
+
     ```text
     List of enabled modules:
     ...
@@ -122,7 +122,7 @@ class Test {
 
    /**
     * Write to system.log
-    * 
+    *
     * @return void
     */
     public function execute() {
