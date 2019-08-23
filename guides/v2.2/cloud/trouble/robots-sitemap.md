@@ -28,7 +28,7 @@ This requires ECE-Tools version 2002.0.12 and later with an updated `.magento.ap
    -  **Path**:`/media/`
 
 1. Click **Save & Generate**. The new site map becomes available in the _Site Map_ grid.
-1. Click the path in the `Link for Google` column.
+1. Click the path in the _Link for Google_ column.
 
 #### To add content to `robots.txt` file
 
