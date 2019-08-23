@@ -65,7 +65,7 @@ The top-level `DeletePaymentTokenOutput` object is listed first. All child objec
 
 ### DeletePaymentTokenOutput attributes
 
-The `DeletePaymentTokenOutput`  object returns the result of the operation and details about the remaining customer payment tokens.
+The `DeletePaymentTokenOutput` object returns the result of the operation and details about the remaining customer payment tokens.
 
 Attribute | Data Type | Description
 --- | --- | ---
