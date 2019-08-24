@@ -27,7 +27,6 @@ See our collection of best and leading practices, common solutions, and more in 
 
 To connect with Magento and the Community, join us on the [Magento Community Engineering Slack][]. If you are interested in joining Slack, or a specific channel, send us a request at [engcom@adobe.com](mailto:engcom@adobe.com) or [self signup][].
 
-
 We have [channels][] for each project, but the following channels are recommended for new members:
 
 - [announcements][]: Introduce yourself and get quick updates for Magento Community Engineering

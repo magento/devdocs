@@ -66,7 +66,6 @@ This component has a dependency on the Column component, `<Magento_Ui_module_dir
 - [`<Magento_Ui_module_dir>/view/base/web/templates/grid/cells/expandable.html`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/templates/grid/cells/expandable.html)
 - [`<Magento_Ui_module_dir>/view/base/web/templates/grid/cells/expandable/content.html`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/templates/grid/cells/expandable/content.html)
 
-
 ### Methods and events
 
 The following [API](https://glossary.magento.com/api) methods are available:

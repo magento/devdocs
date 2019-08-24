@@ -134,7 +134,7 @@ The template of the prompt popup form.
 
 **Type**: String.
 
-**Default value**: 
+**Default value**:
 
 ```html
 <form <%= formAttr %>>

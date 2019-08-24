@@ -39,7 +39,6 @@ Google Shopping ads Channel 3.0.0 is generally available for versions 2.2.4+ and
 
 - {:.fix} **Product Attribute Updates**: <!--CHAN-3485-->Updated attribute management to allow the deletion of the Google Merchant Center Category attribute, which can be created by the Google application.
 
-
 ### v2.0.2
 
 Google Shopping ads Channel 2.0.2 is generally available for versions 2.2.4+ and 2.3.x of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}.

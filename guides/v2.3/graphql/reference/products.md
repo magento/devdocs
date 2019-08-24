@@ -28,7 +28,6 @@ Attribute |  Description
 `sort` | Specifies which attribute to sort on, and whether to return the results in ascending or descending order. See [Queries]({{ page.baseurl }}/graphql/queries.html) for more information.
 `Products` | An output object that contains the results of the query. See [Response](#Response) for details.
 
-
 ## ProductFilterInput object {#ProductFilterInput}
 
 The `ProductFilterInput` object defines the filters to be used in the search. A filter contains at least one attribute, a comparison operator, and the value that is being searched for. The following example filter searches for products that has a `sku` that contains the string `24-MB` with a `price` that's less than `50`.
@@ -213,7 +212,6 @@ Attribute |  Data Type | Description
 `minimalPrice` | Price | Used for composite (bundle, configurable, grouped) products. This is the lowest possible final price for all the options defined within a composite product. If you're specifying a price range, this would be the "from" value.
 `regularPrice` | Price | The base price of a product.
 
-
 #### Price object {#Price}
 
 The `Price` object defines the price of a product as well as any tax-related adjustments.
@@ -222,7 +220,6 @@ Attribute |  Data Type | Description
 --- | --- | ---
 `amount` | Money | The price of the product and its currency code. See [Money object](#Money).
 `adjustments` | [PriceAdjustment] | An array of [PriceAdjustment](#PriceAdjustment) objects.
-
 
 ##### Money object {#Money}
 
@@ -242,7 +239,6 @@ Attribute |  Data Type | Description
 `amount` | Money | The amount of the price adjustment and its currency code. See [Money object](#Money).
 `code` | PriceAdjustmentCodesEnum | One of `tax`, `weee`, or `weee_tax`.
 `description` | PriceAdjustmentDescriptionEnum | Indicates whether the entity described by the code attribute is included or excluded from the adjustment.
-
 
 #### ProductLinks object {#ProductLinks}
 
@@ -281,7 +277,6 @@ Attribute | Type | Description
 `types` | [String] | Array of image types. It can have the following values: `image`, `small_image`, `thumbnail`
 `video_content` | ProductMediaGalleryEntriesVideoContent | Contains a [ProductMediaGalleryEntriesVideoContent](#ProductMediaGalleryEntriesVideoContent) object
 
-
 #### ProductMediaGalleryEntriesContent object {#ProductMediaGalleryEntriesContent}
 
 `ProductMediaGalleryEntriesContent` contains an image in base64 format and basic information about the image.
@@ -305,7 +300,6 @@ Attribute | Type | Description
 `video_description` | String | A description of the video
 `video_metadata` | String | Optional data about the video
 
-
 ### ProductTierPrices object {#ProductTier}
 
 The `ProductTierPrices` object defines a tier price, which is a quantity discount offered to a specific customer group.
@@ -318,7 +312,6 @@ Attribute | Type | Description
 `value` | Float | The price of the fixed price item
 `website_id` | Int | The ID assigned to the website
 
-
 ## PhysicalProductInterface {#PhysicalProductInterface}
 
 `PhysicalProductInterface`defines the weight of all tangible products.
@@ -326,7 +319,6 @@ Attribute | Type | Description
 Attribute | Type | Description
 --- | --- | ---
 `weight` | Float | The weight of the item, in units defined by the store
-
 
 ## LayerFilter object
 
@@ -357,7 +349,6 @@ Attribute | Type | Description
 --- | --- | ---
 `default` | String | The default sort field
 `options` | `SortField` | An array that contains all the fields you can use for sorting
-
 
 ### SortField object
 

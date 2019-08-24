@@ -40,7 +40,6 @@ Magento **requires all Partners** who contribute code to enable 2FA on their Git
 
 We also recommend creating a personal access token for your account to use when interacting with GitHub in scripts and on the command line. See [Creating a personal access token for the command line](https://help.github.com/en/articles/creating-a-personal-access-token-for-the-command-line) in the GitHub help.
 
-
 ## Questions or enhancement requests? {#question}
 
 We capture code-related issues in the the [Magento 2 repo](https://github.com/magento/magento2) and documentation-related issues in the [Magento DevDocs repo](https://github.com/magento/devdocs). If you have questions about Magento functionality or processes, we recommend posting them to a question-and-answer site, such as [Stack Exchange](https://magento.stackexchange.com/) and the [Magento Forums](https://community.magento.com/), where Magento community members can quickly provide recommendations and advice.
@@ -65,7 +64,7 @@ Review the following supported and accepted pull request rules. We defined these
 1. PRs that include new logic or new features must be submitted along with:
   * Unit/integration test coverage (we will be releasing more information about writing test coverage in the near future).
   * Follow the [Magento DevDocs contribution work flow and guidelines](https://github.com/magento/devdocs/blob/master/.github/CONTRIBUTING.md) to submit proposed documentation updates to the [Magento DevDocs Github repository](https://github.com/magento/devdocs).
-1. For large features or changes, [open an issue](https://github.com/magento/magento2/issues) to discuss your proposal first.  Notifying us in advance can prevent duplicate or unnecessary effort, and also offers an opportunity to get additional background information and help from other contributors. 
+1. For large features or changes, [open an issue](https://github.com/magento/magento2/issues) to discuss your proposal first.  Notifying us in advance can prevent duplicate or unnecessary effort, and also offers an opportunity to get additional background information and help from other contributors.
 1. To report a bug, [open an issue](https://github.com/magento/magento2/issues) and follow the [Issue reporting guidelines](https://github.com/magento/magento2/wiki/Issue-reporting-guidelines).
 1. Verify that all automated tests on your pull request pass successfully–all builds on [Travis CI](https://travis-ci.org/magento/magento2) must be green.
 
@@ -190,8 +189,8 @@ Creating back-ports and forward-ports are recommended and a best practice, but n
 
 As a best practice, we recommend creating back-ports and forward-ports for your code contributions.
 
-**Back-ports** (or backports) contribute your code and fixes to previous release lines. Create a back-port if you fix an issue in the current release line that also affects an earlier release. For example, if you fix an issue in 2.3, create a pull request against the 2.2 
-branch to apply your changes to that release. 
+**Back-ports** (or backports) contribute your code and fixes to previous release lines. Create a back-port if you fix an issue in the current release line that also affects an earlier release. For example, if you fix an issue in 2.3, create a pull request against the 2.2
+branch to apply your changes to that release.
 
 **Forward-ports** (or up-ports) contribute your code and fixes to a more current release line. Create a forward port if you fix an issue in an earlier release line that also affects a more current release. For example, if you have fixed an issue in 2.2, create a pull request against the latest release branch to address that issue in an upcoming minor release. If you contribute a fix to 2.2, create a pull request against the 2.3 release branch to apply your changes to that release. We recommend that contributors create a pull request to forward port every fix delivered to an older release line.
 

@@ -7,7 +7,6 @@ The `createEmptyCart` mutation creates an empty shopping cart for a guest or log
 
 If you are creating a cart for a logged in customer, you must include the customer's authorization token in the header of the request.
 
-
 ## Syntax
 
 `mutation: {createEmptyCart}: String`
@@ -54,7 +53,7 @@ Attribute |  Data Type | Description
 
 ``` text
 mutation {
-  createEmptyCart(input: 
+  createEmptyCart(input:
      { cart_id: "x2345678901234567890123456789012"})
 }
 ```

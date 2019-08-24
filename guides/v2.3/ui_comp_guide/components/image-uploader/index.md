@@ -7,13 +7,11 @@ The ImageUploader UI component gives users the ability to upload images to the M
 
 This component is a variation of the [FileUploader component]({{ page.baseurl }}/ui_comp_guide/components/ui-fileuploader.html) and uses the same configuration settings.
 
-
 ## Configuration options
 
 | Title             | Type   | Default | Description                                                                    |
 | ----------------- | ------ | ------- | ------------------------------------------------------------------------------ |
 | `openDialogTitle` | String |   ---   | Defines the title that appears when opening the media browser dialog slideout. |
-
 
 ## Source files
 

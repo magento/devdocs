@@ -35,7 +35,7 @@ This work is delegated to a fallback, which is a queue of handlers in the priori
 
 ### `config.xml` {#mtf_handler_configxml}
 
-The default configuration for handlers is set in [`<magento2>/dev/tests/functional/etc/config.xml.dist`]({{ site.mage2bloburl }}/{{ page.guide_version }}/dev/tests/functional/etc/config.xml.dist). 
+The default configuration for handlers is set in [`<magento2>/dev/tests/functional/etc/config.xml.dist`]({{ site.mage2bloburl }}/{{ page.guide_version }}/dev/tests/functional/etc/config.xml.dist).
 Create a duplicate of the file, and keep both, but make changes to the new one, which is called `config.xml`:
 
 ```bash
@@ -137,7 +137,6 @@ In this example, the `di.xml` file causes the `Curl` class to replace the `Widge
 See the directory structure mentioned for the case with the Widget cURL handler:
 
 ![]({{ site.baseurl }}/common/images/ftf/mtf_widget_handler_tree.png)
-
 
 ## How to create a cURL handler {#mtf_handler_howto-create-curl}
 

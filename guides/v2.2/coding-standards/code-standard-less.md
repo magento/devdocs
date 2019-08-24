@@ -166,7 +166,6 @@ Add a blank line after a selector.
             background-color: @bar__background-color;
         }
 
-
 **Incorrect**:
 
     css
@@ -187,13 +186,11 @@ Add a semicolon after property.
         background-color: @nav__background-color;
     }
 
-
 **Incorrect**:
 
     .nav {
         background-color: @nav__background-color
     }
-
 
 #### !important property
 
@@ -204,7 +201,6 @@ Avoid using the `!important` property if possible. If it is required, add a spac
     .jquery-ui-calendar-item {
         background-color: @nav__background-color !important;
     }
-
 
 **Incorrect**:
 
@@ -254,7 +250,6 @@ You can use almost all CSS3 selectors: descendants, attributes, pseudo classes, 
 
 Exception: Avoid the `id` selector.
 
-
 **Correct**:
 
     .nav {
@@ -287,7 +282,6 @@ Class names should be lowercase, start with a letter (except helper classes), wo
         ...
     }
 
-
 **Incorrect**:
 
     .navBar {
@@ -317,7 +311,6 @@ Some parts of Magento code might not comply with this standard yet. You might st
 Use class names that are as short as possible, but as long as necessary.
 Try to convey what class is about while being as brief as possible.
 
-
 **Correct**:
 
     .nav-bar {
@@ -340,7 +333,6 @@ Try to convey what class is about while being as brief as possible.
 
 Use meaningful, specific class names that reflect the purpose of the element. Class names should not be presentational or cryptic.
 
-
 **Correct**: specific
 
     .category {
@@ -349,7 +341,6 @@ Use meaningful, specific class names that reflect the purpose of the element. Cl
     .category-title {
         ...
     }
-
 
 **Incorrect**: cryptic
 
@@ -375,7 +366,6 @@ Avoid qualifying class names with type selectors.
 
 Unless necessary (for example with helper classes), do not use element names in conjunction with IDs or classes.
 
-
 **Correct**:
 
     .error {
@@ -388,16 +378,13 @@ Unless necessary (for example with helper classes), do not use element names in 
        ...
     }
 
-
 Type selectors must be lowercase.
-
 
 **Correct**:
 
     .nav > li {
         ...
     }
-
 
 **Incorrect**:
 
@@ -513,7 +500,6 @@ Do not specify units "0" value.
     border-width: 0;
     margin: 0;
 
-
 **Incorrect**:
 
     border-width: 0px;
@@ -543,7 +529,6 @@ Omit leading "0"s in values, use dot instead.
     @nav-item__color: #f00;
     ...
     color: @nav-item__color;
-
 
 **Incorrect**:
 
@@ -585,7 +570,6 @@ All variable names must be lowercase.
 
 General model is the following:
 
-
     @property-name
 
 **Examples**:
@@ -605,7 +589,6 @@ Component name must meaningful. It can contain the `primary`, `secondary`, `tert
 `base` is a modifier.
 
 **Examples**:
-
 
     @color-orange: '';
 

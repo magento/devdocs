@@ -13,7 +13,7 @@ stage:
   build:
     BUILD_VARIABLE_NAME: value
 ```
- 
+
 {% include cloud/customize-build-deploy.md %}
 
 {: .bs-callout-info }
@@ -63,7 +63,7 @@ Themes include numerous files. Set this variable to `true` if you want to skip c
 ```yaml
 stage:
   build:
-    SCD_EXCLUDE_THEMES: "magento/luma, magento/my-theme" 
+    SCD_EXCLUDE_THEMES: "magento/luma, magento/my-theme"
 ```
 
 ### `SCD_MATRIX`
@@ -95,12 +95,12 @@ stage:
       "magento/backend": [ ]
 ```
 
-### `SCD_MAX_EXECUTION_TIME` 
+### `SCD_MAX_EXECUTION_TIME`
 
 -  **Default**—_Not set_
 -  **Version**—Magento 2.2.0 and later
 
-Allows you to increase the maximum expected execution time for static content deployment. 
+Allows you to increase the maximum expected execution time for static content deployment.
 
 By default, Magento Commerce sets the maximum expected execution to 400 seconds, but in some scenarios you might need more time to complete the static content deployment for a Cloud project.
 
@@ -167,7 +167,7 @@ stage:
 -  **Version**—Magento 2.1.4 and later
 
  Enables or disables the [Symfony](https://symfony.com/doc/current/console/verbosity.html) debug verbosity level for your logs. Choose the level of detail provided in the logs: `-v`, `-vv`, or `-vvv`.
- 
+
 ```yaml
 stage:
   build:

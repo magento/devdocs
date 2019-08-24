@@ -11,7 +11,7 @@ It usually makes sense to group modules in a component if they together represen
 
 Technical vision documents are targeting architects and developers to **guide** them in **making decisions** based on high-level picture of the system in its desired state.
 
-In contrast, 
+In contrast,
 
 * **specifications** are documents that describe current implementation of the system. Though they are also targeting architects and developers, they help with initial investigation, but may be insufficient to make decisions that improve the system.
-* **Technical Guidelines** is a low-level document that provides specific recommendations for a developer in their every day work. 
+* **Technical Guidelines** is a low-level document that provides specific recommendations for a developer in their every day work.

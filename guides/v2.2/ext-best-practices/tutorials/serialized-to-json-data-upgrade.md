@@ -207,7 +207,7 @@ $fieldDataConverter->convert(
 
 #### Use values from another table in the condition
 
-The following tables show how the `type` and `option_id` columns from the `catalog_product_option` table form the unique `code` value for custom options in the `quote_item_option` table.  
+The following tables show how the `type` and `option_id` columns from the `catalog_product_option` table form the unique `code` value for custom options in the `quote_item_option` table.
 
 > `catalog_product_option` table
 
@@ -216,7 +216,6 @@ The following tables show how the `type` and `option_id` columns from the `catal
 | 1001      | 1          | my_custom_option |
 | 1002      | 2          | my_custom_option |
 | 1003      | 5          | my_custom_option |
-
 
 > `quote_item_option` table
 
@@ -279,7 +278,6 @@ The following example is a custom data converter class that converts data in the
 This field contains nested serialized data that needs conversion.
 
 Since you cannot assume the format of the data when initially converted, the following example also checks the format and uses the appropriate methods to unserialize and serialize the data using the original format.
-
 
 {% collapsible Show code %}
 ```php
@@ -366,7 +364,6 @@ class SerializedToJsonDataConverter implements \Magento\Framework\DB\DataConvert
 ```
 {% endcollapsible %}
 
-
 After creating your custom data converter class, use the `FieldDataConverterFactory` to create a `FieldDataConverter` instance with your custom converter:
 
 {% collapsible Show code %}
@@ -441,7 +438,6 @@ $this->aggregatedFieldConverter->convert($fieldsToUpdate, $salesSetup->getConnec
 
 * [Serialize Library][0]
 * [Extension Lifecycle][1]
-
 
 [0]: {{ page.baseurl }}/extension-dev-guide/framework/serializer.html "Serialize Library"
 [1]: {{ page.baseurl }}/extension-dev-guide/prepare/lifecycle.html "Extension Lifecycle"

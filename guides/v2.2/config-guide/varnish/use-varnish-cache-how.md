@@ -18,7 +18,7 @@ This topic discusses how Varnish caching works with Magento using:
 {:.bs-callout .bs-callout-info}
 This topic covers only the default options in the preceding list. There are many other ways to configure caching in complex scenarios (for example, using a Content Delivery Network); those methods are beyond the scope of this guide.
 
-On the first browser request, cacheable assets are delivered to the client browser from Varnish and cached on the browser.  
+On the first browser request, cacheable assets are delivered to the client browser from Varnish and cached on the browser.
 
 In addition, Varnish uses an [Entity](https://glossary.magento.com/entity) Tag ([ETag](https://en.wikipedia.org/wiki/HTTP_ETag)) for static assets. The ETag provides a way to determine when [static files](https://glossary.magento.com/static-files) change on the server. As a result, static assets are sent to the client when they change on the server&mdash;either on a new request from a browser or when the client refreshes the browser cache, typically by pressing F5 or Control+F5.
 

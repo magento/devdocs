@@ -15,8 +15,8 @@ This task requires you to create a root [category](https://glossary.magento.com/
 *	[Content](http://docs.magento.com/m2/ce/user_guide/cms/content-menu.html)
 
 {: .bs-callout-info }
-For example purposes only, we use a French [website](https://glossary.magento.com/website) with website code `french` in this topic. For step-by-step tutorials, see:  
-    -  [Tutorial: Set up multiple websites with Apache]({{ page.baseurl }}/config-guide/multi-site/ms_apache.html)  
+For example purposes only, we use a French [website](https://glossary.magento.com/website) with website code `french` in this topic. For step-by-step tutorials, see:
+    -  [Tutorial: Set up multiple websites with Apache]({{ page.baseurl }}/config-guide/multi-site/ms_apache.html)
     -  [Tutorial: Set up multiple websites with nginx]({{ page.baseurl }}/config-guide/multi-site/ms_nginx.html)
 
 ## Step 1: Create root categories
