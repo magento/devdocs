@@ -91,9 +91,9 @@ Make sure that you declare a component so that it is rendered correctly by the p
 
 ## Move a component
 
-To move any component on your checkout page, find the component (parent) where it needs to be placed, and paste your component as child of the parent one.
+To move any component on your checkout page, find the component (parent) where it needs to be placed, and paste your component as a child of the parent.
 
-The following sample is an example, of how to move the discount component to the order summary block, that will be showing on both shipping and billing steps.
+The following example shows how to move the discount component to the order summary block, which will display on both shipping and billing steps.
 
 ```xml
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
@@ -133,8 +133,8 @@ The following sample is an example, of how to move the discount component to the
 </page>
 ```
 
-{:.bs-callout .bs-callout-info}
-Do not forget to [disable](#disable) or [remove](#remove) the component from the original place, as they will be conflicting to each other. 
+{:.bs-callout-info}
+Do not forget to [disable](#disable) or [remove](#remove) the component from its original location or they will conflict with each other. 
 
 {% collapsible Order Summary Result %}
 
