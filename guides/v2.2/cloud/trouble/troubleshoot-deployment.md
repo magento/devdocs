@@ -25,7 +25,7 @@ To redeploy with the correct authentication keys:
 3. Create a branch to update code with the name `auth`:
 
       magento-cloud environment:branch auth master
-      
+
 4. Change to the project root directory.
 5. Open `auth.json` in a text editor.
 
@@ -47,11 +47,11 @@ To redeploy with the correct authentication keys:
     ```bash
     git add -A
     ```
-    
+
     ```bash
     git commit -m "<description of change>"
     ```
-    
+
     ```bash
     git push origin master
     ```

@@ -38,7 +38,6 @@ Condition | Notes
 `null` | Null
 `to` | The end of a range. Must be used with `from`
 
-
 {:.bs-callout .bs-callout-info}
 `condition_type` is optional if the operator is `eq`.
 

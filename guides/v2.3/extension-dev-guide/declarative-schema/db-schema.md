@@ -72,7 +72,6 @@ Attribute | Description
 `resource` | The database shard on which to install the table. This value must be `default`, `checkout`, or `sales`.
 `comment` | Table comment
 
-
  A `table` node can contain three types of subnodes:
 
  * `column`
@@ -150,7 +149,7 @@ A column can have the following attributes:
 
 For more information about each type, refer to the annotations in the corresponding XSD file. The location of the XSD file depends on how you installed Magento.
 
-- [Archive download]({{page.baseurl}}/install-gde/prereq/zip_install.html): `<Magento_root_directory/vendor/magento/framework/Setup/Declaration/Schema/etc` 
+- [Archive download]({{page.baseurl}}/install-gde/prereq/zip_install.html): `<Magento_root_directory/vendor/magento/framework/Setup/Declaration/Schema/etc`
 - [Composer]({{page.baseurl}}/install-gde/composer.html) or [GitHub]({{page.baseurl}}/install-gde/prereq/dev_install.html) installation: `<Magento_root_directory/lib/internal/Magento/Framework/Setup/Declaration/Schema/etc`
 
 Example:
@@ -188,7 +187,6 @@ Attribute | Description
 `referenceColumn`| A column in the `referenceTable`
 `onDelete` | Foreign key trigger. The value must be `CASCADE`, `SET NULL`, or `NO ACTION`
 
-
 Example:
 
 ```xml
@@ -203,7 +201,6 @@ Attribute | Description
 --- | ---
 `referenceId` |  A custom identifier that is used only for relation mapping in the scope of `db_schema.xml` files. The real entity in the database has a system-generated name. The most convenient way to set the value of this attribute is to use the value that is written in the module's `db_schema_whitelist.json`  file when you [run the `generate-whitelist` command]({{ page.baseurl}}/extension-dev-guide/declarative-schema/migration-commands.html#create-whitelist).
 `indexType` | The value must be `btree`, `fulltext`, or `hash`
-
 
 Example:
 
@@ -259,8 +256,8 @@ In the following example, the `declarative_table` table was completely removed f
 
 ### Rename a table
 
-Table renaming is supported. The declarative schema will create a new table with the new name and drop the table with the old name.  
-Renaming a table via `RENAME TABLE` is *NOT* supported.  
+Table renaming is supported. The declarative schema will create a new table with the new name and drop the table with the old name.
+Renaming a table via `RENAME TABLE` is *NOT* supported.
 To migrate data from another table, specify the `onCreate` attribute on the `table` declaration, and add specify the source table name:
 
 ```xml
@@ -398,8 +395,8 @@ In the following example, the selected `constraint` node defines the characteris
         <constraint xsi:type="primary" referenceId="PRIMARY">
             <column name="id_column"/>
         </constraint>
-+       <constraint xsi:type="foreign" referenceId="FL_ALLOWED_SEVERITIES" table="declarative_table" 
-+               column="severity" referenceTable="severities" referenceColumn="severity_identifier" 
++       <constraint xsi:type="foreign" referenceId="FL_ALLOWED_SEVERITIES" table="declarative_table"
++               column="severity" referenceTable="severities" referenceColumn="severity_identifier"
 +               onDelete="CASCADE"/>
     </table>
 </schema>
@@ -420,8 +417,8 @@ The following example removes the  `FL_ALLOWED_SEVERITIES` foreign key by deleti
         <constraint xsi:type="primary" referenceId="PRIMARY">
             <column name="id_column"/>
         </constraint>
--       <constraint xsi:type="foreign" referenceId="FL_ALLOWED_SEVERITIES" table="declarative_table" 
--               column="severity" referenceTable="severities" referenceColumn="severity_identifier" 
+-       <constraint xsi:type="foreign" referenceId="FL_ALLOWED_SEVERITIES" table="declarative_table"
+-               column="severity" referenceTable="severities" referenceColumn="severity_identifier"
 -               onDelete="CASCADE"/>
     </table>
 </schema>
@@ -432,7 +429,7 @@ It is possible to drop a foreign key only if it exists in the `db_schema_whiteli
 
 ### Recreate a foreign key
 
-In this example, Module A defines a new table with primary key `id_column`. Module B declares its own schema, in which it creates a new column (`new_id_column`) and changes the primary index to this column. 
+In this example, Module A defines a new table with primary key `id_column`. Module B declares its own schema, in which it creates a new column (`new_id_column`) and changes the primary index to this column.
 Module B disables the original primary key and sets a new primary key with a `referenceId` value that is different from PRIMARY. Although this value is different, the real name of the primary key in the database remains PRIMARY.
 
  **Module A declaration**
@@ -471,7 +468,6 @@ Module B disables the original primary key and sets a new primary key with a `re
 
 When a module is disabled in `app/etc/config.php`, its database schema configuration is no longer read on upgrade or install. As a result, subsequent system upgrades rebuild the database schema without the module's tables, columns, or other elements.
 Please note that the `db_schema_whitelist.json` file of disabled modules is still read during upgrades of installs, so the declarative schema system can perform the necessary operations.
-
 
 [How to generate urns?]:{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-urn.html
 [Db Schema Autocomplete]:{{ page.baseurl }}/extension-dev-guide/declarative-schema/images/db-schema-autocomplete.png

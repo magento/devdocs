@@ -100,7 +100,7 @@ Attribute |  Data Type | Description
 ### CartItemUpdateInput object {#CartItemUpdateInput}
 
 The `CartItemUpdateInput` object must contain the following attributes:
- 
+
 Attribute |  Data Type | Description
 --- | --- | ---
 `cart_item_id` | Int! | The unique ID assigned when a customer places an item in the cart

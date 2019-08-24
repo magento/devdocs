@@ -18,7 +18,6 @@ Attribute | Data type | Description
 `three_letter_abbreviation` | String | The three-letter abbreviation of the country, such as `USA`
 `two_letter_abbreviation` | String | The two-letter abbreviation of the country, such as `US`
 
-
 ### Region attributes {#region}
 
 The `Region` object provides the following attributes:
@@ -29,7 +28,6 @@ Attribute | Data type | Description
 `id` | Int | A unique ID for the region
 `name` | String | The name of the region, such as `Texas`
 
-
 ### Countries attributes
 
 The `countries` object provides the following attributes:
@@ -37,7 +35,6 @@ The `countries` object provides the following attributes:
 Attribute | Data type | Description
 --- | --- | ---
 `Country` | [[Country]](#countryAttributes)| Provides information for all countries specified in the store
-
 
 ### Currency attributes
 
@@ -52,7 +49,6 @@ Attribute | Data type | Description
 `default_display_currency_symbol` | String | Specifies if the currency symbol is set as the store's default
 `exchange_rates` | [[ExchangeRate]](#exchangeRateAttributes) | An array of exchange rates specified in the store
 
-
 ### Exchange rate attributes {#exchangeRateAttributes}
 
 The `ExchangeRate` object provides the following attributes:
@@ -61,7 +57,6 @@ Attribute | Data type | Description
 --- | --- | ---
 `currency_to` | String | Specifies the store's default currency to exchange to
 `rate` | Float | The exchange rate for the store's default currency
-
 
 ## Country
 Use the `country` query to retrieve information about a specific country.
@@ -74,7 +69,7 @@ Use the `country` query to retrieve information about a specific country.
 
 The following query returns information about Australia.
 
-**Request** 
+**Request**
 
 ```text
 query {
@@ -162,7 +157,7 @@ Use the `countries` query to return all countries in which the entity can do bus
 
 The following query returns all countries listed for the current instance of Magento:
 
-**Request** 
+**Request**
 
 ```text
 query {
@@ -291,7 +286,7 @@ Use the `currency` query to return information about the store's currency config
 
 The following query returns the currency for the current instance of Magento:
 
-**Request** 
+**Request**
 
 ```text
 query {

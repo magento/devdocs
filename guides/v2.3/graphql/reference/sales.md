@@ -35,7 +35,6 @@ Attribute | Data type | Description
 `increment_id` | String | An ID that indicates the sequence of the order in the customer's order history
 `status` | String | The status of the order, such as `open`, `processing`, or `closed`
 
-
 ## Example usage
 
 The following query returns the order history of the logged in customer.

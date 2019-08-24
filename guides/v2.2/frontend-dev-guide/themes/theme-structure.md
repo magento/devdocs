@@ -37,24 +37,24 @@ The structure of a Magento theme directory typically would be like following:
 │	│	├── override/
 │	├── templates/
 ├── etc/
-├── i18n/ 
+├── i18n/
 ├── media/
 ├── web/
 │	├── css/
-│	│	├── source/ 
+│	│	├── source/
 │	├── fonts/
 │	├── images/
 │	├── js/
-├── composer.json 
-├── registration.php 
-├── theme.xml 
+├── composer.json
+├── registration.php
+├── theme.xml
 ```
 
 Let's have a closer look at each particular sub-directory.
 
 {:.bs-callout .bs-callout-info}
 The directories and files structure described below is the most extended one. It may not coincide with the structure of your store.
-  
+
 <table>
   <tbody>
     <tr>
@@ -292,7 +292,7 @@ Dynamic view files are located in a theme directory as follows:
 
 ```tree
 <theme_dir>/
-├── Magento_<module>/ 
+├── Magento_<module>/
 │	├── web/
 │	│	├── css/
 │	│	│	├── source/

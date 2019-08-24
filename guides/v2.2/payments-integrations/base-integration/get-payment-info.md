@@ -20,7 +20,7 @@ However, in any case you should write some code to retrieve payment details from
 We have specified `BraintreeAuthorizeRequest` builder composite to process authorization and it includes the `Magento\Braintree\Gateway\Request\PaymentDataBuilder` builder. This is builder responsible for the payment information part of the request, in other words, the credit card information. Let's look closer at it's implementation.
 
 The Braintree payment provider requires the [payment method nonce](https://developers.braintreepayments.com/start/overview#payment-method-nonce)
-to process transactions, and our builder should send it for each authorization transaction. 
+to process transactions, and our builder should send it for each authorization transaction.
 Here is how the Braintree payment builder looks:
 
 ```php
@@ -56,10 +56,10 @@ As you can see, we get the payment nonce from payment additional information. An
 {: .bs-callout-info }
 You should remove any sensitive data (like credit card details) from payment additional information when you do not use it in your code. You can remove it in request builder, after reading, or in response handler, after processing response. In other case it will be stored in database.
 
-## Getting payment information from frontend to backend 
+## Getting payment information from frontend to backend
 
 In most cases, customers fill all required information (credit card, expiration date, billing address, etc) on [checkout](https://glossary.magento.com/checkout) payment form.
-So our [payment method](https://glossary.magento.com/payment-method) implementation should provide the ability to display and process payment form on checkout step. 
+So our [payment method](https://glossary.magento.com/payment-method) implementation should provide the ability to display and process payment form on checkout step.
 
 We can send to [backend](https://glossary.magento.com/backend) any specific data, just need to override `getData()` method in
 [payment UI component]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Braintree/view/frontend/web/js/view/payment/method-renderer/cc-form.js):
@@ -92,7 +92,6 @@ define(
                 this.paymentMethodNonce = paymentMethodNonce;
             },
 
-
             beforePlaceOrder: function (data) {
                 this.setPaymentMethodNonce(data.nonce);
                 this.placeOrder();
@@ -107,7 +106,7 @@ define(
 The `getData()` method returns data what we need and depending on payment integration the returned data can be more
 complicated. we need last step to retrieve data from [storefront](https://glossary.magento.com/storefront) in the backend. Magento provides some
 mechanisms called [Observers]({{ page.baseurl }}/extension-dev-guide/events-and-observers.html).
- 
+
 #### Read additional data
 
 You need to add an observer to retrieve additional data from payment form and store it

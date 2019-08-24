@@ -20,7 +20,7 @@ You can upgrade in any of the following ways:
 	Use this method if you don't have a to the Magento server's file system or if you're a non-technical user.
 *	Using the [command line]({{ page.baseurl }}/comp-mgr/cli/cli-upgrade.html).
 
-	This upgrade method is more advanced and it requires access to the Magento server's file system.	
+	This upgrade method is more advanced and it requires access to the Magento server's file system.
 
 {:.bs-callout .bs-callout-info}
 _System upgrade_ refers to updating the Magento 2.x core components and other installed components. To migrate from Magento 1.x to Magento 2, see the [Migration Guide]({{ page.baseurl }}/migration/bk-migration-guide.html).

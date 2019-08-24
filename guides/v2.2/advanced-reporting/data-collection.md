@@ -94,15 +94,15 @@ The `\Magento\Analytics\Model\ReportWriter` class is responsible for a decision 
 <config ...>
 
     <!-- Adds a report file `module.csv` to the archive file -->
-    <file name="modules"> 
+    <file name="modules">
         ...
     </file>
-    
+
     <!-- Adds a report file `stores.csv` to the archive file -->
     <file name="stores">
         ...
     </file>
-    
+
 </config>
 ```
 
@@ -112,25 +112,25 @@ The node must contain a `<reportProvider>` node, or a `<customProvider>` node, o
 
 ```xml
 ...
-    <file ...>    
+    <file ...>
         <!-- A report provider adds data to the report file  -->
         <providers>
-            <reportProvider ...>   
+            <reportProvider ...>
         </providers>
     </file>
-    
+
     <file ...>
         <!-- A custom provider adds data to the report file  -->
         <providers>
-            <customProvider ...>        
+            <customProvider ...>
         </providers>
     </file>
-    
+
     <file ...>
         <providers>
             <!-- A report provider and a custom provider add data to the report file  -->
             <reportProvider ...>
-            <customProvider ...>        
+            <customProvider ...>
         </providers>
     </file>
 ...
@@ -171,7 +171,7 @@ Currently there is only one parameter is available. It is declared in `<name>`.
         <parameters>
             <name>store_report</name>
         </parameters>
-    </reportProvider>            
+    </reportProvider>
 ...
 ```
 
@@ -199,7 +199,6 @@ It cannot contain any parameters.
 ## Related topics
 
  [Modules providing advanced reporting][modules]
- 
 
 <!-- LINK DEFINITIONS -->
 

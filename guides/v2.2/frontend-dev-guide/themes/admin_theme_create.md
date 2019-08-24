@@ -9,9 +9,9 @@ functional_areas:
 
 This topic describes how to create your custom theme for Magento Admin, referencing the similar [flow for creating a custom storefront theme]({{ page.baseurl }}/frontend-dev-guide/themes/theme-create.html).
 
-## Prerequisites 
+## Prerequisites
 
-[Set]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html) your Magento application to the developer [mode]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html). The application mode influences the way [static files](https://glossary.magento.com/static-files) are cached by Magento. 
+[Set]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html) your Magento application to the developer [mode]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html). The application mode influences the way [static files](https://glossary.magento.com/static-files) are cached by Magento.
 
 ## Overview
 
@@ -61,7 +61,7 @@ In this file, add the following code, having replaced placeholders with your the
     \Magento\Framework\Component\ComponentRegistrar::THEME,
     'adminhtml/%vendor_dir/your_theme_dir%', // Example: 'adminhtml/Magento/backend'
     __DIR__
-);  
+);
 ```
 
 ## Optionally add `composer.json` {#make_composer}
@@ -70,13 +70,13 @@ See the [Make your theme a Composer package (optional)]({{ page.baseurl }}/front
 
 ## Admin theme logo (optional) {#logo}
 
-In the default `Magento/backend` theme `lib/web/images/magento-logo.svg` is used as theme logo. 
-To override it, in your theme directory, create a `web/images` sub-directory, and add your custom file named `magento-logo.svg`. 
+In the default `Magento/backend` theme `lib/web/images/magento-logo.svg` is used as theme logo.
+To override it, in your theme directory, create a `web/images` sub-directory, and add your custom file named `magento-logo.svg`.
 If you want to use the file with other name and/or format, you need to additionally declare it as described in [Declaring theme logo]({{ page.baseurl }}/frontend-dev-guide/themes/theme-create.html#logo_declare).
 
 To customize the Admin theme logo:
 
-1. Create a new XML file in the theme named `app/design/adminhtml/<Vendor>/<theme>/Magento_Backend/layout/admin_login.xml`. 
+1. Create a new XML file in the theme named `app/design/adminhtml/<Vendor>/<theme>/Magento_Backend/layout/admin_login.xml`.
 
 2. Add the following sample code to the new file.
      ```xml

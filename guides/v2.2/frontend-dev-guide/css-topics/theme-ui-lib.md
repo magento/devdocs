@@ -143,19 +143,19 @@ Use the accordion style for mobile and tab style for desktop.
 To set tabs and accordions using breakpoints, see the following example:
 
 ```css
-& when (@media-common = true) { 
+& when (@media-common = true) {
     .product.data.items {
         .lib-data-accordion();
     }
 }
 
-.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) { 
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
     .product.data.items {
         .lib-data-tabs();
     }
 }
 ```
-## Navigation set with CSS 
+## Navigation set with CSS
 
 Use the Navigation style for mobile and tab style for desktop.
 
@@ -166,7 +166,7 @@ To set navigation using breakpoints, see the following example:
 //  Mobile
 //  _____________________________________________
 
-.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) { 
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
     .lib-main-navigation();
 }
 
@@ -174,7 +174,7 @@ To set navigation using breakpoints, see the following example:
 //  Desktop
 //  _____________________________________________
 
-.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) { 
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
     .lib-main-navigation-desktop();
 }
 ```
@@ -187,7 +187,6 @@ The detailed information about the Magento UI library is embedded in the code re
 
 Each file is named after the mixin it describes, and contains detailed mixin description and navigation controls to access documentation for other mixins.
 The documentation is available in a convenient [HTML](https://glossary.magento.com/html) view in the following location in your Magento installation: `pub/static/frontend/Magento/blank/en_US/css/docs/index.html`.
-
 
 <!-- Link definitions -->
 
@@ -212,5 +211,4 @@ The documentation is available in a convenient [HTML](https://glossary.magento.c
 
 [ui_lib1.png]: {{ site.baseurl }}/common/images/ui_lib1.png
 [ui_lib2.png]: {{ site.baseurl }}/common/images/ui_lib2.png
-
 

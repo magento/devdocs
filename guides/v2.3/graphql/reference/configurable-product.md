@@ -676,10 +676,8 @@ The following `products` query returns `ConfigurableProduct` information about t
 ```
 {% endcollapsible %}
 
-
 ## Mutation
 Use the `addConfigurableProductsToCart` mutation to add configurable products to a specific cart.
-
 
 ### Syntax
 
@@ -717,7 +715,6 @@ Attribute | Type | Description
 --- | --- | ---
 `quantity` | Float | The number of configurable items to add to the cart
 `sku` | String | The SKU of the configurable product
-
 
 ### Example usage
 The following example adds two black Teton Pullover Hoodies size extra-small to the specified shopping cart. The `cart_id` used in this example was [generated]({{ page.baseurl }}/graphql/reference/quote-create-cart.html) by creating an empty cart.

@@ -39,7 +39,7 @@ class Example extends AbstractModifier
 {
     /**
     * @param array $meta
-    * 
+    *
     * @return array
     */
     public function modifyMeta(array $meta): array
@@ -96,7 +96,6 @@ You can create nested structures of elements by adding them to the `children` ke
 
 In `<your_module_dir>/etc/adminhtml/di.xml` define your modifier as a dependency for `Magento\Catalog\Ui\DataProvider\Product\Form\Modifier\Pool`.
 
-
 The following is an example of such a definition:
 
 `app/code/Magento/CatalogInventory/etc/adminhtml/di.xml`:
@@ -124,6 +123,5 @@ For reference, view the modifier classes in the Magento modules, for example:
 - [`Magento/Catalog/Ui/DataProvider/Product/Form/Modifier/AttributeSet`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/Ui/DataProvider/Product/Form/Modifier/AttributeSet.php)
 - [`Magento/Catalog/Ui/DataProvider/Product/Form/Modifier/Eav`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/Ui/DataProvider/Product/Form/Modifier/Eav.php)
 - [`Magento/ConfigurableProduct/Ui/DataProvider/Product/Form/Modifier/Data/AssociatedProducts`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/ConfigurableProduct/Ui/DataProvider/Product/Form/Modifier/Data/AssociatedProducts.php)
-
 
 For reference about setting conditions for displaying certain elements for certain product types, view `<Magento_Catalog_module_dir>/Ui/DataProvider/Product/Form/Modifier/Eav.php#L476`.

@@ -24,7 +24,7 @@ Now we have `uiRegistry` instance in the `registry` variable. We can use it to g
 var component = registry.get('%componentName%');
 ```
 
-The `uiRegistry` instance allows you to search for components using property values. 
+The `uiRegistry` instance allows you to search for components using property values.
 If you know a unique property value of a component that you need to find, you can use the following code to get the component:
 
 ```js
@@ -45,7 +45,7 @@ The following code shows how to get a component by a property value:
 ```js
 // Admin > Products > Catalog > Add Product
 var fieldName = registry.get('index = name');
-// or 
+// or
 fieldName = registry.get('inputName = product[name]');
 ```
 
