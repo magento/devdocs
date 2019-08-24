@@ -55,14 +55,14 @@ return array(
 ```
 {: .no-copy}
 
-### `SCD_MAX_EXECUTION_TIME` 
+### `SCD_MAX_EXECUTION_TIME`
 
 -  **Default**—_Not set_
 -  **Version**—Magento 2.2.0 and later
 
-Allows you to increase the maximum expected execution time for static content deployment. 
+Allows you to increase the maximum expected execution time for static content deployment.
 
-By default, Magento Commerce sets the maximum expected execution to 400 seconds, but in some scenarios you might need more time to complete the static content deployment for a Cloud project.                                                                                
+By default, Magento Commerce sets the maximum expected execution to 400 seconds, but in some scenarios you might need more time to complete the static content deployment for a Cloud project.
 ```yaml
 stage:
   global:
@@ -82,7 +82,6 @@ Enables or disables copying static view files to the `<magento_root>/init/` dire
 -   **`true`**—Enables on-demand HTML minification; does *not* copy the `<magento_root>var/view_preprocessed` to the `<magento_root>/init/` directory at the end of the build phase.
 
 Add the `SKIP_HTML_MINIFICATION` environment variable to the `global` stage in the `.magento.env.yaml` file:
-
 
 ```yaml
 stage:

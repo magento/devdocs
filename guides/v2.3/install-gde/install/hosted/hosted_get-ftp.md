@@ -58,7 +58,6 @@ To extract the archive:
 1.	If necessary, log in to the cPanel.
 2.	In the Files section, click **File Manager**.
 
-
 3.	Click **Web Root**.
 
     ![]({{ site.baseurl }}/common/images/install-merch_file-manager-setup.png){:width="550px"}

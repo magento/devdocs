@@ -19,7 +19,7 @@ Magento detects maintenance mode as follows:
 *	Otherwise, maintenance mode is on unless `var/.maintenance.ip` exists:
 
 	`var/.maintenance.ip` can contain a list of IP addresses. If an entry point is accessed using HTTP and the client IP address corresponds to one of the entries in that list, then maintenance mode is off.
-	
+
 ## First steps {#instgde-cli-before}
 {% include install/first-steps-cli.md %}
 In addition to the command arguments discussed here, see [Common arguments]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common).

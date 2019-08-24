@@ -55,7 +55,6 @@ use Magento\Framework\Setup\ModuleDataSetupInterface;
 use Magento\Framework\Setup\Patch\DataPatchInterface;
 use Magento\Framework\Setup\Patch\PatchVersionInterface;
 
-
 class AddCustomerExampleAttribute implements DataPatchInterface
 {
 
@@ -136,7 +135,6 @@ where:
 | join_on_field | The column of the table associated with the interface specified in the `for` keyword that will be used in the join operation. | `store_id` |
 | field | One or more fields present in the interface specified in the `type` keyword.<br />You can specify the `column=""` keyword to define the column in the reference_table to use. The field value specifies the property on the `interface` which should be set. | `<field>firstname</field>`<br />`<field>lastname</field>`<br />`<field>email</field>`<br /><br />`<field column="customer_group_code">code</field>` |
 
-
 ### Searching extension attributes {#search}
 
 The system uses a join directive to add external attributes to a collection and to make the collection filterable. The `join` element in the `extension_attributes.xml` file defines which object fields and the database table/column to use as the source of a search.
@@ -214,7 +212,6 @@ This only works for extension attributes (those attributes defined in an `extens
 ### Extension interfaces
 
 An `ExtensionInterface` will be empty if no extension attributes have been added. In the following example—in an unmodified installation—`CustomerExtensionInterface` will be generated, but will be empty:
-
 
 `interface CustomerExtensionInterface extends \Magento\Framework\Api\ExtensionAttributesInterface
 {

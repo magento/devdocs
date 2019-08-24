@@ -50,7 +50,7 @@ define([
         },
 
         ...
-    
+
     }
 
 }
@@ -79,7 +79,7 @@ dataCollectionHandler: function(data){
 
 ## Get data from the server
 
-Use the [`loadDataFromServer`][load-data-from-server]{:target="_blank"} method from the `data-storage` class to get product data from a list of IDs. 
+Use the [`loadDataFromServer`][load-data-from-server]{:target="_blank"} method from the `data-storage` class to get product data from a list of IDs.
 
 ```javascript
 
@@ -105,7 +105,7 @@ In the preceding example the data is handled by the subscribed function `dataCol
 
 ### Specify REST resource
 
-Use the following REST endpoint to get product information: 
+Use the following REST endpoint to get product information:
 
 `/V1/products-render-info`
 
@@ -144,7 +144,7 @@ The object structure for this REST response is represented by [`\Magento\Catalog
 [
    item_id: {
         //@see: \Magento\Catalog\Api\Data\ProductRender\ButtonInterface
-        'add_to_*_button': { //Any product button will be represented by this interface 
+        'add_to_*_button': { //Any product button will be represented by this interface
             post_data: {...},
             required_options: boolean,
             url: string
@@ -187,7 +187,7 @@ The object structure for this REST response is represented by [`\Magento\Catalog
         'type': '...', //enum: configurable, simple, virtual, etc
         'currency_code': '...', //e.g. USD
         'store_id': ... //integer
-   }  
+   }
 ]
 ```
 

@@ -6,7 +6,6 @@ menu_title: Signifyd
 menu_order: 2
 ---
 
-
 The Magento_Signifyd module provides integration with the [Signifyd](https://www.signifyd.com/) fraud protection system. The integration is based on the Signifyd API; see the [Signifyd API docs](https://www.signifyd.com/docs/api/#/introduction/) for technical details.
 
 The module implementation allows you to:

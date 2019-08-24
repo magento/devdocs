@@ -29,7 +29,6 @@ The `uiCollection` class implements the following methods:
 	* link to the component in the parent component
 	* event listeners
 
-
   Example:
 
 ```javascript

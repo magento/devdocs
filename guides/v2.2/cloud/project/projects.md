@@ -1,44 +1,38 @@
 ---
 group: cloud-guide
-subgroup: 100_project
 title: Manage your project
-menu_title: Manage your project
-menu_order: 1
-menu_node: parent
 functional_areas:
   - Cloud
 ---
 
 The {{site.data.var.ece}} *project* includes all code in Git branches, associated environments, and *applications*. Applications have *environments* and *services* that run on them including a database, web server, and caching server.
 
-We provide a Project Web Interface and CLI commands to fully manage all aspects of your project. You have full access to all environments for Starter and Pro environments. You may need to continue to use SSH and CLI commands for some aspects of Pro plan Staging and Production environments.
-
-{% include cloud/wings-management.md %}
+We provide a Project Web Interface and CLI commands to fully manage all aspects of your project. You have full access to all environments for Starter and Pro environments. You can also use SSH and CLI commands to manage your environments.
 
 To manage your project, environment, and branches, see:
 
-* [Configure your project]({{ page.baseurl }}/cloud/project/project-webint-basic.html)
-* [Project structure]({{ page.baseurl }}/cloud/project/project-start.html)
-* [Create and manage users]({{ page.baseurl }}/cloud/project/user-admin.html)
-*	Manage branches with the [Project Web Interface]({{ page.baseurl }}/cloud/project/project-webint-branch.html) or [CLI commands]({{ page.baseurl }}/cloud/env/environments-start.html)
-*	[Snapshots and backup management]({{ page.baseurl }}/cloud/project/project-webint-snap.html)
+- [Configure your project]({{ page.baseurl }}/cloud/project/project-webint-basic.html)
+- [Project structure]({{ page.baseurl }}/cloud/project/project-start.html)
+- [Create and manage users]({{ page.baseurl }}/cloud/project/user-admin.html)
+- Manage branches with the [Project Web Interface]({{ page.baseurl }}/cloud/project/project-webint-branch.html) or [CLI commands]({{ page.baseurl }}/cloud/env/environments-start.html)
+- [Snapshots and backup management]({{ page.baseurl }}/cloud/project/project-webint-snap.html)
 
 ### Project and environment variables {#variables}
 
 The following sections detail more about project and environment variables:
 
-*	[Overview of environment variables]({{ page.baseurl }}/cloud/env/variables-intro.html)
-*	[{{site.data.var.ece}} environment variables]({{ page.baseurl }}/cloud/env/environment-vars_cloud.html)
-*	[Magento application environment variables]({{ page.baseurl }}/cloud/env/environment-vars_magento.html)
-*	[Configuration management]({{ page.baseurl }}/cloud/live/sens-data-over.html)
-*	[Example of configuration management]({{ page.baseurl }}/cloud/live/sens-data-initial.html)
+- [Overview of environment variables]({{ page.baseurl }}/cloud/env/variables-intro.html)
+- [{{site.data.var.ece}} environment variables]({{ page.baseurl }}/cloud/env/environment-vars_cloud.html)
+- [Magento application environment variables]({{ page.baseurl }}/cloud/env/environment-vars_magento.html)
+- [Configuration management]({{ page.baseurl }}/cloud/live/sens-data-over.html)
+- [Example of configuration management]({{ page.baseurl }}/cloud/live/sens-data-initial.html)
 
 ### Upgrade and patch {#upgrade}
 
 To upgrade and patch Magento, see:
 
-*	[Upgrade and test Magento Commerce]({{ page.baseurl }}/cloud/project/project-upgrade.html)
-*	[Patch and test Magento Commerce]({{ page.baseurl }}/cloud/project/project-patch.html)
+- [Upgrade and test Magento Commerce]({{ page.baseurl }}/cloud/project/project-upgrade.html)
+- [Patch and test Magento Commerce]({{ page.baseurl }}/cloud/project/project-patch.html)
 
 ## Access the Project Web Interface {#login}
 
@@ -50,25 +44,27 @@ With your {{site.data.var.ece}} account created, you can log into the Project We
 
 Your project includes [Fastly]({{ page.baseurl }}/cloud/cdn/cloud-fastly.html), [New Relic]({{ page.baseurl }}/cloud/project/new-relic.html), and [Blackfire]({{ page.baseurl }}/cloud/project/project-integrate-blackfire.html) services. The project details display information for your project plan and important licenses and tokens for these integrations. Only the Account Owner has initial access to the credentials and services. You should provide these credentials to technical and developer resources as needed.
 
-* [Fastly](https://https://www.fastly.com/) provides content delivery (CDN), image optimization, and security services (DDoS and WAF) for your {{ site.data.var.ece }} projects. See [Get Fastly credentials]({{ page.baseurl }}/cloud/cdn/configure-fastly.html).
+- [Fastly](https://https://www.fastly.com/) provides content delivery (CDN), image optimization, and security services (DDoS and WAF) for your {{ site.data.var.ece }} projects. See [Get Fastly credentials]({{ page.baseurl }}/cloud/cdn/configure-fastly.html).
 
-* [Blackfire.io Profiler](https://blackfire.io/magento) provides tools for reviewing and optimizing Magento and your store in your environments. The profiler checks every method and call, determining what occurs with performance metrics per step.
+- [Blackfire.io Profiler](https://blackfire.io/magento) provides tools for reviewing and optimizing Magento and your store in your environments. The profiler checks every method and call, determining what occurs with performance metrics per step.
 
-* [New Relic](https://newrelic.com) provides application metrics and performance information for Staging and Production environments.
+- [New Relic](https://newrelic.com) provides application metrics and performance information for Staging and Production environments.
 
 To review your integration tokens, IDs, and more:
 
 1. As the {{site.data.var.ece}} Account Owner, log in to your project.
 
-2. In the upper right corner, click **&lt;your name>** > **Account Settings**.
+1. In the upper right corner, click **&lt;your name>** > **Account Settings**.
 
-	![Go to account settings]({{ site.baseurl }}/common/images/cloud_acct-settings-option.png)
-3. On your account page, click **View Details** for your project to open general settings and plan details.
+   ![Go to account settings]({{ site.baseurl }}/common/images/cloud_acct-settings-option.png)
 
-	![View your project details]({{ site.baseurl }}/common/images/cloud_blackfire-edit-details.png)
-4. On your project details page, scroll to and expand **Blackfire** and **New Relic** to review your credentials.
+1. On your account page, click **View Details** for your project to open general settings and plan details.
 
-	![Your Blackfire credentials]({{ site.baseurl }}/common/images/cloud_blackfire-account-info.png)
+   ![View your project details]({{ site.baseurl }}/common/images/cloud_blackfire-edit-details.png)
+
+1. On your project details page, scroll to and expand **Blackfire** and **New Relic** to review your credentials.
+
+   ![Your Blackfire credentials]({{ site.baseurl }}/common/images/cloud_blackfire-account-info.png)
 
 ## Access the project and environments {#project}
 
@@ -93,18 +89,14 @@ The following table details the branches for Pro:
 | `staging` | Staging | This is a child branch from `master` with a deployment target. You cannot branch from this branch. You merge code from `master` to this branch to test in a pre-production environment. |
 | `master` | Integration master | The master branch of the single repository. In the Project Web Interface, this is called Integration. You branch from `master` for your development on your local, generating an environment when you push code. When this code is complete, you merge to `staging` and `production`. |
 
-If you are an existing Pro merchant, and have not ticketed to [add Staging and Production]({{ page.baseurl }}/cloud/trouble/pro-env-management.html) to your UI, you will see only Integration `master` and any created branches.
-
-![Pro branch hierarchy (original)]({{ site.baseurl }}/common/images/cloud_project-pro-old.png)
-
 To access an environment store and admin, select a branch and click **Access Site**. A list of store URLs and SSH command display. Select the URL to view the store in that environment.
 
 ![Access your project]({{ site.baseurl }}/common/images/cloud_project-access.png)
 
 The Pro plan Production environment includes three nodes that you can access using the following links:
 
-* Load balancer URL: `http[s]://<your domain>.c.<project ID>.ent.magento.cloud`
-* Direct access to one of the three redundant servers: `http[s]://<your domain>.{1|2|3}.<project ID>.ent.magento.cloud`
+- Load balancer URL: `http[s]://<your domain>.c.<project ID>.ent.magento.cloud`
+- Direct access to one of the three redundant servers: `http[s]://<your domain>.{1|2|3}.<project ID>.ent.magento.cloud`
 
   The production URL is used by the content delivery network (CDN).
 
@@ -123,11 +115,12 @@ This displays the following page, which enables you to configure settings, [vari
 ![configure environments]({{ site.baseurl }}/common/images/cloud_project-conf-env.png)
 
 ### Environment configuration variables
+
 On the *Variables* tab, you can view, create, and manage environment variables for your project. For example, after we add your project to the {{ site.data.var.ece }} Fastly service account, you can view the Fastly API key and service ID credentials as shown in the following example:
 
 ![Environment variables fastly credentials]({{ site.baseurl }}/common/images/cloud/cloud-project-web-ui-environment-variables.png)
 
-You can also [list and review]({{ page.baseurl }}/cloud/before/before-setup-env-2_clone.html#variablelist) environment variables using the following Magento Cloud CLI command. 
+You can also [list and review]({{ page.baseurl }}/cloud/before/before-setup-env-2_clone.html#variablelist) environment variables using the following Magento Cloud CLI command.
 
 ```bash
 magento-cloud variable:get -e <environment ID>

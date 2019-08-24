@@ -22,7 +22,7 @@ The release notes include:
 Amazon Sales Channel 2.0.0 is compatible with version 2.2.4+ and 2.3.x of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}.
 
 {:.bs-callout .bs-callout-info}
-Version 1.0.0 was available in limited release only. 
+Version 1.0.0 was available in limited release only.
 
 - {:.new} **Simplified Onboarding and Maintenance**: Add and integrate with your Amazon Seller account through a step-by-step process with detailed instructions available through the Magento Admin. Maintain your stores, accounts, and listed products through one dashboard.
 

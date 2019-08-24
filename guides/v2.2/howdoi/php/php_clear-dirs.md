@@ -3,7 +3,7 @@ group: php-developer-guide
 subgroup: 99_Module Development
 title: Clear directories during development
 menu_title: Clear directories during development
-menu_node: 
+menu_node:
 menu_order: 200
 ---
 

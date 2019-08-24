@@ -120,7 +120,7 @@ For example,
 	magento dev:theme:create --extend-from=Magento/luma frontend vendor themename
 ```
 
-```bash	
+```bash
 	magento module:disable -f Magento_Cms
 ```
 

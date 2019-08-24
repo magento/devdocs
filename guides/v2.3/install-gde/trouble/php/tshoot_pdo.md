@@ -17,5 +17,5 @@ functional_areas:
 
 ### Solution
 
-Make sure you installed all [required PHP extensions](../../prereq/php-centos-ubuntu.html). 
+Make sure you installed all [required PHP extensions](../../prereq/php-centos-ubuntu.html).
 

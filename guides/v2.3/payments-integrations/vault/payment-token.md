@@ -5,7 +5,7 @@ functional_areas:
   - Integration
 ---
 
-Magento does not store any private credit card details. It only stores the data received from the payment provider: payment processor token and credit card details without sensitive data. 
+Magento does not store any private credit card details. It only stores the data received from the payment provider: payment processor token and credit card details without sensitive data.
 
 This information is stored in Payment Token.
 
@@ -69,7 +69,7 @@ class VaultDetailsHandler implements HandlerInterface
 }
 ```
 
-There are two available types of payment tokens: 
+There are two available types of payment tokens:
 
  * `\Magento\Vault\Api\Data\PaymentTokenFactoryInterface::TOKEN_TYPE_CREDIT_CARD` is used for credit cards
  * `\Magento\Vault\Api\Data\PaymentTokenFactoryInterface::TOKEN_TYPE_ACCOUNT` is used for payment accounts like PayPal
@@ -82,7 +82,7 @@ But in that case you must re-define the `tokenTypes` argument for `\Magento\Vaul
 The important thing is the `setGatewayToken()` method. This method gets the gateway token: a hashed value based on some credit card details.
 Different payment providers use different algorithms to create this hash. In most cases, exactly this token is used to perform place order actions.
 
-The created response handler must be added to the handler chain in the DI configuration file `di.xml`. 
+The created response handler must be added to the handler chain in the DI configuration file `di.xml`.
 
 Example of the Braintree `di.xml`:
 
