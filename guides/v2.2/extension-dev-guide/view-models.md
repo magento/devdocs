@@ -2,10 +2,11 @@
 title: View models
 contributor_name: Space 48
 contributor_link: https://www.space48.com/
-
+group: php-developer-guide
 ---
 
-A view model is an abstraction of the view exposing public properties and commands. It allows users to offload features and business logic from block classes into separate classes that are easier to maintain, test, and reuse.
+A view model is an abstraction of the view exposing public properties and commands. It allows developers to offload features and business logic from block classes into separate classes that are easier to maintain, test, and reuse.
+
 ## When to use view models
 
 Use this approach anytime you need to inject functionality into template files and your code does not need to be backwards compatible with Magento 2.1.
@@ -29,7 +30,7 @@ The following example shows how to add functionality to a core template with cus
 </body>
 ```
 
-You must implement the right interface in your viewModel class (i.e. `ArgumentInterface`):
+You must implement the right interface in your `viewModel` class (for example `ArgumentInterface`):
 
 ```php
 namespace Vendor\CustomModule\ViewModel;
@@ -58,5 +59,6 @@ $viewModel = $block->getViewModel();
 ```
 
 ## Examples of View models in Magento
+
 - [Magento_Catalog]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/view/frontend/layout/catalog_product_view.xml#L34){:target="_blank"}
-This viewModel is used to inject breadcrumb json with html escaped names into the template file.
+This `viewModel` is used to inject breadcrumb JSON with HTML-escaped names into the template file.
