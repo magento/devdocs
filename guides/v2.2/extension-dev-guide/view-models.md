@@ -1,15 +1,11 @@
 ---
-group: php-developer-guide
-subgroup: 99_Module Development
-title: ViewModels
-menu_title: ViewModels
-menu_order: 10001
+title: View models
+contributor_name: Space 48
+contributor_link: https://www.space48.com/
+
 ---
 
-## Overview
-
-A view model is an abstraction of the view exposing public properties and commands. It allows users to offload features and business logic from block classes into separate classes that are easier to maintain, test and reuse.
-
+A view model is an abstraction of the view exposing public properties and commands. It allows users to offload features and business logic from block classes into separate classes that are easier to maintain, test, and reuse.
 ## When to use view models
 
 Use this approach anytime you need to inject functionality into template files and your code does not need to be backwards compatible with Magento 2.1.
@@ -19,7 +15,7 @@ View models are available in Magento 2.2 onwards. If your code must be compatibl
 
 ## How to write view models
 
-We want to add functionality to a core template with custom logic using a View Model in the `cart/item/default.phtml` template found in `Magento/Checkout/view/frontend/layout/checkout_cart_item_renderers.xml`:
+The following example shows how to add functionality to a core template with custom logic using a view model in the `cart/item/default.phtml` template, which is located in the `Magento/Checkout/view/frontend/layout/checkout_cart_item_renderers.xml` file:
 
 ```xml
 <?xml version="1.0"?>
@@ -47,7 +43,7 @@ class MyClass implements \Magento\Framework\View\Element\Block\ArgumentInterface
 }
 ```
 
-Finally, in `cart/item/default.phtml` template you can access the public methods of your viewModel:
+Finally, in the `cart/item/default.phtml` template, you can access the public methods of your view model:
 
 ```html
 <?php
@@ -61,6 +57,6 @@ $viewModel = $block->getViewModel();
 
 ```
 
-## Examples of ViewModels in Magento
+## Examples of View models in Magento
 - [Magento_Catalog]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/view/frontend/layout/catalog_product_view.xml#L34){:target="_blank"}
 This viewModel is used to inject breadcrumb json with html escaped names into the template file.
