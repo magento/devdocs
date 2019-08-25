@@ -134,13 +134,11 @@ The following example shows how to move the discount component to the order summ
 ```
 
 {:.bs-callout-info}
-Do not forget to [disable](#disable) or [remove](#remove) the component from its original location or they will conflict with each other. 
+Remember to [disable](#disable) or [remove](#remove) the component from its original location, or they will conflict with each other. 
 
-{% collapsible Order Summary Result %}
+### Order Summary Result
 
 ![Discount Component]({{ site.baseurl }}/common/images/ui_comps/discount_component.png)
-
-{% endcollapsible %}
 
 ## Disable a component {#disable}
 
