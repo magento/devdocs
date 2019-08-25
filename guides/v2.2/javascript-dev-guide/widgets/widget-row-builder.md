@@ -1,18 +1,15 @@
 ---
 group: javascript-developer-guide
-subgroup: 3_Widgets
 title: RowBuilder widget
 contributor_name: Atwix
 contributor_link: https://www.atwix.com/
 ---
 
-## Overview
-
 The RowBuilder [widget](https://glossary.magento.com/widget/) allows you to build a container with rows.
 
 The RowBuilder widget can be used only on the frontend area.
 
-The RowBuilder widget source is [lib/web/mage/row-builder.js].
+The RowBuilder widget source is [lib/web/mage/row-builder.js][].
 
 ## Initialize the RowBuilder widget
 
@@ -35,7 +32,7 @@ Where:
 
 - `#row-builder` is the selector of the element which will be the RowBuilder.
 
-Phtml template file examples using script:
+The following example shows a PHTML file using the script:
 
 ```html
 <script>
@@ -136,7 +133,7 @@ The add row button selector.
 
 ### `btnRemoveIdPrefix`
 
-Id prefix of a remove button.
+ID prefix of a remove button.
 
 **Type**: String
 
@@ -152,7 +149,7 @@ The remove button selector.
 
 ### `rowIdPrefix`
 
-Id prefix of a row element.
+ID prefix of a row element.
 
 **Type**: String
 
@@ -168,7 +165,7 @@ The additional row class name which is added after the main class name.
 
 ### `addEventSelector`
 
-Default selectors for add element of a template.
+Default selectors for adding elements to a template.
 
 **Type**: String
 
@@ -176,7 +173,7 @@ Default selectors for add element of a template.
 
 ### `remEventSelector`
 
-Default selectors for remove markup elements of a template.
+Default selectors for removing markup elements from a template.
 
 **Type**: String
 
@@ -200,7 +197,7 @@ Max number of rows.
 
 ### `maxRowsMsg`
 
-The message selector of an element which appears when the max number of rows has exceeded.
+The message selector of an element which appears when the max number of rows has been exceeded.
 
 **Type**: Integer
 
@@ -208,7 +205,7 @@ The message selector of an element which appears when the max number of rows has
 
 ## Code sample
 
-This example shows the row builder container which adds new row when you click on the *Add Item* button and removes a row when you click on a *Remove Item* button.
+This example shows the row builder container, which adds a new row when you click the **Add Item** button and removes a row when you click the **Remove Item** button.
 
 ```html
 <script id="row-template" type="text/x-magento-template">
