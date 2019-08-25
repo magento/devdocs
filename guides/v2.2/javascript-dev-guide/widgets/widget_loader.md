@@ -6,7 +6,7 @@ title: Loader widget
 
 ## Overview
 
-The Loader [widget](https://glossary.magento.com/widget) blocks page content (all content or a part of it). Its intended use is blocking content when an Ajax request is being sent, but it can be initialized for non-Ajax tasks as well. 
+The Loader [widget](https://glossary.magento.com/widget) blocks page content (all content or a part of it). Its intended use is blocking content when an Ajax request is being sent, but it can be initialized for non-Ajax tasks as well.
 
 The Loader widget source is [lib/web/mage/loader.js].
 
@@ -47,7 +47,7 @@ The loader widget has the following options:
 
 ### `icon` {#l_icon}
 
-The URL to the loader image. This image is displayed when the widget is active; that is, between the `ajaxSend` and `ajaxComplete` events. 
+The URL to the loader image. This image is displayed when the widget is active; that is, between the `ajaxSend` and `ajaxComplete` events.
 
 **Type**: String
 
@@ -55,7 +55,7 @@ The URL to the loader image. This image is displayed when the widget is active; 
 
 ### `template` {#l_template}
 
-HTML wrapper for the output, or a DOM element selector. 
+HTML wrapper for the output, or a DOM element selector.
 
 **Default value**:
 ```html
