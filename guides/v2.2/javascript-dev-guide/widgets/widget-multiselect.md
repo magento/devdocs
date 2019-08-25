@@ -1,22 +1,19 @@
 ---
 group: javascript-developer-guide
-subgroup: 3_Widgets
 title: Multiselect widget
 contributor_name: Atwix
 contributor_link: https://www.atwix.com/
 ---
 
-## Overview
- 
-The Multiselect [widget](https://glossary.magento.com/widget/) is used to create a multiple select with the search field which helps to look for options.
+This [widget](https://glossary.magento.com/widget/) enables multiple select capability in the search field to help users choose different options.
 
-The Multiselect widget source is [lib/web/mage/multiselect.js][].
+The Multiselect widget source is the [lib/web/mage/multiselect.js][] file.
 
 ## Initialize the Multiselect widget
 
 For information about how to initialize a widget in a JS component or `.phtml` template, see the [Initialize JavaScript][] topic.
 
-Generally the Multiselect widget is instantiated like following:
+The following example shows how to instantiate the Multiselect widget:
 
 ```javascript
 $("#multiselect").multiselect2({});
@@ -73,7 +70,7 @@ Multiselect items wrapper class.
 
 ### `mselectCheckedClass`
 
-Multiselect checked multiselect item class.
+The class which is attached to a checked multi-select item.
 
 **Type**: String
 
@@ -129,7 +126,7 @@ The search field update delay.
 
 ## Code sample
 
-The example shows the multiselect field with search bar and *Add new value* button.
+The following example shows the multiselect field with search bar and **Add new value** button.
 
 ```html
 <div class="select-example">
@@ -151,8 +148,8 @@ The example shows the multiselect field with search bar and *Add new value* butt
 
 ## Result
 
-As a result, we see the multiselect field with search bar and *Add new value* button.
-The search bar allows to search an option and the *Add new value* button allows to add a new option to the multiselect. 
+As a result, we see the multiselect field with search bar and **Add new value** button.
+You can now search for an option in the search bar and the **Add new value** button allows you to add a new option to the multiselect feature.
 
 ![Multiselect Widget Example]({{ site.baseurl }}/common/images/widget/multiselect-widget-result.png)
 
