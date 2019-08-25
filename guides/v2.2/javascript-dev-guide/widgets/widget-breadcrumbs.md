@@ -1,26 +1,23 @@
 ---
 group: javascript-developer-guide
-subgroup: 3_Widgets
 title: Breadcrumbs widget
 contributor_name: Atwix
 contributor_link: https://www.atwix.com/
 ---
 
-## Overview
-
-The Breadcrumbs [widget](https://glossary.magento.com/widget/) allows building a list of links which should show where you are in relation to other pages in the store.
+The Breadcrumbs [widget](https://glossary.magento.com/widget/) builds a list of links that show users where they are on the site relative to other pages.
 
 The Breadcrumbs widget can be used only on the frontend area.
 
-The widget source file is [`<Magento_Theme_module_dir>/view/frontend/web/js/view/breadcrumbs.js`][]
+The widget source file is [`<Magento_Theme_module_dir>/view/frontend/web/js/view/breadcrumbs.js`][].
 
-The Breadcrumbs widget template source file is [`<Magento_Theme_module_dir>/view/frontend/web/templates/breadcrumbs.html`][]
+The Breadcrumbs widget template source file is [`<Magento_Theme_module_dir>/view/frontend/web/templates/breadcrumbs.html`][].
 
 ## Initialize the Breadcrumbs widget
 
 For information about how to initialize a widget in a JS component or `.phtml` template, see the [Initialize JavaScript][] topic.
 
-Generally the Breadcrumbs widget is instantiated like following:
+The following example shows how to instantiate the Breadcrumbs widget:
 
 ```javascript
 $('#breadcrumbs').breadcrumbs();
@@ -28,9 +25,9 @@ $('#breadcrumbs').breadcrumbs();
 
 Where:
 
-- `#breadcrumbs` is the selector of the block element for which Breadcrumbs is initialized.
+- `#breadcrumbs` is the selector of the block element for which Breadcrumbs are initialized.
 
-Phtml template file examples using script:
+The following example shows a PHTML file using the script:
 
 ```html
 <script>
@@ -47,17 +44,15 @@ Phtml template file examples using script:
 
 ## Breadcrumb List
 
-The Breadcrumb List is used to configure the breadcrumbs list.
+The Breadcrumb List is used to configure the breadcrumbs list and represents a simple array that stores breadcrumb items.
 
-The Breadcrumb List represents a simple array which stores breadcrumbs items.
-
-The Breadcrumb List source file is [`<Magento_Theme_module_dir>/view/frontend/web/js/model/breadcrumb-list.js`][]
+The Breadcrumb List source file is [`<Magento_Theme_module_dir>/view/frontend/web/js/model/breadcrumb-list.js`][].
 
 The Breadcrumb widget uses the Breadcrumbs List to configure a list of breadcrumbs which should be rendered. 
 
-The Breadcrumb List should be configured before Breadcrumbs widget initialization. After Breadcrumbs widget initialization the Breadcrumb List does not affect the rendered list of breadcrumbs.
+You should configure the Breadcrumb List before initializing the Breadcrumbs widget. After initializing the widget, the Breadcrumb List does not affect the rendered list of breadcrumbs.
 
-Code example of adding a new breadcrumb item to the Breadcrumb List:
+The following example shows how to add a new breadcrumb item to the breadcrumb list:
 
 ```html
 <script>
@@ -105,7 +100,7 @@ The Breadcrumb List Item Options in the [HTML](https://glossary.magento.com/html
 
 ## Code sample
 
-The following example shows how to initialize the Breadcrumb widget and pass breadcrumbs items to the [Breadcrumbs list](#breadcrumb_list).
+The following example shows how to initialize the Breadcrumb widget and pass breadcrumb items to the [Breadcrumbs list](#breadcrumb_list).
 
 ```html
 <div class="breadcrumbs" id="breadcrumbs-example"></div>
