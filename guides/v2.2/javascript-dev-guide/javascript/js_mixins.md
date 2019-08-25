@@ -83,7 +83,7 @@ define(['jquery'], function ($) {
         },
 
         /**
-         * Added confirming for modal closing 
+         * Added confirming for modal closing
          *
          * @returns {Element}
          */
