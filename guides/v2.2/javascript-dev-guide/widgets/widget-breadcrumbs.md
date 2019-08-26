@@ -100,7 +100,7 @@ The Breadcrumb List Item Options in the [HTML](https://glossary.magento.com/html
 
 ## Code sample
 
-The following example shows how to initialize the Breadcrumb widget and pass breadcrumb items to the [Breadcrumbs list](#breadcrumb_list).
+The following example shows how to initialize the Breadcrumb widget and pass breadcrumb items to the [Breadcrumbs list](#breadcrumb-list).
 
 ```html
 <div class="breadcrumbs" id="breadcrumbs-example"></div>
