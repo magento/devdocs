@@ -41,7 +41,7 @@ The following example shows a PHTML file using the script:
         'rowBuilder'
     ], function ($) {
         'use strict';
-        
+
         $("#row-builder").rowBuilder({
               "rowTemplate":"#row-template",
               "rowContainer":"#row-container",
