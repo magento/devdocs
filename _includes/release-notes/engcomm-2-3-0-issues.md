@@ -1,5 +1,4 @@
 
-
 | Contributing community member | Related GitHub Issues | Pull Requests |
 | ------- | ------- | ------- |
 | schmengler | [#6497](https://github.com/magento/magento2/issues/6497) | [magento/magento2#9955](https://github.com/magento/magento2/pull/9955) |

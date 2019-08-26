@@ -38,13 +38,13 @@ The `Customer` module does not treat its EAV attributes in a special manner. As 
 
 ### Adding Customer EAV attribute for backend only {#customer-eav-attribute}
 
-Customer attributes are created inside of `InstallData` and `UpgradeData` scripts. To add new attributes to the database, you must use the `\Magento\Eav\Setup\EavSetupFactory` class as a dependency injection. The `InstallData` script will be executed when the module is first installed and either the `bin/magento setup:upgrade` or `bin/magento setup:db-data:upgrade` command is run.  If the module is already existing, `UpgradeData` scripts should be used. During the development cycle, if there is a need to re-run the `InstallData` or `UpgradeData` scripts, the `setup_module` table row for the module can be manipulated.  
+Customer attributes are created inside of `InstallData` and `UpgradeData` scripts. To add new attributes to the database, you must use the `\Magento\Eav\Setup\EavSetupFactory` class as a dependency injection. The `InstallData` script will be executed when the module is first installed and either the `bin/magento setup:upgrade` or `bin/magento setup:db-data:upgrade` command is run.  If the module is already existing, `UpgradeData` scripts should be used. During the development cycle, if there is a need to re-run the `InstallData` or `UpgradeData` scripts, the `setup_module` table row for the module can be manipulated.
 
 {: .bs-callout .bs-callout-warning }
 Both the `save()` and `getResource()` methods for `Magento\Framework\Model\AbstractModel` have been marked as `@deprecated` since 2.1 and should no longer be used.
 
 ```php
-<?php 
+<?php
 namespace My\Module\Setup;
 
 use Magento\Customer\Model\Customer;
@@ -54,11 +54,11 @@ use Magento\Framework\Setup\ModuleDataSetupInterface;
 class InstallData implements \Magento\Framework\Setup\InstallDataInterface
 {
     private $eavSetupFactory;
-    
+
     private $eavConfig;
-    
+
     private $attributeResource;
-    
+
     public function __construct(
         \Magento\Eav\Setup\EavSetupFactory $eavSetupFactory,
         \Magento\Eav\Model\Config $eavConfig,
@@ -68,7 +68,7 @@ class InstallData implements \Magento\Framework\Setup\InstallDataInterface
         $this->eavConfig = $eavConfig;
         $this->attributeResource = $attributeResource;
     }
-    
+
     public function install(ModuleDataSetupInterface $setup, ModuleContextInterface $context)
     {
         $eavSetup = $this->eavSetupFactory->create(['setup' => $setup]);
@@ -76,7 +76,7 @@ class InstallData implements \Magento\Framework\Setup\InstallDataInterface
         $eavSetup->addAttribute(Customer::ENTITY, 'attribute_code', [
             // Attribute parameters
         ]);
-        
+
         $attribute = $this->eavConfig->getAttribute(Customer::ENTITY, 'attribute_code');
         $attribute->setData('used_in_forms', ['adminhtml_customer']);
         $this->attributeResource->save($attribute);
@@ -245,7 +245,6 @@ This only works for extension attributes (those attributes defined in an `extens
 ### Extension interfaces
 
 An `ExtensionInterface` will be empty if no extension attributes have been added. In the following example—in an unmodified installation—`CustomerExtensionInterface` will be generated, but will be empty:
-
 
 `interface CustomerExtensionInterface extends \Magento\Framework\Api\ExtensionAttributesInterface
 {

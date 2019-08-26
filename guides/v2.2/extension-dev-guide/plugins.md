@@ -32,7 +32,7 @@ Plugins can not be used on following:
 
 The <code>di.xml</code> file in your [module](https://glossary.magento.com/module) declares a plugin for a class object:
 
-```xml 
+```xml
 <config>
     <type name="{ObservedType}">
       <plugin name="{pluginName}" type="{PluginClassName}" sortOrder="1" disabled="false" />
@@ -184,15 +184,15 @@ class ProductAttributesUpdater
     {
         $someValue = $this->doSmthBeforeProductIsSaved();
         $returnValue = null;
-        
+
         if ($this->canCallProceedCallable($someValue)) {
             $returnValue = $proceed();
         }
-        
+
         if ($returnValue) {
             $this->postProductToFacebook();
         }
-        
+
         return $returnValue;
     }
 }

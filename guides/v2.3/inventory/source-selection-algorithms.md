@@ -5,7 +5,7 @@ title: Source selection algorithms
 
 The **Source Selection Algorithm (SSA)** recommends how to fulfill partial and full shipments. The merchant decides which business needs take precedence when deciding which shipping method to use:
 
-* Should the products be delivered from the sources designated as having the highest priority? 
+* Should the products be delivered from the sources designated as having the highest priority?
 * Should the total shipment cost be the primary factor in choosing a shipment method?
 * Should the shipments originate from the closest source?
 * Should the fastest shipping method with the shortest delivery time be used, even if it's not the cheapest?
@@ -17,7 +17,7 @@ Magento provides the following algorithms:
 
 Third party developers can create additional algorithms to help merchants decide which shipping option best meets their needs.
 
-Magento does not enforce or save the results of SSA recommendations. The recommendations reflect conditions at the moment when the algorithm runs, but conditions change over time. For example, the amount of in-stock products will always fluctuate, and shipping costs might change. The merchant can also modify the recommendations by adjusting quantities for deduction or even by re-assigning the shipment's sources of origin.  
+Magento does not enforce or save the results of SSA recommendations. The recommendations reflect conditions at the moment when the algorithm runs, but conditions change over time. For example, the amount of in-stock products will always fluctuate, and shipping costs might change. The merchant can also modify the recommendations by adjusting quantities for deduction or even by re-assigning the shipment's sources of origin.
 
 ## Source Priority algorithm
 
@@ -38,9 +38,9 @@ You have two options for calculating distance:
 
 **Google MAP:** Uses Google Maps Platform services to calculate the distance and time between the shipping destination address and source locations. This option uses the source's Latitude and Longitude (GPS coordinates) and may use the street address depending on the computation mode. You must provide a Google API key with Geocoding API and Distance Matrix API enabled. This option requires a Google billing plan and may incur charges through Google.
 
-**Offline Calculation:** Calculates the distance using downloaded and imported geocodes to determine the closest source to the shipping destination address. The geocodes are derived from the city, state, country, and postal code of both the shipping address and the source. 
+**Offline Calculation:** Calculates the distance using downloaded and imported geocodes to determine the closest source to the shipping destination address. The geocodes are derived from the city, state, country, and postal code of both the shipping address and the source.
 
-To support offline calculations, Magento provides a command that downloads country-specific geocode data from [geonames.org](https://geonames.org) and imports this information into the database. 
+To support offline calculations, Magento provides a command that downloads country-specific geocode data from [geonames.org](https://geonames.org) and imports this information into the database.
 
 We recommend entering full street address and GPS coordinate information in your sources if using the Distance Priority algorithm. Google MAP uses your GPS coordinates and your street address. Offline Calculation uses the city, state, country, and zip codes.
 
@@ -59,7 +59,7 @@ Taking into account that there are at least two valid business cases when to lau
 Use these interfaces to create your own SSA:
 
 * [InventoryRequestInterface](https://github.com/magento-engcom/msi/blob/2.3.0-release/app/code/Magento/InventorySourceSelectionApi/Api/Data/InventoryRequestInterface.php) requests products for a given quantity and stock ID
-* [ItemRequestInterface](https://github.com/magento-engcom/msi/blob/2.3.0-release/app/code/Magento/InventorySourceSelectionApi/Api/Data/ItemRequestInterface.php) represents the requested quantity for a specific SKU 
+* [ItemRequestInterface](https://github.com/magento-engcom/msi/blob/2.3.0-release/app/code/Magento/InventorySourceSelectionApi/Api/Data/ItemRequestInterface.php) represents the requested quantity for a specific SKU
 * [SourceSelectionServiceInterface](https://github.com/magento-engcom/msi/blob/2.3.0-release/app/code/Magento/InventorySourceSelectionApi/Api/SourceSelectionServiceInterface.php) returns the source selection algorithm result for the specified `inventoryRequest`
 * [GetSourceSelectionAlgorithmListInterface](https://github.com/magento-engcom/msi/blob/2.3.0-release/app/code/Magento/InventorySourceSelectionApi/Api/GetSourceSelectionAlgorithmListInterface.php) returns the list of data interfaces that represent registered SSAs
 * [SourceSelectionAlgorithmInterface](https://github.com/magento-engcom/msi/blob/2.3.0-release/app/code/Magento/InventorySourceSelectionApi/Api/Data/SourceSelectionAlgorithmInterface.php) represents a single SSA
@@ -75,15 +75,15 @@ As you develop your custom Source Selection Algorithm, keep these design conside
 * If your module provides an SSA on quotes, introduce your own `InventoryRequestFactory`
 * Register your SSA within a `di.xml` file
 
-### Implement  `SourceSelectionInterface` 
+### Implement  `SourceSelectionInterface`
 
 Your SSA must implement `SourceSelectionInterface`, which is shown below:
 
 ```php?start_inline=1
 /**
- * Returns source selection algorithm result for given Inventory Request 
+ * Returns source selection algorithm result for given Inventory Request
  * Current interface should be implemented in order to add own Source Selection Method
- * 
+ *
  * @api
  */
 interface SourceSelectionInterface
@@ -121,7 +121,7 @@ class MinimalDeliveryCostAlgorithm implements SourceSelectionInterface
 
 ### Create a `InventoryRequest` factory for quotes  (optional)
 
-Magento provides the [`InventoryRequestFromOrderFactory`](https://github.com/magento-engcom/msi/blob/2.3.0-release/app/code/Magento/InventoryShipping/Model/InventoryRequestFromOrderFactory.php), which determines the sources to use to fulfill the order at the time a shipment is created. 
+Magento provides the [`InventoryRequestFromOrderFactory`](https://github.com/magento-engcom/msi/blob/2.3.0-release/app/code/Magento/InventoryShipping/Model/InventoryRequestFromOrderFactory.php), which determines the sources to use to fulfill the order at the time a shipment is created.
 
 ```php?start_inline=1
 class InventoryRequestFromOrderFactory
@@ -169,7 +169,7 @@ class InventoryRequestFactory
      * @param \Magento\Quote\Api\Data\CartInterface $quote
      * @return InventoryRequestInterface
      */
-    public function create(\Magento\Quote\Api\Data\CartInterface $quote) : InventoryRequestInterface 
+    public function create(\Magento\Quote\Api\Data\CartInterface $quote) : InventoryRequestInterface
     {
         // TODO
     }
@@ -179,7 +179,6 @@ class InventoryRequestFactory
 ### Configure `di.xml`
 
 Configure your module's `etc/di.xml` file to register your SSA with `SourceSelectionServiceInterface` and `GetSourceSelectionAlgorithmList`.
-
 
 ```xml
 <type name="Magento\InventorySourceSelection\Model\SourceSelectionService">

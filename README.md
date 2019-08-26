@@ -8,7 +8,7 @@ Our goal is to provide the Magento community with comprehensive and quality tech
 
 ![](https://raw.githubusercontent.com/wiki/magento/magento2/images/dev_docs_contributors.png)
 
-# Building this site
+## Building this site
 
 You can build this site locally in the following ways:
 
@@ -225,7 +225,7 @@ If you have questions, open an issue and ask us. We're looking forward to hearin
 
 ## Build DevDocs in Windows
 
-Some of the technologies we use to develop DevDocs is not compatible with Windows, such as [Jekyll](https://jekyllrb.com/docs/windows/). For this reason, we do not support DevDocs management in Windows; however, we have documented the following procedures to build the DevDocs in a Windows environment. Any further use of this setup or troubleshooting is up to you. 
+Some of the technologies we use to develop DevDocs is not compatible with Windows, such as [Jekyll](https://jekyllrb.com/docs/windows/). For this reason, we do not support DevDocs management in Windows; however, we have documented the following procedures to build the DevDocs in a Windows environment. Any further use of this setup or troubleshooting is up to you.
 
 Download software:
 
@@ -248,7 +248,7 @@ Only Administrators can use Chocolatey features. You can use the Administrator a
 
     -  In the Windows UI, open search and type `path`.
     -  In the Windows CMD console, type `echo %path%`.
-    
+
     You should see `C:\ProgramData\chocolatey\bin` in the path.
 
 1.  Close and reopen the command prompt before using `choco` commands.
@@ -272,7 +272,7 @@ If you have Ruby installed on the workstation, then you can skip this installati
     -  In the Windows UI, open search and type `path`.
     -  In the Windows CMD console, type `echo %path%`.
 
->  **NOTE**  
+>  **NOTE**
 >  If you encounter problems with Ruby, or the `gem` command is not recognized, you can install the `rubyinstaller-devkit.exe` development kit located in the `c:\ProgramData\chocolatey\bin` folder.
 
 ### Install Git for Windows
@@ -299,7 +299,6 @@ Although you can install Git using Chocolatey, we chose to install _Git for Wind
     ```
 
 1.  Follow the [Generating a new SSH](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/) instructions.
-
 
 ### Clone and build the DevDocs repository
 
@@ -345,5 +344,5 @@ You may have to close and reopen the Git Bash application after the Choco instal
       Server running... press ctrl-c to stop.
     ```
 
->  **NOTE**  
+>  **NOTE**
 >  The `.bash_profile` file CAN be created and managed using Git Bash, which is useful for aliases and other customizations, This file is in the `users/Administrator` folder.

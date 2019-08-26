@@ -105,8 +105,6 @@ Product | Source | Quantity
 `24-WB03` | Baltimore | 19
 `24-WB03` | Reno | 31
 
-
-
 ```json
 {
     "source_selection_items": [

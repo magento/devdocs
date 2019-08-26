@@ -11,31 +11,31 @@ functional_areas:
 
 Fastly provides the following services to optimize and secure content delivery operations for your {{ site.data.var.ece }} projects. These services are included with your {{ site.data.var.ece }} subscription at no additional cost.
 
--  **Content delivery network (CDN)**—Varnish-based service that caches your site pages, assets, CSS, and more in backend data centers you set up. As customers access your site and stores, the requests hit Fastly to load cached pages faster. The CDN service provides the following features: 
-	
+-  **Content delivery network (CDN)**—Varnish-based service that caches your site pages, assets, CSS, and more in backend data centers you set up. As customers access your site and stores, the requests hit Fastly to load cached pages faster. The CDN service provides the following features:
+
    -  Cache your site pages, assets, CSS, and more in backend data centers that you set up to reduce bandwith load and costs
-	
+
    -  Use [Fastly custom VCL snippets]({{ page.baseurl}}/cloud/cdn/cloud-vcl-custom-snippets.html) (Varnish 2.1 compliant) to modify how caching responds to requests
 
    -  Configure [purge options]({{ page.baseurl }}/cloud/cdn/configure-fastly.html#purge) to clear generated content
-   
+
    -  Set up [GeoIP service support]({{ page.baseurl }}/cloud/cdn/configure-fastly.html#geoip)
 
    -  [Force unencrypted requests over to TLS](#tls)
-   
-   -  [Customize Fastly timeout](#timeouts) settings to prevent 503 responses on bulk operation requests 
-	
+
+   -  [Customize Fastly timeout](#timeouts) settings to prevent 503 responses on bulk operation requests
+
    -  Create [custom error response pages]({{ page.baseurl }}/cloud/cdn/cloud-fastly-custom-response.html)
-   
+
 -  **Security**—After you set up your {{ site.data.var.ece }} project to use the Fastly CDN, additional security features are available to protect your sites and network.
 
       -  [**DDoS protection**](#ddos-protection)—Built-in protection against common attacks like Ping of Death, Smurf attacks, as well as other ICMP-based floods.
 
       -  **[Managed Cloud WAF]({{ page.baseurl }}/cloud/cdn/fastly-waf-service.html)**—Managed web application firewall service that provides PCI-compliant protection to block malicious traffic before it can damage your production {{ site.data.var.ece }} sites and network.
-   
+
 -  **Image optimization**—Offloads image processing and resizing load to the Fastly service freeing servers to process orders and conversions efficiently. See [Fastly image optimization]({{ page.baseurl }}/cloud/cdn/fastly-image-optimization.html).
 
-We highly recommend using Fastly for your CDN, security, and image optimization needs, unless you are using {{ site.data.var.ee}} in a headless deployment. 
+We highly recommend using Fastly for your CDN, security, and image optimization needs, unless you are using {{ site.data.var.ee}} in a headless deployment.
 
 ## Fastly CDN module for Magento 2
 
@@ -55,7 +55,7 @@ Fastly only allows you to assign an apex domain and associated subdomains to one
 
 - Remove the apex and subdomains from the existing account before requesting Fastly service credentials for your {{ site.data.var.ece}} project environments. See [Working with Domains](https://docs.fastly.com/guides/basic-configuration/working-with-domains) in the Fastly documentation.
 
-  Use this option to link the apex domain and all subdomains to the Fastly service account for {{ site.data.var.ece }}. 
+  Use this option to link the apex domain and all subdomains to the Fastly service account for {{ site.data.var.ece }}.
 
 - Submit a support ticket to request domain delegation so that apex and subdomains can be linked to different accounts.
 
@@ -73,14 +73,14 @@ After the delegation is complete, your project subdomains can be added to the Fa
 
 *Scenario 2*
 
-The apex domain (`testweb.com` and `www.testweb.com`) is linked to the {{ site.data.var.ece }} Fastly service account. You want to manage Fastly services for the `service.testweb.com` and `product-updates.testweb.com` subdomains from a different Fastly account. 
+The apex domain (`testweb.com` and `www.testweb.com`) is linked to the {{ site.data.var.ece }} Fastly service account. You want to manage Fastly services for the `service.testweb.com` and `product-updates.testweb.com` subdomains from a different Fastly account.
 
 Submit a [Magento support ticket](https://support.magento.com/hc/en-us/articles/360000913794#submit-ticket) requesting that the subdomains be delegated from the {{ site.data.var.ece }} Fastly service account to the Fastly account. Include the service ID for the Fastly account in the ticket.
 
 ## DDoS protection
 
-DDOS protection is built-in to the Fastly CDN service. After you enable and configure the Fastly service for your {{ site.data.var.ece }} sites, Fastly filters all web and admin traffic to your site to detect and block potential attacks: 
-   
+DDOS protection is built-in to the Fastly CDN service. After you enable and configure the Fastly service for your {{ site.data.var.ece }} sites, Fastly filters all web and admin traffic to your site to detect and block potential attacks:
+
 -  For attacks targeting layer 3 or 4, the Fastly service filters out traffic based on port and protocol, inspecting only HTTP or HTTPS requests. ICMP, UDP, and other network born attacks are dropped at our network edge. This includes reflection and amplification attacks, which use UDP services like SSDP or NTP. By providing this level of protection, we effectively block  multiple common attacks like Ping of Death, Smurf attacks, as well as other ICMP-based floods.  Fastly manages the TCP level attacks at the cache layer, addressing the necessary scale and context per client to deal with SYN flood and its many variants, including TCP stack, resource attacks, and TLS attacks within the Fastly systems.
 
 -  The Fastly service protects against Layer 7 attacks by applying custom rules (using VCLs) that can inspect for and filter out malicious requests based on header, payload, or the combination of attributes that identify attack traffic.
@@ -148,7 +148,6 @@ Fastly provides a GeoIP service and supports some GeoIP functionality. GeoIP
 handling manages visitor redirection (automatically) and store matching
 (select from list) based on their obtained country code. For more information,
 see the Fastly [GeoIP documentation](https://github.com/fastly/fastly-magento2/blob/21b61c8189971275589219d418332798efc7db41/Documentation/CONFIGURATION.md#geoip-handling).
-
 
 ## Installation and configuration {#install-configure}
 

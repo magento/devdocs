@@ -31,7 +31,7 @@ The following mutation adds a **simple product** into shopping cart.
 **Request**
 
 ```text
-mutation {  
+mutation {
   addSimpleProductsToCart(
     input: {
       cart_id: "{ CART_ID }"
@@ -89,7 +89,7 @@ The following mutation adds a **virtual product** into shopping cart.
 **Request**
 
 ```text
-mutation {  
+mutation {
   addVirtualProductsToCart(
     input: {
       cart_id: "{ CART_ID }"

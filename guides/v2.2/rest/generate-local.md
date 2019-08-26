@@ -49,7 +49,6 @@ To return information about all services:
 {:.bs-callout .bs-callout-info}
 You must specify an authorization token for an [admin](https://glossary.magento.com/admin) user to return information for most endpoints. See [Token-based authentication]({{ page.baseurl }}/get-started/authentication/gs-authentication-token.html) for more information.
 
-
 ## Return the complete JSON schema
 
 To return the complete JSON schema, specify the `?services=all` parameter in the URL. The default `store_code` is `all`, but you can also specify `default` or a store code defined on the system. For example: `http://<magento_host>/rest/default/schema?services=all`

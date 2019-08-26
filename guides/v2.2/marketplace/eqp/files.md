@@ -181,7 +181,6 @@ The `file_upload_id` must be tracked for subsequent package submission APIs.
 
 You can only dissociate files from packages that have not been published on the Magento Marketplace. Removing a file without the optional `submission_ids` parameter disassociates it from all linked packages. If no packages are associated with a file, it will be removed.
 
-
 ```
 DELETE /rest/v1/files/uploads/:file_upload_id
 ```

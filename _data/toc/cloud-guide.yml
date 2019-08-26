@@ -23,12 +23,6 @@ pages:
         - label: Pro develop and deploy workflow
           url: /cloud/architecture/pro-develop-deploy-workflow.html
 
-        - label: Pro architecture (legacy)
-          url: /cloud/architecture/pro-architecture-legacy.html
-
-        - label: Add Staging and Production to Pro projects UI
-          url: /cloud/trouble/pro-env-management.html
-
     - label: Technologies and requirements
       url: /cloud/requirements/cloud-requirements.html
       children:

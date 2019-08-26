@@ -21,7 +21,7 @@ The most important methods are `setValue()` and `getValue()`. These methods are 
 There are two types of testing typified elements: default typified elements and Magento custom typified elements.
 
  * Default typified elements are the web elements that are typically used in a web application.
-  
+
  * Magento custom typified elements are the web elements that are specific to the Magento application
 
 ## Default testing typified elements {#basic_class}
@@ -36,7 +36,7 @@ A root class for a typified element is the [`\Magento\Mtf\Client\Element\SimpleE
 | `<select multiple />`  |[`\Magento\Mtf\Client\Element\MultiselectElement`]| Extends [SelectElement].  |
 |`<input type="radio" />` |[`\Magento\Mtf\Client\Element\RadiobuttonElement`]| Extends [SimpleElement]. |
 | `<select />`  |[`\Magento\Mtf\Client\Element\SelectElement`]| Extends [SimpleElement]. |
-| `<select multiple />`  |[`\Magento\Mtf\Client\Element\StrictmultiselectElement`]| Extends [MultiselectElement]. `setValue()` sets the exact value, as opposed to [MultiselectElement]. | 	
+| `<select multiple />`  |[`\Magento\Mtf\Client\Element\StrictmultiselectElement`]| Extends [MultiselectElement]. `setValue()` sets the exact value, as opposed to [MultiselectElement]. |
 | `<select />` |[`\Magento\Mtf\Client\Element\StrictselectElement`]| Extends [SelectElement]. `setValue()` sets the exact value, as opposed to [SelectElement]. |
 | `<input type="file" />` |[`\Magento\Mtf\Client\Element\UploadElement`]| Extends [SimpleElement].|
 
