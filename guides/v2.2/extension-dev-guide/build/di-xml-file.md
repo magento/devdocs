@@ -354,8 +354,8 @@ See [sensitive and environment settings]({{ page.baseurl }}/extension-dev-guide/
 *   [Magento Enterprise B2B Extension configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-b2b.html)
 
 ## Get information on Dependency Injection configuration for the class
-
-Use [dev:di:info]({{ page.baseurl }}/reference/cli/magento.html#devdiinfo) command to retrieve the information on dependency injection configuration of the particular class. The example below retrieves the dependency injection configuration information for the `Magento\Quote\Model\Quote\Item\ToOrderItem` class: 
+ 
+Use the [dev:di:info]({{ page.baseurl }}/reference/cli/magento.html#devdiinfo) command to retrieve information about dependency injection configuration for a class. The following example retrieves the dependency injection configuration information for the `Magento\Quote\Model\Quote\Item\ToOrderItem` class:
 
 ```bash
 bin/magento dev:di:info "Magento\Quote\Model\Quote\Item\ToOrderItem"
