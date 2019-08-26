@@ -102,7 +102,6 @@ Defines on which values the cache key must depend.
 
 For example, if the `headers` key is the following:
 
-
 ```yaml
 cache:
     enabled: true

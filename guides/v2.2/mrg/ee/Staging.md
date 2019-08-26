@@ -4,7 +4,6 @@ ee_only: true
 title: Magento_Staging module
 ---
 
-
 The Magento_Staging [module](https://glossary.magento.com/module) enables you to work with the future [campaigns](#campaign) in {{site.data.var.ee}}.
 
 With the Magento_Staging module you can:

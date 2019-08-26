@@ -18,7 +18,6 @@ In the [Magento Admin](https://glossary.magento.com/magento-admin), a grid is us
 
 ![](img/PageGrid.png)
 
-
 ## Slide-Out Grid {#slide-out}
 
 A Slide-out panel, similar to a modal window, breaks apart and simplifies a complex subtask that is included within a primary task.
@@ -36,13 +35,11 @@ Standard [layout](https://glossary.magento.com/layout) within the edges of a bro
 
 ![](img/slideout-panel7.png)
 
-
 (Panel position in relation to browser edge)
 
 <b>Spacing:</b> Slide-out content is contained in a 12-column page grid, with additional 15px padding on the left edge. The gutter spacing at left is fluid, based on browser width.
 
 ![](img/slideout-panel8.png)
-
 
 (Nested page-grid with additional padding)
 

@@ -27,7 +27,6 @@ The Web APIs for {{site.data.var.ee}} are available on Commerce installations on
 ### Worldpay
     worldpayGuestPaymentInformationManagementProxyV1
 
-
 ## {{site.data.var.ce}} Web APIs Services per Module {#celist}
 
   The {{site.data.var.ee}} Web APIs are available on all installations.

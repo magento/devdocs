@@ -274,7 +274,7 @@ This example uses the same CSS classes as the tabs on the product page.
         <a class="switch" data-toggle="trigger" href="#tab-cars">Cars</a>
     </div>
     <div id="tab-cars" class="item content" data-role="content">Cars content</div>
-    
+
     <div class="item title" data-role="collapsible">
         <a class="switch" data-toggle="trigger" href="#tab-movies">Movies</a>
     </div>

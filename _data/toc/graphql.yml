@@ -47,6 +47,8 @@ pages:
 
     - label: Queries
       children:
+        - label: category query
+          url: /graphql/queries/category.html
 
         - label: checkoutAgreements query
           url: /graphql/queries/checkout-agreements.html
@@ -75,6 +77,9 @@ pages:
         - label: customerOrders query
           url: /graphql/queries/customer-orders.html
 
+        - label: customerDownloadableProducts query
+          url: /graphql/queries/customer-downloadable-products.html
+
         - label: customerPaymentTokens query
           url: /graphql/queries/customer-payment-tokens.html
 
@@ -87,6 +92,9 @@ pages:
         - label: isEmailAvailable query
           url: /graphql/queries/is-email-available.html
 
+        - label: products query
+          url: /graphql/queries/products.html
+
         - label: storeConfig query
           url: /graphql/queries/store-config.html
 
@@ -98,6 +106,9 @@ pages:
         
     - label: Mutations
       children:
+        - label: addConfigurableProductsToCart mutation
+          url: /graphql/mutations/add-configurable-products.html
+
         - label: applyStoreCreditToCart mutation
           url: /graphql/mutations/apply-store-credit.html
 
@@ -168,26 +179,33 @@ pages:
                 - label: Product interface implementations
                   url: /graphql/reference/product-interface-implementations.html
 
-                - label: CustomizableOptionInterface
-                  url: /graphql/reference/customizable-option-interface.html
+    - label: Product data types and interfaces
+      children:
+        - label: Product interface implementations
+          url: /graphql/product/product-interface-implementations.html
 
-                - label: BundleProduct endpoint
-                  url: /graphql/reference/bundle-product.html
+        - label: CustomizableOptionInterface
+          url: /graphql/product/customizable-option-interface.html
 
-                - label: Category endpoint
-                  url: /graphql/reference/categories.html
+        - label: Bundle product data types
+          url: /graphql/product/bundle-product.html
 
-                - label: ConfigurableProduct endpoint
-                  url: /graphql/reference/configurable-product.html
+        - label: Configurable product data types
+          url: /graphql/product/configurable-product.html
 
-                - label: DownloadableProduct endpoint
-                  url: /graphql/reference/downloadable-product.html
+        - label: Downloadable product data types
+          url: /graphql/product/downloadable-product.html
 
-                - label: GiftCardProduct endpoint
-                  url: /graphql/reference/gift-card-product.html
+        - label: GiftCardProduct data types
+          url: /graphql/product/gift-card-product.html
 
-                - label: GroupedProduct endpoint
-                  url: /graphql/reference/grouped-product.html
+        - label: GroupedProduct data types
+          url: /graphql/product/grouped-product.html
+
+    - label: Reference
+      children:
+            - label: Customer endpoint
+              url: /graphql/reference/customer.html
 
             - label: Quote endpoint (cart query)
               url: /graphql/reference/quote.html
@@ -246,6 +264,12 @@ pages:
 
         - label: Authorize.Net
           url: /graphql/payment-methods/authorize-net.html
+
+        - label: Braintree
+          url: /graphql/payment-methods/braintree.html
+
+        - label: Braintree Vault
+          url: /graphql/payment-methods/braintree-vault.html
 
         - label: PayPal Express Checkout
           url: /graphql/payment-methods/paypal-express-checkout.html

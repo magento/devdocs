@@ -7,9 +7,9 @@ functional_areas:
 
 ## What's in this topic
 
-For a particular page, its layout is defined by two major layout components: *page layout* file and *page configuration* file. 
+For a particular page, its layout is defined by two major layout components: *page layout* file and *page configuration* file.
 
-A page layout file defines the page wireframe, for example, one-column layout. Technically page layout is an .xml file defining the structure inside the `<body>` section of the HTML page markup. Page layouts feature only [containers]({{ page.baseurl }}/frontend-dev-guide/layouts/layout-overview.html). 
+A page layout file defines the page wireframe, for example, one-column layout. Technically page layout is an .xml file defining the structure inside the `<body>` section of the HTML page markup. Page layouts feature only [containers]({{ page.baseurl }}/frontend-dev-guide/layouts/layout-overview.html).
 All page layouts used for page rendering should be declared in the page layout declaration file.
 
 Page configuration is also an .xml file. It defines the detailed structure (page header, footer, etc.), contents and page meta information, including the page layout used. Page configuration features both main elements, [blocks of particular classes]({{ page.baseurl }}/frontend-dev-guide/layouts/layout-overview.html) and containers.
@@ -20,14 +20,14 @@ This article gives a comprehensive description of each layout file type.
 
 ## Page layout {#layout-types-page}
 
-Page layout declares the wireframe of a page inside the `<body>` section, for example one-column layout or two-column layout. 
+Page layout declares the wireframe of a page inside the `<body>` section, for example one-column layout or two-column layout.
 
 Allowed layout instructions:
 
 * [`<container>`]({{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_cont)
 * [`<referenceContainer>`]({{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_ref)
 * [`<move>`]({{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_mv)
-* [`<update>`]({{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_upd) 
+* [`<update>`]({{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_upd)
 
 Sample page layout:
 
@@ -58,7 +58,7 @@ Conventionally page layouts must be located as follows:
 
 To be able to use a layout for actual page rendering, you need to declare it in `layouts.xml`.
 
-Conventionally layout declaration file can be located in one of the following locations: 
+Conventionally layout declaration file can be located in one of the following locations:
 
 - Module layout declarations: `<module_dir>/view/frontend/layouts.xml`
 - Theme layout declaration: `<theme_dir>/<Namespace>_<Module>/layouts.xml`
@@ -144,7 +144,7 @@ The following table describes the instructions specific for page configuration f
             <code>layout = {layout}</code>
           </li>
           <li>
-            <code>xsi:noNamespaceSchemaLocation ="{path_to_schema}"</code>            
+            <code>xsi:noNamespaceSchemaLocation ="{path_to_schema}"</code>
           </li>
         </ul>
       </td>
@@ -390,7 +390,7 @@ The following table describes the instructions specific for page configuration f
 
 ## Generic layout {#layout-types-gen}
 
-Generic layouts define the contents and detailed structure inside the `<body>` section of the HTML page markup. 
+Generic layouts define the contents and detailed structure inside the `<body>` section of the HTML page markup.
 
 ### Generic layout file conventional location {#layout-type-gen-loc}
 
@@ -463,7 +463,7 @@ none
           <li><code>&lt;container&gt;</code></li>
           <li><code>&lt;referenceBlock&gt;</code></li>
           <li><code>&lt;referenceContainer&gt;</code></li>
-          
+
         </ul>
       </td>
       <td colspan="1"> Mandatory element</td>

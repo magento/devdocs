@@ -69,11 +69,11 @@ If you have a config.php file as part of your deployment, you should also add th
     ```bash
         git add -f app/etc/config.php
     ```
-    
+
     ```bash
         git commit -a -m “Add config.php.”
     ```
-    
+
 ## Configure and use B2B {#use}
 
 For additional information on using and configuring B2B, review the [Magento B2B User Guide](http://docs.magento.com/m2/b2b/user_guide/getting-started.html). To extend functionality, see the [Magento B2B Developer Guide]({{ site.baseurl }}/guides/v2.2/b2b/bk-b2b.html).

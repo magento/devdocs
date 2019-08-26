@@ -178,7 +178,6 @@ The reviewer should check whether the task meets the original acceptance criteri
 
 The work cannot be considered as complete unless all the criteria are verified.
 
-
 [0]:{{ page.baseurl }}/coding-standards/docblock-standard-general.html
 [1]:{{ page.baseurl }}/contributor-guide/backward-compatible-development/
 [2]:{{ page.baseurl }}/test/testing.html

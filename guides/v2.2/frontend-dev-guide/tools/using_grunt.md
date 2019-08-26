@@ -77,7 +77,7 @@ To use a custom file for Grunt configuration:
        {
            "themes": "dev/tools/grunt/configs/local-themes"
        }
-       
+
 This path is also added to your .gitignore by default
 
 ### How to declare custom configuration file: Option 2

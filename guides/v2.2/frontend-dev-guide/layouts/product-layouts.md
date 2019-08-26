@@ -9,8 +9,8 @@ contributor_link: https://www.atwix.com/
 
 This topic provides information about product layouts files. Magento allows you to customize view pages for all product types in the common layout files or particular product types.
 
-## Product view page 
- 
+## Product view page
+
 Layout file | Description
 --- | ---
 `catalog_product_view.xml` | Common layout. Affects all product types

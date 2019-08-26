@@ -1,6 +1,6 @@
 Attribute |  Data Type | Description
 --- | --- | ---
-`city` | String! | The city specified for the billing or shipping address 
+`city` | String! | The city specified for the billing or shipping address
 `company` | String | The company specified for the billing or shipping address
 `country_code` | String! | The country code and label for the billing or shipping address
 `firstname` | String! | The customer's first name

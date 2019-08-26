@@ -30,7 +30,7 @@ The release notes include:
 
 - {:.new} **Performance improvements for sources and SSA options** -  Sorting and selecting sources during shipment caused performance degradation for stocks with high numbers of sources. This release provides significant performance improvements to list and sort available sources when reviewing and selecting SSA options in shipments. <!-- https://github.com/magento/inventory/pull/2056 https://github.com/magento/inventory/pull/2090 -->
 
-- {:.new} **Added GraphQL support for {{site.data.var.im}}** - This release installs a new `magento/module-inventory-graph-ql` module. The GraphQL [Products endpoint]({{ page.baseurl }}/graphql/reference/products.html) now includes the `only_x_left_in_stock` and `stock_status` attributes for {{site.data.var.im}} support. <!-- https://github.com/magento/inventory/pull/2124 -->
+- {:.new} **Added GraphQL support for {{site.data.var.im}}** - This release installs a new `magento/module-inventory-graph-ql` module. The GraphQL [Products endpoint]({{ page.baseurl }}/graphql/queries/products.html) now includes the `only_x_left_in_stock` and `stock_status` attributes for {{site.data.var.im}} support. <!-- https://github.com/magento/inventory/pull/2124 -->
 
 - {:.new} **Simplified UI for Assigned Sources** - The Assigned Sources table in product pages has simplified content for easier updates and increased performance when displaying many sources. All sources list by source name (hover over for `source_code`).
 

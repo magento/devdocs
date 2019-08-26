@@ -14,8 +14,8 @@ Magento application provides a built-in Less UI library, which you can optionall
 
 To customize [storefront](https://glossary.magento.com/storefront) styles, you need to [create a custom design theme]({{ page.baseurl }}/frontend-dev-guide/themes/theme-create.html). Then you can use one of the following approaches:
 
-* If your theme [inherits]({{ page.baseurl }}/frontend-dev-guide/themes/theme-inherit.html) from the Magento out-of-the-box Blank or Luma theme, you can override the default Less files; for example to [change the values of the variables]({{ page.baseurl }}/frontend-dev-guide/css-topics/theme-ui-lib.html#fedg_using-ui-lib_predef-vars) used in the default files. 
-* Create your own Less files using the built-in Less preprocessor. 
+* If your theme [inherits]({{ page.baseurl }}/frontend-dev-guide/themes/theme-inherit.html) from the Magento out-of-the-box Blank or Luma theme, you can override the default Less files; for example to [change the values of the variables]({{ page.baseurl }}/frontend-dev-guide/css-topics/theme-ui-lib.html#fedg_using-ui-lib_predef-vars) used in the default files.
+* Create your own Less files using the built-in Less preprocessor.
 * Create your own CSS files, optionally having compiled them using third-party CSS preprocessor.
 
 ## Things to remember when working with styles
@@ -28,7 +28,7 @@ To customize [storefront](https://glossary.magento.com/storefront) styles, you n
 
 There are a couple options to help with CSS and site performance.
 
-* Merge CSS files to decrease the number of HTTP requests required to load the page. 
+* Merge CSS files to decrease the number of HTTP requests required to load the page.
 
 * Minification of CSS files reduces the file size being sent. It does this by stripping white space within the file.
 
@@ -69,7 +69,7 @@ Other topics of this chapter describe the following:
 * [Including CSS]({{ page.baseurl }}/frontend-dev-guide/css-topics/css-themes.html): how stylesheets are organized and included to be used for store pages in the Magento application.
 * [CSS Preprocessing]({{ page.baseurl }}/frontend-dev-guide/css-topics/css-preprocess.html): how stylesheets are preprocessed and compiled
 * [Magento UI Library]({{ page.baseurl }}/frontend-dev-guide/css-topics/theme-ui-lib.html): how to use the Magento styles [library](https://glossary.magento.com/library) in your custom themes
-* [Using Custom Fonts]({{ page.baseurl }}/frontend-dev-guide/css-topics/using-fonts.html): how to add custom fonts 
+* [Using Custom Fonts]({{ page.baseurl }}/frontend-dev-guide/css-topics/using-fonts.html): how to add custom fonts
 * [CSS critical path]({{ page.baseurl }}/frontend-dev-guide/css-topics/css-critical-path.html): how to use CSS critical path
 * [Customizing styles illustration]({{ page.baseurl }}/frontend-dev-guide/css-topics/css-practice.html): how to change a theme's color scheme using Magento UI library.
 
