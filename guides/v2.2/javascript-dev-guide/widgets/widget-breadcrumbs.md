@@ -36,7 +36,7 @@ The following example shows a PHTML file using the script:
             'breadcrumbs'
         ], function ($) {
             'use strict';
-    
+
             $('#breadcrumbs').breadcrumbs();
         });
 </script>
@@ -48,7 +48,7 @@ The Breadcrumb List is used to configure the breadcrumbs list and represents a s
 
 The Breadcrumb List source file is [`<Magento_Theme_module_dir>/view/frontend/web/js/model/breadcrumb-list.js`][].
 
-The Breadcrumb widget uses the Breadcrumbs List to configure a list of breadcrumbs which should be rendered. 
+The Breadcrumb widget uses the Breadcrumbs List to configure a list of breadcrumbs which should be rendered.
 
 You should configure the Breadcrumb List before initializing the Breadcrumbs widget. After initializing the widget, the Breadcrumb List does not affect the rendered list of breadcrumbs.
 
@@ -127,7 +127,7 @@ The following example shows how to initialize the Breadcrumb widget and pass bre
             }
         ];
 
-        // adding breadcrumbs to the Breadcrumb List 
+        // adding breadcrumbs to the Breadcrumb List
         breadcrumbs.forEach(function (breadcrumb) {
             breadcrumbList.push(breadcrumb);
         });
