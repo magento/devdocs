@@ -1557,19 +1557,11 @@ See [Magento Security Center](https://magento.com/security/patches/magento-2.2.7
 <!-- MAGETWO-87442 -->
 * The Google Analytics pageview is no longer triggered twice. [GitHub-12221](https://github.com/magento/magento2/issues/12221)
 
-### Google Tag Manager
-
 <!-- MAGETWO-93788 -->
 * The `addToCart` event triggers on the Google Task Manager console only when an item is added to the cart.  Previously, the event was triggered before the cart was updated.
 
-<!-- MAGETWO-92126 -->
-* Google Tag Manager product category data is now fully reported. Previously, the Google Tag Manager product category (Enhanced Ecommerce) data did not report all information.
-
 <!--- ENGCOM-633 -->
 *  Magento now correctly displays product titles when displaying Sales information in Google Analytics.  Previously, Magento replaced spaces in product names with their HTML values (for example, `\u0020`).  *Fix submitted by Julien ANQUETIL in pull request [13907](https://github.com/magento/magento2/pull/13907)*.  [GitHub-13827](https://github.com/magento/magento2/issues/13827), [GitHub-13350](https://github.com/magento/magento2/issues/13350)
-
-<!-- MAGETWO-91712 -->
-* All relevant attributes are now populated in the Google Tag Manager when a customer adds a product to their shopping cart. Previously, grouped, bundle, and configurable product attributes were missing in the Google Tag Manager.
 
 ### HTML
 
