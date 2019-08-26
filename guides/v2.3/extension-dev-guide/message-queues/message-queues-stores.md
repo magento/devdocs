@@ -12,7 +12,7 @@ The `Magento_AmqpStore` module provides the ability for message queues to proces
 {: .bs-callout .bs-callout-warning }
 You must install the [Scope parameter for Async/Bulk API patch](https://magento.com/tech-resources/download#download2312) to enable asynchronous requests on specific stores. Without this patch, asynchronous requests apply to the default store only.
 
-### Processing messages 
+### Processing messages
 
 Magento processes each message that is sent to the Message Queue Framework, adding information about the current store. The following plugin implements this behavior:
 
@@ -22,7 +22,7 @@ app/code/Magento/AmqpStore/Plugin/Framework/Amqp/Bulk/Exchange.php
 
 The plugin executes before the `enqueue` method in `Magento\Framework\Amqp\Bulk\Exchange`.
 
-By default, each AMQP message contains a list of properties. One of these properties is `application_headers`, and these headers are used for transfer the current `store_id` into the RabbitMQ queue.  
+By default, each AMQP message contains a list of properties. One of these properties is `application_headers`, and these headers are used for transfer the current `store_id` into the RabbitMQ queue.
 
 ```php
 public function beforeEnqueue(SubjectExchange $subject, $topic, array $envelopes)
@@ -76,12 +76,12 @@ In this example, you can see that the plugin checks `application_headers` and ad
 
 ### Processing by consumer
 
-[Consumers]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-queue.html) pick up messages from the RabbitMQ queue and process them. 
+[Consumers]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-queue.html) pick up messages from the RabbitMQ queue and process them.
 
-On a step when a consumer reads a message, the extension executes an around plugin, as shown here: 
+On a step when a consumer reads a message, the extension executes an around plugin, as shown here:
 
 ```php
-Magento\AmqpStore\Plugin\AsynchronousOperations\MassConsumerEnvelopeCallback::aroundExecute(SubjectMassConsumerEnvelopeCallback $subject, callable $proceed, EnvelopeInterface $message) 
+Magento\AmqpStore\Plugin\AsynchronousOperations\MassConsumerEnvelopeCallback::aroundExecute(SubjectMassConsumerEnvelopeCallback $subject, callable $proceed, EnvelopeInterface $message)
 ```
 
 ```php

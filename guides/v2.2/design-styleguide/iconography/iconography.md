@@ -12,7 +12,7 @@ Icons are meant to provide a visual representation of functionality or content a
 
 ## How Icons Are Used
 
-Icons may appear in a variety of sizes within the interface as controls for tools and functions and to assist in "wayfinding" within the application.  
+Icons may appear in a variety of sizes within the interface as controls for tools and functions and to assist in "wayfinding" within the application.
 
 Use touch-friendly UI principles — icons should be large enough to provide a reasonable target for a user's finger tap. The icon may be smaller than optimal touch size when it is coupled with a "target" area with the optimal size.
 
@@ -20,16 +20,15 @@ Use touch-friendly UI principles — icons should be large enough to provide a r
 
 The functionality associated with a specific icon should be paired consistently, throughout the interface.
 
-However, an icon or a design element in an icon can sometimes serve different functions. Icons usually function as a single, unique concept wherever they exist in a website, but some icons have dual purposes, relying on different size, placement, and context to communicate their meaning to the user.  
+However, an icon or a design element in an icon can sometimes serve different functions. Icons usually function as a single, unique concept wherever they exist in a website, but some icons have dual purposes, relying on different size, placement, and context to communicate their meaning to the user.
 
-*Example:* The "X" error icon and its the supporting elements of copy, position, and styling give an identity and meaning for the icon. However, when an "X" icon is used as a "Remove" or "Close" control, its supporting elements give it a different identity and meaning.  
+*Example:* The "X" error icon and its the supporting elements of copy, position, and styling give an identity and meaning for the icon. However, when an "X" icon is used as a "Remove" or "Close" control, its supporting elements give it a different identity and meaning.
 
 ## Icon Library
 
 In the Magento Admin, icons have a simple, flat, single-color, and two-dimensional style. This style prevents loss of detail at smaller sizes and makes the shapes easier to recognize.
 
 ![](img/Magento-icon-contact-sheet.png)
-
 
 ## Creating Icons
 
@@ -55,15 +54,13 @@ For any icon to be used in Magento Admin, ask the Magento Product Team to review
 
 ### Create with the Icon Grid
 
-Here's one method to get started:  
+Here's one method to get started:
 
 ![](img/icon-construction-guide.png)
-
 
 Learn how to use the icon grid:
 
 ![](img/using-icon-grid.png)
-
 
 ## Icon Fonts
 

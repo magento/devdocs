@@ -53,7 +53,7 @@ To choose which components to upgrade:
 				<li>From the <strong>Update Version</strong> list, click the upgrade version. (If you already have the most current version, the list has only one option.)</li></ul>
 				</td>
 	</tr>
-	
+
 	</tbody>
 	</table>
 

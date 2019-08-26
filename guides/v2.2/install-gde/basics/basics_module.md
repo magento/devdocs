@@ -12,7 +12,7 @@ functional_areas:
   - System
   - Setup
 ---
- 
+
 ## What's the difference between a module and a component?
 
 A *module* is a type of *component*. A component can be:

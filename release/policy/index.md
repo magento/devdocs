@@ -32,5 +32,8 @@ The following guidelines apply to patch releases:
 - On an exceptional basis, breaking changes or additional patches or hotfixes may be released to address security or compliance issues. On the module level, these are mostly PATCH-level changes; sometimes MINOR-level changes.
 - Patches may include new features as long as they are not expected to break other code. The new feature can be included in the core code or as an extension, such as Page Builder.
 
-{:.bs-callout .bs-callout-info}
-See [Magento Software Lifecycle Policy](https://magento.com/sites/default/files/magento-software-lifecycle-policy.pdf) and [Versioning]({{ site.baseurl }}/guides/v2.3/extension-dev-guide/versioning/).
+#### Related topics
+
+- [Planning and Budgeting for Commerce Upgrade Cycles](https://magento.com/sites/default/files8/2019-08/Magento-Release-Cycle-Infosheet_Aug_2019.pdf)
+- [Magento Software Lifecycle Policy](https://magento.com/sites/default/files/magento-software-lifecycle-policy.pdf)
+- [Versioning]({{ site.baseurl }}/guides/v2.3/extension-dev-guide/versioning/).

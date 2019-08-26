@@ -33,7 +33,7 @@ You can run Magento in any of the following *modes*:
 				<li>Enables enhanced debugging</li>
 				<li>Shows custom <code>X-Magento-*</code> HTTP request and response headers</li>
 				<li>Results in the slowest performance</li>
-				<li>Does not show errors on the frontend</li></ul>
+				<li>Shows errors on the frontend</li></ul>
     </td>
 	</tr>
 	<tr>
@@ -100,7 +100,7 @@ In production mode:
 -   You can enable and disable cache types only using the [command line]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cache.html#config-cli-subcommands-cache-en).
 
 	You _cannot_ enable or disable cache types using the Magento Admin
-	
+
 ## Maintenance mode
 
 Run Magento in maintenance mode to take your site offline while you complete maintenance, upgrade, or configuration tasks.  In maintenance mode, the site redirects visitors to a default `Service Temporarily Unavailable` page.

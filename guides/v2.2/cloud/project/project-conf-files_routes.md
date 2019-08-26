@@ -72,7 +72,7 @@ The `routes.yaml` file is a list of templated routes and their configurations. Y
 ```
 {: .no-copy}
 
-For example, the `refactorcss` branch for the `mswy7hzcuhcjw` project hosted in the `us` cluster has the following the domains: 
+For example, the `refactorcss` branch for the `mswy7hzcuhcjw` project hosted in the `us` cluster has the following the domains:
 
 ```text
 http://www-refactorcss-mswy7hzcuhcjw.us.magentosite.cloud/
@@ -99,7 +99,6 @@ Property         | Description
 ## Simple routes
 
 The following sample routes the apex domain and the `www` subdomain to the `frontend`application. This route does not redirect HTTPS requests:
-
 
 ```yaml
 "http://{default}/":
@@ -157,7 +156,6 @@ echo $MAGENTO_CLOUD_RELATIONSHIPS | base64 --decode | json_pp
 https://*.add-theme-projectID.us.magentosite.cloud/
 ```
 {: .no-copy}
-
 
 {: .bs-callout-info }
 Some projects provisioned before December 8, 2017, use the triple dash (\-\-\-) as a separator for the subdomain.

@@ -14,21 +14,19 @@ For more information about managing environments using the CLI, see [Manage bran
 
 This topic discusses how to use the Project Web Interface to:
 
-*	Add or delete an environment. You cannot add or delete the `master` branch for Pro plan Staging and Production. You can branch from Start plan Master.
-*	Sync (`git pull`) from the environment's parent
-*	Merge (`git push`) to the environment's parent
+- Add or delete an environment. You cannot add or delete the `master` branch for Pro plan Staging and Production. You can branch from Start plan Master.
+- Sync (`git pull`) from the environment's parent
+- Merge (`git push`) to the environment's parent
 
 {:.bs-callout .bs-callout-info}
 You cannot create branches from Pro plan Staging and Production `master`. These environments include `master` branches that you deploy updated Git code to from Integration `master`.
-
-{% include cloud/wings-management.md %}
 
 ## Add or delete an environment {#project-branch-add}
 
 Complete development of code and added extensions in a branch and, when complete, merge (`git push`) the branch with its parent or master.
 
-* For Starter, we recommend you create a `staging` branch from Master, then branch from `staging` for development.
-* For Pro, you want to branch from Development (Integration `master`).
+- For Starter, we recommend you create a `staging` branch from Master, then branch from `staging` for development.
+- For Pro, create a development branch from the Integration environment.
 
 For branching strategies, review [Starter]({{ page.baseurl }}/cloud/basic-information/starter-architecture.html) and [Pro]({{ page.baseurl }}/cloud/basic-information/starter-develop-deploy-workflow.html) architecture overviews.
 
@@ -40,49 +38,51 @@ If you need additional environments for development, enter a [Support ticket]({{
 
 To add a branch:
 
-1.	[Log in to your project]({{ page.baseurl }}/cloud/project/project-webint-basic.html#project-access).
-2.	In the left navigation bar, click the name of the parent environment.
+1. [Log in to your project]({{ page.baseurl }}/cloud/project/project-webint-basic.html#project-access).
+1. In the left navigation bar, click the name of the parent environment.
 
-	Your new branch is cloned from this environment. Choose a parent environment that is similar to the environment you're about to create.
-3.	Click ![Create a branch]({{ site.baseurl }}/common/images/cloud_branch-icon.png){:width="30px"}.
-4.	In the provided field, enter a branch name. In many cases, the environment name is the same as its ID.
+   Your new branch is cloned from this environment. Choose a parent environment that is similar to the environment you're about to create.
+1. Click ![Create a branch]({{ site.baseurl }}/common/images/cloud_branch-icon.png){:width="30px"}.
+1. In the provided field, enter a branch name. In many cases, the environment name is the same as its ID.
 
-    The environment _name_ is different from the environment _ID_ only if you use spaces or capital letters in the environment name. An environment ID consists of all lowercase letters, numbers, and allowed symbols. Capital letters in an environment name are converted to lowercase in the ID; spaces in an environment name are converted to dashes.
+   The environment _name_ is different from the environment _ID_ only if you use spaces or capital letters in the environment name. An environment ID consists of all lowercase letters, numbers, and allowed symbols. Capital letters in an environment name are converted to lowercase in the ID; spaces in an environment name are converted to dashes.
 
-    An environment name **cannot** include characters reserved for your Linux shell or for regular expressions. Forbidden characters include curly braces (`{ }`), parentheses, asterisk (`*`), angle brackets (`>`), ampersand (`&`), percent (<code>%</code>), and other characters.
+   An environment name **cannot** include characters reserved for your Linux shell or for regular expressions. Forbidden characters include curly braces (`{ }`), parentheses, asterisk (`*`), angle brackets (`>`), ampersand (`&`), percent (<code>%</code>), and other characters.
 
-5.	Click **Branch**.
-6.	Wait while the environment deploys.
+1. Click **Branch**.
+1. Wait while the environment deploys.
 
-	During deployment, its status is **In process**, as the following figure shows.
+   During deployment, its status is **In process**, as the following figure shows.
 
-	![Branch is deploying]({{ site.baseurl }}/common/images/cloud_branch-deploy.png)
+   ![Branch is deploying]({{ site.baseurl }}/common/images/cloud_branch-deploy.png)
 
-	After a successful deployment, the status changes to **Success**:
+   After a successful deployment, the status changes to **Success**:
 
-	![Branch is deploying]({{ site.baseurl }}/common/images/cloud_branch-success.png)
-7.	Continue with one of the following:
+   ![Branch is deploying]({{ site.baseurl }}/common/images/cloud_branch-success.png)
 
-	*	[Get started with an environment]({{ page.baseurl }}/cloud/env/environments-start.html)
-	*	[How tos and tutorials]({{ page.baseurl }}/cloud/howtos/how-to.html)
+1. Continue with one of the following:
+
+   - [Get started with an environment]({{ page.baseurl }}/cloud/env/environments-start.html)
+   - [How tos and tutorials]({{ page.baseurl }}/cloud/howtos/how-to.html)
 
 ## Delete to make a branch inactive {#inactive}
 
 To delete an environment and make it inactive:
 
-1.	[Log in to your project]({{ page.baseurl }}/cloud/project/project-webint-basic.html#project-access).
-2.	In the left pane, click the name of the branch to delete.
-3.	Click **Configure environment** as the following figure shows.
+1. [Log in to your project]({{ page.baseurl }}/cloud/project/project-webint-basic.html#project-access).
+1. In the left pane, click the name of the branch to delete.
+1. Click **Configure environment** as the following figure shows.
 
-	![Configure environment]({{ site.baseurl }}/common/images/cloud_project-env.png)
-4.	Click the **Settings** tab.
-5.	Click **Delete** next to the environment's status, as the following figure shows.
+   ![Configure environment]({{ site.baseurl }}/common/images/cloud_project-env.png)
 
-	![Delete an environment]({{ site.baseurl }}/common/images/cloud_env-delete.png)
+1. Click the **Settings** tab.
+1. Click **Delete** next to the environment's status, as the following figure shows.
 
-	A deleted (that is, inactive) environment displays with its name stricken out as the following figure shows.
+   ![Delete an environment]({{ site.baseurl }}/common/images/cloud_env-delete.png)
 
-	![Delete an environment]({{ site.baseurl }}/common/images/cloud_environment-deleted.png)
+   A deleted (that is, inactive) environment displays with its name stricken out as the following figure shows.
+
+   ![Delete an environment]({{ site.baseurl }}/common/images/cloud_environment-deleted.png)
 
 ## Sync from the environment's parent {#project-branch-sync}
 
@@ -92,14 +92,15 @@ For Pro plan, you can also sync from Staging and Production to your Integration 
 
 To sync an environment with its parent:
 
-1.	[Log in to your project]({{ page.baseurl }}/cloud/project/project-webint-basic.html#project-access).
-2.	In the left pane, click the name of the branch you want to sync.
-3.	Click ![Sync an environment]({{ site.baseurl }}/common/images/cloud_environment-sync.png){:width="30px"} (sync).
+1. [Log in to your project]({{ page.baseurl }}/cloud/project/project-webint-basic.html#project-access).
+1. In the left pane, click the name of the branch you want to sync.
+1. Click ![Sync an environment]({{ site.baseurl }}/common/images/cloud_environment-sync.png){:width="30px"} (sync).
 
-	The following prompt displays:
+  The following prompt displays:
 
-	![Choose what to sync]({{ site.baseurl }}/common/images/cloud_environment-sync2.png)
-4.	Select the checkbox next to each item to sync and click **Sync**.
+  ![Choose what to sync]({{ site.baseurl }}/common/images/cloud_environment-sync2.png)
+
+1. Select the checkbox next to each item to sync and click **Sync**.
 
 ## Merge with the environment's parent {#project-branch-merge}
 
@@ -107,10 +108,10 @@ Merging an environment is the same as `git push origin`. You merge to push updat
 
 To merge an environment with its parent:
 
-1.	[Log in to your project]({{ page.baseurl }}/cloud/project/project-webint-basic.html#project-access).
-2.	In the left pane, click the name of the branch you want to merge.
-3.	Click ![Merge an environment]({{ site.baseurl }}/common/images/cloud_environment-merge.png){:width="30px"} (merge).
-4.	Click **Merge** to confirm the action.
+1. [Log in to your project]({{ page.baseurl }}/cloud/project/project-webint-basic.html#project-access).
+2. In the left pane, click the name of the branch you want to merge.
+3. Click ![Merge an environment]({{ site.baseurl }}/common/images/cloud_environment-merge.png){:width="30px"} (merge).
+4. Click **Merge** to confirm the action.
 
 ## View logs {#logs}
 
@@ -120,16 +121,14 @@ For **Starter** environments, you can review build and deploy logs and the deplo
 
 For **Pro** environments, you can review the following logs per environment:
 
-* Integration: Build and deploy and deployment history
-* Staging: Build logs and deployment history. You need to SSH into the server to view deploy logs.
-* Production: Build logs and deployment history. You need to SSH into the server to view deploy logs.
+- Integration–Build and deploy and deployment history
+- Staging–Build logs and deployment history. You need to SSH into the server to view deploy logs.
+- Production–Build logs and deployment history. You need to SSH into the server to view deploy logs.
 
-If you do not see your Pro plan Staging and Production environments in the Project Web Interface, you need to [enter a ticket for updating]({{ page.baseurl }}/cloud/trouble/pro-env-management.html) your project interface.
-
-1.	[Log in to your project]({{ page.baseurl }}/cloud/project/project-webint-basic.html#project-access).
-2.	In the left pane, click an environment to review logs for.
-3.	The right pane provides a deployment history of one entry per action attempted including syncs, merges, branches, snapshots, and more.
-4.	To view the build log, select the Success or Failure link per deployment record on the account.
+1. [Log in to your project]({{ page.baseurl }}/cloud/project/project-webint-basic.html#project-access).
+2. In the left pane, click an environment to review logs for.
+3. The right pane provides a deployment history of one entry per action attempted including syncs, merges, branches, snapshots, and more.
+4. To view the build log, select the Success or Failure link per deployment record on the account.
 
 ## Pull code from a private Git repository {#private}
 
@@ -150,16 +149,16 @@ We highly recommend adding and merging this code to your project Git repositorie
 
 To find your project SSH public key (also referred to as a *deploy key*):
 
-1.	Log in to your project using the Web Interface.
-2.	Click **Configure Project**.
-3.	Click **Deploy Key**.
+1. Log in to your project using the Web Interface.
+1. Click **Configure Project**.
+1. Click **Deploy Key**.
 
-	The following figure shows an example.
+   The following figure shows an example.
 
-	![Deploy Key]({{ site.baseurl }}/common/images/cloud_deploy-key.png){:width="500px"}
+   ![Deploy Key]({{ site.baseurl }}/common/images/cloud_deploy-key.png){:width="500px"}
 
-4.	Copy the deploy key to the clipboard.
-5.	See [Enter your GitHub deploy key](#cloud-deploykey-github).
+1. Copy the deploy key to the clipboard.
+1. See [Enter your GitHub deploy key](#cloud-deploykey-github).
 
 ### Enter your GitHub deploy key {#cloud-deploykey-github}
 
@@ -167,20 +166,20 @@ On GitHub, deploy keys are read-only by default. Your Magento project won't push
 
 To enter your project's public key as a GitHub deploy key:
 
-1.	Log in to your GitHub repository as its administrator.
-2.	Click **Settings** as the following figure shows.
+1. Log in to your GitHub repository as its administrator.
+1. Click **Settings** as the following figure shows.
 
-	![GitHub settings]({{ site.baseurl }}/common/images/cloud_gh-settings.png){:width="650px"}
+   ![GitHub settings]({{ site.baseurl }}/common/images/cloud_gh-settings.png){:width="650px"}
 
     {:.bs-callout .bs-callout-info}
     If you do not see this option, you are not the repository administrator and you cannot complete this task. Ask your GitHub project administrator to do this.
 
-3.	On the Settings page, in the left navigation bar, click **Deploy Keys** as the following figure shows.
+1. On the Settings page, in the left navigation bar, click **Deploy Keys** as the following figure shows.
 
-	![GitHub deploy key]({{ site.baseurl }}/common/images/cloud_gh-deploy-key.png){:width="200px"}
+   ![GitHub deploy key]({{ site.baseurl }}/common/images/cloud_gh-deploy-key.png){:width="200px"}
 
-4.	Click **Add deploy key**.
-5.	Follow the prompts on your screen to complete the task.
+1. Click **Add deploy key**.
+1. Follow the prompts on your screen to complete the task.
 
 In `composer.json`, use the `<user>@<host>:<.git</code>` format, or `ssh://<user>@<host>:<port>/<path>.git` if using a non-standard port.
 
@@ -188,37 +187,40 @@ In `composer.json`, use the `<user>@<host>:<.git</code>` format, or `ssh://<user
 
 To enter your project's public key as a Bitbucket deploy key:
 
-1.	Log in to your Bitbucket repository as its administrator.
-2.	In the left navigation bar, click **Settings** as the following figure shows.
+1. Log in to your Bitbucket repository as its administrator.
+1. In the left navigation bar, click **Settings** as the following figure shows.
 
-	![Bitbucket settings]({{ site.baseurl }}/common/images/cloud_bb-settings.png)
-3.	Click General > **Deployment Keys** as the following figure shows.
+   ![Bitbucket settings]({{ site.baseurl }}/common/images/cloud_bb-settings.png)
 
-	![Bitbucket deploy key]({{ site.baseurl }}/common/images/cloud_bb-deploy-key.png)
-4.	Click **Add Key**.
-5.	Follow the prompts on your screen to complete the task.
+1. Click General > **Deployment Keys** as the following figure shows.
+
+   ![Bitbucket deploy key]({{ site.baseurl }}/common/images/cloud_bb-deploy-key.png)
+
+1. Click **Add Key**.
+1. Follow the prompts on your screen to complete the task.
 
 ## Secure your environments and branches {#security}
 
 You can access your project and environments from any location through a web browser using the Project Web Interface. You may have security set for your Production environment, stores, and sites. This section helps you secure your Integration and Staging environments for strictly your developers, DBAs, and more.
 
-To secure your Starter environments and Pro Integration environments:
+To secure your Starter and Pro environments:
 
 1. Log into your [Project Web Interface](https://accounts.magento.cloud).
-2. Select an environment / branch.
-3. Click Configure Environment.
-4. On the **Settings** tab, click **ON** for **HTTP access control** to enable secure access. You can choose between credentials or IP addresses to filter for access.
-5. To filter by credentials, click **Add Login**, enter a username and password, and click again **Add Login** to add.
-6. To filter by IP address, enter the IP addresses in a list with `deny` or `allow`. For example:
+1. Select an environment branch.
+1. Click **Configure Environment**.
+1. On the **Settings** tab, click **ON** for **HTTP access control** to enable secure access. You can choose between credentials or IP addresses to filter for access.
+1. To filter by credentials, click **Add Login**, enter a username and password, and click again **Add Login** to add.
+1. To filter by IP address, enter the IP addresses in a list with `deny` or `allow`. For example:
 
-        123.456.789.111/29 allow
-        123.456.789.112/29 allow
-        234.123.567.111/29 allow
-        0.0.0.0/0 deny
-7. Click **Save**.
+   ```text
+   123.456.789.111/29 allow
+   123.456.789.112/29 allow
+   234.123.567.111/29 allow
+   0.0.0.0/0 deny
+   ```
+
+1. Click **Save**.
 
 The branch redeploys to update the environment security and settings.
-
-To secure Pro plan Staging environment, enter a [Support ticket]({{ page.baseurl }}/cloud/trouble/trouble.html). Provide the user credentials and/or IP addresses to allow or deny. If you have security settings entered for an existing Integration environment, in the ticket ask to have the secure settings copied to Staging.
 
 We recommend testing your environments after completing security settings.

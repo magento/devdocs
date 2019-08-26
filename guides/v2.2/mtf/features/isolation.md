@@ -8,12 +8,12 @@ Isolation management feature enables you to isolate a test suite, a test case, o
 In general, to manage isolation:
 
  - [Create an isolation script][step 1]
- 
+
  - [Set isolation script][step 2]
- 
+
     - For all functional tests (globally), set [isolation configuration]. For example, set isolation script globally to be run [after each test case][step 2a], [before each test][step 2b], [before and after a test suite][step 2c].
     - For certain test or test case, define an isolation strategy parameter in PHP Doc annotation of a test case or a test. For example, set isolation script locally to be run [after a test case][step 2d], [after each test of a test case][step 2e], [before test of a test case][step 2f], [before a test case and after a test][step 2g]; or excluded [for a test case][step 2h], [for a test][step 2i].
- 
+
 Isolation strategy parameter defines when the isolation script must be run relatively to a [test suite], a [test case], or a [test]: **before**, **after**, **both** (that is run both before and after), **none** (never run).
 
 The following example demonstrates how you can use isolation management.
@@ -29,9 +29,9 @@ exec('mysql -umagento -pmagento magento < /var/www/magento/magento.dump.sql');
 ```
 
 By default, [isolation configuration] points to `dev/tests/functional/isolation.php`.
- 
+
 Add the code to `<magento root dir>/dev/tests/functional/isolation.php`.
- 
+
 It means that during test run the FTF would call `http://magento2ce.com/dev/tests/functional/isolation.php` (`<baseUrl>` is set to `http://magento2ce.com/`) according to selected isolation strategy.
 
 {: .bs-callout .bs-callout-warning }
@@ -194,9 +194,7 @@ Example test: `test()`.
     ...
 ```
 
-
 <!-- LINK DEFINITIONS -->
-
 
 [step 1]: #step-1
 [step 2]: #step-2

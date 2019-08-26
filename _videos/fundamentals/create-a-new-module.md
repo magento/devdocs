@@ -72,7 +72,6 @@ Then put the following code into it:
 </config>
 ```
 
-
 Note that in the XML file we specified:
 
 * Module name: `Learning_FirstUnit` (based on the folders we created)

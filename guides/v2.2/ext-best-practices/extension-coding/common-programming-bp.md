@@ -61,9 +61,9 @@ For Magento 2 [extension](https://glossary.magento.com/extension) development, w
 Avoid using [around method plugins]({{ page.baseurl }}/extension-dev-guide/plugins.html) when they are not required because they increase stack traces and affect performance. The only use case for around method plugins is when you need to terminate the execution of all further plugins and original methods.
 
 {:.bs-callout .bs-callout-info}
-Access to method parameters was the primary justification for using **around** method plugins instead of **after** method plugins. 
-<br/><br/> 
-Since 2.2, [after method plugins]({{ page.baseurl }}/extension-dev-guide/plugins.html#after-methods) give you access to method parameters. Use **after** method plugins if you need to replace or modify function results using arguments. 
+Access to method parameters was the primary justification for using **around** method plugins instead of **after** method plugins.
+<br/><br/>
+Since 2.2, [after method plugins]({{ page.baseurl }}/extension-dev-guide/plugins.html#after-methods) give you access to method parameters. Use **after** method plugins if you need to replace or modify function results using arguments.
 
 ### Test your code
 

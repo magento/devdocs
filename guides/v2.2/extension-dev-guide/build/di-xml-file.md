@@ -190,11 +190,11 @@ Node Format:
 
   Magento builds an array with elements corresponding to the items and passes it as the argument.
   The array can contain an infinite number of items, and each array item can be of any object type including an array itself.
-  
+
   When Magento merges the configuration files for a given scope, array arguments with the same name get merged into a new array.
-  
+
   When Magento loads a new configuration at a later time, either by a more specific scope or through code, then any array definitions in the new configuration will replace the loaded config instead of merging.
-  
+
 ---
 
 **Argument Examples:**
