@@ -158,3 +158,7 @@ The following query returns information about downloadable product `240-LV04`, w
   }
 }
 ```
+
+## Related topics
+
+-  [customerDownloadableProducts query]({{page.baseurl}}/graphql/queries/customer-downloadable-products.html)
