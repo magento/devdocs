@@ -6,11 +6,11 @@ functional_areas:
   - Catalog
 ---
 
-There are several options to choose when issuing a credit using the Magento Refund API.
+There are a couple of options to choose when issuing a credit using the Magento API.
 
 ## salesCreditmemoManagement service
 
-The service also allows you to initiate and process a refund but requires more information in a request compared to the `RefundInvoice` and `RefundOrder` services.
+The service also allows you to initiate and process a refund but requires more information in a request compared to the `salesRefundInvoiceV1` and `salesRefundOrderV1` services.
 
 ### Endpoints
 
@@ -31,7 +31,6 @@ This service is only for persistence operations with refunds. This service can 
 
 The `POST /V1/creditmemo` method of this service allows you to place a new credit memo or update an existing one, but will not process any refund operations with it. Sending a request with this method will not change the status of a credit memo and will not affect the refund amount; consequently, a new credit memo will not have any status and the refund will amount to zero.
 
-{:.bs-callout-tip}
 For the correct refund shipment, these parameters are required:
 
 * `shipping_amount`

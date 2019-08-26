@@ -6,7 +6,7 @@ functional_areas:
   - Catalog
 ---
 
-There are several options to choose when issuing a refund using the Magento Refund API.
+There are a couple of options to choose when issuing a refund using the Magento API.
 
 ## salesRefundInvoiceV1 service
 
@@ -29,7 +29,7 @@ The `salesRefundInvoice` service allows you to:
 
 ## salesRefundOrderV1 service
 
-This service performs the same operations as the `RefundInvoice` service, but based on an Order ID. Use this service if the invoice was created using an offline payment method.
+This service performs the same operations as the `salesRefundInvoiceV1` service, but based on an Order ID. Use this service if the invoice was created using an offline payment method.
 
 ### Endpoint
 
