@@ -16,8 +16,8 @@ This section discusses upgrade issues to Magento version 2.0.4. Symptoms include
 ### `Strict Notice` exception
 Error text follows:
 
-	[Exception]                                                                                                                                                
-	Strict Notice: Declaration of Magento\Store\Model\ResourceModel\Website\Interceptor::afterLoad() should be compatible with Magento\Framework\Model\ResourceModel\Db\AbstractDb::afterLoad(Magento\Framework\DataObject $object) in /var/www/html/magento2ce/var/generation/Magento/Store/Model/ResourceModel/Website/Interceptor.php on line 7   
+	[Exception]
+	Strict Notice: Declaration of Magento\Store\Model\ResourceModel\Website\Interceptor::afterLoad() should be compatible with Magento\Framework\Model\ResourceModel\Db\AbstractDb::afterLoad(Magento\Framework\DataObject $object) in /var/www/html/magento2ce/var/generation/Magento/Store/Model/ResourceModel/Website/Interceptor.php on line 7
 
 ### PHP fatal error
 
@@ -46,7 +46,6 @@ To resolve these errors, perform the following tasks:
 		<magento_root>/var/generation/*
 
 3.	Run your upgrade again, making sure to complete _all tasks_ discussed in [Run System Upgrade]({{ page.baseurl }}/comp-mgr/upgrader/upgrade-start.html).
-
 
 ### `var/session` permissions failure {#compman-upgr-perms}
 If your Magento application is set to write session data to the `<magento_root>/var/session` directory, you must set permissions on that directory before you upgrade.

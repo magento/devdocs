@@ -3,13 +3,13 @@ group: php-developer-guide
 subgroup: 65_CLI
 title: How to add CLI commands
 menu_title: How to add CLI commands
-menu_node: 
+menu_node:
 menu_order: 3
 ---
 
 ## Overview of adding CLI commands {#cli-add-over}
 
-Magento enables your component to add commands to our [Symfony-like command-line interface (CLI)](https://symfony.com/doc/current/components/console.html). 
+Magento enables your component to add commands to our [Symfony-like command-line interface (CLI)](https://symfony.com/doc/current/components/console.html).
 
 ### About the Magento CLI
 {% include install/new-cli-intro.md %}
@@ -38,12 +38,12 @@ Following is a summary of the process:
 ```php
 <?php
     namespace Magento\CommandExample\Console\Command;
-    
+
     use Symfony\Component\Console\Command\Command;
     use Symfony\Component\Console\Input\InputInterface;
     use Symfony\Component\Console\Input\InputOption;
     use Symfony\Component\Console\Output\OutputInterface;
-    
+
     /**
      * Class SomeCommand
      */
@@ -56,10 +56,10 @@ Following is a summary of the process:
         {
             $this->setName('my:first:command');
             $this->setDescription('This is my first console command.');
-            
+
             parent::configure();
         }
-    
+
         /**
          * @param InputInterface $input
          * @param OutputInterface $output
@@ -73,7 +73,7 @@ Following is a summary of the process:
         }
     }
 ```
-    
+
 {: .bs-callout-info }
 You can style the output text by using `<error>This is an error message</error>` or `<info>This is a success message</info>`.
 
@@ -96,7 +96,7 @@ You can style the output text by using `<error>This is an error message</error>`
 3.	Clean the [cache](https://glossary.magento.com/cache) and compiled code directories:
 
 		cd <magento_root>/var
-		rm -rf cache/* page_cache/* di/* generation/* 
+		rm -rf cache/* page_cache/* di/* generation/*
 
 ## Add CLI commands using the Composer autoloader {#cli-autoload}
 

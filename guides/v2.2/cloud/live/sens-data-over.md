@@ -124,7 +124,7 @@ The `config.php` file includes the following settings and configuration values:
 
 ## Recommended procedure to manage your settings {#cloud-config-specific-recomm}
 
-Managing store configuration is a complex task mostly up to you. What locales do you want to use? What custom themes do you need? Instead of making these changes in every environment, you can use the `config.php` file, which contains a number of configuration properties that you can adjust as needed. 
+Managing store configuration is a complex task mostly up to you. What locales do you want to use? What custom themes do you need? Instead of making these changes in every environment, you can use the `config.php` file, which contains a number of configuration properties that you can adjust as needed.
 
 We **strongly recommend** using the `scd-dump` command to generate a `config.php` file. This file includes only the settings you configure without locking the default values. It also ensures that all extensions used in the Staging and Production environments do not break due to read-only configurations, especially Fastly.
 
@@ -204,7 +204,7 @@ You only need to complete this migration once. When you need to update the file,
 
 You can change your store locales without following a complex configuration import and export process, _if_ you have [SCD_ON_DEMAND]({{ page.baseurl }}/cloud/env/variables-global.html#scd_on_demand) enabled. You can update the locales using the Admin panel.
 
-You can add another locale to the Staging or Production environment by enabling `SCD_ON_DEMAND` in an Integration branch, generate an updated `config.php` file with the new locale information, and copy the configuration file to the target environment. 
+You can add another locale to the Staging or Production environment by enabling `SCD_ON_DEMAND` in an Integration branch, generate an updated `config.php` file with the new locale information, and copy the configuration file to the target environment.
 
 {: .bs-callout .bs-callout-warning}
 This process **overwrites** the store configuration; only do the following if the environments contain the same stores.

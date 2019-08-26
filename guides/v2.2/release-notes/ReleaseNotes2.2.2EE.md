@@ -6,7 +6,6 @@ title: Magento Commerce 2.2.2 Release Notes
 
 *Release notes updated on January 5, 2018.*
 
-
 We are pleased to present Magento Commerce 2.2.2. This release includes new tools and numerous functional fixes and enhancements, plus a substantial number of contributions from the wider Magento community.
 
 ## Highlights
@@ -27,7 +26,7 @@ Look for the following highlights in this release:
 
 * **Streamlined Instant Purchase checkout** (contributed by Creatuity). Our new streamlined Instant Purchase option uses previously stored payment credentials and shipping information to bypass steps in the checkout process. See [Instant Purchase module]({{ site.baseurl }}/guides/v2.2/mrg/ce/instant-purchase/) for more information.
 
-* **Integrated dotmailer marketing automation software**. Magento is one of the first ecommerce solutions to include the dotmailer marketing automation with their core product. See [Email Marketing Automation](http://docs.magento.com/m2/ce/user_guide/marketing/email-marketing-automation.html).  
+* **Integrated dotmailer marketing automation software**. Magento is one of the first ecommerce solutions to include the dotmailer marketing automation with their core product. See [Email Marketing Automation](http://docs.magento.com/m2/ce/user_guide/marketing/email-marketing-automation.html).
 
 * **Magento Functional Testing Framework**.  The Magento Functional Testing Framework (MFTF) is our open-source, cross-platform testing solution. Its purpose is to facilitate functional testing and minimize efforts to perform regression testing. See [Introduction to Magento Functional Testing Framework]({{ site.baseurl }}/mftf/docs/introduction.html).
 
@@ -127,9 +126,7 @@ Looking for more information on these new features as well as many others? Check
 
 <!--- MAGETWO-82314 -->* Magento no longer throws an exception when you place an order using a new address. Previously, Magento displayed this error, **An error occurred on the server. Please try to place the order again.**. [GitHub-10583](https://github.com/magento/magento2/issues/10583)
 
-
 <!--- MAGETWO-81904 -->* Magento now includes the Filter Groups and the Sort Order of the `$searchCriteria` parameter in the `searchCriteria` Object that is provided for the EAV set repository.  *Fix submitted by David Verholen in pull request 11421*. [GitHub-11022](https://github.com/magento/magento2/issues/11022)
-
 
 <!--- MAGETWO-81994 -->* Magento no longer sets the product price to zero when you use REST to add a product to an empty cart. Previously, Magento displayed an error when you used REST to populate an empty cart. *Fix submitted by Peter Jaap Blaakmeer in pull request 11458*. [GitHub-2991](https://github.com/magento/magento2/issues/2991), [GitHub-2991](https://github.com/magento/magento2/issues/2991)
 
@@ -164,7 +161,6 @@ Looking for more information on these new features as well as many others? Check
 <!--- MAGETWO-82236 -->* `app:config:dump` no longer adds an extra space to multiline array values. *Fix submitted by [@adrian-martinez-interactiv4](https://github.com/adrian-martinez-interactiv4) in pull request 11439*. [GitHub-11328](https://github.com/magento/magento2/issues/11328)
 
 <!--- MAGETWO-82665 -->* The TRAVIS_BRANCH variable is now surrounded by double-quotes instead of single-quotes . *Fix submitted by [@adrian-martinez-interactiv4](https://github.com/adrian-martinez-interactiv4) in pull request 11704*.
-
 
 <!--- MAGETWO-83035 -->* The doc block of `setValue` in FilterBuilder now reflects that the `setValue` method will accept an array. *Fix submitted by ByteCreation in pull request 11854*.
 
@@ -202,13 +198,11 @@ Looking for more information on these new features as well as many others? Check
 
 <!--- MAGETWO-82710 -->* Magento now downloads the backup `.tgz` file that you select for downloading. Previously, no matter which backup you selected, Magento downloaded the most recent backup. *Fix submitted by Pieter Cappelle in pull request 11595*. [GitHub-10032](https://github.com/magento/magento2/issues/10032)
 
-
 <!--- MAGETWO-82809 -->* Magento now leaves a product's date attribute's current date field blank if you do not enter a value. *Fix submitted by [@enriquei4](https://github.com/enriquei4) in pull request 11749*. [GitHub-9869](https://github.com/magento/magento2/issues/9869), [GitHub-11636](https://github.com/magento/magento2/issues/11636), [GitHub-6661](https://github.com/magento/magento2/issues/6661)
 
 <!--- MAGETWO-83277 -->* The Magento store code validation `regex` now supports uppercase letters in store code. [GitHub-11996](https://github.com/magento/magento2/issues/11996)
 
 <!--- MAGETWO-82426 -->* When you use a UI component-based form and add a custom regular expression pattern validation to an input field, the supplied pattern is now properly converted from a string to a JavaScript RegEx object. *Fix submitted by Brett in pull request 11565*. [GitHub-9919](https://github.com/magento/magento2/issues/9919)
-
 
 <!--- MAGETWO-82431 -->* Magento now sets ISO-valid language code in the HTML header. *Fix submitted by Cristian Sanclemente in pull request 11561*. [GitHub-11540](https://github.com/magento/magento2/issues/11540)
 
@@ -219,7 +213,6 @@ Looking for more information on these new features as well as many others? Check
 <!--- MAGETWO-81993 -->* `widget.xml` files can now contain multiple `depends` parameters.  *Fix submitted by Raul E Watson in pull request 11495*. [GitHub-9783](https://github.com/magento/magento2/issues/9783)
 
 <!--- MAGETWO-81995 -->* You can now use an `adminhtml` URL that differs from `admin` and set **Add Store Code to Urls** to **Yes**. *Fix submitted by Sylvain Rayé in pull request 11460*. [GitHub-11140](https://github.com/magento/magento2/issues/11140), [GitHub-11140](https://github.com/magento/magento2/issues/11140)
-
 
 <!--- MAGETWO-82999 -->* You can now add an HTML node to the page XML root of a theme without causing a validation error. [GitHub-11697](https://github.com/magento/magento2/issues/11697)
 
@@ -237,12 +230,9 @@ Looking for more information on these new features as well as many others? Check
 
 <!--- MAGETWO-81580 -->* Magento now displays and expects the format of birth years to match `yyyy` instead of `yy`. *Fix submitted by Manu Gonzalez Rodriguez in pull request 11351*. [GitHub-11332](https://github.com/magento/magento2/issues/11332)
 
-
 <!--- MAGETWO-81675 -->* Magento now displays the State/Province field after you edit the billing address on sales orders.  *Fix submitted by Raul Mateos in pull request 11381*. [GitHub-10441](https://github.com/magento/magento2/issues/10441)
 
-
 <!--- MAGETWO-81680 -->* You can now successfully sync billing and shipping addresses on Admin Reorder and Admin Customer Create Order page for selected, existing addresses. *Fix submitted by Ievgen Sentiabov in pull request 11385*. [GitHub-10856](https://github.com/magento/magento2/issues/10856)
-
 
 <!--- MAGETWO-82854 -->* The `FixAccountManagementTest` unit test now works as expected. *Fix submitted by [@adrian-martinez-interactiv4](https://github.com/adrian-martinez-interactiv4) in pull request 11607*.
 
@@ -257,7 +247,6 @@ Looking for more information on these new features as well as many others? Check
 <!--- MAGETWO-83682 -->* Disabling and enabling the  WYSIWYG editor with `ui/form/element/helper/service` checkbox now works as expected. *Fix submitted by Vova Yatsyuk in pull request 12141*.
 
 <!--- MAGETWO-83145 -->* The `sitemap.xml` `last mod` time stamp now contains the correct date. [GitHub-9151](https://github.com/magento/magento2/issues/9151)
-
 
 <!--- MAGETWO-82955 -->* The Visual Swatch Attribute drop-down menu (accessible from Manage Swatch tab) now works as expected. Previously, when you clicked the **Add Swatch** button from this tab, the drop-down menu was not displayed. *Fix submitted by [@enriquei4](https://github.com/enriquei4) in pull request 11747*. [GitHub-11534](https://github.com/magento/magento2/issues/11534)
 
@@ -396,7 +385,6 @@ You can find Magento Shipping-specific release notes in [Magento Shipping Releas
 
 <!--- MAGETWO-82651 -->* We've fixed an issue with the `<![CDATA[]]>` translate phrase in the `system.xml` file. [*Fix submitted by Malyovanets Nickolas in pull request 11675*. [GitHub-7767](https://github.com/magento/magento2/issues/7767)
 
-
 <!--- MAGETWO-83547 -->* The update `button.phtml` translation has been simplified. *Fix submitted by Karla Saaremäe in pull request 12136*.
 
 ### Varnish
@@ -417,8 +405,6 @@ We’ve identified the following unresolved issues with this version of Magento 
 
 **Issue**: Merchants should not use Magento Shipping to connect with FedEx at this time. This option will be removed by Friday, December 15, and any existing shipping options tied to FedEx will no longer work at that time. We will be re-enabling FedEx integration through Magento Shipping at a future date.
 
-
-
 **Issue**: Currency conversion problem for shipping methods during checkout when store supports multiple currencies. <!--- BUNDLE-507-->
 
 **Workaround**: Ensure that the experience currency,  base currency, and display currency are the same. Additionally, incorporate these best practices into your shipping method configuration by ensuring that:
@@ -426,27 +412,20 @@ We’ve identified the following unresolved issues with this version of Magento 
 * the Magento Core base currency is the same as the experience currency (**Store > Configuration > Currency Set Up > Base Current**).
 * the Magento Core base currency converter is the same as the experience and base currency (**Store > Currency Rates**)
 
-
 **Issue**: Selecting a shipping method at checkout can sometimes result in two shipping methods being selected. This issue occurs during checkout. When a user selects a shipping method during checkout, Magento will select two shipping methods. <!--- BUNDLE-508-->
 
 **Workaround**:  Ensure that no two rules with a ‘Show Shipping Method’ outcome can both apply to the scenario. Consider these example rules:
 * Rule 1: Show ‘Free Shipping’ for Country is Canada and Cost is not greater than $99.99
 * Rule 2: Show ‘Free Shipping’ for Country is not Canada and Cost is greater than $100
 
-
-
-
-
 <!--- NOT NEEDED  MAGETWO-83834 MAGETWO-83755 MAGETWO-83740 MAGETWO-83682 MAGETWO-83672 MAGETWO-83632 MAGETWO-83600  MAGETWO-52974 MAGETWO-62981   MAGETWO-72138  MAGETWO-81886 MAGETWO-81830 MAGETWO-82003 MAGETWO-82117 MAGETWO-84882  MAGETWO-84650 MAGETWO-84649 MAGETWO-84544 MAGETWO-84321 MAGETWO-84000 MAGETWO-83898 MAGETWO-83184 MAGETWO-80474 MAGETWO-80475 MAGETWO-80477 MAGETWO-80477 MAGETWO-80479 MAGETWO-80480 MAGETWO-80481 MAGETWO-80484 MAGETWO-80488 MAGETWO-80568
-
-
 
  MAGETWO-82854 MAGETWO-82367   MAGETWO-82001 MAGETWO-82300   MAGETWO-81306  MAGETWO-82003 MAGETWO-82367 MAGETWO-82339 MAGETWO-82300 MAGETWO-82126 MAGETWO-82125 MAGETWO-80114 MAGETWO-81786
 
 MAGETWO-82748 MAGETWO-82707 MAGETWO-83013 MAGETWO-82991 MAGETWO-82978 MAGETWO-82976 MAGETWO-82952  MAGETWO-83171 MAGETWO-83135 MAGETWO-83132  MAGETWO-83128 MAGETWO-83490 MAGETWO-83428 MAGETWO-83310  MAGETWO-83563
  MAGETWO-83547 MAGETWO-83529 MAGETWO-83537  MAGETWO-83532 MAGETWO-83310  MAGETWO-83130 MAGETWO-83013 MAGETWO-82978 MAGETWO-82976 MAGETWO-82954   MAGETWO-82854 MAGETWO-82748  MAGETWO-83600 MAGETWO-70726 MAGETWO-80517 MAGETWO-84344 MAGETWO-84531
 MAGETWO-84321 MAGETWO-84091 MAGETWO-84051 MAGETWO-84000 MAGETWO-83914 MAGETWO-83898 MAGETWO-83870 MAGETWO-83184 MAGETWO-83004 MAGETWO-82596
-MAGETWO-82420 MAGETWO-80736 MAGETWO-72441 MAGETWO-81342-->*  
+MAGETWO-82420 MAGETWO-80736 MAGETWO-72441 MAGETWO-81342-->*
 
 <!--- WON'T FIX  MAGETWO-69032 MAGETWO-84421-->
 
@@ -1104,8 +1083,6 @@ The following table identifies contributions from our community members. This ta
 ### System requirements
 
 Our technology stack is built on PHP and MySQL. For details, see [Technology stack requirements]({{ page.baseurl }}/install-gde/system-requirements-tech.html)
-
-
 
 For more information, [System Requirements]({{ page.baseurl }}/install-gde/system-requirements.html).
 

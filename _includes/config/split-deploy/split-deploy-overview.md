@@ -31,5 +31,5 @@ Production system
    - catalog
    - categories
    - category view settings.
-   
+
  You should make all those types of changes in your development system.

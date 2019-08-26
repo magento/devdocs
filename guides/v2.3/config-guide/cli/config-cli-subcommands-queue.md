@@ -9,7 +9,7 @@ functional_areas:
 
 {% include config/cli-intro.md %}
 
-You must start a message queue consumer to enable asynchronous operations such as Inventory Management mass actions and REST bulk and asynchronous endpoints. To enable B2B functionality, you must start multiple consumers. Third-party modules might also require that you start a custom consumer. 
+You must start a message queue consumer to enable asynchronous operations such as Inventory Management mass actions and REST bulk and asynchronous endpoints. To enable B2B functionality, you must start multiple consumers. Third-party modules might also require that you start a custom consumer.
 
 {% include config/message-queue-consumers.md %}
 

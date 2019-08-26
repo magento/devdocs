@@ -7,7 +7,7 @@ functional_areas:
 
  This topic describes how to add theme strings so that the i18n tool can collect and add the strings to the dictionary.
 
-Your custom theme may contain new strings that are not present in out-of-the-box Magento themes. 
+Your custom theme may contain new strings that are not present in out-of-the-box Magento themes.
 To ensure your theme displays correctly with any language applied on a store view, verify the unique strings of your theme are added to the translation [i18n tool] when [generating the dictionary].
 Then when a new [language package](https://glossary.magento.com/language-package) is created and used to translate a store view, all theme strings are also translated.
 

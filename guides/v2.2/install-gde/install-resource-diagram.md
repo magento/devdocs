@@ -15,4 +15,3 @@ The following diagram provides a high-level overview of installing the Magento s
 
 {% include install/flow-diagram.md %}
 
-

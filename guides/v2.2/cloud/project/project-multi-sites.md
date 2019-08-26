@@ -313,6 +313,6 @@ Push your changes to your {{site.data.var.ece}} Integration environment and test
 
 ## Deploy to Staging and Production
 
-Follow the deployment process for [deploying to Staging and Production]({{ page.baseurl }}/cloud/live/stage-prod-migrate.html). For Starter and Pro environments, you use the Project Web Interface to push code across environments. For Pro accounts created before October 23, 2017 and not updated, you can use [SSH and CLI commands]({{ page.baseurl }}/cloud/live/stage-prod-migrate.html#classic).
+Follow the deployment process for [deploying to Staging and Production]({{ page.baseurl }}/cloud/live/stage-prod-migrate.html). For Starter and Pro environments, you use the Project Web Interface to push code across environments.
 
-We recommend fully testing in the Staging environment prior to pushing to the Production environment. If you need to make changes, you should complete those in the Integration environment and begin the process to deploy across environments again.
+We recommend fully testing in the Staging environment prior to pushing to the Production environment. If you need to change code, make the changes in the Integration environment and begin the process to deploy across environments again.

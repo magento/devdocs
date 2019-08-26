@@ -14,13 +14,13 @@ Test coverage of the out-of-the-box test depends on a [module](https://glossary.
 You can use out-of-the-box tests in:
 
 - Regression testing, to check that new changes don't break existing Magento functionality
-    
+
 - Sanity testing, to check the basic functionality after any Magento changes were made
-    
-- Acceptance testing: 
+
+- Acceptance testing:
     - in combination with your own tests
     - to test a new feature, to check that feature works and it doesn't break functionality of the Magento application (all other tests passed)
- 
+
 ### How to use {#how-to-use}
 
 See [Run the test][] topic.

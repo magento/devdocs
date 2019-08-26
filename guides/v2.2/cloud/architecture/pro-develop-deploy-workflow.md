@@ -5,17 +5,17 @@ redirect_from:
   - /guides/v2.2/cloud/discover-workflow.html
   - /guides/v2.2/cloud/welcome/discover-workflow.html
   - /guides/v2.3/cloud/welcome/discover-workflow.html
+  - /guides/v2.2/cloud/trouble/pro-env-management.html
+  - /guides/v2.3/cloud/trouble/pro-env-management.html
 functional_areas:
   - Cloud
 ---
 
 The {{site.data.var.ece}} Pro plan includes a single, Git repository with a Global Master and three, main environments: the Integration environment for development and testing, the Staging environment for testing with all services, and the Production environment to go live. See [Pro architecture]({{ page.baseurl }}/cloud/architecture/pro-architecture.html) for an overview.
 
-The following graphic demonstrates the Pro develop and deploy workflow, which uses a simple, git-branching approach. You [develop](#develop) code using an Active branch based on the Integration environment branch, _pushing_ and _pulling_ code changes to and from your remote, Active branch. You deploy verified code by _merging_ the remote branch to the base branch, which activates an automated [build and deploy](#deploy) process for that environment. 
+The following graphic demonstrates the Pro develop and deploy workflow, which uses a simple, git-branching approach. You [develop](#develop) code using an Active branch based on the Integration environment branch, _pushing_ and _pulling_ code changes to and from your remote, Active branch. You deploy verified code by _merging_ the remote branch to the base branch, which activates an automated [build and deploy](#deploy) process for that environment.
 
 ![High-level view of Pro architecture development workflow]({{ site.baseurl }}/common/images/cloud_pro-dev-workflow.png)
-
-{% include cloud/note-pro-legacy.md %}
 
 ## Development workflow {#develop}
 

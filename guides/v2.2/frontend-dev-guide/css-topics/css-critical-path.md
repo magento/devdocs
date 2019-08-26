@@ -44,7 +44,7 @@ After non-critical CSS is loaded and applied, the spinner disappears. The spinne
 
 Introducing a critical path CSS to Magento leads to performance improvements:
 
-1. Eliminated render-blocking CSS resources. As a result, time for loading render-blocking resources decreases substantially. 
+1. Eliminated render-blocking CSS resources. As a result, time for loading render-blocking resources decreases substantially.
 
 ![CSS resources eliminated as render-blocking]({{ site.baseurl }}/common/images/critical_css_improvements1.png)
 
