@@ -4,7 +4,7 @@ title: Install Google Shopping ads Channel
 ---
 
 {:.bs-callout .bs-callout-info}
-Beginning with Magento version 2.3.3, Google Shopping ads is bundled with Magento and does not require separate install. For previous Magento versions (2.2.4+, 2.3.0, 2.3.1, and 2.3.2), Google Shopping ads Channel extension can be installed or updated through the [Magento Marketplace](https://marketplace.magento.com/magento-google-shopping-ads.html).
+Beginning with Magento version 2.3.3, Google Shopping ads Channel is bundled and does not require separate install. Onboarding and management processes remain the same. Merchants using previous Magento versions (2.2.4+, 2.3.0, 2.3.1, and 2.3.2) can install or upgrade the Google Shopping ads Channel extension via the [Magento Marketplace](https://marketplace.magento.com/magento-google-shopping-ads.html).
 
 The Google Shopping ads extension installs and adds Google Shopping features to Magento. To review additional information, see the [Google Shopping ads Channel Marketplace page](http://marketplace.magento.com/magento-google-shopping-ads.html).
 
