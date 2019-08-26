@@ -102,7 +102,6 @@ where:
 |`--amqp-virtualhost`|The virtual host for connecting to RabbitMQ. The default is `/`.
 |`--amqp-ssl`|Indicates whether to connect to RabbitMQ. The default is `false`. If you set the value to true, see Configure SSL for more information.|
 
-
 ## Configure SSL
 
 To configure support for SSL, edit the `ssl` and `ssl_options` parameters in the `<install_directory>/app/etc/env.php` file so that they are similar to the following:

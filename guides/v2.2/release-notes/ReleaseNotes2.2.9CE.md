@@ -7,7 +7,7 @@ title: Magento Open Source 2.2.9 Release Notes
 
 *Patch code and release notes published on June 25 2019.*
 
-We are pleased to present Magento Open Source 2.2.9. This release includes 75 critical enhancements to product security, over 100 core code fixes and enhancements, and  over 200 community-submitted pull requests. 
+We are pleased to present Magento Open Source 2.2.9. This release includes 75 critical enhancements to product security, over 100 core code fixes and enhancements, and  over 200 community-submitted pull requests.
 
 ## Highlights
 
@@ -23,17 +23,17 @@ This release is focused on substantial security enhancements:
 
 ### Infrastructure improvements
 
-This release contains 150 enhancements to core quality, which improve the quality of the Framework and these modules: `Catalog`, `Sales`, `Checkout/One Page Checkout`,  `UrlRewrite`, `Customer/Customers`, and `UI`. Here are some additional core enhancements: 
+This release contains 150 enhancements to core quality, which improve the quality of the Framework and these modules: `Catalog`, `Sales`, `Checkout/One Page Checkout`,  `UrlRewrite`, `Customer/Customers`, and `UI`. Here are some additional core enhancements:
 
 * **Braintree payment method is now supported for checkout with multiple addresses**. Previously, you could not use Braintree and Braintree PayPal when checking out an order that was being shipped to multiple addresses.  <!--- MAGETWO-98424-->
 
-* **The CGI URL gateway in UPS module has been updated from HTTP to HTTPS**.The CGI URL gateway endpoint in the UPS module has been updated  from HTTP to HTTPS in response to the disablement of the HTTP gateway by UPS in mid-2019. See [Magento User Guide](https://docs.magento.com/m2/ee/user_guide/shipping/ups.html) for a discussion of using the UPS shipment method. Shipping method configuration settings are described in the [Shipping methods](https://docs.magento.com/m2/ee/user_guide/configuration/sales/shipping-methods.html#UPS). <!--- MAGETWO-98947--> 
+* **The CGI URL gateway in UPS module has been updated from HTTP to HTTPS**.The CGI URL gateway endpoint in the UPS module has been updated  from HTTP to HTTPS in response to the disablement of the HTTP gateway by UPS in mid-2019. See [Magento User Guide](https://docs.magento.com/m2/ee/user_guide/shipping/ups.html) for a discussion of using the UPS shipment method. Shipping method configuration settings are described in the [Shipping methods](https://docs.magento.com/m2/ee/user_guide/configuration/sales/shipping-methods.html#UPS). <!--- MAGETWO-98947-->
 
 * **Google chart API updated to the Image-Charts**. Magento now uses the Image-Charts free service to render static charts in Admin dashboards. Earlier deployments used Google Image Charts, which was deprecated in 2012 and turned off on [March 18, 2019](https://developers.google.com/chart/image/docs/making_charts). <!--- MAGETWO-98833-->
 
 ## Functional fixes
 
-In addition to security enhancements, this release contains the following functional fixes. 
+In addition to security enhancements, this release contains the following functional fixes.
 
 ### Installation, setup, and deployment
 
@@ -98,10 +98,10 @@ In addition to security enhancements, this release contains the following functi
 <!-- MAGETWO-74081 -->* You can now use the term _configurable_ as a group name in attribute sets. Previously, Magento threw an error when you used this term as a group name and subsequently tried to add or edit a product. [GitHub-6123](https://github.com/magento/magento2/issues/6123)
 
 <!-- MAGETWO-98626 -->
-* URLS in Arabic now resolve as expected. Previously, when you created a URL rewrite in Arabic, the browser returned a 404. 
+* URLS in Arabic now resolve as expected. Previously, when you created a URL rewrite in Arabic, the browser returned a 404.
 
 <!-- MAGETWO-74455 -->
-* Magento now creates unique values for product attributes as expected when you duplicate a product. Previously, Magento duplicated a product, but both products had the same attribute values. 
+* Magento now creates unique values for product attributes as expected when you duplicate a product. Previously, Magento duplicated a product, but both products had the same attribute values.
 
 <!-- MAGETWO-74037 -->
 * During product creation, Magento now displays default attribute values from the **Admin** column on the Manage Options (Values of Your Attribute) window when creating options. Previously, Magento displayed attribute options from the default storeview. [GitHub-6507](https://github.com/magento/magento2/issues/6507)
@@ -113,30 +113,30 @@ In addition to security enhancements, this release contains the following functi
 * Tax recalculation has been moved out of the transaction into the background for negotiable quotes running in an environment where B2B is deployed. This improves performance and helps avoid server timeouts.
 
 <!-- MAGETWO-97472 -->
-* Catalog Permission rules that are set for a category now remain applied when a new category is created at the same level. 
+* Catalog Permission rules that are set for a category now remain applied when a new category is created at the same level.
 
 <!-- MAGETWO-97405 -->
 * You can now use storeview-level attributes to filter products on the products list.
 
 <!-- MAGETWO-97400 -->
-* The selected store scope view now affects the categories displayed on the product edit page's category tree. 
+* The selected store scope view now affects the categories displayed on the product edit page's category tree.
 
 <!-- MAGETWO-97973 -->
 * Magento now calculates and displays the correct tier price for bundle products.
 
 <!-- MAGETWO-95616 -->
-* Magento no longer permits you to change an attribute set if the new set does not have equivalent attributes as the original set. Previously, Magento sometimes threw this exception when you tried to change attribute sets: `Attempt to load value of nonexistent EAV attribute.` 
+* Magento no longer permits you to change an attribute set if the new set does not have equivalent attributes as the original set. Previously, Magento sometimes threw this exception when you tried to change attribute sets: `Attempt to load value of nonexistent EAV attribute.`
 
 <!-- MAGETWO-97380 -->* You can now add grouped products to the shopping cart as expected when category permissions are enabled.
 
 <!-- MAGETWO-97425 -->
-* Magento does not display the **Country of Manufacture** field under the More Information tab of the product page when this value is empty. 
+* Magento does not display the **Country of Manufacture** field under the More Information tab of the product page when this value is empty.
 
 <!-- MAGETWO-98470 -->
-* Scope assigned to prices in Catalog Price Scope (set in **Configuration** > **Price**) are now maintained when price is set to empty. Previously, you could not leave  special prices empty. 
+* Scope assigned to prices in Catalog Price Scope (set in **Configuration** > **Price**) are now maintained when price is set to empty. Previously, you could not leave  special prices empty.
 
 <!-- MAGETWO-95020 -->
-* Clicking on a store's root category now causes only that root category to expand. Previously, Magento expanded all other Root Categories into the top-level categories. 
+* Clicking on a store's root category now causes only that root category to expand. Previously, Magento expanded all other Root Categories into the top-level categories.
 
 <!-- ENGCOM-3697 -->
 * Magento now displays breadcrumbs in proper format. Previously, subcategories did not appear in breadcrumbs. *Fix submitted by Brandon Brown in pull request [19760](https://github.com/magento/magento2/pull/19760)*. [GitHub-7967](https://github.com/magento/magento2/issues/7967)
@@ -184,7 +184,7 @@ In addition to security enhancements, this release contains the following functi
  with the following argument:
   `<argument name="resourceStockItem" xsi:type="object">Magento\CatalogInventory\Model\ResourceModel\Stock\Item\Proxy</argument>`. ) *Fix submitted by VitaliyBoyko in pull request [21793](https://github.com/magento/magento2/pull/21793)*. [GitHub-167](https://github.com/magento/magento2/issues/167)
 
-<!-- MAGETWO-98794 --> 
+<!-- MAGETWO-98794 -->
 * You can now add a product to an order by using the **Add products by SKU** button. Previously, when you tried to add a product this way, Magento displayed this message, `The SKU was not found in the catalog.
 
 ### Cart and checkout
@@ -193,10 +193,10 @@ In addition to security enhancements, this release contains the following functi
 * Magento now persists the shipping quote in the shopping cart for guest customers when **Persistent Shopping Cart** is enabled.
 
 <!-- MAGETWO-98365 -->
-* Magento now applies the correct tier price for a product after a customer who is assigned to a customer group logs in after first adding items to their cart as a guest. Previously, Magento did not apply the tier price after the customer logged in. 
+* Magento now applies the correct tier price for a product after a customer who is assigned to a customer group logs in after first adding items to their cart as a guest. Previously, Magento did not apply the tier price after the customer logged in.
 
 <!-- MAGETWO-97950 -->
-* Magento now correctly updates the minicart if a selected product is disabled during the shopping session. 
+* Magento now correctly updates the minicart if a selected product is disabled during the shopping session.
 
 <!-- ENGCOM-4013, 4283 -->
 * Corrected misalignment of the order item details label and subtotal label  in mobile view. *Fix submitted by Rajneesh Gupta in pull request [21243](https://github.com/magento/magento2/pull/21243)*. [GitHub-20299](https://github.com/magento/magento2/issues/20299)
@@ -206,7 +206,7 @@ In addition to security enhancements, this release contains the following functi
 
 <!-- ENGCOM-4043 -->
 * Fixed issue displaying numbers that exceed two digits in the **Qty:** box of the **Proceed to Checkout** pop up. *Fix submitted by Amol Chaudhari in pull request [20738](https://github.com/magento/magento2/pull/20738)*. [GitHub-20611](https://github.com/magento/magento2/issues/20611)
-	
+
 <!-- ENGCOM-4133-->
 * Fixed problems with the display of the tooltip drop-down pointer on the checkout page in tablet view. *Fix submitted by Amol Chaudhari in pull request [20490](https://github.com/magento/magento2/pull/20490)*. [GitHub-20487](https://github.com/magento/magento2/issues/20487)
 
@@ -234,7 +234,7 @@ In addition to security enhancements, this release contains the following functi
 * Screen readers can now identify the `label` elements that are linked to  `input` fields for street address fields on the checkout page. Previously, screen readers could not identify these fields because the elements were not populated.  *Fix submitted by Amol Chaudhari in pull request [22070](https://github.com/magento/magento2/pull/22070)*. [GitHub-10893](https://github.com/magento/magento2/issues/10893)
 
 <!-- MAGETWO-96375 -->
-* Magento now factors in cart price rule discounts before assessing whether free shipping order minimums have been reached for an order. Previously, Magento assessed free shipping before  discounts were applied. 
+* Magento now factors in cart price rule discounts before assessing whether free shipping order minimums have been reached for an order. Previously, Magento assessed free shipping before  discounts were applied.
 
 <!-- ENGCOM-4823 -->
 * Magento now increments product quantity correctly when you add products to your cart first as a guest user, and then logged in. Previously, Magento added items separately instead. *Fix submitted by Amol Chaudhari in pull request [22378](https://github.com/magento/magento2/pull/22378)*. [GitHub-21375](https://github.com/magento/magento2/issues/21375)
@@ -256,7 +256,7 @@ In addition to security enhancements, this release contains the following functi
 ### Catalog rule
 <!-- MAGETWO-98679 -->
 * Catalog rules are applied as expected after a customer uses Visual Merchandiser  to drag and drop products in a category. Previously, discounts that were applied to products through a catalog rule were dropped after the product was dragged and dropped.
- 
+
 ### Checkout agreements
 
 <!-- ENGCOM-3989 -->
@@ -302,7 +302,6 @@ In addition to security enhancements, this release contains the following functi
 <!-- ENGCOM-4470 -->
 * Corrected the position of the labels in the configurable product variations table. *Fix submitted by Eduard Chitoraga in pull request [21691](https://github.com/magento/magento2/pull/21691)*. [GitHub-20527](https://github.com/magento/magento2/issues/20527)
 
-
 <!-- ENGCOM-4754 -->
 * Configurable products can now be successfully updated through the bulk API using the following API endpoint: rest/async/bulk/V1/configurable-products/bySku/child).  *Fix submitted by Amol Chaudhari in pull request [22295](https://github.com/magento/magento2/pull/22295)*. [GitHub-20366](https://github.com/magento/magento2/issues/20366)
 
@@ -318,7 +317,7 @@ In addition to security enhancements, this release contains the following functi
   * If you do not have permission to edit the `design` fieldset or use web API endpoints to update a category, Magento does not save your changes and the design properties remain unchanged.
 
 <!-- MAGETWO-98990 -->
-* The HTML source editor **Update** and **Cancel** buttons now appear as expected in browsers running Internet Explorer  11.x. 
+* The HTML source editor **Update** and **Cancel** buttons now appear as expected in browsers running Internet Explorer  11.x.
 
 <!-- ENGCOM-4200 -->
 * Improved the display of images that are uploaded when you click the **Insert Image** button on a CMS page. *Fix submitted by Eduard Chitoraga in pull request [21110](https://github.com/magento/magento2/pull/21110)*. [GitHub-20786](https://github.com/magento/magento2/issues/20786)
@@ -326,7 +325,7 @@ In addition to security enhancements, this release contains the following functi
 ### Customer
 
 <!-- MAGETWO-98334 -->
-* Customers who are not logged in can now see the dynamic blocks that have been created for guest accounts. Previously, only customers logged in to the registered guests segment could see these dynamic blocks. 
+* Customers who are not logged in can now see the dynamic blocks that have been created for guest accounts. Previously, only customers logged in to the registered guests segment could see these dynamic blocks.
 
 <!-- MAGETWO-72961 -->
 * Magento now uses the value of the  default billing address attribute as expected during checkout. [GitHub-8777](https://github.com/magento/magento2/issues/8777)
@@ -352,7 +351,7 @@ In addition to security enhancements, this release contains the following functi
 * Magento now respects the number of lines permitted in a street address as set in  **Store** > **Configuration** > **Customer** > **Customer Configuration** > **Name and Address Options**. Previously, Magento displayed the last saved values instead of the default value. *Fix submitted by Ievgenii Gryshkun in pull request [20566](https://github.com/magento/magento2/pull/20566)*. [GitHub-13675](https://github.com/magento/magento2/issues/13675)
 
 <!-- MAGETWO-97684 -->
-* The **State/Province** field is no longer marked as mandatory in the Admin customer address form. Previously, this field was always marked by an asterisk, even when the field was not required. 
+* The **State/Province** field is no longer marked as mandatory in the Admin customer address form. Previously, this field was always marked by an asterisk, even when the field was not required.
 
 <!-- MAGETWO-98044 -->
 * When loading an order for a customer already assigned to a customer group, Magento now shows the assigned customer group in the order information.  Additionally, Magento now saves the group assignment if you change it when creating a customer order. Previously, the customer group reverted to the default configured group assignment for customers with an existing group assignment. On new orders, if you changed the customer group during the ordering process, the new assignment was not saved. When you loaded the customer order, the customer group showed the default group instead of the group assignment applied during the ordering process.
@@ -360,20 +359,19 @@ In addition to security enhancements, this release contains the following functi
 ### cron
 
 <!-- MAGETWO-98843 -->
-* Added support for [Zookeeper](https://php.net/manual/en/book.zookeeper.php) and flock lock providers. We've also added new options to configure locks during installation: 
+* Added support for [Zookeeper](https://php.net/manual/en/book.zookeeper.php) and flock lock providers. We've also added new options to configure locks during installation:
 
-	* `--lock-provider=LOCK-PROVIDER` Lock provider name 
+	* `--lock-provider=LOCK-PROVIDER` Lock provider name
 
-	* `--lock-db-prefix=LOCK-DB-PREFIX` Installation specific lock prefix to avoid lock conflicts 
+	* `--lock-db-prefix=LOCK-DB-PREFIX` Installation specific lock prefix to avoid lock conflicts
 
-	* `--lock-zookeeper-host=LOCK-ZOOKEEPER-HOST`  Host and port to connect to Zookeeper cluster. For example, 127.0.0.1:2181 
+	* `--lock-zookeeper-host=LOCK-ZOOKEEPER-HOST`  Host and port to connect to Zookeeper cluster. For example, 127.0.0.1:2181
 
-	* `--lock-zookeeper-path=LOCK-ZOOKEEPER-PATH` The path where Zookeeper will save locks. The default path is /magento/locks 
+	* `--lock-zookeeper-path=LOCK-ZOOKEEPER-PATH` The path where Zookeeper will save locks. The default path is /magento/locks
 
 	* `--lock-file-path=LOCK-FILE-PATH` The path where file locks will be saved.
 
 	See [Configure the lock provider]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-lock.html).
-
 
 <!-- ENGCOM-4660 -->
 * `crontab` now updates all currency rates daily as expected. Previously, `crontab` updated only a subset of the enabled currencies. *Fix submitted by Denis Papec in pull request [18980](https://github.com/magento/magento2/pull/18980)*. [GitHub-18580](https://github.com/magento/magento2/issues/18580)
@@ -384,7 +382,7 @@ In addition to security enhancements, this release contains the following functi
 * Magento now saves dates that are associated with custom customer attributes of type `date`. Previously, Magento did not save these dates, but displayed this message, `Please enter a valid date`.
 
 <!-- MAGETWO-96265 -->
-* Magento now loads the customer attribute page as expected, and users can edit attributes, when attributes are set to default values. Previously, Magento did not completely load this page when attributes values were set to default. 
+* Magento now loads the customer attribute page as expected, and users can edit attributes, when attributes are set to default values. Previously, Magento did not completely load this page when attributes values were set to default.
 
 ### Directory
 
@@ -404,7 +402,7 @@ In addition to security enhancements, this release contains the following functi
 
 <!-- ENGCOM-4777 -->
 * A logged-in user’s My Downloads page now displays links to the relevant downloadable products when **Order Item Status to Enable Downloads** is set to **Pending**. Previously, Magento displayed only the names of the pending products, and no links for downloadable products were displayed. *Fix submitted by James in pull request [22072](https://github.com/magento/magento2/pull/22072)*. [GitHub-21753](https://github.com/magento/magento2/issues/21753)
-* 
+*
 ### EAV
 
 <!-- ENGCOM-4632 -->
@@ -415,7 +413,7 @@ In addition to security enhancements, this release contains the following functi
 
 <!-- ENGCOM-4787 -->
 * The `\Magento\Eav\Model\Entity\Collection\AbstractCollection::importFromArray()` method now returns a usable collection. Previously, the `_isCollectionLoaded` property was false, and every interaction threw an exception. *Fix submitted by Lorenzo Stramaccia in pull request [22422](https://github.com/magento/magento2/pull/22422)*. [GitHub-21868](https://github.com/magento/magento2/issues/21868)
-  
+
 ### Email
 
 <!-- ENGCOM-4305 -->
@@ -427,7 +425,7 @@ In addition to security enhancements, this release contains the following functi
 ### Frameworks
 
 <!-- MAGETWO-98554 -->
-* Magento now sorts media directories alphabetically during image upload. 
+* Magento now sorts media directories alphabetically during image upload.
 
 <!-- ENGCOM-4068 -->
 * Fixed misalignment of the import successful  message icon  in the Admin. *Fix submitted by Kajal Solanki in pull request [19333](https://github.com/magento/magento2/pull/19333)*. [GitHub-19328](https://github.com/magento/magento2/issues/19328)
@@ -466,7 +464,7 @@ In addition to security enhancements, this release contains the following functi
 * You can now change customer groups when creating a new customer during order creation on the Admin. *Fix submitted by Amol Chaudhari in pull request [21239](https://github.com/magento/magento2/pull/21239)*. [GitHub-7974](https://github.com/magento/magento2/issues/7974)
 
 <!-- MAGETWO-98000 -->
-* The store switcher now redirects users to the correct store. 
+* The store switcher now redirects users to the correct store.
 
 ### Import/export
 
@@ -474,13 +472,13 @@ In addition to security enhancements, this release contains the following functi
 * The **Skip error entries** validation method for the import now works as expected. Previously, Magento did not let you skip an invalid entry and prevented import.
 
 <!-- MAGETWO-98694 -->
-* Magento now correctly saves product URL keys in Arabic. Previously, keys in Arabic returned 404 errors. 
+* Magento now correctly saves product URL keys in Arabic. Previously, keys in Arabic returned 404 errors.
 
 ### Indexers
 
 <!-- ENGCOM-4555 -->
 * You can now access a list of Admin indexers after creating a custom index. Previously, when you tried to access the Admin indexer list,  Magento threw a fatal error. *Fix submitted by Cristiano Casciotti in pull request [21576](https://github.com/magento/magento2/pull/21576)*. [GitHub-21510](https://github.com/magento/magento2/issues/21510)
- 
+
 ### Infrastructure
 
 <!-- ENGCOM-4570 -->
@@ -498,7 +496,6 @@ In addition to security enhancements, this release contains the following functi
 <!-- ENGCOM-4702 -->
 * Widget parameters can now contain multidimensional arrays. *Fix submitted by Stanislav Ilnytskyi in pull request [22214](https://github.com/magento/magento2/pull/22214)*. [GitHub-19909](https://github.com/magento/magento2/issues/19909)
 
-
 ### Layered navigation
 
 <!-- ENGCOM-4803 -->
@@ -507,7 +504,7 @@ In addition to security enhancements, this release contains the following functi
 ### Logging
 
 <!-- MAGETWO-97595 -->
-* Editing a theme now creates an entry in the Admin action log as expected. 
+* Editing a theme now creates an entry in the Admin action log as expected.
 
 <!-- ENGCOM-4834 -->
 * The downloads report table (**Admin** > **Reports** > **Downloads**) now displays an accurate count of all downloadable products and the number of times they have been downloaded. *Fix submitted by Shikha Mishra in pull request [22523](https://github.com/magento/magento2/pull/22523)*. [GitHub-22223](https://github.com/magento/magento2/issues/22223)
@@ -533,18 +530,18 @@ In addition to security enhancements, this release contains the following functi
 ### Page Cache
 
 <!-- MAGETWO-90953 -->
-* Page caching is no longer active when maintenance mode is enabled.  Previously, Magento cached  pages from all IP addresses during maintenance mode. 
+* Page caching is no longer active when maintenance mode is enabled.  Previously, Magento cached  pages from all IP addresses during maintenance mode.
 
 ### Payment methods
 
 <!-- MAGETWO-98991 -->
-*  Magento creates an order using PayPal Payflow Pro as expected when a customer enters all the credit card information that PayPal needs to create the transaction. Previously, Magento did not create the order even though all necessary credit card information has been entered.  
+*  Magento creates an order using PayPal Payflow Pro as expected when a customer enters all the credit card information that PayPal needs to create the transaction. Previously, Magento did not create the order even though all necessary credit card information has been entered.
 
 <!-- MAGETWO-98670 -->
-* Magento now displays the account owner name that you've specified when you add a shipping address when using Braintree through PayPal and are redirected to Magento. Previously, Magento displayed the account owner's name, not the name you specified. 
+* Magento now displays the account owner name that you've specified when you add a shipping address when using Braintree through PayPal and are redirected to Magento. Previously, Magento displayed the account owner's name, not the name you specified.
 
 <!-- MAGETWO-98431 -->
-*  The PayPal  `securetoken` and `securetokenid`  are no longer vulnerable to compromise. 
+*  The PayPal  `securetoken` and `securetokenid`  are no longer vulnerable to compromise.
 
 <!-- MAGETWO-96137 -->
 * The transfer cart line items and transfer shipping options in the the Shipping step of checkout now work for PayPal. [GitHub-19064](https://github.com/magento/magento2/issues/19064)
@@ -553,10 +550,10 @@ In addition to security enhancements, this release contains the following functi
 * Alt attribute text that describes  credit card type or stored payment methods during checkout has been added to support accessibility. *Fix submitted by Amol Chaudhari in pull request [21206](https://github.com/magento/magento2/pull/21206)*. [GitHub-21089](https://github.com/magento/magento2/issues/21089)
 
 <!-- MAGETWO-98111 -->
-* You can now place an order using Cybersource payment from the Admin. 
+* You can now place an order using Cybersource payment from the Admin.
 
 <!-- MAGETWO-97464 -->
-* Product search results now display the correct special price as set by a scheduled update. Previously, search results displayed the original special price, not the price set by the scheduled update. 
+* Product search results now display the correct special price as set by a scheduled update. Previously, search results displayed the original special price, not the price set by the scheduled update.
 
 ### Pricing
 
@@ -566,19 +563,19 @@ In addition to security enhancements, this release contains the following functi
 * The quick order form now handles the SKUs that you enter  for configurable products as expected. Previously, Magento threw an error when you tried to enter the SKU for a configurable product.
 
 <!-- MAGETWO-96898 -->
-* Tier pricing for bundle products now works as expected: Magento displays the correct  price in the cart, and reminds customers that they can buy a specific quantity of the  product for a discount. Previously, Magento did not calculate the price correctly, and did not display any informative messages about tier pricing on the category and product pages. 
+* Tier pricing for bundle products now works as expected: Magento displays the correct  price in the cart, and reminds customers that they can buy a specific quantity of the  product for a discount. Previously, Magento did not calculate the price correctly, and did not display any informative messages about tier pricing on the category and product pages.
 
 ### Reports
 
 <!-- MAGETWO-96883 -->
-* Reports now include orders from only the websites that the administrator has permissions for in multisite deployments. Previously, a report run by an administrator with access to one website only contained information about products and sales on other websites. 
+* Reports now include orders from only the websites that the administrator has permissions for in multisite deployments. Previously, a report run by an administrator with access to one website only contained information about products and sales on other websites.
 
 <!-- ENGCOM-4445 -->
 * The date range in reports no longer displays the same start and end dates. *Fix submitted by Pratik Oza in pull request [21589](https://github.com/magento/magento2/pull/21589)*. [GitHub-20128](https://github.com/magento/magento2/issues/20128)
 
 <!-- ENGCOM-4834 -->
 * The downloads report table (**Admin** > **Reports** > **Downloads**) now displays an accurate count of all downloadable products and the number of times they have been downloaded. *Fix submitted by Shikha Mishra in pull request [22523](https://github.com/magento/magento2/pull/22523)*. [GitHub-22223](https://github.com/magento/magento2/issues/22223)
-  
+
 ### Review
 
 <!-- ENGCOM- 4006-->
@@ -590,10 +587,10 @@ In addition to security enhancements, this release contains the following functi
 ### Sales
 
 <!-- MAGETWO-97008 -->
-* When you place an Admin order for a product with a custom price, the `sales_order_item` table now behaves the same as it would for an order of a product with a regular price (specifically, the  price column  contains the custom price excluding tax). Previously, the `sales_order_item` table's price column displayed the custom price including tax. 
+* When you place an Admin order for a product with a custom price, the `sales_order_item` table now behaves the same as it would for an order of a product with a regular price (specifically, the  price column  contains the custom price excluding tax). Previously, the `sales_order_item` table's price column displayed the custom price including tax.
 
 <!-- MAGETWO-97096 -->
-* Magento now lets you enter new orders in the Admin on non-default websites in multisite deployments where some countries have been restricted. 
+* Magento now lets you enter new orders in the Admin on non-default websites in multisite deployments where some countries have been restricted.
 
 <!-- ENGCOM-4280 -->
 *  Corrected misalignment of page elements on the Admin product reorder page. *Fix submitted by Amol Chaudhari in pull request [21241](https://github.com/magento/magento2/pull/21241)*. [GitHub-20919](https://github.com/magento/magento2/issues/20919)
@@ -624,7 +621,7 @@ In addition to security enhancements, this release contains the following functi
 ### Search
 
 <!-- MAGETWO-97374 -->
-* Layered navigation results no longer includes price ranges that contain no products. 
+* Layered navigation results no longer includes price ranges that contain no products.
 
 <!-- ENGCOM-4082 -->
 * Elasticsearch now correctly returns only products whose SKUs contain dashes when your search criteria specifies SKUs that contain dashes. Previously, search results contained unmatched products as well as products whose SKUs contained dashes. *Fix submitted by Nazar Klovanych in pull request [20876](https://github.com/magento/magento2/pull/20876)*. [GitHub-20716](https://github.com/magento/magento2/issues/20716)
@@ -638,7 +635,7 @@ In addition to security enhancements, this release contains the following functi
 <!-- ENGCOM-4793 -->
 * The search icon on Admin page headers now works as expected. *Fix submitted by Saphal Jha in pull request [22441](https://github.com/magento/magento2/pull/22441)*. [GitHub-22152](https://github.com/magento/magento2/issues/22152)
 
-### Shipping 
+### Shipping
 
 <!-- MAGETWO-96001 -->
 * The tracking pop-up window now displays an accurate value for the delivery date for FedEx shipments in transit.
@@ -652,14 +649,13 @@ In addition to security enhancements, this release contains the following functi
 ### Swatches
 
 <!-- MAGETWO-92495 -->
-* Product images now display the color option you chose when you applied a color filter in layered navigation. Previously, wrong colors were randomly displayed. 
+* Product images now display the color option you chose when you applied a color filter in layered navigation. Previously, wrong colors were randomly displayed.
 
 <!-- ENGCOM-4120 -->
 * You can now change an attribute type from swatch to dropdown without using data.  Previously, changing an attribute type from `swatch` to `dropdown` deleted swatch options for all attributes. *Fix submitted by Amol Chaudhari in pull request [20745](https://github.com/magento/magento2/pull/20745)*. [GitHub-20396](https://github.com/magento/magento2/issues/20396)
 
 <!-- ENGCOM-4477 -->
 * When you configure a price rule for configurable products with swatches, Magento now a shows the special price for products that match the price rule. Previously, Magento displayed both the old price and the special price for the matching configurable products. *Fix submitted by Pratik Oza in pull request [21695](https://github.com/magento/magento2/pull/21695)*. [GitHub-19276](https://github.com/magento/magento2/issues/19276)
-
 
 ### Tax
 
@@ -673,12 +669,10 @@ In addition to security enhancements, this release contains the following functi
 * The tax that is applied to a simple child product is now  based on the tax class of that product. Previously, Magento based the tax for a child product on the tax class of its parent product.
 
 <!-- MAGETWO-97975 -->
-* The tax that is applied to simple child product is now  based on the tax Class of that product. Previously, the tax was based on the tax class of the parent  product. 
+* The tax that is applied to simple child product is now  based on the tax Class of that product. Previously, the tax was based on the tax class of the parent  product.
 
 <!-- ENGCOM-4625 -->
 * The shopping cart full tax summary now displays total tax as expected instead of individual tax values. *Fix submitted by Hiren Pandya in pull request [21961](https://github.com/magento/magento2/pull/21961)*. [GitHub-19701](https://github.com/magento/magento2/issues/19701), [GitHub-11358](https://github.com/magento/magento2/issues/11358)
-
-
 
 ### Testing
 
@@ -725,11 +719,10 @@ In addition to security enhancements, this release contains the following functi
 <!-- ENGCOM-4516 -->
 * Magento now properly renders double hyphens (--)  in attribute tags. Previously, Magento replaced the double hyphen (—-)  in classes with a single hyphen (-), which caused classes that contained the -- to be rewritten.  *Fix submitted by Amol Chaudhari in pull request [21804](https://github.com/magento/magento2/pull/21804)*. [GitHub-10645](https://github.com/magento/magento2/issues/10645)
 
-###  URL rewrite
+### URL rewrite
 
 <!-- ENGCOM-4621 -->
 * Magento now retains filter terms after you've applied a filter to the Admin `url_rewrites` table, then click the back button. *Fix submitted by Amol Chaudhari in pull request [21805](https://github.com/magento/magento2/pull/21805)*. [GitHub-21805](https://github.com/magento/magento2/issues/21805)
-
 
 <!-- ENGCOM-4116 -->
 * The import process now retains permanent redirects for outdated product URLs as expected. Previously, the import process removed these redirects, and when you tried to open the changed product by the old URL key,  Magento displayed a 404 page. *Fix submitted by Shikha Mishra in pull request [20737](https://github.com/magento/magento2/pull/20737)*. [GitHub-20282](https://github.com/magento/magento2/issues/20282)
@@ -738,7 +731,7 @@ In addition to security enhancements, this release contains the following functi
 * The store switcher now works in multistore deployments.  Previously, the switcher redirected the user to the home page, not to the alternative store view as expected. *Fix submitted by Janak Bhimani in pull request [21140](https://github.com/magento/magento2/pull/21140)*. [GitHub-19714](https://github.com/magento/magento2/issues/19714)
 
 <!-- MAGETWO-98208 -->
-* Magento no longer lets you create non-human readable URLs for products. 
+* Magento no longer lets you create non-human readable URLs for products.
 
 ### VAT ID
 
@@ -747,14 +740,14 @@ In addition to security enhancements, this release contains the following functi
 
 ### Web API framework
 <!-- MAGETWO-73978 -->
-* Magento now throws an error as expected when you send an APU request that specifies `pageSize` and `currentPage` values that exceed the number of products in the catalog you’re querying. Previously, when you queried a catalog and specified values that exceeded catalog size, the API would ignores the specified `currentPage` value, and returned the same results as the highest valid `currentPage`. 
+* Magento now throws an error as expected when you send an APU request that specifies `pageSize` and `currentPage` values that exceed the number of products in the catalog you’re querying. Previously, when you queried a catalog and specified values that exceeded catalog size, the API would ignores the specified `currentPage` value, and returned the same results as the highest valid `currentPage`.
 
 <!-- ENGCOM-4792 -->
 * You can now use REST in scope `all` to save an existing category that does not have a name attribute. Previously, Magento threw this exception, `Could not save category with message. The "Name" attribute value is empty. Set the attribute and try again`. *Fix submitted by Saphal Jha in pull request [22440](https://github.com/magento/magento2/pull/22440)*. [GitHub-22309](https://github.com/magento/magento2/issues/22309)
-  
+
  <!-- ENGCOM-4837 -->
 * The `PUT /V1/products/:sku/media/:entryId` API operation now updates product images as expected. Previously, this operation updated the label, types, and disabled settings, but the actual `file-content` was not replaced with the values that were provided in `base64_encoded_data`. *Fix submitted by Nirav Patel in pull request [22533](https://github.com/magento/magento2/pull/22533)*. [GitHub-22402](https://github.com/magento/magento2/issues/22402)
-   
+
 ### Wishlist
 
 <!-- MAGETWO-73613 -->* The quantity field now has limits on both the type and number of characters that can be entered. Previously, you could enter both extremely large number and letters into this field, which resulted in undesirable and inaccurate changes in quantity
@@ -763,8 +756,8 @@ In addition to security enhancements, this release contains the following functi
 
 ## Known issue
 
-* **Issue**: The Async/Bulk Web APIs support only the default store view. A hot fix for this issue will be available in the near future. 
-  
+* **Issue**: The Async/Bulk Web APIs support only the default store view. A hot fix for this issue will be available in the near future.
+
 ## Community contributions
 
 This release includes substantial community contributions: over 100 GitHub issues resolved and over 350 pull requests merged. We are grateful to the wider Magento community for this effort and would like to acknowledge their contributions to this release.
@@ -775,18 +768,14 @@ The following table identifies contributions from our community members. This ta
 
 {% include release-notes/engcomm-2-2-9-issues.md %}
 
-
 ### Partner contributions
 
-The following table highlights contributions made by Partners. This table lists the Partner who contributed the pull request, the external pull request, and the GitHub issue number associated with it (if available). 
+The following table highlights contributions made by Partners. This table lists the Partner who contributed the pull request, the external pull request, and the GitHub issue number associated with it (if available).
 
 {% include release-notes/engcomm-2-2-9-partner.md %}
 
-
-
 ### System requirements
 Our technology stack is built on PHP and MySQL. For details, see [Technology stack requirements]({{page.baseurl}}/install-gde/system-requirements-tech.html).
-
 
 ### Installation and upgrade instructions
 

@@ -74,7 +74,7 @@ use Magento\Framework\Event\ObserverInterface;
 class SaveOrderBeforeSalesModelQuoteObserver implements ObserverInterface
 {
     ...
-    
+
     /**
      * @var \Magento\Framework\DataObject\Copy
      */
@@ -103,10 +103,10 @@ class SaveOrderBeforeSalesModelQuoteObserver implements ObserverInterface
       $order = $observer->getEvent()->getData('order');
       /* @var \Magento\Quote\Model\Quote $quote */
       $quote = $observer->getEvent()->getData('quote');
-      
+
       $this->objectCopyService->copyFieldsetToTarget('sales_convert_quote', 'to_order', $quote, $order);
       ...
-      
+
       return $this;
     }
 }

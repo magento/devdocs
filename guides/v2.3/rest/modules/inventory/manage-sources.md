@@ -55,7 +55,6 @@ Name | Description | Type | Requirements
 `carrier_code` | Reserved for future use | String | Optional
 `position` | Reserved for future use | Integer | Optional
 
-
 ## Create a source
 
 The value of the `source_code` parameter can contain upper and lower case letters, numbers, dashes, and underscores. You use this ID when assigning stock to sources and when exporting or importing data.
@@ -131,7 +130,6 @@ This call returns detailed information about the specified source.
 **Sample Usage**
 
 `GET <host>/rest/<store_code>/V1/inventory/sources/central`
-
 
 **Payload**
 

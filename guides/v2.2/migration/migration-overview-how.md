@@ -22,7 +22,7 @@ The Data Migration Tool splits the migration process into three phases or *modes
 
 ![Migration Modes]
 
-## Steps 
+## Steps
 
 The Data Migration Tool uses a list of *steps* within each mode to migrate a particular type of data. For example, in the Settings mode, there are two steps used to migrate the all the settings data: the Stores step and the Settings step. Details about the specific data that is migrated in each of these steps (as well as for steps in the other modes), can be found in the [Data Migration Tool Technical Specification].
 
@@ -31,7 +31,7 @@ The Data Migration Tool uses a list of *steps* within each mode to migrate a par
 ## Stages
 
 Within each step are three *stages* that are always executed in this order to ensure the data gets properly migrated:
- 
+
 1. **Integrity Check**: Compares the table field names, types,  and other info to verify compatibility between Magento 1 and 2 data structures.
 2. **Data Transfer**: Transfers the data table by table from Magento 1 and 2.
 3. **Volume Check**: Compares the number of records  between tables to verify that the transfer was successful.
@@ -40,7 +40,7 @@ Within each step are three *stages* that are always executed in this order to en
 
 ## Map files
 
-At the lowest level of the migration processes are the XML *map files*. The Data Migration Tool uses map files within the stages of a step to transform different data structures between the Magento 1.x and 2.x tables. 
+At the lowest level of the migration processes are the XML *map files*. The Data Migration Tool uses map files within the stages of a step to transform different data structures between the Magento 1.x and 2.x tables.
 
 For example, when you transform data from a {{site.data.var.ce}} 1.8.0.0 database to {{site.data.var.ce}} 2.x.x, the map file accounts for the fact that a table was renamed, and renames it accordingly in the destination database. If there are no differences in data structure or data format, the Data Migration Tool transfers it as-is, including data from tables created by extensions, to the Magento 2 database.
 
@@ -51,8 +51,6 @@ Mapping files are discussed in more detail in [Data Migration Tool Technical Spe
 ## Migration flow diagram
 
 ![Migration Flow]
-
-
 
 <!-- Link definitions -->
 [Data Migration Tool Technical Specification]: {{ page.baseurl }}/migration/migration-tool-internal-spec.html

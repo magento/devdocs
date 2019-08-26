@@ -56,7 +56,7 @@ Use the `ssh-keygen` command to create an SSH key pair. `ssh-keygen` is typicall
     ```bash
     eval "$(ssh-agent -s)"
     ```
-	
+
     For Mac, you can edit the  `~/.ssh/config` file to automatically load keys into the ssh-agent and store passphrases in your keychain.
 
     ```

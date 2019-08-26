@@ -30,11 +30,11 @@ Magento safeguards your store from clickjacking attacks by using an X-Frame-Opti
 
 ## Use of non-default Magento Admin URL
 
-A simple [Magento Admin](https://glossary.magento.com/magento-admin) [URL](https://glossary.magento.com/url) (like `admin` or `backend`) makes it easy to target attacks on specific locations using automated password guessing. To prevent against this type of attack, Magento by default creates a random Admin URI when you install the product. The CLI command `bin/magento info:adminuri` is provided so that you can  see the URI if you forget it. 
+A simple [Magento Admin](https://glossary.magento.com/magento-admin) [URL](https://glossary.magento.com/url) (like `admin` or `backend`) makes it easy to target attacks on specific locations using automated password guessing. To prevent against this type of attack, Magento by default creates a random Admin URI when you install the product. The CLI command `bin/magento info:adminuri` is provided so that you can  see the URI if you forget it.
 
-You can change this Admin URI in three ways: 
+You can change this Admin URI in three ways:
 - The `bin/magento setup:config:set --backend-frontname=<value>` command
-- The `env.php` file 
+- The `env.php` file
 - The Admin panel
 
 Although the use of a non-default admin URL will not secure the site, its use will help prevent large-scale automated attacks. See [Display or change the Admin URI]({{page.baseurl}}/install-gde/install/cli/install-cli-adminurl.html) in Configuration Guide for more information.

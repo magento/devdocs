@@ -116,7 +116,6 @@ define([
                     };
                     activeInstance.selection = instance;
 
-
                 }
             });
             return activeInstance;
@@ -136,7 +135,6 @@ define([
 
             return this;
         },
-
 
         /**
          * Retrieve directives URL with substituted directive value.
@@ -250,7 +248,6 @@ define([
 
         }
     };
-
 
     return ckeditorWysiwyg.prototype;
 });

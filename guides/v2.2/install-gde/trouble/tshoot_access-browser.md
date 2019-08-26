@@ -15,7 +15,7 @@ functional_areas:
 
 	Whoops, it looks like you have an invalid PHP version.
 	Magento supports PHP 5.5 or newer.
-	
+
 #### Solution
 
 Either upgrade [PHP](https://glossary.magento.com/php) or restart Apache (Apache might not be using the same PHP version as is on the file system).
@@ -31,7 +31,7 @@ Try the following:
 	If Apache server rewrites are set incorrectly, static files aren't served from the correct location.
 
 *	Likely an issue with the base URL you entered during the installation. You specify the base URL as the value of `--base-url=` when installing Magento from the command line or as the value of the **Your Store Address** field on the Web Configuration page of the web installer.
-	
+
 	The base URL *must* start with the scheme (such as `http://`) and end with a trailing slash (/). Run the installer again with a valid value and try accessing Magento afterward.
 
 	To restart Apache:

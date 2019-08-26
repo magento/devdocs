@@ -59,7 +59,6 @@ class Some\EntityTest extends \PHPUnit\Framework\TestCase
         return $objectId;
     }
 
-
     public function testDelete($objectId)
     {
         $this->object->delete();

@@ -51,7 +51,6 @@ Use URN notation to reference schema from inside a XSD document:
 
 <xs:redefine schemaLocation="urn:magento:framework:Config/etc/view.xsd">
 
-
 ```
 
 The URN resolution is invoked automatically by the libxml engine. Register the URN resolver by using `libxml_set_external_entity_loader`:

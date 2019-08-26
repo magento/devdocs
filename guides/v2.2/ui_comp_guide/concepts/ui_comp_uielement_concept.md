@@ -50,7 +50,6 @@ When creating a new component, use the `uiElement` class as a direct parent, if 
           this.observable(2); // setter
           this.observable();  // getter
 
-
           this.trackable = 1;
           this.track('trackable');
 

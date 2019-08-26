@@ -63,7 +63,6 @@ To configure PayPal Express Checkout:
     * __API Uses Proxy__ select Yes or No to set if the system uses a proxy server to establish a connection between Magento and the PayPal payment system. If Yes, enter the proxy host and port.
 6. For detailed information and steps for configuring your account, see [PayPal Express Checkout](http://docs.magento.com/m2/ce/user_guide/payment/paypal-express-checkout.html) starting with Step 2 Complete the Required Settings.
 
-
 With the account configured and authenticated, you can enable and disable PayPal payment options under Required PayPal Settings:
 
 * __Enable this Solution__ displays the PayPal payment method to customers through the website.

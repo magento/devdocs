@@ -6,7 +6,6 @@ functional_areas:
   - Orders
 ---
 
-
 Most REST calls to Magento require an [authorization](https://glossary.magento.com/authorization) token. The token allows Magento to verify that the caller is authorized to access a system resource. To get a token, you must specify the user's username and password in the payload.
 
 By default, an admin token is valid for 4 hours. To change this value, log in to Admin and go to **Stores** > **Settings** > **Configuration** > **Services** > **OAuth** > **Access Token Expiration** > **Admin Token Lifetime (hours)**.

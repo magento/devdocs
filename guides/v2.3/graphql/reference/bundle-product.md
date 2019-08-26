@@ -28,7 +28,7 @@ Attribute | Type | Description
 `title` | String | The display name of the item
 `type` | String | The input type that the customer uses to select the item. Examples include radio button and checkbox.
 
-##  BundleItemOption object
+## BundleItemOption object
 
 Attribute | Type | Description
 --- | --- | ---

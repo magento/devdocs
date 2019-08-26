@@ -443,7 +443,7 @@ This query searches for products that have `name` that ends with `Short` or has 
       or: {
         name: {
           like: "%Short"
-        }      
+        }
         sku: {
           like: "WP%"
         }

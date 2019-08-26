@@ -4,12 +4,9 @@ title: Magento Shipping Release Notes
 ---
 *Code and release notes updated on May 2, 2018.*
 
-
-
 The release information in this section describes changes to the Magento Shipping extension bundled with Magento 2.2.2.  Fixes and enhancements are listed by availability date.
 
-
-See the [Magento Commerce 2.2.2 Release Notes]({{ page.baseurl }}/release-notes/ReleaseNotes2.2.2CE.html) and [Magento Commerce 2.2.4 Release Notes]({{ page.baseurl }}/release-notes/ReleaseNotes2.2.4CE.html) for a comprehensive discussion of 2.2.2 and 2.2.4 fixes and enhancements.  
+See the [Magento Commerce 2.2.2 Release Notes]({{ page.baseurl }}/release-notes/ReleaseNotes2.2.2CE.html) and [Magento Commerce 2.2.4 Release Notes]({{ page.baseurl }}/release-notes/ReleaseNotes2.2.4CE.html) for a comprehensive discussion of 2.2.2 and 2.2.4 fixes and enhancements.
 
 ## Changes effective September 18, 2018 (Magento 2.2.6)
 
@@ -17,16 +14,15 @@ Here are the enhancements available as of September 18, 2018:
 
 ### Enhancements
 
-
 * The **Click & Collect** feature offers merchants the ability to:
 
-	* Provide Click & Collect as a shipping option to customers, enabling them to directly collect shipments from designated source locations/stores 
+	* Provide Click & Collect as a shipping option to customers, enabling them to directly collect shipments from designated source locations/stores
 
 	* Configure source locations available for Click & Collect pick-ups
 
 Consumers can also select Click & Collect locations during check-out. This feature is supported by workflows and notifications for Click & Collect pick up, packing, and collection.
 
-* **Batch Processing** provides merchants with the ability to 
+* **Batch Processing** provides merchants with the ability to
 
 	* Process multiple orders in one batch
 
@@ -36,17 +32,13 @@ Consumers can also select Click & Collect locations during check-out. This featu
 
 	* Generate documentation for individual shipments as well as all shipments within a batch
 
-
-
-
-
 ## Changes effective May 2, 2018 (Magento 2.2.4)
 
 Here are the enhancements and  fixes available as of May 2, 2018:
 
 ### Enhancements
 
-* Provided validation to prevent merchants from indicating that the  package maximum weight greater that the actual package being shipped. 
+* Provided validation to prevent merchants from indicating that the  package maximum weight greater that the actual package being shipped.
 
 * Added international fields to shipment details.
 
@@ -56,7 +48,7 @@ Here are the enhancements and  fixes available as of May 2, 2018:
 
 * Improved appearance of  navigation buttons on carrier connection page.
 
-* Provided ad-hoc Return labels with return shipment tracking. This features builds on `Magento_Rma`. 
+* Provided ad-hoc Return labels with return shipment tracking. This features builds on `Magento_Rma`.
 
 ### Fixes
 
@@ -70,15 +62,15 @@ Resolution of the following issues:
 
 * Duplicated navigation menu during carrier connection.
 
-## Changes effective January 22, 2018 
+## Changes effective January 22, 2018
 
 Here are the enhancements and fixes available as of January 22, 2018:
 
-### Enhancements   
+### Enhancements
 
 * Added a tutorial for activating Magento Shipping.
 
-* Redesigned the Shipping Experience Rules page so that it displays the rule execution sequence. 
+* Redesigned the Shipping Experience Rules page so that it displays the rule execution sequence.
 
 * Added alphanumeric validation to the Huxloe Hermes carrier tab. (Huxloe Hermes)
 
@@ -92,17 +84,17 @@ Here are the enhancements and fixes available as of January 22, 2018:
 
 ### Fixes
 
-The fixes described here are categorized by shipping carrier. 
+The fixes described here are categorized by shipping carrier.
 
 #### Australia Post
 
-* Fixed an issue with the error thrown if Export Category is **commercial** when the shipment isn't dutiable. Previously, the error thrown did not correctly address the issue. 
+* Fixed an issue with the error thrown if Export Category is **commercial** when the shipment isn't dutiable. Previously, the error thrown did not correctly address the issue.
 
-#### FedEx 
+#### FedEx
 
-* Changed the default signature option to DIRECT for all services. 
+* Changed the default signature option to DIRECT for all services.
 
-#### UPS 
+#### UPS
 
 * Resolved a UI issue with validation so that users do not need to enter State or Province when connecting to UPS with a United Kingdom  address.
 
@@ -132,7 +124,7 @@ The fixes described here are categorized by shipping carrier.
 
 Here are the enhancements and fixes available as of January 5, 2018:
 
-### Enhancements  
+### Enhancements
 
 * Added automated billing subscription redirection for billing
 
@@ -140,43 +132,41 @@ Here are the enhancements and fixes available as of January 5, 2018:
 
 ### Fixes
 
-#### Billing 
-* Fixed issue with billing metric calculations and capture 
+#### Billing
+* Fixed issue with billing metric calculations and capture
 
-#### Tracking 
+#### Tracking
 
 * Fixed issue with tracking capture and display
 
-#### Portal 
+#### Portal
 
-* Fixed issue with redirection on log-out  
+* Fixed issue with redirection on log-out
 
 * Fixed issue that prevented the consistent saving of qualification rules
 
-#### Australia Post 
+#### Australia Post
 
 * Corrected incorrect service names
 
-#### UK Mail 
+#### UK Mail
 
 * Removed restrictions on mandatory county information
 
-#### FedEx 
+#### FedEx
 * Removed unsupported freight services from list of available services
 
-* Changed orientation of labels from landscape to portrait 
+* Changed orientation of labels from landscape to portrait
 
-* Corrected MPS handling in completion 
+* Corrected MPS handling in completion
 
-* Implemented sensible defaults for FedEx  
+* Implemented sensible defaults for FedEx
 
-#### Configuration 
+#### Configuration
 
 * Set FedEx  to 'Upcoming' carrier.
 
-#### USPS 
+#### USPS
 
 * Updated label size to A6 default in PNG.
-
-
 

@@ -60,7 +60,6 @@ Attribute | Data type | Description
 `page_info` | `SearchResultPageInfo` | An object that includes the `page_info` and `currentPage` values specified in the query
 `total_count` | Int | The number of products returned
 
-
 #### Breadcrumb object
 
 A breadcrumb trail is a set of links that shows customers where they are in relation to other pages in the

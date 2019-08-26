@@ -17,15 +17,14 @@ The following diagram shows a simplified interaction flow between Magento sales 
 
 ![Vault Interaction]({{ site.baseurl }}/common/images/payments-integrations/vault_interaction_flow1.png)
 
-The flow is similar to usual Magento [payment gateway interaction flow]({{ page.baseurl }}/payments-integrations/payment-gateway/payment-gateway-intro.html). 
+The flow is similar to usual Magento [payment gateway interaction flow]({{ page.baseurl }}/payments-integrations/payment-gateway/payment-gateway-intro.html).
 
 The main difference is that when vault is used, it defines what command is required and when it must be called.
 
 ## Adding vault: general steps
 
-Magento vault implementation provides that vault is available as a separate payment method during order creation (storefront or admin). But technically it is tightly related to the corresponding payment provider integration.   
-You do not need to create a new [module](https://glossary.magento.com/module) for vault implementation. All required configuration and entities are added to the module of the payment provider integration. 
-
+Magento vault implementation provides that vault is available as a separate payment method during order creation (storefront or admin). But technically it is tightly related to the corresponding payment provider integration.
+You do not need to create a new [module](https://glossary.magento.com/module) for vault implementation. All required configuration and entities are added to the module of the payment provider integration.
 
 The topics of this chapter describe how to add the vault functionality to a payment method (the payment method must be implemented using Magento payment gateway):
 
@@ -36,4 +35,4 @@ The topics of this chapter describe how to add the vault functionality to a paym
 5. [Storing and processing the payment related data]({{ page.baseurl }}/payments-integrations/vault/payment-token.html).
 6. [Adding and using  UI_Vault component to place orders on the storefront]({{ page.baseurl }}/payments-integrations/vault/token-ui-component-provider.html).
 7. [Display stored tokens for customer and process their deleting]({{ page.baseurl }}/payments-integrations/vault/customer-stored-payments.html).
-8. [Using stored tokens to place an order from Admin panel]({{ page.baseurl }}/payments-integrations/vault/admin-integration.html). 
+8. [Using stored tokens to place an order from Admin panel]({{ page.baseurl }}/payments-integrations/vault/admin-integration.html).

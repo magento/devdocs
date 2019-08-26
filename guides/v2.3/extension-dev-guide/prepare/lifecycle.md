@@ -24,7 +24,7 @@ The schema initialization stages are the first set of processes Magento runs whe
 
 ### Schema installation
 
-Magento executes the schema installation class during your module's initial install. 
+Magento executes the schema installation class during your module's initial install.
 If the `schema_version` for your module is found in the `setup_module` table, Magento skips this stage and proceeds to the [schema upgrade] stage.
 
 | **Class name:** | `InstallSchema`            |
@@ -48,7 +48,7 @@ class \VendorName\ModuleName\Setup\InstallSchema implements \Magento\Framework\S
 
 ### Schema upgrade
 
-Magento executes your module's schema upgrade class when it detects an earlier installation. 
+Magento executes your module's schema upgrade class when it detects an earlier installation.
 The purpose of this class is to update the database structure or apply patches.
 
 | **Class name** | `UpgradeSchema`            |
