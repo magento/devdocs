@@ -36,7 +36,7 @@ To customize the product creation form, take the following steps:
                     <item name="label" xsi:type="string" translate="true">%Nested fieldset Label as displayed in UI%</item>
                     <item name="collapsible" xsi:type="boolean">true</item>
                 </item>
-            </argument>  
+            </argument>
             <field name="%field_name%">
     			<argument name="data" xsi:type="array">
                     <item name="config" xsi:type="array">

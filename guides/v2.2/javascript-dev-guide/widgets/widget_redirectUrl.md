@@ -8,7 +8,7 @@ contributor_link: https://www.atwix.com/
 
 ## Overview
 
-The RedirectUrl {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} allows redirecting to an URL when an event triggers.
+The RedirectUrl [widget](https://glossary.magento.com/widget) allows redirecting to an URL when an event triggers.
 
 The RedirectUrl widget source is [lib/web/mage/redirect-url.js][].
 
@@ -35,7 +35,7 @@ Phtml template file examples using script:
         'redirectUrl'
     ], function ($) {
         'use strict';
-        
+
         $("#element").redirectUrl({url: 'http://example.com'});
     });
 </script>

@@ -291,7 +291,6 @@ HTML helper class names added in JavaScript REQUIRE underscore symbol ("_") at t
 <div class="sales-report _hidden">Content</div>
 ```
 
-
 **Unacceptable**
 
 ```html

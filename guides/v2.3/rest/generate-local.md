@@ -34,7 +34,7 @@ The **Try it out!** feature is not available on Swagger documentation published 
 
 ### REST reference for Asynchronous API
 
-You can also use Swagger to generate live asynchronous API REST documentation. To create this documentation, add the `?type=async` parameter to the standard Swagger URL: 
+You can also use Swagger to generate live asynchronous API REST documentation. To create this documentation, add the `?type=async` parameter to the standard Swagger URL:
 
 `http://<magento_host>/swagger?type=async`
 
@@ -56,7 +56,6 @@ To return information about all services:
 
 {:.bs-callout .bs-callout-info}
 You must specify an authorization token for an [admin](https://glossary.magento.com/admin) user to return information for most endpoints. See [Token-based authentication]({{ page.baseurl }}/get-started/authentication/gs-authentication-token.html) for more information.
-
 
 ## Return the complete JSON schema
 

@@ -1,2 +1,2 @@
 {: .bs-callout .bs-callout-info}
-For Pro projects, the changes you make using this YAML file affects your Integration environment only. To make these changes in a Staging or Production environment, you must create a [Support ticket](http://support.magento.com).
+For Pro projects, you must create a [Support ticket](http://support.magento.com) to install or update services in Staging and Production environments. Indicate the service changes needed and include your updated `.magento.app.yaml` and `services.yaml` files in the ticket.

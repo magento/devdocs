@@ -27,7 +27,7 @@ To enable template hints:
 
 {:.bs-callout .bs-callout-info}
 You can also use the CLI to enable/disable template hints.
- 
+
 Use the `bin/magento dev:template-hints:enable` command to enable template hints and the `bin/magento dev:template-hints:disable` command to disable them. Do not forget to clear the cache after running the commands. For example:
 
 ```bash
@@ -97,7 +97,6 @@ After you located the necessary layout file, you can create your custom layout f
 
 To locate a CSS rule that is applied to a certain element, find the template for the page that contains the element. Or you can use browser debugging tools, to locate the class name.
 After you find the class name, use text search in the theme and module styles directories to locate the `.less` or `.css` file that defines the class. Perform the search according to the following fallback scheme:
-
 
 2. Theme styles `<current_theme_dir>/web/css/`
 2. Module theme styles `<current_theme_dir>/<Namespace>_<Module>/web/css/`

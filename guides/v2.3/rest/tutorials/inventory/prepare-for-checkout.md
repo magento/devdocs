@@ -148,7 +148,6 @@ The subtotal of the order is $2462, and shipping charges are $350. The grand tot
 
 The available payment methods are `banktransfer` and `checkmo`. The customer will specify a [payment method](https://glossary.magento.com/payment-method) in the next step.
 
-
 ```json
 {
     "payment_methods": [

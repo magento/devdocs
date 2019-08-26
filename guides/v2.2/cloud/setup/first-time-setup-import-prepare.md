@@ -105,7 +105,7 @@ First, verify if you have an `auth.json` file, located in your Magento root dire
 
 This method is best to prevent accidental exposure of credentials, such as pushing an `auth.json` file to a public repository.
 
-1.  In the _Project Web UI_, click the configuration icon in the upper left corner.
+1.  In the _Project Web Interface_, click the configuration icon in the upper left corner.
 
 1.  In the _Configure Project_ view, click the **Variables** tab.
 
@@ -131,7 +131,6 @@ This method is best to prevent accidental exposure of credentials, such as pushi
 1.  Click **Add Variable**.
 
 1.  Remove the `auth.json` file from each environment.
-
 
 ## Edit `composer.json` {#composer-json}
 

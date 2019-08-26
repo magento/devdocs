@@ -13,7 +13,7 @@ functional_areas:
 
 ### Details
 
-During the installation, the following message displays: 
+During the installation, the following message displays:
 
 	PHP Warning:  date(): It is not safe to rely on the system's timezone settings. [more]
 

@@ -1,5 +1,4 @@
 
-
 The following table discusses where to get the Magento software. We provide the following downloads:
 
 *	Magento Open Source software only

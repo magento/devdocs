@@ -5,7 +5,7 @@ title: Release Notes
 
 *Release notes published June 2019.*
 
-GraphQL is a flexible and performant API that allows you to build custom front-ends, including headless storefronts, [Progressive Web Apps](https://github.com/magento-research/pwa-studio) (PWA), and mobile apps for Magento.
+GraphQL is a flexible and performant API that allows you to build custom front-ends, including headless storefronts, [Progressive Web Apps](https://github.com/magento/pwa-studio) (PWA), and mobile apps for Magento.
 
 The **[Magento GraphQL](https://github.com/magento/graphql-ce) project** is a Magento Community Engineering special project open to contributors.
 To take part and contribute, see the [Magento GraphQL](https://github.com/magento/graphql-ce) repository and [wiki](https://github.com/magento/graphql-ce/wiki) to get started. Join us in our [Slack](https://magentocommeng.slack.com/messages/C8076E0KS) channel (or [self signup](https://tinyurl.com/engcom-slack)) to discuss the project.
@@ -30,7 +30,7 @@ These release notes can include:
   - [Place an order]({{page.baseurl}}/graphql/reference/quote-place-order.html).
 
 - {:.new} **Added support for payment methods that implement [Magento Vault]({{page.baseurl}}/graphql/reference/vault.html)**
-- 
+-
 - {:.new} **Added new queries and extended the functionality of others.**
 
   - The [`isEmailAvailable` query]({{page.baseurl}}/graphql/reference/customer.html) checks whether the specified email address has already been used to create an account.

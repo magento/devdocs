@@ -36,7 +36,7 @@ This data is updated when the relevant customer data changes, such as adding or 
   The default implementation uses several interfaces to choose the appropriate payment method, billing and shipping addresses, and shipping method.
 
 * [`PaymentTokenChooserInterface`]
-  
+
   Responsible for choosing the stored payment method.
   The default value is the last created and saved payment method used.
 
@@ -171,7 +171,7 @@ The minimal configuration for Instant Purchase integration development is as fol
       </vault_payment_method_code>
     </payment>
   <default>
-</config>  
+</config>
 ```
 
 {: .bs-callout .bs-callout-warning }
@@ -192,7 +192,7 @@ The following is an example of a full configuration meant for production:
       </vault_payment_method_code>
     </payment>
   <default>
-</config>  
+</config>
 ```
 
 All elements of the integration configuration are optional and have default implementations.

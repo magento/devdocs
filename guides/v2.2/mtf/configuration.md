@@ -131,7 +131,6 @@ Values description:
 
 [Learn about desiredCapabilities in Selenium official documentation.][desiredCapabilities]
 
-
 ### **&lt;handler&gt;** {#handler}
 
 Specifies priorities for different types of handlers. The lower the value, the higher the priority. The highest priority has value 0. `token` contains access token (used by WebAPI handlers only). [Learn more about handlers.][handler]

@@ -2,6 +2,8 @@
 group: release-notes
 subgroup: 2.3.x_Release_Information
 title: 2.3.x Release Information
+redirect_from:
+- /magento-release-information.html
 ---
 
 ## Magento 2.3.x Release Notes
@@ -15,7 +17,7 @@ title: 2.3.x Release Information
 * [{{site.data.var.ce}} 2.3.0 Release Notes]({{page.baseurl}}/release-notes/ReleaseNotes2.3.0OpenSource.html)
 * [{{site.data.var.ee}} 2.3.0 Release Notes]({{page.baseurl}}/release-notes/ReleaseNotes2.3.0Commerce.html)
 
-Interested in the Magento 2.2.x releases? Check out the [2.2.x]({{ site.baseurl }}/guides/v2.2/release-notes/bk-release-notes.html) Release Information pages.  
+Interested in the Magento 2.2.x releases? Check out the [2.2.x]({{ site.baseurl }}/guides/v2.2/release-notes/bk-release-notes.html) Release Information pages.
 
 ## Backward-incompatible changes
 
@@ -29,7 +31,6 @@ See [Release Notes for ece-tools]({{ page.baseurl }}/cloud/release-notes/cloud-t
 
 {: .bs-callout-info }
 We recommend installing full {{site.data.var.ece}} upgrades for important security updates. Full upgrades include all associated patches and hotfixes.
-
 
 ## Third-party license agreements
 

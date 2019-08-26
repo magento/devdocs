@@ -37,14 +37,14 @@ To generate a critical CSS for your theme, critical path CSS generators like [Pe
 
 ### Critical CSS loader
 
-Ff 'CSS critical path' is enabled in the configuration, a preloading spinner will be used. It is added in `Magento/Theme/view/frontend/layout/default.xml`.
+If 'CSS critical path' is enabled in the configuration, a preloading spinner will be used. It is added in `Magento/Theme/view/frontend/layout/default.xml`.
 After non-critical CSS is loaded and applied, the spinner disappears. The spinner will disappear automatically only if you have CSS styles from the 'Blank' theme CSS. If you have your own CSS rules, you should hide the preloader by using the `data-role='main-css-loader'` attribute.
 
 ## Critical CSS performance improvements
 
 Introducing a critical path CSS to Magento leads to performance improvements:
 
-1. Eliminated render-blocking CSS resources. As a result, time for loading render-blocking resources decreases substantially. 
+1. Eliminated render-blocking CSS resources. As a result, time for loading render-blocking resources decreases substantially.
 
 ![CSS resources eliminated as render-blocking]({{ site.baseurl }}/common/images/critical_css_improvements1.png)
 

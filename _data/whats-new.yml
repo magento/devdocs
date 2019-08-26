@@ -4,8 +4,85 @@ description: |
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: /whats-new.html
 thread: /whatsnew-feed.xml
-updated: Fri Aug 2 12:05:50 2019
+updated: Tue Aug 20 11:10:17 2019
 entries:
+- description: Added a tutorial about how to create a [grouped product using the REST
+    API](https://devdocs.magento.com/guides/v2.3/rest/tutorials/grouped-product/create-and-manage-grouped-products.html).
+  versions: 2.3.x
+  type: New topic
+  date: August 19, 2019
+  link: https://github.com/magento/devdocs/pull/5155
+- description: Updated the [Set up multiple website or stores](https://devdocs.magento.com/guides/v2.3/cloud/project/project-multi-sites.html)
+    topic in the Cloud guide. Now, this topic differentiates between sites with a
+    shared domain and sites with unique domains.
+  versions: 2.x
+  type: Major update
+  date: August 15, 2019
+  link: https://github.com/magento/devdocs/pull/5123
+- description: Added the [Change increment ID for a database entity on particular
+    store](http://devdocs.magento.com/guides/v2.2/config-guide/multi-site/change-increment-id.html)
+    topic to the Configuration Guide.
+  versions: 2.2.x, 2.3.x
+  type: New topic
+  date: August 15, 2019
+  link: https://github.com/magento/devdocs/pull/5129
+- description: Added a code sample and updated the API reference in the [QuickSearch
+    Widget](https://devdocs.magento.com/guides/v2.3/javascript-dev-guide/widgets/widget_quickSearch.html)
+    topic.
+  versions: 2.2.x, 2.3.x
+  type: Major update
+  date: August 14, 2019
+  link: https://github.com/magento/devdocs/pull/5182
+- description: Provided details about what happens when you run the [Data Migration
+    Tool](https://devdocs.magento.com/guides/v2.2/migration/migration-migrate-data.html).
+  versions: 2.2.x, 2.3.x
+  type: Major update
+  date: August 14, 2019
+  link: https://github.com/magento/devdocs/pull/5167
+- description: Updated the JavaScript resources topic with instructions for [including
+    third-party JavaScript libraries](https://devdocs.magento.com/guides/v2.3/javascript-dev-guide/javascript/js-resources.html#including-third-party-javascript-libraries).
+  versions: 2.2.x, 2.3.x
+  type: Major update
+  date: August 13, 2019
+  link: https://github.com/magento/devdocs/pull/5161
+- description: Added documentation for the [TrimInput widget](https://devdocs.magento.com/guides/v2.3/javascript-dev-guide/widgets/widget-trim-input.html).
+  versions: 2.2.x, 2.3.x
+  type: New topic
+  date: August 13, 2019
+  link: https://github.com/magento/devdocs/pull/5135
+- description: Added an optional step to the [Cloud Docker](https://devdocs.magento.com/guides/v2.3/cloud/docker/docker-config.html)
+    topic to restart services.
+  versions: 2.x
+  type: Technical changes
+  date: August 12, 2019
+  link: https://github.com/magento/devdocs/pull/5157
+- description: Added documentation for the [Popup Window widget](https://devdocs.magento.com/guides/v2.3/javascript-dev-guide/widgets/widget-popup-window.html).
+  versions: 2.2.x, 2.3.x
+  type: New topic
+  date: August 12, 2019
+  link: https://github.com/magento/devdocs/pull/5171
+- description: Added information about how to [define a custom Import Entity](https://devdocs.magento.com/guides/v2.3/ext-best-practices/tutorials/custom-import-entity.html).
+  versions: 2.2.x, 2.3.x
+  type: New topic
+  date: August 7, 2019
+  link: https://github.com/magento/devdocs/pull/5007
+- description: Updated the label descriptions for [DevDocs contributions](https://devdocs.magento.com/guides/v2.3/contributor-guide/contributing.html#devdocs), corrected links, and added a link to the [Beginner's Guide](https://github.com/magento/magento2/wiki/Getting-Started).
+  versions: 2.2.x, 2.3.x
+  type: Major update
+  date: August 5, 2019
+  link: https://github.com/magento/devdocs/pull/4551
+- description: Added a new topic about [enabling database query profiling](https://devdocs.magento.com/guides/v2.3/cloud/project/profile-database-queries.html).
+  versions: 2.2.x, 2.3.x
+  type: New topic
+  date: August 2, 2019
+  link: https://github.com/magento/devdocs/pull/5111
+- description: Added a new task topic for [setting the cache time-to-live (TTL) for
+    static files](https://devdocs.magento.com/guides/v2.3/cloud/project/set-cache.html)
+    on Magento Commerce (Cloud).
+  versions: 2.2.x, 2.3.x
+  type: New topic
+  date: August 2, 2019
+  link: https://github.com/magento/devdocs/pull/5109
 - description: Added information about patch PRODSECBUG-2233 to the relevant release
     notes for affected Magento versions.
   versions: 2.2.8, 2.2.x, 2.3.0, 2.3.1, 2.3.x, 2.x
@@ -2891,7 +2968,7 @@ entries:
   date: Oct 23 2017
 - description: Updated content for Magento Commerce (Cloud) for the updated Pro projects
     in [Manage your project](https://devdocs.magento.com/guides/v2.2/cloud/project/projects.html),
-    [Add Staging and Production to Pro projects](https://devdocs.magento.com/guides/v2.2/cloud/trouble/pro-env-management.html),
+    Add Staging and Production to Pro projects,
     [Deploy your store](https://devdocs.magento.com/guides/v2.2/cloud/live/stage-prod-live.html),
     [Deployment process](https://devdocs.magento.com/guides/v2.2/cloud/reference/discover-deploy.html),
     [Prepare to deploy to Staging and Production](https://devdocs.magento.com/guides/v2.2/cloud/live/stage-prod-migrate-prereq.html),
@@ -2908,7 +2985,7 @@ entries:
   date: Oct 18 2017
 - description: 'Update Magento Commerce (Cloud) content for new features for Pro plan:
     [Manage your project](https://devdocs.magento.com/guides/v2.2/cloud/project/projects.html),
-    [Add Staging and Production to Pro projects](https://devdocs.magento.com/guides/v2.2/cloud/trouble/pro-env-management.html),
+    Add Staging and Production to Pro projects,
     [Configure your project](https://devdocs.magento.com/guides/v2.2/cloud/project/project-webint-basic.html),
     [Create and manage users](https://devdocs.magento.com/guides/v2.2/cloud/project/user-admin.html),
     [Manage branches with the Interface](https://devdocs.magento.com/guides/v2.2/cloud/project/project-webint-branch.html),

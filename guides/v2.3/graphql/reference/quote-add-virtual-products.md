@@ -25,7 +25,7 @@ The Luma sample data does not include any virtual products. The following exampl
 mutation {
   addVirtualProductsToCart(
     input: {
-      cart_id: "IeTUiU0oCXjm0uRqGCOuhQ2AuQatogjG", 
+      cart_id: "IeTUiU0oCXjm0uRqGCOuhQ2AuQatogjG",
       cart_items: [
         {
           data: {
