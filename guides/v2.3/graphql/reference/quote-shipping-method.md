@@ -29,7 +29,7 @@ The following example sets the shipping method to Best Way.
 mutation {
   setShippingMethodsOnCart(
     input: {
-      cart_id: "IeTUiU0oCXjm0uRqGCOuhQ2AuQatogjG", 
+      cart_id: "IeTUiU0oCXjm0uRqGCOuhQ2AuQatogjG",
       shipping_methods: [
         {
           carrier_code: "tablerate"

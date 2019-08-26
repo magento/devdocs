@@ -6,14 +6,14 @@ functional_areas:
   - Theme
 ---
 
-Modify default strings in your custom [theme](https://glossary.magento.com/theme) to load and use [translation dictionaries]. Learn more about locales, modifying strings, and how Magento searches and applies translations. 
+Modify default strings in your custom [theme](https://glossary.magento.com/theme) to load and use [translation dictionaries]. Learn more about locales, modifying strings, and how Magento searches and applies translations.
 
 ## How Magento applies locales
 
 When the [locale](https://glossary.magento.com/locale) is changed for a store, Magento searches for and applies translations in the corresponding dictionaries:
 
 1. Module translations: `<module_dir>/i18n/`
-1. Theme translations: 
+1. Theme translations:
 	1. `<parent_theme_dir>/i18n/` (iterated through all ancestor themes)
 	1. `<current_theme_dir>/i18n/`
 1. Translation package: `app/i18n/`
@@ -34,23 +34,23 @@ For example, this approach is used in the Magento Luma theme. It has the [`<Mage
 "Card Verification Number",	"CVV"
 ```
 
-It is important to remember that if you generate a dictionary for your theme using the [i18n tool] with the conventional names and locations for the dictionary, the existing dictionary gets overwritten. 
+It is important to remember that if you generate a dictionary for your theme using the [i18n tool] with the conventional names and locations for the dictionary, the existing dictionary gets overwritten.
 
 To add custom strings:
 
 1. [Generate the dictionary] for your theme.
 1. Change the necessary values in the right column.
-1. Add custom strings as rows if the strings you want to replace are not in the dictionary. 
+1. Add custom strings as rows if the strings you want to replace are not in the dictionary.
 
-The i18n tool does not create a dictionary if the theme files do not contain strings for translation. In this case, add the file manually. 
+The i18n tool does not create a dictionary if the theme files do not contain strings for translation. In this case, add the file manually.
 
 See the [Example theme translation dictionary] topic for the practical illustration of the procedure.
 
 ## Creating locale dictionaries
 
-When creating locale dictionaries for your theme, use the default strings as keys. Do not create translations using the custom keys you may have created and overwritten in your default locale dictionary. 
+When creating locale dictionaries for your theme, use the default strings as keys. Do not create translations using the custom keys you may have created and overwritten in your default locale dictionary.
 
-Continuing the previous example with the Luma theme, we changed "Add to Wish List" to "Wish List" in `en_US.csv`. In the `de_DE.csv` dictionary, use the original, default key of "Add to Wish List" to enter your translation. Do not use the custom value "Wish List" for translations. 
+Continuing the previous example with the Luma theme, we changed "Add to Wish List" to "Wish List" in `en_US.csv`. In the `de_DE.csv` dictionary, use the original, default key of "Add to Wish List" to enter your translation. Do not use the custom value "Wish List" for translations.
 
 The locale dictionary would use the default values (keys) in the left column followed by the translation:
 

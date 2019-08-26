@@ -42,7 +42,6 @@ Attribute | Data type | Description
 `url_key`| String | The url key assigned to the category
 `url_path`| String | The url path assigned to the category
 
-
 #### CategoryProducts object
 
 The `products` attribute can contain the following attributes:
@@ -60,7 +59,6 @@ Attribute | Data type | Description
 `items` | [ProductInterface] | An array of products that are assigned to the category. See [ProductInterface]({{ page.baseurl }}/graphql/reference/products.html#ProductInterface) for more information.
 `page_info` | `SearchResultPageInfo` | An object that includes the `page_info` and `currentPage` values specified in the query
 `total_count` | Int | The number of products returned
-
 
 #### Breadcrumb object
 

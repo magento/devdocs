@@ -35,7 +35,6 @@ Refer to [Magento Contributor Agreement](http://www.magento.com/legaldocuments/m
 
 ## GitHub and Two-Factor Authentication {#two-factor}
 
-
 Magento **requires all Partners** who contribute code to enable 2FA on their Github accounts. You can use a mobile device or 2FA application for added protection. See [Configuring two-factor authentication](https://help.github.com/en/articles/configuring-two-factor-authentication) in the GitHub help.
 
 We also recommend creating a personal access token for your account to use when interacting with GitHub in scripts and on the command line. See [Creating a personal access token for the command line](https://help.github.com/en/articles/creating-a-personal-access-token-for-the-command-line) in the GitHub help.
@@ -64,7 +63,7 @@ Please review the following supported and accepted pull request rules. We define
 1. PRs that include new logic or new features must be submitted along with:
   * Unit/integration test coverage (we will be releasing more information about writing test coverage in the near future).
   * Follow the [Magento DevDocs contribution work flow and guidelines](https://github.com/magento/devdocs/blob/master/.github/CONTRIBUTING.md) to submit proposed documentation updates to the [Magento DevDocs Github repository](https://github.com/magento/devdocs).
-1. For large features or changes, [open an issue](https://github.com/magento/magento2/issues) to discuss your proposal first.  Notifying us in advance can prevent duplicate or unnecessary effort, and also offers an opportunity to get additional background information and help from other contributors. 
+1. For large features or changes, [open an issue](https://github.com/magento/magento2/issues) to discuss your proposal first.  Notifying us in advance can prevent duplicate or unnecessary effort, and also offers an opportunity to get additional background information and help from other contributors.
 1. To report a bug, [open an issue](https://github.com/magento/magento2/issues), and follow the [Issue reporting guidelines](https://github.com/magento/magento2/wiki/Issue-reporting-guidelines).
 1. Verify that all automated tests on your pull request pass successfully–all builds on [Travis CI](https://travis-ci.org/magento/magento2) must be green.
 

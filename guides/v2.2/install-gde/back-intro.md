@@ -1,5 +1,5 @@
 ---
-group: 
+group:
 title: Go back to the Magento installation overview
 functional_areas:
   - Install

@@ -29,7 +29,6 @@ Unless you changed Elasticsearch server settings, the defaults should work. Skip
 |**Elasticsearch Index Prefix**|Enter the Elasticsearch index prefix. If you use a single Elasticsearch instance for more than one Magento installation (Staging and Production environments), you must specify a unique prefix for each installation. Otherwise, you can use the default prefix magento2.|
 |**Enable Elasticsearch HTTP Auth**|Click **Yes** only if you enabled authentication for your Elasticsearch server. If so, provide a username and password in the provided fields.|
 
-
 {:start="4"}
 1. Click **Test Connection**.
 
@@ -56,7 +55,7 @@ In particular, make sure you started Elasticsearch as a user with `root` privile
 * Verify the value of the **Elasticsearch Server Hostname** field. Make sure the server is available. You can try the server's IP address instead.
 * Use the command `netstat -an | grep **listen-port**` command to verify that the port specified in the **Elasticsearch Server Port** field is not being used by another process.
   For example, to see if Elasticsearch is running on its default port, use the following command:
-  
+
   ```bash
   netstat -an | grep 9200
   ```

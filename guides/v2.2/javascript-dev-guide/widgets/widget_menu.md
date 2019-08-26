@@ -90,7 +90,6 @@ Add class for expanded option.
 {:.bs-callout .bs-callout-info} The following methods from [jQuery UI menu widget]
 were adjusted in scope of the widget: `expand(event)` and `select(event)`.
 
-
 [lib/web/mage/menu.js]: {{ site.mage2bloburl }}/{{ page.guide_version }}/lib/web/mage/menu.js
 [Initialize JavaScript]: {{page.baseurl}}/javascript-dev-guide/javascript/js_init.html
 [jQuery UI menu widget]: http://api.jqueryui.com/menu/

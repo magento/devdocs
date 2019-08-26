@@ -51,7 +51,7 @@ The example of the default test suite:
 
 This set of rules selects functional tests that accepts the following criteria:
 
- - WITH the tag `const test_type = 'acceptance_test'`  
+ - WITH the tag `const test_type = 'acceptance_test'`
  - EXCEPT test cases with the tag `const stable = 'no'`
 
  AND runs variations
@@ -175,7 +175,6 @@ The class filter example:
 </config>
 
 ```
-
 
 ### `scope = "testcase"` {#scope-testcase}
 

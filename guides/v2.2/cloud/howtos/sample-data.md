@@ -37,7 +37,7 @@ To install sample data:
     ```bash
     git add -A && git commit -m "Install sample data"
     ```
-    
+
     ```bash
     git push origin <branch name>
     ```

@@ -296,7 +296,6 @@ class Synonym extends \Magento\Mtf\Fixture\InjectableFixture
      */
     protected $handlerInterface = 'Magento\Search\Test\Handler\Synonym\SynonymInterface';
 
-
     /**
      * @var array
      */
@@ -610,7 +609,6 @@ Now we have the following structure:
 
 ![Form mapping block]({{ site.baseurl }}/common/images/ftf/mtf_tutorial_block_mapping.png)
 
-
 Then we should add the block class to the `SynonymsNew.xml` page object. To identify a form block on the HTML page, use an `id='page:main-container'` [css](https://glossary.magento.com/css) selector.
 
 ```xml
@@ -621,7 +619,7 @@ Then we should add the block class to the `SynonymsNew.xml` page object. To iden
 
 The `save()` method from the [`\Magento\Backend\Test\Block\FormPageActions`][] block class allows you to click the "Save Synonym Group" button.
 
-The `SynonymsNew.xml` page must contain this class. The `.page-main-actions` css selector will help to identify a UI block with the button on the HTML page.  
+The `SynonymsNew.xml` page must contain this class. The `.page-main-actions` css selector will help to identify a UI block with the button on the HTML page.
 
 ```xml
 <block name="formPageActions" class="Magento\Backend\Test\Block\FormPageActions" locator=".page-main-actions" strategy="css selector" />
@@ -1017,7 +1015,6 @@ That's it!
 [install one]: {{ page.baseurl }}/install-gde/prereq/dev_install.html
 [concrete Magento commit]: https://github.com/magento/magento2/tree/a9797cd9c7bc7ac8460dba3fea8548741be1cccd
 
-
 [fixture]: {{ page.baseurl }}/mtf/mtf_entities/mtf_fixture.html
 [data set]: {{ page.baseurl }}/mtf/mtf_entities/mtf_dataset.html
 [data source]: {{ page.baseurl }}/mtf/mtf_entities/mtf_fixture.html#mtf_fixture_source
@@ -1036,7 +1033,6 @@ That's it!
 [Page topic]: {{ page.baseurl }}/mtf/mtf_entities/mtf_page.html
 [constraint]: {{ page.baseurl }}/mtf/mtf_entities/mtf_constraint.html
 [custom typified element]: {{ page.baseurl }}/mtf/mtf_entities/mtf_typified-element.html#magento_class
-
 
 [adjust a configuration]: {{ page.baseurl }}/mtf/mtf_quickstart/mtf_quickstart_config.html
 [prepare Magento application]: {{ page.baseurl }}/mtf/mtf_quickstart/mtf_quickstart_magento.html

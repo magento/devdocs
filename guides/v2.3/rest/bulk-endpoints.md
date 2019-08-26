@@ -7,7 +7,7 @@ functional_areas:
   - Integration
 ---
 
-Bulk API endpoints differ from other REST endpoints in that they combine multiple calls of the same type into an array and execute them as a single request. The endpoint handler splits the array into individual entities and writes them as separate messages to the message queue. 
+Bulk API endpoints differ from other REST endpoints in that they combine multiple calls of the same type into an array and execute them as a single request. The endpoint handler splits the array into individual entities and writes them as separate messages to the message queue.
 
 {:.bs-callout .bs-callout-tip}
 Use the `bin/magento queue:consumers:start async.operations.all` command to enable bulk endpoint processing.
@@ -23,9 +23,8 @@ POST /async/bulk/V1/customers
 
 Endpoint routes that contain input parameters require additional changes. For example, `PUT /V1/products/:sku/media/:entryId` contains the `:sku` and `:entryId` input parameters. The route of a bulk request cannot contain input parameters, so you must change the route so that it does not contain any. To do this, replace the colon (`:`) with `by` and change the first letter of the parameter to uppercase.
 
- 
 The following table provides several examples:
- 
+
 Synchronous route | Bulk route
 --- | ---
 `PUT /V1/products/:sku/media/:entryId` | `PUT async/bulk/V1/products/bySku/media/byEntryId`
@@ -36,7 +35,7 @@ GET and DELETE requests are not supported.
 
 ### Payloads
 
-The payload of a bulk request contains an array of request bodies. For example, the minimal payload for creating four customers with `POST /async/bulk/V1/customers` would be structured as follows: 
+The payload of a bulk request contains an array of request bodies. For example, the minimal payload for creating four customers with `POST /async/bulk/V1/customers` would be structured as follows:
 
 ```json
 [{

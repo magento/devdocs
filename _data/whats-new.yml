@@ -2968,7 +2968,7 @@ entries:
   date: Oct 23 2017
 - description: Updated content for Magento Commerce (Cloud) for the updated Pro projects
     in [Manage your project](https://devdocs.magento.com/guides/v2.2/cloud/project/projects.html),
-    [Add Staging and Production to Pro projects](https://devdocs.magento.com/guides/v2.2/cloud/trouble/pro-env-management.html),
+    Add Staging and Production to Pro projects,
     [Deploy your store](https://devdocs.magento.com/guides/v2.2/cloud/live/stage-prod-live.html),
     [Deployment process](https://devdocs.magento.com/guides/v2.2/cloud/reference/discover-deploy.html),
     [Prepare to deploy to Staging and Production](https://devdocs.magento.com/guides/v2.2/cloud/live/stage-prod-migrate-prereq.html),
@@ -2985,7 +2985,7 @@ entries:
   date: Oct 18 2017
 - description: 'Update Magento Commerce (Cloud) content for new features for Pro plan:
     [Manage your project](https://devdocs.magento.com/guides/v2.2/cloud/project/projects.html),
-    [Add Staging and Production to Pro projects](https://devdocs.magento.com/guides/v2.2/cloud/trouble/pro-env-management.html),
+    Add Staging and Production to Pro projects,
     [Configure your project](https://devdocs.magento.com/guides/v2.2/cloud/project/project-webint-basic.html),
     [Create and manage users](https://devdocs.magento.com/guides/v2.2/cloud/project/user-admin.html),
     [Manage branches with the Interface](https://devdocs.magento.com/guides/v2.2/cloud/project/project-webint-branch.html),

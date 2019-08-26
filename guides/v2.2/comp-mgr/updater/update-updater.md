@@ -19,7 +19,7 @@ To update the updater application:
 	 mv <magento_root>/update <magento_root>/old_update
 	 ```
 1. Change to your Magento 2 installation directory and enter the following command:
-   
+
 	 ```bash
 	 composer create-project magento/updater update --repository https://repo.magento.com
 	 ```

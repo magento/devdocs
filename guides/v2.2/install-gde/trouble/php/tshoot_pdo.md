@@ -17,5 +17,5 @@ functional_areas:
 
 ### Solution:
 
-Make sure you installed all required PHP extensions ([Ubuntu]({{ page.baseurl }}/install-gde/prereq/php-centos.html) [CentOS]({{ page.baseurl }}/install-gde/prereq/php-ubuntu.html)). 
+Make sure you installed all required PHP extensions ([Ubuntu]({{ page.baseurl }}/install-gde/prereq/php-centos.html) [CentOS]({{ page.baseurl }}/install-gde/prereq/php-ubuntu.html)).
 
