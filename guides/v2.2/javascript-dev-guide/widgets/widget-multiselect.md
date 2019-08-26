@@ -32,7 +32,7 @@ Phtml template file examples using script:
         'mage/multiselect'
     ], function ($) {
         'use strict';
-        
+
         $("#multiselect").multiselect2({});
     });
 </script>
