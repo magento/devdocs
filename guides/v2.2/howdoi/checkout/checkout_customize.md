@@ -96,7 +96,7 @@ To move any component on your checkout page, find the component (parent) where i
 The following example shows how to move the discount component to the order summary block, which will display on both shipping and billing steps.
 
 ```xml
-<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
             xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceBlock name="checkout.root">
@@ -134,7 +134,7 @@ The following example shows how to move the discount component to the order summ
 ```
 
 {:.bs-callout-info}
-Remember to [disable](#disable) or [remove](#remove) the component from its original location, or they will conflict with each other. 
+Remember to [disable](#disable) or [remove](#remove) the component from its original location, or they will conflict with each other.
 
 ### Order Summary Result
 
