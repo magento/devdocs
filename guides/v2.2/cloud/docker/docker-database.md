@@ -63,9 +63,9 @@ return [
     Sample response:
 
     ```terminal
-              Name                         Command               State               Ports            
+              Name                         Command               State               Ports
     --------------------------------------------------------------------------------------------------
-    mc-master_db_1              docker-entrypoint.sh mysqld      Up       0.0.0.0:32769->3306/tcp   
+    mc-master_db_1              docker-entrypoint.sh mysqld      Up       0.0.0.0:32769->3306/tcp
     ```
     {: .no-copy}
 

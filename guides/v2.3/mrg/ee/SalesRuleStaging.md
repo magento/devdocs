@@ -13,7 +13,7 @@ The Magento_SalesRuleStaging module is a part of the staging functionality in Ma
 
 ## Implementation Details
 
-The Magento_SalesRuleStaging module changes the Cart Price Rules page and the sales rule related database tables to make them compatible with the Magento Staging Framework. 
+The Magento_SalesRuleStaging module changes the Cart Price Rules page and the sales rule related database tables to make them compatible with the Magento Staging Framework.
 The Magento_SalesRuleStaging module enables you to stage the following sales rule attributes:
 
 - Rule Name
@@ -25,9 +25,9 @@ The Magento_SalesRuleStaging module enables you to stage the following sales rul
 - Action
 
 This module depends on the Magento_SalesRule module and extends its functionality. It changes database structure of the Magento_SalesRule module and the way in which sales rules are managed.
- 
+
 ### Installation Details
- 
+
 Do not uninstall the Magento_SalesRuleStaging module, because it makes irreversible changes in the database during installation. Also, the Magento_SalesRule module cannot be disabled.
 
 ## Dependencies

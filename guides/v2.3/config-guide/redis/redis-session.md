@@ -52,7 +52,6 @@ where
 |session-save-redis-sentinel-verify-master|sentinel_verify_master|Verify Redis Sentinel master status flag|0 (false)|
 |session-save-redis-sentinel-connect-retires|sentinel_connect_retries|Connection retries for sentinels|5|
 
-
 ### Example command
 
 The following example sets Redis as the session data store, sets the host to `127.0.0.1`, sets the log level to 3, and sets the database number to 2. All other parameters are set to the default value.

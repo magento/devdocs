@@ -20,7 +20,7 @@ The Output disabling is performed in following classes:
 - [\Magento\Backend\Block\Template::isOutputEnabled]({{ site.mage2bloburl }}/0c786907ffe03d0e2990612eec16ee58b00379c5/app/code/Magento/Backend/Block/Template.php#L96){:target="_blank"}
 
 {:.bs-callout .bs-callout-warning}
-Please note that by disabling the module's output, the module is still enabled and keeps working, but no block, page or field is rendered on the frontend or backend. 
+Please note that by disabling the module's output, the module is still enabled and keeps working, but no block, page or field is rendered on the frontend or backend.
 
 ## Disable module output in a pipeline deployment
 

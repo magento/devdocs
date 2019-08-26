@@ -178,7 +178,6 @@ To verify the configuration settings:
 
 	![Check settings in the production system]({{ site.baseurl }}/common/images/config_split-deploy_verify_contacts.png){:width="400px"}
 
-
 7.	In the left pane, click Customers > **Customer Configuration**.
 8.	In the right pane, expand **Create New Account Options**.
 

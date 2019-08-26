@@ -35,7 +35,6 @@ Name | Description | Type | Requirements
 `type` | Defines the type of sales channel. This value must be `website`. | String | Required for POST operations
 `code` | Specifies a valid website code name | String | Required for POST operations
 
-
 ## Create a stock
 
 Only one stock can be mapped to each sales channel. If you assign a sales channel that is already mapped to another stock, the sales channel will be removed from the original stock.

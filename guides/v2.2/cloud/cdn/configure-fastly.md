@@ -148,7 +148,7 @@ to the origin.
 The default Fastly VCL code specifies default values for Origin shielding and timeouts for your {{ site.data.var.ece }} sites. We recommend using the default values. In some case, you might need to modify the default values. For example, if you are getting a lot of time to first byte (TTFB) errors, you might need to adjust the _first byte timeout_ value.
 
 {:.bs-callout-info}
-If you need to integrate additional backends into your site such as a backend to serve blog content from a 
+If you need to integrate additional backends into your site such as a backend to serve blog content from a
 [Wordpress]({{ page.baseurl }}/cloud/cdn/fastly-vcl-wordpress.html) site, you must customize your Fastly service configuration to add the backend and handle the redirects from your {{ site.data.var.ee }} store to the Wordpress backend. For details, see [Fastly Edge Modules - Other CMS/Backend integration](https://github.com/fastly/fastly-magento2/blob/master/Documentation/Guides/Edge-Modules/EDGE-MODULE-OTHER-CMS-INTEGRATION.md) in the Fastly module documentation.
 
 **To review the backend settings configuration:**
@@ -188,7 +188,7 @@ If you need to integrate additional backends into your site such as a backend to
 
 1. Modify the timeout values (in microseconds) for the connection to the
    shield, time between bytes, and time for the first byte. We recommend keeping the default timeout settings.
-  
+
 1. Optionally, select to **Activate the backend and Shield after editing or saving**.
 
 1. Click **Upload** to save your changes and upload them to the Fastly servers.
@@ -254,7 +254,7 @@ Fastly sets a 180 second-timeout for HTTPS requests to the Magento Admin, so you
 
 1.  Set the **Admin path timeout** value in seconds. This value cannot be more
    than one hour (3600 seconds).
-   
+
 1.  Click **Save Config** at the top of the page.
 
 1.  After the page reloads, click **Upload VCL to Fastly** in the
@@ -271,15 +271,15 @@ provide a list of stores matching their obtained country code. If you already us
 
 1. Scroll down and select **Yes** to **Enable GeoIP**. Additional configuration
    options display.
-   
+
 1. For GeoIP Action, select if the visitor is automatically redirected with
    **Redirect** or provided a list of stores to select from with **Dialog**.
-   
+
 1. For **Country Mapping**, click **Add** to enter a two-letter country code to
    map with a specific Magento store from a list. For a list of country codes, see [this site](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2).
 
 	![Add GeoIP country maps]({{ site.baseurl }}/common/images/cloud_fastly-geo-code.png)
-	
+
 1. Click **Save Config** at the top of the page.
 
 1. After page reload, click **Upload VCL to Fastly** in the *Fastly Configuration* section.

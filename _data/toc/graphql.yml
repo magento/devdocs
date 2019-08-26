@@ -47,6 +47,12 @@ pages:
 
     - label: Queries
       children:
+        - label: category query
+          url: /graphql/queries/category.html
+
+        - label: checkoutAgreements query
+          url: /graphql/queries/checkout-agreements.html
+
         - label: cmsBlock query
           url: /graphql/queries/cms-block.html
 
@@ -62,14 +68,26 @@ pages:
         - label: currency query
           url: /graphql/queries/directory-currency.html
 
+        - label: customAttributeMetadata query
+          url: /graphql/queries/custom-attribute-metadata.html
+
         - label: customerOrders query
           url: /graphql/queries/customer-orders.html
+
+        - label: customerDownloadableProducts query
+          url: /graphql/queries/customer-downloadable-products.html
 
         - label: customerPaymentTokens query
           url: /graphql/queries/customer-payment-tokens.html
 
         - label: getHostedProUrl query
           url: /graphql/queries/get-hosted-pro-url.html
+
+        - label: getPayflowLinkToken query
+          url: /graphql/queries/get-payflow-link-token.html
+
+        - label: products query
+          url: /graphql/queries/products.html
 
         - label: storeConfig query
           url: /graphql/queries/store-config.html
@@ -82,58 +100,57 @@ pages:
         
     - label: Mutations
       children:
+        - label: addConfigurableProductsToCart mutation
+          url: /graphql/mutations/add-configurable-products.html
+
         - label: applyStoreCreditToCart mutation
           url: /graphql/mutations/apply-store-credit.html
+
+        - label: createPayflowProToken mutation
+          url: /graphql/mutations/create-payflow-pro-token.html
 
         - label: deletePaymentToken mutation
           url: /graphql/mutations/delete-payment-token.html
 
+        - label: handlePayflowProResponse mutation
+          url: /graphql/mutations/handle-payflow-pro-response.html
+
+        - label: redeemGiftCardBalanceAsStoreCredit mutation
+          url: /graphql/mutations/redeem-giftcard-balance.html
+
+        - label: removeGiftCardFromCart mutation
+          url: /graphql/mutations/remove-giftcard.html
+
         - label: removeStoreCreditFromCart mutation
           url: /graphql/mutations/remove-store-credit.html
-    
+
+    - label: Product data types and interfaces
+      children:
+        - label: Product interface implementations
+          url: /graphql/product/product-interface-implementations.html
+
+        - label: CustomizableOptionInterface
+          url: /graphql/product/customizable-option-interface.html
+
+        - label: Bundle product data types
+          url: /graphql/product/bundle-product.html
+
+        - label: Configurable product data types
+          url: /graphql/product/configurable-product.html
+
+        - label: Downloadable product data types
+          url: /graphql/product/downloadable-product.html
+
+        - label: GiftCardProduct data types
+          url: /graphql/product/gift-card-product.html
+
+        - label: GroupedProduct data types
+          url: /graphql/product/grouped-product.html
+
     - label: Reference
       children:
-            - label: CustomAttributeMetadata endpoint
-              url: /graphql/reference/custom-attribute-metadata.html
-
             - label: Customer endpoint
               url: /graphql/reference/customer.html
-
-            - label: Payflow Link getPayflowLinkToken query
-              url: /graphql/reference/paypal-get-payflow-link-token.html
-
-            - label: Payflow Pro createPayflowProToken mutation
-              url: /graphql/reference/paypal-create-payflow-pro-token.html
-
-            - label: Payflow Pro handlePayflowProResponse mutation
-              url: /graphql/reference/paypal-handle-payflow-pro-response.html
-
-            - label: Products endpoint
-              url: /graphql/reference/products.html
-              children:
-                - label: Product interface implementations
-                  url: /graphql/reference/product-interface-implementations.html
-
-                - label: CustomizableOptionInterface
-                  url: /graphql/reference/customizable-option-interface.html
-
-                - label: BundleProduct endpoint
-                  url: /graphql/reference/bundle-product.html
-
-                - label: Category endpoint
-                  url: /graphql/reference/categories.html
-
-                - label: ConfigurableProduct endpoint
-                  url: /graphql/reference/configurable-product.html
-
-                - label: DownloadableProduct endpoint
-                  url: /graphql/reference/downloadable-product.html
-
-                - label: GiftCardProduct endpoint
-                  url: /graphql/reference/gift-card-product.html
-
-                - label: GroupedProduct endpoint
-                  url: /graphql/reference/grouped-product.html
 
             - label: Quote endpoint (cart query)
               url: /graphql/reference/quote.html
@@ -163,9 +180,6 @@ pages:
                 - label: removeCouponFromCart mutation
                   url: /graphql/reference/quote-remove-coupon.html
 
-                - label: removeGiftCardFromCart mutation
-                  url: /graphql/reference/quote-remove-giftcard.html
-
                 - label: removeItemFromCart mutation
                   url: /graphql/reference/quote-remove-item.html
 
@@ -190,14 +204,17 @@ pages:
                 - label: updateCartItems mutation
                   url: /graphql/reference/quote-update-cart-items.html
 
-            - label: redeemGiftCardBalanceAsStoreCredit mutation
-              url: /graphql/reference/redeem-giftcard-balance.html
-
     - label: Payment methods
       children:
 
         - label: Authorize.Net
           url: /graphql/payment-methods/authorize-net.html
+
+        - label: Braintree
+          url: /graphql/payment-methods/braintree.html
+
+        - label: Braintree Vault
+          url: /graphql/payment-methods/braintree-vault.html
 
         - label: PayPal Express Checkout
           url: /graphql/payment-methods/paypal-express-checkout.html

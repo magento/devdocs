@@ -34,7 +34,6 @@ While the [XML](https://glossary.magento.com/xml) tells Magento about the compon
 
 Declare a `getData()` method in the data provider class that was referenced in the XML and return a value. Since that output will be part of the JSON rendered on the page, it is accessible via the [javascript](https://glossary.magento.com/javascript) class that is associated with the UI component and handles its behavior. Magento's Form Provider javascript class is often a good place to start.
 
-
 {:.bs-callout .bs-callout-info}
 A Javascript "component" is actually a Javascript file loaded through RequireJS. It should return a Javascript object that defines a module or function. Do not confuse Javascript components with UI components.
 

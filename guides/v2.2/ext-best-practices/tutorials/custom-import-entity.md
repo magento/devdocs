@@ -8,21 +8,21 @@ contributor_link: https://www.atwix.com/
 This tutorial shows you how to extend the [Magento/ImportExport/Model/Import/Entity/AbstractEntity][0]{:target="_blank"} class to import data into your custom module's table.
 The current import entities can be found in **System** > **Import**:
 
-- Advanced Pricing
-- Products
-- Customers and Addresses (single file)
-- Customers Main File
-- Customer Addresses
+-  Advanced Pricing
+-  Products
+-  Customers and Addresses (single file)
+-  Customers Main File
+-  Customer Addresses
 
-To begin, let's suppose we have a custom table with the following structure:
+To begin, suppose we have a custom table with the following structure:
 
 | entity_id | name | duration |
 | --- | --- | --- |
 |           |  |  |
 
-## Step 1: Adding a New Entity Type
+## Step 1: Adding a new entity type
 
-Declaring our new import entity:
+Declare the new import entity:
 
 > `etc/import.xml`
 
@@ -34,7 +34,7 @@ Declaring our new import entity:
 </config>
 ```
 
-As we extend the **Magento_ImportExport** module, we should also add a dependency to it in the `module.xml` file.
+Extending the **Magento_ImportExport** module, we create a dependency to it in the `module.xml` file.
 
 > `etc/module.xml`
 
@@ -46,13 +46,13 @@ As we extend the **Magento_ImportExport** module, we should also add a dependenc
 ...
 ```
 
-## Step 2: Defining the Import Model
+## Step 2: Defining the import model
 
-As we extend the [Magento/ImportExport/Model/Import/Entity/AbstractEntity][0]{:target="_blank"}, we should implement the following abstract methods:
+As we extend the [Magento/ImportExport/Model/Import/Entity/AbstractEntity][0]{:target="_blank"}, we implement the following abstract methods:
 
-- `_importData` - Import data rows
-- `getEntityTypeCode` - EAV entity type code getter
-- `validateRow` - Validating the row
+-  `_importData` - Import data rows
+-  `getEntityTypeCode` - EAV entity type code getter
+-  `validateRow` - Validating the row
 
 > `OrangeCompany/Learning/Model/Import/Courses.php`
 
@@ -177,9 +177,9 @@ class Courses extends AbstractEntity
         if (isset($this->_validatedRows[$rowNum])) {
             return !$this->getErrorAggregator()->isRowInvalid($rowNum);
         }
-    
+
         $this->_validatedRows[$rowNum] = true;
-    
+
         return !$this->getErrorAggregator()->isRowInvalid($rowNum);
     }
 
@@ -203,7 +203,7 @@ class Courses extends AbstractEntity
                 $this->saveAndReplaceEntity();
                 break;
         }
-    
+
         return true;
     }
 
@@ -351,13 +351,13 @@ class Courses extends AbstractEntity
 
 {% endcollapsible %}
 
-## Result
+## Step 3. Providing the sample file
 
-As result, we should be able to see the new Entity Type:
- 
-![Import Entity]({{ site.baseurl }}/common/images/ext-best-practices/import-entity.png)
- 
- Here is a sample csv file we can use to import data into our table.
+To add the ability to download a sample csv file for our new entity, create the following file:
+
+``OrangeCompany/Learning/Files/Sample/learning.csv``
+
+With the following content:
 
 ```text
 entity_id,name,duration
@@ -366,6 +366,29 @@ entity_id,name,duration
 ```
 
 {:.bs-callout .bs-callout-info}
-For updating the table's data, you must provide the `entity_id` value for each row.
+When updating the table's data, you must provide the `entity_id` value for each row.
+
+Next, register the sample file for our entity.
+
+> `etc/adminhtml/di.xml`
+
+```xml
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_ImportExport:etc/import.xsd">
+    <type name="Magento\ImportExport\Model\Import\SampleFileProvider">
+        <arguments>
+            <argument name="samples" xsi:type="array">
+                <item name="learning" xsi:type="string">OrangeCompany_Learning</item>
+            </argument>
+        </arguments>
+    </type>
+</config>
+```
+
+## Result
+
+As result, the new Entity Type and the sample CSV are available:
+
+![Import Entity]({{ site.baseurl }}/common/images/ext-best-practices/import-entity.png)
 
 [0]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/ImportExport/Model/Import/Entity/AbstractEntity.php

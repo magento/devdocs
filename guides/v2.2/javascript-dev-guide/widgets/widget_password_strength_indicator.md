@@ -9,13 +9,15 @@ title: PasswordStrengthIndicator widget
 The Magento password strength indicator [widget](https://glossary.magento.com/widget) provides immediate feedback on the validity and strength of a password while it is being typed.
 If the password is not strong enough, Magento prompts the user to choose a new password.
 
+The PasswordStrengthIndicator widget can be used only on the frontend area.
+
 The password strength indicator widget source is [`<Magento_Customer_module_dir>/view/frontend/web/js/password-strength-indicator.js`].
 
 The widget is being used in the following templates:
 
-- [`<Magento_Ui_module_dir>/view/frontend/templates/form/register.phtml`] customer register template.
-- [`<Magento_Ui_module_dir>/view/frontend/templates/form/forgotpassword.phtml`] customer forgot password template.
-- [`<Magento_Ui_module_dir>/view/frontend/templates/form/edit.phtml`] customer account edit template.
+- [`<Magento_Customer_module_dir>/view/frontend/templates/form/register.phtml`] customer register template.
+- [`<Magento_Customer_module_dir>/view/frontend/templates/form/forgotpassword.phtml`] customer forgot password template.
+- [`<Magento_Customer_module_dir>/view/frontend/templates/form/edit.phtml`] customer account edit template.
 
 ## Initialize the password_strength_indicator widget {#password_strength_indicator_initialize}
 
@@ -27,6 +29,28 @@ $('#password-input').passwordStrengthIndicator({
     <option2>: <value2>,
     ...
 });
+```
+
+Where:
+
+- `#password-input` is the selector of the element for which PasswordStrengthIndicator is initialized.
+
+Phtml template file examples using script:
+
+```html
+<script>
+    require([
+        'jquery',
+        'passwordStrengthIndicator'
+    ], function ($) {
+        'use strict';
+
+        $("#password-input").passwordStrengthIndicator({
+              "passwordStrengthMeterSelector":"[data-role=strength-meter]",
+              "passwordStrengthMeterLabelSelector":"[data-role=strength-meter-label]"
+        });
+    });
+</script>
 ```
 
 For details about how to initialize the widget in a`.phtml` template, refer to the [JavaScript initialization]({{ page.baseurl }}/javascript-dev-guide/javascript/js_init.html){:target="_blank"} topic.
@@ -44,7 +68,7 @@ The password strength indicator widget has the following options:
 
 Selector for the password input.
 
-**Type**: String 
+**Type**: String
 
 **Default value**: `[type=password]`
 
@@ -52,7 +76,7 @@ Selector for the password input.
 
 Selector for the password strength visualization block.
 
-**Type**: String 
+**Type**: String
 
 **Default value**: `[data-role=password-strength-meter]`
 
@@ -60,7 +84,7 @@ Selector for the password strength visualization block.
 
 Selector for the password strength visualization block label.
 
-**Type**: String 
+**Type**: String
 
 **Default value**: `[data-role=password-strength-meter-label]`
 
@@ -68,7 +92,7 @@ Selector for the password strength visualization block label.
 
 The selector for the form block.
 
-**Type**: String 
+**Type**: String
 
 **Default value**: `form`
 
@@ -76,7 +100,7 @@ The selector for the form block.
 
 The selector for the email input.
 
-**Type**: String 
+**Type**: String
 
 **Default value**: `input[type="email"]`
 
@@ -121,3 +145,9 @@ The following example shows how to initialize the password strength indicator wi
 The result is an indication of the strength of the user's password.
 
 ![Password Strength Indicator Widget]({{ site.baseurl }}/common/images/widget/password-strength-indicator-widget-result.png)
+
+<!-- Link Definitions -->
+[`<Magento_Customer_module_dir>/view/frontend/web/js/password-strength-indicator.js`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Customer/view/frontend/web/js/password-strength-indicator.js
+[`<Magento_Customer_module_dir>/view/frontend/templates/form/register.phtml`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Customer/view/frontend/templates/form/register.phtml
+[`<Magento_Customer_module_dir>/view/frontend/templates/form/forgotpassword.phtml`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Customer/view/frontend/templates/form/forgotpassword.phtml
+[`<Magento_Customer_module_dir>/view/frontend/templates/form/edit.phtml`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Customer/view/frontend/templates/form/edit.phtml

@@ -69,7 +69,7 @@ Before you continue, push all current code to the remote Cloud server so that, i
     ```bash
     git add -A && git commit -m "<comment>"
     ```
-    
+
     ```bash
     git push origin <branch name>
     ```
@@ -111,7 +111,7 @@ Before you continue, you must know the file system path to any patch we provided
 
 		... more ...
 							)
-              
+
 2.	Apply hotfixes and other patches provided to you:
 
 		git apply <path to patch>
@@ -134,7 +134,7 @@ Before you continue, you must know the file system path to any patch we provided
     ```bash
     php bin/magento  setup:di:compile
     ```
-    
+
 	This command can take several minutes to complete and produces messages similar to the following:
 
     ```terminal

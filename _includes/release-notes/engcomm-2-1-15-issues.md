@@ -1,5 +1,4 @@
 
-
 | Contributing community member | Pull Requests | Related GitHub Issues |
 | ------- | ------- | ------- |
 | ampulos | [#14665](https://github.com/magento/magento2/pull/14665) | [13652](https://github.com/magento/magento2/issues/13652) |

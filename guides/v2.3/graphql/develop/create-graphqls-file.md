@@ -99,11 +99,7 @@ url_key: String @doc(description: "The url key assigned to the product")
 product_count: Int @doc(description: "The number of products")
 ```
 
-Use the `@deprecated` directive to mark a query, mutation, or attribute as deprecated:
-
-```text
-@deprecated(reason: "description")
-```
+Use the `@deprecated` directive to deprecate attributes and enum values. The GraphQL specification does not permit deprecating input values or arguments. The `reason` keyword allows you to specify which attribute/field or enum value should be used instead.
 
 For example:
 

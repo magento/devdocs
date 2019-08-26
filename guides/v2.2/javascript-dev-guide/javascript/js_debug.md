@@ -34,7 +34,6 @@ Using the Inspect Element feature of the browser, define that the menu section `
 
 ![Using the Inspect Element define the id]
 
-
 Search the page source for `store.menu` (illustration follows):
 
 ![Search the page source for the store.menu string]

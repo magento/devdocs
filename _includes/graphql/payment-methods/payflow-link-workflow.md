@@ -4,13 +4,13 @@
 
 1. The client runs the [`placeOrder`]({{page.baseurl}}/graphql/reference/quote-place-order.html) mutation, which creates an order in Magento and begins the authorization process.
 
-1. Magento requests a secure token from the Paypal gateway. 
+1. Magento requests a secure token from the Paypal gateway.
 
 1. The gateway response includes a secure token, a secure token ID, and the URL to use for requesting the form in step 9. This token secures the data for a one-time transaction and is valid for 30 minutes.
 
 1. The `placeOrder` mutation returns an order ID. Magento does not return secure token information. The order has the status `payment pending`.
 
-1. The client runs the [`getPayflowLinkToken`]({{page.baseurl}}/graphql/reference/paypal-get-payflow-link-token.html) mutation to retrieve the secure token information.
+1. The client runs the [`getPayflowLinkToken`]({{page.baseurl}}/graphql/queries/get-payflow-link-token.html) mutation to retrieve the secure token information.
 
 1. Magento returns the token information.
 

@@ -116,7 +116,6 @@ The following example changes the status of a company user to inactive.
 
 If you change the `status` to inactive, the account is locked. If the company user has child users, the system re-assigns the child users to the parent of the deactivated user.
 
-
 **Sample Usage**
 
 `PUT <host>/rest/<store_code>/V1/customers/13`
