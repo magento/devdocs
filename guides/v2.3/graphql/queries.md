@@ -477,7 +477,7 @@ This query searches for products that have `name` that ends with `Short` or has 
 
 The query returns 14 items.
 
-#### Retrieve related products, Up-sells and Cross-sells 
+#### Retrieve related products, Up-sells and Cross-sells
 
 The following query shows how to get related products, Up-sells and Cross-sells for the particular product:
 
@@ -504,7 +504,7 @@ The following query shows how to get related products, Up-sells and Cross-sells 
 }
 ```
 
-**Response** 
+**Response**
 
 ```json
 {

@@ -118,7 +118,7 @@ mutation {
       payment_method: {
           code: "checkmo"
       }
-  }) {    
+  }) {
     order {
       order_id
     }

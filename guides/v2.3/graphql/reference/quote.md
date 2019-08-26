@@ -507,7 +507,6 @@ Attribute |  Data Type | Description
 `code` | String | The state or province code
 `label` | String | The display label for the region
 
-
 #### CartDiscount object {#CartDiscount}
 
 The `CartDiscount` object must contain the following attributes.
