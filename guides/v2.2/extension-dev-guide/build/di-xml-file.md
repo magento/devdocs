@@ -354,12 +354,12 @@ See [sensitive and environment settings]({{ page.baseurl }}/extension-dev-guide/
 *   [Magento Enterprise B2B Extension configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-b2b.html)
 
 ## Get dependency injection configuration information for a class
- 
+
 Use the [dev:di:info]({{ page.baseurl }}/reference/cli/magento.html#devdiinfo) command to retrieve information about dependency injection configuration for a class. The following example retrieves the dependency injection configuration information for the `Magento\Quote\Model\Quote\Item\ToOrderItem` class:
 
 ```bash
 bin/magento dev:di:info "Magento\Quote\Model\Quote\Item\ToOrderItem"
-``` 
+```
 
 ```terminal
 DI configuration for the class Magento\Quote\Model\Quote\Item\ToOrderItem in the GLOBAL area
@@ -394,7 +394,7 @@ Plugins for the Preference:
 | Magento\GiftMessage\Model\Plugin\QuoteItem          | convert | after  |
 | Magento\Bundle\Model\Plugin\QuoteItem               | convert | after  |
 +-----------------------------------------------------+---------+--------+
-``` 
+```
 
 ## Related topics
 
