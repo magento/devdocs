@@ -327,7 +327,6 @@ The following call returns a list instances in which the credit limit was set to
 
 See [Search using REST APIs]({{ page.baseurl }}/rest/performing-searches.html) for information about constructing a search query.
 
-
 **Sample Usage**
 
 `GET <host>/rest/<store_code>/V1/companyCredits/history?searchCriteria[filter_groups][0][filters][0][field]=credit_limit&searchCriteria[filter_groups][0][filters][0][value]=500&searchCriteria[filter_groups][0][filters][0][condition_type]=gt`

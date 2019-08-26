@@ -312,7 +312,6 @@ The `GET <host>/rest/<store_code>/V1/bundle-products/24-WG080/options/all` call 
 
 For this example, we'll configure the Sprite Yoga Companion Kit as follows:
 
-
 * 65 cm Sprite Stasis Ball (`id`: `2`)
 * Sprite Foam Yoga Brick (`id`: `4`)
 * 8 ft Sprite Yoga strap (`id`: `6`)

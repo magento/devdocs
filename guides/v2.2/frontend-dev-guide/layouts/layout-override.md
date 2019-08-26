@@ -11,7 +11,6 @@ Not all layout customizations can be performed by [extending layouts]. If the am
 
 In this article, [page layouts], [page configurations], and [generic layouts] are referred to as *layout files*, as the mechanism of overriding is similar for all of them.
 
-
 Layout files with instructions that override the default or parent theme files are referred to as *overriding layout files*.
 
 ## Examples of customizations that involve overriding layouts
@@ -30,7 +29,6 @@ Examples of customizations that involve overriding layouts:
 {:.bs-callout .bs-callout-info}
 Certain attributes, like `htmlClass`, `htmlId`, `label` attributes can be changed in [extending layouts].
 
-
 *	Removing block arguments.
 *	Modifying and suppressing [handles] inclusion.
 *	Removing all handle instructions by declaring an overriding layout file with an empty handle.
@@ -45,7 +43,6 @@ This section discusses how to override:
 ### Override base layouts {#fedg_layout_override_default}
 
 To add an overriding base layout file (to override a base layout provided by the module):
-
 
 1.	Put a layout file with the same name in the following location:
 
@@ -102,8 +99,6 @@ Although the layout overriding mechanism provides great customization flexibilit
 *	[Extend a layout]({{ page.baseurl }}/frontend-dev-guide/layouts/layout-extend.html)
 *	[Create a theme]({{ page.baseurl }}/frontend-dev-guide/themes/theme-create.html)
 *	[Layout instructions]({{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html)
-
-
 
 [extending layouts]: {{page.baseurl}}/frontend-dev-guide/layouts/layout-extend.html
 [theme]: {{page.baseurl}}/frontend-dev-guide/layouts/layout-overview.html#layout-loc

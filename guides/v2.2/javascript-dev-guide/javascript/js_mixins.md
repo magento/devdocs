@@ -28,7 +28,7 @@ The following table maps a directory location to the [application area] a mixin 
 
 ### Location
 
-Mixins are JavaScript files located under the `web/js` directory under an area specific directory. 
+Mixins are JavaScript files located under the `web/js` directory under an area specific directory.
 The mixin file can be nested under more directories as long as those directories are under `web/js`.
 
 ### Format

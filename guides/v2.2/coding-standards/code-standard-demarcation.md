@@ -76,7 +76,6 @@ Use [RFC 2119](http://www.ietf.org/rfc/rfc2119.txt) to interpret the "MUST," "MU
 <a href="#some-id">Scroll to text</a>
 ```
 
-
 **Unacceptable combination of PHTML, JavaScript, and CSS files**
 
 <p>The following unacceptable example replaces a single PHTML file with a combination of a PHTML, JavaScript, and CSS files.</p>
@@ -295,7 +294,6 @@ HTML helper class names added in JavaScript REQUIRE underscore symbol ("_") at t
 <div class="billing-agreement _expanded">Content</div>
 <div class="sales-report _hidden">Content</div>
 ```
-
 
 **Unacceptable**
 

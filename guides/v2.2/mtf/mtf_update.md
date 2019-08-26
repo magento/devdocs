@@ -23,7 +23,6 @@ Use this type of update if you want to update dependent software from `composer.
 
 Step 1.    To avoid conflicts with the previous version, remove directory `<magento2_root_dir>/dev/tests/functional/generate`.
 
-
 Step 2.    Remove file `<magento2_root_dir>/dev/tests/functional/composer.lock`.
 
 {: .bs-callout-info }

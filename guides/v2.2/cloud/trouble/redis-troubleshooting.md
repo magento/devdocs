@@ -48,25 +48,4 @@ For details on MCC and the update command, see [Composer]({{ page.baseurl }}/clo
 
 ## Redis and static-content deployment {#static-content}
 
-This information helps if you receive a number of Redis connection errors in your production logs during static content deployment.
-
-```terminal
-Error: RedisException: read error on connection
-```
-
-To resolve, we recommend enabling and using Configuration Management options to move your static content deployment from the Deploy to Build phase.
-
-1. Remove all static content first from `pub/static/frontend/*` and also from `var/view_preprocessed`.
-2. Enable and use the recommended [`scd-dump` command]({{ page.baseurl }}/cloud/live/sens-data-over.html#cloud-config-specific-recomm) for Configuration Management (Pipeline Deployment). Remember, you need to add and push the file generated to Git: `config.php` for 2.2.X.
-
-If you continue to encounter these issues after using this method of deployment, you can attempt the following work-around. However, this method will dramatically increase the static content deployment time as it reduces deployment to a single thread.
-
-1. Remove all static content first from `pub/static/frontend/*` and also from `var/view_preprocessed`.
-2. SSH to the server after deployment completes.
-3. Run the following command to reduce deployment threads: 
-
-    ```bash
-    php bin/magento setup:static-content:deploy -j 1
-    ```
-
-You can also set an environment variable for single thread deployment by default: `STATIC_CONTENT_THREADS = 1`.
+If you receive a number of Redis connection errors in your production logs during static content deployment, update your {{ site.data.var.ece }} project to use the latest version of the ece-tools package and redeploy your environment. See [Upgrades and Patches]({{ page.baseurl }}/cloud/project/project-upgrade-parent.html).

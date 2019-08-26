@@ -76,5 +76,8 @@ See [Elasticsearch plugin documentation](https://www.elastic.co/guide/en/elastic
 {:.bs-callout-info}
 If you use the ElasticSuite third-party plugin, you must [update the `{{site.data.var.ct}}` package]({{page.baseurl}}/cloud/project/ece-tools-update.html) to version 2002.0.19 or later.
 
+{: .bs-callout-info }
+If you need to restart the [Elasticsearch](https://www.elastic.co) service, you must contact Magento support.
+
 {: .bs-callout-warning}
 Staging and Production environments that are in the same cluster share a single Elasticsearch instance, so you must specify a unique Elasticsearch prefix for each of these environments.

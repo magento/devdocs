@@ -50,7 +50,7 @@ In regular text, write out “percent”. However, the ”%” sign can be used 
 <ul style="list-style-type:none">
   <li><strong>No</strong> – “Merchants have reported increased sales of up to 130%”</li>
   <li>Yes – “Merchants have reported increased sales of up to 130 percent.”</li>
-</ul>  
+</ul>
 
 ## Money
 
@@ -92,7 +92,7 @@ This is how we write about money:
 
   - March, April, May, June, and July are never abbreviated in text.
 
-  - The remaining months are only abbreviated when followed by a date (Jan. 27).  
+  - The remaining months are only abbreviated when followed by a date (Jan. 27).
 
   - *Abbreviations to use:* Jan., Feb., Aug., Sept., Oct., Nov., Dec.
 
