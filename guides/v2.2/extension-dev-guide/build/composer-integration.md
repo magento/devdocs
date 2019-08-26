@@ -1,9 +1,6 @@
 ---
 group: php-developer-guide
-subgroup: 03_Build
 title: The composer.json file
-menu_title: The composer.json file
-menu_order: 1000
 ---
 
 ## Overview
@@ -33,7 +30,7 @@ Keep this in mind while customizing, updating, or troubleshooting composer while
 In Composer, a "project" package is a template used by the [`composer create-project`][9]{:target="_blank"} to set up the project structure.
 The [installation instructions for system integrators][10] use the {{site.data.var.ce}} and {{site.data.var.ee}} project packages to set up the Magento directory structure.
 
-A "product" package is the actual application pointed to by the `composer.json` file after you download and install the project package using `composer create-project`.  
+A "product" package is the actual application pointed to by the `composer.json` file after you download and install the project package using `composer create-project`.
 
 ## Descriptions of different composer.json files {#composerjson-overview}
 
@@ -51,7 +48,7 @@ This is Magento's main `composer.json` file which declares dependencies and thir
 
 Other root `composer.json` files use this file as a template.
 
-----
+---
 
 ### {{site.data.var.ce}} project
 **Location:** `composer.json`
@@ -62,7 +59,7 @@ Other root `composer.json` files use this file as a template.
 
 Magento system integrators use this `composer.json` file to deploy the {{site.data.var.ce}} product and its dependencies.
 
-----
+---
 
 ### {{site.data.var.ee}} project
 **Location:** `composer.json`
@@ -73,7 +70,7 @@ Magento system integrators use this `composer.json` file to deploy the {{site.da
 
 Magento system integrators use this `composer.json` file to deploy the {{site.data.var.ee}} product and its dependencies.
 
-----
+---
 
 ### Magento Framework
 
@@ -85,7 +82,7 @@ Magento system integrators use this `composer.json` file to deploy the {{site.da
 
 The Magento application uses this `composer.json` file for its framework packages.
 
-----
+---
 
 ### Module
 
@@ -100,7 +97,7 @@ The Magento application uses this `composer.json` file for its framework package
 
 The `composer.json` file for a [module](https://glossary.magento.com/module) extension declares external dependencies that it needs to function.
 
-----
+---
 
 ### Theme
 
@@ -115,7 +112,7 @@ The `composer.json` file for a [module](https://glossary.magento.com/module) ext
 
 The `composer.json` file for a [theme](https://glossary.magento.com/theme) component contains parent theme dependencies the extension needs to inherit.
 
-----
+---
 
 ### Language Package
 

@@ -126,9 +126,9 @@ var config = {
 };
 ```
 
-## Recommended reading ##
-[Use custom JavaScript]
+## Recommended reading
 
+[Use custom JavaScript]
 
 [Page source search result]: {{site.baseurl}}/common/images/fdg_js_pr1.png
 [`gallery.js`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/lib/web/mage/gallery/gallery.js

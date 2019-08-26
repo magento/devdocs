@@ -27,7 +27,6 @@ HTTP code | Error code | Text representation | Description
 405 | 16 | `method_not_allowed` |The method is not supported or not allowed.
 403 | 17 | `consumer_key_invalid` |The Consumer Key is invalid.
 
-
 ## Related topic
 
 [OAuth-based authentication]({{ page.baseurl }}/get-started/authentication/gs-authentication-oauth.html)

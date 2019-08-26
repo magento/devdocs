@@ -407,7 +407,6 @@ To configure SELinux and firewalld:
 
 2. Run the following commands to change the security context for the Magento installation directory:
 
-
 		semanage fcontext -a -t httpd_sys_rw_content_t '/usr/share/nginx/html/magento2/app/etc(/.*)?'
 		semanage fcontext -a -t httpd_sys_rw_content_t '/usr/share/nginx/html/magento2/var(/.*)?'
 		semanage fcontext -a -t httpd_sys_rw_content_t '/usr/share/nginx/html/magento2/pub/media(/.*)?'

@@ -41,7 +41,7 @@ Full Guideline Reference: [http://www.w3.org/TR/WCAG10-HTML-TECHS/#links](http:/
 
 * Until user agents allow users to turn off spawned windows, do not cause pop-ups or other windows to appear and do not change the current window without informing the user.
 
-##  Usage Examples
+## Usage Examples
 
 ### Links in forms/body of text that goes to an external page
 

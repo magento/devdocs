@@ -48,6 +48,6 @@ To optionally set the value in the user's Bash shell:
 		ulimit -s 65536
 
 4.	Save your changes to `.bashrc` and exit the text editor.
-	
+
 {: .bs-callout .bs-callout-warning }
 We recommend you avoid setting a value for [`pcre.recursion_limit`](http://php.net/manual/en/pcre.configuration.php){:target="_blank"} in `php.ini` because it can result in incomplete rollbacks with no failure notice.

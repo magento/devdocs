@@ -3,7 +3,7 @@ group: payments-integrations
 subgroup: A_gateway
 title: Response Handler
 menu_title: Response Handler
-menu_node: 
+menu_node:
 menu_order: 7
 ---
 

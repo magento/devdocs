@@ -69,7 +69,7 @@ There are two ways to apply patches:
 
 ### Command line
 
-1. Upload the local file into the `<Magento_root>` on the server using FTP, SFTP, SSH or your normal transport method.  
+1. Upload the local file into the `<Magento_root>` on the server using FTP, SFTP, SSH or your normal transport method.
 1. Login to the server as the [Magento admin user][] and verify the file is in the correct directory.
 1. In the command line interface, run the following commands according to the patch extension:
 

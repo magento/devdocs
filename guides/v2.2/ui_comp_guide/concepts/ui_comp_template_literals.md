@@ -28,7 +28,7 @@ This part is important because it means that JavaScript classes that extend `Cla
 
 #### The `:` separator
 
-Certain properties of the `defaults` object are processed by an additional core JavaScript class: `links.js` (located: `magento/module-ui/view/base/web/js/lib/core/element/links.js`). The object keys in `defaults` are: 
+Certain properties of the `defaults` object are processed by an additional core JavaScript class: `links.js` (located: `magento/module-ui/view/base/web/js/lib/core/element/links.js`). The object keys in `defaults` are:
 
 - `links`
 - `imports`
@@ -49,7 +49,6 @@ Perhaps the most useful aspect of template literals is the ability to access oth
 UI Components can have a `<item name="config" xsi:type="array">...</item>` node in the primary XML declaration file ([see an example]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_xmldeclaration_concept.html#example-of-a-basic-components-configuration-file)). In that file, a `component` element can be added with a path reference to the RequireJS file. That file is loaded into the registry when it runs on the frontend and other JavaScript files can then access it by the *name* of the UI Component instead of the path to the file itself. The name often will look something like this: `example_component.example_component`.
 
 Names of other registered modules can be added to the [server side](https://glossary.magento.com/server-side) configuration (XML or PHP) that is output through JSON. Those names can then be easily accessed in the JavaScript on the frontend. In the following example, the other UI Component's name will be obtained with a template literal in the `imports` object. When this JavaScript file is loaded, it will process the template literal and look up the name in the registry. If found, it will load that class. Because there is a colon (`:`), it will go on to find the property that is accessed in the other JavaScript class.
-
 
 ```javascript
 return Element.extend({

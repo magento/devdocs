@@ -92,7 +92,6 @@ Authorization Bearer <customer token>
 }
 ```
 
-
 **Response 2**
 
 ```json
@@ -976,7 +975,6 @@ In this example, the `companyId` is `1`.
 Content-Type application/json
 Authorization Bearer <admin token>
 ```
-
 
 **Endpoint**
 

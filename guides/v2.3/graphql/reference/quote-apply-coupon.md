@@ -19,7 +19,7 @@ The following example applies the coupon code `H2O` to the cart. For this coupon
 mutation {
   applyCouponToCart(
     input: {
-      cart_id: "IeTUiU0oCXjm0uRqGCOuhQ2AuQatogjG", 
+      cart_id: "IeTUiU0oCXjm0uRqGCOuhQ2AuQatogjG",
       coupon_code: "H20"
     }
   ) {
@@ -88,7 +88,7 @@ mutation {
 
 ## Input attributes
 
-The `applyCouponToCart` mutation requires the `cart_id` and `coupon_code`. 
+The `applyCouponToCart` mutation requires the `cart_id` and `coupon_code`.
 
 ### ApplyCouponToCartInput object {#ApplyCouponToCartInput}
 
@@ -98,7 +98,6 @@ Attribute |  Data Type | Description
 --- | --- | ---
 `cart_id` | String! | The unique ID that identifies the customer's cart
 `coupon_code` | String! | A valid coupon code
-
 
 ## Output attributes
 

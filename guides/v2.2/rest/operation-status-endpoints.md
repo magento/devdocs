@@ -13,7 +13,6 @@ Magento generates a `bulk_uuid` each time it executes an [asynchronous API reque
 * `GET /V1/bulk/:bulkUuid/status`
 * `GET /V1/bulk/:bulkUuid/detailed-status`
 
-
 ## Get the status summary
 
 The `GET /V1/bulk/:bulkUuid/status` endpoint returns the abbreviated status of the specified operation:

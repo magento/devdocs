@@ -8,7 +8,7 @@ functional_areas:
 If the updater application is not available, the following message displays in the readiness check:
 
 ```terminal
-Updater application is not available. 
+Updater application is not available.
 Please, download and install Updater application.
 ```
 

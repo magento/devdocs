@@ -8,7 +8,7 @@ functional_areas:
 
 ## Overview
 
-The quickSearch [widget](https://glossary.magento.com/widget) is an autocomplete widget that populates a list of suggested search terms for a given field. 
+The quickSearch [widget](https://glossary.magento.com/widget) is an autocomplete widget that populates a list of suggested search terms for a given field.
 
 The suggest widget source is [`<Magento_Search_module_dir>/view/frontend/web/js/form-mini.js`].
 
@@ -61,7 +61,7 @@ The isExpandable option is used to show and hide search input field on devices w
 
 The form selector containing the search input field.
 
-**Type**: String 
+**Type**: String
 
 **Default value**: No form by default.
 
@@ -99,7 +99,7 @@ Class assigned to the selected suggested term.
 
 ### `submitBtn` {#q_submitBtn}
 
-Disable the submit button. 
+Disable the submit button.
 
 **Type**: String
 
@@ -119,7 +119,7 @@ Template responsible for rendering returned data (suggested terms).
 
 **Type**: String
 
-**Default value**: 
+**Default value**:
 
 ```html
 <li class="<%- data.row_class %>" id="qs-option-<%- data.index %>" role="option">

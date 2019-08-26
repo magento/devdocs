@@ -13,6 +13,8 @@ The REST tutorials provide an introduction to Magento web APIs. In general, the 
 
 * The [**configurable product** tutorial]({{ page.baseurl }}/rest/tutorials/configurable-product/config-product-intro.html) helps you plan then create a configurable product and its component simple products.
 
+* The [**grouped products** tutorial]({{ page.baseurl }}/rest/tutorials/grouped-product/create-and-manage-grouped-products.html) demonstrates how to create and manage grouped products.
+
 ## Complete these prerequisites
 
 You will need
@@ -47,7 +49,6 @@ Element | Description
 `host` | The hostname or IP address (and optionally, port) of the Magento installation.
 `scope` | Specifies which store the call affects. In this tutorial, this value is `default`.
 `endpoint` | The full URI (Uniform Resource Identifier) to the endpoint. These values always start with `/V1`. For example, `/V1/orders/4`.
-
 
 **HTTP headers**
 
