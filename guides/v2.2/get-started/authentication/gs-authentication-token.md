@@ -57,7 +57,7 @@ Component | Specifies
 --- | ---
 Endpoint |  A combination of the _server_ that fulfills the request, the web service, and the `resource` against which the request is being made.<br/><br/>For example, in the `POST <host>/rest/<store_code>/V1/integration/customer/token` endpoint:<br/>The server is `magento.host/index.php/`,<br/> the web service is `rest`.<br/> and the resource is `/V1/integration/customer/token`.
 Content type | The content type of the request body. Set this value to either `"Content-Type:application/json"` or `"Content-Type:application/xml"`.
-Credentials | The username and password for a Magento account.<br/><br/>To specify these credentials in a JSON request body, include code similar to the following in the call: <br/><br/>`{"username":"<USER-NAME>;", "password":"<PASSWORD>"}`<br/><br/>To specify these credentials in XML, include code similar to the following in the call:<br/><br/>`<login><username>customer1@example.com</username><password>customer1pw</password></login>`
+Credentials | The username and password for a Magento account.<br/><br/>To specify these credentials in a JSON request body, include code similar to the following in the call: <br/><br/>`{"username":"<USER-NAME>;", "password":"<PASSWORD>"}`<br/><br/>To specify these credentials in XML, include code similar to the following in the call:<br/><br/>`<login><username>customer1</username><password>customer1pw</password></login>`
 
 #### Examples {#token-example}
 
@@ -70,7 +70,7 @@ The following example uses the `curl` command to request a token for a customer 
 ```
 curl -X POST "https://magento.host/index.php/rest/V1/integration/customer/token" \
      -H "Content-Type:application/json" \
-     -d "{"username":"customer1@example.com", "password":"customer1pw"}"
+     -d "{"username":"customer1", "password":"customer1pw"}"
 ```
 
 The following example makes the same request with [XML](https://glossary.magento.com/xml) for a customer account token:
@@ -78,7 +78,7 @@ The following example makes the same request with [XML](https://glossary.magento
 ```
 curl -X POST "http://magento.vg/index.php/rest/V1/integration/customer/token" \
      -H "Content-Type:application/xml"  \
-     -d "<login><username>customer1@example.com</username><password>customer1pw</password></login>"
+     -d "<login><username>customer1</username><password>customer1pw</password></login>"
 ```
 
 For more information about the `curl` command, see [Use cURL to run the request]({{ page.baseurl }}/get-started/gs-curl.html)
