@@ -353,6 +353,49 @@ See [sensitive and environment settings]({{ page.baseurl }}/extension-dev-guide/
 *   [Sensitive and system-specific configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-sens.html)
 *   [Magento Enterprise B2B Extension configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-b2b.html)
 
+## Get dependency injection configuration information for a class
+
+Use the [dev:di:info]({{ page.baseurl }}/reference/cli/magento.html#devdiinfo) command to retrieve information about dependency injection configuration for a class. The following example retrieves the dependency injection configuration information for the `Magento\Quote\Model\Quote\Item\ToOrderItem` class:
+
+```bash
+bin/magento dev:di:info "Magento\Quote\Model\Quote\Item\ToOrderItem"
+```
+
+```terminal
+DI configuration for the class Magento\Quote\Model\Quote\Item\ToOrderItem in the GLOBAL area
+
+Preference: Magento\Quote\Model\Quote\Item\ToOrderItem
+
+Constructor Parameters:
++-------------------+--------------------------------------------------+------------------+
+| Name              | Requested Type                                   | Configured Value |
++-------------------+--------------------------------------------------+------------------+
+| orderItemFactory  | Magento\Sales\Api\Data\OrderItemInterfaceFactory |                  |
+| objectCopyService | Magento\Framework\DataObject\Copy                |                  |
+| dataObjectHelper  | Magento\Framework\Api\DataObjectHelper           |                  |
++-------------------+--------------------------------------------------+------------------+
+
+
+Plugins:
++-----------------------------------------------------+---------+--------+
+| Plugin                                              | Method  | Type   |
++-----------------------------------------------------+---------+--------+
+| Magento\Catalog\Model\Plugin\QuoteItemProductOption | convert | before |
+| Magento\GiftMessage\Model\Plugin\QuoteItem          | convert | after  |
+| Magento\Bundle\Model\Plugin\QuoteItem               | convert | after  |
++-----------------------------------------------------+---------+--------+
+
+
+Plugins for the Preference:
++-----------------------------------------------------+---------+--------+
+| Plugin                                              | Method  | Type   |
++-----------------------------------------------------+---------+--------+
+| Magento\Catalog\Model\Plugin\QuoteItemProductOption | convert | before |
+| Magento\GiftMessage\Model\Plugin\QuoteItem          | convert | after  |
+| Magento\Bundle\Model\Plugin\QuoteItem               | convert | after  |
++-----------------------------------------------------+---------+--------+
+```
+
 ## Related topics
 
 * [ObjectManager]({{ page.baseurl }}/extension-dev-guide/object-manager.html)
