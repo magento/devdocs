@@ -1,19 +1,21 @@
 ---
 group: graphql
-title: Products endpoint
+title: products query
+redirect_from:
+  - /guides/v2.3/graphql/reference/products.html
 ---
 
-The `products` endpoint allows you to search for catalog items.
+The `products` query allows you to search for catalog items.
 
 ## Query structure
 
-``` text
+```graphql
 products(
-    search: String
-    filter: ProductFilterInput
-    pageSize: Int
-    currentPage: Int
-    sort: ProductSortInput
+  search: String
+  filter: ProductFilterInput
+  pageSize: Int
+  currentPage: Int
+  sort: ProductSortInput
 ): Products
 ```
 
@@ -111,7 +113,7 @@ content="GraphQL automatically filters out a product attribute if ALL of the fol
 
 The system returns a `Products` object containing the following information:
 
-```text
+```json
 items: [ProductInterface]
 page_info: SearchResultPageInfo
 total_count: Int
@@ -150,12 +152,12 @@ Any type that implements `ProductInterface` contains all the base attributes nec
 The `items` that are returned in a `ProductInterface` array can also contain attributes from resources external to the `CatalogGraphQl` module:
 
 * Custom and extension attributes defined in any attribute set
-* The attribute is defined in the [PhysicalProductInterface](#PhysicalProductInterface) or [CustomizableOptionInterface]({{ page.baseurl }}/graphql/reference/customizable-option-interface.html)
+* The attribute is defined in the [PhysicalProductInterface](#PhysicalProductInterface) or [CustomizableOptionInterface]({{ page.baseurl }}/graphql/product/customizable-option-interface.html)
 * Product types that define their own implementation of `ProductInterface` including:
-  * [BundleProduct]({{ page.baseurl }}/graphql/reference/bundle-product.html)
-  * [ConfigurableProduct]({{ page.baseurl }}/graphql/reference/configurable-product.html)
-  * [DownloadableProduct]({{ page.baseurl }}/graphql/reference/downloadable-product.html)
-  * [GroupedProduct]({{ page.baseurl }}/graphql/reference/grouped-product.html)
+  * [BundleProduct]({{ page.baseurl }}/graphql/product/bundle-product.html)
+  * [ConfigurableProduct]({{ page.baseurl }}/graphql/product/configurable-product.html)
+  * [DownloadableProduct]({{ page.baseurl }}/graphql/product/downloadable-product.html)
+  * [GroupedProduct]({{ page.baseurl }}/graphql/product/grouped-product.html)
 
 The following table defines the `ProductInterface` attributes and objects.
 
@@ -163,7 +165,7 @@ Attribute | Data type | Description
 --- | --- | ---
 `attribute_set_id` | Int | The attribute set assigned to the product
 `canonical_url` | String  | The canonical URL for the product
-`categories` | [CategoryInterface] | The categories assigned to the product. See [categories endpoint]({{ page.baseurl }}/graphql/reference/categories.html) for more information
+`categories` | [CategoryInterface] | The categories assigned to the product. See [categories query]({{ page.baseurl }}/graphql/queries/category.html) for more information
 `country_of_manufacture` | String | The product's country of origin
 `created_at` | String | Timestamp indicating when the product was created
 `crosssell_products` | [[ProductInterface](#ProductInterface)] | An array of cross-sell products
@@ -174,7 +176,7 @@ Attribute | Data type | Description
 `is_returnable` | String | Indicates whether the product can be returned. This attribute is defined in the `RmaGraphQl` module.
 `manufacturer` | Int | A number representing the product's manufacturer
 `media_gallery` | [[MediaGalleryInterface]](#MediaGalleryInterface) | An array of media gallery objects
-`media_gallery_entries` | [MediaGalleryEntry] | Deprecated. Use `media_gallery` instead.
+`media_gallery_entries` | [MediaGalleryEntry] | Deprecated. Use `media_gallery` instead
 `meta_description` | String | A brief overview of the product for search results listings, maximum 255 characters
 `meta_keyword` | String | A comma-separated list of keywords that are visible only to search engines
 `meta_title` | String | A string that is displayed in the title bar and tab of the browser and in search results lists
@@ -517,7 +519,7 @@ query {
 
 ### Include website information with `products` query results {#inclWebsiteInfoExample}
 
-The [ProductInterface]({{ page.baseurl }}/graphql/reference/products.html#ProductInterface) can include information about the `Website` object.
+The [ProductInterface]({{ page.baseurl }}/graphql/queries/products.html#ProductInterface) can include information about the `Website` object.
 
 **Request**
 

@@ -1,94 +1,14 @@
 ---
 group: graphql
-title: DownloadableProduct endpoint
+title: Downloadable product data types
+redirect_from:
+  - /guides/v2.3/graphql/reference/downloadable-product.html
 ---
 
-The `DownloadableProduct` endpoint defines a query that returns a list of purchased downloadable products for the [logged-in customer](#customerDownloadProduct). It also extends the `ProductInterface` so that attributes that are specific to downloadable products can be queried in a `products` search.
-
-## Customer Downloadable Product {#customerDownloadProduct}
-Use the `CustomerDownloadableProduct` query to retrieve the list of purchased downloadable products for the logged-in customer.
-
-### Syntax
-`{customerDownloadableProducts: {CustomerDownloadableProducts}}`
-
-### Customer downloadable products object
-The `CustomerDownloadableProducts` object contains the following attribute.
-
-Attribute | Type | Description
---- | --- | ---
-`items` | [[CustomerDownloadableProduct]](#custDownloadProduct) | List of purchased downloadable items
-
-### Customer downloadable product object {#custDownloadProduct}
-The `CustomerDownloadableProduct` object contains the following attributes:
-
-Attribute | Type | Description
---- | --- | ---
-`date` | String | The date and time the purchase was made
-`download_url` | String | The fully qualified URL to the download file
-`order_increment_id` | String | The purchase order ID
-`remaining_downloads` | String | Determines the number of times the customer can download the product
-`status` | String | Determines the stage in the order workflow when the download becomes available. Options are `Pending` and `Invoiced`
-
-### Example usage
-The following example returns the list of purchased downloadable products for the logged-in customer.
-
-**Request**
-
-```text
-{
-  customerDownloadableProducts {
-    items {
-      date
-      download_url
-      order_increment_id
-      remaining_downloads
-      status
-    }
-  }
-}
-```
-
-**Response**
-```json
-{
-  "data": {
-    "customerDownloadableProducts": {
-      "items": [
-        {
-          "date": "2019-03-04 20:48:32",
-          "download_url": "http://magento2.vagrant93/downloadable/download/link/id/MC44NTcwMTEwMCAxNTUxNzMyNTEyMTExNTE%2C/",
-          "order_increment_id": "000000004",
-          "remaining_downloads": "Unlimited",
-          "status": "pending"
-        },
-        {
-          "date": "2019-03-04 20:48:32",
-          "download_url": "http://magento2.vagrant93/downloadable/download/link/id/MC44NzM0OTkwMCAxNTUxNzMyNTEyMjEyNTA%2C/",
-          "order_increment_id": "000000004",
-          "remaining_downloads": "Unlimited",
-          "status": "pending"
-        }
-      ]
-    }
-  }
-}
-```
-
-## Downloadable product query
-The `DownloadableProduct` query returns downloadable product information when you perform a `products` search.
-
-### Syntax
-Add the following inline fragment to the output section of your `products` query to return information specific to downloadable products:
-
-```text
-... on DownloadableProduct {
-  items {
-   <attributes>
-  }
-}
-```
+The `DownloadableProduct` data type implements `ProductInterface` and `CustomizableProductInterface`. As a result, attributes that are specific to downloadable products can be used when performing a [`products`]({{page.baseurl}}/graphql/queries/products.html) query.
 
 ## Downloadable product
+
 The `DownloadableProduct` object contains the following attributes:
 
 Attribute | Type | Description
@@ -98,7 +18,8 @@ Attribute | Type | Description
 `links_purchased_separately` | Int | A value of 1 indicates that each link in the array must be purchased separately
 `links_title` | String | The heading above the list of downloadable products
 
-## Downloadable product samples
+### DownloadableProductSamples object
+
 The `DownloadableProductSamples` object contains the following attributes:
 
 Attribute | Type | Description
@@ -110,7 +31,8 @@ Attribute | Type | Description
 `sort_order` | Int | A number indicating the sort order
 `title` | String | The display name of the sample
 
-## Downloadable productLinks
+### DownloadableProductLinks object
+
 The `DownloadableProductLinks` object contains the following attributes:
 
 Attribute | Type | Description
@@ -128,11 +50,21 @@ Attribute | Type | Description
 
 ## Example usage
 
+Add the following inline fragment to the output section of your `products` query to return information specific to downloadable products:
+
+```text
+... on DownloadableProduct {
+  items {
+   <attributes>
+  }
+}
+```
+
 The following query returns information about downloadable product `240-LV04`, which is defined in the sample data.
 
 **Request**
 
-```text
+```graphql
 {
   products(filter: { sku: { eq: "240-LV04" } }) {
     items {
@@ -170,6 +102,7 @@ The following query returns information about downloadable product `240-LV04`, w
   }
 }
 ```
+
 **Response**
 
 ```json
@@ -225,3 +158,7 @@ The following query returns information about downloadable product `240-LV04`, w
   }
 }
 ```
+
+## Related topics
+
+-  [customerDownloadableProducts query]({{page.baseurl}}/graphql/queries/customer-downloadable-products.html)

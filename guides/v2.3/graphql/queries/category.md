@@ -1,9 +1,11 @@
 ---
 group: graphql
-title: category endpoint
+title: category query
+redirect_from:
+  - /guides/v2.3/graphql/reference/categories.html
 ---
 
-The `category` endpoint allows you to search for a single category definition or the entire category tree. To return multiple category levels in a single call, define the response so that it contains up to ten nested `children` options. You cannot return the entire category tree if it contains more than 10 sublevels unless the `queryDepth` parameter in the GraphQL `di.xml` file has been reconfigured.
+The `category` query allows you to search for a single category definition or the entire category tree. To return multiple category levels in a single call, define the response so that it contains up to ten nested `children` options. You cannot return the entire category tree if it contains more than 10 sublevels unless the `queryDepth` parameter in the GraphQL `di.xml` file has been reconfigured.
 
 ## Query structure
 
@@ -56,7 +58,7 @@ The `CategoryProducts` object contains the following attributes:
 
 Attribute | Data type | Description
 --- | --- | ---
-`items` | [ProductInterface] | An array of products that are assigned to the category. See [ProductInterface]({{ page.baseurl }}/graphql/reference/products.html#ProductInterface) for more information.
+`items` | [ProductInterface] | An array of products that are assigned to the category. See [ProductInterface]({{ page.baseurl }}/graphql/queries/products.html#ProductInterface) for more information.
 `page_info` | `SearchResultPageInfo` | An object that includes the `page_info` and `currentPage` values specified in the query
 `total_count` | Int | The number of products returned
 
@@ -124,6 +126,7 @@ The following query returns information about category ID `20` and four levels o
   }
 }
 ```
+
 **Response**
 
 ```json
