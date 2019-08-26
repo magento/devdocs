@@ -684,3 +684,7 @@ The following `products` query returns `ConfigurableProduct` information about t
 ```
 
 {% endcollapsible %}
+
+## Related topics
+
+-  [addConfigurableProductsToCart mutation]({{page.baseurl}}/graphql/mutations/add-configurable-products.html)

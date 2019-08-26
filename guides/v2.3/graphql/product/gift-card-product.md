@@ -36,7 +36,7 @@ The `GiftCardAmounts` object contains the following attributes:
 
 Attribute | Type | Description
 --- | --- | ---
-`attribute_id` | Int | An internal attribute ID.
+`attribute_id` | Int | An internal attribute ID
 `value_id` | Int | An ID that is  assigned to each unique gift card amount
 `value` | Float | The value of the gift card
 `website_value` | Float |The value of the gift card
@@ -75,3 +75,9 @@ The following query returns information about gift card product `GiftCard25`. (I
   }
 }
 ```
+
+## Related topics
+
+-  [applyGiftCardToCart mutation]({{page.baseurl}}/graphql/reference/quote-apply-giftcard.html)
+-  [redeemGiftCardBalanceAsStoreCredit mutation]({{page.baseurl}}/graphql/mutations/redeem-giftcard-balance.html)
+-  [removeGiftCardFromCart mutation]({{page.baseurl}}/graphql/mutations/remove-giftcard.html)
