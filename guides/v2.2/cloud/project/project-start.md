@@ -19,8 +19,7 @@ File                      | Description
 `.magento.env.yaml`       | Configuration file that defines actions for the build, deploy, and post-deploy phases. The ece-tools package includes a sample of this file with detailed descriptions for the available variables. See [Configure environments]({{ page.baseurl }}/cloud/env/environments.html).
 `composer.json`           | Fetches the Magento Enterprise Edition and the necessary configuration scripts to prepare your application. See [Prepare your Magento install]({{ page.baseurl }}/cloud/setup/first-time-setup-import-prepare.html).
 `composer.lock`           | Stores version dependencies for every package.
-`magento-vars.php`        | A file used to define [multiple stores]({{ page.baseurl }}/cloud/project/project-multi-sites.html#modify-the-magento-varsphp-file) and sites using [Magento variables]({{ page.baseurl }}/config-guide/multi-site/ms_over.html).
-
+`magento-vars.php`        | A file used to define [multiple stores]({{ page.baseurl }}/cloud/project/project-multi-sites.html#modify-magento-variables) and sites using [Magento variables]({{ page.baseurl }}/config-guide/multi-site/ms_over.html).
 
 {: .bs-callout-info }
 When you push your local environment to the remote server, our deploy script uses the values defined by configuration files in the `.magento` directory, then the script deletes the directory and its contents. Your local development environment is not affected.
@@ -89,16 +88,16 @@ The log for each deployment appends to this file. Check the timestamps on log en
 ```terminal
 Re-deploying environment project-integration-ID
   Executing post deploy hook for service `mymagento`
-    [2019-01-03 19:44:11] NOTICE: Starting post-deploy.  
-    [2019-01-03 19:44:11] INFO: Validating configuration  
-    [2019-01-03 19:44:11] INFO: End of validation  
-    [2019-01-03 19:44:11] INFO: Enable cron  
-    [2019-01-03 19:44:11] INFO: Create backup of important files.  
-    [2019-01-03 19:44:11] INFO: Backup /app/app/etc/env.php.bak for /app/app/etc/env.php was created.  
-    [2019-01-03 19:44:11] INFO: Backup /app/app/etc/config.php.bak for /app/app/etc/config.php was created.  
-    [2019-01-03 19:44:11] INFO: php ./bin/magento cache:flush --ansi --no-interaction   
+    [2019-01-03 19:44:11] NOTICE: Starting post-deploy.
+    [2019-01-03 19:44:11] INFO: Validating configuration
+    [2019-01-03 19:44:11] INFO: End of validation
+    [2019-01-03 19:44:11] INFO: Enable cron
+    [2019-01-03 19:44:11] INFO: Create backup of important files.
+    [2019-01-03 19:44:11] INFO: Backup /app/app/etc/env.php.bak for /app/app/etc/env.php was created.
+    [2019-01-03 19:44:11] INFO: Backup /app/app/etc/config.php.bak for /app/app/etc/config.php was created.
+    [2019-01-03 19:44:11] INFO: php ./bin/magento cache:flush --ansi --no-interaction
     [2019-01-03 19:44:32] INFO: Warming up failed: http://integration-id-project.us.magentosite.cloud/
-    [2019-01-03 19:44:32] NOTICE: Post-deploy is complete.  
+    [2019-01-03 19:44:32] NOTICE: Post-deploy is complete.
 ```
 {: .no-copy}
 

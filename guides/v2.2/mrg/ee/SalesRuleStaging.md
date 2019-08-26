@@ -8,7 +8,6 @@ menu_order: 2
 ee_only: true
 ---
 
-
 The Magento_SalesRuleStaging [module](https://glossary.magento.com/module) is a part of the staging functionality in {{site.data.var.ee}}. It enables you to add sales rule updates to existing store campaigns. In other words, you can add and/or remove [sales rules](https://glossary.magento.com/sales-rules) for some period of time. These updates are shown on the campaign dashboard.
 
 ## Implementation details

@@ -174,7 +174,7 @@ Attribute | Data type | Description
 `is_returnable` | String | Indicates whether the product can be returned. This attribute is defined in the `RmaGraphQl` module.
 `manufacturer` | Int | A number representing the product's manufacturer
 `media_gallery` | [[MediaGalleryInterface]](#MediaGalleryInterface) | An array of media gallery objects
-`media_gallery_entries` | [MediaGalleryEntry] | Deprecated. Use `media_gallery` instead. 
+`media_gallery_entries` | [MediaGalleryEntry] | Deprecated. Use `media_gallery` instead.
 `meta_description` | String | A brief overview of the product for search results listings, maximum 255 characters
 `meta_keyword` | String | A comma-separated list of keywords that are visible only to search engines
 `meta_title` | String | A string that is displayed in the title bar and tab of the browser and in search results lists
@@ -202,7 +202,7 @@ Attribute | Data type | Description
 `updated_at` | String | The timestamp indicating when the product was last updated
 `upsell_products` | [[ProductInterface](#ProductInterface)] | An array of up-sell products
 `url_key` | String | The part of the URL that identifies the product. This attribute is defined in the `CatalogUrlRewriteGraphQl` module
-`url_path` | String | The part of the URL that precedes the `url_key`. This attribute is defined in the `CatalogUrlRewriteGraphQl` module
+`url_path` | String | Deprecated. Use `canonical_url` instead
 `url_rewrites` | [[UrlRewrite]](#urlRewriteObject) | A list of URL rewrites. See [UrlRewrite object](#urlRewriteObject) for more information and an [example query](#urlRewriteExample)
 `websites` | [Website] | An array of websites in which the product is available. See [Website object](#websiteObject) for more information and an [example query](#inclWebsiteInfoExample)
 

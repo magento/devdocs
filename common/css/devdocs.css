@@ -12,3 +12,11 @@
   width: 18px;
   height: 18px;
 }
+/* Reference styles */
+.ref-list {
+  margin-bottom: 2.5em;
+}
+
+.ref-list dt{
+  font-weight:500;
+}

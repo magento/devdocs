@@ -3,7 +3,7 @@ group: software-update-guide
 title: Step 4. Uninstall
 functional_areas:
   - Upgrade
-redirect_from: 
+redirect_from:
  - /guides/v2.2/comp-mgr/module-man/compman-uninst-final.html
  - /guides/v2.3/comp-mgr/module-man/compman-uninst-final.html
 ---

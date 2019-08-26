@@ -25,7 +25,7 @@ To upgrade to Magento {{ page.guide_version }} sample data using the command lin
       composer require magento/product-community-edition {{ page.guide_version }}.0 --no-update
       ```
       ```bash
-      composer require magento/module-bundle-sample-data:100.1.0 magento/module-widget-sample-data:100.1.0 magento/module-theme-sample-data:100.1.0 magento/module-catalog-sample-data:100.1.0 magento/module-customer-sample-data:100.1.0 magento/module-cms-sample-data:100.1.0  magento/module-catalog-rule-sample-data:100.1.0 magento/module-sales-rule-sample-data:100.1.0 magento/module-review-sample-data:100.1.0 magento/module-tax-sample-data:100.1.0 magento/module-sales-sample-data:100.1.0 magento/module-grouped-product-sample-data:100.1.0 magento/module-downloadable-sample-data:100.1.0 magento/module-msrp-sample-data:100.1.0 magento/module-configurable-sample-data:100.1.0 magento/module-product-links-sample-data:100.1.0 magento/module-wishlist-sample-data:100.1.0 magento/module-swatches-sample-data:100.1.0 magento/sample-data-media:100.1.0 magento/module-offline-shipping-sample-data:100.1.0 --no-update 
+      composer require magento/module-bundle-sample-data:100.1.0 magento/module-widget-sample-data:100.1.0 magento/module-theme-sample-data:100.1.0 magento/module-catalog-sample-data:100.1.0 magento/module-customer-sample-data:100.1.0 magento/module-cms-sample-data:100.1.0  magento/module-catalog-rule-sample-data:100.1.0 magento/module-sales-rule-sample-data:100.1.0 magento/module-review-sample-data:100.1.0 magento/module-tax-sample-data:100.1.0 magento/module-sales-sample-data:100.1.0 magento/module-grouped-product-sample-data:100.1.0 magento/module-downloadable-sample-data:100.1.0 magento/module-msrp-sample-data:100.1.0 magento/module-configurable-sample-data:100.1.0 magento/module-product-links-sample-data:100.1.0 magento/module-wishlist-sample-data:100.1.0 magento/module-swatches-sample-data:100.1.0 magento/sample-data-media:100.1.0 magento/module-offline-shipping-sample-data:100.1.0 --no-update
       ```
    - Example for {{site.data.var.ee}}:
      ```bash
@@ -34,7 +34,7 @@ To upgrade to Magento {{ page.guide_version }} sample data using the command lin
      ```bash
      composer require magento/module-bundle-sample-data:100.1.0 magento/module-widget-sample-data:100.1.0 magento/module-theme-sample-data:100.1.0 magento/module-catalog-sample-data:100.1.0 magento/module-customer-sample-data:100.1.0 magento/module-cms-sample-data:100.1.0  magento/module-catalog-rule-sample-data:100.1.0 magento/module-sales-rule-sample-data:100.1.0 magento/module-review-sample-data:100.1.0 magento/module-tax-sample-data:100.1.0 magento/module-sales-sample-data:100.1.0 magento/module-grouped-product-sample-data:100.1.0 magento/module-downloadable-sample-data:100.1.0 magento/module-msrp-sample-data:100.1.0 magento/module-configurable-sample-data:100.1.0 magento/module-product-links-sample-data:100.1.0 magento/module-wishlist-sample-data:100.1.0 magento/module-swatches-sample-data:100.1.0 magento/sample-data-media:100.1.0 magento/module-offline-shipping-sample-data:100.1.0 magento/module-gift-card-sample-data:100.1.0 magento/module-customer-balance-sample-data:100.1.0 magento/module-target-rule-sample-data:100.1.0 magento/module-gift-registry-sample-data:100.1.0 magento/module-multiple-wishlist-sample-data:100.1.0 --no-update
      ```
-      
+
    {% include note.html
       type="info"
 	  content="To upgrade to a Release Candidate, append `-rc<x>` to the version of each module. For example, `-rc3`."
@@ -62,7 +62,7 @@ After you have reset file system permissions:
     ```bash
 	php bin/magento setup:upgrade
 	```
-	
+
 {% include install/sampledata/file-sys-perms-digest.md %}
 
 <!-- Link definitions -->

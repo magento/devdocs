@@ -22,13 +22,11 @@ The list of resources that you can access depends on your user type. All custome
 Each administrator or integration user can have a unique set of permissions which is configured in the [Magento Admin](https://glossary.magento.com/magento-admin).
 Permissions required to access particular resource are configured in the `webapi.xml` file. This table lists the resources that each user type can access:
 
-
 User type | Accessible resources (defined in webapi.xml)
 --- | ---
 Administrator or Integration | Resources for which administrators or integrators are authorized. For example, if administrators are authorized for the `Magento_Customer::group` resource, they can make a `GET /V1/customerGroups/:id` call.
 Customer | Resources with `anonymous` or `self` permission
 Guest user | Resources with `anonymous` permission
-
 
 ### Relation between acl.xml and webapi.xml
 

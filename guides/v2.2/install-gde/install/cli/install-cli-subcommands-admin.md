@@ -25,7 +25,7 @@ The simplest way to create the database is to use the command `magento setup:upg
 
 ## Create or edit an administrator
 
-Use this command to create a new administrator or to edit an existing administrator. 
+Use this command to create a new administrator or to edit an existing administrator.
 
 {:.bs-callout .bs-callout-tip}
 If you're editing an administrator, only the `first name`, `last name`, and `password` can be edited.
@@ -65,7 +65,7 @@ bin/magento admin:user:create
 
 ```terminal
 Admin user: John
-Admin password: 
+Admin password:
 Admin email: j.doe.young@example.com
 Admin first name: John
 Admin last name: Doe Young

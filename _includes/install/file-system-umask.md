@@ -23,14 +23,14 @@ To set `magento_umask`:
 ```bash
  cd <Magento install directory>
 ```
-3. Use the following command to create a file named `magento_umask` and write the `umask` value to it. 
-   ```bash 
+3. Use the following command to create a file named `magento_umask` and write the `umask` value to it.
+   ```bash
    echo <desired umask number> > magento_umask
    ```
    You should now have a file named `magento_umask` in the `<Magento install dir>` with the only content being the `umask` number.
 
 4. Log out and log back in as the [Magento file system owner][] to apply the changes.
-   
+
 <!-- Link Definitions -->
 
 [Magento file system owner]: {{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html

@@ -6,7 +6,7 @@ functional_areas:
 ---
 ## What's in this topic
 
-This topic features a step-by-step illustration of how to change the number of products displayed in a row on a product page, keeping up with the responsive design approach used by Magento out-of-the-box themes. 
+This topic features a step-by-step illustration of how to change the number of products displayed in a row on a product page, keeping up with the responsive design approach used by Magento out-of-the-box themes.
 
 The described flow is applicable only for themes that [inherit]({{ page.baseurl }}/frontend-dev-guide/themes/theme-inherit.html) from the out-of-the-box Blank or Luma [theme](https://glossary.magento.com/theme).
 
@@ -18,7 +18,6 @@ In the basic Blank theme, the number of products in a row for each breakpoint is
 -   1024px and more (desktop): four products
 -   768px (tablet): three products
 -   640px and less (mobile): two products
-
 
 In their custom Orange theme, OrangeCo wants to have the least number of products in a row for the desktop and tablet view, namely:
 -   Desktop: three products

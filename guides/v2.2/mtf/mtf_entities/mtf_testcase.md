@@ -8,7 +8,7 @@ The Magento Functional Testing Framework supports two types of functional tests:
 - Injectable test: the main type of the FTF test that uses [XML](https://glossary.magento.com/xml) [data set][] files as inputs
 - [Scenario test][]: supports a Magento modularity and enables you to inject one step into another test
 
-This topic discusses the injectable test only. 
+This topic discusses the injectable test only.
 
 ## Test case structure {#structure}
 
@@ -23,7 +23,7 @@ Usage of docblock is a good practice for your new tests. See [Magento\Catalog\Te
 
 The `__prepare()` method can be useful to prepare the unchangeable data that is repeatedly used for different test variations. The most popular use case is to create a [fixture][] or a configuration setup that is used in the test.
 
-This method is called one time only during the test launch and is optional to use. `__prepare` can return an array of arguments which can be used as arguments in the `test()` method of a test case and the `processAssert()` method in [constraints][]. The following example creates and returns the `$customer` fixture. 
+This method is called one time only during the test launch and is optional to use. `__prepare` can return an array of arguments which can be used as arguments in the `test()` method of a test case and the `processAssert()` method in [constraints][]. The following example creates and returns the `$customer` fixture.
 
 ```php
 public function __prepare(Customer $customer)
@@ -141,7 +141,7 @@ __Step 3.__ Give it a name using the following format:
 <b><span style="color:blue">{action}</span><span style="color:red">{entityName}</span>Entity<span style="color:green">{additional_description_if_needed}</span>Test</b>
 
 For example:
-   
+
 - <span style="color:blue">Create</span><span style="color:red">ConfigurableProduct</span>EntityTest
 - <span style="color:blue">Create</span><span style="color:red">CatalogEvent</span>Entity<span style="color:green">FromCategoryPage</span>Test
 
@@ -150,9 +150,8 @@ __Step 4.__ If you have preconditions, prepare the data using a [__prepare()](#p
 __Step 5.__ Inject the initial data for a test using a [__inject()](#inject-method) method
 
 __Step 6.__ Declare all the test steps in the [test()](#test-method) method
- 
-__Step 7.__ If you want to perform any actions after constraints, use a [tearDown()](#teardown-method) method
 
+__Step 7.__ If you want to perform any actions after constraints, use a [tearDown()](#teardown-method) method
 
 <!-- LINK DEFINITIONS -->
 

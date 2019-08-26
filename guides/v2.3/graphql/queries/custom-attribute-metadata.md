@@ -1,27 +1,15 @@
 ---
 group: graphql
-title: CustomAttributeMetadata endpoint
+title: customAttributeMetadata query
+redirect_from:
+  - /guides/v2.3/graphql/reference/custom-attribute-metadata.html
 ---
 
-The `customAttributeMetadata` endpoint returns the attribute type, given an attribute code and entity type. All entity attributes can be added to an equivalent GraphQL type, including custom, extension, and EAV (which have precedence set in that order for collisions). The GraphQL query consumer does not have the ability to know a field's attribute type.
+The `customAttributeMetadata` query returns the attribute type, given an attribute code and entity type. All entity attributes can be added to an equivalent GraphQL type, including custom, extension, and EAV (which have precedence set in that order for collisions). The GraphQL query consumer does not have the ability to know a field's attribute type.
 
-## Supported attributes
+## Syntax
 
-Attribute |  Data Type | Description
---- | --- | ---
-`attribute_code` | String | The unique identifier for an attribute code. This value should be in lowercase letters without spaces.
-`attribute_options` | `AttributeOption` | A list of attribute options
-`attribute_type` | String | The data type of the attribute (Response only)
-`entity_type` | String | The type of entity that defines the attribute
-
-
-### AttributeOption object
-
-Attribute |  Data Type | Description
---- | --- | ---
-`label` | String | The name of an attribute option
-`value` | String | The value assigned to an attribute option
-
+`customAttributeMetadata(attributes: [AttributeInput!]!): CustomAttributeMetadata`
 
 ## Example usage
 
@@ -29,7 +17,7 @@ The following query returns the attribute type for various custom and EAV attrib
 
 **Request**
 
-```text
+```graphql
 {
  customAttributeMetadata(
    attributes: {
@@ -129,3 +117,32 @@ The following query returns the attribute type for various custom and EAV attrib
   }
 }
 ```
+
+## Input attributes
+
+The `customAttributeMetadata` query requires the following attributes as input.
+
+Attribute |  Data Type | Description
+--- | --- | ---
+`attribute_code` | String! | The unique identifier for an attribute code. This value should be in lowercase letters without spaces
+`entity_type` | String! | The type of entity that defines the attribute
+
+## Output attributes
+
+The `CustomAttributeMetadata` object is an array of `items`. The `items` object can contain the following attributes.
+
+Attribute |  Data Type | Description
+--- | --- | ---
+`attribute_code` | String | The unique identifier for an attribute code. This value should be in lowercase letters without spaces
+`attribute_options` | [`AttributeOption`] | An array of attribute options
+`attribute_type` | String | The data type of the attribute
+`entity_type` | String | The type of entity that defines the attribute
+
+### AttributeOption object
+
+The `AttributeOption` object contains the name and value of the option.
+
+Attribute |  Data Type | Description
+--- | --- | ---
+`label` | String | The name of an attribute option
+`value` | String | The value assigned to an attribute option

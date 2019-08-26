@@ -13,10 +13,8 @@ When a customer upgrades Magento to a version several releases ahead of the inst
 
 The new declarative schema approach allows developers to declare the final desired state of the database and has the system adjust to it automatically, without performing redundant operations. Developers are no longer forced to write scripts for each new version. In addition, this approach allows data be deleted when a module is uninstalled.
 
-
 {:.bs-callout .bs-callout-info}
 **Implementing declarative schema is not a requirement for Magento 2.3.** However, upgrade scripts will be phased out in favor of declarative schema.
-
 
 To prepare a module for declarative schema, you must
 
@@ -30,7 +28,7 @@ Once a module is converted to the declarative schema approach, it cannot be reve
 
 * *Data patch* - A class that contains data modification instructions. It can have dependencies on other data or schema patches.
 
-* *Revertable data patch* - A patch that can be reverted as a module or patch is uninstalled or deleted. Revertable operations are Data Query Language (DQL) and Data Manipulation Language (DML) operations: INSERT, UPDATE.
+* *Revertable data patch* - A `data patch` that contains a `revert()` method (see [Reverting data patches]({{ page.baseurl }}/extension-dev-guide/declarative-schema/data-patches.html/#revertingDataPatches)) with provided operations that revert revertable changes caused by the module. Revertable operations are usually related to changes in the database.
 
 * *Migration* - A type of non-revertable data patch that can be applied, but not reverted. Any complex operation, such as one that contains an application layer (for example, Collections or Serializers) is non-revertable. SQL delete operations are non-revertable because they can cause triggering.
 
@@ -40,3 +38,5 @@ Once a module is converted to the declarative schema approach, it cannot be reve
   * Performing data migration with inside DDL operations
   * Renaming tables, columns, and other entities
   * Adding partitions and options to a table
+
+* *Revertable schema patch* - A `schema patch` that contains a `revert()` method with the provided revert functionality. Like in the `Revertable data patch`, the revert functionality of the `schema patch` affects changes in the database only.

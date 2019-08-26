@@ -164,7 +164,6 @@ The fields of static forms are not generated dynamically, so they can be defined
 
 The following code sample shows configuration of the form that contains four fields: text input, select, checkbox, and date. This form uses checkout data provider (`checkoutProvider`) that is introduced in the `Magento_Checkout` module:
 
-
 ```xml
 <item name="custom-checkout-form-container" xsi:type="array">
     <!-- Your JS file previously created -->

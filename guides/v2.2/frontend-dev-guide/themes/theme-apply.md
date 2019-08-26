@@ -28,7 +28,7 @@ To apply a theme:
 2. In the configuration record corresponding to your store view, click **Edit**. The page with design configuration for the selected scope opens. For example:
 
     ![Design Configuration page for a particular scope]
-    
+
 4. On the **Default Theme** tab, in the **Applied Theme** drop-down, select your newly created theme.
 5. Click **Save Configuration**.
 6. If caching is enabled, [clear the cache](#theme-apply-clear).
@@ -79,7 +79,6 @@ A system message notifies you that invalidated cache types must be refreshed.
 ## Troubleshooting (if the changes do not get applied)
 
 If the changes you configure in the Admin are not applied after you clear the cache and reload the page, delete all files in the `pub/static/frontend` and `var/view_preprocessed` directories, then reload the pages. You can delete the files manually or run the `grunt clean:<theme_name>` command in CLI. For details about using Grunt in Magento see [Installing and configuring Grunt]({{ page.baseurl }}/frontend-dev-guide/css-topics/css_debug.html#prerequisites).
-
 
 [Design Configuration page]: {{site.baseurl}}/common/images/design_conf1.png
 [Design Configuration page for a particular scope]: {{site.baseurl}}/common/images/fdg/applied_theme.png

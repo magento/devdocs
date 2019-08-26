@@ -98,7 +98,7 @@ To install the default version of Apache (Ubuntu 14, 16&mdash;Apache 2.4, Ubuntu
 ### Enable rewrites and .htaccess for Apache 2.2
 {% include install/allowoverrides22.md %}
 
-#### Next steps
+__Next steps:__
 
 * [Solving 403 (Forbidden) errors](#apache-error)
 * Continue with the next prerequisite ([PHP]({{ page.baseurl }}/install-gde/prereq/php-settings.html))
@@ -143,10 +143,10 @@ If the `apt-get install` command fails because of unmet dependencies, consult a 
 
 4. Continue with the next section.
 
-### Enable rewrites and .htaccess for Apache 2.4
+### Enable rewrites and .htaccess for Apache 2.4 {#enable-rewr-apache24-upgr-ubuntu12}
 {% include install/allowoverrides24.md %}
 
-#### Next steps
+__Next steps:__
 
 * [Solving 403 (Forbidden) errors](#apache-error)
 * Continue with the next prerequisite ([PHP]({{ page.baseurl }}/install-gde/prereq/php-settings.html))
@@ -189,7 +189,7 @@ Even though Apache 2.4 is provided by default with CentOS 7, you configure it li
 ### Enable rewrites and .htaccess for Apache 2.2 (including CentOS 7)
 {% include install/allowoverrides22.md %}
 
-#### Next steps
+__Next steps:__
 
 * [Solving 403 (Forbidden) errors](#apache-error)
 * Continue with the next prerequisite ([PHP]({{ page.baseurl }}/install-gde/prereq/php-settings.html))
@@ -241,7 +241,7 @@ For example:
 The preceding values for `Order` might not work in all cases. For more information, see the [Apache documentation](https://httpd.apache.org/docs/2.2/mod/mod_authz_host.html#order){:target="_blank"}.
 {% endcollapsible %}
 
-#### Related topics:
+#### Related topics
 
 * [PHP]({{ page.baseurl }}/install-gde/prereq/php-settings.html)
 * [MySQL]({{ page.baseurl }}/install-gde/prereq/mysql.html)

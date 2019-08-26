@@ -37,7 +37,6 @@ Notifications of Changes:
 
 <!-- (OPTIONAL) What other information can you provide? -->
 
-
 <!--
 Thank you for taking the time to request updates for your Community Engineering contribution!
 GitHub Issues should only be created for problems/topics related to this project's codebase.

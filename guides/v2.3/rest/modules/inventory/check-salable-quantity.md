@@ -33,7 +33,6 @@ Name | Description | Type
 `type` | The type of sales channel the stock is assigned to. For 2.3, this value must be `website`. | String
 `code` | The code of the sales channel (website) | String
 
-
 ## Check the available quantity of a salable product
 
 This call returns the available quantity of a product assigned to the specified stock ID.
@@ -47,7 +46,6 @@ Name | Description | Type
 `sku` | The SKU of the product | String
 `stock_id` | The ID of the stock the product is assigned to | Integer
 
-
 **Payload**
 
 None
@@ -55,7 +53,6 @@ None
 **Response**
 
 An integer indicating the salable quantity of the product, such as `75`.
-
 
 ## Check whether a product is salable
 
@@ -65,7 +62,6 @@ This call returns a boolean value that indicates whether the product from the sp
 
 `GET <host>/rest/<store_code>/V1/inventory/is-product-salable/sp2/2`
 
-
 **Payload**
 
 None
@@ -73,7 +69,6 @@ None
 **Response**
 
 `true` or `false`
-
 
 ## Check whether a product is salable for a specified quantity
 
@@ -103,7 +98,6 @@ This call returns the stock ID associated with the specified sales channel type 
 **Sample Usage**
 
 `GET <host>/rest/<store_code>/V1/inventory/stock-resolver/website/na_site`
-
 
 **Payload**
 
