@@ -67,7 +67,7 @@ Before you migrate any data, you must create a Magento 2 module.
 
    ```php
    <?php
-   
+
    \Magento\Framework\Component\ComponentRegistrar::register(
        \Magento\Framework\Component\ComponentRegistrar::MODULE,
        'Vendor_Migration',
@@ -116,19 +116,19 @@ There are two possible ways to configure the Data Migration Tool for migration:
 
 1. Change to the following directory:
 
-    ```
+    ```bash
     <your Magento 2 install dir>/vendor/magento/data-migration-tool/etc/<migration edition>/<ce or version>
     ```
 
 1. Enter the following command to create a `config.xml` from the provided sample:
 
-    ```
+    ```bash
     cp config.xml.dist config.xml
     ```
 
 1. Open `config.xml` in a text editor.
 
-1. As minimum `config.xml` should contains access details to M1 and M2 databases, and encryption key:
+1. At a minimum, the config.xml file must contain access details to M1 and M2 databases and encryption keys.
 
     ```xml
     <source>
@@ -142,7 +142,7 @@ There are two possible ways to configure the Data Migration Tool for migration:
     </options>
     ```
 
-    The `<crypt_key>` tag is mandatory to fill. It can be found in `local.xml` file which is located in the directory of Magento 1 instance at `app/etc/local.xml` in `<key>` tag.
+    The <crypt_key> tag must contain a value. You can find it inside the <key> tag, which is located in the app/etc/local.xml file on your Magento 1 instance.
 
     Optional parameters:
 
