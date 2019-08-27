@@ -96,7 +96,7 @@ Make sure that your observer or plugin is declared in the proper area:
 - [`graphql`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/GraphQl/etc/di.xml){:target="_blank"}
 - [`webapi_rest`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Webapi/etc/di.xml){:target="_blank"}
 - [`webapi_soap`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Webapi/etc/di.xml){:target="_blank"}
- 
+
 The plugins and observers should be declared in the `<module-dir>/etc/<area>/` directory.
 
 {:.bs-callout-info}
