@@ -33,5 +33,5 @@ To resolve the issue, try the following:
 
 	*	[Version 2.2]({{ site.gdeurl22 }}install-gde/system-requirements.html)
 	*	[Version 2.3]({{ site.gdeurl23 }}install-gde/system-requirements.html)
-	
+
 *	Set the same PHP settings for both the PHP command line and the PHP web server plug-in as discussed in [PHP configuration options]({{ page.baseurl }}/install-gde/prereq/php-centos.html)

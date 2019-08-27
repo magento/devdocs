@@ -262,7 +262,7 @@ Let's see our data source file `<magento2_root_dir>/dev/tests/functional/tests/a
 
 ```php
 <?php
- 
+
 namespace Magento\Widget\Test\Fixture\Widget;
 
 use Magento\Mtf\Fixture\FixtureFactory;

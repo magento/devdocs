@@ -19,9 +19,9 @@ Look for the following {{site.data.var.ece}} highlights in this release:
 
 * **Magento Commerce Starter**. In addition to our Pro plan, Magento Cloud (Commerce) now comes in a smaller, Platform-as-a-Service version — Magento Commerce Starter. For an overview of these plans, see [Welcome to Magento Commerce Cloud]({{ site.baseurl }}/guides/v2.2/cloud/bk-cloud.html). For specific information on Starter, see Starter [architecture]({{ site.baseurl }}/guides/v2.2/cloud/basic-information/starter-architecture.html) and [develop and deploy workflow]({{ site.baseurl }}/guides/v2.2/cloud/basic-information/starter-develop-deploy-workflow.html).
 
-* **Staging and Production environments in the UI** for Pro projects. Starting October 23, 2017, all projects created using the free 30-day trial or provisioned for new accounts includes Staging and Production environments in the Project Web Interface. Existing accounts created before October 23, 2017 can enter a ticket to be updated. For more information, see [Add Staging and Production to Pro projects UI]({{ page.baseurl }}/cloud/trouble/pro-env-management.html).
+* **Staging and Production environments in the UI** for Pro projects. Starting October 23, 2017, all projects created using the free 30-day trial or provisioned for new accounts includes Staging and Production environments in the Project Web Interface.
 
-* **30-day free trials available** for Starter and Pro projects. Starting October 23, 2017, we provide trials for Start and Pro projects. We autoprovision your project, configuring basic settings to get you started. You can access a new Onboarding Portal to get started with your project. For more information, see [Subscriptions and plans]({{ page.baseurl }}/cloud/bk-cloud.html).
+* **30-day free trials available** for Starter and Pro projects. Starting October 23, 2017, we provide trials for Start and Pro projects. We auto provision your project, configuring basic settings to get you started. You can access a new Onboarding Portal to get started with your project. For more information, see [Subscriptions and plans]({{ page.baseurl }}/cloud/bk-cloud.html).
 
 * **Improvements to the {{site.data.var.ece}} deployment process**. This release includes new build and deployment variables. Users of earlier versions of {{site.data.var.ece}} will note that MCC has been replaced by ece-tools and ece-patches, which allows for patching your {{site.data.var.ece}} without requiring a full installation of base code and the patch. For more information, see [Magento application environment variables]({{ site.baseurl }}/guides/v2.2/cloud/env/environment-vars_magento.html), [Composer]({{ site.baseurl }}/guides/v2.2/cloud/reference/cloud-composer.html), and [Changes in Deployment](#deploy).
 
@@ -102,7 +102,6 @@ When upgrading to {{site.data.var.ece}} 2.2, consider the following changes in d
 ## Community contributions {#community}
 
 We are grateful to the wider Magento community and would like to acknowledge their contributions to this release. Check out the following ways you can learn about the community contributions to our current releases:
-
 
 * If a community member has provided a fix for this release, we identify the fix in the Fixed Issue section of these notes with the phrase, "*Fix provided by community member @member_name*".
 

@@ -35,7 +35,6 @@ The following table explains this command's options, parameters, and values.
 | `-d --directory`        | Path to the base directory to start searching for report data.                                                       | No        |
 | `-o --output`           | Specifies the absolute file system path and file name of the comma-separated value (csv) output file for the report. | No        |
 
-
 If no directory or filename is passed as an argument, the following application root is used as the default directory, and the following default filenames are used:
 
 | Command                                           | Filename                            |
@@ -43,7 +42,6 @@ If no directory or filename is passed as an argument, the following application 
 | `magento info:dependencies:show-modules`          | `modules-dependencies.csv`          |
 | `magento info:dependencies:show-modules-circular` | `modules-circular-dependencies.csv` |
 | `magento info:dependencies:show-framework`        | `framework-dependencies.csv`        |
-
 
 ### Sample module dependencies report
 

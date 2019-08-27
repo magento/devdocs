@@ -41,7 +41,7 @@ The following arguments must be configured (all arguments are mandatory):
 
 #### Value handlers pool {#value_handlers_pool}
 
-Let's look closer at the value handlers pool of a payment method. This pool enables you to set payment configuration that is based on certain conditions. 
+Let's look closer at the value handlers pool of a payment method. This pool enables you to set payment configuration that is based on certain conditions.
 
 For example, the `can_void` configuration option might depend on payment transaction status or paid amount. The following sample shows how to set the corresponding configuration ([app/code/Magento/Braintree/etc/di.xml#L296]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Braintree/etc/di.xml#L296)):
 
@@ -74,7 +74,7 @@ In your configuration you can use default [Magento\Payment\Gateway\Config\Config
 And [Magento\Braintree\Gateway\Config\Config]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Braintree/Gateway/Config/Config.php) reads
 configuration from database or payment config file.
 
-Other handlers contain some logic, for example, `can_cancel` option is the same as `can_void` and depends on whether the order has paid amount (invoiced). 
+Other handlers contain some logic, for example, `can_cancel` option is the same as `can_void` and depends on whether the order has paid amount (invoiced).
 
 Your custom handlers must implement the [Value Handler interface]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Payment/Gateway/Config/ValueHandlerInterface.php).
 
@@ -86,7 +86,7 @@ You can configure the pool of validators, which allows processing various paymen
  - `currency` — checks if the selected currency is allowed for the payment method
  - `availability` — checks if the payment method is available
  - `global` — the validation that is called before placing an order
- 
+
 A custom validator should implement the `\Magento\Payment\Gateway\Validator\ValidatorInterface`. In the most cases, it is enough
 to extend the `\Magento\Payment\Gateway\Validator\AbstractValidator` and create an implementation of the `validate` method:
 
@@ -132,4 +132,4 @@ Then, the newly created validator needs to be added to the global pool of valida
 ## What's next
 
 - [Payment info rendering in Admin checkout]({{ page.baseurl }}/payments-integrations/base-integration/formblocktype.html)
-- [Add a gateway command]({{ page.baseurl }}/payments-integrations/base-integration/payment-action.html) 
+- [Add a gateway command]({{ page.baseurl }}/payments-integrations/base-integration/payment-action.html)

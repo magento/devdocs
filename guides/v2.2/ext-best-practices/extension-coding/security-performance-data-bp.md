@@ -19,7 +19,7 @@ For a list of discouraged low-level functions, review the [`Magento2/Sniffs/Func
 ## Use wrappers instead of superglobal variables
 
 Make sure that your Magento application does not directly use any PHP superglobals such as:
-  
+
   ```php
   $GLOBALS, $_SERVER, $_GET, $_POST, $_FILES, $_COOKIE, $_SESSION, $_REQUEST, $_ENV
   ```
@@ -63,7 +63,7 @@ Never store sensitive information in clear text within a resource that might be 
 ## Avoid unnecessary logic execution
 
 Make sure that you never run code that will not be used in the next step.
-  
+
 Check the below example where we always get the `customerId` and `storeId`, but we are not going to use them.
 
 ### Example

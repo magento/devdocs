@@ -76,17 +76,25 @@ If you already have a sample module, you can use it; skip this step and the next
 
 Before you continue, make sure the sample module is registered and enabled.
 
-{% collapsible To verify the sample module: %}
+1. Run the following command:
 
-1.  Log in to the Magento Admin as an administrator.
-2.  Click **Stores** > **Settings** > **Configuration** > ADVANCED > **Advanced**.
-3.  In the right pane, under Disable Modules Output, look for **Magento_SampleMinimal** as the following figure shows.
+    ```bash
+    bin/magento module:status
+    ```
 
-    ![Verify your sample module]({{ site.baseurl }}/common/images/config_module-enabled.png){:width="900px"}
+2. Make sure that the module's name is displaying under `List of enabled modules:`.
 
-If the module doesn't display, review [step 1](#cron-tut-get) carefully. Make sure your code is in the correct directory. Spelling and case are important; if anything is different, the module won't load. Also, don't forget to run `magento setup:upgrade`.
+    ```text
+    List of enabled modules:
+    ...
+    Magento_SampleMinimal
+    ...
 
-{% endcollapsible %}
+    List of disabled modules:
+    None
+    ```
+
+If the module does not display, review [step 1](#cron-tut-get) carefully. Make sure your code is in the correct directory. Spelling and case are important; if anything is different, the module won't load. Also, don't forget to run `magento setup:upgrade`.
 
 ## Step 3: Create a class to run cron {#cron-tut-class}
 
@@ -102,7 +110,8 @@ This step shows a simple class to create a cron job. The class only writes a row
 ```php
 <?php
 namespace Magento\SampleMinimal\Cron;
-use \Psr\Log\LoggerInterface;
+
+use Psr\Log\LoggerInterface;
 
 class Test {
     protected $logger;
@@ -111,20 +120,16 @@ class Test {
         $this->logger = $logger;
     }
 
-/**
-   * Write to system.log
-   *
-   * @return void
-   */
-
+   /**
+    * Write to system.log
+    *
+    * @return void
+    */
     public function execute() {
         $this->logger->info('Cron Works');
     }
-
 }
 ```
-
-<!-- ?> -->
 
 {% endcollapsible %}
 

@@ -140,7 +140,7 @@ For example, to set the mode by website run:
 ```bash
 bin/magento indexer:set-dimensions-mode catalog_product_price website
 ```
-To check the current mode you can use next command: 
+To check the current mode you can use next command:
 ```bash
 bin/magento indexer:show-dimensions-mode
 ```

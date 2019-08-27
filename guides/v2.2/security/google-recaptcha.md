@@ -18,7 +18,7 @@ Google reCAPTCHA reduces potential user error when entering a Captcha code and e
 ## Install Module
 
 {:.bs-callout .bs-callout-info}
-The Google reCAPTCHA extension is bundled and installed with {{site.data.var.ce}} and {{site.data.var.ee}} 2.1.18 and 2.2.9 and later. 
+The Google reCAPTCHA extension is bundled and installed with {{site.data.var.ce}} and {{site.data.var.ee}} 2.1.18 and 2.2.9 and later.
 
 Install the extension using the following Composer command:
 

@@ -7,7 +7,7 @@ A data patch is a class that contains data modification instructions. It is defi
 
 A schema patch contains custom schema modification instructions. These modifications can be complex. It is defined in a `<Vendor>/<Module_Name>/Setup/Patch/Schema/<Patch_Name>.php` file and implements `\Magento\Framework\Setup\Patch\SchemaPatchInterface`.
 
-Unlike the declarative schema approach, patches will only be applied once. A list of applied patches is stored in the `patch_list` database table. An unapplied patch will be applied when running the `setup:upgrade` from the Magento CLI. 
+Unlike the declarative schema approach, patches will only be applied once. A list of applied patches is stored in the `patch_list` database table. An unapplied patch will be applied when running the `setup:upgrade` from the Magento CLI.
 
 Optionally, if you plan to enable rollback for your patch during module uninstallation, then you must implement `\Magento\Framework\Setup\Patch\PatchRevertableInterface`.
 
@@ -119,7 +119,7 @@ The following code sample defines a data patch class that has a dependency.
     }
 ```
 
-## Reverting data patches
+## Reverting data patches {#revertingDataPatches}
 
 Magento does not allow you to revert a particular module data patch. However, you can revert all `composer` installed or `non-composer` installed data patches using the `module:uninstall` command.
 
@@ -138,4 +138,4 @@ bin/magento module:uninstall --non-composer Vendor_ModuleName
 ## Will old scripts work in newer versions?
 
 Old scripts will work with new versions of Magento. However, if you want to convert your old scripts to the new format,
-implement `\Magento\Framework\Setup\Patch\PatchVersionInterface`. This interface allows you to specify the setup version of the module in your database. If the version of the module is higher than the version specified in your patch, then the patch is skipped. If the version in the database is equal or lower, then the patch installs.
+implement `\Magento\Framework\Setup\Patch\PatchVersionInterface`. This interface allows you to specify the setup version of the module in your database. If the version of the module is higher than or equal to the version specified in your patch, then the patch is skipped. If the version in the database is lower, then the patch installs.

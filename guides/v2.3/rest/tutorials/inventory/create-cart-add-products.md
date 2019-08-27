@@ -49,7 +49,6 @@ Product | Baltimore Warehouse | Austin Warehouse  | Reno Warehouse
 `24-WB01` | 35 | 10 | 25
 `24-WB03` | 19 | 0 | 42
 
-
 Later in this step, we'll order 20 `24-WB01` items and 50 `24-WB03` items. We can see that we have enough salable items for both products, but let's check programmatically.
 
 ### Check for product `24-WB01`
@@ -171,7 +170,6 @@ Use the same endpoint to add 50 items of `24-WB03` to the cart. Multiple sources
 **Response**
 
 Note the `item_id` for use in subsequent steps.
-
 
 ```json
 {
