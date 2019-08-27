@@ -160,8 +160,8 @@ For an upgrade, you delete the `config.php` file. Once this file is added to you
 {%
 include note.html
 type='info'
-content='Review your third-party extension and module pages in Marketplace or other company sites to verify support for {{site.data.var.ee}} and {{site.data.var.ece}} version 2.2.
-  
+content='Review your third-party extension and module pages in Marketplace or other company sites to verify support for Magento Commerce and Magento Commerce Cloud version 2.2.
+
 If you need to upgrade any third-party extensions and modules that support version 2.2, we recommend working in a new Integration branch with your extensions disabled.'
 %}
 

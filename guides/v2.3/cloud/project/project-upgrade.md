@@ -60,8 +60,8 @@ If you use PHP version 7.2, you must remove the `mcrypt` extension from the [`ex
 {%
 include note.html
 type='info'
-content='Review your third-party extension and module pages in Marketplace or other company sites to verify support for {{site.data.var.ee}} 2.3.
-  
+content='Review your third-party extension and module pages in Marketplace or other company sites to verify support for Magento Commerce 2.3.
+
 If you need to upgrade any third-party extensions and modules that support version 2.3, we recommend working in a new Integration branch with your extensions disabled.'
 %}
 
