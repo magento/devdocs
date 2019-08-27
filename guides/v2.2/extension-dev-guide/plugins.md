@@ -61,7 +61,7 @@ The first argument for the before, after, and around methods is an object that p
 
 It is a Magento best practice to capitalize the first letter of the class method name for which you want to create a plugin before adding `before`, `around` or `after` prefixes to it.
 
-For example, to create a plugin for the `setName` method of some class: 
+For example, to create a plugin for the `setName` method of some class:
 
 ```php
 ...
