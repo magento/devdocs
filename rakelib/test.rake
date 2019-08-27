@@ -5,8 +5,8 @@ namespace :test do
   desc 'Build devdocs and check for broken links'
   task links: %w[build links_no_build]
 
-  desc 'Check the existing _site for broken links on Jenkins'
-  task cicd: %w[style] do
+  desc 'Check the entire _site for broken links and invalid HTML'
+  task :cicd do
     puts 'Checking links with html-proofer...'.magenta
 
     LinkChecker.check_site
