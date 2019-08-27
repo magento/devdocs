@@ -4,7 +4,7 @@ description: |
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: /whats-new.html
 thread: /whatsnew-feed.xml
-updated: Mon Aug 26 21:09:12 2019
+updated: Mon Aug 26 22:12:19 2019
 entries:
 - description: Added new code examples to the [JavaScript Mixins](https://devdocs.magento.com/guides/v2.3/javascript-dev-guide/javascript/js_mixins.html)
     topic.
@@ -41,16 +41,7 @@ entries:
   type: Major update
   date: August 26, 2019
   link: https://github.com/magento/devdocs/pull/5225
-<<<<<<< HEAD
 - description: Added a new topic about the [Breadcrumbs widget](https://devdocs.magento.com/guides/v2.3/javascript-dev-guide/widgets/widget-breadcrumbs.html).
-=======
-- description: Added a new topic about the [RowBuilder widget](https://devdocs.magento.com/guides/v2.2/javascript-dev-guide/widgets/widget-row-builder.html).
-  versions: 2.2.x, 2.3.x
-  type: New topic
-  date: August 26, 2019
-  link: https://github.com/magento/devdocs/pull/5206
-- description: Added a new topic about the [Breadcrumb widget](https://devdocs.magento.com/guides/v2.3/javascript-dev-guide/widgets/widget-breadcrumbs.html).
->>>>>>> a4d60d12f1edd74732c3bd71f0bcaf493e77cc0f
   versions: 2.2.x, 2.3.x
   type: New topic
   date: August 26, 2019
@@ -61,11 +52,51 @@ entries:
   type: Major update
   date: August 23, 2019
   link: https://github.com/magento/devdocs/pull/5209
-<<<<<<< HEAD
+- description: Updated [Magento Commerce Cloud Guide](https://devdocs.magento.com/guides/v2.3/cloud/architecture/pro-develop-deploy-workflow.html)
+    to remove obsolete instructions for configuring legacy environments and migrating
+    legacy Cloud environments to use the Project Web UI. Legacy environments are those
+    provisioned prior to October 23, 2017.
+  versions: 2.x
+  type: Major update
+  date: August 22, 2019
+  link: https://github.com/magento/devdocs/pull/5125
+- description: Added new code examples to the [JavaScript Mixins](https://devdocs.magento.com/guides/v2.3/javascript-dev-guide/javascript/js_mixins.html)
+    topic.
+  versions: 2.2.x, 2.3.x
+  type: Major update
+  date: August 26, 2019
+  link: https://github.com/magento/devdocs/pull/5229
+- description: Added new code examples to the [Loader widget](https://devdocs.magento.com/guides/v2.3/javascript-dev-guide/widgets/widget_loader.html)
+    topic.
+  versions: 2.2.x, 2.3.x
+  type: Major update
+  date: August 26, 2019
+  link: https://github.com/magento/devdocs/pull/5230
+- description: Added information about how to [retrieve dependency injection configuration
+    information](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/build/di-xml-file.html)
+    for a particular class.
+  versions: 2.2.x, 2.3.x
+  type: Major update
+  date: August 26, 2019
+  link: https://github.com/magento/devdocs/pull/5269
+- description: Added a new topic about [view models](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/module-development.html).
+  versions: 2.2.x, 2.3.x
+  type: New topic
+  date: August 26, 2019
+  link: https://github.com/magento/devdocs/pull/5147
+- description: Added new code examples to the [Customize Checkout](https://devdocs.magento.com/guides/v2.3/howdoi/checkout/checkout_customize.html)
+    tutorial.
+  versions: 2.2.x, 2.3.x
+  type: Major update
+  date: August 26, 2019
+  link: https://github.com/magento/devdocs/pull/5225
+- description: Added a [technical guideline](https://devdocs.magento.com/guides/v2.2/coding-standards/technical-guidelines.html)
+    5.20 about exceptions in observers and plugins.
+  versions: 2.2.x, 2.3.x
+  type: Major update
+  date: August 23, 2019
+  link: https://github.com/magento/devdocs/pull/5209
 - description: Updated the [Magento Commerce Cloud Guide](https://devdocs.magento.com/guides/v2.3/cloud/architecture/pro-develop-deploy-workflow.html) to remove obsolete instructions
-=======
-- description: Updated Magento Commerce Cloud documentation to remove obsolete instructions
->>>>>>> a4d60d12f1edd74732c3bd71f0bcaf493e77cc0f
     for configuring legacy environments and migrating legacy Cloud environments to
     use the Project Web UI. Legacy environments are those provisioned prior to October
     23, 2017.
@@ -73,15 +104,6 @@ entries:
   type: Major update
   date: August 22, 2019
   link: https://github.com/magento/devdocs/pull/5125
-<<<<<<< HEAD
-=======
-- description: Added a tutorial about how to create a [grouped product using the REST
-    API](https://devdocs.magento.com/guides/v2.3/rest/tutorials/grouped-product/create-and-manage-grouped-products.html).
-  versions: 2.3.x
-  type: New topic
-  date: August 19, 2019
-  link: https://github.com/magento/devdocs/pull/5155
->>>>>>> a4d60d12f1edd74732c3bd71f0bcaf493e77cc0f
 - description: Added a tutorial about how to create a [grouped product using the REST
     API](https://devdocs.magento.com/guides/v2.3/rest/tutorials/grouped-product/create-and-manage-grouped-products.html).
   versions: 2.3.x
