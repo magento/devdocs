@@ -15,7 +15,7 @@ Use the `country` query to retrieve information about a specific country.
 
 The following query returns information about Australia.
 
-**Request** 
+**Request**
 
 ```text
 query {

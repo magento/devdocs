@@ -17,13 +17,12 @@ For more details, see [Title Case standards]({{ page.baseurl }}/design-styleguid
 <ul style="list-style-type:none">
   <li><strong>No</strong> – “Free Demo”</li>
   <li>Yes – “Sign Up for Free Demo”</li>
-</ul>  
-
+</ul>
 
 <ul style="list-style-type:none">
   <li><strong>No</strong> – “New Rule”</li>
   <li>Yes – “Add Rule”</li>
-</ul>  
+</ul>
 
 ## Buttons
 
@@ -121,7 +120,7 @@ The following labels are the standards for Admin labels. Refer to these footnote
     </tr>
     <tr>
       <td>Add<strong>*</strong><br />Add [ + Label ]<strong>*</strong></td>
-      <td>Use to create a new object or to add an existing object. As a primary call to action, the label usually matches the page title.<br /><br />   
+      <td>Use to create a new object or to add an existing object. As a primary call to action, the label usually matches the page title.<br /><br />
       “Create [ + Label ]” is also used, but only as an action for creating a new object, not adding an existing one.</td>
     </tr>
     <tr>

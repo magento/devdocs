@@ -67,4 +67,4 @@ Attribute |  Data Type | Description
 
 ## Related topics
 
-[Products endpoint]({{page.baseurl}}/graphql/reference/products.html)
+[Products endpoint]({{page.baseurl}}/graphql/queries/products.html)

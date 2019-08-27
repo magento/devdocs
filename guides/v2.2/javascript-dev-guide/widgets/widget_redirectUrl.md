@@ -35,7 +35,7 @@ Phtml template file examples using script:
         'redirectUrl'
     ], function ($) {
         'use strict';
-        
+
         $("#element").redirectUrl({url: 'http://example.com'});
     });
 </script>

@@ -80,12 +80,12 @@ For details about adding a custom preprocessor, see [Add custom CSS preprocessor
               .src([config.src])
               .pipe(plumber({errorHandler: onError}))
               .pipe(sass().on('error', sass.logError));
-    
+
           return stream
               .pipe(gulp.dest('./web/css/'));
       });
    ```
-   
+
    This task uses `styles.scss`, stored in the `app/design/frontend/<Vendor>/<theme>/web/css/` directory, as the source of Sass. It stores the generated CSS in `styles.css` in the `app/code/frontend/<Vendor>/<theme>` directory.
 
 5. Put the source `styles.scss` file in the `app/design/frontend/<Vendor>/<theme>/web/css/` directory.
@@ -104,7 +104,7 @@ For details about adding a custom preprocessor, see [Add custom CSS preprocessor
 
 ## Using the @import directive in Sass
 
-In the source .`scss` files you can use the `@import` directive, to import other `.scss` files. You can put the module-related stylesheets in the module directories in the theme, and then include them in the main `.scss` file. For example, if you create a `_catalogstls.scss` file for styles of the `Magento_Catalog` module and put it in `app/design/frontend/<Vendor>/<theme>/Magento_Catalog/styles `, you can import it using the following notation:
+In the source .`scss` files you can use the `@import` directive, to import other `.scss` files. You can put the module-related stylesheets in the module directories in the theme, and then include them in the main `.scss` file. For example, if you create a `_catalogstls.scss` file for styles of the `Magento_Catalog` module and put it in `app/design/frontend/<Vendor>/<theme>/Magento_Catalog/styles`, you can import it using the following notation:
 ```css
 @import '../Magento_Theme/styles/module`
 ```

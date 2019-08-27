@@ -13,5 +13,3 @@ functional_areas:
   - Setup
 ---
 
-
-

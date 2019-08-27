@@ -23,12 +23,11 @@ Topics of this chapter describe the following:
 ## Terms used {#js_terms}
 
 | Term                                  | Description                                        |
-| ------------------------------------- |--------------------------------------------------- | 
+| ------------------------------------- |--------------------------------------------------- |
 | *JavaScript component (JS component)* | Any separate `.js` file decorated as [AMD module]. |
 | *Ui component*                        | JS component located in the `Magento_Ui` module, in the [app/code/Magento/Ui/view] directory, or JS component that extends files from this module. |
 | *jQuery UI widget*                    | A JS component/widget provided by [jQuery UI library used in Magento]. |
 | *jQuery widget*                       | Custom widget created using jQuery UI Widget Factory and decorated as AMD module. Many Magento JS components are jQuery widget. |
-
 
 [RequireJS file and module loader]: http://requirejs.org/
 [disable all the default scripts and their load by RequireJS]: {{page.baseurl}}/javascript-dev-guide/javascript/custom_js.html#disable_default_js

@@ -7,7 +7,6 @@ title: Magento_Quote module
 # Overview
 ## Purpose of module
 
-
 # Deployment
 ## System requirements
 

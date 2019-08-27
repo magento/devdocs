@@ -30,10 +30,10 @@ Before you begin, complete the following steps:
 {:.bs-callout .bs-callout-info}
 You must install Magento from its `bin` subdirectory.
 
-You can run the installer multiple times with different options to complete installation tasks like the following: 
+You can run the installer multiple times with different options to complete installation tasks like the following:
 
 *  Install in phases—For example, after you configure your web server for Secure Sockets Layer (SSL), you can run the installer again to set SSL options.
-	
+
 *  Correct mistakes in previous installations.
 
 *  Install Magento in a different database instance.
@@ -55,7 +55,6 @@ You can run the following commands to find values for some required arguments:
 | Currency           | magento info:currency:list      |
 | Time zone          | php  magento info:timezone:list |
 
-
 {:.bs-callout .bs-callout-info}
 If an error displays when you run these commands, verify that you updated installation dependencies as discussed in [Update installation dependencies]({{ page.baseurl }}/install-gde/install/prepare-install.html).
 
@@ -72,10 +71,9 @@ The following tables describe the installation option names and values. For exam
 {:.bs-callout .bs-callout-info}
 Any options that contain spaces or special characters must be enclosed in either single or double quotes.
 
-
 **Admin credentials**
 
-The following options specify the user information and credentials for the Magento admin user. 
+The following options specify the user information and credentials for the Magento admin user.
 
 In Magento Commerce version 2.2.8 and later, you can create the Magento admin user during or after installation. If you create the user during installation, all admin credential variables are required. See [Sample localhost installations](#install-cli-example).
 
@@ -86,7 +84,6 @@ In Magento Commerce version 2.2.8 and later, you can create the Magento admin us
 |`--admin-email`|Magento administrator user's e-mail address.|Yes|
 |`--admin-user`|Magento administrator username.|Yes|
 |`--admin-password`|Magento administrator user password. The password must be at least 7 characters in length and must include at least one alphabetic and at least one numeric character. We recommend a longer, more complex password. Enclose the entire password string in single quotes. For example, `--admin-password='A0b9%t3g'`|Yes|
-
 
 **Site, database, and RabbitMQ configuration options**
 
@@ -119,7 +116,6 @@ In Magento Commerce version 2.2.8 and later, you can create the Magento admin us
 |`--amqp-virtualhost`|{{site.data.var.ee}} only. The virtual host for connecting to RabbitMQ. The default is `/`.|No|
 |`--amqp-ssl`|{{site.data.var.ee}} only. Indicates whether to connect to RabbitMQ. The default is `false`. See RabbitMQ for information about setting up SSL for RabbitMQ.|No|
 
-
 **Lock configuration options**
 
 |Name|Value|Required?|
@@ -136,7 +132,7 @@ To enable or disable modules after installing Magento, see [Enable and disable m
 
 {% include install/sens-data.md %}
 
-###  Sample localhost installations {#install-cli-example}
+### Sample localhost installations {#install-cli-example}
 
 The following examples show the commands to complete install {{ site.data.var.ee }} locally with various options.
 
@@ -198,9 +194,9 @@ For security, remove write permissions from these directories: '/var/www/html/ma
 [SUCCESS]: Admin Panel URI: /admin_puu71q
 ````
 
-After installation you can create an admin user using the `admin:user:create` command:	
+After installation you can create an admin user using the `admin:user:create` command:
 [Create or edit an administrator]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-admin.html#create-or-edit-an-administrator)
-	
+
 #### Example 3—Install with additional options
 
 The following example installs Magento with the following options:
@@ -247,7 +243,6 @@ Messages like the following display if the installation is successful:
 	[Progress: 274 / 274]
 	[SUCCESS]: Magento installation complete.
 	[SUCCESS]: Admin Panel URI: /admin_puu71q
-	
 
 #### Next step
 

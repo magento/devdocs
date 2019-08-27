@@ -19,7 +19,6 @@ Magento returns a response payload as well as an HTTP status code.
 
 This guide introduces web API, REST, and cURL command concepts. It shows you how to authenticate and construct and run REST [web API](https://glossary.magento.com/web-api) calls. You run REST web API calls through <a href="{{ page.baseurl }}/get-started/gs-curl.html">cURL commands</a> or a REST client.
 
-
 Read the following sections to get up and running with the Magento web APIs:
 
 <ul>

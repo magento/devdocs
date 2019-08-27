@@ -1,5 +1,4 @@
 
-
 {{site.data.var.ce}} and {{site.data.var.ee}}:
 
 *	magento/module-bundle-sample-data

@@ -94,7 +94,7 @@ The following steps describe debugging web requests and CLI commands.
 
 1.  Install the debug extension in the browser, and then click **Debug** to enable.
 
-1.  In the browser, open the `https://localhost` URL. 
+1.  In the browser, open the `https://localhost` URL.
 
 1.  When PhpStorm recognizes the Xdebug connection, you can begin debugging web requests.
 
@@ -110,7 +110,7 @@ You can debug any Magento command or PHP script using the following steps.
         -   _Mac OS X_—Select **Docker for Mac**. [_default_]
 
 1.  In the **Languages & Frameworks** > **PHP** > **Cli Interpreter** panel, click **[...]**.
-   
+
 1.  Click **[+]** to add and configure a new Cli Interpreter from your Docker image. Update the following settings:
 
     -   **Name**—Enter a name for the new interpreter, such as `Magento cloud docker cli`.
@@ -121,14 +121,14 @@ You can debug any Magento command or PHP script using the following steps.
         -   Windows—Enter `xdebug`.
         -   Mac OS X/Linux—Enter `xdebug.so`.
     -   Click **Refresh** to verify that the interpreter and Xdebug extension are configured properly.
-   
+
 1.  Click **Save**.
 
 1.  Open the _Run/Debug Configuration_ window and add a new **PHP script** with the following settings:
 
     -   **Name**—Enter `bin/magento`.
     -   **Configuration** > **File**—Select the path to the `bin/magento` file in your local environment.
-  
+
 1.  Add breakpoints in the `bin/magento` file and the debug PHP script created in the previous step.
 
 ## Using Xdebug Helper

@@ -1,7 +1,7 @@
 ---
 group: javascript-developer-guide
 subgroup: 3_Widgets
-title: Magnifier widget 
+title: Magnifier widget
 ---
 
 ## Overview
