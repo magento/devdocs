@@ -23,7 +23,7 @@ This module is available for Magento version 2.2.x only.
 1.  Configure the `.magento.env.yaml` file deploy stage with cron consumers to run **urlRewriteImport** only.
 
     ```yaml
-    stage: 
+    stage:
       deploy:
         CRON_CONSUMERS_RUNNER:
           cron_run: true
@@ -35,12 +35,12 @@ This module is available for Magento version 2.2.x only.
     Or, you can configure to run all consumers:
 
     ```yaml
-    stage: 
+    stage:
       deploy:
         CRON_CONSUMERS_RUNNER:
           cron_run: true
           max_messages: 1000
-    ```    
+    ```
 
     See the following for more information about configuring consumers:
 

@@ -97,6 +97,6 @@ mutation {
 
 1. Sign in as a customer to the website using the email `john.doe@example.com` and password `b1b2b3l@w+`.
 
-2. Go to Checkout. 
+2. Go to Checkout.
 
 3. The discount is displayed in the Order Summary block.

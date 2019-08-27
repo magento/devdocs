@@ -8,7 +8,7 @@ functional_areas:
   - Integration
 ---
 
-This topic describes how to display stored tokens in the customer account and give customers ability to remove the tokens. 
+This topic describes how to display stored tokens in the customer account and give customers ability to remove the tokens.
 
 ## Token renderer
 

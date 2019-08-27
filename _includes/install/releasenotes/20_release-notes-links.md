@@ -1,5 +1,4 @@
 
-
 {% collapsibleh2 Magento Open Source 2.0 Release Notes %}
 
 *	[Version 2.0.18]({{ page.baseurl }}/release-notes/ReleaseNotes2.0.18CE.html){:target="_blank"}

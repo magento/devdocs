@@ -55,7 +55,6 @@ JS resources are accessed using relative paths.
     });
   ```
 
-
 **Example 3**
 
 -  File actual location: `lib/web/jquery.js`
@@ -98,7 +97,7 @@ To be available for the entire Magento instance, RequireJS library is included i
  * For the `adminhtml` [area]({{ page.baseurl }}/architecture/archi_perspectives/components/modules/mod_and_areas.html):
 
    [app/code/Magento/Backend/view/adminhtml/layout/default.xml]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Backend/view/adminhtml/layout/default.xml)
-    
+
    ```xml
     <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="admin-1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
         <head>
@@ -136,7 +135,7 @@ To be available for the entire Magento instance, RequireJS library is included i
 
 ### Including third-party JavaScript libraries
 
-To include a 3rd party library and use it within the entire website (using the [Slick JS Library](https://github.com/kenwheeler/slick/) as an example): 
+To include a 3rd party library and use it within the entire website (using the [Slick JS Library](https://github.com/kenwheeler/slick/) as an example):
 
 1. Download the library and copy `slick.min.js` to the `<theme_path>/web/js` folder
 
@@ -168,7 +167,7 @@ After these steps, clear the cache and perform a static content deployment.
 
 #### Result
 
-We should now be able to use the Slick library, for example, on any list that we want to convert into a slider. 
+We should now be able to use the Slick library, for example, on any list that we want to convert into a slider.
 
 ```html
 <ul class="my-list">

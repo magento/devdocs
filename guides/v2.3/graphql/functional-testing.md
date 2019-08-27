@@ -88,7 +88,7 @@ The `\Magento\GraphQl\TestModule\GraphQlQueryTest.php` test case uses two test m
 
 ## Creating fixtures
 
-Fixtures, which are part of the testing framework, prepare preconditions in the system for further testing. For example, when you test the ability to add a product to the shopping cart, the precondition is that a product must be available for testing. 
+Fixtures, which are part of the testing framework, prepare preconditions in the system for further testing. For example, when you test the ability to add a product to the shopping cart, the precondition is that a product must be available for testing.
 
 A fixture consists of two files:
 
@@ -159,13 +159,13 @@ You can also invoke multiple fixtures:
     }
 ```
 
-The specified fixtures will now execute on every test run. 
+The specified fixtures will now execute on every test run.
 
-### Rollback files 
+### Rollback files
 
-Every fixture should have a rollback file. A rollback is a set of operations that remove changes introduced by the fixture from the system once the test is completed. 
+Every fixture should have a rollback file. A rollback is a set of operations that remove changes introduced by the fixture from the system once the test is completed.
 
-The rollback filename should correspond to the original fixture filename postfixed by `_rollback` keyword. For example, if the fixture file name is `virtual_product.php`, name the rollback file `virtual_product_rollback.php`. 
+The rollback filename should correspond to the original fixture filename postfixed by `_rollback` keyword. For example, if the fixture file name is `virtual_product.php`, name the rollback file `virtual_product_rollback.php`.
 
 The following fixture rollback removes the newly-created product from the database.
 
@@ -213,23 +213,23 @@ The following examples show two ways you can use the `expectExceptionMessage` fu
 public function testMyExceptionTest()
 {
     ...
-    
+
     self::expectExceptionMessage("Expected exception message goes here...");
-    
+
     ...
 }
 
 ```
 
-or 
+or
 
 ```php
 public function testMyExceptionTest()
 {
     ...
-    
+
     $this->expectExceptionMessage("Expected exception message goes here...");
-    
+
     ...
 }
 ```
@@ -240,8 +240,8 @@ Define the exception message before invoking logic that generates the exception.
 As an example, consider the case where Customer A tries to retrieve information about Customer B's cart. In this situation, Customer A gets this error:
 
     The current user cannot perform operations on cart "XXXXX"
-  
-`XXXXX` is the unique ID of Customer B's cart. 
+
+`XXXXX` is the unique ID of Customer B's cart.
 
 The following sample shows how to cover this scenario using an `expectExceptionMessage` function:
 
@@ -261,7 +261,7 @@ The following sample shows how to cover this scenario using an `expectExceptionM
         $query = $this->prepareGetCartQuery($maskedQuoteId);
         self::expectExceptionMessage("The current user cannot perform operations on cart \"$maskedQuoteId\"");
         $this->graphQlQuery($query);
-    } 
+    }
 ```
 
 ### Exception messages in the annotation of a test function
@@ -327,7 +327,7 @@ The `@expectExceptionMessage` annotation provides the text for the exception in 
     {
         $maskedQuoteId = 'non_existent_masked_id';
         $query = $this->prepareGetCartQuery($maskedQuoteId);
-        
+
         $this->graphQlQuery($query);
     }
 ```
@@ -361,9 +361,9 @@ Use the following functions to cover expected exceptions:
     <!-- Webserver API key -->
     <const name="TESTS_WEBSERVICE_APIKEY" value="123123q"/>
     ...
-    ```    
+    ```
 
-### Run all tests in a API functional test suite 
+### Run all tests in a API functional test suite
 
 **Syntax**
 
@@ -374,7 +374,7 @@ vendor/bin/phpunit -c dev/tests/api-functional/phpunit_graphql.xml dev/tests/api
 **Example**
 
 To run all tests from [dev/tests/api-functional/testsuite/Magento/GraphQl/Customer/GenerateCustomerTokenTest.php]({{ site.mage2bloburl }}/2.3.1/dev/tests/api-functional/testsuite/Magento/GraphQl/Customer/GenerateCustomerTokenTest.php), run the following command:
- 
+
 ```bash
 vendor/bin/phpunit -c dev/tests/api-functional/phpunit_graphql.xml dev/tests/api-functional/testsuite/Magento/GraphQl/Customer/GenerateCustomerTokenTest.php
 ```
@@ -382,29 +382,29 @@ vendor/bin/phpunit -c dev/tests/api-functional/phpunit_graphql.xml dev/tests/api
 ### Run a single test in a API functional test suite
 
 **Syntax**
- 
+
 ```bash
 vendor/bin/phpunit -c dev/tests/api-functional/phpunit_graphql.xml --filter <testFunctionName> dev/tests/api-functional/testsuite/<Vendor>/<Module>/<TestFile>.php
 ```
- 
+
 **Example**
 
 To run `testGenerateCustomerValidToken` test from [dev/tests/api-functional/testsuite/Magento/GraphQl/Customer/GenerateCustomerTokenTest.php]({{ site.mage2bloburl }}/2.3.1/dev/tests/api-functional/testsuite/Magento/GraphQl/Customer/GenerateCustomerTokenTest.php), run the following command:
- 
+
 ```bash
 vendor/bin/phpunit -c dev/tests/api-functional/phpunit_graphql.xml --filter testGenerateCustomerValidToken dev/tests/api-functional/testsuite/Magento/GraphQl/Customer/GenerateCustomerTokenTest.php
 ```
- 
+
 ### Run a selected group of tests in an API functional test suite
 
-Use the `@group` directive in the test annotation to add the ability to run a group tests. 
+Use the `@group` directive in the test annotation to add the ability to run a group tests.
 
 **Syntax**
- 
+
 ```bash
 vendor/bin/phpunit -c dev/tests/api-functional/phpunit_graphql.xml --group <TEST_GROUP_ALIAS> dev/tests/api-functional/testsuite/<Vendor>/<Module>/<TestFile>.php
 ```
- 
+
 **Example**
 
 The `testGetCartTotalsWithNoAddressSet` test is marked with `@group recent`:
@@ -431,15 +431,15 @@ class MyTest extends \Magento\TestFramework\TestCase\GraphQlAbstract
     {
         ...
     }
-    
+
     /**
-     * 
+     *
      */
     public function testFunction3()
     {
         ...
     }
-}    
+}
 ```
 
 To run the `testFunction1` and `testFunction2` tests, which are part of the `my_test_group` group, use the following command:

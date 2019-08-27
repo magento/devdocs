@@ -10,7 +10,6 @@ functional_areas:
   - System
   - Setup
 ---
- 
 
 {% include install/sampledata/sample-data-other-cmds.md %}
 

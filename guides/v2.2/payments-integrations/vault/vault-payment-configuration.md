@@ -13,11 +13,11 @@ You need to configure the main parameters of the vault implementation in the `co
 * `model` - instance of the vault payment implementation, [configured in `di.xml`]({{ page.baseurl }}/payments-integrations/vault/vault-di.html).
 * `title` - vault payment method title; can be overwritten in the store configuration.
 
-These parameters are specified in the section defined by the unique vault implementation code. They are the minimum required to create vault payment. All other payment settings are inherited from the payment provider integration. 
+These parameters are specified in the section defined by the unique vault implementation code. They are the minimum required to create vault payment. All other payment settings are inherited from the payment provider integration.
 
 Additional configuration might be required depending on your implementation.
 
-The following example is the `config.xml` file of the Braintree payment method: 
+The following example is the `config.xml` file of the Braintree payment method:
 
 ```xml
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">

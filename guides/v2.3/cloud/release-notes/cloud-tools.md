@@ -169,7 +169,7 @@ The `{{site.data.var.ct}}` version 2002.0.17 includes an important security patc
 
 -   {:.new}**New environment variables**—
 
-    -   <!-- MAGECLOUD-3026 & MAGECLOUD-2963-->**[RESOURCE_CONFIGURATION deploy variable]({{page.baseurl}}/cloud/env/variables-deploy.html#resource_configuration)**—Use this variable to map a resource name to a database connection. 
+    -   <!-- MAGECLOUD-3026 & MAGECLOUD-2963-->**[RESOURCE_CONFIGURATION deploy variable]({{page.baseurl}}/cloud/env/variables-deploy.html#resource_configuration)**—Use this variable to map a resource name to a database connection.
 
     -   <!-- MAGECLOUD-3048 -->**[X_FRAME_CONFIGURATION global variable]({{ page.baseurl }}/cloud/env/variables-global.html#x_frame_configuration)**—Use this variable to change the `X-Frame-Options` header configuration for rendering a {{ site.data.var.ee }} page in a `<frame>`, `<iframe>`, or `<object>`.
 
@@ -410,7 +410,7 @@ The ece-tools version 2002.0.11 is required for 2.2.4 compatibility.
 
     -   <!-- MAGECLOUD-1738 -->**New environment variable**—Added the `SCD_ON_DEMAND` global environment variable to generate static content when requested.
 
-    -   <!-- MAGECLOUD-1788 -->**Post-deploy hook**—Added a `post_deploy` hook for the `.magento.app.yaml` file that clears the cache and pre-loads (warms) the cache _after_ the container begins accepting connections. It is available only for Pro projects that contain [Staging and Production environments in the Project Web UI]({{ page.baseurl }}/cloud/trouble/pro-env-management.html) and for Starter projects. Although not required, this works in tandem with the `SCD_ON_DEMAND` environment variable.
+    -   <!-- MAGECLOUD-1788 -->**Post-deploy hook**—Added a `post_deploy` hook for the `.magento.app.yaml` file that clears the cache and pre-loads (warms) the cache _after_ the container begins accepting connections. It is available only for Pro projects that contain Staging and Production environments in the Project Web Interface and for Starter projects. Although not required, this works in tandem with the `SCD_ON_DEMAND` environment variable.
 
 -   {:.new}<!-- MAGECLOUD-1842 -->**Optimization**—Optimized moving or copying files during deployment to improve deployment speed and decrease loads on the file system.
 
@@ -447,9 +447,9 @@ You must [upgrade the {{site.data.var.ece}} metapackage]({{ site.baseurl }}/guid
 
 -   {:.new}<!-- MAGECLOUD-1437 -->**Search, AMQP, and Redis service improvements**—We unified the service configuration flow so that it now behaves the same way for all services. Manually editing the `env.php` file to configure services is no longer supported. You must use environment variables or the `.magento.env.yaml` file instead.
 
--   {:.fix}**Environment variables**—  
+-   {:.fix}**Environment variables**—
 
-    -   <!-- MAGECLOUD-1507 -->The use of `env:STATIC_CONTENT_THREADS` was deprecated and will be removed in a future release. Use the `STATIC_CONTENT_THREADS` environment variable instead.
+    -   <!-- MAGECLOUD-1507 -->The use of `env:STATIC_CONTENT_THREADS` was deprecated and will be removed in a future release. Use the [SCD_THREADS]({{page.baseurl}}/cloud/env/variables-deploy.html#scd_threads) environment variable instead.
     -   <!-- MAGECLOUD-1640 -->The `STATIC_CONTENT_EXCLUDE_THEMES` environment variable was deprecated. You must use the `SCD_EXCLUDE_THEMES` environment variable instead.
 
 -   {:.fix}<!-- MAGECLOUD-1674 -->**Logging**—We simplified logging around built-in patching operations.

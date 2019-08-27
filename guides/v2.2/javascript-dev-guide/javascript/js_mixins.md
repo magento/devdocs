@@ -28,7 +28,7 @@ The following table maps a directory location to the [application area] a mixin 
 
 ### Location
 
-Mixins are JavaScript files located under the `web/js` directory under an area specific directory. 
+Mixins are JavaScript files located under the `web/js` directory under an area specific directory.
 The mixin file can be nested under more directories as long as those directories are under `web/js`.
 
 ### Format
@@ -38,33 +38,71 @@ This function accepts a target component(module) as an argument and returns a mo
 
 This allows you to return a new instance of the target component with your modifications attached to it before it is used in the application.
 
-### Example
+### Examples
 
-The following is an example of a mixin module that extends the `target` component with a function that introduces a new `blockVisibility` property to a column element.
+#### Extend UI Component
+
+The following is an example of a mixin that extends the `target` component with a function that introduces a new `blockVisibility` property to a column element.
 
 **File:** `OrangeCompany/Sample/view/base/web/js/columns-mixin.js`
 
 ```javascript
-
 define(function () {
- 'use strict';
+    'use strict';
 
- var mixin = {
+    var mixin = {
 
-     /**
-      *
-      * @param {Column} elem
-      */
-     isDisabled: function (elem) {
-         return elem.blockVisibility || this._super();
-     }
- };
+        /**
+         *
+         * @param {Column} elem
+         */
+        isDisabled: function (elem) {
+            return elem.blockVisibility || this._super();
+        }
+    };
 
- return function (target) { // target == Result that Magento_Ui/.../columns returns.
-     return target.extend(mixin); // new result that all other modules receive
- };
+    return function (target) { // target == Result that Magento_Ui/.../columns returns.
+        return target.extend(mixin); // new result that all other modules receive
+    };
 });
+```
 
+#### Extend jQuery Widget
+
+The following is an example of a mixin that extends the [modal widget][] with a function that adds confirmation for a modal closing.
+
+**File:** `OrangeCompany/Sample/view/base/web/js/modal-widget-mixin.js`
+
+```javascript
+define(['jquery'], function ($) {
+    'use strict';
+
+    var modalWidgetMixin = {
+        options: {
+            confirmMessage: "Please, confirm modal closing."
+        },
+
+        /**
+         * Added confirming for modal closing
+         *
+         * @returns {Element}
+         */
+        closeModal: function () {
+            if (!confirm(this.options.confirmMessage)) {
+                return this.element;
+            }
+
+            return this._super();
+        }
+    };
+
+    return function (targetWidget) {
+        // Example how to extend a widget by mixin object
+        $.widget('mage.modal', targetWidget, modalWidgetMixin); // the widget alias should be like for the target widget
+
+        return $.mage.modal; //  the widget by parent alias should be returned
+    };
+});
 ```
 
 ## Declaring a mixin
@@ -76,7 +114,7 @@ The mixins configuration in the `requirejs-config.js` associates a target compon
 
 ### Example
 
-The following is an example of a `requirejs-config.js` file that adds the `columns-mixins`, defined in the previous example, to the [grid column component].
+The following is an example of a `requirejs-config.js` file that adds the `columns-mixin` and `modal-widget-mixin` mixins, defined in the previous examples, to the [grid column component][] and [modal widget][].
 
 **File:** `OrangeCompany/Sample/view/base/requirejs-config.js`
 
@@ -86,6 +124,9 @@ var config = {
      mixins: {
          'Magento_Ui/js/grid/controls/columns': {
              'OrangeCompany_Sample/js/columns-mixin': true
+         },
+         "Magento_Ui/js/modal/modal": {
+             "OrangeCompany_Sample/js/modal-widget-mixin": true
          }
      }
  }
@@ -114,4 +155,5 @@ The following is a list of files in the [`Magento_CheckoutAgreement`] module tha
 [`view/frontend/web/js/model/set-payment-information-mixin.js`]: {{ site.mage2bloburl }}/{{page.guide_version}}/app/code/Magento/CheckoutAgreements/view/frontend/web/js/model/set-payment-information-mixin.js
 [`Magento_CheckoutAgreement`]: {{ site.mage2bloburl }}/{{page.guide_version}}/app/code/Magento/CheckoutAgreements
 [About AMD modules and RequireJS]: {{ page.baseurl }}/javascript-dev-guide/javascript/js-resources.html#requirejs-library
+[modal widget]: {{ page.baseurl }}/javascript-dev-guide/widgets/widget_modal.html
 [Configure JS resources]: {{ page.baseurl }}/javascript-dev-guide/javascript/js-resources.html

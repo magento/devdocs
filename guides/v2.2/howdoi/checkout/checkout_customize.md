@@ -44,7 +44,6 @@ The Magento_Shipping module adds a component rendered as a link to the Shipping 
 
 `<Magento_Shipping_module_dir>/view/frontend/layout/checkout_index_index.xml` looks like following:
 
-
 ```xml
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
@@ -90,6 +89,57 @@ Any [UI component](https://glossary.magento.com/ui-component) is added in the `c
 
 Make sure that you declare a component so that it is rendered correctly by the parent component. If a parent component is a general UI component (referenced by the `uiComponent` alias), its child components are rendered without any conditions. But if a parent component is an extension of a general UI components, then children rendering might be restricted in certain way. For example a component can render only children from a certain `displayArea`.
 
+## Move a component
+
+To move any component on your checkout page, find the component (parent) where it needs to be placed, and paste your component as a child of the parent.
+
+The following example shows how to move the discount component to the order summary block, which will display on both shipping and billing steps.
+
+```xml
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="checkout.root">
+            <arguments>
+                <argument name="jsLayout" xsi:type="array">
+                    <item name="components" xsi:type="array">
+                        <item name="checkout" xsi:type="array">
+                            <item name="children" xsi:type="array">
+                                <item name="sidebar" xsi:type="array">
+                                    <item name="children" xsi:type="array">
+                                        <item name="summary" xsi:type="array">
+                                            <item name="children" xsi:type="array">
+                                                <item name="summary-discount" xsi:type="array">
+                                                    <item name="component" xsi:type="string">Magento_SalesRule/js/view/payment/discount</item>
+                                                    <item name="children" xsi:type="array">
+                                                        <item name="errors" xsi:type="array">
+                                                            <item name="sortOrder" xsi:type="string">0</item>
+                                                            <item name="component" xsi:type="string">Magento_SalesRule/js/view/payment/discount-messages</item>
+                                                            <item name="displayArea" xsi:type="string">messages</item>
+                                                        </item>
+                                                    </item>
+                                                </item>
+                                            </item>
+                                        </item>
+                                    </item>
+                                </item>
+                            </item>
+                        </item>
+                    </item>
+                </argument>
+            </arguments>
+        </referenceBlock>
+    </body>
+</page>
+```
+
+{:.bs-callout-info}
+Remember to [disable](#disable) or [remove](#remove) the component from its original location, or they will conflict with each other.
+
+### Order Summary Result
+
+![Discount Component]({{ site.baseurl }}/common/images/ui_comps/discount_component.png)
+
 ## Disable a component {#disable}
 
 To disable the component in your `checkout_index_index.xml` use the following instructions:
@@ -115,5 +165,5 @@ return $jsLayout;
 
 If you want to use this sample in your code, replace the `%path_to_target_node%` placeholder with real value.
 
-{: .bs-callout .bs-callout-info" }
+{:.bs-callout .bs-callout-info}
 Disable vs remove a component: If you disable a component, it is loaded but not rendered. If you remove a component, it is removed and not loaded.

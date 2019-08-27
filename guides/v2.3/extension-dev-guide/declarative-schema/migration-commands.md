@@ -82,7 +82,6 @@ Magento provides options to the `setup:install` and `setup:upgrade` commands tha
 
 `--data-restore=1` - (Used with the `setup:upgrade` command only.) Performs a rollback. Before you rollback, you must first check out code to the previous version of Magento. Then run `setup:upgrade  --data-restore=1`.
 
-
 Several types of operations have an effect on data dumps and rollbacks.
 
 * *Destructive operations (DO)* - SQL DDL operations that cause data deletion or data corruption. The following operations are destructive:
@@ -165,7 +164,7 @@ This file is a temporary solution. It will be removed in the future, when upgrad
 
 ## Resolve reference IDs
 
-The sample `db_schema_whitelist.json` file above contains system-generated constraint and index names. [Configure your `db_schema.xml` file]({{ page.baseurl }}/extension-dev-guide/declarative-schema/db-schema.html) so that the `referenceId` attributes match these values. 
+The sample `db_schema_whitelist.json` file above contains system-generated constraint and index names. [Configure your `db_schema.xml` file]({{ page.baseurl }}/extension-dev-guide/declarative-schema/db-schema.html) so that the `referenceId` attributes match these values.
 
 {: .bs-callout-info }
-In Magento 2.3.0, the identifying attribute for constraints and index definitions is `referenceId`. In pre-release versions, the attribute was `name`. 
+In Magento 2.3.0, the identifying attribute for constraints and index definitions is `referenceId`. In pre-release versions, the attribute was `name`.

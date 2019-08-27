@@ -32,7 +32,6 @@ where
 |cache-backend-redis-db|database|Required if you use Redis for both the default and full page cache. You must specify the database number of one of the caches; the other cache uses 0 by default.<br/><br/>Important: If you use Redis for more than one type of caching, the database numbers must be different. It is recommended that you assign the default caching database number to 0, the page caching database number to 1, and the session storage database number to 2.|0|
 |cache-backend-redis-password|password|Configuring a Redis password enables one of its built-in security features: the auth command, which requires clients to authenticate to access the database. The password is configured directly in Redis's configuration file, /etc/redis/redis.conf, which you should still have open from the previous step.||
 
-
 ### Example command
 
 The following example enables Redis default caching, sets the host to `127.0.0.1` and assigns the database number to 0. Redis uses default values for all other parameters.
@@ -61,7 +60,6 @@ where
 |page-cache-redis-port|port|Redis server listen port|6379|
 |page-cache-redis-db|database|Required if you use Redis for both the default and full page cache. You must specify the database number of one of the caches; the other cache uses 0 by default.<br/>Important: If you use Redis for more than one type of caching, the database numbers must be different. It is recommended that you assign the default caching database number to 0, the page caching database number to 1, and the session storage database number to 2.|0|
 |page-cache-redis-password|password|Configuring a Redis password enables one of its built-in security features: the auth command, which requires clients to authenticate to access the database. Configure the password within the Redis configuration file, /etc/redis/redis.conf.||
-
 
 ### Example command
 
