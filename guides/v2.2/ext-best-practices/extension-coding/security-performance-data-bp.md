@@ -96,9 +96,9 @@ Make sure that your observer or plugin is declared only in the proper area:
 - [`webapi_rest`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Webapi/etc/di.xml){:target="_blank"}
 - [`webapi_soap`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Webapi/etc/di.xml){:target="_blank"}
  
-For that, the plugins and observers should be declared in `<module-dir>/etc/<area>/` folder.
+The plugins and observers should be declared in the `<module-dir>/etc/<area>/` directory.
 
-{:.bs-callout .bs-callout-info}
-The `global` area should be used only if the plugin/observer should be executed in multiple areas.
+{:.bs-callout-info}
+Use the `global` area only if the plugin/observer should be executed in multiple areas.
 
-Is `NOT RECOMMENDED` to register everything into `global` area, as the bootstrapping process will become much heavier and there will be needed to run and process additional checks for our plugin/observer.
+It is `NOT RECOMMENDED` to register everything in the `global` area, as the bootstrapping process will become much heavier. For example, the application must run and process additional checks for your plugin/observer.
