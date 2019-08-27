@@ -44,7 +44,7 @@ Phtml template file examples using script:
         'passwordStrengthIndicator'
     ], function ($) {
         'use strict';
-        
+
         $("#password-input").passwordStrengthIndicator({
               "passwordStrengthMeterSelector":"[data-role=strength-meter]",
               "passwordStrengthMeterLabelSelector":"[data-role=strength-meter-label]"
@@ -68,7 +68,7 @@ The password strength indicator widget has the following options:
 
 Selector for the password input.
 
-**Type**: String 
+**Type**: String
 
 **Default value**: `[type=password]`
 
@@ -76,7 +76,7 @@ Selector for the password input.
 
 Selector for the password strength visualization block.
 
-**Type**: String 
+**Type**: String
 
 **Default value**: `[data-role=password-strength-meter]`
 
@@ -84,7 +84,7 @@ Selector for the password strength visualization block.
 
 Selector for the password strength visualization block label.
 
-**Type**: String 
+**Type**: String
 
 **Default value**: `[data-role=password-strength-meter-label]`
 
@@ -92,7 +92,7 @@ Selector for the password strength visualization block label.
 
 The selector for the form block.
 
-**Type**: String 
+**Type**: String
 
 **Default value**: `form`
 
@@ -100,7 +100,7 @@ The selector for the form block.
 
 The selector for the email input.
 
-**Type**: String 
+**Type**: String
 
 **Default value**: `input[type="email"]`
 

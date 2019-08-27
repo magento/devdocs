@@ -27,7 +27,6 @@ We strongly recommend you update and upgrade your operating system software. The
 {:.bs-callout .bs-callout-info}
 Don't know what any of this means? Check out our [installation overview page]({{ page.baseurl }}/install-gde/bk-install-guide.html).
 
-
 Enter the following commands as a user with `root` privileges:
 
 *	Ubuntu

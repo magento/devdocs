@@ -47,7 +47,7 @@ After you log in to the Extension Manager, a list displays as follows:
 
 *	**Updates Available** displays the number of extensions you can update.
 *	**Extensions Ready to Install** displays the number of extensions you can install.
-*	**Last Refresh** displays the last time you refreshed the list of extensions on Magento Marketplace. 
+*	**Last Refresh** displays the last time you refreshed the list of extensions on Magento Marketplace.
 
 	Click **Refresh** to update the information, such as after you purchase new extensions.
 

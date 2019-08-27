@@ -28,7 +28,6 @@ Option | Description
 `-T` | Transfers the specified local file to the remote URL.
 `-X` | Specifies the request method to use when communicating with the HTTP server. The specified request method is used instead of the default GET method.
 
-
 ## Next step
 
 [Status codes and responses]({{ page.baseurl }}/get-started/gs-web-api-response.html)

@@ -112,4 +112,4 @@ Any new design related to Web API must satisfy the following constraints to keep
 
 1. SOAP is designed for systems integration. It supports token authentication for customers and admins, as well as no authentication for anonymous service methods. Cookie authentication and OAuth 1.0 are not supported.
 1. The schema is available in the form of a WSDL for all exposed services.
-1. All requests must return the 200 HTTP status code. If an error occurs, return the error in the response. 
+1. All requests must return the 200 HTTP status code. If an error occurs, return the error in the response.

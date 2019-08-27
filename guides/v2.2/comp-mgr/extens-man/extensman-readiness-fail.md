@@ -13,7 +13,7 @@ functional_areas:
 
 ## Readiness check failure {#compman-readiness-fail}
 
-Messages similar to the following display if any readiness check fails. 
+Messages similar to the following display if any readiness check fails.
 
 ![You must resolve all readiness check failures before you continue]({{ site.baseurl }}/common/images/cman_readiness-fail-ex.png)
 

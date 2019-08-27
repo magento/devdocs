@@ -13,7 +13,7 @@ This topic provides a simple example of getting free extensions for {{site.data.
 
 ### Log in to Magento Marketplace
 
-To get started, log in to [Magento Marketplace](https://marketplace.magento.com){:target="_blank"} using your `magento.com` credentials. 
+To get started, log in to [Magento Marketplace](https://marketplace.magento.com){:target="_blank"} using your `magento.com` credentials.
 
 If you don't have an account yet:
 
