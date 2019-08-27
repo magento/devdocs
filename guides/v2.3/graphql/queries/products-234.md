@@ -1,8 +1,6 @@
 ---
 group: graphql
-title: products query
-redirect_from:
-  - /guides/v2.3/graphql/reference/products.html
+title: products query (Magento 2.3.4 and later)
 ---
 
 The `products` query allows you to search for catalog items.
@@ -12,10 +10,10 @@ The `products` query allows you to search for catalog items.
 ```graphql
 products(
   search: String
-  filter: ProductFilterInput
+  filter: ProductAttributeFilterInput
   pageSize: Int
   currentPage: Int
-  sort: ProductSortInput
+  sort: ProductSortFilterInput
 ): Products
 ```
 
@@ -30,11 +28,9 @@ Attribute |  Description
 `sort` | Specifies which attribute to sort on, and whether to return the results in ascending or descending order. See [Queries]({{ page.baseurl }}/graphql/queries.html) for more information.
 `Products` | An output object that contains the results of the query. See [Response](#Response) for details.
 
-##
+## ProductAttributeFilterInput object {#ProductAttributeFilterInput}
 
-## ProductFilterInput object {#ProductFilterInput}
-
-The `ProductFilterInput` object defines the filters to be used in the search. A filter contains at least one attribute, a comparison operator, and the value that is being searched for. The following example filter searches for products that has a `sku` that contains the string `24-MB` with a `price` that's less than `50`.
+The `ProductAttributeFilterInput` object defines the filters to be used in the search. A filter contains at least one attribute, a comparison operator, and the value that is being searched for. The following example filter searches for products that has a `sku` that contains the string `24-MB` with a `price` that's less than `50`.
 
 ``` text
 filter: {
