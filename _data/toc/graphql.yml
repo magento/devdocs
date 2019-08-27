@@ -71,6 +71,9 @@ pages:
         - label: customAttributeMetadata query
           url: /graphql/queries/custom-attribute-metadata.html
 
+        - label: customer query
+          url: /graphql/queries/customer.html
+
         - label: customerOrders query
           url: /graphql/queries/customer-orders.html
 
@@ -85,6 +88,9 @@ pages:
 
         - label: getPayflowLinkToken query
           url: /graphql/queries/get-payflow-link-token.html
+
+        - label: isEmailAvailable query
+          url: /graphql/queries/is-email-available.html
 
         - label: products query
           url: /graphql/queries/products.html
@@ -106,11 +112,26 @@ pages:
         - label: applyStoreCreditToCart mutation
           url: /graphql/mutations/apply-store-credit.html
 
+        - label: changeCustomerPassword mutation
+          url: /graphql/mutations/change-customer-password.html
+
+        - label: createCustomerAddress mutation
+          url: /graphql/mutations/create-customer-address.html
+
+        - label: createCustomer mutation
+          url: /graphql/mutations/create-customer.html
+
         - label: createPayflowProToken mutation
           url: /graphql/mutations/create-payflow-pro-token.html
 
+        - label: deleteCustomerAddress mutation
+          url: /graphql/mutations/delete-customer-address.html
+
         - label: deletePaymentToken mutation
           url: /graphql/mutations/delete-payment-token.html
+
+        - label: generateCustomerToken mutation
+          url: /graphql/mutations/generate-customer-token.html
 
         - label: handlePayflowProResponse mutation
           url: /graphql/mutations/handle-payflow-pro-response.html
@@ -123,6 +144,15 @@ pages:
 
         - label: removeStoreCreditFromCart mutation
           url: /graphql/mutations/remove-store-credit.html
+
+        - label: revokeCustomerToken mutation
+          url: /graphql/mutations/revoke-customer-token.html
+
+        - label: updateCustomerAddress mutation
+          url: /graphql/mutations/update-customer-address.html
+
+        - label: updateCustomer mutation
+          url: /graphql/mutations/update-customer.html
 
     - label: Product data types and interfaces
       children:
@@ -149,9 +179,6 @@ pages:
 
     - label: Reference
       children:
-            - label: Customer endpoint
-              url: /graphql/reference/customer.html
-
             - label: Quote endpoint (cart query)
               url: /graphql/reference/quote.html
               children:

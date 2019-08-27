@@ -91,7 +91,7 @@ Attribute |  Data Type | Description
 
 ## Output attributes
 
-The `ApplyStoreCreditToCartOutput` object contains the `Cart` object.
+The `ApplyStoreCreditToCartOutput` object returns the `Cart` object.
 
 Attribute |  Data Type | Description
 --- | --- | ---
