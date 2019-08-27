@@ -50,7 +50,7 @@ The RedirectUrl widget has the following options:
 - [selectedItemsCountClass](#selecteditemscountclass)
 - [currentPage](#currentpage)
 - [lastAppendValue](#lastappendvalue)
-- [updateDelay](#updateDelay)
+- [updateDelay](#updatedelay)
 
 ### `mselectContainer`
 
