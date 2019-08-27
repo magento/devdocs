@@ -70,7 +70,7 @@ pages:
 
         - label: customAttributeMetadata query
           url: /graphql/queries/custom-attribute-metadata.html
-          
+
         - label: customer query
           url: /graphql/queries/customer.html
 
@@ -91,7 +91,7 @@ pages:
 
         - label: isEmailAvailable query
           url: /graphql/queries/is-email-available.html
-        
+
         - label: products query
           url: /graphql/queries/products.html
 
@@ -123,7 +123,7 @@ pages:
 
         - label: createPayflowProToken mutation
           url: /graphql/mutations/create-payflow-pro-token.html
-          
+
         - label: deleteCustomerAddress mutation
           url: /graphql/mutations/delete-customer-address.html
 
@@ -153,31 +153,7 @@ pages:
 
         - label: updateCustomer mutation
           url: /graphql/mutations/update-customer.html
-    
-    - label: Reference
-      children:
-            - label: CustomAttributeMetadata endpoint
-              url: /graphql/reference/custom-attribute-metadata.html
 
-            - label: Payflow Link getPayflowLinkToken query
-              url: /graphql/reference/paypal-get-payflow-link-token.html
-
-            - label: Payflow Pro createPayflowProToken mutation
-              url: /graphql/reference/paypal-create-payflow-pro-token.html
-
-            - label: Payflow Pro handlePayflowProResponse mutation
-              url: /graphql/reference/paypal-handle-payflow-pro-response.html
-
-            - label: Paypal endpoint
-              url: /graphql/reference/paypal.html
-              
-    - label: Reference
-      children:
-            - label: Products endpoint
-              url: /graphql/reference/products.html
-              children:
-                - label: Product interface implementations
-                  url: /graphql/reference/product-interface-implementations.html
     - label: Product data types and interfaces
       children:
         - label: Product interface implementations
@@ -203,9 +179,6 @@ pages:
 
     - label: Reference
       children:
-            - label: Customer endpoint
-              url: /graphql/reference/customer.html
-
             - label: Quote endpoint (cart query)
               url: /graphql/reference/quote.html
               children:
