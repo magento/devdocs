@@ -6,7 +6,7 @@ namespace :test do
   task links: %w[build links_no_build]
 
   desc 'Check the entire _site for broken links and invalid HTML'
-  task :cicd do
+  task :html do
     puts 'Checking links with html-proofer...'.magenta
 
     LinkChecker.check_site
@@ -41,11 +41,14 @@ namespace :test do
   end
 
   desc 'Test Markdown style with mdl'
-  task :style do
+  task :md do
     puts 'Testing Markdown style with mdl ...'.magenta
     output = `bin/mdl --style=_checks/styles/style-rules-prod --ignore-front-matter --git-recurse -- .`
     puts output.yellow
     abort "The Markdown linter has found #{output.lines.count} issues".red unless output.empty?
     puts 'No issues found'.magenta
   end
+
+  task style: %w[md]
+  task cicd: %w[html]
 end
