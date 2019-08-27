@@ -19,31 +19,29 @@ The release notes include:
 
 ## v2002.0.21
 
-- {:.new}**Service updates**—Supported by Magento versions 2.3.3 and 2.2.10 and later
-
-  - <!-- MAGECLOUD-4017 -->Added support for PHP version 7.3.
-
-  - <!-- MAGECLOUD-4017 -->Added support for Varnish 6.2.0
-
 - {:.new}**Docker updates**—
 
-  - {:.new}<!-- MAGECLOUD-3345 -->**New Docker Images**—Supported by Magento versions 2.3.3 and 2.2.10 and later
+  - {:.new}<!-- MAGECLOUD-3345 -->**New Docker Images**—Supported by Magento versions 2.3.3 and later
 
     - <!-- MAGECLOUD-4017 -->PHP version 7.3.
 
-    - <!-- MAGECLOUD-4017 -->Varnish 6.2.0
+    - <!-- MAGECLOUD-4017 -->Varnish Cache 6.2.0
 
   - {:.new}<!-- MAGECLOUD-3505-->Added support to apply custom hook configuration specified in `.magento.app.yaml` in the Docker environment. Previously, the Docker environment supported only the default hook configuration.
 
-  - {:.new}<!-- MAGECLOUD-3816-->The Docker ENV file `.docker/config.env` is no long generated during the Docker build. The corresponding data is now stored in the docker-compose.yml file.
+  - {:.new}<!-- MAGECLOUD-3816-->The Docker ENV file `.docker/config.env` is no long generated during the Docker build. The corresponding data is now stored in the `docker-compose.yml` file.
 
   - {:.new}<!-- MAGECLOUD-3953 -->**Updated PHP image**–Added Node.js to the PHP Docker image to support node, npm, and grunt-cli capabilities.
 
-- {:.new}<!-- MAGECLOUD-4052 -->**New environment variable**–Added the **LOCK_PROVIDER** deploy variable to configure the lock provider. See the definition in the [deploy variables]({{page.baseurl}}/cloud/env/variables-deploy.html#lock_provider) content.
+- {:.new}**New environment variables**–
+
+  - {:.new}<!-- MAGECLOUD-4052 -->Added the **LOCK_PROVIDER** deploy variable to configure the lock provider. See the variable description in the [deploy variables]({{page.baseurl}}/cloud/env/variables-deploy.html#lock_provider) topic.
+
+  - {:.new}<!-- MAGECLOUD-4071 -->Added the **CONSUMERS_WAIT_FOR_MAX_MESSAGES** environment variable to configure how consumers process messages from the message queue when using the `CRON_CONSUMERS_RUNNER` environment variable to manage cron jobs. See the variable description in the [deploy variables]({{ page.baseurl }}/cloud/env/variables-deploy.html#consumers_wait_for_max_messages) topic.
 
 - {:.new}<!-- MAGECLOUD-2514 -->Updated the logging information returned by the `module:refresh` command. Now, you can see a detailed list of enabled modules in the `cloud.log` file.
 
-- {:.new}<!-- MAGECLOUD-3535 -->Added version compatibility validation between Magento version and installed services, such as RabbitMq, Redis, and DB. Displays a warning message if the service version is not compatible.
+- {:.new}<!-- MAGECLOUD-3535 -->Added version compatibility validation between Magento version and installed services, such as Elasticsearch, RabbitMq, Redis, and DB. Displays a warning message if the service version is not compatible.
 
 - {:.fix}<!-- MAGECLOUD-3653-->Improved the log message returned when the cron job management process in the deploy phase tries to stop a cron job that has already finished to clarify that this issue is not an error.  Changed the log level from `INFO` to `DEBUG`.
 
@@ -51,16 +49,15 @@ The release notes include:
 
 - {:.fix}<!-- MAGECLOUD-3866 -->Fixed an issue affecting WARM_UP_PAGES functionality that uses a default store URL. Now, if the `config:show:default-url` command cannot fetch a base URL, then the URL from the MAGENTO_CLOUD_ROUTES variable is used.
 
-- {:.new}<!-- MAGECLOUD-3871 -->Changed the default log level for the file handler to `debug` to provide more detailed information for troubleshooting.
+- {:.new}<!-- MAGECLOUD-3871 -->Changed the default log level for the file handler to `debug` to reduce the amount of detail in the log displayed in the Project Web Interface, while still providing detailed information for debugging.
 
-- {:.fix}<!-- MAGECLOUD-3913 -->Fixed an issue that can cause database deadlock errors when the `consumers_runner` cron job starts multiple instances of the same consumer on different nodes.
-Now, if you have enabled the [CRON_CONSUMERS_RUNNER]({{ page.baseurl }}/cloud/env/variables-deploy.html#cron_consumers_runner) deploy variable in your environment, the `consumers_runner` job uses the `single-thread` option to start one instance of each consumer on a single node.
+- {:.fix}<!-- MAGECLOUD-3913 -->Fixed an issue that can cause database deadlock errors when the `consumers_runner` cron job starts multiple instances of the same consumer on different nodes. Now, if you have enabled the [CRON_CONSUMERS_RUNNER]({{ page.baseurl }}/cloud/env/variables-deploy.html#cron_consumers_runner) deploy variable in your environment, the `consumers_runner` job uses the `single-thread` option to start one instance of each consumer on only one node.
 
 - {:.fix}<!-- MAGECLOUD-3957 -->Fixed an issue that caused an error with static content deployment during build. After a Magento installation and `{{site.data.var.ct}}` config dump, an error occurred if there was no locale specified for the admin user in the `config.php` file. Now, there is a default locale for the admin user in the `config.php` file.
 
 - {:.fix}<!-- MAGECLOUD-4009 -->Fixed an `Undefined index error` that occurs when a Magento Cloud CLI command fails in an environment that is not configured with a secure URL (https). Now, the ece-tools package uses the base URL (http) if the secure URL is not available.
 
-- {:.new}<!-- MAGECLOUD-4018 -->Updated interactive validations for service compatibility to reflect supported versions for the new 2.3.3 and 2.2.10 releases.
+- {:.new}<!-- MAGECLOUD-4018 -->Updated interactive validations for service compatibility to reflect supported versions for the new {{ site.data.var.ee }} 2.3.3 and 2.2.10 releases.
 
 ## v2002.0.20
 
@@ -494,13 +491,8 @@ You must [upgrade the {{site.data.var.ece}} metapackage]({{ site.baseurl }}/guid
 
 - {:.fix}**Environment variables**—
 
-<<<<<<< HEAD
-  - <!-- MAGECLOUD-1507 -->The use of `env:STATIC_CONTENT_THREADS` was deprecated and will be removed in a future release. Use the `STATIC_CONTENT_THREADS` environment variable instead.
+  - <!-- MAGECLOUD-1507 -->The use of `env:STATIC_CONTENT_THREADS` was deprecated and will be removed in a future release. Use the [SCD_THREADS]({{page.baseurl}}/cloud/env/variables-deploy.html#scd_threads) environment variable instead.
     - <!-- MAGECLOUD-1640 -->The `STATIC_CONTENT_EXCLUDE_THEMES` environment variable was deprecated. You must use the `SCD_EXCLUDE_THEMES` environment variable instead.
-=======
-    -   <!-- MAGECLOUD-1507 -->The use of `env:STATIC_CONTENT_THREADS` was deprecated and will be removed in a future release. Use the [SCD_THREADS]({{page.baseurl}}/cloud/env/variables-deploy.html#scd_threads) environment variable instead.
-    -   <!-- MAGECLOUD-1640 -->The `STATIC_CONTENT_EXCLUDE_THEMES` environment variable was deprecated. You must use the `SCD_EXCLUDE_THEMES` environment variable instead.
->>>>>>> master
 
 - {:.fix}<!-- MAGECLOUD-1674 -->**Logging**—We simplified logging around built-in patching operations.
 
