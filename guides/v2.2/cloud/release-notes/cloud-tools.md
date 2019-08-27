@@ -21,17 +21,17 @@ The release notes include:
 
 - {:.new}**Service updates**—Supported by Magento versions 2.3.3 and 2.2.10 and later
 
-  - {:.new}<!-- MAGECLOUD-4017 -->Added PHP version 7.3.
+  - <!-- MAGECLOUD-4017 -->Added support for PHP version 7.3.
 
-  - {:.new}<!-- MAGECLOUD-4017 -->Added Varnish 6.2.0
+  - <!-- MAGECLOUD-4017 -->Added support for Varnish 6.2.0
 
 - {:.new}**Docker updates**—
 
   - {:.new}<!-- MAGECLOUD-3345 -->**New Docker Images**—Supported by Magento versions 2.3.3 and 2.2.10 and later
 
-    - {:.new}<!-- MAGECLOUD-4017 -->PHP version 7.3.
+    - <!-- MAGECLOUD-4017 -->PHP version 7.3.
 
-    - {:.new}<!-- MAGECLOUD-4017 -->Varnish 6.2.0
+    - <!-- MAGECLOUD-4017 -->Varnish 6.2.0
 
   - {:.new}<!-- MAGECLOUD-3505-->Added support to apply custom hook configuration specified in `.magento.app.yaml` in the Docker environment. Previously, the Docker environment supported only the default hook configuration.
 

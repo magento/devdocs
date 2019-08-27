@@ -224,7 +224,7 @@ The `{{site.data.var.ct}}` version 2002.0.18 and later supports developer mode.
     ```bash
     docker-sync start
     ```
-    
+
     If it is the first installation you should wait a few minutes for synchronization files
 
     {: .bs-callout-info}
