@@ -494,8 +494,13 @@ You must [upgrade the {{site.data.var.ece}} metapackage]({{ site.baseurl }}/guid
 
 - {:.fix}**Environment variables**—
 
+<<<<<<< HEAD
   - <!-- MAGECLOUD-1507 -->The use of `env:STATIC_CONTENT_THREADS` was deprecated and will be removed in a future release. Use the `STATIC_CONTENT_THREADS` environment variable instead.
     - <!-- MAGECLOUD-1640 -->The `STATIC_CONTENT_EXCLUDE_THEMES` environment variable was deprecated. You must use the `SCD_EXCLUDE_THEMES` environment variable instead.
+=======
+    -   <!-- MAGECLOUD-1507 -->The use of `env:STATIC_CONTENT_THREADS` was deprecated and will be removed in a future release. Use the [SCD_THREADS]({{page.baseurl}}/cloud/env/variables-deploy.html#scd_threads) environment variable instead.
+    -   <!-- MAGECLOUD-1640 -->The `STATIC_CONTENT_EXCLUDE_THEMES` environment variable was deprecated. You must use the `SCD_EXCLUDE_THEMES` environment variable instead.
+>>>>>>> master
 
 - {:.fix}<!-- MAGECLOUD-1674 -->**Logging**—We simplified logging around built-in patching operations.
 
