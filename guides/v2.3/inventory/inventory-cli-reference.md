@@ -142,5 +142,4 @@ The merchant selects the provider of the GPS or geocode data required to calcula
 
 * **Offline calculation** calculates the distance using data downloaded from [geonames.org](https://www.geonames.org/) and imported into Magento with a command. This option is free of charge.
 
-
 {% include config/cli-inventory.md %}

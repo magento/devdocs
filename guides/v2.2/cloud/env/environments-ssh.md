@@ -105,7 +105,6 @@ You need the following requirements to sFTP into cloud environments:
 * You need to use a client that supports SSH key authentication for sFTP and use your SSH public key.
 * Your public SSH key must be added to the target environment. For Starter environments and Pro Integration environments, you can add it through the Project Web Interface. For Pro Staging and Production, you must enter a [Support ticket]({{ page.baseurl }}/cloud/trouble/trouble.html) with your public key attached. **Never provide your private SSH key.**
 
-
 When configuring sFTP, use your SSH public key and the following information for access:
 
 * Username: All content before the `@` in your public SSH key.

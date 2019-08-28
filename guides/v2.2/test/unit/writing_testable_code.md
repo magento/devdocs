@@ -16,7 +16,7 @@ Tests should be trivial to write. Simple, small classes with few collaborators a
 
 ## Manage dependencies
 
-A big part of making code testable is managing its dependencies. Dependencies can take many forms and they can be clearly stated or hidden.  
+A big part of making code testable is managing its dependencies. Dependencies can take many forms and they can be clearly stated or hidden.
 
 The fewer dependencies a class has and the more obvious they are, the easier it is to maintain and test the class. At the same time, the class is less likely to break because of future changes.
 
@@ -24,19 +24,19 @@ The fewer dependencies a class has and the more obvious they are, the easier it 
 
 We strongly recommend you do *not*:
 
-* Use `new` to instantiate new objects, because that removes the flexibility the Magento dependency configuration offers.  
-* Use the `ObjectManager` directly in production code.  
+* Use `new` to instantiate new objects, because that removes the flexibility the Magento dependency configuration offers.
+* Use the `ObjectManager` directly in production code.
 
-There always is a better alternative, usually a [generated]({{ page.baseurl }}/extension-dev-guide/code-generation.html) `Factory` class, or a [`Locator`](https://thephp.cc/news/2015/09/dependencies-in-disguise){:target="_blank"} class of sorts.  
+There always is a better alternative, usually a [generated]({{ page.baseurl }}/extension-dev-guide/code-generation.html) `Factory` class, or a [`Locator`](https://thephp.cc/news/2015/09/dependencies-in-disguise){:target="_blank"} class of sorts.
 
 {: .bs-callout-info }
 This rule applies only to production code. When writing [integration tests]({{ page.baseurl }}/test/integration/integration_test_execution.html), this is not true. In fact, the object manager is recommended for integration tests.
 
 ### Collaborator classes
 
-Whenever an external class property, class constant, or a class method is used in a file, this file depends on the class containing the method or constant. Even if the external class is not used as a instantiated object, the current class is still hard-wired to depend on it.  
+Whenever an external class property, class constant, or a class method is used in a file, this file depends on the class containing the method or constant. Even if the external class is not used as a instantiated object, the current class is still hard-wired to depend on it.
 
-[PHP](https://glossary.magento.com/php) cannot execute the code unless it can load the external class, too. That is why such external classes are referred to as *dependencies*. Try to keep the number dependencies of to a minimum.  
+[PHP](https://glossary.magento.com/php) cannot execute the code unless it can load the external class, too. That is why such external classes are referred to as *dependencies*. Try to keep the number dependencies of to a minimum.
 
 Collaborator instances should be passed into the class using [constructor injection]({{ page.baseurl }}/extension-dev-guide/depend-inj.html#constructor-injection).
 
@@ -46,19 +46,19 @@ Whenever your code requires access to some part of the environment, try to use a
 
 For example, if you need...
 
-* file system access?  
+* file system access?
 
   Use [`\Magento\Framework\Filesystem\Io\IoInterface`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Filesystem/Io/IoInterface.php){:target="_blank"} instead of `fopen()`, `dir()` or other native methods.
 
-* the current time?  
+* the current time?
 
    Inject a [`\DateTimeInterface`](http://php.net/manual/en/refs.calendar.php){:target="_blank"} instance (for example `\DateTimeImmutable`) and use that.
 
-* the remote IP?  
+* the remote IP?
 
   Use [`\Magento\Framework\HTTP\PhpEnvironment\RemoteAddress`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/HTTP/PhpEnvironment/RemoteAddress.php){:target="_blank"}.
 
-* access to `$_SERVER`?  
+* access to `$_SERVER`?
 
   Consider using [`\Magento\Framework\HTTP\PhpEnvironment\Request::getServerValue()`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/HTTP/PhpEnvironment/Request.php){:target="_blank"}.
 
@@ -66,13 +66,13 @@ Anything that can be easily replaced by a test double is preferable to using low
 
 ## Interfaces over classes
 
-Dependencies on *interfaces* should be preferred over dependencies on *classes* because the former decouples your code from implementation details. This helps to isolate your code from future changes.  
+Dependencies on *interfaces* should be preferred over dependencies on *classes* because the former decouples your code from implementation details. This helps to isolate your code from future changes.
 
-This guideline is true only if you exclusively use the methods and constants defined in the interface. If your code also uses other public methods specific to the class implementing the interface, your code is no longer independent of the implementation details.  
+This guideline is true only if you exclusively use the methods and constants defined in the interface. If your code also uses other public methods specific to the class implementing the interface, your code is no longer independent of the implementation details.
 
-You lose any benefits of having an interface if you use methods of a concrete class.  
+You lose any benefits of having an interface if you use methods of a concrete class.
 
-Even worse, the code is lying, because apparently there is a dependency on the interface only; however, you could not use a different implementation of the same interface. This can lead to considerable maintenance costs down the road. In such cases, using the class name of the concrete implementation is preferable to using the interface name as a dependency.  
+Even worse, the code is lying, because apparently there is a dependency on the interface only; however, you could not use a different implementation of the same interface. This can lead to considerable maintenance costs down the road. In such cases, using the class name of the concrete implementation is preferable to using the interface name as a dependency.
 
 To illustrate, assume there is a theoretical `RequestInterface` with two methods, `getPathInfo()` and `getParam($name)`.
 
@@ -97,7 +97,7 @@ class HttpRequest implements RequestInterface
 }
 ```
 
-Any code that depends on `RequestInterface` should avoid using the `getParams()` method, because it is not part of the interface.  
+Any code that depends on `RequestInterface` should avoid using the `getParams()` method, because it is not part of the interface.
 
 ```php
 class MyClass
@@ -135,20 +135,20 @@ public function doSomething()
 
 The second example method `doSomething()` does not call the `getParams()` method.
 
-If `getParams()` had been called, the class `MyClass` would have instantly depended on the `HttpRequest` implementation and the benefit of having an interface would have been completely lost.  
+If `getParams()` had been called, the class `MyClass` would have instantly depended on the `HttpRequest` implementation and the benefit of having an interface would have been completely lost.
 
 If cannot avoid using `getParams()`, you can do any of the following:
 
 * Add the `getParams()` method to `RequestInterface`
 * Make `MyClass` dependent on `HttpRequest` directly instead of using `RequestInterface` as a constructor argument
 
-The benefit *interfaces* offer is that interfaces keep code decoupled from implementation details. This means that future changes will not cause your code to fail unless the interface is changed too.  
+The benefit *interfaces* offer is that interfaces keep code decoupled from implementation details. This means that future changes will not cause your code to fail unless the interface is changed too.
 
 Also, interfaces can very easily be replaced by test doubles (also referred to as *mocks*). Mocking concrete classes can be much more complex.
 
 ## Class and method size
 
-Try to keep the number of methods in a class and the number of lines of code per method as few as possible.  
+Try to keep the number of methods in a class and the number of lines of code per method as few as possible.
 
 Shorter methods do less, which in turn means they are easier to test. The same is true for small classes.
 
@@ -211,13 +211,13 @@ In the correct example, the `notifyCustomer` method is slightly refactored, and 
 
 ### Testing private and protected methods
 
-When you see the need to write tests for `private` scope methods, it usually is a sign that the class under test is doing too much.  
+When you see the need to write tests for `private` scope methods, it usually is a sign that the class under test is doing too much.
 
 Consider extracting the private functionality into a separate class and using that class as a collaborator. The extracted class then provides the functionality using a public method and can easily be tested.
 
 ## Helpful principles
 
-Many good practices for software development in general and object oriented programming in particular have been formulated as principles over the last decades. Applying these rules of thumb helps to keep code in good shape and also leads to more easily testable code.  
+Many good practices for software development in general and object oriented programming in particular have been formulated as principles over the last decades. Applying these rules of thumb helps to keep code in good shape and also leads to more easily testable code.
 
 The following list principles are by no means complete, but they can serve as a starting point when you start to write testable code.
 
@@ -273,9 +273,9 @@ Method chaining (for example, `$foo->getSomething()->setThat($x)->doBar()`) is o
 
 ### "I do not care"
 
-An interesting approach to writing more testable code is to try to delegate as much as possible to other classes. Every time any currently not available resource is needed, just think "I do not care where that comes from" and add a collaborator class that provides it.  
+An interesting approach to writing more testable code is to try to delegate as much as possible to other classes. Every time any currently not available resource is needed, just think "I do not care where that comes from" and add a collaborator class that provides it.
 
-At first this might seem like it causes the number of classes to explode, but in fact each one of the classes is very short and simple and usually has very limited responsibilities.  
+At first this might seem like it causes the number of classes to explode, but in fact each one of the classes is very short and simple and usually has very limited responsibilities.
 
 Almost as a side effect, those classes are very easy to test.
 

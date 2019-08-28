@@ -13,9 +13,9 @@ A mutation contains the following elements:
 * An operation name for your local implementation. This name is required if you include variables. Otherwise, it is optional.
 * The mutation name
 * The input object or attributes. Most mutations require an input object that contains data or individual attributes for the Magento server to process. However, some mutations, such as `createEmptyCart`, do not require an input object. In this particular case, the authorization token passed with the request provides the needed context.
-* The output object, which specifies which data the mutation returns. 
+* The output object, which specifies which data the mutation returns.
 
-The following example shows the structure of the `createCustomer` mutation:  
+The following example shows the structure of the `createCustomer` mutation:
 
 ```text
 mutation myCreateCustomer{
@@ -25,10 +25,9 @@ mutation myCreateCustomer{
 }
 ```
 
-In this example, `myCreateCustomer` identifies your implementation.  `CustomerInput` is a non-nullable object that defines a customer. (The exclamation point indicates the value is non-nullable.) The `CustomerOutput` object defines which fields to return. 
+In this example, `myCreateCustomer` identifies your implementation.  `CustomerInput` is a non-nullable object that defines a customer. (The exclamation point indicates the value is non-nullable.) The `CustomerOutput` object defines which fields to return.
 
 Now let's take a look at a fully-defined mutation. This time, we'll specify the minimum fields needed as input to create a customer (`firstname`, `lastname`, `email`, and `password`). We could include the same fields in the output, but GraphQL allows you to return only the data you need, which is the customer `id`.
-
 
 ```text
 mutation myCreateCustomerNoVariables{
@@ -39,7 +38,7 @@ mutation myCreateCustomerNoVariables{
             email: "mshaw@example.com"
             password: "Password1"
         }
-    ) 
+    )
     {
         customer {
             id
@@ -114,7 +113,7 @@ The `$CustomerInput` variable is defined as a JSON object:
 }
 ```
 
-This example updates the customer's email using two scalar variables (`$email`, `$password`). 
+This example updates the customer's email using two scalar variables (`$email`, `$password`).
 
 ```text
 mutation myUpdateCustomer($email: String!, $password: String!){

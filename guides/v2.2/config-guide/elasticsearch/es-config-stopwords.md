@@ -56,7 +56,7 @@ To edit stopwords:
    ```bash
    bin/magento magento cache:clean config
    ```
-	   
+
 6.Check the results by searching for terms on your [storefront](https://glossary.magento.com/storefront).x
 
 ### Create stopwords for a new locale {#config-create-stopwords}
@@ -90,7 +90,7 @@ To add stopwords for a locale:
 	```bash
 	bin/magento magento cache:clean config
 	```
-	
+
 9.Check the results by searching for terms on your storefront.
 
 ## Change the stopword directory {#config-stopword-dir}

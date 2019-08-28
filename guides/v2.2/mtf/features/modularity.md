@@ -18,7 +18,6 @@ It is achieved due to the FTF capabilities like:
  - [extending a fixture]
  - replacement in a [data set] and a [fixture repository].
 
-
 <!-- LINK DEFINITIONS -->
 
 [entities]: {{ page.baseurl }}/mtf/mtf_entities.html

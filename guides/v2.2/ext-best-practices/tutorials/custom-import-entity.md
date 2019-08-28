@@ -177,9 +177,9 @@ class Courses extends AbstractEntity
         if (isset($this->_validatedRows[$rowNum])) {
             return !$this->getErrorAggregator()->isRowInvalid($rowNum);
         }
-    
+
         $this->_validatedRows[$rowNum] = true;
-    
+
         return !$this->getErrorAggregator()->isRowInvalid($rowNum);
     }
 
@@ -203,7 +203,7 @@ class Courses extends AbstractEntity
                 $this->saveAndReplaceEntity();
                 break;
         }
-    
+
         return true;
     }
 
@@ -368,7 +368,7 @@ entity_id,name,duration
 {:.bs-callout .bs-callout-info}
 When updating the table's data, you must provide the `entity_id` value for each row.
 
-Next, register the sample file for our entity. 
+Next, register the sample file for our entity.
 
 > `etc/adminhtml/di.xml`
 
@@ -390,5 +390,5 @@ Next, register the sample file for our entity.
 As result, the new Entity Type and the sample CSV are available:
 
 ![Import Entity]({{ site.baseurl }}/common/images/ext-best-practices/import-entity.png)
- 
+
 [0]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/ImportExport/Model/Import/Entity/AbstractEntity.php

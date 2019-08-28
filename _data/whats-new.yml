@@ -4,8 +4,116 @@ description: |
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: /whats-new.html
 thread: /whatsnew-feed.xml
-updated: Fri Aug 9 23:29:50 2019
+updated: Mon Aug 26 22:12:19 2019
 entries:
+- description: Added new code examples to the [JavaScript Mixins](https://devdocs.magento.com/guides/v2.3/javascript-dev-guide/javascript/js_mixins.html)
+    topic.
+  versions: 2.2.x, 2.3.x
+  type: Major update
+  date: August 26, 2019
+  link: https://github.com/magento/devdocs/pull/5229
+- description: Added new code examples to the [Loader widget](https://devdocs.magento.com/guides/v2.3/javascript-dev-guide/widgets/widget_loader.html)
+    topic.
+  versions: 2.2.x, 2.3.x
+  type: Major update
+  date: August 26, 2019
+  link: https://github.com/magento/devdocs/pull/5230
+- description: Added information about how to [retrieve dependency injection configuration
+    information](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/build/di-xml-file.html)
+    for a particular class.
+  versions: 2.2.x, 2.3.x
+  type: Major update
+  date: August 26, 2019
+  link: https://github.com/magento/devdocs/pull/5269
+- description: Added a new topic about [view models](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/module-development.html).
+  versions: 2.2.x, 2.3.x
+  type: New topic
+  date: August 26, 2019
+  link: https://github.com/magento/devdocs/pull/5147
+- description: Added a new topic about the [RowBuilder widget](https://devdocs.magento.com/guides/v2.2/javascript-dev-guide/widgets/widget-row-builder.html).
+  versions: 2.2.x, 2.3.x
+  type: New topic
+  date: August 26, 2019
+  link: https://github.com/magento/devdocs/pull/5206
+- description: Added new code examples to the [Customize Checkout](https://devdocs.magento.com/guides/v2.3/howdoi/checkout/checkout_customize.html)
+    tutorial.
+  versions: 2.2.x, 2.3.x
+  type: Major update
+  date: August 26, 2019
+  link: https://github.com/magento/devdocs/pull/5225
+- description: Added a new topic about the [Breadcrumbs widget](https://devdocs.magento.com/guides/v2.3/javascript-dev-guide/widgets/widget-breadcrumbs.html).
+  versions: 2.2.x, 2.3.x
+  type: New topic
+  date: August 26, 2019
+  link: https://github.com/magento/devdocs/pull/5228
+- description: Added [technical guideline](https://devdocs.magento.com/guides/v2.2/coding-standards/technical-guidelines.html)–clause 5.20 about how to handle exceptions in observers and plugins.
+  versions: 2.2.x, 2.3.x
+  type: Major update
+  date: August 23, 2019
+  link: https://github.com/magento/devdocs/pull/5209
+- description: Updated [Magento Commerce Cloud Guide](https://devdocs.magento.com/guides/v2.3/cloud/architecture/pro-develop-deploy-workflow.html)
+    to remove obsolete instructions for configuring legacy environments and migrating
+    legacy Cloud environments to use the Project Web UI. Legacy environments are those
+    provisioned prior to October 23, 2017.
+  versions: 2.x
+  type: Major update
+  date: August 22, 2019
+  link: https://github.com/magento/devdocs/pull/5125
+- description: Added a tutorial about how to create a [grouped product using the REST
+    API](https://devdocs.magento.com/guides/v2.3/rest/tutorials/grouped-product/create-and-manage-grouped-products.html).
+  versions: 2.3.x
+  type: New topic
+  date: August 19, 2019
+  link: https://github.com/magento/devdocs/pull/5155
+- description: Updated the [Set up multiple website or stores](https://devdocs.magento.com/guides/v2.3/cloud/project/project-multi-sites.html)
+    topic in the Cloud guide. Now, this topic differentiates between sites with a
+    shared domain and sites with unique domains.
+  versions: 2.x
+  type: Major update
+  date: August 15, 2019
+  link: https://github.com/magento/devdocs/pull/5123
+- description: Added the [Change increment ID for a database entity on particular
+    store](http://devdocs.magento.com/guides/v2.2/config-guide/multi-site/change-increment-id.html)
+    topic to the Configuration Guide.
+  versions: 2.2.x, 2.3.x
+  type: New topic
+  date: August 15, 2019
+  link: https://github.com/magento/devdocs/pull/5129
+- description: Added a code sample and updated the API reference in the [QuickSearch
+    Widget](https://devdocs.magento.com/guides/v2.3/javascript-dev-guide/widgets/widget_quickSearch.html)
+    topic.
+  versions: 2.2.x, 2.3.x
+  type: Major update
+  date: August 14, 2019
+  link: https://github.com/magento/devdocs/pull/5182
+- description: Provided details about what happens when you run the [Data Migration
+    Tool](https://devdocs.magento.com/guides/v2.2/migration/migration-migrate-data.html).
+  versions: 2.2.x, 2.3.x
+  type: Major update
+  date: August 14, 2019
+  link: https://github.com/magento/devdocs/pull/5167
+- description: Updated the JavaScript resources topic with instructions for [including
+    third-party JavaScript libraries](https://devdocs.magento.com/guides/v2.3/javascript-dev-guide/javascript/js-resources.html#including-third-party-javascript-libraries).
+  versions: 2.2.x, 2.3.x
+  type: Major update
+  date: August 13, 2019
+  link: https://github.com/magento/devdocs/pull/5161
+- description: Added documentation for the [TrimInput widget](https://devdocs.magento.com/guides/v2.3/javascript-dev-guide/widgets/widget-trim-input.html).
+  versions: 2.2.x, 2.3.x
+  type: New topic
+  date: August 13, 2019
+  link: https://github.com/magento/devdocs/pull/5135
+- description: Added an optional step to the [Cloud Docker](https://devdocs.magento.com/guides/v2.3/cloud/docker/docker-config.html)
+    topic to restart services.
+  versions: 2.x
+  type: Technical changes
+  date: August 12, 2019
+  link: https://github.com/magento/devdocs/pull/5157
+- description: Added documentation for the [Popup Window widget](https://devdocs.magento.com/guides/v2.3/javascript-dev-guide/widgets/widget-popup-window.html).
+  versions: 2.2.x, 2.3.x
+  type: New topic
+  date: August 12, 2019
+  link: https://github.com/magento/devdocs/pull/5171
 - description: Added information about how to [define a custom Import Entity](https://devdocs.magento.com/guides/v2.3/ext-best-practices/tutorials/custom-import-entity.html).
   versions: 2.2.x, 2.3.x
   type: New topic
@@ -2913,7 +3021,7 @@ entries:
   date: Oct 23 2017
 - description: Updated content for Magento Commerce (Cloud) for the updated Pro projects
     in [Manage your project](https://devdocs.magento.com/guides/v2.2/cloud/project/projects.html),
-    [Add Staging and Production to Pro projects](https://devdocs.magento.com/guides/v2.2/cloud/trouble/pro-env-management.html),
+    Add Staging and Production to Pro projects,
     [Deploy your store](https://devdocs.magento.com/guides/v2.2/cloud/live/stage-prod-live.html),
     [Deployment process](https://devdocs.magento.com/guides/v2.2/cloud/reference/discover-deploy.html),
     [Prepare to deploy to Staging and Production](https://devdocs.magento.com/guides/v2.2/cloud/live/stage-prod-migrate-prereq.html),
@@ -2930,7 +3038,7 @@ entries:
   date: Oct 18 2017
 - description: 'Update Magento Commerce (Cloud) content for new features for Pro plan:
     [Manage your project](https://devdocs.magento.com/guides/v2.2/cloud/project/projects.html),
-    [Add Staging and Production to Pro projects](https://devdocs.magento.com/guides/v2.2/cloud/trouble/pro-env-management.html),
+    Add Staging and Production to Pro projects,
     [Configure your project](https://devdocs.magento.com/guides/v2.2/cloud/project/project-webint-basic.html),
     [Create and manage users](https://devdocs.magento.com/guides/v2.2/cloud/project/user-admin.html),
     [Manage branches with the Interface](https://devdocs.magento.com/guides/v2.2/cloud/project/project-webint-branch.html),

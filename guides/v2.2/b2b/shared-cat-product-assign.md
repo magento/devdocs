@@ -134,7 +134,7 @@ The `sharedCatalogProductManagementV1` service is based on `catalogProductManage
 
 **Service name**
 
-`sharedCatalogProductManagementV1 `
+`sharedCatalogProductManagementV1`
 
 **REST endpoints**
 

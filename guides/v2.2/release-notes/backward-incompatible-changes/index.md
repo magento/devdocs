@@ -252,29 +252,29 @@ The release also provides upgrade scripts that convert Magento data stored in se
 
 [Extension](https://glossary.magento.com/extension) developers should review the following cases to see what actions they should take for their extensions:
 
-**Case 1:**  
-Your extension declared fields for automatic serialization/unserialization using the `_serializableFields` parameter of `\Magento\Framework\Model\ResourceModel\Db\AbstractDb`.  
-**Solution:**  
+**Case 1:**
+Your extension declared fields for automatic serialization/unserialization using the `_serializableFields` parameter of `\Magento\Framework\Model\ResourceModel\Db\AbstractDb`.
+**Solution:**
 Write an [upgrade script]({{ page.baseurl }}/ext-best-practices/tutorials/serialized-to-json-data-upgrade.html) to convert your extension data to JSON format.
 
-**Case 2:**  
-Your extension stores or adds serialized data to Magento entities (e.g. new/custom attributes for Product).  
-**Solution:**  
+**Case 2:**
+Your extension stores or adds serialized data to Magento entities (e.g. new/custom attributes for Product).
+**Solution:**
 Your extension will continue working normally, but we recommend switching to JSON for security reasons.
 You also need to write an upgrade script for the data in the database.
 
-**Case 3:**  
-Your extension relies on serialized data from Magento entities.  
-**Solution:**  
+**Case 3:**
+Your extension relies on serialized data from Magento entities.
+**Solution:**
 Update all usages to expect the data in JSON format.
 
-**Case 4:**  
-The serialize/unserialize logic belongs to your extension and stores data in a new table or field.  
-**Solution:**  
+**Case 4:**
+The serialize/unserialize logic belongs to your extension and stores data in a new table or field.
+**Solution:**
 Your extension will continue working normally, but we recommend switching to JSON for security reasons.
 You also need to write an upgrade script for the data in the database.
 
-**Case 5:**  
+**Case 5:**
 Your extension accesses values in the `core_config_data` table using the following paths:
 
 - `payment/braintree/countrycreditcard`
@@ -283,13 +283,13 @@ Your extension accesses values in the `core_config_data` table using the followi
 - `currency/options/customsymbol`
 - `admin/magento_logging/actions`
 
-**Solution:**  
+**Solution:**
 Update your extension to use `\Magento\Framework\Serialize\Serializer\Json` for serializing/unserializing data instead of the native [PHP](https://glossary.magento.com/php) serialize/unserialize functions.
 
-**Case 6:**  
+**Case 6:**
 Your extension uses a backend model that extends `\Magento\Config\Model\Config\Backend\Serialized` to save/load data to/from the database.
 
-**Solution:**  
+**Solution:**
 Write an [upgrade script]({{ page.baseurl }}/ext-best-practices/tutorials/serialized-to-json-data-upgrade.html) to update data stored by the extension in the `core_config_data` table from serialized to JSON format.
 
 **See:**

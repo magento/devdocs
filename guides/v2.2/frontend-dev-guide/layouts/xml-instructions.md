@@ -12,13 +12,13 @@ There are two possible ways to customize page layout in Magento:
 * Changing [layout](https://glossary.magento.com/layout) files.
 * Altering templates.
 
-To change the page wireframe, modify the [page layout] files; all other customizations are performed in the [page configuration] or [generic layout] files. 
+To change the page wireframe, modify the [page layout] files; all other customizations are performed in the [page configuration] or [generic layout] files.
 
 ## Manage layouts
 
 To make layout changes available on every page, modify the `default.xml` file.
 For example, layout changes added to `app/code/Vendor/Module/view/frontend/layout/default.xml` are loaded on all pages.
-To add layout changes to a specific page, use a layout file that corresponds to the page's path. 
+To add layout changes to a specific page, use a layout file that corresponds to the page's path.
 For example, changes to the `app/code/Vendor/Module/view/frontend/layout/catalog_product_view.xml` page are loaded on the product details page.
 
 Use these [layout instructions](https://glossary.magento.com/layout-instructions) to:
@@ -26,6 +26,7 @@ Use these [layout instructions](https://glossary.magento.com/layout-instructions
 *  Move a page element to another parent element.
 *  Add content.
 *  Remove a page element.
+*  Arrange the element position.
 
 The basic set of instructions is the same for all types of layout files. This topic describes these basic instructions. For details about how they are used in a particular layout file type, please refer to the [Layout file types] topic.
 
@@ -33,8 +34,8 @@ The basic set of instructions is the same for all types of layout files. This to
 
 Use the following layout instructions to customize your layout:
 
-* [`<block>`](#fedg_layout_xml-instruc_ex_block) 
-* [`<container>`](#fedg_layout_xml-instruc_ex_cont) 
+* [`<block>`](#fedg_layout_xml-instruc_ex_block)
+* [`<container>`](#fedg_layout_xml-instruc_ex_cont)
 * [`before` and `after` attributes](#fedg_xml-instrux_before-after)
 * [`<action>`](#fedg_layout_xml-instruc_ex_act)
 * [`<referenceBlock>` and `<referenceContainer>`](#fedg_layout_xml-instruc_ex_ref)
@@ -42,8 +43,7 @@ Use the following layout instructions to customize your layout:
 * [`<remove>`](#fedg_layout_xml-instruc_ex_rmv)
 * [`<update>`](#fedg_layout_xml-instruc_ex_upd)
 * [`<argument>`](#argument)
-* [`<block vs container>`](#block_vs_container)
-
+* [`<block> vs <container>`](#block_vs_container)
 
 ### block {#fedg_layout_xml-instruc_ex_block}
 
@@ -51,7 +51,7 @@ Defines a block.
 
 **Details:** A block is a unit of page output that renders some distinctive content (anything visually tangible for the end-user), such as a piece of information or a user interface element.
 
-Blocks are a foundational building unit for layouts in Magento. They are the link between a PHP block class (which contains logic) and a template (which renders content). Blocks can have children and grandchildren (and so on). Information can be passed from layout XML files to blocks using the `<arguments/>` child node. 
+Blocks are a foundational building unit for layouts in Magento. They are the link between a PHP block class (which contains logic) and a template (which renders content). Blocks can have children and grandchildren (and so on). Information can be passed from layout XML files to blocks using the `<arguments/>` child node.
 
 Blocks employ templates to generate HTML. Examples of blocks include a [category](https://glossary.magento.com/category) list, a mini cart, product tags, and product listing.
 
@@ -68,18 +68,17 @@ We recommend always adding a `name` to blocks. Otherwise, it is given a random n
 | `before` | Used to position the block before an element under the same parent. The element name or alias name is specified in the value. Use dash (-) to position the block before all other elements of its level of nesting. See [before and after attributes](#fedg_xml-instrux_before-after) for details. | Possible values: element name or dash (-) | no |
 | `after` | Used to position the block after an element under the same parent. The element name or alias name is specified in the value. Use dash (-) to position the block after all other elements of its level of nesting. See [before and after attributes](#fedg_xml-instrux_before-after) for details. | Possible values: element name or dash (-) | no |
 | `template` | A template that represents the functionality of the block to which this attribute is assigned. | template file name | no |
-| `as` | An alias name that serves as identifier in the scope of the parent element. | 0-9, A-Z, a-z, underscore (_), period (.), dash (-). Case-sensitive. | no | 
+| `as` | An alias name that serves as identifier in the scope of the parent element. | 0-9, A-Z, a-z, underscore (_), period (.), dash (-). Case-sensitive. | no |
 | `cacheable` | Defines whether a block element is cacheable. This can be used for development purposes and to make needed elements of the page dynamic. | `true` or `false` | no |
 
-
-To pass parameters use the [`<argument></argument>`](#argument) instruction. 
+To pass parameters use the [`<argument></argument>`](#argument) instruction.
 
 ### container {#fedg_layout_xml-instruc_ex_cont}
 
 A structure without content that holds other layout elements such as blocks and containers.
 
-**Details:** 
-A container renders child elements during view output generation. It can be empty or it can contain an arbitrary set of `<container>` and `<block>` elements. If the `<container>` is empty, and there is no child `<block>` available, it will not be displayed in the frontend source code. 
+**Details:**
+A container renders child elements during view output generation. It can be empty or it can contain an arbitrary set of `<container>` and `<block>` elements. If the `<container>` is empty, and there is no child `<block>` available, it will not be displayed in the frontend source code.
 
 {:.bs-callout .bs-callout-info}
 We recommend always adding a `name` to containers. Otherwise, it is given a random name.
@@ -95,7 +94,6 @@ We recommend always adding a `name` to containers. Otherwise, it is given a rand
 | `htmlTag` | Output parameter. If specified, the output is wrapped into specified HTML tag. | Any valid HTML 5 tag. | no |
 | htmlId | Output parameter. If specified, the value is added to the wrapper element. If there is no wrapper element, this attribute has no effect. | Any valid HTML 5 `id` value. | no |
 | `htmlClass` | Output parameter. If specified, the value is added to the wrapper element. If there is no wrapper element, this attribute has no effect. | Any valid HTML 5 `class` value. | no |
-
 
 Sample of usage in layout:
 
@@ -129,7 +127,6 @@ The following tables give a detailed description of the results you can get usin
 | `after` | [element name] | The block displays after the named element. |
 | `after` | empty value or [element name] is absent | Use the value of `before`. If that value is empty or absent as well, the block is considered as non-positioned. |
 
-
 #### Examples {#examples}
 
 | Situation | Result |
@@ -138,7 +135,6 @@ The following tables give a detailed description of the results you can get usin
 | Both `before` and `after` attributes are absent or empty | The element is considered as non-positioned. All other elements are positioned at their specified locations. The missing element displays at a random position that doesn't violate requirements for the positioned elements. |
 | Several elements have `before` or `after` set to dash (-) | All elements display at the top (or bottom, in case of the after attribute), but the ordering of group of these elements is undefined. |
 | The `before` or `after` attribute's value refers to an element that is not located in the parent node of the element being defined. | The element displays at a random location that doesn't violate requirements for the correctly positioned elements. |
-
 
 ### action {#fedg_layout_xml-instruc_ex_act}
 
@@ -166,7 +162,6 @@ Calls public methods on the block API.
 |:------- |:------ |:------ |:------ |
 | `method` | Name of the public method of the block class this tag is located in that is called during block generation. | block method name | yes |
 
-
 To pass parameters, use the [`<argument></argument>`](#argument) instruction.
 
 ### referenceBlock and referenceContainer {#fedg_layout_xml-instruc_ex_ref}
@@ -185,16 +180,16 @@ To pass parameters to a block use the [`<argument></argument>`](#argument) instr
 - The `remove` attribute is optional and its default value is `false`.
 
     This implementation allows you to remove a block or container in your layout by setting the remove attribute value to `true`, or to cancel the removal of a block or container by setting the value to `false`.
-     
+
     ```xml
     <referenceBlock name="block.name" remove="true" />
     ```
 
-- The `display` attribute is optional and its default value is true.- 
+- The `display` attribute is optional and its default value is true.-
 
     You are always able to overwrite this value in your layout.
     In situation when remove value is true, the display attribute is ignored.
-     
+
     ```xml
     <referenceContainer name="container.name" display="false" />
     ```
@@ -215,9 +210,8 @@ Sets the declared block or container element as a child of another element in th
 |:------- |:------ |:------ |:------ |
 | `element` | Name of the element to move. | element name | yes |
 | `destination` | Name of the target parent element. | element name | yes |
-| `as` | Alias name for the element in the new location. | 0-9, A-Z, a-z, underscore (_), period (.), dash (-). Case-sensitive. | no | 
+| `as` | Alias name for the element in the new location. | 0-9, A-Z, a-z, underscore (_), period (.), dash (-). Case-sensitive. | no |
 | `after` or `before` | Specifies the element's position relative to siblings. Use dash (-) to position the block before or after all other siblings of its level of nesting. If the attribute is omitted, the element is placed after all siblings. | element name | no |
-
 
 ### remove {#fedg_layout_xml-instruc_ex_rmv}
 
@@ -235,7 +229,7 @@ For removing blocks or containers, use the `remove` attribute for [`<referenceBl
       <!-- Remove external resources -->
       <remove src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css"/>
       <remove src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"/>
-      <remove src="http://fonts.googleapis.com/css?family=Montserrat" /> 
+      <remove src="http://fonts.googleapis.com/css?family=Montserrat" />
    </head>
 </page>
 ```
@@ -253,7 +247,7 @@ The specified [handle] is "included" and executed recursively.
 ### argument {#argument}
 
 Used to pass an argument. Must be always enclosed in [`<arguments>`](#arguments).
- 
+
 | Attribute | Description | Values | Required? |
 |:------- |:------ |:------ |:------ |
 | `name` | Argument name. | unique | yes |
@@ -270,7 +264,7 @@ To pass multiple arguments use the following construction:
 </arguments>
 ```
 
-Arguments values set in a layout file can be accessed in [templates] using the `getData('{ArgumentName}')` and `hasData('{ArgumentName}')` methods. The latter returns a boolean defining whether there's any value set. 
+Arguments values set in a layout file can be accessed in [templates] using the `getData('{ArgumentName}')` and `hasData('{ArgumentName}')` methods. The latter returns a boolean defining whether there's any value set.
 `{ArgumentName}` is obtained from the `name` attribute the following way: for getting the value of `<argument name="some_string">` the method name is `getData('some_string')`.
 
 **Example**:

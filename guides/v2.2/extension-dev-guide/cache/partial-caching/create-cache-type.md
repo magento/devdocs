@@ -14,7 +14,7 @@ class %Namespace%\%Module%\Model\Cache\Type extends \Magento\Framework\Cache\Fro
 {
   const TYPE_IDENTIFIER = '%cache_type_id%';
   const CACHE_TAG = '%CACHE_TYPE_TAG%';
-  
+
   public function __construct(\Magento\Framework\App\Cache\Type\FrontendPool $cacheFrontendPool)
   {
     parent::__construct($cacheFrontendPool->get(self::TYPE_IDENTIFIER), self::CACHE_TAG);

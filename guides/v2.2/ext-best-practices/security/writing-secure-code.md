@@ -25,9 +25,9 @@ Avoid using these functions in your code.
 
 ## Standard PHP library classes to avoid
 
-* [`ArrayObject`](http://php.net/manual/en/class.arrayobject.php){:target="_blank"} - Using `ArrayObject` class is not recommended because it contains `unserialize` method, which attackers can use to create an exploit. 
+* [`ArrayObject`](http://php.net/manual/en/class.arrayobject.php){:target="_blank"} - Using `ArrayObject` class is not recommended because it contains `unserialize` method, which attackers can use to create an exploit.
 
-  If you need to use the `ArrayObject` class, override the `serialize`/`unserialize` methods so that they use secure logic. 
+  If you need to use the `ArrayObject` class, override the `serialize`/`unserialize` methods so that they use secure logic.
   Convert objects into arrays to serialize them, and reconstruct the objects using arrays during unserialization.
 
   You can use [Serialize Library][12] in framework for a secure way of serializing/unserializing data.

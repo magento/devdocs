@@ -22,7 +22,7 @@ Amazon Web Services (AWS) powers the underlying Infrastructure as a Service (Iaa
 
 ## {{site.data.var.ct}} package
 
-The [`{{site.data.var.ct}}` package][ece] is a scalable deployment tool that simplifies the Cloud upgrade process. In 2018, we deprecated the `magento-cloud-configuration` and `ece-patches` packages in favor of providing a single package. We encourage all customers to [upgrade to use `{{site.data.var.ct}}`]({{page.baseurl}}/cloud/project/ece-tools-upgrade-project.html) as soon as possible to benefit from the package features, such as commands to create a backup of the database, apply custom patches, and verify environment configuration. 
+The [`{{site.data.var.ct}}` package][ece] is a scalable deployment tool that simplifies the Cloud upgrade process. In 2018, we deprecated the `magento-cloud-configuration` and `ece-patches` packages in favor of providing a single package. We encourage all customers to [upgrade to use `{{site.data.var.ct}}`]({{page.baseurl}}/cloud/project/ece-tools-upgrade-project.html) as soon as possible to benefit from the package features, such as commands to create a backup of the database, apply custom patches, and verify environment configuration.
 
 <!-- Link definitions -->
 

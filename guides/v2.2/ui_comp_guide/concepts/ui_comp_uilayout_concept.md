@@ -19,7 +19,6 @@ The `run()` method is the class entry point represented by `uiLayout` and has th
 | `cached`  | Boolean | Determines if `nodes` should be cached   |
 | `merge`   | Boolean | Determines if `nodes` should be merged   |
 
-
 If `cached` is set to `true`, the key for the cache is constructed from the object keys in the `node` parameter.
 Use the `cached` and `merge` parameters when a UI component needs to be updated during runtime.
 
@@ -39,7 +38,6 @@ This object can have the following properties:
 | `isTemplate`   | Boolean | Whether to save the configuration as a template.                                                     |
 | `nodeTemplate` | String  | The full name of a saved configuration template.                                                     |
 | `provider`     | String  | The full name of the DataSource UI component. This property is inherited from the parent if skipped. |
-
 
 #### Naming
 

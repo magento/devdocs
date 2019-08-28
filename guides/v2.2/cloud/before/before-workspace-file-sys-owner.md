@@ -47,7 +47,7 @@ Because the point of creating this user is to provide added security, it is esse
 
 To find the web server user's group:
 
-*	CentOS: 
+*	CentOS:
 
     ```bash
     grep -E -i '^user|^group' /etc/httpd/conf/httpd.conf
@@ -56,7 +56,7 @@ To find the web server user's group:
     ```bash
     grep -Ei '^user|^group' /etc/httpd/conf/httpd.conf
     ```
-	
+
 Typically, the user and group name are both `apache`
 *	Ubuntu: `ps aux | grep apache` to find the apache user, then `groups <apache user>` to find the group
 
