@@ -1,6 +1,8 @@
 ---
 group: graphql
 title: setGuestEmailOnCart mutation
+redirect from:
+  - /guides/v2.3/graphql/reference/quote-set-guest-email.html
 ---
 
 For guest customers, you must assign an email to the cart before you place the order.
@@ -59,10 +61,10 @@ The `SetGuestEmailOnCartOutput` object contains the `Cart` object.
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`cart` |[ Cart!](#CartObject) | Describes the contents of the specified shopping cart
+`cart` |[Cart!](#CartObject) | Describes the contents of the specified shopping cart
 
 ### Cart object {#CartObject}
 
 {% include graphql/cart-object.md %}
 
-[Cart query output]({{page.baseurl}}/graphql/reference/quote.html#cart-output) provides more information about the `Cart` object.
+[Cart query output]({{page.baseurl}}/graphql/queries/cart.html#cart-output) provides more information about the `Cart` object.

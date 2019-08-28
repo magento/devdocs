@@ -16,11 +16,11 @@ The following diagram shows the workflow for placing an order when Authorize.Net
 2. Authorize.Net returns a payment nonce and order details.
 The client's browser then posts the nonce to the Magento server along with all the other order information. The payment nonce expires after 24 hours.
 
-3. The client uses the [`setPaymentMethodOnCart`]({{page.baseurl}}/graphql/reference/quote-payment-method.html) mutation to send the payment nonce and the last four digits of the card to Magento.
+3. The client uses the [`setPaymentMethodOnCart`]({{page.baseurl}}/graphql/mutations/set-payment-method.html) mutation to send the payment nonce and the last four digits of the card to Magento.
 
 4. Magento returns a `Cart` object.
 
-5. The client runs the [`placeOrder`]({{page.baseurl}}/graphql/reference/quote-place-order.html) mutation, which creates an order in Magento and begins the authorization process.
+5. The client runs the [`placeOrder`]({{page.baseurl}}/graphql/mutations/place-order.html) mutation, which creates an order in Magento and begins the authorization process.
 
 6. Magento sends a transaction request that includes the payment nonce. The nonce replaces the payment details provided in standard Authorize.Net API calls.
 
@@ -30,7 +30,7 @@ The client's browser then posts the nonce to the Magento server along with all t
 
 ## Additional payment information
 
-When you set the payment method to `authorizenet_acceptjs` in the [`setPaymentMethodOnCart`]({{page.baseurl}}/graphql/reference/quote-payment-method.html) mutation, the payload must contain an `authorizenet_acceptjs` object.
+When you set the payment method to `authorizenet_acceptjs` in the [`setPaymentMethodOnCart`]({{page.baseurl}}/graphql/mutations/set-payment-method.html) mutation, the payload must contain an `authorizenet_acceptjs` object.
 
 Attribute |  Data Type | Description
 --- | --- | ---

@@ -1,6 +1,8 @@
 ---
 group: graphql
 title: createEmptyCart mutation
+redirect from:
+  - /guides/v2.3/graphql/reference/quote-create-cart.html
 ---
 
 The `createEmptyCart` mutation creates an empty shopping cart for a guest or logged in customer. You can allow the system to generate a cart ID, or assign a specific ID.
@@ -39,16 +41,6 @@ The response is the cart ID, which is sometimes called the quote ID. The remaini
 
 You can also create an empty cart with a specified `cart_id`.
 
-Attribute |  Data Type | Description
---- | --- | ---
-`cart_id` | String | A 32-character string
-
-### Syntax
-
-`mutation: {input: createEmptyCart: createEmptyCartInput}: String`
-
-### Example usage
-
 **Request**
 
 ``` text
@@ -69,3 +61,13 @@ The mutation returns the same `cart_id`.
   }
 }
 ```
+
+## Input attributes
+
+Attribute |  Data Type | Description
+--- | --- | ---
+`cart_id` | String | An optional 32-character string
+
+## Output attributes
+
+The `createEmptyCart` mutation returns a string, the cart ID.

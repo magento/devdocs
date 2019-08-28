@@ -1,6 +1,8 @@
 ---
 group: graphql
 title: removeItemFromCart mutation
+redirect from:
+  - /guides/v2.3/graphql/reference/quote-remove-item.html
 ---
 
 The `removeItemFromCart` mutation deletes the entire quantity of a specified item from the cart. If you remove all items from the cart, the cart continues to exist.
@@ -86,10 +88,10 @@ The `RemoveItemFromCartOutput` object contains the `Cart` object.
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`cart` |[ Cart!](#CartObject) | Describes the contents of the specified shopping cart
+`cart` |[Cart!](#CartObject) | Describes the contents of the specified shopping cart
 
 ### Cart object {#CartObject}
 
 {% include graphql/cart-object.md %}
 
-[Cart query output]({{page.baseurl}}/graphql/reference/quote.html#cart-output) provides more information about the `Cart` object.
+[Cart query output]({{page.baseurl}}/graphql/queries/cart.html#cart-output) provides more information about the `Cart` object.
