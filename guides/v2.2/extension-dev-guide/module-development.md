@@ -21,3 +21,4 @@ Magento 2 is flexible and as a result has varied functionality, so developing a 
 * [Routing]({{ page.baseurl }}/extension-dev-guide/routing.html)
 * [Indexing]({{ page.baseurl }}/extension-dev-guide/indexing.html)
 * [Configure a service as a web API]({{ page.baseurl }}/extension-dev-guide/service-contracts/service-to-web-service.html#configure-webapi)
+* [ViewModels]({{ page.baseurl }}/extension-dev-guide/view-models.html)
