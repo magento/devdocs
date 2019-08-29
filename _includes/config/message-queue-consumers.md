@@ -6,18 +6,6 @@ To view a list of all consumers:
 bin/magento queue:consumers:list
 ```
 
-The list displays as follows:
-
-```
-product_action_attribute.update
-product_action_attribute.website.update
-codegeneratorProcessor
-exportProcessor
-quoteItemCleaner
-inventoryQtyCounter
-async.operations.all
-```
-
 ## Start message queue consumers
 
 To start message queue consumers:
