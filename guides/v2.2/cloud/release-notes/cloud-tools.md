@@ -41,7 +41,7 @@ The release notes include:
 
 - {:.new}<!-- MAGECLOUD-2514 -->Updated the logging information returned by the `module:refresh` command. Now, you can see a detailed list of enabled modules in the `cloud.log` file.
 
-- {:.new}<!-- MAGECLOUD-3535 -->Added version compatibility validation between Magento version and installed services, such as Elasticsearch, RabbitMq, Redis, and DB. Displays a warning message if the service version is not compatible.
+- {:.new}<!-- MAGECLOUD-3535 -->Added version compatibility validation between Magento version and installed services, such as Elasticsearch, RabbitMQ, Redis, and DB. Displays a warning message if the service version is not compatible.
 
 - {:.fix}<!-- MAGECLOUD-3653-->Improved the log message returned when the cron job management process in the deploy phase tries to stop a cron job that has already finished to clarify that this issue is not an error.  Changed the log level from `INFO` to `DEBUG`.
 
