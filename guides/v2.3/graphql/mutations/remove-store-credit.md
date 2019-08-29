@@ -84,7 +84,7 @@ Attribute |  Data Type | Description
 
 ## Output attributes
 
-The `RemoveStoreCreditFromCartOutput` object contains the `Cart` object.
+The `RemoveStoreCreditFromCartOutput` object returns the `Cart` object.
 
 Attribute |  Data Type | Description
 --- | --- | ---
