@@ -45,8 +45,6 @@ runtime:
         - PHP_IDE_CONFIG=serverName=magento_cloud_docker
         - XDEBUG_CONFIG=remote_host=host.docker.internal
         - 'PHP_EXTENSIONS=bcmath bz2 calendar exif gd gettext intl mysqli pcntl pdo_mysql soap sockets sysvmsg sysvsem sysvshm opcache zip redis xsl xdebug'
-      env_file:
-        - ./.docker/config.env
     ```
     {:.no-copy}
 
