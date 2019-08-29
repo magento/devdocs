@@ -45,8 +45,6 @@ runtime:
         - PHP_IDE_CONFIG=serverName=magento_cloud_docker
         - XDEBUG_CONFIG=remote_host=host.docker.internal
         - 'PHP_EXTENSIONS=bcmath bz2 calendar exif gd gettext intl mysqli pcntl pdo_mysql soap sockets sysvmsg sysvsem sysvshm opcache zip redis xsl xdebug'
-      env_file:
-        - ./.docker/config.env
     ```
     {:.no-copy}
 
@@ -60,8 +58,8 @@ runtime:
 
 1.  In your PhpStorm project, open the settings panel.
 
-    -  _Mac OS X_—Select **File** > **Preferences**.
-    -  _Windows/Linux_—Select **File** > **Settings**.
+    - _Mac OS X_—Select **File** > **Preferences**.
+    - _Windows/Linux_—Select **File** > **Settings**.
 
 1.  In the _Settings_ panel, expand and locate the **Languages & Frameworks** > **PHP** > **Servers** section.
 
@@ -69,10 +67,10 @@ runtime:
 
 1.  Configure the following settings for the new server configuration:
 
-    -  **Name**—Enter the name used for the `serverName` in `PHP_IDE_CONFIG` option from `docker-compose.yml` file.
-    -  **Host**—Enter `localhost`.
-    -  **Port**—Enter `80`.
-    -  **Debugger**—Select `Xdebug`.
+    - **Name**—Enter the name used for the `serverName` in `PHP_IDE_CONFIG` option from `docker-compose.yml` file.
+    - **Host**—Enter `localhost`.
+    - **Port**—Enter `80`.
+    - **Debugger**—Select `Xdebug`.
 
 1.  Select **Use path mappings**. In the _File/Directory_ pane, the root of the project for the `serverName` displays.
 

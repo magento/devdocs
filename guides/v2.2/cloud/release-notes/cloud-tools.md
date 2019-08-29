@@ -29,13 +29,13 @@ The release notes include:
 
   - {:.new}<!-- MAGECLOUD-3505-->Added support to apply custom hook configuration specified in `.magento.app.yaml` in the Docker environment. Previously, the Docker environment supported only the default hook configuration.
 
-  - {:.new}<!-- MAGECLOUD-3816-->The Docker ENV file `.docker/config.env` is no long generated during the Docker build. The corresponding data is now stored in the `docker-compose.yml` file.
+  - {:.new}<!-- MAGECLOUD-3816-->The Docker ENV file `.docker/config.env` is no long generated during the Docker build. The corresponding data is now stored in the `docker-compose.yml` file. Additionally, the `docker:config:convert` command used to generate the ENV file from a custom PHP configuration is deprecated.
 
   - {:.new}<!-- MAGECLOUD-3953 -->**Updated PHP image**–Added Node.js to the PHP Docker image to support node, npm, and grunt-cli capabilities.
 
 - {:.new}**New environment variables**–
 
-  - {:.new}<!-- MAGECLOUD-4052 -->Added the **LOCK_PROVIDER** deploy variable to configure the lock provider. See the variable description in the [deploy variables]({{page.baseurl}}/cloud/env/variables-deploy.html#lock_provider) topic.
+  - {:.new}<!-- MAGECLOUD-4052 -->Added the **LOCK_PROVIDER** deploy variable to configure the lock provider which prevents the launch of duplicate cron jobs and cron groups. See the variable description in the [deploy variables]({{page.baseurl}}/cloud/env/variables-deploy.html#lock_provider) topic.
 
   - {:.new}<!-- MAGECLOUD-4071 -->Added the **CONSUMERS_WAIT_FOR_MAX_MESSAGES** environment variable to configure how consumers process messages from the message queue when using the `CRON_CONSUMERS_RUNNER` environment variable to manage cron jobs. See the variable description in the [deploy variables]({{ page.baseurl }}/cloud/env/variables-deploy.html#consumers_wait_for_max_messages) topic.
 

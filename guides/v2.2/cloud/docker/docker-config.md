@@ -120,17 +120,6 @@ Continue launching your Docker environment in the default _production_ mode.
     cp .docker/config.php.dist .docker/config.php
     ```
 
-    Convert custom PHP configuration files to Docker ENV files.
-
-    ```bash
-    ./vendor/bin/ece-tools docker:config:convert
-    ```
-
-    This generates the following Docker ENV files: `.docker/config.env`
-
-    {: .bs-callout-info }
-    The `{{site.data.var.ct}}` version 2002.0.12 package does not support the `docker:config:convert` command.
-
 1.  _Optional_: Configure the Docker global variables in the `docker-compose.yml` file. For example, you can [configure Xdebug]({{ page.baseurl }}/cloud/docker/docker-development-debug.html#configure-xdebug).
 
 1.  Build files to containers and run in the background.
@@ -167,7 +156,8 @@ Continue launching your Docker environment in the default _production_ mode.
     ```bash
     docker-compose run deploy magento-command cache:clean
     ```
-1. _Optional_: Restart services if the static content does not synchronize with all images after generation on build phase.
+
+1.  _Optional_: Restart services if the static content does not synchronize with all images after generation on build phase.
 
     ```bash
     docker-compose restart
@@ -206,14 +196,6 @@ The `{{site.data.var.ct}}` version 2002.0.18 and later supports developer mode.
     ```bash
     cp .docker/config.php.dist .docker/config.php
     ```
-
-    Convert custom PHP configuration files to Docker ENV files.
-
-    ```bash
-    ./vendor/bin/ece-tools docker:config:convert
-    ```
-
-    This generates the following Docker ENV files: `.docker/config.env`
 
 1.  _Optional_: Configure the Docker global variables in the `docker-compose.yml` file. For example, you can [enable and configure Xdebug]({{ page.baseurl }}/cloud/docker/docker-development-debug.html).
 

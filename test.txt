@@ -1,0 +1,10 @@
+[35mTesting Markdown style with mdl ...[0m
+[33m[0m
+[35mNo issues found[0m
+[35mChecking links with html-proofer...[0m
+Running ["LinkChecker::DoubleSlashCheck", "ScriptCheck", "ImageCheck", "LinkCheck", "HtmlCheck"] on ["_site"] on *.html... 
+
+
+Ran on 691 files!
+
+
