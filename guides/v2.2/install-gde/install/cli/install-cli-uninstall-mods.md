@@ -52,7 +52,6 @@ The module uninstall command performs the following tasks:
 | `--backup-media` | Backs up the pub/media directory.                                                | var/backups/<timestamp>_filesystem_media.tgz |
 | `--backup-db`    | Backs up the Magento 2 database.                                                 | var/backups/<timestamp>_db.gz                |
 
-
 3.	If `--remove-data` is specified, removes the database schema and data defined in the module's `Uninstall` classes.
 
 	For each specified module to uninstall, invokes the `uninstall` method in its `Uninstall` class. This class must inherit from [Magento\Framework\Setup\UninstallInterface]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Setup/UninstallInterface.php){:target="_blank"}.

@@ -7,9 +7,6 @@ A virtual product represents a saleable item that is not physical, such as a mem
 
 The `addVirtualProductsToCart` mutation allows you to add multiple virtual products to the cart at the same time, but you cannot add other product types with this mutation. To add a virtual product to a cart, you must provide the cart ID, the SKU, and the quantity. You can also optionally provide customizable options.
 
-{:.bs-callout .bs-callout-info}
-The mutation for [adding configurable products]({{page.baseurl}}/graphql/reference/configurable-product.html) is defined in the `ConfigurableProductGraphQl` module.
-
 ## Syntax
 
 `mutation: {addVirtualProductsToCart(input: AddVirtualProductsToCartInput): {AddVirtualProductsToCartOutput}}`
@@ -25,7 +22,7 @@ The Luma sample data does not include any virtual products. The following exampl
 mutation {
   addVirtualProductsToCart(
     input: {
-      cart_id: "IeTUiU0oCXjm0uRqGCOuhQ2AuQatogjG", 
+      cart_id: "IeTUiU0oCXjm0uRqGCOuhQ2AuQatogjG",
       cart_items: [
         {
           data: {

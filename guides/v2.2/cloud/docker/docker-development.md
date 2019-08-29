@@ -19,7 +19,7 @@ The database container is based on the [mariadb](https://hub.docker.com/_/mariad
 -  Volumes:
     - `/var/lib/mysql`
     - `./docker/mysql`
-      
+
 #### To import a database dump:
 
 Place the SQL file into the `.docker/mysql/docker-entrypoint-initdb.d` folder.

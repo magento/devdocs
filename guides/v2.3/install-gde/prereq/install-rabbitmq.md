@@ -68,7 +68,7 @@ The RabbitMQ server is included on CentOS, but the version is often old. RabbitM
     ```bash
     rpm --import https://www.rabbitmq.com/rabbitmq-signing-key-public.asc
     ```
-    
+
     ```bash
     yum install rabbitmq-server-3.5.6-1.noarch.rpm
     ```
@@ -85,7 +85,7 @@ Review the official RabbitMQ documentation to configure and manage RabbitMQ. Pay
 * Starting and stopping the broker
 * System limits
 
-## Install Magento with RabbitMQ and connect to {{site.data.var.ce}} or {{site.data.var.ee}} 
+## Install Magento with RabbitMQ and connect to {{site.data.var.ce}} or {{site.data.var.ee}}
 
 If you installed Magento after you installed RabbitMQ, add the following command line parameters when you install {{site.data.var.ce}} or {{site.data.var.ee}}:
 
@@ -102,7 +102,7 @@ where:
 |`--amqp-virtualhost`|The virtual host for connecting to RabbitMQ. The default is `/`.
 |`--amqp-ssl`|Indicates whether to connect to RabbitMQ. The default is `false`. If you set the value to true, see Configure SSL for more information.|
 
-## Connect RabbitMQ to {{site.data.var.ce}} or {{site.data.var.ee}} 
+## Connect RabbitMQ to {{site.data.var.ce}} or {{site.data.var.ee}}
 
 If you already had Magento installed and you want to connect it to RabbitMQ, add a `queue` section in the `<install_directory>/app/etc/env.php` file so that it is similar to the following:
 

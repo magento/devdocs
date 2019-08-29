@@ -48,7 +48,6 @@ Database (simplest way is to use magento setup:upgrade)|
 |`magento list`|Lists all available commands.|None|
 |`magento help`|Provides help for the specified command.|None|
 
-
 ## Help commands {#instgde-cli-help}
 {% include install/cli_help-commands.md %}
 

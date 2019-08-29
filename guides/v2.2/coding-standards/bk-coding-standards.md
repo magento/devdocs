@@ -12,8 +12,7 @@ functional_areas:
 <!-- This topic is referred to from Magento 2 code! Don't change the [URL](https://glossary.magento.com/url) without informing engineering! -->
 <!-- Referring file: contributing.md owned by core -->
 
-
-Like many large projects, Magento has coding standards. 
+Like many large projects, Magento has coding standards.
 
 Use Magento's coding standards when you contribute to Magento's codebase or create extensions.
 

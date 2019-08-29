@@ -9,7 +9,7 @@ functional_areas:
 
 #### Contents
 
-*	[Overview of the Varnish solution]  
+*	[Overview of the Varnish solution]
 *	[Varnish topology diagram]
 *	[Process overview]
 *	[Known issues]
@@ -124,7 +124,6 @@ We know of the following issues with Varnish:
 [Varnish does not support SSL]: https://www.varnish-cache.org/docs/3.0/phk/ssl.html
 
 [SSL termination proxy]: https://en.wikipedia.org/wiki/TLS_termination_proxy
-
 
 <!-- image Definitions -->
 [Basic Varnish diagram]: {{ site.baseurl }}/common/images/varnish_basic.png

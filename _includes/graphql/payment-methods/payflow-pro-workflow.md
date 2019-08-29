@@ -2,7 +2,7 @@
 
 2. The mutation returns a `Cart` object.
 
-3. The client runs the [`createPayflowProToken`]({{page.baseurl}}/graphql/reference/paypal-create-payflow-pro-token.html) mutation to initiate a transaction.
+3. The client runs the [`createPayflowProToken`]({{page.baseurl}}/graphql/mutations/create-payflow-pro-token.html) mutation to initiate a transaction.
 
 4. Magento requests a secure token from the PayPal gateway. The request also contains billing and shipping information, which Magento extracts from the `Cart` object.
 
@@ -14,7 +14,7 @@
 
 8. The gateway responds directly to the client. The response contains a payload that includes secure token information and billing and shipping information.
 
-9. The client uses the [`handlePayflowProResponse`]({{page.baseurl}}/graphql/reference/paypal-handle-payflow-pro-response.html) mutation to send the payload to Magento. Magento stores this information without modifying the cart.
+9. The client uses the [`handlePayflowProResponse`]({{page.baseurl}}/graphql/mutations/handle-payflow-pro-response.html) mutation to send the payload to Magento. Magento stores this information without modifying the cart.
 
 10. The mutation returns a `Cart` object.
 

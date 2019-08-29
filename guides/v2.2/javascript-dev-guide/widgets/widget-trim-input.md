@@ -35,7 +35,7 @@ Phtml template file examples using script:
         'mage/trim-input'
     ], function ($) {
         'use strict';
-        
+
         $("#element").trimInput();
     });
 </script>

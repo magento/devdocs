@@ -29,8 +29,8 @@ The way you upgrade (that is, patch) the Magento application depends on how you 
 * {{ce}} and {{ee}}: If you used [Composer] to install the Magento application or if you downloaded an [archive], use the [System Upgrade utility] or the [command line].
 * {{ce}} only: If you cloned the Magento 2 GitHub repository because you are contributing code to the {{ce}} codebase, [upgrade the software manually].
 * If your Magento root directory is `<your Magento install directory/pub>`, you can upgrade in any of the following ways:
-  *	For the upgrade, create another subdomain or docroot that uses the Magento installation directory as its root. 
-	
+  *	For the upgrade, create another subdomain or docroot that uses the Magento installation directory as its root.
+
 	Run the System Upgrade utility as discussed in this topic using that subdomain or docroot.
   *	Upgrade the Magento software using the [command line].
 * To upgrade from {{ce}} to {{ee}}, see [Upgrade from Open Source to Commerce].

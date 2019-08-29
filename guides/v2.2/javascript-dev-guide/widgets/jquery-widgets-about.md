@@ -9,6 +9,7 @@ The Magento system uses a jQuery JavaScript library to implement client function
 This guide discusses the following widgets:
 -   [Accordion widget]
 -   [Alert widget]
+-   [Breadcrumb widget]
 -   [Calendar widget]
 -   [Collapsible widget]
 -   [Confirm widget]
@@ -19,12 +20,14 @@ This guide discusses the following widgets:
 -   [Loader widget]
 -   [Menu widget]
 -   [Modal widget]
+-   [Multiselect widget]
 -   [Navigation widget]
 -   [PasswordStrengthIndicator widget]
 -   [PopupWindow widget]
 -   [Prompt widget]
 -   [QuickSearch widget]
 -   [RedirectUrl widget]
+-   [RowBuilder widget]
 -   [Tabs widget]
 -   [ToggleAdvanced widget]
 -   [TrimInput widget]
@@ -37,6 +40,7 @@ Magento out of the box does not contain jQuery UI styles. Also, it is not recomm
 
 [Accordion widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_accordion.html
 [Alert widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_alert.html
+[Breadcrumb widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget-breadcrumbs.html
 [Calendar widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_calendar.html
 [Collapsible widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_collapsible.html
 [Confirm widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_confirm.html
@@ -47,12 +51,14 @@ Magento out of the box does not contain jQuery UI styles. Also, it is not recomm
 [Loader widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_loader.html
 [Menu widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_menu.html
 [Modal widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_modal.html
+[Multiselect widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget-multiselect.html
 [Navigation widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_navigation.html
 [PasswordStrengthIndicator widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_password_strength_indicator.html
 [PopupWindow widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget-popup-window.html
 [Prompt widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_prompt.html
 [QuickSearch widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_quickSearch.html
 [RedirectUrl widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_redirectUrl.html
+[RowBuilder widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget-row-builder.html
 [Tabs widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_tabs.html
 [ToggleAdvanced widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_toggle.html
 [TrimInput widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget-trim-input.html

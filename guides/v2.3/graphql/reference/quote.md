@@ -507,6 +507,15 @@ Attribute |  Data Type | Description
 `code` | String | The state or province code
 `label` | String | The display label for the region
 
+#### CartDiscount object {#CartDiscount}
+
+The `CartDiscount` object must contain the following attributes.
+
+Attribute |  Data Type | Description
+--- | --- | ---
+`amount` | Money | The amount of all discounts applied to the cart
+`label` | [String!]! | A concatenated list of strings that describe each applied discount
+
 #### CartItemInterface object {#CartItemInterface}
 
 The `CartItemInterface` object can contain the following attributes.
@@ -514,7 +523,7 @@ The `CartItemInterface` object can contain the following attributes.
 Attribute |  Data Type | Description
 --- | --- | ---
 `id` | String | ID of the item
-`product` | [ProductInterface]({{ page.baseurl }}/graphql/reference/product-interface-implementations.html) | Contains attributes that are common to all types of products
+`product` | [ProductInterface]({{ page.baseurl }}/graphql/product/product-interface-implementations.html) | Contains attributes that are common to all types of products
 `quantity` | Float | The number of items in the cart
 
 #### CartItemQuantity object {#CartItemQuantity}
@@ -533,6 +542,7 @@ The `CartPrices` object can contain the following attributes.
 Attribute |  Data Type | Description
 --- | --- | ---
 `applied_taxes` | [[CartTaxItem]](#CartTaxItem) | An array containing the names and amounts of taxes applied to the item
+`discount` | CartDiscount | The total amount of all discounts applied to the cart
 `grand_total` | Money | The total, including discounts, taxes, shipping, and other fees
 `subtotal_excluding_tax` | Money | Subtotal without taxes
 `subtotal_including_tax` | Money | Subtotal with taxes

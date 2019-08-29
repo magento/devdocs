@@ -5,9 +5,6 @@ title: addSimpleProductsToCart mutation
 
 Simple products are physical products that do not have variations, such as color, size, or price. The `addSimpleProductsToCart` mutation allows you to add multiple simple products to the cart at the same time, but you cannot add other product types with this mutation. To add a simple product to a cart, you must provide the cart ID, the SKU, and the quantity. You can also optionally provide customizable options.
 
-{:.bs-callout .bs-callout-info}
-The mutation for [adding configurable products]({{page.baseurl}}/graphql/reference/configurable-product.html) is defined in the `ConfigurableProductGraphQl` module.
-
 ## Syntax
 
 `mutation: {addSimpleProductsToCart(input: AddSimpleProductsToCartInput): {AddSimpleProductsToCartOutput}}`

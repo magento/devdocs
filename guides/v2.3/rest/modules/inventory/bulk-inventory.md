@@ -122,7 +122,6 @@ Name | Description | Type | Requirements
 `skus` | A comma-separated list of existing SKUs to assign | Array | Required
 `sourceCodes` | A comma-separated list of existing sources | Array | Required
 
-
 **Sample usage**
 
 `POST <host>/rest/<store_code>/V1/inventory/bulk-product-source-assign`
@@ -145,7 +144,6 @@ Name | Description | Type | Requirements
 **Response**
 
 An ID that identifies the request, such as `1`.
-
 
 ## Bulk unassign sources
 

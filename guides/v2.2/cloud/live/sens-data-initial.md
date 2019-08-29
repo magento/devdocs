@@ -210,9 +210,9 @@ On your local, use a text editor to edit the updated `app/etc/config.php` file. 
          'allow_symlink' => '0',
          'minify_html' => '0',
      ],
-     
+
      ... more ...
-     
+
      'js' => [
          'merge_files' => '0',
          'enable_js_bundling' => '0',
@@ -233,9 +233,9 @@ To modify settings to allow minification, edit `'0'` to `'1'` for `'minify_html'
          'allow_symlink' => '0',
          'minify_html' => '1',
      ],
-     
+
      ... more ...
-     
+
      'js' => [
          'merge_files' => '0',
          'enable_js_bundling' => '0',

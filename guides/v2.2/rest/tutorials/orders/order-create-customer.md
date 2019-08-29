@@ -130,7 +130,6 @@ To get a customer's access token, you must specify the customer's username and p
 
 By default, a customer token is valid for 1 hour. To change this value, log in to Admin and go to **Stores** > Settings > **Configuration** > **Services** > **OAuth** > **Access Token Expiration**.
 
-
 **Endpoint**
 
 `POST <host>/rest/<store_code>/V1/integration/customer/token`

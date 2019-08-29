@@ -4,8 +4,63 @@ description: |
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: /whats-new.html
 thread: /whatsnew-feed.xml
-updated: Fri Aug 9 23:29:50 2019
+updated: Tue Aug 20 11:10:17 2019
 entries:
+- description: Added a tutorial about how to create a [grouped product using the REST
+    API](https://devdocs.magento.com/guides/v2.3/rest/tutorials/grouped-product/create-and-manage-grouped-products.html).
+  versions: 2.3.x
+  type: New topic
+  date: August 19, 2019
+  link: https://github.com/magento/devdocs/pull/5155
+- description: Updated the [Set up multiple website or stores](https://devdocs.magento.com/guides/v2.3/cloud/project/project-multi-sites.html)
+    topic in the Cloud guide. Now, this topic differentiates between sites with a
+    shared domain and sites with unique domains.
+  versions: 2.x
+  type: Major update
+  date: August 15, 2019
+  link: https://github.com/magento/devdocs/pull/5123
+- description: Added the [Change increment ID for a database entity on particular
+    store](http://devdocs.magento.com/guides/v2.2/config-guide/multi-site/change-increment-id.html)
+    topic to the Configuration Guide.
+  versions: 2.2.x, 2.3.x
+  type: New topic
+  date: August 15, 2019
+  link: https://github.com/magento/devdocs/pull/5129
+- description: Added a code sample and updated the API reference in the [QuickSearch
+    Widget](https://devdocs.magento.com/guides/v2.3/javascript-dev-guide/widgets/widget_quickSearch.html)
+    topic.
+  versions: 2.2.x, 2.3.x
+  type: Major update
+  date: August 14, 2019
+  link: https://github.com/magento/devdocs/pull/5182
+- description: Provided details about what happens when you run the [Data Migration
+    Tool](https://devdocs.magento.com/guides/v2.2/migration/migration-migrate-data.html).
+  versions: 2.2.x, 2.3.x
+  type: Major update
+  date: August 14, 2019
+  link: https://github.com/magento/devdocs/pull/5167
+- description: Updated the JavaScript resources topic with instructions for [including
+    third-party JavaScript libraries](https://devdocs.magento.com/guides/v2.3/javascript-dev-guide/javascript/js-resources.html#including-third-party-javascript-libraries).
+  versions: 2.2.x, 2.3.x
+  type: Major update
+  date: August 13, 2019
+  link: https://github.com/magento/devdocs/pull/5161
+- description: Added documentation for the [TrimInput widget](https://devdocs.magento.com/guides/v2.3/javascript-dev-guide/widgets/widget-trim-input.html).
+  versions: 2.2.x, 2.3.x
+  type: New topic
+  date: August 13, 2019
+  link: https://github.com/magento/devdocs/pull/5135
+- description: Added an optional step to the [Cloud Docker](https://devdocs.magento.com/guides/v2.3/cloud/docker/docker-config.html)
+    topic to restart services.
+  versions: 2.x
+  type: Technical changes
+  date: August 12, 2019
+  link: https://github.com/magento/devdocs/pull/5157
+- description: Added documentation for the [Popup Window widget](https://devdocs.magento.com/guides/v2.3/javascript-dev-guide/widgets/widget-popup-window.html).
+  versions: 2.2.x, 2.3.x
+  type: New topic
+  date: August 12, 2019
+  link: https://github.com/magento/devdocs/pull/5171
 - description: Added information about how to [define a custom Import Entity](https://devdocs.magento.com/guides/v2.3/ext-best-practices/tutorials/custom-import-entity.html).
   versions: 2.2.x, 2.3.x
   type: New topic
@@ -419,7 +474,7 @@ entries:
   date: June 22, 2019
   link: https://github.com/magento/devdocs/pull/4402
 - description: Added the `only_x_left_in_stock` and `stock_status` attributes to the
-    [Products endpoint](https://devdocs.magento.com/guides/v2.3/graphql/reference/products.html).
+    [Products endpoint](https://devdocs.magento.com/guides/v2.3/graphql/queries/products.html).
     These attributes were added to support Inventory Management orders.
   versions: 2.3.2
   type: Technical changes
@@ -977,8 +1032,8 @@ entries:
   type: Technical changes
   date: March 26, 2019
   link: https://github.com/magento/devdocs/pull/3882
-- description: Added query and mutation to the [configurable]( https://devdocs.magento.com/guides/v2.3/graphql/reference/configurable-product.html)
-    and [downloadable product](https://devdocs.magento.com/guides/v2.3/graphql/reference/downloadable-product.html)
+- description: Added query and mutation to the [configurable]( https://devdocs.magento.com/guides/v2.3/graphql/product/configurable-product.html)
+    and [downloadable product](https://devdocs.magento.com/guides/v2.3/graphql/product/downloadable-product.html)
     endpoints
   versions: 2.3.1
   type: Major update
@@ -990,7 +1045,7 @@ entries:
   type: Major update
   date: March 26, 2019
   link: https://github.com/magento/devdocs/pull/3840
-- description: Added `url_path`, `url_key`, and `url_rewrites` to [product endpoint](https://devdocs.magento.com/guides/v2.3/graphql/reference/products.html)
+- description: Added `url_path`, `url_key`, and `url_rewrites` to [product endpoint](https://devdocs.magento.com/guides/v2.3/graphql/queries/products.html)
     and added URL rewrite attributes and examples to [UrlRewrite endpoint](https://devdocs.magento.com/guides/v2.3/graphql/reference/url-resolver.html)
   versions: 2.3.1
   type: Major update
@@ -1006,7 +1061,7 @@ entries:
   type: New topic
   date: March 26, 2019
   link: https://github.com/magento/devdocs/pull/3855
-- description: Added an example to [CustomizableOptionInterface](https://devdocs.magento.com/guides/v2.3/graphql/reference/customizable-option-interface.html)
+- description: Added an example to [CustomizableOptionInterface](https://devdocs.magento.com/guides/v2.3/graphql/product/customizable-option-interface.html)
   versions: 2.3.1
   type: Major update
   date: March 26, 2019
@@ -1564,7 +1619,7 @@ entries:
   versions: 2.3.x
   type: Major update
   date: November 20 2018
-- description: Added `CatalogInventory` attributes to the [products query](https://devdocs.magento.com/guides/v2.3/graphql/reference/products.html).
+- description: Added `CatalogInventory` attributes to the [products query](https://devdocs.magento.com/guides/v2.3/graphql/queries/products.html).
   versions: 2.3.x
   type: Technical changes
   date: November 16 2018
@@ -1830,7 +1885,7 @@ entries:
   versions: 2.3.x
   type: Technical changes
   date: Sep 5 2018
-- description: Added a note about filtered product attributes in [Products endpoint](https://devdocs.magento.com/guides/v2.3/graphql/reference/products.html)
+- description: Added a note about filtered product attributes in [Products endpoint](https://devdocs.magento.com/guides/v2.3/graphql/queries/products.html)
   versions: 2.3.x
   type: Technical changes
   date: Sep 5 2018
@@ -1844,7 +1899,7 @@ entries:
   versions: 2.x
   type: Technical changes
   date: Sep 5 2018
-- description: Updated [CustomAttributeMetadata endpoint](https://devdocs.magento.com/guides/v2.3/graphql/reference/custom-attribute-metadata.html)
+- description: Updated [CustomAttributeMetadata endpoint](https://devdocs.magento.com/guides/v2.3/graphql/queries/custom-attribute-metadata.html)
     to include the new `attribute_options` object.
   versions: 2.3.x
   type: Technical changes
@@ -1902,7 +1957,7 @@ entries:
   versions: 2.3.x
   type: Major update
   date: Aug 21 2018
-- description: Added information about breadcrumbs in the [GraphQL category](https://devdocs.magento.com/guides/v2.3/graphql/reference/categories.html)
+- description: Added information about breadcrumbs in the [GraphQL category](https://devdocs.magento.com/guides/v2.3/graphql/queries/category.html)
     topic.
   versions: 2.3.x
   type: Major update
@@ -2163,7 +2218,7 @@ entries:
   versions: 2.1.x, 2.2.x, 2.3.x
   type: Technical changes
   date: May 29 2018
-- description: Updated the GraphQL [Products endpoint](https://devdocs.magento.com/guides/v2.3/graphql/reference/products.html)
+- description: Updated the GraphQL [Products endpoint](https://devdocs.magento.com/guides/v2.3/graphql/queries/products.html)
     to include functionality contributed by community members.
   versions: 2.3.x
   type: Technical changes
@@ -2196,7 +2251,7 @@ entries:
   versions: 2.1.x, 2.2.x, 2.3.x
   type: Technical changes
   date: May 15 2018
-- description: Added filter attribute information in [GraphQL Product](https://devdocs.magento.com/guides/v2.3/graphql/reference/products.html)
+- description: Added filter attribute information in [GraphQL Product](https://devdocs.magento.com/guides/v2.3/graphql/queries/products.html)
   versions: 2.3.x
   type: Technical changes
   date: May 10 2018
@@ -2913,7 +2968,7 @@ entries:
   date: Oct 23 2017
 - description: Updated content for Magento Commerce (Cloud) for the updated Pro projects
     in [Manage your project](https://devdocs.magento.com/guides/v2.2/cloud/project/projects.html),
-    [Add Staging and Production to Pro projects](https://devdocs.magento.com/guides/v2.2/cloud/trouble/pro-env-management.html),
+    Add Staging and Production to Pro projects,
     [Deploy your store](https://devdocs.magento.com/guides/v2.2/cloud/live/stage-prod-live.html),
     [Deployment process](https://devdocs.magento.com/guides/v2.2/cloud/reference/discover-deploy.html),
     [Prepare to deploy to Staging and Production](https://devdocs.magento.com/guides/v2.2/cloud/live/stage-prod-migrate-prereq.html),
@@ -2930,7 +2985,7 @@ entries:
   date: Oct 18 2017
 - description: 'Update Magento Commerce (Cloud) content for new features for Pro plan:
     [Manage your project](https://devdocs.magento.com/guides/v2.2/cloud/project/projects.html),
-    [Add Staging and Production to Pro projects](https://devdocs.magento.com/guides/v2.2/cloud/trouble/pro-env-management.html),
+    Add Staging and Production to Pro projects,
     [Configure your project](https://devdocs.magento.com/guides/v2.2/cloud/project/project-webint-basic.html),
     [Create and manage users](https://devdocs.magento.com/guides/v2.2/cloud/project/user-admin.html),
     [Manage branches with the Interface](https://devdocs.magento.com/guides/v2.2/cloud/project/project-webint-branch.html),

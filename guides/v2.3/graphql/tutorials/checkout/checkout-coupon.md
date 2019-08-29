@@ -1,13 +1,13 @@
 ---
 layout: tutorial
 group: graphql
-title: Step 8. Apply a coupon
+title: Step 7. Apply a coupon
 subtitle: GraphQL checkout tutorial
 level3_subgroup: graphql-checkout
 return_to:
   title: GraphQL Overview
   url: graphql/index.html
-menu_order: 80
+menu_order: 70
 functional_areas:
   - Integration
 contributor_name: Atwix
@@ -97,6 +97,6 @@ mutation {
 
 1. Sign in as a customer to the website using the email `john.doe@example.com` and password `b1b2b3l@w+`.
 
-2. Go to Checkout. 
+2. Go to Checkout.
 
 3. The discount is displayed in the Order Summary block.

@@ -5,7 +5,7 @@ title: UI components XML configuration structure
 
 ## Overview
 
-This topic describes the basic elements used in XML configuration files for declaring  UI components. These elements core structure is strict and third party developers must follow it when customizing existing UI component configuration or declaring new ones.  
+This topic describes the basic elements used in XML configuration files for declaring  UI components. These elements core structure is strict and third party developers must follow it when customizing existing UI component configuration or declaring new ones.
 
 ## Basic configuration elements
 

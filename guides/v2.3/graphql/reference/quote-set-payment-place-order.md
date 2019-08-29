@@ -45,7 +45,6 @@ mutation {
 
 **Response**
 
-
 ```json
 {
   "data": {
@@ -61,7 +60,6 @@ mutation {
 ## Input attributes
 
 The `placeOrderInput` object must contain the following attribute:
-
 
 Attribute |  Data Type | Description
 --- | --- | ---
