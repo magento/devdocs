@@ -107,9 +107,7 @@ By default, the deployment process overwrites all settings in the `env.php` file
 -  **Default**—`false`
 -  **Version**—Magento 2.2.0 and later
 
-Configure how consumers process messages from the message by choosing one of the following options:
-
-#### Possible values
+Configure how consumers process messages from the message queue by choosing one of the following options:
 
 - `false`—Consumers process available messages in the queue, close the TCP connection, and terminate. Consumers do not wait for additional messages to enter the queue, even if the number of processed messages is less than the `max_messages` value specified in the `CRON_CONSUMERS_RUNNER` deploy variable.
 
@@ -118,7 +116,7 @@ Configure how consumers process messages from the message by choosing one of the
 ```yaml
 stage:
   deploy:
-    CONSUMERS_WAIT_FOR_MAX_MESSAGES: true
+    CONSUMERS_WAIT_FOR_MAX_MESSAGES: false
 ```
 
 ### `CRYPT_KEY`

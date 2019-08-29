@@ -17,6 +17,13 @@ The release notes include:
 - {:.new}New features
 - {:.fix}Fixes and improvements
 
+The following updates describe the latest improvements to the `{{site.data.var.ct}}` package, which uses the following version sequence: `200<major>.<minor>.<patch>`. See [Upgrades and patches]({{ page.baseurl }}/cloud/project/project-upgrade-parent.html) for information about updating to the latest release of the `{{site.data.var.ct}}` package.
+
+The release notes include:
+
+- {:.new}New features
+- {:.fix}Fixes and improvements
+
 ## v2002.0.21
 
 - {:.new}**Docker updates**—
@@ -29,11 +36,11 @@ The release notes include:
 
   - {:.new}<!-- MAGECLOUD-3505-->Added support to apply custom hook configuration specified in `.magento.app.yaml` in the Docker environment. Previously, the Docker environment supported only the default hook configuration.
 
-  - {:.new}<!-- MAGECLOUD-3816-->The Docker ENV file `.docker/config.env` is no long generated during the Docker build. The corresponding data is now stored in the `docker-compose.yml` file. Additionally, the `docker:config:convert` command used to generate the ENV file from a custom PHP configuration file is deprecated.
+  - {:.new}<!-- MAGECLOUD-3816-->Docker ENV files are no longer generated during the Docker build, and the `docker:config:convert` command is deprecated. The corresponding data is now stored in the `docker-compose.yml` file.
 
   - {:.new}<!-- MAGECLOUD-3953 -->**Updated PHP image**–Added Node.js to the PHP Docker image to support node, npm, and grunt-cli capabilities.
 
-- {:.new}**New environment variables**–
+- {:.new}**Environment variable updates**–
 
   - {:.new}<!-- MAGECLOUD-4052 -->Added the **LOCK_PROVIDER** deploy variable to configure the lock provider which prevents the launch of duplicate cron jobs and cron groups. See the variable description in the [deploy variables]({{page.baseurl}}/cloud/env/variables-deploy.html#lock_provider) topic.
 
@@ -41,7 +48,9 @@ The release notes include:
 
 - {:.new}<!-- MAGECLOUD-2514 -->Updated the logging information returned by the `module:refresh` command. Now, you can see a detailed list of enabled modules in the `cloud.log` file.
 
-- {:.new}<!-- MAGECLOUD-3535 -->Added version compatibility validation between Magento version and installed services, such as Elasticsearch, RabbitMq, Redis, and DB. Displays a warning message if the service version is not compatible.
+- {:.new}<!-- MAGECLOUD-3535 -->Improved version compatibility validation and warning notifications for compatibility issues between Magento version and installed services, such as Elasticsearch, RabbitMq, Redis, and DB.
+
+- {:.new}<!-- MAGECLOUD-4018 -->Updated interactive validations for service compatibility to reflect supported versions for the new {{ site.data.var.ee }} 2.3.3 and 2.2.10 releases. See [Service versions]({{ page.baseurl }}/cloud/project/project-conf-files_services.html#service-versions).
 
 - {:.fix}<!-- MAGECLOUD-3653-->Improved the log message returned when the cron job management process in the deploy phase tries to stop a cron job that has already finished to clarify that this issue is not an error.  Changed the log level from `INFO` to `DEBUG`.
 
@@ -56,8 +65,6 @@ The release notes include:
 - {:.fix}<!-- MAGECLOUD-3957 -->Fixed an issue that caused an error with static content deployment during build. After a Magento installation and `{{site.data.var.ct}}` config dump, an error occurred if there was no locale specified for the admin user in the `config.php` file. Now, there is a default locale for the admin user in the `config.php` file.
 
 - {:.fix}<!-- MAGECLOUD-4009 -->Fixed an `Undefined index error` that occurs when a Magento Cloud CLI command fails in an environment that is not configured with a secure URL (https). Now, the ece-tools package uses the base URL (http) if the secure URL is not available.
-
-- {:.new}<!-- MAGECLOUD-4018 -->Updated interactive validations for service compatibility to reflect supported versions for the new {{ site.data.var.ee }} 2.3.3 and 2.2.10 releases.
 
 ## v2002.0.20
 
