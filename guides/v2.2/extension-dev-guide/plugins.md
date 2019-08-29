@@ -61,7 +61,7 @@ The first argument for the before, after, and around methods is an object that p
 
 Magento runs all before methods ahead of the call to an observed method. These methods must have the same name as the observed method with 'before' as the prefix.
 
-You can use before methods to change the arguments of an observed method by returning a modified argument. If there is more than one argument, the method should return an array of those arguments. If the method does not change the argument for the observed method, it should return `null`.
+You can use before methods to change the arguments of an observed method by returning a modified argument. If there is more than one argument, the method should return an array of those arguments. If the method does not change the argument for the observed method, it should return a `null` value.
 
 Below is an example of a before method modifying the `$name` argument before passing it on to the observed `setName` method.
 
@@ -80,7 +80,7 @@ class ProductAttributesUpdater
 
 #### After methods
 
-Magento runs all after methods following the completion of the observed method. Magento requires these methods have a return value and they must have the same name as the observed method with 'after' as the prefix.
+Magento runs all _after_ methods following the completion of the observed method. Magento requires these methods have a return value and they must have the same name as the observed method with 'after' as the prefix.
 
 You can use these methods to change the result of an observed method by modifying the original result and returning it at the end of the method.
 
@@ -99,7 +99,7 @@ class ProductAttributesUpdater
 }
 ```
 
-After methods have access to all the arguments of their observed methods. When the observed method completes, Magento passes the result and arguments to the next after method that follows. If observed method does not return a result (`@return void`), then it passes `null` to the next after method.
+The after methods have access to all the arguments of their observed methods. When the observed method completes, Magento passes the result and arguments to the next after method that follows. If the observed method does not return a result (`@return void`), then it passes a `null` value to the next after method.
 
 Below is an example of an after method that accepts the `null` result and arguments from the observed `login` method for [`Magento\Backend\Model\Auth`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Backend/Model/Auth.php){:target="_blank"}:
 
@@ -198,9 +198,9 @@ class ProductAttributesUpdater
 }
 ```
 
-When you wrap a method which accepts arguments, your plugin must also accept those arguments and you must forward them when you invoke the <code>proceed</code> callable. You must be careful to match the default parameters and type hints of the original signature of the method.
+When you wrap a method which accepts arguments, your plugin must accept those arguments and you must forward them when you invoke the <code>proceed</code> callable. You must be careful to match the default parameters and type hints of the original signature of the method.
 
-For example, the following code defines a parameter of type <code>SomeType</code> which is nullable:
+For example, the following code defines a parameter of type <code>SomeType</code>, which is nullable:
 
 ```php
 <?php
@@ -215,7 +215,7 @@ class MyUtility
 }
 ```
 
-You should wrap this method with a plugin like below:
+You should wrap this method with a plugin:
 
 ```php
 <?php
@@ -266,7 +266,7 @@ The prioritization rules for ordering plugins:
 
 **Example**
 
-Given the following plugins observing the same method with the following properties:
+The table shows the plugins observing the same method with the following properties:
 
 |                          | PluginA          | PluginB                        | PluginC                        | Action           |
 | :----------------------: | :--------------: | :----------------------------: | :----------------------------: | :--------------: |
@@ -300,7 +300,7 @@ The execution flows in the following order:
 
 Classes and interfaces that are implementations of or inherit from classes that have plugins will also inherit plugins from the parent class.
 
-Magento uses plugins defined in the global scope when the system is in a specific area (i.e. frontend, backend, etc). You can also extend or override these global plugin configuration via an area's `di.xml`.
+Magento uses plugins defined in the global scope when the system is in a specific area (i.e. frontend, backend, etc). You can extend or override these global plugin configurations with an area's `di.xml` file.
 
 For example, the developer can disable a global plugin in the [backend](https://glossary.magento.com/backend) area by disabling it in the specific `di.xml` file for the backend area.
 
