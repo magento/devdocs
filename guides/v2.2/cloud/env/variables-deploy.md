@@ -107,7 +107,7 @@ By default, the deployment process overwrites all settings in the `env.php` file
 -  **Default**—`false`
 -  **Version**—Magento 2.2.0 and later
 
-Use this variable to configure how consumers process messages from the message queue.
+Configure how consumers process messages from the message by choosing one of the following options:
 
 #### Possible values
 
