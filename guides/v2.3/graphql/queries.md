@@ -143,9 +143,7 @@ A product search query can contain the following components:
 
 ### Specifying full text search keywords
 
-The `search` element causes Magento to perform a full text search on the specified keywords. (This is the same type of search that is performed from the storefront. If multiple keywords are specified, each keyword is evaluated separately.)
 
-The `search` element is optional, but it can be used with or without filters. Each query must contain a `search` or `filter` element.
 
 ### Specifying filters
 
@@ -187,17 +185,12 @@ Magento GraphQL clause | SQL equivalent
 
 ### Specifying pagination
 
-Magento's GraphQL implementation of pagination uses offsets so that it operates in the same manner as REST and SOAP API requests.
 
-The `pageSize` attribute specifies the maximum number of items to return. If no value is specified, 20 items are returned.
 
-The `currentPage` attribute specifies which page of results to return. If no value is specified, the first page is returned. If you specify a value that is greater than the number of available pages, an error is returned.
 
-You can include the `total_pages` attribute in the `page_info` section of the output definition to indicate how many pages were returned for the query.
 
 ### Sorting instructions
 
-The `sort` object allows you to specify which field or fields to use for sorting the results. If you specify more than one field, Magento sorts by the first field listed. Then, if any items have the same value, those items will be sorted by the secondary field.  The value for each field can be set to either `ASC` or `DESC`.
 
 In the following example, Magento returns a list of items that are sorted in order of decreasing price. If two or more items have the same price, the items are listed in alphabetic order by name.
 

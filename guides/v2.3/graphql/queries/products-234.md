@@ -5,7 +5,7 @@ title: products query (Magento 2.3.4 and later)
 
 The `products` query allows you to search for catalog items.
 
-## Query structure
+## Syntax
 
 ```graphql
 products(
@@ -16,98 +16,113 @@ products(
   sort: ProductSortFilterInput
 ): Products
 ```
+## Input attributes
 
 Each query attribute is defined below:
 
-Attribute |  Description
---- | ---
-`search` | Performs a full-text search using the specified key words. This attribute is optional. See [Queries]({{ page.baseurl }}/graphql/queries.html) for more information.
-`filter` | Identifies which attributes to search for and return. This attribute is required. See [ProductFilterInput](#ProductFilterInput) for more information.
+Attribute |  Data type | Description
+--- | --- | ---
+`search` | String | Performs a full-text search using the specified key words. This attribute is optional. S
+`filter` | ProductAttributeFilterInput | Identifies which attributes to search for and return. This attribute is required. See [ProductAttributeFilterInput](#ProductAttributeFilterInput) object for more information.
 `pageSize` | Specifies the maximum number of results to return at once. The default value is 20. See [Queries]({{ page.baseurl }}/graphql/queries.html) for more information.
 `currentPage` | Specifies which page of results to return. The default value is 1. See [Queries]({{ page.baseurl }}/graphql/queries.html) for more information.
 `sort` | Specifies which attribute to sort on, and whether to return the results in ascending or descending order. See [Queries]({{ page.baseurl }}/graphql/queries.html) for more information.
 `Products` | An output object that contains the results of the query. See [Response](#Response) for details.
 
-## ProductAttributeFilterInput object {#ProductAttributeFilterInput}
+### search attribute
 
-The `ProductAttributeFilterInput` object defines the filters to be used in the search. A filter contains at least one attribute, a comparison operator, and the value that is being searched for. The following example filter searches for products that has a `sku` that contains the string `24-MB` with a `price` that's less than `50`.
+The `search` element causes Magento to perform a full text search on the specified keywords. (This is the same type of search that is performed from the storefront. If multiple keywords are specified, each keyword is evaluated separately.)
 
-``` text
+The `search` element is optional, but it can be used with or without filters. Each query must contain a `search` or `filter` element.
+
+
+### filter attribute {#filter}
+
+The `ProductAttributeFilterInput` object defines the filters to be used in the search. A filter contains at least one attribute, a comparison operator, and the value that is being searched for. The following example filter searches for products that have a `name` that contains the string `Bag` with a `price` that's less than `40`.
+
+```graphql
 filter: {
-  sku: {
-    like: "24-MB%"
+  name: {
+    like: "Bag"
   }
   price: {
-    lt: "50"
+    from: "0"
+    to: "40"
   }
 }
 ```
 
-See [Queries]({{ page.baseurl }}/graphql/queries.html) for more information about the operators.
+Magento processes the attribute values specified in  a `ProductAttributeFilterInput` as simple data types (strings, integers, booleans). However, returned attributes can be a different, complex, data type. For example, in a response, `price` is an object that contains a monetary value and a currency code.
 
-Magento processes the attribute values specified in  a `ProductFilterInput` as  simple data types (strings, integers, booleans). However, returned attributes can be a different, complex, data type. For example, in a response, `price` is an object that contains a monetary value and a currency code.
+By default, you can use the following attributes as filters. To define a custom filter, see "Create a custom filter".
 
-The following attributes can be used to create filters. See the [Response](#Response) section for information about each attribute.
+Attribute | Data type | Description
+--- | --- | ---
+`category_id` | FilterEqualTypeInput | Filters by category ID
+`description` | FilterLikeTypeInput | Filters on the Description attribute
+`name` | FilterLikeTypeInput | Filters on the Product Name attribute
+`price` | FilterRangeTypeInput | Filters on the Price attribute
+`short_description` | FilterLikeTypeInput | Filters on the Short Description attribute
+`sku` | FilterLikeTypeInput | Filters on the SKU attribute
 
-```text
-category_id
-country_of_manufacture
-created_at
-custom_layout
-custom_layout_update
-description
-gift_message_available
-has_options
-image
-image_label
-manufacturer
-max_price
-meta_description
-meta_keyword
-meta_title
-min_price
-name
-news_from_date
-news_to_date
-options_container
-or
-price
-required_options
-short_description
-sku
-small_image
-small_image_label
-special_from_date
-special_price
-special_to_date
-thumbnail
-thumbnail_label
-tier_price
-updated_at
-weight
-```
+#### FilterEqualTypeInput attributes
 
-The following attributes are not used in responses:
+The `cateogry_id` filter requires a `FilterEqualTypeInput` object as input. You must specify a `FilterEqualTypeInput` object to filter on a custom product attribute of the following types:
 
-* `or` - The keyword required to perform a logical OR comparison.
-* `news_from_date` - This attribute is transformed to `news_from_date` in a response.
-* `news_to_date` - This attribute is transformed to `news_to_date` in a response.
+-  Boolean
+-  Select
+-  Mutliple select
 
-{%
-include note.html
-type="info"
-content="GraphQL automatically filters out a product attribute if ALL of the following fields are set to **No** on the attribute's Storefront Properties page in Admin:
+Attribute | Data type | Description
+--- | --- | ---
+`eq` | String | Use this attribute to exactly match the specified string. For example, to filter on a specific category ID, specify a value like "5"
+`in` | [String] | Use this attribute to filter on an array of values. For example, to filter on category IDs 4, 5, and 6, specify a value of `["4", "5", "6"]
 
-* Comparable on Storefront
-* Use in Layered Navigation
-* Use in Search Results Layered Navigation
-* Visible on Catalog Pages on Storefront
-* Used in Product Listing
-* Used for Sorting in Product Listing"
+#### FilterMatchTypeInput attributes
 
-%}
+Use the `FilterMTypeInput` object to construct a filter that returns products that exactly match a string or contain the specified pattern. 
 
-## Response {#Response}
+Attribute | Data type | Description
+--- | --- | --- 
+`match` | String | Use this attribute to exactly match the specified string. For example, to filter on a specific SKU, specify a value such as "24-MB01".
+
+You must specify a `FilterLikeTypeInput` object to filter on a custom product attribute of the following types:
+
+-  Text field
+-  Text area
+-  Any other type not explicitly listed in `FilterEqualTypeInput`, `FilterMatchTypeInput`, or `FilterRangeTypeInput`
+
+#### FilterRangeTypeInput
+
+Use the `FilterRangeTypeInput` object to construct a filter that returns products that fall within a range of prices or dates.
+
+Attribute | Data type | Description
+--- | --- | ---
+`from` | String | Use this attribute to specify the lowest possible value in the range. 
+`to` | String | Use this attribute to specify the lowest possible value in the range.
+
+### pageSize attribute
+
+Magento's GraphQL implementation of pagination uses offsets so that it operates in the same manner as REST and SOAP API requests.
+
+The `pageSize` attribute specifies the maximum number of items to return. If no value is specified, 20 items are returned.
+
+### currentPage attribute
+
+The `currentPage` attribute specifies which page of results to return. If no value is specified, the first page is returned. If you specify a value that is greater than the number of available pages, an error is returned.
+
+### sort attribute
+
+The `sort` object allows you to specify which field or fields to use for sorting the results. If you specify more than one field, Magento sorts by the first field listed. Then, if any items have the same value, those items will be sorted by the secondary field.  The value for each field can be set to either `ASC` or `DESC`.
+
+Attribute | Data type | Description
+--- | --- | ---
+`name` | SortEnum | Sorts by Product Name
+`position` | SortEnum | Sorts by the position of products
+`price` | SortEnum | Sorts by Price
+`relevance` | SortEnum | Sorts by the search relevance score. This is the defualt value
+
+## Output attributes {#Response}
 
 The system returns a `Products` object containing the following information:
 
