@@ -131,9 +131,6 @@ pages:
         - label: Sales
           children:
 
-            - label: Credits
-              url: /rest/modules/sales/credits.html
-
             - label: Refunds
               url: /rest/modules/sales/refunds.html
 

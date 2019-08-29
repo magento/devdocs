@@ -38,3 +38,8 @@ This service performs the same operations as the `salesRefundInvoiceV1` service,
 ## Related documentation
 
 * [Magento REST API documentation (Swagger)](https://devdocs.magento.com/swagger/index.html)
+
+While Magento recommends you use the `Refund` services to issue refunds, the Magento API also provides the following `CreditmemoManagement` services you can use to issue a credit:  
+
+* `salesCreditmemoManagement`
+* `salesCreditmemoRepository`
