@@ -9,8 +9,10 @@ bin/magento queue:consumers:list
 The list displays as follows:
 
 ```
-sharedCatalogUpdatePrice
-sharedCatalogUpdateCategoryPermissions
+product_action_attribute.update
+product_action_attribute.website.update
+codegeneratorProcessor
+exportProcessor
 quoteItemCleaner
 inventoryQtyCounter
 async.operations.all
