@@ -20,8 +20,6 @@ You can upgrade the core {{site.data.var.ee}} code base to version 2.3. It is be
 
 If you use PHP version 7.2, you must remove the `mcrypt` extension from the [`extensions` section of the `.magento.app.yaml` file]({{page.baseurl}}/cloud/project/project-conf-files_magento-app.html#configure-php-options). For Pro projects, you need to create a support ticket to completely disable the `mcrypt` extension.
 
-1.  Before completing the upgrade, you must [update the `autoload`]({{page.baseurl}}/comp-mgr/cli/cli-upgrade.html#update-autoload) property of the `composer.json` file.
-
 1.  Change to your Magento root directory and set the upgrade version using the [version constraint syntax]({{page.baseurl}}/cloud/project/ece-tools-upgrade-project.html#metapackage).
 
     ```bash
@@ -57,7 +55,13 @@ If you use PHP version 7.2, you must remove the `mcrypt` extension from the [`ex
 
 ## Verify and upgrade your extensions {#extensions}
 
-If you need to upgrade any third-party extensions and modules that support version 2.3, we recommend working in a new Integration branch with your extensions disabled. Review your third-party extension and module pages in Marketplace or other company sites to verify support for {{site.data.var.ee}} 2.3.
+{%
+include note.html
+type='info'
+content='Review your third-party extension and module pages in Marketplace or other company sites to verify support for Magento Commerce 2.3.
+
+If you need to upgrade any third-party extensions and modules that support version 2.3, we recommend working in a new Integration branch with your extensions disabled.'
+%}
 
 1.  Create a new branch on your local workstation.
 1.  Disable your extensions as needed.
