@@ -114,6 +114,12 @@ Continue launching your Docker environment in the default _production_ mode.
     ./vendor/bin/ece-tools docker:build
     ```
 
+1.  _Optional_: If you have a custom PHP configuration file, copy the default configuration DIST file to your custom configuration file and make any necessary changes.
+
+    ```bash
+    cp .docker/config.php.dist .docker/config.php
+    ```
+
 1.  _Optional_: Configure the Docker global variables in the `docker-compose.yml` file. For example, you can [configure Xdebug]({{ page.baseurl }}/cloud/docker/docker-development-debug.html#configure-xdebug).
 
 1.  Build files to containers and run in the background.
@@ -150,7 +156,8 @@ Continue launching your Docker environment in the default _production_ mode.
     ```bash
     docker-compose run deploy magento-command cache:clean
     ```
-1. _Optional_: Restart services if the static content does not synchronize with all images after generation on build phase.
+
+1.  _Optional_: Restart services if the static content does not synchronize with all images after generation on build phase.
 
     ```bash
     docker-compose restart
