@@ -184,15 +184,15 @@ class ProductAttributesUpdater
     {
         $someValue = $this->doSmthBeforeProductIsSaved();
         $returnValue = null;
-        
+
         if ($this->canCallProceedCallable($someValue)) {
             $returnValue = $proceed();
         }
-        
+
         if ($returnValue) {
             $this->postProductToFacebook();
         }
-        
+
         return $returnValue;
     }
 }
@@ -250,14 +250,14 @@ class MyUtilityUpdater
 
 ### Prioritizing plugins
 
-The `sortOrder` property for plugins determine when their `before`, `around`, or `after` methods get called when more than one plugins are observing the same method.
+The `sortOrder` property for plugins determines when to call the `before`, `around`, or `after` methods when more than one plugin is observing the same method.
 
 The prioritization rules for ordering plugins:
 
 * Before the execution of the observed method, Magento will execute plugins from lowest to greatest `sortOrder`.
 
   * During each plugin execution, Magento executes the current plugin's `before` method.
-  * After the `before` plugin completes execution, the current plugin's `around` method will wrap and execute the next plugin or observed method.
+  * After the `before` method completes execution, the current plugin's `around` method wraps and initiates the next plugin or observed method.
 
 * Following the execution of the observed method, Magento will execute plugins from greatest to lowest `sortOrder`.
 
@@ -278,7 +278,7 @@ Given the following plugins observing the same method with the following propert
 | **after**                | afterDispatch()  | afterDispatch()                | afterDispatch()                |                  |
 | :----------------------: | :--------------: | :----------------------------: | :----------------------------: | :--------------: |
 
-The execution flow will be as follows:
+The execution flows in the following order:
 
   * `PluginA::beforeDispatch()`
   * `PluginB::beforeDispatch()`
