@@ -18,10 +18,10 @@ functional_areas:
 
 Before you continue, you must do the following:
 
--  Set up a server that meets our [system requirements][]
--  Create the [Magento file system owner][]
--  [Install Composer][]{:target="_blank"}
--  Obtain [authentication keys][] for the Magento code repository
+- Set up a server that meets our [system requirements][]
+- Create the [Magento file system owner][]
+- [Install Composer][]{:target="_blank"}
+- Obtain [authentication keys][] for the Magento code repository
 
 ## Get the metapackage
 
@@ -71,8 +71,8 @@ chmod u+x bin/magento
 
 There are two options for installing Magento:
 
--  Command line
--  Web Setup Wizard
+- Command line
+- Web Setup Wizard
 
 ### Command line
 
@@ -85,7 +85,6 @@ bin/magento setup:install \
 --db-name=magento \
 --db-user=magento \
 --db-password=magento \
---backend-frontname=admin \
 --admin-firstname=admin \
 --admin-lastname=admin \
 --admin-email=admin@admin.com \
@@ -97,8 +96,8 @@ bin/magento setup:install \
 --use-rewrites=1
 ```
 
-{: .bs-callout-info }
-For `--backend-frontname` we recommend a random URI for security purposes. A random URI is harder for hackers or malicious software to exploit.
+{: .bs-callout-tip }
+You can customize the Admin URI with the `--backend-frontname` option. However, we recommend omitting this option and allowing the installation command to automatically generate a random URI. A random URI is harder for hackers or malicious software to exploit. The URI displays in your console when installation is complete.
 
 {:.bs-callout .bs-callout-tip}
 For a full description of the CLI install options, refer to [Install the Magento software from the command line][].
