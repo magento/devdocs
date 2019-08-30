@@ -47,6 +47,9 @@ pages:
 
     - label: Queries
       children:
+        - label: cart query
+          url: /graphql/queries/cart.html
+
         - label: category query
           url: /graphql/queries/category.html
 
@@ -89,6 +92,9 @@ pages:
         - label: getPayflowLinkToken query
           url: /graphql/queries/get-payflow-link-token.html
 
+        - label: giftCardAccount query
+          url: /graphql/queries/giftcard-account.html
+
         - label: isEmailAvailable query
           url: /graphql/queries/is-email-available.html
 
@@ -109,6 +115,18 @@ pages:
         - label: addConfigurableProductsToCart mutation
           url: /graphql/mutations/add-configurable-products.html
 
+        - label: addSimpleProductsToCart mutation
+          url: /graphql/mutations/add-simple-products.html
+
+        - label: addVirtualProductsToCart mutation
+          url: /graphql/mutations/add-virtual-products.html
+
+        - label: applyGiftCardToCart mutation
+          url: /graphql/mutations/apply-giftcard.html
+
+        - label: applyCouponToCart mutation
+          url: /graphql/mutations/apply-coupon.html
+
         - label: applyStoreCreditToCart mutation
           url: /graphql/mutations/apply-store-credit.html
 
@@ -120,6 +138,9 @@ pages:
 
         - label: createCustomer mutation
           url: /graphql/mutations/create-customer.html
+
+        - label: createEmptyCart mutation
+          url: /graphql/mutations/create-empty-cart.html
 
         - label: createPayflowProToken mutation
           url: /graphql/mutations/create-payflow-pro-token.html
@@ -136,11 +157,20 @@ pages:
         - label: handlePayflowProResponse mutation
           url: /graphql/mutations/handle-payflow-pro-response.html
 
+        - label: placeOrder mutation
+          url: /graphql/mutations/place-order.html
+
         - label: redeemGiftCardBalanceAsStoreCredit mutation
           url: /graphql/mutations/redeem-giftcard-balance.html
 
+        - label: removeCouponFromCart mutation
+          url: /graphql/mutations/remove-coupon.html
+
         - label: removeGiftCardFromCart mutation
           url: /graphql/mutations/remove-giftcard.html
+
+        - label: removeItemFromCart mutation
+          url: /graphql/mutations/remove-item.html
 
         - label: removeStoreCreditFromCart mutation
           url: /graphql/mutations/remove-store-credit.html
@@ -148,8 +178,29 @@ pages:
         - label: revokeCustomerToken mutation
           url: /graphql/mutations/revoke-customer-token.html
 
+        - label: setBillingAddressesOnCart mutation
+          url: /graphql/mutations/set-billing-address.html
+
+        - label: setGuestEmailOnCart mutation
+          url: /graphql/mutations/set-guest-email.html
+
+        - label: setPaymentMethodOnCart mutation
+          url: /graphql/mutations/set-payment-method.html
+
+        - label: setPaymentMethodAndPlaceOrder mutation
+          url: /graphql/mutations/set-payment-place-order.html
+
+        - label: setShippingAddressesOnCart mutation
+          url: /graphql/mutations/set-shipping-address.html
+
+        - label: setShippingMethodsOnCart mutation
+          url: /graphql/mutations/set-shipping-method.html
+
         - label: updateCustomerAddress mutation
           url: /graphql/mutations/update-customer-address.html
+
+        - label: updateCartItems mutation
+          url: /graphql/mutations/update-cart-items.html
 
         - label: updateCustomer mutation
           url: /graphql/mutations/update-customer.html
@@ -176,60 +227,6 @@ pages:
 
         - label: GroupedProduct data types
           url: /graphql/product/grouped-product.html
-
-    - label: Reference
-      children:
-            - label: Quote endpoint (cart query)
-              url: /graphql/reference/quote.html
-              children:
-
-                - label: addSimpleProductsToCart mutation
-                  url: /graphql/reference/quote-add-simple-products.html
-
-                - label: addVirtualProductsToCart mutation
-                  url: /graphql/reference/quote-add-virtual-products.html
-
-                - label: applyCouponToCart mutation
-                  url: /graphql/reference/quote-apply-coupon.html
-
-                - label: applyGiftCardToCart mutation
-                  url: /graphql/reference/quote-apply-giftcard.html
-
-                - label: createEmptyCart mutation
-                  url: /graphql/reference/quote-create-cart.html
-
-                - label: giftCardAccount query
-                  url: /graphql/reference/quote-giftcard-account.html
-
-                - label: placeOrder mutation
-                  url: /graphql/reference/quote-place-order.html
-
-                - label: removeCouponFromCart mutation
-                  url: /graphql/reference/quote-remove-coupon.html
-
-                - label: removeItemFromCart mutation
-                  url: /graphql/reference/quote-remove-item.html
-
-                - label: setBillingAddressesOnCart mutation
-                  url: /graphql/reference/quote-set-billing-address.html
-
-                - label: setGuestEmailOnCart mutation
-                  url: /graphql/reference/quote-set-guest-email.html
-
-                - label: setPaymentMethodOnCart mutation
-                  url: /graphql/reference/quote-payment-method.html
-
-                - label: setPaymentMethodAndPlaceOrder mutation
-                  url: /graphql/reference/quote-set-payment-place-order.html
-
-                - label: setShippingAddressesOnCart mutation
-                  url: /graphql/reference/quote-set-shipping-address.html
-
-                - label: setShippingMethodsOnCart mutation
-                  url: /graphql/reference/quote-shipping-method.html
-
-                - label: updateCartItems mutation
-                  url: /graphql/reference/quote-update-cart-items.html
 
     - label: Payment methods
       children:

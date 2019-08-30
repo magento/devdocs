@@ -1,6 +1,8 @@
 ---
 group: graphql
 title: addSimpleProductsToCart mutation
+redirect from:
+  - /guides/v2.3/graphql/reference/quote-add-simple-products.html
 ---
 
 Simple products are physical products that do not have variations, such as color, size, or price. The `addSimpleProductsToCart` mutation allows you to add multiple simple products to the cart at the same time, but you cannot add other product types with this mutation. To add a simple product to a cart, you must provide the cart ID, the SKU, and the quantity. You can also optionally provide customizable options.
@@ -183,10 +185,10 @@ The `AddSimpleProductsToCartOutput` object contains the `Cart` object.
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`cart` |[ Cart!](#CartObject) | Describes the contents of the specified shopping cart
+`cart` |[Cart!](#CartObject) | Describes the contents of the specified shopping cart
 
 ### Cart object {#CartObject}
 
 {% include graphql/cart-object.md %}
 
-[Cart query output]({{page.baseurl}}/graphql/reference/quote.html#cart-output) provides more information about the `Cart` object.
+[Cart query output]({{page.baseurl}}/graphql/queries/cart.html#cart-output) provides more information about the `Cart` object.

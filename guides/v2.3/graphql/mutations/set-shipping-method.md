@@ -1,6 +1,8 @@
 ---
 group: graphql
 title: setShippingMethodsOnCart mutation
+redirect from:
+  - /guides/v2.3/graphql/reference/quote-shipping-method.html
 ---
 
 The `setShippingMethodsOnCart` mutation sets one or more shipping methods on a cart. By default, Magento GraphQL supports the following shipping methods:
@@ -113,4 +115,4 @@ Attribute |  Data Type | Description
 
 {% include graphql/cart-object.md %}
 
-[Cart query output]({{page.baseurl}}/graphql/reference/quote.html#cart-output) provides more information about the `Cart` object.
+[Cart query output]({{page.baseurl}}/graphql/queries/cart.html#cart-output) provides more information about the `Cart` object.
