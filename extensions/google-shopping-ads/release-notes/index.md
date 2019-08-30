@@ -7,9 +7,9 @@ title: Google Shopping ads Channel Release Notes
 
 See the following documentation:
 
-- [Google Shopping ads Channel](https://docs.magento.com/m2/ce/user_guide/sales-channels/google-ads/google-ad-channel.html) for merchant information and instructions
-- [Install]({{site.baseurl}}/extensions/google-shopping-ads/) Google Shopping ads Channel  for installation, API key, and update information
-- [Google Shopping ads Channel Marketplace page](http://marketplace.magento.com/magento-google-shopping-ads.html)
+-  [Google Shopping ads Channel](https://docs.magento.com/m2/ce/user_guide/sales-channels/google-ads/google-ad-channel.html) for merchant information and instructions
+-  [Install]({{site.baseurl}}/extensions/google-shopping-ads/) Google Shopping ads Channel for installation, API key, and update information
+-  [Google Shopping ads Channel Marketplace page](http://marketplace.magento.com/magento-google-shopping-ads.html)
 
 The release notes include:
 
@@ -21,7 +21,7 @@ The release notes include:
 
 Google Shopping ads Channel 3.0.1 is compatible with versions 2.2.4+, 2.3.0, 2.3.1, and 2.3.2 of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}.
 
--  {:.fix}**Resolved Index Management Issues**: 
+-  {:.fix}**Resolved Index Management Issues**:
 
    -  <!--CHAN-3714-->Corrected an issue preventing a product update from pushing to Google once **Enable Product** is set to `Yes`.
 
@@ -43,17 +43,17 @@ Google Shopping ads Channel 3.0.0 is compatible with versions 2.2.4+, 2.3.0, 2.3
 
 -  {:.fix}**Resolved Configurable Product Issues**: Configurable product (parent/child) handling has been improved.
 
-    -  <!--CHAN-3372-->Corrected an issue preventing child products from inheriting the parent description and causing Google to disapprove products for missing descriptions.
+   -  <!--CHAN-3372-->Corrected an issue preventing child products from inheriting the parent description and causing Google to disapprove products for missing descriptions.
 
-    -  <!--CHAN-3297, CHAN-3341, CHAN-3410-->Corrected and improved the gtag (pageview) trigger when selecting options for a child product and when viewing a child product in the cart.
+   -  <!--CHAN-3297, CHAN-3341, CHAN-3410-->Corrected and improved the gtag (pageview) trigger when selecting options for a child product and when viewing a child product in the cart.
 
 -  {:.fix}**Index Management Improvements**: Indexing processes between Magento and Google have been updated for increased efficiency and performance.<!--CHAN-3004, CHAN-3298, CHAN-3343, CHAN-3480, CHAN-3481, CHAN-3465, CHAN-3472-->
 
-    -  Consolidated and rebuilt indexer for communicating with Google.
+   -  Consolidated and rebuilt indexer for communicating with Google.
 
-    -  Set indexer to run on schedule by default.
+   -  Set indexer to run on schedule by default.
 
-    -  Adjusted indexer logic to only send product data changes, instead of all data for a changed product.
+   -  Adjusted indexer logic to only send product data changes, instead of all data for a changed product.
 
 -  {:.fix}**Security Updates**: <!--CHAN-3380-->Updated security whitelist and implemented Content Security Policy (CSP) when communicating with Google.
 
