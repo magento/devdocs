@@ -20,10 +20,10 @@ functional_areas:
 
 Before you continue, you must do the following:
 
-- Set up a server that meets our [system requirements][]
-- Create the [Magento file system owner][]
-- [Install Composer][]{:target="_blank"}
-- Obtain [authentication keys][] for the Magento code repository
+-  Set up a server that meets our [system requirements][]
+-  Create the [Magento file system owner][]
+-  [Install Composer][]{:target="_blank"}
+-  Obtain [authentication keys][] for the Magento code repository
 
 ## Get the metapackage
 
@@ -67,8 +67,8 @@ chmod u+x bin/magento
 
 There are two options for installing Magento:
 
-- Command line
-- Web Setup Wizard
+-  Command line
+-  Web Setup Wizard
 
 ### Command line
 
@@ -102,13 +102,13 @@ For a full description of the CLI install options, refer to [Install the Magento
 
 As an alternative to the CLI, use your browser to navigate to Magento's setup wizard:
 
-```url
+```terminal
 http://<Magento-host-or-IP>/<path-to-magento-root>/setup
 ```
 
 For example: `http://localhost/magento2ee/setup`
 
-{:.bs-callout .bs-callout-warning}
+{:.bs-callout-warning}
 You cannot use the Web Setup Wizard if your docroot is set to the `pub/` directory. See [Modify docroot for security][].
 
 <!-- Link Definitions -->
