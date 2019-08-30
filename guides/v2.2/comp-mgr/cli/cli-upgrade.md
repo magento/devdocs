@@ -39,7 +39,9 @@ You can optionally create a [custom maintenance mode page]({{ page.baseurl }}/co
 To enable maintenance mode:
 
 1. Log in to your Magento server as, or switch to, the Magento file system owner.
-2. Enter the following command:
+
+1. Enter the following command:
+
    ```bash
    php <magento_root>/bin/magento maintenance:enable
    ```
@@ -49,71 +51,81 @@ To enable maintenance mode:
 ## Upgrade using the command line {#upgrade-cli-upgr}
 
 1. Log in to your Magento server as, or switch to, the Magento file system owner.
-2. Change to the directory in which you installed the Magento software. For example,
+
+1. Change to the directory in which you installed the Magento software. For example,
+
    ```bash
    cd /var/www/html/magento2
    ```
 
-3. Require the Magento package using Composer and update the dependencies:
+1. Require the Magento package using Composer and update the dependencies:
+
    ```bash
    composer require <product> <version> --no-update
    ```
+
    ```bash
    composer update
    ```
 
    For example, to upgrade to {{ site.data.var.ce }} version {{ page.guide_version }}.4, enter:
+
    ```bash
    composer require magento/product-community-edition {{ page.guide_version }}.4 --no-update
    ```
+
    ```bash
    composer update
    ```
 
    To upgrade to Magento EE version {{ page.guide_version }}.4, enter:
+
    ```bash
    composer require magento/product-enterprise-edition {{ page.guide_version }}.4 --no-update
    ```
+
    ```bash
    composer update
    ```
 
-4. If prompted, enter your [authentication keys]({{ page.baseurl }}/install-gde/prereq/connect-auth.html).
+1. If prompted, enter your [authentication keys]({{ page.baseurl }}/install-gde/prereq/connect-auth.html).
 
-5. Clean the Magento cache:
+1. Clean the Magento cache:
 
    ```bash
    bin/magento cache:clean
    ```
 
-5. Manually clear `var` subdirectories:
+1. Manually clear `var` subdirectories:
+
    ```bash
    rm -rf <Magento install dir>/var/cache/*
    rm -rf <Magento install dir>/var/page_cache/*
    rm -rf <Magento install dir>/generated/code/*
    ```
-   <div class="bs-callout bs-callout-info" markdown="1">
-        If you use a cache storage other than filesystem (e.g., Redis, Memcached, etc.) you need to manually clear the cache there too.
-    </div>
-6. Update the database schema and data:
+
+   {: .bs-callout-info }
+   If you use a cache storage other than filesystem (e.g., Redis, Memcached, etc.) you need to manually clear the cache there too.
+
+1. Update the database schema and data:
 
    ```bash
    php bin/magento setup:upgrade
    ```
 
-7. Put your storefront online (that is, cancel maintenance mode):
+1. Put your storefront online (that is, cancel maintenance mode):
 
    ```bash
    php bin/magento maintenance:disable
    ```
 
-8. Restart Varnish if you use it for page caching.
+1. Restart Varnish if you use it for page caching.
 
    ```bash
    service varnish restart
    ```
 
-9. Access your storefront.
+1. Access your storefront.
 
    The following error might display:
 
