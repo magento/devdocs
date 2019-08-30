@@ -156,6 +156,9 @@ pages:
         - label: Install a theme
           url: /cloud/howtos/custom-theme.html
 
+        - label: Deploy Magento into sub-folder
+          url: /cloud/project/project-deploy-into-subfolder.html
+
         - label: Import URL Rewrites
           url: /cloud/configure/import-url-rewrites.html
           include_versions: ["2.2"]

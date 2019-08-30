@@ -138,6 +138,8 @@ web:
 
 ```
 
+See [Deploy Magento into sub-folder]({{ page.baseurl }}/cloud/project/project-deploy-into-subfolder.html) if you want to deploy Magento into not a root folder.
+
 ### `disk`
 
 Defines the persistent disk size of the application in MB.
