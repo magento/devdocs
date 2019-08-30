@@ -101,7 +101,7 @@ The following example is a `composer.json` file for a module:
     "AFL-3.0"
   ],
   "require": {
-    "php": "~7.1.3|~7.2.0",
+    "php": "~7.0.13|~7.1.0",
     "magento/framework": "~100.0.4"
   },
   "autoload": {
