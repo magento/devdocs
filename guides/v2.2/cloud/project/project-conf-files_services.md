@@ -8,7 +8,7 @@ functional_areas:
 
 The `services.yaml` file defines the services supported and used by {{site.data.var.ece}}, such as MySQL, Redis, and ElasticSearch. You do not need to subscribe to external service providers. This file is in the `.magento` directory of your project.
 
-The deploy script uses the configuration files in the `.magento` directory to provision the environment with the configured services. A service becomes available to your application if it is included in the `relationships` property of the `.magento.app.yaml` file. The `services.yaml` file contains the service _name_, _type_, and _disk_ values. Changing a service configuration causes a deployment to provision the environment with the updated services.
+The deploy script uses the configuration files in the `.magento` directory to provision the environment with the configured services. A service becomes available to your application if it is included in the `relationships` property of the `.magento.app.yaml` file. The `services.yaml` file contains the _type_ and _disk_ values. Service type defines the service _name_ and _version_. Changing a service configuration causes a deployment to provision the environment with the updated services.
 
 This affects the following environments:
 
@@ -44,7 +44,7 @@ elasticsearch:
 
 ## Service values
 
-Minimally, you must provide a `name` and `type` value for each service. If the service uses persistent storage, then you must provide a `disk` value. Use the following format:
+You must provide the _type_ values: service _name_ and _version_. If the service uses persistent storage, then you must provide a _disk_ value. Use the following format:
 
 ```yaml
 <name>:
@@ -80,7 +80,7 @@ Renaming a service in the `services.yaml` file **permanently removes** the follo
 
 ### `type`
 
-The `type` value specifies the version of the service. For example:
+The `type` value specifies the service name and version. For example:
 
 ```yaml
 mysql:
