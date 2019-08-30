@@ -14,7 +14,7 @@ contributor_name: Atwix
 contributor_link: https://www.atwix.com/
 ---
 
-Use [applyCouponToCart]({{ page.baseurl }}/graphql/reference/quote-apply-coupon.html) to apply a discount coupon to the the specified `cart_id`.
+Use [applyCouponToCart]({{ page.baseurl }}/graphql/mutations/apply-coupon.html) to apply a discount coupon to the the specified `cart_id`.
 
 `{ CART_ID }` is the unique shopping cart ID from [Step 2. Create empty cart]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-add-product-to-cart.html).
 
@@ -58,7 +58,7 @@ mutation {
 }
 ```
 
-Use [removeCouponFromCart]({{ page.baseurl }}/graphql/reference/quote-remove-coupon.html) to remove a discount coupon from the shopping cart.
+Use [removeCouponFromCart]({{ page.baseurl }}/graphql/mutations/remove-coupon.html) to remove a discount coupon from the shopping cart.
 
 **Request**
 

@@ -2,6 +2,8 @@
 group: graphql
 title: applyGiftCardToCart mutation
 ee_only: True
+redirect from:
+  - /guides/v2.3/graphql/reference/quote-apply-giftcard.html
 ---
 
 The `applyGiftCardToCart` mutation applies a pre-defined gift card code to the specified cart.
@@ -94,4 +96,4 @@ Attribute |  Data Type | Description
 
  {% include graphql/cart-object.md %}
 
-[Cart query output]({{page.baseurl}}/graphql/reference/quote.html#cart-output) provides more information about the `Cart` object.
+[Cart query output]({{page.baseurl}}/graphql/queries/cart.html#cart-output) provides more information about the `Cart` object.

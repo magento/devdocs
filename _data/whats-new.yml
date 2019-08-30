@@ -451,8 +451,8 @@ entries:
   type: Major update
   date: June 22, 2019
   link: https://github.com/magento/devdocs/pull/4556
-- description: The [GraphQL quote endpoint](https://devdocs.magento.com/guides/v2.3/graphql/reference/quote.html)
-    adds numerous mutations for 2.3.2. Each mutation is documented separately. The
+- description: The [GraphQL cart query](https://devdocs.magento.com/guides/v2.3/graphql/queries/cart.html)
+    now has numerous related mutations for 2.3.2. Each mutation is documented separately. The
     [GraphQL release notes](https://devdocs.magento.com/guides/v2.3/graphql/release-notes.html)
     lists these new mutations.
   versions: 2.3.2
@@ -1051,7 +1051,7 @@ entries:
   type: Major update
   date: March 26, 2019
   link: https://github.com/magento/devdocs/pull/3859
-- description: Added queries and mutations to the [quote endpoint](https://devdocs.magento.com/guides/v2.3/graphql/reference/quote.html)
+- description: Added the [`cart` query](https://devdocs.magento.com/guides/v2.3/graphql/queries/cart.html) and several mutations.
   versions: 2.3.1
   type: Major update
   date: March 26, 2019
@@ -1609,7 +1609,7 @@ entries:
   versions: 2.1.x, 2.2.x, 2.3.x
   type: Major update
   date: November 21 2018
-- description: Added the [GraphQL quote endpoint](https://devdocs.magento.com/guides/v2.3/graphql/reference/quote.html)
+- description: Added the [GraphQL cart query](https://devdocs.magento.com/guides/v2.3/graphql/queries/cart.html)
     topic
   versions: 2.3.x
   type: New topic

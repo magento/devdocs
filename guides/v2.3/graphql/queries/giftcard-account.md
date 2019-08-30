@@ -2,6 +2,8 @@
 group: graphql
 title: giftCardAccount query
 ee_only: True
+redirect from:
+  - /guides/v2.3/graphql/reference/quote-giftcard-account.html
 ---
 
 The `giftCardAccount` query returns information for a specific gift card.

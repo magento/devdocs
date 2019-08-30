@@ -1,23 +1,23 @@
 ---
 group: graphql
-title: Quote endpoint
+title: cart query
+redirect_from:
+  - /guides/v2.3/graphql/reference/quote.html
 ---
 
-A Quote represents the contents of a customer's shopping cart. It is responsible for performing tasks such as:
+Use the `cart` query to retrieve information about a particular cart.
+
+Cart functionality is defined in the `Quote` module. A Quote represents the contents of a customer's shopping cart. It is responsible for performing tasks such as:
 
 * Tracking each item in the cart, including the quantity and base cost
 * Determining estimated shipping costs
 * Calculating subtotals, computing additional costs, applying coupons, and determining the payment method
 
-## cart Query {#cart}
-
-Use the `cart` query to retrieve information about a particular cart.
-
-### Syntax
+## Syntax
 
 `{cart(cart_id: String!) {Cart}}`
 
-### Example usage
+## Example usage
 
 The following query shows the status of a cart that is ready to be converted into an order.
 
@@ -401,23 +401,23 @@ query {
 }
 ```
 
-### Input attributes
+## Input attributes
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`cart_id` | String | A 32-character string that is created when you [create a cart]({{page.baseurl}}/graphql/reference/quote-create-cart.html)
+`cart_id` | String | A 32-character string that is created when you [create a cart]({{page.baseurl}}/graphql/mutations/create-empty-cart.html)
 
-### Output attributes {#cart-output}
+## Output attributes {#cart-output}
 
 The top-level `Cart` object is listed first. All child objects are listed in alphabetical order.
 
-#### Cart object
+### Cart object
 
 The `Cart` object can contain the following attributes.
 
 {% include graphql/cart-object.md %}
 
-#### AppliedCoupon object {#AppliedCoupon}
+### AppliedCoupon object {#AppliedCoupon}
 
 The `AppliedCoupon` object must contain the following attributes.
 
@@ -425,7 +425,7 @@ Attribute |  Data Type | Description
 --- | --- | ---
 `code` | String! | The coupon code applied to the order
 
-#### AppliedGiftCard object {#AppliedGiftCard}
+### AppliedGiftCard object {#AppliedGiftCard}
 
 The `AppliedGiftCard` object can contain the following attributes.
 
@@ -436,7 +436,7 @@ Attribute |  Data Type | Description
 `current_balance` | Money | Current balance remaining on the gift card
 `expiration_date` | String | Gift card expiration date
 
-#### AppliedStoreCredit object {#AppliedStoreCredit}
+### AppliedStoreCredit object {#AppliedStoreCredit}
 
 The `AppliedStoreCredit` object can contain the following attributes.
 
@@ -446,7 +446,7 @@ Attribute |  Data Type | Description
 `current_balance` | Money | The customer's store credit balance before applying store credit to the cart
 `enabled` | Boolean | Indicates whether store credits are enabled. If the feature is disabled, then the current balance will not be returned
 
-#### AvailablePaymentMethod object {#AvailablePaymentMethod}
+### AvailablePaymentMethod object {#AvailablePaymentMethod}
 
 The `AvailablePaymentMethod` object must contain the following attributes.
 
@@ -455,7 +455,7 @@ Attribute |  Data Type | Description
 `code` |  String! | The payment method code
 `title` | String! | The payment method title
 
-#### AvailableShippingMethod object {#AvailableShippingMethod}
+### AvailableShippingMethod object {#AvailableShippingMethod}
 
 The `AvailableShippingMethod` object can contain the following attributes.
 
@@ -472,7 +472,7 @@ Attribute |  Data Type | Description
 `price_excl_tax` | Money! | The cost of shipping using this shipping method, excluding tax
 `price_incl_tax` | Money! | The cost of shipping using this shipping method, excluding tax
 
-#### BillingCartAddress object {#BillingCartAddress}
+### BillingCartAddress object {#BillingCartAddress}
 
 The `BillingCartAddress` object can contain the following attributes.
 
@@ -489,7 +489,7 @@ Attribute |  Data Type | Description
 `street` | [String] | The street for the billing address
 `telephone` | String | The telephone number for the billing address
 
-#### CartAddressCountry object {#CartAddressCountry}
+### CartAddressCountry object {#CartAddressCountry}
 
 The `CartAddressCountry` object can contain the following attributes.
 
@@ -498,7 +498,7 @@ Attribute |  Data Type | Description
 `code` | String | The country code
 `label` | String | The display label for the country
 
-#### CartAddressRegion object {#CartAddressRegion}
+### CartAddressRegion object {#CartAddressRegion}
 
 The `CartAddressRegion` object can contain the following attributes.
 
@@ -507,7 +507,7 @@ Attribute |  Data Type | Description
 `code` | String | The state or province code
 `label` | String | The display label for the region
 
-#### CartDiscount object {#CartDiscount}
+### CartDiscount object {#CartDiscount}
 
 The `CartDiscount` object must contain the following attributes.
 
@@ -516,7 +516,7 @@ Attribute |  Data Type | Description
 `amount` | Money | The amount of all discounts applied to the cart
 `label` | [String!]! | A concatenated list of strings that describe each applied discount
 
-#### CartItemInterface object {#CartItemInterface}
+### CartItemInterface object {#CartItemInterface}
 
 The `CartItemInterface` object can contain the following attributes.
 
@@ -526,7 +526,7 @@ Attribute |  Data Type | Description
 `product` | [ProductInterface]({{ page.baseurl }}/graphql/product/product-interface-implementations.html) | Contains attributes that are common to all types of products
 `quantity` | Float | The number of items in the cart
 
-#### CartItemQuantity object {#CartItemQuantity}
+### CartItemQuantity object {#CartItemQuantity}
 
 The `CartItemQuantity` object must contain the following attributes.
 
@@ -535,7 +535,7 @@ Attribute |  Data Type | Description
 `cart_item_id` | Int! | The unique ID assigned when a customer places an item in the cart
 `quantity` | Float! | The quantity of this item selected
 
-#### CartPrices object {#CartPrices}
+### CartPrices object {#CartPrices}
 
 The `CartPrices` object can contain the following attributes.
 
@@ -548,7 +548,7 @@ Attribute |  Data Type | Description
 `subtotal_including_tax` | Money | Subtotal with taxes
 `subtotal_with_discount_excluding_tax` | Money | Subtotal with any discounts applied, but not taxes
 
-#### CartTaxItem object {#CartTaxItem}
+### CartTaxItem object {#CartTaxItem}
 
 The `CartTaxItem` object must contain the following attributes.
 
@@ -557,7 +557,7 @@ Attribute |  Data Type | Description
 `amount` | Money! | The amount of tax applied to the item
 `label` | String! | The description of the tax
 
-#### SelectedPaymentMethod object {#SelectedPaymentMethod}
+### SelectedPaymentMethod object {#SelectedPaymentMethod}
 
 The `SelectedPaymentMethod` object can contain the following attributes.
 
@@ -567,7 +567,7 @@ Attribute |  Data Type | Description
 `purchase_order_number` | String | The purchase order number
 `title` | String! | The payment method title
 
-#### SelectedShippingMethod object {#SelectedShippingMethod}
+### SelectedShippingMethod object {#SelectedShippingMethod}
 
 The `SelectedShippingMethod` object can contain the following attributes.
 
@@ -580,7 +580,7 @@ Attribute |  Data Type | Description
 `method_code` | String | A shipping method code associated with a carrier
 `method_title` | String | The label for the method code
 
-#### ShippingCartAddress object {#ShippingCartAddress}
+### ShippingCartAddress object {#ShippingCartAddress}
 
 The `ShippingCartAddress` object can contain the following attributes.
 
@@ -601,6 +601,9 @@ Attribute |  Data Type | Description
 `street` | [String] | The street for the shipping address
 `telephone` | String | The telephone number for the shipping address
 
-## Mutations
+## Related topics
 
-Refer to the left navigation for information about the mutations defined in the `QuoteGraphQl` module.
+-  [createEmptyCart mutation]({{page.baseurl}}/graphql/mutations/create-empty-cart.html)
+-  [addSimpleProductsToCart mutation]({{page.baseurl}}/graphql/mutations/add-simple-products.html)
+-  [setBillingAddressOnCart mutation]({{page.baseurl}}/graphql/mutations/set-billing-address.html)
+-  [setPaymentMethodOnCart mutation]({{page.baseurl}}/graphql/mutations/set-payment-method.html)

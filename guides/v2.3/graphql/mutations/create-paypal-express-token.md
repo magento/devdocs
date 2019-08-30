@@ -9,7 +9,7 @@ The `createPaypalExpressToken` mutation begins the authorization process for the
 * PayPal Payflow Pro with Express Checkout
 * PayPal Payflow Link with Express Checkout
 
-The input includes the cart ID, the payment method code, and a set of URLs that PayPal uses to respond to the token request. If the request is successful, PayPal returns a token. The [`setPaymentMethodOnCart`]({{page.baseurl}}/graphql/reference/quote-payment-method.html) mutation uses this token later in the authorization process.
+The input includes the cart ID, the payment method code, and a set of URLs that PayPal uses to respond to the token request. If the request is successful, PayPal returns a token. The [`setPaymentMethodOnCart`]({{page.baseurl}}/graphql/mutations/set-payment-method.html) mutation uses this token later in the authorization process.
 
 ## Syntax
 

@@ -3,6 +3,8 @@ group: graphql
 title: setPaymentMethodAndPlaceOrder mutation
 contributor_name: Something Digital
 contributor_link: https://www.somethingdigital.com/
+redirect from:
+  - /guides/v2.3/graphql/reference/quote-set-payment-place-order.html
 ---
 
 The `setPaymentMethodAndPlaceOrder` mutation sets the cart payment method and converts the cart into an order. The
@@ -11,12 +13,12 @@ You can use REST or SOAP calls to manage orders to their completion.
 
 Perform the following actions before using the `setPaymentMethodAndPlaceOrder` mutation:
 
-* Create an empty cart
-* Add one or more products to the cart
-* Set the billing address
-* Set the shipping address (non-virtual carts only)
-* Set the shipping method (non-virtual carts only)
-* For guest customers, assign an email to the cart
+-  Create an empty cart
+-  Add one or more products to the cart
+-  Set the billing address
+-  Set the shipping address (non-virtual carts only)
+-  Set the shipping method (non-virtual carts only)
+-  For guest customers, assign an email to the cart
 
 ## Syntax
 
