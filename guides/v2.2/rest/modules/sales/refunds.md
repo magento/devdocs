@@ -40,7 +40,7 @@ If you try to apply the service to an invoice created using an online payment m
 
 ## Other services for issuing refunds
 
-While Magento recommends you use the `Refund` services to issue refunds, the Magento API also provides the following `CreditmemoManagement` services you can use to issue a credit:  
+While Magento recommends you use the `Refund` services, the Magento API also provides the following `CreditmemoManagement` services you can use to issue a credit:
 
 * `salesCreditmemoManagement`
 * `salesCreditmemoRepository`
