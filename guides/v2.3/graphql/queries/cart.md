@@ -1,15 +1,17 @@
 ---
 group: graphql
 title: cart query
+redirect_from:
+  - /guides/v2.3/graphql/reference/quote.html
 ---
 
-A Quote represents the contents of a customer's shopping cart. It is responsible for performing tasks such as:
+Use the `cart` query to retrieve information about a particular cart.
+
+Cart functionality is defined in the `Quote` module. A Quote represents the contents of a customer's shopping cart. It is responsible for performing tasks such as:
 
 * Tracking each item in the cart, including the quantity and base cost
 * Determining estimated shipping costs
 * Calculating subtotals, computing additional costs, applying coupons, and determining the payment method
-
-Use the `cart` query to retrieve information about a particular cart.
 
 ## Syntax
 
@@ -601,4 +603,7 @@ Attribute |  Data Type | Description
 
 ## Related topics
 
-Refer to the left navigation for information about the mutations defined in the `QuoteGraphQl` module.
+-  [createEmptyCart mutation]({{page.baseurl}}/graphql/mutations/create-empty-cart.html)
+-  [addSimpleProductsToCart mutation]({{page.baseurl}}/graphql/mutations/add-simple-products.html)
+-  [setBillingAddressOnCart mutation]({{page.baseurl}}//graphql/mutations/set-billing-address.html)
+-  [setPaymentMethodOnCart mutation]({{page.baseurl}}//graphql/mutations/set-payment-method.html)
