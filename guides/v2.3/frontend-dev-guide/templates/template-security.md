@@ -9,15 +9,15 @@ functional_areas:
 
 To prevent [XSS] issues Magento recommends the following rules for escaping output in templates:
 
-* If a method indicates that the content is escaped, do not escape: `getTitleHtml()`, `getHtmlTitle()` (the title is ready for the [HTML](https://glossary.magento.com/html) output)
+*  If a method indicates that the content is escaped, do not escape: `getTitleHtml()`, `getHtmlTitle()` (the title is ready for the [HTML](https://glossary.magento.com/html) output)
 
-* Type casting and [php](https://glossary.magento.com/php) function `count()` don't need escaping  (for example `echo (int)$var`, `echo (bool)$var`, `echo count($var)`)
+*  Type casting and [php](https://glossary.magento.com/php) function `count()` don't need escaping  (for example `echo (int)$var`, `echo (bool)$var`, `echo count($var)`)
 
-* Output in single quotes doesn't need escaping (for example `echo 'some text'`)
+*  Output in single quotes doesn't need escaping (for example `echo 'some text'`)
 
-* Output in double quotes without variables doesn't need escaping (for example `echo "some text"`)
+*  Output in double quotes without variables doesn't need escaping (for example `echo "some text"`)
 
-* For all other cases, escape the data using [specific escape functions](#escape-functions-for-templates).
+*  For all other cases, escape the data using [specific escape functions](#escape-functions-for-templates).
 
 The following code sample illustrates the XSS-safe output in templates:
 
@@ -32,9 +32,18 @@ The following code sample illustrates the XSS-safe output in templates:
 <a href="<?php echo $block->escapeUrl($block->getUrl()) ?>"><?php echo $block->getAnchorTextHtml() ?></a>
 ```
 
-#### Escape functions for templates
+### Escape functions for templates
 
 For the following output cases, use the specified function to generate XSS-safe output.
+
+**Case:** Escape string for the CSS context
+**Function:** `escapeCss`
+
+```php
+<?php header('Content-Type: application/xhtml+xml; charset=UTF-8');?>
+<?php $css = "background: #000\"><script>alert(1)</script>"; ?>
+<div style="<?= $block->escapeCss($css) ?>"></div>
+```
 
 **Case:** JSON output in script context\\
 **Function:** No function needed for JSON output.
@@ -44,8 +53,8 @@ For the following output cases, use the specified function to generate XSS-safe 
   <script>
     var postData = <?php /* @noEscape */ echo $postData ?>;
   </script>
-
 ```
+
 **Case:** JSON output in html/attribute context\\
 **Function:** `escapeHtml`
 
@@ -124,20 +133,20 @@ This sniff finds all `echo` calls in PHTML-templates and determines if the outpu
 
 It covers the following cases:
 
-* `/* @noEscape */` before output. Output doesn't require escaping. Test is green.
+*  `/* @noEscape */` before output. Output doesn't require escaping. Test is green.
 
-* `/* @escapeNotVerified */` before output. Output escaping is not checked and should be verified. Test is green.
+*  `/* @escapeNotVerified */` before output. Output escaping is not checked and should be verified. Test is green.
 
-* Methods which contain `"html"` in their names (for example `echo $object->{suffix}Html{postfix}()`). Data is ready for the HTML output. Test is green.
+*  Methods which contain `"html"` in their names (for example `echo $object->{suffix}Html{postfix}()`). Data is ready for the HTML output. Test is green.
 
-* AbstractBlock methods `escapeHtml`, `escapeHtmlAttr`, `escapeUrl`, `escapeJs` are allowed. Test is green.
+*  AbstractBlock methods `escapeHtml`, `escapeHtmlAttr`, `escapeUrl`, `escapeJs` are allowed. Test is green.
 
-* Type casting and php function `count()` are allowed (for example `echo (int)$var`, `(bool)$var`, `count($var)`). Test is green.
+*  Type casting and php function `count()` are allowed (for example `echo (int)$var`, `(bool)$var`, `count($var)`). Test is green.
 
-* Output in single quotes (for example `echo 'some text'`). Test is green.
+*  Output in single quotes (for example `echo 'some text'`). Test is green.
 
-* Output in double quotes without variables (for example `echo "some text"`). Test is green.
+*  Output in double quotes without variables (for example `echo "some text"`). Test is green.
 
-* Other of previously mentioned. Output is not escaped. Test is red.
+*  Other of previously mentioned. Output is not escaped. Test is red.
 
 [XSS]: https://en.wikipedia.org/wiki/Cross-site_scripting
