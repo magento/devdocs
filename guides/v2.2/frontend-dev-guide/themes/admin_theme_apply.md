@@ -65,7 +65,6 @@ In `<your_module_dir>/etc/adminhtml/di.xml` add the following (replace the place
 For your changes to take effect, you need to update Magento components. For this,
 run the `bin/magento setup:upgrade` command in your command line. If prompted, also run `bin/magento setup:di:compile`. Then run `bin/magento cache:clean` to clear the cache.
 
-
 For details about performing command line tasks, view the following topics:
 - [Command line configuration]({{ page.baseurl }}/config-guide/cli/config-cli.html)
 - [Uninstall or reinstall Magento: Optionally keeping generated files]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-db-upgr.html)

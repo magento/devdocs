@@ -190,11 +190,11 @@ Node Format:
 
   Magento builds an array with elements corresponding to the items and passes it as the argument.
   The array can contain an infinite number of items, and each array item can be of any object type including an array itself.
-  
+
   When Magento merges the configuration files for a given scope, array arguments with the same name get merged into a new array.
-  
+
   When Magento loads a new configuration at a later time, either by a more specific scope or through code, then any array definitions in the new configuration will replace the loaded config instead of merging.
-  
+
 ---
 
 **Argument Examples:**
@@ -352,6 +352,49 @@ See [sensitive and environment settings]({{ page.baseurl }}/extension-dev-guide/
 *   [Guidelines for specifying system-specific and sensitive configuration values]({{ page.baseurl }}/extension-dev-guide/configuration/sensitive-and-environment-settings.html)
 *   [Sensitive and system-specific configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-sens.html)
 *   [Magento Enterprise B2B Extension configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-b2b.html)
+
+## Get dependency injection configuration information for a class
+
+Use the [dev:di:info]({{ page.baseurl }}/reference/cli/magento.html#devdiinfo) command to retrieve information about dependency injection configuration for a class. The following example retrieves the dependency injection configuration information for the `Magento\Quote\Model\Quote\Item\ToOrderItem` class:
+
+```bash
+bin/magento dev:di:info "Magento\Quote\Model\Quote\Item\ToOrderItem"
+```
+
+```terminal
+DI configuration for the class Magento\Quote\Model\Quote\Item\ToOrderItem in the GLOBAL area
+
+Preference: Magento\Quote\Model\Quote\Item\ToOrderItem
+
+Constructor Parameters:
++-------------------+--------------------------------------------------+------------------+
+| Name              | Requested Type                                   | Configured Value |
++-------------------+--------------------------------------------------+------------------+
+| orderItemFactory  | Magento\Sales\Api\Data\OrderItemInterfaceFactory |                  |
+| objectCopyService | Magento\Framework\DataObject\Copy                |                  |
+| dataObjectHelper  | Magento\Framework\Api\DataObjectHelper           |                  |
++-------------------+--------------------------------------------------+------------------+
+
+
+Plugins:
++-----------------------------------------------------+---------+--------+
+| Plugin                                              | Method  | Type   |
++-----------------------------------------------------+---------+--------+
+| Magento\Catalog\Model\Plugin\QuoteItemProductOption | convert | before |
+| Magento\GiftMessage\Model\Plugin\QuoteItem          | convert | after  |
+| Magento\Bundle\Model\Plugin\QuoteItem               | convert | after  |
++-----------------------------------------------------+---------+--------+
+
+
+Plugins for the Preference:
++-----------------------------------------------------+---------+--------+
+| Plugin                                              | Method  | Type   |
++-----------------------------------------------------+---------+--------+
+| Magento\Catalog\Model\Plugin\QuoteItemProductOption | convert | before |
+| Magento\GiftMessage\Model\Plugin\QuoteItem          | convert | after  |
+| Magento\Bundle\Model\Plugin\QuoteItem               | convert | after  |
++-----------------------------------------------------+---------+--------+
+```
 
 ## Related topics
 

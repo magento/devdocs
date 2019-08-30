@@ -16,7 +16,6 @@ Fastly image optimization (Fastly IO) provides real-time image manipulation and 
 
 You must set up your Fastly service and configure Origin shielding before you can enable and configure the Fastly IO option.
 
-
 Based on your configuration settings, the Fastly Image Optimization (Fastly IO) snippet inserts the VCL code to perform image optimization to speed up delivery of the product images included in your store. There are three steps to configure the Fastly IO: Enable, Configure, and Verify.
 
 ## Enable Fastly IO
@@ -101,7 +100,7 @@ You can review and update the default IO configuration settings for image optimi
        (`Lancsoz3`), or select an alternative. This setting specifies the filter
        used to deliver a resized image. Depending on the filter selected the
        resized image can have a higher or lower number of pixels.
-	
+
 	   -  `Lanczos3` (default)—Delivers the best quality image. It increases the ability to detect edges and linear features within an image and uses sinc resampling to provide the best possible reconstruction.
 	   -  `Lanczos2`—Uses same filter as `Lancsoz3` but with a less accurate approximation of the sinc resampling function.
 	   -  `Bicubic`—Has a natural sharpening effect when making an image smaller.

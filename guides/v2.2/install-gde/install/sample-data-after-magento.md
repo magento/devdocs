@@ -11,7 +11,6 @@ functional_areas:
   - Setup
 ---
 
-
 The following topics discuss how to install optional sample data after you have already installed the Magento software. There is one additional step compared to pre-installation, which is to update the Magento [database schema](https://glossary.magento.com/database-schema) and data.
 
 *	[Install using Composer]({{ page.baseurl }}/install-gde/install/sample-data-after-composer.html)

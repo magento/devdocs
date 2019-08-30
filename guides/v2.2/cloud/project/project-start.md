@@ -88,16 +88,16 @@ The log for each deployment appends to this file. Check the timestamps on log en
 ```terminal
 Re-deploying environment project-integration-ID
   Executing post deploy hook for service `mymagento`
-    [2019-01-03 19:44:11] NOTICE: Starting post-deploy.  
-    [2019-01-03 19:44:11] INFO: Validating configuration  
-    [2019-01-03 19:44:11] INFO: End of validation  
-    [2019-01-03 19:44:11] INFO: Enable cron  
-    [2019-01-03 19:44:11] INFO: Create backup of important files.  
-    [2019-01-03 19:44:11] INFO: Backup /app/app/etc/env.php.bak for /app/app/etc/env.php was created.  
-    [2019-01-03 19:44:11] INFO: Backup /app/app/etc/config.php.bak for /app/app/etc/config.php was created.  
-    [2019-01-03 19:44:11] INFO: php ./bin/magento cache:flush --ansi --no-interaction   
+    [2019-01-03 19:44:11] NOTICE: Starting post-deploy.
+    [2019-01-03 19:44:11] INFO: Validating configuration
+    [2019-01-03 19:44:11] INFO: End of validation
+    [2019-01-03 19:44:11] INFO: Enable cron
+    [2019-01-03 19:44:11] INFO: Create backup of important files.
+    [2019-01-03 19:44:11] INFO: Backup /app/app/etc/env.php.bak for /app/app/etc/env.php was created.
+    [2019-01-03 19:44:11] INFO: Backup /app/app/etc/config.php.bak for /app/app/etc/config.php was created.
+    [2019-01-03 19:44:11] INFO: php ./bin/magento cache:flush --ansi --no-interaction
     [2019-01-03 19:44:32] INFO: Warming up failed: http://integration-id-project.us.magentosite.cloud/
-    [2019-01-03 19:44:32] NOTICE: Post-deploy is complete.  
+    [2019-01-03 19:44:32] NOTICE: Post-deploy is complete.
 ```
 {: .no-copy}
 

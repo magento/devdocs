@@ -546,7 +546,7 @@ Behavior:
 * `seek(0)` does not display any preview
 * `seek(1)` displays the first image.
 * `seek(-1)` displays the last image.
-* If the argument is a number bigger than the number of items, or less than "-(number of items)" the gallery shows the modulus of the following division: total images number divided by the argument number.  
+* If the argument is a number bigger than the number of items, or less than "-(number of items)" the gallery shows the modulus of the following division: total images number divided by the argument number.
 
 #### `updateData()` {#gallery_updateData}
 

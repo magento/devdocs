@@ -90,7 +90,7 @@ The buttons list.
 
 **Type**: Array of Objects.
 
-**Default value**: 
+**Default value**:
 
 ```javascript
 buttons: [{

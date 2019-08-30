@@ -479,7 +479,6 @@ class Product
 
 You can remove navigation links from the 'My Account' dashboard on the storefront by setting the `remove` attribute.
 
-
 ```xml
 <!-- ################################## -->
 <!-- Magento version: Open Source -->

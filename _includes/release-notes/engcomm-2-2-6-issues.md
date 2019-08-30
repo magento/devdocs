@@ -1,5 +1,4 @@
 
-
 | Contributing community member | Pull Requests | Related GitHub Issues |
 | ------- | ------- | ------- |
 | vinayshah | [#13397](https://github.com/magento/magento2/pull/13397) | [13296](https://github.com/magento/magento2/issues/13296) |

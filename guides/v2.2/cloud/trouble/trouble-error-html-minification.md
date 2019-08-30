@@ -33,9 +33,8 @@ As a work-around, complete the following:
             'minify_html' => '1',
           ),
     ```
-          
-2. Modify the setting for minify in the database with this command:
 
+2. Modify the setting for minify in the database with this command:
 
       update core_config_data set value=0 where path ='dev/template/minify_html'
 3. Flush all caches.
@@ -43,7 +42,7 @@ As a work-around, complete the following:
     ```bash
     php bin/magento cache:flush
     ```
-    
+
     ```bash
     redis-cli -h <> -p <> flushall
     ```

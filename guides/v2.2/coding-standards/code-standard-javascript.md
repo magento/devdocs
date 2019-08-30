@@ -19,7 +19,7 @@ For the jQuery widget coding standard, see [jQuery widget coding standard][jquer
 Use [ESLint][eslint] and [JSCS][jscs] to ensure the quality of your JavaScript code.
 
 ESLint is a community-driven tool that detects errors and potential problems in JavaScript code.
-It can use custom rules to enforce specific coding standards. 
+It can use custom rules to enforce specific coding standards.
 
 * [Magento ESLint Rules][eslint-rules]
 * [Magento JSCS Rules][jscs-rules]
@@ -310,7 +310,7 @@ Single-line array and object initializers are allowed when they fit on a line as
 
 ```javascript
     var arr = [1, 2, 3];  // No space after [ or before ].
-    var obj = {a: 1, b: 2, c: 3};  // No space after { or before }.  
+    var obj = {a: 1, b: 2, c: 3};  // No space after { or before }.
 ```
 
 Long identifiers or values present problems for aligned initialization lists, so always prefer non-aligned initialization.

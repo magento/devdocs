@@ -23,7 +23,6 @@ Currently, you can customize the following Fastly response pages for your {{ sit
 - [Timeout or site maintenance outages (503 Service Unavailable)](#customize-the-503-error-page)
 - [WAF blocking events that occur when the WAF detects suspicious request traffic (403 Forbidden)](#customize-the-waf-error-page)
 
-
 **HTML coding requirements**
 
 The HTML code for the custom page must meet the following requirements:
@@ -31,7 +30,6 @@ The HTML code for the custom page must meet the following requirements:
 - Content can contain up to 65,535 characters.
 - Specify all CSS inline in the HTML source.
 - Bundle images in the HTML page using base64 so that they display even if Fastly is offline. See [Data URIs on the css-tricks site](https://css-tricks.com/data-uris/).
-
 
 ## Customize the 503 error page
 
@@ -68,7 +66,7 @@ Verify that the modified source displays correctly in the browser. Then, add the
 
 1.	Click **Set HTML**.
 
-1.	Copy and paste the source code for your custom response page into the HTML field. 
+1.	Copy and paste the source code for your custom response page into the HTML field.
 
     ![Update 503 error page]
 
@@ -79,7 +77,7 @@ Verify that the modified source displays correctly in the browser. Then, add the
 1. Refresh the cache.
 
    - In the notification at the top of the page, click the *Cache Management* link.
-   
+
    - On the Cache Management page, click **Flush Magento Cache**.
 
 ## Customize the WAF error page
@@ -104,12 +102,11 @@ The following code sample shows the HTML source for the default page:
 </html>
 ```
 
-You can use the **Custom Synthetic Pages** > **Edit WAF page** option in the Fastly configuration menu to customize the default code for your {{ site.data.var.ece }} project. When you edit the code, retain the following line that provides the reference ID for the WAF blocking event: 
+You can use the **Custom Synthetic Pages** > **Edit WAF page** option in the Fastly configuration menu to customize the default code for your {{ site.data.var.ece }} project. When you edit the code, retain the following line that provides the reference ID for the WAF blocking event:
 
 ```html
 <p>"} req.http.x-request-id {"</p>
 ```
-
 
 {:.bs-callout .bs-callout-info}
 The Edit WAF option is available only if the Managed Cloud WAF service is enabled for your {{ site.var.data.ece }} project.
@@ -141,7 +138,7 @@ The Edit WAF option is available only if the Managed Cloud WAF service is enable
 1. Refresh the cache.
 
    - In the notification at the top of the page, click the **Cache Management** link.
-   
+
    - On the Cache Management page, click **Flush Magento Cache**.
 
 <!-- Link definitions -->
