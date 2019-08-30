@@ -29,11 +29,11 @@ These release notes can include:
    -  [Assign an email]({{page.baseurl}}/graphql/mutations/set-guest-email.html) to a guest cart.
    -  [Place an order]({{page.baseurl}}/graphql/mutations/place-order.html).
 
--  {:.new} **Added support for payment methods that implement [Magento Vault]({{page.baseurl}}/graphql/reference/vault.html)**
+-  {:.new} **Added support for payment methods that implement Magento Vault. See [customerPaymentTokens query]({{page.baseurl}}/graphql/queries/customer-payment-tokens.html) and [deletePaymentToken mutation]({{page.baseurl}}/graphql/mutations/delete-payment-token.html)**
 
 -  {:.new} **Added new queries and extended the functionality of others.**
 
-   -  The [`isEmailAvailable` query]({{page.baseurl}}/graphql/reference/customer.html) checks whether the specified email address has already been used to create an account.
+   -  The [`isEmailAvailable` query]({{page.baseurl}}/graphql/queries/is-email-available.html) checks whether the specified email address has already been used to create an account.
    -  The [`cart` query]({{page.baseurl}}/graphql/queries/cart.html) can now return information set by mutations that perform cart operations, including product information, shipping and billing addresses, shipping and payment methods, and applied coupons. The query also returns calculated totals.
    - The `customerPaymentTokens` query returns the signed-in customer's payment tokens.
 
@@ -52,13 +52,13 @@ These release notes can include:
 ## {{site.data.var.ce}} 2.3.1
 
 -  {:.new} **Added mutations and queries that allow customers to manage My Account information.** Specific capabilities include:
-   -  Create [customer]({{page.baseurl}}/graphql/reference/customer.html) account
+   -  Create [customer]({{page.baseurl}}/graphql/mutations/create-customer.html) account
    -  Change account information
    -  Manage billing and shipping addresses
    -  Change customer password
    -  Manage newsletter subscriptions
-   -  Create [wish lists]({{page.baseurl}}/graphql/reference/wishlist.html)
-   -  View [order history]({{page.baseurl}}/graphql/reference/sales.html)
+   -  View [wish lists]({{page.baseurl}}/graphql/queries/wishlist.html)
+   -  View [order history]({{page.baseurl}}/graphql/queries/customer-orders.html)
    -  View [downloadable products]({{page.baseurl}}/graphql/product/downloadable-product.html)
 
 -  {:.new} **Added functionality to support complex Catalog features.** This version supports:
@@ -67,10 +67,10 @@ These release notes can include:
    -  URL rewrites for products​
 
 -  {:.new} **GraphQL framework enhancements**, including:
-   -  Mutations that retrieve and revoke [customer tokens]({{page.baseurl}}/graphql/reference/customer.html)
+   -  Mutations that [generate]({{page.baseurl}}/graphql/mutations/generate-customer-token.html) and [revoke]({{page.baseurl}}/graphql/mutations/revoke-customer-token.html) customer tokens
    -  Page Builder and WYSIWYG fields support complex structures for PWA scenarios
    -  Magento now calculates the complexity of queries and mutations and returns an error message if a query or mutation is deemed too complex
    -  Variable support in [queries]({{page.baseurl}}/graphql/queries.html) and [mutations]({{page.baseurl}}/graphql/mutations.html)
-   -  Queries in the [Store endpoint]({{page.baseurl}}/graphql/reference/store-config.html) return information about a store's theme and CMS configuration
+   -  A query that returns information about a store's [theme and CMS]({{page.baseurl}}/graphql/queries/store-config.html) configuration
    -  GraphQL tests are integrated with Travis CI​
    -  GraphQL browsers now display fields and objects alphabetically

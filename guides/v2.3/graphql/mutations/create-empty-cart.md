@@ -70,4 +70,4 @@ Attribute |  Data Type | Description
 
 ## Output attributes
 
-The `createEmptyCart` mutation returns a string, the cart ID.
+The `createEmptyCart` mutation returns the cart ID.
