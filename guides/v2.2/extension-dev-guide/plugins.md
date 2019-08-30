@@ -55,7 +55,7 @@ The following elements are optional:
 
 By applying code before, after, or around a public method, a plugin extends or modifies that method's behavior.
 
-The first argument for the before, after, and `around` methods is an object that provides access to all public methods of the observed method's class.
+The first argument for the before, after, and around methods is an object that provides access to all public methods of the observed method's class.
 
 ### Plugin method naming convention
 
@@ -95,13 +95,13 @@ Use the following method names for the `_construct` method in the plugin class:
 - `around_construct`
 - `after_construct`
 
-#### `before` methods
+#### Before methods
 
-Magento runs all `before` methods ahead of the call to an observed method. These methods must have the same name as the observed method with 'before' as the prefix.
+Magento runs all before methods ahead of the call to an observed method. These methods must have the same name as the observed method with 'before' as the prefix.
 
-You can use `before` methods to change the arguments of an observed method by returning a modified argument. If there is more than one argument, the method should return an array of those arguments. If the method does not change the argument for the observed method, it should return a `null` value.
+You can use before methods to change the arguments of an observed method by returning a modified argument. If there is more than one argument, the method should return an array of those arguments. If the method does not change the argument for the observed method, it should return a `null` value.
 
-Below is an example of a `before` method modifying the `$name` argument before passing it on to the observed `setName` method.
+Below is an example of a before method modifying the `$name` argument before passing it on to the observed `setName` method.
 
 ```php
 <?php
@@ -116,13 +116,13 @@ class ProductAttributesUpdater
 }
 ```
 
-#### `after` methods
+#### After methods
 
-Magento runs all `after` methods following the completion of the observed method. Magento requires these methods have a return value and they must have the same name as the observed method with 'after' as the prefix.
+Magento runs all after methods following the completion of the observed method. Magento requires these methods have a return value and they must have the same name as the observed method with 'after' as the prefix.
 
 You can use these methods to change the result of an observed method by modifying the original result and returning it at the end of the method.
 
-Below is an example of an `after` method modifying the return value `$result` of an observed methods call.
+Below is an example of an after method modifying the return value `$result` of an observed methods call.
 
 ```php
 <?php
@@ -137,9 +137,9 @@ class ProductAttributesUpdater
 }
 ```
 
-The `after` methods have access to all the arguments of their observed methods. When the observed method completes, Magento passes the result and arguments to the next `after` method that follows. If the observed method does not return a result (`@return void`), then it passes a `null` value to the next `after` method.
+The after methods have access to all the arguments of their observed methods. When the observed method completes, Magento passes the result and arguments to the next after method that follows. If the observed method does not return a result (`@return void`), then it passes a `null` value to the next after method.
 
-Below is an example of an `after` method that accepts the `null` result and arguments from the observed `login` method for [`Magento\Backend\Model\Auth`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Backend/Model/Auth.php){:target="_blank"}:
+Below is an example of an after method that accepts the `null` result and arguments from the observed `login` method for [`Magento\Backend\Model\Auth`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Backend/Model/Auth.php){:target="_blank"}:
 
 ```php
 <?php
@@ -168,9 +168,9 @@ class AuthLogger
 }
 ```
 
-`after` methods do not need to declare all the arguments of their observed methods except those that the method uses and any arguments from the observed method that come before those used arguments.
+After methods do not need to declare all the arguments of their observed methods except those that the method uses and any arguments from the observed method that come before those used arguments.
 
-The following example is a class with an `after` method for [`\Magento\Catalog\Model\Product\Action::updateWebsites($productIds, $websiteIds, $type)`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/Model/Product/Action.php){:target="_blank"}:
+The following example is a class with an after method for [`\Magento\Catalog\Model\Product\Action::updateWebsites($productIds, $websiteIds, $type)`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/Model/Product/Action.php){:target="_blank"}:
 
 ```php
 
@@ -191,26 +191,26 @@ class WebsitesLogger
 
 ```
 
-In the example, the `afterUpdateWebsites` function uses the variable `$websiteIds`, so it declares that variable as an argument. It also declares `$productIds` because it comes before `$websiteIds` in the parameter signature of the observed method. The `after` method did not list `$type` because it did not use it inside the method nor does it come before `$websiteIds`.
+In the example, the `afterUpdateWebsites` function uses the variable `$websiteIds`, so it declares that variable as an argument. It also declares `$productIds` because it comes before `$websiteIds` in the parameter signature of the observed method. The after method did not list `$type` because it did not use it inside the method nor does it come before `$websiteIds`.
 
 {: .bs-callout .bs-callout-warning }
-If an argument is optional in the observed method, then the `after` method should also declare it as optional.
+If an argument is optional in the observed method, then the after method should also declare it as optional.
 
-#### `around` methods
+#### Around methods
 
-Magento runs the code in `around` methods before and after their observed methods. Using these methods allow you to override an observed method. `around` methods must have the same name as the observed method with 'around' as the prefix.
+Magento runs the code in around methods before and after their observed methods. Using these methods allow you to override an observed method. around methods must have the same name as the observed method with 'around' as the prefix.
 
 {:.bs-callout .bs-callout-warning}
-Avoid using `around` method plugins when they are not required because they increase stack traces and affect performance.
-The only use case for `around` method plugins is when the execution of all further plugins and original methods need termination.
-Use `after` method plugins if you require arguments for replacing or altering function results.
+Avoid using around method plugins when they are not required because they increase stack traces and affect performance.
+The only use case for around method plugins is when the execution of all further plugins and original methods need termination.
+Use after method plugins if you require arguments for replacing or altering function results.
 
-Before the list of the original method's arguments, `around` methods receive a `callable` that will allow a call to the next method in the chain. When your code executes the `callable`, Magento calls the next plugin or the observed function.
+Before the list of the original method's arguments, around methods receive a `callable` that will allow a call to the next method in the chain. When your code executes the `callable`, Magento calls the next plugin or the observed function.
 
 {: .bs-callout .bs-callout-warning }
-If the `around` method does not call the `callable`, it will prevent the execution of all the plugins next in the chain and the original method call.
+If the around method does not call the `callable`, it will prevent the execution of all the plugins next in the chain and the original method call.
 
-Below is an example of an `around` method adding behavior before and after an observed method:
+Below is an example of an around method adding behavior before and after an observed method:
 
 ```php
 <?php
@@ -236,7 +236,7 @@ class ProductAttributesUpdater
 }
 ```
 
-When you wrap a method which accepts arguments, your plugin must accept those arguments and you must forward them when you invoke the <code>proceed</code> callable. You must be careful to match the default parameters and type hints of the original signature of the method.
+When you wrap a method which accepts arguments, your plugin must accept those arguments and you must forward them when you invoke the `proceed` callable. You must be careful to match the default parameters and type hints of the original signature of the method.
 
 For example, the following code defines a parameter of type `SomeType`, which is nullable:
 
@@ -268,9 +268,9 @@ class MyUtilityUpdater
 }
 ```
 
-Note if you miss <code>= null</code> and Magento calls the original method with <code>null</code>, [PHP](https://glossary.magento.com/php) would throw a fatal error as your plugin does not accept <code>null</code>.
+Note if you miss `= null` and Magento calls the original method with `null`, [PHP](https://glossary.magento.com/php) would throw a fatal error as your plugin does not accept `null`.
 
-You are responsible for forwarding the arguments from the plugin to the <code>proceed</code> callable. If you are not using/modifying the arguments, you could use variadics and argument unpacking to achieve this:
+You are responsible for forwarding the arguments from the plugin to the `proceed` callable. If you are not using/modifying the arguments, you could use variadics and argument unpacking to achieve this:
 
 ```php
 <?php
@@ -288,19 +288,19 @@ class MyUtilityUpdater
 
 ### Prioritizing plugins
 
-The `sortOrder` property for plugins determines when to call the `before`, `around`, or `after` methods when more than one plugin is observing the same method.
+The `sortOrder` property for plugins determines when to call the before, around, or after methods when more than one plugin is observing the same method.
 
 The prioritization rules for ordering plugins:
 
 * Before the execution of the observed method, Magento will execute plugins from lowest to greatest `sortOrder`.
 
-  * During each plugin execution, Magento executes the current plugin's `before` method.
-  * After the `before` method completes execution, the current plugin's `around` method wraps and initiates the next plugin or observed method.
+  * During each plugin execution, Magento executes the current plugin's before method.
+  * After the before method completes execution, the current plugin's around method wraps and initiates the next plugin or observed method.
 
 * Following the execution of the observed method, Magento will execute plugins from greatest to lowest `sortOrder`.
 
-  * During each plugin execution, the current plugin will first finish executing its `around` method.
-  * When the `around` method completes, the plugin executes its `after` method before moving on to the next plugin.
+  * During each plugin execution, the current plugin will first finish executing its around method.
+  * When the around method completes, the plugin executes its after method before moving on to the next plugin.
 
 **Example**
 
