@@ -68,6 +68,12 @@ Example:
 grunt spec:backend
 ```
 
+You can also run a single test:
+
+```bash
+grunt spec:backend --file="/path/to/the/test.js"
+```
+
 ## Write a test {#write-test}
 
 All tests are distributed through modules stored in `<magento_root_dir>/dev/tests/js/jasmine/tests`. Let's see how to write a test using an example of an existing test:
