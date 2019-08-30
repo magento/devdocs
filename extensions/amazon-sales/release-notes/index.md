@@ -3,7 +3,7 @@ group: extensions
 title: Amazon Sales Channel Release Notes
 ---
 
-**Amazon Sales Channel** is now available for version 2.2.x and 2.3.x of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}. Merchants can use Amazon Sales Channel to integrate with an Amazon Seller account to post and sell products in your Magento catalog on Amazon.
+**Amazon Sales Channel** is available for versions 2.2.x and 2.3.x of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}. Merchants can use Amazon Sales Channel to integrate with an Amazon Seller account to post and sell products in your Magento catalog on Amazon.
 
 See the following documentation:
 
@@ -17,9 +17,15 @@ The release notes include:
 -  {:.fix}Fixes and improvements
 -  {:.bug}Known issues
 
-### v2.0.0
+### v2.0.1
 
-Amazon Sales Channel 2.0.1 is compatible with version 2.2.4+ and 2.3.x of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}.
+Amazon Sales Channel 2.0.1 is compatible with versions 2.2.4+ and 2.3.x of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}.
+
+-  {:.new}**Improved Logging**: <!--CHAN-3642, 3672-->Implemented **Enable Debug Logging** feature to collect additional synchronization data when troubleshooting is needed. See the [Sales Channels Settings](https://docs.magento.com/m2/ce/user_guide/configuration/sales-channels/global-settings.html) topic in the Configuration Reference.
+
+-  {:.fix}**Product Catalog**: <!--CHAN-3687-->Corrected an issue preventing images imported from an Amazon listing from being applied to the corresponding Magento catalog product.
+
+-  {:.fix}**Order Creation**: <!--CHAN-3708-->Corrected an issue preventing Magento from creating orders for an Amazon order that does not match with a Magento catalog product. See [Order Settings](https://docs.magento.com/m2/ee/user_guide/sales-channels/amazon/order-settings.html).
 
 ### v2.0.0
 
@@ -40,7 +46,7 @@ Version 1.0.0 was available in limited release only.
 
 -  {:.new}**Order and Fulfillment Management**: Track Amazon orders through the dashboard, with seamless communication and inventory updates. Complete and track order shipments as fulfilled by Amazon, merchant fulfilled, or a mix of methods.
 
--   {:.bug}You may encounter longer wait times to update product quantities. Updates for product quantity may take ~2 hours to sync.
+-  {:.bug}You may encounter longer wait times to update product quantities. Updates for product quantity may take ~2 hours to sync.
 
 -  {:.bug}Imported orders may have a type of Prime or Premium orders. You may need to verify these orders in your Amazon Seller Account.
 
