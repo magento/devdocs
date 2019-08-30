@@ -183,14 +183,7 @@ Magento GraphQL clause | SQL equivalent
 
 `gt` and `lt` can be used in the same search term. For example, `quantity: {gt: "10" lt: "20"}`.
 
-### Specifying pagination
-
-
-
-
-
 ### Sorting instructions
-
 
 In the following example, Magento returns a list of items that are sorted in order of decreasing price. If two or more items have the same price, the items are listed in alphabetic order by name.
 
