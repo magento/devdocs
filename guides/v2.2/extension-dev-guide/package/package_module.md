@@ -51,7 +51,7 @@ The following example is a `composer.json` for a metapackage:
     "version": "2.0.0",
     "type": "metapackage",
     "require": {
-        "php": "~5.5.0|~5.6.0|~7.0.0",
+        "php": "~7.1.3|~7.2.0",
         "zendframework/zend-stdlib": "~2.4.6",
         "zendframework/zend-code": "~2.4.6",
         "zendframework/zend-server": "~2.4.6",
@@ -101,7 +101,7 @@ The following example is a `composer.json` file for a module:
     "AFL-3.0"
   ],
   "require": {
-    "php": "~5.5.0|~5.6.0|~7.0.0",
+    "php": "~7.1.3|~7.2.0",
     "magento/framework": "~100.0.4"
   },
   "autoload": {
