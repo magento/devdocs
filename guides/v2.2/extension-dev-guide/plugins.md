@@ -338,7 +338,7 @@ The execution flows in the following order:
 
 Classes and interfaces that are implementations of or inherit from classes that have plugins will also inherit plugins from the parent class.
 
-Magento uses plugins defined in the global scope when the system is in a specific area (i.e. frontend, backend, etc). You can extend or override these global plugin configurations with an area's `di.xml` file.
+Magento uses plugins defined in the global scope when the system is in a specific area (such as frontend or backend). You can extend or override these global plugin configurations with an area's `di.xml` file.
 
 For example, the developer can disable a global plugin in the [backend](https://glossary.magento.com/backend) area by disabling it in the specific `di.xml` file for the backend area.
 
