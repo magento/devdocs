@@ -26,7 +26,7 @@ As a result, every `defaults` child property is handled with what could be viewe
 
 This part is important because it means that JavaScript classes that extend `Class` (`magento/module-ui/view/base/web/js/lib/core/class.js`) can use the `defaults` property to assign properties to the class itself and leverage template literals during that process without any work on your part.
 
-#### The `:` separator
+### The `:` separator
 
 Certain properties of the `defaults` object are processed by an additional core JavaScript class: `links.js` (located: `magento/module-ui/view/base/web/js/lib/core/element/links.js`). The object keys in `defaults` are:
 
