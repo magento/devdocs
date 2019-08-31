@@ -32,7 +32,7 @@ The following code sample illustrates the XSS-safe output in templates:
 <a href="<?php echo $block->escapeUrl($block->getUrl()) ?>"><?php echo $block->getAnchorTextHtml() ?></a>
 ```
 
-#### Escape functions for templates
+### Escape functions for templates
 
 For the following output cases, use the specified function to generate XSS-safe output.
 
@@ -106,7 +106,7 @@ For example, when a URL output string is inside a JavaScript context, use both `
   <img src="product-blue.jpg" alt="<?php echo $block->escapeHtmlAttr(__('A picture of the product in blue')) ?>" />
 ```
 
-#### Static Test
+### Static Test
 
 To check your template for XSS vulnerabilities, you can use the static test `XssPhtmlTemplateTest.php` in `dev\tests\static\testsuite\Magento\Test\Php\`.
 

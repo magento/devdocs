@@ -60,7 +60,7 @@ The following sample introduces a runtime configuration that allows you to redef
 ),
 ```
 
-#### Related Topics
+### Related Topics
 
 * [Message Queues Overview]
 * [Configure message queues]

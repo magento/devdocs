@@ -109,10 +109,10 @@ You can create a [custom maintenance page]({{ page.baseurl }}/comp-mgr/trouble/c
 
 If you are using {{site.data.var.ece}}, the Magento application runs in maintenance mode during the deploy phase. When the deployment completes successfully, Magento returns to running in production mode. See [Deployment hooks]({{ page.baseurl }}/cloud/reference/discover-deploy.html).
 
-#### Next step
+### Next step
 
 To set a mode, see [Set the Magento mode]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html).
 
-#### Related topic
+### Related topic
 
 To generate static view files for production mode, see [Deploy static view files]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html)

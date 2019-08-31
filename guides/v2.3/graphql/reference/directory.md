@@ -61,7 +61,7 @@ Attribute | Data type | Description
 ## Country
 Use the `country` query to retrieve information about a specific country.
 
-#### Syntax
+### Syntax
 
 `{country(id: String) {Country}}`
 
@@ -149,7 +149,7 @@ query {
 ## Countries
 Use the `countries` query to return all countries in which the entity can do business.
 
-#### Syntax
+### Syntax
 
 `{countries[country] {Countries}}`
 
@@ -278,7 +278,7 @@ In this example, the response is intentionally truncated.
 ## Currency
 Use the `currency` query to return information about the store's currency configuration.
 
-#### Syntax
+### Syntax
 
 `{currency {Currency}}`
 

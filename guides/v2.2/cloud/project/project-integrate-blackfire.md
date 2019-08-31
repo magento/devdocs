@@ -196,7 +196,7 @@ You can verify that Blackfire works using a browser extension or the CLI. For ex
 
 {% include note.html type="info" content="You can only use the CLI in your local development environment." %}
 
-#### To profile using the browser:
+### To profile using the browser:
 
 1.  Install the Blackfire browser extension in [Chrome](https://blackfire.io/docs/integrations/chrome#installing-the-companion) or [Firefox](https://blackfire.io/docs/integrations/firefox#installing-the-companion). A Blackfire icon displays in your browser next to the address location. If you do not see it, you may need to display the bar.
 1.  Visit the store or site URL for your specific environment, such as the URL for your Integration environment. If you need this URL, you can find it through the Project Web Interface. Select the environment branch and copy the link from the _Access_ section.
@@ -276,7 +276,7 @@ You cannot contact Blackfire directly to change the account owner. To maintain t
 
 Blackfire provides [Enterprise support for Pro](https://support.blackfire.io/blackfire-on-magento-cloud/blackfire-enterprise-for-magento-cloud-pro) and [Premium support for Starter](https://support.blackfire.io/blackfire-on-magento-cloud/blackfire-premium-for-magento-cloud-starter).
 
-#### To prepare log output for Blackfire support:
+### To prepare log output for Blackfire support:
 
 If you continue to experience problems, prepare your log files and contact Blackfire support.
 
@@ -306,7 +306,7 @@ If you continue to experience problems, prepare your log files and contact Black
 
 1.  Send output and logs to support@blackfire.io.
 
-#### To disable the Blackfire logs:
+### To disable the Blackfire logs:
 
 You can disable logging by cleaning the temporary log file and removing the log level:
 

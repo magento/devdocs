@@ -56,7 +56,7 @@ runtime:
     XDEBUG_CONFIG='remote_host=host.docker.internal remote_port=9002'
     ```
 
-#### To configure PhpStorm to work with Xdebug:
+### To configure PhpStorm to work with Xdebug:
 
 1.  In your PhpStorm project, open the settings panel.
 
@@ -86,7 +86,7 @@ runtime:
 
 The following steps describe debugging web requests and CLI commands.
 
-#### To debug web requests:
+### To debug web requests:
 
 1.  In your PhpStorm project, click ![Start listening for connections]({{ site.baseurl }}/common/images/install_docker_php-storm_xdebug-start-listening.png){:width="25px"} (**Start listening**) in the top navigation bar.
 
@@ -98,7 +98,7 @@ The following steps describe debugging web requests and CLI commands.
 
 1.  When PhpStorm recognizes the Xdebug connection, you can begin debugging web requests.
 
-#### To debug CLI commands:
+### To debug CLI commands:
 
 You can debug any Magento command or PHP script using the following steps.
 
@@ -135,7 +135,7 @@ You can debug any Magento command or PHP script using the following steps.
 
 You can install and use the Xdebug Helper Chrome extension to debug your PhP code from the browser.
 
-#### To use Xdebug Helper with Chrome:
+### To use Xdebug Helper with Chrome:
 
 1.  Install the [Xdebug Helper extension](https://chrome.google.com/webstore/detail/xdebug-helper/eadndfjplgieldjbigjakmdgkmoaaaoc?hl=en) from the Chrome store.
 

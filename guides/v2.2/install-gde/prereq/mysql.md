@@ -308,7 +308,7 @@ To configure a MySQL database instance:
 {:.bs-callout .bs-callout-info}
 We recommend you configure your database instance as appropriate for your business. When configuring your database, remember that indexers require higher `tmp_table_size` and `max_heap_table_size` values, for example, 64M. If you configure the `batch_size` parameter, you can adjust that value along with the table size settings to improve indexer performance. Refer to  [Performance Best Practices]({{ page.baseurl }}/performance-best-practices/index.html) for more information. sure all MySQL and Magento index tables can be kept in memory, for example, configure `innodb_buffer_pool_size`.
 
-#### Related topics
+### Related topics
 
 *	[Set up a remote MySQL database connection]({{ page.baseurl }}/install-gde/prereq/mysql_remote.html)
 *	[Installing optional software]({{ page.baseurl }}/install-gde/prereq/optional.html)

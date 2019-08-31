@@ -27,5 +27,5 @@ Before continuing, complete all tasks discussed in [Prerequisites]({{ page.baseu
 ## Extension Manager checklist
 {% include comp-man/checklist_2.2.md %}
 
-#### Next step
+### Next step
 [Start the Extension Manager]({{ page.baseurl }}/comp-mgr/extens-man/extensman-main-pg.html)

@@ -86,5 +86,5 @@ To complete the task, restart the web server:
 *	Ubuntu: `service apache2 restart`
 *	CentOS: `service httpd restart`
 
-#### Next step:
+### Next step:
 [Clone and branch the project]({{ page.baseurl }}/cloud/before/before-setup-env-2_clone.html)

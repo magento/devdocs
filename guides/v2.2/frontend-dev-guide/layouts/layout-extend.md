@@ -57,7 +57,7 @@ Where a `handle ID` is defined by the name of the corresponding layout file, and
 
 2. Replaces the base URL placeholders in the result.
 
-#### Related topics:
+### Related topics:
 
 *	[Override a layout]({{ page.baseurl }}/frontend-dev-guide/layouts/layout-override.html){:target="_blank"}
 *	[XML instructions]({{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html){:target="_blank"}

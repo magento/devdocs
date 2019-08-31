@@ -103,7 +103,7 @@ The current default storage amount per project is 5GB, or 5120MB. You can distri
 
 {{site.data.var.ece}} uses the [`$MAGENTO_CLOUD_RELATIONSHIPS`]({{page.baseurl}}/cloud/env/environment-vars_cloud.html) environment variable to retrieve environment-related relationships. For services to be available to an application in your project, you must specify [*relationships*]({{ page.baseurl }}/cloud/project/project-conf-files_magento-app.html#relationships) between applications and services in the `.magento.app.yaml` file.
 
-#### To verify relationships in local environment:
+### To verify relationships in local environment:
 
 1. In your local environment, show the relationships for the active environment.
 
@@ -135,7 +135,7 @@ The current default storage amount per project is 5GB, or 5120MB. You can distri
     ```
     {:.no-copy}
 
-#### To verify relationships in remote environments:
+### To verify relationships in remote environments:
 
 1. Use SSH to log in to the remote environment.
 

@@ -25,6 +25,6 @@ You can enable split databases at any time after you install the {{site.data.var
 
 {% include config/split-db.md %}
 
-#### Next step
+### Next step
 
 [Verify split databases]({{ page.baseurl }}/config-guide/multi-master/multi-master_verify.html)

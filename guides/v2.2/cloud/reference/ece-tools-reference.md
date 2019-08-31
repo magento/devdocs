@@ -91,7 +91,7 @@ Magento Cloud Services:
 
 There is a set of verification commands available to help evaluate the configuration of your project. See [Smart wizards][wizard] in the _Optimize deployment_ section for a detailed description of each wizard command. The `wizard:ideal-state` command runs automatically during the build phase.
 
-#### To verify the ideal state of your project:
+### To verify the ideal state of your project:
 
 ```bash
 php ./vendor/bin/ece-tools wizard:ideal-state

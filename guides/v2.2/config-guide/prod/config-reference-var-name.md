@@ -222,7 +222,7 @@ A step-by-step example is shown in [Set configuration values using environment v
 -   For {{site.data.var.ece}}, if you're attempting to override Magento configuration settings using the [Project Web Interface]({{ page.baseurl }}/cloud/project/project-webint-basic.html#project-conf-env-var), you must prepend the variable name with `env:`. For example:
 ![Environment variable example]({{ site.baseurl }}/common/images/cloud_env_var_example.png)
 
-#### Related information
+### Related information
 
 *	[Magento User Guide discussion of scope](http://docs.magento.com/m2/ce/user_guide/configuration/scope.html)
 *	[Magento User Guide scope quick reference](http://docs.magento.com/m2/ce/user_guide/stores/store-scope-reference.html)

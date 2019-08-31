@@ -13,7 +13,7 @@ Template literals can contain expressions which will be evaluated in the current
 
 Template literals allow UI Components to easily assign dynamic values to class properties. More specifically, they provide an integration layer between a particular KnockoutJS context and a JavaScript class.
 
-### The `defaults` Class Property
+## The `defaults` Class Property
 
 UI Components are [associated with JavaScript classes]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uiclass_concept.html) to handle behavior on the client side. These should extend one of the core classes to provide a base level of functionality. Inside the child class, a `defaults` property can be provided.
 

@@ -59,7 +59,7 @@ If Fastly returns 503 timeout errors, check the error logs and the 503 error pag
 {:.bs-callout .bs-callout-info}
 If the timeout occurs when running bulk operations, you can [extend the Fastly timeout for the Magento Admin UI]({{ page.baseurl }}/cloud/cdn/configure-fastly.html#bulkaction).
 
-#### To check the error logs: {#timeouts}
+### To check the error logs: {#timeouts}
 
 If you receive a 503 error, check the Production or Staging environment error log and php access log to troubleshoot the issue.
 
@@ -310,7 +310,7 @@ After you identify the extension that is resetting Fastly headers, contact the e
 
 If custom VCL snippet updates or other Fastly configuration changes cause a {{ site.data.var.ece }} site to break or return errors, use the Fastly API [activate](https://docs.fastly.com/api/config#version_0b79ae1ba6aee61d64cc4d43fed1e0d5) command to rollback to an earlier VCL version. You cannot rollback the VCL version from the Magento Admin UI.
 
-#### To rollback the VCL version:
+### To rollback the VCL version:
 
 1.  To get a list of the available VCL versions for a service, run the following command
 

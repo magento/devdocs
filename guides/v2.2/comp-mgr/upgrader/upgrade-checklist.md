@@ -32,5 +32,5 @@ _System upgrade_ refers to updating the Magento 2.x core components and other in
 ## System Upgrade checklist
 {% include comp-man/checklist_2.2.md %}
 
-#### Next step
+### Next step
 [Start System Upgrade]({{ page.baseurl }}/comp-mgr/upgrader/upgrade-start.html)

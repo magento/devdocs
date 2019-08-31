@@ -173,11 +173,11 @@ Now you can verify that Varnish is serving pages by looking at [HTML](https://gl
 
 Before you can look at headers, you must set Magento for developer mode. There are several ways to do it, the simplest of which is to modify `.htaccess` in the Magento 2 root. You can also use the [`magento deploy:mode:set`]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html) command.
 
-#### Set Magento for developer mode
+### Set Magento for developer mode
 
 To set Magento for developer mode, use the [`magento deploy:mode:set`]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html#change-to-developer-mode) command.
 
-#### Look at the Varnish log
+### Look at the Varnish log
 
 Make sure Varnish is running then enter the following command on the Varnish server:
 
@@ -202,7 +202,7 @@ A long list of response headers display in your command prompt window. Look for 
 
 If headers like these do *not* display, stop Varnish, check your `default.vcl`, and try again.
 
-#### Look at HTML response headers
+### Look at HTML response headers
 
 There are several ways to look at response headers, including using a browser [plug-in](https://glossary.magento.com/plug-in) or a browser inspector.
 
@@ -222,6 +222,6 @@ Look for headers like the following:
 	Via: 1.1 varnish-v4
 	X-Magento-Cache-Debug: HIT
 
-#### Next step
+### Next step
 
 [Configure Magento to use Varnish]({{ page.baseurl }}/config-guide/varnish/config-varnish-magento.html)

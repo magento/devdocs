@@ -67,7 +67,7 @@ Alternatively, you can also download a [Magento software archive]({{page.baseurl
 
 You can choose to install the Magento software using either a [web-based Setup Wizard]({{page.baseurl }}/install-gde/install/web/install-web.html) or using the [command line]({{page.baseurl }}/install-gde/install/cli/install-cli.html).
 
-#### Command line installation
+### Command line installation
 
 {% collapsible Click to view the command-line installation %}
 
@@ -104,7 +104,7 @@ Optionally switch to [developer mode]({{page.baseurl }}/config-guide/cli/config-
 
 {% endcollapsible %}
 
-#### Web Setup Wizard
+### Web Setup Wizard
 
 {% collapsible Click to view the Web Setup Wizard installation %}
 

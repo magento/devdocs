@@ -19,7 +19,7 @@ The library is primarily used to handle data from UI components within [DataProv
 | `replace` | Updates the existing nodes and returns the modified array |
 | `set` | Set value into node and returns modified data |
 
-#### Example 1
+### Example 1
 
 The following example shows how to add a custom field to the checkout billing address using the [LayoutProcessor implementation]({{ site.mage2bloburl }}/1f9186c3b9a96c5e642fd5d3d31ac5c7e1877d2b/app/code/Magento/Checkout/Block/Checkout/LayoutProcessor.php#L143){:target="_blank"}.
 
@@ -94,7 +94,7 @@ use Magento\Framework\Stdlib\ArrayManager;
 
 ```
 
-#### Example 2
+### Example 2
 
 Suppose you have the following nested array:
 

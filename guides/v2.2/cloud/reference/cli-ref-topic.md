@@ -46,7 +46,7 @@ The `magento-cloud environment:list` command displays environment hierarchies, w
 
 You may notice that some of these commands are similar to Git commands. The `magento-cloud` Git commands directly connect to the Magento Git-based Cloud project with additional features. For example, when you push a Git branch, it is not activated until you access GitHub. The Magento CLI command includes activation.
 
-#### To push an empty commit and force a redeployment:
+### To push an empty commit and force a redeployment:
 
 ```bash
 git commit --allow-empty -m "redeploy" && git push <BRANCH_NAME>
@@ -54,7 +54,7 @@ git commit --allow-empty -m "redeploy" && git push <BRANCH_NAME>
 
 Some actions, such as adding a user, do not result in deployment.
 
-#### To create a new branch:
+### To create a new branch:
 
 ```bash
 magento-cloud environment:branch <NAME> <PARENT_BRANCH>
@@ -66,13 +66,13 @@ The environment _name_ is different from the environment _ID_ only if you use sp
 
 An environment name _cannot_ include characters reserved for your Linux shell or for regular expressions. Forbidden characters include curly braces (`{ }`), parentheses, asterisk (`*`), angle brackets (`< >`), ampersand (`&`), percent (`%`), and other characters.
 
-#### To check out an existing environment:
+### To check out an existing environment:
 
 ```bash
 magento-cloud environment:checkout <ENVIRONMENT_ID>
 ```
 
-#### To redeploy the environment:
+### To redeploy the environment:
 
 Trigger a redeployment without using a push. You must verify and confirm the environment to redeploy. Do not use redeploy if there is a build in a pending state.
 
@@ -81,25 +81,25 @@ magento-cloud environment:redeploy
 Are you sure you want to redeploy the environment <environment_name>? [Y/n]
 ```
 
-#### To merge changes from environment to parent:
+### To merge changes from environment to parent:
 
 ```bash
 magento-cloud environment:merge -p <PROJECT_ID> -e <ENVIRONMENT_ID>
 ```
 
-#### To synchronize with parent:
+### To synchronize with parent:
 
 ```bash
 magento-cloud environment:synchronize -p <PROJECT_ID> -e <ENVIRONMENT_ID> {code|data}
 ```
 
-#### To list variables for this environment:
+### To list variables for this environment:
 
 ```bash
 magento-cloud variable:list
 ```
 
-#### To set a value for an environment variable:
+### To set a value for an environment variable:
 
 ```bash
 magento-cloud variable:set <VARIABLE_NAME> <VARIABLE_VALUE>
@@ -120,7 +120,7 @@ Command | Description
 `redeploy` | Redeploys the application.
 `web` | Opens a web UI based on the parameters you enter.
 
-#### To see a comprehensive list of commands with descriptions:
+### To see a comprehensive list of commands with descriptions:
 
 ```bash
 magento-cloud list

@@ -540,7 +540,7 @@ Additional configuration information:
 
 *   `<Magento root dir>/setup/performance-toolkit/config/searchTermsLarge.xml`&mdash;Larger number of search terms to use in short and full description.
 
-#### Related topics
+### Related topics
 
 *   [Manage the cache]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cache.html)
 *   [Manage the indexers]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-index.html)

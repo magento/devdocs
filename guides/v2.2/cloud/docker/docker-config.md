@@ -276,7 +276,7 @@ Start containers from a suspended state | `docker-compose start`
 Stop the synchronization daemon | `docker-sync stop`
 Start the synchronization daemon | `docker-sync start`
 
-#### To stop and remove the Docker configuration:
+### To stop and remove the Docker configuration:
 
 Remove all components of your local Docker instance including containers, networks, volumes, and images.
 
@@ -284,7 +284,7 @@ Remove all components of your local Docker instance including containers, networ
 docker-compose down -v
 ```
 
-#### To stop `docker-sync` daemon:
+### To stop `docker-sync` daemon:
 
 ```bash
 docker-sync stop

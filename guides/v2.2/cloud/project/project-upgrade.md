@@ -195,7 +195,7 @@ Exception printing is disabled by default for security reasons.
 ```
 {: .no-copy}
 
-#### To resolve the error:
+### To resolve the error:
 
 1. Using SSH, log in to the remote server and open the `./app/var/report/<error number>` file.
 

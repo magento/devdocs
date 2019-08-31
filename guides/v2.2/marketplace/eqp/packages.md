@@ -328,7 +328,7 @@ Once a package is published to the store, it can have the following field:
   * **technical**—Provides the current technical status.
   * **marketing**—Provides the current marketing status.
 
-###### Overall Status
+##### Overall Status
 
 |Value|Type|Description|
 |-----|----|-----------|
@@ -339,7 +339,7 @@ Once a package is published to the store, it can have the following field:
 |developer_removed_from_store|string|The developer has removed the package from the store.|
 |admin_removed_from_store|string|The EQP admin has removed the package from the store.|
 
-###### Technical Status
+##### Technical Status
 
 |Value|Type|Description|
 |-----|----|-----------|
@@ -351,7 +351,7 @@ Once a package is published to the store, it can have the following field:
 |rejected|string|The package has failed automation or manual tests.|
 |recalled|string|The developer has recalled the package.|
 
-###### Marketing Status
+##### Marketing Status
 
 |Value|Type|Description|
 |-----|----|-----------|

@@ -70,7 +70,7 @@ where
 
 `--none` clears the list.
 
-#### Related topics
+### Related topics
 
 *	[Installing the Magento software using the command line]({{ page.baseurl }}/install-gde/install/cli/install-cli-install.html)
 *	[Remove sample data modules or update sample data]({{ page.baseurl }}/install-gde/install/cli/install-cli-sample-data-other.html)

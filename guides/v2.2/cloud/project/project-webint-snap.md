@@ -21,14 +21,14 @@ We provide two methods for creating and managing snapshots:
 
 ## Create a snapshot {#create-snapshot}
 
-#### To create a snapshot using the Magento Web Interface:
+### To create a snapshot using the Magento Web Interface:
 
 1.  Log in to your project.
 1.  In the left pane, click the name of the environment to back up.
 1.  In the top pane, click ![Take a snapshot of an environment]({{ site.baseurl }}/common/images/cloud_snapshots.png){:width="30px"} (snapshots).
 1.  Click **Create**.
 
-#### To create a snapshot using the Magento CLI:
+### To create a snapshot using the Magento CLI:
 
 1.  Open a terminal and navigate to your {{site.data.var.ece}} project.
 1.  Checkout the environment branch to snapshot.
@@ -68,7 +68,7 @@ We provide two methods for creating and managing snapshots:
 
 ## Restore a snapshot {#restore-snapshot}
 
-#### To restore a snapshot using the Magento Web Interface:
+### To restore a snapshot using the Magento Web Interface:
 
 1.  Log in to your project.
 1.  In the left pane, click the name of the environment to restore.
@@ -76,7 +76,7 @@ We provide two methods for creating and managing snapshots:
 1.  Click **restore** next to the snapshot.
 1.  Review the Snapshot restore date and click **Restore**.
 
-#### To restore a snapshot using the Magento CLI:
+### To restore a snapshot using the Magento CLI:
 
 1.  Open a terminal and navigate to your {{site.data.var.ece}} project.
 1.  Checkout the environment branch to restore.
@@ -114,7 +114,7 @@ We provide two methods for creating and managing snapshots:
 
 You can create a copy of your database using [`magento/ece-tools`]({{ site.baseurl }}/guides/v2.2/cloud/reference/cloud-composer.html#ece-tools).
 
-#### To create a database dump:
+### To create a database dump:
 
 1.  [SSH into the environment]({{ page.baseurl }}/cloud/env/environments-ssh.html) that contains the database you want to copy:
 

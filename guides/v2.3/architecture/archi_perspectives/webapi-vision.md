@@ -10,19 +10,19 @@ There are many headless Magento installations in which a merchant partially uses
 
 See [more details](https://en.wikipedia.org/wiki/Web_API) about the importance of web APIs in modern web applications.
 
-### Components Dependencies
+## Components Dependencies
 
 The following diagram shows Web API component dependencies.
 
 ![Web API components dependencies]({{ site.baseurl }}/common/images/coding-standards/webapi-components-dependencies.png)
 
-### High-level Architecture
+## High-level Architecture
 
 The following image provides an overview of how Web API requests are processed.
 
 ![Web API request processing overview]({{ site.baseurl }}/common/images/coding-standards/webapi-request-processing-high-level-overview.png)
 
-### Extension Scenarios
+## Extension Scenarios
 
 #### Declare a new REST and SOAP endpoint
 

@@ -20,7 +20,7 @@ The database container is based on the [mariadb](https://hub.docker.com/_/mariad
     - `/var/lib/mysql`
     - `./docker/mysql`
 
-#### To import a database dump:
+### To import a database dump:
 
 Place the SQL file into the `.docker/mysql/docker-entrypoint-initdb.d` folder.
 
@@ -39,7 +39,7 @@ The following CLI containers, which are based on a [PHP-CLI version 7 image](htt
     -  The `setup:cron:run` and `cron:update` commands are not available on Cloud and Docker for Cloud environment
     -  Cron only works with the CLI container to run the `./bin/magento cron:run` command
 
-#### To run the `{{site.data.var.ct}}` ideal-state command:
+### To run the `{{site.data.var.ct}}` ideal-state command:
 
 ```bash
 docker-compose run deploy ece-command wizard:ideal-state

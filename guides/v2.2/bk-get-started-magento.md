@@ -34,7 +34,7 @@ For more information, see our [Contributors Guide]({{ page.baseurl }}/extension-
 Feel free to contact the documentation team directly at
 [DL-Magento-Doc-Feedback@magento.com](mailto:DL-Magento-Doc-Feedback@magento.com)
 
-#### Related topics
+### Related topics
 
 *   [Release Notes]({{ page.baseurl }}/release-notes/bk-release-notes.html)
 *   [Architecture Guide]({{ page.baseurl }}/architecture/bk-architecture.html)

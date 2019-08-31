@@ -29,7 +29,7 @@ If you have a Magento installation handy, enter the following to display the cur
 bin/magento list
 ```
 
-#### Format: `group:[subject:]action`
+### Format: `group:[subject:]action`
 
 ### group
 `group` represents a group of related commands. Commands in a group display in a list, which in turn makes it easier for the user to find the desired command. To find a group name for a command, imagine an subject area where it can be used. The subject area can be any of the following:
@@ -167,6 +167,6 @@ To avoid naming your command the same as another command, we recommend:
 		dev:myname:theme:create
 		dev:myname:theme:delete
 
-#### Related topic
+### Related topic
 
 [How to add CLI commands]({{ page.baseurl }}/extension-dev-guide/cli-cmds/cli-howto.html)

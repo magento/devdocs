@@ -40,7 +40,7 @@ Magento added an auto-crons configuration option to all Pro plan projects to sup
 {:.bs-callout-info}
 Although you can use crontab to review configuration on Pro plan projects, Magento does not use crontab to run cron jobs for {{ site.data.var.ee }} sites deployed on the Cloud platform.
 
-#### To review cron configuration on Pro plan environments:
+### To review cron configuration on Pro plan environments:
 
 1. Log in to the Staging or Production environment using [SSH]({{ page.baseurl }}/cloud/env/environments-ssh.html#ssh).
 

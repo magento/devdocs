@@ -79,14 +79,14 @@ You could also create bundles by purpose:  for common features, product-related 
 
 A clean Magento installation allows reaching enough good performance by splitting bundles by page types, but some customizations may require deeper analysis and other asset distributions.
 
-#### Required tools
+### Required tools
 
 The following steps require you to install and have familiarity with the following tools:
 - [nodejs](https://nodejs.org/en/download/)
 - [r.js](http://requirejs.org/docs/optimization.html#download)
 - [PhantomJS](http://phantomjs.org/) (optional)
 
-#### Sample code
+### Sample code
 
 Full versions of the sample code used in this article are available here:
 - [build.js](samples/build.js){:target="_blank"}

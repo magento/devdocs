@@ -222,10 +222,10 @@ If PHP is *not* installed, see one of the following sections:
 
 {% endcollapsible %}
 
-#### Next
+### Next
 [Required PHP settings]({{ page.baseurl }}/install-gde/prereq/php-settings.html)
 
-#### Related topics
+### Related topics
 
 *	[MySQL]({{ page.baseurl }}/install-gde/prereq/mysql.html)
 *	[Apache]({{ page.baseurl }}/install-gde/prereq/apache.html)

@@ -26,7 +26,7 @@ When Magento provisions your {{site.data.var.ece}} project, the Project Owner sh
 
 Also, we recommend adding at least one Admin user to your New Relic account to manage all access, integrations, and usage of the tool. {{site.data.var.ece}} Project Owners and Admin users can add and remove users from the New Relic account.
 
-#### To add a user:
+### To add a user:
 
 1.  Using your Project Owner New Relic credentials, log in to [New Relic](https://login.newrelic.com/login).
 
@@ -62,7 +62,7 @@ For Pro accounts, there is no need to apply the license key to any environments.
 
 The {{site.data.var.ece}} Starter plan supports up to three instances of a New Relic license across all environments. For Starter projects, we recommend adding a New Relic license key to the Staging and Production (master) environments, and you can add the license key to one other environment of your choice. If you have more than three active environments using the same New Relic license key, you need to remove a license variable from an existing environment.
 
-#### To find your New Relic license key:
+### To find your New Relic license key:
 
 1.  Open your [account page](https://accounts.magento.cloud/user/).
 
@@ -74,7 +74,7 @@ The {{site.data.var.ece}} Starter plan supports up to three instances of a New R
 
 1.  Copy the license key.
 
-#### To add a license key to an environment:
+### To add a license key to an environment:
 
 For Starter accounts, you need to use the license key and set a variable in the environment.
 
@@ -91,7 +91,7 @@ For Starter accounts, you need to use the license key and set a variable in the 
 
 1.  Log in to your New Relic account and verify it is receiving data.
 
-#### To remove a license key from an environment:
+### To remove a license key from an environment:
 
 1.  List environment variables.
 

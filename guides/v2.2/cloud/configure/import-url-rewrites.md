@@ -73,7 +73,7 @@ Column | Description
 
 You use the Magento Admin panel to import the URL Rewrites file.
 
-#### To import URL Rewrites:
+### To import URL Rewrites:
 
 1.  On the _Marketing_ menu, click **URL Rewrites** in the _SEO & Search_ section.
 
@@ -100,7 +100,7 @@ If the import is **not** successful, you receive an error message reporting the 
 
 ![Failed URL rewrite]({{site.baseurl}}/common/images/cloud-urlrewrite-failed.png)
 
-#### To research the URL rewrite error:
+### To research the URL rewrite error:
 
 1.  Click **View Details** to see detailed information about the failure.
 

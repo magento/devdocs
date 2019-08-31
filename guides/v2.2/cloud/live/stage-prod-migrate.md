@@ -144,7 +144,7 @@ This command uses the following options:
 
 For additional options, see the [rsync man page](http://linux.die.net/man/1/rsync).
 
-#### To migrate static files from your local machine:
+### To migrate static files from your local machine:
 
 Use the rsync command to copy the `pub/media` directory from your local Magento server to staging or production:
 
@@ -152,7 +152,7 @@ Use the rsync command to copy the `pub/media` directory from your local Magento 
 rsync -azvP local_machine/pub/media/ <environment_ssh_link@ssh.region.magento.cloud>:pub/media/
 ```
 
-#### To migrate static files from remote-to-remote environments directly (fast approach):
+### To migrate static files from remote-to-remote environments directly (fast approach):
 
 {:.bs-callout-info}
 To transfer media from remote-to-remote environments directly, you must enable ssh agent forwarding, see [GitHub guidance](https://developer.github.com/v3/guides/using-ssh-agent-forwarding/).

@@ -192,7 +192,7 @@ To install phpmyadmin on CentOS:
 
 8.	When prompted, log in using your MySQL database `root` or administrative user's username and password.
 
-#### Related topics:
+### Related topics:
 
 *	[Apache]({{page.baseurl }}/install-gde/prereq/apache.html)
 *	[PHP&mdash;Ubuntu]({{page.baseurl }}/install-gde/prereq/php-centos-ubuntu.html#php-for-ubuntu)

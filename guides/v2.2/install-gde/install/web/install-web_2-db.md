@@ -16,5 +16,5 @@ functional_areas:
 
 {% include install/web/install-web_2-db.md %}
 
-#### Next step
+### Next step
 [Step 3. Web configuration]({{ page.baseurl }}/install-gde/install/web/install-web_3-web-conf.html)

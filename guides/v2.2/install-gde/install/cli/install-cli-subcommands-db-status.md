@@ -39,7 +39,7 @@ Exit code  | Description | Suggested action
  1 | Some modules use code versions newer or older than the database | Run [`magento setup:upgrade`]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-db-upgr.html) to update the database schema and run `composer update` from the Magento root directory to update component dependencies |
  2 | setup:upgrade is required | [`magento setup:upgrade`]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-db-upgr.html) to update the [database schema](https://glossary.magento.com/database-schema) |
 
-#### Related topics
+### Related topics
 
 *	[Installing the Magento software using the command line]({{ page.baseurl }}/install-gde/install/cli/install-cli-install.html)
 *	[Remove sample data modules or update sample data]({{ page.baseurl }}/install-gde/install/cli/install-cli-sample-data-other.html)

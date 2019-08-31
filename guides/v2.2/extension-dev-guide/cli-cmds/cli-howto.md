@@ -102,7 +102,7 @@ You can style the output text by using `<error>This is an error message</error>`
 
 To be added at a later time.
 
-#### Related topic
+### Related topic
 
 [Command naming guidelines]({{ page.baseurl }}/extension-dev-guide/cli-cmds/cli-naming-guidelines.html)
 

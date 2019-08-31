@@ -72,7 +72,7 @@ You must be a [project administrator]({{ page.baseurl }}/cloud/project/user-admi
 
 When you delete an environment, the environment is set to _inactive_. The code is still available in the Git branch, but no longer contains the services or the database. To delete the environment completely, you must also delete the corresponding remote Git branch.
 
-#### To delete an environment:
+### To delete an environment:
 
 1.  Open a terminal and navigate to your project.
 
@@ -118,7 +118,7 @@ When you delete an environment, the environment is set to _inactive_. The code i
     ```
     {: .no-copy}
 
-#### To delete more than one environment:
+### To delete more than one environment:
 
 You can delete more than one environment at a time by adding multiple environment IDs to the delete command.
 

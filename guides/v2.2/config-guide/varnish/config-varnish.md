@@ -93,7 +93,7 @@ We know of the following issues with Varnish:
 	      .first_byte_timeout = 600s;
 		}
 
-#### Next step
+### Next step
 [Install Varnish]
 
 <!-- Link Definitions -->

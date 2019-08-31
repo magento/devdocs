@@ -33,7 +33,7 @@ During project provisioning, Magento adds your project to the [Fastly service ac
 
 You need the Fastly credentials to configure Fastly CDN services from the Magento Admin UI and to submit Fastly API requests.
 
-#### To view your Fastly credentials:
+### To view your Fastly credentials:
 
 Use the following methods to find and save the Fastly service ID and API token for your environment:
 
@@ -62,7 +62,7 @@ If you cannot find the Fastly credentials for the Staging or Production environm
 
 - [Fastly credentials](#cloud-fastly-creds) for {{ site.data.var.ece }} Staging and Production environments
 
-#### To enable Fastly CDN caching in Staging and Production:
+### To enable Fastly CDN caching in Staging and Production:
 
 {% include cloud/admin-ui-login-step.md %}
 
@@ -332,7 +332,7 @@ We recommend that you upgrade to the latest version of the Fastly module. See [U
 
 When you upgrade the Fastly module, you get a new version of the default Fastly VCL code that enables the integration with {{ site.data.var.ece }}. You must upload the new VCL code to apply the changes to the Fastly service configuration for your Staging and Production environments.
 
-#### To upgrade the Fastly module
+### To upgrade the Fastly module
 
 1. In your local Integration environment, use the following module information to [upgrade the Fastly module]({{ page.baseurl }}/cloud/howtos/install-components.html#update).
 
