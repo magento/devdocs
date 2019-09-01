@@ -135,13 +135,13 @@ This section shows you how to tell Magento what cache to clear when you change a
 First, your entity [module](https://glossary.magento.com/module) must implement [`Magento/Framework/DataObject/IdentityInterface`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/DataObject/IdentityInterface.php){:target="_blank"} as follows:
 
 ```php
-use Magento\Framework\DataObject\IdentityInterface;
-class Product implements IdentityInterface
+class Product implements \Magento\Framework\DataObject\IdentityInterface
 {
-     /**
-      * Product cache tag
-      */
-     const CACHE_TAG = 'catalog_product';
+    /**
+     * Product cache tag
+     */
+    const CACHE_TAG = 'catalog_product';
+     
     /**
      * Get identities
      *
