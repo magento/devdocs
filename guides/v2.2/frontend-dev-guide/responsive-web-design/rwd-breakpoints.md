@@ -50,6 +50,9 @@ To do this, take the following steps:
 {:.bs-callout .bs-callout-info}
 The `@media-target` option may have one of the following values: `all`, `desktop` or `mobile`.
 
+{: .bs-callout .bs-callout-warning}
+If you use double quotes "you will have problems, for example: & when (@ media-target =" desktop "), (@ media-target =" all ") Correct is to use single quotes, as documented.
+
 Example:
 ```less
 & when (@media-target = 'desktop'), (@media-target = 'all') {
