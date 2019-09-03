@@ -219,23 +219,20 @@ Example: pass the image to the `logo` block.
 
 ## Reference a CMS block {#ref_cms_block}
 
-A CMS Block can be injected into layout by using the [Magento/Cms/Block/Block] class and the `block_id` argument passed. Any `block` or `container` can be used as a reference.
-Please check the below example:
+A CMS block is injected into the layout by using the [Magento/Cms/Block/Block] class with the `block_id` argument. Any `block` or `container` can be used as a reference.
 
 ```xml
 <referenceContainer name="content.bottom">
     <block class="Magento\Cms\Block\Block" name="block_identifier">
         <arguments>
-            <!- Here is the CMS Block id -->
+            <!- CMS Block id -->
             <argument name="block_id" xsi:type="string">my_cms_block_identifier</argument>
         </arguments>
     </block>
 </referenceContainer>
 ```
 
-### Result
-
-As result, we have the CMS block added to the bottom of the page.
+As a result, the CMS block is added to the bottom of the page.
 
 ![CMS Block]({{ site.baseurl }}/common/images/cms-block-reference.png)
 
