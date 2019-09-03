@@ -197,7 +197,7 @@ rm -rf <magento_root>/pub/static/*
 ```
 
 #### To clear the `var/view_preprocessed` directory:
- 
+
 ```bash
 rm -rf <magento_root>/var/view_preprocessed/*
 ```
@@ -258,7 +258,7 @@ Declaring the logo size is optional.
 
 To learn more about theme layouts, refer to the [Layout section]({{page.baseurl}}/frontend-dev-guide/layouts/layout-overview.html) of this guide.
 
-## Troubleshooting {#trouble}  
+## Troubleshooting {#trouble}
 
 When your theme changes are not visible even after clearing the cache, try redeploying your static files using `magento setup:static-content:deploy en_US` (replacing the language/locale as appropriate).
 

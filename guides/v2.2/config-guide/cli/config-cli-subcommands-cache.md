@@ -129,7 +129,6 @@ This command enables you to enable or disable all cache types or only the ones y
 {:.bs-callout .bs-callout-info}
 Starting in version 2.2, you can only enable or disable cache types using the command line while running Magento in production mode. If running Magento in developer mode, you can enable or disable cache types using the command line or manually. Before doing so, you must manually make `<magento_root>/app/etc/env.php` writeable by the [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-system-perms.html). You can clean (also referred to as _flush_ or _refresh_) cache types using either the command line or the [Magento Admin](https://glossary.magento.com/magento-admin).
 
-
 Command options:
 
 ```bash

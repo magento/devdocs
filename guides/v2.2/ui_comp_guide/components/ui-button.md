@@ -25,7 +25,7 @@ The Button component allows user to perform a list of predefined actions by clic
 
 Option | Description | Type | Required |
 --- | --- | --- | --- |
-`targetName` | Reference to component. | String | Required | 
+`targetName` | Reference to component. | String | Required |
 `actionName` | Name of the component's method to be invoked. | String | Required |
 `params` | A list of arguments that will be passed to the method. | Array | Optional |
 

@@ -13,9 +13,9 @@ The Magento_GiftCardRequisitionList module enables gift cards to be displayed in
 
 The Magento_GiftCardRequisitionList module provides the following features:
 
-* Display gift cards in a requisition list. 
+* Display gift cards in a requisition list.
 
-* Add gift cards to cart from a requisition list. 
+* Add gift cards to cart from a requisition list.
 
 ## Installation details
 

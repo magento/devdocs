@@ -136,7 +136,6 @@ To resolve the issue with credentials:
         http://master-aqf7hrijhl52o.us.magentosite.cloud/ is served by application `mymagento`
         https://master-aqf7hrijhl52o.us.magentosite.cloud/ is served by application `mymagento`
 
-
 To aqf7hrijhl52o@git.us.magento.cloud:aqf7hrijhl52o.git
    34afd91..98c2166  master -> master
 ```

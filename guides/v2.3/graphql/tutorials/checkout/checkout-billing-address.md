@@ -20,7 +20,7 @@ You must always set the billing address to place an order.
 Use the [setBillingAddressOnCart]({{ page.baseurl }}/graphql/reference/quote-set-billing-address.html) mutation to set a billing address. You can set the billing address in the following ways:
 
 * Add a new billing address
-* Add a new billing address and set it as the shipping addresses  
+* Add a new billing address and set it as the shipping addresses
 * Use an address from the logged-in customer's address book
 
 ## Add a new billing address
@@ -66,7 +66,6 @@ mutation {
           code
           label
         }
-        address_type
       }
     }
   }
@@ -94,8 +93,7 @@ mutation {
           "country": {
             "code": "US",
             "label": "US"
-          },
-          "address_type": "BILLING"
+          }
         }
       }
     }
@@ -144,7 +142,6 @@ mutation {
           code
           label
         }
-        address_type
       }
       shipping_addresses {
         firstname
@@ -158,7 +155,6 @@ mutation {
           code
           label
         }
-        address_type
       }
     }
   }
@@ -186,8 +182,7 @@ mutation {
           "country": {
             "code": "US",
             "label": "US"
-          },
-          "address_type": "BILLING"
+          }
         },
         "shipping_addresses": [
           {
@@ -204,8 +199,7 @@ mutation {
             "country": {
               "code": "US",
               "label": "US"
-            },
-            "address_type": "SHIPPING"
+            }
           }
         ]
       }
@@ -278,7 +272,6 @@ mutation {
           code
           label
         }
-        address_type
       }
     }
   }
@@ -306,8 +299,7 @@ mutation {
           "country": {
             "code": "US",
             "label": "US"
-          },
-          "address_type": "BILLING"
+          }
         }
       }
     }
@@ -320,5 +312,5 @@ mutation {
 1. Sign in as a customer to the website using the email `john.doe@example.com` and password `b1b2b3l@w+`.
 
 2. Go to Checkout.
- 
+
 3. Go to the Review & Payments step. The Billing Address form is populated with the address details you entered.

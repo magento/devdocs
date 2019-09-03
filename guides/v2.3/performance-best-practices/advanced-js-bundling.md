@@ -61,7 +61,7 @@ To test and prepare your storefront deployment for the real world, we recommend 
 
 At Slow 3G connectivity, it takes about 44 seconds to load all the bundles for the homepage of a clean Magento installation.
 
-The same is true when merging the bundles into a single file. Users could still wait around 42 seconds for the initial page load as shown here: 
+The same is true when merging the bundles into a single file. Users could still wait around 42 seconds for the initial page load as shown here:
 
 ![magentoMergingRealWorld](images/magentoMergingRealWorld.png)
 
@@ -71,9 +71,9 @@ With a more advanced approach to JavaScript bundling, we can improve these load 
 
 Remember, the goal of JavaScript bundling is to reduce the number and size of requested assets for each page loaded in the browser. To do that, we want to build our bundles so that each page in our store will only need to download a common bundle and a page-specific bundle for each page accessed.
 
-One way to achieve this is to define your bundles by page types. You can categorize Magento's pages into several page types, including Category, Product, CMS, Customer, Cart, and Checkout. Each page categorized into one of these page types has a different set of RequireJS module dependencies. When you bundle your RequireJS modules by page type, you will end up with only a handful of bundles that cover the dependencies of any page in your store. 
+One way to achieve this is to define your bundles by page types. You can categorize Magento's pages into several page types, including Category, Product, CMS, Customer, Cart, and Checkout. Each page categorized into one of these page types has a different set of RequireJS module dependencies. When you bundle your RequireJS modules by page type, you will end up with only a handful of bundles that cover the dependencies of any page in your store.
 
-For example, you might end up with a bundle for the dependencies common to all pages, a bundle for CMS-only pages, a bundle for Catalog-only pages, another bundle for Search-only pages, and a bundle for Checkout pages. 
+For example, you might end up with a bundle for the dependencies common to all pages, a bundle for CMS-only pages, a bundle for Catalog-only pages, another bundle for Search-only pages, and a bundle for Checkout pages.
 
 You could also create bundles by purpose:  for common features, product-related features, shipping features, checkout features, taxes, and form validations. How you define your bundles is up to you and the structure of your Magento store. You may find that some bundling strategies will work better than others.
 
@@ -109,12 +109,12 @@ Later, we will change the `optimize:` setting from_ `none` to `uglify2` to minif
 
 #### 2\. Add RequireJS dependencies, shims, paths, and map
 
-Add the following RequireJS build configuration nodes, `deps`, `shim`, `paths`, and `map`, to your build file: 
+Add the following RequireJS build configuration nodes, `deps`, `shim`, `paths`, and `map`, to your build file:
 ```javascript
 ({
     optimize: 'none',
     inlineText: true,
-    
+
     deps: [],
     shim: {},
     paths: {},
@@ -124,7 +124,7 @@ Add the following RequireJS build configuration nodes, `deps`, `shim`, `paths`, 
 
 #### 3\. Aggregate the requirejs-config.js instance values
 
-In this step, you will need to aggregate all of the multiple `deps`, `shim`, `paths`, and `map ` configuration nodes from your store's `requirejs-config.js` file into the corresponding nodes in your `build.js` file. To do this, you can open the **Network** tab in your browser's Developer Tools panel and navigate to any page in your store, such as the homepage. In the Network tab, you will see your store's instance of the `requirejs-config.js` file near the top, highlighted here: 
+In this step, you will need to aggregate all of the multiple `deps`, `shim`, `paths`, and `map` configuration nodes from your store's `requirejs-config.js` file into the corresponding nodes in your `build.js` file. To do this, you can open the **Network** tab in your browser's Developer Tools panel and navigate to any page in your store, such as the homepage. In the Network tab, you will see your store's instance of the `requirejs-config.js` file near the top, highlighted here:
 
 ![RequireJSConfig](images/RequireJSConfig.png)
 
@@ -137,25 +137,25 @@ At the end of the `build.js` file, add the modules[] array as a placeholder for 
 ({
     optimize: 'none',
     inlineText: true,
-    
+
     deps: [],
     shim: {},
     paths: {},
     map: { "*": {} },
-    
+
     modules: [],
 })
 ```
 
 #### 5\. Retrieve RequireJS dependencies
 
-You can retrieve all the RequireJS module dependencies from your store's page types by using: 
+You can retrieve all the RequireJS module dependencies from your store's page types by using:
 1. PhantomJS from the command line (assuming you have PhantomJS installed).
 2. RequireJS command in your browser's console.
 
 #### To use PhantomJS:
 
-In the Magento root directory, create a new file called `deps.js` and copy in the code below. This code uses PhantomJS to open a page and wait for the browser to load all page assets. It then outputs all the RequireJS dependencies for a given page. 
+In the Magento root directory, create a new file called `deps.js` and copy in the code below. This code uses PhantomJS to open a page and wait for the browser to load all page assets. It then outputs all the RequireJS dependencies for a given page.
 ```javascript
 "use strict";
 var page = require('webpage').create(),
@@ -183,7 +183,7 @@ if (system.args.length === 1) {
 ```
 Open a terminal inside the Magento root directory and run the script against each page in your Magento store that represents a specific page type:
 <pre>
-phantomjs deps.js <i>url-to-specific-page</i> > <i>text-file-representing-pagetype-dependencies</i> 
+phantomjs deps.js <i>url-to-specific-page</i> > <i>text-file-representing-pagetype-dependencies</i>
 </pre>
 For example, here are four pages from the Luma themed sample Magento store that represent the four page types we will use to create our four bundles (homepage, category, product, cart):
 ```terminal
@@ -196,7 +196,7 @@ phantomjs deps.js http://m2.loc/checkout/cart/?SID=m2tjdt7ipvep9g0h8pmsgie975 > 
 
 #### To use the browser console:
 
-If you don't want to use PhantomJS, you can run the following command from your browser's console while viewing each page type in your storefront:  
+If you don't want to use PhantomJS, you can run the following command from your browser's console while viewing each page type in your storefront:
 ```shell
 Object.keys(window.require.s.contexts._.defined)
 ```
@@ -243,14 +243,14 @@ This command merges and sorts the dependencies found in the `bundle/*.txt` files
 ...
 ```
 
-This output shows that `buildTools` is a dependency in only one of the bundle/*.txt files. The `jquery/jquery.metadata` dependency is in two (2) files and `es6-collections` is in three (3) files. 
+This output shows that `buildTools` is a dependency in only one of the bundle/*.txt files. The `jquery/jquery.metadata` dependency is in two (2) files and `es6-collections` is in three (3) files.
 
 Our output shows only three page types (homepage, category, and product), which tells us:
 * Three dependencies are unique to only one page type (shown by the number 1).
-* Three more dependencies occur on two page types (shown by the number 2). 
+* Three more dependencies occur on two page types (shown by the number 2).
 * The last three dependencies are common to all three of our page types (shown by the number 3).
 
-This tells us that we can likely improve our store's page-loading speeds by splitting our dependencies into different bundle, once we know which page types need which dependencies. 
+This tells us that we can likely improve our store's page-loading speeds by splitting our dependencies into different bundle, once we know which page types need which dependencies.
 
 #### 8\. Create a dependencies distribution file
 
@@ -321,7 +321,7 @@ Open the `build.js` configuration file and add your bundles to the `modules` nod
         'productSummary',
         'slide'
     ],
-    exclude: [ 
+    exclude: [
         'requirejs/require',
         'bundles/default',
         'mage/bootstrap'
@@ -407,7 +407,7 @@ To get RequireJS to use your bundles, add a `onModuleBundleComplete`callback aft
 [
     {
        //...
-       exclude: [ 
+       exclude: [
            'requirejs/require',
            'bundles/default',
            'bundles/checkout',
@@ -467,7 +467,7 @@ The page load time for an empty homepage is now twice as fast than using native 
 
 Even if gzipped, the JavaScript files are still large. Minify them with RequireJS, which uses uglifier for minifying JavaScript to good result.
 
-To enable the optimizer in your `build.js` file, add `uglify2` as the value for the optimize property at the top of the `build.js` file: 
+To enable the optimizer in your `build.js` file, add `uglify2` as the value for the optimize property at the top of the `build.js` file:
 ```javascript
 ({
     optimize: 'uglify2',

@@ -32,7 +32,7 @@ Plugins can not be used on following:
 
 The <code>di.xml</code> file in your [module](https://glossary.magento.com/module) declares a plugin for a class object:
 
-```xml 
+```xml
 <config>
     <type name="{ObservedType}">
       <plugin name="{pluginName}" type="{PluginClassName}" sortOrder="1" disabled="false" />
@@ -57,11 +57,49 @@ By applying code before, after, or around a public method, a plugin extends or m
 
 The first argument for the before, after, and around methods is an object that provides access to all public methods of the observed method's class.
 
+### Plugin method naming convention
+
+It is a Magento best practice to capitalize the first letter of the class method name for which you want to create a plugin before adding `before`, `around` or `after` prefixes to it.
+
+For example, to create a plugin for the `setName` method of some class:
+
+```php
+...
+    public function setName($name)
+    {
+        ...
+    }
+...
+```
+
+In the plugin class, the `setName` method may have one of the following names:
+- `beforeSetName`
+- `aroundSetName`
+- `afterSetName`
+
+If the first letter in the name of the class method name for which you want to create a plugin is the `underscore` character, then you do not need to capitalize it in the plugin class.
+
+For example, to create a plugin for the `_construct` method of some class:
+
+```php
+...
+    public function _construct()
+    {
+        ...
+    }
+...
+```
+
+Use the following method names for the `_construct` method in the plugin class:
+- `before_construct`
+- `around_construct`
+- `after_construct`
+
 #### Before methods
 
 Magento runs all before methods ahead of the call to an observed method. These methods must have the same name as the observed method with 'before' as the prefix.
 
-You can use before methods to change the arguments of an observed method by returning a modified argument. If there is more than one argument, the method should return an array of those arguments. If the method does not change the argument for the observed method, it should return `null`.
+You can use before methods to change the arguments of an observed method by returning a modified argument. If there is more than one argument, the method should return an array of those arguments. If the method does not change the argument for the observed method, it should return a `null` value.
 
 Below is an example of a before method modifying the `$name` argument before passing it on to the observed `setName` method.
 
@@ -99,7 +137,7 @@ class ProductAttributesUpdater
 }
 ```
 
-After methods have access to all the arguments of their observed methods. When the observed method completes, Magento passes the result and arguments to the next after method that follows. If observed method does not return a result (`@return void`), then it passes `null` to the next after method.
+The after methods have access to all the arguments of their observed methods. When the observed method completes, Magento passes the result and arguments to the next after method that follows. If the observed method does not return a result (`@return void`), then it passes a `null` value to the next after method.
 
 Below is an example of an after method that accepts the `null` result and arguments from the observed `login` method for [`Magento\Backend\Model\Auth`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Backend/Model/Auth.php){:target="_blank"}:
 
@@ -160,7 +198,7 @@ If an argument is optional in the observed method, then the after method should 
 
 #### Around methods
 
-Magento runs the code in around methods before and after their observed methods. Using these methods allow you to override an observed method. Around methods must have the same name as the observed method with 'around' as the prefix.
+Magento runs the code in around methods before and after their observed methods. Using these methods allow you to override an observed method. around methods must have the same name as the observed method with 'around' as the prefix.
 
 {:.bs-callout .bs-callout-warning}
 Avoid using around method plugins when they are not required because they increase stack traces and affect performance.
@@ -184,23 +222,23 @@ class ProductAttributesUpdater
     {
         $someValue = $this->doSmthBeforeProductIsSaved();
         $returnValue = null;
-        
+
         if ($this->canCallProceedCallable($someValue)) {
             $returnValue = $proceed();
         }
-        
+
         if ($returnValue) {
             $this->postProductToFacebook();
         }
-        
+
         return $returnValue;
     }
 }
 ```
 
-When you wrap a method which accepts arguments, your plugin must also accept those arguments and you must forward them when you invoke the <code>proceed</code> callable. You must be careful to match the default parameters and type hints of the original signature of the method.
+When you wrap a method which accepts arguments, your plugin must accept those arguments and you must forward them when you invoke the `proceed` callable. You must be careful to match the default parameters and type hints of the original signature of the method.
 
-For example, the following code defines a parameter of type <code>SomeType</code> which is nullable:
+For example, the following code defines a parameter of type `SomeType`, which is nullable:
 
 ```php
 <?php
@@ -215,7 +253,7 @@ class MyUtility
 }
 ```
 
-You should wrap this method with a plugin like below:
+You should wrap this method with a plugin:
 
 ```php
 <?php
@@ -230,9 +268,9 @@ class MyUtilityUpdater
 }
 ```
 
-Note if you miss <code>= null</code> and Magento calls the original method with <code>null</code>, [PHP](https://glossary.magento.com/php) would throw a fatal error as your plugin does not accept <code>null</code>.
+Note if you miss `= null` and Magento calls the original method with `null`, [PHP](https://glossary.magento.com/php) would throw a fatal error as your plugin does not accept `null`.
 
-You are responsible for forwarding the arguments from the plugin to the <code>proceed</code> callable. If you are not using/modifying the arguments, you could use variadics and argument unpacking to achieve this:
+You are responsible for forwarding the arguments from the plugin to the `proceed` callable. If you are not using/modifying the arguments, you could use variadics and argument unpacking to achieve this:
 
 ```php
 <?php
@@ -250,14 +288,14 @@ class MyUtilityUpdater
 
 ### Prioritizing plugins
 
-The `sortOrder` property for plugins determine when their before, after, or around methods get called when more than one plugins are observing the same method.
+The `sortOrder` property for plugins determines when to call the before, around, or after methods when more than one plugin is observing the same method.
 
 The prioritization rules for ordering plugins:
 
 * Before the execution of the observed method, Magento will execute plugins from lowest to greatest `sortOrder`.
 
   * During each plugin execution, Magento executes the current plugin's before method.
-  * After the before plugin completes execution, the current plugin's around method will wrap and execute the next plugin or observed method.
+  * After the before method completes execution, the current plugin's around method wraps and initiates the next plugin or observed method.
 
 * Following the execution of the observed method, Magento will execute plugins from greatest to lowest `sortOrder`.
 
@@ -266,7 +304,7 @@ The prioritization rules for ordering plugins:
 
 **Example**
 
-Given the following plugins observing the same method with the following properties:
+The table shows the plugins observing the same method with the following properties:
 
 |                          | PluginA          | PluginB                        | PluginC                        | Action           |
 | :----------------------: | :--------------: | :----------------------------: | :----------------------------: | :--------------: |
@@ -278,7 +316,7 @@ Given the following plugins observing the same method with the following propert
 | **after**                | afterDispatch()  | afterDispatch()                | afterDispatch()                |                  |
 | :----------------------: | :--------------: | :----------------------------: | :----------------------------: | :--------------: |
 
-The execution flow will be as follows:
+The execution flows in the following order:
 
   * `PluginA::beforeDispatch()`
   * `PluginB::beforeDispatch()`
@@ -300,7 +338,7 @@ The execution flow will be as follows:
 
 Classes and interfaces that are implementations of or inherit from classes that have plugins will also inherit plugins from the parent class.
 
-Magento uses plugins defined in the global scope when the system is in a specific area (i.e. frontend, backend, etc). You can also extend or override these global plugin configuration via an area's `di.xml`.
+Magento uses plugins defined in the global scope when the system is in a specific area (such as frontend or backend). You can extend or override these global plugin configurations with an area's `di.xml` file.
 
 For example, the developer can disable a global plugin in the [backend](https://glossary.magento.com/backend) area by disabling it in the specific `di.xml` file for the backend area.
 

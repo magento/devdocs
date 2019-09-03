@@ -24,7 +24,7 @@ Use [RFC 2119][rfc2119]{:target="_blank"} to interpret the "must," "must not," "
 ## Naming conventions
 
 * [Widget](https://glossary.magento.com/widget) names must consist of one or more non-abbreviated English word and in camelcase format.
-  
+
  ```javascript
 
 (function($) {
@@ -107,7 +107,7 @@ $.widget('mage.dialog', $.ui.dialog, {
 ## Development standards
 
 * Widgets should comply with the [single responsibility principle][single-responsibility-principle]{:target="_blank"}.
-  
+
   Widgets should not have responsibilities not related to the [entity](https://glossary.magento.com/entity) described by the widget.
 
  ```javascript
@@ -130,7 +130,7 @@ $('selector')
  ```
 
 * Widget properties that modify the widget's behavior must be located in the widget's options to make them configurable and reusable.
-  
+
  ```javascript
 //Declaration of the backend.dialog widget
 $.widget('mage.dialog', {
@@ -202,7 +202,7 @@ $.widget("mage.form," {
   /magento
     dropdown.js
     validation.js
-    dialog.js 
+    dialog.js
 ```
 
 * Place Magento-specific widgets under the `<install dir>/app/code/<namespace>/<module-name>/view/<area-name>/js` directory.
@@ -224,7 +224,7 @@ $.widget("mage.form," {
 ## Architecture
 
 * Use an underscore prefix to declare private widget methods.
-  
+
   Properties without an underscore prefix are accessible using the jQuery Widget factory public API.
 
 ```javascript
@@ -239,14 +239,14 @@ $.widget('mage.accordion', {
 
 * Start a widget's element selection with `this.element`
 * Widgets must not interact with DOM elements selected using `this.element.parent()`, `this.element('selector')`, or `this.element.closest('selector')`.
-  
+
   This reduces the number of widget conflicts because widgets interact only with their child elements.
 * Widget options should have default values.
   Use a `null` value if there is no default value for an option.
 * Pass as widget options all DOM selectors used by that widget.
 * Use the `_setOption` method to process required, immediate state changes.
 * Use the public widget API to call widget methods to allow chaining widget methods.
-  
+
  ```javascript
 // Call the 'open' method on the menu widget using the public widgets API
 $('selector')
@@ -255,12 +255,12 @@ $('selector')
  ```
 
 * Handle widget initialization if there is a logical action to perform on successive calls to the widget with no arguments.
-  
-  The widget factory automatically fires the `_create()` and `_init()` methods during initialization, in that order and prevents multiple instantiations of the same element. 
-  
+
+  The widget factory automatically fires the `_create()` and `_init()` methods during initialization, in that order and prevents multiple instantiations of the same element.
+
   The `_create()` method is called only once for each widget instance and `_init()` is called each time the widget is called without arguments.
 * When a widget is destroyed, the attached element should be left exactly like it was before attachment.
-  
+
   Common tasks for this include:
 
   * Removing or adding any [CSS](https://glossary.magento.com/css) classes the widget added/removed to the element.
@@ -269,7 +269,7 @@ $('selector')
 
 * Bind [event](https://glossary.magento.com/event) handlers using the `_bind()` method to make it easy to find what events the widget reacts on.
 * Bind events using the `on()` method.
-  
+
   Benefits:
 
   * Delegation is supported using selectors in the event names.

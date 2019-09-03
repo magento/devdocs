@@ -27,7 +27,7 @@ Perform the following actions before using the `placeOrder` mutation:
 mutation {
   placeOrder(
     input: {
-      cart_id: "IeTUiU0oCXjm0uRqGCOuhQ2AuQatogjG" 
+      cart_id: "IeTUiU0oCXjm0uRqGCOuhQ2AuQatogjG"
     }
   ) {
     order {
@@ -38,7 +38,6 @@ mutation {
 ```
 
 **Response**
-
 
 ```json
 {
@@ -55,7 +54,6 @@ mutation {
 ## Input attributes
 
 The `placeOrderInput` object must contain the following attribute:
-
 
 Attribute |  Data Type | Description
 --- | --- | ---

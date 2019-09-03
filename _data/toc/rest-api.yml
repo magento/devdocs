@@ -111,6 +111,10 @@ pages:
         url: /rest/tutorials/bulk-configurable-product/config-product-intro.html
         include_versions: ["2.3"]
 
+      - label: Create and manage grouped products
+        class: tutorial
+        url: /rest/tutorials/grouped-product/create-and-manage-grouped-products.html
+
     - label: Modules
       children:
 
@@ -123,6 +127,12 @@ pages:
             - label: Manage prices for multiple products
               url: /rest/modules/catalog-pricing.html
               include_versions: ["2.2", "2.3"]
+        
+        - label: Sales
+          children:
+
+            - label: Refunds
+              url: /rest/modules/sales/refunds.html
 
         - label: Inventory
           include_versions: ["2.3"]

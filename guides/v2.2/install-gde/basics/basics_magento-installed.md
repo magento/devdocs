@@ -31,7 +31,6 @@ Magento Admin:
 
 ![Magento Admin which verifies a successful installation]({{ site.baseurl }}/common/images/install_success_admin.png)
 
-
 Magento storefront:
 
 ![Magento storefront which verifies a successful installation]({{ site.baseurl }}/common/images/install-success_store.png)
