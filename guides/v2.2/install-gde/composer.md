@@ -85,7 +85,6 @@ bin/magento setup:install \
 --db-name=magento \
 --db-user=magento \
 --db-password=magento \
---backend-frontname=admin \
 --admin-firstname=admin \
 --admin-lastname=admin \
 --admin-email=admin@admin.com \
@@ -97,8 +96,8 @@ bin/magento setup:install \
 --use-rewrites=1
 ```
 
-{: .bs-callout-info }
-For `--backend-frontname` we recommend a random URI for security purposes. A random URI is harder for hackers or malicious software to exploit.
+{: .bs-callout-tip }
+You can customize the Admin URI with the `--backend-frontname` option. However, we recommend omitting this option and allowing the installation command to automatically generate a random URI. A random URI is harder for hackers or malicious software to exploit. The URI displays in your console when installation is complete.
 
 {:.bs-callout .bs-callout-tip}
 For a full description of the CLI install options, refer to [Install the Magento software from the command line][].
@@ -107,13 +106,13 @@ For a full description of the CLI install options, refer to [Install the Magento
 
 As an alternative to the CLI, use your browser to navigate to Magento's setup wizard:
 
-```url
+```terminal
 http://<Magento-host-or-IP>/<path-to-magento-root>/setup
 ```
 
 For example: `http://localhost/magento2ee/setup`
 
-{:.bs-callout .bs-callout-warning}
+{:.bs-callout-warning}
 You cannot use the Web Setup Wizard if your docroot is set to the `pub/` directory. See [Modify docroot for security][].
 
 <!-- Link Definitions -->
