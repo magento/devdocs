@@ -20,21 +20,21 @@ The following diagram shows the workflow for placing an order when Braintree Vau
 
 1. The client renders the token information, and the customer selects a payment method.
 
-   When the customer clicks **Place Order**, the PWA uses the [`setPaymentMethodOnCart`]({{page.baseurl}}/graphql/reference/quote-payment-method.html) mutation to set the payment method to `braintree_cc_vault`. The vaulted public hash is passed with other optional properties in the [`braintree_cc_vault`](#braintree_cc_vault-object).
+   When the customer clicks **Place Order**, the PWA uses the [`setPaymentMethodOnCart`]({{page.baseurl}}/graphql/mutations/set-payment-method.html) mutation to set the payment method to `braintree_cc_vault`. The vaulted public hash is passed with other optional properties in the [`braintree_cc_vault`](#braintree_cc_vault-object).
 
 1. Magento returns a `Cart` object.
 
-1. The client runs the [`placeOrder`]({{page.baseurl}}/graphql/reference/quote-place-order.html) mutation.
+2. The client runs the [`placeOrder`]({{page.baseurl}}/graphql/mutations/place-order.html) mutation.
 
-1. Magento sends an authorization request to the gateway.
+3. Magento sends an authorization request to the gateway.
 
-1. The gateway sends the response to Magento.
+4. The gateway sends the response to Magento.
 
-1.  Magento creates an order and sends an order ID in response to the `placeOrder` mutation.
+5.  Magento creates an order and sends an order ID in response to the `placeOrder` mutation.
 
 ## `setPaymentMethodOnCart` mutation
 
-When you set the payment method to Braintree in the [`setPaymentMethodOnCart`]({{page.baseurl}}/graphql/reference/quote-payment-method.html)
+When you set the payment method to Braintree in the [`setPaymentMethodOnCart`]({{page.baseurl}}/graphql/mutations/set-payment-method.html)
 mutation, the `payment_method` object must contain a `braintree_cc_vault` object.
 
 ### braintree_cc_vault object

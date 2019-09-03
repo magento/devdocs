@@ -21,7 +21,7 @@ The following diagram shows the workflow for placing an order when Payflow Pro i
 
 ## Additional Payment information
 
-When you set the payment method to Payflow Pro in the [`setPaymentMethodOnCart`]({{page.baseurl}}/graphql/reference/quote-payment-method.html) mutation, the `payment_method` object must contain a `payflowpro` object and a `CreditCardDetailsInput` object.
+When you set the payment method to Payflow Pro in the [`setPaymentMethodOnCart`]({{page.baseurl}}/graphql/mutations/set-payment-method.html) mutation, the `payment_method` object must contain a `payflowpro` object and a `CreditCardDetailsInput` object.
 
 {% include graphql/payment-methods/payflow-pro-attributes.md %}
 

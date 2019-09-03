@@ -1,6 +1,8 @@
 ---
 group: graphql
 title: setShippingAddressesOnCart mutation
+redirect from:
+  - /guides/v2.3/graphql/reference/quote-set-shipping-address.html
 ---
 
 The `setShippingAddressesOnCart` mutation sets one or more shipping addresses on a specific cart. The shipping address does not need to be specified in the following circumstances:
@@ -109,10 +111,10 @@ The `SetShippingAddressOnCartOutput` object contains the `Cart` object.
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`cart` |[ Cart!](#CartObject) | Describes the contents of the specified shopping cart
+`cart` |[Cart!](#CartObject) | Describes the contents of the specified shopping cart
 
 ### Cart object {#CartObject}
 
 {% include graphql/cart-object.md %}
 
-[Cart query output]({{page.baseurl}}/graphql/reference/quote.html#cart-output) provides more information about the `Cart` object.
+[Cart query output]({{page.baseurl}}/graphql/queries/cart.html#cart-output) provides more information about the `Cart` object.

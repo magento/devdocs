@@ -1,6 +1,8 @@
 ---
 group: graphql
 title: setPaymentMethodOnCart mutation
+redirect from:
+  - /guides/v2.3/graphql/reference/quote-payment-method.html
 ---
 
 The `setPaymentMethodOnCart` mutation defines which payment method to apply to the cart. Magento GraphQL supports the following payment methods:
@@ -103,4 +105,4 @@ Attribute |  Data Type | Description
 
 {% include graphql/cart-object.md %}
 
-[Cart query output]({{page.baseurl}}/graphql/reference/quote.html#cart-output) provides more information about the `Cart` object.
+[Cart query output]({{page.baseurl}}/graphql/queries/cart.html#cart-output) provides more information about the `Cart` object.

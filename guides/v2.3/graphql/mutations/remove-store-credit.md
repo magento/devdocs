@@ -94,4 +94,4 @@ Attribute |  Data Type | Description
 
 {% include graphql/cart-object.md %}
 
-[Cart query output]({{page.baseurl}}/graphql/reference/quote.html#cart-output) provides more information about the `Cart` object.
+[Cart query output]({{page.baseurl}}/graphql/queries/cart.html#cart-output) provides more information about the `Cart` object.
