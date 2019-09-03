@@ -137,6 +137,8 @@ Attribute | Data type | Description
 
 ### Aggregation attributes
 
+Each aggregation within the `aggregations` object is a separate bucket that contains the attribute code and label for each filterable option (such as price, category ID, and custom attributes). It also includes the number of products within the filterable option that match the specified search criteria.
+
 Attribute | Data type | Description
 --- | --- | ---
 `attribute_code` | String! | Attribute code of the filter item
@@ -146,61 +148,35 @@ Attribute | Data type | Description
 
 #### AggregationOption attributes
 
+The `AggregationOption` array contains a list of possible options for the `attribute_code` defined in the aggregation. For example, if the `attribute_code` is `category_id`, the return options could include tops, bottoms, gear, and so on.
+
 Attribute | Data type | Description
 --- | --- | ---
 `count` | Int | The number of items returned by the filter
 `label` | String! | The label of the filter
-`value` | String! | Value of the filter request variable used the query
+`value` | String! | The internal ID representing the value of the option
 
 ### items attributes {#ProductInterface}
 
-The `items` attribute information about each product that match the search criteria. See [ProductInterface]({{page.baseurl}}/graphql/product/product-interface.html) for detailed information about product attributes. 
+The `items` object contains information about each product that match the search criteria. [ProductInterface]({{page.baseurl}}/graphql/product/product-interface.html) describes the possible contents of this object.
 
-## SortFields object
+### sort_fields attributes
 
 The `SortFields` object contains the default value for sort fields as well as all possible sort fields.
 
 Attribute | Type | Description
 --- | --- | ---
 `default` | String | The default sort field
-`options` | `SortField` | An array that contains all the fields you can use for sorting
+`options` | [SortField] | An array that contains all the fields that can be used for sorting
 
-### SortField object
+#### SortField attributes
 
-Attribute | Type | Description
---- | --- | ---
-`label` | String | The attribute's label
-`value` | String | The attribute name or code to use as the sort field
-
-### Website object {#websiteObject}
-
-Use the `Website` attributes to retrieve information about the website's configuration, which includes the website name, website code, and default group ID.
-
-Attribute |  Data Type | Description
---- | --- | ---
-`code` | String | A code assigned to the website to identify it
-`default_group_id` | String | The default group ID that the website has
-`id` | Integer | The ID number assigned to the store
-`name` | String | The website name. Websites use this name to identify it easier.
-`sort_order` | Integer | The attribute to use for sorting websites
-
-### UrlRewrite object {#urlRewriteObject}
-
-The `products` query can request details about the `UrlRewrite` object.
+The `SortField` object contains a list of all the attributes that can be used to sort query results.
 
 Attribute | Type | Description
 --- | --- | ---
-`parameters` | [[`HttpQueryParameter`]](#HttpQueryParameter) | An array of target path parameters
-`url` | String | The request URL
-
-### HTTPQueryParameter object {#HttpQueryParameter}
-
-The `HttpQueryParameter` object provides details about target path parameters.
-
-Attribute | Type | Description
---- | --- | ---
-`name` | String | The parameter name, such as `id`
-`value` | String | The value assigned to the parameter
+`label` | String | The label of a sortable option
+`value` | String | The attribute code of the sort field
 
 ## Sample query
 
@@ -316,7 +292,7 @@ query {
 
 ### Include website information with `products` query results {#inclWebsiteInfoExample}
 
-The [ProductInterface]({{ page.baseurl }}/graphql/queries/products.html#ProductInterface) can include information about the `Website` object.
+The [ProductInterface]({{ page.baseurl }}/graphql/product/product-interface.html) can include information about the `Website` object.
 
 **Request**
 

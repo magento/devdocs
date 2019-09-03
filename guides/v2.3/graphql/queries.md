@@ -143,13 +143,13 @@ A product search query can contain the following components:
 
 ### Specifying full text search keywords
 
+The search element causes Magento to perform a full text search on the specified keywords. (This is the same type of search that is performed from the storefront. If multiple keywords are specified, each keyword is evaluated separately.)
 
+The `search` element is optional, but it can be used with or without filters. Each query must contain a `search` or `filter` element.
 
 ### Specifying filters
 
 The `filter` element defines which search criteria to use to find the desired results. As with a REST call, each filter defines the field to be searched, the condition type, and the search value.
-
-Search filters are logically ANDed unless an `or` statement is specified. The search query can contain unlimited number of nested `or` clauses. However, you cannot perform a logical `or` across two AND clauses, such as (A AND B) OR (X AND Y).
 
 #### Search fields
 
@@ -368,100 +368,6 @@ The following search finds all products that were added after the specified time
   }
 }
 ```
-
-#### Simple Logical OR search
-
-The following example searches for all products whose `sku` begins with the string `24-MB` or whose `name` ends with `Bag`.
-
-``` text
-{
-  products(
-    filter: {
-      or: {
-        sku: {
-          like: "24-MB%"
-        }
-        name: {
-          like: "%Bag"
-        }
-      }
-    }
-    pageSize: 25
-    sort: {
-      price: DESC
-    }
-  )
-  {
-    total_count
-    items {
-      name
-      sku
-      price {
-        regularPrice {
-          amount {
-            value
-            currency
-          }
-        }
-      }
-    }
-    page_info {
-      page_size
-      current_page
-    }
-  }
-}
-```
-
-The query returns 8 items.
-
-#### Logical AND and OR search
-
-This query searches for products that have `name` that ends with `Short` or has a `sku` that indicates the product is a pair of women’s pants (`WP%`). The system performs a logical AND to restrict the results to those that cost from $40 to $49.99.
-
-``` text
-{
-  products(
-    filter: {
-      price: {
-        from: "40" to: "49.99"
-      }
-      or: {
-        name: {
-          like: "%Short"
-        }
-        sku: {
-          like: "WP%"
-        }
-      }
-    }
-    pageSize: 25
-    sort: {
-      price: DESC
-    }
-  )
-  {
-    total_count
-    items {
-      name
-      sku
-      price {
-        regularPrice {
-          amount {
-            value
-          }
-        }
-      }
-    }
-    page_info {
-      page_size
-      current_page
-    }
-  }
-}
-```
-
-The query returns 14 items.
 
 #### Retrieve related products, Up-sells and Cross-sells
 

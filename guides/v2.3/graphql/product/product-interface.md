@@ -65,8 +65,8 @@ Attribute | Data type | Description
 `upsell_products` | [[ProductInterface](#ProductInterface)] | An array of up-sell products
 `url_key` | String | The part of the URL that identifies the product. This attribute is defined in the `CatalogUrlRewriteGraphQl` module
 `url_path` | String | Deprecated. Use `canonical_url` instead
-`url_rewrites` | [[UrlRewrite]](#urlRewriteObject) | A list of URL rewrites. See [UrlRewrite object](#urlRewriteObject) for more information and an [example query](#urlRewriteExample)
-`websites` | [Website] | An array of websites in which the product is available. See [Website object](#websiteObject) for more information and an [example query](#inclWebsiteInfoExample)
+`url_rewrites` | [[UrlRewrite]](#urlRewriteObject) | A list of URL rewrites
+`websites` | [[Website]](#websiteObject) | An array of websites in which the product is available
 
 ### ProductPrices object {#ProductPrices}
 
@@ -190,6 +190,37 @@ Attribute | Type | Description
 `value` | Float | The price of the fixed price item
 `website_id` | Int | The ID assigned to the website
 
+### Website object {#websiteObject}
+
+Use the `Website` attributes to retrieve information about the website's configuration, which includes the website name, website code, and default group ID. The `Website` object is defined in the StoreGraphQl module.
+
+Attribute |  Data Type | Description
+--- | --- | ---
+`code` | String | A code assigned to the website to identify it
+`default_group_id` | String | The default group ID that the website has
+`id` | Integer | The ID number assigned to the store
+`is_default` | Boolean | Indicates whether this is the default website
+`name` | String | The website name. Websites use this name to identify it easier
+`sort_order` | Integer | The attribute to use for sorting websites
+
+### UrlRewrite object {#urlRewriteObject}
+
+The `products` query can request details about the `UrlRewrite` object. This object is defined in the UrlRewriteGraphQl module.
+
+Attribute | Type | Description
+--- | --- | ---
+`parameters` | [[`HttpQueryParameter`]](#HttpQueryParameter) | An array of target path parameters
+`url` | String | The request URL
+
+### HTTPQueryParameter object {#HttpQueryParameter}
+
+The `HttpQueryParameter` object provides details about target path parameters.
+
+Attribute | Type | Description
+--- | --- | ---
+`name` | String | The parameter name, such as `id`
+`value` | String | The value assigned to the parameter
+
 ## PhysicalProductInterface {#PhysicalProductInterface}
 
 `PhysicalProductInterface`defines the weight of all tangible products.
@@ -197,4 +228,3 @@ Attribute | Type | Description
 Attribute | Type | Description
 --- | --- | ---
 `weight` | Float | The weight of the item, in units defined by the store
-
