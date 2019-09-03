@@ -94,9 +94,9 @@ public function __construct(CallResult\ProxyDeferredFactory $callResultFactory)
 {
     $this->proxyDeferredFactory = $callResultFactory;
 }
- 
+
 ....
- 
+
 public function doARemoteCall(string $uniqueValue): CallResult
 {
     //Async HTTP request, get() will return a CallResult instance.
