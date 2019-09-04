@@ -4,6 +4,10 @@ title: Introduction to the Functional Testing Framework
 landing-page: Functional Testing Framework Guide
 ---
 
+{: .bs-callout-info}
+The Magento Testing Framework (MTF) is superseded by the Magento Functional Testing Framework ([MFTF][]).
+While the MTF is still functional, all MTF tests are being ported over to the MFTF. We recommend using the MFTF for testing.
+
 This guide provides instructions on installing and configuring the Functional Testing Framework (FTF). Using the FTF, you can create and run *functional* tests to make it easier to perform basic acceptance testing, smoke testing, regression testing, and so on.
 
 FTF is an open source cross-platform solution (that is, does not depend on a specific operating system).
@@ -12,7 +16,7 @@ FTF enables you to quickly develop functional tests for the Magento application.
 
 You can run a single test independently, many tests together (that is, a test suite), or you can run all available tests.
 
-FTF does not contain tests. All functional tests are located in `<magento2 root dir>/dev/tests/functional/`. 
+FTF does not contain tests. All functional tests are located in `<magento2 root dir>/dev/tests/functional/`.
 
 ### What tools should I use to run tests with FTF? {#mtf_intro_extratools}
 
@@ -83,6 +87,6 @@ For other tests please see the following topics:
 Follow the FTF project and contribute on GitHub
 <https://github.com/magento/mtf>.
 
-
 [Selenium Standalone Server]: http://www.seleniumhq.org/download/
 [PHPUnit]: https://phpunit.de/
+[MFTF]: https://devdocs.magento.com/mftf/docs/introduction.html

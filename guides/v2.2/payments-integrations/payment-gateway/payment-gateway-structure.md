@@ -23,6 +23,3 @@ Each component from this scheme is described in the corresponding topic:
 * [Response Validator]({{ page.baseurl }}/payments-integrations/payment-gateway/response-validator.html)
 * [Response Handler]({{ page.baseurl }}/payments-integrations/payment-gateway/response-handler.html)
 
-
-
-

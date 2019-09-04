@@ -15,7 +15,7 @@ contributor_link: https://www.atwix.com/
 ---
 
 GraphQL supports [two types of product]({{ page.baseurl }}/graphql/reference/product-interface-implementations.html) which can be added into shopping cart:
- 
+
  * simple product
  * virtual product
 
@@ -31,7 +31,7 @@ The following mutation adds a **simple product** into shopping cart.
 **Request**
 
 ```text
-mutation {  
+mutation {
   addSimpleProductsToCart(
     input: {
       cart_id: "{ CART_ID }"
@@ -89,7 +89,7 @@ The following mutation adds a **virtual product** into shopping cart.
 **Request**
 
 ```text
-mutation {  
+mutation {
   addVirtualProductsToCart(
     input: {
       cart_id: "{ CART_ID }"

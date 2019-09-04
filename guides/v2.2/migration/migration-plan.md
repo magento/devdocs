@@ -113,7 +113,6 @@ Now that your Magento 2 site is up-to-date with Magento 1 and is functioning nor
 
 8. Magento 2 store is now ready to use. You and your customers can resume all activities.
 
-
 <!-- LINK ADDRESSES -->
 [Magento system requirements]: {{ page.baseurl }}/install-gde/system-requirements-tech.html
 [Magento Marketplace]: https://marketplace.magento.com

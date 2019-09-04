@@ -33,7 +33,7 @@ Content should be gender neutral. To avoid “his” or “her” pronouns, chan
 <ul style="list-style-type:none">
   <li><strong>No</strong> – "A merchant can update his extensions."</li>
   <li>Yes – "Merchants can update their extensions."</li>
-</ul>  
+</ul>
 <br>
 
 **Follow accessibility and readability standards.**
@@ -84,7 +84,7 @@ When introducing a term that may be unfamiliar to merchants, apply a glossary te
 <ul style="list-style-type:none">
   <li><strong>No</strong> – “This SaaS feature is only available in Magento Commerce.”</li>
   <li>Yes – “This [software as a service](https://glossary.magento.com/software-as-a-service) (SaaS) feature is only available in Magento Commerce.”</li>
-</ul>  
+</ul>
 <br>
 
 **Empower the merchant with positive tone and sentence structure.**
@@ -96,7 +96,7 @@ Avoid negative sentence constructions using words like "no", "never", "don't" to
 <ul style="list-style-type:none">
   <li><strong>No</strong> – Don’t use negative sentence construction.</li>
   <li>Yes – Use positive, instead of negative, sentence construction.</li>
-</ul>  
+</ul>
 <br>
 
 **Use active voice.**
@@ -112,7 +112,7 @@ Use the "zombie test" – if you can put the words “by zombies” after a subj
 <ul style="list-style-type:none">
   <li><strong>No</strong> – “The store address is used to calculate ...”</li>
   <li>Yes – “The system uses the store address to calculate ...”</li>
-</ul>  
+</ul>
 <br>
 
 **Write in present tense.**
@@ -128,7 +128,7 @@ Use future tense only to emphasize that something, from the user’s perspective
 <ul style="list-style-type:none">
   <li><strong>No</strong> – A customer will receive an email confirmation after purchase.</li>
   <li>Yes – A customer receives an email confirmation after purchase.</li>
-</ul>  
+</ul>
 <br>
 
 **Avoid personal pronouns.**
@@ -149,7 +149,7 @@ Most websites have eliminated personal pronouns because using pronouns like “y
 <ul style="list-style-type:none">
   <li><strong>No</strong> – We will send a confirmation, and you will receive it in 2-3 days.</li>
   <li>Yes – You will receive a confirmation in 2-3 days.</li>
-</ul>  
+</ul>
 <br>
 
 **Use consistent labels in user-interface (UI) content.**
@@ -164,7 +164,7 @@ Consistency is critical. For example, wherever content is displayed in [Data Tab
 <ul style="list-style-type:none">
   <li>Yes – “Continue” button in “Catalog” pages</li>
   <li>Yes – “Continue” button in “Reports” pages</li>
-</ul>  
+</ul>
 
 *Incorrect example of button-label consistency, in a task flow:*
 
@@ -188,6 +188,6 @@ Take a neutral tone – don’t blame a merchant or in any way indicate that the
 <ul style="list-style-type:none">
   <li><strong>No</strong> – “You didn’t enter your email address.”</li>
   <li>Yes – “An email address is required. Enter the email address and click “Continue”.”</li>
-</ul>  
+</ul>
 
 *For more details,* see [Errors and Messages Writing standards]({{ page.baseurl }}/design-styleguide/errors-and-messages/errors-and-messages.html).

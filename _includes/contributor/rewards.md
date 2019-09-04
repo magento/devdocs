@@ -31,7 +31,6 @@ Improvement| 10 | Contribution contains code improvements, refactoring, or a bug
 Port | 5 | Contribution ports an existing solution between release lines. The author of the original PR receives an additional **5 points** when another person contributes the ported Pull Request.
 Code Cleanup | 1 | Contribution contains code cleanup such as typos, inline documentation, coding style, remove unused code, minor style/design fixes, and so on.
 
-
 ### Additional achievements
 {:.no_toc}
 
@@ -47,7 +46,6 @@ MFTF test coverage| 10 | Contribution contains MFTF tests
 Bug fix | 10 | Contribution fixes one or more known issues from GitHub
 Author of Ported Issue | 5 | Additional points for a contribution that ports (up or back port) a previous PR across release lines by another contributor
 Issue Triage | 3 | Public issue report is verified and confirmed
-
 
 ## DevDocs awards and points
 
@@ -68,7 +66,6 @@ Achievement | Points | Description
 Improvement | 10 | Contribution contains document improvements, adding missing features of inconsistency between code base and documentation, and so on.
 Editorial | 1 | Contribution contains fixes only for typos, grammatical inconsistencies, or minor rewrites to correct inaccuracies.
 
-
 ### Additional achievements
 {:.no_toc}
 
@@ -76,7 +73,8 @@ Each PR can earn one of the following additional achievements. If you entered an
 
 Achievement | Points | Description
 | ------------ | --- | --- |
-New topic | 30 | New file submissions for content that has never existed on devdocs
-Major update | 20 | Significant updates to existing content, such as a new section or example
-Technical | 10 | Updates to code or processes that alter the technical content of the document
+New topic | 30 | New topic submissions for content that has never existed in DevDocs, such as tutorials, references, instructions, and other relevant content
+Major update | 20 | Significant updates to existing content
+Technical | 10 | Updates to code or processes that alter the technical content of the document, such as code snippets, reference documentation, parameter names and values, and other relevant content
 
+If the PR earns recognition for significant updates and additions to the documentation, it may also receive a Special Achievement label, which garners an additional 20 points.

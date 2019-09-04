@@ -53,9 +53,9 @@ You can clean generated static view files in any of the following ways:
     ```bash
     rm -rf pub/static/*
     ```
-    
+
     To clear the `var/view_preprocessed`, enter the following command:
-    
+
     ```bash
     rm -rf var/view_preprocessed/*
     ```

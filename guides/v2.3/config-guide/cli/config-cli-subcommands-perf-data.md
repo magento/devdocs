@@ -126,7 +126,7 @@ For example, `/var/www/html/magento2/setup/performance-toolkit/profiles/ce`
             <td><p>20</p></td>
             <td><p>20</p></td>
             <td><p>20</p></td>
-            <td><p>20</p></td>		
+            <td><p>20</p></td>
         </tr>
         <tr>
             <td><p>cart_price_rules_floor</p></td>
@@ -134,7 +134,7 @@ For example, `/var/www/html/magento2/setup/performance-toolkit/profiles/ce`
             <td><p>2</p></td>
             <td><p>2</p></td>
             <td><p>2</p></td>
-            <td><p>2</p></td>		
+            <td><p>2</p></td>
         </tr>
         <tr>
             <td><p>customers</p></td>
@@ -142,7 +142,7 @@ For example, `/var/www/html/magento2/setup/performance-toolkit/profiles/ce`
             <td><p>2,000</p></td>
             <td><p>2,000</p></td>
             <td><p>5,000</p></td>
-            <td><p>10,000</p></td>		
+            <td><p>10,000</p></td>
         </tr>
         <tr>
             <td><p>tax rates</p></td>
@@ -150,7 +150,7 @@ For example, `/var/www/html/magento2/setup/performance-toolkit/profiles/ce`
             <td><p>40,000</p></td>
             <td><p>40,000</p></td>
             <td><p>40,000</p></td>
-            <td><p>40,000</p></td>		
+            <td><p>40,000</p></td>
         </tr>
         <tr>
             <td><p>orders</p></td>
@@ -158,7 +158,7 @@ For example, `/var/www/html/magento2/setup/performance-toolkit/profiles/ce`
             <td><p>50,000</p></td>
             <td><p>50,000</p></td>
             <td><p>100,000</p></td>
-            <td><p>150,000</p></td>		
+            <td><p>150,000</p></td>
         </tr>
 	</tbody>
 </table>
@@ -317,7 +317,7 @@ Generates Configurable products. Generated configurable options are not displaye
 
 We support the following XML node formats:
 
-*   Distribution per Default and pre-defined attribute sets:   
+*   Distribution per Default and pre-defined attribute sets:
 
     <pre class="no-copy">&lt;!-- Number of configurable products -->
     &lt;configurable_products>{int}&lt;/configurable_products></pre>
@@ -522,7 +522,7 @@ Generates tax rates. XML profile node:
 <pre class="no-copy">&lt;!-- Accepts name of [csv](https://glossary.magento.com/csv) file with tax rates (&lt;path to magento folder>/setup/src/Magento/Setup/Fixtures/_files) -->
 &lt;tax_rates_file>{csv file name}&lt;/tax_rates_file></pre>
 
-## Additional information    
+## Additional information
 
 Additional configuration information:
 

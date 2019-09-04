@@ -50,7 +50,6 @@ Now create two files:
 
 {% endcollapsible %}
 
-
 `app/code/Learning/Js/etc/module.xml`
 
 {% collapsible Show source code  %}

@@ -78,6 +78,9 @@ For example, the following command starts the Docker configuration generator for
     echo "127.0.0.1 magento2.docker" | sudo tee -a /etc/hosts
     ```
 
+    {: .bs-callout-tip }
+To change the `magento2.docker` hostname for your project, you must update the host in three files: `.docker/config.php`, `docker-compose.yml`, and `/etc/hosts`
+
 1.  Stop the default Apache instance on Mac OS.
 
     Because Mac OS provides built-in Apache service, and may occupy port `80`, you must stop the service with the following command:
@@ -167,6 +170,11 @@ Continue launching your Docker environment in the default _production_ mode.
     ```bash
     docker-compose run deploy magento-command cache:clean
     ```
+1. _Optional_: Restart services if the static content does not synchronize with all images after generation on build phase.
+
+    ```bash
+    docker-compose restart
+    ```
 
 1.  [Access the Magento instance](#access-magento-instance).
 
@@ -176,7 +184,6 @@ Continue launching your Docker environment in the _developer_ mode. The develope
 
 {: .bs-callout-info }
 The `{{site.data.var.ct}}` version 2002.0.18 and later supports developer mode.
-
 
 1.  Install the `docker-sync` tool using the [Installation instructions](https://docker-sync.readthedocs.io/en/latest/getting-started/installation.html). If you have it installed, continue to the next step.
 
@@ -204,7 +211,7 @@ The `{{site.data.var.ct}}` version 2002.0.18 and later supports developer mode.
 
 1.  _Optional_: Configure the Docker global variables in the `docker-compose.yml` file. For example, you can [enable and configure Xdebug]({{ page.baseurl }}/cloud/docker/docker-development-debug.html).
 
-1.  Start the file synchronization.
+1.  Start the file synchronization (use one of the following).
 
     For the `docker-sync` tool:
 
@@ -215,7 +222,7 @@ The `{{site.data.var.ct}}` version 2002.0.18 and later supports developer mode.
     For the `mutagen` tool:
 
     ```bash
-    bash ./mutagen.sh 
+    bash ./mutagen.sh
     ```
 
 1.  Build files to containers and run in the background.

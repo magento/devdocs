@@ -9,7 +9,7 @@ functional_areas:
 
 #### Contents
 
-*	[Overview of the Varnish solution]  
+*	[Overview of the Varnish solution]
 *	[Varnish topology diagram]
 *	[Process overview]
 *	[Known issues]
@@ -64,7 +64,7 @@ The process can be summarized as follows:
 
 	If there is nothing in your `<magento_root>/var/page_cache` directory, you've successfully configured Varnish with Magento!
 
-{:.bs-callout .bs-callout-info #info}
+{:.bs-callout .bs-callout-info }
 * Except where noted, you must enter all commands discussed in this topic as a user with `root` privileges.
 * This topic is written for Varnish on CentOS and Apache 2.2. If you're setting up Varnish in a different environment, some commands are likely different. Consult Varnish documentation for more information.
 
@@ -124,7 +124,6 @@ We know of the following issues with Varnish:
 [Varnish does not support SSL]: https://www.varnish-cache.org/docs/3.0/phk/ssl.html
 
 [SSL termination proxy]: https://en.wikipedia.org/wiki/TLS_termination_proxy
-
 
 <!-- image Definitions -->
 [Basic Varnish diagram]: {{ site.baseurl }}/common/images/varnish_basic.png

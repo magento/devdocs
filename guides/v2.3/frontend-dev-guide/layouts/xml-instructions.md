@@ -26,6 +26,7 @@ Use these [layout instructions](https://glossary.magento.com/layout-instructions
 - Move a page element to another parent element.
 - Add content.
 - Remove a page element.
+- Arrange the element position.
 
 The basic set of instructions is the same for all types of layout files. This topic describes these basic instructions. For details about how they are used in a particular layout file type, please refer to the [Layout file types] topic.
 
@@ -42,7 +43,7 @@ Use the following layout instructions to customize your layout:
 - [`<remove>`](#fedg_layout_xml-instruc_ex_rmv)
 - [`<update>`](#fedg_layout_xml-instruc_ex_upd)
 - [`<argument>`](#argument)
-- [`<block vs container>`](#block_vs_container)
+- [`<block> vs <container>`](#block_vs_container)
 
 ### block {#fedg_layout_xml-instruc_ex_block}
 

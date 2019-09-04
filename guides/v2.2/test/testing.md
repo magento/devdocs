@@ -67,19 +67,19 @@ Until the porting to MFTF is finished, the FTF can still be run to ensure comple
 The Web [API](https://glossary.magento.com/api) testing framework enables you to test the Magento [Web API](https://glossary.magento.com/web-api) from the client application point of view.
 
 For more information, see the [Web API functional testing][].
-  
+
 ## Integration
 
 Integration tests run Magento [PHP](https://glossary.magento.com/php) code in varying degrees of isolation. They tend to be a lot more low-level then functional tests. Because they do not utilize a browser to execute the tests, they can be a lot more granular in what they test. They also tend to run a lot quicker then functional tests.
 
 For more information, see [Running Integration Tests][].
-  
+
 ## JavaScript
 
-Much of the functionality in Magento 2 is provided with the help of sophisticated [JavaScript](https://glossary.magento.com/javascript). JavaScript tests ensure the [frontend](https://glossary.magento.com/frontend) portion of Magento functions as expected.  
+Much of the functionality in Magento 2 is provided with the help of sophisticated [JavaScript](https://glossary.magento.com/javascript). JavaScript tests ensure the [frontend](https://glossary.magento.com/frontend) portion of Magento functions as expected.
 
 For more information, please see the [Extension Developer Guide on JavaScript Tests][].
-  
+
 ## Static
 
 Static code analysis checks that PHP code follows the Magento 2 coding standards and best practices.
@@ -89,14 +89,14 @@ Please see the [`magento dev:tests:run`][] documentation for more information, u
 
 ## Unit
 
-Unit tests are used to check a single unit of PHP code in isolation. They are usually written during development using [test-driven development][] (TDD).  
+Unit tests are used to check a single unit of PHP code in isolation. They are usually written during development using [test-driven development][] (TDD).
 
-Because they do not require the full Magento application stack to be initialized, they run an order of magnitude faster then integration tests.  
+Because they do not require the full Magento application stack to be initialized, they run an order of magnitude faster then integration tests.
 
 For more information, see [Running Unit Tests][].
 
 Please refer to the article [Writing testable code][] for more information on what to keep in mind when starting with TDD.
-  
+
 The `bin/magento` tool provides a common entry point to execute any of the tests, which can be useful for continuous integration.
 Please see the [System Administrators Guide on Running Tests][] for more information.
 
@@ -108,13 +108,13 @@ Each test type described above corresponds to a subdirectory in `<magento2 root 
 <repo_root>
     <dev/tests/>
         acceptance      (since v2.2.4)
-        api-functional  
-        functional  
-        integration  
+        api-functional
+        functional
+        integration
         js/jasmine
-        setup-integration  
-        static  
-        unit  
+        setup-integration
+        static
+        unit
 ```
 
 Each of these test types must satisfy different requirements before the MFTF can execute them.
@@ -138,15 +138,15 @@ MFTF tests are kept within its respective Module folder:
 ```
 
 <!-- Link Definitions -->
-[Magento definition of done]: https://devdocs.magento.com/guides/v2.3/contributor-guide/contributing_dod.html
-[Functional]: https://devdocs.magento.com/guides/v2.3/mtf/mtf_introduction.html
-[Web API Functional]: https://devdocs.magento.com/guides/v2.3/get-started/web-api-functional-testing.html
-[Integration]: https://devdocs.magento.com/guides/v2.3/test/integration/integration_test_execution.html
-[performance toolkit]: https://devdocs.magento.com/guides/v2.3/config-guide/cli/config-cli-subcommands-perf-data.html
-[JavaScript]: https://devdocs.magento.com/guides/v2.3/test/js/jasmine.html
-[PhpCs]: https://devdocs.magento.com/guides/v2.3/coding-standards/code-standard-php.html
+[Magento definition of done]: {{ page.baseurl }}/contributor-guide/contributing_dod.html
+[Functional]: {{ page.baseurl }}/mtf/mtf_introduction.html
+[Web API Functional]: {{ page.baseurl }}/get-started/web-api-functional-testing.html
+[Integration]: {{ page.baseurl }}/test/integration/integration_test_execution.html
+[performance toolkit]: {{ page.baseurl }}/config-guide/cli/config-cli-subcommands-perf-data.html
+[JavaScript]: {{ page.baseurl }}/test/js/jasmine.html
+[PhpCs]: {{ page.baseurl }}/coding-standards/code-standard-php.html
 [PhpMd]: https://phpmd.org/
-[Magento backward compatibility policy]: https://devdocs.magento.com/guides/v2.3/contributor-guide/backward-compatible-development/
+[Magento backward compatibility policy]: {{ page.baseurl }}/contributor-guide/backward-compatible-development/
 [Functional Testing Framework]: {{ page.baseurl }}/mtf/mtf_introduction.html
 [Magento Functional Testing Framework]: {{ site.baseurl }}/mftf/docs/introduction.html
 [Web API functional testing]: {{ page.baseurl }}/get-started/web-api-functional-testing.html

@@ -43,6 +43,18 @@ functional_areas:
 
 1. [Verify the relationships]({{page.baseurl}}/cloud/project/project-conf-files_services.html#service-relationships) and configure Elasticsearch in the Admin UI.
 
+1. Reindex the Catalog Search index.
+
+    ```bash
+    bin/magento indexer:reindex catalogsearch_fulltext
+    ```
+
+1. Clean the cache.
+
+    ```bash
+    bin/magento cache:clean
+    ```
+
 ### Add Elasticsearch plugins
 
 Optionally, you can add plugins with the `.magento/services.yaml` file. For example, to enable the ICU analysis plugin and Python script support plugin, add the `configuration:plugins` section with the listed plugin codes:
@@ -79,6 +91,9 @@ See [Elasticsearch plugin documentation](https://www.elastic.co/guide/en/elastic
 
 {:.bs-callout-info}
 If you use the ElasticSuite third-party plugin, you must [update the `{{site.data.var.ct}}` package]({{page.baseurl}}/cloud/project/ece-tools-update.html) to version 2002.0.19 or later.
+
+{: .bs-callout-info }
+If you need to restart the [Elasticsearch](https://www.elastic.co) service, you must contact Magento support.
 
 {: .bs-callout-warning}
 Staging and Production environments that are in the same cluster share a single Elasticsearch instance, so you must specify a unique Elasticsearch prefix for each of these environments.

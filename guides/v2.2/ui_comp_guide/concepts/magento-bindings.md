@@ -34,7 +34,7 @@ or
 </div>
 ```
 
-If you use the Magento syntax, the Magento wrapper replaces the Magento syntax with the matching Knockout comments or `data-bind` attributes during the loading of the HTML template. 
+If you use the Magento syntax, the Magento wrapper replaces the Magento syntax with the matching Knockout comments or `data-bind` attributes during the loading of the HTML template.
 
 ## Binding map
 
@@ -62,7 +62,7 @@ The table below shows examples of how the Knockout bindings map to their Magento
 |html           |`<div data-bind="html: '<span/>'"> </div>`                                     | `<div html="'<span/>'"> </div>`                                       |
 |click          |`<div data-bind="click: onClick"> </div>`                                      | `<div click="onClick"> </div>`                                        |
 |event          |`<div data-bind="event: {mouseover: showEl}"> </div>`                          | `<div event="mouseover: showEl"> </div>`                              |
-|template       |`<div data-bind="template: templateUrl"> </div>`                               | `<div template="templateUrl"> </div>`                                 |
+|template       |`<div data-bind="template: {name: 'templateUrl', data: {}}"> </div>`                               | `<div template=" {name: 'templateUrl', data: {}}" ></div>`                                 |
 |submit         |`<form data-bind="submit: onSubmit"> </form>`                                  | `<form submit="onSubmit"> </form>`                                    |
 |options        |`<select data-bind="options: optionsList"> </select>`                          | `<select options="optionsList"> </select>`                            |
 |selectedOptions|`<select data-bind="options: optionsList, selectedOptions: value"> </select>`  | `<select options="optionsList" selectedOptions="value"> </select>`    |

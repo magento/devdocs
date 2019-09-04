@@ -7,29 +7,29 @@ redirect_from: /guides/v2.2/javascript-dev-guide/javascript/requirejs_concept.ht
 
 ## Overview {#m2devgde-js-resources-intro}
 
-This topic describes the general concepts of how [JavaScript](https://glossary.magento.com/javascript) components are organized in Magento.
+This topic describes general concepts of how [JavaScript](https://glossary.magento.com/javascript) (JS) components are organized in Magento.
 
-To address the problem of slow page load, we exclude JavaScript from the page headers and we added the ability to use the [RequireJS library](http://requirejs.org){: target="_blank"}.
+To address the problem of slow page loads, we exclude JavaScript from the page headers and we added the ability to use the [RequireJS library](http://requirejs.org){: target="_blank"}.
 
-RequireJS improves the perceived page load time because it allows JavaScript to load in the background; in particular, because it enables asynchronous JavaScript loading.
+RequireJS improves the perceived page load time because it allows JavaScript to load in the background; in particular, it enables asynchronous JavaScript loading.
 
 ## Explore JavaScript resources {#m2devgde-js-resources-configuring}
 
 ### JS resources location
 
-In Magento, you can find the JS components on the following levels:
+In Magento, you can find Javascript components on the following levels:
 
-*   [Library](https://glossary.magento.com/library) level (`lib/web`). Resources located here are available in any place in Magento.
+*   [Library](https://glossary.magento.com/library) level (`lib/web`). Resources located here are available in any place within Magento.
 *	Module level (`<module_dir>/view/<areaname>/web`). If the [module](https://glossary.magento.com/module) is enabled, resources added here are available in other modules and themes.
 *	Theme level, for a particular module (`<theme_dir>/<VendorName>_<ModuleName>/web`). Resources added here are available for [inheriting] themes.
 *	Theme level  (`<theme_dir>/web`). Resources added here are available for [inheriting] themes.
 
 {:.bs-callout .bs-callout-info}
-Library level can only contain core Magento resources. Do not put custom JS files in the \`lib/web\` directory.
+The library level can only contain core Magento resources. Do not put custom JS files in the \`lib/web\` directory.
 
 ### Specifying JS
 
-We recommend specifying JavaScript resources in the templates rather than in the [layout](https://glossary.magento.com/layout) updates, to ensure processing of the resources in body of a page.
+We recommend specifying JavaScript resources in the templates rather than in the [layout](https://glossary.magento.com/layout) updates, to ensure that the resources are available for body of a page.
 
 ## Accessing JS resources
 
@@ -37,44 +37,41 @@ JS resources are accessed using relative paths.
 
 **Example 1**
 
-- File actual location: `app/code/Magento/ConfigurableProduct/view/frontend/web/js/configurable.js`
-- File published to `pub/static`: `pub/static/frontend/Magento/<theme>/<locale>/Magento_ConfigurableProduct/js/configurable.js`. Here `<theme>` and `<locale>` are the currently applied in your instance [theme](https://glossary.magento.com/theme) and [locale](https://glossary.magento.com/locale).
-- Called in script:
-    ```javascript
+-  File actual location: `app/code/Magento/ConfigurableProduct/view/frontend/web/js/configurable.js`
+-  File published to `pub/static`: `pub/static/frontend/Magento/<theme>/<locale>/Magento_ConfigurableProduct/js/configurable.js`. Here `<theme>` and `<locale>` are the currently applied in your instance [theme](https://glossary.magento.com/theme) and [locale](https://glossary.magento.com/locale).
+-  Called in script:
+   ```javascript
     require(["Magento_ConfigurableProduct/js/configurable"], function(Configurable){
     });
-    ```
-
+   ```
 
 **Example 2**
 
-- File actual location: `app/design/frontend/Magento/blank/Magento_Theme/web/js/theme.js`
-- File published to `pub/static`: `pub/static/frontend/Magento/<theme>/<locale>/js/theme.js`
-- Called in script:
-    ```javascript
+-  File actual location: `app/design/frontend/Magento/blank/Magento_Theme/web/js/theme.js`
+-  File published to `pub/static`: `pub/static/frontend/Magento/<theme>/<locale>/js/theme.js`
+-  Called in script:
+  ```javascript
     require(["js/theme.js"], function(){
     });
-    ```
-
+  ```
 
 **Example 3**
 
-- File actual location: `lib/web/jquery.js`
-- File published to `pub/static`: `pub/static/<area>/Magento/<theme>/<locale>/jquery.js`
-- Called in script:
-    ```javascript
+-  File actual location: `lib/web/jquery.js`
+-  File published to `pub/static`: `pub/static/<area>/Magento/<theme>/<locale>/jquery.js`
+-  Called in script:
+   ```javascript
     require(["jquery"], function($){
     });
-    ```
+   ```
 
-
-These relative paths are also used in for [mapping and setting `paths` in requirejs-config.js configuration files]({{ page.baseurl }}/javascript-dev-guide/javascript/js-resources.html).
+Relative paths are also used in for [mapping and setting `paths` in requirejs-config.js configuration files]({{ page.baseurl }}/javascript-dev-guide/javascript/js-resources.html).
 
 ## Dependencies between JavaScript resources {#m2devgde-js-resources-dependencies}
 
 To build a dependency on the third-party plugin, specify a [shim] in the following configuration files:
- - `requirejs-config.js`
 
+ - `requirejs-config.js`
     ```javascript
     var config = {
         "shim": {
@@ -84,7 +81,6 @@ To build a dependency on the third-party plugin, specify a [shim] in the followi
     ```
 
  - `<third-party-plugin>.js`
-
     ```javascript
     !(function($){
         // plugin code
@@ -100,8 +96,9 @@ To be available for the entire Magento instance, RequireJS library is included i
 
  * For the `adminhtml` [area]({{ page.baseurl }}/architecture/archi_perspectives/components/modules/mod_and_areas.html):
 
-    [app/code/Magento/Backend/view/adminhtml/layout/default.xml]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Backend/view/adminhtml/layout/default.xml)
-    ```xml
+   [app/code/Magento/Backend/view/adminhtml/layout/default.xml]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Backend/view/adminhtml/layout/default.xml)
+
+   ```xml
     <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="admin-1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
         <head>
             <title>Magento Admin</title>
@@ -132,13 +129,81 @@ To be available for the entire Magento instance, RequireJS library is included i
             </referenceContainer>
         </body>
     </page>
-    ```
+   ```
 
-* For the `frontend` area the similar configuration is located in [`app/code/Magento/Theme/view/frontend/layout/default.xml`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Theme/view/frontend/layout/default.xml).
+* For the `frontend` area, the equivalent configuration is located in [`app/code/Magento/Theme/view/frontend/layout/default.xml`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Theme/view/frontend/layout/default.xml).
+
+### Including third-party JavaScript libraries
+
+To include a 3rd party library and use it within the entire website (using the [Slick JS Library](https://github.com/kenwheeler/slick/) as an example):
+
+1. Download the library and copy `slick.min.js` to the `<theme_path>/web/js` folder
+
+2. Copy `slick.less` and `slick-theme.less` to the `<theme_path>/web/css/source` folder. Also add both files to `<theme_path>/web/css/source/_extend.less`.
+
+   ```less
+   @import "slick.less";
+   @import "slick-theme.less";
+   ```
+
+3. Create or update the theme's `requirejs-config.js` file.
+
+   `<theme_path>/requirejs-config.js`
+
+   ```javascript
+   var config = {
+    paths: {
+        slick: 'js/slick.min'
+    },
+    shim: {
+        slick: {
+            deps: ['jquery']
+        }
+      }
+   };
+   ```
+
+After these steps, clear the cache and perform a static content deployment.
+
+#### Result
+
+We should now be able to use the Slick library, for example, on any list that we want to convert into a slider.
+
+```html
+<ul class="my-list">
+    <li>1st Element</li>
+    <li>2nd Element</li>
+    <li>3rd Element</li>
+    <li>4th Element</li>
+    <li>5th Element</li>
+    <li>6th Element</li>
+    <li>7th Element</li>
+    <li>8th Element</li>
+</ul>
+
+<script>
+    require([
+        'jquery',
+        'slick'
+    ], function ($) {
+        $(document).ready(function () {
+            $(".my_list").slick({
+                dots: true,
+                infinite: true,
+                speed: 300,
+                slidesToShow: 4,
+                slidesToScroll: 1
+            });
+        });
+    });
+</script>
+```
+
+![Slick Slider]({{ site.baseurl }}/common/images/js/slick-slider-result.png)
 
 ### Mapping JS resources {#m2devgde-js-resources-mapping}
 
-To make the configurations more precise and specific for different modules/themes, `requirejs-config.js` files can be placed in different [locations](#m2devgde-js-resources-configuring) depending on your needs.
+To make configurations more precise and specific to different modules and themes, `requirejs-config.js` files can be placed in different [locations](#m2devgde-js-resources-configuring) depending on your needs.
 
 All configurations are collected and executed in the following order:
 

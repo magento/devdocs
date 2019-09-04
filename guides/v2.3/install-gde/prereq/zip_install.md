@@ -1,10 +1,6 @@
 ---
 group: installation-guide
-subgroup: R_General
 title: (Easy) Install the Magento archive on your server
-menu_title: (Easy) Install the Magento archive on your server
-menu_order: 1
-menu_node: parent
 functional_areas:
   - Install
   - System
@@ -81,14 +77,13 @@ Log in to your Magento server as, or switch to, the [Magento file system owner](
 | ----------- | --------------------- |
 | `.tar.gz`   | `tar zxf <filename>`  |
 | `.zip`      | `unzip <filename>`    |
-| `.tar.bz2 ` | `tar jxf <filename> ` |
-
+| `.tar.bz2` | `tar jxf <filename>` |
 
 The Magento software extracts to the directory you created. After the file has extracted, either delete the Magento archive or move it to another directory.
 
 {% include install/file-system-perms-before_22.md %}
 
-#### Next step
+## Next step {#next-step-section}
 
 Install the Magento software:
 

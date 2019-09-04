@@ -1,5 +1,4 @@
 
-
 These instructions apply to you *only* if all of the following are true:
 
 *	You're using Magento Enterprise Edition (EE)

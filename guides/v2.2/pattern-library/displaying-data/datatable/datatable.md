@@ -80,7 +80,7 @@ Pagination controls allow the user to easily page through and organize data. Pag
 
 ![](img/datatable07.jpg)
 
-## Mass Actions 
+## Mass Actions
 {: #mass-actions}
 
 A common [theme](https://glossary.magento.com/theme) across the existing Magento user experience includes mass actions that can be taken. This is a convention used on both data-table and non-data-table pages. Not all pages have these action buttons. This document will not attempt to capture all actions that appear here or how they might be redesigned for Magento 2. This document will make note that these actions exist on many of the data-table pages and will use the area directly above the table to indicate placement of such action buttons where they might be needed.
@@ -205,7 +205,7 @@ Upon conducting a query, a result set is returned based on the above rules. Once
 
 ### Columns
 
-The user will be able to select which columns are visible from here. Settings will also be contained in a panel that can be activated by clicking on the columns action. Users will also have the ability to cancel out of this prompt, as well as reset (restore) the table back to it’s default column view. These settings will be ‘sticky’ per table, so users returning to any particular table will see the table the way it was last configured. 
+The user will be able to select which columns are visible from here. Settings will also be contained in a panel that can be activated by clicking on the columns action. Users will also have the ability to cancel out of this prompt, as well as reset (restore) the table back to it’s default column view. These settings will be ‘sticky’ per table, so users returning to any particular table will see the table the way it was last configured.
 
 ![](img/datatable24.jpg)
 
@@ -298,7 +298,7 @@ The following parameters will be saved:
 * Columns displayed
 * Column arrangement
 * Column width
-* Number of items per page 
+* Number of items per page
 
 ### Resetting the View
 

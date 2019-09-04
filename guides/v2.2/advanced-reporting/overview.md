@@ -7,7 +7,7 @@ functional_areas:
 
 [Advanced reporting functionality]{:target="_blank"} is provided through integration of a Magento instance with the [Magento Business Intelligence]{:target="_blank"} (MBI).
 Magento collects data and sends this information to the MBI for analytics.
- 
+
 ## Prerequisites
 
 1. The website must run on a public web server.
@@ -16,7 +16,6 @@ Magento collects data and sends this information to the MBI for analytics.
 4. In the Magento configuration, the [Base URL (Secure) setting][base url]{:target="_blank"} for the store view must point to the secure URL. For example https://yourdomain.com.
 5. In the Magento configuration, **Use Secure URLs on Storefront**, **and Use Secure URLs in Admin** must be set to **Yes**.
 6. Make sure that [Magento crontab]{:target="_blank"} is created and cron jobs are running on the installed server.
-
 
 The merchant can now click on the Go to Advanced Reporting button on the Admin dashboard to launch the advanced reporting features at `https://advancedreporting.rjmetrics.com/report`.
 
@@ -36,7 +35,6 @@ Though the Analytics module provides API, it is used specifically to interchange
 [Magento modules that implement the functionality][modules]{:target="_blank"}
 
 [Data collection configuration and settings][collection]{:target="_blank"}
-
 
 <!-- LINK DEFINITIONS -->
 

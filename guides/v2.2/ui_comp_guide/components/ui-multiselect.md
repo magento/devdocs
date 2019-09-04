@@ -40,5 +40,3 @@ The Multiselect component provides the interface for a list or a data set. Multi
   </tr>
 </table>
 
-
-

@@ -1,7 +1,7 @@
 ---
 group: release-notes
 title: Backward incompatible changes reference
-redirect_from: 
+redirect_from:
 - /guides/v2.3/release-notes/backward-incompatible-changes/commerce.html
 - /guides/v2.3/release-notes/backward-incompatible-changes/open-source.html
 ---

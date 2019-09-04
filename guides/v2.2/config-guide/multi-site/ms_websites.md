@@ -15,8 +15,8 @@ This task requires you to create a root [category](https://glossary.magento.com/
 *	[Content](http://docs.magento.com/m2/ce/user_guide/cms/content-menu.html)
 
 {: .bs-callout-info }
-For example purposes only, we use a French [website](https://glossary.magento.com/website) with website code `french` in this topic. For step-by-step tutorials, see:  
-    -  [Tutorial: Set up multiple websites with Apache]({{ page.baseurl }}/config-guide/multi-site/ms_apache.html)  
+For example purposes only, we use a French [website](https://glossary.magento.com/website) with website code `french` in this topic. For step-by-step tutorials, see:
+    -  [Tutorial: Set up multiple websites with Apache]({{ page.baseurl }}/config-guide/multi-site/ms_apache.html)
     -  [Tutorial: Set up multiple websites with nginx]({{ page.baseurl }}/config-guide/multi-site/ms_nginx.html)
 
 ## Step 1: Create root categories
@@ -75,7 +75,7 @@ Creating a root category is optional, but we show how to do it in this tutorial 
 
 	The following figure shows an example.
 
-	![Add a store]({{ site.baseurl }}/common/images/config_multi-site-store.png){:width="500px"}
+	![Add a store]({{ site.baseurl }}/common/images/config_multi-site-store.png)
 6.	Click **Save Store**.
 7.	Repeat these tasks as many times as necessary to create your stores.
 

@@ -189,7 +189,6 @@ The following illustrates an `arguments` block:
 </arguments>
 ```
 
-
 ### `queue_publisher.xml` {#queuepublisherxml}
 
 The `queue_publisher.xml` file defines which connection and exchange to use to publish messages for a specific topic. It contains the following elements:

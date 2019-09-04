@@ -13,7 +13,7 @@ If you encounter errors, such as `Could not find package...` or `...no matching 
 
 You can use Composer to install sample data either before or after installing Magento; however, there might be [additional tasks]({{ page.baseurl }}/install-gde/install/sample-data.html).
 
-If you're a contributing developer, refer to [Install by cloning repositories]({{install-gde/install/sample-data-after-clone.html}}).
+If you're a contributing developer, refer to [Install by cloning repositories]({{ page.baseurl }}/install-gde/install/sample-data-after-clone.html).
 
 {:.bs-callout .bs-callout-warning}
 Do not install sample data if your Magento application is set for [production mode]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html#production-mode). Switch to [developer mode]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html#developer-mode) first. Installing sample data in production mode [fails]({{ page.baseurl }}/install-gde/trouble/tshoot_sample-data.html#trouble-samp-prod).
@@ -25,7 +25,7 @@ bin/magento sampledata:deploy
 ```
 
 {:.bs-callout .bs-callout-warning}
-If you're installing sample data _after_ installing Magento, you must also run the following command to update the database and schema in the `<magento_root>` folder: 
+If you're installing sample data _after_ installing Magento, you must also run the following command to update the database and schema in the `<magento_root>` folder:
 
 ```bash
 bin/magento setup:upgrade

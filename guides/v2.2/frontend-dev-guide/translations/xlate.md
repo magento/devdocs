@@ -40,12 +40,12 @@ Localizing Magento storefronts and the Admin panel gives your company global pre
 
   * An entire dictionary in one directory.
     Use and distribute the dictionary as a standalone component (similar to modules and themes).
-	  
+
 * Customize the default strings in Magento. For example, changing "Add to Wish List" to "Wish List".
 * Use ready-to-use language packages prepared by other users or create your own. The [Magento Marketplace] offers language packs to download and install.
-* Localize strings based on existing, or parent, translations using [language inheritance]. 
+* Localize strings based on existing, or parent, translations using [language inheritance].
 * Customize your translations further by creating more than one version of a translation for the same language to cover dialects and different phrasing.
-* Contribute to [Magento translations](#translations-project) through [Magento CrowdIn project] with Magento Community Engineering. We encourage translation contributions and efforts in the project for future language packs. 
+* Contribute to [Magento translations](#translations-project) through [Magento CrowdIn project] with Magento Community Engineering. We encourage translation contributions and efforts in the project for future language packs.
 
 Depending on your needs, you can use the existing [language packages](#m2devgde-xlate-languagepack), [translate Magento by yourself](#m2devgde-xlate-translating), or [contribute](#translations-project).
 
@@ -140,10 +140,10 @@ You can distribute this language package as a standalone component (similar to m
 In addition to the `.csv` file that contains the language dictionary, the language package contains meta-information:
 
 * `composer.json` that contains any dependencies for the language package and a mapping to its defined [locale](https://glossary.magento.com/locale).
-   [Sample composer.json](https://devdocs.magento.com/guides/v2.2/extension-dev-guide/package/package_module.html#sample-composerjson-file)
+   [Sample composer.json]({{ page.baseurl }}/extension-dev-guide/package/package_module.html#sample-composerjson-file)
 
 * `language.xml`, in which you declare a language package.
-   [Sample language.xml](https://devdocs.magento.com/guides/v2.2/config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-example2)
+   [Sample language.xml]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-example2)
 
 ## Community Engineering Translations project {#translations-project}
 
@@ -154,7 +154,7 @@ Community Engineering accepts translation contributions through the [Magento Cro
 1. Expand and locate an area of UI text strings to translate. Strings marked red need a translation, and marked green have existing translations.
 1. Enter or review translations for strings as described in the [CrowdIn knowledge base].
 
-Magento admins will review and approve translations as available. The project may include package creation and further support using the contributed and approved translations. 
+Magento admins will review and approve translations as available. The project may include package creation and further support using the contributed and approved translations.
 
 If you need help understanding the context or meaning of a UI string, or have questions about the project, chat with us in the Community Engineering [Translations Slack channel]. To join, send a request to [engcom@magento.com] or [self signup].
 
@@ -164,6 +164,7 @@ If you need help understanding the context or meaning of a UI string, or have qu
 * [Use translation dictionary to customize strings]
 * [Translate theme strings]
 * [Example theme translation dictionary]
+* [Magento translations GitHub project]
 
 [Generate a translation dictionary]: {{page.baseurl}}/config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-dict
 [language inheritance]: {{page.baseurl}}/config-guide/cli/config-cli-subcommands-i18n.html#m2devgde-xlate-inheritancework
@@ -184,3 +185,4 @@ If you need help understanding the context or meaning of a UI string, or have qu
 [Use translation dictionary to customize strings]: {{page.baseurl}}/frontend-dev-guide/translations/theme_dictionary.html
 [Translate theme strings]: {{page.baseurl}}/frontend-dev-guide/translations/translate_theory.html
 [Example theme translation dictionary]: {{page.baseurl}}/frontend-dev-guide/translations/translate_practice.html
+[Magento translations GitHub project]: https://github.com/magento-l10n

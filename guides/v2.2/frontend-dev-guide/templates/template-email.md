@@ -7,18 +7,18 @@ functional_areas:
 
 ## Customize email templates {#customize-email-templates}
 
-Email templates are stored in the `<module_dir>/view/<area>/email` directory of their respective modules. For example, the template for the new order transactional email for the Sales module is located in [`<Magento_Sales_module_dir>/view/frontend/email/order_new.html`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Sales/view/frontend/email/order_new.html). 
+Email templates are stored in the `<module_dir>/view/<area>/email` directory of their respective modules. For example, the template for the new order transactional email for the Sales module is located in [`<Magento_Sales_module_dir>/view/frontend/email/order_new.html`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Sales/view/frontend/email/order_new.html).
 
-We strongly recommend you not change the default Magento files. If you want to customize the default templates, you should create your custom templates and configure Magento to use them instead of the default templates. 
+We strongly recommend you not change the default Magento files. If you want to customize the default templates, you should create your custom templates and configure Magento to use them instead of the default templates.
 
 You can add custom templates as physical files in your custom [theme](https://glossary.magento.com/theme) or create them using the [Magento Admin](https://glossary.magento.com/magento-admin). Both approaches are described in the following sections.
- 
+
 ### Customize email templates using a theme {#customize-email-theme}
 
 Override email templates by creating templates in a new directory in your custom theme, using this pattern: `<theme_dir>/<ModuleVendorName>_<ModuleName>/email`. For example, to override the New Order email template, create a template named `order_new.html` in the `<theme_dir>/Magento_Sales/email` directory.
 
 [Template fallback]({{ page.baseurl }}/frontend-dev-guide/themes/theme-inherit.html#theme-inherit-templates) is supported for email templates, so parent themes of your current theme are searched for templates.
- 
+
 ### Customize email templates using the Magento Admin {#customize-email-admin}
 
 Any templates configured in the Magento [Admin](https://glossary.magento.com/admin) take precedence over default or theme-based templates.
@@ -31,7 +31,7 @@ Make note of this path because you will need it later when you configure this ne
    ![New template creation page with loaded default template]({{ site.baseurl }}/common/images/email_create_template21.png){:width="70%"}{:height="70%"}
 
 4. In **Template Name**, enter a name to identify the template in the Magento Admin.
-5. In **Template Subject**, add plain text to use as the Subject of the emails sent using the template you create. This field can contain system variables.  
+5. In **Template Subject**, add plain text to use as the Subject of the emails sent using the template you create. This field can contain system variables.
 6. Customize template content. For details, see [the section on customizing content](#customize-content).
 7. In **Template Styles**, optionally add CSS styles for the template. These styles are added inside of a `<style>` tag in the `<head>` of the email. Typically, you'll use the [Less files](#email-styles) to make style changes to emails because some email clients don't support styles in `<style>` tags.
 8. Click **Save Template**.
@@ -48,7 +48,7 @@ Make note of this path because you will need it later when you configure this ne
 ### Customize header and footer templates {#customize-header-footer}
 
 Every frontend email template includes a header and footer template using these two directives: `{% raw %}{{template config_path="design/email/header_template"}}{% endraw %}` and `{% raw %}{{template config_path="design/email/footer_template"}}{% endraw %}`. By default, those two directives load contents from these files:
- 
+
   * [`<Magento_Email_module_dir>/view/frontend/email/header.html`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Email/view/frontend/email/header.html)
   * [`<Magento_Email_module_dir>/view/frontend/email/footer.html`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Email/view/frontend/email/footer.html)
 
@@ -98,7 +98,7 @@ Here is a list of the most commonly used email template variables that are avail
   * Payment Details: `{% raw %}{{var payment_html|raw}}{% endraw %}`
   * Shipping Address: `{% raw %}{{var formattedShippingAddress|raw}}{% endraw %}`
   * Shipping Description: `{% raw %}{{var order.getShippingDescription()}}{% endraw %}`
-  
+
 {:.bs-callout .bs-callout-info}
 You can also create your own custom variables and set their values in the Admin, under **SYSTEM** > **Custom Variables**.
 
@@ -107,7 +107,7 @@ To add a variable to your template content:
 1. In the Magento Admin, navigate to **MARKETING** > Communications > **Email Templates**
 2. Create a new template or edit an existing template.
 3. Click to place the cursor in the text in which to insert the variable.
-4. Click **Insert Variable**. A pop-up containing a list of variables opens, including custom variables. The variables in the **Store Contact Information** are available in all email templates whereas the variables in the **Template Variables** section are specific to the template you're editing. The following figure shows an example: 
+4. Click **Insert Variable**. A pop-up containing a list of variables opens, including custom variables. The variables in the **Store Contact Information** are available in all email templates whereas the variables in the **Template Variables** section are specific to the template you're editing. The following figure shows an example:
    ![The list of available variables]({{ site.baseurl }}/common/images/email_insert_variable21.png){:width="70%"}{:height="70%"}
 
 5. Click the name of the required variable. <br> The variable code is inserted in the template content.
@@ -125,15 +125,15 @@ The `<Magento_Email_module_dir>/view/frontend/email/header.html` file contains a
 
     {% raw %}{{inlinecss file="css/email-inline.css"}}{% endraw %}
 
-The `inlinecss` directive tells Magento which files to apply as inline styles on the email template. 
+The `inlinecss` directive tells Magento which files to apply as inline styles on the email template.
 
 For example, say an email is being sent from a store configured with the Magento Luma theme. The `inlinecss` directive first looks for a `email-inline.less` file in `<Magento_Luma_theme_dir>/web/css/email-inline.less`. However because that file does not exist, it will fall back to the `<Magento_Blank_theme_dir>/web/css/email-inline.less` file. The contents of that file will then be compiled and its contents are applied as inline styles to the email template.
 
-Refer to the [Emogrifier README](https://github.com/jjriv/emogrifier#supported-css-selectors") to see what CSS selectors are supported.
+Refer to the [Emogrifier README](https://github.com/jjriv/emogrifier#supported-css-selectors) to see what CSS selectors are supported.
 
 ### Non-inline styles {#non-inline-styles}
 
-Non-inline styles for emails come from global and template-specific styles, as described in the following sections. 
+Non-inline styles for emails come from global and template-specific styles, as described in the following sections.
 
 #### Global non-inline styles {#global-non-inline-styles}
 
@@ -149,24 +149,24 @@ The `<Magento_Email_module_dir>/view/frontend/email/header.html` file contains a
 </style>
 ```
 
-The `css` directive compiles the contents of the provided file and outputs it. 
+The `css` directive compiles the contents of the provided file and outputs it.
 
 For example, say an email is being sent from a store configured with the Magento Luma theme. The `css` directive first looks for an `email.less` file in `<Magento_Luma_theme_dir>/web/css`. However, because the file does not exist there, it falls back to `<Magento_Blank_theme_dir>/web/css/email.less`. The contents of that file are compiled and its contents output in the `<style>` tag.
 
 #### Template-specific non-inline styles {#template-specific-non-inline-styles}
 
-As mentioned in the preceding section, the `header.html` file outputs the `{% raw %}{{var template_styles|raw}}{% endraw %}` variable. 
+As mentioned in the preceding section, the `header.html` file outputs the `{% raw %}{{var template_styles|raw}}{% endraw %}` variable.
 
-The value of that variable comes from any of the following: 
+The value of that variable comes from any of the following:
 
 * Any styles you add to any `html` email template inside a comment block, like in the following example, are included in the `template_styles` variable:
 
 ```html
-      <!--@styles 
+      <!--@styles
       .example-style { color: green; }
       @-->
 ```
-      
+
 * If you customize transactional emails using the Magento Admin, you can add CSS styles to the **Template Styles** field to include those styles in the `template_styles` variable.
 
 ### How email styles are organized {#organization-email-styles}
@@ -306,28 +306,28 @@ If you want to change the font used for emails, do the following:
 
 ## Email logo {#email-logo}
 
-You can add a logo to emails by adding it to your theme or by uploading it in the Magento Admin. 
+You can add a logo to emails by adding it to your theme or by uploading it in the Magento Admin.
 
 Because email clients do not support vector-based formats such as Scalable Vector Graphics (SVG), you must prepare a logo in a standard web format: JPG, GIF, or PNG. There is a maximum file size of 2 MB, but this can be changed by an admin. Because emails are viewed on devices with a broad range of pixel densities, you should use a logo that is 3&times; the size that you actually want it to display. For example, let's say your email has a 200px &times; 100px area for the logo. The logo image should be 600px &times; 300px.
 
 If you do not have access to a high-resolution version of your logo, you can upload a normal-resolution image. For example, if your logo image is 200px &times; 100px, specify `200` for the width and `100` for the height.
 
-### Customize the email logo using a theme {#customize-logo-theme} 
+### Customize the email logo using a theme {#customize-logo-theme}
 
 To customize your logo using a theme:
 
 1. Add a file named `logo_email.png` to a `Magento_Email/web` directory in your custom theme.
-  
+
    For example, if the OrangeCo vendor wants to add a logo for their custom Orange, they must add a file in the `app/design/frontend/OrangeCo/orange/Magento_Email/web` directory.
 
-2. Copy the `<Magento_Email_module_dir>/view/frontend/email/header.html` file into a `Magento_Email/email` directory in your theme. 
-   
+2. Copy the `<Magento_Email_module_dir>/view/frontend/email/header.html` file into a `Magento_Email/email` directory in your theme.
+
    For example, the OrangeCo vendor would copy the file to this location: `app/design/frontend/OrangeCo/orange/Magento_Email/email/header.html`
-   
+
    Edit the `width` and `height` attributes of the `<img>` tag to reflect the area in which you want your logo to display (for example, 200 &times; 100).
-  
+
    Example:
-   
+
    ```html
    {% raw %}
    {{if logo_width}}
@@ -343,7 +343,7 @@ To customize your logo using a theme:
    {{/if}}
    {% endraw %}
    ```
-   
+
    You should leave the if/else conditional statement in place in case you ever want to override these values using the Admin.
 
 ### Customize the email logo using the Admin {#customize-logo-admin}
@@ -359,7 +359,7 @@ To customize your logo using a theme:
 
 ## Use contact information in emails {#contact-information-emails}
 
-Emails can output your store name, store email address, store phone number, and store hours of operation if those values are configured in the Admin. 
+Emails can output your store name, store email address, store phone number, and store hours of operation if those values are configured in the Admin.
 
 To set those values:
 
@@ -382,7 +382,7 @@ The sales emails are configured to display all of the above values, if they're c
 
 ## Localization {#localization}
 
-In order to support the translation of content, all strings in emails are output using the `trans` directive. Example: 
+In order to support the translation of content, all strings in emails are output using the `trans` directive. Example:
 
 ```
 {% raw %}{{trans "Thank you for your order from %store_name." store_name=$store.getFrontendName()}}{% endraw %}
@@ -399,7 +399,7 @@ The directive supports multiple named parameters, separated by spaces. For examp
 {% endraw %}
 ```
 
-Please note, that variable assignment must not contain spaces. 
+Please note, that variable assignment must not contain spaces.
 
 Correct:
 

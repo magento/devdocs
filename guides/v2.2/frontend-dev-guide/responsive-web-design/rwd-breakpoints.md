@@ -7,14 +7,14 @@ functional_areas:
 
 ## What's in this topic
 
-Breakpoints are used in stylesheets to set up the screen width at which the design changes, for example from the mobile to the desktop version. Themes provided with Magento implement a list of [default breakpoints]({{ page.baseurl }}/frontend-dev-guide/responsive-web-design/rwd_css.html#fedg_rwd_css_break). This topic describes how to add a custom breakpoint in your theme. 
+Breakpoints are used in stylesheets to set up the screen width at which the design changes, for example from the mobile to the desktop version. Themes provided with Magento implement a list of [default breakpoints]({{ page.baseurl }}/frontend-dev-guide/responsive-web-design/rwd_css.html#fedg_rwd_css_break). This topic describes how to add a custom breakpoint in your theme.
 
 ## Overview
 
 To add a custom breakpoint in your theme, you need to do the following:
 
 1. Define a variable for the new breakpoint.
-2. Override the library `_responsive.less` file, and add the new rule for the new breakpoint. 
+2. Override the library `_responsive.less` file, and add the new rule for the new breakpoint.
 3. Implement the screen changes for the new breakpoint.
 
 ## Add a new breakpoint variable
@@ -36,21 +36,25 @@ For variables' naming rules see [Less coding standards]({{ page.baseurl }}/codin
 
 ## Override `_responsive.less` from the library
 
-According to the approach, implemented in the Magento UI library, the `.media-width()` mixin calls are defined in many places, but invoked in one place, in `lib/web/css/source/lib/_responsive.less`. 
+According to the approach, implemented in the Magento UI library, the `.media-width()` mixin calls are defined in many places, but invoked in one place, in `lib/web/css/source/lib/_responsive.less`.
 
-To implement a new breakpoint, you need to edit the `.media-width()` mixin by adding the appropriate rule there. So you need to override the library `_responsive.less` in your theme, and add the customizations there. 
+To implement a new breakpoint, you need to edit the `.media-width()` mixin by adding the appropriate rule there. So you need to override the library `_responsive.less` in your theme, and add the customizations there.
 
 To do this, take the following steps:
 
 1. Copy the `_responsive.less` file to your `<your_theme_dir>/web/css/source/lib/` directory from one of the following locations:
-	- `<your_parent_theme_dir>/web/css/source/lib/_responsive.less`: overriding `_responsive.less` in the parent theme. If there's no such file or no parent theme, use the other option. 
+	- `<your_parent_theme_dir>/web/css/source/lib/_responsive.less`: overriding `_responsive.less` in the parent theme. If there's no such file or no parent theme, use the other option.
 	- `<your_theme_dir>/web/css/source/lib/_responsive.less`: the library file.
-2. In your `_responsive.less` file, add the `.media-width` [mixin](https://glossary.magento.com/mixin) rule for your breakpoint in the corresponding section (desktop or mobile, depending on the type of breakpoint you add). 
+2. In your `_responsive.less` file, add the `.media-width` [mixin](https://glossary.magento.com/mixin) rule for your breakpoint in the corresponding section (desktop or mobile, depending on the type of breakpoint you add).
 
 {:.bs-callout .bs-callout-info}
-The `@media-target` option may have one of the following values: `all`, `desktop` or `mobile`.  
+The `@media-target` option may have one of the following values: `all`, `desktop` or `mobile`.
+
+{: .bs-callout .bs-callout-warning}
+Use single quotes when specifying media-targets. Double quotes may cause unexpected issues with the scripts.
 
 Example:
+
 ```less
 & when (@media-target = 'desktop'), (@media-target = 'all') {
 
@@ -62,9 +66,10 @@ Example:
 
 ## Add `.media-width()` calls for the new breakpoint
 
-Now you can add a new `.media-width()` mixin call where necessary in your theme `.less ` files.
+Now you can add a new `.media-width()` mixin call where necessary in your theme `.less` files.
 
 Example:
+
 ```less
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @your__breakpoint) {
     //  Customization for @your__breakpoint breakpoint

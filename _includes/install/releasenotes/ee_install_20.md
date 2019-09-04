@@ -1,5 +1,4 @@
 
-
 ## Install the Magento software
 
 See one of the following sections:

@@ -46,6 +46,9 @@ pages:
         - label: Alert widget
           url: /javascript-dev-guide/widgets/widget_alert.html
 
+        - label: Breadcrumbs widget
+          url: /javascript-dev-guide/widgets/widget-breadcrumbs.html
+
         - label: Calendar widget
           url: /javascript-dev-guide/widgets/widget_calendar.html
 
@@ -79,11 +82,17 @@ pages:
         - label: Modal widget
           url: /javascript-dev-guide/widgets/widget_modal.html
 
+        - label: Multiselect widget
+          url: /javascript-dev-guide/widgets/widget-multiselect.html
+
         - label: Navigation widget
           url: /javascript-dev-guide/widgets/widget_navigation.html
 
         - label: PasswordStrengthIndicator widget
           url: /javascript-dev-guide/widgets/widget_password_strength_indicator.html
+
+        - label: PopupWindow widget
+          url: /javascript-dev-guide/widgets/widget-popup-window.html
 
         - label: Prompt widget
           url: /javascript-dev-guide/widgets/widget_prompt.html
@@ -94,8 +103,14 @@ pages:
         - label: RedirectUrl widget
           url: /javascript-dev-guide/widgets/widget_redirectUrl.html
 
+        - label: RowBuilder widget
+          url: /javascript-dev-guide/widgets/widget-row-builder.html
+
         - label: Tabs widget
           url: /javascript-dev-guide/widgets/widget_tabs.html
 
         - label: ToggleAdvanced widget
           url: /javascript-dev-guide/widgets/widget_toggle.html
+
+        - label: TrimInput widget
+          url: /javascript-dev-guide/widgets/widget-trim-input.html

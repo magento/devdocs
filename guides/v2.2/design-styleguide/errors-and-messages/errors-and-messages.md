@@ -39,5 +39,5 @@ Don’t blame the user or indicate that the user made a mistake.
 <ul style="list-style-type:none">
   <li><strong>No</strong> – “You didn’t enter your email address. Enter your email address and click “Continue”."</li>
   <li>Yes – “An email address is required. Enter your email address and click “Continue”.”</li>
-</ul>  
+</ul>
 <br>

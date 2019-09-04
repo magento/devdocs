@@ -291,7 +291,6 @@ HTML helper class names added in JavaScript REQUIRE underscore symbol ("_") at t
 <div class="sales-report _hidden">Content</div>
 ```
 
-
 **Unacceptable**
 
 ```html
@@ -398,8 +397,8 @@ jQuery('#{$htmlId}-suggest').treeSuggest({$selectorOptions});
 ```php
 ...
 $fieldset->addField('new_category_parent', 'text', array(
-    'label'    => Mage::helper('Mage_Catalog_Helper_Data')->__('Parent Category'),
-    'title'    => Mage::helper('Mage_Catalog_Helper_Data')->__('Parent Category'),
+    'label'    => __('Parent Category'),
+    'title'    => __('Parent Category'),
     'required' => true,
     'class'    => 'parent category',
 ));
@@ -411,8 +410,8 @@ $fieldset->addField('new_category_parent', 'text', array(
 ```php
 ...
 $fieldset->addField('new_category_parent', 'text', array(
-    'label'    => Mage::helper('Mage_Catalog_Helper_Data')->__('Parent Category'),
-    'title'    => Mage::helper('Mage_Catalog_Helper_Data')->__('Parent Category'),
+    'label'    => __('Parent Category'),
+    'title'    => __('Parent Category'),
     'required' => true,
     'style'    => 'border: 1px solid #ccc;',
 ));
@@ -491,7 +490,7 @@ public function getAttributeId($element)
    <input type="checkbox"
       <?php echo ($this->getAttributeName($element)) ? ' name="' . $this->getAttributeName($element) . '"' : NULL; ?>
       data-mage-init="{customToggleWidget: [elementSelector: "input[name='someCustomName']"]}" />
-   <?php echo Mage::helper('Mage_Catalog_Helper_Data')->__('Change'); ?>
+   <?php echo __('Change'); ?>
 </label>
 </span>
 <!-- jQuery.hide() code can be either located in the widget itself OR can ask PHP Block class whether or not 'weight_and_type_switcher' should be visible. Based on this condition CSS can be applied to hide/show those elements. -->
@@ -515,7 +514,7 @@ public function getCheckbox($elementName){
 <span class="attribute-change-checkbox">
 	<label>
 		<?php echo $this->getCheckbox($element)?>
-		<?php echo Mage::helper('Mage_Catalog_Helper_Data')->__('Change'); ?>
+		<?php echo __('Change'); ?>
 	</label>
 </span>
 <!-- jQuery.hide() code can be either located in the widget itself OR can ask PHP Block class whether or not 'weight_and_type_switcher' should be visible. Based on this condition CSS can be applied to hide/show those elements. -->

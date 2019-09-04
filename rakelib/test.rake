@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 
 namespace :test do
-  # Run htmlproofer to check for broken links
+  # Run html-proofer to check for broken links
   desc 'Build devdocs and check for broken links'
   task links: %w[build links_no_build]
 
-  desc 'Check the existing _site for broken links on Jenkins'
-  task :cicd do
-    puts 'Checking links with htmlproofer...'.magenta
+  desc 'Check the entire _site for broken links and invalid HTML'
+  task :html do
+    puts 'Checking links with html-proofer...'.magenta
 
     LinkChecker.check_site
   end
@@ -20,16 +20,16 @@ namespace :test do
       report = LinkChecker.md_report_path
       $stderr.reopen(report, 'w+')
 
-      puts 'Checking links with htmlproofer...'.magenta
+      puts 'Checking links with html-proofer...'.magenta
       LinkChecker.check_site
 
       # We're expecting link validation errors, but unless we rescue from
       # StandardError, rake will abort and won't run the convert task (https://stackoverflow.com/a/10048406).
       # Wrapping task in a begin-rescue block prevent rake from aborting.
       # Seems to prevent printing an error count though.
-    rescue StandardError => msg
+    rescue StandardError => e
       # Show how many lines contains the Markdown report
-      puts msg.to_s.red
+      puts e.to_s.red
       puts "To see the report, open the #{report} file.".red
     end
   end
@@ -39,4 +39,16 @@ namespace :test do
     puts 'Converting the link check report to HTML...'.magenta
     Converter.to_html
   end
+
+  desc 'Test Markdown style with mdl'
+  task :md do
+    puts 'Testing Markdown style with mdl ...'.magenta
+    output = `bin/mdl --style=_checks/styles/style-rules-prod --ignore-front-matter --git-recurse -- .`
+    puts output.yellow
+    abort "The Markdown linter has found #{output.lines.count} issues".red unless output.empty?
+    puts 'No issues found'.magenta
+  end
+
+  task style: %w[md]
+  task cicd: %w[html]
 end

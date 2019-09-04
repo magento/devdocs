@@ -34,7 +34,7 @@ If there is no content to be retrieved after these requests, the release notific
 
 ## Content Guidelines
 
-The modal system in the ReleaseNotification module can have up to four modal pages. The admin user can navigate between pages using the "< Prev" and "Next >" buttons at the bottom of the modal. The last modal page will have a "Done" button that will close the modal and record that the admin user has seen the notification. 
+The modal system in the ReleaseNotification module can have up to four modal pages. The admin user can navigate between pages using the "< Prev" and "Next >" buttons at the bottom of the modal. The last modal page will have a "Done" button that will close the modal and record that the admin user has seen the notification.
 
 Each modal page can have the following optional content:
 

@@ -69,7 +69,7 @@ There are two ways to apply patches:
 
 ### Command line
 
-1. Upload the local file into the `<Magento_root>` on the server using FTP, SFTP, SSH or your normal transport method.  
+1. Upload the local file into the `<Magento_root>` on the server using FTP, SFTP, SSH or your normal transport method.
 1. Login to the server as the [Magento admin user][] and verify the file is in the correct directory.
 1. In the command line interface, run the following commands according to the patch extension:
 
@@ -136,10 +136,10 @@ To apply a custom patch using Composer:
 
 [Magento Security Center]:https://magento.com/security/patches
 [-p1 instead of -p0]:http://man7.org/linux/man-pages/man1/patch.1.html
-[Back up and roll back the file system]:https://devdocs.magento.com/guides/v2.3/install-gde/install/cli/install-cli-backup.html
+[Back up and roll back the file system]:{{ page.baseurl }}/install-gde/install/cli/install-cli-backup.html
 [patch]:https://en.wikipedia.org/wiki/Patch_(Unix)
 [Magento Help Center]:https://support.magento.com/hc/en-us/articles/360005484154-Create-a-patch-for-a-Magento-2-Composer-installation-from-a-GitHub-commit
-[Magento Admin user]:https://devdocs.magento.com/guides/v2.3/config-guide/cli/config-cli.html#config-install-cli-first
+[Magento Admin user]:{{ page.baseurl }}/config-guide/cli/config-cli.html#config-install-cli-first
 [1]: https://github.com/cweagans/composer-patches/
 [2]: https://github.com/magento/magento2/commit/2d31571f1bacd11aa2ec795180abf682e0e9aede
 [3]: https://github.com/magento/magento2/issues/6474
