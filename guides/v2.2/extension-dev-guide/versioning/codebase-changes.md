@@ -99,6 +99,19 @@ Any change not listed below is considered a PATCH level change.
 | | Changed event property | MAJOR|
 | | Removed event property | MAJOR|
 | | Changed event ordering | MAJOR|
+| **JavaScript modules** (marked with `@api`)| New module| MINOR|
+| | New method added | MINOR|
+| | New argument added | MINOR|
+| | Module removed| MAJOR|
+| | Method removed | MAJOR|
+| | Argument removed | MAJOR|
+| | New event| MINOR|
+| | Renamed event| MAJOR|
+| | Removed event| MAJOR|
+| | New event property | MINOR|
+| | Changed event property | MAJOR|
+| | Removed event property | MAJOR|
+| | Changed event ordering | MAJOR|
 | **Virtual Type (marked with `@api`)**| Virtual type removed | MAJOR|
 | | Virtual type added | MINOR|
 | **URL Paths (Store-Front and Admin, GET)** | Path removed | MAJOR|
