@@ -43,6 +43,9 @@ For the following output cases, use the specified function to generate XSS-safe 
 <?php header('Content-Type: application/xhtml+xml; charset=UTF-8');?>
 <?php $css = "background: #000\"><script>alert(1)</script>"; ?>
 <div style="<?= $block->escapeCss($css) ?>"></div>
+
+// Escaping CSS
+<div style="background\3A \20 \23 000\22 \3E \3C script\3E alert\28 1\29 \3C \2F script\3E "></div>
 ```
 
 **Case:** JSON output in script context\\
