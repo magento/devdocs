@@ -50,7 +50,11 @@ To do this, take the following steps:
 {:.bs-callout .bs-callout-info}
 The `@media-target` option may have one of the following values: `all`, `desktop` or `mobile`.
 
+{: .bs-callout .bs-callout-warning}
+Use single quotes when specifying media-targets. Double quotes may cause unexpected issues with the scripts.
+
 Example:
+
 ```less
 & when (@media-target = 'desktop'), (@media-target = 'all') {
 
@@ -65,6 +69,7 @@ Example:
 Now you can add a new `.media-width()` mixin call where necessary in your theme `.less` files.
 
 Example:
+
 ```less
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @your__breakpoint) {
     //  Customization for @your__breakpoint breakpoint
