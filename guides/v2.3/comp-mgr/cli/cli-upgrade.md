@@ -23,7 +23,7 @@ Instead, see [Update the Magento application] for upgrade instructions.
 Complete the following prerequisites to prepare your environment before starting the upgrade process:
 
 - **Complete the Update and upgrade checklist**—To avoid possible errors during installation or upgrading, complete the [Update and upgrade checklist].
-- **Set the `pub/` directory root**—If you set the Magento root directory to `pub/`, create another subdomain or docroot that uses the Magento installation directory as its root, and run the [System Upgrade utility] using that subdomain.
+- **Set the `pub/` directory root**—See [Modify docroot to improve security][] for more details.
 - **Check PHP and environment settings**—Verify that your PHP and other environment settings are compatible with the [system requirements].
 - **Switch to maintenance mode**—To prevent access to your store while it's being upgraded, switch your store to maintenance mode:
 
@@ -254,3 +254,4 @@ All scenarios require that you comply with the [Prerequisites].
 [Update the Magento application]: {{ page.baseurl }}/install-gde/install/cli/dev_update-magento.html
 [Upgrade using the custom composer plugin]: upgrade-with-plugin.html
 [Upgrade using the script]: upgrade-with-script.html
+[Modify docroot to improve security]: {{ page.baseurl }}/install-gde/tutorials/change-docroot-to-pub.html
