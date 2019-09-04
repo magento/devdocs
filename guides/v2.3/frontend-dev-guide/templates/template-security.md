@@ -11,11 +11,11 @@ To prevent [XSS] issues Magento recommends the following rules for escaping outp
 
 *  If a method indicates that the content is escaped, do not escape: `getTitleHtml()`, `getHtmlTitle()` (the title is ready for the [HTML](https://glossary.magento.com/html) output)
 
-*  Type casting and [php](https://glossary.magento.com/php) function `count()` don't need escaping  (for example `echo (int)$var`, `echo (bool)$var`, `echo count($var)`)
+*  Type casting and [php](https://glossary.magento.com/php) function `count()` do not need escaping  (for example `echo (int)$var`, `echo (bool)$var`, `echo count($var)`)
 
-*  Output in single quotes doesn't need escaping (for example `echo 'some text'`)
+*  Output in single quotes does not need escaping (for example `echo 'some text'`)
 
-*  Output in double quotes without variables doesn't need escaping (for example `echo "some text"`)
+*  Output in double quotes without variables does not need escaping (for example `echo "some text"`)
 
 *  For all other cases, escape the data using [specific escape functions](#escape-functions-for-templates).
 
@@ -140,7 +140,7 @@ This sniff finds all `echo` calls in PHTML-templates and determines if the outpu
 
 It covers the following cases:
 
-*  `/* @noEscape */` before output. Output doesn't require escaping. Test is green.
+*  `/* @noEscape */` before output. Output does not require escaping. Test is green.
 
 *  `/* @escapeNotVerified */` before output. Output escaping is not checked and should be verified. Test is green.
 
