@@ -31,33 +31,44 @@ If you already have a sample module, you can use it; skip this step and the next
 2.  Change to a directory that is not in your Magento application root (for example, your home directory).
 2.  Clone the [`magento2-samples` repository](https://github.com/magento/magento2-samples).
 
-    For example,
-
-        cd ~
-        git clone git@github.com:magento/magento2-samples.git
+    ```shell
+    git clone git@github.com:magento/magento2-samples.git
+    ```
 
     If the command fails with the error `Permission denied (publickey).`, you must [add your SSH public key to GitHub.com](https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account).
-4.  Make a directory to which to copy the sample code:
 
-        mkdir -p /var/www/html/magento2/app/code/Magento/SampleMinimal
-5.  Copy the sample module code:
+4. Make a directory to which to copy the sample code:
 
-        cp -r ~/magento2-samples/sample-module-minimal/* /var/www/html/magento2/app/code/Magento/SampleMinimal
+    ```shell
+    mkdir -p /var/www/html/magento2/app/code/Magento/SampleMinimal
+    ```
+
+5. Copy the sample module code:
+
+    ```shell
+    cp -r ~/magento2-samples/sample-module-minimal/* /var/www/html/magento2/app/code/Magento/SampleMinimal
+    ```
+
 5.  Verify the files copied properly:
 
-        ls -al /var/www/html/magento2/app/code/Magento/SampleMinimal
+    ```shell
+    ls -al /var/www/html/magento2/app/code/Magento/SampleMinimal
+    ```
 
     You should see the following result:
 
-        drwxrwsr-x.   4 magento_user apache  4096 Oct 30 13:19 .
-        drwxrwsr-x. 121 magento_user apache  4096 Oct 30 13:19 ..
-        -rw-rw-r--.   1 magento_user apache   372 Oct 30 13:19 composer.json
-        drwxrwsr-x.   2 magento_user apache  4096 Oct 30 13:19 etc
-        -rw-rw-r--.   1 magento_user apache 10376 Oct 30 13:19 LICENSE_AFL.txt
-        -rw-rw-r--.   1 magento_user apache 10364 Oct 30 13:19 LICENSE.txt
-        -rw-rw-r--.   1 magento_user apache  1157 Oct 30 13:19 README.md
-        -rw-rw-r--.   1 magento_user apache   270 Oct 30 13:19 registration.php
-        drwxrwsr-x.   3 magento_user apache  4096 Oct 30 13:19 Test
+    ```terminal
+    drwxrwsr-x.   4 magento_user apache  4096 Oct 30 13:19 .
+    drwxrwsr-x. 121 magento_user apache  4096 Oct 30 13:19 ..
+    -rw-rw-r--.   1 magento_user apache   372 Oct 30 13:19 composer.json
+    drwxrwsr-x.   2 magento_user apache  4096 Oct 30 13:19 etc
+    -rw-rw-r--.   1 magento_user apache 10376 Oct 30 13:19 LICENSE_AFL.txt
+    -rw-rw-r--.   1 magento_user apache 10364 Oct 30 13:19 LICENSE.txt
+    -rw-rw-r--.   1 magento_user apache  1157 Oct 30 13:19 README.md
+    -rw-rw-r--.   1 magento_user apache   270 Oct 30 13:19 registration.php
+    drwxrwsr-x.   3 magento_user apache  4096 Oct 30 13:19 Test
+    ```
+
 6.  Update the Magento database and schema:
 
     ```bash
@@ -102,34 +113,37 @@ This step shows a simple class to create a cron job. The class only writes a row
 
 {% collapsible To create a class: %}
 
-1.  Create a directory for the class and change to that directory:
+1. Create a directory for the class and change to that directory:
 
-        mkdir /var/www/html/magento2/app/code/Magento/SampleMinimal/Cron && cd /var/www/html/magento2/app/code/Magento/SampleMinimal/Cron
+    ```shell
+    mkdir /var/www/html/magento2/app/code/Magento/SampleMinimal/Cron && cd /var/www/html/magento2/app/code/Magento/SampleMinimal/Cron
+    ```
+
 2.  Created a file named `Test.php` in that directory with the following contents:
 
-```php
-<?php
-namespace Magento\SampleMinimal\Cron;
+    ```php
+    <?php
+    namespace Magento\SampleMinimal\Cron;
 
-use Psr\Log\LoggerInterface;
+    use Psr\Log\LoggerInterface;
 
-class Test {
-    protected $logger;
+    class Test {
+        protected $logger;
 
-    public function __construct(LoggerInterface $logger) {
-        $this->logger = $logger;
+        public function __construct(LoggerInterface $logger) {
+            $this->logger = $logger;
+        }
+
+      /**
+        * Write to system.log
+        *
+        * @return void
+        */
+        public function execute() {
+            $this->logger->info('Cron Works');
+        }
     }
-
-   /**
-    * Write to system.log
-    *
-    * @return void
-    */
-    public function execute() {
-        $this->logger->info('Cron Works');
-    }
-}
-```
+    ```
 
 {% endcollapsible %}
 
@@ -163,10 +177,14 @@ This step shows how to verify the custom cron job successfully using a SQL query
 
 1.  Run Magento cron jobs:
 
-        php /var/www/html/magento2/bin/magento cron:run
+    ```shell
+    php /var/www/html/magento2/bin/magento cron:run
+    ```
+
 2.  Enter the `magento cron:run` command two or three times.
 
     The first time you enter the command, it queues jobs; subsequently, the cron jobs are run. You must enter the command _at least_ twice.
+
 2.  Run the SQL query `SELECT * from cron_schedule WHERE job_code like '%custom%'` as follows:
 
     1.  Enter `mysql -u magento -p`
@@ -175,6 +193,7 @@ This step shows how to verify the custom cron job successfully using a SQL query
 
     The result should be similar to the following:
 
+        ```terminal
         +-------------+----------------+---------+----------+---------------------+---------------------+---------------------+---------------------+
         | schedule_id | job_code       | status  | messages | created_at          | scheduled_at        | executed_at         | finished_at         |
         +-------------+----------------+---------+----------+---------------------+---------------------+---------------------+---------------------+
@@ -183,19 +202,26 @@ This step shows how to verify the custom cron job successfully using a SQL query
         |        3758 | custom_cronjob | success | NULL     | 2016-11-02 10:09:03 | 2016-11-02 10:09:00 | 2016-11-02 10:10:03 | 2016-11-02 10:10:03 |
         |        3797 | custom_cronjob | success | NULL     | 2016-11-02 10:24:03 | 2016-11-02 10:24:00 | 2016-11-02 10:25:03 | 2016-11-02 10:25:03 |
         +-------------+----------------+---------+----------+---------------------+---------------------+---------------------+---------------------+
+        ```
 
 3.  (Optional) Verify messages are written to Magento's system log:
 
-        cat /var/www/html/magento2/var/log/system.log
+    ```shell
+    cat /var/www/html/magento2/var/log/system.log
+    ```
 
     You should see one or more entries like the following:
 
-        [2016-11-02 22:17:03] main.INFO: Cron Works [] []
+    ```terminal
+    [2016-11-02 22:17:03] main.INFO: Cron Works [] []
+    ```
 
     These messages come from the `execute` method in `Test.php`:
 
-        public function execute() {
-           $this->logger->info('Cron Works');
+    ```php
+    public function execute() {
+        $this->logger->info('Cron Works');
+    ```
 
 If the SQL command and system log contain no entries, run the `magento cron:run` command a few more times and wait. It can take some time for the database to update.
 
@@ -212,20 +238,20 @@ If the SQL command and system log contain no entries, run the `magento cron:run`
 3.  Exit the text editor.
 4.  Create `/var/www/html/magento2/app/code/Magento/SampleMinimal/etc/cron_groups.xml` with the following contents:
 
-```xml
-<?xml version="1.0"?>
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Cron:etc/cron_groups.xsd">
-    <group id="custom_crongroup">
-        <schedule_generate_every>1</schedule_generate_every>
-        <schedule_ahead_for>4</schedule_ahead_for>
-        <schedule_lifetime>2</schedule_lifetime>
-        <history_cleanup_every>10</history_cleanup_every>
-        <history_success_lifetime>60</history_success_lifetime>
-        <history_failure_lifetime>600</history_failure_lifetime>
-        <use_separate_process>1</use_separate_process>
-    </group>
-</config>
-```
+    ```xml
+    <?xml version="1.0"?>
+    <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Cron:etc/cron_groups.xsd">
+        <group id="custom_crongroup">
+            <schedule_generate_every>1</schedule_generate_every>
+            <schedule_ahead_for>4</schedule_ahead_for>
+            <schedule_lifetime>2</schedule_lifetime>
+            <history_cleanup_every>10</history_cleanup_every>
+            <history_success_lifetime>60</history_success_lifetime>
+            <history_failure_lifetime>600</history_failure_lifetime>
+            <use_separate_process>1</use_separate_process>
+        </group>
+    </config>
+    ```
 
 For a description of what the options mean, see [Configure custom cron jobs and cron groups reference]({{ page.baseurl }}/config-guide/cron/custom-cron-ref.html).
 
@@ -239,12 +265,18 @@ This step shows how to verify your custom cron group using the [Magento Admin](h
 
 1.  Run Magento cron jobs for your custom group:
 
-        php /var/www/html/magento2/bin/magento cron:run --group="custom_crongroup"
+    ```shell
+    php /var/www/html/magento2/bin/magento cron:run --group="custom_crongroup"
+    ```
 
     Run the command at least twice.
+
 2.  Clean the Magento cache:
 
-        php /var/www/html/magento2/bin/magento cache:clean
+    ```shell
+    php /var/www/html/magento2/bin/magento cache:clean
+    ```
+    
 2.  Log in to the Magento Admin as an administrator.
 3.  Click **Stores** > **Settings** > **Configuration** > **Advanced** > **System**.
 4.  In the right pane, expand **Cron**.

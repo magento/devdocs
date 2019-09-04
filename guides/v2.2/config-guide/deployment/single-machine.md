@@ -31,15 +31,21 @@ Contributing developers should use [this guide][6] to update their Magento insta
 
 2. Change directory to the Magento base directory:
 
-        cd <Magento base directory>
+    ```shell
+    cd <Magento base directory>
+    ```
 
 3. Enable maintenance mode using the command:
 
-        bin/magento maintenance:enable
+    ```shell
+    bin/magento maintenance:enable
+    ```
 
 4. Apply updates to Magento or its components using the following command pattern:
 
-        composer require <package> <version> --no-update
+    ```shell
+    composer require <package> <version> --no-update
+    ```
 
    **package**: The name of the package you want to update.
 
@@ -52,27 +58,39 @@ Contributing developers should use [this guide][6] to update their Magento insta
 
 5. Update Magento's components with Composer:
 
-        composer update
+    ```shell
+    composer update
+    ```
 
 6. Update the database schema and data:
 
-        bin/magento setup:upgrade
+    ```shell
+    bin/magento setup:upgrade
+    ```
 
 7. Compile the code:
 
-        bin/magento setup:di:compile
+    ```shell
+    bin/magento setup:di:compile
+    ```
 
 8. Deploy static content:
 
-        bin/magento setup:static-content:deploy
+    ```shell
+    bin/magento setup:static-content:deploy
+    ```
 
 9. Clean the cache:
 
-        bin/magento cache:clean
+    ```shell
+    bin/magento cache:clean
+    ```
 
 9. Exit maintenance mode:
 
-        bin/magento maintenance:disable
+    ```shell
+    bin/magento maintenance:disable
+    ```
 
 ## Alternative deployment strategies
 

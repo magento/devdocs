@@ -1,6 +1,6 @@
-1.  Log in to your development system as, or switch to, the [Magento file system owner](https://glossary.magento.com/magento-file-system-owner).
+1. Log in to your development system as, or switch to, the [Magento file system owner](https://glossary.magento.com/magento-file-system-owner).
 
-1.  Enter the following commands in the order shown:
+1. Enter the following commands in the order shown:
 
     ```bash
     cd <Magento root dir>
@@ -14,7 +14,7 @@
     php bin/magento app:config:dump
     ```
 
-1.  If you use Git, enter the following command to confirm that `app/etc/config.php` was updated:
+1. If you use Git, enter the following command to confirm that `app/etc/config.php` was updated:
 
     ```bash
     git status
@@ -33,7 +33,7 @@
     {:.bs-callout .bs-callout-warning}
     Do _not_ submit changes to the `generated`, `pub/media`, or `pub/static` directories to source control. You'll generate those files on your build system. The development system likely has code, themes, and so on that are not ready for use on the production system.
 
-1.  Check in your changes to `app/etc/config.php` only to source control.
+1. Check in your changes to `app/etc/config.php` only to source control.
 
     The Git command follows:
 

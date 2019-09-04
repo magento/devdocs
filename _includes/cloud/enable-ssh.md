@@ -116,11 +116,15 @@ To add an SSH key using the CLI:
 
 3.	Log in to your project:
 
-		magento-cloud login
+    ```shell
+    magento-cloud login
+    ```
 
 3.	Add the key:
 
-		magento-cloud ssh-key:add ~/.ssh/id_rsa.pub
+    ```shell
+    magento-cloud ssh-key:add ~/.ssh/id_rsa.pub
+    ```
 
 #### Add a key using the Project Web Interface {#add-key-web}
 
@@ -149,7 +153,12 @@ Set required global Git variables on the machine to commit or push to a Git bran
 
 To set variables, enter the following commands on every workspace:
 
-	git config --global user.name "<your name>"
-	git config --global user.email <your e-mail address>
+```shell
+git config --global user.name "<your name>"
+```
+
+```shell
+git config --global user.email <your e-mail address>
+```
 
 For more information, see [First-Time Git Setup](https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup#_first_time)

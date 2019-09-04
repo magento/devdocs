@@ -33,7 +33,9 @@ The syntax of the preceding commands might depend on what package repositories y
     1. Open `/etc/sysconfig/memcached` in a text editor.
     1. Locate the value for `CACHESIZE` and change it to at least 1GB. For example
 
-           CACHESIZE="1GB"
+       ```config
+       CACHESIZE="1GB"
+       ```
 
     1. Locate the value for `OPTIONS` and change it to `localhost` or `127.0.0.1`
 
@@ -42,7 +44,9 @@ The syntax of the preceding commands might depend on what package repositories y
 1. Save your changes to `memcached` and exit the text editor.
 1. Restart memcached.
 
-        service memcached restart
+    ```shell
+    service memcached restart
+    ```
 
 1. Restart your web server.
 
@@ -86,7 +90,9 @@ The test uses a MySQL database, table, and data to verify you can retrieve the d
 
 Create the MySQL database:
 
-    mysql -u root -p
+```shell
+mysql -u root -p
+```
 
 At the `mysql` prompt, enter the following commands:
 
@@ -102,7 +108,6 @@ exit
 Create `cache-test.php` in your web server's docroot:
 
 ```php
-
 $meminstance = new Memcached();
 
 $meminstance->addServer('<memcached hostname or ip>', <memcached port>);
@@ -132,8 +137,13 @@ where `<memcached hostname or ip>` is either `localhost`, `127.0.0.1`, or the me
 
 Run the script from the command line.
 
-    cd <web server docroot>
-    php cache-test.php
+```shell
+cd <web server docroot>
+```
+
+```shell
+php cache-test.php
+```
 
 The first result is `got result from mysql`. This means that the key did not exist in memcached but it was retrieved from MySQL.
 
@@ -141,26 +151,37 @@ The second result is `got result from memcached`, which verifies that the value 
 
 Finally, you can view the memcache keys using Telnet:
 
-    telnet localhost <memcache port>
+```shell
+telnet localhost <memcache port>
+```
 
 At the prompt, enter
 
-    stats items
+```shell
+stats items
+```
 
 The result is similar to the following:
 
-    STAT items:3:number 1
-    STAT items:3:age 1075
-    STAT items:3:evicted 0
-    STAT items:3:evicted_nonzero 0
-    STAT items:3:evicted_time 0
-    STAT items:3:outofmemory 0
-    STAT items:3:tailrepairs 0
+```terminal
+STAT items:3:number 1
+STAT items:3:age 1075
+STAT items:3:evicted 0
+STAT items:3:evicted_nonzero 0
+STAT items:3:evicted_time 0
+STAT items:3:outofmemory 0
+STAT items:3:tailrepairs 0
+```
 
 Flush the memcache storage and quit Telnet:
 
-    flush_all
-    quit
+```shell
+flush_all
+```
+
+```shell
+quit
+```
 
 [Additional information about the Telnet test](http://www.darkcoding.net/software/memcached-list-all-keys/)
 

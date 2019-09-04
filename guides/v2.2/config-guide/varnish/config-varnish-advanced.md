@@ -72,7 +72,9 @@ Alternatively, [static files](https://glossary.magento.com/static-files) version
 
 Finally, all Magento instances must be in production mode. Before Varnish starts, clear the cache on each instance. In Admin, go to **System** > Tools > **Cache Management** and click **Flush Magento Cache**. You can also run the following command to clear the cache:
 
-    bin/magento cache:flush
+```shell
+bin/magento cache:flush
+```
 
 ### Installation {#saint-install}
 
@@ -85,14 +87,15 @@ After you've recompiled, you can install the Saint mode [module](https://glossar
 
 1. Obtain the source code from [Varnish modules](https://github.com/varnish/varnish-modules) . Clone the Git version (master version) since the 0.9.x versions contain a source code error.
 2. Build the source code with autotools:
-```bash
-sudo apt-get install libvarnishapi-dev || sudo yum install varnish-libs-devel
-./bootstrap   # If running from git.
-./configure
-make
-make check   # optional
-sudo make install
-```
+
+    ```bash
+    sudo apt-get install libvarnishapi-dev || sudo yum install varnish-libs-devel
+    ./bootstrap   # If running from git.
+    ./configure
+    make
+    make check   # optional
+    sudo make install
+    ```
 
 See [Varnish module collection](https://github.com/varnish/varnish-modules) for information about installing the Saint mode module.
 
@@ -103,7 +106,6 @@ The following code example shows the code that must be added to your VCL file to
 {% collapsible Click to show/hide %}
 
 ```cpp
-
 import saintmode;
 import directors;
 

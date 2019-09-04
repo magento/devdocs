@@ -269,8 +269,10 @@ The default email domain system-specific configuration setting is written to `ap
 
 The PayPal settings are written to neither file because the `magento app:config:dump` command does not write sensitive settings. You must set the PayPal settings on the production system using the following commands:
 
-    bin/magento config:sensitive:set paypal/wpp/api_username <username>
-    bin/magento config:sensitive:set paypal/wpp/api_password <password>
+```shell
+bin/magento config:sensitive:set paypal/wpp/api_username <username>
+bin/magento config:sensitive:set paypal/wpp/api_password <password>
+```
 
 ## Prerequisite for your development, build, and production systems {#config-deploy-prereq}
 

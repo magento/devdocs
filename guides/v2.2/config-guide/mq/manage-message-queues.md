@@ -67,7 +67,9 @@ Edit */app/etc/env.php* file for configure cron job `consumers_runner`
 
 Use the `magento` command to start message queue consumers. You can start multiple consumers simultaneously.
 
-    ./bin/magento queue:consumers:start [--max-messages=<value>] [--batch-size=<value>] [--pid-file-path=<value>] [--area-code=<value>] <consumer_name>
+```shell
+./bin/magento queue:consumers:start [--max-messages=<value>] [--batch-size=<value>] [--pid-file-path=<value>] [--area-code=<value>] <consumer_name>
+```
 
 Where:
 
@@ -87,7 +89,9 @@ After consuming all available messages, the command terminates. You can run the 
 
 Use the following command to return a list of message queue consumers:
 
-    ./bin/magento queue:consumers:list
+```shell
+./bin/magento queue:consumers:list
+```
 
 #### Related Topics
 

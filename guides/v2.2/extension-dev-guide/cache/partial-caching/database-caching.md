@@ -36,12 +36,13 @@ To modify `di.xml`:
 1.	Log in to the Magento server as, or switch to, the [Magento file system owner].
 2.	Enter the following commands to make a copy of `di.xml`:
 
-		cd <magento_root>/app/etc
-		cp di.xml di.xml.bak
+    cd <magento_root>/app/etc
+    cp di.xml di.xml.bak
 
 3.	Open `di.xml` in a text editor and locate the following block:
 
-		<type name="Magento\Framework\App\Cache\Frontend\Pool">
+    ```xml
+    <type name="Magento\Framework\App\Cache\Frontend\Pool">
            <arguments>
               <argument name="frontendSettings" xsi:type="array">
                   <item name="page_cache" xsi:type="array">
@@ -59,33 +60,34 @@ To modify `di.xml`:
               </argument>
            </arguments>
         </type>
+        ```
 
-	The `<type name="Magento\Framework\App\Cache\Frontend\Pool">` node configures options for the in-memory pool of all frontend cache instances.
+  The `<type name="Magento\Framework\App\Cache\Frontend\Pool">` node configures options for the in-memory pool of all frontend cache instances.
 
-	The `<type name="Magento\Framework\App\Cache\Type\FrontendPool">` node configures cache frontend options specific to each cache type.
+  The `<type name="Magento\Framework\App\Cache\Type\FrontendPool">` node configures cache frontend options specific to each cache type.
 
 4.	Replace the entire block with the following:
 
     ```xml
-		<type name="Magento\Framework\App\Cache\Frontend\Pool">
-        	<arguments>
-            	<argument name="frontendSettings" xsi:type="array">
-            	    <item name="page_cache" xsi:type="array">
+    <type name="Magento\Framework\App\Cache\Frontend\Pool">
+          <arguments>
+              <argument name="frontendSettings" xsi:type="array">
+                  <item name="page_cache" xsi:type="array">
                         <item name="backend" xsi:type="string">database</item>
                     </item>
                     <item name="<your cache id>" xsi:type="array">
                         <item name="backend" xsi:type="string">database</item>
                     </item>
-           		</argument>
-        	</arguments>
-    	</type>
-    	<type name="Magento\Framework\App\Cache\Type\FrontendPool">
-        	<arguments>
-         	   <argument name="typeFrontendMap" xsi:type="array">
-         	       <item name="backend" xsi:type="string">database</item>
-         	   </argument>
-        	</arguments>
-    	</type>
+               </argument>
+          </arguments>
+      </type>
+      <type name="Magento\Framework\App\Cache\Type\FrontendPool">
+          <arguments>
+              <argument name="typeFrontendMap" xsi:type="array">
+                  <item name="backend" xsi:type="string">database</item>
+              </argument>
+          </arguments>
+      </type>
       ```
 
     where `<your cache id>` is your unique cache identifier.
@@ -106,30 +108,37 @@ To enable database caching using a custom cache frontend, you must modify `<mage
 1.	Log in to the Magento server as, or switch to, the [Magento file system owner].
 2.	Enter the following commands to make a copy of `env.php`:
 
-		cd <magento_root>/app/etc
-		cp env.php env.php.bak
+    ```shell
+    cd <magento_root>/app/etc
+    ```
+
+    ```shell
+    cp env.php env.php.bak
+    ```
 
 3.	Open `env.php` in a text editor and add the following anywhere, such as before `'cache_types' =>`:
 
-		'cache' => [
-		    'frontend' => [
-		        '<unique frontend id>' => [
-		             <cache options>
-		        ],
-		    ],
-		    'type' => [
-		         <cache type 1> => [
-		             'frontend' => '<unique frontend id>'
-		        ],
-		    ],
-		    'type' => [
-		         <cache type 2> => [
-		             'frontend' => '<unique frontend id>'
-		        ],
-		    ],
-		],
+    ```php
+    'cache' => [
+        'frontend' => [
+            '<unique frontend id>' => [
+                 <cache options>
+            ],
+        ],
+        'type' => [
+             <cache type 1> => [
+                 'frontend' => '<unique frontend id>'
+            ],
+        ],
+        'type' => [
+             <cache type 2> => [
+                 'frontend' => '<unique frontend id>'
+            ],
+        ],
+    ],
+    ```
 
-	An example is shown in [Configuration examples].
+  An example is shown in [Configuration examples].
 
 4.	Save your changes to `env.php` and exit the text editor.
 5.	Continue with the next section.
@@ -144,16 +153,22 @@ Use the following steps:
 2.	Clear the current cache directories:
 
     ```bash
-		rm -rf <magento_root>/var/cache/* <magento_root>/var/page_cache/* <magento_root>/generated/metadata/* <magento_root>/generated/code/*
+    rm -rf <magento_root>/var/cache/* <magento_root>/var/page_cache/* <magento_root>/generated/metadata/* <magento_root>/generated/code/*
     ```
 
 3.	In a web browser, go to any cacheable page (such as the [storefront](https://glossary.magento.com/storefront) front door page).
 
-	If exceptions display, verify `di.xml` syntax and try again. (To see exceptions in the browser, you must [enable developer mode].)
+  If exceptions display, verify `di.xml` syntax and try again. (To see exceptions in the browser, you must [enable developer mode].)
+
 4.	Enter the following commands:
 
-		ls <magento_root>/var/cache/*
-		ls <magento_root>/var/page_cache/*
+    ```shell
+    ls <magento_root>/var/cache/*
+    ```
+
+    ```shell
+    ls <magento_root>/var/page_cache/*
+    ```
 
     {:.bs-callout .bs-callout-info }
     Due to a known issue, a custom cache frontend still results in some objects being cached to the file system; however, fewer assets are cached compared to file system caching.
@@ -162,15 +177,15 @@ Use the following steps:
 3.	Verify both directories are empty; if not, edit `di.xml` again and correct any issues.
 4.	Use a database tool such as [phpMyAdmin] to verify there is data in the `cache` and `cache_tag` tables.
 
-	The following figures show examples. The important thing is that there are rows in the tables. *The data in your tables will be different than the following*.
+  The following figures show examples. The important thing is that there are rows in the tables. *The data in your tables will be different than the following*.
 
-	`cache` table example.
+  `cache` table example.
 
-	![Sample contents of the cache table with database caching enabled]
+  ![Sample contents of the cache table with database caching enabled]
 
-	`cache_tag` table example.
+  `cache_tag` table example.
 
-	![Sample contents of the cache tag table with database caching enabled]
+  ![Sample contents of the cache tag table with database caching enabled]
 
 ## Configuration examples {#mage-cache-db-config}
 

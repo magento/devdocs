@@ -18,7 +18,9 @@ If you use the optional [PHP](https://glossary.magento.com/php) [extension](http
 
 Sample exception:
 
-    Fatal error: Maximum function nesting level of '100' reached, aborting!
+```terminal
+Fatal error: Maximum function nesting level of '100' reached, aborting!
+```
 
 To resolve this issue, you can:
 

@@ -34,10 +34,15 @@ Back up your Integration environment database and code:
 
 1.  Enter the following command to make a local backup of the remote database:
 
-        magento-cloud db:dump
+    ```shell
+    magento-cloud db:dump
+    ```
+
 2.  Enter the following command to back up code and media:
 
-        php bin/magento setup:backup --code [--media]
+    ```shell
+    php bin/magento setup:backup --code [--media]
+    ```
 
     You can optionally omit `[--media]` if you have a large number of static files that are already in source control.
 
@@ -46,11 +51,15 @@ Back up your Staging or Production environment database before deploying to thos
 1.  [SSH to the server]({{ page.baseurl }}/cloud/env/environments-ssh.html).
 2.  Find the database login information:
 
-        php -r 'print_r(json_decode(base64_decode($_ENV["MAGENTO_CLOUD_RELATIONSHIPS"]))->database);'
+    ```shell
+    php -r 'print_r(json_decode(base64_decode($_ENV["MAGENTO_CLOUD_RELATIONSHIPS"]))->database);'
+    ```
 
 3.  Create a database dump:
 
-        mysqldump -h <database host> --user=<database username> --password=<password> --single-transaction <database name> | gzip - > /tmp/database.sql.gz
+    ```shell
+    mysqldump -h <database host> --user=<database username> --password=<password> --single-transaction <database name> | gzip - > /tmp/database.sql.gz
+    ```
 
 ### Verify other changes
 
@@ -59,22 +68,35 @@ Verify other changes you're going to submit to source control before you start t
 1.  If you haven't done so already, change to your project root directory.
 2.  Enter the following command:
 
-        git status
+    ```shell
+    git status
+    ```
+
 3.  If there are changes you do *not* want to submit to source control, branch or stash them now.
 
 ### Upgrade the patch
 
 1.  Change to your Magento base directory and enter the following command:
 
-        composer update
+    ```shell
+    composer update
+    ```
 
     This command automatically upgrades for patches associated to the installed {{site.data.var.ee}} version.
 
 4.  Add, commit, and push your changes to initiate a deployment:
 
-        git add -A
-        git commit -m "Upgrade patch"
-        git push origin <branch name>
+    ```shell
+    git add -A
+    ```
+
+    ```shell
+    git commit -m "Upgrade patch"
+    ```
+
+    ```shell
+    git push origin <branch name>
+    ```
 
     `git add -A` is required to add all changed files to source control because of the way Composer marshals base packages.
 
@@ -100,23 +122,45 @@ To test a general patch on your local system:
 
 1.	On your local system, enter the following commands as the [Magento file system owner]({{ page.baseurl }}/cloud/before/before-workspace-file-sys-owner.html):
 
-		cd <project root dir>
-		magento-cloud environment:checkout master
-		git pull origin master
-		composer update
+    ```shell
+    cd <project root dir>
+    ```
+
+    ```shell
+    magento-cloud environment:checkout master
+    ```
+
+    ```shell
+    git pull origin master
+    ```
+
+    ```shell
+    composer update
+    ```
+
 2.	Apply the patch locally:
 
-		git apply vendor/magento/magento-cloud-configuration/patches/<patch file name>
+    ```shell
+    git apply vendor/magento/magento-cloud-configuration/patches/<patch file name>
+    ``
+
 3.	Clean the Magento cache:
 
-		php <Magento project root dir>/bin/magento cache:clean
+    ```shell
+    php <Magento project root dir>/bin/magento cache:clean
+    ```
 
 	You can also clean the cache using the [Magento Admin](http://docs.magento.com/m2/ee/user_guide/system/cache-management.html).
 4.	Thoroughly test your local system to make sure the patch doesn't have unexpected side-affects.
 5.	After testing the patch, push it to the remote server and deploy it:
 
-		git add -A && git commit -m "Apply patch"
-		git push origin <branch name>
+    ```shell
+    git add -A && git commit -m "Apply patch"
+    ```
+
+    ```shell
+    git push origin <branch name>
+    ```
 
 ### Push a general patch to the staging or production environment {#gen-pushpatch}
 
@@ -126,22 +170,37 @@ After you've successfully tested a patch locally and on your integration environ
 
     *   Staging: `ssh -A <project ID>_stg@<project ID>.ent.magento.cloud`
     *   Production: `ssh -A <project ID>@<project ID>.ent.magento.cloud`
+
 2.	Enter the following commands:
 
-		<Magento project root dir>/composer update
+    ```shell
+    <Magento project root dir>/composer update
+    ```
+
 2.	Apply the patch locally:
 
-		git apply vendor/magento/magento-cloud-configuration/patches/<patch file name>
+    ```shell
+    git apply vendor/magento/magento-cloud-configuration/patches/<patch file name>
+    ```
+
 3.	Clean the Magento cache:
 
-		php <Magento project root dir>/bin/magento cache:clean
+    ```shell
+    php <Magento project root dir>/bin/magento cache:clean
+    ```
 
-	You can also clean the cache using the [Magento Admin](http://docs.magento.com/m2/ee/user_guide/system/cache-management.html).
+    You can also clean the cache using the [Magento Admin](http://docs.magento.com/m2/ee/user_guide/system/cache-management.html).
+
 3.	Thoroughly test your local system to make sure the patch doesn't have unexpected side-affects.
 4.	After testing the patch, push it to the remote server and deploy it:
 
-		git add -A && git commit -m "Apply patch"
-		git push origin master
+    ```shell
+    git add -A && git commit -m "Apply patch"
+    ```
+
+    ```shell
+    git push origin master
+    ```
 
 ## Test custom patches {#cloud-patch-custom}
 
@@ -161,23 +220,45 @@ To test a custom patch on your local system:
 
 1.	On your local system, enter the following command as the [Magento file system owner]({{ page.baseurl }}/cloud/before/before-workspace-file-sys-owner.html) if you haven't done so already:
 
-		mkdir <Magento project root dir>/m2-hotfixes
+    ```shell
+    mkdir <Magento project root dir>/m2-hotfixes
+    ```
+
 3.	Copy the patch file to that directory.
 2.	Apply the patch locally:
 
-		cd <Magento project root dir>
-		magento-cloud environment:checkout master
-		git pull origin master
-		git apply <Magento project root dir>/m2-hotfixes/<patch file name>
+    ```shell
+    cd <Magento project root dir>
+    ```
+
+    ```shell
+    magento-cloud environment:checkout master
+    ```
+
+    ```shell
+    git pull origin master
+    ```
+
+    ```shell
+    git apply <Magento project root dir>/m2-hotfixes/<patch file name>
+    ```
+
 3.	Clean the Magento cache:
 
-		php <Magento project root dir>/bin/magento cache:clean
+    ```shell
+    php <Magento project root dir>/bin/magento cache:clean
+    ```
 
 	You can also clean the cache using the [Magento Admin](http://docs.magento.com/m2/ee/user_guide/system/cache-management.html).
 4.	After testing the patch, push it to the remote server and deploy it:
 
-		git add -A && git commit -m "Apply patch"
-		git push origin <branch name>
+    ```shell
+    git add -A && git commit -m "Apply patch"
+    ```
+
+    ```shell
+    git push origin <branch name>
+    ```
 
 ### Push a custom patch to a staging or production environment {#custom-pushpatch}
 
@@ -187,14 +268,20 @@ After you've successfully tested a custom patch locally and on your integration 
 
     *   Staging: `ssh -A <project ID>_stg@<project ID>.ent.magento.cloud`
     *   Production: `ssh -A <project ID>@<project ID>.ent.magento.cloud`
+
 2.	On your staging or production system, enter the following command if you haven't done so already:
 
-		mkdir <Magento project root dir>/m2-hotfixes
+    ```shell
+    mkdir <Magento project root dir>/m2-hotfixes
+    ```
+
 3.	Copy the patch file to that directory.
 
-	We suggest using the following command:
+    We suggest using the following command:
 
-		rsync -azvP <source> <destination>
+    ```shell
+    rsync -azvP <source> <destination>
+    ```
 
 	Options:
 
@@ -209,13 +296,24 @@ After you've successfully tested a custom patch locally and on your integration 
 	For additional options, see the [rsync man page](http://linux.die.net/man/1/rsync).
 2.	Apply the patch:
 
-		git apply <Magento project root dir>/m2-hotfixes/<patch file name>
+    ```shell
+    git apply <Magento project root dir>/m2-hotfixes/<patch file name>
+    ```
+
 3.	Clean the Magento cache:
 
-		php <Magento project root dir>/bin/magento cache:clean
+    ```shell
+    php <Magento project root dir>/bin/magento cache:clean
+    ```
 
 	You can also clean the cache using the [Magento Admin](http://docs.magento.com/m2/ee/user_guide/system/cache-management.html).
+
 4.	After testing the patch, push it to the remote server and deploy it:
 
-		git add -A && git commit -m "Apply patch"
-		git push origin <branch name>
+    ```shell
+    git add -A && git commit -m "Apply patch"
+    ```
+
+    ```shell
+    git push origin <branch name>
+    ```

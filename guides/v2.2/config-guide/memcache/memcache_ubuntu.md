@@ -20,8 +20,10 @@ To install and configure memcached on Ubuntu:
 
 1. As a user with `root` privileges, enter the following command:
 
-        apt-get -y update
-        apt-get -y install php5-memcached memcached
+    ```shell
+    apt-get -y update
+    apt-get -y install php5-memcached memcached
+    ```
 
 2. Change the memcached configuration setting for `CACHESIZE` and `-l`:
 
@@ -33,11 +35,13 @@ To install and configure memcached on Ubuntu:
     6. Save your changes to `memcached.conf` and exit the text editor.
     7. Restart memcached.
 
-           service memcached restart
+       ```shell
+       service memcached restart
+       ```
 
 3. Restart your web server.
 
-       For Apache, `service apache2 restart`
+   For Apache, `service apache2 restart`
 
 4. Continue with the next section.
 
@@ -78,7 +82,6 @@ For more information about this test, see [this digitalocean tutorial](https://w
 Create `cache-test.php` in the web server's docroot with the following contents:
 
 ```php
-
 $meminstance = new Memcached();
 
 $meminstance->addServer("<memcached hostname or ip>", <memcached port>);
@@ -105,29 +108,40 @@ Refresh the browser. The message changes to `Successfully retrieved the data!`
 
 Finally, you can view the memcache keys using Telnet:
 
-    telnet localhost <memcache port>
+```shell
+telnet localhost <memcache port>
+```
 
 At the prompt, enter
 
-    stats items
+```shell
+stats items
+``
 
 The result is similar to the following:
 
-    STAT items:2:number 1
-    STAT items:2:age 106
-    STAT items:2:evicted 0
-    STAT items:2:evicted_nonzero 0
-    STAT items:2:evicted_time 0
-    STAT items:2:outofmemory 0
-    STAT items:2:tailrepairs 0
-    STAT items:2:reclaimed 0
-    STAT items:2:expired_unfetched 0
-    STAT items:2:evicted_unfetched 0
+```terminal
+STAT items:2:number 1
+STAT items:2:age 106
+STAT items:2:evicted 0
+STAT items:2:evicted_nonzero 0
+STAT items:2:evicted_time 0
+STAT items:2:outofmemory 0
+STAT items:2:tailrepairs 0
+STAT items:2:reclaimed 0
+STAT items:2:expired_unfetched 0
+STAT items:2:evicted_unfetched 0
+```
 
 Flush memcached storage and quit Telnet:
 
-    flush_all
-    quit
+```shell
+flush_all
+```
+
+```shell
+quit
+```
 
 [Additional information about the Telnet test](http://www.darkcoding.net/software/memcached-list-all-keys/)
 

@@ -81,15 +81,21 @@ Replace `192.168.33.10` with your server's hostname.
 
 1.  Log in to the Magento database:
 
-        mysql -u <user> -p
+    ```shell
+    mysql -u <user> -p
+    ```
 
 2.  Specify the Magento database you created when you installed Magento:
 
-        use <database-name>
+    ```shell
+    use <database-name>
+    ```
 
 3.  Update the base URL:
 
-        UPDATE core_config_data SET value='http://192.168.33.10' WHERE path='web/unsecure/base_url';
+     ```sql
+     UPDATE core_config_data SET value='http://192.168.33.10' WHERE path='web/unsecure/base_url';
+     ```
 
 ## 3. Switch modes
 [Magento modes]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html), which include `production` and `developer`, are designed to improve security and make development easier. As the names suggest, you should switch to `developer` mode when extending or customizing Magento and switch to `production` mode when running Magento in a live environment.
@@ -99,14 +105,21 @@ Switching between modes is an important step in verifying that your server confi
 1.  Go to your Magento installation directory.
 2.  Switch to `production` mode.
 
-        bin/magento deploy:mode:set production
-        bin/magento cache:flush
+    ```shell
+    bin/magento deploy:mode:set production
+    ```
+
+    ```shell
+    bin/magento cache:flush
+    ```
 
 3.  Refresh your browser and verify that the storefront displays properly.
 4.  Switch to `developer` mode.
 
-        bin/magento deploy:mode:set developer
-        bin/magento cache:flush
+    ```shell
+    bin/magento deploy:mode:set developer
+    bin/magento cache:flush
+    ```
 
 5.  Refresh your browser and verify that the storefront displays properly.
 

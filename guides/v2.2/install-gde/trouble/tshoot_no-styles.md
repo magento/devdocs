@@ -21,13 +21,13 @@ Magento static assets are located under `<magento_root>/pub/static/`, within the
 
   - The `include` directive must point to the sample nginx configuration file in your Magento installation directory. For example:
 
-    ```
+    ```config
     include /var/www/html/magento2/nginx.conf.sample;
     ```
 
   - The `server_name` directive must match the base URL you specified when installing Magento. For example:
 
-    ```
+    ```config
     server_name 192.186.33.10;
     ```
 

@@ -3,13 +3,16 @@ Unless you have DNS set up for your stores' URLs, you must add a static route to
 1.  Locate your operating system's [`hosts` file](https://en.wikipedia.org/wiki/Hosts_(file)#Location_in_the_file_system).
 2.  Add the static route in the format:
 
-        <ip address> french.mysite.mg
-        <ip address> german.mysite.mg
+    ```config
+    <ip address> french.mysite.mg
+    <ip address> german.mysite.mg
+    ```
+
 3.  Go to one of the following URLs in your browser:
 
-        http://mysite.mg/admin
-        http://french.mysite.mg/frenchstoreview
-        http://german.mysite.mg/germanstoreview
+    http://mysite.mg/admin
+    http://french.mysite.mg/frenchstoreview
+    http://german.mysite.mg/germanstoreview
 
 You're done!
 

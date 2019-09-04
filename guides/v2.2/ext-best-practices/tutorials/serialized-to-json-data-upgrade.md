@@ -56,6 +56,7 @@ Inside the file, create the class `UpgradeData` which implements `\Magento\Frame
 Example upgrade script content:
 
 {% collapsible Show upgrade script content%}
+
 ```php
 namespace Magento\CustomModule\Setup;
 
@@ -118,6 +119,7 @@ class UpgradeData implements \Magento\Framework\Setup\UpgradeDataInterface
     }
 }
 ```
+
 {% endcollapsible %}
 
 ## Step 2: Check that the module exists
@@ -131,11 +133,13 @@ Use the `\Magento\Framework\Module\Manager` class to check the status of the mod
 Add this dependency in the constructor of your upgrade script class:
 
 {% collapsible Show code %}
+
 ```php
 if ($this->moduleManager->isEnabled('Magento_Sales')) {
     // Upgrade logic goes here
 }
 ```
+
 {% endcollapsible %}
 
 ## Step 3: Write the conversion logic
@@ -153,6 +157,7 @@ Use a `FieldDataConverterFactory` to create a `FieldDataConverter` instance with
 Convert data for a column in a table using:
 
 {% collapsible Show code %}
+
 ```php
 $fieldDataConverter = $this->fieldDataConverterFactory->create(SerializedToJson::class);
 
@@ -163,6 +168,7 @@ $fieldDataConverter->convert(
     'field'
 );
 ```
+
 {% endcollapsible %}
 
 ### Step 3b: Convert data in specific rows for a field
@@ -179,6 +185,7 @@ If you need to convert specific rows in the column, you can use a query modifier
 The following code sample upgrades the data for options in the `value` column in the `quote_item_option` table with the code `my_option`.
 
 {% collapsible Show code %}
+
 ```php
 $fieldDataConverter = $this->fieldDataConverterFactory->create(
     \Magento\Framework\DB\DataConverter\SerializedToJson::class
@@ -203,6 +210,7 @@ $fieldDataConverter->convert(
     $queryModifier
 );
 ```
+
 {% endcollapsible %}
 
 #### Use values from another table in the condition
@@ -229,6 +237,7 @@ The following tables show how the `type` and `option_id` columns from the `catal
 To update custom options data in the `quote_item_option` table:
 
 {% collapsible Show code %}
+
 ```php
 $fieldDataConverter = $this->fieldDataConverterFactory->create(
     \Magento\Framework\DB\DataConverter\SerializedToJson::class
@@ -267,6 +276,7 @@ foreach ($iterator as $selectByRange) {
     );
 }
 ```
+
 {% endcollapsible %}
 
 ### Step 3c: Convert nested serialized data
@@ -280,6 +290,7 @@ This field contains nested serialized data that needs conversion.
 Since you cannot assume the format of the data when initially converted, the following example also checks the format and uses the appropriate methods to unserialize and serialize the data using the original format.
 
 {% collapsible Show code %}
+
 ```php
 namespace Magento\CustomModule\Setup;
 
@@ -362,11 +373,13 @@ class SerializedToJsonDataConverter implements \Magento\Framework\DB\DataConvert
     }
 }
 ```
+
 {% endcollapsible %}
 
 After creating your custom data converter class, use the `FieldDataConverterFactory` to create a `FieldDataConverter` instance with your custom converter:
 
 {% collapsible Show code %}
+
 ```php
 
 // Convert options in sales_order_item.product_options
@@ -380,6 +393,7 @@ $fieldDataConverter->convert(
     'product_options'
 );
 ```
+
 {% endcollapsible %}
 
 ### Step 3d: Convert data in a multi-database setup
@@ -390,6 +404,7 @@ Use the specific connections for each of these modules to update your extension'
 
 The following code sample obtains the Sales module connection and uses it during data update.
 {% collapsible Show code %}
+
 ```php
 /** \Magento\Sales\Setup\SalesSetupFactory $salesSetup */
 $salesSetup = $this->salesSetupFactory->create(['setup' => $setup]);
@@ -401,6 +416,7 @@ $fieldDataConverter->convert(
     'product_options'
 );
 ```
+
 {% endcollapsible %}
 
 ### Step 3e: Convert data from multiple fields
@@ -410,6 +426,7 @@ Use the `\Magento\Framework\DB\AggregatedFieldDataConverter` class to update mul
 The following code sample updates two fields in different tables taking into account setup version of the module.
 It is possible to aggregate fields for the same connection only. If it is necessary to use multiple connections in one setup script, multiple calls to `\Magento\Framework\DB\AggregatedFieldDataConverter::convert()` must be made.
 {% collapsible Show code %}
+
 ```php
 /** \Magento\Sales\Setup\SalesSetupFactory $salesSetup */
 $salesSetup = $this->salesSetupFactory->create(['setup' => $setup]);
@@ -432,6 +449,7 @@ if (version_compare($setupVersion, '2.0.5', '<')) {
 }
 $this->aggregatedFieldConverter->convert($fieldsToUpdate, $salesSetup->getConnection());
 ```
+
 {% endcollapsible %}
 
 ## Related Topics
