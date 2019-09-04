@@ -25,9 +25,9 @@ Attribute |  Data type | Description
 --- | --- | ---
 `search` | String | Performs a full-text search using the specified key words. This attribute is optional. S
 `filter` | ProductAttributeFilterInput | Identifies which attributes to search for and return. This attribute is required. See [ProductAttributeFilterInput](#ProductAttributeFilterInput) object for more information.
-`pageSize` | Specifies the maximum number of results to return at once. The default value is 20. See [Queries]({{ page.baseurl }}/graphql/queries.html) for more information.
-`currentPage` | Specifies which page of results to return. The default value is 1. See [Queries]({{ page.baseurl }}/graphql/queries.html) for more information.
-`sort` | Specifies which attribute to sort on, and whether to return the results in ascending or descending order. See [Queries]({{ page.baseurl }}/graphql/queries.html) for more information.
+`pageSize` | Specifies the maximum number of results to return at once. The default value is 20. See [Queries]({{ page.baseurl }}/graphql/queries/index.html) for more information.
+`currentPage` | Specifies which page of results to return. The default value is 1. See [Queries]({{ page.baseurl }}/graphql/queries/index.html) for more information.
+`sort` | Specifies which attribute to sort on, and whether to return the results in ascending or descending order. See [Queries]({{ page.baseurl }}/graphql/queries/index.html) for more information.
 `Products` | An output object that contains the results of the query. See [Response](#Response) for details.
 
 ### search attribute
@@ -180,7 +180,7 @@ Attribute | Type | Description
 
 ## Sample query
 
-You can review several general interest `products` queries at [Queries]({{ page.baseurl }}/graphql/queries.html).
+You can review several general interest `products` queries at [Queries]({{ page.baseurl }}/graphql/queries/index.html).
 
 ### Layered navigation
 
