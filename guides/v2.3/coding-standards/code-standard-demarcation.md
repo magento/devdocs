@@ -382,6 +382,23 @@ public function getSelectorOptions()
 ...
 ```
 
+or
+
+**Acceptable PHTML template**
+
+```php
+...
+<div data-role="treeSuggest"></div>
+<script type="text/x-magento-init">
+{
+    "[data-role='treeSuggest']": {
+        "treeSuggest": <?php echo $this->getSelectorOptions(); ?>
+    }
+}
+</script>
+...
+```
+
 **Unacceptable PHP file**
 
 ```php
