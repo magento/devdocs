@@ -1066,7 +1066,7 @@ entries:
   type: Major update
   date: March 26, 2019
   link: https://github.com/magento/devdocs/pull/3851
-- description: Added a topic on [GraphQL mutations](https://devdocs.magento.com/guides/v2.3/graphql/mutations.html)
+- description: Added a topic on [GraphQL mutations](https://devdocs.magento.com/guides/v2.3/graphql/mutations/index.html)
   versions: 2.3.1
   type: New topic
   date: March 26, 2019

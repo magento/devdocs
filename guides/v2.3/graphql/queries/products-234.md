@@ -24,11 +24,10 @@ Each query attribute is defined below:
 Attribute |  Data type | Description
 --- | --- | ---
 `search` | String | Performs a full-text search using the specified key words. This attribute is optional. S
-`filter` | ProductAttributeFilterInput | Identifies which attributes to search for and return. This attribute is required. See [ProductAttributeFilterInput](#ProductAttributeFilterInput) object for more information.
-`pageSize` | Specifies the maximum number of results to return at once. The default value is 20. See [Queries]({{ page.baseurl }}/graphql/queries/index.html) for more information.
-`currentPage` | Specifies which page of results to return. The default value is 1. See [Queries]({{ page.baseurl }}/graphql/queries/index.html) for more information.
-`sort` | Specifies which attribute to sort on, and whether to return the results in ascending or descending order. See [Queries]({{ page.baseurl }}/graphql/queries/index.html) for more information.
-`Products` | An output object that contains the results of the query. See [Response](#Response) for details.
+`filter` | ProductAttributeFilterInput | Identifies which attributes to search for and return. This attribute is required. See [filter attribute](#filter) object for more information.
+`pageSize` | Int | Specifies the maximum number of results to return at once. The default value is 20.
+`currentPage` | Int | Specifies which page of results to return. The default value is 1.
+`sort` | ProductAttributeSortInput | Specifies which attribute to sort on, and whether to return the results in ascending or descending order.
 
 ### search attribute
 
@@ -38,15 +37,14 @@ The `search` element is optional, but it can be used with or without filters. Ea
 
 ### filter attribute {#filter}
 
-The `ProductAttributeFilterInput` object defines the filters to be used in the search. A filter contains at least one attribute, a comparison operator, and the value that is being searched for. The following example filter searches for products that have a `name` that contains the string `Bag` with a `price` that's less than `40`.
+The `ProductAttributeFilterInput` object defines the filters to be used in the search. A filter contains at least one attribute, a comparison operator, and the value that is being searched for. The following example filter searches for products that have a `name` that contains the string `Bag` with a `price` that's less than or equal to `40`.
 
 ```graphql
 filter: {
   name: {
-    like: "Bag"
+    match: "Bag"
   }
   price: {
-    from: "0"
     to: "40"
   }
 }
@@ -54,20 +52,20 @@ filter: {
 
 Magento processes the attribute values specified in  a `ProductAttributeFilterInput` as simple data types (strings, integers, booleans). However, returned attributes can be a different, complex, data type. For example, in a response, `price` is an object that contains a monetary value and a currency code.
 
-By default, you can use the following attributes as filters. To define a custom filter, see "Create a custom filter".
+By default, you can use the following attributes as filters. To define a custom filter, see Create a custom filter.
 
 Attribute | Data type | Description
 --- | --- | ---
 `category_id` | FilterEqualTypeInput | Filters by category ID
-`description` | FilterLikeTypeInput | Filters on the Description attribute
-`name` | FilterLikeTypeInput | Filters on the Product Name attribute
+`description` | FilterMatchTypeInput | Filters on the Description attribute
+`name` | FilterMatchTypeInput | Filters on the Product Name attribute
 `price` | FilterRangeTypeInput | Filters on the Price attribute
-`short_description` | FilterLikeTypeInput | Filters on the Short Description attribute
-`sku` | FilterLikeTypeInput | Filters on the SKU attribute
+`short_description` | FilterMatchTypeInput | Filters on the Short Description attribute
+`sku` | FilterEqualTypeInput | Filters on the SKU attribute
 
 #### FilterEqualTypeInput attributes
 
-The `cateogry_id` filter requires a `FilterEqualTypeInput` object as input. You must specify a `FilterEqualTypeInput` object to filter on a custom product attribute of the following types:
+The `cateogry_id` and `sku` filters require a `FilterEqualTypeInput` object as input. You must specify a `FilterEqualTypeInput` object to filter on a custom product attribute of the following types:
 
 -  Boolean
 -  Select
@@ -83,7 +81,7 @@ Attribute | Data type | Description
 Use the `FilterMTypeInput` object to construct a filter that returns products that exactly match a string or contain the specified pattern.
 
 Attribute | Data type | Description
---- | --- | --- 
+--- | --- | ---
 `match` | String | Use this attribute to exactly match the specified string. For example, to filter on a specific SKU, specify a value such as "24-MB01".
 
 You must specify a `FilterLikeTypeInput` object to filter on a custom product attribute of the following types:
@@ -92,16 +90,16 @@ You must specify a `FilterLikeTypeInput` object to filter on a custom product at
 -  Text area
 -  Any other type not explicitly listed in `FilterEqualTypeInput`, `FilterMatchTypeInput`, or `FilterRangeTypeInput`
 
-#### FilterRangeTypeInput
+#### FilterRangeTypeInput attributes
 
 Use the `FilterRangeTypeInput` object to construct a filter that returns products that fall within a range of prices or dates.
 
 Attribute | Data type | Description
 --- | --- | ---
-`from` | String | Use this attribute to specify the lowest possible value in the range. 
-`to` | String | Use this attribute to specify the lowest possible value in the range.
+`from` | String | Use this attribute to specify the lowest possible value in the range.
+`to` | String | Use this attribute to specify the highest possible value in the range.
 
-### pageSize attribute
+### pageSize attribute {#pageSize}
 
 Magento's GraphQL implementation of pagination uses offsets so that it operates in the same manner as REST and SOAP API requests.
 
@@ -144,7 +142,7 @@ Attribute | Data type | Description
 `attribute_code` | String! | Attribute code of the filter item
 `count` | Int | The number of filter items in the filter group
 `label` | String | The filter name displayed in layered navigation
-`options` [AggregationOption] | Describes each aggregated filter option
+`options` | [AggregationOption] | Describes each aggregated filter option
 
 #### AggregationOption attributes
 
@@ -178,9 +176,141 @@ Attribute | Type | Description
 `label` | String | The label of a sortable option
 `value` | String | The attribute code of the sort field
 
-## Sample query
+## Sample queries
 
-You can review several general interest `products` queries at [Queries]({{ page.baseurl }}/graphql/queries/index.html).
+The following sections provide examples of `products` queries. These examples use the Magento Open Source sample data.
+
+### Full text search
+
+The following search returns items that contain the word `yoga` or `pants`. The Catalog Search index contains search terms taken from the product `name`, `description`, `short_description` and related attributes.
+
+``` text
+{
+  products(
+    search: "Yoga pants"
+    pageSize: 10
+  )
+  {
+    total_count
+    items {
+      name
+      sku
+      price {
+        regularPrice {
+          amount {
+            value
+            currency
+          }
+        }
+      }
+    }
+    page_info {
+      page_size
+      current_page
+    }
+  }
+}
+```
+
+The search returns 45 items.
+
+### Full text search with filters
+
+The following sample query returns a list of products that meets the following criteria:
+
+-  The product name, product description, or related field contains the string `Messenger` (which causes it to be available for full text searches).
+-  The SKU begins with `24-MB`
+-  The price is less than $50.
+
+The response for each item includes the `name`, `sku`, `price` and `description` only. Up to 25 results are returned at a time, in decreasing order of price.
+
+``` text
+{
+  products(
+    search: "Messenger"
+    filter: {
+      sku: {
+        like: "24-MB%"
+      }
+      price: {
+        lt: "50"
+      }
+    }
+    pageSize: 25
+    sort: {
+      price: DESC
+    }
+  )
+  {
+    items {
+      name
+      sku
+      description {
+        html
+      }
+      price {
+        regularPrice {
+          amount {
+            value
+            currency
+          }
+        }
+      }
+    }
+    total_count
+    page_info {
+      page_size
+    }
+  }
+}
+```
+
+The query returns the following:
+
+```json
+{
+  "data": {
+    "products": {
+      "items": [
+        {
+          "name": "Wayfarer Messenger Bag",
+          "sku": "24-MB05",
+          "description": {
+            "html": "<p>Perfect for class, work or the gym, the Wayfarer Messenger Bag is packed with pockets. The dual-buckle flap closure reveals an organizational panel, and the roomy main compartment has spaces for your laptop and a change of clothes. An adjustable shoulder strap and easy-grip handle promise easy carrying.</p>\n<ul>\n<li>Multiple internal zip pockets.</li>\n<li>Made of durable nylon.</li>\n</ul>"
+          },
+          "price": {
+            "regularPrice": {
+              "amount": {
+                "value": 45,
+                "currency": "USD"
+              }
+            }
+          }
+        },
+        {
+          "name": "Rival Field Messenger",
+          "sku": "24-MB06",
+          "description": {
+            "html": "<p>The Rival Field Messenger packs all your campus, studio or trail essentials inside a unique design of soft, textured leather - with loads of character to spare. Two exterior pockets keep all your smaller items handy, and the roomy interior offers even more space.</p>\n<ul>\n<li>Leather construction.</li>\n<li>Adjustable fabric carry strap.</li>\n<li>Dimensions: 18\" x 10\" x 4\".</li>\n</ul>"
+          },
+          "price": {
+            "regularPrice": {
+              "amount": {
+                "value": 45,
+                "currency": "USD"
+              }
+            }
+          }
+        }
+      ],
+      "total_count": 2,
+      "page_info": {
+        "page_size": 25
+      }
+    }
+  }
+}
+```
 
 ### Layered navigation
 
@@ -281,6 +411,107 @@ query {
             {
               "url": "http://magento2.vagrant130/pub/media/catalog/product/cache/07660f0f9920886e0f9d3257a9c68f26/m/b/mb01-blue-0.jpg",
               "label": "Image"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
+```
+
+### Retrieve related products, Up-sells and Cross-sells
+
+The following query shows how to get related products, Up-sells and Cross-sells for the particular product:
+
+```text
+{
+  products(filter: { sku: { eq: "24-WB06" } }) {
+    items {
+      id
+      name
+      related_products {
+        id
+        name
+      }
+      upsell_products {
+        id
+        name
+      }
+      crosssell_products {
+        id
+        name
+      }
+    }
+  }
+}
+```
+
+**Response**
+
+```json
+{
+  "data": {
+    "products": {
+      "items": [
+        {
+          "id": 11,
+          "name": "Endeavor Daytrip Backpack",
+          "related_products": [],
+          "upsell_products": [
+            {
+              "id": 1,
+              "name": "Joust Duffle Bag"
+            },
+            {
+              "id": 3,
+              "name": "Crown Summit Backpack"
+            },
+            {
+              "id": 4,
+              "name": "Wayfarer Messenger Bag"
+            },
+            {
+              "id": 5,
+              "name": "Rival Field Messenger"
+            },
+            {
+              "id": 6,
+              "name": "Fusion Backpack"
+            },
+            {
+              "id": 7,
+              "name": "Impulse Duffle"
+            },
+            {
+              "id": 12,
+              "name": "Driven Backpack"
+            },
+            {
+              "id": 13,
+              "name": "Overnight Duffle"
+            },
+            {
+              "id": 14,
+              "name": "Push It Messenger Bag"
+            }
+          ],
+          "crosssell_products": [
+            {
+              "id": 18,
+              "name": "Pursuit Lumaflex&trade; Tone Band"
+            },
+            {
+              "id": 21,
+              "name": "Sprite Foam Yoga Brick"
+            },
+            {
+              "id": 32,
+              "name": "Sprite Stasis Ball 75 cm"
+            },
+            {
+              "id": 45,
+              "name": "Set of Sprite Yoga Straps"
             }
           ]
         }
