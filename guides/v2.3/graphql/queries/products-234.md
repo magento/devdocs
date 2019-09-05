@@ -214,40 +214,26 @@ The following search returns items that contain the word `yoga` or `pants`. The 
 
 The search returns 45 items.
 
-### Full text search with filters
+### Full text search with filter
 
 The following sample query returns a list of products that meets the following criteria:
 
 -  The product name, product description, or related field contains the string `Messenger` (which causes it to be available for full text searches).
--  The SKU begins with `24-MB`
 -  The price is less than $50.
 
-The response for each item includes the `name`, `sku`, `price` and `description` only. Up to 25 results are returned at a time, in decreasing order of price.
+The response for each item includes the `name`, `sku`, and `price` only. Up to 25 results are returned at a time, in decreasing order of price.
 
-``` text
+```graphql
 {
   products(
     search: "Messenger"
-    filter: {
-      sku: {
-        like: "24-MB%"
-      }
-      price: {
-        lt: "50"
-      }
-    }
+    filter: { price: { to: "50" } }
     pageSize: 25
-    sort: {
-      price: DESC
-    }
-  )
-  {
+    sort: { price: DESC }
+  ) {
     items {
       name
       sku
-      description {
-        html
-      }
       price {
         regularPrice {
           amount {
@@ -263,6 +249,7 @@ The response for each item includes the `name`, `sku`, `price` and `description`
     }
   }
 }
+
 ```
 
 The query returns the following:
@@ -275,9 +262,6 @@ The query returns the following:
         {
           "name": "Wayfarer Messenger Bag",
           "sku": "24-MB05",
-          "description": {
-            "html": "<p>Perfect for class, work or the gym, the Wayfarer Messenger Bag is packed with pockets. The dual-buckle flap closure reveals an organizational panel, and the roomy main compartment has spaces for your laptop and a change of clothes. An adjustable shoulder strap and easy-grip handle promise easy carrying.</p>\n<ul>\n<li>Multiple internal zip pockets.</li>\n<li>Made of durable nylon.</li>\n</ul>"
-          },
           "price": {
             "regularPrice": {
               "amount": {
@@ -290,9 +274,18 @@ The query returns the following:
         {
           "name": "Rival Field Messenger",
           "sku": "24-MB06",
-          "description": {
-            "html": "<p>The Rival Field Messenger packs all your campus, studio or trail essentials inside a unique design of soft, textured leather - with loads of character to spare. Two exterior pockets keep all your smaller items handy, and the roomy interior offers even more space.</p>\n<ul>\n<li>Leather construction.</li>\n<li>Adjustable fabric carry strap.</li>\n<li>Dimensions: 18\" x 10\" x 4\".</li>\n</ul>"
-          },
+          "price": {
+            "regularPrice": {
+              "amount": {
+                "value": 45,
+                "currency": "USD"
+              }
+            }
+          }
+        },
+        {
+          "name": "Push It Messenger Bag",
+          "sku": "24-WB04",
           "price": {
             "regularPrice": {
               "amount": {
@@ -303,38 +296,9 @@ The query returns the following:
           }
         }
       ],
-      "total_count": 2,
+      "total_count": 3,
       "page_info": {
         "page_size": 25
-      }
-    }
-  }
-}
-```
-
-### Layered navigation
-
-The following query returns layered navigation for products that have a `sku` containing the string `24-WB`.
-
-```graphql
-{
-  products(
-    filter: { sku: { like: "24-WB%" } }
-    pageSize: 20
-    currentPage: 1
-    sort: { name: DESC }
-  ) {
-    items {
-      sku
-    }
-    filters {
-      name
-      filter_items_count
-      request_var
-      filter_items {
-        label
-        value_string
-        items_count
       }
     }
   }
