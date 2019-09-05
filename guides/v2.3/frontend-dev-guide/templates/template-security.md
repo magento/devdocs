@@ -45,7 +45,7 @@ For the following output cases, use the specified function to generate XSS-safe 
 <div style="<?= $block->escapeCss($css) ?>"></div>
 ```
 
-The following example show what the escaped HTML looks like:
+The following example shows the escaped HTML output:
 
 ```html
 <!-- Escaping CSS -->
