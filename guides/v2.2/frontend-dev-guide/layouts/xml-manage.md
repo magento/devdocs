@@ -15,6 +15,7 @@ This article describes the following typical [layout](https://glossary.magento.c
 - [Add meta tags to the head block](#layout_markup_meta)
 - [Create a container](#create_cont)
 - [Reference a container](#ref_container)
+- [Reference a CMS block](#ref_cms_block)
 - [Create a block](#xml-manage-block)
 - [Set the template used by a block](#set_template)
 - [Modify block arguments](#layout_markup_modify-block)
@@ -215,6 +216,25 @@ Example: pass the image to the `logo` block.
   </arguments>
 </referenceBlock>
 ```
+
+## Reference a CMS block {#ref_cms_block}
+
+A CMS block is injected into the layout by using the [Magento/Cms/Block/Block] class with the `block_id` argument. Any `block` or `container` can be used as a reference.
+
+```xml
+<referenceContainer name="content.bottom">
+    <block class="Magento\Cms\Block\Block" name="block_identifier">
+        <arguments>
+            <!- CMS Block id -->
+            <argument name="block_id" xsi:type="string">my_cms_block_identifier</argument>
+        </arguments>
+    </block>
+</referenceContainer>
+```
+
+As a result, the CMS block is added to the bottom of the page.
+
+![CMS Block]({{ site.baseurl }}/common/images/cms-block-reference.png)
 
 ## Set the template used by a block {#set_template}
 
@@ -573,3 +593,4 @@ class Product
 [`<action>`]: {{page.baseurl}}/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_act
 [`<move>` instruction]: {{page.baseurl}}/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_mv
 [`before` and `after` attributes of `<block>`]: {{page.baseurl}}/frontend-dev-guide/layouts/xml-instructions.html#fedg_xml-instrux_before-after
+[Magento/Cms/Block/Block]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Cms/Block/Block.php

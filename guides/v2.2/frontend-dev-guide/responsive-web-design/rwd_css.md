@@ -84,7 +84,15 @@ For grouping style rules in certain media queries the `.media-width()` mixin use
 }
 
 //
-//  Tablets
+//  Tablet (for the front-end)
+//  _____________________________________________
+
+@media only screen and (max-width: @screen__m) {
+    // your code
+}
+
+//
+//  Tablets (for the back-end)
 //  _____________________________________________
 
 .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__l) {
