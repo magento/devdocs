@@ -57,7 +57,6 @@ Helps simplify and unify naming conventions that are used to apply visual styles
 -  Forces engineers to think about reusable page components instead of unique singleton components.
 -  Reduces long-term maintenance efforts.
 
-
 **Acceptable PHTML template**
 
 The following acceptable example is terse and uses an Accessible Rich Internet Applications (ARIA) approach.
