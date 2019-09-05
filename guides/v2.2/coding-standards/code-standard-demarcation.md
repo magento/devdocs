@@ -330,67 +330,6 @@ this.element.parent().find('[data-action="edit"]').data('entity_id');
 <li>Reduces long-term maintenance efforts by having markup code stored in one place.</li>
 <li>Simplifies frontend debugging efforts.</li></ul>
 
-### You must not hard-code inline JavaScript in PHP classes
-
-<ul>
-<li>Reduces long term maintenance by having frontend business logic stored in one place.</li>
-<li>Reduces the number of files to be modified.</li></ul>
-
-**Acceptable PHP file**
-
-```php?start_inline=1
-...
-public function getSelectorOptions()
-{
-    return $selectorOptions;
-}
-...
-```
-
-**Acceptable PHTML template**
-
-```php?start_inline=1
-...
-<div data-mage-init="{treeSuggest: [<?php echo $this->getSelectorOptions(); ?>]}"></div>
-...
-```
-
-or
-
-**Acceptable PHTML template**
-
-```php?start_inline=1
-...
-<div data-role="treeSuggest"></div>
-<script type="text/x-magento-init">
-{
-    "[data-role='treeSuggest']": {
-        "treeSuggest": <?php echo $this->getSelectorOptions(); ?>
-    }
-}
-</script>
-...
-```
-
-**Unacceptable PHP file**
-
-```php?start_inline=1
-...
-public function getAfterElementHtml()
-{
-    return <<<HTML
-<script>
-jQuery('#{$htmlId}-suggest').treeSuggest({$selectorOptions});
-</script>
-...
-```
-
-**Unacceptable PHTML template**
-
-```php?start_inline=1
-<?php echo $this->getAfterElementHtml(); ?>
-```
-
 ## PHTML templates and PHP files
 
 ### You must not hard-code inline CSS styles in PHP classes
@@ -451,6 +390,23 @@ public function getSelectorOptions()
 ...
 ```
 
+or
+
+**Acceptable PHTML template**
+
+```php?start_inline=1
+...
+<div data-role="treeSuggest"></div>
+<script type="text/x-magento-init">
+{
+    "[data-role='treeSuggest']": {
+        "treeSuggest": <?php echo $this->getSelectorOptions(); ?>
+    }
+}
+</script>
+...
+```
+
 **Unacceptable PHP file**
 
 ```php?start_inline=1
@@ -465,6 +421,7 @@ jQuery('#{$htmlId}-suggest').treeSuggest({$selectorOptions});
 ```
 
 **Unacceptable PHTML template**
+
 ```php?start_inline=1
 <?php echo $this->getAfterElementHtml(); ?>
 ```
