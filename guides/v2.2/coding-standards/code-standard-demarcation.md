@@ -149,7 +149,6 @@ As the first option, you are required to use [HTML](https://glossary.magento.com
 -  Allows changing look and feel without affecting business functionality, and vice versa.
 -  Enables frontend teams to clean up old styles quickly and easily when refactoring.
 
-
 **Acceptable CSS selectors**
 
 ```css
@@ -182,7 +181,6 @@ section[role="main"] { ... }
 -  Simplifies change of the default look and feel by adding CSS classes to and removing them from elements.
 -  Improves style extensibility.
 -  Reduces long-term maintenance efforts by containing CSS styles in a single place.
-
 
 **Acceptable [JavaScript](https://glossary.magento.com/javascript) [widget](https://glossary.magento.com/widget) file**
 
