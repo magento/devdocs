@@ -2,7 +2,7 @@
 group: extensions
 title: Install B2B
 ee_only: true
-redirect_from: 
+redirect_from:
  - guides/v2.2/comp-mgr/install-extensions/b2b-installation.html
  - guides/v2.3/comp-mgr/install-extensions/b2b-installation.html
 ---

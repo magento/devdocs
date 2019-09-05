@@ -228,7 +228,6 @@ The mapping file for the block is stored in `<magento2_root_dir>/dev/tests/funct
 
 ![]({{ site.baseurl }}/common/images/ftf/mtf_block_login_dir.png)
 
-
 The mapping file defines the fields from the form.
 
 ```xml
@@ -265,7 +264,6 @@ The general structure of the form mapping file:
 
 ![]({{ site.baseurl }}/common/images/ftf/mtf_block_map_form_xml.png)
 
-
 ## Form tab mapping {#mtf_block_map_form_tab}
 
 You can use mapping for the forms on tabs (a form tab) that enables you to automate switching between tabs and entering the data.
@@ -275,11 +273,9 @@ For example, let's see tabs for the Magento Widget: **Settings**, **Storefront p
 
 ![]({{ site.baseurl }}/common/images/ftf/mtf_block_tabs_ui.png)
 
-
-Four tabs are mapped in the `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/Widget/Test/Block/Adminhtml/Widget/Instance/Edit/WidgetForm.xml` file, which is stored along with the block class. 
+Four tabs are mapped in the `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/Widget/Test/Block/Adminhtml/Widget/Instance/Edit/WidgetForm.xml` file, which is stored along with the block class.
 
 ![]({{ site.baseurl }}/common/images/ftf/mtf_block_tab_struc.png)
-
 
 The file contains the following mapping:
 
@@ -342,7 +338,7 @@ See the following table to understand the node's purpose.
 
 Example of `composite` field from [ProductForm.xml]({{ site.mage2bloburl }}/{{ page.guide_version }}/dev/tests/functional/tests/app/Magento/Catalog/Test/Block/Adminhtml/Product/ProductForm.xml):
 
-In the mapping file: 
+In the mapping file:
 
 ```xml
 <quantity_and_stock_status composite="1">
@@ -364,7 +360,6 @@ The general structure of the form tab mapping file:
 
 ![]({{ site.baseurl }}/common/images/ftf/mtf_block_map_form_tab_xml.png)
 
-
 ## Merging form tab mapping files {#mtf_block_map_form_tab_merge}
 
 When you test a [module](https://glossary.magento.com/module) that extends the functionality of the other module by adding a tab to the testing module entity, you can merge their form tab mapping files.
@@ -375,14 +370,13 @@ Form tab mapping files in the following example will be merged automatically:
 
 ![]({{ site.baseurl }}/common/images/ftf/mtf_block_formtab_merge.png)
 
-
 ## Renders {#mtf_block_render}
 
 Renders help to unify a polymorphic behavior of the block. If you want to test the functionality of the object, which behavior differs depending on the type of the object, you can create a separate class for each type and call the corresponding class using render.
 
 ## HowTos
 
-### Create a block {#mtf_block_types} 
+### Create a block {#mtf_block_types}
 
 A basic flow is the following:
 
@@ -517,7 +511,7 @@ Let's see the [`Catalog/Test/Page/Product/CatalogProductView.xml`] page. For the
 
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../../vendor/magento/mtf/etc/pages.xsd">
     <page name="CatalogProductView" area="Product" mca="catalog/product/view" module="Magento_Catalog">
-        <block name="viewBlock" class="Magento\Catalog\Test\Block\Product\View" locator="#maincontent" strategy="css selector" module="Magento_Catalog"/>        
+        <block name="viewBlock" class="Magento\Catalog\Test\Block\Product\View" locator="#maincontent" strategy="css selector" module="Magento_Catalog"/>
     </page>
 </config>
 ```
@@ -537,7 +531,7 @@ Let's create render for the bundle product.
 
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../../vendor/magento/mtf/etc/pages.xsd">
     <page name="CatalogProductView" area="Product" mca="catalog/product/view">
-                
+
     </page>
 </config>
 ```
@@ -576,7 +570,7 @@ public function getOptions(FixtureInterface $product)
     /** @var CatalogProductSimple $product */
     $dataConfig = $product->getDataConfig();
     $typeId = isset($dataConfig['type_id']) ? $dataConfig['type_id'] : null;
-    
+
     return $this->hasRender($typeId)
         ? $this->callRender($typeId, 'getOptions', ['product' => $product])
         : $this->getCustomOptionsBlock()->getOptions($product);
@@ -600,7 +594,7 @@ $this->callRender($typeId, 'getOptions', ['product' => $product])
 ```php
 $this->getCustomOptionsBlock()->getOptions($product);
 ```
- 
+
 ### Define a selector/locator {#define-selector}
 
 There are some rules that should be followed to define a selector:

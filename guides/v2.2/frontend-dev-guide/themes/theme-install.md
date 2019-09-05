@@ -38,7 +38,6 @@ To install the theme as composer package, follow the instructions in the [Instal
 
 - When the application starts up, Composer executes each file included in the `autoload.files` section. `registration.php` then registers itself as a theme.
 
-
 {:.bs-callout .bs-callout-info}
 Composer-based themes are loaded from external sources and cannot be modified directly, whereas local themes are part of the project source code and therefore can be edited directly.
 

@@ -27,7 +27,6 @@ DELETE /V1/team/:teamId
 GET /V1/team/
 ```
 
-
 **Company team parameters**
 
 Name | Description | Format | Requirements

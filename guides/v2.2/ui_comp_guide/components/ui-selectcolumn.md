@@ -40,7 +40,6 @@ The SelectColumn component receives an array of values and displays the column w
   </tr>
 </table>
 
-
 ### Option interface
 
 <table>

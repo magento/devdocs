@@ -10,7 +10,6 @@ All API requests must be authenticated using [HTTP Basic Authentication](https:/
 
 First, you must create an application on the [Developer Portal](https://developer.magento.com) to obtain an application ID and secret for sandbox and production endpoints.
 
-
 {: .bs-callout-info }
 Information about how to create applications will be announced when the EQP REST API is publicly released.
 

@@ -10,9 +10,7 @@ Within the `magento2` folder are:
 - /var/
 - other folders
 
-
- 
-The Magento app is served from `/var/www/html/magento2/pub`. The rest of the Magento file system is vulnerable because it is accessible from a browser. 
+The Magento app is served from `/var/www/html/magento2/pub`. The rest of the Magento file system is vulnerable because it is accessible from a browser.
 Setting the webroot to the `pub/` directory prevents site visitors from accessing the Web Setup Wizard and other sensitive areas of the Magento file system from a browser.
 
 This topic describes how to change the Apache [docroot]({{ page.baseurl }}/install-gde/basics/basics_docroot.html) on an existing Magento instance to serve files from the Magento `pub/` directory, which is more secure.
@@ -81,7 +79,7 @@ The name and location of your virtual host file depends on which version of Apac
     ```
 4.  Restart Apache:
 ```bash
-        systemctl restart apache2  
+        systemctl restart apache2
 ```
 ## 2. Update your base URL
 

@@ -21,14 +21,14 @@ You can stage the following parameters:
 
 - Enable/Disable CMS Page
 - Page Title
-- Content 
+- Content
     - Content Heading
     - Content (WYSIWYG)
-- Search Engine Optimization 
+- Search Engine Optimization
     - URL Key
     - Meta Keywords
     - Meta Description
-- Design 
+- Design
     - Layout
     - Layout Update XML
     - Theme
@@ -39,7 +39,7 @@ The following parameters can be staged:
 
 - Enable/Disable CMS Block
 - Block Title
-- Identifier 
+- Identifier
 - Store View
 - Content (WYSIWYG)
 

@@ -35,7 +35,7 @@ For logged-in customers, send the customer's authorization token in the `Authori
 mutation {
   setShippingAddressesOnCart(
     input: {
-      cart_id: "A7jCcOmUjjCh7MxDIzu1SeqdqETqEa5h"
+      cart_id: "{ CART_ID }"
       shipping_addresses: [
         {
           address: {
@@ -68,7 +68,6 @@ mutation {
           code
           label
         }
-        address_type
       }
     }
   }
@@ -103,8 +102,7 @@ mutation {
             "country": {
               "code": "US",
               "label": "US"
-            },
-            "address_type": "SHIPPING"
+            }
           }
         ]
       }
@@ -197,7 +195,6 @@ mutation {
           code
           label
         }
-        address_type
       }
     }
   }
@@ -230,8 +227,7 @@ mutation {
             "country": {
               "code": "US",
               "label": "US"
-            },
-            "address_type": "SHIPPING"
+            }
           }
         ]
       }
@@ -244,6 +240,6 @@ mutation {
 
 1. Sign in as a customer to the website using the email `john.doe@example.com` and password `b1b2b3l@w+`.
 
-2. Go to Checkout. 
+2. Go to Checkout.
 
 3. On the Shipping step, the Shipping Address form contains the address details you entered.

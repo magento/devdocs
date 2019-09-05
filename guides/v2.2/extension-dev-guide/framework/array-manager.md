@@ -5,7 +5,7 @@ title: Array Manager
 
 ## Overview
 
-The [`Magento\Framework\Stdlib\ArrayManager`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Stdlib/ArrayManager.php){:target="_blank"} library provides the ability to manage deeply nested associative arrays. 
+The [`Magento\Framework\Stdlib\ArrayManager`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Stdlib/ArrayManager.php){:target="_blank"} library provides the ability to manage deeply nested associative arrays.
 The library is primarily used to handle data from UI components within [DataProviders]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_data_source.html) and [Modifiers]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_modifier_concept.html), which are actually part of a complicated process of parsing XML files in associative arrays.
 
 ## Usage
@@ -35,7 +35,7 @@ The following example shows how to add a custom field to the checkout billing ad
 public function process($jsLayout)
 {
     ...
-    
+
     if (isset($jsLayout['components']['checkout']['children']['steps']['children']['shipping-step']
         ['children']['shippingAddress']['children']['shipping-address-fieldset']['children'])
     ) {
@@ -44,7 +44,7 @@ public function process($jsLayout)
 
         ...
     }
-    
+
     ...
 }
 ```

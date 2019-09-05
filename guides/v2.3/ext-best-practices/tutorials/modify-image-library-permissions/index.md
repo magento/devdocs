@@ -7,7 +7,7 @@ The Magento Media Library gives admins the ability to upload image files in spec
 The [Storage class] for images in Magento's CMS module manages image file uploads, file retrievals, and directory creation.
 
 For security purposes, Magento does not provide Media Library access to contents in specific folders.
-This configuration is set in the CMS module's `di.xml` file and injected into the Storage class constructor. 
+This configuration is set in the CMS module's `di.xml` file and injected into the Storage class constructor.
 
 By default, Magento allows Media Library access to all directories under `/pub/media` except the following:
 
@@ -41,7 +41,7 @@ Under the `type` element, create an `arguments` element.
 
 ## Step 3: Specify argument name
 
-To change the content of the `dirs` argument provided to the constructor, create a new `argument` array element with the name `dirs` under `arguments`.  
+To change the content of the `dirs` argument provided to the constructor, create a new `argument` array element with the name `dirs` under `arguments`.
 
 ```xml
 <type name="Magento\Cms\Model\Wysiwyg\Images\Storage">
@@ -73,7 +73,7 @@ The following configuration restricts Media Library access to content under `pub
         </argument>
     </arguments>
 </type>
-``` 
+```
 
 ### Step 4b: Include an excluded directory
 
@@ -94,7 +94,7 @@ The following configuration overrides the default directory restriction for the 
         </argument>
     </arguments>
 </type>
-``` 
+```
 
 [`di.xml`]: {{page.baseurl }}/extension-dev-guide/build/di-xml-file.html
 [Storage class]: {{ site.mage2bloburl }}/{{page.guide_version}}/app/code/Magento/Cms/Model/Wysiwyg/Images/Storage.php

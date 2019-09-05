@@ -11,7 +11,6 @@ level3_subgroup:
 
 *Release notes updated on March 22, 2018.*
 
-
 We are pleased to present Magento Commerce 2.2.3. This release includes 35 enhancements to product security, a change to the Magento Admin to support recent USPS shipping changes, and a copyright update. And thanks to our community members, it also includes enhancements to ACL control for cache management through Magento Admin.
 
 {: .bs-callout-info }
@@ -27,7 +26,6 @@ Look for the following highlights in this release:
 
 * **Change to Magento Admin to support recent USPS shipping changes**. On February 23, 2018, USPS  removed APIs that support the creation of shipping labels without postage. In response, we’ve removed this functionality from the Magento Admin. Consequently, you cannot create and print shipping labels that do not have postage applied. If you require USPS postage printing capabilities, please visit [Magento Shipping](https://magento.com/products/shipping) to learn more, and explore various shipping extensions on Magento Marketplace.
 
-
 * **New layers of control for cache management tasks managed through the Magento Admin**. This release introduces finer permissions for cache management tasks such as flushing cache storage, flushing the Magento cache, and refreshing cache types. *Fix submitted by community member <a href="https://github.com/bartoszherba" target="_blank">Bartosz Herba</a>.*
 
 * **Updated copyright to 2018**.
@@ -41,8 +39,6 @@ See [Magento Security Center](https://magento.com/security/patches/magento-223-2
 ### System requirements
 
 Our technology stack is built on PHP and MySQL. For details, see [Technology stack requirements]({{ page.baseurl }}/install-gde/system-requirements-tech.html)
-
-
 
 For more information, [System Requirements]({{ page.baseurl }}/install-gde/system-requirements.html).
 

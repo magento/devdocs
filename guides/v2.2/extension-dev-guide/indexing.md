@@ -125,9 +125,9 @@ For example part of `Magento/Catalog/etc/mview.xml` is tracking category to prod
 Explanation of nodes:
 
 * The `view` node defines an indexer. The `id` attribute is a name of the indexer table, the `class` attribute is indexer executor, the `group` attribute defines
-the indexer group. 
+the indexer group.
 * The `subscriptions` node is a list of tables for tracking changes.
-* The `table` node defines the certain table to observe and track changes. The attribute `name` is a name of an observable table, the attribute `entity_column` 
+* The `table` node defines the certain table to observe and track changes. The attribute `name` is a name of an observable table, the attribute `entity_column`
 is an identifier column of entity to be re-indexed. So, in case of `catalog_category_product`, whenever one or more categories is saved, updated or deleted in `catalog_category_entity`
 the `execute` method of `Magento\Catalog\Model\Indexer\Category\Product` will be called with argument `ids` containing ids of entities from column defined
 under `entity_column` attribute. If indexer type is set to "Update on Save" the method is called right away after the operation. If it set to "Update by Schedule"
@@ -150,14 +150,14 @@ UPDATE operation:
 
 ```mysql
 BEGIN
-    IF (NEW.`entity_id` <=> OLD.`entity_id` 
+    IF (NEW.`entity_id` <=> OLD.`entity_id`
         OR NEW.`attribute_set_id` <=> OLD.`attribute_set_id`
-        OR NEW.`parent_id` <=> OLD.`parent_id` 
+        OR NEW.`parent_id` <=> OLD.`parent_id`
         OR NEW.`created_at` <=> OLD.`created_at`
         OR NEW.`path` <=> OLD.`path`
         OR NEW.`position` <=> OLD.`position`
         OR NEW.`level` <=> OLD.`level`
-        OR NEW.`children_count` <=> OLD.`children_count`) 
+        OR NEW.`children_count` <=> OLD.`children_count`)
             THEN INSERT IGNORE INTO `catalog_category_product_cl` (`entity_id`) VALUES (NEW.`entity_id`);
     END IF;
 END

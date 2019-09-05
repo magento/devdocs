@@ -16,7 +16,7 @@ FTF enables you to quickly develop functional tests for the Magento application.
 
 You can run a single test independently, many tests together (that is, a test suite), or you can run all available tests.
 
-FTF does not contain tests. All functional tests are located in `<magento2 root dir>/dev/tests/functional/`. 
+FTF does not contain tests. All functional tests are located in `<magento2 root dir>/dev/tests/functional/`.
 
 ### What tools should I use to run tests with FTF? {#mtf_intro_extratools}
 

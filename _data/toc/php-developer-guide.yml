@@ -252,6 +252,10 @@ pages:
         - label: Adapters
           url: /extension-dev-guide/adapters.html
 
+        - label: View models
+          include_versions: ["2.2", "2.3"]
+          url: /extension-dev-guide/view-models.html
+
         - label: Variable Pool
           include_versions: ["2.3"]
           url: /extension-dev-guide/variable-pool/

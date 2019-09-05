@@ -48,7 +48,7 @@ install [fontconfig library]:<br/>
 * Ubuntu:
   ```bash
   apt-get install fontconfig
-  ``` 
+  ```
 "
 %}
 
@@ -66,6 +66,12 @@ Example:
 
 ```bash
 grunt spec:backend
+```
+
+You can also run a single test:
+
+```bash
+grunt spec:backend --file="/path/to/the/test.js"
 ```
 
 ## Write a test {#write-test}
@@ -240,7 +246,7 @@ Warning: Task "spec" not found. Use --force to continue.
 ### Warning: Cannot read property 'pid' of undefined {#cannot-read-property-pid-warning}
 
 #### Issue:
- 
+
 An error message appears:
 
 ```terminal
@@ -282,7 +288,6 @@ npm install
 
 <!-- Internal -->
 [Step 6]: #prepare-step6
-
 
 <!-- Abbreviations -->
 

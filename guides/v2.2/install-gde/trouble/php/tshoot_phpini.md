@@ -13,10 +13,10 @@ functional_areas:
 
 ### Details
 
-During or after installation, a  message similar to the following displays: 
+During or after installation, a  message similar to the following displays:
 
-	Exception' with message 'PHP Fatal error: Uncaught exception 'PDOException' with message 
-	'SQLSTATE[HY000] [2002] No such file or directory 
+	Exception' with message 'PHP Fatal error: Uncaught exception 'PDOException' with message
+	'SQLSTATE[HY000] [2002] No such file or directory
 
 ### Solution
 
@@ -28,11 +28,11 @@ To determine whether or not you're using one instance of PHP:
 2.	Enter the following command:
 
 		php -i | grep 'php.ini'
-	
+
 	This determines the settings used by the PHP command-line interface (CLI). Note where `php.ini` is located.
 
 3.	If you haven't already done so, set up a [phpinfo.php]({{ page.baseurl }}/install-gde/prereq/optional.html#install-optional-phpinfo) on your web server.
-4.	Compare the value of **Loaded Configuration File** from `phpinfo.php` with the one from `php -i`. 
+4.	Compare the value of **Loaded Configuration File** from `phpinfo.php` with the one from `php -i`.
 
 	`phpinfo.php` shows the `php.ini` file used by your web server. If it's different from what's in PHP's `php.ini`, you must make *all* PHP settings consistent for both the PHP CLI and the web server.
 

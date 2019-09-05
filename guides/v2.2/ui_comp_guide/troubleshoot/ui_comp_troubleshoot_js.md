@@ -63,7 +63,7 @@ console.log(fieldName.name); // product_form.product_form.product-details.contai
 
 ## Debugging using Chrome DevTools
 
-All modern browsers support “debugging” – a special UI in developer tools that makes finding and fixing errors much easier. 
+All modern browsers support “debugging” – a special UI in developer tools that makes finding and fixing errors much easier.
 
 ### Sources panel UI
 
@@ -108,7 +108,7 @@ To use DevTools you can follow the previously described steps, or you can use th
 ```javascript
 function sum(a, b) {
     var sum = a + b;
-    debugger;   
+    debugger;
     return sum;
 }
 ```

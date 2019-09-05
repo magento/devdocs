@@ -24,11 +24,11 @@ We also accept [Community Engineering contributions] using CrowdIn for translati
 
 ## Generate a translation dictionary {#config-cli-subcommands-xlate-dict}
 
-You can generate a [translation dictionary] to customize existing strings, translate words and phrases in a custom module, localize a theme, or create  [language packages](https://glossary.magento.com/language-package). 
+You can generate a [translation dictionary] to customize existing strings, translate words and phrases in a custom module, localize a theme, or create  [language packages](https://glossary.magento.com/language-package).
 
 ### Work with translation dictionaries {#config-cli-subcommands-xlate-dict-dict}
 
-To begin translating, use a command to generate a dictionary `.csv` file with a collected list of all existing phrases and words. 
+To begin translating, use a command to generate a dictionary `.csv` file with a collected list of all existing phrases and words.
 
 Generate the dictionary and translate:
 
@@ -55,7 +55,6 @@ The following table explains this command's parameters and values:
 |`-m --magento`|Required to create a language package from this translation dictionary. If used, searches the directories that contain bin/magento. This option adds themes or modules to each line in the dictionary.<br><br>A sample follows:<br><br>"No Items Found","No Items Found",module,Magento_Wishlist|No|
 |`-o --output="<path>"`|Specifies the absolute file system path and file name of the translation dictionary .csv file to create. The value you enter is case-sensitive. The name of the .csv file must exactly match the locale name, including the characters' case.<br><br>If you omit this parameter, the output is directed to stdout.|No|
 
-
 {:.bs-callout .bs-callout-info}
 To create a language pack from a translation dictionary, you *must* use the `-m|--magento` option.
 
@@ -64,20 +63,20 @@ To create a language pack from a translation dictionary, you *must* use the `-m|
 Use the following guidelines when translating words and phrases:
 
 -   Change the contents of the second column only. Translate the phrases from English (`US`) to the desired language.
--   When creating dictionaries for locales, use the default Magento strings. 
+-   When creating dictionaries for locales, use the default Magento strings.
 -   While translating, pay attention to placeholders like `%1`, `%2` and so on.
 
 Magento uses the placeholders to insert context values; they are *not* used for translations. For example:
 
     Product '%1' has been added to shopping cart.
-    
+
 Populates with a value:
 
     Product 'Multimeter-2000' has been added to shopping cart.
 
-The resulting phrase must contain at least one of each placeholder. 
-For example, suppose there are placeholders from `%1` to `%3` in the original phrase. 
- The translation can have as many of these placeholders in any order, but there must be at least one occurrence of `%1`, `%2`, and `%3`. 
+The resulting phrase must contain at least one of each placeholder.
+For example, suppose there are placeholders from `%1` to `%3` in the original phrase.
+ The translation can have as many of these placeholders in any order, but there must be at least one occurrence of `%1`, `%2`, and `%3`.
 The translation cannot contain placeholder values not present in the original value (for example, `%4`, `%5`, and so on).
 
 An example of translating a phrase:
@@ -113,7 +112,6 @@ The following table explains this command's parameters and values:
 |`<locale>`|[ISO 639-1] (language) and [ISO 3166] (country) identifier of language used as file name for all resulting .csv files. Examples: `de_DE`, `pt_PT`, `pt_BR`.|Yes|
 |`-m --mode`|If a target file already exists, specifies whether to replace the existing language package or merge with the new language pack. Merging overrides any phrases that existed and adds new ones. <br><br>Values: merge or replace (default).|No|
 |`-d --allow-duplicates`|Include this option to allow duplicates in the language pack. Otherwise, the command fails with an error if it encounters the same phrase in multiple entries with different translations.|No|
-
 
 ### Create directories and files {#m2devgde-xlate-files}
 
@@ -315,9 +313,6 @@ Similar to the preceding example, generate a `.csv` file, but instead of specify
 
 -   [Translations overview]
 -   [Translate theme strings]
-
-
-
 
 [Translate theme strings]: {{ page.baseurl }}/frontend-dev-guide/translations/translate_theory.html
 [Translations overview]: {{ page.baseurl }}/frontend-dev-guide/translations/xlate.html

@@ -44,7 +44,7 @@ Phtml template file examples using script:
         'popupWindow'
     ], function ($) {
         'use strict';
-        
+
         $("#element").popupWindow({
               "windowURL": "http://example.com",
               "windowName": "Window Name",
@@ -112,7 +112,7 @@ Left position when the window appears.
 
 ### `location`
 
-Determines whether the address bar is displayed. 
+Determines whether the address bar is displayed.
 
 **Type**: Integer
 
@@ -214,7 +214,7 @@ This example shows the *Open Customer Login* link, and after clicking on this li
 
 ## Result
 
-As a result, we see the *Open Customer Login* link and after clicking on it, the *Customer Login* page is opened in the popup. 
+As a result, we see the *Open Customer Login* link and after clicking on it, the *Customer Login* page is opened in the popup.
 
 ![PopupWindow Example]({{ site.baseurl }}/common/images/widget/popupWindow-widget-result.png)
 

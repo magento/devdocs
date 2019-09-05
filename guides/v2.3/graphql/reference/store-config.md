@@ -29,7 +29,7 @@ Attribute |  Data Type | Description | Example
 `secure_base_static_url` | String | The secure fully-qualified URL that specifies the location of static view files | `https://magentohost.example.com/pub/static/`
 `secure_base_url` | String | The store's fully-qualified secure base URL | `https://magentohost.example.com/`
 `timezone` | String | The store's time zone | `America/Chicago`
-`website_id` | Integer | The ID number assigned to the parent website | `1` 
+`website_id` | Integer | The ID number assigned to the parent website | `1`
 `weight_unit` | String | The weight unit for products | `lbs`, `kgs`, etc
 
 ### Supported website attributes
@@ -43,7 +43,6 @@ Attribute |  Data Type | Description
 `id` | Integer | The ID number assigned to the store
 `name` | String | The website name. Websites use this name to identify it easier.
 `sort_order` | Integer | The attribute to use for sorting websites
-
 
 ### Supported theme attributes
 
@@ -178,7 +177,7 @@ The following query returns information about the store's default title, keyword
   storeConfig {
     default_title,
     default_keywords,
-    welcome	
+    welcome
   }
 }
 ```
@@ -244,13 +243,13 @@ The [ProductInterface]({{ page.baseurl }}/graphql/reference/products.html#Produc
     products(filter: {sku: {eq: "24-WB04"}})
     {
         items{
-            websites { 
-              id 
-              name 
-              code 
-              sort_order 
+            websites {
+              id
+              name
+              code
+              sort_order
               default_group_id
-              is_default 
+              is_default
             }
         }
     }

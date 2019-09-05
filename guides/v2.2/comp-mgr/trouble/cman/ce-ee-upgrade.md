@@ -14,9 +14,9 @@ functional_areas:
 Your upgrade from **{{site.data.var.ce}}** to **{{site.data.var.ee}}** might fail with the following error:
 
 ```terminal
-	[2016-01-19 23:33:24 UTC] An error occurred while executing job 
-	"setup:upgrade {"command":"setup:upgrade"}": Could not complete 
-	setup:upgrade {"command":"setup:upgrade"} successfully: Source 
+	[2016-01-19 23:33:24 UTC] An error occurred while executing job
+	"setup:upgrade {"command":"setup:upgrade"}": Could not complete
+	setup:upgrade {"command":"setup:upgrade"} successfully: Source
 	class "\Cybersource" for "CybersourceLogger" generation does not exist.
 ```
 

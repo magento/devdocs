@@ -116,4 +116,4 @@ Now you are ready to run the tests.
 
 3. Configure your DB connection and install settings in `/dev/tests/api-functional/config/install-config-mysql.php`.  Specify the Magento database. The base URL to access this Magento instance must be specified in `phpunit.xml`.
 
-4. Run `phpunit` using the `/dev/tests/api-functional/phpunit.xml ` configuration file.
+4. Run `phpunit` using the `/dev/tests/api-functional/phpunit.xml` configuration file.

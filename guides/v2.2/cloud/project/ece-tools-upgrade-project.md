@@ -53,7 +53,7 @@ To upgrade your project to use the `{{site.data.var.ct}}` package, you need to u
     ```bash
     composer update magento/magento-cloud-metapackage
     ```
-  
+
 1.  Modify the hook commands in the `magento.app.yaml` file.
 
     ```yaml

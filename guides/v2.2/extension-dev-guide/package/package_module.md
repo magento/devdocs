@@ -24,13 +24,11 @@ The Magento `composer.json` file defines the name, requirements, version, and ot
 
 The `composer.json` uses [Composer's generic schema](https://getcomposer.org/doc/04-schema.md), with the following restrictions:
 
-
 Element | Description
 --- | ---
 `name` | A fully-qualified component name, in the format `<vendor-name>/<component-name>`. All letters must be in lowercase. Use dashes in the `<component-name>` to separate words. Themes must use the format `<vendor-name>/theme-<area>-<theme-name>`.
 `type` | For modules, this value must be set to `magento2-module`. Other possible types are `metapackage`, `magento2-theme`, and `magento2-language`.
 `autoload` | Specify necessary information to be loaded, such as [registration.php]({{ page.baseurl }}/extension-dev-guide/build/component-registration.html). For more information, see [Autoloading](https://getcomposer.org/doc/01-basic-usage.md#autoloading) from Composer.
-
 
 {% include php-dev/composer-types.md %}
 
@@ -45,7 +43,6 @@ We recommend metapackages refer to specific component versions. Do not use wildc
 
 The following example is a `composer.json` for a metapackage:
 
-
 ```json
 
 {
@@ -54,7 +51,7 @@ The following example is a `composer.json` for a metapackage:
     "version": "2.0.0",
     "type": "metapackage",
     "require": {
-        "php": "~5.5.0|~5.6.0|~7.0.0",
+        "php": "~7.0.13|~7.1.0",
         "zendframework/zend-stdlib": "~2.4.6",
         "zendframework/zend-code": "~2.4.6",
         "zendframework/zend-server": "~2.4.6",
@@ -87,7 +84,6 @@ The following example is a `composer.json` for a metapackage:
     ]
 }
 
-
 ```
 
 ### Sample composer.json file
@@ -105,7 +101,7 @@ The following example is a `composer.json` file for a module:
     "AFL-3.0"
   ],
   "require": {
-    "php": "~5.5.0|~5.6.0|~7.0.0",
+    "php": "~7.0.13|~7.1.0",
     "magento/framework": "~100.0.4"
   },
   "autoload": {
@@ -128,12 +124,7 @@ Use alphanumeric characters for the package filename with dashes to separate wor
 
 Magento can retrieve your extension package from any valid GitHub [URL](https://glossary.magento.com/url).
 
-
-
-
 <!-- After you have created the module's `composer.json` file in the root directory of the module, Composer can recognize your package as compatible with its deployment strategy. Such packages can be published to a code repository (GitHub, SVN, etc.), packagist.org, or on your own private package repository. -->
-
-
 
 {: .bs-callout-info }
 Third party repositories are supported.

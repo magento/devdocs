@@ -36,4 +36,4 @@ A sample follows:
 
 #### Related topic
 
-To remove the Magento crontab, see []({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cron.html#config-cron-remove).
+*  [Remove the Magento crontab]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cron.html#config-cron-remove)

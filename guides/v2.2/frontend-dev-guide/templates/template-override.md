@@ -7,14 +7,14 @@ functional_areas:
 
 ## What's in this topic
 
-This topic explains how default templates work in the Magento application. 
+This topic explains how default templates work in the Magento application.
 
 ## How templates are initiated {#template-layout}
 
 Templates are initiated in [layout](https://glossary.magento.com/layout) files, and
-each layout block has an associated template. 
+each layout block has an associated template.
 
-The template is specified in the `template` attribute of the `<block>` layout instruction. 
+The template is specified in the `template` attribute of the `<block>` layout instruction.
 
 Take this example from [`app/code/Magento/Catalog/view/frontend/layout/catalog_category_view.xml`]:
 
@@ -42,7 +42,7 @@ Examples:
 
 ## Template overrides {#override}
 
-For template files with the same name, the following override rules apply: 
+For template files with the same name, the following override rules apply:
 
 * Theme templates override module templates
 * [Child theme] templates override parent theme templates
@@ -73,7 +73,7 @@ For example:
 ```phtml
 <?= $block->getAdjustmentsHtml() ?>
 ```
-is the same as writing 
+is the same as writing
 ```phtml
 <?php echo $block->getAdjustmentsHtml() ?>
 ```
