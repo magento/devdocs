@@ -86,7 +86,7 @@ Any change not listed below is considered a PATCH level change.
 | | Changed format of the returned method result | MAJOR|
 | | New method exception (excluding subtypes of existing exceptions) | MAJOR|
 | | New method exception (subtypes of an existing one) | PATCH|
-| **JavaScript class** (marked with `@api`)| New class| MINOR|
+| **JavaScript Class** (marked with `@api`)| New class| MINOR|
 | | New method added | MINOR|
 | | New argument added | MINOR|
 | | Class removed| MAJOR|
@@ -99,7 +99,7 @@ Any change not listed below is considered a PATCH level change.
 | | Changed event property | MAJOR|
 | | Removed event property | MAJOR|
 | | Changed event ordering | MAJOR|
-| **JavaScript modules** (marked with `@api`)| New module| MINOR|
+| **JavaScript Modules (AMD Modules)** (marked with `@api`)| New module| MINOR|
 | | New method added | MINOR|
 | | New argument added | MINOR|
 | | Module removed| MAJOR|
