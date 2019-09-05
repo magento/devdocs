@@ -125,7 +125,7 @@ For example part of `Magento/Catalog/etc/mview.xml` is tracking category to prod
 Explanation of nodes:
 
 * The `view` node defines an indexer. The `id` attribute is a name of the indexer table, the `class` attribute is indexer executor, the `group` attribute defines
-the indexer group. 
+the indexer group.
 * The `subscriptions` node is a list of tables for tracking changes.
 * The `table` node defines the certain table to observe and track changes. The attribute `name` is a name of an observable table, the attribute `entity_column`
 is an identifier column of entity to be re-indexed. So, in case of `catalog_category_product`, whenever one or more categories is saved, updated or deleted in `catalog_category_entity`
