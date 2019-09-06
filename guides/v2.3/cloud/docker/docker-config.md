@@ -1,1 +1,1 @@
-../../../../guides/v2.2/cloud/docker/docker-config.md
+../../../v2.2/cloud/docker/docker-config.md
