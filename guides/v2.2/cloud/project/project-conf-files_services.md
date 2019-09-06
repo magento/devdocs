@@ -146,3 +146,18 @@ The current default storage amount per project is 5GB, or 5120MB. You can distri
     ```
 
 1. Confirm the `service` and `type` from the response. The response provides connection information, such as the IP address and port number.
+
+## Service versions
+
+The following table lists the services used in {{site.data.var.ece}} and their version compatibility with the [Magento Cloud template](https://github.com/magento/magento-cloud).
+
+Service   |  Magento 2.3  | Magento 2.2
+--------- | ------------- | ------------
+`elasticsearch` | Magento 2.3.1 and later—1.7, 2.4, 5.2, 6.5<br>Magento 2.3.0—1.7, 2.4, 5.2 | Magento versions 2.2.8 and later—1.7, 2.4, 5.2, 6.5<br>Magento 2.2.0 to 2.2.7—1.7, 2.4, 5.2
+`mariadb` | 10.0 to 10.2  | 10.0 to 10.2
+`nginx`   | 1.9           | 1.9
+`node`    | 6, 8, 10, 11  | 6, 8, 10, 11
+`php`     | Magento 2.3.3 and later—7.1, 7.2, 7.3<br>Magento 2.3.0 to 2.3.2—7.1, 7.2 | Magento 2.2.10 and later—7.1, 7.2<br>Magento 2.2.5 to 2.2.9—7.0, 7.1<br>Magento 2.2.4 and earlier—7.0.2, 7.0.4, ~7.0.6, 7.1
+`rabbitmq`| 3.5, 3.7      | 3.5
+`redis`   | 3.2, 4.0, 5.0 | 3.2, 4.0, 5.0
+`varnish` | Magento 2.3.3 and later—4.0, 5.0, 6.2<br>Magento 2.3.0 to 2.3.2—4.0, 5.0 | 4.0, 5.0
