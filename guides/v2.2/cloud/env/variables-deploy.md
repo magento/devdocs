@@ -111,10 +111,10 @@ Configure how consumers process messages from the message queue by choosing one 
 
 - `false`—Consumers process available messages in the queue, close the TCP connection, and terminate. Consumers do not wait for additional messages to enter the queue, even if the number of processed messages is less than the `max_messages` value specified in the `CRON_CONSUMERS_RUNNER` deploy variable.
 
-- `true`—Consumers continue to process messages from the message queue until reaching the maximum number of messages (`max_messages`) specified in the `CRON_CONSUMERS_RUNNER` deploy variable before closing the TCP connection and terminating the consumer process.
+- `true`—Consumers continue to process messages from the message queue until reaching the maximum number of messages (`max_messages`) specified in the `CRON_CONSUMERS_RUNNER` deploy variable before closing the TCP connection and terminating the consumer process. If the queue empties before reaching `max_messages`, the consumer waits for more messages to arrive.
 
 {: .bs-callout .bs-callout-warning}
-If the queue empties before reaching `max_messages`, the consumer waits for more messages to arrive. If you use workers to run consumers instead of using a cron job, set this variable to true.
+If you use workers to run consumers instead of using a cron job, set this variable to true.
 
 ```yaml
 stage:
