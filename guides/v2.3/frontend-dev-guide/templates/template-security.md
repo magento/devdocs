@@ -52,7 +52,7 @@ The following example shows the escaped HTML output:
 <div style="background\3A \20 \23 000\22 \3E \3C script\3E alert\28 1\29 \3C \2F script\3E "></div>
 ```
 
-**Case:** JSON output in script context\\
+**Case:** JSON output in script context
 **Function:** No function needed for JSON output.
 
 ```html
@@ -62,7 +62,7 @@ The following example shows the escaped HTML output:
   </script>
 ```
 
-**Case:** JSON output in html/attribute context\\
+**Case:** JSON output in html/attribute context
 **Function:** `escapeHtml`
 
 ```html
@@ -70,7 +70,7 @@ The following example shows the escaped HTML output:
   <button class="action" data-post="<?php echo $block->escapeHtml($postData) ?>" />
 ```
 
-**Case:** String output that should not contain HTML\\
+**Case:** String output that should not contain HTML
 **Function:** `escapeHtml`
 
 You can pass in an optional array of allowed tags that will not be escaped.
@@ -89,7 +89,7 @@ If your text contains special characters, they must be encoded as HTML entities,
   <div id='my-element'><?php echo $block->escapeHtml(__('Only registered users can write reviews. Please <a href="%1">Sign in</a> or <a href="%2">create an account</a>', $block->getLoginUrl(), $block->getCreateAccountUrl()), ['a']) ?></div>
 ```
 
-**Case:** URL output\\
+**Case:** URL output
 **Function:** `escapeUrl`
 
 ```html
@@ -99,7 +99,7 @@ If your text contains special characters, they must be encoded as HTML entities,
   </script>
 ```
 
-**Case:** Strings inside JavaScript\\
+**Case:** Strings inside JavaScript
 **Function:** In a JavaScript context, use the `escapeJs` function.
 
 In cases where the JavaScript code outputs content onto the page, use the `escapeUrl` or the `escapeHtml` function where appropriate.
@@ -121,7 +121,7 @@ For example, when a URL output string is inside a JavaScript context, use both `
   alert('<?php echo $block->escapeJs(__('You are not authorized to perform this action.')) ?>');
 ```
 
-**Case:** Strings inside HTML attributes\\
+**Case:** Strings inside HTML attributes
 **Function:** `escapeHtmlAttr`
 
 ```html
