@@ -38,9 +38,9 @@ The `queue.xml` file defines the broker that processes topics. It also specifies
 ```xml
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Communication/etc/communication.xsd">
     <broker topic="product_action_attribute.update" exchange="magento-db" type="db">
-        <queue name="product_action_attribute.update" 
-               consumer="product_action_attribute.update" 
-               consumerInstance="Magento\Framework\MessageQueue\Consumer" 
+        <queue name="product_action_attribute.update"
+               consumer="product_action_attribute.update"
+               consumerInstance="Magento\Framework\MessageQueue\Consumer"
                handler="Magento\Catalog\Model\Attribute\Backend\Consumer::process"/>
     </broker>
 </config>
