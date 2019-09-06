@@ -22,25 +22,25 @@ Look for the following highlights in this release:
 This release includes extensive security enhancements, including
 
 * PSD2 compliance to core payment methods  
-* Fixes for 75 critical security issues. 
-* Significant platform-security enhancements that boost XSS (cross-site scripting) protection against future exploits. This effort is the culmination of a 
+* Fixes for 75 critical security issues 
+* Significant platform-security enhancements that boost XSS (cross-site scripting) protection against future exploits. This effort is the culmination of several months of concentrated effort on Magento's part to reduce our backlog of security enhancements.
 
-#### Core payment methods integrations are now compliant with PSD2 regulation
+#### Core payment methods integrations are now compliant with PSD2 regulations
 
-The European Union revised a regulation called Payment Services Directive (PSD) with an updated version PSD2. This regulation goes into effect on September 14, 2019, and has a significant impact on most payment processing involving credit cards or bank transfers.  See the Magento Forum DevBlog post [3D Secure 2.0 changes](https://community.magento.com/t5/Magento-DevBlog/3D-Secure-2-0-changes/ba-p/136460) for more information on Magento Payment Provider Recommendations and a wealth of links to PSD2 regulation discussions.
+The European Union recently revised the Payment Services Directive (PSD) regulation with an updated version -- PSD2. This revised regulation goes into effect on September 14, 2019, and will significantly affect  most payment processing involving credit cards or bank transfers.  See the Magento Forum DevBlog post [3D Secure 2.0 changes](https://community.magento.com/t5/Magento-DevBlog/3D-Secure-2-0-changes/ba-p/136460) for more information on Magento Payment Provider Recommendations and a wealth of links to PSD2 regulation discussions.
 
 This release contains the following major PSD-related changes:
 
- * The **Braintree payment method now complies with  PSD2 regulations**. Its core integration API has been upgraded to the latest JavaScript SDK v3 API, a requirement for supporting native Braintree 3D Secure 2.0 adoption. Braintree transactions are now also verified by using the native Braintree 3D Secure 2.0 service. 
+ * The **Braintree payment method now complies with  PSD2 regulations**. Its core integration API has been upgraded to the latest JavaScript SDK v3 API, which is a requirement for supporting native Braintree 3D Secure 2.0 adoption. Braintree transactions are now also verified by using the native Braintree 3D Secure 2.0 service. 
 
-* Authorize.net now provides the ability, through the `chardholderAuthentication` request field, to make 3D Secure verification through third-party services such as CardinalCommerce. Starting from this release, **Authorize.net Accept.js integration will support 3DS 2.0 through CardinalCommerce**. 
+* Authorize.net now provides the ability, through the `chardholderAuthentication` request field, to make 3D Secure verification through third-party services such as CardinalCommerce. Starting with this release, **Authorize.net Accept.js integration will support 3DS 2.0 through CardinalCommerce**. 
 
 <!--- MAGEDTWO-99739 -->
 * The Cybersource and eWay payment modules have been deprecated in this release to comply with PSD2 SCA regulation, which takes effect on September 14, 2019.  Use the official Marketplace extensions for these features instead.
 
 #### Security enhancements and fixes to core code
 
-* **75 security enhancements** that help close cross-site scripting (XSS) and remote code execution (RCE) vulnerabilities as well as other security issues. No confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. See [Magento Security Center](https://magento.com/security/patches/magento-2.3.3-2.2.10-security-update) for a comprehensive discussion of these issues. All known exploitable security issues fixed in this release (2.3.2) have been ported to 2.2.10, 1.14.4.3, and 1.9.4.3, as appropriate.
+* **75 security enhancements** that help close cross-site scripting (XSS) and remote code execution (RCE) vulnerabilities as well as other security issues. No confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. Most of these issues require that an attacker first obtains access to the Admin. As a result, we remind you to take all necessary steps to protect your Admin, including but not limited to these efforts: IP whitelisting, [two-factor authentication](https://devdocs.magento.com/guides/v2.3/security/two-factor-authentication.html), use of a VPN, the use of a unique location rather than `/admin', and good password hygiene. See [Magento Security Center](https://magento.com/security/patches/magento-2.3.3-2.2.10-security-update) for a comprehensive discussion of these issues. All known exploitable security issues fixed in this release (2.3.2) have been ported to 2.2.10, 1.14.4.3, and 1.9.4.3, as appropriate.
 
 
 {:.bs-callout .bs-callout-note}
@@ -51,10 +51,10 @@ Starting with the release of Magento Commerce 2.3.2, Magento will  assign and pu
 The following upgrades to core platform components boost platform security and support PCI compliance:
 
 <!--- MC-14862-->
-* Magento 2.3.3 now supports PHP 7.3.8 and 7.2.21.
+* Magento 2.3.3 now supports PHP 7.3.x (tested with PHP 7.3.8) and PHP 7.2.x (tested with 7.2.21).
 
 <!--- MC-14863-->
-* Varnish cache has been upgraded to 6.2.0.
+* Varnish cache support has been upgraded for compatibility with 6.2.0.
   
 <!--- MC-14912-->
 * Zend Framework 2 Components upgraded to the Active/LTS versions. See [Support and Long Term Support Policies](https://framework.zend.com/long-term-support) for a discussion of Zend Framework long-term support policy.
@@ -62,8 +62,7 @@ The following upgrades to core platform components boost platform security and s
 ### Performance boosts
 
 <!--- MC-4244-->
-* Merchants now have the ability to turn off the automatic URL rewrite generation that occurs by default on products when the category they belong to is saved. The new **Generate "category/product" URL Rewrites**  configuration option controls this behavior. When this feature is enabled, Magento will generate a lot of data when saving a category that contains many assigned products. This generated data is saved into rewrite tables that can degrade Magento performance. See xxx for more 
-ormation on using this new configuration option. 
+* Merchants now have the ability to turn off the automatic URL rewrite generation that occurs by default on products when the category they belong to is saved. The new **Generate "category/product" URL Rewrites**  configuration option controls this behavior. When this feature is enabled, Magento will generate a lot of data when saving a category that contains many assigned products. This generated data is saved into rewrite tables that can degrade Magento performance.
 
 
 <!--- MC-15763-->
@@ -74,7 +73,7 @@ ormation on using this new configuration option.
 * The `jQuery/ui` library has been refactored into separate widgets so that core modules load only the widgets they need. As a result, you can experience improvement  in core storefront tasks including the loading of category, configurable product, home, and checkout pages.
 
 <!--- MC-16046-->
-* Store pages now display text in readable system fonts while loading system fonts, which significantly increases page load speed.  Merchants who deploy stores that implement  large CSS files and many fonts will notice the greater improvement. 
+* Store pages now display text in readable system fonts while loading system fonts, which significantly increases page load speed.  Merchants who deploy stores that implement  large CSS files and many fonts will notice the greatest improvement. 
 
 
 
@@ -89,7 +88,8 @@ This release contains  enhancements to core quality, which improve the quality o
 
 
 <!--- MC-15298-->
-* Administrators can now opt out of analytics tracking on the Admin. See User Guide for more information.
+* Magento is introducing the tracking of user actions and events on the Admin as part of our efforts to better understand the Admin user experience and improve product design.The first administrator who logs into the Admin after upgrading to Magento 2.3.3 will see the **Allow admin usage data collection** pop-up window, from which they can decline or agree to participate. Once data is captured, it is sent to Adobe Analytics for analysis and reporting. Typical events include page views, save actions, and changes to Magento mode. See Store Admin for more information. 
+
 
 
 ### Inventory Management enhancements
@@ -111,7 +111,7 @@ See [Release notes](https://devdocs.magento.com/guides/v2.3/graphql/release-note
 
 ### Google Shopping ads Channel 
 
-The Google Shopping ads Channel Marketplace extension is now available as a bundled extension.
+The Google Shopping ads Channel Marketplace extension is now available as a bundled extension.  [Google Shopping ads Channel Release Notes](https://devdocs.magento.com/extensions/google-shopping-ads/release-notes/)  describes all changes to this feature for Magento 2.3.x.
 
 ### Vendor-developed extension enhancements
 
@@ -300,7 +300,7 @@ We have fixed hundreds of issues in the Magento 2.3.3 core code.
 ### Cache
 
 <!--- MC-14863-->
-* Varnish cache has been upgraded to 6.2.0.
+* Varnish cache support has been upgraded for compatibility with version 6.2.0.
 
 <!--- MAGETWO-98650-->
 * Full-page cache no longer clears out the checkout session data on uncached pages when the `Magento_Persistent` module was disabled.
@@ -888,10 +888,10 @@ We have fixed hundreds of issues in the Magento 2.3.3 core code.
 ### Infrastructure
 
 <!--- MC-14862-->
-* Magento 2.3.3 now supports PHP 7.3.8 and 7.2.21.
+* Magento 2.3.3 now supports PHP 7.3.x (tested with PHP 7.3.8) and PHP 7.2.x (tested with 7.2.21).
 
 <!--- MC-14863-->
-* Varnish cache has been upgraded to 6.2.0.
+* Varnish cache support has been upgraded for compatibility with version 6.2.0.
 
 <!--- ENGCOM-5352-->
 * You can now use copy service on extension attributes for classes that extend Data Object. *Fix submitted by Oleksandr Kravchuk in pull request [23387](https://github.com/magento/magento2/pull/23387)*. [GitHub-23386](https://github.com/magento/magento2/issues/23386)
@@ -1039,7 +1039,7 @@ The following changes to core payment methods integrations support compliance wi
 
 
 <!--- MC-16046-->
-* Store pages now display text in readable system fonts while loading system fonts, which significantly increases page load speed.  Merchants who deploy stores that implement  large CSS files and many fonts will notice the greater improvement. 
+* Store pages now display text in readable system fonts while loading custom fonts, which significantly increases page load speed.  Merchants who deploy stores that implement  large CSS files and many fonts will notice the greater improvement. 
 
 
 
@@ -1193,10 +1193,11 @@ EE ONLY
 * Magento no longer removes the child products of a grouped product after the group product’s schedule update has expired. 
 
 <!--- MAGETWO-99378-->
-Magento now displays the correct product Short Description for the selected update in deployments where there are multiple schedule updates.
+* Magento now displays the correct product Short Description for the selected update in deployments where there are multiple schedule updates.
 
 <!--- MC-15298-->
-* Administrators can now opt out of analytics tracking on the Admin. See Users Guide for more information.
+* Magento is introducing the tracking of user actions and events on the Admin as part of our efforts to better understand the Admin user experience and improve product design.The first administrator who logs into the Admin after upgrading to Magento 2.3.3 will see the **Allow admin usage data collection** pop-up window, from which they can decline or agree to participate. Once data is captured, it is sent to Adobe Analytics for analysis and reporting. Typical events include page views, save actions, and changes to Magento mode. See Store Admin for more information. 
+
 
 <!--- MC-15519-->
 * The database compare tool no longer shows the incorrect comparison results for these entities:
