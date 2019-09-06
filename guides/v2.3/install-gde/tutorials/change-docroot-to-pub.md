@@ -23,6 +23,7 @@ If you're accustomed to using the Web Setup Wizard during development, be aware 
 If you are using [nginx]({{ page.baseurl }}/install-gde/prereq/nginx.html) and the [`nginx.conf.sample`]({{ site.mage2bloburl }}/{{ page.guide_version }}/nginx.conf.sample) file included in the Magento installation directory, you are probably already serving files from the `pub/` directory.
 
 When used in your server block that defines your site, the `nginx.conf.sample` configuration overrides your server's docroot settings to serve files from Magento's `pub/` directory. For example, see the last line in the following configuration:
+
 ```bash
     # /etc/nginx/sites-available/magento
 
