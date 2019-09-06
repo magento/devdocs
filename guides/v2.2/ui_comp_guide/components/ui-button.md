@@ -33,7 +33,7 @@ Option | Description | Type | Required |
 
 ### Configure component
 
-Here is an example of how Button component integrates with Listing component:
+Here is an example of a Button component ("Test Button") added below a Listing component:
 
 ```xml
 ...
@@ -59,7 +59,7 @@ Here is an example of how Button component integrates with Listing component:
 
 ### Result
 
-The result is a new added button to page listing.
+The Button component appears below a Listing component on the page, as follows:
 
 ![Listing button]({{ site.baseurl }}/common/images/ui_comps/listing_button.png)
 
