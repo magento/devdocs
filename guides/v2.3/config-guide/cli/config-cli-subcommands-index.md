@@ -120,6 +120,20 @@ Product Price index has been rebuilt successfully in <time>
 Catalog Search index has been rebuilt successfully in <time>
 ```
 
+To reinstall triggers:
+
+Set the indexer mode to `realtime` to remove all the triggers
+
+```bash
+bin/magento indexer:set-mode realtime
+```
+
+Set the indexer mode to `schedule` to add all the triggers
+
+```bash
+bin/magento indexer:set-mode schedule
+```
+
 {:.bs-callout .bs-callout-info}
 Reindexing all indexers can take a long time for stores with large numbers of products, customers, categories, and promotional rules. <!-- Add to docs in 2.3.1 - MAGEDOC-3020:  To reduce processing time, see the next section for reindexing in parallel mode. -->
 
