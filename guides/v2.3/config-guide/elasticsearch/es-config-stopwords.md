@@ -109,7 +109,7 @@ To change the directory:
 
 <type name="Magento\Elasticsearch\SearchAdapter\Query\Preprocessor\Stopwords">
     <arguments>
-        <argument name="fileDir" xsi:type="string">app/code/Magento/Elasticsearch/etc/stopwords</argument>
+        <argument name="stopwordsDirectory" xsi:type="string">app/code/Magento/Elasticsearch/etc/stopwords</argument>
     </arguments>
 </type>
 ```
