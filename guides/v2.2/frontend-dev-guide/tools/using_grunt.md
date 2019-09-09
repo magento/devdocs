@@ -20,23 +20,23 @@ Make sure that you [set]({{ page.baseurl }}/config-guide/cli/config-cli-subcomma
 
 Magento has built-in Grunt tasks configured, but there are still several steps you need to take to be able to use it:
 
-1. Install [node.js](https://github.com/joyent/node/wiki/installing-node.js-via-package-manager) to any location on your machine.
+1. Install [node.js](https://nodejs.org/en/download/package-manager/) to any location on your machine.
 
 2. Install Grunt CLI tool globally. To do this, run the following command in a command prompt:
-
-       npm install -g grunt-cli
-
+    ```bash
+    npm install -g grunt-cli
+    ```
 3. From the `<Magento_root>` directory, copy and paste the contents of the following files:
 	- `package.json.sample` into `package.json`
 	- `Gruntfile.js.sample` into `Gruntfile.js`
 	- `grunt-config.json.sample` into `grunt-config.json`
 
 4. Install (or refresh) the `node.js` project dependency, including Grunt, for your Magento instance. To do this, run the following commands in a command prompt:
-
-       cd your_Magento_instance_directory
-       npm install
-       npm update
-
+    ```bash
+    cd your_Magento_instance_directory
+    npm install
+    npm update
+    ```
 5. (Optional) If you want to use Grunt for "watching" changes automatically, without reloading pages in a browser each time, install the [LiveReload extension](http://livereload.com/extensions/) in your browser.
 
 ## Grunt configuration file {#grunt_config}
@@ -46,17 +46,24 @@ Copy the contents of `themes.js` into `local-themes.js` in the `dev/tools/grunt/
 If installed as described above, Grunt will use the default configuration files located in the `dev/tools/grunt/configs/` directory. You can define your theme in the `local-themes.js` file. The following shows an example of how you can define your theme.
 
 ```javascript
-    Theme_Name: {
-        area: 'frontend',
-        name: 'Vendor_Name/Theme_Name',
-        locale: 'en_US',
+    <theme>: {
+        area: '<area>',
+        name: '<Vendor>/<theme>,
+        locale: '<language>',
         files: [
-            'css/styles-m',
-            'css/styles-l'
+            '<path_to_file1>', //path to root source file
+            '<path_to_file2>'
         ],
         dsl: 'less'
     }
 ```
+
+Where the following notation is used:
+- `<Vendor>`: vendor name.
+- `<theme>`: your theme code, conventionally should correspond to the theme directory name.
+- `<area>`: area code, can be either `frontend` or `adminhtml`.
+- `<language>`: specified in the `code_subtag` format, for example `en_US`. Only one locale can be specified here. To debug the theme with another locale, create one more theme declaration, having specified another value for `language`.
+- `<path_to_file>`: path to the root source file, relative to the `app/design/frontend/<Vendor>/<theme>/web` directory. You need to specify all [root source files of the theme]({{ page.baseurl }}/frontend-dev-guide/css-topics/css-preprocess.html#css_preprocess_terms). If your theme [inherits] from a certain theme, and does not contain its own root source files, specify the root source files of the parent theme.
 
 ## Using custom Grunt configuration files
 
