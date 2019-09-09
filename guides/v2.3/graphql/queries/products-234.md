@@ -52,7 +52,7 @@ filter: {
 
 Magento processes the attribute values specified in  a `ProductAttributeFilterInput` as simple data types (strings, integers, booleans). However, returned attributes can be a different, complex, data type. For example, in a response, `price` is an object that contains a monetary value and a currency code.
 
-By default, you can use the following attributes as filters. To define a custom filter, see Create a custom filter.
+By default, you can use the following attributes as filters. To define a custom filter, see [Filtering with custom attributes]({{page.baseurl}}/graphql/custom-filters.html).
 
 Attribute | Data type | Description
 --- | --- | ---
@@ -62,14 +62,15 @@ Attribute | Data type | Description
 `price` | FilterRangeTypeInput | Filters on the Price attribute
 `short_description` | FilterMatchTypeInput | Filters on the Short Description attribute
 `sku` | FilterEqualTypeInput | Filters on the SKU attribute
+`url_key` | FilterEqualTypeInput | The part of the URL that identifies the product
 
 #### FilterEqualTypeInput attributes
 
-The `cateogry_id` and `sku` filters require a `FilterEqualTypeInput` object as input. You must specify a `FilterEqualTypeInput` object to filter on a custom product attribute of the following types:
+The `category_id`, `sku`, and `url_key` filters require a `FilterEqualTypeInput` object as input. You must specify a `FilterEqualTypeInput` object to filter on a custom product attribute of the following types:
 
 -  Boolean
 -  Select
--  Mutliple select
+-  Multiple select
 
 Attribute | Data type | Description
 --- | --- | ---
@@ -111,14 +112,123 @@ The `currentPage` attribute specifies which page of results to return. If no val
 
 ### sort attribute
 
-The `sort` object allows you to specify which field or fields to use for sorting the results. If you specify more than one field, Magento sorts by the first field listed. Then, if any items have the same value, those items will be sorted by the secondary field.  The value for each field can be set to either `ASC` or `DESC`.
+The `sort` attribute allows you to specify which field or fields to use for sorting the results. If you specify more than one field, Magento sorts by the first field listed. Then, if any items have the same value, those items will be sorted by the secondary field.  The value for each field can be set to either `ASC` or `DESC`.
+
+If you do not specify a `sort` object, Magento sorts as follows:
+
+-  If the `search` attribute is specified, the query sorts by relevance, in descending order.
+-  If the `filter` attribute is specified but not `search`, the query sorts by position, in ascending order.
+
+In previous releases, the `sort` attribute required a `ProductSortInput` object as input. The `sort` attribute now requires a `ProductSortFilterInput` object, which can contain the following attributes:
 
 Attribute | Data type | Description
 --- | --- | ---
 `name` | SortEnum | Sorts by Product Name
 `position` | SortEnum | Sorts by the position of products
 `price` | SortEnum | Sorts by Price
-`relevance` | SortEnum | Sorts by the search relevance score. This is the defualt value
+`relevance` | SortEnum | Sorts by the search relevance score. This is the default value
+
+{:.bs-callout-info}
+If you use MySQL for searches and you specify `relevance` and another sorting attribute, the `relevance` results are always listed first. This limitation does not apply to Elasticsearch.
+
+## Deprecated input attributes
+
+The `filter` and `sort` attributes require new input objects. The following sections list the deprecated attributes.
+
+### ProductFilterInput attributes
+
+The `filter` attribute previously required a `ProductFilterInput` object as input. This object has been deprecated. The replacement input object, `ProductAttributeFilterInput` is more restrictive about what attributes can be used in a `products` query by default. The following attributes can still be used in custom filters. See [Filtering with custom attributes]({{page.baseurl}}/graphql/custom-filters.html) for more information.
+
+```text
+country_of_manufacture
+created_at
+custom_layout
+custom_layout_update
+gift_message_available
+has_options
+image
+image_label
+manufacturer
+max_price
+meta_description
+meta_keyword
+meta_title
+min_price
+news_from_date
+news_to_date
+options_container
+required_options
+small_image
+small_image_label
+special_from_date
+special_price
+special_to_date
+thumbnail
+thumbnail_label
+tier_price
+updated_at
+weight
+```
+
+{:.bs-callout-info}
+The `or` attribute cannot be used in a `products` query. Logical OR searches are no longer supported.
+
+The following condition types have been deprecated:
+
+```text
+from
+gt
+gteq
+like
+lt
+lteq
+moreq
+neq
+nin
+nlike
+notnull
+null
+to
+```
+
+{:.bs-callout-info}
+Wildcards are no longer supported in `products` queries.
+
+### ProductSortInput attributes
+
+The following sorting attributes have been deprecated:
+
+```text
+country_of_manufacture
+created_at
+custom_layout_update
+custom_layout
+description
+gift_message_available
+has_options
+image_label
+image
+manufacturer
+meta_description
+meta_keyword
+meta_title
+news_from_date
+news_to_date
+options_container
+required_options
+short_description
+sku
+small_image_label
+small_image
+special_from_date
+special_price
+special_to_date
+thumbnail_label
+thumbnail
+tier_price
+updated_at
+weight
+```
 
 ## Output attributes {#Response}
 
@@ -175,6 +285,31 @@ Attribute | Type | Description
 --- | --- | ---
 `label` | String | The label of a sortable option
 `value` | String | The attribute code of the sort field
+
+## Deprecated output attributes
+
+The `filters` output object has been deprecated in favor of the `aggregations` object. The following sections list the deprecated attributes.
+
+### LayerFilter object
+
+The `LayerFilter` object can be returned in a response to help create layered navigation on your app.
+
+Attribute | Type | Description
+--- | --- | ---
+`filter_items` |  [LayerFilterItemInterface] | An array of filter items
+`filter_items_count` | Int | The number of filter items in filter group
+`name` | String | The layered navigation filter name
+`request_var` | String | The request variable name for the filter query
+
+### LayerFilterItemInterface
+
+`LayerFilterItemInterface` contains an array of items that match the terms defined in the filter.
+
+Attribute | Type | Description
+--- | --- | ---
+`items_count` | Int | The number of items the filter returned
+`label` | String | The label applied to a filter
+`value_string` | String | The value for filter request variable to be used in a query
 
 ## Sample queries
 
@@ -304,6 +439,391 @@ The query returns the following:
   }
 }
 ```
+### Query with layered navigation
+
+The following query returns aggregations for a query that filters on items with these characteristics:
+
+-  Women's pants (category ID `27`)
+-  In the price range of $30 - $39.99
+-  Comes in black (color `49`)
+
+**Request**
+
+```graphql
+{
+  products(
+    filter: {
+      category_id: { eq: "27" }
+      price: { from: "30", to: "39.99" }
+      color: { eq: "49" }
+    }
+    pageSize: 25
+    sort: { name: DESC }
+  ) {
+    aggregations {
+      attribute_code
+      count
+      label
+      options {
+        label
+        value
+        count
+      }
+    }
+    items {
+      name
+      sku
+      price {
+        regularPrice {
+          amount {
+            value
+            currency
+          }
+        }
+      }
+    }
+    page_info {
+      page_size
+    }
+  }
+}
+```
+
+**Response**
+
+{% collapsible Show sample response %}
+
+```json
+{
+  "data": {
+    "products": {
+      "aggregations": [
+        {
+          "attribute_code": "price",
+          "count": 1,
+          "label": "Price",
+          "options": [
+            {
+              "label": "30-*",
+              "value": "30_*",
+              "count": 4
+            }
+          ]
+        },
+        {
+          "attribute_code": "category_id",
+          "count": 5,
+          "label": "Category",
+          "options": [
+            {
+              "label": "Bottoms",
+              "value": "22",
+              "count": 4
+            },
+            {
+              "label": "Pants",
+              "value": "27",
+              "count": 4
+            },
+            {
+              "label": "Pants",
+              "value": "32",
+              "count": 4
+            },
+            {
+              "label": "Performance Fabrics",
+              "value": "35",
+              "count": 2
+            },
+            {
+              "label": "New Luma Yoga Collection",
+              "value": "8",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "attribute_code": "color",
+          "count": 8,
+          "label": "Color",
+          "options": [
+            {
+              "label": "Black",
+              "value": "49",
+              "count": 4
+            },
+            {
+              "label": "Blue",
+              "value": "50",
+              "count": 2
+            },
+            {
+              "label": "Gray",
+              "value": "52",
+              "count": 1
+            },
+            {
+              "label": "Green",
+              "value": "53",
+              "count": 1
+            },
+            {
+              "label": "Orange",
+              "value": "56",
+              "count": 1
+            },
+            {
+              "label": "Purple",
+              "value": "57",
+              "count": 1
+            },
+            {
+              "label": "Red",
+              "value": "58",
+              "count": 1
+            },
+            {
+              "label": "White",
+              "value": "59",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "attribute_code": "material",
+          "count": 7,
+          "label": "Material",
+          "options": [
+            {
+              "label": "Microfiber",
+              "value": "150",
+              "count": 2
+            },
+            {
+              "label": "Spandex",
+              "value": "151",
+              "count": 2
+            },
+            {
+              "label": "Organic Cotton",
+              "value": "154",
+              "count": 2
+            },
+            {
+              "label": "CoolTech&trade;",
+              "value": "156",
+              "count": 2
+            },
+            {
+              "label": "LumaTech&trade;",
+              "value": "148",
+              "count": 1
+            },
+            {
+              "label": "Nylon",
+              "value": "37",
+              "count": 1
+            },
+            {
+              "label": "Rayon",
+              "value": "39",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "attribute_code": "size",
+          "count": 2,
+          "label": "Size",
+          "options": [
+            {
+              "label": "28",
+              "value": "172",
+              "count": 4
+            },
+            {
+              "label": "29",
+              "value": "173",
+              "count": 4
+            }
+          ]
+        },
+        {
+          "attribute_code": "eco_collection_bucket",
+          "count": 1,
+          "label": "eco_collection_bucket",
+          "options": [
+            {
+              "label": "1",
+              "value": "1",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "attribute_code": "performance_fabric_bucket",
+          "count": 1,
+          "label": "performance_fabric_bucket",
+          "options": [
+            {
+              "label": "1",
+              "value": "1",
+              "count": 2
+            }
+          ]
+        },
+        {
+          "attribute_code": "new_bucket",
+          "count": 1,
+          "label": "new_bucket",
+          "options": [
+            {
+              "label": "1",
+              "value": "1",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "attribute_code": "style_bottom",
+          "count": 5,
+          "label": "Style Bottom",
+          "options": [
+            {
+              "label": "Capri",
+              "value": "107",
+              "count": 2
+            },
+            {
+              "label": "Leggings",
+              "value": "109",
+              "count": 1
+            },
+            {
+              "label": "Parachute",
+              "value": "110",
+              "count": 1
+            },
+            {
+              "label": "Sweatpants",
+              "value": "113",
+              "count": 1
+            },
+            {
+              "label": "Track Pants",
+              "value": "115",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "attribute_code": "pattern",
+          "count": 2,
+          "label": "Pattern",
+          "options": [
+            {
+              "label": "Color-Blocked",
+              "value": "195",
+              "count": 3
+            },
+            {
+              "label": "Solid",
+              "value": "197",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "attribute_code": "climate",
+          "count": 5,
+          "label": "Climate",
+          "options": [
+            {
+              "label": "Indoor",
+              "value": "205",
+              "count": 4
+            },
+            {
+              "label": "Mild",
+              "value": "206",
+              "count": 4
+            },
+            {
+              "label": "Hot",
+              "value": "212",
+              "count": 3
+            },
+            {
+              "label": "Warm",
+              "value": "209",
+              "count": 2
+            },
+            {
+              "label": "Spring",
+              "value": "208",
+              "count": 1
+            }
+          ]
+        }
+      ],
+      "items": [
+        {
+          "name": "Karmen Yoga Pant",
+          "sku": "WP01",
+          "price": {
+            "regularPrice": {
+              "amount": {
+                "value": 39,
+                "currency": "USD"
+              }
+            }
+          }
+        },
+        {
+          "name": "Ida Workout Parachute Pant",
+          "sku": "WP03",
+          "price": {
+            "regularPrice": {
+              "amount": {
+                "value": 48,
+                "currency": "USD"
+              }
+            }
+          }
+        },
+        {
+          "name": "Bardot Capri",
+          "sku": "WP08",
+          "price": {
+            "regularPrice": {
+              "amount": {
+                "value": 48,
+                "currency": "USD"
+              }
+            }
+          }
+        },
+        {
+          "name": "Aeon Capri",
+          "sku": "WP07",
+          "price": {
+            "regularPrice": {
+              "amount": {
+                "value": 48,
+                "currency": "USD"
+              }
+            }
+          }
+        }
+      ],
+      "page_info": {
+        "page_size": 25
+      }
+    }
+  }
+}
+```
+{% endcollapsible %}
 
 ### Media gallery search
 

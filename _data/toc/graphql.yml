@@ -17,7 +17,7 @@ pages:
           url: /graphql/caching.html
 
         - label: Filtering with custom attributes
-          url: /graphql/filters.html
+          url: /graphql/custom-filters.html
 
     - label: Development
       children:
