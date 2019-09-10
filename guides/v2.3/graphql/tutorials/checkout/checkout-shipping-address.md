@@ -35,7 +35,7 @@ For logged-in customers, send the customer's authorization token in the `Authori
 mutation {
   setShippingAddressesOnCart(
     input: {
-      cart_id: "A7jCcOmUjjCh7MxDIzu1SeqdqETqEa5h"
+      cart_id: "{ CART_ID }"
       shipping_addresses: [
         {
           address: {

@@ -278,7 +278,7 @@ bin/magento setup:upgrade
 ```
 
 ```bash
-bin/magento magento setup:static-content:deploy
+bin/magento setup:static-content:deploy
 ```
 
 ```bash
