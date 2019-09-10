@@ -99,8 +99,8 @@ pages:
         - label: Customize email templates
           url: /frontend-dev-guide/templates/template-email.html
 
-        - label: Templates XSS security
-          url: /frontend-dev-guide/templates/template-security.html
+        - label: XSS prevention strategies
+          url: /extension-dev-guide/xss-protection.html
 
     - label: Cascading style sheets (CSS)
       url: /frontend-dev-guide/css-topics/css-overview.html

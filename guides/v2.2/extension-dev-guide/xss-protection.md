@@ -115,6 +115,16 @@ Certain attributes like `a.href` accept URIs of various types and must be saniti
 <div attr-js-extracts="<?= $block->escapeHtmlAttribute($myOtherUrl) ?>"></div>
 ```
 
+**Case**: All JavaScript inside attributes must be escaped by escapeJs before escapeHtmlAttr:
+**Escaper method**: escapeJS
+
+```php
+<div
+    onclick="<?= $block->escapeHtmlAttr('handler("' .$block->escapeJs($aString) .'", ' .$block->escapeJs($aVar) .')') ?>">
+    My DIV
+</div>
+```
+
 **Case**: JavaScript string that must not contain JS/HTML
 **Escaper method**: escapeJS
 
