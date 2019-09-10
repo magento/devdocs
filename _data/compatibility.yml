@@ -8,6 +8,13 @@ extension:
     name: Amazon Sales Channel
     versions:
       -
+        name: 2.0.3
+        support:
+          2.2.4+: general availability
+          2.3.0: general availability
+          2.3.1: general availability
+          2.3.2: general availability
+      -
         name: 2.0.0
         support:
           2.2.4+: general availability
