@@ -18,7 +18,7 @@ The following table describes the status of Magento software availability and wh
 | **Magento Shipping**                              | Available now                                                                                                                          | <https://magento.com/products/shipping>                                                           |
 | **Page Builder**                                  | Available now                                                                                                                          | Bundled with {{site.data.var.ee}} 2.3.x                                                           |
 | **Amazon Sales Channel 2.0.0**                    | Available now for {{site.data.var.ece}} 2.2.4+ and 2.3.x (US, Canada, Mexico)<br><br>EMEA availability expected in second half of 2019 | [Magento Marketplace](https://marketplace.magento.com/magento-module-amazon.html)                 |
-| **Google Shopping ads Channel 3.0.0**             | Available now for {{site.data.var.ece}} 2.2.4+ and 2.3.x                                                                               | [Magento Marketplace](http://marketplace.magento.com/magento-google-shopping-ads.html)            |
+| **Google Shopping ads Channel 3.0.1**             | Available now for {{site.data.var.ece}} 2.2.4+ and 2.3.x                                                                               | [Magento Marketplace](http://marketplace.magento.com/magento-google-shopping-ads.html)            |
 
 ## Compatibility
 
