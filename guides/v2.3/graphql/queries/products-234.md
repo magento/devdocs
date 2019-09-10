@@ -52,7 +52,7 @@ filter: {
 
 Magento processes the attribute values specified in  a `ProductAttributeFilterInput` as simple data types (strings, integers, booleans). However, returned attributes can be a different, complex, data type. For example, in a response, `price` is an object that contains a monetary value and a currency code.
 
-By default, you can use the following attributes as filters. To define a custom filter, see [Filtering with custom attributes]({{page.baseurl}}/graphql/custom-filters.html).
+By default, you can use the following attributes as filters. To define a custom filter, see [Filtering with custom attributes]({{page.baseurl}}/graphql/custom-filters.html). Use the `input_type` output attribute of the [`customAttributeMetadata` query]({{page.baseurl}}/graphql/queries/custom-attribute-metadata.html) to determine whether your custom filter should include the FilterEqualTypeInput, FilterMatchTypeInput, or FilterRangeTypeInput data type.
 
 Attribute | Data type | Description
 --- | --- | ---
@@ -439,6 +439,7 @@ The query returns the following:
   }
 }
 ```
+
 ### Query with layered navigation
 
 The following query returns aggregations for a query that filters on items with these characteristics:
@@ -823,6 +824,7 @@ The following query returns aggregations for a query that filters on items with 
   }
 }
 ```
+
 {% endcollapsible %}
 
 ### Media gallery search
