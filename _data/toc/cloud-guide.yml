@@ -295,6 +295,9 @@ pages:
         - label: Project structure
           url: /cloud/project/project-start.html
 
+        - label: Log locations
+          url: /cloud/project/log-locations.html
+
         - label: Create and manage users
           url: /cloud/project/user-admin.html
 
@@ -363,9 +366,6 @@ pages:
       children:
         - label: Troubleshoot deployment
           url: /cloud/trouble/troubleshoot-deployment.html
-
-        - label: View logs for troubleshooting
-          url: /cloud/trouble/environments-logs.html
 
         - label: Incorrect credentials
           url: /cloud/trouble/trouble_ce-creds.html
