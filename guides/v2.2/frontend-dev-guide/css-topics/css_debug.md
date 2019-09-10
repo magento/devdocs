@@ -23,7 +23,7 @@ To compile `.less` files, add your theme to `module.exports` in the Grunt config
     ```bash
     npm install -g grunt-cli
     ```
-    
+
 1. From the `<Magento_root>` directory, copy and paste the contents of the following files:
 
     - `package.json.sample` to `package.json`
@@ -37,7 +37,7 @@ To compile `.less` files, add your theme to `module.exports` in the Grunt config
     npm install
     npm update
     ```
-    
+
 1. Add your [theme](https://glossary.magento.com/theme) to Grunt configuration. To do this, in the `dev/tools/grunt/configs/local-themes.js` file, add your theme to `module.exports` like following:
 
     ```javascript
@@ -54,7 +54,7 @@ To compile `.less` files, add your theme to `module.exports` in the Grunt config
     ```
 
     Where the following notation is used:
-    
+
     - `<Vendor>`: vendor name.
     - `<theme>`: your theme code, conventionally should correspond to the theme directory name.
     - `<language>`: specified in the `code_subtag` format, for example `en_US`. Only one locale can be specified here. To debug the theme with another locale, create one more theme declaration, having specified another value for `language`.
