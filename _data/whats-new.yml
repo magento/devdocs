@@ -22,7 +22,7 @@ entries:
 - description: 'Updated the Cloud Release notes for [ece-tools version 2002.0.21](https://devdocs.magento.com/guides/v2.3/cloud/release-notes/cloud-tools.html#v2002021):<br/>-
     Added environment variables for Cloud deployment: [CONSUMERS_WAIT_FOR_MAX_MESSAGES](https://devdocs.magento.com/guides/v2.3/cloud/env/variables-deploy.html#consumers_wait_for_max_messages)
     and [LOCK_PROVIDER](https://devdocs.magento.com/guides/v2.3/cloud/env/variables-deploy.html#lock_provider)<br/>-
-    Added a [service compatibility table](https://devdocs.magento.com/guides/v2.3/cloud/project/project-conf-files_services.html#services)
+    Added a [service compatibility table](https://devdocs.magento.com/guides/v2.3/cloud/project/project-conf-files_services.html)
     that shows support for installed software and service versions such as Elasticsearch,  RabbitMq,
     Redis, and DB on each Magento version.<br/>- Updated the [Launch Docker](https://devdocs.magento.com/guides/v2.3/cloud/docker/docker-config.html)
     procedure to remove references to the deprecated `db:docker:convert` command and
