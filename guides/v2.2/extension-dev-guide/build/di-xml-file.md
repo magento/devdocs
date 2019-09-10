@@ -317,7 +317,7 @@ The `shared` property determines the lifestyle of both `argument` and `type` con
 ```
 
 In this example `Magento\Filesystem` is not shared, so all clients will retrieve separate instances of `Magento\Filesystem`.
-Also, every instance of `Magento\Filesystem` will get separate instance of `$adapter`, because it too is non-shared.
+Also, every instance of `Magento\Filesystem` will get separate instance of `$adapter`, because it is non-shared too.
 
 ## Sensitive and system-specific configuration settings {#ext-di-sens}
 
