@@ -173,7 +173,7 @@ Continue launching your Docker environment in the _developer_ mode. The develope
 The `{{site.data.var.ct}}` version 2002.0.18 and later supports developer mode.
 
 1.  Install the `docker-sync` tool using the [Installation instructions](https://docker-sync.readthedocs.io/en/latest/getting-started/installation.html).
-    Optionally, you can install the `mutagen.io` tool using the [Installation instructions](https://mutagen.io/documentation/installation/).
+    Optionally, you can install the `mutagen.io` tool using the [Installation instructions](https://mutagen.io/documentation/introduction/installation/).
     If you have it installed, continue to the next step.
 
 1.  In your local environment, start the Docker configuration generator. You can use the service keys, such as `--php`, to [specify a version](#service-versions).
