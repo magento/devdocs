@@ -32,7 +32,7 @@ You can also use the [code compiler] to generate code at any time.  In Magento 2
 
 ### Why should you regenerate code? {#codegen-over-why}
 
-Suppose a Proxy class for a Customer class is generated and the Customer class has new methods added to it. Because a Proxy exists on the file system, it is not regenerated. However, the Proxy implementation is now incomplete because it does not have the new methods. In this case, you must regenerate the Proxy class.
+Suppose a Proxy class for a Customer class is generated, and the Customer class has new methods added to it. Because a Proxy exists on the file system, it is not regenerated. However, the Proxy implementation is now incomplete because it does not have the new Customer class methods. In this case, you must regenerate the Proxy class.
 
 If the code generator implementation itself is changed, you must regenerate all the classes. This is rare, however.
 
