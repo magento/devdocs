@@ -25,7 +25,7 @@ The `filter` definition for your custom attribute requires one of the following 
 
 ## Example
 
-In this example, the custom attribute `volume` was assigned to the `bags` attribute group. Running the [`customAttributeMetadata` query]({{page.baseurl}}/graphql/mutations/custom-attribute-metadata.html) on this custom attribute reveals that the `label` and `value` values for the attribute's options are as follows:
+In this example, the custom attribute `volume` was assigned to the `bags` attribute group. Running the [`customAttributeMetadata` query]({{page.baseurl}}/graphql/queries/custom-attribute-metadata.html) on this custom attribute reveals that the `label` and `value` values for the attribute's options are as follows:
 
 `label` | `value`
 --- | ---
