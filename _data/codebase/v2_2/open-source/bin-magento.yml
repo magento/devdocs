@@ -359,7 +359,7 @@ commands:
         is_required: false
         is_array: true
         description: Space-separated list of config types or omit to dump all [scopes,
-          system, themes, i18n]
+          themes, system, i18n]
         default: []
     options:
       help:
@@ -5293,7 +5293,7 @@ commands:
         is_value_required: true
         is_multiple: false
         description: Database server engine
-        default: innodb
+        default: 
       db-password:
         name: "--db-password"
         shortcut: ''
@@ -5317,7 +5317,7 @@ commands:
         is_value_required: true
         is_multiple: false
         description: Database type
-        default: mysql4
+        default: 
       db-init-statements:
         name: "--db-init-statements"
         shortcut: ''
@@ -5325,7 +5325,7 @@ commands:
         is_value_required: true
         is_multiple: false
         description: Database  initial set of commands
-        default: SET NAMES utf8;
+        default: 
       skip-db-validation:
         name: "--skip-db-validation"
         shortcut: "-s"
@@ -5611,7 +5611,7 @@ commands:
         is_value_required: true
         is_multiple: false
         description: Lock provider name
-        default: db
+        default: 
       lock-db-prefix:
         name: "--lock-db-prefix"
         shortcut: ''
@@ -6169,7 +6169,7 @@ commands:
         is_value_required: true
         is_multiple: false
         description: Database server engine
-        default: innodb
+        default: 
       db-password:
         name: "--db-password"
         shortcut: ''
@@ -6193,7 +6193,7 @@ commands:
         is_value_required: true
         is_multiple: false
         description: Database type
-        default: mysql4
+        default: 
       db-init-statements:
         name: "--db-init-statements"
         shortcut: ''
@@ -6201,7 +6201,7 @@ commands:
         is_value_required: true
         is_multiple: false
         description: Database  initial set of commands
-        default: SET NAMES utf8;
+        default: 
       skip-db-validation:
         name: "--skip-db-validation"
         shortcut: "-s"
@@ -6487,7 +6487,7 @@ commands:
         is_value_required: true
         is_multiple: false
         description: Lock provider name
-        default: db
+        default: 
       lock-db-prefix:
         name: "--lock-db-prefix"
         shortcut: ''
