@@ -60,9 +60,17 @@ This example shows how to initialize the calendar widget, including custom param
 <script>
   require([
     'jquery',
+    'mage/translate',
     'mage/calendar'
-    ], function ($) {
-      $('#example-date').calendar();
+    ], function ($, $t) {
+      $('#example-date').calendar({
+        changeMonth: true,
+        changeYear: true,
+        showButtonPanel: true,
+        currentText: $t('Go Today'),
+        closeText: $t('Close'),
+        showWeek: true
+      });
     })
 </script>
 ```
