@@ -4,8 +4,6 @@ subgroup: 3_Widgets
 title: Gallery widget
 ---
 
-## Overview
-
 The gallery jQuery widget implements a content area with images organized into preview and thumbnails blocks.
 
 The following picture is an illustration of image displaying on the product page using the gallery widget:

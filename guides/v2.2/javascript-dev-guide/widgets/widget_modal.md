@@ -4,8 +4,6 @@ subgroup: 3_Widgets
 title: Modal widget
 ---
 
-## Overview {#modal_overview}
-
 The Magento modal widget implements a secondary window that opens on top of the main window. It contains the overlay and modal content. The modal widget configuration enables the following:
 
 -   Configuring as popup or slide
