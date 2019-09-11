@@ -18,6 +18,7 @@ This guide discusses the following widgets:
 -   [Gallery widget]
 -   [List widget]
 -   [Loader widget]
+-   [MediaUploader widget]
 -   [Menu widget]
 -   [Modal widget]
 -   [Multiselect widget]
@@ -49,6 +50,7 @@ Magento out of the box does not contain jQuery UI styles. Also, it is not recomm
 [Gallery widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_gallery.html
 [List widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_list.html
 [Loader widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_loader.html
+[MediaUploader widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget-media-uploader.html
 [Menu widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_menu.html
 [Modal widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_modal.html
 [Multiselect widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget-multiselect.html
