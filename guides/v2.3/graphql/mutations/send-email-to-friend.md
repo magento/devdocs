@@ -72,6 +72,8 @@ mutation {
 
 ## Input attributes
 
+The `SendEmailToFriendInput` object contains the following attributes:
+
 Attribute |  Data Type | Description
 --- | --- | ---
 `product_id` | Int! | The ID of the product that the customer is referencing
