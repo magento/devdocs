@@ -1,9 +1,9 @@
 ---
 group: graphql
-title: cmsBlock query
+title: cmsBlocks query
 ---
 
-The `cmsBlock` query returns information about blocks that were developed with the Magento Content Management System (CMS).
+The `cmsBlocks` query returns information about blocks that were developed with the Magento Content Management System (CMS).
 
 ## Syntax
 

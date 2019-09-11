@@ -77,4 +77,4 @@ Attribute | Data type | Description
 
 ## Related topics
 
-[cmsBlock query]({{page.baseurl}}/graphql/queries/cms-block.html)
+[cmsBlocks query]({{page.baseurl}}/graphql/queries/cms-blocks.html)
