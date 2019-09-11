@@ -79,8 +79,13 @@ This example shows how to initialize the calendar widget, including custom param
 
 The result is a calendar and a icon(_Click Here_) that opens the calendar.
 
+#### Calendar field initial state
 ![Calendar Widget]({{ site.baseurl }}/common/images/widget/calendar-widget-initial.png)
+
+#### Calendar field opened state
 ![Calendar Widget]({{ site.baseurl }}/common/images/widget/calendar-widget-open.png)
+
+#### Calendar field date chosen
 ![Calendar Widget]({{ site.baseurl }}/common/images/widget/calendar-widget-result.png)
 
 [Datepicker Widget]: http://api.jQueryui.com/datepicker/
