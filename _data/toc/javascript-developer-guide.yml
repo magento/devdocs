@@ -106,6 +106,9 @@ pages:
         - label: RowBuilder widget
           url: /javascript-dev-guide/widgets/widget-row-builder.html
 
+        - label: Sortable widget
+          url: /javascript-dev-guide/widgets/widget-sortable.html
+
         - label: Tabs widget
           url: /javascript-dev-guide/widgets/widget_tabs.html
 
