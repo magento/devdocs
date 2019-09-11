@@ -7,7 +7,7 @@ title: Magento Commerce 2.3.3 Release Notes
 
 Magento Commerce 2.3.3 offers significant platform upgrades, substantial security changes, and PSD2-compliant core payment methods.
 
-It includes over 170 functional fixes to the core product and  over 75 security enhancements. It includes over 200 contributions from our community members. These contributions range from minor clean-up of core code to significant enhancements to Inventory Management and GraphQL.
+This release includes over 170 functional fixes to the core product and  over 75 security enhancements. It includes over 200 contributions from our community members. These contributions range from minor clean-up of core code to significant enhancements to Inventory Management and GraphQL.
 
 ## Other release information
 
@@ -19,7 +19,7 @@ Look for the following highlights in this release:
 
 ### Substantial security enhancements
 
-This release includes extensive security enhancements, including
+This release includes the following security enhancements:
 
 * PSD2 compliance to core payment methods  
 * Fixes for 75 critical security issues 
@@ -31,7 +31,7 @@ The European Union recently revised the Payment Services Directive (PSD) regulat
 
 This release contains the following major PSD-related changes:
 
- * The **Braintree payment method now complies with PSD2 regulations**. Its core integration API has been upgraded to the latest JavaScript SDK v3 API, which is a requirement for supporting native Braintree 3D Secure 2.0 adoption. Braintree transactions are now also verified by using the native Braintree 3D Secure 2.0 service. 
+* The **Braintree payment method now complies with PSD2 regulations**. Its core integration API has been upgraded to the latest JavaScript SDK v3 API, which is a requirement for supporting native Braintree 3D Secure 2.0 adoption. Braintree transactions are now also verified by using the native Braintree 3D Secure 2.0 service. 
 
 * Authorize.net now provides the ability, through the `cardholderAuthentication` request field, to make 3D Secure verification through third-party services such as CardinalCommerce. Starting with this release, **Authorize.net Accept.js integration will support 3DS 2.0 through CardinalCommerce**. 
 
@@ -54,7 +54,7 @@ The following upgrades to core platform components boost platform security and s
 * Magento 2.3.3 now supports PHP 7.3.x (tested with PHP 7.3.8) and PHP 7.2.x (tested with 7.2.21).
 
 <!--- MC-14863-->
-* Varnish cache support has been upgraded for compatibility with 6.2.0.
+* Magento now supports Varnish 6.2.0.
   
 <!--- MC-14912-->
 * Zend Framework 2 Components have been upgraded to the Active/LTS versions. See [Support and Long Term Support Policies](https://framework.zend.com/long-term-support) for a discussion of Zend Framework long-term support policy.
@@ -70,7 +70,7 @@ The following upgrades to core platform components boost platform security and s
 
 
 <!--- MC-16887-->
-* The `jQuery/ui` library has been refactored into separate widgets so that core modules load only the widgets they need. As a result, you can experience improvement  in core storefront tasks including the loading of category, configurable product, home, and checkout pages.
+* The `jQuery/ui` library has been refactored into separate widgets so that core modules load only the widgets they need. This update improves the performance of core storefront tasks including the loading of category, configurable product, home, and checkout pages.
 
 <!--- MC-16046-->
 * Store pages now display text in readable system fonts while loading system fonts, which significantly increases page load speed.  Merchants who deploy stores that implement large CSS files and many fonts will notice the greatest improvement. 
@@ -79,7 +79,7 @@ The following upgrades to core platform components boost platform security and s
 
 ### Infrastructure improvements
 
-This release contains  enhancements to core quality, which improve the quality of the Framework and these modules: `Catalog`, `Sales`, `Checkout/One Page Checkout`,  `UrlRewrite`, `Customer/Customers`, and `UI`. Here are some additional core enhancements:
+This release contains  enhancements to core quality, which improve the quality of the Framework and these modules: `Catalog`, `Sales`, `Checkout/One Page Checkout`,  `UrlRewrite`, `Customer`, and `Ui`. Here are some additional core enhancements:
 
 * The WYSIWYG editor has been upgraded to TinyMCE v. 4.9.5​.
 
@@ -88,7 +88,7 @@ This release contains  enhancements to core quality, which improve the quality o
 
 
 <!--- MC-15298-->
-* Magento is introducing the tracking of user actions and events on the Admin as part of our efforts to better understand the Admin user experience and improve product design.The first administrator who logs into the Admin after upgrading to Magento 2.3.3 will see the **Allow admin usage data collection** pop-up window, from which they can decline or agree to participate. Once data is captured, it is sent to Adobe Analytics for analysis and reporting. Typical events include page views, save actions, and changes to Magento mode. See Store Admin for more information. 
+* As part of our efforts to better understand the Admin user experience and improve product design, Magento is introducing the tracking of user actions and events on the Admin. After you upgrade to Magento 2.3.3, the first administrative user who logs into the Admin will be prompted to **Allow admin usage data collection**.  If the user agrees to data collection, the data captured from Admin activity is sent to Adobe Analytics for analysis and reporting. Typical events include page views, save actions, and changes to Magento mode. See Store Admin for more information. 
 
 
 
@@ -188,7 +188,7 @@ We have fixed hundreds of issues in the Magento 2.3.3 core code.
 ### AdminGWS EE ONLY
 
 <!--- MAGETWO-99801--> 
-* An administrator with permission to a website now has access to the website’s theme configuration. Previously, this administrator could update the theme for the store view that is associated to a website, but not for the website. 
+* An administrator with permission to a website now has access to the theme configuration for the website. Previously, administrators with website permission could update only the theme for the store view that is associated with a website, not the theme for the website itself. 
 
 <!--- MAGETWO-99062-->
 * Administrators with role scope set to **custom** can now view roles and user information.
@@ -197,7 +197,7 @@ We have fixed hundreds of issues in the Magento 2.3.3 core code.
 * Administrators with restricted access to Catalog and Content can now mass-update products. Previously, when an administrator tried to mass-update products, Magento did not update the products, and displayed an empty menu for **Stores**. 
 
 <!--- MAGETWO-98256-->
-* An administrator with access rights to one website only in a multisite deployment can now mass-update products for that website only. Previously, this administrator could not mass-update products on any website in the deployment. 
+* An administrator with access rights to one website only in a multisite deployment can now mass-update products for that website only. Previously, this administrator could mass-update products on any website in the deployment. 
 
 <!--- MAGETWO-99411-->
 * An administrator with restricted privileges can now successfully create a catalog price rule. Previously, a restricted administrator could create a catalog price rule, but when they saved it, Magento displayed an error and did not generate any scheduled update to set the the new price rule to inactive.
@@ -212,7 +212,7 @@ We have fixed hundreds of issues in the Magento 2.3.3 core code.
 * Administrators that have access to all websites can now see a complete list of websites, stores, and store views no matter which edit operations  that a administrator with restricted access might perform. Additionally, any edit operation done by another admin user with limited access (for example, limited to one website) will not affect the fully privileged account. Previously, administrators with full access could not see the full list for all websites after an administrator with limited website-level access makes updates.
 
 <!--- MAGETWO-97867-->
-* We've improved the performance of logging into the Admin for users with limited permissions. Previously, logging in as an administrator with limited permissions was significantly slower than logging in as a administrator with full access. 
+* We have improved the Admin login performance for users with limited permissions. Previously, the Admin login process for users with restricted access was significantly slower than it was for users with full administrative access. 
 
 ### Backend
 
@@ -226,7 +226,7 @@ We have fixed hundreds of issues in the Magento 2.3.3 core code.
 * The store view drop-down menu no longer displays unnecessary symbols. 
 
 
-### Bundle
+### Bundle products
 
 <!--- MAGETWO-99371-->
 * You can now successfully check out bundle products using the Braintree payment method with the payment method set to **Authorize and Capture**. 
@@ -265,10 +265,10 @@ We have fixed hundreds of issues in the Magento 2.3.3 core code.
 * Magento no longer displays the **Created/Last Updated from-to** fields for quotes that are not associated with the administrator that is currently logged in. 
 
 <!--- MC-17642-->
-* Magento now displays an informative message when the site take time to process a user's attempt to use Quick Order to add an empty SKU to their shopping cart. Previously, users could not navigate to another page during the process, and Magento did not display a message to the user. 
+* Magento now displays an informative message when a customer adds an empty SKU to their shopping cart with Quick Order. Previously, users could not navigate to another page during the process, and Magento did not display a message to the user. 
 
 <!--- MC-18481-->
-* Magento now correctly updates SKU quantity when you use Quick Order and manually enter SKU in the **Enter Multiple SKU's** field when using Internet Explorer 11.x. 
+* Magento now correctly updates SKU quantities when you use Quick Order and manually enter a SKU in the **Enter Multiple SKUs** field when using Internet Explorer 11.x. 
 
 <!--- MAGETWO-97316-->
 * The behavior of the Catalog page Requisition list menu has been corrected.  
@@ -318,7 +318,7 @@ We have fixed hundreds of issues in the Magento 2.3.3 core code.
 ### Cart and checkout
 
 <!--- MAGETWO-97317-->
-* The REST API call for adding an item to a cart now includes the product price when it returns the product from an already populated cart. Previously, the item price was not returned if that cart had been emptied before the call was made.
+* The REST calls for adding an item to a cart (`POST V1/guest-carts/:cartId/items` and `POST V1/guest-carts/:cartId/items`) now include the product price when a call returns the product from an already populated cart. Previously, the item price was not returned if that cart had been emptied before the call was made.
 
 <!--- MAGETWO-99075-->
 * Magento now submits an order only once when an order is submitted using **Enter**. Previously, Magento submitted several `payment-information` requests, and several orders with the same quote ID were placed.
@@ -330,7 +330,7 @@ We have fixed hundreds of issues in the Magento 2.3.3 core code.
 * Magento now displays an informative message when an error is thrown after the user Internet connection has been reset after placing an order. 
 
 <!--- MAGETWO-99370-->
-* You cannot add product quantities that require four digits to the shopping cart. Previously, Magento could not add four-digit product quantities to the cart. 
+* You can now add product quantities that require four digits to the shopping cart. Previously, Magento could not add four-digit product quantities to the cart. 
 
 <!--- ENGCOM-4126-->
 * Administrators with appropriate permissions can now view the contents of a cart for a registered customer from the Admin customer edit interface. *Fix submitted by Rav in pull request [20918](https://github.com/magento/magento2/pull/20918)*. 
@@ -367,10 +367,10 @@ We have fixed hundreds of issues in the Magento 2.3.3 core code.
 ### Catalog
 
 <!--- MAGETWO-99890-->
-* You can now use the Select all option when creating a mass-update action when the total number of products exceeds the number of displayed products per page. Previously, Magento updated  only the number of products that were displayed per  page were updated.
+* You can now use the Select all option when creating a mass-update action when the total number of products exceeds the number of displayed products per page. Previously, Magento only selected and applied mass-update actions to the number of products that were displayed per page.
 
 <!--- MAGETWO-63599-->
-* Magento no longer throws an error when you execute `php bin\magento catalog:images:resize` and our deployment contains images with a zero byte size. Instead, it skips the offending file and updates the log file to indicate where the problematic file resides. [GitHub-8204](https://github.com/magento/magento2/issues/8204)
+* Magento no longer throws an error when you run the `php bin\magento catalog:images:resize` command on a  deployment that contains images with a zero byte size. Instead, the operation skips the offending file and updates the log file to indicate where the problematic file resides. [GitHub-8204](https://github.com/magento/magento2/issues/8204)
 
 <!--- MAGETWO-98708-->
 * You can now successfully clone a product with a linked product. Previously, cloning  failed and Magento displayed this error:  `The linked products data is invalid. Verify the data and try again`. 
@@ -382,7 +382,7 @@ We have fixed hundreds of issues in the Magento 2.3.3 core code.
 * Magento now displays the correct currency in the the Admin **Catalog** > **Products**  list  in deployments where websites are assigned different currencies. Previously, the products on the Admin Category page displayed the base currency even when **Product Price Scope** was set to **Per Website** and the website was assigned a different currency.
 
 <!--- MAGETWO-69893-->
-* Magento disables the **New Category** button on the Product page from an administrator with restricted permissions for managing categories. Previously, these administrators could see the **New Category** button, and Magento threw a 403 error when one of these administrators with restricted permissions tried to create a category. 
+* Magento disables the **New Category** button on the Product page if the user is an administrator with restricted permissions for managing categories. Previously, the button was active, and Magento threw a 403 error if the restricted user clicked the button to create a category.
 
 <!--- MC-17640-->
 * The Items Ordered table (**Admin** > **Sales** > **Orders**) no longer displays bundle option discount amounts with tags. 
@@ -430,7 +430,7 @@ We have fixed hundreds of issues in the Magento 2.3.3 core code.
 * The Add to Cart button is no longer visible to users who do not have Add to Cart category permissions. Previously, guest users could add items to the cart without being granted Add to Cart permission. 
 
 <!--- MC-5777--> 
-* Catalog rules are now applied as expected  in deployments that are running Magento Commerce. Previously, a discrepancy between the timezone in which catalog rule staging was set (UTC timezone) and Magento timezone, which is the timezone that the  storefront uses. 
+* Catalog rules are now applied as expected in deployments that are running Magento Commerce. Previously, there was a discrepancy between the timezone in which catalog rule staging was set (UTC timezone) and the Magento timezone, which is the timezone that the storefront uses. 
   
 <!--- MC-17020-->
 * We’ve refined how Magento validates partial permissions.  Design edit permissions for categories, products, and CMS pages are now validated for each endpoint (web API and other) outside of the related model-layer classes. The web API now returns an error when design-related fields are being overridden. Previously, this behavior was ignored.
@@ -575,16 +575,16 @@ We have fixed hundreds of issues in the Magento 2.3.3 core code.
 * The design of the tax rule form check box now matches the Admin checkbox design.
 
 <!--- ENGCOM-4844-->
-* The configurable product gallery now displays images in correct order when the list of images exceeds 10 images.  Correct order complies with the order assigned in the Admin. *Fix submitted by Mateusz Wira in pull request [22287](https://github.com/magento/magento2/pull/22287)*. [GitHub-22249](https://github.com/magento/magento2/issues/22249)
+* The configurable product gallery now displays images in the correct order when the image list has more than 10 images. The correct order complies with the order assigned in the Admin. *Fix submitted by Mateusz Wira in pull request [22287](https://github.com/magento/magento2/pull/22287)*. [GitHub-22249](https://github.com/magento/magento2/issues/22249)
 
 <!--- MAGETWO-99500-->
-* You can now use REST to assign positions to configurable product attributes. Previously, when you use REST to assign positions to configurable product attributes, the position value was overwritten after you linked simple products to the configurable product.
+* You can now use the `POST V1/configurable-products/:sku/child` call to assign positions to configurable product attributes as expected. Previously, when you use REST to assign positions to configurable product attributes, the position value was overwritten after you linked simple products to the configurable product.
 
 <!--- ENGCOM-4825-->
 * Setting the **Update Product Preview Image** to **no**  now works as expected. Previously, when you clicked on a size or image that represented  another variation for a configurable product, Magento displayed the image for one of the simple products associated with the configurable product. *Fix submitted by Ravi Chandra in pull request [19184](https://github.com/magento/magento2/pull/19184)*. [GitHub-16446](https://github.com/magento/magento2/issues/16446)
 
 <!--- ENGCOM-5385-->
-* You can now use REST to add attribute options to a configurable product. This resolves issues previously caused by the  MySQL table imposing a unique constraint on `product_id` and  `attribute_id` values. *Fix submitted by Lieven Pouwelse in pull request [23529](https://github.com/magento/magento2/pull/23529)*. [GitHub-9798](https://github.com/magento/magento2/issues/9798)
+* The `POST V1/configurable-products/:sku/options` call now adds attribute options to a configurable product as expected. This resolves issues previously caused by the  MySQL table imposing a unique constraint on `product_id` and  `attribute_id` values. *Fix submitted by Lieven Pouwelse in pull request [23529](https://github.com/magento/magento2/pull/23529)*. [GitHub-9798](https://github.com/magento/magento2/issues/9798)
 
 
 ### Coupon
@@ -597,7 +597,7 @@ We have fixed hundreds of issues in the Magento 2.3.3 core code.
 ### cron
 
 <!--- ENGCOM-5210-->
-* Runtime exception handling for cron jobs has been improved.  When an exception occurs now, the current  run is marked as **failed** in the `cron_schedule`  table, the when the next run completes correctly, Magento updates job status at the end of the `cron_schedule` table. When a job previously failed, the `cron_schedule`  table was filled with pending jobs, no job for `indexer_update_all_views` was run (with no corresponding output in `var/log/cron.log`, and no status updates were appended to the `cron_schedule` table.
+* Runtime exception handling for cron jobs has been improved.  Now, when an exception occurs, the current run is marked as **failed** in the `cron_schedule`  table. Then, when the next run completes correctly, Magento updates job status at the end of the `cron_schedule` table. Previously, when a job failed, the `cron_schedule`  table was filled with pending jobs; the `indexer_update_all_views` job was not run; no output was sent to the `var/log/cron.log`file, and no status updates were appended to the `cron_schedule` table.
 
 <!--- ENGCOM-5335-->
 * Cron jobs are no longer duplicated. Previously, after a cron job was run, Magento cleared the cache and processed the job again. *Fix submitted by Douglas Radburn in pull request [23312](https://github.com/magento/magento2/pull/23312)*. 
@@ -646,7 +646,7 @@ We have fixed hundreds of issues in the Magento 2.3.3 core code.
 * Magento no longer duplicates the state/province fields of customer addresses in Admin forms. *Fix submitted by Shikha Mishra in pull request [22637](https://github.com/magento/magento2/pull/22637)*. [GitHub-22484](https://github.com/magento/magento2/issues/22484)
 
 <!--- ENGCOM-4581-->
-* Newly created customer accounts now require confirmation. Previously, Magento directly confirmed the new account even though the customer never logged in or confirmed the account. *Fix submitted by Maksym Novik in pull request [21394](https://github.com/magento/magento2/pull/21394)*. [GitHub-14492](https://github.com/magento/magento2/issues/14492)
+* Newly created customer accounts now require confirmation. Previously, Magento directly confirmed the new account even if the customer never logged in or confirmed the account. *Fix submitted by Maksym Novik in pull request [21394](https://github.com/magento/magento2/pull/21394)*. [GitHub-14492](https://github.com/magento/magento2/issues/14492)
 
 
 
@@ -665,7 +665,7 @@ We have fixed hundreds of issues in the Magento 2.3.3 core code.
 * The PDF logo file is now database-aware. Consequently, logo images always appear at the top of the PDF, even after the local pub/media directory is cleared. *Fix submitted by gwharton in pull request [23752](https://github.com/magento/magento2/pull/23752)*. [GitHub-23751](https://github.com/magento/magento2/issues/23751)
 
 <!--- ENGCOM-5431-->
-* The `catalog:images:resize` function is now database-media-storage-mode aware. As a result, resized images are now extracted from the database if they don’t exist locally prior to resizing, and are now stored back into the database once the resize operation completes. *Fix submitted by gwharton in pull request [23598](https://github.com/magento/magento2/pull/23598)*. [GitHub-23595](https://github.com/magento/magento2/issues/23595), [GitHub-23594](https://github.com/magento/magento2/issues/23594), [GitHub-23596](https://github.com/magento/magento2/issues/23596)
+* The `bin/magento catalog:images:resize` command is now database-media-storage-mode aware. As a result, resized images are now extracted from the database if they don’t exist locally prior to resizing, and are now stored back into the database once the resize operation completes. *Fix submitted by gwharton in pull request [23598](https://github.com/magento/magento2/pull/23598)*. [GitHub-23595](https://github.com/magento/magento2/issues/23595), [GitHub-23594](https://github.com/magento/magento2/issues/23594), [GitHub-23596](https://github.com/magento/magento2/issues/23596)
 
 <!--- ENGCOM-5442-->
 * The  **use default value** checkbox on the Media Storage Location configuration setting has been removed. Previously, the JavaScript routines on the page interfered with that option, and consequently, the checkbox could be enabled but was still ignored. *Fix submitted by gwharton in pull request [23710](https://github.com/magento/magento2/pull/23710)*. [GitHub-23597](https://github.com/magento/magento2/issues/23597)
@@ -685,13 +685,13 @@ We have fixed hundreds of issues in the Magento 2.3.3 core code.
 <!--- MAGETWO-99424-->
 * The country drop-down list no longer includes an extraneous zero (0) when the allowed countries in the list differ from countries identified as top destinations. 
 
-### Downloadable
+### Downloadable products
 
 <!--- ENGCOM-5157-->
 * Downloadable products are now immediately accessible after they have been paid for. Previously, a downloadable product’s status remained in the pending state after payment for the product has been completed.  *Fix submitted by Shikha Mishra in pull request [22658](https://github.com/magento/magento2/pull/22658)*. [GitHub-22545](https://github.com/magento/magento2/issues/22545)
 
 <!--- MAGETWO-98656--> 
-* New downloadable products now appear in the customer's downloadable products section after a customer checks out as a guest and then creates an account.
+* New downloadable products now appear in the downloadable products section after a customer checks out as a guest and then creates an account.
 
 
 ### EAV
@@ -724,7 +724,7 @@ We have fixed hundreds of issues in the Magento 2.3.3 core code.
 
 
 <!--- MAGETWO-99888-->
-* The `equalArrays` function in `lib/web/mage/utils/compare.js` has been refactored to remove quadratic complexity. Previously, this feature  significantly retarded  Admin operations that were performed  on large number of products  (for example, adding a product to category by SKU).
+* The `equalArrays` function in `lib/web/mage/utils/compare.js` file has been refactored to remove quadratic complexity. Previously, this feature significantly slowed Admin operations that were performed on large number of products  (for example, adding a product to category by SKU).
 
 <!--- MC-17583-->
 * The performance of resize image operations has been improved. Previously, an SQL operation involved in the process returned redundant data, which resulted in images being saved multiple times. 
@@ -756,7 +756,7 @@ We have fixed hundreds of issues in the Magento 2.3.3 core code.
 * The **Save in address book** checkbox on the Shipping Address section of the Admin Create Order page now behaves as expected. When this checkbox is enabled, the address in the Shipping Address field is saved, and merchants can disable or enable the checkbox.  
 
 <!--- MAGETWO-70681-->
-* All the `store_name` fields used in Sales and Quote modules is changed from type `text`  to type `varchar`, and field length has been extended to 255 symbols.
+* Updated the type and format for all `store_name` fields used in Sales and Quote modules. All fields are now type `text` instead of type `varchar`, and the field length has been extended to 255 symbols.
 
 <!--- MC-17511-->
 * Preloading of fonts has been moved from the Blank theme to the Luma theme.
@@ -783,13 +783,13 @@ We have fixed hundreds of issues in the Magento 2.3.3 core code.
 * The back-in-stock alert emails that Magento sends to both wholesale and general customers now include the appropriate  wholesale and general  product prices. 
 
 <!--- MC-14837-->
-* The `MsrpSampleData` module installation script no longer generates incorrect data. Previously, the installation script of this module does not set any data from fixtures due to incorrect dependencies between sample data modules
+* The `MsrpSampleData` module installation script no longer generates incorrect data. Previously, this installation script did not set any data from fixtures due to incorrect dependencies between sample data modules
 
 <!--- ENGCOM-5377-->
 * Tooltips have been added to the store-view labels for CMS tables and blocks. *Fix submitted by Dipesh Rangani in pull request [23474](https://github.com/magento/magento2/pull/23474)*. 
 
 <!--- ENGCOM-5390-->
-* `max-word` data validation now works as expected for forms. *Fix submitted by Sunil in pull request [23541](https://github.com/magento/magento2/pull/23541)*. 
+* Validation of `max-word` data now works as expected for forms. *Fix submitted by Sunil in pull request [23541](https://github.com/magento/magento2/pull/23541)*. 
 
 <!--- ENGCOM-5267-->
 * Magento now subscribes a customer to a price or stock notification when they opt to subscribe to a  price or  stock alert on a product page without first logging in. Previously, Magento redirected the customer  to a 404 page. *Fix submitted by [Arjen Miedema](https://github.com/ArjenMiedema) in pull request [23218](https://github.com/magento/magento2/pull/23218)*. 
