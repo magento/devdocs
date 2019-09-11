@@ -4,8 +4,6 @@ subgroup: 3_Widgets
 title: Calendar widget
 ---
 
-## Overview {#fedg_jquery-widget_calendar-overview}
-
 The Calendar widget is a customized jQuery [Datepicker Widget] that enables selecting a data using a pop-up or an in-line calendar. Calendar is also responsible for:
 
 *	Merging the [global configuration] with the options that are passed from PHP when Calendar is initialized.
