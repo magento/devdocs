@@ -90,13 +90,13 @@ The following example adds an array-item to the `extendedConfigData` array withi
 ```xml
 <?xml version="1.0" ?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
-	<type name="Magento\StoreGraphQl\Model\Resolver\Store\StoreConfigDataProvider">
-		<arguments xsi:type="array">
-			<argument name="extendedConfigData">
-				<item name="section_group_field" xsi:type="string">section/group/field</item>
-			</argument>
-		</arguments>
-	</type>
+ <type name="Magento\StoreGraphQl\Model\Resolver\Store\StoreConfigDataProvider">
+  <arguments xsi:type="array">
+   <argument name="extendedConfigData">
+    <item name="section_group_field" xsi:type="string">section/group/field</item>
+   </argument>
+  </arguments>
+ </type>
 </config>
 ```
 

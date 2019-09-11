@@ -24,7 +24,7 @@ The script files are located in the file system as follows:
 ├── lib/web/
     ├── matchMedia.js
     ├── mage/
-	    ├── menu.js
+     ├── menu.js
 ```
 
 See one of the following sections for more information:

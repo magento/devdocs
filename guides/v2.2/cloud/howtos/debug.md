@@ -48,8 +48,8 @@ You can enable Xdebug directly to all Starter environments and Pro Integration e
 1. In your local terminal, open `.magento.app.yaml` in a text editor.
 2. In the `runtime` section, under `extensions`, add `xdebug`. For example:
 
-		runtime:
-		   extensions:
+  runtime:
+     extensions:
           - mcrypt
           - redis
           - xsl
@@ -68,9 +68,9 @@ You can enable Xdebug directly to all Starter environments and Pro Integration e
 4. Save your changes to `.magento.app.yaml` and exit the text editor.
 5. Add, commit, and push the changes to redeploy the environment:
 
-		git add -A
-		git commit -m "Add xdebug"
-		git push origin <environment ID>
+  git add -A
+  git commit -m "Add xdebug"
+  git push origin <environment ID>
 
 When deployed to Starter environments and Pro Integration environments, Xdebug is now available. You should continue configuring your IDE. For PhpStorm, see [Configure PhpStorm](#phpstorm).
 
@@ -106,8 +106,8 @@ You need to set up port forwarding. This is necessary to map the XDEBUG connecti
 
 To do any type of debugging, you must forward port 9000 from your {{site.data.var.ece}} server to your local machine. See one of the following sections:
 
-*	[Port forwarding on Mac or UNIX](#portmac)
-*	[Port forwarding on Windows](#portwindows)
+* [Port forwarding on Mac or UNIX](#portmac)
+* [Port forwarding on Windows](#portwindows)
 
 #### Port forwarding on Mac or UNIX {#portmac}
 
@@ -124,15 +124,15 @@ If an "unable to connect" or "could not listen to port on remote" error is displ
 
 To troubleshoot the connection:
 
-1.	[SSH]({{ page.baseurl }}/cloud/env/environments-ssh.html) to the integration, staging, or production server.
-2.	Enter `who` to view a list of SSH sessions.
-3.	View existing SSH sessions by user. Be careful to not affect a user other than yourself!
+1. [SSH]({{ page.baseurl }}/cloud/env/environments-ssh.html) to the integration, staging, or production server.
+2. Enter `who` to view a list of SSH sessions.
+3. View existing SSH sessions by user. Be careful to not affect a user other than yourself!
 
-    *	Integration: usernames are similar to `dd2q5ct7mhgus`
-    *	Staging: usernames are similar to `dd2q5ct7mhgus_stg`
-    *	Production: usernames are similar to `dd2q5ct7mhgus`
-4.	For a user session that is older than yours, find the pseudo-terminal (PTS) value. For example, `pts/0`.
-5.	Kill the process ID (PID) corresponding to the PTS value using the following commands:
+    * Integration: usernames are similar to `dd2q5ct7mhgus`
+    * Staging: usernames are similar to `dd2q5ct7mhgus_stg`
+    * Production: usernames are similar to `dd2q5ct7mhgus`
+4. For a user session that is older than yours, find the pseudo-terminal (PTS) value. For example, `pts/0`.
+5. Kill the process ID (PID) corresponding to the PTS value using the following commands:
 
         ps aux | grep ssh
         kill <PID>
@@ -151,35 +151,35 @@ To set up port forwarding (SSH tunneling) on Windows, you must configure your Wi
 
 To set up an SSH tunnel on Windows using Putty:
 
-1.	If you have not already done so, download [Putty](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html).
-2.	Start Putty.
-3.	In the Category pane, click **Session**.
-4.	Enter the following information:
+1. If you have not already done so, download [Putty](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html).
+2. Start Putty.
+3. In the Category pane, click **Session**.
+4. Enter the following information:
 
-    *	**Hostname (or IP address)** field: Enter your Cloud server's [SSH URL]({{ page.baseurl }}/cloud/env/environments-ssh.html)
-    *	**Port** field: Enter `22`
+    * **Hostname (or IP address)** field: Enter your Cloud server's [SSH URL]({{ page.baseurl }}/cloud/env/environments-ssh.html)
+    * **Port** field: Enter `22`
 
     ![Set up Putty]({{ site.baseurl }}/common/images/cloud-xdebug_putty-session.png){:width="350px"}
-3.	In the Category pane, click **Connection** > **SSH** > **Tunnels**.
-4.	Enter the following information:
+3. In the Category pane, click **Connection** > **SSH** > **Tunnels**.
+4. Enter the following information:
 
-    *	**Source port** field: Enter `9000`
-    *	**Destination** field: Enter `127.0.0.1:9000`
-    *	Click **Remote**
-5.	Click **Add**.
+    * **Source port** field: Enter `9000`
+    * **Destination** field: Enter `127.0.0.1:9000`
+    * Click **Remote**
+5. Click **Add**.
 
     ![Create an SSH tunnel in Putty]({{ site.baseurl }}/common/images/cloud-xdebug_putty-tunnels.png){:width="350px"}
-6.	In the Category pane, click **Session**.
-7.	In the **Saved Sessions** field, enter a name for this SSH tunnel.
-8.	Click **Save**.
+6. In the Category pane, click **Session**.
+7. In the **Saved Sessions** field, enter a name for this SSH tunnel.
+8. Click **Save**.
 
     ![Save your SSH tunnel]({{ site.baseurl }}/common/images/cloud-xdebug_putty-session-save.png){:width="350px"}
-9.	To test the SSH tunnel, click **Load**, then click **Open**.
+9. To test the SSH tunnel, click **Load**, then click **Open**.
 
 If an "unable to connect" error displays, verify all of the following:
 
-*	All Putty settings are correct
-*	You are running Putty on the machine on which your private {{site.data.var.ece}} SSH keys are located
+* All Putty settings are correct
+* You are running Putty on the machine on which your private {{site.data.var.ece}} SSH keys are located
 
 ### Configure Pro Staging and Production {#pro}
 
@@ -193,15 +193,15 @@ For initiating debugging, performing setup, and more, you need the SSH commands 
 
 For Starter environments and Pro Integration environments, you can use the following Magento Cloud CLI command to SSH into those environments:
 
-	magento-cloud environment:ssh --pipe -e <environment ID>
+ magento-cloud environment:ssh --pipe -e <environment ID>
 
 To use Xdebug, SSH to the environment as follows:
 
-	ssh -R <xdebug listen port>:<host>:<xdebug listen port> <SSH URL>
+ ssh -R <xdebug listen port>:<host>:<xdebug listen port> <SSH URL>
 
 For example,
 
-	ssh -R 9000:localhost:9000 pwga8A0bhuk7o-mybranch@ssh.us.magentosite.cloud
+ ssh -R 9000:localhost:9000 pwga8A0bhuk7o-mybranch@ssh.us.magentosite.cloud
 
 ## Debug for Pro Staging and Production {#pro-debug}
 
@@ -267,22 +267,22 @@ This section discusses how to use Xdebug in Chrome using the Xdebug Helper exten
 
 To use Xdebug Helper with Chrome:
 
-1.	Create an [SSH tunnel](#ssh) to the Cloud server.
-2.	Install the [Xdebug Helper extension](https://chrome.google.com/webstore/detail/xdebug-helper/eadndfjplgieldjbigjakmdgkmoaaaoc?hl=en) from the Chrome store.
-3.	Enable the extension in Chrome as shown in the following figure.
+1. Create an [SSH tunnel](#ssh) to the Cloud server.
+2. Install the [Xdebug Helper extension](https://chrome.google.com/webstore/detail/xdebug-helper/eadndfjplgieldjbigjakmdgkmoaaaoc?hl=en) from the Chrome store.
+3. Enable the extension in Chrome as shown in the following figure.
 
-	![Enable the Xdebug extension in Chrome]({{ site.baseurl }}/common/images/install_docker_php-storm_xdebug-chrome.png)
-4.	In Chrome, right-click ![Xdebug helper icon]({{ site.baseurl }}/common/images/cloud-xdebug_helper-icon.png){:width="25px"} in the Chrome toolbar.
-5.	From the pop-up menu, click **Options**.
-6.	From the **IDE Key** list, click **PhpStorm**.
-7.	Click **Save**.
+ ![Enable the Xdebug extension in Chrome]({{ site.baseurl }}/common/images/install_docker_php-storm_xdebug-chrome.png)
+4. In Chrome, right-click ![Xdebug helper icon]({{ site.baseurl }}/common/images/cloud-xdebug_helper-icon.png){:width="25px"} in the Chrome toolbar.
+5. From the pop-up menu, click **Options**.
+6. From the **IDE Key** list, click **PhpStorm**.
+7. Click **Save**.
 
-	![Xdebug Helper options]({{ site.baseurl }}/common/images/cloud-xdebug_helper-options.png){:width="400px"}
-8.	Open your PhpStorm project.
-9.	In the top navigation bar, click ![Start listening for connections]({{ site.baseurl }}/common/images/install_docker_php-storm_xdebug-start-listening.png){:width="25px"}  (**Start listening**).
+ ![Xdebug Helper options]({{ site.baseurl }}/common/images/cloud-xdebug_helper-options.png){:width="400px"}
+8. Open your PhpStorm project.
+9. In the top navigation bar, click ![Start listening for connections]({{ site.baseurl }}/common/images/install_docker_php-storm_xdebug-start-listening.png){:width="25px"}  (**Start listening**).
 
-	If the navigation bar isn't displayed, click **View** > **Navigation Bar**.
-10.	In the PhpStorm navigation pane, double-click the PHP file to test.
+ If the navigation bar isn't displayed, click **View** > **Navigation Bar**.
+10. In the PhpStorm navigation pane, double-click the PHP file to test.
 
 ## Debug code locally {#code}
 
@@ -290,32 +290,32 @@ Due to your environments being read-only, you need to pull code locally from an 
 
 The method you choose is up to you. You have the following options:
 
-*	Check out code from Git and run `composer install`
+* Check out code from Git and run `composer install`
 
-	This method works unless `composer.json` references packages in private repositories to which you do not have access. This method results in getting the entire Magento codebase.
+ This method works unless `composer.json` references packages in private repositories to which you do not have access. This method results in getting the entire Magento codebase.
 
-*	Copy the `vendor`, `app`, `pub`, `lib`, and `setup` directories
+* Copy the `vendor`, `app`, `pub`, `lib`, and `setup` directories
 
-	This method results in your having all code you can possibly test. Depending on how many static assets you have, it could result in a long transfer with a large volume of files.
-*	Copy the `vendor` directory only
+ This method results in your having all code you can possibly test. Depending on how many static assets you have, it could result in a long transfer with a large volume of files.
+* Copy the `vendor` directory only
 
-	Because most Magento and third-party code is in the `vendor` directory, this method is likely to result in good testing although you won't be testing the entire codebase.
+ Because most Magento and third-party code is in the `vendor` directory, this method is likely to result in good testing although you won't be testing the entire codebase.
 
 To compress files and copy them to your local machine:
 
-1.	SSH to the environment.
-3.	Enter the following command:
+1. SSH to the environment.
+3. Enter the following command:
 
-		tar -czf /tmp/<file name>.tgz <directory list>
+  tar -czf /tmp/<file name>.tgz <directory list>
 
-	For example, to compress the `vendor` directory only, enter
+ For example, to compress the `vendor` directory only, enter
 
-		tar -czf /tmp/vendor.tgz vendor
-4.	On your local environment with PhpStorm, enter the following commands:
+  tar -czf /tmp/vendor.tgz vendor
+4. On your local environment with PhpStorm, enter the following commands:
 
-		cd <phpstorm project root dir>
-		rsync <SSH URL>:/tmp/<file name>.tgz .
-		tar xzf <file name>.tgz
+  cd <phpstorm project root dir>
+  rsync <SSH URL>:/tmp/<file name>.tgz .
+  tar xzf <file name>.tgz
 
 ## Troubleshooting Xdebug {#trouble}
 
@@ -323,15 +323,15 @@ If you you suspend your laptop (like closing your lid on a Mac), then your SSH s
 
 Due to not having access to manually restart the nginx server, you need to locate and terminate SSH processes that haven't timed out yet.
 
-1.	[SSH]({{ page.baseurl }}/cloud/env/environments-ssh.html) to the integration, staging, or production server.
-2.	Enter `who` to view a list of SSH sessions.
-3.	View existing SSH sessions by user. Be careful to not affect a user other than yourself!
+1. [SSH]({{ page.baseurl }}/cloud/env/environments-ssh.html) to the integration, staging, or production server.
+2. Enter `who` to view a list of SSH sessions.
+3. View existing SSH sessions by user. Be careful to not affect a user other than yourself!
 
-    *	Integration: usernames are similar to `dd2q5ct7mhgus`
-    *	Staging: usernames are similar to `dd2q5ct7mhgus_stg`
-    *	Production: usernames are similar to `dd2q5ct7mhgus`
-4.	For a user session that is older than yours, find the pseudo-terminal (PTS) value. For example, `pts/0`.
-5.	Kill the process ID (PID) corresponding to the PTS value using the following commands:
+    * Integration: usernames are similar to `dd2q5ct7mhgus`
+    * Staging: usernames are similar to `dd2q5ct7mhgus_stg`
+    * Production: usernames are similar to `dd2q5ct7mhgus`
+4. For a user session that is older than yours, find the pseudo-terminal (PTS) value. For example, `pts/0`.
+5. Kill the process ID (PID) corresponding to the PTS value using the following commands:
 
         ps aux | grep ssh
         kill <PID>

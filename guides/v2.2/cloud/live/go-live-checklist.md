@@ -31,11 +31,11 @@ This does not work for an [apex domain](https://blog.cloudflare.com/zone-apex-na
 
 The following list contains examples of DNS providers for informational purposes. Use your preferred DNS provider.
 
-*	CNAME with ALIAS record from [Dyn](http://dyn.com)
-*	ANAME record on [DNS Made Easy](http://www.dnsmadeeasy.com)
-*	ANAME at [easyDNS](https://www.easydns.com)
-*	ACNAME at [CloudFlare](https://www.cloudflare.com)
-*	ALIAS at [PointDNS](https://pointhq.com)
+* CNAME with ALIAS record from [Dyn](http://dyn.com)
+* ANAME record on [DNS Made Easy](http://www.dnsmadeeasy.com)
+* ANAME at [easyDNS](https://www.easydns.com)
+* ACNAME at [CloudFlare](https://www.cloudflare.com)
+* ALIAS at [PointDNS](https://pointhq.com)
 
 Many other DNS providers also offer workarounds to accomplish this goal. The most common is to add a CNAME record for the `www` host on the domain and then use the DNS provider's redirect service to redirect the apex over to the `www` version of the domain. Consult your DNS provider for more information.
 
@@ -57,21 +57,21 @@ Make a final pass for any Production configurations in the store(s). If you need
 
 The following are recommended changes and checks:
 
-*	Outgoing email has been tested
-*	Base URL and Base Admin URL are set correctly
-*	Change the default Magento Admin password
+* Outgoing email has been tested
+* Base URL and Base Admin URL are set correctly
+* Change the default Magento Admin password
 
-	See [Configuring Admin Security](http://docs.magento.com/m2/ee/user_guide/stores/security-admin.html) for further information on Admin configurations.
-*	Optimize all images for the web
-*	[Enable minification](http://docs.magento.com/m2/ee/user_guide/system/file-optimization.html) for JS, CSS, and HTTP
+ See [Configuring Admin Security](http://docs.magento.com/m2/ee/user_guide/stores/security-admin.html) for further information on Admin configurations.
+* Optimize all images for the web
+* [Enable minification](http://docs.magento.com/m2/ee/user_guide/system/file-optimization.html) for JS, CSS, and HTTP
 
 ## Verify Fastly caching {#verifyfastly}
 
 Test and verify Fastly caching is correctly working in Production. For detailed tests and checks, see [Fastly testing]({{ page.baseurl }}/cloud/live/stage-prod-test.html#fastly).
 
-*	Make sure that pages are being correctly cached in the page cache and Fastly
-*	Make sure the Fastly Extension is up-to-date
-*	Make sure the Fastly VCL is up-to-date
+* Make sure that pages are being correctly cached in the page cache and Fastly
+* Make sure the Fastly Extension is up-to-date
+* Make sure the Fastly VCL is up-to-date
 
 ## Performance testing {#performance}
 

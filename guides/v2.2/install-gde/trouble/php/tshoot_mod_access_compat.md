@@ -19,7 +19,7 @@ When you try to access your [Magento Admin](https://glossary.magento.com/magento
 
 To confirm this issue is not related to [maintenance mode]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-maint.html), look in your Apache `error.log` for messages that include:
 
-	"Invalid command 'Order', perhaps misspelled or defined by a module not included in the server configuration".
+ "Invalid command 'Order', perhaps misspelled or defined by a module not included in the server configuration".
 
 #### Details
 
@@ -31,14 +31,14 @@ Not all Apache 2.4 distributions have this issue because in some cases, a compat
 
 As a user with 'root' privileges, enter the following commands:
 
-	a2enmod access_compat
-	service <name> restart
+ a2enmod access_compat
+ service <name> restart
 
 On CentOS, `<name>` is `httpd`. On Ubuntu, `<name>` is `apache2`.
 
 #### Additional resources
 
-*	[Apache documentation about mod_access_compat](http://httpd.apache.org/docs/current/mod/mod_access_compat.html){:target="_blank"}
-*	[Apache documentation about mod_authz_host](http://httpd.apache.org/docs/current/mod/mod_authz_host.html){:target="_blank"}
-*	[Order, Allow, Deny from the Apache Definitive Guide](http://docstore.mik.ua/orelly/linux/apache/ch05_06.htm){:target="_blank"}
-*	[askubuntu.com](http://askubuntu.com/questions/335228/changes-in-apache-config-between-12-04-2-and-12-04-3-lts){:target="_blank"}
+* [Apache documentation about mod_access_compat](http://httpd.apache.org/docs/current/mod/mod_access_compat.html){:target="_blank"}
+* [Apache documentation about mod_authz_host](http://httpd.apache.org/docs/current/mod/mod_authz_host.html){:target="_blank"}
+* [Order, Allow, Deny from the Apache Definitive Guide](http://docstore.mik.ua/orelly/linux/apache/ch05_06.htm){:target="_blank"}
+* [askubuntu.com](http://askubuntu.com/questions/335228/changes-in-apache-config-between-12-04-2-and-12-04-3-lts){:target="_blank"}

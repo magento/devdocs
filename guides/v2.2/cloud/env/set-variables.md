@@ -59,7 +59,7 @@ Optional: You can also create an environment and list the environment variables.
 
 After the environment deploys, enter
 
-  	magento-cloud variable:get -e <environment ID>
+   magento-cloud variable:get -e <environment ID>
 
 A sample result follows:
 

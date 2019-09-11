@@ -165,26 +165,26 @@ The following example adds two products each in the Bags, Fitness Equipment, and
 
 ```json
 {
-	"products": [
-    	{
-        	"sku": "24-MB01"
-    	},
-    	{
-        	"sku": "24-MB04"
-    	},
-    	{
-        	"sku": "24-UG06"
-    	},
-    	{
-        	"sku": "24-UG07"
-    	},
-    	{
-        	"sku": "24-MG04"
-    	},
-    	{
-        	"sku": "24-MG01"
-    	}
-	]
+ "products": [
+     {
+         "sku": "24-MB01"
+     },
+     {
+         "sku": "24-MB04"
+     },
+     {
+         "sku": "24-UG06"
+     },
+     {
+         "sku": "24-UG07"
+     },
+     {
+         "sku": "24-MG04"
+     },
+     {
+         "sku": "24-MG01"
+     }
+ ]
 }
 ```
 
@@ -205,9 +205,9 @@ Unassigning a product does not remove it from its category or categories.
 ```json
 {
   "products": [
-  	{
-  		"sku": "24-MG01"
-  	}
+   {
+    "sku": "24-MG01"
+   }
   ]
 }
 ```

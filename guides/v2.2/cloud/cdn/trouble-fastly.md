@@ -83,25 +83,25 @@ When a 503 error occurs, Fastly returns the reason on the error and maintenance 
 
 {% include cloud/admin-ui-login-step.md %}
 
-1.	Click **Stores** > **Settings** > **Configuration** > **Advanced** > **System**.
+1. Click **Stores** > **Settings** > **Configuration** > **Advanced** > **System**.
 
-1.	In the right pane, expand **Full Page Cache**.
+1. In the right pane, expand **Full Page Cache**.
 
-1.	In the **Fastly Configuration** section, expand **Custom Synthetic Pages** as the following figure shows.
+1. In the **Fastly Configuration** section, expand **Custom Synthetic Pages** as the following figure shows.
 
-	![Custom 503 error page]
+ ![Custom 503 error page]
 
-1.	Click **Set HTML**.
+1. Click **Set HTML**.
 
-1.	Remove the custom code. You can save it in a text program to add back later.
+1. Remove the custom code. You can save it in a text program to add back later.
 
-1.	Click **Upload** to send your updates to Fastly.
+1. Click **Upload** to send your updates to Fastly.
 
-1.	Click **Save Config** at the top of the page.
+1. Click **Save Config** at the top of the page.
 
-1.	Reopen the URL that caused the 503 error. Fastly returns an error page with the reason as shown in the following example.
+1. Reopen the URL that caused the 503 error. Fastly returns an error page with the reason as shown in the following example.
 
-	![Fastly error]({{ site.baseurl }}/common/images/cloud_fastly-503-example.png)
+ ![Fastly error]({{ site.baseurl }}/common/images/cloud_fastly-503-example.png)
 
 ## Apex and subdomains already associated with a Fastly account {#domains}
 
@@ -129,7 +129,7 @@ Fastly API requests are passed through the Fastly extension to get a response fr
     curl https://<live URL> -vo /dev/null -H Fastly-Debug:1
     ```
 
-	  If you have not set a static route or completed the DNS configuration for the domains on your live site, use the `--resolve` flag, which bypasses DNS name resolution.
+   If you have not set a static route or completed the DNS configuration for the domains on your live site, use the `--resolve` flag, which bypasses DNS name resolution.
 
     ```bash
     curl https://<live URL> -vo /dev/null -H Fastly-Debug:1 [--resolve] <live URL hostname>:443:<live IP address>
@@ -210,31 +210,31 @@ The following excerpt from the cURL command output shows the correct values for 
 * Added connection 0. The cache now contains 1 members
 * Trying 192.0.2.31...
 * STATE: CONNECT => WAITCONNECT handle 0x600057800; line 1455 (connection #0)
-	% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+ % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
-	0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0* Connected to www.mymagento.biz.c.sv7gVom4qrpek.ent.magento.cloud (54.229.163.31) port 443 (#0)
+ 0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0* Connected to www.mymagento.biz.c.sv7gVom4qrpek.ent.magento.cloud (54.229.163.31) port 443 (#0)
 * STATE: WAITCONNECT => SENDPROTOCONNECT handle 0x600057800; line 1562 (connection #0)
   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0* ALPN, offering h2
 
-	... portion omitted for brevity ...
+ ... portion omitted for brevity ...
 
-	< Set-Cookie: mage-messages=%5B%5D; expires=Wed, 22-Nov-2017 17:39:58 GMT; Max-Age=31536000; path=/
-	< Pragma: cache
-	< Expires: Wed, 23 Nov 2016 17:39:56 GMT
-	< Cache-Control: max-age=86400, public, s-maxage=86400, stale-if-error=5, stale-while-revalidate=5
-	< X-Magento-Tags: cb_welcome_popup store cb cb_store_info_mobile cb_header_promotional_bar cb_store_info cb_discount-promo-bar cpg_2 cb_83 cb_81 cb_84 cb_85 cb_86 cb_87 cb_88 cb_89 p5646 catalog_product p5915 p6040 p6197 p6227 p7095 p6109 p6122 p6331 p7592 p7651 p7690
-	< Fastly-Module-Enabled: yes
-	< Strict-Transport-Security: max-age=31536000
-		< Content-Security-Policy: upgrade-insecure-requests
-	< X-Content-Type-Options: nosniff
-	< X-XSS-Protection: 1; mode=block
-	< X-Frame-Options: SAMEORIGIN
-	< X-Platform-Server: i-dff64b52
-	<
-	* STATE: PERFORM => DONE handle 0x600057800; line 1955 (connection #0)
-	* multi_done
-	  0     0    0     0    0     0      0      0 --:--:--  0:00:02 --:--:--     0
-	* Connection #0 to host www.mymagento.biz.c.sv7gVom4qrpek.ent.magento.cloud left intact
+ < Set-Cookie: mage-messages=%5B%5D; expires=Wed, 22-Nov-2017 17:39:58 GMT; Max-Age=31536000; path=/
+ < Pragma: cache
+ < Expires: Wed, 23 Nov 2016 17:39:56 GMT
+ < Cache-Control: max-age=86400, public, s-maxage=86400, stale-if-error=5, stale-while-revalidate=5
+ < X-Magento-Tags: cb_welcome_popup store cb cb_store_info_mobile cb_header_promotional_bar cb_store_info cb_discount-promo-bar cpg_2 cb_83 cb_81 cb_84 cb_85 cb_86 cb_87 cb_88 cb_89 p5646 catalog_product p5915 p6040 p6197 p6227 p7095 p6109 p6122 p6331 p7592 p7651 p7690
+ < Fastly-Module-Enabled: yes
+ < Strict-Transport-Security: max-age=31536000
+  < Content-Security-Policy: upgrade-insecure-requests
+ < X-Content-Type-Options: nosniff
+ < X-XSS-Protection: 1; mode=block
+ < X-Frame-Options: SAMEORIGIN
+ < X-Platform-Server: i-dff64b52
+ <
+ * STATE: PERFORM => DONE handle 0x600057800; line 1955 (connection #0)
+ * multi_done
+   0     0    0     0    0     0      0      0 --:--:--  0:00:02 --:--:--     0
+ * Connection #0 to host www.mymagento.biz.c.sv7gVom4qrpek.ent.magento.cloud left intact
 ```
 
 {:.bs-callout .bs-callout-info}
@@ -278,9 +278,9 @@ If the `X-Cache` header is `MISS, MISS` and does not contain `HIT`, run the `cur
 
 If you get the same result, use the [`curl` commands](#curl) and verify the [response headers](#response-headers):
 
-*	`Pragma` is `cache`
-*	`X-Magento-Tags` exists
-*	`Cache-Control: max-age` is greater than 0
+* `Pragma` is `cache`
+* `X-Magento-Tags` exists
+* `Cache-Control: max-age` is greater than 0
 
 If the issue persists, another extension is likely resetting these headers. Repeat the following procedure in the Staging environment, disabling all extensions and re-enabling each one to determine which extension is resetting the headers. After you identify the extension causing the problem, you must disable it in the Production environment.
 

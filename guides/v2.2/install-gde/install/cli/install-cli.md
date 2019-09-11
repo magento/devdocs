@@ -33,5 +33,5 @@ If you chose to enable SELinux, see [SELinux and iptables]({{ page.baseurl }}/in
 
 #### Next steps
 
-*	[Get started with the command-line installation]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands.html)
-*	[Install the Magento software]({{ page.baseurl }}/install-gde/install/cli/install-cli-install.html)
+* [Get started with the command-line installation]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands.html)
+* [Install the Magento software]({{ page.baseurl }}/install-gde/install/cli/install-cli-install.html)

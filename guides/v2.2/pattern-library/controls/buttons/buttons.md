@@ -27,48 +27,48 @@ Variations of this pattern are as follows, and will be detailed in the section o
 Buttons will be take on one of the below variations.
 
 <table>
-	<thead>
-		<th> Page Level </th>
-		<th> Form Level </th>
-		<th> Table Level </th>
-	</thead>
-	<tbody>
-		<tr>
-			<td>Primary</td>
-			<td>Primary</td>
-			<td>Regular</td>
-		</tr>
-		<tr>
-			<td>Secondary</td>
-			<td>Secondary</td>
-			<td>Icon</td>
-		</tr>
-		<tr>
-			<td>Toggle</td>
-			<td>Toggle</td>
-			<td>Toggle</td>
-		</tr>
-		<tr>
-			<td>Tertiary</td>
-			<td>Tertiary</td>
-			<td>Tertiary</td>
-		</tr>
-		<tr>
-			<td>Table Button</td>
-			<td>Table Button</td>
-			<td>Table Button</td>
-		</tr>
-		<tr>
-			<td>Primary Dropdown</td>
-			<td>Primary Dropdown</td>
-			<td>Primary Dropdown</td>
-		</tr>
-		<tr>
-			<td>Secondary Dropdown</td>
-			<td>Secondary Dropdown</td>
-			<td>Secondary Dropdown</td>
-		</tr>
-	</tbody>
+ <thead>
+  <th> Page Level </th>
+  <th> Form Level </th>
+  <th> Table Level </th>
+ </thead>
+ <tbody>
+  <tr>
+   <td>Primary</td>
+   <td>Primary</td>
+   <td>Regular</td>
+  </tr>
+  <tr>
+   <td>Secondary</td>
+   <td>Secondary</td>
+   <td>Icon</td>
+  </tr>
+  <tr>
+   <td>Toggle</td>
+   <td>Toggle</td>
+   <td>Toggle</td>
+  </tr>
+  <tr>
+   <td>Tertiary</td>
+   <td>Tertiary</td>
+   <td>Tertiary</td>
+  </tr>
+  <tr>
+   <td>Table Button</td>
+   <td>Table Button</td>
+   <td>Table Button</td>
+  </tr>
+  <tr>
+   <td>Primary Dropdown</td>
+   <td>Primary Dropdown</td>
+   <td>Primary Dropdown</td>
+  </tr>
+  <tr>
+   <td>Secondary Dropdown</td>
+   <td>Secondary Dropdown</td>
+   <td>Secondary Dropdown</td>
+  </tr>
+ </tbody>
 </table>
 
 [CSS](https://glossary.magento.com/css) style classes will need to be established for any buttons that require a custom

@@ -73,8 +73,8 @@ If caching is enabled in Magento Admin, you must clear the cache after you apply
 
 A system message notifies you that invalidated cache types must be refreshed.
 
-1.	Click **System** > **Cache Management**.
-2.	Clear the invalid cache types.
+1. Click **System** > **Cache Management**.
+2. Clear the invalid cache types.
 
 ## Troubleshooting (if the changes do not get applied)
 

@@ -218,7 +218,7 @@ This release contains hundreds of fixes and enhancements.
 
 <!--- 56582, 56868-->* You can now save a product with images multiple times.
 
-<!--- 57420/54320-->* The category page now shows the current price after Magento runs a scheduled update.  Previously, the category page would not update the  price after running a scheduled update.	[GitHub-4945](https://github.com/magento/magento2/issues/4945)
+<!--- 57420/54320-->* The category page now shows the current price after Magento runs a scheduled update.  Previously, the category page would not update the  price after running a scheduled update. [GitHub-4945](https://github.com/magento/magento2/issues/4945)
 
 <!---56742-->* You can now sort and filter on the New Review page. [GitHub-5391](https://github.com/magento/magento2/issues/5391)
 
@@ -689,11 +689,11 @@ Thanks to our hardworking Magento Open Source community members for the followin
 
 <!--- 61268, 59424, 56433, 59422--> * We’ve added PHP interfaces that add the ability to change the status of a [shipment](https://glossary.magento.com/shipment). The new Creditmemo interface supports tasks you can already do through the Magento Admin, including the ability to:
 
-	* support returning multiple units of a configurable product. Previously, when you tried to refund an order, you could refund only one unit of a configurable product, not the amount in the original order.
+ * support returning multiple units of a configurable product. Previously, when you tried to refund an order, you could refund only one unit of a configurable product, not the amount in the original order.
 
-	* return the product to stock
+ * return the product to stock
 
-	* change order status after a credit memo has been created.
+ * change order status after a credit memo has been created.
 
 <!--- 57077-->* You can now set the customer group when creating a new order from the Admin interface. [GitHub-6162](https://github.com/magento/magento2/issues/6162)
 
@@ -773,9 +773,9 @@ Thanks to our hardworking Magento Open Source community members for the followin
 
 <!---59578 -->* We've enhanced our PayPal and Braintree implementations so that merchants can now:
 
-	* Save customer PayPal account information in the Braintree Vault when using Braintree as a service. This enhancement provides a secure method for charging my customers without prompting them to enter a payment information for multiple purchases or for purchases from multiple devices. We've also added support for Maestro and Discover BINs added to the credit card form both for Braintree and PayPal solutions.
+ * Save customer PayPal account information in the Braintree Vault when using Braintree as a service. This enhancement provides a secure method for charging my customers without prompting them to enter a payment information for multiple purchases or for purchases from multiple devices. We've also added support for Maestro and Discover BINs added to the credit card form both for Braintree and PayPal solutions.
 
-	* Configure dynamic descriptors (Company Name, Phone and URL) for Braintree.  This enhancement supports customers easily identifying a source of transactions in their bank statements. (This will potential simplify the resolution of disputed transactions by supporting the display of the Kount status for Braintree in the Admin interface.)
+ * Configure dynamic descriptors (Company Name, Phone and URL) for Braintree.  This enhancement supports customers easily identifying a source of transactions in their bank statements. (This will potential simplify the resolution of disputed transactions by supporting the display of the Kount status for Braintree in the Admin interface.)
 
 <!--- 56940-->* Kount and 3D Secure now work as expected for Braintree Vault.
 
@@ -1011,7 +1011,7 @@ This release includes substantial improvements to Magento caching, image process
 
 <!--- 59680-->* We've fixed a fatal issue that occurred if you ran Travis builds on `imagettfbbox 2.1.2`. Previously, you'd receive this error:
 
-	```PHP Fatal error: Call to undefined function Magento\Framework\Image\Adapter\imagettfbbox() in /home/travis/build/magento/magento2/lib/internal/Magento/Framework/Image/Adapter/Gd2.php```
+ ```PHP Fatal error: Call to undefined function Magento\Framework\Image\Adapter\imagettfbbox() in /home/travis/build/magento/magento2/lib/internal/Magento/Framework/Image/Adapter/Gd2.php```
 
 <!--- 64462-->* `StdoTest` is now marked as skipped. *Fix submitted by community member David Manners in pull request [8487](https://github.com/magento/magento2/pull/8487){: target="_blank"}.*
 

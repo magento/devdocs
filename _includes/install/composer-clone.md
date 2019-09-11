@@ -11,11 +11,11 @@ If an error displays, use the following steps to install Composer.
 
 To install Composer:
 
-1.	Change to or create an empty directory on your Magento server.
+1. Change to or create an empty directory on your Magento server.
 
-2.	Enter the following commands:
+2. Enter the following commands:
 
-		curl -sS https://getcomposer.org/installer | php
-		mv composer.phar /usr/local/bin/composer
+  curl -sS https://getcomposer.org/installer | php
+  mv composer.phar /usr/local/bin/composer
 
 For additional installation options, see the [Composer installation documentation](https://getcomposer.org/download/).

@@ -52,8 +52,8 @@ The sensitive configuration is also stored in `app/etc/env.php`.
 
 You can manage the sensitive configuration in any of the following ways:
 
-*	Environment variables
-*	Save the sensitive configuration in `env.php` on your production system using the [`magento config:set:sensitive` command]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-config-mgmt-set.html)
+* Environment variables
+* Save the sensitive configuration in `env.php` on your production system using the [`magento config:set:sensitive` command]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-config-mgmt-set.html)
 
 ### Configuration settings locked in the Magento Admin
 
@@ -64,13 +64,13 @@ Use the [`magento config:set` or `magento config:set --lock`]({{ page.baseurl }}
 
 We changed the following behavior in the Magento Admin in production mode:
 
-*	You cannot enable or disable cache types in the Admin
-*	Developer settings are unavailable (**Stores** > Settings > **Configuration** > Advanced > **Developer**), including:
+* You cannot enable or disable cache types in the Admin
+* Developer settings are unavailable (**Stores** > Settings > **Configuration** > Advanced > **Developer**), including:
 
-	*	Minify CSS, JavaScript, and HTML
-	*	Merge CSS and JavaScript
-	*	Server-side or client-side LESS compilation
-	*	Inline translations
+ * Minify CSS, JavaScript, and HTML
+ * Merge CSS and JavaScript
+ * Server-side or client-side LESS compilation
+ * Inline translations
 *   As discussed previously, any configuration setting in `config.php` or `env.php` is locked and cannot be edited in the Admin.
 *   You can change the Admin locale only to languages used by deployed themes
 
@@ -297,8 +297,8 @@ File permissions and ownership must be consistent across development, build, and
 
 #### Next steps
 
-*	[Set up your development systems]({{ page.baseurl }}/config-guide/deployment/pipeline/development-system.html)
-*	[Set up your build system]({{ page.baseurl }}/config-guide/deployment/pipeline/build-system.html)
-*	[Set up your production system]({{ page.baseurl }}/config-guide/deployment/pipeline/production-system.html)
+* [Set up your development systems]({{ page.baseurl }}/config-guide/deployment/pipeline/development-system.html)
+* [Set up your build system]({{ page.baseurl }}/config-guide/deployment/pipeline/build-system.html)
+* [Set up your production system]({{ page.baseurl }}/config-guide/deployment/pipeline/production-system.html)
 
 [config-cli-config-set]: {{ page.baseurl }}/config-guide/cli/config-cli-subcommands-config-mgmt-set.html#config-cli-config-set

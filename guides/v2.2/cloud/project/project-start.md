@@ -37,11 +37,11 @@ The Magento application root directory is located in different locations dependi
 
 In Integration, Staging, and Production, *only* the following directories are writable due to security reasons:
 
--	`var`
--	`pub/static`
--	`pub/media`
--	`app/etc`
--	`/tmp`
+- `var`
+- `pub/static`
+- `pub/media`
+- `app/etc`
+- `/tmp`
 
 {: .bs-callout-info }
 In Production, each node in the three-node cluster has a `/tmp` directory that is not shared with the other nodes.

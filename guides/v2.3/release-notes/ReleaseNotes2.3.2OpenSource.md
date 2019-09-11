@@ -290,11 +290,11 @@ This fix can degrade performance in deployments that implement flat catalogs. To
 <!--- MAGETWO-99817-->
 * We have modified the required permissions for updating the `design` fieldset of categories, products, and CMS pages:
 
-	* Existing roles that have **save** permission for these entities can save everything.
+ * Existing roles that have **save** permission for these entities can save everything.
 
-	* New roles will need to be granted permission to edit design manually.
+ * New roles will need to be granted permission to edit design manually.
 
-	If you do not have permission to edit the `design` fieldset or use web API endpoints to update a category, Magento does not save your changes and the design properties remain unchanged
+ If you do not have permission to edit the `design` fieldset or use web API endpoints to update a category, Magento does not save your changes and the design properties remain unchanged
 
 <!--- ENGCOM-3608-->
 * When you configure a price rule for configurable products with swatches, Magento now a shows the special price for products that match the price rule. Previously, Magento displayed both the old price and the special price for the matching configurable products. *Fix submitted by [Sarfaraz Bheda](https://github.com/sarfarazbheda) in pull request [19376](https://github.com/magento/magento2/pull/19376)*. [GitHub-19276](https://github.com/magento/magento2/issues/19276)
@@ -401,17 +401,17 @@ has been changed to `<argument name="resourceStockItem" xsi:type="object">Magent
 <!--- MAGETWO-98151-->
 * Added support for [Zookeeper](https://php.net/manual/en/book.zookeeper.php) and flock lock providers. We have also added new options to configure locks during installation:
 
-	* `--lock-provider=LOCK-PROVIDER`—Lock provider name
+ * `--lock-provider=LOCK-PROVIDER`—Lock provider name
 
-	* `--lock-db-prefix=LOCK-DB-PREFIX`—Installation specific lock prefix to avoid lock conflicts
+ * `--lock-db-prefix=LOCK-DB-PREFIX`—Installation specific lock prefix to avoid lock conflicts
 
-	* `--lock-zookeeper-host=LOCK-ZOOKEEPER-HOST`  —Host and port to connect to Zookeeper cluster. For example, 127.0.0.1:2181
+ * `--lock-zookeeper-host=LOCK-ZOOKEEPER-HOST`  —Host and port to connect to Zookeeper cluster. For example, 127.0.0.1:2181
 
-	* `--lock-zookeeper-path=LOCK-ZOOKEEPER-PATH`— The path where Zookeeper will save locks. The default path is /magento/locks
+ * `--lock-zookeeper-path=LOCK-ZOOKEEPER-PATH`— The path where Zookeeper will save locks. The default path is /magento/locks
 
-	* `--lock-file-path=LOCK-FILE-PATH`—The path where file locks will be saved.
+ * `--lock-file-path=LOCK-FILE-PATH`—The path where file locks will be saved.
 
-	See [Install]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-lock.html).
+ See [Install]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-lock.html).
 
 ### Customers
 
@@ -668,9 +668,9 @@ has been changed to `<argument name="resourceStockItem" xsi:type="object">Magent
 <!--- ENGCOM-4585-->
 * Magento no longer throws an exception under these conditions:
 
-	* a product configuration specifies a `Minimum Qty Allowed in Shopping Cart` as a decimal value less than one
+ * a product configuration specifies a `Minimum Qty Allowed in Shopping Cart` as a decimal value less than one
 
-	* this configuration is later updated by setting  `Qty Uses Decimals`  to **no**, and later updating the **Qty Uses Decimals** attribute in the product congiration to **no**. *Fix submitted by [Valerij Ivashchenko](https://github.com/likemusic) in pull request [21928](https://github.com/magento/magento2/pull/21928)*. [GitHub-21926](https://github.com/magento/magento2/issues/21926)
+ * this configuration is later updated by setting  `Qty Uses Decimals`  to **no**, and later updating the **Qty Uses Decimals** attribute in the product congiration to **no**. *Fix submitted by [Valerij Ivashchenko](https://github.com/likemusic) in pull request [21928](https://github.com/magento/magento2/pull/21928)*. [GitHub-21926](https://github.com/magento/magento2/issues/21926)
 
 ### Layered navigation
 

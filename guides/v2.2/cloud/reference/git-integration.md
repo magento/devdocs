@@ -14,9 +14,9 @@ Git is the center of all code management, build, and deployment for your {{site.
 
 If you need help understand Git, you can review the following resources:
 
-*	[Git documentation](https://git-scm.com/documentation) and [videos](https://git-scm.com/videos) from the makers of Git
-*	[Git cheatsheet](http://rogerdudler.github.io/git-guide/files/git_cheat_sheet.pdf) and [quick guide](http://rogerdudler.github.io/git-guide/) from Roger Dudler
-*	[Git video](https://www.youtube.com/watch?v=8KCQe9Pm1kg) with DevForge to understand how people use the repo and commands with a fun story
+* [Git documentation](https://git-scm.com/documentation) and [videos](https://git-scm.com/videos) from the makers of Git
+* [Git cheatsheet](http://rogerdudler.github.io/git-guide/files/git_cheat_sheet.pdf) and [quick guide](http://rogerdudler.github.io/git-guide/) from Roger Dudler
+* [Git video](https://www.youtube.com/watch?v=8KCQe9Pm1kg) with DevForge to understand how people use the repo and commands with a fun story
 
 ## Git CLI and clients {#clients}
 You can interact with Git using [CLI commands](https://git-scm.com/documentation) or using a Git client. Git provides a [Git client](https://git-scm.com/downloads) option, or you can use other clients such as installed on your computer to be able to interact with {{site.data.var.ece}}.

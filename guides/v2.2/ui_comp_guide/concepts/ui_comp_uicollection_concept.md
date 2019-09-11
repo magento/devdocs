@@ -25,9 +25,9 @@ The `uiCollection` class implements the following methods:
  ```
 
 * The `destroy()` method removes the following for the child components and itself:
-	* link to the component in `uiRegistry`
-	* link to the component in the parent component
-	* event listeners
+ * link to the component in `uiRegistry`
+ * link to the component in the parent component
+ * event listeners
 
   Example:
 

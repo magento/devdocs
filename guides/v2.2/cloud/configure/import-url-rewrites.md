@@ -89,10 +89,10 @@ You use the Magento Admin panel to import the URL Rewrites file.
 1.  Click **Import**.
 
     The import task begins with the following message:
-	![Task scheduled URL rewrite]({{site.baseurl}}/common/images/cloud-urlrewrite-task.png)
+ ![Task scheduled URL rewrite]({{site.baseurl}}/common/images/cloud-urlrewrite-task.png)
 
     A successful import returns the following message:
-	![Successful URL rewrite]({{site.baseurl}}/common/images/cloud-urlrewrite-success.png)
+ ![Successful URL rewrite]({{site.baseurl}}/common/images/cloud-urlrewrite-success.png)
 
 ## Troubleshooting the import
 

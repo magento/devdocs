@@ -38,7 +38,7 @@ To customize the product creation form, take the following steps:
                 </item>
             </argument>
             <field name="%field_name%">
-    			<argument name="data" xsi:type="array">
+       <argument name="data" xsi:type="array">
                     <item name="config" xsi:type="array">
                         <item name="%field_option1%" xsi:type="%option_type%">%value%</item>
                         <item name="%field_option2%" xsi:type="%option_type%">%value%</item>

@@ -12,9 +12,9 @@ If you have an earlier version of TLS, you'll see the errors discussed in this s
 
 The following error displays if you attempt to run `composer create-project` to get a Magento metapackage:
 
-	[Composer\Downloader\TransportException]
-	The "https://repo.magento.com/packages.json" file could not be downloaded: Failed to enable crypto
-	failed to open stream: operation failed
+ [Composer\Downloader\TransportException]
+ The "https://repo.magento.com/packages.json" file could not be downloaded: Failed to enable crypto
+ failed to open stream: operation failed
 
 ### Using the Web Setup Wizard
 

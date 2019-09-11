@@ -211,101 +211,101 @@ The `<your Magento 2 install dir>/vendor/magento/data-migration-tool/etc` and `<
 Even though you will be working with `map.xml.dist` file most of the time, the following table discusses each mapping and other files.
 
 <tbody>
-	<tr>
-		<th>Mapping file name</th>
-		<th>Description</th>
-	</tr>
+ <tr>
+  <th>Mapping file name</th>
+  <th>Description</th>
+ </tr>
 <tr>
-	<td>class-map.xml.dist</td>
-	<td>Dictionary of class mappings between Magento 1 and Magento 2</td>
+ <td>class-map.xml.dist</td>
+ <td>Dictionary of class mappings between Magento 1 and Magento 2</td>
 </tr>
 <tr>
-	<td>config.xml.dist</td>
-	<td>Main configuration file that specifies the Magento 1 and Magento 2 database configurations, step configuration, and links to mapping files</td>
+ <td>config.xml.dist</td>
+ <td>Main configuration file that specifies the Magento 1 and Magento 2 database configurations, step configuration, and links to mapping files</td>
 </tr>
 <tr>
-	<td><em>{{site.data.var.ee}} only</em>. customer-attr-document-groups.xml.dist</td>
-	<td>List of tables used in the custom customer attributes step.</td>
+ <td><em>{{site.data.var.ee}} only</em>. customer-attr-document-groups.xml.dist</td>
+ <td>List of tables used in the custom customer attributes step.</td>
 </tr>
 <tr>
-	<td><em>{{site.data.var.ee}} only</em>. customer-attr-map.xml.dist</td>
-	<td>Map file that is used in Custom Customer Attributes Step.</td>
+ <td><em>{{site.data.var.ee}} only</em>. customer-attr-map.xml.dist</td>
+ <td>Map file that is used in Custom Customer Attributes Step.</td>
 </tr>
 <tr>
-	<td>deltalog.xml.dist</td>
-	<td>Contains the list of tables required for database routines setup.</td>
+ <td>deltalog.xml.dist</td>
+ <td>Contains the list of tables required for database routines setup.</td>
 </tr>
 <tr>
-	<td>eav-attribute-groups.xml.dist</td>
-	<td>Contains list of attributes that are used in Eav Step.</td>
+ <td>eav-attribute-groups.xml.dist</td>
+ <td>Contains list of attributes that are used in Eav Step.</td>
 </tr>
 <tr>
-	<td>eav-document-groups.xml.dist</td>
-	<td>Contains list of tables that are used in Eav Step.</td>
+ <td>eav-document-groups.xml.dist</td>
+ <td>Contains list of tables that are used in Eav Step.</td>
 </tr>
 <tr>
-	<td>log-document-groups.xml.dist</td>
-	<td>Contains list of tables that are used in Log Step.</td>
+ <td>log-document-groups.xml.dist</td>
+ <td>Contains list of tables that are used in Log Step.</td>
 </tr>
 <tr>
-	<td>map-eav.xml.dist</td>
-	<td>Map file that is used in EAV Step.</td>
+ <td>map-eav.xml.dist</td>
+ <td>Map file that is used in EAV Step.</td>
 </tr>
 <tr>
-	<td>map-log.xml.dist</td>
-	<td>Log mapping file.</td>
+ <td>map-log.xml.dist</td>
+ <td>Log mapping file.</td>
 </tr>
 <tr>
-	<td><em>{{site.data.var.ee}} only</em>. map-sales.xml.dist</td>
-	<td>Map file that is used in SalesOrder Step.</td>
+ <td><em>{{site.data.var.ee}} only</em>. map-sales.xml.dist</td>
+ <td>Map file that is used in SalesOrder Step.</td>
 </tr>
 <tr>
-	<td>map.xml.dist</td>
-	<td>Mapping file required for the map step.</td>
+ <td>map.xml.dist</td>
+ <td>Mapping file required for the map step.</td>
 </tr>
 <tr>
-	<td>settings.xml.dist</td>
-	<td>Setting migration configuration file that specifies rules required for migrating the <code>core_config_data</code> table.</td>
+ <td>settings.xml.dist</td>
+ <td>Setting migration configuration file that specifies rules required for migrating the <code>core_config_data</code> table.</td>
 </tr>
 <tr>
-	<td>customer-attribute-groups.xml.dist</td>
-	<td>Contains list of attributes that are used in Customer Attributes Step.</td>
+ <td>customer-attribute-groups.xml.dist</td>
+ <td>Contains list of attributes that are used in Customer Attributes Step.</td>
 </tr>
 <tr>
-	<td>customer-document-groups.xml.dist</td>
-	<td>Contains list of tables that are used in Customer Attributes Step.</td>
+ <td>customer-document-groups.xml.dist</td>
+ <td>Contains list of tables that are used in Customer Attributes Step.</td>
 </tr>
 <tr>
-	<td>map-customer.xml.dist</td>
-	<td>Map file that is used in Customer Attributes Step.</td>
+ <td>map-customer.xml.dist</td>
+ <td>Map file that is used in Customer Attributes Step.</td>
 </tr>
 <tr>
-	<td>order-grids-document-groups.xml.dist</td>
-	<td>Contains list of tables that are used in OrderGrids Step.</td>
+ <td>order-grids-document-groups.xml.dist</td>
+ <td>Contains list of tables that are used in OrderGrids Step.</td>
 </tr>
 <tr>
-	<td>map-document-groups.xml.dist</td>
-	<td>Defines what fields will be updated when duplications occurs on data insert</td>
+ <td>map-document-groups.xml.dist</td>
+ <td>Defines what fields will be updated when duplications occurs on data insert</td>
 </tr>
 <tr>
-	<td>map-stores.xml.dist</td>
-	<td>Map file that is used in Stores Step.</td>
+ <td>map-stores.xml.dist</td>
+ <td>Map file that is used in Stores Step.</td>
 </tr>
 <tr>
-	<td>map-tier-price.xml.dist</td>
-	<td>Map file that is used in Tier Price Step.</td>
+ <td>map-tier-price.xml.dist</td>
+ <td>Map file that is used in Tier Price Step.</td>
 </tr>
 <tr>
-	<td><em>{{site.data.var.ee}} only</em>. visual_merchandiser_map.xml.dist</td>
-	<td>Map file that is used in VisualMerchandiser Step.</td>
+ <td><em>{{site.data.var.ee}} only</em>. visual_merchandiser_map.xml.dist</td>
+ <td>Map file that is used in VisualMerchandiser Step.</td>
 </tr>
 <tr>
-	<td><em>{{site.data.var.ee}} only</em>. visual_merchandiser_attribute_groups.xml.dist</td>
-	<td>Contains list of attributes that are used in VisualMerchandiser Step.</td>
+ <td><em>{{site.data.var.ee}} only</em>. visual_merchandiser_attribute_groups.xml.dist</td>
+ <td>Contains list of attributes that are used in VisualMerchandiser Step.</td>
 </tr>
 <tr>
-	<td><em>{{site.data.var.ee}} only</em>. visual_merchandiser_document_groups.xml.dist</td>
-	<td>Contains list of tables that are used in VisualMerchandiser Step.</td>
+ <td><em>{{site.data.var.ee}} only</em>. visual_merchandiser_document_groups.xml.dist</td>
+ <td>Contains list of tables that are used in VisualMerchandiser Step.</td>
 </tr>
 </tbody>
 </table>

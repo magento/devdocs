@@ -21,7 +21,7 @@ To redeploy with the correct authentication keys:
 1. Log in to the machine that has your {{site.data.var.ece}} SSH keys.
 2. Log in to the project:
 
-		magento-cloud login
+  magento-cloud login
 3. Create a branch to update code with the name `auth`:
 
       magento-cloud environment:branch auth master

@@ -40,36 +40,36 @@ The payload of a bulk request contains an array of request bodies. For example, 
 
 ```json
 [{
-	"customer": {
-		"email": "mshaw@example.com",
-		"firstname": "Melanie Shaw",
-		"lastname": "Doe"
-	},
-	"password": "Strong-Password"
+ "customer": {
+  "email": "mshaw@example.com",
+  "firstname": "Melanie Shaw",
+  "lastname": "Doe"
+ },
+ "password": "Strong-Password"
 },
 {
-	"customer": {
-		"email": "bmartin@example.com",
-		"firstname": "Bryce",
-		"lastname": "Martin"
-	},
-	"password": "Strong-Password"
+ "customer": {
+  "email": "bmartin@example.com",
+  "firstname": "Bryce",
+  "lastname": "Martin"
+ },
+ "password": "Strong-Password"
 },
 {
-	"customer": {
-		"email": "bmartin@example.com",
-		"firstname": "Bryce",
-		"lastname": "Martin"
-	},
-	"password": "Strong-Password"
+ "customer": {
+  "email": "bmartin@example.com",
+  "firstname": "Bryce",
+  "lastname": "Martin"
+ },
+ "password": "Strong-Password"
 },
 {
-	"customer": {
-		"email": "tgomez@example.com",
-		"firstname": "Teresa",
-		"lastname": "Gomez"
-	},
-	"password": "Strong-Password"
+ "customer": {
+  "email": "tgomez@example.com",
+  "firstname": "Teresa",
+  "lastname": "Gomez"
+ },
+ "password": "Strong-Password"
 }
 ]
 ```

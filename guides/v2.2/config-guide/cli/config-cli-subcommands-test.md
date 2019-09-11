@@ -31,11 +31,11 @@ For example, to run integration tests, you should copy `dev/tests/integration/et
 
 Command usage:
 
-	bin/magento dev:tests:run <test>
+ bin/magento dev:tests:run <test>
 
 To list the available test types:
 
-	bin/magento dev:tests:run --help
+ bin/magento dev:tests:run --help
 
 This gives you a list similar to the following:
 
@@ -43,4 +43,4 @@ This gives you a list similar to the following:
 
 For example, to run integration tests:
 
-	bin/magento dev:tests:run integration
+ bin/magento dev:tests:run integration

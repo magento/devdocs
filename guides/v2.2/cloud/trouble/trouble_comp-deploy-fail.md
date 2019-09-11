@@ -33,13 +33,13 @@ This section discusses how to remove the component from the root `composer.json`
 
 To clean up from the previous deployment, you must SSH to the environment and manually clear the contents of the Magento `var` directory.
 
-1.	Enter the following command to SSH to the current environment:
+1. Enter the following command to SSH to the current environment:
 
-		magento-cloud environment:ssh
+  magento-cloud environment:ssh
 
-2.	Clear the `var` directory:
+2. Clear the `var` directory:
 
-		rm -rf var/*
+  rm -rf var/*
 
 ## Remove the component
 
@@ -52,7 +52,7 @@ To remove the component:
 
     If the following message displays, you do not need to do anything further:
 
-    	Package "<name>:<version>" listed for update is not installed. Ignoring.
+     Package "<name>:<version>" listed for update is not installed. Ignoring.
 
 4.  Wait while dependencies are updated.
 5.  Enter the following commands in the order shown to commit the changes and deploy the project:

@@ -132,7 +132,7 @@ Alternatively, you can add or update variables in the Project Web Interface.
 
 1.  Click the **Configure environment** gear icon ![Configure your environment]({{ site.baseurl }}/common/images/cloud_edit-project.png) next to the Project name.
 
-	![Project without code]({{ site.baseurl }}/common/images/cloud_project_empty.png)
+ ![Project without code]({{ site.baseurl }}/common/images/cloud_project_empty.png)
 
 1.  Select the **Variables** tab.
 
@@ -140,7 +140,7 @@ Alternatively, you can add or update variables in the Project Web Interface.
 
 1.  Enter the **Name** and **Value** for the variable. For example, enter `ADMIN_EMAIL` and your License Owner email address or another accessible email for resetting the password for the default admin account.
 
-	![Project variable]({{ site.baseurl }}/common/images/cloud_project_variable.png)
+ ![Project variable]({{ site.baseurl }}/common/images/cloud_project_variable.png)
 
 1.  Click **Add variable**. After you add the variable, wait until deployment completes.
 

@@ -56,8 +56,8 @@ You can configure the type in your `di.xml` configuration node in the following 
 
 The preceding example declares the following types:
 
-*	`moduleConfig`: A virtual type that extends the type `Magento\Core\Model\Config`.
-*	`Magento\Core\Model\App`: All instances of this type receive an instance of `moduleConfig` as a dependency.
+* `moduleConfig`: A virtual type that extends the type `Magento\Core\Model\Config`.
+* `Magento\Core\Model\App`: All instances of this type receive an instance of `moduleConfig` as a dependency.
 
 ### Virtual types
 
@@ -299,10 +299,10 @@ The lifestyle of an object determines the number of instances that can exist of 
 
 You can configure dependencies in Magento to have the following lifestyles:
 
-*	**Singleton**(default) - One instance of this class exists. The object manager creates it at the first request.
+* **Singleton**(default) - One instance of this class exists. The object manager creates it at the first request.
 Requesting the class again returns the same instance.
 Disposing or ending the container registered to it releases the instance.
-*	**Transient** - The object manager creates a new instance of the class for every request.
+* **Transient** - The object manager creates a new instance of the class for every request.
 
 The `shared` property determines the lifestyle of both `argument` and `type` configurations.
 
@@ -317,7 +317,7 @@ The `shared` property determines the lifestyle of both `argument` and `type` con
 ```
 
 In this example `Magento\Filesystem` is not shared, so all clients will retrieve separate instances of `Magento\Filesystem`.
-Also, every instance of `Magento\Filesystem` will get separate instance of `$adapter`, because it is non-shared too.
+Also, every instance of `Magento\Filesystem` will get separate instance of `$adapter`, because it too is non-shared.
 
 ## Sensitive and system-specific configuration settings {#ext-di-sens}
 

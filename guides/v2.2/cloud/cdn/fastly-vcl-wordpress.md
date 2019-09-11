@@ -61,7 +61,7 @@ Edge Dictionaries create key-value pairs accessible to VCL functions during VCL 
 
     -  Add and save key-value pairs in the new dictionary. For this example, each **Key** is a URL path to redirect to the WordPress backend, and the **Value** is 1.
 
-	   ![Add Edge Dictionary Items]
+    ![Add Edge Dictionary Items]
 
     -  Click **Cancel** to return to the system configuration page.
 
@@ -106,7 +106,7 @@ Add the custom VCL snippet to your Fastly service configuration from the Admin U
 
 {% include cloud/admin-ui-login-step.md %}
 
-1.	Click **Stores** > **Settings** > **Configuration** > **Advanced** > **System**.
+1. Click **Stores** > **Settings** > **Configuration** > **Advanced** > **System**.
 
 1.  Expand **Full Page Cache** > **Fastly Configuration** > **Custom VCL Snippets**.
 
@@ -114,20 +114,20 @@ Add the custom VCL snippet to your Fastly service configuration from the Admin U
 
 1.  Add the VCL snippet values:
 
-	- **Name**—`wordpress_redirect`
+ - **Name**—`wordpress_redirect`
 
-	- **Type**—`recv`
+ - **Type**—`recv`
 
-	- **Priority**—`5`
+ - **Priority**—`5`
 
-	- **VCL** snippet content:
+ - **VCL** snippet content:
 
       ```
       if ( req.url.path ~ "^/?([^/?]+)")
-	    {
-		  if ( table.lookup(wordpress_urls, re.group.1, \"NOTFOUND\") != \"NOTFOUND\" )
-	        {set req.http.X-WP = "1";
-		    }
+     {
+    if ( table.lookup(wordpress_urls, re.group.1, \"NOTFOUND\") != \"NOTFOUND\" )
+         {set req.http.X-WP = "1";
+      }
          }
       ```
 

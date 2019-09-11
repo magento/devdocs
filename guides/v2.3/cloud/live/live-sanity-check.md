@@ -80,10 +80,10 @@ Before you continue, push all current code to the remote Cloud server so that, i
 
 During the [build phase]({{page.baseurl}}/cloud/reference/discover-deploy.html#cloud-deploy-over-phases-build), we perform the following tasks:
 
-*	Apply patches distributed to all {{site.data.var.ece}} accounts
-*	Apply patches we provided specifically to you
-*	Enable modules to build
-*	Compile code and the [dependency injection](https://glossary.magento.com/dependency-injection) configuration
+* Apply patches distributed to all {{site.data.var.ece}} accounts
+* Apply patches we provided specifically to you
+* Enable modules to build
+* Compile code and the [dependency injection](https://glossary.magento.com/dependency-injection) configuration
 
 The build also checks for a [configuration file]({{ page.baseurl }}/cloud/live/sens-data-over.html). If the file exists, the static file deployment is also completed during the build stage. If not, it is completed in the deployment stage.
 
@@ -91,38 +91,38 @@ Before you continue, you must know the file system path to any patch we provided
 
 #### To build your site:
 
-1.	Apply patches distributed to all {{site.data.var.ece}} accounts.
+1. Apply patches distributed to all {{site.data.var.ece}} accounts.
 
-	Enter the following command from the project root directory:
+ Enter the following command from the project root directory:
 
-		php vendor/magento/magento-cloud-configuration/patch.php
+  php vendor/magento/magento-cloud-configuration/patch.php
 
-	Output includes the following:
+ Output includes the following:
 
-		[2016-11-30 15:05:15] Copying static.php to front-static.php
-		[2016-11-30 15:05:15] Command:git apply /var/www/html/magento2/vendor/magento/magento-cloud-configuration/patches/000-MAGETWO-57719-2.1.2.patch
-		[2016-11-30 15:05:15] Status:0
-		[2016-11-30 15:05:15] Output:array (
-		)
-		[2016-11-30 15:05:15] Command:git apply /var/www/html/magento2/vendor/magento/magento-cloud-configuration/patches/MAGETWO-52660-scd-improvement.patch
-		[2016-11-30 15:05:15] Status:0
-		[2016-11-30 15:05:15] Output:array (
-		)
+  [2016-11-30 15:05:15] Copying static.php to front-static.php
+  [2016-11-30 15:05:15] Command:git apply /var/www/html/magento2/vendor/magento/magento-cloud-configuration/patches/000-MAGETWO-57719-2.1.2.patch
+  [2016-11-30 15:05:15] Status:0
+  [2016-11-30 15:05:15] Output:array (
+  )
+  [2016-11-30 15:05:15] Command:git apply /var/www/html/magento2/vendor/magento/magento-cloud-configuration/patches/MAGETWO-52660-scd-improvement.patch
+  [2016-11-30 15:05:15] Status:0
+  [2016-11-30 15:05:15] Output:array (
+  )
 
-		... more ...
-							)
+  ... more ...
+       )
 
-2.	Apply hotfixes and other patches provided to you:
+2. Apply hotfixes and other patches provided to you:
 
-		git apply <path to patch>
+  git apply <path to patch>
 
-	For example, to apply hotfixes:
+ For example, to apply hotfixes:
 
-		git apply m2-hotfixes/<patch file name>
+  git apply m2-hotfixes/<patch file name>
 
-	If the `m2-hotfixes` directory is empty, skip this step.
+ If the `m2-hotfixes` directory is empty, skip this step.
 
-	If patches are present, output from this command is similar to the patches command.
+ If patches are present, output from this command is similar to the patches command.
 1.  Enable all missing modules.
 
     ```bash
@@ -135,7 +135,7 @@ Before you continue, you must know the file system path to any patch we provided
     php bin/magento  setup:di:compile
     ```
 
-	This command can take several minutes to complete and produces messages similar to the following:
+ This command can take several minutes to complete and produces messages similar to the following:
 
     ```terminal
     Compilation was started.
@@ -159,29 +159,29 @@ We strongly recommend you complete your testing in an Integration or Staging env
 
 We highly recommend having Magento already installed prior to deployment. During the [deployment phase]({{ page.baseurl }}/cloud/reference/discover-deploy.html#cloud-deploy-over-phases-hook), we perform the following tasks:
 
-*	Install the Magento application if needed
-*	If the Magento application is installed, upgrade components
-*	Clear the [cache](https://glossary.magento.com/cache)
-*	Set the Magento application for [`production`]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html#production-mode) mode
+* Install the Magento application if needed
+* If the Magento application is installed, upgrade components
+* Clear the [cache](https://glossary.magento.com/cache)
+* Set the Magento application for [`production`]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html#production-mode) mode
 
 #### To deploy your site:
 
-1.	If you have not already, log in as or switch to the [Magento file system owner]({{ page.baseurl }}/cloud/before/before-workspace-file-sys-owner.html).
-2.	Change to your project root directory.
-3.	Enter the following command:
+1. If you have not already, log in as or switch to the [Magento file system owner]({{ page.baseurl }}/cloud/before/before-workspace-file-sys-owner.html).
+2. Change to your project root directory.
+3. Enter the following command:
 
     ```bash
     php bin/magento setup:upgrade
     ```
 
-	We highly recommend having Magento already installed if you followed the [First time deployment]({{ page.baseurl }}/cloud/setup/first-time-deploy.html). If you have not installed the Magento application yet, use the [`magento setup:install`]({{ page.baseurl }}/install-gde/install/cli/install-cli.html) command instead. Be advised, you may encounter issues with enabled modules on a fresh installation.
-4.	Clean the Magento cache:
+ We highly recommend having Magento already installed if you followed the [First time deployment]({{ page.baseurl }}/cloud/setup/first-time-deploy.html). If you have not installed the Magento application yet, use the [`magento setup:install`]({{ page.baseurl }}/install-gde/install/cli/install-cli.html) command instead. Be advised, you may encounter issues with enabled modules on a fresh installation.
+4. Clean the Magento cache:
 
     ```bash
     php bin/magento cache:clean
     ```
 
-5.	Set the Magento application for [production mode]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html#production-mode):
+5. Set the Magento application for [production mode]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html#production-mode):
 
     ```bash
     php bin/magento deploy:mode:set production

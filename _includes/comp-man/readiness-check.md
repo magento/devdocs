@@ -1,7 +1,7 @@
 After the readiness check completes, see one of the following:
 
-*	[Readiness check success](#compman-readiness-success)
-*	[Readiness check failure](#compman-readiness-fail)
+* [Readiness check success](#compman-readiness-success)
+* [Readiness check failure](#compman-readiness-fail)
 
 ### Readiness check success {#compman-readiness-success}
 
@@ -17,9 +17,9 @@ Messages similar to the following display if any readiness check fails.
 
 In the event of failure, see one of the following sections:
 
-*	[Updater check failure]({{ page.baseurl }}/comp-mgr/trouble/cman/updater.html)
-*	[Cron script check failure]({{ page.baseurl }}/comp-mgr/trouble/cman/cron.html)
-*	[Component dependency check failure]({{ page.baseurl }}/comp-mgr/trouble/cman/component-depend.html)
-*	[PHP version readiness check issues]({{ page.baseurl }}/comp-mgr/trouble/cman/php-version.html)
-*	[PHP settings errors]({{ page.baseurl }}/install-gde/trouble/php/tshoot_php-set.html)
-*	[PHP extensions check failure]({{ page.baseurl }}/install-gde/system-requirements.html)
+* [Updater check failure]({{ page.baseurl }}/comp-mgr/trouble/cman/updater.html)
+* [Cron script check failure]({{ page.baseurl }}/comp-mgr/trouble/cman/cron.html)
+* [Component dependency check failure]({{ page.baseurl }}/comp-mgr/trouble/cman/component-depend.html)
+* [PHP version readiness check issues]({{ page.baseurl }}/comp-mgr/trouble/cman/php-version.html)
+* [PHP settings errors]({{ page.baseurl }}/install-gde/trouble/php/tshoot_php-set.html)
+* [PHP extensions check failure]({{ page.baseurl }}/install-gde/system-requirements.html)

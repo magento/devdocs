@@ -30,28 +30,28 @@ Magento 2 has the following [cache](https://glossary.magento.com/cache) types:
       <td><p>Layout</p></td>
       <td><p>layout</p></td>
       <td><p>Compiled page layouts (that is, the layout components from all components).</p>
-	<p>Clean or flush this cache type after modifying layout files.</p></td>
+ <p>Clean or flush this cache type after modifying layout files.</p></td>
     </tr>
     <tr>
       <td><p>Block HTML output</p></td>
       <td><p>block_html</p></td>
       <td><p>HTML page fragments per block.</p>
-	<p>Clean or flush this cache type after modifying the view layer.</p></td>
+ <p>Clean or flush this cache type after modifying the view layer.</p></td>
     </tr>
     <tr>
       <td><p>Collections data</p></td>
       <td><p>collections</p></td>
       <td><p>Results of database queries.</p>
-      	<p>If necessary, Magento cleans up this cache automatically, but third-party developers can put any data in any segment of the cache. </p>
-      	<p>Clean or flush this cache type if your custom module uses logic that results in cache entries that Magento cannot clean.</p></td>
+       <p>If necessary, Magento cleans up this cache automatically, but third-party developers can put any data in any segment of the cache. </p>
+       <p>Clean or flush this cache type if your custom module uses logic that results in cache entries that Magento cannot clean.</p></td>
     </tr>
     <tr>
       <td><p>DDL</p></td>
       <td><p>db_ddl</p></td>
       <td><p>Database schema. </p>
-      	<p>If necessary, Magento cleans up this cache automatically, but third-party developers can put any data in any segment of the cache. </p>
-      	<p>Clean or flush this cache type after you make custom changes to the database schema. (In other words, updates that Magento does not make itself.)</p>
-      	<p>One way to update the database schema automatically is using the <a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-db.html">magento setup:db-schema:upgrade</a> command.</p></td>
+       <p>If necessary, Magento cleans up this cache automatically, but third-party developers can put any data in any segment of the cache. </p>
+       <p>Clean or flush this cache type after you make custom changes to the database schema. (In other words, updates that Magento does not make itself.)</p>
+       <p>One way to update the database schema automatically is using the <a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-db.html">magento setup:db-schema:upgrade</a> command.</p></td>
     </tr>
     <tr>
       <td><p>Entity attribute value (EAV)</p></td>
@@ -63,8 +63,8 @@ Magento 2 has the following [cache](https://glossary.magento.com/cache) types:
       <td><p>Page cache</p></td>
       <td><p>full_page</p></td>
       <td><p>Generated HTML pages. </p>
-      	<p>If necessary, Magento cleans up this cache automatically, but third-party developers can put any data in any segment of the cache. </p>
-      	<p>Clean or flush this cache type after modifying code level that affects HTML output. It’s recommended to keep this cache enabled because caching HTML improves performance significantly.</p></td>
+       <p>If necessary, Magento cleans up this cache automatically, but third-party developers can put any data in any segment of the cache. </p>
+       <p>Clean or flush this cache type after modifying code level that affects HTML output. It’s recommended to keep this cache enabled because caching HTML improves performance significantly.</p></td>
     </tr>
     <tr>
       <td><p>Reflection</p></td>
@@ -80,7 +80,7 @@ Magento 2 has the following [cache](https://glossary.magento.com/cache) types:
       <td><p>Integration configuration</p></td>
       <td><p>config_integration</p></td>
       <td><p>Compiled integrations.</p>
-      	<p>Clean or flush this cache after changing or adding integrations.</p></td>
+       <p>Clean or flush this cache after changing or adding integrations.</p></td>
     </tr>
     <tr>
       <td><p>Integration API configuration</p></td>
@@ -154,7 +154,7 @@ bin/magento cache:disable db_ddl full_page
 Sample result:
 
 ```terminal
-	Changed cache status:
+ Changed cache status:
                         db_ddl: 1 -> 0
                      full_page: 1 -> 0
 ```
@@ -170,8 +170,8 @@ To purge out-of-date items from the cache, you can *clean* or *flush* cache type
 
     Disabled cache types are not cleaned.
 
-	{:.bs-callout .bs-callout-tip}
-	Always clean the cache after upgrading versions of {{site.data.var.ce}} or {{site.data.var.ee}}, upgrading from {{site.data.var.ce}} to {{site.data.var.ee}}, or installing {{site.data.var.b2b}} or any module.
+ {:.bs-callout .bs-callout-tip}
+ Always clean the cache after upgrading versions of {{site.data.var.ce}} or {{site.data.var.ee}}, upgrading from {{site.data.var.ce}} to {{site.data.var.ee}}, or installing {{site.data.var.b2b}} or any module.
 
 -   Flushing a cache type purges the cache storage, which might affect other processes applications that are using the same storage.
 
@@ -193,18 +193,18 @@ bin/magento cache:flush
 Sample result:
 
 ```terminal
-	Flushed cache types:
-	config
-	layout
-	block_html
-	collections
-	db_ddl
-	eav
-	full_page
-	translate
-	config_integration
-	config_integration_api
-	config_webservice
+ Flushed cache types:
+ config
+ layout
+ block_html
+ collections
+ db_ddl
+ eav
+ full_page
+ translate
+ config_integration
+ config_integration_api
+ config_webservice
 ```
 
 {:.bs-callout .bs-callout-info}

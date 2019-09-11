@@ -469,10 +469,10 @@ public function getCheckbox($elementName){
 
 ```php
 <span class="attribute-change-checkbox">
-	<label>
-		<?php echo $this->getCheckbox($element)?>
-		<?php echo __('Change'); ?>
-	</label>
+ <label>
+  <?php echo $this->getCheckbox($element)?>
+  <?php echo __('Change'); ?>
+ </label>
 </span>
 <!-- jQuery.hide() code can be either located in the widget itself OR can ask PHP Block class whether or not 'weight_and_type_switcher' should be visible. Based on this condition CSS can be applied to hide/show those elements. -->
 ```

@@ -6,7 +6,7 @@
 
     <div class="videos">
     {% assign sorted_videos = (site.videos | where: 'layout', 'video' | sort: 'date') | reverse %}
-		{% for video in sorted_videos limit:3 %}
+  {% for video in sorted_videos limit:3 %}
       {% include video/preview.html %}
     {% endfor %}
     </div>

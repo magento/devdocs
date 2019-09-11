@@ -11,27 +11,27 @@ This topic discusses how to set required [PHP](https://glossary.magento.com/php)
 
 ## Requirements and recommendations
 
-*	Set the system time zone for PHP; otherwise, errors like the following display during the installation and time-related operations like cron might not work:
+* Set the system time zone for PHP; otherwise, errors like the following display during the installation and time-related operations like cron might not work:
 
-		PHP Warning:  date(): It is not safe to rely on the system's timezone settings. [more messages follow]
+  PHP Warning:  date(): It is not safe to rely on the system's timezone settings. [more messages follow]
 
-*	Set the PHP memory limit.
+* Set the PHP memory limit.
 
-	Our detailed recommendations are:
+ Our detailed recommendations are:
 
-	*	Compiling code or deploying static assets, `756M`
-    *	Installing and updating Magento components from Magento Marketplace, `2G`
-    *	Testing, `~3-4G`
-*	Disable [`asp_tags`](http://php.net/manual/en/ini.core.php#ini.asp-tags){:target="_blank"}
+ * Compiling code or deploying static assets, `756M`
+    * Installing and updating Magento components from Magento Marketplace, `2G`
+    * Testing, `~3-4G`
+* Disable [`asp_tags`](http://php.net/manual/en/ini.core.php#ini.asp-tags){:target="_blank"}
 
-	If `asp_tags are` enabled, errors display when accessing PHTML templates.
+ If `asp_tags are` enabled, errors display when accessing PHTML templates.
 
-	`asp_tags` were removed in PHP 7.
-*	Enable [`opcache.save_comments`](http://php.net/manual/en/opcache.configuration.php#ini.opcache.save_comments){:target="_blank"}, which is required for Magento 2.1 and later.
+ `asp_tags` were removed in PHP 7.
+* Enable [`opcache.save_comments`](http://php.net/manual/en/opcache.configuration.php#ini.opcache.save_comments){:target="_blank"}, which is required for Magento 2.1 and later.
 
-	We recommend you enable the [PHP OpCache](http://php.net/manual/en/intro.opcache.php){:target="_blank"} for performance reasons. The OPcache is enabled in many PHP distributions.
+ We recommend you enable the [PHP OpCache](http://php.net/manual/en/intro.opcache.php){:target="_blank"} for performance reasons. The OPcache is enabled in many PHP distributions.
 
-	Magento 2.1 and later use PHP code comments for code generation.
+ Magento 2.1 and later use PHP code comments for code generation.
 
 {:.bs-callout .bs-callout-info}
 To avoid issues during installation and upgrade, we strongly recommend you apply the same PHP settings to both the PHP command-line configuration and to the PHP web server plug-in's configuration. For more information, see the next section.
@@ -48,7 +48,7 @@ To find the web server configuration, run a [`phpinfo.php` file]({{page.baseurl}
 
 To locate the PHP command-line configuration, enter
 
-	php --ini
+ php --ini
 
 Use the value of Loaded Configuration file.
 
@@ -61,17 +61,17 @@ PHP OPcache settings are typically located either in `php.ini` or `opcache.ini`.
 
 Use the following guidelines to find it:
 
-*	Apache web server:
+* Apache web server:
 
-	For Ubuntu with Apache, OPcache settings are typically located in `php.ini`.
+ For Ubuntu with Apache, OPcache settings are typically located in `php.ini`.
 
-	For CentOS with Apache or nginx, OPcache settings are typically located in `/etc/php.d/opcache.ini`
+ For CentOS with Apache or nginx, OPcache settings are typically located in `/etc/php.d/opcache.ini`
 
-	If not, use the following command to locate it:
+ If not, use the following command to locate it:
 
-		sudo find / -name 'opcache.ini'
+  sudo find / -name 'opcache.ini'
 
-*	nginx web server with PHP-FPM: `/etc/php5/fpm/php.ini`
+* nginx web server with PHP-FPM: `/etc/php5/fpm/php.ini`
 
 If you have more than one `opcache.ini`, modify all of them.
 
@@ -79,39 +79,39 @@ If you have more than one `opcache.ini`, modify all of them.
 
 To set PHP options:
 
-1.	Open a `php.ini` in a text editor.
-3.	Locate your server's time zone in the available [time zone settings](http://php.net/manual/en/timezones.php){:target="_blank"}
-4.	Locate the following setting and uncomment it if necessary:
+1. Open a `php.ini` in a text editor.
+3. Locate your server's time zone in the available [time zone settings](http://php.net/manual/en/timezones.php){:target="_blank"}
+4. Locate the following setting and uncomment it if necessary:
 
-		date.timezone =
-5.	Add the time zone setting you found in step 2.
-6.	Change the value of `memory_limit` to one of the values at the beginning of this section.
+  date.timezone =
+5. Add the time zone setting you found in step 2.
+6. Change the value of `memory_limit` to one of the values at the beginning of this section.
 
-	For example,
+ For example,
 
-		memory_limit=2G
+  memory_limit=2G
 
-8.	Locate the following setting:
+8. Locate the following setting:
 
-		asp_tags =
-9.	Make sure its value is set to `Off`.
-10.	Save your changes and exit the text editor.
-11.	Open the other `php.ini` (if they are different) and make the same changes in it.
+  asp_tags =
+9. Make sure its value is set to `Off`.
+10. Save your changes and exit the text editor.
+11. Open the other `php.ini` (if they are different) and make the same changes in it.
 
 ## Step 3: Set OPcache options {#php-required-opcache}
 
 To set opcache.ini options:
 
-12.	Open your OpCache configuration file in a text editor:
+12. Open your OpCache configuration file in a text editor:
 
-	*	`opcache.ini` (CentOS)
-	*	`php.ini` (Ubuntu)
-	*	`/etc/php5/fpm/php.ini` (nginx web server (CentOS or Ubuntu))
-13.	Locate `opcache.save_comments` and uncomment it if necessary.
-14.	Make sure its value is set to `1`.
-15.	Save your changes and exit the text editor.
-11.	Restart your web server:
+ * `opcache.ini` (CentOS)
+ * `php.ini` (Ubuntu)
+ * `/etc/php5/fpm/php.ini` (nginx web server (CentOS or Ubuntu))
+13. Locate `opcache.save_comments` and uncomment it if necessary.
+14. Make sure its value is set to `1`.
+15. Save your changes and exit the text editor.
+11. Restart your web server:
 
-	*	Apache, Ubuntu: `service apache2 restart`
-	*	Apache, CentOS: `service httpd restart`
-	*	nginx, Ubuntu and CentOS: `service nginx restart`
+ * Apache, Ubuntu: `service apache2 restart`
+ * Apache, CentOS: `service httpd restart`
+ * nginx, Ubuntu and CentOS: `service nginx restart`

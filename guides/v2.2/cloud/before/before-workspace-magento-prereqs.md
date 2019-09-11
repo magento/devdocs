@@ -36,9 +36,9 @@ When using Vagrant, we also recommend the package [hostmanager](https://github.c
 ## Development tools {#devtools}
 
 * [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) - Provides code branching and management for accessing {{site.data.var.ee}} and your code repositories. Use Git command-line commands or applications of your choice to work with Git. You can install this on your local VM or on your host.
-	For more information, see [How Cloud uses Git]({{ page.baseurl }}/cloud/reference/git-integration.html).
+ For more information, see [How Cloud uses Git]({{ page.baseurl }}/cloud/reference/git-integration.html).
 * [Composer](https://getcomposer.org/download/) - Used for dependency management. Composer enables us to manage the Magento components and their dependencies. Install on your local VM.
-	For more information, see [How Cloud uses Composer]({{ page.baseurl }}/cloud/reference/cloud-composer.html).
+ For more information, see [How Cloud uses Composer]({{ page.baseurl }}/cloud/reference/cloud-composer.html).
 
 ## Web server (local) {#webserver}
 
@@ -71,20 +71,20 @@ To set `memory_limit`:
 
 Before working with your {{site.data.var.ece}} project, set the PHP `memory_limit` to at least `1G` for normal use or at least `2G` for debugging.
 
-1.	Find your `php.ini` file using the following command:
+1. Find your `php.ini` file using the following command:
 
-		php --ini
+  php --ini
 
-	Use the value of `Loaded Configuration File`.
-2.	As a user with `root` privileges, open `php.ini` in a text editor.
-3.	Change the value of `memory_limit` to at least `1G` for normal use or at least `2G` for debugging.
-4.	Save your changes to `php.ini` and exit the text editor.
-5.	Restart your web server:
+ Use the value of `Loaded Configuration File`.
+2. As a user with `root` privileges, open `php.ini` in a text editor.
+3. Change the value of `memory_limit` to at least `1G` for normal use or at least `2G` for debugging.
+4. Save your changes to `php.ini` and exit the text editor.
+5. Restart your web server:
 
-	*	Apache:
-		*	CentOS: `service httpd restart`
-		*	Ubuntu: `service apache2 restart`
-	*	Nginx: `service nginx restart`
+ * Apache:
+  * CentOS: `service httpd restart`
+  * Ubuntu: `service apache2 restart`
+ * Nginx: `service nginx restart`
 
 ## Database (local) {#database}
 
@@ -99,27 +99,27 @@ These example instructions detail how to install and create a MariaDB database f
 
 1. Use this command to create the database:
 
-		apt-get install mariadb-server
+  apt-get install mariadb-server
 2. Secure the database with the following command and completing all prompts:
 
-		mysql_secure_installation
+  mysql_secure_installation
 3. Access the MariaDB database.
 4. Grant all privileges to the Magento account you created for the local:
 
-		grant all privileges on <database> to '<account>'@'localhost' identified by '<password>';
+  grant all privileges on <database> to '<account>'@'localhost' identified by '<password>';
 5. Finally create the database:
 
-		create database magento;
-		use magento;
+  create database magento;
+  use magento;
 6. Exit when done.
 
 ### Pro: Set up the auto-increment for MariaDB
 
 You need to set an auto-increment value for the MariaDB installation.
 
-1.	As a user with `root` privileges, open `/etc/mysql/mariadb.conf.d/50-server.cnf` in a text editor.
-2.	In the Basic Settings section, add `auto_increment_increment = 3`.
-3.	Restart the service: `service mysql restart`.
+1. As a user with `root` privileges, open `/etc/mysql/mariadb.conf.d/50-server.cnf` in a text editor.
+2. In the Basic Settings section, add `auto_increment_increment = 3`.
+3. Restart the service: `service mysql restart`.
 
 ### Pro: Set up the auto-increment for MySQL {#cloud-mysql}
 
@@ -129,24 +129,24 @@ To avoid issues, we recommend you set `auto_increment_increment=3`.
 
 First, view the current value and verify if it is set to 3:
 
-	mysqladmin variables -u <root username> -p | grep 'auto_increment'
+ mysqladmin variables -u <root username> -p | grep 'auto_increment'
 
 If necessary, set `auto_increment_increment` to 3:
 
-1.	As a user with `root` privileges, open `/etc/my.cnf` in a text editor.
+1. As a user with `root` privileges, open `/etc/my.cnf` in a text editor.
 
-	{:.bs-callout .bs-callout-info}
-  		On Ubuntu 16, the path is typically `/etc/mysql/mysql.conf.d/mysqld.cnf`.
+ {:.bs-callout .bs-callout-info}
+    On Ubuntu 16, the path is typically `/etc/mysql/mysql.conf.d/mysqld.cnf`.
 
-2.	Add or edit the following line in the `[mysqld]` section:
+2. Add or edit the following line in the `[mysqld]` section:
 
-		auto_increment_increment=3
+  auto_increment_increment=3
 
-	{{site.data.var.ece}} supports a High Availability configuration. This setting increments the database IDs in increments of three to ensure row uniqueness for Galera databases on each of the three HA nodes in production.
+ {{site.data.var.ece}} supports a High Availability configuration. This setting increments the database IDs in increments of three to ensure row uniqueness for Galera databases on each of the three HA nodes in production.
 
-3.	Restart MySQL:
+3. Restart MySQL:
 
-		service mysqld restart
+  service mysqld restart
 
 ## Magento Cloud CLI (local) {#cloud-ssh-cli-cli-install}
 
@@ -156,31 +156,31 @@ These instructions discuss installation using commands for a Unix environment. F
 
 To install the Magento Cloud CLI:
 
-1.	Log in to your local development machine or switch to the [Magento file system owner]({{ page.baseurl }}/cloud/before/before-workspace-file-sys-owner.html).
+1. Log in to your local development machine or switch to the [Magento file system owner]({{ page.baseurl }}/cloud/before/before-workspace-file-sys-owner.html).
 
-2.	Change to a directory to which the [Magento file system owner](https://glossary.magento.com/magento-file-system-owner) has write access, such as the home directory.
+2. Change to a directory to which the [Magento file system owner](https://glossary.magento.com/magento-file-system-owner) has write access, such as the home directory.
 
-3.	Enter the following command:
+3. Enter the following command:
 
-		curl -sS https://accounts.magento.cloud/cli/installer | php
+  curl -sS https://accounts.magento.cloud/cli/installer | php
 
-4.	After the CLI downloads, an operating system-specific command displays.
+4. After the CLI downloads, an operating system-specific command displays.
 
-	For example, on Ubuntu and CentOS, the command is similar to:
+ For example, on Ubuntu and CentOS, the command is similar to:
 
-		source $HOME/.bashrc
+  source $HOME/.bashrc
 
-	For more information about the user shell profile, see [.bash_profile vs .bashrc](https://apple.stackexchange.com/questions/51036/what-is-the-difference-between-bash-profile-and-bashrc)
+ For more information about the user shell profile, see [.bash_profile vs .bashrc](https://apple.stackexchange.com/questions/51036/what-is-the-difference-between-bash-profile-and-bashrc)
 
-	You can also add the `$HOME/.magento-cloud/bin` to the Magento user's `PATH`:
+ You can also add the `$HOME/.magento-cloud/bin` to the Magento user's `PATH`:
 
-		export PATH=$PATH:$HOME/.magento-cloud/bin
+  export PATH=$PATH:$HOME/.magento-cloud/bin
 
-	Consult operating system documentation for details.
+ Consult operating system documentation for details.
 
-5.	Verify the `magento-cloud` command is in your path by entering the following command:
+5. Verify the `magento-cloud` command is in your path by entering the following command:
 
-		magento-cloud list
+  magento-cloud list
 
 ## Additional requirements for Magento Commerce {#commerce}
 

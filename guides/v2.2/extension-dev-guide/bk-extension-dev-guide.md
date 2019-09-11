@@ -22,6 +22,6 @@ You must follow a [PSR-4 compliant](http://www.php-fig.org/psr/psr-4/) structure
 
 #### Related topics
 
-*	[Developer roadmap]({{ page.baseurl }}/extension-dev-guide/intro/developers_roadmap.html)
-*	[Introduction to Composer]({{ page.baseurl }}/extension-dev-guide/intro/intro-composer.html)
-*	[Glossary of common terms]({{ page.baseurl }}/extension-dev-guide/intro/intro-composer-gloss.html)
+* [Developer roadmap]({{ page.baseurl }}/extension-dev-guide/intro/developers_roadmap.html)
+* [Introduction to Composer]({{ page.baseurl }}/extension-dev-guide/intro/intro-composer.html)
+* [Glossary of common terms]({{ page.baseurl }}/extension-dev-guide/intro/intro-composer-gloss.html)

@@ -28,8 +28,8 @@ The following query returns information about downloadable product `24-WG085_Gro
 {
   products(filter:
     {sku: {eq: "24-WG085_Group"}}
-  	)
-  	{
+   )
+   {
     items {
       id
       name

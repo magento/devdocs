@@ -15,18 +15,18 @@ This tutorial shows you step-by-step how to set up multiple websites using [ngin
 
 We assume that:
 
-*	You are working on a development machine (laptop, virtual machine, or similar).
+* You are working on a development machine (laptop, virtual machine, or similar).
 
-	Additional tasks might be required to deploy multiple websites in a hosted environment; check with your hosting provider for more information.
+ Additional tasks might be required to deploy multiple websites in a hosted environment; check with your hosting provider for more information.
 
-	Additional tasks are required to set up {{site.data.var.ece}}. After you complete the tasks discussed in this topic, see [Set up multiple {{site.data.var.ece}} websites or stores]({{ page.baseurl }}/cloud/project/project-multi-sites.html).
-*	You accept multiple domains in one virtual host file or use one virtual host per website; the virtual host configuration files are located in `/etc/nginx/sites-available`.
-*	You use the `nginx.conf.sample` provided by Magento with only the modifications discussed in this tutorial.
-*	The Magento software is installed in `/var/www/html/magento2`.
-*	You have two websites other than the default:
+ Additional tasks are required to set up {{site.data.var.ece}}. After you complete the tasks discussed in this topic, see [Set up multiple {{site.data.var.ece}} websites or stores]({{ page.baseurl }}/cloud/project/project-multi-sites.html).
+* You accept multiple domains in one virtual host file or use one virtual host per website; the virtual host configuration files are located in `/etc/nginx/sites-available`.
+* You use the `nginx.conf.sample` provided by Magento with only the modifications discussed in this tutorial.
+* The Magento software is installed in `/var/www/html/magento2`.
+* You have two websites other than the default:
 
-	*	`french.mysite.mg` with website code `french` and store view code `fr`
-	*	`german.mysite.mg` with website code `german` and store view code `de`
+ * `french.mysite.mg` with website code `french` and store view code `fr`
+ * `german.mysite.mg` with website code `german` and store view code `de`
     *   `mysite.mg` is the default website and default store view
 
 {:.bs-callout .bs-callout-tip}
@@ -36,8 +36,8 @@ Refer to [Create websites]({{ page.baseurl }}/config-guide/multi-site/ms_website
 
 To set up multiple stores:
 
-1.	[Set up websites, stores, and store views]({{ page.baseurl }}/config-guide/multi-site/ms_websites.html) in the [Magento Admin](https://glossary.magento.com/magento-admin).
-2.	Create an [nginx virtual host](#ms-nginx-vhosts) to map many websites or one [nginx virtual host](#ms-nginx-vhosts) per Magento [website](https://glossary.magento.com/website) (steps detailed below).
+1. [Set up websites, stores, and store views]({{ page.baseurl }}/config-guide/multi-site/ms_websites.html) in the [Magento Admin](https://glossary.magento.com/magento-admin).
+2. Create an [nginx virtual host](#ms-nginx-vhosts) to map many websites or one [nginx virtual host](#ms-nginx-vhosts) per Magento [website](https://glossary.magento.com/website) (steps detailed below).
 3.  Pass the values of the [Magento variables]({{ page.baseurl }}/config-guide/multi-site/ms_over.html) `$MAGE_RUN_TYPE` and `$MAGE_RUN_CODE` to nginx using the Magento-provided `nginx.conf.sample` (steps detailed below).
 
     *   `$MAGE_RUN_TYPE` can be either `store` or `website`:
@@ -57,7 +57,7 @@ By using just one [nginx virtual host file](#ms-nginx-vhosts), you can keep your
 
 This configuration expands upon [Magento Nginx Configuration]({{ page.baseurl }}/install-gde/prereq/nginx.html). To create one virtual host:
 
-1.	Open a text editor and add the following contents to a new file named `/etc/nginx/sites-available/magento`:
+1. Open a text editor and add the following contents to a new file named `/etc/nginx/sites-available/magento`:
 
     ```terminal
     map $http_host $MAGE_RUN_CODE {
@@ -76,20 +76,20 @@ This configuration expands upon [Magento Nginx Configuration]({{ page.baseurl }}
     }
     ```
 
-2.	Save your changes to the files and exit the text editor.
-3.	Verify the server configuration:
+2. Save your changes to the files and exit the text editor.
+3. Verify the server configuration:
 
-		nginx -t
-4.	If successful, the following message displays:
+  nginx -t
+4. If successful, the following message displays:
 
-		nginx: configuration file /etc/nginx/nginx.conf test is successful
+  nginx: configuration file /etc/nginx/nginx.conf test is successful
 
-	If errors display, check the syntax of your virtual host configuration files.
+ If errors display, check the syntax of your virtual host configuration files.
 
-5.	Create symbolic link in the `/etc/nginx/sites-enabled` directory:
+5. Create symbolic link in the `/etc/nginx/sites-enabled` directory:
 
-		cd /etc/nginx/sites-enabled
-		ln -s /etc/nginx/sites-available/magento magento
+  cd /etc/nginx/sites-enabled
+  ln -s /etc/nginx/sites-available/magento magento
 
 For more detail about the map directive, see [nginx documentation on the map directive](http://nginx.org/en/docs/http/ngx_http_map_module.html#map).
 
@@ -98,7 +98,7 @@ For more detail about the map directive, see [nginx documentation on the map dir
 {% collapsible To create multiple virtual hosts (customize per website): %}
 To create multiple virtual hosts:
 
-1.	Open a text editor and add the following contents to a new file named `/etc/nginx/sites-available/french.mysite.mg`:
+1. Open a text editor and add the following contents to a new file named `/etc/nginx/sites-available/french.mysite.mg`:
 
     ```terminal
     map $http_host $MAGE_RUN_CODE {
@@ -115,7 +115,7 @@ To create multiple virtual hosts:
     }
     ```
 
-2.	Create another file named `german.mysite.mg` in the same directory with the following contents:
+2. Create another file named `german.mysite.mg` in the same directory with the following contents:
 
     ```terminal
     map $http_host $MAGE_RUN_CODE {
@@ -132,21 +132,21 @@ To create multiple virtual hosts:
     }
     ```
 
-3.	Save your changes to the files and exit the text editor.
-4.	Verify the server configuration:
+3. Save your changes to the files and exit the text editor.
+4. Verify the server configuration:
 
-		nginx -t
-5.	If successful, the following message displays:
+  nginx -t
+5. If successful, the following message displays:
 
-		nginx: configuration file /etc/nginx/nginx.conf test is successful
+  nginx: configuration file /etc/nginx/nginx.conf test is successful
 
-	If errors display, check the syntax of your virtual host configuration files.
+ If errors display, check the syntax of your virtual host configuration files.
 
-6.	Create symbolic links in the `/etc/nginx/sites-enabled` directory:
+6. Create symbolic links in the `/etc/nginx/sites-enabled` directory:
 
-		cd /etc/nginx/sites-enabled
-		ln -s /etc/nginx/sites-available/french.mysite.mg french.mysite.mg
-		ln -s /etc/nginx/sites-available/german.mysite.mg german.mysite.mg
+  cd /etc/nginx/sites-enabled
+  ln -s /etc/nginx/sites-available/french.mysite.mg french.mysite.mg
+  ln -s /etc/nginx/sites-available/german.mysite.mg german.mysite.mg
 
 For more details about the map directive, see [nginx documentation on the map directive](http://nginx.org/en/docs/http/ngx_http_map_module.html#map).
 
@@ -162,7 +162,7 @@ content="Do not edit the `nginx.conf.sample` file; it is a core Magento file tha
 {% collapsible To edit the PHP entry point for the main application: %}
 To modify the `nginx.conf.sample` file:
 
-1.	Open a text editor and review the `nginx.conf.sample` file ,`<magento2_installation_directory>/nginx.conf.sample`. Look for the following section:
+1. Open a text editor and review the `nginx.conf.sample` file ,`<magento2_installation_directory>/nginx.conf.sample`. Look for the following section:
 
     ```terminal
     # PHP entry point for main application

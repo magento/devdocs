@@ -44,14 +44,14 @@ As a result, the Magento installer cannot locate the extension and the installat
 
 Determine if the mcrypt extension is loaded in any of the following ways:
 
-*	Set up a [phpinfo.php](http://kb.mediatemple.net/questions/764/How+can+I+create+a+phpinfo.php+page%3F#gs){:target="_blank"} file in the web server's root directory and examine the output in a web browser.
-*	Run the following command:
+* Set up a [phpinfo.php](http://kb.mediatemple.net/questions/764/How+can+I+create+a+phpinfo.php+page%3F#gs){:target="_blank"} file in the web server's root directory and examine the output in a web browser.
+* Run the following command:
 
   ```bash
   php -r "phpinfo();" | grep mcrypt
   ```
 
-	If mycrypt is *not* installed, messages similar to the following display:
+ If mycrypt is *not* installed, messages similar to the following display:
 
   ```terminal
   PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php5/20121212/mcrypt.so' - /usr/lib/php5/20121212/mcrypt.so: cannot open shared object file: No such file or directory in Unknown on line 0

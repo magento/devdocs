@@ -158,7 +158,7 @@ If you need to integrate additional backends into your site such as a backend to
 1. Expand **Backend settings** and click the gear to check the default
    backend. A modal opens that shows current settings with options to change them.
 
-	![Modify the backend]({{ site.baseurl }}/common/images/cloud_fastly-backend.png){:width="600px"}
+ ![Modify the backend]({{ site.baseurl }}/common/images/cloud_fastly-backend.png){:width="600px"}
 
 1. Select the **Shield** location (or datacenter) closest to your AWS region.
    For example, if Staging is on the west coast of the United States
@@ -278,7 +278,7 @@ provide a list of stores matching their obtained country code. If you already us
 1. For **Country Mapping**, click **Add** to enter a two-letter country code to
    map with a specific Magento store from a list. For a list of country codes, see [this site](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2).
 
-	![Add GeoIP country maps]({{ site.baseurl }}/common/images/cloud_fastly-geo-code.png)
+ ![Add GeoIP country maps]({{ site.baseurl }}/common/images/cloud_fastly-geo-code.png)
 
 1. Click **Save Config** at the top of the page.
 

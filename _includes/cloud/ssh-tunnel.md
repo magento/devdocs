@@ -6,13 +6,13 @@ Use a terminal application to log in and issue commands.
 
 First, you may want to check if any tunnels are already open using the following command:
 
-	magento-cloud tunnel:list
+ magento-cloud tunnel:list
 
 To build a tunnel, you must know the name of the app to which to tunnel. Use the following commands to list those applications:
 
-	cd <project directory>
-	magento-cloud project:list
-	magento-cloud apps
+ cd <project directory>
+ magento-cloud project:list
+ magento-cloud apps
 
 For information on the command, you can enter `magento-cloud apps --help`.
 
@@ -20,28 +20,28 @@ For information on the command, you can enter `magento-cloud apps --help`.
 
 Use the following command:
 
-	magento-cloud tunnel:open -e <environment ID> --app <app name>
+ magento-cloud tunnel:open -e <environment ID> --app <app name>
 
 For example, to open a tunnel to the `sprint5` branch in a project with an app named `mymagento`, enter
 
-	magento-cloud tunnel:open -e sprint5 --app mymagento
+ magento-cloud tunnel:open -e sprint5 --app mymagento
 
 Messages similar to the following display:
 
-	SSH tunnel opened on port 30003 to relationship: solr
-	SSH tunnel opened on port 30004 to relationship: redis
-	SSH tunnel opened on port 30005 to relationship: database
-	Logs are written to: /home/magento_user/.magento/tunnels.log
+ SSH tunnel opened on port 30003 to relationship: solr
+ SSH tunnel opened on port 30004 to relationship: redis
+ SSH tunnel opened on port 30005 to relationship: database
+ Logs are written to: /home/magento_user/.magento/tunnels.log
 
-	List tunnels with: magento-cloud tunnels
-	View tunnel details with: magento-cloud tunnel:info
-	Close tunnels with: magento-cloud tunnel:close
+ List tunnels with: magento-cloud tunnels
+ View tunnel details with: magento-cloud tunnel:info
+ Close tunnels with: magento-cloud tunnel:close
 
 ### Get tunnel information {#tunnel-info}
 
 To display information about your tunnel, enter:
 
-	magento-cloud tunnel:info -e <environment ID>
+ magento-cloud tunnel:info -e <environment ID>
 
 ### Connect to services {#tunnel-services}
 
@@ -49,6 +49,6 @@ Now you can connect to services as if they were running locally.
 
 For example, to connect to the database, use the following command:
 
-	mysql --host=127.0.0.1 --user='<database username>' --pass='<user password>' --database='<name>' --port='<port>'
+ mysql --host=127.0.0.1 --user='<database username>' --pass='<user password>' --database='<name>' --port='<port>'
 
 Details about the service display if you use the `magento-cloud tunnel:info` command.

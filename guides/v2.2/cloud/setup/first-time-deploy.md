@@ -64,15 +64,15 @@ If you prefer to use CLI for deploying, you will need to configure additional SS
 
 You'll need the SSH and Git with your project ID. The formats are as follows:
 
-*	Git URL format:
+* Git URL format:
 
-	*	Staging: `git@git.ent.magento.cloud:<project ID>_stg.git`
-	*	Production: `git@git.ent.magento.cloud:<project ID>.git`
+ * Staging: `git@git.ent.magento.cloud:<project ID>_stg.git`
+ * Production: `git@git.ent.magento.cloud:<project ID>.git`
 
-*	SSH URL format:
+* SSH URL format:
 
-	*	Staging: `<project ID>_stg@<project ID>.ent.magento.cloud`
-	*	Production: `<project ID>@<project ID>.ent.magento.cloud`
+ * Staging: `<project ID>_stg@<project ID>.ent.magento.cloud`
+ * Production: `<project ID>@<project ID>.ent.magento.cloud`
 
 As part of pushing the code, you may need to:
 
@@ -87,12 +87,12 @@ When you know your Git URLs, you must set them up as remote upstream repositorie
 
 Command syntax:
 
-	git remote add <remote repository name> <remote repository URL>
+ git remote add <remote repository name> <remote repository URL>
 
 For example,
 
-	git remote add staging git@git.ent.magento.cloud:dr5q6no7mhqip_stg.git
-	git remote add prod git@git.ent.magento.cloud:dr5q6no7mhqip.git
+ git remote add staging git@git.ent.magento.cloud:dr5q6no7mhqip_stg.git
+ git remote add prod git@git.ent.magento.cloud:dr5q6no7mhqip.git
 
 ### Set up your SSH agent {#cloud-live-migrate-agent}
 
@@ -102,32 +102,32 @@ The SSH agent forwards authentication requests from Staging or Production to you
 
 To set up an SSH agent:
 
-1.	Log in to local development machine.
-2.	Enter the following command:
+1. Log in to local development machine.
+2. Enter the following command:
 
-		ssh-add -l
+  ssh-add -l
 
-	One of the following messages displays:
+ One of the following messages displays:
 
-	*	Working SSH agent: `2048 ab:de:56:94:e3:1e:71:c3:4f:df:e1:62:8d:29:a5:c0 /home/magento_user/.ssh/id_rsa (RSA)`
+ * Working SSH agent: `2048 ab:de:56:94:e3:1e:71:c3:4f:df:e1:62:8d:29:a5:c0 /home/magento_user/.ssh/id_rsa (RSA)`
 
-		Skip the next step and continue with step 4.
-	*	SSH agent not started: `Could not open a connection to your authentication agent.`
+  Skip the next step and continue with step 4.
+ * SSH agent not started: `Could not open a connection to your authentication agent.`
 
-		Continue with step 3.
+  Continue with step 3.
 
-3.	To start the SSH agent, enter the following command:
+3. To start the SSH agent, enter the following command:
 
-		  eval $(ssh-agent -s)
+    eval $(ssh-agent -s)
 
-	The agent's process ID (PID) displays.
-4.	Add your SSH key to the agent:
+ The agent's process ID (PID) displays.
+4. Add your SSH key to the agent:
 
-		  ssh-add ~/.ssh/id_rsa
+    ssh-add ~/.ssh/id_rsa
 
-	A message similar to the following displays:
+ A message similar to the following displays:
 
-		  Identity added: /home/magento_user/.ssh/id_rsa (/home/magento_user/.ssh/id_rsa)
+    Identity added: /home/magento_user/.ssh/id_rsa (/home/magento_user/.ssh/id_rsa)
 
 For more information on setting up SSH, see [Enable SSH keys]({{ page.baseurl }}/cloud/before/before-workspace-ssh.html) as part of your local setup.
 

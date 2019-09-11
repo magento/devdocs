@@ -17,7 +17,7 @@ Example of a basic [UI component](https://glossary.magento.com/ui-component) dec
 
 ```xml
 <referenceContainer name="page-container">
-	<uiComponent name="%instance_name%"/>
+ <uiComponent name="%instance_name%"/>
 </referenceContainer>
 ```
 

@@ -74,10 +74,10 @@ The Production and Staging environments include the following technologies. You 
 
 Each service runs in its own secure container. Containers are managed together in the project. Some services are built-in, such as the following:
 
-*	HTTP router (handling incoming requests, but also caching and redirects)
-*	PHP application server
-*	Git
-*	Secure Shell (SSH)
+* HTTP router (handling incoming requests, but also caching and redirects)
+* PHP application server
+* Git
+* Secure Shell (SSH)
 
 You can even have multiple applications running in the same project. Building a microservice oriented architecture with {{site.data.var.ee}} is as easy as managing a monolithic application.
 
@@ -85,8 +85,8 @@ You can even have multiple applications running in the same project. Building a 
 
 {{site.data.var.ece}} uses:
 
-*	Operating system: Debian GNU/Linux 8 (jessie)
-*	Web server: [nginx](https://glossary.magento.com/nginx) 1.8
+* Operating system: Debian GNU/Linux 8 (jessie)
+* Web server: [nginx](https://glossary.magento.com/nginx) 1.8
 
 You cannot upgrade the operating system and web server software to a new version, but you can configure versions for the following software:
 
@@ -100,9 +100,9 @@ In the Staging and Production environments, you use Fastly for CDN and caching. 
 
 You use the following files to configure the software versions that you want to use in your implementation.
 
-*	[`.magento.app.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_magento-app.html)
-*	[`routes.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_routes.html)
-*	[`services.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_services.html)
+* [`.magento.app.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_magento-app.html)
+* [`routes.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_routes.html)
+* [`services.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_services.html)
 
 ### Backup and disaster recovery {#backup}
 

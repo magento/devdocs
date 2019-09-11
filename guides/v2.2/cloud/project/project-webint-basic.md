@@ -49,22 +49,22 @@ Click either **CLI** or **Git** to display the appropriate clone command. Use th
 You can set the following configuration options for each environment:
 
 <table>
-	<tbody>
-		<tr>
-			<th style="width= 300px;">Option</th>
-			<th>Description</th>
-		</tr>
-	<tr>
-		<td>Environment status</td>
-		<td>An environment can be either <em>active</em> or <em>inactive</em>. You'll do most of your work in an active environment. After merging an environment with its parent, you can optionally delete the environment, making it inactive. To delete an environment, click <strong>Delete</strong>. You can active an inactive environment later.</td>
-	</tr>
-	<tr>
-		<td>Outgoing emails</td>
-		<td>Setting to <strong>On</strong> means that code in your environment can send and receive e-mails (for example, using PHP <code>email()</code> function. </td>
-	</tr>
-	<tr><td>HTTP access control</td>
-	<td>Setting to <strong>On</strong> enables you to configure security for the project's Web Interface using a login and also IP address access control.</td>
-	</tr>
+ <tbody>
+  <tr>
+   <th style="width= 300px;">Option</th>
+   <th>Description</th>
+  </tr>
+ <tr>
+  <td>Environment status</td>
+  <td>An environment can be either <em>active</em> or <em>inactive</em>. You'll do most of your work in an active environment. After merging an environment with its parent, you can optionally delete the environment, making it inactive. To delete an environment, click <strong>Delete</strong>. You can active an inactive environment later.</td>
+ </tr>
+ <tr>
+  <td>Outgoing emails</td>
+  <td>Setting to <strong>On</strong> means that code in your environment can send and receive e-mails (for example, using PHP <code>email()</code> function. </td>
+ </tr>
+ <tr><td>HTTP access control</td>
+ <td>Setting to <strong>On</strong> enables you to configure security for the project's Web Interface using a login and also IP address access control.</td>
+ </tr>
 </tbody>
 </table>
 
@@ -100,7 +100,7 @@ To set environment specific variables in the Project Web Interface:
 1. In the **Name** field, enter a variable name. For example, to set the Magento Admin default account password, enter `ADMIN_PASSWORD`.
 1. In the **Value** field, enter the value for the variable. For example, enter a valid email address accessible for reset email notifications.
 
-	![Set environment variables]({{ site.baseurl }}/common/images/cloud_env-var.png)
+ ![Set environment variables]({{ site.baseurl }}/common/images/cloud_env-var.png)
 1. As needed, select options for **JSON value**, **Visible during build**, and **Visible during runtime**. If you do not have Super User access, you may only see the JSON value option.
 1. Click **Add Variable**. After you add the variable, the environment will deploy. Wait until deployment completes before more edits.
 

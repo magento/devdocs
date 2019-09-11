@@ -17,22 +17,22 @@ The readiness checks makes sure you have at least 1GB of memory set aside for [P
 
 To increase your PHP memory limit:
 
-1.	Log in to your Magento server.
-2.	Locate your `php.ini` file using the following command:
+1. Log in to your Magento server.
+2. Locate your `php.ini` file using the following command:
 
-		php --ini
-3.	As a user with `root` privileges, use a text editor to open the `php.ini` specified by `Loaded Configuration File`.
-4.	Locate `memory_limit`.
-5.	Change it to a value of `2GB` for normal use and debugging.
-6.	Save your changes to `php.ini` and exit the text editor.
-7.	Restart your web server.
+  php --ini
+3. As a user with `root` privileges, use a text editor to open the `php.ini` specified by `Loaded Configuration File`.
+4. Locate `memory_limit`.
+5. Change it to a value of `2GB` for normal use and debugging.
+6. Save your changes to `php.ini` and exit the text editor.
+7. Restart your web server.
 
-	Examples follow:
+ Examples follow:
 
-	*	CentOS: `service httpd restart`
-	*	Ubuntu: `service apache2 restart`
-	*	nginx (both CentOS and Ubuntu): `service nginx restart`
-8.	Try the installation again.
+ * CentOS: `service httpd restart`
+ * Ubuntu: `service apache2 restart`
+ * nginx (both CentOS and Ubuntu): `service nginx restart`
+8. Try the installation again.
 
 ## max-input-vars error due to large forms
 

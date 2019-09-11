@@ -120,7 +120,7 @@ Magento returns a list of payment options and calculates the order totals.
 ```json
 
 {  "addressInformation": {
-	  "shipping_address": {
+   "shipping_address": {
        "region": "New York",
        "region_id": 43,
        "region_code": "NY",
@@ -136,7 +136,7 @@ Magento returns a list of payment options and calculates the order totals.
     "telephone": "512-555-1111"
   },
   "billing_address": {
-  	"region": "New York",
+   "region": "New York",
     "region_id": 43,
     "region_code": "NY",
     "country_id": "US",

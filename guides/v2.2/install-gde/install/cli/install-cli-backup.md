@@ -11,9 +11,9 @@ functional_areas:
 
 This command enables you to back up:
 
-*	The Magento file system (excluding `var` and `pub/static` directories)
-*	The `pub/media` directory
-*	The Magento 2 database
+* The Magento file system (excluding `var` and `pub/static` directories)
+* The `pub/media` directory
+* The Magento 2 database
 
 Backups are stored in the `var/backups` directory and can be restored at any time using the [magento setup:rollback]({{ page.baseurl }}/install-gde/install/cli/install-cli-uninstall-mods.html#instgde-cli-uninst-mod-roll) command.
 
@@ -48,8 +48,8 @@ bin/magento setup:backup [--code] [--media] [--db]
 
 The command performs the following tasks:
 
-1.	Puts the store in maintenance mode.
-2.	Executes one of the following command options.
+1. Puts the store in maintenance mode.
+2. Executes one of the following command options.
 
     |Option|Meaning|Backup file name and location|
     |--- |--- |--- |
@@ -57,7 +57,7 @@ The command performs the following tasks:
     |`--media`|Back up the pub/media directory.|var/backups/<timestamp>\_filesystem_media.tgz|
     |`--db`|Back up the Magento 2 database.|var/backups/<timestamp>\_db.sql|
 
-3.	Takes the store out of maintenance mode.
+3. Takes the store out of maintenance mode.
 
 For example, to back up the file system and database,
 

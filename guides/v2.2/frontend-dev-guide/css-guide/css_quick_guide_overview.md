@@ -16,11 +16,11 @@ This chapter combines the topics aiming to help you to quickly start working wit
 1. In the file system, [add a new theme] inheriting from Magento Blank or Luma.
 3. [Apply your theme]
 2. Decide which CSS compilation mode you will use. Compilation modes are described in the following topics:
-	- Detailed description: [Styles debugging]
-	- Practical illustration: [Simple style changes with client-side Less compilation vs. server-side]
+ - Detailed description: [Styles debugging]
+ - Practical illustration: [Simple style changes with client-side Less compilation vs. server-side]
 4. Customize styles. To learn how, check out the following sources:
-	- [CSS chapter of this book][css overview]
-	- [Simple ways to customize a theme's styles]
+ - [CSS chapter of this book][css overview]
+ - [Simple ways to customize a theme's styles]
 
 ## Why do you need to create a custom theme?
 

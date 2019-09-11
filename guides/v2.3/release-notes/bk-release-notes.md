@@ -21,7 +21,7 @@ Interested in the Magento 2.2.x releases? Check out the [2.2.x]({{ site.baseurl 
 
 ## Backward-incompatible changes
 
-*	Overview of [backward-incompatible changes]({{page.baseurl}}/release-notes/backward-incompatible-changes/index.html) between the 2.2 and 2.3 releases
+* Overview of [backward-incompatible changes]({{page.baseurl}}/release-notes/backward-incompatible-changes/index.html) between the 2.2 and 2.3 releases
 
 ## {{site.data.var.ece}} {#cloud-updates}
 
@@ -34,6 +34,6 @@ We recommend installing full {{site.data.var.ece}} upgrades for important securi
 
 ## Third-party license agreements
 
-*	[{{site.data.var.ce}} third-party licenses]({{page.baseurl}}/release-notes/packages-open-source.html)
-*	[{{site.data.var.ee}} third-party licenses]({{page.baseurl}}/release-notes/packages-commerce.html)
-*	[{{site.data.var.ece}} third-party licenses]({{page.baseurl}}/release-notes/packages-cloud.html)
+* [{{site.data.var.ce}} third-party licenses]({{page.baseurl}}/release-notes/packages-open-source.html)
+* [{{site.data.var.ee}} third-party licenses]({{page.baseurl}}/release-notes/packages-commerce.html)
+* [{{site.data.var.ece}} third-party licenses]({{page.baseurl}}/release-notes/packages-cloud.html)

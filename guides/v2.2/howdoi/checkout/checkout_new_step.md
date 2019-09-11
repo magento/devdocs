@@ -103,11 +103,11 @@ define(
             },
 
             /**
-	    * The navigate() method is responsible for navigation between checkout step
-	    * during checkout. You can add custom logic, for example some conditions
-	    * for switching to your custom step
-	    * When the user navigates to the custom step via url anchor or back button we_must show step manually here
-	    */
+     * The navigate() method is responsible for navigation between checkout step
+     * during checkout. You can add custom logic, for example some conditions
+     * for switching to your custom step
+     * When the user navigates to the custom step via url anchor or back button we_must show step manually here
+     */
             navigate: function () {
 
                 this.isVisible(true);
@@ -203,16 +203,16 @@ Create a mixin as follows:
 
     ```js
     var config = {
-    	'config': {
-    	    'mixins': {
-    	       'Magento_Checkout/js/view/shipping': {
-    	           'Vendor_Module/js/view/shipping-payment-mixin': true
-    	       },
-    	       'Magento_Checkout/js/view/payment': {
-    	           'Vendor_Module/js/view/shipping-payment-mixin': true
-    	       }
-    	   }
-    	}
+     'config': {
+         'mixins': {
+            'Magento_Checkout/js/view/shipping': {
+                'Vendor_Module/js/view/shipping-payment-mixin': true
+            },
+            'Magento_Checkout/js/view/payment': {
+                'Vendor_Module/js/view/shipping-payment-mixin': true
+            }
+        }
+     }
     }
     ```
 

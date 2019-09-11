@@ -93,11 +93,11 @@ For details about adding a custom preprocessor, see [Add custom CSS preprocessor
 5. Declare the resulting CSS file in the `default_head_blocks.xml` file in the `app/design/frontend/<Vendor>/<theme/Magento_Theme/layout/` directory to enable your theme to use the generated CSS. You can create an empty `default_head_blocks.xml` file and copy the following code:
 
    ```xml
-	<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
-    	<head>
-    	    <css src="css/styles.css"/>
-    	</head>
-	</page>
+ <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+     <head>
+         <css src="css/styles.css"/>
+     </head>
+ </page>
    ```
 6. To generate CSS, run
     `gulp styles`.

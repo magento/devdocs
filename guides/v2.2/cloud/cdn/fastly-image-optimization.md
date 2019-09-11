@@ -101,11 +101,11 @@ You can review and update the default IO configuration settings for image optimi
        used to deliver a resized image. Depending on the filter selected the
        resized image can have a higher or lower number of pixels.
 
-	   -  `Lanczos3` (default)—Delivers the best quality image. It increases the ability to detect edges and linear features within an image and uses sinc resampling to provide the best possible reconstruction.
-	   -  `Lanczos2`—Uses same filter as `Lancsoz3` but with a less accurate approximation of the sinc resampling function.
-	   -  `Bicubic`—Has a natural sharpening effect when making an image smaller.
-	   -  `Bilinear`—Has a natural smoothing effect when making an image larger.
-	   -  `Nearest`—Has a natural pixelation effect when resizing pixel art.
+    -  `Lanczos3` (default)—Delivers the best quality image. It increases the ability to detect edges and linear features within an image and uses sinc resampling to provide the best possible reconstruction.
+    -  `Lanczos2`—Uses same filter as `Lancsoz3` but with a less accurate approximation of the sinc resampling function.
+    -  `Bicubic`—Has a natural sharpening effect when making an image smaller.
+    -  `Bilinear`—Has a natural smoothing effect when making an image larger.
+    -  `Nearest`—Has a natural pixelation effect when resizing pixel art.
 
 1.  After you specify the IO configuration settings for the Fastly service,
     click **Cancel** to return to the Fastly configuration settings.

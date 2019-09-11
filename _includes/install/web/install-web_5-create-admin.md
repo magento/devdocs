@@ -1,6 +1,6 @@
 ## Step 5: Create Admin Account   {#instgde-install-magento-web-step5}
 
-1.	Enter the following information:
+1. Enter the following information:
 
     |Item|Description|
     |--- |--- |
@@ -9,4 +9,4 @@
     |New Password|Enter the administrator's password.|
     |Confirm Password|Enter the password again for verification.|
 
-2.	Click **Next**.
+2. Click **Next**.

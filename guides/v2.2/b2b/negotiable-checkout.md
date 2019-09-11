@@ -135,7 +135,7 @@ In this call, you specify the shipping and billing addresses, as well as the sel
 
 ```json
 {  "addressInformation": {
-	  "shipping_address": {
+   "shipping_address": {
        "region": "California",
        "region_id": 12,
        "country_id": "US",
@@ -149,7 +149,7 @@ In this call, you specify the shipping and billing addresses, as well as the sel
       "lastname": "Doe"
   },
   "billing_address": {
-  	"region": "New York",
+   "region": "New York",
     "region_id": 43,
     "region_code": "NY",
     "country_id": "US",
@@ -540,7 +540,7 @@ This call sets payment information and the billing address for the negotiable qu
    "method": "checkmo"
   },
   "billing_address": {
-  	"region": "New York",
+   "region": "New York",
     "region_id": 43,
     "region_code": "NY",
     "country_id": "US",
@@ -577,7 +577,7 @@ This call sets payment information and the billing address for the negotiable qu
     "method": "checkmo"
   },
   "billing_address": {
-  	"region": "New York",
+   "region": "New York",
     "region_id": 43,
     "region_code": "NY",
     "country_id": "US",

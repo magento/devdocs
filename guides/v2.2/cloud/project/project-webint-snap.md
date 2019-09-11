@@ -36,8 +36,8 @@ We provide two methods for creating and managing snapshots:
 
     ```
     magento-cloud snapshot:create
-	Creating a snapshot of production
-	Waiting for the snapshot to complete...
+ Creating a snapshot of production
+ Waiting for the snapshot to complete...
     ```
 
     The following modifiers further specify how to create the snapshot:
@@ -58,12 +58,12 @@ We provide two methods for creating and managing snapshots:
     The list returns information about the snapshot status:
 
     ```
-	Finding snapshots for the environment <environment_name>
-	+---------------------------+--------------------+----------+----------+---------+
-	| Created                   | Snapshot name      | Progress | State    | Result  |
-	+---------------------------+--------------------+----------+----------+---------+
-	| 2018-04-09T14:43:39-05:00 | <snapshot_ID>.     | 100%     | complete | success |
-	+---------------------------+--------------------+----------+----------+---------+
+ Finding snapshots for the environment <environment_name>
+ +---------------------------+--------------------+----------+----------+---------+
+ | Created                   | Snapshot name      | Progress | State    | Result  |
+ +---------------------------+--------------------+----------+----------+---------+
+ | 2018-04-09T14:43:39-05:00 | <snapshot_ID>.     | 100%     | complete | success |
+ +---------------------------+--------------------+----------+----------+---------+
     ```
 
 ## Restore a snapshot {#restore-snapshot}
@@ -89,12 +89,12 @@ We provide two methods for creating and managing snapshots:
     The list returns information about the available snapshots:
 
     ```
-	Finding snapshots for the environment <environment_name>
-	+---------------------------+--------------------+----------+----------+---------+
-	| Created                   | Snapshot name      | Progress | State    | Result  |
-	+---------------------------+--------------------+----------+----------+---------+
-	| 2018-04-09T14:43:39-05:00 | <snapshot_ID>.     | 100%     | complete | success |
-	+---------------------------+--------------------+----------+----------+---------+
+ Finding snapshots for the environment <environment_name>
+ +---------------------------+--------------------+----------+----------+---------+
+ | Created                   | Snapshot name      | Progress | State    | Result  |
+ +---------------------------+--------------------+----------+----------+---------+
+ | 2018-04-09T14:43:39-05:00 | <snapshot_ID>.     | 100%     | complete | success |
+ +---------------------------+--------------------+----------+----------+---------+
     ```
 
 1.  Restore a snapshot using the snapshot ID from the list.

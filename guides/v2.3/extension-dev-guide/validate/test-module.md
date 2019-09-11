@@ -30,15 +30,15 @@ Test your component by deploying {{site.data.var.ce}} and adding the component t
 
 Before you publish your component, test installing it using the [Magento Component Manager]. Access this feature through [Web Setup Wizard] in the Magento Admin.
 
-1.	[Package your component] in a GitHub repository that is accessible by the machine on which you run the [Magento Admin](https://glossary.magento.com/magento-admin).
-1.	On that machine, create a static route from `https://repo.magento.com` to your GitHub repository.
+1. [Package your component] in a GitHub repository that is accessible by the machine on which you run the [Magento Admin](https://glossary.magento.com/magento-admin).
+1. On that machine, create a static route from `https://repo.magento.com` to your GitHub repository.
 
-	To create a static route, add a line similar to the following to your `hosts` file:
+ To create a static route, add a line similar to the following to your `hosts` file:
 
-		<IP or hostname of your GitHub repository> https://repo.magento.com
+  <IP or hostname of your GitHub repository> https://repo.magento.com
 
-1.	[Install your component], like a merchant.
-1.	Verify it installed correctly.
+1. [Install your component], like a merchant.
+1. Verify it installed correctly.
 
 ## More information
 

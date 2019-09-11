@@ -17,13 +17,13 @@ First, make sure you are using Magento's [developer mode]({{ page.baseurl }}/con
 
 For example,
 
-	curl -I -v --location-trusted 'http://192.0.2.55/magento2'
+ curl -I -v --location-trusted 'http://192.0.2.55/magento2'
 
 Important headers:
 
-	X-Magento-Cache-Control: max-age=86400, public, s-maxage=86400
-	Age: 0
-	X-Magento-Cache-Debug: MISS
+ X-Magento-Cache-Control: max-age=86400, public, s-maxage=86400
+ Age: 0
+ X-Magento-Cache-Debug: MISS
 
 {:.bs-callout .bs-callout-info}
 This value is also acceptable: `X-Magento-Cache-Debug: HIT`.
@@ -36,41 +36,41 @@ Use a browser inspector to measure page load times.
 
 For example, to use the Chrome inspector:
 
-1.	Access any cacheable Magento page in Chrome.
-2.	Right-click anywhere on the page.
-3.	From the pop-up menu, click **Inspect Element**
-4.	In the inspector pane, click the **Network** tab.
-5.	Refresh the page.
-6.	Scroll to the top of the inspector pane so you can see the [URL](https://glossary.magento.com/url) of the page you are viewing.
+1. Access any cacheable Magento page in Chrome.
+2. Right-click anywhere on the page.
+3. From the pop-up menu, click **Inspect Element**
+4. In the inspector pane, click the **Network** tab.
+5. Refresh the page.
+6. Scroll to the top of the inspector pane so you can see the [URL](https://glossary.magento.com/url) of the page you are viewing.
 
-	The following figure shows an example of loading the `magento2` index page.<br><br>
-	![Click the page you're viewing]({{ site.baseurl }}/common/images/config_varnish_inspector.png)
+ The following figure shows an example of loading the `magento2` index page.<br><br>
+ ![Click the page you're viewing]({{ site.baseurl }}/common/images/config_varnish_inspector.png)
 
-	The page load time displays next to the page URL. In this case, the load time is 5 ms. This helps confirm that Varnish cached the page.
+ The page load time displays next to the page URL. In this case, the load time is 5 ms. This helps confirm that Varnish cached the page.
 
-7.	To view HTTP response headers, click the page URL (in the Name column).
+7. To view HTTP response headers, click the page URL (in the Name column).
 
-	You can view HTTP headers which are discussed in more detail in [Verify HTTP response headers](#config-varnish-final-verify-headers).
+ You can view HTTP headers which are discussed in more detail in [Verify HTTP response headers](#config-varnish-final-verify-headers).
 
 ### Verify the Magento cache {#config-varnish-final-verify-cache}
 
 Make sure the `<magento_root>/var/page_cache` directory is empty:
 
-1.	Log in to your Magento server, or switch to, the [Magento file system owner](https://glossary.magento.com/magento-file-system-owner).
-2.	Enter the following command:
+1. Log in to your Magento server, or switch to, the [Magento file system owner](https://glossary.magento.com/magento-file-system-owner).
+2. Enter the following command:
 
-		rm -rf <magento_root>/var/page_cache/*
+  rm -rf <magento_root>/var/page_cache/*
 
-3.	Access one or more cacheable Magento pages.
-4.	Check the `var/page_cache/` directory.
+3. Access one or more cacheable Magento pages.
+4. Check the `var/page_cache/` directory.
 
-	If the directory is empty, congratulations! You successfully configured Varnish and Magento to work together!
-5.	If you cleared the `var/page_cache/` directory, restart Varnish.
+ If the directory is empty, congratulations! You successfully configured Varnish and Magento to work together!
+5. If you cleared the `var/page_cache/` directory, restart Varnish.
 
 {:.bs-callout .bs-callout-info}
 If you encounter 503 (Backend Fetch Failed) errors, see [Troubleshooting 503 (Service Unavailable) errors]({{ page.baseurl }}/config-guide/varnish/tshoot-varnish-503.html).
 
 #### Next steps
 
-*	[How Magento cache clearing works with Varnish]({{ page.baseurl }}/config-guide/varnish/use-varnish-cache.html)
-*	[How Varnish caching works]({{ page.baseurl }}/config-guide/varnish/use-varnish-cache-how.html)
+* [How Magento cache clearing works with Varnish]({{ page.baseurl }}/config-guide/varnish/use-varnish-cache.html)
+* [How Varnish caching works]({{ page.baseurl }}/config-guide/varnish/use-varnish-cache-how.html)

@@ -41,7 +41,7 @@ To install a theme manually, you must have the theme's code, either in a compres
 
 To install a theme manually:
 
-1.	Copy the theme's code under `<Magento root dir>/app/design/frontend` for a storefront theme or `<Magento root dir>/app/design/adminhtml` for an Admin theme. Verify that the top-level directory is `<VendorName>`; otherwise, the theme will not install properly.
+1. Copy the theme's code under `<Magento root dir>/app/design/frontend` for a storefront theme or `<Magento root dir>/app/design/adminhtml` for an Admin theme. Verify that the top-level directory is `<VendorName>`; otherwise, the theme will not install properly.
 
     For example:
 
@@ -54,17 +54,17 @@ To install a theme manually:
     A sample follows:
 
         ExampleTheme Magento
-3.	Add and commit files:
+3. Add and commit files:
 
-		git add -A && git commit -m "Add theme"
-4.	Push the files to your branch:
+  git add -A && git commit -m "Add theme"
+4. Push the files to your branch:
 
-		git push origin <branch name>
-5.	Wait for deployment to complete.
-6.	Log in to the Magento Admin.
-7.	Click **Content** > Design > **Themes**.
+  git push origin <branch name>
+5. Wait for deployment to complete.
+6. Log in to the Magento Admin.
+7. Click **Content** > Design > **Themes**.
 
-	The theme displays in the right pane.
+ The theme displays in the right pane.
 
 ## Install a theme using Composer {#composer}
 

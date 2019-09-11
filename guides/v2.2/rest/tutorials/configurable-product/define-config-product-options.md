@@ -59,7 +59,7 @@ The call to link a simple (child) product to the configurable product accepts on
 
 ```json
 {
-	"childSku": "MS-Champ-S"
+ "childSku": "MS-Champ-S"
 }
 ```
 

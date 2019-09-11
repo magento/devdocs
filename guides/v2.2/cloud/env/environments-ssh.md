@@ -47,18 +47,18 @@ Magento Cloud CLI commands can only be used in environments with the software in
 
 To SSH to an environment using the Magento Cloud command line:
 
-1.	Log in to the project:
+1. Log in to the project:
 
-		magento-cloud login
-2.	List the project IDs:
+  magento-cloud login
+2. List the project IDs:
 
-		magento-cloud project:list
-3.	List the environments in that project:
+  magento-cloud project:list
+3. List the environments in that project:
 
-		magento-cloud environment:list -p <project ID>
-3.	SSH to the environment:
+  magento-cloud environment:list -p <project ID>
+3. SSH to the environment:
 
-		magento-cloud ssh -p <project ID> -e <environment ID>
+  magento-cloud ssh -p <project ID> -e <environment ID>
 
 ### Locate the SSH command in the Project Web Interface {#web-interface}
 
@@ -66,18 +66,18 @@ You can locate the SSH command for all Starter environments and Pro Integration 
 
 To copy the SSH command:
 
-1.	Log in to the Project Web Interface.
-2.	Select an environment or branch to access.
-3.	Click **Access Site**.
+1. Log in to the Project Web Interface.
+2. Select an environment or branch to access.
+3. Click **Access Site**.
 
-	![Find the SSH URL using the Web Interface]({{ site.baseurl }}/common/images/cloud_project-access-starter.png)
+ ![Find the SSH URL using the Web Interface]({{ site.baseurl }}/common/images/cloud_project-access-starter.png)
 
-4.	Click the clipboard button to copy the full SSH command to the clipboard.
-5.	Enter the command in a terminal window to SSH.
+4. Click the clipboard button to copy the full SSH command to the clipboard.
+5. Enter the command in a terminal window to SSH.
 
 Example SSH command:
 
-	ssh abcdefg123abc-smith-a12b34c--mymagento@ssh.us-2.magento.cloud
+ ssh abcdefg123abc-smith-a12b34c--mymagento@ssh.us-2.magento.cloud
 
 ### SSH commands for Pro Staging and Production {#pro}
 
@@ -87,8 +87,8 @@ With your SSH keys added to those servers, you can use a terminal application, t
 
 For the URLs, see the following:
 
-*	Staging: `ssh <project ID>_stg@<project ID>.ent.magento.cloud`
-*	Production: `ssh <project ID>@<project ID>.ent.magento.cloud`
+* Staging: `ssh <project ID>_stg@<project ID>.ent.magento.cloud`
+* Production: `ssh <project ID>@<project ID>.ent.magento.cloud`
 
 For example, to log in to the Staging environment, use the following command: `ssh abcdefghij_stg@abcdefghij.ent.magento.cloud`. For production: `ssh abcdefghij@abcdefghij.ent.magento.cloud`
 

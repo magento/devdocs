@@ -97,9 +97,9 @@ interface AdapterInterface
 
 1. Install the [PHP](https://glossary.magento.com/php) Soap [extension](https://glossary.magento.com/extension).
 
-	Copy `php_soap.dll` or `php_soap.so` to your PHP extensions directory. Edit your `php.ini` file and enable the PHP Soap extension. Usually this means deleting the leading semi-colon in front of the extension. Then restart Apache.
+ Copy `php_soap.dll` or `php_soap.so` to your PHP extensions directory. Edit your `php.ini` file and enable the PHP Soap extension. Usually this means deleting the leading semi-colon in front of the extension. Then restart Apache.
 
-	`extension=php_soap.dll`
+ `extension=php_soap.dll`
 
 2. Before running the functional tests you need to clear your [cache](https://glossary.magento.com/cache).
 Now you are ready to run the tests.
@@ -108,9 +108,9 @@ Now you are ready to run the tests.
 
 1. Copy `/dev/tests/api-functional/phpunit.xml.dist` to `/dev/tests/api-functional/phpunit.xml`.
 
-	a. Specify your Magento instance URL as a value of `TESTS_BASE_URL` in `phpunit.xml`.
+ a. Specify your Magento instance URL as a value of `TESTS_BASE_URL` in `phpunit.xml`.
 
-	b. Choose the required Web API adapter, `rest` or `soap`, to be used and specify it in `TESTS_WEB_API_ADAPTER`.
+ b. Choose the required Web API adapter, `rest` or `soap`, to be used and specify it in `TESTS_WEB_API_ADAPTER`.
 
 2. Copy `/dev/tests/api-functional/config/install-config-mysql.php.dist` to `/dev/tests/api-functional/config/install-config-mysql.php`.
 

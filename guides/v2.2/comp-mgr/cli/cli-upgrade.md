@@ -126,5 +126,5 @@ To enable maintenance mode:
    1. Reset [file system ownership and permissions]({{ page.baseurl }}/install-gde/prereq/file-system-perms.html) as a user with `root` privileges.
    2. Clear the following directories and try again:
       * `<magento_root>/var/cache`
-	  * `<magento_root>/var/page_cache`
-	  * `<magento_root>/generated/code`
+   * `<magento_root>/var/page_cache`
+   * `<magento_root>/generated/code`

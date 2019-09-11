@@ -20,10 +20,10 @@ Magento Support uses these backups (also referred to as *dumps*) to analyze issu
 2.  Support determines they need to see your code or database to reproduce the issue.
 3.  You back up the code to a `.tar.gz` file.
 
-	This backup *excludes* your media files to speed up the process and to result in a much smaller file.
+ This backup *excludes* your media files to speed up the process and to result in a much smaller file.
 4.  You back up the database to a `.tar.gz` file.
 
-	By default, [sensitive data](#sens-data) is hashed when making the backup.
+ By default, [sensitive data](#sens-data) is hashed when making the backup.
 5.  You upload your backups to a file sharing service.
 6.  Support analyzes your issues without affecting your development or production environment.
 
@@ -92,7 +92,7 @@ Run the following commands in the order shown to display the paths to the applic
 
   For example, `cd /var/www/magento2`
 
-	{:.bs-callout .bs-callout-info}
+ {:.bs-callout .bs-callout-info}
   The commands run properly _only_ from your Magento installation directory.
 
 2.  `bin/magento support:utility:paths` creates `<magento_root>/var/support/Paths.php`, which lists the paths to all application used by the utility.
@@ -101,15 +101,15 @@ Run the following commands in the order shown to display the paths to the applic
 A sample follows:
 
 ```terminal
-	gzip => /bin/gzip
-	lsof => /usr/sbin/lsof
-	mysqldump => /usr/bin/mysqldump
-	nice => /bin/nice
-	php => /usr/bin/php
-	tar => /bin/tar
-	sed => /bin/sed
-	bash => /bin/bash
-	mysql => /usr/bin/mysql
+ gzip => /bin/gzip
+ lsof => /usr/sbin/lsof
+ mysqldump => /usr/bin/mysqldump
+ nice => /bin/nice
+ php => /usr/bin/php
+ tar => /bin/tar
+ sed => /bin/sed
+ bash => /bin/bash
+ mysql => /usr/bin/mysql
 ```
 
 To resolve issues with running the tools, make sure these applications are installed and are in the web server user's `$PATH` environment variable.

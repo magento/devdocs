@@ -21,11 +21,11 @@ The following figure shows an example of this issue when using the Setup Wizard.
 
 To solve this issue:
 
-1.	Log in to your Magento server as the [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/apache-user.html).
-2.	Change to your Magento installation directory.
-3.	Run the following commands in the order shown:
+1. Log in to your Magento server as the [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/apache-user.html).
+2. Change to your Magento installation directory.
+3. Run the following commands in the order shown:
 
-		composer update magento/magento-composer-installer
-		composer update
+  composer update magento/magento-composer-installer
+  composer update
 
-4.	Try your upgrade again.
+4. Try your upgrade again.

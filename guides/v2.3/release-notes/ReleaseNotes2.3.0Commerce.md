@@ -41,7 +41,7 @@ Magento Commerce 2.3.0 includes a wealth of new features as well as hundreds of 
 
 * **Inventory Management (provided by [Magento Inventory (was MSI)](https://github.com/magento/inventory))** is now available with Magento 2.3.0. It lets merchants manage inventory for all product types in a single warehouse and across complex shipping networks. Merchants can manage these locations as sources, tracking on-hand inventory quantities per product. Stocks map these sources and sales channels (websites) to provide an accurate, salable quantity as inventory pools for concurrent checkout and product reservations. Inventory Management also updates order and shipment options, giving you full control over your stock.
 
-	Magento Inventory is a Magento Community Engineering special project open to contributors. To take part and contribute, see the [Magento Inventory GitHub](https://github.com/magento/inventory) repository and [wiki](https://github.com/magento/inventory/wiki) to get started. Join us in our [Slack](https://magentocommeng.slack.com/messages/C5FU5E2HY) channel (or [self signup](https://tinyurl.com/engcom-slack)) to discuss the project.
+ Magento Inventory is a Magento Community Engineering special project open to contributors. To take part and contribute, see the [Magento Inventory GitHub](https://github.com/magento/inventory) repository and [wiki](https://github.com/magento/inventory/wiki) to get started. Join us in our [Slack](https://magentocommeng.slack.com/messages/C5FU5E2HY) channel (or [self signup](https://tinyurl.com/engcom-slack)) to discuss the project.
    * [Inventory Management overview]({{ page.baseurl }}/inventory/index.html) for developer documentation
    * [Managing Inventory](https://docs.magento.com/m2/ce/user_guide/catalog/inventory-management.html) for merchant information and instructions
 
@@ -83,7 +83,7 @@ See [Magento Security Center](https://magento.com/security/patches/magento-2.2.7
 
 #### dotmailer
 
-* 	dotmailer now supports the Magento Commerce split database mode.
+*  dotmailer now supports the Magento Commerce split database mode.
 
 #### Klarna Payments
 
@@ -103,13 +103,13 @@ See [Magento Security Center](https://magento.com/security/patches/magento-2.2.7
 
 * The Magento Shipping **Click & Collect** feature offers merchants the ability to:
 
-	* Provide Click & Collect as a shipping option to customers, enabling them to directly collect shipments from designated source locations or stores
+ * Provide Click & Collect as a shipping option to customers, enabling them to directly collect shipments from designated source locations or stores
 
-	* Configure source locations available for Click & Collect pick-ups
+ * Configure source locations available for Click & Collect pick-ups
 
-	* Updates to Shipment Form for UPS (U.S. only)
+ * Updates to Shipment Form for UPS (U.S. only)
 
-	* Customers can also select Click & Collect locations during checkout. This feature is supported by workflows and notifications for Click & Collect pick up, packing, and collection.
+ * Customers can also select Click & Collect locations during checkout. This feature is supported by workflows and notifications for Click & Collect pick up, packing, and collection.
 
 * The batch details page now displays collection point addresses, as applicable
 
@@ -1203,13 +1203,13 @@ We've fixed hundreds of issues in the Magento 2.3.0 core code.
 <!---MAGETWO-86299 -->
 * `Zend_Service` has been upgraded from v.1 to v.2, including these specific changes:
 
-	* Removed `Magento\Framework\Locale\CurrencyInterfac` from the `setService` method and changed it to `\Zend_Currency_CurrencyInterface`, which must be the provider to this function.
+ * Removed `Magento\Framework\Locale\CurrencyInterfac` from the `setService` method and changed it to `\Zend_Currency_CurrencyInterface`, which must be the provider to this function.
 
-	* Changed return type to `\Zend_Currency_CurrencyInterface`, the given instance of the service is returned by the `setService` function.
+ * Changed return type to `\Zend_Currency_CurrencyInterface`, the given instance of the service is returned by the `setService` function.
 
-	* Removed `\Zend_Service` from the `getService` method and changed it to `\Zend_Currency_CurrencyInterface`.
+ * Removed `\Zend_Service` from the `getService` method and changed it to `\Zend_Currency_CurrencyInterface`.
 
-	* Added `@deprecated` tags to both methods and added `@see` annotation to the methods. Referenced the corresponding interface `\Magento\Directory\Model\Currency\Import\ImportInterface`. *Fix submitted by Danny Verkade in pull request [12957](https://github.com/magento/magento2/pull/12957)*. [GitHub-9243](https://github.com/magento/magento2/issues/9243)
+ * Added `@deprecated` tags to both methods and added `@see` annotation to the methods. Referenced the corresponding interface `\Magento\Directory\Model\Currency\Import\ImportInterface`. *Fix submitted by Danny Verkade in pull request [12957](https://github.com/magento/magento2/pull/12957)*. [GitHub-9243](https://github.com/magento/magento2/issues/9243)
 
 <!---MAGETWO-85063 -->
 * The ReleaseNotification module has been added to support the display of new release highlights.
@@ -1954,9 +1954,9 @@ We've fixed hundreds of issues in the Magento 2.3.0 core code.
 <!--- MAGETWO-87449-->
 *  The message that Magento displays under the following circumstances has been improved:
 
-	* You download a database from a staging environment that has code deployed to it that upgrades the schema version, or
+ * You download a database from a staging environment that has code deployed to it that upgrades the schema version, or
 
-	* You are on the master branch in your local environment, which is behind the database. [GitHub-9008](https://github.com/magento/magento2/issues/9008)
+ * You are on the master branch in your local environment, which is behind the database. [GitHub-9008](https://github.com/magento/magento2/issues/9008)
 
 <!--- MAGETWO-87313-->
 *  The exception message in `findAccessorMethodName()` of `Magento\Framework\Reflection\NameFinder` has been improved. [GitHub-9764](https://github.com/magento/magento2/issues/9764)

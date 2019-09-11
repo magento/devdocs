@@ -26,9 +26,9 @@ To restore the configuration files:
     ```
 
     ```
-	The list of backup files:
-	app/etc/env.php
-	app/etc/config.php
+ The list of backup files:
+ app/etc/env.php
+ app/etc/config.php
     ```
 
 1.  Restore the configuration files.

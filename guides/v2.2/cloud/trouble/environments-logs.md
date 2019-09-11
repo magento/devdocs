@@ -18,8 +18,8 @@ You may need to SSH into the environments to locate and view logs. To locate the
 * Pro:
 
   * Integration: Copy the link for the SSH command per environment through the Project Web Interface
-  *	Staging: `ssh -A <project ID>_stg@<project ID>.ent.magento.cloud`
-  *	Production: `ssh -A <project ID>@<project ID>.ent.magento.cloud`
+  * Staging: `ssh -A <project ID>_stg@<project ID>.ent.magento.cloud`
+  * Production: `ssh -A <project ID>@<project ID>.ent.magento.cloud`
 
 {:.bs-callout .bs-callout-tip}
 You can also [set up log-based Slack and email notifications]({{ page.baseurl }}/cloud/env/setup-notifications.html).
@@ -38,9 +38,9 @@ For 2.1.9 and later and 2.2.X, we include a `var/log/cloud.log` file inside the 
 
 Logs from the deploy hook are located on the server in the following locations:
 
-*	Integration: `/var/log/deploy.log`
-*	Staging: `/var/log/platform/<project ID>_stg/deploy.log`
-*	Production: `/var/log/platform/<project ID>/deploy.log`
+* Integration: `/var/log/deploy.log`
+* Staging: `/var/log/platform/<project ID>_stg/deploy.log`
+* Production: `/var/log/platform/<project ID>/deploy.log`
 
 The value of `<project ID>` depends on the project ID and whether the environment is Staging or Production. For example, with a project ID of `yw1unoukjcawe`, the Staging environment user is `yw1unoukjcawe_stg` and the Production environment user is `yw1unoukjcawe`.
 

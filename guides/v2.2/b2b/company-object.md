@@ -130,8 +130,8 @@ The following call changes the company status to Rejected (`2`) and explains why
 ```json
 {
   "company": {
-  	"id": 2,
-  	"company_name": "Test company",
+   "id": 2,
+   "company_name": "Test company",
     "company_email": "newemail@example.com",
     "customer_group_id": 1,
         "street":[

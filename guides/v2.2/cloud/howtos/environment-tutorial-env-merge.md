@@ -27,25 +27,25 @@ To get started:
 
 To merge an environment:
 
-1.	Add a file named `test.txt` to the environment root directory.
+1. Add a file named `test.txt` to the environment root directory.
 
-	You can put whatever contents you want; for example, the number `1`
-7.	Save your changes and exit the text editor.
-8.	Add, commit, and push your change to the environment:
+ You can put whatever contents you want; for example, the number `1`
+7. Save your changes and exit the text editor.
+8. Add, commit, and push your change to the environment:
 
-		git add -A
-		git commit -m "<commit message>"
-		git push origin <branch name>
+  git add -A
+  git commit -m "<commit message>"
+  git push origin <branch name>
 
-	Where `<branch name>` is the Git name of the environment (that is, the environment ID).
+ Where `<branch name>` is the Git name of the environment (that is, the environment ID).
 
-9.	Merge with the parent environment:
+9. Merge with the parent environment:
 
-		magento-cloud environment:merge <environment ID>
+  magento-cloud environment:merge <environment ID>
 
-	For example,
+ For example,
 
-		magento-cloud environment:merge master
+  magento-cloud environment:merge master
 
 ## Optionally delete the environment {#tut-env-delete}
 
@@ -58,44 +58,44 @@ You must be a [project administrator]({{ page.baseurl }}/cloud/project/user-admi
 
 This section discusses how to optionally delete an environment in the following ways:
 
-*	Make the environment *inactive* but let it remain in the project
-*	Delete the environment entirely and remove it from the project
+* Make the environment *inactive* but let it remain in the project
+* Delete the environment entirely and remove it from the project
 
 To delete a environment:
 
-1.	Log in to your project if you haven't already done so.
-2.	Fetch branches from the origin server.
+1. Log in to your project if you haven't already done so.
+2. Fetch branches from the origin server.
 
-		git fetch origin
-2.	To delete the branch entirely (removing it from the project), check out the branch.
+  git fetch origin
+2. To delete the branch entirely (removing it from the project), check out the branch.
 
-		magento-cloud environment:checkout <environment ID>
-2.	Delete the environment:
+  magento-cloud environment:checkout <environment ID>
+2. Delete the environment:
 
-		magento-cloud environment:delete <environment ID>
+  magento-cloud environment:delete <environment ID>
 
-	For example, to delete the `deleteme` environment:
+ For example, to delete the `deleteme` environment:
 
-		magento-cloud environment:delete deleteme
+  magento-cloud environment:delete deleteme
 
-	To delete more than one environment:
+ To delete more than one environment:
 
-		magento-cloud environment:delete <environment ID> <environmentID>
+  magento-cloud environment:delete <environment ID> <environmentID>
 
-	For additional options, see the command-line help:
+ For additional options, see the command-line help:
 
-		magento-cloud environment:delete --help
+  magento-cloud environment:delete --help
 
-3.	Answer the prompt:
+3. Answer the prompt:
 
-		Are you sure you want to delete the remote Git branch deleteme? [Y/n]
+  Are you sure you want to delete the remote Git branch deleteme? [Y/n]
 
-	A `Y` answer makes the branch inactive but leaves it in the project.
-5.	Answer the prompt:
+ A `Y` answer makes the branch inactive but leaves it in the project.
+5. Answer the prompt:
 
-		Delete the remote Git branch too? [Y/n]
+  Delete the remote Git branch too? [Y/n]
 
-	A `Y` answer completely removes the branch from the project.
+ A `Y` answer completely removes the branch from the project.
 
 Wait for the environment to delete.
 

@@ -99,13 +99,13 @@ Add the custom VCL snippet to your Fastly service configuration from the Magento
 
     -  **Type**—`recv`
 
-	-  **Priority**—`5`
+ -  **Priority**—`5`
 
     -  Add the **VCL** snippet content:
 
-	   ```
-	   if ((req.url ~ "^/admin") && !(client.ip ~ allowlist) && !req.http.Fastly-FF) { error 403 "Forbidden";
-	   ```
+    ```
+    if ((req.url ~ "^/admin") && !(client.ip ~ allowlist) && !req.http.Fastly-FF) { error 403 "Forbidden";
+    ```
 
 1.  Click **Create** to generate the VCL snippet file with the name pattern `type_priority_name.vcl`, for example `recv_5_allowlist.vcl`
 

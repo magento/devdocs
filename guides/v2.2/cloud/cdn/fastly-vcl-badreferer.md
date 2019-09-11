@@ -28,7 +28,7 @@ Edge Dictionaries create key-value pairs accessible to VCL functions during VCL 
 
 {% include cloud/admin-ui-login-step.md %}
 
-1.	Click **Stores** > **Settings** > **Configuration** > **Advanced** > **System**.
+1. Click **Stores** > **Settings** > **Configuration** > **Advanced** > **System**.
 
 1.  Expand **Full Page Cache** > **Fastly Configuration** > **Edge dictionaries**.
 
@@ -94,7 +94,7 @@ Add the custom VCL snippet to your Fastly service configuration from the Magento
 
 {% include cloud/admin-ui-login-step.md %}
 
-1.	Click **Stores** > **Settings** > **Configuration** > **Advanced** > **System**.
+1. Click **Stores** > **Settings** > **Configuration** > **Advanced** > **System**.
 
 1.  Expand **Full Page Cache** > **Fastly Configuration** > **Custom VCL Snippets**.
 

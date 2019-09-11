@@ -37,9 +37,9 @@ You can use the default Magento renderer for reference: [app/code/Magento/Develo
 You can view the default Magento processors for reference: [lib/internal/Magento/Framework/Css/PreProcessor/Instruction]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Css/PreProcessor/Instruction).
 
 2. In `<your_module_dir>/etc/di.xml`, declare the following:
-	* your custom adapter
-	* your processor (if relevant)
-	* the renderer for the client-side compilation (if relevant)
+ * your custom adapter
+ * your processor (if relevant)
+ * the renderer for the client-side compilation (if relevant)
 
 The content of your `di.xml` will be similar to the following:
 
