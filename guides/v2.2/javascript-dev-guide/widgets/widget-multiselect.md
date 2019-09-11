@@ -192,7 +192,7 @@ This method returns `true` if multiple selection items are loaded, and it return
 
 ### `clearMultiselectOptions()`
 
-The method clears all multi-select items.
+The method removes all multi-select items.
 
 Code example:
 
