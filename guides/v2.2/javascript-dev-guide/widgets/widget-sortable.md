@@ -5,7 +5,7 @@ contributor_name: Atwix
 contributor_link: https://www.atwix.com/
 ---
 
-The Sortable [widget](https://glossary.magento.com/widget/) is a customized jQuery [Sortable Widget] that allows to sort sortable items with *Up* and *Down* buttons.
+The Sortable [widget](https://glossary.magento.com/widget/) is a customized jQuery [Sortable Widget] that allows sorting sortable items with *Up* and *Down* buttons.
 
 The Sortable widget can be used only on the [adminhtml](https://glossary.magento.com/adminhtml) area.
 
@@ -23,7 +23,7 @@ $('#sortable').sortable();
 
 Where:
 
-- `#sortable` is the selector of the block element for which Sortable are initialized.
+- `#sortable` is the selector of the block element for which Sortable is initialized.
 
 The following example shows a PHTML file using the script:
 
