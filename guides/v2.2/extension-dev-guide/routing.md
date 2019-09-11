@@ -191,7 +191,7 @@ Declaring the layout handler for our new route:
 ```xml
 <?xml version="1.0"?>
 
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceBlock name="page.main.title">
