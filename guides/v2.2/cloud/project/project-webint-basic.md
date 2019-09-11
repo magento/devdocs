@@ -80,6 +80,9 @@ One of these environment variables enables or disables outgoing emails for the e
 
 Configure your email notifications, services, and more as needed through the Magento Admin and test emails.
 
+{: .bs-callout-warning }
+You may receive an [Unable to send mail: Unknown error]({{ site.baseurl }}/cloud/trouble/unable-send-email.html) message if the **Outgoing emails** option is set to Off.
+
 ## Set environment and project variables {#project-conf-env-var}
 
 You can set project wide and environment specific variables through the Project Web Interface. Variables can be either text or JSON format. For more information, see [Environment variables]({{ page.baseurl }}/cloud/env/variables-intro.html).
@@ -104,7 +107,7 @@ To set environment specific variables in the Project Web Interface:
 1. As needed, select options for **JSON value**, **Visible during build**, and **Visible during runtime**. If you do not have Super User access, you may only see the JSON value option.
 1. Click **Add Variable**. After you add the variable, the environment will deploy. Wait until deployment completes before more edits.
 
-{:.bs-callout .bs-callout-warning}
+{: .bs-callout-warning }
 If you are attempting to [override Magento configuration settings]({{ site.baseurl }}/guides/v2.2/config-guide/prod/config-reference-var-name.html), you must prepend the variable name with `env:`. For example:
 ![Environment variable example]({{ site.baseurl }}/common/images/cloud_env_var_example.png)
 
