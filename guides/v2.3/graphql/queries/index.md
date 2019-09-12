@@ -39,7 +39,7 @@ In the preceding example, `myCartQuery` identifies your implementation of the `c
 
 Now let's fully define a query:
 
-```text
+```graphql
 query myCartQuery{
   cart(cart_id: "1WxKm8WUm3uFKXLlHXezew5WREfVRPAn") {
     items {
@@ -104,7 +104,7 @@ Specifying variables in a query can help increase code re-use. Consider the foll
 
 The following example declares the `$cart_id` variable. It is referenced in the `input` statement.
 
-```text
+```graphql
 query myCartQueryWithVariable($cart_id: String!) {
   cart(cart_id: $cart_id) {
     items {
