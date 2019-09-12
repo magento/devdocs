@@ -70,8 +70,6 @@ After the upgrade completes:
 		setup:upgrade {"command":"setup:upgrade"} successfully: Source
 		class "\Cybersource" for "CybersourceLogger" generation does not exist.
 
-	For more information, see [Error upgrading from CE to EE].
-
 ## Continue your upgrade {#ce-ee-continue}
 
 From here, your upgrade is the same as any other upgrade. Continue with [Step 1. Select versions to upgrade].
@@ -82,7 +80,6 @@ From here, your upgrade is the same as any other upgrade. Continue with [Step 1.
 [Magento Support]: http://support.magentocommerce.com
 [authentication keys]: {{ page.baseurl }}/install-gde/prereq/connect-auth.html
 [troubleshooting]: {{ page.baseurl }}/comp-mgr/trouble/cman/were-sorry.html
-[Error upgrading from CE to EE]: {{ page.baseurl }}/comp-mgr/trouble/cman/ce-ee-upgrade.html
 [Step 1. Select versions to upgrade]: {{ page.baseurl }}/comp-mgr/upgrader/upgrade-main-pg.html
 
 <!-- Image Definitions -->
