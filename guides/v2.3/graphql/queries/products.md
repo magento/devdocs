@@ -23,7 +23,7 @@ Each query attribute is defined below:
 
 Attribute |  Description
 --- | ---
-`search` | Performs a full-text search using the specified key words. This attribute is optional.
+`search` | Performs a full-text search using the specified keywords. This attribute is optional.
 `filter` | Identifies which attributes to search for and return. This attribute is required. See [ProductFilterInput](#ProductFilterInput) for more information.
 `pageSize` | Specifies the maximum number of results to return at once. The default value is 20.
 `currentPage` | Specifies which page of results to return. The default value is 1.
