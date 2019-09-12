@@ -105,6 +105,72 @@ The following sample is an example of the configuration for a simple modal windo
 </button>
 ```
 
+### Extending the component
+
+The following sample is an example of the configuration for a notification modal window, used for Backend notifications:
+
+```xml
+<modal name="test_notification">
+    <settings>
+        <onCancel>actionCancel</onCancel>
+        <state>true</state>
+        <options>
+            <option name="modalClass" xsi:type="string">release-notification-modal</option>
+            <option name="title" xsi:type="string" translate="true">What's new?</option>
+            <option name="type" xsi:type="string">popup</option>
+            <option name="responsive" xsi:type="boolean">true</option>
+            <option name="innerScroll" xsi:type="boolean">true</option>
+            <option name="autoOpen" xsi:type="boolean">true</option>
+        </options>
+    </settings>
+    <fieldset name="notification_fieldset">
+        <settings>
+            <label/>
+        </settings>
+        <container name="notification_text" template="ui/form/components/complex">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="label" xsi:type="string"/>
+                    <item name="additionalClasses" xsi:type="string">release-notification-text</item>
+                    <item name="text" xsi:type="string" translate="true"><![CDATA[
+                <p>We’ll try to show it again the next time you refresh the <b>page</b>.</p>]]></item>
+                </item>
+            </argument>
+        </container>
+        <container name="notification_buttons">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="label" xsi:type="string"/>
+                </item>
+            </argument>
+            <button name="notification_close_button" displayArea="actions-secondary">
+                <argument name="data" xsi:type="array">
+                    <item name="config" xsi:type="array">
+                        <item name="buttonClasses" xsi:type="string">release-notification-button-next</item>
+                        <item name="actions" xsi:type="array">
+                            <item name="0" xsi:type="array">
+                                <item name="targetName" xsi:type="string">ns = ${ $.ns }, index = notification_modal_1</item>
+                                <item name="actionName" xsi:type="string">closeModal</item>
+                            </item>
+                        </item>
+                    </item>
+                </argument>
+                <settings>
+                    <displayAsLink>true</displayAsLink>
+                    <title><![CDATA[Close]]></title>
+                </settings>
+            </button>
+        </container>
+    </fieldset>
+</modal>
+```
+
+#### Result
+
+The notification modal popups on page load.
+
+![Notification Modal]({{ site.baseurl }}/common/images/ui_comps/notification_modal_result.png)
+
 ## Source files
 
 Extends [`uiCollection`]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uicollection_concept.html):
