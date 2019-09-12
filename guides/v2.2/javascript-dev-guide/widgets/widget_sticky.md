@@ -61,7 +61,6 @@ position of the stuck element. Default uses document `body`.
 
 **Default value**: `''`
 
-
 ### `spacingTop` {#s_option_spacing_top}
 
 Spacing in pixels above the stuck element.
@@ -83,7 +82,6 @@ Allows postponing sticking, until element will go out of the screen for the numb
 - Function, that will return a Number
 
 **Default value**: `0`
-
 
 ### `stickyClass` {#s_option_sticky_class}
 
