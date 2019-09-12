@@ -29,7 +29,7 @@ To use a custom implementation of an existing Magento JS component:
 Place the custom component source file in one of the following
 locations:
 
-- Your theme JS files: `/web/js` or `/_/web/js`
+- Your theme JS files: `/web/js`
 - Your module view JS files: `<module_dir>/view/frontend/web/js`
 
 Create a RequireJS configuration file `requirejs-config.js`, having
