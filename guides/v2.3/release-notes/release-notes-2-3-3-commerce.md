@@ -35,7 +35,7 @@ This release contains the following major PSD-related changes:
 
 * Authorize.net now provides the ability, through the `cardholderAuthentication` request field, to make 3D Secure verification through third-party services such as CardinalCommerce. Starting with this release, **Authorize.net Accept.js integration will support 3DS 2.0 through CardinalCommerce**.
 
-<!--- MAGEDTWO-99739 -->
+<!--- MAGETWO-99739 -->
 * The Cybersource and eWay payment modules have been deprecated in this release to comply with PSD2 SCA regulation, which takes effect on September 14, 2019. Use the official Marketplace extensions for these features instead.
 
 #### Security enhancements and fixes to core code
@@ -82,6 +82,14 @@ This release contains  enhancements to core quality, which improve the quality o
 
 <!--- MC-15298-->
 * As part of our efforts to better understand the Admin user experience and improve product design, Magento is introducing the tracking of user actions and events on the Admin. After you upgrade to Magento 2.3.3, the first administrative user who logs into the Admin will be prompted to **Allow admin usage data collection**If the user agrees to data collection, the data captured from Admin activity is sent to Adobe Analytics for analysis and reporting. Typical events include page views, save actions, and changes to Magento mode. See Store Admin for more information.
+  
+### Page Builder 
+
+Page Builder enhancements for this release include:
+
+* Upgrade to TinyMCE v4.9.5, which improves the experience of editing inline. 
+* Admin users can now explicitly define product order.
+* Managing HTML content has been made easier for non-technical users.
 
 ### Inventory Management enhancements
 
@@ -101,26 +109,56 @@ See [Release notes](https://devdocs.magento.com/guides/v2.3/graphql/release-note
 
 ### Google Shopping ads Channel
 
-The Google Shopping ads Channel Marketplace extension is now available as a bundled extension[Google Shopping ads Channel Release Notes](https://devdocs.magento.com/extensions/google-shopping-ads/release-notes/)  describes all changes to this feature for Magento 2.3.x.
+The Google Shopping ads Channel Marketplace extension is now available as a bundled extension. [Google Shopping ads Channel Release Notes](https://devdocs.magento.com/extensions/google-shopping-ads/release-notes/)  describes all changes to this feature for Magento 2.3.x.
+
+### Magento Shipping
+
+This release of Magento Shipping includes:
+
+* Improvements to batch-order processing, carrier integration, shipping method preview in the shipping portal, checkout
+
+* Support for bundled products and prepackage options.
+  
+See [Magento Shipping](https://docs.magento.com/m2/ee/user_guide/shipping/magento-shipping.html).
 
 ### Vendor-developed extension enhancements
 
-This release of Magento includes extensions developed by third-party vendors. It introduces a new vendor-supplied extension–Yotpot.
+This release of Magento includes extensions developed by third-party vendors. It introduces a new vendor-supplied extension –Yotpot.
 
 #### Amazon Pay
 
 Amazon Pay is now compliant with the PSD2 directive for UK and Germany. See [Payment services (PSD 2) - Directive (EU)](https://ec.europa.eu/info/law/payment-services-psd-2-directive-eu-2015-2366_en) for an introduction to PSD2.
 
+
+#### dotdigital
+
+* Improved product catalog sync for bundled and custom products 
+
+*Enhanced communications for abandoned cart 
+
 #### Klarna
+
+* Merchants can now disable the sending of customer information.
+
+* New options now support B2B transactions in select markets.
+ 
+* PayBright, a Canadian payment coverage option, is now supported.
+  
+See [Klarna](https://docs.magento.com/m2/ee/user_guide/payment/klarna.html).
 
 #### Vertex
 
 * Added support for Vertex Flexible Fields. Vertex flexible fields allow merchants to send additional information to the tax engine, which  can then be used in Tax Assist Rules to refine a product’s applicable tax.
 
-* Several attributes are provided by default, including administrator-created Customer attributes, Address attributes, and Product attributes. Documentation is provided in the module’s README file on how integrators can add additional options to these attributes
+* Several attributes are provided by default, including administrator-created Customer attributes, Address attributes, and Product attributes. Documentation is provided in the module’s README file on how integrators can add additional options to these attributes.
 
 <!--- BUNDLE-2151-->
 * You can now add custom fields to the Vertex connector.
+  
+#### Yotpo
+
+The [Yotpo](https://www.yotpo.com) user-generated content management platform is now integrated with the Magento Admin. Yotpo provides tools for merchants to gather, curate, and manage user-generated content such as product reviews. For more information on configuring and launching Yotpo from the Admin, see Yotpo Product Reviews.  
+
 
 ## Fixed issues
 
@@ -763,6 +801,12 @@ We have fixed hundreds of issues in the Magento 2.3.3 core code.
 <!--- ENGCOM-5300-->
 * The Recently Viewed feature now accurately lists the products and category paths that the user has recently visited. Previously, this list was inaccurate when the **Use Categories Path for Product URLs**  setting was disabled. *Fix submitted by Atish Goswami in pull request [22650](https://github.com/magento/magento2/pull/22650)*. [GitHub-13227](https://github.com/magento/magento2/issues/13227)
 
+<!--- MC-16233-->
+* The **Be the First to Review Product** link now directs the user to the product review form at the bottom of the product page as expected in deployments that include PageBuilder.
+
+<!--- MC-19684-->
+* You can now set the **minute** values for Analytics data collection (**Store** > **Configuration** > **General** > **Advanced Reporting**). Previously, due to an earlier fix that has now been reverted (see [GitHub-8258](https://github.com/magento/magento2/issues/8258)), validation failed when you set a value that exceeded 24. 
+  
 ### Gift cards accounts EE ONLY
 
 <!--- MC-17124-->
@@ -885,14 +929,6 @@ We have fixed hundreds of issues in the Magento 2.3.3 core code.
 
 <!--- ENGCOM-5398-->
 * Magento now displays an informative error message when you try to update the product quantity and shipping address for an order when the product quantity field is empty. *Fix submitted by Shankar Konar in pull request [23360](https://github.com/magento/magento2/pull/23360)*.
-
-### Page Builder
-
-<!--- MC-16233-->
-* The **Be the First to Review Product** link now directs the user to the product review form at the bottom of the product page as expected in deployments that include PageBuilder.
-
-<!--- MC-18009-->
-* Disabled products now appear in the list of available products in the search results of the Page Builder link attribute–on buttons, images, banners, sliders. Previously, these products did not appear in search results, which prevented users from creating content that went live with a schedule update.
 
 ### Payment methods
 
@@ -1085,6 +1121,9 @@ EE ONLY
 <!--- MAGETWO-99669-->
 * You can now use Elasticsearch to run a query that includes the `<` character. Previously, when you used this symbol in a query, Magento threw this error:
 `{"0":"SQLSTATE[42000]: Syntax error or access violation: 1064 syntax error, unexpected $end, query was: SELECT`.
+
+<!--- MC-18009-->
+* Disabled products now appear in the list of available products in the search results of the Page Builder link attribute–on buttons, images, banners, sliders. Previously, these products did not appear in search results, which prevented users from creating content that went live with a schedule update.
 
 ### Shipping
 
