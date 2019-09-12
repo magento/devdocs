@@ -5,7 +5,7 @@ title: sendEmailToFriend mutation
 
 If the **Email to a Friend** feature is enabled, you can use the `sendEmailToFriend` mutation to allow Magento to send a message on behalf of a customer to one or more email addresses.
 
-To enable this feature, select **Stores** > **Configuration** > **Catalog** > **Email to a friend**.
+The **Stores** > **Configuration** > **Catalog** > **Email to a friend** > **Enabled** field must be set to **Yes** to implement this mutation.
 
 ## Syntax
 
@@ -13,7 +13,7 @@ To enable this feature, select **Stores** > **Configuration** > **Catalog** > **
 
 ## Example usage
 
-The following example 
+The following example sends a message to two friends.
 
 **Request**
 
@@ -25,7 +25,7 @@ mutation {
       sender: {
         name: "Veronica Cost"
         email: "roni_cost@example.com"
-        message: "Lorem Ipsum"
+        message: "Sarah needs this! http://luma.example.com/savvy-shoulder-tote.html"
       }
       recipients: [
         { name: "Amie Franklin", email: "afranklin@example.com" }
