@@ -42,10 +42,7 @@ This module is available for Magento version 2.2.x only.
           max_messages: 1000
     ```
 
-    See the following for more information about configuring consumers:
-
-    -  [Message queues]({{page.baseurl}}/cloud/trouble/message-queues.html)
-    -  [CRON_CONSUMERS_RUNNER environment variable]({{page.baseurl}}/cloud/env/variables-deploy.html#cron_consumers_runner)
+    See [CRON_CONSUMERS_RUNNER environment variable]({{page.baseurl}}/cloud/env/variables-deploy.html#cron_consumers_runner) for more information about configuring consumers:
 
 1.  Add, commit, and push code changes.
 
