@@ -48,5 +48,5 @@ A simple [Magento Admin](https://glossary.magento.com/magento-admin) [URL](https
 [Secure cron.php]: {{page.baseurl}}/config-guide/secy/secy-cron.html
 [Overview of ownership and permissions]: {{page.baseurl}}/install-gde/prereq/file-sys-perms-over.html
 [umask]: http://www.cyberciti.biz/tips/understanding-linux-unix-umask-value-usage.html
-[Security measures against XSS attacks]: {{page.baseurl}}/frontend-dev-guide/templates/template-security.html
+[Security measures against XSS attacks]: {{page.baseurl}}/extension-dev-guide/xss-protection.html
 [Configuration Guide]: {{page.baseurl}}/config-guide/bk-config-guide.html
