@@ -23,7 +23,7 @@ Where:
 
 - `#multiselect` is the selector of the select element for which Multiselect is initialized.
 
-Phtml template file examples using script:
+The following example shows a PHTML file using the script:
 
 ```html
 <script>
