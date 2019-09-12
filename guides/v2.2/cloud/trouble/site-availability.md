@@ -45,4 +45,4 @@ Modify the deploy phase using the `SCD_THREADS` environment variable and redeplo
 
         magento-cloud variable:set SCD_THREADS '1' -e <environment>
 
-Refer to [Manage variables]({{ page.baseurl }}/cloud/env/variables-intro.html) and [Redis and static-content deployment]({{ page.baseurl }}/cloud/trouble/redis-troubleshooting.html#static-content) for more information.
+Refer to [Manage variables]({{ page.baseurl }}/cloud/env/variables-intro.html) for more information.
