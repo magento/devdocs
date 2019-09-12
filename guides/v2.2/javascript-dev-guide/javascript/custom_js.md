@@ -20,7 +20,8 @@ To add a custom JS component (module), take the following steps:
 
 2. Optionally, in the corresponding [module](https://glossary.magento.com/module) or theme, create a `requirejs-config.js` configuration file, if it does not yet exist there and set path for your resource. The RequireJS configuration file can be placed in one of the following locations:
 
-- Your theme: `<theme_dir>/<module_dir>`
+- Your theme: `<theme_dir>`
+- Module within your theme: `<theme_dir>/<module_dir>`
 - Your module (depending on the needed area - **base**, **frontend**, **adminhtml**): `<module_dir>/view/<area>`
 
 ## Replace a default JS component {#js_replace}
