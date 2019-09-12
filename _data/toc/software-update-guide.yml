@@ -174,10 +174,6 @@ pages:
         - label: Missing .gitignore files
           url: /comp-mgr/trouble/cman/gitignore.html
 
-        - label: Troubleshoot upgrade issues
-          include_versions: ["2.1", "2.2", "2.3"]
-          url: /comp-mgr/trouble/cman/upgrade_51431.html
-
         - label: Troubleshoot cron
           url: /comp-mgr/trouble/cman/cron.html
 
