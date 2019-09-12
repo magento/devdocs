@@ -106,6 +106,9 @@ pages:
         - label: RowBuilder widget
           url: /javascript-dev-guide/widgets/widget-row-builder.html
 
+        - label: Sticky widget
+          url: /javascript-dev-guide/widgets/widget_sticky.html
+
         - label: Tabs widget
           url: /javascript-dev-guide/widgets/widget_tabs.html
 
