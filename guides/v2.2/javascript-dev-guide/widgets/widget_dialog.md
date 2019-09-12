@@ -4,7 +4,6 @@ subgroup: 3_Widgets
 title: DropdownDialog widget
 ---
 
-## Overview
 Magento dropdownDialog [widget](https://glossary.magento.com/widget) is a customization of the standard [jQuery UI Dialog](http://api.jqueryui.com/dialog/){:target="_blank"}. As extra functionality it implements the following:
 
 -   triggering [event](https://glossary.magento.com/event) for opening
