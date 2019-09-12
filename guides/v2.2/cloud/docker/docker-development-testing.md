@@ -20,7 +20,7 @@ Before you run functional tests, you must prepare your environment with the foll
     ```bash
     git clone git@github.com:magento/ece-tools.git
     ```
-    
+
 1.  Stop all services that use the following ports:
 
     -  `80`—varnish
