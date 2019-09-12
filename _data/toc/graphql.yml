@@ -184,6 +184,9 @@ pages:
         - label: revokeCustomerToken mutation
           url: /graphql/mutations/revoke-customer-token.html
 
+        - label: sendEmailToFriend mutation
+          url: /graphql/mutations/send-email-to-friend.html
+
         - label: setBillingAddressesOnCart mutation
           url: /graphql/mutations/set-billing-address.html
 
