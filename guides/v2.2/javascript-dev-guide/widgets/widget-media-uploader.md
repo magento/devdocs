@@ -44,23 +44,32 @@ Phtml template file examples using script:
 
 The MediaUploader widget has the following options:
 
-- [maxFileSize](#maxfilesize)
-- [maxWidth](#maxwidth)
-- [maxHeight](#maxheight)
-- [isResizeEnabled](#isresizeenabled)
 - [disabled](#disabled)
+- [isResizeEnabled](#isresizeenabled)
+- [maxFileSize](#maxfilesize)
+- [maxHeight](#maxheight)
+- [maxWidth](#maxwidth)
+
+### `disabled`
+
+Specifies if the uploader field should be disabled.
+
+**Type**: Boolean
+
+**Default value**: `undefined`
+
+### `isResizeEnabled`
+
+Specifies if the [maxWidth](#maxwidth) and [maxHeight](#maxheight) are passing to the file uploader.
+If resizing is disabled, the uploaded image should not be scaled even if the maximum height or width is exceeded.
+
+**Type**: Boolean
+
+**Default value**: `undefined`
 
 ### `maxFileSize`
 
 The maximum file size of an uploaded media file.
-
-**Type**: Integer
-
-**Default value**: `undefined`
-
-### `maxWidth`
-
-The maximum width setting allows you to scale the uploaded image by the width if the maximum width is exceeded.
 
 **Type**: Integer
 
@@ -74,20 +83,11 @@ The maximum height setting allows you to scale the uploaded image by the width i
 
 **Default value**: `undefined`
 
-### `isResizeEnabled`
+### `maxWidth`
 
-Specifies if the [maxWidth](#maxwidth) and [maxHeight](#maxheight) are passing to the file uploader.
-If resizing is disabled, the uploaded image should not be scaled even if the maximum height or width is exceeded.
+The maximum width setting allows you to scale the uploaded image by the width if the maximum width is exceeded.
 
-**Type**: Boolean
-
-**Default value**: `undefined`
-
-### `disabled`
-
-Specifies if the uploader field should be disabled.
-
-**Type**: Boolean
+**Type**: Integer
 
 **Default value**: `undefined`
 
