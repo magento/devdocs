@@ -15,7 +15,7 @@ For testing the Magento application, see the [Magento Functional Testing Framewo
 
 Before you run functional tests, you must prepare your environment with the following steps.
 
-1.  Clone the ece-tools GitHub repository:
+1.  Clone the {{site.data.var.ct}} GitHub repository.
 
     ```bash
     git clone git@github.com:magento/ece-tools.git
