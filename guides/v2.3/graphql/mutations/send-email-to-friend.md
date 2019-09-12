@@ -5,6 +5,7 @@ title: sendEmailToFriend mutation
 
 If the **Email to a Friend** feature is enabled, you can use the `sendEmailToFriend` mutation to allow Magento to send a message on behalf of a customer to one or more email addresses.
 
+{:.bs-callout-info}
 The **Stores** > **Configuration** > **Catalog** > **Email to a friend** > **Enabled** field must be set to **Yes** to implement this mutation.
 
 ## Syntax
