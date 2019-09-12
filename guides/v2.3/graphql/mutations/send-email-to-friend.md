@@ -21,7 +21,7 @@ The following example sends a message to two friends.
 mutation {
   sendEmailToFriend(
     input: {
-      product_id: 3
+      product_id: 10
       sender: {
         name: "Veronica Cost"
         email: "roni_cost@example.com"
