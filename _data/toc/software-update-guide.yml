@@ -203,8 +203,5 @@ pages:
         - label: Troubleshoot backups
           url: /comp-mgr/trouble/cman/tshoot_backup.html
 
-        - label: Error upgrading from Magento Open Source to Magento Commerce
-          url: /comp-mgr/trouble/cman/ce-ee-upgrade.html
-
         - label: magento/theme-doc-blank failure
           url: /comp-mgr/trouble/cman/doc.html
