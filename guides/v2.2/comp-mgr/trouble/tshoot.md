@@ -21,7 +21,4 @@ The following topics discuss Component Manager and System Upgrade errors and sug
 ### System Upgrade only
 
 *	["Sorry, we can't take that action right now"]({{ page.baseurl }}/comp-mgr/trouble/cman/were-sorry.html)
-*	[Missing .gitignore files]({{ page.baseurl }}/comp-mgr/trouble/cman/gitignore.html)
-*	[Roll back after upgrade failure]({{ page.baseurl }}/comp-mgr/trouble/cman/update-fail.html)
 *	[CE to EE upgrade failure]({{ page.baseurl }}/comp-mgr/trouble/cman/ce-ee-upgrade.html)
-
