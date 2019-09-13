@@ -35,7 +35,7 @@ magento-cloud log
 Sample response:
 
 ```terminal
-Enter a number to choose a log: 
+Enter a number to choose a log:
   [0] access
   [1] app
   [2] cron
@@ -125,7 +125,7 @@ Similar to deploy logs, application logs are unique for each environment. The fo
 
 Log file            | Starter and Pro Integration | Pro Staging                                       | Pro Production
 ------------------- | --------------------------- | ------------------------------------------------- | -------------------------------------------
-**Deployment log**  | `/var/log/deploy.log`       | `/var/log/platform/<project_id>_stg/deploy.log`   | `/var/log/platform/<project_id>/deploy.log`
+**Deploy log**  | `/var/log/deploy.log`       | `/var/log/platform/<project_id>_stg/deploy.log`   | `/var/log/platform/<project_id>/deploy.log`
 **Cron log**        | `/var/log/cron.log`         | `/var/log/platform/<project_id>_stg/cron.log`     | `var/log/platform/<project_id>/cron.log`
 **Nginx access log**| `/var/log/access.log`       | `/var/log/platform/<project_id>_stg/access.log`   | `/var/log/platform/<project_id>/access.log`
 **Nginx error log** | `/var/log/error.log`        | `/var/log/platform/<project_id>_stg/error.log`    | `/var/log/platform/<project_id>/error.log`
