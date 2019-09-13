@@ -4,6 +4,7 @@ title: Set up Redis service
 functional_areas:
   - Cloud
   - Setup
+redirect_from: guides/v2.2/cloud/trouble/redis-troubleshooting
 ---
 
 [Redis](http://redis.io) is an optional, backend cache solution that replaces the Zend Framework [Zend_Cache_Backend_File](http://framework.zend.com/apidoc/1.0/Zend_Cache/Backend/Zend_Cache_Backend_File.html), which is used in Magento 2 by default.
