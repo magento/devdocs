@@ -113,7 +113,7 @@ As result, a Button component `Open modal` is added, that opens on click a modal
 
 ![Slide Modal]({{ site.baseurl }}/common/images/ui_comps/slide_modal_result.png)
 
-### Extending the component
+### Component with extended settings
 
 The following sample is an example of the configuration for a notification modal window, used for Backend notifications:
 
