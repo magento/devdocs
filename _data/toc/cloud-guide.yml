@@ -376,9 +376,6 @@ pages:
         - label: Component deployment failure
           url: /cloud/trouble/trouble_comp-deploy-fail.html
 
-        - label: Redis troubleshooting
-          url: /cloud/trouble/redis-troubleshooting.html
-
         - label: Reset cron jobs
           url: /cloud/trouble/reset-cron-jobs.html
           exclude_versions: ["2.0"]
@@ -404,10 +401,6 @@ pages:
 
         - label: Theme troubleshooting
           url: /cloud/trouble/theme-troubleshooting.html
-
-        - label: Message queues
-          url: /cloud/trouble/message-queues.html
-          exclude_versions: ["2.0"]
 
     - label: Upgrades and patches
       url: /cloud/project/project-upgrade-parent.html
