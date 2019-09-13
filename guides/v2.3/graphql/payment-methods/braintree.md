@@ -13,7 +13,7 @@ The following diagram shows the workflow for placing an order when Braintree is 
 
 ![Braintree sequence diagram]({{site.baseurl}}/common/images/graphql/braintree.svg)
 
-1. The PWA client calls the [`createBraintreeClientToken`]({{page.baseurl}}/graphql/mutations/braintree-create-client-token.html) mutation to generate the client token.
+1. The PWA client calls the [`createBraintreeClientToken`]({{page.baseurl}}/graphql/mutations/create-braintree-client-token.html) mutation to generate the client token.
 
 1. Magento forwards the request to Braintree.
 
@@ -35,13 +35,13 @@ The following diagram shows the workflow for placing an order when Braintree is 
 
 1. Magento returns a `Cart` object.
 
-2. The client uses the [`placeOrder`]({{page.baseurl}}/graphql/mutations/place-order.html) mutation.
+1. The client uses the [`placeOrder`]({{page.baseurl}}/graphql/mutations/place-order.html) mutation.
 
-3. Magento sends an authorization request to Braintree.
+1. Magento sends an authorization request to Braintree.
 
-4. Braintree sends the response to Magento.
+1. Braintree sends the response to Magento.
 
-5. Magento creates an order and sends an order ID in response to the `placeOrder` mutation.
+1. Magento creates an order and sends an order ID in response to the `placeOrder` mutation.
 
 ## `setPaymentMethodOnCart` mutation
 
