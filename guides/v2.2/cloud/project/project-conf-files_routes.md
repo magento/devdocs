@@ -48,7 +48,7 @@ The `routes.yaml` file is a list of templated routes and their configurations. Y
 
   In a non-production branch, the project ID and environment ID replace the `{default}` placeholder when the project is deployed.
 
-- `{all}` represents all the domain names configured for the project. For example, if you have a project with `example.com` and `example1.com` domains, the route templates `http://www.{all}/` and `https://{all}/blog` resolve to routes for all domains in the project:
+- `{all}` represents all the domain names configured for the project. For example, if you have a project with `example.com` and `example1.com` domains, the route templates `http://www.{all}/` and `https://www.{all}/blog` resolve to routes for all domains in the project:
 
   ```text
   http://www.example.com/
