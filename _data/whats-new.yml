@@ -156,12 +156,6 @@ entries:
   type: Technical changes
   date: July 30, 2019
   link: https://github.com/magento/devdocs/pull/5039
-- description: Added the new topic [CSS Critical Path](https://devdocs.magento.com/guides/v2.2/frontend-dev-guide/css-topics/css-critical-path.html)
-    to the Frontend Developer Guide.
-  versions: 2.2.x, 2.3.x
-  type: New topic
-  date: July 30, 2019
-  link: https://github.com/magento/devdocs/pull/4726
 - description: Added steps for [creating a patch from a git commit](https://devdocs.magento.com/guides/v2.2/comp-mgr/patching.html#custom-patches).
   versions: 2.2.x, 2.3.x
   type: Major update
