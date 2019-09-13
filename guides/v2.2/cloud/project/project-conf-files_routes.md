@@ -37,7 +37,7 @@ magento-cloud environment:routes
 
 The `routes.yaml` file is a list of templated routes and their configurations. You can use the following placeholders in route templates:
 
-- `{default}` represents the qualified domain name configured as the default for the project. For example, if you have a project with the default domain `example.com`, the route templates `http://www.{default}/` and `https://{default}/blog` resolve to the following URLs in a production environment:
+- `{default}` represents the qualified domain name configured as the default for the project. For example, if you have a project with the default domain `example.com`, the route templates `http://www.{default}/` and `https://www.{default}/blog` resolve to the following URLs in a production environment:
 
   ```text
   http://www.example.com/
