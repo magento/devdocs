@@ -21,7 +21,7 @@ Look for the following highlights in this release:
 
 This release includes the following security enhancements:
 
-* PSD2 compliance to core payment methods  
+* PSD2 compliance to core payment methods
 * Fixes for 75 critical security issues
 * Significant platform-security enhancements that boost XSS (cross-site scripting) protection against future exploits. This effort is the culmination of several months of concentrated effort on Magento's part to reduce our backlog of security enhancements.
 
@@ -54,7 +54,7 @@ The following upgrades to core platform components boost platform security and s
 
 <!--- MC-14863-->
 * Magento now supports Varnish 6.2.0.
-  
+
 <!--- MC-14912-->
 * Zend Framework 2 Components have been upgraded to the Active/LTS versions. See [Support and Long Term Support Policies](https://framework.zend.com/long-term-support) for a discussion of Zend Framework long-term support policy.
 
@@ -109,7 +109,7 @@ This release of Magento Shipping includes:
 * Improvements to batch-order processing, carrier integration, shipping method preview in the shipping portal, checkout.
 
 * Support for bundled products and prepackage options.
-  
+
 See [Magento Shipping](https://docs.magento.com/m2/ee/user_guide/shipping/magento-shipping.html).
 
 ### Vendor-developed extension enhancements
@@ -133,7 +133,7 @@ Amazon Pay is now compliant with the PSD2 directive for UK and Germany. See [Pay
 * New options now support B2B transactions in select markets.
 
 * PayBright, a Canadian payment coverage option, is now supported.
-  
+
 See [Klarna](https://docs.magento.com/m2/ee/user_guide/payment/klarna.html).
 
 #### Vertex
@@ -144,10 +144,10 @@ See [Klarna](https://docs.magento.com/m2/ee/user_guide/payment/klarna.html).
 
 <!--- BUNDLE-2151-->
 * You can now add custom fields to the Vertex connector.
-  
+
 #### Yotpo
 
-The [Yotpo](https://www.yotpo.com) user-generated content management platform is now integrated with the Magento Admin. Yotpo provides tools for merchants to gather, curate, and manage user-generated content such as product reviews. For more information on configuring and launching Yotpo from the Admin, see Yotpo Product Reviews.  
+The [Yotpo](https://www.yotpo.com) user-generated content management platform is now integrated with the Magento Admin. Yotpo provides tools for merchants to gather, curate, and manage user-generated content such as product reviews. For more information on configuring and launching Yotpo from the Admin, see Yotpo Product Reviews.
 
 ## Fixed issues
 
@@ -212,7 +212,7 @@ We've fixed hundreds of issues in the Magento 2.3.3 core code.
 
 <!--- ENGCOM-5360-->
 * Discount coupons now work as expected for bundle products that include both virtual and simple products when the **Ship Bundle Items** setting is set to **Separately**. *Fix submitted by Nikolay Sumrak in pull request [22987](https://github.com/magento/magento2/pull/22987)*.
-  
+
 ### Cache
 
 <!--- MC-14863-->
@@ -337,7 +337,7 @@ We've fixed hundreds of issues in the Magento 2.3.3 core code.
 
 <!--- MC-5777-->
 * Catalog rules are now applied as expected in deployments that are running Magento Commerce. Previously, there was a discrepancy between the timezone in which catalog rule staging was set (UTC timezone) and the Magento timezone, which is the timezone that the storefront uses.
-  
+
 <!--- MC-17020-->
 * We’ve refined how Magento validates partial permissionsDesign edit permissions for categories, products, and CMS pages are now validated for each endpoint (web API and other) outside of the related model-layer classes. The web API now returns an error when design-related fields are being overridden. Previously, this behavior was ignored.
 
@@ -498,7 +498,7 @@ We've fixed hundreds of issues in the Magento 2.3.3 core code.
 
 <!--- MC-18477-->
 * Consumers run from `cron` no longer create deadlocks in the database.
-  
+
 <!--- ENGCOM-5099-->
 * The `magento_newrelicreporting_cron` cron job now successfully completes as expected. Previously, `magento_newrelicreporting_cron` threw this error: `Warning: Invalid argument supplied for foreach() in /var/www/shop_test/src/www/vendor/magento/module-configurable-product/Model/ResourceModel/Product/Type/Configurable/Product/Collection.php on line 83`.
 
@@ -518,7 +518,7 @@ We've fixed hundreds of issues in the Magento 2.3.3 core code.
 
 <!--- MAGETWO-99584-->
 * You can now create an order from the Admin when  you have a customer segment for customers with 0 or more orders. Previously, if you had a customer segment for customers with 0 or more orders, an SQL error occurred when you tried to create an order in the Admin.
-  
+
 <!--- MC-17769-->
 * You can now create an order from the Admin with a customer segment based on zero  or more orders and the table prefix is specified. Previously, Magento threw an error when you tried to create an order from the Admin under these conditions.
 
@@ -689,7 +689,7 @@ We've fixed hundreds of issues in the Magento 2.3.3 core code.
 
 <!--- MC-19684-->
 * You can now set the **minute** values for Analytics data collection (**Store** > **Configuration** > **General** > **Advanced Reporting**). Previously, due to an earlier fix that has now been reverted (see [GitHub-8258](https://github.com/magento/magento2/issues/8258)), validation failed when you set a value that exceeded 24.
-  
+
 ### Gift registry
 
 <!--- MC-18540-->
@@ -762,7 +762,7 @@ We've fixed hundreds of issues in the Magento 2.3.3 core code.
 
 <!--- ENGCOM-5174-->
 * We improved validation of forms that contain multiple fields with identical names. Previously, Magento validated the first file in the form, but did not validate subsequent fields with that name. *Fix submitted by Jay Ghosh in pull request [15383](https://github.com/magento/magento2/pull/15383)*. [GitHub-8258](https://github.com/magento/magento2/issues/8258)
-  
+
 <!--- ENGCOM-5337-->
 * Magento now identifies review entity IDs programmatically instead of retrieving a hard-coded value. *Fix submitted by Danilo Argentiero in pull request [23353](https://github.com/magento/magento2/pull/23353)*.
 
@@ -777,7 +777,7 @@ We've fixed hundreds of issues in the Magento 2.3.3 core code.
 
 <!--- ENGCOM-5139-->
 * The `phpcs` script for PHP_CodeSniffer now displays all errors and warnings in the console. Previously, Magento threw a fatal error when it encountered an uncaught type error. *Fix submitted by Nazar Klovanych in pull request [22947](https://github.com/magento/magento2/pull/22947)*. [GitHub-20186](https://github.com/magento/magento2/issues/20186)
-  
+
 <!--- MC-15163-->
 * The `oauth` handshake is now followed by a redirect as expected for third-party integrations.
 
@@ -904,7 +904,7 @@ This release includes the following changes to integrations for core payment met
 
 <!--- ENGCOM-5505-->
 * The access controls on the **Reports** > **Product** > **Downloads** have been refactored to permit access to only administrators with the correct permissions. Previously, administrators with no access to this area could access the Downloads report. *Fix submitted by Eden Duong in pull request [23901](https://github.com/magento/magento2/pull/23901)*. [GitHub-23900](https://github.com/magento/magento2/issues/23900)
-  
+
 <!--- ENGCOM-5052-->
 * Selecting **Show by year** when filtering  **Reports** > **Products**  > **Ordered** now results in a list of products sold per year that is grouped by product quantity in descending orderPreviously, Magento displayed a list of products sold per year that contained multiple entries for a single product on a per order basis. *Fix submitted by Surabhi Srivastava in pull request [22087](https://github.com/magento/magento2/pull/22087)*. [GitHub-22646](https://github.com/magento/magento2/issues/22646), [GitHub-22087](https://github.com/magento/magento2/issues/22087)
 
@@ -1027,7 +1027,7 @@ This release includes the following changes to integrations for core payment met
 
 <!--- MC-18699-->
 * `Magento.Framework.Image.Adapter.InterfaceTest.testValidateUploadFileException` with data set `image_empty` no longer fails on 2.3.3-develop.
-  
+
 <!--- ENGCOM-5470-->
 * `CommentLevelsSniff` now works correctly with the `@magento_import` statement. Previously, when you ran `Magento\Test\Less\LiveCodeTest`, Magento threw an error on lines containing `@magento_import`. *Fix submitted by Pavel Bystritsky in pull request [23790](https://github.com/magento/magento2/pull/23790)*. [GitHub-23789](https://github.com/magento/magento2/issues/23789)
 
@@ -1092,7 +1092,7 @@ This release includes the following changes to integrations for core payment met
 
 <!--- ENGCOM-5453-->
 * You can now edit the status label for the storefront from the Admin in single-store mode. Previously, there was no status field available from **Stores** > **Order Status** when single-store mode was enabled. *Fix submitted by Eden Duong in pull request [23681](https://github.com/magento/magento2/pull/23681)*. [GitHub-22654](https://github.com/magento/magento2/issues/22654)
-  
+
 <!--- ENGCOM-5070-->
 * The design of the Review & Payments **Apply Discount Coupon** box of the checkout page has been improved. *Fix submitted by Abrar Pathan in pull request [21215](https://github.com/magento/magento2/pull/21215)*. [GitHub-21214](https://github.com/magento/magento2/issues/21214)
 
@@ -1152,11 +1152,11 @@ This release includes the following changes to integrations for core payment met
 * Calls to Vertex are now made when string values exceed the maximum allowed length in the Vertex SDK.
 
 * Tax code, vertex tax code, and invoice text codes are now saved for orders created during Guest Checkout.
-  
+
 * Guest Orders are no longer invoiced twice if logging was enabled.
 
 * Shipping is now included on a Vertex invoice if that invoice was sent in the same request that its order was created in if that order was placed using guest checkout.
-  
+
 ### Visual Merchandiser
 
 <!--- MAGETWO-96129-->
