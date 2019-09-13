@@ -79,15 +79,17 @@ The following sample is an example of the configuration for a simple modal windo
             </item>
         </item>
     </argument>
-    <field name="testField">
-        <argument name="data" xsi:type="array">
-            <item name="config" xsi:type="array">
-                <item name="label" xsi:type="string">test field</item>
-                <item name="formElement" xsi:type="string">input</item>
-                <item name="visible" xsi:type="boolean">true</item>
-            </item>
-        </argument>
-    </field>
+    <fieldset name="general">
+        <settings>
+            <label/>
+        </settings>
+        <field name="testField" formElement="input">
+            <settings>
+                <dataType>text</dataType>
+                <label translate="true">Test Field</label>
+            </settings>
+        </field>
+    </fieldset>
 </modal>
 
 <button name="modal_button">
@@ -104,6 +106,12 @@ The following sample is an example of the configuration for a simple modal windo
     </argument>
 </button>
 ```
+
+#### Result
+
+As result, a Button component `Open modal` is added, that opens on click a modal window with a `slide` effect.
+
+![Slide Modal]({{ site.baseurl }}/common/images/ui_comps/slide_modal_result.png)
 
 ### Extending the component
 
@@ -167,7 +175,7 @@ The following sample is an example of the configuration for a notification modal
 
 #### Result
 
-The notification modal popups on page load.
+As result, the modal window auto opens on page load with a `popup` effect.
 
 ![Notification Modal]({{ site.baseurl }}/common/images/ui_comps/notification_modal_result.png)
 
