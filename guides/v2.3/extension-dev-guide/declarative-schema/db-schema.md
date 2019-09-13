@@ -94,10 +94,10 @@ A column can have the following attributes:
 <li><code>boolean</code></li>
 <li><code>date</code></li>
 <li><code>datetime</code></li>
+<li><code>decimal</code></li>
+<li><code>float</code></li>
 <li><code>int</code> (includes smallint, bigint, tinyint)</li>
 <li><code>real</code> (includes decimal, float, double, real)</li>
-<li><code>float</code></li>
-<li><code>decimal</code></li>
 <li><code>smallint</code></li>
 <li><code>text</code> (includes text, mediumtext, longtext)</li>
 <li><code>timestamp</code></li>
