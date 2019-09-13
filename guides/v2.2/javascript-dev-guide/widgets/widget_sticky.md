@@ -53,7 +53,7 @@ $('.sticky-element').sticky({
 ### `container` {#s_option_container}
 
 Element selector, who's height will be used to restrict the maximum offsetTop
-position of the stuck element. Default uses document `body`.
+position of the sticky element. Default uses document `body`.
 
 **Type**:
 
@@ -63,7 +63,7 @@ position of the stuck element. Default uses document `body`.
 
 ### `spacingTop` {#s_option_spacing_top}
 
-Spacing in pixels above the stuck element.
+Spacing in pixels above the sticky element.
 
 **Type**:
 
