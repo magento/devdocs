@@ -60,7 +60,7 @@ You can set the following configuration options for each environment:
 	</tr>
 	<tr>
 		<td>Outgoing emails</td>
-		<td>Setting to <strong>On</strong> means that code in your environment can send and receive e-mails (for example, using PHP <code>email()</code> function. </td>
+		<td>Setting to <strong>On</strong> means that code in your environment can send and receive e-mails (for example, using PHP <code>mail()</code> function. </td>
 	</tr>
 	<tr><td>HTTP access control</td>
 	<td>Setting to <strong>On</strong> enables you to configure security for the project's Web Interface using a login and also IP address access control.</td>
