@@ -81,7 +81,7 @@ This release contains  enhancements to core quality, which improve the quality o
 ### Merchant tool enhancements
 
 <!--- MC-15298-->
-* As part of our efforts to better understand the Admin user experience and improve product design, Magento is introducing the tracking of user actions and events on the Admin. After you upgrade to Magento 2.3.3, the first administrative user who logs into the Admin will be prompted to **Allow admin usage data collection**If the user agrees to data collection, the data captured from Admin activity is sent to Adobe Analytics for analysis and reporting. Typical events include page views, save actions, and changes to Magento mode. See Store Admin for more information.
+* As part of our efforts to better understand the Admin user experience and improve product design, Magento is introducing the tracking of user actions and events on the Admin. After you upgrade to Magento 2.3.3, the first administrative user who logs into the Admin will be prompted to **Allow admin usage data collection**. If the user agrees to data collection, the data captured from Admin activity is sent to Adobe Analytics for analysis and reporting. Typical events include page views, save actions, and changes to Magento mode. See Store Admin for more information.
 
 ### Inventory Management enhancements
 
