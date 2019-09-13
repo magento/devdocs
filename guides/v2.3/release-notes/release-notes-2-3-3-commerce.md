@@ -83,7 +83,7 @@ This release contains  enhancements to core quality, which improve the quality o
 <!--- MC-15298-->
 * As part of our efforts to better understand the Admin user experience and improve product design, Magento is introducing the tracking of user actions and events on the Admin. After you upgrade to Magento 2.3.3, the first administrative user who logs into the Admin will be prompted to **Allow admin usage data collection**If the user agrees to data collection, the data captured from Admin activity is sent to Adobe Analytics for analysis and reporting. Typical events include page views, save actions, and changes to Magento mode. See Store Admin for more information.
   
-### Page Builder 
+### Page Builder
 
 Page Builder enhancements for this release include:
 
@@ -115,7 +115,7 @@ The Google Shopping ads Channel Marketplace extension is now available as a bund
 
 This release of Magento Shipping includes:
 
-* Improvements to batch-order processing, carrier integration, shipping method preview in the shipping portal, checkout
+* Improvements to batch-order processing, carrier integration, shipping method preview in the shipping portal, checkout.
 
 * Support for bundled products and prepackage options.
   
@@ -123,25 +123,24 @@ See [Magento Shipping](https://docs.magento.com/m2/ee/user_guide/shipping/magent
 
 ### Vendor-developed extension enhancements
 
-This release of Magento includes extensions developed by third-party vendors. It introduces a new vendor-supplied extension –Yotpot.
+This release of Magento includes extensions developed by third-party vendors. It introduces a new vendor-supplied extension—Yotpo.
 
 #### Amazon Pay
 
 Amazon Pay is now compliant with the PSD2 directive for UK and Germany. See [Payment services (PSD 2) - Directive (EU)](https://ec.europa.eu/info/law/payment-services-psd-2-directive-eu-2015-2366_en) for an introduction to PSD2.
 
-
 #### dotdigital
 
-* Improved product catalog sync for bundled and custom products 
+* Improved product catalog sync for bundled and custom products.
 
-*Enhanced communications for abandoned cart 
+* Enhanced communications for abandoned cart.
 
 #### Klarna
 
 * Merchants can now disable the sending of customer information.
 
 * New options now support B2B transactions in select markets.
- 
+
 * PayBright, a Canadian payment coverage option, is now supported.
   
 See [Klarna](https://docs.magento.com/m2/ee/user_guide/payment/klarna.html).
@@ -158,7 +157,6 @@ See [Klarna](https://docs.magento.com/m2/ee/user_guide/payment/klarna.html).
 #### Yotpo
 
 The [Yotpo](https://www.yotpo.com) user-generated content management platform is now integrated with the Magento Admin. Yotpo provides tools for merchants to gather, curate, and manage user-generated content such as product reviews. For more information on configuring and launching Yotpo from the Admin, see Yotpo Product Reviews.  
-
 
 ## Fixed issues
 
@@ -802,10 +800,10 @@ We have fixed hundreds of issues in the Magento 2.3.3 core code.
 * The Recently Viewed feature now accurately lists the products and category paths that the user has recently visited. Previously, this list was inaccurate when the **Use Categories Path for Product URLs**  setting was disabled. *Fix submitted by Atish Goswami in pull request [22650](https://github.com/magento/magento2/pull/22650)*. [GitHub-13227](https://github.com/magento/magento2/issues/13227)
 
 <!--- MC-16233-->
-* The **Be the First to Review Product** link now directs the user to the product review form at the bottom of the product page as expected in deployments that include PageBuilder.
+* The **Be the First to Review Product** link now directs the user to the product review form at the bottom of the product page as expected in deployments that include Page Builder.
 
 <!--- MC-19684-->
-* You can now set the **minute** values for Analytics data collection (**Store** > **Configuration** > **General** > **Advanced Reporting**). Previously, due to an earlier fix that has now been reverted (see [GitHub-8258](https://github.com/magento/magento2/issues/8258)), validation failed when you set a value that exceeded 24. 
+* You can now set the **minute** values for Analytics data collection (**Store** > **Configuration** > **General** > **Advanced Reporting**). Previously, due to an earlier fix that has now been reverted (see [GitHub-8258](https://github.com/magento/magento2/issues/8258)), validation failed when you set a value that exceeded 24.
   
 ### Gift cards accounts EE ONLY
 
@@ -854,7 +852,7 @@ We have fixed hundreds of issues in the Magento 2.3.3 core code.
 * Products are successfully updated through import of an CSV file in **Add/Update** mode. Previously,  the import process failed, and Magento displayed this error: `The value specified in the URL Key field would generate a URL that already exists`.
 
 <!--- MAGETWO-60918-->
-* Magento no longer throws a fatal error during import or export if the category path contains deleted category IDs
+* Magento no longer throws a fatal error during import or export if the category path contains deleted category IDs.
 
 <!--- MC-18472-->
 * The import process maintain custom option prices that were assigned to different websites and scope before import. Previously, after import, these custom option prices were set to the default scope values.
