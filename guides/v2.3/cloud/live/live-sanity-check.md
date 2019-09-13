@@ -187,7 +187,7 @@ We highly recommend having Magento already installed prior to deployment. During
     php bin/magento deploy:mode:set production
     ```
 
-If errors display, debug them if possible, [review logs]({{page.baseurl}}/cloud/project/log-locations.html), or open a [support ticket]({{ page.baseurl }}/cloud/trouble/trouble.html) to get additional assistance.
+Debug errors by [reviewing logs]({{page.baseurl}}/cloud/project/log-locations.html). Open a [support ticket]({{ page.baseurl }}/cloud/trouble/trouble.html) for additional assistance.
 
 #### Next step
 [Prepare to deploy to Staging and Production]({{ page.baseurl }}/cloud/live/stage-prod-migrate-prereq.html)

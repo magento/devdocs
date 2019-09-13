@@ -26,7 +26,7 @@ There are three ways to view logs: file system, project web UI, or magento-cloud
 
 ### Log command
 
-You use the magento-cloud log command to quickly view a specific log. If you do not specify a log name, you can choose a log from the response list.
+You use the `magento-cloud log` command to quickly view a specific log. If you do not specify a log name, you can choose a log from the response list.
 
 ```bash
 magento-cloud log
@@ -121,7 +121,7 @@ magento-cloud log platform/<project_id>_stg/deploy
 
 ## Application logs
 
-Similar to deploy logs, application logs are unique for each environment. The following table lists application log locations based on their environment:
+Similar to deploy logs, application logs are unique for each environment. The following table lists application log locations on each environment:
 
 Log file            | Starter and Pro Integration | Pro Staging                                       | Pro Production
 ------------------- | --------------------------- | ------------------------------------------------- | -------------------------------------------
@@ -134,7 +134,7 @@ Log file            | Starter and Pro Integration | Pro Staging                 
 
 ## Service logs
 
-Because each service runs in a separate container, the service logs are not available in the Integration environment. {{site.data.var.ece}} only provides access to the web server container in the Integration environment. The following service log locations are for the Pro Staging and Production environments:
+Because each service runs in a separate container, the service logs are not available in the Integration environment. {{site.data.var.ece}} provides access to the web server container in the Integration environment only. The following service log locations are for the Pro Staging and Production environments:
 
 -  **Redis log**: `/var/log/platform/<project_id>_stg/redis-server-<project_id>_stg.log`
 -  **Elasticseach log**: `/var/log/elasticsearch/elasticsearch.log`
