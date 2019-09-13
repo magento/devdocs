@@ -16,9 +16,46 @@ Magento-specific logs are in the `<magento-root-dir>/var/` directory. See [Magen
 {: .bs-callout-tip}
 You can [set up log-based Slack and email notifications][slacklog] when configuring your Cloud environment.
 
+## Viewing logs
+
+There are three ways to view logs: file system, project web UI, or magento-cloud CLI.
+
+-  **Log directories**—The `/var/log` directory contains logs for all environments. You must use an SSH connection to access the `/var/log` directory in the remote server environment.
+-  **Project web UI**—You can see build and post-deploy log information in the environment messages list.
+-  **Magento Cloud CLI**—You can view logs using the `magento-cloud log` command.
+
+### Log command
+
+You use the magento-cloud log command to quickly view a specific log. If you do not specify a log name, you can choose a log from the response list.
+
+```bash
+magento-cloud log
+```
+
+Sample response:
+
+```terminal
+Enter a number to choose a log: 
+  [0] access
+  [1] app
+  [2] cron
+  [3] deploy
+  [4] error
+  [5] php.access
+  [6] post-deploy
+ >
+```
+{:.no-copy}
+
+By default, the command displays the log from the Integration environment. For the Pro Staging logs, you need to specify the log location using the project ID.
+
+```bash
+magento-cloud log platform/<project_id>_stg/<log>
+```
+
 ## Build and Deploy logs
 
-The `/var/log` directory contains logs for all environments. After pushing changes to your environment, you can review the logging from each hook in the `var/log/cloud.log` file. The log contains start and stop messages for each hook. In the following example, the messages are "`Starting post-deploy.`" and "`Post-deploy is complete.`"
+After pushing changes to your environment, you can review the logging from each hook in the `var/log/cloud.log` file. The log contains start and stop messages for each hook. In the following example, the messages are "`Starting post-deploy.`" and "`Post-deploy is complete.`"
 
 Check the timestamps on log entries to verify and locate the logs for a specific deployment. The following is a condensed example of log output that you can use for troubleshooting:
 
@@ -45,8 +82,6 @@ The following logs have a common location for all Cloud projects:
 -  **Exception log**: `var/log/exception.log`
 -  **Support report log**: `var/log/support_report.log`
 
-You must use an SSH connection to access the `/var/log` directory in the remote server environment. From the project web UI, you can see build and post-deploy log information in the environment messages list.
-
 Logs from the deploy hook are unique for each environment. The deploy log is in the following directories:
 
 -  **Starter and Pro Integration**: `/var/log/deploy.log`
@@ -58,7 +93,7 @@ Using that example, the deploy log is: `/var/log/platform/yw1unoukjcawe_stg/depl
 
 The log for each deployment concatenates to the specific `deploy.log` file.
 
-#### To check the deploy log using the CLI:
+#### To view the deploy log:
 
 ```bash
 magento-cloud log deploy
@@ -76,6 +111,12 @@ sh: 1: kill: No such process
 
 [2019-09-09 09:00:00] NOTICE: Validating configuration
 ...
+```
+
+#### To view a deploy log from the Staging environment:
+
+```bash
+magento-cloud log platform/<project_id>_stg/deploy
 ```
 
 ## Application logs
