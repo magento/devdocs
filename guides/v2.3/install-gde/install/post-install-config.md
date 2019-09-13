@@ -24,7 +24,7 @@ After installation, we recommend the following:
 *	Make sure your file ownership and permissions are set properly
 *	We strongly recommend [changing the default Admin URL]({{page.baseurl}}/install-gde/install/cli/install-cli-adminurl.html) from `admin` to something else
 *	Make sure the [`X-Frame-Option` HTTP header]({{page.baseurl}}/config-guide/secy/secy-xframe.html) is set properly.
-*	Take precautions against cross-site scripting (XSS) by [securing your templates]({{page.baseurl}}/frontend-dev-guide/templates/template-security.html)
+*	Take precautions against cross-site scripting (XSS) by [securing your templates]({{page.baseurl}}/extension-dev-guide/xss-protection.html)
 <!-- Set up roles and restricted users (Admin) -->
 
 If you installed by [cloning the Magento repository]({{page.baseurl}}/install-gde/prereq/dev_install.html), make sure that when you deploy Magento, you only include files and folders that are required for the production environment. Files and folders that are not required can potentially expose security risks.
