@@ -15,7 +15,7 @@ The default `routes.yaml` file contains the following code:
 ```yaml
 "http://{default}/":
   type: upstream
-    upstream: "mymagento:php"
+  upstream: "mymagento:php"
 ```
 
 If you do not create a custom `routes.yaml` file, the automated deployment uses the default file.
