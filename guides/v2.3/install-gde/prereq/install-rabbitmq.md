@@ -50,19 +50,35 @@ RabbitMQ was written using the Erlang programming language, which must be instal
 
 See [Manual installation](https://www.erlang-solutions.com/resources/download.html){:target="_blank"} for more information.
 
-Run the following commands to install this feature.
+`erlang` >= 20.3 is needed by `rabbitmq-server` and also `epel-release` is needed by `erlang`
+
+Run the following commands as a user with root permissions to install this feature.
+```bash
+yum install epel-release
+```
+
 ```bash
 wget http://packages.erlang-solutions.com/erlang-solutions-1.0-1.noarch.rpm
 ```
+
 ```bash
 rpm -Uvh erlang-solutions-1.0-1.noarch.rpm
+```
+
+```bash
+yum install erlang
 ```
 
 ### Install RabbitMQ on CentOS 6.x
 
 The RabbitMQ server is included on CentOS, but the version is often old. RabbitMQ recommends installing the package from their website.
 
-1. Download [rabbitmq-server-3.5.6-1.noarch.rpm](https://www.rabbitmq.com/releases/rabbitmq-server/v3.5.6/rabbitmq-server-3.5.6-1.noarch.rpm){:target="_blank"}.
+1. Download [rabbitmq-server-3.7.17-1.el6.noarch.rpm](https://github.com/rabbitmq/rabbitmq-server/releases/download/v3.7.17/rabbitmq-server-3.7.17-1.el6.noarch.rpm){:target="_blank"} or run the following command to download.
+
+    ```bash
+    wget https://github.com/rabbitmq/rabbitmq-server/releases/download/v3.7.17/rabbitmq-server-3.7.17-1.el6.noarch.rpm
+    ```
+   
 2. Run the following commands as a user with root permissions:
 
    ```bash
@@ -70,7 +86,7 @@ The RabbitMQ server is included on CentOS, but the version is often old. RabbitM
    ```
 
    ```bash
-   yum install rabbitmq-server-3.5.6-1.noarch.rpm
+   yum install rabbitmq-server-3.7.17-1.el6.noarch.rpm
    ```
 
 Refer to [Installing on RPM-based Linux](https://www.rabbitmq.com/install-rpm.html){:target="_blank"} for more information.
@@ -79,7 +95,12 @@ Refer to [Installing on RPM-based Linux](https://www.rabbitmq.com/install-rpm.ht
 
 The RabbitMQ server is included on CentOS, but the version is often old. RabbitMQ recommends installing the package from their website.
 
-1. Download [rabbitmq-server-3.7.17-1.el7.noarch.rpm](https://github.com/rabbitmq/rabbitmq-server/releases/download/v3.7.17/rabbitmq-server-3.7.17-1.el7.noarch.rpm){:target="_blank"}.
+1. Download [rabbitmq-server-3.7.17-1.el7.noarch.rpm](https://github.com/rabbitmq/rabbitmq-server/releases/download/v3.7.17/rabbitmq-server-3.7.17-1.el7.noarch.rpm){:target="_blank"} or run the following command to download.
+
+    ```bash
+    wget https://github.com/rabbitmq/rabbitmq-server/releases/download/v3.7.17/rabbitmq-server-3.7.17-1.el7.noarch.rpm
+    ```
+   
 2. Run the following commands as a user with root permissions:
 
    ```bash
