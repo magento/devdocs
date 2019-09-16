@@ -15,7 +15,7 @@ The default `routes.yaml` file contains the following code:
 ```yaml
 "http://{default}/":
   type: upstream
-    upstream: "mymagento:php"
+  upstream: "mymagento:php"
 ```
 
 If you do not create a custom `routes.yaml` file, the automated deployment uses the default file.
@@ -37,7 +37,7 @@ magento-cloud environment:routes
 
 The `routes.yaml` file is a list of templated routes and their configurations. You can use the following placeholders in route templates:
 
-- `{default}` represents the qualified domain name configured as the default for the project. For example, if you have a project with the default domain `example.com`, the route templates `http://www.{default}/` and `https://{default}/blog` resolve to the following URLs in a production environment:
+- `{default}` represents the qualified domain name configured as the default for the project. For example, if you have a project with the default domain `example.com`, the route templates `http://www.{default}/` and `https://www.{default}/blog` resolve to the following URLs in a production environment:
 
   ```text
   http://www.example.com/
@@ -48,7 +48,7 @@ The `routes.yaml` file is a list of templated routes and their configurations. Y
 
   In a non-production branch, the project ID and environment ID replace the `{default}` placeholder when the project is deployed.
 
-- `{all}` represents all the domain names configured for the project. For example, if you have a project with `example.com` and `example1.com` domains, the route templates `http://www.{all}/` and `https://{all}/blog` resolve to routes for all domains in the project:
+- `{all}` represents all the domain names configured for the project. For example, if you have a project with `example.com` and `example1.com` domains, the route templates `http://www.{all}/` and `https://www.{all}/blog` resolve to routes for all domains in the project:
 
   ```text
   http://www.example.com/
