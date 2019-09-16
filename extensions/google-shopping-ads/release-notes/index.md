@@ -3,7 +3,13 @@ group: extensions
 title: Google Shopping ads Channel Release Notes
 ---
 
-**Google Shopping ads Channel** is generally available for versions 2.2.4+, 2.3.0, 2.3.1, and 2.3.2 of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}. Merchants can use this extension to integrate with Google Merchant Center (GMC) and Google Ads accounts to advertize and sell Magento products.
+Merchants can use **Google Shopping ads Channel** to integrate with their Google Merchant Center (GMC) and Google Ads accounts to advertise and sell Magento products. **Google Shopping ads Channel** is available for Magento versions 2.2.4+ and 2.3+ of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}.
+
+Merchants on previous Magento versions (2.2.4+, 2.3.0, 2.3.1, and 2.3.2) can install or update the extension using the [Magento Marketplace](https://marketplace.magento.com/magento-google-shopping-ads.html).
+
+Beginning with Magento v2.3.3 of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}, **Google Shopping ads Channel** installs with the Magento update and does not require separate install.
+
+[Onboarding](https://docs.magento.com/m2/ee/user_guide/sales-channels/google-ads/onboarding-google.html) and management processes are the same for either install method.
 
 See the following documentation:
 
