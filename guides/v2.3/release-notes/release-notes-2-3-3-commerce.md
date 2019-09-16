@@ -183,7 +183,7 @@ We have fixed hundreds of issues in the Magento 2.3.3 core code.
 * PHP unit tests no longer fail by default when Magento is installed from Composer.
 
 <!--- ENGCOM-5241-->
-* The `system.xml` file is now located in the `app/code/Magento/Theme/etc/adminhtml` directory. *Fix submitted by Alexander Taranovsky in pull request [23140](https://github.com/magento/magento2/pull/23140)*. [GitHub-23138](https://github.com/magento/magento2/issues/23138)
+* Removed obsolete `system.xml` file from the `app/code/Magento/Theme/etc` directory. *Fix submitted by Alexander Taranovsky in pull request [23140](https://github.com/magento/magento2/pull/23140)*. [GitHub-23138](https://github.com/magento/magento2/issues/23138)
 
 <!--- ENGCOM-5187-->
 * Magento now displays a more informative message when a data patch cannot be applied due to an exception. *Fix submitted by Ash Smith in pull request [23046](https://github.com/magento/magento2/pull/23046)*. [GitHub-23045](https://github.com/magento/magento2/issues/23045)
@@ -198,7 +198,7 @@ We have fixed hundreds of issues in the Magento 2.3.3 core code.
 * Fields that have been disabled through configuration settings (**Admin** > **Stores** > **Configuration** > **General** > **General** > **Store Information**) can no longer be overwritten from the Admin. *Fix submitted by Rafael Kassner in pull request [22891](https://github.com/magento/magento2/pull/22891)*. [GitHub-22890](https://github.com/magento/magento2/issues/22890)
 
 <!--- ENGCOM-4644-->
-* You can now install Magento as a metapackage  using the `php bin/magento setup:install` command. Previously, attempts to install Magento this way failed due to an issue in how the root package was defined. *Fix submitted by [Oleksii Lisovyi](https://github.com/oleksii-lisovyi) in pull request [22116](https://github.com/magento/magento2/pull/22116)*  [GitHub-21136](https://github.com/magento/magento2/issues/21136)
+* The Magento installation procedure no longer checks for dev php extension dependencies from non-root composer.json files. *Fix submitted by [Oleksii Lisovyi](https://github.com/oleksii-lisovyi) in pull request [22116](https://github.com/magento/magento2/pull/22116)*  [GitHub-21136](https://github.com/magento/magento2/issues/21136)
 
 <!--- ENGCOM-5098-->
 * Parallel execution of static content deployment has been improved to prevent errors and make it more stable. *Fix submitted by David Alger in pull request [22607](https://github.com/magento/magento2/pull/22607)*. [GitHub-21852](https://github.com/magento/magento2/issues/21852)
@@ -289,6 +289,9 @@ We have fixed hundreds of issues in the Magento 2.3.3 core code.
 <!--- MC-18481-->
 * Magento now correctly updates SKU quantities when you use Quick Order and manually enter a SKU in the **Enter Multiple SKUs** field when using Internet Explorer 11.x.
 
+<!--- MC-18565-->
+* Magento now correctly calculates the total product quantity when you enter multiple SKU values in Quick Order.
+
 <!--- MAGETWO-97316-->
 * The behavior of the Catalog page Requisition list menu has been corrected
 
@@ -322,13 +325,10 @@ We have fixed hundreds of issues in the Magento 2.3.3 core code.
 * Varnish cache support has been upgraded for compatibility with version 6.2.0.
 
 <!--- MAGETWO-98650-->
-* Full-page cache no longer clears out the checkout session data on uncached pages when the `Magento_Persistent` module was disabled.
+* Full-page cache no longer clears out the checkout session data on uncached pages when the `Magento_Persistent` module was disabled. [GitHub-21614](https://github.com/magento/magento2/issues/21614)
 
 <!--- MAGETWO-54438-->
 * Magento now displays simple products on the storefront after the cancellation of an order that contains the bundled simple product. Previously, products did not appear on the storefront after an order containing the bundle product to which the simple product belongs was canceled.
-
-<!--- MC-18565-->
-* Magento now correctly calculates the total product quantity when you enter multiple SKU values in Quick Order.
 
 <!--- ENGCOM-5143-->
 * The Varnish health check no longer fails to the presence of `id_prefix` in `env.php`. Previously, Varnish returned a `503 Backend fetch failed` error. *Fix submitted by Nazar Klovanych in pull request [22307](https://github.com/magento/magento2/pull/22307)*. [GitHub-22143](https://github.com/magento/magento2/issues/22143)
@@ -342,13 +342,13 @@ We have fixed hundreds of issues in the Magento 2.3.3 core code.
 * Magento now submits an order only once when an order is submitted using **Enter**. Previously, Magento submitted several `payment-information` requests, and several orders with the same quote ID were placed.
 
 <!--- MAGETWO-48570-->
-* Products added to a shopping cart through REST now display correct product pricesPreviously, the shopping cart displayed product prices of zero. [GitHub-2991](https://github.com/magento/magento2/issues/2991)
+* Products added to a shopping cart through REST now display correct product prices. Previously, the shopping cart displayed product prices of zero. [GitHub-2991](https://github.com/magento/magento2/issues/2991)
 
 <!--- MC-17755-->
 * Magento now displays an informative message when an error is thrown after the user Internet connection has been reset after placing an order.
 
 <!--- MAGETWO-99370-->
-* You can now add product quantities that require four digits to the shopping cart.Previously, Magento could not add four-digit product quantities to the cart.
+* You can now add product quantities that require four digits to the shopping cart. Previously, Magento could not add four-digit product quantities to the cart.
 
 <!--- ENGCOM-4126-->
 * Administrators with appropriate permissions can now view the contents of a cart for a registered customer from the Admin customer edit interface. *Fix submitted by Rav in pull request [20918](https://github.com/magento/magento2/pull/20918)*.
@@ -357,13 +357,13 @@ We have fixed hundreds of issues in the Magento 2.3.3 core code.
 * Magento now applies the sort preferences that you set in website scope configuration for a particular website to the layout of the checkout page. Previously, sort order for elements of this page was derived from the default configuration, not website-specific values. *Fix submitted by Karan Shah in pull request [22387](https://github.com/magento/magento2/pull/22387)*. [GitHub-22380](https://github.com/magento/magento2/issues/22380)
 
 <!--- MC-17808-->
-* The Review & Payment section of the One Page checkout no longer displays custom customer attribute code when a guest checks out.
+* The Review & Payment section of the One Page Checkout no longer displays custom customer attribute code when a guest checks out.
 
 <!--- MC-18281-->
 * The checkout order summary now displays the correct number of ordered items.
 
 <!--- ENGCOM-5357-->
-* The minicart loader is now visible when you add a product to the minicart.*Fix submitted by Geeta Modi in pull request [23394](https://github.com/magento/magento2/pull/23394)*.
+* The minicart loader is now visible when you add a product to the minicart. *Fix submitted by Geeta Modi in pull request [23394](https://github.com/magento/magento2/pull/23394)*.
 
 <!--- ENGCOM-5026-->
 * Magento no longer throws an array-to-string conversion error when a customer changes the country setting from one-page checkout. Instead, shipping method, tax values, and payment providers now change according to country selection. Previously, Magento displayed an error about array-to-string conversion. *Fix submitted by Grzegorz Bogusz in pull request [22558](https://github.com/magento/magento2/pull/22558)*. [GitHub-12612](https://github.com/magento/magento2/issues/12612)
@@ -382,10 +382,10 @@ We have fixed hundreds of issues in the Magento 2.3.3 core code.
 ### Catalog
 
 <!--- MAGETWO-99890-->
-* You can now use the Select all option when creating a mass-update action when the total number of products exceeds the number of displayed products per page. Previously, Magento only selected and applied mass-update actions to the number of products that were displayed per page.
+* You can now use the Select all option when creating a mass-update action when the total number of products exceeds the number of displayed products per page. Previously, Magento only selected and applied mass-update actions to the number of products that were displayed per page. *Fix submitted by Shikha Mishra in pull request [22704](https://github.com/magento/magento2/pull/22704)*. [GitHub-22004](https://github.com/magento/magento2/issues/22004)
 
 <!--- MAGETWO-63599-->
-* Magento no longer throws an error when you run the `php bin\magento catalog:images:resize` command on a  deployment that contains images with a zero byte size. Instead, the operation skips the offending file and updates the log file to indicate where the problematic file resides. [GitHub-8204](https://github.com/magento/magento2/issues/8204)
+* Magento no longer throws an error when you run the `php bin/magento catalog:images:resize` command on a  deployment that contains images with a zero byte size. Instead, the operation skips the offending file and updates the log file to indicate where the problematic file resides. [GitHub-8204](https://github.com/magento/magento2/issues/8204)
 
 <!--- MAGETWO-98708-->
 * You can now successfully clone a product with a linked product. Previously, cloning  failed and Magento displayed this error:  `The linked products data is invalid. Verify the data and try again`.
@@ -406,7 +406,7 @@ We have fixed hundreds of issues in the Magento 2.3.3 core code.
 * Magento now creates resized images for all products for which images exist and lists the errors when you run the `php bin/catalog:image:resize` command. Previously, execution halted at the first missing image.
 
 <!--- MC-17387-->
-* You can now add a bundle product from a wishlist to your shopping cart. Previously, Magento threw a fatal error
+* You can now add a bundle product from a wishlist to your shopping cart. Previously, Magento threw a fatal error.
 
 <!--- MAGETWO-92712-->
 * The `\Magento\Catalog\Model\CategoryList::getList` operation now returns a sorted list of categories as expected.
@@ -415,7 +415,7 @@ We have fixed hundreds of issues in the Magento 2.3.3 core code.
 * The Admin Product Edit page and Customers page now load without JavaScript errors. [GitHub-5967](https://github.com/magento/magento2/issues/5967)
 
 <!--- MAGETWO-64923-->
-* A duplicated product that has been set to **Stock and Enabled** now appears as expected on the storefront.
+* A duplicated product that has been set to **Is in Stock** and **Enabled** now appears as expected on the storefront.
 
 <!--- MAGETWO-59400-->
 * An invalid join condition in Product Flat Indexer has been refactored, and product relations are now correctly joined by the `entity_id` field. Previously, products were joined incorrectly during catalog re-indexing when staging was enabled.
@@ -448,7 +448,7 @@ We have fixed hundreds of issues in the Magento 2.3.3 core code.
 * Catalog rules are now applied as expected in deployments that are running Magento Commerce. Previously, there was a discrepancy between the timezone in which catalog rule staging was set (UTC timezone) and the Magento timezone, which is the timezone that the storefront uses.
 
 <!--- MC-17020-->
-* We’ve refined how Magento validates partial permissionsDesign edit permissions for categories, products, and CMS pages are now validated for each endpoint (web API and other) outside of the related model-layer classes. The web API now returns an error when design-related fields are being overridden. Previously, this behavior was ignored.
+* We’ve refined how Magento validates partial permissions. Design edit permissions for categories, products, and CMS pages are now validated for each endpoint (web API and other) outside of the related model-layer classes. The web API now returns an error when design-related fields are being overridden. Previously, this behavior was ignored.
 
 <!--- MC-10966-->
 * Product availability is no longer tied to events associated with the categories to which they belong. Instead, Magento now uses the current category event for the page on which the product is displayed. Previously, products that were tied to categories with no events could be purchased, and products that were tied to expired events could not be purchased.
@@ -459,11 +459,8 @@ We have fixed hundreds of issues in the Magento 2.3.3 core code.
 <!--- ENGCOM-5063-->
 * Magento now displays a validation alert message when you click **Add Attribute**, and then click **Add selected** without first selecting an attribute. Previously, when you clicked **Add selected**, Magento selected all possible attributes. *Fix submitted by Mahesh Singh in pull request [22724](https://github.com/magento/magento2/pull/22724)*. [GitHub-22639](https://github.com/magento/magento2/issues/22639)
 
-<!--- ENGCOM-5202-->
-* You can now update an attribute for all products through a mass action. *Fix submitted by Shikha Mishra in pull request [22704](https://github.com/magento/magento2/pull/22704)*. [GitHub-22004](https://github.com/magento/magento2/issues/22004)
-
 <!--- ENGCOM-5419-->
-* The catalog products filter now filters on enabled or disabled status as expectedPreviously, the SQL generated by the `Magento\Catalog\Ui\DataProvider\Product\ProductCollection` class omitted the `attribute_id` condition, which resulted in any attribute of the same type (`int` or `varchar`, for example) matching the query if the values were the same. *Fix submitted by Matti Vapa in pull request [23444](https://github.com/magento/magento2/pull/23444)*. [GitHub-23435](https://github.com/magento/magento2/issues/23435)
+* The catalog products filter now filters on enabled or disabled status as expected. Previously, the SQL generated by the `Magento\Catalog\Ui\DataProvider\Product\ProductCollection` class omitted the `attribute_id` condition, which resulted in any attribute of the same type (`int` or `varchar`, for example) matching the query if the values were the same. *Fix submitted by Matti Vapa in pull request [23444](https://github.com/magento/magento2/pull/23444)*. [GitHub-23435](https://github.com/magento/magento2/issues/23435)
 
 <!--- ENGCOM-5134-->
 * `ProductRepository` now updates and saves existing products with changed SKUs as expected. Previously, Magento threw an error, and you were not able to save the product. *Fix submitted by Pavel Bystritsky in pull request [22933](https://github.com/magento/magento2/pull/22933)*. [GitHub-22870](https://github.com/magento/magento2/issues/22870)
@@ -488,7 +485,7 @@ We have fixed hundreds of issues in the Magento 2.3.3 core code.
 ### Catalog rule
 
 <!--- MAGETWO-99592-->
-* You can now use Visual Merchandiser to drag and drop products without losing product information. Previously, all discounts for products in the affected category was lost after dragging and dropping products
+* You can now use Visual Merchandiser to drag and drop products without losing product information. Previously, all discounts for products in the affected category were lost after dragging and dropping products
 
 <!--- MAGETWO-99873-->
 * Coupon expiration dates now match the end date of the staging update the coupons are assigned to.
@@ -497,7 +494,7 @@ We have fixed hundreds of issues in the Magento 2.3.3 core code.
 * Coupon expiration dates and times now match the `end_date` value set in the staging update. Previously, coupon expiration dates could differ from the expiration date set by the sales rule.
 
 <!--- MC-18254-->
-* The CatalogRule module now handles discrepancies between the Magento timezone offset and the system timezone offset (which is in UTC). Previously, when the Magento timezone offset was greater than the system timezone offset, the active ranges set for special prices were inaccurateThis is a consequence of how  catalog price rules special prices are stored and updated. (Catalog price rules special prices are stored in the `catalogrule_product_price` table. This table’s daily update is triggered by the `catalogrule_apply_all` cron job, which is scheduled at 01:00 every day. Cron schedule times are scheduled in Magento timezone.)
+* The CatalogRule module now handles discrepancies between the Magento timezone offset and the system timezone offset (which is in UTC). Previously, when the Magento timezone offset was greater than the system timezone offset, the active ranges set for special prices were inaccurate. This is a consequence of how  catalog price rules special prices are stored and updated. (Catalog price rules special prices are stored in the `catalogrule_product_price` table. This table’s daily update is triggered by the `catalogrule_apply_all` cron job, which is scheduled at 01:00 every day. Cron schedule times are scheduled in Magento timezone.)
 
 ### Cleanup and simple code refactoring
 
@@ -526,7 +523,7 @@ We have fixed hundreds of issues in the Magento 2.3.3 core code.
 * Corrected poor spacing in the Gift message section of the My Account page. *Fix submitted by Amjad M in pull request [23226](https://github.com/magento/magento2/pull/23226)*. [GitHub-22950](https://github.com/magento/magento2/issues/22950)
 
 <!--- ENGCOM-5344-->
-* The asterisk  sign is now constantly positioned when used throughout the Admin. *Fix submitted by Atish Goswami in pull request [22650](https://github.com/magento/magento2/pull/22650)*. [GitHub-13227](https://github.com/magento/magento2/issues/13227)
+* The asterisk sign indicating a required field is now consistently positioned throughout the Admin. *Fix submitted by sanjaychouhan-webkul in pull request [22800](https://github.com/magento/magento2/pull/22800)*. [GitHub-22638](https://github.com/magento/magento2/issues/22638)
 
 <!--- ENGCOM-5326-->
 * Corrected misspelling in the `app/code/Magento/Ui/Block/Wrapper.php` file. *Fix submitted by Ravi Chandra in pull request [23335](https://github.com/magento/magento2/pull/23335)*.
@@ -597,10 +594,10 @@ We have fixed hundreds of issues in the Magento 2.3.3 core code.
 <!--- ENGCOM-5292-->
 * The **Apply** button now functions as expected when you create a new order and apply a coupon from the Admin. Previously, clicking **Apply** removed the coupon instead of applying it. *Fix submitted by Gaurav Agarwal in pull request [23250](https://github.com/magento/magento2/pull/23250)*. [GitHub-23238](https://github.com/magento/magento2/issues/23238)
 
-### cron
+### Cron
 
 <!--- ENGCOM-5210-->
-* Runtime exception handling for cron jobs has been improvedNow, when an exception occurs, the current run is marked as **failed** in the `cron_schedule`  table. Then, when the next run completes correctly, Magento updates job status at the end of the `cron_schedule` table. Previously, when a job failed, the `cron_schedule`  table was filled with pending jobs; the `indexer_update_all_views` job was not run; no output was sent to the `var/log/cron.log`file, and no status updates were appended to the `cron_schedule` table.
+* Runtime exception handling for cron jobs has been improved. Now, when an exception occurs, the current run is marked as **failed** in the `cron_schedule`  table. Then, when the next run completes correctly, Magento updates job status at the end of the `cron_schedule` table. Previously, when a job failed, the `cron_schedule`  table was filled with pending jobs; the `indexer_update_all_views` job was not run; no output was sent to the `var/log/cron.log` file, and no status updates were appended to the `cron_schedule` table. *Fix submitted by Quentin Farizon in pull request [23125](https://github.com/magento/magento2/pull/23125)*.
 
 <!--- ENGCOM-5335-->
 * Cron jobs are no longer duplicated. Previously, after a cron job was run, Magento cleared the cache and processed the job again. *Fix submitted by Douglas Radburn in pull request [23312](https://github.com/magento/magento2/pull/23312)*.
@@ -617,7 +614,7 @@ We have fixed hundreds of issues in the Magento 2.3.3 core code.
 * Custom customer address attribute are populated with the  values that have been assigned for the selected  address when the **Same As Billing Address** setting is disabled. Previously, when a merchant tried to change an address while creating an order from the Admin, the drop-down menu of available addresses was not populated.
 
 <!--- MAGETWO-99493-->
-* The account status list now updates as expected to correctly indicate the account lock status after `cron` is runPreviously, this list displayed status as unlocked only.
+* The account status list now updates as expected to correctly indicate the account lock status after `cron` is run. Previously, this list displayed status as unlocked only.
 
 <!--- MAGETWO-99496 EE ONLY-->
 * You can now create and successfully save a customer attribute when the **Use in Filter Options** and **Use in Search Options** settings are set to **no**. Previously, Magento did not display these attributes, and they could not be edited.
@@ -1345,7 +1342,7 @@ EE ONLY
 
 * Taxes for Magento Commerce gift wrap are now properly written to the Vertex tax journal.
 
-### Visual Merchandiser
+### Visual Merchandiser EE ONLY
 
 <!--- MAGETWO-96129-->
 * You can now add tier price conditions to smart categories.
