@@ -72,29 +72,8 @@ pages:
               url: /install-gde/prereq/nginx.html
 
             - label: PHP
-              url: /install-gde/prereq/php-centos-ubuntu.html
-              include_versions: ["2.3"]
-              children:
-
-                - label: Required PHP settings
-                  url: /install-gde/prereq/php-settings.html
-                  include_versions: ["2.3"]
-
-            - label: PHP
-              include_versions: ["2.1", "2.2"]
-              children:
-
-                - label: PHP for Centos
-                  url: /install-gde/prereq/php-centos.html
-                  include_versions: ["2.1", "2.2"]
-
-                - label: PHP for Ubuntu
-                  url: /install-gde/prereq/php-ubuntu.html
-                  include_versions: ["2.1", "2.2"]
-
-                - label: Required PHP settings
-                  url: /install-gde/prereq/php-settings.html
-                  include_versions: ["2.1", "2.2"]
+              url: /install-gde/prereq/php-settings.html
+              include_versions: ["2.2", "2.3"]
 
             - label: MySQL
               url: /install-gde/prereq/mysql.html

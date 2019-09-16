@@ -475,4 +475,105 @@ This query searches for products that have `name` that ends with `Short` or has 
 }
 ```
 
-The query returns 14 item.
+The query returns 14 items.
+
+#### Retrieve related products, Up-sells and Cross-sells
+
+The following query shows how to get related products, Up-sells and Cross-sells for the particular product:
+
+```text
+{
+  products(filter: { sku: { eq: "24-WB06" } }) {
+    items {
+      id
+      name
+      related_products {
+        id
+        name
+      }
+      upsell_products {
+        id
+        name
+      }
+      crosssell_products {
+        id
+        name
+      }
+    }
+  }
+}
+```
+
+**Response**
+
+```json
+{
+  "data": {
+    "products": {
+      "items": [
+        {
+          "id": 11,
+          "name": "Endeavor Daytrip Backpack",
+          "related_products": [],
+          "upsell_products": [
+            {
+              "id": 1,
+              "name": "Joust Duffle Bag"
+            },
+            {
+              "id": 3,
+              "name": "Crown Summit Backpack"
+            },
+            {
+              "id": 4,
+              "name": "Wayfarer Messenger Bag"
+            },
+            {
+              "id": 5,
+              "name": "Rival Field Messenger"
+            },
+            {
+              "id": 6,
+              "name": "Fusion Backpack"
+            },
+            {
+              "id": 7,
+              "name": "Impulse Duffle"
+            },
+            {
+              "id": 12,
+              "name": "Driven Backpack"
+            },
+            {
+              "id": 13,
+              "name": "Overnight Duffle"
+            },
+            {
+              "id": 14,
+              "name": "Push It Messenger Bag"
+            }
+          ],
+          "crosssell_products": [
+            {
+              "id": 18,
+              "name": "Pursuit Lumaflex&trade; Tone Band"
+            },
+            {
+              "id": 21,
+              "name": "Sprite Foam Yoga Brick"
+            },
+            {
+              "id": 32,
+              "name": "Sprite Stasis Ball 75 cm"
+            },
+            {
+              "id": 45,
+              "name": "Set of Sprite Yoga Straps"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
+```
