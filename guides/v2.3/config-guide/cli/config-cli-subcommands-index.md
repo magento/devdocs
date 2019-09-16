@@ -19,7 +19,7 @@ bin/magento indexer:info
 
 The list displays as follows:
 
-```
+```terminal
 design_config_grid                       Design Config Grid
 customer_grid                            Customer Grid
 catalog_category_product                 Category Products
@@ -59,7 +59,7 @@ bin/magento indexer:status
 
 Sample result:
 
-```
+```terminal
 +----------------------+------------------+-----------+---------------------+---------------------+
 | Title                | Status           | Update On | Schedule Status     | Schedule Updated    |
 +----------------------+------------------+-----------+---------------------+---------------------+
@@ -106,7 +106,7 @@ bin/magento indexer:reindex
 
 Sample result:
 
-```
+```terminal
 Design Config Grid index has been rebuilt successfully in <time>
 Customer Grid index has been rebuilt successfully in <time>
 Category Products index has been rebuilt successfully in <time>
@@ -148,8 +148,8 @@ Only use the environment variable in the indexer command. Do not save the variab
 
 Use this command to set the following indexer options:
 
-*  **Update on save (`realtime`):** Indexed data is updated as soon as a change is made in the [Admin](https://glossary.magento.com/admin). (For example, the [category](https://glossary.magento.com/category) products index is reindex after products are added to a category in the Admin.) This is the default.
-* **Update by schedule (`schedule`):** Data is indexed according to the schedule set by your Magento cron job.
+-  **Update on save (`realtime`):** Indexed data is updated as soon as a change is made in the [Admin](https://glossary.magento.com/admin). (For example, the [category](https://glossary.magento.com/category) products index is reindex after products are added to a category in the Admin.) This is the default.
+- **Update by schedule (`schedule`):** Data is indexed according to the schedule set by your Magento cron job.
 
 [Learn more about indexing]({{ page.baseurl }}/extension-dev-guide/indexing.html)
 
@@ -169,7 +169,7 @@ bin/magento indexer:show-mode
 
 Sample result:
 
-```
+```terminal
 Design Config Grid:                                Update on Save
 Customer Grid:                                     Update on Save
 Category Products:                                 Update on Save
@@ -211,10 +211,12 @@ bin/magento indexer:set-mode schedule catalog_category_product catalog_product_c
 
 Sample result:
 
-```
+```terminal
 Index mode for Indexer Category Products was changed from 'Update on Save' to 'Update by Schedule'
 Index mode for Indexer Product Categories was changed from 'Update on Save' to 'Update by Schedule'
 ```
+
+The indexers-related database triggers are added when the indexer mode is set to `schedule` and removed when the indexer mode is set to `realtime`. If the triggers are missing from your database while the indexers are set to `schedule`, change the indexers to `realtime` and then change them back to `schedule`. This resets the triggers.
 
 #### Related topics
 

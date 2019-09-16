@@ -4,8 +4,6 @@ subgroup: 3_Widgets
 title: Tabs widget
 ---
 
-## Overview {#fedg_tabs-widget_overview}
-
 The Magento tabs widget implements single content area with multiple panels, each associated with a header in a list. It uses the [Magento collapsible widget].
 
 The tabs [widget](https://glossary.magento.com/widget) source is [lib/web/mage/tabs.js].
@@ -22,7 +20,7 @@ $("#element").tabs();
 Where:
 -   `#element` is the selector of the element for tabs is initialized.
 
-Phtml template file examples using script:
+The following example shows a PHTML file using the script:
 
 ```html
 <script>

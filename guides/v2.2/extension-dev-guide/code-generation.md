@@ -24,7 +24,7 @@ In particular,
 
 *	A Factory class creates instances of a type. See [Instantiating objects with factories] for more information. Factories are directly referenced within application code.
 
-*	You can designate a Proxy to be generated for a type in order to ensure the type is not instantiated until it is needed. See [Proxies] for more information. Proxies are directly referenced within DI configuration.
+*	You can designate a Proxy to be generated for a type in order to ensure the type is not instantiated until it is needed. See [Proxies] for more information. Proxies are directly referenced within [dependency injection](https://glossary.magento.com/dependency-injection) configuration.
 
 *   Interceptor classes are automatically generated to facilitate Magento's plugin system. An interceptor class extends a type and is returned by the Object Manager to allow multiple plugin classes to inject logic into different methods. Interceptors work behind the scenes and are _not_ directly referenced in application code.
 
@@ -32,7 +32,7 @@ You can also use the [code compiler] to generate code at any time.  In Magento 2
 
 ### Why should you regenerate code? {#codegen-over-why}
 
-Suppose a Factory or Proxy class for a Customer class is generated and the Customer class has new methods added to it. Because a Factory or Proxy exists on the file system, it is not regenerated. However, the Factory or Proxy implementation is now incomplete because it does not have the new methods. In this case, you must regenerate the Factory or Proxy class.
+Suppose a Proxy class for a Customer class is generated, and the Customer class has new methods added to it. Because a Proxy exists on the file system, it is not regenerated. However, the Proxy implementation is now incomplete because it does not have the new Customer class methods. In this case, you must regenerate the Proxy class.
 
 If the code generator implementation itself is changed, you must regenerate all the classes. This is rare, however.
 
@@ -50,7 +50,7 @@ Code generation is required in Magento 2. Generating code assures you of the fol
 
 When code changes as discussed in the preceding section, the Object Manager compiles it.
 
-The code compiler creates `generated/metadata/global.php`, which is a PHP serialized map of all constructor definitions mixed with object linking configuration defined in di.xml. `di.xml` is the dependency injection configuration. There is a global `app/etc/di.xml` and there can one defined for every [module](https://glossary.magento.com/module).
+The code compiler creates the `generated/metadata/global.php`file, which is a PHP serialized map of all constructor definitions mixed with object linking configuration defined in di.xml. The `di.xml` file is the [dependency injection](https://glossary.magento.com/dependency-injection) configuration. There is a global `app/etc/di.xml` file, and there can also be a `di.xml` file for every [module](https://glossary.magento.com/module).
 
 <!-- Link Definitions -->
 [Magento/Customer/Model/Resource/AddressRepository]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Customer/Model/ResourceModel/AddressRepository.php
