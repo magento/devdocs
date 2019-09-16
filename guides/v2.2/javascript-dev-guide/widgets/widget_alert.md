@@ -3,7 +3,6 @@ group: javascript-developer-guide
 subgroup: 3_Widgets
 title: Alert widget
 ---
-## Overview {#alert_overview}
 
 The Magento alert widget implements a modal pop-up window with a confirmation button. It extends the [Magento modal widget].
 

@@ -199,7 +199,3 @@ pages:
 - label: Component status
   url: /page-builder/docs/comp-status2.html
   versionless: true
-
-- label: Contribution guide
-  url: https://github.com/magento/magento2-page-builder/blob/1.0-develop/CONTRIBUTING.md
-  versionless: true
