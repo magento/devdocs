@@ -5,8 +5,6 @@ contributor_name: Atwix
 contributor_link: https://www.atwix.com/
 ---
 
-## Overview
-
 Use the ToggleAdvanced [widget](https://glossary.magento.com/widget/) to toggle the HTML class for selectors by clicking on a toggle element.
 
 The widget also allows toggling a clicked element class and clicked element text if an element is toggled.
@@ -26,7 +24,7 @@ $("#element").toggleAdvanced();
 Where:
 -   `#element` is the selector of the element for which ToggleAdvanced is initialized.
 
-Phtml template file examples using script:
+The following example shows a PHTML file using the script:
 
 ```html
 <script>

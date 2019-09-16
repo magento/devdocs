@@ -199,7 +199,7 @@ Exception printing is disabled by default for security reasons.
 
 1. Using SSH, log in to the remote server and open the `./app/var/report/<error number>` file.
 
-1. [Examine the logs]({{ page.baseurl }}/cloud/trouble/environments-logs.html) to determine the source of the issue.
+1. [Examine the logs]({{page.baseurl}}/cloud/project/log-locations.html) to determine the source of the issue.
 
 1. Add, commit, and push code changes.
 
