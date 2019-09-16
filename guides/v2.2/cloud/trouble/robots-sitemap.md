@@ -87,7 +87,7 @@ Create a `pub/media/domain_robots.txt` file, where the domain is `domain.com` an
 }
 ```
 
-VCL will take care of routing `http://domain.com/robots.txt` and present the correct file. 
+VCL will take care of routing `http://domain.com/robots.txt` and present the correct file.
 
 To configure redirect for `robots.txt` and `sitemap.xml` in the single snippet, create `pub/media/domain_robots.txt` and `pub/media/domain_sitemap.xml`, where the domain is `domain.com` and use the next VCL snippet:
 
