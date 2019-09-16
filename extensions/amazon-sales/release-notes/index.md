@@ -21,7 +21,7 @@ The release notes include:
 
 Amazon Sales Channel 2.0.1 is compatible with versions 2.2.4+ and 2.3.x of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}.
 
--  {:.new}**Improved Logging**: <!--CHAN-3642, 3672-->Implemented **Enable Debug Logging** feature to collect additional synchronization data when troubleshooting is needed. See the [Sales Channels Settings](https://docs.magento.com/m2/ce/user_guide/configuration/sales-channels/global-settings.html) topic in the Configuration Reference.
+-  {:.new}**Improved Logging**: <!--CHAN-3642, 3672-->Implemented the **Enable Debug Logging** feature to collect additional synchronization data when troubleshooting is needed. See the [Sales Channels Settings](https://docs.magento.com/m2/ce/user_guide/configuration/sales-channels/global-settings.html) topic in the Configuration Reference.
 
 -  {:.fix}**Product Catalog**: <!--CHAN-3687-->Corrected an issue preventing images imported from an Amazon listing from being applied to the corresponding Magento catalog product.
 
