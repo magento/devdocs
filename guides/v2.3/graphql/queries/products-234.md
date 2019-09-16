@@ -23,21 +23,21 @@ Each query attribute is defined below:
 
 Attribute |  Data type | Description
 --- | --- | ---
-`search` | String | Performs a full-text search using the specified key words. This attribute is optional. S
-`filter` | ProductAttributeFilterInput | Identifies which attributes to search for and return. This attribute is required. See [filter attribute](#filter) object for more information.
-`pageSize` | Int | Specifies the maximum number of results to return at once. The default value is 20.
-`currentPage` | Int | Specifies which page of results to return. The default value is 1.
-`sort` | ProductAttributeSortInput | Specifies which attribute to sort on, and whether to return the results in ascending or descending order.
+`search` | String | Performs a full-text search using the specified key words
+`filter` | ProductAttributeFilterInput | Identifies which attributes to search for and return. See [filter attribute](#filter) object for more information
+`pageSize` | Int | Specifies the maximum number of results to return at once. The default value is 20
+`currentPage` | Int | Specifies which page of results to return. The default value is 1
+`sort` | ProductAttributeSortInput | Specifies which attribute to sort on, and whether to return the results in ascending or descending order
 
 ### search attribute
 
-The `search` element causes Magento to perform a full text search on the specified keywords. (This is the same type of search that is performed from the storefront. If multiple keywords are specified, each keyword is evaluated separately.)
+The `search` attribute causes Magento to perform a full text search on the specified keywords. This is the same type of search that is performed from the storefront. If multiple keywords are specified, each keyword is evaluated separately.
 
-The `search` element is optional, but it can be used with or without filters. Each query must contain a `search` or `filter` element.
+Each query must contain a `search` or `filter` attribute, or both.
 
 ### filter attribute {#filter}
 
-The `ProductAttributeFilterInput` object defines the filters to be used in the search. A filter contains at least one attribute, a comparison operator, and the value that is being searched for. The following example filter searches for products that have a `name` that contains the string `Bag` with a `price` that's less than or equal to `40`.
+The `ProductAttributeFilterInput` object determines which attributes will be used to narrow the results in a `products` query. A filter contains at least one attribute, a comparison operator, and the value that is being searched for. The following example filter searches for products that have a `name` that contains the string `Bag` with a `price` that's less than or equal to `40`.
 
 ```graphql
 filter: {
@@ -50,9 +50,9 @@ filter: {
 }
 ```
 
-Magento processes the attribute values specified in  a `ProductAttributeFilterInput` as simple data types (strings, integers, booleans). However, returned attributes can be a different, complex, data type. For example, in a response, `price` is an object that contains a monetary value and a currency code.
+Magento processes the attribute values specified in  a `ProductAttributeFilterInput` as simple data types (strings, integers, Booleans). However, returned attributes can be a different, complex data type. For example, in a response, `price` is an object that contains a monetary value and a currency code.
 
-By default, you can use the following attributes as filters. To define a custom filter, see [Filtering with custom attributes]({{page.baseurl}}/graphql/custom-filters.html). Use the `input_type` output attribute of the [`customAttributeMetadata` query]({{page.baseurl}}/graphql/queries/custom-attribute-metadata.html) to determine whether your custom filter should include the FilterEqualTypeInput, FilterMatchTypeInput, or FilterRangeTypeInput data type.
+By default, you can use the following attributes as filters. To define a custom filter, see [Filtering with custom attributes]({{page.baseurl}}/graphql/custom-filters.html). Use the `input_type` output attribute of the [`customAttributeMetadata` query]({{page.baseurl}}/graphql/queries/custom-attribute-metadata.html) to determine whether your custom filter should include the `FilterEqualTypeInput`, `FilterMatchTypeInput`, or `FilterRangeTypeInput` data type.
 
 Attribute | Data type | Description
 --- | --- | ---
@@ -74,18 +74,18 @@ The `category_id`, `sku`, and `url_key` filters require a `FilterEqualTypeInput`
 
 Attribute | Data type | Description
 --- | --- | ---
-`eq` | String | Use this attribute to exactly match the specified string. For example, to filter on a specific category ID, specify a value like "5"
-`in` | [String] | Use this attribute to filter on an array of values. For example, to filter on category IDs 4, 5, and 6, specify a value of `["4", "5", "6"]
+`eq` | String | Use this attribute to exactly match the specified string. For example, to filter on a specific category ID, specify a value like `5`
+`in` | [String] | Use this attribute to filter on an array of values. For example, to filter on category IDs 4, 5, and 6, specify a value of `["4", "5", "6"]`
 
 #### FilterMatchTypeInput attributes
 
-Use the `FilterMTypeInput` object to construct a filter that returns products that exactly match a string or contain the specified pattern.
+Use the `FilterMatchTypeInput` object to construct a filter that returns products that exactly match a string or contain the specified pattern.
 
 Attribute | Data type | Description
 --- | --- | ---
-`match` | String | Use this attribute to exactly match the specified string. For example, to filter on a specific SKU, specify a value such as "24-MB01".
+`match` | String | Use this attribute to exactly match the specified string. For example, to filter on a specific SKU, specify a value such as `24-MB01`
 
-You must specify a `FilterLikeTypeInput` object to filter on a custom product attribute of the following types:
+You must specify a `FilterMatchTypeInput` object to filter on a custom product attribute of the following types:
 
 -  Text field
 -  Text area
@@ -97,8 +97,8 @@ Use the `FilterRangeTypeInput` object to construct a filter that returns product
 
 Attribute | Data type | Description
 --- | --- | ---
-`from` | String | Use this attribute to specify the lowest possible value in the range.
-`to` | String | Use this attribute to specify the highest possible value in the range.
+`from` | String | Use this attribute to specify the lowest possible value in the range
+`to` | String | Use this attribute to specify the highest possible value in the range
 
 ### pageSize attribute {#pageSize}
 
@@ -108,28 +108,28 @@ The `pageSize` attribute specifies the maximum number of items to return. If no 
 
 ### currentPage attribute
 
-The `currentPage` attribute specifies which page of results to return. If no value is specified, the first page is returned. If you specify a value that is greater than the number of available pages, an error is returned.
+The `currentPage` attribute specifies which page of results to return. If no value is specified, the first page is returned. Magento returns an error if you specify a value that is greater than the number of available pages.
 
 ### sort attribute
 
-The `sort` attribute allows you to specify which field or fields to use for sorting the results. If you specify more than one field, Magento sorts by the first field listed. Then, if any items have the same value, those items will be sorted by the secondary field.  The value for each field can be set to either `ASC` or `DESC`.
+The `sort` attribute allows you to specify which field or fields to use for sorting the results. If you specify more than one field, Magento sorts by the first field listed. Then, if any items have the same value, those items will be sorted by the secondary field. The value for each field can be set to either `ASC` or `DESC`.
 
 If you do not specify a `sort` object, Magento sorts as follows:
 
--  If the `search` attribute is specified, the query sorts by relevance, in descending order.
--  If the `filter` attribute is specified but not `search`, the query sorts by position, in ascending order.
+-  If you specify the `search` attribute, the query sorts by relevance, in descending order.
+-  If you specify the `filter` attribute without specifying the  `search` attribute, the query sorts by position, in ascending order.
 
-In previous releases, the `sort` attribute required a `ProductSortInput` object as input. The `sort` attribute now requires a `ProductSortFilterInput` object, which can contain the following attributes:
+In previous versions, the `sort` attribute required a `ProductSortInput` object as input. The `sort` attribute now requires a `ProductAttributeSortInput` object, which can contain the following attributes:
 
 Attribute | Data type | Description
 --- | --- | ---
 `name` | SortEnum | Sorts by Product Name
 `position` | SortEnum | Sorts by the position of products
 `price` | SortEnum | Sorts by Price
-`relevance` | SortEnum | Sorts by the search relevance score. This is the default value
+`relevance` | SortEnum | (Default) Sorts by the search relevance score
 
 {:.bs-callout-info}
-If you use MySQL for searches and you specify `relevance` and another sorting attribute, the `relevance` results are always listed first. This limitation does not apply to Elasticsearch.
+If you use MySQL for searches and you specify `relevance` and another sorting attribute, the `relevance` results are always listed first. This limitation does not apply to [Elasticsearch]({{page.baseurl}}/config-guide/elasticsearch/configure-magento.html).
 
 ## Deprecated input attributes
 
@@ -137,7 +137,7 @@ The `filter` and `sort` attributes require new input objects. The following sect
 
 ### ProductFilterInput attributes
 
-The `filter` attribute previously required a `ProductFilterInput` object as input. This object has been deprecated. The replacement input object, `ProductAttributeFilterInput` is more restrictive about what attributes can be used in a `products` query by default. The following attributes can still be used in custom filters. See [Filtering with custom attributes]({{page.baseurl}}/graphql/custom-filters.html) for more information.
+The `filter` attribute previously required a `ProductFilterInput` object as input. This object has been deprecated. The replacement input object, `ProductAttributeFilterInput` is more restrictive about what attributes can be used in a `products` query by default. The following attributes can no longer be used in default filters. See [Filtering with custom attributes]({{page.baseurl}}/graphql/custom-filters.html) for more information.
 
 ```text
 country_of_manufacture
@@ -157,6 +157,7 @@ min_price
 news_from_date
 news_to_date
 options_container
+or
 required_options
 small_image
 small_image_label
@@ -319,11 +320,13 @@ The following sections provide examples of `products` queries. These examples us
 
 The following search returns items that contain the word `yoga` or `pants`. The Catalog Search index contains search terms taken from the product `name`, `description`, `short_description` and related attributes.
 
-``` text
+**Request**
+
+```graphql
 {
   products(
     search: "Yoga pants"
-    pageSize: 10
+    pageSize: 2
   )
   {
     total_count
@@ -347,7 +350,49 @@ The following search returns items that contain the word `yoga` or `pants`. The 
 }
 ```
 
-The search returns 45 items.
+**Response**
+
+The search returns 45 items, but only the first two items are returned on the current page.
+
+```json
+{
+  "data": {
+    "products": {
+      "total_count": 45,
+      "items": [
+        {
+          "name": "Josie Yoga Jacket",
+          "sku": "WJ02",
+          "price": {
+            "regularPrice": {
+              "amount": {
+                "value": 56.25,
+                "currency": "USD"
+              }
+            }
+          }
+        },
+        {
+          "name": "Selene Yoga Hoodie",
+          "sku": "WH05",
+          "price": {
+            "regularPrice": {
+              "amount": {
+                "value": 42,
+                "currency": "USD"
+              }
+            }
+          }
+        }
+      ],
+      "page_info": {
+        "page_size": 2,
+        "current_page": 1
+      }
+    }
+  }
+}
+```
 
 ### Full text search with filter
 
@@ -357,6 +402,8 @@ The following sample query returns a list of products that meets the following c
 -  The price is less than $50.
 
 The response for each item includes the `name`, `sku`, and `price` only. Up to 25 results are returned at a time, in decreasing order of price.
+
+**Request**
 
 ```graphql
 {
@@ -387,7 +434,7 @@ The response for each item includes the `name`, `sku`, and `price` only. Up to 2
 
 ```
 
-The query returns the following:
+**Response**
 
 ```json
 {
@@ -910,7 +957,9 @@ query {
 
 The following query shows how to get related products, Up-sells and Cross-sells for the particular product:
 
-```text
+**Request**
+
+```graphql
 {
   products(filter: { sku: { eq: "24-WB06" } }) {
     items {
