@@ -23,11 +23,11 @@ Each query attribute is defined below:
 
 Attribute |  Description
 --- | ---
-`search` | Performs a full-text search using the specified key words. This attribute is optional. See [Queries]({{ page.baseurl }}/graphql/queries.html) for more information.
+`search` | Performs a full-text search using the specified keywords. This attribute is optional.
 `filter` | Identifies which attributes to search for and return. This attribute is required. See [ProductFilterInput](#ProductFilterInput) for more information.
-`pageSize` | Specifies the maximum number of results to return at once. The default value is 20. See [Queries]({{ page.baseurl }}/graphql/queries.html) for more information.
-`currentPage` | Specifies which page of results to return. The default value is 1. See [Queries]({{ page.baseurl }}/graphql/queries.html) for more information.
-`sort` | Specifies which attribute to sort on, and whether to return the results in ascending or descending order. See [Queries]({{ page.baseurl }}/graphql/queries.html) for more information.
+`pageSize` | Specifies the maximum number of results to return at once. The default value is 20.
+`currentPage` | Specifies which page of results to return. The default value is 1.
+`sort` | Specifies which attribute to sort on, and whether to return the results in ascending or descending order.
 `Products` | An output object that contains the results of the query. See [Response](#Response) for details.
 
 ## ProductFilterInput object {#ProductFilterInput}
@@ -44,8 +44,6 @@ filter: {
   }
 }
 ```
-
-See [Queries]({{ page.baseurl }}/graphql/queries.html) for more information about the operators.
 
 Magento processes the attribute values specified in  a `ProductFilterInput` as  simple data types (strings, integers, booleans). However, returned attributes can be a different, complex, data type. For example, in a response, `price` is an object that contains a monetary value and a currency code.
 
@@ -406,8 +404,6 @@ Attribute | Type | Description
 `value` | String | The value assigned to the parameter
 
 ## Sample query
-
-You can review several general interest `products` queries at [Queries]({{ page.baseurl }}/graphql/queries.html).
 
 ### Layered navigation
 

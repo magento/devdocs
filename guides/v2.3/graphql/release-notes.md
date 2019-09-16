@@ -70,7 +70,7 @@ These release notes can include:
    -  Mutations that [generate]({{page.baseurl}}/graphql/mutations/generate-customer-token.html) and [revoke]({{page.baseurl}}/graphql/mutations/revoke-customer-token.html) customer tokens
    -  Page Builder and WYSIWYG fields support complex structures for PWA scenarios
    -  Magento now calculates the complexity of queries and mutations and returns an error message if a query or mutation is deemed too complex
-   -  Variable support in [queries]({{page.baseurl}}/graphql/queries.html) and [mutations]({{page.baseurl}}/graphql/mutations.html)
+   -  Variable support in [queries]({{page.baseurl}}/graphql/queries/index.html) and [mutations]({{page.baseurl}}/graphql/mutations/index.html)
    -  A query that returns information about a store's [theme and CMS]({{page.baseurl}}/graphql/queries/store-config.html) configuration
    -  GraphQL tests are integrated with Travis CI​
    -  GraphQL browsers now display fields and objects alphabetically
