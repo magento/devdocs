@@ -26,7 +26,7 @@ The following example shows you how to dispatch an event with and without an arr
 
 namespace MyCompany\MyModule;
 
-use Magento\Framework\Event\ObserverInterface;
+use Magento\Framework\Event\ManagerInterface as EventManager;
 
 class MyClass
 {
@@ -35,7 +35,7 @@ class MyClass
    */
   private $eventManager;
 
-  public function __construct(\Magento\Framework\Event\Manager $eventManager)
+  public function __construct(EventManager $eventManager)
   {
     $this->eventManager = $eventManager;
   }
