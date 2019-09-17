@@ -109,13 +109,11 @@ The following sample is an example of the configuration for a simple modal windo
 
 #### Result
 
-As result, a Button component `Open modal` is added, that opens on click a modal window with a `slide` effect.
+The Button component `Open modal` is added, that onClick, opens a modal window with a `slide` effect.
 
 ![Slide Modal]({{ site.baseurl }}/common/images/ui_comps/slide_modal_result.png)
 
 ### Component with extended settings
-
-The following sample is an example of the configuration for a notification modal window, used for Backend notifications:
 
 ```xml
 <modal name="test_notification">
@@ -175,7 +173,7 @@ The following sample is an example of the configuration for a notification modal
 
 #### Result
 
-As result, the modal window auto opens on page load with a `popup` effect.
+As a result, the modal window auto-opens on page load with a `popup` effect.
 
 ![Notification Modal]({{ site.baseurl }}/common/images/ui_comps/notification_modal_result.png)
 
@@ -183,16 +181,16 @@ As result, the modal window auto opens on page load with a `popup` effect.
 
 Extends [`uiCollection`]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uicollection_concept.html):
 
-- [`Magento_Ui_module_dir/view/base/web/js/modal/modal-component.js`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/modal/modal-component.js)
-- [`Magento_Ui_module_dir/view/base/web/templates/modal/modal-component.html`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/templates/modal/modal-component.html)
+-  [`Magento_Ui_module_dir/view/base/web/js/modal/modal-component.js`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/modal/modal-component.js)
+-  [`Magento_Ui_module_dir/view/base/web/templates/modal/modal-component.html`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/templates/modal/modal-component.html)
 
 ### Methods and events
 
-- `actionCancel()` - returns all modal's child components to the state they had on modal open and closes the modal window.
-- `actionDone()` - validates the changes in the modal's child components and, if valid, closes the modal.
-- `closeModal()` - closes the modal window.
-- `openModal()` - opens the modal window.
-- `setPrevValues(elem)` - returns all `elem`'s child components to the state they had on modal open.
-- `setTitle()` - sets modal title.
-- `setSubTitle()` - sets modal sub title.
-- `toggleModal()` - toggles the modal window state (open/close).
+-  `actionCancel()` - returns all modal's child components to the state they had on modal open and closes the modal window.
+-  `actionDone()` - validates the changes in the modal's child components and, if valid, closes the modal.
+-  `closeModal()` - closes the modal window.
+-  `openModal()` - opens the modal window.
+-  `setPrevValues(elem)` - returns all `elem`'s child components to the state they had on modal open.
+-  `setTitle()` - sets modal title.
+-  `setSubTitle()` - sets modal sub title.
+-  `toggleModal()` - toggles the modal window state (open/close).
