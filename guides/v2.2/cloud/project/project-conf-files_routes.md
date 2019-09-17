@@ -165,7 +165,7 @@ See more information about [caching]({{ page.baseurl }}/cloud/project/project-ro
 
 ## Redirects and caching
 
-As discussed in more detail in [Redirects]({{ page.baseurl }}/cloud/project/project-routes-more-redir.html), you can manage complex redirection rules, such as *partial redirects* and specify rules for route-based [caching]({{ page.baseurl }}/cloud/project/project-routes-more-cache.html):
+As discussed in more detail in [Redirects]({{ page.baseurl }}/cloud/project/project-routes-more-redir.html), you can manage complex redirection rules, such as *partial redirects*, and specify rules for route-based [caching]({{ page.baseurl }}/cloud/project/project-routes-more-cache.html):
 
 ```yaml
 http://www.{default}/:
