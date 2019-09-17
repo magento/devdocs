@@ -27,7 +27,7 @@ http://{default}/:
 
 ## Route-based caching {#cloud-cache-route}
 
-You can specify fine-grained caching by setting up caching rules for several routes separately as the following example shows:
+You can enable fine-grained caching by setting up caching rules for several routes separately as the following example shows:
 
 ```yaml
 http://{default}/:
