@@ -1,5 +1,6 @@
 .message-banner {
   margin: 0;
+  padding: 10px;
 }
 
 .page-updated {
@@ -19,4 +20,7 @@
 
 .ref-list dt{
   font-weight:500;
+}
+.versions {
+  margin-bottom: 15px;
 }

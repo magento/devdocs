@@ -1,12 +1,18 @@
 <!-- page-header -->
 <section class="page-intro">
-	{% if page.ee_only == true %}
-		<span class="ee-only">{{site.data.var.ee}} only</span>
-	{% endif %}
+{% if page.guide_version != site.version %}
+<span class="ee-only">{{site.data.var.ee}} only</span>	<div class="message-banner versions">
+{% endif %}You are reading the documentation for version {{page.guide_version}}. <a href="{{page.canonical_url}}">{{site.version}}</a> is the latest version available.
+Ensure you are reading the documentation for your version of Magento.
+</div>
+{% endif %}
+{% if page.ee_only == true %}
+<span class="ee-only">{{site.data.var.ee}} only</span>
+{% endif %}
 
-	{% if page.subtitle %}
-		<h1 class="page-subtitle">{{ page.subtitle }}</h1>
-	{% endif %}
+{% if page.subtitle %}
+<h1 class="page-subtitle">{{ page.subtitle }}</h1>
+{% endif %}
 
-	<h1 class="page-heading">{{ page.title }}</h1>
+<h1 class="page-heading">{{ page.title }}</h1>
 </section>
