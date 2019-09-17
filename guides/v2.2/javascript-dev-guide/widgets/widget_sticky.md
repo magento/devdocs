@@ -9,14 +9,14 @@ functional_areas:
 
 ## Overview
 
-The sticky widget allows to make a page element fixed on the screen from and to
-a specific position while user scrolls the page.
+The sticky widget allows admins to fix a page element on the screen in a specific position while a user scrolls the page.
 
 Widget source file is [lib/web/mage/sticky.js].
 
 **Usages:**
-- [Magento Bundle]
-- [Magento Blank theme]
+
+-  [Magento Bundle]
+-  [Magento Blank theme]
 
 [lib/web/mage/sticky.js]: {{ site.mage2bloburl }}/{{ page.guide_version }}/lib/web/mage/sticky.js
 [Magento Bundle]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Bundle/view/frontend/templates/catalog/product/view/summary.phtml
@@ -57,7 +57,7 @@ position of the sticky element. Default uses document `body`.
 
 **Type**:
 
-- String
+-  String
 
 **Default value**: `''`
 
@@ -67,19 +67,19 @@ Spacing in pixels above the sticky element.
 
 **Type**:
 
-- Number
-- Function, that will return a Number
+-  Number
+-  Function, that will return a Number
 
 **Default value**: `0`
 
 ### `stickAfter` {#s_option_stick_after}
 
-Allows postponing sticking, until element will go out of the screen for the number of pixels.
+Allows the postponing of sticking, until element goes off the screen for the number of pixels.
 
 **Type**:
 
-- Number
-- Function, that will return a Number
+-  Number
+-  Function, that will return a number
 
 **Default value**: `0`
 
@@ -89,17 +89,17 @@ CSS class for active sticky state.
 
 **Type**:
 
-- String
+-  String
 
 **Default value**: `_sticky`
 
 ## Styles
 
 {:.bs-callout .bs-callout-info}
-The Sticky widget won't work without basic CSS Styles.
+The Sticky widget will not work without basic CSS Styles.
 
-The page element that has to be sticky has to have a position relative from the
-beginning.
+The sticky page element has to have a position relative to the
+beginning of the page.
 
 ```CSS
 .sticky-element {
@@ -109,18 +109,15 @@ beginning.
 
 ## Code Example
 
-Below is an example of how sidebar additional (`.sidebar-additional`) on the 
-category page is made sticky.
-
 ```html
 <script type="text/x-magento-init">
-    {
-        ".sidebar.sidebar-additional": {
-            "sticky": {
-                "container": ".columns"
-            }
-        }
+ {
+   ".sidebar.sidebar-additional": {
+       "sticky": {
+         "container": ".columns"
+         }
     }
+ }
 </script>
 ```
 
