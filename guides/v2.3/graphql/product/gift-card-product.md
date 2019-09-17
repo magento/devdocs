@@ -78,6 +78,6 @@ The following query returns information about gift card product `GiftCard25`. (I
 
 ## Related topics
 
--  [applyGiftCardToCart mutation]({{page.baseurl}}/graphql/reference/quote-apply-giftcard.html)
+-  [applyGiftCardToCart mutation]({{page.baseurl}}/graphql/mutations/apply-giftcard.html)
 -  [redeemGiftCardBalanceAsStoreCredit mutation]({{page.baseurl}}/graphql/mutations/redeem-giftcard-balance.html)
 -  [removeGiftCardFromCart mutation]({{page.baseurl}}/graphql/mutations/remove-giftcard.html)

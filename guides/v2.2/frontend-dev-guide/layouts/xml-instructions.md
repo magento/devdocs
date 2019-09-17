@@ -105,6 +105,13 @@ Sample of usage in layout:
 
 This would add a new column to the page layout.
 
+#### Controlling children visibility
+
+The `output` attribute controls the visibility of the container's children elements.
+Set this value to `1` to render children content or `0` to disable the output of the entire container.
+
+Use this feature to make temporary changes to a store, such as disabling a section of the page for a sales event and re-enabling it after the event ends.
+
 ### block vs. container {#block_vs_container}
 
 * Blocks represents the end of the chain in rendering HTML for Magento.

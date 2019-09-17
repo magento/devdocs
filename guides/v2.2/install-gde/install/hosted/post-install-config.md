@@ -28,7 +28,7 @@ After installation, we recommend the following:
 *	Make sure your file ownership and permissions are set properly
 *	We strongly recommend [changing the default Admin URL]({{ page.baseurl }}/install-gde/install/cli/install-cli-adminurl.html) from `admin` to something else
 *	Make sure the [`X-Frame-Option` HTTP header]({{ page.baseurl }}/config-guide/secy/secy-xframe.html) is set properly.
-*	Take precautions against cross-site scripting (XSS) by [securing your templates]({{ page.baseurl }}/frontend-dev-guide/templates/template-security.html)
+*	Take precautions against cross-site scripting (XSS) by [securing your templates]({{ page.baseurl }}/extension-dev-guide/xss-protection.html)
 <!-- Set up roles and restricted users (Admin) -->
 
 ## Enable Apache server rewrites {#post-install-rewrites}

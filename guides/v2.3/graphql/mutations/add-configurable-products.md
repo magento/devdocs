@@ -11,7 +11,7 @@ Use the `addConfigurableProductsToCart` mutation to add configurable products to
 
 ## Example usage
 
-The following example adds two black Teton Pullover Hoodies size extra-small to the specified shopping cart. The `cart_id` used in this example was [generated]({{ page.baseurl }}/graphql/reference/quote-create-cart.html) by creating an empty cart.
+The following example adds two black Teton Pullover Hoodies size extra-small to the specified shopping cart. The `cart_id` used in this example was [generated]({{ page.baseurl }}/graphql/mutations/create-empty-cart.html) by creating an empty cart.
 
 **Request**
 
@@ -124,7 +124,7 @@ Attribute |  Data Type | Description
 
 {% include graphql/cart-object.md %}
 
-[Cart query output]({{page.baseurl}}/graphql/reference/quote.html#cart-output) provides more information about the `Cart` object.
+[Cart query output]({{page.baseurl}}/graphql/queries/cart.html#cart-output) provides more information about the `Cart` object.
 
 ## Related topics
 
