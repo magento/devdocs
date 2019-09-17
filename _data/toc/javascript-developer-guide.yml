@@ -76,6 +76,9 @@ pages:
         - label: Loader widget
           url: /javascript-dev-guide/widgets/widget_loader.html
 
+        - label: MediaUploader widget
+          url: /javascript-dev-guide/widgets/widget-media-uploader.html
+
         - label: Menu widget
           url: /javascript-dev-guide/widgets/widget_menu.html
 

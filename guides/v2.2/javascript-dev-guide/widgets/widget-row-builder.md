@@ -260,5 +260,5 @@ As a result, we see the RowBuilder widget example with 5 rows as max.
 ![RowBuilder widget with warning message Example]({{ site.baseurl }}/common/images/widget/row-builder-widget-warning-message-result.png)
 
 <!-- Link Definitions -->
-[lib/web/mage/row-builder.js]: {{ site.mage2bloburl }}/{{ page.guide_version }}/lib/web/mage/row-builder.js
+[lib/web/mage/row-builder.js]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Theme/view/frontend/web/js/row-builder.js
 [Initialize JavaScript]: {{page.baseurl}}/javascript-dev-guide/javascript/js_init.html

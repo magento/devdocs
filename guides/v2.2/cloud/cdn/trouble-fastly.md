@@ -63,7 +63,7 @@ If the timeout occurs when running bulk operations, you can [extend the Fastly t
 
 If you receive a 503 error, check the Production or Staging environment error log and php access log to troubleshoot the issue.
 
-- [Error log]({{ page.baseurl }}/cloud/trouble/environments-logs.html)
+- [Error log]({{page.baseurl}}/cloud/project/log-locations.html#application-logs)
 
    ```
    /var/log/platform/<project_ID>/error.log
