@@ -295,6 +295,9 @@ pages:
         - label: Project structure
           url: /cloud/project/project-start.html
 
+        - label: Log locations
+          url: /cloud/project/log-locations.html
+
         - label: Create and manage users
           url: /cloud/project/user-admin.html
 
@@ -364,9 +367,6 @@ pages:
         - label: Troubleshoot deployment
           url: /cloud/trouble/troubleshoot-deployment.html
 
-        - label: View logs for troubleshooting
-          url: /cloud/trouble/environments-logs.html
-
         - label: Incorrect credentials
           url: /cloud/trouble/trouble_ce-creds.html
 
@@ -375,9 +375,6 @@ pages:
 
         - label: Component deployment failure
           url: /cloud/trouble/trouble_comp-deploy-fail.html
-
-        - label: Redis troubleshooting
-          url: /cloud/trouble/redis-troubleshooting.html
 
         - label: Reset cron jobs
           url: /cloud/trouble/reset-cron-jobs.html
