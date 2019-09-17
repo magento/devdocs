@@ -7,7 +7,7 @@ functional_areas:
   - Services
 ---
 
-If you have site availability issues, the first thing you should do is review your [deployment logs]({{ page.baseurl }}/cloud/trouble/environments-logs.html#log-deploy-log) to see if you can identify the problem.
+If you have site availability issues, the first thing you should do is review your [deployment logs]({{page.baseurl}}/cloud/project/log-locations.html) to see if you can identify the problem.
 
 You may be able to resolve your issue by searching your logs for one of the examples in this topic and trying the associated solution.
 
@@ -45,4 +45,4 @@ Modify the deploy phase using the `SCD_THREADS` environment variable and redeplo
 
         magento-cloud variable:set SCD_THREADS '1' -e <environment>
 
-Refer to [Manage variables]({{ page.baseurl }}/cloud/env/variables-intro.html) and [Redis and static-content deployment]({{ page.baseurl }}/cloud/trouble/redis-troubleshooting.html#static-content) for more information.
+See [Manage variables]({{ page.baseurl }}/cloud/env/variables-intro.html).

@@ -4,8 +4,6 @@ subgroup: 3_Widgets
 title: Navigation widget
 ---
 
-## Overview
-
 Magento navigation widget is a customized [jQuery UI Menu widget]. Magento navigation extends the default functionality with the following:
 -   Expanding all layers of the menu tree past the second layer.
 -   Limiting the maximum number of list items contained within the main
