@@ -21,6 +21,6 @@
 .ref-list dt{
   font-weight:500;
 }
-.versions {
+.message-banner.version-banner {
   margin-bottom: 15px;
 }
