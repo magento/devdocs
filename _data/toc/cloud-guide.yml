@@ -409,6 +409,9 @@ pages:
           url: /cloud/trouble/message-queues.html
           exclude_versions: ["2.0"]
 
+        - label: Unable to send mail: Unknown error
+          url: /cloud/trouble/unable-send-email.html
+
     - label: Upgrades and patches
       url: /cloud/project/project-upgrade-parent.html
       children:
