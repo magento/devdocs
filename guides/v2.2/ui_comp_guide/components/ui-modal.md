@@ -79,15 +79,17 @@ The following sample is an example of the configuration for a simple modal windo
             </item>
         </item>
     </argument>
-    <field name="testField">
-        <argument name="data" xsi:type="array">
-            <item name="config" xsi:type="array">
-                <item name="label" xsi:type="string">test field</item>
-                <item name="formElement" xsi:type="string">input</item>
-                <item name="visible" xsi:type="boolean">true</item>
-            </item>
-        </argument>
-    </field>
+    <fieldset name="general">
+        <settings>
+            <label/>
+        </settings>
+        <field name="testField" formElement="input">
+            <settings>
+                <dataType>text</dataType>
+                <label translate="true">Test Field</label>
+            </settings>
+        </field>
+    </fieldset>
 </modal>
 
 <button name="modal_button">
@@ -105,20 +107,90 @@ The following sample is an example of the configuration for a simple modal windo
 </button>
 ```
 
+#### Result
+
+The Button component `Open modal` is added, that onClick, opens a modal window with a `slide` effect.
+
+![Slide Modal]({{ site.baseurl }}/common/images/ui_comps/slide_modal_result.png)
+
+### Component with extended settings
+
+```xml
+<modal name="test_notification">
+    <settings>
+        <onCancel>actionCancel</onCancel>
+        <state>true</state>
+        <options>
+            <option name="modalClass" xsi:type="string">release-notification-modal</option>
+            <option name="title" xsi:type="string" translate="true">What's new?</option>
+            <option name="type" xsi:type="string">popup</option>
+            <option name="responsive" xsi:type="boolean">true</option>
+            <option name="innerScroll" xsi:type="boolean">true</option>
+            <option name="autoOpen" xsi:type="boolean">true</option>
+        </options>
+    </settings>
+    <fieldset name="notification_fieldset">
+        <settings>
+            <label/>
+        </settings>
+        <container name="notification_text" template="ui/form/components/complex">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="label" xsi:type="string"/>
+                    <item name="additionalClasses" xsi:type="string">release-notification-text</item>
+                    <item name="text" xsi:type="string" translate="true"><![CDATA[
+                <p>We’ll try to show it again the next time you refresh the <b>page</b>.</p>]]></item>
+                </item>
+            </argument>
+        </container>
+        <container name="notification_buttons">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="label" xsi:type="string"/>
+                </item>
+            </argument>
+            <button name="notification_close_button" displayArea="actions-secondary">
+                <argument name="data" xsi:type="array">
+                    <item name="config" xsi:type="array">
+                        <item name="buttonClasses" xsi:type="string">release-notification-button-next</item>
+                        <item name="actions" xsi:type="array">
+                            <item name="0" xsi:type="array">
+                                <item name="targetName" xsi:type="string">ns = ${ $.ns }, index = notification_modal_1</item>
+                                <item name="actionName" xsi:type="string">closeModal</item>
+                            </item>
+                        </item>
+                    </item>
+                </argument>
+                <settings>
+                    <displayAsLink>true</displayAsLink>
+                    <title><![CDATA[Close]]></title>
+                </settings>
+            </button>
+        </container>
+    </fieldset>
+</modal>
+```
+
+#### Result
+
+As a result, the modal window auto-opens on page load with a `popup` effect.
+
+![Notification Modal]({{ site.baseurl }}/common/images/ui_comps/notification_modal_result.png)
+
 ## Source files
 
 Extends [`uiCollection`]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uicollection_concept.html):
 
-- [`Magento_Ui_module_dir/view/base/web/js/modal/modal-component.js`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/modal/modal-component.js)
-- [`Magento_Ui_module_dir/view/base/web/templates/modal/modal-component.html`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/templates/modal/modal-component.html)
+-  [`Magento_Ui_module_dir/view/base/web/js/modal/modal-component.js`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/modal/modal-component.js)
+-  [`Magento_Ui_module_dir/view/base/web/templates/modal/modal-component.html`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/templates/modal/modal-component.html)
 
 ### Methods and events
 
-- `actionCancel()` - returns all modal's child components to the state they had on modal open and closes the modal window.
-- `actionDone()` - validates the changes in the modal's child components and, if valid, closes the modal.
-- `closeModal()` - closes the modal window.
-- `openModal()` - opens the modal window.
-- `setPrevValues(elem)` - returns all `elem`'s child components to the state they had on modal open.
-- `setTitle()` - sets modal title.
-- `setSubTitle()` - sets modal sub title.
-- `toggleModal()` - toggles the modal window state (open/close).
+-  `actionCancel()` - returns all modal's child components to the state they had on modal open and closes the modal window.
+-  `actionDone()` - validates the changes in the modal's child components and, if valid, closes the modal.
+-  `closeModal()` - closes the modal window.
+-  `openModal()` - opens the modal window.
+-  `setPrevValues(elem)` - returns all `elem`'s child components to the state they had on modal open.
+-  `setTitle()` - sets modal title.
+-  `setSubTitle()` - sets modal sub title.
+-  `toggleModal()` - toggles the modal window state (open/close).
