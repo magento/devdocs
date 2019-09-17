@@ -293,7 +293,7 @@ To enable Fastly caching on your Staging and Production sites, you need make the
 
 - Set all necessary redirects, especially if you are migrating from an existing site
 - Set the zone’s root resource record to address the hostname
-- Lower the value for the Time-to-Live (TTL) to refresh DNS information to point customers to the correct Production store more
+- Lower the value for the Time-to-Live (TTL) to refresh DNS information to point customers to the correct Production store
 
 We recommend a significantly lower TTL value when switching the DNS record. This value tells the DNS how long to cache the DNS record. When shortened, it refreshes the DNS faster. For example, you can change the TTL value from 3 days to 10 minutes when you are testing your site. Be advised that shortening the TTL value  adds load to the web server.
 

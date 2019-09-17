@@ -37,11 +37,11 @@ The Magento application root directory is located in different locations dependi
 
 In Integration, Staging, and Production, *only* the following directories are writable due to security reasons:
 
--	`var`
--	`pub/static`
--	`pub/media`
--	`app/etc`
--	`/tmp`
+-  `var`
+-  `pub/static`
+-  `pub/media`
+-  `app/etc`
+-  `/tmp`
 
 {: .bs-callout-info }
 In Production, each node in the three-node cluster has a `/tmp` directory that is not shared with the other nodes.
@@ -54,86 +54,31 @@ We include a base `.gitignore` file with the {{site.data.var.ece}} project repos
 git add <path/filename> -f
 ```
 
-## Logs
-
-The `/var/log` directory contains logs for all environments. Use the `magento-cloud ssh` command to log in to the environment to access the `/var/log` directory.
-
-For Pro, the deployment log for Staging and Production is in the `/var/log/platform` directory. Magento-specific logs are in the `<magento-root-dir>/var/log` directory. Pro projects have a three-node structure and each node contains logs with specific information for that node.
-
-{:.bs-callout .bs-callout-tip}
-You can also [set up log-based Slack and email notifications]({{ page.baseurl }}/cloud/env/setup-notifications.html).
-
-### Build logs
-
-After pushing changes to your environment, you can observe the build results in the terminal or use SSH to log in and view them in the `var/log/cloud.log` file.
-
-### Deploy logs
-
-You can review the logs from the deploy hook in the following directories:
-
--  **Integration**: `/var/log/deploy.log`
--  **Staging**: `/var/log/platform/<project-ID>_stg/deploy.log`
--  **Production**: `/var/log/platform/<node-{1|2|3}>.<project-ID>/deploy.log`
-
-The value of `<project-ID>` depends on the project ID and whether the environment is Staging or Production. For example, with a project ID of `yw1unoukjcawe`, the Staging environment user is `yw1unoukjcawe_stg` and the Production environment user is `yw1unoukjcawe`. Using that example, the deploy log is: `/var/log/platform/yw1unoukjcawe_stg/deploy.log`
-
-Pro projects have a three-node structure and each node contains logs with specific information for that node. For example, on the Production environment for the `yw1unoukjcawe` project, the deploy logs have the following locations:
-
--  **Node 1**: `/var/log/platform/1.yw1unoukjcawe/deploy.log`
--  **Node 2**: `/var/log/platform/2.yw1unoukjcawe/deploy.log`
--  **Node 3**: `/var/log/platform/3.yw1unoukjcawe/deploy.log`
-
-The log for each deployment appends to this file. Check the timestamps on log entries to verify and locate the logs you want for a specific deployment. The following is a condensed example of log output that you can use for troubleshooting:
-
-```terminal
-Re-deploying environment project-integration-ID
-  Executing post deploy hook for service `mymagento`
-    [2019-01-03 19:44:11] NOTICE: Starting post-deploy.
-    [2019-01-03 19:44:11] INFO: Validating configuration
-    [2019-01-03 19:44:11] INFO: End of validation
-    [2019-01-03 19:44:11] INFO: Enable cron
-    [2019-01-03 19:44:11] INFO: Create backup of important files.
-    [2019-01-03 19:44:11] INFO: Backup /app/app/etc/env.php.bak for /app/app/etc/env.php was created.
-    [2019-01-03 19:44:11] INFO: Backup /app/app/etc/config.php.bak for /app/app/etc/config.php was created.
-    [2019-01-03 19:44:11] INFO: php ./bin/magento cache:flush --ansi --no-interaction
-    [2019-01-03 19:44:32] INFO: Warming up failed: http://integration-id-project.us.magentosite.cloud/
-    [2019-01-03 19:44:32] NOTICE: Post-deploy is complete.
-```
-{: .no-copy}
-
-The deploy log contains start and stop messages for each hook: such as `Start deploy.` and `Deployment complete.`
-
-### Application logs
-
-You can access and review other application logs, such as 'redis-server-<project-ID>', in the `/var/log/platform/ProjectID_stg/` directory for Staging or the `/var/log/platform/ProjectID/` directory for Production.
-
-Pro projects have a three-node structure and each node contains logs with specific information for that node.
-
 ## Change base template
 
 You can use the following steps to change the structure of an existing project to reflect the latest base template for {{site.data.var.ece}}.
 
-1.  Clone project to local workstation.
+1. Clone project to local workstation.
 
-1.  Update the `composer.json` file with the following values for the `extra` section.
+1. Update the `composer.json` file with the following values for the `extra` section.
 
-    ```json
-    "extra": {
-        "magento-force": true
-        "magento-deploystrategy": "copy"
-    }
-    ```
+   ```json
+   "extra": {
+       "magento-force": true
+       "magento-deploystrategy": "copy"
+   }
+   ```
 
-1.  Add the `.gitignore` file designed for the base template. For example, if you need the `.gitignore` file for the version 2.2.6 template, use the [.gitignore for 2.2.6](https://github.com/magento/magento-cloud/blob/2.2.6/.gitignore) file as a reference.
+1. Add the `.gitignore` file designed for the base template. For example, if you need the `.gitignore` file for the version 2.2.6 template, use the [.gitignore for 2.2.6](https://github.com/magento/magento-cloud/blob/2.2.6/.gitignore) file as a reference.
 
-1.  Clear the git cache.
+1. Clear the git cache.
 
-    ```bash
-    git rm -r --cached .
-    ```
+   ```bash
+   git rm -r --cached .
+   ```
 
-1.  Add and commit changes.
+1. Add and commit changes.
 
-    ```bash
-    git add -A && git commit -m "Update base template"
-    ```
+   ```bash
+   git add -A && git commit -m "Update base template"
+   ```
