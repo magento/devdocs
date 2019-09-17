@@ -140,6 +140,7 @@ The following example will generate Magento 2.2 documentation only.
    ```
 
    This command:
+
    * Checks your environment according to the dependencies in `Gemfile.lock`.
    * Removes the `_site/` directory, which contains previously generated preview files.
    * Generates a new preview and opens the landing page in a web browser.
