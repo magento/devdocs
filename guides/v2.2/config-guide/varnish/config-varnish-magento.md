@@ -55,8 +55,6 @@ bin/magento config:set --scope=default --scope-code=0 system/full_page_cache/cac
 
 ## Export a Varnish configuration file
 
-This step is optional and should only be necessary if you changed the backend host and/or port number that you specified in the [previous section]({{ page.baseurl }}/config-guide/varnish/config-varnish-configure.html).
-
 To export a Varnish configuration file from the Admin panel:
 7.	Click one of the export buttons to create a <code>varnish.vcl</code> you can use with Varnish.
 
