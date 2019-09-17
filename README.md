@@ -138,6 +138,7 @@ The following example will generate Magento 2.2 documentation only.
    ```
    $ rake preview
    ```
+
    This command:
    * Checks your environment according to the dependencies in `Gemfile.lock`.
    * Removes the `_site/` directory, which contains previously generated preview files.
