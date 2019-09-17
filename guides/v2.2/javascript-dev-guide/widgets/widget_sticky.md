@@ -9,7 +9,7 @@ functional_areas:
 
 ## Overview
 
-The sticky widget allows admins to fix a page element on the screen in a specific position while a user scrolls the page.
+The sticky widget allows developers to fix a page element on the screen in a specific position while a user scrolls the page.
 
 Widget source file is [lib/web/mage/sticky.js].
 
