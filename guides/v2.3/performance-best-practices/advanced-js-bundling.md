@@ -8,7 +8,6 @@ functional_areas:
 ---
 
 {: .bs-callout-info }
-**NOTE:**
 Magento's **[`baler`][]** module is now open for _Alpha testing_.
 This is a custom AMD module bundler and preloader for Magento 2.
 It is designed to provide optimal bundles and be less error-prone than the built-in Magento bundler.
