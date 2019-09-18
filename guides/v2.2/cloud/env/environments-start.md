@@ -82,10 +82,10 @@ When you delete an environment, the environment is set to _inactive_. The code i
     git fetch
     ```
 
-1.  Checkout the environment branch.
+1.  Delete the environment branch.
 
     ```bash
-    magento-cloud environment:checkout <environment-ID>
+    magento-cloud environment:delete <environment-ID>
     ```
 
 1.  Respond to the prompts to delete the local environment and the corresponding remote environment.

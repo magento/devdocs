@@ -133,7 +133,7 @@ You can create a copy of your database using [`magento/ece-tools`]({{ site.baseu
 {: .bs-callout-info }
 -   We recommend putting the application in maintenance mode before doing a database dump in Production environments.
 -   The command creates an archive in your local project directory called  `dump-<timestamp>.sql.gz`.
--   If an error occurs during the dump, the command deletes the dump file to conserve disk space. Review the logs for details (`/var/log/cloud.log`).
+-   If an error occurs during the dump, the command deletes the dump file to conserve disk space. Review the logs for details (`var/log/cloud.log`).
 -   For Pro Production environments, this command dumps only from one of three high-availability nodes, so production data written to a different node during the dump may not be copied. It generates a `var/dbdump.lock` file to prevent running the command on more than one node.
 
 {:.bs-callout .bs-callout-tip}
