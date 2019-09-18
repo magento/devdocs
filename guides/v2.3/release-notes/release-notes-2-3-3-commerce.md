@@ -64,13 +64,13 @@ The following upgrades to core platform components boost platform security and s
 * Merchants now have the ability to turn off the automatic URL rewrite generation that occurs by default on products when the category they belong to is saved. The new **Generate "category/product" URL Rewrites**  configuration option controls this behavior. When this feature is enabled, Magento will generate a lot of data when saving a category that contains many assigned products. This generated data is saved into rewrite tables that can degrade Magento performance. See xxx for more information on using this new configuration option.
 
 <!--- MC-15763-->
-* Page load speeds have been improved by moving non-critical CSS elements to the bottom of the page. This update enables the browser to render and display a storefront page more quickly.
+* Page load speeds have been improved by moving non-critical CSS elements to the bottom of the page. This enables the browser to render and display a storefront page more quickly. This setting is disabled by default but you can enable it using **Stores** > **Configuration** > **Advanced** > **Developer** > **CSS Settings** > **Use CSS critical path**. See the [CSS critical path documentation]({{ page.baseurl }}/frontend-dev-guide/css-topics/css-critical-path.html) for more detailed info.
 
 <!--- MC-16887-->
 * The `jQuery/ui` library has been refactored into separate widgets so that core modules load only the widgets they need. This update improves the performance of core storefront tasks including the loading of category, configurable product, home, and checkout pages.
 
 <!--- MC-16046-->
-* Store pages now display text in readable system fonts while loading system fonts, which significantly increases page load speedMerchants who deploy stores that implement large CSS files and many fonts will notice the greatest improvement.
+* Store pages now display text in readable system fonts while loading custom fonts, which significantly increases page load speed. Merchants who deploy stores that implement large CSS files and many fonts will notice the greatest improvement.
 
 ### Infrastructure improvements
 
@@ -296,7 +296,7 @@ We have fixed hundreds of issues in the Magento 2.3.3 core code.
 * The behavior of the Catalog page Requisition list menu has been corrected
 
 <!--- MAGETWO-99871-->
-* Magento now issues a single request to the server when you change the shipping address for an order to a non-default address.Previously, Magento issued multiple requests to the server when you changed the shipping address, which negatively affected performance.
+* Magento now issues a single request to the server when you change the shipping address for an order to a non-default address. Previously, Magento issued multiple requests to the server when you changed the shipping address, which negatively affected performance.
 
 <!--- MAGETWO-99368-->
 * Non-administrative users who have been granted access privileges to catalogs and shared catalogs now also have access to the menu that permits them to manage these catalogs. Previously, these non-Admin users had permission to access the shared catalog, but not the menu that would permit them to manage the shared catalog.
@@ -657,7 +657,7 @@ We have fixed hundreds of issues in the Magento 2.3.3 core code.
 ### Database media storage
 
 <!--- ENGCOM-5469-->
-* The PDF logo file is now database-aware. Consequently, logo images always appear at the top of the PDF, even after the local pub/media directory is cleared. *Fix submitted by gwharton in pull request [23752](https://github.com/magento/magento2/pull/23752)*. [GitHub-23751](https://github.com/magento/magento2/issues/23751)
+* The PDF logo file is now database-aware. Consequently, logo images always appear on PDF invoices, even after the local pub/media directory is cleared. *Fix submitted by gwharton in pull request [23752](https://github.com/magento/magento2/pull/23752)*. [GitHub-23751](https://github.com/magento/magento2/issues/23751)
 
 <!--- ENGCOM-5431-->
 * The `bin/magento catalog:images:resize` command is now database-media-storage-mode aware. As a result, resized images are now extracted from the database if they don’t exist locally prior to resizing, and are now stored back into the database once the resize operation completes. *Fix submitted by gwharton in pull request [23598](https://github.com/magento/magento2/pull/23598)*. [GitHub-23595](https://github.com/magento/magento2/issues/23595), [GitHub-23594](https://github.com/magento/magento2/issues/23594), [GitHub-23596](https://github.com/magento/magento2/issues/23596)
@@ -666,7 +666,7 @@ We have fixed hundreds of issues in the Magento 2.3.3 core code.
 * The  **use default value** checkbox on the Media Storage Location configuration setting has been removed. Previously, the JavaScript routines on the page interfered with that option, and consequently, the checkbox could be enabled but was still ignored. *Fix submitted by gwharton in pull request [23710](https://github.com/magento/magento2/pull/23710)*. [GitHub-23597](https://github.com/magento/magento2/issues/23597)
 
 <!--- ENGCOM-4828 4802-->
-* Transactional email now copies the configured email logo image from the database when the logo file does not exist in the local `pub/media` directoryPreviously,  emails used the default LUMA logo if it did not exist in the local directory. *Fix submitted by gwharton in pull requests [21675](https://github.com/magento/magento2/pull/21675) and [21674](https://github.com/magento/magento2/pull/21674)*. [GitHub-21672](https://github.com/magento/magento2/issues/21672)
+* Transactional email now copies the configured email logo image from the database when the logo file does not exist in the local `pub/media` directory. Previously,  emails used the default LUMA logo if it did not exist in the local directory. *Fix submitted by gwharton in pull requests [21675](https://github.com/magento/magento2/pull/21675) and [21674](https://github.com/magento/magento2/pull/21674)*. [GitHub-21672](https://github.com/magento/magento2/issues/21672)
 
 <!--- ENGCOM-5198-->
 * Magento now copies any image needed for the Admin Product Edit page from the database to local storage as needed. Previously, if the image was not in local storage, Magento used a placeholder image. *Fix submitted by gwharton in pull request [21605](https://github.com/magento/magento2/pull/21604)*. [GitHub-21605](https://github.com/magento/magento2/issues/21605), [GitHub-21546](https://github.com/magento/magento2/issues/21546)
@@ -676,7 +676,7 @@ We have fixed hundreds of issues in the Magento 2.3.3 core code.
 ### Directory
 
 <!--- MAGETWO-99424-->
-* The country drop-down list no longer includes an extraneous zero (0) when the allowed countries in the list differ from countries identified as top destinations.
+* The country drop-down list no longer includes an extraneous zero (0) when the allowed countries in the list differ from countries identified as top destinations. [GitHub-23141](https://github.com/magento/magento2/issues/23141)
 
 ### Downloadable products
 
@@ -743,7 +743,7 @@ We have fixed hundreds of issues in the Magento 2.3.3 core code.
 * The **Save in address book** checkbox on the Shipping Address section of the Admin Create Order page now behaves as expected. When this checkbox is enabled, the address in the Shipping Address field is saved, and merchants can disable or enable the checkbox
 
 <!--- MAGETWO-70681-->
-* Updated the type and format for all `store_name` fields used in Sales and Quote modules. All fields are now type `text` instead of type `varchar`, and the field length has been extended to 255 symbols.
+* Updated the length for the `store_name` field used in `sales_order` database table. The field length has been extended from 32 to 255 symbols.
 
 <!--- MC-17511-->
 * Preloading of fonts has been moved from the Blank theme to the Luma theme.
@@ -813,7 +813,7 @@ We have fixed hundreds of issues in the Magento 2.3.3 core code.
 <!--- MAGETWO-99425-->
 * Magento no longer closes an order that is paid for with the partial redemption of a gift card. Previously, if an order is paid partially using gift card, and a partial refund is issued for that order, the order becomes closed.
 
-### Gift registry
+### Gift registry EE ONLY
 
 <!--- MC-18540-->
 * Magento no longer displays a console error during checkout when the cart contains a product from the gift registry. Previously, due to a missing function, Magento displayed this error: `checkout-data-resolver.js:248 Uncaught TypeError: addrs.isDefaultBilling is not a function`.
@@ -912,7 +912,7 @@ We have fixed hundreds of issues in the Magento 2.3.3 core code.
 ### Newsletter
 
 <!--- MAGETWO-99636-->
-* Magento now sends only a subscribe email when you create an account from an email invitation. Previously,you received two emails, one that subscribed you to the newsletter and another that unsubscribed you.
+* Magento now sends only a subscribe email when you create an account from an email invitation. Previously, you received two emails, one that subscribed you to the newsletter and another that unsubscribed you.
 
 <!--- MAGETWO-71785-->
 * You can now export newsletter subscribers from the Admin. Previously, Magento displayed this error when you selected a subscriber name and clicked **Export**: `error: URI too long`
@@ -1012,7 +1012,7 @@ This release includes the following changes to integrations for core payment met
 * The `jQuery/ui` library has been refactored into separate widgets so that core modules load only the widgets they need. This update improves the performance of core storefront tasks including the loading of category, configurable product, home, and checkout pages.
 
 <!--- MC-16046-->
-* Store pages now display text in readable system fonts while loading custom fonts, which significantly increases page load speedMerchants who deploy stores that implement  large CSS files and many fonts will notice the greater improvement.
+* Store pages now display text in readable system fonts while loading custom fonts, which significantly increases page load speed. Merchants who deploy stores that implement large CSS files and many fonts will notice the greatest improvement.
 
 ### Pricing
 
@@ -1034,7 +1034,7 @@ This release includes the following changes to integrations for core payment met
 * The access controls on the **Reports** > **Product** > **Downloads** have been refactored to permit access to only administrators with the correct permissions. Previously, administrators with no access to this area could access the Downloads report. *Fix submitted by Eden Duong in pull request [23901](https://github.com/magento/magento2/pull/23901)*. [GitHub-23900](https://github.com/magento/magento2/issues/23900)
 
 <!--- ENGCOM-5052-->
-* Selecting **Show by year** when filtering  **Reports** > **Products**  > **Ordered** now results in a list of products sold per year that is grouped by product quantity in descending orderPreviously, Magento displayed a list of products sold per year that contained multiple entries for a single product on a per order basis. *Fix submitted by Surabhi Srivastava in pull request [22087](https://github.com/magento/magento2/pull/22087)*. [GitHub-22646](https://github.com/magento/magento2/issues/22646), [GitHub-22087](https://github.com/magento/magento2/issues/22087)
+* Selecting **Show by year** when filtering  **Reports** > **Products**  > **Ordered** now results in a list of products sold per year that is grouped by product quantity in descending order. Previously, Magento displayed a list of products sold per year that contained multiple entries for a single product on a per order basis. *Fix submitted by Surabhi Srivastava in pull request [22087](https://github.com/magento/magento2/pull/22087)*. [GitHub-22646](https://github.com/magento/magento2/issues/22646), [GitHub-22087](https://github.com/magento/magento2/issues/22087)
 
 ### Reviews
 
@@ -1050,14 +1050,12 @@ This release includes the following changes to integrations for core payment met
 * Magento now displays only enabled shipping methods on the Return details page. Previously, shipping methods that were disabled for RMA were displayed in the Carrier dropdown menu on the Return details page.
 
 <!--- MAGETWO-60741-->
-* Clicking **Show Packages** on a Returns page (**My Account** > **My Returns**  > **Return**) now opens a new page about the selected packagePreviously, clicking on this link resulted in a 404 error page.
+* Clicking **Show Packages** on a Returns page (**My Account** > **My Returns**  > **Return**) now opens a new page about the selected package. Previously, clicking on this link resulted in a 404 error page.
 
-### Reward
+### Reward EE Only
 
 <!--- MAGETWO-99901-->
 * Magento no longer sends reward point balance notification email to  clients  whose accounts have the **Subscribe for Balance Updates** setting disabled.
-
-EE ONLY
 
 <!--- MC-17798-->
 * Online refunds now work as expected  when the **Refund Reward Points Automatically** configuration setting is enabled. Previously, the Refund button was disabled under these conditions.
@@ -1174,7 +1172,7 @@ EE ONLY
 ### Swatches
 
 <!--- ENGCOM-5020-->
-* You can update the dropdown attributes (**Admin** > **Stores** > **Attributes** > **Product**) when swatches have been disabledPreviously, when swatches were disabled,   Magento displayed this error in the console: `Uncaught TypeError: panel.addClass is not a function`. *Fix submitted by Mark van der Sanden in pull request [22560](https://github.com/magento/magento2/pull/22560)*. [GitHub-20843](https://github.com/magento/magento2/issues/20843)
+* You can update the dropdown attributes (**Admin** > **Stores** > **Attributes** > **Product**) when swatches have been disabled. Previously, when swatches were disabled, Magento displayed this error in the console: `Uncaught TypeError: panel.addClass is not a function`. *Fix submitted by Mark van der Sanden in pull request [22560](https://github.com/magento/magento2/pull/22560)*. [GitHub-20843](https://github.com/magento/magento2/issues/20843)
 
 <!--- ENGCOM-5175-->
 * The image gallery now correctly loads images for swatch colors. Previously the gallery did not switch to the designated first image as expected. *Fix submitted by Milind Singh in pull request [23033](https://github.com/magento/magento2/pull/23033)*. [GitHub-23030](https://github.com/magento/magento2/issues/23030)
@@ -1361,8 +1359,8 @@ EE ONLY
 <!--- ENGCOM-5192-->
 * Swagger now accepts requests in XML and can display results in the same format. *Fix submitted by Simon Schröer in pull request [23025](https://github.com/magento/magento2/pull/23025)*. [GitHub-23025](https://github.com/magento/magento2/issues/23025)
 
-<!--- ENGCOM-5312-->*
-The `POST on /orders` REST calls no longer fail when properties in the request body are out of order. Previously, when billing address data preceded customer data in the Order Create API JSON payload, the billing address email was not populated, so the order was empty. *Fix submitted by [Mateusz Wira](https://github.com/Wirson) in pull request [23048](https://github.com/magento/magento2/pull/23048)*.
+<!--- ENGCOM-5312-->
+* The `POST` on `/orders` REST calls no longer fail when properties in the request body are out of order. Previously, when billing address data preceded customer data in the Order Create API JSON payload, the billing address email was not populated, so the order was empty. *Fix submitted by [Mateusz Wira](https://github.com/Wirson) in pull request [23048](https://github.com/magento/magento2/pull/23048)*.
 
 ### Website restriction EE ONLY
 
