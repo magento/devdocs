@@ -3,7 +3,6 @@ group: javascript-developer-guide
 subgroup: 3_Widgets
 title: List widget
 ---
-## Overview
 
 {%
 include note.html

@@ -18,6 +18,7 @@ This guide discusses the following widgets:
 -   [Gallery widget]
 -   [List widget]
 -   [Loader widget]
+-   [MediaUploader widget]
 -   [Menu widget]
 -   [Modal widget]
 -   [Multiselect widget]
@@ -28,6 +29,8 @@ This guide discusses the following widgets:
 -   [QuickSearch widget]
 -   [RedirectUrl widget]
 -   [RowBuilder widget]
+-   [Sortable widget]
+-   [Sticky widget]
 -   [Tabs widget]
 -   [ToggleAdvanced widget]
 -   [TrimInput widget]
@@ -49,6 +52,7 @@ Magento out of the box does not contain jQuery UI styles. Also, it is not recomm
 [Gallery widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_gallery.html
 [List widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_list.html
 [Loader widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_loader.html
+[MediaUploader widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget-media-uploader.html
 [Menu widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_menu.html
 [Modal widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_modal.html
 [Multiselect widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget-multiselect.html
@@ -59,7 +63,9 @@ Magento out of the box does not contain jQuery UI styles. Also, it is not recomm
 [QuickSearch widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_quickSearch.html
 [RedirectUrl widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_redirectUrl.html
 [RowBuilder widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget-row-builder.html
+[Sortable widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget-sortable.html
 [Tabs widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_tabs.html
 [ToggleAdvanced widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_toggle.html
 [TrimInput widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget-trim-input.html
 [jQuery UI 1.9.2]: http://blog.jqueryui.com/2012/11/jquery-ui-1-9-2/
+[Sticky widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_sticky.html

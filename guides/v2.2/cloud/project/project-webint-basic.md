@@ -60,7 +60,7 @@ You can set the following configuration options for each environment:
 	</tr>
 	<tr>
 		<td>Outgoing emails</td>
-		<td>Setting to <strong>On</strong> means that code in your environment can send and receive e-mails (for example, using PHP <code>email()</code> function. </td>
+		<td>Setting to <strong>On</strong> means that code in your environment can send and receive e-mails (for example, using PHP <code>mail()</code> function. </td>
 	</tr>
 	<tr><td>HTTP access control</td>
 	<td>Setting to <strong>On</strong> enables you to configure security for the project's Web Interface using a login and also IP address access control.</td>
@@ -154,7 +154,7 @@ An environment's history includes:
 - Syncs and merges
 - Code pushes
 
-To view an environment's history, log into your project and select an environment. The page displays a general history of actions completed on the page. For a detailed list of completed actions during build and deployment, we recommend reviewing logs directly on the servers. For more information on logs, see [Use logs for troubleshooting]({{ page.baseurl }}/cloud/trouble/environments-logs.html).
+To view the history for an environment, log in to your project and select the environment. The page displays a general history of actions completed on the page. For a detailed list of completed actions during build and deployment, we recommend reviewing logs directly on the servers. See [Log locations]({{page.baseurl}}/cloud/project/log-locations.html).
 
 The following figure shows a sample history.
 

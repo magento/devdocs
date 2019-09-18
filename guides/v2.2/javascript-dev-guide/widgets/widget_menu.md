@@ -3,7 +3,6 @@ group: javascript-developer-guide
 subgroup: 3_Widgets
 title: Menu widget
 ---
-## Overview
 
 The Magento menu widget is a customized [jQuery UI Menu widget](http://api.jqueryui.com/menu/){:target="_blank"}. Magento menu extends the default functionality with the following:
 
