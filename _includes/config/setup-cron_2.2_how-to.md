@@ -29,17 +29,17 @@ crontab -l
 A sample follows:
 
 ```terminal
-#~ MAGENTO START
-* * * * * /usr/bin/php /var/www/html/magento2/bin/magento cron:run | grep -v Ran jobs by schedule >> /var/www/html/magento2/var/log/magento.cron.log
+#~ MAGENTO START c5f9e5ed71cceaabc4d4fd9b3e827a2b
+* * * * * /usr/bin/php /var/www/html/magento2/bin/magento cron:run 2>&1 | grep -v "Ran jobs by schedule" >> /var/www/html/magento2/var/log/magento.cron.log
 * * * * * /usr/bin/php /var/www/html/magento2/update/cron.php >> /var/www/html/magento2/var/log/update.cron.log
 * * * * * /usr/bin/php /var/www/html/magento2/bin/magento setup:cron:run >> /var/www/html/magento2/var/log/setup.cron.log
-#~ MAGENTO END
+#~ MAGENTO END c5f9e5ed71cceaabc4d4fd9b3e827a2b
 ```
 
 {%
 include note.html
 type='info'
-content='The `update/cron.php` file exists in [Composer](https://glossary.magento.com/composer)- and [archive-based](https://magento.com/tech-resources/download) Magento installations. It does not exist if you installed Magento by cloning a git repository.
+content='The `update/cron.php` file exists in [Composer](https://glossary.magento.com/composer)- and [archive-based](https://magento.com/tech-resources/download) Magento installations. It does not exist if you installed Magento by cloning the [Magento 2 git repository](https://github.com/magento/magento2/).
 
 In [Composer-based installations](https://glossary.magento.com/composer), Magento creates the `update/` directory when you run `composer create-project`. Running `composer install` does not create the `update/` directory (if it did not exist before). See [Recreate the Magento updater](https://devdocs.magento.com/guides/v2.3/comp-mgr/cli/cli-upgrade.html#recreate-magento-updater).'
 %}
