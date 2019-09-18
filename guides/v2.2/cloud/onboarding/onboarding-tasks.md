@@ -38,8 +38,7 @@ site.
 
 2. On the My Account page, click the Magento tab to see the projects in your account.
 
-3. **Click View Project Page** in the
-[Projects section](https://cloud.magento.com/cloud/project/subscriptions/).
+3. **Click View Project Page** in the [Projects section](https://cloud.magento.com/cloud/project/subscriptions/).
 
 ## Sign up for a {{site.data.var.ece}} account {#cloud-first-acct}
 
