@@ -23,6 +23,7 @@ $("#element").accordion();
 ```
 
 Where:
+
 - `#element` is the selector of the element for accordion is initialized.
 - `#element` has children with the following attributes specified:
 
