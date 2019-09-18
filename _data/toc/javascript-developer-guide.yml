@@ -112,6 +112,9 @@ pages:
         - label: Sortable widget
           url: /javascript-dev-guide/widgets/widget-sortable.html
 
+        - label: Sticky widget
+          url: /javascript-dev-guide/widgets/widget_sticky.html
+
         - label: Tabs widget
           url: /javascript-dev-guide/widgets/widget_tabs.html
 
