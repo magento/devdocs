@@ -119,17 +119,15 @@ title: Continue with your installation
 | `group`       | Defines the topic's guide or section. Use the table of contents `.yml` file name. This loads your left-side navigation. We will help during the PR process to add new files to the `.yml` file. |
 | `title`       | Sets the title of the page in the HTML metadata and the main title on the page.  |
 
-### Symbolic links
+## Symbolic links
 
 We use symbolic links for topics that are the same across versions of Magento. A file is symlinked if the entire content of the file is a path to the original version, such as [ext-best-practices/tutorials/serialized-to-json-data-upgrade.md](https://github.com/magento/devdocs/blob/master/guides/v2.3/ext-best-practices/tutorials/serialized-to-json-data-upgrade.md). Note that some editors will automatically follow symlinks so it might not be clear if a file is symlinked or not. Check the file on Github directly to be sure.
 
-#### Create a symbolic link
+### Create a symbolic link
 
 When you create a new topic (create a new `.md` file) and its content is the same for 2.2 and 2.3 versions, create a symbolic link.
 
-For example, if you created a new file for v.2.2---`guides/v2.2/install-gde/new-doc-topic.md`---and its content is the same for v.2.3:
-- Do not create a copy of `guides/v2.2/install-gde/new-doc-topic.md` in the `guides/v2.3/install-gde/` folder.
-- Use the command below to create the appropriate symbolic link.
+For example, if you created a new file for v.2.2---`guides/v2.2/install-gde/new-doc-topic.md`---and its content is the same for v.2.3, use the command below to create the symbolic link.
 
 ```bash
 cd <DEVDOCS_REPOSITORY_ROOT_DIR>
@@ -139,21 +137,14 @@ cd <DEVDOCS_REPOSITORY_ROOT_DIR>
 ln -s guides/v2.2/install-gde/new-doc-topic.md guides/v2.3/install-gde/new-doc-topic.md
 ```
 
-Because this approach works for images as well, if you used an image for v.2.2 and that image is the same for v.2.3, create a symbolic link and do not make a copy:
+If you have an image that is identical between versions, it is should placed in `/common/images`. Please optimize images before committing them to the repository.
+If done correctly, the symbolic link path will start with 3 or 4 instances of `../`, as the above example shows.
 
-```bash
-cd <DEVDOCS_REPOSITORY_ROOT_DIR>
-```
+### Remove a symbolic link
 
-```bash
-ln -s guides/v2.2/cloud/trouble/images/outgoing-emails.png guides/v2.3/cloud/trouble/images/outgoing-emails.png
-```
+If your changes are unique to a specific version, remove the symbolic link and add a new file. Copy and paste a previous version of the topic to get started.
 
-#### Remove a symbolic link
-
-Remove the symbolic link and add a new file if your changes are unique to a specific version. Copy and paste a previous version of the topic to get started.
-
-Note, that the removal should use the `git rm` command specifically. Deleting the file through the regular file system might cause issues with the repository.
+The removal should use the `git rm` command specifically. Deleting the file through the regular file system might cause issues with the repository.
 
 For example:
 
@@ -164,6 +155,8 @@ git rm guides/v2.3/install-gde/composer.md
 ```bash
 cp guides/v2.2/install-gde/composer.md guides/v2.3/install-gde/composer.md
 ```
+
+Once you have the copy in place, you can edit it with the version-specific information.
 
 ## Report an issue
 
