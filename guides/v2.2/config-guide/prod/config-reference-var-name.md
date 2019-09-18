@@ -217,10 +217,17 @@ $_ENV['CONFIG__DEFAULT__GENERAL__STORE_INFORMATION__MERCHANT_VAT_NUMBER'] = '123
 
 A step-by-step example is shown in [Set configuration values using environment variables]({{ page.baseurl }}/config-guide/deployment/pipeline/example/environment-variables.html).
 
-{:.bs-callout .bs-callout-warning}
+{%
+include note.html
+type='warning'
+content='
+
 -   To use values you set in the `$_ENV` array, you must set `variables_order = "EGPCS"` in your `php.ini` file. For details, see [PHP documentation](http://us.php.net/manual/en/ini.core.php#ini.variables-order).
--   For {{site.data.var.ece}}, if you're attempting to override Magento configuration settings using the [Project Web Interface]({{ page.baseurl }}/cloud/project/project-webint-basic.html#project-conf-env-var), you must prepend the variable name with `env:`. For example:
-![Environment variable example]({{ site.baseurl }}/common/images/cloud_env_var_example.png)
+-   For Magento Commerce Cloud, if you're attempting to override Magento configuration settings using the [Project Web Interface](https://devdocs.magento.com/guides/v2.3/cloud/project/project-webint-basic.html#project-conf-env-var), you must prepend the variable name with `env:`. For example:
+
+![Environment variable example](https://devdocs.magento.com/common/images/cloud_env_var_example.png)'
+
+%}
 
 #### Related information
 
