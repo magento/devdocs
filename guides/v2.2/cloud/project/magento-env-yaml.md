@@ -12,27 +12,27 @@ The `.magento.env.yaml` file uses environment variables to centralize the manage
 
 The `.magento.env.yaml` file includes the following sections:
 
--  **`stage`**—Accommodates the following stages of deployment:
-   -  `global`—Controls actions in both the build, deploy, and post-deploy phases. You can override these settings in the build, deploy, and post-deploy sections.
-   -  `build`—Controls actions in the build phase only. If you do not specify settings in this section, the build phase uses settings from the global section. Settings in the `build_options.ini` file override settings in this section.
-   -  `deploy`—Controls actions in the deploy phase only. If you do not specify settings in this section, the deploy phase uses settings from the global section.
-   -  `post-deploy`—Controls actions _after_ deploying your application and _after_ the container begins accepting connections.
--  **`log`**—Controls [notifications]({{ page.baseurl }}/cloud/env/setup-notifications.html), including notification types and level of detail.
-   -  `slack`—Configure a message to send to a Slack bot.
-   -  `email`—Configure an email to send to one or more email recipients.
-   -  [logging handlers]({{ page.baseurl }}/cloud/env/log-handlers.html)—Configure hardware and software application messages sent to a remote logging server.
+- **`stage`**—Accommodates the following stages of deployment:
+  - `global`—Controls actions in both the build, deploy, and post-deploy phases. You can override these settings in the build, deploy, and post-deploy sections.
+  - `build`—Controls actions in the build phase only. If you do not specify settings in this section, the build phase uses settings from the global section.
+  - `deploy`—Controls actions in the deploy phase only. If you do not specify settings in this section, the deploy phase uses settings from the global section.
+  - `post-deploy`—Controls actions _after_ deploying your application and _after_ the container begins accepting connections.
+- **`log`**—Controls [notifications]({{ page.baseurl }}/cloud/env/setup-notifications.html), including notification types and level of detail.
+  - `slack`—Configure a message to send to a Slack bot.
+  - `email`—Configure an email to send to one or more email recipients.
+  - [logging handlers]({{ page.baseurl }}/cloud/env/log-handlers.html)—Configure hardware and software application messages sent to a remote logging server.
 
 The latest sample of the `.magento.env.yaml` file contains a detailed definition for all variables described in the following reference topics:
 
--  [Application]({{ page.baseurl }}/cloud/env/environment-vars_magento.html)—variables control administrative credentials
--  [Global]({{ page.baseurl }}/cloud/env/variables-global.html)—variables control actions in the following stages:
-   -  [Build]({{ page.baseurl }}/cloud/env/variables-build.html)—variables control build actions
-   -  [Deploy]({{ page.baseurl }}/cloud/env/variables-deploy.html)—variables control deploy actions
-   -  [Post-deploy]({{ page.baseurl }}/cloud/env/variables-post-deploy.html)—variables control actions after deploy
+- [Application]({{ page.baseurl }}/cloud/env/environment-vars_magento.html)—variables control administrative credentials
+- [Global]({{ page.baseurl }}/cloud/env/variables-global.html)—variables control actions in the following stages:
+  - [Build]({{ page.baseurl }}/cloud/env/variables-build.html)—variables control build actions
+  - [Deploy]({{ page.baseurl }}/cloud/env/variables-deploy.html)—variables control deploy actions
+  - [Post-deploy]({{ page.baseurl }}/cloud/env/variables-post-deploy.html)—variables control actions after deploy
 
 ## PHP constants
 
-{: .bs-callout .bs-callout-warning }
+{:.bs-callout-warning }
 Constant parsing does not work when using a `symfony/yaml` package version earlier than 3.2.
 
 You can use PHP constants in `.magento.env.yaml` file definitions instead of hard-coding values. The following example defines the `driver_ options` using a PHP constant:
