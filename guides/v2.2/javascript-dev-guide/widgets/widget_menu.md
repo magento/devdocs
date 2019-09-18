@@ -19,6 +19,7 @@ For information about how to initialize a widget in a JS component or `.phtml` t
 ## Options {#menu_options}
 
 Menu widget options mostly coincide with the options of the jQuery UI Menu widget, with addition of the following custom ones:
+
 -   [delay](#m_delay)
 -   [showDelay](#m_showDelay)
 -   [hideDelay](#m_hideDelay)

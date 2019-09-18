@@ -22,6 +22,7 @@ $("#element").toggleAdvanced();
 ```
 
 Where:
+
 -   `#element` is the selector of the element for which ToggleAdvanced is initialized.
 
 The following example shows a PHTML file using the script:

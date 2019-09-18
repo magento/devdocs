@@ -12,6 +12,7 @@ Use the dropdown widget to display custom content on the storefront.
 Widget source file is [lib/web/mage/dropdowns.js].
 
 **Usages:**
+
 - [Shipping policy]
 - [Customer menu]
 - [UI tooltip]

@@ -118,8 +118,7 @@ To develop a module, you must:
         );
       ```
 
-5. **Create an install class.**
-Change directories to your `Setup` directory. Create a `InstallData.php` file that installs the integration configuration data into the Magento integration table.
+5. **Create an install class.** Change directories to your `Setup` directory. Create a `InstallData.php` file that installs the integration configuration data into the Magento integration table.
 
     The following sample is boilerplate and requires minor changes to make your integration work.
 

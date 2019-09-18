@@ -207,22 +207,10 @@ through the Cache Management page.
 
 The options include:
 
-* **Purge category**: Purges product category content (not product content) when
-you add and update a single product. You may want to keep this disabled and
-enable purge product, which purges products and product categories.
-
-* **Purge product**: Purges all product and product category content when
-saving a single modification to a product. Enabling purge product can be helpful
-to immediately get updates to customers when changing a price, adding a product
-option, and when product inventory is out-of-stock.
-* **Purge CMS page**: Purges page content when updating and adding pages to the
-Magento CMS. For example, you may want to purge when updating your Terms and
-Conditions or Return policy. If you rarely make these changes, you could disable
-automatic purging.
-* **Soft purge**: Sets changed content to stale and purges according to the
-stale timing. In combination with the stale timings your customers will be
-served stale content very fast while Fastly is updating the content in the
-background.
+* **Purge category**: Purges product category content (not product content) when you add and update a single product. You may want to keep this disabled and enable purge product, which purges products and product categories.
+* **Purge product**: Purges all product and product category content when saving a single modification to a product. Enabling purge product can be helpful to immediately get updates to customers when changing a price, adding a product option, and when product inventory is out-of-stock.
+* **Purge CMS page**: Purges page content when updating and adding pages to the Magento CMS. For example, you may want to purge when updating your Terms and Conditions or Return policy. If you rarely make these changes, you could disable automatic purging.
+* **Soft purge**: Sets changed content to stale and purges according to the stale timing. In combination with the stale timings your customers will be served stale content very fast while Fastly is updating the content in the background.
 
 ![Configure purge options]({{ site.baseurl }}/common/images/cloud_fastly-purgeoptions.png){:width="650px"}
 
@@ -230,9 +218,7 @@ To configure Fastly purge options:
 
 1.  In the *Fastly Configuration* section, expand **Advanced**.
 
-1.  All purge options display. Select "Yes" per purge option to enable automatic
-purging. Select "No" to disable automatic purging, allowing you to manually
-purge caches through the Cache Management page.
+1.  All purge options display. Select "Yes" per purge option to enable automatic purging. Select "No" to disable automatic purging, allowing you to manually purge caches through the Cache Management page.
 
 1.  Click **Save Config** at the top of the page.
 

@@ -7,6 +7,7 @@ title: Magento jQuery widgets
 The Magento system uses a jQuery JavaScript library to implement client functionality. This includes a wide usage of standard, customized, and custom jQuery widgets.
 
 This guide discusses the following widgets:
+
 -   [Accordion widget]
 -   [Alert widget]
 -   [Breadcrumb widget]
