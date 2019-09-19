@@ -21,6 +21,11 @@
 .ref-list dt{
   font-weight:500;
 }
-.message-banner.version-banner {
+
+/* Paragraph that represents a begiging of a procedure - should have a list of steps following */
+.procedure {
+  font-weight: bold;
+  margin-left: 2.5em;
+}.message-banner.version-banner {
   margin-bottom: 15px;
 }
