@@ -4,8 +4,6 @@ subgroup: 3_Widgets
 title: Accordion widget
 ---
 
-## Overview
-
 Magento accordion widget is an [extension](https://glossary.magento.com/extension) of the [Magento Tabs widget].
 
 Accordions are generally used to break content into multiple sections that can be swapped to save space.
@@ -25,6 +23,7 @@ $("#element").accordion();
 ```
 
 Where:
+
 - `#element` is the selector of the element for accordion is initialized.
 - `#element` has children with the following attributes specified:
 

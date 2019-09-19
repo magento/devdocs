@@ -5,6 +5,7 @@ title: Modify docroot to improve security
 
 In a standard installation with an Apache web server, Magento is installed to the default web root: `/var/www/html/magento2`.
 Within the `magento2` folder are:
+
 - /pub/
 - /setup/
 - /var/
@@ -23,6 +24,7 @@ If you're accustomed to using the Web Setup Wizard during development, be aware 
 If you are using [nginx]({{ page.baseurl }}/install-gde/prereq/nginx.html) and the [`nginx.conf.sample`]({{ site.mage2bloburl }}/{{ page.guide_version }}/nginx.conf.sample) file included in the Magento installation directory, you are probably already serving files from the `pub/` directory.
 
 When used in your server block that defines your site, the `nginx.conf.sample` configuration overrides your server's docroot settings to serve files from Magento's `pub/` directory. For example, see the last line in the following configuration:
+
 ```bash
     # /etc/nginx/sites-available/magento
 
@@ -58,12 +60,14 @@ The name and location of your virtual host file depends on which version of Apac
 
 1.  Log in to your Magento server.
 2.  Edit your virtual host file:
-```bash
-        vim /etc/apache2/sites-available/000-default.conf
-```
+
+   ```bash
+   vim /etc/apache2/sites-available/000-default.conf
+   ```
+
 3.  Add the path to your Magento `pub/` directory to the `DocumentRoot` directive:
 
-    ```
+   ```conf
     <VirtualHost *:80>
 
             ServerAdmin webmaster@localhost
@@ -77,10 +81,13 @@ The name and location of your virtual host file depends on which version of Apac
             </Directory>
     </VirtualHost>
     ```
+
 4.  Restart Apache:
-```bash
-        systemctl restart apache2
-```
+
+   ```bash
+   systemctl restart apache2
+   ```
+
 ## 2. Update your base URL
 
 If you appended a directory name to your server's hostname or IP address to create the base URL when you installed Magento (for example `http://192.168.33.10/magento2`), you'll need to remove it.
@@ -107,16 +114,20 @@ Switching between modes is an important step in verifying that your server confi
 
 1.  Go to your Magento installation directory.
 2.  Switch to `production` mode.
-```bash
-        bin/magento deploy:mode:set production
-        bin/magento cache:flush
-```
+
+   ```bash
+   bin/magento deploy:mode:set production
+   bin/magento cache:flush
+   ```
+
 3.  Refresh your browser and verify that the storefront displays properly.
 4.  Switch to `developer` mode.
-```bash
-        bin/magento deploy:mode:set developer
-        bin/magento cache:flush
-```
+
+   ```bash
+   bin/magento deploy:mode:set developer
+   bin/magento cache:flush
+   ```
+
 5.  Refresh your browser and verify that the storefront displays properly.
 
 ## 4. Verify the storefront

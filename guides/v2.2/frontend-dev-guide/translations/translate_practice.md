@@ -12,6 +12,7 @@ This topic is a step-by-step tutorial to create a default en_US [locale](https:/
 OrangeCo created a custom `orange` theme that inherits from the Magento Blank theme. When customizing their theme, they want to rephrase certain strings used in the Blank theme and modules for the default locale.
 
 Namely, they need the following changes:
+
 -   Change **Add to Cart** label to **Purchase**
 -   Change **Add to Compare** label to **Compare**
 -   Change **Add to Wish List** label to **Wishlist**

@@ -25,6 +25,7 @@ The preceding directories contain subdirectories for each supported version.
 ## Configuring the migration {#migration-configure}
 
 There are two ways to configure the Data Migration Tool:
+
 - Configure the Data Migration Tool in a separate module (recommended)
 - Change the Data Migration Tool configuration in the `<your Magento 2 install dir>/vendor/magento/data-migration-tool/etc/` directory.
 

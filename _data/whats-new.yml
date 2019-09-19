@@ -4,8 +4,71 @@ description: |
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: /whats-new.html
 thread: /whatsnew-feed.xml
-updated: Mon Aug 26 22:12:19 2019
+updated: Mon Sep 9 16:43:06 2019
 entries:
+- description: Added an example of the `escapeCss` function to the [Templates XSS
+    security](https://devdocs.magento.com/guides/v2.2/frontend-dev-guide/templates/template-security.html)
+    topic.
+  versions: 2.3.x
+  type: Major update
+  date: September 6, 2019
+  link: https://github.com/magento/devdocs/pull/5299
+- description: Added more information about the `output` attribute for containers
+    in the [Layout Instructions topic](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/layouts/xml-instructions.html).
+  versions: 2.2.x, 2.3.x
+  type: Major update
+  date: September 6, 2019
+  link: https://github.com/magento/devdocs/pull/5332
+- description: 'Updated the Cloud Release notes for [ece-tools version 2002.0.21](https://devdocs.magento.com/guides/v2.3/cloud/release-notes/cloud-tools.html#v2002021):<br/>-
+    Added environment variables for Cloud deployment: [`CONSUMERS_WAIT_FOR_MAX_MESSAGES`](https://devdocs.magento.com/guides/v2.3/cloud/env/variables-deploy.html#consumers_wait_for_max_messages)
+    and [`LOCK_PROVIDER`](https://devdocs.magento.com/guides/v2.3/cloud/env/variables-deploy.html#lock_provider)<br/>-
+    Added a [service compatibility table](https://devdocs.magento.com/guides/v2.3/cloud/project/project-conf-files_services.html)
+    that shows support for installed software and service versions such as Elasticsearch,  RabbitMq,
+    Redis, and DB on each Magento version.<br/>- Updated the [Launch Docker](https://devdocs.magento.com/guides/v2.3/cloud/docker/docker-config.html)
+    procedure to remove references to the deprecated `db:docker:convert` command and
+    Docker ENV files which are no longer generated during the Docker build.<br/>-
+    Added [Docker images](https://devdocs.magento.com/guides/v2.3/cloud/docker/docker-development.html)
+    to support PHP 7.3 and Varnish Cache 6.2.<br/>- Updated the Docker PHP images
+    to add Node.js to support node, npm, and the grunt-cli capabilities inside the
+    [PHP container](https://devdocs.magento.com/guides/v2.3/cloud/docker/docker-development.html#php-fpm-container).'
+  versions: 2.x
+  type: Major update
+  date: September 5, 2019
+  link: https://github.com/magento/devdocs/pull/5279
+- description: Added the [Reference a CMS block](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/layouts/xml-manage.html#ref_cms_block)
+    section to the 'Common Layout Customization Tasks' topic.
+  versions: 2.2.x, 2.3.x
+  type: Major update
+  date: September 3, 2019
+  link: https://github.com/magento/devdocs/pull/5307
+- description: Added information about how to use the REST API to [issue refunds](http://devdocs.magento.com/guides/v2.2/rest/modules/sales/refunds.html).
+  versions: 2.2.x, 2.3.x
+  type: New topic
+  date: August 30, 2019
+  link: https://github.com/magento/devdocs/pull/5231
+- description: Added a new topic about the [Multiselect widget](https://devdocs.magento.com/guides/v2.3/javascript-dev-guide/widgets/widget-multiselect.html).
+  versions: 2.2.x, 2.3.x
+  type: New topic
+  date: August 27, 2019
+  link: https://github.com/magento/devdocs/pull/5207
+- description: Updated the [XSS Prevention Strategy](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/xss-protection.html)
+    topic to correct invalid use cases for PHTML escaping and provide guidance on
+    XSS prevention in other areas.
+  versions: 2.2.x, 2.3.x
+  type: Major update
+  date: August 27, 2019
+  link: https://github.com/magento/devdocs/pull/5143
+- description: Added best practices for [configuring the migration tool](https://devdocs.magento.com/guides/v2.3/migration/migration-tool-configure.html).
+  versions: 2.2.x, 2.3.x
+  type: Major update
+  date: August 27, 2019
+  link: https://github.com/magento/devdocs/pull/5184
+- description: Added a [Plugin method naming convention](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/plugins.html)
+    section to _Plugins (Interceptors)_ topic.
+  versions: 2.2.x, 2.3.x
+  type: Major update
+  date: August 27, 2019
+  link: https://github.com/magento/devdocs/pull/5200
 - description: Added new code examples to the [JavaScript Mixins](https://devdocs.magento.com/guides/v2.3/javascript-dev-guide/javascript/js_mixins.html)
     topic.
   versions: 2.2.x, 2.3.x
@@ -843,7 +906,7 @@ entries:
 - description: Added information about the Magento Coding Standard to the following
     topics:<br/>- Code sniffers<br/>-
     [PHP coding standard](https://devdocs.magento.com/guides/v2.3/coding-standards/code-standard-php.html)<br/>-
-    [Template CSS security](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/templates/template-security.html)<br/>-
+    [Template CSS security](https://devdocs.magento.com/guides/v2.2/frontend-dev-guide/templates/template-security.html)<br/>-
     [Security, performances, and data handling](https://devdocs.magento.com/guides/v2.3/ext-best-practices/extension-coding/security-performance-data-bp.html)<br/>-
     [Working with architecture](https://devdocs.magento.com/guides/v2.3/ext-best-practices/extension-coding/working-with-arch-bp.html)<br/>-
     [Test your component](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/validate/test-module.html)

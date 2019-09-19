@@ -4,8 +4,6 @@ subgroup: 3_Widgets
 title: Collapsible widget
 ---
 
-## Overview
-
 The Magento collapsible widget converts a header/content pair into an accordion, where the content is collapsed or expanded on the header click.
 
 Unlike the accordion widget is that collapsible is initialized for one title/content pair, while accordion can be initialized for a set of title/contents pairs.
@@ -46,6 +44,7 @@ The collapsible widget can be initialized using the `data-mage-init` attribute o
 ## Options
 
 The collapsible widget has the following options:
+
 -   [active](#fedg_collaps_active)
 -   [ajaxUrlElement](#fedg_collaps_ajaxUrlElement)
 -   [ajaxContent](#fedg_collaps_ajaxContent)
@@ -103,6 +102,7 @@ Specifies if the collapse/expand actions are performed with animation.
 
 **Type**:
 Multiple types are supported:
+
 -   Boolean: the `false` value disables the animation
 -   Number: duration in milliseconds
 -   String: is parsed to an object as a json string
@@ -168,6 +168,7 @@ $("#element").collapsible("option","collapsible",false);
 Specifies the element, and the class which is assigned to this element, when the current element is opened; and is removed when the current element is closed.
 
 An object that contains the following:
+
 - `element`: an element, can be a selector or jQuery object.
 - `openedState`: the class name which is assigned to the element when the current element is in opened; removed when the current element is closed.
 
@@ -182,9 +183,11 @@ An object that contains the following:
 ```
 
 ### `content` {#fedg_collaps_content}
+
 Selector for the content element, searched for using `.find()` on the main collapsible element.
 
 **Type**:
+
 -   String
 -   jQuery Object
 
@@ -270,9 +273,11 @@ $("#element").collapsible("option","disabledState","disabled");
 ```
 
 ### `header` {#fedg_collaps_header}
+
 Selector for the header element, searched for using `.find()` on the main collapsible element. If the element with the specified selector is not found on the main collapsible element, the main element becomes a header.
 
 **Type**:
+
 - String
 - jQuery Object
 
@@ -408,9 +413,11 @@ $("#element").collapsible("option","saveState",true);
 ```
 
 ### `trigger` {#fedg_collaps_trigger}
+
 Selector for the trigger element, applied using `.find()` on the main collapsible element. If the trigger is not found, the header becomes a trigger.
 
 **Type**:
+
 -   String
 -   jQuery Object
 

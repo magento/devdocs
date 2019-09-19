@@ -70,8 +70,9 @@ public function afterGet
 ```
 
 This is the simplest way to add extension attributes without causing a conflict:
+
 - We get the [entity's](https://glossary.magento.com/entity) extension attributes, if they are already set.
- - We add our [extension attribute](https://glossary.magento.com/extension-attribute).
+- We add our [extension attribute](https://glossary.magento.com/extension-attribute).
 - Finally set the extension attribute on the entity with ours included.
 
 AfterGetList is similar to afterGet.

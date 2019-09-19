@@ -132,6 +132,7 @@ To verify and test changes completed in a pull request, enter a command to gener
 ```
 
 **Actions:**
+
 * It deploys a new Magento instance based on Pull Request changes.
 * Deployment takes ~2 minutes.
 
