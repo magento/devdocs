@@ -36,8 +36,7 @@ In its initial state the sign-in [module](https://glossary.magento.com/module) c
 In the [event](https://glossary.magento.com/event) that invalid credentials are submitted the sign-in module consists of
 
 * an alert message informing the user that either the Username or Password is invalid
-* two text fields – **Username** and **Password**, where the Username field will retain the initial entry as
-typed by the user and be the active field and the password field will be blank
+* two text fields – **Username** and **Password**, where the Username field will retain the initial entry as typed by the user and be the active field and the password field will be blank
 * a link to retrieve the user’s password
 * a button to submit the user’s credentials – **Sign in**
 
@@ -57,6 +56,7 @@ If the user opts to retrieve their password via the hyperlink ("Forgot your pass
 ### Confirmation of password retrieval
 
 Once a user submits their email address to retrieve their password, the module will provide a confirmation on the action via text in the module.
+
 * the title **Password Help** in the style of the Welcome message from the initial state
 * text confirming that an email has been sent
 * a link to return to the initial state of the sign-in module – "Back to Sign in"
@@ -66,6 +66,7 @@ Once a user submits their email address to retrieve their password, the module w
 ### Error of password retrieval
 
 In the event that the user enters an invalid email address, either by mistyping or by entering an unregistered email address, the module will display an alert message.
+
 * the title Password Help in the style of the Welcome message from the initial state
 * an alert message indicating the email address failed
 * a text field to enter the user’s email address used at the time of registration; a button to submit the user’s email address and initiate the process – Retrieve Password

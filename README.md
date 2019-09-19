@@ -111,7 +111,8 @@ If rake fails on your environment, generate the preview [using jekyll](#using-je
 ### To minimize build time locally:
 
 1. Create a `_config.local.yml` file at the root of the project directory and exclude all versions except the one that you want to preview.
-The following example will generate Magento 2.2 documentation only.
+
+   The following example will generate Magento 2.2 documentation only.
 
    ```yaml
     exclude:
@@ -138,7 +139,9 @@ The following example will generate Magento 2.2 documentation only.
    ```
    $ rake preview
    ```
+
    This command:
+
    * Checks your environment according to the dependencies in `Gemfile.lock`.
    * Removes the `_site/` directory, which contains previously generated preview files.
    * Generates a new preview and opens the landing page in a web browser.

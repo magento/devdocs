@@ -25,8 +25,9 @@ Any templates configured in the Magento [Admin](https://glossary.magento.com/adm
 
 1. In the Magento Admin, navigate to **MARKETING** > Communications > **Email Templates**
 2. Click **Add New Template**.
-3. If you want to use a default template as a starting point, in the **Load default template** section, choose the template and click **Load Template**. The path to the configuration settings for each default template displays in the **Currently Used For** field in the Template Information section.<br>
-Make note of this path because you will need it later when you configure this new template to be used instead of the default template.
+3. If you want to use a default template as a starting point, in the **Load default template** section, choose the template and click **Load Template**. The path to the configuration settings for each default template displays in the **Currently Used For** field in the Template Information section.
+
+   Make note of this path because you will need it later when you configure this new template to be used instead of the default template.
 
    ![New template creation page with loaded default template]({{ site.baseurl }}/common/images/email_create_template21.png){:width="70%"}{:height="70%"}
 
@@ -40,8 +41,11 @@ Make note of this path because you will need it later when you configure this ne
     1. If you haven't done so already, log in to the Magento Admin as an administrator.
     2. Click **STORES** > Settings > **Configuration** > SALES > **Sales Emails**.
     3. In the left pane, locate the section that contains the template you want to override. This is the section referenced by **Currently Used For** in your new template. (See step 3 earlier in this section.)
+
        For example, if you created a "New Order" template, the configuration section is **Order** as the following figure shows.
+
        ![Choosing a custom template]({{ site.baseurl }}/common/images/email_choose-template21.png){:width="70%"}{:height="70%"}
+
     4. Select your newly created template from the list.
     5. Click **Save Config**.
 

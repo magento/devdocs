@@ -23,6 +23,7 @@ Staging system
 
 Production system
 : Your live store. You should make minimal configuration changes here and no changes to:
+
    - websites
    - stores
    - store views

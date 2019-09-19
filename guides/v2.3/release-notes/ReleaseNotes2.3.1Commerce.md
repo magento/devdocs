@@ -122,8 +122,8 @@ Infrastructure improvements are core enhancements that underlie both merchant an
 * You can now isolate and extract MySQL Views from regular database tables with no negative effects on database backup and restoration. Support for MySQL Views was introduced in 2.3.0 with unexpected consequences to the default database backups and restore mechanism. This fix restores expected  backup and restore functionality while preserving MySQL View support the backward compatibility with legacy inventory. *Fix submitted by community member  Stepan Furman in pull request [21151](https://github.com/magento/magento2/pull/21151)*. Thank you, Stepan!
 
 * Magento now uses version 6.0 of the DHL XML Services schema for the DHL shipping method. <!--- MC-4245-->*
-*
-* <!--- MAGETWO-95068-->**Checkout information now persists after a cart update**. Information previously entered by a customer during check out (such as shipping address) now persists after the customer updates their shopping cart. Previously, when a customer updated their shopping cart, all information previously entered during check out (such as shipping address) was deleted.
+
+* <!--- MAGETWO-95068-->Checkout information now persists after a cart update**. Information previously entered by a customer during check out (such as shipping address) now persists after the customer updates their shopping cart. Previously, when a customer updated their shopping cart, all information previously entered during check out (such as shipping address) was deleted.
 
 * Upgrade of Magento Functional Test Framework (MFTF) to 2.3.13.
 
@@ -210,6 +210,7 @@ We've fixed hundreds of issues in the Magento 2.3.1 core code.
 <!--- MC-5620-->* The `bin/magento setup:upgrade --convert-old-scripts=1` command now supports the conversion of indexes and constraints.
 
 <!--- MC-1364-->
+
 * The **Allow Dynamic Media URLs in Products and Categories** configuration setting, which was previously accessed from **Stores** > **Configuration** > **Catalog** > **Storefront**, has been removed. The **Use Static URLs for Media Content in WYSIWYG** setting (**Stores** > **Configuration** > **General** > **Content management** > **WYSIWYG Options**) now applies to any media URLs that are entered through the WYSIWYG editor.
 
 ### AdminGWS

@@ -19,6 +19,7 @@ The following table discusses the bootstrap parameters you can set:
 | MAGE_PROFILER       | Enables dependency graphs and HTML profiling |
 
 {:.bs-callout .bs-callout-info}
+
 *   Not all bootstrap parameters are documented at this time.
 *   You now set the Magento mode (developer, default, production) using the [`magento deploy:mode:set {mode}`]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html) command.
 

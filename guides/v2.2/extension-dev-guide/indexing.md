@@ -124,14 +124,9 @@ For example part of `Magento/Catalog/etc/mview.xml` is tracking category to prod
 
 Explanation of nodes:
 
-* The `view` node defines an indexer. The `id` attribute is a name of the indexer table, the `class` attribute is indexer executor, the `group` attribute defines
-the indexer group.
+* The `view` node defines an indexer. The `id` attribute is a name of the indexer table, the `class` attribute is indexer executor, the `group` attribute defines the indexer group.
 * The `subscriptions` node is a list of tables for tracking changes.
-* The `table` node defines the certain table to observe and track changes. The attribute `name` is a name of an observable table, the attribute `entity_column`
-is an identifier column of entity to be re-indexed. So, in case of `catalog_category_product`, whenever one or more categories is saved, updated or deleted in `catalog_category_entity`
-the `execute` method of `Magento\Catalog\Model\Indexer\Category\Product` will be called with argument `ids` containing ids of entities from column defined
-under `entity_column` attribute. If indexer type is set to "Update on Save" the method is called right away after the operation. If it set to "Update by Schedule"
-the mechanism creates a record in the change log table using MYSQL triggers.
+* The `table` node defines the certain table to observe and track changes. The attribute `name` is a name of an observable table, the attribute `entity_column` is an identifier column of entity to be re-indexed. So, in case of `catalog_category_product`, whenever one or more categories is saved, updated or deleted in `catalog_category_entity` the `execute` method of `Magento\Catalog\Model\Indexer\Category\Product` will be called with argument `ids` containing ids of entities from column defined under `entity_column` attribute. If indexer type is set to "Update on Save" the method is called right away after the operation. If it set to "Update by Schedule" the mechanism creates a record in the change log table using MYSQL triggers.
 
 A change log table is created according to the naming rule - INDEXER_TABLE_NAME + '_cl', in case of `catalog_category_product` it will be `catalog_category_product_cl`.
 The table contains the `version_id` auto-increment column and `entity_id` column that contains identifiers of entities to be re-indexed.
