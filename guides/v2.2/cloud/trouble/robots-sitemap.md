@@ -13,7 +13,7 @@ Please make sure that "/" is writable by the web-server.
 
 With {{site.data.var.ece}}, you can only write to specific directories, such as `var`, `pub/media`, `pub/static`, or `app/etc`. When you generate the `sitemap.xml` file using the Admin panel, you must specify the `/media/` path.
 
-You do not have to generate a `robots.txt` because it generates on demand and stores the contents in the database. It does not create a file, but you can view the content in your browser with the `<domain.your.project>/robots.txt` file.
+You do not have to generate a `robots.txt` file because it generates the `robots.txt` content on demand and stores it in the database. You can view the content in your browser with the `<domain.your.project>/robots.txt` link.
 
 This requires ECE-Tools version 2002.0.12 and later with an updated `.magento.app.yaml` file. See an example of these rules in the [magento-cloud repository](https://github.com/magento/magento-cloud/blob/master/.magento.app.yaml#L43-L49).
 
@@ -60,3 +60,45 @@ Create a custom VCL snippet to rewrite the path for `sitemap.xml` to `/media/sit
   "content": "if ( req.url.path ~ \"^/?sitemap.xml$\" ) { set req.url = \"/media/sitemap.xml\"; }"
 }
 ```
+
+The following example demonstrates how to rewrite the path for `robots.txt` and `sitemap.xml` to `/media/robots.txt` and `/media/sitemap.xml`
+
+```json
+{
+  "name": "sitemaprobots_rewrite",
+  "dynamic": "0",
+  "type": "recv",
+  "priority": "90",
+  "content": "if ( req.url.path ~ \"^/?sitemap.xml$\" ) { set req.url = \"/media/sitemap.xml\"; } else if (req.url.path ~ \"^/?robots.txt$\") { set req.url = \"/media/robots.txt\";}"
+}
+```
+
+#### To use a Fastly VCL snippet for particular domain redirect:
+
+Create a `pub/media/domain_robots.txt` file, where the domain is `domain.com` and use the next VCL snippet:
+
+```
+{
+  "name": "domain_robots",
+  "dynamic": "0",
+  "type": "recv",
+  "priority": "90",
+  "content": "if ( req.url.path == \"/robots.txt\" ) { if ( req.http.host ~ \"(domain).com$\" ) { set req.url = \"/media/\" re.group.1 \"_robots.txt\"; }}"
+}
+```
+
+The VCL snippet routes `http://domain.com/robots.txt` and presents the `pub/media/domain_robots.txt` file.
+
+To configure a redirect for `robots.txt` and `sitemap.xml` in a single snippet, create `pub/media/domain_robots.txt` and `pub/media/domain_sitemap.xml` files, where the domain is `domain.com` and use the next VCL snippet:
+
+```
+{
+  "name": "domain_sitemaprobots",
+  "dynamic": "0",
+  "type": "recv",
+  "priority": "90",
+  "content": "if ( req.url.path == \"/robots.txt\" ) { if ( req.http.host ~ \"(domain).com$\" ) { set req.url = \"/media/\" re.group.1 \"_robots.txt\"; }} else if ( req.url.path == \"/sitemap.xml\" ) { if ( req.http.host ~ \"(domain).com$\" ) {  set req.url = \"/media/\" re.group.1 \"_sitemap.xml\"; }}"
+}
+```
+
+In the `sitemap` admin config, you must specify the location of the file using `pub/media/` rather than `/`.
