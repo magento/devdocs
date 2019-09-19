@@ -43,6 +43,7 @@ Attribute | Data type | Description
 `updated_at`| String | Timestamp indicating when the category was updated
 `url_key`| String | The url key assigned to the category
 `url_path`| String | The url path assigned to the category
+`url_suffix` | String | The part of the URL that is appended to the `url_key`, such as `.html`. This attribute is defined in the `CatalogUrlRewriteGraphQl` module
 
 #### CategoryProducts object
 
