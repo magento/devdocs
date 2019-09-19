@@ -162,7 +162,7 @@ The Multiselect methods are the following:
 - [loadOptions()](#loadoptions)
 - [setCurrentPage()](#setcurrentpage)
 
-### `appendOptions(options)`
+### `appendOptions`
 
 The method appends multi-select items to the multi-select.
 
@@ -172,7 +172,7 @@ Code example:
 $('#multiselect').multiselect2('appendOptions', [{"value": "1", "label": "Label #1"}, {"value": "2", "label": "Label #2"}]);
 ```
 
-### `clearMultiselectOptions()`
+### `clearMultiselectOptions`
 
 The method removes all multi-select items.
 
@@ -182,7 +182,7 @@ Code example:
 $('#multiselect').multiselect2('clearMultiselectOptions');
 ```
 
-### `getCurrentPage()`
+### `getCurrentPage`
 
 The method returns the number of the current page.
 
@@ -190,7 +190,7 @@ The method returns the number of the current page.
 $('#multiselect').multiselect2('getCurrentPage');
 ```
 
-### `getSearchCriteria()`
+### `getSearchCriteria`
 
 The method returns the trimmed value of the search input.
 
@@ -200,7 +200,7 @@ Code example:
 $('#multiselect').multiselect2('getSearchCriteria');
 ```
 
-### `isOptionsLoaded(options)`
+### `isOptionsLoaded`
 
 The method checks if all multi-select items are already loaded.
 
@@ -210,7 +210,7 @@ $('#multiselect').multiselect2('isOptionsLoaded', [{"value": "2", "label": "Labe
 
 This method returns `true` if multiple selection items are loaded, and it returns `false` if they are not loaded.
 
-### `loadOptions()`
+### `loadOptions`
 
 The method loads the next page with multi-select items from [nextPageUrl](#nextpageurl) according to the [search criteria](#getsearchcriteria).
 The multi-select items from the Ajax response are appended to the multi-select.
@@ -221,7 +221,7 @@ Code example:
 $('#multiselect').multiselect2('loadOptions');
 ```
 
-### `setCurrentPage(page)`
+### `setCurrentPage`
 
 The method configures the current page number.
 
