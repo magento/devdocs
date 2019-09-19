@@ -19,9 +19,7 @@ The following example shows how to instantiate the Multiselect widget:
 $("#multiselect").multiselect2({});
 ```
 
-Where:
-
-- `#multiselect` is the selector of the select element for which Multiselect is initialized.
+where `#multiselect` is the selector of the select element for which Multiselect is initialized.
 
 The following example shows a PHTML file using the script:
 
@@ -42,16 +40,16 @@ The following example shows a PHTML file using the script:
 
 The RedirectUrl widget has the following options:
 
-- [containerClass](#containerclass)
-- [currentPage](#currentpage)
-- [lastAppendValue](#lastappendvalue)
-- [mselectCheckedClass](#mselectcheckedclass)
-- [mselectContainer](#mselectcontainer)
-- [mselectItemsWrapperClass](#mselectitemswrapperclass)
-- [nextPageUrl](#nextpageurl)
-- [searchInputClass](#searchinputclass)
-- [selectedItemsCountClass](#selecteditemscountclass)
-- [updateDelay](#updatedelay)
+-  [containerClass](#containerclass)
+-  [currentPage](#currentpage)
+-  [lastAppendValue](#lastappendvalue)
+-  [mselectCheckedClass](#mselectcheckedclass)
+-  [mselectContainer](#mselectcontainer)
+-  [mselectItemsWrapperClass](#mselectitemswrapperclass)
+-  [nextPageUrl](#nextpageurl)
+-  [searchInputClass](#searchinputclass)
+-  [selectedItemsCountClass](#selecteditemscountclass)
+-  [updateDelay](#updatedelay)
 
 ### `containerClass`
 
@@ -103,7 +101,7 @@ Multiselect items wrapper class.
 
 ### `nextPageUrl`
 
-The url of the controller or API which should return the JSON response like the following:
+The url of the controller or API which returns the JSON response.
 
 ```json
 {
@@ -122,7 +120,7 @@ The url of the controller or API which should return the JSON response like the 
 }
 ```
 
-The example of the controller: [`<Magento_Tax_module_dir>/Controller/Adminhtml/Rule/AjaxLoadRates.php`][]
+An example of the controller: [`<Magento_Tax_module_dir>/Controller/Adminhtml/Rule/AjaxLoadRates.php`][]
 
 **Type**: String
 
