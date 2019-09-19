@@ -255,16 +255,18 @@ Sample structure for a package supporting only Chrome and Firefox:
 ```
 
 The list of valid values for the `browser_os_compatibility` are:
-  * Browsers:
-      * `chrome`
-      * `firefox`
-      * `safari`
-      * `opera`
-      * `edge`
-  * OS:
-      * `linux`
-      * `mac`
-      * `windows`
+
+* Browsers:
+  * `chrome`
+  * `firefox`
+  * `safari`
+  * `opera`
+  * `edge`
+
+* OS:
+  * `linux`
+  * `mac`
+  * `windows`
 
 #### options
 

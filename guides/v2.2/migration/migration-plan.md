@@ -58,6 +58,7 @@ In such migration testing, follow these steps:
    For example: the `enterprise_salesarchive_archive_orders` cron job moves old orders to archive. Running this job during migration is safe because the Delta mode takes the job into account and thus properly processes the archived orders.
 
 {:start="4"}
+
 4. Use the Data Migration Tool to migrate settings and websites.
 
 5. Copy your Magento 1.x media files to Magento 2.x.
@@ -65,11 +66,13 @@ In such migration testing, follow these steps:
    You must copy these files manually from the `magento1-root/media` directory to `magento2-root/pub/media`.
 
 {:start="6"}
+
 6. Use the Data Migration Tool to bulk copy your data from Magento 1 database to Magento 2 database.
 
    If some of your extensions have data you want to migrate, you might need to install these extensions adapted for Magento 2. In case the extensions have a different structure in Magento 2 database, use the mapping files provided with the Data Migration Tool.
 
 {:start="7"}
+
 7. Reindex all Magento 2.x indexers. For details, see the [Configuration guide].
 
 ## Step 5: Make changes to the migrated data (if needed)
@@ -84,11 +87,9 @@ For example, a product deleted from Magento 2: the one that has been bought on y
 
 After migrating data, you must incrementally capture data updates that have been added in the Magento 1 store (such as new orders, reviews, and changes in customer profiles) and transfer these updates to the Magento 2 store using the Delta mode.
 
-* Start the incremental migration; updates will run continually.
-You can stop transferring updates at any time by pressing `Ctrl+C`
+* Start the incremental migration; updates will run continually. You can stop transferring updates at any time by pressing `Ctrl+C`
 
-* Test your Magento 2 site during this time to catch any issues as soon as possible.
-In case of such issues, press `Ctrl+C` to stop incremental migration and start it again after issues are resolved
+* Test your Magento 2 site during this time to catch any issues as soon as possible. In case of such issues, press `Ctrl+C` to stop incremental migration and start it again after issues are resolved
 
 {: .bs-callout-info }
 Volume check warnings may appear in case you conduct testing of your Magento 2 site and run migration process at the same time. It happens because in Magento 2 you create entities that do not exist in Magento 1 instance.

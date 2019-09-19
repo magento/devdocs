@@ -37,18 +37,25 @@ Note that normally you don't have permissions to `<magento_root_dir>/app/code/`,
 type="tip"
 content="**For CentOS and Ubuntu users**<br/>
 If the command fails with the error message:
+
 ```terminal
 /var/www/html/magento2ce/node_modules/phantomjs-prebuilt/lib/phantom/bin/phantomjs: error while loading shared libraries: libfontconfig.so.1: cannot open shared object file: No such file or directory
 ```
-install [fontconfig library]:<br/>
+
+Install [fontconfig library]:<br/>
+
 * CentOS:
+
   ```bash
   yum install fontconfig
   ```
+
 * Ubuntu:
+
   ```bash
   apt-get install fontconfig
   ```
+
 "
 %}
 

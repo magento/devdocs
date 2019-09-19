@@ -12,6 +12,7 @@ This topic describes the JavaScript used in Magento out-of-the-box Blank and Lum
 ## Scripts general overview
 
 The Blank and Luma themes use the following scripts to responsively relocate page elements by breakpoint:
+
 - [`responsive.js`]
 - [`menu.js`]
 - [`matchMedia.js`], used by `responsive.js` and `menu.js`
@@ -28,6 +29,7 @@ The script files are located in the file system as follows:
 ```
 
 See one of the following sections for more information:
+
 - [responsive.js](#fedg_rwd_js_resp)
 - [menu.js](#fedg_rwd_js_nav)
 
@@ -65,6 +67,7 @@ For example, `responsive.js` changes the view of the [checkout](https://glossary
 ## menu.js {#fedg_rwd_js_nav}
 
 In a mobile view, on the 768px breakpoint, `menu.js` changes the navigation menu look and behavior the following way:
+
 -   Category menu items are not displayed, but are accessible after
     clicking the menu icon.
 -   The behavior of a [category](https://glossary.magento.com/category) link depends on whether the category has sub-categories:

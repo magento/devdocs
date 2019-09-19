@@ -37,14 +37,15 @@ To deploy static view files:
 1.  Log in to the Magento server as, or [switch to]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html), the [Magento file system owner](https://glossary.magento.com/magento-file-system-owner).
 2.  Delete the contents of `<magento_root>/pub/static`, except for the `.htaccess` file. Do not delete this file.
 3.  Run the static view files deployment tool `<magento_root>/bin/magento setup:static-content:deploy`.
-<!-- 4.	Set read-only file permissions for the `pub/static` directory, its subdirectories, and files. -->
 
-	{:.bs-callout .bs-callout-info}
-  If you enable static view file merging in the Magento Admin, the `pub/static` directory system must be writable.
+   {:.bs-callout .bs-callout-info}
+   If you enable static view file merging in the Magento Admin, the `pub/static` directory system must be writable.
 
 Command options:
 
-	bin/magento setup:static-content:deploy [<languages>] [-t|--theme[="<theme>"]] [--exclude-theme[="<theme>"]] [-l|--language[="<language>"]] [--exclude-language[="<language>"]] [-a|--area[="<area>"]] [--exclude-area[="<area>"]] [-j|--jobs[="<number>"]]  [--no-javascript] [--no-css] [--no-less] [--no-images] [--no-fonts] [--no-html] [--no-misc] [--no-html-minify] [-f|--force]
+```bash
+bin/magento setup:static-content:deploy [<languages>] [-t|--theme[="<theme>"]] [--exclude-theme[="<theme>"]] [-l|--language[="<language>"]] [--exclude-language[="<language>"]] [-a|--area[="<area>"]] [--exclude-area[="<area>"]] [-j|--jobs[="<number>"]]  [--no-javascript] [--no-css] [--no-less] [--no-images] [--no-fonts] [--no-html] [--no-misc] [--no-html-minify] [-f|--force]
+```
 
 The following table explains this command's parameters and values.
 
