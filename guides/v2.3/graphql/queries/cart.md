@@ -407,7 +407,7 @@ query {
 
 In this query, the **Buy 3 tee shirts and get the 4th free** cart price rule from the sample data is active. This rule was modified slightly to add the label `3T1free`.  (If a cart price rule does not have a label, Magento returns a default label of `Discount`.) A custom rule in which the customer saves 10% on the order by applying a discount code is also in effect.
 
-The `3T1free` rule is applied first, and Magento returns price of a single t-shirt, $29, as the discount. Magento then applies a 10% discount to the remaining total of the products in the cart.
+The `3T1free` rule is applied first, and Magento returns the price of a single shirt, $29, as the discount. Magento then applies a 10% discount to the remaining total of the products in the cart.
 
 **Request**
 
