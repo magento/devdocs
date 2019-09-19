@@ -402,6 +402,7 @@ query {
   }
 }
 ```
+
 ### Cart discounts
 
 In this query, the **Buy 3 tee shirts and get the 4th free** cart price rule from the sample data is active. This rule was modified slightly to add the label `3T1free`.  (If a cart price rule does not have a label, Magento returns a default label of `Discount`.) A custom rule in which the customer saves 10% on the order by applying a discount code is also in effect.
@@ -686,7 +687,7 @@ Attribute |  Data Type | Description
 
 A discount can be applied to the cart as a whole or to an item.
 
-If a cart rule does not have a label, Magento uses "Discount" as the default label. 
+If a cart rule does not have a label, Magento uses `Discount` as the default label.
 
 The `Discount` object must contain the following attributes.
 
