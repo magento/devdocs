@@ -23,22 +23,22 @@ Before you run functional tests, you must prepare your environment with the foll
 
 1.  Stop all services that use the following ports:
 
-    -  `80`—varnish
-    -  `443`—web, tls
-    -  `3306`—apache, mysql
+    -  `80`—varnish or web server (apache, nginx)
+    -  `443`—web server (apache, nginx), tls
+    -  `3306`—mysql
 
 1.  Update the hosts file.
 
     Before you begin, you must add the following hostname to your `/etc/hosts` file:
 
     ```
-    127.0.0.1 web
+    127.0.0.1 magento2.docker
     ```
 
     Alternatively, you can run the following command to add it to the file:
 
     ```bash
-    echo "127.0.0.1 web" | sudo tee -a /etc/hosts
+    echo "127.0.0.1 magento2.docker" | sudo tee -a /etc/hosts
     ```
 
 1.  Switch to the preferred PHP version for running tests.
