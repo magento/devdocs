@@ -36,6 +36,7 @@ For details about how to initialize the widget in a`.phtml` template, refer to t
 ## Options {#modal_options}
 
 The modal widget has the following options:
+
 -   [autoOpen](#modal_autoopen)
 -   [buttons](#modal_buttons)
 -   [closeText](#modal_closeText)
@@ -184,6 +185,7 @@ The type of window: 'popup' or 'slide'.
 ## Methods {#modal_methods}
 
 The modal widget has the following methods:
+
 -   [closeModal()](#modal_close)
 -   [keyEventSwitcher()](#modal_keyEventSwitcher)
 -   [openModal()](#modal_open)
@@ -204,6 +206,7 @@ Toggles the modal window.
 ## Events {#modal_events}
 
 The modal widget is subscribed to the following events:
+
 -   [closed](#modal_closed)
 -   [opened](#modal_opened)
 

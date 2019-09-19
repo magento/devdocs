@@ -56,6 +56,7 @@ In the Magento application, the following modes of compiling `.less` files to CS
     When your application is not in the production mode, you can set Magento to compile `.less` files in a browser, using the [native `less.js` library]
 
 To set the compilation mode, do the following:
+
 1.  In the Magento Admin, navigate to **Stores** > **Settings** > **Configuration** > ADVANCED > **Developer**.
 1.  In the **Store View** drop-down field, select **Default Config**.
 1.  Under **Frontend development workflow**, in the **Workflow type** field, select the compilation mode.
@@ -150,6 +151,7 @@ With client-side compilation mode enabled, LESS files are compiled on every page
 There are certain types of changes, that require you to clear the `pub/static/frontend/<Vendor>/<theme>/<locale>` directory and trigger the compilation and [publication] processes anew.
 
 This is required in the following cases:
+
 - If you change the [root source files] that contain the `@magento_import` directive, or the `@import` directive where the imported file is specified without extension.
 - If you rename, remove, or add a `.less` file imported with a `@magento_import` or `@import` directive but you did not correct the directives accordingly.
 

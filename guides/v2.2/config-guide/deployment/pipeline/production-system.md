@@ -51,6 +51,7 @@ To set up a production machine:
   }
 }
 ```
+
 3.	Save your changes to `auth.json`.
 4.	Copy `<Magento root dir>/app/etc/env.php` from your development system to your production system.
 5.	Open `env.php` in a text editor and change any values necessary (for example, database connection information).

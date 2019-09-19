@@ -64,6 +64,7 @@ Conventionally layout declaration file can be located in one of the following lo
 - Theme layout declaration: `<theme_dir>/<Namespace>_<Module>/layouts.xml`
 
 Declare a layout file using the `<layout></layout>` instruction, for which specify the following:
+
 - `<layout id="layout_file_name">`. For example, the `2columns-left.xml` page layout is declared like following: `<layout id="2columns-left"/>`
 - `<label translate="true|false">{Label_used_in_Admin}</label>`
 

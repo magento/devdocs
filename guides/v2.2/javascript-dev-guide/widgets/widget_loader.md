@@ -39,6 +39,7 @@ require(['jquery', 'loader'], function ($) {
 ## Options {#loader_options}
 
 The loader widget has the following options:
+
 -   [icon](#l_icon)
 -   [template](#l_template)
 -   [texts](#l_texts)
@@ -68,6 +69,7 @@ HTML wrapper for the output, or a DOM element selector.
 ### `texts` {#l_texts}
 
 An object that contains translations for loader text:
+
 -   `texts.loaderText`: The text that is displayed under the loader image.
     **Default value**: *'Please wait...'*
 -   `texts.imgAlt`: The text that is set as the `alt` attribute value of the loader image.
@@ -101,6 +103,7 @@ $("#element").loader("hide");
 ## Events
 
 Loader is subscribed to the following events:
+
 -   [processStart](#l_processStart)
 -   [processStop](#l_processStop)
 

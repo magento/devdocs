@@ -32,13 +32,13 @@ When creating a new component, use the `uiElement` class as a direct parent, if 
 
   , where:
 
-    - the `observe()` method is a wrapper for the `ko.observable()` and `ko.observableArray()` methods. It converts the properties of the current method into the observable properties.
-`observe([{Boolean} isTracked,] {String|Array|Object} listOfProperties)`:
+    - the `observe()` method is a wrapper for the `ko.observable()` and `ko.observableArray()` methods. It converts the properties of the current method into the observable properties. `observe([{Boolean} isTracked,] {String|Array|Object} listOfProperties)`:
 
         - `isTracked` - `{Boolean}`, optional, - defines access usage: whether to use observable properties (`isTracked = false`) or property accessors (`isTracked = true`).
         - `listOfProperties` - `{String}` is treated as space-separated list of properties' names. Initial values will be used from current instance (when corresponding property exist).
         - `listOfProperties` - `{Array}` a list of properties' names. Initial values will be used from current instance (when corresponding property exist).
         - `listOfProperties` - `{Object}` a list of properties' names. Initial values will be used from this object.
+
     - the `track(listOfProperties)` method is equal to `observe(true, listOfProperties)`.
       The main difference between `observe()` and `track()` is that `observe()` is mainly used without first boolean argument. So it really converts properties to observable functions. It changes how property can be accessed. Otherwise `track()` uses property accessors. So property access remains the same.
 

@@ -28,6 +28,7 @@ If you have SSH keys, a directory listing is displayed similar to the following:
 If you do not have SSH keys, you need to generate the keys for adding to your Magento ECE account and GitHub account. See [Create a new SSH key pair](#ssh-create-new-key-pair).
 
 If you already have SSH keys, continue to:
+
 * [Add a public SSH key to your Magento account](#ssh-add-to-account) section
 * [Add your SSH key to your GitHub account](https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/)
 

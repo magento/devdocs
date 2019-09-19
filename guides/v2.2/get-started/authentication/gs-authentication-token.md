@@ -28,7 +28,8 @@ Use the following steps to generate an access token:
 5. Click **Save** to save your changes and return to the Integrations page.
 6. Click the **Activate** link in the grid that corresponds to the newly-created integration.
 7. Click **Allow** . A dialog similar to the following displays:
-![REST client]({{ page.baseurl }}/get-started/authentication/images/integration-tokens.png)
+
+   ![REST client]({{ page.baseurl }}/get-started/authentication/images/integration-tokens.png)
 
 The access token can be used in all calls made on behalf of the integration.
 
