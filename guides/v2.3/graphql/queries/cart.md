@@ -414,6 +414,7 @@ The `3T1free` rule is applied first, and Magento returns the price of a single s
 ```graphql
 {
   cart(cart_id: "v7jYJUjvPeHbdMJRcOfZIeQhs2Xc2ZKT") {
+    email
     items {
       id
       prices {
@@ -436,6 +437,9 @@ The `3T1free` rule is applied first, and Magento returns the price of a single s
       }
       quantity
     }
+    applied_coupons {
+      code
+    }
     prices {
       discounts {
         amount {
@@ -449,7 +453,6 @@ The `3T1free` rule is applied first, and Magento returns the price of a single s
     }
   }
 }
-
 ```
 
 **Response**
@@ -458,6 +461,7 @@ The `3T1free` rule is applied first, and Magento returns the price of a single s
 {
   "data": {
     "cart": {
+      "email": "roni_cost@example.com",
       "items": [
         {
           "id": "43",
@@ -488,6 +492,11 @@ The `3T1free` rule is applied first, and Magento returns the price of a single s
             "sku": "WS06"
           },
           "quantity": 4
+        }
+      ],
+      "applied_coupons": [
+        {
+          "code": "NEW"
         }
       ],
       "prices": {
