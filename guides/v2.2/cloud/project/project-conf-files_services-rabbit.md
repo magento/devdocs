@@ -62,7 +62,37 @@ You can do this using [SSH tunneling]({{ page.baseurl }}/cloud/env/environments-
     magento-cloud tunnel:open
     ```
 
-1.  [Verify the relationships]({{page.baseurl}}/cloud/project/project-conf-files_services.html#service-relationships).
+1. Retrieve the RabbitMq connection details and login credentials from the [$MAGENTO_CLOUD_RELATIONSHIPS]({{ page.baseurl }}/cloud/env/environment-vars_cloud.html):
+
+   1. SSH into your Magento Cloud environment where RabbitMQ is installed and configured.
+   1. Enter one of the following commands to pretty-print connection information for RabbitMQ:
+
+   ```bash
+   echo $MAGENTO_CLOUD_RELATIONSHIPS | base64 -d | json_pp
+   ```
+   
+   or
+   
+   ```bash
+   php -r 'print_r(json_decode(base64_decode($_ENV["MAGENTO_CLOUD_RELATIONSHIPS"])));'
+   ```
+   
+   In the response, find the RabbitMQ information, for example:
+   
+   ```json
+   {
+      "rabbitmq" : [
+         {
+            "password" : "guest",
+            "ip" : "246.0.129.2",
+            "scheme" : "amqp",
+            "port" : 5672,
+            "host" : "rabbitmq.internal",
+            "username" : "guest"
+         }
+      ]
+   }
+   ```
 
 1.  Enable local port forwarding to RabbitMQ.
 
