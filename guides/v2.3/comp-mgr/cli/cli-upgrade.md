@@ -126,7 +126,7 @@ Security patches use the Composer naming convention `2.3.2-px`. Use Composer to 
 composer require magento/product-community-edition=2.3.2-p1 --no-update
 ```
 
-## (_Optional)_ Recreate the Magento updater
+## (_Optional)_ Recreate the Magento updater {#recreate-magento-updater}
 
 If the Magento updater is installed, remove and recreate it. It is located in the `update/` directory.
 
