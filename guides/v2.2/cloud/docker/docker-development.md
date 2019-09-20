@@ -20,9 +20,7 @@ The database container is based on the [mariadb](https://hub.docker.com/_/mariad
     - `/var/lib/mysql`
     - `./docker/mysql`
 
-#### To import a database dump:
-
-Place the SQL file into the `.docker/mysql/docker-entrypoint-initdb.d` folder.
+To import a database dump, place the SQL file into the `.docker/mysql/docker-entrypoint-initdb.d` folder.
 
 The `{{site.data.var.ct}}` package imports and processes the SQL file the next time you build and start the Docker environment using the `docker-compose up` command.
 
@@ -39,26 +37,30 @@ The following CLI containers, which are based on a [PHP-CLI version 7 image](htt
     -  The `setup:cron:run` and `cron:update` commands are not available on Cloud and Docker for Cloud environment
     -  Cron only works with the CLI container to run the `./bin/magento cron:run` command
 
-#### To run the `{{site.data.var.ct}}` ideal-state command:
+{:.procedure}
+To check the state of the your project:
 
-```bash
-docker-compose run deploy ece-command wizard:ideal-state
-```
+-  Run the `{{site.data.var.ct}}` ideal-state command.
 
-Sample response:
+   ```bash
+   docker-compose run deploy ece-command wizard:ideal-state
+   ```
 
-```terminal
-...
- - Your application does not have the "post_deploy" hook enabled.
-The configured state is not ideal
-```
-{: .no-copy}
+-  Sample response:
+
+   ```terminal
+   ...
+    - Your application does not have the "post_deploy" hook enabled.
+   The configured state is not ideal
+   ```
+   {: .no-copy}
 
 ### Cron container
 
 The Cron container is based on PHP-CLI images, and executes operations in the background immediately after the Docker environment start. It uses the cron configuration defined in the [`crons` property of the `.magento.app.yaml` file]({{page.baseurl}}/cloud/project/project-conf-files_magento-app.html#crons).
 
-#### To view the cron log:
+{:.procedure}
+To view the cron log:
 
 ```bash
 docker-compose run deploy bash -c "cat /app/var/cron.log"
