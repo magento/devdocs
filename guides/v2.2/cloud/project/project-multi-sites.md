@@ -91,7 +91,7 @@ To configure a new web location:
                ...
    ```
 
-2. Create a pass for the website (`/website`) and reference the root using the alias from the previous step.
+1. Create a pass for the website (`/website`) and reference the root using the alias from the previous step.
 
    The alias allows `website` to access values from the root location. In this example, the website pass is on line 21.
 
@@ -120,7 +120,7 @@ To configure a new web location:
              ...
    ```
 
-3. Continue to the [_Set up websites, stores, and store views_ section](#set-stores).
+1. Continue to the [_Set up websites, stores, and store views_ section](#set-stores).
 
 {:.procedure}
 To configure a location with a different directory:
