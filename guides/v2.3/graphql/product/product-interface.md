@@ -62,6 +62,7 @@ Attribute | Data type | Description
 `upsell_products` | [ProductInterface] | An array of up-sell products
 `url_key` | String | The part of the URL that identifies the product. This attribute is defined in the `CatalogUrlRewriteGraphQl` module
 `url_path` | String | Deprecated. Use `canonical_url` instead
+`url_suffix` | String | The part of the URL that is appended to the `url_key`, such as `.html`. This attribute is defined in the `CatalogUrlRewriteGraphQl` module
 `url_rewrites` | [[UrlRewrite]](#urlRewriteObject) | A list of URL rewrites
 `websites` | [[Website]](#websiteObject) | An array of websites in which the product is available
 
