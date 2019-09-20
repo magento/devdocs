@@ -1,4 +1,4 @@
-#### To import geocodes for offline calculation
+**To import geocodes for offline calculation**:
 
 Enter the following command with a space-separated list of [ISO-3166 alpha2 country codes](https://www.geonames.org/countries/):
 
