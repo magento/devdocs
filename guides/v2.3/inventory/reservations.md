@@ -62,12 +62,12 @@ The following example shows the sequence of reservations generated for a simple 
 
 1. The customer makes a purchase order for 25 units of product `SKU-1`. The reservation contains the following information:
 
-    ```text
-    reservation_id = 1
-    stock_id = 1
-    sku = SKU-1
-    quantity = -25
-    event_type = order_placed
+   ```text
+   reservation_id = 1
+   stock_id = 1
+   sku = SKU-1
+   quantity = -25
+   event_type = order_placed
     ```
 
 2. The customer sends an invoice for 20 items, essentially canceling 5 of the units ordered.
