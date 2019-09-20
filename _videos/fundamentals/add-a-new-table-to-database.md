@@ -223,7 +223,7 @@ You should see a long list of modules that contain `Learning_GreetingMessage`.
 
 Connect to the database: `mysql -u<user> -p<password> <database>`.
 
-```
+```terminal
 SHOW TABLES LIKE “%greeting%”
 
 +------------------------------------+
@@ -248,7 +248,7 @@ When you create a new module and run the `bin/magento setup:upgrade` script, Mag
 If it finds any, it checks whether there are any install scripts and if so, runs them.
 Magento then updates the table `setup_module` and puts information about the module and its version there:
 
-```
+```terminal
 SELECT * FROM setup_module WHERE module='Learning_GreetingMessage';
 
 +--------------------------+----------------+--------------+
@@ -268,7 +268,7 @@ To see how the upgrade scripts work, we’ll add some data to the database.
 
 First, change the version in the `etc/module.xml` file to 0.0.2:
 
-```
+```xml
 <module name="Learning_GreetingMessage" setup_version="0.0.2">
 ```
 
@@ -385,7 +385,7 @@ php bin/magento setup:upgrade
 
 We can now connect to the database and verify that our changes are there:
 
-```
+```terminal
 select * from greeting_message;
 
 +-------------+--------------------+--------+

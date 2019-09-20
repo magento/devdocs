@@ -15,7 +15,7 @@ You must add the DNS records—three sub-domains provided by SendGrid—that per
 
 Add the corresponding host and value CNAME records to the DNS:
 
-```
+```terminal
 em.example.com IN CNAME <sendgrid.net>
 s1.example.com IN CNAME <s1.example.sendgrid.net>
 s2.example.com IN CNAME <s2.example.sendgrid.net>
