@@ -11,7 +11,7 @@ The `{{site.data.var.ct}}` package is a set of scripts and tools designed to man
 
 The `{{site.data.var.ct}}` package is compatible with {{site.data.var.ee}}—starting with version 2.1.4—and contains scripts and {{site.data.var.ece}} commands designed to help manage your code and automatically build and deploy your projects.
 
-#### To list the available `{{site.data.var.ct}}` commands:
+To list the available `{{site.data.var.ct}}` commands:
 
 ```bash
 php ./vendor/bin/ece-tools list
@@ -89,9 +89,7 @@ Magento Cloud Services:
 
 ## Verify environment configuration
 
-There is a set of verification commands available to help evaluate the configuration of your project. See [Smart wizards][wizard] in the _Optimize deployment_ section for a detailed description of each wizard command. The `wizard:ideal-state` command runs automatically during the build phase.
-
-#### To verify the ideal state of your project:
+There is a set of verification commands available to help evaluate the configuration of your project. See [Smart wizards][wizard] in the _Optimize deployment_ section for a detailed description of each wizard command. The `wizard:ideal-state` command runs automatically during the build phase. To verify the ideal state of your project:
 
 ```bash
 php ./vendor/bin/ece-tools wizard:ideal-state
