@@ -403,7 +403,7 @@ Attribute | Type | Description
 `name` | String | The parameter name, such as `id`
 `value` | String | The value assigned to the parameter
 
-## Sample query
+## Sample queries
 
 ### Layered navigation
 

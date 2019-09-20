@@ -17,13 +17,15 @@ Cart functionality is defined in the `Quote` module. A Quote represents the cont
 
 `{cart(cart_id: String!) {Cart}}`
 
-## Example usage
+## Sample queries
+
+### Cart ready for checkout
 
 The following query shows the status of a cart that is ready to be converted into an order.
 
 **Request**
 
-```text
+```graphql
 query {
   cart(cart_id: "IeTUiU0oCXjm0uRqGCOuhQ2AuQatogjG")
   {
@@ -401,6 +403,126 @@ query {
 }
 ```
 
+### Cart discounts
+
+In this query, the **Buy 3 tee shirts and get the 4th free** cart price rule from the sample data is active. This rule was modified slightly to add the label `3T1free`.  (If a cart price rule does not have a label, Magento returns a default label of `Discount`.) A custom rule in which the customer saves 10% on the order by applying a discount code is also in effect.
+
+The `3T1free` rule is applied first, and Magento returns the price of a single shirt, $29, as the discount. Magento then applies a 10% discount to the remaining total of the products in the cart.
+
+**Request**
+
+```graphql
+{
+  cart(cart_id: "v7jYJUjvPeHbdMJRcOfZIeQhs2Xc2ZKT") {
+    email
+    items {
+      id
+      prices {
+        total_item_discount {
+          value
+        }
+        price {
+          value
+        }
+        discounts {
+          label
+          amount {
+            value
+          }
+        }
+      }
+      product {
+        name
+        sku
+      }
+      quantity
+    }
+    applied_coupons {
+      code
+    }
+    prices {
+      discounts {
+        amount {
+          value
+        }
+        label
+      }
+      grand_total {
+        value
+      }
+    }
+  }
+}
+```
+
+**Response**
+
+```json
+{
+  "data": {
+    "cart": {
+      "email": "roni_cost@example.com",
+      "items": [
+        {
+          "id": "43",
+          "prices": {
+            "total_item_discount": {
+              "value": 37.7
+            },
+            "price": {
+              "value": 29
+            },
+            "discounts": [
+              {
+                "label": "3T1free",
+                "amount": {
+                  "value": 29
+                }
+              },
+              {
+                "label": "10% Off for New Customers",
+                "amount": {
+                  "value": 8.7
+                }
+              }
+            ]
+          },
+          "product": {
+            "name": "Elisa EverCool&trade; Tee",
+            "sku": "WS06"
+          },
+          "quantity": 4
+        }
+      ],
+      "applied_coupons": [
+        {
+          "code": "NEW"
+        }
+      ],
+      "prices": {
+        "discounts": [
+          {
+            "amount": {
+              "value": 29
+            },
+            "label": "3T1free"
+          },
+          {
+            "amount": {
+              "value": 8.7
+            },
+            "label": "10% Off for New Customers"
+          }
+        ],
+        "grand_total": {
+          "value": 84.76
+        }
+      }
+    }
+  }
+}
+```
+
 ## Input attributes
 
 Attribute |  Data Type | Description
@@ -526,6 +648,18 @@ Attribute |  Data Type | Description
 `product` | [ProductInterface]({{ page.baseurl }}/graphql/product/product-interface-implementations.html) | Contains attributes that are common to all types of products
 `quantity` | Float | The number of items in the cart
 
+### CartItemPrices object {#CartItemPrices}
+
+The `CartItemPrices` object can contain the following attributes.
+
+Attribute |  Data Type | Description
+--- | --- | ---
+`discounts`| [Discount] | An array of discounts to be applied to the cart item
+`price` | Money! | The price of the item before any discounts were applied
+`row_total` | Money! | The value of the `price` multiplied by the quantity of the item
+`row_total_including_tax` | Money! | The value of `row_total` plus the tax applied to the item
+`total_item_discount` | Money | The total of all discounts applied to the item
+
 ### CartItemQuantity object {#CartItemQuantity}
 
 The `CartItemQuantity` object must contain the following attributes.
@@ -542,7 +676,8 @@ The `CartPrices` object can contain the following attributes.
 Attribute |  Data Type | Description
 --- | --- | ---
 `applied_taxes` | [[CartTaxItem]](#CartTaxItem) | An array containing the names and amounts of taxes applied to the item
-`discount` | CartDiscount | The total amount of all discounts applied to the cart
+`discount` | CartDiscount | Deprecated. Use `discounts` instead
+`discounts` | [Discount] | An array containing all discounts applied to the cart
 `grand_total` | Money | The total, including discounts, taxes, shipping, and other fees
 `subtotal_excluding_tax` | Money | Subtotal without taxes
 `subtotal_including_tax` | Money | Subtotal with taxes
@@ -556,6 +691,19 @@ Attribute |  Data Type | Description
 --- | --- | ---
 `amount` | Money! | The amount of tax applied to the item
 `label` | String! | The description of the tax
+
+### Discount object {#Discount}
+
+A discount can be applied to the cart as a whole or to an item.
+
+If a cart rule does not have a label, Magento uses `Discount` as the default label.
+
+The `Discount` object must contain the following attributes.
+
+Attribute |  Data Type | Description
+--- | --- | ---
+`amount` | Money! | The amount of the discount applied to the cart
+`label` | String! | The description of the discount
 
 ### SelectedPaymentMethod object {#SelectedPaymentMethod}
 
