@@ -368,7 +368,7 @@ Once a package is published to the store, it can have the following field:
 
 ## Package submissions
 
-```text
+```http
 POST /rest/v1/products/packages
 PUT /rest/v1/products/packages
 PUT /rest/v1/products/packages/:submission_id
