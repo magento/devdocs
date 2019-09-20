@@ -29,7 +29,7 @@ Parameter | Description
 
 Example:
 
-```
+```yaml
 layout: tutorial
 level3_subgroup: order-tutorial
 title: Step 9. Create a shipment
