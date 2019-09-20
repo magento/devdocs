@@ -82,7 +82,7 @@ POST /rest/v1/files/uploads
 A sample request body of mime type, [multipart/form-data](https://www.w3.org/TR/html401/interact/forms.html#h-17.13.4.2) with a boundary string of `----------287032381131322`
 is shown below:
 
-```terminal
+```text
 ------------287032381131322
 Content-Disposition: form-data; name="file[]"; filename=“acme_one-click-checkout.zip"
 Content-Type: application/zip
