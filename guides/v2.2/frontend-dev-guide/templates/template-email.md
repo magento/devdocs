@@ -388,7 +388,7 @@ The sales emails are configured to display all of the above values, if they're c
 
 In order to support the translation of content, all strings in emails are output using the `trans` directive. Example:
 
-```
+```html
 {% raw %}{{trans "Thank you for your order from %store_name." store_name=$store.getFrontendName()}}{% endraw %}
 {% raw %}{{trans "Once your package ships we will send you a tracking number."}}{% endraw %}
 ```
@@ -397,7 +397,7 @@ The `trans` directive will translate strings into whatever locale is configured 
 
 The directive supports multiple named parameters, separated by spaces. For example:
 
-```
+```html
 {% raw %}
 {{trans "Dear %first_name %last_name," first_name=$first_name last_name=$last_name}}
 {% endraw %}
@@ -407,7 +407,7 @@ Please note, that variable assignment must not contain spaces.
 
 Correct:
 
-```
+```html
 {% raw %}
 {{trans "Thank you for your order from %store_name." store_name=$store.getFrontendName()}}
 {% endraw %}
@@ -415,7 +415,7 @@ Correct:
 
 Incorrect:
 
-```
+```html
 {% raw %}
 {{trans "Thank you for your order from %store_name." store_name = $store.getFrontendName()}}
 {% endraw %}

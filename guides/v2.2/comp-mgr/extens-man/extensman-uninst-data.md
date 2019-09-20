@@ -19,7 +19,9 @@ After backing up, you have the choice of removing data from the Magento 2 databa
 
 If the [extension](https://glossary.magento.com/extension) has no data to remove, the following message displays. (If a extension has data but no uninstall script, the same prompt displays. In that case, contact the vendor or remove database data manually.)
 
-	The selected extension has no data to remove.
+```terminal
+The selected extension has no data to remove.
+```
 
 If the extension has data to remove, a page similar to the following displays.
 
@@ -30,7 +32,6 @@ Click one of the following:
 *	**Keep data**: Click to keep the data in the database.
 *	**Remove data**: Click to remove data from the database.
 
-	You can click **Back** to back up the database first if you did not do so already.
+  You can click **Back** to back up the database first if you did not do so already.
 
 Continue with [Step 4. Uninstall]({{ page.baseurl }}/comp-mgr/extens-man/extensman-uninst-final.html)
-
