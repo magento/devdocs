@@ -7,10 +7,10 @@ title: Code generation
 
 The Magento application generates code to create non-existent classes. As an example, look at the [Magento/Customer/Model/Resource/AddressRepository] constructor. A snippet follows:
 
-```php?start_inline=1
+```php
 ...
-		public function __construct(
-				\Magento\Customer\Model\AddressFactory $addressFactory,
+public function __construct(
+    \Magento\Customer\Model\AddressFactory $addressFactory,
 ...
 ```
 
