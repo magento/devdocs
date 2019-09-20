@@ -27,7 +27,7 @@ Products that are defined within a category are not included when you assign a c
 
 **REST Endpoints**
 
-```
+```terminal
 POST /V1/sharedCatalog/:id/assignCategories
 POST /V1/sharedCatalog/:id/unassignCategories
 GET  /V1/sharedCatalog/:id/categories
@@ -138,7 +138,7 @@ The `sharedCatalogProductManagementV1` service is based on `catalogProductManage
 
 **REST endpoints**
 
-```
+```terminal
 POST  /V1/sharedCatalog/:id/assignProducts
 POST  /V1/sharedCatalog/:id/unassignProducts
 GET  /V1/sharedCatalog/:id/products

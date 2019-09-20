@@ -330,7 +330,9 @@ To do this, take the following steps:
 
 **Symptom**: The following error is displayed when you run the static view files deployment tool:
 
-	ERROR: You need to install the Magento application before running this utility.
+```terminal
+ERROR: You need to install the Magento application before running this utility.
+```
 
 **Solution**:
 
