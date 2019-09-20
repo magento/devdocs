@@ -5,7 +5,7 @@ contributor_name: Atwix
 contributor_link: https://www.atwix.com/
 ---
 
-Widgets are powerful features in Magento 2, that are used to add dynamic or static content to store's pages.
+Widgets provide powerful features in Magento 2, that are used to add dynamic or static content to store's pages.
 Here are the widgets that are available by default:
 
 - CMS Page Link
