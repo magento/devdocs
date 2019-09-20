@@ -7,10 +7,12 @@ title: Code generation
 
 The Magento application generates code to create non-existent classes. As an example, look at the [Magento/Customer/Model/Resource/AddressRepository] constructor. A snippet follows:
 
-	...
-	    public function __construct(
-	        \Magento\Customer\Model\AddressFactory $addressFactory,
-	...
+```php?start_inline=1
+...
+		public function __construct(
+				\Magento\Customer\Model\AddressFactory $addressFactory,
+...
+```
 
 The first constructor parameter has a type of `Magento\Customer\Model\AddressFactory`. However, this class does not exist in `\Magento\Customer\Model` in the Magento 2 codebase. The Magento application *generates* this class because its name uses a recognized convention (in this case, because the name ends with `Factory`).
 

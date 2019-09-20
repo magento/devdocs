@@ -85,13 +85,15 @@ In the module's root directory, create a new directory called `etc`. Under that 
 For more information see: [naming your component]({{ page.baseurl }}/extension-dev-guide/build/create_component.html).
 
 {% collapsible File content for module.xml %}
- ```xml
+
+```xml
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
   <module name="MyCompany_ExampleAdminNewPage">
   </module>
 </config>
- ```
+```
+
 {% endcollapsible %}
 
 If your module does not implement [Declarative Schema]({{ page.baseurl }}/extension-dev-guide/declarative-schema/index.html), define the `setup_version` attribute in the module element.
@@ -125,15 +127,17 @@ The following parts make up the generated page request link to the **Hello World
 
 [//]: # (Stop list rendering before collapsible, see: https://github.com/magento/devdocs/issues/2655)
 {% collapsible File content for menu.xml %}
- ```xml
-  <?xml version="1.0"?>
-  <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
-      <menu>
-        <add id="MyCompany_ExampleAdminNewPage::greetings" title="Greetings" translate="title" module="MyCompany_ExampleAdminNewPage" parent="Magento_Backend::content" sortOrder="50" dependsOnModule="MyCompany_ExampleAdminNewPage" resource="MyCompany_ExampleAdminNewPage::greetings"/>
-        <add id="MyCompany_ExampleAdminNewPage::greetings_helloworld" title="Hello World" translate="title" module="MyCompany_ExampleAdminNewPage" parent="MyCompany_ExampleAdminNewPage::greetings" sortOrder="10" dependsOnModule="MyCompany_ExampleAdminNewPage" action="exampleadminnewpage/helloworld" resource="MyCompany_ExampleAdminNewPage::greetings"/>
-      </menu>
-  </config>
- ```
+
+```xml
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+      <add id="MyCompany_ExampleAdminNewPage::greetings" title="Greetings" translate="title" module="MyCompany_ExampleAdminNewPage" parent="Magento_Backend::content" sortOrder="50" dependsOnModule="MyCompany_ExampleAdminNewPage" resource="MyCompany_ExampleAdminNewPage::greetings"/>
+      <add id="MyCompany_ExampleAdminNewPage::greetings_helloworld" title="Hello World" translate="title" module="MyCompany_ExampleAdminNewPage" parent="MyCompany_ExampleAdminNewPage::greetings" sortOrder="10" dependsOnModule="MyCompany_ExampleAdminNewPage" action="exampleadminnewpage/helloworld" resource="MyCompany_ExampleAdminNewPage::greetings"/>
+    </menu>
+</config>
+```
+
 {% endcollapsible %}
 
 ### `etc/adminhtml/routes.xml`
@@ -141,16 +145,18 @@ The following parts make up the generated page request link to the **Hello World
 Under `etc/adminhtml` create the file `routes.xml`. The contents of this  XML file tells Magento to route requests that use the `frontName` `exampleadminnewpage` to this module.
 
 {% collapsible File content for routes.xml %}
- ```xml
-  <?xml version="1.0"?>
-  <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
-      <router id="admin">
-          <route id="exampleadminnewpage" frontName="exampleadminnewpage">
-              <module name="MyCompany_ExampleAdminNewPage"/>
-          </route>
-      </router>
-  </config>
- ```
+
+```xml
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
+    <router id="admin">
+        <route id="exampleadminnewpage" frontName="exampleadminnewpage">
+            <module name="MyCompany_ExampleAdminNewPage"/>
+        </route>
+    </router>
+</config>
+```
+
 {% endcollapsible %}
 
 ## Page controller
@@ -228,7 +234,8 @@ This file defines the [layout](https://glossary.magento.com/layout) and structur
 The name of this file uses the following pattern: *routeId*\_*controller*\_*action*.xml
 
 {% collapsible File content for exampleadminnewpage_helloworld_index.xml %}
- ```xml
+
+```xml
 <?xml version="1.0"?>
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <head>
@@ -242,7 +249,8 @@ The name of this file uses the following pattern: *routeId*\_*controller*\_*acti
         </referenceContainer>
     </body>
 </page>
- ```
+```
+
 {% endcollapsible %}
 
 ### `view/adminhtml/templates/helloworld.phtml`
