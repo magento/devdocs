@@ -38,7 +38,8 @@ You must enter all {{site.data.var.ece}} commands on the machine on which your C
 
 You need your {{site.data.var.ece}} database name and credentials so that you can import your {{site.data.var.ee}} data. You can find the name and credentials for your {{site.data.var.ece}} database in the `$MAGENTO_CLOUD_RELATIONSHIPS` environment variable.
 
-#### To find {{site.data.var.ece}} database access information:
+{:.procedure}
+To find {{site.data.var.ece}} database access information:
 
 1.  Log in to your remote repository using [SSH]({{ page.baseurl }}/cloud/env/environments-ssh.html#ssh).
 
@@ -119,5 +120,5 @@ The complete workflow for importing existing code includes the following steps:
 
 1.  After the project deploys, **Success** displays next to the name of your project.
 
-#### Next step
+**Next step**
 [Prepare your existing {{site.data.var.ee}} install]({{ page.baseurl }}/cloud/setup/first-time-setup-import-prepare.html)
