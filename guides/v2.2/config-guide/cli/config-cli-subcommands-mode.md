@@ -25,11 +25,13 @@ Refer to [Magento ownership and permissions in development and production]({{ pa
 
 When you change to developer or production mode, we clear the contents of following directories:
 
-	var/cache
-	generated/metadata
-	generated/code
-	var/view_preprocessed
-	pub/static
+```terminal
+var/cache
+generated/metadata
+generated/code
+var/view_preprocessed
+pub/static
+```
 
 Exceptions:
 
@@ -83,42 +85,44 @@ bin/magento deploy:mode:set production
 
 Messages similar to the following display:
 
-	Enabled maintenance mode
-	Requested languages: en_US
-	=== frontend -> Magento/luma -> en_US ===
-	... more ...
-	Successful: 1884 files; errors: 0
-	---
+```terminal
+Enabled maintenance mode
+Requested languages: en_US
+=== frontend -> Magento/luma -> en_US ===
+... more ...
+Successful: 1884 files; errors: 0
+---
 
-	=== frontend -> Magento/blank -> en_US ===
-	... more ...
-	Successful: 1828 files; errors: 0
-	---
+=== frontend -> Magento/blank -> en_US ===
+... more ...
+Successful: 1828 files; errors: 0
+---
 
-	=== adminhtml -> Magento/backend -> en_US ===
-	... more ...
-	---
+=== adminhtml -> Magento/backend -> en_US ===
+... more ...
+---
 
-	=== Minify templates ===
-	... more ...
-	Successful: 897 files modified
-	---
+=== Minify templates ===
+... more ...
+Successful: 897 files modified
+---
 
-	New version of deployed files: 1440461332
-	Static content deployment complete
+New version of deployed files: 1440461332
+Static content deployment complete
 Gathering css/styles-m.less sources.
 Successfully processed LESS and/or [Sass](https://glossary.magento.com/sass) files
 [CSS](https://glossary.magento.com/css) deployment complete
 Generated classes:
-        Magento\Sales\Api\Data\CreditmemoCommentInterfacePersistor
-        Magento\Sales\Api\Data\CreditmemoCommentInterfaceFactory
-        Magento\Sales\Api\Data\CreditmemoCommentSearchResultInterfaceFactory
-        Magento\Sales\Api\Data\CreditmemoComment\Repository
-        Magento\Sales\Api\Data\CreditmemoItemInterfacePersistor
-        ... more ...
-	Compilation complete
-	Disabled maintenance mode
-	Enabled production mode.
+      Magento\Sales\Api\Data\CreditmemoCommentInterfacePersistor
+      Magento\Sales\Api\Data\CreditmemoCommentInterfaceFactory
+      Magento\Sales\Api\Data\CreditmemoCommentSearchResultInterfaceFactory
+      Magento\Sales\Api\Data\CreditmemoComment\Repository
+      Magento\Sales\Api\Data\CreditmemoItemInterfacePersistor
+      ... more ...
+Compilation complete
+Disabled maintenance mode
+Enabled production mode.
+```
 
 ### Change to developer mode
 
@@ -136,9 +140,11 @@ When you change from production to developer mode, you should clear generated cl
     bin/magento deploy:mode:set developer
     ```
 
-The following message displays:
+    The following message displays:
 
-	Enabled developer mode.
+    ```terminal
+    Enabled developer mode.
+    ```Â
 
 ### Change to default mode
 
@@ -148,7 +154,9 @@ bin/magento deploy:mode:set default
 
 The following message displays:
 
-    Enabled default mode.
+```terminal
+Enabled default mode.
+```
 
 ### Run Magento CLI commands from anywhere
 [Run Magento CLI commands from anywhere]({{ page.baseurl }}/config-guide/cli/config-cli.html#config-install-cli-first).
