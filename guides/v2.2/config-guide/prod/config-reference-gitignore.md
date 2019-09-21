@@ -30,6 +30,7 @@ atlassian*
 /.gitattributes
 /app/config_sandbox
 /app/etc/env.php
+/app/etc/config.php
 /app/code/Magento/TestModule*
 /lib/internal/flex/uploader/.actionScriptProperties
 /lib/internal/flex/uploader/.flexProperties
@@ -109,6 +110,7 @@ atlassian*
 /.gitattributes
 /app/config_sandbox
 /app/etc/env.php
+/app/etc/config.php
 /app/code/Magento/TestModule*
 /lib/internal/flex/uploader/.actionScriptProperties
 /lib/internal/flex/uploader/.flexProperties
