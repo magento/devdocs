@@ -18,7 +18,7 @@ Look for the following highlights in this release:
 The following upgrades to core platform components boost platform security and support PCI compliance: 
 
 * Magento 2.2.10 now supports PHP 7.2.x (tested with 7.2.21). <!--- MC-16174 -->
-* Magento 2.2.10 does not support PHP 7.0.x. We've updated Composer dependencies to reflect this change in support. <!--- MC-18521 -->
+* Magento 2.2.10 does not support PHP 7.0.x.  <!--- MC-18521 -->
   
 ### Substantial security enhancements
 
@@ -39,7 +39,7 @@ This release contains the following major PSD-related changes:
 * Authorize.net now provides the ability, through the `cardholderAuthentication` request field, to make 3D Secure verification through third-party services such as CardinalCommerce. Starting with this release, **Authorize.net Accept.js integration will support 3DS 2.0 through CardinalCommerce**. <!--- MAGETWO-99737 -->
 
 <!--- MC-18237 -->
-* The Cybersource and eWay payment modules have been deprecated in this release to comply with PSD2 SCA regulation, which takes effect on September 14, 2019. Use the official Marketplace extensions for these features instead.
+* The Cybersource and eWay payment modules have been deprecated in this release to comply with PSD2 SCA regulation, which takes effect on September 14, 2019, or shortly thereafter. Use the official Marketplace extensions for these features instead.
 
 #### Security enhancements and fixes to core code
 
@@ -63,8 +63,6 @@ In addition to security enhancements, this release contains the following functi
 
 <!-- MAGETWO-99617 -->
 * Magento font icons now load as expected when deployment optimization is implemented.
-
-<!-- MC-17992 -->
 
 <!-- ENGCOM-5102 -->
 * The short form versions of the `—lock-env`  and  `—lock-config`  `bin/magento config:set` options now work as expected. *Fix submitted by Shikha Mishra in pull request [22836](https://github.com/magento/magento2/pull/22836)*. [GitHub-22395](https://github.com/magento/magento2/issues/22395)
@@ -357,10 +355,6 @@ Copy from 233 89567
 <!-- ENGCOM-5132 -->
 * Tier prices can now be float values. Previously, Magento converted float percentage values to `int` before saving it. *Fix submitted by Maksym Novik in pull request [22936](https://github.com/magento/magento2/pull/22936)*. [GitHub-18651](https://github.com/magento/magento2/issues/18651)
 
-### Gift registry
-
-<!-- MAGETWO-18556 -->
-* Magento no longer displays a console error during checkout when the cart contains a product from the gift registry. Previously, due to a missing function, Magento displayed this error: `checkout-data-resolver.js:248 Uncaught TypeError: addrs.isDefaultBilling is not a function`.
 
 ### Import/export
 <!-- MAGETWO-99446 -->
@@ -501,9 +495,6 @@ Copy from 233 13732
 
 ### Sales rule
 
-<!-- MAGETWO-99724 -->
-* You can now update the conditions of an existing Scheduled update for a Cart Price Rule. Previously, when you tried to change the SKU condition for an update, Magento did not save or apply your changes.
-EE only
 
 <!-- MAGETWO-99540 -->
 * Magento now includes the correct price for a discounted product when the Customer Group is not set to the default group. Previously, when you re-ordered a discounted product, the correct price was not displayed in the Items Ordered field.
@@ -550,11 +541,6 @@ Caused by MC-18004 (Dmytro Yushkin). All shipping carriers was creating withou
 
 <!-- MAGETWO-99440 -->
 * Deleting products no longer triggers exception errors. Previously, the target rule that was used to identify the product triggered an exception.
-
-### Testing
-
-<!-- MAGETWO-98181 -->
-Copy from 220 69084
 
 ### Translation
 
@@ -660,7 +646,7 @@ Copy from 220 69084
 ### Wishlist
 
 <!-- MAGETWO-96873 -->
-* The behavior of the Catalog page Requisition list menu has been corrected
+* The behavior of the Catalog page Requisition list menu has been corrected.
 
 
 ## Community contributions
