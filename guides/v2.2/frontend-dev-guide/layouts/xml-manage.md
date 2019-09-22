@@ -237,7 +237,7 @@ As a result, the CMS block is added to the bottom of the page.
 
 ![CMS Block]({{ site.baseurl }}/common/images/cms-block-reference.png)
 
-## Making the block configurable {#ref_config_block}
+## Making the block visibility dynamic {#ref_config_block}
 
 Any block can be configured to show or not based on a [Magento/Config/Model/Config/Source/Yesno] system configuration field, using `ifconfig` argument. As a value, it gets the XPath of the needed field.
 
