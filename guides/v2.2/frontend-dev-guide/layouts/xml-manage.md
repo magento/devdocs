@@ -16,7 +16,7 @@ This article describes the following typical [layout](https://glossary.magento.c
 - [Create a container](#create_cont)
 - [Reference a container](#ref_container)
 - [Reference a CMS block](#ref_cms_block)
-- [Making the block configurable](#ref_config_block)
+- [Making the block visibility dynamic](#ref_config_block)
 - [Create a block](#xml-manage-block)
 - [Set the template used by a block](#set_template)
 - [Modify block arguments](#layout_markup_modify-block)
