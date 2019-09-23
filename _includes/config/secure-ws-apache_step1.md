@@ -23,6 +23,9 @@ Enter the following commands as a user with `root` privileges:
 
 ```bash
 mkdir -p /usr/local/apache/password
+```
+
+```bash
 htpasswd -c /usr/local/apache/password/.<password file name> <username>
 ```
 
