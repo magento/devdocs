@@ -101,7 +101,7 @@ To install the default version of Apache (Ubuntu 14, 16&mdash;Apache 2.4, Ubuntu
 __Next steps:__
 
 *	[Solving 403 (Forbidden) errors](#apache-error)
-*	Continue with the next prerequisite ([PHP Ubuntu]({{ page.baseurl }}/install-gde/prereq/php-ubuntu.html))
+*	Continue with the next prerequisite ([PHP Settings]({{ page.baseurl }}/install-gde/prereq/php-settings.html))
 *	[Determine your installation or upgrade path]({{ page.baseurl }}/install-gde/bk-install-guide.html)
 
 {% endcollapsible %}
@@ -151,7 +151,7 @@ If the `apt-get install` command fails because of unmet dependencies, consult a 
 __Next steps:__
 
 *	[Solving 403 (Forbidden) errors](#apache-error)
-*	Continue with the next prerequisite ([PHP Ubuntu]({{ page.baseurl }}/install-gde/prereq/php-ubuntu.html))
+*	Continue with the next prerequisite ([PHP Settings]({{ page.baseurl }}/install-gde/prereq/php-settings.html))
 *	[Determine your installation or upgrade path]({{ page.baseurl }}/install-gde/bk-install-guide.html)
 
 {% endcollapsible %}
@@ -195,7 +195,7 @@ Even though Apache 2.4 is provided by default with CentOS 7, you configure it li
 __Next steps:__
 
 *	[Solving 403 (Forbidden) errors](#apache-error)
-*	Continue with the next prerequisite ([PHP Ubuntu]({{ page.baseurl }}/install-gde/prereq/php-ubuntu.html))
+*	Continue with the next prerequisite ([PHP Settings]({{ page.baseurl }}/install-gde/prereq/php-settings.html))
 *	[Determine your installation or upgrade path]({{ page.baseurl }}/install-gde/bk-install-guide.html)
 
 {% endcollapsible %}
