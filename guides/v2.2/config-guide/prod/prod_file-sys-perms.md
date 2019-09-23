@@ -145,7 +145,7 @@ To set `setgid` and permissions for developer mode:
     ```
 
     ```bash
-    find var generated pub/static pub/media app/etc -type f -exec chmod g+w {} + && 
+    find var generated pub/static pub/media app/etc -type f -exec chmod g+w {} + &&
     ```
 
     ```bash

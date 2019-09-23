@@ -49,35 +49,51 @@ To set up the build system:
 1.	Log in to the build system as, or switch to, the Magento file system owner.
 2.	Retrieve the Magento code from source control.
 
-	If you use Git, use the following command:
+    If you use Git, use the following command:
 
-		git clone [-b <branch name>] <repository URL>
+    ```bash
+    git clone [-b <branch name>] <repository URL>
+    ```
+
 2.	Change to the Magento root directory and enter:
 
-		composer install
+    ```bash
+    composer install
+    ```
+
 3.	Wait for Magento dependencies to update.
 4.	Set ownership:
 
-		chown -R <magento file system owner name>:<web server username> .
+    ```bash
+    chown -R <magento file system owner name>:<web server username> .
+    ```
 
-	For example,
+    For example,
 
-		chown -R magento_user:apache .
+    ```bash
+    chown -R magento_user:apache .
+    ```
+
 4.	If you use Git, open `.gitignore` in a text editor.
 5.	Start each of the following lines with a `#` character to comment them out:
 
-		# app/etc/config.php
-		# pub/media/*
-		# generated/*
-		# pub/media/*.*
-		# pub/media/wysiwyg/*
-		# pub/static/*
+    ```text
+    # app/etc/config.php
+    # pub/media/*
+    # generated/*
+    # pub/media/*.*
+    # pub/media/wysiwyg/*
+    # pub/static/*
+    ```
+
 6.	Save your changes to `.gitignore` and exit the text editor.
 7.	If you use Git, use the following commands to commit the change:
 
-		git add .gitignore && git commit -m "Modify .gitignore for build and production"
+    ```bash
+    git add .gitignore && git commit -m "Modify .gitignore for build and production"
+    ```
 
-	See the [`.gitignore` reference]({{ page.baseurl }}/config-guide/prod/config-reference-gitignore.html) for more information.
+    See the [`.gitignore` reference]({{ page.baseurl }}/config-guide/prod/config-reference-gitignore.html) for more information.
 
 #### Related topics
 
