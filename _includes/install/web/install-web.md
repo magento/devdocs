@@ -28,11 +28,15 @@ To install the Magento software using the Setup Wizard:
 
 2.	Enter the following URL in the browser's address or location bar:
 
-		http://<Magento host or IP>/<path to Magento root>/setup
+    ```text
+    http://<Magento host or IP>/<path to Magento root>/setup
+    ```
 
-	For example, if the Magento server's IP address is 192.0.2.10 and you installed Magento 2 in the `magento2/` directory relative to the web server's docroot, and you did not configure a Virtual Host, enter:
+    For example, if the Magento server's IP address is 192.0.2.10 and you installed Magento 2 in the `magento2/` directory relative to the web server's docroot, and you did not configure a Virtual Host, enter:
 
-		http://192.0.2.10/magento2/setup
+    ```text
+    http://192.0.2.10/magento2/setup
+    ```
 
 3.	On the initial page, click **Agree and Set Up Magento**.
 
