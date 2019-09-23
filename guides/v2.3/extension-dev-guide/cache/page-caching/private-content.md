@@ -70,7 +70,7 @@ Specify actions that trigger cache invalidation for private content blocks in a 
 
 Customer sections was designed to cache private data in browser storage. This means that any customer section will no be updated until proper action was made. 
 
-The are some exceptions cases:
+The are some exception cases:
 -  Store and website switching, after any of these action customer section `cart` will be updated.
 -  Customer cart lifetime option `section_data_lifetime` which is 60 minutes by default. After scheduled time passe section `cart` will be updated.
 
