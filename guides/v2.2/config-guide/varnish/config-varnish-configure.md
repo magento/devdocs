@@ -33,15 +33,19 @@ To modify the Varnish system configuration:
 
 2.	Set the Varnish listen port to 80:
 
-		VARNISH_LISTEN_PORT=80
+    ```conf
+    VARNISH_LISTEN_PORT=80
+    ```
 
     For Varnish 4.&#42;, make sure that DAEMON_OPTS contains the correct listening port for the `-a` parameter (even if VARNISH_LISTEN_PORT is set to the correct value):
 
-		DAEMON_OPTS="-a :80 \
-		   -T localhost:6082 \
-		   -f /etc/varnish/default.vcl \
-		   -S /etc/varnish/secret \
-		   -s malloc,256m"
+    ```conf
+    DAEMON_OPTS="-a :80 \
+       -T localhost:6082 \
+       -f /etc/varnish/default.vcl \
+       -S /etc/varnish/secret \
+       -s malloc,256m"
+    ```
 
 3.	Save your changes to the Varnish configuration file and exit the text editor.
 
@@ -53,15 +57,19 @@ To minimally configure Varnish:
 
 1.	Back up `default.vcl`:
 
-		cp /etc/varnish/default.vcl /etc/varnish/default.vcl.bak
+    ```bash
+    cp /etc/varnish/default.vcl /etc/varnish/default.vcl.bak
+    ```
 
 2.	Open `/etc/varnish/default.vcl` in a text editor.
 3.	Locate the following stanza:
 
-		backend default {
-	      .host = "127.0.0.1";
-	      .port = "80";
-		}
+    ```conf
+    backend default {
+        .host = "127.0.0.1";
+        .port = "80";
+    }
+    ```
 
 4.	Replace the value of `.host` with the fully qualified hostname or IP address and listen port of the Varnish *backend* or *origin server*; that is, the server providing the content Varnish will accelerate.
 
@@ -70,12 +78,14 @@ To minimally configure Varnish:
 	[More information](https://www.varnish-cache.org/docs/trunk/users-guide/vcl-backends.html)
 5.	Replace the value of `.port` with the web server's listen port (8080 in this example).
 
-	Example: Apache is installed on host 192.0.2.55 and Apache is listening on port 8080:
+    Example: Apache is installed on host 192.0.2.55 and Apache is listening on port 8080:
 
-		backend default {
-	      .host = "192.0.2.55";
-	      .port = "8080";
-		}
+    ```conf
+    backend default {
+        .host = "192.0.2.55";
+        .port = "8080";
+    }
+    ```
 
 	{:.bs-callout .bs-callout-info}
 	If Varnish and Apache are running on the same host, we recommend you use an IP address or hostname and not `localhost`.
@@ -84,11 +94,15 @@ To minimally configure Varnish:
 
 8.	Restart Varnish:
 
-		service varnish restart
+    ```bash
+    service varnish restart
+    ```
 
 If Varnish fails to start, try running it from the command line as follows:
 
-	varnishd -d -f /etc/varnish/default.vcl
+```bash
+varnishd -d -f /etc/varnish/default.vcl
+```
 
 This should display error messages.
 
@@ -120,32 +134,40 @@ If Varnish fails to start as a service, start it from the command line as follow
 
 1. Start the Varnish CLI:
 
-		varnishd -d -f /etc/varnish/default.vcl
+    ```bash
+    varnishd -d -f /etc/varnish/default.vcl
+    ```
 
 2.	Start the Varnish child process:
 
-	When prompted, enter `start`
+    When prompted, enter `start`
 
-	The following messages display to confirm a successful start:
+    The following messages display to confirm a successful start:
 
-		child (29805) Started
-		200 0
+    ```terminal
+    child (29805) Started
+    200 0
 
-		Child (29805) said
-		Child (29805) said Child starts
+    Child (29805) said
+    Child (29805) said Child starts
+    ```
 
 ### netstat {#config-varnish-verify-netstat}
 
 Log in to the Varnish server and enter the following command:
 
-	netstat -tulpn
+```bash
+netstat -tulpn
+```
 
 Look for the following output in particular:
 
-	tcp        0      0 0.0.0.0:80                  0.0.0.0:*                   LISTEN      32614/varnishd
-	tcp        0      0 127.0.0.1:58484             0.0.0.0:*                   LISTEN      32604/varnishd
-	tcp        0      0 :::8080                     :::*                        LISTEN      26822/httpd
-	tcp        0      0 ::1:48509                   :::*                        LISTEN      32604/varnishd
+```terminal
+tcp        0      0 0.0.0.0:80                  0.0.0.0:*                   LISTEN      32614/varnishd
+tcp        0      0 127.0.0.1:58484             0.0.0.0:*                   LISTEN      32604/varnishd
+tcp        0      0 :::8080                     :::*                        LISTEN      26822/httpd
+tcp        0      0 ::1:48509                   :::*                        LISTEN      32604/varnishd
+```
 
 The preceding shows Varnish running on port 80 and Apache running on port 8080.
 
@@ -159,18 +181,22 @@ Install the Magento 2 software if you haven't already done so. When prompted for
 
 Possible error installing Magento:
 
-	Error 503 Service Unavailable
-	Service Unavailable
-	XID: 303394517
-	Varnish cache server
+```terminasl
+Error 503 Service Unavailable
+Service Unavailable
+XID: 303394517
+Varnish cache server
+```
 
 If you experience this error, edit `default.vcl` and add a timeout to the `backend` stanza as follows:
 
-	backend default {
-	     .host = "127.0.0.1";
-	     .port = "8080";
-	     .first_byte_timeout = 600s;
-	}
+```conf
+backend default {
+			.host = "127.0.0.1";
+			.port = "8080";
+			.first_byte_timeout = 600s;
+}
+```
 
 ## Verify HTTP response headers {#config-varnish-verify-headers}
 
@@ -186,24 +212,28 @@ To set Magento for developer mode, use the [`magento deploy:mode:set`]({{ page.b
 
 Make sure Varnish is running then enter the following command on the Varnish server:
 
-	varnishlog
+```bash
+varnishlog
+```
 
 In a web browser, go to any Magento 2 page.
 
 A long list of response headers display in your command prompt window. Look for headers like the following:
 
-	-   BereqHeader    X-Varnish: 3
-	-   VCL_call       BACKEND_FETCH
-	-   VCL_return     fetch
-	-   BackendOpen    17 default(10.249.151.10,,8080) 10.249.151.10 60914
-	-   Backend        17 default(10.249.151.10,,8080)
-	-   Timestamp      Bereq: 1440449534.261791 0.000618 0.000618
-	-   ReqHeader      Host: 10.249.151.10
-	-   ReqHeader      Connection: keep-alive
-	-   ReqHeader      Content-Length: 86
-	-   ReqHeader      Cache-Control: max-age=0
-	-   ReqHeader      Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
-	-   ReqHeader      Origin: http://10.249.151.10
+```terminal
+-   BereqHeader    X-Varnish: 3
+-   VCL_call       BACKEND_FETCH
+-   VCL_return     fetch
+-   BackendOpen    17 default(10.249.151.10,,8080) 10.249.151.10 60914
+-   Backend        17 default(10.249.151.10,,8080)
+-   Timestamp      Bereq: 1440449534.261791 0.000618 0.000618
+-   ReqHeader      Host: 10.249.151.10
+-   ReqHeader      Connection: keep-alive
+-   ReqHeader      Content-Length: 86
+-   ReqHeader      Cache-Control: max-age=0
+-   ReqHeader      Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+-   ReqHeader      Origin: http://10.249.151.10
+```
 
 If headers like these do *not* display, stop Varnish, check your `default.vcl`, and try again.
 
@@ -213,19 +243,25 @@ There are several ways to look at response headers, including using a browser [p
 
 The following example uses `curl`. You can enter this command from any machine that can access the Magento server using HTTP.
 
-	curl -I -v --location-trusted '<your Magento base URL>'
+```bash
+curl -I -v --location-trusted '<your Magento base URL>'
+```
 
 For example,
 
-	curl -I -v --location-trusted 'http://192.0.2.55/magento2'
+```bash
+curl -I -v --location-trusted 'http://192.0.2.55/magento2'
+```
 
 Look for headers like the following:
 
-	Content-Type: text/html; charset=iso-8859-1
-	X-Varnish: 15
-	Age: 0
-	Via: 1.1 varnish-v4
-	X-Magento-Cache-Debug: HIT
+```terminal
+Content-Type: text/html; charset=iso-8859-1
+X-Varnish: 15
+Age: 0
+Via: 1.1 varnish-v4
+X-Magento-Cache-Debug: HIT
+```
 
 #### Next step
 
