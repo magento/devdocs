@@ -93,7 +93,7 @@ The class that appends to the [counter element](#counterselector) if the field v
 
 ### `noteSelector`
 
-The selector of note element.
+The selector of note element. The note element is used to contain the [counter element](#counterselector) and the [error class](#errorclass) adds to the note element when the [maxLength](#maxlength) is exceeded.
 
 **Type**: String
 
