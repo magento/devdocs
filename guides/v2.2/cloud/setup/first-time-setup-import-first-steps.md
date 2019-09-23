@@ -120,5 +120,5 @@ The complete workflow for importing existing code includes the following steps:
 
 1.  After the project deploys, **Success** displays next to the name of your project.
 
-**Next step**
+**Next step:**
 [Prepare your existing {{site.data.var.ee}} install]({{ page.baseurl }}/cloud/setup/first-time-setup-import-prepare.html)

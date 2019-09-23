@@ -18,5 +18,5 @@ We recommend always starting with the blank site from a template as your initial
 
 {% include cloud/new-project-from-template.md %}
 
-**Next step**
+**Next step:**
 [Install Magento prerequisites]({{ page.baseurl }}/cloud/before/before-workspace-magento-prereqs.html)
