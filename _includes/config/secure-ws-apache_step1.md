@@ -6,9 +6,12 @@ First, see if you have the Apache `htpasswd` utility is installed as follows:
 
 1.	Enter the following command to determine if `htpasswd` is already installed:
 
-		which htpasswd
+    ```bash
+    which htpasswd
+    ```
 
-	If a path displays, it is installed; if the command returns no output, `htpasswd` is not installed.
+    If a path displays, it is installed; if the command returns no output, `htpasswd` is not installed.
+
 2.	If necessary, install `htpasswd`:
 
 	*	Ubuntu: `apt-get -y install apache2-utils`
@@ -18,8 +21,10 @@ First, see if you have the Apache `htpasswd` utility is installed as follows:
 
 Enter the following commands as a user with `root` privileges:
 
-	mkdir -p /usr/local/apache/password
-	htpasswd -c /usr/local/apache/password/.<password file name> <username>
+```bash
+mkdir -p /usr/local/apache/password
+htpasswd -c /usr/local/apache/password/.<password file name> <username>
+```
 
 where
 
@@ -39,17 +44,29 @@ Follow the prompts on your screen to create a password for the user.
 **Example 1: cron**
 You must set up authentication for only one user for cron; in this example, we use the web server user. To create a password file for the web server user, enter the following commands:
 
-	mkdir -p /usr/local/apache/password
-	htpasswd -c /usr/local/apache/password/.htpasswd apache
+```bash
+mkdir -p /usr/local/apache/password
+```
+
+```bash
+htpasswd -c /usr/local/apache/password/.htpasswd apache
+```
 
 **Example 2: Elasticsearch**
 You must set up authentication for two users: one with access to nginx and one with access to Elasticsearch. To create password files for these users, enter the following commands:
 
-	mkdir -p /usr/local/apache/password
-	htpasswd -c /usr/local/apache/password/.htpasswd_elasticsearch magento_elasticsearch
+```bash
+mkdir -p /usr/local/apache/password
+```
+
+```bash
+htpasswd -c /usr/local/apache/password/.htpasswd_elasticsearch magento_elasticsearch
+```
 
 #### Add additional users
 
 To add another user to your password file, enter the following command as a user with `root` privileges:
 
-	htpasswd /usr/local/apache/password/.htpasswd <username>
+```bash
+htpasswd /usr/local/apache/password/.htpasswd <username>
+```
