@@ -28,7 +28,8 @@ Use the following steps to generate an access token:
 5. Click **Save** to save your changes and return to the Integrations page.
 6. Click the **Activate** link in the grid that corresponds to the newly-created integration.
 7. Click **Allow** . A dialog similar to the following displays:
-![REST client]({{ page.baseurl }}/get-started/authentication/images/integration-tokens.png)
+
+   ![REST client]({{ page.baseurl }}/get-started/authentication/images/integration-tokens.png)
 
 The access token can be used in all calls made on behalf of the integration.
 
@@ -67,7 +68,7 @@ The following image shows a token request for the [admin](https://glossary.magen
 
 The following example uses the `curl` command to request a token for a customer account:
 
-```
+```bash
 curl -X POST "https://magento.host/index.php/rest/V1/integration/customer/token" \
      -H "Content-Type:application/json" \
      -d "{"username":"customer1", "password":"customer1pw"}"
@@ -75,7 +76,7 @@ curl -X POST "https://magento.host/index.php/rest/V1/integration/customer/token"
 
 The following example makes the same request with [XML](https://glossary.magento.com/xml) for a customer account token:
 
-```
+```bash
 curl -X POST "http://magento.vg/index.php/rest/V1/integration/customer/token" \
      -H "Content-Type:application/xml"  \
      -d "<login><username>customer1</username><password>customer1pw</password></login>"

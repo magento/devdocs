@@ -90,10 +90,10 @@ Run the following commands in the order shown to display the paths to the applic
 
 1.  Change to your Magento installation directory.
 
-  For example, `cd /var/www/magento2`
+    For example, `cd /var/www/magento2`
 
-	{:.bs-callout .bs-callout-info}
-  The commands run properly _only_ from your Magento installation directory.
+    {:.bs-callout .bs-callout-info}
+    The commands run properly _only_ from your Magento installation directory.
 
 2.  `bin/magento support:utility:paths` creates `<magento_root>/var/support/Paths.php`, which lists the paths to all application used by the utility.
 3.  `bin/magento support:utility:check` displays the file system paths.

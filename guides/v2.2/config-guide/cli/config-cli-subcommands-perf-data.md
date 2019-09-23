@@ -172,40 +172,46 @@ Run the command as discussed in this section. After the command runs, you must [
 
 Command options:
 
-	bin/magento setup:perf:generate-fixtures {path to profile}
+```bash
+bin/magento setup:perf:generate-fixtures {path to profile}
+```
 
 Where `<path to profile>` specifies the absolute file system path to, and name of, a profile.
 
 For example,
 
-	bin/magento setup:perf:generate-fixtures /var/www/html/magento2/setup/performance-toolkit/profiles/ce/small.xml
+```bash
+bin/magento setup:perf:generate-fixtures /var/www/html/magento2/setup/performance-toolkit/profiles/ce/small.xml
+```
 
 Sample output for the small profile:
 
-	Generating profile with following params:
-     |- Websites: 1
-     |- Store Groups Count: 1
-     |- Store Views Count: 1
-     |- Categories: 30
-     |- Attribute Sets (Default): 3
-     |- Attribute Sets (Extra): 10
-     |- Simple products: 800
-     |- Configurable products: 0
-     |--- 5 products for attribute set "Attribute Set 1"
-     |--- 5 products for attribute set "Attribute Set 2"
-     |--- 5 products for attribute set "Attribute Set 3"
-     |--- 40 products for attribute set "Dynamic Attribute Set 1-24"
-     |- Product images: 100, 3 per product
-     |- Customers: 200
-     |- Cart Price Rules: 20
-     |- Catalog Price Rules: 20
-     |- Catalog Target Rules: 5
-     |- Orders: 80
-    Generating websites, stores and store views...  done in <time>
-    Generating categories...  done in <time>
-    Generating attribute sets...  done in <time>
-    Generating simple products...  done in <time>
-	... more ...
+```terminal
+Generating profile with following params:
+    |- Websites: 1
+    |- Store Groups Count: 1
+    |- Store Views Count: 1
+    |- Categories: 30
+    |- Attribute Sets (Default): 3
+    |- Attribute Sets (Extra): 10
+    |- Simple products: 800
+    |- Configurable products: 0
+    |--- 5 products for attribute set "Attribute Set 1"
+    |--- 5 products for attribute set "Attribute Set 2"
+    |--- 5 products for attribute set "Attribute Set 3"
+    |--- 40 products for attribute set "Dynamic Attribute Set 1-24"
+    |- Product images: 100, 3 per product
+    |- Customers: 200
+    |- Cart Price Rules: 20
+    |- Catalog Price Rules: 20
+    |- Catalog Target Rules: 5
+    |- Orders: 80
+Generating websites, stores and store views...  done in <time>
+Generating categories...  done in <time>
+Generating attribute sets...  done in <time>
+Generating simple products...  done in <time>
+... more ...
+```
 
 Current supported fixtures:
 

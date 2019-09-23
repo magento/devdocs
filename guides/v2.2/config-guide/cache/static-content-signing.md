@@ -23,9 +23,9 @@ Magento accomplishes this by adding a deployment version to the URL of [static f
 
 The following is an example of a URL signed with a version:
 
-~~~
+```terminal
 http://magento2.com/pub/static/version1475604434/frontend/Magento/luma/en_US/images/logo.svg
-~~~
+```
 
 When you run the command [`setup:static-content:deploy`]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html) to deploy static content, Magento automatically changes the deployment version.
 This changes the URL of the static files and forces the browser to load the new version of the files.

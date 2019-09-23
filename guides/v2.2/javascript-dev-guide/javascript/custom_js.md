@@ -93,6 +93,7 @@ define([
 ```
 
 Where the following notation is used:
+
 - `<your_namespace>.<your_widget_name>` - the name of your custom [widget](https://glossary.magento.com/widget). According to the jQuery widgets naming
     convention, must contain a [namespace](https://glossary.magento.com/namespace) and name.
 - `mage.<widget.name>` - the name of the Magento widget that you

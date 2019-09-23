@@ -153,8 +153,7 @@ see the Fastly [GeoIP documentation](https://github.com/fastly/fastly-magento2/b
 
 The installation and configuration process is:
 
-* Install the Fastly module in an Integration branch, without configuring
-settings or entering credentials.
+* Install the Fastly module in an Integration branch, without configuring settings or entering credentials.
 * Deploy the code to `integration` then to Staging and Production
 * Configure Fastly in Staging and Production, not in Integration or your local
 * Test Fastly for caching

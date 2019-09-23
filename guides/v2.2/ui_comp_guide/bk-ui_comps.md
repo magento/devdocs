@@ -32,6 +32,7 @@ The following XSD file contains rules and limitations shared between all compone
 In Magento 2 there are basic and secondary UI components.
 
 Basic components are:
+
 * [Listing component]({{ page.baseurl }}/ui_comp_guide/components/ui-listing-grid.html)
 
 * [Form component]({{ page.baseurl }}/ui_comp_guide/components/ui-form.html)

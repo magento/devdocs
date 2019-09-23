@@ -7,6 +7,7 @@ menu_node:
 ---
 
 The UI-select component is a single select/multiple select component that enables the selection of a collection of items. It extends all `abstract` configuration and can be configured in two modes:
+
 * Single - checkbox isn't displayed
 * Multiple - checkboxes are displayed
 
@@ -107,6 +108,7 @@ The following configuration can be passed in as arguments:
 ### **`simple` mode**
 
 `simple` mode sets the following values to `false`:
+
 * `showCheckbox`
 * `chipsEnabled`
 * `closeBtn`
@@ -114,10 +116,12 @@ The following configuration can be passed in as arguments:
 ### **`optgroup` mode**
 
 `optgroup` mode sets the following values to `false`:
+
 * `showCheckbox`
 * `openLevelsAction`
 
 `optgroup` sets the following values to `true`:
+
 * `lastSelectable`
 * `optgroupLabels`
 * `labelsDecoration`
