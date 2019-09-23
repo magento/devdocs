@@ -24,7 +24,7 @@ The following upgrades to core platform components boost platform security and s
 
 This release includes the following security enhancements:
 
-* PSD2 compliance to core payment methods  
+* PSD2 compliance for core payment methods  
 * Fixes for 75 critical security issues
 * Significant platform-security enhancements that boost XSS (cross-site scripting) protection against future exploits. This effort is the culmination of several months of concentrated effort on Magento's part to reduce our backlog of security enhancements.
 
@@ -104,6 +104,7 @@ In addition to security enhancements, this release contains the following functi
 * Magento no longer throws a custom address attribute multi-line error when a customer tries to place an order.
 
 <!-- MAGETWO-99956 -->
+* The **Admin** > **Catalog** > **Categories** page now works as expected. Previously, Magento threw a fatal error when you tried to navigate to this page due to issues with the translation function.
 
 <!-- MAGETWO-93627 -->
 * Magento no longer empties your shopping cart after you have reset your password. Previously, if you added items to your shopping cart using a guest account, then logged in and reset your password, Magento emptied your cart. [GitHub-14530](https://github.com/magento/magento2/issues/14530)
@@ -128,7 +129,10 @@ In addition to security enhancements, this release contains the following functi
 
 <!-- ENGCOM-5186 -->
 * Magento now applies the sort preferences that you set in website scope configuration for a particular website to the layout of the checkout page. Previously, sort order for elements of this page was derived from the default configuration, not website-specific values. *Fix submitted by Abrar Pathan in pull request [23058](https://github.com/magento/magento2/pull/23058)*. [GitHub-22380](https://github.com/magento/magento2/issues/22380)
-  
+
+<!-- ENGCOM-5400 --> 
+* You can now add any decimal quantity of a product to your shopping cart (even a quantity less than the quantity set in the **Minimum Qty**  setting) when the **Qty Uses Decimals** setting is enabled.  *Fix submitted by Prakash Prajapati in pull request [23574](https://github.com/magento/magento2/pull/23574)*. [GitHub-23038](https://github.com/magento/magento2/issues/23038)
+   
 ### Catalog
 
 <!-- MAGETWO-17764 -->
