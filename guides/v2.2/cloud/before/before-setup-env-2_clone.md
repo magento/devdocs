@@ -83,42 +83,38 @@ We recommend changing the environment-level variables for the Magento Admin URL 
 {:.bs-callout .bs-callout-info}
 Make note of any updated values so that you can use them to install Magento from the command line and to verify the installation. The values for the `ADMIN_EMAIL`, `ADMIN_USERNAME`, and `ADMIN_PASSWORD` variables are used only for installation.
 
-{:.procedure}
-To view existing variables:
+If you are not sure that the `master` branch has all Magento Admin variables and settings configured, you can view a list of existing variables:
 
--  If you are not sure that the `master` branch has all Magento Admin variables and settings configured, you can view a list of existing variables:
+```bash
+magento-cloud variables
+```
 
-   ```bash
-   magento-cloud variables
-   ```
+```terminal
+Variables on the project Project-Name (<project-id>), environment <environment-name>:
++----------------------------+-------------+-------------------------------------+
+| Name                       | Level       | Value                               |
++----------------------------+-------------+-------------------------------------+
+| php:blackfire.agent_socket | project     | tcp://blackfire.magento.cloud:8307  |
+| env:COMPOSER_AUTH          | project     | {                                   |
+|                            |             |    "http-basic": {                  |
+|                            |             |       "repo.magento.com": {         |
+|                            |             |       "username":                   |
+|                            |             | "<public-key>",                     |
+|                            |             |       "password":                   |
+|                            |             | "<private-key>"                     |
+|                            |             |     }                               |
+|                            |             |   }                                 |
+|                            |             | }                                   |
+| ADMIN_EMAIL                | project     | admin@123.com                       |
+| ADMIN_EMAIL                | environment | admin@123.com                       |
+| ADMIN_PASSWORD             | environment | password                            |
+| ADMIN_URL                  | environment | admin123                            |
+| ADMIN_USERNAME             | environment | admin                               |
++----------------------------+-------------+-------------------------------------+
+```
+{: .no-copy}
 
-   ```terminal
-   Variables on the project Project-Name (<project-id>), environment <environment-name>:
-   +----------------------------+-------------+-------------------------------------+
-   | Name                       | Level       | Value                               |
-   +----------------------------+-------------+-------------------------------------+
-   | php:blackfire.agent_socket | project     | tcp://blackfire.magento.cloud:8307  |
-   | env:COMPOSER_AUTH          | project     | {                                   |
-   |                            |             |    "http-basic": {                  |
-   |                            |             |       "repo.magento.com": {         |
-   |                            |             |       "username":                   |
-   |                            |             | "<public-key>",                     |
-   |                            |             |       "password":                   |
-   |                            |             | "<private-key>"                     |
-   |                            |             |     }                               |
-   |                            |             |   }                                 |
-   |                            |             | }                                   |
-   | ADMIN_EMAIL                | project     | admin@123.com                       |
-   | ADMIN_EMAIL                | environment | admin@123.com                       |
-   | ADMIN_PASSWORD             | environment | password                            |
-   | ADMIN_URL                  | environment | admin123                            |
-   | ADMIN_USERNAME             | environment | admin                               |
-   +----------------------------+-------------+-------------------------------------+
-   ```
-   {: .no-copy}
-
-{:.procedure}
-To set a variable using the CLI:
+You can use the `mmagento-cloud` CLI to set a variable:
 
 ```bash
 magento-cloud vset <variable-name> <variable-value>

@@ -14,7 +14,7 @@ You can install the Magento Cloud CLI when setting up your local environment for
 
 ## Common commands
 
-The following lists all available commands:
+The following lists the available `magento-cloud` CLI commands:
 
 ```bash
 magento-cloud list
