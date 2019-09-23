@@ -67,6 +67,7 @@ We recommend always adding a `name` to blocks. Otherwise, it is given a random n
 | `template` | A template that represents the functionality of the block to which this attribute is assigned. | template file name | no |
 | `as` | An alias name that serves as identifier in the scope of the parent element. | 0-9, A-Z, a-z, underscore (_), period (.), dash (-). Case-sensitive. | no |
 | `cacheable` | Defines whether a block element is cacheable. This can be used for development purposes and to make needed elements of the page dynamic. | `true` or `false` | no |
+| `ifconfig` | Makes the block's visibility dependent on a system configuration field. | XPath to the system configuration field. E.g. `contact/contact/enabled` | no |
 
 To pass parameters use the [`<argument></argument>`](#argument) instruction.
 
