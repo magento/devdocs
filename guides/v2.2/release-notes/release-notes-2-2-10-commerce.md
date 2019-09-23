@@ -94,12 +94,10 @@ In addition to security enhancements, this release contains the following functi
 <!-- MC-99719 -->
 * The Admin no longer displays incorrect currency codes when the default base currency differs from the default website currency.
 
-
 ### Banner
 
 <!-- MC-17345 -->
 * Ajax requests are now cached as expected when the page they are associated with is cached. Previously, Ajax requests were still performed (not cached) even when a page was cached. 
-
 
 ### B2B
 
@@ -158,6 +156,49 @@ In addition to security enhancements, this release contains the following functi
 <!-- MAGETWO-99659 -->
 * Enabling a product now clears the full-page cache for PDP if the product is not assigned to a category.
 
+### Cart and checkout
+
+<!-- MC-17754 -->
+* Magento now displays an informative message when an error is thrown after the user Internet connection has been reset after placing an order. [GitHub-23288](https://github.com/magento/magento2/issues/23288)
+
+<!-- MC-18286 -->
+* The checkout order summary now displays the correct number of ordered items.
+
+<!-- MAGETWO-93627 -->
+* Magento no longer empties your shopping cart after you have reset your password. Previously, if you added items to your shopping cart using a guest account, then logged in and reset your password, Magento emptied your cart. [GitHub-14530](https://github.com/magento/magento2/issues/14530)
+
+<!-- MAGETWO-99251 -->
+* Magento now submits an order only once when an order is submitted using **Enter**. Previously, Magento submitted several `payment-information` requests, and several orders with the same quote ID were placed.
+
+<!-- MC-17883 -->
+* The Review & Payment section of the One Page checkout no longer displays custom customer attribute code when a guest checks out.
+
+<!-- MAGETWO-98462 -->
+* You can now add product quantities that require four digits to the shopping cart.Previously, Magento could not add four-digit product quantities to the cart.
+
+<!-- ENGCOM-5389 -->
+* The minicart loader is now visible when you add a product to the minicart. *Fix submitted by Prakash Prajapati in pull request [23536](https://github.com/magento/magento2/pull/23536)*. [GitHub-23377](https://github.com/magento/magento2/issues/23377)
+
+<!-- ENGCOM-5400 -->
+*Fix submitted by Prakash Prajapati in pull request [23574](https://github.com/magento/magento2/pull/23574)*. [GitHub-23038](https://github.com/magento/magento2/issues/23038)
+
+<!-- ENGCOM-5389 -->
+* The minicart loader is now visible when you add a product to the minicart. *Fix submitted by Prakash Prajapati in pull request [23536](https://github.com/magento/magento2/pull/23536)*. [GitHub-23377](https://github.com/magento/magento2/issues/23377)
+
+<!-- ENGCOM-5186 -->
+* Magento now applies the sort preferences that you set in website scope configuration for a particular website to the layout of the checkout page. Previously, sort order for elements of this page was derived from the default configuration, not website-specific values. *Fix submitted by Abrar Pathan in pull request [23058](https://github.com/magento/magento2/pull/23058)*. [GitHub-22380](https://github.com/magento/magento2/issues/22380)
+
+<!-- MAGETWO-99709 -->
+* Magento no longer throws a custom address attribute multi-line error when a customer tries to place an order. 
+
+<!-- MC-16591 -->
+* Magento no longer indicates that your session has expired when you add a product to your shopping cart in deployments where the Scalable Checkout module is enabled. 
+
+<!-- MAGETWO-91328 -->
+* Customers can now successfully check out when the AdBlock extension and Google Analytics are enabled. 
+
+<!-- MAGETWO-99956 -->
+
 ### Catalog
 
 <!-- MAGETWO-17764 -->
@@ -214,50 +255,6 @@ In addition to security enhancements, this release contains the following functi
 <!-- MC-17459 -->
 * A coupon's expiration date and time now match the `end_date` value set in the staging update it is associated with. 
 
-### Cart and checkout
-
-<!-- MC-17754 -->
-* Magento now displays an informative message when an error is thrown after the user Internet connection has been reset after placing an order. [GitHub-23288](https://github.com/magento/magento2/issues/23288)
-
-<!-- MC-18286 -->
-* The checkout order summary now displays the correct number of ordered items.
-
-<!-- MAGETWO-93627 -->
-* Magento no longer empties your shopping cart after you have reset your password. Previously, if you added items to your shopping cart using a guest account, then logged in and reset your password, Magento emptied your cart. [GitHub-14530](https://github.com/magento/magento2/issues/14530)
-
-<!-- MAGETWO-99251 -->
-* Magento now submits an order only once when an order is submitted using **Enter**. Previously, Magento submitted several `payment-information` requests, and several orders with the same quote ID were placed.
-
-<!-- MC-17883 -->
-* The Review & Payment section of the One Page checkout no longer displays custom customer attribute code when a guest checks out.
-
-<!-- MAGETWO-98462 -->
-* You can now add product quantities that require four digits to the shopping cart.Previously, Magento could not add four-digit product quantities to the cart.
-
-<!-- ENGCOM-5389 -->
-* The minicart loader is now visible when you add a product to the minicart. *Fix submitted by Prakash Prajapati in pull request [23536](https://github.com/magento/magento2/pull/23536)*. [GitHub-23377](https://github.com/magento/magento2/issues/23377)
-
-<!-- ENGCOM-5400 -->
-
-*Fix submitted by Prakash Prajapati in pull request [23574](https://github.com/magento/magento2/pull/23574)*. [GitHub-23038](https://github.com/magento/magento2/issues/23038)
-
-<!-- ENGCOM-5389 -->
-* The minicart loader is now visible when you add a product to the minicart. *Fix submitted by Prakash Prajapati in pull request [23536](https://github.com/magento/magento2/pull/23536)*. [GitHub-23377](https://github.com/magento/magento2/issues/23377)
-
-<!-- ENGCOM-5186 -->
-* Magento now applies the sort preferences that you set in website scope configuration for a particular website to the layout of the checkout page. Previously, sort order for elements of this page was derived from the default configuration, not website-specific values. *Fix submitted by Abrar Pathan in pull request [23058](https://github.com/magento/magento2/pull/23058)*. [GitHub-22380](https://github.com/magento/magento2/issues/22380)
-
-<!-- MAGETWO-99709 -->
-* Magento no longer throws a custom address attribute multi-line error when a cuatomer tries to place an order. 
-
-<!-- MAGETWO-99956 -->
-ask Misha
-
-<!-- MC-16591 -->
-
-<!-- MAGETWO-91328 -->
-* Customers can now successfully check out when the AdBlock extension and Google Analytics are enabled. 
-
 ### Clean up and minor refactoring
 
 <!-- ENGCOM-5428 -->
@@ -287,7 +284,6 @@ ask Misha
 <!-- ENGCOM-5213 -->
 * The arrow toggle page element now works as expected throughout the Admin. *Fix submitted by Prakash Prajapati in pull request [23150](https://github.com/magento/magento2/pull/23150)*. [GitHub-22636](https://github.com/magento/magento2/issues/22636)
 
-
 ### Configurable products
 
 <!-- MAGETWO-99930 -->
@@ -295,7 +291,6 @@ ask Misha
 
 <!-- MAGETWO-99491 -->
 * You can now use the `POST V1/configurable-products/:sku/child` call to assign positions to configurable product attributes as expected. Previously, when you use REST to assign positions to configurable product attributes, the position value was overwritten after you linked simple products to the configurable product.
-
 
 ### Coupon
 
@@ -306,7 +301,6 @@ ask Misha
 
 <!-- ENGCOM-5365 -->
 * Cron jobs are no longer duplicated. Previously, after a cron job was run, Magento cleared the cache and processed the job again. *Fix submitted by Ihor Sviziev in pull request [23439](https://github.com/magento/magento2/pull/23439)*. [GitHub-21380](https://github.com/magento/magento2/issues/21380)
-
 
 ### Customer
 
@@ -323,6 +317,7 @@ ask Misha
 * The account status list now updates as expected to correctly indicate the account lock status after cron is run. Previously, this list displayed status as unlocked only.
 
 <!-- MC-17200 -->
+* You can now create an account as a guest when the address contains custom attributes. Previously, Magento threw a fatal error when you tried to create an account under these circumstances.[GitHub-22952](https://github.com/magento/magento2/issues/22952)
 
 ### Customer custom attributes
 
@@ -331,7 +326,6 @@ ask Misha
 
 <!-- MAGETWO-99471 -->
 * Custom customer address attribute values are populated as expected when an administrator changes a customer address during order creation from the Admin. Previously, the custom attribute drop-down was empty.
-
 
 ### Customer segment
 
@@ -348,7 +342,6 @@ ask Misha
 
 <!-- MAGETWO-18834 -->
 * Consumers run from `cron` no longer create deadlocks in the database.
-
 
 ### Database media storage
 
@@ -373,8 +366,6 @@ ask Misha
 <!-- MC-17492 MC-17813-->
 * Starting and ending spaces are now trimmed from phone numbers before JavaScript validation. Previously, Magento did not trim these spaces and displayed this error: `*Phone Number* contains non-numeric characters`.
 
-<!-- MAGETWO-99710 -->
-
 ### Email
 
 <!-- ENGCOM-5127 -->
@@ -385,7 +376,6 @@ ask Misha
 
 <!-- ENGCOM-5437 -->
 * Email created using a CSS-heavy template is now sent successfully. Previously, these emails were rejected by the server with this message:  `Message too big`. *Fix submitted by gwharton in pull request [23650](https://github.com/magento/magento2/pull/23650)*. [GitHub-23643](https://github.com/magento/magento2/issues/23643)
-
 
 ### Frameworks
 
@@ -427,7 +417,7 @@ ask Misha
 * We have improved the performance of the grouped product detail pages and category pages that contain a large number of grouped products.
 
 <!-- MAGETWO-98485 -->
-* You can now successfully navigate to the WebSetupWizard when  `session.save_handler=db` is set in `app/env.php`.  Previously, when you tried to navigate to the Web Setup Wizard, Magento threw a fatal error. 
+* You can now successfully navigate to the Web Setup Wizard when  `session.save_handler=db` is set in `app/env.php`.  Previously, when you tried to navigate to the Web Setup Wizard, Magento threw a fatal error. 
 
 <!-- MC-18315 -->
 * Magento now sends sales-related email to the correct customer when `sales_emails` cron has an error.  
@@ -510,6 +500,7 @@ ask Misha
 * Media directives now work as expected when an administrator uses a custom domain  (`admin/url/custom`) instead the default domain. Previously,  the WYSIWYG `image-selector` returned malformed media directives, which resulted in broken links to images. [GitHub-16427](https://github.com/magento/magento2/issues/16427)
 
 ### Newsletter
+
 <!-- MAGETWO-99642 -->
 * Magento now sends only a subscribe email when you create an account from an email invitation. Previously,you received two emails, one that subscribed you to the newsletter and another that unsubscribed you.
 
@@ -581,7 +572,6 @@ ask Misha
 <!-- MAGETWO-99388 -->
 * Online refunds now work as expected  when the **Refund Reward Points Automatically** configuration setting is enabled. Previously, the Refund button was disabled under these conditions.
 
-
 ### RMA
 
 <!-- MAGETWO-73749 -->
@@ -604,7 +594,7 @@ ask Misha
 <!-- MAGETWO-99674 -->
 * The Orders Total now reflects relevant product discounts when you re-order a product. Previously, discounts were not included when you re-ordered.
 
-<!-- MAGETWO-99358 -->
+<!-- MAGETWO-99358 99710 -->
 * You can now edit an order that contains a custom address attribute on its order form. Previously, Magento threw this error if you tried to edit an order with a custom address attribute: `We can't update the order address right now`.
 
 <!-- MAGETWO-99462 -->
@@ -640,13 +630,8 @@ ask Misha
 `{"0":"SQLSTATE[42000]: Syntax error or access violation: 1064 syntax error, unexpected $end, query was: SELECT`.
 
 <!-- MAGETWO-99716 -->
-asked Misha
 
 ### Shipping
-
-<!-- MAGETWO-19519 -->
-Copy from 233 19080
-Caused by MC-18004 (Dmytro Yushkin). All shipping carriers was creating without checking that they are active or not.
 
 <!-- ENGCOM-5423 -->
 * You can now use more than 35 characters in the shipper’s address field when booking a UPS shipment or generating a UPS shipment label. Previously, if this address exceeded 35 characters, Magento threw an error.  *Fix submitted by Ankur Raiyani in pull request [23603](https://github.com/magento/magento2/pull/23603)*. [GitHub-23522](https://github.com/magento/magento2/issues/23522)
@@ -682,7 +667,6 @@ Caused by MC-18004 (Dmytro Yushkin). All shipping carriers was creating withou
 
 <!-- ENGCOM-5366 -->
 * The payment method area of the shipment and credit memo emails that are sent to customers now have correctly translated strings. *Fix submitted by Ihor Sviziev in pull request [23438](https://github.com/magento/magento2/pull/23438)*. [GitHub-23333](https://github.com/magento/magento2/issues/23333)
-
 
 ### UI
 
@@ -751,7 +735,6 @@ Caused by MC-18004 (Dmytro Yushkin). All shipping carriers was creating withou
 <!-- ENGCOM-3906 -->
 * During product URL rewrite generation, anchor categories are now loaded with the specified store ID as expected. Previously, Magento read the  default URL key from the database.
 
-
 ### Visual Merchandiser
 
 <!-- MAGETWO-93675 -->
@@ -780,7 +763,6 @@ Caused by MC-18004 (Dmytro Yushkin). All shipping carriers was creating withou
 
 <!-- MAGETWO-96873 -->
 * The behavior of the Catalog page Requisition list menu has been corrected.
-
 
 ## Community contributions
 

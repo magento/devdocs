@@ -56,10 +56,8 @@ In addition to security enhancements, this release contains the following functi
 
 ### Installation, setup, and deployment
 
-
 <!-- MAGETWO-18745 -->
 * PHP unit tests no longer fail by default when Magento is installed from Composer.
-
 
 <!-- MAGETWO-99617 -->
 * Magento font icons now load as expected when deployment optimization is implemented.
@@ -82,11 +80,7 @@ In addition to security enhancements, this release contains the following functi
 <!-- MC-99719 -->
 * The Admin no longer displays incorrect currency codes when the default base currency differs from the default website currency.
 
-
 ### Bundle products
-
-<!-- MAGETWO-19331 -->
-COPY FROM 233 19415
 
 <!-- MAGETWO-99952 -->
 * The Add to Cart button is no longer visible to users who do not have Add to Cart category permissions. Previously, guest users could add items to the cart without being granted Add to Cart permission.
@@ -99,14 +93,58 @@ COPY FROM 233 19415
 <!-- MAGETWO-99659 -->
 * Enabling a product now clears the full-page cache for PDP if the product is not assigned to a category.
 
+### Cart and checkout
+
+<!-- MC-17754 -->
+* Magento now displays an informative message when an error is thrown after the user Internet connection has been reset after placing an order.
+https://github.com/magento/magento2/issues/23288
+
+<!-- MC-18286 -->
+* The checkout order summary now displays the correct number of ordered items.
+
+<!-- MAGETWO-99709 -->
+* Magento no longer throws a custom address attribute multi-line error when a customer tries to place an order. 
+
+<!-- MAGETWO-99956 -->
+
+<!-- MAGETWO-93627 -->
+* Magento no longer empties your shopping cart after you have reset your password. Previously, if you added items to your shopping cart using a guest account, then logged in and reset your password, Magento emptied your cart. [GitHub-14530](https://github.com/magento/magento2/issues/14530)
+
+<!-- MAGETWO-91328 -->
+* Customers can now successfully check out when the AdBlock extension and Google Analytics are enabled. 
+
+<!-- MAGETWO-99251 -->
+* Magento now submits an order only once when an order is submitted using **Enter**. Previously, Magento submitted several `payment-information` requests, and several orders with the same quote ID were placed.
+
+<!-- MC-17883 -->
+* The Review & Payment section of the One Page checkout no longer displays custom customer attribute code when a guest checks out.
+
+<!-- MAGETWO-98462 -->
+* You can now add product quantities that require four digits to the shopping cart.Previously, Magento could not add four-digit product quantities to the cart.
+
+<!-- MC-16591 -->
+* Magento no longer indicates that your session has expired when you add a product to your shopping cart in deployments where the Scalable Checkout module is enabled. 
+
+<!-- ENGCOM-5389 -->
+* The minicart loader is now visible when you add a product to the minicart. *Fix submitted by Prakash Prajapati in pull request [23536](https://github.com/magento/magento2/pull/23536)*. [GitHub-23377](https://github.com/magento/magento2/issues/23377)
+
+<!-- ENGCOM-5400 -->
+*Fix submitted by Prakash Prajapati in pull request [23574](https://github.com/magento/magento2/pull/23574)*. [GitHub-23038](https://github.com/magento/magento2/issues/23038)
+
+<!-- ENGCOM-5389 -->
+* The minicart loader is now visible when you add a product to the minicart. *Fix submitted by Prakash Prajapati in pull request [23536](https://github.com/magento/magento2/pull/23536)*. [GitHub-23377](https://github.com/magento/magento2/issues/23377)
+
+<!-- ENGCOM-5186 -->
+* Magento now applies the sort preferences that you set in website scope configuration for a particular website to the layout of the checkout page. Previously, sort order for elements of this page was derived from the default configuration, not website-specific values. *Fix submitted by Abrar Pathan in pull request [23058](https://github.com/magento/magento2/pull/23058)*. [GitHub-22380](https://github.com/magento/magento2/issues/22380)
+  
 ### Catalog
+
 <!-- MAGETWO-17764 -->
 * Magento now renames images with the same name in the `pub/media/catalog/category` directory. Previously, images with the same name that belonged to different categories were not uploaded properly. [GitHub-23376](https://github.com/magento/magento2/issues/23376)
 
 <!-- MAGETWO-17622 -->
 * You can now  save multiselect and select attribute options when swatches modules are disabled.
 [GitHub-23326](https://github.com/magento/magento2/issues/23326)
-
 
 <!-- MAGETWO-98521 -->
 * You can now add an out-of-stock item to a product comparison. Previously, Magento displayed a success message, but did not add the item to the comparison. [GitHub-21518](https://github.com/magento/magento2/issues/21518)
@@ -124,6 +162,7 @@ COPY FROM 233 19415
 * Custom options prices that are assigned to a website scope no longer rewrite prices on all scopes.
 
 <!-- MAGETWO-97974 -->
+* You can now update product content descriptions on the store-view level when WYSIWYG is disabled. 
 
 <!-- MAGETWO-73047 -->
 * The Admin Product Edit page and Customers page now load without JavaScript errors. [GitHub-5967](https://github.com/magento/magento2/issues/5967)
@@ -143,53 +182,8 @@ COPY FROM 233 19415
 <!-- ENGCOM-5149 -->
 * Magento now displays a validation alert message when you click **Add Attribute**, and then click **Add selected** without first selecting an attribute. Previously, when you clicked **Add selected**, Magento selected all possible attributes. *Fix submitted by Mahesh Singh in pull request [22991](https://github.com/magento/magento2/pull/22991)*. [GitHub-22639](https://github.com/magento/magento2/issues/22639)
 
-
-### Cart and checkout
-<!-- MC-17754 -->
-* Magento now displays an informative message when an error is thrown after the user Internet connection has been reset after placing an order.
-https://github.com/magento/magento2/issues/23288
-
-<!-- MC-18286 -->
-* The checkout order summary now displays the correct number of ordered items.
-
-<!-- MAGETWO-99709 -->
-
-<!-- MAGETWO-99956 -->
-Copy from 233 99954
-
-<!-- MAGETWO-93627 -->
-* Magento no longer empties your shopping cart after you have reset your password. Previously, if you added items to your shopping cart using a guest account, then logged in and reset your password, Magento emptied your cart. [GitHub-14530](https://github.com/magento/magento2/issues/14530)
-
-<!-- MAGETWO-91328 -->
-
-<!-- MAGETWO-99251 -->
-* Magento now submits an order only once when an order is submitted using **Enter**. Previously, Magento submitted several `payment-information` requests, and several orders with the same quote ID were placed.
-
-<!-- MC-17883 -->
-* The Review & Payment section of the One Page checkout no longer displays custom customer attribute code when a guest checks out.
-
-<!-- MAGETWO-98462 -->
-* You can now add product quantities that require four digits to the shopping cart.Previously, Magento could not add four-digit product quantities to the cart.
-
-
-<!-- MC-16591 -->
-
-
-<!-- ENGCOM-5389 -->
-* The minicart loader is now visible when you add a product to the minicart. *Fix submitted by Prakash Prajapati in pull request [23536](https://github.com/magento/magento2/pull/23536)*. [GitHub-23377](https://github.com/magento/magento2/issues/23377)
-
-
-<!-- ENGCOM-5400 -->
-*Fix submitted by Prakash Prajapati in pull request [23574](https://github.com/magento/magento2/pull/23574)*. [GitHub-23038](https://github.com/magento/magento2/issues/23038)
-
-<!-- ENGCOM-5389 -->
-* The minicart loader is now visible when you add a product to the minicart. *Fix submitted by Prakash Prajapati in pull request [23536](https://github.com/magento/magento2/pull/23536)*. [GitHub-23377](https://github.com/magento/magento2/issues/23377)
-
-<!-- ENGCOM-5186 -->
-
-*Fix submitted by Abrar Pathan in pull request [23058](https://github.com/magento/magento2/pull/23058)*. [GitHub-22380](https://github.com/magento/magento2/issues/22380)
-
 ### Clean up and minor refactoring
+
 <!-- ENGCOM-5428 -->
 * Corrected poor spacing in the Gift message section of the My Account page. *Fix submitted by Prakash Prajapati in pull request [23657](https://github.com/magento/magento2/pull/23657)*. [GitHub-22950](https://github.com/magento/magento2/issues/22950)
 
@@ -209,8 +203,7 @@ Copy from 233 99954
 * White space between words now appears as expected in non-English websites. *Fix submitted by Kajal Solanki in pull request [23164](https://github.com/magento/magento2/pull/23164)*. [GitHub-23080](https://github.com/magento/magento2/issues/23080)
 
 <!-- ENGCOM-5214 -->
-
-*Fix submitted by Prakash Prajapati in pull request [23151](https://github.com/magento/magento2/pull/23151)*. [GitHub-22506](https://github.com/magento/magento2/issues/22506)
+* Corrected alignment of the search suggestion panel with the **Advance reporting**  button. *Fix submitted by Prakash Prajapati in pull request [23151](https://github.com/magento/magento2/pull/23151)*. [GitHub-22506](https://github.com/magento/magento2/issues/22506)
 
 <!-- ENGCOM-5128 -->
 * The checkbox on the Add New Tax Rule form has been redesigned to match the Admin checkbox. *Fix submitted by Mahesh Singh in pull request [22908](https://github.com/magento/magento2/pull/22908)*. [GitHub-22640](https://github.com/magento/magento2/issues/22640)
@@ -248,11 +241,13 @@ Copy from 233 99954
 * An admin user with full permissions for all website scopes can now see any country listed in the Countries column or filter in the Customers list. Previously, if one of the website scopes did not allow a country, an admin with full permission could not see it.
 
 <!-- MAGETWO-99516 -->
+* The account status list now updates as expected to correctly indicate the account lock status after cron is run. Previously, this list displayed status as unlocked only.
 
 <!-- MAGETWO-99492 -->
 * You can now create and successfully save a customer attribute when the **Use in Filter Options** and **Use in Search Options** settings are set to **no**. Previously, Magento did not display these attributes, and they could not be edited.
 
 <!-- MC-17200 -->
+* You can now create an account as a guest when the address contains custom attributes. Previously, Magento threw a fatal error when you tried to create an account under these circumstances.[GitHub-22952](https://github.com/magento/magento2/issues/22952)
 
 <!-- ENGCOM-5414 -->
 * Magento no longer displays editable text fields for customer phone numbers and zip codes if customers have not saved an address. *Fix submitted by Prakash Prajapati in pull request [23614](https://github.com/magento/magento2/pull/23614)*. [GitHub-23467](https://github.com/magento/magento2/issues/23467)
@@ -278,7 +273,6 @@ Copy from 233 99954
 <!-- MAGETWO-99476 -->
 * The country drop-down list no longer includes an extraneous zero (0) when the allowed countries in the list differ from countries identified as top destinations.
 
-
 ### Downloadable
 
 <!-- MAGETWO-98655 -->
@@ -287,16 +281,12 @@ Copy from 233 99954
 ### EAV
 
 <!-- MAGETWO-99710 -->
+* You can now edit an order that contains a custom address attribute on its order form. Previously, Magento threw this error if you tried to edit an order with a custom address attribute: `We can't update the order address right now`.
 
-<!-- MC-17492 -->
+<!-- MC-17492 17813-->
 * Starting and ending spaces are now trimmed from phone numbers before JavaScript validation. Previously, Magento did not trim these spaces and displayed this error: `*Phone Number* contains non-numeric characters`.
 
-<!-- MC-17813 -->
-
-
-
 ### Email
-
 
 <!-- ENGCOM-5127 -->
 * The Template Preview tab now loads with the default content that was assigned during the creation of a New Shipment email template as expected. Previously, the Template Preview Tab did not load the default content. *Fix submitted by Mahesh Singh in pull request [22906](https://github.com/magento/magento2/pull/22906)*. [GitHub-22788](https://github.com/magento/magento2/issues/22788)
@@ -307,21 +297,22 @@ Copy from 233 99954
 <!-- ENGCOM-5437 -->
 * Email created using a CSS-heavy template is now sent successfully. Previously, these emails were rejected by the server with this message:  `Message too big`. *Fix submitted by gwharton in pull request [23650](https://github.com/magento/magento2/pull/23650)*. [GitHub-23643](https://github.com/magento/magento2/issues/23643)
 
-
-
 ### Frameworks
+
 <!-- MC-19307 -->
-Copy from previous release
+* Starting and ending spaces are now trimmed from phone numbers before JavaScript validation. Previously, Magento did not trim these spaces and displayed this error: `*Phone Number* contains non-numeric characters`.
 
 <!-- MAGETWO-99872 -->
 * The `equalArrays` function in `lib/web/mage/utils/compare.js` file has been refactored to remove quadratic complexity. Previously, this feature significantly slowed Admin operations that were performed on large number of products  (for example, adding a product to category by SKU).
 
 <!-- MC-17940 -->
+* You can now successfully search for an order by email in the **Sales** > **Orders** list. 
 
 <!-- MAGETWO-99622 -->
 * The error message that Magento displays when the user creates an attribute that starts with the reserved word `container` has been improved. For example, when a user created product attributes named  `container_attributename` and `attributename`, Magento threw this error: `Exception in Magento/Framework/View/Element/UiComponentFactory.php` rather than stating which user behavior was causing the system problem.
 
 <!-- MAGETWO-94464 -->
+* Watermark with a white or transparent background is no longer converted to black when opacity is reduced below 100%.
 
 #### JavaScript framework
 
@@ -329,19 +320,21 @@ Copy from previous release
 * The cursor on the email field of the login page now behaves as expected when running Magento on Safari. Previously, the cursor repeatedly moved to the end of the email address field when you tried to edit this field.
 
 <!-- MAGETWO-91328 -->
-
+* Customers can now successfully check out when the AdBlock extension and Google Analytics are enabled. 
 
 ### General
+
 <!-- MAGETWO-73529 -->
-Copy from 233 64280
+* We have improved the performance of the grouped product detail pages and category pages that contain a large number of grouped products.
 
 <!-- MAGETWO-98485 -->
-Copy from 233 89567
+* You can now successfully navigate to the Web Setup Wizard when  `session.save_handler=db` is set in `app/env.php`.  Previously, when you tried to navigate to the Web Setup Wizard, Magento threw a fatal error. 
 
 <!-- MAGETWO-99372 -->
 * Magento now maintains custom prices for products in both the catalog and shopping cart after a quote is recalculated. Previously, the product price reverted to the default price after you recalculated the quote.
 
 <!-- MC-18315 -->
+* Magento now sends sales-related email to the correct customer when `sales_emails` cron has an error.  
 
 <!-- ENGCOM-5354 -->
 * Search input is no longer missing the `aria-expanded`  required attribute. Previously, the W3C HTML validator threw errors for the `#search` element. *Fix submitted by Amol Chaudhari in pull request [23331](https://github.com/magento/magento2/pull/23331)*. [GitHub-18337](https://github.com/magento/magento2/issues/18337)
@@ -355,8 +348,8 @@ Copy from 233 89567
 <!-- ENGCOM-5132 -->
 * Tier prices can now be float values. Previously, Magento converted float percentage values to `int` before saving it. *Fix submitted by Maksym Novik in pull request [22936](https://github.com/magento/magento2/pull/22936)*. [GitHub-18651](https://github.com/magento/magento2/issues/18651)
 
-
 ### Import/export
+
 <!-- MAGETWO-99446 -->
 * Only modified or updated product records are flushed from the catalog cache after importing, re-indexing, and running `bin/magento cron:run --group index`. Previously, all products in the catalog were flushed.
 
@@ -371,11 +364,6 @@ Copy from 233 89567
 
 <!-- MC-18327 -->
 * We improved the performance of product flat data re-indexing. [GitHub-23462](https://github.com/magento/magento2/issues/23462)
-
-
-<!-- MC-19316 -->
-Copy from 233 19334
-
 
 ### Infrastructure
 
@@ -402,13 +390,7 @@ Copy from 233 19334
 <!-- MC-18144 -->
 * Full page cache works as expected for non-default store views.
 
-
 ### Payment methods
-<!-- MC-19224 -->
-
-*Fix submitted by emilie-blackbird in pull request [20849](https://github.com/magento/magento2/pull/20849)*. [GitHub-16958](https://github.com/magento/magento2/issues/16958)
-
-Copy from 233 19023
 
 <!-- MAGETWO-16590 -->
 * The Transactions tab now displays the correct status for a capture transaction for an order that was placed with the Authorize.net `Accept.js` payment method.
@@ -417,7 +399,7 @@ Copy from 233 19023
 * Magento now displays a more informative error message (`CVV verification failed`) when you enter an invalid CVV code while using the Braintree payment method. Previously, Magento displayed a generic error message.
 
 <!-- MC-19269 -->
-Copy from 233 19072
+* You can now enter information into the **Credit Card Number** and ** Expiration Date** fields on the Checkout page when the ** CVV Verification** setting is disabled. Previously, you were not able to click on these fields to enter information.
 
 <!-- MAGETWO-99416 -->
 * Magento no longer processes payment for an order that has an empty email field in the quote. Previously, Braintree processed the payment, but displayed an error message on the storefront and did not create the order.
@@ -431,9 +413,6 @@ Copy from 233 19072
 <!-- MC-99111 -->
 * The Admin sales list now displays the payment method for each order. [GitHub-22231](https://github.com/magento/magento2/issues/22231)
 
-<!-- MC-17967 -->
-Copy from 233 17966
-
 <!-- MAGETWO-99581 -->
 * You can now cancel orders placed with PayPal Express even after authorization has expired.
 
@@ -443,19 +422,12 @@ Copy from 233 17966
 <!-- MC-19610 -->
 * Magento no longer places an order if an Javascript error occurs when a customer clicks **Place order** using Braintree as the payment method. 
 
-
-
-
-
 ### Pricing
 
 <!-- MC-98899 -->
 * You can now save a special price that exceeds three characters in Japanese Yen. Previously, you could not apply denominations that exceeded three characters with a comma separator when representing  Yen.
 
 ### Reports
-
-<!-- MAGETWO-97404 -->
-Copy from 233 13732
 
 <!-- MC-18248 -->
 * The start and finish date in reports now correspond to the entered  values when you create a report from the Admin. Previously, the start and finish dates  in the displayed report was one day earlier than you entered.
@@ -465,7 +437,6 @@ Copy from 233 13732
 
 
 ### Review
-
 
 <!-- MAGETWO-99315 --> 
 * Administrators with restricted privileges to reviews can now edit review status from the pending reviews list.
@@ -482,6 +453,7 @@ Copy from 233 13732
 * You can now edit an order that contains a custom address attribute on its order form. Previously, Magento threw this error if you tried to edit an order with a custom address attribute: `We can't update the order address right now`.
 
 <!-- MAGETWO-99569 -->
+* The Admin now returns exact matches for keyword searches.  
 
 <!-- MAGETWO-99462 -->
 * Custom order statuses no longer override default statuses in drop-down menus.
@@ -492,9 +464,7 @@ Copy from 233 13732
 <!-- MC-17838 -->
 * Magento no longer adds a product that is selected but not explicitly added to the cart to an order when you create an order from the Admin.
 
-
 ### Sales rule
-
 
 <!-- MAGETWO-99540 -->
 * Magento now includes the correct price for a discounted product when the Customer Group is not set to the default group. Previously, when you re-ordered a discounted product, the correct price was not displayed in the Items Ordered field.
@@ -513,11 +483,7 @@ Copy from 233 13732
 
 <!-- MAGETWO-99716 -->
 
-
 ### Shipping
-<!-- MAGETWO-19519 -->
-Copy from 233 19080
-Caused by MC-18004 (Dmytro Yushkin). All shipping carriers was creating without checking that they are active or not.
 
 <!-- ENGCOM-5423 -->
 * You can now use more than 35 characters in the shipper’s address field when booking a UPS shipment or generating a UPS shipment label. Previously, if this address exceeded 35 characters, Magento threw an error.  *Fix submitted by Ankur Raiyani in pull request [23603](https://github.com/magento/magento2/pull/23603)*. [GitHub-23522](https://github.com/magento/magento2/issues/23522)
@@ -527,7 +493,6 @@ Caused by MC-18004 (Dmytro Yushkin). All shipping carriers was creating withou
 
 <!-- ENGCOM-5136 -->
 * Magento no longer tries to validate UPS required fields (UPS Access License Number, User ID, and Password fields)  when UPS shipping is not active. *Fix submitted by Serhiy Zhovnir in pull request [22873](https://github.com/magento/magento2/pull/22873)*. [GitHub-22786](https://github.com/magento/magento2/issues/22786)
-
 
 ### Swatches
 
@@ -546,7 +511,6 @@ Caused by MC-18004 (Dmytro Yushkin). All shipping carriers was creating withou
 
 <!-- ENGCOM-5366 -->
 * The payment method area of the shipment and credit memo emails that are sent to customers now have correctly translated strings. *Fix submitted by Ihor Sviziev in pull request [23438](https://github.com/magento/magento2/pull/23438)*. [GitHub-23333](https://github.com/magento/magento2/issues/23333)
-
 
 ### UI
 
@@ -581,8 +545,7 @@ Caused by MC-18004 (Dmytro Yushkin). All shipping carriers was creating withou
 * The **Refund** button on the credit memo page now remains active after a merchant enters a value in the Refund Totals section. *Fix submitted by Prakash Prajapati in pull request [23566](https://github.com/magento/magento2/pull/23566)*. [GitHub-23285](https://github.com/magento/magento2/issues/23285)
 
 <!-- ENGCOM-5214 -->
-
-*Fix submitted by Prakash Prajapati in pull request [23151](https://github.com/magento/magento2/pull/23151)*. [GitHub-22506](https://github.com/magento/magento2/issues/22506)
+* Corrected alignment of the search suggestion panel with the **Advance reporting**  button. *Fix submitted by Prakash Prajapati in pull request [23151](https://github.com/magento/magento2/pull/23151)*. [GitHub-22506](https://github.com/magento/magento2/issues/22506)
 
 <!-- ENGCOM-5084 -->
 * The height setting in `.admin__control-textarea` component is no longer hard-coded. Previously, this hard-coded value prevented you from changing the height of this text field through the UI. *Fix submitted by Serhiy Zhovnir in pull request [22783](https://github.com/magento/magento2/pull/22783)*. [GitHub-22771](https://github.com/magento/magento2/issues/22771)
@@ -616,24 +579,6 @@ Caused by MC-18004 (Dmytro Yushkin). All shipping carriers was creating withou
 <!-- MAGETWO-96662 -->
 * Magento no longer removes the query string from URLs when the query string is preceded by a slash. Previously, when a customer opened a URL that contained a trailing slash and query string (for example, `http://magento.host.com/sample-url-key/?cupcakes`), Magento redirected the user to a URL that omitted the slash (`http://magento.host.com/sample-url-key`).
 
-### URL rewrite
-
-<!-- MAGETWO-72788 -->
-* You can now export newsletter subscribers from the Admin. Previously, Magento displayed this error when you selected a subscriber name and clicked **Export**: `error: URI too long`
-
-<!-- MAGETWO-96662 -->
-* Magento no longer removes the query string from URLs when the query string is preceded by a slash. Previously, when a customer opened a URL that contained a trailing slash and query string (for example, `http://magento.host.com/sample-url-key/?cupcakes`), Magento redirected the user to a URL that omitted the slash (`http://magento.host.com/sample-url-key`).
-
-<!-- MAGETWO-99925 -->
-* Products are successfully updated through import of an CSV file in **Add/Update** mode. Previously,  the import process failed, and Magento displayed this error: `The value specified in the URL Key field would generate a URL that already exists`.
-
-<!-- MAGETWO-99813 -->
-* Redundant URL rewrite operations that were triggered by category operations have been eliminated, and page load performance has been improved. Previously, updating a category to add or delete products triggered URL rewrite regeneration for all products with changed positions.
-
-<!-- MAGETWO-96662 -->
-* Magento no longer removes the query string from URLs when the query string is preceded by a slash. Previously, when a customer opened a URL that contained a trailing slash and query string (for example, `http://magento.host.com/sample-url-key/?cupcakes`), Magento redirected the user to a URL that omitted the slash (`http://magento.host.com/sample-url-key`).
-
-
 ### Web API framework
 
 <!-- ENGCOM-5204 -->
@@ -641,7 +586,6 @@ Caused by MC-18004 (Dmytro Yushkin). All shipping carriers was creating withou
 
 <!-- ENGCOM-5188 -->
 * You can now use REST to update a customer that has no associated `store_id` without unintentionally changing other information. Previously, Magento changed the `store_id` to the default `store_id` if this field was left empty in the PUT request. *Fix submitted by Mateusz Wira in pull request [22895](https://github.com/magento/magento2/pull/22895)*. [GitHub-22869](https://github.com/magento/magento2/issues/22869)
-
 
 ### Wishlist
 
