@@ -128,12 +128,6 @@ https://github.com/magento/magento2/issues/23288
 <!-- ENGCOM-5389 -->
 * The minicart loader is now visible when you add a product to the minicart. *Fix submitted by Prakash Prajapati in pull request [23536](https://github.com/magento/magento2/pull/23536)*. [GitHub-23377](https://github.com/magento/magento2/issues/23377)
 
-<!-- ENGCOM-5400 -->
-*Fix submitted by Prakash Prajapati in pull request [23574](https://github.com/magento/magento2/pull/23574)*. [GitHub-23038](https://github.com/magento/magento2/issues/23038)
-
-<!-- ENGCOM-5389 -->
-* The minicart loader is now visible when you add a product to the minicart. *Fix submitted by Prakash Prajapati in pull request [23536](https://github.com/magento/magento2/pull/23536)*. [GitHub-23377](https://github.com/magento/magento2/issues/23377)
-
 <!-- ENGCOM-5186 -->
 * Magento now applies the sort preferences that you set in website scope configuration for a particular website to the layout of the checkout page. Previously, sort order for elements of this page was derived from the default configuration, not website-specific values. *Fix submitted by Abrar Pathan in pull request [23058](https://github.com/magento/magento2/pull/23058)*. [GitHub-22380](https://github.com/magento/magento2/issues/22380)
   
@@ -168,7 +162,7 @@ https://github.com/magento/magento2/issues/23288
 * The Admin Product Edit page and Customers page now load without JavaScript errors. [GitHub-5967](https://github.com/magento/magento2/issues/5967)
 
 <!-- MAGETWO-99722 -->
-* Magento now displays the correct currency in the the Admin **Catalog** > **Products**  list  in deployments where websites are assigned different currencies. Previously, the products on the Admin Category page displayed the base currency even when **Product Price Scope** was set to **Per Website** and the website was assigned a different currency.
+* Magento now displays the correct currency in the Admin **Catalog** > **Products**  list  in deployments where websites are assigned different currencies. Previously, the products on the Admin Category page displayed the base currency even when **Product Price Scope** was set to **Per Website** and the website was assigned a different currency.
 
 <!-- MAGETWO-73840 -->
 * Videos in product descriptions now appear as they do in the Admin WYSIWYG editor. Previously, videos in the storefront product descriptions had the incorrect height.
@@ -238,7 +232,7 @@ https://github.com/magento/magento2/issues/23288
 ### Customer
 
 <!-- MAGETWO-86624 -->
-* An admin user with full permissions for all website scopes can now see any country listed in the Countries column or filter in the Customers list. Previously, if one of the website scopes did not allow a country, an admin with full permission could not see it.
+* An admin user with full permissions for all website scopes can now see any country listed in the Countries column or filter in the Customers list. Previously, if one of the website scopes did not allow a country, an administrator with full permission could not see it.
 
 <!-- MAGETWO-99516 -->
 * The account status list now updates as expected to correctly indicate the account lock status after cron is run. Previously, this list displayed status as unlocked only.
@@ -312,7 +306,7 @@ https://github.com/magento/magento2/issues/23288
 * The error message that Magento displays when the user creates an attribute that starts with the reserved word `container` has been improved. For example, when a user created product attributes named  `container_attributename` and `attributename`, Magento threw this error: `Exception in Magento/Framework/View/Element/UiComponentFactory.php` rather than stating which user behavior was causing the system problem.
 
 <!-- MAGETWO-94464 -->
-* Watermark with a white or transparent background is no longer converted to black when opacity is reduced below 100%.
+* A watermark with a white or transparent background is no longer converted to black when opacity is reduced below 100%.
 
 #### JavaScript framework
 
@@ -367,6 +361,10 @@ https://github.com/magento/magento2/issues/23288
 
 ### Infrastructure
 
+* Magento 2.2.10 now supports PHP 7.2.x (tested with 7.2.21). <!--- MC-16174 -->
+  
+* Magento 2.2.10 does not support PHP 7.0.x.  <!--- MC-18521 -->
+  
 <!-- ENGCOM-4855 -->
 * The `QuoteRepository` `get` methods now return an object of instance `Vendor\Module\Model\Quote`. *Fix submitted by Bartłomiej Szubert in pull request [22549](https://github.com/magento/magento2/pull/22549)*. [GitHub-12802](https://github.com/magento/magento2/issues/12802)
 
@@ -382,7 +380,7 @@ https://github.com/magento/magento2/issues/23288
 * Custom customer address attribute are populated with the  values that have been assigned for the selected  address when the **Same As Billing Address** setting is disabled. Previously, when a merchant tried to change an address while creating an order from the Admin, the drop-down menu of available addresses was not populated.
 
 <!-- ENGCOM-5211 -->
-* You can now successfully view order information by selecting **Sales** > **Orders** > **View Order**. Previously, an issue with the **truncateString** method resulted in Magento throwing an error when you tried to view order information. *Fix submitted by emilie-blackbird in pull request [20849](https://github.com/magento/magento2/pull/20849)*. [GitHub-16958](https://github.com/magento/magento2/issues/16958)
+* You can now successfully view order information by selecting **Sales** > **Orders** > **View Order**. Previously, an issue with the `truncateString` method resulted in Magento throwing an error when you tried to view order information. *Fix submitted by emilie-blackbird in pull request [20849](https://github.com/magento/magento2/pull/20849)*. [GitHub-16958](https://github.com/magento/magento2/issues/16958)
 
 
 ### Page Cache
@@ -392,6 +390,13 @@ https://github.com/magento/magento2/issues/23288
 
 ### Payment methods
 
+* The **Braintree payment method now complies with PSD2 regulations**. Its core integration API has been upgraded to the latest JavaScript SDK v3 API, which is a requirement for supporting native Braintree 3D Secure 2.0 adoption. Braintree transactions are now also verified by using the native Braintree 3D Secure 2.0 service. <!--- MAGETWO-99607 MC 17628 -->
+
+* Authorize.net now provides the ability, through the `cardholderAuthentication` request field, to make 3D Secure verification through third-party services such as CardinalCommerce. Starting with this release, **Authorize.net Accept.js integration will support 3DS 2.0 through CardinalCommerce**. <!--- MAGETWO-99737 -->
+<!--- MC-18237 -->
+
+* The Cybersource and eWay payment modules have been deprecated in this release to comply with PSD2 SCA regulation, which takes effect on September 14, 2019, or shortly thereafter. Use the official Marketplace extensions for these features instead.
+
 <!-- MAGETWO-16590 -->
 * The Transactions tab now displays the correct status for a capture transaction for an order that was placed with the Authorize.net `Accept.js` payment method.
 
@@ -399,7 +404,7 @@ https://github.com/magento/magento2/issues/23288
 * Magento now displays a more informative error message (`CVV verification failed`) when you enter an invalid CVV code while using the Braintree payment method. Previously, Magento displayed a generic error message.
 
 <!-- MC-19269 -->
-* You can now enter information into the **Credit Card Number** and ** Expiration Date** fields on the Checkout page when the ** CVV Verification** setting is disabled. Previously, you were not able to click on these fields to enter information.
+* You can now enter information into the **Credit Card Number** and **Expiration Date** fields on the Checkout page when the **CVV Verification** setting is disabled. Previously, you were not able to click on these fields to enter information.
 
 <!-- MAGETWO-99416 -->
 * Magento no longer processes payment for an order that has an empty email field in the quote. Previously, Braintree processed the payment, but displayed an error message on the storefront and did not create the order.
@@ -420,17 +425,17 @@ https://github.com/magento/magento2/issues/23288
 * Customers can now place the order for virtual products with a zero subtotal checkout payment after entering address information. Previously, customers could not place an order for virtual products with a zero subtotal checkout payment if they modified their address, and Magento displayed this message:  `The requested Payment Method is not available`.
 
 <!-- MC-19610 -->
-* Magento no longer places an order if an Javascript error occurs when a customer clicks **Place order** using Braintree as the payment method. 
+* Magento no longer places an order if a JavaScript error occurs when a customer clicks **Place order** using Braintree as the payment method. 
 
 ### Pricing
 
 <!-- MC-98899 -->
-* You can now save a special price that exceeds three characters in Japanese Yen. Previously, you could not apply denominations that exceeded three characters with a comma separator when representing  Yen.
+* You can now save a special price that exceeds three characters in Japanese Yen. Previously, you could not apply denominations that exceeded three characters with a comma separator when representing Yen.
 
 ### Reports
 
 <!-- MC-18248 -->
-* The start and finish date in reports now correspond to the entered  values when you create a report from the Admin. Previously, the start and finish dates  in the displayed report was one day earlier than you entered.
+* The start and finish date in reports now correspond to the entered values when you create a report from the Admin. Previously, the start and finish dates in the displayed report was one day earlier than you entered.
 
 <!-- ENGCOM-5298 -->
 * Selecting **Show by year** when filtering  **Reports** > **Products**  > **Ordered** now results in a list of products sold per year that is grouped by product quantity in descending orderPreviously, Magento displayed a list of products sold per year that contained multiple entries for a single product on a per order basis. *Fix submitted by Prakash Prajapati in pull request [23252](https://github.com/magento/magento2/pull/23252)*. [GitHub-22087](https://github.com/magento/magento2/issues/22087)
@@ -514,14 +519,14 @@ https://github.com/magento/magento2/issues/23288
 
 ### UI
 
+<!-- MC-17512 -->
+* Pre-loading of fonts has been moved from the Blank theme to the Luma theme.
+  
 <!-- MAGETWO-99828 -->
 * Magento now saves order views with the date ranges you enter while creating the filter (**Sales** > **Orders**). Previously, when you opened a saved filtered order view, Magento indicated that the dates you entered were invalid.
 
 <!-- MC-17295 -->
 * The calendar date picker now updates values as expected when the linked input value is changed.
-
-<!-- MC-17512 -->
-* Preloading of fonts has been moved from the Blank theme to the Luma theme.
 
 <!-- ENGCOM-5429 -->
 * The form reset feature now clears the **date** field in Admin forms as expected.  *Fix submitted by Prakash Prajapati in pull request [23658](https://github.com/magento/magento2/pull/23658)*. [GitHub-22940](https://github.com/magento/magento2/issues/22940)
@@ -554,13 +559,10 @@ https://github.com/magento/magento2/issues/23288
 * Scrolling now behaves as expected on the create order page. *Fix submitted by Denis Kopylov in pull request [23086](https://github.com/magento/magento2/pull/23086)*. [GitHub-23034](https://github.com/magento/magento2/issues/23034)
 
 <!-- ENGCOM-5156 -->
-* The design of the Review & Payments **Apply Discount Coupon** box of the checkout page has been improved. *Fix submitted by Ravi Chandra in pull request [23002](https://github.com/magento/magento2/pull/23002)*. [GitHub-3795](https://github.com/magento/magento2/issues/3795)
+* The design of the Review & Payments **Apply Discount Coupon** box of the checkout page has been improved. *Fix submitted by Ravi Chandra in pull request [23002](https://github.com/magento/magento2/pull/23002)*. [GitHub-3795](https://github.com/magento/magento2/issues/3795),[GitHub-21214](https://github.com/magento/magento2/issues/21214)
 
 <!-- ENGCOM-5111 -->
 * Form element validation is now triggered as expected when form validation rules change. Previously, when you changed form validation rules for a form element during runtime, the new validation rules were not applied. *Fix submitted by Amol Chaudhari in pull request [22801](https://github.com/magento/magento2/pull/22801)*. [GitHub-21473](https://github.com/magento/magento2/issues/21473)
-
-<!-- ENGCOM-5154 -->
-* The design of the Review & Payments **Apply Discount Coupon** box of the checkout page has been improved. *Fix submitted by Nirav Patel in pull request [23009](https://github.com/magento/magento2/pull/23009)*. [GitHub-21214](https://github.com/magento/magento2/issues/21214)
 
 ### URL rewrite
 
@@ -575,9 +577,6 @@ https://github.com/magento/magento2/issues/23288
 
 <!-- MAGETWO-99813 -->
 * Redundant URL rewrite operations that were triggered by category operations have been eliminated, and page load performance has been improved. Previously, updating a category to add or delete products triggered URL rewrite regeneration for all products with changed positions.
-
-<!-- MAGETWO-96662 -->
-* Magento no longer removes the query string from URLs when the query string is preceded by a slash. Previously, when a customer opened a URL that contained a trailing slash and query string (for example, `http://magento.host.com/sample-url-key/?cupcakes`), Magento redirected the user to a URL that omitted the slash (`http://magento.host.com/sample-url-key`).
 
 ### Web API framework
 
