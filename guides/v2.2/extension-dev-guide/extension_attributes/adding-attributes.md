@@ -70,8 +70,9 @@ public function afterGet
 ```
 
 This is the simplest way to add extension attributes without causing a conflict:
+
 - We get the [entity's](https://glossary.magento.com/entity) extension attributes, if they are already set.
- - We add our [extension attribute](https://glossary.magento.com/extension-attribute).
+- We add our [extension attribute](https://glossary.magento.com/extension-attribute).
 - Finally set the extension attribute on the entity with ours included.
 
 AfterGetList is similar to afterGet.
@@ -151,6 +152,7 @@ Now we need to bind our plugin to `ProductInterface`:
 ## Extension Attributes Configuration:
 
 For scalar attributes we can use next configuration:
+
 ```xml
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Api/etc/extension_attributes.xsd">
     <extension_attributes for="Magento\Catalog\Api\Data\ProductInterface">
@@ -161,6 +163,7 @@ For scalar attributes we can use next configuration:
 ```
 
 For non-scalar attributes:
+
 ```xml
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Api/etc/extension_attributes.xsd">
     <extension_attributes for="Magento\Catalog\Api\Data\ProductInterface">

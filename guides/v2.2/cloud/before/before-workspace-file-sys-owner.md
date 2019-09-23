@@ -58,6 +58,7 @@ To find the web server user's group:
     ```
 
 Typically, the user and group name are both `apache`
+
 *	Ubuntu: `ps aux | grep apache` to find the apache user, then `groups <apache user>` to find the group
 
 	Typically, the username and the group name are both `www-data`

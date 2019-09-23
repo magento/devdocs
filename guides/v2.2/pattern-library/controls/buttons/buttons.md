@@ -262,6 +262,7 @@ Use toggle for:
 * In relation to other form elements when needed
 
 Do not use checkboxes if:
+
 * Multiple options need visibility
 
 #### Variations

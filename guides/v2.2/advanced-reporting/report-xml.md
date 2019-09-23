@@ -25,7 +25,7 @@ Columns are added using the `<attribute>` node.
 
 All report files are located in the `etc` directory of a module:
 
-```
+```text
 <module_dir>/etc/reports.xml
 ```
 

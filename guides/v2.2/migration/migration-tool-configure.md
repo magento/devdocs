@@ -25,6 +25,7 @@ The preceding directories contain subdirectories for each supported version.
 ## Configuring the migration {#migration-configure}
 
 There are two ways to configure the Data Migration Tool:
+
 - Configure the Data Migration Tool in a separate module (recommended)
 - Change the Data Migration Tool configuration in the `<your Magento 2 install dir>/vendor/magento/data-migration-tool/etc/` directory.
 
@@ -210,105 +211,31 @@ The `<your Magento 2 install dir>/vendor/magento/data-migration-tool/etc` and `<
 
 Even though you will be working with `map.xml.dist` file most of the time, the following table discusses each mapping and other files.
 
-<tbody>
-	<tr>
-		<th>Mapping file name</th>
-		<th>Description</th>
-	</tr>
-<tr>
-	<td>class-map.xml.dist</td>
-	<td>Dictionary of class mappings between Magento 1 and Magento 2</td>
-</tr>
-<tr>
-	<td>config.xml.dist</td>
-	<td>Main configuration file that specifies the Magento 1 and Magento 2 database configurations, step configuration, and links to mapping files</td>
-</tr>
-<tr>
-	<td><em>{{site.data.var.ee}} only</em>. customer-attr-document-groups.xml.dist</td>
-	<td>List of tables used in the custom customer attributes step.</td>
-</tr>
-<tr>
-	<td><em>{{site.data.var.ee}} only</em>. customer-attr-map.xml.dist</td>
-	<td>Map file that is used in Custom Customer Attributes Step.</td>
-</tr>
-<tr>
-	<td>deltalog.xml.dist</td>
-	<td>Contains the list of tables required for database routines setup.</td>
-</tr>
-<tr>
-	<td>eav-attribute-groups.xml.dist</td>
-	<td>Contains list of attributes that are used in Eav Step.</td>
-</tr>
-<tr>
-	<td>eav-document-groups.xml.dist</td>
-	<td>Contains list of tables that are used in Eav Step.</td>
-</tr>
-<tr>
-	<td>log-document-groups.xml.dist</td>
-	<td>Contains list of tables that are used in Log Step.</td>
-</tr>
-<tr>
-	<td>map-eav.xml.dist</td>
-	<td>Map file that is used in EAV Step.</td>
-</tr>
-<tr>
-	<td>map-log.xml.dist</td>
-	<td>Log mapping file.</td>
-</tr>
-<tr>
-	<td><em>{{site.data.var.ee}} only</em>. map-sales.xml.dist</td>
-	<td>Map file that is used in SalesOrder Step.</td>
-</tr>
-<tr>
-	<td>map.xml.dist</td>
-	<td>Mapping file required for the map step.</td>
-</tr>
-<tr>
-	<td>settings.xml.dist</td>
-	<td>Setting migration configuration file that specifies rules required for migrating the <code>core_config_data</code> table.</td>
-</tr>
-<tr>
-	<td>customer-attribute-groups.xml.dist</td>
-	<td>Contains list of attributes that are used in Customer Attributes Step.</td>
-</tr>
-<tr>
-	<td>customer-document-groups.xml.dist</td>
-	<td>Contains list of tables that are used in Customer Attributes Step.</td>
-</tr>
-<tr>
-	<td>map-customer.xml.dist</td>
-	<td>Map file that is used in Customer Attributes Step.</td>
-</tr>
-<tr>
-	<td>order-grids-document-groups.xml.dist</td>
-	<td>Contains list of tables that are used in OrderGrids Step.</td>
-</tr>
-<tr>
-	<td>map-document-groups.xml.dist</td>
-	<td>Defines what fields will be updated when duplications occurs on data insert</td>
-</tr>
-<tr>
-	<td>map-stores.xml.dist</td>
-	<td>Map file that is used in Stores Step.</td>
-</tr>
-<tr>
-	<td>map-tier-price.xml.dist</td>
-	<td>Map file that is used in Tier Price Step.</td>
-</tr>
-<tr>
-	<td><em>{{site.data.var.ee}} only</em>. visual_merchandiser_map.xml.dist</td>
-	<td>Map file that is used in VisualMerchandiser Step.</td>
-</tr>
-<tr>
-	<td><em>{{site.data.var.ee}} only</em>. visual_merchandiser_attribute_groups.xml.dist</td>
-	<td>Contains list of attributes that are used in VisualMerchandiser Step.</td>
-</tr>
-<tr>
-	<td><em>{{site.data.var.ee}} only</em>. visual_merchandiser_document_groups.xml.dist</td>
-	<td>Contains list of tables that are used in VisualMerchandiser Step.</td>
-</tr>
-</tbody>
-</table>
+| Mapping file name | Description |
+| --- | --- |
+| `class-map.xml.dist` | Dictionary of class mappings between Magento 1 and Magento 2 |
+| `config.xml.dist` | Main configuration file that specifies the Magento 1 and Magento 2 database configurations, step configuration, and links to mapping files |
+| *{{site.data.var.ee}} only*. `customer-attr-document-groups.xml.dist` | List of tables used in the custom customer attributes step. |
+| *{{site.data.var.ee}} only*. `customer-attr-map.xml.dist` | Map file that is used in Custom Customer Attributes Step. |
+| `deltalog.xml.dist` | Contains the list of tables required for database routines setup. |
+| `eav-attribute-groups.xml.dist` | Contains list of attributes that are used in Eav Step. |
+| `eav-document-groups.xml.dist` | Contains list of tables that are used in Eav Step. |
+| `log-document-groups.xml.dist` | Contains list of tables that are used in Log Step. |
+| `map-eav.xml.dist` | Map file that is used in EAV Step. |
+| `map-log.xml.dist` | Log mapping file. |
+| *{{site.data.var.ee}} only*. `map-sales.xml.dist` | Map file that is used in SalesOrder Step. |
+| `map.xml.dist` | Mapping file required for the map step. |
+| `settings.xml.dist` | Setting migration configuration file that specifies rules required for migrating the `core_config_data` table. |
+| `customer-attribute-groups.xml.dist` | Contains list of attributes that are used in Customer Attributes Step. |
+| `customer-document-groups.xml.dist` | Contains list of tables that are used in Customer Attributes Step. |
+| `map-customer.xml.dist` | Map file that is used in Customer Attributes Step. |
+| `order-grids-document-groups.xml.dist` | Contains list of tables that are used in OrderGrids Step. |
+| `map-document-groups.xml.dist` | Defines what fields will be updated when duplications occurs on data insert |
+| `map-stores.xml.dist` | Map file that is used in Stores Step. |
+| `map-tier-price.xml.dist` | Map file that is used in Tier Price Step. |
+| *{{site.data.var.ee}} only*. `visual_merchandiser_map.xml.dist` | Map file that is used in VisualMerchandiser Step. |
+| *{{site.data.var.ee}} only*. `visual_merchandiser_attribute_groups.xml.dist` | Contains list of attributes that are used in VisualMerchandiser Step. |
+| *{{site.data.var.ee}} only*. `visual_merchandiser_document_groups.xml.dist` | Contains list of tables that are used in VisualMerchandiser Step. |
 
 You can refer to [ Data Migration Tool Technical Specification]({{ page.baseurl }}/migration/migration-tool-internal-spec.html) for more details.
 

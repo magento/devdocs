@@ -101,8 +101,7 @@ interface AdapterInterface
 
 	`extension=php_soap.dll`
 
-2. Before running the functional tests you need to clear your [cache](https://glossary.magento.com/cache).
-Now you are ready to run the tests.
+2. Before running the functional tests you need to clear your [cache](https://glossary.magento.com/cache). Now you are ready to run the tests.
 
 ### Running the Tests {#running}
 

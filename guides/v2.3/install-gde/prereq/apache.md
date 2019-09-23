@@ -100,14 +100,16 @@ To install the default version of Apache (Ubuntu 14, 16&mdash;Apache 2.4, Ubuntu
 
 __Next steps:__
 
-* [Solving 403 (Forbidden) errors](#apache-error)
-* Continue with the next prerequisite ([PHP][]
-* [Determine your installation or upgrade path]({{ page.baseurl }}/install-gde/bk-install-guide.html)
+*	[Solving 403 (Forbidden) errors](#apache-error)
+*	Continue with the next prerequisite ([PHP Ubuntu]({{page.baseurl }}/install-gde/prereq/php-centos-ubuntu.html#php-for-ubuntu))
+*	[Determine your installation or upgrade path]({{ page.baseurl }}/install-gde/bk-install-guide.html)
+
 {% endcollapsible %}
 
 ### Upgrading Apache on Ubuntu 12 {#install-prereq-apache-ubuntu-upgrade}
 
 {% collapsible Click to show/hide content %}
+
 To use PHP 5.6 on Ubuntu 12, you must upgrade Apache to version 2.4. (By default, Ubuntu 12 comes with Apache 2.2.)
 
 To upgrade to Apache 2.4:
@@ -149,9 +151,10 @@ If the 'apt-get install' command fails because of unmet dependencies, consult a 
 
 __Next steps:__
 
-* [Solving 403 (Forbidden) errors](#apache-error)
-* Continue with the next prerequisite [PHP]
-* [Determine your installation or upgrade path]({{ page.baseurl }}/install-gde/bk-install-guide.html)
+*	[Solving 403 (Forbidden) errors](#apache-error)
+*	Continue with the next prerequisite ([PHP Ubuntu]({{page.baseurl }}/install-gde/prereq/php-centos-ubuntu.html#php-for-ubuntu))
+*	[Determine your installation or upgrade path]({{ page.baseurl }}/install-gde/bk-install-guide.html)
+
 {% endcollapsible %}
 
 ## Installing Apache on CentOS 6 or 7 {#install-prereq-apache-centos}
@@ -193,9 +196,10 @@ Even though Apache 2.4 is provided by default with CentOS 7, you configure it li
 
 __Next steps:__
 
-* [Solving 403 (Forbidden) errors](#apache-error)
-* Continue with the next prerequisite [PHP][]
-* [Determine your installation or upgrade path]({{ page.baseurl }}/install-gde/bk-install-guide.html)
+*	[Solving 403 (Forbidden) errors](#apache-error)
+*	Continue with the next prerequisite ([PHP Ubuntu]({{page.baseurl }}/install-gde/prereq/php-centos-ubuntu.html#php-for-ubuntu))
+*	[Determine your installation or upgrade path]({{ page.baseurl }}/install-gde/bk-install-guide.html)
+
 {% endcollapsible %}
 
 ## Solving 403 (Forbidden) errors {#apache-error}

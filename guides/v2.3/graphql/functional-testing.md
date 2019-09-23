@@ -243,6 +243,7 @@ The fixture automatically removes the `checkout/options/enable_agreements` confi
 ## Defining expected exceptions
 
 Your functional tests should include events that cause exceptions. Since your tests expect an exception to occur, set up your tests so that they elicit the proper responses. You can define expected exception messages either in:
+
 - The body of the test
 - The test function annotation
 
