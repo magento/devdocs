@@ -87,7 +87,7 @@ The buyer can add, update, or delete items from the quote under the following co
 
 **Headers**
 
-```
+```terminal
 Content-Type application/json
 Authorization Bearer <customer token>
 ```

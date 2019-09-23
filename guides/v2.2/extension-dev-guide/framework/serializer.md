@@ -55,11 +55,11 @@ private $serializer;
 public function __construct(SerializerInterface $serializer) {
   $this->serializer = $serializer;
 }
-
 ```
 
 \\
 The following example shows how to use a serializer's `serialize()` and `unserialize()` functions to store and retrieve array data from a cache:
+
 ```php
 
 ...
@@ -97,9 +97,7 @@ public function loadDataFromCache()
   }
   return $data;
 }
-
 ...
-
 ```
 
 ## Backward Compatibility Note

@@ -481,7 +481,6 @@ This example call adds access to all Negotiable Quote resources except "View quo
   "company_id": 2,
   "extension_attributes": []
 }
-
 ```
 {% endcollapsible %}
 

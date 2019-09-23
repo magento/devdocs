@@ -50,8 +50,7 @@ Magento generates the [HTML](https://glossary.magento.com/html) for a page to di
 
 View elements fall into two main categories: blocks and containers.
 
-* **Blocks** can generate [dynamic content](https://glossary.magento.com/dynamic-content) and can contain named child view elements that are similar to arguments being passed in.
-(The `as` attribute holds the child view element names for the parent block to reference them)
+* **Blocks** can generate [dynamic content](https://glossary.magento.com/dynamic-content) and can contain named child view elements that are similar to arguments being passed in. (The `as` attribute holds the child view element names for the parent block to reference them)
 
 * **Containers** collect an ordered group of children view elements.
 

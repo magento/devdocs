@@ -20,13 +20,17 @@ To set `magento_umask`:
 
 1. In a command line terminal, log in to your Magento server as a [Magento file system owner][].
 2. Navigate to the Magento install directory:
-```bash
- cd <Magento install directory>
-```
+
+   ```bash
+   cd <Magento install directory>
+   ```
+
 3. Use the following command to create a file named `magento_umask` and write the `umask` value to it.
+
    ```bash
    echo <desired umask number> > magento_umask
    ```
+
    You should now have a file named `magento_umask` in the `<Magento install dir>` with the only content being the `umask` number.
 
 4. Log out and log back in as the [Magento file system owner][] to apply the changes.

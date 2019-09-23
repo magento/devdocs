@@ -93,7 +93,7 @@ When you need to verify an issue or pull request, enter a command to generate an
 
 **Command:** To deploy a vanilla Magento instance, add the following command as a comment to the GitHub Pull Request or Issue:
 
-```
+```text
 @magento give me {$version} instance
 ```
 
@@ -122,11 +122,12 @@ To verify and test changes completed in a pull request, enter a command to gener
 
 **Command:** To deploy, [Community Maintainers](https://github.com/orgs/magento/teams/open-source-maintainers/members), a [Magento EngCom Team](https://github.com/orgs/magento/teams/core-maintainers/members) member, or contributor under the existing Pull Request enters the following command as a comment to the pull request:
 
-```
+```text
 @magento give me test instance
 ```
 
 **Actions:**
+
 * It deploys a new Magento instance based on Pull Request changes.
 * Deployment takes ~2 minutes.
 
@@ -149,7 +150,7 @@ To optimize the pull request queue, enter a command with a series of related pul
 
 **Command:** To combine pull requests, a member of the [Community Maintainers](https://github.com/orgs/magento/teams/open-source-maintainers/members) or [Magento EngCom Team](https://github.com/orgs/magento/teams/core-maintainers/members) under the existing Pull Request enters the following command:
 
-```
+```text
 @magento combine {xxx} {yyy} {zzz}
 ```
 
@@ -239,19 +240,37 @@ The following is an example "Forwardport" (up-port) pull request for https://git
 
 The following git commands detail how to up-port to `2.3-develop` branch from `2.2-develop` branch:
 
-```
+```bash
 git checkout 2.3-develop
+```
+
+```bash
 git checkout -b up-port-pull-<PR_NUMBER>
+```
+
+```bash
 curl -L https://github.com/magento/magento2/pull/<PR_NUMBER>.patch | git am
+```
+
+```bash
 git push origin up-port-pull-<PR_NUMBER>:up-port-pull-<PR_NUMBER>
 ```
 
 The following git commands detail how to back-port to `2.2-develop` branch from `2.3-develop` branch:
 
-```
+```bash
 git checkout 2.2-develop
+```
+
+```bash
 git checkout -b back-port-pull-<PR_NUMBER>
+```
+
+```bash
 curl -L https://github.com/magento/magento2/pull/<PR_NUMBER>.patch | git am
+```
+
+```bash
 git push origin back-port-pull-<PR_NUMBER>:back-port-pull-<PR_NUMBER>
 ```
 

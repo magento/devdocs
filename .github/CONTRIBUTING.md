@@ -66,19 +66,8 @@ The following guidelines may answer most of your questions and help you get star
 - Familiarize yourself with the organization and conventions of our existing documentation before creating a pull request. Changes that are consistent with our style and conventions have a higher acceptance rate.
 
     - If you need to update the site navigation, ask for help in Slack ([#devdocs](https://magentocommeng.slack.com/messages/CAN932A3H)).
-    - We use symbolic links for topics that are the same across versions of Magento. Remove the symbolic link and add a new file if your changes are unique to a specific version. Copy and paste a previous version of the topic to get started.
 
-        For example:
-
-        ```bash
-        git rm guides/v2.3/install-gde/composer.md
-        ```
-
-        ```bash
-        cp guides/v2.2/install-gde/composer.md guides/v2.3/install-gde/composer.md
-        ```
-
-- Make sure that you update the correct version(s) of documentation (v2.2, v2.3). If you are not sure what directory to put your content in, just do your best. We can help re-locate it (if necessary) during the review process.
+- Ensure that you update the correct version(s) of documentation (v2.2, v2.3). If you are not sure what directory to put your content in, just do your best. We can help re-locate it (if necessary) during the review process.
 - Review your work for basic typos, formatting errors, or ambiguous sentences before opening a pull request.
 - Revise pull requests according to review feedback. We will close pull requests that require an inordinate amount of time to review and process (especially for minor changes) if you fail to make revisions according to review feedback.
 - Do not directly contact DevDocs team members or maintainers on Slack to review your pull request unless it has been open for more than five days. We have a process and queue for pull requests that everyone must follow.
@@ -116,6 +105,7 @@ We provide templates to help you get started writing new content and understandi
 The Markdown (.md) file's metadata is a set of YAML key-value pairs. The metadata section is located at the top of each file. For more info, see the [Basic Template](https://devdocs.magento.com/guides/v2.3/contributor-guide/templates/basic_template.html).
 
 ```yaml
+
 ---
 group: install2
 title: Continue with your installation
@@ -128,6 +118,45 @@ title: Continue with your installation
 | ------------- | ---------- |
 | `group`       | Defines the topic's guide or section. Use the table of contents `.yml` file name. This loads your left-side navigation. We will help during the PR process to add new files to the `.yml` file. |
 | `title`       | Sets the title of the page in the HTML metadata and the main title on the page.  |
+
+## Symbolic links
+
+We use symbolic links for topics that are the same across versions of Magento. A file is symlinked if the entire content of the file is a path to the original version, such as [ext-best-practices/tutorials/serialized-to-json-data-upgrade.md](https://github.com/magento/devdocs/blob/master/guides/v2.3/ext-best-practices/tutorials/serialized-to-json-data-upgrade.md). Note that some editors will automatically follow symlinks so it might not be clear if a file is symlinked or not. Check the file on Github directly to be sure.
+
+### Create a symbolic link
+
+When you create a new topic (create a new `.md` file) and its content is the same for 2.2 and 2.3 versions, create a symbolic link.
+
+For example, if you created a new file for v.2.2---`guides/v2.2/install-gde/new-doc-topic.md`---and its content is the same for v.2.3, use the command below to create the symbolic link.
+
+```bash
+cd <DEVDOCS_REPOSITORY_ROOT_DIR>
+```
+
+```bash
+ln -s guides/v2.2/install-gde/new-doc-topic.md guides/v2.3/install-gde/new-doc-topic.md
+```
+
+If you have an image that is identical between versions, it is should placed in `/common/images`. Please optimize images before committing them to the repository.
+If done correctly, the symbolic link path will start with 3 or 4 instances of `../`, as the above example shows.
+
+### Remove a symbolic link
+
+If your changes are unique to a specific version, remove the symbolic link and add a new file. Copy and paste a previous version of the topic to get started.
+
+The removal should use the `git rm` command specifically. Deleting the file through the regular file system might cause issues with the repository.
+
+For example:
+
+```bash
+git rm guides/v2.3/install-gde/composer.md
+```
+
+```bash
+cp guides/v2.2/install-gde/composer.md guides/v2.3/install-gde/composer.md
+```
+
+Once you have the copy in place, you can edit it with the version-specific information.
 
 ## Report an issue
 

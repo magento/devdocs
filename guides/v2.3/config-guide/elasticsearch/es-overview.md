@@ -86,7 +86,7 @@ The tasks discussed in this section require the following:
 
 * [Firewall and SELinux](#firewall-selinux)
 * [Install the Java Software Development Kit (JDK)](#prereq-java)
-* [Install Elasticsearch 6.6](#es-install-es6)
+* [Install Elasticsearch 6.x](#es-install-es6)
 * [Upgrade from Elasticsearch 2.x/5.2](#es-upgrade6)
 * [Configure Magento to use Elasticsearch][]
 
