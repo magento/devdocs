@@ -14,7 +14,7 @@ Look for the following highlights in this release:
 
 ### Platform upgrades
 
-The following upgrades to core platform components boost platform security and support PCI compliance: 
+The following upgrades to core platform components boost platform security and support PCI compliance:
 
 * Magento 2.2.10 now supports PHP 7.2.x (tested with 7.2.21). <!--- MC-16174 -->
 * Magento 2.2.10 does not support PHP 7.0.x.  <!--- MC-18521 -->
@@ -84,7 +84,7 @@ In addition to security enhancements, this release contains the following functi
 * We have improved the Admin login performance for users with limited permissions. Previously, the Admin login process for users with restricted access was significantly slower than it was for users with full administrative access.
 
 <!-- MAGETWO-99149 -->
-* Magento now applies the correct role scope for administrators in multisite deployments. (Post data is now saved in the session and re-rendered for a user only if the validation fails.)  Previously, when you had two administrative roles with different website scopes, and you viewed one role before saving it and opening the second role, the website scope attributed to the second role was incorrectly taken from the first role.
+* Magento now applies the correct role scope for administrators in multi-site deployments. (Post data is now saved in the session and re-rendered for a user only if the validation fails.)  Previously, when you had two administrative roles with different website scopes, and you viewed one role before saving it and opening the second role, the website scope attributed to the second role was incorrectly taken from the first role.
 
 ### Backend
 
@@ -97,7 +97,7 @@ In addition to security enhancements, this release contains the following functi
 ### Banner
 
 <!-- MC-17345 -->
-* Ajax requests are now cached as expected when the page they are associated with is cached. Previously, Ajax requests were still performed (not cached) even when a page was cached. 
+* Ajax requests are now cached as expected when the page they are associated with is cached. Previously, Ajax requests were still performed (not cached) even when a page was cached.
 
 ### B2B
 
@@ -138,7 +138,7 @@ In addition to security enhancements, this release contains the following functi
 * Export files now include all columns (including those not visible in the Company list) and their data. Previously, the `State/Province` columns of the exported CSV file were empty.
 
 <!-- MC-17882 -->
-* Request a Quote functionality now works as expected on browsers that are running Internet Explorer 11.x. 
+* Request a Quote functionality now works as expected on browsers that are running Internet Explorer 11.x.
 
 <!-- MC-15671 -->
 * File links for customizable options on the Requisition list page now work as expected.
@@ -186,13 +186,13 @@ In addition to security enhancements, this release contains the following functi
 * Magento now applies the sort preferences that you set in website scope configuration for a particular website to the layout of the checkout page. Previously, sort order for elements of this page was derived from the default configuration, not website-specific values. *Fix submitted by Abrar Pathan in pull request [23058](https://github.com/magento/magento2/pull/23058)*. [GitHub-22380](https://github.com/magento/magento2/issues/22380)
 
 <!-- MAGETWO-99709 -->
-* Magento no longer throws a custom address attribute multi-line error when a customer tries to place an order. 
+* Magento no longer throws a custom address attribute multi-line error when a customer tries to place an order.
 
 <!-- MC-16591 -->
-* Magento no longer indicates that your session has expired when you add a product to your shopping cart in deployments where the Scalable Checkout module is enabled. 
+* Magento no longer indicates that your session has expired when you add a product to your shopping cart in deployments where the Scalable Checkout module is enabled.
 
 <!-- MAGETWO-91328 -->
-* Customers can now successfully check out when the AdBlock extension and Google Analytics are enabled. 
+* Customers can now successfully check out when the AdBlock extension and Google Analytics are enabled.
 
 <!-- MAGETWO-99956 -->
 
@@ -202,7 +202,7 @@ In addition to security enhancements, this release contains the following functi
 * Magento now renames images with the same name in the `pub/media/catalog/category` directory. Previously, images with the same name that belonged to different categories were not uploaded properly. [GitHub-23376](https://github.com/magento/magento2/issues/23376)
 
 <!-- MAGETWO-17622 -->
-* You can now save multiselect and select attribute options when swatches modules are disabled.
+* You can now save multi-select and select attribute options when swatches modules are disabled.
 [GitHub-23326](https://github.com/magento/magento2/issues/23326)
 
 <!-- MAGETWO-98521 -->
@@ -239,7 +239,7 @@ In addition to security enhancements, this release contains the following functi
 * Magento now displays a validation alert message when you click **Add Attribute**, and then click **Add selected** without first selecting an attribute. Previously, when you clicked **Add selected**, Magento selected all possible attributes. *Fix submitted by Mahesh Singh in pull request [22991](https://github.com/magento/magento2/pull/22991)*. [GitHub-22639](https://github.com/magento/magento2/issues/22639)
 
 <!-- MAGETWO-97974 -->
-* You can now update product content descriptions on the store-view level when WYSIWYG is disabled. 
+* You can now update product content descriptions on the store-view level when WYSIWYG is disabled.
 
 ### Catalog rule
 
@@ -250,7 +250,7 @@ In addition to security enhancements, this release contains the following functi
 * Coupon expiration dates and times now match the `end_date` value set in the staging update. Previously, coupon expiration dates could differ from the expiration date set by the sales rule.
 
 <!-- MC-17459 -->
-* A coupon's expiration date and time now match the `end_date` value set in the staging update it is associated with. 
+* A coupon's expiration date and time now match the `end_date` value set in the staging update it is associated with.
 
 ### Clean up and minor refactoring
 
@@ -261,7 +261,7 @@ In addition to security enhancements, this release contains the following functi
 * Corrected misalignment of the Compare Products and My Wish List counters in the sidebar. *Fix submitted by Prakash Prajapati in pull request [23573](https://github.com/magento/magento2/pull/23573)*. [GitHub-22676](https://github.com/magento/magento2/issues/22676)
 
 <!-- ENGCOM-5391 -->
-* Corrected capitalization of review text. *Fix submitted by Prakash Prajapati in pull request [23537](https://github.com/magento/magento2/pull/23537)*. 
+* Corrected capitalization of review text. *Fix submitted by Prakash Prajapati in pull request [23537](https://github.com/magento/magento2/pull/23537)*.
 
 <!-- ENGCOM-5399 -->
 * Corrected misalignment of the Compare Products and My Wish List counters in the sidebar. *Fix submitted by Prakash Prajapati in pull request [23573](https://github.com/magento/magento2/pull/23573)*. [GitHub-22676](https://github.com/magento/magento2/issues/22676)
@@ -384,7 +384,7 @@ In addition to security enhancements, this release contains the following functi
 * A watermark with a white or transparent background is no longer converted to black when opacity is reduced below 100%.
 
 <!-- MC-17940 -->
-* You can now successfully search for an order by email in the **Sales** > **Orders** list. 
+* You can now successfully search for an order by email in the **Sales** > **Orders** list.
 
 #### JavaScript framework
 
@@ -412,7 +412,7 @@ In addition to security enhancements, this release contains the following functi
 * We have improved the performance of the grouped product detail pages and category pages that contain a large number of grouped products.
 
 <!-- MAGETWO-98485 -->
-* You can now successfully navigate to the Web Setup Wizard when  `session.save_handler=db` is set in `app/env.php`.  Previously, when you tried to navigate to the Web Setup Wizard, Magento threw a fatal error. 
+* You can now successfully navigate to the Web Setup Wizard when  `session.save_handler=db` is set in `app/env.php`.  Previously, when you tried to navigate to the Web Setup Wizard, Magento threw a fatal error.
 
 <!-- MC-18315 -->
 * Magento now sends sales-related email to the correct customer when `sales_emails` cron has an error.  
@@ -548,7 +548,10 @@ In addition to security enhancements, this release contains the following functi
 * Customers can now place the order for virtual products with a zero subtotal checkout payment after entering address information. Previously, customers could not place an order for virtual products with a zero subtotal checkout payment if they modified their address, and Magento displayed this message:  `The requested Payment Method is not available`.
 
 <!-- MC-19610 -->
-* Magento no longer places an order if a JavaScript error occurs when a customer clicks **Place order** using Braintree as the payment method. 
+* Magento no longer places an order if a JavaScript error occurs when a customer clicks **Place order** using Braintree as the payment method.
+
+<!-- MC-17967 -->
+* You can now successfully re-order an order using the same payment method as you used for the first order.
 
 ### Pricing
 
@@ -565,10 +568,10 @@ In addition to security enhancements, this release contains the following functi
 
 ### Review
 
-<!-- MAGETWO-99864 --> 
+<!-- MAGETWO-99864 -->
 * Magento no longer sends reward point balance notification email to clients whose accounts have the **Subscribe for Balance Updates** setting disabled.
 
-<!-- MAGETWO-99315 --> 
+<!-- MAGETWO-99315 -->
 * Administrators with restricted privileges to reviews can now edit review status from the pending reviews list.
 
 ### Reward
@@ -588,7 +591,7 @@ In addition to security enhancements, this release contains the following functi
 * Merchants can now create shipping labels for return merchandise authorizations. Previously, when a merchant tried to create a shipping label, Magento displayed this error: `No authorized items or allowed shipping methods`.
 
 <!-- MAGETWO-97371 -->
-* Magento now autopopulates all expected fields when an RMA is created via the REST API.
+* Magento now auto-populates all expected fields when an RMA is created via the REST API.
 
 ### Sales
 
@@ -634,6 +637,7 @@ In addition to security enhancements, this release contains the following functi
 `{"0":"SQLSTATE[42000]: Syntax error or access violation: 1064 syntax error, unexpected $end, query was: SELECT`.
 
 <!-- MAGETWO-99716 -->
+* You can now limit the number of search suggestions that the autocomplete feature provides by setting the **Autocomplete Limit** field.
 
 ### Shipping
 
@@ -682,7 +686,6 @@ In addition to security enhancements, this release contains the following functi
 
 <!-- MC-17295 -->
 * The calendar date picker now updates values as expected when the linked input value is changed.
-
 
 <!-- ENGCOM-5429 -->
 * The form reset feature now clears the **date** field in Admin forms as expected.  *Fix submitted by Prakash Prajapati in pull request [23658](https://github.com/magento/magento2/pull/23658)*. [GitHub-22940](https://github.com/magento/magento2/issues/22940)
@@ -744,7 +747,7 @@ In addition to security enhancements, this release contains the following functi
 
 <!-- MC-19305 -->
 * Magento no longer displays products in the **Product in category** tab  in both grid and tile mode simultaneously.
-   
+  
 ### Web API framework
 
 <!-- ENGCOM-5204 -->
@@ -753,7 +756,7 @@ In addition to security enhancements, this release contains the following functi
 <!-- ENGCOM-5188 -->
 * You can now use REST to update a customer that has no associated `store_id` without unintentionally changing other information. Previously, Magento changed the `store_id` to the default `store_id` if this field was left empty in the PUT request. *Fix submitted by Mateusz Wira in pull request [22895](https://github.com/magento/magento2/pull/22895)*. [GitHub-22869](https://github.com/magento/magento2/issues/22869)
 
-### Website restriction 
+### Website restriction
 
 <!-- MAGETWO-93052 -->
 * Administrators with appropriate permissions can now create a new customer account on the Admin when the **Website Restriction** setting is enabled. Previously, Magento threw this exception: `Can not register new customer due to restrictions are enabled`.
@@ -785,6 +788,6 @@ See [How to get the Magento software]({{ page.baseurl }}/install-gde/bk-install-
 
 ## Migration toolkits
 
-The <a href="{{ page.baseurl }}/migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see <a href="{{ page.baseurl }}/migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.
+The Data Migration Tool helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see [Install the Data Migration Tool](https://devdocs.magento.com/guides/v2.3/migration/migration-tool-install.html). Consider exploring or contributing to the [Magento Data Migration repository](https://github.com/magento/data-migration-tool).
 
-The <a href="https://github.com/magento/code-migration" target="_blank">Code Migration Toolkit</a> helps transfer existing Magento 1.x store extensions and customizations to Magento 2.2.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.
+The [Code Migration Toolkit](https://github.com/magento/code-migration) helps transfer existing Magento 1.x store extensions and customizations to Magento 2.2.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.

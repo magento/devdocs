@@ -15,7 +15,7 @@ Look for the following highlights in this release:
 
 ### Platform upgrades
 
-The following upgrades to core platform components boost platform security and support PCI compliance: 
+The following upgrades to core platform components boost platform security and support PCI compliance:
 
 * Magento 2.2.10 now supports PHP 7.2.x (tested with 7.2.21). <!--- MC-16174 -->
 * Magento 2.2.10 does not support PHP 7.0.x.  <!--- MC-18521 -->
@@ -48,7 +48,6 @@ This release contains the following major PSD-related changes:
 ### Infrastructure improvements
 
 This release contains 140 enhancements to core quality, which improve the quality of the Framework and these modules: `Catalog`, `Sales`, `Checkout/One Page Checkout`, `UrlRewrite`, `Customer/Customers`, and `UI`.
-
 
 ## Functional fixes
 
@@ -96,14 +95,13 @@ In addition to security enhancements, this release contains the following functi
 ### Cart and checkout
 
 <!-- MC-17754 -->
-* Magento now displays an informative message when an error is thrown after the user Internet connection has been reset after placing an order.
-https://github.com/magento/magento2/issues/23288
+* Magento now displays an informative message when an error is thrown after the user Internet connection has been reset after placing an order. [GitHub-23288](https://github.com/magento/magento2/issues/23288)
 
 <!-- MC-18286 -->
 * The checkout order summary now displays the correct number of ordered items.
 
 <!-- MAGETWO-99709 -->
-* Magento no longer throws a custom address attribute multi-line error when a customer tries to place an order. 
+* Magento no longer throws a custom address attribute multi-line error when a customer tries to place an order.
 
 <!-- MAGETWO-99956 -->
 
@@ -111,7 +109,7 @@ https://github.com/magento/magento2/issues/23288
 * Magento no longer empties your shopping cart after you have reset your password. Previously, if you added items to your shopping cart using a guest account, then logged in and reset your password, Magento emptied your cart. [GitHub-14530](https://github.com/magento/magento2/issues/14530)
 
 <!-- MAGETWO-91328 -->
-* Customers can now successfully check out when the AdBlock extension and Google Analytics are enabled. 
+* Customers can now successfully check out when the AdBlock extension and Google Analytics are enabled.
 
 <!-- MAGETWO-99251 -->
 * Magento now submits an order only once when an order is submitted using **Enter**. Previously, Magento submitted several `payment-information` requests, and several orders with the same quote ID were placed.
@@ -123,7 +121,7 @@ https://github.com/magento/magento2/issues/23288
 * You can now add product quantities that require four digits to the shopping cart.Previously, Magento could not add four-digit product quantities to the cart.
 
 <!-- MC-16591 -->
-* Magento no longer indicates that your session has expired when you add a product to your shopping cart in deployments where the Scalable Checkout module is enabled. 
+* Magento no longer indicates that your session has expired when you add a product to your shopping cart in deployments where the Scalable Checkout module is enabled.
 
 <!-- ENGCOM-5389 -->
 * The minicart loader is now visible when you add a product to the minicart. *Fix submitted by Prakash Prajapati in pull request [23536](https://github.com/magento/magento2/pull/23536)*. [GitHub-23377](https://github.com/magento/magento2/issues/23377)
@@ -137,7 +135,7 @@ https://github.com/magento/magento2/issues/23288
 * Magento now renames images with the same name in the `pub/media/catalog/category` directory. Previously, images with the same name that belonged to different categories were not uploaded properly. [GitHub-23376](https://github.com/magento/magento2/issues/23376)
 
 <!-- MAGETWO-17622 -->
-* You can now  save multiselect and select attribute options when swatches modules are disabled.
+* You can now  save multi-select and select attribute options when swatches modules are disabled.
 [GitHub-23326](https://github.com/magento/magento2/issues/23326)
 
 <!-- MAGETWO-98521 -->
@@ -156,7 +154,7 @@ https://github.com/magento/magento2/issues/23288
 * Custom options prices that are assigned to a website scope no longer rewrite prices on all scopes.
 
 <!-- MAGETWO-97974 -->
-* You can now update product content descriptions on the store-view level when WYSIWYG is disabled. 
+* You can now update product content descriptions on the store-view level when WYSIWYG is disabled.
 
 <!-- MAGETWO-73047 -->
 * The Admin Product Edit page and Customers page now load without JavaScript errors. [GitHub-5967](https://github.com/magento/magento2/issues/5967)
@@ -185,7 +183,7 @@ https://github.com/magento/magento2/issues/23288
 * Corrected misalignment of the Compare Products and My Wish List counters in the sidebar. *Fix submitted by Prakash Prajapati in pull request [23573](https://github.com/magento/magento2/pull/23573)*. [GitHub-22676](https://github.com/magento/magento2/issues/22676)
 
 <!-- ENGCOM-5391 -->
-* Corrected capitalization of review text. *Fix submitted by Prakash Prajapati in pull request [23537](https://github.com/magento/magento2/pull/23537)*. 
+* Corrected capitalization of review text. *Fix submitted by Prakash Prajapati in pull request [23537](https://github.com/magento/magento2/pull/23537)*.
 
 <!-- ENGCOM-5399 -->
 * Corrected misalignment of the Compare Products and My Wish List counters in the sidebar. *Fix submitted by Prakash Prajapati in pull request [23573](https://github.com/magento/magento2/pull/23573)*. [GitHub-22676](https://github.com/magento/magento2/issues/22676)
@@ -300,7 +298,7 @@ https://github.com/magento/magento2/issues/23288
 * The `equalArrays` function in `lib/web/mage/utils/compare.js` file has been refactored to remove quadratic complexity. Previously, this feature significantly slowed Admin operations that were performed on large number of products  (for example, adding a product to category by SKU).
 
 <!-- MC-17940 -->
-* You can now successfully search for an order by email in the **Sales** > **Orders** list. 
+* You can now successfully search for an order by email in the **Sales** > **Orders** list.
 
 <!-- MAGETWO-99622 -->
 * The error message that Magento displays when the user creates an attribute that starts with the reserved word `container` has been improved. For example, when a user created product attributes named  `container_attributename` and `attributename`, Magento threw this error: `Exception in Magento/Framework/View/Element/UiComponentFactory.php` rather than stating which user behavior was causing the system problem.
@@ -314,7 +312,7 @@ https://github.com/magento/magento2/issues/23288
 * The cursor on the email field of the login page now behaves as expected when running Magento on Safari. Previously, the cursor repeatedly moved to the end of the email address field when you tried to edit this field.
 
 <!-- MAGETWO-91328 -->
-* Customers can now successfully check out when the AdBlock extension and Google Analytics are enabled. 
+* Customers can now successfully check out when the AdBlock extension and Google Analytics are enabled.
 
 ### General
 
@@ -322,7 +320,7 @@ https://github.com/magento/magento2/issues/23288
 * We have improved the performance of the grouped product detail pages and category pages that contain a large number of grouped products.
 
 <!-- MAGETWO-98485 -->
-* You can now successfully navigate to the Web Setup Wizard when  `session.save_handler=db` is set in `app/env.php`.  Previously, when you tried to navigate to the Web Setup Wizard, Magento threw a fatal error. 
+* You can now successfully navigate to the Web Setup Wizard when  `session.save_handler=db` is set in `app/env.php`.  Previously, when you tried to navigate to the Web Setup Wizard, Magento threw a fatal error.
 
 <!-- MAGETWO-99372 -->
 * Magento now maintains custom prices for products in both the catalog and shopping cart after a quote is recalculated. Previously, the product price reverted to the default price after you recalculated the quote.
@@ -353,7 +351,6 @@ https://github.com/magento/magento2/issues/23288
 <!-- ENGCOM-5030 -->
 * Custom import adapters now validate CSV files as expected if column and data are available. Previously, the CSV file was not validated, and Magento threw the following error: `Notice: Undefined index: sku in /var/www/html/hamtc/vendor/magento/module-import-export/Model/Import/Entity/AbstractEntity.php on line 411`. *Fix submitted by Amol Chaudhari in pull request [22180](https://github.com/magento/magento2/pull/22180)*. [GitHub-19761](https://github.com/magento/magento2/issues/19761)
 
-
 ### Indexers
 
 <!-- MC-18327 -->
@@ -381,7 +378,6 @@ https://github.com/magento/magento2/issues/23288
 
 <!-- ENGCOM-5211 -->
 * You can now successfully view order information by selecting **Sales** > **Orders** > **View Order**. Previously, an issue with the `truncateString` method resulted in Magento throwing an error when you tried to view order information. *Fix submitted by emilie-blackbird in pull request [20849](https://github.com/magento/magento2/pull/20849)*. [GitHub-16958](https://github.com/magento/magento2/issues/16958)
-
 
 ### Page Cache
 
@@ -425,8 +421,11 @@ https://github.com/magento/magento2/issues/23288
 * Customers can now place the order for virtual products with a zero subtotal checkout payment after entering address information. Previously, customers could not place an order for virtual products with a zero subtotal checkout payment if they modified their address, and Magento displayed this message:  `The requested Payment Method is not available`.
 
 <!-- MC-19610 -->
-* Magento no longer places an order if a JavaScript error occurs when a customer clicks **Place order** using Braintree as the payment method. 
+* Magento no longer places an order if a JavaScript error occurs when a customer clicks **Place order** using Braintree as the payment method.
 
+<!-- MC-17967 -->
+* You can now successfully re-order an order using the same payment method as you used for the first order.
+ 
 ### Pricing
 
 <!-- MC-98899 -->
@@ -440,10 +439,9 @@ https://github.com/magento/magento2/issues/23288
 <!-- ENGCOM-5298 -->
 * Selecting **Show by year** when filtering  **Reports** > **Products**  > **Ordered** now results in a list of products sold per year that is grouped by product quantity in descending orderPreviously, Magento displayed a list of products sold per year that contained multiple entries for a single product on a per order basis. *Fix submitted by Prakash Prajapati in pull request [23252](https://github.com/magento/magento2/pull/23252)*. [GitHub-22087](https://github.com/magento/magento2/issues/22087)
 
-
 ### Review
 
-<!-- MAGETWO-99315 --> 
+<!-- MAGETWO-99315 -->
 * Administrators with restricted privileges to reviews can now edit review status from the pending reviews list.
 
 ### Sales
@@ -487,6 +485,7 @@ https://github.com/magento/magento2/issues/23288
 `{"0":"SQLSTATE[42000]: Syntax error or access violation: 1064 syntax error, unexpected $end, query was: SELECT`.
 
 <!-- MAGETWO-99716 -->
+* You can now limit the number of search suggestions that the autocomplete feature provides by setting the **Autocomplete Limit** field.
 
 ### Shipping
 
@@ -591,7 +590,6 @@ https://github.com/magento/magento2/issues/23288
 <!-- MAGETWO-96873 -->
 * The behavior of the Catalog page Requisition list menu has been corrected.
 
-
 ## Community contributions
 
 This release includes substantial community contributions: over 100 GitHub issues resolved and over 350 pull requests merged. We are grateful to the wider Magento community for this effort and would like to acknowledge their contributions to this release.
@@ -600,13 +598,12 @@ This release includes substantial community contributions: over 100 GitHub issue
 
 The following table identifies contributions from our community members. This table lists the external pull requests, the GitHub issue number associated with it (if available), and the community member who contributed the pull request.
 
-
 ### Partner contributions
 
 The following table highlights contributions made by Partners. This table lists the Partner who contributed the pull request, the external pull request, and the GitHub issue number associated with it (if available).
 
-
 ### System requirements
+
 Our technology stack is built on PHP and MySQL. For details, see [Technology stack requirements]({{page.baseurl}}/install-gde/system-requirements-tech.html).
 
 ### Installation and upgrade instructions
@@ -614,6 +611,7 @@ Our technology stack is built on PHP and MySQL. For details, see [Technology sta
 See [How to get the Magento software]({{ page.baseurl }}/install-gde/bk-install-guide.html) for complete installation and upgrade information.
 
 ## Migration toolkits
-The <a href="{{ page.baseurl }}/migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="{{ page.baseurl }}/migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.
 
-The <a href="https://github.com/magento/code-migration" target="_blank">Code Migration Toolkit</a> helps transfer existing Magento 1.x store extensions and customizations to Magento 2.2.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.
+The Data Migration Tool helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see [Install the Data Migration Tool](https://devdocs.magento.com/guides/v2.3/migration/migration-tool-install.html). Consider exploring or contributing to the [Magento Data Migration repository](https://github.com/magento/data-migration-tool).
+
+The [Code Migration Toolkit](https://github.com/magento/code-migration) helps transfer existing Magento 1.x store extensions and customizations to Magento 2.2.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.
