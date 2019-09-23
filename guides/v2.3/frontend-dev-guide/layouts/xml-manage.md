@@ -239,7 +239,7 @@ As a result, the CMS block added to the bottom of the page.
 
 ## Making the block visibility dynamic {#ref_config_block}
 
-Any block can be configured to show or not based on a [Magento/Config/Model/Config/Source/Yesno] system configuration field, using `ifconfig` argument. As a value, it gets the XPath of the needed field.
+Any block can be configured to show or not based on a [Magento/Config/Model/Config/Source/Yesno] system configuration field, using the `ifconfig` argument. For the value, use the XPath to the needed field.
 
 ```xml
 <block class="Namespace\Module\Block\Type" name="block.example" ifconfig="my/yesno/field">
