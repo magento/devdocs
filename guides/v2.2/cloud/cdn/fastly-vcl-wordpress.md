@@ -125,7 +125,7 @@ Add the custom VCL snippet to your Fastly service configuration from the Admin U
       ```
       if ( req.url.path ~ "^/?([^/?]+)")
 	    {
-		  if ( table.lookup(wordpress_urls, re.group.1, \"NOTFOUND\") != \"NOTFOUND\" )
+		  if ( table.lookup(wordpress_urls, re.group.1, "NOTFOUND") != "NOTFOUND" )
 	        {set req.http.X-WP = "1";
 		    }
          }
