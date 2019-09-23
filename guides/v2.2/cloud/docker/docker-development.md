@@ -37,30 +37,26 @@ The following CLI containers, which are based on a [PHP-CLI version 7 image](htt
     -  The `setup:cron:run` and `cron:update` commands are not available on Cloud and Docker for Cloud environment
     -  Cron only works with the CLI container to run the `./bin/magento cron:run` command
 
-{:.procedure}
-To check the state of the your project:
+For example, you can check the state of the your project using the _ideal-state_ wizard:
 
--  Run the `{{site.data.var.ct}}` ideal-state command.
+Run the `{{site.data.var.ct}}` ideal-state command.
 
-   ```bash
-   docker-compose run deploy ece-command wizard:ideal-state
-   ```
+```bash
+docker-compose run deploy ece-command wizard:ideal-state
+```
 
--  Sample response:
+Sample response:
 
-   ```terminal
-   ...
-    - Your application does not have the "post_deploy" hook enabled.
-   The configured state is not ideal
-   ```
-   {: .no-copy}
+```terminal
+...
+ - Your application does not have the "post_deploy" hook enabled.
+The configured state is not ideal
+```
+{: .no-copy}
 
 ### Cron container
 
-The Cron container is based on PHP-CLI images, and executes operations in the background immediately after the Docker environment start. It uses the cron configuration defined in the [`crons` property of the `.magento.app.yaml` file]({{page.baseurl}}/cloud/project/project-conf-files_magento-app.html#crons).
-
-{:.procedure}
-To view the cron log:
+The Cron container is based on PHP-CLI images, and executes operations in the background immediately after the Docker environment start. It uses the cron configuration defined in the [`crons` property of the `.magento.app.yaml` file]({{page.baseurl}}/cloud/project/project-conf-files_magento-app.html#crons). To view the cron log:
 
 ```bash
 docker-compose run deploy bash -c "cat /app/var/cron.log"

@@ -272,14 +272,14 @@ Start containers from a suspended state | `docker-compose start`
 Stop the synchronization daemon | `docker-sync stop`
 Start the synchronization daemon | `docker-sync start`
 
-{:.procedure}
-To stop and remove the Docker configuration:
-
--  Remove all components of your local Docker instance including containers, networks, volumes, and images.
+Use the following command to stop and remove the Docker configuration:
 
    ```bash
    docker-compose down -v
    ```
+
+{: .bs-callout-warning}
+This removes all components of your local Docker instance including containers, networks, volumes, and images.
 
 ## Advanced usage
 
