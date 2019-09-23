@@ -550,9 +550,6 @@ In addition to security enhancements, this release contains the following functi
 <!-- MC-19610 -->
 * Magento no longer places an order if a JavaScript error occurs when a customer clicks **Place order** using Braintree as the payment method.
 
-<!-- MC-17967 -->
-* You can now successfully re-order an order using the same payment method as you used for the first order.
-
 ### Pricing
 
 <!-- MC-98899 -->
