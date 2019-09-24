@@ -114,7 +114,7 @@ Variables on the project Project-Name (<project-id>), environment <environment-n
 ```
 {: .no-copy}
 
-You can use the `mmagento-cloud` CLI to set a variable:
+You can use the `magento-cloud` CLI to set a variable:
 
 ```bash
 magento-cloud vset <variable-name> <variable-value>

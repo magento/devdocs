@@ -32,7 +32,7 @@ To generate a `sitemap.xml` file in version 2.2 and later:
 1. Click the path in the _Link for Google_ column.
 
 {:.procedure}
-To add content to `robots.txt` file:
+To add content to the `robots.txt` file:
 
 1. Access the Magento Admin panel.
 1. On the _Content_ menu, click **Configuration** in the _Design_ section.
