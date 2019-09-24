@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 namespace :check do
   desc 'Optimize images in modified files, or by path (rake image_optim path=path/to/dir/or/file).'
   task :image_optim do
@@ -10,5 +12,20 @@ namespace :check do
       path = staged_files.join(' ')
     end
     system "bin/image_optim --no-pngout --no-svgo --recursive #{path}"
+  end
+
+  desc 'Check Markdown syntax in modified files or in a particular file or directory by path (e.g. path=mftf)'
+  task :mdl do
+    path = ENV['path']
+    unless path
+      staged_files = `git ls-files -m`.split("\n")
+      staged_md_files = staged_files.select { |file| File.extname(file) == '.md' }
+      abort 'Cannot find any modified .md files.'.magenta if staged_md_files.empty?
+      path = staged_md_files.join(' ')
+    end
+    puts 'Running Markdown linter ...'.magenta
+    report = `bin/mdl #{path}`
+    puts report.yellow
+    puts 'The rules are defined in _checks/styles/style-rules-dev'.magenta
   end
 end

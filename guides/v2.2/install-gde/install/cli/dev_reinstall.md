@@ -31,7 +31,9 @@ To reinstall the Magento software as a contributing developer:
 5.	Replace `<version>` with the version to which you want to upgrade, where `<version>` is the product version to use.
 
 	(The product version is in the format `2.0.x`)
+
 <!-- is the `magento/product-community-edition` version from -->.
+
 5.	Save your changes to `composer.json` and exit the text editor.
 6.	Enter the following command:
 

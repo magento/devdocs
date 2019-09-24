@@ -25,7 +25,7 @@ The following query shows the status of a cart that is ready to be converted int
 
 ```text
 query {
-  cart(cart_id: "IeTUiU0oCXjm0uRqGCOuhQ2AuQatogjG") 
+  cart(cart_id: "IeTUiU0oCXjm0uRqGCOuhQ2AuQatogjG")
   {
     email
     billing_address {
@@ -123,7 +123,7 @@ query {
           currency
         }
       }
-  } 
+  }
 }
 ```
 
@@ -417,7 +417,6 @@ The `Cart` object can contain the following attributes:
 
 {% include graphql/cart-object.md %}
 
-
 #### AppliedCoupon object {#AppliedCoupon}
 
 The `AppliedCoupon` object must contain the following attributes:
@@ -458,7 +457,7 @@ The `BillingCartAddress` object can contain the following attributes:
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`city` | String | The city specified for the billing address 
+`city` | String | The city specified for the billing address
 `company` | String | The company specified for the billing address
 `country` | [CartAddressCountry](#CartAddressCountry) | The country code and label for the billing address
 `customer_notes` | String | Comments made to the customer that accompanies the order
@@ -533,7 +532,7 @@ The `SelectedPaymentMethod` object can contain the following attributes:
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`code` | String! | The payment method code 
+`code` | String! | The payment method code
 `purchase_order_number` | String | The purchase order number
 `title` | String! | The payment method title
 
@@ -558,7 +557,7 @@ Attribute |  Data Type | Description
 --- | --- | ---
 `available_shipping_methods` | [[AvailableShippingMethod]](#AvailableShippingMethod) | An array that lists the shipping methods that can be applied to the cart
 `cart_items` | [[CartItemQuantity]](#CartItemQuantity) | An array that lists the items in the cart
-`city` | String | The city specified for the shipping address 
+`city` | String | The city specified for the shipping address
 `company` | String | The company specified for the shipping address
 `country` | [CartAddressCountry](#CartAddressCountry) | The country code and label for the shipping address
 `customer_notes` | String | Comments made to the customer that will accompany the order
@@ -570,7 +569,6 @@ Attribute |  Data Type | Description
 `selected_shipping_method` | [SelectedShippingMethod](#SelectedShippingMethod) | An object that describes the selected shipping method
 `street` | [String] | The street for the shipping address
 `telephone` | String | The telephone number for the shipping address
-
 
 ## Mutations
 

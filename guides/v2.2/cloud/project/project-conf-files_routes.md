@@ -10,12 +10,15 @@ The `routes.yaml` file in the `.magento/routes.yaml` directory defines routes fo
 
 {% include cloud/note-pro-missing-self-service-options.md %}
 
-The default `routes.yaml` file contains the following code:
+The default `routes.yaml` file specifies the route templates for processing HTTP requests on projects that have a single default domain and on projects configured for multiple domains:
 
 ```yaml
 "http://{default}/":
-  type: upstream
-    upstream: "mymagento:php"
+    type: upstream
+    upstream: "mymagento:http"
+"http://{all}/":
+    type: upstream
+    upstream: "mymagento:http"
 ```
 
 If you do not create a custom `routes.yaml` file, the automated deployment uses the default file.
@@ -42,7 +45,7 @@ The `routes.yaml` file is a list of templated routes and their configurations. Y
   ```text
   http://www.example.com/
 
-  http://www.example.com/blog
+  https://www.example.com/blog
   ```
   {: .no-copy}
 
@@ -55,9 +58,9 @@ The `routes.yaml` file is a list of templated routes and their configurations. Y
 
   http://www.example.com/blog
 
-  http://www.example1.com/
+  https://www.example1.com/
 
-  http://www.example1.com/blog
+  https://www.example1.com/blog
   ```
   {: .no-copy}
 
@@ -65,14 +68,14 @@ The `routes.yaml` file is a list of templated routes and their configurations. Y
 
   If a project does not have any domains configured, which is common during development, the `{all}` placeholder behaves in the same way as the `{default}` placeholder.
 
-{{site.data.var.ee}} also generates URLs for every active environment, so you can test that system. In a test system, `{default}` is replaced with the following domain name:
+{{site.data.var.ee}} also generates routes for every active Integration environment. For Integration environments, `{default}` is replaced with the following domain name:
 
 ```text
 [branch]-[project-id].[region].magentosite.cloud
 ```
 {: .no-copy}
 
-For example, the `refactorcss` branch for the `mswy7hzcuhcjw` project hosted in the `us` cluster has the following the domains: 
+For example, the `refactorcss` branch for the `mswy7hzcuhcjw` project hosted in the `us` cluster has the following the domains:
 
 ```text
 http://www-refactorcss-mswy7hzcuhcjw.us.magentosite.cloud/
@@ -98,8 +101,7 @@ Property         | Description
 
 ## Simple routes
 
-The following sample routes the apex domain and the `www` subdomain to the `frontend`application. This route does not redirect HTTPS requests:
-
+The following sample routes the apex domain and the `www` subdomain to the `frontend` application. This route does not redirect HTTPS requests:
 
 ```yaml
 "http://{default}/":
@@ -126,12 +128,13 @@ The following sample route does not redirect from the `www` to the apex domain; 
 In the first sample, the server responds directly to a request of the form `http://example.com/hello`, but it issues a _301 redirect_ for `http://www.example.com/mypath` (to `http://example.com/mypath`).
 
 ## Wildcard routes
-{{site.data.var.ece}} supports wildcard routes, so you can map multiple subdomains to the same application. This works for [redirect](https://glossary.magento.com/redirect) and upstream routes. You prefix the route with an asterisk (\*). For example, the following routes to the same application:
 
--  `*.example.com`
--  `www.example.com`
--  `blog.example.com`
--  `us.example.com`
+{{site.data.var.ece}} supports wildcard routes, so you can map multiple subdomains to the same application. This works for redirect and upstream routes. You prefix the route with an asterisk (\*). For example, the following routes to the same application:
+
+- `*.example.com`
+- `www.example.com`
+- `blog.example.com`
+- `us.example.com`
 
 This functions as a catch-all domain in a live environment.
 
@@ -143,8 +146,8 @@ If you define a `http://www.{default}/` route, the route becomes `http://www.add
 
 You can put any subdomain before the dot and the route resolves. In this example, the route is defined as `http://*.{default}/`, so both of the following URLs work:
 
--  `http://foo.add-theme-projectID.us.magentosite.cloud/`
--  `http://bar.add-theme-projectID.us.magentosite.cloud/`
+- `http://foo.add-theme-projectID.us.magentosite.cloud/`
+- `http://bar.add-theme-projectID.us.magentosite.cloud/`
 
 If you examine the routes of this sample application, you see:
 
@@ -158,23 +161,19 @@ https://*.add-theme-projectID.us.magentosite.cloud/
 ```
 {: .no-copy}
 
-
-{: .bs-callout .bs-callout-info}
-Some projects provisioned before December 8, 2017, use the triple dash (\-\-\-) as a separator for the subdomain.
-
 See more information about [caching]({{ page.baseurl }}/cloud/project/project-routes-more-cache.html).
 
-## Redirects
+## Redirects and caching
 
-As discussed in more detail in [Redirects]({{ page.baseurl }}/cloud/project/project-routes-more-redir.html), you can manage complex redirection rules, such as *partial redirects*:
+As discussed in more detail in [Redirects]({{ page.baseurl }}/cloud/project/project-routes-more-redir.html), you can manage complex redirection rules, such as *partial redirects*, and specify rules for route-based [caching]({{ page.baseurl }}/cloud/project/project-routes-more-cache.html):
 
 ```yaml
 http://www.{default}/:
-    to: https://{default}/
     type: redirect
+    to: https://{default}/
 http://{default}/:
-    to: https://{default}/
     type: redirect
+    to: https://{default}/
 https://{default}/:
     cache:
         cookies: [""]

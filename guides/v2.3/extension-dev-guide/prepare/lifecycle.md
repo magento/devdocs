@@ -24,7 +24,7 @@ The schema initialization stages are the first set of processes Magento runs whe
 
 ### Schema installation
 
-Magento executes the schema installation class during your module's initial install. 
+Magento executes the schema installation class during your module's initial install.
 If the `schema_version` for your module is found in the `setup_module` table, Magento skips this stage and proceeds to the [schema upgrade] stage.
 
 | **Class name:** | `InstallSchema`            |
@@ -48,7 +48,7 @@ class \VendorName\ModuleName\Setup\InstallSchema implements \Magento\Framework\S
 
 ### Schema upgrade
 
-Magento executes your module's schema upgrade class when it detects an earlier installation. 
+Magento executes your module's schema upgrade class when it detects an earlier installation.
 The purpose of this class is to update the database structure or apply patches.
 
 | **Class name** | `UpgradeSchema`            |
@@ -309,6 +309,6 @@ Avoid this situation by not including dependencies in your uninstall event class
 [`ModuleDataSetupInterface`]: {{ site.mage2bloburl }}/{{page.guide_version}}/lib/internal/Magento/Framework/Setup/ModuleDataSetupInterface.php
 [Customer module's DefaultCustomerGroupsAndAttributes.php]: {{ site.mage2bloburl }}/{{page.guide_version}}/app/code/Magento/Customer/Setup/Patch/Data/DefaultCustomerGroupsAndAttributes.php
 [`ModuleContextInterface`]: {{ site.mage2bloburl }}/{{page.guide_version}}/lib/internal/Magento/Framework/Setup/ModuleContextInterface.php
-[User module's UpgradeData.php]: {{ site.mage2bloburl }}/{{page.guide_version}}/app/code/Magento/User/Setup/UpgradeData.php
+[User module's UpgradeData.php]: {{ site.mage2bloburl }}/2.2/app/code/Magento/User/Setup/UpgradeData.php
 [Component Manager]: {{ page.baseurl }}/comp-mgr/module-man/compman-uninst-final.html
 [`UninstallInterface`]: {{ site.mage2bloburl }}/{{page.guide_version}}/lib/internal/Magento/Framework/Setup/UninstallInterface.php

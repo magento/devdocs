@@ -28,8 +28,7 @@ After installation, we recommend the following:
 *	Make sure your file ownership and permissions are set properly
 *	We strongly recommend [changing the default Admin URL]({{ page.baseurl }}/install-gde/install/cli/install-cli-adminurl.html) from `admin` to something else
 *	Make sure the [`X-Frame-Option` HTTP header]({{ page.baseurl }}/config-guide/secy/secy-xframe.html) is set properly.
-*	Take precautions against cross-site scripting (XSS) by [securing your templates]({{ page.baseurl }}/frontend-dev-guide/templates/template-security.html)
-<!-- Set up roles and restricted users (Admin) -->
+*	Take precautions against cross-site scripting (XSS) by [securing your templates]({{ page.baseurl }}/extension-dev-guide/xss-protection.html)
 
 ## Enable Apache server rewrites {#post-install-rewrites}
 
@@ -64,7 +63,7 @@ Whether you have one server or many, you must open ports in the firewall to enab
 More information:
 
 *	Ubuntu: [Ubuntu documentation page](https://help.ubuntu.com/community/IptablesHowTo).
-*	CentOS: [CentOS reference page](http://wiki.centos.org/HowTos/Network/IPTables) and [CentOS how-to](http://www.centos.org/docs/4/4.5/Security_Guide/s1-firewall-ipt-basic.html).
+*	CentOS: [CentOS reference page](http://wiki.centos.org/HowTos/Network/IPTables).
 
 #### Security Enhanced Linux (SELinux) rules
 
@@ -79,7 +78,7 @@ More information:
 
 Magento requires an e-mail server. We don't recommend a particular server but you can try any of the following:
 
-*	Postfix for CentOS ([digitalocean tutorial](https://www.digitalocean.com/community/tutorials/how-to-install-postfix-on-centos-6), [CentOS documentation](https://www.centos.org/docs/5/html/Deployment_Guide-en-US/ch-email.html))
+*	Postfix for CentOS ([digitalocean tutorial](https://www.digitalocean.com/community/tutorials/how-to-install-postfix-on-centos-6), [CentOS documentation](https://www.centos.org))
 *	Postfix for Ubuntu ([digitalocean tutorial](https://www.digitalocean.com/community/tutorials/how-to-install-and-setup-postfix-on-ubuntu-14-04), [Ubuntu documentation](https://help.ubuntu.com/community/MailServer))
 
 ## Settings for {{site.data.var.ee}} only {#post-install-ee}

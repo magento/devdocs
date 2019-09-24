@@ -9,7 +9,7 @@ functional_areas:
 
 You can easily migrate to the {{site.data.var.ece}} platform without losing SEO rankings and traffic.  Use the `magento/url-rewrite-import-export` module to redirect traffic from your old, indexed URLs to new URLs.
 
-{: .bs-callout .bs-callout-info}
+{: .bs-callout-info }
 This module is available for Magento version 2.2.x only.
 
 #### To install the URL rewrite module:
@@ -23,7 +23,7 @@ This module is available for Magento version 2.2.x only.
 1.  Configure the `.magento.env.yaml` file deploy stage with cron consumers to run **urlRewriteImport** only.
 
     ```yaml
-    stage: 
+    stage:
       deploy:
         CRON_CONSUMERS_RUNNER:
           cron_run: true
@@ -35,17 +35,14 @@ This module is available for Magento version 2.2.x only.
     Or, you can configure to run all consumers:
 
     ```yaml
-    stage: 
+    stage:
       deploy:
         CRON_CONSUMERS_RUNNER:
           cron_run: true
           max_messages: 1000
-    ```    
+    ```
 
-    See the following for more information about configuring consumers:
-
-    -  [Message queues]({{page.baseurl}}/cloud/trouble/message-queues.html)
-    -  [CRON_CONSUMERS_RUNNER environment variable]({{page.baseurl}}/cloud/env/variables-deploy.html#cron_consumers_runner)
+    See [CRON_CONSUMERS_RUNNER environment variable]({{page.baseurl}}/cloud/env/variables-deploy.html#cron_consumers_runner) for more information about configuring consumers:
 
 1.  Add, commit, and push code changes.
 

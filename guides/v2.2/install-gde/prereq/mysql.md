@@ -244,7 +244,6 @@ The following procedure is based on [Install MySQL Server 5.6 in CentOS 6.x and 
 		sudo wget http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm && sudo rpm -ivh mysql-community-release-el7-5.noarch.rpm
 		sudo yum -y install mysql-server
 
-
 2.	Start MySQL:
 
 		service mysqld start

@@ -31,7 +31,6 @@ source_code	| The source to assign or unassign | String | Required to assign or 
 quantity	| The total amount of inventory available for this SKU and source | Float | Optional
 status	|  Indicates whether the product is out of stock (0) or in stock (1) | Integer | Optional
 
-
 ## Unassign products from a source
 
 Use the `POST V1/inventory/source-items-delete` endpoint to unassign one or more products from the specified source. The `sku` and `source_code` attributes are required for each product.

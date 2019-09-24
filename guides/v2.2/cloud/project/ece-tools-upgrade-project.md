@@ -22,7 +22,7 @@ Before performing an upgrade to use the `{{site.data.var.ct}}` package, check th
 
 Each {{site.data.var.ee}} version requires a different constraint based on the following:
 
-```
+```terminal
 >=current_version <next_version
 ```
 
@@ -53,7 +53,7 @@ To upgrade your project to use the `{{site.data.var.ct}}` package, you need to u
     ```bash
     composer update magento/magento-cloud-metapackage
     ```
-  
+
 1.  Modify the hook commands in the `magento.app.yaml` file.
 
     ```yaml

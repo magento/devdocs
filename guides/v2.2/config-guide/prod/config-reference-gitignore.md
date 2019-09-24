@@ -9,8 +9,6 @@ functional_areas:
 
 This reference shows suggested `.gitignore` files to use in a development system and in a build or production system.
 
-
-
 ## .gitignore for development
 We recommend you use the `.gitignore` provided with Magento in a development system with the following changes&mdash;comment out the following so they are included in source control:
 

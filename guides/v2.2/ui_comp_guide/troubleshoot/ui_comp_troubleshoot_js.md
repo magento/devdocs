@@ -32,6 +32,7 @@ A simple example:
 1. Launch [Magento Admin](https://glossary.magento.com/magento-admin).
 2. Navigate to **Products** > **Catalog** and click **Add Product**. The product creation page opens.
 3. Right-click on the **Product Name** field and click **Inspect**. Go to the **Knockout context** tab. Here you can see the full context of the field, where you can find JS component file, component name, etc.
+
 ![Image Example]({{ site.baseurl }}/common/images/ui_comp_troubleshoot_chrome1.png)
 
 ## Debugging using pure Knockout
@@ -63,7 +64,7 @@ console.log(fieldName.name); // product_form.product_form.product-details.contai
 
 ## Debugging using Chrome DevTools
 
-All modern browsers support “debugging” – a special UI in developer tools that makes finding and fixing errors much easier. 
+All modern browsers support “debugging” – a special UI in developer tools that makes finding and fixing errors much easier.
 
 ### Sources panel UI
 
@@ -90,7 +91,7 @@ To set a breakpoint, right click on the code line number (as shown in the next i
 
 You can always find a list of breakpoints in the right panel, which is useful when you have many breakpoints in various files.
 
-{: .bs-callout .bs-callout-info }
+{: .bs-callout-info }
 Right-clicking on the line number allows you to create a conditional breakpoint, which triggers only when the given expression is truthy. That’s helpful when you need to stop only for certain function parameters.
 
 ### Execution trace
@@ -101,7 +102,23 @@ After setting the breakpoint, refresh the page. Now, let's explore the script tr
 
 As result, you can see the input parameter values and what the function returns. Moreover, we're also able to change the function's values on the fly.
 
+### Invoking DevTools
+
+To use DevTools you can follow the previously described steps, or you can use the `debugger` keyword in your JavaScript code to invoke the browser's DevTools.
+
+```javascript
+function sum(a, b) {
+    var sum = a + b;
+    debugger;
+    return sum;
+}
+```
+
+Then, just make sure that your method is called and wait until the debugger is paused at the specified point.
+
+![Debugger]({{ site.baseurl }}/common/images/debugger.png)
+
 ## See also
 
 [Debug using uiRegistry]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uiregistry.html#debug_uiregistry)
-[DevTools]: https://developers.google.com/web/tools/chrome-devtools/javascript/
+[DevTools](https://developers.google.com/web/tools/chrome-devtools/javascript/)

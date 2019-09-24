@@ -128,19 +128,17 @@ Code blocks can also be defined using [Rouge formatting](http://rouge.jneen.net/
 
 For inline code, surround the content with single backticks: `` `example` ``.
 
-For blocks of code, surround content with 3 backticks and an optional [supported language](https://GitHub.com/jneen/rouge/wiki/List-of-supported-languages-and-lexers){:target="_blank"}.
+For blocks of code, surround content with 3 backticks and a [supported language](https://GitHub.com/jneen/rouge/wiki/List-of-supported-languages-and-lexers){:target="_blank"}.
 
 *Example:*
 
-```markdown
-```html
+```text
 <div class="container">
   <h4 class="title">Title</h4>
   <div class="content">
     <p>Paragraph content.</p>
   </div>
 </div>
-```
 ```
 
 *Output:*
@@ -222,7 +220,7 @@ content='This is a tip callout. These can be used to provide useful tips or inte
 
 You can use the collapsible content tag for large code samples in your content. Any content in a collapse is blocked from searching on page.
 
-{: .bs-callout .bs-callout-info }
+{: .bs-callout-info }
 The `{%raw%}{% collapsible %}{%endraw%}` tag must be preceded by a blank line.
 
 *Example:*

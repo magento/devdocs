@@ -17,7 +17,7 @@ To manage the branches and environments with the Project Web Interface, see [Man
 Magento Cloud CLI commands are very similar to Git commands. You can use them to connect to your {{site.data.var.ece}} project and manage your  {{site.data.var.ece}} environments. Although you can run the commands from any directory, we recommend that you run them from a project directory. When run from a project directory, you can omit the `-p <project-ID>` parameter.
 
 The following list of commonly used Magento Cloud CLI commands includes required options only. Use the ``--help``
-option with any command to get more detailed information. 
+option with any command to get more detailed information.
 
 Command | Description
 --- | ---
@@ -82,10 +82,10 @@ When you delete an environment, the environment is set to _inactive_. The code i
     git fetch
     ```
 
-1.  Checkout the environment branch.
+1.  Delete the environment branch.
 
     ```bash
-    magento-cloud environment:checkout <environment-ID>
+    magento-cloud environment:delete <environment-ID>
     ```
 
 1.  Respond to the prompts to delete the local environment and the corresponding remote environment.
@@ -110,7 +110,7 @@ When you delete an environment, the environment is set to _inactive_. The code i
     Deleting environment <environment-ID>
     Waiting for the activity...
       Deleting environment <project-id>-<environment-ID>-xxxxxx
-    
+
       [============================]  1 min (complete)
     Activity ID succeeded
     Deleted remote Git branch <environment-ID>
@@ -226,7 +226,6 @@ If you have a corporate firewall that blocks outgoing SSH connections, you can a
 </td>
 </tr>
 </table>
-
 
 ## Interact with environments via the Magento Cloud CLI {#commands}
 

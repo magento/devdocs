@@ -1,9 +1,6 @@
 ---
 group: php-developer-guide
 title: PHP Developer Guide
-landing-page: PHP Developer Guide
-redirect_from:
-  - /guides/v2.2/mktpl-quickstart/intro-moreinfo.html
 ---
 
 The [PHP](https://glossary.magento.com/php) Developer Guide contains information for developers who want to know more about developing or modifying Magento components. With this knowledge you can extend or customize any of the existing components in the Magento application. You can also create components that introduce new functionality and distribute them to merchants.
@@ -14,11 +11,11 @@ The Magento application is made up of *Modules*, *Themes*, and *Language Package
 
 * [**Modules**]({{ page.baseurl }}/architecture/archi_perspectives/components/modules/mod_intro.html) interact with other parts of the application to accomplish a particular business function or provide a feature. A [module](https://glossary.magento.com/module) can contain a user interface for displaying information or interacting with the user. It can also contain application interfaces that another Magento module or code chunk might call.
 
-* [**Themes**]({{ page.baseurl }}/frontend-dev-guide/themes/theme-general.html) provide a personalized touch for each Magento installation by changing the look and feel of the [storefront](https://glossary.magento.com/storefront) or [Admin](https://glossary.magento.com/admin). Two themes are already available within the default Magento 2.x code structure: Blank theme and Luma theme. Refer to these default themes when creating custom themes. 
+* [**Themes**]({{ page.baseurl }}/frontend-dev-guide/themes/theme-general.html) provide a personalized touch for each Magento installation by changing the look and feel of the [storefront](https://glossary.magento.com/storefront) or [Admin](https://glossary.magento.com/admin). Two themes are already available within the default Magento 2.x code structure: Blank theme and Luma theme. Refer to these default themes when creating custom themes.
 
 * [**Language packages**]({{ page.baseurl }}/frontend-dev-guide/translations/xlate.html) assist in internationalization(i18n) and localization by providing translations for strings that display on the storefront and Admin.
 
-{: .bs-callout .bs-callout-info }
+{: .bs-callout-info }
 You must follow a [PSR-4 compliant](http://www.php-fig.org/psr/psr-4/) structure when building a module.
 
 #### Related topics

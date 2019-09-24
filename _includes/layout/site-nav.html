@@ -1,3 +1,10 @@
+{% if site.environment == "public" %}
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id={{ site.google.gtm }}"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+{% endif %}
+
 <nav class="site-nav">
 
   <div class="menu-btn">
@@ -21,7 +28,7 @@
     </div>
 
     <form class="quick-search" action="{{ page.baseurl }}/search.html" method="get" novalidate="novalidate">
-      <input type="search" name="q" placeholder="Search" />
+      <input type="search" name="query" placeholder="Search" />
       <button class="quick-search-close" aria-label="Close Search">&times;</button>
     </form>
 

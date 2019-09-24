@@ -58,8 +58,7 @@ All Mview declarations related to a module should be declared in one file.
 
 To push best-selling products to the top of a category listing, process statistics about sales to change the product position dynamically.
 
-Assuming your module is named `<VendorName>_Merchandizing`, you must write the appropriate code in the indexer class `Merchandizing/Model/Indexer/Popular.php` 
-
+Assuming your module is named `<VendorName>_Merchandizing`, you must write the appropriate code in the indexer class `Merchandizing/Model/Indexer/Popular.php`
 
 ```php
 <?php
@@ -82,14 +81,12 @@ class Popular implements \Magento\Framework\Indexer\ActionInterface, \Magento\Fr
         //Should take into account all placed orders in the system
     }
 
-
     /*
      * Works with a set of entity changed (may be massaction)
      */
     public function executeList(array $ids){
         //Works with a set of placed orders (mass actions and so on)
     }
-
 
     /*
      * Works in runtime for a single entity using plugins
@@ -111,7 +108,9 @@ Next, declare the indexer in `Merchandizing/etc/indexer.xml`:
     </indexer>
 </config>
 ```
+
 In this file, declare a new indexer process with the attribute:
+
 - `id` - To identify this indexer. Check status, mode or reindex this indexer by command line.
 - `view_id` - Id of view element which will be defined in the `mview` configuration file.
 - `class` -  The name to the class which we process indexer method.
@@ -135,4 +134,4 @@ After this, please refresh the cache and go to **System** > Tools > [**Index Man
 
 ![Custom indexer modes]({{ site.baseurl }}/common/images/custom-indexer-magento2.jpg){:width="600px"}
 
-Now when an order is placed, the Popular Products indexer calculates the sorting order of the products by popularity and stores this data in the index table, so that it can be used in product displaying logic. 
+Now when an order is placed, the Popular Products indexer calculates the sorting order of the products by popularity and stores this data in the index table, so that it can be used in product displaying logic.

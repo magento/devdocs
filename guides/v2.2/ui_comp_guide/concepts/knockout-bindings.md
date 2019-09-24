@@ -16,7 +16,7 @@ The standard way to reference a knockout.js binding is using the `data-bind` att
 
 ### Binding values
 
-Apart from the value type specified for each binding, every value may be wrapped in Knockout's observable.  
+Apart from the value type specified for each binding, every value may be wrapped in Knockout's observable.
 
 ## Custom Magento bindings
 
@@ -72,6 +72,7 @@ It also instantiates all bindings defined for the rendered elements in the scope
 **Aliases**: `[bindHtml]`
 
 **Usage example**:
+
 ```html
 <div bindHtml="
     <div data-bind='text: \'String from the text binding\''></div>
@@ -209,6 +210,7 @@ The `i18n` binding is used to translate a string according to the currently enab
 **Aliases**: `[translate]`, `<translate>`
 
 **Usage example**:
+
 ```html
 <div data-bind="i18n: 'Translate as a standard knockout binding'"></div>
 
@@ -223,13 +225,14 @@ The keyboard binding allows setting up listeners for the `keypress` event of a s
 
 **Source**: `<Magento_Ui_module_dir>/view/base/web/js/lib/knockout/bindings/keyboard.js`. [See on GitHub]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/keyboard.js).
 
-**Value type**:` [name: number]: (e: KeyboardEvent) => void`
+**Value type**:`[name: number]: (e: KeyboardEvent) => void`
 
 A collection in which keys represent keyboard keys codes and values are callback functions invoked when the associated key is pressed.
 
 **Aliases**: `[keyboard]`
 
 **Usage example**:
+
 ```html
 <input type="text" keyboard="{
     13: function (e) {
@@ -249,6 +252,7 @@ The `mageInit` binding is an adapter for the `[data-mage-init]` attribute that i
 **Aliases**: -
 
 **Usage example**: creating modal window
+
 ```html
 <div mageInit="{
     'Magento_Ui/js/modal/modal': {
@@ -271,6 +275,7 @@ The `optgroup` binding is a decorator for the standard Knockout's options bindin
 **Aliases**: -
 
 **Usage example**:
+
 ```html
 <select data-bind="
     optionsValue: 'value',
@@ -282,7 +287,7 @@ The `optgroup` binding is a decorator for the standard Knockout's options bindin
             value: 'volvo'
         }, {
             label: 'Saab',
-            value: 'saab'      
+            value: 'saab'
         }]
     }, {
         label: 'German Cars',
@@ -306,6 +311,7 @@ Callback that is invoked when user clicks outside of the element.
 **Aliases**: `[outerClick]`
 
 **Usage example**:
+
 ```html
 <div id="target" outerClick="function () {
     console.log('Clicked outside of the "target" node.');
@@ -326,6 +332,7 @@ Configuration that is passed to the Slider widget.
 **Aliases**: `[range]`
 
 **Usage example**:
+
 ```html
 <div
     class="data-slider"
@@ -341,7 +348,7 @@ Configuration that is passed to the Slider widget.
 
 The `resizable` binding is an adapter for the [jQuery UI Resizable](http://api.jqueryui.com/resizable/) widget.
 
-**Source:** `<Magento_Ui_module_dir>/view/base/web/js/lib/knockout/bindings/resizable.js`. [See on GitHub]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/resizable.js). 
+**Source:** `<Magento_Ui_module_dir>/view/base/web/js/lib/knockout/bindings/resizable.js`. [See on GitHub]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/resizable.js).
 
 **Value type:** Object.
 
@@ -356,6 +363,7 @@ Configuration for the Resizable widget.
 ```
 
 ### `scope`
+
 A binding that allows evaluating descendant nodes in the scope of an object found in the UiRegistry by provided string.
 
 **Source**: `<Magento_Ui_module_dir>/view/base/web/js/lib/knockout/bindings/scope.js`. [See on Github]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/scope.js).
@@ -367,6 +375,7 @@ Component's name by which to perform a lookup in the registry.
 **Aliases**: `[ko-scope]`, `<scope>`
 
 **Usage example**:
+
 ```html
 <!-- as an attribute -->
 <div ko-scope="'name.of.component'"></div>
@@ -396,7 +405,7 @@ The `staticChecked` binding implements the behavior similar to the standard [`ch
 
 Magento `template` binding is a customization of the existing Knockout [`template` binding](http://knockoutjs.com/documentation/template-binding.html). It is used to render a template inside of the associated element. The original Knockout's  implementation was overridden to support asynchronous loading of templates by the provided path, instead of searching for them on the page.
 
-**Source:** `<Magento_Ui_module_dir>/view/base/web/js/lib/knockout/template/engine.js`. [See on Github]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/lib/knockout/template/engine.js). 
+**Source:** `<Magento_Ui_module_dir>/view/base/web/js/lib/knockout/template/engine.js`. [See on Github]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/lib/knockout/template/engine.js).
 
 **Value type:** String \| Object
 
@@ -405,6 +414,7 @@ Configuration for the `template` binding. If the provided value is a string, it 
 **Aliases:** `[render]`, `<render>`
 
 **Usage example**:
+
 ```html
 <div data-bind="template: 'path/to/the/template'"></div>
 ```
@@ -413,7 +423,7 @@ Configuration for the `template` binding. If the provided value is a string, it 
 
 Magento custom knockout binding for displaying a tooltip.
 
-**Source:** `<Magento_Ui_module_dir>/view/base/web/js/lib/knockout/bindings/tooltip.js`. [See on Github]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/tooltip.js). 
+**Source:** `<Magento_Ui_module_dir>/view/base/web/js/lib/knockout/bindings/tooltip.js`. [See on Github]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/tooltip.js).
 
 **Value type:** Object
 
@@ -476,7 +486,7 @@ Binding's configuration that may include the following options:
   </tr>
 </table>
 
-**Aliases:** `[tooltip]` 
+**Aliases:** `[tooltip]`
 
 **Usage example**:
 
@@ -484,13 +494,13 @@ Adding the tooltip binding as an attribute:
 
 ```html
 <div tooltip="
-     trigger: '[data-tooltip-trigger=trigger]', 
-     action: 'click', 
-     delay: 300, 
+     trigger: '[data-tooltip-trigger=trigger]',
+     action: 'click',
+     delay: 300,
      track: true,
-     position: 'top' 
+     position: 'top'
  "> Tooltip data </div>
- 
+
 <div data-tooltip-trigger="trigger"/>
 ```
 
@@ -500,12 +510,12 @@ Adding the tooltip binding as a node:
 <div data-bind="
     tooltip: {
         trigger: '[data-tooltip-trigger=trigger]',
-        action: 'click', 
-        delay: 300, 
+        action: 'click',
+        delay: 300,
         track: true,
-        position: 'top' 
-    }  
+        position: 'top'
+    }
 "> Tooltip data </div>
- 
+
 <div data-tooltip-trigger="trigger"/>
 ```

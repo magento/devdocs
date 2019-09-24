@@ -213,6 +213,7 @@ Run the preceding script:
     ```
 
 3. After the script run, enter `exit`.
+
 {% endcollapsible %}
 
 ### Back up sales data {#sales-backup}
@@ -258,7 +259,7 @@ mysqldump -u <your database root username> -p <your main magento DB name> sequen
 
 This script restores sales data in your quote database.
 
-#### NDB requirement
+#### NDB requirement {#sql-sales-restore-ndb-req}
 
 If you are using a [Network Database (NDB)](http://dev.mysql.com/doc/refman/5.6/en/mysql-cluster.html) cluster:
 
@@ -341,6 +342,7 @@ Run the script as follows:
        source /root/sql-scripts/2_foreign-key-quote.sql
 
 1. After the script runs, enter `exit`.
+
 {% endcollapsible %}
 
 ### Back up quote tables
@@ -426,9 +428,9 @@ DROP TABLE sales_payment_transaction;
 DROP TABLE sales_refunded_aggregated;
 DROP TABLE sales_refunded_aggregated_order;
 DROP TABLE sales_sequence_meta;
-DROP TABLE sales_sequence_profile;  
+DROP TABLE sales_sequence_profile;
 DROP TABLE sales_shipment;
-DROP TABLE sales_shipment_comment;  
+DROP TABLE sales_shipment_comment;
 DROP TABLE sales_shipment_grid;
 DROP TABLE sales_shipment_item;
 DROP TABLE sales_shipment_track;
@@ -436,7 +438,7 @@ DROP TABLE sales_shipping_aggregated;
 DROP TABLE sales_shipping_aggregated_order;
 DROP TABLE magento_sales_creditmemo_grid_archive;
 DROP TABLE magento_sales_invoice_grid_archive;
-DROP TABLE magento_sales_order_grid_archive;  
+DROP TABLE magento_sales_order_grid_archive;
 DROP TABLE magento_sales_shipment_grid_archive;
 DROP TABLE magento_customercustomattributes_sales_flat_order;
 DROP TABLE magento_customercustomattributes_sales_flat_order_address;
@@ -474,6 +476,7 @@ Run the script as follows:
     ```
 
 3. After the script runs, enter `exit`.
+
 {% endcollapsible %}
 
 ## Update your deployment configuration {#config-ee-multidb-config}
@@ -571,7 +574,7 @@ To use these scripts:
 1. Run each script from the `mysql>` prompt as `source <script name>`
 1. Examine the output.
 1. Copy the result of each script to another `.sql` script, removing the pipe characters (`|`).
-5.Run each script from the `mysql>` prompt as `source <script name>`.
+1. Run each script from the `mysql>` prompt as `source <script name>`.
 
     Running this second script performs the actions in your main Magento database.
 

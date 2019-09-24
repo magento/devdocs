@@ -8,7 +8,6 @@ return_to:
    title: Code Contributions
    url: contributor-guide/contributing.html
 
-
 ---
 
 The last page of a tutorial should acknowledge the reader has completed the tutorial and provide links to related information. Otherwise, add the content as you see fit.
@@ -28,10 +27,9 @@ Parameter | Description
 `return_to:` | Defines the tutorial's parent page. The parent page title is displayed in the left navigation above the tutorial steps. Do not specify a value for the `return_to:` parameter. Instead, specify values for these second-level parameters:<br/><br/>`title:` The title of the parent topic<br/><br/>`url:` The URL of the parent topic
 `ee_only:` | Optional. If set to `true`, graphics/cues indicating that the article applies to {{site.data.var.ee}} are displayed on devdocs.
 
-
 Example:
 
-```
+```yaml
 layout: tutorial
 level3_subgroup: order-tutorial
 title: Step 9. Create a shipment

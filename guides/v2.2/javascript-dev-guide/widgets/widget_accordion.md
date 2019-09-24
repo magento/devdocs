@@ -4,14 +4,12 @@ subgroup: 3_Widgets
 title: Accordion widget
 ---
 
-## Overview
-
 Magento accordion widget is an [extension](https://glossary.magento.com/extension) of the [Magento Tabs widget].
 
 Accordions are generally used to break content into multiple sections that can be swapped to save space.
 
 The accordion [widget](https://glossary.magento.com/widget) source is [lib/web/mage/accordion.js].
-                                                                                                                  
+
 ## Initialize the accordion widget {#accordion_init}
 
 ### Initialize accordion in JS components
@@ -25,6 +23,7 @@ $("#element").accordion();
 ```
 
 Where:
+
 - `#element` is the selector of the element for accordion is initialized.
 - `#element` has children with the following attributes specified:
 
@@ -199,7 +198,7 @@ The accordion widget subscribes to the same events as the [Tabs widget]({{page.b
 
 ### `beforeOpen callback`
 
-Called before the content is opened. 
+Called before the content is opened.
 
 Example of adding a callback to `beforeOpen` events:
 

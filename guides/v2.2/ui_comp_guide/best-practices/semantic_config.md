@@ -88,6 +88,7 @@ When editing XML configuration files in an IDE, the autocomplete feature prompts
 When editing XML configuration files in an IDE, you get visual notifications if the name of a node or attribute is misspelled, or a required attribute is missing. You can also validate the complete file, by clicking **Validate** in the context menu.
 
 {% collapsible Illustration %}
+
 * If the node name is misspelled:
 
 ![first_way_ui_components_declaration]({{ site.baseurl }}/common/images/ui_comps/validation1.png){:width="410px"}
@@ -109,7 +110,6 @@ When editing XML configuration files in an IDE, you get visual notifications if 
 
 {:.bs-callout .bs-callout-info}
 To use the autocomplete and validation features in your IDE, generate the URN as described in the [URN highlighter] topic.
-
 
 <!--Link Declarations -->
 

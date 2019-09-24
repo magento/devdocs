@@ -37,7 +37,7 @@ In a [theme directory][], stylesheets are stored in the following locations:
 <tr>
 <td> <code>/web/css</code>
    </td>
-   <td> 
+   <td>
 Contains the following:
 <ul>
 <li>
@@ -63,9 +63,9 @@ Contains the following:
 
 ## Include CSS {#fedg_css-in-themes_xml}
 
-In the Magento application, the recommended way to include stylesheets is to specify them in [layout](https://glossary.magento.com/layout) files. 
+In the Magento application, the recommended way to include stylesheets is to specify them in [layout](https://glossary.magento.com/layout) files.
 
-Usually, the stylesheets you include should be available for all store pages. To achieve this, include your CSS in `default_head_blocks.xml` of the `Magento_Theme` module, which defines the default `<head>` page section for all Magento pages. 
+Usually, the stylesheets you include should be available for all store pages. To achieve this, include your CSS in `default_head_blocks.xml` of the `Magento_Theme` module, which defines the default `<head>` page section for all Magento pages.
 The recommended way to do this is adding an [extending]({{ page.baseurl }}/frontend-dev-guide/layouts/layout-extend.html) `default_head_blocks.xml` in your theme, and including the required stylesheets in this file.
 
 Your custom `default_head_blocks.xml` should be located as follows:
@@ -74,10 +74,9 @@ Your custom `default_head_blocks.xml` should be located as follows:
 
 To include a CSS file, add the `<css src="<path>/<file>" media="print|<option>"/>` block in `<head>` section in a layout file. `<path>` is specified relative to the theme web directory (`<theme_dir>/web`)
 
-For example, the following illustrates how stylesheets are included in the default Blank theme: 
+For example, the following illustrates how stylesheets are included in the default Blank theme:
 
 [`/Magento_Theme/layout/default_head_blocks.xml`]
-
 
 ```xml
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
@@ -104,8 +103,6 @@ To include an external CSS file, add `<css src="URL to External Source" src_type
 
 {:.bs-callout .bs-callout-info}
 If the system does not find the included CSS files, it searches for the same file names with a `.less` extension. This is part of the built-in preprocessing mechanism. You can find more information about it in the [CSS Preprocessing] topic.
-
-
 
 [layout files]: {{page.baseurl}}/frontend-dev-guide/layouts/layout-overview.html
 [theme directory]: {{page.baseurl}}/frontend-dev-guide/themes/theme-structure.html

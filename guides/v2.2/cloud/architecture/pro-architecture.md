@@ -5,18 +5,19 @@ redirect_from:
   - /guides/v2.2/cloud/discover-arch.html
   - /guides/v2.2/cloud/reference/discover-arch.html
   - /guides/v2.3/cloud/reference/discover-arch.html
+  - /guides/v2.2/cloud/architecture/pro-architecture-legacy.html
+  - /guides/v2.3/cloud/architecture/pro-architecture-legacy.html
+
 functional_areas:
   - Cloud
 ---
 
 Your {{site.data.var.ece}} Pro architecture supports a maximum of **eight** environments that you can use to develop, test, and launch your store. Each environment contains a database and a web server:
 
--   **Integration**—Provides a single environment branch, and you can create up to four additional, environment branches. This allows for a maximum of five _active_ branches deployed to Platform-as-a-Service (PaaS) containers.
--   **Staging**—Provides a single environment branch deployed to dedicated Infrastructure-as-a-Service (IaaS) containers.
--   **Production**—Provides a single environment branch deployed to dedicated Infrastructure-as-a-Service (IaaS) containers.
--   **Global Master**—Provides a `master` branch deployed to Platform-as-a-Service (PaaS) containers.
-
-{% include cloud/note-pro-legacy.md %}
+- **Integration**—Provides a single environment branch, and you can create up to four additional, environment branches. This allows for a maximum of five _active_ branches deployed to Platform-as-a-Service (PaaS) containers.
+- **Staging**—Provides a single environment branch deployed to dedicated Infrastructure-as-a-Service (IaaS) containers.
+- **Production**—Provides a single environment branch deployed to dedicated Infrastructure-as-a-Service (IaaS) containers.
+- **Global Master**—Provides a `master` branch deployed to Platform-as-a-Service (PaaS) containers.
 
 The following table summarizes the differences between environments:
 
@@ -88,7 +89,7 @@ Developers use the Integration environment to develop, deploy, and test:
 
 The Integration environment runs in a Linux container (LXC) on a grid of servers known as Platform-as-a-Service (PaaS). Each environment includes a web server and database to test your site.
 
-{: .bs-callout .bs-callout-info}
+{: .bs-callout-info }
 The Integration environment does not support all services. For example, the Fastly CDN is not accessible in an Integration environment.
 
 ### Global Master
@@ -141,7 +142,6 @@ Weeks 2 to 6 | One backup per week
 Weeks 8 to 12 | One bi-weekly backup
 Weeks 12 to 22 | One backup per month
 
-
 {{site.data.var.ece}} creates the backup using snapshots to encrypted elastic block storage (EBS) volumes. An EBS snapshot is immediate, but the time it takes to write to the simple storage service (S3) depends on the volume of changes.
 
 -   **Recovery Point Objective (RPO)**—is 1 hour for the first 24 hours; after which, the RPO is 6 hours (maximum time to last backup).
@@ -167,6 +167,7 @@ The following figure shows the technologies used in the Production environment:
 ![Production technology stack]({{ site.baseurl }}/common/images/cloud_stack-diagram.png)
 
 {{site.data.var.ee}} can scale from the smallest Pro12 cluster to the largest Pro120 cluster.
+
 -   Pro12 offers a 12-CPU (4 x 3 nodes) and 48GB RAM (16 x 3 nodes)
 -   Pro120 offers 120 CPU (40 x 3 nodes) up to 480GB RAM (160 x 3 nodes)
 

@@ -312,7 +312,6 @@ The `GET <host>/rest/<store_code>/V1/bundle-products/24-WG080/options/all` call 
 
 For this example, we'll configure the Sprite Yoga Companion Kit as follows:
 
-
 * 65 cm Sprite Stasis Ball (`id`: `2`)
 * Sprite Foam Yoga Brick (`id`: `4`)
 * 8 ft Sprite Yoga strap (`id`: `6`)
@@ -424,4 +423,4 @@ For this example, we'll configure the Sprite Yoga Companion Kit as follows:
 
 ### Verify this step {#verify-step}
 
-[Sign in](https://glossary.magento.com/sign-in) as the customer and click on the [shopping cart](https://glossary.magento.com/shopping-cart). All the items you added are displayed.
+[Sign in](https://glossary.magento.com/sign-in-sign-out) as the customer and click on the [shopping cart](https://glossary.magento.com/shopping-cart). All the items you added are displayed.

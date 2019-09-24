@@ -15,12 +15,18 @@ For testing the Magento application, see the [Magento Functional Testing Framewo
 
 Before you run functional tests, you must prepare your environment with the following steps.
 
+1.  Clone the {{site.data.var.ct}} GitHub repository.
+
+    ```bash
+    git clone git@github.com:magento/ece-tools.git
+    ```
+
 1.  Stop all services that use the following ports:
 
     -  `80`—varnish
     -  `443`—web, tls
     -  `3306`—apache, mysql
-    
+
 1.  Update the hosts file.
 
     Before you begin, you must add the following hostname to your `/etc/hosts` file:
@@ -57,7 +63,7 @@ Before you run functional tests, you must prepare your environment with the foll
 
 The `codeception.dist.yml` file in the `{{site.data.var.ct}}` root directory contains the global testing configuration. See the [`{{site.data.var.ct}}` repository](https://github.com/magento/ece-tools/blob/develop/codeception.dist.yml).
 
-By default, functional tests produce a short output. You can receive a more detailed output by editing the `codeception.dist.yml` file to set the `printOutput:` property to `true`. 
+By default, functional tests produce a short output. You can receive a more detailed output by editing the `codeception.dist.yml` file to set the `printOutput:` property to `true`.
 
 ```yaml
 modules:
@@ -92,7 +98,7 @@ Acceptance Tests (1) -----------------------------------------------------------
 --------------------------------------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
 PostDeployCest: Test post deploy | {"ADMIN_EMAIL":"admin@example.com"}
- [Magento\MagentoCloud\Test\Functional\Robo\Tasks\GenerateDockerCompose] Running ./bin/ece-tools docker:build 
+ [Magento\MagentoCloud\Test\Functional\Robo\Tasks\GenerateDockerCompose] Running ./bin/ece-tools docker:build
  --mode=functional --php=7.2
 ...
 ...
@@ -102,7 +108,7 @@ PostDeployCest: Test post deploy | {"ADMIN_EMAIL":"admin@example.com"}
 
 ### Run all tests
 
-The following list provides the commands to run all available tests for each version of PHP. 
+The following list provides the commands to run all available tests for each version of PHP.
 
 -  **PHP 7.0**
 

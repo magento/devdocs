@@ -4,8 +4,6 @@ subgroup: 3_Widgets
 title: Confirmation widget
 ---
 
-## Overview
-
 The Magento confirmation widget implements a modal pop-up window with the cancel and confirmation button.It is an [extension](https://glossary.magento.com/extension) of the [Magento modal widget].
 
 The confirmation [widget](https://glossary.magento.com/widget) source is [`<Magento_Ui_module_dir>/view/base/web/js/modal/confirm.js`].
@@ -30,10 +28,12 @@ $('#confirm_init').confirm({
 ```
 
 **Example2**: standalone initialization
+
 ```javascript
 require([
+    'jquery',
     'Magento_Ui/js/modal/confirm'
-], function(confirmation) { // Variable that represents the `confirm` widget
+], function($, confirmation) { // Variable that represents the `confirm` widget
 
     confirmation({
         title: $.mage.__('Some title'),
@@ -58,6 +58,8 @@ For details about how to initialize a widget in a`.phtml` template, refer to the
 -   [content](#confirm_content)
 -   [focus](#confirm_focus)
 -   [title](#confirm_title)
+-   [modalClass](#confirm_modalClass)
+-   [buttons](#confirm_buttons)
 
 ### `actions` {#confirm_actions}
 Widget callbacks.
@@ -73,7 +75,7 @@ actions: {
 }
 ```
 
-### autoOpen {#confirm_autoopen}
+### `autoOpen` {#confirm_autoopen}
 
 Automatically open the confirmation window when the widget is initialized.
 
@@ -81,7 +83,30 @@ Automatically open the confirmation window when the widget is initialized.
 
 **Default value**: `false`
 
-### clickableOverlay {#confirm_clickableOverlay}
+### `buttons` {#confirm_buttons}
+The buttons list.
+
+**Type**: Array of Objects.
+
+**Default value**:
+
+```javascript
+buttons: [{
+    text: $t('Cancel'),
+    class: 'action-secondary action-dismiss',
+    click: function (event) {
+        this.closeModal(event);
+    }
+}, {
+    text: $t('OK'),
+    class: 'action-primary action-accept',
+    click: function (event) {
+        this.closeModal(event, true);
+    }
+}]
+```
+
+### `clickableOverlay` {#confirm_clickableOverlay}
 
 Close the confirmation window when a user clicks on the overlay.
 
@@ -109,21 +134,27 @@ The title of the confirmation window.
 
 **Default value**: `''`
 
+### `modalClass` {#confirm_modalClass}
+
+The CSS class of the confirm window.
+
+**Type**: String.
+
+**Default value**: `'confirm'`
+
 ## Events {#confirm_events}
 
 The confirmation widget implements the following events:
 
 - `confirm` callback: called when the confirmation button is clicked.
 - `cancel` callback: called when the cancel button is clicked.
-- `always` callback.
+- `always` callback: called when the popup is closed.
 
 ## Keyboard navigation {#confirm_key_navigation}
 
 The keyboard navigation for the alert windows is similar to the [navigation of the modal widget].
 
-## Code Sample
-
-### Code sample of standalone initialization
+**Example 2**: standalone initialization
 
 ```html
 <div class="confirmation-modal-content">
@@ -141,16 +172,41 @@ require([
         title: $.mage.__('Confirmation Title'),
         content: $('.confirmation-modal-content'),
         actions: {
-            confirm: function(){}, //callback on 'Ok' button click
-            cancel: function(){}, //callback on 'Cancel' button click
-            always: function(){}
-        }
+            confirm: function() {
+                // do something when the confirmation button is clicked
+            },
+            cancel: function() {
+                // do something when the cancel button is clicked
+            },
+            always: function() {
+                // do something when the modal is closed
+            }
+        },
+        buttons: [{
+            text: $.mage.__('Cancel'),
+            class: 'action-secondary action-dismiss',
+            click: function (event) {
+                this.closeModal(event);
+            }
+        }, {
+            text: $.mage.__('OK'),
+            class: 'action-primary action-accept',
+            click: function (event) {
+                this.closeModal(event, true);
+            }
+        }, {
+            text: $.mage.__('New Action'),
+            class: 'action primary action-new',
+            click: function (event) {
+                // New action
+            }
+        }]
     });
 });
 </script>
 ```
 
-### Code sample of initialization on an element
+**Example 1**: initialization on an element
 
 ```html
 <div class="confirmation-modal-content">
@@ -163,14 +219,39 @@ require([
     'Magento_Ui/js/modal/confirm'
 ], function ($) {
     'use strict';
-    
+
     $('.confirmation-modal-content').confirm({
-        title: 'Confirmation Title',
+        title: $.mage.__('Confirmation Title'),
         actions: {
-            confirm: function(){}, //callback on 'Ok' button click
-            cancel: function(){}, //callback on 'Cancel' button click
-            always: function(){}
-        }
+            confirm: function() {
+                // do something when the confirmation button is clicked
+            },
+            cancel: function() {
+                // do something when the cancel button is clicked
+            },
+            always: function() {
+                // do something when the modal is closed
+            }
+        },
+        buttons: [{
+            text: $.mage.__('Cancel'),
+            class: 'action-secondary action-dismiss',
+            click: function (event) {
+                this.closeModal(event);
+            }
+        }, {
+            text: $.mage.__('OK'),
+            class: 'action primary action-accept',
+            click: function (event) {
+                this.closeModal(event, true);
+            }
+        }, {
+            text: $.mage.__('New Action'),
+            class: 'action new',
+            click: function (event) {
+                // New action
+            }
+        }]
     });
 });
 </script>

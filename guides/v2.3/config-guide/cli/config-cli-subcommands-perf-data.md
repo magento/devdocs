@@ -126,7 +126,7 @@ For example, `/var/www/html/magento2/setup/performance-toolkit/profiles/ce`
             <td><p>20</p></td>
             <td><p>20</p></td>
             <td><p>20</p></td>
-            <td><p>20</p></td>		
+            <td><p>20</p></td>
         </tr>
         <tr>
             <td><p>cart_price_rules_floor</p></td>
@@ -134,7 +134,7 @@ For example, `/var/www/html/magento2/setup/performance-toolkit/profiles/ce`
             <td><p>2</p></td>
             <td><p>2</p></td>
             <td><p>2</p></td>
-            <td><p>2</p></td>		
+            <td><p>2</p></td>
         </tr>
         <tr>
             <td><p>customers</p></td>
@@ -142,7 +142,7 @@ For example, `/var/www/html/magento2/setup/performance-toolkit/profiles/ce`
             <td><p>2,000</p></td>
             <td><p>2,000</p></td>
             <td><p>5,000</p></td>
-            <td><p>10,000</p></td>		
+            <td><p>10,000</p></td>
         </tr>
         <tr>
             <td><p>tax rates</p></td>
@@ -150,7 +150,7 @@ For example, `/var/www/html/magento2/setup/performance-toolkit/profiles/ce`
             <td><p>40,000</p></td>
             <td><p>40,000</p></td>
             <td><p>40,000</p></td>
-            <td><p>40,000</p></td>		
+            <td><p>40,000</p></td>
         </tr>
         <tr>
             <td><p>orders</p></td>
@@ -158,7 +158,7 @@ For example, `/var/www/html/magento2/setup/performance-toolkit/profiles/ce`
             <td><p>50,000</p></td>
             <td><p>50,000</p></td>
             <td><p>100,000</p></td>
-            <td><p>150,000</p></td>		
+            <td><p>150,000</p></td>
         </tr>
 	</tbody>
 </table>
@@ -172,40 +172,46 @@ Run the command as discussed in this section. After the command runs, you must [
 
 Command options:
 
-	bin/magento setup:perf:generate-fixtures {path to profile}
+```bash
+bin/magento setup:perf:generate-fixtures {path to profile}
+```
 
 Where `<path to profile>` specifies the absolute file system path to, and name of, a profile.
 
 For example,
 
-	bin/magento setup:perf:generate-fixtures /var/www/html/magento2/setup/performance-toolkit/profiles/ce/small.xml
+```bash
+bin/magento setup:perf:generate-fixtures /var/www/html/magento2/setup/performance-toolkit/profiles/ce/small.xml
+```
 
 Sample output for the small profile:
 
-	Generating profile with following params:
-     |- Websites: 1
-     |- Store Groups Count: 1
-     |- Store Views Count: 1
-     |- Categories: 30
-     |- Attribute Sets (Default): 3
-     |- Attribute Sets (Extra): 10
-     |- Simple products: 800
-     |- Configurable products: 0
-     |--- 5 products for attribute set "Attribute Set 1"
-     |--- 5 products for attribute set "Attribute Set 2"
-     |--- 5 products for attribute set "Attribute Set 3"
-     |--- 40 products for attribute set "Dynamic Attribute Set 1-24"
-     |- Product images: 100, 3 per product
-     |- Customers: 200
-     |- Cart Price Rules: 20
-     |- Catalog Price Rules: 20
-     |- Catalog Target Rules: 5
-     |- Orders: 80
-    Generating websites, stores and store views...  done in <time>
-    Generating categories...  done in <time>
-    Generating attribute sets...  done in <time>
-    Generating simple products...  done in <time>
-	... more ...
+```terminal
+Generating profile with following params:
+    |- Websites: 1
+    |- Store Groups Count: 1
+    |- Store Views Count: 1
+    |- Categories: 30
+    |- Attribute Sets (Default): 3
+    |- Attribute Sets (Extra): 10
+    |- Simple products: 800
+    |- Configurable products: 0
+    |--- 5 products for attribute set "Attribute Set 1"
+    |--- 5 products for attribute set "Attribute Set 2"
+    |--- 5 products for attribute set "Attribute Set 3"
+    |--- 40 products for attribute set "Dynamic Attribute Set 1-24"
+    |- Product images: 100, 3 per product
+    |- Customers: 200
+    |- Cart Price Rules: 20
+    |- Catalog Price Rules: 20
+    |- Catalog Target Rules: 5
+    |- Orders: 80
+Generating websites, stores and store views...  done in <time>
+Generating categories...  done in <time>
+Generating attribute sets...  done in <time>
+Generating simple products...  done in <time>
+... more ...
+```
 
 Current supported fixtures:
 
@@ -317,7 +323,7 @@ Generates Configurable products. Generated configurable options are not displaye
 
 We support the following XML node formats:
 
-*   Distribution per Default and pre-defined attribute sets:   
+*   Distribution per Default and pre-defined attribute sets:
 
     <pre class="no-copy">&lt;!-- Number of configurable products -->
     &lt;configurable_products>{int}&lt;/configurable_products></pre>
@@ -522,7 +528,7 @@ Generates tax rates. XML profile node:
 <pre class="no-copy">&lt;!-- Accepts name of [csv](https://glossary.magento.com/csv) file with tax rates (&lt;path to magento folder>/setup/src/Magento/Setup/Fixtures/_files) -->
 &lt;tax_rates_file>{csv file name}&lt;/tax_rates_file></pre>
 
-## Additional information    
+## Additional information
 
 Additional configuration information:
 

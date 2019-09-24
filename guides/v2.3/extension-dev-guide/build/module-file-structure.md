@@ -6,7 +6,6 @@ title: Create your component file structure
 
 In this section, we go over the different file structures for the component types. The Magento application looks for the files that make up a component *including configuration files* in particular places inside the component file structure. Follow the predefined file structures for the component type you are developing to ensure that it works as expected.
 
-
 {% include php-dev/component-root-2.3.md %}
 
 ### Module file structure
@@ -44,7 +43,7 @@ Additional folders can be added for configuration and other ancillary functions 
 
 A typical [theme](https://glossary.magento.com/theme) file structure can look like the following:
 
-~~~
+```tree
 ├── composer.json
 ├── etc
 │   └── view.xml
@@ -80,7 +79,7 @@ A typical [theme](https://glossary.magento.com/theme) file structure can look li
         ├── navigation-menu.js
         ├── responsive.js
         └── theme.js
-~~~
+```
 
 #### Common directories
 {:.no_toc}
@@ -100,7 +99,6 @@ Typical theme directories are:
 For more details on the theme folder structure, see [Magento theme structure]({{ page.baseurl }}/frontend-dev-guide/themes/theme-structure.html).
 
 {% include php-dev/lang-pack-file-struct.md %}
-
 
 **Next**
 

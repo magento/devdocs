@@ -92,11 +92,16 @@ If Varnish fails to start, try running it from the command line as follows:
 
 This should display error messages.
 
-{:.bs-callout .bs-callout-info}
-If Varnish does not start as a service, you must configure SELinux rules to allow it to run. Consult the following resources:<br><br>
--   [flatlinesecurity](http://flatlinesecurity.com/posts/varnish-4-selinux/)
--   [CentOS wiki](https://wiki.centos.org/HowTos/SELinux)</li>
--   [CentOS documentation](https://www.centos.org/docs/5/html/Deployment_Guide-en-US/sec-sel-policy-customizing.html)
+{%
+include note.html
+type='info'
+content='If Varnish does not start as a service, you must configure SELinux rules to allow it to run. Consult the following resources:
+
+-  [flatlinesecurity](http://flatlinesecurity.com/posts/varnish-4-selinux/)
+-  [CentOS wiki](https://wiki.centos.org/HowTos/SELinux)
+-  [CentOS documentation](https://www.centos.org)'
+
+%}
 
 ## Verify Varnish is working {#config-varnish-verify}
 
@@ -204,7 +209,7 @@ If headers like these do *not* display, stop Varnish, check your `default.vcl`, 
 
 #### Look at HTML response headers
 
-There are several ways to look at response headers, including using a browser [plug-in](https://glossary.magento.com/plug-in) like Live HTTP Headers ([Firefox](https://addons.mozilla.org/en-GB/firefox/addon/live-http-headers/)) or a browser inspector.
+There are several ways to look at response headers, including using a browser [plug-in](https://glossary.magento.com/plug-in) or a browser inspector.
 
 The following example uses `curl`. You can enter this command from any machine that can access the Magento server using HTTP.
 

@@ -1,6 +1,6 @@
 
-
 {% collapsibleh2 Magento Open Source 2.1 Release Notes %}
+
 *	[Version 2.1.12]({{ page.baseurl }}/release-notes/ReleaseNotes2.1.12CE.html){:target="_blank"}
 *	[Version 2.1.11]({{ page.baseurl }}/release-notes/ReleaseNotes2.1.11CE.html){:target="_blank"}
 *	[Version 2.1.10]({{ page.baseurl }}/release-notes/ReleaseNotes2.1.10CE.html){:target="_blank"}
@@ -17,8 +17,8 @@
 
 {% endcollapsibleh2 %}
 
-
 {% collapsibleh2 Magento Commerce 2.1 Release Notes %}
+
 *	[Version 2.1.12]({{ page.baseurl }}/release-notes/ReleaseNotes2.1.12EE.html){:target="_blank"}
 *	[Version 2.1.11]({{ page.baseurl }}/release-notes/ReleaseNotes2.1.11EE.html){:target="_blank"}
 *	[Version 2.1.10]({{ page.baseurl }}/release-notes/ReleaseNotes2.1.10EE.html){:target="_blank"}

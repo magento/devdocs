@@ -44,17 +44,20 @@ bin/magento list
 `action` is an action the command does.
 
 ### Examples
-	// general commands: just a group and an action
-	magento setup:install
-	magento module:status
 
-	// set of commands with a subject
-	magento setup:config:set
-	magento setup:config:delete
-	magento setup:db-schema:upgrade
-	magento setup:db-data:upgrade
+```terminal
+// general commands: just a group and an action
+magento setup:install
+magento module:status
 
-{: .bs-callout .bs-callout-info }
+// set of commands with a subject
+magento setup:config:set
+magento setup:config:delete
+magento setup:db-schema:upgrade
+magento setup:db-data:upgrade
+```
+
+{: .bs-callout-info }
 `db-schema` and `db-data` are examples of compound words.
 
 ## Command options and arguments {#cli-args}
@@ -120,7 +123,7 @@ For example,
 	magento dev:theme:create --extend-from=Magento/luma frontend vendor themename
 ```
 
-```bash	
+```bash
 	magento module:disable -f Magento_Cms
 ```
 
@@ -141,14 +144,16 @@ Use options for:
 
 Example:
 
-	// correct
-	magento dev:theme:create --extend-from=Magento/luma frontend Foo bar
-	magento module:disable --force Magento_Catalog
-	magento module:disable -f Magento_Catalog
+```terminal
+// correct
+magento dev:theme:create --extend-from=Magento/luma frontend Foo bar
+magento module:disable --force Magento_Catalog
+magento module:disable -f Magento_Catalog
 
-	//incorrect
-	magento module:disable --force=1 Magento_Catalog
-	magento module:disable -f=yes Magento_Catalog
+//incorrect
+magento module:disable --force=1 Magento_Catalog
+magento module:disable -f=yes Magento_Catalog
+```
 
 ## Recommendations to avoid naming collisions {#cli-collision}
 
@@ -158,14 +163,16 @@ To avoid naming your command the same as another command, we recommend:
 
 *	Restricting command names to start with a unique name, such as a vendor name. The [usability](https://glossary.magento.com/usability) of the command depends on what you choose for a vendor name.
 
-	For example, `myname:dev:theme:create` is not obvious and is hard to remember.
+    For example, `myname:dev:theme:create` is not obvious and is hard to remember.
 
-	The vendor name doesn't have to start the command name; it could be in the middle. This way, related commands are grouped together.
+    The vendor name doesn't have to start the command name; it could be in the middle. This way, related commands are grouped together.
 
-	Examples:
+    Examples:
 
-		dev:myname:theme:create
-		dev:myname:theme:delete
+    ```terminal
+    dev:myname:theme:create
+    dev:myname:theme:delete
+    ```
 
 #### Related topic
 

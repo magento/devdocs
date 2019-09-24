@@ -13,7 +13,7 @@ Install [Java](https://help.ubuntu.com/community/Java) to work with Selenium Ser
 
 Specific versions of the Selenium Server are compatible with specific versions of browsers. [Read more about compatibility of browser version and Selenium server version.](http://docs.seleniumhq.org/about/platforms.jsp)
 
-{: .bs-callout .bs-callout-info }
+{: .bs-callout-info }
 Use Mozilla Firefox ESR 45 with Selenium 2.53.1. Later versions have compatibility issues.
 
 Enter in terminal:
@@ -37,7 +37,7 @@ java -jar <path_to_selenium_directory>/selenium-server.jar -Dwebdriver.chrome.dr
 ```
 
 ### Selenium 3
-    
+
 For Selenium 3 add the web driver to the directory where `selenium-server.jar` is located and run tests without additional argument:
 
 ```bash
@@ -62,7 +62,6 @@ php generate.php
 
 [&lt;&lt; Prepare Magento application]({{ page.baseurl }}/mtf/mtf_quickstart/mtf_quickstart_magento.html)| [ Test run &gt;&gt;]({{ page.baseurl }}/mtf/mtf_quickstart/mtf_quickstart_runtest.html)
 
-
 <!-- LINK DEFINITIONS -->
 
 <!-- Devdocs -->
@@ -73,7 +72,6 @@ php generate.php
 <!-- Internet -->
 [Selenium project website]: http://www.seleniumhq.org/download/
 [web driver]: http://docs.seleniumhq.org/about/platforms.jsp
-
 
 <!-- ABBREVIATIONS -->
 *[FTF]: Functional Testing Framework

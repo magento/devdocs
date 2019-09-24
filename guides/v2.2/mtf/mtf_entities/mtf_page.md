@@ -26,7 +26,6 @@ The general flow is the following:
 
 3. Run the page generator
 
-
 Let's see an example of the Magento [Widget](https://glossary.magento.com/widget) page:
 
 `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/Widget/Test/Page/Adminhtml/WidgetInstanceIndex.xml`
@@ -135,9 +134,9 @@ For example, we have `dev/tests/functional/tests/app/Magento/Catalog/Test/Page/P
     <page name="CatalogProductView" area="Product" mca="catalog/product/view" module="Magento_Catalog">
         <block name="viewBlock" class="Magento\Catalog\Test\Block\Product\View" locator="#maincontent" strategy="css selector" />
         <block name="additionalInformationBlock" class="Magento\Catalog\Test\Block\Product\Additional" locator="#additional" strategy="css selector" />
-        <block name="customOptionsBlock" class="Magento\Catalog\Test\Block\Product\View\CustomOptions" locator="#product-options-wrapper" strategy="css selector" />        
+        <block name="customOptionsBlock" class="Magento\Catalog\Test\Block\Product\View\CustomOptions" locator="#product-options-wrapper" strategy="css selector" />
         <block name="messagesBlock" class="Magento\Backend\Test\Block\Messages" locator=".page.messages" strategy="css selector" />
-        <block name="titleBlock" class="Magento\Theme\Test\Block\Html\Title" locator=".page-title-wrapper h1.page-title .base" strategy="css selector" />        
+        <block name="titleBlock" class="Magento\Theme\Test\Block\Html\Title" locator=".page-title-wrapper h1.page-title .base" strategy="css selector" />
     </page>
 </config>
 
@@ -363,7 +362,7 @@ To use the `editForm` block from the Magento_NewModule, we must follow:
 
 ```
 
-**Step 3.** Add blocks that you want to [redirect](https://glossary.magento.com/redirect).
+**Step 3.** Add blocks that you want to redirect.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>

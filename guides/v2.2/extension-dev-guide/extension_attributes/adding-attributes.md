@@ -6,12 +6,12 @@ menu_title: Adding extension attributes to entity
 menu_order: 20
 ---
 
-Third-party developers cannot change the [API](https://glossary.magento.com/api) Data interfaces defined in the Magento Core code.  However, most of these entities have a feature called [extension attributes](https://glossary.magento.com/extension-attributes).  Check the interface for the methods `getExtensionAttributes()` and `setExtensionAttributes()` to determine if they are available for the entity.
+Third-party developers cannot change the [API](https://glossary.magento.com/api) Data interfaces defined in the Magento Core code.  However, most of these entities have a feature called [extension attributes](https://glossary.magento.com/extension-attribute).  Check the interface for the methods `getExtensionAttributes()` and `setExtensionAttributes()` to determine if they are available for the entity.
 
-{: .bs-callout .bs-callout-info }
+{: .bs-callout-info }
 We will demonstrate how to add extension attributes to a Product entity, Product Repository and [Web Api](https://glossary.magento.com/web-api) example.
 
-In order to retrieve a product or a list of products from the Magento API, you need to make an API request to the appropriate service (the Product Repository in this case).  
+In order to retrieve a product or a list of products from the Magento API, you need to make an API request to the appropriate service (the Product Repository in this case).
 The response to these requests will return objects with the following structure:
 
 ### Product response:
@@ -69,10 +69,11 @@ public function afterGet
 }
 ```
 
-This is the simplest way to add extension attributes without causing a conflict:  
-- We get the [entity's](https://glossary.magento.com/entity's) extension attributes, if they are already set.
- - We add our [extension attribute](https://glossary.magento.com/extension-attribute).
-- Finally set the extension attribute on the entity with ours included.  
+This is the simplest way to add extension attributes without causing a conflict:
+
+- We get the [entity's](https://glossary.magento.com/entity) extension attributes, if they are already set.
+- We add our [extension attribute](https://glossary.magento.com/extension-attribute).
+- Finally set the extension attribute on the entity with ours included.
 
 AfterGetList is similar to afterGet.
 
@@ -151,6 +152,7 @@ Now we need to bind our plugin to `ProductInterface`:
 ## Extension Attributes Configuration:
 
 For scalar attributes we can use next configuration:
+
 ```xml
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Api/etc/extension_attributes.xsd">
     <extension_attributes for="Magento\Catalog\Api\Data\ProductInterface">
@@ -161,6 +163,7 @@ For scalar attributes we can use next configuration:
 ```
 
 For non-scalar attributes:
+
 ```xml
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Api/etc/extension_attributes.xsd">
     <extension_attributes for="Magento\Catalog\Api\Data\ProductInterface">

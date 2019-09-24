@@ -37,7 +37,7 @@ The `source_code` values will be used in subsequent steps.
 **Scope**
 
 `all` store views
- 
+
 **Headers**
 
 `Content-Type`: `application/json`

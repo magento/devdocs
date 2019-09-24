@@ -9,8 +9,8 @@ contributor_link: https://www.atwix.com/
 
 This topic provides information about product layouts files. Magento allows you to customize view pages for all product types in the common layout files or particular product types.
 
-## Product view page 
- 
+## Product view page
+
 Layout file | Description
 --- | ---
 `catalog_product_view.xml` | Common layout. Affects all product types
@@ -30,6 +30,7 @@ Layout file | Description
 `checkout_cart_configure_type_configurable.xml` | Layout from this file is applied to `configurable` product only
 `checkout_cart_configure_type_downloadable.xml` | Layout from this file is applied to `downloadable` product only
 `checkout_cart_configure_type_simple.xml` | Layout from this file is applied to `simple` product only
+`checkout_cart_item_renderers.xml` | Layout from this file is applied to renderer's cart page items
 
 ## Wishlist item configure page
 

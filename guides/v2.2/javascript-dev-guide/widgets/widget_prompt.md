@@ -4,8 +4,6 @@ subgroup: 3_Widgets
 title: Prompt widget
 ---
 
-## Overview
-
 The Magento prompt [widget](https://glossary.magento.com/widget) implements a modal pop-up window with an input field, and a cancel and a confirmation button.
 
 It extends the [Magento modal widget].
@@ -134,7 +132,7 @@ The template of the prompt popup form.
 
 **Type**: String.
 
-**Default value**: 
+**Default value**:
 
 ```html
 <form <%= formAttr %>>

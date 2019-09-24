@@ -3,7 +3,7 @@ group: functional-testing-framework-guide
 title: Functional Testing Framework Entities
 ---
 
-Functional Testing Framework entities enable you to create and modify functional tests. 
+Functional Testing Framework entities enable you to create and modify functional tests.
 For example, you want to cover with functional tests the process of creation the [widget](https://glossary.magento.com/widget) [Catalog](https://glossary.magento.com/catalog) [Category](https://glossary.magento.com/category) Link.
 To do this you have to create [injectable test]({{ page.baseurl }}/mtf/mtf_entities/mtf_testcase.html).
 

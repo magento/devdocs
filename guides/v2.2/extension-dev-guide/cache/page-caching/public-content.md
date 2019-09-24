@@ -1,10 +1,6 @@
 ---
 group: php-developer-guide
 title: Public content
-redirect_from:
-  - /guides/v2.2/config-guide/cache/cache-priv-priv.html
-  - /guides/v2.2/config-guide/cache/cache-priv-context.html
-  - /guides/v2.2/config-guide/cache/cache-priv-inval.html
 ---
 
 {::options syntax_highlighter="rouge" /}
@@ -121,7 +117,7 @@ For another example of a context class, see [Magento/Framework/App/Http/Context]
 
 Use the `X-Magento-Vary` cookie to transfer context on the HTTP layer. HTTP proxies can be configured to calculate a unique identifier for cache based on the cookie and URL. For example, [our sample Varnish 4 configuration]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/PageCache/etc/varnish4.vcl#L63-L68){:target="_blank"} uses the following:
 
-```
+```conf
 sub vcl_hash {
     if (req.http.cookie ~ "X-Magento-Vary=") {
         hash_data(regsub(req.http.cookie, "^.*?X-Magento-Vary=([^;]+);*.*$", "\1"));

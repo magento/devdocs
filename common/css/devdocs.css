@@ -1,5 +1,6 @@
 .message-banner {
   margin: 0;
+  padding: 10px;
 }
 
 .page-updated {
@@ -11,4 +12,15 @@
 .page-updated img {
   width: 18px;
   height: 18px;
+}
+/* Reference styles */
+.ref-list {
+  margin-bottom: 2.5em;
+}
+
+.ref-list dt{
+  font-weight:500;
+}
+.message-banner.version-banner {
+  margin-bottom: 15px;
 }

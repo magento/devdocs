@@ -10,8 +10,7 @@ All API requests must be authenticated using [HTTP Basic Authentication](https:/
 
 First, you must create an application on the [Developer Portal](https://developer.magento.com) to obtain an application ID and secret for sandbox and production endpoints.
 
-
-{: .bs-callout .bs-callout-info }
+{: .bs-callout-info }
 Information about how to create applications will be announced when the EQP REST API is publicly released.
 
 ## Session Token
@@ -23,7 +22,7 @@ You must use an application ID and secret to obtain a session token. See the fol
 
 The following endpoint grants an application session token:
 
-```
+```http
 POST /rest/v1/apps/session/token
 ```
 
@@ -35,14 +34,14 @@ You must specify the grant type in the request body:
 }
 ```
 
-{: .bs-callout .bs-callout-info }
+{: .bs-callout-info }
 The API supports the `session` grant type only.
 
 The following example shows a request and expected response:
 
 **Request**
 
-```shell
+```bash
 curl -X POST \
      -u 'AQ17NZ49WC:8820c99614d65f923df7660276f20e029d73e2ca' \
      -H 'Content-Type: application/json' \
@@ -73,7 +72,7 @@ After obtaining a valid session token, you must use it as a bearer token in all 
 
 For example, to access a user profile with a session token:
 
-```shell
+```bash
 curl -X GET \
      -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
      https://developer-api.magento.com/rest/v1/users/MAG123456789

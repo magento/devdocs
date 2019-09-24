@@ -50,7 +50,7 @@ After your upgrade completes, you can unset the variable as follows:
 unset DATA_CONVERTER_BATCH_SIZE
 ```
 
-{: .bs-callout .bs-callout-info}
+{: .bs-callout-info }
 `DATA_CONVERTER_BATCH_SIZE` requires memory; avoid setting it to a very large value (approximately 1GB) without testing it first.
 
 ### Magento file system owner and group {#magento-owner-group}
@@ -136,12 +136,14 @@ drwxrws---. 29 magento_user apache   4096 Jun  7 07:53 vendor
 ```
 
 Here,
+
 - most of the files are `-rw-rw----`, which is 660
 - `drwxrwx---` = 770
 - `-rw-rw-rw-` = 666
 - the Magento file system owner is `magento_user`.
 
 To get more detailed information, you can optionally enter the following command:
+
 ```bash
 ls -al /var/www/html/magento2/pub
 ```
@@ -149,4 +151,3 @@ ls -al /var/www/html/magento2/pub
 Because Magento deploys static file assets to subdirectories of `pub`, it's a good idea to verify permissions and ownership there as well.
 
 For more information, see [File system permissions and ownership]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html).
-

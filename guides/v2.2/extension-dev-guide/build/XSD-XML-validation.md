@@ -15,7 +15,7 @@ Magento supported URNs begin with `urn:magento`. Magento supports two XSD refere
 * Module XSD
 * Framework XSD
 
-{: .bs-callout .bs-callout-info }
+{: .bs-callout-info }
 You cannot change the XSD for any XML files provided with the Magento application.
 
 ### Module XSD
@@ -51,7 +51,6 @@ Use URN notation to reference schema from inside a XSD document:
 
 <xs:redefine schemaLocation="urn:magento:framework:Config/etc/view.xsd">
 
-
 ```
 
 The URN resolution is invoked automatically by the libxml engine. Register the URN resolver by using `libxml_set_external_entity_loader`:
@@ -60,7 +59,7 @@ The URN resolution is invoked automatically by the libxml engine. Register the U
 libxml_set_external_entity_loader(['Magento\Framework\Config\Dom\UrnResolver', 'registerEntityLoader']);
 ```
 
-{: .bs-callout .bs-callout-info }
+{: .bs-callout-info }
 The relative path to other XSDs cannot be used from inside the XSD file, because the [entity](https://glossary.magento.com/entity) loader fails to resolve the relative path.
 
 #### Next

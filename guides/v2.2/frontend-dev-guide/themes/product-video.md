@@ -8,10 +8,10 @@ functional_areas:
 
 ## What's in this topic
 
-In Magento 2 on product pages you can add video from external resources (currently, from [YouTube](https://youtube.com) and [Vimeo](https://vimeo.com/)). Video is [added in Admin](http://docs.magento.com/m2/2.1/ee/user_guide/catalog/product-video.html?Highlight=product%20video) when creating or editing a product. 
+In Magento 2 on product pages you can add video from external resources (currently, from [YouTube](https://youtube.com) and [Vimeo](https://vimeo.com/)). Video is [added in Admin](http://docs.magento.com/m2/2.1/ee/user_guide/catalog/product-video.html?Highlight=product%20video) when creating or editing a product.
 Certain product video options can be set in the `config.xml` configuration file. These settings are not theme-specific.
 
-## Configure product video options 
+## Configure product video options
 
 You can set the following product video options:
 
@@ -43,7 +43,7 @@ You can set the following product video options:
       <td colspan="1">Display related videos.</td>
       <td colspan="1">
 Boolean
-           
+
       </td>
 <td>
 0 <br />
@@ -57,7 +57,7 @@ Boolean
       <td colspan="1">Auto re-play video.</td>
       <td colspan="1">
 Boolean
-           
+
       </td>
 <td>
 0 <br />
@@ -67,7 +67,7 @@ Boolean
   </tbody>
 </table>
 
-You can configure these options in your custom [module's](https://glossary.magento.com/module's) `config.xml` file.
+You can configure these options in your custom [module's](https://glossary.magento.com/module) `config.xml` file.
 
 Example:
 

@@ -148,19 +148,55 @@ The following code is an example of an `extension_attributes.xml` file:
 </config>
 ```
 
-Clear the `var/generated/code` directory when you run the `setup:di:compile` command. New getter and setter methods will be added in `/var/generated/code/Magento/Quote/Api/Data/AddressInterface.php` file.
+Clear the `generated/code` directory when you run the `setup:di:compile` command. New getter and setter methods will be added in `generated/code/Magento/Quote/Api/Data/AddressExtension.php` file.
 
 ## Step 5: Access the value of the custom field on server side {#access}
 
 If you completed all the steps described in the previous sections, Magento will generate the interface that includes your custom attribute and you can access your field value.
 
-You can set/get these attributes values by creating an instance of the  `Magento/Quote/Api/Data/AddressInterface.php interface`.
+You can set/get these attributes values by creating an instance of the  `Magento/Quote/Api/Data/AddressInterface.php` interface.
 
 ```php
-$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
-$addressInformation = $objectManager->create('Magento\Checkout\Api\Data\ShippingInformationInterface');
-$extAttributes = $addressInformation->getExtensionAttributes();
-$selectedShipping = $extAttributes->getCustomShippingCharge(); //get custom attribute data.
+<?php
+
+// ... //
+
+use Magento\Checkout\Api\Data\ShippingInformationInterface;
+use Magento\Framework\View\Element\Template;
+use Magento\Framework\View\Element\Template\Context;
+
+class MyBlock extends Template {
+
+    /**
+     * @var ShippingInformationInterface
+     */
+    private $_addressInformation;
+
+    /**
+     * @param Context $context
+     * @param ShippingInformationInterface $addressInformation
+     * @param array $data
+     */
+    public function __construct(
+        Context $context,
+        ShippingInformationInterface $addressInformation,
+        array $data = []
+    ) {
+        $this->_addressInformation = $addressInformation;
+        parent::__construct($context, $data);
+    }
+
+    /**
+     * Get custom Shipping Charge
+     *
+     * @return String
+     */
+    public function getShippingCharge()
+    {
+        $extAttributes = $this->_addressInformation->getExtensionAttributes();
+        return $extAttributes->getCustomField(); //get custom attribute data.
+    }
+}
 ```
 
 ### Related topics

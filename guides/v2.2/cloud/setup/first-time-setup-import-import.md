@@ -51,9 +51,9 @@ Create a remote Git reference from your Cloud Git repository to the repository c
     ```
     git remote -v
     ```
-    
+
     Verify that the remote branch configuration matches the following sample configuration, with your project name instead of `ikyyrqvlgnrai`.
-    
+
     ```
     cloud-project   ikyyrqvlgnrai@git.us.magento.cloud:ikyykimjgnrao.git (fetch)
     cloud-project   ikyyrqvlgnrai@git.us.magento.cloud:ikyykimjgnrao.git (push)
@@ -97,8 +97,8 @@ After you have completed the git reference configuration, you can import the {{s
     ```
     git push -f cloud-project master
     ```
-	
-    If the import succeeds, the {{site.data.var.ece}} environment redeploys. 
+
+    If the import succeeds, the {{site.data.var.ece}} environment redeploys.
 
     ```
     Re-deploying environment 43biovskhelhy-master-l5ut8gq.
@@ -119,7 +119,7 @@ Before you can use your existing {{site.data.var.ee}} code in {{site.data.var.ec
 
 You need the following information to complete this task:
 
--   [SSH URL]({{ page.baseurl }}/cloud/setup/first-time-setup-import-first-steps.html#ssh) for the {{site.data.var.ece}} environment 
+-   [SSH URL]({{ page.baseurl }}/cloud/setup/first-time-setup-import-first-steps.html#ssh) for the {{site.data.var.ece}} environment
 -   The database name, username, and password for the [Cloud database]({{ page.baseurl }}/cloud/setup/first-time-setup-import-first-steps.html#db-creds)
 
 {:.bs-callout .bs-callout-info}
@@ -278,7 +278,7 @@ bin/magento setup:upgrade
 ```
 
 ```bash
-bin/magento magento setup:static-content:deploy
+bin/magento setup:static-content:deploy
 ```
 
 ```bash

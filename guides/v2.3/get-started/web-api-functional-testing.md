@@ -84,6 +84,7 @@ interface AdapterInterface
 ```
 
 ## How to Run the Tests {#howto}
+
 ### Prerequisites {#prereq}
 
 1. Install the [PHP](https://glossary.magento.com/php) Soap [extension](https://glossary.magento.com/extension).
@@ -92,8 +93,7 @@ interface AdapterInterface
 
 	`extension=php_soap.dll`
 
-2. Before running the functional tests you need to clear your [cache](https://glossary.magento.com/cache).
-Now you are ready to run the tests.
+2. Before running the functional tests you need to clear your [cache](https://glossary.magento.com/cache). Now you are ready to run the tests.
 
 ### Running the Tests {#running}
 
@@ -103,6 +103,6 @@ Now you are ready to run the tests.
 
 3. Copy `/dev/tests/api-functional/config/install-config-mysql.php.dist` to `/dev/tests/api-functional/config/install-config-mysql.php`.
 
-4. Configure your DB connection and install settings in `/dev/tests/api-functional/config/install-config-mysql.php`. Specify the Magento database. The base URL to access this Magento instance must be specified copied file i.e. `phpunit_rest.xml` or `phpunit_soap.xml`.
+4. Configure your DB connection and install settings in `/dev/tests/api-functional/config/install-config-mysql.php`. Specify the Magento database. The base URL to access this Magento instance must be the same specified in the `phpunit_rest.xml` or `phpunit_soap.xml` file.
 
 5. Run `phpunit` using the `/dev/tests/api-functional/phpunit_rest.xml` or `/dev/tests/api-functional/phpunit_soap.xml` configuration file.

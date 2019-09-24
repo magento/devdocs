@@ -19,7 +19,7 @@ bin/magento indexer:info
 
 The list displays as follows:
 
-```
+```terminal
 design_config_grid                       Design Config Grid
 customer_grid                            Customer Grid
 catalog_category_product                 Category Products
@@ -58,7 +58,7 @@ bin/magento indexer:status
 
 Sample result:
 
-```
+```terminal
 +----------------------+------------------+-----------+---------------------+---------------------+
 | Title                | Status           | Update On | Schedule Status     | Schedule Updated    |
 +----------------------+------------------+-----------+---------------------+---------------------+
@@ -104,7 +104,7 @@ bin/magento indexer:reindex
 
 Sample result:
 
-```
+```terminal
 Category Products index has been rebuilt successfully in <time>
 Product Categories index has been rebuilt successfully in <time>
 Product Price index has been rebuilt successfully in <time>
@@ -140,7 +140,7 @@ For example, to set the mode by website run:
 ```bash
 bin/magento indexer:set-dimensions-mode catalog_product_price website
 ```
-To check the current mode you can use next command: 
+To check the current mode you can use next command:
 ```bash
 bin/magento indexer:show-dimensions-mode
 ```
@@ -178,7 +178,7 @@ bin/magento indexer:show-mode
 
 Sample result:
 
-```
+```terminal
 Category Products:                                 Update on Save
 Product Categories:                                Update on Save
 Product Price:                                     Update on Save
@@ -217,7 +217,7 @@ bin/magento indexer:set-mode schedule catalog_category_product catalog_product_c
 
 Sample result:
 
-```
+```terminal
 Index mode for Indexer Category Products was changed from 'Update on Save' to 'Update by Schedule'
 Index mode for Indexer Product Categories was changed from 'Update on Save' to 'Update by Schedule'
 ```

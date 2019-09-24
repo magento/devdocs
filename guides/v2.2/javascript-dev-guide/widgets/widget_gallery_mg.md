@@ -1,10 +1,8 @@
 ---
 group: javascript-developer-guide
 subgroup: 3_Widgets
-title: Magnifier widget 
+title: Magnifier widget
 ---
-
-## Overview
 
 Magnifier is a [widget](https://glossary.magento.com/widget) that allows displaying images in 100% scaled size in separate dedicated layer.
 In Magento it is used by the [gallery]({{ page.baseurl }}/javascript-dev-guide/widgets/widget_gallery.html) widget for zooming the product images on product pages.

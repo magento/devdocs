@@ -17,7 +17,7 @@ The incremental migration tool installs deltalog tables (with prefix `m2_cl_*`) 
 
 * all operations with orders in the [Magento Admin](https://glossary.magento.com/magento-admin) panel
 
-{: .bs-callout .bs-callout-info }
+{: .bs-callout-info }
 All new or updated entities entered through the Admin panel, like products and categories, are not included in incremental migration and will not be migrated.
 
 ## Before you start: routine preparations
@@ -40,8 +40,8 @@ where
 
 * `{<path to config.xml>}` is the absolute file system path to `config.xml`; this argument is required.
 
-{: .bs-callout .bs-callout-info }
-Incremental migration runs continuously until you stop it by pressing CTRL+C.
+{: .bs-callout-info }
+Incremental migration is a continuous process; it automatically restarts every 5 seconds. Use CTRL-C to abort the migration process.
 
 ## Migrate data created by 3rd party extensions {#migrate-delta-external-extensions}
 

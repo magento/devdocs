@@ -44,23 +44,26 @@ In general, it is not recommended to use the progress bar if the process can be 
 ![](img/progressbar-behavior-diagram.png)
 
 1. **Process Trigger**
-This process trigger is what the user tell system to start process. It can be anything depending on the context such as a button or a drop action.
+
+   This process trigger is what the user tell system to start process. It can be anything depending on the context such as a button or a drop action.
 
 2. **Starting State**
 
-![](img/progressbar-starting-state.png)
+   ![](img/progressbar-starting-state.png)
 
 3. **Progressing**
 
-![](img/progressbar-progressing.png)
+   ![](img/progressbar-progressing.png)
 
 4. **Success**
-Once success, the page should refresh to show success status. The success status and behavior will depend on context of the scenario. (ie. open new page, stay on the same page, success message, etc.)
+
+   Once success, the page should refresh to show success status. The success status and behavior will depend on context of the scenario. (ie. open new page, stay on the same page, success message, etc.)
 
 5. **Failed**
-The progress bar will disappeared and is replaced with this error message.
 
-![](img/progressbar-failed.png)
+   The progress bar will disappeared and is replaced with this error message.
+
+   ![](img/progressbar-failed.png)
 
 ## Variations
 

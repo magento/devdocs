@@ -10,17 +10,18 @@ This topic discusses how to use custom [JavaScript](https://glossary.magento.com
 
 We strongly recommend not changing the source code of default Magento components and widgets. All customizations must be implemented in custom modules or themes.
 
-## Add a custom JS component 
+## Add a custom JS component
 
 To add a custom JS component (module), take the following steps:
 
 1. Place the custom component source file in one of the following locations:
-	- Your theme JS files: `<theme_dir>/web/js` or `<theme_dir>/<VendorName>_<ModuleName>/web/js`. In this case the component is available in your theme and its [child themes]({{ page.baseurl }}/frontend-dev-guide/themes/theme-inherit.html). 
-	- Your module view JS files: `<module_dir>/view/frontend/web/js`. In this case the component is available in all modules and themes (if your module is enabled). 
+	- Your theme JS files: `<theme_dir>/web/js` or `<theme_dir>/<VendorName>_<ModuleName>/web/js`. In this case the component is available in your theme and its [child themes]({{ page.baseurl }}/frontend-dev-guide/themes/theme-inherit.html).
+	- Your module view JS files: `<module_dir>/view/frontend/web/js`. In this case the component is available in all modules and themes (if your module is enabled).
 
 2. Optionally, in the corresponding [module](https://glossary.magento.com/module) or theme, create a `requirejs-config.js` configuration file, if it does not yet exist there and set path for your resource. The RequireJS configuration file can be placed in one of the following locations:
 
-- Your theme: `<theme_dir>/<module_dir>`
+- Your theme: `<theme_dir>`
+- Module within your theme: `<theme_dir>/<module_dir>`
 - Your module (depending on the needed area - **base**, **frontend**, **adminhtml**): `<module_dir>/view/<area>`
 
 ## Replace a default JS component {#js_replace}
@@ -29,7 +30,7 @@ To use a custom implementation of an existing Magento JS component:
 Place the custom component source file in one of the following
 locations:
 
-- Your theme JS files: `/web/js` or `/_/web/js`
+- Your theme JS files: `/web/js`
 - Your module view JS files: `<module_dir>/view/frontend/web/js`
 
 Create a RequireJS configuration file `requirejs-config.js`, having
@@ -60,7 +61,7 @@ var config = {
   }
 };
 ```
-  
+
 Place your `requirejs-config.js` file in one of the following
 directories (according to the location of your custom script, see step 1
 of this procedure):
@@ -92,6 +93,7 @@ define([
 ```
 
 Where the following notation is used:
+
 - `<your_namespace>.<your_widget_name>` - the name of your custom [widget](https://glossary.magento.com/widget). According to the jQuery widgets naming
     convention, must contain a [namespace](https://glossary.magento.com/namespace) and name.
 - `mage.<widget.name>` - the name of the Magento widget that you
@@ -158,5 +160,5 @@ $(mage.apply);
 
 - [JavaScript resources in Magento]({{ page.baseurl }}/javascript-dev-guide/javascript/js-resources.html)
 - [About AMD modules and RequireJS]({{ page.baseurl }}/javascript-dev-guide/javascript/js-resources.html)
-  
+
 [JavaScript initialization]: {{page.baseurl}}/javascript-dev-guide/javascript/js_init.html

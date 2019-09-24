@@ -18,18 +18,22 @@ The following cache types mostly have impact on frontend development process:
 | Page cache                 | `full_page`          | Generated HTML pages. If necessary, Magento cleans up this cache automatically, but third-party developers can put any data in any segment of the cache. Clean or flush this cache type after modifying code level that affects HTML output. It’s recommended to keep this cache enabled because caching HTML improves performance significantly. |
 | Translations               | `translate`          | Merged translations from all modules.                                                                                                                                                                                                                                                                                                             |
 
-{:.bs-callout .bs-callout-info}
+{: .bs-callout-info }
 The full list of cache types can be found in the [Overview of cache types]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cache.html#config-cli-subcommands-cache-clean-over) topic.
 
 ## Clean cache {#clean_cache}
 
 To clean cache, run
 
-	magento cache:clean <type> ... <type>
+```bash
+magento cache:clean <type> ... <type>
+```
 
 To view the status of the cache, run:
 
-	bin/magento cache:status
+```bash
+bin/magento cache:status
+```
 
 For more details about working with cache, see [Manage the cache]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cache.html)
 
@@ -39,14 +43,22 @@ You can clean generated static view files in any of the following ways:
 
 -   In the [Magento Admin](https://glossary.magento.com/magento-admin). Go to **System** > **Tools** > **Cache Management** and click **Flush [Static Files](https://glossary.magento.com/static-files) Cache**.
 
-    {:.bs-callout .bs-callout-info}
+    {: .bs-callout-info }
     This option is only available in `developer` mode. Refer to the [static view files overview]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html#config-cli-static-overview) for more information.
 
 -   Manually by clearing the `pub/static` and `var/view_preprocessed` directories and subdirectories _except_ for `pub/static/.htaccess`.
 
     To clear the `pub/static` directory of all files except `.htaccess` (which is a hidden file), enter the following command:
 
-        rm -R pub/static/*
+    ```bash
+    rm -rf pub/static/*
+    ```
+
+    To clear the `var/view_preprocessed`, enter the following command:
+
+    ```bash
+    rm -rf var/view_preprocessed/*
+    ```
 
 -   Several commands support an optional parameter `--clear-static-content`, which cleans generated static view files:
 

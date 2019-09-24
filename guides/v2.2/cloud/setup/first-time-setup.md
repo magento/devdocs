@@ -20,11 +20,11 @@ functional_areas:
 
 Prior to setting up a workspace, gather the following credentials and accounts:
 
--  **Magento Access Key**  
+-  **Magento Access Key**
     Provides secure access through a 32-character authentication token. The token authenticates between your account, the Magento 2 Composer repository (repo.magento.com), and any other Git services—such as GitHub—required for development. You can create multiple Magento access keys. For the workspace setup, you can start with one specific key for your code repository. Contact the Project Owner to generate [Magento authentication keys]({{page.baseurl}}/install-gde/prereq/connect-auth.html).
--  **Cloud Project account**  
+-  **Cloud Project account**
     The Project Owner or Technical Admin (Super User) should invite you to the {{site.data.var.ece}} project. When you receive the e-mail invitation, click the link and follow the prompts to create your account. See [Set up an account]({{page.baseurl}}/cloud/before/before-workspace.html#newaccount) for details.
--  **Magento Encryption Key**  
+-  **Magento Encryption Key**
     When importing an existing Magento system only, capture the Magento encryption key used to protect your access and data for the Magento database. For details on this key, see [Resolve issues with encryption key]({{page.baseurl}}/cloud/trouble/trouble-crypt-key-variable.html)
 
 ## Launch a Docker environment {#docker}

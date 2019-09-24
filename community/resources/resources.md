@@ -27,7 +27,6 @@ See our collection of best and leading practices, common solutions, and more in 
 
 To connect with Magento and the Community, join us on the [Magento Community Engineering Slack][]. If you are interested in joining Slack, or a specific channel, send us a request at [engcom@adobe.com](mailto:engcom@adobe.com) or [self signup][].
 
-
 We have [channels][] for each project, but the following channels are recommended for new members:
 
 - [announcements][]: Introduce yourself and get quick updates for Magento Community Engineering
@@ -97,8 +96,8 @@ We have [channels][] for each project, but the following channels are recommende
 -  *Presentation* [Premium performance with PHP 7 and Varnish][15] by Miguel Balparda
 
 [contribute]: https://github.com/magento/devdocs/blob/master/.github/CONTRIBUTING.md
-[technical guidelines]: https://devdocs.magento.com/guides/v2.3/coding-standards/technical-guidelines.html
-[coding standards]: https://devdocs.magento.com/guides/v2.3/coding-standards/bk-coding-standards.html
+[technical guidelines]: {{ site.baseurl }}/guides/v2.3/coding-standards/technical-guidelines.html
+[coding standards]: {{ site.baseurl }}/guides/v2.3/coding-standards/bk-coding-standards.html
 [Magento Community Engineering Slack]: https://magentocommeng.slack.com
 [self signup]: https://tinyurl.com/engcom-slack
 [general]: https://magentocommeng.slack.com/messages/C4YS78WE6

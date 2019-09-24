@@ -15,8 +15,7 @@ In general, the service layer:
 
 * Contains service contracts, which define how the implementation will behave.
 
-* Provides an easy way to access the REST/SOAP [API](https://glossary.magento.com/api) framework code (which also resides above the service contracts).
-You can bind service contracts to web service APIs in configuration files --- no coding required.
+* Provides an easy way to access the REST/SOAP [API](https://glossary.magento.com/api) framework code (which also resides above the service contracts). You can bind service contracts to web service APIs in configuration files --- no coding required.
 
 * Provides a stable API for other modules to call into.
 
@@ -47,7 +46,7 @@ This directory contains:
 
 * Data (or *entity*) interfaces in the `Api/Data` directory ([Catalog API/Data][catalog-api-data][]).
   Data entities* are data structures passed to and returned from service interfaces.
-  
+
   Files in the data directory contain `get()` and `set()` methods for entries in the entity table and extension attributes.
 
 Typically, service contracts provide three distinct types of interfaces:

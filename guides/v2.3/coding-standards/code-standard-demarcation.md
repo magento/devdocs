@@ -179,11 +179,16 @@ section[role="main"] { ... }
 
 ### You must not hard-code CSS styles in JavaScript files
 
-{: .bs-callout .bs-callout-info }
-Exception: CSS attributes where values must be calculated beyond the css-topics/LESS code.
-   - Simplifies change of the default look and feel by adding CSS classes to and removing them from elements.
-   - Improves style extensibility.
-   - Reduces long-term maintenance efforts by containing CSS styles in a single place.
+{%
+include note.html
+type='info'
+content='Exception: CSS attributes where values must be calculated beyond the css-topics/LESS code.
+
+- Simplifies change of the default look and feel by adding CSS classes to and removing them from elements.
+- Improves style extensibility.
+- Reduces long-term maintenance efforts by containing CSS styles in a single place.'
+
+%}
 
 **Acceptable [JavaScript](https://glossary.magento.com/javascript) [widget](https://glossary.magento.com/widget) file**
 
@@ -291,7 +296,6 @@ HTML helper class names added in JavaScript REQUIRE underscore symbol ("_") at t
 <div class="sales-report _hidden">Content</div>
 ```
 
-
 **Unacceptable**
 
 ```html
@@ -324,6 +328,40 @@ this.element.parent().find('[data-action="edit"]').data('entity_id');
 - Reinstates emphasis on jQuery templates. For more information, see JavaScript Coding Best Practices.
 - Reduces long-term maintenance efforts by having markup code stored in one place.
 - Simplifies frontend debugging efforts.
+
+## PHTML templates and PHP files
+
+### You must not hard-code inline CSS styles in PHP classes
+
+- Reduces long-term maintenance efforts by having styles stored in one place.
+- Simplifies debugging and reduces number of files to be modified.
+- Makes styles more extensible and easier to override when needed.
+
+**Acceptable PHP file**
+
+```php
+...
+$fieldset->addField('new_category_parent', 'text', array(
+    'label'    => __('Parent Category'),
+    'title'    => __('Parent Category'),
+    'required' => true,
+    'class'    => 'parent category',
+));
+...
+```
+
+**Unacceptable PHP file**
+
+```php
+...
+$fieldset->addField('new_category_parent', 'text', array(
+    'label'    => __('Parent Category'),
+    'title'    => __('Parent Category'),
+    'required' => true,
+    'style'    => 'border: 1px solid #ccc;',
+));
+...
+```
 
 ### You must not hard-code inline JavaScript in PHP classes
 
@@ -385,83 +423,6 @@ jQuery('#{$htmlId}-suggest').treeSuggest({$selectorOptions});
 <?php echo $this->getAfterElementHtml(); ?>
 ```
 
-## PHTML templates and PHP files
-
-### You must not hard-code inline CSS styles in PHP classes
-
-- Reduces long-term maintenance efforts by having styles stored in one place.
-- Simplifies debugging and reduces number of files to be modified.
-- Makes styles more extensible and easier to override when needed.
-
-**Acceptable PHP file**
-
-```php
-...
-$fieldset->addField('new_category_parent', 'text', array(
-    'label'    => Mage::helper('Mage_Catalog_Helper_Data')->__('Parent Category'),
-    'title'    => Mage::helper('Mage_Catalog_Helper_Data')->__('Parent Category'),
-    'required' => true,
-    'class'    => 'parent category',
-));
-...
-```
-
-**Unacceptable PHP file**
-
-```php
-...
-$fieldset->addField('new_category_parent', 'text', array(
-    'label'    => Mage::helper('Mage_Catalog_Helper_Data')->__('Parent Category'),
-    'title'    => Mage::helper('Mage_Catalog_Helper_Data')->__('Parent Category'),
-    'required' => true,
-    'style'    => 'border: 1px solid #ccc;',
-));
-...
-```
-
-### You must not hard-code inline JavaScript in PHP classes
-
-- Reduces long term maintenance by having frontend business logic stored in one place.
-- Reduces the number of files to be modified.
-
-**Acceptable PHP file**
-
-```php
-...
-public function getSelectorOptions()
-{
-    return $selectorOptions;
-}
-...
-```
-
-**Acceptable PHTML template**
-
-```php
-...
-<div data-mage-init="{treeSuggest: [<?php echo $this->getSelectorOptions(); ?>]}"></div>
-...
-```
-
-**Unacceptable PHP file**
-
-```php
-...
-public function getAfterElementHtml()
-{
-    return <<<HTML
-<script>
-jQuery('#{$htmlId}-suggest').treeSuggest({$selectorOptions});
-</script>
-...
-```
-
-**Unacceptable PHTML template**
-
-```php
-<?php echo $this->getAfterElementHtml(); ?>
-```
-
 ### You must not hard-code HTML markup (used in the `<body>` tag) in PHP classes
 
 - Reduces long-term maintenance efforts by having markup stored in one place.
@@ -491,7 +452,7 @@ public function getAttributeId($element)
    <input type="checkbox"
       <?php echo ($this->getAttributeName($element)) ? ' name="' . $this->getAttributeName($element) . '"' : NULL; ?>
       data-mage-init="{customToggleWidget: [elementSelector: "input[name='someCustomName']"]}" />
-   <?php echo Mage::helper('Mage_Catalog_Helper_Data')->__('Change'); ?>
+   <?php echo __('Change'); ?>
 </label>
 </span>
 <!-- jQuery.hide() code can be either located in the widget itself OR can ask PHP Block class whether or not 'weight_and_type_switcher' should be visible. Based on this condition CSS can be applied to hide/show those elements. -->
@@ -515,7 +476,7 @@ public function getCheckbox($elementName){
 <span class="attribute-change-checkbox">
 	<label>
 		<?php echo $this->getCheckbox($element)?>
-		<?php echo Mage::helper('Mage_Catalog_Helper_Data')->__('Change'); ?>
+		<?php echo __('Change'); ?>
 	</label>
 </span>
 <!-- jQuery.hide() code can be either located in the widget itself OR can ask PHP Block class whether or not 'weight_and_type_switcher' should be visible. Based on this condition CSS can be applied to hide/show those elements. -->

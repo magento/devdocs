@@ -15,7 +15,7 @@ contributor_link: https://www.atwix.com/
 ---
 
 The `setShippingMethodsOnCart` mutation defines the shipping methods for your order. It requires these input parameters:
- 
+
  * `cart_id`
  * `carrier_code`
  * `method_code`
@@ -45,7 +45,8 @@ mutation {
         selected_shipping_method {
           carrier_code
           method_code
-          label
+          carrier_title
+          method_title
         }
       }
     }
@@ -65,7 +66,8 @@ mutation {
             "selected_shipping_method": {
               "carrier_code": "ups",
               "method_code": "GND",
-              "label": "United Parcel Service - Ground"
+              "carrier_title": "United Parcel Service",
+              "method_title": "Ground"
             }
           }
         ]
@@ -79,6 +81,6 @@ mutation {
 
 1. Sign in as a customer to the website using the email `john.doe@example.com` and password `b1b2b3l@w+`.
 
-2. Go to Checkout. 
+2. Go to Checkout.
 
 3. The selected shipping method is displayed in the Shipping Methods section on the Shipping step.

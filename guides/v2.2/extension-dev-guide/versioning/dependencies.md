@@ -10,18 +10,18 @@ Magento platform clients need notifications about breaking changes for their ins
 To achieve this, all third-party modules must obey the following rules:
 
 1. You must specify the dependency on all modules listed in the 'require' section of your module's `composer.json` file.
-2. Do not specify a dependency on meta packages (e.g. 'product-community-edition').
-3. Specify a module's MAJOR and/or MINOR version number if you use any of that module's customization points.
-4. Specify a module's MAJOR, MINOR, and PATCH versions if you call or customize a module's private code.
+1. Do not specify a dependency on meta packages (e.g. 'product-community-edition').
+1. Specify a module's MAJOR version number if you use any of that module's public API.
+1. Specify a module's MAJOR and MINOR version number if you use any of that module's customization points.
+1. Specify a module's MAJOR, MINOR, and PATCH versions if you call or customize a module's private code.
 
 ## Service Provider Interfaces
 
-A PHP Interface in Magento can be used several ways by the core product and extension developers.
+A PHP Interface in Magento can be used in several ways by the core product and extension developers.
 
 * **As an API**. An interface is called by PHP code.
 * **As a Service Provider Interface (SPI)**. An interface can be implemented, allowing code to provide functionality to the platform.
-* **As both**. For example, in a service contract, we expect all calls to a [module](https://glossary.magento.com/module) to be done through the Interface (API), but we also have support for third parties to provide alternate implementations (SPI).
-APIs and SPIs are not mutually exclusive. Therefore, we do not distinguish them separately. SPIs are annotated the same as APIs.
+* **As both**. For example, in a service contract, we expect all calls to a [module](https://glossary.magento.com/module) to be done through the Interface (API), but we also have support for third parties to provide alternate implementations (SPI). APIs and SPIs are not mutually exclusive. Therefore, we do not distinguish them separately. SPIs are annotated the same as APIs.
 
 However, the dependency rules are different:
 
@@ -84,8 +84,8 @@ Use this table to set the appropriate version dependency on a module based on ho
 | | Extend from a class | MINOR|
 | | Override a method | MINOR|
 | | Subscribe to an event| MINOR|
-| **Virtual Type**| Configure a virtual type in the `di.xml` file as a class dependency | MAJOR|
-| **URL Paths** | Link to from custom pages | MAJOR|
+| **Virtual Type (marked with `@api`)**| Use an existing virtual type in the `di.xml` file as a class dependency | MAJOR|
+| **URL Paths** | Link to a URL from custom pages | MAJOR|
 | **Console commands and their arguments**| Called in custom shell scripts| MAJOR|
 | **Less variables and mixins** | Use in Less declarations| MAJOR|
 | **Message queue topics and data types** | Consume a topic/message | MINOR|
@@ -102,3 +102,4 @@ Use this table to set the appropriate version dependency on a module based on ho
 | | Declare a foreign key on a module table | MAJOR|
 | | Declare a trigger on a module table | MAJOR|
 | | Read from table or write to table from a temporary table| PATCH|
+| **Static view files (marked with `@api`)** | Rely on JS/CSS/LESS files provided by another module | MAJOR|

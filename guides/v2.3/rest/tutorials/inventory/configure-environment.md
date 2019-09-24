@@ -28,7 +28,6 @@ In this tutorial, we'll create the infrastructure needed to implement a US and a
    --- | ---
    Name | North America Site
    Code | `na_site`
-   
 
    Click **Save Web Site**.
 
@@ -40,7 +39,6 @@ In this tutorial, we'll create the infrastructure needed to implement a US and a
    Name | North America Store
    Code | `na_store`
    Root Category | Default Category
-   
 
    Click **Save Store**.
 
@@ -52,7 +50,6 @@ In this tutorial, we'll create the infrastructure needed to implement a US and a
    Name | US Store View
    Code | `us`
    Status | Enabled
-   
 
    Click **Save Store View**.
 
@@ -64,7 +61,6 @@ In this tutorial, we'll create the infrastructure needed to implement a US and a
    --- | ---
    Name | Europe Site
    Code | `eu_site`
-   
 
    Click **Save Web Site**.
 
@@ -76,19 +72,17 @@ In this tutorial, we'll create the infrastructure needed to implement a US and a
    Name | Europe Store
    Code | `eu_store`
    Root Category | Default Category
-   
 
    Click **Save Store**.
 
 3. Click **Create Store View** and assign the following values:
 
    Field | Value
-   --- | --- 
+   --- | ---
    Store | Europe Store
    Name | Germany Store View
    Code | `de`
    Status | Enabled
-   
 
    Click **Save Store View**.
 

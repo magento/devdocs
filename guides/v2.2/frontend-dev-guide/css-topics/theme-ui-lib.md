@@ -14,6 +14,7 @@ This topic describes how the library is organized, and how to use it. For more i
 ## Components provided by the UI library {#library_elements}
 
 The Magento UI library provides the ability to customize and reuse the following user interface elements and properties:
+
 *	actions-toolbar
 *	breadcrumbs
 *	buttons
@@ -143,19 +144,19 @@ Use the accordion style for mobile and tab style for desktop.
 To set tabs and accordions using breakpoints, see the following example:
 
 ```css
-& when (@media-common = true) { 
+& when (@media-common = true) {
     .product.data.items {
         .lib-data-accordion();
     }
 }
 
-.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) { 
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
     .product.data.items {
         .lib-data-tabs();
     }
 }
 ```
-## Navigation set with CSS 
+## Navigation set with CSS
 
 Use the Navigation style for mobile and tab style for desktop.
 
@@ -166,7 +167,7 @@ To set navigation using breakpoints, see the following example:
 //  Mobile
 //  _____________________________________________
 
-.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) { 
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
     .lib-main-navigation();
 }
 
@@ -174,7 +175,7 @@ To set navigation using breakpoints, see the following example:
 //  Desktop
 //  _____________________________________________
 
-.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) { 
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
     .lib-main-navigation-desktop();
 }
 ```
@@ -182,12 +183,12 @@ To set navigation using breakpoints, see the following example:
 ## Embedded documentation {#docs}
 
 The detailed information about the Magento UI library is embedded in the code repository:
+
 * [`lib/web/css/docs/source/README.md`] describes the Magento UI library structure, naming conventions, and code style.
 * [`lib/web/css/docs`] contains a set of `.html` files with detailed information about the library mixins.
 
 Each file is named after the mixin it describes, and contains detailed mixin description and navigation controls to access documentation for other mixins.
 The documentation is available in a convenient [HTML](https://glossary.magento.com/html) view in the following location in your Magento installation: `pub/static/frontend/Magento/blank/en_US/css/docs/index.html`.
-
 
 <!-- Link definitions -->
 
@@ -212,5 +213,4 @@ The documentation is available in a convenient [HTML](https://glossary.magento.c
 
 [ui_lib1.png]: {{ site.baseurl }}/common/images/ui_lib1.png
 [ui_lib2.png]: {{ site.baseurl }}/common/images/ui_lib2.png
-
 

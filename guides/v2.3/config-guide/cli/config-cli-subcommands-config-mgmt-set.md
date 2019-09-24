@@ -132,13 +132,13 @@ Parameter | Description
 `value` | *Required*. The value of the configuration
 
 {:.bs-callout .bs-callout-info}
+
 * As of Magento 2.2.4, the `--lock-env` and `--lock-config` options replace the `--lock` option.
 * If you use the `--lock-env` or `--lock-config` option to set or change a value, you must use the [`bin/magento app:config:import` command]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-config-mgmt-import.html) to import the setting before you access the Admin or storefront.
 
 If you enter an incorrect configuration path, this command returns an error
 
     The "wrong/config/path" does not exist
-
 
 See one of the following sections for more information:
 
@@ -256,7 +256,6 @@ bin/magento config:show --scope=websites --scope-code=base web/unsecure/base_url
 Result:
 
 <pre class="no-copy">web/unsecure/base_url - http://example-for-website.com/</pre>
-
 
 **Show the base URL for the `default` store**:
 

@@ -21,7 +21,7 @@ All files that you upload are inspected for malware. We only accept packages if 
 
 Use this API to upload files, retrieve file upload status, and remove files.
 
-```
+```http
 GET /rest/v1/files/uploads/:file_upload_id
 POST /rest/v1/files/uploads
 DELETE /rest/v1/files/uploads/:file_upload_id
@@ -31,13 +31,13 @@ DELETE /rest/v1/files/uploads/:file_upload_id
 
 Use the upload ID to retrieve details about a file upload.
 
-```
+```http
 GET /rest/v1/files/uploads/:file_upload_id
 ```
 
 **Request**
 
-```shell
+```bash
 curl -X GET \
      -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
      https://developer-api.magento.com/rest/v1/files/uploads/dhsiXjdksW17623
@@ -75,14 +75,14 @@ Details on the response fields:
 
 You upload files in bulk upload using the **multipart/form-data** encoding type. With this approach, binary files can be uploaded without the need for additional encoding, which can result in an increase in overall upload size.
 
-```
+```http
 POST /rest/v1/files/uploads
 ```
 
 A sample request body of mime type, [multipart/form-data](https://www.w3.org/TR/html401/interact/forms.html#h-17.13.4.2) with a boundary string of `----------287032381131322`
 is shown below:
 
-```shell
+```text
 ------------287032381131322
 Content-Disposition: form-data; name="file[]"; filename=“acme_one-click-checkout.zip"
 Content-Type: application/zip
@@ -120,7 +120,7 @@ For example, if you save the previous request body is saved to a temporary file 
 
 **Request**
 
-```shell
+```bash
 curl -X POST \
      -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
      -H "Content-Type: multipart/form-data; boundary=----------287032381131322" \
@@ -162,7 +162,7 @@ curl -X POST \
 ]
 ```
 
-{: .bs-callout .bs-callout-info }
+{: .bs-callout-info }
 The response is the list of files in the same order sent during the upload request.
 
 Each record in the list has the following fields:
@@ -181,8 +181,7 @@ The `file_upload_id` must be tracked for subsequent package submission APIs.
 
 You can only dissociate files from packages that have not been published on the Magento Marketplace. Removing a file without the optional `submission_ids` parameter disassociates it from all linked packages. If no packages are associated with a file, it will be removed.
 
-
-```
+```http
 DELETE /rest/v1/files/uploads/:file_upload_id
 ```
 
@@ -195,7 +194,7 @@ Available parameters:
 
 **Request**
 
-```shell
+```bash
 curl -X DELETE \
      -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
      https://developer-api.magento.com/rest/v1/files/uploads/fur7284XcgdcV

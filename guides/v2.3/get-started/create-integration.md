@@ -7,7 +7,6 @@ menu_order: 1
 
 ---
 
-
 An **integration** enables third-party services to call the Magento web APIs. The Magento APIs currently supports Accounting, Enterprise Resource Planning (ERP), Customer Relationship Management (CRM), Product Information Management (PIM), and marketing automation systems out of the box.
 
 Implementing a simple integration requires little knowledge of [PHP](https://glossary.magento.com/php) or Magento internal processes. However, you will need a working knowledge of
@@ -15,7 +14,6 @@ Implementing a simple integration requires little knowledge of [PHP](https://glo
 * [Magento REST or SOAP Web APIs]({{ page.baseurl }}/get-started/bk-get-started-api.html)
 * [Web API authentication]({{ page.baseurl }}/get-started/authentication/gs-authentication.html)
 * [OAuth-based authentication]( {{ page.baseurl }}/get-started/authentication/gs-authentication-oauth.html )
-
 
 Before you begin creating a module, make sure that you have a working installation of Magento 2.0, and the [Magento System Requirements]({{ page.baseurl }}/install-gde/system-requirements.html).
 
@@ -78,7 +76,6 @@ To develop a module, you must:
 
    Module `Magento_Integration` is added to "sequence" to be loaded first. It helps to avoid the issue, when a module with integration config loaded, that leads to a malfunction.
 
-
 3. **Add your module's `composer.json` file.** Composer is a dependency manager for PHP. You must create a `composer.json` file for your module so that Composer can install and update the libraries your module relies on. Place the `composer.json` file in the `module-<module_name>` directory.
 
     The following example demonstrates a minimal `composer.json` file.
@@ -103,7 +100,6 @@ To develop a module, you must:
       }
     ```
 
-
     For more information, see [Create a component]({{ page.baseurl }}/extension-dev-guide/build/create_component.html).
 
 4. **Create a `registration.php` file** The `registration.php` registers the module with the Magento system. It must be placed in the module's root directory.
@@ -122,8 +118,7 @@ To develop a module, you must:
         );
       ```
 
-5. **Create an install class.**
-Change directories to your `Setup` directory. Create a `InstallData.php` file that installs the integration configuration data into the Magento integration table.
+5. **Create an install class.** Change directories to your `Setup` directory. Create a `InstallData.php` file that installs the integration configuration data into the Magento integration table.
 
     The following sample is boilerplate and requires minor changes to make your integration work.
 
@@ -141,7 +136,6 @@ Change directories to your `Setup` directory. Create a `InstallData.php` file th
         /**
          * @var ConfigBasedIntegrationManager
          */
-
 
         private $integrationManager;
 
@@ -218,7 +212,7 @@ In the following example, the test integration requires access to the following 
 
 Your module can optionally provide a configuration file `config.xml` so that the integration can be automatically pre-configured with default values. To enable this feature, create the `config.xml` file in the `etc/integration` directory.
 
-{: .bs-callout .bs-callout-info }
+{: .bs-callout-info }
 If you pre-configure the integration, the values cannot be edited from the [admin](https://glossary.magento.com/admin) panel.
 
 The  file defines which API resources the integration has access to.
@@ -271,7 +265,7 @@ Use the following steps to install your module:
 
 2. Run the following command to generate the new code.
 
-   {: .bs-callout .bs-callout-info }
+   {: .bs-callout-info }
    In Production mode, you may receive a message to 'Please rerun Magento compile command'.  Enter the command below. Magento does not prompt you to run the compile command in Developer mode.
 
    <code>bin/magento setup:di:compile</code>
@@ -294,7 +288,7 @@ Before you can activate your integration in Magento, you must create two pages o
 
 ### Login page {#login}
 
-When a merchant clicks the **Activate** button in Admin, a pop-up login page for the third-party application displays. Magento sends values for `oauth_consumer_key` and `success_call_back` parameters. The application must store the value for`oauth_consumer_key` tie it to the login ID. Use the `success_call_back` parameter to return control back to Magento.
+When a merchant clicks the **Activate** button in Admin, a pop-up login page for the third-party application displays. Magento sends values for `oauth_consumer_key` and `success_call_back` parameters. The application must store the value for `oauth_consumer_key` to tie it to the login ID. Use the `success_call_back` parameter to return control back to Magento.
 
 ### Callback page {#callback}
 

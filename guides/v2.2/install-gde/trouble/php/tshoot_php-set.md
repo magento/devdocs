@@ -34,7 +34,6 @@ To increase your PHP memory limit:
 	*	nginx (both CentOS and Ubuntu): `service nginx restart`
 8.	Try the installation again.
 
-
 ## max-input-vars error due to large forms
 
 Configurations with a high number of storeviews, products, attributes, or options can generate forms that exceed the preset PHP limit.
@@ -45,7 +44,6 @@ When this occurs, a warning appears in the PHP log:
 PHP message: PHP Warning: Unknown: Input variables exceeded 1000. To increase the limit change max_input_vars in php.ini.
 ```
  There is no 'proper' value for `max-input-vars`; it depends on the size and complexity of your configuration. Modify the value in the `php.ini` file as needed. See [Required PHP settings][].
-
 
 ## xdebug maximum function nesting level error {#trouble-php-xdebug}
 
@@ -76,5 +74,5 @@ Edit `php.ini` and set `asp_tags = off`. For more information, see [Required PHP
 
 [Required PHP settings]: {{ page.baseurl }}/install-gde/prereq/php-settings.html
 [asp_tags]: http://php.net/manual/en/ini.core.php#ini.asp-tags
-[template]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/view/adminhtml/templates/product/edit/base_image.phtml
+[template]: {{ site.mage2bloburl }}/2.0/app/code/Magento/Catalog/view/adminhtml/templates/product/edit/base_image.phtml
 [`phpinfo.php`]: {{ page.baseurl }}/install-gde/prereq/optional.html#install-optional-phpinfo

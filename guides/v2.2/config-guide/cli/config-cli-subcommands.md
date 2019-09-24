@@ -23,6 +23,7 @@ functional_areas:
       - CentOS: `cd /var/www/html/magento2/bin`
 
 You can run the commands in any of the following ways:
+
 -   `php magento <command>`
 -   `./magento <command>`
 -   `magento <command>` (after [adding](http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables) `<magento_root>/bin` to your system `PATH`)
@@ -50,7 +51,7 @@ Before you run any of these commands, you must either [install the Magento appli
 |[`magento sampledata:install`]({{ page.baseurl }}/install-gde/install/sample-data.html)|Installs optional Magento sample data after you install the Magento application.<br><br>For more details about Magento sample data, see [Optional Magento sample data]({{ page.baseurl }}/install-gde/install/sample-data.html).|
 |[`magento config:{set/sensitive:set/show/}`]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-config-mgmt-set.html)|Manages backend configurations|
 |[`bin/magento admin:user:{create/unlock}`]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-admin.html)| Creates/edits/unlocks admin users.|
-|[`bin/magento dev:template-hints:{enable/disable`}]({{ page.baseurl }}/frontend-dev-guide/themes/debug-theme.html)|Enables/disables developer template hints.| 
+|[`bin/magento dev:template-hints:{enable/disable`}]({{ page.baseurl }}/frontend-dev-guide/themes/debug-theme.html)|Enables/disables developer template hints.|
 
 ## Help commands {#config-cli-help}
 {% include install/cli_help-commands.md %}

@@ -15,6 +15,7 @@ Developing the view part of a custom [module](https://glossary.magento.com/modul
 Frontend developers can use this guide to create custom themes to tailor the Magento storefront for a specific customer.
 
 You can apply these levels of customization to your site, where the levels require different development skills:
+
 *   You can make relatively simple changes to your site using cascading style sheets (CSS) to change colors and the look-and-feel of various interface components, replacing images, and other relatively cosmetic changes. For more advanced styling, familiarity with LESS (Leaner Style Sheets) and XML (Extensible Markup Language) is helpful.
 
     No structural changes are made to pages—you accept the structure of the site provided by default by modules you load on to your site.

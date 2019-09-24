@@ -5,7 +5,7 @@ Caching is one of the most effective ways to improve website performance. Genera
 -   Client-side (browser)
 -   Server-side
 
-Retrieving stored ([cached](https://glossary.magento.com/cached)) content from a previous request for the same client instead of requesting files from your server every time someone visits your site is a more efficient use of network bandwidth.
+Retrieving stored ([cached](https://glossary.magento.com/cache)) content from a previous request for the same client instead of requesting files from your server every time someone visits your site is a more efficient use of network bandwidth.
 
 The Magento page cache library contains a simple PHP reverse proxy that enables full page caching out of the box. A reverse proxy acts as an intermediary between visitors and your application and can reduce the load on your server.
 
@@ -35,4 +35,3 @@ Reverse proxies serve "public" or shared content to more than one user. However,
 -   **[Public]({{ page.baseurl }}/extension-dev-guide/cache/page-caching/public-content.html)** - Public content is stored server side in your reverse proxy cache storage (e.g., file system, database, Redis, or Varnish) and is available to multiple customers. Examples of public content include header, footer, and category listing.
 
 -   **[Private]({{ page.baseurl }}/extension-dev-guide/cache/page-caching/private-content.html)** - Private content is stored client side (e.g., browser) and is specific to an individual customer. Examples of private content include wishlist, shopping cart, customer name, and address. You should limit stored private content to a small portion of the page's total content.
-</div>
