@@ -161,6 +161,7 @@ Any change not listed below is considered a PATCH level change.
 ### PHP Classes Intended for Extension
 
 Though inheritance is discouraged in Magento, the following classes are still acceptable for extension at the moment:
+
 * \Magento\Framework\Model\AbstractExtensibleModel
 * \Magento\Framework\Api\AbstractExtensibleObject
 * \Magento\Framework\Api\AbstractSimpleObject

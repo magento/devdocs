@@ -73,6 +73,7 @@ For example, to create a plugin for the `setName` method of some class:
 ```
 
 In the plugin class, the `setName` method may have one of the following names:
+
 - `beforeSetName`
 - `aroundSetName`
 - `afterSetName`
@@ -91,6 +92,7 @@ For example, to create a plugin for the `_construct` method of some class:
 ```
 
 Use the following method names for the `_construct` method in the plugin class:
+
 - `before_construct`
 - `around_construct`
 - `after_construct`

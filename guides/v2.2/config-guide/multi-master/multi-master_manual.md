@@ -213,6 +213,7 @@ Run the preceding script:
     ```
 
 3. After the script run, enter `exit`.
+
 {% endcollapsible %}
 
 ### Back up sales data {#sales-backup}
@@ -341,6 +342,7 @@ Run the script as follows:
        source /root/sql-scripts/2_foreign-key-quote.sql
 
 1. After the script runs, enter `exit`.
+
 {% endcollapsible %}
 
 ### Back up quote tables
@@ -474,6 +476,7 @@ Run the script as follows:
     ```
 
 3. After the script runs, enter `exit`.
+
 {% endcollapsible %}
 
 ## Update your deployment configuration {#config-ee-multidb-config}
@@ -571,7 +574,7 @@ To use these scripts:
 1. Run each script from the `mysql>` prompt as `source <script name>`
 1. Examine the output.
 1. Copy the result of each script to another `.sql` script, removing the pipe characters (`|`).
-5.Run each script from the `mysql>` prompt as `source <script name>`.
+1. Run each script from the `mysql>` prompt as `source <script name>`.
 
     Running this second script performs the actions in your main Magento database.
 

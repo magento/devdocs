@@ -22,7 +22,7 @@ Before performing an upgrade to use the `{{site.data.var.ct}}` package, check th
 
 Each {{site.data.var.ee}} version requires a different constraint based on the following:
 
-```
+```terminal
 >=current_version <next_version
 ```
 

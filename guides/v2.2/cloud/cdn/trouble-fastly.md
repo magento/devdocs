@@ -63,7 +63,7 @@ If the timeout occurs when running bulk operations, you can [extend the Fastly t
 
 If you receive a 503 error, check the Production or Staging environment error log and php access log to troubleshoot the issue.
 
-- [Error log]({{ page.baseurl }}/cloud/trouble/environments-logs.html)
+- [Error log]({{page.baseurl}}/cloud/project/log-locations.html#application-logs)
 
    ```
    /var/log/platform/<project_ID>/error.log
@@ -204,7 +204,7 @@ Verify that the returned response contains the following information:
 
 The following excerpt from the cURL command output shows the correct values for the `Pragma`, `X-Magento-Tags`, and `Fastly-Module-Enabled` headers:
 
-```json
+```terminal
 * STATE: INIT => CONNECT handle 0x600057800; line 1402 (connection #-5000)
 * Rebuilt URL to: https://www.mymagento.biz.c.sv7gVom4qrpek.ent.magento.cloud/
 * Added connection 0. The cache now contains 1 members
