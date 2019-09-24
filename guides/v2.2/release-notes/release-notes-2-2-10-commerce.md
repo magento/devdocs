@@ -6,7 +6,7 @@ title: Magento Commerce 2.2.10 Release Notes
 
 *Patch code and release notes published on October 8, 2019.*
 
-Magento Commerce 2.2.10 offers significant platform upgrades, substantial security changes, and PSD2-compliant core payment methods. This release includes over 147 functional fixes and enhancements  to the core product and  over 70 security enhancements. It includes 56 community-fixed GitHub issues.
+Magento Commerce 2.2.10 offers significant platform upgrades, substantial security changes, and PSD2-compliant core payment methods. This release includes over 147 functional fixes and enhancements to the core product and 75 security enhancements. It includes 56 community-fixed GitHub issues.
 
 ## Highlights
 
@@ -23,7 +23,7 @@ The following upgrades to core platform components boost platform security and s
 
 This release includes the following security enhancements:
 
-* PSD2 compliance to core payment methods  
+* PSD2 compliance for core payment methods  
 * Fixes for 75 critical security issues
 * Significant platform-security enhancements that boost XSS (cross-site scripting) protection against future exploits. This effort is the culmination of several months of concentrated effort on Magento's part to reduce our backlog of security enhancements.
 
