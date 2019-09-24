@@ -32,7 +32,9 @@ The following section describes how to install Magento 2.x on Ubuntu 16 using ng
 
 ### Install nginx
 
-	apt-get -y install nginx
+```bash
+apt-get -y install nginx
+```
 
 After completing the following sections and [installing Magento]({{ page.baseurl }}/install-gde/prereq/nginx.html#install-magento2-ubuntu), we'll use a sample configuration file to [configure nginx]({{ page.baseurl }}/install-gde/prereq/nginx.html#configure-nginx-ubuntu).
 
@@ -44,21 +46,30 @@ To install and configure `php-fpm`:
 
 1. Install `php-fpm` and `php-cli`:
 
-		apt-get -y install php7.0-fpm php7.0-cli
+    ```bash
+    apt-get -y install php7.0-fpm php7.0-cli
+    ```
 
-   {:.bs-callout .bs-callout-info}
-   This command installs the latest available version of PHP 7.0.X. See [Magento 2.2.x technology stack requirements]({{ page.baseurl }}/install-gde/system-requirements-tech.html) for supported PHP versions.
+    {:.bs-callout .bs-callout-info}
+    This command installs the latest available version of PHP 7.0.X. See [Magento 2.2.x technology stack requirements]({{ page.baseurl }}/install-gde/system-requirements-tech.html) for supported PHP versions.
 
 2. Open the `php.ini` files in an editor:
 
-		vim /etc/php/7.0/fpm/php.ini
-		vim /etc/php/7.0/cli/php.ini
+    ```bash
+    vim /etc/php/7.0/fpm/php.ini
+    ```
+
+    ```bash
+    vim /etc/php/7.0/cli/php.ini
+    ```
 
 3. Edit both files to match the following lines:
 
-		memory_limit = 2G
-		max_execution_time = 1800
-		zlib.output_compression = On
+    ```conf
+    memory_limit = 2G
+    max_execution_time = 1800
+    zlib.output_compression = On
+    ```
 
     {:.bs-callout .bs-callout-info}
     We recommend setting the memory limit to 2G when testing Magento. Refer to [Required PHP settings]({{ page.baseurl }}/install-gde/prereq/php-settings.html) for more information.
@@ -67,7 +78,9 @@ To install and configure `php-fpm`:
 
 5. Restart the `php-fpm` service:
 
-		systemctl restart php7.0-fpm
+    ```bash
+    systemctl restart php7.0-fpm
+    ```
 
 ### Install and configure MySQL
 
@@ -92,20 +105,26 @@ You cannot use the Web Setup Wizard when installing Magento on nginx. You must u
 
 1.  Change to the web server docroot directory or a directory that you have configured as a virtual host docroot. For this example, we're using the Ubuntu default `/var/www/html`.
 
-		cd /var/www/html
+    ```bash
+    cd /var/www/html
+    ```
 
 1.  Install Composer globally. You'll need Composer to update dependencies before installing Magento:
 
-		curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/bin --filename=composer
+    ```bash
+    curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/bin --filename=composer
+    ```
 
 1. Create a new Composer project using the {{site.data.var.ce}} or {{site.data.var.ee}} metapackage.
 
     **{{site.data.var.ce}}**
+
     ```bash
     composer create-project --repository=https://repo.magento.com/ magento/project-community-edition <install-directory-name>
     ```
 
     **{{site.data.var.ee}}**
+
     ```bash
     composer create-project --repository=https://repo.magento.com/ magento/project-enterprise-edition <install-directory-name>
     ```
@@ -114,11 +133,23 @@ You cannot use the Web Setup Wizard when installing Magento on nginx. You must u
 
 1. Set read-write permissions for the web server group before you install the Magento software. This is necessary so that the Setup Wizard and command line can write files to the Magento file system.
 
-    ```terminal
+    ```bash
     cd /var/www/html/<magento install directory>
+    ```
+
+    ```bash
     find var generated vendor pub/static pub/media app/etc -type f -exec chmod g+w {} +
+    ```
+
+    ```bash
     find var generated vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} +
+    ```
+
+    ```bash
     chown -R :www-data . # Ubuntu
+    ```
+
+    ```bsah
     chmod u+x bin/magento
     ```
 
@@ -145,8 +176,13 @@ You cannot use the Web Setup Wizard when installing Magento on nginx. You must u
 
 1. Switch to developer mode:
 
-		cd /var/www/html/magento2/bin
+    ```bash
+    cd /var/www/html/magento2/bin
+    ```
+
+    ```bash
     ./magento deploy:mode:set developer
+    ```
 
 ### Configure nginx {#configure-nginx-ubuntu}
 
@@ -156,21 +192,25 @@ These instructions assume you're using the Ubuntu default location for the nginx
 
 1. Create a new virtual host for your Magento site:
 
-		vim /etc/nginx/sites-available/magento
+    ```bash
+    vim /etc/nginx/sites-available/magento
+    ```
 
 2. Add the following configuration:
 
-		upstream fastcgi_backend {
-			server unix:/run/php/php7.0-fpm.sock;
-		}
+    ```conf
+    upstream fastcgi_backend {
+      server unix:/run/php/php7.0-fpm.sock;
+    }
 
-		server {
+    server {
 
-			listen 80;
-			server_name www.magento-dev.com;
-			set $MAGE_ROOT /var/www/html/magento2;
-			include /var/www/html/magento2/nginx.conf.sample;
-		}
+      listen 80;
+      server_name www.magento-dev.com;
+      set $MAGE_ROOT /var/www/html/magento2;
+      include /var/www/html/magento2/nginx.conf.sample;
+    }
+    ```
 
     {:.bs-callout .bs-callout-info}
     The `include` directive must point to the sample nginx configuration file in your Magento installation directory.
@@ -181,15 +221,21 @@ These instructions assume you're using the Ubuntu default location for the nginx
 
 5. Activate the newly created virtual host by creating a symlink to it in the `/etc/nginx/sites-enabled` directory:
 
-		ln -s /etc/nginx/sites-available/magento /etc/nginx/sites-enabled
+    ```bash
+    ln -s /etc/nginx/sites-available/magento /etc/nginx/sites-enabled
+    ```
 
 6. Verify that the syntax is correct:
 
-		nginx -t
+    ```bash
+    nginx -t
+    ```
 
 7. Restart nginx:
 
-		systemctl restart nginx
+    ```bash
+    systemctl restart nginx
+    ```
 
 ### Verify the installation
 
@@ -201,13 +247,23 @@ The following section describes how to install Magento 2.x on CentOS 7 using ngi
 
 ### Install nginx
 
-	yum -y install epel-release
-	yum -y install nginx
+```bash
+yum -y install epel-release
+```
+
+```bash
+yum -y install nginx
+```
 
 After installation is complete, start nginx and configure it to start at boot time:
 
-	systemctl start nginx
-	systemctl enable nginx
+```bash
+systemctl start nginx
+```
+
+```bash
+systemctl enable nginx
+```
 
 After completing the following sections and [installing Magento]({{ page.baseurl }}/install-gde/prereq/nginx.html#install-magento2-centos), we'll use a sample configuration file to [configure nginx]({{ page.baseurl }}/install-gde/prereq/nginx.html#configure-nginx-centos).
 
@@ -217,7 +273,9 @@ Magento requires several [PHP extensions]({{ page.baseurl }}/install-gde/prereq/
 
 1. Install `php-fpm`:
 
-		yum -y install php70w-fpm
+    ```bash
+    yum -y install php70w-fpm
+    ```
 
 2. Open the `/etc/php.ini` file in an editor.
 
@@ -225,16 +283,20 @@ Magento requires several [PHP extensions]({{ page.baseurl }}/install-gde/prereq/
 
 4. Edit the file to match the following lines:
 
-		memory_limit = 2G
-		max_execution_time = 1800
-		zlib.output_compression = On
+    ```conf
+    memory_limit = 2G
+    max_execution_time = 1800
+    zlib.output_compression = On
+    ```
 
     {:.bs-callout .bs-callout-info}
     We recommend setting the memory limit to 2G when testing Magento. Refer to [Required PHP settings]({{ page.baseurl }}/install-gde/prereq/php-settings.html) for more information.
 
 5. Uncomment the session path directory and set the path:
 
-		session.save_path = "/var/lib/php/session"
+    ```conf
+    session.save_path = "/var/lib/php/session"
+    ```
 
 6. Save and exit the editor.
 
@@ -242,41 +304,62 @@ Magento requires several [PHP extensions]({{ page.baseurl }}/install-gde/prereq/
 
 8. Edit the file to match the following lines:
 
-		user = nginx
-		group = nginx
-		listen = /run/php-fpm/php-fpm.sock
-		listen.owner = nginx
-		listen.group = nginx
-		listen.mode = 0660
+    ```conf
+    user = nginx
+    group = nginx
+    listen = /run/php-fpm/php-fpm.sock
+    listen.owner = nginx
+    listen.group = nginx
+    listen.mode = 0660
+    ```
 
 9. Uncomment the environment lines:
 
-		env[HOSTNAME] = $HOSTNAME
-		env[PATH] = /usr/local/bin:/usr/bin:/bin
-		env[TMP] = /tmp
-		env[TMPDIR] = /tmp
-		env[TEMP] = /tmp
+    ```conf
+    env[HOSTNAME] = $HOSTNAME
+    env[PATH] = /usr/local/bin:/usr/bin:/bin
+    env[TMP] = /tmp
+    env[TMPDIR] = /tmp
+    env[TEMP] = /tmp
+    ```
 
 10. Save and exit the editor.
 
 11. Create a new directory for the PHP session path and change the owner to the `apache` user and group:
 
-		mkdir -p /var/lib/php/session/
-		chown -R apache:apache /var/lib/php/
+    ```bash
+    mkdir -p /var/lib/php/session/
+    ```
+
+    ```bash
+    chown -R apache:apache /var/lib/php/
+    ```
 
 12. Create a new directory for the PHP session path and change the owner to the `apache` user and group:
 
-		mkdir -p /run/php-fpm/
-		chown -R apache:apache /run/php-fpm/
+    ```bash
+    mkdir -p /run/php-fpm/
+    ```
+
+    ```bash
+    chown -R apache:apache /run/php-fpm/
+    ```
 
 13. Start the `php-fpm` service and configure it to start at boot time:
 
-		systemctl start php-fpm
-		systemctl enable php-fpm
+    ```bash
+    systemctl start php-fpm
+    ```
+
+    ```bash
+    systemctl enable php-fpm
+    ```
 
 14. Verify that the `php-fpm` service is running:
 
-		netstat -pl | grep php-fpm.sock
+    ```bash
+    netstat -pl | grep php-fpm.sock
+    ```
 
 ### Install and configure MySQL
 
@@ -296,41 +379,76 @@ For this example, we'll download and extract an archive.
 
 1. Change to the web server docroot directory, or to a directory you’ve configured as a virtual host docroot. For this example, we're using the CentoOS default `/usr/share/nginx/html`.
 
-		cd /usr/share/nginx/html
+    ```bash
+    cd /usr/share/nginx/html
+    ```
 
 2. Download the Magento archive, extract it, and rename the folder `magento2/`:
 
-		wget https://github.com/magento/magento2/archive/2.2.tar.gz
-		tar -xzvf 2.2.tar.gz
-		mv magento2-2.2/ magento2/
+    ```bash
+    wget https://github.com/magento/magento2/archive/2.2.tar.gz
+    ```
+
+    ```bash
+    tar -xzvf 2.2.tar.gz
+    ```
+
+    ```bash
+    mv magento2-2.2/ magento2/
+    ```
 
 3. [Set directory ownership and file permissions]({{ page.baseurl }}/install-gde/prereq/file-system-perms.html).
 
-		cd /usr/share/nginx/html/magento2
-		find var vendor pub/static pub/media app/etc -type f -exec chmod g+w {} +
-		find var vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} +
-		chown -R :apache .
-		chmod u+x bin/magento
+    ```bash
+    cd /usr/share/nginx/html/magento2
+    ```
+
+    ```bash
+    find var vendor pub/static pub/media app/etc -type f -exec chmod g+w {} +
+    ```
+
+    ```bashfind var vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} +
+    ```
+
+    ```bash
+    chown -R :apache .
+    ```
+
+    ```bash
+    chmod u+x bin/magento
+    ```
 
 4. Install Composer globally. You'll need Composer to update dependencies before installing Magento:
 
-		curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/bin --filename=composer
+    ```bash
+    curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/bin --filename=composer
+    ```
 
 5. Update Magento dependencies:
 
-		cd /usr/share/nginx/html/magento2
-		composer install
+    ```bash
+    cd /usr/share/nginx/html/magento2
+    ```
+
+    ```bash
+    composer install
+    ```
 
 6. If prompted, enter your [Magento authentication keys]({{ page.baseurl }}/install-gde/prereq/connect-auth.html).
 
 7. Install Magento from the [command line]({{ page.baseurl }}/install-gde/install/cli/install-cli.html).
 
-		cd /usr/share/nginx/html/magento2/bin
-		./magento setup:install --base-url=http://www.magento-dev.com/ \
-		--db-host=localhost --db-name=magento --db-user=magento --db-password=magento \
-		--admin-firstname=Magento --admin-lastname=User --admin-email=user@example.com \
-		--admin-user=admin --admin-password=admin123 --language=en_US \
-		--currency=USD --timezone=America/Chicago --use-rewrites=1
+    ```bash
+    cd /usr/share/nginx/html/magento2/bin
+    ```
+
+    ```bash
+    ./magento setup:install --base-url=http://www.magento-dev.com/ \
+    --db-host=localhost --db-name=magento --db-user=magento --db-password=magento \
+    --admin-firstname=Magento --admin-lastname=User --admin-email=user@example.com \
+    --admin-user=admin --admin-password=admin123 --language=en_US \
+    --currency=USD --timezone=America/Chicago --use-rewrites=1
+    ```
 
     Replace `http://www.magento-dev.com` with your domain name.
 
@@ -339,8 +457,13 @@ For this example, we'll download and extract an archive.
 
 8. Switch Magento to developer mode:
 
-		cd /usr/share/nginx/html/magento2/bin
-		./magento deploy:mode:set developer
+    ```bash
+    cd /usr/share/nginx/html/magento2/bin
+    ```
+
+    ```bash
+    ./magento deploy:mode:set developer
+    ```
 
 ### Configure nginx {#configure-nginx-centos}
 
@@ -350,21 +473,25 @@ These instructions assume you're using the CentOS default location for the nginx
 
 1. Create a new virtual host for your Magento site:
 
-		vim /etc/nginx/conf.d/magento.conf
+    ```bash
+    vim /etc/nginx/conf.d/magento.conf
+    ```
 
 2. Add the following configuration:
 
-		upstream fastcgi_backend {
-			server unix:/run/php-fpm/php-fpm.sock;
-		}
+    ```conf
+    upstream fastcgi_backend {
+      server unix:/run/php-fpm/php-fpm.sock;
+    }
 
-		server {
+    server {
 
-			listen 80;
-			server_name www.magento-dev.com;
-			set $MAGE_ROOT /usr/share/nginx/html/magento2;
-			include /usr/share/nginx/html/magento2/nginx.conf.sample;
-		}
+      listen 80;
+      server_name www.magento-dev.com;
+      set $MAGE_ROOT /usr/share/nginx/html/magento2;
+      include /usr/share/nginx/html/magento2/nginx.conf.sample;
+    }
+    ```
 
     {:.bs-callout .bs-callout-info}
     The `include` directive must point to the sample nginx configuration file in your Magento installation directory.
@@ -375,46 +502,83 @@ These instructions assume you're using the CentOS default location for the nginx
 
 5. Verify that the syntax is correct:
 
-		nginx -t
+    ```bash
+    nginx -t
+    ```
 
 6. Restart nginx:
 
-		systemctl restart nginx
+    ```bash
+    systemctl restart nginx
+    ```
 
 ### Configure SELinux and Firewalld
 
 SELinux is enabled by default on CentOS 7. Use the following command to see if it's running:
 
-	sestatus
+```bash
+sestatus
+```
 
 To configure SELinux and firewalld:
 
 1. Install SELinux management tools:
 
-		yum -y install policycoreutils-python
+    ```bash
+    yum -y install policycoreutils-python
+    ```
 
 2. Run the following commands to change the security context for the Magento installation directory:
 
-		semanage fcontext -a -t httpd_sys_rw_content_t '/usr/share/nginx/html/magento2/app/etc(/.*)?'
-		semanage fcontext -a -t httpd_sys_rw_content_t '/usr/share/nginx/html/magento2/var(/.*)?'
-		semanage fcontext -a -t httpd_sys_rw_content_t '/usr/share/nginx/html/magento2/pub/media(/.*)?'
-		semanage fcontext -a -t httpd_sys_rw_content_t '/usr/share/nginx/html/magento2/pub/static(/.*)?'
+    ```bash
+    semanage fcontext -a -t httpd_sys_rw_content_t '/usr/share/nginx/html/magento2/app/etc(/.*)?'
+    ```
+
+    ```bash
+    semanage fcontext -a -t httpd_sys_rw_content_t '/usr/share/nginx/html/magento2/var(/.*)?'
+    ```
+
+    ```bash
+    semanage fcontext -a -t httpd_sys_rw_content_t '/usr/share/nginx/html/magento2/pub/media(/.*)?'
+    ```
+
+    ```bash
+    semanage fcontext -a -t httpd_sys_rw_content_t '/usr/share/nginx/html/magento2/pub/static(/.*)?'
+    ```
+
+    ```bash
 		restorecon -Rv '/usr/share/nginx/html/magento2/'
+    ```
 
 3. Install the firewalld package:
 
-		yum -y install firewalld
+    ```bash
+    yum -y install firewalld
+    ```
 
 4. Start the firewall service and configure it to start at boot time:
 
-		systemctl start firewalld
-		systemctl enable firewalld
+    ```bash
+    systemctl start firewalld
+    ```
+
+    ```bash
+    systemctl enable firewalld
+    ```
 
 5. Run the following commands to open ports for HTTP and HTTPS so you can access the Magento base URL from a web browser:
 
-		firewall-cmd --permanent --add-service=http
-		firewall-cmd --permanent --add-service=https
-		firewall-cmd --reload
+    ```bash
+    firewall-cmd --permanent --add-service=http
+    ```
+
+    ```bash
+    firewall-cmd --permanent --add-service=https
+    ```
+
+    ```bash
+    firewall-cmd --reload
+    ```
 
 ### Verify the installation
 

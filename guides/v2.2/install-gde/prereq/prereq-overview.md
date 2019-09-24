@@ -31,13 +31,23 @@ Enter the following commands as a user with `root` privileges:
 
 *	Ubuntu
 
-		apt-get update
-		apt-get upgrade
+    ```bash
+    apt-get update
+    ```
+
+    ```bash
+    apt-get upgrade
+    ```
 
 *	CentOS
 
-		yum -y update
-		yum -y upgrade
+    ```bash
+    yum -y update
+    ```
+
+    ```bash
+    yum -y upgrade
+    ```
 
 ## Prerequisite check {#instgde-prereq-check}
 
@@ -58,14 +68,18 @@ To install or upgrade Apache, see [Apache]({{ page.baseurl }}/install-gde/prereq
 
 ### PHP
 
-	php -v
+```bash
+php -v
+```
 
 You must run [PHP](https://glossary.magento.com/php) version 7.0.x or 7.1.x as the following result indicates:
 
-	PHP 7.0.8-2+deb.sury.org~trusty+1 (cli) ( NTS )
-	Copyright (c) 1997-2016 The PHP Group
-	Zend Engine v3.0.0, Copyright (c) 1998-2016 Zend Technologies
-      with Zend OPcache v7.0.8-2+deb.sury.org~trusty+1, Copyright (c) 1999-2016, by Zend Technologies
+```terminal
+PHP 7.0.8-2+deb.sury.org~trusty+1 (cli) ( NTS )
+Copyright (c) 1997-2016 The PHP Group
+Zend Engine v3.0.0, Copyright (c) 1998-2016 Zend Technologies
+		with Zend OPcache v7.0.8-2+deb.sury.org~trusty+1, Copyright (c) 1999-2016, by Zend Technologies
+```
 
 To install PHP, see:
 
@@ -74,7 +88,9 @@ To install PHP, see:
 
 ### MySQL
 
-	mysql -u <database root user or database owner name> -p
+```bash
+mysql -u <database root user or database owner name> -p
+```
 
 For example:
 
