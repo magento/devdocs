@@ -133,6 +133,7 @@ Here are the enhancements and fixes available as of January 5, 2018:
 ### Fixes
 
 #### Billing
+
 * Fixed issue with billing metric calculations and capture
 
 #### Tracking
@@ -154,6 +155,7 @@ Here are the enhancements and fixes available as of January 5, 2018:
 * Removed restrictions on mandatory county information
 
 #### FedEx
+
 * Removed unsupported freight services from list of available services
 
 * Changed orientation of labels from landscape to portrait
@@ -169,4 +171,3 @@ Here are the enhancements and fixes available as of January 5, 2018:
 #### USPS
 
 * Updated label size to A6 default in PNG.
-

@@ -84,6 +84,7 @@ interface AdapterInterface
 ```
 
 ## How to Run the Tests {#howto}
+
 ### Prerequisites {#prereq}
 
 1. Install the [PHP](https://glossary.magento.com/php) Soap [extension](https://glossary.magento.com/extension).
@@ -92,8 +93,7 @@ interface AdapterInterface
 
 	`extension=php_soap.dll`
 
-2. Before running the functional tests you need to clear your [cache](https://glossary.magento.com/cache).
-Now you are ready to run the tests.
+2. Before running the functional tests you need to clear your [cache](https://glossary.magento.com/cache). Now you are ready to run the tests.
 
 ### Running the Tests {#running}
 

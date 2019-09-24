@@ -56,6 +56,7 @@ For details about how to initialize the widget in a`.phtml` template, refer to t
 ## Options {#password_strength_indicator_options}
 
 The password strength indicator widget has the following options:
+
 -   [passwordSelector](#password_strength_indicator_password_selector)
 -   [passwordStrengthMeterSelector](#password_strength_indicator_password_strength_meter_selector)
 -   [passwordStrengthMeterLabelSelector](#password_strength_indicator_password_strength_meter_label_selector)

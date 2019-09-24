@@ -45,7 +45,7 @@ Additional folders can be added for configuration and other ancillary functions 
 
 A typical [theme](https://glossary.magento.com/theme) file structure can look like the following:
 
-~~~
+```tree
 ├── composer.json
 ├── etc
 │   └── view.xml
@@ -81,7 +81,7 @@ A typical [theme](https://glossary.magento.com/theme) file structure can look li
         ├── navigation-menu.js
         ├── responsive.js
         └── theme.js
-~~~
+```
 
 #### Common directories
 {:.no_toc}

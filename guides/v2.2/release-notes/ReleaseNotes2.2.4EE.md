@@ -85,11 +85,13 @@ We do not recommend upgrading to Magento 2.2.4 if you deploy across multiple web
 <!--- MAGETWO-81740 -->* The icons for Extension Manager and Module Manager are now consistent with the main content area and left-hand menu of the Web Setup Wizard. *Fix submitted by Danny Verkade in pull request 11388*. [GitHub-11236](https://github.com/magento/magento2/issues/11236)
 
 <!--- MAGETWO-80111 -->* Magento now continues operating in maintenance mode if it was previously enabled. Previously, Magento disabled maintenance mode  when you used one of these commands:
+
     * `bin\magento module:uninstall`
     * `bin\magento setup:backup`
     * `bin\magento setup:rollback`
     * `bin\magento theme:uninstall`
     * `bin\magento deploy:mode:set production`
+
 *Fix submitted by Joke Puts in pull request 11052*. [GitHub-9918](https://github.com/magento/magento2/issues/9918)
 
 <!--- MAGETWO-85778 -->* You can specify a custom version for static files being deployed, and now nginx sample config files can match these custom  versions, too. *Fix submitted by Scott Buchanan in pull request 12521*.
@@ -464,6 +466,7 @@ We do not recommend upgrading to Magento 2.2.4 if you deploy across multiple web
 <!--- MAGETWO-85780 -->* The `sid` variable no longer appears in the storefront URL even if it has been  disabled in the Admin. Previously, even when the Magento setting **General > Web > Session Validation Settings > Use SID on Storefront** was set to **No**, the `sid` variable no longer appears in the URL. *Fix submitted by Roman Strelenko in pull request 12743*. [GitHub-9453](https://github.com/magento/magento2/issues/9453)
 
 <!--- MAGETWO-85779 -->* The menu item handling has been refactored to read item data from two different sources:
+
     * from original XML definition if the cache is empty
     * from transformed item data when available in the cache. *Fix submitted by Pavel in pull request 12747*. [GitHub-9720](https://github.com/magento/magento2/issues/9720)
 

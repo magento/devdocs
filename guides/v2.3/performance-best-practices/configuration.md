@@ -19,6 +19,7 @@ An indexer can run in either **Update on Save** or **Update on Schedule** mode. 
 
 <!--  Add to docs in 2.3.1 - MAGEDOC-3020
 We recommend that you use index parallelization and that you set threads count for the index process based on:
+
 - Threads count >= max dimension count (across all indexers)
 - Threads count <= cores count
 

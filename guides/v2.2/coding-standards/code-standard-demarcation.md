@@ -175,11 +175,16 @@ section[role="main"] { ... }
 
 ### You must not hard-code CSS styles in JavaScript files
 
-{: .bs-callout-info }
--  Exception: CSS attributes where values must be calculated beyond the css-topics/LESS code.
--  Simplifies change of the default look and feel by adding CSS classes to and removing them from elements.
--  Improves style extensibility.
--  Reduces long-term maintenance efforts by containing CSS styles in a single place.
+{%
+include note.html
+type='info'
+content='Exception: CSS attributes where values must be calculated beyond the css-topics/LESS code.
+
+- Simplifies change of the default look and feel by adding CSS classes to and removing them from elements.
+- Improves style extensibility.
+- Reduces long-term maintenance efforts by containing CSS styles in a single place.'
+
+%}
 
 **Acceptable [JavaScript](https://glossary.magento.com/javascript) [widget](https://glossary.magento.com/widget) file**
 
