@@ -6,7 +6,7 @@ title: Magento Definition of Done
 ## Overview
 
 The "Definition of Done" (DoD) is a collective term for a set of acceptance criteria that is applied to any changes in the product code base.
-The requirements that result from our DoD are applied by default to all user stories and to each task within this user story.
+The requirements that result from our DoD are applied by default to all user stories and to each task within this user story as well as for bug fixes.
 
 Internally, the Magento development teams follow the DoD to ensure that all work meets consistent release criteria.
 We encourage our community contributors to also follow the Magento DoD.
@@ -63,54 +63,29 @@ Code changes must be covered by automated tests according to Classification of M
 When choosing how to cover your changes, pick the most lightweight (execution time wise) test type that will provide sufficient coverage.
 If you encounter an existing test that insufficiently covers your changes, you can delete that test but you must write a proper test to replace it. For example, a method that interacts with database has a unit test. You can replace it with an integration test.
 
+Be aware that while high-level tests may provide coverage to code, it is only indirect coverage. Tests with more direct usage of the changed code will likely still needs to be written to ensure that regardless of the which components are actually used in the black box, the individual components still have coverage.  
+
 Before committing code changes, author must ensure successful execution of all tests by running all tests or at least those which might be affected by code changes.
 Continuous integration enforces execution of all tests and author is accountable for broken builds.
 
-### Functional Tests
+Any code that is added or changed must have explicit tests to validate the behavior. To clarify, this policy is intended to prove that the integrity of the code is verified regardless of which implementations are loaded in a black-box environment. This may be done through unit or integration testing as appropriate.
 
-Must cover new or changed application behavior (functional).
-Added/updated functionality should be covered by a functional autotest(s) related to previous sprint commitment in scope of current sprint.
+Code must be also shown to work with known collaborators. This must be done through integration tests and ideally should involve as few components as possible per test case. This level of tests ensures that the code will work with its known associates. Specific examples can be subject but such associates would include composites, chains, pools, etc. but also include cases like a Template filter working with a specific processor loaded.
 
-See [Functional Tests][2].
+In addition, regardless of the interpretation of the testing strategy below: Any class marked with an `@api` annotation MUST be covered with explicit test coverage via integration or unit tests. 
+These tests must test the concrete implementation's behavior in a way that can not be inadvertently changed outside of the test itself. 
+For example: testing a concrete class through DI preference is not safe because it could be overridden via configuration of another loaded module. The test should not ask for the interface but rather the concrete implementation.
 
-### Unit Tests
-
-Cover classes and methods that:
-
-* Have little to no dependencies
-* Do not interact with resources like database, file system, 3rd party systems etc.
-* Underlying functionality cannot be properly covered indirectly by an integration test
-* Can be covered by a [black box test](https://en.wikipedia.org/wiki/Black-box_testing)
-
-Examples:
-
-* Utils (like `\Magento\Framework\Math\Random`)
-* Simple classes that can also be used (at least initiated) independently (like `\Magento\Framework\Api\SortOrder`)
-* Algorithms that perform calculation, parsing
-
-Code NOT to cover:
-
-* Classes/methods with numerous dependencies.
-  - Creation of Unit tests for such classes will result in creation of a lot of mocks and writing complex test logic (that most likely follows code to large extend and as a result we will have fragile and hard to maintain tests)
-* Classes/methods interacting with resources directly or indirectly.
-  - It is impossible to test the resources affected within a Unit test.
-* Glue code.
-  - Mostly passing data between collaborators and has no or small amount of logic so it can be covered indirectly by integration/functional tests.
-
-Examples:
-
-* Controllers - They can only be properly covered by functional tests because they are the "glue" that connects different app layers. Only controller final result matter.
-* Most models - They usually have many dependencies and interact with resources.
-* Simple DTOs
-* Factories
 
 ### Integration Tests
 
-Cover classes and methods that:
+An integration test should be used to cover any code that doesn't meet the requirements of a unit test or functional test and should be thought of as essentially the default test type.
 
-* Cannot be covered with a black box unit test
-* Have many dependencies (unit test would require complex mocking)
-* Interact with resources (database, file system, 3rd party systems etc.)
+Integration tests come in many forms and can drastically vary in definition depending on what the intention of the test is. Generally speaking an integration test verifies that two or more things work together correctly. i.e. We are testing the _integration_ one one thing with another thing. 
+For the purpose of Magento testing, there are essentially two broad categories of integration tests: narrow-form and broad-form.
+
+* Narrow-form integration tests focus on testing something mostly in isolation an can be as simple as a unit test as described in this guide except without mocked dependencies.
+* Broad-form integration tests focus on testing something with less isolation and will involve multiple components explicitly collaborating. (compared to narrow-form where the dependencies are implicit collaborating)
 
 Examples:
 
@@ -124,6 +99,57 @@ Examples:
   - Usually have numerous dependencies, interacting with resources (database, cache, file system, 3rd party systems etc.) and sometimes can substitute an API
 
 See: [Running Integration Tests][3].
+
+### Functional Tests
+
+Web API endpoints must have functional test coverage. These tests should ensure that the endpoints behave in accordance to their service contracts regardless of the actual concrete implementation that may be loaded.
+ 
+For UI-related code, there are some circumstances where it is not possible to cover changes with unit or integration tests. In these cases the appropriate type of coverage would be a functional test but this is a last resort only. 
+However, aside from those cases UI functional tests should only be used to cover P0/P1 testing scenarios. If there are no scenarios available to make this decision, a product owner must be consulted for approval of new tests.
+
+UI functional tests are inherently unstable irrespective of platform or testing framework. For this reason along with reasons of maintainability and quality assurance delivery time, these tests should be prioritized below all other tests types.
+
+See [Functional Tests][2].
+
+### Unit Tests
+
+There are a decreasingly small number of use cases for unit tests in Magento. The nature of our code and backwards compatibility practices make it increasingly hard to write and maintain high-quality unit tests.
+Many of them end up being replaced by integration tests or are practically useless from the beginning due to how much mocking is needed to make them pass.
+
+For these reasons, most of the time an integration test is likely the preferred test type but here are some cases when you would still want to use them:  
+
+Classes and methods that:
+
+* Have little to no dependencies. 
+  - The test must not be directly coupled to the collaborators of the test subject. If the collaborators are solely responsible for the behavior of the tested subject, it won't be a good unit test. 
+* Do not interact with resources like database, file system, 3rd party systems etc. 
+* Can be covered by a [black box test](https://en.wikipedia.org/wiki/Black-box_testing)
+  - The test must not be a mirror of the code. Instead the test must validate the contract of the method or class is upheld by the implementation. Specific implementations may be weak in certain areas so specific corner cases could cover that logic while still being a black box test.  
+* Would not be easily foreseen to have dependencies in the future.
+  - This can be hard to predict but a good example of when it would be unlikely is a simple utility class that performs some standalone operation. By contrast, a helper would be very likely to have dependencies by nature. 
+
+Examples:
+
+* Utility classes (like `\Magento\Framework\Math\Random`).
+* Simple classes that can also be used independently (like `\Magento\Framework\Api\SortOrder`).
+* Simple logic within a Data Transfer Object.
+* Algorithms that perform calculation or parsing.
+
+And by explicit contrast here are some things NOT to cover:
+
+* Classes/methods with numerous dependencies.
+  - Creation of Unit tests for such classes will result in creation of a lot of mocks and writing complex test logic (that most likely follows code to large extend and as a result we will have fragile and hard to maintain tests)
+* Classes/methods interacting with resources directly or indirectly.
+* Glue/wiring.
+  - Mostly passing data between collaborators and has no or small amount of logic so it can be covered indirectly by integration/functional tests.
+
+Examples:
+
+* Controllers
+  - They are the "glue" that connects different app layers. They shouldn't contain any business logic and should only be responsible for directing request/response information to/from services. They can be tested via integration or functional tests. Also, controller-specific tests will likely be rendered useless and ultimately deleted at some point in the context of the service isolation initiative which makes this idea much more important.  
+* Model triad classes (Model/Resource Model/Collection)
+  - They have many dependencies and interact with resources.
+* Factories
 
 ### Integrity Tests
 
