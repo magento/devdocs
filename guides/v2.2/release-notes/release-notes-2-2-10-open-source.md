@@ -130,7 +130,7 @@ In addition to security enhancements, this release contains the following functi
 <!-- ENGCOM-5186 -->
 * Magento now applies the sort preferences that you set in website scope configuration for a particular website to the layout of the checkout page. Previously, sort order for elements of this page was derived from the default configuration, not website-specific values. *Fix submitted by Abrar Pathan in pull request [23058](https://github.com/magento/magento2/pull/23058)*. [GitHub-22380](https://github.com/magento/magento2/issues/22380)
 
-<!-- ENGCOM-5400 --> 
+<!-- ENGCOM-5400 -->
 * You can now add any decimal quantity of a product to your shopping cart (even a quantity less than the quantity set in the **Minimum Qty** setting) when the **Qty Uses Decimals** setting is enabled. *Fix submitted by Prakash Prajapati in pull request [23574](https://github.com/magento/magento2/pull/23574)*. [GitHub-23038](https://github.com/magento/magento2/issues/23038)
 
 ### Catalog
@@ -426,7 +426,7 @@ In addition to security enhancements, this release contains the following functi
 
 <!-- MC-19610 -->
 * Magento no longer places an order if a JavaScript error occurs when a customer clicks **Place order** using Braintree as the payment method.
- 
+
 ### Pricing
 
 <!-- MC-98899 -->

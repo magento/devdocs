@@ -200,7 +200,7 @@ In addition to security enhancements, this release contains the following functi
 <!-- MAGETWO-99956 -->
 * The **Admin** > **Catalog** > **Categories** page now works as expected. Previously, Magento threw a fatal error when you tried to navigate to this page due to issues with the translation function.
 
-<!-- ENGCOM-5400 --> 
+<!-- ENGCOM-5400 -->
 * You can now add any decimal quantity of a product to your shopping cart (even a quantity less than the quantity set in the **Minimum Qty** setting) when the **Qty Uses Decimals** setting is enabled. *Fix submitted by Prakash Prajapati in pull request [23574](https://github.com/magento/magento2/pull/23574)*. [GitHub-23038](https://github.com/magento/magento2/issues/23038)
 
 ### Catalog
