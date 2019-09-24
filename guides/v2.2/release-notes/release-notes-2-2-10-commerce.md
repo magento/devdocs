@@ -138,7 +138,7 @@ In addition to security enhancements, this release contains the following functi
 * Export files now include all columns (including those not visible in the Company list) and their data. Previously, the `State/Province` columns of the exported CSV file were empty.
 
 <!-- MC-17882 -->
-* Request a Quote functionality now works as expected on browsers that are running Internet Explorer 11.x.
+* Request a Quote functionality now works as expected on Internet Explorer 11.x.
 
 <!-- MC-15671 -->
 * File links for customizable options on the Requisition list page now work as expected.
@@ -334,7 +334,7 @@ In addition to security enhancements, this release contains the following functi
 ### Customer segment
 
 <!-- MAGETWO-99571 -->
-* You can now create an order from the Admin when  you have a customer segment for customers with 0 or more orders. Previously, if you had a customer segment for customers with 0 or more orders, an SQL error occurred when you tried to create an order in the Admin.
+* You can now create an order from the Admin when you have a customer segment for customers with 0 or more orders. Previously, if you had a customer segment for customers with 0 or more orders, an SQL error occurred when you tried to create an order in the Admin.
 
 <!-- MC-17768 -->
 * You can now create an order from the Admin with a customer segment based on zero  or more orders when the table prefix is specified. Previously, Magento threw an error when you tried to create an order from the Admin under these conditions.
@@ -492,7 +492,7 @@ In addition to security enhancements, this release contains the following functi
 ### Media Storage
 
 <!-- MAGETWO-93497 -->
-* Media directives now work as expected when an administrator uses a custom domain  (`admin/url/custom`) instead the default domain. Previously,  the WYSIWYG `image-selector` returned malformed media directives, which resulted in broken links to images. [GitHub-16427](https://github.com/magento/magento2/issues/16427)
+* Media directives now work as expected when an administrator uses a custom domain  (`admin/url/custom`) instead the default domain. Previously, the WYSIWYG `image-selector` returned malformed media directives, which resulted in broken links to images. [GitHub-16427](https://github.com/magento/magento2/issues/16427)
 
 ### Newsletter
 
@@ -752,10 +752,10 @@ In addition to security enhancements, this release contains the following functi
 ### Web API framework
 
 <!-- ENGCOM-5204 -->
-* Magento now renders shipment details for an order without a fatal error when you use REST to create a shipment. *Fix submitted by Milind Singh in pull request [23119](https://github.com/magento/magento2/pull/23119)*. [GitHub-22686](https://github.com/magento/magento2/issues/22686)
+* Magento now renders shipment details for an order without a fatal error when you use `POST V1/shipment` to create a shipment. *Fix submitted by Milind Singh in pull request [23119](https://github.com/magento/magento2/pull/23119)*. [GitHub-22686](https://github.com/magento/magento2/issues/22686)
 
 <!-- ENGCOM-5188 -->
-* You can now use REST to update a customer that has no associated `store_id` without unintentionally changing other information. Previously, Magento changed the `store_id` to the default `store_id` if this field was left empty in the PUT request. *Fix submitted by Mateusz Wira in pull request [22895](https://github.com/magento/magento2/pull/22895)*. [GitHub-22869](https://github.com/magento/magento2/issues/22869)
+* You can now use `POST V1/customers` to update a customer that has no associated `store_id` without unintentionally changing other information. Previously, Magento changed the `store_id` to the default `store_id` if this field was left empty in the PUT request. *Fix submitted by Mateusz Wira in pull request [22895](https://github.com/magento/magento2/pull/22895)*. [GitHub-22869](https://github.com/magento/magento2/issues/22869)
 
 ### Website restriction
 
