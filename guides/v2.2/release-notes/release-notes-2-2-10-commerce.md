@@ -703,9 +703,6 @@ In addition to security enhancements, this release contains the following functi
 <!-- ENGCOM-5336 -->
 * Magento now displays the cursor to the right of the search keyword box as expected after multiple clicks on the search field in mobile view. *Fix submitted by Prakash Prajapati in pull request [23352](https://github.com/magento/magento2/pull/23352)*. [GitHub-22736](https://github.com/magento/magento2/issues/22736)
 
-<!-- ENGCOM-5401 -->
-* The `always` action that precedes the opening of the alert and confirm widgets is now called once. Previously, the `always triggering` text was logged twice after you clicked the **OK** button. *Fix submitted by Eduard Chitoraga in pull request [23579](https://github.com/magento/magento2/pull/23579)*. [GitHub-23233](https://github.com/magento/magento2/issues/23233)
-
 <!-- ENGCOM-5396 -->
 * The **Refund** button on the credit memo page now remains active after a merchant enters a value in the Refund Totals section. *Fix submitted by Prakash Prajapati in pull request [23566](https://github.com/magento/magento2/pull/23566)*. [GitHub-23285](https://github.com/magento/magento2/issues/23285)
 
