@@ -113,7 +113,7 @@ To set the sensitive and system-specific settings using environment variables, y
 
 As discussed in [Use environment variables to override configuration settings]({{ page.baseurl }}/config-guide/prod/config-reference-var-name.html), the format of variables is:
 
-```
+```text
 <SCOPE>__<SYSTEM__VARIABLE__NAME>
 ```
 
@@ -135,7 +135,9 @@ The preceding table has a sample website code, `BASE`, for the Default Email Dom
 
 You can set the variable values in the Magento `index.php` using the following format:
 
-	$_ENV['VARIABLE'] = 'value';
+```php
+$_ENV['VARIABLE'] = 'value';
+```
 
 To set variable values:
 
@@ -143,8 +145,11 @@ To set variable values:
 2.	Open `<Magento root dir>/index.php` in a text editor.
 3.	Anywhere in `index.php`, set values for the variables similar to the following:
 
-		$_ENV['CONFIG__DEFAULT__CONTACT__EMAIL__RECIPIENT_EMAIL'] = 'myname@example.com';
-		$_ENV['CONFIG__WEBSITES__BASE__CUSTOMER__CREATE_ACCOUNT__EMAIL_DOMAIN'] = 'magento.com';
+    ```php
+    $_ENV['CONFIG__DEFAULT__CONTACT__EMAIL__RECIPIENT_EMAIL'] = 'myname@example.com';
+    $_ENV['CONFIG__WEBSITES__BASE__CUSTOMER__CREATE_ACCOUNT__EMAIL_DOMAIN'] = 'magento.com';
+    ```
+
 4.	Save your changes to `index.php` and exit the text editor.
 5.	Continue with the next section.
 

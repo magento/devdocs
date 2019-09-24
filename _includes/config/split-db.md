@@ -14,9 +14,17 @@ Create checkout and OMS master databases as follows:
 
     ```shell
     create database magento_quote;
-    GRANT ALL ON magento_quote.* TO magento_quote@localhost IDENTIFIED BY 'magento_quote';
+    ```
 
+    ```shell
+    GRANT ALL ON magento_quote.* TO magento_quote@localhost IDENTIFIED BY 'magento_quote';
+    ```
+
+    ```shell
     create database magento_sales;
+    ```
+
+    ```shell
     GRANT ALL ON magento_sales.* TO magento_sales@localhost IDENTIFIED BY 'magento_sales';
     ```
 
