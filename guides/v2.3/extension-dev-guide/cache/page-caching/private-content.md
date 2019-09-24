@@ -9,15 +9,15 @@ redirect_from:
 
 {::options syntax_highlighter="rouge" /}
 
-Since private content is specific to individual users, it is reasonable to handle it on the client (i.e., web browser).
+Since private content is specific to individual users, it is reasonable to handle it on the client side (i.e., web browser).
 
 Use our [customer-data]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Customer/view/frontend/web/js/customer-data.js){:target="_blank"} JS library to store private data in local storage, invalidate private data using customizable rules, and synchronize data with the backend.
 
-This example shows a customer's name on a cacheable page.
+This example displays a customer's name on a cacheable page.
 
 ## Create a section source {#config-cache-priv-how-source}
 
-The `section source` class is responsible for retrieving data for the section. As a best practice, we recommend you put your code under the `Vendor/ModuleName/CustomerData` namespace. Your classes must implement the [`Magento\Customer\CustomerData\SectionSourceInterface`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Customer/CustomerData/SectionSourceInterface.php){:target="_blank"} interface.
+The `section source` class is responsible for retrieving data for the section. As a best practice, Magento recommends that you put your code within `Vendor/ModuleName/CustomerData` namespace. Your classes must implement the [`Magento\Customer\CustomerData\SectionSourceInterface`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Customer/CustomerData/SectionSourceInterface.php){:target="_blank"} interface.
 
 The public method `getSectionData` must return an array with private data.
 
@@ -40,7 +40,7 @@ Add the following to your component's [dependency injection](https://glossary.ma
 To render private content, create a block and a template to display user-agnostic data; this data is replaced with user-specific data by the [UI component](https://glossary.magento.com/ui-component).
 
 {: .bs-callout-info }
-Do _not_ use the `$_isScopePrivate` property in your blocks. This property is obsolete and will not work properly.
+Do not use the `$_isScopePrivate` property in your blocks. This property is obsolete and will not work properly.
 
 Replace private data in blocks with placeholders (using [Knockout](http://knockoutjs.com/documentation/introduction.html){:target="_blank"} syntax). The init scope on the root element is `data-bind="scope: 'compareProducts'"`, where you define the scope name (`compareProducts` in this example) in your [layout](https://glossary.magento.com/layout).
 
@@ -75,9 +75,9 @@ The are some exception cases:
 -  Customer cart lifetime option `section_data_lifetime` which is 60 minutes by default. After scheduled time passe section `cart` will be updated.
 
 {: .bs-callout-info }
-Product information will not be simultaneously updated in customer cart (product name, price, product enabled/disabled). Information will be updated after what comes first - `section_data_lifetime` time passed or action that update cart triggered.
+Product information will not be simultaneously updated in customer cart (product name, price, product enabled/disabled). Information will be updated after what comes first: `section_data_lifetime` time passed or an action that the update cart triggered.
 
-The following example adds comments to [app/code/Magento/Catalog/etc/frontend/sections.xml]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/etc/frontend/sections.xml){:target="_blank"} to show you what the code is doing.
+The following example adds comments to [app/code/Magento/Catalog/etc/frontend/sections.xml]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/etc/frontend/sections.xml){:target="_blank"} so you can see what the code is doing.
 
 ```xml
 <?xml version="1.0"?>
