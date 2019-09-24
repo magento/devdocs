@@ -35,7 +35,9 @@ Solutions:
 
 Locate `php.ini` by entering the following command:
 
-	php -i | grep "Loaded Configuration File"
+```bash
+php -i | grep "Loaded Configuration File"
+```
 
 Typical locations follow:
 
@@ -48,10 +50,14 @@ Typical locations follow:
 2.	Locate `session.save_handler`
 3.	Set it in any of the following ways:
 
-	*	To comment it out:
+    *	To comment it out:
 
-			;session.save_path = <path>
+        ```conf
+        ;session.save_path = <path>
+        ```
 
-	*	To set it to a file system path:
+    *	To set it to a file system path:
 
-			session.save_handler = files
+        ```conf
+        session.save_handler = files
+        ```

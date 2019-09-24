@@ -15,9 +15,10 @@ functional_areas:
 
 During the installation, the following message displays:
 
-	PHP Warning:  date(): It is not safe to rely on the system's timezone settings. [more]
+```text
+PHP Warning:  date(): It is not safe to rely on the system's timezone settings. [more]
+```
 
 ### Solution
 
 Set the [PHP timezone]({{ page.baseurl }}/install-gde/prereq/php-settings.html) properly.
-
