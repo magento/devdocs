@@ -56,23 +56,23 @@ Verify that the modified source displays correctly in the browser. Then, add the
 
 #### To  add the custom response page to the Fastly configuration:
 
-1.  [Log in to the Magento Admin UI]({{ page.baseurl }}/cloud/onboarding/onboarding-tasks.html#admin).
+1. [Log in to the Magento Admin UI]({{ page.baseurl }}/cloud/onboarding/onboarding-tasks.html#admin).
 
-1.  Click **Stores** > **Settings** > **Configuration** > **Advanced** > **System**.
+1. Click **Stores** > **Settings** > **Configuration** > **Advanced** > **System**.
 
-1.  In the right pane, expand **Full Page Cache** > **Fastly Configuration** > **Custom Synthetic Pages**.
+1. In the right pane, expand **Full Page Cache** > **Fastly Configuration** > **Custom Synthetic Pages**.
 
-    ![Edit 503 error page]
+   ![Edit 503 error page]
 
-1.	Click **Set HTML**.
+1. Click **Set HTML**.
 
-1.	Copy and paste the source code for your custom response page into the HTML field.
+1. Copy and paste the source code for your custom response page into the HTML field.
 
-    ![Update 503 error page]
+   ![Update 503 error page]
 
-1.	Click **Upload** at the top of the page to upload the customized HTML source to the Fastly server.
+1. Click **Upload** at the top of the page to upload the customized HTML source to the Fastly server.
 
-1.	Click **Save Config** at the top of the page to save the updated configuration file.
+1. Click **Save Config** at the top of the page to save the updated configuration file.
 
 1. Refresh the cache.
 
@@ -108,32 +108,32 @@ You can use the **Custom Synthetic Pages** > **Edit WAF page** option in the Fas
 <p>"} req.http.x-request-id {"</p>
 ```
 
-{:.bs-callout .bs-callout-info}
+{: .bs-callout-info }
 The Edit WAF option is available only if the Managed Cloud WAF service is enabled for your {{ site.var.data.ece }} project.
 
 #### To edit the WAF error page:
 
-1.  [Log in to the Magento Admin UI]({{ page.baseurl }}/cloud/onboarding/onboarding-tasks.html#admin).
+1. [Log in to the Magento Admin UI]({{ page.baseurl }}/cloud/onboarding/onboarding-tasks.html#admin).
 
-1.  Click **Stores** > **Settings** > **Configuration** > **Advanced** > **System**.
+1. Click **Stores** > **Settings** > **Configuration** > **Advanced** > **System**.
 
-1.  In the right pane, expand **Full Page Cache** > **Fastly Configuration** > **Custom Synthetic Pages**.
+1. In the right pane, expand **Full Page Cache** > **Fastly Configuration** > **Custom Synthetic Pages**.
 
-    ![Edit WAF error page option]
+   ![Edit WAF error page option]
 
-1.  Click **Edit WAF page**.
+1. Click **Edit WAF page**.
 
-1.  Complete the fields to update the HTML.
+1. Complete the fields to update the HTML.
 
-    ![Update WAF error page]
+   ![Update WAF error page]
 
-    -  **Status**—Select the `403 Forbidden` status.
-    -  **MIME type**—Type `text/html`.
-    -  **Content**—Edit the default HTML response to add custom CSS and update the title and messaging as needed.
+   -  **Status** — Select the `403 Forbidden` status.
+   -  **MIME type** — Type `text/html`.
+   -  **Content** — Edit the default HTML response to add custom CSS and update the title and messaging as needed.
 
-1.	Click **Upload** at the top of the page to upload the customized HTML source to the Fastly server.
+1. Click **Upload** at the top of the page to upload the customized HTML source to the Fastly server.
 
-1.	Click **Save Config** at the top of the page to save the updated configuration file.
+1. Click **Save Config** at the top of the page to save the updated configuration file.
 
 1. Refresh the cache.
 
@@ -161,4 +161,3 @@ The Edit WAF option is available only if the Managed Cloud WAF service is enable
 
 [Update WAF error page]: {{site.baseurl}}/common/images/cloud/cloud-fastly-edit-waf-html.png
 {: width="650px"}
-
