@@ -6,9 +6,9 @@ contributor_name: Atwix
 contributor_link: https://www.atwix.com/
 ---
 
-The RemainingCharacters [widget](https://glossary.magento.com/widget/) allows you to add the remaining characters note for a text field.
+The RemainingCharacters [widget](https://glossary.magento.com/widget/) allows you to display the remaining characters count for a text field.
 
-The RemainingCharacters widget can be used only on the frontend area.
+The RemainingCharacters widget can be used only in the frontend area.
 
 The RemainingCharacters widget source is [`<Magento_Catalog_module_dir>/view/frontend/web/js/product/remaining-characters.js`][].
 
@@ -28,7 +28,7 @@ $("#remaining-characters").remainingCharacters({
 
 Where:
 
-- `#remaining-characters` is the selector of the element which will be the RemainingCharacters.
+- `#remaining-characters` is the selector of the element which will display RemainingCharacters.
 
 The following example shows a PHTML file using the script:
 
@@ -93,7 +93,7 @@ The class that appends to the [counter element](#counterselector) if the field v
 
 ### `noteSelector`
 
-The selector of note element. The note element is used to contain the [counter element](#counterselector) and the [error class](#errorclass) adds to the note element when the [maxLength](#maxlength) is exceeded.
+The selector of note element. The note element contains the [counter element](#counterselector) and the [error class](#errorclass) is added to the note element when the [maxLength](#maxlength) is exceeded.
 
 **Type**: String
 
