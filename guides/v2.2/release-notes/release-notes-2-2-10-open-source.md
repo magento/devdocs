@@ -39,7 +39,7 @@ This release contains the following major PSD-related changes:
 * Authorize.net now provides the ability, through the `cardholderAuthentication` request field, to make 3D Secure verification through third-party services such as CardinalCommerce. Starting with this release, **Authorize.net Accept.js integration will support 3DS 2.0 through CardinalCommerce**. <!--- MAGETWO-99737 -->
 
 <!--- MC-18237 -->
-* The Cybersource and eWay payment modules have been deprecated in this release to comply with PSD2 SCA regulation, which takes effect on September 14, 2019, or shortly thereafter. Use the official Marketplace extensions for these features instead.
+* The Cybersource and eWay payment modules have been deprecated in this release to comply with PSD2 SCA regulation, which took effect on September 14, 2019, or shortly thereafter. Use the official Marketplace extensions for these features instead.
 
 #### Security enhancements and fixes to core code
 
@@ -581,10 +581,10 @@ In addition to security enhancements, this release contains the following functi
 ### Web API framework
 
 <!-- ENGCOM-5204 -->
-* Magento now renders shipment details for an order without a fatal error when you use REST to create a shipment. *Fix submitted by Milind Singh in pull request [23119](https://github.com/magento/magento2/pull/23119)*. [GitHub-22686](https://github.com/magento/magento2/issues/22686)
+* Magento now renders shipment details for an order without a fatal error when you use `POST V1/shipment` to create a shipment. *Fix submitted by Milind Singh in pull request [23119](https://github.com/magento/magento2/pull/23119)*. [GitHub-22686](https://github.com/magento/magento2/issues/22686)
 
 <!-- ENGCOM-5188 -->
-* You can now use REST to update a customer that has no associated `store_id` without unintentionally changing other information. Previously, Magento changed the `store_id` to the default `store_id` if this field was left empty in the PUT request. *Fix submitted by Mateusz Wira in pull request [22895](https://github.com/magento/magento2/pull/22895)*. [GitHub-22869](https://github.com/magento/magento2/issues/22869)
+* You can now use `POST V1/customers` to update a customer that has no associated `store_id` without unintentionally changing other information. Previously, Magento changed the `store_id` to the default `store_id` if this field was left empty in the PUT request. *Fix submitted by Mateusz Wira in pull request [22895](https://github.com/magento/magento2/pull/22895)*. [GitHub-22869](https://github.com/magento/magento2/issues/22869)
 
 ### Wishlist
 
