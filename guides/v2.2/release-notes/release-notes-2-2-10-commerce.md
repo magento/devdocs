@@ -237,7 +237,7 @@ In addition to security enhancements, this release contains the following functi
 * Videos in product descriptions now appear as they do in the Admin WYSIWYG editor. Previously, videos in the storefront product descriptions had the incorrect height.
 
 <!-- MC-17021 -->
-* We’ve refined how Magento validates partial permissionsDesign edit permissions for categories, products, and CMS pages are now validated for each endpoint (web API and other) outside of the related model-layer classes. The web API now returns an error when design-related fields are being overridden. Previously, this behavior was ignored.
+* We’ve refined how Magento validates partial permissions. Design edit permissions for categories, products, and CMS pages are now validated for each endpoint (web API and other) outside of the related model-layer classes. The web API now returns an error when design-related fields are being overridden. Previously, this behavior was ignored.
 
 <!-- ENGCOM-5160 -->
 * The catalog product flat data table for a store view is now populated with data from the specified store view as expected. Previously, this table was populated with data from the default store view. *Fix submitted by Mahesh Singh in pull request [22581](https://github.com/magento/magento2/pull/22581)*. [GitHub-21747](https://github.com/magento/magento2/issues/21747)
@@ -379,7 +379,7 @@ In addition to security enhancements, this release contains the following functi
 ### Frameworks
 
 <!-- MAGETWO-99872 -->
-* The `equalArrays` function in `lib/web/mage/utils/compare.js` file has been refactored to remove quadratic complexity. Previously, this feature significantly slowed Admin operations that were performed on large number of products (for example, adding a product to category by SKU).
+* The `equalArrays` function in `lib/web/mage/utils/compare.js` file has been refactored to remove quadratic complexity. Previously, this feature significantly slowed Admin operations that were performed on a large number of products (for example, adding a product to category by SKU).
 
 <!-- MAGETWO-99622 -->
 * The error message that Magento displays when the user creates an attribute that starts with the reserved word `container` has been improved. For example, when a user created product attributes named `container_attributename` and `attributename`, Magento threw this error: `Exception in Magento/Framework/View/Element/UiComponentFactory.php` rather than stating which user behavior was causing the system problem.
