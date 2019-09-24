@@ -44,7 +44,7 @@ Enter the following commands as a user with `root` privileges:
 mkdir -p /usr/local/apache/password
 ```
 
-```bsh
+```bash
 htpasswd -c /usr/local/apache/password/passwords <username>
 ```
 
@@ -295,7 +295,7 @@ Where:
 
 For example,
 
-```text
+```http
 http://magento.example.com/magento2/pub/cron.php?group=index
 ```
 

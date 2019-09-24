@@ -36,7 +36,7 @@ If the `http_resp_hdr_len` value exceeds 32K, you must also increase the default
 
     For example:
 
-    ```bash
+    ```conf
     -p http_resp_hdr_len=65536 \
     ```
 
@@ -44,7 +44,7 @@ If the `http_resp_hdr_len` value exceeds 32K, you must also increase the default
 
     For example, using the sum of the increased header length and default response size is a good starting point (e.g., 65536 + 32768 = 98304):
 
-    ```bash
+    ```conf
     -p http_resp_size=98304 \
     ```
 

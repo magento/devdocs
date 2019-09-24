@@ -85,7 +85,7 @@ This configuration expands upon [Magento Nginx Configuration]({{ page.baseurl }}
 
 4.	If successful, the following message displays:
 
-    ```bash
+    ```terminal
     nginx: configuration file /etc/nginx/nginx.conf test is successful
     ```
 

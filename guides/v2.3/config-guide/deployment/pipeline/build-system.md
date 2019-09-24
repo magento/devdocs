@@ -77,7 +77,7 @@ To set up the build system:
 4.	If you use Git, open `.gitignore` in a text editor.
 5.	Start each of the following lines with a `#` character to comment them out:
 
-    ```text
+    ```conf
     # app/etc/config.php
     # pub/media/*
     # generated/*

@@ -181,7 +181,7 @@ Install the Magento 2 software if you haven't already done so. When prompted for
 
 Possible error installing Magento:
 
-```terminasl
+```terminal
 Error 503 Service Unavailable
 Service Unavailable
 XID: 303394517
