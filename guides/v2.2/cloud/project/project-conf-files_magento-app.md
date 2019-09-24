@@ -244,7 +244,8 @@ hooks:
 
 The commands run from the application (`/app`) directory. You can use the `cd` command to change the directory. The hooks fail if the final command in them fails. To cause them to fail on the first failed command, add `set -e` to the beginning of the hook.
 
-#### To compile Sass files using grunt:
+{:.procedure}
+To compile Sass files using grunt:
 
 ```yaml
 dependencies:
@@ -333,9 +334,7 @@ runtime:
         - exif
 ```
 
-#### To view the current list of PHP extensions:
-
-Use SSH to log in to an environment and list the PHP extensions.
+Use a SSH to log in to an environment and list the PHP extensions.
 
 ```bash
 php -m
