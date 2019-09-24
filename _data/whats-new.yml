@@ -31,7 +31,7 @@ entries:
   type: New topic
   date: September 18, 2019
   link: https://github.com/magento/devdocs/pull/5358
-- description: Added a "Symbolic links" section to the [Contribution Guide](https://github.com/magento/devdocs/blob/master/.github/CONTRIBUTING.md)
+- description: Added a [Symbolic links](https://github.com/magento/devdocs/blob/master/.github/CONTRIBUTING.md#symbolic-links) section to the _Contribution Guide_.
   versions: ''
   type: Major update
   date: September 18, 2019
@@ -54,7 +54,7 @@ entries:
   type: New topic
   date: September 13, 2019
   link: https://github.com/magento/devdocs/pull/5351
-- description: Updated information about using LESS with Grunt in [Compile LESS using
+- description: Updated information about using LESS with Grunt in the [Compile LESS using
     Grunt](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/css-topics/css_debug.html)
     and [Using Grunt for Magento tasks](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/tools/using_grunt.html)
     topics.
