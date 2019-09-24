@@ -1,15 +1,12 @@
 ---
 group: cloud-guide
-subgroup: 080_setup
 title: Set up the Magento file system owner
-menu_title: Set up the Magento file system owner
-menu_order: 25
-menu_node:
 functional_areas:
   - Cloud
   - Setup
 ---
-#### Previous step: {#mage-owner-about-group}
+
+**Previous step:**
 [Enable SSH keys]({{ page.baseurl }}/cloud/before/before-workspace-ssh.html)
 
 **This step is optional if you installed nginx as your web server.** The [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html#magento-file-system-owner) provides root access and permissions, for security reasons on a hosted system. Apache installations require
@@ -87,5 +84,5 @@ To complete the task, restart the web server:
 *	Ubuntu: `service apache2 restart`
 *	CentOS: `service httpd restart`
 
-#### Next step:
+**Next step:**
 [Clone and branch the project]({{ page.baseurl }}/cloud/before/before-setup-env-2_clone.html)

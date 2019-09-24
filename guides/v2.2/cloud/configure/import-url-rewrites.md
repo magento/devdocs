@@ -7,12 +7,13 @@ functional_areas:
   - Configuration
 ---
 
-You can easily migrate to the {{site.data.var.ece}} platform without losing SEO rankings and traffic.  Use the `magento/url-rewrite-import-export` module to redirect traffic from your old, indexed URLs to new URLs.
+You can easily migrate to the {{site.data.var.ece}} platform without losing SEO rankings and traffic. Use the `magento/url-rewrite-import-export` module to redirect traffic from your old, indexed URLs to new URLs.
 
 {: .bs-callout-info }
 This module is available for Magento version 2.2.x only.
 
-#### To install the URL rewrite module:
+{:.procedure}
+To install the URL rewrite module:
 
 1.  Add the module to the `composer.json` file.
 
@@ -70,7 +71,8 @@ Column | Description
 
 You use the Magento Admin panel to import the URL Rewrites file.
 
-#### To import URL Rewrites:
+{:.procedure}
+To import URL Rewrites:
 
 1.  On the _Marketing_ menu, click **URL Rewrites** in the _SEO & Search_ section.
 
@@ -97,7 +99,8 @@ If the import is **not** successful, you receive an error message reporting the 
 
 ![Failed URL rewrite]({{site.baseurl}}/common/images/cloud-urlrewrite-failed.png)
 
-#### To research the URL rewrite error:
+{:.procedure}
+To research the URL rewrite error:
 
 1.  Click **View Details** to see detailed information about the failure.
 
