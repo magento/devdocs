@@ -25,10 +25,6 @@ Command usage:
 magento setup:db-schema:upgrade
 ```
 
-```bash
-	magento setup:db-data:upgrade
-  ```
-
 To see the status of the database, enter
 
 ```bash

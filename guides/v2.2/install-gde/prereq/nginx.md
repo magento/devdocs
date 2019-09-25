@@ -407,7 +407,8 @@ For this example, we'll download and extract an archive.
     find var vendor pub/static pub/media app/etc -type f -exec chmod g+w {} +
     ```
 
-    ```bashfind var vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} +
+    ```bash
+    find var vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} +
     ```
 
     ```bash

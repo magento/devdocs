@@ -300,7 +300,7 @@ We recommend setting the memory limit to 2G when testing Magento. Refer to [Requ
 
 9. Uncomment the environment lines:
 
-    ```cond
+    ```conf
     env[HOSTNAME] = $HOSTNAME
     env[PATH] = /usr/local/bin:/usr/bin:/bin
     env[TMP] = /tmp

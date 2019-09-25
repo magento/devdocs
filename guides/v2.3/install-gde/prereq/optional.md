@@ -31,7 +31,7 @@ See one of the following sections:
 
 Enter the following command to install NTP:
 
-```bsh
+```bash
 apt-get install ntp
 ```
 

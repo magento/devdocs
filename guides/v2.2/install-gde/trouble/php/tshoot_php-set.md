@@ -44,7 +44,7 @@ Configurations with a high number of storeviews, products, attributes, or option
 If the number of values sent surpasses the `max-input-vars` limit set within `php.ini` (default is 1000), the remaining data is not transferred and those database values do not get updated.
 When this occurs, a warning appears in the PHP log:
 
-```bash
+```terminal
 PHP message: PHP Warning: Unknown: Input variables exceeded 1000. To increase the limit change max_input_vars in php.ini.
 ```
 
@@ -58,7 +58,7 @@ See [During installation, xdebug maximum function nesting level error]({{ page.b
 
 Error text is typically:
 
-```text
+```terminal
 Parse error: syntax error, unexpected 'data' (T_STRING)
 ```
 
