@@ -81,18 +81,22 @@ We know of the following issues with Varnish:
 
 *	Possible error installing Magento:
 
-		Error 503 Service Unavailable
-		Service Unavailable
-		XID: 303394517
-		Varnish cache server
+    ```terminal
+    Error 503 Service Unavailable
+    Service Unavailable
+    XID: 303394517
+    Varnish cache server
+    ```
 
-	If you experience this error, edit `default.vcl` and add a timeout to the `backend` stanza as follows:
+    If you experience this error, edit `default.vcl` and add a timeout to the `backend` stanza as follows:
 
-		backend default {
-	      .host = "127.0.0.1";
-	      .port = "8080";
-	      .first_byte_timeout = 600s;
-		}
+    ```conf
+    backend default {
+        .host = "127.0.0.1";
+        .port = "8080";
+        .first_byte_timeout = 600s;
+    }
+    ```
 
 #### Next step
 [Install Varnish]

@@ -19,21 +19,29 @@ Magento uses cron for two sets of tasks, and for each, cron can run with a diffe
 
 To display the path to your PHP binary, enter
 
-	which php
+```bash
+which php
+```
 
 A sample result follows:
 
-	/usr/bin/php
+```bash
+/usr/bin/php
+```
 
 #### Create the cron job
 
 To create a cron job for the Magento file system owner, enter the following command as a user with `root` privileges:
 
-	crontab -u <Magento file system owner username> -e
+```bash
+crontab -u <Magento file system owner username> -e
+```
 
 For example,
 
-	crontab -u magento_user -e
+```bash
+crontab -u magento_user -e
+```
 
 A text editor displays. (You might need to choose a text editor first.)
 
