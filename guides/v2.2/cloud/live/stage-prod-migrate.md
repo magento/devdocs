@@ -182,6 +182,7 @@ We **do recommend** migrating data from Production into Staging to fully test yo
 {:.bs-callout-info }
 To transfer media from remote-to-remote environments directly you must enable ssh agent forwarding, see [GitHub guidance](https://developer.github.com/v3/guides/using-ssh-agent-forwarding/)
 
+{:.procedure}
 To migrate a database:
 
 1. SSH into the environment you want to create a database dump from:

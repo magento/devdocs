@@ -67,9 +67,10 @@ The following packages may also be helpful for your PHP installation:
 
 When you're working with the Magento Cloud CLI, local environment settings come from the machine on which you're working, not from {{site.data.var.ee}}. For example, certain actions (like debugging) require a larger PHP `memory_limit` than most PHP distributions provide by default.
 
-To set `memory_limit`:
-
 Before working with your {{site.data.var.ece}} project, set the PHP `memory_limit` to at least `1G` for normal use or at least `2G` for debugging.
+
+{:.procedure}
+To set a memory limit:
 
 1.	Find your `php.ini` file using the following command:
 
@@ -95,7 +96,8 @@ Regardless of database, for **Pro plans** you need to modify the `auto_increment
 {: .bs-callout .bs-callout-warning}
 For **Pro plans**, the Production environment has a three node infrastructure that uses auto-incrementing by 3 for all data IDs. Do not develop using hard-coded database IDs in your development. Due to the incremented data IDs, the referenced data will differ across the three nodes in Production.
 
-These example instructions detail how to install and create a MariaDB database for Magento on your local:
+{:.procedure}
+To install and create a MariaDB database for Magento on your local:
 
 1. Use this command to create the database:
 
@@ -131,7 +133,8 @@ First, view the current value and verify if it is set to 3:
 
 	mysqladmin variables -u <root username> -p | grep 'auto_increment'
 
-If necessary, set `auto_increment_increment` to 3:
+{:.procedure}
+To set `auto_increment_increment` to 3:
 
 1.	As a user with `root` privileges, open `/etc/my.cnf` in a text editor.
 
@@ -154,6 +157,7 @@ The Magento Cloud command-line interface (CLI) tool helps you manage your projec
 
 These instructions discuss installation using commands for a Unix environment. For Windows, we recommend using [Cygwin](https://www.cygwin.com/) or Git Bash.
 
+{:.procedure}
 To install the Magento Cloud CLI:
 
 1.	Log in to your local development machine or switch to the [Magento file system owner]({{ page.baseurl }}/cloud/before/before-workspace-file-sys-owner.html).
