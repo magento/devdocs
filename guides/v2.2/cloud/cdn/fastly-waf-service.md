@@ -12,11 +12,11 @@ As a managed service, the Magento WAF provides the following benefits:
 
 - **PCI compliance**—WAF enablement ensures that {{ site.data.var.ee }} storefronts in production environments meet PCI DSS 6.6 security requirements.
 - **Default WAF policy**—The default WAF policy, configured and maintained by Fastly, provides a collection of security rules tailored to protect your {{ site.data.var.ee }} web applications from a wide range of attacks, including injection attacks, malicious inputs, cross-site scripting, data exfiltration, HTTP protocol violations, and other [OWASP Top Ten](https://www.owasp.org/index.php/Top_Ten) security threats.
-- **WAF onboarding and enablement**—Magento works with you to plan and schedule the WAF rollout to deploy the WAF, tune the default WAF policy in your environment, and enable the service.
+- **WAF onboarding and enablement**—Magento deploys and enables the default WAF policy in your production environment within 2-3 weeks of the environment being fully provisioned.
 - **Operations and maintenance support**—
   - Magento and Fastly set up and manage your WAF logs and alerts.
-  - Customer support tickets related to WAF issues that block legitimate traffic are triaged as Priority 1 issues.
-  - WAF version upgrades to ensure immediate coverage for new or evolving exploits. See [WAF maintenance and upgrades](#waf-maintenance-and-updates).
+  - Magento triages customer support tickets related to WAF issues that block legitimate traffic as Priority 1 issues.
+  - Automated WAF version upgrades ensure immediate coverage for new or evolving exploits. See [WAF maintenance and upgrades](#waf-maintenance-and-updates).
 
 Both the {{ site.data.var.ece }} Pro and Starter subscriptions include the Managed Cloud WAF at no additional cost. The WAF service is available only on Production environments.
 
@@ -25,11 +25,9 @@ For additional information about maintaining PCI compliance for your {{ site.var
 
 ### Enabling the WAF
 
-Fastly implements the managed web application firewall for {{ site.data.var.ece }} using the Fastly CDN service. You do not have to install or maintain any hardware or software.
+Magento enables the WAF service on new accounts within 2-3 weeks after final provisioning. The WAF is implemented through Fastly CDN service, you do not have to install or maintain any hardware or software.
 
-For new {{ site.data.var.ece }} accounts, your Magento technical account manager works with you during the onboarding and launch process to plan and schedule WAF enablement. For existing {{ site.data.var.ece }} projects, contact your account manager or CSM for help enabling the WAF. See [Managed Cloud WAF FAQ](https://support.magento.com/hc/en-us/articles/360016353452--Web-Application-Firewall-WAF-powered-by-Fastly-the-FAQ).
-
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 Before you can use the WAF, all external traffic to your {{ site.data.var.ece }} project must route through the Fastly service. See [Set up Fastly]({{ page.baseurl }}/cloud/cdn/configure-fastly.html).
 
 ## How it works
@@ -59,13 +57,13 @@ Magento and Fastly manage the update process to ensure that new or modified WAF 
 
 The standard Magento Cloud WAF powered by Fastly does not support the following features:
 
-- Filtering for TCP, UDP, or ICMP requests
 - Protection against malware or bot mitigation
-- Rate limiting or virtual patching
+- Rate limiting
 - Configuring a logging endpoint for customer
 
 Although the WAF does not allow you to block or allow traffic based on IP addresses, you can add access control lists (ACL) and custom VCL snippets to your Fastly service to specify the IP addresses and VCL logic for blocking or allowing traffic. See [Custom Fastly VCL snippets]({{ page.baseurl }}/cloud/cdn/cloud-vcl-custom-snippets.html).
 
+Filtering for TCP, UDP, or ICMP requests is not supported by the WAF. However, this functionality is provided by the built-in DDoS protection included with the Fastly CDN service. See [DDoS protection]({{ page.baseurl }}/cloud/cdn/cloud-fastly.html#ddos-protection).
+
 [WAF error page]: {{site.baseurl}}/common/images/cloud/cloud-fastly-waf-403-error.png
 {:width="550px"}
-
