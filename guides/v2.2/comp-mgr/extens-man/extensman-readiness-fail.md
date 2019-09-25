@@ -1,12 +1,6 @@
 ---
 group: software-update-guide
-subgroup: 06_UseExtMan
 title: Readiness check failure
-menu_title: Readiness check failure
-menu_node:
-menu_order: 7
-level3_menu_node: level3child
-level3_subgroup: readiness
 functional_areas:
   - Upgrade
 ---
