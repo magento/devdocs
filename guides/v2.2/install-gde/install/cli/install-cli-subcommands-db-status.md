@@ -23,13 +23,17 @@ Before you run this command, you must [Create or update the deployment configura
 
 To check the status of the Magento database, enter
 
-	magento setup:db:status
+```bash
+magento setup:db:status
+```
 
 This command has no arguments or options.
 
 Sample output follows:
 
-	All modules are up to date.
+```terminal
+All modules are up to date.
+```
 
 The command returns one of the following exit codes:
 

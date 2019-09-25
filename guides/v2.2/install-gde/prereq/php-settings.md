@@ -18,7 +18,10 @@ This topic discusses how to set required [PHP](https://glossary.magento.com/php)
 
 *	Set the system time zone for PHP; otherwise, errors like the following display during the installation and time-related operations like cron might not work:
 
-		PHP Warning:  date(): It is not safe to rely on the system's timezone settings. [more messages follow]
+    ```terminal
+    PHP Warning:  date(): It is not safe to rely on the system's timezone settings. [more messages follow]
+    ```
+
 *	Set [`always_populate_raw_post_data = -1`](http://php.net/manual/en/ini.core.php#ini.always-populate-raw-post-data){:target="_blank"}
 
 	`always_populate_raw_post_data` is deprecated in PHP 5.6 and is dropped in PHP 7.0.x. This setting causes PHP to always populate `$HTTP_RAW_POST_DATA` with raw POST data. Failure to set this properly in PHP 5.5 or 5.6 results in errors when connecting to the database.
@@ -56,7 +59,9 @@ To find the web server configuration, run a [`phpinfo.php` file]({{ page.baseurl
 
 To locate the PHP command-line configuration, enter
 
-	php --ini
+```bash
+php --ini
+```
 
 Use the value of Loaded Configuration file.
 
@@ -73,13 +78,15 @@ Use the following guidelines to find it:
 
 *	Apache web server:
 
-	For Ubuntu with Apache, OPcache settings are typically located in `php.ini`.
+    For Ubuntu with Apache, OPcache settings are typically located in `php.ini`.
 
-	For CentOS with Apache or nginx, OPcache settings are typically located in `/etc/php.d/opcache.ini`
+    For CentOS with Apache or nginx, OPcache settings are typically located in `/etc/php.d/opcache.ini`
 
-	If not, use the following command to locate it:
+    If not, use the following command to locate it:
 
-		sudo find / -name 'opcache.ini'
+    ```bash
+    sudo find / -name 'opcache.ini'
+    ```
 
 *	nginx web server with PHP-FPM: `/etc/php5/fpm/php.ini`
 
@@ -95,19 +102,31 @@ If you have more than one `opcache.ini`, modify all of them.
 3.	Locate your server's time zone in the available [time zone settings](http://php.net/manual/en/timezones.php){:target="_blank"}
 4.	Locate the following setting and uncomment it if necessary:
 
-		date.timezone =
+    ```conf
+    date.timezone =
+    ```
+
 5.	Add the time zone setting you found in step 2.
 6.	Change the value of `memory_limit` to one of the values at the beginning of this section.
 
-	For example,
+    For example,
 
-		memory_limit=2G
+    ```conf
+    memory_limit=2G
+    ```
+
 7.	_Required for PHP 5.6, recommended for PHP 5.5_. Locate `always_populate_raw_post_data`, uncomment it if necessary, and set it as follows:
 
-		always_populate_raw_post_data = -1
+    ```conf
+    always_populate_raw_post_data = -1
+    ```
+
 8.	Locate the following setting:
 
-		asp_tags =
+    ```conf
+    asp_tags =
+    ```
+
 9.	Make sure its value is set to `Off`.
 10.	Save your changes and exit the text editor.
 11.	Open the other `php.ini` (if they are different) and make the same changes in it.
