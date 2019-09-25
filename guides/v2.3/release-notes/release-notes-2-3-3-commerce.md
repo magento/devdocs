@@ -9,6 +9,8 @@ Magento Commerce 2.3.3 offers significant platform upgrades, substantial securit
 
 This release includes over 170 functional fixes to the core product and  over 75 security enhancements. It includes over 200 contributions from our community members. These contributions range from minor clean-up of core code to significant enhancements to Inventory Management and GraphQL.
 
+{% include install/pre-release.md %}
+
 ## Other release information
 
 Although code for these features is bundled with quarterly releases of the Magento core code, several of these projects (for example, Page Builder, Inventory Management, and Progressive Web Applications (PWA) Studio) are also released independently. Bug fixes for these projects are documented in separate, project-specific release information which is available in the documentation for each project.

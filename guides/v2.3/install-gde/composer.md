@@ -51,8 +51,7 @@ To get the Magento metapackage:
 
     See [troubleshooting][] for help with more errors.
 
-    {:.bs-callout-info}
-    {{site.data.var.ee}} customers can access 2.3.x patches two weeks before the General Availability (GA) date.
+    {% include install/pre-release.md %}
 
 ### Example - Minor release
 
