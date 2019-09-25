@@ -65,49 +65,51 @@ If you encounter an existing test that insufficiently covers your changes, you c
 
 Be aware that while high-level tests may provide coverage to code, it is only indirect coverage. Tests with more direct usage of the changed code will likely still needs to be written to ensure that regardless of the which components are actually used in the black box, the individual components still have coverage.  
 
-Before committing code changes, author must ensure successful execution of all tests by running all tests or at least those which might be affected by code changes.
-Continuous integration enforces execution of all tests and author is accountable for broken builds.
-
-Any code that is added or changed must have explicit tests to validate the behavior. To clarify, this policy is intended to prove that the integrity of the code is verified regardless of which implementations are loaded in a black-box environment. This may be done through unit or integration testing as appropriate.
-
-Code must be also shown to work with known collaborators. This must be done through integration tests and ideally should involve as few components as possible per test case. This level of tests ensures that the code will work with its known associates. Specific examples can be subject but such associates would include composites, chains, pools, etc. but also include cases like a Template filter working with a specific processor loaded.
-
-In addition, regardless of the interpretation of the testing strategy below: Any class marked with an `@api` annotation MUST be covered with explicit test coverage via integration or unit tests. 
-These tests must test the concrete implementation's behavior in a way that can not be inadvertently changed outside of the test itself. 
-For example: testing a concrete class through DI preference is not safe because it could be overridden via configuration of another loaded module. The test should not ask for the interface but rather the concrete implementation.
+High level testing policy:
+ 
+- Before committing code changes, author must ensure successful execution of all tests by running all tests or at least those which might be affected by code changes.
+  Continuous integration enforces execution of all tests and author is accountable for broken builds.
+- Any code that is added or changed must have explicit tests to validate the behavior. To clarify, this policy is intended to prove that the integrity of the code is verified regardless of which implementations are loaded in a black-box environment. This may be done through unit or integration testing as appropriate. 
+- Code must be also shown to work with known collaborators. This must be done through integration tests and ideally should involve as few components as possible per test case. This level of tests ensures that the code will work with its known associates. Specific examples can be subject but such associates would include composites, chains, pools, etc. but also include cases like a Template filter working with a specific processor loaded.
+- In addition, regardless of the interpretation of the testing strategy below: Any class marked with an `@api` annotation MUST be covered with explicit test coverage via integration or unit tests. 
+  
+  These tests must test the concrete implementation's behavior in a way that can not be inadvertently changed outside of the test itself. 
+  
+  For example: testing a concrete class through DI preference is not safe because it could be overridden via configuration of another loaded module. The test should not ask for the interface but rather the concrete implementation.
 
 
 ### Integration Tests
 
 An integration test should be used to cover any code that doesn't meet the requirements of a unit test or functional test and should be thought of as essentially the default test type.
 
-Integration tests come in many forms and can drastically vary in definition depending on what the intention of the test is. Generally speaking an integration test verifies that two or more things work together correctly. i.e. We are testing the _integration_ one one thing with another thing. 
+Integration tests come in many forms and can drastically vary in definition depending on what the intention of the test is. Generally speaking an integration test verifies that two or more things work together correctly. i.e. We are testing the _integration_ of one thing with another thing. 
 For the purpose of Magento testing, there are essentially two broad categories of integration tests: narrow-form and broad-form.
 
 * Narrow-form integration tests focus on testing something mostly in isolation an can be as simple as a unit test as described in this guide except without mocked dependencies.
 * Broad-form integration tests focus on testing something with less isolation and will involve multiple components explicitly collaborating. (compared to narrow-form where the dependencies are implicit collaborating)
 
-Examples:
+Integration test policy:
 
-* APIs:
-  - Cover only an interface if it suggests a single active implementation (thus the active implementation will be used implicitly).
-  - Cover each implementation if an interface suggests multiple implementations.
-* SPIs:
-  - Same as APIs.
-  - We recommend creating tests with fake implementations and execution of methods that are using the SPI you’re covering to make sure the interface’s implementations can be swapped without breaking the application.
-* Models/Resource Models:
-  - Usually have numerous dependencies, interacting with resources (database, cache, file system, 3rd party systems etc.) and sometimes can substitute an API
+- Methods and classes must have blackbox test coverage making sure to include all variations for normal use as well as corner-cases. 
+  
+  Sometimes it may be necessary for blackbox tests to be written with some awareness of the areas that the concrete implementation may be sensitive to change. For these cases, extra corner cases can be added. For example, adding a child category versus adding a category nested 6 levels deep.   
+- SPI's must have test coverage. Often times Magento has extension points that may only be utilized by extension developers. Use TestModule's to implement those SPI extension points and verify they are used correctly. 
+- As mentioned above, classes marked with `@api` must contain coverage. Integration tests must be used cover these classes unless a unit test is more appropriate.
+- Consumers of default SPI's implementations should have at least basic coverage that ensures the default implementations of the SPI are correctly configured and loaded.  
+  
+  For example, `Magento\Framework\SomeClassFilter` may contain a `FilterPool` that comes with default `FilterInterface`'s from `Magento\Framework`. Each of these implementations would have their own coverage pursuant to this document. However, there should also be some basic assertions within the test coverage for `Magento\Framework\SomeClassFilter` that ensure each of the default filters are loaded correctly.     
+  This shouldn't be explicitly coverage such as `$filter->isLoaded('someDefaultFilter')` 
 
 See: [Running Integration Tests][3].
 
 ### Functional Tests
 
-Web API endpoints must have functional test coverage. These tests should ensure that the endpoints behave in accordance to their service contracts regardless of the actual concrete implementation that may be loaded.
- 
-For UI-related code, there are some circumstances where it is not possible to cover changes with unit or integration tests. In these cases the appropriate type of coverage would be a functional test but this is a last resort only. 
-However, aside from those cases UI functional tests should only be used to cover P0/P1 testing scenarios. If there are no scenarios available to make this decision, a product owner must be consulted for approval of new tests.
-
 UI functional tests are inherently unstable irrespective of platform or testing framework. For this reason along with reasons of maintainability and quality assurance delivery time, these tests should be prioritized below all other tests types.
+
+Functional test policy: 
+- Web API endpoints must have functional test coverage. These tests should ensure that the endpoints behave in accordance to their service contracts regardless of the actual concrete implementation that may be loaded.
+- For UI-related code, there are some circumstances where it is not possible to cover changes with unit or integration tests. In these cases the appropriate type of coverage would be a functional test but this is a last resort only. 
+  However, aside from those cases UI functional tests should only be used to cover P0/P1 testing scenarios. If there are no scenarios available to make this decision, a product owner must be consulted for approval of new tests.
 
 See [Functional Tests][2].
 
