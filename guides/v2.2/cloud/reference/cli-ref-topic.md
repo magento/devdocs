@@ -24,8 +24,8 @@ Magento designed these commands to manage Cloud Integration environments. It is 
 
 Action | Command
 ------ | --------
-To log in to a project: | `magento-cloud login`
-To clone a project to a directory: | `magento-cloud project:get <PROJECT_ID> <DIRECTORY> -e <ENVIRONMENT_ID>`<br>**Note**: If you want to clone the `master` environment, omit the `-e <ENVIRONMENT_ID>` parameter.
+Log in to a project | `magento-cloud login`
+Clone a project to a directory | `magento-cloud project:get <PROJECT_ID> <DIRECTORY> -e <ENVIRONMENT_ID>`<br>**Note**: If you want to clone the `master` environment, omit the `-e <ENVIRONMENT_ID>` parameter.
 
 ## Environment commands
 
