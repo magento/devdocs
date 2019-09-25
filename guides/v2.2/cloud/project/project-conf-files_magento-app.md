@@ -334,7 +334,7 @@ runtime:
         - exif
 ```
 
-Use a SSH to log in to an environment and list the PHP extensions.
+Use SSH to log in to an environment and list the PHP extensions.
 
 ```bash
 php -m
