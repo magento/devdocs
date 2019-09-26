@@ -19,21 +19,27 @@ Starting with version 2.2, Magento creates a crontab for you. We add the Magento
 
 To create the Magento crontab, use the following command:
 
-	php bin/magento cron:install [--force]
+```bash
+php bin/magento cron:install [--force]
+```
 
 Use `--force` to rewrite an existing Magento crontab. (Any existing crontab is not affected.)
 
 To view the crontab, switch to the [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html) and enter the following command:
 
-	crontab -l
+```bash
+crontab -l
+```
 
 A sample follows:
 
-	#~ MAGENTO START
-	* * * * * /usr/bin/php /var/www/html/magento2/bin/magento cron:run 2>&1 | grep -v Ran jobs by schedule >> /var/www/html/magento2/var/log/magento.cron.log
-	* * * * * /usr/bin/php /var/www/html/magento2/update/cron.php >> /var/www/html/magento2/var/log/update.cron.log
-	* * * * * /usr/bin/php /var/www/html/magento2/bin/magento setup:cron:run >> /var/www/html/magento2/var/log/setup.cron.log
-	#~ MAGENTO END
+```terminal
+#~ MAGENTO START
+* * * * * /usr/bin/php /var/www/html/magento2/bin/magento cron:run 2>&1 | grep -v Ran jobs by schedule >> /var/www/html/magento2/var/log/magento.cron.log
+* * * * * /usr/bin/php /var/www/html/magento2/update/cron.php >> /var/www/html/magento2/var/log/update.cron.log
+* * * * * /usr/bin/php /var/www/html/magento2/bin/magento setup:cron:run >> /var/www/html/magento2/var/log/setup.cron.log
+#~ MAGENTO END
+```
 
 #### Related topic
 

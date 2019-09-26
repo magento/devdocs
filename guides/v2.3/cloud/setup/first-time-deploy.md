@@ -9,7 +9,7 @@ functional_areas:
   - Deploy
 ---
 
-#### Previous step:
+**Previous step:**
 [Install Magento]({{ page.baseurl }}/cloud/before/before-setup-env-install.html)
 
 {:.bs-callout .bs-callout-info}
