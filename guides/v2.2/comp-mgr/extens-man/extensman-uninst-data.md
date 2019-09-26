@@ -29,9 +29,9 @@ If the extension has data to remove, a page similar to the following displays.
 
 Click one of the following:
 
-*	**Keep data**: Click to keep the data in the database.
-*	**Remove data**: Click to remove data from the database.
+* **Keep data**: Click to keep the data in the database.
+* **Remove data**: Click to remove data from the database.
 
-  You can click **Back** to back up the database first if you did not do so already.
+   You can click **Back** to back up the database first if you did not do so already.
 
 Continue with [Step 4. Uninstall]({{ page.baseurl }}/comp-mgr/extens-man/extensman-uninst-final.html)
