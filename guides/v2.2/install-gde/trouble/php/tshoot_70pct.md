@@ -40,11 +40,13 @@ Set all of the following as appropriate.
 
 If you use nginx, use our included `nginx.conf.sample` or add a timeout settings in the nginx host configuration file to the `location ~ ^/setup/index.php` section as follows:
 
-	location ~ ^/setup/index.php {
-		.....................
-		fastcgi_read_timeout 600s;
-       	fastcgi_connect_timeout 600s;
-	}
+```conf
+location ~ ^/setup/index.php {
+  .....................
+  fastcgi_read_timeout 600s;
+      fastcgi_connect_timeout 600s;
+}
+```
 
 Restart nginx: `service nginx restart`
 
@@ -52,11 +54,15 @@ Restart nginx: `service nginx restart`
 
 If you use Varnish, edit `default.vcl` and add a timeout limit value to the `backend` stanza as follows:
 
-	backend default {
-    .....................
-	      .first_byte_timeout = 600s;
-	}
+```conf
+backend default {
+  .....................
+      .first_byte_timeout = 600s;
+}
+```
 
 Restart Varnish.
 
-		service varnish restart
+```bash
+service varnish restart
+```
