@@ -1,0 +1,19 @@
+name: Markdown linting test
+
+on: pull_request
+  branches:
+    - master
+    - develop
+  paths:
+    - '*.md'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v1
+    - name: Install gems
+      run: bundle install
+    - name: Run mdl
+      run: rake test:md
