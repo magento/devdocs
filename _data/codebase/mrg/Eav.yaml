@@ -4,3 +4,4 @@ edition: ce
 content: |-
   Magento\EAV stands for Entity-Attribute-Value. The purpose of Magento\Eav module is to make entities
   configurable/extendable by admin user.
+last_modified_at: '2014-10-24 14:51:44 -0700'

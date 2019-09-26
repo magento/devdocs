@@ -43,3 +43,4 @@ content: |
   ## Extensibility
 
   We do not recommend to extend the Magento_Analytics module. It introduces an API that is purposed to transfer the collected data. Note that the API cannot be used for other needs.
+last_modified_at: '2018-12-08 15:44:36 +0530'

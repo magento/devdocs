@@ -4,3 +4,4 @@ edition: ce
 content: 'Magento\Version Allows to get Magento version and edition by HTTP GET request
 
   '
+last_modified_at: '2015-01-29 16:15:56 -0600'

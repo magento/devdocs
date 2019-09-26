@@ -26,3 +26,4 @@ content: |
 
   ## Precautions
    - To avoid mixed content and to work properly, Staging Site Preview feature requires both Storefront and Admin area to be under the same protocol (http or https).
+last_modified_at: '2016-10-19 18:10:05 +0300'

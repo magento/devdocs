@@ -4,3 +4,4 @@ edition: ce
 content: |
   **CmsGraphQl** provides type information for the GraphQl module
   to generate CMS fields for cms information endpoints.
+last_modified_at: '2018-06-30 14:36:35 +0300'

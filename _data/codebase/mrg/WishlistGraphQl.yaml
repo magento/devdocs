@@ -4,3 +4,4 @@ edition: ce
 content: |
   **WishlistGraphQl** provides type information for the GraphQl module
   to generate wishlist fields.
+last_modified_at: '2018-10-26 12:42:07 +0200'

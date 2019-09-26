@@ -4,3 +4,4 @@ edition: ce
 content: |
   **GroupedProductGraphQl** provides type and resolver information for the GraphQl module
   to generate grouped product information.
+last_modified_at: '2018-01-29 15:12:49 -0600'

@@ -8,3 +8,4 @@ content: |
 
   Catalog module provides mechanism for creating new product type in the system.
   Catalog module provides API filtering that allows to limit product selection with advanced filters.
+last_modified_at: '2014-12-12 12:14:06 -0800'

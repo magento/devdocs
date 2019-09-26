@@ -4,3 +4,4 @@ edition: ce
 content: |-
   Magento\Multishipping module provides functionality that allows customer to request shipping to more than one address
   using different carriers. The module provides alternative to standard checkout flow.
+last_modified_at: '2014-10-24 14:51:44 -0700'

@@ -2,3 +2,4 @@
 title: Magento_Amqp
 edition: ce
 content: "**Amqp** provides functionality to publish/consume messages with Amqp.\n"
+last_modified_at: '2018-02-21 14:28:14 +0200'

@@ -3,3 +3,4 @@ title: Magento_Captcha
 edition: ce
 content: The Captcha module allows applying Turing test in the process of user authentication
   or similar tasks.
+last_modified_at: '2014-07-11 11:30:21 -0700'

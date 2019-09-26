@@ -4,3 +4,4 @@ edition: ce
 content: |
   **Email** enables you to manage email templates, which are used when you send email through the
   *\Magento\Framework\Mail\TransportInterface* implementations.
+last_modified_at: '2014-12-12 12:14:06 -0800'

@@ -4,3 +4,4 @@ edition: ee
 content: |
   **RmaGraphQl** provides type information for the GraphQl module
   to generate rma fields for catalog and product information endpoints.
+last_modified_at: '2018-01-16 16:07:42 -0600'

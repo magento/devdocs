@@ -7,3 +7,4 @@ content: |
   as much time as we need. DB session keeps customerId + some data from real customer session that we want to sync (e.g.
   num items in shopping cart). For registered customer this info is synced to persistent session if choose "Remember me"
   checkbox during first login.
+last_modified_at: '2014-10-24 14:51:44 -0700'

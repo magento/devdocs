@@ -33,3 +33,4 @@ content: |-
 
   ## Uninstall
   The Magento_Tax module should not be uninstalled; it is a required module.
+last_modified_at: '2014-10-24 14:51:44 -0700'

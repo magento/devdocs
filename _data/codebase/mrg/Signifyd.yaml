@@ -80,3 +80,4 @@ content: |
   - [Provide custom AVS/CVV mapping](https://devdocs.magento.com/guides/v2.2/payments-integrations/signifyd/signifyd.html#provide-avscvv-response-codes)
 
   - [Retrieve payment method for a placed order](https://devdocs.magento.com/guides/v2.2/payments-integrations/signifyd/signifyd.html#retrieve-payment-method-for-a-placed-order)
+last_modified_at: '2018-12-08 15:44:36 +0530'

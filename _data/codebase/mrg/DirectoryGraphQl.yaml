@@ -4,3 +4,4 @@ edition: ce
 content: |
   **DirectoryGraphQl** provides type and resolver information for the GraphQl module
   to generate directory information endpoints.
+last_modified_at: '2019-01-31 09:12:38 -0500'

@@ -4,3 +4,4 @@ edition: ee
 content: |
   **GiftCardGraphQl** provides type and resolver information for the GraphQl module
   to generate giftcard product information.
+last_modified_at: '2018-01-30 15:41:07 -0600'

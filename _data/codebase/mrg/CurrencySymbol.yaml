@@ -15,3 +15,4 @@ content: |+
   ***CurrencySymbol\Controller\Adminhtml\System\Currencysymbol\Reset.php*** resets all custom currency symbols.
   ***CurrencySymbol\Controller\Adminhtml\System\Currencysymbol\Save.php*** creates custom currency symbols.
 
+last_modified_at: '2014-12-12 12:14:06 -0800'

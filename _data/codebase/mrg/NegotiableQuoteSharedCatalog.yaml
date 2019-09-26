@@ -19,3 +19,4 @@ content: "## Overview\n\nThe Magento_NegotiableQuoteSharedCatalog module enables
   enables you to override the functionality of the Magento_NegotiableQuoteSharedCatalog
   module.\n\n## Additional information\n \nYou can track [backward incompatible changes
   made in a Magento B2b mainline after the Magento 2.2 release](http://devdocs.magento.com/guides/v2.2/release-notes/changes/b2b_changes.html)."
+last_modified_at: '2017-02-17 11:38:50 +0300'

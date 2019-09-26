@@ -4,3 +4,4 @@ edition: ce
 content: |
   **CatalogWidget** contains various widgets that extend Catalog module functionality:
   - Product List widget provides widget that contains product list created using rule based filter.
+last_modified_at: '2014-12-12 12:14:06 -0800'
