@@ -36,7 +36,8 @@ If you already have SSH keys, continue to:
 
 Use the `ssh-keygen` command to create an SSH key pair. `ssh-keygen` is typically installed on Linux systems.
 
-#### To create an SSH key pair:
+{:.procedure}
+To create an SSH key pair:
 
 1.  The command syntax follows, entering the email used for your GitHub account:
 
