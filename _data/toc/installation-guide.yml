@@ -422,9 +422,6 @@ pages:
             - label: Known issues that affect installation
               url: /install-gde/trouble/tshoot_install-issues.html
 
-            - label: Segmentation fault during rollback
-              url: /install-gde/trouble/tshoot_segfault.html
-
             - label: SQLSTATE[HY000] [2002] No such file or directory
               url: /install-gde/trouble/php/tshoot_phpini.html
 
