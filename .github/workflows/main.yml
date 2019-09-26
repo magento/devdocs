@@ -1,11 +1,12 @@
 name: Markdown linting test
 
-on: pull_request
-  branches:
-    - master
-    - develop
-  paths:
-    - '*.md'
+on:
+  pull_request:
+    branches:
+      - master
+      - develop
+    paths:
+      - '*.md'
 
 jobs:
   test:
