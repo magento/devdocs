@@ -1,6 +1,7 @@
 We recommend creating a backup of your project before an upgrade. Use the following steps to back up your Integration, Staging, and Production environments.
 
-#### To back up your Integration environment database and code:
+{:.procedure}
+To back up your Integration environment database and code:
 
 1.  Create a local backup of the remote database.
 
@@ -16,7 +17,8 @@ We recommend creating a backup of your project before an upgrade. Use the follow
 
     Optionally, you can omit `[--media]` if you have a large number of static files that are already in source control.
 
-#### To back up your Staging or Production environment database before deploying:
+{:.procedure}
+To back up your Staging or Production environment database before deploying:
 
 1.  Use SSH to log in to the remote server.
 

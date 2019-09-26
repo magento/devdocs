@@ -80,7 +80,8 @@ You must clone your {{site.data.var.ece}} project from an existing environment a
 
 The Bitbucket integration requires an [OAuth consumer](https://confluence.atlassian.com/x/pwIwDg). You need the OAuth `key` and `secret` from this consumer to complete the next section.
 
-#### To create an OAuth consumer in Bitbucket:
+{:.procedure}
+To create an OAuth consumer in Bitbucket:
 
 1. Log in to your [Bitbucket](https://bitbucket.org/account/signin/) account.
 
@@ -199,7 +200,8 @@ After configuring the Bitbucket integration, test it by pushing a simple change 
 
 The Bitbucket integration cannot activate new environments in your {{site.data.var.ece}} project. If you create an environment with Bitbucket, you must activate the environment manually. To avoid this extra step, it is best practice to create environments using the `magento-cloud` CLI tool or the Project Web UI.
 
-#### To activate a branch created with Bitbucket:
+{:.procedure}
+To activate a branch created with Bitbucket:
 
 1. Use the magento-cloud CLI to push the branch.
 
@@ -239,7 +241,8 @@ After you create a new environment, you can push the corresponding branch to you
 
 You can safely remove the Bitbucket integration from your project without affecting your code.
 
-#### To remove the Bitbucket integration:
+{:.procedure}
+To remove the Bitbucket integration:
 
 1. From the terminal, log in to your {{site.data.var.ece}} project.
 

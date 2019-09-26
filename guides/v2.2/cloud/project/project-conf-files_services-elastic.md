@@ -16,7 +16,8 @@ functional_areas:
 
 {{site.data.var.ee}} supports [Elasticsearch]({{ site.baseurl }}/guides/v2.2/config-guide/elasticsearch/es-overview.html) versions 1.4, 1.7, 2.4, and 5.2 (requires {{site.data.var.ee}} v2.2.3 or later). The recommended version is 5.2.
 
-#### To enable Elasticsearch:
+{:.procedure}
+To enable Elasticsearch:
 
 1.  Add the `elasticsearch` service to the `.magento/services.yaml` file with the Elasticsearch version and allocated disk space in MB.
 
@@ -55,7 +56,7 @@ functional_areas:
     bin/magento cache:clean
     ```
 
-### Add Elasticsearch plugins
+## Add Elasticsearch plugins
 
 Optionally, you can add plugins with the `.magento/services.yaml` file. For example, to enable the ICU analysis plugin and Python script support plugin, add the `configuration:plugins` section with the listed plugin codes:
 
