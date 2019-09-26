@@ -27,11 +27,15 @@ The Chrome and Safari browsers do not support the `ALLOW-FROM` option. [Browser 
 
 Set a value for `X-Frame-Options` in `<magento_root>/app/etc/env.php`. Following is the default value:
 
-	  'x-frame-options' => 'SAMEORIGIN',
+```php
+'x-frame-options' => 'SAMEORIGIN',
+```
 
 If you want to allow any website to load page, you can use `*`:
 
-	  'x-frame-options' => '*',
+```php
+'x-frame-options' => '*',
+```
 
 We require you to edit `env.php` because it's more secure than setting a value in the [Magento Admin](https://glossary.magento.com/magento-admin).
 
@@ -43,7 +47,9 @@ The following example uses curl, which you can run from any machine that can con
 
 Use the following command:
 
-	curl -I -v --location-trusted '<your Magento storefront URL>'
+```bash
+curl -I -v --location-trusted '<your Magento storefront URL>'
+```
 
 Look for the `X-Frame-Options` value in the headers.
 
