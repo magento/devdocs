@@ -1,24 +1,24 @@
 ---
 group: cloud-guide
-title: Managed Cloud WAF
+title: Web Application Firewall (WAF)
 functional_areas:
   - Cloud
   - Install
 ---
 
-Powered by Fastly, the Managed Cloud WAF is a web application firewall service that detects, logs, and blocks malicious request traffic before it can damage your sites or network.
+Powered by Fastly, the web application firewall (WAF) service for {{ site.data.var.ece }} detects, logs, and blocks malicious request traffic before it can damage your sites or network.
 
-As a managed service, the Magento WAF provides the following benefits:
+The WAF service provides the following benefits:
 
-- **PCI compliance**—WAF enablement ensures that {{ site.data.var.ee }} storefronts in production environments meet PCI DSS 6.6 security requirements.
-- **Default WAF policy**—The default WAF policy, configured and maintained by Fastly, provides a collection of security rules tailored to protect your {{ site.data.var.ee }} web applications from a wide range of attacks, including injection attacks, malicious inputs, cross-site scripting, data exfiltration, HTTP protocol violations, and other [OWASP Top Ten](https://www.owasp.org/index.php/Top_Ten) security threats.
-- **WAF onboarding and enablement**—Magento deploys and enables the default WAF policy in your production environment within 2-3 weeks of the environment being fully provisioned.
-- **Operations and maintenance support**—
-  - Magento and Fastly set up and manage your WAF logs and alerts.
-  - Magento triages customer support tickets related to WAF issues that block legitimate traffic as Priority 1 issues.
-  - Automated WAF version upgrades ensure immediate coverage for new or evolving exploits. See [WAF maintenance and upgrades](#waf-maintenance-and-updates).
+-  **PCI compliance**—WAF enablement ensures that {{ site.data.var.ee }} storefronts in production environments meet PCI DSS 6.6 security requirements.
+-  **Default WAF policy**—The default WAF policy, configured and maintained by Fastly, provides a collection of security rules tailored to protect your {{ site.data.var.ee }} web applications from a wide range of attacks, including injection attacks, malicious inputs, cross-site scripting, data exfiltration, HTTP protocol violations, and other [OWASP Top Ten](https://www.owasp.org/index.php/Top_Ten) security threats.
+-  **WAF onboarding and enablement**—Magento deploys and enables the default WAF policy in your production environment within 2-3 weeks of the environment being fully provisioned.
+-  **Operations and maintenance support**—
+   -  Magento and Fastly set up and manage your WAF logs and alerts.
+   -  Magento triages customer support tickets related to WAF issues that block legitimate traffic as Priority 1 issues.
+   -  Automated WAF version upgrades ensure immediate coverage for new or evolving exploits. See [WAF maintenance and upgrades](#waf-maintenance-and-updates).
 
-Both the {{ site.data.var.ece }} Pro and Starter subscriptions include the Managed Cloud WAF at no additional cost. The WAF service is available only on Production environments.
+The WAF service is available on Production environments for all {{ site.data.var.ece }} Pro and Starter plans at no additional costs.
 
 {:.bs-callout .bs-callout-tip}
 For additional information about maintaining PCI compliance for your {{ site.var.data.ece }} stores, see [Magento Approach to PCI compliance](https://magento.com/pci-compliance).
@@ -32,14 +32,14 @@ Before you can use the WAF, all external traffic to your {{ site.data.var.ece }}
 
 ## How it works
 
-The Managed Cloud WAF integrates with Fastly and uses the cache logic within the Fastly CDN
+The WAF service integrates with Fastly and uses the cache logic within the Fastly CDN
 service to filter traffic at the Fastly global nodes. We enable the WAF service in your Production environment with a default WAF policy based on [ModSecurity Rules from Trustwave SpiderLabs](https://www.modsecurity.org/rules.html) and the OWASP Top Ten security threats.
 
-The Managed Cloud WAF filters HTTP and HTTPS traffic (GET and POST requests) against the WAF ruleset and blocks traffic that is malicious or does not comply with specific rules. The WAF service filters only origin-bound traffic that attempts to refresh the cache. As a result, we stop most attack traffic at the Fastly cache, protecting your origin traffic from malicious attacks. By processing only origin traffic, the Managed Cloud WAF preserves cache performance, introducing only an estimated 1.5 milliseconds (ms) to 20 ms of latency to every non-cached request.
+The WAF service filters HTTP and HTTPS traffic (GET and POST requests) against the WAF ruleset and blocks traffic that is malicious or does not comply with specific rules. The service filters only origin-bound traffic that attempts to refresh the cache. As a result, we stop most attack traffic at the Fastly cache, protecting your origin traffic from malicious attacks. By processing only origin traffic, the WAF preserves cache performance, introducing only an estimated 1.5 milliseconds (ms) to 20 ms of latency to every non-cached request.
 
 ### Troubleshooting blocked requests
 
-When the Managed Cloud WAF is enabled, it filters all web and admin traffic against the WAF rules and WAF blocks any web request that triggers a WAF rule. When a request is blocked, the requestor sees a default `403 Forbidden` error page that includes a reference ID for the blocking event.
+When the WAF service is enabled, it filters all web and admin traffic against the WAF rules and WAF blocks any web request that triggers a WAF rule. When a request is blocked, the requestor sees a default `403 Forbidden` error page that includes a reference ID for the blocking event.
 
 ![WAF error page]
 
@@ -55,11 +55,11 @@ Magento and Fastly manage the update process to ensure that new or modified WAF 
 
 ### Limitations
 
-The standard Magento Cloud WAF powered by Fastly does not support the following features:
+The standard WAF service powered by Fastly does not support the following features:
 
-- Protection against malware or bot mitigation
-- Rate limiting
-- Configuring a logging endpoint for customer
+-  Protection against malware or bot mitigation
+-  Rate limiting
+-  Configuring a logging endpoint for customer
 
 Although the WAF does not allow you to block or allow traffic based on IP addresses, you can add access control lists (ACL) and custom VCL snippets to your Fastly service to specify the IP addresses and VCL logic for blocking or allowing traffic. See [Custom Fastly VCL snippets]({{ page.baseurl }}/cloud/cdn/cloud-vcl-custom-snippets.html).
 
