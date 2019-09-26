@@ -49,6 +49,7 @@ module Jekyll
         )
         mrg_topic.content = metadata['content']
         mrg_topic.data['title'] = metadata['title']
+        mrg_topic.data['last_modified_at'] = metadata['last_modified_at']
         mrg_topic.process("#{mod}.md")
 
         # Add the newly constructed page object to the rest of pages
