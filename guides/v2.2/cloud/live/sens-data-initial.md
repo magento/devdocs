@@ -79,18 +79,28 @@ To create and transfer `config.php`:
 
 1.	On your local system, find the integration server's SSH URL.
 
-		magento-cloud environment:ssh --pipe
+    ```bash
+    magento-cloud environment:ssh --pipe
+    ```
+
 2.	Create `config.php` on the integration server.
 
-		ssh <SSH URL> "php vendor/bin/m2-ece-scd-dump"
+    ```bash
+    ssh <SSH URL> "php vendor/bin/m2-ece-scd-dump"
+    ```
 
-	For example,
+    For example,
 
-		ssh itnu84v4m4e5k-master-ouhx5wq@ssh.us.magentosite.cloud "php vendor/bin/m2-ece-scd-dump"
+    ```bash
+    ssh itnu84v4m4e5k-master-ouhx5wq@ssh.us.magentosite.cloud "php vendor/bin/m2-ece-scd-dump"
+    ```
+
 5.	If you haven't done so already, change to the project root directory.
 6.	Transfer `config.php` to your local system.
 
-		rsync <SSH URL>:app/etc/config.php ./app/etc/config.php
+    ```bash
+    rsync <SSH URL>:app/etc/config.php ./app/etc/config.php
+    ```
 
 The following snippet from `config.php` shows an example of changing the default locale to `en_GB` and changing static file optimization settings:
 
@@ -120,6 +130,7 @@ The following snippet from `config.php` shows an example of changing the default
 
      ... more ...
 ```
+
 {: .no-copy}
 
 ## Push and deploy config.php to environments {#deploy}
@@ -187,18 +198,28 @@ By running the command again for `php vendor/bin/m2-ece-scd-dump`, the new confi
 
 1.	On your local system, find the integration server's SSH URL.
 
-		magento-cloud environment:ssh --pipe
+    ```bash
+    magento-cloud environment:ssh --pipe
+    ```
+
 2.	Run the `config.php` creation command again on the Integration server.
 
-		ssh <SSH URL> "php vendor/bin/m2-ece-scd-dump"
+    ```bash
+    ssh <SSH URL> "php vendor/bin/m2-ece-scd-dump"
+    ```
 
-	For example,
+    For example,
 
-		ssh itnu84v4m4e5k-master-ouhx5wq@ssh.us.magentosite.cloud "php vendor/bin/m2-ece-scd-dump"
+    ```bash
+    ssh itnu84v4m4e5k-master-ouhx5wq@ssh.us.magentosite.cloud "php vendor/bin/m2-ece-scd-dump"
+    ```
+
 3.	If you haven't done so already, change to the project root directory.
 4.	Transfer `config.php` to your local system.
 
-		rsync <SSH URL>:app/etc/config.php ./app/etc/config.php
+    ```bash
+    rsync <SSH URL>:app/etc/config.php ./app/etc/config.php
+    ```
 
 ### Edit config.php with new settings {#change-config}
 
@@ -223,6 +244,7 @@ On your local, use a text editor to edit the updated `app/etc/config.php` file. 
          'minify_files' => '0',
      ],
 ```
+
 {: .no-copy}
 
 To modify settings to allow minification, edit `'0'` to `'1'` for `'minify_html'` and each `'minify_files'` option:
@@ -246,6 +268,7 @@ To modify settings to allow minification, edit `'0'` to `'1'` for `'minify_html'
          'minify_files' => '1',
      ],
 ```
+
 {: .no-copy}
 
 Save the changes to the file.

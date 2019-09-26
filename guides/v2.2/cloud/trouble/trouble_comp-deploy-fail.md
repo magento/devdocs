@@ -35,11 +35,15 @@ To clean up from the previous deployment, you must SSH to the environment and ma
 
 1.	Enter the following command to SSH to the current environment:
 
-		magento-cloud environment:ssh
+    ```bash
+    magento-cloud environment:ssh
+    ```
 
 2.	Clear the `var` directory:
 
-		rm -rf var/*
+    ```bash
+    rm -rf var/*
+    ```
 
 ## Remove the component
 
@@ -48,16 +52,27 @@ To remove the component:
 1.  Change to your environment's root directory if you haven't already done so.
 3.  Enter the following command:
 
-        composer remove <component-name>:<version>
+    ```bash
+    composer remove <component-name>:<version>
+    ```
 
     If the following message displays, you do not need to do anything further:
 
-    	Package "<name>:<version>" listed for update is not installed. Ignoring.
+    ```terminal
+    Package "<name>:<version>" listed for update is not installed. Ignoring.
+    ```
 
 4.  Wait while dependencies are updated.
 5.  Enter the following commands in the order shown to commit the changes and deploy the project:
 
-        git add -A
-        git commit -m "<message>"
-        git push origin <environment ID>
+    ```bash
+    git add -A
+    ```
 
+    ```bash
+    git commit -m "<message>"
+    ```
+
+    ```bash
+    git push origin <environment ID>
+    ```
