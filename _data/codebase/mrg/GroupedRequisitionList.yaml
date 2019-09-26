@@ -1,6 +1,7 @@
 ---
 title: Magento_GroupedRequisitionList
 edition: b2b
+last_modified_at: '2017-04-10 10:33:01 +0300'
 content: "## Overview\n\nThe Magento_GroupedRequisitionList module enables grouped
   products to be displayed in a requisition list in an B2B environment. This module
   extends Magento_RequisitionList and Magento_Grouped modules.\n\nThe Magento_GroupedRequisitionList
@@ -21,4 +22,3 @@ content: "## Overview\n\nThe Magento_GroupedRequisitionList module enables group
   directories.\n\nFor more information about layouts, see the [Layout documentation](http://devdocs.magento.com/guides/v2.2/frontend-dev-guide/layouts/layout-overview.html).\n\n##
   Additional information\n \nYou can track [backward incompatible changes made in
   a Magento B2b mainline after the Magento 2.2 release](http://devdocs.magento.com/guides/v2.2/release-notes/changes/b2b_changes.html).\n"
-last_modified_at: '2017-04-10 10:33:01 +0300'

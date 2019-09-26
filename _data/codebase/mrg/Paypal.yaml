@@ -1,6 +1,7 @@
 ---
 title: Magento_Paypal
 edition: ce
+last_modified_at: '2019-03-31 18:42:40 +0300'
 content: |
   Module Magento\PayPal implements integration with the PayPal payment system. Namely, it enables the following payment methods:
   * PayPal Express Checkout
@@ -8,4 +9,3 @@ content: |
   * PayPal Payments Pro
   * PayPal Credit
   * PayFlow Payment Gateway
-last_modified_at: '2019-03-31 18:42:40 +0300'

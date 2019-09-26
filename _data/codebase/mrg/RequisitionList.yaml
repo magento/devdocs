@@ -1,6 +1,7 @@
 ---
 title: Magento_RequisitionList
 edition: b2b
+last_modified_at: '2017-02-15 17:02:23 +0300'
 content: "## Overview\n\nThe Magento_RequisitionList module allows a customer to create
   multiple lists of frequently-purchased items and use those lists for order placement.
   This feature is available for both logged-in users and guests.\n \nRequisitionList
@@ -24,4 +25,3 @@ content: "## Overview\n\nThe Magento_RequisitionList module allows a customer to
   listing\n\nFor more information, see [UI Listing/Grid Component](http://devdocs.magento.com/guides/v2.2/ui-components/ui-listing-grid.html).\n\n##
   Additional information\n \nYou can track [backward incompatible changes made in
   a Magento B2b mainline after the Magento 2.2 release](http://devdocs.magento.com/guides/v2.2/release-notes/changes/b2b_changes.html)."
-last_modified_at: '2017-02-15 17:02:23 +0300'

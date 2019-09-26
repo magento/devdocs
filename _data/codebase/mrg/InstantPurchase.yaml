@@ -1,6 +1,7 @@
 ---
 title: Magento_InstantPurchase
 edition: ce
+last_modified_at: '2018-12-08 15:44:36 +0530'
 content: |
   ## Overview
 
@@ -61,4 +62,3 @@ content: |
   ***
 
   This module was initially developed by the [Creatuity Corp.](https://creatuity.com/) and [Magento Community Engineering Team](mailto:engcom@magento.com).
-last_modified_at: '2018-12-08 15:44:36 +0530'

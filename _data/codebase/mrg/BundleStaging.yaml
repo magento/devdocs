@@ -1,6 +1,7 @@
 ---
 title: Magento_BundleStaging
 edition: ee
+last_modified_at: '2016-04-12 17:33:21 +0300'
 content: |-
   <h2>Magento_BundleStaging module</h2>
 
@@ -33,4 +34,3 @@ content: |-
   ## Additional information
 
   For more Magento 2 developer documentation, see [Magento 2 Developer Documentation](http://devdocs.magento.com). Also, there you can track [backward incompatible changes made in a Magento EE mainline after the Magento 2.0 release](http://devdocs.magento.com/guides/v2.0/release-notes/changes/ee_changes.html).
-last_modified_at: '2016-04-12 17:33:21 +0300'

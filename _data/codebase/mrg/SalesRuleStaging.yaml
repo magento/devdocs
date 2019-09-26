@@ -1,6 +1,7 @@
 ---
 title: Magento_SalesRuleStaging
 edition: ee
+last_modified_at: '2016-07-13 17:35:04 -0500'
 content: "<h2>Magento_SalesRuleStaging module</h2>\n\n## Overview\n\nThe Magento_SalesRuleStaging
   module is a part of the staging functionality in Magento EE. It enables you to create
   new sales rule updates or add new changes to the existing store updates. In other
@@ -27,4 +28,3 @@ content: "<h2>Magento_SalesRuleStaging module</h2>\n\n## Overview\n\nThe Magento
   2 Developer Documentation](http://devdocs.magento.com). Also, you can track there
   [backward incompatible changes made in a Magento EE mainline after the Magento 2.0
   release](http://devdocs.magento.com/guides/v2.0/release-notes/changes/ee_changes.html).\n"
-last_modified_at: '2016-07-13 17:35:04 -0500'

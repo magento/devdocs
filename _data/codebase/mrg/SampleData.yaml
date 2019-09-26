@@ -1,6 +1,7 @@
 ---
 title: Magento_SampleData
 edition: ce
+last_modified_at: '2018-12-08 15:44:36 +0530'
 content: |
   Magento sample data includes a sample store, complete with more than 250 products (about 200 of them are configurable products), categories, promotional price rules, CMS pages, banners, and so on. Sample data uses the Luma theme on the storefront.
 
@@ -74,4 +75,3 @@ content: |
 
   ## Documentation
   You can find the more detailed description of sample data manipulation procedures at [https://devdocs.magento.com/guides/v2.0/install-gde/install/cli/install-cli-sample-data.html](https://devdocs.magento.com/guides/v2.0/install-gde/install/cli/install-cli-sample-data.html)
-last_modified_at: '2018-12-08 15:44:36 +0530'

@@ -1,6 +1,7 @@
 ---
 title: Magento_Tax
 edition: ce
+last_modified_at: '2014-10-24 14:51:44 -0700'
 content: |-
   ## Purpose of module
   The Magento_Tax module provides the calculations needed to compute the consumption tax on goods and services.
@@ -33,4 +34,3 @@ content: |-
 
   ## Uninstall
   The Magento_Tax module should not be uninstalled; it is a required module.
-last_modified_at: '2014-10-24 14:51:44 -0700'

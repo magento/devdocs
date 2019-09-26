@@ -1,8 +1,8 @@
 ---
 title: Magento_GroupedCatalogInventory
 edition: ce
+last_modified_at: '2018-11-27 16:04:57 -0600'
 content: 'Magento_GroupedCatalogInventory contains behavior related to the inventory
   status of items within grouped products.
 
   '
-last_modified_at: '2018-11-27 16:04:57 -0600'

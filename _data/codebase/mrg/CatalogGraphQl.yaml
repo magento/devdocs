@@ -1,7 +1,7 @@
 ---
 title: Magento_CatalogGraphQl
 edition: ce
+last_modified_at: '2018-01-16 13:17:37 -0600'
 content: |
   **CatalogGraphQl** provides type and resolver information for the GraphQl module
   to generate catalog and product information endpoints.
-last_modified_at: '2018-01-16 13:17:37 -0600'

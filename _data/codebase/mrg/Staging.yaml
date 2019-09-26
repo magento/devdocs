@@ -1,6 +1,7 @@
 ---
 title: Magento_Staging
 edition: ee
+last_modified_at: '2016-10-19 18:10:05 +0300'
 content: |
   ## Overview
   Magento_Staging module is used for setting up, previewing and managing future store updates.
@@ -26,4 +27,3 @@ content: |
 
   ## Precautions
    - To avoid mixed content and to work properly, Staging Site Preview feature requires both Storefront and Admin area to be under the same protocol (http or https).
-last_modified_at: '2016-10-19 18:10:05 +0300'

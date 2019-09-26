@@ -1,6 +1,7 @@
 ---
 title: Magento_B2b
 edition: b2b
+last_modified_at: '2017-02-15 17:02:23 +0300'
 content: "## Overview\n\nThe Magento_b2b module is the base module for B2B. It must
   be present on all B2B installations.\n\nThis module also provides several B2B branding
   elements. For example, it adds a link to B2B customer support in Admin, and it displays
@@ -17,4 +18,3 @@ content: "## Overview\n\nThe Magento_b2b module is the base module for B2B. It m
   enables you to override the functionality of the Magento_B2b module.\n \n \n## Additional
   information\n \nYou can track [backward incompatible changes made in a Magento B2b
   mainline after the Magento 2.2 release](http://devdocs.magento.com/guides/v2.2/release-notes/changes/b2b_changes.html)."
-last_modified_at: '2017-02-15 17:02:23 +0300'

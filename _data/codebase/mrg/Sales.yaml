@@ -1,6 +1,7 @@
 ---
 title: Magento_Sales
 edition: ce
+last_modified_at: '2014-10-24 14:51:44 -0700'
 content: |
   ## Purpose of module
 
@@ -20,4 +21,3 @@ content: |
 
   ## Install
   The Magento_Sales module is installed automatically (using the native Magento install mechanism) without any additional actions.
-last_modified_at: '2014-10-24 14:51:44 -0700'

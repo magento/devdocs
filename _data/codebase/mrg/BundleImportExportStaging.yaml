@@ -1,6 +1,7 @@
 ---
 title: Magento_BundleImportExportStaging
 edition: ee
+last_modified_at: '2017-05-26 18:23:26 +0300'
 content: |-
   <h2>Magento_BundleImportExportStaging module</h2>
 
@@ -25,4 +26,3 @@ content: |-
   ## Additional information
 
   For more Magento 2 developer documentation, see [Magento 2 Developer Documentation](http://devdocs.magento.com).
-last_modified_at: '2017-05-26 18:23:26 +0300'

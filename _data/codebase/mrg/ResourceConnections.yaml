@@ -1,6 +1,7 @@
 ---
 title: Magento_ResourceConnections
 edition: ee
+last_modified_at: '2015-08-25 12:44:48 +0300'
 content: "Magento\\ResourceConnections module adds a mechanism to segregate database
   connections between master and slave \ndatabase servers based on the request type.\n\nFor
   each master database connection (except the indexer connection) that are configured
@@ -23,4 +24,3 @@ content: "Magento\\ResourceConnections module adds a mechanism to segregate data
   the step and add to db/slave_connection \nnew element with same name and slave configuration
   for specified resource. \nConfig structure retains backward compatibility if module
   is turned off.\n\nWARNING: 'indexer' connection is not designed to have slave configuration.\n"
-last_modified_at: '2015-08-25 12:44:48 +0300'

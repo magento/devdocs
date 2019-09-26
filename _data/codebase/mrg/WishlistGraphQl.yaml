@@ -1,7 +1,7 @@
 ---
 title: Magento_WishlistGraphQl
 edition: ce
+last_modified_at: '2018-10-26 12:42:07 +0200'
 content: |
   **WishlistGraphQl** provides type information for the GraphQl module
   to generate wishlist fields.
-last_modified_at: '2018-10-26 12:42:07 +0200'

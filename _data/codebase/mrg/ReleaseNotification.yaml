@@ -1,6 +1,7 @@
 ---
 title: Magento_ReleaseNotification
 edition: ce
+last_modified_at: '2018-12-08 15:44:36 +0530'
 content: " # Magento_ReleaseNotification Module\n\nThe **Release Notification Module**
   serves to provide a notification delivery platform for displaying new features of
   a Magento installation or upgrade as well as any other required release notifications.\n\n##
@@ -43,4 +44,3 @@ content: " # Magento_ReleaseNotification Module\n\nThe **Release Notification Mo
   created. The text between the brackets [text] will be the text that the clickable
   link shows.\n\n### Link Format Example:\n\nThe text: `https://devdocs.magento.com/
   [Magento DevDocs].` will appear as [Magento DevDocs](https://devdocs.magento.com/).\n"
-last_modified_at: '2018-12-08 15:44:36 +0530'

@@ -1,6 +1,7 @@
 ---
 title: Magento_MsrpStaging
 edition: ee
+last_modified_at: '2016-07-06 16:58:52 +0300'
 content: |-
   ## Magento_MsrpStaging module
 
@@ -26,4 +27,3 @@ content: |-
   ## Additional information
 
   You can track [backward incompatible changes made in a Magento EE mainline after the Magento 2.0 release](http://devdocs.magento.com/guides/v2.0/release-notes/changes/ee_changes.html).
-last_modified_at: '2016-07-06 16:58:52 +0300'

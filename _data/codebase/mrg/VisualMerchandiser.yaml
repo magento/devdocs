@@ -1,6 +1,7 @@
 ---
 title: Magento_VisualMerchandiser
 edition: ee
+last_modified_at: '2015-06-03 11:17:57 +0000'
 content: |-
   Create and merchandise categories quickly and easily with Visual Merchandiser for Magento.
   Drag-and-drop products into position, or set up 'Smart Categories' based upon attributes.
@@ -8,4 +9,3 @@ content: |-
 
   With Visual Merchandiser, products can be re-organised in seconds – visually.
   You see the products in place, with images, just like the customer sees them.
-last_modified_at: '2015-06-03 11:17:57 +0000'

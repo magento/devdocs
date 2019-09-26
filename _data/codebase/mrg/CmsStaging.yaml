@@ -1,6 +1,7 @@
 ---
 title: Magento_CmsStaging
 edition: ee
+last_modified_at: '2016-07-13 17:35:04 -0500'
 content: "## Magento_CmsStaging module\n\n## Overview\n\nThe Magento_CmsStaging module
   is a part of the staging functionality in Magento EE. It enables you to create new
   CMS Page and the CMS Block updates or add new changes to the existing store updates.
@@ -32,4 +33,3 @@ content: "## Magento_CmsStaging module\n\n## Overview\n\nThe Magento_CmsStaging 
   directory.\nFor more information about layouts, see the [Layout documentation](http://devdocs.magento.com/guides/v2.1/frontend-dev-guide/layouts/layout-overview.html).\n\n##
   Additional information\n\nYou can track [backward incompatible changes made in a
   Magento EE mainline after the Magento 2.0 release](http://devdocs.magento.com/guides/v2.0/release-notes/changes/ee_changes.html)."
-last_modified_at: '2016-07-13 17:35:04 -0500'

@@ -1,7 +1,7 @@
 ---
 title: Magento_Elasticsearch
 edition: ce
+last_modified_at: '2018-03-09 17:43:18 -0600'
 content: |-
   Magento\Elasticsearch module allows to use Elastic search engine for product searching capabilities.
   The module implements Magento\Search library interfaces.
-last_modified_at: '2018-03-09 17:43:18 -0600'
