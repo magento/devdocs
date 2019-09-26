@@ -38,7 +38,7 @@ The following query returns the customer's wish list:
 
 **Request**
 
-```
+```json
 {
   wishlist {
     items_count
