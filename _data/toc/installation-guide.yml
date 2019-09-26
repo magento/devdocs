@@ -422,9 +422,6 @@ pages:
             - label: Known issues that affect installation
               url: /install-gde/trouble/tshoot_install-issues.html
 
-            - label: Cannot run 'composer install'
-              url: /install-gde/trouble/tshoot_composer-install.html
-
     - label: How Tos
       children:
         - label: Modify docroot to improve security
