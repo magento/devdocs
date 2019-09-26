@@ -31,33 +31,35 @@ To set up a production machine:
 1.	After installing Magento or pulling it from source control, log in to the production server as, or switch to, the [Magento file system owner](https://glossary.magento.com/magento-file-system-owner).
 2.	Create `~/.ssh/.composer/auth.json` if you haven't already done so.
 
-	Create the directory:
+    Create the directory:
 
-		mkdir -p ~/.ssh/.composer
+    ```bash
+    mkdir -p ~/.ssh/.composer
+    ```
 
-	Create `auth.json` in that directory.
+    Create `auth.json` in that directory.
 
-	`auth.json` must contain your Magento [authentication keys]({{ page.baseurl }}/install-gde/prereq/connect-auth.html).
+    `auth.json` must contain your Magento [authentication keys]({{ page.baseurl }}/install-gde/prereq/connect-auth.html).
 
-	A sample follows:
+    A sample follows:
 
-	```json
-{
-   "http-basic": {
-         "repo.magento.com": {
-         "username": "<your public key>",
-         "password": "<your private key>"
+    ```json
+    {
+       "http-basic": {
+             "repo.magento.com": {
+             "username": "<your public key>",
+             "password": "<your private key>"
+           }
         }
-  }
-}
-```
+    }
+    ```
 
 3.	Save your changes to `auth.json`.
 4.	Copy `<Magento root dir>/app/etc/env.php` from your development system to your production system.
 5.	Open `env.php` in a text editor and change any values necessary (for example, database connection information).
 6.	Run the [`magento config:set`]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-config-mgmt-set.html) or [`magento config:set-sensitive`]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-config-mgmt-set.html) command to set the values of any system-specific or sensitive configuration values, respectively.
 
-	The following section shows an example.
+    The following section shows an example.
 
 ## Set configuration values on your production system
 
@@ -71,22 +73,29 @@ To set sensitive values:
 4.	Change to the Magento installation directory.
 5.	Enter the following command:
 
-		bin/magento config:sensitive:set {configuration path} {value}
+    ```bash
+    bin/magento config:sensitive:set {configuration path} {value}
+    ```
 
-	For example, to set the value of the YouTube API key to `1234`, enter
+    For example, to set the value of the YouTube API key to `1234`, enter
 
-		bin/magento config:sensitive:set catalog/product_video/youtube_api_key 1234
+    ```bash
+    bin/magento config:sensitive:set catalog/product_video/youtube_api_key 1234
+    ```
 
-	You can also set one or more values interactively as follows:
+    You can also set one or more values interactively as follows:
 
-		bin/magento config:sensitive:set -i
+    ```bash
+    bin/magento config:sensitive:set -i
+    ```
 
-	When prompted, enter a value for each sensitive setting or press Enter to skip a value and move to the next one.
+    When prompted, enter a value for each sensitive setting or press Enter to skip a value and move to the next one.
+
 6.	To verify the value was set, log in to the Magento Admin.
 7.	Locate the setting in the Admin.
 
-	For example, the YouTube API key setting is located in **Stores** > Settings > **Configuration** > **Catalog** > **Catalog** > **Product Video**.
+    For example, the YouTube API key setting is located in **Stores** > Settings > **Configuration** > **Catalog** > **Catalog** > **Product Video**.
 
-	The setting is displayed in the Admin and cannot be edited. The following figure shows an example.
+    The setting is displayed in the Admin and cannot be edited. The following figure shows an example.
 
-	![Sensitive setting in Admin]({{ site.baseurl }}/common/images/config_sensitive-set.png)
+    ![Sensitive setting in Admin]({{ site.baseurl }}/common/images/config_sensitive-set.png)

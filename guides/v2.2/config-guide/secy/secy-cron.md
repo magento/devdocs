@@ -40,8 +40,13 @@ For security reasons, you can locate the password file anywhere except your web 
 
 Enter the following commands as a user with `root` privileges:
 
-	mkdir -p /usr/local/apache/password
-	htpasswd -c /usr/local/apache/password/passwords <username>
+```bash
+mkdir -p /usr/local/apache/password
+```
+
+```bash
+htpasswd -c /usr/local/apache/password/passwords <username>
+```
 
 Where `<username>` can be the web server user or another user. In this example, we use the web server user, but the choice of user is up to you.
 
@@ -49,7 +54,9 @@ Follow the prompts on your screen to create a password for the user.
 
 To add another user to your password file, enter the following command as a user with `root` privileges:
 
-	htpasswd /usr/local/apache/password/passwords <username>
+```bash
+htpasswd /usr/local/apache/password/passwords <username>
+```
 
 ### Add users to create an authorized cron group (optional)
 
@@ -57,15 +64,21 @@ You can also enable more than one user to run cron by adding these users to your
 
 To add another user to your password file:
 
-	htpasswd /usr/local/apache/password/passwords <username>
+```bash
+htpasswd /usr/local/apache/password/passwords <username>
+```
 
 To create an authorized group, create a group file anywhere outside the web server docroot. The group file specifies the name of the group and the users in the group. In this example, the group name is `MagentoCronGroup`.
 
-	vim /usr/local/apache/password/group
+```bash
+vim /usr/local/apache/password/group
+```
 
 Contents of the file:
 
-	MagentoCronGroup: <username1> ... <usernameN>
+```text
+MagentoCronGroup: <username1> ... <usernameN>
+```
 
 ### Secure cron in `.htaccess`
 
@@ -74,25 +87,31 @@ To secure cron in Magento's `.htaccess` file:
 1.	Log in to your Magento server as, or switch to, the [Magento file system owner](https://glossary.magento.com/magento-file-system-owner).
 2.	Open `<magento_root>/pub/.htaccess` in a text editor.
 
-	(Because `cron.php` is located in the `pub` directory, edit this `.htaccess` only.)
+    (Because `cron.php` is located in the `pub` directory, edit this `.htaccess` only.)
 
 3.	*Cron access for one or more users.* Replace the existing `<Files cron.php>` directive with the following:
 
-		<Files cron.php>
-    		AuthType Basic
-    		AuthName "Cron Authentication"
-    		AuthUserFile /usr/local/apache/password/passwords
-    		Require valid-user
-		</Files>
+    ```conf
+    <Files cron.php>
+        AuthType Basic
+        AuthName "Cron Authentication"
+        AuthUserFile /usr/local/apache/password/passwords
+        Require valid-user
+    </Files>
+    ```
+
 3.	*Cron access for a group.* Replace the existing `<Files cron.php>` directive with the following:
 
-		<Files cron.php>
-    		AuthType Basic
-    		AuthName "Cron Authentication"
-    		AuthUserFile /usr/local/apache/password/passwords
-    		AuthGroupFile <path to optional group file>
-    		Require group <name>
-		</Files>
+    ```conf
+    <Files cron.php>
+        AuthType Basic
+        AuthName "Cron Authentication"
+        AuthUserFile /usr/local/apache/password/passwords
+        AuthGroupFile <path to optional group file>
+        Require group <name>
+    </Files>
+    ```
+
 4.	Save your changes to `.htaccess` and exit the text editor.
 6.	Continue with [Verify cron is secure](#verify-cron-is-secure).
 
@@ -116,7 +135,7 @@ Magento provides an optimized sample nginx configuration file out of the box. We
 
 1.  Add the following to your Magento [`nginx.sample.conf`]({{ site.mage2bloburl }}/{{ page.guide_version }}/nginx.conf.sample){:target="_blank"} file:
 
-    ```terminal
+    ```conf
     #Securing cron
     location ~ cron\.php$ {
        auth_basic "Cron Authentication";
@@ -154,27 +173,41 @@ To verify cron is secure:
 
 1.  Log in to your Magento database as either the Magento database user or as `root`.
 
-	For example,
+    For example,
 
-		mysql -u magento -p
+    ```bash
+    mysql -u magento -p
+    ```
 
 2.	Use the Magento database:
 
-		use <magento database name>;
+    ```shell
+    use <magento database name>;
+    ```
 
-	For example,
+    For example,
 
-		use magento;
+    ```shell
+    use magento;
+    ```
+
 3.	Delete all rows from the `cron_schedule` database table:
 
-		TRUNCATE TABLE cron_schedule;
+    ```shell
+    TRUNCATE TABLE cron_schedule;
+    ```
+
 4.	Run cron from a browser:
 
-		http[s]://<magento hostname or ip>/cron.php?group=default
+    ```shell
+    http[s]://<magento hostname or ip>/cron.php?group=default
+    ```
 
-	For example,
+    For example:
 
-		http://magento.example.com/cron.php?group=default
+    ```shell
+    http://magento.example.com/cron.php?group=default
+    ```
 
 5.  When prompted, enter an authorized user's name and password. The following figure shows an example.
 
@@ -182,7 +215,7 @@ To verify cron is secure:
 
 6.  Verify that rows were added to the table:
 
-    ```bash
+    ```shell
     SELECT * from cron_schedule;
 
     mysql> SELECT * from cron_schedule;
@@ -219,30 +252,38 @@ If you're using an Apache web server, you must remove the restriction from the `
 1.	Log in to your Magento server as a user with permissions to write to the Magento file system.
 2.	Open any of the following in a text editor (depending on your entry point to Magento):
 
-		<magento_root>/pub/.htaccess
-		<magento_root>/.htaccess
+    ```text
+    <magento_root>/pub/.htaccess
+    <magento_root>/.htaccess
+    ```
 
 3.	Delete or comment out the following:
 
-		## Deny access to cron.php
-    	<Files cron.php>
-        	order allow,deny
-        	deny from all
-    	</Files>
+    ```conf
+    ## Deny access to cron.php
+      <Files cron.php>
+          order allow,deny
+          deny from all
+      </Files>
+    ```
 
     For example,
 
-    	## Deny access  to cron.php
-    	#<Files cron.php>
-        #	order allow,deny
-        #	deny from all
-    	#</Files>
+    ```conf
+    ## Deny access  to cron.php
+       #<Files cron.php>
+           # order allow,deny
+           # deny from all
+       #</Files>
+    ```
 
 3.	Save your changes and exit the text editor.
 
-You can then run cron in a web browser as follows:
+    You can then run cron in a web browser as follows:
 
-	<your Magento hostname or IP>/<Magento root>/pub/cron.php[?group=<group name>]
+    ```text
+    <your Magento hostname or IP>/<Magento root>/pub/cron.php[?group=<group name>]
+    ```
 
 Where:
 
@@ -254,7 +295,9 @@ Where:
 
 For example,
 
-	http://magento.example.com/magento2/pub/cron.php?group=index
+```http
+http://magento.example.com/magento2/pub/cron.php?group=index
+```
 
 {:.bs-callout .bs-callout-info}
 You must run cron twice: first to discover tasks to run and again to run the tasks themselves. Refer to [Configure and run cron]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cron.html#config-cli-cron-group-run) for more information about cron groups.

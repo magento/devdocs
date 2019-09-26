@@ -13,9 +13,11 @@ functional_areas:
 
 In Magento 2.1 or later, when creating a new product in the Magento Admin, the following error might display:
 
-	Warning: Illegal string offset 'is_in_stock' in [...]/vendor/
-	magento/module-catalog-inventory/Ui/DataProvider/Product/Form/
-	Modifier/AdvancedInventory.php on line 87
+```text
+Warning: Illegal string offset 'is_in_stock' in [...]/vendor/
+magento/module-catalog-inventory/Ui/DataProvider/Product/Form/
+Modifier/AdvancedInventory.php on line 87
+```
 
 ### Detail
 
@@ -36,13 +38,15 @@ Use the following guidelines to find it:
 
 *	Apache web server:
 
-	For Ubuntu with Apache, OPcache settings are typically located in `php.ini`.
+    For Ubuntu with Apache, OPcache settings are typically located in `php.ini`.
 
-	For CentOS with Apache or nginx, OPcache settings are typically located in `/etc/php.d/opcache.ini`
+    For CentOS with Apache or nginx, OPcache settings are typically located in `/etc/php.d/opcache.ini`
 
-	If not, use the following command to locate it:
+    If not, use the following command to locate it:
 
-		sudo find / -name 'opcache.ini'
+    ```bash
+    sudo find / -name 'opcache.ini'
+    ```
 
 *	nginx web server with PHP-FPM: `/etc/php5/fpm/php.ini`
 
@@ -64,4 +68,6 @@ If you have more than one `opcache.ini`, modify all of them.
 
 6.	Regenerate DI configuration and all missing classes that can be auto-generated:
 
-	*	`bin/magento setup:di:compile`
+    ```bash
+    bin/magento setup:di:compile`
+    ```

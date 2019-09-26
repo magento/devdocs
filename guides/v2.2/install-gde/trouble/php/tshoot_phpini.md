@@ -15,8 +15,10 @@ functional_areas:
 
 During or after installation, a  message similar to the following displays:
 
-	Exception' with message 'PHP Fatal error: Uncaught exception 'PDOException' with message
-	'SQLSTATE[HY000] [2002] No such file or directory
+```text
+Exception' with message 'PHP Fatal error: Uncaught exception 'PDOException' with message
+  'SQLSTATE[HY000] [2002] No such file or directory
+```
 
 ### Solution
 
@@ -27,7 +29,9 @@ To determine whether or not you're using one instance of PHP:
 1.	Log in to your Magento server.
 2.	Enter the following command:
 
-		php -i | grep 'php.ini'
+    ```bash
+    php -i | grep 'php.ini'
+    ```
 
 	This determines the settings used by the PHP command-line interface (CLI). Note where `php.ini` is located.
 
