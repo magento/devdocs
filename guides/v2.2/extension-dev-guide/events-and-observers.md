@@ -140,6 +140,20 @@ In the preceding example, we assign the observer `MyObserver` to the custom even
 
 Observer names must be unique per event definition. This means that you cannot have two observers with the same name in the same event definition. In the example, both observers have the name `myObserverName`. This is acceptable because each of those observers belong to different event definitions.
 
+#### Disabling an observer
+
+Already created observers can be disabled, if you don't want to have them running. Also, it's a good practice to disable the obsever, if you want to change its logic rather than override it.
+Below is an example of how to disabl the previously created observer. 
+
+```xml
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="my_module_event_before">
+        <observer name="myObserverName" disabled="true" />
+    </event>
+</config>
+```
+
 ### Recommended Reading
 
 * [Observers best practices]({{ page.baseurl }}/ext-best-practices/extension-coding/observers-bp.html)
