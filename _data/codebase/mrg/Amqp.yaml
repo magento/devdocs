@@ -1,0 +1,4 @@
+---
+title: Magento_Amqp
+edition: ce
+content: "**Amqp** provides functionality to publish/consume messages with Amqp.\n"

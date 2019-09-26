@@ -1,0 +1,6 @@
+---
+title: Magento_Authorization
+edition: ce
+content: |
+  **Authorization** enables management of access control list roles and
+  rules in the application.

@@ -1,0 +1,6 @@
+---
+title: Magento_CustomerGraphQl
+edition: ce
+content: |
+  **CustomerGraphQl** provides type and resolver information for the GraphQl module
+  to generate customer information endpoints.

@@ -1,0 +1,5 @@
+---
+title: Magento_Braintree
+edition: ce
+content: Module Magento\Braintree implements integration with the Braintree payment
+  system.

@@ -1,0 +1,4 @@
+---
+title: Magento_MysqlMq
+edition: ce
+content: "**MysqlMq** provides message queue implementation based on MySQL.\n"

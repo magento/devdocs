@@ -1,0 +1,5 @@
+---
+title: Magento_MsrpConfigurableProduct
+edition: ce
+content: "**MsrpConfigurableProduct** provides type and resolver information for the
+  Msrp module from the ConfigurableProduct module."

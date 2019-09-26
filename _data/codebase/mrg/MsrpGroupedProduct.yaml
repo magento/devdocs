@@ -1,0 +1,5 @@
+---
+title: Magento_MsrpGroupedProduct
+edition: ce
+content: "**MsrpGroupedProduct** provides type and resolver information for the Msrp
+  module from the GroupedProduct module."
