@@ -143,7 +143,7 @@ Observer names must be unique per event definition. This means that you cannot h
 #### Disabling an observer
 
 Already created observers can be disabled, if you don't want to have them running. Also, it's a good practice to disable the obsever, if you want to change its logic rather than override it.
-Below is an example of how to disabl the previously created observer. 
+Below is an example of how to disable the previously created observer. 
 
 ```xml
 <?xml version="1.0"?>
