@@ -12,7 +12,7 @@ Magento has strengthened the hashing algorithms (SHA-256) used in password manag
 
 ## Improved prevention of cross-site scripting (XSS) attacks by making escaped data the default
 
-The Magento Framework has adopted conventions that regulate the escaping of data in output. These conventions include the ability to escape  output for [HTML](https://glossary.magento.com/html) pages (HTML, JSON, and JavaScript) and email. Where possible, escaping is transparent to client code. See [Security measures against XSS attacks]({{page.baseurl}}/frontend-dev-guide/templates/template-security.html) in the [Frontend](https://glossary.magento.com/frontend) Developer Guide.
+The Magento Framework has adopted conventions that regulate the escaping of data in output. These conventions include the ability to escape  output for [HTML](https://glossary.magento.com/html) pages (HTML, JSON, and JavaScript) and email. Where possible, escaping is transparent to client code. See [Security measures against XSS attacks]({{page.baseurl}}/extension-dev-guide/xss-protection.html) in the [Frontend](https://glossary.magento.com/frontend) Developer Guide.
 
 ## More flexible file system ownership and permissions
 

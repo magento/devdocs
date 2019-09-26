@@ -65,12 +65,12 @@ After the upgrade completes:
 
 *	The following error might display:
 
-		[2016-01-19 23:33:24 UTC] An error occurred while executing job
-		"setup:upgrade {"command":"setup:upgrade"}": Could not complete
-		setup:upgrade {"command":"setup:upgrade"} successfully: Source
-		class "\Cybersource" for "CybersourceLogger" generation does not exist.
-
-	For more information, see [Error upgrading from CE to EE].
+    ```terminal
+    [2016-01-19 23:33:24 UTC] An error occurred while executing job
+    "setup:upgrade {"command":"setup:upgrade"}": Could not complete
+    setup:upgrade {"command":"setup:upgrade"} successfully: Source
+    class "\Cybersource" for "CybersourceLogger" generation does not exist.
+    ```
 
 ## Continue your upgrade {#ce-ee-continue}
 
@@ -82,7 +82,6 @@ From here, your upgrade is the same as any other upgrade. Continue with [Step 1.
 [Magento Support]: http://support.magentocommerce.com
 [authentication keys]: {{ page.baseurl }}/install-gde/prereq/connect-auth.html
 [troubleshooting]: {{ page.baseurl }}/comp-mgr/trouble/cman/were-sorry.html
-[Error upgrading from CE to EE]: {{ page.baseurl }}/comp-mgr/trouble/cman/ce-ee-upgrade.html
 [Step 1. Select versions to upgrade]: {{ page.baseurl }}/comp-mgr/upgrader/upgrade-main-pg.html
 
 <!-- Image Definitions -->

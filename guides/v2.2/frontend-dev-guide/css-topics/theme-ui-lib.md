@@ -14,6 +14,7 @@ This topic describes how the library is organized, and how to use it. For more i
 ## Components provided by the UI library {#library_elements}
 
 The Magento UI library provides the ability to customize and reuse the following user interface elements and properties:
+
 *	actions-toolbar
 *	breadcrumbs
 *	buttons
@@ -182,6 +183,7 @@ To set navigation using breakpoints, see the following example:
 ## Embedded documentation {#docs}
 
 The detailed information about the Magento UI library is embedded in the code repository:
+
 * [`lib/web/css/docs/source/README.md`] describes the Magento UI library structure, naming conventions, and code style.
 * [`lib/web/css/docs`] contains a set of `.html` files with detailed information about the library mixins.
 

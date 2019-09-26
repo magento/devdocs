@@ -4,8 +4,6 @@ subgroup: 3_Widgets
 title: Tabs widget
 ---
 
-## Overview {#fedg_tabs-widget_overview}
-
 The Magento tabs widget implements single content area with multiple panels, each associated with a header in a list. It uses the [Magento collapsible widget].
 
 The tabs [widget](https://glossary.magento.com/widget) source is [lib/web/mage/tabs.js].
@@ -20,9 +18,10 @@ $("#element").tabs();
 ```
 
 Where:
+
 -   `#element` is the selector of the element for tabs is initialized.
 
-Phtml template file examples using script:
+The following example shows a PHTML file using the script:
 
 ```html
 <script>
@@ -85,6 +84,7 @@ Specifies if the collapse/expand actions are performed with animation. The optio
 
 **Type**:
 Multiple types are supported:
+
 -   Boolean: the `false` value disables the animation
 -   Number: duration in milliseconds
 -   String: is parsed to an object as a json string
@@ -208,6 +208,7 @@ The option of the [collapsible] widget used by tabs.
 ## Methods {#tabs_methods}
 
 The tabs widget has the following methods:
+
 -   [activate()](#fedg_tabs_methods-activate)
 -   [enable()](#fedg_tabs_methods-enable)
 -   [deactivate()](#fedg_tabs_methods-deactivate)

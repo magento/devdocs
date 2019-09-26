@@ -64,8 +64,7 @@ Use these interfaces to create your own SSA:
 * [GetSourceSelectionAlgorithmListInterface](https://github.com/magento-engcom/msi/blob/2.3.0-release/app/code/Magento/InventorySourceSelectionApi/Api/GetSourceSelectionAlgorithmListInterface.php) returns the list of data interfaces that represent registered SSAs
 * [SourceSelectionAlgorithmInterface](https://github.com/magento-engcom/msi/blob/2.3.0-release/app/code/Magento/InventorySourceSelectionApi/Api/Data/SourceSelectionAlgorithmInterface.php) represents a single SSA
 * [SourceSelectionInterface](https://github.com/magento-engcom/msi/blob/2.3.0-release/app/code/Magento/InventorySourceSelectionApi/Model/SourceSelectionInterface.php) returns the SSA result for the specified `inventoryRequest`
-* [GetDistanceInterface](https://github.com/magento-engcom/msi/blob/2.3-develop/app/code/Magento/InventoryDistanceBasedSourceSelectionApi/Api/GetDistanceInterface.php)  - returns the distance between the source and the shipping address in kilometers without specifying the units. To change this behavior, provide your own implementation for
-`\Magento\InventoryDistanceBasedSourceSelection\Model\DistanceProvider\GoogleMap\GetDistance`.
+* [GetDistanceInterface](https://github.com/magento-engcom/msi/blob/2.3-develop/app/code/Magento/InventoryDistanceBasedSourceSelectionApi/Api/GetDistanceInterface.php)  - returns the distance between the source and the shipping address in kilometers without specifying the units. To change this behavior, provide your own implementation for `\Magento\InventoryDistanceBasedSourceSelection\Model\DistanceProvider\GoogleMap\GetDistance`.
 
 ## Develop a custom algorithm
 

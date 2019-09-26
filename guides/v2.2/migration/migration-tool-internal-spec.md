@@ -111,6 +111,7 @@ The Schema for configuration file `config.xsd` is placed under `etc/directory`. 
 Default configuration file can be replaced by custom one (see [command syntax]({{ page.baseurl }}/migration/migration-migrate.html#migration-command-run-syntax)).
 
 Configuration file has the following structure:
+
 ```xml
 <config xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="config.xsd">
     <steps mode="settings">
