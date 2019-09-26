@@ -18,28 +18,37 @@ To reinstall the Magento software as a contributing developer:
 2.	Log in to your Magento server as a user with permissions to modify files in the Magento file system (for example, the [switch to the Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html).
 3.	Make a backup copy of `composer.json` in your Magento installation directory:
 
-		cd <magento_root>
-		cp composer.json composer.json.bak
+    ```bash
+    cd <magento_root>
+    ```
+
+    ```bash
+    cp composer.json composer.json.bak
+    ```
 
 4.	Open `composer.json` in a text editor.
 5.	Locate the following line:
 
-		 "require": {
-        	"magento/product-community-edition": "<version>"
-    	},
+    ```json
+    "require": {
+          "magento/product-community-edition": "<version>"
+      },
+    ```
 
 5.	Replace `<version>` with the version to which you want to upgrade, where `<version>` is the product version to use.
 
-	(The product version is in the format `2.0.x`)
+    (The product version is in the format `2.0.x`)
 
 <!-- is the `magento/product-community-edition` version from -->.
 
 5.	Save your changes to `composer.json` and exit the text editor.
 6.	Enter the following command:
 
-		composer update
+    ```bash
+    composer update
+    ```
 
-	Wait for dependencies to update.
+    Wait for dependencies to update.
 
 4. [Install the Magento software]({{ page.baseurl }}/install-gde/install/cli/install-cli.html).
 
