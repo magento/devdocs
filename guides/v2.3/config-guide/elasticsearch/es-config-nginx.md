@@ -26,7 +26,7 @@ See one of the following sections for more information:
 
 Make sure your global `/etc/nginx/nginx.conf` contains the following line so it loads the other configuration files discussed in the following sections:
 
-```
+```conf
 include /etc/nginx/conf.d/*.conf;
 ```
 
@@ -36,16 +36,21 @@ This section discusses how to specify who can access the [nginx](https://glossar
 
 1.	Use a text editor to create a new file `/etc/nginx/conf.d/magento_es_auth.conf` with the following contents:
 
-		server {
-			listen 8080;
-			location / {
-				proxy_pass http://localhost:9200;
-			}
-		}
+    ```conf
+    server {
+        listen 8080;
+        location / {
+            proxy_pass http://localhost:9200;
+        }
+    }
+    ```
 
 2.	Restart nginx:
 
-		service nginx restart
+    ```bash
+    service nginx restart
+    ```
+
 3.  Verify the proxy works by entering the following command:
 
     ```bash
@@ -103,24 +108,35 @@ To create a password:
 
 1.	Enter the following command to determine if `htpasswd` is already installed:
 
-		which htpasswd
+    ```bash
+    which htpasswd
+    ```
 
-	If a path displays, it is installed; if the command returns no output, `htpasswd` is not installed.
+    If a path displays, it is installed; if the command returns no output, `htpasswd` is not installed.
+
 2.	If necessary, install `htpasswd`:
 
 	*	Ubuntu: `apt-get -y install apache2-utils`
 	*	CentOS: `yum -y install httpd-tools`
 3.	Create a `/etc/nginx/passwd` directory to store passwords:
 
-		mkdir -p /etc/nginx/passwd
-		htpasswd -c /etc/nginx/passwd/.<filename> <username>
+    ```bash
+    mkdir -p /etc/nginx/passwd
+    ```
 
-	{:.bs-callout .bs-callout-warning}
-	For security reasons, `<filename>` should be hidden; that is, it must start with a period.
+    ```bash
+    htpasswd -c /etc/nginx/passwd/.<filename> <username>
+    ```
+
+    {:.bs-callout .bs-callout-warning}
+    For security reasons, `<filename>` should be hidden; that is, it must start with a period.
 
 5.	*(Optional).* To add another user to your password file, enter the same command without the `-c` (create) option:
 
-		htpasswd /etc/nginx/passwd/.<filename> <username>
+    ```bash
+    htpasswd /etc/nginx/passwd/.<filename> <username>
+    ```
+
 6.	Verify that the contents of `/etc/nginx/passwd` is correct.
 
 ### Step 3: Set up access to nginx {#es-ws-secure-nginx-access}
@@ -132,32 +148,34 @@ The example shown is for an *unsecure* proxy. To use a secure proxy, add the fol
 
 Use a text editor to modify either `/etc/nginx/conf.d/magento_es_auth.conf` (unsecure) or your secure server block with the following contents:
 
-	server {
-		listen 8080;
-		server_name 127.0.0.1;
+```conf
+server {
+  listen 8080;
+  server_name 127.0.0.1;
 
-		location / {
-			limit_except HEAD {
-			   auth_basic "Restricted";
-			   auth_basic_user_file  /etc/nginx/passwd/.htpasswd_magento_elasticsearch;
-			}
-			proxy_pass http://127.0.0.1:9200;
-			proxy_redirect off;
-			proxy_set_header Host $host;
-			proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-		}
+  location / {
+    limit_except HEAD {
+        auth_basic "Restricted";
+        auth_basic_user_file  /etc/nginx/passwd/.htpasswd_magento_elasticsearch;
+    }
+    proxy_pass http://127.0.0.1:9200;
+    proxy_redirect off;
+    proxy_set_header Host $host;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+  }
 
-		location /_aliases {
-			auth_basic "Restricted";
-			auth_basic_user_file  /etc/nginx/passwd/.htpasswd_magento_elasticsearch;
-			proxy_pass http://127.0.0.1:9200;
-			proxy_redirect off;
-			proxy_set_header Host $host;
-			proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-		}
+  location /_aliases {
+    auth_basic "Restricted";
+    auth_basic_user_file  /etc/nginx/passwd/.htpasswd_magento_elasticsearch;
+    proxy_pass http://127.0.0.1:9200;
+    proxy_redirect off;
+    proxy_set_header Host $host;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+  }
 
-		include /etc/nginx/auth/*.conf;
-	}
+  include /etc/nginx/auth/*.conf;
+}
+```
 
 {:.bs-callout .bs-callout-info}
 The Elasticsearch listen port shown in the preceding example are examples only. For security reasons, we recommend you use a non-default listen port for Elasticsearch.
@@ -168,23 +186,30 @@ This section discusses how to specify who can access the Elasticsearch server.
 
 1.	Enter the following command to create a new directory to store the authentication configuration:
 
-		mkdir /etc/nginx/auth/
+    ```bash
+    mkdir /etc/nginx/auth/
+    ```
 
 2.	Use a text editor to create a new file `/etc/nginx/auth/magento_elasticsearch.conf` with the following contents:
 
-		location /elasticsearch {
-		auth_basic "Restricted - elasticsearch";
-		auth_basic_user_file /etc/nginx/passwd/.htpasswd_magento_elasticsearch;
+    ```conf
+    location /elasticsearch {
+    auth_basic "Restricted - elasticsearch";
+    auth_basic_user_file /etc/nginx/passwd/.htpasswd_magento_elasticsearch;
 
-		proxy_pass http://127.0.0.1:9200;
-		proxy_redirect off;
-		proxy_set_header Host $host;
-		proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-		}
+    proxy_pass http://127.0.0.1:9200;
+    proxy_redirect off;
+    proxy_set_header Host $host;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    }
+    ```
+
 3.	If you set up a secure proxy, delete `/etc/nginx/conf.d/magento_es_auth.conf`.
 4.	Restart nginx and continue with the next section:
 
-		service nginx restart
+    ```bash
+    service nginx restart
+    ```
 
 {% include config/es-verify-proxy.md %}
 

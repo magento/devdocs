@@ -141,7 +141,7 @@ The urlInput component implements the `<urlInput>` form field.
 
 By default, you can use `Magento\Ui\Model\UrlInput\LinksConfigProvider`, which provides text input for URLs. `LinksConfigProvider` is composite and you can add new options to the `di.xml` file.
 
-```
+```xml
 <type name="Magento\Ui\Model\UrlInput\LinksConfigProvider">
     <arguments>
         <argument name="linksConfiguration" xsi:type="array">
@@ -153,7 +153,7 @@ By default, you can use `Magento\Ui\Model\UrlInput\LinksConfigProvider`, which p
 
 The option `class` implements `\Magento\Ui\Model\UrlInput\ConfigInterface` and provides the child component configuration:
 
-```
+```php
 <?php
 /**
  * Copyright © Magento, Inc. All rights reserved.

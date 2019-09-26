@@ -124,33 +124,45 @@ To get these values from the database:
 1.	If you haven't done so already, log in to your development system as the [Magento file system owner](https://glossary.magento.com/magento-file-system-owner).
 2.	Enter the following command:
 
-		mysql -u <magento database username> -p
+    ```bash
+    mysql -u <magento database username> -p
+    ```
+
 3.	At the `mysql>` prompt, enter the following commands in the order shown:
 
-		use <magento database name>;
+    ```shell
+    use <magento database name>;
+    ```
+
 4.	Use the following SQL queries to find the relevant values:
 
-		SELECT * FROM STORES;
-		SELECT * FROM STORE_WEBSITE;
+    ```shell
+    SELECT * FROM STORES;
+    SELECT * FROM STORE_WEBSITE;
+    ```
 
-	A sample follows:
+    A sample follows:
 
-		mysql> SELECT * FROM STORE_WEBSITE;
-		+------------+-------+--------------+------------+------------------+------------+
-		| website_id | code  | name         | sort_order | default_group_id | is_default |
-		+------------+-------+--------------+------------+------------------+------------+
-		|          0 | admin | Admin        |          0 |                0 |          0 |
-		|          1 | base  | Main Website |          0 |                1 |          1 |
-		|          2 | test1 | Test Website |          0 |                3 |          0 |
-		+------------+-------+--------------+------------+------------------+------------+
+    ```shell
+    mysql> SELECT * FROM STORE_WEBSITE;
+    +------------+-------+--------------+------------+------------------+------------+
+    | website_id | code  | name         | sort_order | default_group_id | is_default |
+    +------------+-------+--------------+------------+------------------+------------+
+    |          0 | admin | Admin        |          0 |                0 |          0 |
+    |          1 | base  | Main Website |          0 |                1 |          1 |
+    |          2 | test1 | Test Website |          0 |                3 |          0 |
+    +------------+-------+--------------+------------+------------------+------------+
+    ```
 
 5.	Use the value from the `code` column as the scope name, not the `name` value.
 
-	For example, to set a configuration variable for Test Website, use the following format:
+    For example, to set a configuration variable for Test Website, use the following format:
 
-		CONFIG__WEBSITES__TEST1__<SYSTEM__VARIABLE__NAME>
+    ```shell
+    CONFIG__WEBSITES__TEST1__<SYSTEM__VARIABLE__NAME>
+    ```
 
-	where `<SYSTEM__VARIABLE__NAME>` comes from the next section.
+    where `<SYSTEM__VARIABLE__NAME>` comes from the next section.
 
 ## Step 2: Set global, website, or store view variables {#cloud-system-vars-sys}
 
@@ -210,7 +222,7 @@ Set configuration values as variables using PHP's [`$_ENV`](http://php.net/manua
 
 An example of setting two values follows:
 
-```
+```php
 $_ENV['CONFIG__DEFAULT__CATALOG__SEARCH__ELASTICSEARCH_SERVER_HOSTNAME'] = 'http://search.example.com';
 $_ENV['CONFIG__DEFAULT__GENERAL__STORE_INFORMATION__MERCHANT_VAT_NUMBER'] = '1234';
 ```

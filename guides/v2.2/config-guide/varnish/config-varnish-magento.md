@@ -49,13 +49,11 @@ To configure Magento to use Varnish:
 
 You can also activate Varnish from the command line--instead of logging in to the Magento Admin—using the Magento command-line interface tool:
 
-```
+```bash
 bin/magento config:set --scope=default --scope-code=0 system/full_page_cache/caching_application 2
 ```
 
 ## Export a Varnish configuration file
-
-This step is optional and should only be necessary if you changed the backend host and/or port number that you specified in the [previous section]({{ page.baseurl }}/config-guide/varnish/config-varnish-configure.html).
 
 To export a Varnish configuration file from the Admin panel:
 
@@ -68,30 +66,45 @@ To export a Varnish configuration file from the Admin panel:
 
 8.	Back up your existing <code>default.vcl</code>. Then rename the <code>varnish.vcl</code> file you just exported to <code>default.vcl</code>. Then copy the file to the <code>/etc/varnish/</code>. directory.
 
-		cp /etc/varnish/default.vcl /etc/varnish/default.vcl.bak2
-		mv <download_directory>/varnish.vcl default.vcl
-		cp <download_directory>/default.vcl /etc/varnish/default.vcl
+    ```bash
+    cp /etc/varnish/default.vcl /etc/varnish/default.vcl.bak2
+    ```
+
+    ```bash
+    mv <download_directory>/varnish.vcl default.vcl
+    ```
+
+    ```bash
+    cp <download_directory>/default.vcl /etc/varnish/default.vcl
+    ```
 
 9.	We recommend you open `default.vcl` and change the value of `acl purge` to the IP address of the Varnish host. (You can specify multiple hosts on separate lines or you can use CIDR notation as well.)
 
-	For example,
+    For example,
 
-		acl purge {
-		   "localhost";
-		}
+    ```conf
+    acl purge {
+       "localhost";
+    }
+    ```
 
 10. If you want to customize the Vagrant health checks or grace mode or saint mode configuration, see [Advanced Varnish configuration]({{ page.baseurl }}/config-guide/varnish/config-varnish-advanced.html).
 
 11.	Restart Varnish and your web server:
 
-		service varnish restart
-		service httpd restart
+    ```bash
+    service varnish restart
+    ```
+
+    ```bash
+    service httpd restart
+    ```
 
 ## Cache Static Files
 
 Static files should not be cached by default, but if you want to cache them, you can edit the section `Static files caching` in the VCL to have the following content:
 
-```
+```conf
 # Static files should not be cached by default
   return (pass);
 

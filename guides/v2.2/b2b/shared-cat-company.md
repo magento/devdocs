@@ -16,7 +16,7 @@ A shared catalog must be assigned to one or more companies before it can be acce
 
 **REST endpoints**
 
-```
+```terminal
 POST /V1/sharedCatalog/:sharedCatalogId/assignCompanies
 POST /V1/sharedCatalog/:sharedCatalogId/unassignCompanies
 GET  /V1/sharedCatalog/:sharedCatalogId/companies

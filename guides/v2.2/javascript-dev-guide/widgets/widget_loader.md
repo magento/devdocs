@@ -57,6 +57,7 @@ The URL to the loader image. This image is displayed when the widget is active; 
 HTML wrapper for the output, or a DOM element selector.
 
 **Default value**:
+
 ```html
 <div class="loading-mask" data-role="loader">
     <div class="loader">
