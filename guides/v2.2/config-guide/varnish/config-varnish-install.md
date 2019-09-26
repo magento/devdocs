@@ -5,8 +5,6 @@ functional_areas:
   - Configuration
   - System
   - Setup
-redirect_from:
-  - guides/v2.2/config-guide/varnish/tshoot-varnish-503.html
 ---
 
 ## Install Varnish {#config-varnish-install}

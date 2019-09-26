@@ -73,6 +73,9 @@ Make sure the `<magento_root>/var/page_cache` directory is empty:
 	If the directory is empty, congratulations! You successfully configured Varnish and Magento to work together!
 5.	If you cleared the `var/page_cache/` directory, restart Varnish.
 
+{:.bs-callout .bs-callout-info}
+If you encounter 503 (Backend Fetch Failed) errors, see [Configure Varnish and your web server]({{ page.baseurl }}/config-guide/varnish/config-varnish-configure.html#backend-fetch-failed-errors).
+
 #### Next steps
 
 *	[How Magento cache clearing works with Varnish]({{ page.baseurl }}/config-guide/varnish/use-varnish-cache.html)
