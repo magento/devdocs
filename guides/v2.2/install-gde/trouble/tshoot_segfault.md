@@ -45,15 +45,15 @@ The syntax for <code>ulimit</code> depends on the UNIX shell you use. The preced
 
 To optionally set the value in the user's Bash shell:
 
-1.	If you haven't done so already, switch to the [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html).
-2.	Open `/home/<username>/.bashrc` in a text editor.
-3.	Add the following line:
+1. If you haven't done so already, switch to the [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html).
+1. Open `/home/<username>/.bashrc` in a text editor.
+1. Add the following line:
 
-    ```bash
-    ulimit -s 65536
-    ```
+   ```bash
+   ulimit -s 65536
+   ```
 
-4.	Save your changes to `.bashrc` and exit the text editor.
+1. Save your changes to `.bashrc` and exit the text editor.
 
-{: .bs-callout .bs-callout-warning }
+{: .bs-callout-warning }
 We recommend you avoid setting a value for [`pcre.recursion_limit`](http://php.net/manual/en/pcre.configuration.php){:target="_blank"} in `php.ini` because it can result in incomplete rollbacks with no failure notice.
