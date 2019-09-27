@@ -1,0 +1,7 @@
+---
+title: Magento_CompanyGraphQl
+edition: b2b
+last_modified_at: '2018-01-16 16:08:59 -0600'
+content: |
+  **CompanyGraphQl** provides type information for the GraphQl module
+  to generate company fields for customer information endpoints.
