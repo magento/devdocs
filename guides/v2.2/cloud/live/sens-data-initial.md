@@ -130,7 +130,6 @@ The following snippet from `config.php` shows an example of changing the default
 
      ... more ...
 ```
-
 {: .no-copy}
 
 ## Push and deploy config.php to environments {#deploy}
@@ -244,7 +243,6 @@ On your local, use a text editor to edit the updated `app/etc/config.php` file. 
          'minify_files' => '0',
      ],
 ```
-
 {: .no-copy}
 
 To modify settings to allow minification, edit `'0'` to `'1'` for `'minify_html'` and each `'minify_files'` option:
