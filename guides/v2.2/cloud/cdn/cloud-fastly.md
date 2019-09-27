@@ -51,7 +51,7 @@ During project provisioning, Magento adds your project to the Fastly service acc
 
 ### Change your Fastly API token
 
-To change the Fastly API token credential for any reason, submit a Magento support ticket to request a new credential, and then update your Staging or Production environment with the new value.
+Before you can change the Fastly API token credential for any reason, you must request a new Fastly API token. Submit a Magento support ticket to request a new token, and then update your Staging or Production environment with the new value.
 
 {:.procedure}
 To change the Fastly API token credential:
