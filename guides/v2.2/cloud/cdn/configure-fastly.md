@@ -28,7 +28,7 @@ The process for configuring Fastly includes:
 
 ## Get Fastly credentials {#cloud-fastly-creds}
 
-During project provisioning, Magento adds your project to the [Fastly service account]({{ page.baseurl}}/cloud/cdn/cloud-fastly.html#fastly-service-account) for {{ site.data.var.ece }} and adds the Fastly account credentials to the Staging and Production environment configuration.
+During project provisioning, Magento adds your project to the [Fastly service account]({{ page.baseurl}}/cloud/cdn/cloud-fastly.html#fastly-service-account-and-credentials) for {{ site.data.var.ece }} and adds the Fastly account credentials to the Staging and Production environment configuration.
 
 You need the Fastly credentials to configure Fastly CDN services from the Magento Admin UI and to submit Fastly API requests.
 
