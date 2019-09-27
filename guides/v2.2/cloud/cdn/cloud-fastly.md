@@ -96,7 +96,7 @@ lengthy processing, or when trying to perform bulk operations.
 
 If you receive a 503 error, try to submit the request directly to the origin
 shield URL and review logs to identify the source of the issue. For details,
-see [Fastly troubleshooting]({{ page.baseurl }}/cloud/cdn/trouble-fastly.html#timeouts).
+see [Fastly troubleshooting]({{ page.baseurl }}/cloud/cdn/trouble-fastly.html#errors).
 
 Fastly can be bypassed for the Magento Admin to perform long running or bulk actions and API access to avoid 503s. For Fastly module 1.2.22 and later, the timeout for the Magento Admin was extended to three minutes. You can also update the Fastly configuration for your store to [extend the Fastly timeout for the Magento Admin]({{ page.baseurl }}/cloud/cdn/configure-fastly.html#bulkaction).
 

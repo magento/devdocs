@@ -23,7 +23,7 @@ The default `routes.yaml` file specifies the route templates for processing HTTP
 
 If you do not create a custom `routes.yaml` file, the automated deployment uses the default file.
 
-#### To list the configured routes:
+Use the `magento-cloud` CLI to view a list of the configured routes:
 
 ```bash
 magento-cloud environment:routes
