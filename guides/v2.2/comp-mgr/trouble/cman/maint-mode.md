@@ -139,6 +139,7 @@ To redirect traffic to a custom maintenance page:
         location @maintenance {
         root $MAGE_ROOT;
         rewrite ^(.*)$ /maintenance.html break;
+	}
 
         include /var/www/html/magento2/nginx.conf;
    }

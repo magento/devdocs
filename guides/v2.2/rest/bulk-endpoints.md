@@ -17,7 +17,7 @@ Use the `bin/magento queue:consumers:start async.operations.all` command to enab
 
 To call a bulk endpoint, add the prefix `/async/bulk` before the `/V1` of a synchronous endpoint route. For example:
 
-```
+```http
 POST /async/bulk/V1/products
 POST /async/bulk/V1/customers
 ```
