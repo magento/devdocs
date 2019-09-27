@@ -45,7 +45,10 @@ To install a theme manually:
 
     For example:
 
-        cp -r ExampleTheme <Magento root dir>/app/design/frontend
+    ```bash
+    cp -r ExampleTheme <Magento root dir>/app/design/frontend
+    ```
+
 2.  Confirm the theme copied to the correct place.
 
     *   Storefront theme: `ls <Magento root dir>/app/design/frontend`
@@ -53,13 +56,22 @@ To install a theme manually:
 
     A sample follows:
 
-        ExampleTheme Magento
+    ```text
+    ExampleTheme Magento
+    ```
+
 3.	Add and commit files:
 
-		git add -A && git commit -m "Add theme"
+    ```bash
+    git add -A && git commit -m "Add theme"
+    ```
+
 4.	Push the files to your branch:
 
-		git push origin <branch name>
+    ```bash
+    git push origin <branch name>
+    ```
+
 5.	Wait for deployment to complete.
 6.	Log in to the Magento Admin.
 7.	Click **Content** > Design > **Themes**.
@@ -76,16 +88,27 @@ To summarize the procedure:
 2.  Get the theme's Composer name.
 3.  Change to your Magento root directory and enter the command:
 
-        composer require <vendor>/<name>:<version>
+    ```bash
+    composer require <vendor>/<name>:<version>
+    ```
 
     For example,
 
-        composer require zero1/theme-fashionista-theme:1.0.0
+    ```bash
+    composer require zero1/theme-fashionista-theme:1.0.0
+    ```
+
 4.  Wait for dependencies to update.
 5.  Enter the following commands:
 
-        git add -A && git commit -m "Add theme"
-        git push origin <branch name>
+    ```bash
+    git add -A && git commit -m "Add theme"
+    ```
+
+    ```bash
+    git push origin <branch name>
+    ```
+
 5.  Log in to the Magento Admin.
 6.  Click **Content** > Design > **Themes**.
 
