@@ -91,7 +91,8 @@ This section discusses how to create a language package, which writes `.csv` fil
 
 1.  [Collect and translate words and phrases](#config-cli-subcommands-xlate-dict).
 
-	(The `--magento` parameter is required.)
+   (The `--magento` parameter is required.)
+
 2.  [Run the language package command](#config-cli-subcommands-xlate-pack-cmd).
 3.  [Create directories and files](#m2devgde-xlate-files).
 4.  (Optional.) [Configure multiple packages for a language](#m2devgde-xlate-severalpacks).
@@ -129,7 +130,7 @@ To create these files:
 
 1.  Create a directory under `app/i18n`.
 
-	For example, Magento language packages are located in `app/i18n/magento`
+   For example, Magento language packages are located in `app/i18n/magento`
 
 2.  Add any license files you require.
 3.  Add [`composer.json`] that specifies dependencies for your language package.
@@ -217,12 +218,12 @@ To add a German translation to a module or theme that you want to distribute to 
 
 1.  Collect phrases from your module:
 
-    ```bash
-    bin/magento i18n:collect-phrases -o "/var/www/html/magento2/app/code/ExampleCorp/SampleModule/i18n/xx_YY.csv" /var/www/html/magento2/app/code/ExampleCorp/SampleModule
-    ```
+   ```bash
+   bin/magento i18n:collect-phrases -o "/var/www/html/magento2/app/code/ExampleCorp/SampleModule/i18n/xx_YY.csv" /var/www/html/magento2/app/code/ExampleCorp/SampleModule
+   ```
 
-	{:.bs-callout .bs-callout-info}
-    The .csv file name must _exactly match_ the locale, including the characters' case.
+   {:.bs-callout .bs-callout-info}
+   The .csv file name must _exactly match_ the locale, including the characters' case.
 
 1.  Translate the words and phrases using [these guidelines](#config-cli-subcommands-xlate-dict-trans).
 1.  If necessary, copy `xx_YY.csv` to `/var/www/html/magento2/app/code/ExampleCorp/SampleModule/i18n` or to the module's theme directory (depending on whether the translation dictionary is for a module or a theme).
