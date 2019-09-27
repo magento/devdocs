@@ -22,6 +22,7 @@ The `product_sku` is the `sku` of the configurable product. The `sku` specified 
 `POST <host>/rest/default/V1/products/options`
 
 **Payload**
+
 ```json
 {
   "option": {
@@ -36,7 +37,6 @@ The `product_sku` is the `sku` of the configurable product. The `sku` specified 
     "max_characters": 15
   }
 }
-
 ```
 
 **Response**
