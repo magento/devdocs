@@ -98,7 +98,7 @@ stage:
 
 By default, the deployment process overwrites all settings in the `env.php` file. Refer to [Manage message queues]({{ page.baseurl }}/config-guide/mq/manage-mysql.html) for more information about how this works in {{site.data.var.ce}} and {{site.data.var.ee}}.
 
-#### To see a list of message queue consumers:
+The following command returns a list of message queue consumers:
 
 ```bash
 ./bin/magento queue:consumers:list
