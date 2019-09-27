@@ -57,7 +57,7 @@ Any backward-incompatible changes must also be recorded in the accompanying docu
 
 ## Tests
 
-### Understaning Black, White, and Grey tests
+### Understanding Black, White, and Grey tests
 
 - A blackbox test doesn't have any knowledge of how the subject of the test is built.
 - A whitebox has knowledge of how the subject of the test is built. The test logic is usually coupled to the implementation and will typically be sensitive to changes. 
