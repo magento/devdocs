@@ -1,7 +1,8 @@
-label: Magento Reference Guide
+label: Module Reference Guide
 pages:
   - label: Introduction
     url: /mrg/intro.html
+  
   - label: Open Source
     include_versions: ["2.3"]
     children:
@@ -455,6 +456,7 @@ pages:
     
       - label: WishlistGraphQl
         url: /mrg/ce/WishlistGraphQl.html
+  
   - label: Commerce
     include_versions: ["2.3"]
     children:
@@ -692,7 +694,9 @@ pages:
     
       - label: Worldpay
         url: /mrg/ee/Worldpay.html
+    
   - label: B2B
+    include_versions: ["2.3"]
     children:
     
       - label: B2b
