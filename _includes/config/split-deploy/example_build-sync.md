@@ -4,17 +4,28 @@ To update your build system:
 2.	Change to the build system's Magento root directory.
 3.	Pull the changes to `app/etc/config.php` from source control.
 
-	The Git command follows:
+    The Git command follows:
 
-		git pull mconfig m2.2_deploy
+    ```bash
+    git pull mconfig m2.2_deploy
+    ```
+
 4.	Compile code:
 
-		php bin/magento setup:di:compile
+    ```bash
+    php bin/magento setup:di:compile
+    ```
+
 5.	After code has been compiled, generate static view files:
 
-		php bin/magento setup:static-content:deploy -f
+    ```bash
+    php bin/magento setup:static-content:deploy -f
+    ```
+
 6.	Check the changes into source control.
 
-	The Git command follows:
+    The Git command follows:
 
-		git add -A && git commit -m "Updated files on build system" && git push mconfig m2.2_deploy
+    ```bash
+    git add -A && git commit -m "Updated files on build system" && git push mconfig m2.2_deploy
+    ```

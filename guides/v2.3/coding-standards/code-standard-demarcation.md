@@ -179,11 +179,16 @@ section[role="main"] { ... }
 
 ### You must not hard-code CSS styles in JavaScript files
 
-{: .bs-callout-info }
-Exception: CSS attributes where values must be calculated beyond the css-topics/LESS code.
-   - Simplifies change of the default look and feel by adding CSS classes to and removing them from elements.
-   - Improves style extensibility.
-   - Reduces long-term maintenance efforts by containing CSS styles in a single place.
+{%
+include note.html
+type='info'
+content='Exception: CSS attributes where values must be calculated beyond the css-topics/LESS code.
+
+- Simplifies change of the default look and feel by adding CSS classes to and removing them from elements.
+- Improves style extensibility.
+- Reduces long-term maintenance efforts by containing CSS styles in a single place.'
+
+%}
 
 **Acceptable [JavaScript](https://glossary.magento.com/javascript) [widget](https://glossary.magento.com/widget) file**
 
@@ -324,66 +329,6 @@ this.element.parent().find('[data-action="edit"]').data('entity_id');
 - Reduces long-term maintenance efforts by having markup code stored in one place.
 - Simplifies frontend debugging efforts.
 
-### You must not hard-code inline JavaScript in PHP classes
-
-- Reduces long term maintenance by having frontend business logic stored in one place.
-- Reduces the number of files to be modified.
-
-**Acceptable PHP file**
-
-```php
-...
-public function getSelectorOptions()
-{
-    return $selectorOptions;
-}
-...
-```
-
-**Acceptable PHTML template**
-
-```php
-...
-<div data-mage-init="{treeSuggest: [<?php echo $this->getSelectorOptions(); ?>]}"></div>
-...
-```
-
-or
-
-**Acceptable PHTML template**
-
-```php
-...
-<div data-role="treeSuggest"></div>
-<script type="text/x-magento-init">
-{
-    "[data-role='treeSuggest']": {
-        "treeSuggest": <?php echo $this->getSelectorOptions(); ?>
-    }
-}
-</script>
-...
-```
-
-**Unacceptable PHP file**
-
-```php
-...
-public function getAfterElementHtml()
-{
-    return <<<HTML
-<script>
-jQuery('#{$htmlId}-suggest').treeSuggest({$selectorOptions});
-</script>
-...
-```
-
-**Unacceptable PHTML template**
-
-```php
-<?php echo $this->getAfterElementHtml(); ?>
-```
-
 ## PHTML templates and PHP files
 
 ### You must not hard-code inline CSS styles in PHP classes
@@ -439,6 +384,23 @@ public function getSelectorOptions()
 ```php
 ...
 <div data-mage-init="{treeSuggest: [<?php echo $this->getSelectorOptions(); ?>]}"></div>
+...
+```
+
+or
+
+**Acceptable PHTML template**
+
+```php
+...
+<div data-role="treeSuggest"></div>
+<script type="text/x-magento-init">
+{
+    "[data-role='treeSuggest']": {
+        "treeSuggest": <?php echo $this->getSelectorOptions(); ?>
+    }
+}
+</script>
 ...
 ```
 

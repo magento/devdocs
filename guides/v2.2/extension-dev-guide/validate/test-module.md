@@ -35,9 +35,11 @@ Before you publish your component, test installing it using the [Magento Compone
 1.	[Package your component] in a GitHub repository that is accessible by the machine on which you run the [Magento Admin](https://glossary.magento.com/magento-admin).
 1.	On that machine, create a static route from `https://repo.magento.com` to your GitHub repository.
 
-	To create a static route, add a line similar to the following to your `hosts` file:
+    To create a static route, add a line similar to the following to your `hosts` file:
 
-		<IP or hostname of your GitHub repository> https://repo.magento.com
+    ```conf
+    <IP or hostname of your GitHub repository> https://repo.magento.com
+    ```
 
 1.	[Install your component], like a merchant.
 1.	Verify it installed correctly.

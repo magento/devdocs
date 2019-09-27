@@ -22,7 +22,7 @@ Before performing an upgrade to use the `{{site.data.var.ct}}` package, check th
 
 Each {{site.data.var.ee}} version requires a different constraint based on the following:
 
-```
+```terminal
 >=current_version <next_version
 ```
 
@@ -40,7 +40,8 @@ The following example places a constraint for the {{site.data.var.ece}} metapack
 
 To upgrade your project to use the `{{site.data.var.ct}}` package, you need to update the metapackage, update the `.magento.app.yaml` hooks properties, and perform a Composer update.
 
-### To upgrade project to use ece-tools:
+{:.procedure}
+To upgrade project to use ece-tools:
 
 1.  Update the `magento/magento-cloud-metapackage` version constraint in the `composer.json` file.
 

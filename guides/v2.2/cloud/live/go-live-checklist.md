@@ -40,6 +40,7 @@ The following list contains examples of DNS providers for informational purposes
 Many other DNS providers also offer workarounds to accomplish this goal. The most common is to add a CNAME record for the `www` host on the domain and then use the DNS provider's redirect service to redirect the apex over to the `www` version of the domain. Consult your DNS provider for more information.
 
 Another option for apex domain is to add A records, which maps a domain name to the Fastly IP addresses:
+
 * `151.101.1.124`
 * `151.101.65.124`
 * `151.101.129.124`
@@ -85,5 +86,5 @@ You can also test using the following 3rd party options:
 * [Blackfire]({{ page.baseurl }}/cloud/project/project-integrate-blackfire.html) (provided): Helps track through the issues New Relic finds and helps you dig deeper into the issue for specifics. Blackfire profiles the environment and helps locate bottlenecks in depth: process, method call, query, load, and so on.
 * [WebPageTest](https://www.webpagetest.org/) and [Pingdom](https://www.pingdom.com/): Real-time analysis of your site pages load time with different origin locations. Pingdom may cost a fee. WebPageTest is a free tool.
 
-### Next step:
+**Next step:**
 [Launch steps]({{ page.baseurl }}/cloud/live/launch-steps.html)

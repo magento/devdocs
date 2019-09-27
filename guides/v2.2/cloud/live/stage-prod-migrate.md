@@ -6,8 +6,7 @@ functional_areas:
   - Deploy
 ---
 
-#### Previous step:
-
+**Previous step:**
 [Prepare to deploy to Staging and Production]({{ page.baseurl }}/cloud/live/stage-prod-migrate-prereq.html)
 
 To migrate your database and static files to Staging and Production:
@@ -144,15 +143,14 @@ This command uses the following options:
 
 For additional options, see the [rsync man page](http://linux.die.net/man/1/rsync).
 
-### To migrate static files from your local machine:
-
-Use the rsync command to copy the `pub/media` directory from your local Magento server to staging or production:
+To migrate static files from your local machine, use the `rsync` command to copy the `pub/media` directory from your local Magento server to staging or production:
 
 ```bash
 rsync -azvP local_machine/pub/media/ <environment_ssh_link@ssh.region.magento.cloud>:pub/media/
 ```
 
-### To migrate static files from remote-to-remote environments directly (fast approach):
+{:.procedure}
+To migrate static files from remote-to-remote environments directly (fast approach):
 
 {:.bs-callout-info}
 To transfer media from remote-to-remote environments directly, you must enable ssh agent forwarding, see [GitHub guidance](https://developer.github.com/v3/guides/using-ssh-agent-forwarding/).
@@ -184,6 +182,7 @@ We **do recommend** migrating data from Production into Staging to fully test yo
 {:.bs-callout-info }
 To transfer media from remote-to-remote environments directly you must enable ssh agent forwarding, see [GitHub guidance](https://developer.github.com/v3/guides/using-ssh-agent-forwarding/)
 
+{:.procedure}
 To migrate a database:
 
 1. SSH into the environment you want to create a database dump from:

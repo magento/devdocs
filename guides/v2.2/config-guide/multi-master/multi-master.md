@@ -53,6 +53,7 @@ content='Contact component developers to verify whether or not their components 
 -   Ask the component developers to update their components.
 -   Use the components as-is _without_ the split database solution.
 -   Remove the components so you can use the split database solution.'
+
 %}
 
 This also means you can either:

@@ -255,16 +255,18 @@ Sample structure for a package supporting only Chrome and Firefox:
 ```
 
 The list of valid values for the `browser_os_compatibility` are:
-  * Browsers:
-      * `chrome`
-      * `firefox`
-      * `safari`
-      * `opera`
-      * `edge`
-  * OS:
-      * `linux`
-      * `mac`
-      * `windows`
+
+* Browsers:
+  * `chrome`
+  * `firefox`
+  * `safari`
+  * `opera`
+  * `edge`
+
+* OS:
+  * `linux`
+  * `mac`
+  * `windows`
 
 #### options
 
@@ -366,7 +368,7 @@ Once a package is published to the store, it can have the following field:
 
 ## Package submissions
 
-```
+```http
 POST /rest/v1/products/packages
 PUT /rest/v1/products/packages
 PUT /rest/v1/products/packages/:submission_id
@@ -482,7 +484,7 @@ If you save the request body to a file, for example, `/tmp/one-click-submission-
 
 **Request**
 
-```shell
+```bash
 curl -X POST \
      -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
      -H 'Content-Type: application/json' \
@@ -534,7 +536,7 @@ The PUT method also allows for updating a single package with `submission_id` as
 
 **Request**
 
-```shell
+```bash
 curl -X PUT \
      -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
      -H 'Content-Type: application/json' \
@@ -591,7 +593,7 @@ With the returned  `submission_id`, the remaining required parameters can be sup
 
 ## Get package details
 
-```
+```http
 GET /rest/v1/products/packages
 GET /rest/v1/products/packages/:submission_id
 GET /rest/v1/products/packages/skus
@@ -612,7 +614,7 @@ The alternative ways provided are:
 
 The following basic endpoints retrieve all package details (every version of every package submitted):
 
-```
+```http
 GET /rest/v1/products/packages
 GET /rest/v1/products/packages/skus
 GET /rest/v1/products/packages/items
@@ -620,7 +622,7 @@ GET /rest/v1/products/packages/items
 
 The following status endpoints provide a detailed EQP status report of a packages:
 
-```
+```http
 GET /rest/v1/products/packages/:submission_id/status
 GET /rest/v1/products/packages/sku/:url_encoded_sku/status
 GET /rest/v1/products/packages/item/:item_id/status
@@ -630,7 +632,7 @@ This sample call lists all packages belonging to a user:
 
 **Request**
 
-```shell
+```bash
 curl -X GET \
      -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
      https://developer-api.magento.com/rest/v1/products/packages
@@ -789,7 +791,7 @@ In the previous example, submission `f4eacd72be` failed. Specify the submission_
 
 **Request**
 
-```shell
+```bash
 curl -X GET \
      -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
      https://developer-api.magento.com/rest/v1/products/packages/f4eacd72be/status
@@ -876,7 +878,7 @@ A sample cURL request filtering all `themes` sorted by `platform` in ascending o
 
 **Request**
 
-```curl
+```bash
 curl -X GET \
      -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
      https://developer-api.magento.com/rest/v1/products/packages?type=theme&sort=+platform,-created_time
@@ -890,7 +892,7 @@ A list of theme packages can be returned in the same way as described in [Get pa
 
 You can delete a package only if you specify a `submission_id` or `item_id` as a query parameter. Deleting a package is risky operation, and as a result, you cannot delete them in a batch.
 
-```
+```http
 DELETE /rest/v1/products/packages/:submission_id
 DELETE /rest/v1/products/packages/items/:item_id
 ```
@@ -899,7 +901,7 @@ The following example deletes the package with `submission_id` `6fd7eaacbc`:
 
 **Request**
 
-```curl
+```bash
 curl -X DELETE \
      -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
      https://developer-api.magento.com/rest/v1/products/packages/6fd7eaacbc

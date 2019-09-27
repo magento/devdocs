@@ -20,10 +20,21 @@ Magento has no recommendation about using SELinux; you can use it for enhanced s
 
 If you choose to enable SELinux, you might have issues running the installer unless you change the *security context* of some directories as follows:
 
-	chcon -R --type httpd_sys_rw_content_t <magento_root>/app/etc
-	chcon -R --type httpd_sys_rw_content_t <magento_root>/var
-	chcon -R --type httpd_sys_rw_content_t <magento_root>/pub/media
-	chcon -R --type httpd_sys_rw_content_t <magento_root>/pub/static
+```bash
+chcon -R --type httpd_sys_rw_content_t <magento_root>/app/etc
+```
+
+```bash
+chcon -R --type httpd_sys_rw_content_t <magento_root>/var
+```
+
+```bash
+chcon -R --type httpd_sys_rw_content_t <magento_root>/pub/media
+```
+
+```bash
+chcon -R --type httpd_sys_rw_content_t <magento_root>/pub/static
+```
 
 The preceding commands work only with the Apache web server. Because of the variety of configurations and security requirements, we don't guarantee these commands work in all situations. For more information, see:
 
@@ -38,15 +49,17 @@ To enable Apache to initiate a connection to another host with SELinux enabled:
 
 1.	To determine if SELinux is enabled, use the following command:
 
-		getenforce
+    ```bash
+    getenforce
+    ```
 
-	`Enforcing` displays to confirm that SELinux is running.
+    `Enforcing` displays to confirm that SELinux is running.
 
 2.	Enter one of the following commands:
 
-	CentOS: `setsebool -P httpd_can_network_connect=1`
+    * CentOS: `setsebool -P httpd_can_network_connect=1`
 
-	Ubuntu: `setsebool -P apache2_can_network_connect=1`
+    * Ubuntu: `setsebool -P apache2_can_network_connect=1`
 
 ## Opening Ports In Your Firewall {#install-iptables}
 

@@ -119,7 +119,8 @@ By default, the `.magento.app.yaml` file includes the Blackfire module. If the m
 
 We recommend working in a branch and creating a snapshot prior to installing. If you have a branch already created, you can skip down to the steps for modifying the `.magento.app.yaml` file.
 
-#### To create a snapshot in a new branch:
+{:.procedure}
+To create a snapshot in a new branch:
 
 1.  Log in to your {{site.data.var.ece}} project.
 
@@ -159,7 +160,8 @@ We recommend working in a branch and creating a snapshot prior to installing. If
     magento-cloud snapshot:create -e <environment-ID>
     ```
 
-#### Modify the `.magento.app.yaml` file:
+{:.procedure}
+To modify the `.magento.app.yaml` file:
 
 1.  Use a text editor to locate and edit the `<project root dir>/.magento.app.yaml` file in your branch.
 
@@ -196,7 +198,8 @@ You can verify that Blackfire works using a browser extension or the CLI. For ex
 
 {% include note.html type="info" content="You can only use the CLI in your local development environment." %}
 
-### To profile using the browser:
+{:.procedure}
+To profile using the browser:
 
 1.  Install the Blackfire browser extension in [Chrome](https://blackfire.io/docs/integrations/chrome#installing-the-companion) or [Firefox](https://blackfire.io/docs/integrations/firefox#installing-the-companion). A Blackfire icon displays in your browser next to the address location. If you do not see it, you may need to display the bar.
 1.  Visit the store or site URL for your specific environment, such as the URL for your Integration environment. If you need this URL, you can find it through the Project Web Interface. Select the environment branch and copy the link from the _Access_ section.
@@ -209,7 +212,8 @@ You can verify that Blackfire works using a browser extension or the CLI. For ex
     {:.bs-callout-info}
    The browser extension also enables you to profile all requests while you browse. For more information about this, see [Blackfire resources](#blackfire-resources).
 
-#### To profile using the CLI:
+{:.procedure}
+To profile using the CLI:
 
 1.  Install the Blackfire [CLI Tool](https://blackfire.io/docs/up-and-running/installation). Click on your preferred Platform tab and scroll down to **Installing the Blackfire CLI tool**.
 
@@ -276,9 +280,10 @@ You cannot contact Blackfire directly to change the account owner. To maintain t
 
 Blackfire provides [Enterprise support for Pro](https://support.blackfire.io/blackfire-on-magento-cloud/blackfire-enterprise-for-magento-cloud-pro) and [Premium support for Starter](https://support.blackfire.io/blackfire-on-magento-cloud/blackfire-premium-for-magento-cloud-starter).
 
-### To prepare log output for Blackfire support:
-
 If you continue to experience problems, prepare your log files and contact Blackfire support.
+
+{:.procedure}
+To prepare log output for Blackfire support:
 
 1.  Display startup errors and save the output.
 
@@ -306,7 +311,8 @@ If you continue to experience problems, prepare your log files and contact Black
 
 1.  Send output and logs to support@blackfire.io.
 
-### To disable the Blackfire logs:
+{:.procedure}
+To disable the Blackfire logs:
 
 You can disable logging by cleaning the temporary log file and removing the log level:
 

@@ -87,7 +87,8 @@ The following enables the GitHub integration and provides a Payload URL to use w
 {: .bs-callout .bs-callout-warning}
 The following command overwrites _all_ code in your {{site.data.var.ece}} project with code from your GitHub repository. This includes all branches, including the Production branch. This action happens instantly and cannot be undone. As a best practice, it is very important to clone all of your branches from your {{site.data.var.ece}} project and push them to your GitHub repository **before** adding the GitHub integration.
 
-### To enable the GitHub integration:
+{:.procedure}
+To enable the GitHub integration:
 
 1.  Enable the integration.
 

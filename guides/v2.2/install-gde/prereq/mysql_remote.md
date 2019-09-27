@@ -44,37 +44,42 @@ To create a remote connection:
 
 1.	On your database server, as a user with `root` privileges, open your MySQL configuration file.
 
-	To locate it, enter the following command:
+    To locate it, enter the following command:
 
-		mysql --help
+    ```bash
+    mysql --help
+    ```
 
-	The location displays similar to the following:
+    The location displays similar to the following:
 
-		Default options are read from the following files in the given order:
-		/etc/my.cnf /etc/mysql/my.cnf /usr/etc/my.cnf ~/.my.cnf
+    ```terminal
+    Default options are read from the following files in the given order:
+    /etc/my.cnf /etc/mysql/my.cnf /usr/etc/my.cnf ~/.my.cnf
+    ```
 
-	{:.bs-callout .bs-callout-info}
-  		On Ubuntu 16, the path is typically `/etc/mysql/mysql.conf.d/mysqld.cnf`.
+    {:.bs-callout .bs-callout-info}
+    On Ubuntu 16, the path is typically `/etc/mysql/mysql.conf.d/mysqld.cnf`.
 
 3.	Search the configuration file for `bind-address`.
 
-	If it exists, change the value as follows.
+    If it exists, change the value as follows.
 
-	If it doesn't exist, add it anywhere except the `[mysqld]` section.
+    If it doesn't exist, add it anywhere except the `[mysqld]` section.
 
-		bind-address = <ip address of your Magento web node>
+    ```conf
+    bind-address = <ip address of your Magento web node>
+    ```
 
-	See [MySQL documentation](https://dev.mysql.com/doc/refman/5.6/en/server-options.html), especially if you have a clustered web server.
+    See [MySQL documentation](https://dev.mysql.com/doc/refman/5.6/en/server-options.html), especially if you have a clustered web server.
 
 3.	Save your changes to the configuration file and exit the text editor.
 4.	Restart the MySQL service:
 
-	CentOS: `service mysqld restart`
+    * CentOS: `service mysqld restart`
+    * Ubuntu: `service mysql restart`
 
-	Ubuntu: `service mysql restart`
-
-{:.bs-callout .bs-callout-info}
-  	If MySQL fails to start, look in syslog for the source of the issue. Resolve the issue using [MySQL documentation](https://dev.mysql.com/doc/refman/5.6/en/server-options.html#option_mysqld_bind-address) or another authoritative source.
+    {:.bs-callout .bs-callout-info}
+    If MySQL fails to start, look in syslog for the source of the issue. Resolve the issue using [MySQL documentation](https://dev.mysql.com/doc/refman/5.6/en/server-options.html#option_mysqld_bind-address) or another authoritative source.
 
 ## Grant access to a database user {#instgde-prereq-mysql-remote-access}
 
@@ -88,34 +93,42 @@ To grant access to a database user:
 2.	Connect to the MySQL database as the `root` user.
 3.	Enter the following command:
 
-		GRANT ALL ON <local database name>.* TO <remote web node username>@<remote web node server ip address> IDENTIFIED BY '<database user password>';
+    ```shell
+    GRANT ALL ON <local database name>.* TO <remote web node username>@<remote web node server ip address> IDENTIFIED BY '<database user password>';
+    ```
 
-	For example,
+    For example,
 
-		GRANT ALL ON magento_remote.* TO dbuser@192.0.2.50 IDENTIFIED BY 'dbuserpassword';
+    ```shell
+    GRANT ALL ON magento_remote.* TO dbuser@192.0.2.50 IDENTIFIED BY 'dbuserpassword';
+    ```
 
-{:.bs-callout .bs-callout-info}
-  If your web server is clustered, enter the same command on every web server. You must use the same username for every web server.
+    {:.bs-callout .bs-callout-info}
+    If your web server is clustered, enter the same command on every web server. You must use the same username for every web server.
 
 ## Verify database access {#instgde-prereq-mysql-remote-verify}
 
 On your web node host, enter the following command to verify the connection works:
 
-	mysql -u <local database username> -h <database server ip address> -p
+```bash
+mysql -u <local database username> -h <database server ip address> -p
+```
 
 If the MySQL monitor displays as follows, the database is ready for the Magento software:
 
-	Welcome to the MySQL monitor.  Commands end with ; or \g.
-	Your MySQL connection id is 213
-	Server version: 5.6.26 MySQL Community Server (GPL)
+```terminal
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 213
+Server version: 5.6.26 MySQL Community Server (GPL)
 
-	Copyright (c) 2000, 2015, Oracle and/or its affiliates. All rights reserved.
+Copyright (c) 2000, 2015, Oracle and/or its affiliates. All rights reserved.
 
-	Oracle is a registered trademark of Oracle Corporation and/or its
-	affiliates. Other names may be trademarks of their respective
-	owners.
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
 
-	Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+```
 
 If your web server is clustered, enter the command on each web server host.
 

@@ -7,9 +7,12 @@
 # The parameter contains a file path relative to its repository.
 #
 Jekyll::Hooks.register :pages, :post_init do |page|
+
+  # Skip virtual pages like MRG topics
+  next if page.kind_of? Jekyll::PageWithoutAFile
   # Process only files with 'md' and 'html' extensions
   next unless File.extname(page.path).match?(/md|html/)
-  # Do nothing for redirects
+  # Skip redirects
   next if page.name == 'redirect.html'
 
   dir = File.dirname page.path

@@ -29,6 +29,7 @@ The mobile and desktop styles are defined in separate files:
 Breakpoints are used in the CSS code to set up the screen width at which the design switches from the mobile to the desktop version.
 
 The Blank and Luma themes use Less variables to implement the following [breakpoints]({{ page.baseurl }}/frontend-dev-guide/responsive-web-design/rwd_overview.html#fedg_rwd_terms):
+
 - `@screen__xxs`: 320px
 - `@screen__xs`: 480px
 - `@screen__s`: 640px
@@ -84,7 +85,15 @@ For grouping style rules in certain media queries the `.media-width()` mixin use
 }
 
 //
-//  Tablets
+//  Tablet (for the front-end)
+//  _____________________________________________
+
+@media only screen and (max-width: @screen__m) {
+    // your code
+}
+
+//
+//  Tablets (for the back-end)
 //  _____________________________________________
 
 .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__l) {
@@ -107,6 +116,7 @@ For grouping style rules in certain media queries the `.media-width()` mixin use
 You can find more information about the Magento UI library responsive mixin usage in `<your_Magento_instance>/pub/static/frontend/Magento/blank/en_US/css/docs/responsive.html` (view in a browser).
 
 ## Related topics
+
 * [Create a theme]({{page.baseurl}}/frontend-dev-guide/themes/theme-create.html)
 * [CSS and Less preprocessing]({{page.baseurl}}/frontend-dev-guide/css-topics/css-preprocess.html)
 * [Magento UI library]({{page.baseurl}}/frontend-dev-guide/css-topics/theme-ui-lib.html)

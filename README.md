@@ -23,7 +23,7 @@ For local builds, you need to install Ruby 2.4 or later.
 To check the Ruby version on your environment, run in your terminal:
 
 ```shell
-$ ruby -v
+ruby -v
 ```
 
 ### Install the latest Ruby (if the Ruby version is less than 2.4)
@@ -33,8 +33,8 @@ $ ruby -v
 1. Install Homebrew. See the [Homebrew site](https://brew.sh) for instructions.
 1. Use Homebrew to install the latest stable version of Ruby:
 
-   ```
-   $ brew install ruby
+   ```bash
+   brew install ruby
    ```
 
 **Unix, Windows, and other OS users**
@@ -45,8 +45,8 @@ See the [Ruby site](https://www.ruby-lang.org/en/documentation/installation) for
 
 Upgrade [RubyGems](https://github.com/rubygems/rubygems), which helps with dependencies (gems):
 
-```
-$ gem update --system
+```bash
+gem update --system
 ```
 
 Once you have completed preparing your environment, you can build locally and review the site in your browser.
@@ -55,8 +55,8 @@ Once you have completed preparing your environment, you can build locally and re
 
 Clone or download the repository. The first time you are at the `devdocs` directory, run:
 
-```
-$ bundle install
+```bash
+bundle install
 ```
 
 Once you have completed preparing your environment, you can build locally and review the site in your browser.
@@ -69,8 +69,8 @@ Once you have completed preparing your environment, you can build locally and re
 
 1. Run the rake task that installs all required dependencies and starts the [Jekyll](https://jekyllrb.com/) server:
 
-   ```
-   $ rake preview
+   ```bash
+   rake preview
    ```
 
 1. Press `Ctrl+C` in the serve terminal to stop the server.
@@ -81,14 +81,14 @@ If rake fails on your environment, generate the preview [using jekyll](#using-je
 
 1. The first time you are at the `devdocs` directory or when you need to pick up changes in `Gemfile.lock` dependencies (for example, theme changes), run:
 
-   ```
-   $ bundle install
+   ```bash
+   bundle install
    ```
 
 1. To generate the local preview, run:
 
-   ```
-   $ bundle exec jekyll serve --incremental
+   ```bash
+   bundle exec jekyll serve --incremental
 
     Configuration file: /Users/username/Github/devdocs/_config.yml
                 Source: /Users/username/Github/devdocs
@@ -111,7 +111,8 @@ If rake fails on your environment, generate the preview [using jekyll](#using-je
 ### To minimize build time locally:
 
 1. Create a `_config.local.yml` file at the root of the project directory and exclude all versions except the one that you want to preview.
-The following example will generate Magento 2.2 documentation only.
+
+   The following example will generate Magento 2.2 documentation only.
 
    ```yaml
     exclude:
@@ -135,10 +136,12 @@ The following example will generate Magento 2.2 documentation only.
 
 1. Run the preview command:
 
+   ```bash
+   rake preview
    ```
-   $ rake preview
-   ```
+
    This command:
+
    * Checks your environment according to the dependencies in `Gemfile.lock`.
    * Removes the `_site/` directory, which contains previously generated preview files.
    * Generates a new preview and opens the landing page in a web browser.
@@ -167,13 +170,13 @@ To build v2.0 documentation:
 
 1. Initialize the `2.0` branch in your local devdocs repository.
 
-    ```shell
+    ```bash
     rake init
     ```
 
 1. Run the preview command.
 
-    ```shell
+    ```bash
     rake preview
     ```
 
@@ -199,13 +202,13 @@ To build v2.1 documentation:
 
 1. Initialize the `2.1` branch in your local devdocs repository.
 
-    ```shell
+    ```bash
     rake init
     ```
 
 1. Run the preview command.
 
-    ```shell
+    ```bash
     rake preview
     ```
 

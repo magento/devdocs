@@ -3,7 +3,6 @@ group: javascript-developer-guide
 subgroup: 3_Widgets
 title: List widget
 ---
-## Overview
 
 {%
 include note.html
@@ -23,6 +22,7 @@ For information about how to initialize a widget in a JS component or `.phtml` t
 ## Options {#list_options}
 
 The list widget has the following options:
+
 -   [addButton](#l_addButton)
 -   [destinationSelector](#l_destinationSelector)
 -   [itemCount](#l_itemCount)
@@ -109,6 +109,7 @@ Element holding the template.
 ## Methods {#list_methods}
 
 The list widget has the following methods:
+
 -   [addItem()](#list_addItem)
 -   [checkLimit()](#list_checkLimit)
 -   [handleAdd()](#list_handleAdd)

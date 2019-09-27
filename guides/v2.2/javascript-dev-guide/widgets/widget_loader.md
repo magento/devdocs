@@ -4,8 +4,6 @@ subgroup: 3_Widgets
 title: Loader widget
 ---
 
-## Overview
-
 The Loader [widget](https://glossary.magento.com/widget) blocks page content (all content or a part of it). Its intended use is blocking content when an Ajax request is being sent, but it can be initialized for non-Ajax tasks as well.
 
 The Loader widget source is [lib/web/mage/loader.js].
@@ -41,6 +39,7 @@ require(['jquery', 'loader'], function ($) {
 ## Options {#loader_options}
 
 The loader widget has the following options:
+
 -   [icon](#l_icon)
 -   [template](#l_template)
 -   [texts](#l_texts)
@@ -58,6 +57,7 @@ The URL to the loader image. This image is displayed when the widget is active; 
 HTML wrapper for the output, or a DOM element selector.
 
 **Default value**:
+
 ```html
 <div class="loading-mask" data-role="loader">
     <div class="loader">
@@ -70,6 +70,7 @@ HTML wrapper for the output, or a DOM element selector.
 ### `texts` {#l_texts}
 
 An object that contains translations for loader text:
+
 -   `texts.loaderText`: The text that is displayed under the loader image.
     **Default value**: *'Please wait...'*
 -   `texts.imgAlt`: The text that is set as the `alt` attribute value of the loader image.
@@ -103,6 +104,7 @@ $("#element").loader("hide");
 ## Events
 
 Loader is subscribed to the following events:
+
 -   [processStart](#l_processStart)
 -   [processStop](#l_processStop)
 

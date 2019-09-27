@@ -5,6 +5,5 @@ To use Secure Sockets Layer (SSL), also referred to as HTTPS, for both the Magen
 *	`--use-secure`: Set to `1`
 *	`--base-url-secure`: Set to a secure URL (that is, starting with `https://`)
 *	`--use-secure-admin` Set to `1`
-<!-- *	`--base-url`: Set to a secure URL (that is, starting with `https://`) -->
 
 More details about these parameters can be found later in this topic.

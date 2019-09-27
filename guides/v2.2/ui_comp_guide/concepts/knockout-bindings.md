@@ -72,6 +72,7 @@ It also instantiates all bindings defined for the rendered elements in the scope
 **Aliases**: `[bindHtml]`
 
 **Usage example**:
+
 ```html
 <div bindHtml="
     <div data-bind='text: \'String from the text binding\''></div>
@@ -209,6 +210,7 @@ The `i18n` binding is used to translate a string according to the currently enab
 **Aliases**: `[translate]`, `<translate>`
 
 **Usage example**:
+
 ```html
 <div data-bind="i18n: 'Translate as a standard knockout binding'"></div>
 
@@ -223,13 +225,14 @@ The keyboard binding allows setting up listeners for the `keypress` event of a s
 
 **Source**: `<Magento_Ui_module_dir>/view/base/web/js/lib/knockout/bindings/keyboard.js`. [See on GitHub]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/keyboard.js).
 
-**Value type**:` [name: number]: (e: KeyboardEvent) => void`
+**Value type**:`[name: number]: (e: KeyboardEvent) => void`
 
 A collection in which keys represent keyboard keys codes and values are callback functions invoked when the associated key is pressed.
 
 **Aliases**: `[keyboard]`
 
 **Usage example**:
+
 ```html
 <input type="text" keyboard="{
     13: function (e) {
@@ -249,6 +252,7 @@ The `mageInit` binding is an adapter for the `[data-mage-init]` attribute that i
 **Aliases**: -
 
 **Usage example**: creating modal window
+
 ```html
 <div mageInit="{
     'Magento_Ui/js/modal/modal': {
@@ -271,6 +275,7 @@ The `optgroup` binding is a decorator for the standard Knockout's options bindin
 **Aliases**: -
 
 **Usage example**:
+
 ```html
 <select data-bind="
     optionsValue: 'value',
@@ -306,6 +311,7 @@ Callback that is invoked when user clicks outside of the element.
 **Aliases**: `[outerClick]`
 
 **Usage example**:
+
 ```html
 <div id="target" outerClick="function () {
     console.log('Clicked outside of the "target" node.');
@@ -326,6 +332,7 @@ Configuration that is passed to the Slider widget.
 **Aliases**: `[range]`
 
 **Usage example**:
+
 ```html
 <div
     class="data-slider"
@@ -356,6 +363,7 @@ Configuration for the Resizable widget.
 ```
 
 ### `scope`
+
 A binding that allows evaluating descendant nodes in the scope of an object found in the UiRegistry by provided string.
 
 **Source**: `<Magento_Ui_module_dir>/view/base/web/js/lib/knockout/bindings/scope.js`. [See on Github]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/scope.js).
@@ -367,6 +375,7 @@ Component's name by which to perform a lookup in the registry.
 **Aliases**: `[ko-scope]`, `<scope>`
 
 **Usage example**:
+
 ```html
 <!-- as an attribute -->
 <div ko-scope="'name.of.component'"></div>
@@ -405,6 +414,7 @@ Configuration for the `template` binding. If the provided value is a string, it 
 **Aliases:** `[render]`, `<render>`
 
 **Usage example**:
+
 ```html
 <div data-bind="template: 'path/to/the/template'"></div>
 ```

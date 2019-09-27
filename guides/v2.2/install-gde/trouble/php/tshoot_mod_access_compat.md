@@ -19,7 +19,9 @@ When you try to access your [Magento Admin](https://glossary.magento.com/magento
 
 To confirm this issue is not related to [maintenance mode]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-maint.html), look in your Apache `error.log` for messages that include:
 
-	"Invalid command 'Order', perhaps misspelled or defined by a module not included in the server configuration".
+```text
+"Invalid command 'Order', perhaps misspelled or defined by a module not included in the server configuration".
+```
 
 ### Details
 
@@ -31,8 +33,13 @@ Not all Apache 2.4 distributions have this issue because in some cases, a compat
 
 As a user with 'root' privileges, enter the following commands:
 
-	a2enmod access_compat
-	service <name> restart
+```bash
+a2enmod access_compat
+```
+
+```bash
+service <name> restart
+```
 
 On CentOS, `<name>` is `httpd`. On Ubuntu, `<name>` is `apache2`.
 

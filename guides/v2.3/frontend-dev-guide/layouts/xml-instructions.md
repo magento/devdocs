@@ -67,6 +67,7 @@ We recommend always adding a `name` to blocks. Otherwise, it is given a random n
 | `template` | A template that represents the functionality of the block to which this attribute is assigned. | template file name | no |
 | `as` | An alias name that serves as identifier in the scope of the parent element. | 0-9, A-Z, a-z, underscore (_), period (.), dash (-). Case-sensitive. | no |
 | `cacheable` | Defines whether a block element is cacheable. This can be used for development purposes and to make needed elements of the page dynamic. | `true` or `false` | no |
+| `ifconfig` | Makes the block's visibility dependent on a system configuration field. | XPath to the system configuration field. E.g. `contact/contact/enabled` | no |
 
 To pass parameters use the [`<argument></argument>`](#argument) instruction.
 
@@ -101,6 +102,13 @@ Sample of usage in layout:
 ```
 
 This would add a new column to the page layout.
+
+#### Controlling children visibility
+
+The `output` attribute controls the visibility of the container's children elements.
+Set this value to `1` to render children content or `0` to disable the output of the entire container.
+
+Use this feature to make temporary changes to a store, such as disabling a section of the page for a sales event and re-enabling it after the event ends.
 
 ### block vs. container {#block_vs_container}
 

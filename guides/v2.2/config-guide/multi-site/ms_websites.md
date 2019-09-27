@@ -14,10 +14,15 @@ This task requires you to create a root [category](https://glossary.magento.com/
 *	[Store URLs](http://docs.magento.com/m2/ce/user_guide/stores/store-urls.html)
 *	[Content](http://docs.magento.com/m2/ce/user_guide/cms/content-menu.html)
 
-{: .bs-callout-info }
-For example purposes only, we use a French [website](https://glossary.magento.com/website) with website code `french` in this topic. For step-by-step tutorials, see:
-    -  [Tutorial: Set up multiple websites with Apache]({{ page.baseurl }}/config-guide/multi-site/ms_apache.html)
-    -  [Tutorial: Set up multiple websites with nginx]({{ page.baseurl }}/config-guide/multi-site/ms_nginx.html)
+{%
+include note.html
+type='info'
+content='For example purposes only, we use a French [website](https://glossary.magento.com/website) with website code `french` in this topic. For step-by-step tutorials, see:
+
+-  [Tutorial: Set up multiple websites with Apache](https://devdocs.magento.com/guides/v2.2/config-guide/multi-site/ms_apache.html)
+-  [Tutorial: Set up multiple websites with nginx](https://devdocs.magento.com/guides/v2.2/config-guide/multi-site/ms_nginx.html)'
+
+%}
 
 ## Step 1: Create root categories
 

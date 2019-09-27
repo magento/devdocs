@@ -17,14 +17,16 @@ Failure to enable these settings typically results in no styles displaying on yo
 
 3.	Change the value of `AllowOverride` to `<value from Apache site>`.
 
-	An example for Ubuntu 12 follows.
+    An example for Ubuntu 12 follows.
 
-		<Directory /var/www/>
-		Options Indexes FollowSymLinks MultiViews
-		AllowOverride <value from Apache site>
-		Order allow,deny
-		Allow from all
-		<Directory>
+    ```conf
+    <Directory /var/www/>
+    Options Indexes FollowSymLinks MultiViews
+    AllowOverride <value from Apache site>
+    Order allow,deny
+    Allow from all
+    <Directory>
+    ```
 
 	{:.bs-callout .bs-callout-info}
 	The preceding values for `Order` might not work in all cases. For more information, see the Apache documentation ([2.2](https://httpd.apache.org/docs/2.2/mod/mod_authz_host.html#order)), [2.4](https://httpd.apache.org/docs/2.4/mod/mod_authz_host.html#order)).
@@ -32,8 +34,16 @@ Failure to enable these settings typically results in no styles displaying on yo
 4.	Save the file and exit the text editor.
 5.	*Ubuntu only*. Configure Apache to use the `mod_rewrite` module.
 
-			cd /etc/apache2/mods-enabled
-			ln -s ../mods-available/rewrite.load
+    ```bash
+    cd /etc/apache2/mods-enabled
+    ```
+
+    ```bash
+    ln -s ../mods-available/rewrite.load
+    ```
+
 6.	If you changed Apache settings, restart Apache.
 
-		service apache2 restart
+    ```bash
+    service apache2 restart
+    ```

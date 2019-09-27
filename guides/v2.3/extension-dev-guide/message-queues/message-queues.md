@@ -28,7 +28,7 @@ The procedure for instantiating a consumer differs, depending on which message q
 
 ### RabbitMQ
 
-This instantiates a consumer that is defined in a `queue.xml` file. The consumer (`customer_created_listener`) listens to the queue and receives all new messages. For every message, it invokes `Magento\Some\Class::processMessage($message)`
+This instantiates a consumer that is defined in a [`queue_consumer.xml`]({{page.baseurl}}/extension-dev-guide/message-queues/config-mq.html#queueconsumerxml) file. The consumer (`customer_created_listener`) listens to the queue and receives all new messages. For every message, it invokes `Magento\Some\Class::processMessage($message)`
 
 ```php
 $this->consumerFactory->get('customer_created_listener')
