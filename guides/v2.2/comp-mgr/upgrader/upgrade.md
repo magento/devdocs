@@ -37,15 +37,25 @@ bin/magento cache:clean
 
 After the upgrade completes, manually clear `var` subdirectories:
 
-	rm -rf <Magento install dir>/var/cache/*
-	rm -rf <Magento install dir>/var/page_cache/*
-	rm -rf <Magento install dir>/generated/code/*
+```bash
+rm -rf <Magento install dir>/var/cache/*
+```
+
+```bash
+rm -rf <Magento install dir>/var/page_cache/*
+```
+
+```bash
+rm -rf <Magento install dir>/generated/code/*
+```
 
 ## Restart Varnish
 
 After the upgrade completes, restart Varnish if you use it for page caching.
 
-	service varnish restart
+```bash
+service varnish restart
+```
 
 Then access your [storefront](https://glossary.magento.com/storefront) and verify everything is working properly.
 
@@ -55,10 +65,11 @@ After you finish your upgrade, errors might display.
 
 *	On the main storefront page, the following error might display.
 
-		We're sorry, an error has occurred while generating this email.
+    _We're sorry, an error has occurred while generating this email._
+
 *	On a [category](https://glossary.magento.com/category) page, the following error might display:
 
-		We can't find products matching the selection.
+    _We can't find products matching the selection._
 
 If any of the preceding errors display, perform all of the following tasks.
 
@@ -70,7 +81,9 @@ Clear the `var/cache`, 	`var/page_cache`, `generated/code`
 
 A sample command follows:
 
-	rm -rf var/cache/* var/page_cache/* generated/code/*
+```bash
+rm -rf var/cache/* var/page_cache/* generated/code/*
+```
 
 ### Access your storefront again
 

@@ -20,7 +20,8 @@ Required fields should not be located within a collapsed section, as this increa
 * Expandable sections can exist with or without a left sidebar.
 * A level 1 expandable section has 24px top padding and 30px bottom padding of the section title.
 * Level 2, 3, and 4 expandable sections have 18px top and bottom padding of the section title. Each expandable sub-section is indented by 40px.
-![Specs](img/specs.png)
+
+  ![Specs](img/specs.png)
 
 * If the expandable section belongs to a [layout](https://glossary.magento.com/layout) with a sidebar, and the content area contains forms, then the form field starts at the 7th column for level 2 and at 8th column for levels 3 and 4.
 * The content areas in the expandable section have 30px padding at the top and bottom. _The current design proposal accommodates 4 levels of nested expandable sections._
@@ -28,10 +29,15 @@ Required fields should not be located within a collapsed section, as this increa
 ### Visual appearance
 
 * A simple expandable section is a container with a border, section header, and a toggle arrow (right aligned) to control the showing and hiding of content.
-![Simple expandable section](img/simple.png)
+
+  ![Simple expandable section](img/simple.png)
+
 * A nested expandable section is a sub-section within an expandable section. The nested expandable section has all the same features as the "simple" expandable section, however the expand and collapse control is located on the left. This is to help the User more easily identify the expandable sub-sections within an expanded section.
-![Nested section](img/nested.png)
+
+  ![Nested section](img/nested.png)
+
 * When expanded, the control (chevron symbol) points upward, and it points downward when closed or collapsed. This indicates the direction the section will expand or collapse when clicked.
+
 * The section deader title font size is 17px semibold.
 
 ## Functional behavior
@@ -45,11 +51,16 @@ Required fields should not be located within a collapsed section, as this increa
 ## Variations
 
 1. Simple – section that contains a single level of expansion in a section (no nested expandable sub-sections).
-![Simple section](img/simple_exp.png)
+
+   ![Simple section](img/simple_exp.png)
+
 2. Nested – section that contains one or more expandable sub-sections.
-![Nested section](img/nested_exp.png)
+
+   ![Nested section](img/nested_exp.png)
+
 3. Single expandable – section that contains only one expandable section; usually used to hide additional information.
-![Single expandable section](img/single_exp.png)
+
+   ![Single expandable section](img/single_exp.png)
 
 ## Assets
 

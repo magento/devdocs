@@ -95,8 +95,13 @@ You can style the output text by using `<error>This is an error message</error>`
 
 3.	Clean the [cache](https://glossary.magento.com/cache) and compiled code directories:
 
-		cd <magento_root>/var
-		rm -rf cache/* page_cache/* di/* generation/*
+    ```bash
+    cd <magento_root>/var
+    ```
+
+    ```bash
+    rm -rf cache/* page_cache/* di/* generation/*
+    ```
 
 ## Add CLI commands using the Composer autoloader {#cli-autoload}
 
@@ -105,4 +110,3 @@ To be added at a later time.
 #### Related topic
 
 [Command naming guidelines]({{ page.baseurl }}/extension-dev-guide/cli-cmds/cli-naming-guidelines.html)
-

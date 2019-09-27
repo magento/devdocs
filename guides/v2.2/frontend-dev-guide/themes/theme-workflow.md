@@ -18,6 +18,7 @@ bin/magento deploy:mode:set developer
 ```
 
 See:
+
 * [About Magento modes]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html)
 * [Get started with command-line configuration]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands.html)
 
@@ -69,12 +70,14 @@ See [Using custom CSS preprocessor]({{ page.baseurl }}/frontend-dev-guide/css-to
 ### Create your styles
 
 See:
+
 * [Quick start guide to working with styles]({{ page.baseurl }}/frontend-dev-guide/css-guide/css_quick_guide_overview.html)
 * [All about styles in Magento themes]({{ page.baseurl }}/frontend-dev-guide/css-topics/css-overview.html)
 
 ### Debug
 
 See:
+
 * [Locate the CSS/Less file you need to change]({{ page.baseurl }}/frontend-dev-guide/themes/debug-theme.html)
 * [CSS source maps]({{ page.baseurl }}/frontend-dev-guide/css-topics/css_debug.html#source_maps)
 * [Track changes using Grunt]({{ page.baseurl }}/frontend-dev-guide/css-topics/css_debug.html#use_cases)

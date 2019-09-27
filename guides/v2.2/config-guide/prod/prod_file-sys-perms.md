@@ -86,7 +86,9 @@ To make files and directories writable so you can update components and upgrade 
 2.	Change to your Magento installation directory.
 3.	Enter the following commands:
 
-		chmod -R u+w .
+    ```bash
+    chmod -R u+w .
+    ```
 
 ### Optionally set `magento_umask`
 
@@ -138,8 +140,17 @@ To set `setgid` and permissions for developer mode:
 1.	Log in to your Magento server as, or switch to, the Magento file system owner.
 2.	Enter the following commands in the order shown:
 
-		cd <magento_root>
-		find var generated pub/static pub/media app/etc -type f -exec chmod g+w {} + && find var generated pub/static pub/media app/etc -type d -exec chmod g+ws {} +
+    ```bash
+    cd <magento_root>
+    ```
+
+    ```bash
+    find var generated pub/static pub/media app/etc -type f -exec chmod g+w {} + &&
+    ```
+
+    ```bash
+    find var generated pub/static pub/media app/etc -type d -exec chmod g+ws {} +
+    ```
 
 ### Two Magento file system owners in production mode {#mage-owner-two-prod}
 
@@ -163,10 +174,15 @@ To remove writable permissions to files and directories from the web server user
 2.	Change to your Magento installation directory.
 3.	As the Magento file system owner, enter the following command to change to production mode:
 
-		bin/magento deploy:mode:set production
+    ```bash
+    bin/magento deploy:mode:set production
+    ```
+
 3.	Enter the following command as a user with `root` privileges:
 
-		find app/code lib pub/static app/etc generated/code generated/metadata var/view_preprocessed \( -type d -or -type f \) -exec chmod g-w {} + && chmod o-rwx app/etc/env.php
+    ```bash
+    find app/code lib pub/static app/etc generated/code generated/metadata var/view_preprocessed \( -type d -or -type f \) -exec chmod g-w {} + && chmod o-rwx app/etc/env.php
+    ```
 
 #### Make code files and directories writable {#make-files-writable-two-owners}
 
@@ -176,6 +192,8 @@ To make files and directories writable so you can update components and upgrade 
 2.	Change to your Magento installation directory.
 3.	Enter the following command:
 
-		find app/code lib var generated vendor pub/static pub/media app/etc \( -type d -or -type f \) -exec chmod g+w {} + && chmod o+rwx app/etc/env.php
+    ```bash
+    find app/code lib var generated vendor pub/static pub/media app/etc \( -type d -or -type f \) -exec chmod g+w {} + && chmod o+rwx app/etc/env.php
+    ```
 
 {% endcollapsibleh2 %}

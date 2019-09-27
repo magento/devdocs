@@ -22,7 +22,7 @@ This section describes the REST endpoints used to manage company users.
 
 **REST Endpoints**
 
-```
+```terminal
 POST /V1/customers/
 PUT /V1/customers/:customerId
 ```

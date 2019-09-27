@@ -32,7 +32,8 @@ Prepare your environment with the following tasks:
 
 If you are upgrading from 2.1.4 or later to 2.2.X and use Configuration Management, you need to migrate the `config.local.php` file. Previous versions with Configuration Management used a `config.local.php` file for Configuration Management. Starting with 2.2.0, [Configuration Management]({{ site.baseurl }}/guides/v2.2/cloud/live/sens-data-over.html) uses the `config.php` file.
 
-#### To create a temporary `config.php` file:
+{:.procedure}
+To create a temporary `config.php` file:
 
 1. Create a copy of `config.local.php` file and name it `config.php`.
 
@@ -195,11 +196,12 @@ Exception printing is disabled by default for security reasons.
 ```
 {: .no-copy}
 
-#### To resolve the error:
+{:.procedure}
+To resolve the error:
 
 1. Using SSH, log in to the remote server and open the `./app/var/report/<error number>` file.
 
-1. [Examine the logs]({{ page.baseurl }}/cloud/trouble/environments-logs.html) to determine the source of the issue.
+1. [Examine the logs]({{page.baseurl}}/cloud/project/log-locations.html) to determine the source of the issue.
 
 1. Add, commit, and push code changes.
 

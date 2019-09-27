@@ -58,7 +58,8 @@ Available commands:
 
 The following examples show how to add a user and configure the project and environment-level role, and how to how to modify project assignments and assigned user roles.
 
-#### To add a user and assign roles:
+{:.procedure}
+To add a user and assign roles:
 
 1. Add the user:
 
@@ -88,7 +89,7 @@ The following examples show how to add a user and configure the project and envi
 
   After you add the user, Magento sends an email to the specified address with instructions for accessing the {{ site.data.var.ece }} project.
 
-#### To change the environment-level role assigned to a user:
+The following example changes the environment-level role that is assigned to a user:
 
 ```bash
 magento-cloud user:role alice@example.com --level environment --environment development --role admin
@@ -99,6 +100,7 @@ To list the available `magento-cloud` CLI commands, use the `magento-cloud list`
 
 ### Manage users with the Web Interface {#cloud-user-webinterface}
 
+{:.procedure}
 To create user accounts using the Web Interface:
 
 1. Log in to [your {{site.data.var.ece}} account](https://accounts.magento.cloud).

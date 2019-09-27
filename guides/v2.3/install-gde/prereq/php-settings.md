@@ -13,7 +13,9 @@ This topic discusses how to set required [PHP](https://glossary.magento.com/php)
 
 *	Set the system time zone for PHP; otherwise, errors like the following display during the installation and time-related operations like cron might not work:
 
-		PHP Warning:  date(): It is not safe to rely on the system's timezone settings. [more messages follow]
+    ```terminal
+    PHP Warning:  date(): It is not safe to rely on the system's timezone settings. [more messages follow]
+    ```
 
 *	Set the PHP memory limit.
 
@@ -48,7 +50,9 @@ To find the web server configuration, run a [`phpinfo.php` file]({{page.baseurl}
 
 To locate the PHP command-line configuration, enter
 
-	php --ini
+```bash
+php --ini
+```
 
 Use the value of Loaded Configuration file.
 
@@ -63,13 +67,15 @@ Use the following guidelines to find it:
 
 *	Apache web server:
 
-	For Ubuntu with Apache, OPcache settings are typically located in `php.ini`.
+    For Ubuntu with Apache, OPcache settings are typically located in `php.ini`.
 
-	For CentOS with Apache or nginx, OPcache settings are typically located in `/etc/php.d/opcache.ini`
+    For CentOS with Apache or nginx, OPcache settings are typically located in `/etc/php.d/opcache.ini`
 
-	If not, use the following command to locate it:
+    If not, use the following command to locate it:
 
-		sudo find / -name 'opcache.ini'
+    ```bash
+    sudo find / -name 'opcache.ini'
+    ```
 
 *	nginx web server with PHP-FPM: `/etc/php5/fpm/php.ini`
 
@@ -83,17 +89,25 @@ To set PHP options:
 3.	Locate your server's time zone in the available [time zone settings](http://php.net/manual/en/timezones.php){:target="_blank"}
 4.	Locate the following setting and uncomment it if necessary:
 
-		date.timezone =
+    ```conf
+    date.timezone =
+    ```
+
 5.	Add the time zone setting you found in step 2.
 6.	Change the value of `memory_limit` to one of the values at the beginning of this section.
 
-	For example,
+    For example,
 
-		memory_limit=2G
+    ```conf
+    memory_limit=2G
+    ```
 
 8.	Locate the following setting:
 
-		asp_tags =
+    ```conf
+    asp_tags =
+    ```
+
 9.	Make sure its value is set to `Off`.
 10.	Save your changes and exit the text editor.
 11.	Open the other `php.ini` (if they are different) and make the same changes in it.

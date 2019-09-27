@@ -15,7 +15,9 @@ functional_areas:
 
 When you attempt to roll back using the command line, the following error displays:
 
-	Segmentation fault
+```terminal
+Segmentation fault
+```
 
 As a result, the rollback does not complete.
 
@@ -32,7 +34,9 @@ If you haven't done so already, switch to the [Magento file system owner]({{ pag
 
 Command:
 
-	ulimit -s 65536
+```bash
+ulimit -s 65536
+```
 
 You can change this to a larger value if needed.
 
@@ -45,7 +49,9 @@ To optionally set the value in the user's Bash shell:
 2.	Open `/home/<username>/.bashrc` in a text editor.
 3.	Add the following line:
 
-		ulimit -s 65536
+    ```bash
+    ulimit -s 65536
+    ```
 
 4.	Save your changes to `.bashrc` and exit the text editor.
 

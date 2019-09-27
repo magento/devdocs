@@ -25,7 +25,7 @@ If you use PHP version 7.2, you must remove the `mcrypt` extension from the [`ex
 1.  Change to your Magento root directory and set the upgrade version using the [version constraint syntax]({{page.baseurl}}/cloud/project/ece-tools-upgrade-project.html#metapackage).
 
     ```bash
-    composer require "magento/magento-cloud-metapackage":">=2.3.1 <2.3.2" --no-update
+    composer require "magento/magento-cloud-metapackage":">=2.3.2 <2.3.3" --no-update
     ```
 
     {: .bs-callout-info }
@@ -88,11 +88,12 @@ Exception printing is disabled by default for security reasons.
   Error log record number: <error number>
 ```
 
-#### To resolve the error:
+{:.procedure}
+To resolve the error:
 
 1.  Using SSH, log in to the remote server and open the `./app/var/report/<error number>` file.
 
-1.  [Examine the logs]({{ page.baseurl }}/cloud/trouble/environments-logs.html) to determine the source of the issue.
+1.  [Examine the logs]({{page.baseurl}}/cloud/project/log-locations.html) to determine the source of the issue.
 
 1.  Add, commit, and push code changes.
 

@@ -16,6 +16,8 @@ The main disadvantage of this approach is that Magento applies changes blindly. 
 Declarative setup is based on database structure declarations, and is used in projects such as [Doctrine](http://www.doctrine-project.org/). Schema files declare what the database structure should be,
 and Magento determines the differences between the current table structure and what it should be. These differences can be represented with atomic SQL operations.
 
+Magento prioritizes the declarative schema and executes the declarative install schemas before the [data and schema patches]({{ page.baseurl }}/extension-dev-guide/declarative-schema/data-patches.html).
+
 The following example, extracted from the `Catalog/etc/db_schema.xml` file, defines the `catalog_product_entity_datetime` table:
 
 ```xml
@@ -94,8 +96,11 @@ A column can have the following attributes:
 <li><code>boolean</code></li>
 <li><code>date</code></li>
 <li><code>datetime</code></li>
+<li><code>decimal</code></li>
+<li><code>float</code></li>
 <li><code>int</code> (includes smallint, bigint, tinyint)</li>
 <li><code>real</code> (includes decimal, float, double, real)</li>
+<li><code>smallint</code></li>
 <li><code>text</code> (includes text, mediumtext, longtext)</li>
 <li><code>timestamp</code></li>
 <li><code>varbinary</code></li>

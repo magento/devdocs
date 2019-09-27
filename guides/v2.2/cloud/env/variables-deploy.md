@@ -4,7 +4,9 @@ title: Deploy variables
 functional_areas:
   - Cloud
   - Configuration
+redirect_from: guides/v2.2/cloud/trouble/message-queues.html
 ---
+
 The following _deploy_ variables control actions in the deploy phase and can inherit and override values from the [Global variables]({{ page.baseurl }}/cloud/env/variables-global.html). Insert these variables in the `deploy` stage of the `.magento.env.yaml` file:
 
 ```yaml
@@ -96,7 +98,7 @@ stage:
 
 By default, the deployment process overwrites all settings in the `env.php` file. Refer to [Manage message queues]({{ page.baseurl }}/config-guide/mq/manage-mysql.html) for more information about how this works in {{site.data.var.ce}} and {{site.data.var.ee}}.
 
-#### To see a list of message queue consumers:
+The following command returns a list of message queue consumers:
 
 ```bash
 ./bin/magento queue:consumers:list
@@ -111,7 +113,10 @@ Configure how consumers process messages from the message queue by choosing one 
 
 - `false`—Consumers process available messages in the queue, close the TCP connection, and terminate. Consumers do not wait for additional messages to enter the queue, even if the number of processed messages is less than the `max_messages` value specified in the `CRON_CONSUMERS_RUNNER` deploy variable.
 
-- `true`—Consumers continue to process messages from the message queue until reaching the maximum number of messages (`max_messages`) specified in the `CRON_CONSUMERS_RUNNER` deploy variable before closing the TCP connection and terminating the consumer process. If the queue empties before reaching `max_messages`, the consumer waits for more messages to arrive. If you use workers to run consumers instead of using a cron job, set this variable to true.
+- `true`—Consumers continue to process messages from the message queue until reaching the maximum number of messages (`max_messages`) specified in the `CRON_CONSUMERS_RUNNER` deploy variable before closing the TCP connection and terminating the consumer process. If the queue empties before reaching `max_messages`, the consumer waits for more messages to arrive.
+
+{: .bs-callout .bs-callout-warning}
+If you use workers to run consumers instead of using a cron job, set this variable to true.
 
 ```yaml
 stage:

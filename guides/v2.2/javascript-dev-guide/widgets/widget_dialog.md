@@ -4,7 +4,6 @@ subgroup: 3_Widgets
 title: DropdownDialog widget
 ---
 
-## Overview
 Magento dropdownDialog [widget](https://glossary.magento.com/widget) is a customization of the standard [jQuery UI Dialog](http://api.jqueryui.com/dialog/){:target="_blank"}. As extra functionality it implements the following:
 
 -   triggering [event](https://glossary.magento.com/event) for opening
@@ -20,6 +19,7 @@ For information about how to initialize a widget in a JS component or `.phtml` t
 ## Options {#dialog_options}
 
 Magento customized Dialog widget has default [jQuery UI Dialog widget](http://api.jqueryui.com/dialog/){:target="_blank"} options, plus several custom options:
+
 -   [autoPosition](#d_autoPosition)
 -   [autoSize](#d_autoSize)
 -   [autoOpen](#d_autoOpen)
@@ -140,6 +140,7 @@ The number of milliseconds until the dropdown is closed after mouse pointer move
 Magento customized dropdownDialog widget has default [jQuery UI Dialog widget] methods, though some of them are customized.
 
 Customized public methods:
+
 -   [open()](#d_open)
 -   [close()](#d_close)
 
