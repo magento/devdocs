@@ -116,7 +116,7 @@ This displays the following page, which enables you to configure settings, [vari
 
 ### Environment configuration variables
 
-On the *Variables* tab, you can view, create, and manage environment variables for your project. For example, after we add your project to the {{ site.data.var.ece }} Fastly service account, you can view the Fastly API key and service ID credentials as shown in the following example:
+On the *Variables* tab, you can view, create, and manage environment variables for your project. For example, after we add your project to the {{ site.data.var.ece }} Fastly service account, you can view the Fastly API token and service ID credentials as shown in the following example:
 
 ![Environment variables fastly credentials]({{ site.baseurl }}/common/images/cloud/cloud-project-web-ui-environment-variables.png)
 
