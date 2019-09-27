@@ -102,11 +102,11 @@ Attribute |  Data Type | Description
 
 ### ProductDiscount object {#ProductDiscount}
 
-The `ProductDiscount` object indicates whether the discount applied to a product is fixed amount, such as $5, or a percentage, such as 10%.
+The `ProductDiscount` object indicates whether the discount applied to a product is fixed amount, such as $5, or a percentage, such as 10%. The discount originates from special pricing or a catalog price rule.
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`amount_off` | Float | The discount expressed as a fixed amount
+`amount_off` | Float | The actual value of the discount
 `percent_off` | Float | The discount expressed as a percentage
 
 ### Price object {#Price}
@@ -226,13 +226,13 @@ Attribute | Type | Description
 
 ### TierPrice object {#TierPrice}
 
-The `TierPrice` object defines a tier price, which is a discount based on the quantity purchased.
+The `TierPrice` object defines a tier price, which is a price based on the quantity purchased.
 
 Attribute | Type | Description
 --- | --- | ---
 `discount` | ProductDiscount | The price discount applied to this tier
 `final_price`| Money! | The price of the product at this tier
-`quantity` | Float | The number of items that must be purchased to qualify for this price tier
+`quantity` | Float | The minimum number of items that must be purchased to qualify for this price tier
 
 ### Website object {#websiteObject}
 
