@@ -30,15 +30,15 @@ Profiles are located in `<magento_root>/setup/performance-toolkit/profiles/<ce o
 For example, `/var/www/html/magento2/setup/performance-toolkit/profiles/ce`
 
 <table>
-	<tbody>
-		<tr>
-			<th>Parameter</th>
-			<th>Small profile</th>
-			<th>Medium profile</th>
-			<th>Medium multi-site profile</th>
-			<th>Large profile</th>
-			<th>Extra large profile</th>
-		</tr>
+   <tbody>
+      <tr>
+         <th>Parameter</th>
+         <th>Small profile</th>
+         <th>Medium profile</th>
+         <th>Medium multi-site profile</th>
+         <th>Large profile</th>
+         <th>Extra large profile</th>
+      </tr>
 
         <tr>
             <td><p>websites</p></td>
@@ -160,7 +160,7 @@ For example, `/var/www/html/magento2/setup/performance-toolkit/profiles/ce`
             <td><p>100,000</p></td>
             <td><p>150,000</p></td>
         </tr>
-	</tbody>
+   </tbody>
 </table>
 
 ### Run the data generator {#config-cli-perf-run}
@@ -215,23 +215,23 @@ Generating simple products...  done in <time>
 
 Current supported fixtures:
 
-*   [Admin users](#config-cli-gen-admin)
-*   [Attribute sets](#config-cli-gen-attrib)
-*   [Bundle products](#config-cli-gen-bundle)
-*   [Cart price rules](#config-cli-gen-cartrules)
-*   [Catalog price rules](#config-cli-gen-pricerules)
-*   [Categories](#config-cli-gen-cat)
-*   [Configurations](#config-cli-gen-config)
-*   [Configurable products](#config-cli-gen-configprod)
-*   [Customers](#config-cli-gen-cust)
-*   [Product images](#config-cli-gen-prodimg)
-*   [Indexers state](#config-cli-gen-index)
-*   [Orders](#config-cli-gen-orders)
-*   [Simple products](#config-cli-gen-simp)
-*   [Websites](#config-cli-gen-websites)
-*   [Store groups](#config-cli-gen-stores)
-*   [Store views](#config-cli-gen-storeview)
-*   [Tax rates](#config-cli-gen-taxrate)
+* [Admin users](#config-cli-gen-admin)
+* [Attribute sets](#config-cli-gen-attrib)
+* [Bundle products](#config-cli-gen-bundle)
+* [Cart price rules](#config-cli-gen-cartrules)
+* [Catalog price rules](#config-cli-gen-pricerules)
+* [Categories](#config-cli-gen-cat)
+* [Configurations](#config-cli-gen-config)
+* [Configurable products](#config-cli-gen-configprod)
+* [Customers](#config-cli-gen-cust)
+* [Product images](#config-cli-gen-prodimg)
+* [Indexers state](#config-cli-gen-index)
+* [Orders](#config-cli-gen-orders)
+* [Simple products](#config-cli-gen-simp)
+* [Websites](#config-cli-gen-websites)
+* [Store groups](#config-cli-gen-stores)
+* [Store views](#config-cli-gen-storeview)
+* [Tax rates](#config-cli-gen-taxrate)
 
 ## Detailed information about fixtures
 
@@ -534,16 +534,16 @@ Generates tax rates. XML profile node:
 
 Additional configuration information:
 
-*   `<Magento root dir>/setup/performance-toolkit/config/attributeSets.xml`&mdash;Default attribute sets
+* `<Magento root dir>/setup/performance-toolkit/config/attributeSets.xml`&mdash;Default attribute sets
 
-*   `<Magento root dir>/setup/performance-toolkit/config/customerConfig.xml`&mdash;Customer configuration
+* `<Magento root dir>/setup/performance-toolkit/config/customerConfig.xml`&mdash;Customer configuration
 
-*   `<Magento root dir>/setup/performance-toolkit/config/description.xml`&mdash;Product full description configuration
+* `<Magento root dir>/setup/performance-toolkit/config/description.xml`&mdash;Product full description configuration
 
-*   `<Magento root dir>/setup/performance-toolkit/config/shortDescription.xml`&mdash;Product short description configuration
+* `<Magento root dir>/setup/performance-toolkit/config/shortDescription.xml`&mdash;Product short description configuration
 
-*   `<Magento root dir>/setup/performance-toolkit/config/searchConfig.xml`&mdash;Configuration for product short and full description. This older implementation is provided for backward compatibility.
+* `<Magento root dir>/setup/performance-toolkit/config/searchConfig.xml`&mdash;Configuration for product short and full description. This older implementation is provided for backward compatibility.
 
-*   `<Magento root dir>/setup/performance-toolkit/config/searchTerms.xml`&mdash;Small number of search terms to in short and full descriptions
+* `<Magento root dir>/setup/performance-toolkit/config/searchTerms.xml`&mdash;Small number of search terms to in short and full descriptions
 
-*   `<Magento root dir>/setup/performance-toolkit/config/searchTermsLarge.xml`&mdash;Larger number of search terms to use in short and full description.
+* `<Magento root dir>/setup/performance-toolkit/config/searchTermsLarge.xml`&mdash;Larger number of search terms to use in short and full description.

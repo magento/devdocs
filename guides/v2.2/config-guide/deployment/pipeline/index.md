@@ -14,10 +14,10 @@ functional_areas:
 
 You can optionally use other deployment methods, including:
 
-*	Secure copying with SCP or rsync
-*	[Capistrano](http://capistranorb.com/documentation/overview/what-is-capistrano)
-*	The [Deployer tool](https://deployer.org/)
-*	Other methods discussed on the [Community resources page]({{ site.baseurl }}/community/resources/resources.html#installdeploy)
+* Secure copying with SCP or rsync
+* [Capistrano](http://capistranorb.com/documentation/overview/what-is-capistrano)
+* The [Deployer tool](https://deployer.org/)
+* Other methods discussed on the [Community resources page]({{ site.baseurl }}/community/resources/resources.html#installdeploy)
 
 ## Manage the configuration
 
@@ -29,10 +29,10 @@ We also provide a way to synchronize the configuration of your systems:
 
 For a complete list of configuration paths, see the following references:
 
-*	[Sensitive and system-specific configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-sens.html)
-*	[Payment configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-payment.html)
-*	[Other configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-most.html)
-*	[Magento Enterprise B2B Extension configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-b2b.html)
+* [Sensitive and system-specific configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-sens.html)
+* [Payment configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-payment.html)
+* [Other configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-most.html)
+* [Magento Enterprise B2B Extension configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-b2b.html)
 
 ## Assumptions
 
