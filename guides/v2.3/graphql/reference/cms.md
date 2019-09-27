@@ -55,7 +55,7 @@ The following query returns information about the "404 Not Found" CMS page:
 
 **Request**
 
-```json
+```graphql
 {
   cmsPage(id: 1) {
     url_key
@@ -95,7 +95,7 @@ The following query returns information about the `login-data` block:
 
 **Request**
 
-```json
+```graphql
 {
   cmsBlocks(identifiers: "login-data") {
     items {

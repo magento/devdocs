@@ -20,7 +20,7 @@ http://<magento2-3-server>/graphql?XDEBUG_SESSION_START=PHPSTORM
 
 You can also enable an Xdebug connection for a particular request by setting the corresponding header parameter.
 
-```http
+```text
 Cookie: XDEBUG_SESSION=PHPSTORM
 ```
 

@@ -38,7 +38,7 @@ The following query returns the customer's wish list:
 
 **Request**
 
-```json
+```graphql
 {
   wishlist {
     items_count
