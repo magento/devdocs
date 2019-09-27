@@ -39,7 +39,7 @@ The WAF service filters HTTP and HTTPS traffic (GET and POST requests) against t
 
 ### Troubleshooting blocked requests
 
-When the WAF service is enabled, it filters all web and admin traffic against the WAF rules and WAF blocks any web request that triggers a WAF rule. When a request is blocked, the requestor sees a default `403 Forbidden` error page that includes a reference ID for the blocking event.
+When the WAF service is enabled, it filters all web and admin traffic against the WAF rules and blocks any web request that triggers a rule. When a request is blocked, the requestor sees a default `403 Forbidden` error page that includes a reference ID for the blocking event.
 
 ![WAF error page]
 
