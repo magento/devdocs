@@ -49,7 +49,8 @@ Routes define how to process incoming URLs. Multiple stores with unique domains 
 {:.bs-callout-info}
 For Pro, you must create a [Support ticket]({{ page.baseurl }}/cloud/trouble/trouble.html) to set up routes in the Staging or Production environment.
 
-#### To configure routes in an integration environment:
+{:.procedure}
+To configure routes in an integration environment:
 
 1. On your local workstation, open the `.magento/routes.yaml` file in a text editor.
 
@@ -73,7 +74,8 @@ For Pro, you must create a [Support ticket]({{ page.baseurl }}/cloud/trouble/tro
 
 Where the routes configuration defines how the URLs are processed, the `web` property in the `.magento.app.yaml` file defines how your application is exposed to the web. Web _locations_ allows more granularity for incoming requests. For example, if your domain is `store.com`, you can use `/first` (default site) and `/second` for requests to two different stores that share the same domain.
 
-#### To configure a new web location:
+{:.procedure}
+To configure a new web location:
 
 1. Create an alias for the root (`/`). In this example, the alias is `&app` on line 3.
 
@@ -120,7 +122,8 @@ Where the routes configuration defines how the URLs are processed, the `web` pro
 
 1. Continue to the [_Set up websites, stores, and store views_ section](#set-stores).
 
-#### To configure a location with a different directory:
+{:.procedure}
+To configure a location with a different directory:
 
 1. Create an alias for the root (`/`) and for the static (`/static`) locations.
 
@@ -178,7 +181,8 @@ It is important to use the same name and Code of your websites, stores, and stor
 
 Instead of configuring an NGINX virtual host, pass the `MAGE_RUN_CODE` and `MAGE_RUN_TYPE` variables using the `magento-vars.php` file located in your project root directory.
 
-#### To pass variables using the `magento-vars.php` file:
+{:.procedure}
+To pass variables using the `magento-vars.php` file:
 
 1. Open the `magento-vars.php` file in a text editor.
 

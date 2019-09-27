@@ -33,13 +33,14 @@ During project provisioning, Magento adds your project to the [Fastly service ac
 
 You need the Fastly credentials to configure Fastly CDN services from the Magento Admin UI and to submit Fastly API requests.
 
-#### To view your Fastly credentials:
-
 Use the following methods to find and save the Fastly service ID and API token for your environment:
+
+{:.procedure}
+To view your Fastly credentials:
 
 - IaaS-mounted shared directory—On Pro projects, use SSH to connect to your server and get the Fastly credentials from the `/mnt/shared/fastly_tokens.txt` file.
 
-- Local workspace—From the command line, use the Magento Cloud CLI to [list and review]({{ page.baseurl }}/cloud/before/before-setup-env-2_clone.html#variablelist) Fastly environment variables.
+- Local workspace—From the command line, use the Magento Cloud CLI to [list and review]({{ page.baseurl }}/cloud/before/before-setup-env-2_clone.html) Fastly environment variables.
 
     ```bash
     magento-cloud variable:get -e <environment ID>
@@ -62,7 +63,8 @@ If you cannot find the Fastly credentials for the Staging or Production environm
 
 - [Fastly credentials](#cloud-fastly-creds) for {{ site.data.var.ece }} Staging and Production environments
 
-#### To enable Fastly CDN caching in Staging and Production:
+{:.procedure}
+To enable Fastly CDN caching in Staging and Production:
 
 {% include cloud/admin-ui-login-step.md %}
 
@@ -112,10 +114,10 @@ After you enable the Fastly module, upload the default [VCL code](https://github
 {: .bs-callout-info }
 Fastly caching services do not work until you complete the initial upload of the Fastly VCL code for the {{ site.var.data.ee }} Staging and Production sites.
 
-#### To upload the Fastly VCL:
+{:.procedure}
+To upload the Fastly VCL:
 
-1. In the _Fastly Configuration_ section, click **Upload VCL to Fastly** as
-   the following figure shows.
+1. In the _Fastly Configuration_ section, click **Upload VCL to Fastly** as the following figure shows.
 
     ![Upload a Magento VCL to Fastly]({{ site.baseurl }}/common/images/cloud_upload-vcl-to-fastly.png)
 
@@ -151,14 +153,14 @@ The default Fastly VCL code specifies default values for Origin shielding and ti
 If you need to integrate additional backends into your site such as a backend to serve blog content from a
 [Wordpress]({{ page.baseurl }}/cloud/cdn/fastly-vcl-wordpress.html) site, you must customize your Fastly service configuration to add the backend and handle the redirects from your {{ site.data.var.ee }} store to the Wordpress backend. For details, see [Fastly Edge Modules - Other CMS/Backend integration](https://github.com/fastly/fastly-magento2/blob/master/Documentation/Guides/Edge-Modules/EDGE-MODULE-OTHER-CMS-INTEGRATION.md) in the Fastly module documentation.
 
-**To review the backend settings configuration:**
+{:.procedure}
+To review the backend settings configuration:
 
 1. Access and expand **Fastly Configuration**.
 
-1. Expand **Backend settings** and click the gear to check the default
-   backend. A modal opens that shows current settings with options to change them.
+1. Expand **Backend settings** and click the gear to check the default backend. A modal opens that shows current settings with options to change them.
 
-	![Modify the backend]({{ site.baseurl }}/common/images/cloud_fastly-backend.png){:width="600px"}
+   ![Modify the backend]({{ site.baseurl }}/common/images/cloud_fastly-backend.png){:width="600px"}
 
 1. Select the **Shield** location (or datacenter) closest to your AWS region.
    For example, if Staging is on the west coast of the United States
@@ -214,6 +216,7 @@ The options include:
 
 ![Configure purge options]({{ site.baseurl }}/common/images/cloud_fastly-purgeoptions.png){:width="650px"}
 
+{:.procedure}
 To configure Fastly purge options:
 
 1.  In the *Fastly Configuration* section, expand **Advanced**.
@@ -318,7 +321,8 @@ We recommend that you upgrade to the latest version of the Fastly module. See [U
 
 When you upgrade the Fastly module, you get a new version of the default Fastly VCL code that enables the integration with {{ site.data.var.ece }}. You must upload the new VCL code to apply the changes to the Fastly service configuration for your Staging and Production environments.
 
-#### To upgrade the Fastly module
+{:.procedure}
+To upgrade the Fastly module:
 
 1. In your local Integration environment, use the following module information to [upgrade the Fastly module]({{ page.baseurl }}/cloud/howtos/install-components.html#update).
 
