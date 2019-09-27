@@ -17,7 +17,7 @@ The properties for the images displayed on the product pages are defined by the 
 The conventional location of `view.xml` for a theme is:
 
 {% raw %}
-	<theme_dir>/etc/view.xml
+   <theme_dir>/etc/view.xml
 {% endraw %}
 
 For example, here is the `view.xml` of the Magento Blank theme: [`app/design/frontend/Magento/blank/etc/view.xml`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/design/frontend/Magento/blank/etc/view.xml).
@@ -34,9 +34,9 @@ Image properties are configured for each image type defined by the `id` and `typ
 
 ```xml
 <images module="Magento_Catalog">
-	<image id="unique_image_id" type="image_type">
-	...
-	</image>
+   <image id="unique_image_id" type="image_type">
+   ...
+   </image>
 <images/>
 ```
 
