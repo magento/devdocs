@@ -61,11 +61,11 @@ You cannot upgrade the software, but you can configure the following services:
 * [Elasticsearch]({{ page.baseurl }}/cloud/project/project-conf-files_services-elastic.html)
 
 {:.bs-callout .bs-callout-info}
-See [Magento 2.2.x technology stack requirements]({{ page.baseurl }}/install-gde/system-requirements-tech.html) for the latest software version requirements.
+See [Magento technology stack requirements]({{ page.baseurl }}/install-gde/system-requirements-tech.html) for the latest software version requirements.
 
 For Staging and Production environments, you use the Fastly CDN module for Magento 2 for CDN and caching services. See [Configure Fastly services]({{ page.baseurl }}/cloud/cdn/cloud-fastly.html#fastly-cdn-module-for-magento-2).
 
-For detailed information on supported versions and extensions, see the following information. These files allow you to configure software versions you want to use in your implementation.
+For information about configuring the software versions to use in your implementation, see the following {{ site.data.var.ece }} configuration files:
 
 *	[`.magento.app.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_magento-app.html)
 *	[`routes.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_routes.html)
@@ -86,7 +86,7 @@ We walk you through everything you need to do and know.
 Before you test any custom code in your local {{site.data.var.ee}} environment, you must do all of the following:
 
 *	For Pro, set the database [`auto_increment_increment` to 3]({{ page.baseurl }}/cloud/before/before-workspace-magento-prereqs.html#database)
-*	Test with the correct file permissions in [Production mode]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html#production-mode)
+*	Test with the correct file permissions in [PRODUCTION mode]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html#production-mode)
 
 	Correct permissions only allow write access to `var`, `pub/static, pub/media`, and `app/etc`
 *	Test with minification for HTML, JavaScript, and [CSS](https://glossary.magento.com/css) enabled
