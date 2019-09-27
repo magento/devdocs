@@ -11,7 +11,7 @@ Magento provides several endpoints that allow Multi Source merchants to make qui
 
 **Service names**
 
-```
+```http
 inventoryCatalogApiBulkInventoryTransferV1
 inventoryCatalogApiBulkPartialInventoryTransferV1
 inventoryCatalogApiBulkSourceAssignV1
@@ -20,7 +20,7 @@ inventoryCatalogApiBulkSourceUnassignV1
 
 **REST endpoints**
 
-```
+```http
 POST /V1/inventory/bulk-product-source-transfer
 POST /V1/inventory/bulk-partial-source-transfer
 POST /V1/inventory/bulk-product-source-assign
@@ -50,7 +50,7 @@ Name | Description | Type | Requirements
 
 **Payload**
 
-```
+```json
 {
   "skus": [
     "testConfigProduct-red",
@@ -86,7 +86,7 @@ Name | Description | Type | Requirements
 
 **Payload**
 
-```
+```json
 {
   "originSourceCode": "default",
   "destinationSourceCode": "central",
@@ -128,7 +128,7 @@ Name | Description | Type | Requirements
 
 **Payload**
 
-```
+```json
 {
   "skus": [
     "new-product3",
@@ -162,7 +162,7 @@ If you unassign all sources from a product, you will not be able to sell the pro
 
 **Payload**
 
-```
+```json
 {
   "skus": [
     "testSimpleProduct",
