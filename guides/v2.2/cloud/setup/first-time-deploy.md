@@ -85,12 +85,19 @@ When you know your Git URLs, you must set them up as remote upstream repositorie
 
 Command syntax:
 
-	git remote add <remote repository name> <remote repository URL>
+```bash
+git remote add <remote repository name> <remote repository URL>
+```
 
 For example,
 
-	git remote add staging git@git.ent.magento.cloud:dr5q6no7mhqip_stg.git
-	git remote add prod git@git.ent.magento.cloud:dr5q6no7mhqip.git
+```bash
+git remote add staging git@git.ent.magento.cloud:dr5q6no7mhqip_stg.git
+```
+
+```bash
+git remote add prod git@git.ent.magento.cloud:dr5q6no7mhqip.git
+```
 
 ### Set up your SSH agent {#cloud-live-migrate-agent}
 
@@ -103,9 +110,11 @@ To set up an SSH agent:
 1.	Log in to local development machine.
 2.	Enter the following command:
 
-		ssh-add -l
+    ```bash
+    ssh-add -l
+    ```
 
-	One of the following messages displays:
+    One of the following messages displays:
 
 	*	Working SSH agent: `2048 ab:de:56:94:e3:1e:71:c3:4f:df:e1:62:8d:29:a5:c0 /home/magento_user/.ssh/id_rsa (RSA)`
 
@@ -116,16 +125,23 @@ To set up an SSH agent:
 
 3.	To start the SSH agent, enter the following command:
 
-		  eval $(ssh-agent -s)
+    ```bash
+    eval $(ssh-agent -s)
+    ```
 
-	The agent's process ID (PID) displays.
+    The agent's process ID (PID) displays.
+
 4.	Add your SSH key to the agent:
 
-		  ssh-add ~/.ssh/id_rsa
+    ```bash
+    ssh-add ~/.ssh/id_rsa
+    ```
 
-	A message similar to the following displays:
+    A message similar to the following displays:
 
-		  Identity added: /home/magento_user/.ssh/id_rsa (/home/magento_user/.ssh/id_rsa)
+    ```terminal
+    Identity added: /home/magento_user/.ssh/id_rsa (/home/magento_user/.ssh/id_rsa)
+    ```
 
 For more information on setting up SSH, see [Enable SSH keys]({{ page.baseurl }}/cloud/before/before-workspace-ssh.html) as part of your local setup.
 
@@ -137,7 +153,9 @@ For more information on setting up SSH, see [Enable SSH keys]({{ page.baseurl }}
     * Production: `ssh -A <project ID>@<project ID>.ent.magento.cloud`
 2. Pull the `master` branch to the server.
 
-        git pull origin master
+    ```bash
+    git pull origin master
+    ```
 
 ## You're ready to code! {#code}
 

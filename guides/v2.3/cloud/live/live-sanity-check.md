@@ -96,36 +96,45 @@ To build your site:
 
 1.	Apply patches distributed to all {{site.data.var.ece}} accounts.
 
-	Enter the following command from the project root directory:
+    Enter the following command from the project root directory:
 
-		php vendor/magento/magento-cloud-configuration/patch.php
+    ```bash
+    php vendor/magento/magento-cloud-configuration/patch.php
+    ```
 
-	Output includes the following:
+    Output includes the following:
 
-		[2016-11-30 15:05:15] Copying static.php to front-static.php
-		[2016-11-30 15:05:15] Command:git apply /var/www/html/magento2/vendor/magento/magento-cloud-configuration/patches/000-MAGETWO-57719-2.1.2.patch
-		[2016-11-30 15:05:15] Status:0
-		[2016-11-30 15:05:15] Output:array (
-		)
-		[2016-11-30 15:05:15] Command:git apply /var/www/html/magento2/vendor/magento/magento-cloud-configuration/patches/MAGETWO-52660-scd-improvement.patch
-		[2016-11-30 15:05:15] Status:0
-		[2016-11-30 15:05:15] Output:array (
-		)
+    ```terminal
+    [2016-11-30 15:05:15] Copying static.php to front-static.php
+    [2016-11-30 15:05:15] Command:git apply /var/www/html/magento2/vendor/magento/magento-cloud-configuration/patches/000-MAGETWO-57719-2.1.2.patch
+    [2016-11-30 15:05:15] Status:0
+    [2016-11-30 15:05:15] Output:array (
+    )
+    [2016-11-30 15:05:15] Command:git apply /var/www/html/magento2/vendor/magento/magento-cloud-configuration/patches/MAGETWO-52660-scd-improvement.patch
+    [2016-11-30 15:05:15] Status:0
+    [2016-11-30 15:05:15] Output:array (
+    )
 
-		... more ...
-							)
+    ... more ...
+    )
+    ```
 
 2.	Apply hotfixes and other patches provided to you:
 
-		git apply <path to patch>
+    ```bash
+    git apply <path to patch>
+    ```
 
-	For example, to apply hotfixes:
+    For example, to apply hotfixes:
 
-		git apply m2-hotfixes/<patch file name>
+    ```bash
+    git apply m2-hotfixes/<patch file name>
+    ```
 
-	If the `m2-hotfixes` directory is empty, skip this step.
+    If the `m2-hotfixes` directory is empty, skip this step.
 
-	If patches are present, output from this command is similar to the patches command.
+    If patches are present, output from this command is similar to the patches command.
+
 1.  Enable all missing modules.
 
     ```bash
@@ -138,7 +147,7 @@ To build your site:
     php bin/magento  setup:di:compile
     ```
 
-	This command can take several minutes to complete and produces messages similar to the following:
+    This command can take several minutes to complete and produces messages similar to the following:
 
     ```terminal
     Compilation was started.
@@ -178,7 +187,8 @@ To deploy your site:
     php bin/magento setup:upgrade
     ```
 
-	We highly recommend having Magento already installed if you followed the [First time deployment]({{ page.baseurl }}/cloud/setup/first-time-deploy.html). If you have not installed the Magento application yet, use the [`magento setup:install`]({{ page.baseurl }}/install-gde/install/cli/install-cli.html) command instead. Be advised, you may encounter issues with enabled modules on a fresh installation.
+    We highly recommend having Magento already installed if you followed the [First time deployment]({{ page.baseurl }}/cloud/setup/first-time-deploy.html). If you have not installed the Magento application yet, use the [`magento setup:install`]({{ page.baseurl }}/install-gde/install/cli/install-cli.html) command instead. Be advised, you may encounter issues with enabled modules on a fresh installation.
+
 4.	Clean the Magento cache:
 
     ```bash

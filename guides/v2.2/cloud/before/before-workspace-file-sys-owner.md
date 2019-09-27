@@ -21,11 +21,15 @@ Create the Magento file system owner with a strong password. Magento file system
 
 To create the Magento file system owner, enter the following command as a user with `root` privileges:
 
-	adduser <username>
+```bash
+adduser <username>
+```
 
 To give the user a password, enter the following command as a user with `root` privileges:
 
-	passwd <username>
+```bash
+passwd <username>
+```
 
 Follow the prompts on your screen to create a password for the user.
 
@@ -34,8 +38,13 @@ If you do not have `root` privileges on your Magento server, you can use another
 
 For example, to create a user named `magento_user` and give the user a password, enter:
 
-	sudo adduser magento_user
-	sudo passwd magento_user
+```bash
+sudo adduser magento_user
+```
+
+```bash
+sudo passwd magento_user
+```
 
 {: .bs-callout .bs-callout-warning}
 Because the point of creating this user is to provide added security, it is essential that you create a strong password.
@@ -49,7 +58,9 @@ To find the web server user's group:
     ```bash
     grep -E -i '^user|^group' /etc/httpd/conf/httpd.conf
     ```
+
     or
+
     ```bash
     grep -Ei '^user|^group' /etc/httpd/conf/httpd.conf
     ```
@@ -69,15 +80,21 @@ Assuming the typical Apache group name for CentOS and Ubuntu, enter the followin
 
 For example, to add the user `magento_user` to the `apache` primary group on CentOS:
 
-	usermod -g apache magento_user
+```bash
+usermod -g apache magento_user
+```
 
 To confirm your Magento user is a member of the web server group, enter the following command:
 
-	groups <username>
+```bash
+groups <username>
+```
 
 A sample result follows:
 
-	magento_user : apache
+```terminal
+magento_user : apache
+```
 
 To complete the task, restart the web server:
 

@@ -48,29 +48,44 @@ You can enable Xdebug directly to all Starter environments and Pro Integration e
 1. In your local terminal, open `.magento.app.yaml` in a text editor.
 2. In the `runtime` section, under `extensions`, add `xdebug`. For example:
 
-		runtime:
-		   extensions:
-          - mcrypt
-          - redis
-          - xsl
-          - json
-          - xdebug
+   ```yaml
+   runtime:
+       extensions:
+           - redis
+           - xsl
+           - json
+           - blackfire
+           - newrelic
+           - sodium
+           - xdebug
+   ```
+
 3. Optionally, modify the timeout. A default timeout of 300 seconds (5 minutes) is set in `php-fpm` and will end your session. To avoid the timeout, add the following lines to the `web:` section of `.magento.app.yaml`:
 
-        web:
-            commands:
-                start: |
-                    cat /etc/php/7.0/fpm/php-fpm.conf | sed -e 's/request_terminate_timeout.*//g' > /tmp/php-fpm.conf
-                    /usr/sbin/php-fpm7.0 -y /tmp/php-fpm.conf
+   ```yaml
+   web:
+       commands:
+           start: |
+               cat /etc/php/7.2/fpm/php-fpm.conf | sed -e 's/request_terminate_timeout.*//g' > /tmp/php-fpm.conf
+               /usr/sbin/php-fpm7.2 -y /tmp/php-fpm.conf
+   ```
 
     {: .bs-callout-info}
     The actual path to the `php-fpm` configuration file can be different than the one in the example. For the correct path, open an SSH connection to the Cloud environment,  and check the value of the `/etc/alternatives/php` symlink.
 4. Save your changes to `.magento.app.yaml` and exit the text editor.
 5. Add, commit, and push the changes to redeploy the environment:
 
-		git add -A
-		git commit -m "Add xdebug"
-		git push origin <environment ID>
+    ```bash
+    git add -A
+    ```
+
+    ```bash
+    git commit -m "Add xdebug"
+    ```
+
+    ```bash
+    git push origin <environment ID>
+    ```
 
 When deployed to Starter environments and Pro Integration environments, Xdebug is now available. You should continue configuring your IDE. For PhpStorm, see [Configure PhpStorm](#phpstorm).
 
@@ -116,7 +131,9 @@ To set up port forwarding on a Mac or in a Unix environment, you will enter a co
 1. Open a terminal.
 2. Enter the following command:
 
-        ssh -R 9000:localhost:9000 <ssh url>
+    ```bash
+    ssh -R 9000:localhost:9000 <ssh url>
+    ```
 
     Add the `-v` option to the SSH command to show in the terminal whenever a socket is connected to the port that is being forwarded.
 
@@ -134,16 +151,25 @@ To troubleshoot the connection:
 4.	For a user session that is older than yours, find the pseudo-terminal (PTS) value. For example, `pts/0`.
 5.	Kill the process ID (PID) corresponding to the PTS value using the following commands:
 
-        ps aux | grep ssh
-        kill <PID>
+    ```bash
+    ps aux | grep ssh
+    ```
 
-      For example, suppose `ps aux | grep ssh` returned the following:
+    ```bash
+    kill <PID>
+    ```
 
-        dd2q5ct7mhgus        5504  0.0  0.0  82612  3664 ?      S    18:45   0:00 sshd: dd2q5ct7mhgus@pts/0
+    For example, suppose `ps aux | grep ssh` returned the following:
 
-      To terminate the connection, you enter a kill command with the process ID (PID). For example:
+    ```terminal
+    dd2q5ct7mhgus        5504  0.0  0.0  82612  3664 ?      S    18:45   0:00 sshd: dd2q5ct7mhgus@pts/0
+    ```
 
-        kill 3664
+    To terminate the connection, you enter a kill command with the process ID (PID). For example:
+
+    ```bash
+    kill 3664
+    ```
 
 #### Port forwarding on Windows {#portwindows}
 
@@ -193,15 +219,21 @@ For initiating debugging, performing setup, and more, you need the SSH commands 
 
 For Starter environments and Pro Integration environments, you can use the following Magento Cloud CLI command to SSH into those environments:
 
-	magento-cloud environment:ssh --pipe -e <environment ID>
+```bash
+magento-cloud environment:ssh --pipe -e <environment ID>
+```
 
 To use Xdebug, SSH to the environment as follows:
 
-	ssh -R <xdebug listen port>:<host>:<xdebug listen port> <SSH URL>
+```bash
+ssh -R <xdebug listen port>:<host>:<xdebug listen port> <SSH URL>
+```
 
 For example,
 
-	ssh -R 9000:localhost:9000 pwga8A0bhuk7o-mybranch@ssh.us.magentosite.cloud
+```bash
+ssh -R 9000:localhost:9000 pwga8A0bhuk7o-mybranch@ssh.us.magentosite.cloud
+```
 
 ## Debug for Pro Staging and Production {#pro-debug}
 
@@ -217,22 +249,32 @@ Set up an SSH tunnel to Staging or Production environment:
 1. Open a terminal.
 2. Enter the following command to clean up all SSH sessions.
 
-        ssh USERNAME@CLUSTER.ent.magento.cloud 'rm /run/platform/USERNAME/xdebug.sock'
+    ```bash
+    ssh USERNAME@CLUSTER.ent.magento.cloud 'rm /run/platform/USERNAME/xdebug.sock'
+    ```
+
 3. Enter the following command to set up the SSH tunnel for Xdebug:
 
-        ssh -R /run/platform/USERNAME/xdebug.sock:localhost:9000 -N USERNAME@CLUSTER.ent.magento.cloud
+    ```bash
+    ssh -R /run/platform/USERNAME/xdebug.sock:localhost:9000 -N USERNAME@CLUSTER.ent.magento.cloud
+    ```
 
 To start debugging, use the following commands with the environment URL:
 
 1. To enable remote debugging, visit the site in the browser with the following added to the URL where `KEY` is value for `xdebug_key`:
 
-        ?XDEBUG_SESSION_START=KEY
+    ```http
+    ?XDEBUG_SESSION_START=KEY
+    ```
 
     This sets the cookie that sends browser requests to trigger Xdebug.
+
 2. Complete your debugging with Xdebug.
 3. When you are ready to end the session, you can use the following command to remove the cookie and end debugging through the browser where `KEY` is value for `xdebug_key`:
 
-        ?XDEBUG_SESSION_STOP=KEY
+    ```http
+    ?XDEBUG_SESSION_STOP=KEY
+    ```
 
 {: .bs-callout-info }
 The `XDEBUG_SESSION_START` passed by `POST` requests are not supported at this time.
@@ -244,12 +286,16 @@ This section walks through debugging CLI commands. To debug, you will need the S
 1. SSH into the server you want to debug using CLI commands.
 2. Create the following environment variables:
 
-        export XDEBUG_CONFIG='PHPSTORM'
-        export PHP_IDE_CONFIG="serverName=<name of the server that is configured in PHPSTORM>"
+    ```text
+    export XDEBUG_CONFIG='PHPSTORM'
+    export PHP_IDE_CONFIG="serverName=<name of the server that is configured in PHPSTORM>"
+    ```
 
 These variables will be removed when SSH session is over. When adding the variables, you can add runtime options:
 
-    php -d xdebug.profiler_enable=On -d xdebug.max_nesting_level=9999 ...
+```bash
+php -d xdebug.profiler_enable=On -d xdebug.max_nesting_level=9999 ...
+```
 
 If you expect to SSH and debug multiple times, you can put the export commands into a bash script in the `/tmp` directory to run them each time.
 
@@ -306,16 +352,29 @@ To compress files and copy them to your local machine:
 1.	SSH to the environment.
 3.	Enter the following command:
 
-		tar -czf /tmp/<file name>.tgz <directory list>
+    ```bsh
+    tar -czf /tmp/<file name>.tgz <directory list>
+    ```
 
-	For example, to compress the `vendor` directory only, enter
+    For example, to compress the `vendor` directory only, enter
 
-		tar -czf /tmp/vendor.tgz vendor
+    ```bash
+    tar -czf /tmp/vendor.tgz vendor
+    ```
+
 4.	On your local environment with PhpStorm, enter the following commands:
 
-		cd <phpstorm project root dir>
-		rsync <SSH URL>:/tmp/<file name>.tgz .
-		tar xzf <file name>.tgz
+    ```bash
+    cd <phpstorm project root dir>
+    ```
+
+    ```bash
+    rsync <SSH URL>:/tmp/<file name>.tgz .
+    ```
+
+    ```bash
+    tar xzf <file name>.tgz
+    ```
 
 ## Troubleshooting Xdebug {#trouble}
 
@@ -333,13 +392,22 @@ Due to not having access to manually restart the nginx server, you need to locat
 4.	For a user session that is older than yours, find the pseudo-terminal (PTS) value. For example, `pts/0`.
 5.	Kill the process ID (PID) corresponding to the PTS value using the following commands:
 
-        ps aux | grep ssh
-        kill <PID>
+    ```bash
+    ps aux | grep ssh
+    ```
 
-      For example, suppose `ps aux | grep ssh` returned the following:
+    ```bash
+    kill <PID>
+    ```
 
-        dd2q5ct7mhgus        5504  0.0  0.0  82612  3664 ?      S    18:45   0:00 sshd: dd2q5ct7mhgus@pts/0
+    For example, suppose `ps aux | grep ssh` returned the following:
 
-      To terminate the connection, you enter a kill command with the process ID (PID). For example:
+    ```terminal
+    dd2q5ct7mhgus        5504  0.0  0.0  82612  3664 ?      S    18:45   0:00 sshd: dd2q5ct7mhgus@pts/0
+    ```
 
-        kill 3664
+    To terminate the connection, you enter a kill command with the process ID (PID). For example:
+
+    ```bash
+    kill 3664
+    ```
