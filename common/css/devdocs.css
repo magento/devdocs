@@ -21,6 +21,13 @@
 .ref-list dt{
   font-weight:500;
 }
+
+/* Paragraph that represents a beginning of a procedure - should have an ordered list of steps following */
+.procedure {
+  font-weight: bold;
+  margin-left: 1.0em;
+}
+
 .message-banner.version-banner {
   margin-bottom: 15px;
 }

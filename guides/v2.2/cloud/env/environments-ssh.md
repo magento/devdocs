@@ -49,16 +49,27 @@ To SSH to an environment using the Magento Cloud command line:
 
 1.	Log in to the project:
 
-		magento-cloud login
+    ```bash
+    magento-cloud login
+    ```
+
 2.	List the project IDs:
 
-		magento-cloud project:list
+    ```bash
+    magento-cloud project:list
+    ```
+
 3.	List the environments in that project:
 
-		magento-cloud environment:list -p <project ID>
+    ```bash
+    magento-cloud environment:list -p <project ID>
+    ```
+
 3.	SSH to the environment:
 
-		magento-cloud ssh -p <project ID> -e <environment ID>
+    ```bash
+    magento-cloud ssh -p <project ID> -e <environment ID>
+    ```
 
 ### Locate the SSH command in the Project Web Interface {#web-interface}
 
@@ -77,7 +88,9 @@ To copy the SSH command:
 
 Example SSH command:
 
-	ssh abcdefg123abc-smith-a12b34c--mymagento@ssh.us-2.magento.cloud
+```bash
+ssh abcdefg123abc-smith-a12b34c--mymagento@ssh.us-2.magento.cloud
+```
 
 ### SSH commands for Pro Staging and Production {#pro}
 

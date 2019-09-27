@@ -11,8 +11,7 @@ functional_areas:
   - Deploy
 ---
 
-#### Previous step:
-
+**Previous step:**
 [Migrate data and static files]({{ page.baseurl }}/cloud/live/stage-prod-migrate.html)
 
 When your code, files, and data is successfully migrated to Staging or Production, use the environment URLs to test your site(s) and store(s). For a list of your URLs, see [Starter]({{ page.baseurl }}/cloud/live/stage-prod-migrate-prereq.html#starter-urls) and [Pro]({{ page.baseurl }}/cloud/live/stage-prod-migrate-prereq.html#pro-urls) access information.
