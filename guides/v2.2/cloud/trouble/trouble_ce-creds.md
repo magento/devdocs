@@ -18,7 +18,7 @@ This topic discusses how to resolve issues with incorrect credentials in your `a
 
 The most common symptom of incorrect credentials is a deployment failure with an authentication error similar to the following:
 
-   ```terminal
+   ```text
    The 'https://repo.magento.com/archives/magento/magento-cloud-configuration/magento-magento-cloud-configuration-1.0.3.0.zip' URL could not be accessed: HTTP/1.1 403 Forbidden
    ```
 
@@ -81,7 +81,13 @@ To resolve the issue with credentials:
 
    ```bash
    git add -A
+   ```
+
+   ```bash
    git commit -m "<message>"
+   ```
+
+   ```bash
    git push origin master
    ```
 

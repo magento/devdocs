@@ -53,8 +53,13 @@ If not, see the [Installation overview]({{page.baseurl }}/install-gde/bk-install
 
 When all prerequisites have been met, get the Magento software using [Composer](https://glossary.magento.com/composer) as follows:
 
-	cd <web server docroot directory>
-	composer create-project --repository=https://repo.magento.com/ magento/project-community-edition magento2
+```bash
+cd <web server docroot directory>
+```
+
+```bash
+composer create-project --repository=https://repo.magento.com/ magento/project-community-edition magento2
+```
 
 You're required to authenticate; see [Get your authentication keys]({{page.baseurl }}/install-gde/prereq/connect-auth.html) for details. This downloads Magento code only; it doesn't install the software for you.
 
@@ -91,16 +96,23 @@ The following example shows how to install using the command line with the follo
 *	Default currency is U.S. dollars
 *	Default time zone is U.S. Central (America/Chicago)
 
-		php /var/www/html/magento2/bin/magento setup:install --base-url=http://192.0.2.5/magento2/ \
-		--db-host=localhost --db-name=magento --db-user=magento --db-password=magento \
-		--admin-firstname=Magento --admin-lastname=User --admin-email=user@example.com \
-		--admin-user=admin --admin-password=admin123 --language=en_US \
-		--currency=USD --timezone=America/Chicago --use-rewrites=1
+    ```bash
+    php /var/www/html/magento2/bin/magento setup:install --base-url=http://192.0.2.5/magento2/ \
+    --db-host=localhost --db-name=magento --db-user=magento --db-password=magento \
+    --admin-firstname=Magento --admin-lastname=User --admin-email=user@example.com \
+    --admin-user=admin --admin-password=admin123 --language=en_US \
+    --currency=USD --timezone=America/Chicago --use-rewrites=1
+    ```
 
 Optionally switch to [developer mode]({{page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html).
 
-	cd <magento_root>/bin
-	php magento deploy:mode:set developer
+```bash
+cd <magento_root>/bin
+```
+
+```bash
+php magento deploy:mode:set developer
+```
 
 {% endcollapsible %}
 
@@ -129,7 +141,10 @@ To run the Web Setup Wizard:
 
 1.	Enter the following URL in your browser's address or location field:
 
-		http://192.0.2.5/magento2/setup
+    ```http
+    http://192.0.2.5/magento2/setup
+    ```
+
 2.	At the welcome page, click **Agree and Setup Magento**.
 
 	![You must accept the license agreement to install the Magento software]({{ site.baseurl }}/common/images/install_qr_wizard-welcome.png){:width="200px"}

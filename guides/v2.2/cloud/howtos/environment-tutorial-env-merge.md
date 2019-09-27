@@ -31,13 +31,17 @@ To merge an environment:
 
    You can put whatever contents you want; for example, the number `1`
 
-1. Save your changes and exit the text editor.
-1. Add, commit, and push your change to the environment:
-
    ```bash
    git add -A
+   ```
+
+   ```bash
    git commit -m "<commit message>"
+   ```
+
+   ```bash
    git push origin <branch name>
+   ```
 
    Where `<branch name>` is the Git name of the environment (that is, the environment ID).
 

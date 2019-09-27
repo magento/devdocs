@@ -57,14 +57,16 @@ To remove these test builds, you can use the `magento-cloud local:clean` command
 
 Before you continue, push all current code to the remote Cloud server so that, in event of issues, you can recover the state of the Magento application.
 
-#### To prepare your code and branch:
+{:.procedure}
+To prepare your code and branch:
 
 {% include cloud/cli-get-started.md %}
 
-#### To push code to your remote environment:
+{:.procedure}
+To push code to your remote environment:
 
-1.  Change to your project root directory.
-1.  Complete code commits in a terminal.
+1. Change to your project root directory.
+1. Complete code commits in a terminal.
 
    ```bash
    git add -A && git commit -m "<comment>"
@@ -89,7 +91,8 @@ The build also checks for a [configuration file]({{ page.baseurl }}/cloud/live/s
 
 Before you continue, you must know the file system path to any patch we provided specifically to you. Typically, hotfixes are in the `<Magento root dir>/m2-hotfixes` directory.
 
-#### To build your site:
+{:.procedure}
+To build your site:
 
 1. Apply patches distributed to all {{site.data.var.ece}} accounts.
 
@@ -138,7 +141,7 @@ Before you continue, you must know the file system path to any patch we provided
    ./vendor/bin/ece-tools module:refresh
    ```
 
-1.  Compile code and the dependency injection configuration:
+1. Compile code and the dependency injection configuration:
 
    ```bash
    php bin/magento  setup:di:compile
@@ -173,7 +176,8 @@ We highly recommend having Magento already installed prior to deployment. During
 * Clear the [cache](https://glossary.magento.com/cache)
 * Set the Magento application for [`production`]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html#production-mode) mode
 
-#### To deploy your site:
+{:.procedure}
+To deploy your site:
 
 1. If you have not already, log in as or switch to the [Magento file system owner]({{ page.baseurl }}/cloud/before/before-workspace-file-sys-owner.html).
 1. Change to your project root directory.
@@ -199,5 +203,5 @@ We highly recommend having Magento already installed prior to deployment. During
 
 Debug errors by [reviewing logs]({{page.baseurl}}/cloud/project/log-locations.html). Open a [support ticket]({{ page.baseurl }}/cloud/trouble/trouble.html) for additional assistance.
 
-#### Next step
+**Next step:**
 [Prepare to deploy to Staging and Production]({{ page.baseurl }}/cloud/live/stage-prod-migrate-prereq.html)

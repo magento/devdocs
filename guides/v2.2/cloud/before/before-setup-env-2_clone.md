@@ -9,7 +9,7 @@ functional_areas:
   - Setup
 ---
 
-#### Previous step:
+**Previous step:**
 [Set up the Magento file system owner]({{ page.baseurl }}/cloud/before/before-workspace-file-sys-owner.html)
 
 The {{site.data.var.ece}} project is a Git repository of Magento code. Each **active** branch in the Integration environment includes a database and services to fully access the Magento site and store. You can clone the project and create an **active** branch from the Integration environment to develop code and add extensions using your local workstation.
@@ -21,7 +21,8 @@ The following instructions use a combination of Magento Cloud CLI commands and G
 {: .bs-callout-info }
 Some Git commands cannot complete an action in your {{site.data.var.ece}} project. For example, you can create a new branch using a Git command, but you cannot create and activate a new environment using the `git checkout -b <branch-name>` command. You must create an environment using the `magento-cloud environment:branch <branch-name>` command for the environment to become _active_. Alternatively, you can use the Project Web UI to create active environments. See [Magento CLI reference]({{page.baseurl}}/cloud/reference/cli-ref-topic.html).
 
-#### To clone a project master environment:
+{:.procedure}
+To clone a project master environment:
 
 1. Log in to your local workstation with a [Magento file system owner]({{ page.baseurl }}/cloud/before/before-workspace-file-sys-owner.html) account.
 
@@ -55,7 +56,7 @@ Some Git commands cannot complete an action in your {{site.data.var.ece}} projec
    magento-cloud environment:list
    ```
 
-   {:.bs-callout .bs-callout-info}
+   {: .bs-callout-info }
    The `magento-cloud environment:list` command displays environment hierarchies, whereas the `git branch` command does not.
 
 1. Fetch the remote branches.
@@ -81,8 +82,6 @@ We recommend changing the environment-level variables for the Magento Admin URL 
 
 {: .bs-callout-info }
 Make note of any updated values so that you can use them to install Magento from the command line and to verify the installation. The values for the `ADMIN_EMAIL`, `ADMIN_USERNAME`, and `ADMIN_PASSWORD` variables are used only for installation.
-
-#### To view existing variables: {#variablelist}
 
 If you are not sure that the `master` branch has all Magento Admin variables and settings configured, you can view a list of existing variables:
 
@@ -115,18 +114,17 @@ Variables on the project Project-Name (<project-id>), environment <environment-n
 ```
 {: .no-copy}
 
-#### To set a variable:
+You can use the `magento-cloud` CLI to set a variable:
 
 ```bash
 magento-cloud vset <variable-name> <variable-value>
 ```
 
-{: .bs-callout .bs-callout-warning}
+{: .bs-callout-warning }
 Every time you add or modify a variable using the web interface or the CLI, the branch automatically redeploys.
 
-#### To add variables using the Project Web Interface:
-
-Alternatively, you can add or update variables in the Project Web Interface.
+{:.procedure}
+To add variables using the Project Web Interface:
 
 1. Log in to [your {{site.data.var.ece}} account](https://accounts.magento.cloud).
 
@@ -151,21 +149,14 @@ After cloning your project and updating the Magento administrator account config
 - For [Starter]({{ page.baseurl }}/cloud/basic-information/starter-develop-deploy-workflow.html#clone-branch), consider creating a branch for `staging`, then create a development branch based on the `staging` branch.
 - For [Pro]({{ page.baseurl }}/cloud/architecture/pro-develop-deploy-workflow.html), create development branches based on the Integration environment.
 
-#### To branch from master:
+{:.procedure}
+To branch from master:
 
-1. Do one of the following from the CLI.
+1. Create a new environment from the master branch.
 
-   - To create a new environment:
-
-      ```bash
-      magento-cloud branch <environment-name> <parent-environment-ID>
-      ```
-
-   - To check out an existing environment:
-
-      ```bash
-      magento-cloud checkout <environment-name>
-      ```
+   ```bash
+   magento-cloud branch <new-environment-name> master
+   ```
 
 1. Update dependencies.
 
@@ -179,5 +170,5 @@ After cloning your project and updating the Magento administrator account config
    magento-cloud snapshot:create -e <environment-ID>
    ```
 
-#### Next step:
+**Next step:**
 [Install Magento]({{ page.baseurl }}/cloud/before/before-setup-env-install.html)

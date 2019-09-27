@@ -18,6 +18,7 @@ You can also use the Magento CLI to [enable and disable database logging]({{page
 To change the default configuration of `\Magento\Framework\DB\Logger\LoggerProxy`, edit your `app/etc/di.xml`.
 
 First, change the default values of `loggerAlias` and `logCallStack` arguments to:
+
 ```xml
 <type name="Magento\Framework\DB\Logger\LoggerProxy">
     <arguments>

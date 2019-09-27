@@ -48,21 +48,27 @@ You can enable Xdebug directly to all Starter environments and Pro Integration e
 1. In your local terminal, open `.magento.app.yaml` in a text editor.
 1. In the `runtime` section, under `extensions`, add `xdebug`. For example:
 
+   ```yaml
    runtime:
-      extensions:
-         - mcrypt
-         - redis
-         - xsl
-         - json
-         - xdebug
+       extensions:
+           - redis
+           - xsl
+           - json
+           - blackfire
+           - newrelic
+           - sodium
+           - xdebug
+   ```
 
-1. Optionally, modify the timeout. A default timeout of 300 seconds (5 minutes) is set in `php-fpm` and will end your session. To avoid the timeout, add the following lines to the `web:` section of `.magento.app.yaml`:
+3. Optionally, modify the timeout. A default timeout of 300 seconds (5 minutes) is set in `php-fpm` and will end your session. To avoid the timeout, add the following lines to the `web:` section of `.magento.app.yaml`:
 
+   ```yaml
    web:
-      commands:
-         start: |
-            cat /etc/php/7.0/fpm/php-fpm.conf | sed -e 's/request_terminate_timeout.*//g' > /tmp/php-fpm.conf
-            /usr/sbin/php-fpm7.0 -y /tmp/php-fpm.conf
+       commands:
+           start: |
+               cat /etc/php/7.2/fpm/php-fpm.conf | sed -e 's/request_terminate_timeout.*//g' > /tmp/php-fpm.conf
+               /usr/sbin/php-fpm7.2 -y /tmp/php-fpm.conf
+   ```
 
     {: .bs-callout-info}
     The actual path to the `php-fpm` configuration file can be different than the one in the example. For the correct path, open an SSH connection to the Cloud environment,  and check the value of the `/etc/alternatives/php` symlink.
@@ -262,7 +268,7 @@ To start debugging, use the following commands with the environment URL:
 
 1. To enable remote debugging, visit the site in the browser with the following added to the URL where `KEY` is value for `xdebug_key`:
 
-   ```bash
+   ```http
    ?XDEBUG_SESSION_START=KEY
    ```
 
@@ -271,7 +277,7 @@ To start debugging, use the following commands with the environment URL:
 1. Complete your debugging with Xdebug.
 1. When you are ready to end the session, you can use the following command to remove the cookie and end debugging through the browser where `KEY` is value for `xdebug_key`:
 
-   ```bash
+   ```http
    ?XDEBUG_SESSION_STOP=KEY
    ```
 
@@ -369,7 +375,13 @@ To compress files and copy them to your local machine:
 
    ```bash
    cd <phpstorm project root dir>
+   ```
+
+   ```bash
    rsync <SSH URL>:/tmp/<file name>.tgz .
+   ```
+
+   ```bash
    tar xzf <file name>.tgz
    ```
 

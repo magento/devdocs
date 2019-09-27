@@ -58,13 +58,21 @@ To remove the component:
 
    If the following message displays, you do not need to do anything further:
 
+   ```terminal
    Package "<name>:<version>" listed for update is not installed. Ignoring.
+   ```
 
 1. Wait while dependencies are updated.
 1. Enter the following commands in the order shown to commit the changes and deploy the project:
 
    ```bash
    git add -A
+   ```
+
+   ```bash
    git commit -m "<message>"
+   ```
+
+   ```bash
    git push origin <environment ID>
    ```

@@ -20,11 +20,15 @@ This section discusses how to use the command line to display the [Admin](https:
 
 Command options:
 
-	magento info:adminuri
+```bash
+magento info:adminuri
+```
 
 A sample result follows:
 
-	Admin Panel URI: /admin_1wgrah
+```terminal
+Admin Panel URI: /admin_1wgrah
+```
 
 You can also view the Admin URI in `<magento_root>/app/etc/env.php`. A snippet follows:
 

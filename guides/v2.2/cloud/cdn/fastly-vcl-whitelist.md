@@ -103,7 +103,7 @@ Add the custom VCL snippet to your Fastly service configuration from the Magento
 
    -  Add the **VCL** snippet content:
 
-      ```
+      ```conf
       if ((req.url ~ "^/admin") && !(client.ip ~ allowlist) && !req.http.Fastly-FF) { error 403 "Forbidden";
       ```
 

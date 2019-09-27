@@ -60,28 +60,31 @@ If Fastly returns 503 timeout errors, check the error logs and the 503 error pag
 {:.bs-callout .bs-callout-info}
 If the timeout occurs when running bulk operations, you can [extend the Fastly timeout for the Magento Admin UI]({{ page.baseurl }}/cloud/cdn/configure-fastly.html#bulkaction).
 
-#### To check the error logs: {#timeouts}
-
 If you receive a 503 error, check the Production or Staging environment error log and php access log to troubleshoot the issue.
+
+{:.procedure}
+To check the error logs:
 
 - [Error log]({{page.baseurl}}/cloud/project/log-locations.html#application-logs)
 
-   ```
+   ```text
    /var/log/platform/<project_ID>/error.log
    ```
+
    This log includes any errors from the application or PHP engine, for example `memory_limit` or `max_execution_time exceeded` errors. If you do not find any Fastly-related errors, check the PHP access log.
 
 - PHP access log
 
-   ```
+   ```text
    /var/log/platform/<project_ID>/php.access.log
    ```
 
    Search the log for HTTP 200 responses for the URL that returned the 503 error. If you find the 200 response, it means that Magento returned the page without errors. That indicates the issue might have occurred after the interval that exceeds the `first_byte_timeout` value set in the Fastly service configuration.
 
-#### To check the Fastly 503 error page:
-
 When a 503 error occurs, Fastly returns the reason on the error and maintenance page. You might not be able to see the reason if you added code for a custom response page. To view the reason code on the default error page, you can remove the HTML code for the custom error page.
+
+{:.procedure}
+To check the Fastly 503 error page:
 
 {% include cloud/admin-ui-login-step.md %}
 
@@ -123,7 +126,8 @@ Use the Fastly API to check the following response headers returned from your li
 
 Fastly API requests are passed through the Fastly extension to get a response from your origin servers. If the response returns incorrect headers, test the [origin servers directly](#cloud-test-stage).
 
-#### To check the response headers:
+{:.procedure}
+To check the response headers:
 
 1. In a terminal, use the following `curl` command to test your live site URL:
 
@@ -139,7 +143,7 @@ Fastly API requests are passed through the Fastly extension to get a response fr
 
 1. In the response, verify the [headers](#response-headers) to ensure that Fastly is working. You should see following unique headers in the response:
 
-   ```
+   ```http
    < Fastly-Magento-VCL-Uploaded: yes
    < X-Cache: HIT, MISS
    ```
@@ -154,7 +158,8 @@ If the headers do not have the correct values, see the following information:
 
 If the Fastly service returns incorrect headers, submit a Fastly API request directly to the origin server, bypassing the Fastly CDN service.
 
-#### To check the response headers:
+{:.procedure}
+To check the response headers:
 
 1. To get the response data, submit an API request the origin server:
 
@@ -312,7 +317,8 @@ After you identify the extension that is resetting Fastly headers, contact the e
 
 If custom VCL snippet updates or other Fastly configuration changes cause a {{ site.data.var.ece }} site to break or return errors, use the Fastly API [activate](https://docs.fastly.com/api/config#version_0b79ae1ba6aee61d64cc4d43fed1e0d5) command to rollback to an earlier VCL version. You cannot rollback the VCL version from the Magento Admin UI.
 
-#### To rollback the VCL version:
+{:.procedure}
+To rollback the VCL version:
 
 1. To get a list of the available VCL versions for a service, run the following command
 
