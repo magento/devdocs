@@ -25,7 +25,7 @@ For additional information about maintaining PCI compliance for your {{ site.var
 
 ### Enabling the WAF
 
-Magento enables the WAF service on new accounts within 2 to 3 weeks after provisioning is final. The WAF is implemented through Fastly CDN service; you do not have to install or maintain any hardware or software.
+Magento enables the WAF service on new accounts within 2 to 3 weeks after provisioning is final. The WAF is implemented through the Fastly CDN service. You do not have to install or maintain any hardware or software.
 
 {:.bs-callout-info}
 Before you can use the WAF service, all external traffic to your {{ site.data.var.ece }} project must route through the Fastly service. See [Set up Fastly]({{ page.baseurl }}/cloud/cdn/configure-fastly.html).
