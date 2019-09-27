@@ -513,6 +513,92 @@ query {
 }
 ```
 
+### Return minimum and maximum prices and discount information
+
+In the following example, a catalog price rule that provides a 10% discount on all fitness equipment is in effect. The product queried, `24-WG080`, is the Sprite Yoga Companion Kit bundle product. This product has two user-selected option that cause the price to vary. If you choose to query a product this is not a composite (bundle, group, or configurable) product, the minimum and maximum prices are the same.
+
+**Request**
+
+```graphql
+{
+  products(filter: {sku: {eq: "24-WG080"}}, sort: {name: ASC}) {
+    items {
+      name
+      sku
+      price_range {
+        minimum_price {
+          regular_price {
+            value
+          }
+          final_price {
+            value
+          }
+          discount {
+            amount_off
+            percent_off
+          }
+        }
+        maximum_price {
+          regular_price {
+            value
+          }
+          final_price {
+            value
+          }
+          discount {
+            amount_off
+            percent_off
+          }
+        }
+      }
+    }
+  }
+}
+```
+
+**Response**
+
+```json
+{
+  "data": {
+    "products": {
+      "items": [
+        {
+          "name": "Sprite Yoga Companion Kit",
+          "sku": "24-WG080",
+          "price_range": {
+            "minimum_price": {
+              "regular_price": {
+                "value": 61
+              },
+              "final_price": {
+                "value": 54.9
+              },
+              "discount": {
+                "amount_off": 6.1,
+                "percent_off": 10
+              }
+            },
+            "maximum_price": {
+              "regular_price": {
+                "value": 77
+              },
+              "final_price": {
+                "value": 69.3
+              },
+              "discount": {
+                "amount_off": 7.7,
+                "percent_off": 10
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}
+```
+
 ### Include website information with `products` query results {#inclWebsiteInfoExample}
 
 The [ProductInterface]({{ page.baseurl }}/graphql/queries/products.html#ProductInterface) can include information about the `Website` object.

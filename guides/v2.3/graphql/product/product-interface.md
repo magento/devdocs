@@ -58,7 +58,7 @@ Attribute | Data type | Description
 `tax_class_id` | Int | An ID assigned to a tax class. This attribute is defined in the `TaxGraphQl` module.
 `thumbnail` | [ProductImage](#ProductImage) | An object that contains the URL and label for the product's thumbnail image
 `tier_price` | Float | Deprecated. Use `price_tiers` instead. The price when tier pricing is in effect and the items purchased threshold has been reached
-`tier_prices` | [ProductTierPrices] | An array of [ProductTierPrices](#ProductTier) objects
+`tier_prices` | [ProductTierPrices] | Deprecated. Use `price_tiers` instead. An array of [ProductTierPrices](#ProductTier) objects
 `type_id` | String | One of `simple`, `virtual`, `bundle`, `downloadable`,`grouped`, `configurable`
 `updated_at` | String | The timestamp indicating when the product was last updated
 `upsell_products` | [ProductInterface] | An array of up-sell products
@@ -70,6 +70,7 @@ Attribute | Data type | Description
 
 ### ProductPrices object {#ProductPrices}
 
+{:.bs-callout-info}
 The `ProductPrices` object has been deprecated. Use the `PriceRange` object instead.
 
 The `ProductPrices` object contains the regular price of an item, as well as its minimum and maximum prices. Only composite products, which include bundle, configurable, and grouped products, can contain a minimum and maximum price.
@@ -210,15 +211,28 @@ Attribute | Type | Description
 
 ### ProductTierPrices object {#ProductTier}
 
+{:.bs-callout-info}
+The `ProductTierPrices` object and all of its attributes have been deprecated. Use `TierPrice` instead.
+
 The `ProductTierPrices` object defines a tier price, which is a quantity discount offered to a specific customer group.
 
 Attribute | Type | Description
 --- | --- | ---
-`customer_group_id` | Int | The ID of the customer group
+`customer_group_id` | Int | Deprecated. There is no replacement because this value is not relevant for the storefront. The ID of the customer group
 `percentage_value` | Float | Deprecated. Use `ProductPrice.discount` instead. The percentage discount of the item
-`qty` | Float | The number of items that must be purchased to qualify for tier pricing
+`qty` | Float | Deprecated. Use `ProductPrice.quantity` instead. The number of items that must be purchased to qualify for tier pricing
 `value` | Float | Deprecated. Use `ProductPrice.final_price` instead. The price of the fixed price item
-`website_id` | Int | The ID assigned to the website
+`website_id` | Int | Deprecated. There is no replacement because this value is not relevant for the storefront. The ID assigned to the website
+
+### TierPrice object {#TierPrice}
+
+The `TierPrice` object defines a tier price, which is a discount based on the quantity purchased.
+
+Attribute | Type | Description
+--- | --- | ---
+`discount` | ProductDiscount | The price discount applied to this tier
+`final_price`| Money! | The price of the product at this tier
+`quantity` | Float | The number of items that must be purchased to qualify for this price tier
 
 ### Website object {#websiteObject}
 
