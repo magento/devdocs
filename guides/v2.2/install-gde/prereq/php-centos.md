@@ -74,44 +74,77 @@ There is more than one way to install PHP 7.0 on CentOS; the following is a sugg
 
 1.	*CentOS 6*. Enter the following commands in the order shown:
 
-		yum -y update
-		yum -y install epel-release
-		wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-6.noarch.rpm
-		wget https://centos6.iuscommunity.org/ius-release.rpm
-		rpm -Uvh ius-release*.rpm
-		yum -y update
+    ```bash
+    yum -y update
+    ```
+
+    ```bash
+    yum -y install epel-release
+    ```
+
+    ```bash
+    wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-6.noarch.rpm
+    ```
+
+    ```bash
+    wget https://centos6.iuscommunity.org/ius-release.rpm
+    ```
+
+    ```bash
+    rpm -Uvh ius-release*.rpm
+    ```
+
+    ```bash
+    yum -y update
+    ```
+
 2.	*CentOS 7*. Enter the following commands:
 
-		yum install -y http://dl.iuscommunity.org/pub/ius/stable/CentOS/7/x86_64/ius-release-1.0-14.ius.centos7.noarch.rpm
-		yum -y update
+    ```bash
+    yum install -y http://dl.iuscommunity.org/pub/ius/stable/CentOS/7/x86_64/ius-release-1.0-14.ius.centos7.noarch.rpm
+    ```
+
+    ```bash
+    yum -y update
+    ```
+
 3.	Install all [required PHP extensions]({{ page.baseurl }}/install-gde/system-requirements-tech.html#required-php-extensions):
 
-		yum -y install php70u php70u-pdo php70u-mysqlnd php70u-opcache php70u-xml php70u-mcrypt php70u-gd php70u-devel php70u-mysql php70u-intl php70u-mbstring php70u-bcmath php70u-json php70u-iconv php70u-soap
+    ```bash
+    yum -y install php70u php70u-pdo php70u-mysqlnd php70u-opcache php70u-xml php70u-mcrypt php70u-gd php70u-devel php70u-mysql php70u-intl php70u-mbstring php70u-bcmath php70u-json php70u-iconv php70u-soap
+    ```
 
-	{:.bs-callout .bs-callout-info}
-  	The `bcmath` extension is required for {{site.data.var.ee}} only.
+    {:.bs-callout .bs-callout-info}
+    The `bcmath` extension is required for {{site.data.var.ee}} only.
 
 4.	Restart Apache: `service httpd restart`
 
 5.	Verify that PHP 7.0 is installed properly:
 
-		php -v
+    ```bash
+    php -v
+    ```
 
     The following response indicates that PHP 7.0.3 is installed:
 
-		PHP 7.0.3 (cli) (built: Feb 4 2016 08:51:10) ( NTS )
-		Copyright (c) 1997-2016 The PHP Group
-		Zend Engine v3.0.0, Copyright (c) 1998-2016 Zend Technologies with Zend OPcache v7.0.6-dev, Copyright (c) 1999-2016, by Zend Technologies
+    ```terminal
+    PHP 7.0.3 (cli) (built: Feb 4 2016 08:51:10) ( NTS )
+    Copyright (c) 1997-2016 The PHP Group
+    Zend Engine v3.0.0, Copyright (c) 1998-2016 Zend Technologies with Zend OPcache v7.0.6-dev, Copyright (c) 1999-2016, by Zend Technologies
+    ```
 
     {:.bs-callout .bs-callout-info}
     The preceding message confirms that the `Zend OPcache` is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the [PHP OPcache documentation](http://php.net/manual/en/opcache.setup.php){:target="_blank"}.
 
 6.	Verify that all [required PHP extensions]({{ page.baseurl }}/install-gde/system-requirements-tech.html#required-php-extensions) were installed:
 
-		php -me
+    ```bash
+    php -me
+    ```
 
     You should see output similar to the following:
-    ```
+
+    ```terminal
     [PHP Modules]
     bcmath
     calendar
@@ -175,44 +208,77 @@ There is more than one way to install PHP 7.1 on CentOS; the following is a sugg
 
 1.	*CentOS 6*. Enter the following commands in the order shown:
 
-		yum -y update
-		yum -y install epel-release
-		wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-6.noarch.rpm
-		wget https://centos6.iuscommunity.org/ius-release.rpm
-		rpm -Uvh ius-release*.rpm
-		yum -y update
+    ```bash
+    yum -y update
+    ```
+
+    ```bash
+    yum -y install epel-release
+    ```
+
+    ```bash
+    wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-6.noarch.rpm
+    ```
+
+    ```bash
+    wget https://centos6.iuscommunity.org/ius-release.rpm
+    ```
+
+    ```bash
+    rpm -Uvh ius-release*.rpm
+    ```
+
+    ```bash
+    yum -y update
+    ```
+
 2.	*CentOS 7*. Enter the following commands:
 
-		yum install -y http://dl.iuscommunity.org/pub/ius/stable/CentOS/7/x86_64/ius-release-1.0-14.ius.centos7.noarch.rpm
-		yum -y update
+    ```bash
+    yum install -y http://dl.iuscommunity.org/pub/ius/stable/CentOS/7/x86_64/ius-release-1.0-14.ius.centos7.noarch.rpm
+    ```
+
+    ```bash
+    yum -y update
+    ```
+
 3.	Install all [required PHP extensions]({{ page.baseurl }}/install-gde/system-requirements-tech.html#required-php-extensions):
 
-		yum -y install php71u php71u-pdo php71u-mysqlnd php71u-opcache php71u-xml php71u-mcrypt php71u-gd php71u-devel php71u-mysql php71u-intl php71u-mbstring php71u-bcmath php71u-json php71u-iconv php71u-soap
+    ```bash
+    yum -y install php71u php71u-pdo php71u-mysqlnd php71u-opcache php71u-xml php71u-mcrypt php71u-gd php71u-devel php71u-mysql php71u-intl php71u-mbstring php71u-bcmath php71u-json php71u-iconv php71u-soap
+    ```
 
-	{:.bs-callout .bs-callout-info}
-  	The `bcmath` extension is required for {{site.data.var.ee}} only.
+    {:.bs-callout .bs-callout-info}
+    The `bcmath` extension is required for {{site.data.var.ee}} only.
 
 4.	Restart Apache: `service httpd restart`
 
 5.	Verify that PHP 7.1 is installed properly:
 
-		php -v
+    ```bash
+    php -v
+    ```
 
     The following response indicates that PHP 7.1.6 is installed:
 
-		PHP 7.1.6 (cli) (built: Jan 9 2017 09:23:16) ( NTS )
-		Copyright (c) 1997-2017 The PHP Group
-		Zend Engine v3.1.0, Copyright (c) 1998-2017 Zend Technologies with Zend OPcache v7.1.6, Copyright (c) 1999-2017, by Zend Technologies
+    ```terminal
+    PHP 7.1.6 (cli) (built: Jan 9 2017 09:23:16) ( NTS )
+    Copyright (c) 1997-2017 The PHP Group
+    Zend Engine v3.1.0, Copyright (c) 1998-2017 Zend Technologies with Zend OPcache v7.1.6, Copyright (c) 1999-2017, by Zend Technologies
+    ```
 
     {:.bs-callout .bs-callout-info}
     The preceding message confirms that the `Zend OPcache` is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the [PHP OPcache documentation](http://php.net/manual/en/opcache.setup.php){:target="_blank"}.
 
 6.	Verify that all [required PHP extensions]({{ page.baseurl }}/install-gde/system-requirements-tech.html#required-php-extensions) were installed:
 
-		php -me
+    ```bash
+    php -me
+    ```
 
     You should see output similar to the following:
-    ```
+
+    ```terminal
     [PHP Modules]
     bcmath
     calendar

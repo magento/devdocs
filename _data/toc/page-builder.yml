@@ -77,55 +77,55 @@ pages:
 - label: How-Tos
   versionless: true
   children:
-  - label: How to customize the panel
+  - label: Customize the panel
     url: /page-builder/docs/how-to/how-to-customize-panel.html
     versionless: true
 
-  - label: How to add an image uploader
+  - label: Add an image uploader
     url: /page-builder/docs/how-to/how-to-add-image-uploader.html
     versionless: true
 
-  - label: How to add a storefront widget
+  - label: Add a storefront widget
     url: /page-builder/docs/how-to/how-to-add-storefront-widget.html
     versionless: true
 
-  - label: How to add a text editor
+  - label: Add a text editor
     url: /page-builder/docs/how-to/how-to-add-text-editor.html
     versionless: true
 
-  - label: How to add a custom toolbar
+  - label: Add a custom toolbar
     url: /page-builder/docs/how-to/how-to-add-custom-toolbar.html
     versionless: true
 
-  - label: How to add icons and images
+  - label: Add icons and images
     url: /page-builder/docs/how-to/how-to-add-icons-images.html
     versionless: true
 
-  - label: How to change breakpoints
+  - label: Change breakpoints
     url: /page-builder/docs/how-to/how-to-change-breakpoints.html
     versionless: true
 
-  - label: How to add additional configurations
+  - label: Add additional configurations
     url: /page-builder/docs/how-to/how-to-add-additional-configurations.html
     versionless: true
 
-  - label: How to add a block chooser
+  - label: Add a block chooser
     url: /page-builder/docs/how-to/how-to-add-block-chooser.html
     versionless: true
 
-  - label: How to use full-width layouts
+  - label: Use full-width layouts
     url: /page-builder/docs/how-to/how-to-use-full-width-layouts.html
     versionless: true
 
-  - label: How to customize selectors
+  - label: Customize selectors
     url: /page-builder/docs/how-to/how-to-customize-selectors.html
     versionless: true
 
-  - label: How to apply product conditions
+  - label: Apply product conditions
     url: /page-builder/docs/how-to/how-to-apply-product-conditions.html
     versionless: true
 
-  - label: How to use server-side previews
+  - label: Use server-side previews
     url: /page-builder/docs/how-to/how-to-use-server-side-previews.html
     versionless: true
 
@@ -133,11 +133,11 @@ pages:
 #    url: /page-builder/docs/how-to/how-to-create-container-content-type.html
 #    versionless: true
 
-  - label: How to use Page Builder for product attributes
+  - label: Use Page Builder for product attributes
     url: /page-builder/docs/how-to/how-to-use-pagebuilder-for-product-attributes.html
     versionless: true
 
-  - label: How to deactivate Page Builder
+  - label: Deactivate Page Builder
     url: /page-builder/docs/how-to/how-to-deactivate-pagebuilder.html
     versionless: true
 

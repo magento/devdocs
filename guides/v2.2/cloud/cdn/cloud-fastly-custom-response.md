@@ -54,7 +54,7 @@ You can customize the default page by adapting the following HTML code to includ
 
 Verify that the modified source displays correctly in the browser. Then, add the customized HTML code to the Fastly configuration.
 
-{:procedure}
+{:.procedure}
 To add the custom response page to the Fastly configuration:
 
 1. [Log in to the Magento Admin UI]({{ page.baseurl }}/cloud/onboarding/onboarding-tasks.html#admin).
@@ -112,7 +112,7 @@ You can use the **Custom Synthetic Pages** > **Edit WAF page** option in the Fas
 {:.bs-callout .bs-callout-info}
 The Edit WAF option is available only if the WAF service is enabled for your {{ site.var.data.ece }} project.
 
-{: procedure}
+{:.procedure}
 To edit the WAF error page:
 
 1. [Log in to the Magento Admin UI]({{ page.baseurl }}/cloud/onboarding/onboarding-tasks.html#admin).

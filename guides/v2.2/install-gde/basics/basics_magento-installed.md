@@ -19,9 +19,11 @@ To determine if the Magento software is installed already, you can access the [M
 
 Then open a web browser and go to the URL you were provided. Some examples follow:
 
-	http://www.example.com/magento2/admin
-	https://www.example.com/admin
-	http://www.example.com
+```http
+http://www.example.com/magento2/admin
+https://www.example.com/admin
+http://www.example.com
+```
 
 If a 404 (Not Found) error displays, Magento probably isn't installed. You should confirm that with your system administrator or hosting provider.
 
