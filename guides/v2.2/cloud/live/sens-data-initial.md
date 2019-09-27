@@ -268,7 +268,6 @@ To modify settings to allow minification, edit `'0'` to `'1'` for `'minify_html'
          'minify_files' => '1',
      ],
 ```
-
 {: .no-copy}
 
 Save the changes to the file.
