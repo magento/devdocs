@@ -18,7 +18,7 @@ The WAF service provides the following benefits:
    -  Magento triages customer support tickets related to WAF issues that block legitimate traffic as Priority 1 issues.
    -  Automated WAF version upgrades ensure immediate coverage for new or evolving exploits. See [WAF maintenance and upgrades](#waf-maintenance-and-updates).
 
-The WAF service is available on Production environments for all {{ site.data.var.ece }} Pro and Starter plans at no additional costs.
+The WAF service is available on Production environments for all {{ site.data.var.ece }} Pro and Starter plans at no additional cost.
 
 {:.bs-callout .bs-callout-tip}
 For additional information about maintaining PCI compliance for your {{ site.var.data.ece }} stores, see [Magento Approach to PCI compliance](https://magento.com/pci-compliance).
