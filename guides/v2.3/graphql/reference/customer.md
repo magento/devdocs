@@ -108,7 +108,7 @@ The following call returns information about the logged-in customer. Provide the
 
 **Request**
 
-``` text
+```graphql
 {
   customer {
     firstname
@@ -136,7 +136,7 @@ The following call returns information about the logged-in customer. Provide the
 
 **Response**
 
-```
+```json
 {
   "data": {
     "customer": {
