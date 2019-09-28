@@ -13,12 +13,6 @@ pages:
         - label: Get customer authorization token
           url: /graphql/get-customer-authorization-token.html
 
-        - label: Queries
-          url: /graphql/queries.html
-
-        - label: Mutations
-          url: /graphql/mutations.html
-
         - label: GraphQL Caching
           url: /graphql/caching.html
 
@@ -47,6 +41,9 @@ pages:
 
     - label: Queries
       children:
+        - label: Using queries
+          url: /graphql/queries/index.html
+
         - label: cart query
           url: /graphql/queries/cart.html
 
@@ -112,6 +109,9 @@ pages:
         
     - label: Mutations
       children:
+        - label: Using mutations
+          url: /graphql/mutations/index.html
+
         - label: addConfigurableProductsToCart mutation
           url: /graphql/mutations/add-configurable-products.html
 
@@ -214,7 +214,7 @@ pages:
         - label: updateCustomerAddress mutation
           url: /graphql/mutations/update-customer-address.html
 
-    - label: Product data types and interfaces
+    - label: Catalog data types and interfaces
       children:
         - label: Product interface implementations
           url: /graphql/product/product-interface-implementations.html
