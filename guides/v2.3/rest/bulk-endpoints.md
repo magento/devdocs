@@ -113,7 +113,7 @@ The response contains an array that indicates whether the call successfully adde
 
 You can specify a store code in the route of an asynchronous endpoint so that it operates on a specific store, as shown below:
 
-```
+```http
 POST /<store_code>/async/bulk/V1/products
 PUT /<store_code>/async/bulk/V1/products/:sku
 ```
@@ -122,7 +122,7 @@ As a result, the asynchronous calls update the products on the specific store, i
 
 You can specify the `all` store code to perform operations on all existing stores:
 
-```
+```http
 POST /all/async/bulk/V1/products
 PUT /all/async/bulk/V1/products/:sku
 ```
