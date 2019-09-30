@@ -11,26 +11,26 @@ functional_areas:
   - Setup
 ---
 
-We know it's challenging to install the Magento software. We'd like to help you by simplifying the process as much as possible.
+We know it is challenging to install the Magento software. We would like to help you by simplifying the process as much as possible.
 
 This topic assumes:
 
-* You have your own Magento server (you're not using a shared hosting provider).
-* You're starting the installation using `composer create-project`, which enables you to get the most recent Magento software and to add your own customizations to it, if desired.
+* You have your own Magento server (you are not using a shared hosting provider).
+* You are starting the installation using `composer create-project`, which enables you to get the most recent Magento software and to add your own customizations to it, if desired.
 * Everything is installed on one host (database, web server, and so on).
-* The host you're installing on is either Ubuntu or CentOS.
+* The host you are installing on is either Ubuntu or CentOS.
 
    (You can use the same instructions to install on other UNIX distributions like RedHat Enterprise Linux (RHEL), or Debian, but these instructions aren't for Mac or Windows.)
 
 * Your host's IP address is `192.0.2.5`.
 
-   This is just an example IP address that you'll see in detailed examples throughout this topic. You can substitute it with whatever internal/external IP address matches your server.
+   This is just an example IP address that you will see in detailed examples throughout this topic. You can substitute it with whatever internal/external IP address matches your server.
 
-* You're installing to the `magento2` subdirectory under your web server's docroot (full path is `/var/www/html/magento2`)
+* You are installing to the `magento2` subdirectory under your web server's docroot (full path is `/var/www/html/magento2`)
 
    You can optionally set up static routing or a virtual host to install to a hostname instead of an IP but that's beyond the scope of this topic.
 
-We've broken the installation process into three main parts: getting started, installing, and post-installation. We hope that what follows helps you; if you'd like to suggest improvements, click **Edit this page on GitHub** at the top of this page and let us know.
+We have broken the installation process into three main parts: getting started, installing, and post-installation. We hope that what follows helps you; if you would like to suggest improvements, click **Edit this page on GitHub** at the top of this page and let us know.
 
 ## Precondition: How advanced are you?
 
@@ -63,7 +63,7 @@ cd <web server docroot directory>
 composer create-project --repository=https://repo.magento.com/ magento/project-community-edition magento2
 ```
 
-You're required to authenticate; see [Get your authentication keys]({{page.baseurl }}/install-gde/prereq/connect-auth.html) for details. This downloads Magento code only; it doesn't install the software for you.
+You are required to authenticate; see [Get your authentication keys]({{page.baseurl }}/install-gde/prereq/connect-auth.html) for details. This downloads Magento code only; it does not install the software for you.
 
 {:.bs-callout .bs-callout-tip}
 Alternatively, you can also download a [Magento software archive]({{page.baseurl }}/install-gde/install/get-software.html).
