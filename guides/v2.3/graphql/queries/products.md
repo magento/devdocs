@@ -515,7 +515,7 @@ query {
 
 ### Return minimum and maximum prices and discount information
 
-In the following example, a catalog price rule that provides a 10% discount on all fitness equipment is in effect. The product queried, `24-WG080`, is the Sprite Yoga Companion Kit bundle product. This product has two user-selected option that cause the price to vary. If you choose to query a product this is not a composite (bundle, group, or configurable) product, the minimum and maximum prices are the same.
+In the following example, a catalog price rule that provides a 10% discount on all fitness equipment is in effect. The product queried, `24-WG080`, is the Sprite Yoga Companion Kit bundle product. This product has two user-selected options that cause the price to vary. If you choose to query a product that is not a composite (bundle, group, or configurable) product, the minimum and maximum prices are the same.
 
 **Request**
 
@@ -558,7 +558,7 @@ In the following example, a catalog price rule that provides a 10% discount on a
     }
   }
 }
-
+```
 
 **Response**
 

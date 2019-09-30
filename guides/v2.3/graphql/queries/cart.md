@@ -535,7 +535,7 @@ Product | Quantity | Fixed/Discount | Amount
 24-UG05 | 5 | Fixed | $16
 24-UG05 | 10 | Fixed | $11
 
-The cart in the example contains 12 units of `24-UG05` and 8 units of `24-UG-01`, so the price of `24-UG05` is $11, and the price of `24-UG01` is $18.05 (10% off).
+The cart in the example contains 12 units of `24-UG05` and 8 units of `24-UG-01`, so the price of `24-UG05` is $11, and the price of `24-UG01` is $18.05 (5% off).
 
 **Request**
 

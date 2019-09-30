@@ -42,8 +42,8 @@ Attribute | Data type | Description
 `new_to_date` | String | The end date for new product listings
 `only_x_left_in_stock` | Float | The "Only X left Threshold" assigned to the product. This attribute is defined in the `InventoryGraphQl` module.
 `options_container` | String | If the product has multiple options, determines where they appear on the product page
-`price` | ProductPrices | Deprecated. Use `price_range` instead.<br/>The price of an item. A `ProductPrice` object is returned.
-`price_range` | [PriceRange!](#PriceRange) |  A PriceRange object, indicating the range of prices for the product
+`price` | ProductPrices | Deprecated. Use `price_range` instead.<br/>The price of an item. A `ProductPrice` object is returned
+`price_range` | [PriceRange!](#PriceRange) |  A `PriceRange` object, indicating the range of prices for the product
 `price_tiers` | [TierPrice] | An array of `TierPrice` objects
 `product_links` | [ProductLinksInterface] | An array of [ProductLinks](#ProductLinks) objects
 `related_products` | [ProductInterface] | An array of related products
@@ -77,9 +77,9 @@ The `ProductPrices` object contains the regular price of an item, as well as its
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`maximalPrice` | Price | Deprecated. Use `PriceRange.maximum_price` instead. Used for composite (bundle, configurable, grouped) products. This is the highest possible final price for all the options defined within a composite product. If you're specifying a price range, this would be the "to" value.
-`minimalPrice` | Price | Deprecated. Use `PriceRange.minimum_price` instead. Used for composite (bundle, configurable, grouped) products. This is the lowest possible final price for all the options defined within a composite product. If you're specifying a price range, this would be the "from" value.
-`regularPrice` | Price | Deprecated. Use `PriceRange.maximum_price` or `PriceRange.minimum_price` instead. The base price of a product.
+`maximalPrice` | Price | Deprecated. Use `PriceRange.maximum_price` instead. Used for composite (bundle, configurable, grouped) products. This is the highest possible final price for all the options defined within a composite product. If you're specifying a price range, this would be the "to" value
+`minimalPrice` | Price | Deprecated. Use `PriceRange.minimum_price` instead. Used for composite (bundle, configurable, grouped) products. This is the lowest possible final price for all the options defined within a composite product. If you're specifying a price range, this would be the "from" value
+`regularPrice` | Price | Deprecated. Use `PriceRange.maximum_price` or `PriceRange.minimum_price` instead. The base price of a product
 
 ### PriceRange object {#PriceRange}
 
@@ -102,7 +102,7 @@ Attribute |  Data Type | Description
 
 ### ProductDiscount object {#ProductDiscount}
 
-The `ProductDiscount` object expresses the discount applied to a product as fixed amount, such as $5, and as a percentage, such as 10%. The discount originates from special pricing or a catalog price rule.
+The `ProductDiscount` object expresses the discount applied to a product as a fixed amount, such as $5, and as a percentage, such as 10%. The discount originates from special pricing or a catalog price rule.
 
 Attribute |  Data Type | Description
 --- | --- | ---
