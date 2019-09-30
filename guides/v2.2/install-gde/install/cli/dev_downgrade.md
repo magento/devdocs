@@ -33,18 +33,28 @@ To change versions after cloning:
 1.	Log in to your Magento server as, or switch to, [the Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html).
 2.	Use the following command to uninstall the Magento software:
 
-		php <your Magento clone dir>/bin/magento setup:uninstall
+    ```bash
+    php <your Magento clone dir>/bin/magento setup:uninstall
+    ```
+
 3.	Either remove your old Magento clone directory or [update the Magento software]({{ page.baseurl }}/install-gde/install/cli/dev_update-magento.html).
 4.	If you haven't already done so, clone the Magento 2 GitHub repository as follows:
 
-		git clone git@github.com:magento/magento2.git
+    ```bash
+    git clone git@github.com:magento/magento2.git
+    ```
+
 5.	Change to [release tag](https://github.com/magento/magento2/tags) as follows:
 
-		git checkout tags/<tag name>  [-b <branch name>]
+    ```bash
+    git checkout tags/<tag name>  [-b <branch name>]
+    ```
 
-	For example, to check out the 2.2.0 release tag in a new branch named `2.2.0`, enter
+    For example, to check out the 2.2.0 release tag in a new branch named `2.2.0`, enter
 
-		git checkout tags/2.2.0 -b 2.2.0
+    ```bash
+    git checkout tags/2.2.0 -b 2.2.0
+    ```
 
 5.	Install the Magento software using the [command line]({{ page.baseurl }}/install-gde/install/cli/install-cli-install.html) or [Setup Wizard]({{ page.baseurl }}/install-gde/install/web/install-web.html).
 
@@ -56,18 +66,28 @@ To change versions after cloning:
 2.	Create a [new database instance]({{ page.baseurl }}/install-gde/prereq/mysql.html#instgde-prereq-mysql-config) for your installation.
 2.	[Back up]({{ page.baseurl }}/install-gde/install/cli/install-cli-backup.html#instgde-cli-uninst-back) the Magento file system, database, and media files:
 
-		php <magento_root>/bin/magento setup:backup --code --media --db
+    ```bash
+    php <magento_root>/bin/magento setup:backup --code --media --db
+    ```
+
 3.	Change to [release tag](https://github.com/magento/magento2/tags) as follows:
 
-		git checkout tags/<tag name>  [-b <branch name>]
+    ```bash
+    git checkout tags/<tag name>  [-b <branch name>]
+    ```
 
-	For example, to check out the 2.2.0 release tag in a new branch named `2.2.0`, enter
+    For example, to check out the 2.2.0 release tag in a new branch named `2.2.0`, enter
 
-		git checkout tags/2.2.0 -b 2.2.0
+    ```bash
+    git checkout tags/2.2.0 -b 2.2.0
+    ```
 
 4.	Manually clear Magento `var` directories:
 
-		rm -rf <magento_root>/var/cache/* <magento_root>/var/page_cache/* <magento_root>/generated/code/*
+    ```bash
+    rm -rf <magento_root>/var/cache/* <magento_root>/var/page_cache/* <magento_root>/generated/code/*
+    ```
+
 5.	Install the Magento software in your new database instance.
 
-	You can install using either the [command line]({{ page.baseurl }}/install-gde/install/cli/install-cli-install.html) or [Setup Wizard]({{ page.baseurl }}/install-gde/install/web/install-web.html).
+    You can install using either the [command line]({{ page.baseurl }}/install-gde/install/cli/install-cli-install.html) or [Setup Wizard]({{ page.baseurl }}/install-gde/install/web/install-web.html).

@@ -34,7 +34,9 @@ You can use this command if:
 
 Command options:
 
-	magento setup:config:set [--<parameter>=<value>, ...]
+```bash
+magento setup:config:set [--<parameter>=<value>, ...]
+```
 
 The following table discusses the meanings of installation parameters and values.
 
