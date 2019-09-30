@@ -523,7 +523,7 @@ The `CartItemInterface` object can contain the following attributes.
 Attribute |  Data Type | Description
 --- | --- | ---
 `id` | String | ID of the item
-`product` | [ProductInterface]({{ page.baseurl }}/graphql/product/product-interface-implementations.html) | Contains attributes that are common to all types of products
+`product` | [ProductInterface]({{ page.baseurl }}/graphql/product/product-interface.html) | Contains attributes that are common to all types of products
 `quantity` | Float | The number of items in the cart
 
 ### CartItemQuantity object {#CartItemQuantity}

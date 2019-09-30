@@ -40,9 +40,9 @@ The `search` element is optional, but it can be used with or without filters. Ea
 
 ### filter attribute
 
-'The `ProductFilterInput` object defines the filters to be used in the search. A filter contains at least one attribute, a comparison operator, and the value that is being searched for. The following example filter searches for products that has a `sku` that contains the string `24-MB` with a `price` that's less than `50`.
+The `ProductFilterInput` object defines the filters to be used in the search. A filter contains at least one attribute, a comparison operator, and the value that is being searched for. The following example filter searches for products that has a `sku` that contains the string `24-MB` with a `price` that's less than `50`.
 
-``` text
+```graphql
 filter: {
   sku: {
     like: "24-MB%"
@@ -202,9 +202,7 @@ When a product requires a filter attribute that is not a field on its output sch
 
 This example adds `field_to_sort` and `other_field_to_sort` attributes to the `additionalAttributes` array defined in the `ProductEntityAttributesForAst` class. The array already contains the `min_price`, `max_price`, and `category_ids` attributes.
 
-
 ## Sample queries
-
 
 ### Full text search
 
@@ -475,7 +473,7 @@ The query returns 14 items.
 
 The following query shows how to get related products, Up-sells and Cross-sells for the particular product:
 
-```text
+```graphql
 {
   products(filter: { sku: { eq: "24-WB06" } }) {
     items {
@@ -571,7 +569,6 @@ The following query shows how to get related products, Up-sells and Cross-sells 
   }
 }
 ```
-
 
 ### Layered navigation
 
@@ -683,7 +680,7 @@ query {
 
 ### Include website information with `products` query results {#inclWebsiteInfoExample}
 
-The [ProductInterface]({{ page.baseurl }}/graphql/queries/products.html#ProductInterface) can include information about the `Website` object.
+The [ProductInterface]({{ page.baseurl }}/graphql/product/product-interface.html) can include information about the `Website` object.
 
 **Request**
 

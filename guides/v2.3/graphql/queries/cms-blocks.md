@@ -17,7 +17,7 @@ The following query returns information about the `login-data` block:
 
 **Request**
 
-```text
+```graphql
 {
   cmsBlocks(identifiers: "login-data") {
     items {

@@ -15,7 +15,7 @@ The following query returns all countries listed for the current instance of Mag
 
 **Request**
 
-```text
+```graphql
 query {
     countries {
         id

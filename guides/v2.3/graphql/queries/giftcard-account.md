@@ -18,7 +18,7 @@ The following example returns information about the `01PNC9L76H4H` gift card cod
 
 **Request**
 
-``` text
+```graphql
 query {
   giftCardAccount(input: {gift_card_code: "01PNC9L76H4H"}){
     code
