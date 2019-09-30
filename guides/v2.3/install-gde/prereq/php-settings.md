@@ -132,15 +132,15 @@ Use the following guidelines to find it:
 
 - Apache web server:
 
-  For Ubuntu with Apache, OPcache settings are typically located in `php.ini`.
+    For Ubuntu with Apache, OPcache settings are typically located in `php.ini`.
 
-  For CentOS with Apache or nginx, OPcache settings are typically located in `/etc/php.d/opcache.ini`
+    For CentOS with Apache or nginx, OPcache settings are typically located in `/etc/php.d/opcache.ini`
 
-  If not, use the following command to locate it:
+    If not, use the following command to locate it:
 
-  ```bash
-  sudo find / -name 'opcache.ini'
-  ```
+    ```bash
+    sudo find / -name 'opcache.ini'
+    ```
 
 - nginx web server with PHP-FPM: `/etc/php5/fpm/php.ini`
 
@@ -156,18 +156,28 @@ To set PHP options:
 
     date.timezone =
 
-1. Add the time zone setting you found in step 2.
-1. Change the value of `memory_limit` to one of the values at the beginning of this section.
+    ```conf
+    date.timezone =
+    ```
 
-    For example, `memory_limit=2G`
+5.	Add the time zone setting you found in step 2.
+6.	Change the value of `memory_limit` to one of the values at the beginning of this section.
 
-1. Locate the following setting:
+    For example,
+
+    ```conf
+    memory_limit=2G
+    ```
 
     asp_tags =
 
-1. Make sure its value is set to `Off`.
-1. Save your changes and exit the text editor.
-1. Open the other `php.ini` (if they are different) and make the same changes in it.
+    ```conf
+    asp_tags =
+    ```
+
+9.	Make sure its value is set to `Off`.
+10.	Save your changes and exit the text editor.
+11.	Open the other `php.ini` (if they are different) and make the same changes in it.
 
 ## Step 3: Set OPcache options {#php-required-opcache}
 

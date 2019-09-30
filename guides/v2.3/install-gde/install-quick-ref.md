@@ -56,6 +56,9 @@ When all prerequisites have been met, get the Magento software using [Composer][
 
 ```bash
 cd <web server docroot directory>
+```
+
+```bash
 composer create-project --repository=https://repo.magento.com/ magento/project-community-edition magento2
 ```
 
@@ -104,6 +107,9 @@ Optionally switch to [developer mode]({{page.baseurl }}/config-guide/cli/config-
 
 ```bash
 cd <magento_root>/bin
+```
+
+```bash
 php magento deploy:mode:set developer
 ```
 
@@ -148,7 +154,11 @@ To run the Web Setup Wizard:
     * If the readiness check passes, click **Next** and continue with the next step.
     * If the readiness check fails, see [Readiness check issues][]
 
-1. Add a Database enables you to set up your Magento database.
+    ```http
+    http://192.0.2.5/magento2/setup
+    ```
+
+2.	At the welcome page, click **Agree and Setup Magento**.
 
   ![Set up your Magento database]({{ site.baseurl }}/common/images/install_qr_database.png){:width="400px"}
 

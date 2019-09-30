@@ -79,7 +79,10 @@ To add stopwords for a locale:
 
     For example, to add an Italian stopword file, add the following line:
 
-	    <it_IT>stopwords_it_IT.csv</it_IT>
+    ```text
+    <it_IT>stopwords_it_IT.csv</it_IT>
+    ```
+
 7. Save the changes to `esconfig.xml` and exit the text editor.
 8. Clean the Magento configuration cache.
 
@@ -87,9 +90,9 @@ To add stopwords for a locale:
 
 	* Command line: As the Magento file system owner, enter the following command:
 
-	```bash
-	bin/magento magento cache:clean config
-	```
+      ```bash
+      bin/magento magento cache:clean config
+      ```
 
 9.Check the results by searching for terms on your storefront.
 

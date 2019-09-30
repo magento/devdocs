@@ -7,7 +7,7 @@ Magento provides several endpoints that allow you to check whether a product fro
 
 **Service names**
 
-```
+```http
 inventorySalesApiGetProductSalabilityV1
 inventorySalesApiIsProductSalableV1
 inventorySalesApiIsProductSalableForRequestedQtyV1
@@ -16,7 +16,7 @@ inventorySalesApiStockResolverV1
 
 **REST endpoints**
 
-```
+```http
 GET /V1/inventory/get-product-salable-quantity/:sku/:stockId
 GET /V1/inventory/is-product-salable/:sku/:stockId
 GET /V1/inventory/is-product-salable-for-requested-qty/:sku/:stockId/:requestedQty

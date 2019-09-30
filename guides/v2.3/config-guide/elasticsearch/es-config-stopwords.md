@@ -49,11 +49,14 @@ To edit stopwords:
 4.	Save your changes and exit the text editor.
 5.	Clean the Magento configuration cache.
 
-	*	Magento Admin: **System** > Tools > **Cache Management**. Select the **Configuration** checkbox and, from the list above it, click **Refresh**. Click **Submit** to complete the action.
+    *	Magento Admin: **System** > Tools > **Cache Management**. Select the **Configuration** checkbox and, from the list above it, click **Refresh**. Click **Submit** to complete the action.
 
-	*	Command line: As the Magento file system owner, enter the following command:
+    *	Command line: As the Magento file system owner, enter the following command:
 
-			php <magento_root>/bin/magento magento cache:clean config
+        ```bash
+        php <magento_root>/bin/magento magento cache:clean config
+        ```
+
 6.	Check the results by searching for terms on your [storefront](https://glossary.magento.com/storefront).
 
 ### Create stopwords for a new locale {#config-create-stopwords}
@@ -71,19 +74,27 @@ To add stopwords for a locale:
 5.	In the same directory, open `esconfig.xml` in a text editor.
 6.	Add a line to `esconfig.xml` as follows:
 
-	    <LOCALE_CODE>stopwords_LOCALE_CODE.csv</LOCALE_CODE>
+    ```xml
+    <LOCALE_CODE>stopwords_LOCALE_CODE.csv</LOCALE_CODE>
+    ```
 
     For example, to add an Italian stopword file, add the following line:
 
-	    <it_IT>stopwords_it_IT.csv</it_IT>
+    ```xml
+    <it_IT>stopwords_it_IT.csv</it_IT>
+    ```
+
 7.	Save the changes to `esconfig.xml` and exit the text editor.
 8.	Clean the Magento configuration cache.
 
-	*	Magento Admin: **System** > Tools > **Cache Management**. Select the **Configuration** checkbox and, from the list above it, click **Refresh**. Click **Submit** to complete the action.
+    *	Magento Admin: **System** > Tools > **Cache Management**. Select the **Configuration** checkbox and, from the list above it, click **Refresh**. Click **Submit** to complete the action.
 
-	*	Command line: As the Magento file system owner, enter the following command:
+    *	Command line: As the Magento file system owner, enter the following command:
 
-			php <magento_root>/bin/magento magento cache:clean config
+        ```bash
+        php <magento_root>/bin/magento magento cache:clean config
+        ```
+
 9.	Check the results by searching for terms on your storefront.
 
 ## Change the stopword directory {#config-stopword-dir}
@@ -99,19 +110,18 @@ To change the directory:
 
 1.	As the Magento file system owner, open the Elasticsearch `di.xml` in a text editor.
 
-	If you cloned the repository, it's located at `app/code/Magento/Elasticsearch/etc/di.xml`
+    If you cloned the repository, it's located at `app/code/Magento/Elasticsearch/etc/di.xml`
 
-	If you got an archive or the metapackage, it's located at `vendor/magento/module-elasticsearch/etc/di.xml`
+    If you got an archive or the metapackage, it's located at `vendor/magento/module-elasticsearch/etc/di.xml`
 
 2.	Change the value of `fileDir` to the desired directory:
 
-```xml
-
-<type name="Magento\Elasticsearch\SearchAdapter\Query\Preprocessor\Stopwords">
-    <arguments>
-        <argument name="stopwordsDirectory" xsi:type="string">app/code/Magento/Elasticsearch/etc/stopwords</argument>
-    </arguments>
-</type>
-```
+    ```xml
+    <type name="Magento\Elasticsearch\SearchAdapter\Query\Preprocessor\Stopwords">
+        <arguments>
+            <argument name="stopwordsDirectory" xsi:type="string">app/code/Magento/Elasticsearch/etc/stopwords</argument>
+        </arguments>
+    </type>
+    ```
 
 Save your changes to `di.xml` and exit the text editor.

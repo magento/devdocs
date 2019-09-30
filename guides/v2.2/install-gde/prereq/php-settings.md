@@ -45,8 +45,7 @@ Copyright (c) 1997-2018 The PHP Group
 Zend Engine v3.1.0, Copyright (c) 1998-2018 Zend Technologies with Zend OPcache v7.1.6, Copyright (c) 1999-2018, by Zend Technologies
 ```
 
-If PHP is not installed, or a version upgrade is needed, install it following instructions for your particular Linux flavor.
-On CentOS, [additional steps may be required][].
+If PHP is not installed, or a version upgrade is needed, install it following instructions for your particular Linux flavor. On CentOS, [additional steps may be required][].
 
 ## Verify installed extensions
 
@@ -141,15 +140,15 @@ Use the following guidelines to find it:
 
 - Apache web server:
 
-  For Ubuntu with Apache, OPcache settings are typically located in `php.ini`.
+    For Ubuntu with Apache, OPcache settings are typically located in `php.ini`.
 
-  For CentOS with Apache or nginx, OPcache settings are typically located in `/etc/php.d/opcache.ini`
+    For CentOS with Apache or nginx, OPcache settings are typically located in `/etc/php.d/opcache.ini`
 
-  If not, use the following command to locate it:
+    If not, use the following command to locate it:
 
-  ```bash
-  sudo find / -name 'opcache.ini'
-  ```
+    ```bash
+    sudo find / -name 'opcache.ini'
+    ```
 
 - nginx web server with PHP-FPM: `/etc/php5/fpm/php.ini`
 
@@ -174,21 +173,34 @@ If you have more than one `opcache.ini`, modify all of them.
 
   For example `memory_limit=2G`
 
-1. _Required for PHP 5.6, recommended for PHP 5.5_. Locate `always_populate_raw_post_data`, uncomment it if necessary, and set it as follows:
+    ```conf
+    date.timezone =
+    ```
 
-    ```php
+5.	Add the time zone setting you found in step 2.
+6.	Change the value of `memory_limit` to one of the values at the beginning of this section.
+
+    For example,
+
+    ```conf
+    memory_limit=2G
+    ```
+
+7.	_Required for PHP 5.6, recommended for PHP 5.5_. Locate `always_populate_raw_post_data`, uncomment it if necessary, and set it as follows:
+
+    ```conf
     always_populate_raw_post_data = -1
     ```
 
-1. Locate the following setting:
+8.	Locate the following setting:
 
-    ```php
+    ```conf
     asp_tags =
     ```
 
-1. Make sure its value is set to `Off`.
-1. Save your changes and exit the text editor.
-1. Open the other `php.ini` (if they are different) and make the same changes in it.
+9.	Make sure its value is set to `Off`.
+10.	Save your changes and exit the text editor.
+11.	Open the other `php.ini` (if they are different) and make the same changes in it.
 
 {% endcollapsible %}
 
