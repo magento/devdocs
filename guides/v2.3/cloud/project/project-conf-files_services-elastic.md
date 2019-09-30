@@ -18,7 +18,8 @@ functional_areas:
 
 {% include cloud/service-config-integration-starter.md %}
 
-#### To enable Elasticsearch:
+{:.procedure}
+To enable Elasticsearch:
 
 1.  Add the `elasticsearch` service to the `.magento/services.yaml` file with the Elasticsearch version and allocated disk space in MB.
 
