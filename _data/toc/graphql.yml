@@ -225,7 +225,7 @@ pages:
     - label: Product data types and interfaces
       children:
         - label: Product interface implementations
-          url: /graphql/product/product-interface-implementations.hthml
+          url: /graphql/product/product-interface-implementations.html
 
         - label: ProductInterface
           url: /graphql/product/product-interface.html
