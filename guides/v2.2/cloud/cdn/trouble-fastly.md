@@ -66,16 +66,18 @@ To check the error logs:
 
 - [Error log]({{page.baseurl}}/cloud/project/log-locations.html#application-logs)
 
-   ```
+   ```text
    /var/log/platform/<project_ID>/error.log
    ```
+
    This log includes any errors from the application or PHP engine, for example `memory_limit` or `max_execution_time exceeded` errors. If you do not find any Fastly-related errors, check the PHP access log.
 
 -  PHP access log
 
-   ```
+   ```text
    /var/log/platform/<project_ID>/php.access.log
    ```
+
   Search the log for HTTP 200 responses for the URL that returned the 503 error. If you find the 200 response, it means that Magento returned the page without errors. That indicates the issue might have occurred after the interval that exceeds the `first_byte_timeout` value set in the Fastly service configuration.
 
 When a 503 error occurs, Fastly returns the reason on the error and maintenance page. You might not be able to see the reason if you added code for a custom response page. To view the reason code on the default error page, you can remove the HTML code for the custom error page.
@@ -140,7 +142,7 @@ To check the response headers:
 
 1.  In the response, verify the [headers](#response-headers) to ensure that Fastly is working. You should see following unique headers in the response:
 
-    ```
+    ```http
     < Fastly-Magento-VCL-Uploaded: yes
     < X-Cache: HIT, MISS
     ```
@@ -320,7 +322,7 @@ To rollback the VCL version:
 1.  To get a list of the available VCL versions for a service, run the following command
 
     ```bash
-curl -H "Fastly-Key: <FASTLY_API_TOKEN>" https://api.fastly.com/service/<FASTLY_SERVICE_ID>/version/
+    curl -H "Fastly-Key: <FASTLY_API_TOKEN>" https://api.fastly.com/service/<FASTLY_SERVICE_ID>/version/
     ```
 
 1.  Run the following command to change the active VCL version to a specified version.

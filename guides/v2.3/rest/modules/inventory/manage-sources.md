@@ -24,7 +24,7 @@ Bundle and grouped products currently do not support multi-sourcing and must be 
 
 **REST endpoints**
 
-```
+```http
 POST /V1/inventory/sources
 GET /V1/inventory/sources/:sourceCode
 PUT /V1/inventory/sources/:sourceCode
