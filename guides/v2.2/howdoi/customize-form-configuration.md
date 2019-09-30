@@ -80,4 +80,4 @@ For reference, view the product form configuration files of the Magento modules:
 
 * `<Magento_Catalog_module_dir>/view/adminhtml/ui_component/product_form.xml`
 * `<Magento_CatalogInventory_module_dir>/view/adminhtml/ui_component/product_form.xml`
-* `<Magento_ConfigurableProduct_module_dir>view/adminhtml/ui_component/product_form.xml`
+* `<Magento_ConfigurableProduct_module_dir>/view/adminhtml/ui_component/product_form.xml`

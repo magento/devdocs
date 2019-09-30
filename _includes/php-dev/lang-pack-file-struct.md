@@ -2,7 +2,7 @@
 
 A typical directory structure for three language packages follows:
 
-~~~
+```tree
 ├── de_DE
 │   ├── composer.json
 │   ├── language.xml
@@ -21,7 +21,7 @@ A typical directory structure for three language packages follows:
 │   ├── LICENSE_AFL.txt
 │   ├── LICENSE.txt
 │   └── registration.php
-~~~
+```
 
 The only required directory for a language package is the top-level directory. Although not required, we recommend that the directory name match the [ISO](http://www.iso.org/iso/home/standards/language_codes.htm) code to identify the locale.
 

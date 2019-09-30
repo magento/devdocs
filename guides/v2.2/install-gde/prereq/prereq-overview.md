@@ -31,13 +31,23 @@ Enter the following commands as a user with `root` privileges:
 
 *	Ubuntu
 
-		apt-get update
-		apt-get upgrade
+    ```bash
+    apt-get update
+    ```
+
+    ```bash
+    apt-get upgrade
+    ```
 
 *	CentOS
 
-		yum -y update
-		yum -y upgrade
+    ```bash
+    yum -y update
+    ```
+
+    ```bash
+    yum -y upgrade
+    ```
 
 ## Prerequisite check {#instgde-prereq-check}
 
@@ -51,21 +61,27 @@ Ubuntu: `apache2 -v`
 
 You must run Apache version 2.2 or 2.4 as the following result indicates:
 
-	Server version: Apache/2.2.15 (Unix)
-	Server built: Jul 23 2014 14:17:29
+```terminal
+Server version: Apache/2.2.15 (Unix)
+Server built: Jul 23 2014 14:17:29
+```
 
 To install or upgrade Apache, see [Apache]({{ page.baseurl }}/install-gde/prereq/apache.html).
 
 ### PHP
 
-	php -v
+```bash
+php -v
+```
 
 You must run [PHP](https://glossary.magento.com/php) version 7.0.x or 7.1.x as the following result indicates:
 
-	PHP 7.0.8-2+deb.sury.org~trusty+1 (cli) ( NTS )
-	Copyright (c) 1997-2016 The PHP Group
-	Zend Engine v3.0.0, Copyright (c) 1998-2016 Zend Technologies
-      with Zend OPcache v7.0.8-2+deb.sury.org~trusty+1, Copyright (c) 1999-2016, by Zend Technologies
+```terminal
+PHP 7.0.8-2+deb.sury.org~trusty+1 (cli) ( NTS )
+Copyright (c) 1997-2016 The PHP Group
+Zend Engine v3.0.0, Copyright (c) 1998-2016 Zend Technologies
+    with Zend OPcache v7.0.8-2+deb.sury.org~trusty+1, Copyright (c) 1999-2016, by Zend Technologies
+```
 
 To install PHP, see:
 
@@ -74,25 +90,31 @@ To install PHP, see:
 
 ### MySQL
 
-	mysql -u <database root user or database owner name> -p
+```bash
+mysql -u <database root user or database owner name> -p
+```
 
 For example:
 
-	mysql -u magento -p
+```bash
+mysql -u magento -p
+```
 
 You must run MySQL version 5.6 or later as the following result indicates:
 
-		Welcome to the MySQL monitor. Commands end with ; or \g.
-		Your MySQL connection id is 871
-		Server version: 5.6.21 MySQL Community Server (GPL)
+```terminal
+Welcome to the MySQL monitor. Commands end with ; or \g.
+Your MySQL connection id is 871
+Server version: 5.6.21 MySQL Community Server (GPL)
 
-		Copyright (c) 2000, 2014, Oracle and/or its affiliates. All rights reserved.
+Copyright (c) 2000, 2014, Oracle and/or its affiliates. All rights reserved.
 
-		Oracle is a registered trademark of Oracle Corporation and/or its
-		affiliates. Other names may be trademarks of their respective
-		owners.
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
 
-		Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+```
 
 Enter `exit` at the `mysql>` prompt to exit.
 

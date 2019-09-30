@@ -46,14 +46,14 @@ Old data scripts cannot be converted automatically. The following steps help mak
     ```bash
     bin/magento setup:db-declaration:generate-patch [options] <module-name> <patch-name>
     ```
+
     where `[options]` can be any of the following:
 
     `--revertable[=true | false]` - Determines whether the patch is revertable. The default value is `false`.
 
     `--type[=<type>]` - Specifies what type of patch to generate. The default is `data`.
 
-2. All released modules that previously used upgrade scripts must support backward compatibility by implementing
-`\Magento\Framework\Setup\Patch\PatchVersionInterface` and the `getVersion` method. This method allows you to skip changes that were applied in previous versions and were done by old scripts. The returned value of the `getVersion` method in this case should be equal to the value of a version in `version_compare` function in old scripts. When the `InstallData.php` script does not have any versions to compare, you can specify the first version of your module. See [Develop declarative data and schema patches]({{ page.baseurl }}/extension-dev-guide/declarative-schema/data-patches.html) for more information.
+2. All released modules that previously used upgrade scripts must support backward compatibility by implementing `\Magento\Framework\Setup\Patch\PatchVersionInterface` and the `getVersion` method. This method allows you to skip changes that were applied in previous versions and were done by old scripts. The returned value of the `getVersion` method in this case should be equal to the value of a version in `version_compare` function in old scripts. When the `InstallData.php` script does not have any versions to compare, you can specify the first version of your module. See [Develop declarative data and schema patches]({{ page.baseurl }}/extension-dev-guide/declarative-schema/data-patches.html) for more information.
 
 ## Dry run mode
 

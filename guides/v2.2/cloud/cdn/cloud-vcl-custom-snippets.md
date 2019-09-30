@@ -283,7 +283,7 @@ Use these commands to manage snippets that you added using the Fastly API. If yo
 
    Modify the [prepared JSON file](#create-snippet) and send the following request:
 
-   ```
+   ```bash
    curl -H "Fastly-Key: $FASTLY_API_TOKEN" https://api.fastly.com/service/$FASTLY_SERVICE_ID/version/$FASTLY_VERSION/snippet/<snippet_name> -H 'Content-Type: application/json' -X PUT --data @<filename.json>
    ```
 
@@ -291,9 +291,10 @@ Use these commands to manage snippets that you added using the Fastly API. If yo
 
     Get a list of snippets and use the following `curl` command with the specific snippet name to delete:
 
-   ```
+   ```bash
    curl -H "Fastly-Key: $FASTLY_API_TOKEN" https://api.fastly.com/service/$FASTLY_SERVICE_ID/version/$FASTLY_VERSION/snippet/<snippet_name> -X DELETE
    ```
+
 -  **Override values in the [default Fastly VCL code](https://github.com/fastly/fastly-magento2/tree/master/etc/vcl_snippets)**
 
    Create a new snippet with updated values and assign a priority of `100`.

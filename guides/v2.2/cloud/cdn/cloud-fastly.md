@@ -29,9 +29,9 @@ Fastly provides the following services to optimize and secure content delivery o
 
 -  **Security**—After you set up your {{ site.data.var.ece }} project to use the Fastly CDN, additional security features are available to protect your sites and network.
 
-      -  [**DDoS protection**](#ddos-protection)—Built-in protection against common attacks like Ping of Death, Smurf attacks, as well as other ICMP-based floods.
+   -  [**DDoS protection**](#ddos-protection)—Built-in protection against common attacks like Ping of Death, Smurf attacks, as well as other ICMP-based floods.
 
-      -  **[Managed Cloud WAF]({{ page.baseurl }}/cloud/cdn/fastly-waf-service.html)**—Managed web application firewall service that provides PCI-compliant protection to block malicious traffic before it can damage your production {{ site.data.var.ece }} sites and network.
+   -  **[Web Application Firewall]({{ page.baseurl }}/cloud/cdn/fastly-waf-service.html)**—Managed web application firewall service that provides PCI-compliant protection to block malicious traffic before it can damage your production {{ site.data.var.ece }} sites and network.
 
 -  **Image optimization**—Offloads image processing and resizing load to the Fastly service freeing servers to process orders and conversions efficiently. See [Fastly image optimization]({{ page.baseurl }}/cloud/cdn/fastly-image-optimization.html).
 
@@ -53,17 +53,17 @@ During project provisioning, Magento adds your project to the Fastly service acc
 
 Fastly only allows you to assign an apex domain and associated subdomains to one Fastly service and account. If you have an existing Fastly account that links the same apex and subdomains used for your {{ site.data.var.ece }}, you have the following options:
 
-- Remove the apex and subdomains from the existing account before requesting Fastly service credentials for your {{ site.data.var.ece}} project environments. See [Working with Domains](https://docs.fastly.com/guides/basic-configuration/working-with-domains) in the Fastly documentation.
+-  Remove the apex and subdomains from the existing account before requesting Fastly service credentials for your {{ site.data.var.ece}} project environments. See [Working with Domains](https://docs.fastly.com/guides/basic-configuration/working-with-domains) in the Fastly documentation.
 
-  Use this option to link the apex domain and all subdomains to the Fastly service account for {{ site.data.var.ece }}.
+   Use this option to link the apex domain and all subdomains to the Fastly service account for {{ site.data.var.ece }}.
 
-- Submit a support ticket to request domain delegation so that apex and subdomains can be linked to different accounts.
+-  Submit a support ticket to request domain delegation so that apex and subdomains can be linked to different accounts.
 
-  Use this option if your apex domain has multiple subdomains for Magento and non-Magento sites that you want to link to different Fastly accounts.
+   Use this option if your apex domain has multiple subdomains for Magento and non-Magento sites that you want to link to different Fastly accounts.
 
 #### Request domain delegation
 
-*Scenario 1*
+*Scenario 1:*
 
 The apex domain (`testweb.com` and `www.testweb.com`) is linked to an existing Fastly account. You have a {{ site.data.var.ece }} project configured with the following subdomains: `mcstaging.testweb.com` and `mcprod.testweb.com`. You do not want to move the apex domain to the Fastly service account for {{ site.data.var.ece }} Magento.
 
@@ -71,7 +71,7 @@ Submit a [Fastly support ticket](https://docs.fastly.com/guides/detailed-product
 
 After the delegation is complete, your project subdomains can be added to the Fastly service account for {{ site.data.var.ece }}. See [Get Fastly credentials]({{ page.baseurl }}/cloud/cdn/configure-fastly.html#cloud-fastly-creds).
 
-*Scenario 2*
+*Scenario 2:*
 
 The apex domain (`testweb.com` and `www.testweb.com`) is linked to the {{ site.data.var.ece }} Fastly service account. You want to manage Fastly services for the `service.testweb.com` and `product-updates.testweb.com` subdomains from a different Fastly account.
 
@@ -96,7 +96,7 @@ lengthy processing, or when trying to perform bulk operations.
 
 If you receive a 503 error, try to submit the request directly to the origin
 shield URL and review logs to identify the source of the issue. For details,
-see [Fastly troubleshooting]({{ page.baseurl }}/cloud/cdn/trouble-fastly.html#timeouts).
+see [Fastly troubleshooting]({{ page.baseurl }}/cloud/cdn/trouble-fastly.html#errors).
 
 Fastly can be bypassed for the Magento Admin to perform long running or bulk actions and API access to avoid 503s. For Fastly module 1.2.22 and later, the timeout for the Magento Admin was extended to three minutes. You can also update the Fastly configuration for your store to [extend the Fastly timeout for the Magento Admin]({{ page.baseurl }}/cloud/cdn/configure-fastly.html#bulkaction).
 
@@ -153,11 +153,10 @@ see the Fastly [GeoIP documentation](https://github.com/fastly/fastly-magento2/b
 
 The installation and configuration process is:
 
-* Install the Fastly module in an Integration branch, without configuring
-settings or entering credentials.
-* Deploy the code to `integration` then to Staging and Production
-* Configure Fastly in Staging and Production, not in Integration or your local
-* Test Fastly for caching
+-  Install the Fastly module in an Integration branch, without configuring settings or entering credentials.
+-  Deploy the code to `integration` then to Staging and Production
+-  Configure Fastly in Staging and Production, not in Integration or your local
+-  Test Fastly for caching
 
 For instructions, see [Set up Fastly]({{ page.baseurl }}/cloud/cdn/configure-fastly.html).
 After you have configured it, you can continue with advanced options including

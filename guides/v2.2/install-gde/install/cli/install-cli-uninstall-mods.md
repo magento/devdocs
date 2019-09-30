@@ -28,8 +28,10 @@ In addition to the command arguments discussed here, see [Common arguments]({{ p
 
 Command usage:
 
-	magento module:uninstall [--backup-code] [--backup-media] [--backup-db] [-r|--remove-data] [-c|--clear-static-content] \
-	{ModuleName} ... {ModuleName}
+```bash
+magento module:uninstall [--backup-code] [--backup-media] [--backup-db] [-r|--remove-data] [-c|--clear-static-content] \
+  {ModuleName} ... {ModuleName}
+```
 
 where `{ModuleName}` specifies the module name in `<VendorName>_<ModuleName>` format. For example, the Magento Customer module name is `Magento_Customer`. To get a list of module names, enter `magento module:status`
 
@@ -70,46 +72,52 @@ The module uninstall command performs the following tasks:
 
 For example, if you attempt to uninstall a module that another module depends on, the following message displays:
 
-	magento module:uninstall Magento_SampleMinimal
-		Cannot uninstall module 'Magento_SampleMinimal' because the following module(s) depend on it:
+```terminal
+magento module:uninstall Magento_SampleMinimal
+    Cannot uninstall module 'Magento_SampleMinimal' because the following module(s) depend on it:
         Magento_SampleModifyContent
+```
 
 One alternative is to uninstall both modules after backing up the Magento module file system, `pub/media` files, and database tables but *not* removing the module's [database schema](https://glossary.magento.com/database-schema) or data:
 
-	magento module:uninstall Magento_SampleMinimal Magento_SampleModifyContent --backup-code --backup-media --backup-db
+```bash
+magento module:uninstall Magento_SampleMinimal Magento_SampleModifyContent --backup-code --backup-media --backup-db
+```
 
 Messages similar to the following display:
 
-	You are about to remove code and/or database tables. Are you sure?[y/N]y
-	Enabling maintenance mode
-	Code backup is starting...
-	Code backup filename: 1435261098_filesystem_code.tgz (The archive can be uncompressed with 7-Zip on Windows systems)
-	Code backup path: /var/www/html/magento2/var/backups/1435261098_filesystem_code.tgz
-	[SUCCESS]: Code backup completed successfully.
-	Media backup is starting...
-	Media backup filename: 1435261098_filesystem_media.tgz (The archive can be uncompressed with 7-Zip on Windows systems)
-	Media backup path: /var/www/html/magento2/var/backups/1435261098_filesystem_media.tgz
-	[SUCCESS]: Media backup completed successfully.
-	DB backup is starting...
-	DB backup filename: 1435261098_db.gz (The archive can be uncompressed with 7-Zip on Windows systems)
-	DB backup path: /var/www/html/magento2/var/backups/1435261098_db.gz
-	[SUCCESS]: DB backup completed successfully.
-	You are about to remove a module(s) that might have database data. Remove the database data manually after uninstalling, if desired.
-	Removing Magento_SampleMinimal, Magento_SampleModifyContent from module registry in database
-	Removing Magento_SampleMinimal, Magento_SampleModifyContent from module list in deployment configuration
-	Removing code from Magento codebase:
-	Loading composer repositories with package information
-	Updating dependencies (including require-dev)
-	  - Removing magento/sample-module-modifycontent (1.0.0)
-	Removing Magento/SampleModifycontent
-	  - Removing magento/sample-module-minimal (1.0.0)
-	Removing Magento/SampleMinimal
-	Writing lock file
-	Generating autoload files
-	Cache cleared successfully.
-	Generated classes cleared successfully.
-	Alert: Generated static view files were not cleared. You can clear them using the --clear-static-content option. Failure to clear static view files might cause display issues in the Admin and storefront.
-	Disabling maintenance mode
+```terminal
+You are about to remove code and/or database tables. Are you sure?[y/N]y
+Enabling maintenance mode
+Code backup is starting...
+Code backup filename: 1435261098_filesystem_code.tgz (The archive can be uncompressed with 7-Zip on Windows systems)
+Code backup path: /var/www/html/magento2/var/backups/1435261098_filesystem_code.tgz
+[SUCCESS]: Code backup completed successfully.
+Media backup is starting...
+Media backup filename: 1435261098_filesystem_media.tgz (The archive can be uncompressed with 7-Zip on Windows systems)
+Media backup path: /var/www/html/magento2/var/backups/1435261098_filesystem_media.tgz
+[SUCCESS]: Media backup completed successfully.
+DB backup is starting...
+DB backup filename: 1435261098_db.gz (The archive can be uncompressed with 7-Zip on Windows systems)
+DB backup path: /var/www/html/magento2/var/backups/1435261098_db.gz
+[SUCCESS]: DB backup completed successfully.
+You are about to remove a module(s) that might have database data. Remove the database data manually after uninstalling, if desired.
+Removing Magento_SampleMinimal, Magento_SampleModifyContent from module registry in database
+Removing Magento_SampleMinimal, Magento_SampleModifyContent from module list in deployment configuration
+Removing code from Magento codebase:
+Loading composer repositories with package information
+Updating dependencies (including require-dev)
+  - Removing magento/sample-module-modifycontent (1.0.0)
+Removing Magento/SampleModifycontent
+  - Removing magento/sample-module-minimal (1.0.0)
+Removing Magento/SampleMinimal
+Writing lock file
+Generating autoload files
+Cache cleared successfully.
+Generated classes cleared successfully.
+Alert: Generated static view files were not cleared. You can clear them using the --clear-static-content option. Failure to clear static view files might cause display issues in the Admin and storefront.
+Disabling maintenance mode
+```
 
 {:.bs-callout .bs-callout-info}
 Errors display if you attempt to uninstall a module with a dependency on another module. In that case, you cannot uninstall one module; you must uninstall both.
@@ -118,7 +126,9 @@ Errors display if you attempt to uninstall a module with a dependency on another
 
 To restore the Magento codebase to the state at which you backed it up, use the following command:
 
-	magento setup:rollback [-c|--code-file="<filename>"] [-m|--media-file="<filename>"] [-d|--db-file="<filename>"]
+```bash
+magento setup:rollback [-c|--code-file="<filename>"] [-m|--media-file="<filename>"] [-d|--db-file="<filename>"]
+```
 
 where `<filename>` is the name of the backup file located in `<magento_root>/var/backups`. To display a list of backup files, enter `magento info:backups:list`
 
@@ -158,20 +168,26 @@ For example, to restore a code (that is, file system) backup, enter the followin
 
 *	Display a list of backups:
 
-		magento info:backups:list
+    ```bash
+    magento info:backups:list
+    ```
 
 *	Restore a file backup named `1433876616_filesystem.tgz`:
 
-		magento setup:rollback --code-file="1433876616_filesystem.tgz"
+    ```bash
+    magento setup:rollback --code-file="1433876616_filesystem.tgz"
+    ```
 
-	Messages similar to the following display:
+    Messages similar to the following display:
 
-		Enabling maintenance mode
-		Code rollback is starting ...
-		Code rollback filename: 1433876616_filesystem.tgz
-		Code rollback file path: /var/www/html/magento2/var/backups/1433876616_filesystem.tgz
-		[SUCCESS]: Code rollback has completed successfully.
-		Disabling maintenance mode
+    ```terminal
+    Enabling maintenance mode
+    Code rollback is starting ...
+    Code rollback filename: 1433876616_filesystem.tgz
+    Code rollback file path: /var/www/html/magento2/var/backups/1433876616_filesystem.tgz
+    [SUCCESS]: Code rollback has completed successfully.
+    Disabling maintenance mode
+    ```
 
 {:.bs-callout .bs-callout-info}
 To run the `magento` command again without changing directories, you might need to enter `cd pwd`.

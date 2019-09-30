@@ -299,9 +299,7 @@ The lifestyle of an object determines the number of instances that can exist of 
 
 You can configure dependencies in Magento to have the following lifestyles:
 
-*	**Singleton**(default) - One instance of this class exists. The object manager creates it at the first request.
-Requesting the class again returns the same instance.
-Disposing or ending the container registered to it releases the instance.
+*	**Singleton**(default) - One instance of this class exists. The object manager creates it at the first request. Requesting the class again returns the same instance. Disposing or ending the container registered to it releases the instance.
 *	**Transient** - The object manager creates a new instance of the class for every request.
 
 The `shared` property determines the lifestyle of both `argument` and `type` configurations.

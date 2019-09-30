@@ -221,7 +221,7 @@ To add quick basic styling and visual behavior to the "dropdown" menu, OrangeCo 
 
 `app/design/frontend/OrangeCo/orange/web/css/source/_extend.less`
 
-```
+```css
 //
 //  Common
 //  _____________________________________________

@@ -152,9 +152,7 @@ Expected code coverage: must cover all applicable files in entire code base.
 
 Code to cover:
 
-* Must cover any formal backward-incompatible changes on code level.
-For more information, see
-[Magento's backward compatibility policy]({{ page.baseurl }}/contributor-guide/backward-compatible-development/).
+* Must cover any formal backward-incompatible changes on code level. For more information, see [Magento's backward compatibility policy]({{ page.baseurl }}/contributor-guide/backward-compatible-development/).
 
 A failure in a legacy test must provide comprehensive explanation of an alternative, if there is any.
 

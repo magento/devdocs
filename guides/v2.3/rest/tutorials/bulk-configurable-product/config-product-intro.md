@@ -31,6 +31,7 @@ A system integrator can use Magento REST bulk APIs to perform actions on a large
 * Use the `bin/magento queue:consumers:start async.operations.all` command to enable bulk endpoint processing.
 
 ### Other resources
+
 * [REST Tutorials]({{ page.baseurl }}/rest/tutorials/index.html) provides additional information about completing any Magento REST tutorial.
 * [Asynchronous web endpoints]({{ page.baseurl }}/rest/asynchronous-web-endpoints.html) provides information about how to use Magento Asynchronous API
 * [Bulk endpoints]({{ page.baseurl }}/rest/bulk-endpoints.html) provides information about how to use Magento Bulk API

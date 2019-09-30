@@ -6,6 +6,14 @@ functional_areas:
   - System
   - Setup
 ---
+
+{: .bs-callout-info }
+Magento's **[`baler`][]** module is now open for _Alpha testing_.
+This is a custom AMD module bundler and preloader for Magento 2.
+It is designed to provide optimal bundles and be less error-prone than the built-in Magento bundler.
+
+[`baler`]: https://github.com/magento/baler
+
 ## Introduction
 
 Bundling JavaScript modules for better performance is about reducing two things:
@@ -82,6 +90,7 @@ A clean Magento installation allows reaching enough good performance by splittin
 #### Required tools
 
 The following steps require you to install and have familiarity with the following tools:
+
 - [nodejs](https://nodejs.org/en/download/)
 - [r.js](http://requirejs.org/docs/optimization.html#download)
 - [PhantomJS](http://phantomjs.org/) (optional)
@@ -89,6 +98,7 @@ The following steps require you to install and have familiarity with the followi
 #### Sample code
 
 Full versions of the sample code used in this article are available here:
+
 - [build.js](samples/build.js){:target="_blank"}
 - [deps.js](samples/deps.js){:target="_blank"}
 - [deps-map.sh](samples/deps-map.sh.txt){:target="_blank"}
@@ -150,12 +160,14 @@ At the end of the `build.js` file, add the modules[] array as a placeholder for 
 #### 5\. Retrieve RequireJS dependencies
 
 You can retrieve all the RequireJS module dependencies from your store's page types by using:
+
 1. PhantomJS from the command line (assuming you have PhantomJS installed).
 2. RequireJS command in your browser's console.
 
 #### To use PhantomJS:
 
 In the Magento root directory, create a new file called `deps.js` and copy in the code below. This code uses PhantomJS to open a page and wait for the browser to load all page assets. It then outputs all the RequireJS dependencies for a given page.
+
 ```javascript
 "use strict";
 var page = require('webpage').create(),
@@ -181,11 +193,15 @@ if (system.args.length === 1) {
     });
 }
 ```
+
 Open a terminal inside the Magento root directory and run the script against each page in your Magento store that represents a specific page type:
+
 <pre>
 phantomjs deps.js <i>url-to-specific-page</i> > <i>text-file-representing-pagetype-dependencies</i>
 </pre>
+
 For example, here are four pages from the Luma themed sample Magento store that represent the four page types we will use to create our four bundles (homepage, category, product, cart):
+
 ```terminal
 phantomjs deps.js http://m2.loc/ > bundle/homepage.txt
 phantomjs deps.js http://m2.loc/women/tops-women/jackets-women.html > bundle/category.txt
@@ -197,14 +213,17 @@ phantomjs deps.js http://m2.loc/checkout/cart/?SID=m2tjdt7ipvep9g0h8pmsgie975 > 
 #### To use the browser console:
 
 If you don't want to use PhantomJS, you can run the following command from your browser's console while viewing each page type in your storefront:
+
 ```shell
 Object.keys(window.require.s.contexts._.defined)
 ```
+
 This command (used within the PhantomJS script) creates the same list of RequireJS dependencies and displays them within the browser's console. The disadvantage of this approach is that you will have to create your own bundle/page-type text files.
 
 #### 6\. Format and filter the output
 
 After you merge the RequireJS dependencies into page-type text files, you can use the following command on each page-type dependency file to replace the commas in your files with newlines:
+
 ```terminal
 sed -i -e $'s/,/\\\n/g' bundle/category.txt
 sed -i -e $'s/,/\\\n/g' bundle/homepage.txt
@@ -213,6 +232,7 @@ sed -i -e $'s/,/\\\n/g' bundle/product.txt
 ```
 
 You should also remove all the mixins for each file because mixins duplicate dependencies. Use the following command on each dependency file:
+
 ```terminal
 sed -i -e 's/mixins\!.*$//g' bundle/homepage.txt
 sed -i -e 's/mixins\!.*$//g' bundle/category.txt
@@ -225,11 +245,13 @@ sed -i -e 's/mixins\!.*$//g' bundle/product.txt
 The goal is to create a common bundle of JavaScript files needed by all pages. That way the browser only needs to load the common bundle along with one or more specific page types.
 
 Open a terminal in the Magento root directory and use the following command to verify that you have dependencies you can split into separate bundles:
+
 ```bash
 sort bundle/*.txt |uniq -c |sort -n
 ```
 
 This command merges and sorts the dependencies found in the `bundle/*.txt` files.  The output also shows the number of files that contain each dependency:
+
 ```terminal
 1 buildTools,
 1 jquery/jquery.parsequery,
@@ -246,6 +268,7 @@ This command merges and sorts the dependencies found in the `bundle/*.txt` files
 This output shows that `buildTools` is a dependency in only one of the bundle/*.txt files. The `jquery/jquery.metadata` dependency is in two (2) files and `es6-collections` is in three (3) files.
 
 Our output shows only three page types (homepage, category, and product), which tells us:
+
 * Three dependencies are unique to only one page type (shown by the number 1).
 * Three more dependencies occur on two page types (shown by the number 2).
 * The last three dependencies are common to all three of our page types (shown by the number 3).
@@ -255,6 +278,7 @@ This tells us that we can likely improve our store's page-loading speeds by spli
 #### 8\. Create a dependencies distribution file
 
 To find out which page types need which dependencies, create a new file in the Magento root directory called `deps-map.sh` and copy in the code below:
+
 ```shell
 awk 'END {
  for (R in rec) {
@@ -272,14 +296,17 @@ awk 'END {
  rec[$0] = rec[$0] ? rec[$0] "/" FILENAME : FILENAME
 }' bundle/*.txt
 ```
+
 You can also find the script at [https://www.unix.com/shell-programming-and-scripting/140390-get-common-lines-multiple-files.html](https://www.unix.com/shell-programming-and-scripting/140390-get-common-lines-multiple-files.html)
 
 Open a terminal in the Magento root directory and run the file:
+
 ```bash
 bash deps-map.sh
 ```
 
 The output from this script, applied to our three example page types, should look something like this (but much longer):
+
 ```terminal
 bundle/product.txt   -->   buildTools,
 bundle/category.txt  -->   jquery/jquery.parsequery,
@@ -389,6 +416,7 @@ Listing the contents of the new bundle directory might look like this:
 ```bash
 ll pub/static/frontend/Magento/luma/en_US/bundles
 ```
+
 ```terminal
 total 1900
 drwxr-xr-x  2 root root    4096 Mar 28 11:24 ./
@@ -403,6 +431,7 @@ drwxr-xr-x 70 root root    4096 Mar 28 11:24 ../
 #### 4. Configure RequireJS to use bundles
 
 To get RequireJS to use your bundles, add a `onModuleBundleComplete`callback after the `modules` node in the `build.js` file:
+
 ```javascript
 [
     {
@@ -439,10 +468,13 @@ onModuleBundleComplete: function (data) {
 #### 5. Rerun deploy command
 
 Run the following command to deploy:
+
 ```bash
 r.js -o app/design/frontend/Magento/luma/build.js baseUrl=pub/static/frontend/Magento/luma/en_US_tmp dir=pub/static/frontend/Magento/luma/en_US
 ```
+
 Open `requirejs-config.js` in the `pub/static/frontend/Magento/luma/en_US` directory to verify that RequireJS appended the file with bundling configuration calls:
+
 ```javascript
 require.config({
                 bundles: {"bundles/default": ["mage/template","mage/apply/scripts","mage/apply/main","mage/mage","mage/translate","mage/loader"]
@@ -468,12 +500,14 @@ The page load time for an empty homepage is now twice as fast than using native 
 Even if gzipped, the JavaScript files are still large. Minify them with RequireJS, which uses uglifier for minifying JavaScript to good result.
 
 To enable the optimizer in your `build.js` file, add `uglify2` as the value for the optimize property at the top of the `build.js` file:
+
 ```javascript
 ({
     optimize: 'uglify2',
     inlineText: true
 })
 ```
+
 The results can be significant:
 ![ThreeTimesFaster](images/ThreeTimesFaster.png)
 

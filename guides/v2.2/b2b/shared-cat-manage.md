@@ -18,7 +18,7 @@ functional_areas:
 
 **REST Endpoints**
 
-```
+```terminal
 POST /V1/sharedCatalog
 PUT  /V1/sharedCatalog/:id
 GET  /V1/sharedCatalog/:sharedCatalogId

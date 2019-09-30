@@ -14,7 +14,9 @@ Before you continue, if you haven't done so already, switch to the [Magento file
 
 Command:
 
-	ulimit -s 65536
+```bash
+ulimit -s 65536
+```
 
 You can change this to a larger value if needed.
 
@@ -27,7 +29,9 @@ To optionally set the value in the user's Bash shell:
 2.	Open `/home/<username>/.bashrc` in a text editor.
 3.	Add the following line:
 
-		ulimit -s 65536
+    ```bash
+    ulimit -s 65536
+    ```
 
 4.	Save your changes to `.bashrc` and exit the text editor.
 

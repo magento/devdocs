@@ -1437,9 +1437,9 @@ You can find Magento Shipping-specific release notes in [Magento Shipping Releas
 
 **Issue**: The `catalog:image:resize` command execution time has been reduced by up to 90% in the release. However, this improvement necessitates these additional steps after upgrading your Magento instance to 2.2.6:
 
-	* Remove   `pub/media/catalog/product/cache`. The path for cached images was changed in this release, which explains why you need to clean this directory after upgrade to free up space.
+* Remove   `pub/media/catalog/product/cache`. The path for cached images was changed in this release, which explains why you need to clean this directory after upgrade to free up space.
 
-	* Run `bin/magento catalog:image:resize`  to generate a new image cache.  This step is necessary because we’ve changed the path to cached images and must remove the previously cached images.
+* Run `bin/magento catalog:image:resize`  to generate a new image cache.  This step is necessary because we’ve changed the path to cached images and must remove the previously cached images.
 
 ## Community contributions
 

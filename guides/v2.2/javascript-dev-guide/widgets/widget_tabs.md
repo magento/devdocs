@@ -18,6 +18,7 @@ $("#element").tabs();
 ```
 
 Where:
+
 -   `#element` is the selector of the element for tabs is initialized.
 
 The following example shows a PHTML file using the script:
@@ -83,6 +84,7 @@ Specifies if the collapse/expand actions are performed with animation. The optio
 
 **Type**:
 Multiple types are supported:
+
 -   Boolean: the `false` value disables the animation
 -   Number: duration in milliseconds
 -   String: is parsed to an object as a json string
@@ -206,6 +208,7 @@ The option of the [collapsible] widget used by tabs.
 ## Methods {#tabs_methods}
 
 The tabs widget has the following methods:
+
 -   [activate()](#fedg_tabs_methods-activate)
 -   [enable()](#fedg_tabs_methods-enable)
 -   [deactivate()](#fedg_tabs_methods-deactivate)

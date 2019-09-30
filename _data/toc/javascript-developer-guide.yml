@@ -106,8 +106,14 @@ pages:
         - label: RedirectUrl widget
           url: /javascript-dev-guide/widgets/widget_redirectUrl.html
 
+        - label: RemainingCharacters widget
+          url: /javascript-dev-guide/widgets/widget-remaining-characters.html
+
         - label: RowBuilder widget
           url: /javascript-dev-guide/widgets/widget-row-builder.html
+
+        - label: Sortable widget
+          url: /javascript-dev-guide/widgets/widget-sortable.html
 
         - label: Sticky widget
           url: /javascript-dev-guide/widgets/widget_sticky.html

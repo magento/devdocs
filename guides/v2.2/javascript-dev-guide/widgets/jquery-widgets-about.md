@@ -7,6 +7,7 @@ title: Magento jQuery widgets
 The Magento system uses a jQuery JavaScript library to implement client functionality. This includes a wide usage of standard, customized, and custom jQuery widgets.
 
 This guide discusses the following widgets:
+
 -   [Accordion widget]
 -   [Alert widget]
 -   [Breadcrumb widget]
@@ -28,7 +29,9 @@ This guide discusses the following widgets:
 -   [Prompt widget]
 -   [QuickSearch widget]
 -   [RedirectUrl widget]
+-   [RemainingCharacters widget]
 -   [RowBuilder widget]
+-   [Sortable widget]
 -   [Sticky widget]
 -   [Tabs widget]
 -   [ToggleAdvanced widget]
@@ -61,7 +64,9 @@ Magento out of the box does not contain jQuery UI styles. Also, it is not recomm
 [Prompt widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_prompt.html
 [QuickSearch widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_quickSearch.html
 [RedirectUrl widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_redirectUrl.html
+[RemainingCharacters widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget-remaining-characters.html
 [RowBuilder widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget-row-builder.html
+[Sortable widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget-sortable.html
 [Tabs widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_tabs.html
 [ToggleAdvanced widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_toggle.html
 [TrimInput widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget-trim-input.html
