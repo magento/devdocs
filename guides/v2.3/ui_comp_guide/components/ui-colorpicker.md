@@ -13,6 +13,7 @@ The ColorPicker component must be a child of the [Listing]({{ page.baseurl }}/ui
 |`colorFormat`|Defines the color format displayed in the selection tool and input field. Valid formats: `hex`, `rgb`, `hsl`, `hsv`, `name`, `none`|`string`|`-`|
 |`colorPickerMode`|Defines the mode that affects the available color picker functionality. Valid modes: `simple`, `full`, `noalpha`, `palette`|`string`|`-`|
 |`elementTmpl`|The path to the `.html` template of the particular field type (color-picker).|`string`|`ui/form/element/color-picker`|
+|`label`|Option's label.|`string`|`-`|
 
 ## Sources files
 
@@ -40,3 +41,7 @@ The ColorPicker component must be a child of the [Listing]({{ page.baseurl }}/ui
     ...
     </form>
 ```
+
+## Result
+
+![Color Picker Component]({{ site.baseurl }}/common/images/ui_comps/color_picker_result.png)

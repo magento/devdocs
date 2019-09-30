@@ -419,6 +419,7 @@ We’ve identified the following unresolved issues with this version of Magento 
 **Issue**: Selecting a shipping method at checkout can sometimes result in two shipping methods being selected. This issue occurs during checkout. When a user selects a shipping method during checkout, Magento will select two shipping methods. <!--- BUNDLE-508-->
 
 **Workaround**:  Ensure that no two rules with a ‘Show Shipping Method’ outcome can both apply to the scenario. Consider these example rules:
+
 * Rule 1: Show ‘Free Shipping’ for Country is Canada and Cost is not greater than $99.99
 * Rule 2: Show ‘Free Shipping’ for Country is not Canada and Cost is greater than $100
 

@@ -1,6 +1,7 @@
 This section discusses how to get a module's Composer name and its version from Magento Marketplace. Alternatively, you can find the name and version of *any* module (whether or not you purchased it on Marketplace) in the module's `composer.json` file. Open `composer.json` in a text editor and write down the values of `"name"` and `"version"`.
 
-#### To get the module's Composer name from Magento Marketplace:
+{:.procedure}
+To get the module's Composer name from Magento Marketplace:
 
 1.	Log in to [Magento Marketplace](https://marketplace.magento.com) with the username and password you used to purchase the component.
 2.	In the upper right corner, click **&lt;your username>** > **My Account** as the following figure shows.
@@ -19,6 +20,8 @@ This section discusses how to get a module's Composer name and its version from 
 7.	In **Technical Details** on the My Purchases page, click **Copy** to copy the version to the clipboard.
 8.	Append the version number to the component name after the colon.
 
-	A sample follows:
+    A sample follows:
 
-		pixlee/magento2:1.0.1
+    ```text
+    pixlee/magento2:1.0.1
+    ```

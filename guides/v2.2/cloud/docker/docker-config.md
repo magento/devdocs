@@ -78,7 +78,7 @@ For example, the following command starts the Docker configuration generator for
     ```
 
     {: .bs-callout-tip }
-To change the `magento2.docker` hostname for your project, you must update the host in three files: `.docker/config.php`, `docker-compose.yml`, and `/etc/hosts`
+    To change the `magento2.docker` hostname for your project, you must update the host in three files: `.docker/config.php`, `docker-compose.yml`, and `/etc/hosts`
 
 1.  Stop the default Apache instance on Mac OS.
 
@@ -173,7 +173,7 @@ Continue launching your Docker environment in the _developer_ mode. The develope
 The `{{site.data.var.ct}}` version 2002.0.18 and later supports developer mode.
 
 1.  Install the `docker-sync` tool using the [Installation instructions](https://docker-sync.readthedocs.io/en/latest/getting-started/installation.html).
-    Optionally, you can install the `mutagen.io` tool using the [Installation instructions](https://mutagen.io/documentation/installation/).
+    Optionally, you can install the `mutagen.io` tool using the [Installation instructions](https://mutagen.io/documentation/introduction/installation/).
     If you have it installed, continue to the next step.
 
 1.  In your local environment, start the Docker configuration generator. You can use the service keys, such as `--php`, to [specify a version](#service-versions).
@@ -272,19 +272,14 @@ Start containers from a suspended state | `docker-compose start`
 Stop the synchronization daemon | `docker-sync stop`
 Start the synchronization daemon | `docker-sync start`
 
-#### To stop and remove the Docker configuration:
+Use the following command to stop and remove the Docker configuration:
 
-Remove all components of your local Docker instance including containers, networks, volumes, and images.
+   ```bash
+   docker-compose down -v
+   ```
 
-```bash
-docker-compose down -v
-```
-
-#### To stop `docker-sync` daemon:
-
-```bash
-docker-sync stop
-```
+{: .bs-callout-warning}
+This removes all components of your local Docker instance including containers, networks, volumes, and images.
 
 ## Advanced usage
 

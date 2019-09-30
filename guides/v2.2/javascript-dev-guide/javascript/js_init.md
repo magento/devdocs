@@ -22,8 +22,11 @@ Depending on your task, you can use declarative or imperative notation to insert
 Using the declarative notation to insert a JS component prepares all the configuration on the [backend](https://glossary.magento.com/backend) and outputs it to page source using standard tools. Use declarative notation if your JavaScript component requires initialization.
 
 In Magento 2, you have two options for specifying declarative notation:
- - using the `data-mage-init` attribute
- - using the `<script type="text/x-magento-init" />` tag
+
+ - Using the `data-mage-init` attribute
+ > This is used to target a specific HTML element. It is easier to implement and is commonly used for jQuery UI widgets. This method can only be implemented on the specified HTML tag. For example, `<nav data-mage-init='{ "<component_name>": {...} }'></nav>`. This is preferred for its concise syntax, and direct access to the HTML element.
+ - Using the `<script type="text/x-magento-init" />` tag
+ > This is used to target either a CSS selector or `*`. If the CSS selector matches multiple HTML elements, the script will run for each matched HTML element. For `*`, no HTML element is selected and the script will run once with the HTML DOM as its target. This method can be implemented from anywhere in the codebase to target any HTML element. This is preferred when direct access to the HTML element is restricted, or when there is no target HTML element.
 
 #### Declarative notation using the `data-mage-init` attribute {#data_mage_init}
 
@@ -40,22 +43,25 @@ When the Javascript is inserted into the specified element, the script is called
 On DOM ready, the `data-mage-init` attribute is parsed to extract component names and configuration to be applied to the element. Depending on the type of the inserted JS component, processing is performed as follows:
 
 - If an object is returned, the initializer tries to find the `<component_name>` key. If the corresponding value is a function, the initializer passes the `config` and `element` values to this function. For example:
-```javascript
-    return {
-        '<component_name>': function(config, element) { ... }
-    };
-```
+
+  ```javascript
+  return {
+    '<component_name>': function(config, element) { ... }
+  };
+  ```
 
 - If a function is returned, the initializer passes the <code>config</code> and <code>element</code> values to this function. For example:
-```javascript
-return function(config, element) { ... };
-```
+
+  ```javascript
+  return function(config, element) { ... };
+  ```
 
 - If neither a function nor an object with the `"<component_name>"` key are returned, then the initializer tries to search for `"<component_name>"` in the jQuery prototype. If found, the initializer applies it as `$(element).<component_name>;(config)`. For example:
-    ```javascript
-    $.fn.<component_name> = function() { ... };
-    return;
-    ```
+
+  ```javascript
+  $.fn.<component_name> = function() { ... };
+  return;
+  ```
 
 - If none of the previous cases is true, the component is executed with no further processing. Such a component does not require either `config` or `element`. The recommended way to declare such components is [using the `<script>` tag](#init_script).
 

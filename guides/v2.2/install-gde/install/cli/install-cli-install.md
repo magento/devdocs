@@ -62,7 +62,7 @@ If an error displays when you run these commands, verify that you updated instal
 
 The install command uses the following format:
 
-```
+```bash
 magento setup:install --<option>=<value> ... --<option>=<value>
 ```
 
@@ -160,25 +160,29 @@ The following example installs Magento with the following options:
 *	Default currency is U.S. dollars
 *	Default time zone is U.S. Central (America/Chicago)
 
-		magento setup:install --base-url=http://127.0.0.1/magento2/ \
-		--db-host=localhost --db-name=magento --db-user=magento --db-password=magento \
-		--admin-firstname=Magento --admin-lastname=User --admin-email=user@example.com \
-		--admin-user=admin --admin-password=admin123 --language=en_US \
-		--currency=USD --timezone=America/Chicago --use-rewrites=1
+    ```bash
+    magento setup:install --base-url=http://127.0.0.1/magento2/ \
+    --db-host=localhost --db-name=magento --db-user=magento --db-password=magento \
+    --admin-firstname=Magento --admin-lastname=User --admin-email=user@example.com \
+    --admin-user=admin --admin-password=admin123 --language=en_US \
+    --currency=USD --timezone=America/Chicago --use-rewrites=1
+    ```
 
 Messages similar to the following display to indicate a successful installation:
 
-	Post installation file permissions check...
-	For security, remove write permissions from these directories: '/var/www/html/magento2/app/etc'
-	[Progress: 274 / 274]
-	[SUCCESS]: Magento installation complete.
-	[SUCCESS]: Admin Panel URI: /admin_puu71q
+```terminal
+Post installation file permissions check...
+For security, remove write permissions from these directories: '/var/www/html/magento2/app/etc'
+[Progress: 274 / 274]
+[SUCCESS]: Magento installation complete.
+[SUCCESS]: Admin Panel URI: /admin_puu71q
+```
 
 #### Example 2— Basic install without admin user account
 
 In {{ site.data.var.ee }} version 2.2.8 and later, you have the option to install Magento without creating the Magento administrator user as shown in the following example.
 
-```
+```bash
 magento setup:install --base-url=http://127.0.0.1/magento2/ \
 --db-host=localhost --db-name=magento --db-user=magento --db-password=magento \
 --language=en_US --currency=USD --timezone=America/Chicago --use-rewrites=1
@@ -186,7 +190,7 @@ magento setup:install --base-url=http://127.0.0.1/magento2/ \
 
 Messages like the following display if the installation is successful:
 
-```
+```terminal
 Post installation file permissions check...
 For security, remove write permissions from these directories: '/var/www/html/magento2/app/etc'
 [Progress: 274 / 274]
@@ -223,7 +227,7 @@ The following example installs Magento with the following options:
 *	Session data is saved in the database
 *	Uses server rewrites
 
-    ```
+    ```bash
     magento setup:install --base-url=http://127.0.0.1/magento2/ \
     --db-host=localhost --db-name=magento \
     --db-user=magento --db-password=magento \
@@ -238,11 +242,13 @@ You must enter the command either on a single line or, as in the preceding examp
 
 Messages like the following display if the installation is successful:
 
-	Post installation file permissions check...
-	For security, remove write permissions from these directories: '/var/www/html/magento2/app/etc'
-	[Progress: 274 / 274]
-	[SUCCESS]: Magento installation complete.
-	[SUCCESS]: Admin Panel URI: /admin_puu71q
+```terminal
+Post installation file permissions check...
+For security, remove write permissions from these directories: '/var/www/html/magento2/app/etc'
+[Progress: 274 / 274]
+[SUCCESS]: Magento installation complete.
+[SUCCESS]: Admin Panel URI: /admin_puu71q
+```
 
 #### Next step
 
@@ -250,4 +256,3 @@ Messages like the following display if the installation is successful:
 
 	This type of setup is typical for shared hosting.
 *	[Verify the installation]({{ page.baseurl }}/install-gde/install/verify.html).
-

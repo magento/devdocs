@@ -26,7 +26,8 @@ return [
 ```
 {: .no-copy}
 
-#### To connect to the database using Docker commands:
+{:.procedure}
+To connect to the database using Docker commands:
 
 1.  Connect to the CLI container.
 
@@ -52,7 +53,8 @@ return [
     ```
     {: .no-copy}
 
-#### To connect to the database:
+{:.procedure}
+To connect to the database:
 
 1.  Find the port used by the database. The port may change each time you restart Docker.
 

@@ -4,7 +4,9 @@ title: Deploy variables
 functional_areas:
   - Cloud
   - Configuration
+redirect_from: guides/v2.2/cloud/trouble/message-queues.html
 ---
+
 The following _deploy_ variables control actions in the deploy phase and can inherit and override values from the [Global variables]({{ page.baseurl }}/cloud/env/variables-global.html). Insert these variables in the `deploy` stage of the `.magento.env.yaml` file:
 
 ```yaml
@@ -96,7 +98,7 @@ stage:
 
 By default, the deployment process overwrites all settings in the `env.php` file. Refer to [Manage message queues]({{ page.baseurl }}/config-guide/mq/manage-mysql.html) for more information about how this works in {{site.data.var.ce}} and {{site.data.var.ee}}.
 
-#### To see a list of message queue consumers:
+The following command returns a list of message queue consumers:
 
 ```bash
 ./bin/magento queue:consumers:list

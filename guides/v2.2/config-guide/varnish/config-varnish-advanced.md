@@ -85,6 +85,7 @@ After you've recompiled, you can install the Saint mode [module](https://glossar
 
 1. Obtain the source code from [Varnish modules](https://github.com/varnish/varnish-modules) . Clone the Git version (master version) since the 0.9.x versions contain a source code error.
 2. Build the source code with autotools:
+
 ```bash
 sudo apt-get install libvarnishapi-dev || sudo yum install varnish-libs-devel
 ./bootstrap   # If running from git.

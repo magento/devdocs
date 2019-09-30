@@ -138,6 +138,9 @@ web:
 
 ```
 
+{:.bs-callout-info}
+This example shows the default web configuration for a Cloud project configured to support a single domain. For a project that requires support for multiple websites or stores, the `web` configuration must be set up to support shared domains. See [Configure locations for shared domains]{{ page.baseurl }}/cloud/project-multi-sites.html#locations).
+
 ### `disk`
 
 Defines the persistent disk size of the application in MB.
@@ -146,7 +149,7 @@ Defines the persistent disk size of the application in MB.
 disk: 2048
 ```
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 The minimal recommended disk size is 256MB. If you see the error `UserError: Error building the project: Disk size may not be smaller than 128MB`, increase the size to 256MB.
 
 ### `mounts`
@@ -241,7 +244,8 @@ hooks:
 
 The commands run from the application (`/app`) directory. You can use the `cd` command to change the directory. The hooks fail if the final command in them fails. To cause them to fail on the first failed command, add `set -e` to the beginning of the hook.
 
-#### To compile Sass files using grunt:
+{:.procedure}
+To compile Sass files using grunt:
 
 ```yaml
 dependencies:
@@ -329,8 +333,6 @@ runtime:
         - calendar
         - exif
 ```
-
-#### To view the current list of PHP extensions:
 
 Use SSH to log in to an environment and list the PHP extensions.
 

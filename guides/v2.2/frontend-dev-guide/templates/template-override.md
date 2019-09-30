@@ -18,7 +18,7 @@ The template is specified in the `template` attribute of the `<block>` layout in
 
 Take this example from [`app/code/Magento/Catalog/view/frontend/layout/catalog_category_view.xml`]:
 
-```
+```xml
 <block class="Magento\Catalog\Block\Category\View" name="category.image" template="Magento_Catalog::category/image.phtml">
 ```
 
@@ -70,10 +70,13 @@ See [Layout instructions]
 The `echo` command in PHP can be written using the short tag in Magento templates.
 
 For example:
+
 ```phtml
 <?= $block->getAdjustmentsHtml() ?>
 ```
+
 is the same as writing
+
 ```phtml
 <?php echo $block->getAdjustmentsHtml() ?>
 ```

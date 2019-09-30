@@ -23,8 +23,7 @@ A PHP Interface in Magento can be used several ways by the core product and exte
 
 * **As an API**. An interface is called by PHP code.
 * **As a Service Provider Interface (SPI)**. An interface can be implemented, allowing code to provide functionality to the platform.
-* **As both**. For example, in a service contract, we expect all calls to a [module](https://glossary.magento.com/module) to be done through the Interface (API), but we also have support for third parties to provide alternate implementations (SPI).
-APIs and SPIs are not mutually exclusive. Therefore, we do not distinguish them separately. SPIs are annotated the same as APIs.
+* **As both**. For example, in a service contract, we expect all calls to a [module](https://glossary.magento.com/module) to be done through the Interface (API), but we also have support for third parties to provide alternate implementations (SPI). APIs and SPIs are not mutually exclusive. Therefore, we do not distinguish them separately. SPIs are annotated the same as APIs.
 
 However, the dependency rules are different:
 

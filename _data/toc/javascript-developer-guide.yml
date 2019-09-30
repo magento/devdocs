@@ -76,6 +76,9 @@ pages:
         - label: Loader widget
           url: /javascript-dev-guide/widgets/widget_loader.html
 
+        - label: MediaUploader widget
+          url: /javascript-dev-guide/widgets/widget-media-uploader.html
+
         - label: Menu widget
           url: /javascript-dev-guide/widgets/widget_menu.html
 
@@ -103,8 +106,17 @@ pages:
         - label: RedirectUrl widget
           url: /javascript-dev-guide/widgets/widget_redirectUrl.html
 
+        - label: RemainingCharacters widget
+          url: /javascript-dev-guide/widgets/widget-remaining-characters.html
+
         - label: RowBuilder widget
           url: /javascript-dev-guide/widgets/widget-row-builder.html
+
+        - label: Sortable widget
+          url: /javascript-dev-guide/widgets/widget-sortable.html
+
+        - label: Sticky widget
+          url: /javascript-dev-guide/widgets/widget_sticky.html
 
         - label: Tabs widget
           url: /javascript-dev-guide/widgets/widget_tabs.html
