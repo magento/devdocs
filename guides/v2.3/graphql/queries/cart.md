@@ -523,6 +523,183 @@ The `3T1free` rule is applied first, and Magento returns the price of a single s
 }
 ```
 
+### Tier price example
+
+In the following example, tier prices has been established for product `24-UG01` and `24-UG05`, as shown in the following table:
+
+Product | Quantity | Fixed/Discount | Amount
+--- | --- | --- | --- |
+24-UG01 | 5 | Discount | 5%
+24-UG01 | 10 | Discount | 10%
+24-UG01 | 15 | Discount | 15%
+24-UG05 | 5 | Fixed | $16
+24-UG05 | 10 | Fixed | $11
+
+The cart in the example contains 12 units of `24-UG05` and 8 units of `24-UG-01`, so the price of `24-UG05` is $11, and the price of `24-UG01` is $18.05 (5% off).
+
+**Request**
+
+```graphql
+query {
+  cart(cart_id: "v7jYJUjvPeHbdMJRcOfZIeQhs2Xc2ZKT"){
+    items {
+      id
+      quantity
+      product{
+        name
+        sku
+        price_tiers {
+          quantity
+          final_price {
+            value
+          }
+          discount {
+            amount_off
+            percent_off
+          }
+        }
+      }
+      prices{
+        price{
+          value
+        }
+      }
+    }
+    prices {
+      discounts {
+        label
+        amount {
+          value
+        }
+      }
+      subtotal_excluding_tax {
+        value
+      }
+      applied_taxes {
+        label
+        amount {
+          value
+        }
+      }
+    }
+  }
+}
+```
+
+**Response**
+
+```json
+{
+  "data": {
+    "cart": {
+      "items": [
+        {
+          "id": "65",
+          "quantity": 12,
+          "product": {
+            "name": "Go-Get'r Pushup Grips",
+            "sku": "24-UG05",
+            "price_tiers": [
+              {
+                "quantity": 5,
+                "final_price": {
+                  "value": 16
+                },
+                "discount": {
+                  "amount_off": 3,
+                  "percent_off": 15.79
+                }
+              },
+              {
+                "quantity": 10,
+                "final_price": {
+                  "value": 11
+                },
+                "discount": {
+                  "amount_off": 8,
+                  "percent_off": 42.11
+                }
+              }
+            ]
+          },
+          "prices": {
+            "price": {
+              "value": 11
+            }
+          }
+        },
+        {
+          "id": "66",
+          "quantity": 8,
+          "product": {
+            "name": "Quest Lumaflex&trade; Band",
+            "sku": "24-UG01",
+            "price_tiers": [
+              {
+                "quantity": 5,
+                "final_price": {
+                  "value": 18.05
+                },
+                "discount": {
+                  "amount_off": 0.95,
+                  "percent_off": 5
+                }
+              },
+              {
+                "quantity": 10,
+                "final_price": {
+                  "value": 17.1
+                },
+                "discount": {
+                  "amount_off": 1.9,
+                  "percent_off": 10
+                }
+              },
+              {
+                "quantity": 15,
+                "final_price": {
+                  "value": 16.15
+                },
+                "discount": {
+                  "amount_off": 2.85,
+                  "percent_off": 15
+                }
+              }
+            ]
+          },
+          "prices": {
+            "price": {
+              "value": 18.05
+            }
+          }
+        }
+      ],
+      "prices": {
+        "discounts": [
+          {
+            "label": "200",
+            "amount": {
+              "value": 55.28
+            }
+          }
+        ],
+        "subtotal_excluding_tax": {
+          "value": 276.4
+        },
+        "applied_taxes": [
+          {
+            "label": "US-MI-*-Rate 1",
+            "amount": {
+              "value": 18.24
+            }
+          }
+        ]
+      }
+    }
+  }
+}
+```
+
 ## Input attributes
 
 Attribute |  Data Type | Description

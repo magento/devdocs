@@ -42,7 +42,9 @@ Attribute | Data type | Description
 `new_to_date` | String | The end date for new product listings
 `only_x_left_in_stock` | Float | The "Only X left Threshold" assigned to the product. This attribute is defined in the `InventoryGraphQl` module.
 `options_container` | String | If the product has multiple options, determines where they appear on the product page
-`price` | ProductPrices | The price of an item. A `ProductPrice` object is returned. See [ProductPrices](#ProductPrices) for more information.
+`price` | ProductPrices | Deprecated. Use `price_range` instead.<br/>The price of an item. A `ProductPrice` object is returned
+`price_range` | [PriceRange!](#PriceRange) |  A `PriceRange` object, indicating the range of prices for the product
+`price_tiers` | [TierPrice] | An array of `TierPrice` objects
 `product_links` | [ProductLinksInterface] | An array of [ProductLinks](#ProductLinks) objects
 `related_products` | [ProductInterface] | An array of related products
 `short_description` | ComplexTextValue | An object that contains a short description of the product. Its use depends on the store's theme. The object can include simple HTML tags
@@ -55,8 +57,8 @@ Attribute | Data type | Description
 `swatch_image` | String | The file name of a swatch image. This attribute is defined in the `SwatchesGraphQl` module.
 `tax_class_id` | Int | An ID assigned to a tax class. This attribute is defined in the `TaxGraphQl` module.
 `thumbnail` | [ProductImage](#ProductImage) | An object that contains the URL and label for the product's thumbnail image
-`tier_price` | Float | The price when tier pricing is in effect and the items purchased threshold has been reached
-`tier_prices` | [ProductTierPrices] | An array of [ProductTierPrices](#ProductTier) objects
+`tier_price` | Float | Deprecated. Use `price_tiers` instead. The price when tier pricing is in effect and the items purchased threshold has been reached
+`tier_prices` | [ProductTierPrices] | Deprecated. Use `price_tiers` instead. An array of [ProductTierPrices](#ProductTier) objects
 `type_id` | String | One of `simple`, `virtual`, `bundle`, `downloadable`,`grouped`, `configurable`
 `updated_at` | String | The timestamp indicating when the product was last updated
 `upsell_products` | [ProductInterface] | An array of up-sell products
@@ -68,15 +70,46 @@ Attribute | Data type | Description
 
 ### ProductPrices object {#ProductPrices}
 
+{:.bs-callout-info}
+The `ProductPrices` object has been deprecated. Use the `PriceRange` object instead.
+
 The `ProductPrices` object contains the regular price of an item, as well as its minimum and maximum prices. Only composite products, which include bundle, configurable, and grouped products, can contain a minimum and maximum price.
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`maximalPrice` | Price | Used for composite (bundle, configurable, grouped) products. This is the highest possible final price for all the options defined within a composite product. If you're specifying a price range, this would be the "to" value.
-`minimalPrice` | Price | Used for composite (bundle, configurable, grouped) products. This is the lowest possible final price for all the options defined within a composite product. If you're specifying a price range, this would be the "from" value.
-`regularPrice` | Price | The base price of a product.
+`maximalPrice` | Price | Deprecated. Use `PriceRange.maximum_price` instead. Used for composite (bundle, configurable, grouped) products. This is the highest possible final price for all the options defined within a composite product. If you're specifying a price range, this would be the "to" value
+`minimalPrice` | Price | Deprecated. Use `PriceRange.minimum_price` instead. Used for composite (bundle, configurable, grouped) products. This is the lowest possible final price for all the options defined within a composite product. If you're specifying a price range, this would be the "from" value
+`regularPrice` | Price | Deprecated. Use `PriceRange.maximum_price` or `PriceRange.minimum_price` instead. The base price of a product
 
-#### Price object {#Price}
+### PriceRange object {#PriceRange}
+
+The `PriceRange` object defines the price range for a product. If a product only has a single price, the minimum and maximum price will be the same.
+
+Attribute |  Data Type | Description
+--- | --- | ---
+`maximum_price` | ProductPrice | The highest possible final price for a product
+`minimum_price` | ProductPrice | The lowest possible final price for a product
+
+### ProductPrice object {#ProductPrice}
+
+The `ProductPrice` object includes the regular price, final price, and the difference between those two prices.
+
+Attribute |  Data Type | Description
+--- | --- | ---
+`discount` | ProductDiscount | The amount of the discount applied to the product. It represents the difference between the `final_price` and `regular_price`
+`final_price`| Money! | The price of the product after applying discounts
+`regular_price` | Money! | The regular price of the product, without any applied discounts
+
+### ProductDiscount object {#ProductDiscount}
+
+The `ProductDiscount` object expresses the discount applied to a product as a fixed amount, such as $5, and as a percentage, such as 10%. The discount originates from special pricing or a catalog price rule.
+
+Attribute |  Data Type | Description
+--- | --- | ---
+`amount_off` | Float | The actual value of the discount
+`percent_off` | Float | The discount expressed as a percentage
+
+### Price object {#Price}
 
 The `Price` object defines the price of a product as well as any tax-related adjustments.
 
@@ -178,15 +211,28 @@ Attribute | Type | Description
 
 ### ProductTierPrices object {#ProductTier}
 
+{:.bs-callout-info}
+The `ProductTierPrices` object and all of its attributes have been deprecated. Use `TierPrice` instead.
+
 The `ProductTierPrices` object defines a tier price, which is a quantity discount offered to a specific customer group.
 
 Attribute | Type | Description
 --- | --- | ---
-`customer_group_id` | Int | The ID of the customer group
-`percentage_value` | Float | The percentage discount of the item
-`qty` | Float | The number of items that must be purchased to qualify for tier pricing
-`value` | Float | The price of the fixed price item
-`website_id` | Int | The ID assigned to the website
+`customer_group_id` | Int | Deprecated. There is no replacement because this value is not relevant for the storefront. The ID of the customer group
+`percentage_value` | Float | Deprecated. Use `TierPrice.discount` instead. The percentage discount of the item
+`qty` | Float | Deprecated. Use `TierPrice.quantity` instead. The number of items that must be purchased to qualify for tier pricing
+`value` | Float | Deprecated. Use `TierPrice.final_price` instead. The price of the fixed price item
+`website_id` | Int | Deprecated. There is no replacement because this value is not relevant for the storefront. The ID assigned to the website
+
+### TierPrice object {#TierPrice}
+
+The `TierPrice` object defines a tier price, which is a price based on the quantity purchased.
+
+Attribute | Type | Description
+--- | --- | ---
+`discount` | ProductDiscount | The price discount applied to this tier
+`final_price`| Money! | The price of the product at this tier
+`quantity` | Float | The minimum number of items that must be purchased to qualify for this price tier
 
 ### Website object {#websiteObject}
 
