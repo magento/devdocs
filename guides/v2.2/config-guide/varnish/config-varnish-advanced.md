@@ -33,20 +33,6 @@ The `health_check.php` script is located in the `pub` directory. If your Magento
 
 For more information, see the [Varnish health checks](https://varnish-cache.org/docs/4.1/users-guide/vcl-backends.html?highlight=health%20check#health-checks) documentation.
 
-### Timeouts
-
-If you disable the cache while Varnish is configured as the caching application and while Magento is in developer mode, it might become impossible to log in to the Admin.
-
-This situation could happen because the default health check has a timeout value of 2 seconds. It could take more than 2 seconds for the health check to collect and merge information on every health check request. If this occurs in 6 out of 10 health checks, the Magento server is considered unhealthy. Varnish serves stale content when the server is unhealthy.
-
-Because Admin is accessed through Varnish, you cannot log in to Admin to enable caching (unless Magento becomes healthy again). However, you can use the following command to enable cache:
-
-```bash
-bin/magento cache:enable
-```
-
-For more information about using the command line, see [Get started with command-line configuration]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands.html).
-
 ## Grace mode {#grace}
 
 Grace mode enables Varnish to keep an object in [cache](https://glossary.magento.com/cache) beyond its TTL value. Varnish can then serve the expired (stale) content while it fetches a new version. This improves the flow of traffic and decreases load times. It's used in the following situations:

@@ -22,6 +22,7 @@ functional_areas:
 *	Use Varnish:
 	*	[How Magento cache clearing works with Varnish]
 	*	[How Varnish caching works]
+*	[Troubleshooting 503 (Backend Fetch Failed) errors]
 
 ## Overview of the Varnish solution {#config-varnish-over}
 [Varnish Cache] is an open source web application accelerator (also referred to as an *HTTP accelerator* or *caching HTTP reverse proxy*). Varnish stores (or caches) files or fragments of files in memory; this enables Varnish to reduce the response time and network bandwidth consumption on future, equivalent requests. Unlike web servers like Apache and nginx, Varnish was designed for use exclusively with the HTTP protocol.
@@ -112,6 +113,7 @@ We know of the following issues with Varnish:
 [Final verification]: {{ page.baseurl }}/config-guide/varnish/config-varnish-final.html
 [How Magento cache clearing works with Varnish]: {{ page.baseurl }}/config-guide/varnish/use-varnish-cache.html
 [How Varnish caching works]: {{ page.baseurl }}/config-guide/varnish/use-varnish-cache-how.html
+[Troubleshooting 503 (Backend Fetch Failed) errors]: {{ page.baseurl }}/config-guide/varnish/tshoot-varnish-503.html
 [Varnish Cache]: https://www.varnish-cache.org/
 
 [database]: {{ page.baseurl }}/config-guide/database/database.html
