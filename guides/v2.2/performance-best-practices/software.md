@@ -26,14 +26,16 @@ See [Magento 2.2.x technology stack requirements]({{ page.baseurl }}/install-gde
 
 Operating system configurations and optimizations are similar for Magento as other high-load web applications. As the number of concurrent connections handled by the server increases, the number of available sockets can become fully allocated. The Linux kernel supports a mechanism to "reuse" and "recycle" TCP connections. Be aware that more aggressive recycling than re-use may cause issues on the load balancers. To enable these kernel settings, set the following values in `/etc/sysctl.conf`:
 
-```
+```conf
 net.ipv4.tcp_tw_recycle = 1
 net.ipv4.tcp_tw_reuse = 1
 ```
 
 The kernel parameter `net.core.somaxconn` controls the maximum number of open sockets waiting for connections. This value can be safely increased to 1024, but it should be correlated with the ability of the server to handle this amount. To enable this kernel parameter, set the following value in `/etc/sysctl.conf`:
 
-`net.core.somaxconn = 1024`
+```conf
+net.core.somaxconn = 1024
+```
 
 ## PHP
 
@@ -68,7 +70,9 @@ The presence of any profiling and debugging extensions can negatively impact the
 
 To guarantee successful execution of all Magento instances without dumping data or code to disk, set the memory limit as follows:
 
-`memory_limit=768MB`
+```conf
+memory_limit=768MB
+```
 
 #### ByteCode
 
@@ -86,7 +90,7 @@ When you fine-tune the memory allocation for opcache, take into account the size
 
 If you have a low-memory machine and you do not have many extensions or customizations installed, use the following settings to get a similar result:
 
-```bash
+```conf
 opcache.memory_consumption=64
 opcache.max_accelerated_files=60000
 ```

@@ -10,7 +10,7 @@ functional_areas:
   - Configuration
 ---
 
-#### Previous step:
+**Previous step:**
 [Prepare for local environment setup]({{ page.baseurl }}/cloud/before/before-workspace.html)
 
 Install the following software packages and tools on your local to prepare for Magento code development. If you already have these packages installed, check for any recommendations or notes and continue to the next step.
@@ -73,9 +73,12 @@ Before working with your {{site.data.var.ece}} project, make sure you set the PH
 
 1.	Find your `php.ini` file using the following command:
 
-		php --ini
+    ```bash
+    php --ini
+    ```
 
-	Use the value of `Loaded Configuration File`.
+    Use the value of `Loaded Configuration File`.
+
 2.	As a user with `root` privileges, open `php.ini` in a text editor.
 3.	Change the value of `memory_limit` to at least `1G` for normal use or at least `2G` for debugging.
 4.	Save your changes to `php.ini` and exit the text editor.
@@ -99,18 +102,33 @@ These example instructions detail how to install and create a MariaDB database f
 
 1. Use this command to create the database:
 
-		apt-get install mariadb-server
+    ```bash
+    apt-get install mariadb-server
+    ```
+
 2. Secure the database with the following command and completing all prompts:
 
-		mysql_secure_installation
+    ```bash
+    mysql_secure_installation
+    ```
+
 3. Access the MariaDB database.
 4. Grant all privileges to the Magento account you created for the local:
 
-		grant all privileges on <database> to '<account>'@'localhost' identified by '<password>';
+    ```shell
+    grant all privileges on <database> to '<account>'@'localhost' identified by '<password>';
+    ```
+
 5. Finally create the database:
 
-		create database magento;
-		use magento;
+    ```shell
+    create database magento;
+    ```
+
+    ```shell
+    use magento;
+    ```
+
 6. Exit when done.
 
 ### Pro: Set up the auto-increment for MariaDB
@@ -129,7 +147,9 @@ To avoid issues, we recommend you set `auto_increment_increment=3`.
 
 First, view the current value and verify if it is set to 3:
 
-	mysqladmin variables -u <root username> -p | grep 'auto_increment'
+```bash
+mysqladmin variables -u <root username> -p | grep 'auto_increment'
+```
 
 If necessary, set `auto_increment_increment` to 3:
 
@@ -140,13 +160,17 @@ If necessary, set `auto_increment_increment` to 3:
 
 2.	Add or edit the following line in the `[mysqld]` section:
 
-		auto_increment_increment=3
+    ```conf
+    auto_increment_increment=3
+    ```
 
-	{{site.data.var.ece}} supports a High Availability configuration. This setting increments the database IDs in increments of three to ensure row uniqueness for Galera databases on each of the three HA nodes in production.
+    {{site.data.var.ece}} supports a High Availability configuration. This setting increments the database IDs in increments of three to ensure row uniqueness for Galera databases on each of the three HA nodes in production.
 
 3.	Restart MySQL:
 
-		service mysqld restart
+    ```bash
+    service mysqld restart
+    ```
 
 ## Magento Cloud CLI (local) {#cloud-ssh-cli-cli-install}
 
@@ -162,25 +186,33 @@ To install the Magento Cloud CLI:
 
 3.	Enter the following command:
 
-		curl -sS https://accounts.magento.cloud/cli/installer | php
+    ```bash
+    curl -sS https://accounts.magento.cloud/cli/installer | php
+    ```
 
 4.	After the CLI downloads, an operating system-specific command displays.
 
-	For example, on Ubuntu and CentOS, the command is similar to:
+    For example, on Ubuntu and CentOS, the command is similar to:
 
-		source $HOME/.bashrc
+    ```bash
+    source $HOME/.bashrc
+    ```
 
-	For more information about the user shell profile, see [.bash_profile vs .bashrc](https://apple.stackexchange.com/questions/51036/what-is-the-difference-between-bash-profile-and-bashrc)
+    For more information about the user shell profile, see [.bash_profile vs .bashrc](https://apple.stackexchange.com/questions/51036/what-is-the-difference-between-bash-profile-and-bashrc)
 
-	You can also add the `$HOME/.magento-cloud/bin` to the Magento user's `PATH`:
+    You can also add the `$HOME/.magento-cloud/bin` to the Magento user's `PATH`:
 
-		export PATH=$PATH:$HOME/.magento-cloud/bin
+    ```bash
+    export PATH=$PATH:$HOME/.magento-cloud/bin
+    ```
 
-	Consult operating system documentation for details.
+    Consult operating system documentation for details.
 
 5.	Verify the `magento-cloud` command is in your path by entering the following command:
 
-		magento-cloud list
+    ```bash
+    magento-cloud list
+    ```
 
 ## Additional requirements for Magento Commerce {#commerce}
 
@@ -193,5 +225,5 @@ The requirements listed in this topic are specific to {{site.data.var.ece}} envi
 
 You can also install additional [optional software]({{ page.baseurl }}/install-gde/prereq/optional.html). These packages should be installed on the local VM.
 
-#### Next step:
+**Next step:**
 [Enable SSH keys]({{ page.baseurl }}/cloud/before/before-workspace-ssh.html)

@@ -11,8 +11,7 @@ functional_areas:
   - Deploy
 ---
 
-#### Previous step:
-
+**Previous step:**
 [Build and deploy on local]({{ page.baseurl }}/cloud/live/live-sanity-check.html)
 
 When you are ready to deploy your store, you must complete deployment and testing on the Staging environment before deploying to Production. The Staging environment provides a near-production environment that includes a database, web server, and all services including Fastly, New Relic, and Blackfire.
@@ -93,7 +92,8 @@ Add your SSH public key to {{ site.data.var.ece }} environments:
 - Starter–Add to Master (Production) and any environments you create by branching from Master
 - Pro–Add to the Master Integration, Staging, and Production environments
 
-#### To add an SSH key using the Project Web Interface:
+{:.procedure}
+To add an SSH key using the Project Web Interface:
 
 1.  Copy your SSH public key to the clipboard.
 
@@ -113,6 +113,6 @@ Add your SSH public key to {{ site.data.var.ece }} environments:
 
 You can also add an SSH key using the {{site.data.var.ece}} CLI. See [Add an SSH key using the CLI]({{ page.baseurl }}/cloud/before/before-workspace-ssh.html#add-key-cli).
 
-#### Next step:
+**Next step:**
 
 [Migrate and deploy]({{ page.baseurl }}/cloud/live/stage-prod-migrate.html)

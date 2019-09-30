@@ -29,6 +29,7 @@ This guide discusses the following widgets:
 -   [Prompt widget]
 -   [QuickSearch widget]
 -   [RedirectUrl widget]
+-   [RemainingCharacters widget]
 -   [RowBuilder widget]
 -   [Sortable widget]
 -   [Sticky widget]
@@ -63,6 +64,7 @@ Magento out of the box does not contain jQuery UI styles. Also, it is not recomm
 [Prompt widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_prompt.html
 [QuickSearch widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_quickSearch.html
 [RedirectUrl widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_redirectUrl.html
+[RemainingCharacters widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget-remaining-characters.html
 [RowBuilder widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget-row-builder.html
 [Sortable widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget-sortable.html
 [Tabs widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_tabs.html

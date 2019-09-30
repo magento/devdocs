@@ -23,7 +23,7 @@ GET and DELETE requests are not supported. Although Magento does not currently i
 
 The route to all asynchronous calls contains the prefix `/async`, added before `/V1` of a standard synchronous endpoint. For example:
 
-```
+```http
 POST /async/V1/products
 PUT /async/V1/products/:sku
 ```

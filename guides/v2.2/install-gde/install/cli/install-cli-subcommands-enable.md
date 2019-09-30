@@ -19,8 +19,13 @@ This command has no prerequisites.
 
 To enable or disable available modules, use the following command:
 
-	magento module:enable [-c|--clear-static-content] [-f|--force] [--all] <module-list>
-	magento module:disable [-c|--clear-static-content] [-f|--force] [--all] <module-list>
+```bash
+magento module:enable [-c|--clear-static-content] [-f|--force] [--all] <module-list>
+```
+
+```bash
+magento module:disable [-c|--clear-static-content] [-f|--force] [--all] <module-list>
+```
 
 where
 
@@ -35,11 +40,15 @@ where
 
 Use the following command to list enabled and disabled modules:
 
-	magento module:status
+```bash
+magento module:status
+```
 
 For example, to disable the Weee module, enter:
 
-	magento module:disable Magento_Weee
+```bash
+magento module:disable Magento_Weee
+```
 
 For important information about enabling and disabling modules, see [About enabling and disabling modules](#instgde-cli-subcommands-enable-modules).
 

@@ -24,7 +24,9 @@ Before you run this command, you must do all of the following *or* you must [ins
 
 Command usage:
 
-	magento setup:store-config:set [--<parameter_name>=<value>, ...]
+```bash
+magento setup:store-config:set [--<parameter_name>=<value>, ...]
+```
 
 where the following table defines parameters and values.
 

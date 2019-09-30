@@ -71,7 +71,7 @@ Selecting pool servers is up to you. If you use NTP pool servers, ntp.org recomm
 
 2.	Look for lines similar to the following:
 
-    ```apache
+    ```conf
     server 0.centos.pool.ntp.org
     server 1.centos.pool.ntp.org
     server 2.centos.pool.ntp.org
@@ -81,7 +81,7 @@ Selecting pool servers is up to you. If you use NTP pool servers, ntp.org recomm
 
 4.	An example of using three United States-based NTP servers follows:
 
-    ```apache
+    ```conf
     server 0.us.pool.ntp.org
     server 1.us.pool.ntp.org
     server 2.us.pool.ntp.org
@@ -91,17 +91,17 @@ Selecting pool servers is up to you. If you use NTP pool servers, ntp.org recomm
 
 4.	Restart the service.
 
-  Ubuntu: `service ntp restart`
+    * Ubuntu: `service ntp restart`
 
-  CentOS: `service ntpd restart`
+    * CentOS: `service ntpd restart`
 
 4.	Enter `date` to check the server's date.
 
-  If the date is incorrect, make sure the NTP client port (typically, UDP 123) is open in your firewall.
+    If the date is incorrect, make sure the NTP client port (typically, UDP 123) is open in your firewall.
 
-  Try the `ntpdate _[pool server hostname]_` command. If it fails, search for the error it returns.
+    Try the `ntpdate _[pool server hostname]_` command. If it fails, search for the error it returns.
 
-  If all else fails, try rebooting the server.
+    If all else fails, try rebooting the server.
 
 ## Create phpinfo.php {#install-optional-phpinfo}
 [`phpinfo.php`](http://php.net/manual/en/function.phpinfo.php){:target="_blank"} displays a large amount of information about [PHP](https://glossary.magento.com/php) and its extensions.
@@ -121,7 +121,7 @@ For more information, see the [phpinfo manual page](http://php.net/manual/en/fun
 
 To view the results, enter the following [URL](https://glossary.magento.com/url) in your browser's location or address field:
 
-```html
+```http
 http://<web server host or IP>/phpinfo.php
 ```
 
@@ -158,7 +158,7 @@ To install phpmyadmin on Ubuntu:
 
 3.	To use phpmyadmin, enter the following URL in your browser's address or location field:
 
-    ````html
+    ```http
     http://<web server host or IP>/phpmyadmin
     ```
 
@@ -172,7 +172,13 @@ To install phpmyadmin on CentOS:
 
     ```bash
     cd /tmp
+    ```
+
+    ```bash
     wget http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm
+    ```
+
+    ```bash
     rpm -ivh epel-release-6-8.noarch.rpm
     ```
 
@@ -184,7 +190,7 @@ To install phpmyadmin on CentOS:
 
 3.	Authorize access to phpmyadmin from your machine's IP address.
 
-  Open the following file for editing:
+    Open the following file for editing:
 
     ```bash
     vim /etc/httpd/conf.d/phpMyAdmin.conf
@@ -192,19 +198,27 @@ To install phpmyadmin on CentOS:
 
 3.	Replace the following IP address with your IP address
 
+    ```conf
     Require ip localhost
+    ```
 
-  For example,
+    For example,
 
+    ```conf
     Require ip 192.51.100.101
+    ```
 
 4.	Replace the following IP with your IP address:
 
+    ```conf
     Allow from localhost
+    ```
 
-  For example,
+    For example,
 
+    ```conf
     Allow from 192.51.100.101
+    ```
 
 5.	Save your changes to `/etc/httpd/conf.d/phpMyAdmin.conf` and exit the text editor.
 
@@ -216,7 +230,7 @@ To install phpmyadmin on CentOS:
 
 7.	To use phpmyadmin, enter the following command in your browser's address or location field:
 
-    ```html
+    ```http
     http://<web server host or IP>/phpmyadmin
     ```
 
