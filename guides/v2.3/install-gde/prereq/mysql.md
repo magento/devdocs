@@ -73,18 +73,15 @@ To install MySQL 5.7 on Ubuntu 16:
     mysql -u root -p
     ```
 
-  Sample output:
+    Sample output:
 
     ```terminal
     Welcome to the MySQL monitor.  Commands end with ; or \g.
-    Your MySQL connection id is 45
-    Server version: 5.6.19-0ubuntu0.14.04.1 (Ubuntu)
+    Your MySQL connection id is 45 Server version: 5.6.19-0ubuntu0.14.04.1 (Ubuntu)
 
     Copyright (c) 2000, 2014, Oracle and/or its affiliates. All rights reserved.
 
-    Oracle is a registered trademark of Oracle Corporation and/or its
-    affiliates. Other names may be trademarks of their respective
-    owners.
+    Oracle is a registered trademark of Oracle Corporation and/or its affiliates. Other names may be trademarks of their respective owners.
 
     Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 
@@ -125,18 +122,15 @@ To install MySQL 5.6 on Ubuntu 14:
     mysql -u root -p
     ```
 
-  Sample output:
+    Sample output:
 
     ```terminal
     Welcome to the MySQL monitor.  Commands end with ; or \g.
-    Your MySQL connection id is 45
-    Server version: 5.6.19-0ubuntu0.14.04.1 (Ubuntu)
+    Your MySQL connection id is 45 Server version: 5.6.19-0ubuntu0.14.04.1 (Ubuntu)
 
     Copyright (c) 2000, 2014, Oracle and/or its affiliates. All rights reserved.
 
-    Oracle is a registered trademark of Oracle Corporation and/or its
-    affiliates. Other names may be trademarks of their respective
-    owners.
+    Oracle is a registered trademark of Oracle Corporation and/or its affiliates. Other names may be trademarks of their respective owners.
 
     Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 
@@ -157,8 +151,17 @@ To install MySQL 5.6 on Ubuntu 12, use the following instructions from [askubunt
 
     ```bash
     apt-get -y update
+    ```
+
+    ```bash
     apt-add-repository ppa:ondrej/mysql-5.6
+    ```
+
+    ```bash
     apt-get -y update
+    ```
+
+    ```bash
     apt-get -y install mysql-server
     ```
 
@@ -180,18 +183,15 @@ To install MySQL 5.6 on Ubuntu 12, use the following instructions from [askubunt
     mysql -u root -p
     ```
 
-  Messages similar to the following display:
+    Messages similar to the following display:
 
     ```terminal
     Welcome to the MySQL monitor.  Commands end with ; or \g.
-    Your MySQL connection id is 43
-    Server version: 5.6.21-1+deb.sury.org~precise+1 (Ubuntu)
+    Your MySQL connection id is 43 Server version: 5.6.21-1+deb.sury.org~precise+1 (Ubuntu)
 
     Copyright (c) 2000, 2014, Oracle and/or its affiliates. All rights reserved.
 
-    Oracle is a registered trademark of Oracle Corporation and/or its
-    affiliates. Other names may be trademarks of their respective
-    owners.
+    Oracle is a registered trademark of Oracle Corporation and/or its affiliates. Other names may be trademarks of their respective owners.
 
     Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 
@@ -219,6 +219,9 @@ As a user with `root` privileges, enter the following commands in the order show
 
 ```bash
 wget http://dev.mysql.com/get/mysql57-community-release-el7-7.noarch.rpm
+```
+
+```bash
 yum -y localinstall mysql57-community-release-el7-7.noarch.rpm
 ```
 
@@ -232,6 +235,9 @@ As a user with `root` privileges, enter the following commands in the order show
 
 ```bash
 wget http://dev.mysql.com/get/mysql57-community-release-el6-7.noarch.rpm
+```
+
+```bash
 yum -y localinstall mysql57-community-release-el6-7.noarch.rpm
 ```
 
@@ -243,6 +249,9 @@ Continue with the next section.
 
     ```bash
     yum -y install mysql-community-server
+    ```
+
+    ```bash
     service mysqld start
     ```
 
@@ -252,9 +261,9 @@ Continue with the next section.
     mysql --version
     ```
 
-  Sample output follows:
+    Sample output follows:
 
-    ```terminal
+    ```bash
     mysql  Ver 14.14 Distrib 5.7.12, for Linux (x86_64) using  EditLine wrapper
     ```
 
@@ -264,7 +273,11 @@ Continue with the next section.
     grep 'temporary password' /var/log/mysqld.log
     ```
 
-1. Secure the installation:
+4.	Secure the installation:
+
+    ```bash
+    mysql_secure_installation
+    ```
 
     ```bash
     mysql_secure_installation
@@ -281,7 +294,13 @@ The following procedure is based on [Install MySQL Server 5.6 in CentOS 6.x and 
 
     ```bash
     yum -y update
+    ```
+
+    ```bash
     sudo wget http://repo.mysql.com/mysql-community-release-el6-5.noarch.rpm && sudo rpm -ivh mysql-community-release-el6-5.noarch.rpm
+    ```
+
+    ```bash
     sudo yum -y install mysql-server
     ```
 
@@ -289,7 +308,13 @@ The following procedure is based on [Install MySQL Server 5.6 in CentOS 6.x and 
 
     ```bash
     yum -y update
+    ```
+
+    ```bash
     sudo wget http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm && sudo rpm -ivh mysql-community-release-el7-5.noarch.rpm
+    ```
+
+    ```bash
     sudo yum -y install mysql-server
     ```
 
@@ -311,18 +336,15 @@ The following procedure is based on [Install MySQL Server 5.6 in CentOS 6.x and 
     mysql -u root -p
     ```
 
-  Messages similar to the following display:
+    Messages similar to the following display:
 
     ```terminal
     Welcome to the MySQL monitor.  Commands end with ; or \g.
-    Your MySQL connection id is 15
-    Server version: 5.6.23 MySQL Community Server (GPL)
+    Your MySQL connection id is 15 Server version: 5.6.23 MySQL Community Server (GPL)
 
     Copyright (c) 2000, 2015, Oracle and/or its affiliates. All rights reserved.
 
-    Oracle is a registered trademark of Oracle Corporation and/or its
-    affiliates. Other names may be trademarks of their respective
-    owners.
+    Oracle is a registered trademark of Oracle Corporation and/or its affiliates. Other names may be trademarks of their respective owners.
 
     Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
     ```
@@ -349,10 +371,19 @@ To configure a MySQL database instance:
 1. Enter the MySQL `root` user's password when prompted.
 1. Enter the following commands in the order shown to create a database instance named `magento` with username `magento`:
 
-    ```sql
+    ```shell
     create database magento;
+    ```
+
+    ```shell
     create user magento IDENTIFIED BY 'magento';
+    ```
+
+    ```shell
     GRANT ALL ON magento.* TO magento@localhost IDENTIFIED BY 'magento';
+    ```
+
+    ```shell
     flush privileges;
     ```
 
@@ -364,7 +395,7 @@ To configure a MySQL database instance:
     mysql -u magento -p
     ```
 
-  If the MySQL monitor displays, you created the database properly. If an error displays, repeat the preceding commands.
+    If the MySQL monitor displays, you created the database properly. If an error displays, repeat the preceding commands.
 
 1. If your web server and database server are on different hosts, perform the tasks discussed in this topic on the database server host then see [Set up a remote MySQL database connection]({{page.baseurl }}/install-gde/prereq/mysql_remote.html).
 

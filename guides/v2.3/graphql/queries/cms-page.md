@@ -19,7 +19,7 @@ The following query returns information about the "404 Not Found" CMS page:
 
 **Request**
 
-```text
+```graphql
 {
   cmsPage(identifier: "no-route") {
     url_key

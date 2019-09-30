@@ -28,37 +28,56 @@ This section discusses how to configure an Elasticsearch proxy using a virtual h
 
 1.	Enable `mod_proxy` as follows:
 
-		a2enmod proxy_http
+    ```bash
+    a2enmod proxy_http
+    ```
+
 2.	Use a text editor to open `/etc/apache2/sites-available/000-default.conf`
 3.	Add the following directive at the top of the file:
 
-		Listen 8080
+    ```conf
+    Listen 8080
+    ```
+
 4.	Add the following at the bottom of the file:
 
-		<VirtualHost *:8080>
-		   ProxyPass "/" "http://localhost:9200/"
-		   ProxyPassReverse "/" "http://localhost:9200/"
-		</VirtualHost>
+    ```conf
+    <VirtualHost *:8080>
+        ProxyPass "/" "http://localhost:9200/"
+        ProxyPassReverse "/" "http://localhost:9200/"
+    </VirtualHost>
+    ```
+
 5.	Restart Apache:
 
-		service apache2 restart
+    ```bash
+    service apache2 restart
+    ```
+
 6.	Verify the proxy works by entering the following command:
 
-		curl -i http://localhost:<proxy port>/_cluster/health
+    ```bash
+    curl -i http://localhost:<proxy port>/_cluster/health
+    ```
 
-	For example, if your proxy uses port 8080:
+    For example, if your proxy uses port 8080:
 
-		curl -i http://localhost:8080/_cluster/health
+    ```bash
+    curl -i http://localhost:8080/_cluster/health
+    ```
 
-	Messages similar to the following display to indicate success:
+    ```terminal
+    Messages similar to the following display to indicate success:
 
-		HTTP/1.1 200 OK
-		Date: Tue, 23 Feb 2016 20:38:03 GMT
-		Content-Type: application/json; charset=UTF-8
-		Content-Length: 389
-		Connection: keep-alive
+    HTTP/1.1 200 OK
+    Date: Tue, 23 Feb 2016 20:38:03 GMT
+    Content-Type: application/json; charset=UTF-8
+    Content-Length: 389
+    Connection: keep-alive
 
-		{"cluster_name":"elasticsearch","status":"yellow","timed_out":false,"number_of_nodes":1,"number_of_data_nodes":1,"active_primary_shards":5,"active_shards":5,"relocating_shards":0,"initializing_shards":0,"unassigned_shards":5,"delayed_unassigned_shards":0,"number_of_pending_tasks":0,"number_of_in_flight_fetch":0,"task_max_waiting_in_queue_millis":0,"active_shards_percent_as_number":50.0}
+    {"cluster_name":"elasticsearch","status":"yellow","timed_out":false,"number_of_nodes":1,"number_of_data_nodes":1,"active_primary_shards":5,"active_shards":5,"relocating_shards":0,"initializing_shards":0,"unassigned_shards":5,"delayed_unassigned_shards":0,"number_of_pending_tasks":0,"number_of_in_flight_fetch":0,"task_max_waiting_in_queue_millis":0,"active_shards_percent_as_number":50.0}
+    ```
+
 6.	Continue with [Configure Magento to use Elasticsearch](#elastic-m2-configure).
 
 ### Set up a proxy for Apache 2.2 {#es-apache-proxy-22}
@@ -69,14 +88,18 @@ This section discusses how to configure an Elasticsearch proxy using a virtual h
 
 2.	Locate the `Listen` directive and add another listen port; for example:
 
-		Listen 8080
+    ```conf
+    Listen 8080
+    ```
 
 2.	Scroll to the bottom of the file and add the following lines:
 
-		<VirtualHost *:8080>
-			ProxyPass http://localhost:9200/
-			ProxyPassReverse http://localhost:9200/
-		</VirtualHost>
+    ```conf
+    <VirtualHost *:8080>
+        ProxyPass http://localhost:9200/
+        ProxyPassReverse http://localhost:9200/
+    </VirtualHost>
+    ```
 
 3.	Restart Apache:
 
@@ -84,21 +107,27 @@ This section discusses how to configure an Elasticsearch proxy using a virtual h
 	*	Ubuntu: `service apache2 restart`
 6.	Verify the proxy works by entering the following command:
 
-		curl -i http://localhost:<proxy port>/_cluster/health
+    ```bash
+    curl -i http://localhost:<proxy port>/_cluster/health
+    ```
 
-	For example, if your proxy uses port 8080:
+    For example, if your proxy uses port 8080:
 
-		curl -i http://localhost:8080/_cluster/health
+    ```bash
+    curl -i http://localhost:8080/_cluster/health
+    ```
 
-	Messages similar to the following display to indicate success:
+    Messages similar to the following display to indicate success:
 
-		HTTP/1.1 200 OK
-		Date: Tue, 23 Feb 2016 20:38:03 GMT
-		Content-Type: application/json; charset=UTF-8
-		Content-Length: 389
-		Connection: keep-alive
+    ```terminal
+    HTTP/1.1 200 OK
+    Date: Tue, 23 Feb 2016 20:38:03 GMT
+    Content-Type: application/json; charset=UTF-8
+    Content-Length: 389
+    Connection: keep-alive
 
-		{"cluster_name":"elasticsearch","status":"yellow","timed_out":false,"number_of_nodes":1,"number_of_data_nodes":1,"active_primary_shards":5,"active_shards":5,"relocating_shards":0,"initializing_shards":0,"unassigned_shards":5,"delayed_unassigned_shards":0,"number_of_pending_tasks":0,"number_of_in_flight_fetch":0,"task_max_waiting_in_queue_millis":0,"active_shards_percent_as_number":50.0}
+    {"cluster_name":"elasticsearch","status":"yellow","timed_out":false,"number_of_nodes":1,"number_of_data_nodes":1,"active_primary_shards":5,"active_shards":5,"relocating_shards":0,"initializing_shards":0,"unassigned_shards":5,"delayed_unassigned_shards":0,"number_of_pending_tasks":0,"number_of_in_flight_fetch":0,"task_max_waiting_in_queue_millis":0,"active_shards_percent_as_number":50.0}
+    ```
 
 ## Configure Magento to use Elasticsearch {#elastic-m2-configure}
 
@@ -132,21 +161,24 @@ This section discusses how to specify who can access the Apache server.
 
 	*	Apache 2.4: Edit `/etc/apache2/sites-available/default-ssl.conf`
 
-			<Proxy *>
-			  Order deny,allow
-			  Allow from all
+    ```conf
+    <Proxy *>
+        Order deny,allow
+        Allow from all
 
-			 AuthType Basic
-			 AuthName "Elastic Server"
-			 AuthBasicProvider file
-			 AuthUserFile /usr/local/apache/password/.htpasswd_elasticsearch
-			 Require valid-user
+        AuthType Basic
+        AuthName "Elastic Server"
+        AuthBasicProvider file
+        AuthUserFile /usr/local/apache/password/.htpasswd_elasticsearch
+        Require valid-user
 
-			# This allows OPTIONS-requests without authorization
-			 <LimitExcept OPTIONS>
-			   Require valid-user
-			 </LimitExcept>
-			 </Proxy>
+        # This allows OPTIONS-requests without authorization
+      <LimitExcept OPTIONS>
+            Require valid-user
+      </LimitExcept>
+    </Proxy>
+    ```
+
 3.	If you added the preceding to your secure virtual host, remove `Listen 8080` and the `<VirtualHost *:8080>` directives you added earlier to your unsecure virtual host.
 4.	Save your changes, exit the text editor, and restart Apache:
 

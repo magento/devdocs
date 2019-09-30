@@ -16,6 +16,8 @@ The main disadvantage of this approach is that Magento applies changes blindly. 
 Declarative setup is based on database structure declarations, and is used in projects such as [Doctrine](http://www.doctrine-project.org/). Schema files declare what the database structure should be,
 and Magento determines the differences between the current table structure and what it should be. These differences can be represented with atomic SQL operations.
 
+Magento prioritizes the declarative schema and executes the declarative install schemas before the [data and schema patches]({{ page.baseurl }}/extension-dev-guide/declarative-schema/data-patches.html).
+
 The following example, extracted from the `Catalog/etc/db_schema.xml` file, defines the `catalog_product_entity_datetime` table:
 
 ```xml

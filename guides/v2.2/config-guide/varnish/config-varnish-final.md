@@ -17,13 +17,17 @@ First, make sure you are using Magento's [developer mode]({{ page.baseurl }}/con
 
 For example,
 
-	curl -I -v --location-trusted 'http://192.0.2.55/magento2'
+```bash
+curl -I -v --location-trusted 'http://192.0.2.55/magento2'
+```
 
 Important headers:
 
-	X-Magento-Cache-Control: max-age=86400, public, s-maxage=86400
-	Age: 0
-	X-Magento-Cache-Debug: MISS
+```terminal
+X-Magento-Cache-Control: max-age=86400, public, s-maxage=86400
+Age: 0
+X-Magento-Cache-Debug: MISS
+```
 
 {:.bs-callout .bs-callout-info}
 This value is also acceptable: `X-Magento-Cache-Debug: HIT`.
@@ -59,7 +63,9 @@ Make sure the `<magento_root>/var/page_cache` directory is empty:
 1.	Log in to your Magento server, or switch to, the [Magento file system owner](https://glossary.magento.com/magento-file-system-owner).
 2.	Enter the following command:
 
-		rm -rf <magento_root>/var/page_cache/*
+    ```bash
+    rm -rf <magento_root>/var/page_cache/*
+    ```
 
 3.	Access one or more cacheable Magento pages.
 4.	Check the `var/page_cache/` directory.
