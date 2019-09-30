@@ -48,7 +48,4 @@ namespace :test do
     abort "The Markdown linter has found #{output.lines.count} issues".red unless output.empty?
     puts 'No issues found'.magenta
   end
-
-  task style: %w[md]
-  task cicd: %w[html]
 end

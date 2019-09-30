@@ -72,7 +72,8 @@ You must be a [project administrator]({{ page.baseurl }}/cloud/project/user-admi
 
 When you delete an environment, the environment is set to _inactive_. The code is still available in the Git branch, but no longer contains the services or the database. To delete the environment completely, you must also delete the corresponding remote Git branch.
 
-#### To delete an environment:
+{:.procedure}
+To delete an environment:
 
 1.  Open a terminal and navigate to your project.
 
@@ -86,6 +87,12 @@ When you delete an environment, the environment is set to _inactive_. The code i
 
     ```bash
     magento-cloud environment:delete <environment-ID>
+    ```
+
+    Optionally, you can delete more than one environment at a time by adding multiple environment IDs to the delete command.
+
+    ```bash
+    magento-cloud environment:delete <environment-1-ID> <environment-2-ID>
     ```
 
 1.  Respond to the prompts to delete the local environment and the corresponding remote environment.
@@ -117,14 +124,6 @@ When you delete an environment, the environment is set to _inactive_. The code i
     Run git fetch --prune to remove deleted branches from your local cache.
     ```
     {: .no-copy}
-
-#### To delete more than one environment:
-
-You can delete more than one environment at a time by adding multiple environment IDs to the delete command.
-
-```bash
-magento-cloud environment:delete <environment-1-ID> <environment-2-ID>
-```
 
 {:.bs-callout .bs-callout-info}
 To activate an inactive environment, use the `magento-cloud environment:activate` command.
