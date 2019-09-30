@@ -17,11 +17,11 @@ The `develop` branch is the default branch, which means you get it by default wh
 
 You have the following options:
 
-* *(Easier)*. If you haven't done any customizations, you should uninstall the Magento software and reinstall it with the released version. Uninstalling not only drops the database tables, it also clears the Magento `var` directory, enabling you to start over with no issues.
+* *(Easier)*. If you have not done any customizations, you should uninstall the Magento software and reinstall it with the released version. Uninstalling not only drops the database tables, it also clears the Magento `var` directory, enabling you to start over with no issues.
 
    For more information, see [Change versions by uninstalling the Magento software](#downgrade-uninstall)
 
-* If you have done customizations and don't want to lose them, back up the Magento system, switch to the released branch, and install in a new database instance.
+* If you have done customizations and do not want to lose them, back up the Magento system, switch to the released branch, and install in a new database instance.
 
    For more information, see [Change versions by installing the Magento software in a new database instance](#downgrade-db)
 
@@ -39,7 +39,7 @@ To change versions after cloning:
    ```
 
 1. Either remove your old Magento clone directory or [update the Magento software]({{ page.baseurl }}/install-gde/install/cli/dev_update-magento.html).
-1. If you haven't already done so, clone the Magento 2 GitHub repository as follows:
+1. If you have not already done so, clone the Magento 2 GitHub repository as follows:
 
    ```bash
    git clone git@github.com:magento/magento2.git
