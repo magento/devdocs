@@ -7,7 +7,7 @@ redirect_from:
 
 ## Magento blog
 
-The [Magento blog][0] is a great resource for news about Magento, new community resources (articles, tutorials, etc.), events and other Magento-related items.
+The [Magento DevBlog][0] is a great resource for news about Magento, new community resources (articles, tutorials, etc.), events and other Magento-related items.
 
 ## Best practices
 
@@ -39,6 +39,6 @@ We have [channels][] for each project, but the following channels are recommende
 [appdesign]: https://magentocommeng.slack.com/messages/CBSL1DF8B
 [coding-standards]: https://magentocommeng.slack.com/messages/CFC88F1C6
 [announcements]: https://magentocommeng.slack.com/messages/C7FA71S3V
-[0]: https://magento.com/blog
+[0]: https://community.magento.com/t5/Magento-DevBlog/bg-p/devblog
 [1]: https://github.com/magento/devdocs/blob/master/.github/CONTRIBUTING.md
 [channels]: https://github.com/magento/magento2/wiki/Slack-Channels
