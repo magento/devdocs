@@ -50,6 +50,7 @@ Your project includes [Fastly]({{ page.baseurl }}/cloud/cdn/cloud-fastly.html), 
 
 - [New Relic](https://newrelic.com) provides application metrics and performance information for Staging and Production environments.
 
+{:.procedure}
 To review your integration tokens, IDs, and more:
 
 1. As the {{site.data.var.ece}} Account Owner, log in to your project.
@@ -110,7 +111,7 @@ You can manage variables and settings for Production, Staging, and Integration e
 
 ![Access your project]({{ site.baseurl }}/common/images/cloud_project-env.png)
 
-This displays the following page, which enables you to configure settings, [variables]({{ page.baseurl }}/cloud/project/project-conf-files_magento-app.html, [routes]({{ page.baseurl }}/cloud/project/project-conf-files_routes.html), and [users]({{ page.baseurl }}/cloud/project/user-admin.html).
+This displays the following page, which enables you to configure settings, [variables]({{ page.baseurl }}/cloud/project/project-conf-files_magento-app.html), [routes]({{ page.baseurl }}/cloud/project/project-conf-files_routes.html), and [users]({{ page.baseurl }}/cloud/project/user-admin.html).
 
 ![configure environments]({{ site.baseurl }}/common/images/cloud_project-conf-env.png)
 
@@ -120,7 +121,7 @@ On the *Variables* tab, you can view, create, and manage environment variables f
 
 ![Environment variables fastly credentials]({{ site.baseurl }}/common/images/cloud/cloud-project-web-ui-environment-variables.png)
 
-You can also [list and review]({{ page.baseurl }}/cloud/before/before-setup-env-2_clone.html#variablelist) environment variables using the following Magento Cloud CLI command.
+You can also [list and review]({{ page.baseurl }}/cloud/before/before-setup-env-2_clone.html) environment variables using the following Magento Cloud CLI command.
 
 ```bash
 magento-cloud variable:get -e <environment ID>

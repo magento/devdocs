@@ -110,6 +110,7 @@ You can create a snapshot of your database and file system using the Project Web
 
 ## Prepare for development {#develop}
 
+{:.procedure}
 To branch and develop your Magento store:
 
 * Set up your local environment
