@@ -528,7 +528,7 @@ The `3T1free` rule is applied first, and Magento returns the price of a single s
 In the following example, tier prices has been established for product `24-UG01` and `24-UG05`, as shown in the following table:
 
 Product | Quantity | Fixed/Discount | Amount
---- | --- | --- | --- | 
+--- | --- | --- | --- |
 24-UG01 | 5 | Discount | 5%
 24-UG01 | 10 | Discount | 10%
 24-UG01 | 15 | Discount | 15%
