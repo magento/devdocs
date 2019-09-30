@@ -529,9 +529,11 @@ In the following example, a catalog price rule that provides a 10% discount on a
         minimum_price {
           regular_price {
             value
+            currency
           }
           final_price {
             value
+            currency
           }
           discount {
             amount_off
@@ -541,9 +543,11 @@ In the following example, a catalog price rule that provides a 10% discount on a
         maximum_price {
           regular_price {
             value
+            currency
           }
           final_price {
             value
+            currency
           }
           discount {
             amount_off
@@ -554,7 +558,7 @@ In the following example, a catalog price rule that provides a 10% discount on a
     }
   }
 }
-```
+
 
 **Response**
 
@@ -569,26 +573,30 @@ In the following example, a catalog price rule that provides a 10% discount on a
           "price_range": {
             "minimum_price": {
               "regular_price": {
-                "value": 61
+                "value": 61,
+                "currency": "USD"
               },
               "final_price": {
-                "value": 54.9
+                "value": 61,
+                "currency": "USD"
               },
               "discount": {
-                "amount_off": 6.1,
-                "percent_off": 10
+                "amount_off": 0,
+                "percent_off": 0
               }
             },
             "maximum_price": {
               "regular_price": {
-                "value": 77
+                "value": 77,
+                "currency": "USD"
               },
               "final_price": {
-                "value": 69.3
+                "value": 77,
+                "currency": "USD"
               },
               "discount": {
-                "amount_off": 7.7,
-                "percent_off": 10
+                "amount_off": 0,
+                "percent_off": 0
               }
             }
           }

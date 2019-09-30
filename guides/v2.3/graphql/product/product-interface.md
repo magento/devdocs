@@ -92,7 +92,7 @@ Attribute |  Data Type | Description
 
 ### ProductPrice object {#ProductPrice}
 
-The `ProductPrice` object includes the regular price, final price, and any discounts applied to a product.
+The `ProductPrice` object includes the regular price, final price, and the difference between those two prices.
 
 Attribute |  Data Type | Description
 --- | --- | ---
@@ -102,7 +102,7 @@ Attribute |  Data Type | Description
 
 ### ProductDiscount object {#ProductDiscount}
 
-The `ProductDiscount` object indicates whether the discount applied to a product is fixed amount, such as $5, or a percentage, such as 10%. The discount originates from special pricing or a catalog price rule.
+The `ProductDiscount` object expresses the discount applied to a product as fixed amount, such as $5, and as a percentage, such as 10%. The discount originates from special pricing or a catalog price rule.
 
 Attribute |  Data Type | Description
 --- | --- | ---
@@ -219,8 +219,8 @@ The `ProductTierPrices` object defines a tier price, which is a quantity discoun
 Attribute | Type | Description
 --- | --- | ---
 `customer_group_id` | Int | Deprecated. There is no replacement because this value is not relevant for the storefront. The ID of the customer group
-`percentage_value` | Float | Deprecated. Use `ProductPrice.discount` instead. The percentage discount of the item
-`qty` | Float | Deprecated. Use `ProductPrice.quantity` instead. The number of items that must be purchased to qualify for tier pricing
+`percentage_value` | Float | Deprecated. Use `TierPrice.discount` instead. The percentage discount of the item
+`qty` | Float | Deprecated. Use `TierPrice.quantity` instead. The number of items that must be purchased to qualify for tier pricing
 `value` | Float | Deprecated. Use `ProductPrice.final_price` instead. The price of the fixed price item
 `website_id` | Int | Deprecated. There is no replacement because this value is not relevant for the storefront. The ID assigned to the website
 
