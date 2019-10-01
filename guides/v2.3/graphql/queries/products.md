@@ -38,7 +38,7 @@ The `search` element causes Magento to perform a full text search on the specifi
 
 The `search` element is optional, but it can be used with or without filters. Each query must contain a `search` or `filter` element.
 
-### filter attribute
+### filter attribute {#ProductFilterInput}
 
 The `ProductFilterInput` object defines the filters to be used in the search. A filter contains at least one attribute, a comparison operator, and the value that is being searched for. The following example filter searches for products that has a `sku` that contains the string `24-MB` with a `price` that's less than `50`.
 

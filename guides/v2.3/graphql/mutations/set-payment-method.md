@@ -18,15 +18,15 @@ Purchase Order | `purchaseorder`
 
 Supported online payment methods include:
 
--  [Authorize.Net]({{page.baseurl}}/payment-methods/authorize-net.html)
--  [Braintree]({{page.baseurl}}/payment-methods/braintree.html)
--  [Braintree Vault]({{page.baseurl}}/payment-methods/braintree-vault.html)
--  [PayPal Express Checkout]({{page.baseurl}}/payment-methods/paypal-express-checkout.html)
--  [PayPal Payflow Link]({{page.baseurl}}/payment-methods/payflow-link.html)
--  [PayPal Payflow Pro]({{page.baseurl}}/payment-methods/payflow-pro.html)
--  [PayPal Payments Advanced]({{page.baseurl}}/payment-methods/payments-advanced.html)
--  [PayPal Website Payments Pro Hosted Solution]({{page.baseurl}}/payment-methods/hosted-pro.html)
--  [Express Checkout for other PayPal solutions]({{page.baseurl}}/payment-methods/payflow-express.html)
+-  [Authorize.Net]({{page.baseurl}}/graphql/payment-methods/authorize-net.html)
+-  [Braintree]({{page.baseurl}}/graphql/payment-methods/braintree.html)
+-  [Braintree Vault]({{page.baseurl}}/graphql/payment-methods/braintree-vault.html)
+-  [PayPal Express Checkout]({{page.baseurl}}/graphql/payment-methods/paypal-express-checkout.html)
+-  [PayPal Payflow Link]({{page.baseurl}}/graphql/payment-methods/payflow-link.html)
+-  [PayPal Payflow Pro]({{page.baseurl}}/graphql/payment-methods/payflow-pro.html)
+-  [PayPal Payments Advanced]({{page.baseurl}}/graphql/payment-methods/payments-advanced.html)
+-  [PayPal Website Payments Pro Hosted Solution]({{page.baseurl}}/graphql/payment-methods/hosted-pro.html)
+-  [Express Checkout for other PayPal solutions]({{page.baseurl}}/graphql/payment-methods/payflow-express.html)
 
 ## Syntax
 
