@@ -20,7 +20,7 @@ This topic discusses the ways you can:
    * Modules (also referred to as *extensions*; extend Magento capabilities)
    * Themes (change the look and feel of your storefront and Admin)
    * Language packages (localize the storefront and Admin)
-   
+
 * Uninstall extensions
 
 ## Upgrade the Magento application
@@ -33,7 +33,7 @@ The way you upgrade (that is, patch) the Magento application depends on how you 
    * For the upgrade, create another subdomain or docroot that uses the Magento installation directory as its root.
 
    Run the System Upgrade utility as discussed in this topic using that subdomain or docroot.
-  
+
    * Upgrade the Magento software using the [command line].
 
 * To upgrade from {{ce}} to {{ee}}, see [Upgrade from Open Source to Commerce].

@@ -75,7 +75,7 @@ We have the following entry point applications (that is, applications defined by
 1. Starts the front controller and routing systems in order to find and execute a controller action.
 1. Uses an HTTP response object to return result obtained from the controller action.
 1. Error handling (in the following priority order):
-   
+
    1. If you're using [developer mode]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html#developer-mode):
       * If the Magento application is not installed, redirect to Setup Wizard.
       * If the Magento application is installed, display an error and HTTP status code 500 (Internal Server Error).

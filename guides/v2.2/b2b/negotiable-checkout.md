@@ -134,7 +134,7 @@ In this call, you specify the shipping and billing addresses, as well as the sel
 **Payload**
 
 ```json
-{  
+{
   "addressInformation": {
     "shipping_address": {
       "region": "California",

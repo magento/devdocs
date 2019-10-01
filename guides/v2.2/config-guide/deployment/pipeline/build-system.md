@@ -18,7 +18,7 @@ You can have one build system that meets the following requirements:
    * `pub/media` directory
    * `pub/media/wysiwyg` directory (and subdirectories)
    * `pub/static` directory (and subdirectories)
-   
+
 * Must have a compatible PHP version installed
 * Must have Composer installed
 * It has Magento file system ownership and permissions set as discussed in [Prerequisite for your development, build, and production systems]({{ page.baseurl }}/config-guide/deployment/pipeline/technical-details.html#config-deploy-prereq).
