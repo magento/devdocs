@@ -4,8 +4,64 @@ description: |
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: /whats-new.html
 thread: /whatsnew-feed.xml
-updated: Mon Sep 9 16:43:06 2019
+updated: Tue Sep 24 09:26:19 2019
 entries:
+- description: Added example [introspection queries](https://devdocs.magento.com/guides/v2.3/graphql/queries.html)
+    to the _GraphQL Developer Guide_.
+  versions: 2.3.x
+  type: Major update
+  date: September 20, 2019
+  link: https://github.com/magento/devdocs/pull/5438
+- description: Added options and methods to the [Multiselect Widget](https://devdocs.magento.com/guides/v2.3/javascript-dev-guide/widgets/widget-multiselect.html)
+    topic in the _JavaScript Developer Guide_.
+  versions: 2.2.x, 2.3.x
+  type: Major update
+  date: September 19, 2019
+  link: https://github.com/magento/devdocs/pull/5354
+- description: Updated the [Add site map and search engine robots](https://devdocs.magento.com/guides/v2.3/cloud/trouble/robots-sitemap.html)
+    topic in the _Cloud Guide_ with a VCL snippet example to create a typical domain redirect for `robots.txt`
+    and `sitemap.xml` files.
+  versions: 2.2.x, 2.3.x
+  type: Major update
+  date: September 19, 2019
+  link: https://github.com/magento/devdocs/pull/5330
+- description: Added the [Sortable Widget](https://devdocs.magento.com/guides/v2.3/javascript-dev-guide/widgets/widget-sortable.html)
+    topic to the _JavaScript Developer Guide_.
+  versions: 2.2.x, 2.3.x
+  type: New topic
+  date: September 18, 2019
+  link: https://github.com/magento/devdocs/pull/5358
+- description: Added a [Symbolic links](https://github.com/magento/devdocs/blob/master/.github/CONTRIBUTING.md#symbolic-links) section to the _Contribution Guide_.
+  versions: ''
+  type: Major update
+  date: September 18, 2019
+  link: https://github.com/magento/devdocs/pull/5357
+- description: Added the [Sticky widget](http://devdocs.magento.com/guides/v2.3/javascript-dev-guide/widgets/widget_sticky.html)
+    topic to the _Javascript Developer Guide_.
+  versions: 2.2.x, 2.3.x
+  type: New topic
+  date: September 17, 2019
+  link: https://github.com/magento/devdocs/pull/5371
+- description: Added the [Media Uploader widget](https://devdocs.magento.com/guides/v2.3/javascript-dev-guide/widgets/widget-media-uploader.html)
+    topic to the _JavaScript Developer Guide_.
+  versions: 2.2.x, 2.3.x
+  type: New topic
+  date: September 17, 2019
+  link: https://github.com/magento/devdocs/pull/5360
+- description: Added the [Log locations topic](https://devdocs.magento.com/guides/v2.3/cloud/project/log-locations.html)
+    to the _Cloud Guide_.
+  versions: 2.x
+  type: New topic
+  date: September 13, 2019
+  link: https://github.com/magento/devdocs/pull/5351
+- description: Updated information about using LESS with Grunt in the [Compile LESS using
+    Grunt](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/css-topics/css_debug.html)
+    and [Using Grunt for Magento tasks](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/tools/using_grunt.html)
+    topics.
+  versions: 2.2.x, 2.3.x
+  type: Major update
+  date: September 10, 2019
+  link: https://github.com/magento/devdocs/pull/5343
 - description: Added an example of the `escapeCss` function to the [Templates XSS
     security](https://devdocs.magento.com/guides/v2.2/frontend-dev-guide/templates/template-security.html)
     topic.
@@ -219,12 +275,6 @@ entries:
   type: Technical changes
   date: July 30, 2019
   link: https://github.com/magento/devdocs/pull/5039
-- description: Added the new topic [CSS Critical Path](https://devdocs.magento.com/guides/v2.2/frontend-dev-guide/css-topics/css-critical-path.html)
-    to the Frontend Developer Guide.
-  versions: 2.2.x, 2.3.x
-  type: New topic
-  date: July 30, 2019
-  link: https://github.com/magento/devdocs/pull/4726
 - description: Added steps for [creating a patch from a git commit](https://devdocs.magento.com/guides/v2.2/comp-mgr/patching.html#custom-patches).
   versions: 2.2.x, 2.3.x
   type: Major update
@@ -1673,7 +1723,7 @@ entries:
 - description: "- Updated the Magento Commerce Cloud instructions for [customizing
     response pages](https://devdocs.magento.com/guides/v2.3/cloud/cdn/cloud-fastly-custom-response.html)<br/>for
     Fastly CDN and WAF services--adding additional screen captures and explanation.<br/>-
-    Edited the [Managed Cloud WAF](https://devdocs.magento.com/guides/v2.3/cloud/cdn/fastly-waf-service.html)
+    Edited the Fastly [Web Application Firewall](https://devdocs.magento.com/guides/v2.3/cloud/cdn/fastly-waf-service.html)
     documentation to clarify information about features and benefits"
   versions: 2.1.x, 2.2.x, 2.3.x
   type: Major update
@@ -1831,7 +1881,7 @@ entries:
   type: Technical changes
   date: October 25 2018
 - description: Updated the Magento Commerce Cloud Fastly documentation with information
-    about the Magento Managed Cloud WAF solution. See [Managed Cloud WAF](https://devdocs.magento.com/guides/v2.2/cloud/cdn/fastly-waf-service.html).
+    about the Fastly Web Application Firewall service. See [Web Application Firewall](https://devdocs.magento.com/guides/v2.2/cloud/cdn/fastly-waf-service.html).
   versions: 2.1.x, 2.2.x, 2.3.x
   type: Major update
   date: October 22 2018

@@ -15,9 +15,11 @@ You may encounter an error, caused by your system running out of physical memory
 
 When installing or updating the Magento application or components like extensions, themes, or language packages, an error similar to the following displays:
 
-	Could not complete update {"components":[
-	{"name":"magento/module-bundle-sample-data","version":"100.1.0"}
-	]} successfully: proc_open(): fork failed - Cannot allocate memory
+```terminal
+Could not complete update {"components":[
+{"name":"magento/module-bundle-sample-data","version":"100.1.0"}
+]} successfully: proc_open(): fork failed - Cannot allocate memory
+```
 
 The error `proc_open(): fork failed - Cannot allocate memory` can also display on the command line.
 

@@ -1,13 +1,12 @@
 ---
 group: installation-guide
-subgroup: Prerequisites
 title: Optional software
-menu_title: Optional software
-menu_order: 400
 functional_areas:
   - Install
   - System
   - Setup
+redirect_from:
+  - guides/v2.2/install-gde/trouble/php/tshoot_phpini.html
 ---
 
 ## Magento optional software {#install-optional-intro}
@@ -31,7 +30,9 @@ See one of the following sections:
 
 Enter the following command to install NTP:
 
-	apt-get install ntp
+```bash
+apt-get install ntp
+```
 
 Continue with [Use NTP pool servers](#install-optional-ntp-servers)
 
@@ -41,17 +42,23 @@ To install and configure NTP:
 
 1.	Enter the following command to find the appropriate NTP software:
 
-		yum search ntp
+    ```bash
+    yum search ntp
+    ```
 
 2.	Select a package to install. For example, `ntp.x86_64`.
 
 2.	Install the package.
 
-		yum -y install ntp.x86_64
+    ```bash
+    yum -y install ntp.x86_64
+    ```
 
 3.	Enter the following command so that NTP starts when the server starts.
 
-		chkconfig ntpd on
+    ```bash
+    chkconfig ntpd on
+    ```
 
 3.	Continue with the next section.
 
@@ -63,33 +70,37 @@ Selecting pool servers is up to you. If you use NTP pool servers, ntp.org recomm
 
 2.	Look for lines similar to the following:
 
-		server 0.centos.pool.ntp.org
-		server 1.centos.pool.ntp.org
-		server 2.centos.pool.ntp.org
+    ```conf
+    server 0.centos.pool.ntp.org
+    server 1.centos.pool.ntp.org
+    server 2.centos.pool.ntp.org
+    ```
 
 3.	Replace those lines or add additional lines that specify your NTP pool server or other NTP servers. It's a good idea to specify more than one.
 
 4.	An example of using three United States-based NTP servers follows:
 
-		server 0.us.pool.ntp.org
-		server 1.us.pool.ntp.org
-		server 2.us.pool.ntp.org
+    ```conf
+    server 0.us.pool.ntp.org
+    server 1.us.pool.ntp.org
+    server 2.us.pool.ntp.org
+    ```
 
 5.	Save your changes to `/etc/ntp.conf` and exit the text editor.
 
 4.	Restart the service.
 
-	Ubuntu: `service ntp restart`
+    * Ubuntu: `service ntp restart`
 
-	CentOS: `service ntpd restart`
+    * CentOS: `service ntpd restart`
 
 4.	Enter `date` to check the server's date.
 
-	If the date is incorrect, make sure the NTP client port (typically, UDP 123) is open in your firewall.
+    If the date is incorrect, make sure the NTP client port (typically, UDP 123) is open in your firewall.
 
-	Try the `ntpdate _[pool server hostname]_` command. If it fails, search for the error it returns.
+    Try the `ntpdate _[pool server hostname]_` command. If it fails, search for the error it returns.
 
-	If all else fails, try rebooting the server.
+    If all else fails, try rebooting the server.
 
 ## Create phpinfo.php {#install-optional-phpinfo}
 [`phpinfo.php`](http://php.net/manual/en/function.phpinfo.php){:target="_blank"} displays a large amount of information about [PHP](https://glossary.magento.com/php) and its extensions.
@@ -99,15 +110,19 @@ Use `phpinfo.php` in a development system _only_. It can be a security issue in 
 
 Add the following code anywhere in your web server's docroot:
 
-	<?php
-	// Show all information, defaults to INFO_ALL
-	phpinfo();
+```php
+<?php
+// Show all information, defaults to INFO_ALL
+phpinfo();
+```
 
 For more information, see the [phpinfo manual page](http://php.net/manual/en/function.phpinfo.php){:target="_blank"}.
 
 To view the results, enter the following [URL](https://glossary.magento.com/url) in your browser's location or address field:
 
-	http://<web server host or IP>/phpinfo.php
+```http
+http://<web server host or IP>/phpinfo.php
+```
 
 If a 404 (Not Found) error displays, check the following:
 
@@ -134,13 +149,17 @@ To install phpmyadmin on Ubuntu:
 
 1.	Use the following command:
 
-		apt-get install phpmyadmin
+    ```bash
+    apt-get install phpmyadmin
+    ```
 
 2.	Follow the prompts on your screen to complete the installation.
 
 3.	To use phpmyadmin, enter the following URL in your browser's address or location field:
 
-		http://<web server host or IP>/phpmyadmin
+    ```http
+    http://<web server host or IP>/phpmyadmin
+    ```
 
 4.	When prompted, log in using your MySQL database `root` or administrative user's username and password.
 
@@ -150,45 +169,69 @@ To install phpmyadmin on CentOS:
 
 1.	Download the epel RPM for the version of CentOS you're using. A sample follows.
 
-		cd /tmp
-		wget http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm
-		rpm -ivh epel-release-6-8.noarch.rpm
+    ```bash
+    cd /tmp
+    ```
+
+    ```bash
+    wget http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm
+    ```
+
+    ```bash
+    rpm -ivh epel-release-6-8.noarch.rpm
+    ```
 
 2.	Install `phpmyadmin` as follows:
 
-		yum -y install phpmyadmin
+    ```bash
+    yum -y install phpmyadmin
+    ```
 
 3.	Authorize access to phpmyadmin from your machine's IP address.
 
-	Open the following file for editing:
+    Open the following file for editing:
 
-		vim /etc/httpd/conf.d/phpMyAdmin.conf
+    ```bash
+    vim /etc/httpd/conf.d/phpMyAdmin.conf
+    ```
 
 3.	Replace the following IP address with your IP address
 
-		Require ip localhost
+    ```conf
+    Require ip localhost
+    ```
 
-	For example,
+    For example,
 
-		Require ip 192.51.100.101
+    ```conf
+    Require ip 192.51.100.101
+    ```
 
 4.	Replace the following IP with your IP address:
 
-		Allow from localhost
+    ```conf
+    Allow from localhost
+    ```
 
-	For example,
+    For example,
 
-		Allow from 192.51.100.101
+    ```conf
+    Allow from 192.51.100.101
+    ```
 
 5.	Save your changes to `/etc/httpd/conf.d/phpMyAdmin.conf` and exit the text editor.
 
 6.	Restart Apache.
 
-		service httpd Restart
+    ```bash
+    service httpd Restart
+    ```
 
 7.	To use phpmyadmin, enter the following command in your browser's address or location field:
 
-		http://<web server host or IP>/phpmyadmin
+    ```http
+    http://<web server host or IP>/phpmyadmin
+    ```
 
 8.	When prompted, log in using your MySQL database `root` or administrative user's username and password.
 

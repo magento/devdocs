@@ -18,7 +18,9 @@ This topic discusses how to resolve issues with incorrect credentials in your `a
 
 The most common symptom of incorrect credentials is a deployment failure with an authentication error similar to the following:
 
-	The 'https://repo.magento.com/archives/magento/magento-cloud-configuration/magento-magento-cloud-configuration-1.0.3.0.zip' URL could not be accessed: HTTP/1.1 403 Forbidden
+```text
+The 'https://repo.magento.com/archives/magento/magento-cloud-configuration/magento-magento-cloud-configuration-1.0.3.0.zip' URL could not be accessed: HTTP/1.1 403 Forbidden
+```
 
 To see the error log:
 
@@ -40,16 +42,25 @@ To get started:
 1.	Log in to the machine on which your SSH keys are located.
 2.	Log in to your project:
 
-		magento-cloud login
+    ```bash
+    magento-cloud login
+    ```
+
 3.	List your projects:
 
-		magento-cloud project:list
+    ```bash
+    magento-cloud project:list
+    ```
+
 4.	If necessary, clone a project.
 
-		magento-cloud project:get <project ID>
+    ```bsh
+    magento-cloud project:get <project ID>
+    ```
+
 4.	Change to a project directory.
 
-	For example if your project is named Magento 2, `cd magento-2`
+    For example if your project is named Magento 2, `cd magento-2`
 
 #### Update `auth.json` and redeploy the environment
 
@@ -62,15 +73,27 @@ To resolve the issue with credentials:
 5.	Save your changes to `auth.json` and exit the text editor.
 6.	Update project dependencies:
 
-		composer update
+    ```bash
+    composer update
+    ```
+
 6.	Add, commit, and push your changes:
 
-		git add -A
-		git commit -m "<message>"
-		git push origin master
+    ```bash
+    git add -A
+    ```
+
+    ```bash
+    git commit -m "<message>"
+    ```
+
+    ```bash
+    git push origin master
+    ```
+
 7.	Wait for the project to deploy.
 
-	A snippet of messages for a successful deployment follows:
+    A snippet of messages for a successful deployment follows:
 
 {% collapsible Click to show/hide snippet %}
 

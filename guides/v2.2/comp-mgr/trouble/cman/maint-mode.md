@@ -71,18 +71,20 @@ To redirect traffic to a custom maintenance page:
 	*	Redirect all traffic to the maintenance page
 	*	Whitelist certain IPs so an administrator can run the System Upgrade utility to upgrade the Magento software.
 
-	The following example whitelists 192.0.2.110.
+    The following example whitelists 192.0.2.110.
 
-	Add the following at the end of your Apache configuration file:
+    Add the following at the end of your Apache configuration file:
 
-		RewriteEngine On
-		RewriteCond %{REMOTE_ADDR} !^192\.0\.2\.110
-		RewriteCond %{DOCUMENT_ROOT}/maintenance.html -f
-		RewriteCond %{DOCUMENT_ROOT}/maintenance.enable -f
-		RewriteCond %{SCRIPT_FILENAME} !maintenance.html
-		RewriteRule ^.*$ /maintenance.html [R=503,L]
-		ErrorDocument 503 /maintenance.html
-		Header Set Cache-Control "max-age=0, no-store"
+    ```terminal
+    RewriteEngine On
+    RewriteCond %{REMOTE_ADDR} !^192\.0\.2\.110
+    RewriteCond %{DOCUMENT_ROOT}/maintenance.html -f
+    RewriteCond %{DOCUMENT_ROOT}/maintenance.enable -f
+    RewriteCond %{SCRIPT_FILENAME} !maintenance.html
+    RewriteRule ^.*$ /maintenance.html [R=503,L]
+    ErrorDocument 503 /maintenance.html
+    Header Set Cache-Control "max-age=0, no-store"
+    ```
 
 3.	Restart Apache:
 
@@ -91,7 +93,10 @@ To redirect traffic to a custom maintenance page:
 
 4. Enter the following command:
 
-		touch <web server docroot>/maintenance.enable
+    ```bash
+    touch <web server docroot>/maintenance.enable
+    ```
+
 5.	[Upgrade your system]({{ page.baseurl }}/comp-mgr/upgrader/upgrade-start.html).
 7.	Test your site to make sure it functions correctly.
 6.	After the upgrade is done, delete `maintenance.enable`.
@@ -105,46 +110,57 @@ To redirect traffic to a custom maintenance page:
 1.	Use a text editor to open the [nginx](https://glossary.magento.com/nginx) configuration file that contains your server block.
 2.	Add the following to the server block (`server` is shown for clarity only; don't add a second server block).
 
-	The following whitelists IP address 192.0.2.110 and 192.0.2.115 on a system where Magento is installed in `/var/www/html/magento2`:
+    The following whitelists IP address 192.0.2.110 and 192.0.2.115 on a system where Magento is installed in `/var/www/html/magento2`:
 
-		server {
-		listen 80;
-		set $MAGE_ROOT /var/www/html/magento2;
+    ```conf
+    server {
+        listen 80;
+        set $MAGE_ROOT /var/www/html/magento2;
 
-		set $maintenance off;
+        set $maintenance off;
 
-		if (-f $MAGE_ROOT/maintenance.enable) {
-		set $maintenance on;
-		}
+        if (-f $MAGE_ROOT/maintenance.enable) {
+            set $maintenance on;
+        }
 
-		if ($remote_addr ~ (192.0.2.110|192.0.2.115)) {
-		set $maintenance off;
-		}
+        if ($remote_addr ~ (192.0.2.110|192.0.2.115)) {
+            set $maintenance off;
+        }
 
-		if ($maintenance = on) {
-		return 503;
-		}
+        if ($maintenance = on) {
+            return 503;
+        }
 
-		location /maintenance {
-		}
+        location /maintenance {
+        }
 
-		error_page 503 @maintenance;
+        error_page 503 @maintenance;
 
-		location @maintenance {
-		root $MAGE_ROOT;
-		rewrite ^(.*)$ /maintenance.html break;
+        location @maintenance {
+        root $MAGE_ROOT;
+        rewrite ^(.*)$ /maintenance.html break;
+	}
 
-		include /var/www/html/magento2/nginx.conf;
-		}
+        include /var/www/html/magento2/nginx.conf;
+    }
+
 4. Enter the following command:
 
-		touch <magento_root>/maintenance.enable
+    ```bash
+    touch <magento_root>/maintenance.enable
+    ```
+
 3. Reload the nginx configuration:
 
-		service nginx reload
+    ```bash
+    service nginx reload
+    ```
+
 5.	[Upgrade your system]({{ page.baseurl }}/comp-mgr/upgrader/upgrade-start.html).
 7.	Test your site to make sure it functions correctly.
 6.	After the upgrade is done, delete or rename `maintenance.enable`
 5.	Reload the nginx configuration:
 
-		service nginx reload
+    ```bash
+    service nginx reload
+    ```
