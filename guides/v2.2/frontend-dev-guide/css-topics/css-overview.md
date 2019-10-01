@@ -32,7 +32,7 @@ There are a couple options to help with CSS and site performance.
 
 * Minification of CSS files reduces the file size being sent. It does this by stripping white space within the file.
 
-To enable / disable these settings, go into Admin > **Stores** > Setting > **Configuration** > **Advanced** > **Developer** > **CSS Settings**.
+To enable or disable these settings, go to _Admin_ panel, click **Stores** > **Settings::Configuration** > **Advanced** > **Developer** > **CSS Settings**.
 
 ## Change styles: walkthrough {#css_walk}
 
