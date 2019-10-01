@@ -1,11 +1,11 @@
 ---
 group: cloud-guide
-title: Scaling architecture
+title: Scaled architecture
 functional_areas:
   - Cloud
 ---
 
-The Cloud infrastructure scales according to your resource needs to achieve greater efficiency. The {{site.data.var.ece}} auto-scaling monitors your applications and automatically adjusts capacity to maintain steady, predictable performance. Converting to this architecture helps to mitigate problems, such as latency, large spikes in traffic, or running out of storage.
+The Cloud infrastructure scales according to your resource needs to achieve greater efficiency. The {{site.data.var.ece}} monitors your applications and automatically adjusts capacity to maintain steady, predictable performance. Converting to this architecture helps to mitigate problems, such as latency, large spikes in traffic, or running out of storage.
 
 ## Split architecture
 
@@ -17,7 +17,7 @@ There are 3 nodes for the database and services. When the database (db) tier app
 
 ![Database tier scaling]
 
-Further optimizing performance includes routing traffic. You can route traffic based on the node type. For example, you can serve PHP traffic on the database node or you can isolate the database node from the PHP traffic.
+Further optimizing performance includes routing traffic. You can route traffic based on the node type. For example, you can serve PHP traffic on the db node or you can isolate the database node from the PHP traffic. Although, db nodes do not serve PHP traffic by default.
 
 ### Web tier scaling
 
@@ -25,30 +25,11 @@ There are 3 nodes for the web servers. In addition to vertical scaling by increa
 
 ![Web tier scaling]
 
-This complements the vertical scaling provided by the database tier. (Introduce the concept of balancing...)
+This complements the vertical scaling provided by the database tier. Consider the following when scaling the web tier:
 
-Consider the following when scaling the web tier:
-
--  You must use the same instance type and size for each node. Examples include:
-   -  all `M4 xlarge` for WEB
-   -  all `C4 xlarge` for DB
--  Instances of a specific type and size must be available when scaling.
--  Must balance the usage of instance types & sizes. (how to describe this?? )
-
-## Managing nodes
-
-Pure speculation beyond this point...
-
--  migrating between instance types
--  routing traffic (is load balancing a part of this concept?)
--  monitoring
--  scaling
-   -  up-sizing
-   -  down-sizing
-
-### Load balancing
-
-need more information
+You must use the same instance type and size for each node. Examples include:
+-  all `M4 xlarge` for WEB
+-  all `C4 xlarge` for DB
 
 [Database tier scaling]: {{ site.baseurl }}/common/images/cloud/scaling-db.png
 [Web tier scaling]: {{ site.baseurl }}/common/images/cloud/scaling-web.png
