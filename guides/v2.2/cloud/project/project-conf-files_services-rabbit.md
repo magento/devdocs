@@ -46,24 +46,24 @@ For debugging purposes, it is useful to directly connect to a service instance i
 
 ### Connect from your local development environment {#cloud-rabbitmq-conn-loc}
 
-You can do this using [SSH tunneling]({{ page.baseurl }}/cloud/env/environments-start.html#env-start-tunn):
-
-1.  Use SSH to log in to the Integration environment with RabbitMQ installed and configured.
-
 1.  Log in to the Magento Cloud CLI and project:
 
     ```bash
     magento-cloud login
     ```
 
-1.  Open a tunnel to the application.
+1.  Checkout the environment with RabbitMQ installed and configured.
 
     ```bash
-    magento-cloud tunnel:open
+    magento-cloud environment:checkout <environment-id>
     ```
 
-1. Connect to the Magento Cloud environment where RabbitMQ is installed and configured.
+1. Use SSH to connect to the Cloud environment:
 
+   ```bash
+   magento-cloud ssh
+   ```
+   
 1. Retrieve the RabbitMQ connection details and login credentials from the [$MAGENTO_CLOUD_RELATIONSHIPS]({{ page.baseurl }}/cloud/project/project-conf-files_magento-app.html#relationships) variable:
 
    ```bash
