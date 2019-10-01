@@ -62,23 +62,22 @@ You can do this using [SSH tunneling]({{ page.baseurl }}/cloud/env/environments-
     magento-cloud tunnel:open
     ```
 
-1. Retrieve the RabbitMq connection details and login credentials from the [$MAGENTO_CLOUD_RELATIONSHIPS]({{ page.baseurl }}/cloud/env/environment-vars_cloud.html):
+1. Connect to the Magento Cloud environment where RabbitMQ is installed and configured.
 
-   1. SSH into your Magento Cloud environment where RabbitMQ is installed and configured.
-   1. Enter one of the following commands to pretty-print connection information for RabbitMQ:
+1. Retrieve the RabbitMQ connection details and login credentials from the [$MAGENTO_CLOUD_RELATIONSHIPS]({{ page.baseurl }}/cloud/project/project-conf-files_magento-app.html#relationships) variable:
 
    ```bash
    echo $MAGENTO_CLOUD_RELATIONSHIPS | base64 -d | json_pp
    ```
-   
-   or
-   
+
+      or
+
    ```bash
    php -r 'print_r(json_decode(base64_decode($_ENV["MAGENTO_CLOUD_RELATIONSHIPS"])));'
    ```
-   
+
    In the response, find the RabbitMQ information, for example:
-   
+
    ```json
    {
       "rabbitmq" : [
@@ -93,14 +92,15 @@ You can do this using [SSH tunneling]({{ page.baseurl }}/cloud/env/environments-
       ]
    }
    ```
+   {: .no-copy}
 
-1.  Enable local port forwarding to RabbitMQ.
+1. Enable local port forwarding to RabbitMQ.
 
-    ```bash
-    ssh -L <port-number>:mq.internal:<port-number> <project-ID>-<branch-ID>@ssh.us.magentosite.cloud
-    ```
+   ```bash
+   ssh -L <port-number>:mq.internal:<port-number> <project-ID>-<branch-ID>@ssh.us.magentosite.cloud
+   ```
 
-1.  While the session is open, you can start a RabbitMQ client of your choice from your local workstation, configured to connect to the `localhost:<portnumber` using the username and password you found in the relationship variable. For this example, you would use `localhost:5672`.
+1. While the session is open, you can start a RabbitMQ client of your choice from your local workstation, configured to connect to the `localhost:<portnumber>` using the port number, username, and password information from the MAGENTO_CLOUD_RELATIONSHIP variable.
 
 ### Connect from the application {#cloud-rabbitmq-conn-cont}
 
