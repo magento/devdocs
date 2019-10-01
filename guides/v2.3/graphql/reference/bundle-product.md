@@ -50,7 +50,7 @@ The following query returns information about bundle product `24-WG080`, which i
 {
    products(filter: {sku:
     {eq: "24-WG080"}
-  	})
+    })
    {
        items{
            sku
