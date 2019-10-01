@@ -1,1 +1,1 @@
-../../v2.2/migration/migration-tool-preconditions.md
+../../../guides/v2.2/migration/migration-tool-preconditions.md

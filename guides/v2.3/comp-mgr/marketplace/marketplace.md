@@ -1,1 +1,1 @@
-../../../v2.2/comp-mgr/marketplace/marketplace.md
+../../../../guides/v2.2/comp-mgr/marketplace/marketplace.md

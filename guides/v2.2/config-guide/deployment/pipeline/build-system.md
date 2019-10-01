@@ -1,12 +1,6 @@
 ---
-group: config-guide
-subgroup: 045_pipeline
+group: configuration-guide
 title: Build System Setup
-menu_title: Build System Setup
-menu_node:
-menu_order: 1400
-version: 2.2
-github_link: config-guide/deployment/pipeline/build-system.md
 functional_areas:
   - Configuration
   - Deploy
@@ -33,11 +27,11 @@ The build system does _not_ need any of the following:
 *	Magento database connection
 *	Magento software installed (only the code must be present)
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{:.bs-callout .bs-callout-info}
 The build machine can be on its own host or on the same host as an installed Magento system.
-</div>
 
 ## Configure the build machine
+
 The following sections discuss how to configure the build machine.
 
 ### Install Composer
@@ -45,47 +39,66 @@ The following sections discuss how to configure the build machine.
 {% include install/composer-clone.md %}
 
 ### Install PHP
+
 To install PHP, see one of the following topics:
 
 *	[CentOS]({{ page.baseurl }}/install-gde/prereq/php-centos.html)
 *	[Ubuntu]({{ page.baseurl }}/install-gde/prereq/php-ubuntu.html)
 
 ### Set up the build system
+
 To set up the build system:
 
 1.	Log in to the build system as, or switch to, the Magento file system owner.
 2.	Retrieve the Magento code from source control.
 
-	If you use Git, use the following command:
+    If you use Git, use the following command:
 
-		git clone [-b <branch name>] <repository URL>
+    ```bash
+    git clone [-b <branch name>] <repository URL>
+    ```
+
 2.	Change to the Magento root directory and enter:
 
-		composer install
+    ```bash
+    composer install
+    ```
+
 3.	Wait for Magento dependencies to update.
 4.	Set ownership:
 
-		chown -R <magento file system owner name>:<web server user name> .
+    ```bash
+    chown -R <magento file system owner name>:<web server username> .
+    ```
 
-	For example,
+    For example,
 
-		chown -R magento_user:apache .
+    ```bash
+    chown -R magento_user:apache .
+    ```
+
 4.	If you use Git, open `.gitignore` in a text editor.
 5.	Start each of the following lines with a `#` character to comment them out:
 
-		# app/etc/config.php
-		# pub/media/*
-		# generated/*
-		# pub/media/*.*
-		# pub/media/wysiwyg/*
-		# pub/static/*
+    ```text
+    # app/etc/config.php
+    # pub/media/*
+    # generated/*
+    # pub/media/*.*
+    # pub/media/wysiwyg/*
+    # pub/static/*
+    ```
+
 6.	Save your changes to `.gitignore` and exit the text editor.
 7.	If you use Git, use the following commands to commit the change:
 
-		git add .gitignore && git commit -m "Modify .gitignore for build and production"
+    ```bash
+    git add .gitignore && git commit -m "Modify .gitignore for build and production"
+    ```
 
-	See the [`.gitignore` reference]({{ page.baseurl }}/config-guide/prod/config-reference-gitignore.html) for more information.
+    See the [`.gitignore` reference]({{ page.baseurl }}/config-guide/prod/config-reference-gitignore.html) for more information.
 
 #### Related topics
+
 *	[Set up your development systems]({{ page.baseurl }}/config-guide/deployment/pipeline/development-system.html)
 *	[Set up your production system]({{ page.baseurl }}/config-guide/deployment/pipeline/production-system.html)

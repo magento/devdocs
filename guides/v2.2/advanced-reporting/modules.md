@@ -1,8 +1,6 @@
 ---
-group: reporting
+group: advanced-reporting
 title: Modules providing advanced reporting
-version: 2.2
-github_link: advanced-reporting/modules.md
 functional_areas:
     - Reports
 ---
@@ -22,15 +20,15 @@ Advanced reporting functionality is implemented in the following Magento modules
     * Time of data collection (time of the day when the module collects data)
 
 [CatalogAnalytics] configures data definitions for data collection related to the Catalog module entities
-  
+
 [CustomerAnalytics] configures data definitions for data collection related to the Customer module entities
-  
+
 [QuoteAnalytics] configures data definitions for data collection related to the Quote module entities
-  
+
 [ReviewAnalytics] configures data definitions for data collection related to the Review module entities
-  
+
 [SalesAnalytics] configures data definitions for data collection related to the Sales module entities
-  
+
 [WishlistAnalytics] configures data definitions for data collection related to the Wishlist module entities
 
 <!-- LINK DEFINITIONS -->

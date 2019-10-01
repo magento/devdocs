@@ -1,14 +1,7 @@
 ---
-group: b2b
-subgroup: 10_REST
+group: b2b-developer-guide
 title: Manage company structures
-menu_title: Manage company structures
-menu_order: 15
-version: 2.2
-ee_only: True
-level3_menu_node: level3child
-level3_subgroup: company
-github_link: b2b/company-structures.md
+ee_only: true
 functional_areas:
   - B2B
   - Integration
@@ -26,14 +19,13 @@ Company teams allow you to group company users by location, job responsibilities
 
 **REST Endpoints**
 
-{% highlight json %}
+```terminal
 POST /V1/team/:companyId
 PUT /V1/team/:teamId
 GET /V1/team/:teamId
 DELETE /V1/team/:teamId
 GET /V1/team/
-{% endhighlight %}
-
+```
 
 **Company team parameters**
 
@@ -49,18 +41,18 @@ A newly-created team is placed under Company Admin in the company hierarchy.
 
 **Sample Usage**
 
-`POST /V1/team/2`
+`POST <host>/rest/<store_code>/V1/team/2`
 
 **Payload**
 
-{% highlight json %}
+```json
 {
   "team": {
     "name": "Western District",
     "description": "Buyers from the California office"
   }
 }
-{% endhighlight %}
+```
 
 **Response**
 
@@ -72,18 +64,18 @@ You can only change the name or description of a team.
 
 **Sample Usage**
 
-`PUT /V1/team/4`
+`PUT <host>/rest/<store_code>/V1/team/4`
 
 **Payload**
 
-{% highlight json %}
+```json
 {
   "team": {
   	"id": 4,
     "name": "Western Region"
   }
 }
-{% endhighlight %}
+```
 
 **Response**
 
@@ -95,7 +87,7 @@ The `GET` call returns the team `id`, `name`, and `description`.
 
 **Sample Usage**
 
-`GET /V1/team/4`
+`GET <host>/rest/<store_code>/V1/team/4`
 
 **Payload**
 
@@ -103,13 +95,13 @@ Not applicable
 
 **Response**
 
-{% highlight json %}
+```json
 {
   "id": 4,
   "name": "Western Region",
   "description": "Buyers from the California office"
 }
-{% endhighlight %}
+```
 
 ### Delete a team
 
@@ -117,7 +109,7 @@ You cannot delete a team if members are assigned to it.
 
 **Sample Usage**
 
-`DELETE /V1/team/4`
+`DELETE <host>/rest/<store_code>/V1/team/4`
 
 **Payload**
 
@@ -135,7 +127,7 @@ See [Search using REST APIs]({{ page.baseurl }}/rest/performing-searches.html) f
 
 **Sample Usage**
 
-`GET V1/team?searchCriteria[filter_groups][0][filters][0][field]=team_id&searchCriteria[filter_groups][0][filters][0][value]=0&searchCriteria[filter_groups][0][filters][0][condition_type]=gteq`
+`GET <host>/rest/<store_code>/V1/team?searchCriteria[filter_groups][0][filters][0][field]=team_id&searchCriteria[filter_groups][0][filters][0][value]=0&searchCriteria[filter_groups][0][filters][0][condition_type]=gteq`
 
 **Payload**
 
@@ -143,7 +135,8 @@ Not applicable
 
 **Response**
 {% collapsible Show code sample %}
-{% highlight json %}
+
+```json
 {
     "items": [
         {
@@ -172,7 +165,8 @@ Not applicable
     },
     "total_count": 2
 }
-{% endhighlight %}
+```
+
 {% endcollapsible %}
 
 ## Company hierarchies
@@ -187,16 +181,16 @@ You can use REST endpoints to retrieve the current structure and move teams and 
 
 **REST Endpoints**
 
-{% highlight json %}
+```terminal
 GET /V1/hierarchy/:id
 PUT /V1/hierarchy/move/:id
-{% endhighlight %}
+```
 
 ### Return all information about the company hierarchy
 
 In the following example, the following company hierarchy has already been established:
 
-```
+```terminal
 Admin (structure_id = 2)
 |-- East (team, structure_id = 8)
 |   |-- Bryce Martin (customer, structure_id = 4)
@@ -209,7 +203,7 @@ Admin (structure_id = 2)
 
 **Sample Usage**
 
-`GET /V1/heirarchy/2`
+`GET <host>/rest/<store_code>/V1/hierarchy/2`
 
 **Payload**
 
@@ -218,8 +212,8 @@ Not applicable
 **Response**
 
 {% collapsible Show code sample %}
-{% highlight json %}
 
+```json
 [
   {
     "structure_id": 6,
@@ -263,8 +257,8 @@ Not applicable
     "entity_type": "customer",
     "structure_parent_id": 0
   }
+```
 
-{% endhighlight %}
 {% endcollapsible %}
 
 ### Assign a new parent to teams and company users
@@ -273,20 +267,19 @@ The following example moves Bryce Martin (`structure_id = 4`) to the West team (
 
 **Sample Usage**
 
-`PUT /V1/hierarchy/move/5`
+`PUT <host>/rest/<store_code>/V1/hierarchy/move/5`
 
 **Payload**
 
-{% highlight json %}
+```json
 {
   "newParentId": 7
 }
-{% endhighlight %}
+```
 
 **Response**
 
 `[]` (an empty array)
-
 
 ## Related information
 

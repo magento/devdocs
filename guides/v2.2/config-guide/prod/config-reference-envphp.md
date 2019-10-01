@@ -1,14 +1,6 @@
 ---
-group: config-guide
-subgroup: 07_conf
+group: configuration-guide
 title: env.php reference
-menu_title: env.php reference
-menu_order: 5900
-menu_node:
-level3_menu_node: level3child
-level3_subgroup: config-ref
-version: 2.2
-github_link: config-guide/prod/config-reference-envphp.md
 functional_areas:
   - Configuration
   - System
@@ -29,6 +21,7 @@ The `env.php` file contains the following sections:
 | `cache_types`     | Cache storage settings                         |
 | `install`         | The installation date                          |
 | `queue`           | [Message queues][message-queues] settings      |
+| `lock`            | Lock provider settings                         |
 
 [x-frame-options]: {{ page.baseurl }}/config-guide/secy/secy-xframe.html
 [magento-mode]: {{ page.baseurl }}/config-guide/bootstrap/magento-modes.html

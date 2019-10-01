@@ -1,1 +1,1 @@
-../../../v2.2/cloud/project/project-conf-files_services-redis.md
+../../../../guides/v2.2/cloud/project/project-conf-files_services-redis.md

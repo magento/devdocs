@@ -1,21 +1,20 @@
 ---
-group: compman
+group: software-update-guide
 subgroup: 06_UseExtMan
 title: Start the Extension Manager
 menu_title: Start the Extension Manager
 menu_node:
 menu_order: 2
-version: 2.2
-github_link: comp-mgr/extens-man/extensman-main-pg.md
 functional_areas:
   - Upgrade
 ---
 
 ## Start the Extension Manager from the Magento Admin
-To start the {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}Extension{% endglossarytooltip %} Manager:
+
+To start the [Extension](https://glossary.magento.com/extension) Manager:
 
 1.	If you haven't done so already, create or get your [authentication keys]({{ page.baseurl }}/install-gde/prereq/connect-auth.html).
-2.	Log in to the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} as an administrator.
+2.	Log in to the [Magento Admin](https://glossary.magento.com/magento-admin) as an administrator.
 3.	Click **System** > **Web Setup Wizard**.
 4.	Click **Extension Manager** as the following figure shows.
 
@@ -30,11 +29,8 @@ To start the {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}Extension
 6.	Enter your authentication keys in the provided fields.
 2.	Click **Submit**.
 
-<div class="bs-callout bs-callout-warning">
-   	<p>You must use the same authentication keys you used to install the Magento software. For example, you <em>cannot</em> use {{site.data.var.ce}} authentication keys to update or upgrade {{site.data.var.ee}} or vice versa. You also <em>cannot</em> use:</p>
-   	<ul><li>Another user's authentication keys</li>
-   	<li><a href="http://docs.magento.com/m2/ce/user_guide/magento/magento-account-share.html" target="_blank">Shared account</a> authentication keys</li></ul>   
-</div>
+{:.bs-callout .bs-callout-warning}
+You must use the same authentication keys you used to install the Magento software. For example, you *cannot* use {{site.data.var.ce}} authentication keys to update or upgrade {{site.data.var.ee}} or vice versa. You also *cannot* use another user's authentication keys or [Shared account](http://docs.magento.com/m2/ce/user_guide/magento/magento-account-share.html) authentication keys
 
 See one of the following sections:
 
@@ -44,13 +40,14 @@ See one of the following sections:
 *	[Update extensions](#extensman-update)
 
 ## Choose what to install, uninstall, or update {#extens-choose}
+
 After you log in to the Extension Manager, a list displays as follows:
 
 ![Choose what to install, update, or uninstall]({{ site.baseurl }}/common/images/extens_mgr_updates.png){:width="500px"}
 
 *	**Updates Available** displays the number of extensions you can update.
 *	**Extensions Ready to Install** displays the number of extensions you can install.
-*	**Last Refresh** displays the last time you refreshed the list of extensions on Magento Marketplace. 
+*	**Last Refresh** displays the last time you refreshed the list of extensions on Magento Marketplace.
 
 	Click **Refresh** to update the information, such as after you purchase new extensions.
 
@@ -80,6 +77,7 @@ The following sections provide details:
 *	[Actions available for metapackages](#extensman-access-types-meta)
 
 #### Actions available for non-metapackages {#extensman-access-types-non-meta}
+
 Most extensions you get from Magento Marketplace or another source have only one type; for example, a module.
 
 The following table shows which actions are supported for each non-metapackage.
@@ -119,8 +117,8 @@ The following table shows which actions are supported for each non-metapackage.
 		</tbody>
 	</table>
 
-
 #### Actions available for metapackages {#extensman-access-types-meta}
+
 A metapackage is an installable package that includes more than one type. For example, we require a package that contains a module and a theme to be packaged as a metapackage.
 
 The following table shows which actions are available for a metapackage.
@@ -177,15 +175,18 @@ The Ready to Install page displays as follows.
 The following sections discuss your options.
 
 ### Get more information
+
 To get more information about an extension, click ![Get information about an extension]({{ site.baseurl }}/common/images/extensman_icon_question.png).
 
 ### Install one extension
+
 To install one extension, click the **Install** link at the end of its row and continue with [Step 1. Readiness check]({{ page.baseurl }}/comp-mgr/extens-man/extensman-readiness.html).
 
 ### Install more than one extension
+
 To install more than one extension:
 
-1.	Select the check box next to each extension, or click **Select All** from the list as the following figure shows.
+1.	Select the checkbox next to each extension, or click **Select All** from the list as the following figure shows.
 
 	![Choose extensions to install]({{ site.baseurl }}/common/images/extensman_choose-to-install.png){:width="550px"}
 2.	After you select what to install, click **Install** at the top of the page as the following figure shows.
@@ -219,7 +220,7 @@ The New Updates page displays all extensions that can be updated.
 You have the following options:
 
 *	To update one extension, click **Update** at the end of its row.
-*	To update more than one extension, select its check box and click **Update**, as the following figure shows.
+*	To update more than one extension, select its checkbox and click **Update**, as the following figure shows.
 
 	![Update selected extensions]({{ site.baseurl }}/common/images/extensman_update-selected.png){:width="500px"}
 *	To update all extensions, click **Select All** from the list and click **Update**, as the following figure shows.

@@ -1,14 +1,7 @@
 ---
-group: b2b
-subgroup: 10_REST
+group: b2b-developer-guide
 title: Assign companies to a shared catalog
-menu_title: Assign companies
-menu_order: 24
-version: 2.2
-ee_only: True
-level3_menu_node: level3child
-level3_subgroup: shared
-github_link: b2b/shared-cat-company.md
+ee_only: true
 functional_areas:
   - B2B
   - Catalog
@@ -21,20 +14,18 @@ A shared catalog must be assigned to one or more companies before it can be acce
 
 `sharedCatalogCompanyManagementV1`
 
-
 **REST endpoints**
 
-{% highlight json %}
+```terminal
 POST /V1/sharedCatalog/:sharedCatalogId/assignCompanies
 POST /V1/sharedCatalog/:sharedCatalogId/unassignCompanies
 GET  /V1/sharedCatalog/:sharedCatalogId/companies
-{% endhighlight %}
+```
 
 **Company parameters**
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{: .bs-callout-info }
 Although you can specify other parameters defined within a `categories` object, the `id` is the only one used to assign or unassign a category to a shared catalog.
-</div>
 
 Name | Description | Format | Requirements
 --- | --- | --- | ---
@@ -48,12 +39,11 @@ If a specified company is already assigned to a different shared catalog, this r
 
 **Sample usage**
 
-`POST /V1/sharedCatalog/2/assignCompanies`
+`POST <host>/rest/<store_code>/V1/sharedCatalog/2/assignCompanies`
 
 **Payload**
 
-{% highlight json %}
-
+```json
 {
   "companies": [
     {
@@ -64,7 +54,7 @@ If a specified company is already assigned to a different shared catalog, this r
     }
   ]
 }
-{% endhighlight %}
+```
 
 **Response**
 
@@ -76,11 +66,11 @@ When you unassign a company from a custom catalog, the system automatically assi
 
 **Sample usage**
 
-`POST /V1/sharedCatalog/2/unassignCompanies`
+`POST <host>/rest/<store_code>/V1/sharedCatalog/2/unassignCompanies`
 
 **Payload**
 
-{% highlight json %}
+```json
 {
   "companies": [
     {
@@ -88,7 +78,7 @@ When you unassign a company from a custom catalog, the system automatically assi
     }
   ]
 }
-{% endhighlight %}
+```
 
 **Response**
 
@@ -100,7 +90,7 @@ The `GET` call returns an array of company IDs.
 
 **Sample Usage**
 
-`GET  /V1/sharedCatalog/2/companies`
+`GET <host>/rest/<store_code>/V1/sharedCatalog/2/companies`
 
 **Payload**
 

@@ -1,9 +1,7 @@
 ---
-group: perf-best-practices
+group: performance-best-practices
 title: Reference architecture
 contributor_name: Chuck Choukalos
-version: 2.2
-github_link: performance-best-practices/reference-architecture.md
 functional_areas:
   - Configuration
   - System
@@ -62,7 +60,7 @@ The following sections provide recommendations and considerations for each secti
 * Consider using GFS or GlusterFS for pub/media storage
 * Alternatively, use DB storage for low-traffic sites
 
-### Recommended Varnish Reference Architcture
+### Recommended Varnish Reference Architecture
 
 Magento supports several full page caching engines (File, Memcache, Redis, Varnish) out of the box, along with expanded coverage through extensions. Varnish is the recommended full page cache engine.  Magento supports many different Varnish configurations.
 

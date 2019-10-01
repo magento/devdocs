@@ -1,20 +1,18 @@
 ---
-group: b2b
+group: b2b-developer-guide
 subgroup: 10_REST
 title: Integrate with the Company module
 menu_title: Integrate with the Company module
 menu_order: 11
-version: 2.2
 ee_only: True
 level3_menu_node: level3child
 level3_subgroup: company
-github_link: b2b/company.md
 functional_areas:
   - B2B
   - Integration
 ---
 
-The `Company` module allows multiple buyers that belong to the same company to view product prices and make purchases based on the shared catalog assigned to this company. A company can contain a hierarchy of users and teams, with roles and permisions assigned at any level.
+The `Company` module allows multiple buyers that belong to the same company to view product prices and make purchases based on the shared catalog assigned to this company. A company can contain a hierarchy of users and teams, with roles and permissions assigned at any level.
 
 ## Related information
 

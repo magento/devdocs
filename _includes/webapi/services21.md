@@ -1,25 +1,23 @@
-<div markdown="1">
-
 ## {{site.data.var.ee}} Web APIs Services per Module {#eelist}
 
 The Web APIs for {{site.data.var.ee}} are available on Commerce installations only. Commerce installations automatically have access to all {{site.data.var.ce}} REST APIs.
 
-### Customer balance
+### CustomerBalance
     customerBalanceBalanceManagementV1
 
-### Gift cards
+### GiftCardAccount
     giftCardAccountGiftCardAccountManagementV1
     giftCardAccountGuestGiftCardAccountManagementV1
     giftRegistryGuestCartShippingMethodManagementV1
     giftRegistryShippingMethodManagementV1
 
-### Gift wrapping
+### GiftWrapping
     giftWrappingWrappingRepositoryV1
 
 ### Reward
     rewardRewardManagementV1
 
-### RMA
+### Rma
     rmaCommentManagementV1
     rmaRmaAttributesManagementV1
     rmaRmaManagementV1
@@ -29,7 +27,6 @@ The Web APIs for {{site.data.var.ee}} are available on Commerce installations on
 ### Worldpay
     worldpayGuestPaymentInformationManagementProxyV1
 
-
 ## {{site.data.var.ce}} Web APIs Services per Module {#celist}
 
   The {{site.data.var.ee}} Web APIs are available on all installations.
@@ -37,7 +34,7 @@ The Web APIs for {{site.data.var.ee}} are available on Commerce installations on
 ### Backend
     backendModuleServiceV1
 
-### Bundle product
+### Bundle
     bundleProductLinkManagementV1
     bundleProductOptionManagementV1
     bundleProductOptionRepositoryV1
@@ -69,7 +66,7 @@ The Web APIs for {{site.data.var.ee}} are available on Commerce installations on
     catalogProductTypeListV1
     catalogProductWebsiteLinkRepositoryV1
 
-### Catalog inventory
+### CatalogInventory
     catalogInventoryStockRegistryV1
 
 ### Checkout
@@ -80,14 +77,14 @@ The Web APIs for {{site.data.var.ee}} are available on Commerce installations on
     checkoutShippingInformationManagementV1
     checkoutTotalsInformationManagementV1
 
-### Checkout agreements
+### CheckoutAgreements
     checkoutAgreementsCheckoutAgreementsRepositoryV1
 
-### CMS
+### Cms
     cmsBlockRepositoryV1
     cmsPageRepositoryV1
 
-### Configurable product
+### ConfigurableProduct
     configurableProductConfigurableProductManagementV1
     configurableProductLinkManagementV1
     configurableProductOptionRepositoryV1
@@ -109,11 +106,11 @@ The Web APIs for {{site.data.var.ee}} are available on Commerce installations on
     downloadableLinkRepositoryV1
     downloadableSampleRepositoryV1
 
-### EAV
+### Eav
     eavAttributeSetManagementV1
     eavAttributeSetRepositoryV1
 
-### Gift message
+### GiftMessage
     giftMessageCartRepositoryV1
     giftMessageGuestCartRepositoryV1
     giftMessageGuestItemRepositoryV1
@@ -166,7 +163,7 @@ The Web APIs for {{site.data.var.ee}} are available on Commerce installations on
     salesShipOrderV1
     salesTransactionRepositoryV1
 
-### Sales rule
+### SalesRule
     salesRuleCouponManagementV1
     salesRuleCouponRepositoryV1
     salesRuleRuleRepositoryV1

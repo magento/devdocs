@@ -1,11 +1,9 @@
 ---
-group: extension-dev-guide
+group: php-developer-guide
 subgroup: Configuration
 title: Configuration importers
 menu_title: Configuration importers
 menu_order: 2000
-version: 2.2
-github_link: extension-dev-guide/configuration/importers.md
 functional_areas:
   - Configuration
 ---
@@ -46,7 +44,7 @@ All Magento importers implement the interface [`Magento\Framework\App\Deployment
 1. Create an `Importer` class that implements [`Magento\Framework\App\DeploymentConfig\ImporterInterface`][importer-interface]{:target="_blank"}.
 2. Register your importer in your module's [`di.xml`]({{ page.baseurl }}/extension-dev-guide/depend-inj.html):
 
-{% highlight xml %}
+```xml
 <type name="Magento\Deploy\Model\DeploymentConfig\ImporterPool">
     <arguments>
         <argument name="importers" xsi:type="array">
@@ -57,15 +55,14 @@ All Magento importers implement the interface [`Magento\Framework\App\Deployment
         </argument>
     </arguments>
 </type>
-{% endhighlight %}
+```
 
 The sample code in the preceding example registers the importer `Vendor\Module\Model\Config\Importer` for the `i18n` array in `config.php`.
 
 The `i18n` array has a queue order of 110, which means this importer runs after importers that have value of sort order less than 110 has and if values in the section `i18n` were changed.
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{: .bs-callout-info }
 An array cannot be imported by more than one importer.
-</div>
 
 ## More information
 
@@ -73,4 +70,4 @@ An array cannot be imported by more than one importer.
 * [config.php reference]({{ page.baseurl }}/config-guide/prod/config-reference-configphp.html)
 * [env.php reference]({{ page.baseurl }}/config-guide/prod/config-reference-envphp.html)
 
-[importer-interface]:{{ site.mage2200url }}lib/internal/Magento/Framework/App/DeploymentConfig/ImporterInterface.php
+[importer-interface]:{{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/App/DeploymentConfig/ImporterInterface.php

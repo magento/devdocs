@@ -1,11 +1,9 @@
 ---
-group: mrg
+group: module-reference-guide
 subgroup: 30_B2B
 title: Magento_QuickOrder module
 menu_title: QuickOrder
 menu_order: 180
-version: 2.2
-github_link: mrg/b2b/QuickOrder.md
 functional_areas:
   - B2B
 ---

@@ -1,1 +1,0 @@
-../../../v2.2/config-guide/mq/manage-mysql.md

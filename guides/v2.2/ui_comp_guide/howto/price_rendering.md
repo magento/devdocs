@@ -1,11 +1,6 @@
 ---
-group: UI_Components_guide
-subgroup: how tos
+group: ui-components-guide
 title: Render prices on the frontend
-menu_title: Render prices on the frontend
-menu_order: 1
-version: 2.2
-github_link: ui_comp_guide/howto/price_rendering.md
 ---
 
 This article shows how templates and UI components work together to render the price for any product listing(e.g. category, widget, etc).
@@ -16,8 +11,8 @@ Magento is able to operate with a variety of prices, taxes, and product types.
 
 The following is a short list of Magento prices:
 
-1. Special Price. 
-2. Tier Price. 
+1. Special Price.
+2. Tier Price.
 3. Grouped Price.
 4. Minimum price of composite products
 5. Price range of composite products
@@ -38,7 +33,7 @@ Applying and rendering taxes is complicated.
 A product can have more than one price shown and taxes may or may not apply to all of them.
 
 Example of pricing strategy for bundled products:
-<br/>
+
 ![]({{ site.baseurl }}/common/images/bundle_prices.png)
 
 ## How to render prices with UI Components
@@ -53,11 +48,11 @@ For the purposes of this article, we will use a listing component to render simp
 
 The [XML configuration file][ui-component-declaration] for UI components shows the parent-child relationship between different UI components and tells Magento which template files to use when rendering.
 
-{%highlight xml%}
+```xml
 <listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
     ...
-    <datasource>
-        <!-- 
+    <dataSource>
+        <!--
             DataProvider should retrieve information about product. In our case will be good to retrieve
             formatted prices with currency code, etc... and raw prices.
             So there will be 4 types of prices:
@@ -77,7 +72,7 @@ The [XML configuration file][ui-component-declaration] for UI components shows t
                 }
                 ...
             }
-         
+
         -->
         <dataProvider class="SomeVendor\SomeModule\Ui\DataProvider\Listing\DataProvider" name="datasource">
             <settings>
@@ -85,12 +80,12 @@ The [XML configuration file][ui-component-declaration] for UI components shows t
                 <primaryFieldName/>
             </settings>
         </dataProvider>
-    </datasource>
+    </dataSource>
     <columns name="some_columns" component="SomeVendor_SomeComponent/js/product/list/listing">
-        <!-- 
+        <!--
             Price columns is composite component (it has children),
             so it should have possibility to create those children by itself.
-            
+
             The structure of prices should be:
                 -- Price Box (collection of all prices)
                     --- Price (is responsible for specific price information, also price can hold the collection of adjustments)
@@ -135,15 +130,15 @@ The [XML configuration file][ui-component-declaration] for UI components shows t
         </column>
     </columns>
 </listing>
-{%endhighlight%}
+```
 
-A good example from the Magento codebase is the Catalog module's [`widget_recently_viewed.xml`][widget-recently-viewed-xml]{:target="_blank"} file.
+A good example from the Magento codebase is the Catalog module's [`widget_recently_viewed.xml`][widget-recently-viewed-xml] file.
 
 ### Price box component
 
 In the following code sample, the `price-box` component aggregates and creates the `price` components for a specific product.
 
-{%highlight javascript%}
+```javascript
 /**
  * Retrieve array of prices, that should be rendered for specific product
  *
@@ -153,7 +148,7 @@ In the following code sample, the `price-box` component aggregates and creates t
 getPrices: function (row) {
     var elems = this.elems() ? this.elems() : ko.getObservable(this, 'elems'),
         result;
-    this.initPrices(row);    
+    this.initPrices(row);
     result = _.filter(elems, function (elem) {
         return elem.productType === row.productType;
     });
@@ -185,7 +180,6 @@ initPrices: function (row) {
     layout(prices); //layout is service (abstract factory), which create tree of Ui Components from JSON
 },
 
-
 /**
  * Sort callback to compare prices by sort order
  *
@@ -205,16 +199,16 @@ _comparePrices: function (firstPrice, secondPrice) {
 
     return 0;
 }
-{%endhighlight%}
+```
 
-The preceding code sample is based on the Catalog module's [`price-box` component][price-box]{:target="_blank"}.
+The preceding code sample is based on the Catalog module's [`price-box` component][price-box].
 
 ### Price component
 
 In our example, each price is configured to have its own template, but they all share a common price component called `final-price`.
 This component is defined in the following code sample:
 
-{%highlight javascript%}
+```javascript
 /**
  * Retrieve specific template
  *
@@ -268,9 +262,9 @@ getAdjustments: function () {
 
     return adjustments;
 }
-{%endhighlight%}
+```
 
-This code sample is based on the Catalog module's [`final-price` component][final-price]{:target="_blank"}.
+This code sample is based on the Catalog module's [`final-price` component][final-price].
 
 ### Price template
 
@@ -279,7 +273,7 @@ It calls the `hasSpecialPrice` function to check if a special price exists for a
 
 If a product has a special price, it calls `getPrice` to get the value and renders any adjustments configured for the price.
 
-{%highlight html%}
+```html
 <if args="isSalable($row()) && hasSpecialPrice($row())">
     <span class="special-price">
         <span class="price-container">
@@ -300,15 +294,15 @@ If a product has a special price, it calls `getPrice` to get the value and rende
         </span>
     </span>
 </if>
-{%endhighlight%}
+```
 
-This example is based on the [`special_price.html` template file][special-price-html]{:target="_blank"} for Magento Catalog.
+This example is based on the [`special_price.html` template file][special-price-html] for Magento Catalog.
 
 ### Tax template
 
 The following is sample template code that is rendered for the tax adjustment component:
 
-{%highlight html%}
+```html
 <if args="displayBothPrices()">
     <span class="price-wrapper price-excluding-tax"
           attr="'data-label': $t('Excl. Tax')"
@@ -317,7 +311,7 @@ The following is sample template code that is rendered for the tax adjustment co
           html="getTax($row())"><!-- You can implement self::getTax function how you want -->
     </span>
 </if>
-{%endhighlight%}
+```
 
 ## Related Topics
 
@@ -327,8 +321,8 @@ The following is sample template code that is rendered for the tax adjustment co
 
 [form-component]: {{ page.baseurl }}/ui_comp_guide/components/ui-form.html
 [listing-component]: {{ page.baseurl }}/ui_comp_guide/components/ui-listing-grid.html
-[special-price-html]: https://github.com/magento/magento2/blob/2.2/app/code/Magento/Catalog/view/base/web/template/product/price/special_price.html
-[widget-recently-viewed-xml]: https://github.com/magento/magento2/blob/2.2/app/code/Magento/Catalog/view/frontend/ui_component/widget_recently_viewed.xml
+[special-price-html]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/view/base/web/template/product/price/special_price.html
+[widget-recently-viewed-xml]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/view/frontend/ui_component/widget_recently_viewed.xml
 [ui-component-declaration]: {{ page.baseurl }}/ui_comp_guide/howto/new_component_declaration.html
-[price-box]: https://github.com/magento/magento2/blob/2.2/app/code/Magento/Catalog/view/base/web/js/product/list/columns/price-box.js
-[final-price]: https://github.com/magento/magento2/blob/2.2/app/code/Magento/Catalog/view/base/web/js/product/list/columns/final-price.js
+[price-box]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/view/base/web/js/product/list/columns/price-box.js
+[final-price]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/view/base/web/js/product/list/columns/final-price.js

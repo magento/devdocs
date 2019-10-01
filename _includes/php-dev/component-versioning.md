@@ -1,10 +1,8 @@
-<div markdown="1">
-
 Components have the following types of versions:
 
-*	Marketing version; in other words, the version the merchant interacts with. 
+*	Marketing version; in other words, the version the merchant interacts with.
 
-	Your initial version might be 1.0.0 or 2.0.0, for example. You should follow <a href="{{ page.baseurl }}/extension-dev-guide/versioning" target="_blank">our versioning policy</a> guidelines when setting your version.
+	Your initial version might be 1.0.0 or 2.0.0, for example. You should follow [our versioning policy]({{ page.baseurl }}/extension-dev-guide/versioning) guidelines when setting your version.
 
 *	Composer version; in other words, the version of each module, theme, language package, third-party package, and dependencies.
 

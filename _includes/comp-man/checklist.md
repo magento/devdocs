@@ -1,34 +1,39 @@
-<div markdown="1">
-
 Before you continue, to avoid errors during your installation or update, make sure you verify *all* of the following:
 
 *	You set up a [Magento file system owner](#magento-owner-group) and shared that owner's group with the web server user group
 *	Your [cron jobs](#magento-cron) are set up and running
 *	[File system permissions](#perms) are set properly
 
-<div class="bs-callout bs-callout-warning">
-    <p>Do not continue without performing these checks. Failure to do so could result in errors.</p>
-</div>
+{:.bs-callout .bs-callout-warning}
+Do not continue without performing these checks. Failure to do so could result in errors.
 
 ### Magento file system owner and group {#magento-owner-group}
+
 The [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html) group must have write access to Magento directories and files.
 
 ### Cron jobs are running {#magento-cron}
+
 Magento requires three cron jobs, all running as the [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html).
 
 To verify your cron jobs are set up properly, enter the following command as a user with `root` privileges:
 
-	crontab -u <magento file system owner> -l
+```bash
+crontab -u <magento file system owner> -l
+```
 
 For example, if your Magento file system owner is named `magento_user`, enter:
 
-	crontab -u magento_user -l
+```bash
+crontab -u magento_user -l
+```
 
 Results similar to the following should display:
 
-	* * * * * /usr/bin/php /var/www/magento2/bin/magento cron:run | grep -v "Ran jobs by schedule" >> /var/www/magento2/var/log/magento.cron.log
-	* * * * * /usr/bin/php /var/www/magento2/update/cron.php >> /var/www/magento2/var/log/update.cron.log
-	* * * * * /usr/bin/php /var/www/magento2/bin/magento setup:cron:run >> /var/www/magento2/var/log/setup.cron.log
+```terminal
+* * * * * /usr/bin/php /var/www/magento2/bin/magento cron:run | grep -v "Ran jobs by schedule" >> /var/www/magento2/var/log/magento.cron.log
+* * * * * /usr/bin/php /var/www/magento2/update/cron.php >> /var/www/magento2/var/log/update.cron.log
+* * * * * /usr/bin/php /var/www/magento2/bin/magento setup:cron:run >> /var/www/magento2/var/log/setup.cron.log
+```
 
 Another symptom of cron not running is the following error in the Magento Admin:
 
@@ -41,6 +46,7 @@ To see the error, you might need to click **System Messages** at the top of the 
 For details, see [Set up cron]({{ page.baseurl }}/install-gde/install/post-install-config.html#post-install-cron).
 
 ### File system permissions {#perms}
+
 For security reasons, Magento requires certain permissions on the file system. Permissions are different from [*ownership*](#magento-owner-group). Ownership determines *who* can perform actions on the file system; permissions determine *what* the user can do.
 
 Directories in the Magento file system must be writable by the [Magento file system owner's]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html) group.
@@ -49,11 +55,13 @@ To verify your file system permissions are set properly, either log in to the Ma
 
 For example, enter the following commands on a Linux system if the Magento application is installed in `/var/www/html/magento2`:
 
-	ls -al /var/www/html/magento2
+```bash
+ls -al /var/www/html/magento2
+```
 
 A sample result follows:
 
-{% highlight xml %}
+```xml
 total 1028
 drwxrwx---. 12 magento_user apache   4096 Jun  7 07:55 .
 drwxr-xr-x.  3 root         root     4096 May 11 14:29 ..
@@ -86,13 +94,15 @@ drwxrwx---.  7 magento_user apache   4096 Jun  7 07:53 setup
 drwxrwx---.  7 magento_user apache   4096 Jun  7 07:53 update
 drwxrws---. 11 magento_user apache   4096 Jun 13 16:05 var
 drwxrws---. 29 magento_user apache   4096 Jun  7 07:53 vendor
-{% endhighlight %}
+```
 
 In the preceding example, the Magento file system owner is `magento_user`. Directories in the Magento file system have `drwxrwx---` permissions (775) and files have `-rw-rw-rw-` permissions (664).
 
 To get more detailed information, you can optionally enter the following command:
 
-	ls -al /var/www/html/magento2/pub
+```bash
+ls -al /var/www/html/magento2/pub
+```
 
 Because Magento deploys static file assets to subdirectories of `pub`, it's a good idea to verify permissions and ownership there as well.
 

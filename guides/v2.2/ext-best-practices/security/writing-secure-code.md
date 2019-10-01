@@ -1,16 +1,14 @@
 ---
-group: ext-best-practices
+group: extension-best-practices
 subgroup: Security
 title: Writing secure code
 menu_title: Writing secure code
 menu_order: 2100
-version: 2.2
-github_link: ext-best-practices/security/writing-secure-code.md
 ---
 
 ## Overview
 
-Using {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} features that are known to be exploitable or non-secure can lead to remote code execution or weak cryptography.
+Using [PHP](https://glossary.magento.com/php) features that are known to be exploitable or non-secure can lead to remote code execution or weak cryptography.
 As a developer, you should avoid using features that introduce vulnerabilities in your code.
 
 ## PHP functions to avoid
@@ -27,9 +25,9 @@ Avoid using these functions in your code.
 
 ## Standard PHP library classes to avoid
 
-* [`ArrayObject`](http://php.net/manual/en/class.arrayobject.php){:target="_blank"} - Using `ArrayObject` class is not recommended because it contains `unserialize` method, which attackers can use to create an exploit. 
+* [`ArrayObject`](http://php.net/manual/en/class.arrayobject.php){:target="_blank"} - Using `ArrayObject` class is not recommended because it contains `unserialize` method, which attackers can use to create an exploit.
 
-  If you need to use the `ArrayObject` class, override the `serialize`/`unserialize` methods so that they use secure logic. 
+  If you need to use the `ArrayObject` class, override the `serialize`/`unserialize` methods so that they use secure logic.
   Convert objects into arrays to serialize them, and reconstruct the objects using arrays during unserialization.
 
   You can use [Serialize Library][12] in framework for a secure way of serializing/unserializing data.

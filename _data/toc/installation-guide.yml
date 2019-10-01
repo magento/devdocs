@@ -43,7 +43,7 @@ pages:
               url: /install-gde/install-roadmap_part1.html
 
         - label: Magento system requirements
-          url: /install-gde/system-requirements2.html
+          url: /install-gde/system-requirements.html
           children:
 
             - label: Magento technology stack requirements
@@ -72,16 +72,29 @@ pages:
               url: /install-gde/prereq/nginx.html
 
             - label: PHP
+              url: /install-gde/prereq/php-centos-ubuntu.html
+              include_versions: ["2.3"]
               children:
-
-                - label: PHP 5.6 or 7.0—CentOS
-                  url: /install-gde/prereq/php-centos.html
-
-                - label: PHP 5.6 or 7.0—Ubuntu
-                  url: /install-gde/prereq/php-ubuntu.html
 
                 - label: Required PHP settings
                   url: /install-gde/prereq/php-settings.html
+                  include_versions: ["2.3"]
+
+            - label: PHP
+              include_versions: ["2.1", "2.2"]
+              children:
+
+                - label: PHP for Centos
+                  url: /install-gde/prereq/php-centos.html
+                  include_versions: ["2.1", "2.2"]
+
+                - label: PHP for Ubuntu
+                  url: /install-gde/prereq/php-ubuntu.html
+                  include_versions: ["2.1", "2.2"]
+
+                - label: Required PHP settings
+                  url: /install-gde/prereq/php-settings.html
+                  include_versions: ["2.1", "2.2"]
 
             - label: MySQL
               url: /install-gde/prereq/mysql.html
@@ -98,8 +111,13 @@ pages:
                 - label: Set pre-installation ownership and permissions
                   url: /install-gde/prereq/file-system-perms.html
 
+            - label: RabbitMQ
+              url: /install-gde/prereq/install-rabbitmq.html
+              include_versions: ["2.3"]
+              
             - label: RabbitMQ (Magento Commerce only)
               url: /install-gde/prereq/install-rabbitmq.html
+              include_versions: ["2.2", "2.1", "2.0"]
 
             - label: Set up a remote MySQL database connection
               url: /install-gde/prereq/mysql_remote.html
@@ -110,21 +128,20 @@ pages:
             - label: Optional software
               url: /install-gde/prereq/optional.html
 
-            - label: Set up the updater (obsolete)
-              url: /install-gde/prereq/prereq_updater.html
-
         - label: Get the Magento software
           url: /install-gde/install/get-software.html
+
+        - label: Install Magento using Composer
+          url: /install-gde/composer.html
+          include_versions: ["2.1","2.2","2.3"]
 
         - label: (Easy) Install the Magento archive on your server
           url: /install-gde/prereq/zip_install.html
 
         - label: (Integrator) Integrator installation
           url: /install-gde/prereq/integrator_install.html
+          include_versions: ["2.0"]
           children:
-
-            - label: Install Composer
-              url: /install-gde/prereq/integrator_install_composer.html
 
             - label: Get the Magento Open Source metapackage
               url: /install-gde/prereq/integrator_install_ce.html
@@ -238,6 +255,10 @@ pages:
             - label: Update the Magento database schema and data
               url: /install-gde/install/cli/install-cli-subcommands-db-upgr.html
 
+            - label: Configure the lock provider
+              url: /install-gde/install/cli/install-cli-subcommands-lock.html
+              include_versions: ["2.2","2.3"]
+              
             - label: Configure the store
               url: /install-gde/install/cli/install-cli-subcommands-store.html
 
@@ -400,18 +421,6 @@ pages:
 
             - label: Known issues that affect installation
               url: /install-gde/trouble/tshoot_install-issues.html
-
-            - label: Error 'MySQL server has gone away' during installation
-              url: /install-gde/trouble/tshoot_mysql_table-open-cache.html
-
-            - label: Segmentation fault during rollback
-              url: /install-gde/trouble/tshoot_segfault.html
-
-            - label: SQLSTATE[HY000] [2002] No such file or directory
-              url: /install-gde/trouble/php/tshoot_phpini.html
-
-            - label: Cannot run 'composer install'
-              url: /install-gde/trouble/tshoot_composer-install.html
 
     - label: How Tos
       children:

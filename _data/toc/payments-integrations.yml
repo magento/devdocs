@@ -29,11 +29,11 @@ pages:
           url: /payments-integrations/payment-gateway/response-handler.html
 
         - label: Error Code Mapping
-          versions: ["2.2", "2.3"]
+          include_versions: ["2.2", "2.3"]
           url: /payments-integrations/payment-gateway/error-code-mapper.html
 
     - label: Adding a new payment integration (payment method)
-      versions: ["2.1","2.2", "2.3"]
+      include_versions: ["2.1","2.2", "2.3"]
       url: /payments-integrations/base-integration/integration-intro.html
       children:
 
@@ -59,7 +59,7 @@ pages:
           url: /payments-integrations/base-integration/admin-integration.html
 
     - label: Adding vault integration
-      versions: ["2.1", "2.2", "2.3"]
+      include_versions: ["2.1", "2.2", "2.3"]
       url: /payments-integrations/vault/vault-intro.html
       children:
 
@@ -88,5 +88,5 @@ pages:
           url: /payments-integrations/vault/admin-integration.html
 
     - label: Signifyd fraud protection
-      versions: ["2.2", "2.3"]
+      include_versions: ["2.2", "2.3"]
       url: /payments-integrations/signifyd/signifyd.html

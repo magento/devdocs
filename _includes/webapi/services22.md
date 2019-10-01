@@ -1,25 +1,23 @@
-<div markdown="1">
-
 ## {{site.data.var.ee}} Web APIs Services per Module {#eelist}
 
 The Web APIs for {{site.data.var.ee}} (formerly Magento Enterprise Edition) are available on {{site.data.var.ee}} installations only. {{site.data.var.ee}} installations automatically have access to all {{site.data.var.ce}} (formerly Magento Community Edition) web APIs.
 
-### Customer balance
+### CustomerBalance
     customerBalanceBalanceManagementV1
 
-### Gift cards
+### GiftCardAccount
     giftCardAccountGiftCardAccountManagementV1
     giftCardAccountGuestGiftCardAccountManagementV1
     giftRegistryGuestCartShippingMethodManagementV1
     giftRegistryShippingMethodManagementV1
 
-### Gift wrapping
+### GiftWrapping
     giftWrappingWrappingRepositoryV1
 
 ### Reward
     rewardRewardManagementV1
 
-### RMA
+### Rma
     rmaCommentManagementV1
     rmaRmaAttributesManagementV1
     rmaRmaManagementV1
@@ -29,11 +27,10 @@ The Web APIs for {{site.data.var.ee}} (formerly Magento Enterprise Edition) are 
 ### Worldpay
     worldpayGuestPaymentInformationManagementProxyV1
 
-
 ## {{site.data.var.ce}} Web APIs Services per Module {#celist}
 
   The {{site.data.var.ce}} Web APIs are available on all installations.
-  
+
 ### Analytics
     analyticsLinkProviderV1
 
@@ -78,7 +75,7 @@ The Web APIs for {{site.data.var.ee}} (formerly Magento Enterprise Edition) are 
     catalogSpecialPriceStorageV1 *
     catalogTierPriceStorageV1 *
 
-### Catalog inventory
+### CatalogInventory
     catalogInventoryStockRegistryV1
 
 ### Checkout
@@ -89,14 +86,14 @@ The Web APIs for {{site.data.var.ee}} (formerly Magento Enterprise Edition) are 
     checkoutShippingInformationManagementV1
     checkoutTotalsInformationManagementV1
 
-### Checkout agreements
+### CheckoutAgreements
     checkoutAgreementsCheckoutAgreementsRepositoryV1
 
-### CMS
+### Cms
     cmsBlockRepositoryV1
     cmsPageRepositoryV1
 
-### Configurable product
+### ConfigurableProduct
     configurableProductConfigurableProductManagementV1
     configurableProductLinkManagementV1
     configurableProductOptionRepositoryV1
@@ -109,6 +106,7 @@ The Web APIs for {{site.data.var.ee}} (formerly Magento Enterprise Edition) are 
     customerCustomerRepositoryV1
     customerGroupManagementV1
     customerGroupRepositoryV1
+    customerCustomerGroupConfigV1
 
 ### Directory
     directoryCountryInformationAcquirerV1
@@ -118,11 +116,11 @@ The Web APIs for {{site.data.var.ee}} (formerly Magento Enterprise Edition) are 
     downloadableLinkRepositoryV1
     downloadableSampleRepositoryV1
 
-### EAV
+### Eav
     eavAttributeSetManagementV1
     eavAttributeSetRepositoryV1
 
-### Gift message
+### GiftMessage
     giftMessageCartRepositoryV1
     giftMessageGuestCartRepositoryV1
     giftMessageGuestItemRepositoryV1
@@ -175,7 +173,7 @@ The Web APIs for {{site.data.var.ee}} (formerly Magento Enterprise Edition) are 
     salesShipOrderV1
     salesTransactionRepositoryV1
 
-### Sales rule
+### SalesRule
     salesRuleCouponManagementV1
     salesRuleCouponRepositoryV1
     salesRuleRuleRepositoryV1

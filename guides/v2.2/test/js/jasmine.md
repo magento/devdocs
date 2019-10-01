@@ -1,8 +1,6 @@
 ---
-group: jstf
+group: testing
 title: JavaScript unit testing with Jasmine
-version: 2.2
-github_link: test/js/jasmine.md
 functional_areas:
   - Testing
   - test
@@ -30,7 +28,7 @@ npm install
 {:#prepare-step6}
 
 ```bash
-php bin/magento setup:static-content:deploy -f
+bin/magento setup:static-content:deploy -f
 ```
 
 Note that normally you don't have permissions to `<magento_root_dir>/app/code/`, in fact the generated static view file is being tested.
@@ -39,18 +37,25 @@ Note that normally you don't have permissions to `<magento_root_dir>/app/code/`,
 type="tip"
 content="**For CentOS and Ubuntu users**<br/>
 If the command fails with the error message:
+
 ```terminal
 /var/www/html/magento2ce/node_modules/phantomjs-prebuilt/lib/phantom/bin/phantomjs: error while loading shared libraries: libfontconfig.so.1: cannot open shared object file: No such file or directory
 ```
-install [fonctconfig library]:<br/>
+
+Install [fontconfig library]:<br/>
+
 * CentOS:
+
   ```bash
   yum install fontconfig
   ```
+
 * Ubuntu:
+
   ```bash
   apt-get install fontconfig
-  ``` 
+  ```
+
 "
 %}
 
@@ -58,7 +63,7 @@ Learn more in [Deploy static view files].
 
 ## Run tests
 
-`Gruntfile.js` contains the test run task, so you can run **all tests** using the following command in in the Magento root directory:
+`Gruntfile.js` contains the test run task, so you can run **all tests** using the following command in the Magento root directory:
 
 ```bash
 grunt spec:<THEME>
@@ -68,6 +73,12 @@ Example:
 
 ```bash
 grunt spec:backend
+```
+
+You can also run a single test:
+
+```bash
+grunt spec:backend --file="/path/to/the/test.js"
 ```
 
 ## Write a test {#write-test}
@@ -88,7 +99,7 @@ in its static representations generated in [Step 6] previously:
 
 For convenience, we can reflect the directory structure of a file to test.
 
-A path to JS {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} that we want to cover with tests: `app/code/Magento/Ui/view/base/web/js/grid/columns/actions.js`
+A path to JS [module](https://glossary.magento.com/module) that we want to cover with tests: `app/code/Magento/Ui/view/base/web/js/grid/columns/actions.js`
 
 A path to a test of the module: `app/code/Magento/Ui/base/js/grid/columns/actions.test.js`
 
@@ -242,7 +253,7 @@ Warning: Task "spec" not found. Use --force to continue.
 ### Warning: Cannot read property 'pid' of undefined {#cannot-read-property-pid-warning}
 
 #### Issue:
- 
+
 An error message appears:
 
 ```terminal
@@ -265,13 +276,13 @@ npm install
 <!-- LINK DEFINITIONS -->
 
 <!-- External -->
-[`<magento_root_dir>/app/code/Magento/Ui/view/base/web/js/grid/columns/actions.js`]: {{ site.mage2200url }}app/code/Magento/Ui/view/base/web/js/grid/columns/actions.js
+[`<magento_root_dir>/app/code/Magento/Ui/view/base/web/js/grid/columns/actions.js`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/grid/columns/actions.js
 {:target="_blank"}
-[`app/code/Magento/Ui/base/js/grid/columns/actions.test.js`]: {{ site.mage2200url }}dev/tests/js/jasmine/tests/app/code/Magento/Ui/base/js/grid/columns/actions.test.js
+[`app/code/Magento/Ui/base/js/grid/columns/actions.test.js`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/dev/tests/js/jasmine/tests/app/code/Magento/Ui/base/js/grid/columns/actions.test.js
 {:target="_blank"}
-[Deploy static view files]: {{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html#config-cli-subcommands-xlate-dict
+[Deploy static view files]: {{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html
 {:target="_blank"}
-[fonctconfig library]: https://www.freedesktop.org/wiki/Software/fontconfig/
+[fontconfig library]: https://www.freedesktop.org/wiki/Software/fontconfig/
 {:target="_blank"}
 [Grunt]: http://gruntjs.com/
 {:target="_blank"}
@@ -284,7 +295,6 @@ npm install
 
 <!-- Internal -->
 [Step 6]: #prepare-step6
-
 
 <!-- Abbreviations -->
 

@@ -1,12 +1,6 @@
 ---
-group: cloud
+group: cloud-guide
 title: Application
-version: 2.2
-github_link: cloud/project/project-conf-files_magento-app.md
-redirect_from:
-  - /guides/v2.0/cloud/before/before-setup-env-cron.html
-  - /guides/v2.1/cloud/before/before-setup-env-cron.html
-  - /guides/v2.2/cloud/before/before-setup-env-cron.html
 functional_areas:
   - Cloud
   - Setup
@@ -14,24 +8,26 @@ functional_areas:
 
 The `.magento.app.yaml` file controls the way your application builds and deploys. Although {{site.data.var.ece}} supports multiple applications per project, typically, a project has a single application with the `.magento.app.yaml` file at the root of the repository.
 
-The `.magento.app.yaml` has many default values, see [a sample `.magento.app.yaml` file](https://github.com/magento/magento-cloud/blob/master/.magento.app.yaml){:target="\_blank"}. Make sure to review the `.magento.app.yaml` for your installed version. This file can differ across {{site.data.var.ece}} versions.
-
-{% include cloud/note-pro-using-yaml.md %}
+The `.magento.app.yaml` has many default values, see [a sample `.magento.app.yaml` file](https://github.com/magento/magento-cloud/blob/master/.magento.app.yaml). Always review the `.magento.app.yaml` for your installed version. This file can differ across {{site.data.var.ece}} versions.
 
 ## Properties
+
 Use the following properties to build your application configuration file. The `name`, `type`, `disk`, and one `web` or `worker` block is required.
 
 ### `name`
+
 {{site.data.var.ee}} supports multiple applications in a project, so you need a unique name that identifies the application in the project. You must use lower case alphanumeric characters, such as `a` to `z` and `0` to `9` for the name.
 
 The name is used in the [`routes.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_routes.html) file to define the HTTP upstream (by default, `php:http`). For example, if the value of `name` is `app`, you must use `app:http` in the upstream field. You can also use this name in multi-application relationships.
 
-{% include note.html type="info" content="Do not change the name of an application after it has been deployed." %}
+{:.bs-callout .bs-callout-info}
+Do not change the name of an application after it has been deployed.
 
 ### `type` and `build`
+
 The `type`  and `build` properties provide information about the base container image to build and run the project.
 
-The supported `type` language is {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %}. Specify the PHP version as follows:
+The supported `type` language is [PHP](https://glossary.magento.com/php). Specify the PHP version as follows:
 
 ```yaml
 type: php:7.1
@@ -45,6 +41,7 @@ build:
 ```
 
 ### `access`
+
 The _access_ property indicates a minimum user role level that is allowed SSH access to the environments. The available user roles are:
 
 -  `admin`—Can change settings and execute actions in the environment. Also has _contributor_ and _viewer_ rights.
@@ -59,41 +56,50 @@ access:
 ```
 
 ### `relationships`
-Defines the service mapping in your application.
 
-The left-hand side is the name of the relationship as it will be exposed to the application in the `MAGENTO_CLOUD_RELATIONSHIPS` environment variable. The right-hand side is in the form `<service name>:<endpoint name>`, where `<service name>` comes from `.magento/services.yaml` and  `<endpoint name>` should be the same as the value of `type`  declared in that same file.
+Defines the service mapping in the application.
 
-Example of valid options are:
+The relationship `name` is available to the application in the `MAGENTO_CLOUD_RELATIONSHIPS` environment variable. The `<service-name>:<endpoint-name>` relationship maps to the name and type values defined in the `.magento/services.yaml` file.
 
+```yaml
+relationships:
+    <name>: "<service-name>:<endpoint-name>"
 ```
-database: "mysql:mysql"
-database2: "mysql2:mysql"
-cache: "arediscache:redis"
-search: "searchengine:solr"
+
+The following is an example of the default relationships:
+
+```yaml
+relationships:
+    database: "mysql:mysql"
+    redis: "redis:redis"
+    elasticsearch: "elasticsearch:elasticsearch"
 ```
 
 See [Services]({{page.baseurl}}/cloud/project/project-conf-files_services.html) for a full list of currently supported service types and endpoints.
 
 ### `web`
-`web` defines how your application is exposed to the web (in HTTP). Here we tell the web application how to serve content, from the front-controller script to a non-static request to an `index.php` file on the root. We support any directory structure so the static file can be in a sub directory, and the `index.php` file can be further down.
 
-`web` supports the following:
+The `web` property defines how your application is exposed to the web (in HTTP). It determines how the web application serves content— from the front-controller script to a non-static request to an `index.php` file on the root. We support any directory structure so the static file can be in a sub directory, and the `index.php` file can be further down.
 
--  `document_root`: The path relative to the root of the application that is exposed on the web. Typical values include `/public` and `/web`.
--  `passthru`: The URL used in the event a static file or PHP file could not be found. This would typically be your applications front controller, often `/index.php` or `/app.php`.
--  `index_files`: To use a static file (for example, `index.html`) to serve your application. This key expects a collection. For this to work, the static file(s) should be included in your whitelist. For example, to use a file named `index.html` as an index file, your whitelist should include an element that matches the filename, like `- \.html$`.
--  `blacklist`: A list of files that should never be executed. Has no effect on static files.
--  `whitelist`: A list of static files (as regular expressions) that can be served. Dynamic files (for example, PHP files) are treated as static files and have their source code served, but they are not executed.
--  `expires`: The number of seconds whitelisted (that is, static) content should be cached by the browser. This enables the cache-control and expires headers for static content. The `expires` directive and resulting headers are left out entirely if this is not set.
+You can specify the following attributes for the `web` property:
 
-Contrary to standard `.htaccess` approaches, which accept a *blacklist* and allow everything to be accessed except a specific list, we accept a *whitelist*, which means that anything not matched will trigger a 404 error and will be passed through to your `passthru` URL.
+Attribute | Description
+--------- | -----------
+`root` | The path relative to the root of the application that is exposed on the web. Typical values include `/public` and `/web`.
+`passthru` | The URL used in the event that a static file or PHP file cannot be found. This URL is typically the front controller for your applications, often `/index.php` or `/app.php`.
+`index` | Static files, such as `index.html`, to serve your application. This key expects a collection. You must include the static file(s) in the whitelist as an index file, like `- \.html$`.
+`blacklist` | A list of files that should never be executed. Has no effect on static files.
+`whitelist` | A list of static files (as regular expressions) that can be served. Dynamic files (for example, PHP files) are treated as static files and have their source code served, but they are not executed.
+`expires` | The number of seconds to cache whitelisted content in the browser. This attribute enables the cache-control and expires headers for static content. If this value is not set, the `expires` directive and resulting headers are not included when serving static content files.
+
+Contrary to standard `.htaccess` approaches that accept a _blacklist_ and allow access to everything not on a specific list, we accept a _whitelist_, which means that any request that does not match triggers a 404 error and passes through to the  URL specified by the `passthru` attribute.
 
 Our default configuration allows the following:
 
--  From the root (`/`) path, only web, media, and `robots.txt` files can be accessed
--  From the `/pub/static` and `/pub/media` paths, any file can be accessed
+- From the root (`/`) path, only web and media can be accessed
+- From the `~/pub/static` and `~/pub/media` paths, any file can be accessed
 
-The following displays the default set of web accessible locations associated with an entry in [`mounts`](#mounts):
+The following example shows the default configuration for a set of web-accessible locations associated with an entry in the  [`mounts` property](#mounts):
 
 ```yaml
  # The configuration of app when it is exposed to the web.
@@ -112,33 +118,42 @@ web:
             rules:
                 \.(css|js|map|hbs|gif|jpe?g|png|tiff|wbmp|ico|jng|bmp|svgz|midi?|mp?ga|mp2|mp3|m4a|ra|weba|3gpp?|mp4|mpe?g|mpe|ogv|mov|webm|flv|mng|asx|asf|wmv|avi|ogx|swf|jar|ttf|eot|woff|otf|html?)$:
                     allow: true
-                /robots\.txt$:
-                    allow: true
+                ^/sitemap(.*)\.xml$:
+                    passthru: "/media/sitemap$1.xml"
         "/media":
             root: "pub/media"
             allow: true
             scripts: false
-            passthru: "/index.php"
+            expires: 1y
+            passthru: "/get.php"
         "/static":
             root: "pub/static"
             allow: true
             scripts: false
+            expires: 1y
             passthru: "/front-static.php"
             rules:
                 ^/static/version\d+/(?<resource>.*)$:
                     passthru: "/static/$resource"
+
 ```
 
+{:.bs-callout-info}
+This example shows the default web configuration for a Cloud project configured to support a single domain. For a project that requires support for multiple websites or stores, the `web` configuration must be set up to support shared domains. See [Configure locations for shared domains]{{ page.baseurl }}/cloud/project-multi-sites.html#locations).
+
 ### `disk`
+
 Defines the persistent disk size of the application in MB.
 
 ```yaml
 disk: 2048
 ```
 
-{% include note.html type="info" content="The minimal recommended disk size is 256MB. If you see the error `UserError: Error building the project: Disk size may not be smaller than 128MB`, increase the size to 256MB." %}
+{:.bs-callout-info}
+The minimal recommended disk size is 256MB. If you see the error `UserError: Error building the project: Disk size may not be smaller than 128MB`, increase the size to 256MB.
 
 ### `mounts`
+
 An object whose keys are paths relative to the root of the application. The mount is a writable area on the disk for files. The following is a default list of mounts configured in the `magento.app.yaml` file using the `volume_id[/subpath]` syntax:
 
 ```yaml
@@ -152,20 +167,20 @@ mounts:
 
 The format for adding your mount to this list is as follows:
 
-```
+```bash
 "/public/sites/default/files": "shared:files/files"
 ```
 
 -  `shared`—Shares a volume between your applications inside an environment.
 -  `disk`—Defines the size available for the shared volume.
 
-<div class="bs-callout bs-callout-warning" markdown="1">
-Important: The subpath portion of the mount is the unique identifier of the files area. If changed, files at the old location will be permanently lost. Do not change this value once your site has data unless you really want to lose all existing data.
-</div>
+{:.bs-callout .bs-callout-warning}
+The subpath portion of the mount is the unique identifier of the files area. If changed, files at the old location will be permanently lost. Do not change this value once your site has data unless you really want to lose all existing data.
 
-If you also want the mount web accessible, you must add it to the [`web`](#web) block of locations.
+You can make the mount web accessible by adding it to the [`web`](#web) block of locations.
 
 ### `dependencies`
+
 Enables you to specify dependencies that your application might need during the build process.
 
 {{site.data.var.ee}} supports dependencies on the following
@@ -179,7 +194,7 @@ Those dependencies are independent of the eventual dependencies of your applicat
 
 You can specify those dependencies as follows:
 
-```
+```yaml
 ruby:
    sass: "~3.4"
 nodejs:
@@ -187,13 +202,16 @@ nodejs:
 ```
 
 ### `hooks`
+
 Use the `hooks` section to run shell commands during the build, deploy, and post-deploy phases:
 
--   **`build`**—Execute commands _before_ packaging your application. Services, such as the database or Redis, are not available at this time since the application has not been deployed yet. You must add custom commands _before_ the default `php ./vendor/bin/m2-ece-build` command to make sure custom-generated content makes it to the deployment phase.
--   **`deploy`**—Execute commands _after_ packaging and deploying your application. You can access other services at this point. Since the default `php ./vendor/bin/m2-ece-deploy` command copies the `app/etc` directory to the correct location, you must add custom commands _after_ the deploy command to prevent custom commands from failing.
--   **`post_deploy`**—Execute commands _after_ deploying your application and _after_ the container begins accepting connections. The `post_deploy` hook clears the cache and preloads (warms) the cache. You can customize the list of pages using the `WARM_UP_PAGES` variable in the [Post-deploy stage](http://devdocs.magento.com/guides/v2.1/cloud/env/variables-post-deploy.html). It is available only for Pro projects that contain [Staging and Production environments in the Project Web UI]({{ page.baseurl }}/cloud/trouble/pro-env-management.html) and for Starter projects. Although not required, this works in tandem with the `SCD_ON_DEMAND` environment variable.
+-  **`build`**—Execute commands _before_ packaging your application. Services, such as the database or Redis, are not available at this time since the application has not been deployed yet. You must add custom commands _before_ the default `php ./vendor/bin/ece-tools` command so that custom-generated content continues to the deployment phase.
 
-Add CLI commands under the `build` or `deploy` sections:
+-  **`deploy`**—Execute commands _after_ packaging and deploying your application. You can access other services at this point. Since the default `php ./vendor/bin/ece-tools` command copies the `app/etc` directory to the correct location, you must add custom commands _after_ the deploy command to prevent custom commands from failing.
+
+-  **`post_deploy`**—Execute commands _after_ deploying your application and _after_ the container begins accepting connections. The `post_deploy` hook clears the cache and preloads (warms) the cache. You can customize the list of pages using the `WARM_UP_PAGES` variable in the [Post-deploy stage]({{ page.baseurl }}/cloud/env/variables-post-deploy.html). Although not required, this works in tandem with the `SCD_ON_DEMAND` environment variable.
+
+Add CLI commands under the `build`, `deploy`, or `post_deploy` sections _before_ the `ece-tools` command:
 
 ```yaml
 hooks:
@@ -208,16 +226,33 @@ hooks:
         php ./vendor/bin/ece-tools post-deploy
 ```
 
+Also, you can customize the build phase further by using the `generate` and `transfer` commands to perform additional actions when specifically building code or moving files.
+
+```yaml
+hooks:
+    # We run build hooks before your application has been packaged.
+    build: |
+        set -e
+        php ./vendor/bin/ece-tools build:generate
+        # php /path/to/your/script
+        php ./vendor/bin/ece-tools build:transfer
+```
+
+-  `set -e`—causes hooks to fail on the first failed command, instead of the final failed command.
+-  `build:generate`—applies patches, validates configuration, generates DI, and generates static content if SCD is enabled for build phase.
+-  `build:transfer`—transfers generated code and static content to the final destination.
+
 The commands run from the application (`/app`) directory. You can use the `cd` command to change the directory. The hooks fail if the final command in them fails. To cause them to fail on the first failed command, add `set -e` to the beginning of the hook.
 
-#### To compile SASS files using grunt:
+{:.procedure}
+To compile Sass files using grunt:
 
 ```yaml
 dependencies:
     ruby:
-      sass: "3.4.7"
+        sass: "3.4.7"
     nodejs:
-      grunt-cli: "~0.1.13"
+        grunt-cli: "~0.1.13"
 
 hooks:
     build: |
@@ -225,157 +260,216 @@ hooks:
         npm install
         grunt
         cd
-        php ./vendor/bin/m2-ece-build
+        php ./vendor/bin/ece-tools
 ```
 
-You must compile SASS files using `grunt` before static content deployment, which happens during the build. Place the `grunt` command before the `build` command.
+You must compile Sass files using `grunt` before static content deployment, which happens during the build. Place the `grunt` command before the `build` command.
 
 ### `crons`
-Describes processes that are triggered on a schedule. We recommend you run `cron` as the [Magento file system owner]({{page.baseurl}}/cloud/before/before-workspace-file-sys-owner.html). Do _not_ run cron as `root`or as the web server user.
+
+Describes processes that are triggered on a schedule. We recommend you run `cron` as the [Magento file system owner]({{page.baseurl}}/cloud/before/before-workspace-file-sys-owner.html). Do _not_ run cron as `root` or as the web server user.
 
 `crons` support the following:
 
 -  `spec`—The cron specification. For Starter environments and Pro Integration environments, the minimum interval is once per five minutes and once per one minute in Pro Staging and Production environments. You need to complete [additional configurations]({{ page.baseurl }}/cloud/configure/setup-cron-jobs.html#add-cron) for crons in those environments.
 -  `cmd`—The command to execute.
 
-A Cron job is well suited for the following tasks:
+A cron job is well suited for the following tasks:
 
 -  They need to happen on a fixed schedule, not continually.
 -  The task itself is not especially long, as a running cron job will block a new deployment.
 -  Or it is long, but can be easily divided into many small queued tasks.
 -  A delay between when a task is registered and when it actually happens is acceptable.
 
-A sample Magento cron job follows:
+By default, every Cloud project has the following default crons configuration to run the default Magento cron jobs:
 
 ```yaml
 crons:
-  cronrun:
-      spec: "*/5 * * * *"
-      cmd: "php bin/magento cron:run"
+    cronrun:
+        spec: "* * * * *"
+        cmd: "php bin/magento cron:run"
 ```
 
 For {{site.data.var.ece}} 2.1.X, you can use only [workers](#workers) and [cron jobs](#crons). For {{site.data.var.ece}} 2.2.X, cron jobs launch consumers to process batches of messages, and do not require additional configuration.
 
-For more information, see [Set up cron jobs]({{ page.baseurl }}/cloud/configure/setup-cron-jobs.html).
+If your project requires custom cron jobs, you can add them to the default cron configuration. See [Set up cron jobs]({{ page.baseurl }}/cloud/configure/setup-cron-jobs.html).
 
 ## Variables
+
 The following environment variables are included in `.magento.app.yaml`. These are required for {{site.data.var.ece}} 2.2.X.
 
 ```yaml
 variables:
-  env:
-    CONFIG__DEFAULT__PAYPAL_ONBOARDING__MIDDLEMAN_DOMAIN: 'payment-broker.magento.com'
-    CONFIG__STORES__DEFAULT__PAYMENT__BRAINTREE__CHANNEL: 'Magento_Enterprise_Cloud_BT'
-    CONFIG__STORES__DEFAULT__PAYPAL__NOTATION_CODE: 'Magento_Enterprise_Cloud'
+    env:
+        CONFIG__DEFAULT__PAYPAL_ONBOARDING__MIDDLEMAN_DOMAIN: 'payment-broker.magento.com'
+        CONFIG__STORES__DEFAULT__PAYMENT__BRAINTREE__CHANNEL: 'Magento_Enterprise_Cloud_BT'
+        CONFIG__STORES__DEFAULT__PAYPAL__NOTATION_CODE: 'Magento_Enterprise_Cloud'
 ```
 
 ## Configure PHP options
+
 You can choose which version of PHP to run in your `.magento.app.yaml` file:
 
-```
+```yaml
 name: mymagento
-type: php:7.0
+type: php:7.2
 ```
-
-<div class="bs-callout bs-callout-info" markdown="1">
-{{site.data.var.ece}} supports PHP 7.0 and 7.1. For Pro projects **created before October 23, 2017**, you must open a [support ticket]({{ page.baseurl }}/cloud/trouble/trouble.html) to use PHP 7.1 on your Pro Staging and Production environments.
-</div>
 
 ### PHP extensions
-You can define additional PHP extensions to enable or disable:
+
+You can enable additional PHP extensions in the `runtime:extension` section. Also, the extensions specified become available in the Docker PHP containers.
 
 > .magento.app.yaml
 
 ```yaml
 runtime:
-  extensions:
-    - xdebug
-    - redis
-    - ssh2
-  disabled_extensions:
-    - sqlite3
+    extensions:
+        - sockets
+        - sodium
+        - ssh2
+    disabled_extensions:
+        - bcmath
+        - bz2
+        - calendar
+        - exif
 ```
 
-To view the current list of PHP extensions, SSH into your environment and enter the following command:
+Use SSH to log in to an environment and list the PHP extensions.
 
-	php -m
+```bash
+php -m
+```
 
-Magento requires the following PHP extensions that are enabled by default:
+For details about a specific PHP extension, see the [PHP Extension List](https://www.php.net/manual/en/extensions.alphabetical.php).
 
--  [curl](http://php.net/manual/en/book.curl.php){:target="\_blank"}
--  [gd](http://php.net/manual/en/book.image.php){:target="\_blank"}
--  [intl](http://php.net/manual/en/book.intl.php){:target="\_blank"}
--  PHP 7 only:
+{{site.data.var.ece}} supports the following extensions:
 
-	-  [json](http://php.net/manual/en/book.json.php){:target="\_blank"}
-	-  [iconv](http://php.net/manual/en/book.iconv.php){:target="\_blank"}
--  [mcrypt](http://php.net/manual/en/book.mcrypt.php){:target="\_blank"}
--  [PDO/MySQL](http://php.net/manual/en/ref.pdo-mysql.php){:target="\_blank"}
--  [bc-math](http://php.net/manual/en/book.bc.php){:target="\_blank"}
--  [mbstring](http://php.net/manual/en/book.mbstring.php){:target="\_blank"}
--  [mhash](http://php.net/manual/en/book.mhash.php){:target="\_blank"}
--  [openssl](http://php.net/manual/en/book.openssl.php){:target="\_blank"}
--  [SimpleXML](http://php.net/manual/en/book.simplexml.php){:target="\_blank"}
--  [soap](http://php.net/manual/en/book.soap.php){:target="\_blank"}
--  [xml](http://php.net/manual/en/book.xml.php){:target="\_blank"}
--  [zip](http://php.net/manual/en/book.zip.php){:target="\_blank"}
+-  Default extensions:
+   -  `bcmath`
+   -  `bz2`
+   -  `calendar`
+   -  `exif`
+   -  `gd`
+   -  `gettext`
+   -  `intl`
+   -  `mysqli`
+   -  `pcntl`
+   -  `pdo_mysql`
+   -  `soap`
+   -  `sockets`
+   -  `sysvmsg`
+   -  `sysvsem`
+   -  `sysvshm`
+   -  `opcache`
+   -  `zip`
 
-You must install the following extensions:
+-  Extensions that are installed and cannot be uninstalled:
+   -  `ctype`
+   -  `curl`
+   -  `date`
+   -  `dom`
+   -  `fileinfo`
+   -  `filter`
+   -  `ftp`
+   -  `hash`
+   -  `iconv`
+   -  `json`
+   -  `mbstring`
+   -  `mysqlnd`
+   -  `openssl`
+   -  `pcre`
+   -  `pdo`
+   -  `pdo_sqlite`
+   -  `phar`
+   -  `posix`
+   -  `readline`
+   -  `session`
+   -  `sqlite3`
+   -  `tokenizer`
+   -  `xml`
+   -  `xmlreader`
+   -  `xmlwriter`
 
--  [ImageMagick](http://php.net/manual/en/book.imagick.php){:target="\_blank"} 6.3.7 (or later), ImageMagick can optionally be used with the `gd` extension
--  [xsl](http://php.net/manual/en/book.xsl.php){:target="\_blank"}
--  [redis](https://pecl.php.net/package/redis){:target="\_blank"}
+-  Extensions that can be installed and uninstalled as needed:
+   -  `bcmath`
+   -  `bz2`
+   -  `calendar`
+   -  `exif`
+   -  `gd`
+   -  `geoip`
+   -  `gettext`
+   -  `gmp`
+   -  `igbinary`
+   -  `imagick`
+   -  `imap`
+   -  `intl`
+   -  `ldap`
+   -  `mailparse`
+   -  `mcrypt`
+   -  `msgpack`
+   -  `mysqli`
+   -  `oauth`
+   -  `opcache`
+   -  `pdo_mysql`
+   -  `propro`
+   -  `pspell`
+   -  `raphf`
+   -  `recode`
+   -  `redis`
+   -  `shmop`
+   -  `soap`
+   -  `sockets`
+   -  `sodium`
+   -  `ssh2`
+   -  `sysvmsg`
+   -  `sysvsem`
+   -  `sysvshm`
+   -  `tidy`
+   -  `xdebug`
+   -  `xmlrpc`
+   -  `xsl`
+   -  `yaml`
+   -  `zip`
+   -  `pcntl`
 
-In addition, we strongly recommend you enable `opcache`.
-
-Optional PHP extensions available to install:
-
--  [apcu](http://php.net/manual/en/book.apcu.php){:target="\_blank"}
--  [blackfire](https://blackfire.io/docs/up-and-running/installation){:target="\_blank"}
--  [enchant](http://php.net/manual/en/book.enchant.php){:target="\_blank"}
--  [gearman](http://php.net/manual/en/book.gearman.php){:target="\_blank"}
--  [geoip](http://php.net/manual/en/book.geoip.php){:target="\_blank"}
--  [imap](http://php.net/manual/en/book.imap.php){:target="\_blank"}
--  [ioncube](https://www.ioncube.com/loaders.php){:target="\_blank"}
--  [pecl-http](https://pecl.php.net/package/pecl_http){:target="\_blank"}
--  [pinba](http://pinba.org){:target="\_blank"}
--  [propro](https://pecl.php.net/package/propro){:target="\_blank"}
--  [pspell](http://php.net/manual/en/book.pspell.php){:target="\_blank"}
--  [raphf](https://pecl.php.net/package/raphf){:target="\_blank"}
--  [readline](http://php.net/manual/en/book.readline.php){:target="\_blank"}
--  [recode](http://php.net/manual/en/book.recode.php){:target="\_blank"}
--  [snmp](http://php.net/manual/en/book.snmp.php){:target="\_blank"}
--  [sqlite3](http://php.net/manual/en/book.sqlite3.php){:target="\_blank"}
--  [ssh2](http://php.net/manual/en/book.ssh2.php){:target="\_blank"}
--  [tidy](http://php.net/manual/en/book.tidy.php){:target="\_blank"}
--  [xcache](https://xcache.lighttpd.net){:target="\_blank"}
--  [xdebug](https://xdebug.org){:target="\_blank"}
--  [xhprof](http://php.net/manual/en/book.xhprof.php){:target="\_blank"}
--  [xmlrpc](http://php.net/manual/en/book.xmlrpc.php){:target="\_blank"}
-
-{% include note.html type="info" content="Important: PHP compiled with debug is not supported and the Probe may conflict with XDebug or XHProf. Disable those extensions when enabling the Probe. The Probe conflicts with some PHP extensions like Pinba or IonCube." %}
+{: .bs-callout-warning}
+PHP compiled with debug is not supported and the Probe may conflict with XDebug or XHProf. Disable those extensions when enabling the Probe. The Probe conflicts with some PHP extensions like Pinba or IonCube.
 
 ### Customize `php.ini` settings
+
 You can also create and push a `php.ini` file that is appended to the configuration maintained by {{site.data.var.ee}}.
 
 In your repository, the `php.ini` file should be added to the root of the application (the repository root).
 
-{% include note.html type="info" content="Configuring PHP settings improperly can cause issues. We recommend only advanced administrators set these options." %}
+{:.bs-callout .bs-callout-info}
+Configuring PHP settings improperly can cause issues. We recommend only advanced administrators set these options.
 
 For example, if you need to increase the PHP memory limit:
 
-	memory_limit = 756M
+```bash
+memory_limit = 756M
+```
 
 For a list of recommended PHP configuration settings, see [Required PHP settings]({{ page.baseurl }}/install-gde/prereq/php-settings.html).
 
 After pushing your file, you can check that the custom PHP configuration has been added to your environment by [creating an SSH tunnel]({{ page.baseurl }}/cloud/env/environments-start.html#env-start-tunn) to your environment and entering:
 
-	cat /etc/php5/fpm/php.ini
+```bash
+cat /etc/php5/fpm/php.ini
+```
 
 ## Workers
-You can define zero or multiple work instances for each application. A worker instance runas as its own container, independently of the web instance and has no Nginx instance running. The router service cannot direct public requests to it, either, so running your own web server on a worker (using Node.js or Go) is not useful.
 
-A worker instance is the exact same code and compilation output as a web instance. The container image is built once and deployed multiple times if needed using the same `build` hook and `dependencies`. You can customize the container and allocated resources.
+You can define zero or multiple work instances for each application. A worker
+instance runs as a container, independent from the web instance and without
+a running Nginx instance. Additionally, you do not need to set up a web server on
+the worker instance (using Node.js or Go) because the router cannot direct public
+requests to the worker.
+
+A worker instance has the exact same code and compilation output as a web instance.
+The container image is built once and deployed multiple times if needed using the
+same `build` hook and `dependencies`. You can customize the container and
+allocated resources.
 
 Use worker instances for background tasks including:
 
@@ -387,7 +481,7 @@ Use worker instances for background tasks including:
 
 A basic, common worker configuration could look like this:
 
-```
+```yaml
 workers:
     queue:
         size: S

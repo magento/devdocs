@@ -1,11 +1,9 @@
 ---
-group: mrg
+group: module-reference-guide
 subgroup: 30_B2B
 title: Magento_Company module
 menu_title: Company
 menu_order: 50
-version: 2.2
-github_link: mrg/b2b/Company.md
 functional_areas:
   - B2B
 ---
@@ -44,10 +42,9 @@ The following directories contain extensible UI components:
 
 * `Magento\Company\view\adminhtml\ui_component` -  customer listing, invitation form, sales order grid
 
-* `Magento\Company\view\base\ui_component` - company listing, complany creation form, customer creation form
+* `Magento\Company\view\base\ui_component` - company listing, company creation form, customer creation form
 
 * `Magento\Company\view\frontend\ui_component` - company users listing, role listing
-
 
 For more information, see [UI Listing/Grid Component]({{ page.baseurl }}/ui_comp_guide/components/ui-listing-grid.html).
 

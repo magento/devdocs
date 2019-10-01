@@ -1,8 +1,6 @@
 ---
-group: reporting
+group: advanced-reporting
 title: Report XML
-version: 2.2
-github_link: advanced-reporting/report-xml.md
 functional_areas:
     - Reports
 ---
@@ -27,12 +25,12 @@ Columns are added using the `<attribute>` node.
 
 All report files are located in the `etc` directory of a module:
 
-```
+```text
 <module_dir>/etc/reports.xml
 ```
 
 The following is a visualized XML Schema for `reports.xml`:
- 
+
 {% include_relative img/reports_xsd.svg %}
 
 Report files can be located in any module that depends on the `Analytics` module (e.g. the `SalesAnalytics` module created for the reports related to *Sales*).
@@ -69,7 +67,7 @@ The data sources that correspond to table names in a database.
 |`alias`|Table alias|Optional|
 
 The main table is specified with the `<source>` tag.
-After rendering, it is represented in an SQL query as the `FROM` statement .
+After rendering, it is represented in an SQL query as the `FROM` statement.
 
 A report can be filtered using `<filter>` declared inside the `<source>` node.
 

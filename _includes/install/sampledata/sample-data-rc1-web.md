@@ -1,4 +1,3 @@
-<div markdown="1">
 
 These instructions apply to you *only* if all of the following are true:
 
@@ -15,18 +14,24 @@ To upgrade to {{site.data.var.ee}} RC1 or RC2 with sample data using the Setup W
 3.	Open `composer.lock` in a text editor.
 4.	Change the following:
 
-	From:
+    From:
 
-		"type": "magento2-module-customer-balance"
+    ```json
+    "type": "magento2-module-customer-balance"
+    ```
 
-	To:
+    To:
 
-		"type": "magento2-module"
+    ```json
+    "type": "magento2-module"
+    ```
+
 5.	Save your changes to `composer.lock` and exit the text editor.
 
 {% include install/sampledata/file-sys-perms-digest.md %}
 
 ### Finish the upgrade
+
 After you set file system permissions, complete your upgrade as discussed in [Start System Upgrade]({{ page.baseurl }}/comp-mgr/upgrader/upgrade-start.html).
 
 {% endcollapsible %}

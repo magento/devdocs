@@ -1,1 +1,1 @@
-../../../v2.0/cloud/configure/configure-best-practices.md
+../../../../guides/v2.2/cloud/configure/configure-best-practices.md

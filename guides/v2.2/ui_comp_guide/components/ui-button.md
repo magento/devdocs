@@ -1,110 +1,70 @@
 ---
-group: UI_Components_guide
-subgroup: components
+group: ui-components-guide
 title: Button component
-menu_title: Button component
-version: 2.2
-github_link: ui_comp_guide/components/ui-button.md
 ---
 
-## Overview
-
-The Button component allows user to perform a list of predefined actions by clicking on the corresponding button. Its default display mode is the {% glossarytooltip a2aff425-07dd-4bd6-9671-29b7edefa871 %}HTML{% endglossarytooltip %} `<button>` element, which be configured to display a link.
+The Button component allows user to perform a list of predefined actions by clicking on the corresponding button. Its default display mode is the [HTML](https://glossary.magento.com/html) `<button>` element, which be configured to display a link.
 
 ## Configuration options
 
-Extends all [`uiElement`]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uielement_concept.html) configuration.
-
-Button-specific configuration:
-
-<table>
-  <tr>
-    <th>Option </th>
-    <th>Description</th>
-    <th>Type</th>
-    <th>Default</th>
-  </tr>
-  <tr>
-    <td><code>component</code></td>
-    <td>The path to the component’s JS constructor in terms of RequireJS.</td>
-    <td>String</td>
-    <td><code>Magento_Ui/js/form/components/button</code></td>
-  </tr>
-  <tr>
-    <td><code>additionalClasses</code></td>
-    <td>Sets custom classes to the component's DOM block.</td>
-    <td>Object</td>
-    <td><code>{}</code></td>
-  </tr>
-  <tr>
-    <td><code>disabled</code></td>
-    <td>Initial component's state. When set to <code>true</code>, users can't take action on the element.</td>
-    <td>Boolean</td>
-    <td><code>false</code></td>
-  </tr>
-  <tr>
-    <td><code>displayAsLink</code></td>
-    <td>Show the button as a link.</td>
-    <td>Boolean</td>
-    <td><code>false</code></td>
-  </tr>
-  <tr>
-    <td><code>elementTmpl</code></td>
-    <td>The path to the child component’s <code>.html</code> template.</td>
-    <td>String</td>
-    <td><code>''</code></td>
-  </tr>
-  <tr>
-    <td><code>template</code></td>
-    <td>Path to the general <code>.html</code> template for a button.</td>
-    <td>String</td>
-    <td><code>''</code></td>
-  </tr>
-  <tr>
-    <td><code>title</code></td>
-    <td>Button title.</td>
-    <td>String</td>
-    <td><code>''</code></td>
-  </tr>
-  <tr>
-    <td><code>visible</code></td>
-    <td>Initial component's visibility. When set to <code>false</code>, the <code>"display: none</code> CSS style is added to the component's DOM block.</td>
-    <td>Boolean</td>
-    <td><code>true</code></td>
-  </tr>
-  <tr>
-    <td><code>actions</code></td>
-    <td>A list of actions that are performed when user clicks on the element.</td>
-    <td><code>ButtonAction[]</code></td>
-    <td>-</td>
-  </tr>
-</table>
+| Option | Description | Type | Default |
+| --- | --- | --- | --- |
+| `component` | The path to the component’s JS constructor in terms of RequireJS. | String | `Magento_Ui/js/form/components/button` |
+| `additionalClasses` | Sets custom classes to the component's DOM block. | Object | `{}` |
+| `buttonClasses` | Sets custom classes to the [HTML](https://glossary.magento.com/html) `<button>` element. | Object | `{}` |
+| `disabled` | Initial component's state. When set to `true`, users can't take action on the element. | Boolean | `false` |
+| `displayAsLink` | Show the button as a link. | Boolean | `false` |
+| `elementTmpl` | The path to the child component’s `.html` template. | String | `ui/form/element/button` |
+| `template` | Path to the general `.html` template for a button. | String | `ui/form/components/button/simple` |
+| `title` | Button title. | String | `''` |
+| `displayArea` | Display area of the component. | String | `outsideGroup` |
+| `visible` | Initial component's visibility. When set to `false`, the `"display: none"` CSS style is added to the component's DOM block. | Boolean | `true` |
+| `actions` | A list of actions that are performed when user clicks on the element. | `ButtonAction[]` | - |
 
 ### ButtonAction interface
 
-<table>
-  <tr>
-    <th>Option</th>
-    <th>Description</th>
-    <th>Type</th>
-    <th>Required</th>
-  </tr>
-  <tr>
-    <td><code>targetName</code></td>
-    <td>Reference to component.</td>
-    <td>String</td>
-    <td>Required</td>
-  </tr>
-  <tr>
-    <td><code>actionName</code></td>
-    <td>Name of the component's method to be invoked.</td>
-    <td>String</td>
-    <td>Required</td>
-  </tr>
-  <tr>
-    <td><code>params</code></td>
-    <td>A list of arguments that will be passed to the method.</td>
-    <td>Array</td>
-    <td>Optional</td>
-  </tr>
-</table>
+Option | Description | Type | Required |
+--- | --- | --- | --- |
+`targetName` | Reference to component. | String | Required |
+`actionName` | Name of the component's method to be invoked. | String | Required |
+`params` | A list of arguments that will be passed to the method. | Array | Optional |
+
+## Examples
+
+### Configure component
+
+Here is an example of a Button component ("Test Button") added below a Listing component:
+
+```xml
+...
+<button name="my_new_button">
+    <argument name="data" xsi:type="array">
+        <item name="config" xsi:type="array">
+            <item name="actions" xsi:type="array">
+                <!-- Add your button's actions here -->
+                <item name="0" xsi:type="array">
+                    <item name="targetName" xsi:type="string">TARGET_NAME</item>
+                    <item name="actionName" xsi:type="string">ACTION_NAME</item>
+                </item>
+            </item>
+        </item>
+    </argument>
+    <settings>
+        <displayAsLink>false</displayAsLink>
+        <title><![CDATA[Test Button]]></title>
+    </settings>
+</button>
+...
+```
+
+### Result
+
+The Button component appears below a Listing component on the page, as follows:
+
+![Listing button]({{ site.baseurl }}/common/images/ui_comps/listing_button.png)
+
+## Source files
+
+Extends [`UiElement`]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uielement_concept.html):
+
+- [`Magento/Ui/view/base/web/js/form/components/button.js`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/form/components/button.js)

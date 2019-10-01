@@ -9,7 +9,7 @@ pages:
       children:
 
         - label: Enter your authentication keys in the Admin
-          versions: ["2.1", "2.0"]
+          include_versions: ["2.1", "2.0"]
           url: /comp-mgr/prereq/prereq_auth-token.html
 
         - label: Set ulimit for the web server user
@@ -25,7 +25,7 @@ pages:
       url: /comp-mgr/marketplace/marketplace.html
 
     - label: Run the Component Manager
-      versions: ["2.0","2.1"]
+      include_versions: ["2.0","2.1"]
       url: /comp-mgr/module-man/compman-checklist.html
       children:
 
@@ -60,7 +60,7 @@ pages:
           url: /comp-mgr/module-man/compman-uninst-final.html
 
     - label: Run the Module Manager
-      versions: ["2.2", "2.3"]
+      include_versions: ["2.2", "2.3"]
       url: /comp-mgr/module-man/compman-checklist.html
       children:
 
@@ -77,7 +77,7 @@ pages:
           url: /comp-mgr/module-man/modman-enable-disable.html
 
     - label: Run the Extension Manager
-      versions: ["2.2", "2.3"]
+      include_versions: ["2.2", "2.3"]
       url: /comp-mgr/extens-man/extensman-checklist.html
       children:
 
@@ -114,14 +114,6 @@ pages:
         - label: Step 4. Uninstall
           url: /comp-mgr/extens-man/extensman-uninst-final.html
 
-    - label: Install extensions from the command line
-      versions: ["2.2", "2.3"]
-      url: /comp-mgr/install-extensions.html
-      children:
-
-        - label: Install the B2B extension
-          url: /comp-mgr/install-extensions/b2b-installation.html
-
     - label: Upgrade from Magento Open Source to Magento Commerce
       url: /comp-mgr/upgrader/ce-ee-upgrade-start.html
 
@@ -129,7 +121,15 @@ pages:
       url: /comp-mgr/cli/cli-upgrade.html
       children:
 
-        - label: Command-line upgrade to Magento 2.1 with sample data
+        - label: (Optional) Upgrade using the custom script
+          url: /comp-mgr/cli/upgrade-with-script.html
+          include_versions: ["2.3"]
+          
+        - label: (Experimental) Upgrade using the composer plugin
+          url: /comp-mgr/cli/upgrade-with-plugin.html
+          include_versions: ["2.3"]
+
+        - label: Upgrade with sample data
           url: /comp-mgr/cli/cli-rc1-samp.html
 
     - label: Run System Upgrade
@@ -151,6 +151,9 @@ pages:
         - label: Step 4. Upgrade
           url: /comp-mgr/upgrader/upgrade.html
 
+    - label: Applying patches
+      url: /comp-mgr/patching.html
+    
     - label: Update the updater application
       url: /comp-mgr/updater/update-updater.html
       children:
@@ -168,13 +171,6 @@ pages:
         - label: Out of memory errors
           url: /comp-mgr/trouble/cman/out-of-memory.html
 
-        - label: Missing .gitignore files
-          url: /comp-mgr/trouble/cman/gitignore.html
-
-        - label: Troubleshoot upgrade issues
-          versions: ["2.1", "2.2", "2.3"]
-          url: /comp-mgr/trouble/cman/upgrade_51431.html
-
         - label: Troubleshoot cron
           url: /comp-mgr/trouble/cman/cron.html
 
@@ -185,7 +181,7 @@ pages:
           url: /comp-mgr/trouble/cman/php-version.html
 
         - label: File permissions readiness check issues
-          versions: ["2.0", "2.1"]
+          include_versions: ["2.0", "2.1"]
           url: /comp-mgr/trouble/cman/rc_perms.html
 
         - label: Roll back after update failure
@@ -199,9 +195,3 @@ pages:
 
         - label: Troubleshoot backups
           url: /comp-mgr/trouble/cman/tshoot_backup.html
-
-        - label: Error upgrading from Magento Open Source to Magento Commerce
-          url: /comp-mgr/trouble/cman/ce-ee-upgrade.html
-
-        - label: magento/theme-doc-blank failure
-          url: /comp-mgr/trouble/cman/doc.html

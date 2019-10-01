@@ -1,8 +1,6 @@
 ---
-group: perf-best-practices
+group: performance-best-practices
 title: Deployment flow
-version: 2.2
-github_link: performance-best-practices/deployment-flow.md
 functional_areas:
   - Configuration
   - System
@@ -23,11 +21,11 @@ Deploying static content causes Magento 2 to perform the following actions:
 
 If your static content is not deployed, Magento performs all listed operation on the fly, leading to a significant increase in response time.
 
-You can use a variety of options to to customize deployment operations based on store size and fulfillment needs. The most common is the compact deploy strategy. See [Static files deployment strategies]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-deploy-strategies.html)
+You can use a variety of options to customize deployment operations based on store size and fulfillment needs. The most common is the compact deploy strategy. See [Static files deployment strategies]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-deploy-strategies.html)
 
 Run the following command to deploy static content:
 
-``` bash
+```bash
 bin/magento setup:static-content:deploy
 ```
 
@@ -42,14 +40,14 @@ When you preprocess and compile dependency injection (DI) instructions, Magento:
 
 Run the following command to preprocess and compile DI:
 
-``` bash
+```bash
 bin/magento setup:di:compile
 ```
 
 After compilation completes, we recommend running the following command:
 
-``` bash
-composer dump-autoload -o
+```bash
+composer dump-autoload -o --apcu
 ```
 
 This command allows Composer to rebuild the mapping to project files so that they load faster.
@@ -62,7 +60,7 @@ Finally, you need to place your store in Production mode. Production mode is spe
 
 You can also deploy static content, compile the content, and set the mode in one CLI command:
 
-``` bash
+```bash
 bin/magento deploy:mode:set production
 ```
 

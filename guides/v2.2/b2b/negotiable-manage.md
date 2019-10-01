@@ -1,14 +1,12 @@
 ---
-group: b2b
+group: b2b-developer-guide
 subgroup: 10_REST
 title: Manage negotiable quotes
 menu_title: Manage negotiable quotes
 menu_order: 32
-version: 2.2
 ee_only: True
 level3_menu_node: level3child
 level3_subgroup: nq
-github_link: b2b/negotiable-manage.md
 functional_areas:
   - B2B
   - Integration
@@ -16,13 +14,12 @@ functional_areas:
 
 This topic describes the calls required to initiate a negotiable quote and to prepare it to be converted to an order.
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{: .bs-callout-info }
 All negotiable quote calls require an admin authorization token.
-</div>
 
 **REST Endpoints**
 
-{% highlight http %}
+```json
 POST /V1/negotiableQuote/request
 POST /V1/negotiableQuote/submitToCustomer
 POST /V1/negotiableQuote/decline
@@ -30,7 +27,7 @@ POST /V1/negotiableQuote/pricesUpdated
 GET /V1/negotiableQuote/:quoteId/comments
 GET /V1/negotiableQuote/attachmentContent
 PUT /V1/negotiableQuote/:quoteId/shippingMethod
-{% endhighlight %}
+```
 
 **NegotiableQuoteManagementInterface Parameters**
 
@@ -43,7 +40,7 @@ Name | Description | Format | Requirements
 `comment`	| The comment to add to the quote.	| string | Optional
 `files` | An array of files to add to the quote | array | Optional
 
-The buyer or the seller can optinally attach up to 10 files to provide details about the quote. Each file must be converted into base64.
+The buyer or the seller can optionally attach up to 10 files to provide details about the quote. Each file must be converted into base64.
 
 The `files` array contains the following parameters
 
@@ -52,7 +49,6 @@ Name | Description | Format | Requirements
 `base64_encoded_data` | A string in base 64 that defines the contents of the added file | string | Required
 `type` | Defines the type of file, such as `text/plain` or `application/pdf`| string | Optional
 `name` | The name of the file to be uploaded, such as `quote.txt` or `quote.pdf`. | string | Required
-
 
 ### Request a negotiable quote
 
@@ -63,9 +59,8 @@ Before negotiable quote can begin, the following conditions must be met:
 
 If the negotiable quote requires a shipping address (for negotiation or tax calculations), you can add it to the standard quote before initiating the negotiable quote (`POST /V1/carts/:cartId/shipping-information`)
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{:.bs-callout .bs-callout-info}
 Requesting a negotiable quote requires an admin authorization token.
-</div>
 
 **Service Name**
 
@@ -73,11 +68,11 @@ Requesting a negotiable quote requires an admin authorization token.
 
 **Sample Usage**
 
-`POST V1/negotiableQuote/request`
+`POST <host>/rest/<store_code>/V1/negotiableQuote/request`
 
 **Payload**
 
-{% highlight json %}
+```json
 {
   "quoteId": 3,
   "quoteName": "First quote",
@@ -89,7 +84,7 @@ Requesting a negotiable quote requires an admin authorization token.
     }
   ]
 }
-{% endhighlight %}
+```
 
 **Response**
 
@@ -119,16 +114,16 @@ When the quote is submitted to the buyer:
 
 **Sample Usage**
 
-`POST /V1/negotiableQuote/submitToCustomer`
+`POST <host>/rest/<store_code>/V1/negotiableQuote/submitToCustomer`
 
 **Payload**
 
-{% highlight json %}
+```json
 {
   "quoteId": 3,
   "comment": "It'd be our pleasure. Please proceed with your order."
 }
-{% endhighlight %}
+```
 
 **Response**
 
@@ -146,15 +141,15 @@ The request can be applied to one or more quotes at the same time.
 
 **Sample Usage**
 
-`POST /V1/negotiableQuote/pricesUpdated`
+`POST <host>/rest/<store_code>/V1/negotiableQuote/pricesUpdated`
 
 **Payload**
 
-{% highlight json %}
+```json
 {
   "quoteIds": [3]
 }
-{% endhighlight %}
+```
 
 **Response**
 
@@ -166,18 +161,17 @@ To set the shipping method, the quote must be in the `created`, `processing_by_a
 
 **Sample Usage**
 
-`PUT /V1/negotiableQuote/3/shippingMethod`
+`PUT <host>/rest/<store_code>/V1/negotiableQuote/3/shippingMethod`
 
 **Payload**
 
-{% highlight json %}
+```json
 {
   "shippingMethod": "fixedrate"
 }
-{% endhighlight %}
+```
 
 **Response**
-
 
 ### Decline a quote
 
@@ -195,16 +189,16 @@ When you decline a quote, all custom pricing will be removed from the quote. The
 
 **Sample Usage**
 
-`POST /V1/negotiableQuote/decline`
+`POST <host>/rest/<store_code>/V1/negotiableQuote/decline`
 
 **Payload**
 
-{% highlight json %}
+```json
 {
   "quoteId": 80,
   "reason": "Your order is too large. "
 }
-{% endhighlight %}
+```
 
 **Response**
 
@@ -220,7 +214,7 @@ Magento returns all the comments associated with the specified quote ID. The com
 
 **Sample Usage**
 
-`GET /V1/negotiableQuote/87/comments`
+`GET <host>/rest/<store_code>/V1/negotiableQuote/87/comments`
 
 **Payload**
 
@@ -228,7 +222,7 @@ Not applicable
 
 **Response**
 
-{% highlight json %}
+```json
 [
   {
     "entity_id": 6,
@@ -305,8 +299,7 @@ Not applicable
     "attachments": []
   }
 ]
-{% endhighlight %}
-
+```
 
 ### Retrieve a negotiable quote attachment
 
@@ -316,7 +309,7 @@ Use the `attachmentContent` call to retrieve the files (in base64 format) attach
 
 **Sample Usage**
 
-`GET /V1/negotiableQuote/attachmentContent`
+`GET <host>/rest/<store_code>/V1/negotiableQuote/attachmentContent`
 
 **Payload**
 
@@ -324,7 +317,7 @@ Not applicable
 
 **Response**
 
-{% highlight json %}
+```json
 {
   "quoteId": 2,
   "quoteName": "First quote",
@@ -335,7 +328,8 @@ Not applicable
     }
   ]
 }
-{% endhighlight %}
+```
+
 ## Related information
 
 * [Integrate with the NegotiableQuote module]({{ page.baseurl }}/b2b/negotiable-quote.html)

@@ -1,9 +1,6 @@
 ---
-group: rest
+group: rest-api
 title: Catalog module
-version: 2.2
-github_link: rest/modules/catalog.md
-redirect_from: /guides/v2.2/rest/catalog-notes.html
 functional_areas:
   - Integration
   - Catalog
@@ -13,9 +10,9 @@ The `Catalog` module provides functionality for creating and maintaining product
 
 ## Categories
 
-When you create a {% glossarytooltip 50e49338-1e6c-4473-8527-9e401d67ea2b %}category{% endglossarytooltip %} from Admin, you have the option to configure display and {% glossarytooltip ae8f7f2b-ddfb-41ed-bec3-bed191406fdd %}search engine optimization{% endglossarytooltip %} settings. To configure these settings using `POST V1/categories`, you can specify the following parameters as `attribute_code` values:
+When you create a [category](https://glossary.magento.com/category) from Admin, you have the option to configure display and [search engine optimization](https://glossary.magento.com/search-engine-optimization) settings. To configure these settings using `POST V1/categories`, you can specify the following parameters as `attribute_code` values:
 
-```
+```text
 all_children
 children
 children_count
@@ -46,8 +43,7 @@ Third-party modules may define other custom attributes.
 
 The following example uses the `POST V1/categories` call to assign four custom attributes to the "My New Category" category.
 
-{% highlight json %}
-
+```json
 {
 "category": {
     "parent_id": 2,
@@ -79,4 +75,4 @@ The following example uses the `POST V1/categories` call to assign four custom a
       ]
     }
 }
-{% endhighlight %}
+```

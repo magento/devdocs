@@ -1,5 +1,5 @@
 label: Marketplace EQP API
-versions: ["2.1","2.2","2.3"]
+include_versions: ["2.1","2.2","2.3"]
 pages:
     - label: Introduction
       url: /marketplace/eqp/api.html

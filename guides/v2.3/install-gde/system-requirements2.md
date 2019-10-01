@@ -1,1 +1,0 @@
-../../v2.2/install-gde/system-requirements2.md

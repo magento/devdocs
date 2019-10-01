@@ -1,28 +1,10 @@
-<h2 id="help">Getting help with your installation</h2>
-<p>In the event you need additional help, consult the following resources.</p>
+## Getting help with your installation   {#help}
 
-<table>
-	<col width="30%">
-	<col width="70%">
-<tbody>
-<tr> 
-	<th>Magento edition</th>
-	<th>How to get help</th>
-</tr>
-<tr> 
-	<td>{{site.data.var.ce}} and {{site.data.var.ee}}</td>
-	<td><ul><li><a href="http://community.magento.com/" target="_blank">Magento support forums</a></li>
-	<li><a href="http://magento.stackexchange.com" target="_blank">magento.stackexchange.com</a></li>
-	<li><a href="https://twitter.com/ask_magento" target="_blank">Twitter (<code>@ask_magento</code>)</a></li></ul>
-	</td>
-</tr>
-<tr> 
-	<td>{{site.data.var.ce}}</td>
-	<td><a href="http://www.magentocommerce.com/bug-tracking" target="_blank">Submit bug reports</a></td>
-</tr>
-<tr> 
-	<td>{{site.data.var.ee}} only</td>
-	<td><a href="http://support.magentocommerce.com" target="_blank">Submit bug reports</a></td>
-</tr>
-</tbody>
-</table>
+In the event you need additional help, consult the following resources.
+
+|Magento edition|How to get help|
+|--- |--- |
+|{{site.data.var.ce}} and {{site.data.var.ee}}|- [Magento support forums](http://community.magento.com/)<br>- [stack Exchange](http://magento.stackexchange.com)<br>- [Twitter](https://twitter.com/magento)|
+|{{site.data.var.ce}}|[Submit bug reports](http://www.magentocommerce.com/bug-tracking)|
+|{{site.data.var.ee}} only|[Submit bug reports](http://support.magentocommerce.com)|
+

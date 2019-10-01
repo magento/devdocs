@@ -1,1 +1,0 @@
-../../../v2.2/howdoi/migrate/migrate-code.md

@@ -1,39 +1,20 @@
 ---
-group: UI_Components_guide
-subgroup: components
+group: ui-components-guide
 title: Input component
-menu_title: Input component
-version: 2.2
-github_link: ui_comp_guide/components/ui-input.md
 ---
 
-## Overview
-
-The Input component implements the {% glossarytooltip a2aff425-07dd-4bd6-9671-29b7edefa871 %}HTML{% endglossarytooltip %} `<input type="text">` field.
+The Input component implements the [HTML](https://glossary.magento.com/html) `<input type="text">` field.
 
 ## Configuration options
 
-Extends all `abstract` configuration.
-
-Input-specific options:
-
-<table>
-  <tr>
-    <th>Option </th>
-    <th>Description</th>
-    <th>Type</th>
-    <th>Default</th>
-  </tr>
-  <tr>
-    <td><code>component</code></td>
-    <td>The path to the component’s <code>.js</code> file in terms of RequireJS.</td>
-    <td>String</td>
-    <td><code>Magento_Ui/js/form/element/abstract</code></td>
-  </tr>
-  <tr>
-    <td><code>template</code></td>
-    <td>The path to the component’s <code>.html</code> template.</td>
-    <td>String</td>
-    <td><code>ui/form/field</code></td>
-  </tr>
-</table>
+|Option|Description|Type|Default|
+|--- |--- |--- |--- |
+|`class`|Path to the PHP class responsible for the backend implementation of the component.|String| - |
+|`component`|The path to the component’s `.js` file in terms of RequireJS.|String|`Magento_Ui/js/form/element/abstract`|
+|`displayArea`|Renders the component in the location that was declared in the layout.|String| `body` |
+|`extends`|Extends configuration from specified component.|String| - |
+|`formElement`|Form Element.|`hidden`, `file`, `input`, `date`, `boolean`, `checkbox`, `checkboxset`, `email`, `select`, `multiselect`, `text`, `textarea`, `price`, `radioset`, `wysiwyg`|`input`|
+|`name`|Element's index in the scope of the current collection that will be used to build its unique identifier.|String| - |
+|`provider`|Reference to component data provider. For example, for the "New Customer" page on the back-end side it will be equal to `customer_form.customer_form_data_source` |String| - |
+|`sortOrder`|Element's position in the collection|Int| `0` |
+|`template`|The path to the component’s `.html` template.|String|`ui/form/field`|

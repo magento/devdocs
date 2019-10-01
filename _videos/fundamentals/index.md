@@ -4,7 +4,6 @@ layout: videos
 permalink: "videos/fundamentals/"
 title: "Fundamentals of Magento 2 Development"
 menu_order: 0
-github_link:
 ---
 <div style="float:right; margin: 0 0 20px 40px;">
   <a href="https://u.magento.com/"><img src="magento-u-logo.png" width="241" alt="Magento U Logo" /></a>

@@ -6,6 +6,10 @@ pages:
     - label: Components
       children:
 
+        - label: ActionDelete component
+          include_versions: ["2.2","2.3"]
+          url: /ui_comp_guide/components/ui-actiondelete.html
+
         - label: ActionsColumn component
           url: /ui_comp_guide/components/ui-actionscolumn.html
 
@@ -20,6 +24,10 @@ pages:
 
         - label: Checkboxset component
           url: /ui_comp_guide/components/ui-checkboxset.html
+
+        - label: ColorPicker component
+          include_versions: ["2.3"]
+          url: /ui_comp_guide/components/ui-colorpicker.html
 
         - label: Column component
           url: /ui_comp_guide/components/ui-column.html
@@ -44,6 +52,10 @@ pages:
 
         - label: Email component
           url: /ui_comp_guide/components/ui-email.html
+
+        - label: Expandable column component
+          include_versions: ["2.2","2.3"]
+          url: /ui_comp_guide/components/ui-expandable-column.html
 
         - label: ExportButton component
           url: /ui_comp_guide/components/ui-exportbutton.html
@@ -72,6 +84,10 @@ pages:
         - label: HtmlContent component
           url: /ui_comp_guide/components/ui-htmlcontent.html
 
+        - label: ImageUploader component
+          include_versions: ["2.3"]
+          url: /ui_comp_guide/components/image-uploader/
+
         - label: Input component
           url: /ui_comp_guide/components/ui-input.html
 
@@ -80,6 +96,10 @@ pages:
 
         - label: InsertListing component
           url: /ui_comp_guide/components/ui-insertlisting.html
+
+        - label: LinkColumn component
+          include_versions: ["2.2","2.3"]
+          url: /ui_comp_guide/components/ui-linkcolumn.html
 
         - label: Listing (grid) component
           url: /ui_comp_guide/components/ui-listing-grid.html
@@ -144,8 +164,31 @@ pages:
         - label: TreeMassActions component
           url: /ui_comp_guide/components/ui-treemassactions.html
 
+        - label: UrlInput component
+          include_versions: ["2.3"]
+          url: /ui_comp_guide/components/ui-urlinput.html
+
+        - label: UI-select component
+          include_versions: ["2.3"]
+          url: /ui_comp_guide/components/ui-secondary-uiselect.html
+
         - label: WYSIWYG component
+          include_versions: ["2.0","2.1","2.2"]
           url: /ui_comp_guide/components/ui-wysiwyg.html
+
+        - label: WYSIWYG component
+          include_versions: ["2.3"]
+          url: /ui_comp_guide/components/ui-wysiwyg.html
+          children:
+
+            - label: Add Custom Editor
+              url: /ui_comp_guide/components/wysiwyg/add-custom-editor/
+
+            - label: Configure the TinyMCE editor
+              url: /ui_comp_guide/components/wysiwyg/configure-tinymce-editor.html
+
+            - label: Extension Points
+              url: /ui_comp_guide/components/wysiwyg/extension-points/
 
     - label: Concepts
       children:
@@ -153,7 +196,7 @@ pages:
         - label: Configuration flow of UI components
           url: /ui_comp_guide/concepts/ui_comp_config_flow_concept.html
 
-        - label: About XML сonfiguration of UI сomponents
+        - label: About XML configuration of UI components
           url: /ui_comp_guide/concepts/ui_comp_xmldeclaration_concept.html
 
         - label: Providing Data to UI Components
@@ -167,6 +210,10 @@ pages:
 
         - label: Magento custom Knockout.js bindings
           url: /ui_comp_guide/concepts/knockout-bindings.html
+
+        - label: Magento binding syntax
+          include_versions: ["2.2","2.3"]
+          url: /ui_comp_guide/concepts/magento-bindings.html
 
         - label: About the uiClass library
           url: /ui_comp_guide/concepts/ui_comp_uiclass_concept.html
@@ -189,8 +236,12 @@ pages:
     - label: How Tos
       children:
 
-        - label: Creating and displaying a category attribute with UI Components
+        - label: Create and display a category attribute with UI components
           url: /ui_comp_guide/howto/add_category_attribute.html
+
+        - label: Update the page URL type
+          include_versions: ["2.3"]
+          url: /ui_comp_guide/howto/update-url-type.html
 
     - label: Troubleshoot
       children:

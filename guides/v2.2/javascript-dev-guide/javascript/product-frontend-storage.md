@@ -1,10 +1,9 @@
 ---
-group: jsdg
+group: javascript-developer-guide
 subgroup: 1_Javascript
 title: Use the Frontend Product Repository
 menu_title: Use the Frontend Product Repository
 menu_order: 10
-version: 2.2
 ---
 
 The frontend product repository is a storage service that uses the local cache to get product information without making additional requests to the server.
@@ -21,7 +20,7 @@ This section is responsible for holding all product data that come from the serv
 
 The following code snippet uses the [`Magento_Catalog/js/product/storage/storage-service`][storage-service]{:target="_blank"} to initialize the repository when the data storage cache itself initializes:
 
-{% highlight js %}
+```javascript
 define([
     'Magento_Catalog/js/product/storage/storage-service'
 ]), function(storage){
@@ -51,17 +50,17 @@ define([
         },
 
         ...
-    
+
     }
 
 }
-{% endhighlight %}
+```
 
 ## Use the repository
 
 Subscribe a callback function to the product repository data to work with the cached data from recent server requests.
 
-{% highlight js %}
+```javascript
 
 ...
 
@@ -76,13 +75,13 @@ dataCollectionHandler: function(data){
 
 ...
 
-{% endhighlight %}
+```
 
 ## Get data from the server
 
-Use the [`loadDataFromServer`][load-data-from-server]{:target="_blank"} method from the `data-storage` class to get product data from a list of IDs. 
+Use the [`loadDataFromServer`][load-data-from-server]{:target="_blank"} method from the `data-storage` class to get product data from a list of IDs.
 
-{% highlight js %}
+```javascript
 
 ...
 
@@ -94,7 +93,7 @@ idsStorageHandler: function(idsStorage, currency, storeId){
 
 ...
 
-{% endhighlight %}
+```
 
 | Parameter  | Description                                     |
 | ---------- | ----------------------------------------------- |
@@ -106,7 +105,7 @@ In the preceding example the data is handled by the subscribed function `dataCol
 
 ### Specify REST resource
 
-Use the following REST endpoint to get product information: 
+Use the following REST endpoint to get product information:
 
 `/V1/products-render-info`
 
@@ -114,7 +113,7 @@ For UI Components, add this information in the [`dataProvider`][datasource-compo
 
 The following example is from the [recently-viewed widget][recently-viewed-widget]{:target="_blank"}:
 
-{% highlight xml %}
+```xml
 
 <argument name="dataProvider" xsi:type="configurableObject">
     <argument name="data" xsi:type="array">
@@ -133,7 +132,7 @@ The following example is from the [recently-viewed widget][recently-viewed-widge
     </argument>
 </argument>
 
-{% endhighlight %}
+```
 
 This sets the appropriate information inside the `updateRequestConfig` object in the product storage configuration(`productStorageConfig` in the example code).
 
@@ -141,11 +140,11 @@ The object structure for this REST response is represented by [`\Magento\Catalog
 
 {% collapsible Show Object Structure %}
 
-{% highlight js %}
+```javascript
 [
    item_id: {
         //@see: \Magento\Catalog\Api\Data\ProductRender\ButtonInterface
-        'add_to_*_button': { //Any product button will be represented by this interface 
+        'add_to_*_button': { //Any product button will be represented by this interface
             post_data: {...},
             required_options: boolean,
             url: string
@@ -188,14 +187,14 @@ The object structure for this REST response is represented by [`\Magento\Catalog
         'type': '...', //enum: configurable, simple, virtual, etc
         'currency_code': '...', //e.g. USD
         'store_id': ... //integer
-   }  
+   }
 ]
-{% endhighlight %}
+```
 
 {% endcollapsible %}
 
 [datasource-component]: {{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_data_source.html
-[recently-viewed-widget]: https://github.com/magento/magento2/blob/2.2/app/code/Magento/Catalog/view/frontend/ui_component/widget_recently_viewed.xml
-[product-render-interface]: https://github.com/magento/magento2/blob/2.2/app/code/Magento/Catalog/Api/Data/ProductRenderInterface.php
-[storage-service]: https://github.com/magento/magento2/blob/2.2/app/code/Magento/Catalog/view/frontend/web/js/product/storage/storage-service.js
-[load-data-from-server]: https://github.com/magento/magento2/blob/2.2/app/code/Magento/Catalog/view/frontend/web/js/product/storage/data-storage.js#L213
+[recently-viewed-widget]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/view/frontend/ui_component/widget_recently_viewed.xml
+[product-render-interface]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/Api/Data/ProductRenderInterface.php
+[storage-service]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/view/frontend/web/js/product/storage/storage-service.js
+[load-data-from-server]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/view/frontend/web/js/product/storage/data-storage.js#L213

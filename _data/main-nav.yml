@@ -1,0 +1,231 @@
+- label: Cloud
+  children:
+
+    - label: Cloud basics
+      children:
+        - label: Cloud Guide
+          url: /cloud/bk-cloud.html
+
+        - label: Cloud Architecture
+          url: /cloud/architecture/cloud-architecture.html
+
+        - label: Upgrades and Patches
+          url: /cloud/project/project-upgrade-parent.html
+
+        - label: Release Notes
+          url: /cloud/release-notes/cloud-tools.html
+
+    - label: Cloud development
+      children:
+        - label: Local development
+          url: /cloud/setup/first-time-setup.html
+
+        - label: Launch Docker
+          url: /cloud/docker/docker-config.html
+          exclude_versions: ["2.0"]
+
+        - label: Docker quick reference
+          url: /cloud/docker/docker-quick-reference.html
+          exclude_versions: ["2.0"]
+
+        - label: Configure Environments
+          url: /cloud/env/environments.html
+
+- label: Setup
+  children:
+
+    - label: Installation Guide
+      url: /install-gde/bk-install-guide.html
+
+    - label: Magento Extensions Guide
+      url: /extensions/
+      versionless: true
+
+    - label: Software Update Guide
+      url: /comp-mgr/bk-compman-upgrade-guide.html
+      exclude_versions: ['2.0', '2.1']
+
+    - label: Component Manager and System Upgrade Guide
+      url: /comp-mgr/bk-compman-upgrade-guide.html
+      include_versions: ['2.0', '2.1']
+
+    - label: Configuration Guide
+      url: /config-guide/bk-config-guide.html
+
+    - label: Performance Best Practices
+      url: /performance-best-practices/introduction.html
+      exclude_versions: ['2.0','2.1']
+
+    - label: Migration Guide
+      url: /migration/bk-migration-guide.html
+
+    - label: Release Information
+      url: /release-notes/bk-release-notes.html
+
+    - label: Command-line Tools Reference
+      url: /reference/cli/magento.html
+
+- label: Development
+  children:
+
+    - label: Backend
+      children:
+
+        - label: Architecture
+          url: /architecture/bk-architecture.html
+
+        - label: PHP Developer Guide
+          url: /extension-dev-guide/bk-extension-dev-guide.html
+
+        - label: Extension Developer Best Practices
+          url: /ext-best-practices/bk-ext-best-practices.html
+
+        - label: Module Reference Guide
+          url: /mrg/intro.html
+
+        - label: Coding Standards
+          url: /coding-standards/bk-coding-standards.html
+
+        - label: Contributor Guide
+          url: /contributor-guide/contributing.html
+
+    - label: Frontend
+      children:
+
+        - label: Frontend Developer Guide
+          url: /frontend-dev-guide/bk-frontend-dev-guide.html
+
+        - label: UI Components
+          url: /ui-components/ui-component.html
+          include_versions: ['2.0']
+
+        - label: UI Components Guide
+          url: /ui_comp_guide/bk-ui_comps.html
+          exclude_versions: ['2.0']
+
+        - label: JavaScript Developer Guide
+          url: /javascript-dev-guide/bk-javascript-dev-guide.html
+
+        - label: Admin Design Pattern Library
+          url: /pattern-library/bk-pattern.html
+
+        - label: Admin Style Guide
+          url: /design-styleguide/bk-styleguide.html
+
+        - label: PWA Documentation Site
+          url: https://magento.github.io/pwa-studio/
+          include_versions: ['2.3']
+
+        - label: Page Builder Developer Guide
+          url: /page-builder/docs/index.html
+          exclude_versions: ['2.0', '2.1', '2.2']
+          versionless: true
+
+    - label: API
+      children:
+
+        - label: Get Started with Magento Web APIs
+          url: /get-started/bk-get-started-api.html
+
+        - label: REST API Reference
+          url: /rest/bk-rest.html
+
+        - label: SOAP API Reference
+          url: /soap/bk-soap.html
+
+        - label: GraphQL Developer Guide
+          url: /graphql/
+          include_versions: ['2.3']
+
+        - label: Marketplace EQP API Reference
+          url: /marketplace/eqp/api.html
+          exclude_versions: ['2.0']
+
+        - label: Business Intelligence Import API
+          url: /mbi/docs/getting-started.html
+          exclude_versions: ['2.0']
+          versionless: true
+
+
+- label: Testing
+  children:
+
+    - label: Magento Testing Guide
+      url: /test/testing.html
+
+    - label: Functional Acceptance Testing (MFTF)
+      url: /mftf/docs/introduction.html
+      exclude_versions: ['2.0', '2.1']
+      versionless: true
+
+    - label: Functional Testing
+      url: /mtf/mtf_introduction.html
+
+    - label: Integration Testing
+      url: /test/integration/integration_test_execution.html
+
+    - label: JavaScript Unit Testing
+      url: /test/js/jasmine.html
+
+    - label: PHP Unit Testing
+      url: /test/unit/unit_test_execution.html
+
+    - label: Web API Functional Testing
+      url: /get-started/web-api-functional-testing.html
+
+-
+
+- label: Functional Areas
+  children:
+
+    - label: Advanced Reporting
+      url: /advanced-reporting/overview.html
+      exclude_versions: ['2.0','2.1']
+
+    - label: B2B
+      url: /b2b/bk-b2b.html
+      exclude_versions: ['2.0','2.1']
+
+    - label: Checkout
+      url: /howdoi/checkout/checkout_overview.html
+
+    - label: Inventory Management
+      url: /inventory/index.html
+      exclude_versions: ['2.0', '2.1', '2.2']
+
+    - label: Order Management
+      url: http://omsdocs.magento.com/en/
+
+    - label: Page Builder
+      url: /page-builder/docs/index.html
+      exclude_versions: ['2.0', '2.1', '2.2']
+      versionless: true
+
+    - label: Payment Integrations
+      url: /payments-integrations/bk-payments-integrations.html
+
+    - label: Staging
+      url: /extension-dev-guide/staging.html
+      exclude_versions: ['2.0']
+
+- label: Tutorials
+  children:
+
+    - label: Rest Tutorials
+      url: /rest/tutorials/index.html
+      exclude_versions: ['2.0']
+
+    - label: Customize Product Creation Form
+      url: /howdoi/customize_product.html
+      exclude_versions: ['2.0']
+
+    - label: Customize Checkout
+      url: /howdoi/checkout/checkout_overview.html
+
+    - label: Magento Support
+      url: /community/resources/support.html
+      versionless: true
+
+    - label: Video Tutorials
+      url: /videos/
+      versionless: true

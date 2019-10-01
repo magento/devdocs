@@ -1,7 +1,4 @@
-<div markdown="1">
-
-
-<h2 id="instgde-install-magento-web-step2">Step 2: Add a Database</h2>
+## Step 2: Add a Database   {#instgde-install-magento-web-step2}
 
 1.	Enter the following information:
 
@@ -13,11 +10,11 @@
 		</tr>
 	<tr>
 		<td>Database Server Host</td>
-		<td>If the web server and database server are located on the same host, enter <tt>localhost</tt>. If the database server is located on a different host, enter its fully qualified host name or IP address.</td>
+		<td>If the web server and database server are located on the same host, enter <tt>localhost</tt>. If the database server is located on a different host, enter its fully qualified hostname or IP address.</td>
 	</tr>
 	<tr>
 		<td>Database Server Username</td>
-		<td>Enter the user name of the Magento database instance owner.</td>
+		<td>Enter the username of the Magento database instance owner.</td>
 	</tr>
 	<tr>
 		<td>Database Server Password</td>
@@ -36,6 +33,5 @@
 	</tr>
 	</tbody>
 	</table>
-	
-3.	Click **Next**.
 
+3.	Click **Next**.

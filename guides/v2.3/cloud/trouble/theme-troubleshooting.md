@@ -1,1 +1,1 @@
-../../../v2.0/cloud/trouble/theme-troubleshooting.md
+../../../../guides/v2.2/cloud/trouble/theme-troubleshooting.md

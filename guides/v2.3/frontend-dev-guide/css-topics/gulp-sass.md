@@ -1,1 +1,1 @@
-../../../v2.2/frontend-dev-guide/css-topics/gulp-sass.md
+../../../../guides/v2.2/frontend-dev-guide/css-topics/gulp-sass.md

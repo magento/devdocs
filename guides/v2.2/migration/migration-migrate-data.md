@@ -1,27 +1,26 @@
 ---
-group:  migration
+group: migration-guide
 subgroup: D_Migrate using the data migration tool
 title: Migrate data
 menu_title: Migrate data
 menu_node:
 menu_order: 2
-version: 2.2
-github_link: migration/migration-migrate-data.md
-redirect_from: /guides/v1.0/migration/migration-migrate-data.html
 ---
 
-## Before you start: routine preparations
+## Before you start: routine preparation
 
 1. Log in to Magento server as [the file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html).
-
-2. Change to the Magento `/bin` directory or make sure it is added to your system PATH.
+2. Change to the Magento installation directory or make sure it is added to your system PATH.
 
 See the [First steps]({{ page.baseurl }}/migration/migration-migrate.html#migration-command-run-first) section for more details.
 
 ## Run the data migration command {#migrate-data-cmd}
+
 To start migrating data, run:
 
-    bin/magento migrate:data [-r|--reset] [-a|--auto] {<path to config.xml>}
+```bash
+bin/magento migrate:data [-r|--reset] [-a|--auto] {<path to config.xml>}
+```
 
 where:
 
@@ -31,58 +30,76 @@ where:
 
 * `{<path to config.xml>}` is the absolute file system path to `config.xml`; this argument is required
 
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>The Data Migration Tool saves its current progress as it runs. If errors or user intervention stop it from running, the Tool resumes progress at the last known good state.</p>
-  <p>To force the Data Migration Tool to run from the beginning, use the <code>--reset</code> argument. In that case, we recommend you restore your Magento 2 database dump to prevent duplicating previously migrated data.</p></span>
-</div>
+Within this step, the Data Migration Tool creates additional tables and triggers for the migration tables in the Magento 1 database. They will be used in the [incremental/delta]({{ page.baseurl }}/migration/migration-migrate-delta.html) migration step. Additional tables contain information about changed records after the final migration execution. Database triggers are used to populate these extra tables, so if a new operation is being performed on the particular table (a record is added/modified/removed), these database trigger save information about this operation to the extra table. When we run a delta migration process, the Data Migration Tool checks these tables for the unprocessed records and migrates the necessary content into the Magento 2 database.
+
+Each new table will have:
+
+ - `m2_cl` prefix
+ - `INSERT`, `UPDATE`, `DELETE` event triggers.
+
+For example, for the `sales_flat_order` the Data Migration Tool creates:
+
+ - `m2_cl_sales_flat_order` table:
+
+```sql
+CREATE TABLE `m2_cl_sales_flat_order` (
+  `entity_id` int(11) NOT NULL COMMENT 'Entity_id',
+  `operation` text COMMENT 'Operation',
+  `processed` tinyint(1) NOT NULL DEFAULT '0' COMMENT 'Processed',
+  PRIMARY KEY (`entity_id`)
+) COMMENT='m2_cl_sales_flat_order';
+```
+
+ - `trg_sales_flat_order_after_insert`, `trg_sales_flat_order_after_update`, `trg_sales_flat_order_after_delete` triggers:
+
+```sql
+DELIMITER ;;
+CREATE TRIGGER `trg_sales_flat_order_after_insert` AFTER INSERT ON `sales_flat_order`
+  FOR EACH ROW
+  BEGIN
+   INSERT INTO m2_cl_sales_flat_order (`entity_id`, `operation`) VALUES (NEW.entity_id, 'INSERT')ON DUPLICATE KEY UPDATE operation = 'INSERT';
+  END
+;;
+
+DELIMITER ;;
+CREATE TRIGGER `trg_sales_flat_order_after_update` AFTER UPDATE ON `sales_flat_order`
+  FOR EACH ROW
+  BEGIN
+   INSERT INTO m2_cl_sales_flat_order (`entity_id`, `operation`) VALUES (NEW.entity_id, 'UPDATE') ON DUPLICATE KEY UPDATE operation = 'UPDATE';
+  END
+;;
+
+DELIMITER ;;
+CREATE TRIGGER `trg_sales_flat_order_after_delete` AFTER DELETE ON `sales_flat_order`
+  FOR EACH ROW
+  BEGIN
+   INSERT INTO m2_cl_sales_flat_order (`entity_id`, `operation`) VALUES (OLD.entity_id, 'DELETE')ON DUPLICATE KEY UPDATE operation = 'DELETE';
+  END
+;;
+```
+
+{: .bs-callout-info }
+The Data Migration Tool saves its current progress as it runs. If errors or a user intervention stops it from running, the Tool resumes progress at the last known good state. To force the Data Migration Tool to run from the beginning, use the `--reset` argument. In that case, we recommend you restore your Magento 2 database dump to prevent duplicating previously migrated data.
 
 ## Possible consistency errors {#migrate-command-data}
 
-While running, the Data Migration Tool may report inconsistencies between Magento 1 and Magento 2 databases, and display messages like this:
+While running, the Data Migration Tool may report inconsistencies between Magento 1 and Magento 2 databases, and display messages like the following:
 
-{% highlight xml %}
-Source documents are not mapped: <EXTENSION_TABLE>
-{% endhighlight %}
+- `Source documents are missing: <EXTENSION_TABLE_1>,<EXTENSION_TABLE_2>,...<EXTENSION_TABLE_N>`
+- `Destination documents are missing: <EXTENSION_TABLE_1>,<EXTENSION_TABLE_2>,...<EXTENSION_TABLE_N>`
+- `Source documents are not mapped: <EXTENSION_TABLE_1>,<EXTENSION_TABLE_2>,...<EXTENSION_TABLE_N>`
+- `Destination documents are not mapped: <EXTENSION_TABLE_1>,<EXTENSION_TABLE_2>,...<EXTENSION_TABLE_N>`
+- `Source fields are missing. Document: <EXTENSION_TABLE>. Fields: <FIELD_1>,<FIELD_2>...<FIELD_N>`
+- `Destination fields are missing. Document: <EXTENSION_TABLE>. Fields: <FIELD_1>,<FIELD_2>...<FIELD_N>`
+- `Source fields are not mapped. Document: <EXTENSION_TABLE>. Fields: <FIELD_1>,<FIELD_2>...<FIELD_N>`
+- `Destination fields are not mapped. Document: <EXTENSION_TABLE>. Fields: <FIELD_1>,<FIELD_2>...<FIELD_N>`
+- `Mismatch of data types. Source document: <EXTENSION_TABLE>. Fields: <FIELD_1>,<FIELD_2>...<FIELD_N>`
+- `Mismatch of data types. Destination document: <EXTENSION_TABLE>. Fields: <FIELD_1>,<FIELD_2>...<FIELD_N>`
+- `Incompatibility in data. Source document: <EXTENSION_TABLE>. Field: <FIELD>. Error: <ERROR_MESSAGE>`
+- `Incompatibility in data. Destination document: <EXTENSION_TABLE>. Field: <FIELD>. Error: <ERROR_MESSAGE>`
 
 See the [Troubleshooting]({{ page.baseurl }}/migration/migration-troubleshooting.html) section of this guide for more information and recommendations.
 
-<!--
-
-When you migrate data, the Data Migration Tool verifies that tables and fields are consistent between Magento 1 and Magento 2. If they are inconsistent, you will see an error message that lists the problematic tables and fields, for example:
-
-    Source fields are not mapped. Document: <document_name>. Fields: <field_name>
-
-**Possible reason for error:** some database entities belong to Magento 1 extensions that do not exist in the Magento 2 database.
-
-Below are the possible ways to handle these errors.
-
-### Fix errors: Install corresponding Magento 2 extensions
-
-Visit [Magento Marketplace](https://marketplace.magento.com/){:target:"_blank"} to find the latest {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} versions or contact your extension provider.
-
-### Fix errors: Ignore entities
-
-You may tell the Data Migration Tool to ignore the problematic entites.
-
-To do that, add the `<ignore>` tag to an entity in the `map.xml` file, like this:
-
-{% highlight xml %}
-<ignore>
-    <field>sales_order_address_id</field>
-</ignore>
-{% endhighlight %}
-
-<div class="bs-callout bs-callout-warning">
-    <p>Before ignoring entities, make sure you don't need the affected data in your Magento 2 store.</p>
-</div>
-
-### Verify fixes
-
-To know if the issues have been resolved successfully, run the Data Migration Tool again.
-
--->
-
 ## Next migration step
 
-<a href="{{ page.baseurl }}/migration/migration-migrate-delta.html">Migrate changes</a>
+[Migrate changes]({{ page.baseurl }}/migration/migration-migrate-delta.html)
