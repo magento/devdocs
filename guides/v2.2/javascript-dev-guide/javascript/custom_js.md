@@ -144,7 +144,12 @@ For information about how to initialize your custom JS component in a `.phtml` t
 To disable the auto-loading of default Magento JS components and widget
 initialization:
 
-1. Create a `requirejs-config.js` file with the following content: `var config = { deps: [ ] };`
+1. Create a `requirejs-config.js` file with the following content: 
+
+```javascript
+var config = { deps: [ ] };
+```
+
 2. Put the `requirejs-config.js` file in one of the following
   locations:
     - Your custom theme files: `<theme_dir>`
