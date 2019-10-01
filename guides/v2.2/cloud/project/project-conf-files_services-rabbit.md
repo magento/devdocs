@@ -63,7 +63,7 @@ For debugging purposes, it is useful to directly connect to a service instance i
    ```bash
    magento-cloud ssh
    ```
-   
+
 1. Retrieve the RabbitMQ connection details and login credentials from the [$MAGENTO_CLOUD_RELATIONSHIPS]({{ page.baseurl }}/cloud/project/project-conf-files_magento-app.html#relationships) variable:
 
    ```bash
