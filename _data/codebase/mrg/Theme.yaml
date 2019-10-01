@@ -1,0 +1,6 @@
+---
+title: Magento_Theme
+edition: ce
+last_modified_at: '2014-07-11 11:30:21 -0700'
+content: The Theme module contains common infrastructure that provides an ability
+  to apply and use themes in Magento application.

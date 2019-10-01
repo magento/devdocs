@@ -115,11 +115,11 @@ This displays the following page, which enables you to configure settings, [vari
 ![configure environments]({{ site.baseurl }}/common/images/cloud_project-conf-env.png)
 
 ### Environment configuration variables
-On the *Variables* tab, you can view, create, and manage environment variables for your project. For example, after we add your project to the {{ site.data.var.ece }} Fastly service account, you can view the Fastly API key and service ID credentials as shown in the following example:
+On the *Variables* tab, you can view, create, and manage environment variables for your project. For example, after we add your project to the {{ site.data.var.ece }} Fastly service account, you can view the Fastly API token and service ID credentials as shown in the following example:
 
 ![Environment variables fastly credentials]({{ site.baseurl }}/common/images/cloud/cloud-project-web-ui-environment-variables.png)
 
-You can also [list and review]({{ page.baseurl }}/cloud/before/before-setup-env-2_clone.html#variablelist) environment variables using the following Magento Cloud CLI command.
+You can also [list and review]({{ page.baseurl }}/cloud/before/before-setup-env-2_clone.html) environment variables using the following Magento Cloud CLI command.
 
 ```bash
 magento-cloud variable:get -e <environment ID>

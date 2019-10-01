@@ -27,7 +27,8 @@ crons:
 {:.bs-callout-info}
 We use only one cron for {{site.data.var.ece}} projects because of the nature of read-only environments. This configuration is different from {{site.data.var.ee}}, which has three default cron jobs. See [Configure and run crons]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cron.html) in the {{site.data.var.ee}} documentation.
 
-## Verify cron configuration on Starter projects
+{:.procedure}
+To verify cron configuration on Starter projects:
 
 1. Log in to the {{site.data.var.ece}} project environment using [SSH]({{ page.baseurl }}/cloud/env/environments-ssh.html#ssh).
 
@@ -40,7 +41,8 @@ Magento added an auto-crons configuration option to all Pro plan projects to sup
 {:.bs-callout-info}
 Although you can use crontab to review configuration on Pro plan projects, Magento does not use crontab to run cron jobs for {{ site.data.var.ee }} sites deployed on the Cloud platform.
 
-#### To review cron configuration on Pro plan environments:
+{:.procedure}
+To review cron configuration on Pro plan environments:
 
 1. Log in to the Staging or Production environment using [SSH]({{ page.baseurl }}/cloud/env/environments-ssh.html#ssh).
 
@@ -120,7 +122,8 @@ The default cron interval for all environments provisioned in the US-3, EU-3, an
 
 On {{ site.data.var.ee }} Pro projects, the [auto-crons feature](#verify-cron-configuration-on-pro-projects) must be enabled on your {{site.data.var.ece}} project before you can add custom cron jobs to Staging and Production environments using `.magento.app.yaml`. If this feature is not enabled,contact your Magento account manager or CSM.
 
-#### To add custom crons
+{:.procedure}
+To add custom crons:
 
 1. In your local development environment, edit the `.magento.app.yaml` file in the Magento `/app` directory.
 
