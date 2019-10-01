@@ -48,7 +48,7 @@ Pure speculation beyond this point...
 
 ### Load balancing
 
-<need more information>
+need more information
 
-[Database tier scaling]: {{site.baseurl}}/common/images/cloud/scaling-db.png
-[Web tier scaling]: {{site.baseurl}}/common/images/cloud/scaling-web.png
+[Database tier scaling]: {{ site.baseurl }}/common/images/cloud/scaling-db.png
+[Web tier scaling]: {{ site.baseurl }}/common/images/cloud/scaling-web.png
