@@ -23,7 +23,7 @@ In the following example, the customer starts with $10 of store credit. The subt
 
 **Request**
 
-```text
+```graphql
 mutation {
   applyStoreCreditToCart(
     input: {

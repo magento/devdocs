@@ -9,7 +9,7 @@ To return or modify information about a customer, Magento recommends you use cus
 
 ## Syntax
 
-`mutation: {changeCustomerPassword(currentPassword: String!newPassword: String!) {Customer}}`
+`mutation: {changeCustomerPassword(currentPassword: String! newPassword: String!) {Customer}}`
 
 ## Example usage
 
@@ -44,7 +44,7 @@ mutation {
 
 ## Input attributes
 
-The `changeCustomerPassword` object requires the following inputs:
+The `changeCustomerPassword` mutation requires the following inputs:
 
 Attribute |  Data Type | Description
 --- | --- | ---
