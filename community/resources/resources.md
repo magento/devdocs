@@ -5,7 +5,7 @@ redirect_from:
   - /community/resources/index.html
 ---
 
-## Magento blog
+## Magento DevBlog
 
 The [Magento DevBlog][0] is a great resource for news about Magento, new community resources (articles, tutorials, etc.), events and other Magento-related items.
 
