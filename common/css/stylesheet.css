@@ -2,8 +2,8 @@
 /* CSS Document */
 
 body {
-	 background-color: #ffffff;  margin: 0 auto; font-size:15px; font: 15px/22px Helvetica, Arial, sans-serif; color:#5A5A5A; font-weight:normal; width:1024px;
-	}
+     background-color: #ffffff;  margin: 0 auto; font-size:15px; font: 15px/22px Helvetica, Arial, sans-serif; color:#5A5A5A; font-weight:normal; width:1024px;
+    }
 
 /* containers */
 #container { width:940px; margin:0; }
@@ -11,18 +11,18 @@ body {
 
 /* left nav style */
 .show {
-	display:block;  position: relative;
+    display:block;  position: relative;
     top: -15px;
 }
 .hide{
-	display:none; position: relative;
+    display:none; position: relative;
     top: -15px;
 }
 #container-2 { width:940px; margin:10px 0 0 45px; }
 #left-nav { float:left; width:220px; margin-right:20px; display:block; }
 #left-nav  ul { margin:10px 0 8px; }
 #left-nav li { border-bottom:2px dotted #dddddd; list-style: none;
-	padding: 10px 5px; margin: 10px 0; }
+    padding: 10px 5px; margin: 10px 0; }
 #content-2 { float:right; width:700px; }
 #left-nav h4 { color:#666666; border-bottom:2px dotted #dddddd; padding:5px; }
 #left-nav li.highlight a:link, #left-nav li.highlight a:visited {
@@ -30,12 +30,12 @@ body {
     text-decoration: none;
 }
 #left-nav ul.related-documents li {
-	font-size:13px; border:0; padding: 5px; margin: 5px 0 5px 5px;
-	background-image: url(".bullet-round-orange.png");
-	background-repeat: no-repeat;
-	background-position: 0 9px;
-	padding-left: 16px;
-	}
+    font-size:13px; border:0; padding: 5px; margin: 5px 0 5px 5px;
+    background-image: url(".bullet-round-orange.png");
+    background-repeat: no-repeat;
+    background-position: 0 9px;
+    padding-left: 16px;
+    }
 
 /* end left nav styles */
 
@@ -76,19 +76,19 @@ a:active{ color:#0090c0; }
 
 .msg-box, .sm-note-box {
     margin:2px 0 15px 0;
-	width:85%;
-	border-radius: 8px 0 8px 0;
-	font-size:14px;
-	color:#777777;
+    width:85%;
+    border-radius: 8px 0 8px 0;
+    font-size:14px;
+    color:#777777;
     padding: 8px 12px 8px 0;
     text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
-	min-height:35px; }
+    min-height:35px; }
 
 .sm-note-box {
-	min-height:15px;
+    min-height:15px;
     background-color: rgba(0, 0, 0, 0.025);
-	border:1px solid #888888;
-	border-left: 3px solid #888888; }
+    border:1px solid #888888;
+    border-left: 3px solid #888888; }
 
 .sm-note-box span { padding: 0 10px 0 10px; }
 
@@ -97,22 +97,22 @@ a:active{ color:#0090c0; }
 .caution {
     background-color: rgba(240, 171, 0, .05);
     border: 1px solid #f7941d;
-	border-left: 5px solid #f7941d; }
+    border-left: 5px solid #f7941d; }
 
 .important {
     background-color: rgba(229, 122, 63, 0.04);
-	border:1px solid #EE6933;
-	border-left: 5px solid #EE6933; }
+    border:1px solid #EE6933;
+    border-left: 5px solid #EE6933; }
 
 .note {
     background-color: rgba(0, 0, 0, 0.025);
-	border:1px solid #888888;
-	border-left: 5px solid #888888; }
+    border:1px solid #888888;
+    border-left: 5px solid #888888; }
 
 .tip {
     background-color: rgba(246, 220, 27, .05);
-	border:1px solid #fbe841;
-	border-left: 5px solid #fbe841; }
+    border:1px solid #fbe841;
+    border-left: 5px solid #fbe841; }
 
 .msg-box span { position:relative; left:10px; padding-right:5px; }
 .msg-box img { position:relative; top:-3px; left:5px; }
@@ -121,7 +121,7 @@ a:active{ color:#0090c0; }
 pre { font-size:14px; line-height:20px; overflow: auto; }
 pre strong{ color:#333333; }
 pre, .link-callout { padding:10px; margin:0 0 20px;
-	background-color: #F3F6F9; border:1px solid #ebeff2; border-radius: 4px; }
+    background-color: #F3F6F9; border:1px solid #ebeff2; border-radius: 4px; }
 
 .link-callout {  width:450px; color:#666666;  }
 
@@ -129,41 +129,41 @@ pre, .link-callout { padding:10px; margin:0 0 20px;
 /* LISTS */
 ul, ol ul li, ul ol li, ol li ol li ul.level1 li
 {
-	list-style-type: none;
-	padding: 0;
-	margin: 0;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
 }
 
 ul li li, ul li li li, ol li li {
-	margin-left: 5px;
+    margin-left: 5px;
 }
  ul li li li {
-	margin-left: 10px;
+    margin-left: 10px;
 }
 
 ul.level1 li, ul li.level1, ol li ol li ul.level1 li
 {
-	background-image: url("bullet-round-orange.png");
-	background-repeat: no-repeat;
-	background-position: 0 7px;
-	padding-left: 16px;
-	margin-bottom:6px;
+    background-image: url("bullet-round-orange.png");
+    background-repeat: no-repeat;
+    background-position: 0 7px;
+    padding-left: 16px;
+    margin-bottom:6px;
 }
 ul.level2 li, ul li.level2, ol li ol li ul.level2 li
 {
-	background-image: url("bullet-round-gold.png");
-	background-repeat: no-repeat;
-	background-position: 0 6px;
-	padding-left: 16px;
-	margin-bottom:6px;
+    background-image: url("bullet-round-gold.png");
+    background-repeat: no-repeat;
+    background-position: 0 6px;
+    padding-left: 16px;
+    margin-bottom:6px;
 }
 ul.level3 li, ul li.level3, ol li ol li ul.level3 li
 {
-	background-image: url("bullet-round-gray.png");
-	background-repeat: no-repeat;
-	background-position: 0 6px;
-	padding-left: 16px;
-	margin-bottom:6px;
+    background-image: url("bullet-round-gray.png");
+    background-repeat: no-repeat;
+    background-position: 0 6px;
+    padding-left: 16px;
+    margin-bottom:6px;
 }
 ol li, ul ol li { list-style: decimal outside none; background-image:none; }
 ol li { margin-bottom:8px; }
@@ -247,14 +247,14 @@ ul:nth-child(3) li {
 /* NUMBERED CODE */
 
 pre.lineCount { background: #F3F6F9 url("gutter.png") 2.1em 0 repeat-y;
-	border:1px solid #ebeff2; line-height:0; margin:0; padding:0; }
+    border:1px solid #ebeff2; line-height:0; margin:0; padding:0; }
 
 ol.listLineCount {
-	overflow:auto;
-	margin:0;
-	padding-left: 32px;
-	color:#ffffff;
-	line-height:5px;
+    overflow:auto;
+    margin:0;
+    padding-left: 32px;
+    color:#ffffff;
+    line-height:5px;
 }
 
 .lineCount ol li { color:#333333; font-weight:400; }
@@ -272,10 +272,10 @@ table {
     border-collapse: collapse;
     text-align: left;
     width: 100%;
-	color:#555555;
+    color:#555555;
 }
 table td, table th, table tr, table tr th {
-	padding:8px;}
+    padding:8px;}
 
 table tr:nth-child(odd) { /*(odd) or (2n 1)*/
     background-color: #F3F6F9;
@@ -304,16 +304,16 @@ table th {
     font-weight: 600;
     padding: 5px;
     vertical-align: top;
-	font-size:13px;
+    font-size:13px;
 }
 /*table .table-headings th {
-	background-color: rgba(220, 229, 237, .50);
+    background-color: rgba(220, 229, 237, .50);
     border:1px solid #dce5ed;
-	color: #555555;
+    color: #555555;
     font-weight: bold;
     padding: 10px;
     vertical-align: top;
-	font-size:14px;
+    font-size:14px;
 }*/
 /*table tr {
     border-color: transparent #ffffff;
@@ -335,7 +335,7 @@ td {
     border:1px solid #dce5ed;
     color: #555555;
     padding: 10px;
-	font-size:13px;
+    font-size:13px;
 }
 
 /* Back to Top */
@@ -343,8 +343,8 @@ td {
 p.btt a:link, p.btt a:active, p.btt a:visited {
     background: url("btt.png") no-repeat scroll 0 2px transparent;
     float: right;
-	position:relative;
-	top:-35px;
+    position:relative;
+    top:-35px;
     font-size: 12px;
     padding: 0 0 0 15px;
     text-decoration: none;
@@ -354,20 +354,20 @@ p.btt.last {position:relative;top:40px;}
 /* paging */
 p.paging {
     float: right;
-	position:relative;
-	top:-42px;
+    position:relative;
+    top:-42px;
     font-size: 12px;
-	font-weight:600;
-	color:#777777;
+    font-weight:600;
+    color:#777777;
     padding: 0 0 0 15px;
     text-decoration: none;
 }
 p.paging span { padding:5px; }
 p.paging a {
-	font-weight:100; padding:5px; }
+    font-weight:100; padding:5px; }
 p.paging.bottom {
-	position:relative;
-	top:42px; }
+    position:relative;
+    top:42px; }
 
 /* Rules */
 .dotted-rule { border-top: 2px dotted #dddddd; margin: 15px 0 15px 0; }
@@ -680,16 +680,16 @@ a.image:hover {
 }
 
 .message-banner {
-	background: #FBEDD9;
-	border: 1px solid #C27500;
-	padding: 20px;
-	border-radius: 2px;
-	margin: 10px 0;
+    background: #FBEDD9;
+    border: 1px solid #C27500;
+    padding: 20px;
+    border-radius: 2px;
+    margin: 10px 0;
 }
 
 .message-banner h4 {
-	margin-top: 0;
+    margin-top: 0;
 }
 .message-banner p:last-child {
-	margin-bottom: 0;
+    margin-bottom: 0;
 }

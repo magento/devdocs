@@ -3,8 +3,8 @@
 <div class="content-container">
 
   <aside class="sidebar">
-  	<button class="toc-toggler">Table of Contents</button>
-  	<div class="sidebar-wrapper">
+    <button class="toc-toggler">Table of Contents</button>
+    <div class="sidebar-wrapper">
 
 
       {% assign steps = site.pages | where: "guide_version", page.guide_version | where: "level3_subgroup", page.level3_subgroup | sort: "menu_order" %}
@@ -26,10 +26,10 @@
   </aside>
   <!-- /.sidebar -->
 
-	<section class="content">
-		<div class="content-wrap">
-			{% include layout/page-header.html %}
-			{{ content }}
+  <section class="content">
+    <div class="content-wrap">
+      {% include layout/page-header.html %}
+      {{ content }}
 
       <div class="horisontal-nav">
         {% assign steps_size = steps | size %}
@@ -48,13 +48,13 @@
       </div>
       <!-- /.horisontal-nav -->
 
-		</div>
-		<!-- /.content-wrap -->
+    </div>
+    <!-- /.content-wrap -->
 
-		{% include layout/page-info.html %}
+    {% include layout/page-info.html %}
 
-	</section>
-	<!-- /.content -->
+  </section>
+  <!-- /.content -->
 
 </div> <!-- /.content-container -->
 
