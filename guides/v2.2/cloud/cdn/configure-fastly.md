@@ -27,7 +27,7 @@ The process for configuring Fastly includes:
 
 ## Get Fastly credentials {#cloud-fastly-creds}
 
-During project provisioning, Magento adds your project to the [Fastly service account]({{ page.baseurl}}/cloud/cdn/cloud-fastly.html#fastly-service-account) for {{ site.data.var.ece }} and adds the Fastly account credentials to the Staging and Production environment configuration.
+During project provisioning, Magento adds your project to the [Fastly service account]({{ page.baseurl }}/cloud/cdn/cloud-fastly.html#fastly-service-account-and-credentials) for {{ site.data.var.ece }} and adds the Fastly account credentials to the Staging and Production environment configuration.
 
 You need the Fastly credentials to configure Fastly CDN services from the Magento Admin UI and to submit Fastly API requests.
 
@@ -46,16 +46,16 @@ To view your Fastly credentials:
 
 - Project Web UI—Check the following environment variables in the *[Environment configuration variables]({{ page.baseurl }}/cloud/project/projects.html#environment-configuration-variables)* section.
 
-   - `CONFIG__DEFAULT__SYSTEM__FULL_PAGE_CACHE__FASTLY__FASTLY_API_KEY`
+   - `CONFIG__DEFAULT__SYSTEM__FULL_PAGE_CACHE__FASTLY__FASTLY_API_TOKEN`
 
    - `CONFIG__DEFAULT__SYSTEM__FULL_PAGE_CACHE__FASTLY__FASTLY_SERVICE_ID`
 
-{: .bs-callout-info}
+{: .bs-callout-info }
 If you cannot find the Fastly credentials for the Staging or Production environments, contact your Magento Technical Account Manager.
 
 ## Enable Fastly caching for your Cloud environments {#cloud-fastly-config}
 
-**Prerequisites**
+**Prerequisites:**
 
 - Latest version of the [Fastly CDN for Magento 2 module]({{ page.baseurl }}/cloud/cdn/cloud-fastly.html#fastly-cdn-module-for-magento-2) installed in the Staging and Production environments. See [Upgrade Fastly](#upgrade).
 
@@ -102,7 +102,7 @@ To enable Fastly CDN caching in Staging and Production:
    If the test fails again, submit a support ticket or contact your Technical Account Manager. For Pro projects, include the URLs for your Production and Staging sites.  For Starter projects, include the URLs for your `Master` and Staging site.
 
 {: .bs-callout-info }
-If you need to change the Fastly API token credential for a Staging or Production environment, see [Change Fastly credentials](https://support.magento.com/hc/en-us/articles/360006935271-Change-account-owner-access-credentials-via-API-tokens-for-Fastly-on-Cloud) in the Magento Support Knowledgebase.
+If you need to change the Fastly API token credential for a Staging or Production environment, see [Change Fastly credentials]({{ page.baseurl}}/cloud/cdn/cloud-fastly.html#change-your-fastly-api-token).
 
 ### Upload VCL to Fastly {#upload-vcl-snippets}
 
@@ -127,9 +127,9 @@ Before adding [custom](#custom-configuration) or advanced configuration settings
 
 Configure the following features as needed:
 
-* [Configure backends and Origin shielding](#backend)
-* [Customize response pages]({{ page.baseurl }}/cloud/cdn/cloud-fastly-custom-response.html)
-* [Enable additional Fastly configuration options](https://github.com/fastly/fastly-magento2/blob/master/Documentation/CONFIGURATION.md#further-configuration-options)
+- [Configure backends and Origin shielding](#backend)
+- [Customize response pages]({{ page.baseurl }}/cloud/cdn/cloud-fastly-custom-response.html)
+- [Enable additional Fastly configuration options](https://github.com/fastly/fastly-magento2/blob/master/Documentation/CONFIGURATION.md#further-configuration-options)
 
 ### Configure backends and Origin shielding {#backend}
 
@@ -190,10 +190,10 @@ Fastly provides multiple types of purge options on your Magento Cache Management
 
 The options include:
 
-* **Purge category**: Purges product category content (not product content) when you add and update a single product. You may want to keep this disabled and enable purge product, which purges products and product categories.
-* **Purge product**: Purges all product and product category content when saving a single modification to a product. Enabling purge product can be helpful to immediately get updates to customers when changing a price, adding a product option, and when product inventory is out-of-stock.
-* **Purge CMS page**: Purges page content when updating and adding pages to the Magento CMS. For example, you may want to purge when updating your Terms and Conditions or Return policy. If you rarely make these changes, you could disable automatic purging.
-* **Soft purge**: Sets changed content to stale and purges according to the stale timing. In combination with the stale timings your customers will be served stale content very fast while Fastly is updating the content in the background.
+- **Purge category**: Purges product category content (not product content) when you add and update a single product. You may want to keep this disabled and enable purge product, which purges products and product categories.
+- **Purge product**: Purges all product and product category content when saving a single modification to a product. Enabling purge product can be helpful to immediately get updates to customers when changing a price, adding a product option, and when product inventory is out-of-stock.
+- **Purge CMS page**: Purges page content when updating and adding pages to the Magento CMS. For example, you may want to purge when updating your Terms and Conditions or Return policy. If you rarely make these changes, you could disable automatic purging.
+- **Soft purge**: Sets changed content to stale and purges according to the stale timing. In combination with the stale timings your customers will be served stale content very fast while Fastly is updating the content in the background.
 
 ![Configure purge options]({{ site.baseurl }}/common/images/cloud_fastly-purgeoptions.png){:width="650px"}
 

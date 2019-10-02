@@ -23,7 +23,7 @@ Currently, you can customize the following Fastly response pages for your {{ sit
 - [Timeout or site maintenance outages (503 Service Unavailable)](#customize-the-503-error-page)
 - [WAF blocking events that occur when the WAF detects suspicious request traffic (403 Forbidden)](#customize-the-waf-error-page)
 
-**HTML coding requirements**
+**HTML coding requirements:**
 
 The HTML code for the custom page must meet the following requirements:
 
@@ -83,7 +83,7 @@ To add the custom response page to the Fastly configuration:
 
 ## Customize the WAF error page
 
-Customers see the following default WAF error page when a request to the Fastly origin fails with a `403 Forbidden` error  caused by a [WAF]({{ page.baseurl }}/cloud/cdn/fastly-waf-service.html) blocking event.
+Customers see the following default WAF error page when a request to the Fastly origin fails with a `403 Forbidden` error caused by a [WAF]({{ page.baseurl }}/cloud/cdn/fastly-waf-service.html) blocking event.
 
 ![WAF error page]
 
