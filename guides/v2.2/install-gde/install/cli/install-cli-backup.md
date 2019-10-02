@@ -5,6 +5,8 @@ functional_areas:
   - Install
   - System
   - Setup
+redirect_from:
+  - guides/v2.2/install-gde/trouble/tshoot_segfault.html
 ---
 
 ## Overview of backup {#instgde-cli-uninst-back-over}
@@ -111,6 +113,3 @@ Messages similar to the following display:
 Please set file permission of bin/magento to executable
 Disabling maintenance mode
 ```
-
-{: .bs-callout-info }
-If the command results in a `Segmentation fault` message, see [Segmentation fault during rollback]({{ page.baseurl }}/install-gde/trouble/tshoot_segfault.html).
