@@ -19,11 +19,15 @@ You can quickly verify if you have SSH keys by entering commands using terminal 
 
 To check for SSH keys, enter the following command:
 
-	ls ~/.ssh
+```bash
+ls ~/.ssh
+```
 
 If you have SSH keys, a directory listing is displayed similar to the following:
 
-	id_rsa  id_rsa.pub  known_hosts
+```terminal
+id_rsa  id_rsa.pub  known_hosts
+```
 
 If you do not have SSH keys, you need to generate the keys for adding to your Magento ECE account and GitHub account. See [Create a new SSH key pair](#ssh-create-new-key-pair).
 
@@ -61,7 +65,7 @@ To create an SSH key pair:
 
     For Mac, you can edit the  `~/.ssh/config` file to automatically load keys into the ssh-agent and store passphrases in your keychain.
 
-    ```
+    ```conf
     Host *
         AddKeysToAgent yes
         UseKeychain yes
@@ -96,7 +100,9 @@ After adding the SSH keys, test the SSH connection to GitHub:
 
 1. In the terminal, enter the following command:
 
-		ssh -T git@github.com
+    ```bash
+    ssh -T git@github.com
+    ```
 
 2. You may see a warning that the authenticity of the host can't be established followed by an RSA fingerprint. Enter `yes` to continue.
 
@@ -118,11 +124,15 @@ To add an SSH key using the CLI:
 
 3.	Log in to your project:
 
-		magento-cloud login
+    ```bash
+    magento-cloud login
+    ```
 
 3.	Add the key:
 
-		magento-cloud ssh-key:add ~/.ssh/id_rsa.pub
+    ```bash
+    magento-cloud ssh-key:add ~/.ssh/id_rsa.pub
+    ```
 
 #### Add a key using the Project Web Interface {#add-key-web}
 
@@ -151,7 +161,12 @@ Set required global Git variables on the machine to commit or push to a Git bran
 
 To set variables, enter the following commands on every workspace:
 
-	git config --global user.name "<your name>"
-	git config --global user.email <your e-mail address>
+```bash
+git config --global user.name "<your name>"
+```
+
+```bash
+git config --global user.email <your e-mail address>
+```
 
 For more information, see [First-Time Git Setup](https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup#_first_time)

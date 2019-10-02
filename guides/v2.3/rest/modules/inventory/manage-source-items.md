@@ -8,7 +8,7 @@ If Magento is configured to manage inventory, when you upgrade to version 2.3, M
 
 **Service names**
 
-```
+```http
 inventoryApiSourceItemsDeleteV1
 inventoryApiSourceItemsSaveV1
 inventoryApiSourceItemRepositoryV1
@@ -16,7 +16,7 @@ inventoryApiSourceItemRepositoryV1
 
 **REST endpoints**
 
-```
+```http
 POST V1/inventory/source-items-delete
 POST V1/inventory/source-items
 GET V1/inventory/source-items

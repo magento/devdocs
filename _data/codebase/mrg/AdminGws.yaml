@@ -1,7 +1,0 @@
----
-title: Magento_AdminGws
-edition: ee
-last_modified_at: '2014-12-17 18:31:49 +0000'
-content: "**AdminGws** provides configuration management within the Global, Website,
-  and Store data scopes. Restrictions can be \nimposed on various system elements
-  through configurations that are applied at the desired level.\n"
