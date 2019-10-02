@@ -1,7 +1,0 @@
----
-title: Magento_NewRelicReporting
-edition: ce
-last_modified_at: '2015-10-01 16:15:45 +0300'
-content: "Module Magento\\NewRelicReporting implements integration New Relic APM and
-  New Relic Insights with Magento, giving \nreal-time visibility into business and
-  performance metrics for data-driven decision making. "
