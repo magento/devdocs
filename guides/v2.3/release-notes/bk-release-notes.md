@@ -22,6 +22,13 @@ redirect_from:
 
 Interested in the Magento 2.2.x releases? Check out the [2.2.x]({{ site.baseurl }}/guides/v2.2/release-notes/bk-release-notes.html) Release Information pages.
 
+## Security-only patches
+
+With the release of Magento 2.3.3, Magento is introducing a new type of patch: the security-only patch. Patch 2.3.2-p1, our first security-only patch,  includes the significant security fixes that Magento 2.3.3 introduces without the hundreds of functional fixes and enhancements that Magento 2.3.3 also includes. Merchants deploying Magento 2.3.2 can apply patch 2.3.2-p1 to immediately take advantage of time-sensitive security fixes without without investing the time required to install Magento 2.3.3.
+
+For general information about security-only patches, see the Magento DevBlog post [Introducing the New Security-only Patch Release](https://devdocs-beta.magento.com/guides/v2.3/install-gde/composer.html#get-the-metapackage).  For instructions on downloading and applying security-only patches (including patch 2.3.2-p1), see [Install Magento using Composer](https://devdocs-beta.magento.com/guides/v2.3/install-gde/composer.html#get-the-metapackage). 
+
+
 ## Backward-incompatible changes
 
 *	Overview of [backward-incompatible changes]({{page.baseurl}}/release-notes/backward-incompatible-changes/index.html) between the 2.2 and 2.3 releases
