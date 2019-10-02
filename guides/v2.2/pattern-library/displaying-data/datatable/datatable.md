@@ -57,8 +57,8 @@ The data-table will be designed in such a way that any of the above controls can
 Pagination controls allow the user to easily page through and organize data. Pagination controls will contain the following:
 
 * Drop-down select for number of items per page
-	* Increments TBD
-	* Custom field for user-defined increments
+   * Increments TBD
+   * Custom field for user-defined increments
 * Page number (skip to) field and action button
 * ‘Next’ button
 * ‘Previous’ button when applicable
