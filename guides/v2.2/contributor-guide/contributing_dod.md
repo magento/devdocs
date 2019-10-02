@@ -118,9 +118,11 @@ See: [Running Integration Tests][3].
 UI functional tests are inherently unstable irrespective of platform or testing framework. For this reason along with reasons of maintainability and quality assurance delivery time, these tests should be prioritized below all other tests types.
 
 Functional test policy: 
-* Web API endpoints must have functional test coverage. These tests should ensure that the endpoints behave in accordance to their service contracts regardless of the actual concrete implementation that may be loaded.
+* Web API endpoints must have functional test coverage via api-functional tests. These tests should ensure that the endpoints behave in accordance to their service contracts regardless of the actual concrete implementation that may be loaded.
 * For UI-related code, there are some circumstances where it is not possible to cover changes with unit or integration tests. In these cases the appropriate type of coverage would be a functional test but this is a last resort only. 
   However, aside from those cases UI functional tests should only be used to cover P0/P1 testing scenarios. If there are no scenarios available to make this decision, a product owner must be consulted for approval of new tests.
+  
+  If there is a scenario new or old that isn't classified as a P0/P1, it can be discussed with a product owner to get it elevated if it is important enough to deserve a dedicated test.
 
 See [Functional Tests][2].
 
