@@ -4,8 +4,39 @@ description: |
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: /whats-new.html
 thread: /whatsnew-feed.xml
-updated: Tue Sep 24 09:26:19 2019
+updated: Tue Oct 1 20:34:58 2019
 entries:
+- description: Updated the _Cloud Guide_ with instructions for [changing the Fastly API token credential](https://devdocs.magento.com/guides/v2.3/cloud/cdn/cloud-fastly.html#fastly-service-account)
+    for Staging and Production environments.
+  versions: 2.x
+  type: Major update
+  date: October 1, 2019
+  link: https://github.com/magento/devdocs/pull/5501
+- description: Added instructions for getting connection credentials
+    to the [Set up RabbitMQ](https://devdocs.magento.com/guides/v2.3/cloud/project/project-conf-files_services-rabbit.html)
+    topic in the _Cloud Guide_.
+  versions: 2.2.x, 2.3.x
+  type: Major update
+  date: October 1, 2019
+  link: https://github.com/magento/devdocs/pull/5422
+- description: Added the "Disabling an Observer" section to the [Events and Observers](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/events-and-observers.html) 
+    topic in the _PHP Developer Guide_.
+  versions: 2.2.x, 2.3.x
+  type: Major update
+  date: October 1, 2019
+  link: https://github.com/magento/devdocs/pull/5489
+- description: Added the [RemainingCharacters widget](https://devdocs.magento.com/guides/v2.3/javascript-dev-guide/widgets/widget-remaining-characters.html)
+    topic to the _Javascript Developer Guide_.
+  versions: 2.2.x, 2.3.x
+  type: New topic
+  date: September 24, 2019
+  link: https://github.com/magento/devdocs/pull/5452
+- description: Added example [introspection queries](https://devdocs.magento.com/guides/v2.3/graphql/queries.html)
+    to the _GraphQL Developer Guide_.
+  versions: 2.3.x
+  type: Major update
+  date: September 20, 2019
+  link: https://github.com/magento/devdocs/pull/5438
 - description: Added example [introspection queries](https://devdocs.magento.com/guides/v2.3/graphql/queries.html)
     to the _GraphQL Developer Guide_.
   versions: 2.3.x
