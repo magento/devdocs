@@ -20,6 +20,8 @@ To get the module's Composer name from Magento Marketplace:
 7.	In **Technical Details** on the My Purchases page, click **Copy** to copy the version to the clipboard.
 8.	Append the version number to the component name after the colon.
 
-	A sample follows:
+    A sample follows:
 
-		pixlee/magento2:1.0.1
+    ```text
+    pixlee/magento2:1.0.1
+    ```
