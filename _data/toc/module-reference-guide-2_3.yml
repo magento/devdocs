@@ -908,3 +908,18 @@ pages:
         url: /mrg/msi/InventorySourceSelectionApi.html
     
   
+  - label: Page Builder
+    include_versions: ["2.3"]
+    children:
+    
+      - label: CatalogPageBuilderAnalytics
+        url: /mrg/page-builder/CatalogPageBuilderAnalytics.html
+    
+      - label: CmsPageBuilderAnalytics
+        url: /mrg/page-builder/CmsPageBuilderAnalytics.html
+    
+      - label: PageBuilder
+        url: /mrg/page-builder/PageBuilder.html
+    
+      - label: PageBuilderAnalytics
+        url: /mrg/page-builder/PageBuilderAnalytics.html
