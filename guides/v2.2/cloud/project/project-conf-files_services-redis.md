@@ -16,18 +16,18 @@ We support Redis versions 3.2 and 5.0. See [Configure Redis]({{ page.baseurl }}/
 {:.procedure}
 To enable Redis:
 
-1. Add the required name and type to the `.magento/services.yaml` file.
+1. Add the required name, type, and version to the `.magento/services.yaml` file.
 
   ```yaml
   myredis:
-      type: redis:5.0
+      type: redis:<version>
   ```
 
   To provide your own Redis configuration, add a `core_config` key in your `.magento/services.yaml` file:
 
   ```yaml
   cache:
-      type: redis:5.0
+      type: redis:<version>
   ```
 
 1. Configure the relationships in the `.magento.app.yaml` file.
@@ -47,7 +47,7 @@ To enable Redis:
    git add -A && git commit -m "Enable redis service" && git push origin <branch-name>
    ```
 
-1. [Verify the relationships]({{page.baseurl}}/cloud/project/project-conf-files_services.html#service-relationships).
+1. [Verify the service relationships]({{page.baseurl}}/cloud/project/project-conf-files_services.html#service-relationships).
 
 ## Using the Redis CLI
 
@@ -57,6 +57,6 @@ Assuming your Redis relationship is named `redis`, you can access it using the `
 
 1. Open an SSH tunnel to a host.
 
-    ```bash
-    redis-cli -h redis.internal
-    ```
+   ```bash
+   redis-cli -h redis.internal
+   ```

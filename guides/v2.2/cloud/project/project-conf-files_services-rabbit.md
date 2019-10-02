@@ -10,31 +10,38 @@ The [Message Queue Framework (MQF)]({{ page.baseurl }}/config-guide/mq/rabbitmq-
 
 The MQF uses [RabbitMQ](http://www.rabbitmq.com) as the messaging broker, which provides a scalable platform for sending and receiving messages. It also includes a mechanism for storing undelivered messages. RabbitMQ is based on the Advanced Message Queuing Protocol (AMQP) 0.9.1 specification.
 
-We support RabbitMQ version 3.5.
-
 {:.bs-callout .bs-callout-warning}
 If you prefer using an existing AMQP-based service, like RabbitMQ, instead of relying on {{site.data.var.ece}} to create it for you, use the [`QUEUE_CONFIGURATION`]({{ page.baseurl }}/cloud/env/variables-deploy.html#queue_configuration) environment variable to connect it to your site.
 
 {% include cloud/service-config-integration-starter.md %}
 
-## Add RabbitMQ in services.yaml and .magento.app.yaml {#settings}
+{:.procedure}
+To enable RabbitMQ:
 
-To enable RabbitMQ, add the following code with your installed version and allocated disk space in MB to the `.magento/services.yaml` file.
+1. Add the required name, type, and version to the `.magento/services.yaml` file along with the the installed RabbitMQ version and allocated disk space in MB:
 
-```yaml
-rabbitmq:
-    type: rabbitmq:<version>
-    disk: 1024
-```
+   ```yaml
+   rabbitmq:
+       type: rabbitmq:<version>
+       disk: 1024
+   ```
 
-To configure the relationships for the environment variable, set a relationship in your `.magento.app.yaml` file. For example:
+1. Configure the relationships in the `.magento.app.yaml` file.
 
-```yaml
-relationships:
-    rabbitmq: "rabbitmq:rabbitmq"
-```
+   ```yaml
+   relationships:
+       rabbitmq: "rabbitmq:rabbitmq"
+   ```
 
-Merge and deploy the code to set the configurations for RabbitMQ. For information on how these changes affect your environments, see [`services.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_services.html).
+1. Add, commit, and push your code changes.
+
+   ```bash
+   git add -A && git commit -m "Enable RabbitMQ service" && git push origin <branch-name>
+   ```
+
+1. [Verify the service relationships]({{page.baseurl}}/cloud/project/project-conf-files_services.html#service-relationships).
+
+For information on how these changes affect your environments, see [`services.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_services.html).
 
 ## Connect to RabbitMQ for debugging {#connect}
 
@@ -46,17 +53,17 @@ For debugging purposes, it is useful to directly connect to a service instance i
 
 ### Connect from your local development environment {#cloud-rabbitmq-conn-loc}
 
-1.  Log in to the Magento Cloud CLI and project:
+1. Log in to the Magento Cloud CLI and project:
 
-    ```bash
-    magento-cloud login
-    ```
+   ```bash
+   magento-cloud login
+   ```
 
-1.  Checkout the environment with RabbitMQ installed and configured.
+1. Checkout the environment with RabbitMQ installed and configured.
 
-    ```bash
-    magento-cloud environment:checkout <environment-id>
-    ```
+   ```bash
+   magento-cloud environment:checkout <environment-id>
+   ```
 
 1. Use SSH to connect to the Cloud environment:
 
