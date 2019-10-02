@@ -1,4 +1,4 @@
-#Directory Nesting Level Changes for Error Reporting
+#Directories Nesting Level Changes for Error Reporting
 
 Sometimes some clients have problems with this error reporting mechanism.
 
@@ -32,15 +32,15 @@ When you deploy the project to Magento Cloud, by default `ece-tools` will create
 For Example:If we have hash `sha256('')= 44ffb1087a44e61b018b3cdee72284d017f22e52755c24e5c85cbac1647ae7a7`
 
 ```
-MAGE_ERROR_REPORT_DIR_NESTING_LEVEL=0 -> <magento_root>/var/report/44ffb1087a44e61b018b3cdee72284d017f22e52755c24e5c85cbac1647ae7a7
-MAGE_ERROR_REPORT_DIR_NESTING_LEVEL=1 -> <magento_root>/var/report/44/44ffb1087a44e61b018b3cdee72284d017f22e52755c24e5c85cbac1647ae7a7
-MAGE_ERROR_REPORT_DIR_NESTING_LEVEL=2 -> <magento_root>/var/report/44/ff/44ffb1087a44e61b018b3cdee72284d017f22e52755c24e5c85cbac1647ae7a7
+Error report dir nesting level = 0 -> <magento_root>/var/report/44ffb1087a44e61b018b3cdee72284d017f22e52755c24e5c85cbac1647ae7a7
+Error report dir nesting level = 1 -> <magento_root>/var/report/44/44ffb1087a44e61b018b3cdee72284d017f22e52755c24e5c85cbac1647ae7a7
+Error report dir nesting level = 2 -> <magento_root>/var/report/44/ff/44ffb1087a44e61b018b3cdee72284d017f22e52755c24e5c85cbac1647ae7a7
 ....
-MAGE_ERROR_REPORT_DIR_NESTING_LEVEL=32-> <magento_root>/var/report/44/ff/b1/08/7a/44/e6/1b/01/8b/3c/de/e7/22/84/d0/17/f2/2e/52/75/5c/24/e5/c8/5c/ba/c1/64/7a/e7/a7/44ffb1087a44e61b018b3cdee72284d017f22e52755c24e5c85cbac1647ae7a7
+Error report dir nesting level = 32-> <magento_root>/var/report/44/ff/b1/08/7a/44/e6/1b/01/8b/3c/de/e7/22/84/d0/17/f2/2e/52/75/5c/24/e5/c8/5c/ba/c1/64/7a/e7/a7/44ffb1087a44e61b018b3cdee72284d017f22e52755c24e5c85cbac1647ae7a7
 
 ```
 
-If environment variable `MAGE_ERROR_REPORT_DIR_NESTING_LEVEL` has value more then zero then max numbers of the subdirectories in subdirectories will be 256.
+If an error report dir nesting level has value more then zero then max numbers of the subdirectories in subdirectories will be 256.
 
 **There are several ways in Magento Cloud to change the value of directory nesting for error reports:**
 
