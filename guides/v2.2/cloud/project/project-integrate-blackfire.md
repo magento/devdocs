@@ -207,7 +207,7 @@ To profile using the browser:
 
 1. Click the Blackfire icon.
 
-   ![Start profiling]({{ site.baseurl }}/common/images  cloud_blackfire.png)
+   ![Start profiling]({{ site.baseurl }}/common/images/cloud_blackfire.png)
 
 1. Click **Profile** to start.
 
