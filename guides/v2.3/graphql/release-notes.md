@@ -15,6 +15,31 @@ These release notes can include:
 -   {:.new}New features
 -   {:.fix}Fixes and improvements
 
+## {{site.data.var.ee}} and {{site.data.var.ce}} 2.3.3
+
+-  {:.new} **GraphQL supports PayPal, Braintree, and Authorize.Net payment methods.** You can use mutations to set the payment method, retrieve payment method-specific tokens, and place an order. For details, see the following topics:
+
+   -  [Authorize.Net]({{page.baseurl}}/graphql/payment-methods/authorize-net.html)
+   -  [Braintree]({{page.baseurl}}/graphql/payment-methods/braintree.html)
+   -  [Braintree Vault]({{page.baseurl}}/graphql/payment-methods/braintree-vault.html)
+   -  [PayPal Express Checkout]({{page.baseurl}}/graphql/payment-methods/paypal-express-checkout.html)
+   -  [PayPal Payflow Link]({{page.baseurl}}/graphql/payment-methods/payflow-link.html)
+   -  [PayPal Payflow Pro]({{page.baseurl}}/graphql/payment-methods/payflow-pro.html)
+   -  [PayPal Payments Advanced]({{page.baseurl}}/graphql/payment-methods/payments-advanced.html)
+   -  [PayPal Website Payments Pro Hosted Solution]({{page.baseurl}}/graphql/payment-methods/hosted-pro.html
+   -  [Express Checkout for other PayPal solutions]({{page.baseurl}}/graphql/payment-methods/payflow-express.html)
+
+-  {:.new} ({{site.data.var.ee}} only) **Added support for gift cards:**
+   -  [`giftCardAccount`]({{page.baseurl}}/graphql/queries/giftcard-account.html) query
+   -  [`applyGiftCardToAccount`]({{page.baseurl}}/graphql/mutations/apply-giftcard.html) mutation
+   -  [`removeGiftCardFromCart`]({{page.baseurl}}/graphql/mutations/remove-giftcard.html) mutation
+
+-  {:.new} ({{site.data.var.ee}} only) **Added the ability to manage store credit:**
+   -  [`applyStoreCreditToCart`]({{page.baseurl}}/graphql/mutations/apply-store-credit.html) mutation
+   -  [`removeStoreCreditFromCart`]({{page.baseurl}}/graphql/mutations/remove-store-credit.html) mutation
+
+-  {:.new} **Added he [addConfigurableProductsToCart]({page.baseurl}}/graphql/mutations/add-configurable-products.html) mutation.**
+
 ## {{site.data.var.ce}} 2.3.2
 
 -  {:.new} **Added mutations to support the following cart operations and checkout for logged-in and guest customers:**
