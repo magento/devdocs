@@ -188,6 +188,7 @@ Declaring a new route:
 ```
 
 Declaring the layout handler for our new route:
+
 ```xml
 <?xml version="1.0"?>
 
@@ -219,7 +220,7 @@ Defining a new custom router:
 </type>
 ```
 
-Creating the controller that will handle the `routing` route and will get the parameters passed by our Router.
+Creating the controller that will handle the `routing` route and will get the parameters passed by our router.
 
 ```php
 <?php
