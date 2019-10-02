@@ -6,10 +6,11 @@
 # A value of the parameter is available as {{ page.github_path }}.
 # The parameter contains a file path relative to its repository.
 #
-Jekyll::Hooks.register :pages, :post_init do |page|
-
+Jekyll::Hooks.register :pages, :pre_render do |page|
+  # Do nothing if the date is already set
+  next if page.data['github_path']
   # Skip virtual pages like MRG topics
-  next if page.kind_of? Jekyll::PageWithoutAFile
+  next if page.is_a? Jekyll::PageWithoutAFile
   # Process only files with 'md' and 'html' extensions
   next unless File.extname(page.path).match?(/md|html/)
   # Skip redirects
@@ -20,6 +21,7 @@ Jekyll::Hooks.register :pages, :post_init do |page|
 
   # Change to the parent directory of the page and read full file path
   # from git index.
-  page.data['github_path'] =
-    `cd #{dir} && git ls-files --full-name #{filename}`.strip
+  Dir.chdir(dir) do
+    page.data['github_path'] = `git ls-files --full-name #{filename}`.strip
+  end
 end
