@@ -30,7 +30,7 @@ The quick strategy performs the following actions:
 
 1. For each theme, one arbitrary locale is chosen and all files for this locale are deployed, like in the standard strategy.
 1. For all other locales of the theme:
-   
+
    1. Files that override the deployed locale are defined and deployed.
    1.  All other files are considered similar for all locales, and are copied from the deployed locale.
 

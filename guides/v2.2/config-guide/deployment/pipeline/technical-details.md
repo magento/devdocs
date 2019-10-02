@@ -79,7 +79,7 @@ We changed the following behavior in the Magento Admin in production mode:
    ![You can change the Admin locale only to deployed locales]({{ site.baseurl }}/common/images/config_split-deploy_admin-locale.png){:width="450px"}
 
 * You cannot change locale configurations for any scope using the Admin Panel.
-  
+
    We recommend making these changes before switching to Production mode.
 
    You can still configure the locale using [environment variables](#config-deploy-configman) or the [config:set][config-cli-config-set] CLI command with the path `general/locale/code`.
