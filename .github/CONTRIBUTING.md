@@ -175,6 +175,19 @@ You can provide feedback using the following options:
 
 - Have a Community code contribution that needs documentation? Create an issue to [request DevDocs content](https://github.com/magento/devdocs/issues/new?template=COMMUNITY_ISSUE_TEMPLATE.md).
 
+## Work on the huge issues
+
+Use the next recommendations when your pull request affects a lot of files:
+
+- Use the designated integration branch for all PRs related to an issue.
+- Limit PRs to ~15 files.
+- Leave a comment in the issue stating which directories you are working on.
+- Resolve all errors in the directories you've claimed, even if it takes multiple PRs to do so.
+- Check out the designated integration branch frequently and run tests locally (rake test:md) to see what errors still need to be resolved.
+- Create your working branch from the designated integration branch.
+- When creating PRs, use the designated integration branch as the base branch.
+- Guidance on what other syntax fixes are appropriate to make in addition to the main syntax errors for that specific linting rule.
+
 ## Contact DevDocs
 
 Have a question? Need help? Magento DevDocs, Maintainers, and other Contributors are available through:
