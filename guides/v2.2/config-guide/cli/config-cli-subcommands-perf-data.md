@@ -46,7 +46,7 @@ To run the data generator:
 
 1. Disable all cron jobs before running the data generator. Disabling cron jobs prevents the data generator from performing actions that conflict with active cron jobs and avoids unnecessary errors.
 
-1. Run the data generator using the absolute fie system path and name of a profile.
+1. Run the data generator using the absolute file system path and name of a profile.
 
    ```bash
    bin/magento setup:perf:generate-fixtures <path-to-profile>
