@@ -27,7 +27,7 @@
 
   {% if page.feedback_link %}
   <div class="new-issue">
-    <a href="{{ page.github_repo }}issues/new?title=Feedback on page: {{ page.url }}" target="_blank" rel="noopener">
+    <a href="{{ page.github_repo }}issues/new?title=Feedback on page: {{ site.url }}{{ site.baseurl }}{{ page.url }}" target="_blank" rel="noopener">
       Give us feedback
     </a>
   </div>
