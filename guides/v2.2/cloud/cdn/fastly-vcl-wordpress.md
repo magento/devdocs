@@ -124,11 +124,12 @@ Add the custom VCL snippet to your Fastly service configuration from the Admin U
 
       ```
       if ( req.url.path ~ "^/?([^/?]+)")
-	    {
-		  if ( table.lookup(wordpress_urls, re.group.1, "NOTFOUND") != "NOTFOUND" )
-	        {set req.http.X-WP = "1";
-		    }
+      {
+         if ( table.lookup(wordpress_urls, re.group.1, "NOTFOUND") != "NOTFOUND" )
+         {
+            set req.http.X-WP = "1";
          }
+      }
       ```
 
 1. Click **Create** to generate the VCL snippet file with the name pattern `type_priority_name.vcl`, for example `recv_5_wordpress_redirect.vcl`
