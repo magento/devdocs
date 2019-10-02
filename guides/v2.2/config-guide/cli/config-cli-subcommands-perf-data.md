@@ -7,7 +7,7 @@ functional_areas:
   - Setup
 ---
 
-Using the [Magento Performance Toolkit]({{ site.mage2bloburl }}/{{ page.guide_version }}/setup/performance-toolkit), or another tool, for performance testing requires you to generate a large amount of data, including stores, categories, products, and more. You can adjust the amount of data you create using _profiles_, such as small, medium, large, and extra large.
+Using the [Magento Performance Toolkit]({{ site.mage2bloburl }}/{{ page.guide_version }}/setup/performance-toolkit) for performance testing requires you to generate a large amount of data, including stores, categories, products, and more. You can adjust the amount of data you create using _profiles_, such as small, medium, large, and extra large.
 
 The following figure shows a product display on the storefront using the `small` profile:
 
