@@ -216,7 +216,7 @@ The following sections provide end-to-end examples of using the commands discuss
 
 To add a German translation to a module or theme that you want to distribute to other merchants:
 
-1.  Collect phrases from your module:
+1. Collect phrases from your module:
 
    ```bash
    bin/magento i18n:collect-phrases -o "/var/www/html/magento2/app/code/ExampleCorp/SampleModule/i18n/xx_YY.csv" /var/www/html/magento2/app/code/ExampleCorp/SampleModule
@@ -232,7 +232,7 @@ To add a German translation to a module or theme that you want to distribute to 
 
 Similar to the preceding example, generate a `.csv` file, but instead of specifying a module or theme directory, specify the entire Magento application root directory. The resulting `.csv` contains any phrases that the command could find in the code.
 
-1.  Collect phrases from your module:
+1. Collect phrases from your module:
 
     ```bash
     bin/magento i18n:collect-phrases -o "/var/www/html/magento2/xx_YY.csv" -m
@@ -241,23 +241,23 @@ Similar to the preceding example, generate a `.csv` file, but instead of specify
     {:.bs-callout .bs-callout-info}
     The `.csv` file name must _exactly match_ the locale, including the characters' case.
 
-1.  Translate the words and phrases using [these guidelines](#config-cli-subcommands-xlate-dict-trans).
-1.  Create the language package.
+1. Translate the words and phrases using [these guidelines](#config-cli-subcommands-xlate-dict-trans).
+1. Create the language package.
 
     ```bash
     bin/magento i18n:pack /var/www/html/magento2/xx_YY.csv -d xx_YY
     ```
 
-1.  Create a directory for the language package.
+1. Create a directory for the language package.
 
-	For example, `/var/www/html/magento2/app/i18n/ExampleCorp/xx_yy`
+   For example, `/var/www/html/magento2/app/i18n/ExampleCorp/xx_yy`
 
-1.  In that directory, add all of the following:
+1. In that directory, add all of the following:
 
-    -   A license, if required
-    -   `composer.json` (sample following)
-    -   `registration.php` (sample following)
-    -   `language.xml` (sample following)
+   -  A license, if required
+   -  `composer.json` (sample following)
+   -  `registration.php` (sample following)
+   -  `language.xml` (sample following)
 
     **Sample `composer.json`:**
 
