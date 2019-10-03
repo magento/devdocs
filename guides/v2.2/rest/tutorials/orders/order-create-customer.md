@@ -61,7 +61,7 @@ It is recommended that you substitute the value of the `email` parameter with a 
 			"region": {
 				"regionCode": "NY",
 				"region": "New York",
-        "regionId":43
+                                "regionId":43
 			},
 			"postcode": "10755",
 			"street": ["123 Oak Ave"],

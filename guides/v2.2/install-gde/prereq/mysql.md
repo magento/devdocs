@@ -1,9 +1,8 @@
 ---
 group: installation-guide
-subgroup: Prerequisites
 title: MySQL
-menu_title: MySQL
-menu_order: 25
+redirect_from:
+  - guides/v2.2/install-gde/trouble/tshoot_mysql_table-open-cache.html
 ---
 
 ## Help if you're just starting out {#mysql-help-beginner}

@@ -1,13 +1,12 @@
 ---
 group: installation-guide
-subgroup: Prerequisites
 title: Optional software
-menu_title: Optional software
-menu_order: 400
 functional_areas:
   - Install
   - System
   - Setup
+redirect_from:
+  - guides/v2.2/install-gde/trouble/php/tshoot_phpini.html
 ---
 
 ## Magento optional software {#install-optional-intro}
