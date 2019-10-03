@@ -88,7 +88,7 @@ In this guide, the three master databases are named:
 
 (You can name your databases anything you wish.)
 
-#### Next step
+### Next step
 
 *	If you have not installed components or put Magento into production: [Automatically configure master databases]({{ page.baseurl }}/config-guide/multi-master/multi-master_masterdb.html)
 *	If Magento is already in production or if you've already installed components: [Manually configure master databases]({{ page.baseurl }}/config-guide/multi-master/multi-master_manual.html)

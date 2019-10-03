@@ -31,7 +31,7 @@ If you chose to enable SELinux, see [SELinux and iptables]({{ page.baseurl }}/in
 ## First steps {#instgde-install-cli-first}
 {% include install/first-steps-cli.md %}
 
-#### Next steps
+### Next steps
 
 *	[Get started with the command-line installation]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands.html)
 *	[Install the Magento software]({{ page.baseurl }}/install-gde/install/cli/install-cli-install.html)

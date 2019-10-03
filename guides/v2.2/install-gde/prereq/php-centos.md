@@ -334,10 +334,10 @@ There is more than one way to install PHP 7.1 on CentOS; the following is a sugg
 
 {% endcollapsible %}
 
-#### Next
+### Next
 [Required PHP settings]({{ page.baseurl }}/install-gde/prereq/php-settings.html)
 
-#### Related topics
+### Related topics
 
 *	[MySQL]({{ page.baseurl }}/install-gde/prereq/mysql.html)
 *	[Apache]({{ page.baseurl }}/install-gde/prereq/apache.html)

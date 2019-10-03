@@ -49,7 +49,7 @@ Learning/HelloPage/registration.php
 Learning/HelloPage/etc/module.xml
 ```
 
-#### registration.php
+### registration.php
 ```php
 <?php /**
 * Copyright © 2016 Magento. All rights reserved. * See COPYING.txt for license details.
@@ -59,7 +59,7 @@ __DIR__
 );
 ```
 
-#### module.xml
+### module.xml
 ```xml
 <?xml version="1.0"?>
 <!--

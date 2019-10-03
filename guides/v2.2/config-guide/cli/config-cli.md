@@ -18,6 +18,6 @@ This topic discusses configuring the Magento software using the CLI. For informa
 ## First steps {#config-install-cli-first}
 {% include install/first-steps-cli.md %}
 
-#### Next step
+### Next step
 
 [Get started with command-line configuration]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands.html)

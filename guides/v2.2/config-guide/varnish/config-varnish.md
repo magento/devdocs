@@ -98,7 +98,7 @@ We know of the following issues with Varnish:
     }
     ```
 
-#### Next step
+### Next step
 [Install Varnish]
 
 <!-- Link Definitions -->

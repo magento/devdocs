@@ -22,22 +22,22 @@ When initiating an action or a process
 
 Full Guideline Reference: [http://www.w3.org/TR/WCAG10-HTML-TECHS/#links](http://www.w3.org/TR/WCAG10-HTML-TECHS/#links)
 
-#### Links Text
+### Links Text
 
 * Clearly identify the target of each link. (Good link text should not be overly general; don't use "click here.")
 * Provide a text equivalent for every non-text element
 
-#### Grouping and Bypassing Links
+### Grouping and Bypassing Links
 
 * Group related links, identify the group (for user agents), and, until user agents do so, provide a way to bypass the group.
 * Until user agents (including assistive technologies) render adjacent links distinctly, include non-link, printable characters (surrounded by spaces) between adjacent links.
 
-#### Keyboard Access
+### Keyboard Access
 
 * Create a logical tab order through links, form controls, and objects.
 * Provide keyboard shortcuts to important links (including those in client-side image maps), form controls, and groups of form controls.
 
-#### Anchors and Target
+### Anchors and Target
 
 * Until user agents allow users to turn off spawned windows, do not cause pop-ups or other windows to appear and do not change the current window without informing the user.
 

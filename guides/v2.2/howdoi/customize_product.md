@@ -26,7 +26,7 @@ This tutorial includes the following customizations:
 * [Customize the form configuration]({{ page.baseurl }}/howdoi/customize-form-configuration.html)
 * [Customize using a modifier class]({{ page.baseurl }}/howdoi/customize-modifier-class.html)
 
-#### Recommended reading
+### Recommended reading
 
 * [Form UI component]({{ page.baseurl }}/ui_comp_guide/components/ui-form.html)
 * [About PHP modifiers in UI components]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_modifier_concept.html)

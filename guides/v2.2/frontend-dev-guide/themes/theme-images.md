@@ -234,7 +234,7 @@ All image properties used in `view.xml` should be listed in the order shown here
   </tbody>
 </table>
 
-#### Resize catalog images
+### Resize catalog images
 
 Generally, product images are cached while saving the product. However, the `magento catalog:images:resize` command enables you to resize all images for display on your storefront. Situations where this could be necessary might be:
 

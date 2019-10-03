@@ -124,7 +124,7 @@ Make sure that these indexers are in "Update By Schedule" mode. If "Update On Sa
 {: .bs-callout-info }
 The indexer table switching mechanism requires additional database storage.
 
-#### EAV indexer optimization
+### EAV indexer optimization
 
 The Product EAV indexer reorganizes the EAV product structure to a flat structure.
 As of Magento 2.3, under certain circumstances, you can disable this indexer to improve performance. (Its indexation takes about 5 minutes on a large Magento 2 Commerce performance profile.)

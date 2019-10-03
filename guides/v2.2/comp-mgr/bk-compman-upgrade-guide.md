@@ -45,7 +45,7 @@ For upgrade or update, you must use the same authentication keys you used to ins
 For example, you *cannot* use {{ce}} authentication keys to update or upgrade {{ee}} or vice versa.
 You also *cannot* use another user's authentication keys or [Shared account] authentication keys.
 
-#### Next step
+### Next step
 
 Complete the tasks discussed in [Prerequisites].
 
