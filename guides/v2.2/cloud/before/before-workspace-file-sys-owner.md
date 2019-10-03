@@ -6,7 +6,9 @@ functional_areas:
   - Setup
 ---
 
-**Previous step:**
+{:.ref-header}
+Previous step
+
 [Enable SSH keys]({{ page.baseurl }}/cloud/before/before-workspace-ssh.html)
 
 **This step is optional if you installed nginx as your web server.** The [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html#magento-file-system-owner) provides root access and permissions, for security reasons on a hosted system. Apache installations require

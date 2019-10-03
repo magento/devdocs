@@ -10,7 +10,9 @@ functional_areas:
   - Configuration
 ---
 
-**Previous step:**
+{:.ref-header}
+Previous step
+
 [Clone and branch the project]({{ page.baseurl }}/cloud/before/before-setup-env-2_clone.html)
 
 With your workspace prepared, install Magento on your local to verify custom code, extensions, and more. This section includes the installation prep, options, and post-installation configuration you should complete.

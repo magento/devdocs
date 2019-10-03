@@ -6,7 +6,9 @@ functional_areas:
   - Deploy
 ---
 
-**Previous step:**
+{:.ref-header}
+Previous step
+
 [Prepare to deploy to Staging and Production]({{ page.baseurl }}/cloud/live/stage-prod-migrate-prereq.html)
 
 To migrate your database and static files to Staging and Production:
