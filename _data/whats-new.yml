@@ -6,7 +6,7 @@ link: /whats-new.html
 thread: /whatsnew-feed.xml
 updated: Tue Oct 1 20:34:58 2019
 entries:
-- description: Updated the _Cloud Guide_ with instructions for [changing the Fastly API token credential](https://devdocs.magento.com/guides/v2.3/cloud/cdn/cloud-fastly.html#fastly-service-account)
+- description: Updated the _Cloud Guide_ with instructions for [changing the Fastly API token credential](https://devdocs.magento.com/guides/v2.3/cloud/cdn/cloud-fastly.html#fastly-service-account-and-credentials)
     for Staging and Production environments.
   versions: 2.x
   type: Major update
