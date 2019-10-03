@@ -71,9 +71,9 @@ Batching is available for the following indexers:
 
 Index name | Configuration file | Configured object | Parameter name | Default value
 --- | --- | --- | --- | ---
-catalog_product_price (Product Price)	| `Magento/Catalog/etc/di.xml` | `Magento\Catalog\Model\ResourceModel\Product\Indexer\Price\BatchSizeCalculator` | batchRowsCount['default']	| 5000
-cataloginventory_stock (Stock)	| `Magento/CatalogInventory/etc/di.xml`	| `Magento\CatalogInventory\Model\Indexer\Stock\Action\Full` | batchRowsCount['default']	| 200
-catalog_category_product (Category Products)| `Magento/Catalog/etc/di.xml`	| `Magento\Catalog\Model\Indexer\Category\Product\Action\Full` |	batchRowsCount	| 100000
+catalog_product_price (Product Price) | `Magento/Catalog/etc/di.xml` | `Magento\Catalog\Model\ResourceModel\Product\Indexer\Price\BatchSizeCalculator` | batchRowsCount['default'] | 5000
+cataloginventory_stock (Stock) | `Magento/CatalogInventory/etc/di.xml` | `Magento\CatalogInventory\Model\Indexer\Stock\Action\Full` | batchRowsCount['default'] | 200
+catalog_category_product (Category Products)| `Magento/Catalog/etc/di.xml` | `Magento\Catalog\Model\Indexer\Category\Product\Action\Full` | batchRowsCount | 100000
 catalog_product_attribute (Product Attribute)| `Magento/Catalog/etc/di.xml` | `Magento\Catalog\Model\ResourceModel\Product\Indexer\Eav\BatchSizeCalculator` | batchSizes['decimal'], batchSizes['source'] | 1000, 1000
 
 Changing the batch size can help you optimize indexer running time. For example, for a store with the following characteristics:
@@ -118,7 +118,7 @@ Magento uses the following tables to support table switching.
 
 Indexer name | Tables used
 --- | --- | ---
-`catalog_product_price`	|  `catalog_product_index_price`, `catalog_product_index_price_replica`
+`catalog_product_price` |  `catalog_product_index_price`, `catalog_product_index_price_replica`
 `cataloginventory_stock` | `cataloginventory_stock_status`, `cataloginventory_stock_status_replica`
 `catalog_category_product` | `catalog_category_product_index`, `catalog_category_product_index_replica`
 `catalog_product_attribute` (select, multiselect attributes) | `catalog_product_index_eav`, `catalog_product_index_eav_replica`

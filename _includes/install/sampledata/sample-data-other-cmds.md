@@ -2,10 +2,9 @@
 
 This topic discusses how to:
 
-*	[Remove sample data modules](#inst-sample-remove) from the Magento installation `composer.json`
+*  [Remove sample data modules](#inst-sample-remove) from the Magento installation `composer.json`. This option does *not* remove sample data from the database.
 
-	This option does *not* remove sample data from the database.
-*	[Prepare to update sample data](#inst-sample-reset) (for example, before updating the Magento application).
+*  [Prepare to update sample data](#inst-sample-reset) (for example, before updating the Magento application).
 
 ## First steps {#sample-first}
 

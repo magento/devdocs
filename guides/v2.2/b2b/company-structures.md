@@ -71,7 +71,7 @@ You can only change the name or description of a team.
 ```json
 {
   "team": {
-  	"id": 4,
+    "id": 4,
     "name": "Western Region"
   }
 }

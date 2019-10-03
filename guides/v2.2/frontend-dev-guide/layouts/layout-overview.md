@@ -68,11 +68,11 @@ In this guide we use *layout files* when talking about concepts which are simila
 The following terms are used to distinguish layouts provided by different application components:
 
 * *Base layouts*: Layout files provided by modules. Conventional location:
-	* Page configuration and generic layout files: `<module_dir>/view/frontend/layout`
-	* Page layout files: `<module_dir>/view/frontend/page_layout`
+   * Page configuration and generic layout files: `<module_dir>/view/frontend/layout`
+   * Page layout files: `<module_dir>/view/frontend/page_layout`
 * *Theme layouts*: Layout files provided by themes. Conventional location:
-	* Page configuration and generic layout files: `<theme_dir>/<Namespace>_<Module>/layout`
-	* Page layout files: `<theme_dir>/<Namespace>_<Module>/page_layout`
+   * Page configuration and generic layout files: `<theme_dir>/<Namespace>_<Module>/layout`
+   * Page layout files: `<theme_dir>/<Namespace>_<Module>/page_layout`
 
 ## Customize layout {#layout-custom}
 

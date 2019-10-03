@@ -15,23 +15,23 @@ This topic describes how the library is organized, and how to use it. For more i
 
 The Magento UI library provides the ability to customize and reuse the following user interface elements and properties:
 
-*	actions-toolbar
-*	breadcrumbs
-*	buttons
-*	drop-downs
-*	forms
-*	icons
-*	[layout](https://glossary.magento.com/layout)
-*	loaders
-*	messages
-*	pagination
-*	popups
-*	ratings
-*	sections - tabs and accordions
-*	tables
-*	tooltips
-*	typography
-*	list of theme variables
+* actions-toolbar
+* breadcrumbs
+* buttons
+* drop-downs
+* forms
+* icons
+* [layout](https://glossary.magento.com/layout)
+* loaders
+* messages
+* pagination
+* popups
+* ratings
+* sections - tabs and accordions
+* tables
+* tooltips
+* typography
+* list of theme variables
 
 The following illustration shows a [storefront](https://glossary.magento.com/storefront) product page containing some of the preceding elements:
 

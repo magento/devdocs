@@ -23,48 +23,48 @@ To apply a theme:
 
 1. In Admin, go to **CONTENT** > **Design** > **Configuration**. A Design Configuration page opens. It contains a grid with the available configuration scopes. For example:
 
-    ![Design Configuration page]
+   ![Design Configuration page]
 
-2. In the configuration record corresponding to your store view, click **Edit**. The page with design configuration for the selected scope opens. For example:
+1. In the configuration record corresponding to your store view, click **Edit**. The page with design configuration for the selected scope opens. For example:
 
-    ![Design Configuration page for a particular scope]
+   ![Design Configuration page for a particular scope]
 
-4. On the **Default Theme** tab, in the **Applied Theme** drop-down, select your newly created theme.
-5. Click **Save Configuration**.
-6. If caching is enabled, [clear the cache](#theme-apply-clear).
-6. To see your changes applied, reload the storefront pages.
+1. On the **Default Theme** tab, in the **Applied Theme** drop-down, select your newly created theme.
+1. Click **Save Configuration**.
+1. If caching is enabled, [clear the cache](#theme-apply-clear).
+1. To see your changes applied, reload the storefront pages.
 
 ## Add a design exception {#theme-apply-except}
 
 Design exceptions enable you to specify an alternative theme for particular user-agents, instead of creating a separate store views for them.
 To add a design exception:
 
-2. In Admin, go to **CONTENT** > **Design** > **Configuration**
-2. In the configuration record corresponding to your store view, click **Edit**.
-4. On the **Design Rule** tab, click **Add New User Agent Rule**.
-5. In the **Search String** box specify the user-agent using either normal strings or regular expressions (PCRE). In the **Theme Name** drop-down list select the theme to be used for matching agent.
-6. Click **Save Configuration** or **Save and Continue**.
-7. If caching is enabled, [clear the cache](#theme-apply-clear).
-6. To see your changes applied, reload the storefront pages.
+1. In Admin, go to **CONTENT** > **Design** > **Configuration**
+1. In the configuration record corresponding to your store view, click **Edit**.
+1. On the **Design Rule** tab, click **Add New User Agent Rule**.
+1. In the **Search String** box specify the user-agent using either normal strings or regular expressions (PCRE). In the **Theme Name** drop-down list select the theme to be used for matching agent.
+1. Click **Save Configuration** or **Save and Continue**.
+1. If caching is enabled, [clear the cache](#theme-apply-clear).
+1. To see your changes applied, reload the storefront pages.
 
 ## Add a theme-independent logo {#theme-apply-logo}
 
 You might want to set a permanent store logo that displays on the storefront no matter what theme is applied.
 To add a permanent theme-independent logo:
 
-2. In Admin, go to **CONTENT** > **Design** > **Configuration**
-2. In the configuration record corresponding to your store view, click **Edit**.
-3. Expand the **Header** tab.
-4. In the **Logo Image** field browse to the logo file saved in your file system.
-6. Upload the file. Allowed file types include .png, .gif, .jpg, and .jpeg. To add an .svg logo, see [Declaring theme logo]({{page.baseurl}}/frontend-dev-guide/themes/theme-create.html#logo_declare).
-5. Optionally, specify the desired width, height, and the alternative text for the logo in the corresponding fields.
-7. Click **Save Configuration** or **Save and Continue**.
-7. If caching is enabled, [clear the cache](#theme-apply-clear).
-8. To see your changes applied, reload the storefront pages.
+1. In Admin, go to **CONTENT** > **Design** > **Configuration**
+1. In the configuration record corresponding to your store view, click **Edit**.
+1. Expand the **Header** tab.
+1. In the **Logo Image** field browse to the logo file saved in your file system.
+1. Upload the file. Allowed file types include .png, .gif, .jpg, and .jpeg. To add an .svg logo, see [Declaring theme logo]({{page.baseurl}}/frontend-dev-guide/themes/theme-create.html#logo_declare).
+1. Optionally, specify the desired width, height, and the alternative text for the logo in the corresponding fields.
+1. Click **Save Configuration** or **Save and Continue**.
+1. If caching is enabled, [clear the cache](#theme-apply-clear).
+1. To see your changes applied, reload the storefront pages.
 
 The logo you add here is stored in the `/pub/media/logo/default/` directory.
 
-{:.bs-callout .bs-callout-warning}
+{: .bs-callout-warning }
 To delete the permanent logo, go to the same location, and click the "Delete image" icon in the bottom left corner of the logo preview, then click the "Save Configuration button".
 
 ## Clear the cache {#theme-apply-clear}
@@ -73,8 +73,8 @@ If caching is enabled in Magento Admin, you must clear the cache after you apply
 
 A system message notifies you that invalidated cache types must be refreshed.
 
-1.	Click **System** > **Cache Management**.
-2.	Clear the invalid cache types.
+1. Click **System** > **Cache Management**.
+1. Clear the invalid cache types.
 
 ## Troubleshooting (if the changes do not get applied)
 
