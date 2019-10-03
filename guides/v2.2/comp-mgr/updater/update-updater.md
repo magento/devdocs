@@ -16,13 +16,13 @@ To update the updater application:
 1. Delete, move, or rename the directory containing the updater application.
 
    ```bash
-	 mv <magento_root>/update <magento_root>/old_update
-	 ```
+   mv <magento_root>/update <magento_root>/old_update
+   ```
 1. Change to your Magento 2 installation directory and enter the following command:
 
-	 ```bash
-	 composer create-project magento/updater update --repository https://repo.magento.com
-	 ```
+   ```bash
+   composer create-project magento/updater update --repository https://repo.magento.com
+   ```
 
 1. If prompted, enter your Magento [authentication keys]({{ page.baseurl }}/install-gde/prereq/connect-auth.html).
 1. Wait while [Composer](https://glossary.magento.com/composer) installs the updater and its dependencies.

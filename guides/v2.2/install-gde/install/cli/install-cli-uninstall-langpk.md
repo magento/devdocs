@@ -29,12 +29,13 @@ magento i18n:uninstall [-b|--backup-code] {language package name} ... {language 
 
 The language package uninstall command performs the following tasks:
 
-1.	Checks for dependencies; if so, the command terminates.
+1. Checks for dependencies; if so, the command terminates.
 
-	To work around this, you can either uninstall all dependent language packages at the same time or you can uninstall the depending language packages first.
-2.	If `--backup code` is specified, backs up the Magento file system (excluding `var` and `pub/static` directories) to `var/backups/<timestamp>_filesystem.tgz`
-3.	Removes language packages files from the codebase using `composer remove`.
-4.	Cleans the [cache](https://glossary.magento.com/cache).
+   To work around this, you can either uninstall all dependent language packages at the same time or you can uninstall the depending language packages first.
+
+1. If `--backup code` is specified, backs up the Magento file system (excluding `var` and `pub/static` directories) to `var/backups/<timestamp>_filesystem.tgz`
+1. Removes language packages files from the codebase using `composer remove`.
+1. Cleans the [cache](https://glossary.magento.com/cache).
 
 For example, if you attempt to uninstall a language package that another language package depends on, the following message displays:
 

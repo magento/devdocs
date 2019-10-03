@@ -53,20 +53,20 @@ To implement what is discussed in this guide, you need a working Magento install
 
 To use this guide, you must be familiar with:
 
-*	CSS, CSS 3, and LESS
-*	HTML and HTML 5
-*	[XML](https://glossary.magento.com/xml)
-*	[JavaScript](https://glossary.magento.com/javascript)
-*	PHTML, PHP (Basic)
-*	Responsive Web Design (RWD)
+* CSS, CSS 3, and LESS
+* HTML and HTML 5
+* [XML](https://glossary.magento.com/xml)
+* [JavaScript](https://glossary.magento.com/javascript)
+* PHTML, PHP (Basic)
+* Responsive Web Design (RWD)
 
 {:.ref-header}
 Related topics
 
-*	[Themes]({{ page.baseurl }}/frontend-dev-guide/themes/theme-general.html)
-*	[Magento UI library]({{ page.baseurl }}/frontend-dev-guide/css-topics/theme-ui-lib.html)
-*	[Cascading style sheets (CSS)]({{ page.baseurl }}/frontend-dev-guide/css-topics/css-overview.html)
-*	[JavaScript coding standard]({{ page.baseurl }}/coding-standards/code-standard-javascript.html)
-*	[Responsive web design]({{ page.baseurl }}/frontend-dev-guide/responsive-web-design/rwd_overview.html)
-*	[Translations]({{ page.baseurl }}/frontend-dev-guide/translations/xlate.html)
+* [Themes]({{ page.baseurl }}/frontend-dev-guide/themes/theme-general.html)
+* [Magento UI library]({{ page.baseurl }}/frontend-dev-guide/css-topics/theme-ui-lib.html)
+* [Cascading style sheets (CSS)]({{ page.baseurl }}/frontend-dev-guide/css-topics/css-overview.html)
+* [JavaScript coding standard]({{ page.baseurl }}/coding-standards/code-standard-javascript.html)
+* [Responsive web design]({{ page.baseurl }}/frontend-dev-guide/responsive-web-design/rwd_overview.html)
+* [Translations]({{ page.baseurl }}/frontend-dev-guide/translations/xlate.html)
 
