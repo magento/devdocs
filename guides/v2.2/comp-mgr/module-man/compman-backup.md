@@ -17,4 +17,3 @@ functional_areas:
 Related topics
 
 After your backup is complete, continue with [Step 3. Enable/disable modules]({{ page.baseurl }}/comp-mgr/module-man/modman-enable-disable.html)
-

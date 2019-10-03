@@ -35,4 +35,5 @@ _System upgrade_ refers to updating the Magento 2.x core components and other in
 
 {:.ref-header}
 Related topics
+
 [Start System Upgrade]({{ page.baseurl }}/comp-mgr/upgrader/upgrade-start.html)

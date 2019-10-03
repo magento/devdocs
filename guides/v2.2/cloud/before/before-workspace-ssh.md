@@ -20,5 +20,7 @@ When initially setting up your local environment, you need to add the SSH keys t
 
 {% include cloud/enable-ssh.md %}
 
-**Next step:**
+{:.ref-header}
+Next step
+
 [Set up the Magento file system owner]({{ page.baseurl }}/cloud/before/before-workspace-file-sys-owner.html)

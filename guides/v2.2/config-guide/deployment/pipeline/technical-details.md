@@ -292,15 +292,11 @@ File permissions and ownership must be consistent across development, build, and
 {:.ref-header}
 Related topics
 
-*   For a complete list of system-specific and sensitive settings and corresponding configuration paths, see [Sensitive and system-specific configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-sens.html).
-*   [config.php reference]({{ page.baseurl }}/config-guide/prod/config-reference-configphp.html) for detailed information about the shared configuration file
-*   [env.php reference]({{ page.baseurl }}/config-guide/prod/config-reference-envphp.html) for detailed information about the system-specific configuration file
-
-{:.ref-header}
-Related topicss
-
-*	[Set up your development systems]({{ page.baseurl }}/config-guide/deployment/pipeline/development-system.html)
-*	[Set up your build system]({{ page.baseurl }}/config-guide/deployment/pipeline/build-system.html)
-*	[Set up your production system]({{ page.baseurl }}/config-guide/deployment/pipeline/production-system.html)
+*  For a complete list of system-specific and sensitive settings and corresponding configuration paths, see [Sensitive and system-specific configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-sens.html).
+*  [config.php reference]({{ page.baseurl }}/config-guide/prod/config-reference-configphp.html) for detailed information about the shared configuration file
+*  [env.php reference]({{ page.baseurl }}/config-guide/prod/config-reference-envphp.html) for detailed information about the system-specific configuration file
+*	 [Set up your development systems]({{ page.baseurl }}/config-guide/deployment/pipeline/development-system.html)
+*	 [Set up your build system]({{ page.baseurl }}/config-guide/deployment/pipeline/build-system.html)
+*	 [Set up your production system]({{ page.baseurl }}/config-guide/deployment/pipeline/production-system.html)
 
 [config-cli-config-set]: {{ page.baseurl }}/config-guide/cli/config-cli-subcommands-config-mgmt-set.html#config-cli-config-set

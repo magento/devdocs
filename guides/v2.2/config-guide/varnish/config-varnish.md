@@ -100,6 +100,7 @@ We know of the following issues with Varnish:
 
 {:.ref-header}
 Related topics
+
 [Install Varnish]
 
 <!-- Link Definitions -->

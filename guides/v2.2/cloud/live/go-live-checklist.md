@@ -86,5 +86,7 @@ You can also test using the following 3rd party options:
 * [Blackfire]({{ page.baseurl }}/cloud/project/project-integrate-blackfire.html) (provided): Helps track through the issues New Relic finds and helps you dig deeper into the issue for specifics. Blackfire profiles the environment and helps locate bottlenecks in depth: process, method call, query, load, and so on.
 * [WebPageTest](https://www.webpagetest.org/) and [Pingdom](https://www.pingdom.com/): Real-time analysis of your site pages load time with different origin locations. Pingdom may cost a fee. WebPageTest is a free tool.
 
-**Next step:**
+{:.ref-header}
+Next step
+
 [Launch steps]({{ page.baseurl }}/cloud/live/launch-steps.html)

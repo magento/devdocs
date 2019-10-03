@@ -260,6 +260,7 @@ If PHP is *not* installed, see one of the following sections:
 
 {:.ref-header}
 Next step
+
 [Required PHP settings]({{ page.baseurl }}/install-gde/prereq/php-settings.html)
 
 {:.ref-header}

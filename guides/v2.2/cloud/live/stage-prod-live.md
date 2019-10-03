@@ -69,7 +69,7 @@ Always update your code in a branch on your local environment, push to Git, and 
 * Fix issues and check errors
 
 {:.ref-header}
-Related topicss
+Related topics
 
 To learn more, check the following:
 

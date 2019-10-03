@@ -21,4 +21,5 @@ If you chose to enable SELinux, see [SELinux and iptables]({{ page.baseurl }}/in
 
 {:.ref-header}
 Related topics
+
 [Step 1: Readiness Check]({{ page.baseurl }}/install-gde/install/web/install-web_1-readiness.html)

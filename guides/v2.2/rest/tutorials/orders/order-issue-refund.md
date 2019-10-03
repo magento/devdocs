@@ -76,7 +76,7 @@ A [credit memo](https://glossary.magento.com/credit-memo) id, such as `3`.
 Log in to [Admin](https://glossary.magento.com/admin). Click **Sales** > **Credit Memos**. The credit memo is displayed in the grid.
 
 ## Congratulations! You've finished.
-{:.no_toc}
+
 
 {:.ref-header}
 Related topics

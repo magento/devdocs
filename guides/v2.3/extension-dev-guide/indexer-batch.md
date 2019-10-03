@@ -142,7 +142,6 @@ To disable the Product EAV indexer in the Admin, go to **Stores** > Settings > *
 
 {:.ref-header}
 Related topics
-{:.no_toc}
 
 * [Indexing overview]({{ page.baseurl }}/extension-dev-guide/indexing.html)
 * [Adding a custom indexer]({{ page.baseurl }}/extension-dev-guide/indexing-custom.html)

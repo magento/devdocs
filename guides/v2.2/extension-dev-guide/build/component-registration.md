@@ -105,4 +105,5 @@ ComponentRegistrar::register(ComponentRegistrar::MODULE, 'Magento_AdminNotificat
 
 {:.ref-header}
 Next step
+
 [URN schema validation]({{ page.baseurl }}/extension-dev-guide/build/XSD-XML-validation.html)

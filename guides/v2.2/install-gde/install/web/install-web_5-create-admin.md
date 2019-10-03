@@ -15,4 +15,5 @@ functional_areas:
 
 {:.ref-header}
 Related topics
+
 [Step 6. Install]({{ page.baseurl }}/install-gde/install/web/install-web_6-install.html)

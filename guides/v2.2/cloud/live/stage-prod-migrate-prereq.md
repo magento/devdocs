@@ -113,6 +113,8 @@ To add an SSH key using the Project Web Interface:
 
 You can also add an SSH key using the {{site.data.var.ece}} CLI. See [Add an SSH key using the CLI]({{ page.baseurl }}/cloud/before/before-workspace-ssh.html#add-key-cli).
 
-**Next step:**
+{:.ref-header}
+Next step
+
 
 [Migrate and deploy]({{ page.baseurl }}/cloud/live/stage-prod-migrate.html)

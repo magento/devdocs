@@ -113,6 +113,7 @@ For example, to make a web API call with a customer token:
 
 {:.ref-header}
 Related topics
+
 [Construct a request]({{ page.baseurl }}/get-started/gs-web-api-request.html)
 
 [Configure services as web APIs]({{ page.baseurl }}/extension-dev-guide/service-contracts/service-to-web-service.html)

@@ -98,7 +98,8 @@ To install the default version of Apache (Ubuntu 14, 16&mdash;Apache 2.4, Ubuntu
 ### Enable rewrites and .htaccess for Apache 2.2
 {% include install/allowoverrides22.md %}
 
-__Next steps:__
+{:.ref-header}
+Next steps
 
 *	[Solving 403 (Forbidden) errors](#apache-error)
 *	Continue with the next prerequisite ([PHP Ubuntu]({{ page.baseurl }}/install-gde/prereq/php-ubuntu.html))
@@ -155,7 +156,8 @@ To upgrade to Apache 2.4:
 ### Enable rewrites and .htaccess for Apache 2.4 {#enable-rewr-apache24-upgr-ubuntu12}
 {% include install/allowoverrides24.md %}
 
-__Next steps:__
+{:.ref-header}
+Next steps
 
 *	[Solving 403 (Forbidden) errors](#apache-error)
 *	Continue with the next prerequisite ([PHP Ubuntu]({{ page.baseurl }}/install-gde/prereq/php-ubuntu.html))
@@ -199,7 +201,8 @@ Installing and configuring Apache is basically a three-step process: install the
 ### Enable rewrites and .htaccess for Apache 2.2 (including CentOS 7)
 {% include install/allowoverrides22.md %}
 
-__Next steps:__
+{:.ref-header}
+Next steps
 
 *	[Solving 403 (Forbidden) errors](#apache-error)
 *	Continue with the next prerequisite ([PHP Ubuntu]({{ page.baseurl }}/install-gde/prereq/php-ubuntu.html))

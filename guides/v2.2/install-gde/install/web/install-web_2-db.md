@@ -18,4 +18,5 @@ functional_areas:
 
 {:.ref-header}
 Related topics
+
 [Step 3. Web configuration]({{ page.baseurl }}/install-gde/install/web/install-web_3-web-conf.html)

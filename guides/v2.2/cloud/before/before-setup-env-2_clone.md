@@ -170,5 +170,7 @@ To branch from master:
    magento-cloud snapshot:create -e <environment-ID>
    ```
 
-**Next step:**
+{:.ref-header}
+Next step
+
 [Install Magento]({{ page.baseurl }}/cloud/before/before-setup-env-install.html)

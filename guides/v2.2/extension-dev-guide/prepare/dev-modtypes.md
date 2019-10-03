@@ -11,6 +11,7 @@ Each component type has a different [directory structure][directory-structure] a
 
 {:.ref-header}
 Next step
+
 [About component file structure][component-file-structure]
 
 [directory-structure]: {{ page.baseurl }}/extension-dev-guide/build/module-file-structure.html

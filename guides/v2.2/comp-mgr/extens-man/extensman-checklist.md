@@ -29,4 +29,5 @@ Before continuing, complete all tasks discussed in [Prerequisites]({{ page.baseu
 
 {:.ref-header}
 Related topics
+
 [Start the Extension Manager]({{ page.baseurl }}/comp-mgr/extens-man/extensman-main-pg.html)

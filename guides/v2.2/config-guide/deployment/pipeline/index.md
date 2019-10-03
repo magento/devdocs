@@ -40,4 +40,5 @@ For a complete list of configuration paths, see the following references:
 
 {:.ref-header}
 Related topics
+
 [Deployment technical overview (implementation details)]({{ page.baseurl }}/config-guide/deployment/pipeline/technical-details.html)

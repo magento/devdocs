@@ -26,4 +26,5 @@ If you use Git, Magento's `.gitignore` provides most of the preceding. See the [
 
 {:.ref-header}
 Related topics
+
 [Set up a build system]({{ page.baseurl }}/config-guide/deployment/pipeline/build-system.html)

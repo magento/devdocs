@@ -336,6 +336,7 @@ There is more than one way to install PHP 7.1 on CentOS; the following is a sugg
 
 {:.ref-header}
 Next step
+
 [Required PHP settings]({{ page.baseurl }}/install-gde/prereq/php-settings.html)
 
 {:.ref-header}

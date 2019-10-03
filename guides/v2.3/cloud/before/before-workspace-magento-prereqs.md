@@ -225,5 +225,7 @@ The requirements listed in this topic are specific to {{site.data.var.ece}} envi
 
 You can also install additional [optional software]({{ page.baseurl }}/install-gde/prereq/optional.html). These packages should be installed on the local VM.
 
-**Next step:**
+{:.ref-header}
+Next step
+
 [Enable SSH keys]({{ page.baseurl }}/cloud/before/before-workspace-ssh.html)

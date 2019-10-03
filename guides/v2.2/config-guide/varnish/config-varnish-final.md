@@ -77,7 +77,7 @@ Make sure the `<magento_root>/var/page_cache` directory is empty:
 If you encounter 503 (Backend Fetch Failed) errors, see [Troubleshooting 503 (Service Unavailable) errors]({{ page.baseurl }}/config-guide/varnish/tshoot-varnish-503.html).
 
 {:.ref-header}
-Related topicss
+Related topics
 
 *	[How Magento cache clearing works with Varnish]({{ page.baseurl }}/config-guide/varnish/use-varnish-cache.html)
 *	[How Varnish caching works]({{ page.baseurl }}/config-guide/varnish/use-varnish-cache-how.html)

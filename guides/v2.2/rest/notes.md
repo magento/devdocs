@@ -20,4 +20,5 @@ This applies to all REST APIs where a parameter is passed in the URL. Anything s
 
 {:.ref-header}
 Related topics
+
 [Search using REST APIs]({{ page.baseurl }}/rest/performing-searches.html)

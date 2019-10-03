@@ -64,4 +64,5 @@ The relative path to other XSDs cannot be used from inside the XSD file, because
 
 {:.ref-header}
 Next step
+
 [Name your component]({{ page.baseurl }}/extension-dev-guide/build/create_component.html)

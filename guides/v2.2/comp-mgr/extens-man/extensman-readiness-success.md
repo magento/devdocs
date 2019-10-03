@@ -22,4 +22,5 @@ If you're updating multiple extensions, see [Readiness check with multiple exten
 
 {:.ref-header}
 Related topics
+
 [Step 2. Backup]({{ page.baseurl }}/comp-mgr/extens-man/extensman-backup.html)
