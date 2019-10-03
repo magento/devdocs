@@ -269,4 +269,5 @@ Result:
 
 {:.ref-header}
 Related topic
+
 [Deployment general overview]({{ page.baseurl }}/config-guide/deployment/pipeline/)
