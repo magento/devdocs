@@ -174,6 +174,7 @@ To avoid naming your command the same as another command, we recommend:
     dev:myname:theme:delete
     ```
 
-### Related topic
+{:.ref-header}
+Related topic
 
 [How to add CLI commands]({{ page.baseurl }}/extension-dev-guide/cli-cmds/cli-howto.html)

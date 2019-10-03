@@ -250,7 +250,8 @@ For security, remove write permissions from these directories: '/var/www/html/ma
 [SUCCESS]: Admin Panel URI: /admin_puu71q
 ```
 
-#### Next step
+{:.ref-header}
+Related topics
 
 *	If you have one user account to access the Magento server, see [Optionally set a umask]({{ page.baseurl }}/install-gde/install/post-install-umask.html).
 

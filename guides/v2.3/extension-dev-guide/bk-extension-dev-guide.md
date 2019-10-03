@@ -18,7 +18,8 @@ The Magento application is made up of *Modules*, *Themes*, and *Language Package
 {: .bs-callout-info }
 You must follow a [PSR-4 compliant](http://www.php-fig.org/psr/psr-4/) structure when building a module.
 
-### Related topics
+{:.ref-header}
+Related topics
 
 *	[Developer roadmap]({{ page.baseurl }}/extension-dev-guide/intro/developers_roadmap.html)
 *	[Introduction to Composer]({{ page.baseurl }}/extension-dev-guide/intro/intro-composer.html)

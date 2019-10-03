@@ -13,7 +13,8 @@ functional_areas:
 
 {% include comp-man/backup.md %}
 
-### Next step
+{:.ref-header}
+Related topics
 
 After your backup is complete, continue with any of the following:
 

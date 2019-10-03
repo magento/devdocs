@@ -398,7 +398,8 @@ To configure a MySQL database instance:
 
     -   For optimal performance, make sure all MySQL and Magento index tables can be kept in memory (e.g., configure `innodb_buffer_pool_size`).
 
-### Related topics
+{:.ref-header}
+Related topics
 
 *	[Set up a remote MySQL database connection]({{page.baseurl }}/install-gde/prereq/mysql_remote.html)
 *	[Installing optional software]({{page.baseurl }}/install-gde/prereq/optional.html)

@@ -68,7 +68,8 @@ Always update your code in a branch on your local environment, push to Git, and 
 * Add 3rd party integrations
 * Fix issues and check errors
 
-## Next steps
+{:.ref-header}
+Related topics
 
 To learn more, check the following:
 

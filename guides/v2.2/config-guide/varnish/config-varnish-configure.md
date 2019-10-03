@@ -263,6 +263,7 @@ Via: 1.1 varnish-v4
 X-Magento-Cache-Debug: HIT
 ```
 
-### Next step
+{:.ref-header}
+Related topics
 
 [Configure Magento to use Varnish]({{ page.baseurl }}/config-guide/varnish/config-varnish-magento.html)

@@ -38,6 +38,7 @@ To configure a MySQL database and database user:
 
     ![Give the database user all privileges to the database]({{ site.baseurl }}/common/images/install-merch_db-user-privs.png){:width="750px"}
 
-#### Next step
+{:.ref-header}
+Related topics
 
 [Configure PHP]({{ page.baseurl }}/install-gde/install/hosted/hosted_start_php.html)
