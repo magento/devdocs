@@ -211,7 +211,7 @@ With these steps completed, you should have:
 * Magento authentication keys set up and configured in the project and local
 
 {:.ref-header}
-Next steps
+Next step
 
 For **Pro projects**, we strongly recommend fully deploying this base Magento template `master` branch without any code or configuration changes to Staging and Production. For instructions, see [First time deployment]({{ page.baseurl }}/cloud/setup/first-time-deploy.html).
 

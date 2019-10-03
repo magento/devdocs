@@ -77,7 +77,6 @@ Log in to [Admin](https://glossary.magento.com/admin). Click **Sales** > **Credi
 
 ## Congratulations! You've finished.
 
-
 {:.ref-header}
 Related topics
 
