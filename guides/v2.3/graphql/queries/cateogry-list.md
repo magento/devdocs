@@ -5,7 +5,7 @@ title: categoryList query
 
 The `categoryList` query searches for categories that match the criteria specified in filters. It replaces the deprecated `category` query, which allowed you to search by category ID only.
 
-The `categoryList` query supports the following types of filters:
+The `categoryList` query supports the following types of filters. You can specify multiple filters in a query.
 
 -  Category ID
 -  Display name
@@ -30,13 +30,13 @@ categoryList (
 
 ### Return the category tree of a top-level category
 
-The following query returns information about category ID `20` and two levels of subcategories. In the sample data, category ID `20` is assigned to the `Women` category.
+The following query returns information about category IDs `11` and `20` and two levels of subcategories. In the sample data, category IDs `11` and `20` are assigned to the `Men` and `Women` categories, respectively.
 
 **Request**
 
 ```graphql
 {
-  categoryList(filters: {ids: {eq: "20"}}) {
+  categoryList(filters: {ids: {in: ["11", "20"]}}) {
     children_count
     children {
       id
@@ -56,7 +56,6 @@ The following query returns information about category ID `20` and two levels of
     }
   }
 }
-
 ```
 
 **Response**
@@ -65,6 +64,79 @@ The following query returns information about category ID `20` and two levels of
 {
   "data": {
     "categoryList": [
+      {
+        "children_count": "8",
+        "children": [
+          {
+            "id": 13,
+            "level": 3,
+            "name": "Bottoms",
+            "path": "1/2/11/13",
+            "url_path": "men/bottoms-men",
+            "url_key": "bottoms-men",
+            "children": [
+              {
+                "id": 18,
+                "level": 4,
+                "name": "Pants",
+                "path": "1/2/11/13/18",
+                "url_path": "men/bottoms-men/pants-men",
+                "url_key": "pants-men"
+              },
+              {
+                "id": 19,
+                "level": 4,
+                "name": "Shorts",
+                "path": "1/2/11/13/19",
+                "url_path": "men/bottoms-men/shorts-men",
+                "url_key": "shorts-men"
+              }
+            ]
+          },
+          {
+            "id": 12,
+            "level": 3,
+            "name": "Tops",
+            "path": "1/2/11/12",
+            "url_path": "men/tops-men",
+            "url_key": "tops-men",
+            "children": [
+              {
+                "id": 14,
+                "level": 4,
+                "name": "Jackets",
+                "path": "1/2/11/12/14",
+                "url_path": "men/tops-men/jackets-men",
+                "url_key": "jackets-men"
+              },
+              {
+                "id": 15,
+                "level": 4,
+                "name": "Hoodies & Sweatshirts",
+                "path": "1/2/11/12/15",
+                "url_path": "men/tops-men/hoodies-and-sweatshirts-men",
+                "url_key": "hoodies-and-sweatshirts-men"
+              },
+              {
+                "id": 16,
+                "level": 4,
+                "name": "Tees",
+                "path": "1/2/11/12/16",
+                "url_path": "men/tops-men/tees-men",
+                "url_key": "tees-men"
+              },
+              {
+                "id": 17,
+                "level": 4,
+                "name": "Tanks",
+                "path": "1/2/11/12/17",
+                "url_path": "men/tops-men/tanks-men",
+                "url_key": "tanks-men"
+              }
+            ]
+          }
+        ]
+      },
       {
         "children_count": "8",
         "children": [
