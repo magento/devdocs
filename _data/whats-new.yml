@@ -37,12 +37,6 @@ entries:
   type: Major update
   date: September 20, 2019
   link: https://github.com/magento/devdocs/pull/5438
-- description: Added example [introspection queries](https://devdocs.magento.com/guides/v2.3/graphql/queries.html)
-    to the _GraphQL Developer Guide_.
-  versions: 2.3.x
-  type: Major update
-  date: September 20, 2019
-  link: https://github.com/magento/devdocs/pull/5438
 - description: Added options and methods to the [Multiselect Widget](https://devdocs.magento.com/guides/v2.3/javascript-dev-guide/widgets/widget-multiselect.html)
     topic in the _JavaScript Developer Guide_.
   versions: 2.2.x, 2.3.x
