@@ -75,14 +75,14 @@ To create a new CMS page link the user must enter data of all required fields. T
 
 [See entire repository code](#mtf_repo_widgetxml).
 
-#### Settings form {#mtf_repo_ex_set}
+### Settings form {#mtf_repo_ex_set}
 
 ![cms_page_link "Settings" data set for entire fixture view on GUI]({{ site.baseurl }}/common/images/ftf/mtf_ent_fixt_repo_cms_set_ui.png)
 
 - Set the **Type** field (`field name="code"`) to "CMS Page Link". It corresponds to the following code in [the repository data set](#mtf_repo_widgetxml) `<field name="code" xsi:type="string">CMS Page Link</field>`.
 - Set the **Design Theme** field (`field name="theme_id"`) to "Magento Blank". It corresponds to the following code in [the repository data set](#mtf_repo_widgetxml) `<field name="theme_id" xsi:type="string">Magento Blank</field>`.
 
-#### Storefront Properties form {#mtf_repo_ex_store}
+### Storefront Properties form {#mtf_repo_ex_store}
 
 ![cms_page_link "Storefront properties" data set for entire fixture view on GUI]({{ site.baseurl }}/common/images/ftf/mtf_ent_fixt_repo_cms_set_ui_storefront.png)
 
@@ -102,7 +102,7 @@ To create a new CMS page link the user must enter data of all required fields. T
     - Set the **Container** field to "Main content area". It corresponds to the following code in [the repository data set](#mtf_repo_widgetxml) `<item name="block" xsi:type="string">Main Content Area</item>`.
     - Set the **Template** field to "CMS Page Link Block Template". It corresponds to the following code in [the repository data set](#mtf_repo_widgetxml) `<item name="template" xsi:type="string">CMS Page Link Block Template</item>`.
 
-#### Frontend App Options {#mtf_repo_ex_front}
+### Frontend App Options {#mtf_repo_ex_front}
 
 ![cms_page_link "Frontend App Options" data set for entire fixture view on GUI]({{ site.baseurl }}/common/images/ftf/mtf_ent_fixt_repo_cms_set_ui_frontend-app.png)
 
@@ -140,7 +140,7 @@ The `WidgetOptions.xml` repository includes `cmsPageLink` data set:
 
 The source understands the `entities` field as an instruction to create a CMS Page using `<dataset name="default">` from the `<magento2>/dev/tests/functional/tests/app/Magento/Cms/Test/Repository/CmsPage.xml` repository.
 
-#### Widget.xml {#mtf_repo_widgetxml}
+### Widget.xml {#mtf_repo_widgetxml}
 
 Now we can create a repository XML file `Widget.xml`. In our case the file should be placed in `<magento2>/dev/tests/functional/tests/app/Magento/Widget/Test/Repository`. The full name must be specified in the `repository_class` attribute of the fixture: `repository_class="Magento\Widget\Test\Repository\Widget"`.
 

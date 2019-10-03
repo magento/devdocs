@@ -13,7 +13,7 @@ functional_areas:
 
 {% include comp-man/backup.md %}
 
-#### Next step
+### Next step
 
 After your backup is complete, continue with any of the following:
 

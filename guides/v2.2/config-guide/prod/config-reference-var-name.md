@@ -242,7 +242,7 @@ content='
 
 %}
 
-#### Related information
+### Related information
 
 *	[Magento User Guide discussion of scope](http://docs.magento.com/m2/ce/user_guide/configuration/scope.html)
 *	[Magento User Guide scope quick reference](http://docs.magento.com/m2/ce/user_guide/stores/store-scope-reference.html)

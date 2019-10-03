@@ -142,7 +142,7 @@ When you install the Magento software using either the command line or Setup Wiz
 *	Database password is the local web node user's password
 *	Database name is the name of the database on the remote server
 
-#### Related topics
+### Related topics
 
 *	[Installing optional software]({{ page.baseurl }}/install-gde/prereq/optional.html)
 *	[Apache]({{ page.baseurl }}/install-gde/prereq/apache.html)

@@ -30,6 +30,6 @@ We recommend you contact your shared hosting provider's technical support to ver
 
 For complete details, see [System requirements]({{ page.baseurl }}/install-gde/system-requirements.html).
 
-#### Next step
+### Next step
 
 [Configure a database and a database user]({{ page.baseurl }}/install-gde/install/hosted/hosted_start_db.html)
