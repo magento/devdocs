@@ -25,22 +25,22 @@ To install the URL rewrite module:
 
    ```yaml
    stage:
-      deploy:
-         CRON_CONSUMERS_RUNNER:
-            cron_run: true
-            max_messages: 1000
-            consumers:
-            - urlRewriteImport
-    ```
+     deploy:
+       CRON_CONSUMERS_RUNNER:
+         cron_run: true
+         max_messages: 1000
+         consumers:
+           - urlRewriteImport
+   ```
 
    Or, you can configure to run all consumers:
 
    ```yaml
    stage:
-      deploy:
-         CRON_CONSUMERS_RUNNER:
-            cron_run: true
-            max_messages: 1000
+     deploy:
+       CRON_CONSUMERS_RUNNER:
+         cron_run: true
+         max_messages: 1000
    ```
 
    See [CRON_CONSUMERS_RUNNER environment variable]({{page.baseurl}}/cloud/env/variables-deploy.html#cron_consumers_runner) for more information about configuring consumers:
