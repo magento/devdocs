@@ -4,6 +4,7 @@ title: category query
 redirect_from:
   - /guides/v2.3/graphql/reference/categories.html
 ---
+
 {:.bs-callout-warning}
 The `category` query has been deprecated. Use the [categoryList]({{page.baseurl}}/graphql/queries/category-list.html) query instead.
 
