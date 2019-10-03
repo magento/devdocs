@@ -36,7 +36,7 @@ To create a snapshot using the Magento CLI:
 1. Checkout the environment branch to snapshot.
 1. Create the snapshot.
 
-   ```
+   ```bash
    magento-cloud snapshot:create
    Creating a snapshot of production
    Waiting for the snapshot to complete...
@@ -44,7 +44,7 @@ To create a snapshot using the Magento CLI:
 
    The following modifiers further specify how to create the snapshot:
 
-   ```
+   ```text
    -p, --project=PROJECT          The project ID
    -e, --environment=ENVIRONMENT  The environment ID
    ```
@@ -53,13 +53,13 @@ To create a snapshot using the Magento CLI:
 
 1. Verify the most recent snapshots.
 
-   ```
+   ```bash
    magento-cloud snapshots
    ```
 
    The list returns information about the snapshot status:
 
-   ```
+   ```terminal
    Finding snapshots for the environment <environment_name>
    +---------------------------+--------------------+----------+----------+---------+
    | Created                   | Snapshot name      | Progress | State    | Result  |
@@ -86,13 +86,13 @@ To restore a snapshot using the Magento CLI:
 1. Checkout the environment branch to restore.
 1. List all available snapshots.
 
-   ```
+   ```bash
    magento-cloud snapshot:list
    ```
 
    The list returns information about the available snapshots:
 
-   ```
+   ```terminal
    Finding snapshots for the environment <environment_name>
    +---------------------------+--------------------+----------+----------+---------+
    | Created                   | Snapshot name      | Progress | State    | Result  |
@@ -103,13 +103,13 @@ To restore a snapshot using the Magento CLI:
 
 1. Restore a snapshot using the snapshot ID from the list.
 
-   ```
+   ```bash
    magento-cloud snapshot:restore <snapshot_id>
    ```
 
    The following modifiers further specify how to restore the snapshot:
 
-   ```
+   ```text
    -p, --project=PROJECT          The project ID
    -e, --environment=ENVIRONMENT  The environment ID
    ```
@@ -127,13 +127,13 @@ To create a database dump:
    - **Production:** `ssh -A <project ID>@<project ID>.ent.magento.cloud`
    - To SSH into the `master` branch of your Integration environment:
 
-      ```
+      ```bash
       magento-cloud environment:ssh
       ```
 
 1. Enter the following command:
 
-    ```
+    ```bash
     vendor/bin/ece-tools db-dump
     ```
 
