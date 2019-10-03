@@ -133,15 +133,16 @@ To create a database dump:
 
 1. Enter the following command:
 
-   ```
-   vendor/bin/ece-tools db-dump
-   ```
+    ```
+    vendor/bin/ece-tools db-dump
+    ```
 
 {: .bs-callout-info }
--  We recommend putting the application in maintenance mode before doing a database dump in Production environments.
--  The command creates an archive in your local project directory called  `dump-<timestamp>.sql.gz`.
--  If an error occurs during the dump, the command deletes the dump file to conserve disk space. Review the logs for details (`var/log/cloud.log`).
--  For Pro Production environments, this command dumps only from one of three high-availability nodes, so production data written to a different node during the dump may not be copied. It generates a `var/dbdump.lock` file to prevent running the command on more than one node.
+
+- We recommend putting the application in maintenance mode before doing a database dump in Production environments.
+- The command creates an archive in your local project directory called  `dump-<timestamp>.sql.gz`.
+- If an error occurs during the dump, the command deletes the dump file to conserve disk space. Review the logs for details (`var/log/cloud.log`).
+- For Pro Production environments, this command dumps only from one of three high-availability nodes, so production data written to a different node during the dump may not be copied. It generates a `var/dbdump.lock` file to prevent running the command on more than one node.
 
 {: .bs-callout-tip }
 If you want to push this data into an environment, see [Migrate data and static files]({{ page.baseurl }}/cloud/live/stage-prod-migrate.html).
