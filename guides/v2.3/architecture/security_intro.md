@@ -8,7 +8,7 @@ menu_order:
 
 ## Enhanced password management
 
-Magento has strengthened the hashing algorithms (SHA-256) used in password management. In addition, we added support for Argon2ID13, which is available by default in PHP 7.2.
+Magento has strengthened the hashing algorithms (SHA-256) used in password management. In addition, we added support for Argon2ID13, which is available in PHP through its sodium extension, but libsodium itself needs to be at least version 1.0.13 for it to become available.
 
 ## Improved prevention of cross-site scripting (XSS) attacks by making escaped data the default
 
