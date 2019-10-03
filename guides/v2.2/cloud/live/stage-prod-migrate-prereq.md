@@ -118,5 +118,4 @@ You can also add an SSH key using the {{site.data.var.ece}} CLI. See [Add an SSH
 {:.ref-header}
 Next step
 
-
 [Migrate and deploy]({{ page.baseurl }}/cloud/live/stage-prod-migrate.html)
