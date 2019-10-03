@@ -300,7 +300,7 @@ Use the `FilterMatchTypeInput` object to construct a filter that match the speci
 
 Attribute | Data type | Description
 --- | --- | ---
-`match` | String | Use this attribute to exactly match the specified string. For example, to filter on a specific category name, specify a value such as `Tops`
+`match` | String | Use this attribute to perform a fuzzy match on the specified string. For example, to filter on a specific category name, specify a value such as `Tops`
 
 ## Output attributes {#Categories}
 
