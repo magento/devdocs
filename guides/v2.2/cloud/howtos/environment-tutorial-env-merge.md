@@ -31,6 +31,9 @@ To merge an environment:
 
    You can put whatever contents you want; for example, the number `1`
 
+1. Save your changes and exit the text editor.
+1. Add, commit, and push your change to the environment:
+
    ```bash
    git add -A
    ```
@@ -126,7 +129,7 @@ To delete a environment:
 
    A `Y` answer completely removes the branch from the project.
 
-   Wait for the environment to delete.
+Wait for the environment to delete.
 
 {: .bs-callout-info }
 To activate the environment later, use the `magento-cloud environment:activate` command.
