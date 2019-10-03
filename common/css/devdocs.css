@@ -28,6 +28,14 @@
   margin-left: 1.0em;
 }
 
+/* Paragraph that introduces important information (e.g., Related topics, Next step, Examples), but does not qualify as a proper heading */
+.pseudo-header {
+  font-weight: bold;
+  font-size: 1.375em;
+  margin: 1.5em 0 0.5em 0;
+  color: #767676;
+}
+
 .message-banner.version-banner {
   margin-bottom: 15px;
 }
