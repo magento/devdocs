@@ -88,7 +88,8 @@ $soapClient = new SoapClient($wsdlUrl, ['version' => SOAP_1_2, 'stream_context' 
 $soapResponse = $soapClient->testModule1AllSoapAndRestV1Item($serviceArgs); ?>
 ```
 
-## Related topics {#related}
+{:.ref-header}
+Related topics {#related}
 
 * [OAuth-based authentication]({{ page.baseurl }}/get-started/authentication/gs-authentication-oauth.html)
 * [Service contracts]({{ page.baseurl }}/extension-dev-guide/service-contracts/service-contracts.html)

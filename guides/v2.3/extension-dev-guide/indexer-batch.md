@@ -140,7 +140,8 @@ To determine whether any 3rd-party extensions are using the Product EAV indexer,
 
 To disable the Product EAV indexer in the Admin, go to **Stores** > Settings > **Configuration** > **Catalog** > **Catalog** > **Catalog Search** and make sure the **Search Engine** field has a value other than MySQL.  Then set the value of **Enable EAV Indexer** to No.
 
-### Related topics
+{:.ref-header}
+Related topics
 {:.no_toc}
 
 * [Indexing overview]({{ page.baseurl }}/extension-dev-guide/indexing.html)

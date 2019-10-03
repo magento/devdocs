@@ -173,11 +173,13 @@ You must perform this step last because you will lose access to the Magento Admi
 
 {% endcollapsible %}
 
-### Next step
+{:.ref-header}
+Related topics
 
 *	{{site.data.var.ece}}: [Set up multiple {{site.data.var.ece}} websites or stores]({{ page.baseurl }}/cloud/project/project-multi-sites.html)
 
-### Related information
+{:.ref-header}
+Related topics
 
 * [Add content to your websites](http://docs.magento.com/m2/ce/user_guide/cms/content-menu.html)
 *	[Tutorial: Set up multiple websites or stores with NGINX]({{ page.baseurl }}/config-guide/multi-site/ms_nginx.html)

@@ -95,7 +95,8 @@ Plug-ins are also called *interceptors*. Applications use the [plug-in](https://
 
 See [Plug-ins][] in [PHP Developer Guide][] for information on declaring and prioritizing plug-ins.
 
-## Related topics {#m2arch-related}
+{:.ref-header}
+Related topics {#m2arch-related}
 
 [Architectural basics]({{page.baseurl}}/architecture/archi_perspectives/ABasics_intro.html)
 

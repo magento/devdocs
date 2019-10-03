@@ -130,7 +130,8 @@ Make sure that these indexers are in "Update By Schedule" mode. If "Update On Sa
 {: .bs-callout-info }
 The indexer table switching mechanism requires additional database storage.
 
-### Related topics
+{:.ref-header}
+Related topics
 {:.no_toc}
 
 * [Indexing overview]({{ page.baseurl }}/extension-dev-guide/indexing.html)

@@ -172,7 +172,8 @@ After setting the mode, restart the web server:
 *	Ubuntu: `service apache2 restart`
 *	CentOS: `service httpd restart`
 
-#### Related topics
+{:.ref-header}
+Related topics
 
 *	[Customize base directory paths (MAGE_DIRS)]({{ page.baseurl }}/config-guide/bootstrap/mage-dirs.html)
 *	[Set the Magento mode]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html)

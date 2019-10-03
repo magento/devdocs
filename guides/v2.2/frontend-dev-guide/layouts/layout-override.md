@@ -94,7 +94,8 @@ Although the layout overriding mechanism provides great customization flexibilit
 *	Changing block name or alias. The name of a block should not be changed, and neither should the alias of a block remaining in the same parent element.
 *	Changing handle inheritance. For example, you should not change the page type parent handle.
 
-### Related topics:
+{:.ref-header}
+Related topics:
 
 *	[Extend a layout]({{ page.baseurl }}/frontend-dev-guide/layouts/layout-extend.html)
 *	[Create a theme]({{ page.baseurl }}/frontend-dev-guide/themes/theme-create.html)

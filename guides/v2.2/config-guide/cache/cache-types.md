@@ -71,5 +71,6 @@ where
 *   `<backend_type>` is the low-level backend cache type. Specify the name of a class that is compatible with [Zend_Cache_Backend](http://framework.zend.com/apidoc/1.7/Zend_Cache/Zend_Cache_Backend/Zend_Cache_Backend.html){:target="_blank"} and that implements [Zend_Cache_Backend_Interface](http://framework.zend.com/apidoc/1.6/Zend_Cache/Zend_Cache_Backend/Zend_Cache_Backend_Interface.html){:target="_blank"}.
 *   `<backend_option>`, `<backend_option_value>` are the name and value of options the Magento framework passes as an associative array to backend cache upon its creation.
 
-### Next step
+{:.ref-header}
+Related topics
 [Low-level cache options]({{ page.baseurl }}/config-guide/cache/cache-options.html)

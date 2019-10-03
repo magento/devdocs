@@ -267,5 +267,6 @@ Result:
 
 <pre class="no-copy">web/unsecure/base_url - http://example-for-store.com/</pre>
 
-#### Related topic
+{:.ref-header}
+Related topic
 [Deployment general overview]({{ page.baseurl }}/config-guide/deployment/pipeline/)

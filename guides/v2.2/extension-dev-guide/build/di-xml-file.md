@@ -394,7 +394,8 @@ Plugins for the Preference:
 +-----------------------------------------------------+---------+--------+
 ```
 
-## Related topics
+{:.ref-header}
+Related topics
 
 * [ObjectManager]({{ page.baseurl }}/extension-dev-guide/object-manager.html)
 * [Dependency injection]({{ page.baseurl }}/extension-dev-guide/depend-inj.html)

@@ -156,7 +156,8 @@ If you need to enable the loading of default Magento JS components and widget in
 $(mage.apply);
 ```
 
-### Related topic
+{:.ref-header}
+Related topic
 
 - [JavaScript resources in Magento]({{ page.baseurl }}/javascript-dev-guide/javascript/js-resources.html)
 - [About AMD modules and RequireJS]({{ page.baseurl }}/javascript-dev-guide/javascript/js-resources.html)

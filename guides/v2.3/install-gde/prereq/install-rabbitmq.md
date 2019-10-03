@@ -130,7 +130,8 @@ To configure support for SSL, edit the `ssl` and `ssl_options` parameters in the
 
 After you have connected Magento and RabbitMQ, you must start the message queue consumers. See [Configure message queues]({{page.baseurl}}/config-guide/mq/manage-mysql.html) for details.
 
-### Related topics
+{:.ref-header}
+Related topics
 
 *	[Installing optional software]({{page.baseurl}}/install-gde/prereq/optional.html)
 *	[Apache]({{page.baseurl}}/install-gde/prereq/apache.html)

@@ -78,7 +78,8 @@ Log in to [Admin](https://glossary.magento.com/admin). Click **Sales** > **Credi
 ## Congratulations! You've finished.
 {:.no_toc}
 
-## Related topics
+{:.ref-header}
+Related topics
 
 * [Getting Started with Magento Web APIs]({{ page.baseurl }}/get-started/bk-get-started-api.html)
 * [Create a configurable product Tutorial]({{ site.baseurl }}/guides/v2.2/rest/tutorials/configurable-product/config-product-intro.html)

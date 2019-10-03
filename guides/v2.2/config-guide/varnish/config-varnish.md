@@ -98,7 +98,8 @@ We know of the following issues with Varnish:
     }
     ```
 
-### Next step
+{:.ref-header}
+Related topics
 [Install Varnish]
 
 <!-- Link Definitions -->

@@ -289,13 +289,15 @@ File permissions and ownership must be consistent across development, build, and
     {:.bs-callout .bs-callout-info}
     If you choose this approach, you must set file system permissions and ownership every time you pull code from your build system (if the Magento file system owner or web server user are different on your build system).
 
-### For more information
+{:.ref-header}
+Related topics
 
 *   For a complete list of system-specific and sensitive settings and corresponding configuration paths, see [Sensitive and system-specific configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-sens.html).
 *   [config.php reference]({{ page.baseurl }}/config-guide/prod/config-reference-configphp.html) for detailed information about the shared configuration file
 *   [env.php reference]({{ page.baseurl }}/config-guide/prod/config-reference-envphp.html) for detailed information about the system-specific configuration file
 
-### Next steps
+{:.ref-header}
+Related topicss
 
 *	[Set up your development systems]({{ page.baseurl }}/config-guide/deployment/pipeline/development-system.html)
 *	[Set up your build system]({{ page.baseurl }}/config-guide/deployment/pipeline/build-system.html)

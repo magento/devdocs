@@ -57,7 +57,8 @@ To authenticate, you will need to generate [Magento authentication keys][] and a
 
 {% include install/auth-json.md %}
 
-## Next step
+{:.ref-header}
+Related topics
 
 After completing the tasks discussed on this page, see [Update installation dependencies][].
 

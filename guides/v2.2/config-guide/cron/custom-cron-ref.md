@@ -109,5 +109,6 @@ where:
 | `history_failure_lifetime` | Time (in minutes) that the record of failed cron jobs are kept in the database.                        |
 | `use_separate_process`     | Run this crongroup's jobs in a separate php process                                             |
 
-#### Related topic
+{:.ref-header}
+Related topic
 [Tutorial&mdash;configure custom cron jobs and cron groups]({{ page.baseurl }}/config-guide/cron/custom-cron-tut.html)

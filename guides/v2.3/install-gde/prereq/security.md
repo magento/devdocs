@@ -68,7 +68,8 @@ Depending on your security requirements, you might find it necessary to open por
 *	Ubuntu: [Ubuntu documentation page](https://help.ubuntu.com/community/IptablesHowTo)
 *	CentOS: [CentOS how-to](http://wiki.centos.org/HowTos/Network/IPTables).
 
-### Related topics:
+{:.ref-header}
+Related topics:
 
 *	[Apache]({{ page.baseurl }}/install-gde/prereq/apache.html)
 *	[PHP 7.1 or 7.2]({{page.baseurl}}/install-gde/prereq/php-centos-ubuntu.html)
