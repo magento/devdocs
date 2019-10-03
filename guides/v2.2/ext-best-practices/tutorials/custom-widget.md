@@ -8,17 +8,17 @@ contributor_link: https://www.atwix.com/
 Widgets provide powerful features in Magento 2, that are used to add dynamic or static content to store's pages.
 Here are the widgets that are available by default:
 
-- CMS Page Link
-- CMS Static Block
-- Catalog Category Link
-- Catalog New Products List
-- Catalog Product Link
-- Catalog Products List
-- Orders and Returns
-- Recently Compared Products
-- Recently Viewed Products
+-  CMS Page Link
+-  CMS Static Block
+-  Catalog Category Link
+-  Catalog New Products List
+-  Catalog Product Link
+-  Catalog Products List
+-  Orders and Returns
+-  Recently Compared Products
+-  Recently Viewed Products
 
-This tutorial shows you how to create and insert on the frontend your own widget.
+This tutorial shows you how to create and insert your own widget on the frontend.
 
 ## Step 1. Declaring the widget
 
@@ -49,16 +49,16 @@ We need to also add a dependency to **Magento_Widget** in the `module.xml` file.
 ...
 ```
 
-### Step 2. Adding widget's parameters
+### Step 2. Adding widget parameters
 
-As a parameter, we are able to use any of these available field types:
+As a parameter, we are able to use any of these field types:
 
-- text
-- select
-- multiselect
-- block
+-  text
+-  select
+-  multiselect
+-  block
 
-Let's add a text and a select field:
+Add a text and a select field:
 
 ```xml
 <widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -90,19 +90,19 @@ Let's add a text and a select field:
 
 ### Step 3. Check the widget
 
-After clearing the cache, the new widget `My New Widget` should be available while adding a widget.
+After clearing the cache, the new widget `My New Widget` should now be available.
 
 ![Custom Widget]({{ site.baseurl }}/common/images/ext-best-practices/custom-widget.png)
 
-Let's add it to the homepage, below the page content:
+To add it to the homepage, below the page content:
 
-Continuing after selecting the widget's type and the layout location, we should be able to see widget's options.
+After selecting the widget type and the layout location, we should be able to see the widget's options.
 
 ![Widget Options]({{ site.baseurl }}/common/images/ext-best-practices/custom-widget-options.png)
 
 ### Step 4. Create the block
 
-Going forward, we should create the block class that we provided on widget's initialization, that is responsible for
+Create the block class that we provided on the widget's initialization, responsible for
 rendering it on the frontend.
 
 > `OrangeCompany/Learning/Block/Widget/Test`
@@ -121,11 +121,11 @@ class Test extends Template implements BlockInterface
 
 ### Step 5. Create the template
 
-And finally, let's create the template that will be used for showing widget's data on the frontend.
+And finally, create the template that will be used for showing the widget's data on the frontend.
 
 > `OrangeCompany/Learning/view/frontend/templates/widget/test.phtml`
 
-```text
+```php
 <?php
 /** \Learning\GreetingMessage\Block\Widget\Tests $block */
 ?>
@@ -135,6 +135,6 @@ And finally, let's create the template that will be used for showing widget's da
 
 ## Result
 
-As result, the widget is shown on the frontend.
+The widget is now shown on the frontend.
 
 ![Widget Options]({{ site.baseurl }}/common/images/ext-best-practices/custom-widget-result.png)
