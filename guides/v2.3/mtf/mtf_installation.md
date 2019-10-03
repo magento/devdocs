@@ -77,7 +77,7 @@ Find the `mtf` directory.
 Open `<magento2_root_dir>/dev/tests/functional/vendor/magento/mtf/CHANGELOG.md`. The latest version in `CHANGELOG.md` is version of the FTF you installed.
 
 {:.ref-header}
-Related topicss {#mtf_install_next}
+Related topicss
 
 [Adjust the FTF configuration ]({{ page.baseurl }}/mtf/mtf_quickstart/mtf_quickstart_config.html)
 

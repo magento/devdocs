@@ -145,7 +145,7 @@ Management interfaces provide management functions that are not related to repos
 </table>
 
 {:.ref-header}
-Related topicsrelated-topics}
+Related topics
 
 - [Service contracts]({{ page.baseurl }}/extension-dev-guide/service-contracts/service-contracts.html)
 - [Configure services as web APIs]({{ page.baseurl }}/extension-dev-guide/service-contracts/service-to-web-service.html)

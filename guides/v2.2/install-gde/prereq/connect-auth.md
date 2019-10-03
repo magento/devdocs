@@ -14,7 +14,7 @@ functional_areas:
 {% include install/auth-tokens-get.md %}
 
 {:.ref-header}
-Related topics:
+Related topics
 
 *	Use your authentication keys to:
 

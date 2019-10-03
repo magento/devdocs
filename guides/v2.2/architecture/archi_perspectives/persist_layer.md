@@ -20,7 +20,7 @@ Any model that uses an EAV resource has its attributes spread out over a number 
 The `Customer`, `Catalog` and `Order` resource models use EAV attributes.
 
 {:.ref-header}
-Related topicsrelated}
+Related topics
 
 [Architectural diagrams]({{page.baseurl}}/architecture/archi_perspectives/arch_diagrams.html)
 [Architectural layers overview]({{page.baseurl}}/architecture/archi_perspectives/ALayers_intro.html)

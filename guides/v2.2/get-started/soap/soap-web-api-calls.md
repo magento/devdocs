@@ -89,7 +89,7 @@ $soapResponse = $soapClient->testModule1AllSoapAndRestV1Item($serviceArgs); ?>
 ```
 
 {:.ref-header}
-Related topicsrelated}
+Related topics
 
 * [OAuth-based authentication]({{ page.baseurl }}/get-started/authentication/gs-authentication-oauth.html)
 * [Service contracts]({{ page.baseurl }}/extension-dev-guide/service-contracts/service-contracts.html)

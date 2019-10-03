@@ -556,7 +556,7 @@ To configure SELinux and firewalld:
 Open a web browser and navigate to your site's base URL to [verify the installation.]({{page.baseurl }}/install-gde/install/verify.html)
 
 {:.ref-header}
-Related topics:
+Related topics
 
 *	[PHP](php-centos-ubuntu.html)
 *	[MySQL]({{page.baseurl }}/install-gde/prereq/mysql.html)

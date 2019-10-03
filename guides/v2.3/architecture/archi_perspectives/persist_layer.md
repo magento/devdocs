@@ -29,7 +29,7 @@ These files allow you to skip the progressive upgrade scripts and jump right to 
 Read more about writing [declarative XML schemas][].
 
 {:.ref-header}
-Related topicsrelated}
+Related topics
 
 [Architectural diagrams]({{page.baseurl}}/architecture/archi_perspectives/arch_diagrams.html)
 [Architectural layers overview]({{page.baseurl}}/architecture/archi_perspectives/ALayers_intro.html)

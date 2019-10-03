@@ -250,7 +250,7 @@ The preceding values for `Order` might not work in all cases. For more informati
 {% endcollapsible %}
 
 {:.ref-header}
-Related topics:
+Related topics
 
 *	[PHP&mdash;Ubuntu]({{page.baseurl }}/install-gde/prereq/php-centos-ubuntu.html#php-for-ubuntu)
 *	[PHP&mdash;CentOS]({{page.baseurl }}/install-gde/prereq/php-centos-ubuntu.html#php-for-centos)

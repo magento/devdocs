@@ -95,7 +95,7 @@ Although the layout overriding mechanism provides great customization flexibilit
 *	Changing handle inheritance. For example, you should not change the page type parent handle.
 
 {:.ref-header}
-Related topics:
+Related topics
 
 *	[Extend a layout]({{ page.baseurl }}/frontend-dev-guide/layouts/layout-extend.html)
 *	[Create a theme]({{ page.baseurl }}/frontend-dev-guide/themes/theme-create.html)

@@ -69,7 +69,7 @@ Depending on your security requirements, you might find it necessary to open por
 *	CentOS: [CentOS how-to](http://wiki.centos.org/HowTos/Network/IPTables).
 
 {:.ref-header}
-Related topics:
+Related topics
 
 *	[Apache]({{ page.baseurl }}/install-gde/prereq/apache.html)
 *	[PHP 7.1 or 7.2]({{page.baseurl}}/install-gde/prereq/php-centos-ubuntu.html)
