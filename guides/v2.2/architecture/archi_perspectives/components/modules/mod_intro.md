@@ -58,7 +58,7 @@ See [PHP Developer Guide][] for specific instructions on extending modules.
 See [Frontend Developer Guide][] for information on implementing themes and other components.
 
 {:.ref-header}
-Related topics {#arch-modules-related}
+Related topicsarch-modules-related}
 
 [Module dependencies][]
 

@@ -72,7 +72,7 @@ Web users interact with components of the presentation layer to select actions t
 Presentation layer components make calls to the service layer, which in turn sends requests to the [domain](https://glossary.magento.com/domain) layer.
 
 {:.ref-header}
-Related topics {#related}
+Related topicsrelated}
 
 [Architectural diagrams]({{page.baseurl}}/architecture/archi_perspectives/arch_diagrams.html)
 

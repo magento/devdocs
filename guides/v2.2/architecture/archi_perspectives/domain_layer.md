@@ -38,7 +38,7 @@ There are three primary ways of accessing a module's domain-layer code:
 Your strategy for calling another module's domain-layer code is highly dependent upon the unique configuration and needs of your system.
 
 {:.ref-header}
-Related topics {#related}
+Related topicsrelated}
 
 [Architectural diagrams]({{page.baseurl}}/architecture/archi_perspectives/arch_diagrams.html)
 

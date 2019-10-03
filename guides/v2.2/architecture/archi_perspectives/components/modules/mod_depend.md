@@ -155,6 +155,6 @@ return [
 ```
 
 {:.ref-header}
-Related topics {#m2arch-module-related}
+Related topicsm2arch-module-related}
 
 [Module overview]({{page.baseurl}}/architecture/archi_perspectives/components/modules/mod_intro.html)

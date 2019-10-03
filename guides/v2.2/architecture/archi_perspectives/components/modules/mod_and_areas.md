@@ -55,6 +55,6 @@ After the area name, the URI segment specifies the *frontname*. When an HTTP req
 Note that only the **execute()** method of any given controller is executed.
 
 {:.ref-header}
-Related topics {#m2arch-module-related}
+Related topicsm2arch-module-related}
 
 [Module overview]({{page.baseurl}}/architecture/archi_perspectives/components/modules/mod_intro.html)

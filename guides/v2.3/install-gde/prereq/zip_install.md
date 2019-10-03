@@ -93,7 +93,7 @@ The Magento software extracts to the directory you created. After the file has e
 {% include install/file-system-perms-before_22.md %}
 
 {:.ref-header}
-Related topics {#next-step-section}
+Related topicsnext-step-section}
 
 Install the Magento software:
 

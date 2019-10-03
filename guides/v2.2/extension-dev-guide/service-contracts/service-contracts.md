@@ -39,7 +39,7 @@ Eventually, you will be able to use different storage technologies for different
 Backward compatibility can be indicated by the use of `@api`. For more information, see [Backward compatibility]({{ page.baseurl }}/contributor-guide/backward-compatible-development/).
 
 {:.ref-header}
-Related topics {#related-topics}
+Related topicsrelated-topics}
 
 - [Service contract design patterns]({{ page.baseurl }}/extension-dev-guide/service-contracts/design-patterns.html)
 - [Configure services as webAPIs]({{ page.baseurl }}/extension-dev-guide/service-contracts/service-to-web-service.html)

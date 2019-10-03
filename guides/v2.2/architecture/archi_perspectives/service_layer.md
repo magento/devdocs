@@ -71,7 +71,7 @@ Another module can change this interface file by specifying a different class na
 However, if the client code uses the interface definition only, no class change is necessary.
 
 {:.ref-header}
-Related topics {#related}
+Related topicsrelated}
 
 [Architectural diagrams]({{page.baseurl}}/architecture/archi_perspectives/arch_diagrams.html)
 [Architectural layers overview]({{page.baseurl}}/architecture/archi_perspectives/ALayers_intro.html)
