@@ -74,7 +74,7 @@ If you do not meet all requirements, contact your {{site.data.var.ece}} account 
    magento-cloud blackfire:setup
    ```
 
-   The `blackfire:setup` command automatically configures Blackfire   on all environments and activates automated profiling each time   you apply and commit changes to an environment. If prompted,   provide the {{site.data.var.ece}} project ID and your [Blackfire   client credentials](https://blackfire.io/my/settings/credentials).
+   The `blackfire:setup` command automatically configures Blackfire on all environments and activates automated profiling each time you apply and commit changes to an environment. If prompted, provide the {{site.data.var.ece}} project ID and your [Blackfire client credentials](https://blackfire.io/my/settings/credentials).
 
 ### Enable Blackfire on local workstation
 
@@ -152,7 +152,7 @@ To create a snapshot in a new branch:
    magento-cloud environment:checkout <environment-ID>
    ```
 
-   Also, you can create a new branch using the `magento-cloud   environment:branch` command.
+   Also, you can create a new branch using the `magento-cloud environment:branch` command.
 
 1. Back up the environment using a snapshot.
 
@@ -186,7 +186,7 @@ To modify the `.magento.app.yaml` file:
    git add -A && git commit -m "<message>" && git push magento
    ```
 
- If errors display during deployment, open the `.magento.app.yaml`   file and check the syntax, such as indentation and spelling, and   try again.
+If errors display during deployment, open the `.magento.app.yaml` file and check the syntax, such as indentation and spelling, and try again.
 
 ### Changing from the default route {#route}
 
@@ -299,13 +299,13 @@ To prepare log output for Blackfire support:
 1. Create a temporary log file.
 
    ```bash
-   magento-cloud variable:create --name php:blackfire.log_fil   --value /tmp/blackfire.log
+   magento-cloud variable:create --name php:blackfire.log_fil --value /tmp/blackfire.log
    ```
 
 1. Set the logging level.
 
    ```bash
-   magento-cloud variable:create --name php:blackfire.log_level   --value 4
+   magento-cloud variable:create --name php:blackfire.log_level --value 4
    ```
 
 1. Start a profile/build again and collect the logs.

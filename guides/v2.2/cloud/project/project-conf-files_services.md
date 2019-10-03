@@ -101,7 +101,7 @@ The current default storage amount per project is 5GB, or 5120MB. You can distri
 
 ## Service relationships
 
-In {{ site.data.var.ece }} projects, service [*relationships*]({{ page.baseurl }}/cloud/project/project-conf-files_magento-app.html#relationships) configured in the `.magento.app.yaml` file determine which services are available to your application. The service must be configured on your {{ site.data.var.ece }} infrastructure and enabled in the [services.yaml]({{ page.baseurl}}/cloud/project/project-conf-files_services.html) file.
+In {{ site.data.var.ece }} projects, service [*relationships*]({{ page.baseurl }}/cloud/project/project-conf-files_magento-app.html#relationships) configured in the `.magento.app.yaml` file determine which services are available to your application.
 
 You can retrieve the configuration data for all service relationships from the [`$MAGENTO_CLOUD_RELATIONSHIPS`]({{page.baseurl}}/cloud/env/environment-vars_cloud.html) environment variable. The configuration data includes service name, type, and version along with any required connection details such as port number and login credentials.
 
@@ -142,7 +142,7 @@ To verify relationships in remote environments:
 
 1. Use SSH to log in to the remote environment.
 
-1. List the relationships configuration data for all services configured in the environment:
+1. List the relationships configuration data for all services configured in the environment.
 
    ```bash
    echo $MAGENTO_CLOUD_RELATIONSHIPS | base64 -d | json_pp

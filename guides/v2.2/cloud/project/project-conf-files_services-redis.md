@@ -16,7 +16,7 @@ We support Redis versions 3.2 and 5.0. See [Configure Redis]({{ page.baseurl }}/
 {:.procedure}
 To enable Redis:
 
-1. Add the required name, type, and version to the `.magento/services.yaml` file.
+1. Add the required name and type to the `.magento/services.yaml` file.
 
   ```yaml
   myredis:

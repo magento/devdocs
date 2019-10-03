@@ -18,7 +18,7 @@ If you prefer using an existing AMQP-based service, like RabbitMQ, instead of re
 {:.procedure}
 To enable RabbitMQ:
 
-1. Add the required name, type, and version to the `.magento/services.yaml` file along with the the installed RabbitMQ version and allocated disk space in MB:
+1. Add the required name, type, and disk value (in MB) to the `.magento/services.yaml` file along with the the installed RabbitMQ version.
 
    ```yaml
    rabbitmq:
