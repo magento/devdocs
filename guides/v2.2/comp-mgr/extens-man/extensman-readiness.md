@@ -21,7 +21,6 @@ To start, click either **Start Readiness Check** or **Next**. A sample follows.
 
 After the readiness check completes, see one of the following:
 
-*	[Readiness check success]({{ page.baseurl }}/comp-mgr/extens-man/extensman-readiness-success.html)
-*	[Readiness check failure]({{ page.baseurl }}/comp-mgr/extens-man/extensman-readiness-fail.html)
-*	[Readiness check with multiple extension updates]({{ page.baseurl }}/comp-mgr/extens-man/extensman-readiness-multi.html)
-
+* [Readiness check success]({{ page.baseurl }}/comp-mgr/extens-man/extensman-readiness-success.html)
+* [Readiness check failure]({{ page.baseurl }}/comp-mgr/extens-man/extensman-readiness-fail.html)
+* [Readiness check with multiple extension updates]({{ page.baseurl }}/comp-mgr/extens-man/extensman-readiness-multi.html)

@@ -554,21 +554,22 @@ Previously, when you reopened these categories, no checkboxes were checked.  *Fi
 
 <!-- ENGCOM-3388 -->* The code comment that describes the `Use in Layered Navigation: Filterable (no results)` property for the price filter has been made more informative. *Fix submitted by [Vladyslav Podorozhnyi](https://github.com/vpodorozh) in pull request [19044](https://github.com/magento/magento2/pull/19044)*. [GitHub-14007](https://github.com/magento/magento2/issues/14007)
 
-<!-- MAGETWO-97000 -->* Layered navigation for Elasticsearch now includes all product sizes. If the **Filterable (with results)** option is set for a product attribute, then:
+<!-- MAGETWO-97000 -->
+*  Layered navigation for Elasticsearch now includes all product sizes. If the **Filterable (with results)** option is set for a product attribute, then:
 
-	* Layered navigation includes only those filters for which matching products can be found.
+   *  Layered navigation includes only those filters for which matching products can be found.
 
-	* Any attribute value that already applies to all products shown in the list should still appear as an available filter.
+   *  Any attribute value that already applies to all products shown in the list should still appear as an available filter.
 
-	* Attribute values with a count of zero (0) product matches are omitted from the list of available filters.
+   *  Attribute values with a count of zero (0) product matches are omitted from the list of available filters.
 
 <!-- MAGETWO-85162 -->* You can now filter products based on color.
 
 ### Magento Shipping
 
-* Updating an order destination prior to creating a shipment  now results in the shipment being sent to the new destination.
+*  Updating an order destination prior to creating a shipment  now results in the shipment being sent to the new destination.
 
-* Shipments that contain the same item across multiple packages will now correctly update the shipped amount.
+*  Shipments that contain the same item across multiple packages will now correctly update the shipped amount.
 
 ### Newsletter
 
@@ -720,7 +721,7 @@ Previously, when you reopened these categories, no checkboxes were checked.  *Fi
 
 <!-- MAGETWO-86396 -->* Searching for a synonym that contains a hyphen and number now returns the same results as any other search term in the group
 
-<!-- ENGCOM-3811 -->* A mistyped `saveHandler` has been removed from the CatalogSearch indexer declaration. 	*Fix submitted by [Dmytro Cheshun](https://github.com/dmytro-ch) in pull request [19984](https://github.com/magento/magento2/pull/19984)*. [GitHub-19982](https://github.com/magento/magento2/issues/19982)
+<!-- ENGCOM-3811 -->* A mistyped `saveHandler` has been removed from the CatalogSearch indexer declaration. *Fix submitted by [Dmytro Cheshun](https://github.com/dmytro-ch) in pull request [19984](https://github.com/magento/magento2/pull/19984)*. [GitHub-19982](https://github.com/magento/magento2/issues/19982)
 
 ### Shipping
 

@@ -196,7 +196,7 @@ Authorization Bearer <customer token>
 {
 "addressInformation": {
   "shipping_address": {
-  	"region": "California",
+    "region": "California",
     "region_id": 12,
     "region_code": "CA",
     "country_id": "US",
@@ -211,7 +211,7 @@ Authorization Bearer <customer token>
     "telephone": "415-555-1212"
   },
   "billing_address": {
-  	"region": "California",
+   "region": "California",
     "region_id": 12,
     "region_code": "CA",
     "country_id": "US",
