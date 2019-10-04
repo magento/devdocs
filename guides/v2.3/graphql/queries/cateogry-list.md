@@ -14,7 +14,7 @@ The `categoryList` query supports the following types of filters. You can specif
 The query returns a `CategoryTree` object. The top level of the `CategoryTree` object provides details about the queried category. This object includes the `children` attribute, which contains an array of its immediate subcategories. To return multiple category levels in a single call, define the response so that it contains up to ten nested `children` options.
 
 {:.bs-callout-info}
-You cannot return the entire category tree if it contains more than 10 sublevels unless the `queryDepth` parameter in the GraphQL `di.xml` file has been reconfigured.
+You cannot return the entire category tree if it contains more than ten sublevels unless the `queryDepth` parameter in the GraphQL `di.xml` file has been reconfigured.
 
 Use the `breadcrumbs` attribute to return information about the parent categories of the queried category.
 
@@ -296,7 +296,7 @@ Attribute | Data type | Description
 
 ### FilterMatchTypeInput object
 
-Use the `FilterMatchTypeInput` object to construct a filter that match the specified display name.
+Use the `FilterMatchTypeInput` object to construct a filter that matches the specified display name.
 
 Attribute | Data type | Description
 --- | --- | ---
