@@ -36,7 +36,7 @@ This release contains the following major PSD-related changes:
 
 * The **Braintree payment method now complies with PSD2 regulations**. Its core integration API has been upgraded to the latest JavaScript SDK v3 API, which is a requirement for supporting native Braintree 3D Secure 2.0 adoption. Braintree transactions are now also verified by using the native Braintree 3D Secure 2.0 service. <!--- MAGETWO-99607 MC 17628 -->
 
-* Authorize.net now provides the ability, through the `cardholderAuthentication` request field, to make 3D Secure verification through third-party services such as CardinalCommerce. Starting with this release, **Authorize.net Accept.js integration will support 3DS 2.0 through CardinalCommerce**. <!--- MAGETWO-99737 -->
+* Authorize.net now provides the ability, through the `cardholderAuthentication` request field, to make 3D Secure verification through third-party services such as CardinalCommerce. Starting with this release, **Authorize.net accept.js integration will support 3DS 2.0 through CardinalCommerce**. <!--- MAGETWO-99737 -->
 
 <!--- MC-18237 -->
 * The Cybersource and eWay payment modules have been deprecated in this release to comply with PSD2 SCA regulation, which took effect on September 14, 2019, or shortly thereafter. Use the official Marketplace extensions for these features instead.
@@ -82,7 +82,7 @@ In addition to security enhancements, this release contains the following functi
 ### Bundle products
 
 <!-- MAGETWO-99952 -->
-* The Add to Cart button is no longer visible to users who do not have Add to Cart category permissions. Previously, guest users could add items to the cart without being granted Add to Cart permission.
+* The **Add to Cart** button is no longer visible to users who do not have Add to Cart category permissions. Previously, guest users could add items to the cart without being granted Add to Cart permission.
 
 <!-- MAGETWO-99787 -->
 * Magento now issues a single request to the server when you change the shipping address for an order to a non-default address.Previously, Magento issued multiple requests to the server when you changed the shipping address, which negatively affected performance.
@@ -116,7 +116,7 @@ In addition to security enhancements, this release contains the following functi
 * Magento now submits an order only once when an order is submitted using **Enter**. Previously, Magento submitted several `payment-information` requests, and several orders with the same quote ID were placed.
 
 <!-- MC-17883 -->
-* The Review & Payment section of the One Page checkout no longer displays custom customer attribute code when a guest checks out.
+* The Review & Payment section of the One Page Checkout no longer displays custom customer attribute code when a guest checks out.
 
 <!-- MAGETWO-98462 -->
 * You can now add product quantities that require four digits to the shopping cart.Previously, Magento could not add four-digit product quantities to the cart.
@@ -223,10 +223,10 @@ In addition to security enhancements, this release contains the following functi
 <!-- ENGCOM-5355 -->
 * The **Apply** button now functions as expected when you create a new order and apply a coupon from the Admin. Previously, clicking **Apply** removed the coupon instead of applying it. *Fix submitted by Prakash Prajapati in pull request [23332](https://github.com/magento/magento2/pull/23332)*. [GitHub-23238](https://github.com/magento/magento2/issues/23238)
 
-### cron
+### Cron
 
 <!-- ENGCOM-5365 -->
-* Cron jobs are no longer duplicated. Previously, after a cron job was run, Magento cleared the cache and processed the job again. *Fix submitted by Ihor Sviziev in pull request [23439](https://github.com/magento/magento2/pull/23439)*. [GitHub-21380](https://github.com/magento/magento2/issues/21380)
+* Cron jobs are no longer duplicated. Previously, after a `cron` job was run, Magento cleared the cache and processed the job again. *Fix submitted by Ihor Sviziev in pull request [23439](https://github.com/magento/magento2/pull/23439)*. [GitHub-21380](https://github.com/magento/magento2/issues/21380)
 
 <!-- MAGETWO-18834 -->
 * Consumers run from `cron` no longer create deadlocks in the database.
@@ -234,16 +234,16 @@ In addition to security enhancements, this release contains the following functi
 ### Customer
 
 <!-- MAGETWO-86624 -->
-* An admin user with full permissions for all website scopes can now see any country listed in the Countries column or filter in the Customers list. Previously, if one of the website scopes did not allow a country, an administrator with full permission could not see it.
+* An administrator with full permission for all website scopes can now see any country listed in the Countries column or filter in the Customers list. Previously, if one of the website scopes did not allow a country, an administrator with full permission could not see it.
 
 <!-- MAGETWO-99516 -->
-* The account status list now updates as expected to correctly indicate the account lock status after cron is run. Previously, this list displayed status as unlocked only.
+* The account status list now updates as expected to correctly indicate the account lock status after `cron` is run. Previously, this list displayed status as unlocked only.
 
 <!-- MAGETWO-99492 -->
 * You can now create and successfully save a customer attribute when the **Use in Filter Options** and **Use in Search Options** settings are set to **no**. Previously, Magento did not display these attributes, and they could not be edited.
 
 <!-- MC-17200 -->
-* You can now create an account as a guest when the address contains custom attributes. Previously, Magento threw a fatal error when you tried to create an account under these circumstances.[GitHub-22952](https://github.com/magento/magento2/issues/22952)
+* You can now create an account as a guest when the address contains custom attributes. Previously, Magento threw a fatal error when you tried to create an account under these circumstances. [GitHub-22952](https://github.com/magento/magento2/issues/22952)
 
 <!-- ENGCOM-5414 -->
 * Magento no longer displays editable text fields for customer phone numbers and zip codes if customers have not saved an address. *Fix submitted by Prakash Prajapati in pull request [23614](https://github.com/magento/magento2/pull/23614)*. [GitHub-23467](https://github.com/magento/magento2/issues/23467)
@@ -280,7 +280,7 @@ In addition to security enhancements, this release contains the following functi
 * You can now edit an order that contains a custom address attribute on its order form. Previously, Magento threw this error if you tried to edit an order with a custom address attribute: `We can't update the order address right now`.
 
 <!-- MC-17492 17813-->
-* Starting and ending spaces are now trimmed from phone numbers before JavaScript validation. Previously, Magento did not trim these spaces and displayed this error: `*Phone Number* contains non-numeric characters`.
+* Starting and ending spaces are now trimmed from phone numbers before JavaScript validation. Previously, Magento did not trim these spaces, and displayed this error: `*Phone Number* contains non-numeric characters`.
 
 ### Email
 
@@ -392,13 +392,15 @@ In addition to security enhancements, this release contains the following functi
 
 * The **Braintree payment method now complies with PSD2 regulations**. Its core integration API has been upgraded to the latest JavaScript SDK v3 API, which is a requirement for supporting native Braintree 3D Secure 2.0 adoption. Braintree transactions are now also verified by using the native Braintree 3D Secure 2.0 service. <!--- MAGETWO-99607 MC 17628 -->
 
-* Authorize.net now provides the ability, through the `cardholderAuthentication` request field, to make 3D Secure verification through third-party services such as CardinalCommerce. Starting with this release, **Authorize.net Accept.js integration will support 3DS 2.0 through CardinalCommerce**. <!--- MAGETWO-99737 -->
-<!--- MC-18237 -->
+* Authorize.net now provides the ability, through the `cardholderAuthentication` request field, to make 3D Secure verification through third-party services such as CardinalCommerce. Starting with this release, **Authorize.net accept.js integration will support 3DS 2.0 through CardinalCommerce**. <!--- MAGETWO-99737 -->
 
+<!--- MC-18237 -->
 * The Cybersource and eWay payment modules have been deprecated in this release to comply with PSD2 SCA regulation, which takes effect on September 14, 2019, or shortly thereafter. Use the official Marketplace extensions for these features instead.
 
+#### Other payment issues
+
 <!-- MAGETWO-16590 -->
-* The Transactions tab now displays the correct status for a capture transaction for an order that was placed with the Authorize.net `Accept.js` payment method.
+* The Transactions tab now displays the correct status for a capture transaction for an order that was placed with the Authorize.net `accept.js` payment method.
 
 <!-- MC-17358 -->
 * Magento now displays a more informative error message (`CVV verification failed`) when you enter an invalid CVV code while using the Braintree payment method. Previously, Magento displayed a generic error message.
@@ -422,7 +424,7 @@ In addition to security enhancements, this release contains the following functi
 * You can now cancel orders placed with PayPal Express even after authorization has expired.
 
 <!-- MAGETWO-99221 -->
-* Customers can now place the order for virtual products with a zero subtotal checkout payment after entering address information. Previously, customers could not place an order for virtual products with a zero subtotal checkout payment if they modified their address, and Magento displayed this message: `The requested Payment Method is not available`.
+* Customers can now place the order for virtual products with a zero subtotal after entering address information. Previously, customers could not place an order for virtual products with a zero subtotal if they modified their address, and Magento displayed this message: `The requested Payment Method is not available`.
 
 <!-- MC-19610 -->
 * Magento no longer places an order if a JavaScript error occurs when a customer clicks **Place order** using Braintree as the payment method.
@@ -599,9 +601,13 @@ This release includes substantial community contributions: over 100 GitHub issue
 
 The following table identifies contributions from our community members. This table lists the external pull requests, the GitHub issue number associated with it (if available), and the community member who contributed the pull request.
 
+{% include release-notes/engcomm-2-2-10-issues.md %}
+
 ### Partner contributions
 
 The following table highlights contributions made by Partners. This table lists the Partner who contributed the pull request, the external pull request, and the GitHub issue number associated with it (if available).
+
+{% include release-notes/engcomm-2-2-10-partner.md %}
 
 ### System requirements
 
