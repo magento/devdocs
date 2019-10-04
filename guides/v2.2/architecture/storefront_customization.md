@@ -33,7 +33,8 @@ Delivering a sharply different shopping experience than the default Magento inst
 {:.bs-callout .bs-callout-tip}
  Any customization of your storefront will work optimally, and provide the easiest path for later upgrades, if you follow the best practice of consistently compartmentalizing code by type. For example, keep all HTML in [PHTML](https://glossary.magento.com/phtml) files; keep all JavaScript in JavaScript files.
 
-### Related topics
+{:.ref-header}
+Related topics
 
 [Frontend Developer Guide]({{page.baseurl}}/frontend-dev-guide/bk-frontend-dev-guide.html)
 

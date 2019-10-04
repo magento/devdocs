@@ -134,7 +134,8 @@ Elasticsearch 6.x requires JDK 1.8 or higher. Elasticsearch 2.x requires JDK 1.7
 
 For additional information, see [Elasticsearch documentation][]
 
-### Next
+{:.ref-header}
+Next step
 
 * [Configure nginx and Elasticsearch]({{ page.baseurl }}/config-guide/elasticsearch/es-config-nginx.html)
 * [Configure Apache and Elasticsearch]({{ page.baseurl }}/config-guide/elasticsearch/es-config-apache.html)

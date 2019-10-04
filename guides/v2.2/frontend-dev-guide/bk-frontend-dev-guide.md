@@ -60,7 +60,8 @@ To use this guide, you must be familiar with:
 * PHTML, PHP (Basic)
 * Responsive Web Design (RWD)
 
-#### Related topics:
+{:.ref-header}
+Related topics
 
 * [Themes]({{ page.baseurl }}/frontend-dev-guide/themes/theme-general.html)
 * [Magento UI library]({{ page.baseurl }}/frontend-dev-guide/css-topics/theme-ui-lib.html)

@@ -17,7 +17,7 @@
 
 1.  Click **Next**.
 
-#### General module configuration options   {#instgde-install-magento-web-step4-depend1}
+### General module configuration options   {#instgde-install-magento-web-step4-depend1}
 
 Modules are listed in **Advanced Modules Configuration** in alphabetical order; the order has nothing to do with dependencies.
 
@@ -37,7 +37,7 @@ The following figure shows an example of disabling the `Magento_GoogleAnalytics`
 
 ![Disabling a module]({{ site.baseurl }}/common/images/install_wizard_disable-google.png)
 
-#### Module dependency errors   {#instgde-install-magento-web-step4-depend2}
+### Module dependency errors   {#instgde-install-magento-web-step4-depend2}
 
 A dependency error occurs when two inter-dependent modules are disabled at the same time.
 

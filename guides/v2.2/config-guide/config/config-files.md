@@ -119,7 +119,8 @@ That is, the file system, database, other storage merges the configuration files
 *  [Framework\Config\ScopeListInterface]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Config/ScopeListInterface.php), which returns a list of scopes.
 *  [Framework\Config\ValidationStateInterface]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Config/ValidationStateInterface.php), which retrieves the validation state.
 
-#### Related topics
+{:.ref-header}
+Related topics
 
  *  [Create or extend configuration types]({{ page.baseurl }}/config-guide/config/config-create.html)
  *  [Magento's deployment configuration]({{ page.baseurl }}/config-guide/config/config-php.html)

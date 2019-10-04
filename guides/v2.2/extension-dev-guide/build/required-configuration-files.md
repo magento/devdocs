@@ -59,6 +59,7 @@ If the module is a service that may call an API, or does some other work that is
 
 Keep in mind that you might be able to handle your module's configuration solely with configuration files at the top level of your module's `etc` directory, but the nested directory is a useful way to keep the configuration neatly compartmentalized.
 
-#### Next
+{:.ref-header}
+Next step
 
 [Create your component file structure]({{ page.baseurl }}/extension-dev-guide/build/module-file-structure.html)

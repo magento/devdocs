@@ -55,7 +55,8 @@ If an [extension](https://glossary.magento.com/extension) has its own tables, an
 
 3. Add the name of the newly created class to the delta mode section of `config.xml`
 
-## Related topics
+{:.ref-header}
+Related topics
 
 * [Data that needs to be migrated manually]({{ page.baseurl }}/migration/migration-manually.html)
 

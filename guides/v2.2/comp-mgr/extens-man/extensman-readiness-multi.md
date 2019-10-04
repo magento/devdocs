@@ -68,5 +68,7 @@ In the event of failure, see one of the following sections:
 
 {% endcollapsible %}
 
-#### Next step
+{:.ref-header}
+Next step
+
 [Step 2. Backup]({{ page.baseurl }}/comp-mgr/extens-man/extensman-backup.html)
