@@ -116,15 +116,13 @@ Enter `exit` at the `mysql>` prompt to exit.
 
 To install or upgrade MySQL, see [MySQL]({{page.baseurl}}/install-gde/prereq/mysql.html).
 
-#### Next step
+{:.ref-header}
+Related topics
 
-[Choose how to install the Magento software]({{page.baseurl}}/install-gde/bk-install-guide.html)
-
-#### Related topics
-
-* [MySQL]({{page.baseurl}}/install-gde/prereq/mysql.html)
-* [Apache]({{page.baseurl}}/install-gde/prereq/apache.html)
-* [PHP&mdash;Ubuntu]({{page.baseurl}}/install-gde/prereq/php-centos-ubuntu.html#php-for-ubuntu)
-* [PHP&mdash;CentOS]({{page.baseurl}}/install-gde/prereq/php-centos-ubuntu.html#php-for-centos)
-* [Installing optional software]({{page.baseurl}}/install-gde/prereq/optional.html)
-* [How to get the Magento software]({{ page.baseurl }}/install-gde/bk-install-guide.html)
+*  [Choose how to install the Magento software]({{page.baseurl}}/install-gde/bk-install-guide.html)
+*  [MySQL]({{page.baseurl}}/install-gde/prereq/mysql.html)
+*  [Apache]({{page.baseurl}}/install-gde/prereq/apache.html)
+*  [PHP&mdash;Ubuntu]({{page.baseurl}}/install-gde/prereq/php-centos-ubuntu.html#php-for-ubuntu)
+*  [PHP&mdash;CentOS]({{page.baseurl}}/install-gde/prereq/php-centos-ubuntu.html#php-for-centos)
+*  [Installing optional software]({{page.baseurl}}/install-gde/prereq/optional.html)
+*  [How to get the Magento software]({{ page.baseurl }}/install-gde/bk-install-guide.html)

@@ -455,23 +455,23 @@ In addition to security enhancements, this release contains the following functi
 
 <!-- MAGETWO-98843 -->
 
-* Added support for [Zookeeper](https://php.net/manual/en/book.zookeeper.php) and flock lock providers. We've also added new options to configure locks during installation:
+*  Added support for [Zookeeper](https://php.net/manual/en/book.zookeeper.php) and flock lock providers. We've also added new options to configure locks during installation:
 
-	* `--lock-provider=LOCK-PROVIDER` Lock provider name
+   *  `--lock-provider=LOCK-PROVIDER` Lock provider name
 
-	* `--lock-db-prefix=LOCK-DB-PREFIX` Installation specific lock prefix to avoid lock conflicts
+   *  `--lock-db-prefix=LOCK-DB-PREFIX` Installation specific lock prefix to avoid lock conflicts
 
-	* `--lock-zookeeper-host=LOCK-ZOOKEEPER-HOST`  Host and port to connect to Zookeeper cluster. For example, 127.0.0.1:2181
+   *  `--lock-zookeeper-host=LOCK-ZOOKEEPER-HOST`  Host and port to connect to Zookeeper cluster. For example, 127.0.0.1:2181
 
-	* `--lock-zookeeper-path=LOCK-ZOOKEEPER-PATH` The path where Zookeeper will save locks. The default path is /magento/locks
+   *  `--lock-zookeeper-path=LOCK-ZOOKEEPER-PATH` The path where Zookeeper will save locks. The default path is /magento/locks
 
-	* `--lock-file-path=LOCK-FILE-PATH` The path where file locks will be saved.
+   *  `--lock-file-path=LOCK-FILE-PATH` The path where file locks will be saved.
 
-	See [Configure the lock provider]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-lock.html).
+   See [Configure the lock provider]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-lock.html).
 
 <!-- ENGCOM-4660 -->
 
-* `crontab` now updates all currency rates daily as expected. Previously, `crontab` updated only a subset of the enabled currencies. *Fix submitted by Denis Papec in pull request [18980](https://github.com/magento/magento2/pull/18980)*. [GitHub-18580](https://github.com/magento/magento2/issues/18580)
+*  `crontab` now updates all currency rates daily as expected. Previously, `crontab` updated only a subset of the enabled currencies. *Fix submitted by Denis Papec in pull request [18980](https://github.com/magento/magento2/pull/18980)*. [GitHub-18580](https://github.com/magento/magento2/issues/18580)
 
 ### Customer custom attributes
 

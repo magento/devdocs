@@ -13,7 +13,7 @@ Template literals can contain expressions which will be evaluated in the current
 
 Template literals allow UI Components to easily assign dynamic values to class properties. More specifically, they provide an integration layer between a particular KnockoutJS context and a JavaScript class.
 
-### The `defaults` Class Property
+## The `defaults` Class Property
 
 UI Components are [associated with JavaScript classes]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uiclass_concept.html) to handle behavior on the client side. These should extend one of the core classes to provide a base level of functionality. Inside the child class, a `defaults` property can be provided.
 
@@ -26,7 +26,7 @@ As a result, every `defaults` child property is handled with what could be viewe
 
 This part is important because it means that JavaScript classes that extend `Class` (`magento/module-ui/view/base/web/js/lib/core/class.js`) can use the `defaults` property to assign properties to the class itself and leverage template literals during that process without any work on your part.
 
-#### The `:` separator
+### The `:` separator
 
 Certain properties of the `defaults` object are processed by an additional core JavaScript class: `links.js` (located: `magento/module-ui/view/base/web/js/lib/core/element/links.js`). The object keys in `defaults` are:
 

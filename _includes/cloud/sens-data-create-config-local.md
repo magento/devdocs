@@ -1,4 +1,5 @@
-#### To create and transfer `config.local.php`:
+{:.procedure}
+To create and transfer `config.local.php`:
 
 1.  On your local workstation, find the integration server SSH URL.
 

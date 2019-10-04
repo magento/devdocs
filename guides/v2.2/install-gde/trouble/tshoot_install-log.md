@@ -27,16 +27,16 @@ To resolve the issue, change the value of `open_basedir` and restart the web ser
 
 If you're not sure how to change this value, use the following steps:
 
-1.	If you haven't already done so, create [phpinfo.php]({{ page.baseurl }}/install-gde/prereq/optional.html#install-optional-phpinfo).
-2.	Enter the following [URL](https://glossary.magento.com/url) in your browser's address or location field:
+1. If you haven't already done so, create [phpinfo.php]({{ page.baseurl }}/install-gde/prereq/optional.html#install-optional-phpinfo).
+1. Enter the following [URL](https://glossary.magento.com/url) in your browser's address or location field:
 
-	<code>http://&lt;your web server IP or hostname>/&lt;path to docroot>/phpinfo.php</code>
+   <code>http://&lt;your web server IP or hostname>/&lt;path to docroot>/phpinfo.php</code>
 
-3.	Look for the location of `php.ini`.
+1. Look for the location of `php.ini`.
 
-	`php.ini` is typically specified as **Loaded Configuration File** in the displayed results.
+   `php.ini` is typically specified as **Loaded Configuration File** in the displayed results.
 
-4.	As a user with root privileges, open `php.ini` in a text editor.
-5.	Locate the value of `open_basedir` and change it.
-6.	Save your changes to `php.ini`.
-7.	Restart the web server.
+1. As a user with root privileges, open `php.ini` in a text editor.
+1. Locate the value of `open_basedir` and change it.
+1. Save your changes to `php.ini`.
+1. Restart the web server.

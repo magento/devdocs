@@ -80,9 +80,10 @@ You must have an authentication key to access the {{site.data.var.ee}} repositor
 -  **authentication file**—You must have an `auth.json` file that contains your {{site.data.var.ee}} [authorization credentials]({{ page.baseurl }}/install-gde/prereq/connect-auth.html) in your {{site.data.var.ece}} root directory.
 -  **environment variable**—Alternatively, you can use an environment variable to set up authentication keys in your {{site.data.var.ece}} project to prevent accidental exposure.
 
-#### To create a new `auth.json` file:
+{:.procedure}
+To create a new `auth.json` file:
 
-First, verify if you have an `auth.json` file, located in your Magento root directory. You can also [get a sample `auth.json`]({{ site.mage2bloburl }}/2.2/auth.json.sample).
+1.  Verify if you have an `auth.json` file, located in your Magento root directory. You can also [get a sample `auth.json`]({{ site.mage2bloburl }}/2.2/auth.json.sample).
 
 1.  Using a text editor, create an `auth.json` file and save it in your Magento root directory.
 
@@ -101,9 +102,10 @@ First, verify if you have an `auth.json` file, located in your Magento root dire
 
 1.  Save your changes to `auth.json` file and exit the text editor.
 
-#### To add authentication keys using an environment variable:
+The following method is best to prevent accidental exposure of credentials, such as pushing an `auth.json` file to a public repository.
 
-This method is best to prevent accidental exposure of credentials, such as pushing an `auth.json` file to a public repository.
+{:.procedure}
+To add authentication keys using an environment variable:
 
 1.  In the _Project Web Interface_, click the configuration icon in the upper left corner.
 
@@ -220,5 +222,7 @@ The following example compresses the dump so that it does not significantly inte
 
 To find `<cloud SSH URL>`, see [Find the information you need for your import]({{ page.baseurl }}/cloud/setup/first-time-setup-import-first-steps.html#db-creds).
 
-#### Next step
+{:.ref-header}
+Next step
+
 [Import {{site.data.var.ee}} into {{site.data.var.ece}}]({{ page.baseurl }}/cloud/setup/first-time-setup-import-import.html)

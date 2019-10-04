@@ -127,13 +127,13 @@ For more information on these new features, see [Klarna](https://docs.magento.co
 
 #### Magento Shipping
 
-* **Batch Processing** provides merchants with the ability to
+*  **Batch Processing** provides merchants with the ability to
 
-	* Specify and modify packages and experiences for orders assigned to a batch
+   *  Specify and modify packages and experiences for orders assigned to a batch
 
-	* Book shipments for a batch
+   *  Book shipments for a batch
 
-	*  Print all packing slips and printing labels for the batch
+   *  Print all packing slips and printing labels for the batch
 
 * New **Shipment Reference**  field associates bookings between a carrier and a customer
 
@@ -174,11 +174,12 @@ In addition to security enhancements, this release contains the following functi
 
 <!-- MAGETWO-93758 -->* The `cron:run` command now reads `cron/enabled` configuration setting and if this value is set to **1** (the default value), then the `cron:run` command will execute. A value of **0** determines that `cron:run` will not be executed, and prompts Magento to send the customer email indicating that `cron` is disabled.
 
-<!-- MAGETWO-93981 -->* New command-line interface (CLI) commands support setting and showing indexer dimension modes:
+<!-- MAGETWO-93981 -->
+*  New command-line interface (CLI) commands support setting and showing indexer dimension modes:
 
-	* `bin/magento indexer:set-dimensions-mode`  sets  indexer dimensions mode
+   *  `bin/magento indexer:set-dimensions-mode`  sets  indexer dimensions mode
 
-	* `bin/magento indexer:show-dimensions-mode` shows dimensions mode of indexer
+   *  `bin/magento indexer:show-dimensions-mode` shows dimensions mode of indexer
 
 ### Amazon Pay
 
@@ -931,19 +932,20 @@ Our community contributors have made many helpful, minor corrections to spelling
 
 <!-- ENGCOM-2396 -->* Fixed annotations in the following methods: `lib/internal/Magento/Framework/Acl/AclResource/Config/Converter/Dom.php`, `lib/internal/Magento/Framework/Acl/AclResource/Config/SchemaLocator.php`, and `lib/internal/Magento/Framework/Acl/Loader/ResourceLoader.php`. *Fix submitted by Tiago Sampaio in pull request [16899](https://github.com/magento/magento2/pull/16899)*.
 
-<!-- ENGCOM-2389 -->* Removed or edited code comments in the following files:
+<!-- ENGCOM-2389 -->
+*  Removed or edited code comments in the following files:
 
-	* `app/code/Magento/Backend/Block/Dashboard/Bar.php`
+   *  `app/code/Magento/Backend/Block/Dashboard/Bar.php`
 
-	* app/code/Magento/Catalog/Setup/InstallData.php`
+   *  app/code/Magento/Catalog/Setup/InstallData.php`
 
-	* `app/code/Magento/Newsletter/Block/Adminhtml/Template/Edit.php`
+   *  `app/code/Magento/Newsletter/Block/Adminhtml/Template/Edit.php`
 
-	* `app/code/Magento/Review/Block/Adminhtml/Add/Form.php`
+   *  `app/code/Magento/Review/Block/Adminhtml/Add/Form.php`
 
-	* `app/code/Magento/Sales/Model/Order/Creditmemo.php`
+   *  `app/code/Magento/Sales/Model/Order/Creditmemo.php`
 
-	* `app/code/Magento/Sales/view/adminhtml/templates/order/totals.phtml`. *Fix submitted by Pratik Oza in pull request [16891](https://github.com/magento/magento2/pull/16891)*.
+   *  `app/code/Magento/Sales/view/adminhtml/templates/order/totals.phtml`. *Fix submitted by Pratik Oza in pull request [16891](https://github.com/magento/magento2/pull/16891)*.
 
 <!-- ENGCOM-2404 -->* Improved product gallery block helper code (`app/code/Catalog/Block/Adminhtml/Product/Helper/Form/Gallery.php`). *Fix submitted by Valerij Ivashchenko in pull request [16889](https://github.com/magento/magento2/pull/16889)*.
 
@@ -1097,11 +1099,12 @@ Our community contributors have made many helpful, minor corrections to spelling
 
 <!-- MAGETWO-88670 -->* The time required to load a store’s home page has been reduced noticeably when the top menu contains many categories.  (Load time is still affected by the number of categories and the structure of the top menu.)
 
-<!-- ENGCOM-1294 -->* The speed of catalog price rule save operations has been improved by these changes:
+<!-- ENGCOM-1294 -->
+*  The speed of catalog price rule save operations has been improved by these changes:
 
-	* elimination of unnecessary reindexing
+   *  elimination of unnecessary reindexing
 
-	* improvement to the way that the `getMatchingProductIds` function fetches products, which has eliminated unnecessary checks of the data set. *Fix submitted by Andrey Zabara in pull request [14707](https://github.com/magento/magento2/pull/14707)*.
+   *  improvement to the way that the `getMatchingProductIds` function fetches products, which has eliminated unnecessary checks of the data set. *Fix submitted by Andrey Zabara in pull request [14707](https://github.com/magento/magento2/pull/14707)*.
 
 <!-- ENGCOM-1302-->* The ID to SKU lookup process for tier prices has been optimized. Previously, with a large number of tier or group prices, each tier would separately make a database query to look up the associated SKU. *Fix submitted by Todd Christensen in pull request [14699](https://github.com/magento/magento2/pull/14699)*.
 
@@ -1239,13 +1242,14 @@ You can find Magento Shipping-specific release notes in [Magento Shipping Releas
 
 ### Swatches
 
-<!--  ENGCOM-1443 -->* The process of switching attribute input type has been fixed, which resolves multiple issues that customers were experiencing when working with swatches, including:
+<!--  ENGCOM-1443 -->
+*  The process of switching attribute input type has been fixed, which resolves multiple issues that customers were experiencing when working with swatches, including:
 
-	* inability to change attribute types from `swatch` to `dropdown`
+   *  inability to change attribute types from `swatch` to `dropdown`
 
-	* inability to remove swatches from existing products when changing an attribute type from `swatch`
+   *  inability to remove swatches from existing products when changing an attribute type from `swatch`
 
-	* no updates to product attributes on the storefront. *Fix submitted by Eugene Shab in pull request [12771](https://github.com/magento/magento2/pull/12771)*. [GitHub-9307](https://github.com/magento/magento2/issues/9307), [GitHub-11403](https://github.com/magento/magento2/issues/11403), [GitHub-11703](https://github.com/magento/magento2/issues/11703), [GitHub-12695](https://github.com/magento/magento2/issues/12695)
+   *  no updates to product attributes on the storefront. *Fix submitted by Eugene Shab in pull request [12771](https://github.com/magento/magento2/pull/12771)*. [GitHub-9307](https://github.com/magento/magento2/issues/9307), [GitHub-11403](https://github.com/magento/magento2/issues/11403), [GitHub-11703](https://github.com/magento/magento2/issues/11703), [GitHub-12695](https://github.com/magento/magento2/issues/12695)
 
 ### Tax
 
@@ -1387,9 +1391,9 @@ You can find Magento Shipping-specific release notes in [Magento Shipping Releas
 
 **Issue**: The `catalog:image:resize` command execution time has been reduced by up to 90% in the release. However, this improvement necessitates these additional steps after upgrading your Magento instance to 2.2.6:
 
-	* Remove   `pub/media/catalog/product/cache`. The path for cached images was changed in this release, which explains why you need to clean this directory after upgrade to free up space.
+* Remove   `pub/media/catalog/product/cache`. The path for cached images was changed in this release, which explains why you need to clean this directory after upgrade to free up space.
 
-	* Run `bin/magento catalog:image:resize`  to generate a new image cache.  This step is necessary because we’ve changed the path to cached images and must remove the previously cached images.
+* Run `bin/magento catalog:image:resize`  to generate a new image cache.  This step is necessary because we’ve changed the path to cached images and must remove the previously cached images.
 
 ## Community contributions
 

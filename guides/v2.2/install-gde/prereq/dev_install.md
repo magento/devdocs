@@ -5,6 +5,8 @@ functional_areas:
   - Install
   - System
   - Setup
+redirect_from:
+  - guides/v2.2/install-gde/trouble/tshoot_composer-install.html
 ---
 
 {:.bs-callout .bs-callout-tip}
@@ -55,7 +57,8 @@ To authenticate, you will need to generate [Magento authentication keys][] and a
 
 {% include install/auth-json.md %}
 
-## Next step
+{:.ref-header}
+Related topics
 
 After completing the tasks discussed on this page, see [Update installation dependencies][].
 

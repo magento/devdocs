@@ -71,7 +71,8 @@ Add a `require` section like the following:
 
 Save your changes to `composer.json`, exit the text editor, and enter `composer update`
 
-### For more information
+{:.ref-header}
+Related topics
 
 If you have issues, see [Composer troubleshooting](https://getcomposer.org/doc/articles/troubleshooting.md){:target="_blank"}.
 

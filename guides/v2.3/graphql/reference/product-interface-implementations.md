@@ -34,8 +34,8 @@ For example, to return `GroupedProduct` attributes, construct your query like th
 {
   products(filter:
     {sku: {eq: "24-WG085_Group"}}
-  	)
-  	{
+    )
+    {
     items {
       id
       name

@@ -88,7 +88,8 @@ Exception printing is disabled by default for security reasons.
   Error log record number: <error number>
 ```
 
-#### To resolve the error:
+{:.procedure}
+To resolve the error:
 
 1.  Using SSH, log in to the remote server and open the `./app/var/report/<error number>` file.
 

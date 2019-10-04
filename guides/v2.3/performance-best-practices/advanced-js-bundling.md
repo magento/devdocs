@@ -6,6 +6,14 @@ functional_areas:
   - System
   - Setup
 ---
+
+{: .bs-callout-info }
+Magento's **[`baler`][]** module is now open for _Alpha testing_.
+This is a custom AMD module bundler and preloader for Magento 2.
+It is designed to provide optimal bundles and be less error-prone than the built-in Magento bundler.
+
+[`baler`]: https://github.com/magento/baler
+
 ## Introduction
 
 Bundling JavaScript modules for better performance is about reducing two things:
@@ -79,7 +87,7 @@ You could also create bundles by purpose:  for common features, product-related 
 
 A clean Magento installation allows reaching enough good performance by splitting bundles by page types, but some customizations may require deeper analysis and other asset distributions.
 
-#### Required tools
+### Required tools
 
 The following steps require you to install and have familiarity with the following tools:
 
@@ -87,7 +95,7 @@ The following steps require you to install and have familiarity with the followi
 - [r.js](http://requirejs.org/docs/optimization.html#download)
 - [PhantomJS](http://phantomjs.org/) (optional)
 
-#### Sample code
+### Sample code
 
 Full versions of the sample code used in this article are available here:
 
