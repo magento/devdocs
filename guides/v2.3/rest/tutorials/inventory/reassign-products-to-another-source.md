@@ -48,18 +48,18 @@ When you unassign a source from a product, all source data including inventory a
 
 ```json
 {
-	"sourceItems": [{
-		"sku": "24-WB01",
-		"source_code": "default"
-	},
-	{
-		"sku": "24-WB03",
-		"source_code": "default"
-	},
-	{
-		"sku": "240-LV06",
-		"source_code": "default"
-	}]
+  "sourceItems": [{
+    "sku": "24-WB01",
+    "source_code": "default"
+  },
+  {
+    "sku": "24-WB03",
+    "source_code": "default"
+  },
+  {
+    "sku": "240-LV06",
+    "source_code": "default"
+  }]
 }
 ```
 
@@ -91,70 +91,70 @@ Now we can assign each product to one or more sources. The `POST V1/inventory/so
 ```json
 {
   "sourceItems": [{
-  	"sku": "24-WB01",
-  	"source_code": "baltimore_wh",
-  	"quantity": 35,
-  	"status": 1
+    "sku": "24-WB01",
+    "source_code": "baltimore_wh",
+    "quantity": 35,
+    "status": 1
   },
   {
-  	"sku": "24-WB01",
-  	"source_code": "austin_wh",
-  	"quantity": 10,
-  	"status": 1
+    "sku": "24-WB01",
+    "source_code": "austin_wh",
+    "quantity": 10,
+    "status": 1
   },
   {
-  	"sku": "24-WB01",
-  	"source_code": "reno_wh",
-  	"quantity": 25,
-  	"status": 1
+    "sku": "24-WB01",
+    "source_code": "reno_wh",
+    "quantity": 25,
+    "status": 1
   },
   {
-  	"sku": "24-WB01",
-  	"source_code": "berlin_wh",
-  	"quantity": 15,
-  	"status": 1
+    "sku": "24-WB01",
+    "source_code": "berlin_wh",
+    "quantity": 15,
+    "status": 1
   },
   {
-  	"sku": "24-WB01",
-  	"source_code": "frankfurt_wh",
-  	"quantity": 15,
-  	"status": 1
+    "sku": "24-WB01",
+    "source_code": "frankfurt_wh",
+    "quantity": 15,
+    "status": 1
   },
   {
-  	"sku": "24-WB03",
-  	"source_code": "baltimore_wh",
-  	"quantity": 19,
-  	"status": 1
+    "sku": "24-WB03",
+    "source_code": "baltimore_wh",
+    "quantity": 19,
+    "status": 1
   },
   {
-  	"sku": "24-WB03",
-  	"source_code": "austin_wh",
-  	"quantity": 0,
-  	"status": 1
+    "sku": "24-WB03",
+    "source_code": "austin_wh",
+    "quantity": 0,
+    "status": 1
   },
   {
-  	"sku": "24-WB03",
-  	"source_code": "reno_wh",
-  	"quantity": 42,
-  	"status": 1
+    "sku": "24-WB03",
+    "source_code": "reno_wh",
+    "quantity": 42,
+    "status": 1
   },
   {
-  	"sku": "24-WB03",
-  	"source_code": "berlin_wh",
-  	"quantity": 32,
-  	"status": 1
+    "sku": "24-WB03",
+    "source_code": "berlin_wh",
+    "quantity": 32,
+    "status": 1
   },
   {
-  	"sku": "24-WB03",
-  	"source_code": "frankfurt_wh",
-  	"quantity": 7,
-  	"status": 1
+    "sku": "24-WB03",
+    "source_code": "frankfurt_wh",
+    "quantity": 7,
+    "status": 1
   },
   {
-  	"sku": "240-LV06",
-  	"source_code": "hq",
-  	"quantity": 9999,
-  	"status": 1
+    "sku": "240-LV06",
+    "source_code": "hq",
+    "quantity": 9999,
+    "status": 1
   }]
 }
 ```

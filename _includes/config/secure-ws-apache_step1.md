@@ -4,18 +4,18 @@ For security reasons, you can locate the password file anywhere except your web 
 
 First, see if you have the Apache `htpasswd` utility is installed as follows:
 
-1.	Enter the following command to determine if `htpasswd` is already installed:
+1. Enter the following command to determine if `htpasswd` is already installed:
 
-    ```bash
-    which htpasswd
+   ```bash
+   which htpasswd
     ```
 
-    If a path displays, it is installed; if the command returns no output, `htpasswd` is not installed.
+   If a path displays, it is installed; if the command returns no output, `htpasswd` is not installed.
 
-2.	If necessary, install `htpasswd`:
+2. If necessary, install `htpasswd`:
 
-	*	Ubuntu: `apt-get -y install apache2-utils`
-	*	CentOS: `yum -y install httpd-tools`
+   *  Ubuntu: `apt-get -y install apache2-utils`
+   *  CentOS: `yum -y install httpd-tools`
 
 #### Create a password file
 
@@ -31,14 +31,15 @@ htpasswd -c /usr/local/apache/password/.<password file name> <username>
 
 where
 
-*	`<username>` can be:
+*  `<username>` can be:
 
-	*	Setting up cron: the web server user or another user.
+   *  Setting up cron: the web server user or another user.
 
-		In this example, we use the web server user but the choice of user is up to you.
-	*	Setting up Elasticsearch: the user is named `magento_elasticsearch` in this example
+      In this example, we use the web server user but the choice of user is up to you.
 
-*	`<password file name>` must be a hidden file (starts with `.`) and should reflect the name of the user. See the examples later in this section for details.
+   *  Setting up Elasticsearch: the user is named `magento_elasticsearch` in this example
+
+*  `<password file name>` must be a hidden file (starts with `.`) and should reflect the name of the user. See the examples later in this section for details.
 
 Follow the prompts on your screen to create a password for the user.
 
