@@ -227,7 +227,7 @@ stage:
       indices_settings:
         number_of_shards: 3
         number_of_replicas: 3
-        _merge: true
+      _merge: true
 ```
 
 **Known limitations**—
