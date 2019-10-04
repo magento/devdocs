@@ -46,6 +46,9 @@ After upgrading, you can remove the `config.php` file and generate a new, comple
 
 If you are upgrading from an older version of Magento to 2.2.X, you need to also update your [.magento.app.yaml]({{ site.baseurl }}/guides/v2.2/cloud/project/project-conf-files_magento-app.html) or you may encounter errors. {{site.data.var.ece}} 2.2.X and later has new settings in the file.
 
+{:.procedure}
+To update the `.magento.app.yaml` file:
+
 1. Update the PHP options.
 
    ```yaml
@@ -81,9 +84,11 @@ If you are upgrading from an older version of Magento to 2.2.X, you need to also
 
 1. Save the file. Do not commit or push changes to your branch yet.
 
+1. Continue with the upgrade process.
+
 ## Upgrading the Magento application
 
-Review the [Magento technology stack requirements]({{ site.baseurl }}/guides/v2.2/install-gde/system-requirements-tech.html) before upgrading your Magento application.
+Review the [Magento technology stack requirements]({{page.baseurl}}install-gde/system-requirements-tech.html) before upgrading your Magento application.
 
 ### Back up the database
 
@@ -92,6 +97,9 @@ Review the [Magento technology stack requirements]({{ site.baseurl }}/guides/v2.
 ### Complete the upgrade
 
 If you use PHP version 7.2, you must remove the `mcrypt` extension from the [`extensions` section of the `.magento.app.yaml` file]({{page.baseurl}}/cloud/project/project-conf-files_magento-app.html#configure-php-options). For Pro projects, you need to create a support ticket to completely disable the `mcrypt` extension.
+
+{:.procedure}
+To upgrade the Magento version:
 
 1. When upgrading to 2.3, you must [update the `autoload`](https://devdocs.magento.com/guides/v2.3/comp-mgr/cli/cli-upgrade.html#update-autoload) property of the `composer.json` file.
 
@@ -132,6 +140,9 @@ If you use PHP version 7.2, you must remove the `mcrypt` extension from the [`ex
 
 As mentioned in [Configuration management](#configuration-management), after upgrading, you need to create an updated `config.php` file. Complete any additional configuration changes through the Magento Admin in your Integration environment.
 
+{:.procedure}
+To create a system-specific configuration file:
+
 1. From the terminal, use an SSH command to generate the `/app/etc/config.php` file for the environment.
 
    ```bash
@@ -147,7 +158,7 @@ As mentioned in [Configuration management](#configuration-management), after upg
 1. Transfer the `config.php` file to your local workstations using `rsync` or `scp`. You can only add this file to the branch locally.
 
    ```bash
-   rsync <SSH URL>:app/etc/config.php ./app/etc/config.php
+   rsync <SSH-URL>:app/etc/config.php ./app/etc/config.php
    ```
 
 1. Add, commit, and push code changes.
