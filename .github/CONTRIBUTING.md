@@ -137,7 +137,7 @@ cd <DEVDOCS_REPOSITORY_ROOT_DIR>
 ln -s guides/v2.2/install-gde/new-doc-topic.md guides/v2.3/install-gde/new-doc-topic.md
 ```
 
-If you have an image that is identical between versions, it is should placed in `/common/images`. Please optimize images before committing them to the repository.
+If you have an image that is identical between versions, it should placed in `/common/images`. Please optimize images before committing them to the repository.
 If done correctly, the symbolic link path will start with 3 or 4 instances of `../`, as the above example shows.
 
 ### Remove a symbolic link
