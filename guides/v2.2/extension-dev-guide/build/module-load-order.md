@@ -29,7 +29,7 @@ __Component B__ introduces `gadgetlayout.xml`, which updates block `gadgetBlock`
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
     <module name="Vendor_ComponentB" setup_version="0.0.1">
         <sequence>
-	    <!-- Vendor_ComponentB is dependent on Vendor_ComponentA: -->
+        <!-- Vendor_ComponentB is dependent on Vendor_ComponentA: -->
             <module name="Vendor_ComponentA" />
         </sequence>
     </module>

@@ -281,9 +281,9 @@ See [Migrate message queue configuration]({{page.baseurl}}/extension-dev-guide/m
 
 ### Related Topics
 
-*	[Message Queues Overview]({{page.baseurl}}/config-guide/mq/rabbitmq-overview.html)
-*	[Manage message queues with MySQL]({{page.baseurl}}/config-guide/mq/manage-mysql.html)
-*	[Install RabbitMQ]({{page.baseurl}}/install-gde/prereq/install-rabbitmq.html)
+* [Message Queues Overview]({{page.baseurl}}/config-guide/mq/rabbitmq-overview.html)
+* [Manage message queues with MySQL]({{page.baseurl}}/config-guide/mq/manage-mysql.html)
+* [Install RabbitMQ]({{page.baseurl}}/install-gde/prereq/install-rabbitmq.html)
 
 <!-- Link definitions -->
 [MySQL]: https://www.mysql.com/

@@ -113,24 +113,24 @@ Magento enables you to create the following types of language packages:
 
 * A set of `.csv` files for modules and themes. These packages files are intended to be deployed in modules. For example:
     ```tree
-	__/app
-	 |__/code
-	 | |__/Magento
-	 |   |__/Catalog
-	 |   | |__/i18n
-	 |   |   |-- pt_BR.csv
-	 |   |__/Checkout
-	 |   | |__/i18n
-	 |   |   |-- pt_BR.csv
-	 |   |__/Customer
-	 |     |__/i18n
-	 |       |-- pt_BR.csv
-	 |__/design
-	   |__/frontend
-	     |__/<Vendor>
-	       |__/<theme>
-		 |__/i18n
-		   |-- pt_BR.csv
+   __/app
+    |__/code
+    | |__/Magento
+    |   |__/Catalog
+    |   | |__/i18n
+    |   |   |-- pt_BR.csv
+    |   |__/Checkout
+    |   | |__/i18n
+    |   |   |-- pt_BR.csv
+    |   |__/Customer
+    |     |__/i18n
+    |       |-- pt_BR.csv
+    |__/design
+      |__/frontend
+        |__/<Vendor>
+          |__/<theme>
+       |__/i18n
+         |-- pt_BR.csv
     ```
 
 * Language packages that contain a entire dictionary in one directory.

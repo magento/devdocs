@@ -13,13 +13,13 @@ functional_areas:
 
 There are four kinds of data that need to be migrated manually:
 
-*	Media
+*  Media
 
-*	[Storefront](https://glossary.magento.com/storefront) design
+*  [Storefront](https://glossary.magento.com/storefront) design
 
-*	[Admin](https://glossary.magento.com/admin) user accounts
+*  [Admin](https://glossary.magento.com/admin) user accounts
 
-*	Access Control Lists (ACLs)
+*  Access Control Lists (ACLs)
 
 ## Media
 
@@ -29,15 +29,15 @@ This section discusses how to manually migrate media files.
 
 This section applies to you *only* if you store media files in the Magento database. This step should be performed before <a href="{{ page.baseurl }}/migration/migration-migrate-data.html">migration of data</a>:
 
-1.	Log in to the Magento 1 Admin Panel as an administrator.
+1. Log in to the Magento 1 Admin Panel as an administrator.
 
-2.	Click **System** > **Configuration** > ADVANCED > **System**.
+2. Click **System** > **Configuration** > ADVANCED > **System**.
 
-3.	In the right pane, scroll to **Storage Configuration for Media**.
+3. In the right pane, scroll to **Storage Configuration for Media**.
 
-4.	From the **Select Media Database** list, click the name of your [media storage](https://glossary.magento.com/media-storage) database.
+4. From the **Select Media Database** list, click the name of your [media storage](https://glossary.magento.com/media-storage) database.
 
-5.	Click **Synchronize**.
+5. Click **Synchronize**.
 
 Then, repeat the same steps in your Magento 2 Admin panel.
 
@@ -57,9 +57,9 @@ However, do *not* copy the `.htaccess` files located in the Magento 1 `media` fo
 
 You must manually re-create all:
 
-*	credentials for web service APIs (SOAP, XML-RPC, and REST)
+*  credentials for web service APIs (SOAP, XML-RPC, and REST)
 
-*	administrative user accounts and associate them with access privileges
+*  administrative user accounts and associate them with access privileges
 
 {: .bs-callout-info }
 You may adjust the time zone for a database entity using the `\Migration\Handler\Timezone` handler. See the [Follow-up]({{ page.baseurl }}/migration/migration-migrate-follow-up.html) section for more details.
