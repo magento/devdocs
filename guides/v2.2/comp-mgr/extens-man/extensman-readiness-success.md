@@ -1,12 +1,6 @@
 ---
 group: software-update-guide
-subgroup: 06_UseExtMan
 title: Readiness check success
-menu_title: Readiness check success
-menu_node:
-menu_order: 6
-level3_menu_node: level3child
-level3_subgroup: readiness
 functional_areas:
   - Upgrade
 ---

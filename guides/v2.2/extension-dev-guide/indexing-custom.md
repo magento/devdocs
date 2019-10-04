@@ -1,11 +1,6 @@
 ---
 group: php-developer-guide
-subgroup: 99_Module Development
 title: Adding a custom indexer
-menu_title: Adding a custom indexer
-menu_order: 15
-level3_menu_node: level3child
-level3_subgroup: index
 ---
 
 ## Adding a custom indexer {#m2devgde-indexing-custom}
