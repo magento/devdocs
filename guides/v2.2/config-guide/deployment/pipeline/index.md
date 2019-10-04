@@ -38,5 +38,7 @@ For a complete list of configuration paths, see the following references:
 
 {% include config/split-deploy/split-deploy-assumptions.md %}
 
-#### Next step
+{:.ref-header}
+Related topics
+
 [Deployment technical overview (implementation details)]({{ page.baseurl }}/config-guide/deployment/pipeline/technical-details.html)

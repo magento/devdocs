@@ -45,6 +45,7 @@ To find the latest extensions versions, visit [Magento Marketplace](https://mark
 
 You can also use the Magento [Code Migration Tool](https://github.com/magento/code-migration/blob/develop/README.md){:target="_blank"}.
 
-## Related topics
+{:.ref-header}
+Related topics
 
 *  [Install the Data Migration Tool]({{ page.baseurl }}/migration/migration-tool-install.html)

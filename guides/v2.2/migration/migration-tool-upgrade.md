@@ -72,7 +72,8 @@ See the [Install Data Migration Tool]({{ page.baseurl }}/migration/migration-too
 
 4. Wait while the command completes.
 
-## Related topics
+{:.ref-header}
+Related topics
 
 *  [Configure migration]({{ page.baseurl }}/migration/migration-tool-configure.html)
 *  [Preconditions]({{ page.baseurl }}/migration/migration-tool-preconditions.html)

@@ -15,7 +15,8 @@ The following discussion focuses on how these topics apply directly to Magento:
 * Event-driven architecture
 * Security
 
-## Related topics
+{:.ref-header}
+Related topics
 
 [Architectural diagrams]({{page.baseurl}}/architecture/archi_perspectives/arch_diagrams.html)
 

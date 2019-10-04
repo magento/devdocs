@@ -64,6 +64,7 @@ You must manually re-create all:
 {: .bs-callout-info }
 You may adjust the time zone for a database entity using the `\Migration\Handler\Timezone` handler. See the [Follow-up]({{ page.baseurl }}/migration/migration-migrate-follow-up.html) section for more details.
 
-## Related topics
+{:.ref-header}
+Related topics
 
 * <a href="{{ page.baseurl }}/migration/migration-migrate-after.html">After migration</a>

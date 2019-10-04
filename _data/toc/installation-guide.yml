@@ -410,9 +410,6 @@ pages:
             - label: PHP settings errors
               url: /install-gde/trouble/php/tshoot_php-set.html
 
-            - label: The PHP mcrypt extension is not installed properly
-              url: /install-gde/trouble/php/tshoot_mcrypt.html
-
             - label: During installation, PHP date warning
               url: /install-gde/trouble/php/tshoot_php-date.html
 

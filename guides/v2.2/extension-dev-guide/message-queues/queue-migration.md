@@ -128,7 +128,8 @@ The first column in the following table lists the all the parameters in the `que
 `<publisher>/<connection>/exchange` | `<publisher>/exchange`
 `<publisher>/<connection>/disabled` | Not present in 2.0. Omit this parameter to accept the default value.
 
-#### Related topics
+{:.ref-header}
+Related topics
 
 * [Message Queues Overview]({{ page.baseurl }}/config-guide/mq/rabbitmq-overview.html)
 * [Configure message queues]({{ page.baseurl }}/extension-dev-guide/message-queues/config-mq.html)

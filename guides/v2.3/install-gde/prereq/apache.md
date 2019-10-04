@@ -95,7 +95,8 @@ To install the default version of Apache (Ubuntu 14, 16&mdash;Apache 2.4, Ubuntu
 ### Enable rewrites and .htaccess for Apache 2.2
 {% include install/allowoverrides22.md %}
 
-__Next steps:__
+{:.ref-header}
+Next steps
 
 * [Solving 403 (Forbidden) errors](#apache-error)
 * Continue with the next prerequisite ([PHP Ubuntu]({{page.baseurl }}/install-gde/prereq/php-centos-ubuntu.html#php-for-ubuntu))
@@ -152,7 +153,8 @@ To upgrade to Apache 2.4:
 ### Enable rewrites and .htaccess for Apache 2.4 {#enable-rewr-apache24-upgr-ubuntu12}
 {% include install/allowoverrides24.md %}
 
-__Next steps:__
+{:.ref-header}
+Next steps
 
 * [Solving 403 (Forbidden) errors](#apache-error)
 * Continue with the next prerequisite ([PHP Ubuntu]({{page.baseurl }}/install-gde/prereq/php-centos-ubuntu.html#php-for-ubuntu))
@@ -196,7 +198,8 @@ Installing and configuring Apache is basically a three-step process: install the
 ### Enable rewrites and .htaccess for Apache 2.2 (including CentOS 7)
 {% include install/allowoverrides22.md %}
 
-__Next steps:__
+{:.ref-header}
+Next steps
 
 * [Solving 403 (Forbidden) errors](#apache-error)
 * Continue with the next prerequisite ([PHP Ubuntu]({{page.baseurl }}/install-gde/prereq/php-centos-ubuntu.html#php-for-ubuntu))
@@ -212,7 +215,7 @@ If you encounter 403 Forbidden errors when trying to access the Magento site, yo
 * [Solving 403 Forbidden errors for Apache 2.4](#apache-error-2-4)
 * [Solving 403 Forbidden errors for Apache 2.2](#apache-error-2-2)
 
-#### Solving 403 Forbidden errors for Apache 2.4 {#apache-error-2-4}
+### Solving 403 Forbidden errors for Apache 2.4 {#apache-error-2-4}
 
 To enable website visitors to access your site, use one of the [Require directives](http://httpd.apache.org/docs/2.4/howto/access.html){:target="_blank"}.
 
@@ -230,7 +233,7 @@ For example:
 {:.bs-callout .bs-callout-info}
 The preceding values for `Order` might not work in all cases. For more information, see the [Apache documentation](https://httpd.apache.org/docs/2.4/mod/mod_access_compat.html#order){:target="_blank"}.
 
-#### Solving 403 Forbidden errors for Apache 2.2 {#apache-error-2-2}
+### Solving 403 Forbidden errors for Apache 2.2 {#apache-error-2-2}
 
 To enable website visitors to access your site, use the [Allow directive](http://httpd.apache.org/docs/2.2/mod/mod_authz_host.html#allow){:target="_blank"}.
 
@@ -249,7 +252,8 @@ For example:
 The preceding values for `Order` might not work in all cases. For more information, see the [Apache documentation](https://httpd.apache.org/docs/2.2/mod/mod_authz_host.html#order){:target="_blank"}.
 {% endcollapsible %}
 
-#### Related topics:
+{:.ref-header}
+Related topics
 
 * [PHP&mdash;Ubuntu]({{page.baseurl }}/install-gde/prereq/php-centos-ubuntu.html#php-for-ubuntu)
 * [PHP&mdash;CentOS]({{page.baseurl }}/install-gde/prereq/php-centos-ubuntu.html#php-for-centos)
