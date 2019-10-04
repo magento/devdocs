@@ -15,9 +15,9 @@ This topic focuses on file-based logging, although Magento provides the flexibil
 
 We recommend using centralized application logging for the following reasons:
 
-*	It allows storage of logs on a server other than the application server and decreases disk I/O operations, simplifying support of the application server.
+* It allows storage of logs on a server other than the application server and decreases disk I/O operations, simplifying support of the application server.
 
-*	It makes processing of logs data more effective by using special tools without impact to a production server (for example, [logstash](https://www.elastic.co/products/logstash), [logplex](https://devcenter.heroku.com/articles/logplex), or [fluentd](http://www.fluentd.org)).
+* It makes processing of logs data more effective by using special tools without impact to a production server (for example, [logstash](https://www.elastic.co/products/logstash), [logplex](https://devcenter.heroku.com/articles/logplex), or [fluentd](http://www.fluentd.org)).
 
 {:.bs-callout .bs-callout-info}
 Magento does not recommend or endorse any particular logging solution.

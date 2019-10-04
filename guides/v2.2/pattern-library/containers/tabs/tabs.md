@@ -8,15 +8,15 @@ For solutions not described in this article or for further information, please c
 
 ## When to Use
 
-* When a page has secondary content
-*	When the number of sections is able to fit the width of the container without wrapping or being cut off at the edges.
-*	When the content for each tab has a similar structure.
+*  When a page has secondary content
+*  When the number of sections is able to fit the width of the container without wrapping or being cut off at the edges.
+*  When the content for each tab has a similar structure.
 
 ## When Not to Use
 
-*	Do not use tabs if the user needs to simultaneously see content from multiple tabs.
-*	Do not use tabs if the content of the tab would function more effectively as a separate container or on a separate page.
-*	Be cognizant of the type of paradigm that best fits the content. Refer to the expandable containers pattern well and determine the ideal practice.
+*  Do not use tabs if the user needs to simultaneously see content from multiple tabs.
+*  Do not use tabs if the content of the tab would function more effectively as a separate container or on a separate page.
+*  Be cognizant of the type of paradigm that best fits the content. Refer to the expandable containers pattern well and determine the ideal practice.
 
 ## Interactions and Behavior
 
@@ -24,13 +24,13 @@ When the user click on a tab, the content area associated with that tab will be 
 
 ### Active State
 
-*	Active tab should be "highlighted" to indicate that it’s currently active.
-*	Should not be clickable while active.
+*  Active tab should be "highlighted" to indicate that it’s currently active.
+*  Should not be clickable while active.
 
 ### Inactive State
 
-*	Should be clickable.
-*	Should have a hover state.
+*  Should be clickable.
+*  Should have a hover state.
 
 ### Disabled State
 

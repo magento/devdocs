@@ -36,11 +36,11 @@ The high-level steps required to add a new theme in the Magento system are the f
 
 To create the directory for your theme:
 
-1.	Go to `<magento_root>/app/design/frontend`.
+1. Go to `<magento_root>/app/design/frontend`.
 
-3.	Create a new directory named according to your vendor name: `/app/design/frontend/<Vendor>`.
+3. Create a new directory named according to your vendor name: `/app/design/frontend/<Vendor>`.
 
-4.	Under the `<vendor>` directory, create a directory named according to your theme.
+4. Under the `<vendor>` directory, create a directory named according to your theme.
 
     <pre>
     app/design/frontend/
@@ -143,22 +143,22 @@ Product image sizes and other properties used on the [storefront](https://glossa
 
 If the product image sizes of your theme differ from those of the parent theme, or if your theme does not inherit from any theme, add `view.xml` using the following steps:
 
-1.	Log in to your Magento server as a user with permissions to create directories and files in the Magento installation directory. (Typically, this is the [Magento file system owner]({{page.baseurl}}/install-gde/prereq/apache.html).)
+1. Log in to your Magento server as a user with permissions to create directories and files in the Magento installation directory. (Typically, this is the [Magento file system owner]({{page.baseurl}}/install-gde/prereq/apache.html).)
 
-1.	Create the `etc` directory in your theme folder.
+1. Create the `etc` directory in your theme folder.
 
-2.	Copy the `view.xml` file from the `etc` directory of an existing theme (for example, from the Blank theme) to your theme's `etc` directory.
+1. Copy the `view.xml` file from the `etc` directory of an existing theme (for example, from the Blank theme) to your theme's `etc` directory.
 
-3.	Configure all storefront product image sizes in the `view.xml` file. For example, you can make the [category](https://glossary.magento.com/category) grid view product images square by specifying a size of 250 x 250 pixels:
+1. Configure all storefront product image sizes in the `view.xml` file. For example, you can make the [category](https://glossary.magento.com/category) grid view product images square by specifying a size of 250 x 250 pixels:
 
-    ```xml
-    ...
-        <image id="category_page_grid" type="small_image">
-            <width>250</width>
-            <height>250</height>
-        </image>
-    ...
-    ```
+   ```xml
+   ...
+       <image id="category_page_grid" type="small_image">
+           <width>250</width>
+           <height>250</height>
+       </image>
+   ...
+   ```
 
 For details about images configuration in the `view.xml` file, see the [Configure images properties for a theme]({{page.baseurl}}/frontend-dev-guide/themes/theme-images.html) topic.
 
@@ -228,11 +228,11 @@ In your custom theme, you can use a logo file with a different name and format, 
 The necessity of declaration depends on whether your theme has a [parent]({{page.baseurl}}/frontend-dev-guide/themes/theme-inherit.html) theme and its logo image. The following cases are possible:
 
 * Your theme does not have a parent theme:
-  - If your logo image name and format uses the default naming convention (`logo.svg`), there is no need to declare it.
-  - If your logo image name or format does not use the default naming convention, you need to [declare it in layout](#logo_declare).
+   - If your logo image name and format uses the default naming convention (`logo.svg`), there is no need to declare it.
+   - If your logo image name or format does not use the default naming convention, you need to [declare it in layout](#logo_declare).
 * Your theme has a parent theme:
-  - If your theme logo image has the same name and format as the parent's theme logo, there is no need to declare it.
-  - If your logo image has a different name or format, declare it in the [layout](https://glossary.magento.com/layout).
+   - If your theme logo image has the same name and format as the parent's theme logo, there is no need to declare it.
+   - If your logo image has a different name or format, declare it in the [layout](https://glossary.magento.com/layout).
 
 ## Declaring theme logo {#logo_declare}
 
@@ -274,4 +274,4 @@ For information on how to apply the theme for the storefront, see the [Apply and
 
 ## See also
 
- * [Uninstall a theme]({{ page.baseurl }}/install-gde/install/cli/install-cli-theme-uninstall.html)
+* [Uninstall a theme]({{ page.baseurl }}/install-gde/install/cli/install-cli-theme-uninstall.html)

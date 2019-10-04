@@ -35,9 +35,9 @@ The following table lists the parameters defined in `CompanyInterface`.
 
 Name | Description | Format | Requirements
 --- | --- | --- |---
-`quoteId`	| Identifies the target quote for the operation.	| integer	| Required
-`quoteName`	| The name of the quote to be created.	| string	| Required
-`comment`	| The comment to add to the quote.	| string | Optional
+`quoteId` | Identifies the target quote for the operation. | integer | Required
+`quoteName` | The name of the quote to be created. | string | Required
+`comment` | The comment to add to the quote. | string | Optional
 `files` | An array of files to add to the quote | array | Optional
 
 The buyer or the seller can optionally attach up to 10 files to provide details about the quote. Each file must be converted into base64.
