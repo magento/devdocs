@@ -232,7 +232,7 @@ We have fixed hundreds of issues in the Magento 2.3.3 core code.
 * An administrator with access rights to one website only in a multisite deployment can now mass-update products for that website only. Previously, this administrator could mass-update products on any website in the deployment.
 
 <!--- MAGETWO-99411-->
-* An administrator with restricted privileges can now successfully create a catalog price rule. Previously, a restricted administrator could create a catalog price rule, but when they saved it, Magento displayed an error and did not generate any scheduled update to set the the new price rule to inactive.
+* An administrator with restricted privileges can now successfully create a catalog price rule. Previously, a restricted administrator could create a catalog price rule, but when they saved it, Magento displayed an error and did not generate any scheduled update to set the new price rule to inactive.
 
 <!--- MC-17879-->
 * Magento now applies the correct role scope for administrators in multisite deployments. (Post data is now saved in the session and re-rendered for a user only if the validation fails.)  Previously, when you had two administrative roles with different website scopes, and you viewed one role before saving it and opening the second role, the website scope attributed to the second role was incorrectly taken from the first role.
@@ -374,7 +374,7 @@ We have fixed hundreds of issues in the Magento 2.3.3 core code.
 * The checkout order summary now displays the correct number of ordered items.
 
 <!--- ENGCOM-5357-->
-* The minicart loader is now visible when you add a product to the minicart. *Fix submitted by Geeta Modi in pull request [23394](https://github.com/magento/magento2/pull/23394)*.
+* The minicart loader is now visible when you add a product to the minicart. *Fix submitted by Geeta Modi in pull request [23394](https://github.com/magento/magento2/pull/23394)*. [GitHub-23377](https://github.com/magento/magento2/issues/23377)
 
 <!--- ENGCOM-5026-->
 * Magento no longer throws an array-to-string conversion error when a customer changes the country setting from one-page checkout. Instead, shipping method, tax values, and payment providers now change according to country selection. Previously, Magento displayed an error about array-to-string conversion. *Fix submitted by Grzegorz Bogusz in pull request [22558](https://github.com/magento/magento2/pull/22558)*. [GitHub-12612](https://github.com/magento/magento2/issues/12612)
@@ -619,10 +619,10 @@ We have fixed hundreds of issues in the Magento 2.3.3 core code.
 <!--- ENGCOM-5099-->
 * The `magento_newrelicreporting_cron` cron job now successfully completes as expected. Previously, `magento_newrelicreporting_cron` threw this error: `Warning: Invalid argument supplied for foreach() in /var/www/shop_test/src/www/vendor/magento/module-configurable-product/Model/ResourceModel/Product/Type/Configurable/Product/Collection.php on line 83`.
 
-### Customers
+### Customer
 
 <!--- MAGETWO-99647-->
-* Custom customer address attribute are populated with the  values that have been assigned for the selected  address when the **Same As Billing Address** setting is disabled. Previously, when a merchant tried to change an address while creating an order from the Admin, the drop-down menu of available addresses was not populated.
+* Custom customer address attributes are populated with the * values that have been assigned for the selected  address when the **Same As Billing Address** setting is disabled. Previously, when a merchant tried to change an address while creating an order from the Admin, the drop-down menu of available addresses was not populated.
 
 <!--- MAGETWO-99493-->
 * The account status list now updates as expected to correctly indicate the account lock status after `cron` is run. Previously, this list displayed status as unlocked only.
@@ -922,7 +922,7 @@ The `getProductUrl()` method now returns the product URL for a specified website
 ### Newsletter
 
 <!--- MAGETWO-99636-->
-* Magento now sends only a subscribe email when you create an account from an email invitation. Previously, you received two emails, one that subscribed you to the newsletter and another that unsubscribed you.
+* Magento now sends only a subscribe email when you create an account from an email invitation. Previously, you received two emails -- one that subscribed you to the newsletter, and another that unsubscribed you.
 
 <!--- MAGETWO-71785-->
 * You can now export newsletter subscribers from the Admin. Previously, Magento displayed this error when you selected a subscriber name and clicked **Export**: `error: URI too long`
@@ -1168,7 +1168,7 @@ This release includes the following changes to integrations for core payment met
 * Magento now displays the correct product Short Description for the selected update in deployments where there are multiple schedule updates.
 
 <!--- MC-15298-->
-* Magento is introducing the tracking of user actions and events on the Admin as part of our efforts to better understand the Admin user experience and improve product design.The first administrator who logs into the Admin after upgrading to Magento 2.3.3 will see the **Allow admin usage data collection** pop-up window, from which they can decline or agree to participate. Once data is captured, it is sent to Adobe Analytics for analysis and reporting. Typical events include page views, save actions, and changes to Magento mode. See Store Admin for more information.
+* Magento is introducing the tracking of user actions and events on the Admin as part of our efforts to better understand the Admin user experience and improve product design.The first administrator who logs into the Admin after upgrading to Magento 2.3.3 will see the **Allow admin usage data collection** pop-up window, from which they can decline or agree to participate. Once data is captured, it is sent to Adobe Analytics for analysis and reporting. Typical events include page views, save actions, and changes to Magento mode. See [Store Admin](https://docs.magento.com/m2/ce/user_guide/stores/admin.html) for more information.
 
 <!--- MC-15519-->
 * The database compare tool no longer shows the incorrect comparison results for these entities:

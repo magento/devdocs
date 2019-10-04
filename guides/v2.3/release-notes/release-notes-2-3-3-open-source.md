@@ -86,7 +86,7 @@ This release contains  enhancements to core quality, which improve the quality o
 ### Merchant tool enhancements
 
 <!--- MC-15298-->
-* As part of our efforts to better understand the Admin user experience and improve product design, Magento is introducing the tracking of user actions and events on the Admin. After you upgrade to Magento 2.3.3, the first administrative user who logs into the Admin will be prompted to **Allow admin usage data collection**. If the user agrees to data collection, the data captured from Admin activity is sent to Adobe Analytics for analysis and reporting. Typical events include page views, save actions, and changes to Magento mode. See Store Admin for more information.
+* As part of our efforts to better understand the Admin user experience and improve product design, Magento is introducing the tracking of user actions and events on the Admin. After you upgrade to Magento 2.3.3, the first administrative user who logs into the Admin will be prompted to **Allow admin usage data collection**. If the user agrees to data collection, the data captured from Admin activity is sent to Adobe Analytics for analysis and reporting. Typical events include page views, save actions, and changes to Magento mode. See [Store Admin](https://docs.magento.com/m2/ce/user_guide/stores/admin.html) for more information.
 
 ### Inventory Management enhancements
 
@@ -266,7 +266,7 @@ We've fixed hundreds of issues in the Magento 2.3.3 core code.
 * The checkout order summary now displays the correct number of ordered items.
 
 <!--- ENGCOM-5357-->
-* The minicart loader is now visible when you add a product to the minicart. *Fix submitted by Geeta Modi in pull request [23394](https://github.com/magento/magento2/pull/23394)*.
+* The minicart loader is now visible when you add a product to the minicart. *Fix submitted by Geeta Modi in pull request [23394](https://github.com/magento/magento2/pull/23394)*. [GitHub-23377](https://github.com/magento/magento2/issues/23377)
 
 <!--- ENGCOM-5026-->
 * Magento no longer throws an array-to-string conversion error when a customer changes the country setting from one-page checkout. Instead, shipping method, tax values, and payment providers now change according to country selection. Previously, Magento displayed an error about array-to-string conversion. *Fix submitted by Grzegorz Bogusz in pull request [22558](https://github.com/magento/magento2/pull/22558)*. [GitHub-12612](https://github.com/magento/magento2/issues/12612)
@@ -490,10 +490,10 @@ We've fixed hundreds of issues in the Magento 2.3.3 core code.
 <!--- ENGCOM-5099-->
 * The `magento_newrelicreporting_cron` cron job now successfully completes as expected. Previously, `magento_newrelicreporting_cron` threw this error: `Warning: Invalid argument supplied for foreach() in /var/www/shop_test/src/www/vendor/magento/module-configurable-product/Model/ResourceModel/Product/Type/Configurable/Product/Collection.php on line 83`.
 
-### Customers
+### Customer
 
 <!--- MAGETWO-99647-->
-* Custom customer address attribute are populated with the  values that have been assigned for the selected  address when the **Same As Billing Address** setting is disabled. Previously, when a merchant tried to change an address while creating an order from the Admin, the drop-down menu of available addresses was not populated.
+* Custom customer address attributes are populated with the values that have been assigned for the selected  address when the **Same As Billing Address** setting is disabled. Previously, when a merchant tried to change an address while creating an order from the Admin, the drop-down menu of available addresses was not populated.
 
 <!--- MAGETWO-99493-->
 * The account status list now updates as expected to correctly indicate the account lock status after `cron` is run. Previously, this list displayed status as unlocked only.
@@ -674,7 +674,7 @@ We've fixed hundreds of issues in the Magento 2.3.3 core code.
 * You can now set the **minute** values for Analytics data collection (**Store** > **Configuration** > **General** > **Advanced Reporting**). Previously, due to an earlier fix that has now been reverted (see [GitHub-8258](https://github.com/magento/magento2/issues/8258)), validation failed when you set a value that exceeded 24.
 
 <!--- ENGCOM-4843-->
-The `getProductUrl()` method now returns the product URL for a specified website. Previously, this method did not let you retrieve the product URL for a specified website in multisite deployments. *Fix submitted by Nazar Klovanych in pull request [21876](https://github.com/magento/magento2/pull/21876)*. [GitHub-4247](https://github.com/magento/magento2/issues/4247)
+* The `getProductUrl()` method now returns the product URL for a specified website. Previously, this method did not let you retrieve the product URL for a specified website in multisite deployments. *Fix submitted by Nazar Klovanych in pull request [21876](https://github.com/magento/magento2/pull/21876)*. [GitHub-4247](https://github.com/magento/magento2/issues/4247)
 
 ### Image
 
@@ -765,7 +765,7 @@ The `getProductUrl()` method now returns the product URL for a specified website
 ### Newsletter
 
 <!--- MAGETWO-99636-->
-* Magento now sends only a subscribe email when you create an account from an email invitation. Previously, you received two emails, one that subscribed you to the newsletter and another that unsubscribed you.
+* Magento now sends only a subscribe email when you create an account from an email invitation. Previously, you received two emails -- one that subscribed you to the newsletter, and another that unsubscribed you.
 
 <!--- MAGETWO-71785-->
 * You can now export newsletter subscribers from the Admin. Previously, Magento displayed this error when you selected a subscriber name and clicked **Export**: `error: URI too long`
