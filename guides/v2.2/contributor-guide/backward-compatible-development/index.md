@@ -1,6 +1,6 @@
 ---
 group: contributor-guide
-title: Backward compatible development
+title: Backward Compatible Development
 ---
 This page describes rules and best practices for backward compatible development.
 
