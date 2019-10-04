@@ -11,7 +11,7 @@ This release includes over 170 functional fixes to the core product and  over 75
 
 ## New security-only patch available
 
-Merchants can now install time-sensitive security fixes without applying the hundreds of functional fixes and enhancements that a full quarterly release (for example, Magento 2.3.3) provides. Patch 2.3.2.1 (Composer package 2.3.2-p1) is a security-only patch that provides fixes for vulnerabilities that have been identified in our previous quarterly release, Magento 2.3.2.  For general information about security-only patches, see the Magento DevBlog post [Introducing the New Security-only Patch Release](https://devdocs-beta.magento.com/guides/v2.3/install-gde/composer.html#get-the-metapackage). For instructions on downloading and applying security-only patches (including patch 2.3.2-p1), see [Install Magento using Composer](https://devdocs-beta.magento.com/guides/v2.3/install-gde/composer.html#get-the-metapackage). 
+Merchants can now install time-sensitive security fixes without applying the hundreds of functional fixes and enhancements that a full quarterly release (for example, Magento 2.3.3) provides. Patch 2.3.2.1 (Composer package 2.3.2-p1) is a security-only patch that provides fixes for vulnerabilities that have been identified in our previous quarterly release, Magento 2.3.2.  For general information about security-only patches, see the Magento DevBlog post [Introducing the New Security-only Patch Release](https://community.magento.com/t5/Magento-DevBlog/Introducing-the-New-Security-only-Patch-Release/ba-p/141287). For instructions on downloading and applying security-only patches (including patch 2.3.2-p1), see [Install Magento using Composer](https://devdocs-beta.magento.com/guides/v2.3/install-gde/composer.html#get-the-metapackage). 
 
 
 ## Other release information
@@ -38,7 +38,7 @@ This release contains the following major PSD-related changes:
 
 * The **Braintree payment method now complies with PSD2 regulations**. Its core integration API has been upgraded to the latest JavaScript SDK v3 API, which is a requirement for supporting native Braintree 3D Secure 2.0 adoption. Braintree transactions are now also verified by using the native Braintree 3D Secure 2.0 service.
 
-* Authorize.net now provides the ability, through the `cardholderAuthentication` request field, to make 3D Secure verification through third-party services such as CardinalCommerce. Starting with this release, **Authorize.net Accept.js integration will support 3DS 2.0 through CardinalCommerce**.
+* Authorize.net now provides the ability, through the `cardholderAuthentication` request field, to make 3D Secure verification through third-party services such as CardinalCommerce. Starting with this release, **Authorize.net accept.js integration will support 3DS 2.0 through CardinalCommerce**.
 
 <!--- MAGETWO-99739 -->
 * The Cybersource and eWay payment modules have been deprecated in this release to comply with PSD2 SCA regulation, which takes effect on September 14, 2019. Use the official Marketplace extensions for these features instead.
@@ -69,7 +69,7 @@ The following upgrades to core platform components boost platform security and s
 * Merchants now have the ability to turn off the automatic URL rewrite generation that occurs by default on products when the category they belong to is saved. The new **Generate "category/product" URL Rewrites**  configuration option controls this behavior. When this feature is enabled, Magento will generate a lot of data when saving a category that contains many assigned products. This generated data is saved into rewrite tables that can degrade Magento performance. 
 
 <!--- MC-15763-->
-* Page load speeds have been improved by moving non-critical CSS elements to the bottom of the page. This enables the browser to render and display a storefront page more quickly. This setting is disabled by default, but you can enable it using **Stores** > **Configuration** > **Advanced** > **Developer** > **CSS Settings** > **Use CSS critical path**. See the [CSS critical path documentation]({{ page.baseurl }}/frontend-dev-guide/css-topics/css-critical-path.html) for more information.
+* Page load speeds have been improved by moving non-critical CSS elements to the bottom of the page. This enables the browser to render and display a storefront page more quickly. This setting is disabled by default, but you can enable it using **Stores** > **Configuration** > **Advanced** > **Developer** > **CSS Settings** > **Use CSS critical path**. 
 
 <!--- MC-16887-->
 * The `jQuery/ui` library has been refactored into separate widgets so that core modules load only the widgets they need. This update improves the performance of core storefront tasks including the loading of category, configurable product, home, and checkout pages.
@@ -479,7 +479,7 @@ We've fixed hundreds of issues in the Magento 2.3.3 core code.
 ### Cron
 
 <!--- ENGCOM-5210-->
-* Runtime exception handling for cron jobs has been improved. Now, when an exception occurs, the current run is marked as **failed** in the `cron_schedule`  table. Then, when the next run completes correctly, Magento updates job status at the end of the `cron_schedule` table. Previously, when a job failed, the `cron_schedule`  table was filled with pending jobs; the `indexer_update_all_views` job was not run; no output was sent to the `var/log/cron.log`file, and no status updates were appended to the `cron_schedule` table.
+* Runtime exception handling for cron jobs has been improved. Now, when an exception occurs, the current run is marked as **failed** in the `cron_schedule`  table. Then, when the next run completes correctly, Magento updates job status at the end of the `cron_schedule` table. Previously, when a job failed, the `cron_schedule`  table was filled with pending jobs; the `indexer_update_all_views` job was not run; no output was sent to the `var/log/cron.log` file, and no status updates were appended to the `cron_schedule` table.
 
 <!--- ENGCOM-5335-->
 * Cron jobs are no longer duplicated. Previously, after a cron job was run, Magento cleared the cache and processed the job again. *Fix submitted by Douglas Radburn in pull request [23312](https://github.com/magento/magento2/pull/23312)*.
@@ -768,7 +768,7 @@ We've fixed hundreds of issues in the Magento 2.3.3 core code.
 * Magento now sends only a subscribe email when you create an account from an email invitation. Previously, you received two emails -- one that subscribed you to the newsletter, and another that unsubscribed you.
 
 <!--- MAGETWO-71785-->
-* You can now export newsletter subscribers from the Admin. Previously, Magento displayed this error when you selected a subscriber name and clicked **Export**: `error: URI too long`
+* You can now export newsletter subscribers from the Admin. Previously, Magento displayed this error when you selected a subscriber name and clicked **Export**: `error: URI too long`.
 
 ### Orders
 
@@ -815,7 +815,7 @@ This release includes the following changes to integrations for core payment met
 * You can now cancel orders placed with PayPal Express even after authorization has expired.
 
 <!--- MC-16769-->
-* The Transactions tab now displays the correct status for a capture transaction for an order that was placed with the Authorize.net `Accept.js` payment method.
+* The Transactions tab now displays the correct status for a capture transaction for an order that was placed with the Authorize.net `accept.js` payment method.
 
 <!--- MAGETWO-99112-->
 * The Admin sales list now displays the payment method for each order. [GitHub-22231](https://github.com/magento/magento2/issues/22231)
@@ -830,7 +830,7 @@ This release includes the following changes to integrations for core payment met
 * When placing an order with Authorize.net, Magento now disables the Order page's **Place Order** button until billing information has been updated. Previously, this button remained enabled, no matter the status of the order in progress. *Fix submitted by Eden Duong in pull request [23718](https://github.com/magento/magento2/pull/23718)*. [GitHub-23624](https://github.com/magento/magento2/issues/23624)
 
 <!--- MC-17753-->
-* Magento now displays an informative email message about invalid credentials when a user tries to pay for an order with the Authorize.net payment method that has an incompletely configured Authorize.net `accept js` account.
+* Magento now displays an informative email message about invalid credentials when a user tries to pay for an order with the Authorize.net payment method that has an incompletely configured Authorize.net `accept.js` account.
 
 <!--- MC-17984-->
 * You can now place an order from the Admin using Authorize.net as the payment method. Previously, Magento did not place the order and displayed this message: `Transaction has been declined. Please try again later`.
@@ -839,7 +839,7 @@ This release includes the following changes to integrations for core payment met
 * The **Credentials** button on the Configure PayPal Express Checkout page (**Admin** > **Stores** > **Configuration**  > **Sales**  > **Payment Methods** > **PayPal Express Checkout**) is now displayed properly in modes.
 
 <!--- MC-17576-->
-* Magento no longer throws an error when you place an order using a custom payment method in deployments running Signifyd. Previously, when you tried to place an order using a custom payment method, an error related to the merge of signifyd_payment_mapping.xml files occurred.
+* Magento no longer throws an error when you place an order using a custom payment method in deployments running Signifyd. Previously, when you tried to place an order using a custom payment method, an error related to the merge of `signifyd_payment_mapping.xml` files occurred.
 
 <!--- ENGCOM-5504-->
 * Data type validation now occurs on data entered into the minimum and maximum order totals for all payment methods accessed under **Store** > **Configurations** > **Sales** > **Payment Method**. Previously, you could add values with invalid data types, and Magento saved these values with the wrong data type. *Fix submitted by Eden Duong in pull request [23917](https://github.com/magento/magento2/pull/23917)*. [GitHub-23916](https://github.com/magento/magento2/issues/23916)
@@ -859,7 +859,7 @@ This release includes the following changes to integrations for core payment met
 * Merchants now have the ability to turn off the automatic URL rewrite generation that occurs by default on products when the category they belong to is saved. The new **Generate "category/product" URL Rewrites**  configuration option controls this behavior. When this feature is enabled, Magento will generate a lot of data when saving a category that contains many assigned products. This generated data is saved into rewrite tables that can degrade Magento performance.
 
 <!--- MC-15763-->
-* Page load speeds have been improved by moving non-critical CSS elements to the bottom of the page. This enables the browser to render and display a storefront page more quickly. This setting is disabled by default, but you can enable it using **Stores** > **Configuration** > **Advanced** > **Developer** > **CSS Settings** > **Use CSS critical path**. See the [CSS critical path documentation]({{ page.baseurl }}/frontend-dev-guide/css-topics/css-critical-path.html) for more information.
+* Page load speeds have been improved by moving non-critical CSS elements to the bottom of the page. This enables the browser to render and display a storefront page more quickly. This setting is disabled by default, but you can enable it using **Stores** > **Configuration** > **Advanced** > **Developer** > **CSS Settings** > **Use CSS critical path**. 
 
 <!--- MC-16887-->
 * The `jQuery/ui` library has been refactored into separate widgets so that core modules load only the widgets they need. This update improves the performance of core storefront tasks including the loading of category, configurable product, home, and checkout pages.
@@ -947,7 +947,7 @@ This release includes the following changes to integrations for core payment met
 ### Shipping
 
 <!--- MC-17502-->
-* You can now use Cybersource as a payment method when multishipping is enabled. Previously, when you tried to place an order, Magento threw this error: `Invalid Form Key. Please refresh the page`This resulted from a problem with auto-attaching a form key on the submit event  when one form contained another form.
+* You can now use Cybersource as a payment method when multishipping is enabled. Previously, when you tried to place an order, Magento threw this error: `Invalid Form Key. Please refresh the page`. This resulted from a problem with auto-attaching a form key on the submit event  when one form contained another form.
 
 <!--- ENGCOM-5110-->
 * The Order Tracking page now displays the Contact us link as expected  when this feature is enabled and the designated shipping carrier is not available on the Order page. *Fix submitted by Eduard Chitoraga in pull request [22823](https://github.com/magento/magento2/pull/22823)*. [GitHub-22822](https://github.com/magento/magento2/issues/22822)
@@ -1133,7 +1133,7 @@ This release includes the following changes to integrations for core payment met
 * Magento now renders shipment details for an order without a fatal error when you use REST to create a shipment. *Fix submitted by Milind Singh in pull request [22687](https://github.com/magento/magento2/pull/22687)*. [GitHub-22686](https://github.com/magento/magento2/issues/22686)
 
 <!--- ENGCOM-5116-->
-* You can now use REST to update a customer that has no associated `store_id` without unintentionally changing other information. Previously, Magento changed the `store_id` to the default `store_id` if this field was left empty in the PUT request. .*Fix submitted by Mateusz Wira in pull request [22893](https://github.com/magento/magento2/pull/22893)*. [GitHub-22869](https://github.com/magento/magento2/issues/22869)
+* You can now use REST to update a customer that has no associated `store_id` without unintentionally changing other information. Previously, Magento changed the `store_id` to the default `store_id` if this field was left empty in the PUT request. *Fix submitted by Mateusz Wira in pull request [22893](https://github.com/magento/magento2/pull/22893)*. [GitHub-22869](https://github.com/magento/magento2/issues/22869)
 
 <!--- ENGCOM-5192-->
 * Swagger now accepts requests in XML and can display results in the same format. *Fix submitted by Simon Schröer in pull request [23025](https://github.com/magento/magento2/pull/23025)*.
@@ -1141,7 +1141,7 @@ This release includes the following changes to integrations for core payment met
 <!--- ENGCOM-5312-->
 * The `POST` on `/orders` REST calls no longer fail when properties in the request body are out of order. Previously, when billing address data preceded customer data in the Order Create API JSON payload, the billing address email was not populated, so the order was empty. *Fix submitted by Mateusz Wira in pull request [23048](https://github.com/magento/magento2/pull/23048)*.
 
-### Wish list
+### Wishlist
 
 <!--- MAGETWO-99228-->
 * Wishlists now accurately reflect product availability when a product has been added to a wishlist and then subsequently disabled. Previously, the wishlist displayed these contradictory messages: **You have no items in your wish list** and **1 item in wish list**.
