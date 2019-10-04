@@ -217,13 +217,13 @@ The following query returns information about category IDs `11` and `20` and two
 
 ### Return breadcrumb information
 
-The following query returns breadcrumb information about the women's `Tops` category (`id` = 25).
+The following query returns breadcrumb information about categories that have the name `Tops`.
 
 **Request**
 
 ```graphql
 {
-  categoryList(filters: {ids: {eq: "25"}}) {
+  categoryList(filters: {name: {match: "Tops"}}) {
     id
     level
     name
@@ -244,21 +244,28 @@ The following query returns breadcrumb information about the women's `Tops` cate
   "data": {
     "categoryList": [
       {
-        "id": 25,
-        "level": 4,
-        "name": "Tees",
+        "id": 12,
+        "level": 3,
+        "name": "Tops",
+        "breadcrumbs": [
+          {
+            "category_id": 11,
+            "category_name": "Men",
+            "category_level": 2,
+            "category_url_key": "men"
+          }
+        ]
+      },
+      {
+        "id": 21,
+        "level": 3,
+        "name": "Tops",
         "breadcrumbs": [
           {
             "category_id": 20,
             "category_name": "Women",
             "category_level": 2,
             "category_url_key": "women"
-          },
-          {
-            "category_id": 21,
-            "category_name": "Tops",
-            "category_level": 3,
-            "category_url_key": "tops-women"
           }
         ]
       }
