@@ -393,7 +393,7 @@ In addition to security enhancements, this release contains the following functi
 * The **Braintree payment method now complies with PSD2 regulations**. Its core integration API has been upgraded to the latest JavaScript SDK v3 API, which is a requirement for supporting native Braintree 3D Secure 2.0 adoption. Braintree transactions are now also verified by using the native Braintree 3D Secure 2.0 service. <!--- MAGETWO-99607 MC 17628 -->
 
 * Authorize.net now provides the ability, through the `cardholderAuthentication` request field, to make 3D Secure verification through third-party services such as CardinalCommerce. Starting with this release, **Authorize.net accept.js integration will support 3DS 2.0 through CardinalCommerce**. <!--- MAGETWO-99737 -->
-  
+
 <!--- MC-18237 -->
 * The Cybersource and eWay payment modules have been deprecated in this release to comply with PSD2 SCA regulation, which takes effect on September 14, 2019, or shortly thereafter. Use the official Marketplace extensions for these features instead.
 
