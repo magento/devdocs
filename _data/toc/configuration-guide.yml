@@ -393,7 +393,7 @@ pages:
         - label: Example - logging database activity
           url: /config-guide/log/log-db.html
 
-        - label: Example - logging to custom log file
+        - label: Example - logging to a custom log file
           url: /config-guide/log/custom-logger-handler.html
 
     - label: How to locate your session files

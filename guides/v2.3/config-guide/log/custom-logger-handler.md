@@ -1,6 +1,6 @@
 ---
 group: configuration-guide
-title: Example - logging to custom log file
+title: Example - logging to a custom log file
 functional_areas:
   - Configuration
   - System
@@ -9,7 +9,7 @@ contributor_name: Atwix
 contributor_link: https://www.atwix.com/
 ---
 
-The `Magento\Framework\Logger` module contains the next handler classes:
+The `Magento\Framework\Logger` module contains the following handler classes:
 
 | Class | Log file |
 | ----- | -------- |
