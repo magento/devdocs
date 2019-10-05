@@ -48,7 +48,7 @@ If Apache and the database server are on the same host, you can skip this sectio
 
 To enable Apache to initiate a connection to another host with SELinux enabled:
 
-1.	To determine if SELinux is enabled, use the following command:
+1. To determine if SELinux is enabled, use the following command:
 
     ```bash
     getenforce
@@ -56,7 +56,7 @@ To enable Apache to initiate a connection to another host with SELinux enabled:
 
     `Enforcing` displays to confirm that SELinux is running.
 
-  `Enforcing` displays to confirm that SELinux is running.
+2. Enter one of the following commands:
 
     * CentOS: `setsebool -P httpd_can_network_connect=1`
 
@@ -66,13 +66,14 @@ To enable Apache to initiate a connection to another host with SELinux enabled:
 
 Depending on your security requirements, you might find it necessary to open port 80 and other ports in your firewall. Because of the sensitive nature of networking security, Magento strongly recommends you consult with your IT department before proceeding. Following are some suggested references:
 
-*	Ubuntu: [Ubuntu documentation page](https://help.ubuntu.com/community/IptablesHowTo)
-*	CentOS: [CentOS how-to](http://wiki.centos.org/HowTos/Network/IPTables).
+*  Ubuntu: [Ubuntu documentation page](https://help.ubuntu.com/community/IptablesHowTo)
+*  CentOS: [CentOS how-to](http://wiki.centos.org/HowTos/Network/IPTables).
 
-## Related topics
+{:.ref-header}
+Related topics
 
-* [Apache]({{ page.baseurl }}/install-gde/prereq/apache.html)
-* [PHP]({{page.baseurl}}/install-gde/prereq/php-settings.html)
-* [MySQL]({{ page.baseurl }}/install-gde/prereq/mysql.html)
-* [Installing optional software]({{ page.baseurl }}/install-gde/prereq/optional.html)
-* [How to get the Magento software]({{ page.baseurl }}/install-gde/bk-install-guide.html)
+*  [Apache]({{ page.baseurl }}/install-gde/prereq/apache.html)
+*  [PHP]({{page.baseurl}}/install-gde/prereq/php-settings.html)
+*  [MySQL]({{ page.baseurl }}/install-gde/prereq/mysql.html)
+*  [Installing optional software]({{ page.baseurl }}/install-gde/prereq/optional.html)
+*  [How to get the Magento software]({{ page.baseurl }}/install-gde/bk-install-guide.html)

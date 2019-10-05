@@ -197,7 +197,8 @@ Index mode for Indexer Product Categories was changed from 'Update on Save' to '
 
 The indexers-related database triggers are added when the indexer mode is set to `schedule` and removed when the indexer mode is set to `realtime`. If the triggers are missing from your database while the indexers are set to `schedule`, change the indexers to `realtime` and then change them back to `schedule`. This resets the triggers.
 
-#### Related topics
+{:.ref-header}
+Related topics
 
 * [Manage the cache]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cache.html)
 * [Configure and run cron]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cron.html)

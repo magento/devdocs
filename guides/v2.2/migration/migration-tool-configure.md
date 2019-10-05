@@ -239,6 +239,7 @@ Even though you will be working with `map.xml.dist` file most of the time, the f
 
 You can refer to [ Data Migration Tool Technical Specification]({{ page.baseurl }}/migration/migration-tool-internal-spec.html) for more details.
 
-## Next step
+{:.ref-header}
+Related topics
 
 [Migrate using data migration tool]({{ page.baseurl }}/migration/migration-migrate-settings.html)

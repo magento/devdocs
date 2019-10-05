@@ -71,22 +71,22 @@ To install the default version of Apache (Ubuntu 14, 16&mdash;Apache 2.4, Ubuntu
 
 1. Install Apache
 
-    ```bash
-    apt-get -y install apache2
-    ```
+   ```bash
+   apt-get -y install apache2
+   ```
 
 1. Verify the installation.
 
-    ```bash
-    apache2 -v
-    ```
+   ```bash
+   apache2 -v
+   ```
 
-    The result displays similar to the following:
+   The result displays similar to the following:
 
-    ```terminal
-    Server version: Apache/2.4.18 (Ubuntu)
-    Server built: 2016-04-15T18:00:57
-    ```
+   ```terminal
+   Server version: Apache/2.4.18 (Ubuntu)
+   Server built: 2016-04-15T18:00:57
+   ```
 
 1. Enable rewrites and `.htaccess` as discussed in the following sections.
 
@@ -98,7 +98,8 @@ To install the default version of Apache (Ubuntu 14, 16&mdash;Apache 2.4, Ubuntu
 
 {% include install/allowoverrides22.md %}
 
-__Next steps:__
+{:.ref-header}
+Next steps
 
 *	[Solving 403 (Forbidden) errors](#apache-error)
 *	Continue with the next prerequisite ([PHP Settings]({{ page.baseurl }}/install-gde/prereq/php-settings.html))
@@ -116,46 +117,47 @@ To upgrade to Apache 2.4:
 
 1. Add the `ppa:ondrej` repository, which has Apache 2.4:
 
-    ```bash
-    apt-get -y update
-    ```
+   ```bash
+   apt-get -y update
+   ```
 
-    ```bash
-    apt-add-repository ppa:ondrej/apache2
-    ```
+   ```bash
+   apt-add-repository ppa:ondrej/apache2
+   ```
 
-    ```bash
-    apt-get -y update
-    ```
+   ```bash
+   apt-get -y update
+   ```
 
 1. Install Apache 2.4:
 
-    ```bash
-    apt-get install -y apache2
-    ```
+   ```bash
+   apt-get install -y apache2
+   ```
 
-    {:.bs-callout .bs-callout-info}
-    If the 'apt-get install' command fails because of unmet dependencies, consult a resource like [http://askubuntu.com](http://askubuntu.com/questions/140246/how-do-i-resolve-unmet-dependencies-after-adding-a-ppa){:target="_blank"}.
+   {:.bs-callout .bs-callout-info}
+   If the 'apt-get install' command fails because of unmet dependencies, consult a resource like [http://askubuntu.com](http://askubuntu.com/questions/140246/how-do-i-resolve-unmet-dependencies-after-adding-a-ppa){:target="_blank"}.
 
 1. Verify the installation.
 
-    ```bash
-    apache2 -v
-    ```
+   ```bash
+   apache2 -v
+   ```
 
-    Messages similar to the following should display:
+   Messages similar to the following should display:
 
-    ```terminal
-    Server version: Apache/2.4.10 (Ubuntu)
-    Server built: Jul 22 2014 22:46:25
-    ```
+   ```terminal
+   Server version: Apache/2.4.10 (Ubuntu)
+   Server built: Jul 22 2014 22:46:25
+   ```
 
 1. Continue with the next section.
 
 ### Enable rewrites and .htaccess for Apache 2.4 {#enable-rewr-apache24-upgr-ubuntu12}
 {% include install/allowoverrides24.md %}
 
-__Next steps:__
+{:.ref-header}
+Next steps
 
 *	[Solving 403 (Forbidden) errors](#apache-error)
 *	Continue with the next prerequisite ([PHP Settings]({{ page.baseurl }}/install-gde/prereq/php-settings.html))
@@ -174,33 +176,34 @@ Installing and configuring Apache is basically a three-step process: install the
 
 1. Install Apache 2.4 if you haven't already done so.
 
-    ```bash
-    yum -y install httpd
-    ```
+   ```bash
+   yum -y install httpd
+   ```
 
 1. Verify the installation:
 
-    ```bash
-    httpd -v
-    ```
+   ```bash
+   httpd -v
+   ```
 
-    Messages similar to the following display to confirm the installation was successful:
+   Messages similar to the following display to confirm the installation was successful:
 
-    ```terminal
-    Server version: Apache/2.2.15 (Unix)
-    Server built: Oct 16 2014 14:48:21
-    ```
+   ```terminal
+   Server version: Apache/2.2.15 (Unix)
+   Server built: Oct 16 2014 14:48:21
+   ```
 
 1. Continue with the next section.
 
-    {:.bs-callout .bs-callout-info}
-    Even though Apache 2.4 is provided by default with CentOS 7, you configure it like Apache 2.2. See the following section.
+   {:.bs-callout .bs-callout-info}
+   Even though Apache 2.4 is provided by default with CentOS 7, you configure it like Apache 2.2. See the following section.
 
 ### Enable rewrites and .htaccess for Apache 2.2 (including CentOS 7)
 
 {% include install/allowoverrides22.md %}
 
-__Next steps:__
+{:.ref-header}
+Next steps
 
 *	[Solving 403 (Forbidden) errors](#apache-error)
 *	Continue with the next prerequisite ([PHP Settings]({{ page.baseurl }}/install-gde/prereq/php-settings.html))
@@ -216,7 +219,7 @@ If you encounter 403 Forbidden errors when trying to access the Magento site, yo
 * [Solving 403 Forbidden errors for Apache 2.4](#apache-error-2-4)
 * [Solving 403 Forbidden errors for Apache 2.2](#apache-error-2-2)
 
-#### Solving 403 Forbidden errors for Apache 2.4 {#apache-error-2-4}
+### Solving 403 Forbidden errors for Apache 2.4 {#apache-error-2-4}
 
 To enable website visitors to access your site, use one of the [Require directives](http://httpd.apache.org/docs/2.4/howto/access.html){:target="_blank"}.
 
@@ -234,7 +237,7 @@ For example:
 {:.bs-callout .bs-callout-info}
 The preceding values for `Order` might not work in all cases. For more information, see the [Apache documentation](https://httpd.apache.org/docs/2.4/mod/mod_access_compat.html#order){:target="_blank"}.
 
-#### Solving 403 Forbidden errors for Apache 2.2 {#apache-error-2-2}
+### Solving 403 Forbidden errors for Apache 2.2 {#apache-error-2-2}
 
 To enable website visitors to access your site, use the [Allow directive](http://httpd.apache.org/docs/2.2/mod/mod_authz_host.html#allow){:target="_blank"}.
 
@@ -253,10 +256,11 @@ For example:
 The preceding values for `Order` might not work in all cases. For more information, see the [Apache documentation](https://httpd.apache.org/docs/2.2/mod/mod_authz_host.html#order){:target="_blank"}.
 {% endcollapsible %}
 
-#### Related topics
+{:.ref-header}
+Related topics
 
-* [PHP]({{page.baseurl}}/install-gde/prereq/php-settings.html)
-* [MySQL]({{page.baseurl}}/install-gde/prereq/mysql.html)
-* [Configuring security options]({{page.baseurl }}/install-gde/prereq/security.html)
-* [Installing optional software]({{page.baseurl }}/install-gde/prereq/optional.html)
-* [Determine your installation or upgrade path]({{ page.baseurl }}/install-gde/bk-install-guide.html)
+*  [PHP]({{page.baseurl}}/install-gde/prereq/php-settings.html)
+*  [MySQL]({{page.baseurl}}/install-gde/prereq/mysql.html)
+*  [Configuring security options]({{page.baseurl }}/install-gde/prereq/security.html)
+*  [Installing optional software]({{page.baseurl }}/install-gde/prereq/optional.html)
+*  [Determine your installation or upgrade path]({{ page.baseurl }}/install-gde/bk-install-guide.html)

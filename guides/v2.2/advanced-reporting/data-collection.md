@@ -196,7 +196,8 @@ It cannot contain any parameters.
 ...
 ```
 
-## Related topics
+{:.ref-header}
+Related topics
 
  [Modules providing advanced reporting][modules]
 

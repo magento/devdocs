@@ -26,7 +26,8 @@ If you use pub as your Magento root directory:
 
 * For the upgrade, create another subdomain or docroot that uses the Magento installation directory as its root.
 
-  Run the [System Upgrade utility]({{ page.baseurl }}/comp-mgr/upgrader/upgrade-start.html) using that subdomain.
+   Run the [System Upgrade utility]({{ page.baseurl }}/comp-mgr/upgrader/upgrade-start.html) using that subdomain.
+
 * Use the [following procedure](#upgrade-cli-upgr) to upgrade Magento using the command line.
 
 ## Put your store in maintenance mode {#upgrade-cli-maint}
@@ -39,7 +40,6 @@ You can optionally create a [custom maintenance mode page]({{ page.baseurl }}/co
 To enable maintenance mode:
 
 1. Log in to your Magento server as, or switch to, the Magento file system owner.
-
 1. Enter the following command:
 
    ```bash
@@ -51,7 +51,6 @@ To enable maintenance mode:
 ## Upgrade using the command line {#upgrade-cli-upgr}
 
 1. Log in to your Magento server as, or switch to, the Magento file system owner.
-
 1. Change to the directory in which you installed the Magento software. For example,
 
    ```bash
@@ -136,7 +135,8 @@ To enable maintenance mode:
    If so, perform the following tasks:
 
    1. Reset [file system ownership and permissions]({{ page.baseurl }}/install-gde/prereq/file-system-perms.html) as a user with `root` privileges.
-   2. Clear the following directories and try again:
-      * `<magento_root>/var/cache`
-	  * `<magento_root>/var/page_cache`
-	  * `<magento_root>/generated/code`
+   1. Clear the following directories and try again:
+
+      *  `<magento_root>/var/cache`
+      *  `<magento_root>/var/page_cache`
+      *  `<magento_root>/generated/code`

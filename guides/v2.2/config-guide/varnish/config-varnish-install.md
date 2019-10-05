@@ -36,6 +36,7 @@ Copyright (c) 2006-2014 Varnish Software AS
 
 Make sure the version is 4.x, 5.2 or 6.x before continuing. If you are running version 3.x, you must upgrade to a supported version. Consult the Varnish installation documentation for more information.
 
-### Next step
+{:.ref-header}
+Related topics
 
 [Configure Varnish and your web server]({{ page.baseurl }}/config-guide/varnish/config-varnish-configure.html)

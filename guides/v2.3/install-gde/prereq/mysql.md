@@ -1,9 +1,8 @@
 ---
 group: installation-guide
-subgroup: Prerequisites
 title: MySQL
-menu_title: MySQL
-menu_order: 25
+redirect_from:
+  - guides/v2.3/install-gde/trouble/tshoot_mysql_table-open-cache.html
 ---
 
 ## Help if you are just starting out {#mysql-help-beginner}
@@ -51,42 +50,42 @@ To install MySQL 5.7 on Ubuntu 16:
 
 1. Enter this command:
 
-    ```bash
-    sudo apt install -y mysql-server mysql-client
-    ```
+   ```bash
+   sudo apt install -y mysql-server mysql-client
+   ```
 
 2. Start MySQL:
 
-    ```bash
-    sudo service mysql start
-    ```
+   ```bash
+   sudo service mysql start
+   ```
 
 3. Secure the installation:
 
-    ```bash
-    sudo mysql_secure_installation
-    ```
+   ```bash
+   sudo mysql_secure_installation
+   ```
 
 4. Test the installation:
 
-    ```bash
-    mysql -u root -p
-    ```
+   ```bash
+   mysql -u root -p
+   ```
 
-    Sample output:
+   Sample output:
 
-    ```terminal
-    Welcome to the MySQL monitor.  Commands end with ; or \g.
-    Your MySQL connection id is 45 Server version: 5.6.19-0ubuntu0.14.04.1 (Ubuntu)
+   ```terminal
+   Welcome to the MySQL monitor.  Commands end with ; or \g.
+   Your MySQL connection id is 45 Server version: 5.6.19-0ubuntu0.14.04.1 (Ubuntu)
 
-    Copyright (c) 2000, 2014, Oracle and/or its affiliates. All rights reserved.
+   Copyright (c) 2000, 2014, Oracle and/or its affiliates. All rights reserved.
 
-    Oracle is a registered trademark of Oracle Corporation and/or its affiliates. Other names may be trademarks of their respective owners.
+   Oracle is a registered trademark of Oracle Corporation and/or its affiliates. Other names may be trademarks of their respective owners.
 
-    Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+   Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 
-    mysql>
-    ```
+   mysql>
+   ```
 
 1. If you expect to import large numbers of products into Magento, you can increase the value for [`max_allowed_packet`](http://dev.mysql.com/doc/refman/5.6/en/program-variables.html){:target="_blank"} that is larger than the default, 16MB.
 
@@ -100,42 +99,42 @@ To install MySQL 5.6 on Ubuntu 14:
 
 1. Enter this command:
 
-    ```bash
-    apt-get -y install mysql-server-5.6 mysql-client-5.6
-    ```
+   ```bash
+   apt-get -y install mysql-server-5.6 mysql-client-5.6
+   ```
 
 2. Start MySQL:
 
-    ```bash
-    sudo service mysql start
-    ```
+   ```bash
+   sudo service mysql start
+   ```
 
 3. Secure the installation:
 
-    ```bash
-    mysql_secure_installation
-    ```
+   ```bash
+   mysql_secure_installation
+   ```
 
 4. Test the installation by entering the following command:
 
-    ```bash
-    mysql -u root -p
-    ```
+   ```bash
+   mysql -u root -p
+   ```
 
-    Sample output:
+   Sample output:
 
-    ```terminal
-    Welcome to the MySQL monitor.  Commands end with ; or \g.
-    Your MySQL connection id is 45 Server version: 5.6.19-0ubuntu0.14.04.1 (Ubuntu)
+   ```terminal
+   Welcome to the MySQL monitor.  Commands end with ; or \g.
+   Your MySQL connection id is 45 Server version: 5.6.19-0ubuntu0.14.04.1 (Ubuntu)
 
-    Copyright (c) 2000, 2014, Oracle and/or its affiliates. All rights reserved.
+   Copyright (c) 2000, 2014, Oracle and/or its affiliates. All rights reserved.
 
-    Oracle is a registered trademark of Oracle Corporation and/or its affiliates. Other names may be trademarks of their respective owners.
+   Oracle is a registered trademark of Oracle Corporation and/or its affiliates. Other names may be trademarks of their respective owners.
 
-    Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+   Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 
-    mysql>
-    ```
+   mysql>
+   ```
 
 1. If you expect to import large numbers of products into Magento, you can increase the value for [`max_allowed_packet`](http://dev.mysql.com/doc/refman/5.6/en/program-variables.html){:target="_blank"} that is larger than the default, 16MB.
 
@@ -149,21 +148,21 @@ To install MySQL 5.6 on Ubuntu 12, use the following instructions from [askubunt
 
 1. Enter the following commands in the order shown:
 
-    ```bash
-    apt-get -y update
-    ```
+   ```bash
+   apt-get -y update
+   ```
 
-    ```bash
-    apt-add-repository ppa:ondrej/mysql-5.6
-    ```
+   ```bash
+   apt-add-repository ppa:ondrej/mysql-5.6
+   ```
 
-    ```bash
-    apt-get -y update
-    ```
+   ```bash
+   apt-get -y update
+   ```
 
-    ```bash
-    apt-get -y install mysql-server
-    ```
+   ```bash
+   apt-get -y install mysql-server
+   ```
 
 2. Start MySQL:
 
@@ -173,30 +172,30 @@ To install MySQL 5.6 on Ubuntu 12, use the following instructions from [askubunt
 
 3. Secure the installation:
 
-    ```bash
-    mysql_secure_installation
-    ```
+   ```bash
+   mysql_secure_installation
+   ```
 
 4. Test the installation:
 
-    ```bash
-    mysql -u root -p
-    ```
+   ```bash
+   mysql -u root -p
+   ```
 
-    Messages similar to the following display:
+   Messages similar to the following display:
 
-    ```terminal
-    Welcome to the MySQL monitor.  Commands end with ; or \g.
-    Your MySQL connection id is 43 Server version: 5.6.21-1+deb.sury.org~precise+1 (Ubuntu)
+   ```terminal
+   Welcome to the MySQL monitor.  Commands end with ; or \g.
+   Your MySQL connection id is 43 Server version: 5.6.21-1+deb.sury.org~precise+1 (Ubuntu)
 
-    Copyright (c) 2000, 2014, Oracle and/or its affiliates. All rights reserved.
+   Copyright (c) 2000, 2014, Oracle and/or its affiliates. All rights reserved.
 
-    Oracle is a registered trademark of Oracle Corporation and/or its affiliates. Other names may be trademarks of their respective owners.
+   Oracle is a registered trademark of Oracle Corporation and/or its affiliates. Other names may be trademarks of their respective owners.
 
-    Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+   Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 
-    mysql>
-    ```
+   mysql>
+   ```
 
 1. If you expect to import large numbers of products into Magento, you can increase the value for [`max_allowed_packet`](http://dev.mysql.com/doc/refman/5.6/en/program-variables.html){:target="_blank"} that is larger than the default, 16MB.
 
@@ -247,41 +246,41 @@ Continue with the next section.
 
 1. Enter the following commands in the order shown:
 
-    ```bash
-    yum -y install mysql-community-server
-    ```
+   ```bash
+   yum -y install mysql-community-server
+   ```
 
-    ```bash
-    service mysqld start
-    ```
+   ```bash
+   service mysqld start
+   ```
 
 2. Verify the version:
 
-    ```bash
-    mysql --version
-    ```
+   ```bash
+   mysql --version
+   ```
 
-    Sample output follows:
+   Sample output follows:
 
-    ```bash
-    mysql  Ver 14.14 Distrib 5.7.12, for Linux (x86_64) using  EditLine wrapper
-    ```
+   ```bash
+   mysql  Ver 14.14 Distrib 5.7.12, for Linux (x86_64) using  EditLine wrapper
+   ```
 
 1. Get the temporary database `root` user password:
 
-    ```bash
-    grep 'temporary password' /var/log/mysqld.log
-    ```
+   ```bash
+   grep 'temporary password' /var/log/mysqld.log
+   ```
 
-4.	Secure the installation:
+4. Secure the installation:
 
-    ```bash
-    mysql_secure_installation
-    ```
+   ```bash
+   mysql_secure_installation
+   ```
 
-    ```bash
-    mysql_secure_installation
-    ```
+   ```bash
+   mysql_secure_installation
+   ```
 
   Follow the prompts on your screen to set a new password and configure other options.
 5. Configure MySQL 5.7 as discussed in [Configuring the Magento database instance](#instgde-prereq-mysql-config).
@@ -292,68 +291,68 @@ The following procedure is based on [Install MySQL Server 5.6 in CentOS 6.x and 
 
 1. *CentOS 6* Install the MySQL database:
 
-    ```bash
-    yum -y update
-    ```
+   ```bash
+   yum -y update
+   ```
 
-    ```bash
-    sudo wget http://repo.mysql.com/mysql-community-release-el6-5.noarch.rpm && sudo rpm -ivh mysql-community-release-el6-5.noarch.rpm
-    ```
+   ```bash
+   sudo wget http://repo.mysql.com/mysql-community-release-el6-5.noarch.rpm && sudo rpm -ivh mysql-community-release-el6-5.noarch.rpm
+   ```
 
-    ```bash
-    sudo yum -y install mysql-server
-    ```
+   ```bash
+   sudo yum -y install mysql-server
+   ```
 
 1. *CentOS 7* Install the MySQL database:
 
-    ```bash
-    yum -y update
-    ```
+   ```bash
+   yum -y update
+   ```
 
-    ```bash
-    sudo wget http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm && sudo rpm -ivh mysql-community-release-el7-5.noarch.rpm
-    ```
+   ```bash
+   sudo wget http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm && sudo rpm -ivh mysql-community-release-el7-5.noarch.rpm
+   ```
 
-    ```bash
-    sudo yum -y install mysql-server
-    ```
+   ```bash
+   sudo yum -y install mysql-server
+   ```
 
 1.Start MySQL:
 
-    ```bash
-    service mysqld start
-    ```
+   ```bash
+   service mysqld start
+   ```
 
 1. Set a password for the <tt>root</tt> user and set other security-related options. Enter the following command and follow the prompts on your screen to complete the configuration:
 
-    ```bash
-    mysql_secure_installation
-    ```
+   ```bash
+   mysql_secure_installation
+   ```
 
 1. Verify the MySQL server version:
 
-    ```bash
-    mysql -u root -p
-    ```
+   ```bash
+   mysql -u root -p
+   ```
 
-    Messages similar to the following display:
+   Messages similar to the following display:
 
-    ```terminal
-    Welcome to the MySQL monitor.  Commands end with ; or \g.
-    Your MySQL connection id is 15 Server version: 5.6.23 MySQL Community Server (GPL)
+   ```terminal
+   Welcome to the MySQL monitor.  Commands end with ; or \g.
+   Your MySQL connection id is 15 Server version: 5.6.23 MySQL Community Server (GPL)
 
-    Copyright (c) 2000, 2015, Oracle and/or its affiliates. All rights reserved.
+   Copyright (c) 2000, 2015, Oracle and/or its affiliates. All rights reserved.
 
-    Oracle is a registered trademark of Oracle Corporation and/or its affiliates. Other names may be trademarks of their respective owners.
+   Oracle is a registered trademark of Oracle Corporation and/or its affiliates. Other names may be trademarks of their respective owners.
 
-    Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
-    ```
+   Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+   ```
 
-1. If you expect to import large numbers of products into Magento, you can configure MySQL to use the [`max_allowed_packet`](http://dev.mysql.com/doc/refman/5.6/en/program-variables.html){:target="_blank"} parameter. We recommend a value of at least 16MB.
+5. If you expect to import large numbers of products into Magento, you can configure MySQL to use the [`max_allowed_packet`](http://dev.mysql.com/doc/refman/5.6/en/program-variables.html){:target="_blank"} parameter. We recommend a value of at least 16MB.
 
-  {% include install/mysql_max-allowed-packet-centos.md %}
+ {% include install/mysql_max-allowed-packet-centos.md %}
 
-1. Configure the Magento database instance as discussed in the next section.
+6. Configure the Magento database instance as discussed in the next section.
 
 ## Configuring the Magento database instance {#instgde-prereq-mysql-config}
 
@@ -364,52 +363,53 @@ To configure a MySQL database instance:
 1. Log in to your database server as any user.
 1. Get to a MySQL command prompt:
 
-    ```bash
-    mysql -u root -p
-    ```
+   ```bash
+   mysql -u root -p
+   ```
 
 1. Enter the MySQL `root` user's password when prompted.
 1. Enter the following commands in the order shown to create a database instance named `magento` with username `magento`:
 
-    ```shell
-    create database magento;
-    ```
+   ```shell
+   create database magento;
+   ```
 
-    ```shell
-    create user magento IDENTIFIED BY 'magento';
-    ```
+   ```shell
+   create user magento IDENTIFIED BY 'magento';
+   ```
 
-    ```shell
-    GRANT ALL ON magento.* TO magento@localhost IDENTIFIED BY 'magento';
-    ```
+   ```shell
+   GRANT ALL ON magento.* TO magento@localhost IDENTIFIED BY 'magento';
+   ```
 
-    ```shell
-    flush privileges;
-    ```
+   ```shell
+   flush privileges;
+   ```
 
 1. Enter `exit` to quit the command prompt.
 
 1. Verify the database:
 
-    ```bash
-    mysql -u magento -p
-    ```
+   ```bash
+   mysql -u magento -p
+   ```
 
-    If the MySQL monitor displays, you created the database properly. If an error displays, repeat the preceding commands.
+   If the MySQL monitor displays, you created the database properly. If an error displays, repeat the preceding commands.
 
 1. If your web server and database server are on different hosts, perform the tasks discussed in this topic on the database server host then see [Set up a remote MySQL database connection]({{page.baseurl }}/install-gde/prereq/mysql_remote.html).
 
-    We recommend you configure your database instance as appropriate for your business. When configuring your database, please keep the following in mind:
+   We recommend you configure your database instance as appropriate for your business. When configuring your database, please keep the following in mind:
 
-    * Indexers require higher `tmp_table_size` and `max_heap_table_size` values (e.g., 64M). If you configure the `batch_size` parameter, you can adjust that value along with the table size settings to improve indexer performance. Refer to the [Magento Optimization Guide]({{page.baseurl }}/performance-best-practices/configuration.html) for more information.
+    *  Indexers require higher `tmp_table_size` and `max_heap_table_size` values (e.g., 64M). If you configure the `batch_size` parameter, you can adjust that value along with the table size settings to improve indexer performance. Refer to the [Magento Optimization Guide]({{page.baseurl }}/performance-best-practices/configuration.html) for more information.
 
-    * For optimal performance, make sure all MySQL and Magento index tables can be kept in memory (e.g., configure `innodb_buffer_pool_size`).
+    *  For optimal performance, make sure all MySQL and Magento index tables can be kept in memory (e.g., configure `innodb_buffer_pool_size`).
 
-## Related topics
+{:.ref-header}
+Related topics
 
-* [Set up a remote MySQL database connection]({{page.baseurl }}/install-gde/prereq/mysql_remote.html)
-* [Installing optional software]({{page.baseurl }}/install-gde/prereq/optional.html)
-* [Apache]({{page.baseurl }}/install-gde/prereq/apache.html)
-* [PHP](php-settings.html)
-* [Configuring security options]({{page.baseurl }}/install-gde/prereq/security.html)
-* [How to get the Magento software]({{ page.baseurl }}/install-gde/bk-install-guide.html)
+*  [Set up a remote MySQL database connection]({{page.baseurl }}/install-gde/prereq/mysql_remote.html)
+*  [Installing optional software]({{page.baseurl }}/install-gde/prereq/optional.html)
+*  [Apache]({{page.baseurl }}/install-gde/prereq/apache.html)
+*  [PHP](php-settings.html)
+*  [Configuring security options]({{page.baseurl }}/install-gde/prereq/security.html)
+*  [How to get the Magento software]({{ page.baseurl }}/install-gde/bk-install-guide.html)

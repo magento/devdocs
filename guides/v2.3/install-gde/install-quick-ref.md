@@ -43,9 +43,9 @@ If not, see the [Installation overview][].
 1. See the [system requirements][].
 2. If your system lacks any requirements, see the prerequisites documentation:
 
-   * [Apache][]
-   * [PHP][]
-   * [MySQL][]
+   *  [Apache][]
+   *  [PHP][]
+   *  [MySQL][]
 
 3. Just as importantly, set up the [Magento file system owner][]on the server.
 4. Switch to the [Magento file system owner][].
@@ -84,16 +84,16 @@ The following example shows how to install using the command line with the follo
 
   The database name is `magento`, and the username and password are both `magento`
 
-* Uses server rewrites
-* The Magento administrator has the following properties:
+*  Uses server rewrites
+*  The Magento administrator has the following properties:
 
-  * First and last name are `Magento User`
-  * Username is `admin` and the password is `admin123`
-  * E-mail address is `user@example.com`
+  *  First and last name are `Magento User`
+  *  Username is `admin` and the password is `admin123`
+  *  E-mail address is `user@example.com`
 
-* Default language is `en_US` (U.S. English)
-* Default currency is U.S. dollars
-* Default time zone is U.S. Central (America/Chicago)
+*  Default language is `en_US` (U.S. English)
+*  Default currency is U.S. dollars
+*  Default time zone is U.S. Central (America/Chicago)
 
     ```bash
     bin/magento setup:install --base-url=http://192.0.2.5/magento2/ \
@@ -101,7 +101,7 @@ The following example shows how to install using the command line with the follo
     --admin-firstname=Magento --admin-lastname=User --admin-email=user@example.com \
     --admin-user=admin --admin-password=admin123 --language=en_US \
     --currency=USD --timezone=America/Chicago --use-rewrites=1
-    ```
+   ```
 
 Optionally switch to [developer mode]({{page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html).
 
@@ -115,25 +115,25 @@ php magento deploy:mode:set developer
 
 {% endcollapsible %}
 
-#### Web Setup Wizard
+### Web Setup Wizard
 
 {% collapsible Click to view the Web Setup Wizard installation %}
 
 The following example shows how to install using the Web Setup Wizard with the following options:
 
-* The Magento software is installed in the `magento2` directory relative to the web server docroot, which means your storefront URL is `http://192.0.2.5/magento2/`
-* The database server is on the same host as the web server.
+*  The Magento software is installed in the `magento2` directory relative to the web server docroot, which means your storefront URL is `http://192.0.2.5/magento2/`
+*  The database server is on the same host as the web server.
 
-  The database name is `magento`, and the username and password are both `magento`
+   The database name is `magento`, and the username and password are both `magento`
 
-* The Magento administrator has the following properties:
+*  The Magento administrator has the following properties:
 
-  * Username is `admin` and the password is `admin123`
-  * E-mail address is `user@example.com`
+  *  Username is `admin` and the password is `admin123`
+  *  E-mail address is `user@example.com`
 
-* Default language is `en_US` (U.S. English)
-* Default currency is U.S. dollars
-* Default time zone is U.S. Central (America/Chicago)
+*  Default language is `en_US` (U.S. English)
+*  Default currency is U.S. dollars
+*  Default time zone is U.S. Central (America/Chicago)
 
 To run the Web Setup Wizard:
 
@@ -147,18 +147,16 @@ To run the Web Setup Wizard:
 
 1. Readiness Check verifies your system is ready to install the Magento software.
 
-  Click **Start Readiness Check**
+   Click **Start Readiness Check**
 
-  ![The Readiness Check makes sure your system is ready for the Magento software]({{ site.baseurl }}/common/images/install_qr_readiness.png){:width="400px"}
+   ![The Readiness Check makes sure your system is ready for the Magento software]({{ site.baseurl }}/common/images/install_qr_readiness.png){:width="400px"}
 
-    * If the readiness check passes, click **Next** and continue with the next step.
-    * If the readiness check fails, see [Readiness check issues][]
+   *  If the readiness check passes, click **Next** and continue with the next step.
+   *  If the readiness check fails, see [Readiness check issues][]
+   *  If the readiness check passes, click **Next** and continue with the next step.
+   *  If the readiness check fails, see [Readiness check issues]({{ page.baseurl }}/install-gde/trouble/readiness/tshoot_rc_main.html)
 
-    ```http
-    http://192.0.2.5/magento2/setup
-    ```
-
-2.	At the welcome page, click **Agree and Setup Magento**.
+4. Step 2: Add a Database enables you to set up your Magento database.
 
   ![Set up your Magento database]({{ site.baseurl }}/common/images/install_qr_database.png){:width="400px"}
 

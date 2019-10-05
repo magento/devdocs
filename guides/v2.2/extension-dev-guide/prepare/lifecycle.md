@@ -208,7 +208,7 @@ class InstallData implements InstallDataInterface
         $customerSetup->installCustomerForms();
         $disableAGCAttribute = $customerSetup->getEavConfig()->getAttribute('customer', 'disable_auto_group_change');
         ...
-	$setup->endSetup();
+    $setup->endSetup();
     }
 }
 ```

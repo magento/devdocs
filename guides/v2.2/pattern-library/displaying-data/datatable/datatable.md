@@ -56,23 +56,23 @@ The data-table will be designed in such a way that any of the above controls can
 
 Pagination controls allow the user to easily page through and organize data. Pagination controls will contain the following:
 
-* Drop-down select for number of items per page
-	* Increments TBD
-	* Custom field for user-defined increments
-* Page number (skip to) field and action button
-* ‘Next’ button
-* ‘Previous’ button when applicable
+*  Drop-down select for number of items per page
+   *  Increments TBD
+   *  Custom field for user-defined increments
+*  Page number (skip to) field and action button
+*  ‘Next’ button
+*  ‘Previous’ button when applicable
 
 ![](img/datatable04.jpg)
 
 ### Pagination Rules
 
-* The pagination controls will only be present if the number of table items exceeds the lowest increment for number of items per page.
-* The ‘Previous’ button should be disabled when viewing the first page of results.
-* The ‘Next’ button should be disabled when viewing the last page of results.
-* The ‘Skip to’ field will allow only numeric values.
+*  The pagination controls will only be present if the number of table items exceeds the lowest increment for number of items per page.
+*  The ‘Previous’ button should be disabled when viewing the first page of results.
+*  The ‘Next’ button should be disabled when viewing the last page of results.
+*  The ‘Skip to’ field will allow only numeric values.
 * ‘Skip to’ will be instantiated once the value is changed and [Return] or [Tab] is clicked.
-* A custom number of items per page can be set by selecting the "Custom" link which will allow users to specify a number. This number can be edited.
+*  A custom number of items per page can be set by selecting the "Custom" link which will allow users to specify a number. This number can be edited.
 
 ![](img/datatable05.jpg)
 
@@ -119,9 +119,9 @@ A [keyword](https://glossary.magento.com/keyword) search will allow users to sea
 
 The keyword search function and table controls will be:
 
-* Displayed above the table
-* Actions
-* Remain visibly persistent as the table scrolls
+*  Displayed above the table
+*  Actions
+*  Remain visibly persistent as the table scrolls
 
 ## Sticky Headers and Controls
 
@@ -143,18 +143,18 @@ The header will stick to the first table until the user scrolls past the bottom 
 
 The data-table will reset to the top of the table  when the user:
 
-* Submits a search query
-* Applies a filter
-* Sorts a column
-* Selects a mass action
-* Loads up a saved view
-* Clicks to the next page of results
-* Changes the number of items per page
+*  Submits a search query
+*  Applies a filter
+*  Sorts a column
+*  Selects a mass action
+*  Loads up a saved view
+*  Clicks to the next page of results
+*  Changes the number of items per page
 
 The data-table will remain in the current viewport when the user:
 
-* Creates a new saved view
-* Edits cells in-line
+*  Creates a new saved view
+*  Edits cells in-line
 
 ### Sticky First Column
 
@@ -295,10 +295,10 @@ As a user rearranges, adds, and resizes the columns of a particular table , it�
 
 The following parameters will be saved:
 
-* Columns displayed
-* Column arrangement
-* Column width
-* Number of items per page
+*  Columns displayed
+*  Column arrangement
+*  Column width
+*  Number of items per page
 
 ### Resetting the View
 
@@ -312,10 +312,10 @@ This feature will allow users to make bulk selections to items within any given 
 
 This drop down will include the following:
 
-* Select all on a page, or all visible
-* Select all on all pages
-* Invert selection (appears only after a selection has been made)
-* Deselect all
+*  Select all on a page, or all visible
+*  Select all on all pages
+*  Invert selection (appears only after a selection has been made)
+*  Deselect all
 
 This drop down only needs to appear where more than one page of data is available. In cases where only one page of data is available, only a checkbox allowing the user to select or deselect all is necessary. Options in the drop down select should be dynamic. For instance, deselect options should not be displayed if nothing is selected.
 
@@ -333,10 +333,10 @@ As items are selected on the grid, a count for the number of items selected shou
 
 For tables which require a select column:
 
-* The select column will always be the first column appearing on the left side of the table.
-* This column will be fixed and stationary (it cannot be moved or resized).
-* Users may select multiple rows by using the checkboxes or the select all function.
-* Selected rows will be indicated by a checked box and a highlight and/or border style which will delineate the selected rows from unselected rows.
+*  The select column will always be the first column appearing on the left side of the table.
+*  This column will be fixed and stationary (it cannot be moved or resized).
+*  Users may select multiple rows by using the checkboxes or the select all function.
+*  Selected rows will be indicated by a checked box and a highlight and/or border style which will delineate the selected rows from unselected rows.
 
 ![](img/datatable41.jpg)
 
@@ -429,20 +429,20 @@ General interaction should follow standard web conventions. Interaction around d
 
 ### Viewport Considerations
 
-* The default data-table will display within a 1024px screen resolution without the need for horizontal scrolling.
-* Horizontal scrollbars will be present whenever the data-table’s width expands beyond the browser’s viewport.
-* The data-table controls should not expand with the table , instead the controls will float as the table is scrolled in both the vertical and horizontal direction.
+*  The default data-table will display within a 1024px screen resolution without the need for horizontal scrolling.
+*  Horizontal scrollbars will be present whenever the data-table’s width expands beyond the browser’s viewport.
+*  The data-table controls should not expand with the table , instead the controls will float as the table is scrolled in both the vertical and horizontal direction.
 
 ![](img/datatable52.jpg)
 
 ### Column Headers
 
-* Clicking on a column header sorts the data ascending/descending.
-* Column headers are draggable and can be re-sized.
-* Can be added and removed using the settings action located on the list.
-* Data can be displayed in ascending or descending order by selecting the column header
-* The actively sorted column is indicated by style and an ascending/descending indicator (Style is TBD).
-* Can be resized by dragging the edge of the column.
+*  Clicking on a column header sorts the data ascending/descending.
+*  Column headers are draggable and can be re-sized.
+*  Can be added and removed using the settings action located on the list.
+*  Data can be displayed in ascending or descending order by selecting the column header
+*  The actively sorted column is indicated by style and an ascending/descending indicator (Style is TBD).
+*  Can be resized by dragging the edge of the column.
 
 ### Cursors
 

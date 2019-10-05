@@ -29,9 +29,9 @@ GET /V1/inventory/stock-source-links
 
 Name | Description | Type | Requirements
 --- | --- | --- | ---
-`stock_id`	| Stock ID | Integer | Required for POST operations
-`source_code`	| Source code of the link | String | Required for POST operations
-`priority`	| Priority of the link | Integer | Required when linking a stock to a source
+`stock_id` | Stock ID | Integer | Required for POST operations
+`source_code` | Source code of the link | String | Required for POST operations
+`priority` | Priority of the link | Integer | Required when linking a stock to a source
 
 ## Link stocks and sources
 

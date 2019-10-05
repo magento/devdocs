@@ -1,12 +1,6 @@
 ---
 group: software-update-guide
-subgroup: 06_UseExtMan
 title: Step 3. Extension Update
-menu_title: Extension Update
-menu_node:
-menu_order: 30
-level3_menu_node: level3child
-level3_subgroup: step3-ext
 functional_areas:
   - Upgrade
 ---
