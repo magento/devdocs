@@ -26,7 +26,7 @@ The `POST /V1/products/special-price` call sets special prices for the following
 
 **REST Endpoints**
 
-```
+```http
 POST /V1/products/special-price
 POST /V1/products/special-price-information
 POST /V1/products/special-price-delete
@@ -42,7 +42,6 @@ Name | Description | Format | Requirements
 `skus` | An array of SKU values that is specified when retrieving a list of special prices | array | Required for retrievals
 `price_from` | The date and time the special price goes into effect. The date/time format is `YYYY-MM-DD hh:mm:ss`. The specified time must be later than the current time.  | string | Required in {{site.data.var.ee}}. Optional in {{site.data.var.ce}}.
 `price_to` | The date and time the special price ends. The date/time format is `YYYY-MM-DD hh:mm:ss` If no value is specified, the special price does not expire. | string | Optional
-
 
 ### Set special prices
 
@@ -194,14 +193,13 @@ Bundle | discount
 Virtual | fixed, discount
 Downloadable | fixed, discount
 
-
 **Service Name**
 
 `TierPriceStorageInterface`
 
 **REST Endpoints**
 
-```
+```http
 POST /V1/products/tier-prices
 PUT /V1/products/tier-prices
 POST /V1/products/tier-prices-information
@@ -401,7 +399,7 @@ You cannot delete a base price. It can only be changed to another value (0 or gr
 
 **REST Endpoints**
 
-```
+```http
 POST /V1/products/base-prices
 POST /V1/products/base-prices-information
 ```
@@ -414,7 +412,6 @@ Name | Description | Format | Requirements
 `store_id` | The store ID  to apply the base price | integer | Required to set a base price
 `sku` | The SKU of the product | string | Required to set a base price
 `skus` | An array of SKU values that is specified when retrieving a list of base prices | array | Required for retrievals
-
 
 ### Set base prices
 
@@ -495,7 +492,7 @@ The cost is the actual cost of a product. Tracking costs is optional, but having
 
 **REST Endpoints**
 
-```
+```http
 POST /V1/products/cost
 POST /V1/products/cost-information
 POST /V1/products/cost-delete
@@ -509,7 +506,6 @@ Name | Description | Format | Requirements
 `store_id` | The store ID  to apply the cost value | integer | Required to set or delete a cost value
 `sku` | The SKU of the product | string | Required to set or delete a cost value
 `skus` | An array of SKU values that is specified when retrieving a list of cost values | array | Required for retrievals
-
 
 ### Set cost values
 

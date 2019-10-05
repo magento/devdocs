@@ -12,7 +12,7 @@ return_to:
 functional_areas:
   - Integration
 contributor_name: comwrap GmbH
-contributor_link: http://comwrap.com/ 
+contributor_link: http://comwrap.com/
 ---
 
  Let's add a text box to the product page that allows the customer to add his name (up to 15 characters) to the back of the shirt.
@@ -72,6 +72,7 @@ contributor_link: http://comwrap.com/
 ## Congratulations! You've finished.
   {:.no_toc}
 
-## Related topics
+{:.ref-header}
+Related topics
 
    * [Order Processing with REST APIs Tutorial]({{ page.baseurl }}/rest/tutorials/orders/order-intro.html)

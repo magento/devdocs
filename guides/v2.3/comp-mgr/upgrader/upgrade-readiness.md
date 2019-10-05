@@ -1,1 +1,1 @@
-../../../v2.2/comp-mgr/upgrader/upgrade-readiness.md
+../../../../guides/v2.2/comp-mgr/upgrader/upgrade-readiness.md

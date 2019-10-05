@@ -34,7 +34,6 @@ While the [XML](https://glossary.magento.com/xml) tells Magento about the compon
 
 Declare a `getData()` method in the data provider class that was referenced in the XML and return a value. Since that output will be part of the JSON rendered on the page, it is accessible via the [javascript](https://glossary.magento.com/javascript) class that is associated with the UI component and handles its behavior. Magento's Form Provider javascript class is often a good place to start.
 
-
 {:.bs-callout .bs-callout-info}
 A Javascript "component" is actually a Javascript file loaded through RequireJS. It should return a Javascript object that defines a module or function. Do not confuse Javascript components with UI components.
 
@@ -84,7 +83,7 @@ The properties Magento will parse are:
 
 The `links` property is the same as duplicating a value in both `imports` and `exports`. Each of those properties expect an object that contains key/value pairs to bind the expression to. In the example above, it would appear in the `defaults` property like this:
 
-```
+```js
 imports: {
     totalRecords: '${ $.provider }:data.totalRecords'
 }
@@ -92,7 +91,7 @@ imports: {
 
 When the Element class initializes, it will process the link that was declared in `imports`. Remember that one of the first things Magento does is process string literals, though, so it is actually working with something that looks more like the following (where `example` is the UI Component Name for clarity):
 
-```
+```js
 imports: {
     totalRecords: 'example.example_data_source:data.totalRecords'
 }

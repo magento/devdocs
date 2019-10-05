@@ -3,7 +3,7 @@ group: rest-api
 title: Manage source selection algorithms
 ---
 
-Inventory Management uses the Source Selection Algorithm (SSA) to track the salable quantities of product inventory across all sources and make recommendations for partial and full shipments. 
+Inventory Management uses the Source Selection Algorithm (SSA) to track the salable quantities of product inventory across all sources and make recommendations for partial and full shipments.
 
 The SSA uses stocks and sources to check the sales channel for incoming product requests and determines the available inventory. The algorithm:
 
@@ -22,7 +22,7 @@ Third parties can also extend SSA to create customized algorithms for recommendi
 
 **Service names**
 
-```
+```http
 inventorySourceSelectionApiGetSourceSelectionAlgorithmListV1
 inventorySourceSelectionApiSourceSelectionServiceV1
 inventoryDistanceBasedSourceSelectionApiGetDistanceProviderCodeV1
@@ -32,7 +32,7 @@ inventoryDistanceBasedSourceSelectionApiGetLatLngFromAddressV1
 
 **REST endpoints**
 
-```
+```http
 GET /V1/inventory/source-selection-algorithm-list
 POST /V1/inventory/source-selection-algorithm-result
 ```
@@ -91,8 +91,6 @@ Name | Description | Type | Requirements
 `street` | The street address of the shipping address| String | Required for the Distance Priority SSA
 `region` | The region code of the shipping address | String | Required for the Distance Priority SSA
 `city` | The city of the shipping address | String | Required for the Distance Priority SSA
-
-
 
 ### Source Priority Algorithm
 
@@ -172,13 +170,13 @@ Name | Description | Type | Requirements
             "qty": 50
         }],
         "extension_attributes": {
-        	"destination_address": {
-        		"country": "US",
-        		"postcode": "10577",
-        		"street": "3003 Purchase St",
-        		"region": "43",
-        		"city": "Purchase"
-        	}
+            "destination_address": {
+                "country": "US",
+                "postcode": "10577",
+                "street": "3003 Purchase St",
+                "region": "43",
+                "city": "Purchase"
+            }
         }
     },
     "algorithmCode": "distance"
@@ -277,7 +275,7 @@ The `GET /V1/inventory/get-latlng-from-address` endpoint calculates the latitude
 **URL parameters**
 
 Name | Description
---- | --- 
+--- | ---
 address[country] | The country code of the shipping address
 address[postcode] | The postal code of the shipping address
 address[street] | The street of the shipping address

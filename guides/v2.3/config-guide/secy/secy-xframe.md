@@ -1,1 +1,1 @@
-../../../v2.2/config-guide/secy/secy-xframe.md
+../../../../guides/v2.2/config-guide/secy/secy-xframe.md

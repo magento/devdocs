@@ -15,6 +15,8 @@ This article describes the following typical [layout](https://glossary.magento.c
 - [Add meta tags to the head block](#layout_markup_meta)
 - [Create a container](#create_cont)
 - [Reference a container](#ref_container)
+- [Reference a CMS block](#ref_cms_block)
+- [Making the block visibility dynamic](#ref_config_block)
 - [Create a block](#xml-manage-block)
 - [Set the template used by a block](#set_template)
 - [Modify block arguments](#layout_markup_modify-block)
@@ -214,6 +216,35 @@ Example: pass the image to the `logo` block.
     <argument name="logo_file" xsi:type="string">images/logo.png</argument>
   </arguments>
 </referenceBlock>
+```
+
+## Reference a CMS block {#ref_cms_block}
+
+A CMS block is injected into the layout by using the [Magento/Cms/Block/Block] class with the `block_id` argument. Any `block` or `container` can be used as a reference.
+
+```xml
+<referenceContainer name="content.bottom">
+    <block class="Magento\Cms\Block\Block" name="block_identifier">
+        <arguments>
+            <!- CMS Block id -->
+            <argument name="block_id" xsi:type="string">my_cms_block_identifier</argument>
+        </arguments>
+    </block>
+</referenceContainer>
+```
+
+As a result, the CMS block is added to the bottom of the page.
+
+![CMS Block]({{ site.baseurl }}/common/images/cms-block-reference.png)
+
+## Making the block visibility dynamic {#ref_config_block}
+
+Any block can be configured to show or not based on a [Magento/Config/Model/Config/Source/Yesno] system configuration field, using the `ifconfig` argument. For the value, use the XPath to the needed field.
+
+```xml
+<block class="Namespace\Module\Block\Type" name="block.example" ifconfig="my/yesno/field">
+    ...
+</block>
 ```
 
 ## Set the template used by a block {#set_template}
@@ -472,7 +503,88 @@ class Product
 }
 ```
 
-### Related topics
+## Manage the 'My Account' dashboard navigation links
+
+ You can remove navigation links from the 'My Account' dashboard on the storefront by setting the `remove` attribute.
+
+```xml
+<!-- ################################## -->
+<!-- Magento version: Open Source -->
+<!-- ################################## -->
+
+<!-- File:  app/design/frontend/<Vendor>/<theme>/Magento_Customer/layout/customer_account.xml -->
+<!-- "My Account" link -->
+<referenceBlock name="customer-account-navigation-account-link" remove="true"/>
+
+<!-- "Address Book" link -->
+<referenceBlock name="customer-account-navigation-address-link" remove="true"/>
+
+<!-- "Account Information" link -->
+<referenceBlock name="customer-account-navigation-account-edit-link" remove="true"/>
+
+<!-- File:  app/design/frontend/<Vendor>/<theme>/Magento_Downloadable/layout/customer_account.xml -->
+<!-- "My Downloadable Products" link -->
+<referenceBlock name="customer-account-navigation-downloadable-products-link" remove="true"/>
+
+<!-- File:  app/design/frontend/<Vendor>/<theme>/Magento_Newsletter/layout/customer_account.xml -->
+<!-- "Newsletter Subscriptions" link -->
+<referenceBlock name="customer-account-navigation-newsletter-subscriptions-link" remove="true"/>
+
+<!-- File:  app/design/frontend/<Vendor>/<theme>/Magento_Paypal/layout/customer_account.xml -->
+<!-- "Billing Agreements" link -->
+<referenceBlock name="customer-account-navigation-billing-agreements-link" remove="true"/>
+
+<!-- File:  app/design/frontend/<Vendor>/<theme>/Magento_Review/layout/customer_account.xml -->
+<!-- "My Product Reviews" link -->
+<referenceBlock name="customer-account-navigation-product-reviews-link" remove="true"/>
+
+<!-- File:  app/design/frontend/<Vendor>/<theme>/Magento_Sales/layout/customer_account.xml -->
+<!-- "My Orders" link -->
+<referenceBlock name="customer-account-navigation-orders-link" remove="true"/>
+
+<!-- File:  app/design/frontend/<Vendor>/<theme>/Magento_Vault/layout/customer_account.xml -->
+<!-- "Stored Payment Methods" link -->
+<referenceBlock name="customer-account-navigation-my-credit-cards-link" remove="true"/>
+
+<!-- File:  app/design/frontend/<Vendor>/<theme>/Magento_Wishlist/layout/customer_account.xml -->
+<!-- "My Wish List" link -->
+<referenceBlock name="customer-account-navigation-wish-list-link" remove="true"/>
+
+<!-- ################################### -->
+<!-- Magento version: Commerce -->
+<!-- ################################### -->
+
+<!-- File:  app/design/frontend/<Vendor>/<theme>/Magento_AdvancedCheckout/layout/customer_account.xml -->
+<!-- "Order by SKU" link -->
+<referenceBlock name="customer-account-navigation-checkout-sku-link" remove="true"/>
+
+<!-- File:  app/design/frontend/<Vendor>/<theme>/Magento_CustomerCustomAttributes/layout/customer_account.xml -->
+<!-- "Store credit" link -->
+<referenceBlock name="customer-account-navigation-customer-balance-link" remove="true"/>
+
+<!-- File:  app/design/frontend/<Vendor>/<theme>/Magento_GiftCardAccount/layout/customer_account.xml -->
+<!-- "Gift card" link -->
+<referenceBlock name="customer-account-navigation-gift-card-link" remove="true"/>
+
+<!-- File:  app/design/frontend/<Vendor>/<theme>/Magento_GiftRegistry/layout/customer_account.xml -->
+<!-- "Gift Registry" link -->
+<referenceBlock name="customer-account-navigation-giftregistry-link" remove="true"/>
+
+<!-- File:  app/design/frontend/<Vendor>/<theme>/Magento_Invitation/layout/customer_account.xml -->
+<!-- "My Invitations" link -->
+<referenceBlock name="customer-account-navigation-magento-invitation-link" remove="true"/>
+
+<!-- File:  app/design/frontend/<Vendor>/<theme>/Magento_Reward/layout/customer_account.xml -->
+<!-- "Reward Points" link -->
+<referenceBlock name="customer-account-navigation-reward-link" remove="true"/>
+
+<!-- File:  app/design/frontend/<Vendor>/<theme>/Magento_Rma/layout/customer_account.xml -->
+<!-- "My Returns" link -->
+<referenceBlock name="customer-account-navigation-return-history-link" remove="true"/>
+```
+
+{:.ref-header}
+Related topics
 
 - [Layout instructions]
 - [Extend a layout]
@@ -493,3 +605,5 @@ class Product
 [`<action>`]: {{page.baseurl}}/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_act
 [`<move>` instruction]: {{page.baseurl}}/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_mv
 [`before` and `after` attributes of `<block>`]: {{page.baseurl}}/frontend-dev-guide/layouts/xml-instructions.html#fedg_xml-instrux_before-after
+[Magento/Cms/Block/Block]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Cms/Block/Block.php
+[Magento/Config/Model/Config/Source/Yesno]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Config/Model/Config/Source/Yesno.php

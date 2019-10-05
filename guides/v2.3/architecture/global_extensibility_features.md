@@ -50,7 +50,6 @@ EAV | No
 Custom | Yes
 Extension | No
 
-
 Attribute types fall into three general categories:
 
 * **EAV (Entity-Attribute-Value) attributes** are site-specific attributes that you can define for a local site using the [Magento Admin](https://glossary.magento.com/magento-admin).
@@ -89,6 +88,7 @@ See [Plug-ins]({{page.baseurl}}/extension-dev-guide/plugins.html) in [PHP Develo
 
 [Declarative schema]({{page.baseurl}}/extension-dev-guide/declarative-schema/index.html) allows developers to declare the final desired state of the database as it pertains to their modules. The system adjusts to database changes automatically without performing redundant operations. Developers are no longer forced to write installation and upgrade scripts for each new version. In addition, declarative schema allows data be deleted when a module is uninstalled.
 
-### Related topic {#m2arch-related}
+{:.ref-header}
+Related topic
 
 [Extensibility and modularity]({{page.baseurl}}/architecture/extensibility.html)

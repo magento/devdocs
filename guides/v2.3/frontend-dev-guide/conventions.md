@@ -1,1 +1,1 @@
-../../v2.2/frontend-dev-guide/conventions.md
+../../../guides/v2.2/frontend-dev-guide/conventions.md

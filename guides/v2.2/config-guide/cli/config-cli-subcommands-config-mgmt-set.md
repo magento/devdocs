@@ -138,7 +138,6 @@ If you enter an incorrect configuration path, this command returns an error:
 
     The "wrong/config/path" does not exist
 
-
 See one of the following sections for more information:
 
 *   [Set configuration values that can be edited in the Magento Admin](#config-cli-config-set-edit)
@@ -256,7 +255,6 @@ Result:
 
 <pre class="no-copy">web/unsecure/base_url - http://example-for-website.com/</pre>
 
-
 **Show the base URL for the `default` store**
 
 ```bash
@@ -267,5 +265,6 @@ Result:
 
 <pre class="no-copy">web/unsecure/base_url - http://example-for-store.com/</pre>
 
-#### Related topic
+{:.ref-header}
+Related topic
 [Deployment general overview]({{ page.baseurl }}/config-guide/deployment/pipeline/)

@@ -1,14 +1,6 @@
 ---
 group: release-notes
-subgroup: Release Notes
 title: Magento Commerce (Cloud) 2.2.0 Release Notes
-menu_title: Magento Commerce (Cloud) 2.2.0 Release Notes
-menu_order: 400
-level3_menu_node:
-level3_subgroup:
-redirect_from:
-  - /guides/v2.2/cloud/release-notes/CloudReleaseNotes.html
-
 ---
 
 We are pleased to present {{site.data.var.ece}} 2.2.0 General Availability. This release includes numerous functional fixes and enhancements.
@@ -27,9 +19,9 @@ Look for the following {{site.data.var.ece}} highlights in this release:
 
 * **Magento Commerce Starter**. In addition to our Pro plan, Magento Cloud (Commerce) now comes in a smaller, Platform-as-a-Service version — Magento Commerce Starter. For an overview of these plans, see [Welcome to Magento Commerce Cloud]({{ site.baseurl }}/guides/v2.2/cloud/bk-cloud.html). For specific information on Starter, see Starter [architecture]({{ site.baseurl }}/guides/v2.2/cloud/basic-information/starter-architecture.html) and [develop and deploy workflow]({{ site.baseurl }}/guides/v2.2/cloud/basic-information/starter-develop-deploy-workflow.html).
 
-* **Staging and Production environments in the UI** for Pro projects. Starting October 23, 2017, all projects created using the free 30-day trial or provisioned for new accounts includes Staging and Production environments in the Project Web Interface. Existing accounts created before October 23, 2017 can enter a ticket to be updated. For more information, see [Add Staging and Production to Pro projects UI]({{ page.baseurl }}/cloud/trouble/pro-env-management.html).
+* **Staging and Production environments in the UI** for Pro projects. Starting October 23, 2017, all projects created using the free 30-day trial or provisioned for new accounts includes Staging and Production environments in the Project Web Interface.
 
-* **30-day free trials available** for Starter and Pro projects. Starting October 23, 2017, we provide trials for Start and Pro projects. We autoprovision your project, configuring basic settings to get you started. You can access a new Onboarding Portal to get started with your project. For more information, see [Subscriptions and plans]({{ page.baseurl }}/cloud/bk-cloud.html).
+* **30-day free trials available** for Starter and Pro projects. Starting October 23, 2017, we provide trials for Start and Pro projects. We auto provision your project, configuring basic settings to get you started. You can access a new Onboarding Portal to get started with your project. For more information, see [Subscriptions and plans]({{ page.baseurl }}/cloud/bk-cloud.html).
 
 * **Improvements to the {{site.data.var.ece}} deployment process**. This release includes new build and deployment variables. Users of earlier versions of {{site.data.var.ece}} will note that MCC has been replaced by ece-tools and ece-patches, which allows for patching your {{site.data.var.ece}} without requiring a full installation of base code and the patch. For more information, see [Magento application environment variables]({{ site.baseurl }}/guides/v2.2/cloud/env/environment-vars_magento.html), [Composer]({{ site.baseurl }}/guides/v2.2/cloud/reference/cloud-composer.html), and [Changes in Deployment](#deploy).
 
@@ -91,7 +83,7 @@ This release contains numerous fixes and enhancements. This section includes onl
 
 When upgrading to {{site.data.var.ece}} 2.2, consider the following changes in deployment:
 
-* `ADMIN_EMAIL` variable must be set. We require the `ADMIN_EMAIL` environment variable configured for deployments. You can set this variable through the Project Web Interface. This is required for new installations and upgrades. For instructions, see [Add admin variables for Admin access]({{ site.baseurl }}/guides/v2.2/cloud/before/before-project-owner.html).
+* `ADMIN_EMAIL` variable must be set. We require the `ADMIN_EMAIL` environment variable configured for deployments. You can set this variable through the Project Web Interface. This is required for new installations and upgrades. For instructions, see [Add admin variables for Admin access]({{ site.baseurl }}/guides/v2.2/cloud/onboarding/onboarding-tasks.html).
 
 * Update and include `config.php` and add a list of all modules. If you use Configuration Management with a `config.local.php` file, you must create a `config.php` and add it to your code. For instructions, see [Configuration Management and upgrading]({{ site.baseurl }}/guides/v2.2/cloud/project/project-upgrade.html).
 
@@ -110,7 +102,6 @@ When upgrading to {{site.data.var.ece}} 2.2, consider the following changes in d
 ## Community contributions {#community}
 
 We are grateful to the wider Magento community and would like to acknowledge their contributions to this release. Check out the following ways you can learn about the community contributions to our current releases:
-
 
 * If a community member has provided a fix for this release, we identify the fix in the Fixed Issue section of these notes with the phrase, "*Fix provided by community member @member_name*".
 

@@ -14,7 +14,7 @@ contributor_name: Atwix
 contributor_link: https://www.atwix.com/
 ---
 
-The `createEmptyCart` mutation creates an empty shopping cart and generates a cart ID. 
+The `createEmptyCart` mutation creates an empty shopping cart and generates a cart ID.
 
 {:.bs-callout .bs-callout-info}
 For logged-in customers, send the customer's authorization token in the Authorization parameter of the header. See ["Get customer authorization token"]({{ page.baseurl }}/graphql/get-customer-authorization-token.html) for more information.

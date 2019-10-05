@@ -14,8 +14,7 @@ GraphQL allows you to define the structure of the data that you need, and the se
 
 A GraphQL-enabled module handles externally-defined attributes differently than other Magento modules. We used the following techniques to manage product-related attributes, but you are free to use alternate methods:
 
-* **EAV attributes** are explicitly declared in the `schema.graphqls` files.
-For example, the Catalog [`schema.graphqls`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/CatalogGraphQl/etc/schema.graphqls) file declares multiple EAV attributes.
+* **EAV attributes** are explicitly declared in the `schema.graphqls` files. For example, the Catalog [`schema.graphqls`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/CatalogGraphQl/etc/schema.graphqls) file declares multiple EAV attributes.
 
 * **Custom attributes** are treated as dynamic attributes that might or might not be present. Therefore, they are not declared in the schema. Instead, we've implemented a reader that queries the database and gets any declared custom attributes. These attributes can be declared in the schema if you know they'll always be present.
 
@@ -39,7 +38,6 @@ The current GraphQL codebase also supports the following features:
 In the near future, we'll roll out the following features:
 
 * A more performant data retrieval mechanism
-* Caching
 * Queries for other storefront entities like carts and orders
 * Support mutations to enable payments, checkout, and other operations
 
@@ -50,7 +48,3 @@ GraphiQL is an in-browser tool for writing, validating, and testing GraphQL quer
 ![GraphiQL browser]({{ page.baseurl }}/graphql/images/graphql-browser.png)
 
 To begin using GraphiQL, set the GraphQL endpoint by entering `http://<magento2-3-server>/graphql` in the URL bar, then click **Set endpoint**. You can use the browser in the right column to determine how to set up a query. Additional examples are also available in [Queries]({{ page.baseurl }}/graphql/queries.html).
-
-
-{:.bs-callout .bs-callout-info}
-You can access the GraphQL introspection feature only if your Magento instance is in developer mode. [Set the Magento mode]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html) describes how to check and change the mode.

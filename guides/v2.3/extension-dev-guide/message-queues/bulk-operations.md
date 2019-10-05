@@ -56,7 +56,7 @@ The `BulkManagementInterface::scheduleBulk` is responsible for publishing bulk o
 <td>The Admin user ID that executes this bulk operation.</td></tr>
 </table>
 
-See [Create a publisher]( {{page.baseurl}}/extension-dev-guide/message-queues/implement-bulk.html#createpublisher) for a detailed example of a [publisher](https://glossary.magento.com/publisher).
+See [Create a publisher]( {{page.baseurl}}/extension-dev-guide/message-queues/implement-bulk.html#createpublisher) for a detailed example of a [publisher](https://glossary.magento.com/publisher-subscriber-pattern).
 
 ### Consume messages
 
@@ -70,9 +70,9 @@ Magento provides database exception classes to simplify the process of identifyi
 
 Exception class | Description of database error(s)
 --- | ---
-ConnectionException	| SQLSTATE[HY000]: General error: 2006 MySQL server has gone away <BR>SQLSTATE[HY000]: General error: 2013 Lost connection to MySQL server during query
+ConnectionException | SQLSTATE[HY000]: General error: 2006 MySQL server has gone away <BR>SQLSTATE[HY000]: General error: 2013 Lost connection to MySQL server during query
 LockWaitException | SQLSTATE[HY000]: General error: 1205 Lock wait timeout exceeded
-DeadlockException	| SQLSTATE[40001]: Serialization failure: 1213 Deadlock found when trying to get lock
+DeadlockException | SQLSTATE[40001]: Serialization failure: 1213 Deadlock found when trying to get lock
 
 The following pseudocode illustrates how to recover from database-related errors.
 
@@ -88,7 +88,6 @@ try {
     // try to recover from exception
 }
 ```
-
 
 See [Create a publisher]( {{page.baseurl}}/extension-dev-guide/message-queues/implement-bulk.html#createconsumer) for a detailed example of a consumer.
 

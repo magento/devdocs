@@ -1,1 +1,1 @@
-../../../v2.2/javascript-dev-guide/widgets/widget_collapsible.md
+../../../../guides/v2.2/javascript-dev-guide/widgets/widget_collapsible.md

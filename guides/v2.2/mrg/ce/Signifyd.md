@@ -6,7 +6,6 @@ menu_title: Signifyd
 menu_order: 2
 ---
 
-
 The Magento_Signifyd module provides integration with the [Signifyd](https://www.signifyd.com/) fraud protection system. The integration is based on the Signifyd API; see the [Signifyd API docs](https://www.signifyd.com/docs/api/#/introduction/) for technical details.
 
 The module implementation allows you to:
@@ -52,7 +51,7 @@ The following interfaces (marked with the `@api` annotation) extend the Signifyd
 
 - might be used by `Magento\Signifyd\Api\CaseRepositoryInterface` to retrieve a list of case entities by specific conditions
 
-For information about a public API in Magento 2, see [Public interfaces & APIs]({{ site.baseurl }}/guides/v2.1/extension-dev-guide/api-concepts.html).
+For information about a public API in Magento 2, see [Public interfaces & APIs]({{ page.baseurl }}/extension-dev-guide/api-concepts.html).
 
 ## Additional information
 

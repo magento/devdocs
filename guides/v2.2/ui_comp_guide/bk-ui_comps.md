@@ -32,6 +32,7 @@ The following XSD file contains rules and limitations shared between all compone
 In Magento 2 there are basic and secondary UI components.
 
 Basic components are:
+
 * [Listing component]({{ page.baseurl }}/ui_comp_guide/components/ui-listing-grid.html)
 
 * [Form component]({{ page.baseurl }}/ui_comp_guide/components/ui-form.html)
@@ -42,7 +43,7 @@ Basic components are declared in the [page layout files]({{ page.baseurl }}/fron
 
 All components can be configured both for [Admin](https://glossary.magento.com/admin) and [storefront](https://glossary.magento.com/storefront).
 
-{: .bs-callout .bs-callout-info }
+{: .bs-callout-info }
 You need to configure styles manually for components on storefront.
 
 ## When to use UI components?
@@ -68,7 +69,6 @@ UI component is a combination of:
 1. **XML declaration** that specifies the component's configuration settings and inner structure.
 
 2. **JavaScript** class inherited from one of the Magento JavaScript framework UI components base classes (such as [UIElement]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uielement_concept.html), [UIClass]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uiclass_concept.html) or [UICollection]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uicollection_concept.html)).
-
 
 3. **Related template(s)**
 

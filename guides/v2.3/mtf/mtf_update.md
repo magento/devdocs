@@ -1,1 +1,1 @@
-../../v2.2/mtf/mtf_update.md
+../../../guides/v2.2/mtf/mtf_update.md

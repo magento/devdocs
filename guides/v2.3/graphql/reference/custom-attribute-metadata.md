@@ -14,14 +14,12 @@ Attribute |  Data Type | Description
 `attribute_type` | String | The data type of the attribute (Response only)
 `entity_type` | String | The type of entity that defines the attribute
 
-
 ### AttributeOption object
 
 Attribute |  Data Type | Description
 --- | --- | ---
 `label` | String | The name of an attribute option
 `value` | String | The value assigned to an attribute option
-
 
 ## Example usage
 

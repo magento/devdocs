@@ -13,7 +13,6 @@ Magento generates a `bulk_uuid` each time it executes an [asynchronous API reque
 * `GET /V1/bulk/:bulkUuid/status`
 * `GET /V1/bulk/:bulkUuid/detailed-status`
 
-
 ## Get the status summary
 
 The `GET /V1/bulk/:bulkUuid/status` endpoint returns the abbreviated status of the specified operation:
@@ -55,7 +54,7 @@ Field name | Data type | Description
 
 The `GET /V1/bulk/:bulkUuid/detailed-status` endpoint returns detailed information about status of a specified operation. It is similar to the `GET /V1/bulk/:bulkUuid/status` endpoint, except that the `operations_list` array also contains the message queue topic name and serialized data for each operation.
 
-```
+```http
 GET /V1/bulk/:bulkUuid/detailed-status
 ```
 

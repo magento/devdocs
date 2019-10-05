@@ -107,6 +107,7 @@ Returns all available log entries. It can additionally filter out the entries th
 - `data?: Object`: Additional data associated with the entry.
 
 **Properties**
+
 - `message: string`: Entry's message.
 
 - `timestamp: number`: The time of entry creation.
@@ -241,6 +242,7 @@ An instance of the `Logger` class that is configured to display messages in the 
 **Path:** `<Magento_Ui_module_dir>/view/base/web/js/lib/logger/console-logger.js` ([See on GitHub]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/lib/logger/console-logger.js))
 
 ### Properties
+
  - `levels: {[name: string]: number}`: Reference to the available log levels.
  - `messages: messagePool`: Reference to `messagePool` that allows working with a list of predefined messages.
 

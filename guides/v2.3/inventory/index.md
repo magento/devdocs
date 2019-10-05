@@ -29,15 +29,13 @@ The following terms are important as you work with {{site.data.var.im}} APIs:
 
 * **Reservations** track deductions from the salable quantity as customers add products to carts and complete checkout. When an order ships, the reservation clears and deducts the shipped amounts from specific source inventory quantities.
 
-
 ## A simple scenario
 
 The following diagram illustrates the relationship between source stocks, aggregate stocks, and sales channels:
 
 ![Source and aggregate stock](images/inventory-diagram-stock.png)
 
-In this diagram, a bicycle merchant has inventory for a touring bike in a warehouse and two stores. He has three stocks with configured website sales channels and sources. When a customer shops through the UK website, Magento aggregates bike inventory from the warehouse and flagship store sources for a salable quantity of 50. The touring bike can be shipped from either the warehouse or the flagship store, but not the King Street store. The German (DE) web store same stock draws from the same aggregate stock as the UK web store.
-
+In this diagram, a bicycle merchant has inventory for a mountain bike in two warehouses and a drop shipper. He has two stocks with configured website sales channels and sources. When a customer shops through the UK website, Magento aggregates bike inventory from the UK warehouse and the drop shipper sources, for a salable quantity of 95. The bike can be shipped from either the warehouse or the drop shipper, but not the NY warehouse. Amazon Marketplace has the same stock, drawing from the same aggregate stock as the UK website.
 
 ## Important {{site.data.var.im}} objects
 

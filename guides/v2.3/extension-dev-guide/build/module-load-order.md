@@ -1,1 +1,1 @@
-../../../v2.2/extension-dev-guide/build/module-load-order.md
+../../../../guides/v2.2/extension-dev-guide/build/module-load-order.md

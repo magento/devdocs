@@ -37,18 +37,25 @@ Note that normally you don't have permissions to `<magento_root_dir>/app/code/`,
 type="tip"
 content="**For CentOS and Ubuntu users**<br/>
 If the command fails with the error message:
+
 ```terminal
 /var/www/html/magento2ce/node_modules/phantomjs-prebuilt/lib/phantom/bin/phantomjs: error while loading shared libraries: libfontconfig.so.1: cannot open shared object file: No such file or directory
 ```
-install [fontconfig library]:<br/>
+
+Install [fontconfig library]:<br/>
+
 * CentOS:
+
   ```bash
   yum install fontconfig
   ```
+
 * Ubuntu:
+
   ```bash
   apt-get install fontconfig
-  ``` 
+  ```
+
 "
 %}
 
@@ -66,6 +73,12 @@ Example:
 
 ```bash
 grunt spec:backend
+```
+
+You can also run a single test:
+
+```bash
+grunt spec:backend --file="/path/to/the/test.js"
 ```
 
 ## Write a test {#write-test}
@@ -240,7 +253,7 @@ Warning: Task "spec" not found. Use --force to continue.
 ### Warning: Cannot read property 'pid' of undefined {#cannot-read-property-pid-warning}
 
 #### Issue:
- 
+
 An error message appears:
 
 ```terminal
@@ -282,7 +295,6 @@ npm install
 
 <!-- Internal -->
 [Step 6]: #prepare-step6
-
 
 <!-- Abbreviations -->
 

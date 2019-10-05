@@ -9,6 +9,5 @@ To apply a patch:
 | .tar.gz           | `tar -zxf <patch name>.tar.gz`  |
 | .tar.bz2          | `tar -jxf <patch name>.tar.bz2` |
 
-
 {:.bs-callout .bs-callout-info}
 If you don't have command line access to your Magento server, extract the patch locally and transfer the files to the server using an FTP application.

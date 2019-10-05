@@ -3,7 +3,6 @@ group: javascript-developer-guide
 subgroup: 3_Widgets
 title: List widget
 ---
-## Overview
 
 {%
 include note.html
@@ -12,9 +11,9 @@ content='The list widget is deprecated since version 2.2.0. As an alternative co
 %}
 
 Provides a way to move items, typically a list, from one content section to another.
-The content can be moved using buttons and links. 
+The content can be moved using buttons and links.
 
-The list {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} source file is [lib/web/mage/list.js].
+The list [widget](https://glossary.magento.com/widget) source file is [lib/web/mage/list.js].
 
 ## Initialize the list widget {#quicksearch_init}
 
@@ -23,6 +22,7 @@ For information about how to initialize a widget in a JS component or `.phtml` t
 ## Options {#list_options}
 
 The list widget has the following options:
+
 -   [addButton](#l_addButton)
 -   [destinationSelector](#l_destinationSelector)
 -   [itemCount](#l_itemCount)
@@ -37,7 +37,7 @@ The list widget has the following options:
 Detailed description of each option follows.
 
 ### `addButton` {#l_addButton}
-Selector for the element used for item adding. 
+Selector for the element used for item adding.
 
 **Type**: String
 
@@ -53,7 +53,7 @@ Content destination selector.
 ### `itemCount` {#l_itemCount}
 Number of total items.
 
-**Type**: Integer 
+**Type**: Integer
 
 **Default value**: `0`
 
@@ -79,7 +79,7 @@ Alert message displayed when maximum limit is reached.
 **Default value**: `null`
 
 ### `removeButton` {#l_removeButton}
-Selector for the element used for item removing. 
+Selector for the element used for item removing.
 
 **Type**: String
 
@@ -109,6 +109,7 @@ Element holding the template.
 ## Methods {#list_methods}
 
 The list widget has the following methods:
+
 -   [addItem()](#list_addItem)
 -   [checkLimit()](#list_checkLimit)
 -   [handleAdd()](#list_handleAdd)
@@ -125,7 +126,6 @@ If the `maxItems` option is set, hides or displays the **Add** button.
 
 ### `removeItem()` {#list_removeItem}
 Removes an item from the list.
-
 
 [lib/web/mage/list.js]: {{ site.mage2bloburl }}/{{ page.guide_version }}/lib/web/mage/list.js
 [Initialize JavaScript]: {{page.baseurl}}/javascript-dev-guide/javascript/js_init.html

@@ -24,16 +24,18 @@ See [Magento 2.2.x technology stack requirements]({{ page.baseurl }}/install-gde
 
 ## Operating system
 
-Operating system configurations and optimizations are similar for Magento as other high-load web applications. As the number of concurrent connections handled by the server increases, the number of available sockets can become fully allocated. The Linux kernel supports a mechanism to "reuse" and "recycle" TCP connections. Be aware that more aggressive recycling than re-use may cause issues on the load balancers. To enable these kernel settings, set the following values in `/etc/sysctl.conf`: 
+Operating system configurations and optimizations are similar for Magento as other high-load web applications. As the number of concurrent connections handled by the server increases, the number of available sockets can become fully allocated. The Linux kernel supports a mechanism to "reuse" and "recycle" TCP connections. Be aware that more aggressive recycling than re-use may cause issues on the load balancers. To enable these kernel settings, set the following values in `/etc/sysctl.conf`:
 
-```
+```conf
 net.ipv4.tcp_tw_recycle = 1
 net.ipv4.tcp_tw_reuse = 1
 ```
 
 The kernel parameter `net.core.somaxconn` controls the maximum number of open sockets waiting for connections. This value can be safely increased to 1024, but it should be correlated with the ability of the server to handle this amount. To enable this kernel parameter, set the following value in `/etc/sysctl.conf`:
 
-`net.core.somaxconn = 1024`
+```conf
+net.core.somaxconn = 1024
+```
 
 ## PHP
 
@@ -61,14 +63,16 @@ We recommend limiting the list of active PHP extensions to those that are requir
 
 Adding more extensions increases library load times.
 
-{: .bs-callout .bs-callout-info }
+{: .bs-callout-info }
 The presence of any profiling and debugging extensions can negatively impact the response time of your pages. As an example, an active xDebug module without any debug session can increase the page response time by up to 30%.
 
 ### PHP Settings
 
 To guarantee successful execution of all Magento instances without dumping data or code to disk, set the memory limit as follows:
 
-`memory_limit=768MB`
+```conf
+memory_limit=768MB
+```
 
 #### ByteCode
 
@@ -86,7 +90,7 @@ When you fine-tune the memory allocation for opcache, take into account the size
 
 If you have a low-memory machine and you do not have many extensions or customizations installed, use the following settings to get a similar result:
 
-```bash
+```conf
 opcache.memory_consumption=64
 opcache.max_accelerated_files=60000
 ```
@@ -185,5 +189,5 @@ If you plan to serve all your traffic with just one web node, it does not make s
 
 For a multiple web nodes setup, Redis is the best option. Because Magento actively caches lots of data for better performance, pay attention to your network channel between the web nodes and the Redis server. You do not want the channel to become a bottleneck for request processing.
 
-{: .bs-callout .bs-callout-info }
+{: .bs-callout-info }
 If you need to serve hundreds and thousands of simultaneous requests, you may need a channel of up to 1 Gbit (or even wider) to your Redis server.

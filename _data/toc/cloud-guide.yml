@@ -23,12 +23,6 @@ pages:
         - label: Pro develop and deploy workflow
           url: /cloud/architecture/pro-develop-deploy-workflow.html
 
-        - label: Pro architecture (legacy)
-          url: /cloud/architecture/pro-architecture-legacy.html
-
-        - label: Add Staging and Production to Pro projects UI
-          url: /cloud/trouble/pro-env-management.html
-
     - label: Technologies and requirements
       url: /cloud/requirements/cloud-requirements.html
       children:
@@ -37,6 +31,9 @@ pages:
 
         - label: Magento Cloud CLI
           url: /cloud/reference/cli-ref-topic.html
+
+        -  label: ece-tools package
+           url: /cloud/reference/ece-tools-reference.html
 
         - label: Git
           url: /cloud/reference/git-integration.html
@@ -105,6 +102,9 @@ pages:
         - label: Connect to the database
           url: /cloud/docker/docker-database.html
 
+        - label: Functional testing in Docker
+          url: /cloud/docker/docker-development-testing.html
+
         - label: Docker quick reference
           url: /cloud/docker/docker-quick-reference.html
 
@@ -170,7 +170,7 @@ pages:
             - label: Customize error pages
               url: /cloud/cdn/cloud-fastly-custom-response.html
 
-        - label: Managed Cloud WAF
+        - label: Web Application Firewall
           url: /cloud/cdn/fastly-waf-service.html
           exclude_versions: ["2.0"]
 
@@ -202,6 +202,9 @@ pages:
       children:
         - label: Application
           url: /cloud/project/project-conf-files_magento-app.html
+          children:
+            - label: Set cache for static files
+              url: /cloud/project/set-cache.html
 
         - label: Build and deploy
           url: /cloud/project/magento-env-yaml.html
@@ -292,6 +295,9 @@ pages:
         - label: Project structure
           url: /cloud/project/project-start.html
 
+        - label: Log locations
+          url: /cloud/project/log-locations.html
+
         - label: Create and manage users
           url: /cloud/project/user-admin.html
 
@@ -300,6 +306,9 @@ pages:
 
         - label: Manage branches with the CLI
           url: /cloud/env/environments-start.html
+
+        - label: Profile database queries
+          url: /cloud/project/profile-database-queries.html
 
         - label: Snapshots and backup management
           url: /cloud/project/project-webint-snap.html
@@ -358,9 +367,6 @@ pages:
         - label: Troubleshoot deployment
           url: /cloud/trouble/troubleshoot-deployment.html
 
-        - label: View logs for troubleshooting
-          url: /cloud/trouble/environments-logs.html
-
         - label: Incorrect credentials
           url: /cloud/trouble/trouble_ce-creds.html
 
@@ -369,9 +375,6 @@ pages:
 
         - label: Component deployment failure
           url: /cloud/trouble/trouble_comp-deploy-fail.html
-
-        - label: Redis troubleshooting
-          url: /cloud/trouble/redis-troubleshooting.html
 
         - label: Reset cron jobs
           url: /cloud/trouble/reset-cron-jobs.html
@@ -398,10 +401,6 @@ pages:
 
         - label: Theme troubleshooting
           url: /cloud/trouble/theme-troubleshooting.html
-
-        - label: Message queues
-          url: /cloud/trouble/message-queues.html
-          exclude_versions: ["2.0"]
 
     - label: Upgrades and patches
       url: /cloud/project/project-upgrade-parent.html

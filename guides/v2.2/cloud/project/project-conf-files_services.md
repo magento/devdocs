@@ -6,96 +6,167 @@ functional_areas:
   - Setup
 ---
 
-Use the `services.yaml` file to configure all of your services supported and used by {{site.data.var.ece}}. These services include MySQL, Redis, ElasticSearch (for 2.1.X and later), and so on. You do not need to subscribe to external service providers. This file is located in the `.magento` directory in your project. See the latest sample of the [`services.yaml`](https://github.com/magento/magento-cloud/blob/master/.magento/services.yaml) file.
+The `services.yaml` file defines the services supported and used by {{site.data.var.ece}}, such as MySQL, Redis, and ElasticSearch. You do not need to subscribe to external service providers. This file is in the `.magento` directory of your project.
 
-When you push your Git branch, our deploy script uses the values defined by configuration files in the `.magento` directory. After deployment, the script deletes the directory and its contents. Your local development environment is not affected.
-
-{% include cloud/note-pro-using-yaml-support.md %}
-
-## How this file works {#howitworks}
-
-The `.magento.app.yaml` and `services.yaml` files set the services, applications, and configurations to build and include in an environment. If you add services with specific versions, the initial push and deployment of your branches with these updated files directs the PaaS environment to provision the environment with those services. When you make changes to the services, the environment updates.
+The deploy script uses the configuration files in the `.magento` directory to provision the environment with the configured services. A service becomes available to your application if it is included in the `relationships` property of the `.magento.app.yaml` file. The `services.yaml` file contains the _type_ and _disk_ values. Service type defines the service _name_ and _version_. Changing a service configuration causes a deployment to provision the environment with the updated services.
 
 This affects the following environments:
 
 -  All Starter environments including Production `master`
 -  Pro Integration environments
 
-To install and update services in Pro Staging and Production environments (IaaS), you must enter a [Support ticket]({{ page.baseurl }}/cloud/trouble/trouble.html). Indicate the service changes needed and your updated `.magento.app.yaml` and `services.yaml` files in the ticket.
+{:.bs-callout-tip}
+For Pro, you must enter a [Support ticket]({{ page.baseurl }}/cloud/trouble/trouble.html) to install or update services in the Staging and Production environments. Indicate the service changes needed and include your updated `.magento.app.yaml` and `services.yaml` files in the ticket.
 
-## Default and supported services {#cloud-yaml-services-default}
+## Default and supported services
 
-A Cloud template includes the following [default `services.yaml` file](https://github.com/magento/magento-cloud/blob/master/.magento/services.yaml):
-
-```yaml
-mysql:
-    type: mysql:10.0
-    disk: 2048
-
-redis:
-    type: redis:3.0
-
-elasticsearch:
-    type: elasticsearch:6.5
-    disk: 1024
-```
-
-Modify this file to use specific and additional services in your deployment. See the [`type`](#cloud-yaml-services-type) section to see the services we support and deploy for you if you add them to the file.
-
-## Service values {#services}
-
-To add a service, you add the following data to services.yaml:
-
-```yaml
-name:
-    type: name:version
-    disk: value
-```
-
-For example:
-
-```yaml
-mysql:
-    type: mysql:10.0
-    disk: 2048
-```
-
-### `name` {#cloud-yaml-services-name}
-
-Identifies the service in the project. The `name` can consist only of lower case alphanumeric characters: `a` to `z` and `0` to `9`. For example, Redis is entered as `redis`.
-
-You can have multiple instances of each service type. For example, you could have multiple Redis instances. For example, we use multiple Redis instances, one for session and one for cache.
-
-```yaml
-redis:
-    type: redis:3.0
-
-redis2:
-    type: redis:3.0
-```
-
-Be aware, if you rename a service in the `services.yaml` file, the following is **permanently removed**:
-
--  The existing service before creating a new service with the new name you specify.
--  All existing data for the service is removed. We strongly recommend you [snapshot your environment]({{ page.baseurl }}/cloud/project/project-webint-snap.html) before you change the name of an existing service.
-
-### `type` {#cloud-yaml-services-type}
-
-The `type` of your service in the format: `type:version`
-
-We support and deploy the following services for you:
+We support and deploy the following services:
 
 -  [`mysql`]({{ page.baseurl }}/cloud/project/project-conf-files_services-mysql.html)
 -  [`redis`]({{ page.baseurl }}/cloud/project/project-conf-files_services-redis.html)
 -  [`elasticsearch`]({{ page.baseurl }}/cloud/project/project-conf-files_services-elastic.html)
 -  [`rabbitmq`]({{ page.baseurl }}/cloud/project/project-conf-files_services-rabbit.html)
 
-### `disk` {#cloud-yaml-services-disk}
+You can view default versions and disk values in the the current, [default `services.yaml` file](https://github.com/magento/magento-cloud/blob/master/.magento/services.yaml). The following sample shows the `mysql`, `redis`, and `elasticsearch` services defined in the `services.yaml` configuration file:
 
-Specifies the size of the persistent disk storage (in MB) allocated to the service.
+```yaml
+mysql:
+    type: mysql:<version>
+    disk: 2048
 
-For example, the current default storage amount per project is 5GB, or 5120MB. You can distribute this amount between your application and each of its services.
+redis:
+    type: redis:<version>
 
-## Using the services
+elasticsearch:
+    type: elasticsearch:<version>
+    disk: 1024
+```
 
-For services to be available to an application in your project, you must specify [*relationships*]({{ page.baseurl }}/cloud/project/project-conf-files_magento-app.html#relationships) between applications and services in the `.magento.app.yaml` file.
+## Service values
+
+You must provide the _type_ values: service _name_ and _version_. If the service uses persistent storage, then you must provide a _disk_ value. Use the following format:
+
+```yaml
+<name>:
+    type: <name>:<version>
+    disk: <value-MB>
+```
+
+### `name`
+
+The `name` value identifies the service in the project. You can only use lower case alphanumeric characters: `a` to `z` and `0` to `9`, such as `redis`.
+
+This _name_ value is used in the `relationships` property of the `.magento.app.yaml` configuration file:
+
+```yaml
+relationships:
+    redis: "<name>:redis"
+```
+
+You can name multiple instances of each service type. For example, we could use multiple Redis instances—one for session and one for cache.
+
+```yaml
+redis:
+    type: redis:<version>
+
+redis2:
+    type: redis:<version>
+```
+
+Renaming a service in the `services.yaml` file **permanently removes** the following:
+
+-  The existing service before creating a new service with the new name you specify.
+-  All existing data for the service is removed. We strongly recommend you [snapshot your environment]({{ page.baseurl }}/cloud/project/project-webint-snap.html) before you change the name of an existing service.
+
+### `type`
+
+The `type` value specifies the service name and version. For example:
+
+```yaml
+mysql:
+    type: mysql:10.2
+```
+
+### `disk`
+
+The `disk` value specifies the size of the persistent disk storage (in MB) to allocate to the service. Services that use persistent storage, such as MySQL, must provide a disk value. Services that use memory instead of persistent storage, such as Redis, do not require a disk value.
+
+```yaml
+mysql:
+    type: mysql:10.2
+    disk: 2048
+```
+
+The current default storage amount per project is 5GB, or 5120MB. You can distribute this amount between your application and each of its services.
+
+## Service relationships
+
+In {{ site.data.var.ece }} projects, service [*relationships*]({{ page.baseurl }}/cloud/project/project-conf-files_magento-app.html#relationships) configured in the `.magento.app.yaml` file determine which services are available to your application.
+
+You can retrieve the configuration data for all service relationships from the [`$MAGENTO_CLOUD_RELATIONSHIPS`]({{page.baseurl}}/cloud/env/environment-vars_cloud.html) environment variable. The configuration data includes service name, type, and version along with any required connection details such as port number and login credentials.
+
+{:.procedure}
+To verify relationships in local environment:
+
+1. In your local environment, show the relationships for the active environment.
+
+   ```bash
+   magento-cloud relationships
+   ```
+
+1. Confirm the `service` and `type` from the response. The response provides connection information, such as the IP address and port number.
+
+   **Abbreviated sample response**:
+
+   ```terminal
+   redis:
+       -
+   ...
+           type: 'redis:3.2'
+           port: 6379
+   elasticsearch:
+       -
+   ...
+           type: 'elasticsearch:6.5'
+           port: 9200
+   database:
+       -
+   ...
+           type: 'mysql:10.0'
+           port: 3306
+   ```
+   {:.no-copy}
+
+{:.procedure}
+To verify relationships in remote environments:
+
+1. Use SSH to log in to the remote environment.
+
+1. List the relationships configuration data for all services configured in the environment.
+
+   ```bash
+   echo $MAGENTO_CLOUD_RELATIONSHIPS | base64 -d | json_pp
+   ```
+
+   or
+
+   ```bash
+   php -r 'print_r(json_decode(base64_decode($_ENV["MAGENTO_CLOUD_RELATIONSHIPS"])));'
+   ```
+
+1. Confirm the `service` and `type` from the response. The response provides connection information, such as the IP address and port number and any required username and password credentials.
+
+## Service versions
+
+The following table lists the services used in {{site.data.var.ece}} and their version compatibility with the [Magento Cloud template](https://github.com/magento/magento-cloud).
+
+Service   |  Magento 2.3  | Magento 2.2
+--------- | ------------- | ------------
+`elasticsearch` | Magento 2.3.1 and later—1.7, 2.4, 5.2, 6.5<br>Magento 2.3.0—1.7, 2.4, 5.2 | Magento versions 2.2.8 and later—1.7, 2.4, 5.2, 6.5<br>Magento 2.2.0 to 2.2.7—1.7, 2.4, 5.2
+`mariadb` | 10.0 to 10.2  | 10.0 to 10.2
+`nginx`   | 1.9           | 1.9
+`node`    | 6, 8, 10, 11  | 6, 8, 10, 11
+`php`     | Magento 2.3.3 and later—7.1, 7.2, 7.3<br>Magento 2.3.0 to 2.3.2—7.1, 7.2 | Magento 2.2.10 and later—7.1, 7.2<br>Magento 2.2.5 to 2.2.9—7.0, 7.1<br>Magento 2.2.4 and earlier—7.0.2, 7.0.4, ~7.0.6, 7.1
+`rabbitmq`| 3.5, 3.7      | 3.5
+`redis`   | 3.2, 4.0, 5.0 | 3.2, 4.0, 5.0
+`varnish` | Magento 2.3.3 and later—4.0, 5.0, 6.2<br>Magento 2.3.0 to 2.3.2—4.0, 5.0 | 4.0, 5.0

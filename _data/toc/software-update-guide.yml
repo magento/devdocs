@@ -121,7 +121,15 @@ pages:
       url: /comp-mgr/cli/cli-upgrade.html
       children:
 
-        - label: Command-line upgrade with sample data
+        - label: (Optional) Upgrade using the custom script
+          url: /comp-mgr/cli/upgrade-with-script.html
+          include_versions: ["2.3"]
+          
+        - label: (Experimental) Upgrade using the composer plugin
+          url: /comp-mgr/cli/upgrade-with-plugin.html
+          include_versions: ["2.3"]
+
+        - label: Upgrade with sample data
           url: /comp-mgr/cli/cli-rc1-samp.html
 
     - label: Run System Upgrade
@@ -163,13 +171,6 @@ pages:
         - label: Out of memory errors
           url: /comp-mgr/trouble/cman/out-of-memory.html
 
-        - label: Missing .gitignore files
-          url: /comp-mgr/trouble/cman/gitignore.html
-
-        - label: Troubleshoot upgrade issues
-          include_versions: ["2.1", "2.2", "2.3"]
-          url: /comp-mgr/trouble/cman/upgrade_51431.html
-
         - label: Troubleshoot cron
           url: /comp-mgr/trouble/cman/cron.html
 
@@ -194,9 +195,3 @@ pages:
 
         - label: Troubleshoot backups
           url: /comp-mgr/trouble/cman/tshoot_backup.html
-
-        - label: Error upgrading from Magento Open Source to Magento Commerce
-          url: /comp-mgr/trouble/cman/ce-ee-upgrade.html
-
-        - label: magento/theme-doc-blank failure
-          url: /comp-mgr/trouble/cman/doc.html

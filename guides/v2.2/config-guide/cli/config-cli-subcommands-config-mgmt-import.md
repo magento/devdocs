@@ -112,10 +112,12 @@ Full example:
 ```
 
 {:.bs-callout .bs-callout-info}
+
 *   _Theme registration_. If a theme data is defined in `config.php` but the theme's source code is  not present in the file system, the theme is ignored (that is, not registered).
 *   _Theme removal_. If a theme is not present in `config.php` but the source code is present on the file system, the theme is not removed.
 
-#### For more information
+{:.ref-header}
+Related topics
 
 *   [Deployment general overview]({{ page.baseurl }}/config-guide/deployment/pipeline/)
 *   [`bin/magento app:config:dump`]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-config-mgmt-export.html)

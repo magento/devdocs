@@ -19,7 +19,6 @@ The sample payload does not contain the price or the size. These attributes will
 
 The `visibility` attribute is set to 4, meaning the product can be found by browsing or searching. This value will be changed for the simple products.
 
-
 {:.bs-callout .bs-callout-info}
 Before you using this code sample, verify that the attribute values are the same in your installation. See [Get the list of attributes defined in an attribute searchCriteria]({{ page.baseurl }}/rest/tutorials/configurable-product/plan-product.html#get-attributes) for more information.
 
@@ -40,42 +39,42 @@ Before you using this code sample, verify that the attribute values are the same
     "type_id": "configurable",
     "weight": "0.5",
     "extension_attributes": {
-    	"category_links": [
-    		{
-    			"position": 0,
-    			"category_id": "11"
-    		},
-    		{
-    			"position": 1,
-    			"category_id": "12"
-    		},
-    		{
-    			"position": 2,
-    			"category_id": "16"
-    		}
-    	]
+        "category_links": [
+            {
+                "position": 0,
+                "category_id": "11"
+            },
+            {
+                "position": 1,
+                "category_id": "12"
+            },
+            {
+                "position": 2,
+                "category_id": "16"
+            }
+        ]
     },
     "custom_attributes": [
-    	{
-    		"attribute_code": "description",
-    		"value": "The Champ Tee keeps you cool and dry while you do your thing. Let everyone know who you are by adding your name on the back for only $10."
-    	},
-    	{
-    		"attribute_code": "tax_class_id",
-    		"value": "2"
-    	},
-    	{
-    		"attribute_code": "material",
-    		"value": "148"
-    	},
-    	{
-    		"attribute_code": "pattern",
-    		"value": "196"
-    	},
-    	{
-    		"attribute_code": "color",
-    		"value": "52"
-    	}
+        {
+            "attribute_code": "description",
+            "value": "The Champ Tee keeps you cool and dry while you do your thing. Let everyone know who you are by adding your name on the back for only $10."
+        },
+        {
+            "attribute_code": "tax_class_id",
+            "value": "2"
+        },
+        {
+            "attribute_code": "material",
+            "value": "148"
+        },
+        {
+            "attribute_code": "pattern",
+            "value": "196"
+        },
+        {
+            "attribute_code": "color",
+            "value": "52"
+        }
     ]
   }
 }

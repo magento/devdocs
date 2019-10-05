@@ -34,7 +34,6 @@ GET /V1/company/
 
 The following table lists the parameters defined in `CompanyInterface`.
 
-
 Name | Description | Format | Requirements
 --- | --- | --- | ---
 `id` | System-generated company ID | integer | Required for updates and deletes.
@@ -57,7 +56,6 @@ Name | Description | Format | Requirements
 `reject_reason` | Specifies why a company's request to be a B2B customer is rejected | string | Optional
 `rejected_at` | A timestamp indicating when the company was rejected. | string | Optional
 `super_user_id` | The `customer_id` of the company administrator. When creating a company, the `customer_id` must already exist.  | integer | Required to create or update a company.
-
 
 ### Create a company
 
@@ -132,12 +130,12 @@ The following call changes the company status to Rejected (`2`) and explains why
 ```json
 {
   "company": {
-  	"id": 2,
-  	"company_name": "Test company",
+    "id": 2,
+    "company_name": "Test company",
     "company_email": "newemail@example.com",
     "customer_group_id": 1,
-        "street":[
-    "100 Big Tree Avenue"
+    "street":[
+        "100 Big Tree Avenue"
     ],
     "city": "San Francisco",
     "country_id": "US",
@@ -148,7 +146,6 @@ The following call changes the company status to Rejected (`2`) and explains why
     "super_user_id": 5,
     "status": 2,
     "reject_reason": "Failed background check."
-
   }
 }
 ```

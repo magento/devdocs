@@ -18,7 +18,7 @@ The shared catalog configuration process includes assigning categories and produ
 
 The `sharedCatalogCategoryManagementV1` service is based on `catalogCategoryManagementV1`. To view a store's category structure, call `GET /V1/categories`.
 
-{: .bs-callout .bs-callout-info }
+{: .bs-callout-info }
 Products that are defined within a category are not included when you assign a category to a shared catalog. You must add products separately.
 
 **Service name**
@@ -27,7 +27,7 @@ Products that are defined within a category are not included when you assign a c
 
 **REST Endpoints**
 
-```
+```terminal
 POST /V1/sharedCatalog/:id/assignCategories
 POST /V1/sharedCatalog/:id/unassignCategories
 GET  /V1/sharedCatalog/:id/categories
@@ -35,7 +35,7 @@ GET  /V1/sharedCatalog/:id/categories
 
 **Category parameters**
 
-{: .bs-callout .bs-callout-info }
+{: .bs-callout-info }
 Although you can specify other parameters defined within a `categories` object, the `id` is the only one used to assign or unassign a category to a shared catalog.
 
 Name | Description | Format | Requirements
@@ -134,11 +134,11 @@ The `sharedCatalogProductManagementV1` service is based on `catalogProductManage
 
 **Service name**
 
-`sharedCatalogProductManagementV1 `
+`sharedCatalogProductManagementV1`
 
 **REST endpoints**
 
-```
+```terminal
 POST  /V1/sharedCatalog/:id/assignProducts
 POST  /V1/sharedCatalog/:id/unassignProducts
 GET  /V1/sharedCatalog/:id/products
@@ -146,7 +146,7 @@ GET  /V1/sharedCatalog/:id/products
 
 **Category parameters**
 
-{: .bs-callout .bs-callout-info }
+{: .bs-callout-info }
 Although you can specify other parameters defined within a `products` object, the `sku` is the only one used to assign or unassign a product to a shared catalog.
 
 Name | Description | Format | Requirements
@@ -165,26 +165,26 @@ The following example adds two products each in the Bags, Fitness Equipment, and
 
 ```json
 {
-	"products": [
-    	{
-        	"sku": "24-MB01"
-    	},
-    	{
-        	"sku": "24-MB04"
-    	},
-    	{
-        	"sku": "24-UG06"
-    	},
-    	{
-        	"sku": "24-UG07"
-    	},
-    	{
-        	"sku": "24-MG04"
-    	},
-    	{
-        	"sku": "24-MG01"
-    	}
-	]
+ "products": [
+     {
+         "sku": "24-MB01"
+     },
+     {
+         "sku": "24-MB04"
+     },
+     {
+         "sku": "24-UG06"
+     },
+     {
+         "sku": "24-UG07"
+     },
+     {
+         "sku": "24-MG04"
+     },
+     {
+         "sku": "24-MG01"
+     }
+ ]
 }
 ```
 
@@ -205,9 +205,9 @@ Unassigning a product does not remove it from its category or categories.
 ```json
 {
   "products": [
-  	{
-  		"sku": "24-MG01"
-  	}
+   {
+     "sku": "24-MG01"
+   }
   ]
 }
 ```

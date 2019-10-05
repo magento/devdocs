@@ -1,1 +1,1 @@
-../../v2.2/config-guide/cache.md
+../../../guides/v2.2/config-guide/cache.md

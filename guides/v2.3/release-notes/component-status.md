@@ -3,8 +3,6 @@ group: release-notes
 title: Component Status
 ---
 
-**Last Updated: October 17, 2018**
-
 This page shows the status of each component for the Magento 2.3.x release and is intended to show you the readiness of different components.
 
 Each status color indicates the severity and amount of 2.3-related issues for a particular component.
@@ -135,7 +133,6 @@ Issues that are not related to the 2.3 release are not part of this report.
 | Tools/ Dev Tools                               | <span class='status green'>Green</span> |
 | Tools/ Web Server Configuration                | <span class='status green'>Green</span> |
 
-
 ## EE Modules
 
 | Name                              | Status                                  |
@@ -178,7 +175,6 @@ Issues that are not related to the 2.3 release are not part of this report.
 | Module/ VersionsCms               | <span class='status green'>Green</span> |
 | Module/ VisualMerchandiser        | <span class='status green'>Green</span> |
 
-
 ## B2B Modules
 
 | Name                    | Status                                  |
@@ -186,7 +182,6 @@ Issues that are not related to the 2.3 release are not part of this report.
 | Module/ Company         | <span class='status green'>Green</span> |
 | Module/ NegotiableQuote | <span class='status green'>Green</span> |
 | Module/ SharedCatalog   | <span class='status green'>Green</span> |
-
 
 ## Misc Modules
 

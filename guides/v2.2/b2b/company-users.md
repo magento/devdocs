@@ -9,7 +9,7 @@ functional_areas:
 
 A company user is a customer (buyer) that is assigned extended attributes that identify the company the user belongs to. Use the `POST /V1/customers` call, which is included with {{site.data.var.ce}} and {{site.data.var.ee}}, and specify the `company_attributes` extended attributes to create a company user.
 
-{: .bs-callout .bs-callout-info }
+{: .bs-callout-info }
 This topic discusses only the features of the `customerCustomerRepositoryV1` service that are specific to B2B. See [Create a customer]({{ page.baseurl }}/rest/tutorials/orders/order-create-customer.html) for an example of creating a standard customer.
 
 ## Manage company users
@@ -22,7 +22,7 @@ This section describes the REST endpoints used to manage company users.
 
 **REST Endpoints**
 
-```
+```terminal
 POST /V1/customers/
 PUT /V1/customers/:customerId
 ```
@@ -66,19 +66,19 @@ Full example:
 
 ```json
 {
-	"customer": {
-		"email": "mshaw@example.com",
-		"firstname": "Melanie",
-		"lastname": "Shaw",
-		"extension_attributes": {
-    		"company_attributes": {
-    		"company_id": 2,
-    		"status": 1,
-    		"job_title": "Sales Rep",
-    		"telephone": "512-555-3322"
-    		}
-		}
-	}
+  "customer": {
+    "email": "mshaw@example.com",
+    "firstname": "Melanie",
+    "lastname": "Shaw",
+    "extension_attributes": {
+      "company_attributes": {
+        "company_id": 2,
+        "status": 1,
+        "job_title": "Sales Rep",
+        "telephone": "512-555-3322"
+      }
+    }
+  }
 }
 ```
 
@@ -115,7 +115,6 @@ Full example:
 The following example changes the status of a company user to inactive.
 
 If you change the `status` to inactive, the account is locked. If the company user has child users, the system re-assigns the child users to the parent of the deactivated user.
-
 
 **Sample Usage**
 

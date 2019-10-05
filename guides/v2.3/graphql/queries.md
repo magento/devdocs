@@ -28,7 +28,7 @@ A query contains the following elements:
 
 The following example shows the structure of the `cart` query:
 
-```text
+```graphql
 query myCartQuery{
   cart(cart_id: String!): Cart
 }
@@ -38,13 +38,12 @@ In the preceding example, `myCartQuery` identifies your implementation of the `c
 
 Now let's fully define a query:
 
-```text
+```graphql
 query myCartQuery{
   cart(cart_id: "1WxKm8WUm3uFKXLlHXezew5WREfVRPAn") {
-    cart_id
     items {
       id
-      qty
+      quantity
     }
     billing_address {
       firstname
@@ -68,11 +67,10 @@ The following example shows the query response:
 {
   "data": {
     "cart": {
-      "cart_id": "1WxKm8WUm3uFKXLlHXezew5WREfVRPAn",
       "items": [
         {
           "id": "5",
-          "qty": 1
+          "quantity": 1
         }
       ],
       "billing_address": {
@@ -92,7 +90,7 @@ The following example shows the query response:
 }
 ```
 
-{:.bs-callout .bs-callout-tip}
+{:.bs-callout-tip}
 Magento will not run a query that is too complex. The number of fields, objects, and nodes are factors in determining the complexity of a query.
 
 ## Query variables
@@ -105,13 +103,12 @@ Specifying variables in a query can help increase code re-use. Consider the foll
 
 The following example declares the `$cart_id` variable. It is referenced in the `input` statement.
 
-```text
+```graphql
 query myCartQueryWithVariable($cart_id: String!) {
   cart(cart_id: $cart_id) {
-    cart_id
     items {
       id
-      qty
+      quantity
     }
     billing_address {
       firstname
@@ -132,6 +129,144 @@ Variables are defined separately in JSON:
 ```json
 {
   "cart_id": "1WxKm8WUm3uFKXLlHXezew5WREfVRPAn"
+}
+```
+
+## Introspection queries
+
+Introspection queries allow you to return information about the schema. For example, you might want a list of Magento GraphQL queries or details about a specific data type. The GraphQL specification determines the structure of introspection queries. See [Introspection](https://graphql.org/learn/introspection/) for more information.
+
+For Magento, introspection queries MUST have the operation name `IntrospectionQuery`. If you omit the operation name, or use a different name, the query returns incomplete results.
+
+### Example introspection queries
+
+#### Return a list of Magento queries
+
+The following query returns a list of Magento queries. The results are truncated.
+
+**Request**
+
+```graphql
+query IntrospectionQuery {
+  __schema {
+    mutationType {
+      fields {
+        name
+        description
+      }
+    }
+  }
+}
+```
+
+**Response**
+
+```json
+{
+  "data": {
+    "__schema": {
+      "queryType": {
+        "fields": [
+          {
+            "name": "cart",
+            "description": "Returns information about shopping cart"
+          },
+          {
+            "name": "category",
+            "description": "The category query searches for categories that match the criteria specified in the search and filter attributes."
+          }
+        ]
+      }
+    }
+  }
+}
+```
+
+### Get details about a data type
+
+The following introspection query returns details about the `ProductAttributeFilterInput` data type.
+
+**Request**
+
+```graphql
+query IntrospectionQuery {
+  __type(name: "ProductAttributeFilterInput") {
+    name
+    kind
+    description
+    inputFields {
+      name
+      description
+      defaultValue
+    }
+    fields {
+      name
+      args {
+        name
+        description
+        type {
+          kind
+          name
+        }
+      }
+      type {
+        kind
+        name
+      }
+    }
+  }
+}
+```
+
+**Response**
+
+```json
+{
+  "data": {
+    "__type": {
+      "name": "ProductAttributeFilterInput",
+      "kind": "INPUT_OBJECT",
+      "description": "ProductAttributeFilterInput defines the filters to be used in the search. A filter contains at least one attribute, a comparison operator, and the value that is being searched for.",
+      "inputFields": [
+        {
+          "name": "category_id",
+          "description": "Filter product by category id",
+          "defaultValue": null
+        },
+        {
+          "name": "description",
+          "description": "Attribute label: Description",
+          "defaultValue": null
+        },
+        {
+          "name": "name",
+          "description": "Attribute label: Product Name",
+          "defaultValue": null
+        },
+        {
+          "name": "price",
+          "description": "Attribute label: Price",
+          "defaultValue": null
+        },
+        {
+          "name": "short_description",
+          "description": "Attribute label: Short Description",
+          "defaultValue": null
+        },
+        {
+          "name": "sku",
+          "description": "Attribute label: SKU",
+          "defaultValue": null
+        },
+        {
+          "name": "url_key",
+          "description": "The part of the URL that identifies the product",
+          "defaultValue": null
+        }
+      ],
+      "fields": null
+    }
+  }
 }
 ```
 
@@ -160,7 +295,7 @@ Search filters are logically ANDed unless an `or` statement is specified. The se
 
 Each object type defines which fields can be searched. See the object-specific documentation for details.
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 You cannot specify the same search field twice in a GraphQL query.
 
 #### Condition types and search values
@@ -183,11 +318,10 @@ Magento GraphQL clause | SQL equivalent
 `lteq: "value"` | <code><i>field</i> <= 'value'</code>
 `moreq: "value"` | <code><i>field</i> >= 'value'</code>
 `from: "value1"` `to: "value2"` | <code><i>field</i> BETWEEN 'value1' AND 'value2'</code>
-`finset: [1, 2, 3]` | <code>FINSET(<i>field</i>, '1, 2, 3')</code>
 
-`to` and `from` must always be used together. These condition types can be used in the same search term. For example, `qty: {from: "10" to: "20"}`.
+`to` and `from` must always be used together. These condition types can be used in the same search term. For example, `quantity: {from: "10" to: "20"}`.
 
-`gt` and `lt` can be used in the same search term. For example, `qty: {gt: "10" lt: "20"}`.
+`gt` and `lt` can be used in the same search term. For example, `quantity: {gt: "10" lt: "20"}`.
 
 ### Specifying pagination
 
@@ -205,7 +339,7 @@ The `sort` object allows you to specify which field or fields to use for sorting
 
 In the following example, Magento returns a list of items that are sorted in order of decreasing price. If two or more items have the same price, the items are listed in alphabetic order by name.
 
-``` text
+```graphql
 sort: {
   price: DESC
   name:  ASC
@@ -220,7 +354,7 @@ The following sections provide examples of each type of search. These examples u
 
 The following search returns items that contain the word `yoga` or `pants`. The Catalog Search index contains search terms taken from the product `name`, `description`, `short_description` and related attributes.
 
-``` text
+```graphql
 {
   products(
     search: "Yoga pants"
@@ -260,7 +394,7 @@ The following sample query returns a list of products that meets the following c
 
 The response for each item includes the `name`, `sku`, `price` and `description` only. Up to 25 results are returned at a time, in decreasing order of price.
 
-``` text
+```graphql
 {
   products(
     search: "Messenger"
@@ -352,7 +486,7 @@ The query returns the following:
 
 The following search finds all products that were added after the specified time (midnight, November 1, 2017).
 
-``` text
+```graphql
 {
   products(
     filter: {
@@ -391,7 +525,7 @@ The following search finds all products that were added after the specified time
 
 The following example searches for all products whose `sku` begins with the string `24-MB` or whose `name` ends with `Bag`.
 
-``` text
+```graphql
 {
   products(
     filter: {
@@ -437,7 +571,7 @@ The query returns 8 items.
 
 This query searches for products that have `name` that ends with `Short` or has a `sku` that indicates the product is a pair of women’s pants (`WP%`). The system performs a logical AND to restrict the results to those that cost from $40 to $49.99.
 
-``` text
+```graphql
 {
   products(
     filter: {
@@ -447,7 +581,7 @@ This query searches for products that have `name` that ends with `Short` or has 
       or: {
         name: {
           like: "%Short"
-        }      
+        }
         sku: {
           like: "WP%"
         }

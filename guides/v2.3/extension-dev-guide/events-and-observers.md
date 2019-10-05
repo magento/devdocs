@@ -1,1 +1,1 @@
-../../v2.2/extension-dev-guide/events-and-observers.md
+../../../guides/v2.2/extension-dev-guide/events-and-observers.md

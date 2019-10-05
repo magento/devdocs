@@ -13,9 +13,9 @@ Template literals can contain expressions which will be evaluated in the current
 
 Template literals allow UI Components to easily assign dynamic values to class properties. More specifically, they provide an integration layer between a particular KnockoutJS context and a JavaScript class.
 
-### The `defaults` Class Property
+## The `defaults` Class Property
 
-UI Components are [associated with JavaScript classes]({{ site.baseurl }}/guides/v2.1/ui_comp_guide/concepts/ui_comp_uiclass_concept.html) to handle behavior on the client side. These should extend one of the core classes to provide a base level of functionality. Inside the child class, a `defaults` property can be provided.
+UI Components are [associated with JavaScript classes]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uiclass_concept.html) to handle behavior on the client side. These should extend one of the core classes to provide a base level of functionality. Inside the child class, a `defaults` property can be provided.
 
 The `defaults` property should be an object and is handled in a special way. Each property of `defaults` becomes a class property upon initialization. This happens in the `initConfig()` method of `lib/core/class.js`. Every item in `defaults` is passed through a `template()` function which evaluates template literals.
 
@@ -26,9 +26,9 @@ As a result, every `defaults` child property is handled with what could be viewe
 
 This part is important because it means that JavaScript classes that extend `Class` (`magento/module-ui/view/base/web/js/lib/core/class.js`) can use the `defaults` property to assign properties to the class itself and leverage template literals during that process without any work on your part.
 
-#### The `:` separator
+### The `:` separator
 
-Certain properties of the `defaults` object are processed by an additional core JavaScript class: `links.js` (located: `magento/module-ui/view/base/web/js/lib/core/element/links.js`). The object keys in `defaults` are: 
+Certain properties of the `defaults` object are processed by an additional core JavaScript class: `links.js` (located: `magento/module-ui/view/base/web/js/lib/core/element/links.js`). The object keys in `defaults` are:
 
 - `links`
 - `imports`
@@ -46,10 +46,9 @@ Perhaps the most important part of template literals in Magento is the `$` objec
 
 Perhaps the most useful aspect of template literals is the ability to access other UI Component JavaScript classes in the registry so we will use this as an example. First, there are a few things to explain.
 
-UI Components can have a `<item name="config" xsi:type="array">...</item>` node in the primary XML declaration file ([see an example]({{ site.baseurl }}/guides/v2.1/ui_comp_guide/concepts/ui_comp_xmldeclaration_concept.html#example-of-a-basic-components-configuration-file)). In that file, a `component` element can be added with a path reference to the RequireJS file. That file is loaded into the registry when it runs on the frontend and other JavaScript files can then access it by the *name* of the UI Component instead of the path to the file itself. The name often will look something like this: `example_component.example_component`.
+UI Components can have a `<item name="config" xsi:type="array">...</item>` node in the primary XML declaration file ([see an example]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_xmldeclaration_concept.html#example-of-a-basic-components-configuration-file)). In that file, a `component` element can be added with a path reference to the RequireJS file. That file is loaded into the registry when it runs on the frontend and other JavaScript files can then access it by the *name* of the UI Component instead of the path to the file itself. The name often will look something like this: `example_component.example_component`.
 
 Names of other registered modules can be added to the [server side](https://glossary.magento.com/server-side) configuration (XML or PHP) that is output through JSON. Those names can then be easily accessed in the JavaScript on the frontend. In the following example, the other UI Component's name will be obtained with a template literal in the `imports` object. When this JavaScript file is loaded, it will process the template literal and look up the name in the registry. If found, it will load that class. Because there is a colon (`:`), it will go on to find the property that is accessed in the other JavaScript class.
-
 
 ```javascript
 return Element.extend({

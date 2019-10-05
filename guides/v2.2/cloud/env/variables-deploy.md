@@ -4,7 +4,9 @@ title: Deploy variables
 functional_areas:
   - Cloud
   - Configuration
+redirect_from: guides/v2.2/cloud/trouble/message-queues.html
 ---
+
 The following _deploy_ variables control actions in the deploy phase and can inherit and override values from the [Global variables]({{ page.baseurl }}/cloud/env/variables-global.html). Insert these variables in the `deploy` stage of the `.magento.env.yaml` file:
 
 ```yaml
@@ -58,8 +60,8 @@ stage:
 
 Enables or disables cleaning [static content files]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html#config-cli-static-overview) generated during the build or deploy phase. We recommend the default value _true_ in development.
 
--   **`true`**—Removes all existing static content before deploying the updated static content.
--   **`false`**—The deployment only overwrites existing static content files if the generated content contains a newer version.
+-  **`true`**—Removes all existing static content before deploying the updated static content.
+-  **`false`**—The deployment only overwrites existing static content files if the generated content contains a newer version.
 
 If you make modifications to static content through a separate process, set the value to _false_.
 
@@ -79,9 +81,9 @@ deploy updates to existing files without removing the previous versions. Because
 
 Use this environment variable to confirm message queues are running after a deployment.
 
--   `cron_run`—A boolean value that enables or disables the `consumers_runner` cron job (default = `false`).
--   `max_messages`—A number specifying the maximum number of messages each consumer must process before terminating (default = `1000`). Although we do not recommend it, you can use `0` to prevent the consumer from terminating.
--   `consumers`—An array of strings specifying which consumer(s) to run. An empty array runs _all_ consumers.
+-  `cron_run`—A boolean value that enables or disables the `consumers_runner` cron job (default = `false`).
+-  `max_messages`—A number specifying the maximum number of messages each consumer must process before terminating (default = `1000`). Although we do not recommend it, you can use `0` to prevent the consumer from terminating.
+-  `consumers`—An array of strings specifying which consumer(s) to run. An empty array runs _all_ consumers.
 
 ```yaml
 stage:
@@ -96,9 +98,31 @@ stage:
 
 By default, the deployment process overwrites all settings in the `env.php` file. Refer to [Manage message queues]({{ page.baseurl }}/config-guide/mq/manage-mysql.html) for more information about how this works in {{site.data.var.ce}} and {{site.data.var.ee}}.
 
-#### To see a list of message queue consumers:
+The following command returns a list of message queue consumers:
 
-    ./bin/magento queue:consumers:list
+```bash
+./bin/magento queue:consumers:list
+```
+
+### `CONSUMERS_WAIT_FOR_MAX_MESSAGES`
+
+-  **Default**—`false`
+-  **Version**—Magento 2.2.0 and later
+
+Configure how consumers process messages from the message queue by choosing one of the following options:
+
+- `false`—Consumers process available messages in the queue, close the TCP connection, and terminate. Consumers do not wait for additional messages to enter the queue, even if the number of processed messages is less than the `max_messages` value specified in the `CRON_CONSUMERS_RUNNER` deploy variable.
+
+- `true`—Consumers continue to process messages from the message queue until reaching the maximum number of messages (`max_messages`) specified in the `CRON_CONSUMERS_RUNNER` deploy variable before closing the TCP connection and terminating the consumer process. If the queue empties before reaching `max_messages`, the consumer waits for more messages to arrive.
+
+{: .bs-callout .bs-callout-warning}
+If you use workers to run consumers instead of using a cron job, set this variable to true.
+
+```yaml
+stage:
+  deploy:
+    CONSUMERS_WAIT_FOR_MAX_MESSAGES: false
+```
 
 ### `CRYPT_KEY`
 
@@ -133,6 +157,47 @@ stage:
       _merge: true
 ```
 
+Also, you can configure a table prefix.
+
+{: .bs-callout .bs-callout-warning}
+If you do not use the merge option with the table prefix, you must provide default connection settings or the deploy fails validation.
+
+The following example uses the `ece_` table prefix with default connection settings instead of using the `_merge` option:
+
+```yaml
+stage:
+  deploy:
+    DATABASE_CONFIGURATION:
+      connection:
+        default:
+          username: user
+          host: host
+          dbname: magento
+          password: password
+      table_prefix: 'ece_'
+```
+
+Sample output:
+
+```terminal
+MariaDB [main]> SHOW TABLES;
++-------------------------------------+
+| Tables_in_main                      |
++-------------------------------------+
+| ece_admin_passwords                 |
+| ece_admin_system_messages           |
+| ece_admin_user                      |
+| ece_admin_user_session              |
+| ece_adminnotification_inbox         |
+| ece_amazon_customer                 |
+| ece_authorization_rule              |
+| ece_cache                           |
+| ece_cache_tag                       |
+| ece_captcha_log                     |
+...
+```
+{: .no-copy}
+
 ### `ELASTICSUITE_CONFIGURATION`
 
 -  **Default**—_Not set_
@@ -162,13 +227,13 @@ stage:
       indices_settings:
         number_of_shards: 3
         number_of_replicas: 3
-        _merge: true
+      _merge: true
 ```
 
 **Known limitations**—
 
--   Changing the search engine to any type other than `elasticsuite` causes a deploy failure accompanied by an appropriate validation error
--   Removing the ElasticSearch service causes a deploy failure accompanied by an appropriate validation error
+-  Changing the search engine to any type other than `elasticsuite` causes a deploy failure accompanied by an appropriate validation error
+-  Removing the ElasticSearch service causes a deploy failure accompanied by an appropriate validation error
 
 {:.bs-callout .bs-callout-info}
 Magento does not support the ElasticSuite third-party plugin.
@@ -180,19 +245,47 @@ Magento does not support the ElasticSuite third-party plugin.
 
 Enables and disables Google Analytics when deploying to Staging and Integration environments. By default, Google Analytics is true only for the Production environment. Set this value to `true` to enable Google Analytics in the Staging and Integration environments.
 
--   **`true`**—Enables Google Analytics on Staging and Integration environments.
--   **`false`**—Disables Google Analytics on Staging and Integration environments.
+-  **`true`**—Enables Google Analytics on Staging and Integration environments.
+-  **`false`**—Disables Google Analytics on Staging and Integration environments.
 
 Add the `ENABLE_GOOGLE_ANALYTICS` environment variable to the `deploy` stage in the `.magento.env.yaml` file:
 
 ```yaml
 stage:
   deploy:
-    ENABLE_GOOGLE_ANALYTICS: true 
+    ENABLE_GOOGLE_ANALYTICS: true
 ```
 
 {:.bs-callout .bs-callout-info}
 The {{ site.data.var.ece }} deploy process always enables Google Analytics on Production environments.
+
+### `FORCE_UPDATE_URLS`
+
+-  **Default**—`true`
+-  **Version**—Magento 2.1.4 and later
+
+On deployment to Pro or Starter Staging and Production environments, this variable replaces Magento base URLs in the database with the project URLs specified by the [`MAGENTO_CLOUD_ROUTES`]({{page.baseurl}}/cloud/env/variables-cloud.html) variable. Use this setting to override the default behavior of the [UPDATE_URLS](#update_urls) deploy variable which is ignored when deploying to Staging or Production environments.
+
+```yaml
+stage:
+  deploy:
+    FORCE_UPDATE_URLS: true
+```
+
+### `LOCK_PROVIDER`
+
+-  **Default**—`file`
+-  **Version**—Magento 2.2.5 and later
+
+The lock provider prevents the launch of duplicate cron jobs and cron groups. You must use the `file` lock provider in the Production environment. Starter environments and the Pro Integration environment do not use the [MAGENTO_CLOUD_LOCKS_DIR]({{page.baseurl}}/cloud/env/variables-cloud.html) variable, so `{{site.data.var.ct}}` applies the `db` lock provider automatically.
+
+```yaml
+stage:
+  deploy:
+    LOCK_PROVIDER: "db"
+```
+
+See [Configure the lock]({{page.baseurl}}/install-gde/install/cli/install-cli-subcommands-lock.html) in the _Install guide_.
 
 ### `MYSQL_USE_SLAVE_CONNECTION`
 
@@ -282,8 +375,8 @@ The following example merges new values to an existing configuration:
 ```yaml
 stage:
   deploy:
-    RESOURCE_CONFIGURATION: 
-      _merge: false 
+    RESOURCE_CONFIGURATION:
+      _merge: false
       default_setup:
         connection: default
 ```
@@ -335,7 +428,7 @@ stage:
 -  **Default**—_Not set_
 -  **Version**—Magento 2.1.4 and later
 
-You can configure multiple locales per theme as long as the theme is not excluded using the `SCD_EXCLUDE_THEMES` variable during deployment. This is ideal if you want to speed up the deployment process by reducing the amount of unnecessary theme files. For example, you can deploy the _magento/backend_ theme in English and a custom theme in other languages.
+You can configure multiple locales per theme as long as the theme is not excluded using the [`SCD_EXCLUDE_THEMES` variable](#scd_exclude_themes) during deployment. This configuration is ideal to speed up the deployment process by reducing the amount of unnecessary theme files. For example, you can deploy the _magento/backend_ theme in English and a custom theme in other languages.
 
 The following example deploys the `Magento/backend` theme with three locales:
 
@@ -359,14 +452,15 @@ stage:
       "Magento/backend": [ ]
 ```
 
-### `SCD_MAX_EXECUTION_TIME` 
+### `SCD_MAX_EXECUTION_TIME`
 
 -  **Default**—_Not set_
 -  **Version**—Magento 2.2.0 and later
 
-Allows you to increase the maximum expected execution time for static content deployment. 
+Allows you to increase the maximum expected execution time for static content deployment.
 
-By default, Magento Commerce sets the maximum expected execution to 400 seconds, but in some scenarios you might need more time to complete the static content deployment for a Cloud project.                                                                                
+By default, Magento Commerce sets the maximum expected execution to 400 seconds, but in some scenarios you might need more time to complete the static content deployment for a Cloud project.
+
 ```yaml
 stage:
   deploy:
@@ -495,7 +589,7 @@ stage:
 -  **Default**—`true`
 -  **Version**—Magento 2.1.4 and later
 
-Generates symlinks for static content. This setting is vital in the Pro Production environment for the three-node cluster. When this variable is set to `false`, it must copy every file during the deployment, which increases deployment time. Setting `SCD_ON_DEMAND` to `true` disables this variable.
+Generates symlinks for static content. This setting is vital in the Pro Production environment for the three-node cluster. When this variable is set to `false`, it must copy every file during the deployment, which increases deployment time. Setting the [`SCD_ON_DEMAND` variable]({{page.baseurl}}/cloud/env/variables-global.html#scd_on_demand) to `true` disables this variable.
 
 If you generate static content during the build phase, it creates a symlink to the content folder.
 If you generate static content during the deploy phase, it writes directly to the content folder.
@@ -512,15 +606,15 @@ stage:
 -  **Default**—`true`
 -  **Version**—Magento 2.1.4 and later
 
-On deployment, replace Magento base URLs in the database with project URLs. This is useful for local development, where base URLs are set up for your local environment. When you deploy to a Cloud environment, we change the URLs so you can access your storefront and Magento Admin using project URLs.
+On deployment, replace Magento base URLs in the database with the project URLs specified by the [`MAGENTO_CLOUD_ROUTES`]({{page.baseurl}}/cloud/env/variables-cloud.html) variable. This configuration is useful for local development, where base URLs are set up for your local environment. When you deploy to a Cloud environment, we change the URLs so you can access your storefront and Magento Admin using project URLs.
+
+If you need to update URLs when deploying to Pro or Starter Staging and Production environments,  use the [`FORCE_UPDATE_URLS`](#force_update_urls) variable.
 
 ```yaml
 stage:
   deploy:
     UPDATE_URLS: false
 ```
-
-You should set this variable to `false` _only_ in Staging or Production environments, where the base URLs cannot change. For Pro, we already set this to `false` for you.
 
 ### `VERBOSE_COMMANDS`
 

@@ -101,7 +101,6 @@ where:
 |`--amqp-virtualhost`|The virtual host for connecting to RabbitMQ. The default is `/`.
 |`--amqp-ssl`|Indicates whether to connect to RabbitMQ. The default is `false`. If you set the value to true, see Configure SSL for more information.|
 
-
 ## Configure SSL
 
 To configure support for SSL, edit the `ssl` and `ssl_options` parameters in the `<install_directory>/app/etc/env.php` file so that they are similar to the following:
@@ -117,7 +116,7 @@ To configure support for SSL, edit the `ssl` and `ssl_options` parameters in the
       'user' => 'magento',
       'password' => 'magento',
       'virtualhost' => '/',
-      'ssl' => true,
+      'ssl' => 'true',
       'ssl_options' => [
             'cafile' =>  '/etc/pki/tls/certs/DigiCertCA.crt',
             'certfile' => '/path/to/magento/app/etc/ssl/test-rabbit.crt',
@@ -131,12 +130,13 @@ To configure support for SSL, edit the `ssl` and `ssl_options` parameters in the
 
 After you have connected Magento and RabbitMQ, you must start the message queue consumers. See [Configure message queues]({{page.baseurl}}/config-guide/mq/manage-mysql.html) for details.
 
-#### Related topics
+{:.ref-header}
+Related topics
 
-*	[Installing optional software]({{page.baseurl}}/install-gde/prereq/optional.html)
-*	[Apache]({{page.baseurl}}/install-gde/prereq/apache.html)
-*	[PHP 7.1 or 7.2]({{page.baseurl}}/install-gde/prereq/php-centos-ubuntu.html)
-*	[Configuring security options]({{page.baseurl}}/install-gde/prereq/security.html)
-*	[How to get the Magento software]({{ page.baseurl }}/install-gde/bk-install-guide.html)
-*	[Message queue overview]({{page.baseurl}}/config-guide/mq/rabbitmq-overview.html)
-*	[Manage message queues]({{page.baseurl}}/config-guide/mq/manage-mysql.html)
+* [Installing optional software]({{page.baseurl}}/install-gde/prereq/optional.html)
+* [Apache]({{page.baseurl}}/install-gde/prereq/apache.html)
+* [PHP 7.1 or 7.2]({{page.baseurl}}/install-gde/prereq/php-centos-ubuntu.html)
+* [Configuring security options]({{page.baseurl}}/install-gde/prereq/security.html)
+* [How to get the Magento software]({{ page.baseurl }}/install-gde/bk-install-guide.html)
+* [Message queue overview]({{page.baseurl}}/config-guide/mq/rabbitmq-overview.html)
+* [Manage message queues]({{page.baseurl}}/config-guide/mq/manage-mysql.html)

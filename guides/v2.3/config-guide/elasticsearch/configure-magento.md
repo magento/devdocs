@@ -1,1 +1,1 @@
-../../../v2.2/config-guide/elasticsearch/configure-magento.md
+../../../../guides/v2.2/config-guide/elasticsearch/configure-magento.md

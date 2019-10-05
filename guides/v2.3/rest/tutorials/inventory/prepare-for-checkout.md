@@ -148,7 +148,6 @@ The subtotal of the order is $2462, and shipping charges are $350. The grand tot
 
 The available payment methods are `banktransfer` and `checkmo`. The customer will specify a [payment method](https://glossary.magento.com/payment-method) in the next step.
 
-
 ```json
 {
     "payment_methods": [
@@ -317,6 +316,6 @@ The available payment methods are `banktransfer` and `checkmo`. The customer wil
 
 ### Verify this step {#verify-step}
 
-[Sign in](https://glossary.magento.com/sign-in) to the US store (`http://<host>/us`) as the customer and go to the checkout page.
+[Sign in](https://glossary.magento.com/sign-in-sign-out) to the US store (`http://<host>/us`) as the customer and go to the checkout page.
 
 The payment method is Bank Transfer, the billing and shipping addresses are displayed, and the shipping charges and shipping charges calculate and display.

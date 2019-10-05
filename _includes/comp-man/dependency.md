@@ -35,7 +35,7 @@ Edit `composer.json` to make any of these changes and try the readiness check ag
 If the Magento file system owner doesn't have permissions to write to directories on the Magento file system, a message similar to the following displays:
 
 ```terminal
-file_put_contents(/var/www/html/magento2ce/var/composer_home/cache/repo/https---
+file_put_contents(/var/www/html/magento2/var/composer_home/cache/repo/https---
 packagist.org/provider-doctrine$instantiator.json): failed to open stream: Permission denied
 ```
 

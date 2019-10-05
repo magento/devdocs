@@ -1,12 +1,16 @@
 We recommend creating a backup of your project before an upgrade. Use the following steps to back up your Integration, Staging, and Production environments.
 
-#### To back up your Integration environment database and code:
+{:.procedure}
+To back up your Integration environment database and code:
 
 1.  Create a local backup of the remote database.
 
     ```bash
     magento-cloud db:dump
     ```
+
+    {: .bs-callout-info }
+    The `magento-cloud db:dump` command runs the [mysqldump](https://dev.mysql.com/doc/refman/8.0/en/mysqldump.html) command with the `--single-transaction` flag, which allows you to back up your database without locking the tables.
 
 1.  Back up code and media.
 
@@ -16,7 +20,8 @@ We recommend creating a backup of your project before an upgrade. Use the follow
 
     Optionally, you can omit `[--media]` if you have a large number of static files that are already in source control.
 
-#### To back up your Staging or Production environment database before deploying:
+{:.procedure}
+To back up your Staging or Production environment database before deploying:
 
 1.  Use SSH to log in to the remote server.
 

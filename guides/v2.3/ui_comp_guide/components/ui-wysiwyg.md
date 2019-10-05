@@ -9,7 +9,7 @@ The WYSIWYG component is an [adapter](https://glossary.magento.com/adapter) for 
 
 Magento supports all selector, plugin, and toolbar/menu configuration options supported by the TinyMCE v4 `tinymce.init()` method. However, Magento doesn't validate TinyMCE configuration options or flag invalid values before adding the editor to a page.
 
-{: .bs-callout .bs-callout-info }
+{: .bs-callout-info }
 Refer to [TinyMCE's documentation](https://www.tinymce.com/docs/){:target="_blank"} for more information.
 
 ## Configuration options
@@ -95,7 +95,7 @@ The following example shows how to integrate the default Magento WYSIWYG editor 
 
 First, create a layout file in the `ModuleName\view\adminhtml\layout` directory and register the UI component:
 
-#### `ModuleName\view\adminhtml\layout\wysiwyg_on_custom_page.xml`
+### `ModuleName\view\adminhtml\layout\wysiwyg_on_custom_page.xml`
 {:.no_toc}
 
 ```xml
@@ -117,7 +117,7 @@ First, create a layout file in the `ModuleName\view\adminhtml\layout` directory 
 
 Next, create a custom form in the `ModuleName\view\adminhtml\ui_component` directory:
 
-#### `ModuleName\view\adminhtml\ui_component\wysiwyg_custom_form.xml`
+### `ModuleName\view\adminhtml\ui_component\wysiwyg_custom_form.xml`
 {:.no_toc}
 
 ```xml
@@ -155,12 +155,12 @@ Last, add your data provider, controller, and routes. Refer to [Creating a Magen
 
 The most common way to configure UI components in Magento is to add a configuration section inside the XMl element when declaring it on a form. If you need to apply dynamic modifications to a UI component, we recommend using PHP modifiers since Magento supports replacing the default WYSIWYG editor with other WYSIWYG libraries.
 
-{: .bs-callout .bs-callout-info }
+{: .bs-callout-info }
 Refer to [About PHP modifiers in UI components]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_modifier_concept.html) for more information.
 
 To use PHP modifiers, your data provider must inherit from `ModifierPoolDataProvider`. The following class adds support for modifier pools, which are required when using modifiers. Inheriting from this class allows you to use modifiers.
 
-#### `Magento\Ui\DataProvider\ModifierPoolDataProvider`
+### `Magento\Ui\DataProvider\ModifierPoolDataProvider`
 {:.no_toc}
 
 ```php
@@ -238,7 +238,7 @@ class ModifierPoolDataProvider extends AbstractDataProvider
 
 Your form must then use a data provider that inherits from `ModifierPoolDataProvider`. For example:
 
-#### `Test\Module\Model\DataProvider`
+### `Test\Module\Model\DataProvider`
 {:.no_toc}
 
 ```php
@@ -276,7 +276,7 @@ After you configure the modifier pool in your data provider, you must create the
 
 The following example shows how to change the default Magento WYSIWYG editor toolbar and plugins configuration:
 
-#### `Test\Module\Ui\DataProvider\Custom\Modifier\WysiwygConfigModifier`
+### `Test\Module\Ui\DataProvider\Custom\Modifier\WysiwygConfigModifier`
 {:.no_toc}
 
 ```php
@@ -328,7 +328,7 @@ The last thing you need to do is configure the data provider's pool and connect 
 
 Here's an example that connects the data provider and modifier created in the previous steps:
 
-#### `Test\Module\etc\adminhtml\di.xml`
+### `Test\Module\etc\adminhtml\di.xml`
 {:.no_toc}
 
 ```php
@@ -358,6 +358,6 @@ Here's an example that connects the data provider and modifier created in the pr
 </config>
 ```
 
-{: .bs-callout .bs-callout-info }
+{: .bs-callout-info }
 If your form already uses the [ModifierPool]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_modifier_concept.html), you can continue using it to control the configuration of your WYSIWYG components.
 

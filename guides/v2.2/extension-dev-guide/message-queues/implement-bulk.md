@@ -13,7 +13,7 @@ functional_areas:
 
 This document describes how bulk operations can be implemented. There are three primary tasks to accomplish this:
 
-* Create a [publisher](https://glossary.magento.com/publisher) that sends messages to the message queue
+* Create a [publisher](https://glossary.magento.com/publisher-subscriber-pattern) that sends messages to the message queue
 * Create a consumer that receives and processes messages
 * Configure the message queues
 
@@ -24,6 +24,7 @@ A publisher's duties include scheduling a bulk operation. It must generate a `bu
 The following code sample shows how these duties can be completed.
 
 {% collapsible Code sample: %}
+
 ```php
 
 <?php
@@ -151,6 +152,7 @@ class ScheduleBulk
     }
 }
 ```
+
 {% endcollapsible %}
 
 ### Create a consumer {#createconsumer}
@@ -158,6 +160,7 @@ class ScheduleBulk
 A consumer class receives messages from the message queue and changes the status after it is processed. The following example defines a consumer that handles price update bulk operations.
 
 {% collapsible Code sample: %}
+
 ```php
 
 <?php
@@ -277,6 +280,7 @@ class Consumer
 }
 
 ```
+
 {% endcollapsible %}
 
 ### Configure message queues {#configmq}

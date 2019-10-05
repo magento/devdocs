@@ -80,7 +80,6 @@ For more information, see [Required PHP settings]({{ page.baseurl }}/install-gde
 * Transport Layer Security (TLS) requirement - PayPal and `repo.magento.com` both require TLS 1.1 or later:
 
   * [More information about PayPal]({{page.baseurl}}/install-gde/system-requirements_tls1-2.html)
-  * [More information about `repo.magento.com`]({{ site.baseurl }}/guides/v2.1/release-notes/tech_bull_tls-repo.html)
 
 ### Required system dependencies
 
@@ -147,4 +146,4 @@ There is a known issue with `xdebug` that can affect Magento installations or ac
 [php]: http://www.php.net/
 [sed]: https://www.gnu.org/software/sed/manual/sed.html
 [tar]: https://linux.die.net/man/1/tar
-[Change Elasticsearch Module]: https://devdocs.magento.com/guides/v2.3/config-guide/elasticsearch/es-downgrade.html
+[Change Elasticsearch Module]: {{ page.baseurl }}/config-guide/elasticsearch/es-downgrade.html

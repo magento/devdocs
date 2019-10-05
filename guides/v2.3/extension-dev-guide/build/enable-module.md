@@ -1,1 +1,1 @@
-../../../v2.2/extension-dev-guide/build/enable-module.md
+../../../../guides/v2.2/extension-dev-guide/build/enable-module.md

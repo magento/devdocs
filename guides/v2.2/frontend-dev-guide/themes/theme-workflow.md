@@ -18,6 +18,7 @@ bin/magento deploy:mode:set developer
 ```
 
 See:
+
 * [About Magento modes]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html)
 * [Get started with command-line configuration]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands.html)
 
@@ -54,11 +55,9 @@ For details, see [Apply and configure a storefront theme]({{ page.baseurl }}/fro
 * [Add the theme to Grunt configuration]({{ page.baseurl }}/frontend-dev-guide/css-topics/css_debug.html#add_theme)
 * [Track changes]({{ page.baseurl }}/frontend-dev-guide/css-topics/css_debug.html#grunt_commands)
 
-
 #### Client-side compilation
 
 See [CSS preprocessing#client-side compilation mode]({{ page.baseurl }}/frontend-dev-guide/css-topics/css-preprocess.html#client-side)
-
 
 #### Server-side compilation (default)
 
@@ -71,23 +70,23 @@ See [Using custom CSS preprocessor]({{ page.baseurl }}/frontend-dev-guide/css-to
 ### Create your styles
 
 See:
+
 * [Quick start guide to working with styles]({{ page.baseurl }}/frontend-dev-guide/css-guide/css_quick_guide_overview.html)
 * [All about styles in Magento themes]({{ page.baseurl }}/frontend-dev-guide/css-topics/css-overview.html)
 
 ### Debug
 
 See:
+
 * [Locate the CSS/Less file you need to change]({{ page.baseurl }}/frontend-dev-guide/themes/debug-theme.html)
 * [CSS source maps]({{ page.baseurl }}/frontend-dev-guide/css-topics/css_debug.html#source_maps)
 * [Track changes using Grunt]({{ page.baseurl }}/frontend-dev-guide/css-topics/css_debug.html#use_cases)
-
 
 ### Clean cache and/or static files if necessary
 
 * Certain changes in styles require cleaning previously pre-processed and published static view files. Run `grunt clean <theme>` or manually clear the `pub/static` and `var/view_preprocessed` directories. Do this after any changes in server-side compilation mode. For the client-side or Grunt compilation, see [Clean static files]({{ page.baseurl }}/frontend-dev-guide/css-topics/css-preprocess.html#css_exception) for details.
 
 * Changes in layout and templates requires cleaning cache. See [Clean cache]({{ page.baseurl }}/frontend-dev-guide/cache_for_frontdevs.html#clean_cache) for details.
-
 
 ### Make sure that the same styles are delivered to production (optional)
 

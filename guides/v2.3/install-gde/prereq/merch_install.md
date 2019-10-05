@@ -1,1 +1,1 @@
-../../../v2.2/install-gde/prereq/merch_install.md
+../../../../guides/v2.2/install-gde/prereq/merch_install.md

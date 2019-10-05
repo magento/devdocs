@@ -28,7 +28,7 @@ Attribute | Type | Description
 `title` | String | The display name of the item
 `type` | String | The input type that the customer uses to select the item. Examples include radio button and checkbox.
 
-##  BundleItemOption object
+## BundleItemOption object
 
 Attribute | Type | Description
 --- | --- | ---
@@ -50,7 +50,7 @@ The following query returns information about bundle product `24-WG080`, which i
 {
    products(filter: {sku:
     {eq: "24-WG080"}
-  	})
+    })
    {
        items{
            sku

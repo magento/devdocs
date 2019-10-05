@@ -9,7 +9,7 @@ level3_subgroup: product-creation-form
 menu_order: 1
 ---
 
-This tutorial describes how developers can customize the product creation form used on the product creation and product edit pages in [Admin](https://glossary.magento.com/admin). The product creation form is implemented using the [form UI component]({{ site.baseurl }}/guides/v2.1/ui_comp_guide/components/ui-form.html).
+This tutorial describes how developers can customize the product creation form used on the product creation and product edit pages in [Admin](https://glossary.magento.com/admin). The product creation form is implemented using the [form UI component]({{ page.baseurl }}/ui_comp_guide/components/ui-form.html).
 
 Product attributes and attribute sets available in the form, can be customized and added under **STORES** > **Attributes** in the Admin. But you can also customize the form view and behavior in code. The following sections describe what files define the form and how they can be customized in your [module](https://glossary.magento.com/module).
 
@@ -26,7 +26,8 @@ This tutorial includes the following customizations:
 * [Customize the form configuration]({{ page.baseurl }}/howdoi/customize-form-configuration.html)
 * [Customize using a modifier class]({{ page.baseurl }}/howdoi/customize-modifier-class.html)
 
-#### Recommended reading
+{:.ref-header}
+Related topics
 
 * [Form UI component]({{ page.baseurl }}/ui_comp_guide/components/ui-form.html)
 * [About PHP modifiers in UI components]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_modifier_concept.html)

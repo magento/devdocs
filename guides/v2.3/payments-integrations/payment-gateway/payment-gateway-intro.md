@@ -1,1 +1,1 @@
-../../../v2.2/payments-integrations/payment-gateway/payment-gateway-intro.md
+../../../../guides/v2.2/payments-integrations/payment-gateway/payment-gateway-intro.md

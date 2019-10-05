@@ -123,6 +123,10 @@ pages:
       url: /extension-dev-guide/module-development.html
       children:
 
+        - label: Asynchronous/deferred operations
+          include_versions: ["2.3"]
+          url: /extension-dev-guide/async-operations.html
+          
         - label: Service contracts
           url: /extension-dev-guide/service-contracts/service-contracts.html
 
@@ -247,6 +251,10 @@ pages:
 
         - label: Adapters
           url: /extension-dev-guide/adapters.html
+
+        - label: View models
+          include_versions: ["2.2", "2.3"]
+          url: /extension-dev-guide/view-models.html
 
         - label: Variable Pool
           include_versions: ["2.3"]

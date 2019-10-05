@@ -9,7 +9,7 @@ The following properties are used for linking observable properties and methods 
 
 - `exports`
 - `imports`
-- `links` 
+- `links`
 - `listens`
 
 These properties are processed by the `initLinks()` method of the [`uiElement` class]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uielement_concept.html) which is called at the moment of a component's instantiation.
@@ -28,13 +28,31 @@ Example of setting `exports` in a component's `.js` file:
 
 ```json
 {
-  "exports": {
-   "visible": "${ $.provider }:visibility"
+  "defaults": {
+    "exports": {
+      "visible": "${ $.provider }:visibility"
+    }
+  }
+}
+```
+Here `visible` is the `key`, `${ $.provider }:visibility` is the `value`. The value of the local `visible` property is assigned to the `visibility` property of the `provider` component. The latter is changed automatically if the value of `visible` changes if the local `visible` property is observable (which it isn't given only the code example above).
+
+Example of setting `exports` directly using the destination component name:
+
+```json
+{
+  "defaults": {
+    "exports": {
+      "items": "checkout.sidebar.summary.cart_items:items"
+    }
   }
 }
 ```
 
-Here `visible` is the `key`, `${ $.provider }:visibility` is the `value`. The value of the local `visible` property is assigned to the `visibility` property of the `provider` component. The latter is changed automatically if the value of `visible` changes if the local `visible` property is observable (which it isn't given only the code example above).
+The syntax for the destination component name is determined by the hierarchy in the XML handle. Separate parent names with a `.` (dot) followed by the component name.
+
+{:.bs-callout .bs-callout-info}
+To retrieve the full name of the destination component name, open your browser in developer mode, select the element that you want on the **Elements** tab, go to the **Console** tab, and execute the following code: `require('ko').contextFor($0).$data.name`.
 
 Example of setting `exports` in a component's configuration `.xml` file:
 
@@ -53,15 +71,17 @@ For an example of `exports` usage in Magento code see [`product_form.xml`, line 
 ## `imports` property
 The `imports` property is used for tracking changes of an external entity property. `imports`'s value is an object, composed of the following:
 
-  - `key`: name of the internal property or method that receives the value. 
+  - `key`: name of the internal property or method that receives the value.
   - `value`: name of the property or method that is tracked for changes. Can use [string templates](#string_templ).
 
 Example of using `imports` in a component's `.js` file:
 
 ```json
 {
-  "imports": {
-   "visible": "${ $.provider }:visibility"
+  "defaults": {
+    "imports": {
+      "visible": "${ $.provider }:visibility"
+    }
   }
 }
 ```
@@ -86,15 +106,17 @@ For an example of `imports` usage in Magento code see [`product_form.xml`, line 
 
 The `links` property is used for cross tracking properties changes: both linked properties are tracked and changing of one results in changing the other. `links`'s value is an object, composed of the following:
 
-  - `key`: name of the internal property or method that sends and receives the notifications. 
+  - `key`: name of the internal property or method that sends and receives the notifications.
   - `value`: name of the property or method that sends and receives the value. Can use [string templates](#string_templ).
 
 Example of using `links` in a component's `.js` file:
 
 ```json
 {
-  "links": {
-   "visible": "${ $.provider }:visibility"
+  "defaults": {
+    "links": {
+      "visible": "${ $.provider }:visibility"
+    }
   }
 }
 ```
@@ -125,15 +147,16 @@ Example of using `listens` in a component's `.js` file :
 
 ```json
 {
-  "listens": {
-   "${ $.provider }:visibility": "visibilityChanged"
+  "defaults": {
+    "listens": {
+      "${ $.provider }:visibility": "visibilityChanged"
+    }
   }
 }
 ```
 
 Here the local `visibilityChanged` property is a method that will be called when the `visibility` property of the `provider` component changes. It receives the new value as an argument. If the local property is not a function, it will be set to the new value.
 The external property has to be an observable in order for `listens` to have any effect.
-
 
 Example of using `listens` in a component's configuration `.xml` file:
 
@@ -159,18 +182,18 @@ When working with UI components, we often need to use the string representation 
 
 As a result, if the component's property is the variable for the template string, we get notation similar to the following:
 
-    '${ $.provider }:foo' 
-    
+    '${ $.provider }:foo'
+
 If the string would be built at runtime it would be equivalent to `this.provider + ':foo'`.
 
 We can also build complex templates strings using this syntax, as follows:
 
 - Using variables from the other component:
 
-    ``` 
+    ```
     '${ $.provider }:${ $.dataScope }' // 'provider' is the full name of the other component
     ```
-- Calling several functions in one string: 
+- Calling several functions in one string:
 
     ```
     '${ $.provider }:data.overload': 'overload reset validate'// we call 'overload', 'reset', 'validate'
@@ -180,4 +203,4 @@ We can also build complex templates strings using this syntax, as follows:
 
     ```
     '${ $.provider }:${ $.customScope ? $.customScope + "." : ""}data.validate': 'validate'
-    ``` 
+    ```

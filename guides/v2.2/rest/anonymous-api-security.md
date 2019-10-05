@@ -45,7 +45,6 @@ The following table lists the APIs that are no longer available to an anonymous 
 | Open Source | Store | /V1/store/websites | GET |
 | Open Source | Store | /V1/store/storeConfigs | GET |
 
-
 {%
 include note.html
 type='warning'

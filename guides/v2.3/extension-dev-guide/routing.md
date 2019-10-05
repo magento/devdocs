@@ -32,7 +32,6 @@ The following tables show the core routers that come with Magento:
 | [cms]        | 60         | Matches requests for CMS pages                    |
 | [default]    | 100        | The default router                                |
 
-
 **`adminhtml` area routers:**
 
 | Name      | Sort order | Description                                |
@@ -40,12 +39,11 @@ The following tables show the core routers that come with Magento:
 | [admin]   | 10         | Matches requests in the Magento admin area |
 | [default] | 100        | The default router for the admin area      |
 
-
 ### Standard router
 
-A Magento [URL](https://glossary.magento.com/url) that uses the standard router has the following format: 
+A Magento [URL](https://glossary.magento.com/url) that uses the standard router has the following format:
 
-```
+```text
 <store-url>/<store-code>/<front-name>/<controller-name>/<action-name>
 ```
 
@@ -54,7 +52,7 @@ Where:
 * `<store-url>` - specifies the base URL for the Magento instance
 * `<store-code>` - specifies the store context
 * `<front-name>` - specifies the `frontName` of the [FrontController] to use
-* `<controller-name>` - specifies the name of the controller 
+* `<controller-name>` - specifies the name of the controller
 * `<action-name>` - specifies the [action class] to execute on the controller class
 
 The standard router parses this URL format and matches it to the correct controller and action.
@@ -73,7 +71,6 @@ Create an implementation of [`RouterInterface`] to create a custom router, and
 define the `match()` function in this class to use your own route matching logic.
 
 If you need route configuration data, use the Route [`Config`] class.
-
 
 To add your custom router to the list of routers for the `FrontController`, add the following entry in your module's `di.xml` file:
 
@@ -94,10 +91,9 @@ To add your custom router to the list of routers for the `FrontController`, add 
 Where:
 
 * `%name%` - The unique name of your router in Magento.
-* `%classpath%` - The path to your router class.    
+* `%classpath%` - The path to your router class.
     Example: [`Magento\Robots\Controller\Router`]
-* `%sortorder%` - The sort order of this entry in the router list. 
-
+* `%sortorder%` - The sort order of this entry in the router list.
 
 ## `routes.xml`
 
@@ -118,9 +114,9 @@ The content of this file uses the following format:
 
 Where:
 
-* `%routerId` - specifies the name of the router in Magento.    
+* `%routerId` - specifies the name of the router in Magento.
     See the reference tables in the [Router class section].
-* `%routeId%` - specifies the unique node id for this route in Magento.
+* `%routeId%` - specifies the unique node id for this route in Magento, is also the first segment of its associated layout handle XML filename (`routeId_controller_action.xml`).
 * `%frontName%` - specifies the first segment after the base URL of a request.
 * `%moduleName%` - specifies the name of your module.
 
@@ -147,7 +143,7 @@ If `app/code/OrangeCompany/RoutingExample/Controller/Account/Login.php` exists, 
 
 ## Action class
 
-Action classes are extensions of the [`Action`] class that a router returns on matched requests. 
+Action classes are extensions of the [`Action`] class that a router returns on matched requests.
 The `execute()` function in these classes contain the logic for dispatching requests.
 
 Each Action should implement one or more Magento\Framework\App\Action\Http*HTTP Method*ActionInterface to declare which HTTP request methods it can process.
@@ -165,7 +161,7 @@ $this->_forward('action', 'controller', 'Other_Module')
 {: .bs-callout .bs-callout-tip }
 Use the [`ActionFactory`] in your router to create an instance of an `Action` class.
 
-{: .bs-callout .bs-callout-info }
+{: .bs-callout-info }
 Action class should return a `result object`.
 
 ## Result object
@@ -178,6 +174,173 @@ Name | Description
 `forward` | Internally calls the execute method of another action class and does not trigger a new request from the browser. The URL stays the same
 `layout` | View result. You can use a generic layout response to render any kind of layout. The layout comprises a response body from its layout elements and sets it to the HTTP response
 `page` | View result. Encapsulates page type, page configuration, and imposes certain layout handles. `page` triggers `layout.xml` to render into HTML
+
+## Example of routing usage
+
+Declaring a new route:
+
+```xml
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
+    <router id="standard">
+        <route id="routing" frontName="routing">
+            <module name="OrangeCompany_RoutingExample" />
+        </route>
+    </router>
+</config>
+```
+
+Declaring the layout handler for our new route:
+
+```xml
+<?xml version="1.0"?>
+
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="page.main.title">
+            <action method="setPageTitle">
+                <argument translate="true" name="title" xsi:type="string">Routing Page</argument>
+            </action>
+        </referenceBlock>
+    </body>
+</page>
+```
+
+Defining a new custom router:
+
+```xml
+<type name="Magento\Framework\App\RouterList">
+    <arguments>
+        <argument name="routerList" xsi:type="array">
+            <item name="routingExample" xsi:type="array">
+                <item name="class" xsi:type="string">OrangeCompany\RoutingExample\Controller\Router</item>
+                <item name="disable" xsi:type="boolean">false</item>
+                <item name="sortOrder" xsi:type="string">40</item>
+            </item>
+        </argument>
+    </arguments>
+</type>
+```
+
+Creating the controller that will handle the `routing` route.
+
+```php
+<?php
+declare(strict_types=1);
+
+namespace OrangeCompany\RoutingExample\Controller\Index;
+
+use Magento\Framework\App\Action\Action;
+use Magento\Framework\App\Action\Context;
+use Magento\Framework\App\ResponseInterface;
+use Magento\Framework\Controller\ResultInterface;
+use Magento\Framework\View\Result\Page;
+use Magento\Framework\View\Result\PageFactory;
+
+/**
+ * Class Index
+ */
+class Index extends Action
+{
+    /**
+     * @var PageFactory
+     */
+    private $pageFactory;
+
+    /**
+     * @param Context $context
+     * @param PageFactory $pageFactory
+     */
+    public function __construct(
+        Context $context,
+        PageFactory $pageFactory
+    ) {
+        parent::__construct($context);
+
+        $this->pageFactory = $pageFactory;
+    }
+
+    /**
+     * @return ResponseInterface|ResultInterface|Page
+     */
+    public function execute()
+    {
+        return $this->pageFactory->create();
+    }
+}
+```
+
+In the end, let's create the router class, that will match the custom route name `learning` with the existing `routing` route.
+
+```php
+<?php
+declare(strict_types=1);
+
+namespace OrangeCompany\RoutingExample\Controller;
+
+use Magento\Framework\App\Action\Forward;
+use Magento\Framework\App\ActionFactory;
+use Magento\Framework\App\ActionInterface;
+use Magento\Framework\App\RequestInterface;
+use Magento\Framework\App\ResponseInterface;
+use Magento\Framework\App\RouterInterface;
+
+/**
+ * Class Router
+ */
+class Router implements RouterInterface
+{
+    /**
+     * @var ActionFactory
+     */
+    private $actionFactory;
+
+    /**
+     * @var ResponseInterface
+     */
+    private $response;
+
+    /**
+     * Router constructor.
+     *
+     * @param ActionFactory $actionFactory
+     * @param ResponseInterface $response
+     */
+    public function __construct(
+        ActionFactory $actionFactory,
+        ResponseInterface $response
+    ) {
+        $this->actionFactory = $actionFactory;
+        $this->response = $response;
+    }
+
+    /**
+     * @param RequestInterface $request
+     * @return ActionInterface|null
+     */
+    public function match(RequestInterface $request): ?ActionInterface
+    {
+        $identifier = trim($request->getPathInfo(), '/');
+
+        if (strpos($identifier, 'learning') !== false) {
+            $request->setModuleName('routing');
+            $request->setControllerName('index');
+            $request->setActionName('index');
+
+            return $this->actionFactory->create(Forward::class, ['request' => $request]);
+        }
+
+        return null;
+    }
+}
+```
+
+As a result, by accessing the `http://site.com/learning` route, the `http://site.com/routing/index/index` route is loaded.
+
+![Routing Result]({{ site.baseurl }}/common/images/routing-result.png)
 
 [`FrontController` class]: {{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/App/FrontController.php
 [FrontController]: #frontcontroller-class

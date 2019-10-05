@@ -1,10 +1,6 @@
 ---
 group: installation-guide
-subgroup: T_Developer
 title: Update installation dependencies
-menu_title: Update installation dependencies
-menu_node:
-menu_order: 10
 functional_areas:
   - Install
   - System
@@ -59,7 +55,8 @@ If so, create [`auth.json`]({{ page.baseurl }}/install-gde/prereq/dev_install.ht
 
 {% include install/file-system-perms-before_22.md %}
 
-### Next step
+{:.ref-header}
+Related topics
 
 Install the Magento software:
 

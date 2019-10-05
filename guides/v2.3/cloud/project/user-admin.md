@@ -1,1 +1,1 @@
-../../../v2.2/cloud/project/user-admin.md
+../../../../guides/v2.2/cloud/project/user-admin.md

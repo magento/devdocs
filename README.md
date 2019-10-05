@@ -8,12 +8,11 @@ Our goal is to provide the Magento community with comprehensive and quality tech
 
 ![](https://raw.githubusercontent.com/wiki/magento/magento2/images/dev_docs_contributors.png)
 
-# Building this site
+## Building this site
 
 You can build this site locally in the following ways:
 
 - [Installing the project dependencies locally](#build-using-jekyll) (Mac, Linux)
-
 - [Using a Vagrant virtual machine](#build-using-vagrant) (Mac, Linux, Windows)
 - [Build DevDocs in Windows](#build-devdocs-in-windows) (Windows 7 & 10)
 
@@ -24,7 +23,7 @@ For local builds, you need to install Ruby 2.4 or later.
 To check the Ruby version on your environment, run in your terminal:
 
 ```shell
-$ ruby -v
+ruby -v
 ```
 
 ### Install the latest Ruby (if the Ruby version is less than 2.4)
@@ -34,20 +33,20 @@ $ ruby -v
 1. Install Homebrew. See the [Homebrew site](https://brew.sh) for instructions.
 1. Use Homebrew to install the latest stable version of Ruby:
 
-   ```
-   $ brew install ruby
+   ```bash
+   brew install ruby
    ```
 
 **Unix, Windows, and other OS users**
 
 See the [Ruby site](https://www.ruby-lang.org/en/documentation/installation) for instructions.
 
-### Install Bundler
+### Upgrade RubyGems
 
-Install the [Bundler](https://bundler.io/) gem, which helps with Ruby dependencies:
+Upgrade [RubyGems](https://github.com/rubygems/rubygems), which helps with dependencies (gems):
 
-```
-$ gem install bundler
+```bash
+gem update --system
 ```
 
 Once you have completed preparing your environment, you can build locally and review the site in your browser.
@@ -56,8 +55,8 @@ Once you have completed preparing your environment, you can build locally and re
 
 Clone or download the repository. The first time you are at the `devdocs` directory, run:
 
-```
-$ bundle install
+```bash
+bundle install
 ```
 
 Once you have completed preparing your environment, you can build locally and review the site in your browser.
@@ -70,8 +69,8 @@ Once you have completed preparing your environment, you can build locally and re
 
 1. Run the rake task that installs all required dependencies and starts the [Jekyll](https://jekyllrb.com/) server:
 
-   ```
-   $ rake preview
+   ```bash
+   rake preview
    ```
 
 1. Press `Ctrl+C` in the serve terminal to stop the server.
@@ -82,14 +81,14 @@ If rake fails on your environment, generate the preview [using jekyll](#using-je
 
 1. The first time you are at the `devdocs` directory or when you need to pick up changes in `Gemfile.lock` dependencies (for example, theme changes), run:
 
-   ```
-   $ bundle install
+   ```bash
+   bundle install
    ```
 
 1. To generate the local preview, run:
 
-   ```
-   $ bundle exec jekyll serve --incremental
+   ```bash
+   bundle exec jekyll serve --incremental
 
     Configuration file: /Users/username/Github/devdocs/_config.yml
                 Source: /Users/username/Github/devdocs
@@ -112,7 +111,8 @@ If rake fails on your environment, generate the preview [using jekyll](#using-je
 ### To minimize build time locally:
 
 1. Create a `_config.local.yml` file at the root of the project directory and exclude all versions except the one that you want to preview.
-The following example will generate Magento 2.2 documentation only.
+
+   The following example will generate Magento 2.2 documentation only.
 
    ```yaml
     exclude:
@@ -136,10 +136,12 @@ The following example will generate Magento 2.2 documentation only.
 
 1. Run the preview command:
 
+   ```bash
+   rake preview
    ```
-   $ rake preview
-   ```
+
    This command:
+
    * Checks your environment according to the dependencies in `Gemfile.lock`.
    * Removes the `_site/` directory, which contains previously generated preview files.
    * Generates a new preview and opens the landing page in a web browser.
@@ -168,13 +170,45 @@ To build v2.0 documentation:
 
 1. Initialize the `2.0` branch in your local devdocs repository.
 
-    ```shell
+    ```bash
     rake init
     ```
 
 1. Run the preview command.
 
-    ```shell
+    ```bash
+    rake preview
+    ```
+
+### To build v2.1 documentation
+
+Magento 2.1.18 was the final 2.1.x release. After June 2019, Magento 2.1.x stopped receiving security patches, quality fixes, and documentation updates.
+
+To ensure the quality of our public documentation for versions of Magento that are still supported and to avoid potential confusion about 2.1.x support, we removed all 2.1.x content from our public documentation websites on July 11, 2019.
+
+To build v2.1 documentation:
+
+> Also, you can use the GitHub interface to read the source Markdown files instead of building the site locally. Navigate to the [`2.1`](https://github.com/magento/devdocs/tree/2.1) branch and click the file you want to view.
+
+1. Add an entry for 2.1 in the `Docfile.yml` file.
+
+    ```yaml
+    -
+      directory: guides/v2.1
+      repository: magento/devdocs
+      branch: 2.1
+      filter: false
+    ```
+
+1. Initialize the `2.1` branch in your local devdocs repository.
+
+    ```bash
+    rake init
+    ```
+
+1. Run the preview command.
+
+    ```bash
     rake preview
     ```
 
@@ -194,7 +228,7 @@ If you have questions, open an issue and ask us. We're looking forward to hearin
 
 ## Build DevDocs in Windows
 
-Some of the technologies we use to develop DevDocs is not compatible with Windows, such as [Jekyll](https://jekyllrb.com/docs/windows/). For this reason, we do not support DevDocs management in Windows; however, we have documented the following procedures to build the DevDocs in a Windows environment. Any further use of this setup or troubleshooting is up to you. 
+Some of the technologies we use to develop DevDocs is not compatible with Windows, such as [Jekyll](https://jekyllrb.com/docs/windows/). For this reason, we do not support DevDocs management in Windows; however, we have documented the following procedures to build the DevDocs in a Windows environment. Any further use of this setup or troubleshooting is up to you.
 
 Download software:
 
@@ -217,7 +251,7 @@ Only Administrators can use Chocolatey features. You can use the Administrator a
 
     -  In the Windows UI, open search and type `path`.
     -  In the Windows CMD console, type `echo %path%`.
-    
+
     You should see `C:\ProgramData\chocolatey\bin` in the path.
 
 1.  Close and reopen the command prompt before using `choco` commands.
@@ -241,7 +275,7 @@ If you have Ruby installed on the workstation, then you can skip this installati
     -  In the Windows UI, open search and type `path`.
     -  In the Windows CMD console, type `echo %path%`.
 
->  **NOTE**  
+>  **NOTE**
 >  If you encounter problems with Ruby, or the `gem` command is not recognized, you can install the `rubyinstaller-devkit.exe` development kit located in the `c:\ProgramData\chocolatey\bin` folder.
 
 ### Install Git for Windows
@@ -268,7 +302,6 @@ Although you can install Git using Chocolatey, we chose to install _Git for Wind
     ```
 
 1.  Follow the [Generating a new SSH](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/) instructions.
-
 
 ### Clone and build the DevDocs repository
 
@@ -314,5 +347,5 @@ You may have to close and reopen the Git Bash application after the Choco instal
       Server running... press ctrl-c to stop.
     ```
 
->  **NOTE**  
+>  **NOTE**
 >  The `.bash_profile` file CAN be created and managed using Git Bash, which is useful for aliases and other customizations, This file is in the `users/Administrator` folder.

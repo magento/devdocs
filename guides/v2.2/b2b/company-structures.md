@@ -19,14 +19,13 @@ Company teams allow you to group company users by location, job responsibilities
 
 **REST Endpoints**
 
-```
+```terminal
 POST /V1/team/:companyId
 PUT /V1/team/:teamId
 GET /V1/team/:teamId
 DELETE /V1/team/:teamId
 GET /V1/team/
 ```
-
 
 **Company team parameters**
 
@@ -72,7 +71,7 @@ You can only change the name or description of a team.
 ```json
 {
   "team": {
-  	"id": 4,
+    "id": 4,
     "name": "Western Region"
   }
 }
@@ -182,7 +181,7 @@ You can use REST endpoints to retrieve the current structure and move teams and 
 
 **REST Endpoints**
 
-```
+```terminal
 GET /V1/hierarchy/:id
 PUT /V1/hierarchy/move/:id
 ```
@@ -191,7 +190,7 @@ PUT /V1/hierarchy/move/:id
 
 In the following example, the following company hierarchy has already been established:
 
-```
+```terminal
 Admin (structure_id = 2)
 |-- East (team, structure_id = 8)
 |   |-- Bryce Martin (customer, structure_id = 4)
