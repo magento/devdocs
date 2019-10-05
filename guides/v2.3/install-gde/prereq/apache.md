@@ -81,7 +81,7 @@ To install the default version of Apache (Ubuntu 14, 16&mdash;Apache 2.4, Ubuntu
     apache2 -v
     ```
 
-  The result displays similar to the following:
+    The result displays similar to the following:
 
     ```terminal
     Server version: Apache/2.4.18 (Ubuntu)
@@ -118,7 +118,13 @@ To upgrade to Apache 2.4:
 
     ```bash
     apt-get -y update
+    ```
+
+    ```bash
     apt-add-repository ppa:ondrej/apache2
+    ```
+
+    ```bash
     apt-get -y update
     ```
 
@@ -128,8 +134,8 @@ To upgrade to Apache 2.4:
     apt-get install -y apache2
     ```
 
-{:.bs-callout .bs-callout-info}
-If the 'apt-get install' command fails because of unmet dependencies, consult a resource like [http://askubuntu.com](http://askubuntu.com/questions/140246/how-do-i-resolve-unmet-dependencies-after-adding-a-ppa){:target="_blank"}.
+    {:.bs-callout .bs-callout-info}
+    If the 'apt-get install' command fails because of unmet dependencies, consult a resource like [http://askubuntu.com](http://askubuntu.com/questions/140246/how-do-i-resolve-unmet-dependencies-after-adding-a-ppa){:target="_blank"}.
 
 1. Verify the installation.
 
@@ -137,7 +143,7 @@ If the 'apt-get install' command fails because of unmet dependencies, consult a 
     apache2 -v
     ```
 
-  Messages similar to the following should display:
+    Messages similar to the following should display:
 
     ```terminal
     Server version: Apache/2.4.10 (Ubuntu)
@@ -178,17 +184,17 @@ Installing and configuring Apache is basically a three-step process: install the
     httpd -v
     ```
 
-  Messages similar to the following display to confirm the installation was successful:
+    Messages similar to the following display to confirm the installation was successful:
 
     ```terminal
-    Server version: Apache/2.4.0 (Unix)
-    Server built: Oct 16 2017 14:48:21
+    Server version: Apache/2.2.15 (Unix)
+    Server built: Oct 16 2014 14:48:21
     ```
 
 1. Continue with the next section.
 
-{:.bs-callout .bs-callout-info}
-Even though Apache 2.4 is provided by default with CentOS 7, you configure it like Apache 2.2. See the following section.
+    {:.bs-callout .bs-callout-info}
+    Even though Apache 2.4 is provided by default with CentOS 7, you configure it like Apache 2.2. See the following section.
 
 ### Enable rewrites and .htaccess for Apache 2.2 (including CentOS 7)
 
@@ -216,7 +222,7 @@ To enable website visitors to access your site, use one of the [Require directiv
 
 For example:
 
-```apache
+```conf
 <Directory /var/www/>
   Options Indexes FollowSymLinks MultiViews
   AllowOverride <value from Apache site>
@@ -234,7 +240,7 @@ To enable website visitors to access your site, use the [Allow directive](http:/
 
 For example:
 
-```apache
+```conf
 <Directory /var/www/>
   Options Indexes FollowSymLinks MultiViews
   AllowOverride <value from Apache site>

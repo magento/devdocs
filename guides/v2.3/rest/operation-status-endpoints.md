@@ -55,7 +55,7 @@ Field name | Data type | Description
 
 The `GET /V1/bulk/:bulkUuid/detailed-status` endpoint returns detailed information about status of a specified operation. It is similar to the `GET /V1/bulk/:bulkUuid/status` endpoint, except that the `operations_list` array also contains the message queue topic name and serialized data for each operation.
 
-```
+```http
 GET <host>/rest/<store_code>/V1/bulk/:bulkUuid/detailed-status
 ```
 

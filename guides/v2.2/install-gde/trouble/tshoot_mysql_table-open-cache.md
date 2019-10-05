@@ -15,7 +15,9 @@ functional_areas:
 
 During installation, the following message displays:
 
-	MySQL server has gone away
+```text
+MySQL server has gone away
+```
 
 ### Solution
 
@@ -33,7 +35,9 @@ Set the value of [table_open_cache](https://dev.mysql.com/doc/refman/5.6/en/tabl
 
 3.	Set the value to at least 250:
 
-		table_open_cache=250
+    ```conf
+    table_open_cache=250
+    ```
 
 4.	Save your changes to `my.cnf` and exit the text editor.
 

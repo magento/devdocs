@@ -78,7 +78,7 @@ For example, the following command starts the Docker configuration generator for
     ```
 
     {: .bs-callout-tip }
-To change the `magento2.docker` hostname for your project, you must update the host in three files: `.docker/config.php`, `docker-compose.yml`, and `/etc/hosts`
+    To change the `magento2.docker` hostname for your project, you must update the host in three files: `.docker/config.php`, `docker-compose.yml`, and `/etc/hosts`
 
 1.  Stop the default Apache instance on Mac OS.
 
@@ -272,19 +272,14 @@ Start containers from a suspended state | `docker-compose start`
 Stop the synchronization daemon | `docker-sync stop`
 Start the synchronization daemon | `docker-sync start`
 
-#### To stop and remove the Docker configuration:
+Use the following command to stop and remove the Docker configuration:
 
-Remove all components of your local Docker instance including containers, networks, volumes, and images.
+   ```bash
+   docker-compose down -v
+   ```
 
-```bash
-docker-compose down -v
-```
-
-#### To stop `docker-sync` daemon:
-
-```bash
-docker-sync stop
-```
+{: .bs-callout-warning}
+This removes all components of your local Docker instance including containers, networks, volumes, and images.
 
 ## Advanced usage
 

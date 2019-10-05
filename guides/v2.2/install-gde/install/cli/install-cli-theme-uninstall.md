@@ -34,7 +34,9 @@ In addition to the command arguments discussed here, see [Common arguments]({{ p
 
 Command usage:
 
-	magento theme:uninstall [--backup-code] [-c|--clear-static-content] {theme path} ... {theme path}
+```bash
+magento theme:uninstall [--backup-code] [-c|--clear-static-content] {theme path} ... {theme path}
+```
 
 where
 
@@ -66,32 +68,38 @@ The command performs the following tasks:
 
 For example, if you attempt to uninstall a theme that another theme depends on, the following message displays:
 
-	Cannot uninstall frontend/ExampleCorp/SampleModuleTheme because the following package(s) depend on it:
+```terminal
+Cannot uninstall frontend/ExampleCorp/SampleModuleTheme because the following package(s) depend on it:
         ExampleCorp/sample-module-theme-depend
+```
 
 One alternative is to uninstall both themes at the same time as follows after backing up the Magento codebase:
 
-	magento theme:uninstall frontend/ExampleCorp/SampleModuleTheme frontend/ExampleCorp/SampleModuleThemeDepend --backup-code
+```bash
+magento theme:uninstall frontend/ExampleCorp/SampleModuleTheme frontend/ExampleCorp/SampleModuleThemeDepend --backup-code
+```
 
 Messages similar to the following display:
 
-	Code backup is starting...
-	Code backup filename: 1435261098_filesystem_code.tgz (The archive can be uncompressed with 7-Zip on Windows systems)
-	Code backup path: /var/www/html/magento2/var/backups/1435261098_filesystem_code.tgz
-	[SUCCESS]: Code backup completed successfully.Removing frontend/ExampleCorp/SampleModuleTheme, frontend/ExampleCorp/SampleModuleThemeDepend from database
-	Loading composer repositories with package information
-	Updating dependencies (including require-dev)
-	Removing frontend/ExampleCorp/SampleModuleTheme, frontend/ExampleCorp/SampleModuleThemeDepend from Magento codebase
-	  - Removing ExampleCorp/sample-module-theme-depend (dev-master)
-	Removing ExampleCorp/SampleThemeDepend
-	  - Removing ExampleCorp/sample-module-theme (dev-master)
-	Removing ExampleCorp/SampleTheme
-	Writing lock file
-	Generating autoload files
-	Cache cleared successfully.
-	Alert: Generated static view files were not cleared. You can clear them using the --clear-static-content option.
-	Failure to clear static view files might cause display issues in the Admin and storefront.
-	Disabling maintenance mode
+```terminal
+Code backup is starting...
+Code backup filename: 1435261098_filesystem_code.tgz (The archive can be uncompressed with 7-Zip on Windows systems)
+Code backup path: /var/www/html/magento2/var/backups/1435261098_filesystem_code.tgz
+[SUCCESS]: Code backup completed successfully.Removing frontend/ExampleCorp/SampleModuleTheme, frontend/ExampleCorp/SampleModuleThemeDepend from database
+Loading composer repositories with package information
+Updating dependencies (including require-dev)
+Removing frontend/ExampleCorp/SampleModuleTheme, frontend/ExampleCorp/SampleModuleThemeDepend from Magento codebase
+  - Removing ExampleCorp/sample-module-theme-depend (dev-master)
+Removing ExampleCorp/SampleThemeDepend
+  - Removing ExampleCorp/sample-module-theme (dev-master)
+Removing ExampleCorp/SampleTheme
+Writing lock file
+Generating autoload files
+Cache cleared successfully.
+Alert: Generated static view files were not cleared. You can clear them using the --clear-static-content option.
+Failure to clear static view files might cause display issues in the Admin and storefront.
+Disabling maintenance mode
+```
 
 {: .bs-callout-info }
 To uninstall a Magento [Admin](https://glossary.magento.com/admin) theme, you must also remove it from your component's [dependency injection](https://glossary.magento.com/dependency-injection) configuration, `<component root directory>/etc/di.xml`.

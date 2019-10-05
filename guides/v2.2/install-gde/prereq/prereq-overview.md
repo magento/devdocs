@@ -33,6 +33,9 @@ Enter the following commands as a user with `root` privileges:
 
     ```bash
     apt-get update
+    ```
+
+    ```bash
     apt-get upgrade
     ```
 
@@ -40,6 +43,9 @@ Enter the following commands as a user with `root` privileges:
 
     ```bash
     yum -y update
+    ```
+
+    ```bash
     yum -y upgrade
     ```
 
@@ -58,8 +64,8 @@ Ubuntu: `apache2 -v`
 as the following result indicates:
 
 ```terminal
-Server version: Apache/2.4.1 (Unix)
-Server built: Jul 23 2017 14:17:29
+Server version: Apache/2.2.15 (Unix)
+Server built: Jul 23 2014 14:17:29
 ```
 
 To install or upgrade Apache, see [Apache]({{ page.baseurl }}/install-gde/prereq/apache.html).
@@ -98,19 +104,19 @@ mysql -u magento -p
 
 You must run MySQL version 5.6 or later as the following result indicates:
 
-    ```terminal
-    Welcome to the MySQL monitor. Commands end with ; or \g.
-    Your MySQL connection id is 871
-    Server version: 5.6.21 MySQL Community Server (GPL)
+```terminal
+Welcome to the MySQL monitor. Commands end with ; or \g.
+Your MySQL connection id is 871
+Server version: 5.6.21 MySQL Community Server (GPL)
 
-    Copyright (c) 2000, 2014, Oracle and/or its affiliates. All rights reserved.
+Copyright (c) 2000, 2014, Oracle and/or its affiliates. All rights reserved.
 
-    Oracle is a registered trademark of Oracle Corporation and/or its
-    affiliates. Other names may be trademarks of their respective
-    owners.
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
 
-    Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
-    ```
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+```
 
 Enter `exit` at the `mysql>` prompt to exit.
 

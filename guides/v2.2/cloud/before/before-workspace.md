@@ -58,5 +58,5 @@ You should be ready to go! The following sections provide a link to the previous
 
 For Pro projects, you also should deploy across to Staging and Production as part of your set up.
 
-#### Next step:
+**Next step:**
 [Install Magento prerequisites]({{ page.baseurl }}/cloud/before/before-workspace-magento-prereqs.html)
