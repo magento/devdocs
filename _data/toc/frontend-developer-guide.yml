@@ -125,7 +125,7 @@ pages:
           url: /frontend-dev-guide/css-topics/using-fonts.html
 
         - label: CSS critical path
-          url: /frontend-dev-guide/css-topics/css_critical-path.html
+          url: /frontend-dev-guide/css-topics/css-critical-path.html
 
         - label: Using custom CSS preprocessor
           children:
