@@ -5,7 +5,9 @@ You can use one of the following approaches for logging into custom file:
 
 ## Set up a custom log file in the `di.xml`
 
-1. Define a custom log file in the virtual type:
+This example shows how to use [virtual types]({{page.baseurl}}/extension-dev-guide/build/di-xml-file.html#virtual-types) to log `debug` messages into a custom log file instead of a standard Magento `/var/log/debug.log`.
+
+1. In the `di.xml` file of your module, define a custom log file as a [virtual type]({{page.baseurl}}/extension-dev-guide/build/di-xml-file.html#virtual-types).
 
    ```xml
    <virtualType name="Magento\Payment\Model\Method\MyCustomDebug" type="Magento\Framework\Logger\Handler\Base">
@@ -15,9 +17,9 @@ You can use one of the following approaches for logging into custom file:
    </virtualType>
    ```
 
-   where `Magento\Payment\Model\Method\MyCustomDebug` is the unique [virtual type]({{page.baseurl}}/extension-dev-guide/build/di-xml-file.html#virtual-types) identifier.
+   The `name` value of `Magento\Payment\Model\Method\MyCustomDebug` must be unique.
 
-1. Specify the handler which will be used:
+1. Define the handler in another [virtual type]({{page.baseurl}}/extension-dev-guide/build/di-xml-file.html#virtual-types) with a unique `name`:
 
    ```xml
    <virtualType name="Magento\Payment\Model\Method\MyCustomLogger" type="Magento\Framework\Logger\Monolog">
@@ -29,9 +31,7 @@ You can use one of the following approaches for logging into custom file:
    </virtualType>
    ```
 
-   where `Magento\Payment\Model\Method\MyCustomLogger` is the unique [virtual type]({{page.baseurl}}/extension-dev-guide/build/di-xml-file.html#virtual-types) identifier.
-
-1. Inject the declared virtual type (`Magento\Payment\Model\Method\MyCustomLogger`) into our object (`Magento\Payment\Model\Method\Logger`):
+1. Inject the `MyCustomLogger` [virtual type]({{page.baseurl}}/extension-dev-guide/build/di-xml-file.html#virtual-types) in the `Magento\Payment\Model\Method\Logger` object:
 
    ```xml
    <type name="Magento\Payment\Model\Method\Logger">
@@ -51,9 +51,11 @@ You can use one of the following approaches for logging into custom file:
    ...
    ``` 
 
-   It will log exception messages into the `/var/log/payment.log` file.
+It will log exception messages into the `/var/log/payment.log` file.
 
 ## Set up a custom file in the custom logger handler class
+
+This example shows how to use a custom logger handler class to log `error` messages into a specific log file.
 
 1. Create a class that logs data. In this example, the class is defined in `app/code/Vendor/ModuleName/Logger/Handler/ErrorHandler.php`. 
 
@@ -89,9 +91,7 @@ You can use one of the following approaches for logging into custom file:
    }
    ```
 
-1. Define it for the specific handler type in the `di.xml`: 
-
-   For example, `Vendor\ModuleName\Logger\Handler\ErrorHandler` will be defined for the error handler:
+1. Define the handler for this class as a [virtual type]({{page.baseurl}}/extension-dev-guide/build/di-xml-file.html#virtual-types) in the module's `di.xml` file.
 
    ```xml
    <virtualType name="MyCustomLogger" type="Magento\Framework\Logger\Monolog">
@@ -103,11 +103,9 @@ You can use one of the following approaches for logging into custom file:
    </virtualType>
    ```
 
-   where `MyCustomLogger` is the unique identifier of [virtual type]({{page.baseurl}}/extension-dev-guide/build/di-xml-file.html#virtual-types).
+   `MyCustomLogger` is a unique identifier.
 
-1. Specify a class name that you will use in your custom logger handler.
-
-   For example, you will use a custom logger handler in the `Vendor\ModuleName\Observer\MyObserver` class:
+1. In the `type` definition specify the class name where the custom logger handler will be injected. Use the virtual type name from the previous step as an argument for this type.
 
    ```xml
    <type name="Vendor\ModuleName\Observer\MyObserver">
@@ -179,4 +177,4 @@ You can use one of the following approaches for logging into custom file:
    ...
    ```
 
-   It will log exception messages into `/var/log/my_custom_logger/error.log` file.
+It will log exception messages into `/var/log/my_custom_logger/error.log` file.
