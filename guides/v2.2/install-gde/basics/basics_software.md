@@ -18,7 +18,7 @@ functional_areas:
 
 The full list of software is listed in [System Requirements]({{ page.baseurl }}/install-gde/system-requirements.html) but here are the essentials:
 
-* Web server for providing access to web pages - Currently, we've documented [Apache](http://en.wikipedia.org/wiki/Apache_HTTP_Server){:target="_blank"} and plan to document other web servers in the near future.
+* Web server for providing access to web pages - Currently, we've documented [Apache](http://en.wikipedia.org/wiki/Apache_HTTP_Server){:target="_blank"} and [NGINX](https://de.wikipedia.org/wiki/Nginx){:target="_blank"}. We also plan to document other web servers in the near future.
 
 * Database management system for long-term data storage and retrieval - We support [MySQL](http://dev.mysql.com/doc/refman/4.1/en/what-is-mysql.html){:target="_blank"}.
 
