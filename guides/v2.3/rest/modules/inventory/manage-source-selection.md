@@ -170,13 +170,13 @@ Name | Description | Type | Requirements
             "qty": 50
         }],
         "extension_attributes": {
-        	"destination_address": {
-        		"country": "US",
-        		"postcode": "10577",
-        		"street": "3003 Purchase St",
-        		"region": "43",
-        		"city": "Purchase"
-        	}
+            "destination_address": {
+                "country": "US",
+                "postcode": "10577",
+                "street": "3003 Purchase St",
+                "region": "43",
+                "city": "Purchase"
+            }
         }
     },
     "algorithmCode": "distance"

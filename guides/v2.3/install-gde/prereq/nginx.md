@@ -555,10 +555,11 @@ To configure SELinux and firewalld:
 
 Open a web browser and navigate to your site's base URL to [verify the installation.]({{page.baseurl }}/install-gde/install/verify.html)
 
-## Related topics
+{:.ref-header}
+Related topics
 
-* [PHP](php-settings.html)
-* [MySQL]({{page.baseurl }}/install-gde/prereq/mysql.html)
-* [Configuring security options]({{page.baseurl }}/install-gde/prereq/security.html)
-* [Installing optional software]({{page.baseurl }}/install-gde/prereq/optional.html)
-* [Determine your installation or upgrade path]({{ page.baseurl }}/install-gde/bk-install-guide.html)
+*  [PHP](php-settings.html)
+*  [MySQL]({{page.baseurl }}/install-gde/prereq/mysql.html)
+*  [Configuring security options]({{page.baseurl }}/install-gde/prereq/security.html)
+*  [Installing optional software]({{page.baseurl }}/install-gde/prereq/optional.html)
+*  [Determine your installation or upgrade path]({{ page.baseurl }}/install-gde/bk-install-guide.html)

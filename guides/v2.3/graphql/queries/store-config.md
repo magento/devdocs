@@ -11,6 +11,108 @@ The `storeConfig` query defines information about a store's configuration. You c
 
 `storeConfig: StoreConfig`
 
+<<<<<<< HEAD:guides/v2.3/graphql/queries/store-config.md
+=======
+### Supported storeConfig attributes
+
+Use the `storeConfig` attributes to retrieve information about the store's configuration; such as, locale, currency codes, and secure and unsecure URLs.
+
+Attribute |  Data Type | Description | Example
+--- | --- | --- | ---
+`base_currency_code` | String | The code representing the currency in which Magento processes all payment transactions | `USD`
+`base_link_url` | String | A fully-qualified URL that is used to create relative links to the `base_url` | `http://magentohost.example.com/`
+`base_static_url` | String | The fully-qualified URL that specifies the location of static view files | `http://magentohost.example.com/pub/static/`
+`base_media_url` | String | The fully-qualified URL that specifies the location of user media files | `http://magentohost.example.com/pub/media/`
+`base_url` | String | The store's fully-qualified base URL | `http://magentohost.example.com/`
+`code` | String | A unique identifier for the store | `default`
+`default_display_currency_code` | String | The code representing the currency displayed on the store | `USD`
+`id` | Integer | The ID number assigned to the store | `1`
+`locale` | String | The store's locale | `en_US`
+`secure_base_link_url` | String | A secure fully-qualified URL that is used to create relative links to the `base_url` | `https://magentohost.example.com/`
+`secure_base_media_url` | String | The secure fully-qualified URL that specifies the location of user media files | `https://magentohost.example.com/pub/media/`
+`secure_base_static_url` | String | The secure fully-qualified URL that specifies the location of static view files | `https://magentohost.example.com/pub/static/`
+`secure_base_url` | String | The store's fully-qualified secure base URL | `https://magentohost.example.com/`
+`timezone` | String | The store's time zone | `America/Chicago`
+`website_id` | Integer | The ID number assigned to the parent website | `1`
+`weight_unit` | String | The weight unit for products | `lbs`, `kgs`, etc
+
+### Supported website attributes
+
+Use the `Website` attributes to retrieve information about the website's configuration; such as, website name, website code, and default group id.
+
+Attribute |  Data Type | Description
+--- | --- | ---
+`code` | String | A code assigned to the website to identify it
+`default_group_id` | String | The default group ID that the website has
+`id` | Integer | The ID number assigned to the store
+`name` | String | The website name. Websites use this name to identify it easier.
+`sort_order` | Integer | The attribute to use for sorting websites
+
+### Supported theme attributes
+
+Use the `theme` attributes to retrieve information about the store's thematic elements; such as, footer and header information, copyright text, and logo information. These attributes are defined in the `ThemeGraphQl` module.
+
+Attribute |  Data Type | Description
+--- | --- | ---
+`absolute_footer` | String | Contains scripts that must be included in the HTML before the closing `<body>` tag
+`copyright` | String | The copyright statement that appears at the bottom of each page
+`default_description` | String | The description that provides a summary of your site for search engine listings and should not be more than 160 characters in length
+`default_keywords` | String | A series of keywords that describe your store, each separated by a comma
+`default_title` | String | The title that appears at the title bar of each page when viewed in a browser
+`demonotice` | Int | Controls the display of the demo store notice at the top of the page. Options: `0` (No) or `1` (Yes)
+`head_includes` | String | Contains scripts that must be included in the HTML before the closing `<head>` tag
+`header_logo_src` | String | The path to the logo that appears in the header
+`head_shortcut_icon` | String | Uploads the small graphic image that appears in the address bar and tab of the browser
+`logo_alt` | String | The Alt text that is associated with the logo
+`logo_height` | Int | The height of your logo image in pixels
+`logo_width` | Int | The width of your logo image in pixels
+`title_prefix` | String | A prefix that appears before the title to create a two- or three-part title
+`title_suffix` | String | A suffix that appears after the title to create a two-or three part title
+`welcome` | String | Text that appears in the header of the page and includes the name of customers who are logged in
+
+### Supported CMS attributes
+
+Use the `cms` attributes to retrieve information about the store's default pages. These attributes are defined in the `CmsGraphQl` module.
+
+Attribute |  Data Type | Description
+--- | --- | ---
+`cms_home_page` | String | Returns the name of the CMS page that identifies the home page for the store
+`cms_no_cookies` | String | Identifies a specific CMS page that appears when cookies are not enabled for the browser
+`cms_no_route` | String | Identifies a specific CMS page that you want to appear when a 404 “Page Not Found” error occurs
+`front` | String | Indicates the landing page that is associated with the base URL
+`no_route` | String | Contains the URL of the default page that you want to appear when if a 404 “Page not Found” error occurs
+`show_cms_breadcrumbs` | Int | Determines if a breadcrumb trail appears on all CMS pages in the catalog. Options: `0` (No) or `1` (Yes)
+
+### Extend configuration data
+
+You can add your own configuration to the `Store` endpoint within your own module.
+
+To do this, configure the constructor argument `extendedConfigData` in the `argument` node in your area-specific `etc/graphql/di.xml` file.
+
+The following example adds an array-item to the `extendedConfigData` array within the construct of the `StoreConfigDataProvider`.
+
+```xml
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+  <type name="Magento\StoreGraphQl\Model\Resolver\Store\StoreConfigDataProvider">
+    <arguments xsi:type="array">
+      <argument name="extendedConfigData">
+        <item name="section_group_field" xsi:type="string">section/group/field</item>
+      </argument>
+    </arguments>
+  </type>
+</config>
+```
+
+You must also extend the type `StoreConfig` within in the `etc/schema.graphqls` file, as shown below:
+
+```text
+type StoreConfig {
+    section_group_field : String  @doc(description: "Extendend Config Data - section/group/field")
+}
+```
+
+>>>>>>> master:guides/v2.3/graphql/reference/store-config.md
 ## Example usage
 
 ### Query a store's configuration

@@ -75,7 +75,7 @@ The resulting `crontab.xml` with two groups may look like this:
 
 As an example, see [Magento_Customer crontab.xml]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Customer/etc/crontab.xml).
 
-#### Specifying Cron group options {#specify-cron-group-options}
+### Specifying Cron group options {#specify-cron-group-options}
 
 You may declare a new group and specify its configuration options (all of which run in [store view](https://glossary.magento.com/store-view) scope) via the `cron_groups.xml` file, located in:
 
@@ -109,5 +109,6 @@ where:
 | `history_failure_lifetime` | Time (in minutes) that the record of failed cron jobs are kept in the database.                        |
 | `use_separate_process`     | Run this crongroup's jobs in a separate php process                                             |
 
-#### Related topic
+{:.ref-header}
+Related topic
 [Tutorial&mdash;configure custom cron jobs and cron groups]({{ page.baseurl }}/config-guide/cron/custom-cron-tut.html)

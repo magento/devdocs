@@ -144,7 +144,7 @@ When you change from production to developer mode, you should clear generated cl
 
     ```terminal
     Enabled developer mode.
-    ```Â
+    ```
 
 ### Change to default mode
 

@@ -120,14 +120,16 @@ Enter `exit` at the `mysql>` prompt to exit.
 
 To install or upgrade MySQL, see [MySQL]({{page.baseurl}}/install-gde/prereq/mysql.html).
 
-#### Next step
+{:.ref-header}
+Next step
 
 [Choose how to install the Magento software]({{page.baseurl}}/install-gde/bk-install-guide.html)
 
-#### Related topics
+{:.ref-header}
+Related topics
 
-* [MySQL]({{page.baseurl}}/install-gde/prereq/mysql.html)
-* [Apache]({{page.baseurl}}/install-gde/prereq/apache.html)
-* [PHP]({{page.baseurl}}/install-gde/prereq/php-settings.html)
-* [Installing optional software]({{page.baseurl}}/install-gde/prereq/optional.html)
-* [How to get the Magento software]({{ page.baseurl }}/install-gde/bk-install-guide.html)
+*  [MySQL]({{page.baseurl}}/install-gde/prereq/mysql.html)
+*  [Apache]({{page.baseurl}}/install-gde/prereq/apache.html)
+*  [PHP]({{page.baseurl}}/install-gde/prereq/php-settings.html)
+*  [Installing optional software]({{page.baseurl}}/install-gde/prereq/optional.html)
+*  [How to get the Magento software]({{ page.baseurl }}/install-gde/bk-install-guide.html)

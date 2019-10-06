@@ -17,12 +17,13 @@ To get started, log in to [Magento Marketplace](https://marketplace.magento.com)
 
 If you don't have an account yet:
 
-1.	Click **Sign In** and the top right of the page as the following figure shows:
+1. Click **Sign In** and the top right of the page as the following figure shows:
 
-	![Sign in to Marketplace]({{ site.baseurl }}/common/images/marketplace_sign-in.png){:width="600px"}
-2.	In the right pane, click **Create an account**.
+   ![Sign in to Marketplace]({{ site.baseurl }}/common/images/marketplace_sign-in.png){:width="600px"}
 
-	![Create a Marketplace account]({{ site.baseurl }}/common/images/marketplace_create-acct.png){:width="300px"}
+2. In the right pane, click **Create an account**.
+
+   ![Create a Marketplace account]({{ site.baseurl }}/common/images/marketplace_create-acct.png){:width="300px"}
 
 ### Find an extension or theme
 

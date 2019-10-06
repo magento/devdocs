@@ -78,7 +78,7 @@ To translate names, titles, and phrases used in Magento
 1. Translate the terms.
 1. If desired, package your translations in a [language package].
 
-{:.bs-callout .bs-callout-info}
+{: .bs-callout-info }
 Only one variant of translation can be used for a word or phrase in a package. Otherwise, Magento returns an error.
 
 Anyone can submit inline translations on the [storefront](https://glossary.magento.com/storefront) using the Text Editor. These inline translations overwrite a dictionary and save to your database (not in an instance's dictionary). Inline translations are theme-specific and do not apply if another theme is assigned.
@@ -112,29 +112,29 @@ Magento enables you to create the following types of language packages:
 
 * A set of `.csv` files for modules and themes. These packages files are intended to be deployed in modules. For example:
     ```tree
-	__/app
-	 |__/code
-	 | |__/Magento
-	 |   |__/Catalog
-	 |   | |__/i18n
-	 |   |   |-- pt_BR.csv
-	 |   |__/Checkout
-	 |   | |__/i18n
-	 |   |   |-- pt_BR.csv
-	 |   |__/Customer
-	 |     |__/i18n
-	 |       |-- pt_BR.csv
-	 |__/design
-	   |__/frontend
-	     |__/<Vendor>
-	       |__/<theme>
-		 |__/i18n
-		   |-- pt_BR.csv
+   __/app
+    |__/code
+    | |__/Magento
+    |   |__/Catalog
+    |   | |__/i18n
+    |   |   |-- pt_BR.csv
+    |   |__/Checkout
+    |   | |__/i18n
+    |   |   |-- pt_BR.csv
+    |   |__/Customer
+    |     |__/i18n
+    |       |-- pt_BR.csv
+    |__/design
+      |__/frontend
+        |__/<Vendor>
+          |__/<theme>
+       |__/i18n
+         |-- pt_BR.csv
     ```
 
 * Language packages that contain a entire dictionary in one directory.
 
-	You can distribute this language package as a standalone component (similar to modules and themes). Interestingly, it violates Magento's modularity principles on purpose; that is, so that a system integrator can translate variations provided by extensions.
+   You can distribute this language package as a standalone component (similar to modules and themes). Interestingly, it violates Magento's modularity principles on purpose; that is, so that a system integrator can translate variations provided by extensions.
 
 In addition to the `.csv` file that contains the language dictionary, the language package contains meta-information:
 

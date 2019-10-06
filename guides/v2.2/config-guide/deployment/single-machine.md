@@ -80,7 +80,8 @@ For deployment strategies developed by the Magento community, see the blog posts
 
 In Magento 2.2, a near-zero downtime deployment model will be available for a variety of complex environments, including {{site.data.var.ece}}.
 
-## Related topics
+{:.ref-header}
+Related topics
 
 * [Enable or disable maintenance mode][4]
 * [Command line upgrade][1]
