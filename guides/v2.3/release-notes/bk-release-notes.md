@@ -30,11 +30,7 @@ For general information about security-only patches, see the Magento DevBlog pos
 
 ## Backward-incompatible changes
 
-<<<<<<< HEAD
-*	 Overview of [backward-incompatible changes]({{page.baseurl}}/release-notes/backward-incompatible-changes/index.html) between the 2.2 and 2.3 releases
-=======
 *  Overview of [backward-incompatible changes]({{page.baseurl}}/release-notes/backward-incompatible-changes/index.html) between the 2.2 and 2.3 releases
->>>>>>> master
 
 ## {{site.data.var.ece}} {#cloud-updates}
 
