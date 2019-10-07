@@ -83,8 +83,8 @@ QUERY;
 
 The `\Magento\GraphQl\TestModule\GraphQlQueryTest.php` test case uses two test modules to determine whether the mechanisms for GraphQL extensibility work as expected. It illustrates best practices for extending an existing GraphQL endpoint.
 
-* `TestModuleGraphQlQuery` - This bare-bones module defines a `testItem` endpoint with the queryable attributes `item_id` and `name`. It's located at `<installdir>/dev/tests/api-functional/_files/TestModuleGraphQlQuery`.
-* `TestModuleGraphQlQueryExtension` - This module extends `TestModuleGraphQlQuery`, adding the `integer_list` extension attribute. It's located at `<installdir>/dev/tests/api-functional/_files/TestModuleGraphQlQueryExtension`.
+*  `TestModuleGraphQlQuery` - This bare-bones module defines a `testItem` endpoint with the queryable attributes `item_id` and `name`. It's located at `<installdir>/dev/tests/api-functional/_files/TestModuleGraphQlQuery`.
+*  `TestModuleGraphQlQueryExtension` - This module extends `TestModuleGraphQlQuery`, adding the `integer_list` extension attribute. It's located at `<installdir>/dev/tests/api-functional/_files/TestModuleGraphQlQueryExtension`.
 
 ## Creating fixtures
 
@@ -92,8 +92,8 @@ Fixtures, which are part of the testing framework, prepare preconditions in the 
 
 A fixture consists of two files:
 
-- The fixture file, which defines the test
-- A rollback file, which reverts the system to the state before the test was run
+*  The fixture file, which defines the test
+*  A rollback file, which reverts the system to the state before the test was run
 
 {:.bs-callout .bs-callout-info}
 Each fixture should have a corresponding rollback file.
@@ -200,8 +200,8 @@ $registry->register('isSecureArea', false);
 
 Your functional tests should include events that cause exceptions. Since your tests expect an exception to occur, set up your tests so that they elicit the proper responses. You can define expected exception messages either in:
 
-- The body of the test
-- The test function annotation
+-  The body of the test
+-  The test function annotation
 
 {: .bs-callout .bs-callout-tip }
 We recommend that you declare expected exceptions in the test method body, as declaring expected exceptions with annotations has been deprecated in PHPUnit 8. Existing tests that use annotations will have to be updated when Magento requires that version of PHPUnit or higher.
@@ -335,11 +335,11 @@ The `@expectExceptionMessage` annotation provides the text for the exception in 
 
 Use the following functions to cover expected exceptions:
 
-- `expectException`
-- `expectExceptionCode`
-- `expectExceptionMessage`
-- `expectExceptionMessageRegExp`
-- `expectExceptionObject`
+*  `expectException`
+*  `expectExceptionCode`
+*  `expectExceptionMessage`
+*  `expectExceptionMessageRegExp`
+*  `expectExceptionObject`
 
 ## Run functional tests
 
