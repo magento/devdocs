@@ -1,7 +1,7 @@
 You can use one of the following approaches for logging into a custom file:
 
 - Set up a custom log file in the `di.xml`
-- Set up a custom file in the custom logger handler class 
+- Set up a custom file in the custom logger handler class
 
 ## Set up a custom log file in the `di.xml`
 
@@ -42,14 +42,13 @@ This example shows how to use [virtual types]({{page.baseurl}}/extension-dev-gui
    ```
 
 1. The virtual class `Magento\Payment\Model\Method\MyCustomLogger` will be injected into the `debug` handler of the `$logger` property in the `Magento\Payment\Model\Method\Logger` class.
- 
+
    ```xml
    ...
    <argument name="handlers" xsi:type="array">
        <item name="debug" xsi:type="object">Magento\Payment\Model\Method\MyCustomDebug</item>
    </argument>
-   ...
-   ``` 
+   ...  ``` 
 
 Exception messages are logged into the `/var/log/payment.log` file.
 
@@ -57,7 +56,7 @@ Exception messages are logged into the `/var/log/payment.log` file.
 
 This example shows how to use a custom logger handler class to log `error` messages into a specific log file.
 
-1. Create a class that logs data. In this example, the class is defined in `app/code/Vendor/ModuleName/Logger/Handler/ErrorHandler.php`. 
+1. Create a class that logs data. In this example, the class is defined in `app/code/Vendor/ModuleName/Logger/Handler/ErrorHandler.php`.
 
    ```php
    <?php
