@@ -21,16 +21,16 @@ This is an advanced topic that should be used only by an experienced network adm
 
 Before you begin, you must:
 
-* [Install MySQL server]({{ page.baseurl }}/install-gde/prereq/mysql.html) on the database server
-* [Create a database instance]({{ page.baseurl }}/install-gde/prereq/mysql.html#instgde-prereq-mysql-config) on the database server
-* Install the MySQL client on your Magento web node. Consult MySQL documentation for details.
+*  [Install MySQL server]({{ page.baseurl }}/install-gde/prereq/mysql.html) on the database server
+*  [Create a database instance]({{ page.baseurl }}/install-gde/prereq/mysql.html#instgde-prereq-mysql-config) on the database server
+*  Install the MySQL client on your Magento web node. Consult MySQL documentation for details.
 
 ### High availability
 
 Use the following guidelines to configure remote database connections if your web server or database server are clustered:
 
-* You must configure a connection for each web server node
-* Typically, you configure a database connection to the database load balancer; however, database clustering can be complex and configuring it is up to you. Magento makes no specific recommendations for database clustering.
+*  You must configure a connection for each web server node
+*  Typically, you configure a database connection to the database load balancer; however, database clustering can be complex and configuring it is up to you. Magento makes no specific recommendations for database clustering.
 
  For more information, see [MySQL documentation](https://dev.mysql.com/doc/refman/5.6/en/mysql-cluster.html).
 
@@ -75,8 +75,8 @@ To create a remote connection:
 1. Save your changes to the configuration file and exit the text editor.
 1. Restart the MySQL service:
 
-   * CentOS: `service mysqld restart`
-   * Ubuntu: `service mysql restart`
+   *  CentOS: `service mysqld restart`
+   *  Ubuntu: `service mysql restart`
 
    {: .bs-callout-info }
    If MySQL fails to start, look in syslog for the source of the issue. Resolve the issue using [MySQL documentation](https://dev.mysql.com/doc/refman/5.6/en/server-options.html#option_mysqld_bind-address) or another authoritative source.
@@ -136,18 +136,17 @@ If your web server is clustered, enter the command on each web server host.
 
 When you install the Magento software using either the command line or Setup Wizard, you must specify the following:
 
-* The Base [URL](https://glossary.magento.com/url) (also referred to as the *store address*) specifies the hostname or IP address of the *web node*
-* Database host is the *remote database server* IP address (or load balancer if the database server is clustered)
-* Database username is the *local web node* database user to which you gave access
-* Database password is the local web node user's password
-* Database name is the name of the database on the remote server
+*  The Base [URL](https://glossary.magento.com/url) (also referred to as the *store address*) specifies the hostname or IP address of the *web node*
+*  Database host is the *remote database server* IP address (or load balancer if the database server is clustered)
+*  Database username is the *local web node* database user to which you gave access
+*  Database password is the local web node user's password
+*  Database name is the name of the database on the remote server
 
-{:.ref-header}
+{.ref-header}
 Related topics
 
-* [Installing optional software]({{ page.baseurl }}/install-gde/prereq/optional.html)
-* [Apache]({{ page.baseurl }}/install-gde/prereq/apache.html)
-* [PHP 5.5, 5.6, or 7.0—Ubuntu]({{ page.baseurl }}/install-gde/prereq/php-ubuntu.html)
-* [PHP 5.5, 5.6, or 7.0—CentOS]({{ page.baseurl }}/install-gde/prereq/php-centos.html)
-* [Configuring security options]({{ page.baseurl }}/install-gde/prereq/security.html)
-* [How to get the Magento software]({{ page.baseurl }}/install-gde/bk-install-guide.html)
+*  [Installing optional software]({{ page.baseurl }}/install-gde/prereq/optional.html)
+*  [Apache]({{ page.baseurl }}/install-gde/prereq/apache.html)
+*  [PHP]({{ page.baseurl }}/install-gde/prereq/php-settings.html)
+*  [Configuring security options]({{ page.baseurl }}/install-gde/prereq/security.html)
+*  [How to get the Magento software]({{ page.baseurl }}/install-gde/bk-install-guide.html)
