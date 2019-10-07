@@ -88,7 +88,7 @@ To update the `.magento.app.yaml` file:
 
 ## Upgrading the Magento application
 
-Review the [Magento technology stack requirements]({{page.baseurl}}install-gde/system-requirements-tech.html) before upgrading your Magento application.
+Review the [Magento technology stack requirements]({{page.baseurl}}/install-gde/system-requirements-tech.html) before upgrading your Magento application.
 
 ### Back up the database
 
