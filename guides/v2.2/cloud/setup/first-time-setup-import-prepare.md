@@ -187,7 +187,7 @@ To edit `composer.json`:
 
 Use the command [`magento setup:backup --media`]({{ page.baseurl }}/install-gde/install/cli/install-cli-backup.html) to back up media files:
 
-1. Get the  integration system's [SSH URL]({{ page.baseurl }}/cloud/setup/first-time-setup-import-first-steps.html#ssh).
+1. Get the integration system's [SSH URL]({{ page.baseurl }}/cloud/setup/first-time-setup-import-first-steps.html#ssh).
 2. To back up media files, enter the following command:
 
    ```bash
@@ -238,7 +238,7 @@ The following example compresses the dump so that it does not significantly inte
 
 2. Use the `rsync` command to transfer the database dump to the {{site.data.var.ece}} environment in the `var` directory of the application you are importing into:
 
-   ```bashg
+   ```bash
    rsync <db dump file name> <cloud SSH URL>:var/db.sql.gz
    ```
 
