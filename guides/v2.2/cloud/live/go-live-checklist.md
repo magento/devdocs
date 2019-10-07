@@ -6,7 +6,7 @@ functional_areas:
   - Testing
 ---
 
-Before you launch to Production, download the [Go live checklist]({{ site.baseurl }}/common/pdf/Pre-Launch.Checklist_4_23_2018.docx) and use it with these instructions to confirm that you have completed all required configuration and testing. See an overview of the complete deployment process for Starter and Pro at [Deploy your store]({{ page.baseurl }}/cloud/live/stage-prod-live.html).
+Before you deploy to the Production environment, download the [Go live checklist]({{ site.baseurl }}/common/pdf/Pre-Launch.Checklist_4_23_2018.docx) and use it with these instructions to confirm that you have completed all required configuration and testing. See an overview of the complete deployment process for Starter and Pro at [Deploy your store]({{ page.baseurl }}/cloud/live/stage-prod-live.html).
 
 ## Completely test in Production {#test}
 
