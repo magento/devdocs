@@ -1,11 +1,6 @@
 ---
 group: release-notes
-subgroup: Release Notes
 title: Magento Open Source 2.2.3 Release Notes
-menu_title: Magento Open Source 2.2.3 Release Notes
-menu_order: 270
-level3_menu_node:
-level3_subgroup:
 ---
 *Patch code and release notes published on February 27, 2018.*
 
