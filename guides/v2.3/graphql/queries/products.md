@@ -182,7 +182,7 @@ Each attribute is described below:
 Attribute |  Data type | Description
 --- | --- | ---
 `filters` | [LayerFilter] | An array of layered navigation filters. These filters can be used to implement layered navigation on your app.
-`items` | [ProductInterface] | An array of products that match the specified search criteria.
+`items` | [ProductInterface] | An array of products that match the specified search criteria. [ProductInterface]({{page.baseurl}}/graphql/product/product-interface.html) describes the possible contents of this object.
 `page_info` | SearchResultPageInfo | An object that includes the `page_info` and `currentPage` values specified in the query
 `sort_fields` | SortFields | An object that includes the default sort field and all available sort fields
 `total_count` | Int | The number of products returned
