@@ -40,8 +40,8 @@ Developing code for {{site.data.var.ee}} requires working in Git branches. Not e
 
 Have the following prepared to complete your initial workspace and project setup:
 
- * {{site.data.var.ece}} account with an added user account
- * Magento authentication keys from Magento Marketplace. If the Project Owner or Technical Lead created the project according to these instructions, the [Magento authentication keys]({{ page.baseurl }}/install-gde/prereq/connect-auth.html) should already be installed and available in the auth.json file in the code repository.
+* {{site.data.var.ece}} account with an added user account
+* Magento authentication keys from Magento Marketplace. If the Project Owner or Technical Lead created the project according to these instructions, the [Magento authentication keys]({{ page.baseurl }}/install-gde/prereq/connect-auth.html) should already be installed and available in the auth.json file in the code repository.
 
 ## Get started
 

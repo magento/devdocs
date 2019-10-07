@@ -17,11 +17,11 @@ The following diagram shows a simplified interaction flow between Magento sales 
 
 Magento payment provider supports the following payment operations:
 
- * authorize: process [authorization](https://glossary.magento.com/authorization) transaction; funds are blocked on customer account, but not withdrawn
- * sale: process authorization transaction and capture automatically, funds are withdrawn
- * capture: withdraw previously authorized amount
- * refund: return previously withdrawn customer funds
- * void: cancel transfer of funds from customer account
+* authorize: process [authorization](https://glossary.magento.com/authorization) transaction; funds are blocked on customer account, but not withdrawn
+* sale: process authorization transaction and capture automatically, funds are withdrawn
+* capture: withdraw previously authorized amount
+* refund: return previously withdrawn customer funds
+* void: cancel transfer of funds from customer account
 
 ### What's in this chapter
 

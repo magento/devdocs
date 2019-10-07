@@ -129,8 +129,8 @@ A Jasmine test consists of main two parts:
 
 Both the `describe` and `it` functions contains two parameters:
 
- - a text string with description of what is going to be done
- - a function with block of code implementing described action
+- a text string with description of what is going to be done
+- a function with block of code implementing described action
 
 In `describe` you can use `beforeEach` and `afterEach` functions performing a preparation of what must be done before and after every `it` test followed.
 

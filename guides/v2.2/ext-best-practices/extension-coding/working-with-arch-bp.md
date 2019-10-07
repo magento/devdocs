@@ -26,10 +26,10 @@ In addition to understanding fundamental programming designs/concepts, you are e
 
   For example:
 
-  - Instead of creating custom validators from scratch, implement the [`\Magento\Framework\Validator\ValidatorInterface`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Validator/ValidatorInterface.php){:target="_blank"}.
-  - Instantiating a database connection can be expensive and unnecessary. Magento provides resource models for performing SQL commands. (See [Persistence Layer]({{ page.baseurl }}/architecture/archi_perspectives/persist_layer.html))
-  - Consider using Magento framework conventions instead of low-level or [PHP](https://glossary.magento.com/php) functionality.
-  - Use the  [`Magento\Framework\Data\Collection`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Data/Collection.php){:target="_blank"} class to retrieve a collection of filtered objects instead of directly querying the database.
+- Instead of creating custom validators from scratch, implement the [`\Magento\Framework\Validator\ValidatorInterface`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Validator/ValidatorInterface.php){:target="_blank"}.
+- Instantiating a database connection can be expensive and unnecessary. Magento provides resource models for performing SQL commands. (See [Persistence Layer]({{ page.baseurl }}/architecture/archi_perspectives/persist_layer.html))
+- Consider using Magento framework conventions instead of low-level or [PHP](https://glossary.magento.com/php) functionality.
+- Use the  [`Magento\Framework\Data\Collection`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Data/Collection.php){:target="_blank"} class to retrieve a collection of filtered objects instead of directly querying the database.
 
 ### Use dependency injection
   Direct class instantiation is not recommended because the class can be rewritten. If the class is created directly, any rewrites will not be applied and it breaks Magento's class rewrite capability. We encourage you to become familiar with how we use [dependency injection]({{ page.baseurl }}/extension-dev-guide/depend-inj.html) to get an instance of a class.
@@ -39,10 +39,10 @@ In addition to understanding fundamental programming designs/concepts, you are e
 
   Some important things to check in your extensions:
 
-  - Make sure your Business Logic, Configuration, and SQL are implemented in the correct places.
-  - Make sure that CSS, JavaScript, HTML, and [XML](https://glossary.magento.com/xml) code are all in the appropriate files (i.e. they should not be inline).
-  - Use appropriate logic in a Block, Helper, Template, Controller, or Model.
-  - Ensure correct [module](https://glossary.magento.com/module) design.
+- Make sure your Business Logic, Configuration, and SQL are implemented in the correct places.
+- Make sure that CSS, JavaScript, HTML, and [XML](https://glossary.magento.com/xml) code are all in the appropriate files (i.e. they should not be inline).
+- Use appropriate logic in a Block, Helper, Template, Controller, or Model.
+- Ensure correct [module](https://glossary.magento.com/module) design.
 
 ### Use the PHP_CodeSniffer tool
 

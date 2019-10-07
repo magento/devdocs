@@ -14,9 +14,9 @@ This document provides additional technical details for integrating Magento with
 
 The Magento-Signifyd [module](https://glossary.magento.com/module) allows you to:
 
- - create a [Signifyd case](https://www.signifyd.com/docs/api/#/reference/cases) for a placed order
- - automatically receive a [Signifyd guarantee](https://www.signifyd.com/docs/api/#/reference/guarantees) for a created case
- - automatically cancel a guarantee when the order is canceled
+- create a [Signifyd case](https://www.signifyd.com/docs/api/#/reference/cases) for a placed order
+- automatically receive a [Signifyd guarantee](https://www.signifyd.com/docs/api/#/reference/guarantees) for a created case
+- automatically cancel a guarantee when the order is canceled
 
 ## Processing supplementary payment information
 

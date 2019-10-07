@@ -10,9 +10,9 @@ The Magento_Signifyd module provides integration with the [Signifyd](https://www
 
 The module implementation allows you to:
 
- - create a [Signifyd case](https://www.signifyd.com/docs/api/#/reference/cases) for a placed order
- - automatically receive a [Signifyd guarantee](https://www.signifyd.com/docs/api/#/reference/guarantees) for a created case
- - automatically cancel a guarantee when the order is canceled
+- create a [Signifyd case](https://www.signifyd.com/docs/api/#/reference/cases) for a placed order
+- automatically receive a [Signifyd guarantee](https://www.signifyd.com/docs/api/#/reference/guarantees) for a created case
+- automatically cancel a guarantee when the order is canceled
 
 ## Extensibility
 

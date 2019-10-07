@@ -17,8 +17,8 @@ The following relative paths are used for modules and themes:
 
 For Magento out of the box [frontend](https://glossary.magento.com/frontend) themes, the absolute path usually is one of the following:
 
- - `app/design/frontend/<Vendor>/<theme>`
- - `vendor/magento/theme-frontend-<theme>`
+- `app/design/frontend/<Vendor>/<theme>`
+- `vendor/magento/theme-frontend-<theme>`
 
 **- `<module_dir>`**
 

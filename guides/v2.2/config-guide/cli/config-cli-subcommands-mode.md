@@ -59,7 +59,7 @@ Current application mode: {mode}. (Note: Environment variables may override this
 
 where:
 
-  -   **`{mode}`** can be either `default`, `developer`, or `production`
+-   **`{mode}`** can be either `default`, `developer`, or `production`
 
 ## Change modes {#config-mode-change}
 
@@ -71,9 +71,9 @@ bin/magento deploy:mode:set {mode} [-s|--skip-compilation]
 
 where:
 
-  -   **`{mode}`** is required; it can be either `developer` or `production`
+-   **`{mode}`** is required; it can be either `developer` or `production`
 
-  -   **`--skip-compilation`** is an optional parameter you can use to skip [code compilation]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-compiler.html) when you change to production mode.
+-   **`--skip-compilation`** is an optional parameter you can use to skip [code compilation]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-compiler.html) when you change to production mode.
 
 Examples follow.
 

@@ -191,9 +191,9 @@ class YourTestStep implements TestStepInterface
 
 A tests step must implement `Magento\Mtf\TestStep\TestStepInterface` and define:
 
- - constructor (optional)
- - public method `run()` (required)
- - public method `cleanup()` (optional)
+- constructor (optional)
+- public method `run()` (required)
+- public method `cleanup()` (optional)
 
 An example of `Magento\Customer\Test\TestStep\LoginCustomerOnFrontendStep`:
 

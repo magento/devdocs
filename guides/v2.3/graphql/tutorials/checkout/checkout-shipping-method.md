@@ -16,9 +16,9 @@ contributor_link: https://www.atwix.com/
 
 The `setShippingMethodsOnCart` mutation defines the shipping methods for your order. It requires these input parameters:
 
- * `cart_id`
- * `carrier_code`
- * `method_code`
+* `cart_id`
+* `carrier_code`
+* `method_code`
 
 `{ CART_ID }` is the unique shopping cart ID from [Step 2. Create empty cart]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-add-product-to-cart.html).
 

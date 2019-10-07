@@ -30,9 +30,9 @@ This topic discusses how to set required [PHP](https://glossary.magento.com/php)
 
  Our detailed recommendations are:
 
- * Compiling code or deploying static assets, `756M`
-   * Installing and updating Magento components from Magento Marketplace, `2G`
-   * Testing, `2G`
+* Compiling code or deploying static assets, `756M`
+  * Installing and updating Magento components from Magento Marketplace, `2G`
+  * Testing, `2G`
 
 * Disable [`asp_tags`](http://php.net/manual/en/ini.core.php#ini.asp-tags){:target="_blank"}
 
@@ -140,17 +140,14 @@ If you have more than one `opcache.ini`, modify all of them.
 
 {% collapsible To set opcache.ini options: %}
 
-12. Open your OpCache configuration file in a text editor:
-
+1. Open your OpCache configuration file in a text editor:
    * `opcache.ini` (CentOS)
    * `php.ini` (Ubuntu)
    * `/etc/php5/fpm/php.ini` (nginx web server (CentOS or Ubuntu))
-
 1. Locate `opcache.save_comments` and uncomment it if necessary.
 1. Make sure its value is set to `1`.
 1. Save your changes and exit the text editor.
 1. Restart your web server:
-
    * Apache, Ubuntu: `service apache2 restart`
    * Apache, CentOS: `service httpd restart`
    * nginx, Ubuntu and CentOS: `service nginx restart`

@@ -432,8 +432,8 @@ Set as follows:
 
 Where the options are as follows:
 
- - `conditions`: compiled in [media query](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries) through and operand. For example: `"max-width": "767px"`
- - `options` - object of options that are applied
+- `conditions`: compiled in [media query](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries) through and operand. For example: `"max-width": "767px"`
+- `options` - object of options that are applied
 
 ## Configure gallery options in `view.xml`
 

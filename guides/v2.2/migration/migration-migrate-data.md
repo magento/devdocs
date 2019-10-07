@@ -34,12 +34,12 @@ Within this step, the Data Migration Tool creates additional tables and triggers
 
 Each new table will have:
 
- - `m2_cl` prefix
- - `INSERT`, `UPDATE`, `DELETE` event triggers.
+- `m2_cl` prefix
+- `INSERT`, `UPDATE`, `DELETE` event triggers.
 
 For example, for the `sales_flat_order` the Data Migration Tool creates:
 
- - `m2_cl_sales_flat_order` table:
+- `m2_cl_sales_flat_order` table:
 
 ```sql
 CREATE TABLE `m2_cl_sales_flat_order` (
@@ -50,7 +50,7 @@ CREATE TABLE `m2_cl_sales_flat_order` (
 ) COMMENT='m2_cl_sales_flat_order';
 ```
 
- - `trg_sales_flat_order_after_insert`, `trg_sales_flat_order_after_update`, `trg_sales_flat_order_after_delete` triggers:
+- `trg_sales_flat_order_after_insert`, `trg_sales_flat_order_after_update`, `trg_sales_flat_order_after_delete` triggers:
 
 ```sql
 DELIMITER ;;

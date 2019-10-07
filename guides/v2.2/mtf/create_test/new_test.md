@@ -38,10 +38,10 @@ The test object is represented by a [fixture][].  The fixture defines properties
 
 There are two types of test data:
 
- - Data for the test, stored in a [data set][].
- - Preconditions:
-    - Sample data that is stored in a [fixture repository][]. In a data set, it is stored as a name of the fixture repository.
-    - A sample test entity that can be created by a [handler][].
+- Data for the test, stored in a [data set][].
+- Preconditions:
+   - Sample data that is stored in a [fixture repository][]. In a data set, it is stored as a name of the fixture repository.
+   - A sample test entity that can be created by a [handler][].
 
 #### Test flow {#test-flow}
 

@@ -31,10 +31,10 @@ Set all of the following as appropriate.
 5. Save your changes to `php.ini` and exit the text editor.
 6. Restart Apache:
 
- * CentOS: `service httpd restart`
- * Ubuntu: `service apache2 restart`
+* CentOS: `service httpd restart`
+* Ubuntu: `service apache2 restart`
 
- If you use nginx or Varnish, continue with the following sections.
+If you use nginx or Varnish, continue with the following sections.
 
 #### nginx only
 

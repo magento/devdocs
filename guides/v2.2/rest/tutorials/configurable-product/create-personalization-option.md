@@ -75,4 +75,4 @@ The `product_sku` is the `sku` of the configurable product. The `sku` specified 
 {:.ref-header}
 Related topics
 
-  * [Order Processing with REST APIs Tutorial]({{ page.baseurl }}/rest/tutorials/orders/order-intro.html)
+* [Order Processing with REST APIs Tutorial]({{ page.baseurl }}/rest/tutorials/orders/order-intro.html)

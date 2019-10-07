@@ -130,8 +130,8 @@ That is, the file system, database, other storage merges the configuration files
 {:.ref-header}
 Related topics
 
- *  [Create or extend configuration types]({{ page.baseurl }}/config-guide/config/config-create.html)
- *  [Magento's deployment configuration]({{ page.baseurl }}/config-guide/config/config-php.html)
+*  [Create or extend configuration types]({{ page.baseurl }}/config-guide/config/config-create.html)
+*  [Magento's deployment configuration]({{ page.baseurl }}/config-guide/config/config-php.html)
 
 <!-- Link definitions -->
 [RabbitMQ]: http://www.rabbitmq.com

@@ -106,10 +106,10 @@ For a detailed description of XML structure, see next section.
 
 Let's look closer at fixture structure.
 
-  - `<config>` is a root node that defines path to `fixture.xsd` schema.
-  - `<fixture>` defines fixture configuration.
-  - `<data_config>` defines additional fixture configuration for the fixture.
-  - `<field>` defines field in fixture.
+- `<config>` is a root node that defines path to `fixture.xsd` schema.
+- `<fixture>` defines fixture configuration.
+- `<data_config>` defines additional fixture configuration for the fixture.
+- `<field>` defines field in fixture.
 
 Following table describes `<fixture>` attributes.
 

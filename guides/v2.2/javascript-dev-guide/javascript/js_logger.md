@@ -178,12 +178,12 @@ Creates a text representation of the provided entry. If default settings are use
 
 The following log levels are available (sorted by priority in the descending order):
 
- - `NONE` (used to block all log entries from being passed to the output)
- - `ERROR`
- - `WARN`
- - `INFO`
- - `DEBUG`
- - `ALL` (allows to display all log entries, unless any other display criteria is present)
+- `NONE` (used to block all log entries from being passed to the output)
+- `ERROR`
+- `WARN`
+- `INFO`
+- `DEBUG`
+- `ALL` (allows to display all log entries, unless any other display criteria is present)
 
 **Path:** `Magento_Ui_module_dir>/view/base/web/js/lib/logger/levels-pool.js` ([See on GitHub]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/lib/logger/levels-pool.js))
 
@@ -243,8 +243,8 @@ An instance of the `Logger` class that is configured to display messages in the 
 
 ### Properties
 
- - `levels: {[name: string]: number}`: Reference to the available log levels.
- - `messages: messagePool`: Reference to `messagePool` that allows working with a list of predefined messages.
+- `levels: {[name: string]: number}`: Reference to the available log levels.
+- `messages: messagePool`: Reference to `messagePool` that allows working with a list of predefined messages.
 
 ### Usages in Magento
 

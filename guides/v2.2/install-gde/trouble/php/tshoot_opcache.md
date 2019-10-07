@@ -61,13 +61,10 @@ If you have more than one `opcache.ini`, modify all of them.
 3. Make sure its value is set to `1`.
 4. Save your changes and exit the text editor.
 5. Restart your web server:
-
  * Apache, Ubuntu: `service apache2 restart`
  * Apache, CentOS: `service httpd restart`
  * nginx, Ubuntu and CentOS: `service nginx restart`
-
 6. Regenerate DI configuration and all missing classes that can be auto-generated:
 
     ```bash
     bin/magento setup:di:compile`
-    ```

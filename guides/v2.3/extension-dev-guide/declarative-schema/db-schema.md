@@ -76,9 +76,9 @@ Attribute | Description
 
  A `table` node can contain three types of subnodes:
 
- * `column`
- * `constraint`
- * `index`
+* `column`
+* `constraint`
+* `index`
 
 #### `column` subnode
 

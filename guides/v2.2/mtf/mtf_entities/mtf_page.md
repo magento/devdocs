@@ -348,9 +348,9 @@ To use the `editForm` block from the Magento_NewModule, we must follow:
 
 **Step 2.** Assign page attributes
 
- * with the same name as the page you want to merge
- * with the same `mca`
- * without `module` and `area` attributes
+* with the same name as the page you want to merge
+* with the same `mca`
+* without `module` and `area` attributes
 
 ```xml
 

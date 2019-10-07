@@ -71,22 +71,22 @@ Relative paths are also used in for [mapping and setting `paths` in requirejs-co
 
 To build a dependency on the third-party plugin, specify a [shim] in the following configuration files:
 
- - `requirejs-config.js`
-    ```javascript
-    var config = {
-        "shim": {
-           "3-rd-party-plugin": ["jquery"]
-        }
-    };
-    ```
+- `requirejs-config.js`
+   ```javascript
+   var config = {
+       "shim": {
+          "3-rd-party-plugin": ["jquery"]
+       }
+   };
+   ```
 
- - `<third-party-plugin>.js`
-    ```javascript
-    !(function($){
-        // plugin code
-        // where $ == jQuery
-    })(jQuery);
-    ```
+- `<third-party-plugin>.js`
+   ```javascript
+   !(function($){
+       // plugin code
+       // where $ == jQuery
+   })(jQuery);
+   ```
 
 ## RequireJS library
 
@@ -94,42 +94,42 @@ To build a dependency on the third-party plugin, specify a [shim] in the followi
 
 To be available for the entire Magento instance, RequireJS library is included in the following layout files:
 
- * For the `adminhtml` [area]({{ page.baseurl }}/architecture/archi_perspectives/components/modules/mod_and_areas.html):
+* For the `adminhtml` [area]({{ page.baseurl }}/architecture/archi_perspectives/components/modules/mod_and_areas.html):
 
-   [app/code/Magento/Backend/view/adminhtml/layout/default.xml]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Backend/view/adminhtml/layout/default.xml)
+  [app/code/Magento/Backend/view/adminhtml/layout/default.xml]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Backend/view/adminhtml/layout/default.xml)
 
-   ```xml
-    <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="admin-1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
-        <head>
-            <title>Magento Admin</title>
-            <meta name="viewport" content="width=1024"/>
-            <meta name="format-detection" content="telephone=no"/>
-            <!-- Here's the library included -->
-            <link src="requirejs/require.js"/>
-            <css src="extjs/resources/css/ext-all.css"/>
-            <css src="extjs/resources/css/ytheme-magento.css"/>
-        </head>
-        <body>
-            <attribute name="id" value="html-body"/>
-            <!-- Here's the basic configuration file require_js.phtml specified -->
-            <block name="require.js" class="Magento\Backend\Block\Page\RequireJs" template="Magento_Backend::page/js/require_js.phtml"/>
-            <referenceContainer name="global.notices">
-                <block class="Magento\Backend\Block\Page\Notices" name="global_notices" as="global_notices" template="Magento_Backend::page/notices.phtml"/>
-            </referenceContainer>
-            <referenceContainer name="header">
-                ...
-            </referenceContainer>
-            <referenceContainer name="after.body.start">
-                <!-- Here's the main configuration file requirejs-config.js specified -->
-                <block class="Magento\RequireJs\Block\Html\Head\Config" name="requirejs-config"/>
-                <block class="Magento\Translation\Block\Html\Head\Config" name="translate-config"/>
-                <block class="Magento\Translation\Block\Js" name="translate" template="Magento_Translation::translate.phtml"/>
-                <block class="Magento\Framework\View\Element\Js\Components" name="head.components" as="components" template="Magento_Backend::page/js/components.phtml"/>
-                <block class="Magento\Framework\View\Element\Html\Calendar" name="head.calendar" as="calendar" template="Magento_Backend::page/js/calendar.phtml"/>
-            </referenceContainer>
-        </body>
-    </page>
-   ```
+  ```xml
+   <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="admin-1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+       <head>
+           <title>Magento Admin</title>
+           <meta name="viewport" content="width=1024"/>
+           <meta name="format-detection" content="telephone=no"/>
+           <!-- Here's the library included -->
+           <link src="requirejs/require.js"/>
+           <css src="extjs/resources/css/ext-all.css"/>
+           <css src="extjs/resources/css/ytheme-magento.css"/>
+       </head>
+       <body>
+           <attribute name="id" value="html-body"/>
+           <!-- Here's the basic configuration file require_js.phtml specified -->
+           <block name="require.js" class="Magento\Backend\Block\Page\RequireJs" template="Magento_Backend::page/js/require_js.phtml"/>
+           <referenceContainer name="global.notices">
+               <block class="Magento\Backend\Block\Page\Notices" name="global_notices" as="global_notices" template="Magento_Backend::page/notices.phtml"/>
+           </referenceContainer>
+           <referenceContainer name="header">
+               ...
+           </referenceContainer>
+           <referenceContainer name="after.body.start">
+               <!-- Here's the main configuration file requirejs-config.js specified -->
+               <block class="Magento\RequireJs\Block\Html\Head\Config" name="requirejs-config"/>
+               <block class="Magento\Translation\Block\Html\Head\Config" name="translate-config"/>
+               <block class="Magento\Translation\Block\Js" name="translate" template="Magento_Translation::translate.phtml"/>
+               <block class="Magento\Framework\View\Element\Js\Components" name="head.components" as="components" template="Magento_Backend::page/js/components.phtml"/>
+               <block class="Magento\Framework\View\Element\Html\Calendar" name="head.calendar" as="calendar" template="Magento_Backend::page/js/calendar.phtml"/>
+           </referenceContainer>
+       </body>
+   </page>
+  ```
 
 * For the `frontend` area, the equivalent configuration is located in [`app/code/Magento/Theme/view/frontend/layout/default.xml`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Theme/view/frontend/layout/default.xml).
 

@@ -320,21 +320,21 @@ The table shows the plugins observing the same method with the following propert
 
 The execution flows in the following order:
 
-  * `PluginA::beforeDispatch()`
-  * `PluginB::beforeDispatch()`
-  * `PluginB::aroundDispatch()` (Magento calls the first half until `callable`)
+* `PluginA::beforeDispatch()`
+* `PluginB::beforeDispatch()`
+* `PluginB::aroundDispatch()` (Magento calls the first half until `callable`)
 
-    * `PluginC::beforeDispatch()`
-    * `PluginC::aroundDispatch()` (Magento calls the first half until `callable`)
+  * `PluginC::beforeDispatch()`
+  * `PluginC::aroundDispatch()` (Magento calls the first half until `callable`)
 
-      * `Action::dispatch()`
+    * `Action::dispatch()`
 
-    * `PluginC::aroundDispatch()` (Magento calls the second half after `callable`)
-    * `PluginC::afterDispatch()`
+  * `PluginC::aroundDispatch()` (Magento calls the second half after `callable`)
+  * `PluginC::afterDispatch()`
 
-  * `PluginB::aroundDispatch()` (Magento calls the second half after `callable`)
-  * `PluginB::afterDispatch()`
-  * `PluginA::afterDispatch()`
+* `PluginB::aroundDispatch()` (Magento calls the second half after `callable`)
+* `PluginB::afterDispatch()`
+* `PluginA::afterDispatch()`
 
 ### Configuration inheritance
 

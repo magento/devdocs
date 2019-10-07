@@ -51,13 +51,13 @@ The example of the default test suite:
 
 This set of rules selects functional tests that accepts the following criteria:
 
- - WITH the tag `const test_type = 'acceptance_test'`
- - EXCEPT test cases with the tag `const stable = 'no'`
+- WITH the tag `const test_type = 'acceptance_test'`
+- EXCEPT test cases with the tag `const stable = 'no'`
 
  AND runs variations
 
- - WITH the tag `test_type:acceptance_test`
- - EXCEPT variations with the tag `stable:no`".
+- WITH the tag `test_type:acceptance_test`
+- EXCEPT variations with the tag `stable:no`".
 
 Learn more details in next topics.
 
@@ -96,10 +96,10 @@ Each test suite can be defined by the rules that **allow** or **deny** running o
 
 The only attribute of a rule node is the `scope`, which enables you to use the following options:
 
- - [`scope = "testsuite"`][]. Enables you to filter the test cases by a namespace, a module, a class.
- - [`scope = "testcase"`][]. Enables you to select the test cases with a specified tag.
- - [`scope = "variation"`][]. Enables you to use in a test run only variations with a specified tag.
- - [`scope = "constraint"`][]. Enables you to run only assertions with a specified tag.
+- [`scope = "testsuite"`][]. Enables you to filter the test cases by a namespace, a module, a class.
+- [`scope = "testcase"`][]. Enables you to select the test cases with a specified tag.
+- [`scope = "variation"`][]. Enables you to use in a test run only variations with a specified tag.
+- [`scope = "constraint"`][]. Enables you to run only assertions with a specified tag.
 
 ### `scope = "testsuite"` {#scope-testsuite}
 

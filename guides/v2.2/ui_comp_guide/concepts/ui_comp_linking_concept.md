@@ -21,8 +21,8 @@ Linking properties are set in [UI components configuration files]({{ page.baseur
 The `exports` property is used to copy a local value to some external entity. If the external entity property is anything but a function, it will be set to the value of the local property. If the external property is a function, it will be called with the local properties value as an argument.
 If the local value is a ko of io-es5 observable, the external entity will also be updated whenever the local property changes. `exports`'s value is an object, composed of the following:
 
-  - `key`: name of the internal property or method that is tracked for changes.
-  - `value`: name of the property or method that receives the value. Can use [string templates](#string_templ).
+- `key`: name of the internal property or method that is tracked for changes.
+- `value`: name of the property or method that receives the value. Can use [string templates](#string_templ).
 
 Example of setting `exports` in a component's `.js` file:
 
@@ -71,8 +71,8 @@ For an example of `exports` usage in Magento code see [`product_form.xml`, line 
 ## `imports` property
 The `imports` property is used for tracking changes of an external entity property. `imports`'s value is an object, composed of the following:
 
-  - `key`: name of the internal property or method that receives the value.
-  - `value`: name of the property or method that is tracked for changes. Can use [string templates](#string_templ).
+- `key`: name of the internal property or method that receives the value.
+- `value`: name of the property or method that is tracked for changes. Can use [string templates](#string_templ).
 
 Example of using `imports` in a component's `.js` file:
 
@@ -106,8 +106,8 @@ For an example of `imports` usage in Magento code see [`product_form.xml`, line 
 
 The `links` property is used for cross tracking properties changes: both linked properties are tracked and changing of one results in changing the other. `links`'s value is an object, composed of the following:
 
-  - `key`: name of the internal property or method that sends and receives the notifications.
-  - `value`: name of the property or method that sends and receives the value. Can use [string templates](#string_templ).
+- `key`: name of the internal property or method that sends and receives the notifications.
+- `value`: name of the property or method that sends and receives the value. Can use [string templates](#string_templ).
 
 Example of using `links` in a component's `.js` file:
 
@@ -140,8 +140,8 @@ For an example of `links` usage in Magento code see [`text.js`, line 19]({{ site
 ## `listens` property
 The `listens` property is used to track the changes of a component's property. `listens`'s value is an object, composed of the following:
 
-  - `key`: name of the observable property or method which is tracked for changes. Can use [string templates](#string_templ).
-  - `value`: name of the internal method or property which listens to the changes.
+- `key`: name of the observable property or method which is tracked for changes. Can use [string templates](#string_templ).
+- `value`: name of the internal method or property which listens to the changes.
 
 Example of using `listens` in a component's `.js` file :
 

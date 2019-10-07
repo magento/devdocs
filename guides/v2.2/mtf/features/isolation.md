@@ -7,12 +7,12 @@ Isolation management feature enables you to isolate a test suite, a test case, o
 
 In general, to manage isolation:
 
- - [Create an isolation script][step 1]
+- [Create an isolation script][step 1]
 
- - [Set isolation script][step 2]
+- [Set isolation script][step 2]
 
-    - For all functional tests (globally), set [isolation configuration]. For example, set isolation script globally to be run [after each test case][step 2a], [before each test][step 2b], [before and after a test suite][step 2c].
-    - For certain test or test case, define an isolation strategy parameter in PHP Doc annotation of a test case or a test. For example, set isolation script locally to be run [after a test case][step 2d], [after each test of a test case][step 2e], [before test of a test case][step 2f], [before a test case and after a test][step 2g]; or excluded [for a test case][step 2h], [for a test][step 2i].
+   - For all functional tests (globally), set [isolation configuration]. For example, set isolation script globally to be run [after each test case][step 2a], [before each test][step 2b], [before and after a test suite][step 2c].
+   - For certain test or test case, define an isolation strategy parameter in PHP Doc annotation of a test case or a test. For example, set isolation script locally to be run [after a test case][step 2d], [after each test of a test case][step 2e], [before test of a test case][step 2f], [before a test case and after a test][step 2g]; or excluded [for a test case][step 2h], [for a test][step 2i].
 
 Isolation strategy parameter defines when the isolation script must be run relatively to a [test suite], a [test case], or a [test]: **before**, **after**, **both** (that is run both before and after), **none** (never run).
 
