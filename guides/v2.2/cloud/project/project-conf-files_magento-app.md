@@ -403,6 +403,7 @@ For details about a specific PHP extension, see the [PHP Extension List](https:/
    -  `imagick`
    -  `imap`
    -  `intl`
+   -  `ioncube`
    -  `ldap`
    -  `mailparse`
    -  `mcrypt`

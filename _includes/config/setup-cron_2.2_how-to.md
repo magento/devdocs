@@ -6,19 +6,19 @@ The Magento crontab is inside `#~ MAGENTO START` and `#~ MAGENTO END` comments i
 
 To create the Magento crontab:
 
-1.	Log in as, or switch to, the [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html).
-1.	Change to your Magento installation directory.
-1.	Enter the following command:
+1. Log in as, or switch to, the [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html).
+1. Change to your Magento installation directory.
+1. Enter the following command:
 
-    ```bash
-    bin/magento cron:install [--force]
-    ```
+   ```bash
+   bin/magento cron:install [--force]
+   ```
 
 Use `--force` to rewrite an existing Magento crontab.
 
 {: .bs-callout-info }
-*	`magento cron:install` does not rewrite an existing crontab inside `#~ MAGENTO START` and `#~ MAGENTO END` comments in your crontab.
-*	`magento cron:install --force` has no effect on any cron jobs outside the Magento comments.
+*  `magento cron:install` does not rewrite an existing crontab inside `#~ MAGENTO START` and `#~ MAGENTO END` comments in your crontab.
+*  `magento cron:install --force` has no effect on any cron jobs outside the Magento comments.
 
 To view the crontab, enter the following command as the Magento file system owner:
 

@@ -24,30 +24,30 @@ We assume you're installing the Magento 2 software in a _development environment
 
 We strongly recommend you update and upgrade your operating system software. These upgrades can provide security and software fixes that might prevent future problems.
 
-{:.bs-callout .bs-callout-info}
+{: .bs-callout-info }
 Don't know what any of this means? Check out our [installation overview page]({{ page.baseurl }}/install-gde/bk-install-guide.html).
 
 Enter the following commands as a user with `root` privileges:
 
 * Ubuntu
 
-    ```bash
-    apt-get update
-    ```
+   ```bash
+   apt-get update
+   ```
 
-    ```bash
-    apt-get upgrade
-    ```
+   ```bash
+   apt-get upgrade
+   ```
 
 * CentOS
 
-    ```bash
-    yum -y update
-    ```
+   ```bash
+   yum -y update
+   ```
 
-    ```bash
-    yum -y upgrade
-    ```
+   ```bash
+   yum -y upgrade
+   ```
 
 ## Prerequisite check {#instgde-prereq-check}
 
@@ -122,14 +122,16 @@ Enter `exit` at the `mysql>` prompt to exit.
 
 To install or upgrade MySQL, see [MySQL]({{ page.baseurl }}/install-gde/prereq/mysql.html).
 
-## Next step
+{:.ref-header}
+Next step
 
 [Choose how to install the Magento software]({{ page.baseurl }}/install-gde/bk-install-guide.html)
 
-## Related topics
+{:.ref-header}
+Related topics
 
-* [MySQL]({{ page.baseurl }}/install-gde/prereq/mysql.html)
-* [Apache]({{ page.baseurl }}/install-gde/prereq/apache.html)
-* [PHP]({{ page.baseurl }}/install-gde/prereq/php-settings.html)
-* [Installing optional software]({{ page.baseurl }}/install-gde/prereq/optional.html)
-* [How to get the Magento software]({{ page.baseurl }}/install-gde/bk-install-guide.html)
+*  [MySQL]({{ page.baseurl }}/install-gde/prereq/mysql.html)
+*  [Apache]({{ page.baseurl }}/install-gde/prereq/apache.html)
+*  [PHP]({{ page.baseurl }}/install-gde/prereq/php-settings.html)
+*  [Installing optional software]({{ page.baseurl }}/install-gde/prereq/optional.html)
+*  [How to get the Magento software]({{ page.baseurl }}/install-gde/bk-install-guide.html)
