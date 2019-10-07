@@ -57,11 +57,11 @@ Any backward-incompatible changes must also be recorded in the accompanying docu
 
 ## Tests
 
-### Understanding Black, White, and Grey tests
+### Understanding Black, White, and Gray tests
 
 - A blackbox test doesn't have any knowledge of how the subject of the test is built.
 - A whitebox has knowledge of how the subject of the test is built. The test logic is usually coupled to the implementation and will typically be sensitive to changes. 
-- A greybox is similar to blackbox testing where the test isn't directly coupled to the subject's implementation but the test cases may be designed in a way to assert sensitive portions of the implementation will work correctly.
+- A graybox is similar to blackbox testing where the test isn't directly coupled to the subject's implementation but the test cases may be designed in a way to assert sensitive portions of the implementation will work correctly.
 
 For example:
 
@@ -69,7 +69,7 @@ Assuming there is a method with the signature `function removeLetterFromString(s
 
 - A blackbox test would test the obvious cases both normal cases such as `removeLetterFromString('a', 'fooabar') === 'foobr'` and edge cases such as when `$letter` or `$string` are empty or `$letter` contains multiple or multibyte characters. It would probably test several variations of string lengths. Notice there is no knowledge of how this function is written.
 - A whitebox test would look into the implementation of the method and see that it calls a microservice API and make sure that each condition of the code has test coverage. For example, this test may force the microservice client to return an error and have a test for the expected handling of that scenario. This wouldn't be a reusable test and it's directly coupled to the implementation. 
-- A greybox test would look at the implementation of the method and see that it calls a microservice API and injects the `$string` into the URL so it may add some extra test coverage for strings that contain unsafe URL characters such as `&?=%/`. This isn't coupled to the implementation as the implementation could be changed and the test should still pass.   
+- A graybox test would look at the implementation of the method and see that it calls a microservice API and injects the `$string` into the URL so it may add some extra test coverage for strings that contain unsafe URL characters such as `&?=%/`. This isn't coupled to the implementation as the implementation could be changed and the test should still pass.   
 
 ### Automated Tests
 
@@ -103,9 +103,9 @@ For the purpose of Magento testing, there are essentially two broad categories o
 
 Integration test policy:
 
-* Methods and classes must have blackbox or greybox test coverage making sure to include all variations for normal use as well as corner-cases. 
+* Methods and classes must have blackbox or graybox test coverage making sure to include all variations for normal use as well as corner-cases. 
 * SPI's must have test coverage. Often times Magento has extension points that may only be utilized by extension developers. Use TestModule's to implement those SPI extension points and verify they are used correctly. 
-* As mentioned above, classes marked with `@api` must contain coverage. Integration tests must be used cover these classes unless a unit test is more appropriate.
+* As mentioned above, classes marked with `@api` must contain coverage. Integration tests must be used cover these classes unless a unit test is more appropriate. This includes JS modules and components. 
 * Consumers of default SPI's implementations should have at least basic coverage that ensures the default implementations of the SPI are correctly configured and loaded.  
   
   For example, `Magento\Framework\SomeClassFilter` may contain a `FilterPool` that comes with default `FilterInterface`'s from `Magento\Framework`. Each of these implementations would have their own coverage pursuant to this document. However, there should also be some basic assertions within the test coverage for `Magento\Framework\SomeClassFilter` that ensure each of the default filters are loaded correctly.     
