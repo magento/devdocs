@@ -111,8 +111,8 @@ We copy the `<field>` configuration, remove the `<select>` node and its configur
                 </settings>
                 <formElements>
                     <component name="my_select"
-	                    	   component="path/to/the/custom/JS_component"
-                        	   template="path/to/the/custom/html_template">
+                               component="path/to/the/custom/JS_component"
+                               template="path/to/the/custom/html_template">
                         <arguments name="data" xsi:type="array">
                             <item name="options" xsi:type="">Magento\Store\Model\System\Store</item>
                             <item name="config" xsi:type="array">
@@ -136,4 +136,3 @@ We copy the `<field>` configuration, remove the `<select>` node and its configur
 [use the "arbitrary" structure]: {{ page.baseurl }}/ui_comp_guide/best-practices/semantic_config.html#info_structure_except
 [basic UI component]: {{ page.baseurl }}/ui_comp_guide/bk-ui_comps.html#general-structure
 [About XML configuration of UI components]: {{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_xmldeclaration_concept.html#about-the-layout-configuration-file-and-ui-component-declaration
-

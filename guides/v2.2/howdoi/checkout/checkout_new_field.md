@@ -199,6 +199,7 @@ class MyBlock extends Template {
 }
 ```
 
-### Related topics
+{:.ref-header}
+Related topics
 
 - [EAV and extension attributes]({{ page.baseurl }}/extension-dev-guide/attributes.html)

@@ -63,7 +63,8 @@ To return the complete JSON schema, specify the `?services=all` parameter in the
 
 The base URL for returning the asynchronous schema is `http://<magento_host>/rest/<store_code>/async/schema`.
 
-## Related topics
+{:.ref-header}
+Related topics
 
 [Token-based authentication]({{ page.baseurl }}/get-started/authentication/gs-authentication-token.html)
 

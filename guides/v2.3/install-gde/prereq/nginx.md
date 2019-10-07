@@ -18,10 +18,10 @@ Installation instructions vary based on which operating system you're using. See
 
 If you're new to all this and need some help getting started, we suggest the following:
 
-*	[Is the Magento software installed already?]({{page.baseurl }}/install-gde/basics/basics_magento-installed.html)
-*	[What is the software that the Magento server needs to run?]({{page.baseurl }}/install-gde/basics/basics_software.html)
-*	[What operating system is my server running?]({{page.baseurl }}/install-gde/basics/basics_os-version.html)
-*	[How do I log in to my Magento server using a terminal, command prompt, or SSH?]({{page.baseurl }}/install-gde/basics/basics_login.html)
+* [Is the Magento software installed already?]({{page.baseurl }}/install-gde/basics/basics_magento-installed.html)
+* [What is the software that the Magento server needs to run?]({{page.baseurl }}/install-gde/basics/basics_software.html)
+* [What operating system is my server running?]({{page.baseurl }}/install-gde/basics/basics_os-version.html)
+* [How do I log in to my Magento server using a terminal, command prompt, or SSH?]({{page.baseurl }}/install-gde/basics/basics_login.html)
 
 ## Ubuntu 16
 
@@ -87,26 +87,26 @@ Refer to [MySQL]({{page.baseurl }}/install-gde/prereq/mysql.html) for more infor
 
 There are several ways to download the Magento software, including:
 
-*	[Get the Composer metapackage]({{ page.baseurl }}/install-gde/composer.html)
+* [Get the Composer metapackage]({{ page.baseurl }}/install-gde/composer.html)
 
-*	[Download an archive]({{ page.baseurl }}/install-gde/prereq/zip_install.html)
+* [Download an archive]({{ page.baseurl }}/install-gde/prereq/zip_install.html)
 
-*	[Clone the git repository]({{ page.baseurl }}/install-gde/prereq/dev_install.html)
+* [Clone the git repository]({{ page.baseurl }}/install-gde/prereq/dev_install.html)
 
 For this example, we'll install using Composer and the command line.
 
 {:.bs-callout .bs-callout-info}
 You cannot use the Web Setup Wizard when installing Magento on nginx. You must use the command line.
 
-1.  As the [Magento file system owner]({{page.baseurl}}/install-gde/prereq/file-sys-perms-over.html), log in to your Magento server.
+1. As the [Magento file system owner]({{page.baseurl}}/install-gde/prereq/file-sys-perms-over.html), log in to your Magento server.
 
-1.  Change to the web server docroot directory or a directory that you have configured as a virtual host docroot. For this example, we're using the Ubuntu default `/var/www/html`.
+1. Change to the web server docroot directory or a directory that you have configured as a virtual host docroot. For this example, we're using the Ubuntu default `/var/www/html`.
 
     ```bash
     cd /var/www/html
     ```
 
-1.  Install Composer globally. You'll need Composer to update dependencies before installing Magento:
+1. Install Composer globally. You'll need Composer to update dependencies before installing Magento:
 
     ```bash
     curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/bin --filename=composer
@@ -264,7 +264,7 @@ Magento requires several [PHP extensions](php-centos-ubuntu.html) to function pr
 
 2. Open the `/etc/php.ini` file in an editor.
 
-3. 	Uncomment the `cgi.fix_pathinfo` line and change the value to `0`.
+3.  Uncomment the `cgi.fix_pathinfo` line and change the value to `0`.
 
 4. Edit the file to match the following lines:
 
@@ -354,11 +354,11 @@ Refer to [MySQL]({{page.baseurl }}/install-gde/prereq/mysql.html) for more infor
 
 There are several ways to download the Magento software, including:
 
-*	[Get the Composer metapackage]({{ page.baseurl }}/install-gde/composer.html)
+* [Get the Composer metapackage]({{ page.baseurl }}/install-gde/composer.html)
 
-*	[Download an archive]({{ page.baseurl }}/install-gde/prereq/zip_install.html)
+* [Download an archive]({{ page.baseurl }}/install-gde/prereq/zip_install.html)
 
-*	[Clone the git repository]({{ page.baseurl }}/install-gde/prereq/dev_install.html)
+* [Clone the git repository]({{ page.baseurl }}/install-gde/prereq/dev_install.html)
 
 For this example, we'll install using Composer and the command line.
 
@@ -555,10 +555,11 @@ To configure SELinux and firewalld:
 
 Open a web browser and navigate to your site's base URL to [verify the installation.]({{page.baseurl }}/install-gde/install/verify.html)
 
-#### Related topics:
+{:.ref-header}
+Related topics
 
-*	[PHP](php-centos-ubuntu.html)
-*	[MySQL]({{page.baseurl }}/install-gde/prereq/mysql.html)
-* 	[Configuring security options]({{page.baseurl }}/install-gde/prereq/security.html)
-*	[Installing optional software]({{page.baseurl }}/install-gde/prereq/optional.html)
-*	[Determine your installation or upgrade path]({{ page.baseurl }}/install-gde/bk-install-guide.html)
+* [PHP](php-centos-ubuntu.html)
+* [MySQL]({{page.baseurl }}/install-gde/prereq/mysql.html)
+*  [Configuring security options]({{page.baseurl }}/install-gde/prereq/security.html)
+* [Installing optional software]({{page.baseurl }}/install-gde/prereq/optional.html)
+* [Determine your installation or upgrade path]({{ page.baseurl }}/install-gde/bk-install-guide.html)

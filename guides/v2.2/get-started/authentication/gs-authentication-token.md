@@ -60,7 +60,7 @@ Endpoint |  A combination of the _server_ that fulfills the request, the web ser
 Content type | The content type of the request body. Set this value to either `"Content-Type:application/json"` or `"Content-Type:application/xml"`.
 Credentials | The username and password for a Magento account.<br/><br/>To specify these credentials in a JSON request body, include code similar to the following in the call: <br/><br/>`{"username":"<USER-NAME>;", "password":"<PASSWORD>"}`<br/><br/>To specify these credentials in XML, include code similar to the following in the call:<br/><br/>`<login><username>customer1</username><password>customer1pw</password></login>`
 
-#### Examples {#token-example}
+### Examples {#token-example}
 
 The following image shows a token request for the [admin](https://glossary.magento.com/admin) account using a REST client:
 
@@ -111,7 +111,9 @@ Customers can access only resources with `self` permissions.
 For example, to make a web API call with a customer token:
 `curl -X GET "http://magento.ll/index.php/rest/V1/customers/me" -H "Authorization: Bearer asdf3hjklp5iuytre"`
 
-## Related topics
+{:.ref-header}
+Related topics
+
 [Construct a request]({{ page.baseurl }}/get-started/gs-web-api-request.html)
 
 [Configure services as web APIs]({{ page.baseurl }}/extension-dev-guide/service-contracts/service-to-web-service.html)

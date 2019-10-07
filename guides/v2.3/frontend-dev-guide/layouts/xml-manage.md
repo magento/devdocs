@@ -586,7 +586,8 @@ You can remove navigation links from the 'My Account' dashboard on the storefron
 <referenceBlock name="customer-account-navigation-return-history-link" remove="true"/>
 ```
 
-### Related topics
+{:.ref-header}
+Related topics
 
 - [Layout instructions]
 - [Extend a layout]
