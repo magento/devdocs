@@ -51,19 +51,19 @@ The `POST /V1/inventory/low-quantity-notification` endpoint accepts an array of 
 {
   "sourceItemConfigurations": [
     {
-    	"source_code": "baltimore_wh",
-    	"notify_stock_qty": 10,
-    	"sku": "sp1"
+      "source_code": "baltimore_wh",
+      "notify_stock_qty": 10,
+      "sku": "sp1"
     },
     {
-    	"source_code": "austin_wh",
-    	"notify_stock_qty": 8,
-    	"sku": "sp1"
+      "source_code": "austin_wh",
+      "notify_stock_qty": 8,
+      "sku": "sp1"
     },
     {
-    	"source_code": "reno_wh",
-    	"notify_stock_qty": 5,
-    	"sku": "sp1"
+      "source_code": "reno_wh",
+      "notify_stock_qty": 5,
+      "sku": "sp1"
     }
   ]
 }

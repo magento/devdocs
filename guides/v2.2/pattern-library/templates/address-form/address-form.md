@@ -17,43 +17,43 @@ The only variation of this pattern at this time is the North American Address En
 ### Fields That Make Up Address Entry (in order)
 
 <table>
-	<thead>
-		<th>Label</th>
-		<th>Input Type</th>
-		<th>Required?</th>
-	</thead>
-	<tbody>
-		<tr>
-			<td>Address Line 1</td>
-			<td>Text Field</td>
-			<td>Yes</td>
-		</tr>
-		<tr>
-			<td>Address Line 2</td>
-			<td>Text Field</td>
-			<td>No</td>
-		</tr>
-		<tr>
-			<td>City</td>
-			<td>Text Field</td>
-			<td>Yes</td>
-		</tr>
-		<tr>
-			<td>State/Province</td>
-			<td>Dropdown (Default can be localized)</td>
-			<td>Yes</td>
-		</tr>
-		<tr>
-			<td>ZIP/Postal Code</td>
-			<td>Text Field</td>
-			<td>Yes</td>
-		</tr>
-		<tr>
-			<td>Country</td>
-			<td>Dropdown (Default can be localized)</td>
-			<td>Yes</td>
-		</tr>
-	</tbody>
+  <thead>
+    <th>Label</th>
+    <th>Input Type</th>
+    <th>Required?</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Address Line 1</td>
+      <td>Text Field</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td>Address Line 2</td>
+      <td>Text Field</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td>City</td>
+      <td>Text Field</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td>State/Province</td>
+      <td>Dropdown (Default can be localized)</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td>ZIP/Postal Code</td>
+      <td>Text Field</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td>Country</td>
+      <td>Dropdown (Default can be localized)</td>
+      <td>Yes</td>
+    </tr>
+  </tbody>
 </table>
 
 ![](img/AddressForm_example01.jpg)

@@ -891,11 +891,12 @@ We've fixed hundreds of issues in the Magento 2.3.1 core code.
 
 <!--- MAGETWO-94671-->* The memory required to export the media gallery has been significantly reduced. [GitHub-17320](https://github.com/magento/magento2/issues/17320)
 
-<!--- MAGETWO-95825-->* We've resolved the following issues with imported images:
+<!--- MAGETWO-95825-->
+* We've resolved the following issues with imported images:
 
-	* images of all sizes reverted to the default placeholder size after import.
+   * images of all sizes reverted to the default placeholder size after import.
 
-	* images that were removed through the Admin before import returned after import. Magento now displays an informative error message if images are not imported as expected.
+   * images that were removed through the Admin before import returned after import. Magento now displays an informative error message if images are not imported as expected.
 
 <!--- MAGETWO-91569-->* Special characters in the CSV import file no longer trigger a general system exception. Previously, special characters (for example, <code>ƒ</code>, <code>ª</code>, and <code>›</code>) halted the check data phase of import.
 
@@ -1043,11 +1044,12 @@ We've fixed hundreds of issues in the Magento 2.3.1 core code.
 
 ### Performance
 
-<!--- MAGETWO-95249 94346-->* New customer address handling improves the processing of many addresses on the Admin customer details page. This functionality was rewritten with UI components to increase platform performance, which in turn facilitates the management of customers with 3000 and more addresses. This refactoring includes these changes:
+<!--- MAGETWO-95249 94346-->
+* New customer address handling improves the processing of many addresses on the Admin customer details page. This functionality was rewritten with UI components to increase platform performance, which in turn facilitates the management of customers with 3000 and more addresses. This refactoring includes these changes:
 
-	* All actions on the Customer Addresses tab are now performed asynchronously with AJAX. This tab now contains the default billing address and default shipping address UI component blocks, customer addresses listing or grid, and customer address form in a modal window.
+   * All actions on the Customer Addresses tab are now performed asynchronously with AJAX. This tab now contains the default billing address and default shipping address UI component blocks, customer addresses listing or grid, and customer address form in a modal window.
 
-	* `\Magento\Customer\Model\Customer\DataProvider` has been replaced by `\Magento\Customer\Model\Customer\DataProviderWithDefaultAddresses` to support the asynchronous management of customer addresses.
+   * `\Magento\Customer\Model\Customer\DataProvider` has been replaced by `\Magento\Customer\Model\Customer\DataProviderWithDefaultAddresses` to support the asynchronous management of customer addresses.
 
 ### Product video
 
@@ -1173,13 +1175,14 @@ We've fixed hundreds of issues in the Magento 2.3.1 core code.
 
 <!--- MAGETWO-91537-->* Searching for a synonym that contains a hyphen and number now returns the same results as any other search term in the group.
 
-<!--- MAGETWO-97235-->* Layered navigation for Elasticsearch now includes all product sizes. If the **Filterable (with results)** option is set for a product attribute, then:
+<!--- MAGETWO-97235-->
+* Layered navigation for Elasticsearch now includes all product sizes. If the **Filterable (with results)** option is set for a product attribute, then:
 
-	* Layered navigation includes only those filters for which matching products can be found.
+   * Layered navigation includes only those filters for which matching products can be found.
 
-	* Any attribute value that already applies to all products shown in the list should still appear as an available filter.
+   * Any attribute value that already applies to all products shown in the list should still appear as an available filter.
 
-	* Attribute values with a count of zero (0) product matches are omitted from the list of available filters.
+   * Attribute values with a count of zero (0) product matches are omitted from the list of available filters.
 
 See [Filterable attributes](https://docs.magento.com/m2/ee/user_guide/catalog/navigation-layered-filterable-attributes.html) for more information.
 

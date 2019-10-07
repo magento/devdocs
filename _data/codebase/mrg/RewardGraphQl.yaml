@@ -1,7 +1,0 @@
----
-title: Magento_RewardGraphQl
-edition: ee
-last_modified_at: '2018-01-16 16:07:42 -0600'
-content: |
-  **RewardGraphQl** provides type information for the GraphQl module
-  to generate reward fields for customer information endpoints.
