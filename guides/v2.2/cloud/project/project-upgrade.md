@@ -174,7 +174,7 @@ For an upgrade, you delete the `config.php` file. Once this file is added to you
 
 ### Upgrading extensions
 
-Review your third-party extension and module pages in Marketplace or other company sites to verify support for {{site.data.var.ee}} and {{site.data.var.ece}}. If you need to upgrade any third-party extensions and modules that support, we recommend working in a new Integration branch with your extensions disabled.
+Review your third-party extension and module pages in Marketplace or other company sites to verify support for {{site.data.var.ee}} and {{site.data.var.ece}}. If you need to upgrade any third-party extensions and modules, we recommend working in a new Integration branch with your extensions disabled.
 
 {:.procedure}
 To verify and upgrade your extensions:
