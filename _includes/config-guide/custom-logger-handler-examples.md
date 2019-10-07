@@ -1,4 +1,4 @@
-You can use one of the following approaches for logging into custom file:
+You can use one of the following approaches for logging into a custom file:
 
 - Set up a custom log file in the `di.xml`
 - Set up a custom file in the custom logger handler class 
@@ -51,7 +51,7 @@ This example shows how to use [virtual types]({{page.baseurl}}/extension-dev-gui
    ...
    ``` 
 
-It will log exception messages into the `/var/log/payment.log` file.
+Exception messages are logged into the `/var/log/payment.log` file.
 
 ## Set up a custom file in the custom logger handler class
 
@@ -105,7 +105,7 @@ This example shows how to use a custom logger handler class to log `error` messa
 
    `MyCustomLogger` is a unique identifier.
 
-1. In the `type` definition specify the class name where the custom logger handler will be injected. Use the virtual type name from the previous step as an argument for this type.
+1. In the `type` definition, specify the class name where the custom logger handler will be injected. Use the virtual type name from the previous step as an argument for this type.
 
    ```xml
    <type name="Vendor\ModuleName\Observer\MyObserver">
@@ -177,4 +177,4 @@ This example shows how to use a custom logger handler class to log `error` messa
    ...
    ```
 
-It will log exception messages into `/var/log/my_custom_logger/error.log` file.
+Exception messages will be logged into `/var/log/my_custom_logger/error.log` file.
