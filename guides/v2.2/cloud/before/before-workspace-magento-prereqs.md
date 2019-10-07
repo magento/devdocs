@@ -42,11 +42,11 @@ When using Vagrant, we also recommend the package [hostmanager](https://github.c
 
 ## Web server (local) {#webserver}
 
-Although {{ site.data.var.ee }} supports the Apache web server, {{ site.data.var.ece }} uses Nginx. To set up a local development environment that is as close to the cloud installation environment as possible, install and configure [Nginx]({{ page.baseurl }}/install-gde/prereq/nginx.html) as your local web server.
+We strongly recommend installing [Nginx]({{ page.baseurl }}/install-gde/prereq/nginx.html) for your web server on your local. While {{site.data.var.ee}} supports [Apache]({{ page.baseurl }}/install-gde/prereq/apache.html), {{site.data.var.ece}} uses Nginx. To have your local as close to cloud installations as possible, install and configure Nginx.
 
 ## PHP (local) {#php}
 
-Install [PHP](https://glossary.magento.com/php) on your local. We recommend PHP 7.0. For information on installing PHP, see these instructions for [CentOS]({{ page.baseurl }}/install-gde/prereq/php-centos.html) and [Ubuntu]({{ page.baseurl }}/install-gde/prereq/php-ubuntu.html). For instructions for another OS, see the [PHP documentation](http://php.net/manual/en/install.php).
+Install [PHP](https://glossary.magento.com/php) on your local. We recommend PHP 7.1.3+ or 7.2. For information on installing PHP on CentOS and Ubuntu see [PHP](../../../v2.3/install-gde/prereq/php-centos-ubuntu.html). For instructions for another OS, see the [PHP documentation](http://php.net/manual/en/install.php).
 
 The following packages may also be helpful for your PHP installation:
 
@@ -58,7 +58,7 @@ The following packages may also be helpful for your PHP installation:
 * [intl](http://php.net/manual/en/book.intl.php)
 * [json](http://php.net/manual/en/ref.json.php)
 * [mbstring](http://php.net/manual/en/book.mbstring.php)
-* [mcrypt](http://php.net/manual/en/book.mcrypt.php)
+* [mcrypt](http://php.net/manual/en/book.mcrypt.php) (for PHP 7.1 and earlier only)
 * [mysql](http://php.net/manual/en/set.mysqlinfo.php)
 * [xml](http://php.net/manual/en/book.xml.php)
 * [zip](http://php.net/manual/en/book.zip.php)
@@ -125,9 +125,6 @@ To install and create a MariaDB database for Magento on your local:
 
    ```bash
    create database magento;
-   ```
-
-   ```bash
    use magento;
    ```
 
