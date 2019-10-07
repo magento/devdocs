@@ -54,6 +54,9 @@ pages:
         - label: category query
           url: /graphql/queries/category.html
 
+        - label: categoryList query
+          url: /graphql/queries/category-list.html
+
         - label: checkoutAgreements query
           url: /graphql/queries/checkout-agreements.html
 
