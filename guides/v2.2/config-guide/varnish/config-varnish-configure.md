@@ -26,10 +26,10 @@ To modify the Varnish system configuration:
 
 1. As a user with `root` privileges, open your Vanish configuration file in a text editor:
 
-   * CentOS 6: `/etc/sysconfig/varnish`
-   * CentOS 7: `/etc/varnish/varnish.params`
-   * Debian: `/etc/default/varnish`
-   * Ubuntu: `/etc/default/varnish`
+   *  CentOS 6: `/etc/sysconfig/varnish`
+   *  CentOS 7: `/etc/varnish/varnish.params`
+   *  Debian: `/etc/default/varnish`
+   *  Ubuntu: `/etc/default/varnish`
 
 2. Set the Varnish listen port to 80:
 
@@ -112,9 +112,9 @@ include note.html
 type='info'
 content='If Varnish does not start as a service, you must configure SELinux rules to allow it to run. Consult the following resources:
 
--  [flatlinesecurity](http://flatlinesecurity.com/posts/varnish-4-selinux/)
--  [CentOS wiki](https://wiki.centos.org/HowTos/SELinux)
--  [CentOS documentation](https://www.centos.org)'
+*  [flatlinesecurity](http://flatlinesecurity.com/posts/*arnish-4-selinux/)
+*  [CentOS wiki](https://wiki.centos.org/HowTos/SELinux)
+*  [CentOS documentation](https://www.centos.org)'
 
 %}
 
@@ -124,8 +124,8 @@ The following sections discuss how you can verify that Varnish is working but *w
 
 Perform the tasks discussed in the following sections in the order shown:
 
-* [Start Varnish](#config-varnish-verify-start)
-* [netstat](#config-varnish-verify-netstat)
+*  [Start Varnish](#config-varnish-verify-start)
+*  [netstat](#config-varnish-verify-netstat)
 
 ### Start Varnish {#config-varnish-verify-start}
 
