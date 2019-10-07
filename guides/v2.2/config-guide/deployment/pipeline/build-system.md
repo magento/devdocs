@@ -99,7 +99,8 @@ To set up the build system:
 
    See the [`.gitignore` reference]({{ page.baseurl }}/config-guide/prod/config-reference-gitignore.html) for more information.
 
-#### Related topics
+{:.ref-header}
+Related topics
 
 * [Set up your development systems]({{ page.baseurl }}/config-guide/deployment/pipeline/development-system.html)
 * [Set up your production system]({{ page.baseurl }}/config-guide/deployment/pipeline/production-system.html)

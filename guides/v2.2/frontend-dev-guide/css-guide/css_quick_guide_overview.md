@@ -36,7 +36,8 @@ But if there is something you want to improve, the only recommended way is creat
 
 Making changes in the Magento out-of-the-box themes is a bad idea, because can result in your changes being overwritten during upgrade.
 
-## Related topics
+{:.ref-header}
+Related topics
 
 - [CSS in Magento themes][css overview]
 - [Simple ways to customize a theme's styles]

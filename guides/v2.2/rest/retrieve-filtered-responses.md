@@ -188,7 +188,7 @@ The following query returns only the `sku` and `name` parameters for product ite
 }
 ```
 
-## Related topics
-{:.no_toc}
+{:.ref-header}
+Related topics
 
 * [Search using REST APIs]({{ page.baseurl }}/rest/performing-searches.html)

@@ -107,7 +107,7 @@ The `getData()` method returns data what we need and depending on payment integr
 complicated. we need last step to retrieve data from [storefront](https://glossary.magento.com/storefront) in the backend. Magento provides some
 mechanisms called [Observers]({{ page.baseurl }}/extension-dev-guide/events-and-observers.html).
 
-#### Read additional data
+### Read additional data
 
 You need to add an observer to retrieve additional data from payment form and store it
 in the payment additional information. In most cases it will be enough to extend

@@ -71,7 +71,8 @@ The View layer calls code from the Model to get information about the state of t
 Web users interact with components of the presentation layer to select actions that initiate calls to the underlying layers.
 Presentation layer components make calls to the service layer, which in turn sends requests to the [domain](https://glossary.magento.com/domain) layer.
 
-## Related topics {#related}
+{:.ref-header}
+Related topics
 
 [Architectural diagrams]({{page.baseurl}}/architecture/archi_perspectives/arch_diagrams.html)
 
