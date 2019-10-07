@@ -17,7 +17,7 @@ A logged-in customer specifies an email address when they create an account. The
 
 **Request**
 
-``` text
+```graphql
 mutation {
   setGuestEmailOnCart(
     input: {

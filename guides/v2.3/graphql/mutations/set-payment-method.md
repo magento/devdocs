@@ -5,7 +5,7 @@ redirect from:
   - /guides/v2.3/graphql/reference/quote-payment-method.html
 ---
 
-The `setPaymentMethodOnCart` mutation defines which payment method to apply to the cart. Magento GraphQL supports the following payment methods:
+The `setPaymentMethodOnCart` mutation defines which payment method to apply to the cart. Magento GraphQL supports the following offline payment methods:
 
 Title | Code
 --- | ---
@@ -14,13 +14,19 @@ Cash on Delivery | `cashondelivery`
 Check / Money order | `checkmo`
 Credit Card (Authorize.Net) | `authorizenet_acceptjs`
 No Payment Information Required | `free`
-[PayPal Express Checkout]({{ page.baseurl}}/graphql/payment-methods/paypal-express-checkout.html) | `paypal_express`
-[PayPal Express Checkout Payflow Edition]({{ page.baseurl}}/graphql/payment-methods/paypal-express-checkout.html) | `payflow_express`
-PayPal Payflow Pro | `payflowpro`
-PayPal Payflow Link | `payflow_link`
 Purchase Order | `purchaseorder`
 
-Apply the `setPaymentMethodOnCart` mutation after setting the shipping address, shipping method, and after applying any discounts to the cart.
+Supported online payment methods include:
+
+-  [Authorize.Net]({{page.baseurl}}/graphql/payment-methods/authorize-net.html)
+-  [Braintree]({{page.baseurl}}/graphql/payment-methods/braintree.html)
+-  [Braintree Vault]({{page.baseurl}}/graphql/payment-methods/braintree-vault.html)
+-  [PayPal Express Checkout]({{page.baseurl}}/graphql/payment-methods/paypal-express-checkout.html)
+-  [PayPal Payflow Link]({{page.baseurl}}/graphql/payment-methods/payflow-link.html)
+-  [PayPal Payflow Pro]({{page.baseurl}}/graphql/payment-methods/payflow-pro.html)
+-  [PayPal Payments Advanced]({{page.baseurl}}/graphql/payment-methods/payments-advanced.html)
+-  [PayPal Website Payments Pro Hosted Solution]({{page.baseurl}}/graphql/payment-methods/hosted-pro.html)
+-  [Express Checkout for other PayPal solutions]({{page.baseurl}}/graphql/payment-methods/payflow-express.html)
 
 ## Syntax
 
@@ -99,7 +105,7 @@ The `SetPaymentMethodOnCartOutput` object contains the `Cart` object.
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`cart` |[ Cart!](#CartObject) | Describes the contents of the specified shopping cart
+`cart` |[Cart!](#CartObject) | Describes the contents of the specified shopping cart
 
 ### Cart object {#CartObject}
 

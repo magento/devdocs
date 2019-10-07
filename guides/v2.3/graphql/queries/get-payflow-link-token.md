@@ -17,7 +17,7 @@ The following example requests a token in a Payflow Link transaction.
 
 **Request**
 
-```text
+```graphql
 {
   getPayflowLinkToken(input: {cart_id: "123"}) {
     secure_token

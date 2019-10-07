@@ -18,7 +18,7 @@ The following query returns enabled checkout agreements.
 
 **Request**
 
-```text
+```graphql
 {
   checkoutAgreements {
     agreement_id

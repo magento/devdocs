@@ -49,11 +49,7 @@ mutation {
 
 ## Input attributes
 
-The `removeGiftCardFromCart` mutation requires the `cart_id` attribute.
-
-### removeGiftCardFromCart object {#removeGiftCardFromCart}
-
-The `removeGiftCardFromCart` object must contain the following attributes:
+The `removeGiftCardFromCartInput` object must contain the following attributes:
 
 Attribute |  Data Type | Description
 --- | --- | ---
@@ -62,7 +58,7 @@ Attribute |  Data Type | Description
 
 ## Output attributes
 
-The `removeGiftCardFromCart` object contains the `Cart` object.
+The `removeGiftCardFromCartOutput` object contains the `Cart` object.
 
 Attribute |  Data Type | Description
 --- | --- | ---

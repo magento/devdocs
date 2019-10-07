@@ -19,7 +19,7 @@ If you are creating a cart for a logged in customer, you must include the custom
 
 **Request**
 
-```text
+```graphql
 mutation {
   createEmptyCart
 }
