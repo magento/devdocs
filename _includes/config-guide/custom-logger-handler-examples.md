@@ -48,7 +48,7 @@ This example shows how to use [virtual types]({{page.baseurl}}/extension-dev-gui
    <argument name="handlers" xsi:type="array">
        <item name="debug" xsi:type="object">Magento\Payment\Model\Method\MyCustomDebug</item>
    </argument>
-   ...  ``` 
+   ```
 
 Exception messages are logged into the `/var/log/payment.log` file.
 
