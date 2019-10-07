@@ -8,7 +8,7 @@ The `categoryList` query searches for categories that match the criteria specifi
 The `categoryList` query supports the following types of filters. You can specify multiple filters in a query.
 
 -  Category ID
--  Display name
+-  Category name
 -  URL Key
 
 If you do not provide any filter input, the query returns the root category.
