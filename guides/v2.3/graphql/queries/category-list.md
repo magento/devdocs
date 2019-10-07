@@ -11,6 +11,8 @@ The `categoryList` query supports the following types of filters. You can specif
 -  Display name
 -  URL Key
 
+If you do not provide any filter input, the query returns the root category.
+
 The query returns a `CategoryTree` object. The top level of the `CategoryTree` object provides details about the queried category. This object includes the `children` attribute, which contains an array of its immediate subcategories. To return multiple category levels in a single call, define the response so that it contains up to ten nested `children` options.
 
 {:.bs-callout-info}
