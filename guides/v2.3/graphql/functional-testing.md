@@ -200,8 +200,8 @@ $registry->register('isSecureArea', false);
 
 Your functional tests should include events that cause exceptions. Since your tests expect an exception to occur, set up your tests so that they elicit the proper responses. You can define expected exception messages either in:
 
--  The body of the test
--  The test function annotation
+*  The body of the test
+*  The test function annotation
 
 {: .bs-callout .bs-callout-tip }
 We recommend that you declare expected exceptions in the test method body, as declaring expected exceptions with annotations has been deprecated in PHPUnit 8. Existing tests that use annotations will have to be updated when Magento requires that version of PHPUnit or higher.
