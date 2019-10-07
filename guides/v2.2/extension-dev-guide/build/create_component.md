@@ -87,6 +87,7 @@ In this example:
 {: .bs-callout-info }
 Magento does not currently support the [`path`](https://getcomposer.org/doc/05-repositories.md#path) repository.
 
-#### Next
+{:.ref-header}
+Next step
 
 [Component load order]({{ page.baseurl }}/extension-dev-guide/build/module-load-order.html)

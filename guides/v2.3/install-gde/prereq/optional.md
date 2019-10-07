@@ -1,13 +1,12 @@
 ---
 group: installation-guide
-subgroup: Prerequisites
 title: Optional software
-menu_title: Optional software
-menu_order: 400
 functional_areas:
   - Install
   - System
   - Setup
+redirect_from:
+  - guides/v2.3/install-gde/trouble/php/tshoot_phpini.html
 ---
 
 ## Magento optional software {#install-optional-intro}
@@ -92,9 +91,9 @@ Selecting pool servers is up to you. If you use NTP pool servers, ntp.org recomm
 
 1. Restart the service.
 
-    * Ubuntu: `service ntp restart`
+    *  Ubuntu: `service ntp restart`
 
-    * CentOS: `service ntpd restart`
+    *  CentOS: `service ntpd restart`
 
 1. Enter `date` to check the server's date.
 
@@ -129,12 +128,12 @@ http://<web server host or IP>/phpinfo.php
 
 If a 404 (Not Found) error displays, check the following:
 
-* Start the web server if necessary.
-* Make sure your firewall allows traffic on port 80.
+*  Start the web server if necessary.
+*  Make sure your firewall allows traffic on port 80.
 
-  [Help for Ubuntu](https://help.ubuntu.com/community/UFW)
+   [Help for Ubuntu](https://help.ubuntu.com/community/UFW)
 
-  [Help for CentOS](http://wiki.centos.org/HowTos/Network/IPTables){:target="_blank"}
+   [Help for CentOS](http://wiki.centos.org/HowTos/Network/IPTables){:target="_blank"}
 
 ## Install phpmyadmin {#install-optional-phpmyadmin}
 
@@ -239,10 +238,11 @@ To install phpmyadmin on CentOS:
 
 1. When prompted, log in using your MySQL database `root` or administrative user's username and password.
 
-## Related topics
+{:.ref-header}
+Related topics
 
-* [Apache]({{page.baseurl }}/install-gde/prereq/apache.html)
-* [PHP]({{page.baseurl }}/install-gde/prereq/php-settings.html)
-* [MySQL]({{page.baseurl }}/install-gde/prereq/mysql.html)
-* [Configuring security options]({{page.baseurl }}/install-gde/prereq/security.html)
-* [How to get the Magento software]({{ page.baseurl }}/install-gde/bk-install-guide.html)
+*  [Apache]({{page.baseurl }}/install-gde/prereq/apache.html)
+*  [PHP]({{page.baseurl }}/install-gde/prereq/php-settings.html)
+*  [MySQL]({{page.baseurl }}/install-gde/prereq/mysql.html)
+*  [Configuring security options]({{page.baseurl }}/install-gde/prereq/security.html)
+*  [How to get the Magento software]({{ page.baseurl }}/install-gde/bk-install-guide.html)

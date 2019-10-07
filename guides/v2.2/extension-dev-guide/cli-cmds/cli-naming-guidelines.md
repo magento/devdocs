@@ -29,13 +29,14 @@ If you have a Magento installation handy, enter the following to display the cur
 bin/magento list
 ```
 
-#### Format: `group:[subject:]action`
+### Format: `group:[subject:]action`
 
 ### group
+
 `group` represents a group of related commands. Commands in a group display in a list, which in turn makes it easier for the user to find the desired command. To find a group name for a command, imagine an subject area where it can be used. The subject area can be any of the following:
 
-*	*Domain* area (for example, `module` for actions with modules, `info` for commands that provide some information)
-*	*Workflow* area (for example, `admin` for commands that can be used by an administrator, `dev` for a developer)
+* *Domain* area (for example, `module` for actions with modules, `info` for commands that provide some information)
+* *Workflow* area (for example, `admin` for commands that can be used by an administrator, `dev` for a developer)
 
 ### subject
 `subject` is a subject for the action. The subject is optional, but it can be useful for defining sets of commands that work with the same object. If a subject is represented by a compound word, use a dash or hyphen character to separate the words.
@@ -77,7 +78,7 @@ Arguments are values passed by the user in a specified order. The argument name 
 Example:
 
 ```bash
-	magento dev:theme:create frontend vendor themename
+ magento dev:theme:create frontend vendor themename
 ```
 
 where:
@@ -92,12 +93,12 @@ Use arguments when you need required data from the user. We recommend as few arg
 
 To make it simpler for the user, we recommend the following:
 
-*	Run the CLI multiple times for providing multiple similar values instead of running it once with 20 values
-*	Use default values for required arguments where possible.
+* Run the CLI multiple times for providing multiple similar values instead of running it once with 20 values
+* Use default values for required arguments where possible.
 
-	You can then use options instead of arguments to minimize the amount of required data the user must enter.
+   You can then use options instead of arguments to minimize the amount of required data the user must enter.
 
-*	Replace arguments with options: options are named, so the user can provide them in any order. This requires additional data validation (by default, all options are optional).
+* Replace arguments with options: options are named, so the user can provide them in any order. This requires additional data validation (by default, all options are optional).
 
 ### Command Options
 
@@ -112,19 +113,19 @@ An option can also have a one-letter shortcut as an alternative to its full name
 For example,
 
 ```bash
-	magento dev:theme:create --parent=Magento/luma frontend arg1 arg2
+magento dev:theme:create --parent=Magento/luma frontend arg1 arg2
 ```
 
 ```bash
-	magento dev:theme:create -p=Magento/luma frontend vendor themename
+magento dev:theme:create -p=Magento/luma frontend vendor themename
 ```
 
 ```bash
-	magento dev:theme:create --extend-from=Magento/luma frontend vendor themename
+magento dev:theme:create --extend-from=Magento/luma frontend vendor themename
 ```
 
 ```bash
-	magento module:disable -f Magento_Cms
+magento module:disable -f Magento_Cms
 ```
 
 Where:
@@ -139,8 +140,8 @@ Where:
 
 Use options for:
 
-*	Optional data
-*	Required data that has a default value
+* Optional data
+* Required data that has a default value
 
 Example:
 
@@ -159,21 +160,22 @@ magento module:disable -f=yes Magento_Catalog
 
 To avoid naming your command the same as another command, we recommend:
 
-*	Looking at other extensions in the Magento Marketplace before you choose a name for your commands. By planning ahead, you can avoid naming collisions entirely.
+* Looking at other extensions in the Magento Marketplace before you choose a name for your commands. By planning ahead, you can avoid naming collisions entirely.
 
-*	Restricting command names to start with a unique name, such as a vendor name. The [usability](https://glossary.magento.com/usability) of the command depends on what you choose for a vendor name.
+* Restricting command names to start with a unique name, such as a vendor name. The [usability](https://glossary.magento.com/usability) of the command depends on what you choose for a vendor name.
 
-    For example, `myname:dev:theme:create` is not obvious and is hard to remember.
+   For example, `myname:dev:theme:create` is not obvious and is hard to remember.
 
-    The vendor name doesn't have to start the command name; it could be in the middle. This way, related commands are grouped together.
+   The vendor name doesn't have to start the command name; it could be in the middle. This way, related commands are grouped together.
 
-    Examples:
+   Examples:
 
-    ```terminal
-    dev:myname:theme:create
-    dev:myname:theme:delete
-    ```
+   ```terminal
+   dev:myname:theme:create
+   dev:myname:theme:delete
+   ```
 
-#### Related topic
+{:.ref-header}
+Related topic
 
 [How to add CLI commands]({{ page.baseurl }}/extension-dev-guide/cli-cmds/cli-howto.html)

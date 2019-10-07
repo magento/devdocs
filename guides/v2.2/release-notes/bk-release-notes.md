@@ -53,7 +53,7 @@ Quarterly patch releases do not introduce backward-incompatible changes, archite
 
 ## Backward-incompatible changes
 
-*	Overview of [backward-incompatible changes]({{page.baseurl}}/release-notes/backward-incompatible-changes/index.html) between the 2.1 and 2.2 releases
+*  Overview of [backward-incompatible changes]({{page.baseurl}}/release-notes/backward-incompatible-changes/index.html) between the 2.1 and 2.2 releases
 
 ## {{site.data.var.ece}} {#cloud-updates}
 
@@ -74,6 +74,6 @@ We provide a list of current fixes and enhancements to the Magento Shipping exte
 
 ## Third-party license agreements
 
-*	[{{site.data.var.ce}} third-party licenses]({{page.baseurl}}/release-notes/packages-open-source.html)
-*	[{{site.data.var.ee}} third-party licenses]({{page.baseurl}}/release-notes/packages-commerce.html)
-*	[{{site.data.var.ece}} third-party licenses]({{page.baseurl}}/release-notes/packages-cloud.html)
+*  [{{site.data.var.ce}} third-party licenses]({{page.baseurl}}/release-notes/packages-open-source.html)
+*  [{{site.data.var.ee}} third-party licenses]({{page.baseurl}}/release-notes/packages-commerce.html)
+*  [{{site.data.var.ece}} third-party licenses]({{page.baseurl}}/release-notes/packages-cloud.html)
