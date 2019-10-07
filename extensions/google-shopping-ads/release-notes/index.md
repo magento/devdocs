@@ -9,7 +9,7 @@ Merchants on previous Magento versions (2.2.4+, 2.3.0, 2.3.1, and 2.3.2) can ins
 
 Beginning with version v2.3.3 of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}, **Google Shopping ads Channel** installs with the Magento update and does not require separate installation.
 
-[Onboarding](https://docs.magento.com/m2/ee/user_guide/sales-channels/google-ads/onboarding-google.html) and management processes are the same for either install method.
+[Onboarding](https://docs.magento.com/m2/ee/user_guide/sales-channels/google-ads/onboarding-google.html) and management processes are the same for either installation method.
 
 See the following documentation:
 
