@@ -389,9 +389,6 @@ pages:
             - label: PHP settings errors
               url: /install-gde/trouble/php/tshoot_php-set.html
 
-            - label: The PHP mcrypt extension is not installed properly
-              url: /install-gde/trouble/php/tshoot_mcrypt.html
-
             - label: During installation, PHP date warning
               url: /install-gde/trouble/php/tshoot_php-date.html
 
@@ -400,18 +397,6 @@ pages:
 
             - label: Known issues that affect installation
               url: /install-gde/trouble/tshoot_install-issues.html
-
-            - label: Error 'MySQL server has gone away' during installation
-              url: /install-gde/trouble/tshoot_mysql_table-open-cache.html
-
-            - label: Segmentation fault during rollback
-              url: /install-gde/trouble/tshoot_segfault.html
-
-            - label: SQLSTATE[HY000] [2002] No such file or directory
-              url: /install-gde/trouble/php/tshoot_phpini.html
-
-            - label: Cannot run 'composer install'
-              url: /install-gde/trouble/tshoot_composer-install.html
 
     - label: How Tos
       children:

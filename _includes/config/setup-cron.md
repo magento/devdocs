@@ -2,18 +2,18 @@
 
 Magento uses cron for two sets of tasks, and for each, cron can run with a different configuration:
 
-*	PHP command-line configuration: The general cron job that reindexes indexers, generates e-mails, generates the sitemap, and so on.
+*  PHP command-line configuration: The general cron job that reindexes indexers, generates e-mails, generates the sitemap, and so on.
 
-	You can find the command-line configuration using the command `php --ini`.
+   You can find the command-line configuration using the command `php --ini`.
 
-*	Web server PHP plug-in configuration: Two other cron jobs are used by the [Component Manager and System Upgrade utilities]({{ page.baseurl }}/comp-mgr/bk-compman-upgrade-guide.html).
+*  Web server PHP plug-in configuration: Two other cron jobs are used by the [Component Manager and System Upgrade utilities]({{ page.baseurl }}/comp-mgr/bk-compman-upgrade-guide.html).
 
-	You can find the web server plug-in configuration using [`phpinfo.php`]({{ page.baseurl }}/install-gde/prereq/optional.html#install-optional-phpinfo).
+ You can find the web server plug-in configuration using [`phpinfo.php`]({{ page.baseurl }}/install-gde/prereq/optional.html#install-optional-phpinfo).
 
 {:.bs-callout .bs-callout-warning}
 
-*	To avoid issues during installation and upgrade, we strongly recommend you apply the same PHP settings to both the PHP command-line configuration and to the PHP web server plug-in's configuration. For more information, see [Required PHP settings]({{ page.baseurl }}/install-gde/prereq/php-settings.html).
-*	In a multi-node system, crontab can run on only one node. This applies to you only if you set up more than one webnode for reasons related to performance or scalability.
+*  To avoid issues during installation and upgrade, we strongly recommend you apply the same PHP settings to both the PHP command-line configuration and to the PHP web server plug-in's configuration. For more information, see [Required PHP settings]({{ page.baseurl }}/install-gde/prereq/php-settings.html).
+*  In a multi-node system, crontab can run on only one node. This applies to you only if you set up more than one webnode for reasons related to performance or scalability.
 
 #### Find the PHP binary and php.ini path
 
@@ -53,9 +53,9 @@ A text editor displays. (You might need to choose a text editor first.)
 
 where
 
-*	`<path to php binary>` is the absolute file system path to your PHP binary
-*	`<magento install dir>` is the directory in which you installed the Magento software; for example, `/var/www`
-*	`| grep -v "Ran jobs by schedule"` filters this message from the log, making any errors easier to spot
+*  `<path to php binary>` is the absolute file system path to your PHP binary
+*  `<magento install dir>` is the directory in which you installed the Magento software; for example, `/var/www`
+*  `| grep -v "Ran jobs by schedule"` filters this message from the log, making any errors easier to spot
 
 The first command (`magento cron:run`) reindexes indexers, sends automated e-mails, generates the sitemap, and so on. Usually it's associated with the PHP command line `.ini` file. The other two commands are used by the Component Manager and System Upgrade.
 

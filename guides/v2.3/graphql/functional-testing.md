@@ -235,7 +235,7 @@ The following example sets a store-scoped value `1` for the config key `checkout
 ```sql
 INSERT INTO `core_config_data` (scope`, `scope_id`, `path`, `value`)
 VALUES
-	('stores', 1, 'checkout/options/enable_agreements', '1');
+  ('stores', 1, 'checkout/options/enable_agreements', '1');
 ```
 
 The fixture automatically removes the `checkout/options/enable_agreements` config key from the database after the test has been completed.
@@ -244,8 +244,8 @@ The fixture automatically removes the `checkout/options/enable_agreements` confi
 
 Your functional tests should include events that cause exceptions. Since your tests expect an exception to occur, set up your tests so that they elicit the proper responses. You can define expected exception messages either in:
 
-- The body of the test
-- The test function annotation
+*  The body of the test
+*  The test function annotation
 
 {: .bs-callout .bs-callout-tip }
 We recommend that you declare expected exceptions in the test method body, as declaring expected exceptions with annotations has been deprecated in PHPUnit 8. Existing tests that use annotations will have to be updated when Magento requires that version of PHPUnit or higher.
