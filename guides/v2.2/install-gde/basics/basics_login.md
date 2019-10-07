@@ -28,7 +28,7 @@ To complete almost all of the tasks in this guide, you must remotely log in to y
 
    * Mac OS: You can use the built-in [Terminal](http://en.wikipedia.org/wiki/Terminal_(OS_X)){:target="_blank"} application or any of the following: [iTerm](http://iterm2.com/){:target="_blank"}, or [these](http://computers.tutsplus.com/tutorials/beyond-terminal-4-os-x-terminal-alternatives--mac-56217){:target="_blank"}
    
-   * On Linux: Depending on you [Desktop Envirement](https://en.wikipedia.org/wiki/Desktop_environment){:target="_blank"}  you can use use one your deskop envirement is providing like [Konsole (KDE)](https://en.wikipedia.org/wiki/Konsole){:target="_blank"} , [GNOME Shell](https://en.wikipedia.org/wiki/GNOME_Shell){:target="_blank"}  or [Xfce Terminal](https://en.wikipedia.org/wiki/Xfce#Xfce_Terminal){:target="_blank"}. You can also install and use an Deskop Envirement Independet terminal application like [Xterm](https://en.wikipedia.org/wiki/Xterm){:target="_blank"}
+   * Linux: Depending on your [Desktop Environment](https://en.wikipedia.org/wiki/Desktop_environment){:target="_blank"} you can use CLI application your deskop environment is providing like [Konsole (KDE)](https://en.wikipedia.org/wiki/Konsole){:target="_blank"} , [GNOME Shell](https://en.wikipedia.org/wiki/GNOME_Shell){:target="_blank"}  or [Xfce Terminal](https://en.wikipedia.org/wiki/Xfce#Xfce_Terminal){:target="_blank"}. You can also install and use deskop environment independent terminal application like [Xterm](https://en.wikipedia.org/wiki/Xterm){:target="_blank"}  
 
 * A username and password for the Magento server
 
