@@ -65,7 +65,7 @@ For more information, see [Required PHP settings]({{ page.baseurl }}/install-gde
 
 * A valid [security certificate](https://glossary.magento.com/security-certificate) is required for HTTPS.
 * Self-signed SSL certificates are not supported.
-* Transport Layer Security (TLS) requirement - PayPal and `repo.magento.com` both require TLS 1.1 or later:
+* Transport Layer Security (TLS) requirement - PayPal and `repo.magento.com` both require TLS 1.2 or later:
 
   * [More information about PayPal]({{ page.baseurl }}/install-gde/system-requirements_tls1-2.html)
 
