@@ -92,6 +92,7 @@ We have [channels][] for each project, but the following channels are recommende
 ## Performance
 
 -  *Presentation* [Premium performance with PHP 7 and Varnish][15] by Miguel Balparda
+- *Blog* [Speed up Magento - the Ultimate Guide][58] by Konstantin Gerasimov
 
 [contribute]: https://github.com/magento/devdocs/blob/master/.github/CONTRIBUTING.md
 [technical guidelines]: {{ site.baseurl }}/guides/v2.3/coding-standards/technical-guidelines.html
@@ -163,4 +164,5 @@ We have [channels][] for each project, but the following channels are recommende
 [55]: https://alanstorm.com/
 [56]: https://markshust.com/
 [57]: https://www.youtube.com/watch?v=ceNeYpCEmys
+[58]: https://www.goivvy.com/blog/speed-up-magento
 [channels]: https://github.com/magento/magento2/wiki/Slack-Channels
