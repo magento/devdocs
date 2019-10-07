@@ -38,7 +38,7 @@ These release notes can include:
    -  [`applyStoreCreditToCart`]({{page.baseurl}}/graphql/mutations/apply-store-credit.html) mutation
    -  [`removeStoreCreditFromCart`]({{page.baseurl}}/graphql/mutations/remove-store-credit.html) mutation
 
--  {:.new} **Added the [addConfigurableProductsToCart]({page.baseurl}}/graphql/mutations/add-configurable-products.html) mutation.**
+-  {:.new} **Added the [addConfigurableProductsToCart]({{page.baseurl}}/graphql/mutations/add-configurable-products.html) mutation.**
 
 ## {{site.data.var.ce}} 2.3.2
 
