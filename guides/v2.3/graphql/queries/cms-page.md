@@ -66,8 +66,9 @@ The `CmsPage` object can contain the following attributes:
 
 Attribute | Data type | Description
 --- | --- | ---
-`content_heading` | String | The heading that displays at the top of the CMS page
 `content` | String | The content of the CMS page in raw HTML
+`content_heading` | String | The heading that displays at the top of the CMS page
+`identifier` | String | The identifier of the CMS page
 `meta_description` | String | A brief description of the page for search results listings
 `meta_keywords` | String | A set of keywords that search engines can use to index the page
 `meta_title` | String | A page title that is indexed by search engines and appears in search results listings

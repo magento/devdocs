@@ -17,7 +17,7 @@ The following query returns information about Australia.
 
 **Request**
 
-```text
+```graphql
 query {
     country(id: "AU") {
         id

@@ -20,7 +20,7 @@ The following example changes the quantity of cart item `13`. The new quantity i
 
 **Request**
 
-```text
+```graphql
 mutation {
   updateCartItems(
     input: {
