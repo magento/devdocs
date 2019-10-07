@@ -3,7 +3,7 @@ group: graphql
 title: Release Notes
 ---
 
-*Release notes published June 2019.*
+*Release notes published October 2019.*
 
 GraphQL is a flexible and performant API that allows you to build custom front-ends, including headless storefronts, [Progressive Web Apps](https://github.com/magento/pwa-studio) (PWA), and mobile apps for Magento.
 
@@ -12,8 +12,8 @@ To take part and contribute, see the [Magento GraphQL](https://github.com/magent
 
 These release notes can include:
 
--   {:.new}New features
--   {:.fix}Fixes and improvements
+-  {:.new}New features
+-  {:.fix}Fixes and improvements
 
 ## {{site.data.var.ee}} and {{site.data.var.ce}} 2.3.3
 
@@ -26,19 +26,19 @@ These release notes can include:
    -  [PayPal Payflow Link]({{page.baseurl}}/graphql/payment-methods/payflow-link.html)
    -  [PayPal Payflow Pro]({{page.baseurl}}/graphql/payment-methods/payflow-pro.html)
    -  [PayPal Payments Advanced]({{page.baseurl}}/graphql/payment-methods/payments-advanced.html)
-   -  [PayPal Website Payments Pro Hosted Solution]({{page.baseurl}}/graphql/payment-methods/hosted-pro.html
+   -  [PayPal Website Payments Pro Hosted Solution]({{page.baseurl}}/graphql/payment-methods/hosted-pro.html)
    -  [Express Checkout for other PayPal solutions]({{page.baseurl}}/graphql/payment-methods/payflow-express.html)
 
--  {:.new} ({{site.data.var.ee}} only) **Added support for gift cards:**
+-  {:.new} **Added support for gift cards:** ({{site.data.var.ee}} only)
    -  [`giftCardAccount`]({{page.baseurl}}/graphql/queries/giftcard-account.html) query
    -  [`applyGiftCardToAccount`]({{page.baseurl}}/graphql/mutations/apply-giftcard.html) mutation
    -  [`removeGiftCardFromCart`]({{page.baseurl}}/graphql/mutations/remove-giftcard.html) mutation
 
--  {:.new} ({{site.data.var.ee}} only) **Added the ability to manage store credit:**
+-  {:.new} **Added the ability to manage store credit:** ({{site.data.var.ee}} only)
    -  [`applyStoreCreditToCart`]({{page.baseurl}}/graphql/mutations/apply-store-credit.html) mutation
    -  [`removeStoreCreditFromCart`]({{page.baseurl}}/graphql/mutations/remove-store-credit.html) mutation
 
--  {:.new} **Added he [addConfigurableProductsToCart]({page.baseurl}}/graphql/mutations/add-configurable-products.html) mutation.**
+-  {:.new} **Added the [addConfigurableProductsToCart]({page.baseurl}}/graphql/mutations/add-configurable-products.html) mutation.**
 
 ## {{site.data.var.ce}} 2.3.2
 
@@ -60,17 +60,17 @@ These release notes can include:
 
    -  The [`isEmailAvailable` query]({{page.baseurl}}/graphql/queries/is-email-available.html) checks whether the specified email address has already been used to create an account.
    -  The [`cart` query]({{page.baseurl}}/graphql/queries/cart.html) can now return information set by mutations that perform cart operations, including product information, shipping and billing addresses, shipping and payment methods, and applied coupons. The query also returns calculated totals.
-   - The `customerPaymentTokens` query returns the signed-in customer's payment tokens.
+   -  The `customerPaymentTokens` query returns the signed-in customer's payment tokens.
 
 -  {:.new} **Queries can now be performed as HTTP GET or POST operations.**
 
 -  {:.new} **Magento can use Varnish or full-page caching to [cache]({{page.baseurl}}/graphql/caching.html) pages rendered from the results of the following GraphQL queries:**
 
-   - `category`
-   - `cmsBlocks`
-   - `cmsPage`
-   - `products`
-   - `urlResolver`
+   -  `category`
+   -  `cmsBlocks`
+   -  `cmsPage`
+   -  `products`
+   -  `urlResolver`
 
   You must send these queries as HTTP GET operations to cache the results.
 
