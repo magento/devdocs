@@ -20,9 +20,7 @@ To complete almost all of the tasks in this guide, you must remotely log in to y
    Windows and Mac OS typically use different terminal applications.
 
    * Windows: A partial list: [putty][], [Cygwin][]
-
    * Mac OS: You can use the built-in [Terminal][] application or any of the following: [iTerm][], or [these][]
-   
    * Linux: Depending on your [Desktop Environment][] you can use CLI application your deskop environment is providing like [Konsole (KDE)][], [GNOME Shell][]  or [Xfce Terminal][]. You can also install and use deskop environment independent terminal application like [Xterm][].
 
 * A username and password for the Magento server
