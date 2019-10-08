@@ -11,8 +11,8 @@ Composer reads a `composer.json` file in Magento's root directory to download th
 
 The [Component Manager][1] uses the `composer.json` file in an extension's root directory to perform the following actions:
 
-*	The Component Manager can update, uninstall, enable, or disable an [extension](https://glossary.magento.com/extension) if installed using Composer (including from [Packagist][2]{:target="_blank"}, [Magento Marketplace][6]{:target="_blank"}, or other source) *and* it has a `composer.json` file.
-*	The Component Manager can still enable or disable an extension *not* installed using Composer (e.g. custom code) if it has a `composer.json` file.
+* The Component Manager can update, uninstall, enable, or disable an [extension](https://glossary.magento.com/extension) if installed using Composer (including from [Packagist][2]{:target="_blank"}, [Magento Marketplace][6]{:target="_blank"}, or other source) *and* it has a `composer.json` file.
+* The Component Manager can still enable or disable an extension *not* installed using Composer (e.g. custom code) if it has a `composer.json` file.
 
 We recommend you include `composer.json` in your component's root directory even if you do not intend to distribute it to other merchants using Magento.
 

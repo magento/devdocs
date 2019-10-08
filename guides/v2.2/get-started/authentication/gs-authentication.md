@@ -165,7 +165,8 @@ Each type of client has a preferred authentication method. To authenticate, use 
    </tr>
 </table>
 
-## Related topics
+{:.ref-header}
+Related topics
 
 Proceed to the authentication method for your preferred client:
 

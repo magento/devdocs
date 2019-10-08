@@ -1,8 +1,0 @@
----
-title: Magento_ReviewAnalytics
-edition: ce
-last_modified_at: '2018-12-08 15:44:36 +0530'
-content: |
-  # Magento_ReviewAnalytics module
-
-  The Magento_ReviewAnalytics module configures data definitions for a data collection related to the Review module entities to be used in [Advanced Reporting](https://devdocs.magento.com/guides/v2.2/advanced-reporting/modules.html).

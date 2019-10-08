@@ -17,6 +17,6 @@ Magento installs third-party components in the `vendor` directory. But we recomm
 
 All components require these three files:
 
-*	`registration.php`: This file registers your component with Magento. It uses the component's root directory name as the component name. By default, the composer installs components in the `<Magento root dir>/vendor` directory. For more information, see [Component registration]({{page.baseurl}}/extension-dev-guide/build/component-registration.html).
-*	`etc/module.xml`: This file defines basic information about the component, such as component dependencies and version number. Magento uses the version number to determine which schema and data to update when executing `bin/magento setup:upgrade`.
-*	`composer.json`: This file defines the dependencies that the component needs at runtime. For more information, see [Composer integration]({{page.baseurl}}/extension-dev-guide/build/composer-integration.html).
+*  `registration.php`: This file registers your component with Magento. It uses the component's root directory name as the component name. By default, the composer installs components in the `<Magento root dir>/vendor` directory. For more information, see [Component registration]({{page.baseurl}}/extension-dev-guide/build/component-registration.html).
+*  `etc/module.xml`: This file defines basic information about the component, such as component dependencies and version number. Magento uses the version number to determine which schema and data to update when executing `bin/magento setup:upgrade`.
+*  `composer.json`: This file defines the dependencies that the component needs at runtime. For more information, see [Composer integration]({{page.baseurl}}/extension-dev-guide/build/composer-integration.html).

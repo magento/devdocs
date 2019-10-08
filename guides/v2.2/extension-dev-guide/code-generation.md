@@ -24,11 +24,11 @@ Provided the Magento application is not set for [production mode], code is gener
 
 In particular,
 
-*	A Factory class creates instances of a type. See [Instantiating objects with factories] for more information. Factories are directly referenced within application code.
+* A Factory class creates instances of a type. See [Instantiating objects with factories] for more information. Factories are directly referenced within application code.
 
-*	You can designate a Proxy to be generated for a type in order to ensure the type is not instantiated until it is needed. See [Proxies] for more information. Proxies are directly referenced within [dependency injection](https://glossary.magento.com/dependency-injection) configuration.
+* You can designate a Proxy to be generated for a type in order to ensure the type is not instantiated until it is needed. See [Proxies] for more information. Proxies are directly referenced within [dependency injection](https://glossary.magento.com/dependency-injection) configuration.
 
-*   Interceptor classes are automatically generated to facilitate Magento's plugin system. An interceptor class extends a type and is returned by the Object Manager to allow multiple plugin classes to inject logic into different methods. Interceptors work behind the scenes and are _not_ directly referenced in application code.
+* Interceptor classes are automatically generated to facilitate Magento's plugin system. An interceptor class extends a type and is returned by the Object Manager to allow multiple plugin classes to inject logic into different methods. Interceptors work behind the scenes and are _not_ directly referenced in application code.
 
 You can also use the [code compiler] to generate code at any time.  In Magento 2, "compiling" your application means performing code generation for any eligible class encountered by the configuration/code scanner, as well as performing a number of different [dependency injection](https://glossary.magento.com/dependency-injection) optimizations.
 
@@ -42,11 +42,11 @@ If the code generator implementation itself is changed, you must regenerate all 
 
 Code generation is required in Magento 2. Generating code assures you of the following:
 
-*	The code is correct. You don’t have to worry that the generated code is delegating to the wrong method or forgetting a semicolon, and you don’t have to write tests for the generated code.
-*	Code generation writes the boilerplate code to enable you to write more challenging and interesting code.
-*	Consistent implementation.
+* The code is correct. You don’t have to worry that the generated code is delegating to the wrong method or forgetting a semicolon, and you don’t have to write tests for the generated code.
+* Code generation writes the boilerplate code to enable you to write more challenging and interesting code.
+* Consistent implementation.
 
-	All generated Factories work the same way. After you know how one Factory works, you know how they all work.
+   All generated Factories work the same way. After you know how one Factory works, you know how they all work.
 
 ## Object Manager responsibility for code compilation {#codegen-om}
 

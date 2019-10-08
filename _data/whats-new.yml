@@ -4,8 +4,33 @@ description: |
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: /whats-new.html
 thread: /whatsnew-feed.xml
-updated: Tue Sep 24 09:26:19 2019
+updated: Tue Oct 1 20:34:58 2019
 entries:
+- description: Updated the _Cloud Guide_ with instructions for [changing the Fastly API token credential](https://devdocs.magento.com/guides/v2.3/cloud/cdn/cloud-fastly.html#fastly-service-account-and-credentials)
+    for Staging and Production environments.
+  versions: 2.x
+  type: Major update
+  date: October 1, 2019
+  link: https://github.com/magento/devdocs/pull/5501
+- description: Added instructions for getting connection credentials
+    to the [Set up RabbitMQ](https://devdocs.magento.com/guides/v2.3/cloud/project/project-conf-files_services-rabbit.html)
+    topic in the _Cloud Guide_.
+  versions: 2.2.x, 2.3.x
+  type: Major update
+  date: October 1, 2019
+  link: https://github.com/magento/devdocs/pull/5422
+- description: Added the "Disabling an Observer" section to the [Events and Observers](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/events-and-observers.html) 
+    topic in the _PHP Developer Guide_.
+  versions: 2.2.x, 2.3.x
+  type: Major update
+  date: October 1, 2019
+  link: https://github.com/magento/devdocs/pull/5489
+- description: Added the [RemainingCharacters widget](https://devdocs.magento.com/guides/v2.3/javascript-dev-guide/widgets/widget-remaining-characters.html)
+    topic to the _Javascript Developer Guide_.
+  versions: 2.2.x, 2.3.x
+  type: New topic
+  date: September 24, 2019
+  link: https://github.com/magento/devdocs/pull/5452
 - description: Added example [introspection queries](https://devdocs.magento.com/guides/v2.3/graphql/queries.html)
     to the _GraphQL Developer Guide_.
   versions: 2.3.x
@@ -617,8 +642,8 @@ entries:
   type: Major update
   date: June 22, 2019
   link: https://github.com/magento/devdocs/pull/4556
-- description: The [GraphQL quote endpoint](https://devdocs.magento.com/guides/v2.3/graphql/reference/quote.html)
-    adds numerous mutations for 2.3.2. Each mutation is documented separately. The
+- description: The [GraphQL cart query](https://devdocs.magento.com/guides/v2.3/graphql/queries/cart.html)
+    now has numerous related mutations for 2.3.2. Each mutation is documented separately. The
     [GraphQL release notes](https://devdocs.magento.com/guides/v2.3/graphql/release-notes.html)
     lists these new mutations.
   versions: 2.3.2
@@ -640,7 +665,7 @@ entries:
   date: June 22, 2019
   link: https://github.com/magento/devdocs/pull/4402
 - description: Added the `only_x_left_in_stock` and `stock_status` attributes to the
-    [Products endpoint](https://devdocs.magento.com/guides/v2.3/graphql/reference/products.html).
+    [Products endpoint](https://devdocs.magento.com/guides/v2.3/graphql/queries/products.html).
     These attributes were added to support Inventory Management orders.
   versions: 2.3.2
   type: Technical changes
@@ -1198,26 +1223,26 @@ entries:
   type: Technical changes
   date: March 26, 2019
   link: https://github.com/magento/devdocs/pull/3882
-- description: Added query and mutation to the [configurable]( https://devdocs.magento.com/guides/v2.3/graphql/reference/configurable-product.html)
-    and [downloadable product](https://devdocs.magento.com/guides/v2.3/graphql/reference/downloadable-product.html)
+- description: Added query and mutation to the [configurable]( https://devdocs.magento.com/guides/v2.3/graphql/product/configurable-product.html)
+    and [downloadable product](https://devdocs.magento.com/guides/v2.3/graphql/product/downloadable-product.html)
     endpoints
   versions: 2.3.1
   type: Major update
   date: March 26, 2019
   link: https://github.com/magento/devdocs/pull/3867
 - description: The "Searches and Pagination" topic  has been expanded to include more
-    information about queries and renamed to ["Queries"](https://devdocs.magento.com/guides/v2.3/graphql/queries.html).
+    information about queries and renamed to ["Using queries"](https://devdocs.magento.com/guides/v2.3/graphql/queries/index.html).
   versions: 2.3.1
   type: Major update
   date: March 26, 2019
   link: https://github.com/magento/devdocs/pull/3840
-- description: Added `url_path`, `url_key`, and `url_rewrites` to [product endpoint](https://devdocs.magento.com/guides/v2.3/graphql/reference/products.html)
+- description: Added `url_path`, `url_key`, and `url_rewrites` to [product endpoint](https://devdocs.magento.com/guides/v2.3/graphql/queries/products.html)
     and added URL rewrite attributes and examples to [UrlRewrite endpoint](https://devdocs.magento.com/guides/v2.3/graphql/reference/url-resolver.html)
   versions: 2.3.1
   type: Major update
   date: March 26, 2019
   link: https://github.com/magento/devdocs/pull/3859
-- description: Added queries and mutations to the [quote endpoint](https://devdocs.magento.com/guides/v2.3/graphql/reference/quote.html)
+- description: Added the [`cart` query](https://devdocs.magento.com/guides/v2.3/graphql/queries/cart.html) and several mutations.
   versions: 2.3.1
   type: Major update
   date: March 26, 2019
@@ -1227,12 +1252,12 @@ entries:
   type: New topic
   date: March 26, 2019
   link: https://github.com/magento/devdocs/pull/3855
-- description: Added an example to [CustomizableOptionInterface](https://devdocs.magento.com/guides/v2.3/graphql/reference/customizable-option-interface.html)
+- description: Added an example to [CustomizableOptionInterface](https://devdocs.magento.com/guides/v2.3/graphql/product/customizable-option-interface.html)
   versions: 2.3.1
   type: Major update
   date: March 26, 2019
   link: https://github.com/magento/devdocs/pull/3851
-- description: Added a topic on [GraphQL mutations](https://devdocs.magento.com/guides/v2.3/graphql/mutations.html)
+- description: Added a topic on [GraphQL mutations](https://devdocs.magento.com/guides/v2.3/graphql/mutations/index.html)
   versions: 2.3.1
   type: New topic
   date: March 26, 2019
@@ -1775,7 +1800,7 @@ entries:
   versions: 2.1.x, 2.2.x, 2.3.x
   type: Major update
   date: November 21 2018
-- description: Added the [GraphQL quote endpoint](https://devdocs.magento.com/guides/v2.3/graphql/reference/quote.html)
+- description: Added the [GraphQL cart query](https://devdocs.magento.com/guides/v2.3/graphql/queries/cart.html)
     topic
   versions: 2.3.x
   type: New topic
@@ -1785,7 +1810,7 @@ entries:
   versions: 2.3.x
   type: Major update
   date: November 20 2018
-- description: Added `CatalogInventory` attributes to the [products query](https://devdocs.magento.com/guides/v2.3/graphql/reference/products.html).
+- description: Added `CatalogInventory` attributes to the [products query](https://devdocs.magento.com/guides/v2.3/graphql/queries/products.html).
   versions: 2.3.x
   type: Technical changes
   date: November 16 2018
@@ -2051,7 +2076,7 @@ entries:
   versions: 2.3.x
   type: Technical changes
   date: Sep 5 2018
-- description: Added a note about filtered product attributes in [Products endpoint](https://devdocs.magento.com/guides/v2.3/graphql/reference/products.html)
+- description: Added a note about filtered product attributes in [Products endpoint](https://devdocs.magento.com/guides/v2.3/graphql/queries/products.html)
   versions: 2.3.x
   type: Technical changes
   date: Sep 5 2018
@@ -2065,7 +2090,7 @@ entries:
   versions: 2.x
   type: Technical changes
   date: Sep 5 2018
-- description: Updated [CustomAttributeMetadata endpoint](https://devdocs.magento.com/guides/v2.3/graphql/reference/custom-attribute-metadata.html)
+- description: Updated [CustomAttributeMetadata endpoint](https://devdocs.magento.com/guides/v2.3/graphql/queries/custom-attribute-metadata.html)
     to include the new `attribute_options` object.
   versions: 2.3.x
   type: Technical changes
@@ -2123,7 +2148,7 @@ entries:
   versions: 2.3.x
   type: Major update
   date: Aug 21 2018
-- description: Added information about breadcrumbs in the [GraphQL category](https://devdocs.magento.com/guides/v2.3/graphql/reference/categories.html)
+- description: Added information about breadcrumbs in the [GraphQL category](https://devdocs.magento.com/guides/v2.3/graphql/queries/category.html)
     topic.
   versions: 2.3.x
   type: Major update
@@ -2384,7 +2409,7 @@ entries:
   versions: 2.1.x, 2.2.x, 2.3.x
   type: Technical changes
   date: May 29 2018
-- description: Updated the GraphQL [Products endpoint](https://devdocs.magento.com/guides/v2.3/graphql/reference/products.html)
+- description: Updated the GraphQL [Products endpoint](https://devdocs.magento.com/guides/v2.3/graphql/queries/products.html)
     to include functionality contributed by community members.
   versions: 2.3.x
   type: Technical changes
@@ -2417,7 +2442,7 @@ entries:
   versions: 2.1.x, 2.2.x, 2.3.x
   type: Technical changes
   date: May 15 2018
-- description: Added filter attribute information in [GraphQL Product](https://devdocs.magento.com/guides/v2.3/graphql/reference/products.html)
+- description: Added filter attribute information in [GraphQL Product](https://devdocs.magento.com/guides/v2.3/graphql/queries/products.html)
   versions: 2.3.x
   type: Technical changes
   date: May 10 2018

@@ -43,13 +43,13 @@ The following components are involved in the indexing process:
 <li>indexer running</li>
 <li>indexer running mode configuration</li>
 <li>indexer status</li></ul></td>
-	</tr>
-	<tr>
-		<td><a href="{{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Mview" target="_blank">Magento\Framework\Mview</a></td>
-		<td><ul>
+   </tr>
+   <tr>
+      <td><a href="{{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Mview" target="_blank">Magento\Framework\Mview</a></td>
+      <td><ul>
 <li>Allows tracking database changes for a certain [entity](https://glossary.magento.com/entity) (product, [category](https://glossary.magento.com/category), etc.) and running change handler.</li>
 <li>Emulates the <a href="http://en.wikipedia.org/wiki/Materialized_view" target="_blank">materialized view</a> technology for MySQL using triggers and separate materialization process (provides executing [PHP](https://glossary.magento.com/php) code instead of SQL queries, which allows materializing multiple queries).</li></ul></td>
-	</tr>
+   </tr>
 </tbody></table>
 
  {: .bs-callout .bs-callout-warning }
@@ -93,11 +93,11 @@ Reindexing can be performed in two modes:
 
 To set these options:
 
-1.	Log in to the [Magento Admin](https://glossary.magento.com/magento-admin).
-2.	Click **System >** Tools **> Index Management**.
-3.	Select the checkbox next to each type of indexer to change.
-4.	From the **Actions** list, click the indexing mode.
-5.	Click **Submit**.
+1. Log in to the [Magento Admin](https://glossary.magento.com/magento-admin).
+1. Click **System >** Tools **> Index Management**.
+1. Select the checkbox next to each type of indexer to change.
+1. From the **Actions** list, click the indexing mode.
+1. Click **Submit**.
 
 You can also reindex from the [command line]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-index.html#configure-indexers)
 
