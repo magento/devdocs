@@ -118,7 +118,7 @@ Attribute |  Data Type | Description
 `amount` | Money | The price of the product and its currency code. See [Money object](#Money).
 `adjustments` | [PriceAdjustment] | An array of [PriceAdjustment](#PriceAdjustment) objects.
 
-##### Money object {#Money}
+#### Money object {#Money}
 
 A `Money` object defines a monetary value, including a numeric value and a currency code.
 
@@ -127,7 +127,7 @@ Attribute |  Data Type | Description
 `currency` | CurrencyEnum | A three-letter currency code, such as `USD` or `EUR`.
 `value` | Float | The price of the product
 
-##### PriceAdjustment array {#PriceAdjustment}
+#### PriceAdjustment array {#PriceAdjustment}
 
 The `PricedAdjustment` object defines the amount of money to apply as an adjustment, the type of adjustment to apply, and whether the item is included or excluded from the adjustment.
 
@@ -137,7 +137,7 @@ Attribute |  Data Type | Description
 `code` | PriceAdjustmentCodesEnum | One of `tax`, `weee`, or `weee_tax`.
 `description` | PriceAdjustmentDescriptionEnum | Indicates whether the entity described by the code attribute is included or excluded from the adjustment.
 
-#### ProductLinks object {#ProductLinks}
+### ProductLinks object {#ProductLinks}
 
 `ProductLinks` contains information about linked products, including the link type and product type of each item.
 
