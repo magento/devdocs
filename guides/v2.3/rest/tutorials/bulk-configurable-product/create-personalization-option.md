@@ -73,6 +73,6 @@ contributor_link: http://comwrap.com/
   {:.no_toc}
 
 {:.ref-header}
-Related topics
+Related topic
 
-   * [Order Processing with REST APIs Tutorial]({{ page.baseurl }}/rest/tutorials/orders/order-intro.html)
+[Order Processing with REST APIs Tutorial]({{ page.baseurl }}/rest/tutorials/orders/order-intro.html)
