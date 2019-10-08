@@ -14,9 +14,9 @@ The `Magento_CompanyCredit` module adds the "Payment on Account" payment method 
 
 With the `Magento_CompanyCredit` module
 
-- a customer can pay orders with Payment on Account method (or in credit)
-- an admin user can manage credit and credit settings for a company (in the admin panel);
-- merchants and customers can track credit history, and specifically: credit allocation, order placement, credit reimbursement, credit change (amount, currency or possibility to exceed credit limit).
+-  a customer can pay orders with Payment on Account method (or in credit)
+-  an admin user can manage credit and credit settings for a company (in the admin panel);
+-  merchants and customers can track credit history, and specifically: credit allocation, order placement, credit reimbursement, credit change (amount, currency or possibility to exceed credit limit).
 
 The company credit functionality is available for company users only.
 
@@ -46,9 +46,9 @@ For more information about layouts, see the [Layout documentation]({{ page.baseu
 
 The following directories contain extensible UI components:
 
-* `Magento\CompanyCredit\view\adminhtml\ui_component` -  company form, company listing, history listing
+-  `Magento\CompanyCredit\view\adminhtml\ui_component` -  company form, company listing, history listing
 
-* `Magento\CompanyCredit\view\frontend\ui_component` - balance history listing
+-  `Magento\CompanyCredit\view\frontend\ui_component` - balance history listing
 
 For more information, see [UI Listing/Grid Component]({{ page.baseurl }}/ui_comp_guide/components/ui-listing-grid.html) and [UI Form Component]({{ page.baseurl }}/ui_comp_guide/components/ui-form.html)
 

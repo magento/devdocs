@@ -35,9 +35,9 @@ To add a custom preprocessor, take the following steps:
 
 1. In `<your_module_dir>/etc/di.xml`, declare the following:
 
-   * your custom adapter
-   * your processor (if relevant)
-   * the renderer for the client-side compilation (if relevant)
+   *  your custom adapter
+   *  your processor (if relevant)
+   *  the renderer for the client-side compilation (if relevant)
 
 The content of your `di.xml` will be similar to the following:
 
@@ -88,5 +88,4 @@ The content of your `di.xml` will be similar to the following:
 
 ## Related reading
 
-- [Magento PHP Developer Guide]({{ page.baseurl }}/extension-dev-guide/bk-extension-dev-guide.html)
-
+*  [Magento PHP Developer Guide]({{ page.baseurl }}/extension-dev-guide/bk-extension-dev-guide.html)
