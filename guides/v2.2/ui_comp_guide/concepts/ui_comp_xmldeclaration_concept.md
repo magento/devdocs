@@ -17,7 +17,7 @@ Example of a basic [UI component](https://glossary.magento.com/ui-component) dec
 
 ```xml
 <referenceContainer name="page-container">
-	<uiComponent name="%instance_name%"/>
+    <uiComponent name="%instance_name%"/>
 </referenceContainer>
 ```
 
@@ -29,8 +29,8 @@ The instance configuration file name is the name of instance (`%instance_name%`)
 
 Following are the rules for the instance configuration files:
 
-* The top node must have the name of one of the basic UI components. <!-- need to mention or link what components -->
-* The top node must contain a link to the XSD schema.
+*  The top node must have the name of one of the basic UI components. <!-- need to mention or link what components -->
+*  The top node must contain a link to the XSD schema.
 
 In the top node, there can be an `<argument/>` node. The `<argument/>` node contains the configuration for that basic UI component. The `<argument/>` node's `name` attribute value must be `data`. The child nodes of the `<argument>` node will be the argument properties that will be passed in to the component.
 
@@ -115,9 +115,9 @@ In this example we showed only a small part of the possible configuration.
 
 The default configuration of a UI component is declared in one of the following ways:
 
-- inside the UI component itself, in the `.js` file
-- in the [`definition.xml` file]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/ui_component/etc/definition.xml)
-- in both places, in which case the configurations merge (the UI component `.js` file has priority).
+*  inside the UI component itself, in the `.js` file
+*  in the [`definition.xml` file]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/ui_component/etc/definition.xml)
+*  in both places, in which case the configurations merge (the UI component `.js` file has priority).
 
 In the above example, the Fieldset UI component uses a merged configuration from both the `definition.xml` file and from the UI component's `.js` file.
 

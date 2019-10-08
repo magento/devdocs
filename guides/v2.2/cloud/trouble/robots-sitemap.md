@@ -80,7 +80,7 @@ To use a Fastly VCL snippet for particular domain redirect:
 
 Create a `pub/media/domain_robots.txt` file, where the domain is `domain.com` and use the next VCL snippet:
 
-```
+```json
 {
   "name": "domain_robots",
   "dynamic": "0",
@@ -94,7 +94,7 @@ The VCL snippet routes `http://domain.com/robots.txt` and presents the `pub/medi
 
 To configure a redirect for `robots.txt` and `sitemap.xml` in a single snippet, create `pub/media/domain_robots.txt` and `pub/media/domain_sitemap.xml` files, where the domain is `domain.com` and use the next VCL snippet:
 
-```
+```json
 {
   "name": "domain_sitemaprobots",
   "dynamic": "0",

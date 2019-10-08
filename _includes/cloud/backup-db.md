@@ -9,6 +9,9 @@ To back up your Integration environment database and code:
     magento-cloud db:dump
     ```
 
+    {: .bs-callout-info }
+    The `magento-cloud db:dump` command runs the [mysqldump](https://dev.mysql.com/doc/refman/8.0/en/mysqldump.html) command with the `--single-transaction` flag, which allows you to back up your database without locking the tables.
+
 1.  Back up code and media.
 
     ```bash

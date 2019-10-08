@@ -47,32 +47,34 @@ This example shows a simplified way of creating a customer account. Typically, y
 It is recommended that you substitute the value of the `email` parameter with a real email address so that you receive all notifications.
 
 {% collapsible Show code sample %}
+
 ```json
 {
-	"customer": {
-		"email": "jdoe@example.com",
-		"firstname": "Jane",
-		"lastname": "Doe",
-		"addresses": [{
-			"defaultShipping": true,
-			"defaultBilling": true,
-			"firstname": "Jane",
-			"lastname": "Doe",
-			"region": {
-				"regionCode": "NY",
-				"region": "New York",
-        "regionId":43
-			},
-			"postcode": "10755",
-			"street": ["123 Oak Ave"],
-			"city": "Purchase",
-			"telephone": "512-555-1111",
-			"countryId": "US"
-		}]
-	},
+  "customer": {
+    "email": "jdoe@example.com",
+    "firstname": "Jane",
+    "lastname": "Doe",
+    "addresses": [{
+      "defaultShipping": true,
+      "defaultBilling": true,
+      "firstname": "Jane",
+      "lastname": "Doe",
+      "region": {
+        "regionCode": "NY",
+        "region": "New York",
+                                "regionId":43
+      },
+      "postcode": "10755",
+      "street": ["123 Oak Ave"],
+      "city": "Purchase",
+      "telephone": "512-555-1111",
+      "countryId": "US"
+    }]
+  },
   "password": "Password1"
 }
 ```
+
 {% endcollapsible %}
 
 **Response**
@@ -80,6 +82,7 @@ It is recommended that you substitute the value of the `email` parameter with a 
 Magento assigned this user `id` value of `2`.
 
 {% collapsible Show code sample %}
+
 ```json
 {
   "id": 2,
@@ -120,6 +123,7 @@ Magento assigned this user `id` value of `2`.
   "disable_auto_group_change": 0
 }
 ```
+
 {% endcollapsible %}
 
 You can log in to the Luma store using the username `jdoe@example.com` and password `Password1`.
