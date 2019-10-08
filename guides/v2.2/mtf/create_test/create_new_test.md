@@ -11,11 +11,11 @@ To make the documentation more consistent, we created a completely new test spec
 
 Create a synonym group (synonyms are a way to expand the scope of eligible matching products) with:
 
-- Scope:
-    - All Websites
-    - All Store Views
-    - Default Store View
-- Synonyms: shoes, foot wear, men shoes, women shoes.
+-  Scope:
+   -  All Websites
+   -  All Store Views
+   -  Default Store View
+-  Synonyms: shoes, foot wear, men shoes, women shoes.
 
 ### Manual testing scenario {#manual-test}
 
@@ -61,11 +61,11 @@ Create a synonym group (synonyms are a way to expand the scope of eligible match
 
 #### Step 1. Check the FTF configuration and environment {#check-mtf}
 
-* Adjust configuration. Learn how to [adjust a configuration][].
+-  Adjust configuration. Learn how to [adjust a configuration][].
 
-* Prepare Magento application. Learn how to [prepare Magento application][].
+-  Prepare Magento application. Learn how to [prepare Magento application][].
 
-* Prepare environment for test run. Learn how to [prepare environment for test run][].
+-  Prepare environment for test run. Learn how to [prepare environment for test run][].
 
 #### Step 2. Create the testing object - a fixture {#create-test-object}
 
@@ -444,8 +444,8 @@ The following code contains a data set, but doesn't have data yet:
 
 According to a New Synonym Group form we need to enter data in the `synonyms` and `scope_id` fields.
 
-- `synonyms` field. We need to [set data to a fixture field][]. The name of the field should be `<name of a fixture>/data/<name of the field>`. It is `name = "synonym/data/synonyms"`. To make data unique in each variation, we can use the [`%isolation%` placeholder][].
-- `scope_id` field. We need to [set data to a fixture field from a repository][]. The name of the field should be `<name of a fixture>/data/<name of the field>/dataset`. It is `name="synonym/data/scope_id/dataset"`. As you remember from [Step 2][], we use the [data source][] to process this field. The data source loads the Store fixture with the Store repository, and returns the name of the field we need. In a `dataset` value, we should specify a name of the Store repository `dataset name` from `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/Store/Test/Repository/Store.xml`.
+-  `synonyms` field. We need to [set data to a fixture field][]. The name of the field should be `<name of a fixture>/data/<name of the field>`. It is `name = "synonym/data/synonyms"`. To make data unique in each variation, we can use the [`%isolation%` placeholder][].
+-  `scope_id` field. We need to [set data to a fixture field from a repository][]. The name of the field should be `<name of a fixture>/data/<name of the field>/dataset`. It is `name="synonym/data/scope_id/dataset"`. As you remember from [Step 2][], we use the [data source][] to process this field. The data source loads the Store fixture with the Store repository, and returns the name of the field we need. In a `dataset` value, we should specify a name of the Store repository `dataset name` from `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/Store/Test/Repository/Store.xml`.
 
 | Variation #  |`synonyms`|`scope_id`
 |---
@@ -839,6 +839,7 @@ You can run the test using your IDE or the CLI. The Selenium Server must be [up 
 ```bash
 cd <magento2_root_dir>/dev/tests/functional
 ```
+
 ```bash
 vendor/bin/phpunit --filter CreateSynonymEntityTest
 ```
@@ -1002,6 +1003,7 @@ You can run the test using your IDE or the CLI. The Selenium Server must be [up 
 ```bash
 cd <magento2_root_dir>/dev/tests/functional
 ```
+
 ```bash
 vendor/bin/phpunit --filter CreateSynonymEntityTest
 ```
