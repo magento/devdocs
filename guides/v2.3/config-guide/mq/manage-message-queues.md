@@ -58,7 +58,7 @@ Edit */app/etc/env.php* file for configure cron job `consumers_runner`
 ```
 
 * `cron_run` - A boolean value that enables or disables the `consumers_runner` cron job (default = `true`).
-* `max_messages` - A number specifying the maximum number of messages each consumer must process before terminating (default = `1000`). Although we do not recommend it, you can use 0 to prevent the consumer from terminating.
+* `max_messages` - The maximum number of messages each consumer must process before terminating (default = `10000`). Although we do not recommend it, you can use 0 to prevent the consumer from terminating.
 * `consumers` - An array of strings specifying which consumer(s) to run. An empty array runs *all* consumers.
 
 {% include config/message-queue-consumers.md %}
