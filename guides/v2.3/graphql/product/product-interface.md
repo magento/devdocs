@@ -9,17 +9,10 @@ The `items` that are returned in a `ProductInterface` array can also contain att
 -  Custom and extension attributes defined in any attribute set
 -  The attribute is defined in the [PhysicalProductInterface](#PhysicalProductInterface) or [CustomizableOptionInterface]({{ page.baseurl }}/graphql/product/customizable-option-interface.html)
 -  Product types that define their own implementation of `ProductInterface` including:
-<<<<<<< HEAD
-  -  [BundleProduct]({{ page.baseurl }}/graphql/product/bundle-product.html)
-  -  [ConfigurableProduct]({{ page.baseurl }}/graphql/product/configurable-product.html)
-  -  [DownloadableProduct]({{ page.baseurl }}/graphql/product/downloadable-product.html)
-  -  [GroupedProduct]({{ page.baseurl }}/graphql/product/grouped-product.html)
-=======
--  [BundleProduct]({{ page.baseurl }}/graphql/product/bundle-product.html)
--  [ConfigurableProduct]({{ page.baseurl }}/graphql/product/configurable-product.html)
--  [DownloadableProduct]({{ page.baseurl }}/graphql/product/downloadable-product.html)
--  [GroupedProduct]({{ page.baseurl }}/graphql/product/grouped-product.html)
->>>>>>> Q4-integration
+   -  [BundleProduct]({{ page.baseurl }}/graphql/product/bundle-product.html)
+   -  [ConfigurableProduct]({{ page.baseurl }}/graphql/product/configurable-product.html)
+   -  [DownloadableProduct]({{ page.baseurl }}/graphql/product/downloadable-product.html)
+   -  [GroupedProduct]({{ page.baseurl }}/graphql/product/grouped-product.html)
 
 ## ProductInterface attributes
 
@@ -49,13 +42,9 @@ Attribute | Data type | Description
 `new_to_date` | String | The end date for new product listings
 `only_x_left_in_stock` | Float | The "Only X left Threshold" assigned to the product. This attribute is defined in the `InventoryGraphQl` module.
 `options_container` | String | If the product has multiple options, determines where they appear on the product page
-<<<<<<< HEAD
-`price` | ProductPrices | The price of an item. A `ProductPrice` object is returned. See [ProductPrices](#ProductPrices) for more information.
-=======
 `price` | ProductPrices | Deprecated. Use `price_range` instead.<br/>The price of an item. A `ProductPrice` object is returned
 `price_range` | [PriceRange!](#PriceRange) |  A `PriceRange` object, indicating the range of prices for the product
 `price_tiers` | [TierPrice] | An array of `TierPrice` objects
->>>>>>> Q4-integration
 `product_links` | [ProductLinksInterface] | An array of [ProductLinks](#ProductLinks) objects
 `related_products` | [ProductInterface] | An array of related products
 `short_description` | ComplexTextValue | An object that contains a short description of the product. Its use depends on the store's theme. The object can include simple HTML tags
@@ -68,44 +57,26 @@ Attribute | Data type | Description
 `swatch_image` | String | The file name of a swatch image. This attribute is defined in the `SwatchesGraphQl` module.
 `tax_class_id` | Int | An ID assigned to a tax class. This attribute is defined in the `TaxGraphQl` module.
 `thumbnail` | [ProductImage](#ProductImage) | An object that contains the URL and label for the product's thumbnail image
-<<<<<<< HEAD
-`tier_price` | Float | The price when tier pricing is in effect and the items purchased threshold has been reached
-`tier_prices` | [ProductTierPrices] | An array of [ProductTierPrices](#ProductTier) objects
-=======
 `tier_price` | Float | Deprecated. Use `price_tiers` instead. The price when tier pricing is in effect and the items purchased threshold has been reached
 `tier_prices` | [ProductTierPrices] | Deprecated. Use `price_tiers` instead. An array of [ProductTierPrices](#ProductTier) objects
->>>>>>> Q4-integration
 `type_id` | String | One of `simple`, `virtual`, `bundle`, `downloadable`,`grouped`, `configurable`
 `updated_at` | String | The timestamp indicating when the product was last updated
 `upsell_products` | [ProductInterface] | An array of up-sell products
 `url_key` | String | The part of the URL that identifies the product. This attribute is defined in the `CatalogUrlRewriteGraphQl` module
 `url_path` | String | Deprecated. Use `canonical_url` instead
-<<<<<<< HEAD
-=======
-`url_suffix` | String | The part of the URL that is appended to the `url_key`, such as `.html`. This attribute is defined in the `CatalogUrlRewriteGraphQl` module
->>>>>>> Q4-integration
 `url_rewrites` | [[UrlRewrite]](#urlRewriteObject) | A list of URL rewrites
+`url_suffix` | String | The part of the URL that is appended to the `url_key`, such as `.html`. This attribute is defined in the `CatalogUrlRewriteGraphQl` module
 `websites` | [[Website]](#websiteObject) | An array of websites in which the product is available
 
 ### ProductPrices object {#ProductPrices}
 
-<<<<<<< HEAD
-=======
 {:.bs-callout-info}
 The `ProductPrices` object has been deprecated. Use the `PriceRange` object instead.
 
->>>>>>> Q4-integration
 The `ProductPrices` object contains the regular price of an item, as well as its minimum and maximum prices. Only composite products, which include bundle, configurable, and grouped products, can contain a minimum and maximum price.
 
 Attribute |  Data Type | Description
 --- | --- | ---
-<<<<<<< HEAD
-`maximalPrice` | Price | Used for composite (bundle, configurable, grouped) products. This is the highest possible final price for all the options defined within a composite product. If you're specifying a price range, this would be the "to" value.
-`minimalPrice` | Price | Used for composite (bundle, configurable, grouped) products. This is the lowest possible final price for all the options defined within a composite product. If you're specifying a price range, this would be the "from" value.
-`regularPrice` | Price | The base price of a product.
-
-#### Price object {#Price}
-=======
 `maximalPrice` | Price | Deprecated. Use `PriceRange.maximum_price` instead. Used for composite (bundle, configurable, grouped) products. This is the highest possible final price for all the options defined within a composite product. If you're specifying a price range, this would be the "to" value
 `minimalPrice` | Price | Deprecated. Use `PriceRange.minimum_price` instead. Used for composite (bundle, configurable, grouped) products. This is the lowest possible final price for all the options defined within a composite product. If you're specifying a price range, this would be the "from" value
 `regularPrice` | Price | Deprecated. Use `PriceRange.maximum_price` or `PriceRange.minimum_price` instead. The base price of a product
@@ -139,7 +110,6 @@ Attribute |  Data Type | Description
 `percent_off` | Float | The discount expressed as a percentage
 
 ### Price object {#Price}
->>>>>>> Q4-integration
 
 The `Price` object defines the price of a product as well as any tax-related adjustments.
 
@@ -241,66 +211,6 @@ Attribute | Type | Description
 
 ### ProductTierPrices object {#ProductTier}
 
-<<<<<<< HEAD
-The `ProductTierPrices` object defines a tier price, which is a quantity discount offered to a specific customer group.
-
-Attribute | Type | Description
---- | --- | ---
-`customer_group_id` | Int | The ID of the customer group
-`percentage_value` | Float | The percentage discount of the item
-`qty` | Float | The number of items that must be purchased to qualify for tier pricing
-`value` | Float | The price of the fixed price item
-`website_id` | Int | The ID assigned to the website
-
-## PhysicalProductInterface {#PhysicalProductInterface}
-
-`PhysicalProductInterface`defines the weight of all tangible products.
-
-Attribute | Type | Description
---- | --- | ---
-`weight` | Float | The weight of the item, in units defined by the store
-
-## LayerFilter object
-
-The `LayerFilter` object can be returned in a response to help create layered navigation on your app.
-
-Attribute | Type | Description
---- | --- | ---
-`filter_items` |  [LayerFilterItemInterface] | An array of filter items
-`filter_items_count` | Int | The number of filter items in filter group
-`name` | String | The layered navigation filter name
-`request_var` | String | The request variable name for the filter query
-
-### LayerFilterItemInterface
-
-`LayerFilterItemInterface` contains an array of items that match the terms defined in the filter.
-
-Attribute | Type | Description
---- | --- | ---
-`items_count` | Int | The number of items the filter returned
-`label` | String | The label applied to a filter
-`value_string` | String | The value for filter request variable to be used in a query
-
-## SortFields object
-
-The `SortFields` object contains the default value for sort fields as well as all possible sort fields.
-
-Attribute | Type | Description
---- | --- | ---
-`default` | String | The default sort field
-`options` | `SortField` | An array that contains all the fields you can use for sorting
-
-### SortField object
-
-Attribute | Type | Description
---- | --- | ---
-`label` | String | The attribute's label
-`value` | String | The attribute name or code to use as the sort field
-
-### Website object {#websiteObject}
-
-Use the `Website` attributes to retrieve information about the website's configuration, which includes the website name, website code, and default group ID.
-=======
 {:.bs-callout-info}
 The `ProductTierPrices` object and all of its attributes have been deprecated. Use `TierPrice` instead.
 
@@ -327,28 +237,19 @@ Attribute | Type | Description
 ### Website object {#websiteObject}
 
 Use the `Website` attributes to retrieve information about the website's configuration, which includes the website name, website code, and default group ID. The `Website` object is defined in the StoreGraphQl module.
->>>>>>> Q4-integration
 
 Attribute |  Data Type | Description
 --- | --- | ---
 `code` | String | A code assigned to the website to identify it
 `default_group_id` | String | The default group ID that the website has
 `id` | Integer | The ID number assigned to the store
-<<<<<<< HEAD
-`name` | String | The website name. Websites use this name to identify it easier.
-=======
 `is_default` | Boolean | Indicates whether this is the default website
 `name` | String | The website name. Websites use this name to identify it easier
->>>>>>> Q4-integration
 `sort_order` | Integer | The attribute to use for sorting websites
 
 ### UrlRewrite object {#urlRewriteObject}
 
-<<<<<<< HEAD
-The `products` query can request details about the `UrlRewrite` object.
-=======
 The `products` query can request details about the `UrlRewrite` object. This object is defined in the UrlRewriteGraphQl module.
->>>>>>> Q4-integration
 
 Attribute | Type | Description
 --- | --- | ---
@@ -363,8 +264,6 @@ Attribute | Type | Description
 --- | --- | ---
 `name` | String | The parameter name, such as `id`
 `value` | String | The value assigned to the parameter
-<<<<<<< HEAD
-=======
 
 ## PhysicalProductInterface {#PhysicalProductInterface}
 
@@ -373,4 +272,3 @@ Attribute | Type | Description
 Attribute | Type | Description
 --- | --- | ---
 `weight` | Float | The weight of the item, in units defined by the store
->>>>>>> Q4-integration
