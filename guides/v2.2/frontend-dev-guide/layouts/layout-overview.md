@@ -108,7 +108,8 @@ Layout validations and error handling depends on the [application mode] in which
 
 - production or default modes: syntax is validated in `.xml` and `.xsd` files. If validation fails, errors are logged to the `var/log` directory without throwing an exception. The validation according to the xsd schema is not performed.
 
-## Related topics
+{:.ref-header}
+Related topics
 
 * [Layout instructions]
 * [Common layout customization tasks]

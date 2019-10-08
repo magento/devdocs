@@ -46,7 +46,7 @@ Instead, use [Redis]({{ page.baseurl }}/config-guide/redis/config-redis.html) fo
 
 This section briefly discusses settings we recommend you consider for the server on which Magento runs. Some of these settings are not directly related to Magento; these are provided as suggestions only.
 
-#### Log rotation
+### Log rotation
 
 The UNIX `logrotate` utility enables you to administer systems that generate large numbers of log files.  It allows automatic rotation, compression, removal, and mailing of log files.  Each log file can be handled daily, weekly, monthly, or when the log file exceeds a specified size.
 
@@ -56,7 +56,7 @@ For more information, see one of the following:
 * [stackexchange](http://unix.stackexchange.com/questions/85662/how-to-properly-automatically-manually-rotate-log-files-for-production-rails-app)
 * [logrotate man page](http://linuxconfig.org/logrotate-8-manual-page)
 
-#### Set up iptables rules to enable various Magento services to communicate.
+### Set up iptables rules to enable various Magento services to communicate.
 
 Whether you have one server or many, you must open ports in the firewall to enable Magento services to communicate. For example, if you use the Solr search engine with {{site.data.var.ee}}, you must enable it to communicate with the web server. If you have multiple web nodes, you must enable them to communicate with each other.
 
@@ -65,7 +65,7 @@ More information:
 * Ubuntu: [Ubuntu documentation page](https://help.ubuntu.com/community/IptablesHowTo).
 * CentOS: [CentOS reference page](http://wiki.centos.org/HowTos/Network/IPTables).
 
-#### Security Enhanced Linux (SELinux) rules
+### Security Enhanced Linux (SELinux) rules
 
 We don't recommend whether or not you use SELinux at all; however, if you use it, you must configure Magento services to communicate with each other similar to configuring iptables.
 
@@ -74,7 +74,7 @@ More information:
 * Ubuntu: [Debian handbook](https://debian-handbook.info/browse/stable/sect.selinux.html)
 * CentOS: [CentOS wiki](https://wiki.centos.org/HowTos/SELinux)
 
-#### Set up an e-mail server
+### Set up an e-mail server
 
 Magento requires an e-mail server. We don't recommend a particular server but you can try any of the following:
 

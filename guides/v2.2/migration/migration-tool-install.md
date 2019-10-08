@@ -121,7 +121,8 @@ If you've cloned Magento 2 from the GitHub repository, follow the steps below to
 
 3. The `version` entry in that file is the version of the Data Migration Tool.
 
-## Related topics
+{:.ref-header}
+Related topics
 
 *  <a href="{{ page.baseurl }}/migration/migration-tool-configure.html">Configure migration</a>
 *  <a href="{{ page.baseurl }}/migration/migration-tool-preconditions.html">Preconditions</a>

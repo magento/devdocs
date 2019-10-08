@@ -53,7 +53,7 @@ To run System Upgrade:
 
 1. Continue with [Step 1. Select versions to upgrade]({{ page.baseurl }}/comp-mgr/upgrader/upgrade-main-pg.html).
 
-#### Error
+### Error
 
 The following error can indicate one of several issues, including that you haven't entered your [authentication keys]({{ page.baseurl }}/install-gde/prereq/connect-auth.html) in the Magento Admin:
 
@@ -61,7 +61,7 @@ The following error can indicate one of several issues, including that you haven
 
 For suggested solutions to other causes indicated by this message, see [troubleshooting]({{ page.baseurl }}/comp-mgr/trouble/cman/were-sorry.html).
 
-#### Sample data
+### Sample data
 
 The System Upgrade utility installs sample data for you but doesn't display it, if you:
 

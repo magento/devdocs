@@ -13,7 +13,8 @@ functional_areas:
 
 {% include install/web/install-web_1-readiness.md %}
 
-#### Next step
+{:.ref-header}
+Related topics
 
 [Step 2. Add a database]({{ page.baseurl }}/install-gde/install/hosted/hosted_install_2_db.html)
 

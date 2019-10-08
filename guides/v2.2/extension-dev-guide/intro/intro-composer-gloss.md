@@ -38,7 +38,8 @@ Merchants do not need to understand that, under the covers, some packages are sh
 {: .bs-callout-warning }
 You can upload to Magento Marketplace as many shared packages as you want but you must specifically give components access to them. Failure to do so means your components won't work properly after they're installed by merchants. For more information, see the [Magento Marketplace User Guide](http://docs.magento.com/marketplace/user_guide/getting-started.html){: target="_blank"}.
 
-#### For more information
+{:.ref-header}
+Related topics
 
 * [metapackages]({{ page.baseurl }}/extension-dev-guide/package/package_module.html#package-metapackage)
 * [component types in `composer.json`]({{ page.baseurl }}/extension-dev-guide/build/composer-integration.html).

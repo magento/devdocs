@@ -10,7 +10,9 @@ functional_areas:
   - Configuration
 ---
 
-**Previous step:**
+{:.ref-header}
+Previous step
+
 [Prepare for local environment setup]({{ page.baseurl }}/cloud/before/before-workspace.html)
 
 Install the following software packages and tools on your local to prepare for Magento code development. If you already have these packages installed, check for any recommendations or notes and continue to the next step.
@@ -44,7 +46,7 @@ We strongly recommend installing [Nginx]({{ page.baseurl }}/install-gde/prereq/n
 
 ## PHP (local) {#php}
 
-Install [PHP](https://glossary.magento.com/php) on your local. We recommend PHP 7.1.3+ or 7.2. For information on installing PHP on CentOS and Ubuntu see [PHP](../../../v2.3/install-gde/prereq/php-centos-ubuntu.html). For instructions for another OS, see the [PHP documentation](http://php.net/manual/en/install.php).
+Install [PHP](https://glossary.magento.com/php) on your local. For information on installing PHP see [PHP Settings]({{ page.baseurl }}/install-gde/prereq/php-settings.html). For instructions for another OS, see the [PHP documentation](http://php.net/manual/en/install.php).
 
 The following packages may also be helpful for your PHP installation:
 
@@ -220,5 +222,7 @@ The requirements listed in this topic are specific to {{site.data.var.ece}} envi
 
 You can also install additional [optional software]({{ page.baseurl }}/install-gde/prereq/optional.html). These packages should be installed on the local VM.
 
-**Next step:**
+{:.ref-header}
+Next step
+
 [Enable SSH keys]({{ page.baseurl }}/cloud/before/before-workspace-ssh.html)

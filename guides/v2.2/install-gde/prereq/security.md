@@ -57,22 +57,22 @@ To enable Apache to initiate a connection to another host with SELinux enabled:
 
 1. Enter one of the following commands:
 
-   * CentOS: `setsebool -P httpd_can_network_connect=1`
+   *  CentOS: `setsebool -P httpd_can_network_connect=1`
 
-   * Ubuntu: `setsebool -P apache2_can_network_connect=1`
+   *  Ubuntu: `setsebool -P apache2_can_network_connect=1`
 
 ## Opening Ports In Your Firewall {#install-iptables}
 
 Depending on your security requirements, you might find it necessary to open port 80 and other ports in your firewall. Because of the sensitive nature of networking security, Magento strongly recommends you consult with your IT department before proceeding. Following are some suggested references:
 
-* Ubuntu: [Ubuntu documentation page](https://help.ubuntu.com/community/IptablesHowTo){:target="_blank"}.
-* CentOS: [CentOS how-to](http://wiki.centos.org/HowTos/Network/IPTables){:target="_blank"}.
+*  Ubuntu: [Ubuntu documentation page](https://help.ubuntu.com/community/IptablesHowTo){:target="_blank"}.
+*  CentOS: [CentOS how-to](http://wiki.centos.org/HowTos/Network/IPTables){:target="_blank"}.
 
-#### Related topics:
+{:.ref-header}
+Related topics
 
-* [Apache]({{ page.baseurl }}/install-gde/prereq/apache.html)
-* [PHP 5.5, 5.6, or 7.0—Ubuntu]({{ page.baseurl }}/install-gde/prereq/php-ubuntu.html)
-* [PHP 5.5, 5.6, or 7.0—CentOS]({{ page.baseurl }}/install-gde/prereq/php-centos.html)
-* [MySQL]({{ page.baseurl }}/install-gde/prereq/mysql.html)
-* [Installing optional software]({{ page.baseurl }}/install-gde/prereq/optional.html)
-* [How to get the Magento software]({{ page.baseurl }}/install-gde/bk-install-guide.html)
+*  [Apache]({{ page.baseurl }}/install-gde/prereq/apache.html)
+*  [PHP]({{ page.baseurl }}/install-gde/prereq/php-settings.html)
+*  [MySQL]({{ page.baseurl }}/install-gde/prereq/mysql.html)
+*  [Installing optional software]({{ page.baseurl }}/install-gde/prereq/optional.html)
+*  [How to get the Magento software]({{ page.baseurl }}/install-gde/bk-install-guide.html)

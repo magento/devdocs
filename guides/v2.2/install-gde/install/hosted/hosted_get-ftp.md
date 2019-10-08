@@ -78,6 +78,7 @@ To extract the archive:
 
    ![]({{ site.baseurl }}/common/images/install-merch_file-manager-after.png){:width="750px"}
 
-#### Next step
+{:.ref-header}
+Related topics
 
 [Install the Magento software]({{ page.baseurl }}/install-gde/install/hosted/hosted_install.html)

@@ -29,8 +29,8 @@ Before you begin, you must:
 
 Use the following guidelines to configure remote database connections if your web server or database server are clustered:
 
-* You must configure a connection for each web server node
-* Typically, you configure a database connection to the database load balancer; however, database clustering can be complex and configuring it is up to you. Magento makes no specific recommendations for database clustering.
+*  You must configure a connection for each web server node
+*  Typically, you configure a database connection to the database load balancer; however, database clustering can be complex and configuring it is up to you. Magento makes no specific recommendations for database clustering.
 
    For more information, see [MySQL documentation](https://dev.mysql.com/doc/refman/5.6/en/mysql-cluster.html).
 
@@ -60,7 +60,7 @@ To create a remote connection:
    {:.bs-callout .bs-callout-info}
    On Ubuntu 16, the path is typically `/etc/mysql/mysql.conf.d/mysqld.cnf`.
 
-3. Search the configuration file for `bind-address`.
+1. Search the configuration file for `bind-address`.
 
    If it exists, change the value as follows.
 
@@ -72,15 +72,15 @@ To create a remote connection:
 
    See [MySQL documentation](https://dev.mysql.com/doc/refman/5.6/en/server-options.html), especially if you have a clustered web server.
 
-3. Save your changes to the configuration file and exit the text editor.
-4. Restart the MySQL service:
+1. Save your changes to the configuration file and exit the text editor.
+1. Restart the MySQL service:
 
-   * CentOS: `service mysqld restart`
+   *  CentOS: `service mysqld restart`
 
-   * Ubuntu: `service mysql restart`
+   *  Ubuntu: `service mysql restart`
 
-   {:.bs-callout .bs-callout-info}
-   If MySQL fails to start, look in syslog for the source of the issue. Resolve the issue using [MySQL documentation](https://dev.mysql.com/doc/refman/5.6/en/server-options.html#option_mysqld_bind-address) or another authoritative source.
+    {:.bs-callout .bs-callout-info}
+    If MySQL fails to start, look in syslog for the source of the issue. Resolve the issue using [MySQL documentation](https://dev.mysql.com/doc/refman/5.6/en/server-options.html#option_mysqld_bind-address) or another authoritative source.
 
 ## Grant access to a database user {#instgde-prereq-mysql-remote-access}
 
@@ -91,8 +91,8 @@ This example grants the `root` database user full access to the database on the 
 To grant access to a database user:
 
 1. Log in to the database server.
-2. Connect to the MySQL database as the `root` user.
-3. Enter the following command:
+1. Connect to the MySQL database as the `root` user.
+1. Enter the following command:
 
    ```shell
    GRANT ALL ON <local database name>.* TO <remote web node username>@<remote web node server ip address> IDENTIFIED BY '<database user password>';
@@ -134,17 +134,17 @@ If your web server is clustered, enter the command on each web server host.
 
 When you install the Magento software using either the command line or Setup Wizard, you must specify the following:
 
-* The Base [URL](https://glossary.magento.com/url) (also referred to as the *store address*) specifies the hostname or IP address of the *web node*
-* Database host is the *remote database server* IP address (or load balancer if the database server is clustered)
-* Database username is the *local web node* database user to which you gave access
-* Database password is the local web node user's password
-* Database name is the name of the database on the remote server
+*  The Base [URL](https://glossary.magento.com/url) (also referred to as the *store address*) specifies the hostname or IP address of the *web node*
+*  Database host is the *remote database server* IP address (or load balancer if the database server is clustered)
+*  Database username is the *local web node* database user to which you gave access
+*  Database password is the local web node user's password
+*  Database name is the name of the database on the remote server
 
-#### Related topics
+{:.ref-header}
+Related topics
 
-* [Installing optional software]({{page.baseurl }}/install-gde/prereq/optional.html)
-* [Apache]({{page.baseurl }}/install-gde/prereq/apache.html)
-* [PHP&mdash;Ubuntu]({{page.baseurl }}/install-gde/prereq/php-centos-ubuntu.html#php-for-ubuntu)
-* [PHP&mdash;CentOS]({{page.baseurl }}/install-gde/prereq/php-centos-ubuntu.html#php-for-centos)
-* [Configuring security options]({{page.baseurl }}/install-gde/prereq/security.html)
-* [How to get the Magento software]({{ page.baseurl }}/install-gde/bk-install-guide.html)
+*  [Installing optional software]({{page.baseurl}}/install-gde/prereq/optional.html)
+*  [Apache]({{page.baseurl}}/install-gde/prereq/apache.html)
+*  [PHP]({{page.baseurl}}/install-gde/prereq/php-settings.html)
+*  [Configuring security options]({{page.baseurl}}/install-gde/prereq/security.html)
+*  [How to get the Magento software]({{ page.baseurl}}/install-gde/bk-install-guide.html)

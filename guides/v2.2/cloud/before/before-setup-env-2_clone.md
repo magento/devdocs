@@ -9,7 +9,9 @@ functional_areas:
   - Setup
 ---
 
-**Previous step:**
+{:.ref-header}
+Previous step
+
 [Set up the Magento file system owner]({{ page.baseurl }}/cloud/before/before-workspace-file-sys-owner.html)
 
 The {{site.data.var.ece}} project is a Git repository of Magento code. Each **active** branch in the Integration environment includes a database and services to fully access the Magento site and store. You can clone the project and create an **active** branch from the Integration environment to develop code and add extensions using your local workstation.
@@ -170,5 +172,7 @@ To branch from master:
    magento-cloud snapshot:create -e <environment-ID>
    ```
 
-**Next step:**
+{:.ref-header}
+Next step
+
 [Install Magento]({{ page.baseurl }}/cloud/before/before-setup-env-install.html)
