@@ -45,7 +45,8 @@ Test coverage | 10 | Contribution contains fix or improvement and new tests or t
 MFTF test coverage| 10 | Contribution contains MFTF tests
 Bug fix | 10 | Contribution fixes one or more known issues from GitHub
 Author of Ported Issue | 5 | Additional points for a contribution that ports (up or back port) a previous PR across release lines by another contributor
-Issue Triage | 3 | Public issue report is verified and confirmed
+Issue Triage: Confirmed | 5 | Public issue report is verified and confirmed. Description contains all required information to be easily reproduced by provided steps
+Issue Triage: Rejected/Closed | 4 | Public issue report is verified and closed/rejected because it is "not a bug" or "cannot be reproduced" by provided steps in the description on the supported Magento versions
 
 ## DevDocs awards and points
 
