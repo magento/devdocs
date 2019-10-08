@@ -53,8 +53,6 @@ filter: {
 }
 ```
 
-Search filters are logically ANDed unless an `or` statement is specified. The search query can contain unlimited number of nested `or` clauses. However, you cannot perform a logical `or` across two AND clauses, such as (A AND B) OR (X AND Y).
-
 Magento processes the attribute values specified in  a `ProductFilterInput` as  simple data types (strings, integers, booleans). However, returned attributes can be a different, complex, data type. For example, in a response, `price` is an object that contains a monetary value and a currency code.
 
 The following attributes can be used to create filters. See the [Output attributes](#Response) section for information about each attribute.
@@ -671,6 +669,100 @@ query {
               "label": "Image"
             }
           ]
+        }
+      ]
+    }
+  }
+}
+```
+
+### Return minimum and maximum prices and discount information
+
+In the following example, a catalog price rule that provides a 10% discount on all fitness equipment is in effect. The product queried, `24-WG080`, is the Sprite Yoga Companion Kit bundle product. This product has two user-selected options that cause the price to vary. If you choose to query a product that is not a composite (bundle, group, or configurable) product, the minimum and maximum prices are the same.
+
+**Request**
+
+```graphql
+{
+  products(filter: {sku: {eq: "24-WG080"}}, sort: {name: ASC}) {
+    items {
+      name
+      sku
+      price_range {
+        minimum_price {
+          regular_price {
+            value
+            currency
+          }
+          final_price {
+            value
+            currency
+          }
+          discount {
+            amount_off
+            percent_off
+          }
+        }
+        maximum_price {
+          regular_price {
+            value
+            currency
+          }
+          final_price {
+            value
+            currency
+          }
+          discount {
+            amount_off
+            percent_off
+          }
+        }
+      }
+    }
+  }
+}
+```
+
+**Response**
+
+```json
+{
+  "data": {
+    "products": {
+      "items": [
+        {
+          "name": "Sprite Yoga Companion Kit",
+          "sku": "24-WG080",
+          "price_range": {
+            "minimum_price": {
+              "regular_price": {
+                "value": 61,
+                "currency": "USD"
+              },
+              "final_price": {
+                "value": 61,
+                "currency": "USD"
+              },
+              "discount": {
+                "amount_off": 0,
+                "percent_off": 0
+              }
+            },
+            "maximum_price": {
+              "regular_price": {
+                "value": 77,
+                "currency": "USD"
+              },
+              "final_price": {
+                "value": 77,
+                "currency": "USD"
+              },
+              "discount": {
+                "amount_off": 0,
+                "percent_off": 0
+              }
+            }
+          }
         }
       ]
     }

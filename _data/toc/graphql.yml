@@ -16,6 +16,9 @@ pages:
         - label: GraphQL Caching
           url: /graphql/caching.html
 
+        - label: Filtering with custom attributes
+          url: /graphql/custom-filters.html
+
     - label: Development
       children:
         - label: Define the GraphQL schema for a module
@@ -49,6 +52,9 @@ pages:
 
         - label: category query
           url: /graphql/queries/category.html
+
+        - label: categoryList query
+          url: /graphql/queries/category-list.html
 
         - label: checkoutAgreements query
           url: /graphql/queries/checkout-agreements.html
@@ -95,8 +101,11 @@ pages:
         - label: isEmailAvailable query
           url: /graphql/queries/is-email-available.html
 
-        - label: products query
+        - label: products query (2.3.3)
           url: /graphql/queries/products.html
+
+        - label: products query (2.3.4)
+          url: /graphql/queries/products-234.html
 
         - label: storeConfig query
           url: /graphql/queries/store-config.html

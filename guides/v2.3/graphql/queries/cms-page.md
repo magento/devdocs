@@ -21,7 +21,7 @@ The following query returns information about the "404 Not Found" CMS page:
 
 ```graphql
 {
-  cmsPage(identifier: 1) {
+  cmsPage(identifier: "no-route") {
     url_key
     title
     content
