@@ -66,7 +66,7 @@ mutation {
 }
 ```
 
-["Customer endpoint"]({{ page.baseurl }}/graphql/reference/customer.html#create-a-customer) describes additional `createCustomer` parameters.
+["Customer endpoint"]({{ page.baseurl }}/graphql/mutations/create-customer.html) describes additional `createCustomer` parameters.
 
 To place an order as a new customer, you must get the customer's authorization token. Use the `generateCustomerToken` mutation for that.
 
