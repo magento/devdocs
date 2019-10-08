@@ -5,9 +5,9 @@ title: Configure declarative schema
 
 Before Magento 2.3, extension developers were required to write code (PHP scripts) to change the database schema. The following types of scripts existed before Magento 2.3:
 
-* InstallData and InstallSchema scripts, which are executed the first time a module is installed.
-* UpgradeData and UpgradeSchema incremental scripts, which supplement an existing module schema.
-* Recurring scripts, which are executed each time you install or upgrade Magento.
+*  InstallData and InstallSchema scripts, which are executed the first time a module is installed.
+*  UpgradeData and UpgradeSchema incremental scripts, which supplement an existing module schema.
+*  Recurring scripts, which are executed each time you install or upgrade Magento.
 
 Each script iteratively adds changes. During the installation process, upgrade scripts apply only those changes that have not been applied yet. For example, if you have a module with version 2.1.8 installed and the latest version is 2.1.11, then the upgrade script changes for 2.1.9, 2.1.10, and 2.1.11 will be applied, in order, when you upgrade to 2.1.11. Each upgrade script is responsible for checking the required version for each change to apply. The Magento installation only knows that a module has an upgrade script, not what versions it affected. That procedure is called _migration setup_ or _migration scripts_.
 
@@ -74,11 +74,11 @@ Attribute | Description
 `resource` | The database shard on which to install the table. This value must be `default`, `checkout`, or `sales`.
 `comment` | Table comment
 
- A `table` node can contain three types of subnodes:
+A `table` node can contain three types of subnodes:
 
- * `column`
- * `constraint`
- * `index`
+*  `column`
+*  `constraint`
+*  `index`
 
 #### `column` subnode
 
@@ -154,8 +154,8 @@ A column can have the following attributes:
 
 For more information about each type, refer to the annotations in the corresponding XSD file. The location of the XSD file depends on how you installed Magento.
 
-- [Archive download]({{page.baseurl}}/install-gde/prereq/zip_install.html): `<Magento_root_directory/vendor/magento/framework/Setup/Declaration/Schema/etc`
-- [Composer]({{page.baseurl}}/install-gde/composer.html) or [GitHub]({{page.baseurl}}/install-gde/prereq/dev_install.html) installation: `<Magento_root_directory/lib/internal/Magento/Framework/Setup/Declaration/Schema/etc`
+*  [Archive download]({{page.baseurl}}/install-gde/prereq/zip_install.html): `<Magento_root_directory/vendor/magento/framework/Setup/Declaration/Schema/etc`
+*  [Composer]({{page.baseurl}}/install-gde/composer.html) or [GitHub]({{page.baseurl}}/install-gde/prereq/dev_install.html) installation: `<Magento_root_directory/lib/internal/Magento/Framework/Setup/Declaration/Schema/etc`
 
 Example:
 

@@ -11,18 +11,18 @@ This topic discusses securing `pub/cron.php` to prevent it from being used in a 
 
 The Magento cron job runs a number of scheduled tasks and is a vital part of your Magento configuration. Scheduled tasks include, but are not limited to:
 
-- Reindexing
-- Generating e-mails
-- Generating newsletters
-- Generating sitemaps
+-  Reindexing
+-  Generating e-mails
+-  Generating newsletters
+-  Generating sitemaps
 
 {: .bs-callout-info }
 Refer to [Configure and run cron]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cron.html#config-cli-cron-group-run) for more information about cron groups.
 
 You can run a Magento cron job in the following ways:
 
-- Using the [`magento cron:run`]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cron.html#config-cli-cron-group-run) command either from the command line or in a crontab
-- Accessing `pub/cron.php?[group=<name>]` in a web browser
+-  Using the [`magento cron:run`]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cron.html#config-cli-cron-group-run) command either from the command line or in a crontab
+-  Accessing `pub/cron.php?[group=<name>]` in a web browser
 
 {: .bs-callout-info }
 You don't need to do anything if you use the [`magento cron:run`]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cron.html#config-cli-cron-group-run) command to run cron because it uses a different process that is already secure.
@@ -126,8 +126,8 @@ This section discusses how to secure cron using the [nginx](https://glossary.mag
 
 Consult one of the following resources to create a password file before continuing:
 
-- [How To Set Up Password Authentication with Nginx on Ubuntu 14.04 (DigitalOcean)](https://www.digitalocean.com/community/tutorials/how-to-set-up-password-authentication-with-nginx-on-ubuntu-14-04){:target="_blank"}
-- [Basic HTTP Authentication with nginx (howtoforge)](https://www.howtoforge.com/basic-http-authentication-with-nginx){:target="_blank"}
+-  [How To Set Up Password Authentication with Nginx on Ubuntu 14.04 (DigitalOcean)](https://www.digitalocean.com/community/tutorials/how-to-set-up-password-authentication-with-nginx-on-ubuntu-14-04){:target="_blank"}
+-  [Basic HTTP Authentication with nginx (howtoforge)](https://www.howtoforge.com/basic-http-authentication-with-nginx){:target="_blank"}
 
 ### Secure cron in `nginx.conf.sample`
 
@@ -287,12 +287,12 @@ If you're using an Apache web server, you must remove the restriction from the `
 
 Where:
 
-* `<your Magento hostname or IP>` is the hostname or IP address of your Magento installation
-* `<Magento root>` is the web server docroot-relative directory to which you installed the Magento software
+-  `<your Magento hostname or IP>` is the hostname or IP address of your Magento installation
+-  `<Magento root>` is the web server docroot-relative directory to which you installed the Magento software
 
    The exact URL you use to run the Magento application depends on how you configured your web server and virtual host.
 
-* `<group name>` is any valid cron group name (optional)
+-  `<group name>` is any valid cron group name (optional)
 
 For example,
 
