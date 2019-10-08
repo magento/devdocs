@@ -62,5 +62,7 @@ libxml_set_external_entity_loader(['Magento\Framework\Config\Dom\UrnResolver', '
 {: .bs-callout-info }
 The relative path to other XSDs cannot be used from inside the XSD file, because the [entity](https://glossary.magento.com/entity) loader fails to resolve the relative path.
 
-#### Next
+{:.ref-header}
+Next step
+
 [Name your component]({{ page.baseurl }}/extension-dev-guide/build/create_component.html)

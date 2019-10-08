@@ -30,21 +30,21 @@ The structure of a Magento theme directory typically would be like following:
 ```tree
 <theme_dir>/
 ├── <Vendor>_<Module>/
-│	├── web/
-│	│	├── css/
-│	│	│	├── source/
-│	├── layout/
-│	│	├── override/
-│	├── templates/
+│   ├── web/
+│   │   ├── css/
+│   │   │   ├── source/
+│   ├── layout/
+│   │   ├── override/
+│   ├── templates/
 ├── etc/
 ├── i18n/
 ├── media/
 ├── web/
-│	├── css/
-│	│	├── source/
-│	├── fonts/
-│	├── images/
-│	├── js/
+│   ├── css/
+│   │   ├── source/
+│   ├── fonts/
+│   ├── images/
+│   ├── js/
 ├── composer.json
 ├── registration.php
 ├── theme.xml
@@ -271,10 +271,10 @@ A set of theme files that are returned by the server to a browser as is, without
 <theme_dir>/
 ├── media/
 ├── web
-│	├── css/ (except the "source" sub-directory)
-│	├── fonts/
-│	├── images/
-│	├── js/
+│   ├── css/ (except the "source" sub-directory)
+│   ├── fonts/
+│   ├── images/
+│   ├── js/
 ```
 
 The key difference between static files and other theme files is that static files appear on a web page as references to the files, while other theme files take part in the page generation, but are not explicitly referenced on a web page as files.
@@ -293,13 +293,13 @@ Dynamic view files are located in a theme directory as follows:
 ```tree
 <theme_dir>/
 ├── Magento_<module>/
-│	├── web/
-│	│	├── css/
-│	│	│	├── source/
-│	├── layout/
-│	│	├── override/
-│	├── templates/
+│   ├── web/
+│   │   ├── css/
+│   │   │   ├── source/
+│   ├── layout/
+│   │   ├── override/
+│   ├── templates/
 ├── web/
-│	├── css/
-│	│	├── source/
+│   ├── css/
+│   │   ├── source/
 ```

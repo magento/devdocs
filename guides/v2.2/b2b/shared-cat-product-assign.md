@@ -27,7 +27,7 @@ Products that are defined within a category are not included when you assign a c
 
 **REST Endpoints**
 
-```
+```terminal
 POST /V1/sharedCatalog/:id/assignCategories
 POST /V1/sharedCatalog/:id/unassignCategories
 GET  /V1/sharedCatalog/:id/categories
@@ -138,7 +138,7 @@ The `sharedCatalogProductManagementV1` service is based on `catalogProductManage
 
 **REST endpoints**
 
-```
+```terminal
 POST  /V1/sharedCatalog/:id/assignProducts
 POST  /V1/sharedCatalog/:id/unassignProducts
 GET  /V1/sharedCatalog/:id/products
@@ -165,26 +165,26 @@ The following example adds two products each in the Bags, Fitness Equipment, and
 
 ```json
 {
-	"products": [
-    	{
-        	"sku": "24-MB01"
-    	},
-    	{
-        	"sku": "24-MB04"
-    	},
-    	{
-        	"sku": "24-UG06"
-    	},
-    	{
-        	"sku": "24-UG07"
-    	},
-    	{
-        	"sku": "24-MG04"
-    	},
-    	{
-        	"sku": "24-MG01"
-    	}
-	]
+ "products": [
+     {
+         "sku": "24-MB01"
+     },
+     {
+         "sku": "24-MB04"
+     },
+     {
+         "sku": "24-UG06"
+     },
+     {
+         "sku": "24-UG07"
+     },
+     {
+         "sku": "24-MG04"
+     },
+     {
+         "sku": "24-MG01"
+     }
+ ]
 }
 ```
 
@@ -205,9 +205,9 @@ Unassigning a product does not remove it from its category or categories.
 ```json
 {
   "products": [
-  	{
-  		"sku": "24-MG01"
-  	}
+   {
+     "sku": "24-MG01"
+   }
   ]
 }
 ```

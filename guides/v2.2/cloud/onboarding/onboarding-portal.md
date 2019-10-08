@@ -26,8 +26,8 @@ Browse through the portal to find helpful information and options to get started
 Currently, access to the Onboarding Portal is available through your Magento account.
 
 1. [Log in to your Magento account](https://account.magento.com).
-2. On the Magento tab, click the Projects (Cloud) option. A list of projects associated to your account display.
-3. Select your project to open the Onboarding Portal.
+1. On the Magento tab, click the Projects (Cloud) option. A list of projects associated to your account display.
+1. Select your project to open the Onboarding Portal.
 
 For more technical users and developers, you can direct them to the Project Web Interface after inviting them to your project. For information on inviting and adding new users, see [Manage users with the Web Interface]({{ page.baseurl }}/cloud/project/user-admin.html#cloud-user-webinterface).
 
@@ -52,10 +52,11 @@ The Technical Admin can be a Magento Solution Partner, a development consultant,
 This user can help you create developer accounts with access to the Magento environments and code, configure technical aspects of the environments, and help with tickets with Support.
 
 1. In the Onboarding Portal, select Technical Admin from the left nav.
-2. Enter the full name and email for your Technical Admin. This creates a super user account with full permissions and access across the entire project and all environments.
+1. Enter the full name and email for your Technical Admin. This creates a super user account with full permissions and access across the entire project and all environments.
 
-	![Add Technical Admin]({{ site.baseurl }}/common/images/cloud_portal-techadmin.png)
-3. Click **Add admin to project**.
+   ![Add Technical Admin]({{ site.baseurl }}/common/images/cloud_portal-techadmin.png)
+
+1. Click **Add admin to project**.
 
 ## Magento project ready for development {#provision}
 
@@ -82,10 +83,3 @@ When you are ready to launch your sites and stores, work through Launch options:
 
 * **UAT Checklist**: A high-level checklist for verifying Magento features and your configured settings, extensions, products, and more. You can follow this checklist along with the [Test deployment]({{ page.baseurl }}/cloud/live/stage-prod-test.html) information.
 * **Site Launch**: A high-level checklist for your initial "go live". After completing the checklist, you can enter Live Site Configuration information to enter a Submit a Support ticket. You can follow this checklist along with the [Go live checklist]({{ page.baseurl }}/cloud/live/go-live-checklist.html) and [Test deployment]({{ page.baseurl }}/cloud/live/stage-prod-test.html) information.
-
-#### Related topics
-
-* [Manage your project]({{ page.baseurl }}/cloud/project/projects.html)
-* [Starter architecture]({{ page.baseurl }}/cloud/basic-information/starter-architecture.html)
-* [Pro architecture]({{ page.baseurl }}/cloud/architecture/pro-architecture.html)
-* [Welcome to {{site.data.var.ece}}]({{ page.baseurl }}/cloud/bk-cloud.html)

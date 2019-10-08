@@ -47,18 +47,29 @@ Magento Cloud CLI commands can only be used in environments with the software in
 
 To SSH to an environment using the Magento Cloud command line:
 
-1.	Log in to the project:
+1. Log in to the project:
 
-		magento-cloud login
-2.	List the project IDs:
+   ```bash
+   magento-cloud login
+   ```
 
-		magento-cloud project:list
-3.	List the environments in that project:
+1. List the project IDs:
 
-		magento-cloud environment:list -p <project ID>
-3.	SSH to the environment:
+   ```bash
+   magento-cloud project:list
+   ```
 
-		magento-cloud ssh -p <project ID> -e <environment ID>
+1. List the environments in that project:
+
+   ```bash
+   magento-cloud environment:list -p <project ID>
+   ```
+
+1. SSH to the environment:
+
+   ```bash
+   magento-cloud ssh -p <project ID> -e <environment ID>
+   ```
 
 ### Locate the SSH command in the Project Web Interface {#web-interface}
 
@@ -66,18 +77,20 @@ You can locate the SSH command for all Starter environments and Pro Integration 
 
 To copy the SSH command:
 
-1.	Log in to the Project Web Interface.
-2.	Select an environment or branch to access.
-3.	Click **Access Site**.
+1. Log in to the Project Web Interface.
+1. Select an environment or branch to access.
+1. Click **Access Site**.
 
-	![Find the SSH URL using the Web Interface]({{ site.baseurl }}/common/images/cloud_project-access-starter.png)
+   ![Find the SSH URL using the Web Interface]({{ site.baseurl }}/common/images/cloud_project-access-starter.png)
 
-4.	Click the clipboard button to copy the full SSH command to the clipboard.
-5.	Enter the command in a terminal window to SSH.
+1. Click the clipboard button to copy the full SSH command to the clipboard.
+1. Enter the command in a terminal window to SSH.
 
 Example SSH command:
 
-	ssh abcdefg123abc-smith-a12b34c--mymagento@ssh.us-2.magento.cloud
+```bash
+ssh abcdefg123abc-smith-a12b34c--mymagento@ssh.us-2.magento.cloud
+```
 
 ### SSH commands for Pro Staging and Production {#pro}
 
@@ -87,8 +100,8 @@ With your SSH keys added to those servers, you can use a terminal application, t
 
 For the URLs, see the following:
 
-*	Staging: `ssh <project ID>_stg@<project ID>.ent.magento.cloud`
-*	Production: `ssh <project ID>@<project ID>.ent.magento.cloud`
+* Staging: `ssh <project ID>_stg@<project ID>.ent.magento.cloud`
+* Production: `ssh <project ID>@<project ID>.ent.magento.cloud`
 
 For example, to log in to the Staging environment, use the following command: `ssh abcdefghij_stg@abcdefghij.ent.magento.cloud`. For production: `ssh abcdefghij@abcdefghij.ent.magento.cloud`
 
@@ -115,10 +128,10 @@ When configuring sFTP, use your SSH public key and the following information for
 To add your SSH public key information to your client:
 
 1. Use a text editor to open your generated SSH public key. Locate and edit the file in the directory location you generated it into.
-2. Copy and paste all content before the `@` in the file for the client Username.
-3. Leave Password empty.
-4. Copy and paste all content after the `@` in the file for the client Host.
-5. For the Port, enter 22.
+1. Copy and paste all content before the `@` in the file for the client Username.
+1. Leave Password empty.
+1. Copy and paste all content after the `@` in the file for the client Host.
+1. For the Port, enter 22.
 
 Depending on the client, you may need to enter additional options and setup to complete SSH authentication for sFTP. Review the documentation for your selected client.
 

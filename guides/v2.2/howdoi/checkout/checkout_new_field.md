@@ -154,7 +154,7 @@ Clear the `generated/code` directory when you run the `setup:di:compile` command
 
 If you completed all the steps described in the previous sections, Magento will generate the interface that includes your custom attribute and you can access your field value.
 
-You can set/get these attributes values by creating an instance of the  `Magento/Quote/Api/Data/AddressInterface.php interface`.
+You can set/get these attributes values by creating an instance of the  `Magento/Quote/Api/Data/AddressInterface.php` interface.
 
 ```php
 <?php
@@ -199,6 +199,7 @@ class MyBlock extends Template {
 }
 ```
 
-### Related topics
+{:.ref-header}
+Related topics
 
 - [EAV and extension attributes]({{ page.baseurl }}/extension-dev-guide/attributes.html)

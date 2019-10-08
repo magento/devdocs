@@ -46,7 +46,7 @@ In the Blank theme, the buttons of the `.action.primary` class, so called *prima
 OrangeCo wants to change the color of the primary buttons to orange. To achieve this, they do the following:
 
 1. Create a new Orange theme, which inherits from the Blank [theme](https://glossary.magento.com/theme).
-2. In the Orange theme directory add the overriding `app/design/frontend/OrangeCo/orange/web/css/source/_theme.less` file with the following code:
+1. In the Orange theme directory add the overriding `app/design/frontend/OrangeCo/orange/web/css/source/_theme.less` file with the following code:
 
     ```less
     //  Primary button

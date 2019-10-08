@@ -8,7 +8,7 @@ If Magento is configured to manage inventory, when you upgrade to version 2.3, M
 
 **Service names**
 
-```
+```http
 inventoryApiSourceItemsDeleteV1
 inventoryApiSourceItemsSaveV1
 inventoryApiSourceItemRepositoryV1
@@ -16,7 +16,7 @@ inventoryApiSourceItemRepositoryV1
 
 **REST endpoints**
 
-```
+```http
 POST V1/inventory/source-items-delete
 POST V1/inventory/source-items
 GET V1/inventory/source-items
@@ -26,10 +26,10 @@ GET V1/inventory/source-items
 
 Name | Description | Type | Requirements
 --- | --- | --- | ---
-sku	| The SKU of an existing product | String | Required to assign or unassign a source
-source_code	| The source to assign or unassign | String | Required to assign or unassign a source
-quantity	| The total amount of inventory available for this SKU and source | Float | Optional
-status	|  Indicates whether the product is out of stock (0) or in stock (1) | Integer | Optional
+sku | The SKU of an existing product | String | Required to assign or unassign a source
+source_code | The source to assign or unassign | String | Required to assign or unassign a source
+quantity | The total amount of inventory available for this SKU and source | Float | Optional
+status |  Indicates whether the product is out of stock (0) or in stock (1) | Integer | Optional
 
 ## Unassign products from a source
 
@@ -46,14 +46,14 @@ Unassigning a source clears all quantity data. For this example, this is OK, bec
 
 ```json
 {
-	"sourceItems": [{
-		"sku": "new_product1",
-		"source_code": "default"
-	},
-	{
-		"sku": "new_product2",
-		"source_code": "default"
-	}]
+    "sourceItems": [{
+        "sku": "new_product1",
+        "source_code": "default"
+    },
+    {
+        "sku": "new_product2",
+        "source_code": "default"
+    }]
 }
 ```
 
@@ -78,28 +78,28 @@ The following example assigns `1000` units of product `new_product1` to the `cen
 ```json
 {
   "sourceItems": [{
-  	"sku": "new_product1",
+    "sku": "new_product1",
     "source_code": "central",
     "quantity": 1000,
     "status": 1
   },
   {
-  	"sku": "new_product1",
-  	"source_code": "east",
-  	"quantity": 2000,
-  	"status": 1
+    "sku": "new_product1",
+    "source_code": "east",
+    "quantity": 2000,
+    "status": 1
   },
   {
-  	"sku": "new_product2",
-  	"source_code": "central",
-  	"quantity": 500,
-  	"status": 1
+    "sku": "new_product2",
+    "source_code": "central",
+    "quantity": 500,
+    "status": 1
   },
   {
-  	"sku": "new_product2",
-  	"source_code": "east",
-  	"quantity": 250,
-  	"status": 1
+    "sku": "new_product2",
+    "source_code": "east",
+    "quantity": 250,
+    "status": 1
   }]
 }
 ```
@@ -127,6 +127,7 @@ None
 **Response**
 
 {% collapsible Show code sample %}
+
 ```json
 {
     "items": [
@@ -159,4 +160,5 @@ None
     "total_count": 2
 }
 ```
+
 {% endcollapsible %}

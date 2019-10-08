@@ -30,15 +30,15 @@ Profiles are located in `<magento_root>/setup/performance-toolkit/profiles/<ce o
 For example, `/var/www/html/magento2/setup/performance-toolkit/profiles/ce`
 
 <table>
-	<tbody>
-		<tr>
-			<th>Parameter</th>
-			<th>Small profile</th>
-			<th>Medium profile</th>
-			<th>Medium multi-site profile</th>
-			<th>Large profile</th>
-			<th>Extra large profile</th>
-		</tr>
+   <tbody>
+      <tr>
+         <th>Parameter</th>
+         <th>Small profile</th>
+         <th>Medium profile</th>
+         <th>Medium multi-site profile</th>
+         <th>Large profile</th>
+         <th>Extra large profile</th>
+      </tr>
 
         <tr>
             <td><p>websites</p></td>
@@ -160,7 +160,7 @@ For example, `/var/www/html/magento2/setup/performance-toolkit/profiles/ce`
             <td><p>100,000</p></td>
             <td><p>150,000</p></td>
         </tr>
-	</tbody>
+   </tbody>
 </table>
 
 ### Run the data generator {#config-cli-perf-run}
@@ -172,40 +172,46 @@ Run the command as discussed in this section. After the command runs, you must [
 
 Command options:
 
-	bin/magento setup:perf:generate-fixtures {path to profile}
+```bash
+bin/magento setup:perf:generate-fixtures {path to profile}
+```
 
 Where `<path to profile>` specifies the absolute file system path to, and name of, a profile.
 
 For example,
 
-	bin/magento setup:perf:generate-fixtures /var/www/html/magento2/setup/performance-toolkit/profiles/ce/small.xml
+```bash
+bin/magento setup:perf:generate-fixtures /var/www/html/magento2/setup/performance-toolkit/profiles/ce/small.xml
+```
 
 Sample output for the small profile:
 
-	Generating profile with following params:
-     |- Websites: 1
-     |- Store Groups Count: 1
-     |- Store Views Count: 1
-     |- Categories: 30
-     |- Attribute Sets (Default): 3
-     |- Attribute Sets (Extra): 10
-     |- Simple products: 800
-     |- Configurable products: 0
-     |--- 5 products for attribute set "Attribute Set 1"
-     |--- 5 products for attribute set "Attribute Set 2"
-     |--- 5 products for attribute set "Attribute Set 3"
-     |--- 40 products for attribute set "Dynamic Attribute Set 1-24"
-     |- Product images: 100, 3 per product
-     |- Customers: 200
-     |- Cart Price Rules: 20
-     |- Catalog Price Rules: 20
-     |- Catalog Target Rules: 5
-     |- Orders: 80
-    Generating websites, stores and store views...  done in <time>
-    Generating categories...  done in <time>
-    Generating attribute sets...  done in <time>
-    Generating simple products...  done in <time>
-	... more ...
+```terminal
+Generating profile with following params:
+    |- Websites: 1
+    |- Store Groups Count: 1
+    |- Store Views Count: 1
+    |- Categories: 30
+    |- Attribute Sets (Default): 3
+    |- Attribute Sets (Extra): 10
+    |- Simple products: 800
+    |- Configurable products: 0
+    |--- 5 products for attribute set "Attribute Set 1"
+    |--- 5 products for attribute set "Attribute Set 2"
+    |--- 5 products for attribute set "Attribute Set 3"
+    |--- 40 products for attribute set "Dynamic Attribute Set 1-24"
+    |- Product images: 100, 3 per product
+    |- Customers: 200
+    |- Cart Price Rules: 20
+    |- Catalog Price Rules: 20
+    |- Catalog Target Rules: 5
+    |- Orders: 80
+Generating websites, stores and store views...  done in <time>
+Generating categories...  done in <time>
+Generating attribute sets...  done in <time>
+Generating simple products...  done in <time>
+... more ...
+```
 
 Current supported fixtures:
 
@@ -540,7 +546,8 @@ Additional configuration information:
 
 *   `<Magento root dir>/setup/performance-toolkit/config/searchTermsLarge.xml`&mdash;Larger number of search terms to use in short and full description.
 
-#### Related topics
+{:.ref-header}
+Related topics
 
 *   [Manage the cache]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cache.html)
 *   [Manage the indexers]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-index.html)

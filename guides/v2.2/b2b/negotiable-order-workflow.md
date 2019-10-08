@@ -26,7 +26,7 @@ In this example, the customer is a company user (buyer).
 
 **Headers**
 
-```
+```terminal
 Content-Type application/json
 Authorization Bearer <customer token>
 ```
@@ -49,7 +49,7 @@ This example adds 15 Pursuit Lumaflex Tone Bands and 10 Harmony Lumaflex Strengt
 
 **Headers**
 
-```
+```terminal
 Content-Type application/json
 Authorization Bearer <customer token>
 ```
@@ -116,7 +116,7 @@ You can determine shipping costs after initiating a negotiable quote, but doing 
 
 **Headers**
 
-```
+```terminal
 Content-Type application/json
 Authorization Bearer <customer token>
 ```
@@ -185,7 +185,7 @@ You can also set shipping and billing information after initiating a negotiable 
 
 **Headers**
 
-```
+```terminal
 Content-Type application/json
 Authorization Bearer <customer token>
 ```
@@ -196,7 +196,7 @@ Authorization Bearer <customer token>
 {
 "addressInformation": {
   "shipping_address": {
-  	"region": "California",
+    "region": "California",
     "region_id": 12,
     "region_code": "CA",
     "country_id": "US",
@@ -211,7 +211,7 @@ Authorization Bearer <customer token>
     "telephone": "415-555-1212"
   },
   "billing_address": {
-  	"region": "California",
+   "region": "California",
     "region_id": 12,
     "region_code": "CA",
     "country_id": "US",
@@ -395,7 +395,7 @@ This is an optional step to show the status of the cart before you begin the neg
 
 **Headers**
 
-```
+```terminal
 Content-Type application/json
 Authorization Bearer <customer token>
 ```
@@ -609,7 +609,7 @@ Initiating a negotiable quote places it in the `processing_by_admin` state.
 
 **Headers**
 
-```
+```terminal
 Content-Type application/json
 Authorization Bearer <admin token>
 ```
@@ -634,7 +634,7 @@ The seller accepts the buyer's request for a 2.5% discount. The `negotiated_pric
 
 **Headers**
 
-```
+```terminal
 Content-Type application/json
 Authorization Bearer <admin token>
 ```
@@ -671,7 +671,7 @@ This call places the quote in the `submitted_by_admin` state.
 
 **Headers**
 
-```
+```terminal
 Content-Type application/json
 Authorization Bearer <admin token>
 ```
@@ -699,7 +699,7 @@ The price of each item has been reduced by 2.5 percent. In addition, the `negoti
 
 **Headers**
 
-```
+```terminal
 Content-Type application/json
 Authorization Bearer <admin token>
 ```
@@ -940,7 +940,7 @@ The buyer is now ready to complete the purchase. Since the buyer has already spe
 
 **Headers**
 
-```
+```terminal
 Content-Type application/json
 Authorization Bearer <admin token>
 ```
@@ -971,7 +971,7 @@ In this example, the `companyId` is `1`.
 
 **Headers**
 
-```
+```terminal
 Content-Type application/json
 Authorization Bearer <admin token>
 ```

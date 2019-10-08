@@ -9,6 +9,7 @@ In addition, you can choose the component root directory to start development. T
 
 {% include php-dev/component-root.md %}
 
-#### Related topic
+{:.ref-header}
+Related topic
 
 [Roadmap for developing and packaging components]({{ page.baseurl }}/extension-dev-guide/prepare/dev-summary.html)

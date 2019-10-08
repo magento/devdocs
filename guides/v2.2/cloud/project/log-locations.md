@@ -91,9 +91,7 @@ Logs from the deploy hook are unique for each environment. The deploy log is in 
 The value of `<project_id>` depends on the project ID and whether the environment is Staging or Production. For example, with a project ID of `yw1unoukjcawe`, the Staging environment user is `yw1unoukjcawe_stg` and the Production environment user is `yw1unoukjcawe`.
 Using that example, the deploy log is: `var/log/platform/yw1unoukjcawe_stg/deploy.log`
 
-The log for each deployment concatenates to the specific `deploy.log` file.
-
-#### To view the deploy log:
+The log for each deployment concatenates to the specific `deploy.log` file. The following example prints the deploy log in the terminal:
 
 ```bash
 magento-cloud log deploy
@@ -113,7 +111,7 @@ sh: 1: kill: No such process
 ...
 ```
 
-#### To view a deploy log from the Staging environment:
+You can use the same CLI command to view a deploy log from the Staging environment:
 
 ```bash
 magento-cloud log platform/<project_id>_stg/deploy
@@ -125,7 +123,7 @@ Similar to deploy logs, application logs are unique for each environment. The fo
 
 Log file            | Starter and Pro Integration | Pro Staging                                       | Pro Production
 ------------------- | --------------------------- | ------------------------------------------------- | -------------------------------------------
-**Deploy log**  | `var/log/deploy.log`       | `var/log/platform/<project_id>_stg/deploy.log`   | `/var/log/platform/<project_id>/deploy.log`
+**Deploy log**      | `var/log/deploy.log`       | `var/log/platform/<project_id>_stg/deploy.log`   | `/var/log/platform/<project_id>/deploy.log`
 **Cron log**        | `var/log/cron.log`         | `var/log/platform/<project_id>_stg/cron.log`     | `var/log/platform/<project_id>/cron.log`
 **Nginx access log**| `var/log/access.log`       | `var/log/platform/<project_id>_stg/access.log`   | `/var/log/platform/<project_id>/access.log`
 **Nginx error log** | `var/log/error.log`        | `var/log/platform/<project_id>_stg/error.log`    | `/var/log/platform/<project_id>/error.log`

@@ -40,7 +40,8 @@ You can change this Admin URI in three ways:
 
 Although the use of a non-default admin URL will not secure the site, its use will help prevent large-scale automated attacks. See [Display or change the Admin URI]({{page.baseurl}}/install-gde/install/cli/install-cli-adminurl.html) in Configuration Guide for more information.
 
-## Related topics
+{:.ref-header}
+Related topics
 
 [Configuration Guide][]
 

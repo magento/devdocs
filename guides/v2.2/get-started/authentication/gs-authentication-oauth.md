@@ -453,7 +453,8 @@ class OauthClient extends AbstractService
 ```
 {% endcollapsible %}
 
-## Related topics
+{:.ref-header}
+Related topics
 
 [Create an integration]( {{ page.baseurl }}/get-started/create-integration.html )
 
