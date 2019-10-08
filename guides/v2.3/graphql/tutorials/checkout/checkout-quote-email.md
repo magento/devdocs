@@ -1,13 +1,13 @@
 ---
 layout: tutorial
 group: graphql
-title: Step 9. Set email on the cart (guest customers only)
+title: Step 8. Set email on the cart (guest customers only)
 subtitle: GraphQL checkout tutorial
 level3_subgroup: graphql-checkout
 return_to:
   title: GraphQL Overview
   url: graphql/index.html
-menu_order: 90
+menu_order: 80
 functional_areas:
   - Integration
 contributor_name: Atwix

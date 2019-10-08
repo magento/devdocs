@@ -1,13 +1,13 @@
 ---
 layout: tutorial
 group: graphql
-title: Step 7. Set the payment method
+title: Step 9. Set the payment method
 subtitle: GraphQL checkout tutorial
 level3_subgroup: graphql-checkout
 return_to:
   title: GraphQL Overview
   url: graphql/index.html
-menu_order: 70
+menu_order: 90
 functional_areas:
   - Integration
 contributor_name: Atwix
@@ -54,6 +54,15 @@ query {
 }
 ```
 
+There are two mutation queries in GraphQl which can be use to set the payment method for your order:
+
+|Mutation|Description|
+|--- |--- |
+|`setPaymentMethodOnCart`|Sets the payment method for your order|
+|`setPaymentMethodAndPlaceOrder`|Sets the payment method and then immediately places your order. In this case ["Step 10. Place the order"]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-place-order.html) can be skipped|
+
+### Set payment method on cart {#setPaymentMethodOnCart}
+
 Use the `setPaymentMethodOnCart` mutation to set the payment method for your order. The value `checkmo` ("Check / Money order" payment method code) was returned in the query.
 
 **Request**
@@ -90,6 +99,43 @@ If the operation is successful, the response contains the code of the selected p
         "selected_payment_method": {
           "code": "checkmo"
         }
+      }
+    }
+  }
+}
+```
+
+### Set payment method and place order {#setPaymentMethodAndPlaceOrder}
+
+Use the `setPaymentMethodAndPlaceOrder` mutation to set the payment method and place the order.
+
+**Request**
+
+```text
+mutation {
+  setPaymentMethodAndPlaceOrder(input: {
+      cart_id: "{ CART_ID }"
+      payment_method: {
+          code: "checkmo"
+      }
+  }) {
+    order {
+      order_id
+    }
+  }
+}
+```
+
+**Response**
+
+If the operation is successful, the response contains the order ID.
+
+```json
+{
+  "data": {
+    "setPaymentMethodAndPlaceOrder": {
+      "order": {
+        "order_id": "000000001"
       }
     }
   }
