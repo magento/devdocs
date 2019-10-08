@@ -108,6 +108,7 @@ For debugging purposes, it is useful to directly connect to a service instance i
    ```
 
 1. While the session is open, you can start a RabbitMQ client of your choice from your local workstation, configured to connect to the `localhost:<portnumber>` using the port number, username, and password information from the MAGENTO_CLOUD_RELATIONSHIP variable.
+	 The RabbitMQ management plugin is installed in cloud, so there is a graphical utility that can be used for debugging purposes and it is usually available at port 15672.
 
 ### Connect from the application {#cloud-rabbitmq-conn-cont}
 
