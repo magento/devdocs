@@ -15,8 +15,12 @@ jobs:
     
     steps:
     - uses: actions/checkout@v1
-    - name: Update RubyGems
-      run: gem update --system
+    - name: Set up Ruby
+      uses: actions/setup-ruby@v1
+      with:
+        ruby-version: 2.6
+#     - name: Update RubyGems
+#       run: gem update --system
     - name: Install gems
       run: bundle install
     - name: Run mdl
