@@ -1,7 +1,0 @@
----
-title: Magento_ConfigurableProductSales
-edition: ce
-last_modified_at: '2017-07-14 16:51:00 +0300'
-content: "# Magento_ConfigurableProductSales module\n\nThe Magento_ConfigurableProductSales
-  module checks that the selected options of order item are still presented in\nCatalog.
-  Returns true if the previously ordered item configuration is still available. "

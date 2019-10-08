@@ -222,5 +222,7 @@ The following example compresses the dump so that it does not significantly inte
 
 To find `<cloud SSH URL>`, see [Find the information you need for your import]({{ page.baseurl }}/cloud/setup/first-time-setup-import-first-steps.html#db-creds).
 
-**Next step:**
+{:.ref-header}
+Next step
+
 [Import {{site.data.var.ee}} into {{site.data.var.ece}}]({{ page.baseurl }}/cloud/setup/first-time-setup-import-import.html)
