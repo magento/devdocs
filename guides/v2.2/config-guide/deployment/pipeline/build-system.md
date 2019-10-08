@@ -10,23 +10,23 @@ functional_areas:
 
 You can have one build system that meets the following requirements:
 
-* All Magento code is under source control in the same repository as the development and production systems
-* Make sure all of the following are _included_ in source control:
+*  All Magento code is under source control in the same repository as the development and production systems
+*  Make sure all of the following are _included_ in source control:
 
-   * `app/etc/config.php`
-   * `generated` directory (and subdirectories)
-   * `pub/media` directory
-   * `pub/media/wysiwyg` directory (and subdirectories)
-   * `pub/static` directory (and subdirectories)
+   *  `app/etc/config.php`
+   *  `generated` directory (and subdirectories)
+   *  `pub/media` directory
+   *  `pub/media/wysiwyg` directory (and subdirectories)
+   *  `pub/static` directory (and subdirectories)
 
-* Must have a compatible PHP version installed
-* Must have Composer installed
-* It has Magento file system ownership and permissions set as discussed in [Prerequisite for your development, build, and production systems]({{ page.baseurl }}/config-guide/deployment/pipeline/technical-details.html#config-deploy-prereq).
+*  Must have a compatible PHP version installed
+*  Must have Composer installed
+*  It has Magento file system ownership and permissions set as discussed in [Prerequisite for your development, build, and production systems]({{ page.baseurl }}/config-guide/deployment/pipeline/technical-details.html#config-deploy-prereq).
 
 The build system does _not_ need any of the following:
 
-* Magento database connection
-* Magento software installed (only the code must be present)
+*  Magento database connection
+*  Magento software installed (only the code must be present)
 
 {: .bs-callout-info }
 The build machine can be on its own host or on the same host as an installed Magento system.
@@ -43,8 +43,7 @@ The following sections discuss how to configure the build machine.
 
 To install PHP, see one of the following topics:
 
-* [CentOS]({{ page.baseurl }}/install-gde/prereq/php-centos.html)
-* [Ubuntu]({{ page.baseurl }}/install-gde/prereq/php-ubuntu.html)
+*  [PHP]({{ page.baseurl }}/install-gde/prereq/php-settings.html)
 
 ### Set up the build system
 
@@ -102,5 +101,5 @@ To set up the build system:
 {:.ref-header}
 Related topics
 
-* [Set up your development systems]({{ page.baseurl }}/config-guide/deployment/pipeline/development-system.html)
-* [Set up your production system]({{ page.baseurl }}/config-guide/deployment/pipeline/production-system.html)
+*  [Set up your development systems]({{ page.baseurl }}/config-guide/deployment/pipeline/development-system.html)
+*  [Set up your production system]({{ page.baseurl }}/config-guide/deployment/pipeline/production-system.html)

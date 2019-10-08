@@ -17,7 +17,7 @@ Installation instructions vary based on which operating system you're using:
 * [Ubuntu 16]({{ page.baseurl }}/install-gde/prereq/nginx.html#ubuntu-16)
 * [CentOS 7]({{ page.baseurl }}/install-gde/prereq/nginx.html#centos-7)
 
-## Help if you're just starting out {#apache-help-beginner}
+## Help if you are just starting out {#apache-help-beginner}
 
 If you're new to all this and need some help getting started, we suggest the following:
 
@@ -40,27 +40,27 @@ After completing the following sections and [installing Magento]({{ page.baseurl
 
 ### Install and configure php-fpm
 
-Magento requires several [PHP extensions]({{ page.baseurl }}/install-gde/prereq/php-ubuntu.html) to function properly. In addition to these extensions, you must also install and configure the `php-fpm` extension if you're using nginx.
+Magento requires several [PHP extensions]({{ page.baseurl }}/install-gde/prereq/php-settings.html) to function properly. In addition to these extensions, you must also install and configure the `php-fpm` extension if you're using nginx.
 
 To install and configure `php-fpm`:
 
 1. Install `php-fpm` and `php-cli`:
 
    ```bash
-   apt-get -y install php7.0-fpm php7.0-cli
+   apt-get -y install php7.2-fpm php7.2-cli
    ```
 
-   {: .bs-callout-info }
-   This command installs the latest available version of PHP 7.0.X. See [Magento 2.2.x technology stack requirements]({{ page.baseurl }}/install-gde/system-requirements-tech.html) for supported PHP versions.
+   {:.bs-callout .bs-callout-info}
+   This command installs the latest available version of PHP 7.2.X. See [Magento 2.2.x technology stack requirements]({{ page.baseurl }}/install-gde/system-requirements-tech.html) for supported PHP versions.
 
 1. Open the `php.ini` files in an editor:
 
    ```bash
-   vim /etc/php/7.0/fpm/php.ini
+   vim /etc/php/7.2/fpm/php.ini
    ```
 
    ```bash
-   vim /etc/php/7.0/cli/php.ini
+   vim /etc/php/7.2/cli/php.ini
    ```
 
 1. Edit both files to match the following lines:
@@ -79,7 +79,7 @@ To install and configure `php-fpm`:
 1. Restart the `php-fpm` service:
 
    ```bash
-   systemctl restart php7.0-fpm
+   systemctl restart php7.2-fpm
    ```
 
 ### Install and configure MySQL
@@ -90,13 +90,11 @@ Refer to [MySQL]({{ page.baseurl }}/install-gde/prereq/mysql.html) for more info
 
 There are several ways to download the Magento software, including:
 
-* [Get the Composer metapackage]({{ page.baseurl }}/install-gde/composer.html)
+*  [Get the Composer metapackage]({{ page.baseurl }}/install-gde/composer.html)
+*  [Download an archive]({{ page.baseurl }}/install-gde/prereq/zip_install.html)
+*  [Clone the Git repository]({{ page.baseurl }}/install-gde/prereq/dev_install.html)
 
-* [Download an archive]({{ page.baseurl }}/install-gde/prereq/zip_install.html)
-
-* [Clone the Git repository]({{ page.baseurl }}/install-gde/prereq/dev_install.html)
-
-For this example, we'll install using Composer and the command line.
+For this example, we will install using Composer and the command line.
 
 {: .bs-callout-info }
 You cannot use the Web Setup Wizard when installing Magento on nginx. You must use the command line.
@@ -269,7 +267,7 @@ After completing the following sections and [installing Magento]({{ page.baseurl
 
 ### Install and configure php-fpm
 
-Magento requires several [PHP extensions]({{ page.baseurl }}/install-gde/prereq/php-centos.html) to function properly. In addition to these extensions, you must also install and configure the `php-fpm` extension if you're using nginx.
+Magento requires several [PHP extensions]({{ page.baseurl }}/install-gde/prereq/php-settings.html) to function properly. In addition to these extensions, you must also install and configure the `php-fpm` extension if you're using nginx.
 
 1. Install `php-fpm`:
 
@@ -279,7 +277,7 @@ Magento requires several [PHP extensions]({{ page.baseurl }}/install-gde/prereq/
 
 1. Open the `/etc/php.ini` file in an editor.
 
-1.  Uncomment the `cgi.fix_pathinfo` line and change the value to `0`.
+1. Uncomment the `cgi.fix_pathinfo` line and change the value to `0`.
 
 1. Edit the file to match the following lines:
 
@@ -369,11 +367,9 @@ Refer to [MySQL]({{ page.baseurl }}/install-gde/prereq/mysql.html) for more info
 
 There are several ways to download the Magento software, including:
 
-* [Get the Composer metapackage]({{ page.baseurl }}/install-gde/composer.html)
-
-* [Download an archive]({{ page.baseurl }}/install-gde/prereq/zip_install.html)
-
-* [Clone the Git repository]({{ page.baseurl }}/install-gde/prereq/dev_install.html)
+*  [Get the Composer metapackage]({{ page.baseurl }}/install-gde/composer.html)
+*  [Download an archive]({{ page.baseurl }}/install-gde/prereq/zip_install.html)
+*  [Clone the Git repository]({{ page.baseurl }}/install-gde/prereq/dev_install.html)
 
 For this example, we'll download and extract an archive.
 
@@ -515,7 +511,7 @@ These instructions assume you're using the CentOS default location for the nginx
 
 ### Configure SELinux and Firewalld
 
-SELinux is enabled by default on CentOS 7. Use the following command to see if it's running:
+SELinux is enabled by default on CentOS 7. Use the following command to see if it is running:
 
 ```bash
 sestatus
@@ -588,9 +584,8 @@ Open a web browser and navigate to your site's base URL to [verify the installat
 {:.ref-header}
 Related topics
 
-* [PHP 5.5, 5.6, or 7.0&mdash;Ubuntu]({{ page.baseurl }}/install-gde/prereq/php-ubuntu.html)
-* [PHP 5.5, 5.6, or 7.0&mdash;CentOS]({{ page.baseurl }}/install-gde/prereq/php-centos.html)
-* [MySQL]({{ page.baseurl }}/install-gde/prereq/mysql.html)
-* [Configuring security options]({{ page.baseurl }}/install-gde/prereq/security.html)
-* [Installing optional software]({{ page.baseurl }}/install-gde/prereq/optional.html)
-* [Determine your installation or upgrade path]({{ page.baseurl }}/install-gde/bk-install-guide.html)
+*  [PHP]({{ page.baseurl }}/install-gde/prereq/php-settings.html)
+*  [MySQL]({{ page.baseurl }}/install-gde/prereq/mysql.html)
+*  [Configuring security options]({{ page.baseurl }}/install-gde/prereq/security.html)
+*  [Installing optional software]({{ page.baseurl }}/install-gde/prereq/optional.html)
+*  [Determine your installation or upgrade path]({{ page.baseurl }}/install-gde/bk-install-guide.html)
