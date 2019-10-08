@@ -6,6 +6,7 @@ menu_title: Iconography
 menu_order: 2
 menu_node:
 ---
+
 Icons are used throughout the [Magento Admin](https://glossary.magento.com/magento-admin) interface, often as controls to initiate a function (such as a "Filter") or to direct a user to a section (such as "Account").
 
 Icons are meant to provide a visual representation of functionality or content and should therefore bear some conceptual resemblance to them. Icons should be able to communicate their "use" to the user without the assistance of a text label, though labels should be used in the UI whenever possible to minimize ambiguity.
@@ -34,21 +35,21 @@ In the Magento Admin, icons have a simple, flat, single-color, and two-dimension
 
 ### Instructions
 
-* Start by selecting an icon library file - download either the [Sketch (SKETCH)](src/magento_icon_library.sketch) or <a href="src/Magento-icon-library.ai">Illustrator (AI)/a> files.
+*  Start by selecting an icon library file - download either the [Sketch (SKETCH)](src/magento_icon_library.sketch) or <a href="src/Magento-icon-library.ai">Illustrator (AI)/a> files.
 
-* Use our standard 300 x 300 pixel icon grid - see the guidance that follows in the "Create With the Icon Grid" section.
+*  Use our standard 300 x 300 pixel icon grid - see the guidance that follows in the "Create With the Icon Grid" section.
 
-* Keep icons monochromatic.
+*  Keep icons monochromatic.
 
-* Match other icons; make them "one of the family".
+*  Match other icons; make them "one of the family".
 
-   - Use the same line weights.
+   *  Use the same line weights.
 
-   - Match the same style of elements used in other family icons. *Example:* Arrows
+   *  Match the same style of elements used in other family icons. *Example:* Arrows
 
-* Cantered or rotated elements should use a 45-degree angle.
+*  Cantered or rotated elements should use a 45-degree angle.
 
-* Keep a limited perspective — all icons should appear from the same perspective.
+*  Keep a limited perspective — all icons should appear from the same perspective.
 
 For any icon to be used in Magento Admin, ask the Magento Product Team to review the icon and add it to the "icon font".
 
@@ -118,6 +119,6 @@ Icons should be very descriptive, especially if they stand on their own. Add des
 
 ## Learn More
 
-* yatil.: [The best way to use icon fonts](https://yatil.net/the-best-way-to-use-icon-fonts/)
+*  yatil.: [The best way to use icon fonts](https://yatil.net/the-best-way-to-use-icon-fonts/)
 
-* Pictos: [Using Icon Fonts](http://pictos.cc/articles/using-icon-fonts/)
+*  Pictos: [Using Icon Fonts](http://pictos.cc/articles/using-icon-fonts/)
