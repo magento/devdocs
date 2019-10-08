@@ -51,7 +51,7 @@ The `urlResolver` query contains the following attribute.
 
 Attribute | Type | Description
 --- | --- | ---
-`url` | String | The requested URL
+`url` | String | The requested URL. To query for product and category pages, the `url` value must contain the URL key and suffix. For CMS page queries, the `url` value must contain the URL key only.
 
 ## Output attributes
 

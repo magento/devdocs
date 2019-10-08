@@ -5,6 +5,9 @@ redirect_from:
   - /guides/v2.3/graphql/reference/categories.html
 ---
 
+{:.bs-callout-warning}
+The `category` query has been deprecated. Use the [categoryList]({{page.baseurl}}/graphql/queries/category-list.html) query instead.
+
 The `category` query allows you to search for a single category definition or the entire category tree. To return multiple category levels in a single call, define the response so that it contains up to ten nested `children` options. You cannot return the entire category tree if it contains more than 10 sublevels unless the `queryDepth` parameter in the GraphQL `di.xml` file has been reconfigured.
 
 ## Syntax
@@ -15,9 +18,11 @@ category (
 ): CategoryTree
 ```
 
-## Example Usage
+## Example usage
 
-The following query returns information about category ID `20` and four levels of subcategories. In the sample data, category ID `20` is assigned to the "Women" category.
+### Return the category tree of a top-level category
+
+The following query returns information about category ID `20` and four levels of subcategories. In the sample data, category ID `20` is assigned to the `Women` category.
 
 **Request**
 
@@ -138,7 +143,9 @@ The following query returns information about category ID `20` and four levels o
 }
 ```
 
-The following query returns breadcrumb information about the women's tops category (`id` = 25).
+### Return breadcrumb information
+
+The following query returns breadcrumb information about the women's `Tops` category (`id` = 25).
 
 **Request**
 
@@ -174,13 +181,15 @@ The following query returns breadcrumb information about the women's tops catego
           "category_id": 20,
           "category_name": "Women",
           "category_level": 2,
-          "category_url_key": "women"
+          "category_url_key": "women",
+          "category_url_path": "women"
         },
         {
           "category_id": 21,
           "category_name": "Tops",
           "category_level": 3,
-          "category_url_key": "tops-women"
+          "category_url_key": "tops-women",
+          "category_url_path": "women/tops-women"
         }
       ]
     }
@@ -200,7 +209,7 @@ The query returns a `CategoryTree` object, which implements `CategoryInterface`.
 
 Attribute | Data type | Description
 --- | --- | ---
-`breadcrumbs` | `Breadcrumb` | A `Breadcrumb` object contains information the categories that comprise the breadcrumb trail for the specified category
+`breadcrumbs` | `Breadcrumb` | A `Breadcrumb` object contains information about the categories that comprise the breadcrumb trail for the specified category
 `children` | `CategoryTree` | A `CategoryTree` object that contains information about a child category. You can specify up to 10 levels of child categories
 `created_at`| String | Timestamp indicating when the category was created
 `default_sort_by`| String | The attribute to use for sorting
@@ -208,14 +217,15 @@ Attribute | Data type | Description
 `id` | Int | An ID that uniquely identifies the category
 `level` | Int | Indicates the depth of the category within the tree
 `name`| String | The display name of the category
-`path_in_store`| String | Category path in the store
+`path_in_store`| String | The category path in the store
 `path`| String | The path to the category, as a string of category IDs, separated by slashes (/). For example, `1/2/20`
 `position`| Int | The position of the category relative to other categories at the same level in tree
 `product_count`| Int | The number of products in the category
 `products(<attributes>)` | `CategoryProducts` | The list of products assigned to the category
 `updated_at`| String | Timestamp indicating when the category was updated
-`url_key`| String | The url key assigned to the category
-`url_path`| String | The url path assigned to the category
+`url_key`| String | The URL key assigned to the category
+`url_path`| String | The URL path assigned to the category
+`url_suffix` | String | The part of the URL that is appended to the `url_key`, such as `.html`. This attribute is defined in the `CatalogUrlRewriteGraphQl` module
 
 ### CategoryProducts object
 
@@ -231,7 +241,7 @@ The `CategoryProducts` object contains the following attributes:
 
 Attribute | Data type | Description
 --- | --- | ---
-`items` | [ProductInterface] | An array of products that are assigned to the category. See [ProductInterface]({{ page.baseurl }}/graphql/product/product-interface.html) for more information
+`items` | [[ProductInterface]]({{ page.baseurl }}/graphql/product/product-interface.html) | An array of products that are assigned to the category
 `page_info` | `SearchResultPageInfo` | An object that includes the `page_info` and `currentPage` values specified in the query
 `total_count` | Int | The number of products returned
 
@@ -246,6 +256,7 @@ Attribute | Data type | Description
 `category_level` | Int | Indicates the depth of the category within the tree
 `category_name` | String |  The display name of the category
 `category_url_key` | String | The url key assigned to the category
+`category_url_path` | String | The URL path of the category
 
 ### CategoryTree object
 
