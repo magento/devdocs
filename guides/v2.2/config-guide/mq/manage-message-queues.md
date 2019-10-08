@@ -36,7 +36,7 @@ You can also use a process manager such as [Supervisor](http://supervisord.org/i
 
 #### Behavior by default
 
-* Cron job `consumers_runner` is disabled
+* Cron job `consumers_runner` is enabled
 * Cron job `consumers_runner` runs all defined consumers
 * Each consumer processes 1000 messages and then terminates
 
