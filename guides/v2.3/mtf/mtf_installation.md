@@ -44,8 +44,8 @@ The Functional Testing Framework requires Composer, which downloads libraries de
 {: .bs-callout-info }
 If you're not sure that Composer is installed, see [Install Composer]({{page.baseurl }}/install-gde/prereq/dev_install.html#instgde-prereq-compose-install).
 
-1.    <a href="{{page.baseurl }}/install-gde/basics/basics_login.html">Open a command prompt</a>.
-1.    Log in to your Magento server as a user with permissions to modify the Magento file system. (This is typically <a href="{{page.baseurl }}/install-gde/prereq/apache-user.html">the Magento file system owner</a>.)
+1. <a href="{{page.baseurl }}/install-gde/basics/basics_login.html">Open a command prompt</a>.
+1. Log in to your Magento server as a user with permissions to modify the Magento file system. (This is typically <a href="{{page.baseurl }}/install-gde/prereq/apache-user.html">the Magento file system owner</a>.)
 
     cd <magento2_root_dir>/dev/tests/functional/
     composer install
@@ -54,9 +54,9 @@ If you're not sure that Composer is installed, see [Install Composer]({{page.bas
 
 If command failed, maybe [Composer](https://getcomposer.org) hasn't been installed globally.
 
-* Copy `composer.phar` to `/usr/local/bin/composer`.
-* To run it locally put `composer.phar` into directory, where `composer.json` file is located (that is, `<magento2>/dev/tests/functional/`).
-* And run from this directory `php composer.phar install`.
+- Copy `composer.phar` to `/usr/local/bin/composer`.
+- To run it locally put `composer.phar` into directory, where `composer.json` file is located (that is, `<magento2>/dev/tests/functional/`).
+- And run from this directory `php composer.phar install`.
 
 ## Check the installation {#mtf_install_check}
 
