@@ -8,7 +8,7 @@ The Magento application should be accessible for all people, whatever their hard
 
 -  **Be mindful of text length**—Don't make textual content too long or too short.
 
-- **Provide adequate contrast**—Be extra careful with light shades of gray, orange, and yellow. Check your contrast levels here:
+-  **Provide adequate contrast**—Be extra careful with light shades of gray, orange, and yellow. Check your contrast levels here:
 [http://webaim.org/resources/contrastchecker/](http://webaim.org/resources/contrastchecker/){:target="_blank"}
 or here: [http://www.paciellogroup.com/resources/contrastAnalyser](http://www.paciellogroup.com/resources/contrastAnalyser){:target="_blank"}
 
@@ -92,6 +92,6 @@ or here: [http://www.paciellogroup.com/resources/contrastAnalyser](http://www.pa
 
 ## Resources
 
-*  Overview: [http://www.w3.org/WAI/WCAG20/glance/](http://www.w3.org/WAI/WCAG20/glance/){:target="_blank"}
-*  Authoring Tool Accessibility Guidelines (ATAG) 1.0: [http://www.w3.org/TR/WCAG10-HTML-TECHS/](http://www.w3.org/TR/WCAG10-HTML-TECHS/){:target="_blank"}
-*  Authoring Tool Accessibility Guidelines (ATAG) 2.0: [http://www.w3.org/TR/WCAG20-HTML-TECHS/](http://www.w3.org/TR/WCAG20-HTML-TECHS/){:target="_blank"}
+-  Overview: [http://www.w3.org/WAI/WCAG20/glance/](http://www.w3.org/WAI/WCAG20/glance/){:target="_blank"}
+-  Authoring Tool Accessibility Guidelines (ATAG) 1.0: [http://www.w3.org/TR/WCAG10-HTML-TECHS/](http://www.w3.org/TR/WCAG10-HTML-TECHS/){:target="_blank"}
+-  Authoring Tool Accessibility Guidelines (ATAG) 2.0: [http://www.w3.org/TR/WCAG20-HTML-TECHS/](http://www.w3.org/TR/WCAG20-HTML-TECHS/){:target="_blank"}

@@ -12,8 +12,8 @@ This topic describes how to uninstall a [storefront](https://glossary.magento.co
 
 The way a theme should be uninstalled is defined by two factors:
 
-* the way the theme was added: manually added (installed or created), installed as [composer](https://glossary.magento.com/composer) package or as an [extension](https://glossary.magento.com/extension).
-* the way Magento was installed: [using the source files from GitHub]({{ page.baseurl }}/install-gde/install/cli/install-cli-sample-data-clone.html) or [using Composer]({{ page.baseurl }}/install-gde/install/cli/install-cli-sample-data-composer.html).
+*  the way the theme was added: manually added (installed or created), installed as [composer](https://glossary.magento.com/composer) package or as an [extension](https://glossary.magento.com/extension).
+*  the way Magento was installed: [using the source files from GitHub]({{ page.baseurl }}/install-gde/install/cli/install-cli-sample-data-clone.html) or [using Composer]({{ page.baseurl }}/install-gde/install/cli/install-cli-sample-data-composer.html).
 
 The following sections describe the flow for uninstalling themes in each case.
 
@@ -36,11 +36,12 @@ To uninstall a manually added theme:
 ```bash
 mysql -u <user> -p -e "delete from <dbname>.theme where theme_path ='<Vendor>/<theme>' AND area ='frontend' limit 1"
 ```
+
 Where:
 
-- `<user>`: your Magento database username
-- `<dbname>`: your Magento database name
-- `<Vendor>/<theme>`: relative path to the theme directory
+*  `<user>`: your Magento database username
+*  `<dbname>`: your Magento database name
+*  `<Vendor>/<theme>`: relative path to the theme directory
 
 ## Uninstall a theme package {#uninstall_theme_pack}
 
@@ -79,11 +80,10 @@ You can use the Composer remove command to remove the dependency, but in that ca
 
 If the theme was installed as an extension, you can uninstall it using one of the following flows:
 
-* the same way as theme Composer packages are uninstalled, see the [Uninstall a theme package](#uninstall_theme_pack) section for details.
-* using the Component Manager.
+*  the same way as theme Composer packages are uninstalled, see the [Uninstall a theme package](#uninstall_theme_pack) section for details.
+*  using the Component Manager.
 
 To uninstall a theme extension using the Component Manager:
 
 1. In the [Magento Admin](https://glossary.magento.com/magento-admin) Panel, navigate to **System** > **Web Setup Wizard** > **Extension Manager**.
 2. In the **Actions** column, click **Select** > **Uninstall** in the theme record.
-
