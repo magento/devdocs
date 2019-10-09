@@ -19,22 +19,19 @@ bin/magento deploy:mode:set developer
 
 See:
 
-* [About Magento modes]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html)
-* [Get started with command-line configuration]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands.html)
+*  [About Magento modes]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html)
+*  [Get started with command-line configuration]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands.html)
 
 {:.bs-callout .bs-callout-tip}
-To check the current mode of your Magento instance, in the root directory, run:
-```bash
-bin/magento deploy:mode:show
-```
+To check the current mode of your Magento instance, in the root directory, run: `bin/magento deploy:mode:show`.
 
 ### Create basic theme files
 
 In the `<magento_root>/app/design/frontend/<Your_Vendor>/<your_theme>` directory, create the following files:
 
-- `theme.xml`
-- `registration.php`
-- (optionally) `composer.json`
+*  `theme.xml`
+*  `registration.php`
+*  (optionally) `composer.json`
 
 For details, see [Create a new storefront theme]({{ page.baseurl }}/frontend-dev-guide/themes/theme-create.html)
 

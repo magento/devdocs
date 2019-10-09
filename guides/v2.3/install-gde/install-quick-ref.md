@@ -151,10 +151,10 @@ To run the Web Setup Wizard:
 
    ![The Readiness Check makes sure your system is ready for the Magento software]({{ site.baseurl }}/common/images/install_qr_readiness.png){:width="400px"}
 
-    *  If the readiness check passes, click **Next** and continue with the next step.
-    *  If the readiness check fails, see [Readiness check issues][]
-    *  If the readiness check passes, click **Next** and continue with the next step.
-    *  If the readiness check fails, see [Readiness check issues]({{ page.baseurl }}/install-gde/trouble/readiness/tshoot_rc_main.html)
+   *  If the readiness check passes, click **Next** and continue with the next step.
+   *  If the readiness check fails, see [Readiness check issues][]
+   *  If the readiness check passes, click **Next** and continue with the next step.
+   *  If the readiness check fails, see [Readiness check issues]({{ page.baseurl }}/install-gde/trouble/readiness/tshoot_rc_main.html)
 
 1. Step 2: Add a Database enables you to set up your Magento database.
 

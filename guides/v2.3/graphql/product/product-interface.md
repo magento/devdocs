@@ -9,10 +9,10 @@ The `items` that are returned in a `ProductInterface` array can also contain att
 -  Custom and extension attributes defined in any attribute set
 -  The attribute is defined in the [PhysicalProductInterface](#PhysicalProductInterface) or [CustomizableOptionInterface]({{ page.baseurl }}/graphql/product/customizable-option-interface.html)
 -  Product types that define their own implementation of `ProductInterface` including:
-  -  [BundleProduct]({{ page.baseurl }}/graphql/product/bundle-product.html)
-  -  [ConfigurableProduct]({{ page.baseurl }}/graphql/product/configurable-product.html)
-  -  [DownloadableProduct]({{ page.baseurl }}/graphql/product/downloadable-product.html)
-  -  [GroupedProduct]({{ page.baseurl }}/graphql/product/grouped-product.html)
+   -  [BundleProduct]({{ page.baseurl }}/graphql/product/bundle-product.html)
+   -  [ConfigurableProduct]({{ page.baseurl }}/graphql/product/configurable-product.html)
+   -  [DownloadableProduct]({{ page.baseurl }}/graphql/product/downloadable-product.html)
+   -  [GroupedProduct]({{ page.baseurl }}/graphql/product/grouped-product.html)
 
 ## ProductInterface attributes
 
