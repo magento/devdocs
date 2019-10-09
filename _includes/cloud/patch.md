@@ -7,17 +7,17 @@ We recommend installing full {{site.data.var.ee}} upgrades for important securit
 
 There are two types of patches:
 
-*   [General patches](#cloud-patch-gen)
+*  [General patches](#cloud-patch-gen)
 
-    These patches are provided for all {{site.data.var.ee}} customers in a GitHub repository that's referenced in your `composer.json`. We apply these patches automatically during the build phase.
+   These patches are provided for all {{site.data.var.ee}} customers in a GitHub repository that's referenced in your `composer.json`. We apply these patches automatically during the build phase.
 
-    To install general patches, use `composer update`, test your system, and push the patches to the remote server.
+   To install general patches, use `composer update`, test your system, and push the patches to the remote server.
 
-*   [Custom patches](#cloud-patch-custom)
+*  [Custom patches](#cloud-patch-custom)
 
-    Custom patches can be provided by Magento to address a specific issue you raised in a Support ticket. Third-party module / extension developers can also provide a custom patch.
+   Custom patches can be provided by Magento to address a specific issue you raised in a Support ticket. Third-party module / extension developers can also provide a custom patch.
 
-    Copy custom patches to the `m2-hotfixes` directory and test them on your locally. After successfully testing them, push the patches to the remote server.
+   Copy custom patches to the `m2-hotfixes` directory and test them on your locally. After successfully testing them, push the patches to the remote server.
 
 {: .bs-callout .bs-callout-warning}
 Always test a patch your local system. When complete, push the local Git branch to deploy your Integration environment. Resolve any issues before you deploy to Staging or Production.
@@ -32,55 +32,77 @@ When you perform a {{site.data.var.ee}} upgrade, you automatically upgrade with 
 
 Back up your Integration environment database and code:
 
-1.  Enter the following command to make a local backup of the remote database:
+1. Enter the following command to make a local backup of the remote database:
 
-        magento-cloud db:dump
-2.  Enter the following command to back up code and media:
+   ```bash
+   magento-cloud db:dump
+   ```
 
-        php bin/magento setup:backup --code [--media]
+2. Enter the following command to back up code and media:
 
-    You can optionally omit `[--media]` if you have a large number of static files that are already in source control.
+   ```bash
+   php bin/magento setup:backup --code [--media]
+   ```
+
+   You can optionally omit `[--media]` if you have a large number of static files that are already in source control.
 
 Back up your Staging or Production environment database before deploying to those environments:
 
-1.  [SSH to the server]({{ page.baseurl }}/cloud/env/environments-ssh.html).
-2.  Find the database login information:
+1. [SSH to the server]({{ page.baseurl }}/cloud/env/environments-ssh.html).
+2. Find the database login information:
 
-        php -r 'print_r(json_decode(base64_decode($_ENV["MAGENTO_CLOUD_RELATIONSHIPS"]))->database);'
+   ```bash
+   php -r 'print_r(json_decode(base64_decode($_ENV["MAGENTO_CLOUD_RELATIONSHIPS"]))->database);'
+   ```
 
-3.  Create a database dump:
+3. Create a database dump:
 
-        mysqldump -h <database host> --user=<database username> --password=<password> --single-transaction <database name> | gzip - > /tmp/database.sql.gz
+   ```bash
+   mysqldump -h <database host> --user=<database username> --password=<password> --single-transaction <database name> | gzip - > /tmp/database.sql.gz
+   ```
 
 ### Verify other changes
 
 Verify other changes you're going to submit to source control before you start the upgrade:
 
-1.  If you haven't done so already, change to your project root directory.
-2.  Enter the following command:
+1. If you haven't done so already, change to your project root directory.
+2. Enter the following command:
 
-        git status
-3.  If there are changes you do *not* want to submit to source control, branch or stash them now.
+   ```bash
+   git status
+   ```
+
+3. If there are changes you do *not* want to submit to source control, branch or stash them now.
 
 ### Upgrade the patch
 
-1.  Change to your Magento base directory and enter the following command:
+1. Change to your Magento base directory and enter the following command:
 
-        composer update
+   ```bash
+   composer update
+   ```
 
-    This command automatically upgrades for patches associated to the installed {{site.data.var.ee}} version.
+   This command automatically upgrades for patches associated to the installed {{site.data.var.ee}} version.
 
-4.  Add, commit, and push your changes to initiate a deployment:
+1. Add, commit, and push your changes to initiate a deployment:
 
-        git add -A
-        git commit -m "Upgrade patch"
-        git push origin <branch name>
+   ```bash
+   git add -A
+   ```
 
-    `git add -A` is required to add all changed files to source control because of the way Composer marshals base packages.
+   ```bash
+   git commit -m "Upgrade patch"
+   ```
 
-    The files Composer marshals belong to the new version of Magento, to overwrite the outdated version of those same files. Currently, marshaling is disabled in {{site.data.var.ee}}, so you must add the marshaled files to source control.
+   ```bash
+   git push origin <branch name>
+   ```
 
-5.  Wait for deployment to complete.
+   `git add -A` is required to add all changed files to source control because of the way Composer marshals base packages.
+
+   The files Composer marshals belong to the new version of Magento, to overwrite the outdated version of those same files. Currently, marshaling is disabled in {{site.data.var.ee}}, so you must add the marshaled files to source control.
+
+1. Wait for deployment to complete.
 
 ## Test general patches {#cloud-patch-gen}
 
@@ -100,85 +122,86 @@ To test a general patch on your local system:
 
 1. On your local system, enter the following commands as the [Magento file system owner]({{ page.baseurl }}/cloud/before/before-workspace-file-sys-owner.html):
 
-    ```bash
-    cd <project root dir>
-    ```
+   ```bash
+   cd <project root dir>
+   ```
 
-    ```bash
-    magento-cloud environment:checkout master
-    ```
+   ```bash
+   magento-cloud environment:checkout master
+   ```
 
-    ```bash
-    git pull origin master
-    ```
+   ```bash
+   git pull origin master
+   ```
 
-    ```bash
-    composer update
-    ```
+   ```bash
+   composer update
+   ```
 
 2. Apply the patch locally:
 
-    ```bash
-    git apply vendor/magento/magento-cloud-configuration/patches/<patch file name>
-    ```
+   ```bash
+   git apply vendor/magento/magento-cloud-configuration/patches/<patch file name>
+   ```
 
 3. Clean the Magento cache:
 
-    ```bash
-    php <Magento project root dir>/bin/magento cache:clean
-    ```
+   ```bash
+   php <Magento project root dir>/bin/magento cache:clean
+   ```
 
-    You can also clean the cache using the [Magento Admin](http://docs.magento.com/m2/ee/user_guide/system/cache-management.html).
+   You can also clean the cache using the [Magento Admin](http://docs.magento.com/m2/ee/user_guide/system/cache-management.html).
 
 4. Thoroughly test your local system to make sure the patch doesn't have unexpected side-affects.
 5. After testing the patch, push it to the remote server and deploy it:
 
-    ```bash
-    git add -A && git commit -m "Apply patch"
-    ```
+   ```bash
+   git add -A && git commit -m "Apply patch"
+   ```
 
-    ```bash
-    git push origin <branch name>
-    ```
+   ```bash
+   git push origin <branch name>
+   ```
 
 ### Push a general patch to the staging or production environment {#gen-pushpatch}
 
 After you've successfully tested a patch locally and on your integration environment, you can push the patch to staging or production as follows:
 
-1.  Open an SSH connection to your staging or production server:
+1. Open an SSH connection to your staging or production server:
 
-    *   Staging: `ssh -A <project ID>_stg@<project ID>.ent.magento.cloud`
-    *   Production: `ssh -A <project ID>@<project ID>.ent.magento.cloud`
-2. Enter the following commands:
+   *  Staging: `ssh -A <project ID>_stg@<project ID>.ent.magento.cloud`
+   *  Production: `ssh -A <project ID>@<project ID>.ent.magento.cloud`
 
-    ```bash
-    <Magento project root dir>/composer update
-    ```
+1. Enter the following commands:
 
-2. Apply the patch locally:
+   ```bash
+   <Magento project root dir>/composer update
+   ```
 
-    ```bash
-    git apply vendor/magento/magento-cloud-configuration/patches/<patch file name>
-    ```
+1. Apply the patch locally:
 
-3. Clean the Magento cache:
+   ```bash
+   git apply vendor/magento/magento-cloud-configuration/patches/<patch file name>
+   ```
 
-    ```bash
-    php <Magento project root dir>/bin/magento cache:clean
-    ```
+1. Clean the Magento cache:
 
-    You can also clean the cache using the [Magento Admin](http://docs.magento.com/m2/ee/user_guide/system/cache-management.html).
+   ```bash
+   php <Magento project root dir>/bin/magento cache:clean
+   ```
 
-3. Thoroughly test your local system to make sure the patch doesn't have unexpected side-affects.
-4. After testing the patch, push it to the remote server and deploy it:
+   You can also clean the cache using the [Magento Admin](http://docs.magento.com/m2/ee/user_guide/system/cache-management.html).
 
-    ```bash
-    git add -A && git commit -m "Apply patch"
-    ```
+1. Thoroughly test your local system to make sure the patch doesn't have unexpected side-affects.
+1. After testing the patch, push it to the remote server and deploy it:
 
-    ```bash
-    git push origin master
-    ```
+   ```bash
+   git add -A && git commit -m "Apply patch"
+   ```
+
+   ```bash
+   git push origin master
+   ```
 
 ## Test custom patches {#cloud-patch-custom}
 
@@ -198,46 +221,46 @@ To test a custom patch on your local system:
 
 1. On your local system, enter the following command as the [Magento file system owner]({{ page.baseurl }}/cloud/before/before-workspace-file-sys-owner.html) if you haven't done so already:
 
-    ```bash
-    mkdir <Magento project root dir>/m2-hotfixes
-    ```
+   ```bash
+   mkdir <Magento project root dir>/m2-hotfixes
+   ```
 
-3. Copy the patch file to that directory.
-2. Apply the patch locally:
+1. Copy the patch file to that directory.
+1. Apply the patch locally:
 
-    ```bash
-    cd <Magento project root dir>
-    ```
+   ```bash
+   cd <Magento project root dir>
+   ```
 
-    ```bash
-    magento-cloud environment:checkout master
-    ```
+   ```bash
+   magento-cloud environment:checkout master
+   ```
 
-    ```bash
-    git pull origin master
-    ```
+   ```bash
+   git pull origin master
+   ```
 
-    ```bash
-    git apply <Magento project root dir>/m2-hotfixes/<patch file name>
-    ```
+   ```bash
+   git apply <Magento project root dir>/m2-hotfixes/<patch file name>
+   ```
 
-3. Clean the Magento cache:
+1. Clean the Magento cache:
 
-    ```bash
-    php <Magento project root dir>/bin/magento cache:clean
-    ```
+   ```bash
+   php <Magento project root dir>/bin/magento cache:clean
+   ```
 
-    You can also clean the cache using the [Magento Admin](http://docs.magento.com/m2/ee/user_guide/system/cache-management.html).
+   You can also clean the cache using the [Magento Admin](http://docs.magento.com/m2/ee/user_guide/system/cache-management.html).
 
-4. After testing the patch, push it to the remote server and deploy it:
+1. After testing the patch, push it to the remote server and deploy it:
 
-    ```bash
-    git add -A && git commit -m "Apply patch"
-    ```
+   ```bash
+   git add -A && git commit -m "Apply patch"
+   ```
 
-    ```bash
-    git push origin <branch name>
-    ```
+   ```bash
+   git push origin <branch name>
+   ```
 
 ### Push a custom patch to a staging or production environment {#custom-pushpatch}
 
@@ -248,52 +271,52 @@ After you've successfully tested a custom patch locally and on your integration 
    *  Staging: `ssh -A <project ID>_stg@<project ID>.ent.magento.cloud`
    *  Production: `ssh -A <project ID>@<project ID>.ent.magento.cloud`
 
-2. On your staging or production system, enter the following command if you haven't done so already:
+1. On your staging or production system, enter the following command if you haven't done so already:
 
-    ```bash
-    mkdir <Magento project root dir>/m2-hotfixes
-    ```
+   ```bash
+   mkdir <Magento project root dir>/m2-hotfixes
+   ```
 
-3. Copy the patch file to that directory.
+1. Copy the patch file to that directory.
 
-    We suggest using the following command:
+   We suggest using the following command:
 
-    ```bash
-    rsync -azvP <source> <destination>
-    ```
+   ```bash
+   rsync -azvP <source> <destination>
+   ```
 
-    Options:
+   Options:
 
-    `a` archive
+   `a` archive
 
-    `z` compress
+   `z` compress
 
-    `v` verbose
+   `v` verbose
 
-    `P` partial progress
+   `P` partial progress
 
-    For additional options, see the [rsync man page](http://linux.die.net/man/1/rsync).
+   For additional options, see the [rsync man page](http://linux.die.net/man/1/rsync).
 
-2. Apply the patch:
+1. Apply the patch:
 
-    ```bash
-    git apply <Magento project root dir>/m2-hotfixes/<patch file name>
-    ```
+   ```bash
+   git apply <Magento project root dir>/m2-hotfixes/<patch file name>
+   ```
 
-3. Clean the Magento cache:
+1. Clean the Magento cache:
 
-    ```bash
-    php <Magento project root dir>/bin/magento cache:clean
-    ```
+   ```bash
+   php <Magento project root dir>/bin/magento cache:clean
+   ```
 
-    You can also clean the cache using the [Magento Admin](http://docs.magento.com/m2/ee/user_guide/system/cache-management.html).
+   You can also clean the cache using the [Magento Admin](http://docs.magento.com/m2/ee/user_guide/system/cache-management.html).
 
-4. After testing the patch, push it to the remote server and deploy it:
+1. After testing the patch, push it to the remote server and deploy it:
 
-    ```bash
-    git add -A && git commit -m "Apply patch"
-    ```
+   ```bash
+   git add -A && git commit -m "Apply patch"
+   ```
 
-    ```bash
-    git push origin <branch name>
-    ```
+   ```bash
+   git push origin <branch name>
+   ```
