@@ -44,13 +44,13 @@ If the command fails with the error message:
 
 Install [fontconfig library]:<br/>
 
-* CentOS:
+*  CentOS:
 
   ```bash
   yum install fontconfig
   ```
 
-* Ubuntu:
+*  Ubuntu:
 
   ```bash
   apt-get install fontconfig
@@ -124,13 +124,13 @@ define([
 
 A Jasmine test consists of main two parts:
 
-- `describe` blocks
-- `it` blocks
+*  `describe` blocks
+*  `it` blocks
 
 Both the `describe` and `it` functions contains two parameters:
 
- - a text string with description of what is going to be done
- - a function with block of code implementing described action
+*  a text string with description of what is going to be done
+*  a function with block of code implementing described action
 
 In `describe` you can use `beforeEach` and `afterEach` functions performing a preparation of what must be done before and after every `it` test followed.
 
@@ -269,6 +269,7 @@ Run in your terminal:
 ```bash
 cd <magento_root>/node_modules/grunt-contrib-jasmine
 ```
+
 ```bash
 npm install
 ```
