@@ -1,6 +1,6 @@
 ---
-layout: full-width
-title: 'Command-line tools: bin/magento'
+group: cli-reference
+title: bin/magento (Open Source)
 functional_areas:
   - Configuration
   - System
