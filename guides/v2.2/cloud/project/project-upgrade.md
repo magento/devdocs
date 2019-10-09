@@ -16,11 +16,11 @@ You can upgrade the core {{site.data.var.ee}} code base to a newer version. It i
 
 If you are upgrading from 2.1.4 or later to 2.2.X, review the [Magento technology stack requirements]({{ site.baseurl }}/guides/v2.2/install-gde/system-requirements-tech.html). Your upgrade tasks may include the following:
 
-- Upgrade your PHP version
-- Convert an older configuration management file
-- Update the `.magento.app.yaml` file with new settings for hooks and environment variables
-- Upgrade to the latest supported version of Fastly
-- Update the `.gitignore` file
+-  Upgrade your PHP version
+-  Convert an older configuration management file
+-  Update the `.magento.app.yaml` file with new settings for hooks and environment variables
+-  Upgrade to the latest supported version of Fastly
+-  Update the `.gitignore` file
 
 ### Configuration management
 
@@ -101,7 +101,7 @@ If you use PHP version 7.2, you must remove the `mcrypt` extension from the [`ex
 {:.procedure}
 To upgrade the Magento version:
 
-1. When upgrading to 2.3, you must [update the `autoload`](https://devdocs.magento.com/guides/v2.3/comp-mgr/cli/cli-upgrade.html#update-autoload) property of the `composer.json` file.
+1. When upgrading to 2.3, you must [update the `autoload`]({{site.baseurl}}/guides/v2.3/comp-mgr/cli/cli-upgrade.html#update-autoload) property of the `composer.json` file.
 
 1. Change to your Magento root directory and set the upgrade version using the [version constraint syntax]({{page.baseurl}}/cloud/project/ece-tools-upgrade-project.html#metapackage).
 
@@ -164,7 +164,7 @@ To create a system-specific configuration file:
 1. Add, commit, and push code changes.
 
    ```bash
-   git add app/etc/config.php && git commit -m "Add system-specific configuration" && git push origin master
+   git add app/etc/config.php && git commit -m "Add system-specific configuration" && git push magento master
    ```
 
    This generates an updated `/app/etc/config.php` file with a module list and configuration settings.
@@ -207,7 +207,6 @@ There has been an error processing your request
 Exception printing is disabled by default for security reasons.
   Error log record number: <error-number>
 ```
-{: .no-copy}
 
 {:.procedure}
 To resolve the error:
@@ -219,5 +218,5 @@ To resolve the error:
 1. Add, commit, and push code changes.
 
    ```bash
-   git add -A && git commit -m "Fixed deployment failure" && git push origin <branch-name>
+   git add -A && git commit -m "Fixed deployment failure" && git push magento <branch-name>
    ```
