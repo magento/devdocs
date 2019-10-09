@@ -1,8 +1,11 @@
 ---
+application:
+  name: Magento CLI
+  version: 2.3.3
 commands:
 - name: help
   usage:
-  - help [--xml] [--format FORMAT] [--raw] [--] [<command_name>]
+  - help [--format FORMAT] [--raw] [--] [<command_name>]
   description: Displays help for a command
   help: |-
     The <info>help</info> command displays help for a given command:
@@ -23,14 +26,6 @@ commands:
         description: The command name
         default: help
     options:
-      xml:
-        name: "--xml"
-        shortcut: ''
-        accept_value: false
-        is_value_required: false
-        is_multiple: false
-        description: To output help as XML
-        default: false
       format:
         name: "--format"
         shortcut: ''
@@ -104,9 +99,10 @@ commands:
         is_multiple: false
         description: Do not ask any interactive question
         default: false
+  hidden: false
 - name: list
   usage:
-  - list [--xml] [--raw] [--format FORMAT] [--] [<namespace>]
+  - list [--raw] [--format FORMAT] [--] [<namespace>]
   description: Lists commands
   help: |-
     The <info>list</info> command lists all commands:
@@ -133,14 +129,6 @@ commands:
         description: The namespace name
         default: 
     options:
-      xml:
-        name: "--xml"
-        shortcut: ''
-        accept_value: false
-        is_value_required: false
-        is_multiple: false
-        description: To output list as XML
-        default: false
       raw:
         name: "--raw"
         shortcut: ''
@@ -157,6 +145,7 @@ commands:
         is_multiple: false
         description: The output format (txt, xml, json, or md)
         default: txt
+  hidden: false
 - name: admin:user:create
   usage:
   - admin:user:create [--admin-user ADMIN-USER] [--admin-password ADMIN-PASSWORD]
@@ -273,6 +262,7 @@ commands:
         is_multiple: false
         description: Do not ask any interactive question
         default: false
+  hidden: false
 - name: admin:user:unlock
   usage:
   - admin:user:unlock <username>
@@ -347,9 +337,10 @@ commands:
         is_multiple: false
         description: Do not ask any interactive question
         default: false
+  hidden: false
 - name: app:config:dump
   usage:
-  - app:config:dump [<config-types>]...
+  - app:config:dump [<config-types>...]
   description: Create dump of application
   help: Create dump of application
   definition:
@@ -419,6 +410,7 @@ commands:
         is_multiple: false
         description: Do not ask any interactive question
         default: false
+  hidden: false
 - name: app:config:import
   usage:
   - app:config:import
@@ -484,6 +476,7 @@ commands:
         is_multiple: false
         description: Do not ask any interactive question
         default: false
+  hidden: false
 - name: app:config:status
   usage:
   - app:config:status
@@ -549,9 +542,10 @@ commands:
         is_multiple: false
         description: Do not ask any interactive question
         default: false
+  hidden: false
 - name: cache:clean
   usage:
-  - cache:clean [--bootstrap BOOTSTRAP] [--] [<types>]...
+  - cache:clean [--bootstrap BOOTSTRAP] [--] [<types>...]
   description: Cleans cache type(s)
   help: Cleans cache type(s)
   definition:
@@ -629,9 +623,10 @@ commands:
         is_multiple: false
         description: Do not ask any interactive question
         default: false
+  hidden: false
 - name: cache:disable
   usage:
-  - cache:disable [--bootstrap BOOTSTRAP] [--] [<types>]...
+  - cache:disable [--bootstrap BOOTSTRAP] [--] [<types>...]
   description: Disables cache type(s)
   help: Disables cache type(s)
   definition:
@@ -709,9 +704,10 @@ commands:
         is_multiple: false
         description: Do not ask any interactive question
         default: false
+  hidden: false
 - name: cache:enable
   usage:
-  - cache:enable [--bootstrap BOOTSTRAP] [--] [<types>]...
+  - cache:enable [--bootstrap BOOTSTRAP] [--] [<types>...]
   description: Enables cache type(s)
   help: Enables cache type(s)
   definition:
@@ -789,9 +785,10 @@ commands:
         is_multiple: false
         description: Do not ask any interactive question
         default: false
+  hidden: false
 - name: cache:flush
   usage:
-  - cache:flush [--bootstrap BOOTSTRAP] [--] [<types>]...
+  - cache:flush [--bootstrap BOOTSTRAP] [--] [<types>...]
   description: Flushes cache storage used by cache type(s)
   help: Flushes cache storage used by cache type(s)
   definition:
@@ -869,6 +866,7 @@ commands:
         is_multiple: false
         description: Do not ask any interactive question
         default: false
+  hidden: false
 - name: cache:status
   usage:
   - cache:status [--bootstrap BOOTSTRAP]
@@ -942,6 +940,7 @@ commands:
         is_multiple: false
         description: Do not ask any interactive question
         default: false
+  hidden: false
 - name: catalog:images:resize
   usage:
   - catalog:images:resize
@@ -1007,6 +1006,7 @@ commands:
         is_multiple: false
         description: Do not ask any interactive question
         default: false
+  hidden: false
 - name: catalog:product:attributes:cleanup
   usage:
   - catalog:product:attributes:cleanup
@@ -1072,10 +1072,11 @@ commands:
         is_multiple: false
         description: Do not ask any interactive question
         default: false
+  hidden: false
 - name: config:sensitive:set
   usage:
   - config:sensitive:set [-i|--interactive] [--scope [SCOPE]] [--scope-code [SCOPE-CODE]]
-    [--] [<path>] [<value>]
+    [--] [<path> [<value>]]
   description: Set sensitive configuration values
   help: Set sensitive configuration values
   definition:
@@ -1174,6 +1175,7 @@ commands:
         is_multiple: false
         description: Do not ask any interactive question
         default: false
+  hidden: false
 - name: config:set
   usage:
   - config:set [--scope SCOPE] [--scope-code SCOPE-CODE] [-e|--lock-env] [-c|--lock-config]
@@ -1294,6 +1296,7 @@ commands:
         is_multiple: false
         description: Do not ask any interactive question
         default: false
+  hidden: false
 - name: config:show
   usage:
   - config:show [--scope [SCOPE]] [--scope-code [SCOPE-CODE]] [--] [<path>]
@@ -1384,6 +1387,7 @@ commands:
         is_multiple: false
         description: Do not ask any interactive question
         default: false
+  hidden: false
 - name: cron:install
   usage:
   - cron:install [-f|--force]
@@ -1457,6 +1461,7 @@ commands:
         is_multiple: false
         description: Do not ask any interactive question
         default: false
+  hidden: false
 - name: cron:remove
   usage:
   - cron:remove
@@ -1522,6 +1527,7 @@ commands:
         is_multiple: false
         description: Do not ask any interactive question
         default: false
+  hidden: false
 - name: cron:run
   usage:
   - cron:run [--group GROUP] [--bootstrap BOOTSTRAP]
@@ -1603,6 +1609,7 @@ commands:
         is_multiple: false
         description: Do not ask any interactive question
         default: false
+  hidden: false
 - name: customer:hash:upgrade
   usage:
   - customer:hash:upgrade
@@ -1668,6 +1675,7 @@ commands:
         is_multiple: false
         description: Do not ask any interactive question
         default: false
+  hidden: false
 - name: deploy:mode:set
   usage:
   - deploy:mode:set [-s|--skip-compilation] [--] <mode>
@@ -1749,6 +1757,7 @@ commands:
         is_multiple: false
         description: Do not ask any interactive question
         default: false
+  hidden: false
 - name: deploy:mode:show
   usage:
   - deploy:mode:show
@@ -1814,6 +1823,7 @@ commands:
         is_multiple: false
         description: Do not ask any interactive question
         default: false
+  hidden: false
 - name: dev:di:info
   usage:
   - dev:di:info <class>
@@ -1886,6 +1896,7 @@ commands:
         is_multiple: false
         description: Do not ask any interactive question
         default: false
+  hidden: false
 - name: dev:profiler:disable
   usage:
   - dev:profiler:disable
@@ -1951,6 +1962,7 @@ commands:
         is_multiple: false
         description: Do not ask any interactive question
         default: false
+  hidden: false
 - name: dev:profiler:enable
   usage:
   - dev:profiler:enable [<type>]
@@ -1963,7 +1975,7 @@ commands:
         is_required: false
         is_array: false
         description: Profiler type
-        default: html
+        default: 
     options:
       help:
         name: "--help"
@@ -2022,6 +2034,7 @@ commands:
         is_multiple: false
         description: Do not ask any interactive question
         default: false
+  hidden: false
 - name: dev:query-log:disable
   usage:
   - dev:query-log:disable
@@ -2087,6 +2100,7 @@ commands:
         is_multiple: false
         description: Do not ask any interactive question
         default: false
+  hidden: false
 - name: dev:query-log:enable
   usage:
   - dev:query-log:enable [--include-all-queries [INCLUDE-ALL-QUERIES]] [--query-time-threshold
@@ -2177,10 +2191,11 @@ commands:
         is_multiple: false
         description: Do not ask any interactive question
         default: false
+  hidden: false
 - name: dev:source-theme:deploy
   usage:
   - dev:source-theme:deploy [--type TYPE] [--locale LOCALE] [--area AREA] [--theme
-    THEME] [--] [<file>]...
+    THEME] [--] [<file>...]
   description: Collects and publishes source files for theme.
   help: Collects and publishes source files for theme.
   definition:
@@ -2283,6 +2298,7 @@ commands:
         is_multiple: false
         description: Do not ask any interactive question
         default: false
+  hidden: false
 - name: dev:template-hints:disable
   usage:
   - dev:template-hints:disable
@@ -2348,6 +2364,7 @@ commands:
         is_multiple: false
         description: Do not ask any interactive question
         default: false
+  hidden: false
 - name: dev:template-hints:enable
   usage:
   - dev:template-hints:enable
@@ -2413,6 +2430,7 @@ commands:
         is_multiple: false
         description: Do not ask any interactive question
         default: false
+  hidden: false
 - name: dev:tests:run
   usage:
   - dev:tests:run [-c|--arguments ARGUMENTS] [--] [<type>]
@@ -2494,6 +2512,7 @@ commands:
         is_multiple: false
         description: Do not ask any interactive question
         default: false
+  hidden: false
 - name: dev:urn-catalog:generate
   usage:
   - dev:urn-catalog:generate [--ide IDE] [--] <path>
@@ -2574,6 +2593,7 @@ commands:
         is_multiple: false
         description: Do not ask any interactive question
         default: false
+  hidden: false
 - name: dev:xml:convert
   usage:
   - dev:xml:convert [-o|--overwrite] [--] <xml-file> <processor>
@@ -2659,9 +2679,159 @@ commands:
         is_multiple: false
         description: Do not ask any interactive question
         default: false
+  hidden: false
+- name: dotdigital:migrate
+  usage:
+  - dotdigital:migrate
+  description: Migrate data into email_ tables to sync with Engagement Cloud
+  help: Migrate data into email_ tables to sync with Engagement Cloud
+  definition:
+    arguments: []
+    options:
+      help:
+        name: "--help"
+        shortcut: "-h"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this help message
+        default: false
+      quiet:
+        name: "--quiet"
+        shortcut: "-q"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not output any message
+        default: false
+      verbose:
+        name: "--verbose"
+        shortcut: "-v|-vv|-vvv"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: 'Increase the verbosity of messages: 1 for normal output, 2 for
+          more verbose output and 3 for debug'
+        default: false
+      version:
+        name: "--version"
+        shortcut: "-V"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this application version
+        default: false
+      ansi:
+        name: "--ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Force ANSI output
+        default: false
+      no-ansi:
+        name: "--no-ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Disable ANSI output
+        default: false
+      no-interaction:
+        name: "--no-interaction"
+        shortcut: "-n"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not ask any interactive question
+        default: false
+  hidden: false
+- name: dotdigital:sync
+  usage:
+  - dotdigital:sync [--from [FROM]] [--] [<sync>]
+  description: Run syncs to populate email_ tables before importing to Engagement
+    Cloud
+  help: Run syncs to populate email_ tables before importing to Engagement Cloud
+  definition:
+    arguments:
+      sync:
+        name: sync
+        is_required: false
+        is_array: false
+        description: The name of the sync to run (Automation; Campaign; Catalog; Contact;
+          Order; Subscriber; Template; AbandonedCart; Importer)
+        default: 
+    options:
+      from:
+        name: "--from"
+        shortcut: ''
+        accept_value: true
+        is_value_required: false
+        is_multiple: false
+        description: Specify a date/time (parsable by \DateTime) to run a sync from
+          (if supported)
+        default: 
+      help:
+        name: "--help"
+        shortcut: "-h"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this help message
+        default: false
+      quiet:
+        name: "--quiet"
+        shortcut: "-q"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not output any message
+        default: false
+      verbose:
+        name: "--verbose"
+        shortcut: "-v|-vv|-vvv"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: 'Increase the verbosity of messages: 1 for normal output, 2 for
+          more verbose output and 3 for debug'
+        default: false
+      version:
+        name: "--version"
+        shortcut: "-V"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this application version
+        default: false
+      ansi:
+        name: "--ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Force ANSI output
+        default: false
+      no-ansi:
+        name: "--no-ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Disable ANSI output
+        default: false
+      no-interaction:
+        name: "--no-interaction"
+        shortcut: "-n"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not ask any interactive question
+        default: false
+  hidden: false
 - name: downloadable:domains:add
   usage:
-  - downloadable:domains:add [<domains>]...
+  - downloadable:domains:add [<domains>...]
   description: Add domains to the downloadable domains whitelist
   help: Add domains to the downloadable domains whitelist
   definition:
@@ -2730,9 +2900,10 @@ commands:
         is_multiple: false
         description: Do not ask any interactive question
         default: false
+  hidden: false
 - name: downloadable:domains:remove
   usage:
-  - downloadable:domains:remove [<domains>]...
+  - downloadable:domains:remove [<domains>...]
   description: Remove domains from the downloadable domains whitelist
   help: Remove domains from the downloadable domains whitelist
   definition:
@@ -2801,6 +2972,7 @@ commands:
         is_multiple: false
         description: Do not ask any interactive question
         default: false
+  hidden: false
 - name: downloadable:domains:show
   usage:
   - downloadable:domains:show
@@ -2866,6 +3038,73 @@ commands:
         is_multiple: false
         description: Do not ask any interactive question
         default: false
+  hidden: false
+- name: encryption:payment-data:update
+  usage:
+  - encryption:payment-data:update
+  description: Re-encrypts encrypted credit card data with latest encryption cipher.
+  help: Re-encrypts encrypted credit card data with latest encryption cipher.
+  definition:
+    arguments: []
+    options:
+      help:
+        name: "--help"
+        shortcut: "-h"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this help message
+        default: false
+      quiet:
+        name: "--quiet"
+        shortcut: "-q"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not output any message
+        default: false
+      verbose:
+        name: "--verbose"
+        shortcut: "-v|-vv|-vvv"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: 'Increase the verbosity of messages: 1 for normal output, 2 for
+          more verbose output and 3 for debug'
+        default: false
+      version:
+        name: "--version"
+        shortcut: "-V"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this application version
+        default: false
+      ansi:
+        name: "--ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Force ANSI output
+        default: false
+      no-ansi:
+        name: "--no-ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Disable ANSI output
+        default: false
+      no-interaction:
+        name: "--no-interaction"
+        shortcut: "-n"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not ask any interactive question
+        default: false
+  hidden: false
 - name: i18n:collect-phrases
   usage:
   - i18n:collect-phrases [-o|--output OUTPUT] [-m|--magento] [--] [<directory>]
@@ -2955,6 +3194,7 @@ commands:
         is_multiple: false
         description: Do not ask any interactive question
         default: false
+  hidden: false
 - name: i18n:pack
   usage:
   - i18n:pack [-m|--mode MODE] [-d|--allow-duplicates] [--] <source> <locale>
@@ -3050,9 +3290,10 @@ commands:
         is_multiple: false
         description: Do not ask any interactive question
         default: false
+  hidden: false
 - name: i18n:uninstall
   usage:
-  - i18n:uninstall [-b|--backup-code] [--] <package> (<package>)...
+  - i18n:uninstall [-b|--backup-code] [--] <package>...
   description: Uninstalls language packages
   help: Uninstalls language packages
   definition:
@@ -3130,6 +3371,7 @@ commands:
         is_multiple: false
         description: Do not ask any interactive question
         default: false
+  hidden: false
 - name: indexer:info
   usage:
   - indexer:info
@@ -3195,9 +3437,10 @@ commands:
         is_multiple: false
         description: Do not ask any interactive question
         default: false
+  hidden: false
 - name: indexer:reindex
   usage:
-  - indexer:reindex [<index>]...
+  - indexer:reindex [<index>...]
   description: Reindexes Data
   help: Reindexes Data
   definition:
@@ -3266,9 +3509,10 @@ commands:
         is_multiple: false
         description: Do not ask any interactive question
         default: false
+  hidden: false
 - name: indexer:reset
   usage:
-  - indexer:reset [<index>]...
+  - indexer:reset [<index>...]
   description: Resets indexer status to invalid
   help: Resets indexer status to invalid
   definition:
@@ -3337,9 +3581,10 @@ commands:
         is_multiple: false
         description: Do not ask any interactive question
         default: false
+  hidden: false
 - name: indexer:set-dimensions-mode
   usage:
-  - indexer:set-dimensions-mode [<indexer>] [<mode>]
+  - indexer:set-dimensions-mode [<indexer> [<mode>]]
   description: Set Indexer Dimensions Mode
   help: Set Indexer Dimensions Mode
   definition:
@@ -3414,9 +3659,10 @@ commands:
         is_multiple: false
         description: Do not ask any interactive question
         default: false
+  hidden: false
 - name: indexer:set-mode
   usage:
-  - indexer:set-mode [<mode>] [<index>]...
+  - indexer:set-mode [<mode> [<index>...]]
   description: Sets index mode type
   help: Sets index mode type
   definition:
@@ -3491,9 +3737,10 @@ commands:
         is_multiple: false
         description: Do not ask any interactive question
         default: false
+  hidden: false
 - name: indexer:show-dimensions-mode
   usage:
-  - indexer:show-dimensions-mode [<indexer>]...
+  - indexer:show-dimensions-mode [<indexer>...]
   description: Shows Indexer Dimension Mode
   help: Shows Indexer Dimension Mode
   definition:
@@ -3563,9 +3810,10 @@ commands:
         is_multiple: false
         description: Do not ask any interactive question
         default: false
+  hidden: false
 - name: indexer:show-mode
   usage:
-  - indexer:show-mode [<index>]...
+  - indexer:show-mode [<index>...]
   description: Shows Index Mode
   help: Shows Index Mode
   definition:
@@ -3634,9 +3882,10 @@ commands:
         is_multiple: false
         description: Do not ask any interactive question
         default: false
+  hidden: false
 - name: indexer:status
   usage:
-  - indexer:status [<index>]...
+  - indexer:status [<index>...]
   description: Shows status of Indexer
   help: Shows status of Indexer
   definition:
@@ -3705,6 +3954,7 @@ commands:
         is_multiple: false
         description: Do not ask any interactive question
         default: false
+  hidden: false
 - name: info:adminuri
   usage:
   - info:adminuri
@@ -3770,6 +4020,7 @@ commands:
         is_multiple: false
         description: Do not ask any interactive question
         default: false
+  hidden: false
 - name: info:backups:list
   usage:
   - info:backups:list
@@ -3835,6 +4086,7 @@ commands:
         is_multiple: false
         description: Do not ask any interactive question
         default: false
+  hidden: false
 - name: info:currency:list
   usage:
   - info:currency:list
@@ -3900,6 +4152,7 @@ commands:
         is_multiple: false
         description: Do not ask any interactive question
         default: false
+  hidden: false
 - name: info:dependencies:show-framework
   usage:
   - info:dependencies:show-framework [-o|--output OUTPUT]
@@ -3973,6 +4226,7 @@ commands:
         is_multiple: false
         description: Do not ask any interactive question
         default: false
+  hidden: false
 - name: info:dependencies:show-modules
   usage:
   - info:dependencies:show-modules [-o|--output OUTPUT]
@@ -4046,6 +4300,7 @@ commands:
         is_multiple: false
         description: Do not ask any interactive question
         default: false
+  hidden: false
 - name: info:dependencies:show-modules-circular
   usage:
   - info:dependencies:show-modules-circular [-o|--output OUTPUT]
@@ -4119,6 +4374,7 @@ commands:
         is_multiple: false
         description: Do not ask any interactive question
         default: false
+  hidden: false
 - name: info:language:list
   usage:
   - info:language:list
@@ -4184,6 +4440,7 @@ commands:
         is_multiple: false
         description: Do not ask any interactive question
         default: false
+  hidden: false
 - name: info:timezone:list
   usage:
   - info:timezone:list
@@ -4249,10 +4506,254 @@ commands:
         is_multiple: false
         description: Do not ask any interactive question
         default: false
+  hidden: false
+- name: inventory:reservation:create-compensations
+  usage:
+  - inventory:reservation:create-compensations [-r|--raw] [--] [<compensations>...]
+  description: Create reservations by provided compensation arguments
+  help: Create reservations by provided compensation arguments
+  definition:
+    arguments:
+      compensations:
+        name: compensations
+        is_required: false
+        is_array: true
+        description: List of compensation arguments in format "<ORDER_INCREMENT_ID>:<SKU>:<QUANTITY>:<STOCK-ID>"
+        default: []
+    options:
+      raw:
+        name: "--raw"
+        shortcut: "-r"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Raw output
+        default: false
+      help:
+        name: "--help"
+        shortcut: "-h"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this help message
+        default: false
+      quiet:
+        name: "--quiet"
+        shortcut: "-q"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not output any message
+        default: false
+      verbose:
+        name: "--verbose"
+        shortcut: "-v|-vv|-vvv"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: 'Increase the verbosity of messages: 1 for normal output, 2 for
+          more verbose output and 3 for debug'
+        default: false
+      version:
+        name: "--version"
+        shortcut: "-V"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this application version
+        default: false
+      ansi:
+        name: "--ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Force ANSI output
+        default: false
+      no-ansi:
+        name: "--no-ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Disable ANSI output
+        default: false
+      no-interaction:
+        name: "--no-interaction"
+        shortcut: "-n"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not ask any interactive question
+        default: false
+  hidden: false
+- name: inventory:reservation:list-inconsistencies
+  usage:
+  - inventory:reservation:list-inconsistencies [-c|--complete-orders] [-i|--incomplete-orders]
+    [-r|--raw]
+  description: Show all orders and products with salable quantity inconsistencies
+  help: Show all orders and products with salable quantity inconsistencies
+  definition:
+    arguments: []
+    options:
+      complete-orders:
+        name: "--complete-orders"
+        shortcut: "-c"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Show only inconsistencies for complete orders
+        default: false
+      incomplete-orders:
+        name: "--incomplete-orders"
+        shortcut: "-i"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Show only inconsistencies for incomplete orders
+        default: false
+      raw:
+        name: "--raw"
+        shortcut: "-r"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Raw output
+        default: false
+      help:
+        name: "--help"
+        shortcut: "-h"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this help message
+        default: false
+      quiet:
+        name: "--quiet"
+        shortcut: "-q"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not output any message
+        default: false
+      verbose:
+        name: "--verbose"
+        shortcut: "-v|-vv|-vvv"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: 'Increase the verbosity of messages: 1 for normal output, 2 for
+          more verbose output and 3 for debug'
+        default: false
+      version:
+        name: "--version"
+        shortcut: "-V"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this application version
+        default: false
+      ansi:
+        name: "--ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Force ANSI output
+        default: false
+      no-ansi:
+        name: "--no-ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Disable ANSI output
+        default: false
+      no-interaction:
+        name: "--no-interaction"
+        shortcut: "-n"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not ask any interactive question
+        default: false
+  hidden: false
+- name: inventory-geonames:import
+  usage:
+  - inventory-geonames:import <countries>...
+  description: Download and import geo names for source selection algorithm
+  help: Download and import geo names for source selection algorithm
+  definition:
+    arguments:
+      countries:
+        name: countries
+        is_required: true
+        is_array: true
+        description: List of country codes to import
+        default: []
+    options:
+      help:
+        name: "--help"
+        shortcut: "-h"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this help message
+        default: false
+      quiet:
+        name: "--quiet"
+        shortcut: "-q"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not output any message
+        default: false
+      verbose:
+        name: "--verbose"
+        shortcut: "-v|-vv|-vvv"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: 'Increase the verbosity of messages: 1 for normal output, 2 for
+          more verbose output and 3 for debug'
+        default: false
+      version:
+        name: "--version"
+        shortcut: "-V"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this application version
+        default: false
+      ansi:
+        name: "--ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Force ANSI output
+        default: false
+      no-ansi:
+        name: "--no-ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Disable ANSI output
+        default: false
+      no-interaction:
+        name: "--no-interaction"
+        shortcut: "-n"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not ask any interactive question
+        default: false
+  hidden: false
 - name: maintenance:allow-ips
   usage:
   - maintenance:allow-ips [--none] [--add] [--magento-init-params MAGENTO-INIT-PARAMS]
-    [--] [<ip>]...
+    [--] [<ip>...]
   description: Sets maintenance mode exempt IPs
   help: Sets maintenance mode exempt IPs
   definition:
@@ -4346,6 +4847,7 @@ commands:
         is_multiple: false
         description: Do not ask any interactive question
         default: false
+  hidden: false
 - name: maintenance:disable
   usage:
   - maintenance:disable [--ip IP] [--magento-init-params MAGENTO-INIT-PARAMS]
@@ -4428,6 +4930,7 @@ commands:
         is_multiple: false
         description: Do not ask any interactive question
         default: false
+  hidden: false
 - name: maintenance:enable
   usage:
   - maintenance:enable [--ip IP] [--magento-init-params MAGENTO-INIT-PARAMS]
@@ -4510,6 +5013,7 @@ commands:
         is_multiple: false
         description: Do not ask any interactive question
         default: false
+  hidden: false
 - name: maintenance:status
   usage:
   - maintenance:status [--magento-init-params MAGENTO-INIT-PARAMS]
@@ -4584,10 +5088,79 @@ commands:
         is_multiple: false
         description: Do not ask any interactive question
         default: false
+  hidden: false
+- name: module:config:status
+  usage:
+  - module:config:status
+  description: Checks the modules configuration in the 'app/etc/config.php' file and
+    reports if they are up to date or not
+  help: Checks the modules configuration in the 'app/etc/config.php' file and reports
+    if they are up to date or not
+  definition:
+    arguments: []
+    options:
+      help:
+        name: "--help"
+        shortcut: "-h"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this help message
+        default: false
+      quiet:
+        name: "--quiet"
+        shortcut: "-q"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not output any message
+        default: false
+      verbose:
+        name: "--verbose"
+        shortcut: "-v|-vv|-vvv"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: 'Increase the verbosity of messages: 1 for normal output, 2 for
+          more verbose output and 3 for debug'
+        default: false
+      version:
+        name: "--version"
+        shortcut: "-V"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this application version
+        default: false
+      ansi:
+        name: "--ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Force ANSI output
+        default: false
+      no-ansi:
+        name: "--no-ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Disable ANSI output
+        default: false
+      no-interaction:
+        name: "--no-interaction"
+        shortcut: "-n"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not ask any interactive question
+        default: false
+  hidden: false
 - name: module:disable
   usage:
   - module:disable [-f|--force] [--all] [-c|--clear-static-content] [--magento-init-params
-    MAGENTO-INIT-PARAMS] [--] [<module>]...
+    MAGENTO-INIT-PARAMS] [--] [<module>...]
   description: Disables specified modules
   help: Disables specified modules
   definition:
@@ -4690,10 +5263,11 @@ commands:
         is_multiple: false
         description: Do not ask any interactive question
         default: false
+  hidden: false
 - name: module:enable
   usage:
   - module:enable [-f|--force] [--all] [-c|--clear-static-content] [--magento-init-params
-    MAGENTO-INIT-PARAMS] [--] [<module>]...
+    MAGENTO-INIT-PARAMS] [--] [<module>...]
   description: Enables specified modules
   help: Enables specified modules
   definition:
@@ -4796,6 +5370,7 @@ commands:
         is_multiple: false
         description: Do not ask any interactive question
         default: false
+  hidden: false
 - name: module:status
   usage:
   - module:status [--enabled] [--disabled] [--magento-init-params MAGENTO-INIT-PARAMS]
@@ -4893,11 +5468,12 @@ commands:
         is_multiple: false
         description: Do not ask any interactive question
         default: false
+  hidden: false
 - name: module:uninstall
   usage:
   - module:uninstall [-r|--remove-data] [--backup-code] [--backup-media] [--backup-db]
-    [-c|--clear-static-content] [--magento-init-params MAGENTO-INIT-PARAMS] [--] <module>
-    (<module>)...
+    [--non-composer] [-c|--clear-static-content] [--magento-init-params MAGENTO-INIT-PARAMS]
+    [--] <module>...
   description: Uninstalls modules installed by composer
   help: Uninstalls modules installed by composer
   definition:
@@ -4941,6 +5517,14 @@ commands:
         is_value_required: false
         is_multiple: false
         description: Take complete database backup
+        default: false
+      non-composer:
+        name: "--non-composer"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: All modules, that will be past here will be non composer based
         default: false
       clear-static-content:
         name: "--clear-static-content"
@@ -5017,6 +5601,7 @@ commands:
         is_multiple: false
         description: Do not ask any interactive question
         default: false
+  hidden: false
 - name: msp:security:recaptcha:disable
   usage:
   - msp:security:recaptcha:disable
@@ -5082,9 +5667,220 @@ commands:
         is_multiple: false
         description: Do not ask any interactive question
         default: false
+  hidden: false
+- name: msp:security:tfa:disable
+  usage:
+  - msp:security:tfa:disable
+  description: Globally disable two factor auth
+  help: Globally disable two factor auth
+  definition:
+    arguments: []
+    options:
+      help:
+        name: "--help"
+        shortcut: "-h"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this help message
+        default: false
+      quiet:
+        name: "--quiet"
+        shortcut: "-q"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not output any message
+        default: false
+      verbose:
+        name: "--verbose"
+        shortcut: "-v|-vv|-vvv"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: 'Increase the verbosity of messages: 1 for normal output, 2 for
+          more verbose output and 3 for debug'
+        default: false
+      version:
+        name: "--version"
+        shortcut: "-V"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this application version
+        default: false
+      ansi:
+        name: "--ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Force ANSI output
+        default: false
+      no-ansi:
+        name: "--no-ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Disable ANSI output
+        default: false
+      no-interaction:
+        name: "--no-interaction"
+        shortcut: "-n"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not ask any interactive question
+        default: false
+  hidden: false
+- name: msp:security:tfa:providers
+  usage:
+  - msp:security:tfa:providers
+  description: List all available providers
+  help: List all available providers
+  definition:
+    arguments: []
+    options:
+      help:
+        name: "--help"
+        shortcut: "-h"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this help message
+        default: false
+      quiet:
+        name: "--quiet"
+        shortcut: "-q"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not output any message
+        default: false
+      verbose:
+        name: "--verbose"
+        shortcut: "-v|-vv|-vvv"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: 'Increase the verbosity of messages: 1 for normal output, 2 for
+          more verbose output and 3 for debug'
+        default: false
+      version:
+        name: "--version"
+        shortcut: "-V"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this application version
+        default: false
+      ansi:
+        name: "--ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Force ANSI output
+        default: false
+      no-ansi:
+        name: "--no-ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Disable ANSI output
+        default: false
+      no-interaction:
+        name: "--no-interaction"
+        shortcut: "-n"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not ask any interactive question
+        default: false
+  hidden: false
+- name: msp:security:tfa:reset
+  usage:
+  - msp:security:tfa:reset <user> <provider>
+  description: Reset configuration for one user
+  help: Reset configuration for one user
+  definition:
+    arguments:
+      user:
+        name: user
+        is_required: true
+        is_array: false
+        description: Username
+        default: 
+      provider:
+        name: provider
+        is_required: true
+        is_array: false
+        description: Provider code
+        default: 
+    options:
+      help:
+        name: "--help"
+        shortcut: "-h"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this help message
+        default: false
+      quiet:
+        name: "--quiet"
+        shortcut: "-q"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not output any message
+        default: false
+      verbose:
+        name: "--verbose"
+        shortcut: "-v|-vv|-vvv"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: 'Increase the verbosity of messages: 1 for normal output, 2 for
+          more verbose output and 3 for debug'
+        default: false
+      version:
+        name: "--version"
+        shortcut: "-V"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this application version
+        default: false
+      ansi:
+        name: "--ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Force ANSI output
+        default: false
+      no-ansi:
+        name: "--no-ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Disable ANSI output
+        default: false
+      no-interaction:
+        name: "--no-interaction"
+        shortcut: "-n"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not ask any interactive question
+        default: false
+  hidden: false
 - name: newrelic:create:deploy-marker
   usage:
-  - newrelic:create:deploy-marker <message> <changelog> [<user>]
+  - newrelic:create:deploy-marker <message> <change_log> [<user>]
   description: Check the deploy queue for entries and create an appropriate deploy
     marker.
   help: Check the deploy queue for entries and create an appropriate deploy marker.
@@ -5096,8 +5892,8 @@ commands:
         is_array: false
         description: Deploy Message?
         default: 
-      changelog:
-        name: changelog
+      change_log:
+        name: change_log
         is_required: true
         is_array: false
         description: Change Log?
@@ -5166,11 +5962,209 @@ commands:
         is_multiple: false
         description: Do not ask any interactive question
         default: false
+  hidden: false
+- name: queue:consumers:list
+  usage:
+  - queue:consumers:list
+  description: List of MessageQueue consumers
+  help: This command shows list of MessageQueue consumers.
+  definition:
+    arguments: []
+    options:
+      help:
+        name: "--help"
+        shortcut: "-h"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this help message
+        default: false
+      quiet:
+        name: "--quiet"
+        shortcut: "-q"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not output any message
+        default: false
+      verbose:
+        name: "--verbose"
+        shortcut: "-v|-vv|-vvv"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: 'Increase the verbosity of messages: 1 for normal output, 2 for
+          more verbose output and 3 for debug'
+        default: false
+      version:
+        name: "--version"
+        shortcut: "-V"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this application version
+        default: false
+      ansi:
+        name: "--ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Force ANSI output
+        default: false
+      no-ansi:
+        name: "--no-ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Disable ANSI output
+        default: false
+      no-interaction:
+        name: "--no-interaction"
+        shortcut: "-n"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not ask any interactive question
+        default: false
+  hidden: false
+- name: queue:consumers:start
+  usage:
+  - queue:consumers:start [--max-messages MAX-MESSAGES] [--batch-size BATCH-SIZE]
+    [--area-code AREA-CODE] [--single-thread] [--pid-file-path PID-FILE-PATH] [--]
+    <consumer>
+  description: Start MessageQueue consumer
+  help: "This command starts MessageQueue consumer by its name.\n\nTo start consumer
+    which will process all queued messages and terminate execution:\n\n    <comment>bin/magento
+    queue:consumers:start someConsumer</comment>\n\nTo specify the number of messages
+    which should be processed by consumer before its termination:\n\n    <comment>bin/magento
+    queue:consumers:start someConsumer --max-messages=50</comment>\n\nTo specify the
+    number of messages per batch for the batch consumer:\n\n    <comment>bin/magento
+    queue:consumers:start someConsumer --batch-size=500</comment>\n\nTo specify the
+    preferred area:\n\n    <comment>bin/magento queue:consumers:start someConsumer
+    --area-code='adminhtml'</comment>\n    \nTo do not run multiple copies of one
+    consumer simultaneously:\n\n    <comment>bin/magento queue:consumers:start someConsumer
+    --single-thread'</comment>\n\nTo save PID enter path (This option is deprecated,
+    use --single-thread instead):\n\n    <comment>bin/magento queue:consumers:start
+    someConsumer --pid-file-path='/var/someConsumer.pid'</comment>"
+  definition:
+    arguments:
+      consumer:
+        name: consumer
+        is_required: true
+        is_array: false
+        description: The name of the consumer to be started.
+        default: 
+    options:
+      max-messages:
+        name: "--max-messages"
+        shortcut: ''
+        accept_value: true
+        is_value_required: true
+        is_multiple: false
+        description: The number of messages to be processed by the consumer before
+          process termination. If not specified - terminate after processing all queued
+          messages.
+        default: 
+      batch-size:
+        name: "--batch-size"
+        shortcut: ''
+        accept_value: true
+        is_value_required: true
+        is_multiple: false
+        description: The number of messages per batch. Applicable for the batch consumer
+          only.
+        default: 
+      area-code:
+        name: "--area-code"
+        shortcut: ''
+        accept_value: true
+        is_value_required: true
+        is_multiple: false
+        description: The preferred area (global, adminhtml, etc...) default is global.
+        default: 
+      single-thread:
+        name: "--single-thread"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: This option prevents running multiple copies of one consumer
+          simultaneously.
+        default: false
+      pid-file-path:
+        name: "--pid-file-path"
+        shortcut: ''
+        accept_value: true
+        is_value_required: true
+        is_multiple: false
+        description: The file path for saving PID (This option is deprecated, use
+          --single-thread instead)
+        default: 
+      help:
+        name: "--help"
+        shortcut: "-h"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this help message
+        default: false
+      quiet:
+        name: "--quiet"
+        shortcut: "-q"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not output any message
+        default: false
+      verbose:
+        name: "--verbose"
+        shortcut: "-v|-vv|-vvv"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: 'Increase the verbosity of messages: 1 for normal output, 2 for
+          more verbose output and 3 for debug'
+        default: false
+      version:
+        name: "--version"
+        shortcut: "-V"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this application version
+        default: false
+      ansi:
+        name: "--ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Force ANSI output
+        default: false
+      no-ansi:
+        name: "--no-ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Disable ANSI output
+        default: false
+      no-interaction:
+        name: "--no-interaction"
+        shortcut: "-n"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not ask any interactive question
+        default: false
+  hidden: false
 - name: sampledata:deploy
   usage:
   - sampledata:deploy [--no-update]
-  description: Deploy sample data modules
-  help: Deploy sample data modules
+  description: Deploy sample data modules for composer-based Magento installations
+  help: Deploy sample data modules for composer-based Magento installations
   definition:
     arguments: []
     options:
@@ -5239,6 +6233,7 @@ commands:
         is_multiple: false
         description: Do not ask any interactive question
         default: false
+  hidden: false
 - name: sampledata:remove
   usage:
   - sampledata:remove [--no-update]
@@ -5312,6 +6307,7 @@ commands:
         is_multiple: false
         description: Do not ask any interactive question
         default: false
+  hidden: false
 - name: sampledata:reset
   usage:
   - sampledata:reset
@@ -5377,6 +6373,7 @@ commands:
         is_multiple: false
         description: Do not ask any interactive question
         default: false
+  hidden: false
 - name: setup:backup
   usage:
   - setup:backup [--code] [--media] [--db] [--magento-init-params MAGENTO-INIT-PARAMS]
@@ -5476,10 +6473,14 @@ commands:
         is_multiple: false
         description: Do not ask any interactive question
         default: false
+  hidden: false
 - name: setup:config:set
   usage:
-  - setup:config:set [--enable-debug-logging ENABLE-DEBUG-LOGGING] [--backend-frontname
-    BACKEND-FRONTNAME] [--key KEY] [--db-host DB-HOST] [--db-name DB-NAME] [--db-user
+  - setup:config:set [--backend-frontname BACKEND-FRONTNAME] [--amqp-host AMQP-HOST]
+    [--amqp-port AMQP-PORT] [--amqp-user AMQP-USER] [--amqp-password AMQP-PASSWORD]
+    [--amqp-virtualhost AMQP-VIRTUALHOST] [--amqp-ssl AMQP-SSL] [--amqp-ssl-options
+    AMQP-SSL-OPTIONS] [--enable-debug-logging ENABLE-DEBUG-LOGGING] [--enable-syslog-logging
+    ENABLE-SYSLOG-LOGGING] [--key KEY] [--db-host DB-HOST] [--db-name DB-NAME] [--db-user
     DB-USER] [--db-engine DB-ENGINE] [--db-password DB-PASSWORD] [--db-prefix DB-PREFIX]
     [--db-model DB-MODEL] [--db-init-statements DB-INIT-STATEMENTS] [-s|--skip-db-validation]
     [--http-cache-hosts HTTP-CACHE-HOSTS] [--session-save SESSION-SAVE] [--session-save-redis-host
@@ -5495,21 +6496,91 @@ commands:
     SESSION-SAVE-REDIS-BOT-FIRST-LIFETIME] [--session-save-redis-bot-lifetime SESSION-SAVE-REDIS-BOT-LIFETIME]
     [--session-save-redis-disable-locking SESSION-SAVE-REDIS-DISABLE-LOCKING] [--session-save-redis-min-lifetime
     SESSION-SAVE-REDIS-MIN-LIFETIME] [--session-save-redis-max-lifetime SESSION-SAVE-REDIS-MAX-LIFETIME]
-    [--cache-backend CACHE-BACKEND] [--cache-backend-redis-server CACHE-BACKEND-REDIS-SERVER]
-    [--cache-backend-redis-db CACHE-BACKEND-REDIS-DB] [--cache-backend-redis-port
-    CACHE-BACKEND-REDIS-PORT] [--cache-backend-redis-password CACHE-BACKEND-REDIS-PASSWORD]
-    [--cache-id-prefix CACHE-ID-PREFIX] [--page-cache PAGE-CACHE] [--page-cache-redis-server
-    PAGE-CACHE-REDIS-SERVER] [--page-cache-redis-db PAGE-CACHE-REDIS-DB] [--page-cache-redis-port
-    PAGE-CACHE-REDIS-PORT] [--page-cache-redis-compress-data PAGE-CACHE-REDIS-COMPRESS-DATA]
-    [--page-cache-redis-password PAGE-CACHE-REDIS-PASSWORD] [--page-cache-id-prefix
-    PAGE-CACHE-ID-PREFIX] [--lock-provider LOCK-PROVIDER] [--lock-db-prefix LOCK-DB-PREFIX]
-    [--lock-zookeeper-host LOCK-ZOOKEEPER-HOST] [--lock-zookeeper-path LOCK-ZOOKEEPER-PATH]
-    [--lock-file-path LOCK-FILE-PATH] [--magento-init-params MAGENTO-INIT-PARAMS]
+    [--session-save-redis-sentinel-master SESSION-SAVE-REDIS-SENTINEL-MASTER] [--session-save-redis-sentinel-servers
+    SESSION-SAVE-REDIS-SENTINEL-SERVERS] [--session-save-redis-sentinel-verify-master
+    SESSION-SAVE-REDIS-SENTINEL-VERIFY-MASTER] [--session-save-redis-sentinel-connect-retires
+    SESSION-SAVE-REDIS-SENTINEL-CONNECT-RETIRES] [--cache-backend CACHE-BACKEND] [--cache-backend-redis-server
+    CACHE-BACKEND-REDIS-SERVER] [--cache-backend-redis-db CACHE-BACKEND-REDIS-DB]
+    [--cache-backend-redis-port CACHE-BACKEND-REDIS-PORT] [--cache-backend-redis-password
+    CACHE-BACKEND-REDIS-PASSWORD] [--cache-backend-redis-compress-data CACHE-BACKEND-REDIS-COMPRESS-DATA]
+    [--cache-backend-redis-compression-lib CACHE-BACKEND-REDIS-COMPRESSION-LIB] [--cache-id-prefix
+    CACHE-ID-PREFIX] [--page-cache PAGE-CACHE] [--page-cache-redis-server PAGE-CACHE-REDIS-SERVER]
+    [--page-cache-redis-db PAGE-CACHE-REDIS-DB] [--page-cache-redis-port PAGE-CACHE-REDIS-PORT]
+    [--page-cache-redis-password PAGE-CACHE-REDIS-PASSWORD] [--page-cache-redis-compress-data
+    PAGE-CACHE-REDIS-COMPRESS-DATA] [--page-cache-redis-compression-lib PAGE-CACHE-REDIS-COMPRESSION-LIB]
+    [--page-cache-id-prefix PAGE-CACHE-ID-PREFIX] [--lock-provider LOCK-PROVIDER]
+    [--lock-db-prefix LOCK-DB-PREFIX] [--lock-zookeeper-host LOCK-ZOOKEEPER-HOST]
+    [--lock-zookeeper-path LOCK-ZOOKEEPER-PATH] [--lock-file-path LOCK-FILE-PATH]
+    [--magento-init-params MAGENTO-INIT-PARAMS]
   description: Creates or modifies the deployment configuration
   help: Creates or modifies the deployment configuration
   definition:
     arguments: []
     options:
+      backend-frontname:
+        name: "--backend-frontname"
+        shortcut: ''
+        accept_value: true
+        is_value_required: true
+        is_multiple: false
+        description: Backend frontname (will be autogenerated if missing)
+        default: 
+      amqp-host:
+        name: "--amqp-host"
+        shortcut: ''
+        accept_value: true
+        is_value_required: true
+        is_multiple: false
+        description: Amqp server host
+        default: ''
+      amqp-port:
+        name: "--amqp-port"
+        shortcut: ''
+        accept_value: true
+        is_value_required: true
+        is_multiple: false
+        description: Amqp server port
+        default: '5672'
+      amqp-user:
+        name: "--amqp-user"
+        shortcut: ''
+        accept_value: true
+        is_value_required: true
+        is_multiple: false
+        description: Amqp server username
+        default: ''
+      amqp-password:
+        name: "--amqp-password"
+        shortcut: ''
+        accept_value: true
+        is_value_required: true
+        is_multiple: false
+        description: Amqp server password
+        default: ''
+      amqp-virtualhost:
+        name: "--amqp-virtualhost"
+        shortcut: ''
+        accept_value: true
+        is_value_required: true
+        is_multiple: false
+        description: Amqp virtualhost
+        default: "/"
+      amqp-ssl:
+        name: "--amqp-ssl"
+        shortcut: ''
+        accept_value: true
+        is_value_required: true
+        is_multiple: false
+        description: Amqp SSL
+        default: ''
+      amqp-ssl-options:
+        name: "--amqp-ssl-options"
+        shortcut: ''
+        accept_value: true
+        is_value_required: true
+        is_multiple: false
+        description: Amqp SSL Options (JSON)
+        default: ''
       enable-debug-logging:
         name: "--enable-debug-logging"
         shortcut: ''
@@ -5518,13 +6589,13 @@ commands:
         is_multiple: false
         description: Enable debug logging
         default: 
-      backend-frontname:
-        name: "--backend-frontname"
+      enable-syslog-logging:
+        name: "--enable-syslog-logging"
         shortcut: ''
         accept_value: true
         is_value_required: true
         is_multiple: false
-        description: Backend frontname (will be autogenerated if missing)
+        description: Enable syslog logging
         default: 
       key:
         name: "--key"
@@ -5772,6 +6843,38 @@ commands:
         is_multiple: false
         description: Redis max session lifetime, in seconds
         default: 
+      session-save-redis-sentinel-master:
+        name: "--session-save-redis-sentinel-master"
+        shortcut: ''
+        accept_value: true
+        is_value_required: true
+        is_multiple: false
+        description: Redis Sentinel master
+        default: 
+      session-save-redis-sentinel-servers:
+        name: "--session-save-redis-sentinel-servers"
+        shortcut: ''
+        accept_value: true
+        is_value_required: true
+        is_multiple: false
+        description: Redis Sentinel servers, comma separated
+        default: 
+      session-save-redis-sentinel-verify-master:
+        name: "--session-save-redis-sentinel-verify-master"
+        shortcut: ''
+        accept_value: true
+        is_value_required: true
+        is_multiple: false
+        description: 'Redis Sentinel verify master. Values: false (default), true'
+        default: 
+      session-save-redis-sentinel-connect-retires:
+        name: "--session-save-redis-sentinel-connect-retires"
+        shortcut: ''
+        accept_value: true
+        is_value_required: true
+        is_multiple: false
+        description: Redis Sentinel connect retries.
+        default: 
       cache-backend:
         name: "--cache-backend"
         shortcut: ''
@@ -5811,6 +6914,23 @@ commands:
         is_value_required: true
         is_multiple: false
         description: Redis server password
+        default: 
+      cache-backend-redis-compress-data:
+        name: "--cache-backend-redis-compress-data"
+        shortcut: ''
+        accept_value: true
+        is_value_required: true
+        is_multiple: false
+        description: Set to 0 to disable compression (default is 1, enabled)
+        default: 
+      cache-backend-redis-compression-lib:
+        name: "--cache-backend-redis-compression-lib"
+        shortcut: ''
+        accept_value: true
+        is_value_required: true
+        is_multiple: false
+        description: Compression lib to use [snappy,lzf,l4z,zstd,gzip] (leave blank
+          to determine automatically)
         default: 
       cache-id-prefix:
         name: "--cache-id-prefix"
@@ -5852,6 +6972,14 @@ commands:
         is_multiple: false
         description: Redis server listen port
         default: 
+      page-cache-redis-password:
+        name: "--page-cache-redis-password"
+        shortcut: ''
+        accept_value: true
+        is_value_required: true
+        is_multiple: false
+        description: Redis server password
+        default: 
       page-cache-redis-compress-data:
         name: "--page-cache-redis-compress-data"
         shortcut: ''
@@ -5860,13 +6988,14 @@ commands:
         is_multiple: false
         description: Set to 1 to compress the full page cache (use 0 to disable)
         default: 
-      page-cache-redis-password:
-        name: "--page-cache-redis-password"
+      page-cache-redis-compression-lib:
+        name: "--page-cache-redis-compression-lib"
         shortcut: ''
         accept_value: true
         is_value_required: true
         is_multiple: false
-        description: Redis server password
+        description: Compression library to use [snappy,lzf,l4z,zstd,gzip] (leave
+          blank to determine automatically)
         default: 
       page-cache-id-prefix:
         name: "--page-cache-id-prefix"
@@ -5984,6 +7113,7 @@ commands:
         is_multiple: false
         description: Do not ask any interactive question
         default: false
+  hidden: false
 - name: setup:cron:run
   usage:
   - setup:cron:run [--magento-init-params MAGENTO-INIT-PARAMS]
@@ -6058,6 +7188,7 @@ commands:
         is_multiple: false
         description: Do not ask any interactive question
         default: false
+  hidden: false
 - name: setup:db-data:upgrade
   usage:
   - setup:db-data:upgrade [--magento-init-params MAGENTO-INIT-PARAMS]
@@ -6132,14 +7263,351 @@ commands:
         is_multiple: false
         description: Do not ask any interactive question
         default: false
-- name: setup:db-schema:upgrade
+  hidden: false
+- name: setup:db-declaration:generate-patch
   usage:
-  - setup:db-schema:upgrade [--magento-init-params MAGENTO-INIT-PARAMS]
-  description: Installs and upgrades the DB schema
-  help: Installs and upgrades the DB schema
+  - setup:db-declaration:generate-patch [--revertable [REVERTABLE]] [--type [TYPE]]
+    [--] <module> <patch>
+  description: Generate patch and put it in specific folder.
+  help: Generate patch and put it in specific folder.
+  definition:
+    arguments:
+      module:
+        name: module
+        is_required: true
+        is_array: false
+        description: Module name
+        default: 
+      patch:
+        name: patch
+        is_required: true
+        is_array: false
+        description: Patch name
+        default: 
+    options:
+      revertable:
+        name: "--revertable"
+        shortcut: ''
+        accept_value: true
+        is_value_required: false
+        is_multiple: false
+        description: Check whether patch is revertable or not.
+        default: false
+      type:
+        name: "--type"
+        shortcut: ''
+        accept_value: true
+        is_value_required: false
+        is_multiple: false
+        description: Find out what type of patch should be generated.
+        default: data
+      help:
+        name: "--help"
+        shortcut: "-h"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this help message
+        default: false
+      quiet:
+        name: "--quiet"
+        shortcut: "-q"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not output any message
+        default: false
+      verbose:
+        name: "--verbose"
+        shortcut: "-v|-vv|-vvv"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: 'Increase the verbosity of messages: 1 for normal output, 2 for
+          more verbose output and 3 for debug'
+        default: false
+      version:
+        name: "--version"
+        shortcut: "-V"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this application version
+        default: false
+      ansi:
+        name: "--ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Force ANSI output
+        default: false
+      no-ansi:
+        name: "--no-ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Disable ANSI output
+        default: false
+      no-interaction:
+        name: "--no-interaction"
+        shortcut: "-n"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not ask any interactive question
+        default: false
+  hidden: false
+- name: setup:db-declaration:generate-whitelist
+  usage:
+  - setup:db-declaration:generate-whitelist [--module-name [MODULE-NAME]]
+  description: Generate whitelist of tables and columns that are allowed to be edited
+    by declaration installer
+  help: Generate whitelist of tables and columns that are allowed to be edited by
+    declaration installer
   definition:
     arguments: []
     options:
+      module-name:
+        name: "--module-name"
+        shortcut: ''
+        accept_value: true
+        is_value_required: false
+        is_multiple: false
+        description: Name of the module where whitelist will be generated
+        default: all
+      help:
+        name: "--help"
+        shortcut: "-h"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this help message
+        default: false
+      quiet:
+        name: "--quiet"
+        shortcut: "-q"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not output any message
+        default: false
+      verbose:
+        name: "--verbose"
+        shortcut: "-v|-vv|-vvv"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: 'Increase the verbosity of messages: 1 for normal output, 2 for
+          more verbose output and 3 for debug'
+        default: false
+      version:
+        name: "--version"
+        shortcut: "-V"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this application version
+        default: false
+      ansi:
+        name: "--ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Force ANSI output
+        default: false
+      no-ansi:
+        name: "--no-ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Disable ANSI output
+        default: false
+      no-interaction:
+        name: "--no-interaction"
+        shortcut: "-n"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not ask any interactive question
+        default: false
+  hidden: false
+- name: setup:db-schema:add-slave
+  usage:
+  - setup:db-schema:add-slave [--host HOST] [--dbname DBNAME] [--username USERNAME]
+    [--password [PASSWORD]] [--connection [CONNECTION]] [--resource [RESOURCE]]
+  description: Move checkout quote related tables to a separate DB server
+  help: Move checkout quote related tables to a separate DB server
+  definition:
+    arguments: []
+    options:
+      host:
+        name: "--host"
+        shortcut: ''
+        accept_value: true
+        is_value_required: true
+        is_multiple: false
+        description: Slave DB Server host
+        default: localhost
+      dbname:
+        name: "--dbname"
+        shortcut: ''
+        accept_value: true
+        is_value_required: true
+        is_multiple: false
+        description: Slave Database Name
+        default: 
+      username:
+        name: "--username"
+        shortcut: ''
+        accept_value: true
+        is_value_required: true
+        is_multiple: false
+        description: Slave DB user name
+        default: root
+      password:
+        name: "--password"
+        shortcut: ''
+        accept_value: true
+        is_value_required: false
+        is_multiple: false
+        description: Slave DB user password
+        default: 
+      connection:
+        name: "--connection"
+        shortcut: ''
+        accept_value: true
+        is_value_required: false
+        is_multiple: false
+        description: Slave connection name
+        default: default
+      resource:
+        name: "--resource"
+        shortcut: ''
+        accept_value: true
+        is_value_required: false
+        is_multiple: false
+        description: Slave Resource name
+        default: default
+      help:
+        name: "--help"
+        shortcut: "-h"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this help message
+        default: false
+      quiet:
+        name: "--quiet"
+        shortcut: "-q"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not output any message
+        default: false
+      verbose:
+        name: "--verbose"
+        shortcut: "-v|-vv|-vvv"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: 'Increase the verbosity of messages: 1 for normal output, 2 for
+          more verbose output and 3 for debug'
+        default: false
+      version:
+        name: "--version"
+        shortcut: "-V"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this application version
+        default: false
+      ansi:
+        name: "--ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Force ANSI output
+        default: false
+      no-ansi:
+        name: "--no-ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Disable ANSI output
+        default: false
+      no-interaction:
+        name: "--no-interaction"
+        shortcut: "-n"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not ask any interactive question
+        default: false
+  hidden: false
+- name: setup:db-schema:split-quote
+  usage:
+  - setup:db-schema:split-quote [--host HOST] [--dbname DBNAME] [--username USERNAME]
+    [--password [PASSWORD]] [--connection [CONNECTION]] [--resource [RESOURCE]] [--magento-init-params
+    MAGENTO-INIT-PARAMS]
+  description: Move checkout quote related tables to a separate DB server
+  help: Move checkout quote related tables to a separate DB server
+  definition:
+    arguments: []
+    options:
+      host:
+        name: "--host"
+        shortcut: ''
+        accept_value: true
+        is_value_required: true
+        is_multiple: false
+        description: Checkout DB Server host
+        default: 
+      dbname:
+        name: "--dbname"
+        shortcut: ''
+        accept_value: true
+        is_value_required: true
+        is_multiple: false
+        description: Checkout Database Name
+        default: 
+      username:
+        name: "--username"
+        shortcut: ''
+        accept_value: true
+        is_value_required: true
+        is_multiple: false
+        description: Checkout DB user name
+        default: 
+      password:
+        name: "--password"
+        shortcut: ''
+        accept_value: true
+        is_value_required: false
+        is_multiple: false
+        description: Checkout DB user password
+        default: 
+      connection:
+        name: "--connection"
+        shortcut: ''
+        accept_value: true
+        is_value_required: false
+        is_multiple: false
+        description: Checkout connection name
+        default: checkout
+      resource:
+        name: "--resource"
+        shortcut: ''
+        accept_value: true
+        is_value_required: false
+        is_multiple: false
+        description: Checkout resource name
+        default: checkout
       magento-init-params:
         name: "--magento-init-params"
         shortcut: ''
@@ -6206,6 +7674,217 @@ commands:
         is_multiple: false
         description: Do not ask any interactive question
         default: false
+  hidden: false
+- name: setup:db-schema:split-sales
+  usage:
+  - setup:db-schema:split-sales [--host HOST] [--dbname DBNAME] [--username USERNAME]
+    [--password [PASSWORD]] [--connection [CONNECTION]] [--resource [RESOURCE]] [--magento-init-params
+    MAGENTO-INIT-PARAMS]
+  description: Move sales related tables to a separate DB server
+  help: Move sales related tables to a separate DB server
+  definition:
+    arguments: []
+    options:
+      host:
+        name: "--host"
+        shortcut: ''
+        accept_value: true
+        is_value_required: true
+        is_multiple: false
+        description: Sales DB Server host
+        default: 
+      dbname:
+        name: "--dbname"
+        shortcut: ''
+        accept_value: true
+        is_value_required: true
+        is_multiple: false
+        description: Sales Database Name
+        default: 
+      username:
+        name: "--username"
+        shortcut: ''
+        accept_value: true
+        is_value_required: true
+        is_multiple: false
+        description: Sales DB user name
+        default: 
+      password:
+        name: "--password"
+        shortcut: ''
+        accept_value: true
+        is_value_required: false
+        is_multiple: false
+        description: Sales DB user passowrd
+        default: 
+      connection:
+        name: "--connection"
+        shortcut: ''
+        accept_value: true
+        is_value_required: false
+        is_multiple: false
+        description: Sales connection name
+        default: sales
+      resource:
+        name: "--resource"
+        shortcut: ''
+        accept_value: true
+        is_value_required: false
+        is_multiple: false
+        description: Sales resource name
+        default: sales
+      magento-init-params:
+        name: "--magento-init-params"
+        shortcut: ''
+        accept_value: true
+        is_value_required: true
+        is_multiple: false
+        description: 'Add to any command to customize Magento initialization parameters
+          For example: "MAGE_MODE=developer&MAGE_DIRS[base][path]=/var/www/example.com&MAGE_DIRS[cache][path]=/var/tmp/cache"'
+        default: 
+      help:
+        name: "--help"
+        shortcut: "-h"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this help message
+        default: false
+      quiet:
+        name: "--quiet"
+        shortcut: "-q"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not output any message
+        default: false
+      verbose:
+        name: "--verbose"
+        shortcut: "-v|-vv|-vvv"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: 'Increase the verbosity of messages: 1 for normal output, 2 for
+          more verbose output and 3 for debug'
+        default: false
+      version:
+        name: "--version"
+        shortcut: "-V"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this application version
+        default: false
+      ansi:
+        name: "--ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Force ANSI output
+        default: false
+      no-ansi:
+        name: "--no-ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Disable ANSI output
+        default: false
+      no-interaction:
+        name: "--no-interaction"
+        shortcut: "-n"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not ask any interactive question
+        default: false
+  hidden: false
+- name: setup:db-schema:upgrade
+  usage:
+  - setup:db-schema:upgrade [--convert-old-scripts [CONVERT-OLD-SCRIPTS]] [--magento-init-params
+    MAGENTO-INIT-PARAMS]
+  description: Installs and upgrades the DB schema
+  help: Installs and upgrades the DB schema
+  definition:
+    arguments: []
+    options:
+      convert-old-scripts:
+        name: "--convert-old-scripts"
+        shortcut: ''
+        accept_value: true
+        is_value_required: false
+        is_multiple: false
+        description: Allows to convert old scripts (InstallSchema, UpgradeSchema)
+          to db_schema.xml format
+        default: false
+      magento-init-params:
+        name: "--magento-init-params"
+        shortcut: ''
+        accept_value: true
+        is_value_required: true
+        is_multiple: false
+        description: 'Add to any command to customize Magento initialization parameters
+          For example: "MAGE_MODE=developer&MAGE_DIRS[base][path]=/var/www/example.com&MAGE_DIRS[cache][path]=/var/tmp/cache"'
+        default: 
+      help:
+        name: "--help"
+        shortcut: "-h"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this help message
+        default: false
+      quiet:
+        name: "--quiet"
+        shortcut: "-q"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not output any message
+        default: false
+      verbose:
+        name: "--verbose"
+        shortcut: "-v|-vv|-vvv"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: 'Increase the verbosity of messages: 1 for normal output, 2 for
+          more verbose output and 3 for debug'
+        default: false
+      version:
+        name: "--version"
+        shortcut: "-V"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this application version
+        default: false
+      ansi:
+        name: "--ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Force ANSI output
+        default: false
+      no-ansi:
+        name: "--no-ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Disable ANSI output
+        default: false
+      no-interaction:
+        name: "--no-interaction"
+        shortcut: "-n"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not ask any interactive question
+        default: false
+  hidden: false
 - name: setup:db:status
   usage:
   - setup:db:status [--magento-init-params MAGENTO-INIT-PARAMS]
@@ -6280,6 +7959,7 @@ commands:
         is_multiple: false
         description: Do not ask any interactive question
         default: false
+  hidden: false
 - name: setup:di:compile
   usage:
   - setup:di:compile
@@ -6345,10 +8025,14 @@ commands:
         is_multiple: false
         description: Do not ask any interactive question
         default: false
+  hidden: false
 - name: setup:install
   usage:
-  - setup:install [--enable-debug-logging ENABLE-DEBUG-LOGGING] [--backend-frontname
-    BACKEND-FRONTNAME] [--key KEY] [--db-host DB-HOST] [--db-name DB-NAME] [--db-user
+  - setup:install [--backend-frontname BACKEND-FRONTNAME] [--amqp-host AMQP-HOST]
+    [--amqp-port AMQP-PORT] [--amqp-user AMQP-USER] [--amqp-password AMQP-PASSWORD]
+    [--amqp-virtualhost AMQP-VIRTUALHOST] [--amqp-ssl AMQP-SSL] [--amqp-ssl-options
+    AMQP-SSL-OPTIONS] [--enable-debug-logging ENABLE-DEBUG-LOGGING] [--enable-syslog-logging
+    ENABLE-SYSLOG-LOGGING] [--key KEY] [--db-host DB-HOST] [--db-name DB-NAME] [--db-user
     DB-USER] [--db-engine DB-ENGINE] [--db-password DB-PASSWORD] [--db-prefix DB-PREFIX]
     [--db-model DB-MODEL] [--db-init-statements DB-INIT-STATEMENTS] [-s|--skip-db-validation]
     [--http-cache-hosts HTTP-CACHE-HOSTS] [--session-save SESSION-SAVE] [--session-save-redis-host
@@ -6364,28 +8048,100 @@ commands:
     SESSION-SAVE-REDIS-BOT-FIRST-LIFETIME] [--session-save-redis-bot-lifetime SESSION-SAVE-REDIS-BOT-LIFETIME]
     [--session-save-redis-disable-locking SESSION-SAVE-REDIS-DISABLE-LOCKING] [--session-save-redis-min-lifetime
     SESSION-SAVE-REDIS-MIN-LIFETIME] [--session-save-redis-max-lifetime SESSION-SAVE-REDIS-MAX-LIFETIME]
-    [--cache-backend CACHE-BACKEND] [--cache-backend-redis-server CACHE-BACKEND-REDIS-SERVER]
-    [--cache-backend-redis-db CACHE-BACKEND-REDIS-DB] [--cache-backend-redis-port
-    CACHE-BACKEND-REDIS-PORT] [--cache-backend-redis-password CACHE-BACKEND-REDIS-PASSWORD]
-    [--cache-id-prefix CACHE-ID-PREFIX] [--page-cache PAGE-CACHE] [--page-cache-redis-server
-    PAGE-CACHE-REDIS-SERVER] [--page-cache-redis-db PAGE-CACHE-REDIS-DB] [--page-cache-redis-port
-    PAGE-CACHE-REDIS-PORT] [--page-cache-redis-compress-data PAGE-CACHE-REDIS-COMPRESS-DATA]
-    [--page-cache-redis-password PAGE-CACHE-REDIS-PASSWORD] [--page-cache-id-prefix
-    PAGE-CACHE-ID-PREFIX] [--lock-provider LOCK-PROVIDER] [--lock-db-prefix LOCK-DB-PREFIX]
-    [--lock-zookeeper-host LOCK-ZOOKEEPER-HOST] [--lock-zookeeper-path LOCK-ZOOKEEPER-PATH]
-    [--lock-file-path LOCK-FILE-PATH] [--base-url BASE-URL] [--language LANGUAGE]
-    [--timezone TIMEZONE] [--currency CURRENCY] [--use-rewrites USE-REWRITES] [--use-secure
-    USE-SECURE] [--base-url-secure BASE-URL-SECURE] [--use-secure-admin USE-SECURE-ADMIN]
-    [--admin-use-security-key ADMIN-USE-SECURITY-KEY] [--admin-user [ADMIN-USER]]
-    [--admin-password [ADMIN-PASSWORD]] [--admin-email [ADMIN-EMAIL]] [--admin-firstname
-    [ADMIN-FIRSTNAME]] [--admin-lastname [ADMIN-LASTNAME]] [--cleanup-database] [--sales-order-increment-prefix
-    SALES-ORDER-INCREMENT-PREFIX] [--use-sample-data] [-i|--interactive] [--magento-init-params
+    [--session-save-redis-sentinel-master SESSION-SAVE-REDIS-SENTINEL-MASTER] [--session-save-redis-sentinel-servers
+    SESSION-SAVE-REDIS-SENTINEL-SERVERS] [--session-save-redis-sentinel-verify-master
+    SESSION-SAVE-REDIS-SENTINEL-VERIFY-MASTER] [--session-save-redis-sentinel-connect-retires
+    SESSION-SAVE-REDIS-SENTINEL-CONNECT-RETIRES] [--cache-backend CACHE-BACKEND] [--cache-backend-redis-server
+    CACHE-BACKEND-REDIS-SERVER] [--cache-backend-redis-db CACHE-BACKEND-REDIS-DB]
+    [--cache-backend-redis-port CACHE-BACKEND-REDIS-PORT] [--cache-backend-redis-password
+    CACHE-BACKEND-REDIS-PASSWORD] [--cache-backend-redis-compress-data CACHE-BACKEND-REDIS-COMPRESS-DATA]
+    [--cache-backend-redis-compression-lib CACHE-BACKEND-REDIS-COMPRESSION-LIB] [--cache-id-prefix
+    CACHE-ID-PREFIX] [--page-cache PAGE-CACHE] [--page-cache-redis-server PAGE-CACHE-REDIS-SERVER]
+    [--page-cache-redis-db PAGE-CACHE-REDIS-DB] [--page-cache-redis-port PAGE-CACHE-REDIS-PORT]
+    [--page-cache-redis-password PAGE-CACHE-REDIS-PASSWORD] [--page-cache-redis-compress-data
+    PAGE-CACHE-REDIS-COMPRESS-DATA] [--page-cache-redis-compression-lib PAGE-CACHE-REDIS-COMPRESSION-LIB]
+    [--page-cache-id-prefix PAGE-CACHE-ID-PREFIX] [--lock-provider LOCK-PROVIDER]
+    [--lock-db-prefix LOCK-DB-PREFIX] [--lock-zookeeper-host LOCK-ZOOKEEPER-HOST]
+    [--lock-zookeeper-path LOCK-ZOOKEEPER-PATH] [--lock-file-path LOCK-FILE-PATH]
+    [--base-url BASE-URL] [--language LANGUAGE] [--timezone TIMEZONE] [--currency
+    CURRENCY] [--use-rewrites USE-REWRITES] [--use-secure USE-SECURE] [--base-url-secure
+    BASE-URL-SECURE] [--use-secure-admin USE-SECURE-ADMIN] [--admin-use-security-key
+    ADMIN-USE-SECURITY-KEY] [--admin-user [ADMIN-USER]] [--admin-password [ADMIN-PASSWORD]]
+    [--admin-email [ADMIN-EMAIL]] [--admin-firstname [ADMIN-FIRSTNAME]] [--admin-lastname
+    [ADMIN-LASTNAME]] [--cleanup-database] [--sales-order-increment-prefix SALES-ORDER-INCREMENT-PREFIX]
+    [--use-sample-data] [--enable-modules [ENABLE-MODULES]] [--disable-modules [DISABLE-MODULES]]
+    [--convert-old-scripts [CONVERT-OLD-SCRIPTS]] [-i|--interactive] [--safe-mode
+    [SAFE-MODE]] [--data-restore [DATA-RESTORE]] [--dry-run [DRY-RUN]] [--magento-init-params
     MAGENTO-INIT-PARAMS]
   description: Installs the Magento application
   help: Installs the Magento application
   definition:
     arguments: []
     options:
+      backend-frontname:
+        name: "--backend-frontname"
+        shortcut: ''
+        accept_value: true
+        is_value_required: true
+        is_multiple: false
+        description: Backend frontname (will be autogenerated if missing)
+        default: 
+      amqp-host:
+        name: "--amqp-host"
+        shortcut: ''
+        accept_value: true
+        is_value_required: true
+        is_multiple: false
+        description: Amqp server host
+        default: ''
+      amqp-port:
+        name: "--amqp-port"
+        shortcut: ''
+        accept_value: true
+        is_value_required: true
+        is_multiple: false
+        description: Amqp server port
+        default: '5672'
+      amqp-user:
+        name: "--amqp-user"
+        shortcut: ''
+        accept_value: true
+        is_value_required: true
+        is_multiple: false
+        description: Amqp server username
+        default: ''
+      amqp-password:
+        name: "--amqp-password"
+        shortcut: ''
+        accept_value: true
+        is_value_required: true
+        is_multiple: false
+        description: Amqp server password
+        default: ''
+      amqp-virtualhost:
+        name: "--amqp-virtualhost"
+        shortcut: ''
+        accept_value: true
+        is_value_required: true
+        is_multiple: false
+        description: Amqp virtualhost
+        default: "/"
+      amqp-ssl:
+        name: "--amqp-ssl"
+        shortcut: ''
+        accept_value: true
+        is_value_required: true
+        is_multiple: false
+        description: Amqp SSL
+        default: ''
+      amqp-ssl-options:
+        name: "--amqp-ssl-options"
+        shortcut: ''
+        accept_value: true
+        is_value_required: true
+        is_multiple: false
+        description: Amqp SSL Options (JSON)
+        default: ''
       enable-debug-logging:
         name: "--enable-debug-logging"
         shortcut: ''
@@ -6394,13 +8150,13 @@ commands:
         is_multiple: false
         description: Enable debug logging
         default: 
-      backend-frontname:
-        name: "--backend-frontname"
+      enable-syslog-logging:
+        name: "--enable-syslog-logging"
         shortcut: ''
         accept_value: true
         is_value_required: true
         is_multiple: false
-        description: Backend frontname (will be autogenerated if missing)
+        description: Enable syslog logging
         default: 
       key:
         name: "--key"
@@ -6648,6 +8404,38 @@ commands:
         is_multiple: false
         description: Redis max session lifetime, in seconds
         default: 
+      session-save-redis-sentinel-master:
+        name: "--session-save-redis-sentinel-master"
+        shortcut: ''
+        accept_value: true
+        is_value_required: true
+        is_multiple: false
+        description: Redis Sentinel master
+        default: 
+      session-save-redis-sentinel-servers:
+        name: "--session-save-redis-sentinel-servers"
+        shortcut: ''
+        accept_value: true
+        is_value_required: true
+        is_multiple: false
+        description: Redis Sentinel servers, comma separated
+        default: 
+      session-save-redis-sentinel-verify-master:
+        name: "--session-save-redis-sentinel-verify-master"
+        shortcut: ''
+        accept_value: true
+        is_value_required: true
+        is_multiple: false
+        description: 'Redis Sentinel verify master. Values: false (default), true'
+        default: 
+      session-save-redis-sentinel-connect-retires:
+        name: "--session-save-redis-sentinel-connect-retires"
+        shortcut: ''
+        accept_value: true
+        is_value_required: true
+        is_multiple: false
+        description: Redis Sentinel connect retries.
+        default: 
       cache-backend:
         name: "--cache-backend"
         shortcut: ''
@@ -6687,6 +8475,23 @@ commands:
         is_value_required: true
         is_multiple: false
         description: Redis server password
+        default: 
+      cache-backend-redis-compress-data:
+        name: "--cache-backend-redis-compress-data"
+        shortcut: ''
+        accept_value: true
+        is_value_required: true
+        is_multiple: false
+        description: Set to 0 to disable compression (default is 1, enabled)
+        default: 
+      cache-backend-redis-compression-lib:
+        name: "--cache-backend-redis-compression-lib"
+        shortcut: ''
+        accept_value: true
+        is_value_required: true
+        is_multiple: false
+        description: Compression lib to use [snappy,lzf,l4z,zstd,gzip] (leave blank
+          to determine automatically)
         default: 
       cache-id-prefix:
         name: "--cache-id-prefix"
@@ -6728,6 +8533,14 @@ commands:
         is_multiple: false
         description: Redis server listen port
         default: 
+      page-cache-redis-password:
+        name: "--page-cache-redis-password"
+        shortcut: ''
+        accept_value: true
+        is_value_required: true
+        is_multiple: false
+        description: Redis server password
+        default: 
       page-cache-redis-compress-data:
         name: "--page-cache-redis-compress-data"
         shortcut: ''
@@ -6736,13 +8549,14 @@ commands:
         is_multiple: false
         description: Set to 1 to compress the full page cache (use 0 to disable)
         default: 
-      page-cache-redis-password:
-        name: "--page-cache-redis-password"
+      page-cache-redis-compression-lib:
+        name: "--page-cache-redis-compression-lib"
         shortcut: ''
         accept_value: true
         is_value_required: true
         is_multiple: false
-        description: Redis server password
+        description: Compression library to use [snappy,lzf,l4z,zstd,gzip] (leave
+          blank to determine automatically)
         default: 
       page-cache-id-prefix:
         name: "--page-cache-id-prefix"
@@ -6937,13 +8751,65 @@ commands:
         is_multiple: false
         description: Use sample data
         default: false
+      enable-modules:
+        name: "--enable-modules"
+        shortcut: ''
+        accept_value: true
+        is_value_required: false
+        is_multiple: false
+        description: List of comma-separated module names. That must be included during
+          installation. Available magic param "all".
+        default: 
+      disable-modules:
+        name: "--disable-modules"
+        shortcut: ''
+        accept_value: true
+        is_value_required: false
+        is_multiple: false
+        description: List of comma-separated module names. That must be avoided during
+          installation. Available magic param "all".
+        default: 
+      convert-old-scripts:
+        name: "--convert-old-scripts"
+        shortcut: ''
+        accept_value: true
+        is_value_required: false
+        is_multiple: false
+        description: Allows to convert old scripts (InstallSchema, UpgradeSchema)
+          to db_schema.xml format
+        default: false
       interactive:
         name: "--interactive"
         shortcut: "-i"
         accept_value: false
         is_value_required: false
         is_multiple: false
-        description: Interactive Magento instalation
+        description: Interactive Magento installation
+        default: false
+      safe-mode:
+        name: "--safe-mode"
+        shortcut: ''
+        accept_value: true
+        is_value_required: false
+        is_multiple: false
+        description: Safe installation of Magento with dumps on destructive operations,
+          like column removal
+        default: 
+      data-restore:
+        name: "--data-restore"
+        shortcut: ''
+        accept_value: true
+        is_value_required: false
+        is_multiple: false
+        description: Restore removed data from dumps
+        default: 
+      dry-run:
+        name: "--dry-run"
+        shortcut: ''
+        accept_value: true
+        is_value_required: false
+        is_multiple: false
+        description: Magento Installation will be run in dry-run mode
         default: false
       magento-init-params:
         name: "--magento-init-params"
@@ -7011,6 +8877,7 @@ commands:
         is_multiple: false
         description: Do not ask any interactive question
         default: false
+  hidden: false
 - name: setup:performance:generate-fixtures
   usage:
   - setup:performance:generate-fixtures [-s|--skip-reindex] [--] <profile>
@@ -7090,6 +8957,7 @@ commands:
         is_multiple: false
         description: Do not ask any interactive question
         default: false
+  hidden: false
 - name: setup:rollback
   usage:
   - setup:rollback [-c|--code-file CODE-FILE] [-m|--media-file MEDIA-FILE] [-d|--db-file
@@ -7189,6 +9057,7 @@ commands:
         is_multiple: false
         description: Do not ask any interactive question
         default: false
+  hidden: false
 - name: setup:static-content:deploy
   usage:
   - setup:static-content:deploy [-f|--force] [-s|--strategy [STRATEGY]] [-a|--area
@@ -7197,7 +9066,7 @@ commands:
     [-j|--jobs [JOBS]] [--max-execution-time [MAX-EXECUTION-TIME]] [--symlink-locale]
     [--content-version CONTENT-VERSION] [--refresh-content-version-only] [--no-javascript]
     [--no-css] [--no-less] [--no-images] [--no-fonts] [--no-html] [--no-misc] [--no-html-minify]
-    [--] [<languages>]...
+    [--] [<languages>...]
   description: Deploys static view files
   help: Deploys static view files
   definition:
@@ -7206,7 +9075,7 @@ commands:
         name: languages
         is_required: false
         is_array: true
-        description: Space-separated list of ISO-636 language codes for which to output
+        description: Space-separated list of ISO-639 language codes for which to output
           static view files.
         default: []
     options:
@@ -7446,6 +9315,7 @@ commands:
         is_multiple: false
         description: Do not ask any interactive question
         default: false
+  hidden: false
 - name: setup:store-config:set
   usage:
   - setup:store-config:set [--base-url BASE-URL] [--language LANGUAGE] [--timezone
@@ -7603,6 +9473,7 @@ commands:
         is_multiple: false
         description: Do not ask any interactive question
         default: false
+  hidden: false
 - name: setup:uninstall
   usage:
   - setup:uninstall [--magento-init-params MAGENTO-INIT-PARAMS]
@@ -7677,9 +9548,12 @@ commands:
         is_multiple: false
         description: Do not ask any interactive question
         default: false
+  hidden: false
 - name: setup:upgrade
   usage:
-  - setup:upgrade [--keep-generated] [--magento-init-params MAGENTO-INIT-PARAMS]
+  - setup:upgrade [--keep-generated] [--convert-old-scripts [CONVERT-OLD-SCRIPTS]]
+    [--safe-mode [SAFE-MODE]] [--data-restore [DATA-RESTORE]] [--dry-run [DRY-RUN]]
+    [--magento-init-params MAGENTO-INIT-PARAMS]
   description: Upgrades the Magento application, DB data, and schema
   help: Upgrades the Magento application, DB data, and schema
   definition:
@@ -7694,6 +9568,40 @@ commands:
         description: Prevents generated files from being deleted. We discourage using
           this option except when deploying to production. Consult your system integrator
           or administrator for more information.
+        default: false
+      convert-old-scripts:
+        name: "--convert-old-scripts"
+        shortcut: ''
+        accept_value: true
+        is_value_required: false
+        is_multiple: false
+        description: Allows to convert old scripts (InstallSchema, UpgradeSchema)
+          to db_schema.xml format
+        default: false
+      safe-mode:
+        name: "--safe-mode"
+        shortcut: ''
+        accept_value: true
+        is_value_required: false
+        is_multiple: false
+        description: Safe installation of Magento with dumps on destructive operations,
+          like column removal
+        default: 
+      data-restore:
+        name: "--data-restore"
+        shortcut: ''
+        accept_value: true
+        is_value_required: false
+        is_multiple: false
+        description: Restore removed data from dumps
+        default: 
+      dry-run:
+        name: "--dry-run"
+        shortcut: ''
+        accept_value: true
+        is_value_required: false
+        is_multiple: false
+        description: Magento Installation will be run in dry-run mode
         default: false
       magento-init-params:
         name: "--magento-init-params"
@@ -7761,6 +9669,7 @@ commands:
         is_multiple: false
         description: Do not ask any interactive question
         default: false
+  hidden: false
 - name: store:list
   usage:
   - store:list
@@ -7826,6 +9735,7 @@ commands:
         is_multiple: false
         description: Do not ask any interactive question
         default: false
+  hidden: false
 - name: store:website:list
   usage:
   - store:website:list
@@ -7891,9 +9801,346 @@ commands:
         is_multiple: false
         description: Do not ask any interactive question
         default: false
+  hidden: false
+- name: support:backup:code
+  usage:
+  - support:backup:code [--name [NAME]] [-o|--output [OUTPUT]] [-l|--logs]
+  description: Create Code backup
+  help: Create Code backup
+  definition:
+    arguments: []
+    options:
+      name:
+        name: "--name"
+        shortcut: ''
+        accept_value: true
+        is_value_required: false
+        is_multiple: false
+        description: Dump name
+        default: 
+      output:
+        name: "--output"
+        shortcut: "-o"
+        accept_value: true
+        is_value_required: false
+        is_multiple: false
+        description: Output path
+        default: 
+      logs:
+        name: "--logs"
+        shortcut: "-l"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Include logs
+        default: false
+      help:
+        name: "--help"
+        shortcut: "-h"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this help message
+        default: false
+      quiet:
+        name: "--quiet"
+        shortcut: "-q"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not output any message
+        default: false
+      verbose:
+        name: "--verbose"
+        shortcut: "-v|-vv|-vvv"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: 'Increase the verbosity of messages: 1 for normal output, 2 for
+          more verbose output and 3 for debug'
+        default: false
+      version:
+        name: "--version"
+        shortcut: "-V"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this application version
+        default: false
+      ansi:
+        name: "--ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Force ANSI output
+        default: false
+      no-ansi:
+        name: "--no-ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Disable ANSI output
+        default: false
+      no-interaction:
+        name: "--no-interaction"
+        shortcut: "-n"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not ask any interactive question
+        default: false
+  hidden: false
+- name: support:backup:db
+  usage:
+  - support:backup:db [--name [NAME]] [-o|--output [OUTPUT]] [-l|--logs] [-i|--ignore-sanitize]
+  description: Create DB backup
+  help: Create DB backup
+  definition:
+    arguments: []
+    options:
+      name:
+        name: "--name"
+        shortcut: ''
+        accept_value: true
+        is_value_required: false
+        is_multiple: false
+        description: Dump name
+        default: 
+      output:
+        name: "--output"
+        shortcut: "-o"
+        accept_value: true
+        is_value_required: false
+        is_multiple: false
+        description: Output path
+        default: 
+      logs:
+        name: "--logs"
+        shortcut: "-l"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Include logs
+        default: false
+      ignore-sanitize:
+        name: "--ignore-sanitize"
+        shortcut: "-i"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Ignore sanitize
+        default: false
+      help:
+        name: "--help"
+        shortcut: "-h"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this help message
+        default: false
+      quiet:
+        name: "--quiet"
+        shortcut: "-q"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not output any message
+        default: false
+      verbose:
+        name: "--verbose"
+        shortcut: "-v|-vv|-vvv"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: 'Increase the verbosity of messages: 1 for normal output, 2 for
+          more verbose output and 3 for debug'
+        default: false
+      version:
+        name: "--version"
+        shortcut: "-V"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this application version
+        default: false
+      ansi:
+        name: "--ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Force ANSI output
+        default: false
+      no-ansi:
+        name: "--no-ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Disable ANSI output
+        default: false
+      no-interaction:
+        name: "--no-interaction"
+        shortcut: "-n"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not ask any interactive question
+        default: false
+  hidden: false
+- name: support:utility:check
+  usage:
+  - support:utility:check [--hide-paths]
+  description: Check required backup utilities
+  help: Check required backup utilities
+  definition:
+    arguments: []
+    options:
+      hide-paths:
+        name: "--hide-paths"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Only check required console utilities
+        default: false
+      help:
+        name: "--help"
+        shortcut: "-h"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this help message
+        default: false
+      quiet:
+        name: "--quiet"
+        shortcut: "-q"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not output any message
+        default: false
+      verbose:
+        name: "--verbose"
+        shortcut: "-v|-vv|-vvv"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: 'Increase the verbosity of messages: 1 for normal output, 2 for
+          more verbose output and 3 for debug'
+        default: false
+      version:
+        name: "--version"
+        shortcut: "-V"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this application version
+        default: false
+      ansi:
+        name: "--ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Force ANSI output
+        default: false
+      no-ansi:
+        name: "--no-ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Disable ANSI output
+        default: false
+      no-interaction:
+        name: "--no-interaction"
+        shortcut: "-n"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not ask any interactive question
+        default: false
+  hidden: false
+- name: support:utility:paths
+  usage:
+  - support:utility:paths [-f|--force]
+  description: Create utilities paths list
+  help: Create utilities paths list
+  definition:
+    arguments: []
+    options:
+      force:
+        name: "--force"
+        shortcut: "-f"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Force
+        default: false
+      help:
+        name: "--help"
+        shortcut: "-h"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this help message
+        default: false
+      quiet:
+        name: "--quiet"
+        shortcut: "-q"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not output any message
+        default: false
+      verbose:
+        name: "--verbose"
+        shortcut: "-v|-vv|-vvv"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: 'Increase the verbosity of messages: 1 for normal output, 2 for
+          more verbose output and 3 for debug'
+        default: false
+      version:
+        name: "--version"
+        shortcut: "-V"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this application version
+        default: false
+      ansi:
+        name: "--ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Force ANSI output
+        default: false
+      no-ansi:
+        name: "--no-ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Disable ANSI output
+        default: false
+      no-interaction:
+        name: "--no-interaction"
+        shortcut: "-n"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not ask any interactive question
+        default: false
+  hidden: false
 - name: theme:uninstall
   usage:
-  - theme:uninstall [--backup-code] [-c|--clear-static-content] [--] <theme> (<theme>)...
+  - theme:uninstall [--backup-code] [-c|--clear-static-content] [--] <theme>...
   description: Uninstalls theme
   help: Uninstalls theme
   definition:
@@ -7979,6 +10226,7 @@ commands:
         is_multiple: false
         description: Do not ask any interactive question
         default: false
+  hidden: false
 - name: varnish:vcl:generate
   usage:
   - varnish:vcl:generate [--access-list ACCESS-LIST] [--backend-host BACKEND-HOST]
@@ -8095,6 +10343,230 @@ commands:
         is_multiple: false
         description: Do not ask any interactive question
         default: false
+  hidden: false
+- name: yotpo:reset
+  usage:
+  - yotpo:reset [-e|--entity [ENTITY]]
+  description: Reset Yotpo sync flags &/or configurations
+  help: Reset Yotpo sync flags &/or configurations
+  definition:
+    arguments: []
+    options:
+      entity:
+        name: "--entity"
+        shortcut: "-e"
+        accept_value: true
+        is_value_required: false
+        is_multiple: false
+        description: Entity type (orders)
+        default: orders
+      help:
+        name: "--help"
+        shortcut: "-h"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this help message
+        default: false
+      quiet:
+        name: "--quiet"
+        shortcut: "-q"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not output any message
+        default: false
+      verbose:
+        name: "--verbose"
+        shortcut: "-v|-vv|-vvv"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: 'Increase the verbosity of messages: 1 for normal output, 2 for
+          more verbose output and 3 for debug'
+        default: false
+      version:
+        name: "--version"
+        shortcut: "-V"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this application version
+        default: false
+      ansi:
+        name: "--ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Force ANSI output
+        default: false
+      no-ansi:
+        name: "--no-ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Disable ANSI output
+        default: false
+      no-interaction:
+        name: "--no-interaction"
+        shortcut: "-n"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not ask any interactive question
+        default: false
+  hidden: false
+- name: yotpo:sync
+  usage:
+  - yotpo:sync [-e|--entity ENTITY] [-l|--limit [LIMIT]]
+  description: Sync Yotpo manually (reviews module)
+  help: Sync Yotpo manually (reviews module)
+  definition:
+    arguments: []
+    options:
+      entity:
+        name: "--entity"
+        shortcut: "-e"
+        accept_value: true
+        is_value_required: true
+        is_multiple: false
+        description: 'Entity type (allowed options: orders)'
+        default: orders
+      limit:
+        name: "--limit"
+        shortcut: "-l"
+        accept_value: true
+        is_value_required: false
+        is_multiple: false
+        description: 'Max entity items to sync. WARNING: Setting a high sync limit
+          (or no limit) may result in a high server load (0=no limit).'
+        default: 
+      help:
+        name: "--help"
+        shortcut: "-h"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this help message
+        default: false
+      quiet:
+        name: "--quiet"
+        shortcut: "-q"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not output any message
+        default: false
+      verbose:
+        name: "--verbose"
+        shortcut: "-v|-vv|-vvv"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: 'Increase the verbosity of messages: 1 for normal output, 2 for
+          more verbose output and 3 for debug'
+        default: false
+      version:
+        name: "--version"
+        shortcut: "-V"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this application version
+        default: false
+      ansi:
+        name: "--ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Force ANSI output
+        default: false
+      no-ansi:
+        name: "--no-ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Disable ANSI output
+        default: false
+      no-interaction:
+        name: "--no-interaction"
+        shortcut: "-n"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not ask any interactive question
+        default: false
+  hidden: false
+- name: yotpo:update-metadata
+  usage:
+  - yotpo:update-metadata
+  description: Manually send platform metadata to Yotpo
+  help: Manually send platform metadata to Yotpo
+  definition:
+    arguments: []
+    options:
+      help:
+        name: "--help"
+        shortcut: "-h"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this help message
+        default: false
+      quiet:
+        name: "--quiet"
+        shortcut: "-q"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not output any message
+        default: false
+      verbose:
+        name: "--verbose"
+        shortcut: "-v|-vv|-vvv"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: 'Increase the verbosity of messages: 1 for normal output, 2 for
+          more verbose output and 3 for debug'
+        default: false
+      version:
+        name: "--version"
+        shortcut: "-V"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this application version
+        default: false
+      ansi:
+        name: "--ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Force ANSI output
+        default: false
+      no-ansi:
+        name: "--no-ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Disable ANSI output
+        default: false
+      no-interaction:
+        name: "--no-interaction"
+        shortcut: "-n"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not ask any interactive question
+        default: false
+  hidden: false
 namespaces:
 - id: _global
   commands:
@@ -8150,11 +10622,18 @@ namespaces:
   - dev:tests:run
   - dev:urn-catalog:generate
   - dev:xml:convert
+- id: dotdigital
+  commands:
+  - dotdigital:migrate
+  - dotdigital:sync
 - id: downloadable
   commands:
   - downloadable:domains:add
   - downloadable:domains:remove
   - downloadable:domains:show
+- id: encryption
+  commands:
+  - encryption:payment-data:update
 - id: i18n
   commands:
   - i18n:collect-phrases
@@ -8180,6 +10659,13 @@ namespaces:
   - info:dependencies:show-modules-circular
   - info:language:list
   - info:timezone:list
+- id: inventory
+  commands:
+  - inventory:reservation:create-compensations
+  - inventory:reservation:list-inconsistencies
+- id: inventory-geonames
+  commands:
+  - inventory-geonames:import
 - id: maintenance
   commands:
   - maintenance:allow-ips
@@ -8188,6 +10674,7 @@ namespaces:
   - maintenance:status
 - id: module
   commands:
+  - module:config:status
   - module:disable
   - module:enable
   - module:status
@@ -8195,9 +10682,16 @@ namespaces:
 - id: msp
   commands:
   - msp:security:recaptcha:disable
+  - msp:security:tfa:disable
+  - msp:security:tfa:providers
+  - msp:security:tfa:reset
 - id: newrelic
   commands:
   - newrelic:create:deploy-marker
+- id: queue
+  commands:
+  - queue:consumers:list
+  - queue:consumers:start
 - id: sampledata
   commands:
   - sampledata:deploy
@@ -8209,6 +10703,11 @@ namespaces:
   - setup:config:set
   - setup:cron:run
   - setup:db-data:upgrade
+  - setup:db-declaration:generate-patch
+  - setup:db-declaration:generate-whitelist
+  - setup:db-schema:add-slave
+  - setup:db-schema:split-quote
+  - setup:db-schema:split-sales
   - setup:db-schema:upgrade
   - setup:db:status
   - setup:di:compile
@@ -8223,9 +10722,20 @@ namespaces:
   commands:
   - store:list
   - store:website:list
+- id: support
+  commands:
+  - support:backup:code
+  - support:backup:db
+  - support:utility:check
+  - support:utility:paths
 - id: theme
   commands:
   - theme:uninstall
 - id: varnish
   commands:
   - varnish:vcl:generate
+- id: yotpo
+  commands:
+  - yotpo:reset
+  - yotpo:sync
+  - yotpo:update-metadata
