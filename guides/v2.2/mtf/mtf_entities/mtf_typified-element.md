@@ -20,9 +20,9 @@ The most important methods are `setValue()` and `getValue()`. These methods are 
 
 There are two types of testing typified elements: default typified elements and Magento custom typified elements.
 
- * Default typified elements are the web elements that are typically used in a web application.
+*  Default typified elements are the web elements that are typically used in a web application.
 
- * Magento custom typified elements are the web elements that are specific to the Magento application
+*  Magento custom typified elements are the web elements that are specific to the Magento application
 
 ## Default testing typified elements {#basic_class}
 
@@ -225,4 +225,4 @@ The following code is a corresponding mapping with the typified element `optgrou
 [`\Magento\Mtf\Client\Element\TreeElement`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/dev/tests/functional/lib/Magento/Mtf/Client/Element/TreeElement.php
 
 <!-- ABBREVIATIONS -->
-*[FTF]: Functional Testing Framework
+[FTF]: Functional Testing Framework
