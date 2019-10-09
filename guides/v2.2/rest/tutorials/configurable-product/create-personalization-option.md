@@ -73,6 +73,6 @@ The `product_sku` is the `sku` of the configurable product. The `sku` specified 
   {:.no_toc}
 
 {:.ref-header}
-Related topics
+Related topic
 
-  * [Order Processing with REST APIs Tutorial]({{ page.baseurl }}/rest/tutorials/orders/order-intro.html)
+[Order Processing with REST APIs Tutorial]({{ page.baseurl }}/rest/tutorials/orders/order-intro.html)

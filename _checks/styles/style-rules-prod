@@ -2,7 +2,7 @@ rule 'MD001'
 exclude_rule 'MD002'
 rule 'MD003', :style => :atx
 rule 'MD004'
-exclude_rule 'MD005'
+rule 'MD005'
 exclude_rule 'MD006'
 exclude_rule 'MD007'
 rule 'MD009'
