@@ -25,9 +25,21 @@ This reference is generated from the Magento codebase. To add or update the cont
 
 {{ command.description }}
 
+{% for usage in command.usage %}
+{% if app.name contains 'Cloud' %}
+
 ```bash
-{{ tool }} {{ command.usage }}
+{{ usage }}
 ```
+
+{% else %}
+
+```bash
+{{ tool }} {{ usage }}
+```
+
+{% endif %}
+{% endfor %}
 
 {% unless arguments.size == 0 %}
 
