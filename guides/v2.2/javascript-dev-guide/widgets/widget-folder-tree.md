@@ -7,6 +7,15 @@ contributor_link: https://www.atwix.com/
 
 The FolderTree [widget](https://glossary.magento.com/widget/) allows creating a dynamic hierarchical tree structure with folders.
 
+The main purpose of this widget is to represent a folders structure from the server, database or another resource.
+
+The dynamic hierarchical allows us to easily update the folders via [Ajax URL](#url) and shows different layers of folders with all with subfolders that can be collapsed and expanded.
+
+For example in the Wysiwyg editor, the FolderTree widget is used to represents the structure of media folders from the server and after clicking on one of the folder an admin is able to see media files from the selected folder. 
+Also, an admin is able to add and remove folders.
+
+![Example of Media Folder Tree]({{ site.baseurl }}/common/images/widget/folder-tree-widget-media-example.png)
+
 The FolderTree widget can be used only in the [adminhtml](https://glossary.magento.com/adminhtml) area.
 
 The FolderTree widget source is [`<Magento_Cms_module_dir>/view/adminhtml/web/js/folder-tree.js`][].
@@ -22,6 +31,7 @@ $("#folder-tree").folderTree({
     currentPath: ['root']
 });
 ```
+
 Where:
 
 - `#folder-tree` is the selector of the element which will display FolderTree.
@@ -55,7 +65,7 @@ The following example shows a [PHTML](https://glossary.magento.com/phtml) file u
 
 ### `currentPath`
 
-The array path of folders IDs to the current opened folder.
+This option helps to pre-open a folder after loading the tree. It should be an array of folders IDs which represents the path to the current opened folder.
 
 **Type**: Array
 
@@ -81,7 +91,7 @@ The name of the root folder.
 
 The configuration for [jstree](https://www.jstree.com) widget.
 
-The FolderTree widget used the [jstree](https://www.jstree.com) widget to build a hierarchical tree with folders.
+The FolderTree widget uses the [jstree](https://www.jstree.com) widget to build a hierarchical tree with folders.
 
 **Type**: String
 
