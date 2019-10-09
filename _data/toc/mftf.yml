@@ -97,7 +97,7 @@ pages:
       - label: MFTF functional test reference
         url: /mftf/docs/mftf-tests.html
         versionless: true
-  
+
   - label: Reporting
     url: /mftf/docs/reporting.html
     versionless: true
@@ -142,6 +142,7 @@ pages:
 
   - label: Test writing
     versionless: true
+    children:
 
       - label: Best practices
         url: /mftf/docs/best-practices.html
