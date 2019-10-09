@@ -17,9 +17,9 @@ Production mode also has better performance because static view files are popula
 
 {:.bs-callout .bs-callout-info}
 
--   In version 2.0.6 and later, Magento does not explicitly set file or directory permissions when you switch between default, develop, and production modes.
--   Unlike other Magento modes, developer and production modes are set in `env.php`.
--   [{{site.data.var.ece}}]({{ page.baseurl }}/cloud/bk-cloud.html) supports production and maintenance modes only.
+-  In version 2.0.6 and later, Magento does not explicitly set file or directory permissions when you switch between default, develop, and production modes.
+-  Unlike other Magento modes, developer and production modes are set in `env.php`.
+-  [{{site.data.var.ece}}]({{ page.baseurl }}/cloud/bk-cloud.html) supports production and maintenance modes only.
 
 Refer to [Magento ownership and permissions in development and production]({{ page.baseurl }}/config-guide/prod/prod_file-sys-perms.html) for more information.
 
@@ -35,8 +35,8 @@ pub/static
 
 Exceptions:
 
--   `.htaccess` files are not removed
--   `pub/static` contains a file that specifies the version of static content; this file is not removed
+-  `.htaccess` files are not removed
+-  `pub/static` contains a file that specifies the version of static content; this file is not removed
 
 {:.bs-callout .bs-callout-info}
 By default, Magento uses the `var` directories to store the cache, logs, and compiled code. You can customize this directory but in this guide, it's assumed to be `var`.
@@ -59,7 +59,7 @@ Current application mode: {mode}. (Note: Environment variables may override this
 
 where:
 
-  -   **`{mode}`** can be either `default`, `developer`, or `production`
+-  **`{mode}`** can be either `default`, `developer`, or `production`
 
 ## Change modes {#config-mode-change}
 
@@ -71,9 +71,9 @@ bin/magento deploy:mode:set {mode} [-s|--skip-compilation]
 
 where:
 
-  -   **`{mode}`** is required; it can be either `developer` or `production`
+-  **`{mode}`** is required; it can be either `developer` or `production`
 
-  -   **`--skip-compilation`** is an optional parameter you can use to skip [code compilation]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-compiler.html) when you change to production mode.
+-  **`--skip-compilation`** is an optional parameter you can use to skip [code compilation]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-compiler.html) when you change to production mode.
 
 Examples follow.
 
@@ -128,23 +128,23 @@ Enabled production mode.
 
 When you change from production to developer mode, you should clear generated classes and Object Manager entities like proxies to prevent unexpected errors. After doing so, you can change modes. Use the following steps:
 
-1.  If you're changing from production mode to developer mode, delete the contents of the `generated/code` and `generated/metadata` directories:
+1. If you're changing from production mode to developer mode, delete the contents of the `generated/code` and `generated/metadata` directories:
 
-    ```bash
-    rm -rf <magento_root>/generated/metadata/* <magento_root>/generated/code/*
-    ```
+   ```bash
+   rm -rf <magento_root>/generated/metadata/* <magento_root>/generated/code/*
+   ```
 
-2.  Set the mode:
+2. Set the mode:
 
-    ```bash
-    bin/magento deploy:mode:set developer
-    ```
+   ```bash
+   bin/magento deploy:mode:set developer
+   ```
 
-    The following message displays:
+   The following message displays:
 
-    ```terminal
-    Enabled developer mode.
-    ```
+   ```terminal
+   Enabled developer mode.
+   ```
 
 ### Change to default mode
 
@@ -159,6 +159,7 @@ Enabled default mode.
 ```
 
 ### Run Magento CLI commands from anywhere
+
 [Run Magento CLI commands from anywhere]({{ page.baseurl }}/config-guide/cli/config-cli.html#config-install-cli-first).
 
 If you haven't added `<magento-install-directory>/bin` to your system `PATH`, then you can expect an error when running the Magento command by itself.
