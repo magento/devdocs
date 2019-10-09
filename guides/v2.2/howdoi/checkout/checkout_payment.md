@@ -264,6 +264,7 @@ In your custom module directory, create a new `<your_module_dir>/view/frontend/l
                                                             </item>
                                                         </item>
                                                         <!-- Declare additional before payment components. END -->
+                                                        
                                                         <!-- Declare the payment method (the component that registrates in the list). START -->
                                                         <item name="renders" xsi:type="array">
                                                             <item name="children" xsi:type="array">
@@ -279,19 +280,20 @@ In your custom module directory, create a new `<your_module_dir>/view/frontend/l
                                                                     </item>
                                                                 </item>
                                                             </item>
-                                                            <!-- Declare the payment method (the component that registrates in the list). END -->
-                                                            <!-- Declare additional after payment components. START -->
-                                                            <item name="afterMethods" xsi:type="array">
-                                                                <item name="component" xsi:type="string">uiComponent</item>
-                                                                <item name="displayArea" xsi:type="string">afterMethods</item>
-                                                                <item name="children" xsi:type="array">
-                                                                    <item name="%your_feature_name%" xsi:type="array">
-                                                                        <item name="component" xsi:type="string">%path/to/your/feature_js_component%</item>
-                                                                    </item>
+                                                        </item>
+                                                        <!-- Declare the payment method (the component that registrates in the list). END -->
+
+                                                        <!-- Declare additional after payment components. START -->
+                                                        <item name="afterMethods" xsi:type="array">
+                                                            <item name="component" xsi:type="string">uiComponent</item>
+                                                            <item name="displayArea" xsi:type="string">afterMethods</item>
+                                                            <item name="children" xsi:type="array">
+                                                                <item name="%your_feature_name%" xsi:type="array">
+                                                                    <item name="component" xsi:type="string">%path/to/your/feature_js_component%</item>
                                                                 </item>
                                                             </item>
-                                                            <!-- Declare additional after payment components. END -->
                                                         </item>
+                                                        <!-- Declare additional after payment components. END -->
                                                     </item>
                                                 </item>
                                             </item>
