@@ -15,9 +15,9 @@ Custom VCL snippets—generated, compiled, and transmitted to all Fastly caches�
 
 Fastly supports two types of custom VCL snippets:
 
--   [Regular snippets](https://docs.fastly.com/guides/vcl-snippets/using-regular-vcl-snippets)—Custom regular VCL snippets are dependent on a specific VCL version. You can create, modify, and deploy regular VCL snippets from the Magento Admin UI or the Fastly API.
+-  [Regular snippets](https://docs.fastly.com/guides/vcl-snippets/using-regular-vcl-snippets)—Custom regular VCL snippets are dependent on a specific VCL version. You can create, modify, and deploy regular VCL snippets from the Magento Admin UI or the Fastly API.
 
--   [Dynamic snippets](https://docs.fastly.com/guides/vcl-snippets/using-dynamic-vcl-snippets)—VCL snippets created using the Fastly API. You can modify and deploy dynamic snippets without having to update the Fastly VCL version for your service.
+-  [Dynamic snippets](https://docs.fastly.com/guides/vcl-snippets/using-dynamic-vcl-snippets)—VCL snippets created using the Fastly API. You can modify and deploy dynamic snippets without having to update the Fastly VCL version for your service.
 
 We recommend using custom VCL snippets with Edge Dictionaries and Access Control Lists (ACL) to store data used in your custom code.
 
@@ -34,49 +34,49 @@ You must [set up Fastly]({{ page.baseurl }}/cloud/cdn/configure-fastly.html) bef
 
 The examples and instructions in the {{ site.data.var.ece }} documentation explain how to use regular custom VCL snippets with edge dictionaries and edge ACLs. For detailed VCL tutorial, reference, and troubleshooting information, see the following Fastly documentation:
 
--   [Guide to Fastly VCL](https://docs.fastly.com/guides/vcl/guide-to-vcl)—High level information about the Fastly Varnish implementation, Fastly VCL extensions, and resources for learning more about Varnish and VCL.
--   [Fastly VCL reference](https://docs.fastly.com/guides/vcl/)—Detailed programming reference to develop and troubleshoot Fastly custom VCL and custom VCL snippets.
+-  [Guide to Fastly VCL](https://docs.fastly.com/guides/vcl/guide-to-vcl)—High level information about the Fastly Varnish implementation, Fastly VCL extensions, and resources for learning more about Varnish and VCL.
+-  [Fastly VCL reference](https://docs.fastly.com/guides/vcl/)—Detailed programming reference to develop and troubleshoot Fastly custom VCL and custom VCL snippets.
 
 You can create and manage custom VCL snippets from the Magento Admin UI or by using the Fastly API:
 
-- [Magento Admin UI](#manage-custom-vcl-snippets-from-the-magento-admin-ui)—We recommend using the Magento Admin UI to manage custom VCL snippets because it automates the process to validate and upload the custom snippet and apply your changes to the Fastly service configuration. Additionally, you can view and edit the custom VCL snippets added to the Fastly service configuration from the Admin UI.
+-  [Magento Admin UI](#manage-custom-vcl-snippets-from-the-magento-admin-ui)—We recommend using the Magento Admin UI to manage custom VCL snippets because it automates the process to validate and upload the custom snippet and apply your changes to the Fastly service configuration. Additionally, you can view and edit the custom VCL snippets added to the Fastly service configuration from the Admin UI.
 
-- [Fastly API](#manage-custom-vcl-snippets-using-the-api)—Manage custom VCL snippets using the API if you cannot access the Magento Admin UI. For example, if the site is down and you need to troubleshoot the Fastly service configuration or add a custom VCL snippet. Additionally, some operations can only be completed using the API, for example reactivating an older VCL version or viewing all the VCL snippets included in a specified the VCL version. See [API quick reference for VCL snippets](#manage-vcl).
+-  [Fastly API](#manage-custom-vcl-snippets-using-the-api)—Manage custom VCL snippets using the API if you cannot access the Magento Admin UI. For example, if the site is down and you need to troubleshoot the Fastly service configuration or add a custom VCL snippet. Additionally, some operations can only be completed using the API, for example reactivating an older VCL version or viewing all the VCL snippets included in a specified the VCL version. See [API quick reference for VCL snippets](#manage-vcl).
 
 ### Example VCL snippet code {#vcl-curl}
 
-  The following example shows the JSON code for a custom VCL snippet that filters traffic by client IP address.
+The following example shows the JSON code for a custom VCL snippet that filters traffic by client IP address.
 
-  ```json
-  {
-    "service_id": "FASTLY_SERVICE_ID",
-    "version": "{Editable Version #}",
-    "name": "apply_acl",
-    "priority": "100",
-    "dynamic": "1",
-    "type": "hit",
-    "content": "if ((client.ip ~ {ACLNAME}) && !req.http.Fastly-FF){ error 403; }"
-  }
-  ```
+```json
+{
+  "service_id": "FASTLY_SERVICE_ID",
+  "version": "{Editable Version #}",
+  "name": "apply_acl",
+  "priority": "100",
+  "dynamic": "1",
+  "type": "hit",
+  "content": "if ((client.ip ~ {ACLNAME}) && !req.http.Fastly-FF){ error 403; }"
+}
+```
 
-  The VCL logic in the `content` field performs the following actions:
+The VCL logic in the `content` field performs the following actions:
 
-  - Checks the incoming IP address, `client.ip` on each request
+-  Checks the incoming IP address, `client.ip` on each request
 
-  - Blocks any request with an IP address included in the *ACLNAME* edge ACL, returning a `403 Forbidden` error
+-  Blocks any request with an IP address included in the *ACLNAME* edge ACL, returning a `403 Forbidden` error
 
-  The following table provides details about key data for custom VCL snippets.  For a more detailed reference, see the [VCL snippets](https://docs.fastly.com/api/config#api-section-snippet) reference in the Fastly documentation.
+The following table provides details about key data for custom VCL snippets.  For a more detailed reference, see the [VCL snippets](https://docs.fastly.com/api/config#api-section-snippet) reference in the Fastly documentation.
 
-  | Value      | Description
-  |------------|------------------------------------------------------------------------------------------------------------------------------
-  | `service_id` | The Fastly Service ID for a specific Staging or Production environment. This ID is assigned when your project is added to the {{ site.data.var.ece }} Fastly service account. See [Get credentials]({{ page.baseurl }}/cloud/cdn/configure-fastly.html).
-  | `API_KEY`  | The API Key to access your Fastly account. See [Get credentials]({{ page.baseurl }}/cloud/cdn/configure-fastly.html).
-  | `number`    | The number of the VCL version that the snippet is added to. Fastly uses *Editable Version #* in their example values. If you add custom snippets from the API, you include the version number in the API request. If you add custom VCL from the Magento Admin UI, the version is provided for you.
-  | `type`       | Specifies a location for inserting the generated snippet, such as init (above subroutines) and recv (within subroutines). See Fastly VCL snippet object values for information on these values. See the Fastly [VCL snippets](https://docs.fastly.com/api/config#api-section-snippet) reference.
-  | `content`    | The snippet of VCL code to run. Fastly does not support all VCL language features, and it also provides extensions with custom functionality. See the [Fastly VCL programming reference](https://docs.fastly.com/vcl/reference/) for information about supported VCL code features.
-  | `priority`   | Numeric value from `1` to `100` that specifies when the custom VCL snippet code runs. Snippets with lower priority values run first. If not specified, the `priority` value defaults to `100`.<br><br> Any custom VCL snippet with a priority value of `5` runs immediately, which is best for VCL code that implements request routing (block and allow lists and redirects). Priority `100` is best for overriding default VCL snippet code. <br><br>All [default VCL snippets]({{ page.baseurl }}/cloud/cdn/configure-fastly.html#upload-vcl-snippets) included in the Magento-Fastly module have `priority=50`.<br>-  Assign a high priority like `100` to run custom VCL code after all other VCL functions and override the default VCL code.
-  | `dynamic` | Indicates if this is a [regular snippet](https://docs.fastly.com/vcl/vcl-snippets/using-dynamic-vcl-snippets/) which is included in the versioned VCL for the Fastly service configuration, or a [dynamic snippet](https://docs.fastly.com/vcl/vcl-snippets/using-dynamic-vcl-snippets/) which can be modified and deployed without requiring a new VCL version.
-  | `active`  | Indicates if the snippet or version is activated and in use. Returns `true` or `false`. Make note of the version number for an active snippet. Use this to clone the version.
+| Value      | Description
+|------------|------------------------------------------------------------------------------------------------------------------------------
+| `service_id` | The Fastly Service ID for a specific Staging or Production environment. This ID is assigned when your project is added to the {{ site.data.var.ece }} Fastly service account. See [Get credentials]({{ page.baseurl }}/cloud/cdn/configure-fastly.html).
+| `API_KEY`  | The API Key to access your Fastly account. See [Get credentials]({{ page.baseurl }}/cloud/cdn/configure-fastly.html).
+| `number`    | The number of the VCL version that the snippet is added to. Fastly uses *Editable Version #* in their example values. If you add custom snippets from the API, you include the version number in the API request. If you add custom VCL from the Magento Admin UI, the version is provided for you.
+| `type`       | Specifies a location for inserting the generated snippet, such as init (above subroutines) and recv (within subroutines). See Fastly VCL snippet object values for information on these values. See the Fastly [VCL snippets](https://docs.fastly.com/api/config#api-section-snippet) reference.
+| `content`    | The snippet of VCL code to run. Fastly does not support all VCL language features, and it also provides extensions with custom functionality. See the [Fastly VCL programming reference](https://docs.fastly.com/vcl/reference/) for information about supported VCL code features.
+| `priority`   | Numeric value from `1` to `100` that specifies when the custom VCL snippet code runs. Snippets with lower priority values run first. If not specified, the `priority` value defaults to `100`.<br><br> Any custom VCL snippet with a priority value of `5` runs immediately, which is best for VCL code that implements request routing (block and allow lists and redirects). Priority `100` is best for overriding default VCL snippet code. <br><br>All [default VCL snippets]({{ page.baseurl }}/cloud/cdn/configure-fastly.html#upload-vcl-snippets) included in the Magento-Fastly module have `priority=50`.<br>-  Assign a high priority like `100` to run custom VCL code after all other VCL functions and override the default VCL code.
+| `dynamic` | Indicates if this is a [regular snippet](https://docs.fastly.com/vcl/vcl-snippets/using-dynamic-vcl-snippets/) which is included in the versioned VCL for the Fastly service configuration, or a [dynamic snippet](https://docs.fastly.com/vcl/vcl-snippets/using-dynamic-vcl-snippets/) which can be modified and deployed without requiring a new VCL version.
+| `active`  | Indicates if the snippet or version is activated and in use. Returns `true` or `false`. Make note of the version number for an active snippet. Use this to clone the version.
 
 ## Manage custom VCL snippets from the Magento Admin UI
 
@@ -88,9 +88,9 @@ The *Custom VCL snippets* view shows only the snippets added through the Magento
 
 See the following examples that show how to create and manage custom VCL snippets from the Magento Admin UI:
 
-- [Secure access to the Magento Admin UI]({{ page.baseurl }}/cloud/cdn/fastly-vcl-whitelist.html)
-- [Set up redirects to WordPress using Fastly]({{ page.baseurl }}/cloud/cdn/fastly-vcl-wordpress.html)
-- [Block referral spam]({{ page.baseurl }}/cloud/cdn/fastly-vcl-badreferer.html)
+-  [Secure access to the Magento Admin UI]({{ page.baseurl }}/cloud/cdn/fastly-vcl-whitelist.html)
+-  [Set up redirects to WordPress using Fastly]({{ page.baseurl }}/cloud/cdn/fastly-vcl-wordpress.html)
+-  [Block referral spam]({{ page.baseurl }}/cloud/cdn/fastly-vcl-badreferer.html)
 
 ## Manage custom VCL snippets using the API
 
@@ -122,15 +122,15 @@ The following walk-through shows you how to create regular VCL snippet files and
 
 Complete the following steps to add custom VCL snippets using the Fastly API.
 
-1.  [Locate the active VCL version](#list). Use this version to clone.
+1. [Locate the active VCL version](#list). Use this version to clone.
 
-1.  [Clone the active VCL version](#clone). All changes save to this new version. It remains _inactive_ until you _activate_ it.
+1. [Clone the active VCL version](#clone). All changes save to this new version. It remains _inactive_ until you _activate_ it.
 
-1.  [Create custom VCL snippets](#create-snippet) in JSON files.
+1. [Create custom VCL snippets](#create-snippet) in JSON files.
 
-1.  [Add custom VCL snippet to the Fastly configuration](#add-snippet). Repeat this step for all JSON files.
+1. [Add custom VCL snippet to the Fastly configuration](#add-snippet). Repeat this step for all JSON files.
 
-1.  [Validate and activate](#validate) the new configuration and all associated VCL snippets.
+1. [Validate and activate](#validate) the new configuration and all associated VCL snippets.
 
 #### Step 1: Locate the active VCL  version {#list}
 
@@ -210,17 +210,17 @@ Create and save your custom VCL code in a JSON file with the following content a
 
 The values include:
 
--   `name`—Name for the VCL snippet.
+-  `name`—Name for the VCL snippet.
 
--   `dynamic`—Indicates if this is a [regular snippet](https://docs.fastly.com/guides/vcl-snippets/using-regular-vcl-snippets) or a [dynamic snippet](https://docs.fastly.com/guides/vcl-snippets/using-dynamic-vcl-snippets).
+-  `dynamic`—Indicates if this is a [regular snippet](https://docs.fastly.com/guides/vcl-snippets/using-regular-vcl-snippets) or a [dynamic snippet](https://docs.fastly.com/guides/vcl-snippets/using-dynamic-vcl-snippets).
 
--   `type`—Specifies the location for inserting the generated snippet, such as `init` (above subroutines) and `recv` (within subroutines). See [Fastly VCL snippet object values](https://docs.fastly.com/api/config#snippet) for information on these values.
+-  `type`—Specifies the location for inserting the generated snippet, such as `init` (above subroutines) and `recv` (within subroutines). See [Fastly VCL snippet object values](https://docs.fastly.com/api/config#snippet) for information on these values.
 
--   `priority`—A value from `1` to `100` that determines when the custom VCL snippet code runs. Custom VCL snippets with lower values run first.
+-  `priority`—A value from `1` to `100` that determines when the custom VCL snippet code runs. Custom VCL snippets with lower values run first.
 
-     All default VCL code from the Fastly VCL module has a `priority` of `50`. If you want an action to occur last or to override the default VCL code, use a higher number, such as `100`. To run custom VCL snippet code immediately, set the priority to a lower value, such as `5`.
+   All default VCL code from the Fastly VCL module has a `priority` of `50`. If you want an action to occur last or to override the default VCL code, use a higher number, such as `100`. To run custom VCL snippet code immediately, set the priority to a lower value, such as `5`.
 
--   `content`—The snippet of VCL code to run in one line, without line breaks. See [Example custom VCL snippet](#vcl-curl).
+-  `content`—The snippet of VCL code to run in one line, without line breaks. See [Example custom VCL snippet](#vcl-curl).
 
 #### Step 4: Add VCL snippet to Fastly configuration {#add-snippet}
 
@@ -238,19 +238,19 @@ If you receive a `500 Internal Server Error` response from the Fastly service, c
 
 After you add a custom VCL snippet, Fastly inserts the snippet in the VCL version that you are editing. To apply your changes, complete the following steps to validate the VCL snippet code and activate the VCL version.
 
-1.  Use the Fastly API [validate VCL version](https://docs.fastly.com/api/config#version_97f8cf7bfd5dc2e5ea1933d94dc5a9a6) operation to verify the updated VCL code.
+1. Use the Fastly API [validate VCL version](https://docs.fastly.com/api/config#version_97f8cf7bfd5dc2e5ea1933d94dc5a9a6) operation to verify the updated VCL code.
 
-    ```bash
-    curl -H "Fastly-Key: $FASTLY_API_TOKEN" https://api.fastly.com/service/$FASTLY_SERVICE_ID/version/$FASTLY_EDIT_VERSION/validate
-    ```
+   ```bash
+   curl -H "Fastly-Key: $FASTLY_API_TOKEN" https://api.fastly.com/service/$FASTLY_SERVICE_ID/version/$FASTLY_EDIT_VERSION/validate
+   ```
 
-    If the Fastly API returns an error, fix the issue and validate the updated VCL version again.
+   If the Fastly API returns an error, fix the issue and validate the updated VCL version again.
 
-1.  Use the Fastly API [activate](https://docs.fastly.com/api/config#version_0b79ae1ba6aee61d64cc4d43fed1e0d5) operation to activate the new VCL version.
+1. Use the Fastly API [activate](https://docs.fastly.com/api/config#version_0b79ae1ba6aee61d64cc4d43fed1e0d5) operation to activate the new VCL version.
 
-    ```bash
-    curl -H "Fastly-Key: $FASTLY_API_TOKEN" https://api.fastly.com/service/$FASTLY_SERVICE_ID/version/$FASTLY_EDIT_VERSION/activate -X PUT
-    ```
+   ```bash
+   curl -H "Fastly-Key: $FASTLY_API_TOKEN" https://api.fastly.com/service/$FASTLY_SERVICE_ID/version/$FASTLY_EDIT_VERSION/activate -X PUT
+   ```
 
 ### API quick reference for VCL snippets {#manage-vcl}
 
@@ -259,11 +259,11 @@ These API request examples use exported environment variables to provide the cre
 {: .bs-callout-info }
 Use these commands to manage snippets that you added using the Fastly API. If you added snippets from the Magento Admin UI, see [Manage VCL snippets using the Admin UI](#manage-custom-vcl-snippets-from-the-magento-admin-ui).
 
-- **Get active VCL version number**
+-  **Get active VCL version number**
 
-  ```bash
-  curl -H "Fastly-Key: $FASTLY_API_TOKEN" https://api.fastly.com/service/$FASTLY_SERVICE_ID/version/active
-  ```
+   ```bash
+   curl -H "Fastly-Key: $FASTLY_API_TOKEN" https://api.fastly.com/service/$FASTLY_SERVICE_ID/version/active
+   ```
 
 -  **List all regular VCL snippets attached to a service**
 
@@ -283,7 +283,7 @@ Use these commands to manage snippets that you added using the Fastly API. If yo
 
    Modify the [prepared JSON file](#create-snippet) and send the following request:
 
-   ```
+   ```bash
    curl -H "Fastly-Key: $FASTLY_API_TOKEN" https://api.fastly.com/service/$FASTLY_SERVICE_ID/version/$FASTLY_VERSION/snippet/<snippet_name> -H 'Content-Type: application/json' -X PUT --data @<filename.json>
    ```
 
@@ -291,9 +291,10 @@ Use these commands to manage snippets that you added using the Fastly API. If yo
 
     Get a list of snippets and use the following `curl` command with the specific snippet name to delete:
 
-   ```
+   ```bash
    curl -H "Fastly-Key: $FASTLY_API_TOKEN" https://api.fastly.com/service/$FASTLY_SERVICE_ID/version/$FASTLY_VERSION/snippet/<snippet_name> -X DELETE
    ```
+
 -  **Override values in the [default Fastly VCL code](https://github.com/fastly/fastly-magento2/tree/master/etc/vcl_snippets)**
 
    Create a new snippet with updated values and assign a priority of `100`.

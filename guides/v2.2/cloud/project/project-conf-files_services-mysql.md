@@ -10,46 +10,44 @@ The `mysql` service provides persistent data storage based on [MariaDB](https://
 
 {% include cloud/service-config-integration-starter.md %}
 
-#### To access the MariaDB database directly:
+Accessing the MariaDB database directly requires you to use a SSH to log in to the remote server, and connect to the database with the following credentials:
 
-Using SSH, log in to the remote server and connect to the database.
+-  For Starter
 
-For Starter:
+   ```bash
+   mysql -h database.internal -u <username>
+   ```
 
-```bash
-mysql -h database.internal -u <username>
-```
+-  For Pro, use the db, username, and password from the relationship:
 
-For Pro, use the db, username, and password from the relationship:
-
-```bash
-mysql -h<db> -p<number> -u<username> -p<password>
-```
+   ```bash
+   mysql -h<db> -p<number> -u<username> -p<password>
+   ```
 
 ## Enable MySQL
 
 1. Add the required name, type, and disk value (in MB) to the `.magento/services.yaml` file.
 
-    ```yaml
-    mysql:
-        type: mysql:10.2
-        disk: 2048
-    ```
+   ```yaml
+   mysql:
+       type: mysql:<version>
+       disk: 2048
+   ```
 
 1. Configure the relationships in the `.magento.app.yaml` file.
 
-    ```yaml
-    relationships:
-        database: "mysql:mysql"
-    ```
+   ```yaml
+   relationships:
+       database: "mysql:mysql"
+   ```
 
 1. Add, commit, and push your code changes.
 
-    ```bash
-    git add -A && git commit -m "Enable mysql service" && git push origin <branch-name>
-    ```
+   ```bash
+   git add -A && git commit -m "Enable mysql service" && git push   origin <branch-name>
+   ```
 
-1. [Verify the relationships]({{page.baseurl}}/cloud/project/project-conf-files_services.html#service-relationships).
+1. [Verify the service relationships]({{page.baseurl}}/cloud/project/project-conf-files_services.html#service-relationships).
 
 {: .bs-callout-tip }
 MySQL errors such as `PDO Exception: MySQL server has gone away` may be a result of exhausting existing disk space. Verify that you have allocated sufficient disk space to the service in the [`.magento/services.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_magento-app.html#disk) file.

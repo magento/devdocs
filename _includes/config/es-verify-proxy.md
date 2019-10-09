@@ -2,8 +2,8 @@
 
 This section discusses two ways to verify that HTTP Basic authentication is working:
 
-*	Using a `curl` command to verify you must enter a username and password to get cluster status
-*	Configuring HTTP Basic authentication in the Magento Admin
+*  Using a `curl` command to verify you must enter a username and password to get cluster status
+*  Configuring HTTP Basic authentication in the Magento Admin
 
 ### Use a `curl` command to verify cluster status
 

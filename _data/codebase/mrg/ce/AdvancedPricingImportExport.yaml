@@ -1,0 +1,8 @@
+---
+title: Magento_AdvancedPricingImportExport
+source_repo: magento2ce
+release: 2.3.3
+github_path: app/code/Magento/AdvancedPricingImportExport/README.md
+last_modified_at: '2015-06-15 22:11:35 +0300'
+content: The Magento_AdvancedPricingImportExport module handles the import and export
+  of the advanced pricing.

@@ -75,7 +75,8 @@ To ensure validation of an XML file by appropriate XSD file, you must add the Un
 
 Your IDE can validate your configuration files at both runtime and during development.
 
-### Related topics
+{:.ref-header}
+Related topics
 
 * [Module configuration files]({{ page.baseurl }}/config-guide/config/config-php.html)
 * [Magento's deployment configuration]({{ page.baseurl }}/config-guide/config/config-php.html)

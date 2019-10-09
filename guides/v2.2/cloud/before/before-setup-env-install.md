@@ -10,7 +10,8 @@ functional_areas:
   - Configuration
 ---
 
-#### Previous step
+{:.ref-header}
+Previous step
 
 [Clone and branch the project]({{ page.baseurl }}/cloud/before/before-setup-env-2_clone.html)
 
@@ -24,7 +25,7 @@ To customize the Magento software on your local workstation, prepare the followi
 * Admin username, password, and URL created earlier
 * Magento authentication keys for installing Magento
 
-### To see the Magento Admin environment variables
+### List the Magento Admin environment variables
 
 You need the ADMIN environment variables for the installation command line.
 
@@ -48,7 +49,8 @@ magento-cloud variable:get -e <environment-ID>
 
 You need Magento authentication keys to install Magento in your local development environment. These are different than the authentication keys included in the code repository `auth.json` file. See [Add Magento authentication keys]({{page.baseurl}}/cloud/access-acct/first-time-setup_import-prepare.html).
 
-#### To create authentication keys through the Magento Marketplace
+{:.procedure}
+To create authentication keys through the Magento Marketplace:
 
 1. Log in to the [Magento Marketplace](https://marketplace.magento.com). If you do not have an account, click **Register**.
 
@@ -106,7 +108,8 @@ Be ready to install Magento using one of the following options:
 * [Install the Magento software using the command line]({{ page.baseurl }}/install-gde/install/cli/install-cli.html)
 * [Install the Magento software using the Web Setup Wizard]({{ page.baseurl }}/install-gde/install/web/install-web.html)
 
-### To install Magento using the command line
+{:.procedure}
+To install Magento using the command line:
 
 1. Switch to the user.
 
@@ -209,7 +212,8 @@ With these steps completed, you should have:
 * Your initial code branch
 * Magento authentication keys set up and configured in the project and local
 
-## Next steps
+{:.ref-header}
+Next step
 
 For **Pro projects**, we strongly recommend fully deploying this base Magento template `master` branch without any code or configuration changes to Staging and Production. For instructions, see [First time deployment]({{ page.baseurl }}/cloud/setup/first-time-deploy.html).
 

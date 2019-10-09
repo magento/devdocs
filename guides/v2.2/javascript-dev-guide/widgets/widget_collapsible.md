@@ -108,10 +108,6 @@ Multiple types are supported:
 -   String: is parsed to an object as a json string
 -   Object: For details about the object passed, see [jQuery.animate()](http://api.jquery.com/animate/).
 
--   Boolean: the \`false\` value disables the animation
--   Number: duration in milliseconds
--   String: is parsed to an object as a json string
--   Object:
     ```javascript
         {
            duration: <Number>,
@@ -119,7 +115,6 @@ Multiple types are supported:
            <propToAnimate>: <howToAnimate>
         }
     ```
-    For details about the object passed, see [jQuery.animate()](http://api.jquery.com/animate/).
 
 **Default value**: `false`
 

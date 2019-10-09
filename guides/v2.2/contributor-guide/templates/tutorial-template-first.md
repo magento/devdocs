@@ -33,7 +33,7 @@ Parameter | Description
 
 The following example shows the completed frontmatter section for an index page:
 
-```
+```yaml
 layout: tutorial
 level3_subgroup: order-tutorial
 title: Order processing tutorial

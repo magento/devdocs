@@ -206,7 +206,7 @@ mutation {
             lastname: "Doe"
             email: "j.doe@example.com"
             password: "1w2E3R456"
-          	is_subscribed: true
+            is_subscribed: true
         }
     ) {
         customer {

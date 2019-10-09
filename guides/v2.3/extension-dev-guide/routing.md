@@ -43,7 +43,7 @@ The following tables show the core routers that come with Magento:
 
 A Magento [URL](https://glossary.magento.com/url) that uses the standard router has the following format:
 
-```
+```text
 <store-url>/<store-code>/<front-name>/<controller-name>/<action-name>
 ```
 
@@ -116,7 +116,7 @@ Where:
 
 * `%routerId` - specifies the name of the router in Magento.
     See the reference tables in the [Router class section].
-* `%routeId%` - specifies the unique node id for this route in Magento.
+* `%routeId%` - specifies the unique node id for this route in Magento, is also the first segment of its associated layout handle XML filename (`routeId_controller_action.xml`).
 * `%frontName%` - specifies the first segment after the base URL of a request.
 * `%moduleName%` - specifies the name of your module.
 

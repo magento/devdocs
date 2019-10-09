@@ -687,6 +687,7 @@ select 'SET foreign_key_checks = 1;';
 Drop all tables that start with `quote_`.
 {% endcollapsible %}
 
-#### Next step
+{:.ref-header}
+Related topics
 
 [Verify split databases]({{ page.baseurl }}/config-guide/multi-master/multi-master_verify.html)

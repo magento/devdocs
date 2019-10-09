@@ -72,6 +72,7 @@ contributor_link: http://comwrap.com/
 ## Congratulations! You've finished.
   {:.no_toc}
 
-## Related topics
+{:.ref-header}
+Related topic
 
-   * [Order Processing with REST APIs Tutorial]({{ page.baseurl }}/rest/tutorials/orders/order-intro.html)
+[Order Processing with REST APIs Tutorial]({{ page.baseurl }}/rest/tutorials/orders/order-intro.html)
