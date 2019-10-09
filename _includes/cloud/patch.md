@@ -40,7 +40,7 @@ Back up your Integration environment database and code:
 
 2. Enter the following command to back up code and media:
 
-   ```bsah
+   ```bash
    php bin/magento setup:backup --code [--media]
    ```
 
