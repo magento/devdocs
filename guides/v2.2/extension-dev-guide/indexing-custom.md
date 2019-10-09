@@ -1,11 +1,6 @@
 ---
 group: php-developer-guide
-subgroup: 99_Module Development
 title: Adding a custom indexer
-menu_title: Adding a custom indexer
-menu_order: 15
-level3_menu_node: level3child
-level3_subgroup: index
 ---
 
 ## Adding a custom indexer {#m2devgde-indexing-custom}
@@ -111,9 +106,9 @@ Next, declare the indexer in `Merchandizing/etc/indexer.xml`:
 
 In this file, declare a new indexer process with the attribute:
 
-- `id` - To identify this indexer. Check status, mode or reindex this indexer by command line.
-- `view_id` - Id of view element which will be defined in the `mview` configuration file.
-- `class` -  The name to the class which we process indexer method.
+*  `id` - To identify this indexer. Check status, mode or reindex this indexer by command line.
+*  `view_id` - Id of view element which will be defined in the `mview` configuration file.
+*  `class` -  The name to the class which we process indexer method.
 
 Finally, declare the indexer view (`merchandizing_popular_order`) that tracks sales (`Merchandizing/etc/mview.xml`):
 
