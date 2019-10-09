@@ -44,4 +44,4 @@ Advanced reporting functionality is implemented in the following Magento modules
 [report data collection]: ./data-collection.html
 
 <!-- ABBREVIATIONS -->
-[MBI]: Magento Business Analytics
+*[MBI]: Magento Business Analytics

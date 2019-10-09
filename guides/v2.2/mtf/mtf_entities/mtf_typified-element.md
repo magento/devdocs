@@ -225,4 +225,4 @@ The following code is a corresponding mapping with the typified element `optgrou
 [`\Magento\Mtf\Client\Element\TreeElement`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/dev/tests/functional/lib/Magento/Mtf/Client/Element/TreeElement.php
 
 <!-- ABBREVIATIONS -->
-[FTF]: Functional Testing Framework
+*[FTF]: Functional Testing Framework
