@@ -61,7 +61,7 @@ We recommend limiting the list of active PHP extensions to those that are requir
 Adding more extensions increases library load times.
 
 {: .bs-callout-info }
-`php-mcrypt` has been removed from PHP 7.2 and replaced with the [`sodium` library](https://www.php.net/manual/en/book.sodium.php). 
+`php-mcrypt` has been removed from PHP 7.2 and replaced with the [`sodium` library](https://www.php.net/manual/en/book.sodium.php). Ensure that [sodium](https://www.php.net/manual/en/sodium.installation.php) is properly enabled when upgrading to PHP 7.2.
 
 
 {: .bs-callout-info }
