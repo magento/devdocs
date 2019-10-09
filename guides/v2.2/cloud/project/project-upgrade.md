@@ -98,10 +98,11 @@ Review the [Magento technology stack requirements]({{page.baseurl}}/install-gde/
 
 If you use PHP version 7.2, you must remove the `mcrypt` extension from the [`extensions` section of the `.magento.app.yaml` file]({{page.baseurl}}/cloud/project/project-conf-files_magento-app.html#configure-php-options). For Pro projects, you need to create a support ticket to completely disable the `mcrypt` extension.
 
+{: .bs-callout-info}
+When upgrading to 2.3 from 2.2, you must verify that the `composer.json` file contains `"Zend\\Mvc\\Controller\\": "setup/src/Zend/Mvc/Controller/"` in the `"psr-4":` section of the `autoload` property.
+
 {:.procedure}
 To upgrade the Magento version:
-
-1. When upgrading to 2.3, you must [update the `autoload`]({{site.baseurl}}/guides/v2.3/comp-mgr/cli/cli-upgrade.html#update-autoload) property of the `composer.json` file.
 
 1. Change to your Magento root directory and set the upgrade version using the [version constraint syntax]({{page.baseurl}}/cloud/project/ece-tools-upgrade-project.html#metapackage).
 
@@ -121,7 +122,7 @@ To upgrade the Magento version:
 1. Add, commit, and push code changes.
 
    ```bash
-   git add -A && git commit -m "Upgrade" && git push origin <branch-name>
+   git add -A && git commit -m "Upgrade" && git push magento <branch-name>
    ```
 
    `git add -A` is required to add all changed files to source control because of the way Composer marshals base packages. Both `composer install` and `composer update` marshal files from the base package (`magento/magento2-base` and `magento/magento2-ee-base`) into the package root.
@@ -133,7 +134,7 @@ To upgrade the Magento version:
 1. Verify the upgrade in your Integration, Staging, or Production environment by using SSH to log in and check the version.
 
    ```bash
-   bin/magento --version
+   php bin/magento --version
    ```
 
 ### Create a new config.php file
