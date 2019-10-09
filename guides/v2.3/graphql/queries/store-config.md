@@ -253,6 +253,26 @@ Attribute |  Data Type | Description | Example
 `product_url_suffix` | String | The suffix applied to product pages, such as `.htm` or `.html` | `.html`
 `title_separator` | String | Identifies the character that separates the category name and subcategory in the browser title bar | `-`
 
+### Supported Weee (fixed product tax) attributes
+
+The **Stores** > Settings > **Configuration** > **Sales** > **Tax** > **Fixed Product Taxes** panel contains several fields that determine how to display fixed product tax (FPT) values and descriptions. Use the following attributes to determine the values of the **Fixed Product Taxes** fields. These attributes are defined in the `WeeeGraphQl` module.
+
+Attribute |  Data Type | Description
+--- | --- | ---
+`category_fixed_product_tax_display_setting` | FixedProductTaxDisplaySettings | Corresponds to the **Display Prices In Product Lists** field. It indicates how FPT information is displayed on category pages
+`product_fixed_product_tax_display_setting` | FixedProductTaxDisplaySettings | Corresponds to the **Display Prices On Product View Page** field. It indicates how FPT information is displayed on product pages
+`sales_fixed_product_tax_display_setting` | FixedProductTaxDisplaySettings | Corresponds to the **Display Prices In Sales Modules** field. It indicates how FPT information is displayed on cart, checkout, and order pages
+
+The `FixedProductTaxDisplaySettings` data type is an enumeration that describes whether displayed prices include fixed product taxes and whether Magento separately displays detailed information about the FPTs.
+
+Value | Description
+--- | ---
+EXCLUDE_FPT_WITH_DETAILS | The displayed price does not include the FPT amount. The values of `ProductPrice.fixed_product_taxes` are displayed separately. This value corresponds to **Excluding FPT, Including FPT description and final price**
+EXCLUDE_FPT_WITHOUT_DETAILS | The displayed price does not include the FPT amount. The values from `ProductPrice.fixed_product_taxes` are not displayed. This value corresponds to **Excluding FPT**
+FPT_DISABLED | The FPT feature is not enabled. You can omit `ProductPrice.fixed_product_taxes` from your query
+INCLUDE_FPT_WITH_DETAILS | The displayed price includes the FPT amount while displaying the values of `ProductPrice.fixed_product_taxes` separately. This value corresponds to **Including FPT and FPT description**
+INCLUDE_FPT_WITHOUT_DETAILS | The displayed price includes the FPT amount without displaying the `ProductPrice.fixed_product_taxes` values. This value corresponds to **Including FPT only**
+
 ## Extend configuration data
 
 You can add your own configuration to the `storeConfig` query within your own module.
@@ -264,13 +284,13 @@ The following example adds an array-item to the `extendedConfigData` array withi
 ```xml
 <?xml version="1.0" ?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
-	<type name="Magento\StoreGraphQl\Model\Resolver\Store\StoreConfigDataProvider">
-		<arguments xsi:type="array">
-			<argument name="extendedConfigData">
-				<item name="section_group_field" xsi:type="string">section/group/field</item>
-			</argument>
-		</arguments>
-	</type>
+  <type name="Magento\StoreGraphQl\Model\Resolver\Store\StoreConfigDataProvider">
+    <arguments xsi:type="array">
+      <argument name="extendedConfigData">
+        <item name="section_group_field" xsi:type="string">section/group/field</item>
+      </argument>
+    </arguments>
+  </type>
 </config>
 ```
 
