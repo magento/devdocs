@@ -41,7 +41,7 @@ Magento Commerce 2.3.0 includes a wealth of new features as well as hundreds of 
 
 * **Inventory Management (provided by [Magento Inventory (was MSI)](https://github.com/magento/inventory))** is now available with Magento 2.3.0. It lets merchants manage inventory for all product types in a single warehouse and across complex shipping networks. Merchants can manage these locations as sources, tracking on-hand inventory quantities per product. Stocks map these sources and sales channels (websites) to provide an accurate, salable quantity as inventory pools for concurrent checkout and product reservations. Inventory Management also updates order and shipment options, giving you full control over your stock.
 
-	Magento Inventory is a Magento Community Engineering special project open to contributors. To take part and contribute, see the [Magento Inventory GitHub](https://github.com/magento/inventory) repository and [wiki](https://github.com/magento/inventory/wiki) to get started. Join us in our [Slack](https://magentocommeng.slack.com/messages/C5FU5E2HY) channel (or [self signup](https://tinyurl.com/engcom-slack)) to discuss the project.
+   Magento Inventory is a Magento Community Engineering special project open to contributors. To take part and contribute, see the [Magento Inventory GitHub](https://github.com/magento/inventory) repository and [wiki](https://github.com/magento/inventory/wiki) to get started. Join us in our [Slack](https://magentocommeng.slack.com/messages/C5FU5E2HY) channel (or [self signup](https://tinyurl.com/engcom-slack)) to discuss the project.
    * [Inventory Management overview]({{ page.baseurl }}/inventory/index.html) for developer documentation
    * [Managing Inventory](https://docs.magento.com/m2/ce/user_guide/catalog/inventory-management.html) for merchant information and instructions
 
@@ -83,7 +83,7 @@ See [Magento Security Center](https://magento.com/security/patches/magento-2.2.7
 
 #### dotmailer
 
-* 	dotmailer now supports the Magento Commerce split database mode.
+*  dotmailer now supports the Magento Commerce split database mode.
 
 #### Klarna Payments
 
@@ -103,13 +103,13 @@ See [Magento Security Center](https://magento.com/security/patches/magento-2.2.7
 
 * The Magento Shipping **Click & Collect** feature offers merchants the ability to:
 
-	* Provide Click & Collect as a shipping option to customers, enabling them to directly collect shipments from designated source locations or stores
+   * Provide Click & Collect as a shipping option to customers, enabling them to directly collect shipments from designated source locations or stores
 
-	* Configure source locations available for Click & Collect pick-ups
+   * Configure source locations available for Click & Collect pick-ups
 
-	* Updates to Shipment Form for UPS (U.S. only)
+   * Updates to Shipment Form for UPS (U.S. only)
 
-	* Customers can also select Click & Collect locations during checkout. This feature is supported by workflows and notifications for Click & Collect pick up, packing, and collection.
+   * Customers can also select Click & Collect locations during checkout. This feature is supported by workflows and notifications for Click & Collect pick up, packing, and collection.
 
 * The batch details page now displays collection point addresses, as applicable
 
@@ -1541,13 +1541,13 @@ We've fixed hundreds of issues in the Magento 2.3.0 core code.
 
 * `Zend_Service` has been upgraded from v.1 to v.2, including these specific changes:
 
-	* Removed `Magento\Framework\Locale\CurrencyInterfac` from the `setService` method and changed it to `\Zend_Currency_CurrencyInterface`, which must be the provider to this function.
+   * Removed `Magento\Framework\Locale\CurrencyInterfac` from the `setService` method and changed it to `\Zend_Currency_CurrencyInterface`, which must be the provider to this function.
 
-	* Changed return type to `\Zend_Currency_CurrencyInterface`, the given instance of the service is returned by the `setService` function.
+   * Changed return type to `\Zend_Currency_CurrencyInterface`, the given instance of the service is returned by the `setService` function.
 
-	* Removed `\Zend_Service` from the `getService` method and changed it to `\Zend_Currency_CurrencyInterface`.
+   * Removed `\Zend_Service` from the `getService` method and changed it to `\Zend_Currency_CurrencyInterface`.
 
-	* Added `@deprecated` tags to both methods and added `@see` annotation to the methods. Referenced the corresponding interface `\Magento\Directory\Model\Currency\Import\ImportInterface`. *Fix submitted by Danny Verkade in pull request [12957](https://github.com/magento/magento2/pull/12957)*. [GitHub-9243](https://github.com/magento/magento2/issues/9243)
+   * Added `@deprecated` tags to both methods and added `@see` annotation to the methods. Referenced the corresponding interface `\Magento\Directory\Model\Currency\Import\ImportInterface`. *Fix submitted by Danny Verkade in pull request [12957](https://github.com/magento/magento2/pull/12957)*. [GitHub-9243](https://github.com/magento/magento2/issues/9243)
 
 <!---MAGETWO-85063 -->
 
@@ -2525,9 +2525,9 @@ We've fixed hundreds of issues in the Magento 2.3.0 core code.
 
 *  The message that Magento displays under the following circumstances has been improved:
 
-	* You download a database from a staging environment that has code deployed to it that upgrades the schema version, or
+   * You download a database from a staging environment that has code deployed to it that upgrades the schema version, or
 
-	* You are on the master branch in your local environment, which is behind the database. [GitHub-9008](https://github.com/magento/magento2/issues/9008)
+   * You are on the master branch in your local environment, which is behind the database. [GitHub-9008](https://github.com/magento/magento2/issues/9008)
 
 <!--- MAGETWO-87313-->
 
@@ -3593,39 +3593,55 @@ We've fixed hundreds of issues in the Magento 2.3.0 core code.
 
 ### Web API
 
-<!--- MAGETWO-82315 -->* When you use REST to update an existing product, Magento assigns the update only to the websites that they were assigned to before the update. Previously, updating a product using the REST API (`PUT /rest/all/V1/products/example_sku`) assigned the product update to all websites automatically. *Fix submitted by adrian-martinez-interactiv4 in pull request [11443](https://github.com/magento/magento2/pull/11443)*. [GitHub-11324](https://github.com/magento/magento2/issues/11324)
+<!--- MAGETWO-82315  -->
+*  When you use REST to update an existing product, Magento assigns the update only to the websites that they were assigned to before the update. Previously, updating a product using the REST API (`PUT /rest/all/V1/products/example_sku`) assigned the product update to all websites automatically. *Fix submitted by adrian-martinez-interactiv4 in pull request [11443](https://github.com/magento/magento2/pull/11443)*. [GitHub-11324](https://github.com/magento/magento2/issues/11324)
 
-<!--- MAGETWO-90147 -->* When you create a credit memo comment with `POST /V1/creditmemo/:id/comments`, Magento now sends  credit memo update emails as expected. Previously,  Magento did not send this email, and no other transaction emails were sent to the customer.
+<!--- MAGETWO-90147  -->
+*  When you create a credit memo comment with `POST /V1/creditmemo/:id/comments`, Magento now sends  credit memo update emails as expected. Previously,  Magento did not send this email, and no other transaction emails were sent to the customer.
 
-<!--- MAGETWO-84319 -->* Magento no longer creates duplicate shipments for orders created via API. Previously, Magento created duplicate shipments when a merchant created a shipment via the API under certain conditions (mainly with bundled products).
+<!--- MAGETWO-84319  -->
+*  Magento no longer creates duplicate shipments for orders created via API. Previously, Magento created duplicate shipments when a merchant created a shipment via the API under certain conditions (mainly with bundled products).
 
-<!--- MAGETWO-91540 -->*  Product searches using `GET V1/products` return `extension_attributes` for configurable products as expected.
+<!--- MAGETWO-91540  -->
+*   Product searches using `GET V1/products` return `extension_attributes` for configurable products as expected.
 
-<!--- MAGETWO-91568 -->*  You can now include custom attributes when filtering the responses of REST calls.
+<!--- MAGETWO-91568  -->
+*   You can now include custom attributes when filtering the responses of REST calls.
 
-<!--- MAGETWO-94207 -->*  Magento now returns a 404 error and includes a descriptive error message when a  REST search is performed on a non-existent cart.
+<!--- MAGETWO-94207  -->
+*   Magento now returns a 404 error and includes a descriptive error message when a  REST search is performed on a non-existent cart.
 
-<!--- MAGETWO-81910 -->*   Magento now includes the filter groups and the sort order of the `$searchCriteria` parameter in the `searchCriteria` object that is provided for the EAV set repository. [GitHub-11022](https://github.com/magento/magento2/issues/11022)
+<!--- MAGETWO-81910  -->
+*    Magento now includes the filter groups and the sort order of the `$searchCriteria` parameter in the `searchCriteria` object that is provided for the EAV set repository. [GitHub-11022](https://github.com/magento/magento2/issues/11022)
 
-<!--- MAGETWO-82315 -->* Updating a product with the REST API (`PUT /rest/all/V1/products/example_sku`) no longer assigns the product to all websites automatically. (Automatic assignment to all websites now occurs only when you create the product in All Store Views scope.) [GitHub-11324](https://github.com/magento/magento2/issues/11324)
+<!--- MAGETWO-82315  -->
+*  Updating a product with the REST API (`PUT /rest/all/V1/products/example_sku`) no longer assigns the product to all websites automatically. (Automatic assignment to all websites now occurs only when you create the product in All Store Views scope.) [GitHub-11324](https://github.com/magento/magento2/issues/11324)
 
-<!--- ENGCOM-2066 -->* A generated Admin API token no longer expires immediately. Previously, when you created a token for an Admin user and have set   **Admin Token Lifetime (hours))**  to empty, Magento denied access  because the token immediately expired.  *Fix submitted by Vijay Golani in pull request [15564](https://github.com/magento/magento2/pull/15564)*. [GitHub-15564](https://github.com/magento/magento2/issues/15564)
+<!--- ENGCOM-2066  -->
+*  A generated Admin API token no longer expires immediately. Previously, when you created a token for an Admin user and have set   **Admin Token Lifetime (hours))**  to empty, Magento denied access  because the token immediately expired.  *Fix submitted by Vijay Golani in pull request [15564](https://github.com/magento/magento2/pull/15564)*. [GitHub-15564](https://github.com/magento/magento2/issues/15564)
 
-<!-- MAGETWO-87057 -->* Magento now checks for the uniqueness of attribute option values for attributes created via REST. [GitHub-8846](https://github.com/magento/magento2/issues/8846)
+<!-- MAGETWO-87057  -->
+*  Magento now checks for the uniqueness of attribute option values for attributes created via REST. [GitHub-8846](https://github.com/magento/magento2/issues/8846)
 
-<!--- MAGETWO-87152 -->*  `salesRefundInvoiceV1` now saves the invoice ID as expected for a credit memo. [GitHub-11669](https://github.com/magento/magento2/issues/11669)
+<!--- MAGETWO-87152  -->
+*   `salesRefundInvoiceV1` now saves the invoice ID as expected for a credit memo. [GitHub-11669](https://github.com/magento/magento2/issues/11669)
 
 ### Wishlist
 
-<!--- MAGETWO-85627 -->* Magento now displays an error message if you try to add products to a wishlist without first logging in. *Fix submitted by Pieter Cappelle in pull request [12681](https://github.com/magento/magento2/pull/12681)*.
+<!--- MAGETWO-85627  -->
+*  Magento now displays an error message if you try to add products to a wishlist without first logging in. *Fix submitted by Pieter Cappelle in pull request [12681](https://github.com/magento/magento2/pull/12681)*.
 
-<!--- MAGETWO-86101 -->* Magento now stores product IDs and SKUs to locally stored customer data for wishlists. *Fix submitted by James Halsall in pull request [12896](https://github.com/magento/magento2/pull/12896)*.
+<!--- MAGETWO-86101  -->
+*  Magento now stores product IDs and SKUs to locally stored customer data for wishlists. *Fix submitted by James Halsall in pull request [12896](https://github.com/magento/magento2/pull/12896)*.
 
-<!--- MAGETWO-90297 -->* `SearchCriteriaBuilder` now has a check to determine if sort order should be applied. Previously, `SearchCriteriaBuilder` built the wrong criteria (`ORDER BY part`). *Fix submitted by Nickolas Malyovanets*. [GitHub-5738](https://github.com/magento/magento2/issues/5738)
+<!--- MAGETWO-90297  -->
+*  `SearchCriteriaBuilder` now has a check to determine if sort order should be applied. Previously, `SearchCriteriaBuilder` built the wrong criteria (`ORDER BY part`). *Fix submitted by Nickolas Malyovanets*. [GitHub-5738](https://github.com/magento/magento2/issues/5738)
 
-<!--- MAGETWO-91615 -->*  Registered users can now create new wishlists as expected when multiple wishlists are enabled. Previously, Magento displayed an error.
+<!--- MAGETWO-91615  -->
+*   Registered users can now create new wishlists as expected when multiple wishlists are enabled. Previously, Magento displayed an error.
 
-<!--- MAGETWO-91433 -->*  Magento no longer changes the grid view to list view on the product list page when a customer adds a product from the wishlist section to the cart, and now displays the appropriate success message.
+<!--- MAGETWO-91433  -->
+*   Magento no longer changes the grid view to list view on the product list page when a customer adds a product from the wishlist section to the cart, and now displays the appropriate success message.
 
 ## Known issues
 
