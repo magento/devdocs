@@ -14,8 +14,8 @@ functional_areas:
 Magento [checkout](https://glossary.magento.com/checkout) is implemented using the [UI components]({{ page.baseurl }}/ui_comp_guide/bk-ui_comps.html).
 Out of the box, the checkout consists of two steps:
 
- - Shipping Information
- - Review and Payment Information
+-  Shipping Information
+-  Review and Payment Information
 
 The checkout totals and the corresponding side-bar are only displayed after the first step is completed.
 
@@ -28,14 +28,14 @@ For the sake of compatibility, upgradability, and easy maintenance, do not edit 
 
 You can customize the default checkout in multiple ways. This tutorial includes the following customizations:
 
- - [Add a new checkout step]({{ page.baseurl }}/howdoi/checkout/checkout_new_step.html)
- - [Customize the view of an existing step]({{ page.baseurl }}/howdoi/checkout/checkout_customize.html)
- - [Add a custom payment method to checkout]({{ page.baseurl }}/howdoi/checkout/checkout_payment.html)
- - [Add custom validations before order placement]({{ page.baseurl }}/howdoi/checkout/checkout_order.html)
- - [Add custom shipping carrier]({{ page.baseurl }}/howdoi/checkout/checkout-add-custom-carrier.html)
- - [Add custom shipping carrier validations]({{ page.baseurl }}/howdoi/checkout/checkout_carrier.html)
- - [Add custom input mask for ZIP code]({{ page.baseurl }}/howdoi/checkout/checkout_zip.html)
- - [Add a custom template for a form field on Checkout page]({{ page.baseurl }}/howdoi/checkout/checkout_edit_form.html)
- - [Add a new input form to checkout]({{ page.baseurl }}/howdoi/checkout/checkout_form.html)
- - [Add a new field in address form]({{ page.baseurl }}/howdoi/checkout/checkout_new_field.html)
- - [Add custom shipping address renderer]({{ page.baseurl }}/howdoi/checkout/checkout_address.html)
+-  [Add a new checkout step]({{ page.baseurl }}/howdoi/checkout/checkout_new_step.html)
+-  [Customize the view of an existing step]({{ page.baseurl }}/howdoi/checkout/checkout_customize.html)
+-  [Add a custom payment method to checkout]({{ page.baseurl }}/howdoi/checkout/checkout_payment.html)
+-  [Add custom validations before order placement]({{ page.baseurl }}/howdoi/checkout/checkout_order.html)
+-  [Add custom shipping carrier]({{ page.baseurl }}/howdoi/checkout/checkout-add-custom-carrier.html)
+-  [Add custom shipping carrier validations]({{ page.baseurl }}/howdoi/checkout/checkout_carrier.html)
+-  [Add custom input mask for ZIP code]({{ page.baseurl }}/howdoi/checkout/checkout_zip.html)
+-  [Add a custom template for a form field on Checkout page]({{ page.baseurl }}/howdoi/checkout/checkout_edit_form.html)
+-  [Add a new input form to checkout]({{ page.baseurl }}/howdoi/checkout/checkout_form.html)
+-  [Add a new field in address form]({{ page.baseurl }}/howdoi/checkout/checkout_new_field.html)
+-  [Add custom shipping address renderer]({{ page.baseurl }}/howdoi/checkout/checkout_address.html)
