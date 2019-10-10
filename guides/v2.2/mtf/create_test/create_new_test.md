@@ -1065,7 +1065,7 @@ That's it!
 
 <!-- ABBREVIATIONS -->
 
-[FTF]: Functional Testing Framework
+*[FTF]: Functional Testing Framework
 [CRUD]: Create Read Update Delete
 [IDE]: Integrated Development Environment
 [CLI]: Command Line Interface

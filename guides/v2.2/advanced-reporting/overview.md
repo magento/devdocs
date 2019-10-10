@@ -28,7 +28,7 @@ To avoid system overload during its prime time, you can set the preferable time 
 
 ## Extensibility
 
-Though the Analytics module provides API, it is used specifically to interchange data with the MBI. We do not recommend to extend the advanced reporting functionality in this version.
+Though the Analytics module provides an API, it is used specifically to interchange data with the MBI. We do not recommend to extend the advanced reporting functionality in this version.
 
 {:.ref-header}
 Related topics
