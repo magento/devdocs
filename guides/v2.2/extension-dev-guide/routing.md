@@ -220,7 +220,7 @@ Defining a new custom router:
 </type>
 ```
 
-Creating the controller that will handle the `routing` route.
+Creating the controller that will handle the `routing` route and will get the parameters passed by our router.
 
 ```php
 <?php
@@ -263,6 +263,10 @@ class Index extends Action
      */
     public function execute()
     {
+        // Get the params that were passed from our Router
+        $firstParam = $this->getRequest()->getParam('first_param', null);
+        $secondParam = $this->getRequest()->getParam('second_param', null);
+
         return $this->pageFactory->create();
     }
 }
@@ -324,6 +328,10 @@ class Router implements RouterInterface
             $request->setModuleName('routing');
             $request->setControllerName('index');
             $request->setActionName('index');
+            $request->setParams([
+                'first_param' => 'first_value',
+                'second_param' => 'second_value'
+            ]);
 
             return $this->actionFactory->create(Forward::class, ['request' => $request]);
         }

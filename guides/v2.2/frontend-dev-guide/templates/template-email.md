@@ -38,23 +38,23 @@ Any templates configured in the Magento [Admin](https://glossary.magento.com/adm
 8. Click **Save Template**.
 9. Now that you have created a template, you must configure that template to be used:
 
-    1. If you haven't done so already, log in to the Magento Admin as an administrator.
-    2. Click **STORES** > Settings > **Configuration** > SALES > **Sales Emails**.
-    3. In the left pane, locate the section that contains the template you want to override. This is the section referenced by **Currently Used For** in your new template. (See step 3 earlier in this section.)
+   1. If you haven't done so already, log in to the Magento Admin as an administrator.
+   2. Click **STORES** > Settings > **Configuration** > SALES > **Sales Emails**.
+   3. In the left pane, locate the section that contains the template you want to override. This is the section referenced by **Currently Used For** in your new template. (See step 3 earlier in this section.)
 
        For example, if you created a "New Order" template, the configuration section is **Order** as the following figure shows.
 
        ![Choosing a custom template]({{ site.baseurl }}/common/images/email_choose-template21.png){:width="70%"}{:height="70%"}
 
-    4. Select your newly created template from the list.
-    5. Click **Save Config**.
+   4. Select your newly created template from the list.
+   5. Click **Save Config**.
 
 ### Customize header and footer templates {#customize-header-footer}
 
 Every frontend email template includes a header and footer template using these two directives: `{% raw %}{{template config_path="design/email/header_template"}}{% endraw %}` and `{% raw %}{{template config_path="design/email/footer_template"}}{% endraw %}`. By default, those two directives load contents from these files:
 
-  * [`<Magento_Email_module_dir>/view/frontend/email/header.html`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Email/view/frontend/email/header.html)
-  * [`<Magento_Email_module_dir>/view/frontend/email/footer.html`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Email/view/frontend/email/footer.html)
+*  [`<Magento_Email_module_dir>/view/frontend/email/header.html`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Email/view/frontend/email/header.html)
+*  [`<Magento_Email_module_dir>/view/frontend/email/footer.html`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Email/view/frontend/email/footer.html)
 
 You can customize header and footer templates using either the [theme](#customize-email-theme) or [admin](#customize-email-admin) customization methods discussed previously.
 
@@ -66,42 +66,42 @@ System variables are placeholders which are replaced by particular values when t
 
 Here is a list of the most commonly used email template variables that are available:
 
-  * Email Footer Template: `{% raw %}{{template config_path="design/email/footer_template"}}{% endraw %}`
-  * Email Header Template: `{% raw %}{{template config_path="design/email/header_template"}}{% endraw %}`
-  * Email Logo Image Alt: `{% raw %}{{var logo_alt}}{% endraw %}`
-  * Email Logo Image URL: `{% raw %}{{var logo_url}}{% endraw %}`
-  * Email Logo Image Height: `{% raw %}{{var logo_height}}{% endraw %}`
-  * Email Logo Image Width: `{% raw %}{{var logo_width}}{% endraw %}`
-  * Template CSS: `{% raw %}{{var template_styles|raw}}{% endraw %}`
-  * Base Unsecure URL: `{% raw %}{{config path="web/unsecure/base_url"}}{% endraw %}`
-  * Base Secure URL: `{% raw %}{{config path="web/secure/base_url"}}{% endraw %}`
-  * General Contact Name: `{% raw %}{{config path="trans_email/ident_general/name"}}{% endraw %}`
-  * Sales Representative Contact Name: `{% raw %}{{config path="trans_email/ident_sales/name"}}{% endraw %}`
-  * Sales Representative Contact Email: `{% raw %}{{config path="trans_email/ident_sales/email"}}{% endraw %}`
-  * Custom1 Contact Name: `{% raw %}{{config path="trans_email/ident_custom1/name"}}{% endraw %}`
-  * Custom1 Contact Email: `{% raw %}{{config path="trans_email/ident_custom1/email"}}{% endraw %}`
-  * Custom2 Contact Name: `{% raw %}{{config path="trans_email/ident_custom2/name"}}{% endraw %}`
-  * Custom2 Contact Email: `{% raw %}{{config path="trans_email/ident_custom2/email"}}{% endraw %}`
-  * Store Name: `{% raw %}{{config path="general/store_information/name"}}{% endraw %}`
-  * Store Phone Number: `{% raw %}{{config path="general/store_information/phone"}}{% endraw %}`
-  * Store Hours: `{% raw %}{{config path="general/store_information/hours"}}{% endraw %}`
-  * Country: `{% raw %}{{config path="general/store_information/country_id"}}{% endraw %}`
-  * Region/State: `{% raw %}{{config path="general/store_information/region_id"}}{% endraw %}`
-  * Zip/Postal Code: `{% raw %}{{config path="general/store_information/postcode"}}{% endraw %}`
-  * City: `{% raw %}{{config path="general/store_information/city"}}{% endraw %}`
-  * Street Address 1: `{% raw %}{{config path="general/store_information/street_line1"}}{% endraw %}`
-  * Street Address 2: `{% raw %}{{config path="general/store_information/street_line2"}}{% endraw %}`
-  * Store Contact Address: `{% raw %}{{config path="general/store_information/address"}}{% endraw %}`
-  * Customer Account URL: `{% raw %}{{var this.getUrl($store, 'customer/account/')}}{% endraw %}`
-  * Customer Email: `{% raw %}{{var customer.email}}{% endraw %}`
-  * Customer Name: `{% raw %}{{var customer.name}}{% endraw %}`
-  * Billing Address: `{% raw %}{{var formattedBillingAddress|raw}}{% endraw %}`
-  * Email Order Note: `{% raw %}{{var order.getEmailCustomerNote()}}{% endraw %}`
-  * Order ID: `{% raw %}{{var order.increment_id}}{% endraw %}`
-  * Order Items Grid: `{% raw %}{{layout handle="sales_email_order_items" order=$order area="frontend"}}{% endraw %}`
-  * Payment Details: `{% raw %}{{var payment_html|raw}}{% endraw %}`
-  * Shipping Address: `{% raw %}{{var formattedShippingAddress|raw}}{% endraw %}`
-  * Shipping Description: `{% raw %}{{var order.getShippingDescription()}}{% endraw %}`
+*  Email Footer Template: `{% raw %}{{template config_path="design/email/footer_template"}}{% endraw %}`
+*  Email Header Template: `{% raw %}{{template config_path="design/email/header_template"}}{% endraw %}`
+*  Email Logo Image Alt: `{% raw %}{{var logo_alt}}{% endraw %}`
+*  Email Logo Image URL: `{% raw %}{{var logo_url}}{% endraw %}`
+*  Email Logo Image Height: `{% raw %}{{var logo_height}}{% endraw %}`
+*  Email Logo Image Width: `{% raw %}{{var logo_width}}{% endraw %}`
+*  Template CSS: `{% raw %}{{var template_styles|raw}}{% endraw %}`
+*  Base Unsecure URL: `{% raw %}{{config path="web/unsecure/base_url"}}{% endraw %}`
+*  Base Secure URL: `{% raw %}{{config path="web/secure/base_url"}}{% endraw %}`
+*  General Contact Name: `{% raw %}{{config path="trans_email/ident_general/name"}}{% endraw %}`
+*  Sales Representative Contact Name: `{% raw %}{{config path="trans_email/ident_sales/name"}}{% endraw %}`
+*  Sales Representative Contact Email: `{% raw %}{{config path="trans_email/ident_sales/email"}}{% endraw %}`
+*  Custom1 Contact Name: `{% raw %}{{config path="trans_email/ident_custom1/name"}}{% endraw %}`
+*  Custom1 Contact Email: `{% raw %}{{config path="trans_email/ident_custom1/email"}}{% endraw %}`
+*  Custom2 Contact Name: `{% raw %}{{config path="trans_email/ident_custom2/name"}}{% endraw %}`
+*  Custom2 Contact Email: `{% raw %}{{config path="trans_email/ident_custom2/email"}}{% endraw %}`
+*  Store Name: `{% raw %}{{config path="general/store_information/name"}}{% endraw %}`
+*  Store Phone Number: `{% raw %}{{config path="general/store_information/phone"}}{% endraw %}`
+*  Store Hours: `{% raw %}{{config path="general/store_information/hours"}}{% endraw %}`
+*  Country: `{% raw %}{{config path="general/store_information/country_id"}}{% endraw %}`
+*  Region/State: `{% raw %}{{config path="general/store_information/region_id"}}{% endraw %}`
+*  Zip/Postal Code: `{% raw %}{{config path="general/store_information/postcode"}}{% endraw %}`
+*  City: `{% raw %}{{config path="general/store_information/city"}}{% endraw %}`
+*  Street Address 1: `{% raw %}{{config path="general/store_information/street_line1"}}{% endraw %}`
+*  Street Address 2: `{% raw %}{{config path="general/store_information/street_line2"}}{% endraw %}`
+*  Store Contact Address: `{% raw %}{{config path="general/store_information/address"}}{% endraw %}`
+*  Customer Account URL: `{% raw %}{{var this.getUrl($store, 'customer/account/')}}{% endraw %}`
+*  Customer Email: `{% raw %}{{var customer.email}}{% endraw %}`
+*  Customer Name: `{% raw %}{{var customer.name}}{% endraw %}`
+*  Billing Address: `{% raw %}{{var formattedBillingAddress|raw}}{% endraw %}`
+*  Email Order Note: `{% raw %}{{var order.getEmailCustomerNote()}}{% endraw %}`
+*  Order ID: `{% raw %}{{var order.increment_id}}{% endraw %}`
+*  Order Items Grid: `{% raw %}{{layout handle="sales_email_order_items" order=$order area="frontend"}}{% endraw %}`
+*  Payment Details: `{% raw %}{{var payment_html|raw}}{% endraw %}`
+*  Shipping Address: `{% raw %}{{var formattedShippingAddress|raw}}{% endraw %}`
+*  Shipping Description: `{% raw %}{{var order.getShippingDescription()}}{% endraw %}`
 
 {:.bs-callout .bs-callout-info}
 You can also create your own custom variables and set their values in the Admin, under **SYSTEM** > **Custom Variables**.
@@ -163,7 +163,7 @@ As mentioned in the preceding section, the `header.html` file outputs the `{% ra
 
 The value of that variable comes from any of the following:
 
-* Any styles you add to any `html` email template inside a comment block, like in the following example, are included in the `template_styles` variable:
+*  Any styles you add to any `html` email template inside a comment block, like in the following example, are included in the `template_styles` variable:
 
 ```html
       <!--@styles
@@ -171,7 +171,7 @@ The value of that variable comes from any of the following:
       @-->
 ```
 
-* If you customize transactional emails using the Magento Admin, you can add CSS styles to the **Template Styles** field to include those styles in the `template_styles` variable.
+*  If you customize transactional emails using the Magento Admin, you can add CSS styles to the **Template Styles** field to include those styles in the `template_styles` variable.
 
 ### How email styles are organized {#organization-email-styles}
 
@@ -296,12 +296,14 @@ Emails inherit the custom fonts that are defined by the frontend theme. The Mage
 
 Here is an overview of how the font structure for emails works:
 
-* [`<Magento_Blank_theme_dir>/web/css/source/_email-extend.less`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/design/frontend/Magento/blank/web/css/source/_email-extend.less) contains the `@import` directive that requests the `email-fonts.css` file.
+*  [`<Magento_Blank_theme_dir>/web/css/source/_email-extend.less`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/design/frontend/Magento/blank/web/css/source/_email-extend.less) contains the `@import` directive that requests the `email-fonts.css` file.
 
-  The reason the contents of `email-fonts.css` are loaded using `@import` rather than being output directly into a `<style>` tag in the `<head>` of an email is that if a user is reading their email offline, some email clients don't render the text because the web fonts can't be loaded.
-* The `<Magento_Blank_theme_dir>/web/css/email-fonts.less` file imports `source/_variables.less` and `source/_typography.less` files:
-    * [app/design/frontend/Magento/blank/web/css/source/_variables.less]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/design/frontend/Magento/blank/web/css/source/_variables.less) defines which font is used in the `@font-family-name__base` variable.
-    * [app/design/frontend/Magento/blank/web/css/source/_typography.less]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/design/frontend/Magento/blank/web/css/source/_typography.less) generates the `@font-face` rules which import the custom fonts.
+   The reason the contents of `email-fonts.css` are loaded using `@import` rather than being output directly into a `<style>` tag in the `<head>` of an email is that if a user is reading their email offline, some email clients don't render the text because the web fonts can't be loaded.
+
+*  The `<Magento_Blank_theme_dir>/web/css/email-fonts.less` file imports `source/_variables.less` and `source/_typography.less` files:
+
+   *  [app/design/frontend/Magento/blank/web/css/source/_variables.less]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/design/frontend/Magento/blank/web/css/source/_variables.less) defines which font is used in the `@font-family-name__base` variable.
+   *  [app/design/frontend/Magento/blank/web/css/source/_typography.less]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/design/frontend/Magento/blank/web/css/source/_typography.less) generates the `@font-face` rules which import the custom fonts.
 
 If you want to change the font used for emails, do the following:
 
@@ -368,14 +370,14 @@ Emails can output your store name, store email address, store phone number, and 
 To set those values:
 
 1. To set the store name, phone number, and hours of operation:
-    1. In the Magento Admin, navigate to **STORES** > Settings > **Configuration** > GENERAL > **General** > **Store Information**
-    2. Input values into the **Store Name**, **Store Phone Number**, and **Store Hours of Operation** fields.
-    3. Note: The **Store Phone Number** and **Store Hours of Operation** fields are optional.
-    4. Click the **Save Config** button.
+   1. In the Magento Admin, navigate to **STORES** > Settings > **Configuration** > GENERAL > **General** > **Store Information**
+   2. Input values into the **Store Name**, **Store Phone Number**, and **Store Hours of Operation** fields.
+   3. Note: The **Store Phone Number** and **Store Hours of Operation** fields are optional.
+   4. Click the **Save Config** button.
 2. To set the store email:
-    1. In the Magento Admin, navigate to **STORES** > Settings > **Configuration** > GENERAL > **General** > **Store Email Addresses** > **General Contact**
-    2. Input values into the **Sender Name** and **Sender Email** fields.
-    3. Click the **Save Config** button.
+   1. In the Magento Admin, navigate to **STORES** > Settings > **Configuration** > GENERAL > **General** > **Store Email Addresses** > **General Contact**
+   2. Input values into the **Sender Name** and **Sender Email** fields.
+   3. Click the **Save Config** button.
 
 The sales emails are configured to display all of the above values, if they're configured in the admin. If you want to add those values to other email templates, you can use the following variables:
 
@@ -428,36 +430,36 @@ Exception: argument value can contain spaces if it is enclosed in brackets.
 
 We tested responsive emails using a combination of real devices and [Litmus](http://litmus.com/). Due to the greatly varied level of support among email clients for modern web technologies, not all email clients rendered the emails perfectly. However, all of the following clients should render the emails in a manner that allows them to be easily read without obvious issues.
 
-* Supported Desktop Clients
-    * Apple Mail 7 (OS X 10.9)
-    * Apple Mail 8 (OS X 10.10)
-    * Outlook 2003 (Windows 7)
-    * Outlook 2007 (Windows 7)
-    * Outlook 2010 (Windows 7)
-    * Outlook 2013 (Windows 7)
-    * Outlook 2016 (OS X 10.10)
-* Supported Mobile Clients
-    * Native email app (Android 2.3)
-    * Native email app (Android 4.2)
-    * Gmail app (Android 4.2)
-    * Native email app (Blackberry 5 OS)
-    * iOS 7 (iPhone 5s)
-    * iOS 8 (iPad Retina)
-    * iOS 8 (iPad Mini)
-    * iOS 8 (iPhone 6)
-    * iOS 8 (iPhone 6 Plus)
-    * Windows Phone 8
-* Supported Web Clients (tested in combination of Firefox, Chrome, and Internet Explorer)
-    * AOL Mail
-    * Gmail
-    * Office 365
-    * Outlook.com
-    * Yahoo! Mail
+*  Supported Desktop Clients
+   *  Apple Mail 7 (OS X 10.9)
+   *  Apple Mail 8 (OS X 10.10)
+   *  Outlook 2003 (Windows 7)
+   *  Outlook 2007 (Windows 7)
+   *  Outlook 2010 (Windows 7)
+   *  Outlook 2013 (Windows 7)
+   *  Outlook 2016 (OS X 10.10)
+*  Supported Mobile Clients
+   *  Native email app (Android 2.3)
+   *  Native email app (Android 4.2)
+   *  Gmail app (Android 4.2)
+   *  Native email app (Blackberry 5 OS)
+   *  iOS 7 (iPhone 5s)
+   *  iOS 8 (iPad Retina)
+   *  iOS 8 (iPad Mini)
+   *  iOS 8 (iPhone 6)
+   *  iOS 8 (iPhone 6 Plus)
+   *  Windows Phone 8
+*  Supported Web Clients (tested in combination of Firefox, Chrome, and Internet Explorer)
+   *  AOL Mail
+   *  Gmail
+   *  Office 365
+   *  Outlook.com
+   *  Yahoo! Mail
 
 ## Newsletter templates {#newsletter-templates}
 
 The focus of this article is on transactional emails but the same techniques can be used with newsletter templates as well, including:
 
-* Import the header and footer using `{% raw %}{{template config_path="design/email/header_template"}}{% endraw %}` and `{% raw %}{{template config_path="design/email/footer_template"}}{% endraw %}`
-* Apply inline styles using `{% raw %}{{inlinecss file="css/email-inline.css"}}{% endraw %}`
-* Include non-inline styles using `{% raw %}{{css file="css/email.css"}}{% endraw %}`
+*  Import the header and footer using `{% raw %}{{template config_path="design/email/header_template"}}{% endraw %}` and `{% raw %}{{template config_path="design/email/footer_template"}}{% endraw %}`
+*  Apply inline styles using `{% raw %}{{inlinecss file="css/email-inline.css"}}{% endraw %}`
+*  Include non-inline styles using `{% raw %}{{css file="css/email.css"}}{% endraw %}`

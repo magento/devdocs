@@ -38,7 +38,7 @@ You can also use a process manager such as [Supervisor](http://supervisord.org/i
 
 * Cron job `consumers_runner` is enabled
 * Cron job `consumers_runner` runs all defined consumers
-* Each consumer processes 1000 messages and then terminates
+* Each consumer processes 10000 messages and then terminates
 
 #### Specific configuration
 
@@ -57,9 +57,9 @@ Edit */app/etc/env.php* file for configure cron job `consumers_runner`
 ...
 ```
 
-* `cron_run` - the option for enabling/disabling cron job `consumers_runner`, by default is true.
-* `max_messages` - the maximum number of messages for each consumer that must be processed before consumer terminate, by default is 1000. If it is 0, then the consumer never stops working.
-* `consumers` - the list of consumers which will be run, by default is empty array (all consumers are allowed to be run).
+* `cron_run` - A boolean value that enables or disables the `consumers_runner` cron job (default = `true`).
+* `max_messages` - The maximum number of messages each consumer must process before terminating (default = `10000`). Although we do not recommend it, you can use 0 to prevent the consumer from terminating.
+* `consumers` - An array of strings specifying which consumer(s) to run. An empty array runs *all* consumers.
 
 ## Command line interface
 
