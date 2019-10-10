@@ -22,7 +22,6 @@ mutation {
   createCustomerAddress(input: {
     region: {
       region: "Arizona"
-      region_id: 4
       region_code: "AZ"
     }
     country_id: US
@@ -63,7 +62,6 @@ mutation {
       "customer_id": 5,
       "region": {
         "region": "Arizona",
-        "region_id": 4,
         "region_code": "AZ"
       },
       "country_id": "US",
