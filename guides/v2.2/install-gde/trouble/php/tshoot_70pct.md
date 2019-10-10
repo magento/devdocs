@@ -15,8 +15,8 @@ During installation using the Setup Wizard, the process stops at about 70% (with
 
 Common causes for this issue include:
 
-* The [PHP](https://glossary.magento.com/php) setting for [`max_execution_time`](http://php.net/manual/en/info.configuration.php#ini.max-execution-time){:target="_blank"}
-* Timeout values for [nginx](https://glossary.magento.com/nginx) and Varnish
+*  The [PHP](https://glossary.magento.com/php) setting for [`max_execution_time`](http://php.net/manual/en/info.configuration.php#ini.max-execution-time){:target="_blank"}
+*  Timeout values for [nginx](https://glossary.magento.com/nginx) and Varnish
 
 ### Solution:
 
@@ -31,8 +31,8 @@ Set all of the following as appropriate.
 5. Save your changes to `php.ini` and exit the text editor.
 6. Restart Apache:
 
- * CentOS: `service httpd restart`
- * Ubuntu: `service apache2 restart`
+   *  CentOS: `service httpd restart`
+   *  Ubuntu: `service apache2 restart`
 
  If you use nginx or Varnish, continue with the following sections.
 
