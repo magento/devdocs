@@ -94,7 +94,7 @@ Create sales and OMS quote databases as follows:
    mysql -u magento_quote -p
    ```
 
-   ```bash
+   ```shell
    exit
    ```
 
@@ -106,7 +106,7 @@ Create sales and OMS quote databases as follows:
    mysql -u magento_sales -p
    ```
 
-   ```bash
+   ```shell
    exit
    ```
 
@@ -207,13 +207,13 @@ Run the preceding script:
 
 2. At the `mysql>` prompt, run the script as follows:
 
-   ```bash
+   ```shell
    source <path>/<script>.sql
    ```
 
    For example,
 
-   ```bash
+   ```shell
    source /root/sql-scripts/1_foreign-sales.sql
    ```
 
@@ -345,7 +345,7 @@ Run the script as follows:
   
    For example,
 
-   ```bash
+   ```shell
    source /root/sql-scripts/2_foreign-key-quote.sql
    ```
 
@@ -473,13 +473,13 @@ Run the script as follows:
 
 2. At the `mysql>` prompt, run the script as follows:
 
-   ```bash
+   ```shell
    source <path>/<script>.sql
    ```
 
    For example,
 
-   ```bash
+   ```shell
    source /root/sql-scripts/3_drop-tables.sql
    ```
 

@@ -56,7 +56,7 @@ For more information about `SetEnvIf`, see:
 1. Locate the section starting with `<VirtualHost *:80>`.
 1. Create the following virtual hosts after any existing virtual hosts:
 
-   ```terminal
+   ```conf
    <VirtualHost *:80>
       ServerName          mysite.mg
       DocumentRoot        /var/www/html/magento2/pub/

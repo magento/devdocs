@@ -62,7 +62,7 @@ To compile `.less` files, add your theme to `module.exports` in the Grunt config
    Where the following notation is used:
 
    -  `<Vendor>`: vendor name.
-   -  `<theme>`: your theme code, conventionally should correspond to the heme directory name.
+   -  `<theme>`: your theme code, conventionally should correspond to the theme directory name.
    -  `<language>`: specified in the `code_subtag` format, for example `en_US`. Only one locale can be specified here. To debug the theme with another locale, create one more theme declaration, having specified another value for `language`.
    -  `<area>`: area code, can be either `frontend` or `adminhtml`.
    -  `<path_to_file>`: path to the root source file, relative to the `app/design/frontend/<Vendor>/<theme>/web` directory. You need to specify all [root source files of the theme]({{ page.baseurl }}/frontend-dev-guide/css-topics/css-preprocess.html#css_preprocess_terms). If your theme [inherits] from a certain theme, and does not contain its own root source files, specify the root source files of the parent theme.
