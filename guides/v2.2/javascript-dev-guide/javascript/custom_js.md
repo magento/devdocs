@@ -152,7 +152,7 @@ To disable the auto-loading of default Magento JS components and widget initiali
 
 2. Put the `requirejs-config.js` file in one of the following
   locations:
-  
+
    -  Your custom theme files: `<theme_dir>`
    -  Your custom module files: `<module_dir>/view/frontend`
 
