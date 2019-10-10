@@ -62,3 +62,6 @@ pages:
 
     - label: Data Migration Tool Technical Specification
       url: /migration/migration-tool-internal-spec.html
+
+    - label: Changelog
+      url: https://github.com/magento/data-migration-tool/blob/2.3/CHANGELOG.md
