@@ -5,7 +5,7 @@ functional_areas:
   - Cloud
   - Storage
 ---
-You can find the total storage capacity for your Cloud project in your {{site.data.var.ece}} contract and in your [Magento account page](https://accounts.magento.cloud/user). Each project card in your account shows the number of _environments_, the _storage_ capacity in GB, and the number of _users_.
+You can find the total storage capacity for your Cloud project in your {{site.data.var.ece}} contract and on your [Magento account page](https://accounts.magento.cloud/user). Each project card in your account shows the number of _environments_, the _storage_ capacity in GB, and the number of _users_.
 
 You can check disk space usage in each environment using the _disk free_ command, which reports the amount of disk space used by the file system. You must use SSH to log in to a remote environment.
 
@@ -45,7 +45,7 @@ Filesystem                     Size  Used Avail Use% Mounted on
 /dev/mapper/35xdpijwfe         2.0G  1.9G     0 100% /app/var
 ```
 
-For the database, you can use the CLI to check approximate disk space usage:
+For the database, you can use the {{ site.data.var.ece }} CLI to check approximate disk space usage:
 
 ```bash
 magento-cloud db:size
@@ -65,7 +65,7 @@ Checking database service mysql...
 
 ## Allocating disk space
 
-There are two configuration files that control the allocation of disk space in the Integration environment: the `.magento.app.yaml` file and the `.magento/services.yaml` file. Each file contains the `disk` property used to define the disk size value in MB for the respective configuration.
+Two configuration files control the allocation of disk space in the Integration environment: the `.magento.app.yaml` file and the `.magento/services.yaml` file. Each file contains the `disk` property, which defines the disk size value in MB for the respective configuration.
 
 ### Application disk space
 
@@ -90,7 +90,7 @@ To increase disk space for your application:
    git add -A && git commit -m "Increase disk space for application" && git push magento <branch-name>
    ```
 
-   The changes come into effect after you push the updated YAML file to the remote environment.
+   The changes take effect after you push the updated YAML file to the remote environment.
 
 ### Service disk space
 
@@ -119,7 +119,7 @@ To increase disk space for a service:
    git add -A && git commit -m "Increase disk space for service" && git push magento <branch-name>
    ```
 
-   The changes come into effect after you push the updated YAML file to the remote environment.
+   The changes take effect after you push the updated YAML file to the remote environment.
 
 ## No space left
 
