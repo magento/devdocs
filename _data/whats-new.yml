@@ -145,12 +145,6 @@ entries:
   type: New topic
   date: October 8, 2019
   link: https://github.com/magento/devdocs/pull/4960
-- description: Added documentation for the [setPaymentMethodAndPlaceOrder](https://devdocs.magento.com/guides/v2.3/graphql/mutations/set-payment-place-order.html)
-    to the _GraphQL Developer Guide_.
-  versions: 2.3.3
-  type: New topic
-  date: October 8, 2019
-  link: https://github.com/magento/devdocs/pull/4916
 - description: Added information about applying store codes to [asynchronous](https://devdocs.magento.com/guides/v2.3/rest/asynchronous-web-endpoints.html)
     and [bulk](https://devdocs.magento.com/guides/v2.3/rest/bulk-endpoints.html) REST
     endpoints in the _REST API Reference_.
