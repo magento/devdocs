@@ -2,7 +2,7 @@
 | ------- | ------- | ------- |
 | [airbone42](https://github.com/airbone42) | [#533](https://github.com/magento/magento2/issues/533) | [magento/graphql-ce#578](https://github.com/magento/graphql-ce/pull/578) |
 | [tzyganu](https://github.com/tzyganu) | [#601](https://github.com/magento/magento2/issues/601) | [magento/graphql-ce#632](https://github.com/magento/graphql-ce/pull/632) |
-| [bsstaveley](https://github.com/bsstaveley) | [#631](https://github.com/magento/magento2/issues/631) | [magento/graphql-ce#634](https://github.com/magento/graphql-ce/pull/634) |
+| [pmclain](https://github.com/pmclain) | [#631](https://github.com/magento/magento2/issues/631) | [magento/graphql-ce#634](https://github.com/magento/graphql-ce/pull/634) |
 | [dipti2jcommerce](https://github.com/dipti2jcommerce) | [#20124](https://github.com/magento/magento2/issues/20124) | [magento/magento2#20135](https://github.com/magento/magento2/pull/20135) |
 | [WalterSmulders](https://github.com/WalterSmulders) | [#21978](https://github.com/magento/magento2/issues/21978) | [magento/magento2#22020](https://github.com/magento/magento2/pull/22020) |
 | [afavata](https://github.com/afavata) | [#22045](https://github.com/magento/magento2/issues/22045) | [magento/magento2#22260](https://github.com/magento/magento2/pull/22260) |
