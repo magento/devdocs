@@ -78,7 +78,7 @@ For more information, see [Required PHP settings][].
 
 * A valid [security certificate][] is required for HTTPS.
 * Self-signed SSL certificates are not supported.
-* Transport Layer Security (TLS) requirement - PayPal and `repo.magento.com` both require TLS 1.1 or later:
+* Transport Layer Security (TLS) requirement - PayPal and `repo.magento.com` both require TLS 1.2 or later:
 
   * [More information about PayPal][]
 
@@ -135,7 +135,7 @@ Mail Transfer Agent (MTA) or an SMTP server
 {:.bs-callout .bs-callout-info}
 There is a known issue with `xdebug` that can affect Magento installations or access to the storefront or Magento Admin after installation. For details, see [Known issue with xdebug][].
 
-* [`mcrypt`][]{:target="_blank"}
+* [`mcrypt`](http://php.net/manual/en/book.mcrypt.php){:target="_blank"} (for PHP < 7.2)
 * PHPUnit (as a command-line tool) 6.2.0
 
 <!-- Link Definitions -->
