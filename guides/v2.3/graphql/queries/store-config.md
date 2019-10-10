@@ -245,12 +245,13 @@ Attribute |  Data Type | Description | Example
 --- | --- | ---
 `catalog_default_sort_by` | String | The default sort order of the search results list | `position`
 `category_url_suffix` | String | The suffix applied to category pages, such as `.htm` or `.html` | `.html`
-`grid_per_page` | Integer | The default number of products per page in Grid View | `9`
+`grid_per_page` | Int | The default number of products per page in Grid View | `9`
 `grid_per_page_values` | A list of numbers that define how many products can be displayed in List View  | `9,15,30`
 `list_mode` | String  | The format of the search results list | `grid-list`
-`list_per_page` | Integer | The default number of products per page in List View | `10`
+`list_per_page` | Int | The default number of products per page in List View | `10`
 `list_per_page_values` | String | A list of numbers that define how many products can be displayed in List View | `5,10,15,20,25`
 `product_url_suffix` | String | The suffix applied to product pages, such as `.htm` or `.html` | `.html`
+`root_category_id` | Int | The ID of the root category
 `title_separator` | String | Identifies the character that separates the category name and subcategory in the browser title bar | `-`
 
 ### Supported Weee (fixed product tax) attributes
