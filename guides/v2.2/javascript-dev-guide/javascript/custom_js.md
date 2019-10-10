@@ -120,8 +120,8 @@ define([
 
 Where the following notation is used:
 
-- `<component_path>`: path to the default component that you extend
-- `<component_alias>`: variable containing the default component that you extend
+-  `<component_path>`: path to the default component that you extend
+-  `<component_alias>`: variable containing the default component that you extend
 
 For example, `Filters.js` script extends the default `filters.js`:
 
@@ -146,12 +146,13 @@ To disable the auto-loading of default Magento JS components and widget initiali
 
 1. Create a `requirejs-config.js` file with the following content:
 
-```javascript
-var config = { deps: [ ] };
-```
+    ```javascript
+    var config = { deps: [ ] };
+    ```
 
 2. Put the `requirejs-config.js` file in one of the following
   locations:
+  
    -  Your custom theme files: `<theme_dir>`
    -  Your custom module files: `<module_dir>/view/frontend`
 
