@@ -41,6 +41,6 @@ The `customerAddressRegionInput` object can contain the following attributes:
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`region_code` | String | The address region code
 `region` | String | The state or province name
-`region_id` | Int | Uniquely identifies the region
+`region_code` | String | The address region code
+`region_id` | Int | Deprecated. Use `region` instead. Uniquely identifies the region
