@@ -249,10 +249,10 @@ class ScopeId extends DataSource
 
 This data source:
 
- 1. Checks if a field has a `dataset` key in a value that comes from a variation. If it doesn't, then field is assigned a value from the variation.
- 2. If it does, then a new Store fixture is created with a `dataset` from a Store repository (`<magento2_root_dir>/dev/tests/functional/tests/app/Magento/Store/Test/Repository/Store.xml`).
- 3. Checks if the `store_id` field exists in the Store fixture. If it doesn't, a new Store in Magento is created.
- 4. Returns a Store `name` value.
+1. Checks if a field has a `dataset` key in a value that comes from a variation. If it doesn't, then field is assigned a value from the variation.
+2. If it does, then a new Store fixture is created with a `dataset` from a Store repository (`<magento2_root_dir>/dev/tests/functional/tests/app/Magento/Store/Test/Repository/Store.xml`).
+3. Checks if the `store_id` field exists in the Store fixture. If it doesn't, a new Store in Magento is created.
+4. Returns a Store `name` value.
 
 We should save it as `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/Search/Test/Fixture/Synonym/ScopeId.php`.
 
@@ -1066,6 +1066,6 @@ That's it!
 <!-- ABBREVIATIONS -->
 
 *[FTF]: Functional Testing Framework
-*[CRUD]: Create Read Update Delete
-*[IDE]: Integrated Development Environment
-*[CLI]: Command Line Interface
+[CRUD]: Create Read Update Delete
+[IDE]: Integrated Development Environment
+[CLI]: Command Line Interface
