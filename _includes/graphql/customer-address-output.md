@@ -9,7 +9,7 @@ Attribute |  Data Type | Description
 `city` | String | The city or town
 `company` | String | The customer's company
 `country_id` | String | The customer's country
-`custom_attributes` | [CustomerAddressAttribute](#customerAddressAttributeOutput) | Deprecated. Not applicable for GraphQL 
+`custom_attributes` | [CustomerAddressAttribute](#customerAddressAttributeOutput) | Deprecated. Not applicable for GraphQL
 `customer_id` | Int | The customer ID
 `default_billing` | Boolean | Indicates whether the address is the default billing address
 `default_shipping` | Boolean | Indicates whether the address is the default shipping address
