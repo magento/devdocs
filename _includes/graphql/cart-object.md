@@ -7,7 +7,7 @@ Attribute |  Data Type | Description
 `available_payment_methods` | [[AvailablePaymentMethod]][AvailablePaymentMethod] | Available payment methods
 `billing_address` | [BillingCartAddress][BillingCartAddress]! | Contains the billing address specified in the customer's cart
 `email` | String | The customer's email address
-`is_virtual` | Boolean | Indicates whether the cart contains a virtual product
+`is_virtual` | Boolean | Indicates whether the cart contains only virtual products
 `items` | [[CartItemInterface]][CartItemInterface] | Contains the items in the customer's cart
 `prices` | [CartPrices][CartPrices] | Contains subtotals and totals
 `selected_payment_method` | [SelectedPaymentMethod][SelectedPaymentMethod] | Selected payment method
