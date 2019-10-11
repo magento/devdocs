@@ -14,8 +14,8 @@ This topic describes how to create the [frontend](https://glossary.magento.com/f
 
 The default Magento [Checkout](https://glossary.magento.com/checkout) consists of two steps:
 
- - Shipping Information
- - Review and Payments Information
+-  Shipping Information
+-  Review and Payments Information
 
 You can add a custom checkout step, it should be implemented as a [UI component](https://glossary.magento.com/ui-component). For the sake of compatibility, upgradability and easy maintenance, do not edit the default Magento code, add your customizations in a separate [module](https://glossary.magento.com/module).
 
@@ -103,11 +103,11 @@ define(
             },
 
             /**
-	    * The navigate() method is responsible for navigation between checkout step
-	    * during checkout. You can add custom logic, for example some conditions
-	    * for switching to your custom step
-	    * When the user navigates to the custom step via url anchor or back button we_must show step manually here
-	    */
+        * The navigate() method is responsible for navigation between checkout step
+        * during checkout. You can add custom logic, for example some conditions
+        * for switching to your custom step
+        * When the user navigates to the custom step via url anchor or back button we_must show step manually here
+        */
             navigate: function () {
 
                 this.isVisible(true);
@@ -203,16 +203,16 @@ Create a mixin as follows:
 
     ```js
     var config = {
-    	'config': {
-    	    'mixins': {
-    	       'Magento_Checkout/js/view/shipping': {
-    	           'Vendor_Module/js/view/shipping-payment-mixin': true
-    	       },
-    	       'Magento_Checkout/js/view/payment': {
-    	           'Vendor_Module/js/view/shipping-payment-mixin': true
-    	       }
-    	   }
-    	}
+        'config': {
+            'mixins': {
+               'Magento_Checkout/js/view/shipping': {
+                   'Vendor_Module/js/view/shipping-payment-mixin': true
+               },
+               'Magento_Checkout/js/view/payment': {
+                   'Vendor_Module/js/view/shipping-payment-mixin': true
+               }
+           }
+        }
     }
     ```
 

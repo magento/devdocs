@@ -1,13 +1,13 @@
 Several Magento features require at least one cron job, which schedules activities to occur in the future. A partial list of these activities follows:
 
-*	Catalog price rules
-*	Newsletters
-*	Generating Google sitemaps
-*	Customer Alerts/Notifications (product price change, product back in stock)
-*	Reindexing
-*	Private sales ({{site.data.var.ee}} only)
-*	Automatic updating of currency rates
-*	All Magento e-mails (including order confirmation and transactional)
+*  Catalog price rules
+*  Newsletters
+*  Generating Google sitemaps
+*  Customer Alerts/Notifications (product price change, product back in stock)
+*  Reindexing
+*  Private sales ({{site.data.var.ee}} only)
+*  Automatic updating of currency rates
+*  All Magento e-mails (including order confirmation and transactional)
 
 We recommend you run cron as the [Magento file system owner]({{ page.baseurl }}/config-guide/cli/config-cli.html#config-install-cli-first). Do *not* run cron as `root`; we also recommend against running cron as the web server user.
 

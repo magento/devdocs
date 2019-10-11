@@ -41,17 +41,21 @@ Magento only uses MySQL features compatible with MariaDB. MariaDB may not be com
 <!--{% assign supported_php_versions = site.data.codebase.v2_2.open-source.composer_lock.platform.php | split: "|" %}-->
 {% include install/php-versions-template.md %}
 
+The Magento 2.2.10 patch enables support for PHP 7.2.
+Supported PHP versions for Magento 2.2.x are 7.2 and 7.1.
+PHP 7.0 is no longer supported.
+
 #### Required PHP extensions
 
 {: .bs-callout-info }
-The [CentOS]({{ page.baseurl }}/install-gde/prereq/php-centos.html) and [Ubuntu]({{ page.baseurl }}/install-gde/prereq/php-ubuntu.html) PHP installation instructions include a step for installing these extensions.
+The [PHP]({{ page.baseurl }}/install-gde/prereq/php-settings.html) installation instructions include a step for installing these extensions.
 
 <!--{% assign platform-req = site.data.codebase.v2_2.open-source.composer_lock.platform %}-->
 {% include install/php-extensions-template.md %}
 
 #### PHP OPcache
 
-We strongly recommend you verify that [PHP OPcache](http://php.net/manual/en/intro.opcache.php) is enabled for performance reasons. The OPcache is enabled in many PHP distributions. To verify if it is installed, see our PHP documentation for [CentOS]({{ page.baseurl }}/install-gde/prereq/php-centos.html) or [Ubuntu]({{ page.baseurl }}/install-gde/prereq/php-ubuntu.html).
+We strongly recommend you verify that [PHP OPcache](http://php.net/manual/en/intro.opcache.php) is enabled for performance reasons. The OPcache is enabled in many PHP distributions. To verify if it is installed, see our [PHP]({{ page.baseurl }}/install-gde/prereq/php-settings.html) documentation.
 
 If you must install it separately, see the [PHP OPcache documentation](http://php.net/manual/en/opcache.setup.php).
 
@@ -65,7 +69,7 @@ For more information, see [Required PHP settings]({{ page.baseurl }}/install-gde
 
 * A valid [security certificate](https://glossary.magento.com/security-certificate) is required for HTTPS.
 * Self-signed SSL certificates are not supported.
-* Transport Layer Security (TLS) requirement - PayPal and `repo.magento.com` both require TLS 1.1 or later:
+* Transport Layer Security (TLS) requirement - PayPal and `repo.magento.com` both require TLS 1.2 or later:
 
   * [More information about PayPal]({{ page.baseurl }}/install-gde/system-requirements_tls1-2.html)
 

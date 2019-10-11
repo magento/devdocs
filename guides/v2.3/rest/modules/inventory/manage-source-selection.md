@@ -22,7 +22,7 @@ Third parties can also extend SSA to create customized algorithms for recommendi
 
 **Service names**
 
-```
+```http
 inventorySourceSelectionApiGetSourceSelectionAlgorithmListV1
 inventorySourceSelectionApiSourceSelectionServiceV1
 inventoryDistanceBasedSourceSelectionApiGetDistanceProviderCodeV1
@@ -32,7 +32,7 @@ inventoryDistanceBasedSourceSelectionApiGetLatLngFromAddressV1
 
 **REST endpoints**
 
-```
+```http
 GET /V1/inventory/source-selection-algorithm-list
 POST /V1/inventory/source-selection-algorithm-result
 ```
@@ -170,13 +170,13 @@ Name | Description | Type | Requirements
             "qty": 50
         }],
         "extension_attributes": {
-        	"destination_address": {
-        		"country": "US",
-        		"postcode": "10577",
-        		"street": "3003 Purchase St",
-        		"region": "43",
-        		"city": "Purchase"
-        	}
+            "destination_address": {
+                "country": "US",
+                "postcode": "10577",
+                "street": "3003 Purchase St",
+                "region": "43",
+                "city": "Purchase"
+            }
         }
     },
     "algorithmCode": "distance"

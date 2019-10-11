@@ -8,7 +8,7 @@ menu_order:
 
 ## Enhanced password management
 
-Magento has strengthened the hashing algorithms (SHA-256) used in password management. In addition, we added support for Argon2ID13, which is used by default in PHP 7.2 or if you have installed the Libsodium extension for PHP.
+Magento has strengthened the hashing algorithms (SHA-256) used in password management. Magento now supports Argon2ID13 through the PHP sodium extension, which requires the libsodium library version 1.0.13 or higher.
 
 ## Improved prevention of cross-site scripting (XSS) attacks by making escaped data the default
 
@@ -32,6 +32,7 @@ Magento safeguards your store from clickjacking attacks by using an X-Frame-Opti
 
 A simple [Magento Admin](https://glossary.magento.com/magento-admin) [URL](https://glossary.magento.com/url) (like `admin` or `backend`) makes it easy to target attacks on specific locations using automated password guessing. To prevent against this type of attack, Magento by default creates a random Admin URI when you install the product. The CLI command `php bin/magento info:adminuri` is provided so that you can  see the URI if you forget it. You can also use the CLI to change this URI.  Although the use of a non-default admin URL will not secure the site, its use will help prevent large-scale automated attacks. See [Display or change the Admin URI]({{page.baseurl}}/install-gde/install/cli/install-cli-adminurl.html) in Configuration Guide for more information.
 
-## Related topics
+{:.ref-header}
+Related topics
 
 [Configuration Guide]({{page.baseurl}}/config-guide/bk-config-guide.html)

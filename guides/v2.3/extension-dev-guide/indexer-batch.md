@@ -65,9 +65,9 @@ Batching is available for the following indexers:
 
 Index name | Configuration file | Configured object | Parameter name | Default value
 --- | --- | --- | --- | ---
-catalog_product_price (Product Price)	| `Magento/Catalog/etc/di.xml` | `Magento\Catalog\Model\ResourceModel\Product\Indexer\Price\BatchSizeCalculator` | batchRowsCount['default']	| 5000
-cataloginventory_stock (Stock)	| `Magento/CatalogInventory/etc/di.xml`	| `Magento\CatalogInventory\Model\Indexer\Stock\Action\Full` | batchRowsCount['default']	| 200
-catalog_category_product (Category Products)| `Magento/Catalog/etc/di.xml`	| `Magento\Catalog\Model\Indexer\Category\Product\Action\Full` |	batchRowsCount	| 100000
+catalog_product_price (Product Price) | `Magento/Catalog/etc/di.xml` | `Magento\Catalog\Model\ResourceModel\Product\Indexer\Price\BatchSizeCalculator` | batchRowsCount['default'] | 5000
+cataloginventory_stock (Stock) | `Magento/CatalogInventory/etc/di.xml` | `Magento\CatalogInventory\Model\Indexer\Stock\Action\Full` | batchRowsCount['default'] | 200
+catalog_category_product (Category Products)| `Magento/Catalog/etc/di.xml` | `Magento\Catalog\Model\Indexer\Category\Product\Action\Full` | batchRowsCount | 100000
 catalog_product_attribute (Product Attribute)| `Magento/Catalog/etc/di.xml` | `Magento\Catalog\Model\ResourceModel\Product\Indexer\Eav\BatchSizeCalculator` | batchSizes['decimal'], batchSizes['source'] | 1000, 1000
 
 Changing the batch size can help you optimize indexer running time. For example, for a store with the following characteristics:
@@ -112,7 +112,7 @@ Magento uses the following tables to support table switching.
 
 Indexer name | Tables used
 --- | --- | ---
-`catalog_product_price`	|  `catalog_product_index_price`, `catalog_product_index_price_replica`
+`catalog_product_price` |  `catalog_product_index_price`, `catalog_product_index_price_replica`
 `cataloginventory_stock` | `cataloginventory_stock_status`, `cataloginventory_stock_status_replica`
 `catalog_category_product` | `catalog_category_product_index`, `catalog_category_product_index_replica`
 `catalog_product_attribute` (select, multiselect attributes) | `catalog_product_index_eav`, `catalog_product_index_eav_replica`
@@ -124,7 +124,7 @@ Make sure that these indexers are in "Update By Schedule" mode. If "Update On Sa
 {: .bs-callout-info }
 The indexer table switching mechanism requires additional database storage.
 
-#### EAV indexer optimization
+### EAV indexer optimization
 
 The Product EAV indexer reorganizes the EAV product structure to a flat structure.
 As of Magento 2.3, under certain circumstances, you can disable this indexer to improve performance. (Its indexation takes about 5 minutes on a large Magento 2 Commerce performance profile.)
@@ -140,8 +140,8 @@ To determine whether any 3rd-party extensions are using the Product EAV indexer,
 
 To disable the Product EAV indexer in the Admin, go to **Stores** > Settings > **Configuration** > **Catalog** > **Catalog** > **Catalog Search** and make sure the **Search Engine** field has a value other than MySQL.  Then set the value of **Enable EAV Indexer** to No.
 
-### Related topics
-{:.no_toc}
+{:.ref-header}
+Related topics
 
 * [Indexing overview]({{ page.baseurl }}/extension-dev-guide/indexing.html)
 * [Adding a custom indexer]({{ page.baseurl }}/extension-dev-guide/indexing-custom.html)

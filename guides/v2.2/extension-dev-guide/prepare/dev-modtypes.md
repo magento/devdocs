@@ -9,7 +9,9 @@ Each component type has a different [directory structure][directory-structure] a
 
 {% include php-dev/composer-types.md %}
 
-#### Next
+{:.ref-header}
+Next step
+
 [About component file structure][component-file-structure]
 
 [directory-structure]: {{ page.baseurl }}/extension-dev-guide/build/module-file-structure.html
