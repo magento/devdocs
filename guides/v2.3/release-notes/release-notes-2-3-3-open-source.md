@@ -72,7 +72,7 @@ The following upgrades to core platform components boost platform security and s
 *  Merchants now have the ability to turn off the automatic URL rewrite generation that occurs by default on products when the category they belong to is saved. The new **Generate "category/product" URL Rewrites**  configuration option controls this behavior. When this feature is enabled, Magento will generate a lot of data when saving a category that contains many assigned products. This generated data is saved into rewrite tables that can degrade Magento performance.
 
 <!--- MC-15763-->
-*  Page load speeds have been improved by moving non-critical CSS elements to the bottom of the page. This enables the browser to render and display a storefront page more quickly. This setting is disabled by default, but you can enable it using **Stores** > **Configuration** > **Advanced** > **Developer** > **CSS Settings** > **Use CSS critical path**.
+*  Page load speeds have been improved by moving non-critical CSS elements to the bottom of the page. This enables the browser to render and display a storefront page more quickly. This setting is disabled by default, but you can enable it using **Stores** > **Configuration** > **Advanced** > **Developer** > **CSS Settings** > **Use CSS critical path**. For more information, see [CSS critical path documentation]({{ page.baseurl }}/frontend-dev-guide/css-topics/css-critical-path.html).
 
 <!--- MC-16887-->
 *  The `jQuery/ui` library has been refactored into separate widgets so that core modules load only the widgets they need. This update improves the performance of core storefront tasks including the loading of category, configurable product, home, and checkout pages.
@@ -866,7 +866,7 @@ This release includes the following changes to integrations for core payment met
 *  Merchants now have the ability to turn off the automatic URL rewrite generation that occurs by default on products when the category they belong to is saved. The new **Generate "category/product" URL Rewrites**  configuration option controls this behavior. When this feature is enabled, Magento will generate a lot of data when saving a category that contains many assigned products. This generated data is saved into rewrite tables that can degrade Magento performance.
 
 <!--- MC-15763-->
-*  Page load speeds have been improved by moving non-critical CSS elements to the bottom of the page. This enables the browser to render and display a storefront page more quickly. This setting is disabled by default, but you can enable it using **Stores** > **Configuration** > **Advanced** > **Developer** > **CSS Settings** > **Use CSS critical path**.
+*  Page load speeds have been improved by moving non-critical CSS elements to the bottom of the page. This enables the browser to render and display a storefront page more quickly. This setting is disabled by default, but you can enable it using **Stores** > **Configuration** > **Advanced** > **Developer** > **CSS Settings** > **Use CSS critical path**. For more information, see [CSS critical path documentation]({{ page.baseurl }}/frontend-dev-guide/css-topics/css-critical-path.html).
 
 <!--- MC-16887-->
 *  The `jQuery/ui` library has been refactored into separate widgets so that core modules load only the widgets they need. This update improves the performance of core storefront tasks including the loading of category, configurable product, home, and checkout pages.
