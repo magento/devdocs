@@ -25,7 +25,7 @@ Although code for these features is bundled with quarterly releases of the Magen
 
 ## Apply the Catalog pagination issue on Elasticsearch 6.x patch to resolve a critical search result pagination issue
 
-This patch resolves issues that users of Magento 2.3.3 experience in deployments where  Elasticsearch 6.x is used as the catalog search engine. 
+This patch resolves issues that users of Magento 2.3.3 experience in deployments where  Elasticsearch 6.x is used as the catalog search engine.
 Users who attempt to navigate past the first page of search results are unsuccessful, and Magento displays an error message. After this patch is installed, users will be able to page through all search results. See [Applying patches](https://devdocs.magento.com/guides/v2.3/comp-mgr/patching.html) for specific instructions on downloading and applying Magento patches. To find the patch, navigate to [Tech Resources](https://magento.com/tech-resources/download), and select the 'Catalog pagination issue on Elasticsearch 6.x' patch associated with the version of Magento you are running.
 
 ## Highlights
