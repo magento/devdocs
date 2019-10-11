@@ -52,7 +52,7 @@ Initialize the component as follows:
 </script>
 ```
 
-[Example]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/view/frontend/templates/product/compare/sidebar.phtml#L46-L48){:target="_blank"}
+[Example]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/view/frontend/templates/product/compare/sidebar.phtml#L50-L52){:target="_blank"}
 
 ## Configure a UI component {#config-cache-priv-how-ui}
 
