@@ -1,6 +1,6 @@
 ---
 group: cli-reference
-title: bin/magento (Open Source)
+title: bin/magento (Commerce)
 functional_areas:
   - Configuration
   - System
@@ -9,9 +9,9 @@ functional_areas:
 <!-- All the assigned and captured content is used in the included template -->
 {% assign tool = 'bin/magento' %}
 
-{% assign file = site.data.codebase.v2_2.open-source.bin-magento %}
+{% assign file = site.data.codebase.v2_2.commerce.bin-magento %}
 
-{% assign edition = site.data.var.ce %}
+{% assign edition = site.data.var.ee %}
 
 {% capture intro %}
 Use the ["Add CLI commands"]({{ page.baseurl }}/extension-dev-guide/cli-cmds/cli-add.html) guide to add a custom Magento CLI command.
