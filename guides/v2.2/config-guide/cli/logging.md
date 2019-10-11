@@ -25,7 +25,7 @@ As of Magento 2.2.8, you can no longer use the `bin/magento config:set dev/debug
     bin/magento setup:config:set --enable-debug-logging=true
     ```
 
-2. Flush the cache.
+1. Flush the cache.
 
     ```bash
     bin/magento cache:flush
@@ -86,7 +86,7 @@ By default, Magento writes _syslog_ logs to the operating system `syslog` file.
     bin/magento setup:config:set --enable-syslog-logging=true
     ```
 
-2. Flush the cache.
+1. Flush the cache.
 
     ```bash
     bin/magento cache:flush
