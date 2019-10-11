@@ -1761,15 +1761,15 @@ See [Magento Security Center](https://magento.com/security/patches/magento-2.2.7
 
 <!---MAGETWO-82667 -->
 
-* The Magento UI mixins have been edited to improve performance. Changes include:
+*  The Magento UI mixins have been edited to improve performance. Changes include:
 
-    * removing all fallbacks to variables that don't exist in the global scope
+   *  removing all fallbacks to variables that don't exist in the global scope
 
-    * defining all variables that are used inside mixins as parameters
+   *  defining all variables that are used inside mixins as parameters
 
-    * adding all missing parameters to the areas of the code where mixins are invoked
+   *  adding all missing parameters to the areas of the code where mixins are invoked
 
-    * moving and simplifying mixins used only once. *Fix submitted by Bartek Igielski in pull request [11371](https://github.com/magento/magento2/pull/11371)*.
+   *  moving and simplifying mixins used only once. *Fix submitted by Bartek Igielski in pull request [11371](https://github.com/magento/magento2/pull/11371)*.
 
 <!---MAGETWO-82760 -->
 

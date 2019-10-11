@@ -63,3 +63,6 @@ pages:
 
         - label: Creating a custom import entity
           url: /ext-best-practices/tutorials/custom-import-entity.html
+
+        - label: Creating a custom widget
+          url: /ext-best-practices/tutorials/custom-widget.html
