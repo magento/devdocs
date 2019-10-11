@@ -5,15 +5,15 @@ title: createPaypalExpressToken mutation
 
 The `createPaypalExpressToken` mutation begins the authorization process for the following payment methods:
 
-* PayPal Express Checkout
-* PayPal Payflow Pro with Express Checkout
-* PayPal Payflow Link with Express Checkout
+*  PayPal Express Checkout
+*  PayPal Payflow Pro with Express Checkout
+*  PayPal Payflow Link with Express Checkout
 
 The input includes the cart ID, the payment method code, and a set of URLs that PayPal uses to respond to the token request. If the request is successful, PayPal returns a token. The [`setPaymentMethodOnCart`]({{page.baseurl}}/graphql/mutations/set-payment-method.html) mutation uses this token later in the authorization process.
 
 ## Syntax
 
-`mutation: {createPaypalExpressToken(input: PaypalExpressTokenInput!): {PaypalExpressToken}}`
+`mutation: {createPaypalExpressToken(input: PaypalExpressTokenInput!): {PaypalExpressTokenOutput}}`
 
 ## Example usage
 
@@ -85,7 +85,10 @@ Attribute |  Data Type | Description
 
 ## Output attributes
 
-### PaypalExpressToken {#PaypalExpressToken}
+{:.bs-callout-info}
+The `createPaypalExpressToken` mutation previously returned a `PaypalExpressToken` object, which has been deprecated. The mutation now returns a `PaypalExpressTokenOutput` object. The contents of these objects are identical.
+
+### PaypalExpressTokenOutput {#PaypalExpressTokenOutput}
 
 The `PaypalExpressToken` object contains a token returned by PayPal and a set of URLs that allow the buyer to authorize payment and adjust checkout details.
 
