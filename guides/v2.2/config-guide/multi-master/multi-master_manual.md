@@ -342,7 +342,7 @@ Run the script as follows:
 
 1. At the `mysql >` prompt, run the script as follows:
   `source <path>/<script>.sql`
-  
+
    For example,
 
    ```shell
