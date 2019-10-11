@@ -64,6 +64,9 @@ pages:
         - label: DropdownDialog widget
           url: /javascript-dev-guide/widgets/widget_dialog.html
 
+        - label: FolderTree widget
+          url: /javascript-dev-guide/widgets/widget-folder-tree.html
+
         - label: Gallery widget
           url: /javascript-dev-guide/widgets/widget_gallery.html
 

@@ -310,6 +310,9 @@ pages:
         - label: Profile database queries
           url: /cloud/project/profile-database-queries.html
 
+        - label: Manage disk space
+          url: /cloud/project/manage-disk-space.html
+
         - label: Snapshots and backup management
           url: /cloud/project/project-webint-snap.html
 
