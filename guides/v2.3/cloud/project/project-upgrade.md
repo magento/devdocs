@@ -23,7 +23,7 @@ If you use PHP version 7.2, you must remove the `mcrypt` extension from the [`ex
 1.  Change to your Magento root directory and set the upgrade version using the [version constraint syntax]({{page.baseurl}}/cloud/project/ece-tools-upgrade-project.html#metapackage).
 
     ```bash
-    composer require "magento/magento-cloud-metapackage":">=2.3.2 <2.3.3" --no-update
+    composer require "magento/magento-cloud-metapackage":">=2.3.3 <2.3.4" --no-update
     ```
 
     {: .bs-callout-info }
