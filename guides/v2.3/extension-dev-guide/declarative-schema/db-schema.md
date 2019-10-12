@@ -473,6 +473,7 @@ Module B disables the original primary key and sets a new primary key with a `re
 
 When a module is disabled in `app/etc/config.php`, its database schema configuration is no longer read on upgrade or install. As a result, subsequent system upgrades rebuild the database schema without the module's tables, columns, or other elements.
 Please note that the `db_schema_whitelist.json` file of disabled modules is still read during upgrades of installs, so the declarative schema system can perform the necessary operations.
+Practically, this means that if you disable a module which uses declarative schema and run `bin/magento setup:upgrade`, *its database tables will be dropped* (see more details and discussion at  https://github.com/magento/magento2/issues/24926). Please consider using `setup:upgrade --safe-mode=1` in order to create a database backup after disabling a module and then eventually `setup:upgrade --data-restore=1` if you enable the module back and wish to restore from that backup.
 
 [How to generate urns?]:{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-urn.html
 [Db Schema Autocomplete]:{{ page.baseurl }}/extension-dev-guide/declarative-schema/images/db-schema-autocomplete.png

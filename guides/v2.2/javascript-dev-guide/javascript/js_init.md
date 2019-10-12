@@ -180,5 +180,23 @@ define ([
 });
 ```
 
+## Execute data-mage-init and x-magento-init in dynamic content
+
+To trigger `.trigger('contentUpdated')` on the element when dynamic content is injected, use:
+
+```javascript
+$.ajax({
+    url: 'https://www.example.com',
+    method: 'POST',
+    data: {
+        id: '1'
+    },
+    success: function (data) {
+        $('.example-element').html(data)
+                             .trigger('contentUpdated')
+    }
+});
+```
+
 [using the \<script\> tag]: #init_script
 [selector]: https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector
