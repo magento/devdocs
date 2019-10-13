@@ -15,7 +15,7 @@ The REST low-quantity notification endpoints manage the values that merchants se
 
 **Service names**
 
-```
+```http
 inventoryLowQuantityNotificationApiGetSourceItemConfigurationV1
 inventoryLowQuantityNotificationApiSourceItemConfigurationsSaveV1
 inventoryLowQuantityNotificationApiDeleteSourceItemsConfigurationV1
@@ -23,7 +23,7 @@ inventoryLowQuantityNotificationApiDeleteSourceItemsConfigurationV1
 
 **REST endpoints**
 
-```
+```http
 POST /V1/inventory/low-quantity-notification
 GET /V1/inventory/low-quantity-notification/:sourceCode/:sku
 POST /V1/inventory/low-quantity-notifications-delete
@@ -51,19 +51,19 @@ The `POST /V1/inventory/low-quantity-notification` endpoint accepts an array of 
 {
   "sourceItemConfigurations": [
     {
-    	"source_code": "baltimore_wh",
-    	"notify_stock_qty": 10,
-    	"sku": "sp1"
+      "source_code": "baltimore_wh",
+      "notify_stock_qty": 10,
+      "sku": "sp1"
     },
     {
-    	"source_code": "austin_wh",
-    	"notify_stock_qty": 8,
-    	"sku": "sp1"
+      "source_code": "austin_wh",
+      "notify_stock_qty": 8,
+      "sku": "sp1"
     },
     {
-    	"source_code": "reno_wh",
-    	"notify_stock_qty": 5,
-    	"sku": "sp1"
+      "source_code": "reno_wh",
+      "notify_stock_qty": 5,
+      "sku": "sp1"
     }
   ]
 }

@@ -98,7 +98,7 @@ stage:
 
 By default, the deployment process overwrites all settings in the `env.php` file. Refer to [Manage message queues]({{ page.baseurl }}/config-guide/mq/manage-mysql.html) for more information about how this works in {{site.data.var.ce}} and {{site.data.var.ee}}.
 
-#### To see a list of message queue consumers:
+The following command returns a list of message queue consumers:
 
 ```bash
 ./bin/magento queue:consumers:list
@@ -129,7 +129,10 @@ stage:
 -  **Default**—_Not set_
 -  **Version**—Magento 2.1.4 and later
 
-Use the Project Web UI to set this value. When you move the database from one environment to another without an installation process, you need the corresponding cryptographic information. Magento uses the encryption key value set in the Web UI as the `crypt/key` value in the `env.php` file. This does not overwrite an existing encryption key value in the `env.php` file.
+{{ .bs-callout-warning }}
+You must set the `CRYPT_KEY` value through the Project Web UI instead of the `.magento.env.yaml` file to avoid exposing the key in the source code repository for your environment. See [Set environment and project variables]{{ page.baseurl }}/cloud/project/project-webint-basic.html#project-conf-env-var).
+
+When you move the database from one environment to another without an installation process, you need the corresponding cryptographic information. Magento uses the encryption key value set in the Web UI as the `crypt/key` value in the `env.php` file. This does not overwrite an existing encryption key value in the `env.php` file.
 
 ### `DATABASE_CONFIGURATION`
 
@@ -227,7 +230,7 @@ stage:
       indices_settings:
         number_of_shards: 3
         number_of_replicas: 3
-        _merge: true
+      _merge: true
 ```
 
 **Known limitations**—

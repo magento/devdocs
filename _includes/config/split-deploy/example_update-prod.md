@@ -1,24 +1,42 @@
 To update the production system:
 
-1.	Log in to your production system as, or switch to, the [Magento file system owner](https://glossary.magento.com/magento-file-system-owner).
-2.	Start maintenance mode:
+1. Log in to your production system as, or switch to, the [Magento file system owner](https://glossary.magento.com/magento-file-system-owner).
+1. Start maintenance mode:
 
-		cd <Magento root dir>
-		php bin/magento maintenance:enable
+   ```bash
+   cd <Magento root dir>
+   ```
 
-	For additional options, such as the ability to set an IP address whitelist, see [`magento maintenance:enable`]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-maint.html).
-3.	If you use {{site.data.var.ee}}, stop queue workers. TBD
-3.	Pull code from source control.
+   ```bash
+   php bin/magento maintenance:enable
+   ```
 
-	The Git command follows:
+   For additional options, such as the ability to set an IP address whitelist, see [`magento maintenance:enable`]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-maint.html).
 
-		git pull mconfig m2.2_deploy
-4.	Update the configuration:
+1. If you use {{site.data.var.ee}}, stop queue workers. TBD
 
-		php bin/magento app:config:import
-5.	Clean the cache:
+1. Pull code from source control.
 
-		php bin/magento cache:clean
-4.	End maintenance mode:
+   The Git command follows:
 
-		php bin/magento maintenance:disable
+   ```bash
+   git pull mconfig m2.2_deploy
+   ```
+
+1. Update the configuration:
+
+   ```bash
+   php bin/magento app:config:import
+   ```
+
+1. Clean the cache:
+
+   ```bash
+   php bin/magento cache:clean
+   ```
+
+1. End maintenance mode:
+
+   ```bash
+   php bin/magento maintenance:disable
+   ```

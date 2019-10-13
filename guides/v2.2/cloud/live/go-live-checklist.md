@@ -6,9 +6,7 @@ functional_areas:
   - Testing
 ---
 
-## Pre-Launch Checklist {#checklist}
-
-Prior to launch and switching the DNS, you can download and follow the [Checklist]({{ site.baseurl }}/common/pdf/Pre-Launch.Checklist_4_23_2018.docx) and all tests for your deployed site or store. See an overview of the complete deployment process for Starter and Pro at [Deploy your store]({{ page.baseurl }}/cloud/live/stage-prod-live.html).
+Before you deploy to the Production environment, download the [Go live checklist]({{ site.baseurl }}/common/pdf/Pre-Launch.Checklist_4_23_2018.docx) and use it with these instructions to confirm that you have completed all required configuration and testing. See an overview of the complete deployment process for Starter and Pro at [Deploy your store]({{ page.baseurl }}/cloud/live/stage-prod-live.html).
 
 ## Completely test in Production {#test}
 
@@ -22,20 +20,20 @@ You need to complete configurations for your DNS including:
 *  Set the zone’s root resource record to address the hostname
 *  Lower the value for the Time-to-Live (TTL) to refresh DNS information to correctly point customers faster to the Production store
 
-  We recommend a significantly lower TTL value when switching the DNS record. This value tells the DNS how long to cache the DNS record. When shortened, it refreshes the DNS faster. For example, changing this value from 3 days to 10 minutes. Be advised, this adds load to the web server.
+We recommend a significantly lower TTL value when switching the DNS record. This value tells the DNS how long to cache the DNS record. When shortened, it refreshes the DNS faster. For example, changing this value from 3 days to 10 minutes. Be advised, this adds load to the web server.
 
 After checking with your registrar about where to change your DNS settings, add a CNAME record for your website that points to the Fastly service: `prod.magentocloud.map.fastly.net`. If you use multiple hostnames for your site, you must add a CNAME record for each one.
 
-{:.bs-callout .bs-callout-info}
+{: .bs-callout-info }
 This does not work for an [apex domain](https://blog.cloudflare.com/zone-apex-naked-domain-root-domain-cname-supp) (also referred to as a _naked_ domain). You must use a DNS provider that supports forwarding DNS queries to use an apex domain.
 
 The following list contains examples of DNS providers for informational purposes. Use your preferred DNS provider.
 
-*	CNAME with ALIAS record from [Dyn](http://dyn.com)
-*	ANAME record on [DNS Made Easy](http://www.dnsmadeeasy.com)
-*	ANAME at [easyDNS](https://www.easydns.com)
-*	ACNAME at [CloudFlare](https://www.cloudflare.com)
-*	ALIAS at [PointDNS](https://pointhq.com)
+* CNAME with ALIAS record from [Dyn](http://dyn.com)
+* ANAME record on [DNS Made Easy](http://www.dnsmadeeasy.com)
+* ANAME at [easyDNS](https://www.easydns.com)
+* ACNAME at [CloudFlare](https://www.cloudflare.com)
+* ALIAS at [PointDNS](https://pointhq.com)
 
 Many other DNS providers also offer workarounds to accomplish this goal. The most common is to add a CNAME record for the `www` host on the domain and then use the DNS provider's redirect service to redirect the apex over to the `www` version of the domain. Consult your DNS provider for more information.
 
@@ -58,21 +56,22 @@ Make a final pass for any Production configurations in the store(s). If you need
 
 The following are recommended changes and checks:
 
-*	Outgoing email has been tested
-*	Base URL and Base Admin URL are set correctly
-*	Change the default Magento Admin password
+* Outgoing email has been tested
+* Base URL and Base Admin URL are set correctly
+* Change the default Magento Admin password
 
-	See [Configuring Admin Security](http://docs.magento.com/m2/ee/user_guide/stores/security-admin.html) for further information on Admin configurations.
-*	Optimize all images for the web
-*	[Enable minification](http://docs.magento.com/m2/ee/user_guide/system/file-optimization.html) for JS, CSS, and HTTP
+   See [Configuring Admin Security](http://docs.magento.com/m2/ee/user_guide/stores/security-admin.html) for further information on Admin configurations.
+
+* Optimize all images for the web
+* [Enable minification](http://docs.magento.com/m2/ee/user_guide/system/file-optimization.html) for JS, CSS, and HTTP
 
 ## Verify Fastly caching {#verifyfastly}
 
 Test and verify Fastly caching is correctly working in Production. For detailed tests and checks, see [Fastly testing]({{ page.baseurl }}/cloud/live/stage-prod-test.html#fastly).
 
-*	Make sure that pages are being correctly cached in the page cache and Fastly
-*	Make sure the Fastly Extension is up-to-date
-*	Make sure the Fastly VCL is up-to-date
+* Make sure that pages are being correctly cached in the page cache and Fastly
+* Make sure the Fastly Extension is up-to-date
+* Make sure the Fastly VCL is up-to-date
 
 ## Performance testing {#performance}
 
@@ -86,5 +85,7 @@ You can also test using the following 3rd party options:
 * [Blackfire]({{ page.baseurl }}/cloud/project/project-integrate-blackfire.html) (provided): Helps track through the issues New Relic finds and helps you dig deeper into the issue for specifics. Blackfire profiles the environment and helps locate bottlenecks in depth: process, method call, query, load, and so on.
 * [WebPageTest](https://www.webpagetest.org/) and [Pingdom](https://www.pingdom.com/): Real-time analysis of your site pages load time with different origin locations. Pingdom may cost a fee. WebPageTest is a free tool.
 
-#### Next step:
+{:.ref-header}
+Next step
+
 [Launch steps]({{ page.baseurl }}/cloud/live/launch-steps.html)

@@ -12,8 +12,8 @@ This reference shows suggested `.gitignore` files to use in a development system
 ## .gitignore for development
 We recommend you use the `.gitignore` provided with Magento in a development system with the following changes&mdash;comment out the following so they are included in source control:
 
-*	`pub/media/*`
-*	`pub/media/wysiwyg/*.*`
+* `pub/media/*`
+* `pub/media/wysiwyg/*.*`
 
 {% collapsible Show `.gitignore` for development %}
 
@@ -97,10 +97,10 @@ You should use the same `.gitignore` in both your build and production systems s
 
 Changes compared to the default `.gitignore`:
 
-*	The `/pub/media/*.*` directory is included in source control
-*	The `/pub/media/wysiwyg` directory is included in source control
-*	The `/pub/static/*.*` directory is included in source control
-*	The `/generated` directory and subdirectories are included in source control
+* The `/pub/media/*.*` directory is included in source control
+* The `/pub/media/wysiwyg` directory is included in source control
+* The `/pub/static/*.*` directory is included in source control
+* The `/generated` directory and subdirectories are included in source control
 
 {% collapsible Show .gitignore for build and production %}
 

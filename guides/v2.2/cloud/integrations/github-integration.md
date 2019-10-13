@@ -87,65 +87,66 @@ The following enables the GitHub integration and provides a Payload URL to use w
 {: .bs-callout .bs-callout-warning}
 The following command overwrites _all_ code in your {{site.data.var.ece}} project with code from your GitHub repository. This includes all branches, including the Production branch. This action happens instantly and cannot be undone. As a best practice, it is very important to clone all of your branches from your {{site.data.var.ece}} project and push them to your GitHub repository **before** adding the GitHub integration.
 
-#### To enable the GitHub integration:
+{:.procedure}
+To enable the GitHub integration:
 
-1.  Enable the integration.
+1. Enable the integration.
 
-    ```bash
-    magento-cloud integration:add --type=github --project=<project-ID> --token=<your-GitHub-token> {--repository=USER/REPOSITORY | --repository=ORGANIZATION/REPOSITORY} [--build-pull-requests={true|false} --fetch-branches={true|false}
-    ```
+   ```bash
+   magento-cloud integration:add --type=github --project=<project-ID> --token=<your-GitHub-token> {--repository=USER/REPOSITORY | --repository=ORGANIZATION/REPOSITORY} [--build-pull-requests={true|false} --fetch-branches={true|false}
+   ```
 
-    -   `<project-ID>`—Your {{site.data.var.ece}} project ID
-    -   `<your-GitHub-token>`—The personal access token you generated for GitHub
-    -   `--repository=USER/REPOSITORY`—Your personal GitHub repository name
-    -   `--repository=ORGANIZATION/REPOSITORY`—The organization repository name
-    -   `--build-pull-requests`—An _optional_ parameter that instructs {{site.data.var.ece}} to deploy after you merge a pull request (`true` by default)
-    -   `--fetch-branches`—An _optional_ parameter that causes {{site.data.var.ece}} to track branches and deploy after you update a branch (`true` by default)
+   -  `<project-ID>`—Your {{site.data.var.ece}} project ID
+   -  `<your-GitHub-token>`—The personal access token you generated for GitHub
+   -  `--repository=USER/REPOSITORY`—Your personal GitHub repository name
+   -  `--repository=ORGANIZATION/REPOSITORY`—The organization repository name
+   -  `--build-pull-requests`—An _optional_ parameter that instructs {{site.data.var.ece}} to deploy after you merge a pull request (`true` by default)
+   -  `--fetch-branches`—An _optional_ parameter that causes {{site.data.var.ece}} to track branches and deploy after you update a branch (`true` by default)
 
-    **Example 1**: Enable the GitHub integration for a personal, private repository:
+   **Example 1**: Enable the GitHub integration for a personal, private repository:
 
-    ```bash
-    magento-cloud integration:add --type=github --project=ov58dlacU2e --token=<token> --repository=myUserName/myrepo
-    ```
+   ```bash
+   magento-cloud integration:add --type=github --project=ov58dlacU2e --token=<token> --repository=myUserName/myrepo
+   ```
 
-    **Example 2**: Enable the GitHub integration for an organization repository:
+   **Example 2**: Enable the GitHub integration for an organization repository:
 
-    ```bash
-    magento-cloud integration:add --type=github --project=ov58dlacU2e --token=<token> --repository=Magento/teamrepo
-    ```
+   ```bash
+   magento-cloud integration:add --type=github --project=ov58dlacU2e --token=<token> --repository=Magento/teamrepo
+   ```
 
-1.  Enter the required information when prompted.
+1. Enter the required information when prompted.
 
-1.  Copy the **Payload URL** displayed by the return output.
+1. Copy the **Payload URL** displayed by the return output.
 
-    ```terminal
-    Created integration wp2f2thlmxwcg (type: github)
-    Repository: myUserName/myrepo
-    Build PRs: yes
-    Fetch branches: yes
-    Payload URL: https://us.magento.cloud/api/projects/ov58dlacU2e/integrations/wO8a0eoamxwcg/hook
-    ```
-    {: .no-copy}
+   ```terminal
+   Created integration wp2f2thlmxwcg (type: github)
+   Repository: myUserName/myrepo
+   Build PRs: yes
+   Fetch branches: yes
+   Payload URL: https://us.magento.cloud/api/projects/ov58dlacU2e/integrations/wO8a0eoamxwcg/hook
+   ```
+   {: .no-copy}
 
 ## Add the webhook in GitHub
 
 In order to communicate events—such as a push—with your Cloud Git server, you need to create a webhook for your GitHub repository:
 
-1.  In your GitHub repository, click the **Settings** tab.
+1. In your GitHub repository, click the **Settings** tab.
 
-1.  In the left navigation bar, click **Webhooks**.
+1. In the left navigation bar, click **Webhooks**.
 
-1.  In the _Webhooks_ pane, click **Add webhook**.
+1. In the _Webhooks_ pane, click **Add webhook**.
 
-1.  In the _Webhooks/Add webhook_ form, edit the following fields:
+1. In the _Webhooks/Add webhook_ form, edit the following fields:
 
-    -  **Payload URL**: Enter the URL returned when you enabled the GitHub integration.
-    -  **Content type**: Choose **application/json** from the list.
-    -  **Secret**: Enter a verification secret.
-    -  **Which events would you like to trigger this webhook?**: Select **Send me everything**.
-    -  Select the **Active** checkbox.
+   -  **Payload URL**: Enter the URL returned when you enabled the GitHub integration.
+   -  **Content type**: Choose **application/json** from the list.
+   -  **Secret**: Enter a verification secret.
+   -  **Which events would you like to trigger this webhook?**: Select **Send me everything**.
+   -  Select the **Active** checkbox.
 
-1.  Click **Add webhook**.
+1. Click **Add webhook**.
 
 ## Test the integration
 

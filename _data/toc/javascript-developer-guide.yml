@@ -64,6 +64,9 @@ pages:
         - label: DropdownDialog widget
           url: /javascript-dev-guide/widgets/widget_dialog.html
 
+        - label: FolderTree widget
+          url: /javascript-dev-guide/widgets/widget-folder-tree.html
+
         - label: Gallery widget
           url: /javascript-dev-guide/widgets/widget_gallery.html
 
@@ -105,6 +108,9 @@ pages:
 
         - label: RedirectUrl widget
           url: /javascript-dev-guide/widgets/widget_redirectUrl.html
+
+        - label: RemainingCharacters widget
+          url: /javascript-dev-guide/widgets/widget-remaining-characters.html
 
         - label: RowBuilder widget
           url: /javascript-dev-guide/widgets/widget-row-builder.html

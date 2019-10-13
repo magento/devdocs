@@ -12,7 +12,8 @@ Typically, an _update_ includes patches and available hotfixes as part of the `m
 
 {% include cloud/note-upgrade.md %}
 
-#### To update the `{{site.data.var.ct}}` package:
+{:.procedure}
+To update the `{{site.data.var.ct}}` package:
 
 1.  On your local workstation, perform an update using Composer.
 
@@ -26,7 +27,7 @@ Typically, an _update_ includes patches and available hotfixes as part of the `m
 1.  Add, commit, and push your code changes.
 
     ```bash
-    git add -A && git commit -m "Update magento/ece-tools" && git push origin <branch name>
+    git add -A && git commit -m "Update magento/ece-tools" && git push origin <branch-name>
     ```
 
 1.  After test validation, merge this branch to the Integration branch.
