@@ -14,4 +14,4 @@ If you need to add a file that is in the `.gitignore` list, you can use the -f (
 git add <path/filename> -f
 ```
 
-If you looking for `.gitignore` file for Magneto Commerce Cloud project. Please see [Ignoring files section](https://devdocs.magento.com/guides/v2.3/cloud/project/project-start.html)
+If you looking for `.gitignore` file for Magento Commerce Cloud project. Please see [Ignoring files section](https://devdocs.magento.com/guides/v2.3/cloud/project/project-start.html)
