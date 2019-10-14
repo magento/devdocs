@@ -169,8 +169,14 @@ The output of the PHP command resembles this output:
 **JsTestDriver output:**
 
 ```bash
-$ php <magento2_root_dir>dev/tests/js/run_js_tests.php
+php <magento2_root_dir>dev/tests/js/run_js_tests.php
+```
+
+```bash
 java -jar C:\Users\mchiocca\lib\JsTestDriver.jar --config C:\git\magento2\dev\tests\js/jsTestDriver.conf --port 9876 --browser "C:\Program Files (x86)\Mozilla Firefox\firefox.exe" --tests all --testOutput C:\git\magento2\dev\tests\js/test-output
+```
+
+```terminal
 setting runnermode QUIET
 ....................................
 Total 36 tests (Passed: 36; Fails: 0; Errors: 0) (138.00 ms)

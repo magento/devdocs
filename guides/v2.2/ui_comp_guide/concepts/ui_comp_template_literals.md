@@ -5,8 +5,6 @@ contributor_name: SwiftOtter Studios
 contributor_link: https://swiftotter.com/
 ---
 
-## Template Literals in Magento
-
 Magento provides for the use of template literals in UI components. Template literals are strings that can contain embedded expressions. They were introduced into JavaScript with ES2015 and were called "template strings" in early editions of the ES2015 / ES6 specification. Since it is a relatively new part of JavaScript, some browsers, such as Internet Explorer 11, do not support the specification. Per the specification standard, back-ticks (`` ` ``) are used instead of a single quote (`'`) or double quote (`"`) to delineate a template string. Due to the lack of browser support, Magento has a JavaScript class that will parse certain strings with a single quote (`'`) in the same way a browser that supports the specification would parse one with back-ticks.
 
 Template literals can contain expressions which will be evaluated in the current KnockoutJS context. These expressions can contain nearly any valid [JavaScript](https://glossary.magento.com/javascript). They must start with a dollar sign and be surrounded with curly braces. **Anything inside the following will be evaluated as an expression**: `${  }`. For example, they can be used—and often are—to access properties of the KnockoutJS context like this: `'${ $.submitUrl }'`. They can be used to call functions (`'${ $.loadForm($.formUrl) }'`), or whatever: `'${ 20 + 13 }'`. These expressions are parsed in `/lib/web/mage/utils/template.js`.
