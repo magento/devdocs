@@ -66,9 +66,9 @@ This section discusses how to configure an Elasticsearch proxy using a virtual h
    curl -i http://localhost:8080/_cluster/health
    ```
 
-   ```terminal
    Messages similar to the following display to indicate success:
 
+   ```terminal
    HTTP/1.1 200 OK
    Date: Tue, 23 Feb 2016 20:38:03 GMT
    Content-Type: application/json; charset=UTF-8
