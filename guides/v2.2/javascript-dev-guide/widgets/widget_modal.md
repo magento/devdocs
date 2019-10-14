@@ -186,9 +186,9 @@ The type of window: 'popup' or 'slide'.
 
 The modal widget has the following methods:
 
+-   [openModal()](#modal_open)
 -   [closeModal()](#modal_close)
 -   [keyEventSwitcher()](#modal_keyEventSwitcher)
--   [openModal()](#modal_open)
 -   [toggleModal()](#modal_toggleModal)
 
 ### `openModal()` {#modal_open}
