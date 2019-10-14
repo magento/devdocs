@@ -179,7 +179,7 @@ The following query returns information about the store's catalog configuration.
 
 ### Query a store's fixed product tax configuration
 
-The following query returns enumeration values that indicate the store's fixed product tax configuration,
+The following query returns enumeration values that indicate the store's fixed product tax configuration.
 
 **Request**
 
