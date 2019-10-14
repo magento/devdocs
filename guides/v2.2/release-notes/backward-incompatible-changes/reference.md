@@ -16,7 +16,7 @@ The changes are aggregated into two tables:
 1. **Changes in classes** that contains backward incompatible changes made to the Magento classes
 1. **Changes in interfaces** that contains backward incompatible changes made to the Magento interfaces
 
-## 2.2.9 - 2.2.10 {#releases-2_2_8-2_2_9}
+## 2.2.9 - 2.2.10 {#releases-2_2_9-2_2_10}
 
 {% include backward-incompatible-changes/open-source/2.2.9-2.2.10.md %}
 
