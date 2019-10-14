@@ -6,7 +6,6 @@ functional_areas:
   - Deploy
   - System
   - Setup
-
 redirect_from:
   - guides/v2.2/config-guide/deployment/pipeline/example/rsync.html
   - guides/v2.3/config-guide/deployment/pipeline/example/rsync.html
@@ -17,19 +16,24 @@ This is done by using a combination of shared configurations, the `config.php` f
 
 This example uses the following configuration settings:
 
-* **Vat Number** and **Store Name** for the shared configuration settings.
-  These are found under **Stores** > Settings > **Configuration** > General > **General**.
-* **Send Emails To** for the sensitive configuration value.
-  This is found under **Stores** > Settings > **Configuration** > General > **Contacts**.
-* **Default Email Domain** for the system-specific configuration value.
-  This is found under **Stores** > Settings > **Configuration** > Customers > **Customer Configuration** > **Create New Account Options**.
+*  **Vat Number** and **Store Name** for the shared configuration settings.
+
+   These are found under **Stores** > Settings > **Configuration** > General > **General**.
+
+*  **Send Emails To** for the sensitive configuration value.
+
+   This is found under **Stores** > Settings > **Configuration** > General > **Contacts**.
+
+*  **Default Email Domain** for the system-specific configuration value.
+
+   This is found under **Stores** > Settings > **Configuration** > Customers > **Customer Configuration** > **Create New Account Options**.
 
 You can use the same procedure shown in this example to configure any settings in the following references:
 
-* [Sensitive and system-specific configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-sens.html)
-* [Payment configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-payment.html)
-* [Other configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-most.html)
-* [Magento Enterprise B2B Extension configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-b2b.html)
+*  [Sensitive and system-specific configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-sens.html)
+*  [Payment configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-payment.html)
+*  [Other configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-most.html)
+*  [Magento Enterprise B2B Extension configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-b2b.html)
 
 ## Before you begin
 
@@ -42,38 +46,40 @@ You can choose different configuration options if you wish.
 
 For the purposes of this example, we assume the following:
 
-* You use Git source control
-* The development system is available in a Git remote repository named `mconfig`
-* Your Git working branch is named `m2.2_deploy`
+*  You use Git source control
+*  The development system is available in a Git remote repository named `mconfig`
+*  Your Git working branch is named `m2.2_deploy`
 
 ## Step 1: Set the configuration in the development system {#deploy-sens-setconfig}
 
 To set the default locale and weight units in your development system:
 
 1. Log in to the Magento Admin.
-2. Click **Stores** > Settings > **Configuration** > General > **General**.
-3. If you have more than one website available, use the **Store View** list in the upper left corner to switch to a different website as the following figure shows.
+1. Click **Stores** > Settings > **Configuration** > General > **General**.
+1. If you have more than one website available, use the **Store View** list in the upper left corner to switch to a different website as the following figure shows.
 
    ![Switch websites]({{ site.baseurl }}/common/images/config_split-deploy_switch-website.png){:width="250px"}
-4. In the right pane, expand **Store Information**.
-5. If necessary, clear the **Use Default** checkbox next to the **VAT Number** and **Store Name** fields.
-6. Enter a number in the field (for example, `12345`).
-7. In the **Store Name** field, enter a value (like `My Store`).
-8. Click **Save Config**.
-9. In the left navigation, under General, click **Contacts**.
-10. In the right pane, expand **Email Options**.
-11. If necessary, clear the **Use Default** checkbox next to the **Send Emails To** field.
-12. Enter an e-mail address in the field.
-13. Click **Save Config**.
-14. Use the **Store View** list to select the **Default Config** as the following figure shows.
 
-    ![Switch to the default config]({{ site.baseurl }}/common/images/config_split-deploy_default-config.png){:width="200px"}
-15. In the left pane, click Customers > **Customer Configuration**.
-16. In the right pane, expand **Create New Account Options**.
-17. If necessary, clear the **Use system value** checkbox next to the **Default Email Domain** field.
-18. Enter a domain name in the field.
-19. Click **Save Config**.
-20. If prompted, flush the cache.
+1. In the right pane, expand **Store Information**.
+1. If necessary, clear the **Use Default** checkbox next to the **VAT Number** and **Store Name** fields.
+1. Enter a number in the field (for example, `12345`).
+1. In the **Store Name** field, enter a value (like `My Store`).
+1. Click **Save Config**.
+1. In the left navigation, under General, click **Contacts**.
+1. In the right pane, expand **Email Options**.
+1. If necessary, clear the **Use Default** checkbox next to the **Send Emails To** field.
+1. Enter an e-mail address in the field.
+1. Click **Save Config**.
+1. Use the **Store View** list to select the **Default Config** as the following figure shows.
+
+   ![Switch to the default config]({{ site.baseurl }}/common/images/config_split-deploy_default-config.png){:width="200px"}
+
+1. In the left pane, click Customers > **Customer Configuration**.
+1. In the right pane, expand **Create New Account Options**.
+1. If necessary, clear the **Use system value** checkbox next to the **Default Email Domain** field.
+1. Enter a domain name in the field.
+1. Click **Save Config**.
+1. If prompted, flush the cache.
 
 ## Step 2: Update the configuration
 
@@ -94,34 +100,36 @@ Now that you've committed your changes to the shared configuration to source con
 
 The last step in the process is to update your production system. You must do it in two parts:
 
-* [Update the sensitive and system-specific settings](#config-split-verify-sens)
-* [Update the shared settings](#config-split-verify-shared)
+*  [Update the sensitive and system-specific settings](#config-split-verify-sens)
+*  [Update the shared settings](#config-split-verify-shared)
 
 ### Update the sensitive and system-specific settings {#config-split-verify-sens}
 
 To set the sensitive and system-specific settings using environment variables, you must know the following:
 
-* Each setting's scope
+*  Each setting's scope
 
-  If you followed the instructions in [Step 1](#deploy-sens-setconfig), the scope for **Send Emails To** is website and the scope for **Default Email Domain** is global (that is, the Default Config scope).
+   If you followed the instructions in [Step 1](#deploy-sens-setconfig), the scope for **Send Emails To** is website and the scope for **Default Email Domain** is global (that is, the Default Config scope).
 
-  You need the website code to set the **Send Emails To** configuration value.
-  For more information on finding this value, see: [Use environment variables to override configuration settings]({{ page.baseurl }}/config-guide/prod/config-reference-var-name.html).
-* Configuration paths for the settings used in this example:
+   You need the website code to set the **Send Emails To** configuration value.
 
-  | Setting name         | Configuration path                     |
-  | -------------------- | -------------------------------------- |
-  | Send Emails To       | `contact/email/recipient_email`        |
-  | Default Email Domain | `customer/create_account/email_domain` |
+   For more information on finding this value, see: [Use environment variables to override configuration settings]({{ page.baseurl }}/config-guide/prod/config-reference-var-name.html).
 
-  For all sensitive and system-specific configuration paths, see: [Sensitive and system-specific configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-sens.html).
+*  Configuration paths for the settings used in this example:
+
+   | Setting name         | Configuration path                     |
+   | -------------------- | -------------------------------------- |
+   | Send Emails To       | `contact/email/recipient_email`        |
+   | Default Email Domain | `customer/create_account/email_domain` |
+
+   For all sensitive and system-specific configuration paths, see: [Sensitive and system-specific configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-sens.html).
 
 ### Set the variables using CLI commands
 
 Use the following CLI commands to set system-specific and sensitive configuration settings:
 
-* `magento config:set` for system-specific settings
-* `magento config:sensitive:set` for sensitive settings
+*  `magento config:set` for system-specific settings
+*  `magento config:sensitive:set` for sensitive settings
 
 To set the system-specific setting **Default Email Domain**, which is in the default scope, use the following command:
 
