@@ -57,21 +57,15 @@ In such migration testing, follow these steps:
 
    For example: the `enterprise_salesarchive_archive_orders` cron job moves old orders to archive. Running this job during migration is safe because the Delta mode takes the job into account and thus properly processes the archived orders.
 
-{:start="4"}
-
 1. Use the Data Migration Tool to migrate settings and websites.
 
 1. Copy your Magento 1.x media files to Magento 2.x.
 
    You must copy these files manually from the `magento1-root/media` directory to `magento2-root/pub/media`.
 
-{:start="6"}
-
 1. Use the Data Migration Tool to bulk copy your data from Magento 1 database to Magento 2 database.
 
    If some of your extensions have data you want to migrate, you might need to install these extensions adapted for Magento 2. In case the extensions have a different structure in Magento 2 database, use the mapping files provided with the Data Migration Tool.
-
-{:start="7"}
 
 1. Reindex all Magento 2.x indexers. For details, see the [Configuration guide].
 
