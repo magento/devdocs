@@ -134,7 +134,7 @@ When you change from production to developer mode, you should clear generated cl
    rm -rf <magento_root>/generated/metadata/* <magento_root>/generated/code/*
    ```
 
-2. Set the mode:
+1. Set the mode:
 
    ```bash
    bin/magento deploy:mode:set developer
