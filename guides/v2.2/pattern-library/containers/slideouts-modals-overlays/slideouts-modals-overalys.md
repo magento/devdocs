@@ -32,12 +32,12 @@ _Example of panel animation_
 
 The active panel should include the following elements:
 
-* Content container (Panel)
-* A Page title
-* Close control "×" (ESC-key via keyboard)
-* Button bar for actions, including a "Cancel" (ESC-key is Cancel via keyboard)
-* Page content
-* "Shade" to disable lower level page
+*  Content container (Panel)
+*  A Page title
+*  Close control "×" (ESC-key via keyboard)
+*  Button bar for actions, including a "Cancel" (ESC-key is Cancel via keyboard)
+*  Page content
+*  "Shade" to disable lower level page
 
 ![Example of active panel positioned over "parent"](img/slideout-panel2.png)
 
@@ -133,12 +133,12 @@ _Example of a Confirmation Modal_
 
 The active modal should include the following elements:
 
-* ccContent container (Modal Window)
-* A Title
-* cClose control "×" (ESC-key via keyboard)
-* cPage content
-* cCall to action(s), including "Cancel" (ESC-key is Cancel via keyboard)
-* c"Shade" to disable lower level page
+*  Content container (Modal Window)
+*  A Title
+*  Close control "×" (ESC-key via keyboard)
+*  Page content
+*  Call to action(s), including "Cancel" (ESC-key is Cancel via keyboard)
+*  "Shade" to disable lower level page
 
 ### Cancel and Close controls
 
