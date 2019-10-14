@@ -166,7 +166,7 @@ To configure a location with a different directory:
                        passthru: "/static/$resource"
            "/<website>":
                <<: *root
-               passthru: "website/index.php"
+               passthru: "/<website>/index.php"
            "/<website>/static": *static
              ...
    ```
