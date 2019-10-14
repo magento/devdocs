@@ -430,7 +430,7 @@ drwxr-xr-x 70 root root    4096 Mar 28 11:24 ../
 
 #### 4. Configure RequireJS to use bundles
 
-To get RequireJS to use your bundles, add a `onModuleBundleComplete`callback after the `modules` node in the `build.js` file:
+To get RequireJS to use your bundles, add a `onModuleBundleComplete` callback after the `modules` node in the `build.js` file:
 
 ```javascript
 [
@@ -445,8 +445,7 @@ To get RequireJS to use your bundles, add a `onModuleBundleComplete`callback aft
            'mage/bootstrap'
        ],
    },
-]
-
+],
 onModuleBundleComplete: function (data) {
    function onBundleComplete (config, data) {
        const fileName = `${config.dir}/requirejs-config.js`;
