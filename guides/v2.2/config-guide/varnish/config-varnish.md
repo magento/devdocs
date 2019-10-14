@@ -7,23 +7,6 @@ functional_areas:
   - Setup
 ---
 
-#### Contents
-
-*  [Overview of the Varnish solution]
-*  [Varnish topology diagram]
-*  [Process overview]
-*  [Known issues]
-*  Install Varnish and configure Magento to use it:
-   *  [Install Varnish]
-   *  [Configure Varnish and your web server]
-   *  [Configure Magento to use Varnish]
-   *  [Configure Magento to use multiple Varnish instances]
-   *  [Final verification]
-*  Use Varnish:
-   *  [How Magento cache clearing works with Varnish]
-   *  [How Varnish caching works]
-*  [Troubleshooting 503 (Backend Fetch Failed) errors]
-
 ## Overview of the Varnish solution {#config-varnish-over}
 [Varnish Cache] is an open source web application accelerator (also referred to as an *HTTP accelerator* or *caching HTTP reverse proxy*). Varnish stores (or caches) files or fragments of files in memory; this enables Varnish to reduce the response time and network bandwidth consumption on future, equivalent requests. Unlike web servers like Apache and nginx, Varnish was designed for use exclusively with the HTTP protocol.
 
