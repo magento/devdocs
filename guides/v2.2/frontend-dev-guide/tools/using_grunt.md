@@ -90,7 +90,7 @@ To use a custom file for Grunt configuration:
 
    ```config
    {
-    "themes": "dev/tools/grunt/configs/local-themes"
+       "themes": "dev/tools/grunt/configs/local-themes"
    }
    ```
 
@@ -122,4 +122,6 @@ To tell Grunt to use a custom configuration file, instead of the default one, ad
 
 1. Call the `get(%file_alias%)` method to get the configuration file.
 
-   `var themes = fileRouter.get('themes');`
+   ```config
+   var themes = fileRouter.get('themes');
+   ```
