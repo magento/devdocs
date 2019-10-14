@@ -6,9 +6,7 @@ functional_areas:
   - Testing
 ---
 
-## Pre-Launch Checklist {#checklist}
-
-Prior to launch and switching the DNS, you can download and follow the [Checklist]({{ site.baseurl }}/common/pdf/Pre-Launch.Checklist_4_23_2018.docx) and all tests for your deployed site or store. See an overview of the complete deployment process for Starter and Pro at [Deploy your store]({{ page.baseurl }}/cloud/live/stage-prod-live.html).
+Before you deploy to the Production environment, download the [Go live checklist]({{ site.baseurl }}/common/pdf/Pre-Launch.Checklist_4_23_2018.docx) and use it with these instructions to confirm that you have completed all required configuration and testing. See an overview of the complete deployment process for Starter and Pro at [Deploy your store]({{ page.baseurl }}/cloud/live/stage-prod-live.html).
 
 ## Completely test in Production {#test}
 
@@ -87,5 +85,7 @@ You can also test using the following 3rd party options:
 * [Blackfire]({{ page.baseurl }}/cloud/project/project-integrate-blackfire.html) (provided): Helps track through the issues New Relic finds and helps you dig deeper into the issue for specifics. Blackfire profiles the environment and helps locate bottlenecks in depth: process, method call, query, load, and so on.
 * [WebPageTest](https://www.webpagetest.org/) and [Pingdom](https://www.pingdom.com/): Real-time analysis of your site pages load time with different origin locations. Pingdom may cost a fee. WebPageTest is a free tool.
 
-**Next step:**
+{:.ref-header}
+Next step
+
 [Launch steps]({{ page.baseurl }}/cloud/live/launch-steps.html)

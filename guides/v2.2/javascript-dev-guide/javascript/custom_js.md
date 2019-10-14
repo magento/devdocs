@@ -120,8 +120,8 @@ define([
 
 Where the following notation is used:
 
-- `<component_path>`: path to the default component that you extend
-- `<component_alias>`: variable containing the default component that you extend
+-  `<component_path>`: path to the default component that you extend
+-  `<component_alias>`: variable containing the default component that you extend
 
 For example, `Filters.js` script extends the default `filters.js`:
 
@@ -142,12 +142,17 @@ For information about how to initialize your custom JS component in a `.phtml` t
 
 ## Disable default Magento JS {#disable_default_js}
 
-To disable the auto-loading of default Magento JS components and widget
-initialization:
+To disable the auto-loading of default Magento JS components and widget initialization:
 
-1. Create a `requirejs-config.js` file with the following content: `var config = { deps: [ ] };`
+1. Create a `requirejs-config.js` file with the following content:
+
+    ```javascript
+    var config = { deps: [ ] };
+    ```
+
 2. Put the `requirejs-config.js` file in one of the following
   locations:
+
    -  Your custom theme files: `<theme_dir>`
    -  Your custom module files: `<module_dir>/view/frontend`
 
@@ -157,7 +162,8 @@ If you need to enable the loading of default Magento JS components and widget in
 $(mage.apply);
 ```
 
-### Related topic
+{:.ref-header}
+Related topic
 
 -  [JavaScript resources in Magento]({{ page.baseurl }}/javascript-dev-guide/javascript/js-resources.html)
 -  [About AMD modules and RequireJS]({{ page.baseurl }}/javascript-dev-guide/javascript/js-resources.html)

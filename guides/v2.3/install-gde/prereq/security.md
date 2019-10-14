@@ -11,7 +11,8 @@ functional_areas:
 ---
 
 ## SELinux {#install-prereq-selinux}
-[Security Enhanced Linux (SELinux)](http://selinuxproject.org/page/Main_Page) enables CentOS and Ubuntu administrators greater access control over their servers. If you're using SELinux \*and\* Apache must initiate a connection to another host, you must run the commands discussed in this section.
+
+[Security Enhanced Linux (SELinux)](http://selinuxproject.org/page/Main_Page) enables CentOS and Ubuntu administrators greater access control over their servers. If you are using SELinux *and* Apache must initiate a connection to another host, you must run the commands discussed in this section.
 
 {:.bs-callout .bs-callout-info}
 Magento has no recommendation about using SELinux; you can use it for enhanced security if you wish. If you use SELinux, you must configure it properly or the Magento application will function unpredictably. If you choose to use SELinux, consult a resource like [the CentOS wiki](http://wiki.centos.org/HowTos/SELinux) to set up rules to enable communication.
@@ -36,7 +37,7 @@ chcon -R --type httpd_sys_rw_content_t <magento_root>/pub/media
 chcon -R --type httpd_sys_rw_content_t <magento_root>/pub/static
 ```
 
-The preceding commands work only with the Apache web server. Because of the variety of configurations and security requirements, we don't guarantee these commands work in all situations. For more information, see:
+The preceding commands work only with the Apache web server. Because of the variety of configurations and security requirements, we do not guarantee these commands work in all situations. For more information, see:
 
 * [man page](http://linux.die.net/man/8/httpd_selinux)
 * [serverlab](http://www.serverlab.ca/tutorials/linux/web-servers-linux/configuring-selinux-policies-for-apache-web-servers/)
@@ -53,9 +54,7 @@ To enable Apache to initiate a connection to another host with SELinux enabled:
     getenforce
     ```
 
-    `Enforcing` displays to confirm that SELinux is running.
-
-2. Enter one of the following commands:
+  `Enforcing` displays to confirm that SELinux is running.
 
     * CentOS: `setsebool -P httpd_can_network_connect=1`
 
@@ -65,13 +64,14 @@ To enable Apache to initiate a connection to another host with SELinux enabled:
 
 Depending on your security requirements, you might find it necessary to open port 80 and other ports in your firewall. Because of the sensitive nature of networking security, Magento strongly recommends you consult with your IT department before proceeding. Following are some suggested references:
 
-* Ubuntu: [Ubuntu documentation page](https://help.ubuntu.com/community/IptablesHowTo)
-* CentOS: [CentOS how-to](http://wiki.centos.org/HowTos/Network/IPTables).
+*  Ubuntu: [Ubuntu documentation page](https://help.ubuntu.com/community/IptablesHowTo)
+*  CentOS: [CentOS how-to](http://wiki.centos.org/HowTos/Network/IPTables).
 
-#### Related topics:
+{:.ref-header}
+Related topics
 
-* [Apache]({{ page.baseurl }}/install-gde/prereq/apache.html)
-* [PHP 7.1 or 7.2]({{page.baseurl}}/install-gde/prereq/php-centos-ubuntu.html)
-* [MySQL]({{ page.baseurl }}/install-gde/prereq/mysql.html)
-* [Installing optional software]({{ page.baseurl }}/install-gde/prereq/optional.html)
-* [How to get the Magento software]({{ page.baseurl }}/install-gde/bk-install-guide.html)
+*  [Apache]({{ page.baseurl }}/install-gde/prereq/apache.html)
+*  [PHP]({{page.baseurl}}/install-gde/prereq/php-settings.html)
+*  [MySQL]({{ page.baseurl }}/install-gde/prereq/mysql.html)
+*  [Installing optional software]({{ page.baseurl }}/install-gde/prereq/optional.html)
+*  [How to get the Magento software]({{ page.baseurl }}/install-gde/bk-install-guide.html)

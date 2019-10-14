@@ -1,10 +1,6 @@
 ---
 group: installation-guide
-subgroup: 03_install
 title: During installation, fatal PDO error displays
-menu_title: During installation, fatal PDO error displays
-menu_node:
-menu_order: 21
 functional_areas:
   - Install
   - System
@@ -19,4 +15,4 @@ PHP Fatal error:  Class 'PDO' not found in /var/www/html/magento2/setup/module/M
 
 ### Solution
 
-Make sure you installed all [required PHP extensions](../../prereq/php-centos-ubuntu.html).
+Make sure you installed [all required PHP extensions]({{ page.baseurl }}/install-gde/prereq/php-settings.html#verify-installed-extensions).

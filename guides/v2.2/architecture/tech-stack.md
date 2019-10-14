@@ -66,6 +66,7 @@ Magento also provides automated testing suites that include unit, integration, f
 This framework is located in the `dev/tests` directory. The functional testing framework `mtf` can be found in a [separate repository](https://github.com/magento/mtf){:target="_blank"}.
 For more information, see the [Functional Testing Framework]({{ page.baseurl }}/mtf/mtf_introduction.html) guide.
 
-## Related topics
+{:.ref-header}
+Related topics
 
 [Architectural basics]({{ page.baseurl }}/architecture/archi_perspectives/ABasics_intro.html)

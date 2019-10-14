@@ -26,10 +26,10 @@ To modify the Varnish system configuration:
 
 1. As a user with `root` privileges, open your Vanish configuration file in a text editor:
 
-   * CentOS 6: `/etc/sysconfig/varnish`
-   * CentOS 7: `/etc/varnish/varnish.params`
-   * Debian: `/etc/default/varnish`
-   * Ubuntu: `/etc/default/varnish`
+   *  CentOS 6: `/etc/sysconfig/varnish`
+   *  CentOS 7: `/etc/varnish/varnish.params`
+   *  Debian: `/etc/default/varnish`
+   *  Ubuntu: `/etc/default/varnish`
 
 2. Set the Varnish listen port to 80:
 
@@ -112,9 +112,9 @@ include note.html
 type='info'
 content='If Varnish does not start as a service, you must configure SELinux rules to allow it to run. Consult the following resources:
 
--  [flatlinesecurity](http://flatlinesecurity.com/posts/varnish-4-selinux/)
--  [CentOS wiki](https://wiki.centos.org/HowTos/SELinux)
--  [CentOS documentation](https://www.centos.org)'
+*  [flatlinesecurity](http://flatlinesecurity.com/posts/*arnish-4-selinux/)
+*  [CentOS wiki](https://wiki.centos.org/HowTos/SELinux)
+*  [CentOS documentation](https://www.centos.org)'
 
 %}
 
@@ -124,8 +124,8 @@ The following sections discuss how you can verify that Varnish is working but *w
 
 Perform the tasks discussed in the following sections in the order shown:
 
-* [Start Varnish](#config-varnish-verify-start)
-* [netstat](#config-varnish-verify-netstat)
+*  [Start Varnish](#config-varnish-verify-start)
+*  [netstat](#config-varnish-verify-netstat)
 
 ### Start Varnish {#config-varnish-verify-start}
 
@@ -205,11 +205,11 @@ Now you can verify that Varnish is serving pages by looking at [HTML](https://gl
 
 Before you can look at headers, you must set Magento for developer mode. There are several ways to do it, the simplest of which is to modify `.htaccess` in the Magento 2 root. You can also use the [`magento deploy:mode:set`]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html) command.
 
-#### Set Magento for developer mode
+### Set Magento for developer mode
 
 To set Magento for developer mode, use the [`magento deploy:mode:set`]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html#change-to-developer-mode) command.
 
-#### Look at the Varnish log
+### Look at the Varnish log
 
 Make sure Varnish is running then enter the following command on the Varnish server:
 
@@ -238,7 +238,7 @@ A long list of response headers display in your command prompt window. Look for 
 
 If headers like these do *not* display, stop Varnish, check your `default.vcl`, and try again.
 
-#### Look at HTML response headers
+### Look at HTML response headers
 
 There are several ways to look at response headers, including using a browser [plug-in](https://glossary.magento.com/plug-in) or a browser inspector.
 
@@ -264,6 +264,7 @@ Via: 1.1 varnish-v4
 X-Magento-Cache-Debug: HIT
 ```
 
-#### Next step
+{:.ref-header}
+Related topics
 
 [Configure Magento to use Varnish]({{ page.baseurl }}/config-guide/varnish/config-varnish-magento.html)

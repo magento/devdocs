@@ -11,9 +11,9 @@ An **integration** enables third-party services to call the Magento web APIs. Th
 
 Implementing a simple integration requires little knowledge of [PHP](https://glossary.magento.com/php) or Magento internal processes. However, you will need a working knowledge of
 
-* [Magento REST or SOAP Web APIs]({{ page.baseurl }}/get-started/bk-get-started-api.html)
-* [Web API authentication]({{ page.baseurl }}/get-started/authentication/gs-authentication.html)
-* [OAuth-based authentication]( {{ page.baseurl }}/get-started/authentication/gs-authentication-oauth.html )
+*  [Magento REST or SOAP Web APIs]({{ page.baseurl }}/get-started/bk-get-started-api.html)
+*  [Web API authentication]({{ page.baseurl }}/get-started/authentication/gs-authentication.html)
+*  [OAuth-based authentication]( {{ page.baseurl }}/get-started/authentication/gs-authentication-oauth.html )
 
 Before you begin creating a module, make sure that you have a working installation of Magento 2.0, and the [Magento System Requirements]({{ page.baseurl }}/install-gde/system-requirements.html).
 
@@ -171,16 +171,16 @@ To develop a module, you must:
 
 Magento provides the Integration module, which simplifies the process of defining your integration. This module automatically performs functions such as:
 
-* Managing the third-party account that connects to Magento.
-* Maintaining OAuth authorizations and user data.
-* Managing security tokens and requests.
+*  Managing the third-party account that connects to Magento.
+*  Maintaining OAuth authorizations and user data.
+*  Managing security tokens and requests.
 
 To customize your module, you must create multiple [XML](https://glossary.magento.com/xml) files and read through others files to determine what resources existing Magento modules have access to.
 
 The process for customizing your module includes
 
-* [Define the required resources](#resources)
-* [Pre-configure the integration](#preconfig)
+*  [Define the required resources](#resources)
+*  [Pre-configure the integration](#preconfig)
 
 ### Define the required resources {#resources}
 
@@ -289,9 +289,9 @@ Log in to Magento and navigate to **System > Extensions > Integrations**. The in
 
 Before you can activate your integration in Magento, you must create two pages on your application to handle OAuth communications.
 
-* The location specified in the `identity_link_url` parameter must point to a page that can handle login requests.
+*  The location specified in the `identity_link_url` parameter must point to a page that can handle login requests.
 
-* The location specified in the `endpoint_url` parameter (**Callback URL** in Admin) must be able to process OAuth token exchanges.
+*  The location specified in the `endpoint_url` parameter (**Callback URL** in Admin) must be able to process OAuth token exchanges.
 
 ### Login page {#login}
 
@@ -301,30 +301,30 @@ When a merchant clicks the **Activate** button in Admin, a pop-up login page for
 
 The callback page must be able to perform the following tasks:
 
-* Receive an initial HTTPS POST that Magento sends when the merchant activates integration. This post contains the Magento store URL, an `oauth_verifier`, the OAuth consumer key, and the OAuth consumer secret. The consumer key and secret are generated when the integration is created.
+*  Receive an initial HTTPS POST that Magento sends when the merchant activates integration. This post contains the Magento store URL, an `oauth_verifier`, the OAuth consumer key, and the OAuth consumer secret. The consumer key and secret are generated when the integration is created.
 
-* Ask for a request token. A request token is a temporary token that the user exchanges for an access token. Use the following API to get a request token from Magento:
+*  Ask for a request token. A request token is a temporary token that the user exchanges for an access token. Use the following API to get a request token from Magento:
 
-  `POST /oauth/token/request`
+   `POST /oauth/token/request`
 
-  See [Get a request token]( {{ page.baseurl }}/get-started/authentication/gs-authentication-oauth.html#pre-auth-token ) for more details about this call.
+   See [Get a request token]( {{ page.baseurl }}/get-started/authentication/gs-authentication-oauth.html#pre-auth-token ) for more details about this call.
 
-* Parse the request token response. The response contains an `oauth_token` and `oauth_token_secret`.
+*  Parse the request token response. The response contains an `oauth_token` and `oauth_token_secret`.
 
-* Ask for a access token. The request token must be exchanged for an access token. Use the following API to get a request token from Magento:
+*  Ask for a access token. The request token must be exchanged for an access token. Use the following API to get a request token from Magento:
 
-  `POST /oauth/token/access`
+   `POST /oauth/token/access`
 
-  See [Get an access token]( {{ page.baseurl }}/get-started/authentication/gs-authentication-oauth.html#get-access-token ) for more details about this call.
+   See [Get an access token]( {{ page.baseurl }}/get-started/authentication/gs-authentication-oauth.html#get-access-token ) for more details about this call.
 
-* Parse the access token response. The response contains an `oauth_token` and `oauth_token_secret`. These values will be different than those provided in the request token response.
+*  Parse the access token response. The response contains an `oauth_token` and `oauth_token_secret`. These values will be different than those provided in the request token response.
 
-* Save the access token and other OAuth parameters. The access token and OAuth parameters must be specified in the `Authorization` header in each call to Magento.
+*  Save the access token and other OAuth parameters. The access token and OAuth parameters must be specified in the `Authorization` header in each call to Magento.
 
 ## Related Topics
 
-- [Web API authentication]({{ page.baseurl }}/get-started/authentication/gs-authentication.html)
-- [OAuth-based authentication]( {{ page.baseurl }}/get-started/authentication/gs-authentication-oauth.html )
-- [Magento System Requirements]({{ page.baseurl }}/install-gde/system-requirements.html)
-- [Create the module file structure]({{ page.baseurl }}/extension-dev-guide/build/module-file-structure.html)
-- [Create a component]({{ page.baseurl }}/extension-dev-guide/build/create_component.html)
+*  [Web API authentication]({{ page.baseurl }}/get-started/authentication/gs-authentication.html)
+*  [OAuth-based authentication]( {{ page.baseurl }}/get-started/authentication/gs-authentication-oauth.html )
+*  [Magento System Requirements]({{ page.baseurl }}/install-gde/system-requirements.html)
+*  [Create the module file structure]({{ page.baseurl }}/extension-dev-guide/build/module-file-structure.html)
+*  [Create a component]({{ page.baseurl }}/extension-dev-guide/build/create_component.html)

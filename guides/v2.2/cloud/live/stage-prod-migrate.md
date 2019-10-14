@@ -6,7 +6,9 @@ functional_areas:
   - Deploy
 ---
 
-**Previous step:**
+{:.ref-header}
+Previous step
+
 [Prepare to deploy to Staging and Production]({{ page.baseurl }}/cloud/live/stage-prod-migrate-prereq.html)
 
 To migrate your database and static files to Staging and Production:
@@ -259,6 +261,7 @@ Use the database dump file to [migrate the database](#cloud-live-migrate-db).
 {:.bs-callout-info}
 After migrating the database, you can set up your stored procedures or views in Staging or Production the same way you did in your Integration environment.
 
-#### Next step
+{:.ref-header}
+Related topics
 
 [Test deployment]({{ page.baseurl }}/cloud/live/stage-prod-test.html)

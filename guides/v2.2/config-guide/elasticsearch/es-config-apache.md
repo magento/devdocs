@@ -190,6 +190,7 @@ This section discusses how to specify who can access the Apache server.
 
 {% include config/es-verify-proxy.md %}
 
-#### Next
+{:.ref-header}
+Next step
 
 [Configure Elasticsearch stopwords]({{ page.baseurl }}/config-guide/elasticsearch/es-config-stopwords.html)

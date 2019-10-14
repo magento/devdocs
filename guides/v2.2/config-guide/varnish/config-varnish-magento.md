@@ -116,7 +116,8 @@ Static files should not be cached by default, but if you want to cache them, you
 
 You need to make these changes before you configure Magento to use Varnish.
 
-## Next steps
+{:.ref-header}
+Related topics
 
 - [Advanced Varnish configuration]({{ page.baseurl }}/config-guide/varnish/config-varnish-advanced.html) (Optional)
 - [Final verification]({{ page.baseurl }}/config-guide/varnish/config-varnish-final.html)

@@ -29,7 +29,7 @@ If you have a Magento installation handy, enter the following to display the cur
 bin/magento list
 ```
 
-#### Format: `group:[subject:]action`
+### Format: `group:[subject:]action`
 
 ### group
 
@@ -175,6 +175,7 @@ To avoid naming your command the same as another command, we recommend:
    dev:myname:theme:delete
    ```
 
-#### Related topic
+{:.ref-header}
+Related topic
 
 [How to add CLI commands]({{ page.baseurl }}/extension-dev-guide/cli-cmds/cli-howto.html)
