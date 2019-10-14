@@ -177,6 +177,36 @@ The following query returns information about the store's catalog configuration.
 }
 ```
 
+### Query a store's fixed product tax configuration
+
+The following query returns enumeration values that indicate the store's fixed product tax configuration,
+
+**Request**
+
+```graphql
+{
+  storeConfig {
+    category_fixed_product_tax_display_setting
+    product_fixed_product_tax_display_setting
+    sales_fixed_product_tax_display_setting
+  }
+}
+```
+
+**Response**
+
+```json
+{
+  "data": {
+    "storeConfig": {
+      "category_fixed_product_tax_display_setting": "EXCLUDE_FPT_WITHOUT_DETAILS",
+      "product_fixed_product_tax_display_setting": "EXCLUDE_FPT_AND_INCLUDE_WITH_DETAILS",
+      "sales_fixed_product_tax_display_setting": "INCLUDE_FPT_WITHOUT_DETAILS"
+    }
+  }
+}
+```
+
 ## Output attributes
 
 ### Supported storeConfig attributes
@@ -268,7 +298,7 @@ The `FixedProductTaxDisplaySettings` data type is an enumeration that describes 
 
 Value | Description
 --- | ---
-EXCLUDE_FPT_WITH_DETAILS | The displayed price does not include the FPT amount. The values of `ProductPrice.fixed_product_taxes` are displayed separately. This value corresponds to **Excluding FPT, Including FPT description and final price**
+EXCLUDE_FPT_AND_INCLUDE_WITH_DETAILS | The displayed price does not include the FPT amount. The values of `ProductPrice.fixed_product_taxes` and the price including the FPT are displayed separately. This value corresponds to **Excluding FPT, Including FPT description and final price**
 EXCLUDE_FPT_WITHOUT_DETAILS | The displayed price does not include the FPT amount. The values from `ProductPrice.fixed_product_taxes` are not displayed. This value corresponds to **Excluding FPT**
 FPT_DISABLED | The FPT feature is not enabled. You can omit `ProductPrice.fixed_product_taxes` from your query
 INCLUDE_FPT_WITH_DETAILS | The displayed price includes the FPT amount while displaying the values of `ProductPrice.fixed_product_taxes` separately. This value corresponds to **Including FPT and FPT description**
