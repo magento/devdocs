@@ -240,6 +240,6 @@ mutation {
 
 1. Sign in as a customer to the website using the email `john.doe@example.com` and password `b1b2b3l@w+`.
 
-2. Go to Checkout.
+1. Go to Checkout.
 
-3. On the Shipping step, the Shipping Address form contains the address details you entered.
+1. On the Shipping step, the Shipping Address form contains the address details you entered.
