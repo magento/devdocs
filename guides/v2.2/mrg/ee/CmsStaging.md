@@ -18,29 +18,29 @@ The Magento_CmsStaging module changes the CMS Pages and CMS Blocks creation page
 
 You can stage the following parameters:
 
-- Enable/Disable CMS Page
-- Page Title
-- Content
-    - Content Heading
-    - Content (WYSIWYG)
-- [Search Engine Optimization](https://glossary.magento.com/search-engine-optimization)
-    - URL Key
-    - Meta Keywords
-    - Meta Description
-- Design
-    - Layout
-    - Layout Update XML
-    - Theme
+-  Enable/Disable CMS Page
+-  Page Title
+-  Content
+   -  Content Heading
+   -  Content (WYSIWYG)
+-  [Search Engine Optimization](https://glossary.magento.com/search-engine-optimization)
+   -  URL Key
+   -  Meta Keywords
+   -  Meta Description
+-  Design
+   -  Layout
+   -  Layout Update XML
+   -  Theme
 
 ### CMS Blocks
 
 The following parameters can be staged:
 
-- Enable/Disable CMS Block
-- Block Title
-- Identifier
-- [Store View](https://glossary.magento.com/store-view)
-- Content (WYSIWYG)
+-  Enable/Disable CMS Block
+-  Block Title
+-  Identifier
+-  [Store View](https://glossary.magento.com/store-view)
+-  Content (WYSIWYG)
 
 ### Installation details
 
