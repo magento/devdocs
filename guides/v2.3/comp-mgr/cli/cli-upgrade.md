@@ -78,7 +78,7 @@ See the examples at the end of this section for help specifying different releas
    composer show magento/product-community-edition {{ page.guide_version }}.* --all | grep -m 1 versions
    ```
 
-   _{{site.data.var.ce}}_:
+   _{{site.data.var.ee}}_:
 
    ```bash
    composer show magento/product-enterprise-edition {{ page.guide_version }}.* --all | grep -m 1 versions
