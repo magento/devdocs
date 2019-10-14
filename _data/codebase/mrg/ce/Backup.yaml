@@ -1,0 +1,10 @@
+---
+title: Magento_Backup
+source_repo: magento2ce
+release: 2.3.3
+github_path: app/code/Magento/Backup/README.md
+last_modified_at: '2015-04-23 07:22:21 -0500'
+content: |
+  The Backup module allows administrators to perform backups and rollbacks. Types of backups include system, database and media backups. This module relies on the Cron module to schedule backups.
+
+  This module does not affect the storefront.

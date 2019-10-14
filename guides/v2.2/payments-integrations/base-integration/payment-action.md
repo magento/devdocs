@@ -73,6 +73,7 @@ The most important builder in this pool is `Magento\Braintree\Gateway\Request\Pa
 
 Please see the [Get payment information from frontend to backend]({{ page.baseurl }}/payments-integrations/base-integration/get-payment-info.html) for details about how payment information can be handled.
 
-## Related topics
+{:.ref-header}
+Related topics
 
 - [Add a custom payment method to checkout]({{ page.baseurl }}/howdoi/checkout/checkout_payment.html): how to add a custom payment integration to [checkout](https://glossary.magento.com/checkout) page.

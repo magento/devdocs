@@ -36,25 +36,27 @@ module Jekyll
       #         ---
       #         Magento_NewModule is an awesome module.
       #
-      mrg_data.each do |mod, metadata|
-        # PageWithoutAFile handles processing files without reading it.
-        # mrg_topic is a virtual '.md' file
-        # See details in https://www.rubydoc.info/gems/jekyll/Jekyll/PageWithoutAFile
-        # See tests in https://github.com/jekyll/jekyll/blob/master/test/test_page_without_a_file.rb
-        mrg_topic = PageWithoutAFile.new(
-          @site,
-          @site.source,
-          "guides/v2.3/mrg/#{metadata['edition']}",
-          "#{mod}.md"
-        )
-        mrg_topic.content = metadata['content']
-        mrg_topic.data['title'] = metadata['title']
-        mrg_topic.data['last_modified_at'] = metadata['last_modified_at']
-        mrg_topic.process("#{mod}.md")
+      mrg_data.each do |category, modules|
+        modules.each do |mod, metadata|
+          # PageWithoutAFile handles processing files without reading it.
+          # mrg_topic is a virtual '.md' file
+          # See details in https://www.rubydoc.info/gems/jekyll/Jekyll/PageWithoutAFile
+          # See tests in https://github.com/jekyll/jekyll/blob/master/test/test_page_without_a_file.rb
+          mrg_topic = PageWithoutAFile.new(
+            @site,
+            @site.source,
+            "guides/v2.3/mrg/#{category}",
+            "#{mod}.md"
+          )
+          mrg_topic.content = metadata['content']
+          mrg_topic.data['title'] = metadata['title']
+          mrg_topic.data['last_modified_at'] = metadata['last_modified_at']
+          mrg_topic.process("#{mod}.md")
 
-        # Add the newly constructed page object to the rest of pages
-        # on the site.
-        @site.pages << mrg_topic
+          # Add the newly constructed page object to the rest of pages
+          # on the site.
+          @site.pages << mrg_topic
+        end
       end
     end
   end

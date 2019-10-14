@@ -426,13 +426,13 @@ In addition to security enhancements, this release contains the following functi
 
 <!-- MAGETWO-99818 -->
 
-* We have modified the required permissions for updating the `design` fieldset of categories, products, and CMS pages:
+*  We have modified the required permissions for updating the `design` fieldset of categories, products, and CMS pages:
 
-  * Existing roles that have **save** permission for these entities can save everything.
+   *  Existing roles that have **save** permission for these entities can save everything.
 
-  * New roles must be granted permission to edit design manually.
+   *  New roles must be granted permission to edit design manually.
 
-  * If you do not have permission to edit the `design` fieldset or use web API endpoints to update a category, Magento does not save your changes and the design properties remain unchanged.
+   *  If you do not have permission to edit the `design` fieldset or use web API endpoints to update a category, Magento does not save your changes and the design properties remain unchanged.
 
 <!-- MAGETWO-98990 -->
 
@@ -494,17 +494,17 @@ In addition to security enhancements, this release contains the following functi
 
 <!-- MAGETWO-98843 -->
 
-* Added support for [Zookeeper](https://php.net/manual/en/book.zookeeper.php) and flock lock providers. We have also added new options to configure locks during installation:
+*  Added support for [Zookeeper](https://php.net/manual/en/book.zookeeper.php) and flock lock providers. We have also added new options to configure locks during installation:
 
-  * `--lock-provider=LOCK-PROVIDER`—Lock provider name
+   *  `--lock-provider=LOCK-PROVIDER`—Lock provider name
 
-  * `--lock-db-prefix=LOCK-DB-PREFIX`—Installation specific lock prefix to avoid lock conflicts
+   *  `--lock-db-prefix=LOCK-DB-PREFIX`—Installation specific lock prefix to avoid lock conflicts
 
-  * `--lock-zookeeper-host=LOCK-ZOOKEEPER-HOST`—Host and port to connect to Zookeeper cluster. For example, 127.0.0.1:2181
+   *  `--lock-zookeeper-host=LOCK-ZOOKEEPER-HOST`—Host and port to connect to Zookeeper cluster. For example, 127.0.0.1:2181
 
-  * `--lock-zookeeper-path=LOCK-ZOOKEEPER-PATH`—The path where Zookeeper will save locks. The default path is /magento/locks
+   *  `--lock-zookeeper-path=LOCK-ZOOKEEPER-PATH`—The path where Zookeeper will save locks. The default path is /magento/locks
 
-  * `--lock-file-path=LOCK-FILE-PATH`—The path where file locks will be saved.
+   *  `--lock-file-path=LOCK-FILE-PATH`—The path where file locks will be saved.
 
 <!-- ENGCOM-4660 -->
 

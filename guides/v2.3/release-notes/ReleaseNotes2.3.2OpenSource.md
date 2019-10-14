@@ -3,13 +3,21 @@ group: release-notes
 title: Magento Open Source 2.3.2 Release Notes
 ---
 
-*Patch code and release notes published on June 25, 2019. Release notes last updated July 8, 2019.*
+*Patch code and release notes published on June 25, 2019.*
 
 We are pleased to present Magento Open Source 2.3.2.  This release includes over 200 functional fixes to the core product, over 350 pull requests contributed by the community, and  over 75 security enhancements. It includes significant contributions from our community members.
 
 ## Other release information
 
 Although code for these features is bundled with quarterly releases of the Magento core code, several of these projects (for example, Page Builder, Inventory Management, and Progressive Web Applications (PWA) Studio) are also released independently. Bug fixes for these projects are documented in separate, project-specific release information which is available in the documentation for each project.
+
+## New security-only patch available
+
+Merchants can now install time-sensitive security fixes without applying the hundreds of functional fixes and enhancements that a full quarterly release (for example, Magento 2.3.3) provides. Patch 2.3.2.2 (Composer package 2.3.2-p2) is a security-only patch that provides fixes for vulnerabilities that have been identified in our previous quarterly release, Magento 2.3.2.
+
+**If you have already upgraded to the pre-release version of this patch (2.3.2-p1), we strongly recommend that you upgrade to 2.3.2-p2 as soon as possible.**  Patch 2.3.2-p2 contains the critical security fixes that are included in Magento  2.3.3, 2.2.10, 1.9.4.3, and 1.14.4.3, but that are not included in patch 2.3.2-p1.
+
+For general information about security-only patches, see the Magento DevBlog post [Introducing the New Security-only Patch Release](https://community.magento.com/t5/Magento-DevBlog/Introducing-the-New-Security-only-Patch-Release/ba-p/141287). For instructions on downloading and applying security-only patches (including patch 2.3.2-p1), see [Install Magento using Composer](https://devdocs-beta.magento.com/guides/v2.3/install-gde/composer.html#get-the-metapackage).
 
 ## Apply patch PRODSECBUG-2233 to address critical remote code execution vulnerability (RCE)
 
@@ -358,11 +366,11 @@ This fix can degrade performance in deployments that implement flat catalogs. To
 
 * We have modified the required permissions for updating the `design` fieldset of categories, products, and CMS pages:
 
-	* Existing roles that have **save** permission for these entities can save everything.
+   * Existing roles that have **save** permission for these entities can save everything.
 
-	* New roles will need to be granted permission to edit design manually.
+   * New roles will need to be granted permission to edit design manually.
 
-	If you do not have permission to edit the `design` fieldset or use web API endpoints to update a category, Magento does not save your changes and the design properties remain unchanged
+   If you do not have permission to edit the `design` fieldset or use web API endpoints to update a category, Magento does not save your changes and the design properties remain unchanged
 
 <!--- ENGCOM-3608-->
 
@@ -500,17 +508,17 @@ This fix can degrade performance in deployments that implement flat catalogs. To
 
 * Added support for [Zookeeper](https://php.net/manual/en/book.zookeeper.php) and flock lock providers. We have also added new options to configure locks during installation:
 
-	* `--lock-provider=LOCK-PROVIDER`—Lock provider name
+   * `--lock-provider=LOCK-PROVIDER`—Lock provider name
 
-	* `--lock-db-prefix=LOCK-DB-PREFIX`—Installation specific lock prefix to avoid lock conflicts
+   * `--lock-db-prefix=LOCK-DB-PREFIX`—Installation specific lock prefix to avoid lock conflicts
 
-	* `--lock-zookeeper-host=LOCK-ZOOKEEPER-HOST`  —Host and port to connect to Zookeeper cluster. For example, 127.0.0.1:2181
+   * `--lock-zookeeper-host=LOCK-ZOOKEEPER-HOST`  —Host and port to connect to Zookeeper cluster. For example, 127.0.0.1:2181
 
-	* `--lock-zookeeper-path=LOCK-ZOOKEEPER-PATH`— The path where Zookeeper will save locks. The default path is /magento/locks
+   * `--lock-zookeeper-path=LOCK-ZOOKEEPER-PATH`— The path where Zookeeper will save locks. The default path is /magento/locks
 
-	* `--lock-file-path=LOCK-FILE-PATH`—The path where file locks will be saved.
+   * `--lock-file-path=LOCK-FILE-PATH`—The path where file locks will be saved.
 
-	See [Install]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-lock.html).
+   See [Install]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-lock.html).
 
 ### Customers
 
@@ -840,11 +848,11 @@ This fix can degrade performance in deployments that implement flat catalogs. To
 
 <!--- ENGCOM-4585-->
 
-* Magento no longer throws an exception under these conditions:
+*  Magento no longer throws an exception under these conditions:
 
-	* a product configuration specifies a `Minimum Qty Allowed in Shopping Cart` as a decimal value less than one
+   *  a product configuration specifies a `Minimum Qty Allowed in Shopping Cart` as a decimal value less than one
 
-	* this configuration is later updated by setting  `Qty Uses Decimals`  to **no**, and later updating the **Qty Uses Decimals** attribute in the product congiration to **no**. *Fix submitted by [Valerij Ivashchenko](https://github.com/likemusic) in pull request [21928](https://github.com/magento/magento2/pull/21928)*. [GitHub-21926](https://github.com/magento/magento2/issues/21926)
+   *  this configuration is later updated by setting  `Qty Uses Decimals`  to **no**, and later updating the **Qty Uses Decimals** attribute in the product congiration to **no**. *Fix submitted by [Valerij Ivashchenko](https://github.com/likemusic) in pull request [21928](https://github.com/magento/magento2/pull/21928)*. [GitHub-21926](https://github.com/magento/magento2/issues/21926)
 
 ### Layered navigation
 
@@ -908,7 +916,8 @@ This fix can degrade performance in deployments that implement flat catalogs. To
 
 ### Page cache
 
-<!--- MAGETWO-91607-->* Page cache is no longer active when maintenance mode is enabled.  Previously, Magento cached  pages from all IP addresses during maintennce mode.
+<!--- MAGETWO-91607-->
+* Page cache is no longer active when maintenance mode is enabled.  Previously, Magento cached  pages from all IP addresses during maintennce mode.
 
 ### Payment methods
 

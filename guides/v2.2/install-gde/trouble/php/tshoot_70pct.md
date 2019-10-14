@@ -15,8 +15,8 @@ During installation using the Setup Wizard, the process stops at about 70% (with
 
 Common causes for this issue include:
 
-*	The [PHP](https://glossary.magento.com/php) setting for [`max_execution_time`](http://php.net/manual/en/info.configuration.php#ini.max-execution-time){:target="_blank"}
-*	Timeout values for [nginx](https://glossary.magento.com/nginx) and Varnish
+*  The [PHP](https://glossary.magento.com/php) setting for [`max_execution_time`](http://php.net/manual/en/info.configuration.php#ini.max-execution-time){:target="_blank"}
+*  Timeout values for [nginx](https://glossary.magento.com/nginx) and Varnish
 
 ### Solution:
 
@@ -24,17 +24,17 @@ Set all of the following as appropriate.
 
 #### All web servers and Varnish
 
-1.	Locate your `php.ini` using a [`phpinfo.php`]({{ page.baseurl }}/install-gde/prereq/optional.html#install-optional-phpinfo) file.
-2.	As a user with `root` privileges, open `php.ini` in a text editor.
-3.	Locate the `max_execution_time` setting.
-4.	Change its value to `18000`.
-5.	Save your changes to `php.ini` and exit the text editor.
-6.	Restart Apache:
+1. Locate your `php.ini` using a [`phpinfo.php`]({{ page.baseurl }}/install-gde/prereq/optional.html#install-optional-phpinfo) file.
+2. As a user with `root` privileges, open `php.ini` in a text editor.
+3. Locate the `max_execution_time` setting.
+4. Change its value to `18000`.
+5. Save your changes to `php.ini` and exit the text editor.
+6. Restart Apache:
 
-	*	CentOS: `service httpd restart`
-	*	Ubuntu: `service apache2 restart`
+   *  CentOS: `service httpd restart`
+   *  Ubuntu: `service apache2 restart`
 
-	If you use nginx or Varnish, continue with the following sections.
+ If you use nginx or Varnish, continue with the following sections.
 
 #### nginx only
 

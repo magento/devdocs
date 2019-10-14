@@ -14,8 +14,8 @@ The Magento_CatalogImportExportStaging [module](https://glossary.magento.com/mod
 
 The Magento_CatalogImportExportStaging module:
 
- * adds a plugin on `Magento\CatalogImportExport\Model\Import\Product::saveProductEntity` to add version and sequence information to the product [entity](https://glossary.magento.com/entity)
- * listens to the `catalog_product_import_bunch_delete_commit_before` [event](https://glossary.magento.com/event) to delete values from the sequence table when products are being deleted
+*  adds a plugin on `Magento\CatalogImportExport\Model\Import\Product::saveProductEntity` to add version and sequence information to the product [entity](https://glossary.magento.com/entity)
+*  listens to the `catalog_product_import_bunch_delete_commit_before` [event](https://glossary.magento.com/event) to delete values from the sequence table when products are being deleted
 
 ## Dependencies
 

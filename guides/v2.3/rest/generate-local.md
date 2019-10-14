@@ -21,9 +21,9 @@ To view the Swagger documentation for a specific store view, use this URL:
 
  The value of `store_code` must be one of the following:
 
- * `default`
- * The assigned store code
- * `all`. This value only applies to the [CMS](https://glossary.magento.com/cms) and Product modules. If this value is specified, the API call affects all the merchant's stores.
+*  `default`
+*  The assigned store code
+*  `all`. This value only applies to the [CMS](https://glossary.magento.com/cms) and Product modules. If this value is specified, the API call affects all the merchant's stores.
 
 By default, Magento returns documentation for resources available to anonymous users across all stores. If you specify a valid value in the `api_key` text box in the upper right corner, Swagger returns documentation for all the endpoints the user has access to. To generate an API key, call the `POST /V1/integration/customer/token` or `POST /V1/integration/admin/token` as directed in [Token-based authentication]({{ page.baseurl }}/get-started/authentication/gs-authentication-token.html).
 
@@ -63,7 +63,8 @@ To return the complete JSON schema, specify the `?services=all` parameter in the
 
 The base URL for returning the asynchronous schema is `http://<magento_host>/rest/<store_code>/async/schema`.
 
-## Related topics
+{:.ref-header}
+Related topics
 
 [Token-based authentication]({{ page.baseurl }}/get-started/authentication/gs-authentication-token.html)
 

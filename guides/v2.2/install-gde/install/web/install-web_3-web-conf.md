@@ -16,5 +16,7 @@ functional_areas:
 
 {% include install/web/install-web_3-web-conf.md %}
 
-#### Next step
+{:.ref-header}
+Related topics
+
 [Step 4. Customize your store]({{ page.baseurl }}/install-gde/install/web/install-web_4-customize-store.html)

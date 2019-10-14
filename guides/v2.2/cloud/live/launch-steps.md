@@ -10,7 +10,9 @@ functional_areas:
   - Testing
 ---
 
-**Previous step:**
+{:.ref-header}
+Previous step
+
 [Go live checklist]({{ page.baseurl }}/cloud/live/go-live-checklist.html)
 
 After testing and completing your launch checklist, you can start the final steps to launch. These steps include entering tickets, cutting over access, and finally testing your store(s) when live.

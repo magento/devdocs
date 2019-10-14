@@ -30,15 +30,15 @@ Profiles are located in `<magento_root>/setup/performance-toolkit/profiles/<ce o
 For example, `/var/www/html/magento2/setup/performance-toolkit/profiles/ce`
 
 <table>
-	<tbody>
-		<tr>
-			<th>Parameter</th>
-			<th>Small profile</th>
-			<th>Medium profile</th>
-			<th>Medium multi-site profile</th>
-			<th>Large profile</th>
-			<th>Extra large profile</th>
-		</tr>
+   <tbody>
+      <tr>
+         <th>Parameter</th>
+         <th>Small profile</th>
+         <th>Medium profile</th>
+         <th>Medium multi-site profile</th>
+         <th>Large profile</th>
+         <th>Extra large profile</th>
+      </tr>
 
         <tr>
             <td><p>websites</p></td>
@@ -160,7 +160,7 @@ For example, `/var/www/html/magento2/setup/performance-toolkit/profiles/ce`
             <td><p>100,000</p></td>
             <td><p>150,000</p></td>
         </tr>
-	</tbody>
+   </tbody>
 </table>
 
 ### Run the data generator {#config-cli-perf-run}
@@ -546,7 +546,8 @@ Additional configuration information:
 
 *   `<Magento root dir>/setup/performance-toolkit/config/searchTermsLarge.xml`&mdash;Larger number of search terms to use in short and full description.
 
-#### Related topics
+{:.ref-header}
+Related topics
 
 *   [Manage the cache]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cache.html)
 *   [Manage the indexers]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-index.html)
