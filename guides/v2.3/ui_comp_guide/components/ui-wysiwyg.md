@@ -73,23 +73,23 @@ See [Events and observers]({{ page.baseurl }}/extension-dev-guide/events-and-obs
 
 The following are available events for use in the WYSIWYG component adapter for TinyMCE4:
 
-* `tinymceBeforeSetContent` - fires before the contents are inserted into the editor
-* `tinymcePaste` - fires when a paste is done within the editor
-* `tinymceSaveContent` - fires when the contents in the editor are saved
-* `tinymceSaveContent` (`PostProcess`) - fires when the contents in the editor are being serialized
-* `tinymceUndo` - fires when the contents have been reverted to a previous state
-* `tinymceFocus` - fires when the editor is focused
-* `tinymceBlur` - fires when the editor is blurred
-* `tinymceChange` - fires when undo level is added to the editor
-* `wysiwygEditorInitialized` - fires when the WYSIWYG editor is initialized
+*  `tinymceBeforeSetContent` - fires before the contents are inserted into the editor
+*  `tinymcePaste` - fires when a paste is done within the editor
+*  `tinymceSaveContent` - fires when the contents in the editor are saved
+*  `tinymceSaveContent` (`PostProcess`) - fires when the contents in the editor are being serialized
+*  `tinymceUndo` - fires when the contents have been reverted to a previous state
+*  `tinymceFocus` - fires when the editor is focused
+*  `tinymceBlur` - fires when the editor is blurred
+*  `tinymceChange` - fires when undo level is added to the editor
+*  `wysiwygEditorInitialized` - fires when the WYSIWYG editor is initialized
 
 ## Add a default editor
 
 Adding the default Magento WYSIWYG editor to a page requires the following steps:
 
 1. Create a layout
-2. Create a form
-3. Add a data provider, controller, and routes
+1. Create a form
+1. Add a data provider, controller, and routes
 
 The following example shows how to integrate the default Magento WYSIWYG editor as a UI component inside a custom form.
 
@@ -360,4 +360,3 @@ Here's an example that connects the data provider and modifier created in the pr
 
 {: .bs-callout-info }
 If your form already uses the [ModifierPool]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_modifier_concept.html), you can continue using it to control the configuration of your WYSIWYG components.
-
