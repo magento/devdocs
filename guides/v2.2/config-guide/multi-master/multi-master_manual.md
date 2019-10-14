@@ -375,7 +375,7 @@ If you are using a [Network Database (NDB)](http://dev.mysql.com/doc/refman/5.6/
    sed -ei 's/InnoDb/NDB/' <file name>.sql
    ```
 
-2. Remove rows with a FULLTEXT key from dumps because NDB tables do not support FULLTEXT.
+1. Remove rows with a FULLTEXT key from dumps because NDB tables do not support FULLTEXT.
 
 ### Restore tables to the quote database
 
