@@ -17,6 +17,24 @@ The release notes include:
 -   {:.fix}Fixes and improvements
 -   {:.bug}Known issues
 
+### v3.0.0
+
+Amazon Sales Channel 3.0.0 is compatible with versions 2.2.4+ and 2.3.x of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}.
+
+-  {:.new}**Amazon UK Marketplace Now Available**: Users can choose the United Kingdom marketplace when [creating and integrating](https://docs.magento.com/m2/ce/user_guide/sales-channels/amazon/store-integration.html) an Amazon Sales Channel store. This UK upgrade includes additional support for:
+
+   - [Amazon VAT Calculation Service](https://services.amazon.co.uk/vat-calculation-service.html)
+
+   - [Product Tax Code](https://sellercentral.amazon.com/gp/help/help.html?itemID=G200794510&language=en_US) information.
+
+-  {:.new}**Improved Logging**: <!--CHAN-3642, 3672-->Implemented the **Enable Debug Logging** feature to collect additional synchronization data when troubleshooting is needed. See the [Sales Channels Settings](https://docs.magento.com/m2/ce/user_guide/configuration/sales-channels/global-settings.html) topic in the Configuration Reference.
+
+-  {:.fix}**Product Catalog**: <!--CHAN-3687-->Corrected an issue preventing images imported with an Amazon listing from being applied to the corresponding Magento catalog product.
+
+-  {:.fix}**Order Creation**: <!--CHAN-3708-->Corrected an issue preventing Magento from creating orders for an Amazon order that does not match with a Magento catalog product. See [Order Settings](https://docs.magento.com/m2/ce/user_guide/sales-channels/amazon/order-settings.html).
+
+- {:.bug}**Duplicate Amazon Listings**: <!--CHAN-3593-->This issue causes the catalog to create a new item for an imported listing, using the same SKU but with a region code added on the end. Amazon then processes the modified SKU as a new item and creates a new listing. This issue will be addressed in an future release.
+
 ### v2.0.0
 
 Amazon Sales Channel 2.0.0 is compatible with version 2.2.4+ and 2.3.x of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}.
@@ -42,4 +60,4 @@ Version 1.0.0 was available in limited release only.
 
 -   {:.bug} Ineligible bundled products may display as Eligible for listing on Amazon. One of the products within the bundled product may not be eligible. If you encounter issues, check the eligibility status for bundled products items.
 
--   {:.bug} When using [Inventory Management](https://docs.magento.com/m2/ee/user_guide/catalog/inventory-management.html) for Magento 2.3.x, a partial stock reindex may not trigger when an order is created. The salable quantity recalculates hourly, which may cause overselling during this update interval.
+-   {:.bug} When using [Inventory Management](https://docs.magento.com/m2/ce/user_guide/catalog/inventory-management.html) for Magento 2.3.x, a partial stock reindex may not trigger when an order is created. The salable quantity recalculates hourly, which may cause overselling during this update interval.

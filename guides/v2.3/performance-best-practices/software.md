@@ -50,7 +50,6 @@ We recommend limiting the list of active PHP extensions to those that are requir
 * `php-gd`
 * `php-intl`
 * `php-mbstring`
-* `php-mcrypt`
 * `php-opcache`
 * `php-openssl`
 * `php-pdo`
@@ -60,6 +59,9 @@ We recommend limiting the list of active PHP extensions to those that are requir
 * `php-zip`
 
 Adding more extensions increases library load times.
+
+{: .bs-callout-info }
+`php-mcrypt` has been removed from PHP 7.2 and replaced with the [`sodium` library](https://www.php.net/manual/en/book.sodium.php). Ensure that [sodium](https://www.php.net/manual/en/sodium.installation.php) is properly enabled when upgrading to PHP 7.2.
 
 {: .bs-callout-info }
 The presence of any profiling and debugging extensions can negatively impact the response time of your pages. As an example, an active xDebug module without any debug session can increase the page response time by up to 30%.

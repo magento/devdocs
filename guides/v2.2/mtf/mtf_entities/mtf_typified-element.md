@@ -20,9 +20,9 @@ The most important methods are `setValue()` and `getValue()`. These methods are 
 
 There are two types of testing typified elements: default typified elements and Magento custom typified elements.
 
- * Default typified elements are the web elements that are typically used in a web application.
+*  Default typified elements are the web elements that are typically used in a web application.
 
- * Magento custom typified elements are the web elements that are specific to the Magento application
+*  Magento custom typified elements are the web elements that are specific to the Magento application
 
 ## Default testing typified elements {#basic_class}
 
