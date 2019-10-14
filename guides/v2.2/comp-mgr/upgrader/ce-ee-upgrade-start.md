@@ -56,7 +56,7 @@ After the upgrade completes:
    service varnish restart
    ```
 
-#### Errors
+### Errors
 
 * The following error can indicate one of several issues, including that you haven't entered your [authentication keys] in the Magento Admin:
 

@@ -22,9 +22,9 @@ If you are deploying Magento on multiple hosts, NTP is a simple way to guarantee
 
 See one of the following sections:
 
-* [Install and configure NTP on Ubuntu](#install-optional-ntp-ubuntu)
-* [Install and configure NTP on CentOS](#install-optional-ntp-centos)
-* [Use NTP pool servers](#install-optional-ntp-servers)
+*  [Install and configure NTP on Ubuntu](#install-optional-ntp-ubuntu)
+*  [Install and configure NTP on CentOS](#install-optional-ntp-centos)
+*  [Use NTP pool servers](#install-optional-ntp-servers)
 
 ### Install and configure NTP on Ubuntu {#install-optional-ntp-ubuntu}
 
@@ -46,21 +46,21 @@ To install and configure NTP:
    yum search ntp
    ```
 
-2. Select a package to install. For example, `ntp.x86_64`.
+1. Select a package to install. For example, `ntp.x86_64`.
 
-2. Install the package.
+1. Install the package.
 
    ```bash
    yum -y install ntp.x86_64
    ```
 
-3. Enter the following command so that NTP starts when the server starts.
+1. Enter the following command so that NTP starts when the server starts.
 
    ```bash
    chkconfig ntpd on
    ```
 
-3. Continue with the next section.
+1. Continue with the next section.
 
 ### Use NTP pool servers {#install-optional-ntp-servers}
 
@@ -126,8 +126,8 @@ http://<web server host or IP>/phpinfo.php
 
 If a 404 (Not Found) error displays, check the following:
 
-* Start the web server if necessary.
-* Make sure your firewall allows traffic on port 80.
+*  Start the web server if necessary.
+*  Make sure your firewall allows traffic on port 80.
 
    [Help for Ubuntu](https://help.ubuntu.com/community/UFW){:target="_blank"}
 
@@ -182,13 +182,13 @@ To install phpmyadmin on CentOS:
    rpm -ivh epel-release-6-8.noarch.rpm
    ```
 
-2. Install `phpmyadmin` as follows:
+1. Install `phpmyadmin` as follows:
 
    ```bash
    yum -y install phpmyadmin
    ```
 
-3. Authorize access to phpmyadmin from your machine's IP address.
+1. Authorize access to phpmyadmin from your machine's IP address.
 
    Open the following file for editing:
 
@@ -196,7 +196,7 @@ To install phpmyadmin on CentOS:
    vim /etc/httpd/conf.d/phpMyAdmin.conf
    ```
 
-3. Replace the following IP address with your IP address
+1. Replace the following IP address with your IP address
 
    ```conf
    Require ip localhost
@@ -208,7 +208,7 @@ To install phpmyadmin on CentOS:
    Require ip 192.51.100.101
    ```
 
-4. Replace the following IP with your IP address:
+1. Replace the following IP with your IP address:
 
    ```conf
    Allow from localhost
@@ -220,27 +220,27 @@ To install phpmyadmin on CentOS:
    Allow from 192.51.100.101
    ```
 
-5. Save your changes to `/etc/httpd/conf.d/phpMyAdmin.conf` and exit the text editor.
+1. Save your changes to `/etc/httpd/conf.d/phpMyAdmin.conf` and exit the text editor.
 
-6. Restart Apache.
+1. Restart Apache.
 
    ```bash
    service httpd Restart
    ```
 
-7. To use phpmyadmin, enter the following command in your browser's address or location field:
+1. To use phpmyadmin, enter the following command in your browser's address or location field:
 
    ```http
    http://<web server host or IP>/phpmyadmin
    ```
 
-8. When prompted, log in using your MySQL database `root` or administrative user's username and password.
+1. When prompted, log in using your MySQL database `root` or administrative user's username and password.
 
-#### Related topics:
+{:.ref-header}
+Related topics
 
-* [Apache]({{ page.baseurl }}/install-gde/prereq/apache.html)
-* [PHP 5.5, 5.6, or 7.0&mdash;Ubuntu]({{ page.baseurl }}/install-gde/prereq/php-ubuntu.html)
-* [PHP 5.5, 5.6, or 7.0&mdash;CentOS]({{ page.baseurl }}/install-gde/prereq/php-centos.html)
-* [MySQL]({{ page.baseurl }}/install-gde/prereq/mysql.html)
-* [Configuring security options]({{ page.baseurl }}/install-gde/prereq/security.html)
-* [How to get the Magento software]({{ page.baseurl }}/install-gde/bk-install-guide.html)
+*  [Apache]({{ page.baseurl }}/install-gde/prereq/apache.html)
+*  [PHP]({{ page.baseurl }}/install-gde/prereq/php-settings.html)
+*  [MySQL]({{ page.baseurl }}/install-gde/prereq/mysql.html)
+*  [Configuring security options]({{ page.baseurl }}/install-gde/prereq/security.html)
+*  [How to get the Magento software]({{ page.baseurl }}/install-gde/bk-install-guide.html)

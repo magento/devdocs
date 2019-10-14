@@ -55,11 +55,13 @@ To check your system for prerequisites, enter the following commands:
 
 ### Apache
 
+Magento supports Apache version 2.4
+
 CentOS: `httpd -v`
 
 Ubuntu: `apache2 -v`
 
-You must run Apache version 2.2 or 2.4 as the following result indicates:
+as the following result indicates:
 
 ```terminal
 Server version: Apache/2.2.15 (Unix)
@@ -70,23 +72,23 @@ To install or upgrade Apache, see [Apache]({{ page.baseurl }}/install-gde/prereq
 
 ### PHP
 
+For Magento v2.2.10, you must run [PHP](https://glossary.magento.com/php) version 7.1.x or 7.2.x.
+To check your PHP version, in the command line, enter:
+
 ```bash
-php -v
+  php -v
 ```
 
-You must run [PHP](https://glossary.magento.com/php) version 7.0.x or 7.1.x as the following result indicates:
+ The result will be similar to:
 
 ```terminal
-PHP 7.0.8-2+deb.sury.org~trusty+1 (cli) ( NTS )
-Copyright (c) 1997-2016 The PHP Group
-Zend Engine v3.0.0, Copyright (c) 1998-2016 Zend Technologies
-   with Zend OPcache v7.0.8-2+deb.sury.org~trusty+1, Copyright (c) 1999-2016, by Zend Technologies
+PHP 7.2.8-2 ( NTS )
+Copyright (c) 1997-2018 The PHP Group
+Zend Engine v3.0.0, Copyright (c) 1998-2018 Zend Technologies
+    with Zend OPcache v7.0.8-2, Copyright (c) 1999-2018, by Zend Technologies
 ```
 
-To install PHP, see:
-
-* [PHP 7.0 or 7.1&mdash;CentOS]({{ page.baseurl }}/install-gde/prereq/php-centos.html)
-* [PHP 7.0 or 7.1&mdash;Ubuntu]({{ page.baseurl }}/install-gde/prereq/php-ubuntu.html)
+To install PHP, see [PHP]({{ page.baseurl }}/install-gde/prereq/php-settings.html).
 
 ### MySQL
 
@@ -120,14 +122,16 @@ Enter `exit` at the `mysql>` prompt to exit.
 
 To install or upgrade MySQL, see [MySQL]({{ page.baseurl }}/install-gde/prereq/mysql.html).
 
-#### Next step
+{:.ref-header}
+Next step
+
 [Choose how to install the Magento software]({{ page.baseurl }}/install-gde/bk-install-guide.html)
 
-#### Related topics
+{:.ref-header}
+Related topics
 
-* [MySQL]({{ page.baseurl }}/install-gde/prereq/mysql.html)
-* [Apache]({{ page.baseurl }}/install-gde/prereq/apache.html)
-* [PHP 7.0 or 7.1&mdash;Ubuntu]({{ page.baseurl }}/install-gde/prereq/php-ubuntu.html)
-* [PHP 7.0 or 7.1&mdash;CentOS]({{ page.baseurl }}/install-gde/prereq/php-centos.html)
-* [Installing optional software]({{ page.baseurl }}/install-gde/prereq/optional.html)
-* [How to get the Magento software]({{ page.baseurl }}/install-gde/bk-install-guide.html)
+*  [MySQL]({{ page.baseurl }}/install-gde/prereq/mysql.html)
+*  [Apache]({{ page.baseurl }}/install-gde/prereq/apache.html)
+*  [PHP]({{ page.baseurl }}/install-gde/prereq/php-settings.html)
+*  [Installing optional software]({{ page.baseurl }}/install-gde/prereq/optional.html)
+*  [How to get the Magento software]({{ page.baseurl }}/install-gde/bk-install-guide.html)

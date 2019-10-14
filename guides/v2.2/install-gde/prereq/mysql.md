@@ -410,12 +410,12 @@ To configure a MySQL database instance:
 {: .bs-callout-info }
 We recommend you configure your database instance as appropriate for your business. When configuring your database, remember that indexers require higher `tmp_table_size` and `max_heap_table_size` values, for example, 64M. If you configure the `batch_size` parameter, you can adjust that value along with the table size settings to improve indexer performance. Refer to  [Performance Best Practices]({{ page.baseurl }}/performance-best-practices/index.html) for more information. sure all MySQL and Magento index tables can be kept in memory, for example, configure `innodb_buffer_pool_size`.
 
-#### Related topics
+{:.ref-header}
+Related topics
 
-* [Set up a remote MySQL database connection]({{ page.baseurl }}/install-gde/prereq/mysql_remote.html)
-* [Installing optional software]({{ page.baseurl }}/install-gde/prereq/optional.html)
-* [Apache]({{ page.baseurl }}/install-gde/prereq/apache.html)
-* [PHP 5.5, 5.6, or 7.0&mdash;Ubuntu]({{ page.baseurl }}/install-gde/prereq/php-ubuntu.html)
-* [PHP 5.5, 5.6, or 7.0&mdash;CentOS]({{ page.baseurl }}/install-gde/prereq/php-centos.html)
-* [Configuring security options]({{ page.baseurl }}/install-gde/prereq/security.html)
-* [How to get the Magento software]({{ page.baseurl }}/install-gde/bk-install-guide.html)
+*  [Set up a remote MySQL database connection]({{ page.baseurl }}/install-gde/prereq/mysql_remote.html)
+*  [Installing optional software]({{ page.baseurl }}/install-gde/prereq/optional.html)
+*  [Apache]({{ page.baseurl }}/install-gde/prereq/apache.html)
+*  [PHP]({{ page.baseurl }}/install-gde/prereq/php-settings.html)
+*  [Configuring security options]({{ page.baseurl }}/install-gde/prereq/security.html)
+*  [How to get the Magento software]({{ page.baseurl }}/install-gde/bk-install-guide.html)

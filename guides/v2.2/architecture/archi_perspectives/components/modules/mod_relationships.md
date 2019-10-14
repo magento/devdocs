@@ -46,6 +46,7 @@ If module A replaces module B, it needs to be able to do so in such a way that o
 
 ![Module relationship scenarios: A replaces B]({{site.baseurl}}/common/images/archi_fourth_relate.png)
 
-## Related topics {#m2arch-module-related}
+{:.ref-header}
+Related topics
 
 [Module overview]({{page.baseurl}}/architecture/archi_perspectives/components/modules/mod_intro.html)

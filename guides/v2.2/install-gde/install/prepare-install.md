@@ -55,7 +55,8 @@ If so, create [`auth.json`]({{ page.baseurl }}/install-gde/prereq/dev_install.ht
 
 {% include install/file-system-perms-before_22.md %}
 
-### Next step {#next-step-section}
+{:.ref-header}
+Related topics
 
 Install the Magento software:
 

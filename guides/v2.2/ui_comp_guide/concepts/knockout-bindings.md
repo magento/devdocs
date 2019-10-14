@@ -219,7 +219,7 @@ The `i18n` binding is used to translate a string according to the currently enab
 <translate args="'Translate using the tag'"></translate>
 ```
 
-### keyboard
+### `keyboard`
 
 The keyboard binding allows setting up listeners for the `keypress` event of a specific key.
 
@@ -241,7 +241,7 @@ A collection in which keys represent keyboard keys codes and values are callback
 }"/>
 ```
 
-### mageInit
+### `mageInit`
 
 The `mageInit` binding is an adapter for the `[data-mage-init]` attribute that is used to initialize jQuery widgets on the associated element.
 
@@ -264,7 +264,7 @@ The `mageInit` binding is an adapter for the `[data-mage-init]` attribute that i
 }"></div>
 ```
 
-### optgroup
+### `optgroup`
 
 The `optgroup` binding is a decorator for the standard Knockout's options binding which adds the support of nested options, and renders them as the `<optgroup>` element.
 
@@ -298,7 +298,7 @@ The `optgroup` binding is a decorator for the standard Knockout's options bindin
     }]"></select>
 ```
 
-### outerClick
+### `outerClick`
 
 The `outerClick` binding allows to subscribe for the "click" event that happens outside of the boundaries of the associated element.
 
@@ -319,7 +319,7 @@ Callback that is invoked when user clicks outside of the element.
 </div>
 ```
 
-### range
+### `range`
 
 The `range` binding is an adapter for the [jQuery UI Slider widget](https://jqueryui.com/slider/). It also implements necessary handlers to work with mobile devices.
 
@@ -344,7 +344,7 @@ Configuration that is passed to the Slider widget.
 }"></div>
 ```
 
-### resizable
+### `resizable`
 
 The `resizable` binding is an adapter for the [jQuery UI Resizable](http://api.jqueryui.com/resizable/) widget.
 
@@ -387,7 +387,7 @@ Component's name by which to perform a lookup in the registry.
 <scope args="'name.of.component'"></scope>
 ```
 
-### staticChecked
+### `staticChecked`
 
 The `staticChecked` binding implements the behavior similar to the standard [`checked`](http://knockoutjs.com/documentation/checked-binding.html) binding. The difference is that `staticChecked` doesn't change the array of the already selected elements if the value of the associated DOM element changes.
 
@@ -401,7 +401,7 @@ The `staticChecked` binding implements the behavior similar to the standard [`ch
 <input type="checkbox" data-bind="staticChecked: observable"/>
 ```
 
-### template
+### `template`
 
 Magento `template` binding is a customization of the existing Knockout [`template` binding](http://knockoutjs.com/documentation/template-binding.html). It is used to render a template inside of the associated element. The original Knockout's  implementation was overridden to support asynchronous loading of templates by the provided path, instead of searching for them on the page.
 
@@ -419,7 +419,7 @@ Configuration for the `template` binding. If the provided value is a string, it 
 <div data-bind="template: 'path/to/the/template'"></div>
 ```
 
-### tooltip
+### `tooltip`
 
 Magento custom knockout binding for displaying a tooltip.
 

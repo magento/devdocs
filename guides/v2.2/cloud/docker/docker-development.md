@@ -17,8 +17,8 @@ The database container is based on the [mariadb](https://hub.docker.com/_/mariad
 
 -  Port: 3306
 -  Volumes:
-    - `/var/lib/mysql`
-    - `./docker/mysql`
+   -  `/var/lib/mysql`
+   -  `./docker/mysql`
 
 To import a database dump, place the SQL file into the `.docker/mysql/docker-entrypoint-initdb.d` folder.
 
@@ -34,8 +34,8 @@ The following CLI containers, which are based on a [PHP-CLI version 7 image](htt
 -  `deploy`—extends the CLI container to use read-only file system, similar to the deploy phase
 -  `cron`—extends the CLI container to run cron
 
-    -  The `setup:cron:run` and `cron:update` commands are not available on Cloud and Docker for Cloud environment
-    -  Cron only works with the CLI container to run the `./bin/magento cron:run` command
+   -  The `setup:cron:run` and `cron:update` commands are not available on Cloud and Docker for Cloud environment
+   -  Cron only works with the CLI container to run the `./bin/magento cron:run` command
 
 For example, you can check the state of the your project using the _ideal-state_ wizard:
 
@@ -72,15 +72,15 @@ The PHP-FPM container is based on the [magento/magento-cloud-docker-php](https:/
 
 -  Port: 9000
 -  Read-only volumes:
-    - `/app`
-    - `/app/vendor`
-    - `/app/generated`
-    - `/app/setup`
+   -  `/app`
+   -  `/app/vendor`
+   -  `/app/generated`
+   -  `/app/setup`
 -  Read/Write volumes:
-    - `/app/var`
-    - `/app/app/etc`
-    - `/app/pub/static`
-    - `/app/pub/media`
+   -  `/app/var`
+   -  `/app/app/etc`
+   -  `/app/pub/static`
+   -  `/app/pub/media`
 
 ### Web container
 

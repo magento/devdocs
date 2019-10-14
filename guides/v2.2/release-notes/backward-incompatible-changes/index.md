@@ -375,38 +375,38 @@ The following methods now return JSON instead of a serialized string.
 
 {% collapsible Show methods %}
 
-- `\Magento\Catalog\Model\Product\Option\Type\File::prepareForCart()`
-- `\Magento\CatalogInventory\Helper\Minsaleqty::serializeValue($value)`
-  - Only if `$value` is array type
-- `\Magento\Widget\Helper\Conditions::encode($value)`
-- `\Magento\Wishlist\Model\Item\Option::getValue`
-- `\Magento\Wishlist\Model\Item\Option::getData('value',...)`
-- `\Magento\Widget\Model\Widget\Instance::getData('widget_parameters')`
-- `\Magento\Sales\Model\Order\Creditmemo\Item::getTaxRatio`
-- `\Magento\Sales\Model\Order\Invoice\Item::getTaxRatio`
-- `\Magento\Quote\Model\Quote\Address\Total::getAppliedTaxes()`
-- `\Magento\Catalog\Model\ResourceModel\Eav\Attribute::getData('additional_data')`
-- `\Magento\Catalog\Model\ResourceModel\Eav\Attribute::getAdditionalData()`
-- `\Magento\Sales\Model\Order\Item::getProductOptions()`
-  - Return value is an array, applicable only for "bundle_selection_attributes" key
-- `\Magento\Quote\Model\Quote\Item::getOptionByCode`
-  - `info_buyRequest` option
-- `\Magento\Rule\Model\AbstractModel::getConditionsSerialized()`
-- `\Magento\Catalog\Model\Product->getCustomOption('attributes')->getValue()`
-- `\Magento\CatalogInventory\Helper\Minsaleqty::makeStorableArrayFieldValue()`
-- `\Magento\Catalog\Model\Product\Option\Type\File::prepareForCart()`
-- `\Magento\Catalog\Model\Product\Configuration\Item\Option\OptionInterface::getValue()`
-- `\Magento\Quote\Model\Quote\Item\Option::getValue()`
-- `\Magento\Catalog\Model\Product\Configuration\Item\ItemInterface::getOptionByCode('bundle_selection_ids')->getValue()`
-- `\Magento\Sales\Model\Order\Item::getProductOptions()['bundle_selection_ids']`
-- `\Magento\Catalog\Model\Product::getCustomOption('bundle_selection_ids')`
-- `\Magento\Rma\Model\Shipping::getPackages()`
-- `\Magento\Rma\Model\Item::getProductOptions()`
-- `\Magento\Logging\Model\Event\Changes::getResultData()`
-- `\Magento\Logging\Model\Event::getInfo()`
-- `\Magento\GiftCardAccount\Helper\Data::getCards()`
-- `\Magento\Sales\Api\Data\OrderInterface`
-  - ['extension_attributes' => 'gift_cards' => JSON]
+-  `\Magento\Catalog\Model\Product\Option\Type\File::prepareForCart()`
+-  `\Magento\CatalogInventory\Helper\Minsaleqty::serializeValue($value)`
+   -  Only if `$value` is array type
+-  `\Magento\Widget\Helper\Conditions::encode($value)`
+-  `\Magento\Wishlist\Model\Item\Option::getValue`
+-  `\Magento\Wishlist\Model\Item\Option::getData('value',...)`
+-  `\Magento\Widget\Model\Widget\Instance::getData('widget_parameters')`
+-  `\Magento\Sales\Model\Order\Creditmemo\Item::getTaxRatio`
+-  `\Magento\Sales\Model\Order\Invoice\Item::getTaxRatio`
+-  `\Magento\Quote\Model\Quote\Address\Total::getAppliedTaxes()`
+-  `\Magento\Catalog\Model\ResourceModel\Eav\Attribute::getData('additional_data')`
+-  `\Magento\Catalog\Model\ResourceModel\Eav\Attribute::getAdditionalData()`
+-  `\Magento\Sales\Model\Order\Item::getProductOptions()`
+   -  Return value is an array, applicable only for "bundle_selection_attributes" key
+-  `\Magento\Quote\Model\Quote\Item::getOptionByCode`
+   -  `info_buyRequest` option
+-  `\Magento\Rule\Model\AbstractModel::getConditionsSerialized()`
+-  `\Magento\Catalog\Model\Product->getCustomOption('attributes')->getValue()`
+-  `\Magento\CatalogInventory\Helper\Minsaleqty::makeStorableArrayFieldValue()`
+-  `\Magento\Catalog\Model\Product\Option\Type\File::prepareForCart()`
+-  `\Magento\Catalog\Model\Product\Configuration\Item\Option\OptionInterface::getValue()`
+-  `\Magento\Quote\Model\Quote\Item\Option::getValue()`
+-  `\Magento\Catalog\Model\Product\Configuration\Item\ItemInterface::getOptionByCode('bundle_selection_ids')->getValue()`
+-  `\Magento\Sales\Model\Order\Item::getProductOptions()['bundle_selection_ids']`
+-  `\Magento\Catalog\Model\Product::getCustomOption('bundle_selection_ids')`
+-  `\Magento\Rma\Model\Shipping::getPackages()`
+-  `\Magento\Rma\Model\Item::getProductOptions()`
+-  `\Magento\Logging\Model\Event\Changes::getResultData()`
+-  `\Magento\Logging\Model\Event::getInfo()`
+-  `\Magento\GiftCardAccount\Helper\Data::getCards()`
+-  `\Magento\Sales\Api\Data\OrderInterface`
+   -  ['extension_attributes' => 'gift_cards' => JSON]
 
 {% endcollapsible %}
 
@@ -414,42 +414,42 @@ The following methods now require JSON as a parameter instead of a serialized st
 
 {% collapsible Show methods %}
 
-- `\Magento\Catalog\Model\Product\Option\Type\File::getFormattedOptionValue($optionValue)`
-- `\Magento\Catalog\Model\Product\Option\Type\File::_unserializeValue($value)`
-- `\Magento\Catalog\Model\Product\Option\Type\File::getEditableOptionValue($optionValue)`
-- `\Magento\Catalog\Model\Product\Option\Type\File::prepareOptionValueForRequest($optionValue)`
-- `\Magento\CatalogInventory\Helper\Minsaleqty::unserializeValue($value)`
-- `\Magento\Widget\Helper\Conditions::decode($value)`
-- `\Magento\Wishlist\Model\Item\Option::setValue($value)`
-- `\Magento\Wishlist\Model\Item\Option::setData('value', $value)`
-- `\Magento\Widget\Model\Widget\Instance::setData('widget_parameters', $value)`
-- `\Magento\Sales\Model\Order\Creditmemo\Item::setTaxRatio($value)`
-- `\Magento\Sales\Model\Order\Invoice\Item::setTaxRatio($value)`
-- `\Magento\Quote\Model\Quote\Address\Total::setAppliedTaxes($value)`
-- `\Magento\Quote\Model\Quote\Address\Total::setFullInfo($value)`
-  - Only for string values
-- `\Magento\Catalog\Model\ResourceModel\Eav\Attribute::setData('additional_data', $value)`
-- `\Magento\Catalog\Model\ResourceModel\Eav\Attribute::setAdditionalData($value)`
-- `\Magento\Sales\Model\Order\Item::setProductOptions($value)`
-  - `$value` is an array, applicable only for `bundle_selection_attributes` key
-- `\Magento\Quote\Model\Quote\Item::setOptionByCode`
-  - `info_buyRequest` option
-- `\Magento\Rule\Model\AbstractModel::setConditionsSerialized($value)`
-- `\Magento\Catalog\Model\Product::addCustomOption('attributes', $value)`
-  - For attributes `bundle_selection_ids` key
-- `\Magento\UrlRewrite\Model\UrlRewrite::setMetadata($value)`
-  - For non array values
-- `\Magento\UrlRewrite\Service\V1\Data::setMetadata($value)`
-  - For non array values
-- `\Magento\UrlRewrite\Model\UrlPersistInterface::deleteByData()`
-  - For metadata key
-- `\Magento\Catalog\Model\Product\Configuration\Item\Option\OptionInterface::setValue($value)`
-- `\Magento\Quote\Model\Quote\Item\Option::setValue($value)`
-- `\Magento\Rma\Model\Shipping::setPackages($value)`
-- `\Magento\Rma\Model\Item::setProductOptions($value)`
-- `\Magento\Logging\Model\Event\Changes::setResultData($value)`
-- `\Magento\Sales\Api\Data\OrderInterface`
-  - ['extension_attributes' => 'gift_cards' => JSON]
+-  `\Magento\Catalog\Model\Product\Option\Type\File::getFormattedOptionValue($optionValue)`
+-  `\Magento\Catalog\Model\Product\Option\Type\File::_unserializeValue($value)`
+-  `\Magento\Catalog\Model\Product\Option\Type\File::getEditableOptionValue($optionValue)`
+-  `\Magento\Catalog\Model\Product\Option\Type\File::prepareOptionValueForRequest($optionValue)`
+-  `\Magento\CatalogInventory\Helper\Minsaleqty::unserializeValue($value)`
+-  `\Magento\Widget\Helper\Conditions::decode($value)`
+-  `\Magento\Wishlist\Model\Item\Option::setValue($value)`
+-  `\Magento\Wishlist\Model\Item\Option::setData('value', $value)`
+-  `\Magento\Widget\Model\Widget\Instance::setData('widget_parameters', $value)`
+-  `\Magento\Sales\Model\Order\Creditmemo\Item::setTaxRatio($value)`
+-  `\Magento\Sales\Model\Order\Invoice\Item::setTaxRatio($value)`
+-  `\Magento\Quote\Model\Quote\Address\Total::setAppliedTaxes($value)`
+-  `\Magento\Quote\Model\Quote\Address\Total::setFullInfo($value)`
+   -  Only for string values
+-  `\Magento\Catalog\Model\ResourceModel\Eav\Attribute::setData('additional_data', $value)`
+-  `\Magento\Catalog\Model\ResourceModel\Eav\Attribute::setAdditionalData($value)`
+-  `\Magento\Sales\Model\Order\Item::setProductOptions($value)`
+   -  `$value` is an array, applicable only for `bundle_selection_attributes` key
+-  `\Magento\Quote\Model\Quote\Item::setOptionByCode`
+   -  `info_buyRequest` option
+-  `\Magento\Rule\Model\AbstractModel::setConditionsSerialized($value)`
+-  `\Magento\Catalog\Model\Product::addCustomOption('attributes', $value)`
+   -  For attributes `bundle_selection_ids` key
+-  `\Magento\UrlRewrite\Model\UrlRewrite::setMetadata($value)`
+   -  For non array values
+-  `\Magento\UrlRewrite\Service\V1\Data::setMetadata($value)`
+   -  For non array values
+-  `\Magento\UrlRewrite\Model\UrlPersistInterface::deleteByData()`
+   -  For metadata key
+-  `\Magento\Catalog\Model\Product\Configuration\Item\Option\OptionInterface::setValue($value)`
+-  `\Magento\Quote\Model\Quote\Item\Option::setValue($value)`
+-  `\Magento\Rma\Model\Shipping::setPackages($value)`
+-  `\Magento\Rma\Model\Item::setProductOptions($value)`
+-  `\Magento\Logging\Model\Event\Changes::setResultData($value)`
+-  `\Magento\Sales\Api\Data\OrderInterface`
+   -  ['extension_attributes' => 'gift_cards' => JSON]
 
 {% endcollapsible %}
 
@@ -477,5 +477,5 @@ The following methods now require JSON as a parameter instead of a serialized st
 
 **Description:**
 
-- `var/di` is moved to `generated/metadata`
-- `var/generate` is moved to `generated/code`
+-  `var/di` is moved to `generated/metadata`
+-  `var/generate` is moved to `generated/code`
