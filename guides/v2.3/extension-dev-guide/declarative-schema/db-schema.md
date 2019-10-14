@@ -467,6 +467,25 @@ Module B disables the original primary key and sets a new primary key with a `re
 </schema>
 ```
 
+## Modify a Core or 3rd party table added by another module
+Suppose we want add new column name="referred_by" on core table customer_entity etc/db_schema.xml
+
+```
+<?xml version="1.0"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="customer_entity">
+    <column xsi:type="int" name="referred_by" padding="10" unsigned="true" nullable="false"
+    comment="Referred By"/>
+    <constraint xsi:type="foreign" referenceId= "CUSTOMER_ENTITY_REFERRED_BY_CUSTOMER_ENTITY_ENTITY_ID" table="customer_entity"
+    column="referred_by" referenceTable="customer_entity" referenceColumn="entity_id" onDelete="CASCADE"/>
+    </table>
+
+</schema>
+```
+
+![](https://raw.githubusercontent.com/bdcrops/module-declarative/master/docs/afterAddcolumn.png)
+
+
 ## Other tasks
 
 ### Disable a module
