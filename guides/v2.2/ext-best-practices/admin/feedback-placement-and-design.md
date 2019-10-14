@@ -13,14 +13,14 @@ For more detailed comments, please create a Pull Request on the specific page.
 
 ### Article Sections
 
-* Overview
-* Things to Avoid
-  * Icons in the Primary Navigation
-  * Advertising in Navigation
-* Placement guidelines for [extension](https://glossary.magento.com/extension) types
-  * Standard Connector
-  * Store Feature Connector
-  * Connector with additional features
-  * Feature Extensions
-  * Integrated Extensions
-  * Codebase Extensions
+*  Overview
+*  Things to Avoid
+   *  Icons in the Primary Navigation
+   *  Advertising in Navigation
+*  Placement guidelines for [extension](https://glossary.magento.com/extension) types
+   *  Standard Connector
+   *  Store Feature Connector
+   *  Connector with additional features
+   *  Feature Extensions
+   *  Integrated Extensions
+   *  Codebase Extensions
