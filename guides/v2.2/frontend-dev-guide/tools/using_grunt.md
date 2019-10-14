@@ -122,6 +122,6 @@ To tell Grunt to use a custom configuration file, instead of the default one, ad
 
 1. Call the `get(%file_alias%)` method to get the configuration file.
 
-   ```
+   ```config
    var themes = fileRouter.get('themes');
    ```
