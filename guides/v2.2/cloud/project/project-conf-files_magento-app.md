@@ -139,7 +139,7 @@ web:
 ```
 
 {:.bs-callout-info}
-This example shows the default web configuration for a Cloud project configured to support a single domain. For a project that requires support for multiple websites or stores, the `web` configuration must be set up to support shared domains. See [Configure locations for shared domains]{{ page.baseurl }}/cloud/project-multi-sites.html#locations).
+This example shows the default web configuration for a Cloud project configured to support a single domain. For a project that requires support for multiple websites or stores, the `web` configuration must be set up to support shared domains. See [Configure locations for shared domains]({{ page.baseurl }}/cloud/project-multi-sites.html#locations).
 
 ### `disk`
 
