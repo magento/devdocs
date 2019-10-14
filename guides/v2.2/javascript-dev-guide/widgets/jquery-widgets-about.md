@@ -16,6 +16,7 @@ This guide discusses the following widgets:
 -   [Confirm widget]
 -   [Dropdown widget]
 -   [DropdownDialog widget]
+-   [FolderTree widget]
 -   [Gallery widget]
 -   [List widget]
 -   [Loader widget]
@@ -51,6 +52,7 @@ Magento out of the box does not contain jQuery UI styles. Also, it is not recomm
 [Confirm widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_confirm.html
 [Dropdown widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_dropdown.html
 [DropdownDialog widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_dialog.html
+[FolderTree widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget-folder-tree.html
 [Gallery widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_gallery.html
 [List widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_list.html
 [Loader widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_loader.html

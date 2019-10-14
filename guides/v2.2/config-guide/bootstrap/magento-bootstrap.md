@@ -70,6 +70,7 @@ We have the following entry point applications (that is, applications defined by
 *  [Media resource entry point](#config-boot-entry-media)
 
 ### HTTP entry point {#config-boot-entry-http}
+
 [\Magento\Framework\App\Http]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/App/Http){:target="_blank"} operates as follows:
 
 1. Determines the [application area]({{ page.baseurl }}/architecture/archi_perspectives/components/modules/mod_and_areas.html).
@@ -78,8 +79,8 @@ We have the following entry point applications (that is, applications defined by
 1. Error handling (in the following priority order):
 
    1. If you're using [developer mode]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html#developer-mode):
-      *  If the Magento application is not installed, redirect to Setup Wizard.
-      *  If the Magento application is installed, display an error and HTTP status code 500 (Internal Server Error).
+     *  If the Magento application is not installed, redirect to Setup Wizard.
+     *  If the Magento application is installed, display an error and HTTP status code 500 (Internal Server Error).
    1. If the Magento application is in maintenance mode, display a user-friendly "Service Unavailable" landing page with HTTP status code 503 (Service Temporary Unavailable).
    1. If the Magento application is *not* installed, redirect to Setup Wizard.
    1. If the session is invalid, redirect to the home page.
@@ -87,10 +88,11 @@ We have the following entry point applications (that is, applications defined by
    1. On any other error, display a user-friendly "Service Unavailable" page with HTTP response 503 and generate an error report and display its ID on the page.
 
 ### Static resource entry point {#config-boot-entry-static}
+
 [\Magento\Framework\App\StaticResource]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/App/StaticResource.php){:target="_blank"} is an application for retrieving static resources (for example, CSS, JavaScript, and images). It postpones any actions with a static resource until the resource is requested.
 
 {: .bs-callout-info }
-The entry point for static view files is not used in [production mode]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html#production-mode) to avoid potential exploits on the server. In production mode, the Magento application expects that all necessary resources already exist in the <code>&lt;your Magento install dir>/pub/static</code> directory.
+The entry point for static view files is not used in [production mode]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html#production-mode) to avoid potential exploits on the server. In production mode, the Magento application expects that all necessary resources already exist in the `<your Magento install dir>/pub/static` directory.
 
 In default or developer mode, a request for a non-existent static resource is redirected to the static entry point according to the rewrite rules specified by the appropriate `.htaccess`.
 When the request is redirected to the entry point, the Magento application parses the requested [URL](https://glossary.magento.com/url) based on retrieved parameters and finds the requested resource.
