@@ -88,18 +88,18 @@ Breaking up items in a series into lists will enhance readability for Magento us
 
 Use these rules for lists:
 
-* **Introducing a list.** All lists must be preceded by a lead-in heading, sentence or phrase, as follows:
+*  **Introducing a list.** All lists must be preceded by a lead-in heading, sentence or phrase, as follows:
 
-  * A heading / title without punctuation
+   *  A heading / title without punctuation
 
-  * A sentence that ends in a colon or ellipsis
+   *  A sentence that ends in a colon or ellipsis
 
-  * A phrase, or partial sentence, ending in a colon or ellipsis
+   *  A phrase, or partial sentence, ending in a colon or ellipsis
 
-* **Bullets vs. numbers.** Use bullets for non-sequential lists and numbers for sequential lists or instructions.
+*  **Bullets vs. numbers.** Use bullets for non-sequential lists and numbers for sequential lists or instructions.
 
-* **Capitalization.** Each item in a list should begin with a capitalized letter in the first word.
+*  **Capitalization.** Each item in a list should begin with a capitalized letter in the first word.
 
-* **Periods.** Use for items that are complete sentences, wholly contained within the bullet / number. Can be used for bold lead-in content. See examples below.
+*  **Periods.** Use for items that are complete sentences, wholly contained within the bullet / number. Can be used for bold lead-in content. See examples below.
 
-* **Parallelism.** List elements should be constructed consistently. If the first item in a list is a noun, all items must be nouns. Similarly, if the first item is a sentence, all items must be sentences.
+*  **Parallelism.** List elements should be constructed consistently. If the first item in a list is a noun, all items must be nouns. Similarly, if the first item is a sentence, all items must be sentences.

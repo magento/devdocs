@@ -1176,7 +1176,7 @@ commands:
         default: false
 - name: config:set
   usage:
-  - config:set [--scope SCOPE] [--scope-code SCOPE-CODE] [-le|--lock-env] [-lc|--lock-config]
+  - config:set [--scope SCOPE] [--scope-code SCOPE-CODE] [-e|--lock-env] [-c|--lock-config]
     [-l|--lock] [--] <path> <value>
   description: Change system configuration
   help: Change system configuration
@@ -1213,7 +1213,7 @@ commands:
         default: 
       lock-env:
         name: "--lock-env"
-        shortcut: "-le"
+        shortcut: "-e"
         accept_value: false
         is_value_required: false
         is_multiple: false
@@ -1222,7 +1222,7 @@ commands:
         default: false
       lock-config:
         name: "--lock-config"
-        shortcut: "-lc"
+        shortcut: "-c"
         accept_value: false
         is_value_required: false
         is_multiple: false
@@ -2602,6 +2602,213 @@ commands:
         is_multiple: false
         description: Overwrite XML file
         default: false
+      help:
+        name: "--help"
+        shortcut: "-h"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this help message
+        default: false
+      quiet:
+        name: "--quiet"
+        shortcut: "-q"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not output any message
+        default: false
+      verbose:
+        name: "--verbose"
+        shortcut: "-v|-vv|-vvv"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: 'Increase the verbosity of messages: 1 for normal output, 2 for
+          more verbose output and 3 for debug'
+        default: false
+      version:
+        name: "--version"
+        shortcut: "-V"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this application version
+        default: false
+      ansi:
+        name: "--ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Force ANSI output
+        default: false
+      no-ansi:
+        name: "--no-ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Disable ANSI output
+        default: false
+      no-interaction:
+        name: "--no-interaction"
+        shortcut: "-n"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not ask any interactive question
+        default: false
+- name: downloadable:domains:add
+  usage:
+  - downloadable:domains:add [<domains>]...
+  description: Add domains to the downloadable domains whitelist
+  help: Add domains to the downloadable domains whitelist
+  definition:
+    arguments:
+      domains:
+        name: domains
+        is_required: false
+        is_array: true
+        description: Domains name
+        default: []
+    options:
+      help:
+        name: "--help"
+        shortcut: "-h"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this help message
+        default: false
+      quiet:
+        name: "--quiet"
+        shortcut: "-q"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not output any message
+        default: false
+      verbose:
+        name: "--verbose"
+        shortcut: "-v|-vv|-vvv"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: 'Increase the verbosity of messages: 1 for normal output, 2 for
+          more verbose output and 3 for debug'
+        default: false
+      version:
+        name: "--version"
+        shortcut: "-V"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this application version
+        default: false
+      ansi:
+        name: "--ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Force ANSI output
+        default: false
+      no-ansi:
+        name: "--no-ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Disable ANSI output
+        default: false
+      no-interaction:
+        name: "--no-interaction"
+        shortcut: "-n"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not ask any interactive question
+        default: false
+- name: downloadable:domains:remove
+  usage:
+  - downloadable:domains:remove [<domains>]...
+  description: Remove domains from the downloadable domains whitelist
+  help: Remove domains from the downloadable domains whitelist
+  definition:
+    arguments:
+      domains:
+        name: domains
+        is_required: false
+        is_array: true
+        description: Domain names
+        default: []
+    options:
+      help:
+        name: "--help"
+        shortcut: "-h"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this help message
+        default: false
+      quiet:
+        name: "--quiet"
+        shortcut: "-q"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not output any message
+        default: false
+      verbose:
+        name: "--verbose"
+        shortcut: "-v|-vv|-vvv"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: 'Increase the verbosity of messages: 1 for normal output, 2 for
+          more verbose output and 3 for debug'
+        default: false
+      version:
+        name: "--version"
+        shortcut: "-V"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this application version
+        default: false
+      ansi:
+        name: "--ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Force ANSI output
+        default: false
+      no-ansi:
+        name: "--no-ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Disable ANSI output
+        default: false
+      no-interaction:
+        name: "--no-interaction"
+        shortcut: "-n"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not ask any interactive question
+        default: false
+- name: downloadable:domains:show
+  usage:
+  - downloadable:domains:show
+  description: Display downloadable domains whitelist
+  help: Display downloadable domains whitelist
+  definition:
+    arguments: []
+    options:
       help:
         name: "--help"
         shortcut: "-h"
@@ -4753,6 +4960,71 @@ commands:
         description: 'Add to any command to customize Magento initialization parameters
           For example: "MAGE_MODE=developer&MAGE_DIRS[base][path]=/var/www/example.com&MAGE_DIRS[cache][path]=/var/tmp/cache"'
         default: 
+      help:
+        name: "--help"
+        shortcut: "-h"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this help message
+        default: false
+      quiet:
+        name: "--quiet"
+        shortcut: "-q"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not output any message
+        default: false
+      verbose:
+        name: "--verbose"
+        shortcut: "-v|-vv|-vvv"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: 'Increase the verbosity of messages: 1 for normal output, 2 for
+          more verbose output and 3 for debug'
+        default: false
+      version:
+        name: "--version"
+        shortcut: "-V"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this application version
+        default: false
+      ansi:
+        name: "--ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Force ANSI output
+        default: false
+      no-ansi:
+        name: "--no-ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Disable ANSI output
+        default: false
+      no-interaction:
+        name: "--no-interaction"
+        shortcut: "-n"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not ask any interactive question
+        default: false
+- name: msp:security:recaptcha:disable
+  usage:
+  - msp:security:recaptcha:disable
+  description: Disable backend reCaptcha
+  help: Disable backend reCaptcha
+  definition:
+    arguments: []
+    options:
       help:
         name: "--help"
         shortcut: "-h"
@@ -7878,6 +8150,11 @@ namespaces:
   - dev:tests:run
   - dev:urn-catalog:generate
   - dev:xml:convert
+- id: downloadable
+  commands:
+  - downloadable:domains:add
+  - downloadable:domains:remove
+  - downloadable:domains:show
 - id: i18n
   commands:
   - i18n:collect-phrases
@@ -7915,6 +8192,9 @@ namespaces:
   - module:enable
   - module:status
   - module:uninstall
+- id: msp
+  commands:
+  - msp:security:recaptcha:disable
 - id: newrelic
   commands:
   - newrelic:create:deploy-marker

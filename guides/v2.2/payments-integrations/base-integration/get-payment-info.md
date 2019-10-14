@@ -193,7 +193,7 @@ public function assignData(\Magento\Framework\DataObject $data)
 
 There are two events:
 
- - `payment_method_assign_data_payment_code`: specific for current method (placing order using this payment method)
- - `payment_method_assign_data`: global for all payments (place order)
+-  `payment_method_assign_data_payment_code`: specific for current method (placing order using this payment method)
+-  `payment_method_assign_data`: global for all payments (place order)
 
 What type of event to use depends on your implementation, but in most cases it will be enough to use the event for current payment method.

@@ -3,13 +3,21 @@ group: release-notes
 title: Magento Commerce 2.3.2 Release Notes
 ---
 
-*Patch code and release notes published on June 25, 2019. Release notes last updated on July 8, 2019.*
+*Patch code and release notes published on June 25, 2019.*
 
 We are pleased to present Magento Commerce 2.3.2.  This release includes over 200 functional fixes to the core product, over 350 pull requests contributed by the community, and  over 75 security enhancements. It includes  contributions from our community members. These contributions range from minor clean-up of core code to significant enhancements to Inventory Management and GraphQL.
 
 ## Other release information
 
 Although code for these features is bundled with quarterly releases of the Magento core code, several of these projects (for example, Page Builder, Inventory Management, and Progressive Web Applications (PWA) Studio) are also released independently. Bug fixes for these projects are documented in separate, project-specific release information which is available in the documentation for each project.
+
+## New security-only patch available
+
+Merchants can now install time-sensitive security fixes without applying the hundreds of functional fixes and enhancements that a full quarterly release (for example, Magento 2.3.3) provides. Patch 2.3.2.2 (Composer package 2.3.2-p2) is a security-only patch that provides fixes for vulnerabilities that have been identified in our previous quarterly release, Magento 2.3.2.
+
+**If you have already upgraded to the pre-release version of this patch (2.3.2-p1), we strongly recommend that you upgrade to 2.3.2-p2 as soon as possible.**  Patch 2.3.2-p2 contains the critical security fixes that are included in Magento  2.3.3, 2.2.10, 1.9.4.3, and 1.14.4.3, but that are not included in patch 2.3.2-p1.
+
+For general information about security-only patches, see the Magento DevBlog post [Introducing the New Security-only Patch Release](https://community.magento.com/t5/Magento-DevBlog/Introducing-the-New-Security-only-Patch-Release/ba-p/141287). For instructions on downloading and applying security-only patches (including patch 2.3.2-p1), see [Install Magento using Composer](https://devdocs-beta.magento.com/guides/v2.3/install-gde/composer.html#get-the-metapackage).
 
 ## Apply the Scope parameter for Async/Bulk API patch to address an issue with the Async/Bulk REST API
 
@@ -57,60 +65,60 @@ This release contains 130 enhancements to core quality, which improve the qualit
 
 Magento now performs the following tasks as **asynchronous background processes** and sends system messages to alert Admin users when tasks complete. Moving these common administrative tasks to the background frees administrators to work on other tasks while the initial tasks are processing.
 
-* Discount coupon generation. See [Coupon Code](https://docs.magento.com/m2/ee/user_guide/marketing/price-rules-cart-coupon.html).
+*  Discount coupon generation. See [Coupon Code](https://docs.magento.com/m2/ee/user_guide/marketing/price-rules-cart-coupon.html).
 
 <!--- MC-13615-->
 
-* Mass editing of products.
+*  Mass editing of products.
 
 <!--- MC-13613-->
 
-* Data export. Previously, connection timeouts occurred during export of large data sets (for example, the export of 200,000 products). See [Export](https://docs.magento.com/m2/b2b/user_guide/system/data-export.html) for more information. <!--- MC-5953-->
+*  Data export. Previously, connection timeouts occurred during export of large data sets (for example, the export of 200,000 products). See [Export](https://docs.magento.com/m2/b2b/user_guide/system/data-export.html) for more information. <!--- MC-5953-->
 
 ### Inventory Management enhancements
 
-* **New commands** allow merchants to check for reservation inconsistencies and resolve any that occur. See [Inventory CLI reference]({{ page.baseurl }}/inventory/inventory-cli-reference.html).
+*  **New commands** allow merchants to check for reservation inconsistencies and resolve any that occur. See [Inventory CLI reference]({{ page.baseurl }}/inventory/inventory-cli-reference.html).
 
-* Improved user interface for assigning sources to products. This redesigned interface includes:
+*  Improved user interface for assigning sources to products. This redesigned interface includes:
 
-  * Support for decimal order quantity
-  * New test scenarios created to cover Credit Memo use cases
-  * New InventoryGraphQl module provides attributes that return correct information about product quantities
-  * Single product save (using asynchronous synchronization with legacy catalog inventory)
-  * Multiple product save
-  * Bulk inventory transfer
+   *  Support for decimal order quantity
+   *  New test scenarios created to cover Credit Memo use cases
+   *  New InventoryGraphQl module provides attributes that return correct information about product quantities
+   *  Single product save (using asynchronous synchronization with legacy catalog inventory)
+   *  Multiple product save
+   *  Bulk inventory transfer
 
-* **New endpoint** for Bulk Partial Stock Transfer to bulk transfer a custom product quantity between sources. See [Inventory Bulk Actions]({{ page.baseurl }}/rest/modules/inventory/bulk-inventory.html).
+*  **New endpoint** for Bulk Partial Stock Transfer to bulk transfer a custom product quantity between sources. See [Inventory Bulk Actions]({{ page.baseurl }}/rest/modules/inventory/bulk-inventory.html).
 
-* Fixes to multiple  bugs. See [Inventory Management release notes]({{ page.baseurl }}/inventory/release-notes.html).
+*  Fixes to multiple  bugs. See [Inventory Management release notes]({{ page.baseurl }}/inventory/release-notes.html).
 
 ### GraphQL
 
 GraphQL performance improvements include these enhancements:
 
-* **GraphQL caching**. GraphQL can now cache the `category`, `cmsBlocks`, `cmsPage`, `products`, and `urlResolver` queries, which improves response times.  To enable this feature, send these queries using HTTP GET. You can send all other queries with HTTP GET, but they are not cached.
+*  **GraphQL caching**. GraphQL can now cache the `category`, `cmsBlocks`, `cmsPage`, `products`, and `urlResolver` queries, which improves response times.  To enable this feature, send these queries using HTTP GET. You can send all other queries with HTTP GET, but they are not cached.
 
-* **Improvements to GraphQL coverage**.  Improved coverage for cart and checkout operations include mutations that provide support for the following actions:
+*  **Improvements to GraphQL coverage**.  Improved coverage for cart and checkout operations include mutations that provide support for the following actions:
 
-  * Support for simple and virtual products
-  * Add, update, and delete cart items
-  * Set shipping addresses (with address book support)
-  * Set the billing address (with address book support)
-  * Set shipping methods
-  * Set the payment method (offline methods only)
-  * Place an order
+   *  Support for simple and virtual products
+   *  Add, update, and delete cart items
+   *  Set shipping addresses (with address book support)
+   *  Set the billing address (with address book support)
+   *  Set shipping methods
+   *  Set the payment method (offline methods only)
+   *  Place an order
 
-* **GraphQL performance test scenario coverage**. We have added PWA GraphQL test scenarios for critical checkout and catalog browsing to the performance builds. GraphQL community developers can use the new scenarios to measure storefront performance. <!--- MC-15826, 15922-->
+*  **GraphQL performance test scenario coverage**. We have added PWA GraphQL test scenarios for critical checkout and catalog browsing to the performance builds. GraphQL community developers can use the new scenarios to measure storefront performance. <!--- MC-15826, 15922-->
 
 See [Release notes]({{ page.baseurl }}/graphql/release-notes.html) for a more detailed discussion of recent GraphQL bug fixes.
 
 ### Progressive Web Apps (PWA)
 
-* **Improved modular component library**. PWA Studio continues to build out the concept for functional and data components through the Peregrine library. Components can now be reused and scaled for frontend needs. Magento has planned a phased rollout for Peregrine functional and data components, starting with the Search component which is launching with this release.
+*  **Improved modular component library**. PWA Studio continues to build out the concept for functional and data components through the Peregrine library. Components can now be reused and scaled for frontend needs. Magento has planned a phased rollout for Peregrine functional and data components, starting with the Search component which is launching with this release.
 
 ### BlueFoot to Page Builder content migration
 
-* **Assistance for BlueFoot to Page Builder migration**.  The BlueFoot content migration module (PageBuilderDataMigration) enables merchants who are running Magento 2.1.x or 2.2.x with BlueFoot  to upgrade to Magento 2.3.1+ with PageBuilder 1.0 without losing their website content. This module  migrates only content created with native BlueFoot. See [Overview of content migration](https://devdocs.magento.com/page-builder-migration/docs/) for information about module installation and supported content types.
+*  **Assistance for BlueFoot to Page Builder migration**.  The BlueFoot content migration module (PageBuilderDataMigration) enables merchants who are running Magento 2.1.x or 2.2.x with BlueFoot  to upgrade to Magento 2.3.1+ with PageBuilder 1.0 without losing their website content. This module  migrates only content created with native BlueFoot. See [Overview of content migration](https://devdocs.magento.com/page-builder-migration/docs/) for information about module installation and supported content types.
 
 ### Vendor-developed extension enhancements
 
@@ -441,25 +449,25 @@ This fix can degrade performance in deployments that implement flat catalogs. To
 
 <!--- ENGCOM-4180-->
 
-* **Meta Keywords** and **Meta Description** are now defined as `textarea` throughout  product forms. *Fix submitted by Amit Vishvakarma in pull request [20556](https://github.com/magento/magento2/pull/20556)*. [GitHub-20555](https://github.com/magento/magento2/issues/20555)
+*  **Meta Keywords** and **Meta Description** are now defined as `textarea` throughout  product forms. *Fix submitted by Amit Vishvakarma in pull request [20556](https://github.com/magento/magento2/pull/20556)*. [GitHub-20555](https://github.com/magento/magento2/issues/20555)
 
 <!--- MAGETWO-99027-->
 
-* Magento now saves customizable option price input on the store-view level when Catalog Price Scope is set to **Global**.
+*  Magento now saves customizable option price input on the store-view level when Catalog Price Scope is set to **Global**.
 
 <!--- MAGETWO-99817-->
 
-* We have modified the required permissions for updating the `design` fieldset of categories, products, and CMS pages:
+*  We have modified the required permissions for updating the `design` fieldset of categories, products, and CMS pages:
 
-  * Existing roles that have **save** permission for these entities can save everything.
+   *  Existing roles that have **save** permission for these entities can save everything.
 
-  * New roles will need to be granted permission to edit design manually.
+   *  New roles will need to be granted permission to edit design manually.
 
-  * If you do not have permission to edit the `design` fieldset or use web API endpoints to update a category, Magento does not save your changes and the design properties remain unchanged.
+   *  If you do not have permission to edit the `design` fieldset or use web API endpoints to update a category, Magento does not save your changes and the design properties remain unchanged.
 
 <!--- ENGCOM-3608-->
 
-* When you configure a price rule for configurable products with swatches, Magento now a shows the special price for products that match the price rule. Previously, Magento displayed both the old price and the special price for the matching configurable products. *Fix submitted by Sarfaraz Bheda in pull request [19376](https://github.com/magento/magento2/pull/19376)*. [GitHub-19276](https://github.com/magento/magento2/issues/19276)
+*  When you configure a price rule for configurable products with swatches, Magento now a shows the special price for products that match the price rule. Previously, Magento displayed both the old price and the special price for the matching configurable products. *Fix submitted by Sarfaraz Bheda in pull request [19376](https://github.com/magento/magento2/pull/19376)*. [GitHub-19276](https://github.com/magento/magento2/issues/19276)
 
 ### CatalogInventory
 
@@ -600,23 +608,23 @@ has been changed to `<argument name="resourceStockItem" xsi:type="object">Magent
 
 <!--- ENGCOM-4188-->
 
-* Configurable products can now be successfully updated through the bulk API using the following API endpoint: `rest/async/bulk/V1/configurable-products/bySku/child`). *Fix submitted by Pedro Sousa in pull request [21083](https://github.com/magento/magento2/pull/21083)*. [GitHub-20366](https://github.com/magento/magento2/issues/20366)
+*  Configurable products can now be successfully updated through the bulk API using the following API endpoint: `rest/async/bulk/V1/configurable-products/bySku/child`). *Fix submitted by Pedro Sousa in pull request [21083](https://github.com/magento/magento2/pull/21083)*. [GitHub-20366](https://github.com/magento/magento2/issues/20366)
 
 ### cron
 
 <!--- MAGETWO-98151-->
 
-* Added support for [Zookeeper](https://php.net/manual/en/book.zookeeper.php) and flock lock providers. We have also added new options to configure locks during installation:
+*  Added support for [Zookeeper](https://php.net/manual/en/book.zookeeper.php) and flock lock providers. We have also added new options to configure locks during installation:
 
-  * `--lock-provider=LOCK-PROVIDER`—Lock provider name
+   *  `--lock-provider=LOCK-PROVIDER`—Lock provider name
 
-  * `--lock-db-prefix=LOCK-DB-PREFIX`—Installation specific lock prefix to avoid lock conflicts
+   *  `--lock-db-prefix=LOCK-DB-PREFIX`—Installation specific lock prefix to avoid lock conflicts
 
-  * `--lock-zookeeper-host=LOCK-ZOOKEEPER-HOST`  —Host and port to connect to Zookeeper cluster. For example, 127.0.0.1:2181
+   *  `--lock-zookeeper-host=LOCK-ZOOKEEPER-HOST`  —Host and port to connect to Zookeeper cluster. For example, 127.0.0.1:2181
 
-  * `--lock-zookeeper-path=LOCK-ZOOKEEPER-PATH`— The path where Zookeeper will save locks. The default path is /magento/locks
+   *  `--lock-zookeeper-path=LOCK-ZOOKEEPER-PATH`— The path where Zookeeper will save locks. The default path is /magento/locks
 
-  * `--lock-file-path=LOCK-FILE-PATH`—The path where file locks will be saved.
+   *  `--lock-file-path=LOCK-FILE-PATH`—The path where file locks will be saved.
 
   See [Configure the lock provider]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-lock.html).
 
@@ -956,25 +964,25 @@ has been changed to `<argument name="resourceStockItem" xsi:type="object">Magent
 
 <!--- ENGCOM-4545-->
 
-* Magento no longer caches absolute file paths in  the validator factory  (`Magento\Framework\Validator\Factory::_initializeConfigList`). Previously, caching absolute file paths resulted in problems during transactions when a customer, a `customer_address`, or quote for a registered customer was saved. *Fix submitted by David Führ in pull request [21856](https://github.com/magento/magento2/pull/21856)*. [GitHub-21842](https://github.com/magento/magento2/issues/21842)
+*  Magento no longer caches absolute file paths in  the validator factory  (`Magento\Framework\Validator\Factory::_initializeConfigList`). Previously, caching absolute file paths resulted in problems during transactions when a customer, a `customer_address`, or quote for a registered customer was saved. *Fix submitted by David Führ in pull request [21856](https://github.com/magento/magento2/pull/21856)*. [GitHub-21842](https://github.com/magento/magento2/issues/21842)
 
 <!--- ENGCOM-4679-->
 
-* The `QuoteRepository` `get` methods now return an object of instance `Vendor\Module\Model\Quote`. *Fix submitted by Bartłomiej Szubert in pull request [22149](https://github.com/magento/magento2/pull/22149)*. [GitHub-12802](https://github.com/magento/magento2/issues/12802)
+*  The `QuoteRepository` `get` methods now return an object of instance `Vendor\Module\Model\Quote`. *Fix submitted by Bartłomiej Szubert in pull request [22149](https://github.com/magento/magento2/pull/22149)*. [GitHub-12802](https://github.com/magento/magento2/issues/12802)
 
 <!--- ENGCOM-4585-->
 
-* Magento no longer throws an exception under these conditions:
+*  Magento no longer throws an exception under these conditions:
 
-  * A product configuration specifies a `Minimum Qty Allowed in Shopping Cart` as a decimal value less than one
+   *  A product configuration specifies a `Minimum Qty Allowed in Shopping Cart` as a decimal value less than one
 
-  * This configuration is later updated to set `Qty Uses Decimals` to **no**. *Fix submitted by Valerij Ivashchenko in pull request [21928](https://github.com/magento/magento2/pull/21928)*. [GitHub-21926](https://github.com/magento/magento2/issues/21926)
+   *  This configuration is later updated to set `Qty Uses Decimals` to **no**. *Fix submitted by Valerij Ivashchenko in pull request [21928](https://github.com/magento/magento2/pull/21928)*. [GitHub-21926](https://github.com/magento/magento2/issues/21926)
 
 ### Layered navigation
 
 <!--- ENGCOM-4637-->
 
-* Setting **price navigation step calculation** for layered navigation to **Automatic (equalize product counts)** now works as expected. Previously, results were not in the equals range, but omitted products. *Fix submitted by Nazar Klovanych in pull request [21968](https://github.com/magento/magento2/pull/21968)*. [GitHub-21960](https://github.com/magento/magento2/issues/21960)
+*  Setting **price navigation step calculation** for layered navigation to **Automatic (equalize product counts)** now works as expected. Previously, results were not in the equals range, but omitted products. *Fix submitted by Nazar Klovanych in pull request [21968](https://github.com/magento/magento2/pull/21968)*. [GitHub-21960](https://github.com/magento/magento2/issues/21960)
 
 <!--- ENGCOM-4504-->
 

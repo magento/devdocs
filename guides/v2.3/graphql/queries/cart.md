@@ -928,7 +928,7 @@ Attribute |  Data Type | Description
 
 ## Related topics
 
--  [createEmptyCart mutation]({{page.baseurl}}/graphql/mutations/create-empty-cart.html)
--  [addSimpleProductsToCart mutation]({{page.baseurl}}/graphql/mutations/add-simple-products.html)
--  [setBillingAddressOnCart mutation]({{page.baseurl}}/graphql/mutations/set-billing-address.html)
--  [setPaymentMethodOnCart mutation]({{page.baseurl}}/graphql/mutations/set-payment-method.html)
+*  [createEmptyCart mutation]({{page.baseurl}}/graphql/mutations/create-empty-cart.html)
+*  [addSimpleProductsToCart mutation]({{page.baseurl}}/graphql/mutations/add-simple-products.html)
+*  [setBillingAddressOnCart mutation]({{page.baseurl}}/graphql/mutations/set-billing-address.html)
+*  [setPaymentMethodOnCart mutation]({{page.baseurl}}/graphql/mutations/set-payment-method.html)

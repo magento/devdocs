@@ -5,7 +5,7 @@ contributor_name: Something Digital
 contributor_link: https://www.somethingdigital.com/
 ---
 
-The `createBraintreeClientToken` mutation creates the client token required by the Braintree SDK for nonce generation.
+The `createBraintreeClientToken` mutation creates the client token for Braintree Javascript SDK initialization.
 
 ## Syntax
 
