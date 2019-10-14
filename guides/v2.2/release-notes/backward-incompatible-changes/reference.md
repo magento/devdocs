@@ -14,7 +14,7 @@ All changes are generated automatically using the codebase of the corresponding 
 The changes are aggregated into two tables:
 
 1. **Changes in classes** that contains backward incompatible changes made to the Magento classes
-2. **Changes in interfaces** that contains backward incompatible changes made to the Magento interfaces
+1. **Changes in interfaces** that contains backward incompatible changes made to the Magento interfaces
 
 ## 2.2.8 - 2.2.9 {#releases-2_2_8-2_2_9}
 
