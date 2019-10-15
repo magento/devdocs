@@ -25,16 +25,16 @@ See the following sections for details about adding favicons.
 To add a custom favicon in the Magento Admin, do the following:
 
 1. Navigate to **CONTENT** > **Design** > **Configuration**.
-2. In the scope grid, decide on which level you will configure the favicon and click **Edit** in the corresponding row.
+1. In the scope grid, decide on which level you will configure the favicon and click **Edit** in the corresponding row.
 
    ![favicon 1]({{site.baseurl}}/common/images/favicon_2_21.png)
 
-3. Under the **Other Settings** title, expand the **HTML Head** options.
-4. Next to **Favicon Icon**, click **Upload**, and select the file.
+1. Under the **Other Settings** title, expand the **HTML Head** options.
+1. Next to **Favicon Icon**, click **Upload**, and select the file.
 
    ![favicon 2]({{site.baseurl}}/common/images/favicon_1_21.png)
 
-5. Click **Save Configuration** in the upper right corner to save the changes.
+1. Click **Save Configuration** in the upper right corner to save the changes.
 
 If caching is enabled in your Admin, you get a notification that refreshing certain [cache](https://glossary.magento.com/cache) types is required. Click the link provided in the notification, and then click **Flush Magento Cache**. You can also navigate to **System** > Tools > **Cache Management** and click **Flush Magento Cache**, or run `bin/magento cache:flush`.
 
@@ -45,7 +45,7 @@ To override the default 16px x 16px favicon manually, add your custom `favicon.i
 To add favicon icons of other sizes, take the following steps:
 
 1. Add your icons in the `<your_theme_dir>/Magento_Theme/web/` directory.
-2. In the `<your_theme_dir>/Magento_Theme/layout/default_head_blocks.xml` layout file specify the paths to the icons and their sizes.
+1. In the `<your_theme_dir>/Magento_Theme/layout/default_head_blocks.xml` layout file specify the paths to the icons and their sizes.
 
 For example, if you added a `favicon-32x32.png` icon and want it to be used as a 32px x 32px favicon, your `default_head_blocks.xml` would be like following:
 
@@ -59,6 +59,5 @@ For example, if you added a `favicon-32x32.png` icon and want it to be used as a
 
 For your changes to be applied, clear the browser cache, and the following directories on the server (do not delete the `.htaccess` file!):
 
-- `pub/static`
-- all directories under `var`
-
+-  `pub/static`
+-  all directories under `var`

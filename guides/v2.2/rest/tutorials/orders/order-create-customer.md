@@ -19,9 +19,9 @@ functional_areas:
 
 Customers can make purchases in three ways:
 
-* As a logged-in user
-* As a guest user who logs in or creates an account when the order is placed
-* As a guest user who does not create an account
+*  As a logged-in user
+*  As a guest user who logs in or creates an account when the order is placed
+*  As a guest user who does not create an account
 
 This tutorial creates an order by a logged-in user. Magento provides additional REST endpoints for handling guest users.
 
@@ -160,5 +160,5 @@ Magento returns the customer's access token. This token must be specified in the
 ### Verify this step {#verify-step}
 
 1. Log in to the Luma [website](https://glossary.magento.com/website) using the email `jdoe@example.com` and password `Password1`.
-2. Click the account name (Jane) in the upper right corner and select **My Account**.
-3. Click **Address Book** to view the default billing and shipping addresses.
+1. Click the account name (Jane) in the upper right corner and select **My Account**.
+1. Click **Address Book** to view the default billing and shipping addresses.

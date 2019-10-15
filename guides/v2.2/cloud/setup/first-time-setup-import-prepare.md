@@ -141,8 +141,8 @@ Before you push code to the {{site.data.var.ece}} Git repository, modify your `c
 To edit `composer.json`:
 
 1. If you haven't done so already, log in to your {{site.data.var.ece}} server as the [Magento file system owner]({{ page.baseurl }}/cloud/before/before-workspace-file-sys-owner.html).
-2. In a text editor, open `composer.json` in the project root directory.
-3. Substitute the following value in the `require` section:
+1. In a text editor, open `composer.json` in the project root directory.
+1. Substitute the following value in the `require` section:
 
    ```json
    "magento/product-enterprise-edition": "<version>",
@@ -157,7 +157,7 @@ To edit `composer.json`:
     {:.bs-callout .bs-callout-info}
     Both `<version>` values _must be the same_. For example, if your current {{site.data.var.ee}} version is 2.1.9, your `magento-cloud-metapackage` version must also be 2.1.9.
 
-4. Update the `"files"` directive in the `autoload` section to refer to `app/etc/NonComposerComponentRegistration.php` as follows:
+1. Update the `"files"` directive in the `autoload` section to refer to `app/etc/NonComposerComponentRegistration.php` as follows:
 
    ```json
    "autoload": {
@@ -175,9 +175,9 @@ To edit `composer.json`:
     }
    ```
 
-5. Save your changes to `composer.json` and exit the text editor.
-6. In the terminal application, run `composer update` to update `composer.lock`. Wait while dependencies are updated.
-7. Commit the changes to GitHub:
+1. Save your changes to `composer.json` and exit the text editor.
+1. In the terminal application, run `composer update` to update `composer.lock`. Wait while dependencies are updated.
+1. Commit the changes to GitHub:
 
    ```bash
    git add -A && git commit -m "Add Cloud files" && git push origin <branch name>
@@ -188,7 +188,7 @@ To edit `composer.json`:
 Use the command [`magento setup:backup --media`]({{ page.baseurl }}/install-gde/install/cli/install-cli-backup.html) to back up media files:
 
 1. Get the integration system's [SSH URL]({{ page.baseurl }}/cloud/setup/first-time-setup-import-first-steps.html#ssh).
-2. To back up media files, enter the following command:
+1. To back up media files, enter the following command:
 
    ```bash
    php <Magento Commerce install dir>/bin/magento setup:backup --media
@@ -196,7 +196,7 @@ Use the command [`magento setup:backup --media`]({{ page.baseurl }}/install-gde/
 
    The backup is stored in the `<Magento Commerce install dir>/var/backups` directory.
 
-3. Transfer the media file to your {{site.data.var.ece}} system:
+1. Transfer the media file to your {{site.data.var.ece}} system:
 
    ```bash
    rsync <Magento Commerce install dir>/var/backups/<backup file name> <cloud ssh url>:var/media.tgz
@@ -213,8 +213,8 @@ Use the command [`magento setup:backup --media`]({{ page.baseurl }}/install-gde/
 To decrypt the encrypted data from your imported database, copy your encryption key from your existing `env.php` file. Every environment in Integration, Staging, and Production has an `env.php` of sensitive data and environment variables. The file contains a nested PHP array storing configuration data.
 
 1. Open `<Magento install dir>/app/etc/env.php` in a text editor.
-2. Search for the value of `key` in the `crypt` array.
-3. Copy the value to the clipboard and save it.
+1. Search for the value of `key` in the `crypt` array.
+1. Copy the value to the clipboard and save it.
 
 You must paste the encryption key into your {{site.data.var.ece}} `env.php` file in each environment in a [later step]({{ page.baseurl }}/cloud/setup/first-time-setup-import-import.html#encryption-key).
 
@@ -236,7 +236,7 @@ The following example compresses the dump so that it does not significantly inte
    mysqldump -p -u magento magento --single-transaction --no-autocommit --quick | gzip > ~/db.sql.tgz
    ```
 
-2. Use the `rsync` command to transfer the database dump to the {{site.data.var.ece}} environment in the `var` directory of the application you are importing into:
+1. Use the `rsync` command to transfer the database dump to the {{site.data.var.ece}} environment in the `var` directory of the application you are importing into:
 
    ```bash
    rsync <db dump file name> <cloud SSH URL>:var/db.sql.gz

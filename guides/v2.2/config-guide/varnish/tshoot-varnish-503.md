@@ -23,14 +23,14 @@ If the `http_resp_hdr_len` value exceeds 32K, you must also increase the default
 
 1. As a user with `root` privileges, open your Vanish configuration file in a text editor:
 
-   * CentOS 6: `/etc/sysconfig/varnish`
-   * CentOS 7: `/etc/varnish/varnish.params`
-   * Debian: `/etc/default/varnish`
-   * Ubuntu: `/etc/default/varnish`
+   *  CentOS 6: `/etc/sysconfig/varnish`
+   *  CentOS 7: `/etc/varnish/varnish.params`
+   *  Debian: `/etc/default/varnish`
+   *  Ubuntu: `/etc/default/varnish`
 
-2. Search for the `http_resp_hdr_len` parameter.
-3. If the parameter doesn't exist, add it after `thread_pool_max`.
-4. Set `http_resp_hdr_len` to a value equal to the product count of your largest [category](https://glossary.magento.com/category) multiplied by 21. (Each product tag is about 21 characters in length.)
+1. Search for the `http_resp_hdr_len` parameter.
+1. If the parameter doesn't exist, add it after `thread_pool_max`.
+1. Set `http_resp_hdr_len` to a value equal to the product count of your largest [category](https://glossary.magento.com/category) multiplied by 21. (Each product tag is about 21 characters in length.)
 
    For example, setting the value to 65536 bytes should work if your largest category has 3,000 products.
 
@@ -40,7 +40,7 @@ If the `http_resp_hdr_len` value exceeds 32K, you must also increase the default
    -p http_resp_hdr_len=65536 \
    ```
 
-5. Set the `http_resp_size` to a value that accommodates the increased response header length.
+1. Set the `http_resp_size` to a value that accommodates the increased response header length.
 
    For example, using the sum of the increased header length and default response size is a good starting point (e.g., 65536 + 32768 = 98304):
 

@@ -26,13 +26,13 @@ Follow these steps to download and apply this patch:
 
 1. Access the Downloads page [here](https://magento.com/tech-resources/download#download2288).
 
-2. Select the Git-based option from **Select your format**.
+1. Select the Git-based option from **Select your format**.
 
-4. Download the patch and upload to a specific directory in your Magento installation such as `m2-hotfixes` (confirm  that the directory is not accessible publicly).
+1. Download the patch and upload to a specific directory in your Magento installation such as `m2-hotfixes` (confirm  that the directory is not accessible publicly).
 
-5. From your project root, apply the patch.  `git apply ./m2-hotfixes/<patch-file-name>`.
+1. From your project root, apply the patch.  `git apply ./m2-hotfixes/<patch-file-name>`.
 
-6. Refresh the cache from the Admin (**System** > **Cache Management**).
+1. Refresh the cache from the Admin (**System** > **Cache Management**).
 
 ## PayPal Payflow Pro active carding activity update
 
@@ -1182,9 +1182,9 @@ If UPS Type is set to `United Parcel Service` in the UPS Shipping Method Config
 
 1. Navigate to **Stores**  > **Settings**  > **Configuration**  >  **Sales**  > **Shipping Methods**. Then, expand the **UPS** section.
 
-2. At the **UPS Type** field, clear the Use system value checkbox. Then, change **UPS Type** to `United Parcel Service XML`. The Gateway URL populates correctly when this value is selected.
+1. At the **UPS Type** field, clear the Use system value checkbox. Then, change **UPS Type** to `United Parcel Service XML`. The Gateway URL populates correctly when this value is selected.
 
-3. Tap **Save Config**.
+1. Tap **Save Config**.
 
 ## Community contributions
 

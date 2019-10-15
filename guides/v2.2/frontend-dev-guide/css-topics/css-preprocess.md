@@ -49,11 +49,11 @@ In the Magento application, the following modes of compiling `.less` files to CS
 
 1. Server-side Less compilation.
 
-    This is the default compilation mode, and is the only option in [production application mode]. In this case the compilation is performed on the server, using the [Less PHP library].
+   This is the default compilation mode, and is the only option in [production application mode]. In this case the compilation is performed on the server, using the [Less PHP library].
 
-2. Client-side Less compilation.
+1. Client-side Less compilation.
 
-    When your application is not in the production mode, you can set Magento to compile `.less` files in a browser, using the [native `less.js` library]
+   When your application is not in the production mode, you can set Magento to compile `.less` files in a browser, using the [native `less.js` library]
 
 To set the compilation mode, do the following:
 
@@ -112,13 +112,15 @@ Errors are caught as exceptions and written to the system log (by default it is 
 
 Example of an error message:
 
-    Compilation from source: /var/www/magento2/app/design/adminhtml/Magento/backend/web/css/styles.less
-    variable @variable-x is undefined in file /var/www/magento2/var/view_preprocessed/css/adminhtml/Magento/backend/en_US/css/styles.less in styles.less on line 56, column 17
-          margin-left: 0;
-          width: 100%;
-          height: @variable-x;
-     }
-     .menu-wrapper,
+```terminal
+Compilation from source: /var/www/magento2/app/design/adminhtml/Magento/backend/web/css/styles.less
+variable @variable-x is undefined in file /var/www/magento2/var/view_preprocessed/css/adminhtml/Magento/backend/en_US/css/styles.less in styles.less on line 56, column 17
+        margin-left: 0;
+        width: 100%;
+        height: @variable-x;
+    }
+    .menu-wrapper,
+```
 
 ##### Debugging using Grunt
 
