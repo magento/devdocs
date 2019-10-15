@@ -220,7 +220,7 @@ Fastly sets a 180 second-timeout for HTTPS requests to the Magento Admin, so you
 
 1. In the *Fastly Configuration* section, expand **Advanced**.
 
-1. Set the **Admin path timeout** value in seconds. This value cannot be more than one hour (3600 seconds).
+1. Set the **Admin path timeout** value in seconds. This value cannot be more than 10 minutes (600 seconds).
 
 1. Click **Save Config** at the top of the page.
 
