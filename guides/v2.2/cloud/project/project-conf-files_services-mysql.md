@@ -10,6 +10,8 @@ The `mysql` service provides persistent data storage based on [MariaDB](https://
 
 {% include cloud/service-config-integration-starter.md %}
 
+## Connect to the MySQL service
+
 Accessing the MariaDB database directly requires you to use a SSH to log in to the remote server, and connect to the database with the following credentials:
 
 -  For Starter
@@ -18,7 +20,7 @@ Accessing the MariaDB database directly requires you to use a SSH to log in to t
    mysql -h database.internal -u <username>
    ```
 
--  For Pro, use the db, username, and password from the relationship:
+-  For Pro, use the db, username, and password from the [service relationship]({{page.baseurl}}/cloud/project/project-conf-files_services.html#service-relationships):
 
    ```bash
    mysql -h<db> -p<number> -u<username> -p<password>
