@@ -147,7 +147,7 @@ You cannot use the Web Setup Wizard when installing Magento on nginx. You must u
    chown -R :www-data . # Ubuntu
    ```
 
-   ```bsah
+   ```bash
    chmod u+x bin/magento
    ```
 

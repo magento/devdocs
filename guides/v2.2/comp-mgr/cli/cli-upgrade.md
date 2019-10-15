@@ -7,8 +7,8 @@ functional_areas:
 
 You can upgrade Magento from the command line if you installed the software using any of the following:
 
-* Downloaded the [metapackage](https://glossary.magento.com/metapackage) using `composer create-project`
-* Installed the compressed archive
+*  Downloaded the [metapackage](https://glossary.magento.com/metapackage) using `composer create-project`
+*  Installed the compressed archive
 
 {: .bs-callout-info }
 If you cloned the Magento 2 GitHub repository, you **cannot** use this method to upgrade; instead, see [Update the Magento application]({{ page.baseurl }}/install-gde/install/cli/dev_update-magento.html).
@@ -24,11 +24,11 @@ If you did not do this, skip this section and continue with the next section.
 
 If you use pub as your Magento root directory:
 
-* For the upgrade, create another subdomain or docroot that uses the Magento installation directory as its root.
+*  For the upgrade, create another subdomain or docroot that uses the Magento installation directory as its root.
 
    Run the [System Upgrade utility]({{ page.baseurl }}/comp-mgr/upgrader/upgrade-start.html) using that subdomain.
 
-* Use the [following procedure](#upgrade-cli-upgr) to upgrade Magento using the command line.
+*  Use the [following procedure](#upgrade-cli-upgr) to upgrade Magento using the command line.
 
 ## Put your store in maintenance mode {#upgrade-cli-maint}
 
@@ -136,6 +136,6 @@ To enable maintenance mode:
 
    1. Reset [file system ownership and permissions]({{ page.baseurl }}/install-gde/prereq/file-system-perms.html) as a user with `root` privileges.
    1. Clear the following directories and try again:
-      *  `<magento_root>/var/cache`
-      *  `<magento_root>/var/page_cache`
-      *  `<magento_root>/generated/code`
+     *  `<magento_root>/var/cache`
+     *  `<magento_root>/var/page_cache`
+     *  `<magento_root>/generated/code`

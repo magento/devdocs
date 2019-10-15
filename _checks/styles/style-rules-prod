@@ -1,10 +1,10 @@
 rule 'MD001'
 exclude_rule 'MD002'
 rule 'MD003', :style => :atx
-exclude_rule 'MD004'
-exclude_rule 'MD005'
-exclude_rule 'MD006'
-exclude_rule 'MD007'
+rule 'MD004'
+rule 'MD005'
+rule 'MD006'
+rule 'MD007', :indent => 3
 rule 'MD009'
 rule 'MD010'
 exclude_rule 'MD011'
