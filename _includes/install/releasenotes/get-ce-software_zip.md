@@ -11,7 +11,7 @@ Archives are available in the following formats: `.zip`, `.tar.bz2`, `.tar.gz`
 To get the Magento Open Source software archive:
 
 1. Go to [http://magento.com/download](http://magento.com/download){:target="_blank"}.
-2. Choose either the software or the software and sample data:
+1. Choose either the software or the software and sample data:
 
    *  `Magento-CE-<version>.*` (without sample data)
    *  `Magento-CE-<version>+Samples.*` (with sample data)

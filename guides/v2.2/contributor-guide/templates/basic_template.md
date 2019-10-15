@@ -57,23 +57,23 @@ Lists are useful for organizing and displaying related items. Below are examples
 
 *Output:*
 
-* List Item 1
-* List Item 2
-* List Item 3
+*  List Item 1
+*  List Item 2
+*  List Item 3
 
 **Ordered List:**
 
 ```markdown
 1. First Step
-2. Second Step
-3. Third Step
+1. Second Step
+1. Third Step
 ```
 
 *Output:*
 
 1. First Step
-2. Second Step
-3. Third Step
+1. Second Step
+1. Third Step
 
 ### Images {#images}
 

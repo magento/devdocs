@@ -16,10 +16,10 @@ It will illustrate how Magento 2 works with JavaScript files, executing the code
 The steps we’ll need to take are:
 
 1. Create a new module.
-2. Create a requirejs-config.js and a JavaScript module file.
-3. Create a layout update to add a template that will enable the JavaScript module.
-4. Create a template file.
-5. Add the module and test it.
+1. Create a requirejs-config.js and a JavaScript module file.
+1. Create a layout update to add a template that will enable the JavaScript module.
+1. Create a template file.
+1. Add the module and test it.
 
 Let’s go through each step.
 
@@ -29,7 +29,13 @@ We will create a new module called Learning_Js:
 
 ```bash
 cd <magento2_root>
+```
+
+```bash
 mkdir app/code/Learning
+```
+
+```bash
 mkdir app/code/Learning/Js
 ```
 
@@ -70,7 +76,13 @@ Next, we’ll create a view folder:
 
 ```bash
 cd <magento2_root>
+```
+
+```bash
 mkdir app/code/Learning/Js/view
+```
+
+```bash
 mkdir app/code/Learning/Js/view/frontend
 ```
 
@@ -94,6 +106,9 @@ Then add the JavaScript module:
 
 ```bash
 mkdir app/code/Learning/Js/view/frontend/web
+```
+
+```bash
 mkdir app/code/Learning/Js/view/frontend/web/js
 ```
 
@@ -121,7 +136,13 @@ First, we need to create the layout folder:
 
 ```bash
 cd <magento2_root>
+```
+
+```bash
 mkdir app/code/Learning/Js/view/frontend
+```
+
+```bash
 mkdir app/code/Learning/Js/view/frontend/layout
 ```
 
@@ -148,6 +169,9 @@ Now, we’ll create the template that will enable JavaScript.
 
 ```bash
 cd <magento2_root>
+```
+
+```bash
 mkdir app/code/Learning/Js/view/frontend/templates
 ```
 
@@ -180,7 +204,13 @@ Finally, let’s add our module and test the result.
 
 ```bash
 cd <magento2_root>
+```
+
+```bash
 bin/magento setup:upgrade
+```
+
+```bash
 bin/magento cache:clean
 ```
 
