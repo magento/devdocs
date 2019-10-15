@@ -261,8 +261,8 @@ Delta functionality is responsible for delivering the rest of data that was adde
 The tool should be run in three different modes in particular order:
 
 1. settings - migration of system settings
-2. data - main migration of data
-3. delta - migration of the rest of data that was added after main migration
+1. data - main migration of data
+1. delta - migration of the rest of data that was added after main migration
 
 Each mode has its own list of steps to be executed. See config.xml
 
@@ -271,7 +271,7 @@ Each mode has its own list of steps to be executed. See config.xml
 Settings migration mode of this tool is used to transfer following entities:
 
 1. Websites, stores, store views.
-2. Store configuration (mainly Stores->Configuration in M2 or System->Configuration in M1)
+1. Store configuration (mainly Stores->Configuration in M2 or System->Configuration in M1)
 
 All store configuration keeps its data in core_config_data table in database. settings.xml file contains rules for this table that are applied during migration process. This file describes settings that should be ignored, renamed or should change their values. settings.xml file has the following structure:
 

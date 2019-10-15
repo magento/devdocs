@@ -14,14 +14,14 @@ This topic describes how to create the [frontend](https://glossary.magento.com/f
 
 The default Magento [Checkout](https://glossary.magento.com/checkout) consists of two steps:
 
- - Shipping Information
- - Review and Payments Information
+-  Shipping Information
+-  Review and Payments Information
 
 You can add a custom checkout step, it should be implemented as a [UI component](https://glossary.magento.com/ui-component). For the sake of compatibility, upgradability and easy maintenance, do not edit the default Magento code, add your customizations in a separate [module](https://glossary.magento.com/module).
 
 1. [Create the view part of the checkout step component](#create-view).
-2. [Add your step to the Checkout page layout](#checkout).
-3. [Create mixins for payment and shipping steps (optional)](#create-mixin).
+1. [Add your step to the Checkout page layout](#checkout).
+1. [Create mixins for payment and shipping steps (optional)](#create-mixin).
 
 ## Step 1: Create the view part of the checkout step component {#create-view}
 
@@ -216,7 +216,7 @@ Create a mixin as follows:
     }
     ```
 
-2. Create the mixin. We'll use the same mixin for both payment and shipping:
+1. Create the mixin. We'll use the same mixin for both payment and shipping:
 
     ```js
     define(

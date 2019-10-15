@@ -3,14 +3,14 @@
 Create checkout and OMS master databases as follows:
 
 1. Log in to your database server as any user.
-2. Enter the following command to get to a MySQL command prompt:
+1. Enter the following command to get to a MySQL command prompt:
 
    ```bash
    mysql -u root -p
    ```
 
-3. Enter the MySQL `root` user's password when prompted.
-4. Enter the following commands in the order shown to create database instances named `magento_quote` and `magento_sales` with the same usernames and passwords:
+1. Enter the MySQL `root` user's password when prompted.
+1. Enter the following commands in the order shown to create database instances named `magento_quote` and `magento_sales` with the same usernames and passwords:
 
    ```shell
    create database magento_quote;
@@ -28,9 +28,9 @@ Create checkout and OMS master databases as follows:
    GRANT ALL ON magento_sales.* TO magento_sales@localhost IDENTIFIED BY 'magento_sales';
    ```
 
-5. Enter `exit` to quit the command prompt.
+1. Enter `exit` to quit the command prompt.
 
-6. Verify the databases, one at a time:
+1. Verify the databases, one at a time:
 
    Checkout database:
 
