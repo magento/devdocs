@@ -23,15 +23,15 @@ Follow these steps to download and apply this patch:
 
 1. Access [My Account](https://account.magento.com/customer/account/login).
 
-2. Navigate to the **Downloads** tab. Select the Magento edition and version you need.
+1. Navigate to the **Downloads** tab. Select the Magento edition and version you need.
 
-3. Select **Support Patches and Security Patches**, then **PRODSECBUG-2198**.
+1. Select **Support Patches and Security Patches**, then **PRODSECBUG-2198**.
 
-4. Download the patch and upload to a specific directory in your Magento installation such as `m2-hotfixes` (confirm  that the directory is not accessible publicly).
+1. Download the patch and upload to a specific directory in your Magento installation such as `m2-hotfixes` (confirm  that the directory is not accessible publicly).
 
-5. From your project root, apply the patch.  `git apply ./m2-hotfixes/<patch-file-name>`.
+1. From your project root, apply the patch.  `git apply ./m2-hotfixes/<patch-file-name>`.
 
-6. Refresh the cache from the Admin (**System** > Tools > **Cache Management**).
+1. Refresh the cache from the Admin (**System** > Tools > **Cache Management**).
 
 ## Highlights
 
@@ -1859,15 +1859,15 @@ We've fixed hundreds of issues in the Magento 2.3.0 core code.
 
 <!---MAGETWO-82667 -->
 
-* The Magento UI mixins have been edited to improve performance. Changes include:
+*  The Magento UI mixins have been edited to improve performance. Changes include:
 
-    * removing all fallbacks to variables that don't exist in the global scope
+   *  removing all fallbacks to variables that don't exist in the global scope
 
-    * defining all variables that are used inside mixins as parameters
+   *  defining all variables that are used inside mixins as parameters
 
-    * adding all missing parameters to the areas of the code where mixins are invoked
+   *  adding all missing parameters to the areas of the code where mixins are invoked
 
-    * moving and simplifying mixins used only once. *Fix submitted by Bartek Igielski in pull request [11371](https://github.com/magento/magento2/pull/11371)*.
+   *  moving and simplifying mixins used only once. *Fix submitted by Bartek Igielski in pull request [11371](https://github.com/magento/magento2/pull/11371)*.
 
 <!---MAGETWO-82760 -->
 

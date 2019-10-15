@@ -19,7 +19,7 @@ It is designed to provide optimal bundles and be less error-prone than the built
 Bundling JavaScript modules for better performance is about reducing two things:
 
 1. The number of server requests.
-2. The size of those server requests.
+1. The size of those server requests.
 
 In a modular application, the number of server requests can reach into the hundreds. For example, the following screen shot shows only the start of the list of JavaScript modules loaded on the home page of a clean Magento installation.
 
@@ -108,6 +108,7 @@ Full versions of the sample code used in this article are available here:
 #### 1\. Add a build.js file
 
 Create a `build.js` file in the Magento root directory. This file will contain the entire build configuration for your bundles.
+
 ```javascript
 ({
     optimize: 'none',
@@ -120,6 +121,7 @@ Later, we will change the `optimize:` setting from_ `none` to `uglify2` to minif
 #### 2\. Add RequireJS dependencies, shims, paths, and map
 
 Add the following RequireJS build configuration nodes, `deps`, `shim`, `paths`, and `map`, to your build file:
+
 ```javascript
 ({
     optimize: 'none',
@@ -143,6 +145,7 @@ Within this file, you will find multiple entries for each of the configuration n
 #### 4\. Add a modules node
 
 At the end of the `build.js` file, add the modules[] array as a placeholder for the bundles you will define for your storefront later.
+
 ```javascript
 ({
     optimize: 'none',
@@ -162,7 +165,7 @@ At the end of the `build.js` file, add the modules[] array as a placeholder for 
 You can retrieve all the RequireJS module dependencies from your store's page types by using:
 
 1. PhantomJS from the command line (assuming you have PhantomJS installed).
-2. RequireJS command in your browser's console.
+1. RequireJS command in your browser's console.
 
 #### To use PhantomJS:
 

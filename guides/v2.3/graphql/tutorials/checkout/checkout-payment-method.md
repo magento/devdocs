@@ -146,6 +146,6 @@ If the operation is successful, the response contains the order ID.
 
 1. Sign in as a customer to the website using the email `john.doe@example.com` and password `b1b2b3l@w+`.
 
-2. Go to Checkout.
+1. Go to Checkout.
 
-3. The selected payment method is displayed in the Payment Method section on the Review & Payments step.
+1. The selected payment method is displayed in the Payment Method section on the Review & Payments step.

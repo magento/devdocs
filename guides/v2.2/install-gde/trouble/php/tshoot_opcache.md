@@ -36,19 +36,19 @@ PHP OPcache settings are typically located either in `php.ini` or `opcache.ini`.
 
 Use the following guidelines to find it:
 
-* Apache web server:
+*  Apache web server:
 
-    For Ubuntu with Apache, OPcache settings are typically located in `php.ini`.
+   For Ubuntu with Apache, OPcache settings are typically located in `php.ini`.
 
-    For CentOS with Apache or nginx, OPcache settings are typically located in `/etc/php.d/opcache.ini`
+   For CentOS with Apache or nginx, OPcache settings are typically located in `/etc/php.d/opcache.ini`
 
-    If not, use the following command to locate it:
+   If not, use the following command to locate it:
 
-    ```bash
-    sudo find / -name 'opcache.ini'
-    ```
+   ```bash
+   sudo find / -name 'opcache.ini'
+   ```
 
-* nginx web server with PHP-FPM: `/etc/php5/fpm/php.ini`
+*  nginx web server with PHP-FPM: `/etc/php5/fpm/php.ini`
 
 If you have more than one `opcache.ini`, modify all of them.
 
@@ -57,17 +57,17 @@ If you have more than one `opcache.ini`, modify all of them.
 #### Step 2: Enable `opcache.save_comments`
 
 1. Open your OPcache configuration file in a text editor.
-2. Locate `opcache.save_comments` and uncomment it if necessary.
-3. Make sure its value is set to `1`.
-4. Save your changes and exit the text editor.
-5. Restart your web server:
+1. Locate `opcache.save_comments` and uncomment it if necessary.
+1. Make sure its value is set to `1`.
+1. Save your changes and exit the text editor.
+1. Restart your web server:
 
- * Apache, Ubuntu: `service apache2 restart`
- * Apache, CentOS: `service httpd restart`
- * nginx, Ubuntu and CentOS: `service nginx restart`
+   *  Apache, Ubuntu: `service apache2 restart`
+   *  Apache, CentOS: `service httpd restart`
+   *  nginx, Ubuntu and CentOS: `service nginx restart`
 
-6. Regenerate DI configuration and all missing classes that can be auto-generated:
+1. Regenerate DI configuration and all missing classes that can be auto-generated:
 
-    ```bash
-    bin/magento setup:di:compile`
-    ```
+   ```bash
+   bin/magento setup:di:compile`
+   ```

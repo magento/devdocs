@@ -18,20 +18,20 @@ The install scripts run only once, while the upgrade scripts are executed every 
 
 To look at all four script types, we’ll complete the following greeting page tasks:
 
-* Create a `greeting_message` table with the columns greeting_id and message.
-* Add two records: “Happy New Year” and “Happy Holidays”.
-* Modify the table by adding another field, “season”, to which we add the records “Happy Thanksgiving” and “Fall'”.
-* Update the types for the first and second records.
+*  Create a `greeting_message` table with the columns greeting_id and message.
+*  Add two records: “Happy New Year” and “Happy Holidays”.
+*  Modify the table by adding another field, “season”, to which we add the records “Happy Thanksgiving” and “Fall'”.
+*  Update the types for the first and second records.
 
 The steps we need to take to accomplish these tasks are:
 
 1. Create a new module.
-2. Create an InstallSchema script.
-3. Create an InstallData script.
-4. Add a new module and verify that a table with the data was created.
-5. Create an UpgradeSchema script.
-6. Create an UpgradeData script.
-7. Run the upgrade scripts and verify that the table has changed.
+1. Create an InstallSchema script.
+1. Create an InstallData script.
+1. Add a new module and verify that a table with the data was created.
+1. Create an UpgradeSchema script.
+1. Create an UpgradeData script.
+1. Run the upgrade scripts and verify that the table has changed.
 
 ## Step 1: Create a new module
 
@@ -41,7 +41,13 @@ Navigate to the `app/code` folder and create the folders `Learning` and `Learnin
 
 ```bash
 cd <magento2_root>/app/code
+```
+
+```bash
 mkdir Learning
+```
+
+```bash
 mkdir Learning/GreetingMessage
 ```
 
@@ -93,6 +99,9 @@ To create an InstallSchema script, navigate to the `app/code/Learning/GreetingMe
 
 ```bash
 cd <magento2_root>/app/code/Learning/GreetingMessage
+```
+
+```bash
 mkdir Setup
 ```
 
@@ -216,6 +225,9 @@ Run the `setup:upgrade` script to verify that a table with the initial data is t
 
 ```bash
 cd <magento2_root>
+```
+
+```bash
 php bin/magento setup:upgrade
 ```
 
@@ -380,6 +392,9 @@ Run the SetupUpgrade script again:
 
 ```bash
 cd <magento2_root>
+```
+
+```bash
 php bin/magento setup:upgrade
 ```
 
