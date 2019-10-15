@@ -29,23 +29,23 @@ Contributing developers should use [this guide][6] to update their Magento insta
 
 1. Log in to your production server as, or switch to, the [Magento file system owner][10].
 
-2. Change directory to the Magento base directory:
+1. Change directory to the Magento base directory:
 
-    ```bash
-    cd <Magento base directory>
-    ```
+   ```bash
+   cd <Magento base directory>
+   ```
 
-3. Enable maintenance mode using the command:
+1. Enable maintenance mode using the command:
 
-    ```bash
-    bin/magento maintenance:enable
-    ```
+   ```bash
+   bin/magento maintenance:enable
+   ```
 
-4. Apply updates to Magento or its components using the following command pattern:
+1. Apply updates to Magento or its components using the following command pattern:
 
-    ```bash
-    composer require <package> <version> --no-update
-    ```
+   ```bash
+   composer require <package> <version> --no-update
+   ```
 
    **package**: The name of the package you want to update.
 
@@ -56,41 +56,41 @@ Contributing developers should use [this guide][6] to update their Magento insta
 
    **version**: The target version of the package you want to update.
 
-5. Update Magento's components with Composer:
+1. Update Magento's components with Composer:
 
-    ```bash
-    composer update
-    ```
+   ```bash
+   composer update
+   ```
 
-6. Update the database schema and data:
+1. Update the database schema and data:
 
-    ```bash
-    bin/magento setup:upgrade
-    ```
+   ```bash
+   bin/magento setup:upgrade
+   ```
 
-7. Compile the code:
+1. Compile the code:
 
-    ```bash
-    bin/magento setup:di:compile
-    ```
+   ```bash
+   bin/magento setup:di:compile
+   ```
 
-8. Deploy static content:
+1. Deploy static content:
 
-    ```bash
-    bin/magento setup:static-content:deploy
-    ```
+   ```bash
+   bin/magento setup:static-content:deploy
+   ```
 
-9. Clean the cache:
+1. Clean the cache:
 
-    ```bash
-    bin/magento cache:clean
-    ```
+   ```bash
+   bin/magento cache:clean
+   ```
 
-9. Exit maintenance mode:
+1. Exit maintenance mode:
 
-    ```bash
-    bin/magento maintenance:disable
-    ```
+   ```bash
+   bin/magento maintenance:disable
+   ```
 
 ## Alternative deployment strategies
 

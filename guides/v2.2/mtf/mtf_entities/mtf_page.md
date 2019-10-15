@@ -22,9 +22,9 @@ The general flow is the following:
 
 1. Create an [XML](https://glossary.magento.com/xml) file in the Page directory of the module to which it belongs
 
-2. Add the previously created blocks presented on this page to the `<page>` node
+1. Add the previously created blocks presented on this page to the `<page>` node
 
-3. Run the page generator
+1. Run the page generator
 
 Let's see an example of the Magento [Widget](https://glossary.magento.com/widget) page:
 

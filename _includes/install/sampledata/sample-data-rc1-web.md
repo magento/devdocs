@@ -10,23 +10,23 @@ To upgrade to {{site.data.var.ee}} RC1 or RC2 with sample data using the Setup W
 {% collapsible Click to expand/collapse content %}
 
 1. Log in to your Magento server as, or switch to, the [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html).
-2. Change to the Magento installation directory.
-3. Open `composer.lock` in a text editor.
-4. Change the following:
+1. Change to the Magento installation directory.
+1. Open `composer.lock` in a text editor.
+1. Change the following:
 
-    From:
+   From:
 
-    ```json
-    "type": "magento2-module-customer-balance"
-    ```
+   ```json
+   "type": "magento2-module-customer-balance"
+   ```
 
-    To:
+   To:
 
-    ```json
-    "type": "magento2-module"
-    ```
+   ```json
+   "type": "magento2-module"
+   ```
 
-5. Save your changes to `composer.lock` and exit the text editor.
+1. Save your changes to `composer.lock` and exit the text editor.
 
 {% include install/sampledata/file-sys-perms-digest.md %}
 
