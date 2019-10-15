@@ -53,7 +53,7 @@ To find the docroot on your server:
         /etc/nginx/nginx.conf (nginx)
         ```
 
-2. Search the file for `DocumentRoot` or `root`.
+1. Search the file for `DocumentRoot` or `root`.
 
    Typically, the default Apache docroot on Ubuntu _and_ CentOS is `/var/www/html` whereas the default nginx docroot on CentOS is `/usr/share/nginx/html`. For example:
 
