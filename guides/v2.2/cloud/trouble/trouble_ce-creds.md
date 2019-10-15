@@ -95,8 +95,6 @@ To resolve the issue with credentials:
 
    A snippet of messages for a successful deployment follows:
 
-   {% collapsible Click to show/hide snippet %}
-
    ```terminal
    Building application 'mymagento' (runtime type: php:7.0, tree: e8450f9)
       Generating runtime configuration.
@@ -162,8 +160,6 @@ To resolve the issue with credentials:
    To aqf7hrijhl52o@git.us.magento.cloud:aqf7hrijhl52o.git
       34afd91..98c2166  master -> master
    ```
-
-   {% endcollapsible %}
 
 #### Verify the deployment
 
