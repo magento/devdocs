@@ -24,28 +24,30 @@ The issue is due to an issue of enabling HTML minification and the setting in `c
 As a work-around, complete the following:
 
 1. Copy the file `app/etc/config.local.php` to your local.
-2. Edit and remove the minify section from `config.local.php`:
+1. Edit and remove the minify section from `config.local.php`:
 
-    ```php
-    'template' =>
-          array (
-            'allow_symlink' => '0',
-            'minify_html' => '1',
-          ),
-    ```
+   ```php
+   'template' =>
+         array (
+           'allow_symlink' => '0',
+           'minify_html' => '1',
+         ),
+   ```
 
-2. Modify the setting for minify in the database with this command:
+1. Modify the setting for minify in the database with this command:
 
-      update core_config_data set value=0 where path ='dev/template/minify_html'
-3. Flush all caches.
+   ```shell
+   update core_config_data set value=0 where path ='dev/template/minify_html'
 
-    ```bash
-    php bin/magento cache:flush
-    ```
+1. Flush all caches.
 
-    ```bash
-    redis-cli -h <> -p <> flushall
-    ```
+   ```bash
+   php bin/magento cache:flush
+   ```
 
-4. Remove all `base_url` related items in `config.local.php`.
-5. Save changes and complete full deployment of `config.local.php`: push to Git branch, build and deploy, and deploy across environments as needed.
+   ```bash
+   redis-cli -h <> -p <> flushall
+   ```
+
+1. Remove all `base_url` related items in `config.local.php`.
+1. Save changes and complete full deployment of `config.local.php`: push to Git branch, build and deploy, and deploy across environments as needed.

@@ -12,11 +12,11 @@ Magento is able to operate with a variety of prices, taxes, and product types.
 The following is a short list of Magento prices:
 
 1. Special Price.
-2. Tier Price.
-3. Grouped Price.
-4. Minimum price of composite products
-5. Price range of composite products
-6. Manufacturer price (MSRP)
+1. Tier Price.
+1. Grouped Price.
+1. Minimum price of composite products
+1. Price range of composite products
+1. Manufacturer price (MSRP)
 
 Magento represents these prices as price types (e.g. final price, minimum price, maximum price, regular price) and are separate from the actual price in the code.
 For example, Special Price is represented by the final price type in the code.
@@ -25,9 +25,9 @@ For example, Special Price is represented by the final price type in the code.
 
 Magento handles taxes as price adjustments and has 3 generic types of taxes:
 
-* Tax
-* Fixed Product Tax
-* Tax for Fixed Product Tax
+*  Tax
+*  Fixed Product Tax
+*  Tax for Fixed Product Tax
 
 Applying and rendering taxes is complicated.
 A product can have more than one price shown and taxes may or may not apply to all of them.
@@ -315,9 +315,9 @@ The following is sample template code that is rendered for the tax adjustment co
 
 ## Related Topics
 
-* [Form component][form-component]
-* [Listing component][listing-component]
-* [Declaring UI Components][ui-component-declaration]
+*  [Form component][form-component]
+*  [Listing component][listing-component]
+*  [Declaring UI Components][ui-component-declaration]
 
 [form-component]: {{ page.baseurl }}/ui_comp_guide/components/ui-form.html
 [listing-component]: {{ page.baseurl }}/ui_comp_guide/components/ui-listing-grid.html

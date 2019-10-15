@@ -41,10 +41,10 @@ JS resources are accessed using relative paths.
 *  File published to `pub/static`: `pub/static/frontend/Magento/<theme>/<locale>/Magento_ConfigurableProduct/js/configurable.js`. Here `<theme>` and `<locale>` are the currently applied in your instance [theme](https://glossary.magento.com/theme) and [locale](https://glossary.magento.com/locale).
 *  Called in script:
 
-   ```javascript
+    ```javascript
     require(["Magento_ConfigurableProduct/js/configurable"], function(Configurable){
     });
-   ```
+    ```
 
 **Example 2**
 
@@ -52,10 +52,10 @@ JS resources are accessed using relative paths.
 *  File published to `pub/static`: `pub/static/frontend/Magento/<theme>/<locale>/js/theme.js`
 *  Called in script:
 
-  ```javascript
-    require(["js/theme.js"], function(){
-    });
-  ```
+   ```javascript
+   require(["js/theme.js"], function(){
+   });
+   ```
 
 **Example 3**
 
@@ -63,10 +63,10 @@ JS resources are accessed using relative paths.
 *  File published to `pub/static`: `pub/static/<area>/Magento/<theme>/<locale>/jquery.js`
 *  Called in script:
 
-   ```javascript
+    ```javascript
     require(["jquery"], function($){
     });
-   ```
+    ```
 
 Relative paths are also used in for [mapping and setting `paths` in requirejs-config.js configuration files]({{ page.baseurl }}/javascript-dev-guide/javascript/js-resources.html).
 
@@ -144,14 +144,14 @@ To include a 3rd party library and use it within the entire website (using the [
 
 1. Download the library and copy `slick.min.js` to the `<theme_path>/web/js` folder
 
-2. Copy `slick.less` and `slick-theme.less` to the `<theme_path>/web/css/source` folder. Also add both files to `<theme_path>/web/css/source/_extend.less`.
+1. Copy `slick.less` and `slick-theme.less` to the `<theme_path>/web/css/source` folder. Also add both files to `<theme_path>/web/css/source/_extend.less`.
 
    ```less
    @import "slick.less";
    @import "slick-theme.less";
    ```
 
-3. Create or update the theme's `requirejs-config.js` file.
+1. Create or update the theme's `requirejs-config.js` file.
 
    `<theme_path>/requirejs-config.js`
 
@@ -213,11 +213,11 @@ To make configurations more precise and specific to different modules and themes
 All configurations are collected and executed in the following order:
 
 1. Library configurations.
-2. Configurations at the module level.
-3. Configurations at the theme module level for the ancestor themes.
-4. Configurations at the theme module level for a current theme.
-5. Configurations at the theme level for the ancestor themes.
-6. Configurations at the theme level for the current theme.
+1. Configurations at the module level.
+1. Configurations at the theme module level for the ancestor themes.
+1. Configurations at the theme module level for a current theme.
+1. Configurations at the theme level for the ancestor themes.
+1. Configurations at the theme level for the current theme.
 
 The `baseUrl` parameter for RequireJS is specified in the following files:
 
