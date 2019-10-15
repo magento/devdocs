@@ -254,69 +254,69 @@ Similar to the preceding example, generate a `.csv` file, but instead of specify
 
 1. In that directory, add all of the following:
 
-    - A license, if required
-    - `composer.json` (sample following)
-    - `registration.php` (sample following)
-    - `language.xml` (sample following)
+   -  A license, if required
+   -  `composer.json` (sample following)
+   -  `registration.php` (sample following)
+   -  `language.xml` (sample following)
 
-    **Sample `composer.json`:**
+   **Sample `composer.json`:**
 
-    ```json
-    {
-        "name": "examplecorp/language-xx_yy",
-        "description": "Sample language",
-        "version": "100.0.2",
-        "license": [
-            "OSL-3.0",
-            "AFL-3.0"
-        ],
-        "require": {
-            "magento/framework": "100.0.*"
-        },
-        "type": "magento2-language",
-        "autoload": {
-            "files": [
-                "registration.php"
-            ]
-        }
-    }
-    ```
+   ```json
+   {
+       "name": "examplecorp/language-xx_yy",
+       "description": "Sample language",
+       "version": "100.0.2",
+       "license": [
+           "OSL-3.0",
+           "AFL-3.0"
+       ],
+       "require": {
+           "magento/framework": "100.0.*"
+       },
+       "type": "magento2-language",
+       "autoload": {
+           "files": [
+               "registration.php"
+           ]
+       }
+   }
+   ```
 
-    **Sample `registration.php`:**
+   **Sample `registration.php`:**
 
-    ```php
-    /**
-     * Copyright © 2015 Magento. All rights reserved.
-     * See COPYING.txt for license details.
-     */
-    \Magento\Framework\Component\ComponentRegistrar::register(
-        \Magento\Framework\Component\ComponentRegistrar::LANGUAGE,
-        'magento_xx_yy',
-        __DIR__
-    );
-    ```
+   ```php
+   /**
+    * Copyright © 2015 Magento. All rights reserved.
+    * See COPYING.txt for license details.
+    */
+   \Magento\Framework\Component\ComponentRegistrar::register(
+       \Magento\Framework\Component\ComponentRegistrar::LANGUAGE,
+       'magento_xx_yy',
+       __DIR__
+   );
+   ```
 
-    **Sample `language.xml`:**
+   **Sample `language.xml`:**
 
-    ```xml
-    <?xml version="1.0"?>
-    <!--
-    /**
-     * Copyright © 2015 Magento. All rights reserved.
-     * See COPYING.txt for license details.
-     */
-    -->
-    <language xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:App/Language/package.xsd">
-        <code>xx_YY</code>
-        <vendor>examplecorp</vendor>
-        <package>xx_yy</package>
-    </language>
-    ```
+   ```xml
+   <?xml version="1.0"?>
+   <!--
+   /**
+    * Copyright © 2015 Magento. All rights reserved.
+    * See COPYING.txt for license details.
+    */
+   -->
+   <language xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:App/Language/package.xsd">
+       <code>xx_YY</code>
+       <vendor>examplecorp</vendor>
+       <package>xx_yy</package>
+   </language>
+   ```
 
 ## Additional information
 
-- [Translations overview]
-- [Translate theme strings]
+-  [Translations overview]
+-  [Translate theme strings]
 
 [Translate theme strings]: {{ page.baseurl }}/frontend-dev-guide/translations/translate_theory.html
 [Translations overview]: {{ page.baseurl }}/frontend-dev-guide/translations/xlate.html

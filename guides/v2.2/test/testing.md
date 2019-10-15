@@ -11,46 +11,46 @@ Product quality tests verify that the user gets expected results while interacti
 
 Code quality is important to developers working with Magento codebase including:
 
-- System integrators
-- Extension developers
-- Magento core team
-- Community contributors
+-  System integrators
+-  Extension developers
+-  Magento core team
+-  Community contributors
 
 Code quality matters for:
 
-- Extensibility - It should be straightforward to extend or modify existing behavior.
+-  Extensibility - It should be straightforward to extend or modify existing behavior.
   Good extensibility allows for:
-  - Customizations and extensions using modularity of the platform.
-  - Evolution of the platform with new releases.
-- Maintainability - It should be straightforward for developers to work within the Magento system.
+   -  Customizations and extensions using modularity of the platform.
+   -  Evolution of the platform with new releases.
+-  Maintainability - It should be straightforward for developers to work within the Magento system.
   It can be improved with:
-  - Complexity management - Reduce the learning curve and risk of adding new bugs.
-  - Automatic bug detection - Reduces total cost of ownership.
-  - Coding standards - Ensures consistency and readability.
+   -  Complexity management - Reduce the learning curve and risk of adding new bugs.
+   -  Automatic bug detection - Reduces total cost of ownership.
+   -  Coding standards - Ensures consistency and readability.
 
 Automated tests are required by [Magento definition of done][] for any code changes.
 
 ## Product Quality Tests
 
-- [Magento Functional Testing Framework][] - Tests the storefront and admin panel UI.
-- [Web API Functional][] - Tests the REST, SOAP, and GraphQL areas.
-- [Integration][] - Ensures that all the parts work together seamlessly.
-- Performance - Tracks changes in CPU, Memory and other metrics. Executed nightly for develop branches. Custom builds can be configured using [performance toolkit][].
-- Client-side performance - Measures total page load times in the browser.
-- Load - Tracks the trends of system behavior under the load. Executed internally for each release using scenarios defined in the [performance toolkit][]
-- Upgrade - Ensures that a seamless upgrade is possible from previously released product versions to the new one. Executed internally for each release.
-- [JavaScript][] - Tests JS modules and other JS portions of the UI. These tests are similar to integration tests used for server-side testing.
+-  [Magento Functional Testing Framework][] - Tests the storefront and admin panel UI.
+-  [Web API Functional][] - Tests the REST, SOAP, and GraphQL areas.
+-  [Integration][] - Ensures that all the parts work together seamlessly.
+-  Performance - Tracks changes in CPU, Memory and other metrics. Executed nightly for develop branches. Custom builds can be configured using [performance toolkit][].
+-  Client-side performance - Measures total page load times in the browser.
+-  Load - Tracks the trends of system behavior under the load. Executed internally for each release using scenarios defined in the [performance toolkit][]
+-  Upgrade - Ensures that a seamless upgrade is possible from previously released product versions to the new one. Executed internally for each release.
+-  [JavaScript][] - Tests JS modules and other JS portions of the UI. These tests are similar to integration tests used for server-side testing.
 
 ## Code Quality Tests
 
-- Static
-  - [PhpCs][] - Warns developers about coding standard violations. It can be integrated into an IDE to analyze the code as soon as you write it.
-  - [PhpMd][] - Used for monitoring code complexity and potential bugs. Can be integrated with an IDE for instant feedback.
-  - Dependency - Prevents incorrect dependencies between modules.
-  - Legacy code - Prevents usage of the legacy functionality.
-- Unit - Used for testing of isolated algorithms or discreet pieces of code.
-- Extensibility - Ensures the system is extensible as designed. Extensibility tests can be written using [Integration][], [JavaScript][] and [Web API Functional][] testing frameworks.
-- Backward-compatibility - Enforces [Magento backward compatibility policy][] at all levels including source code, database, message queue,  and web API.
+-  Static
+   -  [PhpCs][] - Warns developers about coding standard violations. It can be integrated into an IDE to analyze the code as soon as you write it.
+   -  [PhpMd][] - Used for monitoring code complexity and potential bugs. Can be integrated with an IDE for instant feedback.
+   -  Dependency - Prevents incorrect dependencies between modules.
+   -  Legacy code - Prevents usage of the legacy functionality.
+-  Unit - Used for testing of isolated algorithms or discreet pieces of code.
+-  Extensibility - Ensures the system is extensible as designed. Extensibility tests can be written using [Integration][], [JavaScript][] and [Web API Functional][] testing frameworks.
+-  Backward-compatibility - Enforces [Magento backward compatibility policy][] at all levels including source code, database, message queue,  and web API.
 
 ## Functional
 
