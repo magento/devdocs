@@ -107,7 +107,7 @@ define(['jquery'], function ($) {
 
 #### Extend JS Object
 
-Another use-case of JS mixin is when the base Javascript file returns an object. In this case, a wrapper is necessary. The following is an example of a mixin that extends the `setHash` function of [step navigator object][]. Here, `_super()` is the base method that can be called if needed.
+Another use-case for the JS mixin is when the base Javascript file returns an object. In this case, a wrapper is necessary. The following example mixin extends the `setHash` function of [step navigator object][]. Here, `_super()` is the base method that can be called if needed.
 
 **File:** `OrangeCompany/Sample/view/frontend/web/js/model/step-navigator-mixin.js`
 
