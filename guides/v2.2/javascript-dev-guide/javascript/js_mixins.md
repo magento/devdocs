@@ -137,7 +137,7 @@ The mixins configuration in the `requirejs-config.js` associates a target compon
 
 ### Example
 
-The following is an example of a `requirejs-config.js` file that adds the `columns-mixin`, `modal-widget-mixin`, and `step-navigator-mixin` mixins, defined in the previous examples, to the [grid column component][], [modal widget][], and [step navigator object][].
+The following is an example of a `requirejs-config.js` file that adds the `columns-mixin`, `modal-widget-mixin`, and `step-navigator-mixin` mixins, which were defined in the previous examples, to the [grid column component][], [modal widget][], and [step navigator object][].
 
 **File:** `OrangeCompany/Sample/view/base/requirejs-config.js`
 
