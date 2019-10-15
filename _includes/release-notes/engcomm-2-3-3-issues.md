@@ -21,7 +21,7 @@
 | [gfxguru](https://github.com/gfxguru) | [#198](https://github.com/magento/magento2/issues/198) | [magento/graphql-ce#371](https://github.com/magento/graphql-ce/pull/371) |
 | [ed29](https://github.com/ed29) | [#436](https://github.com/magento/magento2/issues/436) | [magento/graphql-ce#445](https://github.com/magento/graphql-ce/pull/445) |
 | [vigentocommerce](https://github.com/vigentocommerce) | [#309](https://github.com/magento/magento2/issues/309) | [magento/graphql-ce#504](https://github.com/magento/graphql-ce/pull/504) |
-| [beckindesigns](https://github.com/beckindesigns) | [#535](https://github.com/magento/magento2/issues/535) | [magento/graphql-ce#650](https://github.com/magento/graphql-ce/pull/650) |
+| beckindesigns | [#535](https://github.com/magento/magento2/issues/535) | [magento/graphql-ce#650](https://github.com/magento/graphql-ce/pull/650) |
 | [tzyganu](https://github.com/tzyganu) | [#658](https://github.com/magento/magento2/issues/658) | [magento/graphql-ce#665](https://github.com/magento/graphql-ce/pull/665), [magento/graphql-ce#744](https://github.com/magento/graphql-ce/pull/744) |
 | [tzyganu](https://github.com/tzyganu) | [#657](https://github.com/magento/magento2/issues/657) | [magento/graphql-ce#666](https://github.com/magento/graphql-ce/pull/666) |
 | [fwolfst](https://github.com/fwolfst) | [#12612](https://github.com/magento/magento2/issues/12612) | [magento/magento2#22558](https://github.com/magento/magento2/pull/22558) |
@@ -75,7 +75,7 @@
 | [gwharton](https://github.com/gwharton) | [#21671](https://github.com/magento/magento2/issues/21671) | [magento/magento2#21674](https://github.com/magento/magento2/pull/21674) |
 | [ketan-krish](https://github.com/ketan-krish) | [#22425](https://github.com/magento/magento2/issues/22425) | [magento/magento2#22426](https://github.com/magento/magento2/pull/22426) |
 | [squeegy06](https://github.com/squeegy06) | [#22511](https://github.com/magento/magento2/issues/22511) | [magento/magento2#22521](https://github.com/magento/magento2/pull/22521) |
-| [alexeya-ven](https://github.com/alexeya-ven) | [#23080](https://github.com/magento/magento2/issues/23080) | [magento/magento2#23081](https://github.com/magento/magento2/pull/23081) |
+| alexeya-ven | [#23080](https://github.com/magento/magento2/issues/23080) | [magento/magento2#23081](https://github.com/magento/magento2/pull/23081) |
 | [aasim110](https://github.com/aasim110) | [#19872](https://github.com/magento/magento2/issues/19872) | [magento/magento2#21131](https://github.com/magento/magento2/pull/21131) |
 | [jasonkcarter](https://github.com/jasonkcarter) | [#22092](https://github.com/magento/magento2/issues/22092) | [magento/magento2#21131](https://github.com/magento/magento2/pull/21131) |
 | [nicholasscottfish](https://github.com/nicholasscottfish) | [#22087](https://github.com/magento/magento2/issues/22087) | [magento/magento2#22646](https://github.com/magento/magento2/pull/22646) |
@@ -113,7 +113,7 @@
 | [magesanjay](https://github.com/magesanjay) | [#22638](https://github.com/magento/magento2/issues/22638) | [magento/magento2#22800](https://github.com/magento/magento2/pull/22800) |
 | [ilnytskyi](https://github.com/ilnytskyi) | [#22266](https://github.com/magento/magento2/issues/22266) | [magento/magento2#23218](https://github.com/magento/magento2/pull/23218) |
 | [OleksiiBulba](https://github.com/OleksiiBulba) | [#23230](https://github.com/magento/magento2/issues/23230) | [magento/magento2#23247](https://github.com/magento/magento2/pull/23247) |
-| [alexeya-ven](https://github.com/alexeya-ven) | [#23333](https://github.com/magento/magento2/issues/23333) | [magento/magento2#23338](https://github.com/magento/magento2/pull/23338) |
+| alexeya-ven | [#23333](https://github.com/magento/magento2/issues/23333) | [magento/magento2#23338](https://github.com/magento/magento2/pull/23338) |
 | [TomashKhamlai](https://github.com/TomashKhamlai) | [#23346](https://github.com/magento/magento2/issues/23346) | [magento/magento2#23367](https://github.com/magento/magento2/pull/23367) |
 | [udovicic](https://github.com/udovicic) | [#21380](https://github.com/magento/magento2/issues/21380) | [magento/magento2#23312](https://github.com/magento/magento2/pull/23312) |
 | [oleksii-lisovyi](https://github.com/oleksii-lisovyi) | [#21136](https://github.com/magento/magento2/issues/21136) | [magento/magento2#22116](https://github.com/magento/magento2/pull/22116) |
