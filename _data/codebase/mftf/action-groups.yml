@@ -774,7 +774,7 @@
   module: "Config"
   actiongroups:
      - name: "SetGroupForValidVATIdIntraUnionActionGroup"
-       description: "Goes to the 'Configuration' page for 'Customer Configuration'. Sets the 'Group For Valid VAT ID Intra Union' option. Clicks on the Save button. Validates the the Save message is present."
+       description: "Goes to the 'Configuration' page for 'Customer Configuration'. Sets the 'Group For Valid VAT ID Intra Union' option. Clicks on the Save button. Validates the Save message is present."
  
 - filename: "SwitcherActionGroup.xml"
   repo: "https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Config/Test/Mftf/ActionGroup/SwitcherActionGroup.xml"
@@ -3082,7 +3082,7 @@
        description: "Clicks on 'Proceed to Checkout' on the Storefront Shopping Cart page. Selects the provided Shipping Method. Clicks on Next. Clicks on Place Order. Validates that the Success Message is present and correct."
 
      - name: "CheckProductInCheckoutCartItemsActionGroup"
-       description: "Validates the the provided Product appears in the Storefront Checkout 'Order Summary' section."
+       description: "Validates the provided Product appears in the Storefront Checkout 'Order Summary' section."
 
      - name: "CheckOrderSummaryInCheckoutActionGroup"
        description: "Validates that the provided Subtotal, Shipping Total, Shipping Method and Total are present and correct on the Storefront Checkout page under the 'Order Summary' section."

@@ -941,7 +941,7 @@ This fix can degrade performance in deployments that implement flat catalogs. To
 
 <!--- MAGETWO-96138-->
 
-* The transfer cart line items and transfer shipping options in the the Shipping step of checkout now work for PayPal. [GitHub-19064](https://github.com/magento/magento2/issues/19064)
+* The transfer cart line items and transfer shipping options in the Shipping step of checkout now work for PayPal. [GitHub-19064](https://github.com/magento/magento2/issues/19064)
 
 <!--- MAGETWO-98424-->
 

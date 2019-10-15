@@ -417,7 +417,7 @@ We have fixed hundreds of issues in the Magento 2.3.3 core code.
 *  A product that belongs to a category where the permissions do not allow adding it to cart can now be added to the cart from a different category. Previously, you could not add a product to the cart if one of the categories to which it belongs does not permit adding it the cart.
 
 <!--- MAGETWO-98804 -->
-*  Magento now displays the correct currency in the the Admin **Catalog** > **Products**  list  in deployments where websites are assigned different currencies. Previously, the products on the Admin Category page displayed the base currency even when **Product Price Scope** was set to **Per Website** and the website was assigned a different currency.
+*  Magento now displays the correct currency in the Admin **Catalog** > **Products**  list  in deployments where websites are assigned different currencies. Previously, the products on the Admin Category page displayed the base currency even when **Product Price Scope** was set to **Per Website** and the website was assigned a different currency.
 
 <!--- MAGETWO-69893-->
 *  Magento disables the **New Category** button on the Product page if the user is an administrator with restricted permissions for managing categories. Previously, the button was active, and Magento threw a 403 error if the restricted user clicked the button to create a category.
