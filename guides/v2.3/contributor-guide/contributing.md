@@ -196,10 +196,10 @@ This tool ports fixes automatically across versions with a few simple steps. It 
 Access the tool at [porting.engcom.dev.magento.com](https://porting.engcom.dev.magento.com/). The first time you visit, you must log in and authorize with GitHub credentials. The tool performs all actions using your token.
 
 1. Visit [porting.engcom.dev.magento.com](https://porting.engcom.dev.magento.com/) and **Login with GitHub**.
-2. Copy and paste the pull request URL in **Select Pull Request for porting** and click **Next**.
-3. Select the target version for your port: **Up Port** or **Back Port**.
-4. Verify the summary of changes in **Port information**.
-5. Click **Create Job**. A job is created and started shortly after.
+1. Copy and paste the pull request URL in **Select Pull Request for porting** and click **Next**.
+1. Select the target version for your port: **Up Port** or **Back Port**.
+1. Verify the summary of changes in **Port information**.
+1. Click **Create Job**. A job is created and started shortly after.
 
 ![Magento Porting Tool]({{ site.baseurl }}/common/images/porting-tool-steps.png)
 

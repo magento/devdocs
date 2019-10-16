@@ -24,30 +24,30 @@ Override email templates by creating templates in a new directory in your custom
 Any templates configured in the Magento [Admin](https://glossary.magento.com/admin) take precedence over default or theme-based templates.
 
 1. In the Magento Admin, navigate to **MARKETING** > Communications > **Email Templates**
-2. Click **Add New Template**.
-3. If you want to use a default template as a starting point, in the **Load default template** section, choose the template and click **Load Template**. The path to the configuration settings for each default template displays in the **Currently Used For** field in the Template Information section.
+1. Click **Add New Template**.
+1. If you want to use a default template as a starting point, in the **Load default template** section, choose the template and click **Load Template**. The path to the configuration settings for each default template displays in the **Currently Used For** field in the Template Information section.
 
    Make note of this path because you will need it later when you configure this new template to be used instead of the default template.
 
    ![New template creation page with loaded default template]({{ site.baseurl }}/common/images/email_create_template21.png){:width="70%"}{:height="70%"}
 
-4. In **Template Name**, enter a name to identify the template in the Magento Admin.
-5. In **Template Subject**, add plain text to use as the Subject of the emails sent using the template you create. This field can contain system variables.
-6. Customize template content. For details, see [the section on customizing content](#customize-content).
-7. In **Template Styles**, optionally add CSS styles for the template. These styles are added inside of a `<style>` tag in the `<head>` of the email. Typically, you'll use the [Less files](#email-styles) to make style changes to emails because some email clients don't support styles in `<style>` tags.
-8. Click **Save Template**.
-9. Now that you have created a template, you must configure that template to be used:
+1. In **Template Name**, enter a name to identify the template in the Magento Admin.
+1. In **Template Subject**, add plain text to use as the Subject of the emails sent using the template you create. This field can contain system variables.
+1. Customize template content. For details, see [the section on customizing content](#customize-content).
+1. In **Template Styles**, optionally add CSS styles for the template. These styles are added inside of a `<style>` tag in the `<head>` of the email. Typically, you'll use the [Less files](#email-styles) to make style changes to emails because some email clients don't support styles in `<style>` tags.
+1. Click **Save Template**.
+1. Now that you have created a template, you must configure that template to be used:
 
    1. If you haven't done so already, log in to the Magento Admin as an administrator.
-   2. Click **STORES** > Settings > **Configuration** > SALES > **Sales Emails**.
-   3. In the left pane, locate the section that contains the template you want to override. This is the section referenced by **Currently Used For** in your new template. (See step 3 earlier in this section.)
+   1. Click **STORES** > Settings > **Configuration** > SALES > **Sales Emails**.
+   1. In the left pane, locate the section that contains the template you want to override. This is the section referenced by **Currently Used For** in your new template. (See step 3 earlier in this section.)
 
-       For example, if you created a "New Order" template, the configuration section is **Order** as the following figure shows.
+      For example, if you created a "New Order" template, the configuration section is **Order** as the following figure shows.
 
-       ![Choosing a custom template]({{ site.baseurl }}/common/images/email_choose-template21.png){:width="70%"}{:height="70%"}
+      ![Choosing a custom template]({{ site.baseurl }}/common/images/email_choose-template21.png){:width="70%"}{:height="70%"}
 
-   4. Select your newly created template from the list.
-   5. Click **Save Config**.
+   1. Select your newly created template from the list.
+   1. Click **Save Config**.
 
 ### Customize header and footer templates {#customize-header-footer}
 
@@ -109,12 +109,13 @@ You can also create your own custom variables and set their values in the Admin,
 To add a variable to your template content:
 
 1. In the Magento Admin, navigate to **MARKETING** > Communications > **Email Templates**
-2. Create a new template or edit an existing template.
-3. Click to place the cursor in the text in which to insert the variable.
-4. Click **Insert Variable**. A pop-up containing a list of variables opens, including custom variables. The variables in the **Store Contact Information** are available in all email templates whereas the variables in the **Template Variables** section are specific to the template you're editing. The following figure shows an example:
+1. Create a new template or edit an existing template.
+1. Click to place the cursor in the text in which to insert the variable.
+1. Click **Insert Variable**. A pop-up containing a list of variables opens, including custom variables. The variables in the **Store Contact Information** are available in all email templates whereas the variables in the **Template Variables** section are specific to the template you're editing. The following figure shows an example:
+
    ![The list of available variables]({{ site.baseurl }}/common/images/email_insert_variable21.png){:width="70%"}{:height="70%"}
 
-5. Click the name of the required variable. <br> The variable code is inserted in the template content.
+1. Click the name of the required variable. <br> The variable code is inserted in the template content.
 
 {:.bs-callout .bs-callout-info}
 The selection of available variables depends on which template you use as a basis. The template-specific variables are contained in a `<!--@vars @-->` comment at the top of each template on the file system. (For example, look at [app/code/Magento/Customer/view/frontend/email/account_new.html]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Customer/view/frontend/email/account_new.html#L8).
@@ -308,7 +309,7 @@ Here is an overview of how the font structure for emails works:
 If you want to change the font used for emails, do the following:
 
 1. Refer to the documentation on [using fonts]({{ page.baseurl }}/frontend-dev-guide/css-topics/using-fonts.html) for details on how to add a new font.
-2. After you've added a new font and have updated the `source/_variables.less` and `source/_typography.less` files for your custom theme to refer to the new font, the emails should automatically use the specified font.
+1. After you've added a new font and have updated the `source/_variables.less` and `source/_typography.less` files for your custom theme to refer to the new font, the emails should automatically use the specified font.
 
 ## Email logo {#email-logo}
 
@@ -326,7 +327,7 @@ To customize your logo using a theme:
 
    For example, if the OrangeCo vendor wants to add a logo for their custom Orange, they must add a file in the `app/design/frontend/OrangeCo/orange/Magento_Email/web` directory.
 
-2. Copy the `<Magento_Email_module_dir>/view/frontend/email/header.html` file into a `Magento_Email/email` directory in your theme.
+1. Copy the `<Magento_Email_module_dir>/view/frontend/email/header.html` file into a `Magento_Email/email` directory in your theme.
 
    For example, the OrangeCo vendor would copy the file to this location: `app/design/frontend/OrangeCo/orange/Magento_Email/email/header.html`
 
@@ -355,13 +356,14 @@ To customize your logo using a theme:
 ### Customize the email logo using the Admin {#customize-logo-admin}
 
 1. In the Magento Admin, navigate to **CONTENT** > Design > **Configuration**. A Design Configuration page opens. It contains a grid with the available configuration scopes.
-2. In the configuration record corresponding to your store view, click **Edit**.
-3. Under **Transactional Emails** in the **Logo Image** field upload your logo and specify the alternative text for it.
+1. In the configuration record corresponding to your store view, click **Edit**.
+1. Under **Transactional Emails** in the **Logo Image** field upload your logo and specify the alternative text for it.
+
    ![System configuration]({{ site.baseurl }}/common/images/email_templ_logo21.png)
 
-4. Enter values for **Logo Width** and **Logo Height**. Based on the preceding example, you would enter `200` and `100`, respectively.
+1. Enter values for **Logo Width** and **Logo Height**. Based on the preceding example, you would enter `200` and `100`, respectively.
 
-5. Click the **Save Configuration** button.
+1. Click the **Save Configuration** button.
 
 ## Use contact information in emails {#contact-information-emails}
 
@@ -371,13 +373,13 @@ To set those values:
 
 1. To set the store name, phone number, and hours of operation:
    1. In the Magento Admin, navigate to **STORES** > Settings > **Configuration** > GENERAL > **General** > **Store Information**
-   2. Input values into the **Store Name**, **Store Phone Number**, and **Store Hours of Operation** fields.
-   3. Note: The **Store Phone Number** and **Store Hours of Operation** fields are optional.
-   4. Click the **Save Config** button.
-2. To set the store email:
+   1. Input values into the **Store Name**, **Store Phone Number**, and **Store Hours of Operation** fields.
+   1. Note: The **Store Phone Number** and **Store Hours of Operation** fields are optional.
+   1. Click the **Save Config** button.
+1. To set the store email:
    1. In the Magento Admin, navigate to **STORES** > Settings > **Configuration** > GENERAL > **General** > **Store Email Addresses** > **General Contact**
-   2. Input values into the **Sender Name** and **Sender Email** fields.
-   3. Click the **Save Config** button.
+   1. Input values into the **Sender Name** and **Sender Email** fields.
+   1. Click the **Save Config** button.
 
 The sales emails are configured to display all of the above values, if they're configured in the admin. If you want to add those values to other email templates, you can use the following variables:
 

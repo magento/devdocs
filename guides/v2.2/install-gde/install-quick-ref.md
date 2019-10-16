@@ -41,14 +41,14 @@ If not, see the [Installation overview]({{ page.baseurl }}/install-gde/bk-instal
 ## Installation part 1: Getting started
 
 1. See the [system requirements]({{ page.baseurl }}/install-gde/system-requirements.html).
-2. If your system lacks any requirements, see the prerequisites documentation:
+1. If your system lacks any requirements, see the prerequisites documentation:
 
    *  [Apache]({{ page.baseurl }}/install-gde/prereq/apache.html)
    *  [PHP]({{ page.baseurl }}/install-gde/prereq/php-settings.html)
    *  [MySQL]({{ page.baseurl }}/install-gde/prereq/mysql.html)
 
-3. ust as importantly, set up the [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html) on the server.
-4. Switch to the [Magento file system owner](https://glossary.magento.com/magento-file-system-owner).
+1. ust as importantly, set up the [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html) on the server.
+1. Switch to the [Magento file system owner](https://glossary.magento.com/magento-file-system-owner).
 
 ### Get the Magento software
 
