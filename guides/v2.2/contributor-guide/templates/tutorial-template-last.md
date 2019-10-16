@@ -50,5 +50,5 @@ Use a Head2 (`## Heading`) as the highest-level heading in this topic.
 {:.ref-header}
 Related topics
 
-* [Title of linked topic](http://example.com/index.html)
-* [Link and open new tab](http://example.com/index.html){:target="_blank"}
+*  [Title of linked topic](http://example.com/index.html)
+*  [Link and open new tab](http://example.com/index.html){:target="_blank"}
