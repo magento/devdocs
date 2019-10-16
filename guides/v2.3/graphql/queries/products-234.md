@@ -50,7 +50,7 @@ filter: {
 }
 ```
 
-Magento processes the attribute values specified in  a `ProductAttributeFilterInput` as simple data types (strings, integers, Booleans). However, returned attributes can be a different, complex data type. For example, in a response, `price` is an object that contains a monetary value and a currency code.
+Magento processes the attribute values specified in a `ProductAttributeFilterInput` as simple data types (strings, integers, Booleans). However, returned attributes can be a different, complex data type. For example, in a response, `price` is an object that contains a monetary value and a currency code.
 
 By default, you can use the following attributes as filters. To define a custom filter, see [Filtering with custom attributes]({{page.baseurl}}/graphql/custom-filters.html). Use the `input_type` output attribute of the [`customAttributeMetadata` query]({{page.baseurl}}/graphql/queries/custom-attribute-metadata.html) to determine whether your custom filter should include the `FilterEqualTypeInput`, `FilterMatchTypeInput`, or `FilterRangeTypeInput` data type.
 
@@ -521,9 +521,9 @@ The following query returns aggregations for a query that filters on items with 
     items {
       name
       sku
-      price {
-        regularPrice {
-          amount {
+      price_range {
+        minimum_price {
+          regular_price {
             value
             currency
           }
@@ -564,6 +564,11 @@ The following query returns aggregations for a query that filters on items with 
           "label": "Category",
           "options": [
             {
+              "label": "New Luma Yoga Collection",
+              "value": "8",
+              "count": 1
+            },
+            {
               "label": "Bottoms",
               "value": "22",
               "count": 4
@@ -582,11 +587,6 @@ The following query returns aggregations for a query that filters on items with 
               "label": "Performance Fabrics",
               "value": "35",
               "count": 2
-            },
-            {
-              "label": "New Luma Yoga Collection",
-              "value": "8",
-              "count": 1
             }
           ]
         },
@@ -643,6 +643,21 @@ The following query returns aggregations for a query that filters on items with 
           "label": "Material",
           "options": [
             {
+              "label": "Nylon",
+              "value": "37",
+              "count": 1
+            },
+            {
+              "label": "Rayon",
+              "value": "39",
+              "count": 1
+            },
+            {
+              "label": "LumaTech&trade;",
+              "value": "148",
+              "count": 1
+            },
+            {
               "label": "Microfiber",
               "value": "150",
               "count": 2
@@ -661,21 +676,6 @@ The following query returns aggregations for a query that filters on items with 
               "label": "CoolTech&trade;",
               "value": "156",
               "count": 2
-            },
-            {
-              "label": "LumaTech&trade;",
-              "value": "148",
-              "count": 1
-            },
-            {
-              "label": "Nylon",
-              "value": "37",
-              "count": 1
-            },
-            {
-              "label": "Rayon",
-              "value": "39",
-              "count": 1
             }
           ]
         },
@@ -697,10 +697,15 @@ The following query returns aggregations for a query that filters on items with 
           ]
         },
         {
-          "attribute_code": "eco_collection_bucket",
-          "count": 1,
-          "label": "eco_collection_bucket",
+          "attribute_code": "eco_collection",
+          "count": 2,
+          "label": "Eco Collection",
           "options": [
+            {
+              "label": "0",
+              "value": "0",
+              "count": 3
+            },
             {
               "label": "1",
               "value": "1",
@@ -709,10 +714,15 @@ The following query returns aggregations for a query that filters on items with 
           ]
         },
         {
-          "attribute_code": "performance_fabric_bucket",
-          "count": 1,
-          "label": "performance_fabric_bucket",
+          "attribute_code": "performance_fabric",
+          "count": 2,
+          "label": "Performance Fabric",
           "options": [
+            {
+              "label": "0",
+              "value": "0",
+              "count": 2
+            },
             {
               "label": "1",
               "value": "1",
@@ -721,14 +731,43 @@ The following query returns aggregations for a query that filters on items with 
           ]
         },
         {
-          "attribute_code": "new_bucket",
+          "attribute_code": "erin_recommends",
           "count": 1,
-          "label": "new_bucket",
+          "label": "Erin Recommends",
           "options": [
+            {
+              "label": "0",
+              "value": "0",
+              "count": 4
+            }
+          ]
+        },
+        {
+          "attribute_code": "new",
+          "count": 2,
+          "label": "New",
+          "options": [
+            {
+              "label": "0",
+              "value": "0",
+              "count": 3
+            },
             {
               "label": "1",
               "value": "1",
               "count": 1
+            }
+          ]
+        },
+        {
+          "attribute_code": "sale",
+          "count": 1,
+          "label": "Sale",
+          "options": [
+            {
+              "label": "0",
+              "value": "0",
+              "count": 4
             }
           ]
         },
@@ -797,9 +836,9 @@ The following query returns aggregations for a query that filters on items with 
               "count": 4
             },
             {
-              "label": "Hot",
-              "value": "212",
-              "count": 3
+              "label": "Spring",
+              "value": "208",
+              "count": 1
             },
             {
               "label": "Warm",
@@ -807,9 +846,9 @@ The following query returns aggregations for a query that filters on items with 
               "count": 2
             },
             {
-              "label": "Spring",
-              "value": "208",
-              "count": 1
+              "label": "Hot",
+              "value": "212",
+              "count": 3
             }
           ]
         }
@@ -818,9 +857,9 @@ The following query returns aggregations for a query that filters on items with 
         {
           "name": "Karmen Yoga Pant",
           "sku": "WP01",
-          "price": {
-            "regularPrice": {
-              "amount": {
+          "price_range": {
+            "minimum_price": {
+              "regular_price": {
                 "value": 39,
                 "currency": "USD"
               }
@@ -830,9 +869,9 @@ The following query returns aggregations for a query that filters on items with 
         {
           "name": "Ida Workout Parachute Pant",
           "sku": "WP03",
-          "price": {
-            "regularPrice": {
-              "amount": {
+          "price_range": {
+            "minimum_price": {
+              "regular_price": {
                 "value": 48,
                 "currency": "USD"
               }
@@ -842,9 +881,9 @@ The following query returns aggregations for a query that filters on items with 
         {
           "name": "Bardot Capri",
           "sku": "WP08",
-          "price": {
-            "regularPrice": {
-              "amount": {
+          "price_range": {
+            "minimum_price": {
+              "regular_price": {
                 "value": 48,
                 "currency": "USD"
               }
@@ -854,9 +893,9 @@ The following query returns aggregations for a query that filters on items with 
         {
           "name": "Aeon Capri",
           "sku": "WP07",
-          "price": {
-            "regularPrice": {
-              "amount": {
+          "price_range": {
+            "minimum_price": {
+              "regular_price": {
                 "value": 48,
                 "currency": "USD"
               }
