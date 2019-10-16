@@ -38,9 +38,9 @@ For details, see [Create a new storefront theme]({{ page.baseurl }}/frontend-dev
 ### Apply the theme
 
 1. In the Admin Panel, go to **CONTENT** > **Design** > **Configuration**
-2. Find the record corresponding to your store view and click **Edit**.
-3. In the **Applied Theme** drop-down, select your newly created theme.
-4. Click **Save Configuration**.
+1. Find the record corresponding to your store view and click **Edit**.
+1. In the **Applied Theme** drop-down, select your newly created theme.
+1. Click **Save Configuration**.
 
 For details, see [Apply and configure a storefront theme]({{ page.baseurl }}/frontend-dev-guide/themes/theme-apply.html)
 
@@ -48,9 +48,9 @@ For details, see [Apply and configure a storefront theme]({{ page.baseurl }}/fro
 
 #### Grunt (recommended)
 
-* [Setup Grunt]({{ page.baseurl }}/frontend-dev-guide/tools/using_grunt.html)
-* [Add the theme to Grunt configuration]({{ page.baseurl }}/frontend-dev-guide/css-topics/css_debug.html#add_theme)
-* [Track changes]({{ page.baseurl }}/frontend-dev-guide/css-topics/css_debug.html#grunt_commands)
+*  [Setup Grunt]({{ page.baseurl }}/frontend-dev-guide/tools/using_grunt.html)
+*  [Add the theme to Grunt configuration]({{ page.baseurl }}/frontend-dev-guide/css-topics/css_debug.html#add_theme)
+*  [Track changes]({{ page.baseurl }}/frontend-dev-guide/css-topics/css_debug.html#grunt_commands)
 
 #### Client-side compilation
 
@@ -68,22 +68,22 @@ See [Using custom CSS preprocessor]({{ page.baseurl }}/frontend-dev-guide/css-to
 
 See:
 
-* [Quick start guide to working with styles]({{ page.baseurl }}/frontend-dev-guide/css-guide/css_quick_guide_overview.html)
-* [All about styles in Magento themes]({{ page.baseurl }}/frontend-dev-guide/css-topics/css-overview.html)
+*  [Quick start guide to working with styles]({{ page.baseurl }}/frontend-dev-guide/css-guide/css_quick_guide_overview.html)
+*  [All about styles in Magento themes]({{ page.baseurl }}/frontend-dev-guide/css-topics/css-overview.html)
 
 ### Debug
 
 See:
 
-* [Locate the CSS/Less file you need to change]({{ page.baseurl }}/frontend-dev-guide/themes/debug-theme.html)
-* [CSS source maps]({{ page.baseurl }}/frontend-dev-guide/css-topics/css_debug.html#source_maps)
-* [Track changes using Grunt]({{ page.baseurl }}/frontend-dev-guide/css-topics/css_debug.html#use_cases)
+*  [Locate the CSS/Less file you need to change]({{ page.baseurl }}/frontend-dev-guide/themes/debug-theme.html)
+*  [CSS source maps]({{ page.baseurl }}/frontend-dev-guide/css-topics/css_debug.html#source_maps)
+*  [Track changes using Grunt]({{ page.baseurl }}/frontend-dev-guide/css-topics/css_debug.html#use_cases)
 
 ### Clean cache and/or static files if necessary
 
-* Certain changes in styles require cleaning previously pre-processed and published static view files. Run `grunt clean <theme>` or manually clear the `pub/static` and `var/view_preprocessed` directories. Do this after any changes in server-side compilation mode. For the client-side or Grunt compilation, see [Clean static files]({{ page.baseurl }}/frontend-dev-guide/css-topics/css-preprocess.html#css_exception) for details.
+*  Certain changes in styles require cleaning previously pre-processed and published static view files. Run `grunt clean <theme>` or manually clear the `pub/static` and `var/view_preprocessed` directories. Do this after any changes in server-side compilation mode. For the client-side or Grunt compilation, see [Clean static files]({{ page.baseurl }}/frontend-dev-guide/css-topics/css-preprocess.html#css_exception) for details.
 
-* Changes in layout and templates requires cleaning cache. See [Clean cache]({{ page.baseurl }}/frontend-dev-guide/cache_for_frontdevs.html#clean_cache) for details.
+*  Changes in layout and templates requires cleaning cache. See [Clean cache]({{ page.baseurl }}/frontend-dev-guide/cache_for_frontdevs.html#clean_cache) for details.
 
 ### Make sure that the same styles are delivered to production (optional)
 
@@ -92,6 +92,7 @@ When you finish developing and your styles are ready to go to production, you ca
 ### Switch to production mode
 
 In the Magento root directory, run:
+
 ```php
 bin/magento deploy:mode:set production
 ```

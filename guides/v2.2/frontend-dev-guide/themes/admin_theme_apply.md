@@ -13,8 +13,8 @@ This topic describes how to apply your custom [theme](https://glossary.magento.c
 ## Prerequisites
 
 1. [Set]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html) your Magento application to the developer [mode]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html). The application mode influences the way [static files](https://glossary.magento.com/static-files) are cached by Magento.
-2. [Create a custom theme for the Admin panel]({{ page.baseurl }}/frontend-dev-guide/themes/admin_theme_create.html).
-3. [Add a new custom module]({{ page.baseurl }}/extension-dev-guide/build/build.html) or decide to use existing custom module. The module must load after the Magento_Theme module. To ensure this, add the following code in `<your_custom_module_dir>/etc/module.xml` (replace placeholders with your [module](https://glossary.magento.com/module) information):
+1. [Create a custom theme for the Admin panel]({{ page.baseurl }}/frontend-dev-guide/themes/admin_theme_create.html).
+1. [Add a new custom module]({{ page.baseurl }}/extension-dev-guide/build/build.html) or decide to use existing custom module. The module must load after the Magento_Theme module. To ensure this, add the following code in `<your_custom_module_dir>/etc/module.xml` (replace placeholders with your [module](https://glossary.magento.com/module) information):
 
    ```xml
    <module name="%YourVendor_YourModule%" setup_version="2.0.1"> <!-- Example: "Magento_Backend" -->
@@ -34,9 +34,9 @@ If you decide to use the existing module, keep in mind, that theme declaring mig
 
 To apply the [Admin](https://glossary.magento.com/admin) theme, take the following steps:
 
-2. [Specify the new Admin theme in your module's `di.xml`](#specify_di)
-3. Update the components by running the [`bin/magento setup:upgrade`]({{ page.baseurl }}/install-gde/install/cli/install-cli-uninstall.html#instgde-install-keep) command.
-4. Open the Admin in browser and view the new theme applied.
+1. [Specify the new Admin theme in your module's `di.xml`](#specify_di)
+1. Update the components by running the [`bin/magento setup:upgrade`]({{ page.baseurl }}/install-gde/install/cli/install-cli-uninstall.html#instgde-install-keep) command.
+1. Open the Admin in browser and view the new theme applied.
 
 Each step is described further with more details.
 

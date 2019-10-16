@@ -25,11 +25,11 @@ Set all of the following as appropriate.
 #### All web servers and Varnish
 
 1. Locate your `php.ini` using a [`phpinfo.php`]({{ page.baseurl }}/install-gde/prereq/optional.html#install-optional-phpinfo) file.
-2. As a user with `root` privileges, open `php.ini` in a text editor.
-3. Locate the `max_execution_time` setting.
-4. Change its value to `18000`.
-5. Save your changes to `php.ini` and exit the text editor.
-6. Restart Apache:
+1. As a user with `root` privileges, open `php.ini` in a text editor.
+1. Locate the `max_execution_time` setting.
+1. Change its value to `18000`.
+1. Save your changes to `php.ini` and exit the text editor.
+1. Restart Apache:
 
    *  CentOS: `service httpd restart`
    *  Ubuntu: `service apache2 restart`

@@ -115,15 +115,15 @@ Under the created `etc` directory, create a new directory called `adminhtml`. Un
 The `menu.xml` file provided below adds two items in the Content section of the left navigation:
 
 1. A new separate section with the title **Greetings** under Content.
-2. A link with the label **Hello World** that leads to a page request for `exampleadminnewpage/helloworld/index` underneath that new section.
+1. A link with the label **Hello World** that leads to a page request for `exampleadminnewpage/helloworld/index` underneath that new section.
 
 ![Hello World menu item]({{ site.baseurl }}/common/images/ext-best-practices/hello-world-menu-item.png){:width="322px" height="400px"}
 
 The following parts make up the generated page request link to the **Hello World** page:
 
-* `exampleadminnewpage` - This is the `frontName`. Because its purpose is to help route requests to the correct module, we give it the same name as the module, but this is not required.
-* `helloworld` - This specifies the name of the controller to use.
-* `index` - In the XML file, since the action for the controller is not specified, Magento uses the default value `index`.
+*  `exampleadminnewpage` - This is the `frontName`. Because its purpose is to help route requests to the correct module, we give it the same name as the module, but this is not required.
+*  `helloworld` - This specifies the name of the controller to use.
+*  `index` - In the XML file, since the action for the controller is not specified, Magento uses the default value `index`.
 
 [//]: # (Stop list rendering before collapsible, see: https://github.com/magento/devdocs/issues/2655)
 {% collapsible File content for menu.xml %}
@@ -294,10 +294,10 @@ MyCompany
 Now that the module is code-complete, run the following commands to install it:
 
 1. `bin/magento module:status` - This command shows a list of enabled/disabled modules.
-2. `bin/magento module:enable MyCompany_ExampleAdminNewPage` - If necessary, run this to enable the disabled module.
-3. `bin/magento setup:upgrade` - This command will properly register the module with Magento.
-4. `bin/magento setup:di:compile` - This command compiles classes used in dependency injections.
-5. `bin/magento cache:clean` - This command cleans the cache.
+1. `bin/magento module:enable MyCompany_ExampleAdminNewPage` - If necessary, run this to enable the disabled module.
+1. `bin/magento setup:upgrade` - This command will properly register the module with Magento.
+1. `bin/magento setup:di:compile` - This command compiles classes used in dependency injections.
+1. `bin/magento cache:clean` - This command cleans the cache.
 
 Once the module installation has completed, the link to the **Hello World** page should appear in the **Greetings** section under **Content** in the left navigation in the admin area. Clicking this link will take you to a page that looks like the one pictured below.
 
