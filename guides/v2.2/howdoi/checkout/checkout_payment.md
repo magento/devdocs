@@ -264,7 +264,6 @@ In your custom module directory, create a new `<your_module_dir>/view/frontend/l
                                                             </item>
                                                         </item>
                                                         <!-- Declare additional before payment components. END -->
-                                                        
                                                         <!-- Declare the payment method (the component that registrates in the list). START -->
                                                         <item name="renders" xsi:type="array">
                                                             <item name="children" xsi:type="array">
