@@ -56,14 +56,8 @@ Attribute | Data type | Description
 
 ## Output attributes
 
-The `CmsBlocks` object contains an array of `items`, each of which can contain the following attributes:
+The `CmsBlocks` object contains an array of `items`, each of which can contain a `CmsBlock` object.
 
-Attribute | Data type | Description
---- | --- | ---
-`content` | String | The content of the CMS block in raw HTML
-`identifier` | String | The CMS block identifier
-`title` | String | The title assigned to the CMS block
+### CmsBlock attributes
 
-## Related topics
-
-[cmsPage query]({{page.baseurl}}/graphql/queries/cms-page.html)
+{% include graphql/cms-block-object.md %}
