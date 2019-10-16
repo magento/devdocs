@@ -82,9 +82,9 @@ An instance of a UI component is usually based on the hierarchy of child UI comp
 
 For example:
 
-* the Form component has Fieldsets, Tabs, and inner fields
+*  the Form component has Fieldsets, Tabs, and inner fields
 
-* the Listing component has Filters, Columns, Bookmark component, and others
+*  the Listing component has Filters, Columns, Bookmark component, and others
 
 ### JavaScript class
 
