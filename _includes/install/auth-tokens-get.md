@@ -21,9 +21,9 @@ You can also disable or delete authentication keys. For example, you can disable
 *  To enable a previously disabled key: Click **Enable**.
 *  To delete keys: Click **Delete**.
 
-### Manage downloads access token
+### Manage SSH access token
 
-To download patches and release of Magento via SSH you need to generate Downloads Access Token. Login to your account on magento.com and generate it:
+To download Magento releases using SSH, you must generate a Downloads Access Token. To generate a token:
 
 1. Log in to your [magento.com account](https://www.magentocommerce.com/products/customer/account/login){:target="_blank"}.
 1. Click **My Account** at the top of the page.
@@ -33,7 +33,9 @@ To download patches and release of Magento via SSH you need to generate Download
 
 1. Click **Generate new token** to replace and disable an existing token.
 
-You will need your MAGEID as well. It is shown at the top-left in your account page.
+You must use your MAGEID plus your token to download a release. Your MAGEID is displayed at the top-left of your account page.
+
+For example:
 
 ```bash
 curl -k https://MAGEID:TOKEN@www.magentocommerce.com/products/downloads/info/help
