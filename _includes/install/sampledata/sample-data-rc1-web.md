@@ -1,9 +1,9 @@
 
 These instructions apply to you *only* if all of the following are true:
 
-*  You're using Magento Enterprise Edition (EE)
-*  You have installed optional sample data
-*  You're upgrading to {{site.data.var.ee}} RC1 or {{site.data.var.ee}} RC2 from any earlier version using the Setup Wizard
+* You're using Magento Enterprise Edition (EE)
+* You have installed optional sample data
+* You're upgrading to {{site.data.var.ee}} RC1 or {{site.data.var.ee}} RC2 from any earlier version using the Setup Wizard
 
 To upgrade to {{site.data.var.ee}} RC1 or RC2 with sample data using the Setup Wizard:
 

@@ -4,9 +4,9 @@ After completing all preceding steps in the Setup Wizard, click **Install Now**.
 
 You have the following options:
 
-*  To see installation progress or error details, click **Console Log**.
-*  In the event of problems, click **Previous** to go back and fix incorrect entries.
-*  To try the installation again in the event of failure, click **Try Again**.
+* To see installation progress or error details, click **Console Log**.
+* In the event of problems, click **Previous** to go back and fix incorrect entries.
+* To try the installation again in the event of failure, click **Try Again**.
 
 ### Installation Success   {#instgde-install-magento-web-step5last}
 

@@ -53,19 +53,19 @@ This reference is generated from the Magento codebase. To change the content, yo
 
 ##### `{{ item.name }}`
 
--  Description: {{ item.description }}
+- Description: {{ item.description }}
    {% unless item.default == nil %}
    {% if item.default == false or (item.default == empty and item.default != '') %}
--  Default: `{{ item.default | inspect }}`
+- Default: `{{ item.default | inspect }}`
    {% else %}
--  Default: `{{ item.default }}`
+- Default: `{{ item.default }}`
    {% endif %}
    {% endunless %}
    {% if item.is_required %}
--  Required
+- Required
    {% endif %}
    {% if item.is_array %}
--  Array
+- Array
    {% endif %}
    {% endif %}
    {% endfor %}
@@ -78,26 +78,26 @@ This reference is generated from the Magento codebase. To change the content, yo
 
 ##### `{{ option[0] }}`
 
--  Option: `{{ opt.name }}`
+- Option: `{{ opt.name }}`
    {% if opt.shortcut contains '-' %}
--  Shortcut: `{{ opt.shortcut }}`
+- Shortcut: `{{ opt.shortcut }}`
    {% endif %}
--  Description: {{ opt.description | replace: '|', '\|'}}
+- Description: {{ opt.description | replace: '|', '\|'}}
    {% unless opt.default == nil %}
    {% if opt.default == false or (opt.default == empty and opt.default != '') %}
--  Default: `{{ opt.default | inspect }}`
+- Default: `{{ opt.default | inspect }}`
    {% else %}
--  Default: `{{ opt.default }}`
+- Default: `{{ opt.default }}`
    {% endif %}
    {% endunless %}
    {% if opt.is_value_required %}
--  Requires a value
+- Requires a value
    {% elsif opt.accept_value and opt.is_multiple %}
--  Accepts multiple values
+- Accepts multiple values
    {% elsif opt.accept_value and opt.is_multiple == false %}
--  Accepts a value
+- Accepts a value
    {% else %}
--  Does not accept a value
+- Does not accept a value
    {% endif %}
    {% endfor %}
 

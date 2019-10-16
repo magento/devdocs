@@ -12,8 +12,8 @@
 
    See one of the following sections for more information about enabling and disabling modules:
 
-   *  [General module configuration options](#instgde-install-magento-web-step4-depend1)
-   *  [Module dependency errors](#instgde-install-magento-web-step4-depend2)
+   * [General module configuration options](#instgde-install-magento-web-step4-depend1)
+   * [Module dependency errors](#instgde-install-magento-web-step4-depend2)
 
 1.  Click **Next**.
 
@@ -23,11 +23,11 @@ Modules are listed in **Advanced Modules Configuration** in alphabetical order; 
 
 You have the following options for any module listed:
 
-*  To enable a module that is currently disabled, select its checkbox.
-*  To disable a module that is currently enabled, clear its checkbox.
-*  Use the **Select All** checkbox to:
-   *  Enable all modules if any module is currently disabled.
-   *  Disable all available modules (that is, all modules that do not depend on other enabled modules).
+* To enable a module that is currently disabled, select its checkbox.
+* To disable a module that is currently enabled, clear its checkbox.
+* Use the **Select All** checkbox to:
+   * Enable all modules if any module is currently disabled.
+   * Disable all available modules (that is, all modules that do not depend on other enabled modules).
 
 If a module's checkbox is unavailable, some other module depends on it. In the case of a dependency, to change the state of that module, you must first perform the corresponding action on the module on which it depends.
 
@@ -46,8 +46,8 @@ If there is a dependency error, a message similar to the following displays.
 
 Click **Show details** to display details about the dependency error. You can then do any of the following:
 
-*  Select the **Skip dependency check for individual modules** to ignore the issue and continue with your installation. (Additional dependency checks are performed after you click **Next**.)
-*  Resolve the issue by taking the action indicated by the message.
+* Select the **Skip dependency check for individual modules** to ignore the issue and continue with your installation. (Additional dependency checks are performed after you click **Next**.)
+* Resolve the issue by taking the action indicated by the message.
 
-{:.bs-callout .bs-callout-warning}
+{: .bs-callout-warning }
 Use <strong>Skip dependency check for individual modules</strong> with caution. We recommend against it because a typical reason for this error is you manually edited the [deployment configuration]({{ page.baseurl }}/config-guide/config/config-php.html). Editing the deployment configuration is not recommended because future Magento software updates can undo your changes.

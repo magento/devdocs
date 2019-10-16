@@ -36,9 +36,9 @@ To verify whether or not your crontab is set up:
 
    Your crontab tells you the following:
 
-   *  What PHP binary you're using (in some cases, you have more than one)
-   *  What Magento cron scripts you're running (in particular, the paths to those scripts)
-   *  Where your cron logs are located
+   * What PHP binary you're using (in some cases, you have more than one)
+   * What Magento cron scripts you're running (in particular, the paths to those scripts)
+   * Where your cron logs are located
 
    See one of the following sections for a solution to your issue.
 
