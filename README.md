@@ -4,7 +4,7 @@ Welcome! This site contains the latest Magento developer documentation for ongoi
 
 ## Contributors
 
-Our goal is to provide the Magento community with comprehensive and quality technical documentation. We believe that to accomplish that goal we need experts from the community to share their knowledge with us and each other. We are thankful to all of our contributors for improving Magento documentation.
+Our goal is to cater to the Magento community with comprehensive and quality technical documentation. We believe that to accomplish that goal we need experts from the community to share their knowledge with us and each other. We are thankful to all of our contributors for improving Magento documentation.
 
 ![](https://raw.githubusercontent.com/wiki/magento/magento2/images/dev_docs_contributors.png)
 
@@ -31,7 +31,7 @@ ruby -v
 **MacOS users**
 
 1. Install Homebrew. See the [Homebrew site](https://brew.sh) for instructions.
-1. Use Homebrew to install the latest stable version of Ruby:
+1. Use Homebrew to install the latest and stable version of Ruby:
 
    ```bash
    brew install ruby
