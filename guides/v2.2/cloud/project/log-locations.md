@@ -80,7 +80,7 @@ The following logs have a common location for all Cloud projects:
 -  **Exception log**: `var/log/exception.log`
 -  **Reports**: `var/reports/`
 
-The `cloud.log` file contains feedback from each stage of the deployment process; however, logs specifically from the deploy hook are unique for each environment. The deploy log is in the following environment-specific directories:
+Though the `cloud.log` file contains feedback from each stage of the deployment process, logs from the deploy hook are unique to each environment. The environment-specific deploy log is in the following directories:
 
 -  **Starter and Pro Integration**: `/var/log/deploy.log`
 -  **Pro Staging**: `/var/log/platform/<project_id>_stg/deploy.log`
