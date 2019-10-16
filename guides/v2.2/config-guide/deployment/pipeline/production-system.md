@@ -12,17 +12,17 @@ functional_areas:
 
 You can have one production system. All of the following must be true:
 
-* All Magento code is in source control in the same repository as the development and build systems
-* Make sure all of the following are _included_ in source control:
+*  All Magento code is in source control in the same repository as the development and build systems
+*  Make sure all of the following are _included_ in source control:
 
-   * `app/etc/config.php`
-   * `generated` directory (and subdirectories)
-   * `pub/media` directory
-   * `pub/media/wysiwyg` directory (and subdirectories)
-   * `pub/static` directory (and subdirectories)
+   *  `app/etc/config.php`
+   *  `generated` directory (and subdirectories)
+   *  `pub/media` directory
+   *  `pub/media/wysiwyg` directory (and subdirectories)
+   *  `pub/static` directory (and subdirectories)
 
-* Magento 2.2 or later must be installed and set for [production mode]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html#production-mode)
-* It has Magento file system ownership and permissions set as discussed in [Prerequisite for your development, build, and production systems]({{ page.baseurl }}/config-guide/deployment/pipeline/technical-details.html#config-deploy-prereq).
+*  Magento 2.2 or later must be installed and set for [production mode]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html#production-mode)
+*  It has Magento file system ownership and permissions set as discussed in [Prerequisite for your development, build, and production systems]({{ page.baseurl }}/config-guide/deployment/pipeline/technical-details.html#config-deploy-prereq).
 
 ## Set up a production machine
 
