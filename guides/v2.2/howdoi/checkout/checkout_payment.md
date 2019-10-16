@@ -12,17 +12,17 @@ functional_areas:
 
 Out of the box, Magento [checkout](https://glossary.magento.com/checkout) consists of two steps:
 
-- Shipping Information
-- Review and Payment Information
+-  Shipping Information
+-  Review and Payment Information
 
 On the Review and Payment Information step the enabled payment methods are rendered. This topic describes how to add your custom [payment method](https://glossary.magento.com/payment-method) to this list.
 
 To implement a payment method rendering in checkout, you need to take the following steps:
 
 1. [Create the `.js` file implementing the component (payment method renderer).](#create)
-2. [Create the `.js` component registering the payment method renderer.](#register)
-3. [Create a template for the payment method renderer.](#template)
-4. [Declare the new payment in the checkout page layout.](#layout)
+1. [Create the `.js` component registering the payment method renderer.](#register)
+1. [Create a template for the payment method renderer.](#template)
+1. [Declare the new payment in the checkout page layout.](#layout)
 
 ## Step 1: Create the .js component file {#create}
 

@@ -60,7 +60,7 @@ You can enable Xdebug directly to all Starter environments and Pro Integration e
            - xdebug
    ```
 
-3. Optionally, modify the timeout. A default timeout of 300 seconds (5 minutes) is set in `php-fpm` and will end your session. To avoid the timeout, add the following lines to the `web:` section of `.magento.app.yaml`:
+1. Optionally, modify the timeout. A default timeout of 300 seconds (5 minutes) is set in `php-fpm` and will end your session. To avoid the timeout, add the following lines to the `web:` section of `.magento.app.yaml`:
 
    ```yaml
    web:

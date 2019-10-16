@@ -213,8 +213,8 @@ For more details see the <a href="{{ page.baseurl }}/ui_comp_guide/concepts/ui_c
 To create an instance of the Form component, you need to do the following:
 
 1. In your custom module, add a configuration file for the instance, for example: `customer_form.xml`.
-2. Add a set of fields (the Fieldset component with the component of the Field) for [entity](https://glossary.magento.com/entity) or     to implement the upload of meta info in the DataProvider.
-3. Create the DataProvider class for the entity that implements DataProviderInterface
+1. Add a set of fields (the Fieldset component with the component of the Field) for [entity](https://glossary.magento.com/entity) or     to implement the upload of meta info in the DataProvider.
+1. Create the DataProvider class for the entity that implements DataProviderInterface
 
    *  Add a component in Magento [layout](https://glossary.magento.com/layout) as a node: `<uiComponent name="customer_form"/>`
 

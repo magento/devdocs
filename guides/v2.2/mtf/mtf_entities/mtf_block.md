@@ -381,9 +381,9 @@ Renders help to unify a polymorphic behavior of the block. If you want to test t
 A basic flow is the following:
 
 1. Get name and path of the block you want to test
-2. Create block class with logic you need for the tests
-3. Add block to the page
-4. Run the page generator
+1. Create block class with logic you need for the tests
+1. Add block to the page
+1. Run the page generator
 
 #### How to determine a block name and a path {#mtf_block_path}
 
@@ -600,12 +600,12 @@ $this->getCustomOptionsBlock()->getOptions($product);
 There are some rules that should be followed to define a selector:
 
 1. Use [CSS](https://glossary.magento.com/css) and XPath strategies.
-2. To work with forms, use the `name` attribute as a selector.
-3. If an attribute is static (not auto-generated), use the `id` attribute.
-4. If you cannot use `id`, use `data-*` attributes.
-5. We recommend not to use the `class` attribute, because it can be changed and not unique very often.
-6. Do not use complex hard-coded structures like `//div/div[2]//tbody//tr[1]/td[0]`, they can be unpredictably changed.
-7. Do not use enclosed text such as button or label names like `//button[contains(., "Sign in")]`
+1. To work with forms, use the `name` attribute as a selector.
+1. If an attribute is static (not auto-generated), use the `id` attribute.
+1. If you cannot use `id`, use `data-*` attributes.
+1. We recommend not to use the `class` attribute, because it can be changed and not unique very often.
+1. Do not use complex hard-coded structures like `//div/div[2]//tbody//tr[1]/td[0]`, they can be unpredictably changed.
+1. Do not use enclosed text such as button or label names like `//button[contains(., "Sign in")]`
 
 <!-- LINK DEFINITIONS -->
 [page]: {{ page.baseurl }}/mtf/mtf_entities/mtf_page.html

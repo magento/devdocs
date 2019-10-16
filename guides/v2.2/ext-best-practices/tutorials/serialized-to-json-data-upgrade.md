@@ -19,31 +19,31 @@ Identify the data you need to convert to JSON in the database.
 Your extension *must* convert data in the following cases:
 
 1. The extension stores serialized data provided by a core [module](https://glossary.magento.com/module) that now uses the JSON format.
-2. The extension uses the automatic serializing mechanism provided by the Magento framework (i.e. the extension declares `\Magento\Framework\Model\ResourceModel\Db\AbstractDb::$_serializableFields`).
+1. The extension uses the automatic serializing mechanism provided by the Magento framework (i.e. the extension declares `\Magento\Framework\Model\ResourceModel\Db\AbstractDb::$_serializableFields`).
 
 Your extension will continue working in Magento 2.2 and above in the following cases, but we recommend you switch to using the JSON format for security reasons:
 
 1. The extension stores its own serialized data.
-2. The extension is responsible for serializing and unserializing data stored in core tables.
+1. The extension is responsible for serializing and unserializing data stored in core tables.
 
 ### API Overview
 
 This tutorial uses the following framework [API](https://glossary.magento.com/api) in the following ways:
 
-* `\Magento\Framework\DB\FieldDataConverter` - This class converts values for a field in a table from one format to another.
-   * `\Magento\Framework\DB\FieldDataConverterFactory` - This class creates instances of the `FieldDataConverter` with the appropriate data converter implementation.
-   * `\Magento\Framework\DB\AggregatedFieldDataConverter` - This is a service class that allows specifying multiple fields from different tables at once. This class creates instances of the `FieldDataConverter` class and accepts a list of `\Magento\Framework\DB\FieldToConvert` value objects with field information. A single `convert()` method call is limited to one DB connection.
-* `\Magento\Framework\DB\DataConverter\DataConverterInterface` - This interface is for classes that convert data between different formats or types of data.
-* `\Magento\Framework\DB\FieldDataConverter` - This class accepts query modifiers for updating specific rows. Here is API for the query modifiers part:
-   * `\Magento\Framework\DB\Select\QueryModifierInterface` - Interface for classes that add a condition to the database query to target specific entries.
-   * `\Magento\Framework\DB\Select\QueryModifierFactory` - This class creates instances of specific implementations of `QueryModifierInterface`.
-   * `\Magento\Framework\DB\Select\InQueryModifier` - An implementation of the `QueryModifierInterface` that adds an IN condition to a query.
-   * `\Magento\Framework\DB\Select\LikeQueryModifier` - An implementation of the `QueryModifierInterface` that adds a LIKE condition to a query.
-   * `\Magento\Framework\DB\Select\CompositeQueryModifier` - An implementation of the `QueryModifierInterface` that allows the application of multiple query modifiers.
+*  `\Magento\Framework\DB\FieldDataConverter` - This class converts values for a field in a table from one format to another.
+   *  `\Magento\Framework\DB\FieldDataConverterFactory` - This class creates instances of the `FieldDataConverter` with the appropriate data converter implementation.
+   *  `\Magento\Framework\DB\AggregatedFieldDataConverter` - This is a service class that allows specifying multiple fields from different tables at once. This class creates instances of the `FieldDataConverter` class and accepts a list of `\Magento\Framework\DB\FieldToConvert` value objects with field information. A single `convert()` method call is limited to one DB connection.
+*  `\Magento\Framework\DB\DataConverter\DataConverterInterface` - This interface is for classes that convert data between different formats or types of data.
+*  `\Magento\Framework\DB\FieldDataConverter` - This class accepts query modifiers for updating specific rows. Here is API for the query modifiers part:
+   *  `\Magento\Framework\DB\Select\QueryModifierInterface` - Interface for classes that add a condition to the database query to target specific entries.
+   *  `\Magento\Framework\DB\Select\QueryModifierFactory` - This class creates instances of specific implementations of `QueryModifierInterface`.
+   *  `\Magento\Framework\DB\Select\InQueryModifier` - An implementation of the `QueryModifierInterface` that adds an IN condition to a query.
+   *  `\Magento\Framework\DB\Select\LikeQueryModifier` - An implementation of the `QueryModifierInterface` that adds a LIKE condition to a query.
+   *  `\Magento\Framework\DB\Select\CompositeQueryModifier` - An implementation of the `QueryModifierInterface` that allows the application of multiple query modifiers.
 
   You can create your own query modifier or use any of the ones listed in the `app/etc/di.xml` file.
 
-* `\Magento\Framework\Module\Manager` - This class checks the status of a module.
+*  `\Magento\Framework\Module\Manager` - This class checks the status of a module.
 
 ## Step 1: Create the basic upgrade script
 {:#step-1}
@@ -436,8 +436,8 @@ $this->aggregatedFieldConverter->convert($fieldsToUpdate, $salesSetup->getConnec
 
 ## Related Topics
 
-* [Serialize Library][0]
-* [Extension Lifecycle][1]
+*  [Serialize Library][0]
+*  [Extension Lifecycle][1]
 
 [0]: {{ page.baseurl }}/extension-dev-guide/framework/serializer.html "Serialize Library"
 [1]: {{ page.baseurl }}/extension-dev-guide/prepare/lifecycle.html "Extension Lifecycle"
