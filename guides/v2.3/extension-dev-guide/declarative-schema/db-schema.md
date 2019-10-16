@@ -5,9 +5,9 @@ title: Configure declarative schema
 
 Before Magento 2.3, extension developers were required to write code (PHP scripts) to change the database schema. The following types of scripts existed before Magento 2.3:
 
-*  InstallData and InstallSchema scripts, which are executed the first time a module is installed.
-*  UpgradeData and UpgradeSchema incremental scripts, which supplement an existing module schema.
-*  Recurring scripts, which are executed each time you install or upgrade Magento.
+* InstallData and InstallSchema scripts, which are executed the first time a module is installed.
+* UpgradeData and UpgradeSchema incremental scripts, which supplement an existing module schema.
+* Recurring scripts, which are executed each time you install or upgrade Magento.
 
 Each script iteratively adds changes. During the installation process, upgrade scripts apply only those changes that have not been applied yet. For example, if you have a module with version 2.1.8 installed and the latest version is 2.1.11, then the upgrade script changes for 2.1.9, 2.1.10, and 2.1.11 will be applied, in order, when you upgrade to 2.1.11. Each upgrade script is responsible for checking the required version for each change to apply. The Magento installation only knows that a module has an upgrade script, not what versions it affected. That procedure is called _migration setup_ or _migration scripts_.
 
@@ -76,9 +76,9 @@ Attribute | Description
 
 A `table` node can contain three types of subnodes:
 
-*  `column`
-*  `constraint`
-*  `index`
+* `column`
+* `constraint`
+* `index`
 
 #### `column` subnode
 
@@ -191,6 +191,9 @@ Attribute | Description
 `referenceTable` | The table being referenced
 `referenceColumn`| A column in the `referenceTable`
 `onDelete` | Foreign key trigger. The value must be `CASCADE`, `SET NULL`, or `NO ACTION`
+
+{: .bs-callout-info }
+To keep entities identifiers as immutable values the declarative schema does not support `ON UPDATE` action for constraint.
 
 Example:
 
@@ -437,7 +440,7 @@ It is possible to drop a foreign key only if it exists in the `db_schema_whiteli
 In this example, Module A defines a new table with primary key `id_column`. Module B declares its own schema, in which it creates a new column (`new_id_column`) and changes the primary index to this column.
 Module B disables the original primary key and sets a new primary key with a `referenceId` value that is different from PRIMARY. Although this value is different, the real name of the primary key in the database remains PRIMARY.
 
- **Module A declaration**
+**Module A declaration**
 
 ```xml
 <schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -451,7 +454,7 @@ Module B disables the original primary key and sets a new primary key with a `re
 </schema>
 ```
 
- **Module B declaration**
+**Module B declaration**
 
 ```xml
 <schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
