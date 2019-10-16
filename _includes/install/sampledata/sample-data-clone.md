@@ -10,20 +10,20 @@ Contributing developers can use this method of installing sample data *only* if 
 * You use {{site.data.var.ce}}
 * You [cloned the Magento 2 repository]({{ page.baseurl }}/install-gde/prereq/dev_install.html).
 
-{:.bs-callout .bs-callout-warning}
+{: .bs-callout-warning }
 You can use sample data with either the `develop` branch (more current) or a released branch (such as `2.2` or `2.2.5` (more stable)). We recommend you use a released branch because it's more stable. If you're contributing code to the Magento 2 repository and you need the most recent code, use the `develop` branch. Regardless of the branch you choose, you must [clone]({{ page.baseurl }}/install-gde/prereq/dev_install.html) the corresponding branch of the Magento 2 GitHub repository. For example, sample data for the `develop` branch can be used *only* with the Magento 2 `develop` branch.
 
 See the following sections:
 
-*  [Clone the sample data repository](#clone-sample-repo)
-*  [Set file system ownership and permissions](#samp-data-perms)
+* [Clone the sample data repository](#clone-sample-repo)
+* [Set file system ownership and permissions](#samp-data-perms)
 
 ## Clone the sample data repository {#clone-sample-repo}
 
 This section discusses how to install Magento sample data by cloning the sample data repository. You can clone the sample data repository in any of the following ways:
 
-*  Clone with the [SSH protocol](#clone-sample-repo-ssh)
-*  Clone with the [HTTPS protocol](#instgde-prereq-compose-clone-https)
+* Clone with the [SSH protocol](#clone-sample-repo-ssh)
+* Clone with the [HTTPS protocol](#instgde-prereq-compose-clone-https)
 
 ### Clone with SSH {#clone-sample-repo-ssh}
 
@@ -142,7 +142,7 @@ To clone the Magento sample data GitHub repository using the HTTPS protocol:
 1. Wait for the command to complete.
 1. See the next section.
 
-{:.bs-callout .bs-callout-warning}
+{: .bs-callout-warning }
 If you're installing sample data _after_ installing Magento, you must also run the following command to update the database and schema:
 
 ```bash
@@ -164,9 +164,9 @@ To set file system permissions and ownership on the sample data repository:
 
    Typical examples:
 
-   *  CentOS: `chown -R :apache .`
+   * CentOS: `chown -R :apache .`
 
-   *  Ubuntu: `chown -R :www-data .`
+   * Ubuntu: `chown -R :www-data .`
 
 1. Set permissions:
 
@@ -186,6 +186,6 @@ To set file system permissions and ownership on the sample data repository:
 
 <!-- ABBREVIATIONS -->
 
-*[contributing developer]: A developer who contributes code to the Magento 2 CE codebase
-*[contributing developers]: Developers who contribute code to the Magento 2 CE codebase
-*[Contributing developers]: Developers who contribute code to the Magento 2 CE codebase
+* [contributing developer]: A developer who contributes code to the Magento 2 CE codebase
+* [contributing developers]: Developers who contribute code to the Magento 2 CE codebase
+* [Contributing developers]: Developers who contribute code to the Magento 2 CE codebase

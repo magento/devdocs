@@ -2,8 +2,8 @@
 
 These instructions apply to {{site.data.var.ce}} and {{site.data.var.ee}} users *only* if all of the following are true:
 
-*  You have installed optional sample data
-*  You are upgrading to Magento {{ page.guide_version }} (including a Release Candidate) from any earlier version using the command line
+* You have installed optional sample data
+* You are upgrading to Magento {{ page.guide_version }} (including a Release Candidate) from any earlier version using the command line
 
 To upgrade to Magento {{ page.guide_version }} sample data using the command line:
 
@@ -25,7 +25,7 @@ To upgrade to Magento {{ page.guide_version }} sample data using the command lin
    composer require <sample data module-1>:<version> ... <sample data module-n>:<version> --no-update
    ```
 
-   *  Example for {{site.data.var.ce}}:
+   * Example for {{site.data.var.ce}}:
 
       ```bash
       composer require magento/product-community-edition {{ page.guide_version }}.0 --no-update
@@ -35,7 +35,7 @@ To upgrade to Magento {{ page.guide_version }} sample data using the command lin
       composer require magento/module-bundle-sample-data:100.1.0 magento/module-widget-sample-data:100.1.0 magento/module-theme-sample-data:100.1.0 magento/module-catalog-sample-data:100.1.0 magento/module-customer-sample-data:100.1.0 magento/module-cms-sample-data:100.1.0  magento/module-catalog-rule-sample-data:100.1.0 magento/module-sales-rule-sample-data:100.1.0 magento/module-review-sample-data:100.1.0 magento/module-tax-sample-data:100.1.0 magento/module-sales-sample-data:100.1.0 magento/module-grouped-product-sample-data:100.1.0 magento/module-downloadable-sample-data:100.1.0 magento/module-msrp-sample-data:100.1.0 magento/module-configurable-sample-data:100.1.0 magento/module-product-links-sample-data:100.1.0 magento/module-wishlist-sample-data:100.1.0 magento/module-swatches-sample-data:100.1.0 magento/sample-data-media:100.1.0 magento/module-offline-shipping-sample-data:100.1.0 --no-update
       ```
 
-   *  Example for {{site.data.var.ee}}:
+   * Example for {{site.data.var.ee}}:
 
       ```bash
       composer require magento/product-enterprise-edition {{ page.guide_version }}.0 --no-update
