@@ -64,7 +64,7 @@ To extend an interface, use [extension attributes]({{ page.baseurl }}/extension-
 
 1. Add a `schema.graphqls` file to the `<ModuleName>GraphQl` module. Magento merges this file with configurations from other modules using the same merge rules as other types of configuration.
 
-2. Write any necessary plugins for existing resolvers related to the query, or create a custom resolver and enable it via override in `schema.graphqls`
+1. Write any necessary plugins for existing resolvers related to the query, or create a custom resolver and enable it via override in `schema.graphqls`
 
 ### Model Consistency Constraints
 

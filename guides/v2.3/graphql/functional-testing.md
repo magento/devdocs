@@ -391,22 +391,22 @@ Use the following functions to cover expected exceptions:
 
 1. Change directories to `dev/tests/api-functional/` and copy the `phpunit_graphql.xml.dist` file to `phpunit_graphql.xml`.
 
-    ```bash
-    cp phpunit_graphql.xml.dist phpunit_graphql.xml
-    ```
+   ```bash
+   cp phpunit_graphql.xml.dist phpunit_graphql.xml
+   ```
 
-2. Edit `phpunit_graphql.xml` to set values for the TESTS_BASE_URL, TESTS_WEBSERVICE_USER, TESTS_WEBSERVICE_APIKEY options:
+1. Edit `phpunit_graphql.xml` to set values for the TESTS_BASE_URL, TESTS_WEBSERVICE_USER, TESTS_WEBSERVICE_APIKEY options:
 
-    ```xml
-    ...
-    <!-- Webserver URL -->
-    <const name="TESTS_BASE_URL" value="http://magento.url"/>
-    <!-- Webserver API user -->
-    <const name="TESTS_WEBSERVICE_USER" value="admin"/>
-    <!-- Webserver API key -->
-    <const name="TESTS_WEBSERVICE_APIKEY" value="123123q"/>
-    ...
-    ```
+   ```xml
+   ...
+   <!-- Webserver URL -->
+   <const name="TESTS_BASE_URL" value="http://magento.url"/>
+   <!-- Webserver API user -->
+   <const name="TESTS_WEBSERVICE_USER" value="admin"/>
+   <!-- Webserver API key -->
+   <const name="TESTS_WEBSERVICE_APIKEY" value="123123q"/>
+   ...
+   ```
 
 ### Run all tests in a API functional test suite
 

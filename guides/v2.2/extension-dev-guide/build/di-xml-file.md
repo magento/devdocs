@@ -20,18 +20,18 @@ As a general rule, the area specific `di.xml` files should configure dependencie
 Magento loads the configuration in the following stages:
 
 1. Initial (`app/etc/di.xml`)
-2. Global (`<moduleDir>/etc/di.xml`)
-3. Area-specific (`<moduleDir>/etc/<area>/di.xml`)
+1. Global (`<moduleDir>/etc/di.xml`)
+1. Area-specific (`<moduleDir>/etc/<area>/di.xml`)
 
 During [bootstrapping]({{ page.baseurl }}/config-guide/bootstrap/magento-bootstrap.html), each application entry point loads the appropriate `di.xml` files for the requested [area]({{ page.baseurl }}/architecture/archi_perspectives/components/modules/mod_and_areas.html).
 
 **Examples:**
 
-* In `index.php`, the [`\Magento\Framework\App\Http`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/App/Http.php#L130-L132){:target="_blank"} class loads the area based on the front-name provided in the [URL](https://glossary.magento.com/url).
+*  In `index.php`, the [`\Magento\Framework\App\Http`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/App/Http.php#L130-L132){:target="_blank"} class loads the area based on the front-name provided in the [URL](https://glossary.magento.com/url).
 
-* In `static.php`, the [`\Magento\Framework\App\StaticResource`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/App/StaticResource.php#L101-L104){:target="_blank"} class also loads the area based on the URL in the request.
+*  In `static.php`, the [`\Magento\Framework\App\StaticResource`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/App/StaticResource.php#L101-L104){:target="_blank"} class also loads the area based on the URL in the request.
 
-* In `cron.php`, the [`\Magento\Framework\App\Cron`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/App/Cron.php#L68-L70){:target="_blank"} class always loads the `crontab` area.
+*  In `cron.php`, the [`\Magento\Framework\App\Cron`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/App/Cron.php#L68-L70){:target="_blank"} class always loads the `crontab` area.
 
 ## Type configuration
 
@@ -56,8 +56,8 @@ You can configure the type in your `di.xml` configuration node in the following 
 
 The preceding example declares the following types:
 
-* `moduleConfig`: A virtual type that extends the type `Magento\Core\Model\Config`.
-* `Magento\Core\Model\App`: All instances of this type receive an instance of `moduleConfig` as a dependency.
+*  `moduleConfig`: A virtual type that extends the type `Magento\Core\Model\Config`.
+*  `Magento\Core\Model\App`: All instances of this type receive an instance of `moduleConfig` as a dependency.
 
 ### Virtual types
 
@@ -347,9 +347,9 @@ See [sensitive and environment settings]({{ page.baseurl }}/extension-dev-guide/
 
 ### Information related to pipeline deployment
 
-*   [Guidelines for specifying system-specific and sensitive configuration values]({{ page.baseurl }}/extension-dev-guide/configuration/sensitive-and-environment-settings.html)
-*   [Sensitive and system-specific configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-sens.html)
-*   [Magento Enterprise B2B Extension configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-b2b.html)
+*  [Guidelines for specifying system-specific and sensitive configuration values]({{ page.baseurl }}/extension-dev-guide/configuration/sensitive-and-environment-settings.html)
+*  [Sensitive and system-specific configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-sens.html)
+*  [Magento Enterprise B2B Extension configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-b2b.html)
 
 ## Get dependency injection configuration information for a class
 
@@ -397,6 +397,6 @@ Plugins for the Preference:
 {:.ref-header}
 Related topics
 
-* [ObjectManager]({{ page.baseurl }}/extension-dev-guide/object-manager.html)
-* [Dependency injection]({{ page.baseurl }}/extension-dev-guide/depend-inj.html)
-* [Sensitive and environment settings]({{ page.baseurl }}/extension-dev-guide/configuration/sensitive-and-environment-settings.html)
+*  [ObjectManager]({{ page.baseurl }}/extension-dev-guide/object-manager.html)
+*  [Dependency injection]({{ page.baseurl }}/extension-dev-guide/depend-inj.html)
+*  [Sensitive and environment settings]({{ page.baseurl }}/extension-dev-guide/configuration/sensitive-and-environment-settings.html)
