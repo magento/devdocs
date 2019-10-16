@@ -12,13 +12,13 @@ Build and deploy scripts activate every time you push code from your local works
 
 The build and deploy process is slightly different for each plan:
 
--  **Starter plans**—For the Integration environment, every active branch builds and deploys to a full environment for access and testing. Fully test your code after merging to the `staging` branch. To go live, push `staging` to `master` to deploy to Production. You have full access to all branches through the Project Web Interface and the CLI commands.
+-  **Starter plans**—For the Integration environment, every active branch builds and deploys to a full environment for access and testing. Fully test your code after merging to the `staging` branch. To go live, push `staging` to `master` to deploy to the Production environment. You have full access to all branches through the Project Web Interface and the CLI commands.
 
 -  **Pro plans**—For the Integration environment, every _active_ branch builds and deploys to a full environment for access and testing. You must merge your code to the `integration` branch before you can merge to the Staging environment and then the Production environment. You can only merge to Staging and Production using CLI commands with SSH or using the Project Web Interface.
 
 ## Track the process {#track}
 
-You can track build and deploy actions in real-time using the terminal or the Project Web Interface. During the deployment process, the following status messages display on the command line, or in the interface: `in-progress`, `pending`, `success`, or `failed`. You can view details in the log files. See [Log locations]({{ page.baseurl }}/cloud/project/log-locations.html).
+You can track build and deploy actions in real-time using the terminal or the Project Web Interface. Status messages—`in-progress`, `pending`, `success`, or `failed`—display during the deployment process. You can view details in the log files. See [Log locations]({{ page.baseurl }}/cloud/project/log-locations.html).
 
 If you are using external GitHub repositories, the log of the operations does not display in the GitHub session. You can still follow activity in the interface for the external repository and in the {{site.data.var.ece}} Project Web Interface. See [Integrations]({{ page.baseurl }}/cloud/integrations/cloud-integrations.html).
 
@@ -50,7 +50,7 @@ Your Git branch must have the following files for building and deploying in your
 
 We highly recommend the following best practices and considerations for your deployment process:
 
--  **Ensure that you are running the most current version of ece-tools**–See {{ site.data.var.ct }} [Release notes]({{ page.baseurl }}/cloud/release-notes/cloud-tools.html).
+-  **Ensure that you are running the most current version of the `{{site.data.var.ct}}` package**–See [Release notes for {{site.data.var.ct}}]({{ page.baseurl }}/cloud/release-notes/cloud-tools.html).
 
 -  **Follow the build and deploy process**–Ensure that you have the correct code in each environment to avoid overwriting configuration when merging code between environments. For example, to make configuration changes that apply to all environments, modify and test the changes in the local environment before deploying to Integration, and then deploy and test the changes in Staging before deploying to Production. When you merge from one environment to another, the deployment overwrites all code in the remote environment, except environment-specific configuration and settings. See [Build and deploy full steps](#steps).
 
@@ -62,7 +62,7 @@ We highly recommend the following best practices and considerations for your dep
 
 -  **Add new extensions, integrations, and code in iterated branches**–Make and test changes locally, push to Integration, then to Staging and Production. Test and resolve issues in each environment before merging the updates to the next environment. Some extensions and integrations must be enabled and configured in a specific order due to dependencies. Adding these in groups can make your build and deploy process much easier and help determine where issues occur.
 
--  **Verify service versions and relationships and ability to connect as needed**–See [Service versions]({{ page.baseurl }}/cloud/project/project-conf-files_services.html#service-versions) and [Service relationships]({{ page.baseurl }}/cloud/project/project-conf-files_services.html#service-relationships).
+-  **Verify service versions and relationships and the ability to connect**–Verify the services that are available to your application and ensure you are using the most current, compatible version. See [Service versions]({{ page.baseurl }}/cloud/project/project-conf-files_services.html#service-versions) and [Service relationships]({{ page.baseurl }}/cloud/project/project-conf-files_services.html#service-relationships).
 
 -  **Check Production environment configuration**–Before deploying to Production, complete the following tasks:
 
@@ -100,7 +100,7 @@ We highly recommend the following best practices and considerations for your dep
 
 -  **Merge code to Staging, and then to Production**–After the deploy completes, test and resolve any issues in the Staging environment before pushing changes to the Production environment.
 
-   -  Use SSH to verify availability of the MySQL service in remote environments. See [Set up MySQL]({{ page.baseurl }}/cloud/project/project-conf-files_services-mysql.html).
+   -  Use SSH to log in to the remote server and verify availability of the MySQL service in remote environments. See [Set up MySQL]({{ page.baseurl }}/cloud/project/project-conf-files_services-mysql.html).
 
    -  [Backup the database]({{ page.baseurl}}/cloud/project/project-upgrade.html#back-up-the-database).
 
@@ -116,7 +116,7 @@ We highly recommend the following best practices and considerations for your dep
 
 -  **Complete Post upgrade tasks**–
 
-   -  Use SSH to connect to the remote environment and verify the following:
+   -  Use SSH to log in to the remote server and verify the following:
 
       -  Check indexer status and reindex as needed. See [Manage the indexers]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-index.html).
 
