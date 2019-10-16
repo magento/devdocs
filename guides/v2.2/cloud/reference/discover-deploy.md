@@ -54,7 +54,7 @@ We highly recommend the following best practices and considerations for your dep
 
 -  **Follow the build and deploy process**–Ensure that you have the correct code in each environment to avoid overwriting configuration when merging code between environments. For example, to make configuration changes that apply to all environments, modify and test the changes in the local environment before deploying to Integration, and then deploy and test the changes in Staging before deploying to Production. When you merge from one environment to another, the deployment overwrites all code in the remote environment, except environment-specific configuration and settings. See [Build and deploy full steps](#steps).
 
--  **Use the same variables across environments**–The values for these variables may differ across environments, but the same variables are usually required in each environment. See [Configuration management for store settings](/{{ page.baseurl }}//cloud/live/sens-data-over.html).
+-  **Use the same variables across environments**–The values for these variables may differ across environments, but the same variables are usually required in each environment. See [Configuration management for store settings]({{ page.baseurl }}/cloud/live/sens-data-over.html).
 
 -  **Keep sensitive configuration values and data in environment-specific variables**–This includes variables specified using the Magento Cloud CLI, the Project Web interface, or added to the `env.php` file. See [Working with environment variables]({{ page.baseurl }}/cloud/env/working-with-variables.html).
 
