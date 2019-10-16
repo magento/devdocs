@@ -29,19 +29,19 @@ Also, we recommend adding at least one Admin user to your New Relic account to m
 {:.procedure}
 To add a user:
 
-1.  Using your Project Owner New Relic credentials, log in to [New Relic](https://login.newrelic.com/login).
+1. Using your Project Owner New Relic credentials, log in to [New Relic](https://login.newrelic.com/login).
 
-1.  From the [account dropdown](https://docs.newrelic.com/docs/using-new-relic/welcome-new-relic/getting-started/glossary#account-dropdown) menu, select **Account settings** > **Account** > **Users and roles**.
+1. From the [account dropdown](https://docs.newrelic.com/docs/using-new-relic/welcome-new-relic/getting-started/glossary#account-dropdown) menu, select **Account settings** > **Account** > **Users and roles**.
 
-1.  Click **New user**.
+1. Click **New user**.
 
-1.  Add the name and email address for the account.
+1. Add the name and email address for the account.
 
-1.  Assign the user role: *Admin*, *User*, or *Restricted*.
+1. Assign the user role: *Admin*, *User*, or *Restricted*.
 
-1.  Click **Add user**.
+1. Click **Add user**.
 
-1.  Ask the new user to check their email for a New Relic notification with account information.
+1. Ask the new user to check their email for a New Relic notification with account information.
 
 See [Accounts](https://docs.newrelic.com/docs/accounts/accounts) in the New Relic documentation for information about user roles, managing user accounts, and changing account ownership.
 
@@ -66,22 +66,22 @@ The {{site.data.var.ece}} Starter plan supports up to three instances of a New R
 {:.procedure}
 To find your New Relic license key:
 
-1.  Open your [account page](https://accounts.magento.cloud/user/).
+1. Open your [account page](https://accounts.magento.cloud/user/).
 
-1.  On the _Projects_ tab, find your project.
+1. On the _Projects_ tab, find your project.
 
-1.  Click **View Details** to see the project plan information.
+1. Click **View Details** to see the project plan information.
 
-1.  Expand the **NewRelic Service** section to view the license key.
+1. Expand the **NewRelic Service** section to view the license key.
 
-1.  Copy the license key.
+1. Copy the license key.
 
 {:.procedure}
 To add a license key to an environment:
 
-1.  Change to the environment that needs the license key. For Starter accounts, you need to use the license key to set a variable in the environment.
+1. Change to the environment that needs the license key. For Starter accounts, you need to use the license key to set a variable in the environment.
 
-1.  Set the variable.
+1. Set the variable.
 
     ```bash
     magento-cloud variable:set php:newrelic.license <newrelic-license-key>
@@ -90,12 +90,12 @@ To add a license key to an environment:
     {:.bs-callout .bs-callout-info}
     Adding a variable to an environment triggers a redeployment to update the environment variables and values. See [Working with variables]({{page.baseurl}}/cloud/env/working-with-variables.html).
 
-1.  Log in to your New Relic account and verify it is receiving data.
+1. Log in to your New Relic account and verify it is receiving data.
 
 {:.procedure}
 To remove a license key from an environment:
 
-1.  List environment variables.
+1. List environment variables.
 
     ```bash
     magento-cloud vget
@@ -115,7 +115,7 @@ To remove a license key from an environment:
     {:.bs-callout .bs-callout-warning}
     If you added the license key as a _project_ variable, you must remove that project-level variable. A project variable adds the license to every environment branch created, which can consume or exceed the license limit. To list project variables: `magento-cloud pvget`
 
-1.  Delete a variable.
+1. Delete a variable.
 
     ```bash
     magento-cloud variable:delete php:newrelic.license
