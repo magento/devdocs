@@ -120,7 +120,8 @@ We highly recommend the following best practices and considerations for your dep
 
       -  Check indexer status and reindex as needed. See [Manage the indexers]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-index.html).
 
-      -  Check the `cron` logs and the `cron_schedule` table in the Magento database to verify cron status. See [Logging]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands.html#logging) in the _Configuration Guide_.
+      -  Check the `cron` logs and the `cron_schedule` table in the Magento database to verify cron status.
+      See [Logging]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cron.html#logging) in the _Configuration Guide_.
 
    -  Complete post-upgrade [User Acceptance Testing (UAT)]({{ page.baseurl}}/cloud/live/stage-prod-test.html) on Staging and Production environments and fix any issues related to third-party and custom extension upgrades.
 
