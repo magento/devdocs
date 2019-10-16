@@ -45,9 +45,9 @@ bin/magento support:backup:code [--name=<file name>] [-o|--output=<path>] [-l|--
 
 Where:
 
-- **`--name`** specifies the dump file name (optional). If you omit this parameter, the dump file is time and date-stamped.
-- **`-o|--output=<path>`** is the absolute file system path to store the backup (required).
-- **`-l|--logs`** includes log files (optional).
+-  **`--name`** specifies the dump file name (optional). If you omit this parameter, the dump file is time and date-stamped.
+-  **`-o|--output=<path>`** is the absolute file system path to store the backup (required).
+-  **`-l|--logs`** includes log files (optional).
 
 For example, to create a code backup named `/var/www/html/magento2/var/log/mycodebackup.tar.gz`:
 
@@ -71,10 +71,10 @@ bin/magento support:backup:db [--name=<name>] [-o|--output=<path>] [-l|--logs] [
 
 Where:
 
-- **`--name`** specifies the dump file name (optional). If you omit this parameter, the dump file is time and date-stamped.
-- **`-o|--output=<path>` is the absolute file system path to store the backup (required).
-- **`-l|--logs`** includes log files (optional).
-- **`-i|--ignore-sanitize`** means that data is preserved; omit the flag to hash [sensitive data](#sens-data) stored in the database when creating the backup (optional).
+-  **`--name`** specifies the dump file name (optional). If you omit this parameter, the dump file is time and date-stamped.
+-  **`-o|--output=<path>` is the absolute file system path to store the backup (required).
+-  **`-l|--logs`** includes log files (optional).
+-  **`-i|--ignore-sanitize`** means that data is preserved; omit the flag to hash [sensitive data](#sens-data) stored in the database when creating the backup (optional).
 
 After the command completes, provide the database backup to Magento Support.
 
