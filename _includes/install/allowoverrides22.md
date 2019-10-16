@@ -7,13 +7,13 @@ Failure to enable these settings typically results in no styles displaying on yo
 
 1. Open the following file for editing.
 
-   *  Ubuntu: `vim /etc/apache2/sites-available/default`
-   *  CentOS: `vim /etc/httpd/conf/httpd.conf`
+   * Ubuntu: `vim /etc/apache2/sites-available/default`
+   * CentOS: `vim /etc/httpd/conf/httpd.conf`
 
 1. Locate the block that starts with:
 
-   *  Ubuntu 12: `<Directory /var/www/>`
-   *  Ubuntu 14 or CentOS: `<Directory /var/www/html>`
+   * Ubuntu 12: `<Directory /var/www/>`
+   * Ubuntu 14 or CentOS: `<Directory /var/www/html>`
 
 1. Change the value of `AllowOverride` to `<value from Apache site>`.
 

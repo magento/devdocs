@@ -2,8 +2,8 @@ First, check if Composer is already installed:
 
 In a command prompt, enter any of the following commands:
 
--  `composer --help`
--  `composer list --help`
+- `composer --help`
+- `composer list --help`
 
 If command help displays, Composer is already installed.
 

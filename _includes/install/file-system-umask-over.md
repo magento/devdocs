@@ -2,13 +2,13 @@
 
 Even in a development environment, you want your Magento installation to be secure. To help prevent issues related to unauthorized people or processes doing potentially harmful things to your system, we recommend some guidelines related to file system ownership and permissions.
 
-{:.bs-callout .bs-callout-info}
+{: .bs-callout-info }
 If you're using an Magento version 2.0.5 or earlier, see [Appendix&mdash;Magento file system ownership and appendix (legacy)]({{ page.baseurl }}/install-gde/install/legacy-file-system-perms.html) instead of this topic. In version 2.0.6 and later, Magento does not explicitly set file or directory permissions.
 
 This topic provides some basic information about our ownership and permissions guidelines. For additional information, see:
 
-*  [Set pre-installation ownership and permissions]({{ page.baseurl }}/install-gde/prereq/file-system-perms.html)
-*  [Magento ownership and permissions in development and production]({{ page.baseurl }}/config-guide/prod/prod_file-sys-perms.html)
+* [Set pre-installation ownership and permissions]({{ page.baseurl }}/install-gde/prereq/file-system-perms.html)
+* [Magento ownership and permissions in development and production]({{ page.baseurl }}/config-guide/prod/prod_file-sys-perms.html)
 
 ### Magento file system owner
 
@@ -29,9 +29,9 @@ The Magento file system owner is any of the following:
 
    In this situation, you typically *cannot* log in to the server as, or switch to, the web server user. Instead, you have separate users:
 
-   *  The web server user, which runs the Magento Admin and storefront.
+   * The web server user, which runs the Magento Admin and storefront.
 
-   *  A *command-line user*, which is a local user account you can use to log in to the server. This user runs Magento cron jobs and command-line utilities.
+   * A *command-line user*, which is a local user account you can use to log in to the server. This user runs Magento cron jobs and command-line utilities.
 
    The web server user and the command-line user might need write permissions to the Magento file system. (The users require write access in [developer mode]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html) but not in production mode.) You give permissions to both users by way of a shared group to which they both belong.
 
@@ -50,9 +50,9 @@ Magento uses a three-bit mask, by default `002`, that you subtract from the UNIX
 
 Here's what that means:
 
-*  775 for directories, which means full control by the user, full control by the group, and enables everyone to traverse the directory. These permissions are typically required by shared hosting providers.
+* 775 for directories, which means full control by the user, full control by the group, and enables everyone to traverse the directory. These permissions are typically required by shared hosting providers.
 
-*  664 for files, which means writable by the user, writable by the group, and read-only for everyone else.
+* 664 for files, which means writable by the user, writable by the group, and read-only for everyone else.
 
 For more information about `magento_umask`, see [Optionally set a umask]({{ page.baseurl }}/install-gde/install/post-install-umask.html).
 

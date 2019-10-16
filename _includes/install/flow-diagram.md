@@ -6,18 +6,18 @@ The diagram shows the following:
 
    Install the prerequisite software, including PHP, Apache, and MySQL. Consult the system requirements for specific information:
 
-   *  [2.2.x system requirements]({{ site.gdeurl22 }}install-gde/system-requirements-tech.html)
-   *  [2.3.x system requirements]({{ site.gdeurl23 }}install-gde/system-requirements-tech.html)
+   * [2.2.x system requirements]({{ site.gdeurl22 }}install-gde/system-requirements-tech.html)
+   * [2.3.x system requirements]({{ site.gdeurl23 }}install-gde/system-requirements-tech.html)
 
 1. Get the Magento software.
 
-   *  For simplicity, get a compressed {{site.data.var.ce}} or {{site.data.var.ee}} [archive]({{ page.baseurl }}/install-gde/prereq/zip_install.html), extract it on your Magento server, and start your installation.
+   * For simplicity, get a compressed {{site.data.var.ce}} or {{site.data.var.ee}} [archive]({{ page.baseurl }}/install-gde/prereq/zip_install.html), extract it on your Magento server, and start your installation.
 
-   *  If you are more technical and you are familiar with Composer, get a {{site.data.var.ce}} or {{site.data.var.ee}} {% if page.guide_version == "2.0" %} [metapackage]({{page.baseurl}}/install-gde/prereq/integrator_install.html) {% else %} [metapackage]({{page.baseurl}}/install-gde/composer.html). {% endif %}
+   * If you are more technical and you are familiar with Composer, get a {{site.data.var.ce}} or {{site.data.var.ee}} {% if page.guide_version == "2.0" %} [metapackage]({{page.baseurl}}/install-gde/prereq/integrator_install.html) {% else %} [metapackage]({{page.baseurl}}/install-gde/composer.html). {% endif %}
 
-   *  If you want to contribute to the {{site.data.var.ce}} codebase or customize the Magento application, [clone]({{ page.baseurl }}/install-gde/prereq/dev_install.html) the Magento 2 GitHub repository. (This method requires familiarity with both GitHub and Composer.)
+   * If you want to contribute to the {{site.data.var.ce}} codebase or customize the Magento application, [clone]({{ page.baseurl }}/install-gde/prereq/dev_install.html) the Magento 2 GitHub repository. (This method requires familiarity with both GitHub and Composer.)
 
-   {:.bs-callout .bs-callout-info}
+   {: .bs-callout-info }
    To be able to use the Web Setup Wizard to install or upgrade the Magento software, or to manage extensions you get from Magento Marketplace, you must either get a compressed archive or a Composer metapackage. If you clone the GitHub repository, you *cannot* use the Web Setup Wizard to upgrade the Magento software and extensions. You must upgrade using [Composer and Git commands]({{ page.baseurl }}/install-gde/install/cli/dev_options.html).
 
 1. Install the Magento software using either the Web Setup Wizard or command line.

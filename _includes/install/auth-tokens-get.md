@@ -17,9 +17,9 @@ To create authentication keys:
 
 You can also disable or delete authentication keys. For example, you can disable or delete keys for security reasons after someone leaves your organization.
 
-*  To disable keys: Click **Disable**. You can do this if you want to suspend use of your keys.
-*  To enable a previously disabled key: Click **Enable**.
-*  To delete keys: Click **Delete**.
+* To disable keys: Click **Disable**. You can do this if you want to suspend use of your keys.
+* To enable a previously disabled key: Click **Enable**.
+* To delete keys: Click **Delete**.
 
 You cannot delete or disable keys you created by signing in to your [magento.com account](https://www.magentocommerce.com/products/customer/account/login){:target="_blank"}. To manage those keys:
 

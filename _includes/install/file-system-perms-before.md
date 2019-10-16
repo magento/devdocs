@@ -4,7 +4,7 @@ This topic discusses how to set read-write permissions for the web server group 
 
 The procedure you use is different, depending on whether you use [shared hosting](#perms-shared) and have one user or if you use a [private server](#perms-private) and have two users.
 
-{:.bs-callout .bs-callout-info}
+{: .bs-callout-info }
 If you're using a Magento version*earlier than* 2.0.6, see [Appendix&mdash;Magento file system ownership and appendix (legacy)]({{ page.baseurl }}/install-gde/install/legacy-file-system-perms.html) instead.
 
 ## Set permissions for shared hosting (one user) {#perms-shared}
@@ -27,8 +27,8 @@ This section discusses how to set ownership and permissions for your own server 
 
 After you've performed the other tasks in this topic, enter one of the following commands to switch to that user:
 
-*  Ubuntu: `su <username>`
-*  CentOS: `su - <username>`
+* Ubuntu: `su <username>`
+* CentOS: `su - <username>`
 
 For example,
 
