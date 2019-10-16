@@ -34,7 +34,7 @@ The following diagram shows the contribution workflow:
 
 ### Create a branch
 
-1. Create a new branch from your fork using a name that best describes the work or references a GitHub issue number.
+1. Create the new branch from your fork using a name that best describes the work or references a GitHub issue number.
 1. Edit or create markdown (`.md`) files in your branch.
 1. Push your branch to your fork.
 
@@ -82,7 +82,7 @@ Use the following guidelines to help you with the writing process:
 -  Keep your sentences concise. Separate conceptual information from procedural steps.
 -  Batch several small changes into a single pull request (instead of separate ones) to ensure your contributions are approved and merged quickly. Have several typo fixes across several areas of documentation? Combine them into a single PR.
 -  Remember to write in present tense, use the second person, and use active voice (not passive). For example, _"The log captures commands, output..."_.
--  Use notes to alert readers about important details.
+-  Use notes and formatting to alert readers about important details.
 -  Use cross-references to other topics sparingly. We can help you with the syntax if it is not clear. The template provides an example you can use.
 -  Need help with markdown? See our [templates](#templates).
 
