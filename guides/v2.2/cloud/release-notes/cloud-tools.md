@@ -436,13 +436,13 @@ The ece-tools version 2002.0.11 is required for 2.2.4 compatibility.
 
 -  {:.fix}<!-- MAGECLOUD-1607 -->**Cron-specific Improvements**—Re-worked the cron implementation:
 
-   - Fixed an issue that caused the cron queue to fill quickly. Now it clears the outdated cron jobs in a more reliable way.
+   -  Fixed an issue that caused the cron queue to fill quickly. Now it clears the outdated cron jobs in a more reliable way.
 
-   - Re-organized the sequence of cron jobs so that all jobs in separate threads launch prior to the general group.
+   -  Re-organized the sequence of cron jobs so that all jobs in separate threads launch prior to the general group.
 
-   - Improved logging to better assist in debugging cron issues.
+   -  Improved logging to better assist in debugging cron issues.
 
-   - **NOTE**—This release addresses many cron-related issues. If you currently use some cron-related patches in _m2-hotfixes_, remove them.
+   -  **NOTE**—This release addresses many cron-related issues. If you currently use some cron-related patches in _m2-hotfixes_, remove them.
 
 -  {:.fix}**SCD-specific improvements**—
 
