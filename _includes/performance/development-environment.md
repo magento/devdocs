@@ -15,18 +15,20 @@ These commands were built for use in production mode only.
 
 **Do not run** production commands in development mode:
 
-* ```bash
-  bin/magento setup:di:compile
-  ```
-  `setup:di:compile` generates auto-generated classes and optimized configuration caches.
-  In development mode, Magento performs the generation on-demand; you do not need to run it.
-  If you modified a signature of a class and need to re-generate its auto-generated factories/proxies/interceptors, remove those classes or the _generated_ folder.
+*  ```bash
+   bin/magento setup:di:compile
+   ```
 
-* ```bash
-  bin/magento setup:static-content:deploy
-  ```
-  `setup:static-content:deploy` deploys static content for a store.
-  In development mode, Magento performs it on-demand; you do not need to run it.
+   `setup:di:compile` generates auto-generated classes and optimized configuration caches.
+   In development mode, Magento performs the generation on-demand; you do not need to run it.
+   If you modified a signature of a class and need to re-generate its auto-generated factories/proxies/interceptors, remove those classes or the _generated_ folder.
+
+*  ```bash
+   bin/magento setup:static-content:deploy
+   ```
+
+   `setup:static-content:deploy` deploys static content for a store.
+   In development mode, Magento performs it on-demand; you do not need to run it.
 
 ## Normal page load time on a virtual machine
 
