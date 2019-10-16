@@ -19,5 +19,5 @@ Refer to [Why Redis is better]({{ page.baseurl }}/config-guide/redis/config-redi
 {:.ref-header}
 Related topics
 
-*  [Install, configure, verify memcached on Ubuntu]({{ page.baseurl }}/config-guide/memcache/memcache_ubuntu.html)
-*  [Install, configure, verify memcached on CentOS]({{ page.baseurl }}/config-guide/memcache/memcache_centos.html)
+* [Install, configure, verify memcached on Ubuntu]({{ page.baseurl }}/config-guide/memcache/memcache_ubuntu.html)
+* [Install, configure, verify memcached on CentOS]({{ page.baseurl }}/config-guide/memcache/memcache_centos.html)
