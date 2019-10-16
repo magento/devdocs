@@ -117,12 +117,12 @@ define([
 ], function (wrapper) {
     'use strict';
 
-    return function (stepNavigator) { 
+    return function (stepNavigator) {
         stepNavigator.setHash = wrapper.wrap(stepNavigator.setHash, function (_super) {
             window.location.hash = hash;
             // add extended functionality here or modify method logic altogether
         });
-        
+
         return stepNavigator;
     };
 });
