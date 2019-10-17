@@ -10,15 +10,15 @@ We are pleased to present Magento Commerce 2.2.4. This release includes new tool
 
 Look for the following highlights in this release:
 
-* **Significant new bundled extensions** that add instant and accurate tax and shipping calculations right from the cart:
+*  **Significant new bundled extensions** that add instant and accurate tax and shipping calculations right from the cart:
 
-    * **Amazon Pay** provides a trusted, familiar way for customers to check in and check out. See [Amazon pay](https://pay.amazon.com/us/merchant) for a full description of the advantages this solution offers merchants and their customers.
+   *  **Amazon Pay** provides a trusted, familiar way for customers to check in and check out. See [Amazon pay](https://pay.amazon.com/us/merchant) for a full description of the advantages this solution offers merchants and their customers.
 
-    * **Vertex** simplifies and automates the complexity of calculating sales tax. Check out the Magento User Guide discussion of [Vertex](http://docs.magento.com/m2/ce/user_guide/tax/vertex.html), too.
+   *  **Vertex** simplifies and automates the complexity of calculating sales tax. Check out the Magento User Guide discussion of [Vertex](http://docs.magento.com/m2/ce/user_guide/tax/vertex.html), too.
 
-    * **Klarna Payments** is a new payment method. With Klarna Payments, merchants can provide customers with the option to pay now, pay later, or pay by installment for their purchases. See  [Magento User Guide](http://docs.magento.com/m2/ce/user_guide/payment/klarna.html) for information on using Klarna with Magento. For more information on Klarna products, see [Klarna Payments](https://marketplace.magento.com/klarna-m2-payments.html#product.info.details.release_notes).
+   *  **Klarna Payments** is a new payment method. With Klarna Payments, merchants can provide customers with the option to pay now, pay later, or pay by installment for their purchases. See  [Magento User Guide](http://docs.magento.com/m2/ce/user_guide/payment/klarna.html) for information on using Klarna with Magento. For more information on Klarna products, see [Klarna Payments](https://marketplace.magento.com/klarna-m2-payments.html#product.info.details.release_notes).
 
-* **Numerous fixes and enhancements to the Magento Shipping and dotmailer** bundled extensions. Merchants can now use [dotmailer](http://docs.magento.com/m2/ee/user_guide/marketing/email-marketing-automation.html) to create their own transactional email templates. [Magento Shipping](http://docs.magento.com/m2/ee/user_guide/shipping/magento-shipping.html) capabilities have been expanded, too.
+*  **Numerous fixes and enhancements to the Magento Shipping and dotmailer** bundled extensions. Merchants can now use [dotmailer](http://docs.magento.com/m2/ee/user_guide/marketing/email-marketing-automation.html) to create their own transactional email templates. [Magento Shipping](http://docs.magento.com/m2/ee/user_guide/shipping/magento-shipping.html) capabilities have been expanded, too.
 
 * Fixes and enhancements to core features, including **performance improvements** that enable faster shopping with image loading and search performance enhancements.
 
@@ -100,11 +100,11 @@ We do not recommend upgrading to Magento 2.2.4 if you deploy across multiple web
 <!--- MAGETWO-80111  -->
 *  Magento now continues operating in maintenance mode if it was previously enabled. Previously, Magento disabled maintenance mode  when you used one of these commands:
 
-    * `bin\magento module:uninstall`
-    * `bin\magento setup:backup`
-    * `bin\magento setup:rollback`
-    * `bin\magento theme:uninstall`
-    * `bin\magento deploy:mode:set production`
+   *  `bin\magento module:uninstall`
+   *  `bin\magento setup:backup`
+   *  `bin\magento setup:rollback`
+   *  `bin\magento theme:uninstall`
+   *  `bin\magento deploy:mode:set production`
 
 *Fix submitted by Joke Puts in pull request 11052*. [GitHub-9918](https://github.com/magento/magento2/issues/9918)
 
@@ -650,14 +650,14 @@ We do not recommend upgrading to Magento 2.2.4 if you deploy across multiple web
 <!--- MAGETWO-85779  -->
 *  The menu item handling has been refactored to read item data from two different sources:
 
-    * from original XML definition if the cache is empty
-    * from transformed item data when available in the cache. *Fix submitted by Pavel in pull request 12747*. [GitHub-9720](https://github.com/magento/magento2/issues/9720)
+   *  from original XML definition if the cache is empty
+   *  from transformed item data when available in the cache. *Fix submitted by Pavel in pull request 12747*. [GitHub-9720](https://github.com/magento/magento2/issues/9720)
 
 <!--- MAGETWO-85773  -->
 *  A typo in the `SINGLE_PRODUCT_LAYOUT_HANLDE` constant has been fixed. *Fix submitted by Andreas Schrammel in pull request 12786*.
 
 <!--- MAGETWO-85713  -->
-*   The tracking link no longer returns a 404 error in the Admin. *Fix submitted by Ihor Sviziev in pull request*. [GitHub-12206](https://github.com/magento/magento2/issues/12206)
+*  The tracking link no longer returns a 404 error in the Admin. *Fix submitted by Ihor Sviziev in pull request*. [GitHub-12206](https://github.com/magento/magento2/issues/12206)
 
 <!--- MAGETWO-85643  -->
 *  The product option value price calculation has been improved. Previously, tier prices and customs options were not calculated correctly. *Fix submitted by Marina Gociu in pull request 11563*. [GitHub-5774](https://github.com/magento/magento2/issues/5774)

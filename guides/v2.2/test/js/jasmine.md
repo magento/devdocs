@@ -46,15 +46,15 @@ Install [fontconfig library]:<br/>
 
 *  CentOS:
 
-  ```bash
-  yum install fontconfig
-  ```
+   ```bash
+   yum install fontconfig
+   ```
 
 *  Ubuntu:
 
-  ```bash
-  apt-get install fontconfig
-  ```
+   ```bash
+   apt-get install fontconfig
+   ```
 
 "
 %}
@@ -245,10 +245,10 @@ Warning: Task "spec" not found. Use --force to continue.
 #### Solution:
 
 1. Make sure your Node.js version is up-to-date.
-2. Remove `package.json`, `Gruntfile.js`.
-3. Copy `package.json`, `Gruntfile.js` from `package.json.sample`, `Gruntfile.js.sample`.
-4. Delete the `node_modules` directory.
-5. Run `npm install` in your terminal.
+1. Remove `package.json`, `Gruntfile.js`.
+1. Copy `package.json`, `Gruntfile.js` from `package.json.sample`, `Gruntfile.js.sample`.
+1. Delete the `node_modules` directory.
+1. Run `npm install` in your terminal.
 
 ### Warning: Cannot read property 'pid' of undefined {#cannot-read-property-pid-warning}
 

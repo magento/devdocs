@@ -12,7 +12,7 @@ First, see if you have the Apache `htpasswd` utility is installed as follows:
 
    If a path displays, it is installed; if the command returns no output, `htpasswd` is not installed.
 
-2. If necessary, install `htpasswd`:
+1. If necessary, install `htpasswd`:
 
    *  Ubuntu: `apt-get -y install apache2-utils`
    *  CentOS: `yum -y install httpd-tools`

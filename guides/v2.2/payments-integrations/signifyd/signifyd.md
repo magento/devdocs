@@ -48,27 +48,29 @@ These steps are enough to provide custom AVS/CVV mapping for payment integration
 
 The Signifyd service can retrieve the payment method of a placed order. The *Magento_Signifyd* module allows to map Magento and Signifyd payment codes using the predefined [XML](https://glossary.magento.com/xml) list, located in:
 
-    Magento\Signifyd\etc\signifyd_payment_mapping.xml
+```text
+Magento\Signifyd\etc\signifyd_payment_mapping.xml
+```
 
 To apply your mappings for the [Signifyd payment codes](https://www.signifyd.com/docs/api/#/reference/cases/create-a-case), follow these steps:
 
 1. Add `signifyd_payment_mapping.xml` to the custom payment method implementation
 
-2. Specify the needed mapping
+1. Specify the needed mapping
 
-For example:
+   For example:
 
-```xml
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Signifyd:etc/signifyd_payment_mapping.xsd">
-    <payment_method_list>
-        <payment_method name="custom_payment_code">
-            <magento_code>custom_payment_code</magento_code>
-            <signifyd_code>PAYMENT_CARD</signifyd_code>
-        </payment_method>
-    </payment_method_list>
-</config>
-```
+   ```xml
+   <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Signifyd:etc/signifyd_payment_mapping.xsd">
+       <payment_method_list>
+           <payment_method name="custom_payment_code">
+               <magento_code>custom_payment_code</magento_code>
+               <signifyd_code>PAYMENT_CARD</signifyd_code>
+           </payment_method>
+       </payment_method_list>
+   </config>
+   ```
 
 where:
 

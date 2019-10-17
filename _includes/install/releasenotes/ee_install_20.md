@@ -35,7 +35,7 @@ composer create-project --repository=https://repo.magento.com/ magento/project-e
 After you get the Commerce software:
 
 1. [Set file system ownership and permissions]({{ page.baseurl }}/install-gde/prereq/file-system-perms.html).
-2. Install the Magento software:
+1. Install the Magento software:
 
    *  [Web Setup Wizard]({{ page.baseurl }}/install-gde/install/web/install-web.html)
    *  [Command line]({{ page.baseurl }}/install-gde/install/cli/install-cli.html)
