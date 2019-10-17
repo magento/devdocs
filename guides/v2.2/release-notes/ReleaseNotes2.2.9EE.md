@@ -726,7 +726,7 @@ In addition to security enhancements, this release contains the following functi
 
 <!-- MAGETWO-96137 -->
 
-* The transfer cart line items and transfer shipping options in the the Shipping step of checkout now work for PayPal. [GitHub-19064](https://github.com/magento/magento2/issues/19064)
+* The transfer cart line items and transfer shipping options in the Shipping step of checkout now work for PayPal. [GitHub-19064](https://github.com/magento/magento2/issues/19064)
 
 <!-- ENGCOM-4328 -->
 
