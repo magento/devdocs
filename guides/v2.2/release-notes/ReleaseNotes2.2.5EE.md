@@ -46,7 +46,7 @@ Highlights of community contributions include  fixes that improve checkout flow 
 
 *  <!-- MAGETWO-86227 -->When sorting simple products, which catalog promo price rule is applied for, these products are sorted by a regular price instead disregarding the applied promo price.
 
-*  <!-- MAGETWO-73419 --> When sorting simple products with a required custom option, which catalog promo price rule is applied for, these products are sorted by a regular price instead disregarding the applied promo price.
+*  <!-- MAGETWO-73419 -->When sorting simple products with a required custom option, which catalog promo price rule is applied for, these products are sorted by a regular price instead disregarding the applied promo price.
 
 ### Highlights (Magento Shipping)
 
