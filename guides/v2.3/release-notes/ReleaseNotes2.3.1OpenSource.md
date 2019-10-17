@@ -113,7 +113,7 @@ Infrastructure improvements are core enhancements that underlie both merchant an
 
 *  Magento now uses version 6.0 of the DHL XML Services schema for the DHL shipping method. <!--- MC-4245-->*
 
-*  <!--- MAGETWO-95068--> **Checkout information now persists after a cart update**. Information previously entered by a customer during check out (such as shipping address) now persists after the customer updates their shopping cart. Previously, when a customer updated their shopping cart, all information previously entered during check out (such as shipping address) was deleted.
+*  <!--- MAGETWO-95068-->**Checkout information now persists after a cart update**. Information previously entered by a customer during check out (such as shipping address) now persists after the customer updates their shopping cart. Previously, when a customer updated their shopping cart, all information previously entered during check out (such as shipping address) was deleted.
 
 *  Upgrade of Magento Functional Test Framework (MFTF) to 2.3.13.
 
