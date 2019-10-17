@@ -44,7 +44,7 @@ Highlights of community contributions include  fixes that improve checkout flow 
 
 *  <!--- MAGETWO-73479 -->Magento now correctly applies coupon codes that exclude bundle products. Previously, Magento applied these coupons but did not exclude bundle products as expected.
 
-*  <!-- MAGETWO-86227 --> When sorting simple products, which catalog promo price rule is applied for, these products are sorted by a regular price instead disregarding the applied promo price.
+*  <!-- MAGETWO-86227 -->When sorting simple products, which catalog promo price rule is applied for, these products are sorted by a regular price instead disregarding the applied promo price.
 
 *  <!-- MAGETWO-73419 --> When sorting simple products with a required custom option, which catalog promo price rule is applied for, these products are sorted by a regular price instead disregarding the applied promo price.
 
