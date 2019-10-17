@@ -10,15 +10,15 @@ We are pleased to present Magento Commerce 2.2.1. This release includes numerous
 
 Look for the following highlights in this release:
 
-* Integrated Signifyd Fraud Protection is now available in Magento Open Source. See [Signifyd fraud protection]({{ site.baseurl }}/guides/v2.2/payments-integrations/signifyd/signifyd.html) for more information.
+*  Integrated Signifyd Fraud Protection is now available in Magento Open Source. See [Signifyd fraud protection]({{ site.baseurl }}/guides/v2.2/payments-integrations/signifyd/signifyd.html) for more information.
 
-* Ability to implement translations from themes. We’ve also significantly reduced JavaScript-related translation issues.
+*  Ability to implement translations from themes. We’ve also significantly reduced JavaScript-related translation issues.
 
-* Improvements to how the PayPal Express Checkout payment method processes virtual products.
+*  Improvements to how the PayPal Express Checkout payment method processes virtual products.
 
-* Multiple enhancements to product security. See [Magento Security Center](https://magento.com/security/patches/magento-221-2110-and-2017-security-update) for more information.
+*  Multiple enhancements to product security. See [Magento Security Center](https://magento.com/security/patches/magento-221-2110-and-2017-security-update) for more information.
 
-* Twenty-two community-submitted bug fixes and multiple pull requests.
+*  Twenty-two community-submitted bug fixes and multiple pull requests.
 
 Looking for more information on these new features as well as many others? Check out  [Magento 2.2 Developer Documentation]({{ site.baseurl }}/guides/v2.2/).
 
@@ -42,7 +42,7 @@ See [Magento Security Center](https://magento.com/security/patches/magento-221-2
 *  When a callback during commit throws an exception, the calling plugin can now distinguish this exception from an unsuccessful commit and logs an exception. Previously, Magento threw an “Asymmetric transaction rollback error”. [GitHub-9955](https://github.com/magento/magento2/issues/9955)
 
 <!--- 80201  -->
-*   We’ve resolved a fatal error in the repository generator. Both `InputException` and `NoSuchEntityException` now require a Phrase object as their first constructor argument.  [GitHub-10601](https://github.com/magento/magento2/issues/10601)
+*  We’ve resolved a fatal error in the repository generator. Both `InputException` and `NoSuchEntityException` now require a Phrase object as their first constructor argument.  [GitHub-10601](https://github.com/magento/magento2/issues/10601)
 
 ### AMQP
 
@@ -55,10 +55,10 @@ See [Magento Security Center](https://magento.com/security/patches/magento-221-2
 *  Magento now displays products that are filtered to a particular store view even when the corresponding store view has been deleted. Previously, Magento displayed a continuously spinning  spinner widget and this error message: **A technical problem with the server created an error. Try again to continue what you were doing. If the problem persists, try again later.**
 
 <!--- 72382  -->
-*   You can now save custom shared catalogs.
+*  You can now save custom shared catalogs.
 
 <!--- 78522  -->
-*   Magento no longer displays a 404 error when you change category permissions from Product Detail pages when multistore view is enabled.
+*  Magento no longer displays a 404 error when you change category permissions from Product Detail pages when multistore view is enabled.
 
 <!--- 75460  -->
 *  `LowestPriceOptionsProvider` now returns products with the `tax_class_id` attribute, which is used for price calculation operations such as  tax adjustment. [GitHub-6729](https://github.com/magento/magento2/issues/6729), [GitHub-6457](https://github.com/magento/magento2/issues/6457), [GitHub-7362](https://github.com/magento/magento2/issues/7362)
@@ -67,7 +67,7 @@ See [Magento Security Center](https://magento.com/security/patches/magento-221-2
 *  The grouped product page now  shows the lowest price for a simple product.  [GitHub-9266](https://github.com/magento/magento2/issues/9266)
 
 <!--- 75221  -->
-*   We’ve fixed an issue with `priceScope` that had resulted in the storefront not displaying product prices that should be displayed.
+*  We’ve fixed an issue with `priceScope` that had resulted in the storefront not displaying product prices that should be displayed.
 
 ### Cart and checkout
 
@@ -212,10 +212,10 @@ See [Magento Security Center](https://magento.com/security/patches/magento-221-2
 ### Visual Merchandiser
 
 <!--- 71554  -->
-*   We’ve improved the performance of editing or saving products in large categories (more than 18,000 products per category).
+*  We’ve improved the performance of editing or saving products in large categories (more than 18,000 products per category).
 
 <!--- 71986  -->
-*   Visual Merchandiser now retains page view options and position after you remove a product. Previously, when you removed a product from a category, and you weren't on the first page, Magento returned you to the first page.
+*  Visual Merchandiser now retains page view options and position after you remove a product. Previously, when you removed a product from a category, and you weren't on the first page, Magento returned you to the first page.
 
 ## Community contributions
 

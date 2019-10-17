@@ -12,37 +12,37 @@ We are pleased to present Magento Commerce 2.2.2. This release includes new tool
 
 Look for the following highlights in this release:
 
-* Significant new features that streamline the customer experience and provide merchants with greater insight into their online business.
+*  Significant new features that streamline the customer experience and provide merchants with greater insight into their online business.
 
-* Numerous fixes and enhancements to core features, including significant improvements to the payment process.
+*  Numerous fixes and enhancements to core features, including significant improvements to the payment process.
 
-* Ninety-six community-submitted bug fixes and multiple pull requests.
+*  Ninety-six community-submitted bug fixes and multiple pull requests.
 
 ### New Features
 
-* **Advanced Reporting powered by Magento Business Intelligence**. Access easy-to-use order, product, and customer reports right from the Magento Admin to gain new insights and enable data-driven decision making. See [Advanced Reporting]({{ site.baseurl }}/guides/v2.2/advanced-reporting/overview.html) for more information.
+*  **Advanced Reporting powered by Magento Business Intelligence**. Access easy-to-use order, product, and customer reports right from the Magento Admin to gain new insights and enable data-driven decision making. See [Advanced Reporting]({{ site.baseurl }}/guides/v2.2/advanced-reporting/overview.html) for more information.
 
-* **Magento Shipping** (powered by Temando). This new feature provides integrated advanced multi-carrier shipping and fulfillment.  (In addition to these release notes, you can find Magento Shipping-specific release notes in [Magento Shipping Release Notes]({{ page.baseurl }}/release-notes/ReleaseNotesMagentoShipping2.2.x.html).)
+*  **Magento Shipping** (powered by Temando). This new feature provides integrated advanced multi-carrier shipping and fulfillment.  (In addition to these release notes, you can find Magento Shipping-specific release notes in [Magento Shipping Release Notes]({{ page.baseurl }}/release-notes/ReleaseNotesMagentoShipping2.2.x.html).)
 
-* **Streamlined Instant Purchase checkout** (contributed by Creatuity). Our new streamlined Instant Purchase option uses previously stored payment credentials and shipping information to bypass steps in the checkout process. See [Instant Purchase module]({{ site.baseurl }}/guides/v2.2/mrg/ce/instant-purchase/) for more information.
+*  **Streamlined Instant Purchase checkout** (contributed by Creatuity). Our new streamlined Instant Purchase option uses previously stored payment credentials and shipping information to bypass steps in the checkout process. See [Instant Purchase module]({{ site.baseurl }}/guides/v2.2/mrg/ce/instant-purchase/) for more information.
 
-* **Integrated dotmailer marketing automation software**. Magento is one of the first ecommerce solutions to include the dotmailer marketing automation with their core product. See [Email Marketing Automation](http://docs.magento.com/m2/ce/user_guide/marketing/email-marketing-automation.html).
+*  **Integrated dotmailer marketing automation software**. Magento is one of the first ecommerce solutions to include the dotmailer marketing automation with their core product. See [Email Marketing Automation](http://docs.magento.com/m2/ce/user_guide/marketing/email-marketing-automation.html).
 
-* **Magento Functional Testing Framework**.  The Magento Functional Testing Framework (MFTF) is our open-source, cross-platform testing solution. Its purpose is to facilitate functional testing and minimize efforts to perform regression testing. See [Introduction to Magento Functional Testing Framework]({{ site.baseurl }}/mftf/docs/introduction.html).
+*  **Magento Functional Testing Framework**.  The Magento Functional Testing Framework (MFTF) is our open-source, cross-platform testing solution. Its purpose is to facilitate functional testing and minimize efforts to perform regression testing. See [Introduction to Magento Functional Testing Framework]({{ site.baseurl }}/mftf/docs/introduction.html).
 
 Looking for more information on these new features as well as many others? Check out [Magento 2.2 Developer Documentation]({{ site.baseurl }}/guides/v2.2/) and the [Magento Commerce User Guide](http://docs.magento.com/m2/ee/user_guide/getting-started.html).
 
 ## Fixes and enhancements
 
-* **Significant enhancements for payment methods**. We've added support for the Indian Rupee (INR) to PayPal Express Checkout. We've also added a fix for an issue where some Braintree refunds did not work.
+*  **Significant enhancements for payment methods**. We've added support for the Indian Rupee (INR) to PayPal Express Checkout. We've also added a fix for an issue where some Braintree refunds did not work.
 
-* **Improvements to multi-storeview sites**. Switching store views multiple times no longer results in an error on the storefront.
+*  **Improvements to multi-storeview sites**. Switching store views multiple times no longer results in an error on the storefront.
 
-* **New functionality for the command-line interface**. We've added interactivity to the `admin:user:create` command and added the ability to handle CLI setup interactively (with prompts).
+*  **New functionality for the command-line interface**. We've added interactivity to the `admin:user:create` command and added the ability to handle CLI setup interactively (with prompts).
 
-* You can now use the **Enter** key (in addition to a mouse click) to  search tables in the Admin.
+*  You can now use the **Enter** key (in addition to a mouse click) to  search tables in the Admin.
 
-* Magento no longer creates duplicate shipments when merchants create shipments with bundled products via API.
+*  Magento no longer creates duplicate shipments when merchants create shipments with bundled products via API.
 
 ## Fixed issues
 
@@ -327,7 +327,7 @@ Looking for more information on these new features as well as many others? Check
 *  The Store View switcher now works as expected. *Fix submitted by thiagolima-bm in pull request 11337*. [GitHub-10908](https://github.com/magento/magento2/issues/10908), [GitHub-11211](https://github.com/magento/magento2/issues/11211)
 
 <!--- MAGETWO-83490  -->
-*   We've removed object manager references as well as deprecated calls to `$messageManager`. *Fix submitted by Atish Goswami in pull request 12061*.
+*  We've removed object manager references as well as deprecated calls to `$messageManager`. *Fix submitted by Atish Goswami in pull request 12061*.
 
 <!--- MAGETWO-83672  -->
 *  Magento now prepares street data to guarantee that the street array will be converted to a string. *Fix submitted by Vova Yatsyuk in pull request 12130*.
@@ -365,7 +365,7 @@ Looking for more information on these new features as well as many others? Check
 *  Magento now provides better error reporting when an error occurs during the import of a CSV file with a semicolon delimiter. Previously, Magento stopped import, but did not provide a link to the error report CSV file. [GitHub-5015](https://github.com/magento/magento2/issues/5015)
 
 <!--- MAGETWO-81594  -->
-*   Exception message was passed as a exception description argument instead of exception message. *Fix submitted by Tim Bezhashvyly in pull request 11363*. [GitHub-6924](https://github.com/magento/magento2/issues/6924)
+*  Exception message was passed as a exception description argument instead of exception message. *Fix submitted by Tim Bezhashvyly in pull request 11363*. [GitHub-6924](https://github.com/magento/magento2/issues/6924)
 
 <!--- MAGETWO-83310  -->
 *  Importing an import file to update customer data no loner results in the `entity fields` being removed if the columns were not present on the imported file. *Fix submitted by Juan Alonso in pull request 11968*.
@@ -376,7 +376,7 @@ Looking for more information on these new features as well as many others? Check
 *  Magento no longer re-indexes entities if they are unchanged, which improves the performance of the refresh index cron job without any loss of functionality. [GitHub-4893](https://github.com/magento/magento2/issues/4893)
 
 <!--- MAGETWO-80644  -->
-*   Magento now correctly resets status to `StateInterface::STATUS_INVALID` if a fatal PHP error occurs during indexing. *Fix submitted by Lars Roettig in pull request 11183*. [GitHub-11166](https://github.com/magento/magento2/issues/11166)
+*  Magento now correctly resets status to `StateInterface::STATUS_INVALID` if a fatal PHP error occurs during indexing. *Fix submitted by Lars Roettig in pull request 11183*. [GitHub-11166](https://github.com/magento/magento2/issues/11166)
 
 ### Infrastructure
 
@@ -387,13 +387,13 @@ Looking for more information on these new features as well as many others? Check
 *  We've ported a fix for the Travis CI builds for the  `2.2-develop` branch to the  `2.3-develop` branch. *Fix submitted by Ievgen Shakhsuvarov in pull request 11555*.
 
 <!--- MAGETWO-82003  -->
-*   Integration tests now reset the integration test database when `TESTS_CLEANUP` is set to enabled. *Fix submitted by Joshua Warren in pull request 11499*. [GitHub-10025](https://github.com/magento/magento2/issues/10025)
+*  Integration tests now reset the integration test database when `TESTS_CLEANUP` is set to enabled. *Fix submitted by Joshua Warren in pull request 11499*. [GitHub-10025](https://github.com/magento/magento2/issues/10025)
 
 <!--- MAGETWO-82658  -->
-*   A typo in  `Paypal/Test/TestCase/OnePageCheckoutTest.xml` has been fixed. *Fix submitted by Mr. Lewis in pull request 11673*. [GitHub-7591](https://github.com/magento/magento2/issues/7591)
+*  A typo in  `Paypal/Test/TestCase/OnePageCheckoutTest.xml` has been fixed. *Fix submitted by Mr. Lewis in pull request 11673*. [GitHub-7591](https://github.com/magento/magento2/issues/7591)
 
 <!--- MAGETWO-83572  -->
-*   `FileClassScannerTest` no  longer has a dependency upon  `Magento_Catalog`. *Fix submitted by WEXO team in pull request 12144*. [GitHub-11230](https://github.com/magento/magento2/issues/11230)
+*  `FileClassScannerTest` no  longer has a dependency upon  `Magento_Catalog`. *Fix submitted by WEXO team in pull request 12144*. [GitHub-11230](https://github.com/magento/magento2/issues/11230)
 
 ### Newsletters
 
@@ -436,7 +436,7 @@ Looking for more information on these new features as well as many others? Check
 *  Magento no longer lets you cancel an invoice more than once.  *Fix submitted by Oscar Recio in pull request 11261*. [GitHub-9968](https://github.com/magento/magento2/issues/9968)
 
 <!--- MAGETWO-81647  -->
-*   `guest.php` now handles breadcrumb performance as expected. *Fix submitted by Juliano Vargas in pull request 11299*. [GitHub-11275](https://github.com/magento/magento2/issues/11275)
+*  `guest.php` now handles breadcrumb performance as expected. *Fix submitted by Juliano Vargas in pull request 11299*. [GitHub-11275](https://github.com/magento/magento2/issues/11275)
 
 <!--- MAGETWO-81340  -->
 *  Magento now sends confirmation emails to customers for orders containing a grouped product. Previously, when you tried to submit an invoice for an order containing a grouped product, Magento threw an error and did not send confirmation email to the customer. *Fix submitted by Michiel Gerritsen in pull request 11297*. [GitHub-5105](https://github.com/magento/magento2/issues/5105)
@@ -556,15 +556,15 @@ We’ve identified the following unresolved issues with this version of Magento 
 
 **Workaround**: Ensure that the experience currency,  base currency, and display currency are the same. Additionally, incorporate these best practices into your shipping method configuration by ensuring that:
 
-* the Magento Core base currency is the same as the experience currency (**Store > Configuration > Currency Set Up > Base Current**).
-* the Magento Core base currency converter is the same as the experience and base currency (**Store > Currency Rates**)
+*  the Magento Core base currency is the same as the experience currency (**Store > Configuration > Currency Set Up > Base Current**).
+*  the Magento Core base currency converter is the same as the experience and base currency (**Store > Currency Rates**)
 
 **Issue**: Selecting a shipping method at checkout can sometimes result in two shipping methods being selected. This issue occurs during checkout. When a user selects a shipping method during checkout, Magento will select two shipping methods. <!--- BUNDLE-508-->
 
 **Workaround**:  Ensure that no two rules with a ‘Show Shipping Method’ outcome can both apply to the scenario. Consider these example rules:
 
-* Rule 1: Show ‘Free Shipping’ for Country is Canada and Cost is not greater than $99.99
-* Rule 2: Show ‘Free Shipping’ for Country is not Canada and Cost is greater than $100
+*  Rule 1: Show ‘Free Shipping’ for Country is Canada and Cost is not greater than $99.99
+*  Rule 2: Show ‘Free Shipping’ for Country is not Canada and Cost is greater than $100
 
 <!--- NOT NEEDED  MAGETWO-83834 MAGETWO-83755 MAGETWO-83740 MAGETWO-83682 MAGETWO-83672 MAGETWO-83632 MAGETWO-83600  MAGETWO-52974 MAGETWO-62981   MAGETWO-72138  MAGETWO-81886 MAGETWO-81830 MAGETWO-82003 MAGETWO-82117 MAGETWO-84882  MAGETWO-84650 MAGETWO-84649 MAGETWO-84544 MAGETWO-84321 MAGETWO-84000 MAGETWO-83898 MAGETWO-83184 MAGETWO-80474 MAGETWO-80475 MAGETWO-80477 MAGETWO-80477 MAGETWO-80479 MAGETWO-80480 MAGETWO-80481 MAGETWO-80484 MAGETWO-80488 MAGETWO-80568
 
