@@ -34,7 +34,7 @@ This release includes significant performance improvements to the core Magento c
 
 *  <!--- MAGETWO-74154 --> Refactoring of the catalog full text indexer has improved indexing performance up to 15% for very large profiles (600,000 products) and product catalogs with many configurable options (5,000 configurable products and 500 options).
 
-*  <!--- MAGETWO-88775 -->  Improving the behavior of swatch product attributes has improved search result page performance up to 31% for catalogs with many configurable product options (for example, 5,000 configurable products and 500 options).
+*  <!--- MAGETWO-88775 -->Improving the behavior of swatch product attributes has improved search result page performance up to 31% for catalogs with many configurable product options (for example, 5,000 configurable products and 500 options).
 
 ### Community contribution highlights
 
