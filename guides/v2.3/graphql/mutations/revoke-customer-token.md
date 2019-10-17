@@ -45,5 +45,5 @@ Attribute |  Data Type | Description
 
 ## Related topics
 
-* [customer query]({{page.baseurl}}/graphql/queries/customer.html)
-* [generateCustomerToken mutation]({{page.baseurl}}/graphql/mutations/generate-customer-token.html)
+*  [customer query]({{page.baseurl}}/graphql/queries/customer.html)
+*  [generateCustomerToken mutation]({{page.baseurl}}/graphql/mutations/generate-customer-token.html)

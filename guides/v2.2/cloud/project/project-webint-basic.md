@@ -12,12 +12,12 @@ functional_areas:
 
 The {{site.data.var.ece}} [Project Web Interface](https://accounts.magento.cloud) enables you to do the following for all Starter and Pro environments:
 
-- [Access projects](#project-access)
-- Create and manage projects
-- Access active environments and branches using SSH, CLI, and URLs
-- Configure environment settings, environment variables, and routes
-- [Create and manage users]({{ page.baseurl }}/cloud/project/user-admin.html)
-- [Manage Git branches]({{ page.baseurl }}/cloud/project/project-webint-branch.html)
+-  [Access projects](#project-access)
+-  Create and manage projects
+-  Access active environments and branches using SSH, CLI, and URLs
+-  Configure environment settings, environment variables, and routes
+-  [Create and manage users]({{ page.baseurl }}/cloud/project/user-admin.html)
+-  [Manage Git branches]({{ page.baseurl }}/cloud/project/project-webint-branch.html)
 
 As you make changes to these settings, the branch redeploys to the environment. You can make these setting changes for all Starter and Pro environments.
 
@@ -25,9 +25,9 @@ As you make changes to these settings, the branch redeploys to the environment. 
 
 The Project Web Interface provides several ways to access your project and environments:
 
-- Storefront URL for each active environment
-- Secure Shell (SSH) link for SSH access via terminal application
-- Clone the project using the Magento Cloud CLI or Git
+-  Storefront URL for each active environment
+-  Secure Shell (SSH) link for SSH access via terminal application
+-  Clone the project using the Magento Cloud CLI or Git
 
 To access projects and environments through the Project Web Interface:
 
@@ -149,10 +149,10 @@ Routes allow you to set redirects or upstream settings for applications for your
 
 An environment's history includes:
 
-- Initial creation
-- Snapshots
-- Syncs and merges
-- Code pushes
+-  Initial creation
+-  Snapshots
+-  Syncs and merges
+-  Code pushes
 
 To view the history for an environment, log in to your project and select the environment. The page displays a general history of actions completed on the page. For a detailed list of completed actions during build and deployment, we recommend reviewing logs directly on the servers. See [Log locations]({{page.baseurl}}/cloud/project/log-locations.html).
 
@@ -162,11 +162,11 @@ The following figure shows a sample history.
 
 The history shows, from oldest to newest:
 
-- Environment branched from `FeatureX`
-- Environment synced with the parent
-- Environment snapshot created
+-  Environment branched from `FeatureX`
+-  Environment synced with the parent
+-  Environment snapshot created
 
 We recommend [creating a snapshot]({{ page.baseurl }}/cloud/project/project-webint-snap.html) before you make any code changes.
 
-- Environment variable added
-- Environment snapshot created
+-  Environment variable added
+-  Environment snapshot created

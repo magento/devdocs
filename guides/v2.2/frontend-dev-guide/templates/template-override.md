@@ -30,22 +30,22 @@ The templates directory of `Magento_Catalog` is `app/code/Magento/Catalog/view/f
 
  Templates are stored in the following locations:
 
-* Module templates: `<module_dir>/view/frontend/templates/<path_to_templates>`
-* Theme templates: `<theme_dir>/<Namespace>_<Module>/templates/<path_to_templates>`
+*  Module templates: `<module_dir>/view/frontend/templates/<path_to_templates>`
+*  Theme templates: `<theme_dir>/<Namespace>_<Module>/templates/<path_to_templates>`
 
 `<path_to_templates>` indicates zero or more directory levels.
 
 Examples:
 
-* `app/code/Magento/Catalog/view/frontend/templates/product/widget/new/content/new_grid.phtml`
-* `app/code/Magento/Checkout/view/frontend/templates/cart.phtml`
+*  `app/code/Magento/Catalog/view/frontend/templates/product/widget/new/content/new_grid.phtml`
+*  `app/code/Magento/Checkout/view/frontend/templates/cart.phtml`
 
 ## Template overrides {#override}
 
 For template files with the same name, the following override rules apply:
 
-* Theme templates override module templates
-* [Child theme] templates override parent theme templates
+*  Theme templates override module templates
+*  [Child theme] templates override parent theme templates
 
 To change the output defined by an existing template, override the template in your custom theme.
 This concept is the basis of template customization in Magento.

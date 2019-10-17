@@ -47,8 +47,8 @@ The `deleteCustomerAddress` mutation returns a Boolean value that indicates whet
 
 ## Related topics
 
-* [customer query]({{page.baseurl}}/graphql/queries/customer.html)
-* [createCustomer mutation]({{page.baseurl}}/graphql/mutations/create-customer.html)
-* [updateCustomer mutation]({{page.baseurl}}/graphql/mutations/update-customer.html)
-* [createCustomerAddress mutation]({{page.baseurl}}/graphql/mutations/create-customer-address.html)
-* [updateCustomerAddress mutation]({{page.baseurl}}/graphql/mutations/update-customer-address.html)
+*  [customer query]({{page.baseurl}}/graphql/queries/customer.html)
+*  [createCustomer mutation]({{page.baseurl}}/graphql/mutations/create-customer.html)
+*  [updateCustomer mutation]({{page.baseurl}}/graphql/mutations/update-customer.html)
+*  [createCustomerAddress mutation]({{page.baseurl}}/graphql/mutations/create-customer-address.html)
+*  [updateCustomerAddress mutation]({{page.baseurl}}/graphql/mutations/update-customer-address.html)

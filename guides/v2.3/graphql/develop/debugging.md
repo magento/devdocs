@@ -28,5 +28,5 @@ As a result, Xdebug within the PHP execution attempts to make a connection to an
 
 ## Related Topics
 
-* [GraphQL request headers]({{ page.baseurl }}/graphql/send-request.html)
-* [Exception handling]({{ page.baseurl }}/graphql/develop/exceptions.html)
+*  [GraphQL request headers]({{ page.baseurl }}/graphql/send-request.html)
+*  [Exception handling]({{ page.baseurl }}/graphql/develop/exceptions.html)

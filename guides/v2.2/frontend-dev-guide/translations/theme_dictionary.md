@@ -72,8 +72,8 @@ You can translate the same element in different ways for different modules:
 
 ## Additional information
 
-- [Translations overview]
-- [Example theme translation dictionary]
+-  [Translations overview]
+-  [Example theme translation dictionary]
 
 [translation dictionaries]: {{page.baseurl}}/frontend-dev-guide/translations/xlate.html#translate_terms
 [`<Magento_Luma_theme_dir>/i18n/en_US.csv`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/design/frontend/Magento/luma/i18n/en_US.csv

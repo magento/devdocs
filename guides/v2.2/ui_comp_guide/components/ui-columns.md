@@ -32,4 +32,4 @@ The Columns component is a collection of columns. It renders the `<table>` eleme
 
 Extends [`uiCollection`]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uicollection_concept.html):
 
-- [`Magento/Ui/view/base/web/js/grid/listing.js`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/grid/listing.js)
+-  [`Magento/Ui/view/base/web/js/grid/listing.js`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/grid/listing.js)

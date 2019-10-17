@@ -6,30 +6,30 @@ The data-table organizes [complex data](https://glossary.magento.com/complex-dat
 
 Data-table requirements for Magento 2 include:
 
-* Improved search and filters
-* Draggable columns
-* Sortable columns
-* Ability to add and remove columns
-* Inline editing
-* Support for thumbnails
-* Consistent case and naming format
-* Functional parity with the existing Magento application
+*  Improved search and filters
+*  Draggable columns
+*  Sortable columns
+*  Ability to add and remove columns
+*  Inline editing
+*  Support for thumbnails
+*  Consistent case and naming format
+*  Functional parity with the existing Magento application
 
 ## Data-table
 
 This specification defines the following features for the data-table:
 
-* Positioning of elements to allow for a more intuitive user experience
-* Pagination
-* Keyword Search
-* Allowing for user-defined number of items per page
-* Allowing users to go directly to a specific page
-* Filtering
-* Sortable columns
-* Ability to add and/or remove columns
-* Single item select and edit
-* Multiple item select and edit
-* Image/Thumbnail placement
+*  Positioning of elements to allow for a more intuitive user experience
+*  Pagination
+*  Keyword Search
+*  Allowing for user-defined number of items per page
+*  Allowing users to go directly to a specific page
+*  Filtering
+*  Sortable columns
+*  Ability to add and/or remove columns
+*  Single item select and edit
+*  Multiple item select and edit
+*  Image/Thumbnail placement
 
 ![](img/datatable01.jpg)
 
@@ -37,12 +37,12 @@ This specification defines the following features for the data-table:
 
 The data-table will contain the following elements where applicable and as needed:
 
-* Pagination controls
-* Actions
-* Settings, bookmarks and search
-* Filters
-* Column headers
-* Data
+*  Pagination controls
+*  Actions
+*  Settings, bookmarks and search
+*  Filters
+*  Column headers
+*  Data
 
 ## Modularity
 
@@ -71,7 +71,7 @@ Pagination controls allow the user to easily page through and organize data. Pag
 *  The ‘Previous’ button should be disabled when viewing the first page of results.
 *  The ‘Next’ button should be disabled when viewing the last page of results.
 *  The ‘Skip to’ field will allow only numeric values.
-* ‘Skip to’ will be instantiated once the value is changed and [Return] or [Tab] is clicked.
+*  ‘Skip to’ will be instantiated once the value is changed and [Return] or [Tab] is clicked.
 *  A custom number of items per page can be set by selecting the "Custom" link which will allow users to specify a number. This number can be edited.
 
 ![](img/datatable05.jpg)
@@ -183,7 +183,7 @@ When the user enters a keyword in the search field and submits the query (by cli
 
 As text is added to the search field, the system will suggest terms and phrases based on data contained in the table being searched against.
 
-* No more than 5 suggestions should be displayed at a time
+*  No more than 5 suggestions should be displayed at a time
 
 ![](img/datatable21.jpg)
 
@@ -364,10 +364,10 @@ content='Not all data-tables will allow for inline editing.'
 
 ### Single Item Select and Edit Interactions
 
-* Inline editing can be instantiated by single clicking on the field to be edited. Once inline editing is instantiated, all appropriate fields within a row will be editable.
-* Non-editable fields will require a disabled treatment.
-* Once a row becomes editable, action buttons will appear below the row allowing a user to commit or cancel the edit.
-* Editable fields will have a left-to-right tab order. [Tab] and [Enter] will set focus on the next editable field in the tab order, unless the focus is set to the last field in the tab order in which case [Enter] will commit the edit while [Tab] will set focus to the Save button.
+*  Inline editing can be instantiated by single clicking on the field to be edited. Once inline editing is instantiated, all appropriate fields within a row will be editable.
+*  Non-editable fields will require a disabled treatment.
+*  Once a row becomes editable, action buttons will appear below the row allowing a user to commit or cancel the edit.
+*  Editable fields will have a left-to-right tab order. [Tab] and [Enter] will set focus on the next editable field in the tab order, unless the focus is set to the last field in the tab order in which case [Enter] will commit the edit while [Tab] will set focus to the Save button.
 
 ![](img/datatable43.jpg)
 
