@@ -41,14 +41,14 @@ If not, see the [Installation overview][].
 ## Installation part 1: Getting started
 
 1. See the [system requirements][].
-2. If your system lacks any requirements, see the prerequisites documentation:
+1. If your system lacks any requirements, see the prerequisites documentation:
 
    *  [Apache][]
    *  [PHP][]
    *  [MySQL][]
 
-3. Just as importantly, set up the [Magento file system owner][]on the server.
-4. Switch to the [Magento file system owner][].
+1. Just as importantly, set up the [Magento file system owner][]on the server.
+1. Switch to the [Magento file system owner][].
 
 ### Get the Magento software
 

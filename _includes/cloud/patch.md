@@ -38,7 +38,7 @@ Back up your Integration environment database and code:
    magento-cloud db:dump
    ```
 
-2. Enter the following command to back up code and media:
+1. Enter the following command to back up code and media:
 
    ```bash
    php bin/magento setup:backup --code [--media]
@@ -49,13 +49,13 @@ Back up your Integration environment database and code:
 Back up your Staging or Production environment database before deploying to those environments:
 
 1. [SSH to the server]({{ page.baseurl }}/cloud/env/environments-ssh.html).
-2. Find the database login information:
+1. Find the database login information:
 
    ```bash
    php -r 'print_r(json_decode(base64_decode($_ENV["MAGENTO_CLOUD_RELATIONSHIPS"]))->database);'
    ```
 
-3. Create a database dump:
+1. Create a database dump:
 
    ```bash
    mysqldump -h <database host> --user=<database username> --password=<password> --single-transaction <database name> | gzip - > /tmp/database.sql.gz
@@ -66,13 +66,13 @@ Back up your Staging or Production environment database before deploying to thos
 Verify other changes you're going to submit to source control before you start the upgrade:
 
 1. If you haven't done so already, change to your project root directory.
-2. Enter the following command:
+1. Enter the following command:
 
    ```bash
    git status
    ```
 
-3. If there are changes you do *not* want to submit to source control, branch or stash them now.
+1. If there are changes you do *not* want to submit to source control, branch or stash them now.
 
 ### Upgrade the patch
 
@@ -138,13 +138,13 @@ To test a general patch on your local system:
    composer update
    ```
 
-2. Apply the patch locally:
+1. Apply the patch locally:
 
    ```bash
    git apply vendor/magento/magento-cloud-configuration/patches/<patch file name>
    ```
 
-3. Clean the Magento cache:
+1. Clean the Magento cache:
 
    ```bash
    php <Magento project root dir>/bin/magento cache:clean
@@ -152,8 +152,8 @@ To test a general patch on your local system:
 
    You can also clean the cache using the [Magento Admin](http://docs.magento.com/m2/ee/user_guide/system/cache-management.html).
 
-4. Thoroughly test your local system to make sure the patch doesn't have unexpected side-affects.
-5. After testing the patch, push it to the remote server and deploy it:
+1. Thoroughly test your local system to make sure the patch doesn't have unexpected side-affects.
+1. After testing the patch, push it to the remote server and deploy it:
 
    ```bash
    git add -A && git commit -m "Apply patch"

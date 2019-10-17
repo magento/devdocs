@@ -22,12 +22,12 @@ When a merchant creates and activates an integration, Magento generates a consum
 Use the following steps to generate an access token:
 
 1. Log in to Admin and click **System** > **Extensions** > **Integrations** to display the Integrations page.
-2. Click **Add New Integration** to display the New Integration page.
-3. Enter a unique name for the integration in the **Name** field. Then enter your admin password in the **Your Password** field. Leave all other fields blank.
-4. Click the API tab. Select the Magento resources the integration can access. You can select all resources, or select a custom list.
-5. Click **Save** to save your changes and return to the Integrations page.
-6. Click the **Activate** link in the grid that corresponds to the newly-created integration.
-7. Click **Allow** . A dialog similar to the following displays:
+1. Click **Add New Integration** to display the New Integration page.
+1. Enter a unique name for the integration in the **Name** field. Then enter your admin password in the **Your Password** field. Leave all other fields blank.
+1. Click the API tab. Select the Magento resources the integration can access. You can select all resources, or select a custom list.
+1. Click **Save** to save your changes and return to the Integrations page.
+1. Click the **Activate** link in the grid that corresponds to the newly-created integration.
+1. Click **Allow** . A dialog similar to the following displays:
 
    ![REST client]({{ page.baseurl }}/get-started/authentication/images/integration-tokens.png)
 
