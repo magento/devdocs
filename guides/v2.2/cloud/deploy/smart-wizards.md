@@ -61,28 +61,28 @@ Ideal state is not configured
 
 Based on the output, you need to make the following corrections to your configuration:
 
-1.  Enable the Skip HTML minification variable.
+1. Enable the Skip HTML minification variable.
 
-    > .magento.env.yaml
+   > .magento.env.yaml
 
-    ```yaml
-    stage:
-      global:
-        SKIP_HTML_MINIFICATION: true
-    ```
+   ```yaml
+   stage:
+     global:
+       SKIP_HTML_MINIFICATION: true
+   ```
 
-1.  Configure the post-deploy hook.
+1. Configure the post-deploy hook.
 
-    > .magento.app.yaml
+   > .magento.app.yaml
 
-    ```yaml
-        post_deploy: |
-            php ./vendor/bin/ece-tools post-deploy
-    ```
+   ```yaml
+       post_deploy: |
+           php ./vendor/bin/ece-tools post-deploy
+   ```
 
-1.  Push your code changes and run the test again. When your configuration is _ideal_, you receive the following message.
+1. Push your code changes and run the test again. When your configuration is _ideal_, you receive the following message.
 
-    ```terminal
-    Ideal state is configured
-    ```
-    {: .no-copy}
+   ```terminal
+   Ideal state is configured
+   ```
+   {: .no-copy}
