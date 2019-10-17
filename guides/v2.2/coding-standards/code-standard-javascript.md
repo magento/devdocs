@@ -345,14 +345,17 @@ Modifying other built-ins like `Function.prototype` is less dangerous but leads 
 
 ### Variable declarations
 
-Declare a variable with `var` wherever possible to avoid overwriting existing global values.
+Declare a variable with `let` as the default scope assignment for a variable. Use `const` when the variable will not be reassigned. Never use `var` unless you need to function scope a variable.
 
-Using only one var per scope promotes readability.
+{: .bs-callout-info }
+Remember that `let` and `const` are block scoped!
 
 ```javascript
-var foo = 'bar',
+let foo = 'bar',
     num = 1,
     arr = [1, 2, 3];
+    
+const identifier = 'CUSTOM_IDENTIFIER';
 ```
 
 [jquery]: https://jquery.com/
