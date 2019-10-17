@@ -1,3 +1,0 @@
-
-  {:.bs-callout-info}
-  The `app/etc/config.php` file includes a _scopes_ setting that defines how static files deploy during the build phase. By default, the scope is [quick]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-deploy-strategies.html#static-file-quick). Static file deployment takes a long time to complete, so doing it during the build phase reduces deployment and site downtime. On the Cloud platform, you can customize settings in the YAML configuration files to minimize site downtime when deploying to Staging and Production environments. See [Optimize cloud deployment]({{ page.baseurl }}/cloud/deploy/optimize-cloud-deployment.html).
