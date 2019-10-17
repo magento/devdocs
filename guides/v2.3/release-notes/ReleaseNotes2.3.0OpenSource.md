@@ -22,13 +22,13 @@ Follow these steps to download and apply this patch:
 
 1. Access the Downloads page [here](https://magento.com/tech-resources/download#download2288).
 
-2. Select the Git-based option from **Select your format**.
+1. Select the Git-based option from **Select your format**.
 
-4. Download the patch and upload to a specific directory in your Magento installation such as `m2-hotfixes` (confirm  that the directory is not accessible publicly).
+1. Download the patch and upload to a specific directory in your Magento installation such as `m2-hotfixes` (confirm  that the directory is not accessible publicly).
 
-5. From your project root, apply the patch.  `git apply ./m2-hotfixes/<patch-file-name>`.
+1. From your project root, apply the patch.  `git apply ./m2-hotfixes/<patch-file-name>`.
 
-6. Refresh the cache from the Admin (**System** > **Cache Management**).
+1. Refresh the cache from the Admin (**System** > **Cache Management**).
 
 ## Highlights
 

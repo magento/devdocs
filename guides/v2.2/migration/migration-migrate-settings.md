@@ -18,7 +18,7 @@ According to our data migration [order]({{ page.baseurl }}/migration/migration-m
 
 1. Log in to Magento server as [the file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html).
 
-2. Change to the Magento `/bin` directory or make sure it is added to your system PATH.
+1. Change to the Magento `/bin` directory or make sure it is added to your system PATH.
 
 {: .bs-callout-info }
 Ensure Magento is deployed in default mode. Developer mode can cause validation errors in the migration tool.
@@ -35,9 +35,9 @@ bin/magento migrate:settings [-r|--reset] {<path to config.xml>}
 
 where:
 
-* `[-r|--reset]` is an optional argument that starts migration from the beginning. You can use this argument for testing migration
+*  `[-r|--reset]` is an optional argument that starts migration from the beginning. You can use this argument for testing migration
 
-* `{<path to config.xml>}` is the absolute file system path to the migration tool's [`config.xml`]({{page.baseurl}}/migration/migration-tool-configure.html#migration-configure) file; this argument is required.
+*  `{<path to config.xml>}` is the absolute file system path to the migration tool's [`config.xml`]({{page.baseurl}}/migration/migration-tool-configure.html#migration-configure) file; this argument is required.
 
 {: .bs-callout-info }
 This command does not migrate all configuration settings. Verify all settings in the Magento 2 [Admin](https://glossary.magento.com/admin) before proceeding.
@@ -74,4 +74,4 @@ For more details, see the [Settings migration mode]({{ page.baseurl }}/migration
 
 ## Next migration step
 
-* [Migrate data]({{ page.baseurl }}/migration/migration-migrate-data.html)
+*  [Migrate data]({{ page.baseurl }}/migration/migration-migrate-data.html)

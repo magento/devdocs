@@ -234,6 +234,9 @@ pages:
         - label: ProductInterface attributes
           url: /graphql/product/product-interface.html
 
+        - label: CategoryInterface attributes
+          url: /graphql/product/category-interface.html
+
         - label: CustomizableOptionInterface
           url: /graphql/product/customizable-option-interface.html
 
