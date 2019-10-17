@@ -12,7 +12,7 @@ The following table defines the `CategoryInterface` attributes and objects.
 Attribute | Type | Description
 --- | --- | ---
 `breadcrumbs` | [Breadcrumb] | A Breadcrumb object contains information the categories that comprise the breadcrumb trail for the specified category
-`cms_block` | [CmsBlock] | Contains a category CMS block. This attribute is defined in the `CatalogCmsGraphQl` module
+`cms_block` | CmsBlock | Contains a category CMS block. This attribute is defined in the `CatalogCmsGraphQl` module
 `created_at` | String | Timestamp indicating when the category was created
 `default_sort_by` | String | The attribute to use for sorting
 `description` | String | An optional description of the category
