@@ -158,7 +158,7 @@ MAGE_INDEXER_THREADS_COUNT=3 php -f bin/magento indexer:reindex catalogsearch_fu
 Use this command to set the following indexer options:
 
 *  **Update on save (`realtime`)** - Indexed data is updated as soon as a change is made in the [Admin](https://glossary.magento.com/admin). (For example, the [category](https://glossary.magento.com/category) products index is reindex after products are added to a category in the Admin.) This is the default.
-* **Update by schedule (`schedule`)** - Data is indexed according to the schedule set by your Magento cron job.
+*  **Update by schedule (`schedule`)** - Data is indexed according to the schedule set by your Magento cron job.
 
 [Learn more about indexing]({{ page.baseurl }}/extension-dev-guide/indexing.html).
 
