@@ -19,7 +19,7 @@ $("#element").tabs();
 
 Where:
 
--   `#element` is the selector of the element for tabs is initialized.
+-  `#element` is the selector of the element for tabs is initialized.
 
 The following example shows a PHTML file using the script:
 
@@ -37,23 +37,23 @@ The following example shows a PHTML file using the script:
 
 The tabs widget has the following options:
 
-- [active](#fedg_tabs_options-active)
-- [ajaxUrlElement](#fedg_tabs_options-ajaxUrlElement)
-- [ajaxContent](#fedg_tabs_options-ajaxContent)
-- [animate](#fedg_tabs_options-animate)
-- [closedState](#fedg_tabs_options-closedState)
-- [collapsible](#fedg_tabs_options-collapsible)
-- [collapsibleElement](#fedg_tabs_options-collapsibleElement)
-- [content](#fedg_tabs_options-content)
-- [disabled](#fedg_tabs_options-disabled)
-- [disabledState](#fedg_tabs_options-disabledState)
-- [header](#fedg_tabs_options-header)
-- [icons](#fedg_tabs_options-icons)
-- [loadingClass](#fedg_tabs_options-loadingClass)
-- [openedState](#fedg_tabs_options-openedState)
-- [openOnFocus](#fedg_tabs_options-openOnFocus)
-- [saveState](#fedg_tabs_options-saveState)
-- [trigger](#fedg_tabs_options-trigger)
+-  [active](#fedg_tabs_options-active)
+-  [ajaxUrlElement](#fedg_tabs_options-ajaxUrlElement)
+-  [ajaxContent](#fedg_tabs_options-ajaxContent)
+-  [animate](#fedg_tabs_options-animate)
+-  [closedState](#fedg_tabs_options-closedState)
+-  [collapsible](#fedg_tabs_options-collapsible)
+-  [collapsibleElement](#fedg_tabs_options-collapsibleElement)
+-  [content](#fedg_tabs_options-content)
+-  [disabled](#fedg_tabs_options-disabled)
+-  [disabledState](#fedg_tabs_options-disabledState)
+-  [header](#fedg_tabs_options-header)
+-  [icons](#fedg_tabs_options-icons)
+-  [loadingClass](#fedg_tabs_options-loadingClass)
+-  [openedState](#fedg_tabs_options-openedState)
+-  [openOnFocus](#fedg_tabs_options-openOnFocus)
+-  [saveState](#fedg_tabs_options-saveState)
+-  [trigger](#fedg_tabs_options-trigger)
 
 ### `active` {#fedg_tabs_options-active}
 
@@ -85,18 +85,18 @@ Specifies if the collapse/expand actions are performed with animation. The optio
 **Type**:
 Multiple types are supported:
 
--   Boolean: the `false` value disables the animation
--   Number: duration in milliseconds
--   String: is parsed to an object as a json string
--   Object:
-    ```javascript
-    {
-        duration: <Number>,
-        easing: <String>,
-        <propToAnimate>: <howToAnimate>
-    }
-    ```
-    For details about the object passed, see [jQuery.animate()].
+-  Boolean: the `false` value disables the animation
+-  Number: duration in milliseconds
+-  String: is parsed to an object as a json string
+-  Object:
+   ```javascript
+   {
+       duration: <Number>,
+       easing: <String>,
+       <propToAnimate>: <howToAnimate>
+   }
+   ```
+   For details about the object passed, see [jQuery.animate()].
 
 **Default value**: `false`
 
@@ -200,8 +200,8 @@ The option of the [collapsible] widget used by tabs.
 
 **Type**:
 
-- String
-- jQuery object
+-  String
+-  jQuery object
 
 **Default value**: `[data-role=trigger]`
 
@@ -209,10 +209,10 @@ The option of the [collapsible] widget used by tabs.
 
 The tabs widget has the following methods:
 
--   [activate()](#fedg_tabs_methods-activate)
--   [enable()](#fedg_tabs_methods-enable)
--   [deactivate()](#fedg_tabs_methods-deactivate)
--   [disable()](#fedg_tabs_options-disable)
+-  [activate()](#fedg_tabs_methods-activate)
+-  [enable()](#fedg_tabs_methods-enable)
+-  [deactivate()](#fedg_tabs_methods-deactivate)
+-  [disable()](#fedg_tabs_options-disable)
 
 ### `activate()` {#fedg_tabs_methods-activate}
 
@@ -231,8 +231,8 @@ The tabs widget has the following methods:
 
 Tabs is subscribed to the same events as the [collapsible] widget:
 
--   [beforeOpen callback](#fedg_tabs_beforeOpen_callback)
--   [dimensionsChanged](#fedg_tabs_dimensionsChanged)
+-  [beforeOpen callback](#fedg_tabs_beforeOpen_callback)
+-  [dimensionsChanged](#fedg_tabs_dimensionsChanged)
 
 ### `beforeOpen callback` {#fedg_tabs_beforeOpen_callback}
 Called before the content is opened.
