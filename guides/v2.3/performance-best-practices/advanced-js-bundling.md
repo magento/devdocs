@@ -480,11 +480,11 @@ Open `requirejs-config.js` in the `pub/static/frontend/Magento/luma/en_US` direc
 
 ```javascript
 require.config({
-                bundles: {"bundles/default": ["mage/template","mage/apply/scripts","mage/apply/main","mage/mage","mage/translate","mage/loader"]
-            }});
+    bundles: { "bundles/default": ["mage/template","mage/apply/scripts","mage/apply/main","mage/mage","mage/translate","mage/loader"] }
+});
 require.config({
-                bundles: {"bundles/cart":["Magento_Ui/js/lib/validation/utils","Magento_Ui/js/lib/validation/rules","Magento_Ui/js/lib/validation/validation"]
-            }});
+    bundles: { "bundles/cart": ["Magento_Ui/js/lib/validation/utils","Magento_Ui/js/lib/validation/rules","Magento_Ui/js/lib/validation/validation"] }
+});
 ```
 
 {: .bs-callout-info }
