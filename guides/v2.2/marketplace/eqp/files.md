@@ -5,11 +5,11 @@ title: Files
 
 Use `files` resources to manage all code artifacts and assets associated with an extension or a theme:
 
-* Magento 1 tarball (.tgz)
-* Magento 2 ZIP files
-* Image files for logos and galleries
-* Product Icons
-* PDF documents for User Guides, Installation Guides, and Reference Guides
+*  Magento 1 tarball (.tgz)
+*  Magento 2 ZIP files
+*  Image files for logos and galleries
+*  Product Icons
+*  PDF documents for User Guides, Installation Guides, and Reference Guides
 
 Each file upload receives a unique ID. You must associate these IDs with your submission later using the [packages API]({{ page.baseurl }}/marketplace/eqp/packages.html).
 
@@ -110,11 +110,11 @@ Content-Type: application/pdf
 ------------287032381131322--
 ```
 
-* Each part has a header and body with `Content-Disposition` header always set to `form-data`.
-* The `name` value must be set to `file[]` for all parts.
-* The original filename must be supplied in the `filename` parameter.
-* The `Content-Type` header must be set to the appropriate mime-type for the file.
-* The body of each part is the full contents of the raw file.
+*  Each part has a header and body with `Content-Disposition` header always set to `form-data`.
+*  The `name` value must be set to `file[]` for all parts.
+*  The original filename must be supplied in the `filename` parameter.
+*  The `Content-Type` header must be set to the appropriate mime-type for the file.
+*  The body of each part is the full contents of the raw file.
 
 For example, if you save the previous request body is saved to a temporary file at `/tmp/files-payload`, you can use it in your POST request to upload the file:
 
@@ -224,7 +224,7 @@ curl -X DELETE \
 ]
 ```
 
-* The API returns a batch response for each item, which includes a `code` and `message`.
-* A 200 OK HTTP response code indicates a successful upload.
-* Any non-200 HTTP response code indicates an error.
-* If no packages are associated with a file, the API returns an empty list and the file is removed.
+*  The API returns a batch response for each item, which includes a `code` and `message`.
+*  A 200 OK HTTP response code indicates a successful upload.
+*  Any non-200 HTTP response code indicates an error.
+*  If no packages are associated with a file, the API returns an empty list and the file is removed.
