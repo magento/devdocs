@@ -40,7 +40,7 @@ This release includes significant performance improvements to the core Magento c
 
 Highlights of community contributions include  fixes that improve checkout flow and the sorting of simple products:
 
-*  <!--- MAGETWO-87115 --> Customers can now create an account from the Order Confirmation page. Previously, a customer could not populate the required fields to create an account from this page, and Magento displayed an error.
+*  <!--- MAGETWO-87115 -->Customers can now create an account from the Order Confirmation page. Previously, a customer could not populate the required fields to create an account from this page, and Magento displayed an error.
 
 *  <!--- MAGETWO-73479 --> Magento now correctly applies coupon codes that exclude bundle products. Previously, Magento applied these coupons but did not exclude bundle products as expected.
 
