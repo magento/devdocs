@@ -15,9 +15,9 @@ Use the `bin/magento queue:consumers:start async.operations.all` command to star
 
 Magento supports the following types of asynchronous requests:
 
-* POST
-* PUT
-* PATCH
+*  POST
+*  PUT
+*  PATCH
 
 {:.bs-callout .bs-callout-info}
 GET and DELETE requests are not supported. Although Magento does not currently implement any PATCH requests, they are supported in custom extensions.
