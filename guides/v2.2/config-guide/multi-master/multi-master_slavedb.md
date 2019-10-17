@@ -10,9 +10,9 @@ functional_areas:
 
 Setting up database replication provides the following benefits:
 
-* Provides data backup
-* Enables data analysis without affecting the master database
-* Scalability
+*  Provides data backup
+*  Enables data analysis without affecting the master database
+*  Scalability
 
 MySQL databases replicate asynchronously, which means slaves do not need to be connected permanently to receive updates from the master.
 
@@ -20,8 +20,8 @@ MySQL databases replicate asynchronously, which means slaves do not need to be c
 
 An in-depth discussion of database replication is beyond the scope of this guide. To set it up, you can consult a resource like:
 
-* [MySQL documentation](https://dev.mysql.com/doc/refman/5.6/en/replication.html)
-* [How To Set Up Master Slave Replication in MySQL (digitalocean)](https://www.digitalocean.com/community/tutorials/how-to-set-up-master-slave-replication-in-mysql)
+*  [MySQL documentation](https://dev.mysql.com/doc/refman/5.6/en/replication.html)
+*  [How To Set Up Master Slave Replication in MySQL (digitalocean)](https://www.digitalocean.com/community/tutorials/how-to-set-up-master-slave-replication-in-mysql)
 
 Magento provides sample MySQL configurations for your slave databases. A simple configuration is provided with the `ResourceConnections` class `README.md`.
 

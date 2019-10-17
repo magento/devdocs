@@ -88,8 +88,8 @@ The Magento application uses this `composer.json` file for its framework package
 
 **Locations:**
 
-* `app/code/<vendor-name>/<module-name>/composer.json`
-* `vendor/<vendor-name>/<module-name>/composer.json`
+*  `app/code/<vendor-name>/<module-name>/composer.json`
+*  `vendor/<vendor-name>/<module-name>/composer.json`
 
 **Name:** `<vendor-name>/<package-name>`
 
@@ -103,8 +103,8 @@ The `composer.json` file for a [module](https://glossary.magento.com/module) ext
 
 **Locations:**
 
-* `app/design/frontend/<vendor-name>/<theme-name>/composer.json`
-* `app/design/adminhtml/<vendor-name>/<theme-name>/composer.json`
+*  `app/design/frontend/<vendor-name>/<theme-name>/composer.json`
+*  `app/design/adminhtml/<vendor-name>/<theme-name>/composer.json`
 
 **Name:** `<vendor-name>/<package-name>`
 

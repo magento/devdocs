@@ -99,21 +99,21 @@ weight
 
 The following attributes are not used in responses:
 
-* `or` - The keyword required to perform a logical OR comparison.
-* `news_from_date` - This attribute is transformed to `news_from_date` in a response.
-* `news_to_date` - This attribute is transformed to `news_to_date` in a response.
+*  `or` - The keyword required to perform a logical OR comparison.
+*  `news_from_date` - This attribute is transformed to `news_from_date` in a response.
+*  `news_to_date` - This attribute is transformed to `news_to_date` in a response.
 
 {%
 include note.html
 type="info"
 content="GraphQL automatically filters out a product attribute if ALL of the following fields are set to **No** on the attribute's Storefront Properties page in Admin:
 
-* Comparable on Storefront
-* Use in Layered Navigation
-* Use in Search Results Layered Navigation
-* Visible on Catalog Pages on Storefront
-* Used in Product Listing
-* Used for Sorting in Product Listing"
+*  Comparable on Storefront
+*  Use in Layered Navigation
+*  Use in Search Results Layered Navigation
+*  Visible on Catalog Pages on Storefront
+*  Used in Product Listing
+*  Used for Sorting in Product Listing"
 
 %}
 
@@ -242,9 +242,9 @@ The search returns 45 items.
 
 The following sample query returns a list of products that meets the following criteria:
 
-* The product name, product description, or related field contains the string `Messenger` (which causes it to be available for full text searches).
-* The SKU begins with `24-MB`
-* The price is less than $50.
+*  The product name, product description, or related field contains the string `Messenger` (which causes it to be available for full text searches).
+*  The SKU begins with `24-MB`
+*  The price is less than $50.
 
 The response for each item includes the `name`, `sku`, `price` and `description` only. Up to 25 results are returned at a time, in decreasing order of price.
 

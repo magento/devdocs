@@ -20,8 +20,8 @@ The reason the proxy is not secured in this example is it's easier to set up and
 
 See one of the following sections for more information:
 
-* [Step 1: Specify additional configuration files in your global `nginx.conf`](#es-ws-secure-nginx-conf)
-* [Step 2: Set up nginx as a proxy](#es-ws-secure-nginx-proxy)
+*  [Step 1: Specify additional configuration files in your global `nginx.conf`](#es-ws-secure-nginx-conf)
+*  [Step 2: Set up nginx as a proxy](#es-ws-secure-nginx-proxy)
 
 ### Step 1: Specify additional configuration files in your global `nginx.conf` {#es-ws-secure-nginx-conf}
 
@@ -90,16 +90,16 @@ Because nginx natively supports HTTP Basic authentication, we recommend it over,
 
 Additional resources:
 
-* [How To Set Up Password Authentication with Nginx on Ubuntu 14.04 (Digitalocean)](https://www.digitalocean.com/community/tutorials/how-to-set-up-password-authentication-with-nginx-on-ubuntu-14-04)
-* [Basic HTTP Authentication With Nginx (HowtoForge)](https://www.howtoforge.com/basic-http-authentication-with-nginx)
-* [Example Nginx Configurations for Elasticsearch](https://gist.github.com/karmi/b0a9b4c111ed3023a52d)
+*  [How To Set Up Password Authentication with Nginx on Ubuntu 14.04 (Digitalocean)](https://www.digitalocean.com/community/tutorials/how-to-set-up-password-authentication-with-nginx-on-ubuntu-14-04)
+*  [Basic HTTP Authentication With Nginx (HowtoForge)](https://www.howtoforge.com/basic-http-authentication-with-nginx)
+*  [Example Nginx Configurations for Elasticsearch](https://gist.github.com/karmi/b0a9b4c111ed3023a52d)
 
 See the following sections for more information:
 
-* [Step 1: Create passwords](#es-ws-secure-nginx-pwd)
-* [Step 2: Set up access to nginx](#es-ws-secure-nginx-access)
-* [Step 3: Set up a restricted context for Elasticsearch](#es-ws-secure-nginx-context)
-* [Verify communication is secure](#es-ws-secure-verify)
+*  [Step 1: Create passwords](#es-ws-secure-nginx-pwd)
+*  [Step 2: Set up access to nginx](#es-ws-secure-nginx-access)
+*  [Step 3: Set up a restricted context for Elasticsearch](#es-ws-secure-nginx-context)
+*  [Verify communication is secure](#es-ws-secure-verify)
 
 ### Step 1: Create a password {#es-ws-secure-nginx-pwd}
 
@@ -117,8 +117,8 @@ To create a password:
 
 1. If necessary, install `htpasswd`:
 
-   * Ubuntu: `apt-get -y install apache2-utils`
-   * CentOS: `yum -y install httpd-tools`
+   *  Ubuntu: `apt-get -y install apache2-utils`
+   *  CentOS: `yum -y install httpd-tools`
 
 1. Create a `/etc/nginx/passwd` directory to store passwords:
 

@@ -36,9 +36,9 @@ You can also use a process manager such as [Supervisor](http://supervisord.org/i
 
 #### Behavior by default
 
-* Cron job `consumers_runner` is enabled
-* Cron job `consumers_runner` runs all defined consumers
-* Each consumer processes 10000 messages and then terminates
+*  Cron job `consumers_runner` is enabled
+*  Cron job `consumers_runner` runs all defined consumers
+*  Each consumer processes 10000 messages and then terminates
 
 #### Specific configuration
 
@@ -57,15 +57,15 @@ Edit */app/etc/env.php* file for configure cron job `consumers_runner`
 ...
 ```
 
-* `cron_run` - A boolean value that enables or disables the `consumers_runner` cron job (default = `true`).
-* `max_messages` - The maximum number of messages each consumer must process before terminating (default = `10000`). Although we do not recommend it, you can use 0 to prevent the consumer from terminating.
-* `consumers` - An array of strings specifying which consumer(s) to run. An empty array runs *all* consumers.
+*  `cron_run` - A boolean value that enables or disables the `consumers_runner` cron job (default = `true`).
+*  `max_messages` - The maximum number of messages each consumer must process before terminating (default = `10000`). Although we do not recommend it, you can use 0 to prevent the consumer from terminating.
+*  `consumers` - An array of strings specifying which consumer(s) to run. An empty array runs *all* consumers.
 
 {% include config/message-queue-consumers.md %}
 
 #### Related Topics
 
-*   [Message Queues Overview]({{ page.baseurl }}/config-guide/mq/rabbitmq-overview.html)
-*   [Configure and run cron]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cron.html)
-*   [Command-line configuration]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands.html)
-*   [Message Queues]({{ page.baseurl }}/extension-dev-guide/message-queues/message-queues.html)
+*  [Message Queues Overview]({{ page.baseurl }}/config-guide/mq/rabbitmq-overview.html)
+*  [Configure and run cron]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cron.html)
+*  [Command-line configuration]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands.html)
+*  [Message Queues]({{ page.baseurl }}/extension-dev-guide/message-queues/message-queues.html)

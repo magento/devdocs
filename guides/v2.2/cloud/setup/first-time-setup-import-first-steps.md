@@ -18,12 +18,12 @@ You can create a {{site.data.var.ece}} project from a blank template or by impor
 
 Before you begin, do the following:
 
-- Add the existing {{site.data.var.ee}} code to a Git repository. We recommend using [GitHub]({{ page.baseurl }}/cloud/integrations/github-integration.html).
-- Set up your [local development environment]({{ page.baseurl }}/cloud/setup/first-time-setup.html).
-- Gather required information:
+-  Add the existing {{site.data.var.ee}} code to a Git repository. We recommend using [GitHub]({{ page.baseurl }}/cloud/integrations/github-integration.html).
+-  Set up your [local development environment]({{ page.baseurl }}/cloud/setup/first-time-setup.html).
+-  Gather required information:
 
-   - [SSH access link](#ssh) to the target environment
-   - [Database credentials](#db-creds)
+   -  [SSH access link](#ssh) to the target environment
+   -  [Database credentials](#db-creds)
 
 ### SSH access to cloud environments {#ssh}
 

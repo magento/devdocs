@@ -15,11 +15,11 @@ Within a company, customers may have different job roles, levels of responsibili
 
 {{site.data.var.b2b}} defines the following types of resources:
 
-* Sales
-* Negotiable quotes
-* Company profile
-* Company user management
-* Company credit
+*  Sales
+*  Negotiable quotes
+*  Company profile
+*  Company user management
+*  Company credit
 
 Each of these resources contains a hierarchy of other resources. When a Company Admin grants or blocks access to a resource from the store UI, the action applies to all sub-resources, unless explicitly overridden. However, if you grant or block access using web APIs, you must specify each resource individually.
 
@@ -1190,7 +1190,7 @@ None
 
 ## Related information
 
-* [Integrate with the Company module]({{ page.baseurl }}/b2b/company.html)
-* [Manage company objects]({{ page.baseurl }}/b2b/company-object.html)
-* [Manage company users]({{ page.baseurl }}/b2b/company-users.html)
-* [Manage company structures]({{ page.baseurl }}/b2b/company-structures.html)
+*  [Integrate with the Company module]({{ page.baseurl }}/b2b/company.html)
+*  [Manage company objects]({{ page.baseurl }}/b2b/company-object.html)
+*  [Manage company users]({{ page.baseurl }}/b2b/company-users.html)
+*  [Manage company structures]({{ page.baseurl }}/b2b/company-structures.html)

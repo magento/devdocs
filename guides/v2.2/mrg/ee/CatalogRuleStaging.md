@@ -16,17 +16,17 @@ The Magento_CatalogRuleStaging module changes a catalog rule creation page and t
 
 The Magento_CatalogRuleStaging module enables you to stage the following catalog rule attributes:
 
-- Rule Name
-- Description
-- Websites
-- Customer Groups
-- Priority
-- Product Apply
-- Product Discount Amount
-- Subproduct Discounts
-- Subproduct Apply
-- Subproduct Discount Amount
-- Discard Subsequent Rules
+-  Rule Name
+-  Description
+-  Websites
+-  Customer Groups
+-  Priority
+-  Product Apply
+-  Product Discount Amount
+-  Subproduct Discounts
+-  Subproduct Apply
+-  Subproduct Discount Amount
+-  Discard Subsequent Rules
 
 These attributes cannot be modified and are a part of the static Magento Catalog Rule form.
 
