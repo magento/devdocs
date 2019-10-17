@@ -15,7 +15,7 @@ Typically, an _update_ includes patches and available hotfixes as part of the `m
 {:.procedure}
 To update the `{{site.data.var.ct}}` package:
 
-1.  On your local workstation, perform an update using Composer.
+1. On your local workstation, perform an update using Composer.
 
     ```bash
     composer update magento/ece-tools
@@ -24,10 +24,10 @@ To update the `{{site.data.var.ct}}` package:
     {: .bs-callout-info }
     If you cannot update beyond `{{site.data.var.ct}}` version 2002.0.8, follow the [upgrade steps]({{page.baseurl}}/cloud/project/ece-tools-upgrade-project.html).
 
-1.  Add, commit, and push your code changes.
+1. Add, commit, and push your code changes.
 
     ```bash
     git add -A && git commit -m "Update magento/ece-tools" && git push origin <branch-name>
     ```
 
-1.  After test validation, merge this branch to the Integration branch.
+1. After test validation, merge this branch to the Integration branch.
