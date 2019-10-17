@@ -354,7 +354,7 @@ Remember that `let` and `const` are block scoped!
 let foo = 'bar',
     num = 1,
     arr = [1, 2, 3];
-    
+
 const identifier = 'CUSTOM_IDENTIFIER';
 ```
 
