@@ -10,8 +10,8 @@ If the message `java: command not found` displays, you must install the Java SDK
 
 See one of the following sections:
 
-* [Install the latest JDK on CentOS](#install-prereq-java-centos)
-* [Install the latest JDK on Ubuntu](#install-prereq-java-ubuntu)
+*  [Install the latest JDK on CentOS](#install-prereq-java-centos)
+*  [Install the latest JDK on Ubuntu](#install-prereq-java-ubuntu)
 
 #### Install the JDK on CentOS   {#install-prereq-java-centos}
 

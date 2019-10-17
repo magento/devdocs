@@ -257,13 +257,13 @@ The toggle button acts like a checkbox. When you touch/click on it, the state to
 
 Use toggle for:
 
-* Binary selection (true/false) when only a single option can be set
-* When multiple non-required selections can be set
-* In relation to other form elements when needed
+*  Binary selection (true/false) when only a single option can be set
+*  When multiple non-required selections can be set
+*  In relation to other form elements when needed
 
 Do not use checkboxes if:
 
-* Multiple options need visibility
+*  Multiple options need visibility
 
 #### Variations
 

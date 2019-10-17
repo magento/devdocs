@@ -963,7 +963,7 @@ Not applicable
 
 ## Related information
 
-* [Integrate with the NegotiableQuote module]({{ page.baseurl }}/b2b/negotiable-quote.html)
-* [Manage negotiable quotes]({{ page.baseurl }}/b2b/negotiable-manage.html)
-* [Update a negotiable quote]({{ page.baseurl }}/b2b/negotiable-update.html)
-* [Place a negotiable quote order]({{ page.baseurl }}/b2b/negotiable-order-workflow.html)
+*  [Integrate with the NegotiableQuote module]({{ page.baseurl }}/b2b/negotiable-quote.html)
+*  [Manage negotiable quotes]({{ page.baseurl }}/b2b/negotiable-manage.html)
+*  [Update a negotiable quote]({{ page.baseurl }}/b2b/negotiable-update.html)
+*  [Place a negotiable quote order]({{ page.baseurl }}/b2b/negotiable-order-workflow.html)
