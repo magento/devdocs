@@ -5,9 +5,9 @@ title: Inventory mass actions
 
 Magento provides several endpoints that allow Multi Source merchants to make quick updates across multiple products. This is helpful for transferring inventory between sources and removing a source without editing each product individually.
 
-* The bulk transfer endpoint moves all quantities of products from one source to another.
-* The bulk assign source endpoint adds sources to multiple products.
-* The bulk unassign source endpoint removes sources from the products. Any inventory quantity assigned to that source is no longer available.
+*  The bulk transfer endpoint moves all quantities of products from one source to another.
+*  The bulk assign source endpoint adds sources to multiple products.
+*  The bulk unassign source endpoint removes sources from the products. Any inventory quantity assigned to that source is no longer available.
 
 **Service names**
 
