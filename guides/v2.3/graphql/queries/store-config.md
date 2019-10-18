@@ -248,8 +248,8 @@ Attribute |  Data Type | Description
 `default_title` | String | The title that appears at the title bar of each page when viewed in a browser
 `demonotice` | Int | Controls the display of the demo store notice at the top of the page. Options: `0` (No) or `1` (Yes)
 `head_includes` | String | Contains scripts that must be included in the HTML before the closing `<head>` tag
-`header_logo_src` | String | The path to the logo that appears in the header
 `head_shortcut_icon` | String | Uploads the small graphic image that appears in the address bar and tab of the browser
+`header_logo_src` | String | The path to the logo that appears in the header
 `logo_alt` | String | The Alt text that is associated with the logo
 `logo_height` | Int | The height of your logo image in pixels
 `logo_width` | Int | The width of your logo image in pixels
