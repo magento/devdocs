@@ -158,4 +158,4 @@ Below is an example of how to disable the previously created observer.
 
 ## Recommended Reading
 
-* [Observers best practices]({{ page.baseurl }}/ext-best-practices/extension-coding/observers-bp.html)
+*  [Observers best practices]({{ page.baseurl }}/ext-best-practices/extension-coding/observers-bp.html)

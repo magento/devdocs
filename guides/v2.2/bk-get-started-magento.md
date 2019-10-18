@@ -37,5 +37,5 @@ Feel free to contact the documentation team directly at
 {:.ref-header}
 Related topics
 
-*   [Release Notes]({{ page.baseurl }}/release-notes/bk-release-notes.html)
-*   [Architecture Guide]({{ page.baseurl }}/architecture/bk-architecture.html)
+*  [Release Notes]({{ page.baseurl }}/release-notes/bk-release-notes.html)
+*  [Architecture Guide]({{ page.baseurl }}/architecture/bk-architecture.html)

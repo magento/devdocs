@@ -19,13 +19,13 @@ To connect with Magento and the Community, join us on the [Magento Community Eng
 
 We have [channels][] for each project, but the following channels are recommended for new members:
 
-- [announcements][]: Introduce yourself and get quick updates for Magento Community Engineering
-- [general][]: Open chat for introductions and Magento 2 questions
-- [appdesign][]: Open chat for Magento architecture and [technical guidelines][]
-- [coding-standards][]: Open chat for developing [coding standards][] for Magento
-- [github][]: Support for GitHub issues, pull requests, and processes
-- [public-backlog][]: Discussions of the Magento 2 backlog
-- [devdocs][]: Documentation contribution support
+-  [announcements][]: Introduce yourself and get quick updates for Magento Community Engineering
+-  [general][]: Open chat for introductions and Magento 2 questions
+-  [appdesign][]: Open chat for Magento architecture and [technical guidelines][]
+-  [coding-standards][]: Open chat for developing [coding standards][] for Magento
+-  [github][]: Support for GitHub issues, pull requests, and processes
+-  [public-backlog][]: Discussions of the Magento 2 backlog
+-  [devdocs][]: Documentation contribution support
 
 [contribute]: https://github.com/magento/devdocs/blob/master/.github/CONTRIBUTING.md
 [technical guidelines]: {{ site.baseurl }}/guides/v2.3/coding-standards/technical-guidelines.html

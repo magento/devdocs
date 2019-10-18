@@ -8,12 +8,12 @@ Magento incorporates the core architectural principles of object-oriented, PHP-b
 
 The following discussion focuses on how these topics apply directly to Magento:
 
-* Magento technology stack
-* Magento View Model
-* Extensibility
-* Modularity
-* Event-driven architecture
-* Security
+*  Magento technology stack
+*  Magento View Model
+*  Extensibility
+*  Modularity
+*  Event-driven architecture
+*  Security
 
 {:.ref-header}
 Related topics

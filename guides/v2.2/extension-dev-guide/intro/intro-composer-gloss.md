@@ -9,14 +9,14 @@ redirect_from:
 
 We refer to what you're coding as *components*. (Composer refers to them as <a href="https://getcomposer.org/doc/05-repositories.md#packages" target="_blank">*packages*</a>; the terms component and package are equivalent.) A [Magento component](https://glossary.magento.com/magento-component) can be classified into the following *types*:
 
-* [Module](https://glossary.magento.com/module) (extend Magento capabilities)
-* [Theme](https://glossary.magento.com/theme) (change the look and feel of your [storefront](https://glossary.magento.com/storefront) and Admin)
-* [Language package](https://glossary.magento.com/language-package) (localize the storefront and Admin)
+*  [Module](https://glossary.magento.com/module) (extend Magento capabilities)
+*  [Theme](https://glossary.magento.com/theme) (change the look and feel of your [storefront](https://glossary.magento.com/storefront) and Admin)
+*  [Language package](https://glossary.magento.com/language-package) (localize the storefront and Admin)
 
 You can *package* your components as follows:
 
-* Individually
-* As a [metapackage](https://getcomposer.org/doc/04-schema.md#type), which is a Magento Marketplace requirement if you're developing a product that has more than one component.
+*  Individually
+*  As a [metapackage](https://getcomposer.org/doc/04-schema.md#type), which is a Magento Marketplace requirement if you're developing a product that has more than one component.
 
    A metapackage consists of *shared packages*. Examples: a metapackage that consists of a module and a theme, two modules, two themes, and so on.
 
@@ -41,16 +41,16 @@ You can upload to Magento Marketplace as many shared packages as you want but yo
 {:.ref-header}
 Related topics
 
-* [metapackages]({{ page.baseurl }}/extension-dev-guide/package/package_module.html#package-metapackage)
-* [component types in `composer.json`]({{ page.baseurl }}/extension-dev-guide/build/composer-integration.html).
+*  [metapackages]({{ page.baseurl }}/extension-dev-guide/package/package_module.html#package-metapackage)
+*  [component types in `composer.json`]({{ page.baseurl }}/extension-dev-guide/build/composer-integration.html).
 
 ### Component Manager {#gloss-compman}
 
 Merchants use the [Component Manager]({{ page.baseurl }}/comp-mgr/module-man/compman-start.html) (part of the Magento Admin) to do any of the following:
 
-* Install, uninstall
-* Update
-* Enable, disable
+*  Install, uninstall
+*  Update
+*  Enable, disable
 
 If you package and upload your components as discussed in this guide and in the <em>Marketplace User Guide</em>, merchants can easily update your components after you publish them.
 

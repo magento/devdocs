@@ -17,9 +17,9 @@ Do not use the ObjectManager helper class for classes with a small number of dep
 
 The ObjectManager public interface methods are:
 
--   [getObject method](#getobject). Creates class instances with automatically mocked dependencies.
--   [getCollectionMock method](#getCollectionMock). Lists mocked constructor arguments.
--   [getConstructArguments method](#getConstructArguments). Creates collection instances that contain specified elements.
+-  [getObject method](#getobject). Creates class instances with automatically mocked dependencies.
+-  [getCollectionMock method](#getCollectionMock). Lists mocked constructor arguments.
+-  [getConstructArguments method](#getConstructArguments). Creates collection instances that contain specified elements.
 
 ### getObject method {#getobject}
 

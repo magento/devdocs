@@ -13,15 +13,15 @@ This issue can occur in all environments during any deployment.
 
 To resolve, you need the SSH information and store URL available through the [Project Web Interface]({{ page.baseurl }}/cloud/project/projects.html) or your noted access.
 
-1.  Open a terminal application.
-1.  [Checkout a branch]({{ page.baseurl }}/cloud/before/before-setup-env-2_clone.html#branch) that corresponds to the environment where you are experiencing the issue.
-1.  Regenerate the image cache:
+1. Open a terminal application.
+1. [Checkout a branch]({{ page.baseurl }}/cloud/before/before-setup-env-2_clone.html#branch) that corresponds to the environment where you are experiencing the issue.
+1. Regenerate the image cache:
 
     ```bash
     php bin/magento catalog:images:resize
     ```
 
-1.  Test the category pages through the store URL.
+1. Test the category pages through the store URL.
 
 ## Locate blocks in themes that make them uncacheable {#uncache}
 

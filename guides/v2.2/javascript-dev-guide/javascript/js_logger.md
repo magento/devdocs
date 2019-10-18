@@ -162,8 +162,8 @@ The `LogFormatter` class is responsible for processing the message of the provid
 
 **Parameters**
 
-- `dateFormat = "YYYY-MM-DD hh:mm:ss"`: Date format that is applied to display the entry creation time.
-- `template = "[${ $.date }] [${ $.entry.levelName }] ${ $.message }`: Template used to create the resulting message of an entry.
+-  `dateFormat = "YYYY-MM-DD hh:mm:ss"`: Date format that is applied to display the entry creation time.
+-  `template = "[${ $.date }] [${ $.entry.levelName }] ${ $.message }`: Template used to create the resulting message of an entry.
 
 ### `process(entry)`
 Creates a text representation of the provided entry. If default settings are used, the resulting string looks like following: `[2017-04-07 01:36:24] [DEBUG] Log message`.
