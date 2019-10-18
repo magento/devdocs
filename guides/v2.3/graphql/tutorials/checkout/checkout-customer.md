@@ -16,8 +16,8 @@ contributor_link: https://www.atwix.com/
 
 Customers can make purchases in two ways:
 
-* As a logged-in user
-* As a guest user who does not create an account
+*  As a logged-in user
+*  As a guest user who does not create an account
 
 To place order as a new customer, use the `createCustomer` mutation to register the new customer account in the store.
 
@@ -66,7 +66,7 @@ mutation {
 }
 ```
 
-["Customer endpoint"]({{ page.baseurl }}/graphql/reference/customer.html#create-a-customer) describes additional `createCustomer` parameters.
+["Customer endpoint"]({{ page.baseurl }}/graphql/mutations/create-customer.html) describes additional `createCustomer` parameters.
 
 To place an order as a new customer, you must get the customer's authorization token. Use the `generateCustomerToken` mutation for that.
 

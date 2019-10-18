@@ -35,8 +35,8 @@ A simple [Magento Admin](https://glossary.magento.com/magento-admin) [URL](https
 
 ## Security settings
 
-* [Secure cron.php][]
-* [X-Frame-Options header][]
+*  [Secure cron.php][]
+*  [X-Frame-Options header][]
 
 {:.ref-header}
 Related topics

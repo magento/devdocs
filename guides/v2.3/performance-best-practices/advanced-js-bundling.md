@@ -19,7 +19,7 @@ It is designed to provide optimal bundles and be less error-prone than the built
 Bundling JavaScript modules for better performance is about reducing two things:
 
 1. The number of server requests.
-2. The size of those server requests.
+1. The size of those server requests.
 
 In a modular application, the number of server requests can reach into the hundreds. For example, the following screen shot shows only the start of the list of JavaScript modules loaded on the home page of a clean Magento installation.
 
@@ -91,23 +91,24 @@ A clean Magento installation allows reaching enough good performance by splittin
 
 The following steps require you to install and have familiarity with the following tools:
 
-- [nodejs](https://nodejs.org/en/download/)
-- [r.js](http://requirejs.org/docs/optimization.html#download)
-- [PhantomJS](http://phantomjs.org/) (optional)
+-  [nodejs](https://nodejs.org/en/download/)
+-  [r.js](http://requirejs.org/docs/optimization.html#download)
+-  [PhantomJS](http://phantomjs.org/) (optional)
 
 ### Sample code
 
 Full versions of the sample code used in this article are available here:
 
-- [build.js](samples/build.js){:target="_blank"}
-- [deps.js](samples/deps.js){:target="_blank"}
-- [deps-map.sh](samples/deps-map.sh.txt){:target="_blank"}
+-  [build.js](samples/build.js){:target="_blank"}
+-  [deps.js](samples/deps.js){:target="_blank"}
+-  [deps-map.sh](samples/deps-map.sh.txt){:target="_blank"}
 
 ### Part 1: Create a bundling configuration
 
 #### 1\. Add a build.js file
 
 Create a `build.js` file in the Magento root directory. This file will contain the entire build configuration for your bundles.
+
 ```javascript
 ({
     optimize: 'none',
@@ -120,6 +121,7 @@ Later, we will change the `optimize:` setting from_ `none` to `uglify2` to minif
 #### 2\. Add RequireJS dependencies, shims, paths, and map
 
 Add the following RequireJS build configuration nodes, `deps`, `shim`, `paths`, and `map`, to your build file:
+
 ```javascript
 ({
     optimize: 'none',
@@ -143,6 +145,7 @@ Within this file, you will find multiple entries for each of the configuration n
 #### 4\. Add a modules node
 
 At the end of the `build.js` file, add the modules[] array as a placeholder for the bundles you will define for your storefront later.
+
 ```javascript
 ({
     optimize: 'none',
@@ -162,7 +165,7 @@ At the end of the `build.js` file, add the modules[] array as a placeholder for 
 You can retrieve all the RequireJS module dependencies from your store's page types by using:
 
 1. PhantomJS from the command line (assuming you have PhantomJS installed).
-2. RequireJS command in your browser's console.
+1. RequireJS command in your browser's console.
 
 #### To use PhantomJS:
 
@@ -269,9 +272,9 @@ This output shows that `buildTools` is a dependency in only one of the bundle/*.
 
 Our output shows only three page types (homepage, category, and product), which tells us:
 
-* Three dependencies are unique to only one page type (shown by the number 1).
-* Three more dependencies occur on two page types (shown by the number 2).
-* The last three dependencies are common to all three of our page types (shown by the number 3).
+-  Three dependencies are unique to only one page type (shown by the number 1).
+-  Three more dependencies occur on two page types (shown by the number 2).
+-  The last three dependencies are common to all three of our page types (shown by the number 3).
 
 This tells us that we can likely improve our store's page-loading speeds by splitting our dependencies into different bundle, once we know which page types need which dependencies.
 
@@ -327,13 +330,13 @@ This is enough information to build a bundles configuration.
 
 Open the `build.js` configuration file and add your bundles to the `modules` node. Each bundle should define the following properties:
 
-* `name`— the name of the bundle. For example, a name of `bundles/cart` generates a `cart.js` bundle in a `bundles` subdirectory.
+-  `name`— the name of the bundle. For example, a name of `bundles/cart` generates a `cart.js` bundle in a `bundles` subdirectory.
 
-* `create`— a boolean flag to create the bundle (values: `true` or `false`).
+-  `create`— a boolean flag to create the bundle (values: `true` or `false`).
 
-* `include`— an array of assets (strings) included as dependencies for the page. RequireJS traces all dependencies and includes them in the bundle unless excluded.
+-  `include`— an array of assets (strings) included as dependencies for the page. RequireJS traces all dependencies and includes them in the bundle unless excluded.
 
-* `exclude`— an array of bundles or assets to exclude from the bundle.
+-  `exclude`— an array of bundles or assets to exclude from the bundle.
 
 ```javascript
 {
@@ -358,13 +361,13 @@ Open the `build.js` configuration file and add your bundles to the `modules` nod
 
 This example reuses `mage/bootstrap` and `requirejs/require` assets, placing higher priority on their most important components and components that have to be loaded synchronously. The bundles that are present are:
 
-*   `requirejs/require`—the only synchronously loaded bundle
-*   `mage/bootstrap`—the bootstrap bundle with UI components
-*   `bundles/default`—default bundle required for all pages
-*   `bundles/cart`—a bundle required for cart page
-*   `bundles/shipping`—common bundle for shopping cart and checkout page (assuming that checkout is never opened directly the checkout page loads even faster if cart page was opened previously and the shipping bundle was already loaded)
-*   `bundles/checkout`—everything for checkout
-*   `bundles/catalog`—everything for product and category pages
+-  `requirejs/require`—the only synchronously loaded bundle
+-  `mage/bootstrap`—the bootstrap bundle with UI components
+-  `bundles/default`—default bundle required for all pages
+-  `bundles/cart`—a bundle required for cart page
+-  `bundles/shipping`—common bundle for shopping cart and checkout page (assuming that checkout is never opened directly the checkout page loads even faster if cart page was opened previously and the shipping bundle was already loaded)
+-  `bundles/checkout`—everything for checkout
+-  `bundles/catalog`—everything for product and category pages
 
 ### Part 2: Generate bundles
 
@@ -380,10 +383,10 @@ php -f bin/magento setup:static-content:deploy -f -a frontend
 
 This command generates static store deployments for each theme and locale you have set up. For example, if you use the Luma theme and a custom theme with locales in English and French, you would generate four static deployments:
 
-- ...luma/en_US
-- ...luma/fr_FR
-- ...custom/en_US
-- ...custom/fr_FR
+-  ...luma/en_US
+-  ...luma/fr_FR
+-  ...custom/en_US
+-  ...custom/fr_FR
 
 To generate bundles for all store themes and locales, repeat the steps below for each store theme and locale.
 

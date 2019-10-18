@@ -14,8 +14,8 @@ Magento out-of-the-box provides mechanisms for adding this ability, but you stil
 These modifications are the following:
 
 1. Adding vault enabling controls.
-2. Modifying the payment component (updating of the `additional_data` property must be added).
-3. Creating a request data builder.
+1. Modifying the payment component (updating of the `additional_data` property must be added).
+1. Creating a request data builder.
 
 The following paragraphs describe these points in details.
 
@@ -161,4 +161,3 @@ Example from the Braintree `di.xml`:
 ## What's next
 
 [Storing and processing the payment related data]({{ page.baseurl }}/payments-integrations/vault/payment-token.html)
-

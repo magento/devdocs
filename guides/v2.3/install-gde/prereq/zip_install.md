@@ -27,14 +27,14 @@ To transfer the Magento software archive to your server:
 
    There are many ways to configure FTP and SCP. Following are a few packages you can use. Magento does not recommend particular software.
 
-   * Windows: [WinSCP](https://winscp.net/eng/download.php) or [Filezilla](https://filezilla-project.org/download.php)
-   * Mac OS: [CyberDuck](https://cyberduck.io/?l=en) or [Filezilla](https://filezilla-project.org/download.php)
+   *  Windows: [WinSCP](https://winscp.net/eng/download.php) or [Filezilla](https://filezilla-project.org/download.php)
+   *  Mac OS: [CyberDuck](https://cyberduck.io/?l=en) or [Filezilla](https://filezilla-project.org/download.php)
 
-2. Create a connection to your Magento server.
+1. Create a connection to your Magento server.
 
    Follow the prompts on your screen or consult the documentation provided with your FTP software for more information.
 
-3. After you log in to your server, browse to locate the {{site.data.var.ce}} or {{site.data.var.ee}} archive on your local system.
+1. After you log in to your server, browse to locate the {{site.data.var.ce}} or {{site.data.var.ee}} archive on your local system.
 
    On the remote system, browse to locate the web server docroot directory.
 
@@ -42,42 +42,42 @@ To transfer the Magento software archive to your server:
 
    ![]({{ site.baseurl }}/common/images/install-merch_ftp-transfer.png)
 
-4. Transfer the archive from your local system to the web server docroot directory.
+1. Transfer the archive from your local system to the web server docroot directory.
 
    On some FTP client software, you do this by dragging and dropping.
 
-5. Wait while the transfer completes.
-6. Log in to your Magento server, or switch to, the [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html)
-7. Change to the web server docroot or the virtual host directory.
-7. Create a subdirectory for the Magento software.
+1. Wait while the transfer completes.
+1. Log in to your Magento server, or switch to, the [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html)
+1. Change to the web server docroot or the virtual host directory.
+1. Create a subdirectory for the Magento software.
 
-    If you set up a virtual host, the subdirectory name must match the name in your virtual host.
+   If you set up a virtual host, the subdirectory name must match the name in your virtual host.
 
-    For example,
+   For example,
 
-    ```bash
-    mkdir magento2ce
-    ```
+   ```bash
+   mkdir magento2ce
+   ```
 
-    ```bash
-    mkdir magento2ee
-    ```
+   ```bash
+   mkdir magento2ee
+   ```
 
-    You can also use a generic directory name
+   You can also use a generic directory name
 
-    ```bash
-    mkdir magento2
-    ```
+   ```bash
+   mkdir magento2
+   ```
 
-7. Copy the Magento archive to that directory.
+1. Copy the Magento archive to that directory.
 
-    For example,
+   For example,
 
-    ```bash
-    cp /var/www/Magento-CE-2.0.0+Samples.tar.bz2 magento2
-    ```
+   ```bash
+   cp /var/www/Magento-CE-2.0.0+Samples.tar.bz2 magento2
+   ```
 
-8. Continue with the next section.
+1. Continue with the next section.
 
 ## Extract the software on your server {#zip-extract}
 
@@ -98,5 +98,5 @@ Related topics
 
 Install the Magento software:
 
-* [Command line]({{ page.baseurl }}/install-gde/install/cli/install-cli.html)
-* [Setup Wizard]({{ page.baseurl }}/install-gde/install/web/install-web.html)
+*  [Command line]({{ page.baseurl }}/install-gde/install/cli/install-cli.html)
+*  [Setup Wizard]({{ page.baseurl }}/install-gde/install/web/install-web.html)

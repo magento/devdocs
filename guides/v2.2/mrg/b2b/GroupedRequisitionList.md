@@ -14,11 +14,11 @@ The `Magento_GroupedRequisitionList` module enables grouped products to be displ
 
 The `Magento_GroupedRequisitionList` module provides the following features:
 
-* Display grouped products in a requisition list.
+*  Display grouped products in a requisition list.
 
-* Add grouped products to cart from a requisition list.
+*  Add grouped products to cart from a requisition list.
 
-* Disable ability to change quantity of grouped products in a requisition list.
+*  Disable ability to change quantity of grouped products in a requisition list.
 
 ## Installation details
 

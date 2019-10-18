@@ -9,10 +9,10 @@ redirect_from:
 
 If you're new to all this and need some help getting started, we suggest the following:
 
-* [Is the Magento software installed already?]({{ page.baseurl }}/install-gde/basics/basics_magento-installed.html)
-* [What is the software that the Magento server needs to run?]({{ page.baseurl }}/install-gde/basics/basics_software.html)
-* [What operating system is my server running?]({{ page.baseurl }}/install-gde/basics/basics_os-version.html)
-* [How do I log in to my Magento server using a terminal, command prompt, or SSH?]({{ page.baseurl }}/install-gde/basics/basics_login.html)
+*  [Is the Magento software installed already?]({{ page.baseurl }}/install-gde/basics/basics_magento-installed.html)
+*  [What is the software that the Magento server needs to run?]({{ page.baseurl }}/install-gde/basics/basics_software.html)
+*  [What operating system is my server running?]({{ page.baseurl }}/install-gde/basics/basics_os-version.html)
+*  [How do I log in to my Magento server using a terminal, command prompt, or SSH?]({{ page.baseurl }}/install-gde/basics/basics_login.html)
 
 ## General guidelines {#instgde-prereq-mysql-intro}
 
@@ -21,9 +21,9 @@ The Magento application requires MySQL 5.6.x. Magento versions 2.1.2 and later a
 
 Magento _strongly_ recommends you observe the following standard when you set up your Magento database:
 
-* Magento uses [MySQL database triggers](http://dev.mysql.com/doc/refman/5.0/en/triggers.html){:target="_blank"} to improve database access during reindexing. Magento does not support any custom triggers in the Magento database because custom triggers can introduce incompatibilities with future Magento versions.
-* Familiarize yourself with [these potential MySQL trigger limitations](http://dev.mysql.com/doc/mysql-reslimits-excerpt/5.1/en/stored-program-restrictions.html){:target="_blank"} before you continue.
-* If you use MySQL database replication, be aware that Magento does _not_ support MySQL statement-based replication. Make sure you use _only_ [row-based replication](http://dev.mysql.com/doc/refman/5.1/en/replication-formats.html){:target="_blank"}.
+*  Magento uses [MySQL database triggers](http://dev.mysql.com/doc/refman/5.0/en/triggers.html){:target="_blank"} to improve database access during reindexing. Magento does not support any custom triggers in the Magento database because custom triggers can introduce incompatibilities with future Magento versions.
+*  Familiarize yourself with [these potential MySQL trigger limitations](http://dev.mysql.com/doc/mysql-reslimits-excerpt/5.1/en/stored-program-restrictions.html){:target="_blank"} before you continue.
+*  If you use MySQL database replication, be aware that Magento does _not_ support MySQL statement-based replication. Make sure you use _only_ [row-based replication](http://dev.mysql.com/doc/refman/5.1/en/replication-formats.html){:target="_blank"}.
 
 {:.bs-callout .bs-callout-warning}
 Magento 2 currently utilizes `CREATE TEMPORARY TABLE` statements inside transactions, which are [incompatible](https://dev.mysql.com/doc/refman/5.7/en/replication-gtids-restrictions.html) with database implementations utilizing GTID-based replication, such as [Google Cloud SQL second-generation instances](https://cloud.google.com/sql/docs/features#differences).
@@ -35,9 +35,9 @@ If your web server and database server are on different hosts, perform the tasks
 
 See one of the following sections for more information:
 
-* [Installing and configuring MySQL 5.7 on Ubuntu 16](#instgde-prereq-mysql57-ub16)
-* [Installing MySQL 5.6 on Ubuntu 14](#instgde-prereq-mysql56ubu14)
-* [Installing MySQL 5.6 on Ubuntu 12](#instgde-prereq-mysql56ubu12)
+*  [Installing and configuring MySQL 5.7 on Ubuntu 16](#instgde-prereq-mysql57-ub16)
+*  [Installing MySQL 5.6 on Ubuntu 14](#instgde-prereq-mysql56ubu14)
+*  [Installing MySQL 5.6 on Ubuntu 12](#instgde-prereq-mysql56ubu12)
 
 ### Installing and configuring MySQL 5.7 on Ubuntu 16 {#instgde-prereq-mysql57-ub16}
 
@@ -413,10 +413,9 @@ We recommend you configure your database instance as appropriate for your busine
 {:.ref-header}
 Related topics
 
-* [Set up a remote MySQL database connection]({{ page.baseurl }}/install-gde/prereq/mysql_remote.html)
-* [Installing optional software]({{ page.baseurl }}/install-gde/prereq/optional.html)
-* [Apache]({{ page.baseurl }}/install-gde/prereq/apache.html)
-* [PHP 5.5, 5.6, or 7.0&mdash;Ubuntu]({{ page.baseurl }}/install-gde/prereq/php-ubuntu.html)
-* [PHP 5.5, 5.6, or 7.0&mdash;CentOS]({{ page.baseurl }}/install-gde/prereq/php-centos.html)
-* [Configuring security options]({{ page.baseurl }}/install-gde/prereq/security.html)
-* [How to get the Magento software]({{ page.baseurl }}/install-gde/bk-install-guide.html)
+*  [Set up a remote MySQL database connection]({{ page.baseurl }}/install-gde/prereq/mysql_remote.html)
+*  [Installing optional software]({{ page.baseurl }}/install-gde/prereq/optional.html)
+*  [Apache]({{ page.baseurl }}/install-gde/prereq/apache.html)
+*  [PHP]({{ page.baseurl }}/install-gde/prereq/php-settings.html)
+*  [Configuring security options]({{ page.baseurl }}/install-gde/prereq/security.html)
+*  [How to get the Magento software]({{ page.baseurl }}/install-gde/bk-install-guide.html)

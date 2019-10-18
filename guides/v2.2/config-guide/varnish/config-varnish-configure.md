@@ -16,9 +16,9 @@ In the sections that follow, we use port 8080 as an example.
 To change the Apache 2.2 listen port:
 
 1. Open `/etc/httpd/conf/httpd.conf` in a text editor.
-2. Locate the `Listen` directive.
-3. Change the value of the listen port to `8080`. (You can use any available listen port.)
-4. Save your changes to `httpd.conf` and exit the text editor.
+1. Locate the `Listen` directive.
+1. Change the value of the listen port to `8080`. (You can use any available listen port.)
+1. Save your changes to `httpd.conf` and exit the text editor.
 
 ## Modify the Varnish system configuration {#config-varnish-config-sysvcl}
 
@@ -26,28 +26,28 @@ To modify the Varnish system configuration:
 
 1. As a user with `root` privileges, open your Vanish configuration file in a text editor:
 
-   * CentOS 6: `/etc/sysconfig/varnish`
-   * CentOS 7: `/etc/varnish/varnish.params`
-   * Debian: `/etc/default/varnish`
-   * Ubuntu: `/etc/default/varnish`
+   *  CentOS 6: `/etc/sysconfig/varnish`
+   *  CentOS 7: `/etc/varnish/varnish.params`
+   *  Debian: `/etc/default/varnish`
+   *  Ubuntu: `/etc/default/varnish`
 
-2. Set the Varnish listen port to 80:
+1. Set the Varnish listen port to 80:
 
-    ```conf
-    VARNISH_LISTEN_PORT=80
-    ```
+   ```conf
+   VARNISH_LISTEN_PORT=80
+   ```
 
-    For Varnish 4.&#42;, make sure that DAEMON_OPTS contains the correct listening port for the `-a` parameter (even if VARNISH_LISTEN_PORT is set to the correct value):
+   For Varnish 4.&#42;, make sure that DAEMON_OPTS contains the correct listening port for the `-a` parameter (even if VARNISH_LISTEN_PORT is set to the correct value):
 
-    ```conf
-    DAEMON_OPTS="-a :80 \
-       -T localhost:6082 \
-       -f /etc/varnish/default.vcl \
-       -S /etc/varnish/secret \
-       -s malloc,256m"
-    ```
+   ```conf
+   DAEMON_OPTS="-a :80 \
+      -T localhost:6082 \
+      -f /etc/varnish/default.vcl \
+      -S /etc/varnish/secret \
+      -s malloc,256m"
+   ```
 
-3. Save your changes to the Varnish configuration file and exit the text editor.
+1. Save your changes to the Varnish configuration file and exit the text editor.
 
 ### Modify <code>default.vcl</code> {#config-varnish-config-default}
 
@@ -57,47 +57,47 @@ To minimally configure Varnish:
 
 1. Back up `default.vcl`:
 
-    ```bash
-    cp /etc/varnish/default.vcl /etc/varnish/default.vcl.bak
-    ```
+   ```bash
+   cp /etc/varnish/default.vcl /etc/varnish/default.vcl.bak
+   ```
 
-2. Open `/etc/varnish/default.vcl` in a text editor.
-3. Locate the following stanza:
+1. Open `/etc/varnish/default.vcl` in a text editor.
+1. Locate the following stanza:
 
-    ```conf
-    backend default {
-        .host = "127.0.0.1";
-        .port = "80";
-    }
-    ```
+   ```conf
+   backend default {
+       .host = "127.0.0.1";
+       .port = "80";
+   }
+   ```
 
-4. Replace the value of `.host` with the fully qualified hostname or IP address and listen port of the Varnish *backend* or *origin server*; that is, the server providing the content Varnish will accelerate.
+1. Replace the value of `.host` with the fully qualified hostname or IP address and listen port of the Varnish *backend* or *origin server*; that is, the server providing the content Varnish will accelerate.
 
    Typically, this is your web server.
 
    [More information](https://www.varnish-cache.org/docs/trunk/users-guide/vcl-backends.html)
 
-5. Replace the value of `.port` with the web server's listen port (8080 in this example).
+1. Replace the value of `.port` with the web server's listen port (8080 in this example).
 
-    Example: Apache is installed on host 192.0.2.55 and Apache is listening on port 8080:
+   Example: Apache is installed on host 192.0.2.55 and Apache is listening on port 8080:
 
-    ```conf
-    backend default {
-        .host = "192.0.2.55";
-        .port = "8080";
-    }
-    ```
+   ```conf
+   backend default {
+       .host = "192.0.2.55";
+       .port = "8080";
+   }
+   ```
 
-   {:.bs-callout .bs-callout-info}
-   If Varnish and Apache are running on the same host, we recommend you use an IP address or hostname and not `localhost`.
+  {:.bs-callout .bs-callout-info}
+  If Varnish and Apache are running on the same host, we recommend you use an IP address or hostname and not `localhost`.
 
-7. Save your changes to `default.vcl` and exit the text editor.
+1. Save your changes to `default.vcl` and exit the text editor.
 
-8. Restart Varnish:
+1. Restart Varnish:
 
-    ```bash
-    service varnish restart
-    ```
+   ```bash
+   service varnish restart
+   ```
 
 If Varnish fails to start, try running it from the command line as follows:
 
@@ -112,9 +112,9 @@ include note.html
 type='info'
 content='If Varnish does not start as a service, you must configure SELinux rules to allow it to run. Consult the following resources:
 
--  [flatlinesecurity](http://flatlinesecurity.com/posts/varnish-4-selinux/)
--  [CentOS wiki](https://wiki.centos.org/HowTos/SELinux)
--  [CentOS documentation](https://www.centos.org)'
+*  [flatlinesecurity](http://flatlinesecurity.com/posts/*arnish-4-selinux/)
+*  [CentOS wiki](https://wiki.centos.org/HowTos/SELinux)
+*  [CentOS documentation](https://www.centos.org)'
 
 %}
 
@@ -124,8 +124,8 @@ The following sections discuss how you can verify that Varnish is working but *w
 
 Perform the tasks discussed in the following sections in the order shown:
 
-* [Start Varnish](#config-varnish-verify-start)
-* [netstat](#config-varnish-verify-netstat)
+*  [Start Varnish](#config-varnish-verify-start)
+*  [netstat](#config-varnish-verify-netstat)
 
 ### Start Varnish {#config-varnish-verify-start}
 
@@ -135,23 +135,23 @@ If Varnish fails to start as a service, start it from the command line as follow
 
 1. Start the Varnish CLI:
 
-    ```bash
-    varnishd -d -f /etc/varnish/default.vcl
-    ```
+   ```bash
+   varnishd -d -f /etc/varnish/default.vcl
+   ```
 
-2. Start the Varnish child process:
+1. Start the Varnish child process:
 
-    When prompted, enter `start`
+   When prompted, enter `start`
 
-    The following messages display to confirm a successful start:
+   The following messages display to confirm a successful start:
 
-    ```terminal
-    child (29805) Started
-    200 0
+   ```terminal
+   child (29805) Started
+   200 0
 
-    Child (29805) said
-    Child (29805) said Child starts
-    ```
+   Child (29805) said
+   Child (29805) said Child starts
+   ```
 
 ### netstat {#config-varnish-verify-netstat}
 

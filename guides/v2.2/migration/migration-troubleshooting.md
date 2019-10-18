@@ -27,13 +27,13 @@ This message appears because the Data Migration Tool runs internal tests to veri
 
 #### Possible solutions
 
-* Install the corresponding Magento 2 extensions from [Magento Marketplace](https://marketplace.magento.com/){:target:"_blank"}
+*  Install the corresponding Magento 2 extensions from [Magento Marketplace](https://marketplace.magento.com/){:target:"_blank"}
 
     If the conflicting data originates from an extension which adds own database structure elements, then the Magento 2 version of the same extension may add such elements to the destination (Magento 2) database, thus fixing the issue.
 
-* Use the `-a` argument when executing the tool to auto resolve errors and prevent migration from stopping.
+*  Use the `-a` argument when executing the tool to auto resolve errors and prevent migration from stopping.
 
-* Configure the Tool to ignore the problematic data
+*  Configure the Tool to ignore the problematic data
 
 To ignore database entities, add the `<ignore>` tag to an entity in the `map.xml` file, like this:
 
@@ -72,13 +72,13 @@ A class from Magento 1 codebase could not be found in Magento 2 codebase during 
 
 #### Possible solutions
 
-* Install the corresponding Magento 2 extension
+*  Install the corresponding Magento 2 extension
 
-* Ignore the attribute that causes the issue
+*  Ignore the attribute that causes the issue
 
     For this, add the attribute to the `ignore` group in the `eav-attribute-groups.xml.dist` file.
 
-* Add class mapping using the `class-map.xml.dist` file
+*  Add class mapping using the `class-map.xml.dist` file
 
 ### Foreign key constraint fails
 

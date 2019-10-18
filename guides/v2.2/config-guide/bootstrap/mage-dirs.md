@@ -17,8 +17,8 @@ Specify an associative array where keys are constants from [\\Magento\\App\\File
 
 You can set `MAGE_DIRS` in any of the following ways:
 
-* [Set the value of bootstrap parameters]({{ page.baseurl }}/config-guide/bootstrap/magento-how-to-set.html)
-* Use a custom entry point script such as the following:
+*  [Set the value of bootstrap parameters]({{ page.baseurl }}/config-guide/bootstrap/magento-how-to-set.html)
+*  Use a custom entry point script such as the following:
 
    ```php
    use Magento\Framework\App\Filesystem\DirectoryList;

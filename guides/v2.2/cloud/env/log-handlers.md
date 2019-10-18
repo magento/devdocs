@@ -52,11 +52,11 @@ log:
 
 Log levels determine the level of detail in notification messages. The following log level categories include every log level below it. For example, a `debug` level includes logging from every level, whereas an `alert` level only shows alerts and emergencies.
 
--   **debug**—detailed debug information
--   **info**—interesting events, such as a user login or SQL log
--   **notice**—normal, but significant events
--   **warning**—exceptional occurrences that are not errors, such as the use of a deprecated API or poor use of an API
--   **error**—run-time errors that do not require immediate action
--   **critical**—critical conditions, such as an unavailable application component or an unexpected exception
--   **alert**—immediate action required—such as a website is down or the database is unavailable—that triggers an SMS alert
--   **emergency**—system is unusable
+-  **debug**—detailed debug information
+-  **info**—interesting events, such as a user login or SQL log
+-  **notice**—normal, but significant events
+-  **warning**—exceptional occurrences that are not errors, such as the use of a deprecated API or poor use of an API
+-  **error**—run-time errors that do not require immediate action
+-  **critical**—critical conditions, such as an unavailable application component or an unexpected exception
+-  **alert**—immediate action required—such as a website is down or the database is unavailable—that triggers an SMS alert
+-  **emergency**—system is unusable

@@ -22,47 +22,47 @@ The following interfaces and classes have been deprecated. They cannot be mapped
 
 `ScalableInventory` interfaces:
 
-- `ItemInterface`
-- `ItemsInterface`
+-  `ItemInterface`
+-  `ItemsInterface`
 
 `CatalogInventory` interfaces:
 
-- `QueryProcessorInterface`
-- `RegisterProductSaleInterface`
-- `RevertProductSaleInterface`
-- `StockCollectionInterface`
-- `StockConfigurationInterface`
-- `StockCriteriaInterface`
-- `StockIndexInterface`
-- `StockInterface` (indexer)
-- `StockInterface`
-- `StockItemCollectionInterface`
-- `StockItemCriteriaInterface`
-- `StockItemInterface`
-- `StockItemRepositoryInterface`
-- `StockManagementInterface`
-- `StockRegistryInterface`
-- `StockRepositoryInterface`
-- `StockStateInterface`
-- `StockStatusCollectionInterface`
-- `StockStatusCriteriaInterface`
-- `StockStatusInterface`
-- `StockStatusRepositoryInterface`
+-  `QueryProcessorInterface`
+-  `RegisterProductSaleInterface`
+-  `RevertProductSaleInterface`
+-  `StockCollectionInterface`
+-  `StockConfigurationInterface`
+-  `StockCriteriaInterface`
+-  `StockIndexInterface`
+-  `StockInterface` (indexer)
+-  `StockInterface`
+-  `StockItemCollectionInterface`
+-  `StockItemCriteriaInterface`
+-  `StockItemInterface`
+-  `StockItemRepositoryInterface`
+-  `StockManagementInterface`
+-  `StockRegistryInterface`
+-  `StockRepositoryInterface`
+-  `StockStateInterface`
+-  `StockStatusCollectionInterface`
+-  `StockStatusCriteriaInterface`
+-  `StockStatusInterface`
+-  `StockStatusRepositoryInterface`
 
 `CatalogInventory` classes:
 
-- `Backorders`
-- `DefaultStock`
-- `DefaultStockqty`
-- `Item`
-- `Minsaleqty`
-- `Qtyincrements`
-- `QuantityValidator`
-- `Status`
-- `Stock` (Helper)
-- `Stock` (model/source)
-- `Stock`
-- `StockFactory`
+-  `Backorders`
+-  `DefaultStock`
+-  `DefaultStockqty`
+-  `Item`
+-  `Minsaleqty`
+-  `Qtyincrements`
+-  `QuantityValidator`
+-  `Status`
+-  `Stock` (Helper)
+-  `Stock` (model/source)
+-  `Stock`
+-  `StockFactory`
 
 ## {{site.data.var.im}} API
 

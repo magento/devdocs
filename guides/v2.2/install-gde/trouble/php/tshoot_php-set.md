@@ -32,9 +32,9 @@ To increase your PHP memory limit:
 
    Examples follow:
 
-   * CentOS: `service httpd restart`
-   * Ubuntu: `service apache2 restart`
-   * nginx (both CentOS and Ubuntu): `service nginx restart`
+   *  CentOS: `service httpd restart`
+   *  Ubuntu: `service apache2 restart`
+   *  nginx (both CentOS and Ubuntu): `service nginx restart`
 
 1. Try the installation again.
 
@@ -62,10 +62,9 @@ Error text is typically:
 Parse error: syntax error, unexpected 'data' (T_STRING)
 ```
 
-### Solution: Set <code>asp_tags = off</code> in <code>php.ini</code>
 Multiple templates have syntax for support abstract level on templates (use different templates engines like Twig) wrapped in `<% %>` tags, like this [template][]{:target="_blank"} for displaying a product image:
 
-```php?start_inline=1
+```php
 <img
     class="product-image"
     src="<%- data.url %>"

@@ -18,10 +18,10 @@ Magento requires Apache 2.2.x or 2.4.x.
 
 If you're new to all this and need some help getting started, we suggest the following:
 
-* [Is the Magento software installed already?]({{ page.baseurl }}/install-gde/basics/basics_magento-installed.html)
-* [What is the software that the Magento server needs to run?]({{ page.baseurl }}/install-gde/basics/basics_software.html)
-* [What operating system is my server running?]({{ page.baseurl }}/install-gde/basics/basics_os-version.html)
-* [How do I log in to my Magento server using a terminal, command prompt, or SSH?]({{ page.baseurl }}/install-gde/basics/basics_login.html)
+*  [Is the Magento software installed already?]({{ page.baseurl }}/install-gde/basics/basics_magento-installed.html)
+*  [What is the software that the Magento server needs to run?]({{ page.baseurl }}/install-gde/basics/basics_software.html)
+*  [What operating system is my server running?]({{ page.baseurl }}/install-gde/basics/basics_os-version.html)
+*  [How do I log in to my Magento server using a terminal, command prompt, or SSH?]({{ page.baseurl }}/install-gde/basics/basics_login.html)
 
 ## Important: Apache rewrites and .htaccess {#apache-help-rewrite}
 
@@ -42,7 +42,7 @@ Failure to enable these settings typically results in no styles displaying on yo
 
 ## Verify the Apache version {#install-prereq-apache-verify}
 
-To verify the Apache version you're currently running, enter:
+To verify the Apache version you are currently running, enter:
 
 ```bash
 apache2 -v
@@ -55,17 +55,17 @@ Server version: Apache/2.2.22 (Ubuntu)
 Server built: Jul 22 2014 14:35:32
 ```
 
-* If Apache is *not* installed, see:
-   * [Installing or upgrading Apache on Ubuntu](#install-prereq-apache-ubuntu)
-   * [Installing Apache on CentOS](#install-prereq-apache-centos)
-* If Apache 2.2 is installed on Ubuntu 12 *and* you want to use [PHP](https://glossary.magento.com/php) 5.6, see the next section
+*  If Apache is *not* installed, see:
+   *  [Installing or upgrading Apache on Ubuntu](#install-prereq-apache-ubuntu)
+   *  [Installing Apache on CentOS](#install-prereq-apache-centos)
+*  If Apache 2.2 is installed on Ubuntu 12 *and* you want to use [PHP](https://glossary.magento.com/php) 5.6, see the next section
 
 ## Installing or upgrading Apache on Ubuntu {#install-prereq-apache-ubuntu}
 
 The following sections discusses how to install or upgrade Apache:
 
-* Install Apache
-* Upgrade to Apache 2.4 on Ubuntu 12 to use PHP 5.6 or PHP 7
+*  Install Apache
+*  Upgrade to Apache 2.4 on Ubuntu 12 to use PHP 5.6 or PHP 7
 
 ### Installing Apache on Ubuntu 16, 14, or 12 {#install-prereq-apache-ubuntu-install}
 {% collapsible Click to show/hide content %}
@@ -101,35 +101,30 @@ To install the default version of Apache (Ubuntu 14, 16&mdash;Apache 2.4, Ubuntu
 {:.ref-header}
 Next steps
 
-* [Solving 403 (Forbidden) errors](#apache-error)
-* Continue with the next prerequisite ([PHP Ubuntu]({{ page.baseurl }}/install-gde/prereq/php-ubuntu.html))
-* [Determine your installation or upgrade path]({{ page.baseurl }}/install-gde/bk-install-guide.html)
+*  [Solving 403 (Forbidden) errors](#apache-error)
+*  Continue with the next prerequisite ([PHP Settings]({{ page.baseurl }}/install-gde/prereq/php-settings.html))
+*  [Determine your installation or upgrade path]({{ page.baseurl }}/install-gde/bk-install-guide.html)
 
 {% endcollapsible %}
 
 ### Upgrading Apache on Ubuntu 12 {#install-prereq-apache-ubuntu-upgrade}
 
 {% collapsible Click to show/hide content %}
-
-To use PHP 5.6 on Ubuntu 12, you must upgrade Apache to version 2.4. (By default, Ubuntu 12 comes with Apache 2.2.)
+To use PHP 5.6 on Ubuntu 12, you must upgrade Apache to version 2.4. (By default, Ubuntu 12 comes with Apache 2.2., which is EOL)
 
 To upgrade to Apache 2.4:
 
 1. Add the `ppa:ondrej` repository, which has Apache 2.4:
 
    ```bash
-   apt-get -y update
-   ```
-
-   ```bash
    apt-add-repository ppa:ondrej/apache2
    ```
 
+1. Install Apache 2.4:
+
    ```bash
    apt-get -y update
    ```
-
-1. Install Apache 2.4:
 
    ```bash
    apt-get install -y apache2
@@ -159,9 +154,9 @@ To upgrade to Apache 2.4:
 {:.ref-header}
 Next steps
 
-* [Solving 403 (Forbidden) errors](#apache-error)
-* Continue with the next prerequisite ([PHP Ubuntu]({{ page.baseurl }}/install-gde/prereq/php-ubuntu.html))
-* [Determine your installation or upgrade path]({{ page.baseurl }}/install-gde/bk-install-guide.html)
+*  [Solving 403 (Forbidden) errors](#apache-error)
+*  Continue with the next prerequisite ([PHP Settings]({{ page.baseurl }}/install-gde/prereq/php-settings.html))
+*  [Determine your installation or upgrade path]({{ page.baseurl }}/install-gde/bk-install-guide.html)
 
 {% endcollapsible %}
 
@@ -174,7 +169,7 @@ Installing and configuring Apache is basically a three-step process: install the
 
 ### Installing Apache {#apache-install-centos}
 
-1. Install Apache 2 if you haven't already done so.
+1. Install Apache 2.4 if you haven't already done so.
 
    ```bash
    yum -y install httpd
@@ -204,9 +199,9 @@ Installing and configuring Apache is basically a three-step process: install the
 {:.ref-header}
 Next steps
 
-* [Solving 403 (Forbidden) errors](#apache-error)
-* Continue with the next prerequisite ([PHP Ubuntu]({{ page.baseurl }}/install-gde/prereq/php-ubuntu.html))
-* [Determine your installation or upgrade path]({{ page.baseurl }}/install-gde/bk-install-guide.html)
+*  [Solving 403 (Forbidden) errors](#apache-error)
+*  Continue with the next prerequisite ([PHP Settings]({{ page.baseurl }}/install-gde/prereq/php-settings.html))
+*  [Determine your installation or upgrade path]({{ page.baseurl }}/install-gde/bk-install-guide.html)
 
 {% endcollapsible %}
 
@@ -215,8 +210,8 @@ Next steps
 {% collapsible Click to install solve 403 errors %}
 If you encounter 403 Forbidden errors when trying to access the Magento site, you can update your Apache configuration or your virtual host configuration to enable visitors to the site as discussed in one of the following sections:
 
-* [Solving 403 Forbidden errors for Apache 2.4](#apache-error-2-4)
-* [Solving 403 Forbidden errors for Apache 2.2](#apache-error-2-2)
+*  [Solving 403 Forbidden errors for Apache 2.4](#apache-error-2-4)
+*  [Solving 403 Forbidden errors for Apache 2.2](#apache-error-2-2)
 
 ### Solving 403 Forbidden errors for Apache 2.4 {#apache-error-2-4}
 
@@ -258,9 +253,8 @@ The preceding values for `Order` might not work in all cases. For more informati
 {:.ref-header}
 Related topics
 
-* [PHP 5.5, 5.6, or 7.0&mdash;Ubuntu]({{ page.baseurl }}/install-gde/prereq/php-ubuntu.html)
-* [PHP 5.5, 5.6, or 7.0&mdash;CentOS]({{ page.baseurl }}/install-gde/prereq/php-centos.html)
-* [MySQL]({{ page.baseurl }}/install-gde/prereq/mysql.html)
-* [Configuring security options]({{ page.baseurl }}/install-gde/prereq/security.html)
-* [Installing optional software]({{ page.baseurl }}/install-gde/prereq/optional.html)
-* [Determine your installation or upgrade path]({{ page.baseurl }}/install-gde/bk-install-guide.html)
+*  [PHP]({{ page.baseurl }}/install-gde/prereq/php-settings.html)
+*  [MySQL]({{ page.baseurl }}/install-gde/prereq/mysql.html)
+*  [Configuring security options]({{ page.baseurl }}/install-gde/prereq/security.html)
+*  [Installing optional software]({{ page.baseurl }}/install-gde/prereq/optional.html)
+*  [Determine your installation or upgrade path]({{ page.baseurl }}/install-gde/bk-install-guide.html)

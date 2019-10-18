@@ -29,8 +29,8 @@ The high-level steps required to add a new theme in the Magento system are the f
 
 ## Recommended reading
 
-* [Checklist of modules]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento){:target="_blank"}
-* [Static view files processing]({{page.baseurl}}/config-guide/cli/config-cli-subcommands-static-view.html)
+*  [Checklist of modules]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento){:target="_blank"}
+*  [Static view files processing]({{page.baseurl}}/config-guide/cli/config-cli-subcommands-static-view.html)
 
 ## Create a theme directory
 
@@ -167,10 +167,10 @@ For details about images configuration in the `view.xml` file, see the [Configur
 
 Your theme will likely contain several types of static files:
 
-* Styles
-* Fonts
-* [JavaScript](https://glossary.magento.com/javascript)
-* Images
+*  Styles
+*  Fonts
+*  [JavaScript](https://glossary.magento.com/javascript)
+*  Images
 
 Each type should be stored in a separate sub-directory of `web` in your theme folder:
 
@@ -228,12 +228,12 @@ In your custom theme, you can use a logo file with a different name and format, 
 
 The necessity of declaration depends on whether your theme has a [parent]({{page.baseurl}}/frontend-dev-guide/themes/theme-inherit.html) theme and its logo image. The following cases are possible:
 
-* Your theme does not have a parent theme:
-  - If your logo image name and format uses the default naming convention (`logo.svg`), there is no need to declare it.
-  - If your logo image name or format does not use the default naming convention, you need to [declare it in layout](#logo_declare).
-* Your theme has a parent theme:
-  - If your theme logo image has the same name and format as the parent's theme logo, there is no need to declare it.
-  - If your logo image has a different name or format, declare it in the [layout](https://glossary.magento.com/layout).
+*  Your theme does not have a parent theme:
+   *  If your logo image name and format uses the default naming convention (`logo.svg`), there is no need to declare it.
+   *  If your logo image name or format does not use the default naming convention, you need to [declare it in layout](#logo_declare).
+*  Your theme has a parent theme:
+   *  If your theme logo image has the same name and format as the parent's theme logo, there is no need to declare it.
+   *  If your logo image has a different name or format, declare it in the [layout](https://glossary.magento.com/layout).
 
 ## Declaring theme logo {#logo_declare}
 
@@ -261,7 +261,10 @@ To learn more about theme layouts, refer to the [Layout section]({{page.baseurl}
 
 ## Troubleshooting {#trouble}
 
-When your theme changes are not visible even after clearing the cache, try redeploying your static files using `magento setup:static-content:deploy en_US` (replacing the language/locale as appropriate).
+When your theme changes are not visible even after clearing the cache, try redeploying your static files using the `magento setup:static-content:deploy` command, or add the `-f` argument to force deploy static content in any deployment mode in case you are not in production mode.
+
+{: .bs-callout-info }
+Running this command with the `-f` argument can fix issues regarding deployment of static content, but removes **all** symlinks and deploys the actual static content files.
 
 ## What's next {#next}
 
@@ -275,4 +278,4 @@ For information on how to apply the theme for the storefront, see the [Apply and
 
 ## See also
 
-* [Uninstall a theme]({{ page.baseurl }}/install-gde/install/cli/install-cli-theme-uninstall.html)
+*  [Uninstall a theme]({{ page.baseurl }}/install-gde/install/cli/install-cli-theme-uninstall.html)

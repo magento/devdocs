@@ -1,10 +1,10 @@
 
 This section discusses how to install sample data if you got the Magento software in any of the following ways:
 
-* Downloaded a compressed archive from [Magento](https://magento.com/tech-resources/download).
+*  Downloaded a compressed archive from [Magento](https://magento.com/tech-resources/download).
 
   If you downloaded an archive from GitHub, this method won't work because the `composer.json` file doesn't contain the `repo.magento.com` URL.
-* Used `composer create-project`
+*  Used `composer create-project`
 
 You can use this method of getting sample data for both {{site.data.var.ce}} or {{site.data.var.ee}}, but you must use the same [authentication keys]({{ page.baseurl }}/install-gde/prereq/connect-auth.html) you used to install Magento.
 

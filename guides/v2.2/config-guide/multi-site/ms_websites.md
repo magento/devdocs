@@ -9,10 +9,10 @@ functional_areas:
 
 This task requires you to create a root [category](https://glossary.magento.com/category) (and additional categories if desired) for each store. The tasks discussed in this topic provide one way to set up multiple stores. For additional information, see the following resources in the Magento User Guide:
 
-* [Categories](http://docs.magento.com/m2/ce/user_guide/catalog/categories.html)
-* [Adding Websites](http://docs.magento.com/m2/ce/user_guide/stores/stores-all-create-website.html)
-* [Store URLs](http://docs.magento.com/m2/ce/user_guide/stores/store-urls.html)
-* [Content](http://docs.magento.com/m2/ce/user_guide/cms/content-menu.html)
+*  [Categories](http://docs.magento.com/m2/ce/user_guide/catalog/categories.html)
+*  [Adding Websites](http://docs.magento.com/m2/ce/user_guide/stores/stores-all-create-website.html)
+*  [Store URLs](http://docs.magento.com/m2/ce/user_guide/stores/store-urls.html)
+*  [Content](http://docs.magento.com/m2/ce/user_guide/cms/content-menu.html)
 
 {: .bs-callout-info }
 For example purposes only, we use a French [website](https://glossary.magento.com/website) with website code `french` in this topic. For step-by-step tutorials, see [Tutorial: Set up multiple websites with Apache]({{ page.baseurl }}/config-guide/multi-site/ms_apache.html) and [Tutorial: Set up multiple websites with nginx]({{ page.baseurl }}/config-guide/multi-site/ms_nginx.html)
@@ -48,9 +48,9 @@ Creating a root category is optional, but we show how to do it in this tutorial 
 1. Click **Stores** > **Settings** > **All Stores**.
 1. On the _Stores_ page, click **Create Website**.
 
-   * **Name**—Enter a name to identify the website.
-   * **Code**—Enter a unique code; for example, if you have a French store, you can enter `french`
-   * **Sort Order**—Enter an optional numerical sort order.
+   *  **Name**—Enter a name to identify the website.
+   *  **Code**—Enter a unique code; for example, if you have a French store, you can enter `french`
+   *  **Sort Order**—Enter an optional numerical sort order.
 
    The following figure shows an example.
 
@@ -68,17 +68,17 @@ Creating a root category is optional, but we show how to do it in this tutorial 
 1. In the _Admin_ panel, click **Stores** > **Settings** > **All Stores**.
 1. On the _Stores_ page, click **Create Store**.
 
-   * **Web Site**—Click the name of the website with which to associate this store.
-   * **Name**—Enter a name to identify the store.
-   * **Code**—Enter a unique code to identify the store.
-   * **Root Category**—Click the name of the root category for this store.
+   *  **Web Site**—Click the name of the website with which to associate this store.
+   *  **Name**—Enter a name to identify the store.
+   *  **Code**—Enter a unique code to identify the store.
+   *  **Root Category**—Click the name of the root category for this store.
 
    The following figure shows an example.
 
    ![Add a store]({{ site.baseurl }}/common/images/config_multi-site-store.png)
 
-6. Click **Save Store**.
-7. Repeat these tasks as many times as necessary to create your stores.
+1. Click **Save Store**.
+1. Repeat these tasks as many times as necessary to create your stores.
 
 {% endcollapsible %}
 
@@ -89,10 +89,10 @@ Creating a root category is optional, but we show how to do it in this tutorial 
 1. In the _Admin_ panel, click **Stores** > **Settings** > **All Stores**.
 1. On the Stores page, click **Create Store View**.
 
-   * **Store**—Click the name of the store with which to associate this store view.
-   * **Name**—Enter a name to identify this store view.
-   * **Code**—Enter a unique name to identify this store view.
-   * **Status**—Select **Enabled**.
+   *  **Store**—Click the name of the store with which to associate this store view.
+   *  **Name**—Enter a name to identify this store view.
+   *  **Code**—Enter a unique name to identify this store view.
+   *  **Status**—Select **Enabled**.
 
    The following figure shows an example.
 
@@ -123,9 +123,9 @@ To access a website using a unique URL like `http://french.magento.mg`, you must
    {: .bs-callout-info }
    If you're setting up a base URL for deployment {{site.data.var.ece}}, you must replace the first period with three dashes. For example, if your base URL is `french.branch-sbg7pPa-f3dueAiM03tpy.us.magentosite.cloud`, enter **http://french---branch-sbg7pPa-f3dueAiM03tpy.us.magentosite.cloud**. If you're setting up a base URL for local testing, use a period.
 
-1.  Click **Save Config**.
+1. Click **Save Config**.
 
-1.  Repeat these tasks for other websites.
+1. Repeat these tasks for other websites.
 
 {% endcollapsible %}
 
@@ -183,6 +183,6 @@ You must perform this step last because you will lose access to the Magento Admi
 {:.ref-header}
 Related topics
 
-* [Add content to your websites](http://docs.magento.com/m2/ce/user_guide/cms/content-menu.html)
-* [Tutorial: Set up multiple websites or stores with NGINX]({{ page.baseurl }}/config-guide/multi-site/ms_nginx.html)
-* [Tutorial: Set up multiple websites with Apache]({{ page.baseurl }}/config-guide/multi-site/ms_apache.html)
+*  [Add content to your websites](http://docs.magento.com/m2/ce/user_guide/cms/content-menu.html)
+*  [Tutorial: Set up multiple websites or stores with NGINX]({{ page.baseurl }}/config-guide/multi-site/ms_nginx.html)
+*  [Tutorial: Set up multiple websites with Apache]({{ page.baseurl }}/config-guide/multi-site/ms_apache.html)

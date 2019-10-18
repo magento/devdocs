@@ -10,9 +10,9 @@ Before pushing your code to your [Starter]({{ page.baseurl }}/cloud/basic-inform
 
 These tasks walk through:
 
-* Complete development on your local
-* Complete a full build and deploy process on your local (deploys to the associated active development environment)
-* Test fully before continuing deployment to Staging
+*  Complete development on your local
+*  Complete a full build and deploy process on your local (deploys to the associated active development environment)
+*  Test fully before continuing deployment to Staging
 
 For more information on the full five step process, see the [Deployment process]({{ page.baseurl }}/cloud/reference/discover-deploy.html).
 
@@ -25,13 +25,13 @@ If you modified your `composer.json` file to add modules, we recommend running t
 
 ## Verify all required files in Git {#files}
 
-Your Git branch must have the following files for building and deploying for your local and to Integration, Staging, and Production environments:
+Your Git branch must have the following files for building and deploying to your local, Integration, Staging, and Production environments:
 
-* `auth.json` in the root Magento directory. This file includes the Magento authentication keys entered when creating the project. If you need to verify the file and settings, see [Troubleshoot deployment]({{ page.baseurl }}/cloud/trouble/troubleshoot-deployment.html).
-* `config.php` if you used [Configuration Management]({{ page.baseurl }}/cloud/live/sens-data-over.html) for 2.2.X
-* [`.magento.app.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_magento-app.html) is updated and saved in the root directory
-* [`services.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_services.html) is updated and saved in `magento/`
-* [`routes.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_routes.html) is updated and saved in `magento/`
+*  `auth.json` in the root Magento directory. This file includes the Magento authentication keys entered when creating the project. If you need to verify the file and settings, see [Troubleshoot deployment]({{ page.baseurl }}/cloud/trouble/troubleshoot-deployment.html).
+*  `config.php` if you use [Configuration Management]({{ page.baseurl }}/cloud/live/sens-data-over.html) to manage Magento configuration settings
+*  [`.magento.app.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_magento-app.html) is updated and saved in the root directory
+*  [`services.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_services.html) is updated and saved in `magento/`
+*  [`routes.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_routes.html) is updated and saved in `magento/`
 
 ## Test build your code locally before pushing {#test-build}
 
@@ -76,16 +76,16 @@ To push code to your remote environment:
    git push origin <branch name>
    ```
 
-1.  The build and deploy phases begin. Wait for the deployment to complete.
+1. The build and deploy phases begin. Wait for the deployment to complete.
 
 ## Build phase {#build}
 
 During the [build phase]({{page.baseurl}}/cloud/reference/discover-deploy.html#cloud-deploy-over-phases-build), we perform the following tasks:
 
-* Apply patches distributed to all {{site.data.var.ece}} accounts
-* Apply patches we provided specifically to you
-* Enable modules to build
-* Compile code and the [dependency injection](https://glossary.magento.com/dependency-injection) configuration
+*  Apply patches distributed to all {{site.data.var.ece}} accounts
+*  Apply patches we provided specifically to you
+*  Enable modules to build
+*  Compile code and the [dependency injection](https://glossary.magento.com/dependency-injection) configuration
 
 The build also checks for a [configuration file]({{ page.baseurl }}/cloud/live/sens-data-over.html). If the file exists, the static file deployment is also completed during the build stage. If not, it is completed in the deployment stage.
 
@@ -171,10 +171,10 @@ We strongly recommend you complete your testing in an Integration or Staging env
 
 We highly recommend having Magento already installed prior to deployment. During the [deployment phase]({{ page.baseurl }}/cloud/reference/discover-deploy.html#cloud-deploy-over-phases-hook), we perform the following tasks:
 
-* Install the Magento application if needed
-* If the Magento application is installed, upgrade components
-* Clear the [cache](https://glossary.magento.com/cache)
-* Set the Magento application for [`production`]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html#production-mode) mode
+*  Install the Magento application if needed
+*  If the Magento application is installed, upgrade components
+*  Clear the [cache](https://glossary.magento.com/cache)
+*  Set the Magento application for [`production`]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html#production-mode) mode
 
 {:.procedure}
 To deploy your site:

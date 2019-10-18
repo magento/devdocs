@@ -30,38 +30,38 @@ To best develop and manage your host, we recommend using a virtual machine. The 
 
 For your VM, we recommend installing one of the following:
 
-* [Vagrant](https://www.vagrantup.com/docs/) for a virtual machine
-* [Docker](https://docs.docker.com/) for a container
+*  [Vagrant](https://www.vagrantup.com/docs/) for a virtual machine
+*  [Docker](https://docs.docker.com/) for a container
 
 When using Vagrant, we also recommend the package [hostmanager](https://github.com/devopsgroup-io/vagrant-hostmanager) and using [VirtualBox](https://www.virtualbox.org/wiki/Documentation) to manage the environment. VirtualBox extends support and features across all OS and platforms to create and manage multiple VMs and operating systems on your local.
 
 ## Development tools {#devtools}
 
-* [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) - Provides code branching and management for accessing {{site.data.var.ee}} and your code repositories. Use Git command-line commands or applications of your choice to work with Git. You can install this on your local VM or on your host. For more information, see [How Cloud uses Git]({{ page.baseurl }}/cloud/reference/git-integration.html).
-* [Composer](https://getcomposer.org/download/) - Used for dependency management. Composer enables us to manage the Magento components and their dependencies. Install on your local VM. For more information, see [How Cloud uses Composer]({{ page.baseurl }}/cloud/reference/cloud-composer.html).
+*  [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) - Provides code branching and management for accessing {{site.data.var.ee}} and your code repositories. Use Git command-line commands or applications of your choice to work with Git. You can install this on your local VM or on your host. For more information, see [How Cloud uses Git]({{ page.baseurl }}/cloud/reference/git-integration.html).
+*  [Composer](https://getcomposer.org/download/) - Used for dependency management. Composer enables us to manage the Magento components and their dependencies. Install on your local VM. For more information, see [How Cloud uses Composer]({{ page.baseurl }}/cloud/reference/cloud-composer.html).
 
 ## Web server (local) {#webserver}
 
-Although {{ site.data.var.ee }} supports the Apache web server, {{ site.data.var.ece }} uses Nginx. To set up a local development environment that is as close to the cloud installation environment as possible, install and configure [Nginx]({{ page.baseurl }}/install-gde/prereq/nginx.html) as your local web server.
+We strongly recommend installing [Nginx]({{ page.baseurl }}/install-gde/prereq/nginx.html) for your web server on your local. While {{site.data.var.ee}} supports [Apache]({{ page.baseurl }}/install-gde/prereq/apache.html), {{site.data.var.ece}} uses Nginx. To have your local as close to cloud installations as possible, install and configure Nginx.
 
 ## PHP (local) {#php}
 
-Install [PHP](https://glossary.magento.com/php) on your local. We recommend PHP 7.0. For information on installing PHP, see these instructions for [CentOS]({{ page.baseurl }}/install-gde/prereq/php-centos.html) and [Ubuntu]({{ page.baseurl }}/install-gde/prereq/php-ubuntu.html). For instructions for another OS, see the [PHP documentation](http://php.net/manual/en/install.php).
+Install [PHP](https://glossary.magento.com/php) on your local workstation. For information on installing PHP, see [PHP Settings]({{ page.baseurl }}/install-gde/prereq/php-settings.html). For instructions for another OS, see the [PHP documentation](http://php.net/manual/en/install.php).
 
 The following packages may also be helpful for your PHP installation:
 
-* [bcmath](http://php.net/manual/en/book.bc.php)
-* [curl](http://php.net/manual/en/book.curl.php)
-* ext-dom
-* [fpm](https://php-fpm.org/)
-* [gd](http://php.net/manual/en/book.image.php)
-* [intl](http://php.net/manual/en/book.intl.php)
-* [json](http://php.net/manual/en/ref.json.php)
-* [mbstring](http://php.net/manual/en/book.mbstring.php)
-* [mcrypt](http://php.net/manual/en/book.mcrypt.php)
-* [mysql](http://php.net/manual/en/set.mysqlinfo.php)
-* [xml](http://php.net/manual/en/book.xml.php)
-* [zip](http://php.net/manual/en/book.zip.php)
+*  [bcmath](http://php.net/manual/en/book.bc.php)
+*  [curl](http://php.net/manual/en/book.curl.php)
+*  ext-dom
+*  [fpm](https://php-fpm.org/)
+*  [gd](http://php.net/manual/en/book.image.php)
+*  [intl](http://php.net/manual/en/book.intl.php)
+*  [json](http://php.net/manual/en/ref.json.php)
+*  [mbstring](http://php.net/manual/en/book.mbstring.php)
+*  [mcrypt](http://php.net/manual/en/book.mcrypt.php) (for PHP 7.1 and earlier only)
+*  [mysql](http://php.net/manual/en/set.mysqlinfo.php)
+*  [xml](http://php.net/manual/en/book.xml.php)
+*  [zip](http://php.net/manual/en/book.zip.php)
 
 ### Set up PHP memory limit {#cloud-first-php}
 
@@ -85,10 +85,10 @@ To set a memory limit:
 1. Save your changes to `php.ini` and exit the text editor.
 1. Restart your web server:
 
-   * Apache:
-      * CentOS: `service httpd restart`
-      * Ubuntu: `service apache2 restart`
-   * Nginx: `service nginx restart`
+   *  Apache:
+      *  CentOS: `service httpd restart`
+      *  Ubuntu: `service apache2 restart`
+   *  Nginx: `service nginx restart`
 
 ## Database (local) {#database}
 
@@ -125,9 +125,6 @@ To install and create a MariaDB database for Magento on your local:
 
    ```bash
    create database magento;
-   ```
-
-   ```bash
    use magento;
    ```
 
@@ -222,8 +219,8 @@ To install the Magento Cloud CLI:
 
 The requirements listed in this topic are specific to {{site.data.var.ece}} environments. You will also install {{site.data.var.ee}} on your VM or Docker container. For that installation, you should also review the following:
 
-* [{{site.data.var.ee}} requirements]({{ page.baseurl }}/install-gde/system-requirements.html)
-* [(Integrator) Integrator installation]({{ page.baseurl }}/install-gde/composer.html)
+*  [{{site.data.var.ee}} requirements]({{ page.baseurl }}/install-gde/system-requirements.html)
+*  [(Integrator) Integrator installation]({{ page.baseurl }}/install-gde/composer.html)
 
 ## Additional options
 
