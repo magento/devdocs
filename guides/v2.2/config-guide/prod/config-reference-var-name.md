@@ -110,34 +110,34 @@ The following table summarizes how to find website or store view value in the Ad
 For example, to find a website or store view scope value in the Admin:
 
 1. Log in to the Magento Admin as a user authorized to view websites.
-2. Click **Stores** > **All Stores**.
-3. Click the name of a website or store view.
+1. Click **Stores** > **All Stores**.
+1. Click the name of a website or store view.
 
    The right pane is displayed similar to the following.
 
    ![Find a website code]({{ site.baseurl }}/common/images/cloud_vars_website-code.png){:width="300px"}
 
-3. The scope name is displayed in the **Code** field.
-4. Continue with [Step 2:  Set global, website, or store view variables](#cloud-system-vars-sys).
+1. The scope name is displayed in the **Code** field.
+1. Continue with [Step 2:  Set global, website, or store view variables](#cloud-system-vars-sys).
 
 ### Find a website or store view scope in the database {#cloud-vars-db}
 
 To get these values from the database:
 
 1. If you haven't done so already, log in to your development system as the [Magento file system owner](https://glossary.magento.com/magento-file-system-owner).
-2. Enter the following command:
+1. Enter the following command:
 
    ```bash
    mysql -u <magento database username> -p
    ```
 
-3. At the `mysql>` prompt, enter the following commands in the order shown:
+1. At the `mysql>` prompt, enter the following commands in the order shown:
 
    ```shell
    use <magento database name>;
    ```
 
-4. Use the following SQL queries to find the relevant values:
+1. Use the following SQL queries to find the relevant values:
 
    ```shell
    SELECT * FROM STORES;
@@ -157,7 +157,7 @@ To get these values from the database:
    +------------+-------+--------------+------------+------------------+------------+
    ```
 
-5. Use the value from the `code` column as the scope name, not the `name` value.
+1. Use the value from the `code` column as the scope name, not the `name` value.
 
    For example, to set a configuration variable for Test Website, use the following format:
 
@@ -178,7 +178,7 @@ This section discusses how to set system variables.
    *  `CONFIG__WEBSITES`
    *  `CONFIG__STORES`
 
-* The last part of the variable name is the configuration path, which is unique for each configuration setting.
+*  The last part of the variable name is the configuration path, which is unique for each configuration setting.
 
 [See some examples](#cloud-system-vars-ex)
 
@@ -204,7 +204,7 @@ To find the variable name for global HTML minification:
 
    It's the global scope so the variable name starts with `CONFIG__DEFAULT__`
 
-2. The rest of the variable name is `CATALOG__SEARCH__ELASTICSEARCH_SERVER_HOSTNAME`.
+1. The rest of the variable name is `CATALOG__SEARCH__ELASTICSEARCH_SERVER_HOSTNAME`.
 
 **Result**: The variable name is `CONFIG__DEFAULT__CATALOG__SEARCH__ELASTICSEARCH_SERVER_HOSTNAME`
 
@@ -218,7 +218,7 @@ To find the variable name for the shipping country origin:
 
    For example, the scope might be `CONFIG__WEBSITES__DEFAULT`.
 
-2. The rest of the variable name is `SHIPPING__ORIGIN__COUNTRY_ID`.
+1. The rest of the variable name is `SHIPPING__ORIGIN__COUNTRY_ID`.
 
 **Result**: The variable name is `CONFIG__WEBSITES__DEFAULT__SHIPPING__ORIGIN__COUNTRY_ID`
 

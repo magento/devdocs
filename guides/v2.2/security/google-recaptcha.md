@@ -7,8 +7,8 @@ functional_areas:
 
 This extension adds the Google reCAPTCHA module to your Magento installation. Google reCAPTCHA provides a greater level of security for both the storefront and Admin UI than is available with standard CAPTCHA, and gives you the ability to:
 
-- Verify when customers create accounts, retrieve passwords, log in to their accounts, or contact your company.
-- Enhance security when Admin users log in.
+-  Verify when customers create accounts, retrieve passwords, log in to their accounts, or contact your company.
+-  Enhance security when Admin users log in.
 
 Google reCAPTCHA reduces potential user error when entering a Captcha code and encourages cart conversion without adding hurdles during checkout.
 

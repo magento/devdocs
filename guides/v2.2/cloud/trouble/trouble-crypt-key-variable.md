@@ -24,20 +24,23 @@ All Cloud environments require this encryption key in all three environments or 
 
 To verify and update the encryption key environment variable:
 
-1.  SSH to each of the Cloud environments: Integration, Staging, and Production.
+1. SSH to each of the Cloud environments: Integration, Staging, and Production.
 
-        magento-cloud environment:ssh
-2.  Open `app/etc/env.php` in a text editor.
-3.  Verify the existing value of `key` for `crypt`. The value should be your [{{site.data.var.ee}} key]({{ page.baseurl }}/cloud/setup/first-time-setup-import-prepare.html#encryption-key).
-
-    ```php
-        return array (
-          'crypt' =>
-          array (
-            'key' => '<your encryption key>',
-          ),
-        );
+   ```bash
+   magento-cloud environment:ssh
    ```
 
-4.  If the value is incorrect, add the key value, and save your changes to `env.php`.
-5.  Exit the text editor and repeat this process for each environment. Test store actions in each environment to verify if the issue persists, such as completing a cart purchase.
+1. Open `app/etc/env.php` in a text editor.
+1. Verify the existing value of `key` for `crypt`. The value should be your [{{site.data.var.ee}} key]({{ page.baseurl }}/cloud/setup/first-time-setup-import-prepare.html#encryption-key).
+
+   ```php
+       return array (
+         'crypt' =>
+         array (
+           'key' => '<your encryption key>',
+         ),
+       );
+   ```
+
+1. If the value is incorrect, add the key value, and save your changes to `env.php`.
+1. Exit the text editor and repeat this process for each environment. Test store actions in each environment to verify if the issue persists, such as completing a cart purchase.

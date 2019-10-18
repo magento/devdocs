@@ -16,11 +16,11 @@ For information about how JS resources are located and configured, see the [Java
 
 Topics of this book describe the following:
 
-- [JavaScript initialization] - how to initialize JavaScript components and widgets in JavaScript files and `.phtml` templates
-- [Use custom JavaScript] - how to extend or replace default JavaScript components/widgets.
-- [Locate JavaScript] components - how to define which components (scripts) are used on a particular store page.
-- [Magento jQuery widgets] - Magento jQuery widget API documentation.
-- [Customizing JavaScript illustration] - practical illustration of custom widgets related tasks.
+-  [JavaScript initialization] - how to initialize JavaScript components and widgets in JavaScript files and `.phtml` templates
+-  [Use custom JavaScript] - how to extend or replace default JavaScript components/widgets.
+-  [Locate JavaScript] components - how to define which components (scripts) are used on a particular store page.
+-  [Magento jQuery widgets] - Magento jQuery widget API documentation.
+-  [Customizing JavaScript illustration] - practical illustration of custom widgets related tasks.
 
 JavaScript automatic testing is described in a separate [JavaScript unit testing] topic.
 

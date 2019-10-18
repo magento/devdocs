@@ -38,7 +38,7 @@ For more information about layouts, see the [Layout documentation]({{ page.baseu
 
 The following directory contains extensible UI components:
 
-* `Magento\CompanyPayment\view\frontend\ui_component` - company form
+*  `Magento\CompanyPayment\view\frontend\ui_component` - company form
 
 For more information, see [UI Form Component]({{ page.baseurl }}/ui_comp_guide/components/ui-form.html).
 

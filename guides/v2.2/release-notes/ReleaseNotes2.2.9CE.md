@@ -212,7 +212,7 @@ In addition to security enhancements, this release contains the following functi
 
 <!-- ENGCOM-4447 -->
 
-* The  `product_types_base.xsd`, `product_options.xsd`, `import.xsd`, `export.xsd` files  now allow modules with names that contain  numbers. *Fix submitted by Lisovyi Yevhenii in pull request [21598](https://github.com/magento/magento2/pull/21598)*. [GitHub-14882](https://github.com/magento/magento2/issues/14882)
+*  The  `product_types_base.xsd`, `product_options.xsd`, `import.xsd`, `export.xsd` files  now allow modules with names that contain  numbers. *Fix submitted by Lisovyi Yevhenii in pull request [21598](https://github.com/magento/magento2/pull/21598)*. [GitHub-14882](https://github.com/magento/magento2/issues/14882)
 
 <!-- ENGCOM-4182 -->
 
@@ -696,7 +696,7 @@ In addition to security enhancements, this release contains the following functi
 
 <!-- ENGCOM-4328 -->
 
-* Alt attribute text that describes  credit card type or stored payment methods during checkout has been added to support accessibility. *Fix submitted by Amol Chaudhari in pull request [21206](https://github.com/magento/magento2/pull/21206)*. [GitHub-21089](https://github.com/magento/magento2/issues/21089)
+*  Alt attribute text that describes  credit card type or stored payment methods during checkout has been added to support accessibility. *Fix submitted by Amol Chaudhari in pull request [21206](https://github.com/magento/magento2/pull/21206)*. [GitHub-21089](https://github.com/magento/magento2/issues/21089)
 
 <!-- MAGETWO-98111 -->
 

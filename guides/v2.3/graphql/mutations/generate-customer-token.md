@@ -59,5 +59,5 @@ Attribute |  Data Type | Description
 
 ## Related topics
 
-* [customer query]({{page.baseurl}}/graphql/queries/customer.html)
-* [revokeCustomerToken mutation]({{page.baseurl}}/graphql/mutations/revoke-customer-token.html)
+*  [customer query]({{page.baseurl}}/graphql/queries/customer.html)
+*  [revokeCustomerToken mutation]({{page.baseurl}}/graphql/mutations/revoke-customer-token.html)

@@ -20,18 +20,18 @@ Outdated software often contains exploits we protect against by partially blocki
 
 We analyze the code of your application:
 
-* When you push new code to Git
-* When new vulnerabilities are added to our database
+*  When you push new code to Git
+*  When new vulnerabilities are added to our database
 
 If a critical vulnerability is detected in your application, it rejects the Git push.
 
 We run two types of blocks:
 
-* For development websites, we run complete blocks.
+*  For development websites, we run complete blocks.
 
    The error message accompanying `git push` provides detailed information about the vulnerability.
 
-* For production websites, we run a "partial block" that allows the site to stay mostly online.
+*  For production websites, we run a "partial block" that allows the site to stay mostly online.
 
    Depending on the nature of the vulnerability, parts of a request, such as a query string, cookies or any additional headers, might be removed from GET requests. All other requests may be blocked entirely&mdash;this could apply to logging in, form submission, or product [checkout](https://glossary.magento.com/checkout).
 

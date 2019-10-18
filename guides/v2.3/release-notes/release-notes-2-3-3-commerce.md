@@ -28,6 +28,12 @@ Although code for these features is bundled with quarterly releases of the Magen
 This patch resolves issues that users of Magento 2.3.3 experience in deployments where  Elasticsearch 6.x is used as the catalog search engine.
 Users who attempt to navigate past the first page of search results are unsuccessful, and Magento displays an error message. After this patch is installed, users will be able to page through all search results. See [Applying patches](https://devdocs.magento.com/guides/v2.3/comp-mgr/patching.html) for specific instructions on downloading and applying Magento patches. To find the patch, navigate to [Tech Resources](https://magento.com/tech-resources/download), and select the 'Catalog pagination issue on Elasticsearch 6.x' patch associated with the version of Magento you are running.
 
+## Apply the EmailMessageInterface backward compatibility issue patch to resolve an email interface backward-incompatibility issue
+
+This patch addresses backward-incompatibility issues that extension developers may have experienced after the introduction of `Magento\Framework\Mail\EmailMessageInterface`,  which was released in Magento 2.3.3. In the scope of this patch, the new `EmailMessageInterface` inherits from the old `MessageInterface`, and core modules are changed back to rely on `MessageInterface`. **Merchants should apply this patch as soon as possible, especially if their deployments include extensions or customizations that use the mail interface**.
+
+See [Applying patches](https://devdocs.magento.com/guides/v2.3/comp-mgr/patching.html) for specific instructions on downloading and applying Magento patches. To find the patch, navigate to [Tech Resources](https://magento.com/tech-resources/download), and select the EmailMessageInterface backward compatibility issue  patch associated with the version of Magento you are running.
+
 ## Highlights
 
 Look for the following highlights in this release:
@@ -42,7 +48,7 @@ This release includes the following security enhancements:
 
 #### Core payment methods integrations are now compliant with PSD2 regulations
 
-The European Union recently revised the Payment Services Directive (PSD) regulation with an updated version–PSD2. This revised regulation goes into effect on September 14, 2019, and will significantly affect  most payment processing involving credit cards or bank transfers.  See the Magento Forum DevBlog post [3D Secure 2.0 changes](https://community.magento.com/t5/Magento-DevBlog/3D-Secure-2-0-changes/ba-p/136460) for more information on Magento Payment Provider Recommendations and a wealth of links to PSD2 regulation discussions.
+The European Union recently revised the Payment Services Directive (PSD) regulation with an updated version – PSD2. This revised regulation goes into effect on September 14, 2019, and will significantly affect  most payment processing involving credit cards or bank transfers.  See the Magento Forum DevBlog post [3D Secure 2.0 changes](https://community.magento.com/t5/Magento-DevBlog/3D-Secure-2-0-changes/ba-p/136460) for more information on Magento Payment Provider Recommendations and a wealth of links to PSD2 regulation discussions.
 
 This release contains the following major PSD-related changes:
 
@@ -128,7 +134,7 @@ PWA Studio 4.0.0 contains new hooks in Peregrine. Existing components have also 
 
 ### Google Shopping ads Channel
 
-The Google Shopping ads Channel Marketplace extension is now available as a bundled extension. [Google Shopping ads Channel Release Notes](https://devdocs.magento.com/extensions/google-shopping-ads/release-notes/)  describes all changes to this feature for Magento 2.3.x.
+The Google Shopping ads Channel Marketplace extension is now available as a bundled extension. [Google Shopping ads Channel Release Notes](https://devdocs.magento.com/extensions/google-shopping-ads/release-notes/) describes all changes to this feature for Magento 2.3.x.
 
 ### Magento Shipping
 
@@ -822,6 +828,7 @@ We have fixed hundreds of issues in the Magento 2.3.3 core code.
 
 <!--- ENGCOM-4843-->
 *  The `getProductUrl()` method now returns the product URL for a specified website. Previously, this method did not let you retrieve the product URL for a specified website in multisite deployments. *Fix submitted by Nazar Klovanych in pull request [21876](https://github.com/magento/magento2/pull/21876)*. [GitHub-4247](https://github.com/magento/magento2/issues/4247)
+
 ### Gift cards accounts
 
 <!--- MC-17124-->
@@ -866,7 +873,7 @@ We have fixed hundreds of issues in the Magento 2.3.3 core code.
 *  You can now successfully download a CSV file after export. Previously, Magento redirected you to the Admin dashboard when you tried to download the CSV file that was created during export.
 
 <!--- MAGETWO-99927-->
-*  Products are successfully updated through import of an CSV file in **Add/Update** mode. Previously,  the import process failed, and Magento displayed this error: `The value specified in the URL Key field would generate a URL that already exists`.
+  Products are successfully updated through import of an CSV file in **Add/Update** mode. Previously,  the import process failed, and Magento displayed this error: `The value specified in the URL Key field would generate a URL that already exists`.
 
 <!--- MAGETWO-60918-->
 *  Magento no longer throws a fatal error during import or export if the category path contains deleted category IDs.
@@ -1397,6 +1404,15 @@ This release includes the following changes to integrations for core payment met
 
 <!--- ENGCOM-5514-->
 *  Wishlist items now display decimal values as appropriate. Previously, Magento saved decimal quantities for wishlist items but did not display these values in the wishlist on the storefront. *Fix submitted by Max Fickers in pull request [23933](https://github.com/magento/magento2/pull/23933)*. [GitHub-23932](https://github.com/magento/magento2/issues/23932)
+
+## Known issue
+
+**Issue**:
+With this release, the `\Magento\Framework\Mail\MessageInterface` class has been replaced with `\Magento\Framework\Mail\EmailMessageInterface`. This new class supports the sending of multi-part MIME-type content within email and extends the existing `MailMessageInterface` and `MessageInterface` classes to ensure backward compatibility and provide a transition period for extension developers. Extension developers and merchants who are deploying third-party extensions that implement `\Magento\Framework\Mail\MessageInterface` should be aware of these changes.
+
+The  `Magento\Framework\Mail\Template\TransportBuilder` and `Magento\Newsletter\Model\Queue\TransportBuilder` structures were refactored to return this new `EmailMessageInterface` instead of the `MessageInterface`,  which was previously returned. Although the signature of the `Transport::getMessage()` method was not changed, extensions can start using the new `EmailMessageInterface`.
+
+**Workaround**: In deployments that include third-party customizations, the old `MessageInterface` might still be instantiated. How you prevent this instantiation depends upon the particular usage of `MessageInterface` in your code. See the Magento forum DevBlog post [Backward-incompatible Changes in the Mail Library for Magento 2.3.3](https://community.magento.com/t5/Magento-DevBlog/Backward-incompatible-Changes-in-the-Mail-Library-for-Magento-2/ba-p/144787) for more information. **This issue has been addressed in the EmailMessageInterface backward compatibility issue patch, which was released on October 14, 2019. Merchants should apply this patch as soon as possible, especially if their deployments include extensions or customizations that use the Mail interface.**
 
 ## Community contributions
 

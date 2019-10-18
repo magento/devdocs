@@ -47,15 +47,15 @@ To begin, create a new branch.
 
 After completing development, you can merge this branch to the parent:
 
-1.  Complete code in your local branch.
+1. Complete code in your local branch.
 
-1.  Add, commit, and push changes to the environment.
+1. Add, commit, and push changes to the environment.
 
     ```bash
     git add -A && git commit -m "Commit message" && git push origin <branch-name>
     ```
 
-1.  Merge with the parent environment:
+1. Merge with the parent environment:
 
     ```bash
     magento-cloud environment:merge <environment-ID>
@@ -75,15 +75,15 @@ When you delete an environment, the environment is set to _inactive_. The code i
 {:.procedure}
 To delete an environment:
 
-1.  Open a terminal and navigate to your project.
+1. Open a terminal and navigate to your project.
 
-1.  Fetch updates from the remote server.
+1. Fetch updates from the remote server.
 
     ```bash
     git fetch
     ```
 
-1.  Delete the environment branch.
+1. Delete the environment branch.
 
     ```bash
     magento-cloud environment:delete <environment-ID>
@@ -95,7 +95,7 @@ To delete an environment:
     magento-cloud environment:delete <environment-1-ID> <environment-2-ID>
     ```
 
-1.  Respond to the prompts to delete the local environment and the corresponding remote environment.
+1. Respond to the prompts to delete the local environment and the corresponding remote environment.
 
     ```terminal
     The environment <environment-ID> is currently active: deleting it will delete all associated data.
@@ -111,7 +111,7 @@ To delete an environment:
 
     Deleting the remote Git branch removes the environment from the project.
 
-1.  Wait for the environment to delete.
+1. Wait for the environment to delete.
 
     ```terminal
     Deleting environment <environment-ID>

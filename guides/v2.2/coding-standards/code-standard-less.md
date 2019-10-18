@@ -21,9 +21,9 @@ This coding standard is optional for third-party Magento developers.
 
 Use only spaces for indentation:
 
-* Tab size: 4 spaces
-* Indent size: 4 spaces
-* Continuation indent: 4 spaces
+*  Tab size: 4 spaces
+*  Indent size: 4 spaces
+*  Continuation indent: 4 spaces
 
 **Correct**:
 
@@ -611,9 +611,9 @@ margin-left: 0.5rem;
 
 ### Hexadecimal notation
 
-* Use lowercase only.
-* Use three-character hexadecimal notation where possible.
-* Avoid using hexadecimal values for color in properties, use only variables instead.
+*  Use lowercase only.
+*  Use three-character hexadecimal notation where possible.
+*  Avoid using hexadecimal values for color in properties, use only variables instead.
 
 **Correct**:
 

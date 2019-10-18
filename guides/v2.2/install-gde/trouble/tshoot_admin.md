@@ -17,8 +17,8 @@ Note the lack of a slash character between `magento2` and `index.php` in the [UR
 
 The base URL is not correct. The base URL must:
 
-* Start with `http://` or `https://`
-* End with a slash (`/`)
-* Match the case of the `web/unsecure/base_url` record in the `core_config_data` database table
+*  Start with `http://` or `https://`
+*  End with a slash (`/`)
+*  Match the case of the `web/unsecure/base_url` record in the `core_config_data` database table
 
 Re-run the installation using a valid value.
