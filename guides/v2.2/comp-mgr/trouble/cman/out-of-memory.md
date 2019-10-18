@@ -39,14 +39,14 @@ The following are suggestions only; other options might be available. Consult a 
 
 Use the `fallocate` command as discussed in these references:
 
-* [How To Add Swap on Ubuntu 14.04 (Digitalocean)](https://www.digitalocean.com/community/tutorials/how-to-add-swap-on-ubuntu-14-04){:target="_blank"}
-* [How To Add Swap Space on Ubuntu 16.04 (Digitalocean)](https://www.digitalocean.com/community/tutorials/how-to-add-swap-space-on-ubuntu-16-04){:target="_blank"}
-* [SwapFaq (help.ubuntu.com)](https://help.ubuntu.com/community/SwapFaq){:target="_blank"}
+*  [How To Add Swap on Ubuntu 14.04 (Digitalocean)](https://www.digitalocean.com/community/tutorials/how-to-add-swap-on-ubuntu-14-04){:target="_blank"}
+*  [How To Add Swap Space on Ubuntu 16.04 (Digitalocean)](https://www.digitalocean.com/community/tutorials/how-to-add-swap-space-on-ubuntu-16-04){:target="_blank"}
+*  [SwapFaq (help.ubuntu.com)](https://help.ubuntu.com/community/SwapFaq){:target="_blank"}
 
 #### Swap file on CentOS
 
 Use the `mkswap` command as discussed in these references:
 
-* [How To Add Swap on CentOS 6 (Digitalocean)](https://www.digitalocean.com/community/tutorials/how-to-add-swap-on-centos-6){:target="_blank"}
-* [How To Add Swap on CentOS 7 (Digitalocean)](https://www.digitalocean.com/community/tutorials/how-to-add-swap-on-centos-7){:target="_blank"}
-* [Swap Space (RedHat customer portal)](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/6/html/Storage_Administration_Guide/ch-swapspace.html){:target="_blank"}
+*  [How To Add Swap on CentOS 6 (Digitalocean)](https://www.digitalocean.com/community/tutorials/how-to-add-swap-on-centos-6){:target="_blank"}
+*  [How To Add Swap on CentOS 7 (Digitalocean)](https://www.digitalocean.com/community/tutorials/how-to-add-swap-on-centos-7){:target="_blank"}
+*  [Swap Space (RedHat customer portal)](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/6/html/Storage_Administration_Guide/ch-swapspace.html){:target="_blank"}

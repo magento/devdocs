@@ -71,8 +71,8 @@ You must be a [project administrator]({{ page.baseurl }}/cloud/project/user-admi
 
 This section discusses how to optionally delete an environment in the following ways:
 
-* Make the environment *inactive* but let it remain in the project
-* Delete the environment entirely and remove it from the project
+*  Make the environment *inactive* but let it remain in the project
+*  Delete the environment entirely and remove it from the project
 
 To delete a environment:
 

@@ -169,13 +169,13 @@ This command performs the following tasks:
 
 For example, to restore a code (that is, file system) backup, enter the following commands in the order shown:
 
-* Display a list of backups:
+*  Display a list of backups:
 
     ```bash
     magento info:backups:list
     ```
 
-* Restore a file backup named `1433876616_filesystem.tgz`:
+*  Restore a file backup named `1433876616_filesystem.tgz`:
 
     ```bash
     magento setup:rollback --code-file="1433876616_filesystem.tgz"

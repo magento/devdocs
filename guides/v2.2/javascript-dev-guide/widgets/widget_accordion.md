@@ -38,7 +38,7 @@ Optionally, you can specify the following:
 Accordions support arbitrary markup, but the following requirements should be kept:
 
 1. Titles and contents are specified in the same order in DOM: first title, then contents.
-2. The header, trigger and content are specified, either by adding the `data-*` attributes for the corresponding children elements or by specifying these elements with selectors as options.
+1. The header, trigger and content are specified, either by adding the `data-*` attributes for the corresponding children elements or by specifying these elements with selectors as options.
 
 Mark-up examples:
 

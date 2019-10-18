@@ -32,7 +32,7 @@ The following is assumed by default:
 The documentation should follow two simple principles:
 
 1. Be as short as possible.
-2. Include all necessary information without duplication.
+1. Include all necessary information without duplication.
 
 ### Short documentation
 
@@ -71,10 +71,11 @@ Below are ways of improving code to help simplify documentation:
 ### Include all the necessary details
 
 1. Identify the details a developer needs to work with your code.
-2. Ignore the implementation details (i.e. private methods/properties and method bodies) and focus on what the public interface signature provides.
+1. Ignore the implementation details (i.e. private methods/properties and method bodies) and focus on what the public interface signature provides.
 
    If possible, improve the interface to provide more information.
-3. Add any remaining information that a developer may need to the DocBlock.
+
+1. Add any remaining information that a developer may need to the DocBlock.
 
 ## Files
 {:#files}

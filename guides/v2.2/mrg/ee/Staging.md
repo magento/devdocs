@@ -185,9 +185,9 @@ There are several rules validating updates intersection:
 
 1. Update can be created only in the future. You cannot create an update in a past.
 
-2. Temporary updates cannot intersect with each other. For example, if you have an update for the "New Brand Snowboard" product from December 23 till December 26, a period of another update for "New Brand Snowboard" cannot intersect the period from December 23 till December 26. In other words, one entity cannot have more than one [temporary update](#temporary-update) scheduled to the same time.
+1. Temporary updates cannot intersect with each other. For example, if you have an update for the "New Brand Snowboard" product from December 23 till December 26, a period of another update for "New Brand Snowboard" cannot intersect the period from December 23 till December 26. In other words, one entity cannot have more than one [temporary update](#temporary-update) scheduled to the same time.
 
-3. Permanent update cannot start during temporary update. For example, if you have an update for the "New Brand Snowboard" product from December 23 till December 26, you cannot create [permanent update](#permanent-update) starting during this period of time.
+1. Permanent update cannot start during temporary update. For example, if you have an update for the "New Brand Snowboard" product from December 23 till December 26, you cannot create [permanent update](#permanent-update) starting during this period of time.
 
 #### View/Edit/Copy an update
 

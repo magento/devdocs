@@ -147,8 +147,8 @@ Complete all configurations for your stores in the Admin console:
    *  Starter: An active development branch
    *  Pro: Integration environment
 
-2. Create and configure all store settings. These configurations do not include the actual products unless you plan on dumping the database from this environment to Staging and Production. Typically development databases do not include your full store data.
-3. Open a terminal on your local and generate `/app/etc/config.php` on the environment:
+1. Create and configure all store settings. These configurations do not include the actual products unless you plan on dumping the database from this environment to Staging and Production. Typically development databases do not include your full store data.
+1. Open a terminal on your local and generate `/app/etc/config.php` on the environment:
 
    ```bash
    ssh <SSH URL> "php vendor/bin/m2-ece-scd-dump"
@@ -164,7 +164,7 @@ Push the `config.php` file to Git. To push this file to the `master` Git branch,
    rsync <SSH URL>:app/etc/config.php ./app/etc/config.php
    ```
 
-2. Add and push the `config.php` file to the Git master branch.
+1. Add and push the `config.php` file to the Git master branch.
 
    ```bash
    git add app/etc/config.php && git commit -m "Add system-specific configuration" && git push origin master
@@ -199,10 +199,10 @@ If you upgrade to {{site.data.var.ece}} 2.2 or later, you may want to migrate se
 If they differ, you can append content from the `config.local.php` file to your new `config.php` file:
 
 1. Follow instructions to generate the `config.php` file using the [recommended method](#cloud-config-specific-recomm).
-2. Open the `config.php` file and delete the last line.
-3. Open the `config.local.php` file and copy the contents.
-4. Paste the contents into the `config.php` file, save, and complete adding it to Git.
-5. Deploy across your environments.
+1. Open the `config.php` file and delete the last line.
+1. Open the `config.local.php` file and copy the contents.
+1. Paste the contents into the `config.php` file, save, and complete adding it to Git.
+1. Deploy across your environments.
 
 You only need to complete this migration once. When you need to update the file, always update the `config.php` file.
 
