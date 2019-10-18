@@ -166,14 +166,14 @@ To develop a module, you must:
 
     `testIntegration` must refer to your `etc/integration/config.xml` file, and the integration name value must be the same.
 
-    The following example demonstrates a minimal config.xml file.
+    The following example demonstrates a minimal `config.xml` file.
 
     ```xml
    <integrations>
       <integration name="TestIntegration">
          <email>someone@example.com</email>
-         <endpoint_url>http://example.com</endpoint_url>
-         <identity_link_url>http://example.com/identity_link_url</identity_link_url>
+         <endpoint_url>https://example.com</endpoint_url>
+         <identity_link_url>https://example.com/identity_link_url</identity_link_url>
       </integration>
    </integrations>
     ```
