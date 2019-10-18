@@ -162,15 +162,15 @@ Any change not listed below is considered a PATCH level change.
 
 Though inheritance is discouraged in Magento, the following classes are still acceptable for extension at the moment:
 
-* \Magento\Framework\Model\AbstractExtensibleModel
-* \Magento\Framework\Api\AbstractExtensibleObject
-* \Magento\Framework\Api\AbstractSimpleObject
-* \Magento\Framework\Model\AbstractModel
-* \Magento\Framework\App\Action\Action
-* \Magento\Backend\App\Action
-* \Magento\Backend\App\AbstractAction
-* \Magento\Framework\App\Action\AbstractAction
-* \Magento\Framework\View\Element\AbstractBlock
-* \Magento\Framework\View\Element\Template
+*  \Magento\Framework\Model\AbstractExtensibleModel
+*  \Magento\Framework\Api\AbstractExtensibleObject
+*  \Magento\Framework\Api\AbstractSimpleObject
+*  \Magento\Framework\Model\AbstractModel
+*  \Magento\Framework\App\Action\Action
+*  \Magento\Backend\App\Action
+*  \Magento\Backend\App\AbstractAction
+*  \Magento\Framework\App\Action\AbstractAction
+*  \Magento\Framework\View\Element\AbstractBlock
+*  \Magento\Framework\View\Element\Template
 
 As Magento framework improves, this list should be reduced and, eventually, eliminated.

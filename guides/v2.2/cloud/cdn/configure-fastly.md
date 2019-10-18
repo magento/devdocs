@@ -20,10 +20,10 @@ For VCL snippets, experience developing that code is required for advanced confi
 
 The process for configuring Fastly includes:
 
-- Get Fastly credentials for Staging and Production environments
-- Enable Fastly CDN caching in your environment
-- Upload Fastly VCL snippets
-- Advanced configurations including VCL snippets, as needed for your {{ site.data.var.ee }} sites
+-  Get Fastly credentials for Staging and Production environments
+-  Enable Fastly CDN caching in your environment
+-  Upload Fastly VCL snippets
+-  Advanced configurations including VCL snippets, as needed for your {{ site.data.var.ee }} sites
 
 ## Get Fastly credentials {#cloud-fastly-creds}
 
@@ -36,19 +36,19 @@ Use the following methods to find and save the Fastly service ID and API token f
 {:.procedure}
 To view your Fastly credentials:
 
-- IaaS-mounted shared directory—On Pro projects, use SSH to connect to your server and get the Fastly credentials from the `/mnt/shared/fastly_tokens.txt` file.
+-  IaaS-mounted shared directory—On Pro projects, use SSH to connect to your server and get the Fastly credentials from the `/mnt/shared/fastly_tokens.txt` file.
 
-- Local workspace—From the command line, use the Magento Cloud CLI to [list and review]({{ page.baseurl }}/cloud/before/before-setup-env-2_clone.html) Fastly environment variables.
+-  Local workspace—From the command line, use the Magento Cloud CLI to [list and review]({{ page.baseurl }}/cloud/before/before-setup-env-2_clone.html) Fastly environment variables.
 
    ```bash
    magento-cloud variable:get -e <environment ID>
    ```
 
-- Project Web UI—Check the following environment variables in the *[Environment configuration variables]({{ page.baseurl }}/cloud/project/projects.html#environment-configuration-variables)* section.
+-  Project Web UI—Check the following environment variables in the *[Environment configuration variables]({{ page.baseurl }}/cloud/project/projects.html#environment-configuration-variables)* section.
 
-   - `CONFIG__DEFAULT__SYSTEM__FULL_PAGE_CACHE__FASTLY__FASTLY_API_TOKEN`
+   -  `CONFIG__DEFAULT__SYSTEM__FULL_PAGE_CACHE__FASTLY__FASTLY_API_TOKEN`
 
-   - `CONFIG__DEFAULT__SYSTEM__FULL_PAGE_CACHE__FASTLY__FASTLY_SERVICE_ID`
+   -  `CONFIG__DEFAULT__SYSTEM__FULL_PAGE_CACHE__FASTLY__FASTLY_SERVICE_ID`
 
 {: .bs-callout-info }
 If you cannot find the Fastly credentials for the Staging or Production environments, contact your Magento Technical Account Manager.
@@ -57,9 +57,9 @@ If you cannot find the Fastly credentials for the Staging or Production environm
 
 **Prerequisites:**
 
-- Latest version of the [Fastly CDN for Magento 2 module]({{ page.baseurl }}/cloud/cdn/cloud-fastly.html#fastly-cdn-module-for-magento-2) installed in the Staging and Production environments. See [Upgrade Fastly](#upgrade).
+-  Latest version of the [Fastly CDN for Magento 2 module]({{ page.baseurl }}/cloud/cdn/cloud-fastly.html#fastly-cdn-module-for-magento-2) installed in the Staging and Production environments. See [Upgrade Fastly](#upgrade).
 
-- [Fastly credentials](#cloud-fastly-creds) for {{ site.data.var.ece }} Staging and Production environments
+-  [Fastly credentials](#cloud-fastly-creds) for {{ site.data.var.ece }} Staging and Production environments
 
 {:.procedure}
 To enable Fastly CDN caching in Staging and Production:
@@ -127,9 +127,9 @@ Before adding [custom](#custom-configuration) or advanced configuration settings
 
 Configure the following features as needed:
 
-- [Configure backends and Origin shielding](#backend)
-- [Customize response pages]({{ page.baseurl }}/cloud/cdn/cloud-fastly-custom-response.html)
-- [Enable additional Fastly configuration options](https://github.com/fastly/fastly-magento2/blob/master/Documentation/CONFIGURATION.md#further-configuration-options)
+-  [Configure backends and Origin shielding](#backend)
+-  [Customize response pages]({{ page.baseurl }}/cloud/cdn/cloud-fastly-custom-response.html)
+-  [Enable additional Fastly configuration options](https://github.com/fastly/fastly-magento2/blob/master/Documentation/CONFIGURATION.md#further-configuration-options)
 
 ### Configure backends and Origin shielding {#backend}
 
@@ -156,23 +156,23 @@ To review the backend settings configuration:
 
    The following list shows which Fastly shield locations to use based an AWS region:
 
-   - ap-east-1 => hongkong-hk
-   - ap-northeast-1 => tyo-tokyo-jp, hnd-tokyo-jp
-   - ap-northeast-2 => tyo-tokyo-jp, hnd-tokyo-jp
-   - ap-southeast-1 => singapore-sg
-   - ap-southeast-2 => sydney-au
-   - ap-south-1 => singapore-sg
-   - ca-central-1 => yul-montreal-ca, iad-va-us, dca-dc-us, bwi-va-us
-   - eu-central-1 => frankfurt-de, hhn-frankfurt-de
-   - eu-north-1 => stockholm-bma
-   - eu-west-1 => london-uk, london_city-uk
-   - eu-west-2 => london-uk, london_city-uk
-   - eu-west-3 => cdg-par-fr
-   - sa-east-1 => gru-br-sa
-   - us-east-1 => iad-va-us, dca-dc-us, bwi-va-us
-   - us-east-2 => iad-va-us, dca-dc-us, bwi-va-us
-   - us-west-1 => sjc-ca-us, pao-ca-us
-   - us-west-2 => sea-wa-us
+   -  ap-east-1 => hongkong-hk
+   -  ap-northeast-1 => tyo-tokyo-jp, hnd-tokyo-jp
+   -  ap-northeast-2 => tyo-tokyo-jp, hnd-tokyo-jp
+   -  ap-southeast-1 => singapore-sg
+   -  ap-southeast-2 => sydney-au
+   -  ap-south-1 => singapore-sg
+   -  ca-central-1 => yul-montreal-ca, iad-va-us, dca-dc-us, bwi-va-us
+   -  eu-central-1 => frankfurt-de, hhn-frankfurt-de
+   -  eu-north-1 => stockholm-bma
+   -  eu-west-1 => london-uk, london_city-uk
+   -  eu-west-2 => london-uk, london_city-uk
+   -  eu-west-3 => cdg-par-fr
+   -  sa-east-1 => gru-br-sa
+   -  us-east-1 => iad-va-us, dca-dc-us, bwi-va-us
+   -  us-east-2 => iad-va-us, dca-dc-us, bwi-va-us
+   -  us-west-1 => sjc-ca-us, pao-ca-us
+   -  us-west-2 => sea-wa-us
 
 1. Modify the timeout values (in microseconds) for the connection to the shield, time between bytes, and time for the first byte. We recommend keeping the default timeout settings.
 
@@ -190,10 +190,10 @@ Fastly provides multiple types of purge options on your Magento Cache Management
 
 The options include:
 
-- **Purge category**: Purges product category content (not product content) when you add and update a single product. You may want to keep this disabled and enable purge product, which purges products and product categories.
-- **Purge product**: Purges all product and product category content when saving a single modification to a product. Enabling purge product can be helpful to immediately get updates to customers when changing a price, adding a product option, and when product inventory is out-of-stock.
-- **Purge CMS page**: Purges page content when updating and adding pages to the Magento CMS. For example, you may want to purge when updating your Terms and Conditions or Return policy. If you rarely make these changes, you could disable automatic purging.
-- **Soft purge**: Sets changed content to stale and purges according to the stale timing. In combination with the stale timings your customers will be served stale content very fast while Fastly is updating the content in the background.
+-  **Purge category**: Purges product category content (not product content) when you add and update a single product. You may want to keep this disabled and enable purge product, which purges products and product categories.
+-  **Purge product**: Purges all product and product category content when saving a single modification to a product. Enabling purge product can be helpful to immediately get updates to customers when changing a price, adding a product option, and when product inventory is out-of-stock.
+-  **Purge CMS page**: Purges page content when updating and adding pages to the Magento CMS. For example, you may want to purge when updating your Terms and Conditions or Return policy. If you rarely make these changes, you could disable automatic purging.
+-  **Soft purge**: Sets changed content to stale and purges according to the stale timing. In combination with the stale timings your customers will be served stale content very fast while Fastly is updating the content in the background.
 
 ![Configure purge options]({{ site.baseurl }}/common/images/cloud_fastly-purgeoptions.png){:width="650px"}
 
@@ -252,9 +252,9 @@ Fastly also provides a series of [geolocation-related VCL features](https://docs
 
 To enable Fastly caching on your Staging and Production sites, you need make the following changes to the DNS configuration for your site:
 
-- Set all necessary redirects, especially if you are migrating from an existing site
-- Set the zone’s root resource record to address the hostname
-- Lower the value for the Time-to-Live (TTL) to refresh DNS information to point customers to the correct Production store
+-  Set all necessary redirects, especially if you are migrating from an existing site
+-  Set the zone’s root resource record to address the hostname
+-  Lower the value for the Time-to-Live (TTL) to refresh DNS information to point customers to the correct Production store
 
 We recommend a significantly lower TTL value when switching the DNS record. This value tells the DNS how long to cache the DNS record. When shortened, it refreshes the DNS faster. For example, you can change the TTL value from 3 days to 10 minutes when you are testing your site. Be advised that shortening the TTL value  adds load to the web server.
 
@@ -263,10 +263,10 @@ After checking with your registrar about where to change your DNS settings, add 
 CNAME records cannot be set for apex domains, also referred to as a naked or base domains. You must use `A` records for this.
 `A` records map a domain name to the following Fastly IP addresses:
 
-- `151.101.1.124`
-- `151.101.65.124`
-- `151.101.129.124`
-- `151.101.193.124`
+-  `151.101.1.124`
+-  `151.101.65.124`
+-  `151.101.129.124`
+-  `151.101.193.124`
 
 Refer to [Go live checklist]({{ page.baseurl }}/cloud/live/go-live-checklist.html) for more information.
 

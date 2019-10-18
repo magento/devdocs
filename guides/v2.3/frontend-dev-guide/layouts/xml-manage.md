@@ -9,22 +9,22 @@ functional_areas:
 
 This article describes the following typical [layout](https://glossary.magento.com/layout) customization tasks:
 
-- [Set the page layout](#layout_markup_columns)
-- [Include static resources (JavaScript, CSS, fonts) in \<head\>](#layout_markup_css)
-- [Remove static resources (JavaScript, CSS, fonts) in \<head\>](#layout_markup_css_remove)
-- [Add meta tags to the head block](#layout_markup_meta)
-- [Create a container](#create_cont)
-- [Reference a container](#ref_container)
-- [Reference a CMS block](#ref_cms_block)
-- [Making the block visibility dynamic](#ref_config_block)
-- [Create a block](#xml-manage-block)
-- [Set the template used by a block](#set_template)
-- [Modify block arguments](#layout_markup_modify-block)
-- [Reference a block](#xml-manage-ref-block)
-- [Use block object methods to set block properties](#layout_markup_block-properties)
-- [Rearrange elements](#layout_markup_rearrange)
-- [Add functionality to existing elements](#layout_markup_add_to_elements)
-- [Modify functionality with plugins (interceptors)](#layout_markup_modify_with_plugins)
+-  [Set the page layout](#layout_markup_columns)
+-  [Include static resources (JavaScript, CSS, fonts) in \<head\>](#layout_markup_css)
+-  [Remove static resources (JavaScript, CSS, fonts) in \<head\>](#layout_markup_css_remove)
+-  [Add meta tags to the head block](#layout_markup_meta)
+-  [Create a container](#create_cont)
+-  [Reference a container](#ref_container)
+-  [Reference a CMS block](#ref_cms_block)
+-  [Making the block visibility dynamic](#ref_config_block)
+-  [Create a block](#xml-manage-block)
+-  [Set the template used by a block](#set_template)
+-  [Modify block arguments](#layout_markup_modify-block)
+-  [Reference a block](#xml-manage-ref-block)
+-  [Use block object methods to set block properties](#layout_markup_block-properties)
+-  [Rearrange elements](#layout_markup_rearrange)
+-  [Add functionality to existing elements](#layout_markup_add_to_elements)
+-  [Modify functionality with plugins (interceptors)](#layout_markup_modify_with_plugins)
 
 {:.bs-callout .bs-callout-info}
 To ensure stability and secure your customizations from being deleted during upgrade, do not change out-of-the-box Magento [module](https://glossary.magento.com/module) and [theme](https://glossary.magento.com/theme) layouts. To customize your layout, create extending and overriding layout files in your custom theme.
@@ -69,8 +69,8 @@ You can use either the `<link src="js/sample.js"/>` or `<script src="js/sample.j
 
 The path to assets is specified relatively to one the following locations:
 
-- `<theme_dir>/web`-
-- `<theme_dir>/<Namespace>_<Module>/web`-
+-  `<theme_dir>/web`-
+-  `<theme_dir>/<Namespace>_<Module>/web`-
 
 ### Adding conditional comments
 
@@ -251,8 +251,8 @@ Any block can be configured to show or not based on a [Magento/Config/Model/Conf
 
 There are two ways to set the template for a block:
 
-- using the `template` attribute
-- using the `<argument>` instruction
+-  using the `template` attribute
+-  using the `<argument>` instruction
 
 Both approaches are demonstrated in the following examples of changing the template of the page title block.
 
@@ -274,8 +274,8 @@ Both approaches are demonstrated in the following examples of changing the templ
 
 In both examples, the template is specified according to the following:
 
-- `Namespace_Module:` defines the module the template belongs to. For example, `Magento_Catalog`.
-- `new_template.phtml`: the path to the template relatively to the `templates` directory. It might be `<module_dir>/view/<area>/templates` or `<theme_dir>/<Namespace_Module>/templates`.
+-  `Namespace_Module:` defines the module the template belongs to. For example, `Magento_Catalog`.
+-  `new_template.phtml`: the path to the template relatively to the `templates` directory. It might be `<module_dir>/view/<area>/templates` or `<theme_dir>/<Namespace_Module>/templates`.
 
 {:.bs-callout .bs-callout-info}
 Template values specified as attributes have higher priority during layout generation, than the ones specified using `<argument>`. It means, that if for a certain block, a template is set as attribute, it will override the value you specify in `<argument>` for the same block.
@@ -316,8 +316,8 @@ Extending layout:
 
 There are two ways to access block object methods:
 
-- using the `<argument>` instruction for `<block>` or `<referenceBlock>`
-- using the `<action>` instruction. This way is not recommended, but can be used for calling those methods, which are not refactored yet to be accessed through `<argument>`.
+-  using the `<argument>` instruction for `<block>` or `<referenceBlock>`
+-  using the `<action>` instruction. This way is not recommended, but can be used for calling those methods, which are not refactored yet to be accessed through `<argument>`.
 
 **Example 1:** Set a CSS class and add an attribute for the product page using `<argument>`.
 
@@ -351,8 +351,8 @@ Extending layout:
 
 In layout files you can change the elements order on a page. This can be done using one of the following:
 
-- [`<move>` instruction]({{page.baseurl}}/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_mv): allows changing elements' order and parent.
-- [`before` and `after` attributes of `<block>`]({{page.baseurl}}/frontend-dev-guide/layouts/xml-instructions.html#fedg_xml-instrux_before-after): allows changing elements' order within one parent.
+-  [`<move>` instruction]({{page.baseurl}}/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_mv): allows changing elements' order and parent.
+-  [`before` and `after` attributes of `<block>`]({{page.baseurl}}/frontend-dev-guide/layouts/xml-instructions.html#fedg_xml-instrux_before-after): allows changing elements' order within one parent.
 
 **Example of `<move>` usage:**
 put the stock availability and SKU blocks next to the product price on a product page.
@@ -589,9 +589,9 @@ You can remove navigation links from the 'My Account' dashboard on the storefron
 {:.ref-header}
 Related topics
 
-- [Layout instructions]
-- [Extend a layout]
-- [Plugins (interceptors)]
+-  [Layout instructions]
+-  [Extend a layout]
+-  [Plugins (interceptors)]
 
 <!-- Link Definitions -->
 [page configuration]: {{page.baseurl}}/frontend-dev-guide/layouts/layout-types.html#layout-types-conf

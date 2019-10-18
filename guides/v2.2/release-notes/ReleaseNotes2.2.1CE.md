@@ -10,15 +10,15 @@ We are pleased to present Magento Open Source 2.2.1. This release includes numer
 
 Look for the following highlights in this release:
 
-* Integrated Signifyd Fraud Protection is now available in Magento Open Source. See [Signifyd fraud protection]({{ site.baseurl }}/guides/v2.2/payments-integrations/signifyd/signifyd.html) for more information.
+*  Integrated Signifyd Fraud Protection is now available in Magento Open Source. See [Signifyd fraud protection]({{ site.baseurl }}/guides/v2.2/payments-integrations/signifyd/signifyd.html) for more information.
 
-* Ability to implement translations from themes. We’ve also significantly reduced JavaScript-related translation issues.
+*  Ability to implement translations from themes. We’ve also significantly reduced JavaScript-related translation issues.
 
-* Improvements to how the PayPal Express Checkout payment method processes virtual products.
+*  Improvements to how the PayPal Express Checkout payment method processes virtual products.
 
-* Multiple enhancements to product security. See [Magento Security Center](https://magento.com/security/patches/magento-221-2110-and-2017-security-update) for more information.
+*  Multiple enhancements to product security. See [Magento Security Center](https://magento.com/security/patches/magento-221-2110-and-2017-security-update) for more information.
 
-* Twenty-two community-submitted bug fixes and multiple pull requests.
+*  Twenty-two community-submitted bug fixes and multiple pull requests.
 
 Looking for more information on these new features as well as many others? Check out  [Magento 2.2 Developer Documentation]({{ site.baseurl }}/guides/v2.2/).
 
@@ -39,7 +39,7 @@ See [Magento Security Center](https://magento.com/security/patches/magento-221-2
 *  When a callback during commit throws an exception, the calling plugin can now distinguish this exception from an unsuccessful commit and logs an exception. Previously, Magento threw an “Asymmetric transaction rollback error”. [GitHub-9955](https://github.com/magento/magento2/issues/9955)
 
 <!--- 80201  -->
-*   We’ve resolved a fatal error in the repository generator. Both `InputException` and `NoSuchEntityException` now require a Phrase object as their first constructor argument.  [GitHub-10601](https://github.com/magento/magento2/issues/10601)
+*  We’ve resolved a fatal error in the repository generator. Both `InputException` and `NoSuchEntityException` now require a Phrase object as their first constructor argument.  [GitHub-10601](https://github.com/magento/magento2/issues/10601)
 
 ### Catalog
 
@@ -53,7 +53,7 @@ See [Magento Security Center](https://magento.com/security/patches/magento-221-2
 *  The grouped product page now  shows the lowest price for a simple product.  [GitHub-9266](https://github.com/magento/magento2/issues/9266)
 
 <!--- 75221  -->
-*   We’ve fixed an issue with `priceScope` that had resulted in the storefront not displaying product prices that should be displayed.
+*  We’ve fixed an issue with `priceScope` that had resulted in the storefront not displaying product prices that should be displayed.
 
 ### Configurable products
 

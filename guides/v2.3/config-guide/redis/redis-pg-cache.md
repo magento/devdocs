@@ -101,6 +101,6 @@ As a result of the two example commands, Magento adds lines similar to the follo
 
 {% include config/redis-verify.md %}
 
-* [Use Redis for session storage]({{ page.baseurl }}/config-guide/redis/redis-session.html)
-* [Create or extend configuration types]({{ page.baseurl }}/config-guide/config/config-create.html)
-* [Magento's deployment configuration]({{ page.baseurl }}/config-guide/config/config-php.html)
+*  [Use Redis for session storage]({{ page.baseurl }}/config-guide/redis/redis-session.html)
+*  [Create or extend configuration types]({{ page.baseurl }}/config-guide/config/config-create.html)
+*  [Magento's deployment configuration]({{ page.baseurl }}/config-guide/config/config-php.html)

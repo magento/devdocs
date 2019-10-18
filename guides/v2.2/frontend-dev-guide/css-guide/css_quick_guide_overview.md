@@ -7,8 +7,8 @@ functional_areas:
 
 This chapter combines the topics aiming to help you to quickly start working with styles of your custom theme:
 
-- [Simple ways to customize a theme's styles]
-- [Simple style changes with client-side Less compilation vs. server-side]
+-  [Simple ways to customize a theme's styles]
+-  [Simple style changes with client-side Less compilation vs. server-side]
 
 ## High-level steps to create a theme and change styles
 
@@ -16,11 +16,11 @@ This chapter combines the topics aiming to help you to quickly start working wit
 1. In the file system, [add a new theme] inheriting from Magento Blank or Luma.
 1. [Apply your theme]
 1. Decide which CSS compilation mode you will use. Compilation modes are described in the following topics:
-   - Detailed description: [Styles debugging]
-   - Practical illustration: [Simple style changes with client-side Less compilation vs. server-side]
+   -  Detailed description: [Styles debugging]
+   -  Practical illustration: [Simple style changes with client-side Less compilation vs. server-side]
 1. Customize styles. To learn how, check out the following sources:
-   - [CSS chapter of this book][css overview]
-   - [Simple ways to customize a theme's styles]
+   -  [CSS chapter of this book][css overview]
+   -  [Simple ways to customize a theme's styles]
 
 ## Why do you need to create a custom theme?
 
@@ -39,9 +39,9 @@ Making changes in the Magento out-of-the-box themes is a bad idea, because can r
 {:.ref-header}
 Related topics
 
-- [CSS in Magento themes][css overview]
-- [Simple ways to customize a theme's styles]
-- [Simple style changes with client-side Less compilation vs. server-side]
+-  [CSS in Magento themes][css overview]
+-  [Simple ways to customize a theme's styles]
+-  [Simple style changes with client-side Less compilation vs. server-side]
 
 <!-- Link Definitions -->
 [Simple ways to customize a theme's styles]: {{ page.baseurl }}/frontend-dev-guide/css-guide/css_quick_guide_approach.html

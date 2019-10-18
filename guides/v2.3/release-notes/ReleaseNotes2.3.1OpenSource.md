@@ -63,11 +63,11 @@ The Admin order creation workflow has been refactored to eliminate delays when e
 
 The Magento Inventory (was MSI) community project has added multiple new features to this release of Inventory Management. See [Inventory Management Release Notes]({{ page.baseurl }}/inventory/release-notes.html) for information about specific fixes and acknowledgements to community contributors.
 
-* **Support for Elasticsearch and Inventory Management**. All site searches now return correct products and quantities when Elasticsearch is used as the search engine. (As of this release, only default option from 2.3+)  Searches return results from stock assigned to the website. Advanced features are supported, including filtering search results. Community-developed feature!
+*  **Support for Elasticsearch and Inventory Management**. All site searches now return correct products and quantities when Elasticsearch is used as the search engine. (As of this release, only default option from 2.3+)  Searches return results from stock assigned to the website. Advanced features are supported, including filtering search results. Community-developed feature!
 
-* **Distance Priority Source Selection algorithm (SSA) option**. Merchants can enable this algorithm to reduce fulfillment costs by shipping orders from the closest inventory locations. This SSA option uses address geocoding through the Google Maps API to calculate the shortest distance for deliveries. See [Manage source selection algorithms]({{ page.baseurl }}/rest/modules/inventory/manage-source-selection.html).
+*  **Distance Priority Source Selection algorithm (SSA) option**. Merchants can enable this algorithm to reduce fulfillment costs by shipping orders from the closest inventory locations. This SSA option uses address geocoding through the Google Maps API to calculate the shortest distance for deliveries. See [Manage source selection algorithms]({{ page.baseurl }}/rest/modules/inventory/manage-source-selection.html).
 
-* **Enhancements to mass inventory transfers**. Bulk transfer of inventory has been optimized to improve processing speed and to reduce locking during transfers.
+*  **Enhancements to mass inventory transfers**. Bulk transfer of inventory has been optimized to improve processing speed and to reduce locking during transfers.
 
 ### Improved developer experience
 
@@ -85,37 +85,37 @@ This release includes over 30 security enhancements that help close cross-site s
 
 ### Performance boosts
 
-* Customer address handling has been rewritten with UI components that increase platform performance, which in turn streamlines the management of customers with 3000 and more addresses.  <!--- MAGETWO-94346 95249-->
+*  Customer address handling has been rewritten with UI components that increase platform performance, which in turn streamlines the management of customers with 3000 and more addresses.  <!--- MAGETWO-94346 95249-->
 
-* The Admin order creation page now handles  customer accounts with 3000 addresses without performance issues.   <!--- MC-5683-->
+*  The Admin order creation page now handles  customer accounts with 3000 addresses without performance issues.   <!--- MC-5683-->
 
-* Magento now displays the list of additional customer addresses contained in the storefront customer address book  as a grid, which has improved performance for customers with many additional addresses associated with their accounts. [Address Book](https://docs.magento.com/m2/ee/user_guide/customers/account-dashboard-address-book.html) describes how to use this enhanced feature. <!--- MAGETWO-94347-->
+*  Magento now displays the list of additional customer addresses contained in the storefront customer address book  as a grid, which has improved performance for customers with many additional addresses associated with their accounts. [Address Book](https://docs.magento.com/m2/ee/user_guide/customers/account-dashboard-address-book.html) describes how to use this enhanced feature. <!--- MAGETWO-94347-->
 
-* The shipping and billing data that a user enters during checkout now persists if the user interrupts checkout to continue shopping. Previously, checkout data was deleted after a cart update. <!-- MAGETWO-95067 -->
+*  The shipping and billing data that a user enters during checkout now persists if the user interrupts checkout to continue shopping. Previously, checkout data was deleted after a cart update. <!-- MAGETWO-95067 -->
 
 ### Infrastructure improvements
 
 Infrastructure improvements are core enhancements that underlie both merchant and developer features.
 
-* This release includes a **new Authorize.Net extension** to replace the Authorize.Net Direct Post module, which implemented an MD5-based hash that Authorize.Net will no longer support as of June 28, 2019. See [Authorize.Net](https://docs.magento.com/m2/ce/user_guide/payment/authorize-net.html) for information on configuring and using this new extension. Information about the deprecation of Authorize.Net Direct Post can be found [here](https://docs.magento.com/m2/ce/user_guide/payment/authorize-net-direct-post.html). Note that Magento released a patch in late February to address this issue on pre-2.3.1 installations of Magento, which is discussed in [Update Authorize.Net Direct Post from MD5 to SHA-512](https://support.magento.com/hc/en-us/articles/360024368392-Update-Authorize-Net-Direct-Post-from-MD5-to-SHA-512).
+*  This release includes a **new Authorize.Net extension** to replace the Authorize.Net Direct Post module, which implemented an MD5-based hash that Authorize.Net will no longer support as of June 28, 2019. See [Authorize.Net](https://docs.magento.com/m2/ce/user_guide/payment/authorize-net.html) for information on configuring and using this new extension. Information about the deprecation of Authorize.Net Direct Post can be found [here](https://docs.magento.com/m2/ce/user_guide/payment/authorize-net-direct-post.html). Note that Magento released a patch in late February to address this issue on pre-2.3.1 installations of Magento, which is discussed in [Update Authorize.Net Direct Post from MD5 to SHA-512](https://support.magento.com/hc/en-us/articles/360024368392-Update-Authorize-Net-Direct-Post-from-MD5-to-SHA-512).
 
-* Accept.js library is now used for Authorize.NET payments.
+*  Accept.js library is now used for Authorize.NET payments.
 
-* Magento now supports **Elasticsearch 6.x**. *Fix submitted by community member  [Romain Ruaud](https://github.com/romainruaud) in pull request [21458](https://github.com/magento/magento2/pull/21458)*. Thank you, Romain! <!--- ENGCOM-4389 -->
+*  Magento now supports **Elasticsearch 6.x**. *Fix submitted by community member  [Romain Ruaud](https://github.com/romainruaud) in pull request [21458](https://github.com/magento/magento2/pull/21458)*. Thank you, Romain! <!--- ENGCOM-4389 -->
 
-* Update PayPal Express Checkout to `checkout.js v4`. This introduces a modernized checkout flow, faster checkout performance, and new payment options in a single integration that does not have to be updated as new payment methods become available. It also unlocks new payment options including Venmo and PayPal Credit. See [PayPal Express Checkout](https://docs.magento.com/m2/ce/user_guide/payment/paypal-express-checkout.html).
+*  Update PayPal Express Checkout to `checkout.js v4`. This introduces a modernized checkout flow, faster checkout performance, and new payment options in a single integration that does not have to be updated as new payment methods become available. It also unlocks new payment options including Venmo and PayPal Credit. See [PayPal Express Checkout](https://docs.magento.com/m2/ce/user_guide/payment/paypal-express-checkout.html).
 
-* Magento now supports **Redis 5.0**. <!--- MC-5201 -->
+*  Magento now supports **Redis 5.0**. <!--- MC-5201 -->
 
-* Magento support for PHP has changed slightly as a result of expanding our Elasticsearch support in this release. Magento 2.3.1 is compatible with PHP 7.2.x  and certified  on PHP 7.2.11.
+*  Magento support for PHP has changed slightly as a result of expanding our Elasticsearch support in this release. Magento 2.3.1 is compatible with PHP 7.2.x  and certified  on PHP 7.2.11.
 
-* You can now isolate and extract MySQL Views from regular database tables with no negative effects on database backup and restoration. Support for MySQL Views was introduced in 2.3.0 with unexpected consequences to the default database backups and restore mechanism. This fix restores expected  backup and restore functionality while preserving MySQL View support the backward compatibility with legacy inventory. *Fix submitted by community member  [Stepan Furman](https://github.com/Stepa4man) in pull request [21151](https://github.com/magento/magento2/pull/21151)*. Thank you, Stepan!
+*  You can now isolate and extract MySQL Views from regular database tables with no negative effects on database backup and restoration. Support for MySQL Views was introduced in 2.3.0 with unexpected consequences to the default database backups and restore mechanism. This fix restores expected  backup and restore functionality while preserving MySQL View support the backward compatibility with legacy inventory. *Fix submitted by community member  [Stepan Furman](https://github.com/Stepa4man) in pull request [21151](https://github.com/magento/magento2/pull/21151)*. Thank you, Stepan!
 
-* Magento now uses version 6.0 of the DHL XML Services schema for the DHL shipping method. <!--- MC-4245-->*
+*  Magento now uses version 6.0 of the DHL XML Services schema for the DHL shipping method. <!--- MC-4245-->*
 
-* <!--- MAGETWO-95068--> **Checkout information now persists after a cart update**. Information previously entered by a customer during check out (such as shipping address) now persists after the customer updates their shopping cart. Previously, when a customer updated their shopping cart, all information previously entered during check out (such as shipping address) was deleted.
+*  <!--- MAGETWO-95068-->**Checkout information now persists after a cart update**. Information previously entered by a customer during check out (such as shipping address) now persists after the customer updates their shopping cart. Previously, when a customer updated their shopping cart, all information previously entered during check out (such as shipping address) was deleted.
 
-* Upgrade of Magento Functional Test Framework (MFTF) to 2.3.13.
+*  Upgrade of Magento Functional Test Framework (MFTF) to 2.3.13.
 
 ### Bundled extension enhancements
 
@@ -123,53 +123,53 @@ This release of Magento includes extensions developed by third-party vendors.
 
 #### Amazon Pay
 
-* Added **multi-currency support** for  EU and U.K. merchants. See [Use multi-currency](https://amzn.github.io/amazon-payments-magento-2-plugin/configuration.html#use-multi-currency) for an introduction to using this new feature with Magento 2.x.  <!--- BUNDLE-1762-->
+*  Added **multi-currency support** for  EU and U.K. merchants. See [Use multi-currency](https://amzn.github.io/amazon-payments-magento-2-plugin/configuration.html#use-multi-currency) for an introduction to using this new feature with Magento 2.x.  <!--- BUNDLE-1762-->
 
 #### dotdigital Engagement Cloud (formerly dotmailer)
 
-* dotmailer has been rebranded as dotdigital Engagement Cloud.
+*  dotmailer has been rebranded as dotdigital Engagement Cloud.
 
-* Support for Marketing preferences has been added to the customer account dashboard area.
+*  Support for Marketing preferences has been added to the customer account dashboard area.
 
-* If enabled, we now display the customer consent text in the customer's account dashboard area as the general subscription text.
+*  If enabled, we now display the customer consent text in the customer's account dashboard area as the general subscription text.
 
-* The abandoned cart and automation process now benefits from a retry function if contacts are pending in dotdigital Engagement Cloud.
+*  The abandoned cart and automation process now benefits from a retry function if contacts are pending in dotdigital Engagement Cloud.
 
 #### Magento Shipping
 
 New features for Magento 2.3.1 include:
 
-* **Shipment Cancellation**.  You can now cancel a shipment that has not yet been dispatched by accessing the shipment and clicking **Cancel Shipment**.
+*  **Shipment Cancellation**.  You can now cancel a shipment that has not yet been dispatched by accessing the shipment and clicking **Cancel Shipment**.
 
-* **Portal Access via Magento**. You can now access the Magento Shipping portal directly from Magento using the Magento Shipping credentials that are stored in your Magento instance.
+*  **Portal Access via Magento**. You can now access the Magento Shipping portal directly from Magento using the Magento Shipping credentials that are stored in your Magento instance.
 
 Enhancements to existing features include:
 
-* Multiple improvements to the Shipment workflow user experience.
+*  Multiple improvements to the Shipment workflow user experience.
 
-* **Batch Processing**. Error messaging and field validation has been added to the batch processing workflow. See xxx for a description of other enhancements to batch processing.
+*  **Batch Processing**. Error messaging and field validation has been added to the batch processing workflow. See xxx for a description of other enhancements to batch processing.
 
-* **Collection Points**. Available Collection Points have been expanded to cater for both FedEx Hold at Locations and UPS Access Points.
+*  **Collection Points**. Available Collection Points have been expanded to cater for both FedEx Hold at Locations and UPS Access Points.
 
-* Significant user interface changes have been made to the list of locations displayed during checkout. Opening and closing hours are now included when provided by the carrier.
+*  Significant user interface changes have been made to the list of locations displayed during checkout. Opening and closing hours are now included when provided by the carrier.
 
-* **Click & Collect**. The list of Click & Collect locations in checkout has been brought in line with the new Collection Points list. For a description of the new Collection Points list, see xxx.
+*  **Click & Collect**. The list of Click & Collect locations in checkout has been brought in line with the new Collection Points list. For a description of the new Collection Points list, see xxx.
 
-* **Carrier Specific Packaging**. Carrier-specific packaging has been added for FedEx. These packages will be available for selection during shipping if a FedEx carrier is configured.
+*  **Carrier Specific Packaging**. Carrier-specific packaging has been added for FedEx. These packages will be available for selection during shipping if a FedEx carrier is configured.
 
-* **Qualification Experience**. The three Qualification experiences (Ship to Address, Click & Collect, and Collection Points) have been restructured and are now available as outcomes in a single Qualification experience.
+*  **Qualification Experience**. The three Qualification experiences (Ship to Address, Click & Collect, and Collection Points) have been restructured and are now available as outcomes in a single Qualification experience.
 
-* **Security**. We've closed scenarios that could allow for third-party code execution.
+*  **Security**. We've closed scenarios that could allow for third-party code execution.
 
-* **Magento Cart Price Rules**. Cart price rules can now be applied to Magento Shipping.
+*  **Magento Cart Price Rules**. Cart price rules can now be applied to Magento Shipping.
 
-* **Dispatch**. We've added additional workflow capabilities during the dispatch process to cater for future carriers.
+*  **Dispatch**. We've added additional workflow capabilities during the dispatch process to cater for future carriers.
 
 #### Vertex
 
-* Added support for B2C VAT.
+*  Added support for B2C VAT.
 
-* Added support for configurable logging.
+*  Added support for configurable logging.
 
 ## Fixed issues
 
@@ -212,7 +212,7 @@ We've fixed hundreds of issues in the Magento 2.3.1 core code.
 
 <!--- MC-1364-->
 
-* The **Allow Dynamic Media URLs in Products and Categories** configuration setting, which was previously accessed from **Stores** > **Configuration** > **Catalog** > **Storefront**, has been removed. The **Use Static URLs for Media Content in WYSIWYG** setting (**Stores** > **Configuration** > **General** > **Content management** > **WYSIWYG Options**) now applies to any media URLs that are entered through the WYSIWYG editor.
+*  The **Allow Dynamic Media URLs in Products and Categories** configuration setting, which was previously accessed from **Stores** > **Configuration** > **Catalog** > **Storefront**, has been removed. The **Use Static URLs for Media Content in WYSIWYG** setting (**Stores** > **Configuration** > **General** > **Content management** > **WYSIWYG Options**) now applies to any media URLs that are entered through the WYSIWYG editor.
 
 ### Analytics
 
@@ -522,7 +522,7 @@ We've fixed hundreds of issues in the Magento 2.3.1 core code.
 *  We've improved the error message that Magento displays when validating a new (but invalid) product attribute. *Fix submitted by saravananvelu in pull request [17806](https://github.com/magento/magento2/pull/17806)*. [GitHub-17754](https://github.com/magento/magento2/issues/17754)
 
 <!--- ENGCOM-3476 -->
-*   `getProductUrl` no longer returns the wrong URL when the current category has no products. *Fix submitted by Erik Pellikka in pull request [19232](https://github.com/magento/magento2/pull/19232)*. [GitHub-17819](https://github.com/magento/magento2/issues/17819)
+*  `getProductUrl` no longer returns the wrong URL when the current category has no products. *Fix submitted by Erik Pellikka in pull request [19232](https://github.com/magento/magento2/pull/19232)*. [GitHub-17819](https://github.com/magento/magento2/issues/17819)
 
 <!--- ENGCOM-3448 -->
 *  The user agent exception now sets the correct templates for product pages. Previously, the `footer.phtml` and `absolute_footer.phtml` templates were loaded from the desktop theme instead of the mobile theme regardless of the user agent. *Fix submitted by Alex Ghiban in pull request [19124](https://github.com/magento/magento2/pull/19124)*. [GitHub-16074](https://github.com/magento/magento2/issues/16074)
@@ -900,7 +900,7 @@ Previously, when you reopened these categories, no checkboxes were checked.
 *  You can now upload PDP images larger than 1920 x 1200  without compressing and downsizing the images first. Previously, when a merchant uploaded a high quality product image (larger than 1920X1200), Magento resized and compressed the image. Merchants can now set requirements for resizing and compression as well as compression quality and target width and height.
 
 <!--- MAGETWO-96975 -->
-*   `_sleep` and `__wakeup` have been removed, and a new `PHP.MD` rule has been added to discourage PHP serialization.
+*  `_sleep` and `__wakeup` have been removed, and a new `PHP.MD` rule has been added to discourage PHP serialization.
 
 <!--- ENGCOM-3857 -->
 *  Magento now validates new addresses when created from the address book telephone field on the My Account dashboard page. *Fix submitted by Dipti in pull request [20262](https://github.com/magento/magento2/pull/20262)*. [GitHub-20261](https://github.com/magento/magento2/issues/20261)
@@ -1136,11 +1136,11 @@ Previously, when you reopened these categories, no checkboxes were checked.
 *  The memory required to export the media gallery has been significantly reduced. [GitHub-17320](https://github.com/magento/magento2/issues/17320)
 
 <!--- MAGETWO-95825-->
-* We've resolved the following issues with imported images:
+*  We've resolved the following issues with imported images:
 
-   * images of all sizes reverted to the default placeholder size after import.
+   *  images of all sizes reverted to the default placeholder size after import.
 
-   * images that were removed through the Admin before import returned after import. Magento now displays an informative error message if images are not imported as expected.
+   *  images that were removed through the Admin before import returned after import. Magento now displays an informative error message if images are not imported as expected.
 
 <!--- MAGETWO-91569 -->
 *  Special characters in the CSV import file no longer trigger a general system exception. Previously, special characters (for example, <code>ƒ</code>, <code>ª</code>, and <code>›</code>) halted the check data phase of import.
@@ -1210,7 +1210,7 @@ Previously, when you reopened these categories, no checkboxes were checked.
 <!--- ENGCOM-3364 -->
 *  Magento no longer throws an error when you send an email from the command line. Previously, Magento threw an exception because `$debugHintsPath` was missing. *Fix submitted by p-bystritsky in pull request [18991](https://github.com/magento/magento2/pull/18991)*. [GitHub-10440](https://github.com/magento/magento2/issues/10440)
 
-* Message queue topic names generated as a result of asynchronous and bulk REST calls are now based on service contract names. Currently,  topic names reflect the PHP class and method names that should be invoked to handle processing. For example, a topic that was named using the older conventions (`async.V1.customers.POST`) might be named `async.magento.customer.api.accountmanagementinterface.createaccount.post`. This new naming is more semantic and allows the reuse for other Magento services.
+*  Message queue topic names generated as a result of asynchronous and bulk REST calls are now based on service contract names. Currently,  topic names reflect the PHP class and method names that should be invoked to handle processing. For example, a topic that was named using the older conventions (`async.V1.customers.POST`) might be named `async.magento.customer.api.accountmanagementinterface.createaccount.post`. This new naming is more semantic and allows the reuse for other Magento services.
 
 ### Integration
 
@@ -1225,9 +1225,9 @@ Previously, when you reopened these categories, no checkboxes were checked.
 
 ### Magento Shipping
 
-* Updating an order destination prior to creating a shipment  now results in the shipment being sent to the new destination.
+*  Updating an order destination prior to creating a shipment  now results in the shipment being sent to the new destination.
 
-* Shipments that contain the same item across multiple packages will now correctly update the shipped amount.
+*  Shipments that contain the same item across multiple packages will now correctly update the shipped amount.
 
 ### MSRP
 
@@ -1285,7 +1285,7 @@ Previously, when you reopened these categories, no checkboxes were checked.
 *  Tax is now calculated as expected for virtual products when PayPal is used as a payment method.
 
 <!--- MAGETWO-96475 -->
-*   When an order placed with PayPal fails during checkout, Magento no longer processes payment for the order. Previously, orders that failed during  checkout when being processed through PayPal were processed.
+*  When an order placed with PayPal fails during checkout, Magento no longer processes payment for the order. Previously, orders that failed during  checkout when being processed through PayPal were processed.
 
 <!--- MAGETWO-96291 -->
 *  A pop-up window no longer blocks completion of checkout using Braintree PayPal on a mobile device.
@@ -1322,9 +1322,9 @@ Previously, when you reopened these categories, no checkboxes were checked.
 <!--- MAGETWO-95249 94346 -->
 *  New customer address handling improves the processing of many addresses on the Admin customer details page. This functionality was rewritten with UI components to increase platform performance, which in turn facilitates the management of customers with 3000 and more addresses. This refactoring includes these changes:
 
-   * All actions on the Customer Addresses tab are now performed asynchronously with AJAX. This tab now contains the default billing address and default shipping address UI component blocks, customer addresses listing or grid, and customer address form in a modal window.
+   *  All actions on the Customer Addresses tab are now performed asynchronously with AJAX. This tab now contains the default billing address and default shipping address UI component blocks, customer addresses listing or grid, and customer address form in a modal window.
 
-   * `\Magento\Customer\Model\Customer\DataProvider` has been replaced by `\Magento\Customer\Model\Customer\DataProviderWithDefaultAddresses` to support the asynchronous management of customer addresses.
+   *  `\Magento\Customer\Model\Customer\DataProvider` has been replaced by `\Magento\Customer\Model\Customer\DataProviderWithDefaultAddresses` to support the asynchronous management of customer addresses.
 
 ### Product video
 
@@ -1431,7 +1431,7 @@ Previously, when you reopened these categories, no checkboxes were checked.
 *  The Sales table now displays company information in billing and shipping addresses.
 
 <!--- MAGETWO-94424 -->
-*   Magento now displays product price and shipping costs in the default currency that was configured for that specific website for orders created from the Admin. Previously, when you have multi-site configuration with different default currencies for each website, the product and shipping prices shown while creating an admin order are incorrect.
+*  Magento now displays product price and shipping costs in the default currency that was configured for that specific website for orders created from the Admin. Previously, when you have multi-site configuration with different default currencies for each website, the product and shipping prices shown while creating an admin order are incorrect.
 
 <!--- ENGCOM-3828 -->
 *  Magento now displays a success message when you create an order through the Admin and the **create shipment** and **Email copy of invoice** checkboxes are checked. *Fix submitted by Surabhi Srivastava in pull request [20142](https://github.com/magento/magento2/pull/20142)*. [GitHub-19942](https://github.com/magento/magento2/issues/19942)
@@ -1483,11 +1483,11 @@ Previously, when you reopened these categories, no checkboxes were checked.
 *  Searching for a synonym that contains a hyphen and number now returns the same results as any other search term in the group.
 
 <!--- MAGETWO-97235-->
-* Layered navigation for Elasticsearch now includes all product sizes. If the **Filterable (with results)** option is set for a product attribute then:
+*  Layered navigation for Elasticsearch now includes all product sizes. If the **Filterable (with results)** option is set for a product attribute then:
 
-   * Layered navigation includes only those filters for which matching products can be found.
-   * Any attribute value that already applies to all products shown in the list should still appear as an available filter.
-   * Attribute values with a count of zero (0) product matches are omitted from the list of available filters.
+   *  Layered navigation includes only those filters for which matching products can be found.
+   *  Any attribute value that already applies to all products shown in the list should still appear as an available filter.
+   *  Attribute values with a count of zero (0) product matches are omitted from the list of available filters.
 
 See [Filterable attributes](https://docs.magento.com/m2/ee/user_guide/catalog/navigation-layered-filterable-attributes.html) for more information.
 
@@ -1715,11 +1715,11 @@ See [Filterable attributes](https://docs.magento.com/m2/ee/user_guide/catalog/na
 
 **Issue**: The Web Setup Wizard is not available from the Admin under these conditions:
 
-* base URLs are set to HTTP.
+*  base URLs are set to HTTP.
 
-* **Use Secure URLs in Admin** is set to **on**.
+*  **Use Secure URLs in Admin** is set to **on**.
 
-* HTTPS is disabled.
+*  HTTPS is disabled.
 
 **Workaround**: You must enable HSTS from **Stores** > **General** > **Web** > **BaseUrls (Secure)**.
 <!--- MC-15003-->
@@ -1740,15 +1740,15 @@ If UPS Type is set to `United Parcel Service` in the UPS Shipping Method Config
 
 1. Tap **Save Config**.
 
-* **Issue**: The Async/Bulk Web APIs support only the default store view. A hot fix for this issue will be available in the near future. This issue has been resolved with the Scope parameter for Async/Bulk API patch, which is now available. See [Patch for Magento Framework Message Queue and Store Scopes](https://community.magento.com/t5/Magento-DevBlog/Patch-for-Magento-Framework-Message-Queue-and-Store-Scopes/ba-p/135209) for a full discussion of this scope-related issue and patch contents.
+*  **Issue**: The Async/Bulk Web APIs support only the default store view. A hot fix for this issue will be available in the near future. This issue has been resolved with the Scope parameter for Async/Bulk API patch, which is now available. See [Patch for Magento Framework Message Queue and Store Scopes](https://community.magento.com/t5/Magento-DevBlog/Patch-for-Magento-Framework-Message-Queue-and-Store-Scopes/ba-p/135209) for a full discussion of this scope-related issue and patch contents.
 
 ## Community contributions
 
  We are grateful to the wider Magento community and would like to acknowledge their contributions to this release. Check out the following ways you can learn about the community contributions to our current releases:
 
-* If a community member has provided a fix for this release, we identify the fix in the Fixed Issue section of these notes with the phrase, "*Fix provided by community member @member_name*".
+*  If a community member has provided a fix for this release, we identify the fix in the Fixed Issue section of these notes with the phrase, "*Fix provided by community member @member_name*".
 
-* The Magento Community Engineering team [Magento Contributors](https://magento.com/magento-contributors) maintains a list of top contributing individuals and partners by month, quarter, and year. From that Contributors page, you can follow links to their merged PRs on GitHub.
+*  The Magento Community Engineering team [Magento Contributors](https://magento.com/magento-contributors) maintains a list of top contributing individuals and partners by month, quarter, and year. From that Contributors page, you can follow links to their merged PRs on GitHub.
 
 ### Partner contributions
 

@@ -7,9 +7,9 @@ redirect_from:
 
 The `BundleProduct` data type implements the following interfaces:
 
--   `ProductInterface`
--   `PhysicalProductInterface`
--   `CustomizableProductInterface`
+-  `ProductInterface`
+-  `PhysicalProductInterface`
+-  `CustomizableProductInterface`
 
 Attributes that are specific to bundle products can be used when performing a [`products`]({{page.baseurl}}/graphql/queries/products.html) query.
 

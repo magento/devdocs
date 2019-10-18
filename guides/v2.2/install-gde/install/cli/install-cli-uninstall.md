@@ -24,15 +24,15 @@ Before you use these commands, you must [install the Magento software][].
 
 To update the Magento software:
 
-* If you installed the software from an archive or if you used 'composer-create-project', use the Component Manager or System Upgrade utilities.
-* If you are a contributing developer (that is, you used `git clone`), see [Contributing developers—update, reinstall Magento][].
+*  If you installed the software from an archive or if you used 'composer-create-project', use the Component Manager or System Upgrade utilities.
+*  If you are a contributing developer (that is, you used `git clone`), see [Contributing developers—update, reinstall Magento][].
 
 ## Reinstall the Magento software {#instgde-install-magento-reinstall}
 
 The way you reinstall the Magento application from the command line depends on your role:
 
-* If you installed the software from an archive or if you used 'composer-create-project', see [Reinstall Magento Software][].
-* If you're a contributing developer (that is, you started using `git clone`), see [Contributing developers—update, reinstall Magento][].
+*  If you installed the software from an archive or if you used 'composer-create-project', see [Reinstall Magento Software][].
+*  If you're a contributing developer (that is, you started using `git clone`), see [Contributing developers—update, reinstall Magento][].
 
 ## Uninstall the Magento software {#instgde-install-uninstall}
 
@@ -65,8 +65,8 @@ The optional `--keep-generated` option should be used _only_ in limited circumst
 
 ## Install the Magento software
 
-* [Install the Magento software using the command line][]
-* [Install the Magento software using the Setup Wizard][]
+*  [Install the Magento software using the command line][]
+*  [Install the Magento software using the Setup Wizard][]
 
 <!-- Link Definitions -->
 [Contributing developers—update, reinstall Magento]: {{ page.baseurl }}/install-gde/install/cli/dev_options.html

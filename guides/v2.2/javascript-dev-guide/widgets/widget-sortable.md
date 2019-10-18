@@ -23,7 +23,7 @@ $('#sortable').sortable();
 
 Where:
 
-- `#sortable` is the selector of the block element where Sortable is initialized.
+-  `#sortable` is the selector of the block element where Sortable is initialized.
 
 The following example shows a PHTML file using the script:
 
@@ -48,8 +48,8 @@ Most options, methods, and events for the Sortable widget correspond to the jQue
 
 The Sortable has only two custom options that are different from default [Sortable Widget] options.
 
-- [moveUpEvent](#moveupevent)
-- [moveDownEvent](#movedownevent)
+-  [moveUpEvent](#moveupevent)
+-  [moveDownEvent](#movedownevent)
 
 ### `moveUpEvent`
 

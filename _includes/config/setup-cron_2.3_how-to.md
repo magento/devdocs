@@ -10,9 +10,9 @@ To create the Magento crontab:
 1. Change to your Magento installation directory.
 1. Enter the following command:
 
-    ```bash
-    bin/magento cron:install [--force]
-    ```
+   ```bash
+   bin/magento cron:install [--force]
+   ```
 
 Use `--force` to rewrite an existing Magento crontab.
 

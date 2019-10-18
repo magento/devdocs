@@ -25,11 +25,11 @@ Try each of the following one at a time, then try your installation again.
 
 1. As a user with `root` privileges, restart your web server and MySQL.
 
-   * nginx: `service nginx restart`
-   * Apache (Ubuntu): `service apache2 restart`
-   * Apache (CentOS): `service httpd restart`
-   * MySQL (Ubuntu): `service mysql restart`
-   * MySQL (CentOS): `service mysqld restart`
+   *  nginx: `service nginx restart`
+   *  Apache (Ubuntu): `service apache2 restart`
+   *  Apache (CentOS): `service httpd restart`
+   *  MySQL (Ubuntu): `service mysql restart`
+   *  MySQL (CentOS): `service mysqld restart`
 
 1. Run the [Web Setup Wizard]({{ page.baseurl }}/install-gde/install/web/install-web.html).
 
