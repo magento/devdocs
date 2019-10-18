@@ -35,8 +35,8 @@ Copy the appropriate icon file into your plugin's specific icon or image directo
 
 For example, in a CKEditor4 plugin, these icons would be found copied to the following locations:
 
-* `app/code/CKEditor/CKEditor4/view/base/web/js/ckeditor4/plugins/variable/icons/variable.png`
-* `app/code/CKEditor/CKEditor4/view/base/web/js/ckeditor4/plugins/widget/icons/widget.png`
+*  `app/code/CKEditor/CKEditor4/view/base/web/js/ckeditor4/plugins/variable/icons/variable.png`
+*  `app/code/CKEditor/CKEditor4/view/base/web/js/ckeditor4/plugins/widget/icons/widget.png`
 
 ### Step 3. Implement plugin functionality
 
@@ -119,7 +119,7 @@ CKEDITOR.plugins.add('variable', {
 
 To integrate the default Magento UI for variable, you must have access to the following data:
 
-* backend URL to load the `variable_modal`
+*  backend URL to load the `variable_modal`
 
   **Example:** method that returns this url
   ``` js
@@ -128,7 +128,7 @@ public function getVariablesWysiwygActionUrl()
     return $this->_url->getUrl('mui/index/render', ['namespace' => 'variables_modal']);
 }
   ```
-* htmlId of the WYSIWYG editor.
+*  htmlId of the WYSIWYG editor.
   For CKEditor4, you can get this by calling `editor.element.getId()`.
 
 #### Widget Entity
@@ -251,8 +251,8 @@ CKEDITOR.plugins.add('widget', {
 
 To integrate the default Magento UI for widgets, you need access to the following data:
 
-* The backend `widget_window_url` (`\Magento\Widget\Model\Widget\Config::getWidgetWindowUrl`)
-* htmlId of the WYSIWYG editor.
+*  The backend `widget_window_url` (`\Magento\Widget\Model\Widget\Config::getWidgetWindowUrl`)
+*  htmlId of the WYSIWYG editor.
   For CKEditor4, you can get this by calling `editor.element.getId()`.
 
 #### Media Gallery Entity

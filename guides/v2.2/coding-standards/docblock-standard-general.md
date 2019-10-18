@@ -24,15 +24,15 @@ The goal of this standard is to unify usage of code DocBlocks for all files, not
 
 The following is assumed by default:
 
-* Formatting according [phpDocumentor](https://www.phpdoc.org/docs/latest/guides/docblocks.html){:target="_blank"} standard
-* Requirements apply for all files regardless of programming language, but a DocBlock standard for the particular language may override it.
+*  Formatting according [phpDocumentor](https://www.phpdoc.org/docs/latest/guides/docblocks.html){:target="_blank"} standard
+*  Requirements apply for all files regardless of programming language, but a DocBlock standard for the particular language may override it.
 
 ## General principles
 
 The documentation should follow two simple principles:
 
 1. Be as short as possible.
-2. Include all necessary information without duplication.
+1. Include all necessary information without duplication.
 
 ### Short documentation
 
@@ -40,9 +40,9 @@ The documentation should be as short as possible, but it should not skip necessa
 
 Below are ways of improving code to help simplify documentation:
 
-* Make code self-explanatory.
-* Put all possible information in the names of classes, methods, and variables. (e.g. use `$timeInSec` instead of `$time`)
-* Break down a method into smaller methods with descriptive names.
+*  Make code self-explanatory.
+*  Put all possible information in the names of classes, methods, and variables. (e.g. use `$timeInSec` instead of `$time`)
+*  Break down a method into smaller methods with descriptive names.
   See example below:
 
   ```php
@@ -71,10 +71,11 @@ Below are ways of improving code to help simplify documentation:
 ### Include all the necessary details
 
 1. Identify the details a developer needs to work with your code.
-2. Ignore the implementation details (i.e. private methods/properties and method bodies) and focus on what the public interface signature provides.
+1. Ignore the implementation details (i.e. private methods/properties and method bodies) and focus on what the public interface signature provides.
 
    If possible, improve the interface to provide more information.
-3. Add any remaining information that a developer may need to the DocBlock.
+
+1. Add any remaining information that a developer may need to the DocBlock.
 
 ## Files
 {:#files}
@@ -198,8 +199,8 @@ class Autoload
 But if along with declaring class or function there must be another file with source code included, the inclusion construct must not be before file header and it must not separate element DocBlock from the element.
 So there are two solutions possible:
 
-* Have file header DocBlock separately, then inclusion construct, then a DocBlock for the element with duplicated short description.
-* Or include after declaring the element (it is possible in PHP and won't cause issues before execution).
+*  Have file header DocBlock separately, then inclusion construct, then a DocBlock for the element with duplicated short description.
+*  Or include after declaring the element (it is possible in PHP and won't cause issues before execution).
 
 **DocBlock with Included Script File**
 
@@ -323,57 +324,56 @@ In general, typed method signature must be preferred over PHPDoc annotations whe
 
 Functions and methods should have:
 
-* A short description in case it adds meaningful information beyond the method name.
-* If the purpose of the method is not obvious, a long description that explains the motivation behind the implementation.
+*  A short description in case it adds meaningful information beyond the method name.
+*  If the purpose of the method is not obvious, a long description that explains the motivation behind the implementation.
   The comment must describe why method is implemented and not how.
   For example:
 
-   * If a workaround or hack is implemented, explain why it is necessary and include any other details necessary to understand the algorithm.
-   * For non-obvious implementations where the implementation logic is complicated or does not correspond to the Technical Vision or other known best practices, include an explanation in the doc block's description.
+   *  If a workaround or hack is implemented, explain why it is necessary and include any other details necessary to understand the algorithm.
+   *  For non-obvious implementations where the implementation logic is complicated or does not correspond to the Technical Vision or other known best practices, include an explanation in the doc block's description.
      An implementation is non-obvious if another developer has questions about it.
 
-* The declaration of all arguments (if any) using `@param` tag, unless the argument type is indicated in the method signature.
-  All `@param` annotations must include the appropriate argument type.
-  If any argument requires a `@param` annotation, all arguments must be listed (all or none).
-  The `@param` annotations must be in the same order as the method arguments.
-* The declaration of the return type using the `@return` tag must only be added if the method return type signature
-  does not supply all necessary information (see below for more information on return types).
-* Declaration of possibly thrown exception using `@throws` tag, if the actual body of function triggers throwing an exception.
+*  The declaration of all arguments (if any) using `@param` tag, unless the argument type is indicated in the method signature.
+
+   All `@param` annotations must include the appropriate argument type. If any argument requires a `@param` annotation, all arguments must be listed (all or none). The `@param` annotations must be in the same order as the method arguments.
+
+*  The declaration of the return type using the `@return` tag must only be added if the method return type signature does not supply all necessary information (see below for more information on return types).
+*  Declaration of possibly thrown exception using `@throws` tag, if the actual body of function triggers throwing an exception.
   All occurrences of `@throws` in a DocBlock must be after `@param` and `@return` annotations.
 
 **Exceptions to these rules:**
 
-* Testing methods in Unit tests may have doc blocks to describe the purpose of the test, for example referencing github issues.
+*  Testing methods in Unit tests may have doc blocks to describe the purpose of the test, for example referencing github issues.
 
-* Test method annotations may include data providers and other testing annotations.
+*  Test method annotations may include data providers and other testing annotations.
 
 #### Things to include
 
-* An explanation of input arguments and return values if it is not obvious from their name and type.
+*  An explanation of input arguments and return values if it is not obvious from their name and type.
 
-  This is applicable in the following cases:
+   This is applicable in the following cases:
 
-  * There is more than one possible input/output type.
+   *  There is more than one possible input/output type.
 
-    For example: `@return Config|null`.
-    The DockBlock needs to explain what situations return `null`.
+      For example: `@return Config|null`.
+      The DockBlock needs to explain what situations return `null`.
 
-    Another example: `@param FileInterface|null`.
-    The DocBlock needs to explain what happens when the value of the parameter is `null`.
+      Another example: `@param FileInterface|null`.
+      The DocBlock needs to explain what happens when the value of the parameter is `null`.
 
-    Ideally, implementations such as these should be avoided.
+      Ideally, implementations such as these should be avoided.
 
-  * The input/output type is a simple type and the format is not clear from the name.
-  * The input/output is an array with a specific structure.
-* The intent of the method along with when or where it can be used.
-* If an exception is thrown by a method, explain the cause or situation.
-* If the input is confusing or complicated, add examples of the method's usage in client code or examples of the argument.
+   *  The input/output type is a simple type and the format is not clear from the name.
+   *  The input/output is an array with a specific structure.
+*  The intent of the method along with when or where it can be used.
+*  If an exception is thrown by a method, explain the cause or situation.
+*  If the input is confusing or complicated, add examples of the method's usage in client code or examples of the argument.
 
 #### Things to avoid
 
-* Copying the algorithm.
-  The algorithm must be self-explanatory and understood by reviewing the code and unit tests.
-* Information that is out of date or has the potential to become out of date.
+*  Copying the algorithm. The algorithm must be self-explanatory and understood by reviewing the code and unit tests.
+
+*  Information that is out of date or has the potential to become out of date.
 
 **Example of a Method DocBlock**
 

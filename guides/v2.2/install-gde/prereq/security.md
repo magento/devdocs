@@ -38,8 +38,8 @@ chcon -R --type httpd_sys_rw_content_t <magento_root>/pub/static
 
 The preceding commands work only with the Apache web server. Because of the variety of configurations and security requirements, we don't guarantee these commands work in all situations. For more information, see:
 
-* [man page](http://linux.die.net/man/8/httpd_selinux){:target="_blank"}
-* [serverlab](http://www.serverlab.ca/tutorials/linux/web-servers-linux/configuring-selinux-policies-for-apache-web-servers/){:target="_blank"}
+*  [man page](http://linux.die.net/man/8/httpd_selinux){:target="_blank"}
+*  [serverlab](http://www.serverlab.ca/tutorials/linux/web-servers-linux/configuring-selinux-policies-for-apache-web-servers/){:target="_blank"}
 
 ### Enable inter-server communication
 

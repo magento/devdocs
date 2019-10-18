@@ -48,8 +48,8 @@ Use the following list to identify and troubleshoot issues related to the Fastly
 
    This issue can be caused by either of the following issues:
 
-      -  Invalid Fastly credentials in the Fastly service configuration for the {{ site.data.var.ece }} project environment
-      -  Invalid code in a custom VCL snippet
+   -  Invalid Fastly credentials in the Fastly service configuration for the {{ site.data.var.ece }} project environment
+   -  Invalid code in a custom VCL snippet
 
    To resolve the issue, see [Error purging Fastly cache on Cloud](https://support.magento.com/hc/en-us/articles/115001853194-Error-purging-Fastly-cache-on-Cloud-The-purge-request-was-not-processed-successfully-) in the Magento Help Center.
 

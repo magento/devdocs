@@ -9,8 +9,8 @@ The topic describes how to install, configure, and use [Grunt JavaScript task ru
 
 ## Prerequisites
 
-- Make sure that you [set]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html) your Magento application to the developer or default [mode]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html). The default mode sets the Less compilation mode to Server-side Less compilation.
-- Install and configure Grunt as described in [Using Grunt for Magento tasks]({{ page.baseurl }}/frontend-dev-guide/tools/using_grunt.html)
+-  Make sure that you [set]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html) your Magento application to the developer or default [mode]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html). The default mode sets the Less compilation mode to Server-side Less compilation.
+-  Install and configure Grunt as described in [Using Grunt for Magento tasks]({{ page.baseurl }}/frontend-dev-guide/tools/using_grunt.html)
 
 ## Adding themes to Grunt configuration {#add_theme}
 
@@ -20,46 +20,52 @@ To compile `.less` files, add your theme to `module.exports` in the Grunt config
 
 1. Install the Grunt CLI globally. To do this, run the following command in a command prompt:
 
-    ```bash
-    npm install -g grunt-cli
-    ```
+   ```bash
+   npm install -g grunt-cli
+   ```
 
 1. From the `<Magento_root>` directory, copy and paste the contents of the following files:
 
-    - `package.json.sample` to `package.json`
-    - `Gruntfile.js.sample` to `Gruntfile.js`
-    - `grunt-config.json.sample` into `grunt-config.json`
+   -  `package.json.sample` to `package.json`
+   -  `Gruntfile.js.sample` to `Gruntfile.js`
+   -  `grunt-config.json.sample` into `grunt-config.json`
 
 1. Install (or refresh) the `node.js` project dependency, including Grunt, for your Magento instance. To do this, run the following commands in a command prompt:
 
-    ```bash
-    cd <your_Magento_instance_directory>
-    npm install
-    npm update
-    ```
+   ```bash
+   cd <your_Magento_instance_directory>
+   ```
+
+   ```bash
+   npm install
+   ```
+
+   ```bash
+   npm update
+   ```
 
 1. Add your [theme](https://glossary.magento.com/theme) to Grunt configuration. To do this, in the `dev/tools/grunt/configs/local-themes.js` file, add your theme to `module.exports` like following:
 
-    ```javascript
-    <theme>: {
-        area: '<area>',
-        name: '<Vendor>/<theme>',
-        locale: '<language>',
-        files: [
-            '<path_to_file1>', //path to root source file
-            '<path_to_file2>'
-        ],
-        dsl: 'less'
-    }
-    ```
+   ```javascript
+   <theme>: {
+       area: '<area>',
+       name: '<Vendor>/<theme>',
+       locale: '<language>',
+       files: [
+           '<path_to_file1>', //path to root source file
+           '<path_to_file2>'
+       ],
+       dsl: 'less'
+   }
+   ```
 
-    Where the following notation is used:
+   Where the following notation is used:
 
-    - `<Vendor>`: vendor name.
-    - `<theme>`: your theme code, conventionally should correspond to the theme directory name.
-    - `<language>`: specified in the `code_subtag` format, for example `en_US`. Only one locale can be specified here. To debug the theme with another locale, create one more theme declaration, having specified another value for `language`.
-    - `<area>`: area code, can be either `frontend` or `adminhtml`.
-    - `<path_to_file>`: path to the root source file, relative to the `app/design/frontend/<Vendor>/<theme>/web` directory. You need to specify all [root source files of the theme]({{ page.baseurl }}/frontend-dev-guide/css-topics/css-preprocess.html#css_preprocess_terms). If your theme [inherits] from a certain theme, and does not contain its own root source files, specify the root source files of the parent theme.
+   -  `<Vendor>`: vendor name.
+   -  `<theme>`: your theme code, conventionally should correspond to the theme directory name.
+   -  `<language>`: specified in the `code_subtag` format, for example `en_US`. Only one locale can be specified here. To debug the theme with another locale, create one more theme declaration, having specified another value for `language`.
+   -  `<area>`: area code, can be either `frontend` or `adminhtml`.
+   -  `<path_to_file>`: path to the root source file, relative to the `app/design/frontend/<Vendor>/<theme>/web` directory. You need to specify all [root source files of the theme]({{ page.baseurl }}/frontend-dev-guide/css-topics/css-preprocess.html#css_preprocess_terms). If your theme [inherits] from a certain theme, and does not contain its own root source files, specify the root source files of the parent theme.
 
 1. (Optional) If you want to use Grunt for "watching" changes automatically, without reloading pages in a browser each time, install the [LiveReload extension] in your browser.
 

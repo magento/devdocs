@@ -14,17 +14,17 @@ Magento supports nginx 1.8 (or the [latest mainline version](http://nginx.org/en
 
 Installation instructions vary based on which operating system you're using:
 
-* [Ubuntu 16]({{ page.baseurl }}/install-gde/prereq/nginx.html#ubuntu-16)
-* [CentOS 7]({{ page.baseurl }}/install-gde/prereq/nginx.html#centos-7)
+*  [Ubuntu 16]({{ page.baseurl }}/install-gde/prereq/nginx.html#ubuntu-16)
+*  [CentOS 7]({{ page.baseurl }}/install-gde/prereq/nginx.html#centos-7)
 
 ## Help if you are just starting out {#apache-help-beginner}
 
 If you're new to all this and need some help getting started, we suggest the following:
 
-* [Is the Magento software installed already?]({{ page.baseurl }}/install-gde/basics/basics_magento-installed.html)
-* [What is the software that the Magento server needs to run?]({{ page.baseurl }}/install-gde/basics/basics_software.html)
-* [What operating system is my server running?]({{ page.baseurl }}/install-gde/basics/basics_os-version.html)
-* [How do I log in to my Magento server using a terminal, command prompt, or SSH?]({{ page.baseurl }}/install-gde/basics/basics_login.html)
+*  [Is the Magento software installed already?]({{ page.baseurl }}/install-gde/basics/basics_magento-installed.html)
+*  [What is the software that the Magento server needs to run?]({{ page.baseurl }}/install-gde/basics/basics_software.html)
+*  [What operating system is my server running?]({{ page.baseurl }}/install-gde/basics/basics_os-version.html)
+*  [How do I log in to my Magento server using a terminal, command prompt, or SSH?]({{ page.baseurl }}/install-gde/basics/basics_login.html)
 
 ## Ubuntu 16
 
@@ -147,7 +147,7 @@ You cannot use the Web Setup Wizard when installing Magento on nginx. You must u
    chown -R :www-data . # Ubuntu
    ```
 
-   ```bsah
+   ```bash
    chmod u+x bin/magento
    ```
 

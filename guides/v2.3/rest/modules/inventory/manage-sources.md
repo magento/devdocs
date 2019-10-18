@@ -11,9 +11,9 @@ You cannot rename, delete, or disable the default source. You can create, modify
 
 Disabling a custom source has the following effects:
 
-* Magento ignores and does not list the source for shipment or order processing
-* Stocks do not access inventory quantities from the source for aggregated inventory totals
-* Order shipments cannot be assigned to disabled locations.
+*  Magento ignores and does not list the source for shipment or order processing
+*  Stocks do not access inventory quantities from the source for aggregated inventory totals
+*  Order shipments cannot be assigned to disabled locations.
 
 {:.bs-callout .bs-callout-info}
 Bundle and grouped products currently do not support multi-sourcing and must be assigned to the default source and default stock.

@@ -14,11 +14,11 @@ With this service, you can initiate and process a refund based on an invoice ID,
 
 The `salesRefundInvoice` service allows you to:
 
-* Create a credit memo (complete or partial) for an invoice
-* Add details about the refunded items to the order
-* Change status and state of an order according to performed actions
-* Notify a customer about the performed refund operation
-* Designate whether the returned items are returned to stock
+*  Create a credit memo (complete or partial) for an invoice
+*  Add details about the refunded items to the order
+*  Change status and state of an order according to performed actions
+*  Notify a customer about the performed refund operation
+*  Designate whether the returned items are returned to stock
 
 ### Endpoint
 
@@ -42,5 +42,5 @@ If you try to apply the service to an invoice created using an online payment m
 
 While Magento recommends you use the `Refund` services, Magento also provides the following `CreditmemoManagement` services you can use to issue a credit:
 
-* `salesCreditmemoManagement`
-* `salesCreditmemoRepository`
+*  `salesCreditmemoManagement`
+*  `salesCreditmemoRepository`
