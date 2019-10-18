@@ -1,7 +1,7 @@
 You can use one of the following approaches for logging into a custom file:
 
-- Set up a custom log file in the `di.xml`
-- Set up a custom file in the custom logger handler class
+-  Set up a custom log file in the `di.xml`
+-  Set up a custom file in the custom logger handler class
 
 ## Set up a custom log file in the `di.xml`
 

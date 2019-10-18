@@ -48,9 +48,9 @@ For more information about layouts, see the [Layout documentation]({{ page.baseu
 
 The following directories contain extensible UI components:
 
-* `Magento\NegotiableQuote\view\adminhtml\ui_component` -  company form, negotiable quote grid
+*  `Magento\NegotiableQuote\view\adminhtml\ui_component` -  company form, negotiable quote grid
 
-* `Magento\NegotiableQuote\view\frontend\ui_component` - negotiable quote listing
+*  `Magento\NegotiableQuote\view\frontend\ui_component` - negotiable quote listing
 
 For more information, see [UI Listing/Grid Component]({{ page.baseurl }}/ui_comp_guide/components/ui-listing-grid.html) and [UI Form Component]({{ page.baseurl }}/ui_comp_guide/components/ui-form.html).
 

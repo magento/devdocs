@@ -78,11 +78,11 @@ catalog_product_attribute (Product Attribute)| `Magento/Catalog/etc/di.xml` | `M
 
 Changing the batch size can help you optimize indexer running time. For example, for a store with the following characteristics:
 
-* 10 websites
-* 10 store groups
-* 20 store views
-* 300 tier prices
-* About 40,000 products (of which 254 are configurable)
+*  10 websites
+*  10 store groups
+*  20 store views
+*  300 tier prices
+*  About 40,000 products (of which 254 are configurable)
 
 reducing the batch size for `catalog_product_price` indexer from 5000 to 1000 decreases the execution time from about 4 hours to less than 2 hours. You can experiment to determine the ideal batch size. In general, halving the batch size can decrease the indexer execution time.
 
@@ -133,5 +133,5 @@ The indexer table switching mechanism requires additional database storage.
 {:.ref-header}
 Related topics
 
-* [Indexing overview]({{ page.baseurl }}/extension-dev-guide/indexing.html)
-* [Adding a custom indexer]({{ page.baseurl }}/extension-dev-guide/indexing-custom.html)
+*  [Indexing overview]({{ page.baseurl }}/extension-dev-guide/indexing.html)
+*  [Adding a custom indexer]({{ page.baseurl }}/extension-dev-guide/indexing-custom.html)

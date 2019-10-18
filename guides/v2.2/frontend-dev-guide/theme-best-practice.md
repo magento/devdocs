@@ -13,10 +13,10 @@ We recommend using the following best practices when developing themes:
 
 1. When [inheriting]({{ page.baseurl }}/frontend-dev-guide/themes/theme-inherit.html) from a default Magento theme, extend the default styles instead of overriding them.  Whenever possible, put your customizations in the `_extend.less` or `_theme.less` file, instead of overriding a `.less` file from a parent theme.
 1. Customize, or create new, `.xml` layout files instead of customizing and overriding `.phtml` templates. For example, if you need to create a new container, it is better to add an `.xml` file than override an existing template. Some other customizations that can be performed using layout instructions include:
-    * Change the position of a block or container using `<move>`.
-    * Add or remove a block or container by setting the `remove` or `display` attribute to `true` or `false` within the `<referenceBlock>/<referenceContainer>`.
-    * Change the HTML tag or CSS class for the existing container using the `<referenceContainer>` element.
-    * Add fonts, images, and JavaScript files in the `<theme_dir>/web/` directory.
+    *  Change the position of a block or container using `<move>`.
+    *  Add or remove a block or container by setting the `remove` or `display` attribute to `true` or `false` within the `<referenceBlock>/<referenceContainer>`.
+    *  Change the HTML tag or CSS class for the existing container using the `<referenceContainer>` element.
+    *  Add fonts, images, and JavaScript files in the `<theme_dir>/web/` directory.
 
     See the [Layout chapter of this Guide]({{ page.baseurl }}/frontend-dev-guide/layouts/layout-overview.html) for more information on working with layouts.
 

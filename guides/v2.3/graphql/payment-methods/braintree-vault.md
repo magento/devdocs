@@ -30,7 +30,7 @@ The following diagram shows the workflow for placing an order when Braintree Vau
 
 1. The gateway sends the response to Magento.
 
-1.  Magento creates an order and sends an order ID in response to the `placeOrder` mutation.
+1. Magento creates an order and sends an order ID in response to the `placeOrder` mutation.
 
 ## `setPaymentMethodOnCart` mutation
 

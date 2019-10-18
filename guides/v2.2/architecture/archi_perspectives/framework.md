@@ -11,7 +11,7 @@ The Magento Framework controls how application components interact, including re
 This primarily [PHP](https://glossary.magento.com/php) software component is organized into logical groups called *libraries*, which all modules can call.  Most of the framework code sits under the domain layer or encloses the presentation, service, and domain layers. The framework contains no business logic.
 (Although the Magento Framework does not contain resource models, it does contain a [library](https://glossary.magento.com/library) of code to help implement a resource model.)
 
-{:.bs-callout .bs-callout-tip}
+{: .bs-callout-tip }
 Don't confuse the Magento Framework with the Zend web application framework that ships with Magento.
 
 You should never modify Framework files, although if you are extending Magento, you must know how to call Framework libraries. Modules you create will typically inherit from classes and interfaces defined in the Framework directories.
@@ -22,11 +22,11 @@ The Magento Framework provides libraries that help reduce the effort of creating
 
 The Framework is responsible for operations that are useful for potentially all modules, including:
 
-* handling HTTP protocols
+*  handling HTTP protocols
 
-* interacting with the database and filesystem
+*  interacting with the database and filesystem
 
-* rendering content
+*  rendering content
 
 ## Organization
 
@@ -42,13 +42,13 @@ lib/
     ../web
 ```
 
-* `/vendor/magento/framework`  contains only PHP code. These are libraries of code plus the application entry point that routes requests to modules (that in turn call the Framework libraries). For example,  libraries in the Framework help implement a resource model (base classes and interfaces to inherit from) but not the resource models themselves. Certain libraries also support [CSS](https://glossary.magento.com/css) rendering.
+*  `/vendor/magento/framework`  contains only PHP code. These are libraries of code plus the application entry point that routes requests to modules (that in turn call the Framework libraries). For example,  libraries in the Framework help implement a resource model (base classes and interfaces to inherit from) but not the resource models themselves. Certain libraries also support [CSS](https://glossary.magento.com/css) rendering.
 
-* `/lib/internal` contains some non-PHP as well as PHP components. Non-PHP framework libraries includes [JavaScript](https://glossary.magento.com/javascript) and LESS/CSS.
+*  `/lib/internal` contains some non-PHP as well as PHP components. Non-PHP framework libraries includes [JavaScript](https://glossary.magento.com/javascript) and LESS/CSS.
 
-* `/lib/web` contains JavaScript and CSS/LESS files. These files reside  under `web` and not `internal` because they are accessible from a web browser, while the PHP code under `internal` is not. (Any code that a web browser must access should be under `web`, while everything else under `internal`.)
+*  `/lib/web` contains JavaScript and CSS/LESS files. These files reside  under `web` and not `internal` because they are accessible from a web browser, while the PHP code under `internal` is not. (Any code that a web browser must access should be under `web`, while everything else under `internal`.)
 
-{:.bs-callout .bs-callout-tip}
+{: .bs-callout-tip }
 The `vendor/magento/framework` directory maps to the `Magento\Framework` [namespace](https://glossary.magento.com/namespace).
 
 ## Highlights of Magento Framework

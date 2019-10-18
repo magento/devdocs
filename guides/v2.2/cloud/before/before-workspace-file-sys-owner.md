@@ -55,7 +55,7 @@ Because the point of creating this user is to provide added security, it is esse
 
 To find the web server user's group:
 
-* CentOS:
+*  CentOS:
 
    ```bash
    grep -E -i '^user|^group' /etc/httpd/conf/httpd.conf
@@ -69,7 +69,7 @@ To find the web server user's group:
 
    Typically, the user and group name are both `apache`
 
-* Ubuntu: `ps aux | grep apache` to find the apache user, then `groups <apache user>` to find the group
+*  Ubuntu: `ps aux | grep apache` to find the apache user, then `groups <apache user>` to find the group
 
    Typically, the username and the group name are both `www-data`
 
@@ -77,8 +77,8 @@ To find the web server user's group:
 
 Assuming the typical Apache group name for CentOS and Ubuntu, enter the following command as a user with `root` privileges:
 
-* CentOS: `usermod -g apache <username>`
-* Ubuntu: `usermod -g www-data <username>`
+*  CentOS: `usermod -g apache <username>`
+*  Ubuntu: `usermod -g www-data <username>`
 
 For example, to add the user `magento_user` to the `apache` primary group on CentOS:
 
@@ -100,8 +100,8 @@ magento_user : apache
 
 To complete the task, restart the web server:
 
-* Ubuntu: `service apache2 restart`
-* CentOS: `service httpd restart`
+*  Ubuntu: `service apache2 restart`
+*  CentOS: `service httpd restart`
 
 {:.ref-header}
 Next step

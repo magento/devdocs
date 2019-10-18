@@ -22,7 +22,7 @@ $("#element").redirectUrl({url: 'http://example.com'});
 
 Where:
 
-- `#element` is the selector of the element for which RedirectUrl is initialized.
+-  `#element` is the selector of the element for which RedirectUrl is initialized.
 
 The following example shows a PHTML file using the script:
 
@@ -43,8 +43,8 @@ The following example shows a PHTML file using the script:
 
 The RedirectUrl widget has the following options:
 
-- [event](#event)
-- [url](#url)
+-  [event](#event)
+-  [url](#url)
 
 ### `event`
 

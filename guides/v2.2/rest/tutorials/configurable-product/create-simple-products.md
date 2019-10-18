@@ -15,11 +15,11 @@ functional_areas:
 
 The payloads for creating a simple product and a configurable product are identical, with the following exceptions:
 
-* The simple product `sku` appends the configurable option (the size in this tutorial) to the configurable product `sku`.
-* The `name` indicates the size.
-* The `type_id` is set to `simple`.
-* The `visibility` is set to `1`, indicating the simple product should not be displayed on the store.
-* The `price` and `size` attributes are specified.
+*  The simple product `sku` appends the configurable option (the size in this tutorial) to the configurable product `sku`.
+*  The `name` indicates the size.
+*  The `type_id` is set to `simple`.
+*  The `visibility` is set to `1`, indicating the simple product should not be displayed on the store.
+*  The `price` and `size` attributes are specified.
 
 Although it's not required, the simple product payload also includes `stock_item` information. By default, the Luma store hides out-of-stock items, so adding stock will make the Champ Tee visible on the website.
 
@@ -230,8 +230,8 @@ Attribute | Medium Value | Large Value
 
 ## Verify this step
 
-* Log in to the Luma website and select <b>Catalog > Products</b>. The product appears in the grid.
+*  Log in to the Luma website and select <b>Catalog > Products</b>. The product appears in the grid.
 
   ![Product page with configurable and simple products]({{ page.baseurl }}/rest/images/products-page-all.png)
 
-* On the Luma storefront page, search for `Champ`. No results are returned.
+*  On the Luma storefront page, search for `Champ`. No results are returned.
