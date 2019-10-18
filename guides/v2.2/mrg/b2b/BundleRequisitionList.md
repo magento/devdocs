@@ -12,9 +12,9 @@ The `Magento_BundleRequisitionList` module enables bundle products to be display
 
 The `Magento_BundleRequisitionList` module provides the following features:
 
-* Display bundle products in a requisition list.
+*  Display bundle products in a requisition list.
 
-* Add bundle products to cart from a requisition list.
+*  Add bundle products to cart from a requisition list.
 
 ## Installation details
 

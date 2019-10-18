@@ -23,8 +23,8 @@ To upgrade Magento system software instead, see [Run System Upgrade]({{ page.bas
 
 See one of the following sections:
 
-* [About the Module Manager](#modman-about)
-* [Enable or disable a module](#modman-about-endis)
+*  [About the Module Manager](#modman-about)
+*  [Enable or disable a module](#modman-about-endis)
 
 ## About the Module Manager {#modman-about}
 

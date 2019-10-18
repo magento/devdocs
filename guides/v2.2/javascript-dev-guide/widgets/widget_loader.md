@@ -22,7 +22,7 @@ $('#example').loader({
 
 Where:
 
-- `#element` is the selector of the element for Loader is initialized.
+-  `#element` is the selector of the element for Loader is initialized.
 
 ```html
 <script>
@@ -40,9 +40,9 @@ require(['jquery', 'loader'], function ($) {
 
 The loader widget has the following options:
 
--   [icon](#l_icon)
--   [template](#l_template)
--   [texts](#l_texts)
+-  [icon](#l_icon)
+-  [template](#l_template)
+-  [texts](#l_texts)
 
 ### `icon` {#l_icon}
 
@@ -71,15 +71,15 @@ HTML wrapper for the output, or a DOM element selector.
 
 An object that contains translations for loader text:
 
--   `texts.loaderText`: The text that is displayed under the loader image.
-    **Default value**: *'Please wait...'*
--   `texts.imgAlt`: The text that is set as the `alt` attribute value of the loader image.
-    **Default value**: *'Loading...'*
+-  `texts.loaderText`: The text that is displayed under the loader image.
+   **Default value**: *'Please wait...'*
+-  `texts.imgAlt`: The text that is set as the `alt` attribute value of the loader image.
+   **Default value**: *'Loading...'*
 
 ## Methods {#loader_methods}
 
--   [show()](#method_show)
--   [hide()](#method_hide)
+-  [show()](#method_show)
+-  [hide()](#method_hide)
 
 ### `show()` {#method_show}
 
@@ -105,8 +105,8 @@ $("#element").loader("hide");
 
 Loader is subscribed to the following events:
 
--   [processStart](#l_processStart)
--   [processStop](#l_processStop)
+-  [processStart](#l_processStart)
+-  [processStop](#l_processStop)
 
 ### `processStart` {#l_processStart}
 

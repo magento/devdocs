@@ -46,7 +46,7 @@ Manually resolve the conflicts in the usual way. If you're not sure what to do, 
 
 Try any of the following:
 
-* If you're certain you didn't modify any files and you don't mind removing or overwriting the changes in the Magento file system, enter:
+*  If you're certain you didn't modify any files and you don't mind removing or overwriting the changes in the Magento file system, enter:
 
    ```bash
    git reset --hard HEAD && git pull origin develop
@@ -54,7 +54,7 @@ Try any of the following:
 
    After that, continue where you left off with your Magento 2 update.
 
-* It's possible that a GitHub configuration setting can prevent these errors in the future. By default, GitHub stores content using the operating system-default line ending characters. If you're using Linux but another collaborator committed a change using Windows, GitHub converts the Windows line endings to Linux when you clone or pull. This gives the appearance of a change to files when in fact, no change was made.
+*  It's possible that a GitHub configuration setting can prevent these errors in the future. By default, GitHub stores content using the operating system-default line ending characters. If you're using Linux but another collaborator committed a change using Windows, GitHub converts the Windows line endings to Linux when you clone or pull. This gives the appearance of a change to files when in fact, no change was made.
 
    To configure GitHub to ignore line endings, enter the following command in your Git client:
 

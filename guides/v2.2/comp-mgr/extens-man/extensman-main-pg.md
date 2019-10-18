@@ -34,10 +34,10 @@ You must use the same authentication keys you used to install the Magento softwa
 
 See one of the following sections:
 
-* [Choose what to install, uninstall, or update](#extens-choose)
-* [Install extensions](#extensman-install)
-* [Uninstall extensions](#extensman-uninstall)
-* [Update extensions](#extensman-update)
+*  [Choose what to install, uninstall, or update](#extens-choose)
+*  [Install extensions](#extensman-install)
+*  [Uninstall extensions](#extensman-uninstall)
+*  [Update extensions](#extensman-update)
 
 ## Choose what to install, uninstall, or update {#extens-choose}
 
@@ -45,9 +45,9 @@ After you log in to the Extension Manager, a list displays as follows:
 
 ![Choose what to install, update, or uninstall]({{ site.baseurl }}/common/images/extens_mgr_updates.png){:width="500px"}
 
-* **Updates Available** displays the number of extensions you can update.
-* **Extensions Ready to Install** displays the number of extensions you can install.
-* **Last Refresh** displays the last time you refreshed the list of extensions on Magento Marketplace.
+*  **Updates Available** displays the number of extensions you can update.
+*  **Extensions Ready to Install** displays the number of extensions you can install.
+*  **Last Refresh** displays the last time you refreshed the list of extensions on Magento Marketplace.
 
    Click **Refresh** to update the information, such as after you purchase new extensions.
 
@@ -63,18 +63,18 @@ The following figure shows how types display in the Extension Manager.
 
 Following is a definition of types:
 
-* `module` for a module (that is, PHP code that modifies Magento behavior)
-* `language` for a language package used to translate the Magento storefront and Admin
-* `theme` for a collection of styles that affect the look of the storefront or Admin
-* `library` for a library&mdash;such as a shared third-party library
-* `component` for any type of component that must be installed in the Magento root directory (this is a relatively uncommon type)
+*  `module` for a module (that is, PHP code that modifies Magento behavior)
+*  `language` for a language package used to translate the Magento storefront and Admin
+*  `theme` for a collection of styles that affect the look of the storefront or Admin
+*  `library` for a library&mdash;such as a shared third-party library
+*  `component` for any type of component that must be installed in the Magento root directory (this is a relatively uncommon type)
 
 Actions are further divided between those available for *metapackages* (that is, an installable package that contains a group of different types) or *non-metapackages* (that is, a single type).
 
 The following sections provide details:
 
-* [Actions available for non-metapackages](#extensman-access-types-non-meta)
-* [Actions available for metapackages](#extensman-access-types-meta)
+*  [Actions available for non-metapackages](#extensman-access-types-non-meta)
+*  [Actions available for metapackages](#extensman-access-types-meta)
 
 #### Actions available for non-metapackages {#extensman-access-types-non-meta}
 
@@ -222,12 +222,12 @@ The New Updates page displays all extensions that can be updated.
 
 You have the following options:
 
-* To update one extension, click **Update** at the end of its row.
-* To update more than one extension, select its checkbox and click **Update**, as the following figure shows.
+*  To update one extension, click **Update** at the end of its row.
+*  To update more than one extension, select its checkbox and click **Update**, as the following figure shows.
 
    ![Update selected extensions]({{ site.baseurl }}/common/images/extensman_update-selected.png){:width="500px"}
 
-* To update all extensions, click **Select All** from the list and click **Update**, as the following figure shows.
+*  To update all extensions, click **Select All** from the list and click **Update**, as the following figure shows.
 
    ![Update all extensions]({{ site.baseurl }}/common/images/extensman_update-all.png)
 

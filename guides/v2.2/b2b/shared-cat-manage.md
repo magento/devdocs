@@ -183,6 +183,6 @@ Not applicable
 
 ## Related information
 
-* [Integrate with the SharedCatalog module]({{ page.baseurl }}/b2b/shared-catalog.html)
-* [Assign categories and products]({{ page.baseurl }}/b2b/shared-cat-product-assign.html)
-* [Assign companies]({{ page.baseurl }}/b2b/shared-cat-company.html)
+*  [Integrate with the SharedCatalog module]({{ page.baseurl }}/b2b/shared-catalog.html)
+*  [Assign categories and products]({{ page.baseurl }}/b2b/shared-cat-product-assign.html)
+*  [Assign companies]({{ page.baseurl }}/b2b/shared-cat-company.html)

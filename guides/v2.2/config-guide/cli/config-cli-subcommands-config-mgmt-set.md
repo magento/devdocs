@@ -11,38 +11,38 @@ functional_areas:
 
 This topic discusses advanced configuration commands you can use to:
 
-*   Set any configuration option from the command line.
-*   Optionally lock any configuration option so its value cannot be changed in the Magento Admin.
-*   Change a configuration option that is locked in the Magento Admin.
+*  Set any configuration option from the command line.
+*  Optionally lock any configuration option so its value cannot be changed in the Magento Admin.
+*  Change a configuration option that is locked in the Magento Admin.
 
 You can use these commands to set the Magento configuration manually or using scripts. Set configuration options using a _configuration path_, which is a `/`-delimited string that uniquely identifies that configuration option.
 
 Find configuration paths in the following references:
 
-*   [Sensitive and system-specific configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-sens.html)
-*   [Payment configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-payment.html)
-*   [Other configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-most.html)
-*   [{{site.data.var.ee}} B2B Extension configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-b2b.html)
+*  [Sensitive and system-specific configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-sens.html)
+*  [Payment configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-payment.html)
+*  [Other configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-most.html)
+*  [{{site.data.var.ee}} B2B Extension configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-b2b.html)
 
 Set values:
 
-*   Before you install Magento. You can set configuration values for the default scope only.
+*  Before you install Magento. You can set configuration values for the default scope only.
 
     Before you install Magento, the default scope is the only valid scope.
-*   After you install Magento. You can set configuration values for any [website](https://glossary.magento.com/website) or [store view](https://glossary.magento.com/store-view) scope.
+*  After you install Magento. You can set configuration values for any [website](https://glossary.magento.com/website) or [store view](https://glossary.magento.com/store-view) scope.
 
 Use the following commands:
 
-*   `bin/magento config:set` sets any non-sensitive configuration value by its configuration path.
-*   `bin/magento config:sensitive:set` sets any sensitive configuration value by its configuration path.
-*   `bin/magento config:show` shows saved configuration values; values of encrypted settings are displayed as asterisks.
+*  `bin/magento config:set` sets any non-sensitive configuration value by its configuration path.
+*  `bin/magento config:sensitive:set` sets any sensitive configuration value by its configuration path.
+*  `bin/magento config:show` shows saved configuration values; values of encrypted settings are displayed as asterisks.
 
 ## Prerequisites
 
 To set a configuration value, you must know at least one of the following:
 
-*   The configuration path
-*   The scope code, to set a configuration value for a particular scope
+*  The configuration path
+*  The scope code, to set a configuration value for a particular scope
 
     To set a configuration value for the default scope, you don't need to do anything.
 

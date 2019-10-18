@@ -11,28 +11,28 @@ We provide a Project Web Interface and CLI commands to fully manage all aspects 
 
 To manage your project, environment, and branches, see:
 
-- [Configure your project]({{ page.baseurl }}/cloud/project/project-webint-basic.html)
-- [Project structure]({{ page.baseurl }}/cloud/project/project-start.html)
-- [Create and manage users]({{ page.baseurl }}/cloud/project/user-admin.html)
-- Manage branches with the [Project Web Interface]({{ page.baseurl }}/cloud/project/project-webint-branch.html) or [CLI commands]({{ page.baseurl }}/cloud/env/environments-start.html)
-- [Snapshots and backup management]({{ page.baseurl }}/cloud/project/project-webint-snap.html)
+-  [Configure your project]({{ page.baseurl }}/cloud/project/project-webint-basic.html)
+-  [Project structure]({{ page.baseurl }}/cloud/project/project-start.html)
+-  [Create and manage users]({{ page.baseurl }}/cloud/project/user-admin.html)
+-  Manage branches with the [Project Web Interface]({{ page.baseurl }}/cloud/project/project-webint-branch.html) or [CLI commands]({{ page.baseurl }}/cloud/env/environments-start.html)
+-  [Snapshots and backup management]({{ page.baseurl }}/cloud/project/project-webint-snap.html)
 
 ### Project and environment variables {#variables}
 
 The following sections detail more about project and environment variables:
 
-- [Overview of environment variables]({{ page.baseurl }}/cloud/env/variables-intro.html)
-- [{{site.data.var.ece}} environment variables]({{ page.baseurl }}/cloud/env/environment-vars_cloud.html)
-- [Magento application environment variables]({{ page.baseurl }}/cloud/env/environment-vars_magento.html)
-- [Configuration management]({{ page.baseurl }}/cloud/live/sens-data-over.html)
-- [Example of configuration management]({{ page.baseurl }}/cloud/live/sens-data-initial.html)
+-  [Overview of environment variables]({{ page.baseurl }}/cloud/env/variables-intro.html)
+-  [{{site.data.var.ece}} environment variables]({{ page.baseurl }}/cloud/env/environment-vars_cloud.html)
+-  [Magento application environment variables]({{ page.baseurl }}/cloud/env/environment-vars_magento.html)
+-  [Configuration management]({{ page.baseurl }}/cloud/live/sens-data-over.html)
+-  [Example of configuration management]({{ page.baseurl }}/cloud/live/sens-data-initial.html)
 
 ### Upgrade and patch {#upgrade}
 
 To upgrade and patch Magento, see:
 
-- [Upgrade and test Magento Commerce]({{ page.baseurl }}/cloud/project/project-upgrade.html)
-- [Patch and test Magento Commerce]({{ page.baseurl }}/cloud/project/project-patch.html)
+-  [Upgrade and test Magento Commerce]({{ page.baseurl }}/cloud/project/project-upgrade.html)
+-  [Patch and test Magento Commerce]({{ page.baseurl }}/cloud/project/project-patch.html)
 
 ## Access the Project Web Interface {#login}
 
@@ -44,11 +44,11 @@ With your {{site.data.var.ece}} account created, you can log into the Project We
 
 Your project includes [Fastly]({{ page.baseurl }}/cloud/cdn/cloud-fastly.html), [New Relic]({{ page.baseurl }}/cloud/project/new-relic.html), and [Blackfire]({{ page.baseurl }}/cloud/project/project-integrate-blackfire.html) services. The project details display information for your project plan and important licenses and tokens for these integrations. Only the Account Owner has initial access to the credentials and services. You should provide these credentials to technical and developer resources as needed.
 
-- [Fastly](https://https://www.fastly.com/) provides content delivery (CDN), image optimization, and security services (DDoS and WAF) for your {{ site.data.var.ece }} projects. See [Get Fastly credentials]({{ page.baseurl }}/cloud/cdn/configure-fastly.html).
+-  [Fastly](https://https://www.fastly.com/) provides content delivery (CDN), image optimization, and security services (DDoS and WAF) for your {{ site.data.var.ece }} projects. See [Get Fastly credentials]({{ page.baseurl }}/cloud/cdn/configure-fastly.html).
 
-- [Blackfire.io Profiler](https://blackfire.io/magento) provides tools for reviewing and optimizing Magento and your store in your environments. The profiler checks every method and call, determining what occurs with performance metrics per step.
+-  [Blackfire.io Profiler](https://blackfire.io/magento) provides tools for reviewing and optimizing Magento and your store in your environments. The profiler checks every method and call, determining what occurs with performance metrics per step.
 
-- [New Relic](https://newrelic.com) provides application metrics and performance information for Staging and Production environments.
+-  [New Relic](https://newrelic.com) provides application metrics and performance information for Staging and Production environments.
 
 {:.procedure}
 To review your integration tokens, IDs, and more:
@@ -96,10 +96,10 @@ To access an environment store and admin, select a branch and click **Access Sit
 
 The Pro plan Production environment includes three nodes that you can access using the following links:
 
-- Load balancer URL: `http[s]://<your domain>.c.<project ID>.ent.magento.cloud`
-- Direct access to one of the three redundant servers: `http[s]://<your domain>.{1|2|3}.<project ID>.ent.magento.cloud`
+-  Load balancer URL: `http[s]://<your domain>.c.<project ID>.ent.magento.cloud`
+-  Direct access to one of the three redundant servers: `http[s]://<your domain>.{1|2|3}.<project ID>.ent.magento.cloud`
 
-  The production URL is used by the content delivery network (CDN).
+   The production URL is used by the content delivery network (CDN).
 
 If you have inactive Git branches of code, you can toggle displaying the branches in the hierarchy.
 

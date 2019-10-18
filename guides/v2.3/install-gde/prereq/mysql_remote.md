@@ -21,9 +21,9 @@ This is an advanced topic that should be used only by an experienced network adm
 
 Before you begin, you must:
 
-* [Install MySQL server]({{page.baseurl }}/install-gde/prereq/mysql.html) on the database server
-* [Create a database instance]({{page.baseurl }}/install-gde/prereq/mysql.html#instgde-prereq-mysql-config) on the database server
-* Install the MySQL client on your Magento web node. Consult MySQL documentation for details.
+*  [Install MySQL server]({{page.baseurl }}/install-gde/prereq/mysql.html) on the database server
+*  [Create a database instance]({{page.baseurl }}/install-gde/prereq/mysql.html#instgde-prereq-mysql-config) on the database server
+*  Install the MySQL client on your Magento web node. Consult MySQL documentation for details.
 
 ### High availability
 
