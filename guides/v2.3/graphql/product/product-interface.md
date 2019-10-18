@@ -98,7 +98,7 @@ Attribute |  Data Type | Description
 --- | --- | ---
 `discount` | ProductDiscount | The amount of the discount applied to the product. It represents the difference between the `final_price` and `regular_price`
 `final_price`| Money! | The price of the product after applying discounts
-`fixed_product_taxes` | [[FixedProductTax](#FixedProductTax)] | An array of fixed product taxes applied to a product price
+`fixed_product_taxes` | [[FixedProductTax](#FixedProductTax)] | An array of fixed product taxes applied or can be applied to a product price
 `regular_price` | Money! | The regular price of the product, without any applied discounts
 
 ### ProductDiscount object {#ProductDiscount}
