@@ -3,7 +3,7 @@ group: graphql
 title: Filtering with custom attributes
 ---
 
-As of Magento 2.3.4, the `filter` attribute of the [`products`]({{page.baseurl}}/graphql/queries/products-234.html) query accepts the `ProductAttributeFilterInput` object. (In previous versions, the `filter` attribute required a `ProductFilterInput` object. This object contained a hard-coded list of filterable attributes, and you could not filter on a custom attribute or any other attribute that was not on the list.)
+As of Magento 2.3.4, the `filter` attribute of the [`products`]({{page.baseurl}}/graphql/queries/products.html) query accepts the `ProductAttributeFilterInput` object. (In previous versions, the `filter` attribute required a `ProductFilterInput` object. This object contained a hard-coded list of filterable attributes, and you could not filter on a custom attribute or any other attribute that was not on the list.)
 
 ## Prerequisites
 
@@ -18,7 +18,7 @@ Field | Setting
 
 ## Define the filter for your query
 
-The [`filter`]({{page.baseurl}}/graphql/queries/products-234.html#filter) definition for your custom attribute requires one of the following input data types:
+The [`filter`]({{page.baseurl}}/graphql/queries/products.html#ProductFilterInput) definition for your custom attribute requires one of the following input data types:
 
 -  `FilterEqualTypeInput` - Specify this data type when the **Catalog Input Type for Store Owner** field for your custom attribute is set to Yes/No, Select, or Multiple select. Your filter can contain the `eq` or `in` attribute. Use the `eq` attribute to exactly match the specified string. Use the `in` attribute to filter on a comma-separated list of values.
 -  `FilterMatchTypeInput` - Specify this data type when the the **Catalog Input Type for Store Owner** field for your custom attribute is set to Text Field or Text Area. Your filter must contain the `match` attribute, which will return all items that exactly match the specified string.
