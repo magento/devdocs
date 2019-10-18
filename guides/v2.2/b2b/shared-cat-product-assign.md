@@ -216,7 +216,7 @@ Unassigning a product does not remove it from its category or categories.
 
 `true`, indicating the operation was successful
 
-### List the shared catalog categories
+### List the shared catalog products
 
 The `GET` call returns an array of SKUs.
 

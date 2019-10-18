@@ -433,7 +433,7 @@ drwxr-xr-x 70 root root    4096 Mar 28 11:24 ../
 
 #### 4. Configure RequireJS to use bundles
 
-To get RequireJS to use your bundles, add a `onModuleBundleComplete`callback after the `modules` node in the `build.js` file:
+To get RequireJS to use your bundles, add a `onModuleBundleComplete` callback after the `modules` node in the `build.js` file:
 
 ```javascript
 [
@@ -448,8 +448,7 @@ To get RequireJS to use your bundles, add a `onModuleBundleComplete`callback aft
            'mage/bootstrap'
        ],
    },
-]
-
+],
 onModuleBundleComplete: function (data) {
    function onBundleComplete (config, data) {
        const fileName = `${config.dir}/requirejs-config.js`;
@@ -480,11 +479,11 @@ Open `requirejs-config.js` in the `pub/static/frontend/Magento/luma/en_US` direc
 
 ```javascript
 require.config({
-                bundles: {"bundles/default": ["mage/template","mage/apply/scripts","mage/apply/main","mage/mage","mage/translate","mage/loader"]
-            }});
+    bundles: { "bundles/default": ["mage/template","mage/apply/scripts","mage/apply/main","mage/mage","mage/translate","mage/loader"] }
+});
 require.config({
-                bundles: {"bundles/cart":["Magento_Ui/js/lib/validation/utils","Magento_Ui/js/lib/validation/rules","Magento_Ui/js/lib/validation/validation"]
-            }});
+    bundles: { "bundles/cart": ["Magento_Ui/js/lib/validation/utils","Magento_Ui/js/lib/validation/rules","Magento_Ui/js/lib/validation/validation"] }
+});
 ```
 
 {: .bs-callout-info }
