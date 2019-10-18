@@ -72,13 +72,13 @@ See the examples at the end of this section for help specifying different releas
    <div class="bs-callout-tip" markdown="1">
    To see the full list of available {{ page.guide_version }} versions:
 
-   _{{site.data.var.ce}}_:
+   _{{ ce }}_:
 
    ```bash
    composer show magento/product-community-edition {{ page.guide_version }}.* --all | grep -m 1 versions
    ```
 
-   _{{site.data.var.ee}}_:
+   _{{ ee }}_:
 
    ```bash
    composer show magento/product-enterprise-edition {{ page.guide_version }}.* --all | grep -m 1 versions
