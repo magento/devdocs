@@ -34,6 +34,12 @@ This patch addresses backward-incompatibility issues that extension developers m
 
 See [Applying patches](https://devdocs.magento.com/guides/v2.3/comp-mgr/patching.html) for specific instructions on downloading and applying Magento patches. To find the patch, navigate to [Tech Resources](https://magento.com/tech-resources/download), and select the EmailMessageInterface backward compatibility issue  patch associated with the version of Magento you are running.
 
+## Apply the Method chaining fix for product collection patch to resolve an issue with broken method chaining in some extensions
+
+This patch addresses changes that were introduced in Magento 2.3.3 that resulted in problems with extensions and customizations of the product collection feature that rely on method chaining contracts. The `addAttributeToFilter` method (in file `app/code/Magento/Catalog/Model/ResourceModel/Product/Collection.php`) was refactored without a return statement, which broke the method chaining that is used extensively in customizations of this feature. This patch refactors the method to add the missing return statement and ensure that method chaining works as expected.
+
+See [Applying patches](https://devdocs.magento.com/guides/v2.3/comp-mgr/patching.html) for specific instructions on downloading and applying Magento patches. To find the patch, navigate to [Tech Resources](https://magento.com/tech-resources/download), and select the Method chaining fix for product collection patch associated with the version of Magento you are running.
+
 ## Highlights
 
 Look for the following highlights in this release:
@@ -1405,7 +1411,7 @@ This release includes the following changes to integrations for core payment met
 <!--- ENGCOM-5514-->
 * Wishlist items now display decimal values as appropriate. Previously, Magento saved decimal quantities for wishlist items but did not display these values in the wishlist on the storefront. *Fix submitted by Max Fickers in pull request [23933](https://github.com/magento/magento2/pull/23933)*. [GitHub-23932](https://github.com/magento/magento2/issues/23932)
 
-## Known issue
+## Known issues
 
 **Issue**:
 With this release, the `\Magento\Framework\Mail\MessageInterface` class has been replaced with `\Magento\Framework\Mail\EmailMessageInterface`. This new class supports the sending of multi-part MIME-type content within email and extends the existing `MailMessageInterface` and `MessageInterface` classes to ensure backward compatibility and provide a transition period for extension developers. Extension developers and merchants who are deploying third-party extensions that implement `\Magento\Framework\Mail\MessageInterface` should be aware of these changes.
@@ -1414,9 +1420,14 @@ The  `Magento\Framework\Mail\Template\TransportBuilder` and `Magento\Newslet
 
 **Workaround**: In deployments that include third-party customizations, the old `MessageInterface` might still be instantiated. How you prevent this instantiation depends upon the particular usage of `MessageInterface` in your code. See the Magento forum DevBlog post [Backward-incompatible Changes in the Mail Library for Magento 2.3.3](https://community.magento.com/t5/Magento-DevBlog/Backward-incompatible-Changes-in-the-Mail-Library-for-Magento-2/ba-p/144787) for more information. **This issue has been addressed in the EmailMessageInterface backward compatibility issue patch, which was released on October 14, 2019. Merchants should apply this patch as soon as possible, especially if their deployments include extensions or customizations that use the Mail interface.**
 
+**Issue**:
+Method chaining does not work as expected in extensions and customizations that are based on a product collection entity. Many extensions rely on product collection entities, which represent a list of products that satisfy search and filtering criteria. In the process of refactoring the `addAttributeToFilter` method, method chaining as it was implemented in Magento versions earlier than 2.3.3 was broken.
+
+**Workaround**: Apply the Method chaining fix for product collection patch. See [Applying patches](https://devdocs.magento.com/guides/v2.3/comp-mgr/patching.html) for specific instructions on downloading and applying Magento patches.
+
 ## Community contributions
 
- We are grateful to the wider Magento community and would like to acknowledge their contributions to this release. Check out the following ways you can learn about the community contributions to our current releases:
+We are grateful to the wider Magento community and would like to acknowledge their contributions to this release. Check out the following ways you can learn about the community contributions to our current releases:
 
 * If a community member has provided a fix for this release, we identify the fix in the Fixed Issue section of these notes with the phrase, "*Fix provided by community member*".
 
