@@ -98,6 +98,7 @@ Attribute |  Data Type | Description
 --- | --- | ---
 `discount` | ProductDiscount | The amount of the discount applied to the product. It represents the difference between the `final_price` and `regular_price`
 `final_price`| Money! | The price of the product after applying discounts
+`fixed_product_taxes` | [[FixedProductTax](#FixedProductTax)] | An array of fixed product taxes applied or can be applied to a product price
 `regular_price` | Money! | The regular price of the product, without any applied discounts
 
 ### ProductDiscount object {#ProductDiscount}
@@ -109,7 +110,19 @@ Attribute |  Data Type | Description
 `amount_off` | Float | The actual value of the discount
 `percent_off` | Float | The discount expressed as a percentage
 
+### FixedProductTax object {#FixedProductTax}
+
+Some tax jurisdictions have a fixed product tax (FPT) that must be applied to certain types of products. An example FPT is the Waste Electrical and Electronic Equipment (WEEE) tax, which is collected on some types of electronics to offset the cost of recycling.
+
+Attribute |  Data Type | Description
+--- | --- | ---
+`amount` | Money | The amount of the fixed product tax
+`label` | String | The label assigned to the fixed product tax to be displayed on the frontend
+
 ### Price object {#Price}
+
+{:.bs-callout-info}
+The `Price` object has been deprecated. Use the `ProductPrice` object instead.
 
 The `Price` object defines the price of a product as well as any tax-related adjustments.
 
@@ -118,7 +131,7 @@ Attribute |  Data Type | Description
 `amount` | Money | The price of the product and its currency code. See [Money object](#Money).
 `adjustments` | [PriceAdjustment] | An array of [PriceAdjustment](#PriceAdjustment) objects.
 
-##### Money object {#Money}
+#### Money object {#Money}
 
 A `Money` object defines a monetary value, including a numeric value and a currency code.
 
@@ -127,9 +140,12 @@ Attribute |  Data Type | Description
 `currency` | CurrencyEnum | A three-letter currency code, such as `USD` or `EUR`.
 `value` | Float | The price of the product
 
-##### PriceAdjustment array {#PriceAdjustment}
+#### PriceAdjustment array {#PriceAdjustment}
 
-The `PricedAdjustment` object defines the amount of money to apply as an adjustment, the type of adjustment to apply, and whether the item is included or excluded from the adjustment.
+{:.bs-callout-info}
+The `PriceAdjustment` object has been deprecated. In cases where the value for the `code` attribute was `WEEE`, use `fixed_product_taxes.label` instead. If the value was `tax` or `weee_tax`, the taxes will be included or excluded as part of the price in the `ProductPrice` or `FixedProductTax` object, respectively.
+
+The `PriceAdjustment` object defines the amount of money to apply as an adjustment, the type of adjustment to apply, and whether the item is included or excluded from the adjustment.
 
 Attribute |  Data Type | Description
 --- | --- | ---
