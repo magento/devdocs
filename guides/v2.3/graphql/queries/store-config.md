@@ -179,6 +179,36 @@ The following query returns information about the store's catalog configuration.
 }
 ```
 
+### Query a store's fixed product tax configuration
+
+The following query returns enumeration values that indicate the store's fixed product tax configuration.
+
+**Request**
+
+```graphql
+{
+  storeConfig {
+    category_fixed_product_tax_display_setting
+    product_fixed_product_tax_display_setting
+    sales_fixed_product_tax_display_setting
+  }
+}
+```
+
+**Response**
+
+```json
+{
+  "data": {
+    "storeConfig": {
+      "category_fixed_product_tax_display_setting": "EXCLUDE_FPT_WITHOUT_DETAILS",
+      "product_fixed_product_tax_display_setting": "EXCLUDE_FPT_AND_INCLUDE_WITH_DETAILS",
+      "sales_fixed_product_tax_display_setting": "INCLUDE_FPT_WITHOUT_DETAILS"
+    }
+  }
+}
+```
+
 ## Output attributes
 
 ### Supported storeConfig attributes
@@ -218,8 +248,8 @@ Attribute |  Data Type | Description
 `default_title` | String | The title that appears at the title bar of each page when viewed in a browser
 `demonotice` | Int | Controls the display of the demo store notice at the top of the page. Options: `0` (No) or `1` (Yes)
 `head_includes` | String | Contains scripts that must be included in the HTML before the closing `<head>` tag
-`head_shortcut_icon` | String | Uploads the small graphic image that appears in the address bar and tab of the browser
 `header_logo_src` | String | The path to the logo that appears in the header
+`head_shortcut_icon` | String | Uploads the small graphic image that appears in the address bar and tab of the browser
 `logo_alt` | String | The Alt text that is associated with the logo
 `logo_height` | Int | The height of your logo image in pixels
 `logo_width` | Int | The width of your logo image in pixels
@@ -248,13 +278,34 @@ Attribute |  Data Type | Description | Example
 --- | --- | ---
 `catalog_default_sort_by` | String | The default sort order of the search results list | `position`
 `category_url_suffix` | String | The suffix applied to category pages, such as `.htm` or `.html` | `.html`
-`grid_per_page` | Integer | The default number of products per page in Grid View | `9`
-`grid_per_page_values` | String | A list of numbers that define how many products can be displayed in List View  | `9,15,30`
+`grid_per_page` | Int | The default number of products per page in Grid View | `9`
+`grid_per_page_values` | A list of numbers that define how many products can be displayed in List View  | `9,15,30`
 `list_mode` | String  | The format of the search results list | `grid-list`
-`list_per_page` | Integer | The default number of products per page in List View | `10`
+`list_per_page` | Int | The default number of products per page in List View | `10`
 `list_per_page_values` | String | A list of numbers that define how many products can be displayed in List View | `5,10,15,20,25`
 `product_url_suffix` | String | The suffix applied to product pages, such as `.htm` or `.html` | `.html`
+`root_category_id` | Int | The ID of the root category
 `title_separator` | String | Identifies the character that separates the category name and subcategory in the browser title bar | `-`
+
+### Supported Weee (fixed product tax) attributes
+
+The **Stores** > Settings > **Configuration** > **Sales** > **Tax** > **Fixed Product Taxes** panel contains several fields that determine how to display fixed product tax (FPT) values and descriptions. Use the following attributes to determine the values of the **Fixed Product Taxes** fields. These attributes are defined in the `WeeeGraphQl` module.
+
+Attribute |  Data Type | Description
+--- | --- | ---
+`category_fixed_product_tax_display_setting` | FixedProductTaxDisplaySettings | Corresponds to the **Display Prices In Product Lists** field. It indicates how FPT information is displayed on category pages
+`product_fixed_product_tax_display_setting` | FixedProductTaxDisplaySettings | Corresponds to the **Display Prices On Product View Page** field. It indicates how FPT information is displayed on product pages
+`sales_fixed_product_tax_display_setting` | FixedProductTaxDisplaySettings | Corresponds to the **Display Prices In Sales Modules** field. It indicates how FPT information is displayed on cart, checkout, and order pages
+
+The `FixedProductTaxDisplaySettings` data type is an enumeration that describes whether displayed prices include fixed product taxes and whether Magento separately displays detailed information about the FPTs.
+
+Value | Description
+--- | ---
+EXCLUDE_FPT_AND_INCLUDE_WITH_DETAILS | The displayed price does not include the FPT amount. You must display the values of `ProductPrice.fixed_product_taxes` and the price including the FPT separately. This value corresponds to **Excluding FPT, Including FPT description and final price**
+EXCLUDE_FPT_WITHOUT_DETAILS | The displayed price does not include the FPT amount. The values from `ProductPrice.fixed_product_taxes` are not displayed. This value corresponds to **Excluding FPT**
+FPT_DISABLED | The FPT feature is not enabled. You can omit `ProductPrice.fixed_product_taxes` from your query
+INCLUDE_FPT_WITH_DETAILS | The displayed price includes the FPT amount while displaying the values of `ProductPrice.fixed_product_taxes` separately. This value corresponds to **Including FPT and FPT description**
+INCLUDE_FPT_WITHOUT_DETAILS | The displayed price includes the FPT amount without displaying the `ProductPrice.fixed_product_taxes` values. This value corresponds to **Including FPT only**
 
 ## Extend configuration data
 
