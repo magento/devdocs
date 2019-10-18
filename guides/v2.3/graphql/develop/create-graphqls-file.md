@@ -10,11 +10,11 @@ A GraphQL module's `schema.graphqls` file defines how the attributes defined in 
 
 The `<module_name>/etc/schema.graphqls` file:
 
-* Defines the structure of queries and mutations.
-* Determines which attributes can be used for input and output in GraphQL queries and mutations. Requests and responses contain separate lists of valid attributes.
-* Points to the resolvers that verify and process the input data and response.
-* Serves as the source for displaying the schema in a GraphQL browser.
-* Defines which objects are cached.
+*  Defines the structure of queries and mutations.
+*  Determines which attributes can be used for input and output in GraphQL queries and mutations. Requests and responses contain separate lists of valid attributes.
+*  Points to the resolvers that verify and process the input data and response.
+*  Serves as the source for displaying the schema in a GraphQL browser.
+*  Defines which objects are cached.
 
 The base `schema.graphqls` file, located in the `app/code/Magento/GraphQl/etc/` directory, defines the basic structure of GraphQL queries and mutations. It also includes definitions for comparison operators and paging information for search results. The `webonyx/graphql-php` library enforces the syntax of all `schema.graphqls` files.
 
@@ -64,14 +64,14 @@ In many cases, the response contains data that was either not available as input
 
 A mutation definition contains the following information:
 
-* The mutation name
-* The input attributes and objects
-* The attributes and objects that can be returned in the output
-* The path to the resolver
+*  The mutation name
+*  The input attributes and objects
+*  The attributes and objects that can be returned in the output
+*  The path to the resolver
 
 The following mutation creates a customer.
 
-``` text
+```text
 type Mutation {
     createCustomer (input: CustomerInput!): CustomerOutput @resolver(class: "\\Magento\\CustomerGraphQl\\Model\\Resolver\\CreateCustomer") @doc(description:"Create customer account")
 }

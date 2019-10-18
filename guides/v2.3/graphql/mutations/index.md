@@ -1,7 +1,12 @@
 ---
 group: graphql
+<<<<<<< HEAD:guides/v2.3/graphql/mutations/index.md
 title: Using mutations
 redirect_from:
+=======
+title: Mutations
+redirect from:
+>>>>>>> Q4-integration:guides/v2.3/graphql/mutations/index.md
   - /guides/v2.3/graphql/mutations.html
 ---
 

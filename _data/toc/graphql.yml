@@ -44,6 +44,10 @@ pages:
 
     - label: Queries
       children:
+<<<<<<< HEAD
+=======
+
+>>>>>>> Q4-integration
         - label: Using queries
           url: /graphql/queries/index.html
 
