@@ -38,8 +38,8 @@ Refer to [Create websites]({{ page.baseurl }}/config-guide/multi-site/ms_website
 To set up multiple stores:
 
 1. [Set up websites, stores, and store views]({{ page.baseurl }}/config-guide/multi-site/ms_websites.html) in the [Magento Admin](https://glossary.magento.com/magento-admin).
-2. Create an [nginx virtual host](#ms-nginx-vhosts) to map many websites or one [nginx virtual host](#ms-nginx-vhosts) per Magento [website](https://glossary.magento.com/website) (steps detailed below).
-3. Pass the values of the [Magento variables]({{ page.baseurl }}/config-guide/multi-site/ms_over.html) `$MAGE_RUN_TYPE` and `$MAGE_RUN_CODE` to nginx using the Magento-provided `nginx.conf.sample` (steps detailed below).
+1. Create an [nginx virtual host](#ms-nginx-vhosts) to map many websites or one [nginx virtual host](#ms-nginx-vhosts) per Magento [website](https://glossary.magento.com/website) (steps detailed below).
+1. Pass the values of the [Magento variables]({{ page.baseurl }}/config-guide/multi-site/ms_over.html) `$MAGE_RUN_TYPE` and `$MAGE_RUN_CODE` to nginx using the Magento-provided `nginx.conf.sample` (steps detailed below).
 
    *  `$MAGE_RUN_TYPE` can be either `store` or `website`:
 
@@ -60,47 +60,47 @@ This configuration expands upon [Magento Nginx Configuration]({{ page.baseurl }}
 
 1. Open a text editor and add the following contents to a new file named `/etc/nginx/sites-available/magento`:
 
-    ```conf
-    map $http_host $MAGE_RUN_CODE {
-        default '';
-        french.mysite.mg french;
-        german.mysite.mg german;
-    }
+   ```conf
+   map $http_host $MAGE_RUN_CODE {
+       default '';
+       french.mysite.mg french;
+       german.mysite.mg german;
+   }
 
-    server {
-        listen 80;
-        server_name mysite.mg french.mysite.mg german.mysite.mg;
-        set $MAGE_ROOT /var/www/html/magento2;
-        set $MAGE_MODE developer;
-        set $MAGE_RUN_TYPE website; #or set $MAGE_RUN_TYPE store;
-        include /var/www/html/magento2/nginx.conf;
-    }
-    ```
+   server {
+       listen 80;
+       server_name mysite.mg french.mysite.mg german.mysite.mg;
+       set $MAGE_ROOT /var/www/html/magento2;
+       set $MAGE_MODE developer;
+       set $MAGE_RUN_TYPE website; #or set $MAGE_RUN_TYPE store;
+       include /var/www/html/magento2/nginx.conf;
+   }
+   ```
 
-2. Save your changes to the files and exit the text editor.
-3. Verify the server configuration:
+1. Save your changes to the files and exit the text editor.
+1. Verify the server configuration:
 
-    ```bash
-    nginx -t
-    ```
+   ```bash
+   nginx -t
+   ```
 
-4. If successful, the following message displays:
+1. If successful, the following message displays:
 
-    ```terminal
-    nginx: configuration file /etc/nginx/nginx.conf test is successful
-    ```
+   ```terminal
+   nginx: configuration file /etc/nginx/nginx.conf test is successful
+   ```
 
-    If errors display, check the syntax of your virtual host configuration files.
+   If errors display, check the syntax of your virtual host configuration files.
 
-5. Create symbolic link in the `/etc/nginx/sites-enabled` directory:
+1. Create symbolic link in the `/etc/nginx/sites-enabled` directory:
 
-    ```bash
-    cd /etc/nginx/sites-enabled
-    ```
+   ```bash
+   cd /etc/nginx/sites-enabled
+   ```
 
-    ```bash
-    ln -s /etc/nginx/sites-available/magento magento
-    ```
+   ```bash
+   ln -s /etc/nginx/sites-available/magento magento
+   ```
 
 For more detail about the map directive, see [nginx documentation on the map directive](http://nginx.org/en/docs/http/ngx_http_map_module.html#map).
 
@@ -111,66 +111,66 @@ To create multiple virtual hosts:
 
 1. Open a text editor and add the following contents to a new file named `/etc/nginx/sites-available/french.mysite.mg`:
 
-    ```conf
-    map $http_host $MAGE_RUN_CODE {
-        french.mysite.mg french;
-    }
+   ```conf
+   map $http_host $MAGE_RUN_CODE {
+       french.mysite.mg french;
+   }
 
-    server {
-        listen 80;
-        server_name french.mysite.mg;
-        set $MAGE_ROOT /var/www/html/magento2;
-        set $MAGE_MODE developer;
-        set $MAGE_RUN_TYPE website; #or set $MAGE_RUN_TYPE store;
-        include /var/www/html/magento2/nginx.conf;
-    }
-    ```
+   server {
+       listen 80;
+       server_name french.mysite.mg;
+       set $MAGE_ROOT /var/www/html/magento2;
+       set $MAGE_MODE developer;
+       set $MAGE_RUN_TYPE website; #or set $MAGE_RUN_TYPE store;
+       include /var/www/html/magento2/nginx.conf;
+   }
+   ```
 
-2. Create another file named `german.mysite.mg` in the same directory with the following contents:
+1. Create another file named `german.mysite.mg` in the same directory with the following contents:
 
-    ```conf
-    map $http_host $MAGE_RUN_CODE {
-        german.mysite.mg german;
-    }
+   ```conf
+   map $http_host $MAGE_RUN_CODE {
+       german.mysite.mg german;
+   }
 
-    server {
-        listen 80;
-        server_name german.mysite.mg;
-        set $MAGE_ROOT /var/www/html/magento2;
-        set $MAGE_MODE developer;
-        set $MAGE_RUN_TYPE website; #or set $MAGE_RUN_TYPE store;
-        include /var/www/html/magento2/nginx.conf;
-    }
-    ```
+   server {
+       listen 80;
+       server_name german.mysite.mg;
+       set $MAGE_ROOT /var/www/html/magento2;
+       set $MAGE_MODE developer;
+       set $MAGE_RUN_TYPE website; #or set $MAGE_RUN_TYPE store;
+       include /var/www/html/magento2/nginx.conf;
+   }
+   ```
 
-3. Save your changes to the files and exit the text editor.
-4. Verify the server configuration:
+1. Save your changes to the files and exit the text editor.
+1. Verify the server configuration:
 
-    ```bash
-    nginx -t
-    ```
+   ```bash
+   nginx -t
+   ```
 
-5. If successful, the following message displays:
+1. If successful, the following message displays:
 
-    ```terminal
-    nginx: configuration file /etc/nginx/nginx.conf test is successful
-    ```
+   ```terminal
+   nginx: configuration file /etc/nginx/nginx.conf test is successful
+   ```
 
-    If errors display, check the syntax of your virtual host configuration files.
+   If errors display, check the syntax of your virtual host configuration files.
 
-6. Create symbolic links in the `/etc/nginx/sites-enabled` directory:
+1. Create symbolic links in the `/etc/nginx/sites-enabled` directory:
 
-    ```bash
-    cd /etc/nginx/sites-enabled
-    ```
+   ```bash
+   cd /etc/nginx/sites-enabled
+   ```
 
-    ```bash
-    ln -s /etc/nginx/sites-available/french.mysite.mg french.mysite.mg
-    ```
+   ```bash
+   ln -s /etc/nginx/sites-available/french.mysite.mg french.mysite.mg
+   ```
 
-    ```bash
-    ln -s /etc/nginx/sites-available/german.mysite.mg german.mysite.mg
-    ```
+   ```bash
+   ln -s /etc/nginx/sites-available/german.mysite.mg german.mysite.mg
+   ```
 
 For more details about the map directive, see [nginx documentation on the map directive](http://nginx.org/en/docs/http/ngx_http_map_module.html#map).
 
@@ -188,30 +188,30 @@ To modify the `nginx.conf.sample` file:
 
 1. Open a text editor and review the `nginx.conf.sample` file ,`<magento2_installation_directory>/nginx.conf.sample`. Look for the following section:
 
-    ```conf
-    # PHP entry point for main application
-    location ~ (index|get|static|report|404|503|health_check)\.php$ {
-        try_files $uri =404;
-        fastcgi_pass   fastcgi_backend;
-        fastcgi_buffers 1024 4k;
+   ```conf
+   # PHP entry point for main application
+   location ~ (index|get|static|report|404|503|health_check)\.php$ {
+       try_files $uri =404;
+       fastcgi_pass   fastcgi_backend;
+       fastcgi_buffers 1024 4k;
 
-        fastcgi_param  PHP_FLAG  "session.auto_start=off \n suhosin.session.cryptua=off";
-        fastcgi_param  PHP_VALUE "memory_limit=756M \n max_execution_time=18000";
-        fastcgi_read_timeout 600s;
-        fastcgi_connect_timeout 600s;
+       fastcgi_param  PHP_FLAG  "session.auto_start=off \n suhosin.session.cryptua=off";
+       fastcgi_param  PHP_VALUE "memory_limit=756M \n max_execution_time=18000";
+       fastcgi_read_timeout 600s;
+       fastcgi_connect_timeout 600s;
 
-        fastcgi_index  index.php;
-        fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
-        include        fastcgi_params;
-    }
-    ```
+       fastcgi_index  index.php;
+       fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
+       include        fastcgi_params;
+   }
+   ```
 
-2. Update the `nginx.conf.sample` file with the following two lines before the include statement:
+1. Update the `nginx.conf.sample` file with the following two lines before the include statement:
 
-    ```conf
-    fastcgi_param MAGE_RUN_TYPE $MAGE_RUN_TYPE;
-    fastcgi_param MAGE_RUN_CODE $MAGE_RUN_CODE;
-    ```
+   ```conf
+   fastcgi_param MAGE_RUN_TYPE $MAGE_RUN_TYPE;
+   fastcgi_param MAGE_RUN_CODE $MAGE_RUN_CODE;
+   ```
 
 An example updated PHP entry point for the main application looks like:
 
@@ -241,4 +241,5 @@ location ~ (index|get|static|report|404|503|health_check)\.php$ {
 {% endcollapsible %}
 
 ## Verify your site  {#ms-nginx-verify}
+
 {% include config/multi-site_verify.md %}

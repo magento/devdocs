@@ -47,14 +47,14 @@ For Brazil, you must have an existing PayPal business account to connect. You ca
 To configure PayPal Express Checkout:
 
 1. Access the Admin console for the environment you need to configure.
-2. In the left-side navigation, select __Stores__ > __Configuration__, then select __Sales__ > __Payment Methods__.
-3. For PayPal, select __Configure__. Configuration fields display in expandable sections for Express Checkout, Advertise PayPal Credit, and Basic and Advanced settings.
-4. Connect your PayPal account. Until the account is connected, the options to enable are disabled. For details on available and supported accounts to connect and limitations, see [PayPal account](#accounts).
+1. In the left-side navigation, select __Stores__ > __Configuration__, then select __Sales__ > __Payment Methods__.
+1. For PayPal, select __Configure__. Configuration fields display in expandable sections for Express Checkout, Advertise PayPal Credit, and Basic and Advanced settings.
+1. Connect your PayPal account. Until the account is connected, the options to enable are disabled. For details on available and supported accounts to connect and limitations, see [PayPal account](#accounts).
 
    *  To connect your PayPal live account, click Connect with PayPal and follow the prompts. Any customer purchases using a live PayPal complete and actively charge customers in a live store.
    *  To connect your sandbox account for testing, click Sandbox Credentials and follow the prompts. Any customer purchases using a Sandbox PayPal complete without actively charging customers.
 
-5. Configure the Express Checkout settings to authenticate and use the PayPal API:
+1. Configure the Express Checkout settings to authenticate and use the PayPal API:
 
    *  __Email Associated with PayPal Merchant Account__ (Optional) enter the email address associated with your PayPal merchant account. This email is case-sensitive.
    *  __API Authentication Methods__ as API Signature or API Certificate.
@@ -62,7 +62,7 @@ To configure PayPal Express Checkout:
    *  __Sandbox Mode__ select Yes or No to indicate if the credentials you entered are for sandbox. If you entered production credentials, select No.
    *  __API Uses Proxy__ select Yes or No to set if the system uses a proxy server to establish a connection between Magento and the PayPal payment system. If Yes, enter the proxy host and port.
 
-6. For detailed information and steps for configuring your account, see [PayPal Express Checkout](http://docs.magento.com/m2/ce/user_guide/payment/paypal-express-checkout.html) starting with Step 2 Complete the Required Settings.
+1. For detailed information and steps for configuring your account, see [PayPal Express Checkout](http://docs.magento.com/m2/ce/user_guide/payment/paypal-express-checkout.html) starting with Step 2 Complete the Required Settings.
 
 With the account configured and authenticated, you can enable and disable PayPal payment options under Required PayPal Settings:
 

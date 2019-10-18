@@ -182,7 +182,7 @@ Consistency is critical. For example, wherever content is displayed in [Data Tab
 Take a neutral tone – don’t blame a merchant or in any way indicate that the merchant made a mistake. Use “business casual” and easy-to-understand language. Avoid personal pronouns and technical jargon. Content structure and formatting should follow this order:
 
 1. Tell merchants what went wrong, in specific terms.
-2. Instruct how to fix the problem and continue the current task. If the error can’t be resolved online, try to give merchants an appropriate offline contact option and a timeframe when they should try again.
+1. Instruct how to fix the problem and continue the current task. If the error can’t be resolved online, try to give merchants an appropriate offline contact option and a timeframe when they should try again.
 
 *Example:*
 

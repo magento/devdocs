@@ -69,18 +69,18 @@ To upgrade components:
 
    ![Select the version of Magento core components to which to upgrade]({{ site.baseurl }}/common/images/upgr_step1_core-ver.png)
 
-2. For each third-party component:
+1. For each third-party component:
 
-   * If you *do* want to upgrade it, set **Upgrade** to **Yes** and click the version from the **Update Version** list.
+   *  If you *do* want to upgrade it, set **Upgrade** to **Yes** and click the version from the **Update Version** list.
 
       A sample follows.
 
       ![Upgrade this component]({{ site.baseurl }}/common/images/upgr_comp_yes.png)
 
-   * If you *do not* want to upgrade it, set **Upgrade** to **No**.
+   *  If you *do not* want to upgrade it, set **Upgrade** to **No**.
 
       A sample follows.
 
       ![Do not upgrade this component]({{ site.baseurl }}/common/images/upgr_comp_no.png)
 
-3. Click **Next** and continue with [Step 2. Readiness check]({{ page.baseurl }}/comp-mgr/upgrader/upgrade-readiness.html)
+1. Click **Next** and continue with [Step 2. Readiness check]({{ page.baseurl }}/comp-mgr/upgrader/upgrade-readiness.html)

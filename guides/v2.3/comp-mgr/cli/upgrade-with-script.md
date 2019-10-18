@@ -12,13 +12,13 @@ Use [the manual process] if you previously made updates to the same values that 
 
 The upgrade script:
 
-- Updates Magento with the {{ page.guide_version }} requirements.
-- Backs up the `composer.json` file.
-- Specifies the new version of the Magento metapackage.
-- Updates the `"require-dev"` section in the `composer.json` file.
-- Adds `"Zend\\Mvc\\Controller\\": "setup/src/Zend/Mvc/Controller/"` to the `"autoload":"psr-4"` section in the `composer.json` file.
-- Backs up and updates the `magento/updater`, if it has been installed.
-- Updates the `"name"`, `"version"`, and `"description"` fields in the `composer.json` file.
+-  Updates Magento with the {{ page.guide_version }} requirements.
+-  Backs up the `composer.json` file.
+-  Specifies the new version of the Magento metapackage.
+-  Updates the `"require-dev"` section in the `composer.json` file.
+-  Adds `"Zend\\Mvc\\Controller\\": "setup/src/Zend/Mvc/Controller/"` to the `"autoload":"psr-4"` section in the `composer.json` file.
+-  Backs up and updates the `magento/updater`, if it has been installed.
+-  Updates the `"name"`, `"version"`, and `"description"` fields in the `composer.json` file.
 
 ## Before you begin
 
@@ -94,11 +94,11 @@ Open your storefront URL in a web browser to check whether the upgrade was succe
 If the application fails with a  `We're sorry, an error has occurred while generating this email.` error:
 
 1. Reset [file system ownership and permissions] as a user with `root` privileges.
-2. Clear these directories:
-   - `<magento_root>/var/cache`
-   - `<magento_root>/var/page_cache`
-   - `<magento_root>/generated/code`
-3. Check your storefront in your web browser again.
+1. Clear these directories:
+   -  `<magento_root>/var/cache`
+   -  `<magento_root>/var/page_cache`
+   -  `<magento_root>/generated/code`
+1. Check your storefront in your web browser again.
 
 <!-- Link definitions -->
 

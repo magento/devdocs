@@ -20,10 +20,10 @@ Before you begin creating a module, make sure that you have a working installati
 To create an integration, follow these general steps:
 
 1. [Create a module with the minimal structure and configuration.](#skeletal)
-2. [Add files specific to the integration.](#files)
-3. [Install the module.](#install)
-4. [Check the integration.](#check)
-5. [Integrate with your application.](#integrate)
+1. [Add files specific to the integration.](#files)
+1. [Install the module.](#install)
+1. [Check the integration.](#check)
+1. [Integrate with your application.](#integrate)
 
 ## Create a skeletal module {#skeletal}
 
@@ -41,7 +41,7 @@ To develop a module, you must:
 
    For more detailed information, see [Create your component file structure]({{ page.baseurl }}/extension-dev-guide/build/module-file-structure.html).
 
-2. **Define your module configuration file.** The `etc/module.xml` file provides basic information about the module. Change directories to the `etc` directory and create the `module.xml` file. You must specify values for the following attributes:
+1. **Define your module configuration file.** The `etc/module.xml` file provides basic information about the module. Change directories to the `etc` directory and create the `module.xml` file. You must specify values for the following attributes:
 
    <table>
    <tr>
@@ -77,7 +77,7 @@ To develop a module, you must:
 
    Module `Magento_Integration` is added to "sequence" to be loaded first. It helps to avoid the issue, when a module with integration config loaded, that leads to a malfunction.
 
-3. **Add your module's `composer.json` file.** Composer is a dependency manager for PHP. You must create a `composer.json` file for your module so that Composer can install and update the libraries your module relies on. Place the `composer.json` file in the `module-<module_name>` directory.
+1. **Add your module's `composer.json` file.** Composer is a dependency manager for PHP. You must create a `composer.json` file for your module so that Composer can install and update the libraries your module relies on. Place the `composer.json` file in the `module-<module_name>` directory.
 
     The following example demonstrates a minimal `composer.json` file.
 
@@ -103,7 +103,7 @@ To develop a module, you must:
 
     For more information, see [Create a component]({{ page.baseurl }}/extension-dev-guide/build/create_component.html).
 
-4. **Create a `registration.php` file** The `registration.php` registers the module with the Magento system. It must be placed in the module's root directory.
+1. **Create a `registration.php` file** The `registration.php` registers the module with the Magento system. It must be placed in the module's root directory.
 
       ```php
       <?php
@@ -119,7 +119,7 @@ To develop a module, you must:
         );
       ```
 
-5. **Create an install class.** Change directories to your `Setup` directory. Create a `InstallData.php` file that installs the integration configuration data into the Magento integration table.
+1. **Create an install class.** Change directories to your `Setup` directory. Create a `InstallData.php` file that installs the integration configuration data into the Magento integration table.
 
     The following sample is boilerplate and requires minor changes to make your integration work.
 
@@ -262,18 +262,24 @@ Use the following steps to install your module:
 
 1. Run the following command to update the Magento [database schema](https://glossary.magento.com/database-schema) and data.
 
-    <code>bin/magento setup:upgrade</code>
+   ```bash
+   bin/magento setup:upgrade</code>
+   ```
 
-2. Run the following command to generate the new code.
+1. Run the following command to generate the new code.
 
    {: .bs-callout-info }
    In Production mode, you may receive a message to 'Please rerun Magento compile command'.  Enter the command below. Magento does not prompt you to run the compile command in Developer mode.
 
-   <code>bin/magento setup:di:compile</code>
+   ```bash
+   bin/magento setup:di:compile
+   ```
 
-3. Run the following command to clean the cache.
+1. Run the following command to clean the cache.
 
-    <code>bin/magento cache:clean</code>
+   ```bash
+   bin/magento cache:clean
+   ```
 
 ## Check your integration {#check}
 
