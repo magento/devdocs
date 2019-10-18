@@ -13,9 +13,9 @@ Previous step
 
 To migrate your database and static files to Staging and Production:
 
-- [Deploy code](#code)
-- [Migrate static files](#cloud-live-migrate-static)
-- [Migrate the database](#cloud-live-migrate-db)
+-  [Deploy code](#code)
+-  [Migrate static files](#cloud-live-migrate-static)
+-  [Migrate the database](#cloud-live-migrate-db)
 
 If you encounter errors or need to change project configuration, complete the required updates in your local environment. Then, push the code changes to the Integration environment to deploy and test before pushing to Staging and Production environments.
 
@@ -51,8 +51,8 @@ You can use the [Magento Cloud CLI commands]({{ page.baseurl }}/cloud/reference/
 
 **Prerequisites**
 
-- [Build and deploy on local]({{ page.baseurl }}/cloud/live/live-sanity-check.html)
-- [Prepare to deploy to Staging and Production]({{ page.baseurl }}/cloud/live/stage-prod-migrate-prereq.html)
+-  [Build and deploy on local]({{ page.baseurl }}/cloud/live/live-sanity-check.html)
+-  [Prepare to deploy to Staging and Production]({{ page.baseurl }}/cloud/live/stage-prod-migrate-prereq.html)
 
 #### Step 1:  Deploy and test the Integration environment:
 
@@ -138,10 +138,10 @@ rsync -azvP <source> <destination>
 
 This command uses the following options:
 
-- `a`–archive
-- `z`–compress
-- `v`–verbose
-- `P`–partial progress
+-  `a`–archive
+-  `z`–compress
+-  `v`–verbose
+-  `P`–partial progress
 
 For additional options, see the [rsync man page](http://linux.die.net/man/1/rsync).
 

@@ -9,9 +9,9 @@ Use the `cart` query to retrieve information about a particular cart.
 
 Cart functionality is defined in the `Quote` module. A Quote represents the contents of a customer's shopping cart. It is responsible for performing tasks such as:
 
-* Tracking each item in the cart, including the quantity and base cost
-* Determining estimated shipping costs
-* Calculating subtotals, computing additional costs, applying coupons, and determining the payment method
+*  Tracking each item in the cart, including the quantity and base cost
+*  Determining estimated shipping costs
+*  Calculating subtotals, computing additional costs, applying coupons, and determining the payment method
 
 ## Syntax
 

@@ -30,7 +30,7 @@ $("#row-builder").rowBuilder({
 
 Where:
 
-- `#row-builder` is the selector of the element which will be the RowBuilder.
+-  `#row-builder` is the selector of the element which will be the RowBuilder.
 
 The following example shows a PHTML file using the script:
 

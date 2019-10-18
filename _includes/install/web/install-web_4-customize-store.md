@@ -15,7 +15,7 @@
    *  [General module configuration options](#instgde-install-magento-web-step4-depend1)
    *  [Module dependency errors](#instgde-install-magento-web-step4-depend2)
 
-1.  Click **Next**.
+1. Click **Next**.
 
 ### General module configuration options   {#instgde-install-magento-web-step4-depend1}
 

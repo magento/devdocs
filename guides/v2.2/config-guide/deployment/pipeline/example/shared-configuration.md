@@ -10,16 +10,16 @@ functional_areas:
 
 This example shows how to change the following settings in your development system, update the shared configuration file, `config.php`, in your build system, and implement the same settings in your production system:
 
-* Timezone
-* Weight unit
+*  Timezone
+*  Weight unit
 
 These settings are available in the Magento Admin in **Stores** > Settings > **Configuration** > General > **General**.
 
 You can use the same procedure to configure any non-sensitive, non-system-specific settings in the following references:
 
-* [Other configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-most.html)
-* [Payment configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-payment.html)
-* [Magento Enterprise B2B Extension configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-b2b.html)
+*  [Other configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-most.html)
+*  [Payment configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-payment.html)
+*  [Magento Enterprise B2B Extension configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-b2b.html)
 
 ## Before you begin
 
@@ -31,9 +31,9 @@ This topic provides an example of modifying the production system configuration.
 
 For the purposes of this example, we assume the following:
 
-* You use Git source control
-* The development system is available in a Git remote repository named `mconfig`
-* Your Git working branch is named `m2.2_deploy`
+*  You use Git source control
+*  The development system is available in a Git remote repository named `mconfig`
+*  Your Git working branch is named `m2.2_deploy`
 
 ## Step 1: Set the configuration in the development system
 

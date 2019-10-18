@@ -69,6 +69,6 @@ Error | Description
 
 ## Related topics
 
-* [customer query]({{page.baseurl}}/graphql/queries/customer.html)
-* [createCustomer mutation]({{page.baseurl}}/graphql/mutations/create-customer.html)
-* [updateCustomer mutation]({{page.baseurl}}/graphql/mutations/update-customer.html)
+*  [customer query]({{page.baseurl}}/graphql/queries/customer.html)
+*  [createCustomer mutation]({{page.baseurl}}/graphql/mutations/create-customer.html)
+*  [updateCustomer mutation]({{page.baseurl}}/graphql/mutations/update-customer.html)

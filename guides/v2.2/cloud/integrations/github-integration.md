@@ -26,37 +26,37 @@ You must be a member of a group with write-access to the GitHub repository, so t
 
 You need to clone your {{site.data.var.ece}} project from an existing environment and migrate the project branches to a new, empty GitHub repository, preserving the same branch names. It is **critical** to retain an identical Git tree, so that you do not lose any existing environments or branches in your {{site.data.var.ece}} project.
 
-1.  From the terminal, log in to your {{site.data.var.ece}} project.
+1. From the terminal, log in to your {{site.data.var.ece}} project.
 
     ```bash
     magento-cloud login
     ```
 
-1.  List your projects and copy the project ID.
+1. List your projects and copy the project ID.
 
     ```bash
     magento-cloud project:list
     ```
 
-1.  Clone the project to your local environment.
+1. Clone the project to your local environment.
 
     ```bash
     magento-cloud project:get <project-ID>
     ```
 
-1.  Add your GitHub repository as a remote.
+1. Add your GitHub repository as a remote.
 
     ```bash
     git remote add origin git@github.com:<user-name>/<repo-name>.git
     ```
 
-1.  Delete the default `magento` remote.
+1. Delete the default `magento` remote.
 
     ```bash
     git remote remove magento
     ```
 
-1.  Verify that you added the GitHub remote correctly.
+1. Verify that you added the GitHub remote correctly.
 
     ```bash
     git remote -v
@@ -70,7 +70,7 @@ You need to clone your {{site.data.var.ece}} project from an existing environmen
     ```
     {: .no-copy}
 
-1.  Push the project files to your new GitHub repository. Remember to keep all branch names the same.
+1. Push the project files to your new GitHub repository. Remember to keep all branch names the same.
 
     ```bash
     git push -u origin master
@@ -78,7 +78,7 @@ You need to clone your {{site.data.var.ece}} project from an existing environmen
 
     If you are starting with a new GitHub repository, you may have to use the `-f` option, because the remote repository does not match your local copy.
 
-1.  Verify that your GitHub repository contains all of your project files.
+1. Verify that your GitHub repository contains all of your project files.
 
 ## Enable the GitHub integration
 

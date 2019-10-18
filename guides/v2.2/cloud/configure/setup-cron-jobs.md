@@ -11,9 +11,9 @@ Magento uses cron jobs for numerous features to schedule activities. This topic 
 
 The `.magento.app.yaml` file specifies the configuration for the default Magento cron jobs as well as any custom crons that you add to the following environments.
 
-- Starter plan–All environments including `Master`
+-  Starter plan–All environments including `Master`
 
-- Pro plan–Integration, Staging, and Production environments including `Master`
+-  Pro plan–Integration, Staging, and Production environments including `Master`
 
 The `.magento.app.yaml` file includes the following default crons configuration, which runs the default Magento cron jobs:
 
@@ -170,6 +170,6 @@ You can review cron processing information in the application-level log files fo
 
 See the following Magento Support articles for help troubleshooting cron-related problems:
 
-- [Cron tasks lock tasks from other groups](https://support.magento.com/hc/en-us/articles/360029219812-Cron-tasks-lock-tasks-from-other-groups)
+-  [Cron tasks lock tasks from other groups](https://support.magento.com/hc/en-us/articles/360029219812-Cron-tasks-lock-tasks-from-other-groups)
 
-- [Reset stuck cron jobs manually on the cloud](https://support.magento.com/hc/en-us/articles/360000097713-Reset-stuck-Magento-cron-jobs-manually-on-Cloud)
+-  [Reset stuck cron jobs manually on the cloud](https://support.magento.com/hc/en-us/articles/360000097713-Reset-stuck-Magento-cron-jobs-manually-on-Cloud)

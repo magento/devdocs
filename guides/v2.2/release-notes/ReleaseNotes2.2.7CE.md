@@ -70,7 +70,7 @@ This release includes improvements to general usability of the core code plus en
 
 ### Magento Functional Test Framework (MFTF)
 
-* MTFT version 2.3.8 is now packaged with Magento 2.2.7.
+*  MTFT version 2.3.8 is now packaged with Magento 2.2.7.
 
 ### Community contribution highlights
 
@@ -199,7 +199,7 @@ In addition to security enhancements, this release contains the following functi
 *  You can now save a title for a product from the **Product** > **Customizable Options** page. *Fix submitted by [Madhumala Krishnan](https://github.com/Madhumalak) in pull request [15357](https://github.com/magento/magento2/pull/15357)*. [GitHub-6305](https://github.com/magento/magento2/issues/6305)
 
 <!-- ENGCOM-2758  -->
-*   You can now add a custom fieldset  to the Admin category editor without changing the position of  the General section (that is, the section that contains the **Enable category**, **Include in Menu**, and **Category Name** fields). Previously, Magento moved the General section to the last position of the form. *Fix submitted by [Burlacu Vasilii](https://github.com/vasilii-b) in pull request [17540](https://github.com/magento/magento2/pull/17540)*. [GitHub-15041](https://github.com/magento/magento2/issues/15041)
+*  You can now add a custom fieldset  to the Admin category editor without changing the position of  the General section (that is, the section that contains the **Enable category**, **Include in Menu**, and **Category Name** fields). Previously, Magento moved the General section to the last position of the form. *Fix submitted by [Burlacu Vasilii](https://github.com/vasilii-b) in pull request [17540](https://github.com/magento/magento2/pull/17540)*. [GitHub-15041](https://github.com/magento/magento2/issues/15041)
 
 <!-- MAGETWO-94080  -->
 *  The Catalog Products List widget can now display products on the storefront that have specific attributes applied to the default Global scope.
@@ -214,7 +214,7 @@ In addition to security enhancements, this release contains the following functi
 *  Magento no longer switches from table to list view on the product page when you add a product from the wishlist to the shopping cart.
 
 <!-- MAGETWO-73443  -->
-*   Customers can now add a product to their shopping cart when their session has expired. Previously, Magento did not add the
+*  Customers can now add a product to their shopping cart when their session has expired. Previously, Magento did not add the
 product, and hung indefinitely while trying to add the product.
 
 <!-- MAGETWO-73245  -->
@@ -310,7 +310,7 @@ product, and hung indefinitely while trying to add the product.
 ### EAV
 
 <!-- ENGCOM-2642  -->
-*   The Product Attribute Repository's incorrect return values have been replaced with values that now adhere to `Magento\Catalog\Api\ProductAttributeRepositoryInterface (extends Magento\Framework\Api\MetadataServiceInterface)` as expected. *Fix submitted by [julianvdrielen](https://github.com/julianvdrielen) in pull request [15691](https://github.com/magento/magento2/pull/15691)*. [GitHub-4803](https://github.com/magento/magento2/issues/4803)
+*  The Product Attribute Repository's incorrect return values have been replaced with values that now adhere to `Magento\Catalog\Api\ProductAttributeRepositoryInterface (extends Magento\Framework\Api\MetadataServiceInterface)` as expected. *Fix submitted by [julianvdrielen](https://github.com/julianvdrielen) in pull request [15691](https://github.com/magento/magento2/pull/15691)*. [GitHub-4803](https://github.com/magento/magento2/issues/4803)
 
 ### Email
 
@@ -372,7 +372,7 @@ product, and hung indefinitely while trying to add the product.
 *  The WYSIWYG editor now displays the backgrounds of .png thumbnail images as expected. Previously, transparent backgrounds were displayed as black.  *Fix submitted by [Eduard Chitoraga](https://github.com/eduard13) in pull request [16733](https://github.com/magento/magento2/pull/16733)*. [GitHub-14248](https://github.com/magento/magento2/issues/14248)
 
 <!-- ENGCOM-2860  -->
-*   Magento no longer duplicates events during delete operations. *Fix submitted by [p-bystritsky](https://github.com/p-bystritsky) in pull request [17718](https://github.com/magento/magento2/pull/17718)*. [GitHub-17715](https://github.com/magento/magento2/issues/17715)
+*  Magento no longer duplicates events during delete operations. *Fix submitted by [p-bystritsky](https://github.com/p-bystritsky) in pull request [17718](https://github.com/magento/magento2/pull/17718)*. [GitHub-17715](https://github.com/magento/magento2/issues/17715)
 
 <!-- ENGCOM-2322  -->
 *  Magento now correctly displays the Datepicker widget when a user scrolls a  page containing it. *Fix submitted by [Hitesh](https://github.com/hitesh-wagento) in pull request [16775](https://github.com/magento/magento2/pull/16775)*. [GitHub-7903](https://github.com/magento/magento2/issues/7903)
@@ -600,7 +600,7 @@ product, and hung indefinitely while trying to add the product.
 ### Wishlist
 
 <!-- MAGETWO-86609  -->
-*   Products disabled in the Admin  no longer appear in storefront wishlists. Previously, disabled products still appeared in the storefront wishlist, although when a customer clicked on a disabled product, Magento correctly returned “page not found”.
+*  Products disabled in the Admin  no longer appear in storefront wishlists. Previously, disabled products still appeared in the storefront wishlist, although when a customer clicked on a disabled product, Magento correctly returned “page not found”.
 
 <!-- MAGETWO-74289  -->
 *  Customers can now choose which wishlist to add a product to when adding products to the wishlist from the shopping cart.
@@ -617,7 +617,7 @@ product, and hung indefinitely while trying to add the product.
 *  The Vertex customer tax code that is defined on Vertex Cloud and specified in the **Customer Code** field ignores a new customer tax class if both are specified on the customer detail page in the Magento Admin.
 
 <!-- BUNDLE-1835  -->
-*   Customers will not be able to complete purchases  if  merchants configure Klarna payments to work in a different region than the store has been configured for.
+*  Customers will not be able to complete purchases  if  merchants configure Klarna payments to work in a different region than the store has been configured for.
 
 <!-- not needed --  MAGETWO-93800 MAGETWO-94468 MAGETWO-94236 MAGETWO-94213 MAGETWO-94174 MAGETWO-94098 MAGETWO-93725 MAGETWO-93105 MAGETWO-92654 MAGETWO-92187 MAGETWO-92169 MAGETWO-91477 MAGETWO-91358 MAGETWO-91288 MAGETWO-89892 MAGETWO-89309 MAGETWO-88233 MAGETWO-86482 MAGETWO-85420 MAGETWO-82084 MAGETWO-73357 MAGETWO-72067 MAGETWO-71157 MAGETWO-95529 MAGETWO-95424 MAGETWO-94762 MAGETWO-94409 MAGETWO-94331 MAGETWO-94300 MAGETWO-94475 -->
 

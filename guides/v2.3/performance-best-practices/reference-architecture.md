@@ -18,9 +18,9 @@ The Magento Reference Architecture diagram represents the best practice approach
 
 The color of each element in the diagram indicates whether the element is part of {{site.data.var.ce}} or {{site.data.var.ee}} and if it is required.
 
-* Orange elements are required for {{site.data.var.ce}}
-* Grey elements are optional for {{site.data.var.ce}}
-* Blue elements are optional for {{site.data.var.ee}}
+*  Orange elements are required for {{site.data.var.ce}}
+*  Grey elements are optional for {{site.data.var.ce}}
+*  Blue elements are optional for {{site.data.var.ee}}
 
 ![alt text]({{ page.baseurl }}/performance-best-practices/images/ref-architecture-2.3.png "reference architecture")
 
@@ -28,37 +28,37 @@ The following sections provide recommendations and considerations for each secti
 
 ### Varnish
 
-* A Varnish cluster can scale to the traffic of a site
-* Tune the instance size based on the number of cache pages needed
-* On a high-traffic site, use a Varnish Master to ensure on-cache flush one request (at most) per web tier
+*  A Varnish cluster can scale to the traffic of a site
+*  Tune the instance size based on the number of cache pages needed
+*  On a high-traffic site, use a Varnish Master to ensure on-cache flush one request (at most) per web tier
 
 ### Web
 
-* Enable scale of nodes for traffic and redundancy
-* One node is master and runs cron
-* Alternatively, use a dedicated Admin and worker nodes
+*  Enable scale of nodes for traffic and redundancy
+*  One node is master and runs cron
+*  Alternatively, use a dedicated Admin and worker nodes
 
 ### Cache
 
-* Consider implementing a separate Redis instance for sessions
-* You can have a Redis instance per cache
-* Size your instance to contain the largest expected cache size
+*  Consider implementing a separate Redis instance for sessions
+*  You can have a Redis instance per cache
+*  Size your instance to contain the largest expected cache size
 
 ### Database and queues
 
-* High-traffic sites can tune DB performance with slave DBs and split DBs for orders/carts (in {{site.data.var.ee}})
-* Consider using a slave DB to enable quick recovery and for data backups
-* Low-traffic sites can store images in the DB
+*  High-traffic sites can tune DB performance with slave DBs and split DBs for orders/carts (in {{site.data.var.ee}})
+*  Consider using a slave DB to enable quick recovery and for data backups
+*  Low-traffic sites can store images in the DB
 
 ### Search
 
-* Consider using Elasticsearch to perform searches
-* Tune the number of instances based on search traffic
+*  Consider using Elasticsearch to perform searches
+*  Tune the number of instances based on search traffic
 
 ### Storage
 
-* Consider using GFS or GlusterFS for pub/media storage
-* Alternatively, use DB storage for low-traffic sites
+*  Consider using GFS or GlusterFS for pub/media storage
+*  Alternatively, use DB storage for low-traffic sites
 
 ### Recommended Varnish Reference Architecture
 

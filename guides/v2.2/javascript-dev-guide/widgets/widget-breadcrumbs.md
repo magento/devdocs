@@ -25,7 +25,7 @@ $('#breadcrumbs').breadcrumbs();
 
 Where:
 
-- `#breadcrumbs` is the selector of the block element for which Breadcrumbs are initialized.
+-  `#breadcrumbs` is the selector of the block element for which Breadcrumbs are initialized.
 
 The following example shows a PHTML file using the script:
 
