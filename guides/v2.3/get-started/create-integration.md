@@ -165,9 +165,9 @@ To develop a module, you must:
     `$this->integrationManager->processIntegrationConfig(['testIntegration']);`
 
     `testIntegration` must refer to your `etc/integration/config.xml` file, and the integration name value must be the same.
-    
+
     The following example demonstrates a minimal config.xml file.
-    
+
     ```xml
    <integrations>
       <integration name="TestIntegration">
