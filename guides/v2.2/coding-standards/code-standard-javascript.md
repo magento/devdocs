@@ -345,10 +345,10 @@ Modifying other built-ins like `Function.prototype` is less dangerous but leads 
 
 ### Variable declarations
 
-Declare a variable with `let` as the default scope assignment for a variable. Use `const` when the variable will not be reassigned. Never use `var` unless you need to function scope a variable.
+Declare a variable with `let` as the default scope assignment for a variable. Use `const` when the variable will not be reassigned. Never use `var` unless you need to function scope a variable. Remember that `let` and `const` are block scoped.
 
 {: .bs-callout-info }
-Remember that `let` and `const` are block scoped!
+IE11 doesn't support `let` entirely. It has some issues while using in `for` loops. Use with caution.
 
 ```javascript
 let foo = 'bar',
