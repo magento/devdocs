@@ -21,7 +21,9 @@ You can also disable or delete authentication keys. For example, you can disable
 *  To enable a previously disabled key: Click **Enable**.
 *  To delete keys: Click **Delete**.
 
-You cannot delete or disable keys you created by signing in to your [magento.com account](https://www.magentocommerce.com/products/customer/account/login){:target="_blank"}. To manage those keys:
+### Manage SSH access token
+
+To download Magento releases using SSH, you must generate a Downloads Access Token. To generate a token:
 
 1. Log in to your [magento.com account](https://www.magentocommerce.com/products/customer/account/login){:target="_blank"}.
 1. Click **My Account** at the top of the page.
@@ -30,3 +32,11 @@ You cannot delete or disable keys you created by signing in to your [magento.com
    ![Access your keys]({{ site.baseurl }}/common/images/connect_keys1.png){:width="200px"}
 
 1. Click **Generate new token** to replace and disable an existing token.
+
+You must use your MAGEID plus your token to download a release. Your MAGEID is displayed at the top-left of your account page.
+
+For example:
+
+```bash
+curl -k https://MAGEID:TOKEN@www.magentocommerce.com/products/downloads/info/help
+```
