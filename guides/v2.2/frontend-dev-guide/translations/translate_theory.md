@@ -86,8 +86,7 @@ In this example, the *Delete* string is added to the dictionary when the i18n to
 <item name="label" xsi:type="string" translate="true">Delete</item>
 ```
 
-Translated strings that originate from `.xml` files will not render unless they are called with a `__(<variable>)` method.
-In this example, you would use a call similar to the following to display the translated *Delete* string.
+Translated strings that originate from `.xml` files will not render unless they are called with a `__(<variable>)` method in `.php` files. In this example, you would use a call similar to the following to display the translated *Delete* string.
 
 ```php
 __($this->config->getData('label'))
