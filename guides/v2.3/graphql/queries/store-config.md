@@ -287,7 +287,7 @@ Attribute |  Data Type | Description | Example
 `root_category_id` | Int | The ID of the root category
 `title_separator` | String | Identifies the character that separates the category name and subcategory in the browser title bar | `-`
 
-### Supported Weee (fixed product tax) attributes
+### Supported WEEE (fixed product tax) attributes
 
 The **Stores** > Settings > **Configuration** > **Sales** > **Tax** > **Fixed Product Taxes** panel contains several fields that determine how to display fixed product tax (FPT) values and descriptions. Use the following attributes to determine the values of the **Fixed Product Taxes** fields. These attributes are defined in the `WeeeGraphQl` module.
 
