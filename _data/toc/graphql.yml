@@ -101,11 +101,8 @@ pages:
         - label: isEmailAvailable query
           url: /graphql/queries/is-email-available.html
 
-        - label: products query (2.3.3)
+        - label: products query
           url: /graphql/queries/products.html
-
-        - label: products query (2.3.4)
-          url: /graphql/queries/products-234.html
 
         - label: storeConfig query
           url: /graphql/queries/store-config.html
