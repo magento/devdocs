@@ -64,8 +64,8 @@ Attribute | Data type | Description
 `upsell_products` | [ProductInterface] | An array of up-sell products
 `url_key` | String | The part of the URL that identifies the product. This attribute is defined in the `CatalogUrlRewriteGraphQl` module
 `url_path` | String | Deprecated. Use `canonical_url` instead
-`url_rewrites` | [[UrlRewrite]](#urlRewriteObject) | A list of URL rewrites
 `url_suffix` | String | The part of the URL that is appended to the `url_key`, such as `.html`. This attribute is defined in the `CatalogUrlRewriteGraphQl` module
+`url_rewrites` | [[UrlRewrite]](#urlRewriteObject) | A list of URL rewrites
 `websites` | [[Website]](#websiteObject) | An array of websites in which the product is available
 
 ### ProductPrices object {#ProductPrices}
@@ -98,6 +98,7 @@ Attribute |  Data Type | Description
 --- | --- | ---
 `discount` | ProductDiscount | The amount of the discount applied to the product. It represents the difference between the `final_price` and `regular_price`
 `final_price`| Money! | The price of the product after applying discounts
+`fixed_product_taxes` | [[FixedProductTax](#FixedProductTax)] | An array of fixed product taxes that either have been or can be applied to a product price
 `regular_price` | Money! | The regular price of the product, without any applied discounts
 
 ### ProductDiscount object {#ProductDiscount}
@@ -109,7 +110,19 @@ Attribute |  Data Type | Description
 `amount_off` | Float | The actual value of the discount
 `percent_off` | Float | The discount expressed as a percentage
 
+### FixedProductTax object {#FixedProductTax}
+
+Some tax jurisdictions have a fixed product tax (FPT) that must be applied to certain types of products. An example FPT is the Waste Electrical and Electronic Equipment (WEEE) tax, which is collected on some types of electronics to offset the cost of recycling.
+
+Attribute |  Data Type | Description
+--- | --- | ---
+`amount` | Money | The amount of the fixed product tax
+`label` | String | The label assigned to the fixed product tax to be displayed on the frontend
+
 ### Price object {#Price}
+
+{:.bs-callout-info}
+The `Price` object has been deprecated. Use the `ProductPrice` object instead.
 
 The `Price` object defines the price of a product as well as any tax-related adjustments.
 
@@ -129,7 +142,10 @@ Attribute |  Data Type | Description
 
 #### PriceAdjustment array {#PriceAdjustment}
 
-The `PricedAdjustment` object defines the amount of money to apply as an adjustment, the type of adjustment to apply, and whether the item is included or excluded from the adjustment.
+{:.bs-callout-info}
+The `PriceAdjustment` object has been deprecated. In cases where the value for the `code` attribute was `WEEE`, use `fixed_product_taxes.label` instead. If the value was `tax` or `weee_tax`, the taxes will be included or excluded as part of the price in the `ProductPrice` or `FixedProductTax` object, respectively.
+
+The `PriceAdjustment` object defines the amount of money to apply as an adjustment, the type of adjustment to apply, and whether the item is included or excluded from the adjustment.
 
 Attribute |  Data Type | Description
 --- | --- | ---
@@ -137,7 +153,7 @@ Attribute |  Data Type | Description
 `code` | PriceAdjustmentCodesEnum | One of `tax`, `weee`, or `weee_tax`.
 `description` | PriceAdjustmentDescriptionEnum | Indicates whether the entity described by the code attribute is included or excluded from the adjustment.
 
-### ProductLinks object {#ProductLinks}
+#### ProductLinks object {#ProductLinks}
 
 `ProductLinks` contains information about linked products, including the link type and product type of each item.
 
