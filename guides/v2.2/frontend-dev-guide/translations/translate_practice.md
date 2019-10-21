@@ -13,9 +13,9 @@ OrangeCo created a custom `orange` theme that inherits from the Magento Blank th
 
 Namely, they need the following changes:
 
--   Change **Add to Cart** label to **Purchase**
--   Change **Add to Compare** label to **Compare**
--   Change **Add to Wish List** label to **Wishlist**
+-  Change **Add to Cart** label to **Purchase**
+-  Change **Add to Compare** label to **Compare**
+-  Change **Add to Wish List** label to **Wishlist**
 
 The following image shows a page where the current strings are used:
 
@@ -51,9 +51,9 @@ For example:
 
 ## Additional information
 
--   [Translations overview]
--   [Translation dictionaries and language packages]
--   [Usetranslation dictionary to customize strings]
+-  [Translations overview]
+-  [Translation dictionaries and language packages]
+-  [Usetranslation dictionary to customize strings]
 
 [dictionary]: {{ page.baseurl }}/frontend-dev-guide/translations/xlate.html#translate_terms
 [Product page where the Add to Compare string is displayed]: {{site.baseurl}}/common/images/fdg_trans_bag.png

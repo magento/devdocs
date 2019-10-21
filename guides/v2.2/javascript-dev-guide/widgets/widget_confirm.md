@@ -52,14 +52,14 @@ For details about how to initialize a widget in a`.phtml` template, refer to the
 
 ## Options {#confirm_options}
 
--   [actions](#confirm_actions)
--   [autoOpen](#confirm_autoopen)
--   [clickableOverlay](#confirm_clickableOverlay)
--   [content](#confirm_content)
--   [focus](#confirm_focus)
--   [title](#confirm_title)
--   [modalClass](#confirm_modalClass)
--   [buttons](#confirm_buttons)
+-  [actions](#confirm_actions)
+-  [autoOpen](#confirm_autoopen)
+-  [clickableOverlay](#confirm_clickableOverlay)
+-  [content](#confirm_content)
+-  [focus](#confirm_focus)
+-  [title](#confirm_title)
+-  [modalClass](#confirm_modalClass)
+-  [buttons](#confirm_buttons)
 
 ### `actions` {#confirm_actions}
 Widget callbacks.
@@ -146,9 +146,9 @@ The CSS class of the confirm window.
 
 The confirmation widget implements the following events:
 
-- `confirm` callback: called when the confirmation button is clicked.
-- `cancel` callback: called when the cancel button is clicked.
-- `always` callback: called when the popup is closed.
+-  `confirm` callback: called when the confirmation button is clicked.
+-  `cancel` callback: called when the cancel button is clicked.
+-  `always` callback: called when the popup is closed.
 
 ## Keyboard navigation {#confirm_key_navigation}
 

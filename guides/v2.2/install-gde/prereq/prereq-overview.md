@@ -15,9 +15,9 @@ functional_areas:
 
 Before you install Magento, you must do all of the following:
 
-* Set up one or more hosts that meet the [Magento system requirements]({{ page.baseurl }}/install-gde/system-requirements.html).
-* If you are setting up more than one web node with load balancing, set up and test that part of your system _before_ you install Magento.
-* Make sure you can back up your entire system at various points during the installation so you can roll back in the [event](https://glossary.magento.com/event) of issues.
+*  Set up one or more hosts that meet the [Magento system requirements]({{ page.baseurl }}/install-gde/system-requirements.html).
+*  If you are setting up more than one web node with load balancing, set up and test that part of your system _before_ you install Magento.
+*  Make sure you can back up your entire system at various points during the installation so you can roll back in the [event](https://glossary.magento.com/event) of issues.
 
 {:.bs-callout .bs-callout-info}
 We assume you're installing the Magento 2 software in a _development environment_, which means you have [root user](http://www.linfo.org/root.html){:target="_blank"} access to the machine _and_ that the machine does not need to be highly secure. If you're setting up a more secure machine, we strongly recommend you consult a network administrator for additional assistance.
@@ -29,7 +29,7 @@ Don't know what any of this means? Check out our [installation overview page]({{
 
 Enter the following commands as a user with `root` privileges:
 
-* Ubuntu
+*  Ubuntu
 
    ```bash
    apt-get update
@@ -39,7 +39,7 @@ Enter the following commands as a user with `root` privileges:
    apt-get upgrade
    ```
 
-* CentOS
+*  CentOS
 
    ```bash
    yum -y update

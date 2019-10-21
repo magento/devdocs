@@ -16,11 +16,11 @@ Merchants are encouraged to use Magento components and themes to extend and tran
 
 Magento provides several tools to help you significantly jumpstart the storefront customization process:
 
-* Magento Blank [Theme](https://glossary.magento.com/theme)
+*  Magento Blank [Theme](https://glossary.magento.com/theme)
 
-* [Overview of UI components][]
+*  [Overview of UI components][]
 
-* [Magento Admin Pattern Library][]
+*  [Magento Admin Pattern Library][]
 
 See the [Frontend Developer Guide][] for information on creating your themes.
 
@@ -32,8 +32,8 @@ The Magento blank theme template provides a launchpad for storefront customizati
 
 Using Magento standard coding and styling tools can help:
 
-* enforce for consistency in design across your storefronts
-* simplify (and speed up) the design process
+*  enforce for consistency in design across your storefronts
+*  simplify (and speed up) the design process
 
 This component [library](https://glossary.magento.com/library) contains standard reusable components for form features, such as fields and buttons, and navigation elements. The Magento UI library is a set of generic web components and Magento-specific patterns, which simplifies the process of Magento theme creation and customization.
 
@@ -45,11 +45,11 @@ A *pattern library* is a collection of user interface (UI) design patterns that 
 
 Form elements included in the [Magento Admin](https://glossary.magento.com/magento-admin) pattern library include:
 
-* address form
-* button bar
-* container
-* tabs
-* sign-in form
+*  address form
+*  button bar
+*  container
+*  tabs
+*  sign-in form
 
 Users of the default Magento storefront encounter examples of these form elements throughout the product. These patterns provide a valuable language of software components (and indirectly, user experiences) for [extension](https://glossary.magento.com/extension) developers and administrators.
 

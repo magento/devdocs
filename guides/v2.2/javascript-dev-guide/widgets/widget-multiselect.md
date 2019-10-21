@@ -154,13 +154,13 @@ The search field update delay.
 
 The Multiselect methods are the following:
 
-- [appendOptions()](#appendoptions)
-- [clearMultiselectOptions()](#clearmultiselectoptions)
-- [getCurrentPage()](#getcurrentpage)
-- [getSearchCriteria()](#getsearchcriteria)
-- [isOptionsLoaded()](#isoptionsloaded)
-- [loadOptions()](#loadoptions)
-- [setCurrentPage()](#setcurrentpage)
+-  [appendOptions()](#appendoptions)
+-  [clearMultiselectOptions()](#clearmultiselectoptions)
+-  [getCurrentPage()](#getcurrentpage)
+-  [getSearchCriteria()](#getsearchcriteria)
+-  [isOptionsLoaded()](#isoptionsloaded)
+-  [loadOptions()](#loadoptions)
+-  [setCurrentPage()](#setcurrentpage)
 
 ### `appendOptions`
 

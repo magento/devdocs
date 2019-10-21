@@ -163,14 +163,14 @@ var config = {
 
 The following is a list of files in the [`Magento_CheckoutAgreement`] module that declare and define mixins that modify checkout behavior:
 
-* [`view/frontend/requirejs-config.js`]
-* [`view/frontend/web/js/model/place-order-mixin.js`]
-* [`view/frontend/web/js/model/set-payment-information-mixin.js`]
+*  [`view/frontend/requirejs-config.js`]
+*  [`view/frontend/web/js/model/place-order-mixin.js`]
+*  [`view/frontend/web/js/model/set-payment-information-mixin.js`]
 
 ## Related reading
 
-* [About AMD modules and RequireJS]
-* [Configure JS resources]
+*  [About AMD modules and RequireJS]
+*  [Configure JS resources]
 
 [mixin]: https://en.wikipedia.org/wiki/Mixin
 [application area]: {{ page.baseurl }}/architecture/archi_perspectives/components/modules/mod_and_areas.html

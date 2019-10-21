@@ -48,9 +48,9 @@ For more information about layouts, see the [Layout documentation]({{ page.baseu
 
 The `Magento\SharedCatalog\view\adminhtml\ui_component` directory contains extensible UI components.
 
-* Forms: Company, catalog rule, catalog rule staging, product, sales rule, sales rule staging update, shared catalog, shared catalog tier price.
+*  Forms: Company, catalog rule, catalog rule staging, product, sales rule, sales rule staging update, shared catalog, shared catalog tier price.
 
-* Listings: Company, product, shared catalog company, shared catalog, shared catalog product pricing, shared catalog product listing.
+*  Listings: Company, product, shared catalog company, shared catalog, shared catalog product pricing, shared catalog product listing.
 
 For more information, see [UI Listing/Grid Component]({{ page.baseurl }}/ui_comp_guide/components/ui-listing-grid.html) and [UI Form Component]({{ page.baseurl }}/ui_comp_guide/components/ui-form.html).
 

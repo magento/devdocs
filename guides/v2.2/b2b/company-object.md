@@ -338,7 +338,7 @@ None
 
 ## Related information
 
-* [Integrate with the Company module]({{ page.baseurl }}/b2b/company.html)
-* [Manage company users]({{ page.baseurl }}/b2b/company-users.html)
-* [Manage company roles]({{ page.baseurl }}/b2b/roles.html)
-* [Manage company structures]({{ page.baseurl }}/b2b/company-structures.html)
+*  [Integrate with the Company module]({{ page.baseurl }}/b2b/company.html)
+*  [Manage company users]({{ page.baseurl }}/b2b/company-users.html)
+*  [Manage company roles]({{ page.baseurl }}/b2b/roles.html)
+*  [Manage company structures]({{ page.baseurl }}/b2b/company-structures.html)
