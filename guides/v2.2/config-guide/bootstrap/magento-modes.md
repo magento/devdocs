@@ -67,9 +67,9 @@ To deploy the Magento application on more than one server or to optimize it for 
 
 In default mode:
 
-- Errors are logged to the file reports at server, and never shown to a user
-- Static view files are cached
-- Default mode is not optimized for a production environment, primarily because of the adverse performance impact of [static files](https://glossary.magento.com/static-files) being dynamically generated rather than [materialized](https://en.wikipedia.org/wiki/Materialized_view). In other words, creating static files and caching them has a greater performance impact than generating them using the static files creation tool.
+-  Errors are logged to the file reports at server, and never shown to a user
+-  Static view files are cached
+-  Default mode is not optimized for a production environment, primarily because of the adverse performance impact of [static files](https://glossary.magento.com/static-files) being dynamically generated rather than [materialized](https://en.wikipedia.org/wiki/Materialized_view). In other words, creating static files and caching them has a greater performance impact than generating them using the static files creation tool.
 
 For more information, see [Set the Magento mode]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html).
 
@@ -79,11 +79,11 @@ Run Magento in developer mode when you are extending or customizing it.
 
 In developer mode:
 
-- Static view files are not cached; they are written to the Magento `pub/static` directory every time they're called
-- Uncaught exceptions display in the browser
-- System logging in `var/report` is verbose
-- An [exception](https://glossary.magento.com/exception) is thrown in the error handler, rather than being logged
-- An exception is thrown when an [event](https://glossary.magento.com/event) subscriber cannot be invoked
+-  Static view files are not cached; they are written to the Magento `pub/static` directory every time they're called
+-  Uncaught exceptions display in the browser
+-  System logging in `var/report` is verbose
+-  An [exception](https://glossary.magento.com/exception) is thrown in the error handler, rather than being logged
+-  An exception is thrown when an [event](https://glossary.magento.com/event) subscriber cannot be invoked
 
 For more information, see [Set the Magento mode]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html).
 
@@ -95,9 +95,9 @@ This improves performance by providing all necessary static files at deployment 
 
 In production mode:
 
-- Static view files are not materialized, and URLs for them are composed on the fly. Static view files are served from the [cache](https://glossary.magento.com/cache) only.
-- Errors are logged to the file system and are never displayed to the user.
-- You can enable and disable cache types only using the [command line]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cache.html#config-cli-subcommands-cache-en).
+-  Static view files are not materialized, and URLs for them are composed on the fly. Static view files are served from the [cache](https://glossary.magento.com/cache) only.
+-  Errors are logged to the file system and are never displayed to the user.
+-  You can enable and disable cache types only using the [command line]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cache.html#config-cli-subcommands-cache-en).
 
    You _cannot_ enable or disable cache types using the Magento Admin
 
@@ -112,6 +112,6 @@ If you are using {{site.data.var.ece}}, the Magento application runs in maintena
 {:.ref-header}
 Related topics
 
-- To set a mode, see [Set the Magento mode]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html).
+-  To set a mode, see [Set the Magento mode]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html).
 
-- To generate static view files for production mode, see [Deploy static view files]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html)
+-  To generate static view files for production mode, see [Deploy static view files]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html)

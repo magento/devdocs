@@ -14,9 +14,9 @@ The `Magento_BundleSharedCatalog` module enables bundle products to be added to 
 
 The `Magento_BundleSharedCatalog` module provides the following features:
 
-* Display and manage prices for bundle products within a shared catalog.
+*  Display and manage prices for bundle products within a shared catalog.
 
-* Control the visibility of bundle products in quotes and orders. Only those bundle products that have been added to a shared catalog will be available for searches via the "Add by SKU" feature in quotes and orders.
+*  Control the visibility of bundle products in quotes and orders. Only those bundle products that have been added to a shared catalog will be available for searches via the "Add by SKU" feature in quotes and orders.
 
 ## Installation details
 
@@ -44,7 +44,7 @@ For more information about layouts, see the [Layout documentation]({{ page.baseu
 
 The following directory contains extensible UI components:
 
-* `Magento\BundleSharedCatalog\view\adminhtml\ui_component` - renderer for pricing and structure listings
+*  `Magento\BundleSharedCatalog\view\adminhtml\ui_component` - renderer for pricing and structure listings
 
 For more information, see [UI Listing/Grid Component]({{ page.baseurl }}/ui_comp_guide/components/ui-listing-grid.html).
 

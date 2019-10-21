@@ -65,5 +65,5 @@ For suggested solutions to other causes indicated by this message, see [troubles
 
 The System Upgrade utility installs sample data for you but doesn't display it, if you:
 
-* Used the [`magento sampledata:deploy`]({{ page.baseurl }}/install-gde/install/cli/install-cli-sample-data-composer.html) command to download, but not installed sample data
-* You chose to update components at the same time as the Magento system software
+*  Used the [`magento sampledata:deploy`]({{ page.baseurl }}/install-gde/install/cli/install-cli-sample-data-composer.html) command to download, but not installed sample data
+*  You chose to update components at the same time as the Magento system software

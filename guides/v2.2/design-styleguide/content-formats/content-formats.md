@@ -14,23 +14,23 @@ For more specifics, use the [Magento Glossary](https://glossary.magento.com/). I
 
 Avoid the following:
 
-* **Abbreviations for months and URLs.**  For details, see the [Dates]({{ page.baseurl }}/design-styleguide/number-formats/number-formats.html#dates-and-times) section in Number Formats.
+*  **Abbreviations for months and URLs.**  For details, see the [Dates]({{ page.baseurl }}/design-styleguide/number-formats/number-formats.html#dates-and-times) section in Number Formats.
 
-* **Non-English words and abbreviations.** These are difficult to translate, and some users might be unfamiliar with them.
+*  **Non-English words and abbreviations.** These are difficult to translate, and some users might be unfamiliar with them.
 
-* **Latin abbreviations.** Abbreviations like i.e., e.g., and etc., are not universally known and are often misunderstood.
+*  **Latin abbreviations.** Abbreviations like i.e., e.g., and etc., are not universally known and are often misunderstood.
 
 ## Acronyms
 
 When in doubt, spell it out. If there’s a chance a reader doesn't know an abbreviation or acronym, use the full term on first reference.
 
-* **Use all caps case.**
+*  **Use all caps case.**
 
-* **First reference, spelled out.** Spell out term and append acronym in parenthesis.<br>*Correct examples:* content management system (CMS), Social Security Number (SSN)
+*  **First reference, spelled out.** Spell out term and append acronym in parenthesis.<br>*Correct examples:* content management system (CMS), Social Security Number (SSN)
 
-* **Second reference format.** Replace term and use only acronym.<br>*Correct example:* "When you sign into the content management system (CMS), enter the new content into the CMS."
+*  **Second reference format.** Replace term and use only acronym.<br>*Correct example:* "When you sign into the content management system (CMS), enter the new content into the CMS."
 
-* **First reference, acronym only.** Some acronyms are used by themselves because they're better-known than their spelled-out terms. These acronyms are used on first reference.<br>*Correct examples:* DVD, ZIP Code, XML, API
+*  **First reference, acronym only.** Some acronyms are used by themselves because they're better-known than their spelled-out terms. These acronyms are used on first reference.<br>*Correct examples:* DVD, ZIP Code, XML, API
 
 ### File-Type Formats
 

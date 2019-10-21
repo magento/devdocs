@@ -21,8 +21,8 @@ You can still use the `build_options.ini` file, but we recommend using the `.mag
 
 The following variables were removed in v2.2:
 
--   `skip_di_clearing`
--   `skip_di_compilation`
+-  `skip_di_clearing`
+-  `skip_di_compilation`
 
 ### `SCD_COMPRESSION_LEVEL`
 

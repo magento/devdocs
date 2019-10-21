@@ -92,7 +92,7 @@ To develop a module, you must:
          "name": "Vendor1_Module1",
          "description": "create integration from config",
          "require": {
-            "php": "~5.5.0|~5.6.0|~7.0.0",
+            "php": "~7.0.13|~7.1.0|~7.2.0",
             "magento/framework": "2.0.0",
             "magento/module-integration": "2.0.0"
          },
@@ -170,7 +170,19 @@ To develop a module, you must:
 
     `$this->integrationManager->processIntegrationConfig(['TestIntegration']);`
 
-    `testIntegration` must refer to your `etc/integration.xml` file, and the integration name value must be the same.
+    `testIntegration` must refer to your `etc/integration/config.xml` file, and the integration name value must be the same.
+
+    The following example demonstrates a minimal 'config.xml' file.
+
+    ```xml
+    <integrations>
+      <integration name="TestIntegration">
+         <email>someone@example.com</email>
+         <endpoint_url>https://example.com</endpoint_url>
+         <identity_link_url>https://example.com/identity_link_url</identity_link_url>
+      </integration>
+    </integrations>
+    ``
 
     Also, be sure to change the path after `namespace` for your vendor and module names.
 

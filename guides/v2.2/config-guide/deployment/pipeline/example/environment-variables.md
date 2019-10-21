@@ -16,15 +16,15 @@ VAT Number and Store Name from **Stores** > Settings > **Configuration** > Gener
 
 These configuration settings are either system-specific or sensitive, as indicated:
 
-* Send Emails To (sensitive) from **Stores** > Settings > **Configuration** > General > **Contacts**
-* Default Email Domain (system-specific) from **Stores** > Settings > **Configuration** > Customers > **Customer Configuration** > **Create New Account Options**
+*  Send Emails To (sensitive) from **Stores** > Settings > **Configuration** > General > **Contacts**
+*  Default Email Domain (system-specific) from **Stores** > Settings > **Configuration** > Customers > **Customer Configuration** > **Create New Account Options**
 
 You can use the same procedure to configure any settings in the following references:
 
-* [Sensitive and system-specific configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-sens.html)
-* [Payment configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-payment.html)
-* [Other configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-most.html)
-* [Magento Enterprise B2B Extension configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-b2b.html)
+*  [Sensitive and system-specific configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-sens.html)
+*  [Payment configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-payment.html)
+*  [Other configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-most.html)
+*  [Magento Enterprise B2B Extension configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-b2b.html)
 
 ## Before you begin
 
@@ -36,9 +36,9 @@ This topic provides an example of modifying the production system configuration.
 
 For the purposes of this example, we assume the following:
 
-* You use Git source control
-* The development system is available in a Git remote repository named `mconfig`
-* Your Git working branch is named `m2.2_deploy`
+*  You use Git source control
+*  The development system is available in a Git remote repository named `mconfig`
+*  Your Git working branch is named `m2.2_deploy`
 
 ## Step 1: Set the configuration in the development system {#deploy-sens-setconfig}
 
@@ -88,19 +88,19 @@ Now that you've committed your changes to the shared configuration to source con
 
 The last step in the process is to update your production system. You must do it in two parts:
 
-* [Update the sensitive and system-specific settings](#config-split-verify-sens)
-* [Update the shared settings](#config-split-verify-shared)
+*  [Update the sensitive and system-specific settings](#config-split-verify-sens)
+*  [Update the shared settings](#config-split-verify-shared)
 
 ### Update the sensitive and system-specific settings {#config-split-verify-sens}
 
 To set the sensitive and system-specific settings using environment variables, you must know the following:
 
-*   Each setting's scope
+*  Each setting's scope
 
    If you followed the instructions in [Step 1](#deploy-sens-setconfig), the scope for Send Emails To is global (that is, the Default Config scope) and the scope for Default Email Domain is website.
 
    You must know the website's code to set the Default Email Domain configuration value. See [Use environment variables to override configuration settings]({{ page.baseurl }}/config-guide/prod/config-reference-var-name.html) for more information on finding it.
-*   Each setting's configuration path
+*  Each setting's configuration path
 
    The configuration paths used in this example follow:
 

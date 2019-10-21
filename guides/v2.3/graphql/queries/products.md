@@ -176,6 +176,10 @@ weight
 {:.bs-callout-info}
 The `or` attribute cannot be used in a `products` query. Logical OR searches are no longer supported.
 
+-  `or` - The keyword required to perform a logical OR comparison.
+-  `news_from_date` - This attribute is transformed to `new_from_date` in a response.
+-  `news_to_date` - This attribute is transformed to `new_to_date` in a response.
+
 The following condition types have been deprecated:
 
 ```text
@@ -193,6 +197,13 @@ notnull
 null
 to
 ```
+
+-  Comparable on Storefront
+-  Use in Layered Navigation
+-  Use in Search Results Layered Navigation
+-  Visible on Catalog Pages on Storefront
+-  Used in Product Listing
+-  Used for Sorting in Product Listing"
 
 {:.bs-callout-info}
 Wildcards are no longer supported in `products` queries.
@@ -407,6 +418,7 @@ The search returns 45 items, but only the first two items are returned on the cu
 The following sample query returns a list of products that meets the following criteria:
 
 -  The product name, product description, or related field contains the string `Messenger` (which causes it to be available for full text searches).
+-  The SKU begins with `24-MB`
 -  The price is less than $50.
 
 The response for each item includes the `name`, `sku`, and `price` only. Up to 25 results are returned at a time, in decreasing order of price.

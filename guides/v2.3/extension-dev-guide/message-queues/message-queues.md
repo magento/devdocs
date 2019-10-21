@@ -62,9 +62,9 @@ The following sample introduces a runtime configuration that allows you to redef
 
 ### Related Topics
 
-* [Message Queues Overview]
-* [Configure message queues]
-* [Install RabbitMQ]
+*  [Message Queues Overview]
+*  [Configure message queues]
+*  [Install RabbitMQ]
 
 <!-- Link definitions -->
 [RabbitMQ]: http://www.rabbitmq.com
