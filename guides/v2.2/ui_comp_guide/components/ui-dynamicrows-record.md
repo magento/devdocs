@@ -20,7 +20,7 @@ The DynamicRowsRecord component is a container of record fields. The DynamicRows
 
 Extends [`UiCollection`]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uicollection_concept.html):
 
-- [app/code/Magento/Ui/view/base/web/js/dynamic-rows/record.js]({{ site.mage2bloburl }}/{{page.guide_version}}/app/code/Magento/Ui/view/base/web/js/dynamic-rows/record.js)
+-  [app/code/Magento/Ui/view/base/web/js/dynamic-rows/record.js]({{ site.mage2bloburl }}/{{page.guide_version}}/app/code/Magento/Ui/view/base/web/js/dynamic-rows/record.js)
 
 ## Examples
 
