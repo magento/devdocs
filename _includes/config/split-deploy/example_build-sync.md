@@ -1,8 +1,8 @@
 To update your build system:
 
 1. Log in to your build system as, or switch to, the [Magento file system owner](https://glossary.magento.com/magento-file-system-owner).
-2. Change to the build system's Magento root directory.
-3. Pull the changes to `app/etc/config.php` from source control.
+1. Change to the build system's Magento root directory.
+1. Pull the changes to `app/etc/config.php` from source control.
 
    The Git command follows:
 
@@ -10,19 +10,19 @@ To update your build system:
    git pull mconfig m2.2_deploy
    ```
 
-4. Compile code:
+1. Compile code:
 
    ```bash
    php bin/magento setup:di:compile
    ```
 
-5. After code has been compiled, generate static view files:
+1. After code has been compiled, generate static view files:
 
    ```bash
    php bin/magento setup:static-content:deploy -f
    ```
 
-6. Check the changes into source control.
+1. Check the changes into source control.
 
    The Git command follows:
 

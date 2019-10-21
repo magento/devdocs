@@ -30,9 +30,9 @@ Performance-tuning enhancements focus on catalog indexing and include:
 <!-- MAGETWO-91164  -->
 *  The `catalog:image:resize` command execution time has been reduced by up to 90% in the release. However, this improvement necessitates these additional steps after upgrading your Magento instance to 2.2.6:
 
-    * Remove   `pub/media/catalog/product/cache` . (Removing this folder frees up space.)
+   *  Remove   `pub/media/catalog/product/cache` . (Removing this folder frees up space.)
 
-    * Run `bin/magento catalog:image:resize`  to generate a new image cache.  (This step is necessary because we’ve changed the path to cached images and must remove the previously cached images.)
+   *  Run `bin/magento catalog:image:resize`  to generate a new image cache.  (This step is necessary because we’ve changed the path to cached images and must remove the previously cached images.)
 
 <!-- MAGETWO-47320  -->
 *  The catalog rule re-indexing operation has been optimized, and the average re-indexing time (which depends on rule conditions) has improved by more than  80%.  Previously, a full catalog rule re-index operation on a medium B2C store took more than 20 minutes.
@@ -66,33 +66,33 @@ Performance-tuning enhancements focus on catalog indexing and include:
 *  Configurable products are now sorted by visible prices as expected. Previously, sorting a catalog by price produced  sort results that included the prices of out-of-stock products and disabled child products.
 
 <!-- MAGETWO-91411  -->
-*   Magento no longer sends duplicate delete requests as a result of an unstable Internet connection. Previously, unintentional mass deletion of products sometimes occurred as a result of an unstable Internet connection.
+*  Magento no longer sends duplicate delete requests as a result of an unstable Internet connection. Previously, unintentional mass deletion of products sometimes occurred as a result of an unstable Internet connection.
 
 ### **Magento Cloud highlights**
 
-* We've added a [Docker Compose]({{ page.baseurl }}/cloud/docker/docker-config.html) configuration to the Cloud `ece-tools` repository for deploying a local development environment.
+*  We've added a [Docker Compose]({{ page.baseurl }}/cloud/docker/docker-config.html) configuration to the Cloud `ece-tools` repository for deploying a local development environment.
 
-* Merchants can now [change store locales]({{ page.baseurl }}/cloud/live/sens-data-over.html#change-locales) without the exporting and importing configuration process.
+*  Merchants can now [change store locales]({{ page.baseurl }}/cloud/live/sens-data-over.html#change-locales) without the exporting and importing configuration process.
 
-* A new [workflow]({{ page.baseurl }}/cloud/trouble/robots-sitemap.html) lets merchant add a `robots.txt` file and generate a `sitemap.xml` file for a single domain configuration without requiring a change to the infrastructure.
+*  A new [workflow]({{ page.baseurl }}/cloud/trouble/robots-sitemap.html) lets merchant add a `robots.txt` file and generate a `sitemap.xml` file for a single domain configuration without requiring a change to the infrastructure.
 
-* Merchants can now define multiple locales for each theme using the new [`SCD_MATRIX`]({{ page.baseurl }}/cloud/env/variables-deploy.html#scd_matrix) environment variable, which reduces the amount of theme files to deploy.
+*  Merchants can now define multiple locales for each theme using the new [`SCD_MATRIX`]({{ page.baseurl }}/cloud/env/variables-deploy.html#scd_matrix) environment variable, which reduces the amount of theme files to deploy.
 
-* Zero-downtime deployment has been implemented through a “connection holding” capability, which ensures no lost connections or site unavailability, providing smooth shopper experience even during deployments involving database schema changes.
+*  Zero-downtime deployment has been implemented through a “connection holding” capability, which ensures no lost connections or site unavailability, providing smooth shopper experience even during deployments involving database schema changes.
 
-* We've fixed an issue that caused downtime between the deploy and post-deploy phase. Now, the `post_deploy` phase begins immediately after the deploy phase ends.
+*  We've fixed an issue that caused downtime between the deploy and post-deploy phase. Now, the `post_deploy` phase begins immediately after the deploy phase ends.
 
 ### **Community contribution highlights**
 
 Highlights of community contributions include fixes that improve checkout flow and the sorting of simple products:
 
-* Customers can now successfully complete an order when it contains a  configurable product with an option that is deleted after the product has been placed in the shopping cart. Previously, the shopping cart could not load the shopping cart after the configurable option was deleted.  Thanks to community member jonshipman! [GitHub-15467](https://github.com/magento/magento2/issues/15467)
+*  Customers can now successfully complete an order when it contains a  configurable product with an option that is deleted after the product has been placed in the shopping cart. Previously, the shopping cart could not load the shopping cart after the configurable option was deleted.  Thanks to community member jonshipman! [GitHub-15467](https://github.com/magento/magento2/issues/15467)
 
-* Magento now maintains the default sort order for products (“newest first”) when you upgrade your Magento deployment. Previously, after upgrade, the default product order in categories changed from “newest first” to “oldest first”.  Thanks to community member Danny Verkade! [GitHub-15627](https://github.com/magento/magento2/issues/15627)
+*  Magento now maintains the default sort order for products (“newest first”) when you upgrade your Magento deployment. Previously, after upgrade, the default product order in categories changed from “newest first” to “oldest first”.  Thanks to community member Danny Verkade! [GitHub-15627](https://github.com/magento/magento2/issues/15627)
 
-* Merchants can now successfully change the applied theme setting for a store view (**Content** > **Design** > **Configuration**).  Thanks to community member Daniel Ruf! [GitHub-14968](https://github.com/magento/magento2/issues/14968)
+*  Merchants can now successfully change the applied theme setting for a store view (**Content** > **Design** > **Configuration**).  Thanks to community member Daniel Ruf! [GitHub-14968](https://github.com/magento/magento2/issues/14968)
 
-* Magento loads pages faster because it no longer redundantly calculates product taxes when loading category pages. Thanks to community member JeroenVanLeusden! [GitHub-14941](https://github.com/magento/magento2/issues/14941)
+*  Magento loads pages faster because it no longer redundantly calculates product taxes when loading category pages. Thanks to community member JeroenVanLeusden! [GitHub-14941](https://github.com/magento/magento2/issues/14941)
 
 ### **Core bundled extension highlights**
 
@@ -102,33 +102,33 @@ This release includes many enhancements to our core bundled extensions:
 
 Enhancements to Amazon Pay include these features:
 
-* Implementation of the  [Magento payment provider gateway]({{ page.baseurl }}/payments-integrations/payment-gateway/payment-gateway-intro.html), which provides developers a mechanism for integrating stores with payment providers.
+*  Implementation of the  [Magento payment provider gateway]({{ page.baseurl }}/payments-integrations/payment-gateway/payment-gateway-intro.html), which provides developers a mechanism for integrating stores with payment providers.
 
-* Improved handling of virtual products.
+*  Improved handling of virtual products.
 
-* New entry in the Admin that allows  Amazon Pay to be displayed in the list of payment options.
+*  New entry in the Admin that allows  Amazon Pay to be displayed in the list of payment options.
 
-* Combined `Synchronous, if possible` and `Asynchronous` settings for authorization mode into one setting. Current settings are now `Immediate` (previously `Synchronous`) and `Automatic` (a combination of the previous `Synchronous, if possible` and `Asynchronous`).
+*  Combined `Synchronous, if possible` and `Asynchronous` settings for authorization mode into one setting. Current settings are now `Immediate` (previously `Synchronous`) and `Automatic` (a combination of the previous `Synchronous, if possible` and `Asynchronous`).
 
 #### dotmailer
 
 Enhancements to dotmailer include these new features:
 
-* You can now request and capture the consent of customers and guests using dotmailer’s new Consent Insight.
+*  You can now request and capture the consent of customers and guests using dotmailer’s new Consent Insight.
 
-* You can import only those Magento contacts who have opted in (customer subscribers, guest subscribers, and other subscribers).
+*  You can import only those Magento contacts who have opted in (customer subscribers, guest subscribers, and other subscribers).
 
-* A warning alerts you when you are about to sync non-subscribers into a dotmailer account.
+*  A warning alerts you when you are about to sync non-subscribers into a dotmailer account.
 
-* Improvements have been made to the retry process that results after a failed attempt to access EDC.
+*  Improvements have been made to the retry process that results after a failed attempt to access EDC.
 
 #### Klarna
 
 Enhancements to Klarna include support for these new features:
 
-* The Klarna Payments section now includes a link to Klarna automated onboarding and account sign in.
+*  The Klarna Payments section now includes a link to Klarna automated onboarding and account sign in.
 
-* If an approved order is later identified as fraudulent, Klarna notifies the merchant and requests that they try to stop the order from being delivered. In addition, Klarna attempts to cancel the order automatically by sending notification to the merchant. See [Managing Your Account](https://docs.magento.com/m2/ce/user_guide/payment/klarna-manage.html) for more information.
+*  If an approved order is later identified as fraudulent, Klarna notifies the merchant and requests that they try to stop the order from being delivered. In addition, Klarna attempts to cancel the order automatically by sending notification to the merchant. See [Managing Your Account](https://docs.magento.com/m2/ce/user_guide/payment/klarna-manage.html) for more information.
 
 *  Shipping and discount order lines have been added to order management calls.
 
@@ -148,7 +148,7 @@ For more information on these new features, see [Klarna](https://docs.magento.co
 
    *  Print all packing slips and printing labels for the batch
 
-* New **Shipment Reference**  field associates bookings between a carrier and a customer
+*  New **Shipment Reference**  field associates bookings between a carrier and a customer
 
 #### Magento Social
 
@@ -214,7 +214,7 @@ In addition to security enhancements, this release contains the following functi
 *  Amazon Pay no longer appears as an option during checkout when a customer selects  **Check Out with Multiple Addresses**. Previously, Magento displayed Amazon Pay as an option, even though Amazon Pay does not support multishipping.
 
 <!-- BUNDLE-1324  -->
-*   You can now change and save Amazon Pay configuration settings from **Configuration**  > **Sales** > **Payment Methods**  > **Amazon Pay** when deploying Magento in a Cloud environment. Previously, Magento did not save changed settings.
+*  You can now change and save Amazon Pay configuration settings from **Configuration**  > **Sales** > **Payment Methods**  > **Amazon Pay** when deploying Magento in a Cloud environment. Previously, Magento did not save changed settings.
 
 ### B2B
 
@@ -609,7 +609,7 @@ Our community contributors have made many helpful, minor corrections to spelling
 *  Corrected a misspelling in function comment in `app/code/Magento/Paypal/Model/Api/Nvp.php` *Fix submitted by Namrata in pull request [15302](https://github.com/magento/magento2/pull/15302)*.
 
 <!-- ENGCOM-1588 -->
-*   Corrected misspellings in PHPDocs and comments. *Fix submitted by Dmytro Cheshun in pull request [15293](https://github.com/magento/magento2/pull/15293)*.
+*  Corrected misspellings in PHPDocs and comments. *Fix submitted by Dmytro Cheshun in pull request [15293](https://github.com/magento/magento2/pull/15293)*.
 
 <!-- ENGCOM-1580 -->
 *  Corrected typo in method name `_getCharg[e]ableOptionPrice`. *Fix submitted by Marcel Hauri in pull request [15276](https://github.com/magento/magento2/pull/15276)*.
@@ -883,7 +883,7 @@ Our community contributors have made many helpful, minor corrections to spelling
 *  Magento no longer changes the format of Date of Birth information when this field is enabled on the Create New Customer Account page, and an existing customer tries to re-register. *Fix submitted by KaushikChavda in pull request [15272](https://github.com/magento/magento2/pull/15272)*.
 
 <!--  ENGCOM-2089  -->
-*   When saving a customer group, Magento now copies extension attributes to the new data model that is returned. Previously, this action was not completed, and Magento behaved unpredictably. *Fix submitted by Joseph Maxwell in pull request [16254](https://github.com/magento/magento2/pull/16254)*.
+*  When saving a customer group, Magento now copies extension attributes to the new data model that is returned. Previously, this action was not completed, and Magento behaved unpredictably. *Fix submitted by Joseph Maxwell in pull request [16254](https://github.com/magento/magento2/pull/16254)*.
 
 <!--  ENGCOM-1432  -->
 *  The `customer.account.dashboard.info.extra` block has been moved to contact information from the newsletter section in `app/code/Magento/Customer/view/frontend/templates/account/dashboard/info.phtml`. *Fix submitted by JeroenVanLeusden in pull request [14923](https://github.com/magento/magento2/pull/14923)*.
@@ -895,15 +895,15 @@ Our community contributors have made many helpful, minor corrections to spelling
 
 ### dotmailer
 
-* The ROI tracking feature now tracks order events properly.
+*  The ROI tracking feature now tracks order events properly.
 
-* The importer now works as expected.
+*  The importer now works as expected.
 
-* Catalog sync now syncs all products across all created collections when it is configured to sync on the store level.
+*  Catalog sync now syncs all products across all created collections when it is configured to sync on the store level.
 
-* The validation process for new subscribers no longer permits subscribers to be enrolled multiple times into the new subscriber program.
+*  The validation process for new subscribers no longer permits subscribers to be enrolled multiple times into the new subscriber program.
 
-* Unexpected errors during subscriber or customer creation no longer occur.
+*  Unexpected errors during subscriber or customer creation no longer occur.
 
 <!-- BUNDLE-526  -->
 *  A merchant can now successfully create a new user and displays the appropriate welcome message. Previously, Magento threw an error during the creation of a customer or subscriber, although the new user/subscriber was created.
@@ -945,9 +945,9 @@ Our community contributors have made many helpful, minor corrections to spelling
 <!-- MAGETWO-91164  -->
 *  The `catalog:image:resize` command execution time has been reduced by up to 90% in the release. However, this improvement necessitates these additional steps after upgrading your Magento instance to 2.2.6:
 
-    * Remove   `pub/media/catalog/product/cache`. (Removing this folder frees up space.)
+   *  Remove   `pub/media/catalog/product/cache`. (Removing this folder frees up space.)
 
-    * Run `bin/magento catalog:image:resize`  to generate a new image cache.  (This step is necessary because we’ve changed the path to cached images and must remove the previously cached images.)
+   *  Run `bin/magento catalog:image:resize`  to generate a new image cache.  (This step is necessary because we’ve changed the path to cached images and must remove the previously cached images.)
 
 <!-- MAGETWO-87731  -->
 *  We've fixed a display error that occurred when both a Critical Admin Notification and Release Notification window were opened.
@@ -1066,7 +1066,7 @@ Our community contributors have made many helpful, minor corrections to spelling
 *  The timestamp field now includes indexes, which reduces the chances of deadlocks that can occur while  erasing old records.  *Fix submitted by Carlos Lizaga in pull request [13328](https://github.com/magento/magento2/pull/13328)*. [GitHub-10346](https://github.com/magento/magento2/issues/10346)
 
 <!-- ENGCOM-1767  -->
-*   `setCateroryIds([])` has been corrected to `setCategoryIds([])` throughout the test suites. *Fix submitted by Neeta Kangiya in pull request [15621](https://github.com/magento/magento2/pull/15621)*. [GitHub-15590](https://github.com/magento/magento2/issues/15590)
+*  `setCateroryIds([])` has been corrected to `setCategoryIds([])` throughout the test suites. *Fix submitted by Neeta Kangiya in pull request [15621](https://github.com/magento/magento2/pull/15621)*. [GitHub-15590](https://github.com/magento/magento2/issues/15590)
 
 <!-- ENGCOM-1762  -->
 *  Menus with nested elements now align correctly. *Fix submitted by hitesh-wagento in pull request [15645](https://github.com/magento/magento2/pull/15645)*. [GitHub-7897](https://github.com/magento/magento2/issues/7897)
@@ -1081,7 +1081,7 @@ Our community contributors have made many helpful, minor corrections to spelling
 *  Added a service configuration setting—Send Adminhtml and Frontend as Separate Apps—to collect and send separate data for frontend and adminhtml applications for New Relic reporting. See [New Relic Reporting]( https://docs.magento.com/m2/ce/user_guide/reports/new-relic-reporting.html?Highlight=New%20Relic%20service). *Fix submitted by Max Chadwick in pull request [12935](https://github.com/magento/magento2/pull/12935)*.
 
 <!-- ENGCOM-1864  -->
-*   Table alias prefixes in field mappings for customer group filter and sorting processors that were previously missing have been restored. Previous to this restoration, Magento threw this error when a merchant opened **Admin** > **Customers** > **All Customers**: `SQL Error: ambiguous column 'customer_group_id' in 'All customers' page in admin when extension attribute table is joined`. *Fix submitted by Maksim Gopey in pull request [15826](https://github.com/magento/magento2/pull/15826)*.
+*  Table alias prefixes in field mappings for customer group filter and sorting processors that were previously missing have been restored. Previous to this restoration, Magento threw this error when a merchant opened **Admin** > **Customers** > **All Customers**: `SQL Error: ambiguous column 'customer_group_id' in 'All customers' page in admin when extension attribute table is joined`. *Fix submitted by Maksim Gopey in pull request [15826](https://github.com/magento/magento2/pull/15826)*.
 
 <!-- ENGCOM-1883  -->
 *  `.limiter` now has the same parent selectors as `.pages`, which prevents clashes between styles and layouts. Previously, `.limiter` float was too generic. *Fix submitted by hitesh-wagento in pull request [15878](https://github.com/magento/magento2/pull/15878)*.
@@ -1179,7 +1179,7 @@ Our community contributors have made many helpful, minor corrections to spelling
 *  Magento now displays the **Credit Memo** link  at the top of the page for orders with a total of 0 (zero). Previously, this link was missing, which prevented users from creating a credit memo for the order.
 
 <!-- MAGETWO-92362  -->
-*   You can now save gift cards without the price being changed on the Admin to an unacceptable format. Previously, Magento tried to save amounts in unacceptable formats (such as the inclusion of a comma in a four-digit price), which triggered an error.
+*  You can now save gift cards without the price being changed on the Admin to an unacceptable format. Previously, Magento tried to save amounts in unacceptable formats (such as the inclusion of a comma in a four-digit price), which triggered an error.
 
 <!-- MAGETWO-91925  -->
 *  Magento no longer permits users to save a new gift card  without first completing the required values. Previously, when creating a gift card, users could save the card without having designated an amount, but the card could not be purchased. Magento also created a `report.CRITICAL: Warning` error message in the `system.log`.
@@ -1383,7 +1383,7 @@ Our community contributors have made many helpful, minor corrections to spelling
 *  CSRF tokens are now considered sensitive strings. *Fix submitted by Robert in pull request [13509](https://github.com/magento/magento2/pull/13509)*.
 
 <!-- ENGCOM-2039  -->
-*   Refactored JavaScript code in `popup.phtml` and `popup.js`. *Fix submitted by IvanPletnyov in pull request [16216](https://github.com/magento/magento2/pull/16216)*.
+*  Refactored JavaScript code in `popup.phtml` and `popup.js`. *Fix submitted by IvanPletnyov in pull request [16216](https://github.com/magento/magento2/pull/16216)*.
 
 <!-- ENGCOM-1630  -->
 *  Removed extraneous cursor property. *Fix submitted by Daniel Ruf in pull request [15305](https://github.com/magento/magento2/pull/15305)*.
@@ -1428,7 +1428,7 @@ Our community contributors have made many helpful, minor corrections to spelling
 *  The return type of `addToCartPostParams` in `app/code/Magento/Catalog/Block/Product/ListProduct.php` has been changed to array. *Fix submitted by Sean Templeton in pull request [14946](https://github.com/magento/magento2/pull/14946)*.
 
 <!-- ENGCOM-1270  -->
-*   Datepicker now correctly converts date formats in locales other than `en-US`. *Fix submitted by Tao Sasaki in pull request [14627](https://github.com/magento/magento2/pull/14627)*.
+*  Datepicker now correctly converts date formats in locales other than `en-US`. *Fix submitted by Tao Sasaki in pull request [14627](https://github.com/magento/magento2/pull/14627)*.
 
 <!-- ENGCOM-1270  -->
 *  `default_head_blocks.xml` now contains the `order` attribute for setting the load order of stylesheets. *Fix submitted by Tao Sasaki in pull request [14290](https://github.com/magento/magento2/pull/14290)*.
@@ -1785,7 +1785,7 @@ You can find Magento Shipping-specific release notes in [Magento Shipping Releas
 ### Swatches
 
 <!--  ENGCOM-1443 -->
-* The process of switching attribute input type has been fixed, which resolves multiple issues that customers were experiencing when working with swatches, including:
+*  The process of switching attribute input type has been fixed, which resolves multiple issues that customers were experiencing when working with swatches, including:
 
    *  inability to change attribute types from `swatch` to `dropdown`
 
@@ -1853,7 +1853,7 @@ You can find Magento Shipping-specific release notes in [Magento Shipping Releas
 *  The string for `moreButtonText` in `app/code/Magento/Swatches/view/frontend/web/js/swatch-renderer.js` can now be translated. *Fix submitted by Karla Saaremäe in pull request [16190](https://github.com/magento/magento2/pull/16190)*. [GitHub-16079](https://github.com/magento/magento2/issues/16079)
 
 <!-- ENGCOM-2257  -->
-*   Added language translation capability to the Braintree module's template file. *Fix submitted by Namrata in pull request [16690](https://github.com/magento/magento2/pull/16690)*.
+*  Added language translation capability to the Braintree module's template file. *Fix submitted by Namrata in pull request [16690](https://github.com/magento/magento2/pull/16690)*.
 
 <!-- ENGCOM-2192  -->
 *  Added mini cart checkout-related translations that were missing from `app/code/Magento/Checkout/i18n/en_US.csv`. *Fix submitted by JeroenVanLeusden in pull request [16553](https://github.com/magento/magento2/pull/16553)*.
@@ -1888,7 +1888,7 @@ You can find Magento Shipping-specific release notes in [Magento Shipping Releas
 *  The alignment **Title** and **Items** on the left bar has been corrected. *Fix submitted by Rafael Corrêa Gomes in pull request [16984](https://github.com/magento/magento2/pull/16984)*.
 
 <!--  ENGCOM-2473  -->
-*   The black color coding standard has been changed from `color: #000;` to `color: @color-black;`. *Fix submitted by Chirag Matholiya in pull request [17019](https://github.com/magento/magento2/pull/17019)*.
+*  The black color coding standard has been changed from `color: #000;` to `color: @color-black;`. *Fix submitted by Chirag Matholiya in pull request [17019](https://github.com/magento/magento2/pull/17019)*.
 
 <!--  ENGCOM-2399  -->
 *  The white color coding standard has been changed from `color: #fff;` to `color: @color-white;`. *Fix submitted by Chirag Matholiya in pull request [16903](https://github.com/magento/magento2/pull/16903)*.
@@ -1897,7 +1897,7 @@ You can find Magento Shipping-specific release notes in [Magento Shipping Releas
 *  Minor issues with the dynamically defined ``$filter`` property and missing throws to PHPDocs for methods in the UI export converter classes have been corrected. *Fix submitted by Dmytro Cheshun in pull request [15694](https://github.com/magento/magento2/pull/15694)*.
 
 <!--  ENGCOM-1678  -->
-*   The `ClassMagento\Ui\Component\Control\ActionPool` constructor and `getConfiguration()` in the UI module are now invoked with the correct number of parameters. *Fix submitted by Marcel Hauri in pull request [15512](https://github.com/magento/magento2/pull/15512)*.
+*  The `ClassMagento\Ui\Component\Control\ActionPool` constructor and `getConfiguration()` in the UI module are now invoked with the correct number of parameters. *Fix submitted by Marcel Hauri in pull request [15512](https://github.com/magento/magento2/pull/15512)*.
 
 <!--  ENGCOM-1682  -->
 *  Unneeded JavaScript was removed from `logout.phtml` and replaced with a new JavaScript component. *Fix submitted by Nimesh Patel in pull request [15301](https://github.com/magento/magento2/pull/15301)*
@@ -1963,7 +1963,7 @@ You can find Magento Shipping-specific release notes in [Magento Shipping Releas
 ### Vertex
 
 <!-- BUNDLE-1399  -->
-*   The Gross Amount and Tax Amount columns in the Transaction Details Report file  now include price and tax for products as expected.
+*  The Gross Amount and Tax Amount columns in the Transaction Details Report file  now include price and tax for products as expected.
 
 ### Wishlist
 
@@ -1998,9 +1998,9 @@ You can find Magento Shipping-specific release notes in [Magento Shipping Releas
 
 **Issue**: The `catalog:image:resize` command execution time has been reduced by up to 90% in the release. However, this improvement necessitates these additional steps after upgrading your Magento instance to 2.2.6:
 
-* Remove   `pub/media/catalog/product/cache`. The path for cached images was changed in this release, which explains why you need to clean this directory after upgrade to free up space.
+*  Remove   `pub/media/catalog/product/cache`. The path for cached images was changed in this release, which explains why you need to clean this directory after upgrade to free up space.
 
-* Run `bin/magento catalog:image:resize`  to generate a new image cache.  This step is necessary because we’ve changed the path to cached images and must remove the previously cached images.
+*  Run `bin/magento catalog:image:resize`  to generate a new image cache.  This step is necessary because we’ve changed the path to cached images and must remove the previously cached images.
 
 ## Community contributions
 

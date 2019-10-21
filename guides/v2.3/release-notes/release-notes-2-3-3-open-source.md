@@ -21,6 +21,20 @@ For general information about security-only patches, see the Magento DevBlog pos
 
 Although code for these features is bundled with quarterly releases of the Magento core code, several of these projects (for example, Page Builder, Inventory Management, and Progressive Web Applications (PWA) Studio) are also released independently. Bug fixes for these projects are documented in separate, project-specific release information which is available in the documentation for each project.
 
+## Apply the Catalog pagination issue on Elasticsearch 6.x patch to resolve a critical search result pagination issue
+
+This patch resolves issues that users of Magento 2.3.3 experience in deployments where  Elasticsearch 6.x is used as the catalog search engine. Users who attempt to navigate past the first page of search results are unsuccessful, and Magento displays an error message. After this patch is installed, users will be able to page through all search results. See [Applying patches](https://devdocs.magento.com/guides/v2.3/comp-mgr/patching.html) for specific instructions on downloading and applying Magento patches. To find the patch, navigate to [Tech Resources](https://magento.com/tech-resources/download), and select the 'Catalog pagination issue on Elasticsearch 6.x' patch associated with the version of Magento you are running.
+
+## Apply the EmailMessageInterface backward compatibility issue patch to resolve an email interface backward-incompatibility issue
+
+This patch addresses backward-incompatibility issues that extension developers may have experienced after the introduction of `Magento\Framework\Mail\EmailMessageInterface`,  which was released in Magento 2.3.3. In the scope of this patch, the new `EmailMessageInterface` inherits from the old `MessageInterface`, and core modules are changed back to rely on `MessageInterface`. **Merchants should apply this patch as soon as possible, especially if their deployments include extensions or customizations that use the mail interface**.
+
+See [Applying patches](https://devdocs.magento.com/guides/v2.3/comp-mgr/patching.html) for specific instructions on downloading and applying Magento patches. To find the patch, navigate to [Tech Resources](https://magento.com/tech-resources/download), and select the EmailMessageInterface backward compatibility issue  patch associated with the version of Magento you are running.
+
+## Apply the Method chaining fix for product collection patch to resolve an issue with broken method chaining in some extensions
+
+This patch addresses changes that were introduced in Magento 2.3.3 that resulted in problems with extensions and customizations of the product collection feature that rely on method chaining contracts. The `addAttributeToFilter` method (in file `app/code/Magento/Catalog/Model/ResourceModel/Product/Collection.php`) was refactored without a return statement, which broke the method chaining that is used extensively in customizations of this feature. This patch refactors the method to add the missing return statement and ensure that method chaining works as expected.
+
 ## Highlights
 
 Look for the following highlights in this release:
@@ -72,7 +86,7 @@ The following upgrades to core platform components boost platform security and s
 *  Merchants now have the ability to turn off the automatic URL rewrite generation that occurs by default on products when the category they belong to is saved. The new **Generate "category/product" URL Rewrites**  configuration option controls this behavior. When this feature is enabled, Magento will generate a lot of data when saving a category that contains many assigned products. This generated data is saved into rewrite tables that can degrade Magento performance.
 
 <!--- MC-15763-->
-*  Page load speeds have been improved by moving non-critical CSS elements to the bottom of the page. This enables the browser to render and display a storefront page more quickly. This setting is disabled by default, but you can enable it using **Stores** > **Configuration** > **Advanced** > **Developer** > **CSS Settings** > **Use CSS critical path**.
+*  Page load speeds have been improved by moving non-critical CSS elements to the bottom of the page. This enables the browser to render and display a storefront page more quickly. This setting is disabled by default, but you can enable it using **Stores** > **Configuration** > **Advanced** > **Developer** > **CSS Settings** > **Use CSS critical path**. For more information, see [CSS critical path documentation]({{ page.baseurl }}/frontend-dev-guide/css-topics/css-critical-path.html).
 
 <!--- MC-16887-->
 *  The `jQuery/ui` library has been refactored into separate widgets so that core modules load only the widgets they need. This update improves the performance of core storefront tasks including the loading of category, configurable product, home, and checkout pages.
@@ -115,6 +129,8 @@ PWA Studio 4.0.0 contains new hooks in Peregrine. Existing components have also 
 The Google Shopping ads Channel Marketplace extension is now available as a bundled extension. [Google Shopping ads Channel Release Notes](https://devdocs.magento.com/extensions/google-shopping-ads/release-notes/)  describes all changes to this feature for Magento 2.3.x.
 
 ### Magento Shipping
+
+Due to the impending shutdown of Temando (the provider of the technology behind Magento Shipping), it is no longer possible to create a new Magento Shipping account. Support for current Magento Shipping deployments for all existing customers will continue. For detailed status information and recommendations for new shipping implementations in Magento, see our product information page.
 
 This release of Magento Shipping includes:
 
@@ -503,7 +519,7 @@ We've fixed hundreds of issues in the Magento 2.3.3 core code.
 *  Custom customer address attributes are populated with the values that have been assigned for the selected  address when the **Same As Billing Address** setting is disabled. Previously, when a merchant tried to change an address while creating an order from the Admin, the drop-down menu of available addresses was not populated.
 
 <!--- MAGETWO-99493-->
-* The account status list now updates as expected to correctly indicate the account lock status after `cron` is run. Previously, this list displayed status as unlocked only.
+*  The account status list now updates as expected to correctly indicate the account lock status after `cron` is run. Previously, this list displayed status as unlocked only.
 
 <!--- MAGETWO-88905-->
 *  Import checks now finish successfully when the csv file contains a customer `gender` field. Previously, Magento threw this error:  `Value for gender attribute contains incorrect value, see acceptable values on settings specified for Admin in row(s): 1`.
@@ -769,6 +785,10 @@ We've fixed hundreds of issues in the Magento 2.3.3 core code.
 <!--- MC-15163-->
 *  The `oauth` handshake is now followed by a redirect as expected for third-party integrations.
 
+### Magento Shipping
+
+Due to the impending shutdown of Temando (the provider of the technology behind Magento Shipping), it is no longer possible to create a new Magento Shipping account. Support for current Magento Shipping deployments for all existing customers will continue. For detailed status information and recommendations for new shipping implementations in Magento, see our product information page.
+
 ### Newsletter
 
 <!--- MAGETWO-99636-->
@@ -866,7 +886,7 @@ This release includes the following changes to integrations for core payment met
 *  Merchants now have the ability to turn off the automatic URL rewrite generation that occurs by default on products when the category they belong to is saved. The new **Generate "category/product" URL Rewrites**  configuration option controls this behavior. When this feature is enabled, Magento will generate a lot of data when saving a category that contains many assigned products. This generated data is saved into rewrite tables that can degrade Magento performance.
 
 <!--- MC-15763-->
-*  Page load speeds have been improved by moving non-critical CSS elements to the bottom of the page. This enables the browser to render and display a storefront page more quickly. This setting is disabled by default, but you can enable it using **Stores** > **Configuration** > **Advanced** > **Developer** > **CSS Settings** > **Use CSS critical path**.
+*  Page load speeds have been improved by moving non-critical CSS elements to the bottom of the page. This enables the browser to render and display a storefront page more quickly. This setting is disabled by default, but you can enable it using **Stores** > **Configuration** > **Advanced** > **Developer** > **CSS Settings** > **Use CSS critical path**. For more information, see [CSS critical path documentation]({{ page.baseurl }}/frontend-dev-guide/css-topics/css-critical-path.html).
 
 <!--- MC-16887-->
 *  The `jQuery/ui` library has been refactored into separate widgets so that core modules load only the widgets they need. This update improves the performance of core storefront tasks including the loading of category, configurable product, home, and checkout pages.
@@ -934,7 +954,7 @@ This release includes the following changes to integrations for core payment met
 *  Magento no longer throws a fatal error when you click **View Order**  on an order that contains a product that was available when the order was created but which was subsequently  deleted from the storefront.
 
 <!--- MAGETWO-98832-->
-* The Allowed Countries drop-down list that is available in multisite deployments now reflects the settings that  are configured in **Stores**  > **Configuration**  > **General** >  **General**  > **Country Options**  >  **Allow Countries**.
+*  The Allowed Countries drop-down list that is available in multisite deployments now reflects the settings that  are configured in **Stores** > **Configuration** > **General** > **General** > **Country Options** > **Allow Countries**.
 
 ### Search
 
@@ -990,7 +1010,7 @@ This release includes the following changes to integrations for core payment met
 ### Templates
 
 <!--- ENGCOM-5440-->
-*  The  Insert Variables popup window is now populated with template variables as expected. (This window is accessed from **Marketing** > **Email Templates** > **Add New Template**.) *Fix submitted by Mahesh Singh in pull request [23173](https://github.com/magento/magento2/pull/23173)*. [GitHub-23135](https://github.com/magento/magento2/issues/23135)
+*  The Insert Variables popup window is now populated with template variables as expected. (This window is accessed from **Marketing** > **Email Templates** > **Add New Template**.) *Fix submitted by Mahesh Singh in pull request [23173](https://github.com/magento/magento2/pull/23173)*. [GitHub-23135](https://github.com/magento/magento2/issues/23135)
 
 ### Testing
 
@@ -1165,6 +1185,20 @@ This release includes the following changes to integrations for core payment met
 <!--- ENGCOM-5514-->
 *  Wishlist items now display decimal values as appropriate. Previously, Magento saved decimal quantities for wishlist items but did not display these values in the wishlist on the storefront. *Fix submitted by Max Fickers in pull request [23933](https://github.com/magento/magento2/pull/23933)*. [GitHub-23932](https://github.com/magento/magento2/issues/23932)
 
+## Known issues
+
+**Issue**:
+With this release, the `\Magento\Framework\Mail\MessageInterface` class has been replaced with `\Magento\Framework\Mail\EmailMessageInterface`. This new class supports the sending of multi-part MIME-type content within email and extends the existing `MailMessageInterface` and `MessageInterface` classes to ensure backward compatibility and provide a transition period for extension developers. Extension developers and merchants who are deploying third-party extensions that implement `\Magento\Framework\Mail\MessageInterface` should be aware of these changes.
+
+The  `Magento\Framework\Mail\Template\TransportBuilder` and `Magento\Newsletter\Model\Queue\TransportBuilder` structures were refactored to return this new `EmailMessageInterface` instead of the `MessageInterface`,  which was previously returned. Although the signature of the `Transport::getMessage()` method was not changed, extensions can start using the new `EmailMessageInterface`.
+
+**Workaround**: In deployments that include third-party customizations, the old `MessageInterface` might still be instantiated. How you prevent this instantiation depends upon the particular usage of `MessageInterface` in your code. See the Magento forum DevBlog post [Backward-incompatible Changes in the Mail Library for Magento 2.3.3](https://community.magento.com/t5/Magento-DevBlog/Backward-incompatible-Changes-in-the-Mail-Library-for-Magento-2/ba-p/144787) for more information. **This issue has been addressed in the EmailMessageInterface backward compatibility issue patch, which was released on October 14, 2019. Merchants should apply this patch as soon as possible, especially if their deployments include extensions or customizations that use the Mail interface.**
+
+**Issue**:
+Method chaining does not work as expected in extensions and customizations that are based on a product collection entity. Many extensions rely on product collection entities, which represent a list of products that satisfy search and filtering criteria. In the process of refactoring the `addAttributeToFilter` method, method chaining as it was implemented in Magento versions earlier than 2.3.3 was broken.
+
+**Workaround**: Apply the Method chaining fix for product collection patch. See [Applying patches](https://devdocs.magento.com/guides/v2.3/comp-mgr/patching.html) for specific instructions on downloading and applying Magento patches. You can find this patch [here](https://magento.com/tech-resources/download#download2335).
+
 ## Community contributions
 
  We are grateful to the wider Magento community and would like to acknowledge their contributions to this release. Check out the following ways you can learn about the community contributions to our current releases:
@@ -1197,4 +1231,4 @@ You can install {{site.data.var.ce}} 2.3.3 using Composer.
 
 The Data Migration Tool helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see [Install the Data Migration Tool]({{page.baseurl}}/migration/migration-tool-install.html). Consider exploring or contributing to the [Magento Data Migration repository](https://github.com/magento/data-migration-tool).
 
-The [Code Migration Toolkit](https://github.com/magento/code-migration) helps transfer existing Magento 1.x store extensions and customizations to Magento 2.0.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.
+The [Code Migration Toolkit](https://github.com/magento/code-migration) helps transfer existing Magento 1.x store extensions and customizations to Magento 2.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.

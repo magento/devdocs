@@ -13,15 +13,15 @@ This topic focuses on Magento development and production systems. If you are ins
 
 The sections that follow discuss requirements for one or two Magento file system owners. That means:
 
-* One user: Typically necessary on shared hosting providers, which allow you to access only one user on the server This user can log in, transfer files using FTP, and this user also runs the web server.
+*  One user: Typically necessary on shared hosting providers, which allow you to access only one user on the server This user can log in, transfer files using FTP, and this user also runs the web server.
 
-* Two users: We recommend two users if you run your own Magento server: one to transfer files and run command-line utilities, and a separate user for the web server software. When possible, this is preferable because it's more secure.
+*  Two users: We recommend two users if you run your own Magento server: one to transfer files and run command-line utilities, and a separate user for the web server software. When possible, this is preferable because it's more secure.
 
    Instead, you have separate users:
 
-   * The web server user, which runs the Magento Admin (including Setup Wizard) and storefront.
+   *  The web server user, which runs the Magento Admin (including Setup Wizard) and storefront.
 
-   * A *command-line user*, which is a local user account you can use to log in to the server. This user runs Magento cron jobs and command-line utilities.
+   *  A *command-line user*, which is a local user account you can use to log in to the server. This user runs Magento cron jobs and command-line utilities.
 
 <p id="mage-owner-one"></p>{% collapsibleh2 Production file system ownership for shared hosting (one user) %}
 To use the one-owner setup, you must log in to your Magento server as the same user that runs the web server. This is typical for shared hosting.
@@ -32,14 +32,14 @@ Because having one file system owner is less secure, we recommend you deploy Mag
 
 In default or developer mode, the following directories must be writable by the user:
 
-* `vendor`
-* `app/etc`
-* `pub/static`
-* `var`
-* Any other static resources
-* `generated/code`
-* `generated/metadata`
-* `var/view_preprocessed`
+*  `vendor`
+*  `app/etc`
+*  `pub/static`
+*  `var`
+*  Any other static resources
+*  `generated/code`
+*  `generated/metadata`
+*  `var/view_preprocessed`
 
 You can set these permissions using either the command line or a file manager application provided by your shared hosting provider.
 
@@ -47,14 +47,14 @@ You can set these permissions using either the command line or a file manager ap
 
 When you are ready to deploy your site to production, you should remove write access from files in the following directories for improved security:
 
-* `vendor`
-* `app/code`
-* `app/etc`
-* `pub/static`
-* Any other static resources
-* `generated/code`
-* `generated/metadata`
-* `var/view_preprocessed`
+*  `vendor`
+*  `app/code`
+*  `app/etc`
+*  `pub/static`
+*  Any other static resources
+*  `generated/code`
+*  `generated/metadata`
+*  `var/view_preprocessed`
 
 To update components, install new components, or to upgrade the Magento software, all of the preceding directories must be read-write.
 
@@ -99,11 +99,11 @@ To make files and directories writable so you can update components and upgrade 
 <p id="mage-owner-two"></p>{% collapsibleh2 Production file system ownership for private hosting (two users) %}
 If you use your own server (including a hosting provider's private server setup), there are two users:
 
-* The web server user, which runs the Magento Admin (including the Setup Wizard) and storefront.
+*  The web server user, which runs the Magento Admin (including the Setup Wizard) and storefront.
 
    Linux systems typically do not provide a shell for this user; you cannot log in to the Magento server as, or switch to, the web server user.
 
-* The command-line user, which you log in to your Magento server as or switch to.
+*  The command-line user, which you log in to your Magento server as or switch to.
 
    Magento uses this user to run Magento CLI commands and cron.
 
@@ -114,18 +114,18 @@ Because these users require access to the same files, we recommend you create a 
 
 See one of the following sections:
 
-* [Two Magento file system owners in developer or default mode](#mage-owner-two-devel)
-* [Two Magento file system owners in production mode](#mage-owner-two-prod)
+*  [Two Magento file system owners in developer or default mode](#mage-owner-two-devel)
+*  [Two Magento file system owners in production mode](#mage-owner-two-prod)
 
 ### Set up two owners for default or developer mode {#mage-owner-two-devel}
 
 Files in the following directories must be writable by both users in developer and default mode:
 
-* `var`
-* `generated`
-* `pub/static`
-* `pub/media`
-* `app/etc`
+*  `var`
+*  `generated`
+*  `pub/static`
+*  `pub/media`
+*  `app/etc`
 
 Set the [`setgid`](http://linuxg.net/how-to-set-the-setuid-and-setgid-bit-for-files-in-linux-and-unix/) bit on directories so permissions always inherit from the parent directory.
 
@@ -157,15 +157,15 @@ To set `setgid` and permissions for developer mode:
 
 When you are ready to deploy your site to production, you should remove write access from files in the following directories for improved security:
 
-* `vendor`
-* `app/code`
-* `app/etc`
-* `lib`
-* `pub/static`
-* Any other static resources
-* `generated/code`
-* `generated/metadata`
-* `var/view_preprocessed`
+*  `vendor`
+*  `app/code`
+*  `app/etc`
+*  `lib`
+*  `pub/static`
+*  Any other static resources
+*  `generated/code`
+*  `generated/metadata`
+*  `var/view_preprocessed`
 
 #### Make code files and directories read-only {#make-files-readable-two-owners}
 

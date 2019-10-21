@@ -15,14 +15,14 @@ SSH, or Secure Shell, is a common protocol used to securely log into remote serv
 
 To use SSH, you need to:
 
-* Generate your SSH public and private keys
-* Add your SSH public key to your remote server either through CLI commands or the Project Web Interface
-* Use Magento Cloud CLI or Git commands to [SSH](#ssh) to an environment
+*  Generate your SSH public and private keys
+*  Add your SSH public key to your remote server either through CLI commands or the Project Web Interface
+*  Use Magento Cloud CLI or Git commands to [SSH](#ssh) to an environment
 
 You create an SSH key pair including a public and private key:
 
-* The _public key_ is safe to provide for accessing a site, [SSH](#ssh), and [sFTP](#sftp).
-* The _private key_ should remain private on your workspace that you use for remote accessing environments. **Never share your private key.** Do not add it to a ticket, copy it to a chat, or attach it to emails.
+*  The _public key_ is safe to provide for accessing a site, [SSH](#ssh), and [sFTP](#sftp).
+*  The _private key_ should remain private on your workspace that you use for remote accessing environments. **Never share your private key.** Do not add it to a ticket, copy it to a chat, or attach it to emails.
 
 ## How SSH keys work {#work}
 
@@ -34,16 +34,16 @@ When you enter an SSH command to connect your client to the remote host, the hos
 
 You can connect using SSH in any of the following ways:
 
-* [SSH using Magento Cloud CLI](#magento-cli)
-* [Locate the SSH command in the Project Web Interface](#web-interface)
-* [Git SSH commands for Pro Staging and Production](#pro)
+*  [SSH using Magento Cloud CLI](#magento-cli)
+*  [Locate the SSH command in the Project Web Interface](#web-interface)
+*  [Git SSH commands for Pro Staging and Production](#pro)
 
 ### SSH using Magento Cloud CLI {#magento-cli}
 
 Magento Cloud CLI commands can only be used in environments with the software installed. These environments include:
 
-* Starter environments
-* Pro Integration environments
+*  Starter environments
+*  Pro Integration environments
 
 To SSH to an environment using the Magento Cloud command line:
 
@@ -100,8 +100,8 @@ With your SSH keys added to those servers, you can use a terminal application, t
 
 For the URLs, see the following:
 
-* Staging: `ssh <project ID>_stg@<project ID>.ent.magento.cloud`
-* Production: `ssh <project ID>@<project ID>.ent.magento.cloud`
+*  Staging: `ssh <project ID>_stg@<project ID>.ent.magento.cloud`
+*  Production: `ssh <project ID>@<project ID>.ent.magento.cloud`
 
 For example, to log in to the Staging environment, use the following command: `ssh abcdefghij_stg@abcdefghij.ent.magento.cloud`. For production: `ssh abcdefghij@abcdefghij.ent.magento.cloud`
 
@@ -115,15 +115,15 @@ Typically, you want to use SSH for secure access to your environments and [migra
 
 You need the following requirements to sFTP into cloud environments:
 
-* You need to use a client that supports SSH key authentication for sFTP and use your SSH public key.
-* Your public SSH key must be added to the target environment. For Starter environments and Pro Integration environments, you can add it through the Project Web Interface. For Pro Staging and Production, you must enter a [Support ticket]({{ page.baseurl }}/cloud/trouble/trouble.html) with your public key attached. **Never provide your private SSH key.**
+*  You need to use a client that supports SSH key authentication for sFTP and use your SSH public key.
+*  Your public SSH key must be added to the target environment. For Starter environments and Pro Integration environments, you can add it through the Project Web Interface. For Pro Staging and Production, you must enter a [Support ticket]({{ page.baseurl }}/cloud/trouble/trouble.html) with your public key attached. **Never provide your private SSH key.**
 
 When configuring sFTP, use your SSH public key and the following information for access:
 
-* Username: All content before the `@` in your public SSH key.
-* Password: You do not need a password for sFTP. sFTP access uses the SSH key based authentication.
-* Host: All content after the `@` in your public SSH key.
-* Port: 22, which is the default SSH port.
+*  Username: All content before the `@` in your public SSH key.
+*  Password: You do not need a password for sFTP. sFTP access uses the SSH key based authentication.
+*  Host: All content after the `@` in your public SSH key.
+*  Port: 22, which is the default SSH port.
 
 To add your SSH public key information to your client:
 

@@ -14,8 +14,8 @@ about: Create an issue about a bug on the devdocs website
 <!-- (OPTIONAL) What needs to be done to replicate this issue? (provide Gist if needed) -->
 
 1. First Step
-2. Second Step
-3. Etc.
+1. Second Step
+1. Etc.
 
 ## Expected result
 

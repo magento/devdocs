@@ -114,7 +114,7 @@ The list of ready-to-use observers is the following:
 A tag contains name of an event. When you want to process any event by a particular [observer], you need to:
 
 1. [Dispatch][dispatch] the event.
-2. Add a tag with name of the event to required observer in corresponding [event preset].
+1. Add a tag with name of the event to required observer in corresponding [event preset].
 
 In terms of XML, it is represented as an element `<tag />` in `events.xml`. `<tag />` is a child element of an `<observer>` element. See the following example:
 

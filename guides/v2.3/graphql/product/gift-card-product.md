@@ -10,9 +10,9 @@ The `GiftCardProduct` data type defines properties of a gift card, including the
 
 It implements the following interfaces:
 
--   `ProductInterface`
--   `PhysicalProductInterface`
--   `CustomizableProductInterface`
+-  `ProductInterface`
+-  `PhysicalProductInterface`
+-  `CustomizableProductInterface`
 
 ## GiftCardProduct object
 

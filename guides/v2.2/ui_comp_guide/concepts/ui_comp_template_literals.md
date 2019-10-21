@@ -5,8 +5,6 @@ contributor_name: SwiftOtter Studios
 contributor_link: https://swiftotter.com/
 ---
 
-# Template Literals in Magento
-
 Magento provides for the use of template literals in UI components. Template literals are strings that can contain embedded expressions. They were introduced into JavaScript with ES2015 and were called "template strings" in early editions of the ES2015 / ES6 specification. Since it is a relatively new part of JavaScript, some browsers, such as Internet Explorer 11, do not support the specification. Per the specification standard, back-ticks (`` ` ``) are used instead of a single quote (`'`) or double quote (`"`) to delineate a template string. Due to the lack of browser support, Magento has a JavaScript class that will parse certain strings with a single quote (`'`) in the same way a browser that supports the specification would parse one with back-ticks.
 
 Template literals can contain expressions which will be evaluated in the current KnockoutJS context. These expressions can contain nearly any valid [JavaScript](https://glossary.magento.com/javascript). They must start with a dollar sign and be surrounded with curly braces. **Anything inside the following will be evaluated as an expression**: `${  }`. For example, they can be used—and often are—to access properties of the KnockoutJS context like this: `'${ $.submitUrl }'`. They can be used to call functions (`'${ $.loadForm($.formUrl) }'`), or whatever: `'${ 20 + 13 }'`. These expressions are parsed in `/lib/web/mage/utils/template.js`.
@@ -22,7 +20,7 @@ The `defaults` property should be an object and is handled in a special way. Eac
 As a result, every `defaults` child property is handled with what could be viewed as a two step process:
 
 1. Evaluate the value of the property for expressions. For example: `'${ $.submitUrl }'` could become `'https://example.com/contact/form/submit/'` (more on that later).
-2. Assign that property/value to the class itself. As a result `class.defaults.submitUrl` would become `class.submitUrl`.
+1. Assign that property/value to the class itself. As a result `class.defaults.submitUrl` would become `class.submitUrl`.
 
 This part is important because it means that JavaScript classes that extend `Class` (`magento/module-ui/view/base/web/js/lib/core/class.js`) can use the `defaults` property to assign properties to the class itself and leverage template literals during that process without any work on your part.
 
@@ -30,9 +28,9 @@ This part is important because it means that JavaScript classes that extend `Cla
 
 Certain properties of the `defaults` object are processed by an additional core JavaScript class: `links.js` (located: `magento/module-ui/view/base/web/js/lib/core/element/links.js`). The object keys in `defaults` are:
 
-- `links`
-- `imports`
-- `exports`
+-  `links`
+-  `imports`
+-  `exports`
 
 They can be used to interact with other UI Component JavaScript classes. While the full use of them is a separate topic, those values can use a colon (`:`) to separate an expression, which should evaluate to a UI Component's name, from the properties to be accessed in that class. Take this example: `'${ $.provider }:user.theme'`. If the `${ $.provider }` expression evaluates to the name of a UI Component that is currently in the registry, that component will be loaded and the value of its `user.theme` property returned.
 

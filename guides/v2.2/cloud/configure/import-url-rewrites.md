@@ -82,8 +82,8 @@ To import URL Rewrites:
 
 1. Select the **Behavior**.
 
-   - `Add/Update` — adds new URL rewrite and updates existing URL Rewrites
-   - `Delete` — removes existing URL rewrites
+   -  `Add/Update` — adds new URL rewrite and updates existing URL Rewrites
+   -  `Delete` — removes existing URL rewrites
 
 1. Click **Import**.
 

@@ -15,15 +15,15 @@ To complete almost all of the tasks in this guide, you must remotely log in to y
 
 **Prerequisites**: You must have:
 
-* A terminal application
+*  A terminal application
 
    Windows and Mac OS typically use different terminal applications.
 
-   * Windows: A partial list: [putty][], [Cygwin][]
-   * Mac OS: You can use the built-in [Terminal][] application or any of the following: [iTerm][], or [these][]
-   * Linux: Depending on your [Desktop Environment][] you can use CLI application your deskop environment is providing like [Konsole (KDE)][], [GNOME Shell][]  or [Xfce Terminal][]. You can also install and use deskop environment independent terminal application like [Xterm][].
+   *  Windows: A partial list: [putty][], [Cygwin][]
+   *  Mac OS: You can use the built-in [Terminal][] application or any of the following: [iTerm][], or [these][]
+   *  Linux: Depending on your [Desktop Environment][] you can use CLI application your deskop environment is providing like [Konsole (KDE)][], [GNOME Shell][]  or [Xfce Terminal][]. You can also install and use deskop environment independent terminal application like [Xterm][].
 
-* A username and password for the Magento server
+*  A username and password for the Magento server
 
    On a hosted system, this is likely a user who does not have administrative rights to the server; that is OK as long as the user can install system software, stop and start services like the web server, and so on.
 
