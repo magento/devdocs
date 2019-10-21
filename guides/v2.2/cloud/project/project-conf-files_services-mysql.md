@@ -97,22 +97,8 @@ If you configure one MySQL user, you cannot use the [`DEFINER`](http://dev.mysql
 
 ## Connect to the database
 
-Accessing the MariaDB database directly requires you to use a SSH to log in to the remote server, and connect to the database with the following credentials:
+Accessing the MariaDB database directly requires you to use a SSH to log in to the remote server, and connect to the database.
 
--  For Starter
-
-   ```bash
-   mysql -h database.internal -u <username>
-   ```
-
--  For Pro, use the db, username, and password from the [service relationship]({{page.baseurl}}/cloud/project/project-conf-files_services.html#service-relationships):
-
-   ```bash
-   mysql -h<db> -p<number> -u<username> -p<password>
-   ```
-
-{:.procedure}
-Retrieve MySQL connection details and login credentials:
 
 1. Log in to the remote server using SSH.
 
@@ -152,4 +138,16 @@ Retrieve MySQL connection details and login credentials:
       }
    ],
    ```
-   {:.no-copy}
+1. Connect to the database:
+
+   -  For Starter
+
+      ```bash
+      mysql -h database.internal -u <username>
+      ```
+
+   -  For Pro, use the db, username, and password from the [service relationship]({{page.baseurl}}/cloud/project/project-conf-files_services.html#service-relationships):
+
+      ```bash
+      mysql -h<db> -p<number> -u<username> -p<password>
+      ```
