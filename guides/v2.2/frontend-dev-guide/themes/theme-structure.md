@@ -150,7 +150,7 @@ The directories and files structure described below is the most extended one. It
       <td colspan="1">
         <code>/media</code>
       </td>
-      <td colspan="1">Optional</td>
+      <td colspan="1">optional</td>
       <td colspan="1">
         This directory contains a theme preview (a screenshot of your theme).
       </td>
