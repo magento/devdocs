@@ -193,7 +193,7 @@ Attribute | Description
 `onDelete` | Foreign key trigger. The value must be `CASCADE`, `SET NULL`, or `NO ACTION`
 
 {: .bs-callout-info }
-To keep entities identifiers as immutable values the declarative schema does not support `ON UPDATE` action for constraint.
+To keep entity identifiers as immutable values, the declarative schema does not support `ON UPDATE` action for `constraint`.
 
 Example:
 
