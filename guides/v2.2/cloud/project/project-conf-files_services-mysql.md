@@ -138,6 +138,7 @@ Accessing the MariaDB database directly requires you to use a SSH to log in to t
       }
    ],
    ```
+   
 1. Connect to the database:
 
    -  For Starter
