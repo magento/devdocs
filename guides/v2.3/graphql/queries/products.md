@@ -100,8 +100,8 @@ weight
 The following attributes are not used in responses:
 
 *  `or` - The keyword required to perform a logical OR comparison.
-*  `news_from_date` - This attribute is transformed to `news_from_date` in a response.
-*  `news_to_date` - This attribute is transformed to `news_to_date` in a response.
+*  `news_from_date` - This attribute is transformed to `new_from_date` in a response.
+*  `news_to_date` - This attribute is transformed to `new_to_date` in a response.
 
 {%
 include note.html
