@@ -9,9 +9,9 @@ Magento Two-Factor Authentication (2FA) improves security by requiring two-step 
 
 Two-Factor Authentication gives you the ability to:
 
-- Enable authenticator support for the Admin.
-- Manage and configure authenticator settings globally or per user account.
-- Reset authenticators and manage trusted devices for users.
+-  Enable authenticator support for the Admin.
+-  Manage and configure authenticator settings globally or per user account.
+-  Reset authenticators and manage trusted devices for users.
 
 At this time, Two-Factor Authentication can be installed only from the command line.
 
@@ -28,10 +28,10 @@ See the Magento Admin User Guide to [configure](https://docs.magento.com/m2/ee/u
 
 Administrators have options to:
 
-* Review existing authenticators configured per user account
-* Require specific authenticators
-* Reset or remove authenticators to resolve access issues
-* Revoke access for devices to resolve access issues
+-  Review existing authenticators configured per user account
+-  Require specific authenticators
+-  Reset or remove authenticators to resolve access issues
+-  Revoke access for devices to resolve access issues
 
 ## Install authenticator
 
@@ -43,7 +43,7 @@ After enabling and configuring 2FA for your Magento instance, Magento Admin user
 | : --------- | : --------- | : ------- |
 | [Google Authenticator](https://support.google.com/accounts/answer/1066447?co=GENIE.Platform%3DAndroid&hl=en)  | Generate and enter code from mobile app Requirements: Enable in Admin  | `google`|
 | [Authy](https://authy.com/)  | SMS, call, token, and one touch <br/>Requirements: Enable in Admin and API keys  | `authy` |
-| [U2F Keys](https://docs.magento.com/m2/2.1/ee/user_guide/stores/security-two-factor-authentication-use.html)   | Physical device to authenticate, like [YubiKey](https://www.yubico.com/). <br/>Requirements: Enable in Admin  | `u2fkey` |
+| [U2F Keys](https://docs.magento.com/m2/ee/user_guide/stores/security-two-factor-authentication-use.html#u2f-key)   | Physical device to authenticate, like [YubiKey](https://www.yubico.com/). <br/>Requirements: Enable in Admin  | `u2fkey` |
 | [Duo Security](https://duo.com/)  | SMS and push notification. <br/>Requirements: Enable in Admin, Integration and Secret keys, API hostname  | `duo` |
 
 ## Troubleshooting
@@ -75,9 +75,9 @@ In your database, you can modify the following tables and values to affect and o
 
 Table: `core_config_data`
 
-- `msp/twofactorauth/enabled` - Set to zero to disable 2FA globally.
-- `msp/twofactorauth/force_providers` - Delete this entry to remove forced providers option.
+-  `msp/twofactorauth/enabled` - Set to zero to disable 2FA globally.
+-  `msp/twofactorauth/force_providers` - Delete this entry to remove forced providers option.
 
 Table: `msp_tfa_user_config`
 
-- Delete one user row to reset the user's 2FA preference and configuration.
+-  Delete one user row to reset the user's 2FA preference and configuration.

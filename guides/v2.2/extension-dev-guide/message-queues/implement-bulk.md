@@ -13,9 +13,9 @@ functional_areas:
 
 This document describes how bulk operations can be implemented. There are three primary tasks to accomplish this:
 
-* Create a [publisher](https://glossary.magento.com/publisher-subscriber-pattern) that sends messages to the message queue
-* Create a consumer that receives and processes messages
-* Configure the message queues
+*  Create a [publisher](https://glossary.magento.com/publisher-subscriber-pattern) that sends messages to the message queue
+*  Create a consumer that receives and processes messages
+*  Configure the message queues
 
 ### Create a publisher {#createpublisher}
 
@@ -287,11 +287,11 @@ class Consumer
 
 The message queue topology must be configured to implement bulk operations. Create or edit the following files in the module's `app/code/<vendor>/<module_name>/etc` directory.
 
-* `communication.xml`
-* `di.xml`
-* `queue_consumer.xml`
-* `queue_publisher.xml`
-* `queue_topology.xml`
+*  `communication.xml`
+*  `di.xml`
+*  `queue_consumer.xml`
+*  `queue_publisher.xml`
+*  `queue_topology.xml`
 
 For more information about the `di.xml` file, see [Dependency Injection]({{ page.baseurl }}/extension-dev-guide/depend-inj.html). For information the other files, see [Configure message queues]({{ page.baseurl }}/extension-dev-guide/message-queues/config-mq.html).
 
@@ -357,6 +357,6 @@ The `queue_topology.xml` file defines the message routing rules and declares que
 
 #### Related Topics
 
-* [Message Queues Overview]({{ page.baseurl }}/config-guide/mq/rabbitmq-overview.html)
-* [Bulk Operations]({{ page.baseurl }}/extension-dev-guide/message-queues/bulk-operations.html)
-* [Configure message queues]({{ page.baseurl }}/extension-dev-guide/message-queues/config-mq.html)
+*  [Message Queues Overview]({{ page.baseurl }}/config-guide/mq/rabbitmq-overview.html)
+*  [Bulk Operations]({{ page.baseurl }}/extension-dev-guide/message-queues/bulk-operations.html)
+*  [Configure message queues]({{ page.baseurl }}/extension-dev-guide/message-queues/config-mq.html)

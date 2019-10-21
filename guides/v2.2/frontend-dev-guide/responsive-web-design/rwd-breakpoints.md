@@ -14,15 +14,15 @@ Breakpoints are used in stylesheets to set up the screen width at which the desi
 To add a custom breakpoint in your theme, you need to do the following:
 
 1. Define a variable for the new breakpoint.
-2. Override the library `_responsive.less` file, and add the new rule for the new breakpoint.
-3. Implement the screen changes for the new breakpoint.
+1. Override the library `_responsive.less` file, and add the new rule for the new breakpoint.
+1. Implement the screen changes for the new breakpoint.
 
 ## Add a new breakpoint variable
 
 In your custom theme directory, add a `/web/css/source/variables.less` in one of the following ways:
 
-- if your theme [inherits]({{ page.baseurl }}/frontend-dev-guide/themes/theme-inherit.html) from the other, then copy the parent's `variables.less`.
-- if your theme is a standalone one, add a new empty file.
+-  if your theme [inherits]({{ page.baseurl }}/frontend-dev-guide/themes/theme-inherit.html) from the other, then copy the parent's `variables.less`.
+-  if your theme is a standalone one, add a new empty file.
 
 In `variable.less`, add the variable for your new breakpoint.
 
@@ -43,9 +43,9 @@ To implement a new breakpoint, you need to edit the `.media-width()` mixin by ad
 To do this, take the following steps:
 
 1. Copy the `_responsive.less` file to your `<your_theme_dir>/web/css/source/lib/` directory from one of the following locations:
-	- `<your_parent_theme_dir>/web/css/source/lib/_responsive.less`: overriding `_responsive.less` in the parent theme. If there's no such file or no parent theme, use the other option.
-	- `<your_theme_dir>/web/css/source/lib/_responsive.less`: the library file.
-2. In your `_responsive.less` file, add the `.media-width` [mixin](https://glossary.magento.com/mixin) rule for your breakpoint in the corresponding section (desktop or mobile, depending on the type of breakpoint you add).
+   -  `<your_parent_theme_dir>/web/css/source/lib/_responsive.less`: overriding `_responsive.less` in the parent theme. If there's no such file or no parent theme, use the other option.
+   -  `<your_theme_dir>/web/css/source/lib/_responsive.less`: the library file.
+1. In your `_responsive.less` file, add the `.media-width` [mixin](https://glossary.magento.com/mixin) rule for your breakpoint in the corresponding section (desktop or mobile, depending on the type of breakpoint you add).
 
 {:.bs-callout .bs-callout-info}
 The `@media-target` option may have one of the following values: `all`, `desktop` or `mobile`.
@@ -78,5 +78,5 @@ Example:
 
 ## Related reading
 
-- You can find information about the `_responsive.less` library file in the generated Magento UI library documentation. It is available in the following location in your Magento installation: `<your_Magento_installation>/pub/static/frontend/Magento/blank/en_US/css/docs/responsive.html`.
-- [How to make your theme responsive and mobile]({{ page.baseurl }}/frontend-dev-guide/responsive-web-design/rwd_overview.html).
+-  You can find information about the `_responsive.less` library file in the generated Magento UI library documentation. It is available in the following location in your Magento installation: `<your_Magento_installation>/pub/static/frontend/Magento/blank/en_US/css/docs/responsive.html`.
+-  [How to make your theme responsive and mobile]({{ page.baseurl }}/frontend-dev-guide/responsive-web-design/rwd_overview.html).

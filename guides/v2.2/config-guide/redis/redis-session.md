@@ -95,7 +95,8 @@ TTL for session records use the value for Cookie Lifetime, which is configured i
 
 {% include config/redis-verify.md %}
 
-## Related topics
+{:.ref-header}
+Related topics
 
-* [Create or extend configuration types]({{ page.baseurl }}/config-guide/config/config-create.html)
-* [Magento's deployment configuration]({{ page.baseurl }}/config-guide/config/config-php.html)
+*  [Create or extend configuration types]({{ page.baseurl }}/config-guide/config/config-create.html)
+*  [Magento's deployment configuration]({{ page.baseurl }}/config-guide/config/config-php.html)

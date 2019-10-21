@@ -20,8 +20,8 @@ The following table discusses the bootstrap parameters you can set:
 
 {:.bs-callout-info}
 
-* Not all bootstrap parameters are documented at this time.
-* You now set the Magento mode (developer, default, production) using the [`magento deploy:mode:set {mode}`]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html) command.
+*  Not all bootstrap parameters are documented at this time.
+*  You now set the Magento mode (developer, default, production) using the [`magento deploy:mode:set {mode}`]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html) command.
 
 ## Specifying a parameter value using an environment variable {#mode-specify-var}
 
@@ -54,9 +54,9 @@ This section discusses how to specify the mode for either Apache or [nginx](http
 
 See one of the following sections for more information:
 
-* [Specify a variable using an nginx setting](#mode-specify-web-nginx)
-* [Specify a variable using .htaccess (Apache only)](#mode-specify-web-htaccess)
-* [Specify a variable using an Apache setting](#mode-specify-web-apache)
+*  [Specify a variable using an nginx setting](#mode-specify-web-nginx)
+*  [Specify a variable using .htaccess (Apache only)](#mode-specify-web-htaccess)
+*  [Specify a variable using an Apache setting](#mode-specify-web-apache)
 
 ### Specify a variable using an nginx setting {#mode-specify-web-nginx}
 
@@ -68,8 +68,8 @@ One way to set the Magento mode is by editing `.htaccess`. This way, you don't h
 
 You can modify `.htaccess` in any of the following locations, depending on your entry point to the Magento application:
 
-* `<magento_root>/.htaccess`
-* `<magento_root>/pub/.htaccess`
+*  `<magento_root>/.htaccess`
+*  `<magento_root>/pub/.htaccess`
 
 To set a variable:
 
@@ -81,7 +81,7 @@ To set a variable:
    #   SetEnv MAGE_PROFILER firebug
    ```
 
-2. Set the value of `MAGE_PROFILER` to any of the following:
+1. Set the value of `MAGE_PROFILER` to any of the following:
 
    ```terminal
    firebug
@@ -89,7 +89,7 @@ To set a variable:
    <custom value>
    ```
 
-2.	Save your changes to `.htaccess`; you don't need to restart Apache for the change to take effect.
+1. Save your changes to `.htaccess`; you don't need to restart Apache for the change to take effect.
 
 ### Specify a variable using an Apache setting {#mode-specify-web-apache}
 
@@ -99,8 +99,8 @@ The Apache `mod_env` directive is slightly different in [version 2.2](http://htt
 
 The procedures that follows show how to set the Magento mode in an Apache virtual host. This is not the only way to use `mod_env` directives; consult the Apache documentation for details.
 
-*	[Specify a bootstrap variable for Apache on Ubuntu](#mode-specify-ubuntu)
-*	[Specify a bootstrap variable for Apache on CentOS](#mode-specify-centos)
+*  [Specify a bootstrap variable for Apache on Ubuntu](#mode-specify-ubuntu)
+*  [Specify a bootstrap variable for Apache on CentOS](#mode-specify-centos)
 
 #### Specify a bootstrap variable for Apache on Ubuntu {#mode-specify-ubuntu}
 
@@ -108,42 +108,42 @@ This section assumes you've already set up your virtual host. If you have not, c
 
 To set a Magento bootstrap variable using your web server's environment:
 
-1.	As a user with `root` privileges, open your virtual host configuration file in a text editor.
+1. As a user with `root` privileges, open your virtual host configuration file in a text editor.
 
-	For example, if your virtual host is named `my.magento`,
+   For example, if your virtual host is named `my.magento`,
 
-	*	Apache 2.4: `vim /etc/apache2/sites-available/my.magento.conf`
-	*	Apache 2.2: `vim /etc/apache2/sites-available/my.magento`
+   *  Apache 2.4: `vim /etc/apache2/sites-available/my.magento.conf`
+   *  Apache 2.2: `vim /etc/apache2/sites-available/my.magento`
 
-2.	Anywhere in the virtual host configuration, add the following line:
+1. Anywhere in the virtual host configuration, add the following line:
 
-    ```conf
-    SetEnv "<variable name>" "<variable value>"
-    ```
+   ```conf
+   SetEnv "<variable name>" "<variable value>"
+   ```
 
-    For example,
+   For example,
 
-    ```conf
-    SetEnv "MAGE_PROFILER" "firebug"
-    ```
+   ```conf
+   SetEnv "MAGE_PROFILER" "firebug"
+   ```
 
-3.	Save your changes and exit the text editor.
-4.	Enable your virtual host if you haven't already done so:
+1. Save your changes and exit the text editor.
+1. Enable your virtual host if you haven't already done so:
 
-    ```bash
-    a2ensite <virtual host config file name>
-    ```
+   ```bash
+   a2ensite <virtual host config file name>
+   ```
 
-    For example,
+   For example,
 
-    ```bash
-    a2ensite my.magento.conf
-    ```
+   ```bash
+   a2ensite my.magento.conf
+   ```
 
-5.	Restart the web server:
+1. Restart the web server:
 
-    *  Ubuntu: `service apache2 restart`
-    *  CentOS: `service httpd restart`
+   *  Ubuntu: `service apache2 restart`
+   *  CentOS: `service httpd restart`
 
 #### Specify a bootstrap variable for Apache on CentOS {#mode-specify-centos}
 
@@ -151,29 +151,30 @@ This section assumes you've already set up your virtual host. If you have not, c
 
 To set a Magento bootstrap variable using your web server's environment:
 
-1.	As a user with `root` privileges, open `/etc/httpd/conf/httpd.conf` in a text editor.
+1. As a user with `root` privileges, open `/etc/httpd/conf/httpd.conf` in a text editor.
 
-2.	Anywhere in the virtual host configuration, add the following line:
+1. Anywhere in the virtual host configuration, add the following line:
 
-    ```conf
-    SetEnv "<variable name>" "<variable value>"
-    ```
+   ```conf
+   SetEnv "<variable name>" "<variable value>"
+   ```
 
-    For example,
+   For example,
 
-    ```conf
-    SetEnv "MAGE_PROFILER" "firebug"
-    ```
+   ```conf
+   SetEnv "MAGE_PROFILER" "firebug"
+   ```
 
-3.	Save your changes and exit the text editor.
+1. Save your changes and exit the text editor.
 
 After setting the mode, restart the web server:
 
-*	Ubuntu: `service apache2 restart`
-*	CentOS: `service httpd restart`
+*  Ubuntu: `service apache2 restart`
+*  CentOS: `service httpd restart`
 
-#### Related topics
+{:.ref-header}
+Related topics
 
-*	[Customize base directory paths (MAGE_DIRS)]({{ page.baseurl }}/config-guide/bootstrap/mage-dirs.html)
-*	[Set the Magento mode]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html)
-*	[Enable an dependency graphs and built-in profiler (MAGE_PROFILER)]({{ page.baseurl }}/config-guide/bootstrap/mage-profiler.html)
+*  [Customize base directory paths (MAGE_DIRS)]({{ page.baseurl }}/config-guide/bootstrap/mage-dirs.html)
+*  [Set the Magento mode]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html)
+*  [Enable an dependency graphs and built-in profiler (MAGE_PROFILER)]({{ page.baseurl }}/config-guide/bootstrap/mage-profiler.html)

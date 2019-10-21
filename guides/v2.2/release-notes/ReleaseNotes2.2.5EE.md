@@ -14,15 +14,15 @@ See [Magento Security Center](https://magento.com/security/patches/magento-2.2.5
 
 Look for the following highlights in this release:
 
-* Enhancements that help close stored XSS, SQL injection, and cross-site request forgery (CSRF) vulnerabilities. See [Magento Security Center](https://magento.com/security/patches/magento-2.2.5-and-2.1.14-security-update) for more information.
+*  Enhancements that help close stored XSS, SQL injection, and cross-site request forgery (CSRF) vulnerabilities. See [Magento Security Center](https://magento.com/security/patches/magento-2.2.5-and-2.1.14-security-update) for more information.
 
-* Resolution of issues that customers were experiencing when upgrading to Magento 2.2.4 in deployments that span multiple websites. Magento multi-store installations were not using the store view-specific values from the store configuration settings if these settings differed from the global default configuration settings. Instead, Magento used the default configuration for all store views. See  [GitHub-15205](https://github.com/magento/magento2/issues/15205) and [GitHub-15245](https://github.com/magento/magento2/issues/15245) for more detailed discussions of the problems some customers encountered. *Fix submitted by Francesco Marangi in pull request 15929*.
+*  Resolution of issues that customers were experiencing when upgrading to Magento 2.2.4 in deployments that span multiple websites. Magento multi-store installations were not using the store view-specific values from the store configuration settings if these settings differed from the global default configuration settings. Instead, Magento used the default configuration for all store views. See  [GitHub-15205](https://github.com/magento/magento2/issues/15205) and [GitHub-15245](https://github.com/magento/magento2/issues/15245) for more detailed discussions of the problems some customers encountered. *Fix submitted by Francesco Marangi in pull request 15929*.
 
-* Substantial improvements to indexing performance.
+*  Substantial improvements to indexing performance.
 
-* Over 150 **community contributions**.
+*  Over 150 **community contributions**.
 
-* Improvements to our core bundled extensions.
+*  Improvements to our core bundled extensions.
 
 Looking for more information on these new features as well as many others? Check out [Magento 2.2.x Developer Documentation]({{ site.baseurl }}/guides/v2.2/) and the [Magento Commerce User Guide](http://docs.magento.com/m2/ee/user_guide/getting-started.html).
 
@@ -30,23 +30,23 @@ Looking for more information on these new features as well as many others? Check
 
 This release includes significant performance improvements to the core Magento code:
 
-* <!--- MAGETWO-80789  MAGETWO-88808  MAGETWO-89545 -->  Merchants can now  run the catalog search full text indexer and category product indexer in parallel mode by store view, which can significantly decrease  `indexer:reindex` execution time when running Magento with multiple store views and shared catalogs.
+*  <!--- MAGETWO-80789  MAGETWO-88808  MAGETWO-89545 -->  Merchants can now  run the catalog search full text indexer and category product indexer in parallel mode by store view, which can significantly decrease  `indexer:reindex` execution time when running Magento with multiple store views and shared catalogs.
 
-* <!--- MAGETWO-74154 --> Refactoring of the catalog full text indexer has improved indexing performance up to 15% for very large profiles (600,000 products) and product catalogs with many configurable options (5,000 configurable products and 500 options).
+*  <!--- MAGETWO-74154 --> Refactoring of the catalog full text indexer has improved indexing performance up to 15% for very large profiles (600,000 products) and product catalogs with many configurable options (5,000 configurable products and 500 options).
 
-* <!--- MAGETWO-88775 -->  Improving the behavior of swatch product attributes has improved search result page performance up to 31% for catalogs with many configurable product options (for example, 5,000 configurable products and 500 options).
+*  <!--- MAGETWO-88775 -->Improving the behavior of swatch product attributes has improved search result page performance up to 31% for catalogs with many configurable product options (for example, 5,000 configurable products and 500 options).
 
 ### Community contribution highlights
 
 Highlights of community contributions include  fixes that improve checkout flow and the sorting of simple products:
 
-* <!--- MAGETWO-87115 --> Customers can now create an account from the Order Confirmation page. Previously, a customer could not populate the required fields to create an account from this page, and Magento displayed an error.
+*  <!--- MAGETWO-87115 -->Customers can now create an account from the Order Confirmation page. Previously, a customer could not populate the required fields to create an account from this page, and Magento displayed an error.
 
-* <!--- MAGETWO-73479 --> Magento now correctly applies coupon codes that exclude bundle products. Previously, Magento applied these coupons but did not exclude bundle products as expected.
+*  <!--- MAGETWO-73479 -->Magento now correctly applies coupon codes that exclude bundle products. Previously, Magento applied these coupons but did not exclude bundle products as expected.
 
-* <!-- MAGETWO-86227 --> When sorting simple products, which catalog promo price rule is applied for, these products are sorted by a regular price instead disregarding the applied promo price.
+*  <!-- MAGETWO-86227 -->When sorting simple products, which catalog promo price rule is applied for, these products are sorted by a regular price instead disregarding the applied promo price.
 
-* <!-- MAGETWO-73419 --> When sorting simple products with a required custom option, which catalog promo price rule is applied for, these products are sorted by a regular price instead disregarding the applied promo price.
+*  <!-- MAGETWO-73419 -->When sorting simple products with a required custom option, which catalog promo price rule is applied for, these products are sorted by a regular price instead disregarding the applied promo price.
 
 ### Highlights (Magento Shipping)
 
@@ -66,148 +66,197 @@ In addition to security enhancements, this release contains the following functi
 
 ### Installation, setup, and deployment
 
-<!-- MAGETWO-88237 -->* Magento no longer permits you to re-run an already running cron job. *Fix submitted by Paavo Pokkinen in pull request 12497*. [GitHub-10650](https://github.com/magento/magento2/issues/10650)
+<!-- MAGETWO-88237  -->
+*  Magento no longer permits you to re-run an already running cron job. *Fix submitted by Paavo Pokkinen in pull request 12497*. [GitHub-10650](https://github.com/magento/magento2/issues/10650)
 
 ### Bundle products
 
-<!--- MAGETWO-86354 -->* You can now successfully delete an option from a bundle product.
+<!--- MAGETWO-86354  -->
+*  You can now successfully delete an option from a bundle product.
 
-<!--- MAGETWO-73479 -->* Magento now correctly applies coupon codes that exclude bundle products. Previously, Magento applied these coupons but did not exclude bundle products as expected.
+<!--- MAGETWO-73479  -->
+*  Magento now correctly applies coupon codes that exclude bundle products. Previously, Magento applied these coupons but did not exclude bundle products as expected.
 
 ### Catalog
 
-<!--- MAGETWO-88808 -->* Merchants can now run the catalog search full text indexer and category product indexer in parallel mode by store view.
+<!--- MAGETWO-88808  -->
+*  Merchants can now run the catalog search full text indexer and category product indexer in parallel mode by store view.
 
-<!--- MAGETWO-88107 -->* The `Category\Collection::joinUrlRewrite` method now returns the URL of the store  whose `storeId` is set on the collection. Previously, this method returned the name of the default store. *Fix submitted by Alessandro Pagnin in pull request 13716*. [GitHub-13704](https://github.com/magento/magento2/issues/13704)
+<!--- MAGETWO-88107  -->
+*  The `Category\Collection::joinUrlRewrite` method now returns the URL of the store  whose `storeId` is set on the collection. Previously, this method returned the name of the default store. *Fix submitted by Alessandro Pagnin in pull request 13716*. [GitHub-13704](https://github.com/magento/magento2/issues/13704)
 
-<!--- MAGETWO-81957 -->* Sorting products by price now applies catalog rules as expected.
+<!--- MAGETWO-81957  -->
+*  Sorting products by price now applies catalog rules as expected.
 
-<!--- MAGETWO-73419 -->* Sorting products with required custom options by price now works as expected.
+<!--- MAGETWO-73419  -->
+*  Sorting products with required custom options by price now works as expected.
 
-<!--- MAGETWO-73008 -->* Tier pricing for a single product unit now works as expected. If a tier price is set for one product unit, and this price is lower than the product price or special price, then the product price index table is populated with the tier price.
+<!--- MAGETWO-73008  -->
+*  Tier pricing for a single product unit now works as expected. If a tier price is set for one product unit, and this price is lower than the product price or special price, then the product price index table is populated with the tier price.
 
-<!--- MAGETWO-71936 -->* Magento now successfully saves products when using a locale that formats dates in this way: DD/MM/YYYY. Previously, when you tried to save a product in a locale where dates are formatted this way, Magento did not save the product, and displayed this error: `Invalid input datetime format`. [GitHub-10485](https://github.com/magento/magento2/issues/10485)
+<!--- MAGETWO-71936  -->
+*  Magento now successfully saves products when using a locale that formats dates in this way: DD/MM/YYYY. Previously, when you tried to save a product in a locale where dates are formatted this way, Magento did not save the product, and displayed this error: `Invalid input datetime format`. [GitHub-10485](https://github.com/magento/magento2/issues/10485)
 
-<!--- MAGETWO-54740 -->* When you import new products using CSV, Magento no longer lists as in stock any products whose CSV values indicate that they should be represented as out-of-stock.
+<!--- MAGETWO-54740  -->
+*  When you import new products using CSV, Magento no longer lists as in stock any products whose CSV values indicate that they should be represented as out-of-stock.
 
 ### CMS content
 
-<!--- MAGETWO-89281 -->* When working in the media gallery, you can now successfully delete  any files and folders that are symlinked in `pub/media`. Previously, any files or folders that were symlinked inside the `pub/media` directory could not be deleted because there was a validation check that used `realpath` to test whether the file was outside the media directory base path. Since `realpath` resolved symlinks to actual paths, this check would fail if the actual path were outside  the base path, and would prevent action from being completed.
+<!--- MAGETWO-89281  -->
+*  When working in the media gallery, you can now successfully delete  any files and folders that are symlinked in `pub/media`. Previously, any files or folders that were symlinked inside the `pub/media` directory could not be deleted because there was a validation check that used `realpath` to test whether the file was outside the media directory base path. Since `realpath` resolved symlinks to actual paths, this check would fail if the actual path were outside  the base path, and would prevent action from being completed.
 
 ### Configurable products
 
-<!--- MAGETWO-88925 -->* Magento now displays the correct  status for a backordered configurable product on the order view page.
+<!--- MAGETWO-88925  -->
+*  Magento now displays the correct  status for a backordered configurable product on the order view page.
 
-<!--- MAGETWO-86661 -->* Magento now displays the correct image for a configurable product on the wishlist. Previously, Magento displayed the image for the parent product rather than for the selected variant. *Fix submitted by Roman K. in pull request 1031*. [GitHub-8168](https://github.com/magento/magento2/issues/8168)
+<!--- MAGETWO-86661  -->
+*  Magento now displays the correct image for a configurable product on the wishlist. Previously, Magento displayed the image for the parent product rather than for the selected variant. *Fix submitted by Roman K. in pull request 1031*. [GitHub-8168](https://github.com/magento/magento2/issues/8168)
 
-<!--- MAGETWO-87570 -->* The **Hide from Product Page** option now works for the child product of a configurable product.
+<!--- MAGETWO-87570  -->
+*  The **Hide from Product Page** option now works for the child product of a configurable product.
 
-<!--- MAGETWO-71662 -->* The **Update on Save** re-index operation now works as expected when re-indexing configurable products after changing options. Previously,  when you manually re-indexed from the command line, your changes to configurable product options were not saved.
+<!--- MAGETWO-71662  -->
+*  The **Update on Save** re-index operation now works as expected when re-indexing configurable products after changing options. Previously,  when you manually re-indexed from the command line, your changes to configurable product options were not saved.
 
 ### Frameworks
 
-<!--- MAGETWO-87964 -->* We've bumped the required minimal PHP version to 7.0.13.
+<!--- MAGETWO-87964  -->
+*  We've bumped the required minimal PHP version to 7.0.13.
 
 ### General
 
-<!--- MAGETWO-85296 -->* The product repository now uses `store_id` (if set)  when saving attributes for an existing product. Previously, Magento always saved attribute values for an existing product at the default store level. *Fix submitted by p-bystritsky in pull request 967*. [GitHub-7720](https://github.com/magento/magento2/issues/7720), [GitHub-12395](https://github.com/magento/magento2/issues/12395), [GitHub-12186](https://github.com/magento/magento2/issues/12186)
+<!--- MAGETWO-85296  -->
+*  The product repository now uses `store_id` (if set)  when saving attributes for an existing product. Previously, Magento always saved attribute values for an existing product at the default store level. *Fix submitted by p-bystritsky in pull request 967*. [GitHub-7720](https://github.com/magento/magento2/issues/7720), [GitHub-12395](https://github.com/magento/magento2/issues/12395), [GitHub-12186](https://github.com/magento/magento2/issues/12186)
 
-<!--- MAGETWO-82417 -->* The placement of Google Tag Manager code now follows the guidelines in the [Google Tag Manager Developer Guide](https://developers.google.com/tag-manager/devguide). (Previously, the Google Tag Manager code was inserted before the `dataLayer` variable was defined.)
+<!--- MAGETWO-82417  -->
+*  The placement of Google Tag Manager code now follows the guidelines in the [Google Tag Manager Developer Guide](https://developers.google.com/tag-manager/devguide). (Previously, the Google Tag Manager code was inserted before the `dataLayer` variable was defined.)
 
-<!--- MAGETWO-77754 -->* The Related Products rule for up-sell products with customer segments set to **Specified** now works as expected.
+<!--- MAGETWO-77754  -->
+*  The Related Products rule for up-sell products with customer segments set to **Specified** now works as expected.
 
 ### Gift card
 
-<!--- MAGETWO-85536 -->* Magento now displays the correct subtotal when a customer adds multiple gift cards of different amounts to his cart.
+<!--- MAGETWO-85536  -->
+*  Magento now displays the correct subtotal when a customer adds multiple gift cards of different amounts to his cart.
 
 ### Import/export
 
-<!--- MAGETWO-88265 -->* The data check on imported customer information now completes as expected. Previously, when you clicked **Check Data** on a large CSV file created by **System** > **Data Transfer** > **Import**, the request failed, and Magento displayed the timeout spinner.
+<!--- MAGETWO-88265  -->
+*  The data check on imported customer information now completes as expected. Previously, when you clicked **Check Data** on a large CSV file created by **System** > **Data Transfer** > **Import**, the request failed, and Magento displayed the timeout spinner.
 
-<!--- MAGETWO- 84942-->* If you remove a product's custom options from the CSV file created during product import,  Magento no longer displays the custom options on the storefront.
+<!--- MAGETWO- 84942 -->
+*  If you remove a product's custom options from the CSV file created during product import,  Magento no longer displays the custom options on the storefront.
 
 ### Indexing
 
-<!--- MAGETWO-80789 -->* The search indexer is now scoped and multithreaded, which improves  layered navigation, search and indexing actions for complex sites with multiple store views and shared catalogs.
+<!--- MAGETWO-80789  -->
+*  The search indexer is now scoped and multithreaded, which improves  layered navigation, search and indexing actions for complex sites with multiple store views and shared catalogs.
 
 ### Orders
 
-<!--- MAGETWO-87197 -->* Magento now filters recent orders by store on the customer account page  as expected. *Fix submitted by Alexander Shkurko in pull request 13257*.
+<!--- MAGETWO-87197  -->
+*  Magento now filters recent orders by store on the customer account page  as expected. *Fix submitted by Alexander Shkurko in pull request 13257*.
 
-<!--- MAGETWO-86399 -->* The performance and logic of `Magento\Sales\Helper\Guest` has been improved. *Fix submitted by Alexander Shkurko in pull request 12893*.
+<!--- MAGETWO-86399  -->
+*  The performance and logic of `Magento\Sales\Helper\Guest` has been improved. *Fix submitted by Alexander Shkurko in pull request 12893*.
 
 ### Payment methods
 
-<!--- MAGETWO-87832 -->* In multistore environments, Magento now retrieves the correct PayPal Payflow Pro credentials. Previously, Magento always retrieved the credentials that are configured for the default store.
+<!--- MAGETWO-87832  -->
+*  In multistore environments, Magento now retrieves the correct PayPal Payflow Pro credentials. Previously, Magento always retrieved the credentials that are configured for the default store.
 
 ### Performance
 
-<!--- MAGETWO-86745 -->* We've removed the `count()` method from the condition section for some loops in a small subset of backend files. When this method is used in a loop condition,  it will be executed at every iteration, which can degrade performance. *Fix submitted by Alexander Shkurko in pull request 13173*.
+<!--- MAGETWO-86745  -->
+*  We've removed the `count()` method from the condition section for some loops in a small subset of backend files. When this method is used in a loop condition,  it will be executed at every iteration, which can degrade performance. *Fix submitted by Alexander Shkurko in pull request 13173*.
 
 ### Search
 
-<!--- MAGETWO-81901 -->* Out-of-stock options for configurable products no longer show up in search and layered navigation results.
+<!--- MAGETWO-81901  -->
+*  Out-of-stock options for configurable products no longer show up in search and layered navigation results.
 
-<!--- MAGETWO-75769 -->* Magento now caches popular search results for faster response time on popular searches. A system administrator can configure how many top search queries can be cached.
+<!--- MAGETWO-75769  -->
+*  Magento now caches popular search results for faster response time on popular searches. A system administrator can configure how many top search queries can be cached.
 
 ### Shipping
 
 {: .bs-callout-info }
 You can find Magento Shipping-specific release notes in [Magento Shipping Release Notes]({{page.baseurl}}/release-notes/ReleaseNotesMagentoShipping2.2.x.html).
 
-<!--- MAGETWO-84257 -->* Merchants can now choose whether to request and include tax information from UPS in the rate charged to the customer during checkout.  (This permits merchants  to pass on the tax costs to their customer as part of the overall shipping rate.) *Fix submitted by gwharton in pull request 11707*.
+<!--- MAGETWO-84257  -->
+*  Merchants can now choose whether to request and include tax information from UPS in the rate charged to the customer during checkout.  (This permits merchants  to pass on the tax costs to their customer as part of the overall shipping rate.) *Fix submitted by gwharton in pull request 11707*.
 
 ### Staging
 
-<!--- MAGETWO-87855 -->* Magento now correctly renders the dates on a Cart Rule staging update when an administrator uses a locale with a different date and time format. Previously, these dates were corrupted.
+<!--- MAGETWO-87855  -->
+*  Magento now correctly renders the dates on a Cart Rule staging update when an administrator uses a locale with a different date and time format. Previously, these dates were corrupted.
 
-<!--- MAGETWO-85559 -->* You can now successfully edit the start date and time for a Catalog Price Rule schedule update. Previously, if you edited this date or time, Magento threw a 404 error when the new start time arrived.
+<!--- MAGETWO-85559  -->
+*  You can now successfully edit the start date and time for a Catalog Price Rule schedule update. Previously, if you edited this date or time, Magento threw a 404 error when the new start time arrived.
 
 ### Swagger
 
-<!--- MAGETWO-84921 -->* Swagger now displays the text area that contains the payload structure of all POST and PUT operations.
+<!--- MAGETWO-84921  -->
+*  Swagger now displays the text area that contains the payload structure of all POST and PUT operations.
 
 ### Swatches
 
-<!--- MAGETWO-86332 -->*  You can now use JavaScript mixins to extend swatch functionality in all supported browsers. *Fix submitted by Renon Stewart in pull request 12929*. [GitHub-10559](https://github.com/magento/magento2/issues/10559)
+<!--- MAGETWO-86332  -->
+*  You can now use JavaScript mixins to extend swatch functionality in all supported browsers. *Fix submitted by Renon Stewart in pull request 12929*. [GitHub-10559](https://github.com/magento/magento2/issues/10559)
 
 ### Testing
 
-<!--- MAGETWO-88291 -->* You can now use REST to update the `available_payment_methods` company extension attribute. Previously, Magento set to null whatever  value you passed to the database  `company_payment` table.
+<!--- MAGETWO-88291  -->
+*  You can now use REST to update the `available_payment_methods` company extension attribute. Previously, Magento set to null whatever  value you passed to the database  `company_payment` table.
 
-<!--- MAGETWO-87487 -->* The `phpunit.xml` configuration file is now blacklisted during schema validation static tests (particularly `Magento/Test/Integrity/Xml/SchemaTest.php`).
+<!--- MAGETWO-87487  -->
+*  The `phpunit.xml` configuration file is now blacklisted during schema validation static tests (particularly `Magento/Test/Integrity/Xml/SchemaTest.php`).
 
-<!--- MAGETWO-81742 MAGETWO-89250 -->* The `\Magento\Test\Php\LiveCodeTest::testCodeStyle`  method now uses whitelist files. *Fix submitted by Adrian Martinez in pull request 11376*. [GitHub-10559](https://github.com/magento/magento2/issues/10559)
+<!--- MAGETWO-81742 MAGETWO-89250  -->
+*  The `\Magento\Test\Php\LiveCodeTest::testCodeStyle`  method now uses whitelist files. *Fix submitted by Adrian Martinez in pull request 11376*. [GitHub-10559](https://github.com/magento/magento2/issues/10559)
 
 ### URL rewrites
 
-<!--- MAGETWO-86554 -->* Magento no longer throws a 404 error when a customer navigates from the Catalog page of the default store to a custom Catalog page on a different store.
+<!--- MAGETWO-86554  -->
+*  Magento no longer throws a 404 error when a customer navigates from the Catalog page of the default store to a custom Catalog page on a different store.
 
 ### Vertex
 
-<!--- BUNDLE-841 -->* The correct tax amount is now included as expected in the Order Total that is listed under the Order Summary section of the Orders page. Previously, the **Tax amount** field was missing from the Order Summary section, which resulted in an incorrect Order Total.
+<!--- BUNDLE-841  -->
+*  The correct tax amount is now included as expected in the Order Total that is listed under the Order Summary section of the Orders page. Previously, the **Tax amount** field was missing from the Order Summary section, which resulted in an incorrect Order Total.
 
-<!--- BUNDLE-966 -->* The **including tax** and **excluding tax** fields on the Checkout page now contain correctly calculated prices. Previously, Magento displayed  the same price in these fields.
+<!--- BUNDLE-966  -->
+*  The **including tax** and **excluding tax** fields on the Checkout page now contain correctly calculated prices. Previously, Magento displayed  the same price in these fields.
 
-<!--- BUNDLE-977 -->* Magento now displays the **Tax amount** field in the Order Summary section of the Checkout page for orders that contain virtual products.
+<!--- BUNDLE-977  -->
+*  Magento now displays the **Tax amount** field in the Order Summary section of the Checkout page for orders that contain virtual products.
 
-<!--- BUNDLE-904 -->* Merchants can now create a Vertex invoice refund as expected after an order has been canceled.
+<!--- BUNDLE-904  -->
+*  Merchants can now create a Vertex invoice refund as expected after an order has been canceled.
 
-<!--- BUNDLE-1044 -->* We’ve improved the performance of the **Admin Create Order** and **Performance Compare Report in Plain Text - Catalog** (server side) actions.
+<!--- BUNDLE-1044  -->
+*  We’ve improved the performance of the **Admin Create Order** and **Performance Compare Report in Plain Text - Catalog** (server side) actions.
 
-<!--- BUNDLE-976 -->* Magento now prompts you to select order status if a customer does not select an option from the Order Status drop down list when setting the **When to send Invoice to Vertex** option.
+<!--- BUNDLE-976  -->
+*  Magento now prompts you to select order status if a customer does not select an option from the Order Status drop down list when setting the **When to send Invoice to Vertex** option.
 
-<!--- BUNDLE-903 -->* The **Allow tax quote request at shopping cart page** option has been removed from the Vertex Setting tab.
+<!--- BUNDLE-903  -->
+*  The **Allow tax quote request at shopping cart page** option has been removed from the Vertex Setting tab.
 
-<!--- BUNDLE-945 -->* Magento now disables Vertex API Status as expected when you set the **Enable Vertex Tax Calculation** option to **no**.
+<!--- BUNDLE-945  -->
+*  Magento now disables Vertex API Status as expected when you set the **Enable Vertex Tax Calculation** option to **no**.
 
-<!--- BUNDLE-902 -->* Magento now displays the green checkmark and **Vertex invoice has been sent** message as expected when you set an order’s status to **Suspected Fraud**.
+<!--- BUNDLE-902  -->
+*  Magento now displays the green checkmark and **Vertex invoice has been sent** message as expected when you set an order’s status to **Suspected Fraud**.
 
-<!--- BUNDLE-905 -->* Customers no longer receive a notice about negative tax amount after a merchant creates a refund on Vertex Cloud.
+<!--- BUNDLE-905  -->
+*  Customers no longer receive a notice about negative tax amount after a merchant creates a refund on Vertex Cloud.
 
 ### Visual Merchandiser
 
-<!--- MAGETWO-71554 -->* We’ve improved the performance of editing or saving products in large categories (more than 18,000 products per category).
+<!--- MAGETWO-71554  -->
+*  We’ve improved the performance of editing or saving products in large categories (more than 18,000 products per category).
 
 <!--- NOT NEEDED
 MAGETWO-91014 MAGETWO-90943 MAGETWO-90541 MAGETWO-90413 MAGETWO-90362 MAGETWO-90071 MAGETWO-90067 MAGETWO-90041 MAGETWO-89974  MAGETWO-89613 MAGETWO-89610  MAGETWO-88890 MAGETWO-88817 MAGETWO-88812 MAGETWO-88646 MAGETWO-88643 MAGETWO-88601 MAGETWO-88509 MAGETWO-88436 MAGETWO-88326 MAGETWO-88289 MAGETWO-87467 MAGETWO-86990 MAGETWO-86046 MAGETWO-85871 MAGETWO-85135 MAGETWO-80093 MAGETWO-73694 MAGETWO-80908
@@ -221,59 +270,81 @@ The Amazon Pay. dotmailer, Magento Shipping, and Vertex extensions have the foll
 
 ### Amazon Pay known issues
 
-* Clicking **Save Config** on the Payment Methods page while configuring your Amazon Pay settings can result in a JavaScript error. **Workaround**: Refresh the page.
+*  Clicking **Save Config** on the Payment Methods page while configuring your Amazon Pay settings can result in a JavaScript error. **Workaround**: Refresh the page.
 
-<!-- BUNDLE--1480 -->*  Magento throws the following exception during checkout if you disable Amazon Pay when installing Magento using the web wizard:  `Exception #0 (UnexpectedValueException): Payment model name is not provided in config!`.  Note that this error occurs only if one or two of the three Amazon modules shipped with Magento are disabled. If all three Amazon modules are disabled, this problem does not occur. [GitHub-16167](https://github.com/magento/magento2/issues/16167) <!--- BUNDLE-1480 -->
+<!-- BUNDLE--1480  -->
+*  Magento throws the following exception during checkout if you disable Amazon Pay when installing Magento using the web wizard:  `Exception #0 (UnexpectedValueException): Payment model name is not provided in config!`.  Note that this error occurs only if one or two of the three Amazon modules shipped with Magento are disabled. If all three Amazon modules are disabled, this problem does not occur. [GitHub-16167](https://github.com/magento/magento2/issues/16167) <!--- BUNDLE-1480 -->
 
-<!-- BUNDLE--15453 -->*  Magento displays the Amazon Pay option during checkout with multiple addresses even though multi shipping is not supported with Amazon Pay.
+<!-- BUNDLE--15453  -->
+*  Magento displays the Amazon Pay option during checkout with multiple addresses even though multi shipping is not supported with Amazon Pay.
 
-<!-- BUNDLE--1450 -->*  Magento does not display the Amazon Pay button during checkout when the customer selects Klarna or PayPal as a payment method for an order containing a virtual product.
+<!-- BUNDLE--1450  -->
+*  Magento does not display the Amazon Pay button during checkout when the customer selects Klarna or PayPal as a payment method for an order containing a virtual product.
 
-<!-- BUNDLE--1427 -->* Magento does not display the Amazon Pay button on the Checkout page if an order contains a virtual product.
+<!-- BUNDLE--1427  -->
+*  Magento does not display the Amazon Pay button on the Checkout page if an order contains a virtual product.
 
-<!-- BUNDLE--1426 -->* Customer cannot return to standard checkout flow by clicking the **Return to standard checkout** button.
+<!-- BUNDLE--1426  -->
+*  Customer cannot return to standard checkout flow by clicking the **Return to standard checkout** button.
 
-<!-- BUNDLE--1425 -->* Customer cannot leave the Amazon Pay checkout page and return to the generic checkout page when an order contains virtual products.
+<!-- BUNDLE--1425  -->
+*  Customer cannot leave the Amazon Pay checkout page and return to the generic checkout page when an order contains virtual products.
 
-<!-- BUNDLE--1424 -->* Customers cannot add a new shipping address to an order that contains virtual products.
+<!-- BUNDLE--1424  -->
+*  Customers cannot add a new shipping address to an order that contains virtual products.
 
 ### dotmailer known issues
 
 The following Dotmailer behaviors have been observed when Magento Commerce for B2B is deployed with split databases:
 
-<!-- BUNDLE--1390 -->* Customer, subscriber, and guest data are not being successfully synced. As a result, newly created contacts display the  **Not imported** status in the contact report, and the relevant address books in dotmailer remain empty.
+<!-- BUNDLE--1390  -->
+*  Customer, subscriber, and guest data are not being successfully synced. As a result, newly created contacts display the  **Not imported** status in the contact report, and the relevant address books in dotmailer remain empty.
 
-<!-- BUNDLE--1408 -->* Review remainder email cannot be sent to a subscribed customer if review remainder emails are not enabled for non-subscribed customers.
+<!-- BUNDLE--1408  -->
+*  Review remainder email cannot be sent to a subscribed customer if review remainder emails are not enabled for non-subscribed customers.
 
-<!-- BUNDLE--1398 -->* Magento cannot send Customer and Guest Abandoned Cart email if these emails are not allowed for non-subscribed contacts.
+<!-- BUNDLE--1398  -->
+*  Magento cannot send Customer and Guest Abandoned Cart email if these emails are not allowed for non-subscribed contacts.
 
-<!-- BUNDLE--1389 -->* When a merchant clicks the **Run Contact Sync** button, Magento throws an exception when a merchant clicks the Run Contact Sync button.
+<!-- BUNDLE--1389  -->
+*  When a merchant clicks the **Run Contact Sync** button, Magento throws an exception when a merchant clicks the Run Contact Sync button.
 
-<!-- BUNDLE--526 -->* Magento throws an error during the creation of a subscriber or customer, but still creates the new subscriber or customer.
+<!-- BUNDLE--526  -->
+*  Magento throws an error during the creation of a subscriber or customer, but still creates the new subscriber or customer.
 
 ### Magento Shipping known issues
 
-<!-- BUNDLE--1448 -->*  A merchant can create multiple return shipments for an already shipped return.
+<!-- BUNDLE--1448  -->
+*  A merchant can create multiple return shipments for an already shipped return.
 
 ### Vertex known issues
 
-<!-- BUNDLE--1446 -->* The order amount on Vertex Cloud differs from the order information displayed by Magento  when Catalog Price Rule is applied.
+<!-- BUNDLE--1446  -->
+*  The order amount on Vertex Cloud differs from the order information displayed by Magento  when Catalog Price Rule is applied.
 
-<!-- BUNDLE--910 -->* Magento applies taxes to a custom price even when the **Original Price only** option from the Apply Tax On drop-down list has been selected.
+<!-- BUNDLE--910  -->
+*  Magento applies taxes to a custom price even when the **Original Price only** option from the Apply Tax On drop-down list has been selected.
 
-<!-- BUNDLE--1385 -->* Magento displays an inaccurate Vertex API Status message when  the **Vertex Address Validation API Url** and **Vertex Validation Function** fields contain invalid values.
+<!-- BUNDLE--1385  -->
+*  Magento displays an inaccurate Vertex API Status message when  the **Vertex Address Validation API Url** and **Vertex Validation Function** fields contain invalid values.
 
-<!-- BUNDLE--1399 -->*  The Transaction Details reports and Transaction Summary reports have slight irregularities.  Magento does not include product price and taxes in the Transaction Details Report "Gross Amount" and "Tax Amount" columns, and does not include product price in the Transaction Summary Report.
+<!-- BUNDLE--1399  -->
+*  The Transaction Details reports and Transaction Summary reports have slight irregularities.  Magento does not include product price and taxes in the Transaction Details Report "Gross Amount" and "Tax Amount" columns, and does not include product price in the Transaction Summary Report.
 
-<!-- BUNDLE--1405 -->*  The **Vertex invoice has been sent** message appears momentarily on the Review and Payments page, but not as expected on the Success page.
+<!-- BUNDLE--1405  -->
+*  The **Vertex invoice has been sent** message appears momentarily on the Review and Payments page, but not as expected on the Success page.
 
-<!-- BUNDLE--1410 -->*  When a customer places an order, Magento calculates the amount of tax and sends a Vertex invoice even when the Company Information tab is missing  the company street, company city, and company postal code.
+<!-- BUNDLE--1410  -->
+*  When a customer places an order, Magento calculates the amount of tax and sends a Vertex invoice even when the Company Information tab is missing  the company street, company city, and company postal code.
 
-<!-- BUNDLE--1457 -->* Magento does not display the Vertex invoice has been sent message as expected when the payment method is Authorize.net and  the order status is Suspect Fraud.
+<!-- BUNDLE--1457  -->
+*  Magento does not display the Vertex invoice has been sent message as expected when the payment method is Authorize.net and  the order status is Suspect Fraud.
 
-<!-- BUNDLE--1325 -->* Magento does not display the Vertex customer code field on the All Customers page as expected, which undermines the ability to filter by customer code.
+<!-- BUNDLE--1325  -->
+*  Magento does not display the Vertex customer code field on the All Customers page as expected, which undermines the ability to filter by customer code.
 
-<!-- BUNDLE--1432 -->* Magento does not display the tax section of the Order Summary that is included on the Review and Payments page during checkout when the shopping cart includes a virtual product.
+<!-- BUNDLE--1432  -->
+*  Magento does not display the tax section of the Order Summary that is included on the Review and Payments page during checkout when the shopping cart includes a virtual product.
 
 ## Community contributions
 

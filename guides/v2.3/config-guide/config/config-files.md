@@ -17,11 +17,11 @@ Multiple modules can declare configuration files that affect the same configurat
 
 Following are common terms used in this topic:
 
--   **Configuration object**—The Magento library or class that is responsible for defining and validating the configuration type. For example, the configuration object for <code>config.xml</code> is [Magento\Framework\App\Config]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/App/Config.php).
+-  **Configuration object**—The Magento library or class that is responsible for defining and validating the configuration type. For example, the configuration object for <code>config.xml</code> is [Magento\Framework\App\Config]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/App/Config.php).
 
--   **Configuration stage**—Stages are defined as *primary*, *global*, and *area*. Each stage determines when configuration type is loaded and merged with same-named configuration types. For example, `module.xml` files are merged with other `module.xml` files. For more information, see [Configuration load and merge](#config-files-loadmerge).
+-  **Configuration stage**—Stages are defined as *primary*, *global*, and *area*. Each stage determines when configuration type is loaded and merged with same-named configuration types. For example, `module.xml` files are merged with other `module.xml` files. For more information, see [Configuration load and merge](#config-files-loadmerge).
 
--   **Configuration scope**—Complementary to configuration stages, a scope defines the configuration type model. For example, `adminhtml` is an area scope that is loaded with at the stage with other modules' `adminhtml` configurations. For more information, see [Modules and areas]({{ page.baseurl }}/architecture/archi_perspectives/components/modules/mod_and_areas.html).
+-  **Configuration scope**—Complementary to configuration stages, a scope defines the configuration type model. For example, `adminhtml` is an area scope that is loaded with at the stage with other modules' `adminhtml` configurations. For more information, see [Modules and areas]({{ page.baseurl }}/architecture/archi_perspectives/components/modules/mod_and_areas.html).
 
 ## Configuration load and merge {#config-files-loadmerge}
 
@@ -30,22 +30,23 @@ This section discusses how configuration files are loaded and merged.
 ### How Magento loads configuration files {#config-files-load}
 Magento loads configuration files in the following order (all paths are relative to your Magento installation directory):
 
-* Primary configuration ([app/etc/di.xml]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/etc/di.xml)). This file is used to bootstrap Magento.
-* Global configurations from modules (`<your component base dir>/<vendorname>/<component-type>-<component-name>/etc/*.xml`). Collects certain configuration files from all modules and merges them together.
-* Area-specific configuration from modules (`<your component base dir>/<vendorname>/<component-type>-<component-name>/etc/<area>/*.xml`). Collects configuration files from all modules and merges them into the global configuration. Some area-specific configurations can override or extend the global configuration.
+-  Primary configuration ([app/etc/di.xml]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/etc/di.xml)). This file is used to bootstrap Magento.
+-  Global configurations from modules (`<your component base dir>/<vendorname>/<component-type>-<component-name>/etc/*.xml`). Collects certain configuration files from all modules and merges them together.
+-  Area-specific configuration from modules (`<your component base dir>/<vendorname>/<component-type>-<component-name>/etc/<area>/*.xml`). Collects configuration files from all modules and merges them into the global configuration. Some area-specific configurations can override or extend the global configuration.
 
 {% include vendor/types-def.md %}
 
-*     `<component-name>`: Name of your component as defined in [composer.json]({{ site.mage2bloburl }}/{{ page.guide_version }}/composer.json).
+-  `<component-name>`: Name of your component as defined in [composer.json]({{ site.mage2bloburl }}/{{ page.guide_version }}/composer.json).
 
 ### Configuration file merge {#config-files-load-merge-merge}
+
 Nodes in configuration files are merged based on their fully qualified XPaths, which has a special attribute defined in `$idAttributes` array declared as its identifier. This identifier must be unique for all nodes nested under the same parent node.
 
 Magento's merge algorithm follows:
 
-* If node identifiers are equal (or if there is no identifier defined), all underlying content in the node (attributes, child nodes, and scalar content) is overridden.
-* If node identifiers are not equal, the node is a new child of the parent node.
-* If the original document has multiple nodes with the same identifier, an error is triggered because the identifiers cannot be distinguished.
+-  If node identifiers are equal (or if there is no identifier defined), all underlying content in the node (attributes, child nodes, and scalar content) is overridden.
+-  If node identifiers are not equal, the node is a new child of the parent node.
+-  If the original document has multiple nodes with the same identifier, an error is triggered because the identifiers cannot be distinguished.
 
 After configuration files are merged, the resulting document contains all nodes from the original files.
 
@@ -53,8 +54,8 @@ After configuration files are merged, the resulting document contains all nodes 
 
 The following sections provide information about configuration types, their corresponding configuration objects, and interfaces you can use to work with the objects:
 
-* [Configuration types and objects](#config-files-classes-objects)
-* [Configuration interfaces](#config-files-classes-int)
+-  [Configuration types and objects](#config-files-classes-objects)
+-  [Configuration interfaces](#config-files-classes-int)
 
 ### Configuration types and objects {#config-files-classes-objects}
 
@@ -116,21 +117,22 @@ You can interact with configuration files using interfaces under [Magento\Framew
 
 `Magento\Framework\Config` provides the following interfaces:
 
-* [Framework\Config\ConverterInterface]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Config/ConverterInterface.php), which converts the [XML](https://glossary.magento.com/xml) into an in-memory array representation of the configurations.
-* [Framework\Config\DataInterface]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Config/DataInterface.php), which retrieves the configuration data in a specified scope.
-* [Framework\Config\FileResolverInterface]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Config/FileResolverInterface.php), which identifies the location of files to be read by [Magento\Framework\Config\ReaderInterface]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Config/ReaderInterface.php).
-* [Framework\Config\ReaderInterface]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Config/ReaderInterface.php), which reads the configuration data from storage and selects the storage from which it reads.
+-  [Framework\Config\ConverterInterface]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Config/ConverterInterface.php), which converts the [XML](https://glossary.magento.com/xml) into an in-memory array representation of the configurations.
+-  [Framework\Config\DataInterface]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Config/DataInterface.php), which retrieves the configuration data in a specified scope.
+-  [Framework\Config\FileResolverInterface]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Config/FileResolverInterface.php), which identifies the location of files to be read by [Magento\Framework\Config\ReaderInterface]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Config/ReaderInterface.php).
+-  [Framework\Config\ReaderInterface]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Config/ReaderInterface.php), which reads the configuration data from storage and selects the storage from which it reads.
 
 That is, the file system, database, other storage merges the configuration files according to the merging rules, and validates the configuration files with the validation schemas.
 
-*  [Framework\Config\SchemaLocatorInterface]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Config/SchemaLocatorInterface.php), which locates the XSD schema.
-*  [Framework\Config\ScopeListInterface]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Config/ScopeListInterface.php), which returns a list of scopes.
-*  [Framework\Config\ValidationStateInterface]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Config/ValidationStateInterface.php), which retrieves the validation state.
+-  [Framework\Config\SchemaLocatorInterface]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Config/SchemaLocatorInterface.php), which locates the XSD schema.
+-  [Framework\Config\ScopeListInterface]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Config/ScopeListInterface.php), which returns a list of scopes.
+-  [Framework\Config\ValidationStateInterface]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Config/ValidationStateInterface.php), which retrieves the validation state.
 
-#### Related topics
+{:.ref-header}
+Related topics
 
- *  [Create or extend configuration types]({{ page.baseurl }}/config-guide/config/config-create.html)
- *  [Magento's deployment configuration]({{ page.baseurl }}/config-guide/config/config-php.html)
+-  [Create or extend configuration types]({{ page.baseurl }}/config-guide/config/config-create.html)
+-  [Magento's deployment configuration]({{ page.baseurl }}/config-guide/config/config-php.html)
 
 <!-- Link definitions -->
 [RabbitMQ]: http://www.rabbitmq.com

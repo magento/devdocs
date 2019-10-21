@@ -31,7 +31,7 @@ A set of YAML configuration files located in the project root directory define y
 For all Starter environments and Pro Integration environments, pushing your Git branch updates all settings and configurations dependent on these files.
 
 -  [`.magento.app.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_magento-app.html)—defines how to build and deploy Magento, including services, hooks, cron jobs, and more.
-- [`.magento.env.yaml`]({{ page.baseurl }}/cloud/project/magento-env-yaml.html)—centralizes the management of build and deploy actions across all of your environments, including Pro Staging and Production, using environment variables.
+-  [`.magento.env.yaml`]({{ page.baseurl }}/cloud/project/magento-env-yaml.html)—centralizes the management of build and deploy actions across all of your environments, including Pro Staging and Production, using environment variables.
 -  [`.magento/routes.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_routes.html)—defines how Magento processes an incoming URL.
 -  [`.magento/services.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_services.html)—defines the services Magento uses by name and version. For example, this file may include versions of MySQL, PHP extensions, and Elasticsearch. These are referred to as *services*.
 -  [`app/etc/config.php`]({{ site.baseurl }}/guides/v2.2/cloud/live/sens-data-over.html)—defines the [system-specific settings]({{ site.baseurl }}/guides/v2.2/cloud/live/sens-data-over.html#cloud-clp-settings) Magento uses to configure your store. Magento auto-generates this file if it does not detect it during the build phase and includes a list of modules and extensions. If the file exists, the build phase continues as normal, compresses static files using `gzip`, and deploys the files. If you follow [Configuration Management]({{ site.baseurl }}/guides/v2.2/cloud/live/sens-data-over.html) at a later time, the commands update the file without requiring additional steps.
@@ -76,7 +76,7 @@ For detailed instructions, see [Build and deploy full steps](#steps).
 
 ### Phase 1: Code and configuration validation {#cloud-deploy-over-phases-conf}
 
-When you initially set up a project from a template, we retrieve the code from the [the {{site.data.var.ee}} template](https://github.com/magento/magento-cloud). This code repo is cloned to your project as the `master` branch.
+When you initially set up a project from a template, we retrieve the code from [the {{site.data.var.ee}} template](https://github.com/magento/magento-cloud). This code repo is cloned to your project as the `master` branch.
 
 -  **For Starter**—`master` branch is your Production environment.
 -  **For Pro**—`master` begins as origin branch for the Integration environment.

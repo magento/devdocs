@@ -266,4 +266,4 @@ Use the same endpoint to ship the remaining 35 `sp2` items from the Reno warehou
 ## Verify this step {#verify-step}
 
 1. Click **Sales** > **Shipments**. The two shipments for this order are displayed in the grid.
-2. Click **Catalog** > **Products**. Verify that the **Quantity per Source** values are correct for each product, based on the selections you made at shipment.
+1. Click **Catalog** > **Products**. Verify that the **Quantity per Source** values are correct for each product, based on the selections you made at shipment.

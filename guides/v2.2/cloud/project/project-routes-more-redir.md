@@ -39,22 +39,22 @@ Partial redirects work with any type of route, including routes served directly 
 
 Two keys are available under `redirects`:
 
-- **expires**—Optional, specifies the amount of time to cache the redirect in the browser. Examples of valid values include `3600s`, `1d`, `2w`, `3m`.
+-  **expires**—Optional, specifies the amount of time to cache the redirect in the browser. Examples of valid values include `3600s`, `1d`, `2w`, `3m`.
 
-- **paths**—One or more key-value pairs that specify the configuration for partial-route redirect rules.
+-  **paths**—One or more key-value pairs that specify the configuration for partial-route redirect rules.
 
-  For each redirect rule, the key is an expression to filter request paths for redirection. The value is an object that specifies the target destination for the redirect and options for processing the redirect.
+   For each redirect rule, the key is an expression to filter request paths for redirection. The value is an object that specifies the target destination for the redirect and options for processing the redirect.
 
-  The value object has the following properties:
+   The value object has the following properties:
 
-  Property  | Description
-  ----------| -----------
-  `to`      | Required, a partial absolute path, URL with protocol and host, or pattern that specifies the target destination for the redirect rule.
-  `regexp`| Optional, defaults to `false`. Specifies whether the path key should be interpreted as a PCRE regular expression.
-  `prefix` | Specifies whether the redirect applies to both the path and all its children, or just the path itself. Defaults to `true`. This value is not supported if `regexp` is `true`.
-  `append_suffix`| Determines if the suffix is carried over with the redirect. Defaults to `true`. This value is not supported if the `regexp` key is `true` *or* if the `prefix` key is `false`.
-  `code`    | Specifies the HTTP status code. Valid status codes are [`301` (Moved Permanently)](https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.3.2), [`302`](https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.3.3), [`307`](https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.3.8), and [`308`](https://tools.ietf.org/html/rfc7238). Defaults to `302`.
-  `expires`| Optional, specifies the amount of time to cache the redirect in the browser. Defaults to the `expires` value defined directly under the `redirects` key, but at this level you can fine-tune the cache expiration for individual partial redirects.
+   Property  | Description
+   ----------| -----------
+   `to`      | Required, a partial absolute path, URL with protocol and host, or pattern that specifies the target destination for the redirect rule.
+   `regexp`| Optional, defaults to `false`. Specifies whether the path key should be interpreted as a PCRE regular expression.
+   `prefix` | Specifies whether the redirect applies to both the path and all its children, or just the path itself. Defaults to `true`. This value is not supported if `regexp` is `true`.
+   `append_suffix`| Determines if the suffix is carried over with the redirect. Defaults to `true`. This value is not supported if the `regexp` key is `true` *or* if the `prefix` key is `false`.
+   `code`    | Specifies the HTTP status code. Valid status codes are [`301` (Moved Permanently)](https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.3.2), [`302`](https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.3.3), [`307`](https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.3.8), and [`308`](https://tools.ietf.org/html/rfc7238). Defaults to `302`.
+   `expires`| Optional, specifies the amount of time to cache the redirect in the browser. Defaults to the `expires` value defined directly under the `redirects` key, but at this level you can fine-tune the cache expiration for individual partial redirects.
 
 ### Examples
 
@@ -88,11 +88,11 @@ http://{default}/:
 
 This configuration works as follows:
 
-- Redirects requests that match the pattern `/from` to the path `http://{default}/to`.
+-  Redirects requests that match the pattern `/from` to the path `http://{default}/to`.
 
-- Redirects requests that match the pattern `/from/another/path` to `https://{default}/to/another/path`.
+-  Redirects requests that match the pattern `/from/another/path` to `https://{default}/to/another/path`.
 
-- If you change the `prefix` property to `false`, requests that match the pattern  `/from` trigger a redirect, but requests that match the pattern `/from/another/path` does not.
+-  If you change the `prefix` property to `false`, requests that match the pattern  `/from` trigger a redirect, but requests that match the pattern `/from/another/path` does not.
 
 #### Suffix pattern matching {#redirect-with-suffix}
 
@@ -107,13 +107,13 @@ http://{default}/:
 
 This configuration works as follows:
 
-- Redirects requests that match the pattern `/from/path/suffix` to the path `https://{default}/to`.
+-  Redirects requests that match the pattern `/from/path/suffix` to the path `https://{default}/to`.
 
-- If you change the `append_suffix` property to `true`, then requests that match `/from/path/suffix`  redirect to the path `https://{default}/to/path/suffix`.
+-  If you change the `append_suffix` property to `true`, then requests that match `/from/path/suffix`  redirect to the path `https://{default}/to/path/suffix`.
 
 #### Path-specific cache configuration {#redirect-with-custom-cache}
 
- Use the following format to customize the time to cache a redirect from a specific path:
+Use the following format to customize the time to cache a redirect from a specific path:
 
 ```yaml
 http://{default}/:
@@ -127,6 +127,6 @@ http://{default}/:
 
 This configuration works as follows:
 
-- Redirects from the first path (`/from`) are cached for 1 day.
+-  Redirects from the first path (`/from`) are cached for 1 day.
 
-- Redirects from the second path (`/here`) are cached for 2 weeks.
+-  Redirects from the second path (`/here`) are cached for 2 weeks.

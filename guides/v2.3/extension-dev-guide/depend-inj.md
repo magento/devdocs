@@ -105,15 +105,16 @@ Since you cannot specify this data in the constructor signature, Magento cannot 
 
 To get around this limitation, injectable objects can depend on [factories] that produce newable objects.
 
-**Related topics**
+{:.ref-header}
+Related topics
 
-*	[The `di.xml` file]({{ page.baseurl }}/extension-dev-guide/build/di-xml-file.html)
-*	[ObjectManager]({{ page.baseurl }}/extension-dev-guide/object-manager.html)
-*	[Plugins]({{ page.baseurl }}/extension-dev-guide/plugins.html)
-*	[Routing]({{ page.baseurl }}/extension-dev-guide/routing.html)
-*	[Magento application initialization and bootstrap]({{ page.baseurl }}/config-guide/bootstrap/magento-bootstrap.html)
-* [Module Dependencies]({{ page.baseurl }}/architecture/archi_perspectives/components/modules/mod_depend.html)
-*	[Programming concepts]({{ page.baseurl }}/extension-dev-guide/api-concepts.html)
+*  [The `di.xml` file]({{ page.baseurl }}/extension-dev-guide/build/di-xml-file.html)
+*  [ObjectManager]({{ page.baseurl }}/extension-dev-guide/object-manager.html)
+*  [Plugins]({{ page.baseurl }}/extension-dev-guide/plugins.html)
+*  [Routing]({{ page.baseurl }}/extension-dev-guide/routing.html)
+*  [Magento application initialization and bootstrap]({{ page.baseurl }}/config-guide/bootstrap/magento-bootstrap.html)
+*  [Module Dependencies]({{ page.baseurl }}/architecture/archi_perspectives/components/modules/mod_depend.html)
+*  [Programming concepts]({{ page.baseurl }}/extension-dev-guide/api-concepts.html)
 
 [Dependency Injection]: https://en.wikipedia.org/wiki/Dependency_injection
 [dependency inversion principle]: http://www.oodesign.com/dependency-inversion-principle.html

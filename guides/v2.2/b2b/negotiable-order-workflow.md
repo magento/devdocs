@@ -8,9 +8,9 @@ This topic describes how REST calls can be used to place items in a shopping car
 
 ## Prerequisites
 
-* You have [installed and enabled]({{ site.baseurl }}/extensions/b2b/) {{site.data.var.b2b}}.
-* You have [created a company]({{ page.baseurl }}/b2b/company-object.html) and a [company user]({{ page.baseurl }}/b2b/company-object.html).
-* You have an integration or [admin authorization token]({{ page.baseurl }}/rest/tutorials/orders/order-admin-token.html) to make calls on behalf of seller, and a [customer token]({{ page.baseurl }}/rest/tutorials/orders/order-create-customer.html#get-token) to make calls on behalf of the company user.
+*  You have [installed and enabled]({{ site.baseurl }}/extensions/b2b/) {{site.data.var.b2b}}.
+*  You have [created a company]({{ page.baseurl }}/b2b/company-object.html) and a [company user]({{ page.baseurl }}/b2b/company-object.html).
+*  You have an integration or [admin authorization token]({{ page.baseurl }}/rest/tutorials/orders/order-admin-token.html) to make calls on behalf of seller, and a [customer token]({{ page.baseurl }}/rest/tutorials/orders/order-create-customer.html#get-token) to make calls on behalf of the company user.
 
 ## Prepare the order
 
@@ -196,7 +196,7 @@ Authorization Bearer <customer token>
 {
 "addressInformation": {
   "shipping_address": {
-  	"region": "California",
+    "region": "California",
     "region_id": 12,
     "region_code": "CA",
     "country_id": "US",
@@ -211,7 +211,7 @@ Authorization Bearer <customer token>
     "telephone": "415-555-1212"
   },
   "billing_address": {
-  	"region": "California",
+   "region": "California",
     "region_id": 12,
     "region_code": "CA",
     "country_id": "US",
@@ -997,8 +997,8 @@ Authorization Bearer <admin token>
 
 ## Related information
 
-* [Order processing tutorial]({{ page.baseurl }}/rest/tutorials/orders/order-intro.html)
-* [Integrate with the NegotiableQuote module]({{ page.baseurl }}/b2b/negotiable-quote.html)
-* [Manage negotiable quotes]({{ page.baseurl }}/b2b/negotiable-manage.html)
-* [Update a negotiable quote]({{ page.baseurl }}/b2b/negotiable-update.html)
-* [Negotiable quote checkout]({{ page.baseurl }}/b2b/negotiable-checkout.html)
+*  [Order processing tutorial]({{ page.baseurl }}/rest/tutorials/orders/order-intro.html)
+*  [Integrate with the NegotiableQuote module]({{ page.baseurl }}/b2b/negotiable-quote.html)
+*  [Manage negotiable quotes]({{ page.baseurl }}/b2b/negotiable-manage.html)
+*  [Update a negotiable quote]({{ page.baseurl }}/b2b/negotiable-update.html)
+*  [Negotiable quote checkout]({{ page.baseurl }}/b2b/negotiable-checkout.html)

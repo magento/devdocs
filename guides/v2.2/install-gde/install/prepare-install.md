@@ -14,8 +14,8 @@ We now use [Composer](http://getcomposer.org) to resolve dependencies before you
 [Composer](https://glossary.magento.com/composer) is a separate application that manages [PHP](https://glossary.magento.com/php) dependencies. Before you can install the Magento software, you must perform the following tasks in the order shown:
 
 1. [Install the Composer software]({{ page.baseurl }}/install-gde/prereq/dev_install.html).
-2. [Create the Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html) so Composer writes files to the web server docroot as the correct user.
-3. Run the [<code>composer install</code> command](#install-composer-install) from your Magento root directory (for example, `/var/www/magento2/`).
+1. [Create the Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html) so Composer writes files to the web server docroot as the correct user.
+1. Run the [<code>composer install</code> command](#install-composer-install) from your Magento root directory (for example, `/var/www/magento2/`).
 
 The Magento root directory is a subdirectory of your web server's docroot. Need help locating the docroot? Click [here]({{ page.baseurl }}/install-gde/basics/basics_docroot.html).
 
@@ -32,17 +32,21 @@ For you to be able to run the Magento application, make sure you perform all tas
 Update installation dependencies as follows:
 
 1. Log in to your Magento server as the [Magento file system owner](https://glossary.magento.com/magento-file-system-owner) or [switch to that user]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html).
-2. Change to the Magento installation directory and run `composer install`. Examples:
+1. Change to the Magento installation directory and run `composer install`. Examples:
 
-    CentOS:
+   CentOS:
 
-        cd /var/www/html/magento2 && composer install
+   ```bash
+   cd /var/www/html/magento2 && composer install
+   ```
 
-    Ubuntu:
+   Ubuntu:
 
-        cd /var/www/magento2 && composer install
+   ```bash
+   cd /var/www/magento2 && composer install
+   ```
 
-    This command updates package dependencies and can take a few minutes to complete.
+   This command updates package dependencies and can take a few minutes to complete.
 
 The following error might display:
 
@@ -55,9 +59,10 @@ If so, create [`auth.json`]({{ page.baseurl }}/install-gde/prereq/dev_install.ht
 
 {% include install/file-system-perms-before_22.md %}
 
-### Next step {#next-step-section}
+{:.ref-header}
+Related topics
 
 Install the Magento software:
 
-* [Command line]({{ page.baseurl }}/install-gde/install/cli/install-cli.html)
-* [Setup Wizard]({{ page.baseurl }}/install-gde/install/web/install-web.html)
+*  [Command line]({{ page.baseurl }}/install-gde/install/cli/install-cli.html)
+*  [Setup Wizard]({{ page.baseurl }}/install-gde/install/web/install-web.html)

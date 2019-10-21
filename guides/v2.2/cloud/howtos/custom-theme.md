@@ -41,42 +41,40 @@ To install a theme manually, you must have the theme's code, either in a compres
 
 To install a theme manually:
 
-1.	Copy the theme's code under `<Magento root dir>/app/design/frontend` for a storefront theme or `<Magento root dir>/app/design/adminhtml` for an Admin theme. Verify that the top-level directory is `<VendorName>`; otherwise, the theme will not install properly.
+1. Copy the theme's code under `<Magento root dir>/app/design/frontend` for a storefront theme or `<Magento root dir>/app/design/adminhtml` for an Admin theme. Verify that the top-level directory is `<VendorName>`; otherwise, the theme will not install properly.
 
-    For example:
+   For example:
 
-    ```bash
-    cp -r ExampleTheme <Magento root dir>/app/design/frontend
-    ```
+   ```bash
+   cp -r ExampleTheme <Magento root dir>/app/design/frontend
+   ```
 
-2.  Confirm the theme copied to the correct place.
+1. Confirm the theme copied to the correct place.
 
-    *   Storefront theme: `ls <Magento root dir>/app/design/frontend`
-    *   Admin theme: `ls <Magento root dir>/app/design/adminhtml`
+   *  Storefront theme: `ls <Magento root dir>/app/design/frontend`
+   *  Admin theme: `ls <Magento root dir>/app/design/adminhtml`
 
-    A sample follows:
+   A sample follows:
 
-    ```text
-    ExampleTheme Magento
-    ```
+      ExampleTheme Magento
 
-3.	Add and commit files:
+1. Add and commit files:
 
-    ```bash
-    git add -A && git commit -m "Add theme"
-    ```
+   ```bash
+   git add -A && git commit -m "Add theme"
+   ```
 
-4.	Push the files to your branch:
+1. Push the files to your branch:
 
-    ```bash
-    git push origin <branch name>
-    ```
+   ```bash
+   git push origin <branch name>
+   ```
 
-5.	Wait for deployment to complete.
-6.	Log in to the Magento Admin.
-7.	Click **Content** > Design > **Themes**.
+1. Wait for deployment to complete.
+1. Log in to the Magento Admin.
+1. Click **Content** > Design > **Themes**.
 
-	The theme displays in the right pane.
+   The theme displays in the right pane.
 
 ## Install a theme using Composer {#composer}
 
@@ -84,32 +82,32 @@ Installing a theme using Composer is the same as installing any other extension 
 
 To summarize the procedure:
 
-1.  Purchase the theme from Magento Marketplace.
-2.  Get the theme's Composer name.
-3.  Change to your Magento root directory and enter the command:
+1. Purchase the theme from Magento Marketplace.
+1. Get the theme's Composer name.
+1. Change to your Magento root directory and enter the command:
 
-    ```bash
-    composer require <vendor>/<name>:<version>
-    ```
+   ```bash
+   composer require <vendor>/<name>:<version>
+   ```
 
-    For example,
+   For example,
 
-    ```bash
-    composer require zero1/theme-fashionista-theme:1.0.0
-    ```
+   ```bash
+   composer require zero1/theme-fashionista-theme:1.0.0
+   ```
 
-4.  Wait for dependencies to update.
-5.  Enter the following commands:
+1. Wait for dependencies to update.
+1. Enter the following commands:
 
-    ```bash
-    git add -A && git commit -m "Add theme"
-    ```
+   ```bash
+   git add -A && git commit -m "Add theme"
+   ```
 
-    ```bash
-    git push origin <branch name>
-    ```
+   ```bash
+   git push origin <branch name>
+   ```
 
-5.  Log in to the Magento Admin.
-6.  Click **Content** > Design > **Themes**.
+1. Log in to the Magento Admin.
+1. Click **Content** > Design > **Themes**.
 
-    The theme displays in the right pane.
+   The theme displays in the right pane.

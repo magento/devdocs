@@ -11,11 +11,11 @@ Magento collects data and sends this information to the MBI for analytics.
 ## Prerequisites
 
 1. The website must run on a public web server.
-2. The domain must have a valid security (SSL) certificate.
-3. Magento must have been installed or upgraded successfully without error.
-4. In the Magento configuration, the [Base URL (Secure) setting][base url]{:target="_blank"} for the store view must point to the secure URL. For example https://yourdomain.com.
-5. In the Magento configuration, **Use Secure URLs on Storefront**, **and Use Secure URLs in Admin** must be set to **Yes**.
-6. Make sure that [Magento crontab]{:target="_blank"} is created and cron jobs are running on the installed server.
+1. The domain must have a valid security (SSL) certificate.
+1. Magento must have been installed or upgraded successfully without error.
+1. In the Magento configuration, the [Base URL (Secure) setting][base url]{:target="_blank"} for the store view must point to the secure URL. For example https://yourdomain.com.
+1. In the Magento configuration, **Use Secure URLs on Storefront**, **and Use Secure URLs in Admin** must be set to **Yes**.
+1. Make sure that [Magento crontab]{:target="_blank"} is created and cron jobs are running on the installed server.
 
 The merchant can now click on the Go to Advanced Reporting button on the Admin dashboard to launch the advanced reporting features at `https://advancedreporting.rjmetrics.com/report`.
 
@@ -28,9 +28,10 @@ To avoid system overload during its prime time, you can set the preferable time 
 
 ## Extensibility
 
-Though the Analytics module provides API, it is used specifically to interchange data with the MBI. We do not recommend to extend the advanced reporting functionality in this version.
+Though the Analytics module provides an API, it is used specifically to interchange data with the MBI. We do not recommend to extend the advanced reporting functionality in this version.
 
-## Related topics
+{:.ref-header}
+Related topics
 
 [Magento modules that implement the functionality][modules]{:target="_blank"}
 

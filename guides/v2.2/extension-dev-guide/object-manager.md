@@ -17,10 +17,10 @@ See [usage rules][].
 
 The object manager has the following responsibilities:
 
-- Object creation in factories and proxies
-- Implementing the singleton pattern by returning the same shared instance of a class when requested
-- Dependency management by instantiating the preferred class when a constructor requests its interface
-- Automatically instantiating parameters in class constructors
+-  Object creation in factories and proxies
+-  Implementing the singleton pattern by returning the same shared instance of a class when requested
+-  Dependency management by instantiating the preferred class when a constructor requests its interface
+-  Automatically instantiating parameters in class constructors
 
 ## Configuration
 
@@ -49,11 +49,11 @@ They are not tacit endorsements of using the `ObjectManager` directly.
 
 You can depend on and use the `ObjectManager` class in the following scenarios:
 
-- You can use the object manager in static magic methods like `__wakeup()`, `__sleep()`, etc.
-  - An example can be found in the `__wakeup()` method in the [`Magento/Eav/Model/Entity/Attribute/AbstractAttribute`][] class.
-- You can use the `ObjectManager` to maintain backward compatibility for a constructor.
-- In a global scope, like in fixtures of integration tests, you can use the object manager.
-- The object manager can be a dependency in classes used for creating objects such as factories or proxies.
+-  You can use the object manager in static magic methods like `__wakeup()`, `__sleep()`, etc.
+   -  An example can be found in the `__wakeup()` method in the [`Magento/Eav/Model/Entity/Attribute/AbstractAttribute`][] class.
+-  You can use the `ObjectManager` to maintain backward compatibility for a constructor.
+-  In a global scope, like in fixtures of integration tests, you can use the object manager.
+-  The object manager can be a dependency in classes used for creating objects such as factories or proxies.
 
 ### Programmatic product updates
 
@@ -71,10 +71,11 @@ $objectManager->configure([
 ]);
 ```
 
-## Related topics
+{:.ref-header}
+Related topics
 
-- [The `di.xml` file][`di.xml`]
-- [Dependency injection][]
+-  [The `di.xml` file][`di.xml`]
+-  [Dependency injection][]
 
 [`ObjectManagerInterface`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/ObjectManagerInterface.php
 [`di.xml`]: {{ page.baseurl }}/extension-dev-guide/build/di-xml-file.html

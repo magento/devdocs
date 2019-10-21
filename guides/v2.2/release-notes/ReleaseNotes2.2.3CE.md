@@ -1,11 +1,6 @@
 ---
 group: release-notes
-subgroup: Release Notes
 title: Magento Open Source 2.2.3 Release Notes
-menu_title: Magento Open Source 2.2.3 Release Notes
-menu_order: 270
-level3_menu_node:
-level3_subgroup:
 ---
 *Patch code and release notes published on February 27, 2018.*
 
@@ -20,15 +15,16 @@ For security reasons, this release limits the ability to use symlinks for `/medi
 
 Look for the following highlights in this release:
 
-* **Enhancements that help close cross-site request forgery (CSRF), unauthorized data leaks, and authenticated Admin user remote code execution vulnerabilities**. See [Magento Security Center](https://magento.com/security/patches/magento-223-2112-and-2018-security-update) for more information.
+*  **Enhancements that help close cross-site request forgery (CSRF), unauthorized data leaks, and authenticated Admin user remote code execution vulnerabilities**. See [Magento Security Center](https://magento.com/security/patches/magento-223-2112-and-2018-security-update) for more information.
 
-<!--- MAGETWO-84775 -->* **Support for Elasticsearch 5.x**. See [Install and configure Elasticsearch]({{ site.baseurl }}/guides/v2.2/config-guide/elasticsearch/es-overview.html) for more information about using Elasticsearch with Magento. *Fix submitted by community member <a href="https://github.com/afoucret" target="_blank">Aurélien Foucret</a>.*
+<!--- MAGETWO-84775  -->
+*  **Support for Elasticsearch 5.x**. See [Install and configure Elasticsearch]({{ site.baseurl }}/guides/v2.2/config-guide/elasticsearch/es-overview.html) for more information about using Elasticsearch with Magento. *Fix submitted by community member <a href="https://github.com/afoucret" target="_blank">Aurélien Foucret</a>.*
 
-* **Change to Magento Admin to support recent USPS shipping changes**. On February 23, 2018, USPS  removed APIs that support the creation of shipping labels without postage. In response, we’ve removed this functionality from the Magento Admin. Consequently, you cannot create and print shipping labels that do not have postage applied. If you require USPS postage printing capabilities, please visit [Magento Shipping](https://magento.com/products/shipping) to learn more, and explore various shipping extensions on Magento Marketplace.
+*  **Change to Magento Admin to support recent USPS shipping changes**. On February 23, 2018, USPS  removed APIs that support the creation of shipping labels without postage. In response, we’ve removed this functionality from the Magento Admin. Consequently, you cannot create and print shipping labels that do not have postage applied. If you require USPS postage printing capabilities, please visit [Magento Shipping](https://magento.com/products/shipping) to learn more, and explore various shipping extensions on Magento Marketplace.
 
-* **New layers of control for cache management tasks managed through the Magento Admin**. This release introduces finer permissions for cache management tasks such as flushing cache storage, flushing the Magento cache, and refreshing cache types. *Fix submitted by community member <a href="https://github.com/bartoszherba" target="_blank">Bartosz Herba</a>.*
+*  **New layers of control for cache management tasks managed through the Magento Admin**. This release introduces finer permissions for cache management tasks such as flushing cache storage, flushing the Magento cache, and refreshing cache types. *Fix submitted by community member <a href="https://github.com/bartoszherba" target="_blank">Bartosz Herba</a>.*
 
-* **Updated copyright to 2018**.
+*  **Updated copyright to 2018**.
 
 ## Security enhancements
 

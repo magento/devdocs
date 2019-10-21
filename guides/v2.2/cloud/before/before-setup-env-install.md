@@ -10,7 +10,9 @@ functional_areas:
   - Configuration
 ---
 
-**Previous step:**
+{:.ref-header}
+Previous step
+
 [Clone and branch the project]({{ page.baseurl }}/cloud/before/before-setup-env-2_clone.html)
 
 With your workspace prepared, install Magento on your local to verify custom code, extensions, and more. This section includes the installation prep, options, and post-installation configuration you should complete.
@@ -19,9 +21,9 @@ With your workspace prepared, install Magento on your local to verify custom cod
 
 To customize the Magento software on your local workstation, prepare the following:
 
-* Hostname or IP address of your machine
-* Admin username, password, and URL created earlier
-* Magento authentication keys for installing Magento
+*  Hostname or IP address of your machine
+*  Admin username, password, and URL created earlier
+*  Magento authentication keys for installing Magento
 
 ### List the Magento Admin environment variables
 
@@ -103,8 +105,8 @@ Prior to installing, you should [Update installation dependencies]({{ page.baseu
 
 Be ready to install Magento using one of the following options:
 
-* [Install the Magento software using the command line]({{ page.baseurl }}/install-gde/install/cli/install-cli.html)
-* [Install the Magento software using the Web Setup Wizard]({{ page.baseurl }}/install-gde/install/web/install-web.html)
+*  [Install the Magento software using the command line]({{ page.baseurl }}/install-gde/install/cli/install-cli.html)
+*  [Install the Magento software using the Web Setup Wizard]({{ page.baseurl }}/install-gde/install/web/install-web.html)
 
 {:.procedure}
 To install Magento using the command line:
@@ -179,17 +181,17 @@ Optionally, if you used Vagrant with the _hostmanager_ plugin, update the hosts 
 
 For development and testing in an environment as close to Integration as possible, you may also want to install additional tools, software, and services. These services are configured using [`services.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_services.html).
 
-* [Redis]({{ page.baseurl }}/cloud/project/project-conf-files_services-redis.html)
-* [ElasticSearch]({{ page.baseurl }}/cloud/project/project-conf-files_services-elastic.html)
-* [RabbitMQ]({{ page.baseurl }}/cloud/project/project-conf-files_services-rabbit.html)
-* [Additional software]({{ page.baseurl }}/install-gde/prereq/optional.html) for Magento
+*  [Redis]({{ page.baseurl }}/cloud/project/project-conf-files_services-redis.html)
+*  [ElasticSearch]({{ page.baseurl }}/cloud/project/project-conf-files_services-elastic.html)
+*  [RabbitMQ]({{ page.baseurl }}/cloud/project/project-conf-files_services-rabbit.html)
+*  [Additional software]({{ page.baseurl }}/install-gde/prereq/optional.html) for Magento
 
 ## Verify your local workspace
 
 To verify the local, access the store using the URL you passed in the install command. For this example, you can access the local Magento store using the following URL formats:
 
-* `http://magento.local/`
-* `http://magento.local/admin`
+*  `http://magento.local/`
+*  `http://magento.local/admin`
 
 To change the URI for the Admin panel, use this command to locate it:
 
@@ -203,14 +205,15 @@ To verify the Integration master branch environment, log into the Project Web In
 
 With these steps completed, you should have:
 
-* A {{site.data.var.ee}} account and initial project setup and master branch
-* A local workspace configured with installations of required software, Magento Cloud CLI, and Magento
-* SSH keys set up
-* The Magento file system owner configured
-* Your initial code branch
-* Magento authentication keys set up and configured in the project and local
+*  A {{site.data.var.ee}} account and initial project setup and master branch
+*  A local workspace configured with installations of required software, Magento Cloud CLI, and Magento
+*  SSH keys set up
+*  The Magento file system owner configured
+*  Your initial code branch
+*  Magento authentication keys set up and configured in the project and local
 
-**Next steps:**
+{:.ref-header}
+Next step
 
 For **Pro projects**, we strongly recommend fully deploying this base Magento template `master` branch without any code or configuration changes to Staging and Production. For instructions, see [First time deployment]({{ page.baseurl }}/cloud/setup/first-time-deploy.html).
 

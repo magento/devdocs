@@ -18,8 +18,8 @@ functional_areas:
 
 Now that all the items have been added to the cart, we can prepare the order for [checkout](https://glossary.magento.com/checkout). This process includes the following steps:
 
-* Estimate shipping costs
-* Set shipping and billing information
+*  Estimate shipping costs
+*  Set shipping and billing information
 
 ### Estimate shipping costs {#estimate-shipping}
 
@@ -117,10 +117,11 @@ Magento returns a list of payment options and calculates the order totals.
 **Payload**
 
 {% collapsible Show code sample %}
+
 ```json
 
 {  "addressInformation": {
-	  "shipping_address": {
+       "shipping_address": {
        "region": "New York",
        "region_id": 43,
        "region_code": "NY",
@@ -136,7 +137,7 @@ Magento returns a list of payment options and calculates the order totals.
     "telephone": "512-555-1111"
   },
   "billing_address": {
-  	"region": "New York",
+    "region": "New York",
     "region_id": 43,
     "region_code": "NY",
     "country_id": "US",
@@ -155,6 +156,7 @@ Magento returns a list of payment options and calculates the order totals.
   }
 }
 ```
+
 {% endcollapsible %}
 
 **Response**
@@ -164,6 +166,7 @@ The subtotal of the order is $160, and shipping charges are $5. The grand total 
 The available payment methods are `banktransfer` and `checkmo`. The customer will specify a [payment method](https://glossary.magento.com/payment-method) in the next step.
 
 {% collapsible Show code sample %}
+
 ```json
 
 {
@@ -332,6 +335,7 @@ The available payment methods are `banktransfer` and `checkmo`. The customer wil
 }
 
 ```
+
 {% endcollapsible %}
 
 {:.bs-callout .bs-callout-info}

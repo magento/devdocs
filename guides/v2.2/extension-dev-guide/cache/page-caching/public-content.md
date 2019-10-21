@@ -67,16 +67,16 @@ class DynamicController extends \Magento\Framework\App\Action\Action
 
 Most caching servers and proxies use a [URL](https://glossary.magento.com/url) as a key for cache records. However, Magento URLs are not unique *enough* to allow caching by URL only. Cookie and session data in the URL can also lead to undesirable side effects,  including:
 
--   Collisions in cache storage
--   Unwanted information leaks (e.g., French language website partially visible on an English language website, prices for customer group visible in public, etc.)
+-  Collisions in cache storage
+-  Unwanted information leaks (e.g., French language website partially visible on an English language website, prices for customer group visible in public, etc.)
 
 To make each cached URL totally unique, we use *HTTP context variables*. Context variables enable the Magento application to serve different content on the same URL based on:
 
--   Customer group
--   Selected language
--   Selected store
--   Selected currency
--   Whether a customer is logged in or not
+-  Customer group
+-  Selected language
+-  Selected store
+-  Selected currency
+-  Whether a customer is logged in or not
 
 Context variables should not be specific to individual users because variables are used in cache keys for public content. In other words, a context variable per user results in a separate copy of content cached on the server for each user.
 

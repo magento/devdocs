@@ -11,7 +11,6 @@ functional_areas:
   - Setup
 ---
 
-*	[PHP settings errors]({{ page.baseurl }}/install-gde/trouble/php/tshoot_php-set.html)
-*	[The PHP mcrypt extension is not installed properly]({{ page.baseurl }}/install-gde/trouble/php/tshoot_mcrypt.html)
-*	[During installation, PHP date warning]({{ page.baseurl }}/install-gde/trouble/php/tshoot_php-date.html)
-*	[Resolve an illegal offset error]({{ page.baseurl }}/install-gde/trouble/php/tshoot_opcache.html)
+*  . [PHP settings errors]({{ page.baseurl }}/install-gde/trouble/php/tshoot_php-set.html)
+*  . [During installation, PHP date warning]({{ page.baseurl }}/install-gde/trouble/php/tshoot_php-date.html)
+*  . [Resolve an illegal offset error]({{ page.baseurl }}/install-gde/trouble/php/tshoot_opcache.html)

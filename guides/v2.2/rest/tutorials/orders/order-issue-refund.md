@@ -76,11 +76,11 @@ A [credit memo](https://glossary.magento.com/credit-memo) id, such as `3`.
 Log in to [Admin](https://glossary.magento.com/admin). Click **Sales** > **Credit Memos**. The credit memo is displayed in the grid.
 
 ## Congratulations! You've finished.
-{:.no_toc}
 
-## Related topics
+{:.ref-header}
+Related topics
 
-* [Getting Started with Magento Web APIs]({{ page.baseurl }}/get-started/bk-get-started-api.html)
-* [Create a configurable product Tutorial]({{ site.baseurl }}/guides/v2.2/rest/tutorials/configurable-product/config-product-intro.html)
-* [REST API Reference Overview]({{ page.baseurl }}/rest/bk-rest.html)
-* [REST API documentation]({{ site.baseurl }}/swagger/){:target="_blank"}
+*  [Getting Started with Magento Web APIs]({{ page.baseurl }}/get-started/bk-get-started-api.html)
+*  [Create a configurable product Tutorial]({{ site.baseurl }}/guides/v2.2/rest/tutorials/configurable-product/config-product-intro.html)
+*  [REST API Reference Overview]({{ page.baseurl }}/rest/bk-rest.html)
+*  [REST API documentation]({{ site.baseurl }}/swagger/){:target="_blank"}

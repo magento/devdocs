@@ -35,9 +35,9 @@ The following table lists the parameters defined in `CompanyInterface`.
 
 Name | Description | Format | Requirements
 --- | --- | --- |---
-`quoteId`	| Identifies the target quote for the operation.	| integer	| Required
-`quoteName`	| The name of the quote to be created.	| string	| Required
-`comment`	| The comment to add to the quote.	| string | Optional
+`quoteId` | Identifies the target quote for the operation. | integer | Required
+`quoteName` | The name of the quote to be created. | string | Required
+`comment` | The comment to add to the quote. | string | Optional
 `files` | An array of files to add to the quote | array | Optional
 
 The buyer or the seller can optionally attach up to 10 files to provide details about the quote. Each file must be converted into base64.
@@ -54,8 +54,8 @@ Name | Description | Format | Requirements
 
 Before negotiable quote can begin, the following conditions must be met:
 
-* A regular Magento quote has been created (`POST /V1/customers/:customerId/carts` or `POST /V1/customers/carts/mine`)
-* The quote contains items (`POST /V1/carts/:quoteId/items`)
+*  A regular Magento quote has been created (`POST /V1/customers/:customerId/carts` or `POST /V1/customers/carts/mine`)
+*  The quote contains items (`POST /V1/carts/:quoteId/items`)
 
 If the negotiable quote requires a shipping address (for negotiation or tax calculations), you can add it to the standard quote before initiating the negotiable quote (`POST /V1/carts/:cartId/shipping-information`)
 
@@ -98,15 +98,15 @@ When you submit a negotiable quote to the buyer, the status for the buyer change
 
 The seller can send a request to submit the quote to the buyer. The request can be submitted only for quotes in the following system states:
 
-* Created
-* Processing by admin
-* Submitted by customer
+*  Created
+*  Processing by admin
+*  Submitted by customer
 
 When the quote is submitted to the buyer:
 
-* Magento checks catalog prices (price per item), cart rules, and discounts then recalculates the prices and taxes. The shipping price and the negotiated price are not affected (if they are entered into the quote).
-* Items that are no longer active or available for this buyer are removed from quote and prices are recalculated.
-* The quote state is changed to Submitted by admin.
+*  Magento checks catalog prices (price per item), cart rules, and discounts then recalculates the prices and taxes. The shipping price and the negotiated price are not affected (if they are entered into the quote).
+*  Items that are no longer active or available for this buyer are removed from quote and prices are recalculated.
+*  The quote state is changed to Submitted by admin.
 
 **Service Name**
 
@@ -177,9 +177,9 @@ To set the shipping method, the quote must be in the `created`, `processing_by_a
 
 The seller can send a request to decline the quote. The request can be submitted only for quotes in the following system states:
 
-* Created
-* Processing by admin
-* Submitted by customer
+*  Created
+*  Processing by admin
+*  Submitted by customer
 
 When you decline a quote, all custom pricing will be removed from the quote. The buyer will be able to place an order using their standard catalog prices and discounts.
 
@@ -332,7 +332,7 @@ Not applicable
 
 ## Related information
 
-* [Integrate with the NegotiableQuote module]({{ page.baseurl }}/b2b/negotiable-quote.html)
-* [Update a negotiable quote]({{ page.baseurl }}/b2b/negotiable-update.html)
-* [Negotiable quote checkout]({{ page.baseurl }}/b2b/negotiable-checkout.html)
-* [Place a negotiable quote order]({{ page.baseurl }}/b2b/negotiable-order-workflow.html)
+*  [Integrate with the NegotiableQuote module]({{ page.baseurl }}/b2b/negotiable-quote.html)
+*  [Update a negotiable quote]({{ page.baseurl }}/b2b/negotiable-update.html)
+*  [Negotiable quote checkout]({{ page.baseurl }}/b2b/negotiable-checkout.html)
+*  [Place a negotiable quote order]({{ page.baseurl }}/b2b/negotiable-order-workflow.html)

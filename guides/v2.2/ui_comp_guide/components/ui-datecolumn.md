@@ -26,4 +26,4 @@ The DateColumn component implements a table column that displays dates.
 
 Extends [`Column`]({{ page.baseurl }}/ui_comp_guide/components/ui-column.html):
 
-- [`app/code/Magento/Ui/view/base/web/js/grid/columns/date.js`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/grid/columns/date.js)
+-  [`app/code/Magento/Ui/view/base/web/js/grid/columns/date.js`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/grid/columns/date.js)

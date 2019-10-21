@@ -38,22 +38,22 @@ When you submit payment information, Magento creates an order and sends an order
 
 ```json
 {
-	"paymentMethod": {
-		"method": "banktransfer"
-	},
-	"billing_address": {
-		"email": "jdoe@example.com",
-		"region": "New York",
-		"region_id": 43,
-		"region_code": "NY",
-		"country_id": "US",
-		"street": ["123 Oak Ave"],
-		"postcode": "10577",
-		"city": "Purchase",
-		"telephone": "512-555-1111",
-		"firstname": "Jane",
-		"lastname": "Doe"
-	}
+  "paymentMethod": {
+    "method": "banktransfer"
+  },
+  "billing_address": {
+    "email": "jdoe@example.com",
+    "region": "New York",
+    "region_id": 43,
+    "region_code": "NY",
+    "country_id": "US",
+    "street": ["123 Oak Ave"],
+    "postcode": "10577",
+    "city": "Purchase",
+    "telephone": "512-555-1111",
+    "firstname": "Jane",
+    "lastname": "Doe"
+  }
 }
 ```
 
@@ -64,5 +64,5 @@ An `orderID`, such as `3`
 ## Verify this step {#verify-step}
 
 1. Log in to the US store as the customer. The dashboard shows the order.
-2. Log in to [Admin](https://glossary.magento.com/admin). Click **Sales** > **Orders**. The order is displayed in the grid. Its status is Pending.
-3. Click **Catalog** > **Products**. The **Salable Quantity** column shows that fewer items of the ordered products are available. The values in the **Quantity per Source** are not affected until shipment.
+1. Log in to [Admin](https://glossary.magento.com/admin). Click **Sales** > **Orders**. The order is displayed in the grid. Its status is Pending.
+1. Click **Catalog** > **Products**. The **Salable Quantity** column shows that fewer items of the ordered products are available. The values in the **Quantity per Source** are not affected until shipment.

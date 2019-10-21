@@ -71,18 +71,18 @@ Batching is available for the following indexers:
 
 Index name | Configuration file | Configured object | Parameter name | Default value
 --- | --- | --- | --- | ---
-catalog_product_price (Product Price)	| `Magento/Catalog/etc/di.xml` | `Magento\Catalog\Model\ResourceModel\Product\Indexer\Price\BatchSizeCalculator` | batchRowsCount['default']	| 5000
-cataloginventory_stock (Stock)	| `Magento/CatalogInventory/etc/di.xml`	| `Magento\CatalogInventory\Model\Indexer\Stock\Action\Full` | batchRowsCount['default']	| 200
-catalog_category_product (Category Products)| `Magento/Catalog/etc/di.xml`	| `Magento\Catalog\Model\Indexer\Category\Product\Action\Full` |	batchRowsCount	| 100000
+catalog_product_price (Product Price) | `Magento/Catalog/etc/di.xml` | `Magento\Catalog\Model\ResourceModel\Product\Indexer\Price\BatchSizeCalculator` | batchRowsCount['default'] | 5000
+cataloginventory_stock (Stock) | `Magento/CatalogInventory/etc/di.xml` | `Magento\CatalogInventory\Model\Indexer\Stock\Action\Full` | batchRowsCount['default'] | 200
+catalog_category_product (Category Products)| `Magento/Catalog/etc/di.xml` | `Magento\Catalog\Model\Indexer\Category\Product\Action\Full` | batchRowsCount | 100000
 catalog_product_attribute (Product Attribute)| `Magento/Catalog/etc/di.xml` | `Magento\Catalog\Model\ResourceModel\Product\Indexer\Eav\BatchSizeCalculator` | batchSizes['decimal'], batchSizes['source'] | 1000, 1000
 
 Changing the batch size can help you optimize indexer running time. For example, for a store with the following characteristics:
 
-* 10 websites
-* 10 store groups
-* 20 store views
-* 300 tier prices
-* About 40,000 products (of which 254 are configurable)
+*  10 websites
+*  10 store groups
+*  20 store views
+*  300 tier prices
+*  About 40,000 products (of which 254 are configurable)
 
 reducing the batch size for `catalog_product_price` indexer from 5000 to 1000 decreases the execution time from about 4 hours to less than 2 hours. You can experiment to determine the ideal batch size. In general, halving the batch size can decrease the indexer execution time.
 
@@ -118,7 +118,7 @@ Magento uses the following tables to support table switching.
 
 Indexer name | Tables used
 --- | --- | ---
-`catalog_product_price`	|  `catalog_product_index_price`, `catalog_product_index_price_replica`
+`catalog_product_price` |  `catalog_product_index_price`, `catalog_product_index_price_replica`
 `cataloginventory_stock` | `cataloginventory_stock_status`, `cataloginventory_stock_status_replica`
 `catalog_category_product` | `catalog_category_product_index`, `catalog_category_product_index_replica`
 `catalog_product_attribute` (select, multiselect attributes) | `catalog_product_index_eav`, `catalog_product_index_eav_replica`
@@ -130,8 +130,8 @@ Make sure that these indexers are in "Update By Schedule" mode. If "Update On Sa
 {: .bs-callout-info }
 The indexer table switching mechanism requires additional database storage.
 
-### Related topics
-{:.no_toc}
+{:.ref-header}
+Related topics
 
-* [Indexing overview]({{ page.baseurl }}/extension-dev-guide/indexing.html)
-* [Adding a custom indexer]({{ page.baseurl }}/extension-dev-guide/indexing-custom.html)
+*  [Indexing overview]({{ page.baseurl }}/extension-dev-guide/indexing.html)
+*  [Adding a custom indexer]({{ page.baseurl }}/extension-dev-guide/indexing-custom.html)

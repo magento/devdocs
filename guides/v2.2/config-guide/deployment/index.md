@@ -14,28 +14,28 @@ If you deploy Magento on a single machine and can tolerate some downtime during 
 
 The following topics are organized to help you get started quickly. If you're new to Magento or not familiar with the technical details, start by reading the overviews.
 
-*	Overview of deployment
+*  Overview of deployment
 
-	*	[Deployment general overview]({{ page.baseurl }}/config-guide/deployment/pipeline/)
-	*	[Deployment technical overview (implementation details)]({{ page.baseurl }}/config-guide/deployment/pipeline/technical-details.html)
+   *  [Deployment general overview]({{ page.baseurl }}/config-guide/deployment/pipeline/)
+   *  [Deployment technical overview (implementation details)]({{ page.baseurl }}/config-guide/deployment/pipeline/technical-details.html)
 
-*	Set up your pipeline deployment systems: development, build, and production
+*  Set up your pipeline deployment systems: development, build, and production
 
-	*	[Set up your development systems]({{ page.baseurl }}/config-guide/deployment/pipeline/development-system.html)
-	*	[Set up your build system]({{ page.baseurl }}/config-guide/deployment/pipeline/build-system.html)
-	*	[Set up your production system]({{ page.baseurl }}/config-guide/deployment/pipeline/production-system.html)
+   *  [Set up your development systems]({{ page.baseurl }}/config-guide/deployment/pipeline/development-system.html)
+   *  [Set up your build system]({{ page.baseurl }}/config-guide/deployment/pipeline/build-system.html)
+   *  [Set up your production system]({{ page.baseurl }}/config-guide/deployment/pipeline/production-system.html)
 
-*	Step-by-step examples of using pipeline deployment
+*  Step-by-step examples of using pipeline deployment
 
-	*	[Simple example&mdash;manage the shared configuration]({{ page.baseurl }}/config-guide/deployment/pipeline/example/shared-configuration.html)
+   *  [Simple example&mdash;manage the shared configuration]({{ page.baseurl }}/config-guide/deployment/pipeline/example/shared-configuration.html)
 
-*	Reference information
+*  Reference information
 
-	*	[Sensitive and system-specific configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-sens.html)
-	*	[Payment configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-payment.html)
-	*	[Other configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-most.html)
-	*	[Magento Enterprise B2B Extension configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-b2b.html)
-	*	[Use environment variables to override configuration settings]({{ page.baseurl }}/config-guide/prod/config-reference-var-name.html)
-	*	[.gitignore reference]({{ page.baseurl }}/config-guide/prod/config-reference-gitignore.html)
-	*	[config.php reference]({{ page.baseurl }}/config-guide/prod/config-reference-configphp.html)
-	*	[env.php reference]({{ page.baseurl }}/config-guide/prod/config-reference-envphp.html)
+   *  [Sensitive and system-specific configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-sens.html)
+   *  [Payment configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-payment.html)
+   *  [Other configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-most.html)
+   *  [Magento Enterprise B2B Extension configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-b2b.html)
+   *  [Use environment variables to override configuration settings]({{ page.baseurl }}/config-guide/prod/config-reference-var-name.html)
+   *  [.gitignore reference]({{ page.baseurl }}/config-guide/prod/config-reference-gitignore.html)
+   *  [config.php reference]({{ page.baseurl }}/config-guide/prod/config-reference-configphp.html)
+   *  [env.php reference]({{ page.baseurl }}/config-guide/prod/config-reference-envphp.html)

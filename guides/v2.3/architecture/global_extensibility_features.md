@@ -7,14 +7,14 @@ title: Global features that support extensibility
 
 Essential qualities foster extensibility throughout the entire set of Magento components. This discussion focuses on:
 
-* Modularity
-* Reliance on popular design patterns
-* Coding standards
-* Flexible attribute types
-* Web APIs
-* Service contracts and [dependency injection](https://glossary.magento.com/dependency-injection)
-* Plug-ins
-* Declarative schema
+*  Modularity
+*  Reliance on popular design patterns
+*  Coding standards
+*  Flexible attribute types
+*  Web APIs
+*  Service contracts and [dependency injection](https://glossary.magento.com/dependency-injection)
+*  Plug-ins
+*  Declarative schema
 
 ### Modularity
 
@@ -52,11 +52,11 @@ Extension | No
 
 Attribute types fall into three general categories:
 
-* **EAV (Entity-Attribute-Value) attributes** are site-specific attributes that you can define for a local site using the [Magento Admin](https://glossary.magento.com/magento-admin).
+*  **EAV (Entity-Attribute-Value) attributes** are site-specific attributes that you can define for a local site using the [Magento Admin](https://glossary.magento.com/magento-admin).
 
-* **Custom attributes** are a subset of EAV attributes. Objects that use EAV attributes typically store values in several MySQL tables. The Customer and [Catalog](https://glossary.magento.com/catalog) modules use EAV attributes.
+*  **Custom attributes** are a subset of EAV attributes. Objects that use EAV attributes typically store values in several MySQL tables. The Customer and [Catalog](https://glossary.magento.com/catalog) modules use EAV attributes.
 
-* **Extension attributes** often use more [complex data](https://glossary.magento.com/complex-data) types than custom attributes. These attributes do not appear in the storefront. Extension attributes are introduced by modules.
+*  **Extension attributes** often use more [complex data](https://glossary.magento.com/complex-data) types than custom attributes. These attributes do not appear in the storefront. Extension attributes are introduced by modules.
 
 See [PHP Developer Guide]({{page.baseurl}}/extension-dev-guide/bk-extension-dev-guide.html) for information about using attributes.
 
@@ -88,6 +88,7 @@ See [Plug-ins]({{page.baseurl}}/extension-dev-guide/plugins.html) in [PHP Develo
 
 [Declarative schema]({{page.baseurl}}/extension-dev-guide/declarative-schema/index.html) allows developers to declare the final desired state of the database as it pertains to their modules. The system adjusts to database changes automatically without performing redundant operations. Developers are no longer forced to write installation and upgrade scripts for each new version. In addition, declarative schema allows data be deleted when a module is uninstalled.
 
-### Related topic {#m2arch-related}
+{:.ref-header}
+Related topic
 
 [Extensibility and modularity]({{page.baseurl}}/architecture/extensibility.html)

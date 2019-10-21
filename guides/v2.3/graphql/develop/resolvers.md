@@ -7,11 +7,11 @@ A resolver performs GraphQL request processing. In general, it is responsible fo
 
 A resolver requires the following arguments:
 
-- $field
-- $context
-- $info
-- $value
-- $args
+-  $field
+-  $context
+-  $info
+-  $value
+-  $args
 
 ```php
     /**
@@ -206,7 +206,7 @@ mutation {
             lastname: "Doe"
             email: "j.doe@example.com"
             password: "1w2E3R456"
-          	is_subscribed: true
+            is_subscribed: true
         }
     ) {
         customer {
