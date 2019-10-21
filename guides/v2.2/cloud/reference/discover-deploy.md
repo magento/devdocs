@@ -23,7 +23,7 @@ You can track build and deploy actions in real-time using the terminal or the Pr
 If you are using external GitHub repositories, the log of the operations does not display in the GitHub session. You can still follow activity in the interface for the external repository and in the {{site.data.var.ece}} Project Web Interface. See [Integrations]({{ page.baseurl }}/cloud/integrations/cloud-integrations.html).
 
 {:.bs-callout-info}
-Deploy logs are available only for Staging and Production environments. In Integration environments, you can view only build and post-deploy logs.
+Deploy logs are available only for Staging and Production environments. See [Log locations]({{ page.baseurl }}/cloud/project/log-locations.html).
 
 ## Project configuration {#cloud-deploy-conf}
 
@@ -41,7 +41,7 @@ For all Starter environments and Pro Integration environments, pushing your Git 
 
 Your Git branch must have the following files for building and deploying in your local environment and to Integration, Staging, and Production environments:
 
--  `auth.json`—in the root Magento directory. This file includes the Magento Authentication keys entered when creating the project. The file is generated as part of autoprovisioning a new project using a blank template. If you need to verify the file and settings, see [Troubleshooting]({{ page.baseurl }}/cloud/trouble/troubleshoot-deployment.html).
+-  `auth.json`—in the root Magento directory. This file includes the Magento Authentication keys entered when creating the project. The file is generated as part of autoprovisioning a new project using a blank template. If you need to verify the file and settings, see [Troubleshooting deployment]({{ page.baseurl }}/cloud/trouble/troubleshoot-deployment.html).
 -  [`app/etc/config.php`]({{ site.baseurl }}/guides/v2.2/cloud/live/sens-data-over.html)—auto-generates during the build phase if it does not exist.
 -  [`.magento.app.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_magento-app.html)—updates and saves to the root directory.
 -  [`.magento/services.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_services.html)—updates and saves to the `magento/` directory.
@@ -53,7 +53,7 @@ We highly recommend the following best practices and considerations for your dep
 
 -  **Ensure that you are running the most current version of the `{{site.data.var.ct}}` package**–See [Release notes for {{site.data.var.ct}}]({{ page.baseurl }}/cloud/release-notes/cloud-tools.html).
 
--  **Follow the build and deploy process**–Ensure that you have the correct code in each environment to avoid overwriting configuration when merging code between environments. For example, to make configuration changes that apply to all environments, modify and test the changes in the local environment before deploying to Integration, and then deploy and test the changes in Staging before deploying to Production. When you merge from one environment to another, the deployment overwrites all code in the remote environment, except environment-specific configuration and settings. See [Build and deploy full steps](#steps).
+-  **Follow the build and deploy process**–Ensure that you have the correct code in each environment to avoid overwriting configurations when merging code between environments. For example, to make configuration changes that apply to all environments, modify and test the changes in the local environment before deploying to Integration, and then deploy and test the changes in Staging before deploying to Production. When you merge from one environment to another, the deployment overwrites all code in the remote environment, except environment-specific configuration and settings. See [Build and deploy full steps](#steps).
 
 -  **Use the same variables across environments**–The values for these variables may differ across environments; however, you usually need the same variables in each environment. See [Configuration management for store settings]({{ page.baseurl }}/cloud/live/sens-data-over.html).
 
