@@ -18,12 +18,12 @@ The build and deploy process is slightly different for each plan:
 
 ## Track the process {#track}
 
-You can track build and deploy actions in real-time using the terminal or the Project Web Interface. Status messages—`in-progress`, `pending`, `success`, or `failed`—display during the deployment process. You can view details in the log files. See [Log locations]({{ page.baseurl }}/cloud/project/log-locations.html).
+You can track build and deploy actions in real-time using the terminal or the Project Web UI Status messages—`in-progress`, `pending`, `success`, or `failed`—display during the deployment process. You can view details in the log files. See [Log locations]({{ page.baseurl }}/cloud/project/log-locations.html).
 
-If you are using external GitHub repositories, the log of the operations does not display in the GitHub session. You can still follow activity in the interface for the external repository and in the {{site.data.var.ece}} Project Web Interface. See [Integrations]({{ page.baseurl }}/cloud/integrations/cloud-integrations.html).
+If you are using external GitHub repositories, the log of operations does not display in the GitHub session. However, you can still follow activity in the interface for the external repository and the Project Web Interface. See [Integrations]({{ page.baseurl }}/cloud/integrations/cloud-integrations.html).
 
 {:.bs-callout-info}
-Deploy logs are available only for Staging and Production environments. See [Log locations]({{ page.baseurl }}/cloud/project/log-locations.html).
+In Integration environments, you cannot view the deploy logs from the Project Web Interface. This feature is available only for Production and Staging environments. However, you can view logs for every phase of the deployment in any environment using the Magento [build and deploy]({{ page.baseurl }}/cloud/project/log-locations.html#build-and-deploy-logs).
 
 ## Project configuration {#cloud-deploy-conf}
 

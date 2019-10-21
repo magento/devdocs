@@ -99,10 +99,9 @@ If you configure one MySQL user, you cannot use the [`DEFINER`](http://dev.mysql
 
 Accessing the MariaDB database directly requires you to use a SSH to log in to the remote server, and connect to the database.
 
-
 1. Log in to the remote server using SSH.
 
-1. Retrieve the MySQL login credentials from the `database` and `type` properties in the [$MAGENTO_CLOUD_RELATIONSHIPS]({{ page.baseurl }}/cloud/project/project-conf-files_magento-app.html#relationships) variable:
+1. Retrieve the MySQL login credentials from the `database` and `type` properties in the [$MAGENTO_CLOUD_RELATIONSHIPS]({{ page.baseurl }}/cloud/project/project-conf-files_magento-app.html#relationships) variable.
 
    ```bash
    echo $MAGENTO_CLOUD_RELATIONSHIPS | base64 -d | json_pp
@@ -138,17 +137,17 @@ Accessing the MariaDB database directly requires you to use a SSH to log in to t
       }
    ],
    ```
-   
+
 1. Connect to the database:
 
-   -  For Starter
+   -  For Starter, use the following command:
 
-      ```bash
-      mysql -h database.internal -u <username>
-      ```
+   ```bash
+   mysql -h database.internal -u <username>
+   ```
 
-   -  For Pro, use the db, username, and password from the [service relationship]({{page.baseurl}}/cloud/project/project-conf-files_services.html#service-relationships):
+   -  For Pro, use the following command with db, username, and password retrieved from the `$MAGENTO_CLOUD_RELATIONSHIPS` variable.
 
-      ```bash
-      mysql -h<db> -p<number> -u<username> -p<password>
-      ```
+   ```bash
+   mysql -h<db> -p<number> -u<username> -p<password>
+   ```
