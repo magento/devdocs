@@ -165,7 +165,7 @@ Calls public methods on the block API.
 
 | Attribute | Description | Values | Required? |
 |:------- |:------ |:------ |:------ |
-| `method` | Name of the public method of the block class this tag is located in that is called during block generation. | Method name in block | yes |
+| `method` | The public method that is called during block generation. | The method name in the block | yes |
 
 To pass parameters, use the [`<argument></argument>`](#argument) instruction.
 
