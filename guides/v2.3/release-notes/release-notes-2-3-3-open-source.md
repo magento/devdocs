@@ -130,6 +130,8 @@ The Google Shopping ads Channel Marketplace extension is now available as a bund
 
 ### Magento Shipping
 
+Due to the impending shutdown of Temando (the provider of the technology behind Magento Shipping), it is no longer possible to create a new Magento Shipping account. Support for current Magento Shipping deployments for all existing customers will continue. For detailed status information and recommendations for new shipping implementations in Magento, see our product information page.
+
 This release of Magento Shipping includes:
 
 *  Improvements to batch-order processing, carrier integration, shipping method preview in the shipping portal, checkout.
@@ -782,6 +784,10 @@ We've fixed hundreds of issues in the Magento 2.3.3 core code.
 
 <!--- MC-15163-->
 *  The `oauth` handshake is now followed by a redirect as expected for third-party integrations.
+
+### Magento Shipping
+
+Due to the impending shutdown of Temando (the provider of the technology behind Magento Shipping), it is no longer possible to create a new Magento Shipping account. Support for current Magento Shipping deployments for all existing customers will continue. For detailed status information and recommendations for new shipping implementations in Magento, see our product information page.
 
 ### Newsletter
 
