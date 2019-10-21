@@ -180,7 +180,7 @@ To pass parameters to a block use the [`<argument></argument>`](#argument) instr
 | Attribute | Description | Values | Required? |
 |:------- |:------ |:------ |:------ |
 | `remove` | Allows to remove or cancel the removal of the element. When a container is removed, its child elements are removed as well. | `true` or `false` | no |
-| `display` | Allows you to disable rendering of specific block or container with all its children (both set directly and by reference). The block's/container's and its children' respective PHP objects are still generated and available for manipulation. | `true` or `false` | no |
+| `display` | Allows you to disable rendering of specific block or container with all its children (both set directly and by reference). The PHP objects of the block or container and its children are still generated and available for manipulation. | `true` or `false` | no |
 
 -  The `remove` attribute is optional and its default value is `false`.
 
