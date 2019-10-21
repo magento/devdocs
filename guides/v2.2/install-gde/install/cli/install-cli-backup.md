@@ -13,9 +13,9 @@ redirect_from:
 
 This command enables you to back up:
 
-* The Magento file system (excluding `var` and `pub/static` directories)
-* The `pub/media` directory
-* The Magento 2 database
+*  The Magento file system (excluding `var` and `pub/static` directories)
+*  The `pub/media` directory
+*  The Magento 2 database
 
 Backups are stored in the `var/backups` directory and can be restored at any time using the [magento setup:rollback]({{ page.baseurl }}/install-gde/install/cli/install-cli-uninstall-mods.html#instgde-cli-uninst-mod-roll) command.
 

@@ -21,10 +21,10 @@ For more information about cron, including how to remove a crontab and run cron 
 
 After installation, we recommend the following:
 
-* Make sure your file ownership and permissions are set properly
-* We strongly recommend [changing the default Admin URL]({{page.baseurl}}/install-gde/install/cli/install-cli-adminurl.html) from `admin` to something else
-* Make sure the [`X-Frame-Option` HTTP header]({{page.baseurl}}/config-guide/secy/secy-xframe.html) is set properly.
-* Take precautions against cross-site scripting (XSS) by [securing your templates]({{page.baseurl}}/extension-dev-guide/xss-protection.html)
+*  Make sure your file ownership and permissions are set properly
+*  We strongly recommend [changing the default Admin URL]({{page.baseurl}}/install-gde/install/cli/install-cli-adminurl.html) from `admin` to something else
+*  Make sure the [`X-Frame-Option` HTTP header]({{page.baseurl}}/config-guide/secy/secy-xframe.html) is set properly.
+*  Take precautions against cross-site scripting (XSS) by [securing your templates]({{page.baseurl}}/extension-dev-guide/xss-protection.html)
 
 If you installed by [cloning the Magento repository]({{page.baseurl}}/install-gde/prereq/dev_install.html), make sure that when you deploy Magento, you only include files and folders that are required for the production environment. Files and folders that are not required can potentially expose security risks.
 
@@ -50,9 +50,9 @@ The UNIX `logrotate` utility enables you to administer systems that generate lar
 
 For more information, see one of the following:
 
-* [HowTo: The Ultimate Logrotate Command Tutorial with 10 Examples](https://www.thegeekstuff.com/2010/07/logrotate-examples)
-* [stackexchange](http://unix.stackexchange.com/questions/85662/how-to-properly-automatically-manually-rotate-log-files-for-production-rails-app)
-* [logrotate man page](http://linuxconfig.org/logrotate-8-manual-page)
+*  [HowTo: The Ultimate Logrotate Command Tutorial with 10 Examples](https://www.thegeekstuff.com/2010/07/logrotate-examples)
+*  [stackexchange](http://unix.stackexchange.com/questions/85662/how-to-properly-automatically-manually-rotate-log-files-for-production-rails-app)
+*  [logrotate man page](http://linuxconfig.org/logrotate-8-manual-page)
 
 ### Set up iptables rules to enable various Magento services to communicate.
 
@@ -60,8 +60,8 @@ Whether you have one server or many, you must open ports in the firewall to enab
 
 More information:
 
-* Ubuntu: [Ubuntu documentation page](https://help.ubuntu.com/community/IptablesHowTo).
-* CentOS: [CentOS how-to](http://wiki.centos.org/HowTos/Network/IPTables).
+*  Ubuntu: [Ubuntu documentation page](https://help.ubuntu.com/community/IptablesHowTo).
+*  CentOS: [CentOS how-to](http://wiki.centos.org/HowTos/Network/IPTables).
 
 ### Security Enhanced Linux (SELinux) rules
 
@@ -69,30 +69,30 @@ We don't recommend whether or not you use SELinux at all; however, if you use it
 
 More information:
 
-* Ubuntu: [Debian handbook](https://debian-handbook.info/browse/stable/sect.selinux.html)
-* CentOS: [CentOS wiki](https://wiki.centos.org/HowTos/SELinux)
+*  Ubuntu: [Debian handbook](https://debian-handbook.info/browse/stable/sect.selinux.html)
+*  CentOS: [CentOS wiki](https://wiki.centos.org/HowTos/SELinux)
 
 ### Set up an e-mail server
 
 Magento requires an e-mail server. We don't recommend a particular server but you can try any of the following:
 
-* Postfix for CentOS ([digitalocean tutorial](https://www.digitalocean.com/community/tutorials/how-to-install-postfix-on-centos-6), [CentOS documentation](https://www.centos.org))
-* Postfix for Ubuntu ([digitalocean tutorial](https://www.digitalocean.com/community/tutorials/how-to-install-and-setup-postfix-on-ubuntu-14-04), [Ubuntu documentation](https://help.ubuntu.com/community/MailServer))
+*  Postfix for CentOS ([digitalocean tutorial](https://www.digitalocean.com/community/tutorials/how-to-install-postfix-on-centos-6), [CentOS documentation](https://www.centos.org))
+*  Postfix for Ubuntu ([digitalocean tutorial](https://www.digitalocean.com/community/tutorials/how-to-install-and-setup-postfix-on-ubuntu-14-04), [Ubuntu documentation](https://help.ubuntu.com/community/MailServer))
 
 ### Set up an Elasticsearch as search engine for enhanced performance:
 
 Elasticsearch available in {{site.data.var.ee}} since 2.1.0 and in {{site.data.var.ce}} since 2.3.0:
 
-* [Elasticsearch]({{page.baseurl}}/config-guide/elasticsearch/es-overview.html)
+*  [Elasticsearch]({{page.baseurl}}/config-guide/elasticsearch/es-overview.html)
 
 ### Set up an message queue
 
 Since 2.3.0 {{site.data.var.ce}} includes message queue functionality. In earlier versions it is available only for {{site.data.var.ee}}.
 
-* [RabbitMQ]({{page.baseurl}}/config-guide/mq/rabbitmq-overview.html)
+*  [RabbitMQ]({{page.baseurl}}/config-guide/mq/rabbitmq-overview.html)
 
 ## Settings for {{site.data.var.ee}} only {#post-install-ee}
 
 You can configure the following only if you use {{site.data.var.ee}}:
 
-* [Split databases for checkout, order management, and other Magento database tables]({{page.baseurl}}/config-guide/multi-master/multi-master.html)
+*  [Split databases for checkout, order management, and other Magento database tables]({{page.baseurl}}/config-guide/multi-master/multi-master.html)

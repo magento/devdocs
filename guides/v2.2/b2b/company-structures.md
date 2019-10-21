@@ -283,7 +283,7 @@ The following example moves Bryce Martin (`structure_id = 4`) to the West team (
 
 ## Related information
 
-* [Integrate with the Company module]({{ page.baseurl }}/b2b/company.html)
-* [Manage company objects]({{ page.baseurl }}/b2b/company-object.html)
-* [Manage company users]({{ page.baseurl }}/b2b/company-users.html)
-* [Manage company roles]({{ page.baseurl }}/b2b/roles.html)
+*  [Integrate with the Company module]({{ page.baseurl }}/b2b/company.html)
+*  [Manage company objects]({{ page.baseurl }}/b2b/company-object.html)
+*  [Manage company users]({{ page.baseurl }}/b2b/company-users.html)
+*  [Manage company roles]({{ page.baseurl }}/b2b/roles.html)

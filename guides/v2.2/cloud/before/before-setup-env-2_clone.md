@@ -148,8 +148,8 @@ To add variables using the Project Web Interface:
 
 After cloning your project and updating the Magento administrator account configuration, you can branch for development. As stated earlier, you must create an environment using the `magento-cloud environment:branch <branch-name>` command or the Project Web Interface for the environment to become _active_.
 
-- For [Starter]({{ page.baseurl }}/cloud/basic-information/starter-develop-deploy-workflow.html#clone-branch), consider creating a branch for `staging`, then create a development branch based on the `staging` branch.
-- For [Pro]({{ page.baseurl }}/cloud/architecture/pro-develop-deploy-workflow.html), create development branches based on the Integration environment.
+-  For [Starter]({{ page.baseurl }}/cloud/basic-information/starter-develop-deploy-workflow.html#clone-branch), consider creating a branch for `staging`, then create a development branch based on the `staging` branch.
+-  For [Pro]({{ page.baseurl }}/cloud/architecture/pro-develop-deploy-workflow.html), create development branches based on the Integration environment.
 
 {:.procedure}
 To branch from master:

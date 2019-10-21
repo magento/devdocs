@@ -81,6 +81,6 @@ mutation {
 
 1. Sign in as a customer to the website using the email `john.doe@example.com` and password `b1b2b3l@w+`.
 
-2. Go to Checkout.
+1. Go to Checkout.
 
-3. The selected shipping method is displayed in the Shipping Methods section on the Shipping step.
+1. The selected shipping method is displayed in the Shipping Methods section on the Shipping step.

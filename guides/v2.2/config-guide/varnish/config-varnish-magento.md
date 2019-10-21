@@ -11,10 +11,10 @@ functional_areas:
 To configure Magento to use Varnish:
 
 1. Log in to the [Magento Admin](https://glossary.magento.com/magento-admin) as an administrator.
-2. Click **STORES** > **Settings** > **Configuration** > **ADVANCED** > **System** > **Full Page Cache**.
-3. From the **Caching Application** list, click **Varnish Caching**.
-4. Enter a value in the **TTL for public content** field.
-5. Expand **Varnish Configuration** and enter the following information:
+1. Click **STORES** > **Settings** > **Configuration** > **ADVANCED** > **System** > **Full Page Cache**.
+1. From the **Caching Application** list, click **Varnish Caching**.
+1. Enter a value in the **TTL for public content** field.
+1. Expand **Varnish Configuration** and enter the following information:
 
    <table>
    <col width="30%" />
@@ -45,7 +45,7 @@ To configure Magento to use Varnish:
       </tbody>
    </table>
 
-6. Click **Save Config**.
+1. Click **Save Config**.
 
 You can also activate Varnish from the command line--instead of logging in to the Magento Admin—using the Magento command-line interface tool:
 
@@ -57,14 +57,14 @@ bin/magento config:set --scope=default --scope-code=0 system/full_page_cache/cac
 
 To export a Varnish configuration file from the Admin panel:
 
-7. Click one of the export buttons to create a <code>varnish.vcl</code> you can use with Varnish.
+1. Click one of the export buttons to create a <code>varnish.vcl</code> you can use with Varnish.
 
    For example, if you have Varnish 4, click **Export VCL for Varnish 4**
 
    The following figure shows an example.<br><br>
    ![Configure Magento to use Varnish in the Admin]({{ site.baseurl }}/common/images/config_varnish_admin_22.png)
 
-8. Back up your existing <code>default.vcl</code>. Then rename the <code>varnish.vcl</code> file you just exported to <code>default.vcl</code>. Then copy the file to the <code>/etc/varnish/</code>. directory.
+1. Back up your existing <code>default.vcl</code>. Then rename the <code>varnish.vcl</code> file you just exported to <code>default.vcl</code>. Then copy the file to the <code>/etc/varnish/</code>. directory.
 
    ```bash
    cp /etc/varnish/default.vcl /etc/varnish/default.vcl.bak2
@@ -78,7 +78,7 @@ To export a Varnish configuration file from the Admin panel:
    cp <download_directory>/default.vcl /etc/varnish/default.vcl
    ```
 
-9. We recommend you open `default.vcl` and change the value of `acl purge` to the IP address of the Varnish host. (You can specify multiple hosts on separate lines or you can use CIDR notation as well.)
+1. We recommend you open `default.vcl` and change the value of `acl purge` to the IP address of the Varnish host. (You can specify multiple hosts on separate lines or you can use CIDR notation as well.)
 
    For example,
 
@@ -88,9 +88,9 @@ To export a Varnish configuration file from the Admin panel:
     }
    ```
 
-10. If you want to customize the Vagrant health checks or grace mode or saint mode configuration, see [Advanced Varnish configuration]({{ page.baseurl }}/config-guide/varnish/config-varnish-advanced.html).
+1. If you want to customize the Vagrant health checks or grace mode or saint mode configuration, see [Advanced Varnish configuration]({{ page.baseurl }}/config-guide/varnish/config-varnish-advanced.html).
 
-11. Restart Varnish and your web server:
+1. Restart Varnish and your web server:
 
    ```bash
    service varnish restart
@@ -119,5 +119,5 @@ You need to make these changes before you configure Magento to use Varnish.
 {:.ref-header}
 Related topics
 
-- [Advanced Varnish configuration]({{ page.baseurl }}/config-guide/varnish/config-varnish-advanced.html) (Optional)
-- [Final verification]({{ page.baseurl }}/config-guide/varnish/config-varnish-final.html)
+-  [Advanced Varnish configuration]({{ page.baseurl }}/config-guide/varnish/config-varnish-advanced.html) (Optional)
+-  [Final verification]({{ page.baseurl }}/config-guide/varnish/config-varnish-final.html)

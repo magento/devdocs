@@ -12,8 +12,8 @@ functional_areas:
 
 You can upgrade your Magento application from the command line if you installed the software by:
 
-- Downloading the [metapackage][] using `composer create-project`.
-- Installing the compressed archive.
+-  Downloading the [metapackage][] using `composer create-project`.
+-  Installing the compressed archive.
 
 Do not use this method to upgrade if you cloned the Magento 2 GitHub repository.
 Instead, see [Update the Magento application][] for upgrade instructions.
@@ -22,10 +22,10 @@ Instead, see [Update the Magento application][] for upgrade instructions.
 
 Complete the following prerequisites to prepare your environment before starting the upgrade process:
 
-- **Complete the Update and upgrade checklist**—To avoid possible errors during installation or upgrading, complete the [Update and upgrade checklist].
-- **Set the `pub/` directory root**—See [Modify docroot to improve security][] for more details.
-- **Check PHP and environment settings**—Verify that your PHP and other environment settings are compatible with the [system requirements].
-- **Switch to maintenance mode**—To prevent access to your store while it's being upgraded, switch your store to maintenance mode:
+-  **Complete the Update and upgrade checklist**—To avoid possible errors during installation or upgrading, complete the [Update and upgrade checklist].
+-  **Set the `pub/` directory root**—See [Modify docroot to improve security][] for more details.
+-  **Check PHP and environment settings**—Verify that your PHP and other environment settings are compatible with the [system requirements].
+-  **Switch to maintenance mode**—To prevent access to your store while it's being upgraded, switch your store to maintenance mode:
 
     ```bash
     bin/magento maintenance:enable
@@ -72,13 +72,13 @@ See the examples at the end of this section for help specifying different releas
    <div class="bs-callout-tip" markdown="1">
    To see the full list of available {{ page.guide_version }} versions:
 
-   _{{site.data.var.ce}}_:
+   _{{ ce }}_:
 
    ```bash
    composer show magento/product-community-edition {{ page.guide_version }}.* --all | grep -m 1 versions
    ```
 
-   _{{site.data.var.ce}}_:
+   _{{ ee }}_:
 
    ```bash
    composer show magento/product-enterprise-edition {{ page.guide_version }}.* --all | grep -m 1 versions
@@ -230,11 +230,11 @@ Open your storefront URL in a web browser to check whether the upgrade was succe
 If the application fails with a  `We're sorry, an error has occurred while generating this email.` error:
 
 1. Reset [file system ownership and permissions] as a user with `root` privileges.
-2. Clear the following directories:
-   - `var/cache/`
-   - `var/page_cache/`
-   - `generated/code/`
-3. Check your storefront in your web browser again.
+1. Clear the following directories:
+   -  `var/cache/`
+   -  `var/page_cache/`
+   -  `generated/code/`
+1. Check your storefront in your web browser again.
 
 ## Alternatives
 
@@ -243,7 +243,7 @@ There are alternatives methods that automate parts of the upgrade process:
 1. [Upgrade using the script][] (semi-automated process)
    Upgrading using the script process is a bit easier and less intensive if you have not made updates to values that the script affects.
    If you previously made updates, do not upgrade using the script. The script will override your updates.
-2. EXPERIMENTAL: [Upgrade using the custom Composer plugin][]
+1. EXPERIMENTAL: [Upgrade using the custom Composer plugin][]
    We are developing a [custom Composer plugin][] that enhances the semi-automated upgrade process.
 
 The upgrading scenario is the same for each of these options. Both use Composer and a command line interface.

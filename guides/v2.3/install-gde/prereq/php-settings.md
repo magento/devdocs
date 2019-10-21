@@ -45,19 +45,19 @@ On CentOS, [additional steps may be required][].
 
 Magento requires a set of extensions to be installed:
 
-- bcmath
-- devel
-- gd
-- iconv
-- intl
-- json
-- mbstring
-- mysql
-- mysqlnd
-- opcache
-- pdo
-- soap
-- xml
+-  bcmath
+-  devel
+-  gd
+-  iconv
+-  intl
+-  json
+-  mbstring
+-  mysql
+-  mysqlnd
+-  opcache
+-  pdo
+-  soap
+-  xml
 
 In the command line, type:
 

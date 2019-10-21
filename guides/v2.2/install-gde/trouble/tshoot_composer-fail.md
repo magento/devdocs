@@ -44,13 +44,13 @@ To work around it:
 
 1. Change your version of Composer to enable you to download the Magento software by doing any of the following:
 
-   * Downgrade Composer using the following command:
+   *  Downgrade Composer using the following command:
 
        ```bash
        composer self-update 1.0.0-alpha11
        ```
 
-   * Upgrade Composer to a version later than November 26, 2015:
+   *  Upgrade Composer to a version later than November 26, 2015:
 
        ```bash
        composer self-update

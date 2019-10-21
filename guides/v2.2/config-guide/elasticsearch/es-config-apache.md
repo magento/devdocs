@@ -20,8 +20,8 @@ The reason the proxy is not secured in this example is it's easier to set up and
 
 See one of the following sections:
 
-* [Set up a proxy for Apache 2.4](#es-apache-proxy-24)
-* [Set up a proxy for Apache 2.2](#es-apache-proxy-22)
+*  [Set up a proxy for Apache 2.4](#es-apache-proxy-24)
+*  [Set up a proxy for Apache 2.2](#es-apache-proxy-22)
 
 ### Set up a proxy for Apache 2.4 {#es-apache-proxy-24}
 
@@ -104,8 +104,8 @@ This section discusses how to configure an Elasticsearch proxy using a virtual h
 
 1. Restart Apache:
 
-   * CentOS: `service httpd restart`
-   * Ubuntu: `service apache2 restart`
+   *  CentOS: `service httpd restart`
+   *  Ubuntu: `service apache2 restart`
 
 1. Verify the proxy works by entering the following command:
 
@@ -139,14 +139,14 @@ This section discusses how to configure an Elasticsearch proxy using a virtual h
 
 This section discusses how to secure communication between Apache and Elasticsearch using [HTTP Basic](http://tools.ietf.org/html/rfc2617) authentication with Apache. For more options, consult one of the following resources:
 
-* [Apache 2.2 authentication and authorization tutorial](http://httpd.apache.org/docs/2.2/howto/auth.html)
-* [Apache 2.4 authentication and authorization tutorial](http://httpd.apache.org/docs/2.4/howto/auth.html)
+*  [Apache 2.2 authentication and authorization tutorial](http://httpd.apache.org/docs/2.2/howto/auth.html)
+*  [Apache 2.4 authentication and authorization tutorial](http://httpd.apache.org/docs/2.4/howto/auth.html)
 
 See one of the following sections:
 
-* [Step 1: Create a password file](#es-ws-secure-apache-pwd)
-* [Step 2: Configure your secure virtual host](#es-ws-secure-finish)
-* [Verify communication is secure](#es-ws-secure-verify)
+*  [Step 1: Create a password file](#es-ws-secure-apache-pwd)
+*  [Step 2: Configure your secure virtual host](#es-ws-secure-finish)
+*  [Verify communication is secure](#es-ws-secure-verify)
 
 ### Step 1: Create a password {#es-ws-secure-apache-pwd}
 
@@ -160,9 +160,9 @@ This section discusses how to specify who can access the Apache server.
 
 1. Use a text editor to add the following contents to your secure virtual host.
 
-   * Apache 2.2: Depending on how you set up SSL, the Apache 2.2 SSL configuration might be located in `/etc/httpd/conf/httpd.conf` or `/etc/httpd/conf.d/ssl.conf`.
+   *  Apache 2.2: Depending on how you set up SSL, the Apache 2.2 SSL configuration might be located in `/etc/httpd/conf/httpd.conf` or `/etc/httpd/conf.d/ssl.conf`.
 
-   * Apache 2.4: Edit `/etc/apache2/sites-available/default-ssl.conf`
+   *  Apache 2.4: Edit `/etc/apache2/sites-available/default-ssl.conf`
 
       ```conf
       <Proxy *>
@@ -185,8 +185,8 @@ This section discusses how to specify who can access the Apache server.
 1. If you added the preceding to your secure virtual host, remove `Listen 8080` and the `<VirtualHost *:8080>` directives you added earlier to your unsecure virtual host.
 1. Save your changes, exit the text editor, and restart Apache:
 
-   * CentOS: `service httpd restart`
-   * Ubuntu: `service apache2 restart`
+   *  CentOS: `service httpd restart`
+   *  Ubuntu: `service apache2 restart`
 
 {% include config/es-verify-proxy.md %}
 

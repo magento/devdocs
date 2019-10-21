@@ -14,8 +14,8 @@ functional_areas:
 
 Now that all the items have been added to the cart, we can prepare the quote for [checkout](https://glossary.magento.com/checkout). This process includes the following steps:
 
-* Estimate shipping costs
-* Set shipping and billing information
+*  Estimate shipping costs
+*  Set shipping and billing information
 
 ### Estimate shipping costs {#estimate-shipping}
 

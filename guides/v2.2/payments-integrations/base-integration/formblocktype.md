@@ -87,5 +87,5 @@ The following example adds the Braintree-specific template [`app/code/Magento/Pa
 
 ## What's next
 
-- [Payment method facade]({{ page.baseurl }}/payments-integrations/base-integration/facade-configuration.html)
-- [Add a gateway command]({{ page.baseurl }}/payments-integrations/base-integration/payment-action.html)
+-  [Payment method facade]({{ page.baseurl }}/payments-integrations/base-integration/facade-configuration.html)
+-  [Add a gateway command]({{ page.baseurl }}/payments-integrations/base-integration/payment-action.html)

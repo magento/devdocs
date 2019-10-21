@@ -16,9 +16,9 @@ You can use the [sample Magento_SamplePaymentGateway module](https://github.com/
 
 Your custom payment integration module must have at least the following dependencies:
 
-- Magento_Sales module: to be able to get order details
-- Magento_Payment module: to use the Magento payment provider gateway infrastructure
-- Magento_Checkout module: to be able to add the new [payment method](https://glossary.magento.com/payment-method) to [checkout](https://glossary.magento.com/checkout). If you do not plan to use it on the [storefront](https://glossary.magento.com/storefront) checkout, this dependency is not required.
+-  Magento_Sales module: to be able to get order details
+-  Magento_Payment module: to use the Magento payment provider gateway infrastructure
+-  Magento_Checkout module: to be able to add the new [payment method](https://glossary.magento.com/payment-method) to [checkout](https://glossary.magento.com/checkout). If you do not plan to use it on the [storefront](https://glossary.magento.com/storefront) checkout, this dependency is not required.
 
 Specify these dependencies in your `composer.json` and `module.xml` files.
 

@@ -7,8 +7,8 @@ Directories in the Magento file system must be writable by the web server user a
 
 The way you resolve the issue depends on whether you have a one-user or two-user setup:
 
-* *One user* means you log in to the Magento server as the same user that also runs the web server. This type of setup is common in shared hosting environments.
-* *Two users* means you typically *cannot* log in as, or switch to, the web server user. You typically log in as one user and run the web server as a different user. This is typical in private hosting or if you have your own server.
+*  *One user* means you log in to the Magento server as the same user that also runs the web server. This type of setup is common in shared hosting environments.
+*  *Two users* means you typically *cannot* log in as, or switch to, the web server user. You typically log in as one user and run the web server as a different user. This is typical in private hosting or if you have your own server.
 
 ### One-user resolution
 

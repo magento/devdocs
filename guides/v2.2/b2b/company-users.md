@@ -186,7 +186,7 @@ Not applicable
 
 ## Related information
 
-* [Integrate with the Company module]({{ page.baseurl }}/b2b/company.html)
-* [Manage company objects]({{ page.baseurl }}/b2b/company-object.html)
-* [Manage company roles]({{ page.baseurl }}/b2b/roles.html)
-* [Manage company structures]({{ page.baseurl }}/b2b/company-structures.html)
+*  [Integrate with the Company module]({{ page.baseurl }}/b2b/company.html)
+*  [Manage company objects]({{ page.baseurl }}/b2b/company-object.html)
+*  [Manage company roles]({{ page.baseurl }}/b2b/roles.html)
+*  [Manage company structures]({{ page.baseurl }}/b2b/company-structures.html)

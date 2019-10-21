@@ -77,6 +77,6 @@ Use the same endpoint to bulk transfer the product to Austin.
 
 In Admin, click **Catalog** > **Products**. Scroll down to the Driven Backpack row.
 
-* The stock has been transferred from Berlin to Baltimore. The Baltimore warehouse now has 32 units.
-* The Austin warehouse now has 7 units.
-* The **Salable Quantity** column no longer lists European stock.
+*  The stock has been transferred from Berlin to Baltimore. The Baltimore warehouse now has 32 units.
+*  The Austin warehouse now has 7 units.
+*  The **Salable Quantity** column no longer lists European stock.

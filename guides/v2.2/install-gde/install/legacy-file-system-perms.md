@@ -25,11 +25,11 @@ This section summarizes the permissions Magento uses when creating files in the 
 
 In developer mode, Magento sets permissions as follows:
 
-* Directories: 770
+*  Directories: 770
 
    770 permissions give full control to the owner and to the group, and no permissions to anyone else.
 
-* Files: 660
+*  Files: 660
 
    660 permissions give read-write permissions to the owner and to the group, and no permissions to anyone else.
 
@@ -45,11 +45,11 @@ var/di
 
 When you change to production mode, we set the following permissions on these directories and subdirectories:
 
-* Directories: 750
+*  Directories: 750
 
    750 permissions give full control to the owner, read and execute permissions to the group, and no permissions to anyone else.
 
-* Files: 640
+*  Files: 640
 
    640 permissions give read-write permissions to the owner, read-only permissions to the group, and no permissions to anyone else.
 
@@ -68,8 +68,8 @@ Use the following steps:
 
    Examples:
 
-   * Ubuntu: `/var/www/magento2`
-   * CentOS: `/var/www/html/magento2`
+   *  Ubuntu: `/var/www/magento2`
+   *  CentOS: `/var/www/html/magento2`
 
 1. Set ownership:
 
@@ -79,8 +79,8 @@ Use the following steps:
 
    Typical examples:
 
-   * CentOS: `chown -R :apache .`
-   * Ubuntu: `chown -R :www-data .`
+   *  CentOS: `chown -R :apache .`
+   *  Ubuntu: `chown -R :www-data .`
 
 1. Set permissions:
 

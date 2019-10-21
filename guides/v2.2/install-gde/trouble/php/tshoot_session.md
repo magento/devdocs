@@ -47,8 +47,8 @@ Typical locations follow:
 ### Workaround
 
 1. As a user with `root` privileges, open `php.ini` in a text editor.
-2. Locate `session.save_handler`
-3. Set it in any of the following ways:
+1. Locate `session.save_handler`
+1. Set it in any of the following ways:
 
    *  To comment it out:
 
