@@ -13,11 +13,11 @@ The following example shows how to use a custom VCL snippet with a [Fastly Acces
 
 **Prerequisites**
 
-- Configure the {{ site.var.data.ece }} environment for Fastly services. See [Set up Fastly]({{ page.baseurl }}/cloud/cdn/configure-fastly.html).
+-  Configure the {{ site.var.data.ece }} environment for Fastly services. See [Set up Fastly]({{ page.baseurl }}/cloud/cdn/configure-fastly.html).
 
-- Get Magento Admin UI credentials for your {{ site.data.var.ece }} environment.
+-  Get Magento Admin UI credentials for your {{ site.data.var.ece }} environment.
 
-- List of client IP addresses allowed to access the Magento Admin UI.
+-  List of client IP addresses allowed to access the Magento Admin UI.
 
 ## Create Edge ACL for allowing client IPs {#edge-acl}
 
@@ -31,7 +31,7 @@ Edge ACLs create IP address lists for managing access to your site. In this exam
 
 1. Create the ACL container:
 
-   - Click **Add ACL**.
+   -  Click **Add ACL**.
 
    -  On the *ACL Container* page, enter a **ACL name**—`allowlist`.
 
@@ -69,13 +69,13 @@ Create an `allowlist.json` file with the following JSON content:
 
 Review the following values for the code to determine if you need to make changes:
 
-- `name` — Name for the VCL snippet. For this example, `allowlist`.
+-  `name` — Name for the VCL snippet. For this example, `allowlist`.
 
-- `priority` — Determines when the VCL snippet runs. The priority  is `5` to immediately run and check whether a Magento Admin UI requests are coming from an allowed IP address. The snippet runs before any of the default Magento VCL snippets (`magentomodule_*`) assigned a priority of 50.
+-  `priority` — Determines when the VCL snippet runs. The priority  is `5` to immediately run and check whether a Magento Admin UI requests are coming from an allowed IP address. The snippet runs before any of the default Magento VCL snippets (`magentomodule_*`) assigned a priority of 50.
 
-- `type` — Specifies Specifies a location to insert the snippet in the versioned VCL code. This VCL is a `recv` snippet type which adds the snippet code to the `vcl_recv` subroutine below the default Fastly VCL code and above any objects.
+-  `type` — Specifies Specifies a location to insert the snippet in the versioned VCL code. This VCL is a `recv` snippet type which adds the snippet code to the `vcl_recv` subroutine below the default Fastly VCL code and above any objects.
 
-- `content` — The snippet of VCL code to run. In this example, the code filters requests to the Magento Admin UI and allows access if the client IP address matches an address in the `allowlist` ACL. If the address doesn't match the request is blocked with a `403 Forbidden` error.
+-  `content` — The snippet of VCL code to run. In this example, the code filters requests to the Magento Admin UI and allows access if the client IP address matches an address in the `allowlist` ACL. If the address doesn't match the request is blocked with a `403 Forbidden` error.
 
    If the URL for your Magento Admin UI was changed, replace the sample value `/admin` with the URL for your environment. For example, `/company-admin`.
 

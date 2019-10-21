@@ -55,8 +55,8 @@ See the [Install Data Migration Tool]({{ page.baseurl }}/migration/migration-too
 ## Upgrade Data Migration Tool {#data-migrate-upgr}
 
 1. Log in to your Magento server as, or switch to, [the Magento file system owner]({{ page.baseurl }}/install-gde/prereq/apache-user.html).
-2. Change to Magento 2 root directory.
-3. Enter the following command:
+1. Change to Magento 2 root directory.
+1. Enter the following command:
 
    ```bash
    composer require magento/data-migration-tool:<version>
@@ -70,7 +70,7 @@ See the [Install Data Migration Tool]({{ page.baseurl }}/migration/migration-too
    composer require magento/data-migration-tool:2.1.2
    ```
 
-4. Wait while the command completes.
+1. Wait while the command completes.
 
 {:.ref-header}
 Related topics

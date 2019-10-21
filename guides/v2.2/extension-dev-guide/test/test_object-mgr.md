@@ -17,9 +17,9 @@ Do not use the ObjectManager helper class for classes with a small number of dep
 
 The ObjectManager public interface methods are:
 
--   [getObject method](#getobject). Creates class instances with automatically mocked dependencies.
--   [getCollectionMock method](#getCollectionMock). Lists mocked constructor arguments.
--   [getConstructArguments method](#getConstructArguments). Creates collection instances that contain specified elements.
+-  [getObject method](#getobject). Creates class instances with automatically mocked dependencies.
+-  [getCollectionMock method](#getCollectionMock). Lists mocked constructor arguments.
+-  [getConstructArguments method](#getConstructArguments). Creates collection instances that contain specified elements.
 
 ### getObject method {#getobject}
 
@@ -28,7 +28,7 @@ The ObjectManager public interface methods are:
 <p><b>Syntax:</b></p>
 <pre>
 public function getObject($className,
-     array $arguments = array());
+     array $arguments = []);
 </pre>
 <p><b>Example:</b></p>
 <pre>
@@ -61,7 +61,7 @@ $objectManagerHelper = new \Magento\TestFramework\Helper\ObjectManager($this);
 $option = $this->getMock(
     'Magento\Bundle\Model\Option',
     array('getSelections', '__wakeup', 'getData'),
-    array(),
+    [],
     '',
     false
 );
@@ -76,7 +76,7 @@ $optionCollection =
 <p><b>Syntax:</b></p>
 <pre>
 public function getConstructArguments($className,
-     array $arguments = array());
+     array $arguments = []);
 </pre>
 <p>In the Magento system, several tests introduced mocks for abstract models and blocks.</p>
 <p><b>Example:</b></p>

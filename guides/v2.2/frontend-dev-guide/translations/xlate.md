@@ -53,13 +53,6 @@ Depending on your needs, you can use the existing [language packages](#m2devgde-
 *  The [language package](https://glossary.magento.com/language-package) (`i18n` directory) can be saved to any directory of your [extension](https://glossary.magento.com/extension).
 *  The phrases for translations are enabled in the [Phrase] class.
 
-### More information
-
-*  [Theme dictionaries](#m2devgde-xlate-themes)
-*  [Manually translate words and phrases](#m2devgde-xlate-translating)
-*  [Translation dictionaries](#m2devgde-xlate-dictionaries)
-*  [Language packages](#m2devgde-xlate-languagepack)
-
 ## Theme dictionaries {#m2devgde-xlate-themes}
 
 You might need to add a dictionary for the default language (en_US) in the following cases:

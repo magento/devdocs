@@ -28,9 +28,9 @@ It is recommended to avoid sentence fragments in documentation blocks. Use sente
 
 JSDoc comments requirements:
 
-* A JSDoc comment should begin with a slash (/) and two asterisks (*).
-* Inline tags should be enclosed in braces: `{ @code this }`.
-* `@desc` Block tags should always start on their own line.
+*  A JSDoc comment should begin with a slash (/) and two asterisks (*).
+*  Inline tags should be enclosed in braces: `{ @code this }`.
+*  `@desc` Block tags should always start on their own line.
 
 Example:
 

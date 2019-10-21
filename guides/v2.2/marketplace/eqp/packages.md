@@ -382,8 +382,8 @@ You can submit a package in either of the following ways:
 *  A single POST request with all required fields set. You must explicitly indicate that you are for technical and marketing review using the `action` parameter.
 *  A series of requests, typically in the following order:
    1. A single POST request with the minimum required fields set and `action` set to `draft` in either `technical`, `marketing`, or both. This request accepts the new package and saves it on the Developer Portal for further updates. It returns a unique `submission_id` for subsequent PUT operations.
-   2. One or more PUT requests in which you configure the package parameters. In these requests, set `action` to `draft` in `technical`, `marketing`, or both.
-   3. A final PUT request indicating submission for `technical`, `marketing`, or both.
+   1. One or more PUT requests in which you configure the package parameters. In these requests, set `action` to `draft` in `technical`, `marketing`, or both.
+   1. A final PUT request indicating submission for `technical`, `marketing`, or both.
 
 You can update one or more parameters in `draft` mode, but the API does not check for validation errors.
 

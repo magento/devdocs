@@ -29,12 +29,12 @@ Subsection headings use Open Sans font, semibold weight, 17px font size, and 22p
 
 ## Body Text
 
-* Body text uses Open Sans font, regular weight, 14px font size, and 20px line height.
+*  Body text uses Open Sans font, regular weight, 14px font size, and 20px line height.
 
-* Spacing between paragraphs uses a 15px margin.
+*  Spacing between paragraphs uses a 15px margin.
 
 ## Legal and Link Text
 
-* Legal text, or small text, uses Open Sans, regular weight, 12px font size, and 15px line height. Spacing between paragraphs uses a 12px margin.
+*  Legal text, or small text, uses Open Sans, regular weight, 12px font size, and 15px line height. Spacing between paragraphs uses a 12px margin.
 
-* Link text uses the same attributes as body text, adding a #0066cc color and an underline hover state.
+*  Link text uses the same attributes as body text, adding a #0066cc color and an underline hover state.

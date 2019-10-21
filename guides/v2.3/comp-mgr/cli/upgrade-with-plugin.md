@@ -79,13 +79,13 @@ composer require magento/product-enterprise-edition={{ page.guide_version }}.2 -
 <div class="bs-callout-tip" markdown="1">
 To see a full list of available {{ page.guide_version }} versions:
 
-_Magento Open Source_:
+_{{ ce }}_:
 
 ```bash
 composer show magento/product-community-edition {{ page.guide_version }}.* --all | grep -m 1 versions
 ```
 
-_Magento Commerce_:
+_{{ ee }}_:
 
 ```bash
 composer show magento/product-enterprise-edition {{ page.guide_version }}.* --all | grep -m 1 versions
@@ -98,23 +98,24 @@ composer show magento/product-enterprise-edition {{ page.guide_version }}.* --al
 _Optional_—If the Magento updater is installed (it is located in `update/`) modify it:
 
 1. Backup `update/` directory.
-2. Create a Composer project.
+1. Create a Composer project.
 
    _{{ ce }} version {{ page.guide_version }}.2:_
 
-    ```bash
-    composer create-project --repository=https://repo.magento.com magento/project-community-edition={{ page.guide_version }}.2 temp_dir --no-install
-    ```
+   ```bash
+   composer create-project --repository=https://repo.magento.com magento/project-community-edition={{ page.guide_version }}.2 temp_dir --no-install
+   ```
 
-    _{{ ee }} version {{ page.guide_version }}.2:_
+   _{{ ee }} version {{ page.guide_version }}.2:_
 
-    ```bash
-    composer create-project --repository=https://repo.magento.com magento/project-enterprise-edition={{ page.guide_version }}.2 temp_dir --no-install
-    ```
+   ```bash
+   composer create-project --repository=https://repo.magento.com magento/project-enterprise-edition={{ page.guide_version }}.2 temp_dir --no-install
+   ```
 
-    {: .bs-callout-info }
-      If you need to use a repository that contains non-public packages, such as internal sandboxes, change the URL in `--repository` accordingly.
-3. Remove the old `update/` directory and move the `temp_dir/update/` to the `update/` directory:
+   {: .bs-callout-info }
+   If you need to use a repository that contains non-public packages, such as internal sandboxes, change the URL in `--repository` accordingly.
+
+1. Remove the old `update/` directory and move the `temp_dir/update/` to the `update/` directory:
 
    ```bash
    rm -rf update
@@ -195,11 +196,11 @@ Open your storefront URL in a web browser to check whether the upgrade was succe
 If the application fails with a  `We're sorry, an error has occurred while generating this email.` error:
 
 1. Reset [file system ownership and permissions] as a user with `root` privileges.
-2. Clear these directories:
-   - `var/cache`
-   - `var/page_cache`
-   - `generated/code`
-3. Check your storefront in your web browser again.
+1. Clear these directories:
+   -  `var/cache`
+   -  `var/page_cache`
+   -  `generated/code`
+1. Check your storefront in your web browser again.
 
 <!-- Link definitions -->
 

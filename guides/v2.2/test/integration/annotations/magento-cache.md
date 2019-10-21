@@ -16,17 +16,17 @@ Enable or disable a [cache type][] using the `@magentoCache` annotation.
 
 Here,
 
-- `<type>` is a placeholder for a cache type
-- `all` is a value for any cache type
-- `enabled` or `disabled` to enable or disable the cache respectively
+-  `<type>` is a placeholder for a cache type
+-  `all` is a value for any cache type
+-  `enabled` or `disabled` to enable or disable the cache respectively
 
 ## Principles
 
 1. You can use more than one annotation for a test case or a test method.
-2. Multiple annotations are applied in the given order.
-3. Annotations from different scopes are not merged.
-4. A test method annotation completely overrides a test case annotation.
-5. All cache types are disabled by default.
+1. Multiple annotations are applied in the given order.
+1. Annotations from different scopes are not merged.
+1. A test method annotation completely overrides a test case annotation.
+1. All cache types are disabled by default.
 
 ## Test case
 
@@ -84,16 +84,15 @@ class BarTest extends \PHPUnit\Framework\TestCase
 }
 ```
 
-- Each test method without the `@magentoCache` annotation is run with all cache types enabled.
-- `testOne()` is run with all cache types enabled.
-- `testTwo()` is run with all cache types disabled.
-  The `@magentoCache config disabled` completely overrides the test case annotation.
-  The test case annotation wasn't applied in this case.
-  By default, all cache types are disabled.
-  Thus any disabling annotations does not make much sense here.
-- `testThree()` is run with all but `config` cache type enabled.
-- `testFour()` is run with all the cache types enabled.
-  All cache types are disabled initially, so `@magentoCache config disabled` doesn't make sense here.
+-  Each test method without the `@magentoCache` annotation is run with all cache types enabled.
+-  `testOne()` is run with all cache types enabled.
+-  `testTwo()` is run with all cache types disabled.
+
+   The `@magentoCache config disabled` completely overrides the test case annotation. The test case annotation wasn't applied in this case. By default, all cache types are disabled. Thus any disabling annotations does not make much sense here.
+-  `testThree()` is run with all but `config` cache type enabled.
+-  `testFour()` is run with all the cache types enabled.
+
+   All cache types are disabled initially, so `@magentoCache config disabled` doesn't make sense here.
 
 <!-- Link definitions -->
 

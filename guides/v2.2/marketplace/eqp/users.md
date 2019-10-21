@@ -178,8 +178,8 @@ The following example shows a request to update the personal profile bio field:
 
 The `action` field specifies which update operation to perform:
 
-* `publish`—The default if not specified. Publishes the profile to the relevant [Marketplace Store Partners page](https://marketplace.magento.com/partners.html).
-* `draft`—The update is saved on the Developer Portal, but not published.
+*  `publish`—The default if not specified. Publishes the profile to the relevant [Marketplace Store Partners page](https://marketplace.magento.com/partners.html).
+*  `draft`—The update is saved on the Developer Portal, but not published.
 
 **Request**
 
@@ -260,13 +260,13 @@ curl -X GET \
 
 #### Magento 2 keys
 
-* Each Composer key-pair has unique `label` and `is_enabled` flags to indicate whether the key is enabled.
-* A Composer key-pair is identified by `user_key` (username) and `password_key` (password) when prompted for Composer credentials.
+*  Each Composer key-pair has unique `label` and `is_enabled` flags to indicate whether the key is enabled.
+*  A Composer key-pair is identified by `user_key` (username) and `password_key` (password) when prompted for Composer credentials.
 
 #### Magento 1 keys
 
-* Provides a list of product names and associated product keys, which can be used in the Magento Connect Manager to install extensions.
-* You cannot create, update, or delete these keys.
+*  Provides a list of product names and associated product keys, which can be used in the Magento Connect Manager to install extensions.
+*  You cannot create, update, or delete these keys.
 
 ### Create keys
 
@@ -324,9 +324,9 @@ curl -X POST \
 }
 ```
 
-* The API returns a batch response for each label.
-* A 200 OK HTTP response code indicates a successful update.
-* Any non-200 HTTP response code indicates an error. See the `message` field for details.
+*  The API returns a batch response for each label.
+*  A 200 OK HTTP response code indicates a successful update.
+*  Any non-200 HTTP response code indicates an error. See the `message` field for details.
 
 ### Update keys
 

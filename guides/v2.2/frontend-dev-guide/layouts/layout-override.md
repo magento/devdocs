@@ -37,8 +37,8 @@ Certain attributes, like `htmlClass`, `htmlId`, `label` attributes can be change
 
 This section discusses how to override:
 
-* [Base layout]
-* [Theme layout]
+*  [Base layout]
+*  [Theme layout]
 
 ### Override base layouts {#fedg_layout_override_default}
 

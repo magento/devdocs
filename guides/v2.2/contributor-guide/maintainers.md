@@ -11,23 +11,23 @@ Magento trusts our active community members to review pull requests and accept o
 
 When considering new maintainers, we look for contributors who have shown a propensity for:
 
-- Contributing good and accepted code to multiple Magento projects, including fixes for issues and new features
-- Participating in discussions in our development projects, including the [architecture](https://github.com/magento/architecture){:target="_blank"} and [backlog](https://github.com/magento/backlog){:target="_blank"} projects
-- Reviewing and discussing pull requests from other contributors
-- Helping other contributors with complex decisions and questions, like architecture questions, and providing advice according to [Magento technical guidelines]({{ page.baseurl }}/coding-standards/technical-guidelines.html)
+-  Contributing good and accepted code to multiple Magento projects, including fixes for issues and new features
+-  Participating in discussions in our development projects, including the [architecture](https://github.com/magento/architecture){:target="_blank"} and [backlog](https://github.com/magento/backlog){:target="_blank"} projects
+-  Reviewing and discussing pull requests from other contributors
+-  Helping other contributors with complex decisions and questions, like architecture questions, and providing advice according to [Magento technical guidelines]({{ page.baseurl }}/coding-standards/technical-guidelines.html)
 
 ## Maintainer activities
 
 Maintainers take part in these main activities:
 
-- Review pull request descriptions to make sure that they are meaningful and contain all required details; expedites pull request delivery without requiring additional clarification from contributors
-- Review pull requests according to [Magento technical guidelines]({{ page.baseurl }}/coding-standards/technical-guidelines.html)
-- Avoid [backward incompatible changes]({{ page.baseurl }}/contributor-guide/backward-compatible-development/) in proposed changes
-- Make sure all new code is covered with appropriate unit, integration, and functional tests
-- Review issue descriptions to make sure that they are meaningful and provide clear reproduction steps
-- Participate in discussions regarding proposed solutions, created issues, and more
-- Help other community members resolve their questions and issues with advice, helpful code snippets, or other examples
-- Find and propose better or new methods for pull request reviews, code delivery, QA activities, tests, and more
+-  Review pull request descriptions to make sure that they are meaningful and contain all required details; expedites pull request delivery without requiring additional clarification from contributors
+-  Review pull requests according to [Magento technical guidelines]({{ page.baseurl }}/coding-standards/technical-guidelines.html)
+-  Avoid [backward incompatible changes]({{ page.baseurl }}/contributor-guide/backward-compatible-development/) in proposed changes
+-  Make sure all new code is covered with appropriate unit, integration, and functional tests
+-  Review issue descriptions to make sure that they are meaningful and provide clear reproduction steps
+-  Participate in discussions regarding proposed solutions, created issues, and more
+-  Help other community members resolve their questions and issues with advice, helpful code snippets, or other examples
+-  Find and propose better or new methods for pull request reviews, code delivery, QA activities, tests, and more
 
 ## Guidelines for DevDocs
 

@@ -9,10 +9,10 @@ functional_areas:
 
 Fastly image optimization (Fastly IO) provides real-time image manipulation and optimization to speed up image delivery and simplify maintenance of image source sets for responsive web applications. Once configured Fastly IO provides the following image optimization features:
 
-- Force lossy conversion
-- Deep image optimization
-- Adaptive pixel ratios
-- Support for common image formats: PNG, JPEG, and GIF
+-  Force lossy conversion
+-  Deep image optimization
+-  Adaptive pixel ratios
+-  Support for common image formats: PNG, JPEG, and GIF
 
 You must set up your Fastly service and configure Origin shielding before you can enable and configure the Fastly IO option.
 
@@ -24,8 +24,8 @@ You can enable Fastly image optimization (Fastly IO) from the Admin panel by upl
 
 **Prerequisites**
 
-- Install or upgrade to Fastly module version 1.2.62 or later
-- [Configure Fastly Origin shield and backend]({{ page.baseurl }}/cloud/cdn/configure-fastly.html#backend)
+-  Install or upgrade to Fastly module version 1.2.62 or later
+-  [Configure Fastly Origin shield and backend]({{ page.baseurl }}/cloud/cdn/configure-fastly.html#backend)
 
 {:.procedure}
 To enable Fastly IO:
@@ -49,9 +49,9 @@ To enable Fastly IO:
 
 You can review and update the default IO configuration settings for image optimization as needed. For example, you might want to change WebP and JPEG quality levels for lossy formats or change the format for serving JPEG images to *Progressive* or *Baseline*. Also, you can use Fastly IO for more granular image optimization features, such as:
 
-- Force lossy conversion
-- Deep image optimization
-- Adaptive pixel ratios
+-  Force lossy conversion
+-  Deep image optimization
+-  Adaptive pixel ratios
 
 {:.procedure}
 To update Fastly IO:
@@ -94,8 +94,8 @@ To update Fastly IO:
 
    ![Enable Fastly IO adaptive pixel ratios]({{ site.baseurl }}/common/images/cloud_fastly-io-config-adaptive-pixel.png){:width="650px"}
 
-   - In the _Enable adaptive device pixel ratios_ field, select **Yes**.
-   - In the _Device pixel ratios_ field, accept the default setting, or click the **System Input** check box to remove the setting. Then, select the desired ratio. A higher Device Pixel Ratio setting delivers larger images.
+   -  In the _Enable adaptive device pixel ratios_ field, select **Yes**.
+   -  In the _Device pixel ratios_ field, accept the default setting, or click the **System Input** check box to remove the setting. Then, select the desired ratio. A higher Device Pixel Ratio setting delivers larger images.
 
 1. Click **Save Configuration**.
 

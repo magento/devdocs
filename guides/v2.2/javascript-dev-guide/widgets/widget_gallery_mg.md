@@ -60,8 +60,8 @@ Action that activates zoom.
 
 Possible values:
 
-* `hover`
-* `click`
+*  `hover`
+*  `click`
 
 ### `fullscreenzoom` {#opt_fullscreenzoom}
 
@@ -93,8 +93,8 @@ Specifies whether to display magnified image inside / outside lens.
 
 Possible values:
 
-* `outside`
-* `inside`
+*  `outside`
+*  `inside`
 
 ## Configure magnifier options in `view.xml`
 
