@@ -5,8 +5,6 @@ on:
     branches:
       - master
       - develop
-    paths:
-      - '**.md'
 
 jobs:
   test:
@@ -18,7 +16,7 @@ jobs:
       uses: actions/setup-ruby@v1
       with:
         ruby-version: 2.6
-    - name: Install gems
-      run: bundle install
+    - name: Install mdl gem
+      run: gem install mdl
     - name: Run mdl
-      run: rake test:md
+      run: mdl --style=_checks/styles/style-rules-prod --ignore-front-matter --git-recurse -- .

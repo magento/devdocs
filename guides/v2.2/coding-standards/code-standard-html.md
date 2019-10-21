@@ -17,9 +17,9 @@ The guide is based on the [Google HTML/CSS Style Guide](https://google.github.io
 
 Use only spaces for indentation:
 
-* Tab size: 4 spaces
-* Indent size: 4 spaces
-* Continuation indent: 4 spaces
+*  Tab size: 4 spaces
+*  Indent size: 4 spaces
+*  Continuation indent: 4 spaces
 
 **Recommended**
 

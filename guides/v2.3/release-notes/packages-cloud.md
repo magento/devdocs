@@ -10,7 +10,7 @@ redirect-from: /guides/v2.3/release-notes/thirdparty-mccloud.html
 <!-- The 'packages-dev' variable contains the 'packages-dev' node of the '_data/codebase/v2_3/cloud/composer_lock.json' file
 {% assign packages-dev = site.data.codebase.v2_3.cloud.composer_lock.packages-dev %} -->
 
-<!-- The edition variable contains `ece` value from the the _data/var.yml file
+<!-- The edition variable contains `ece` value from the _data/var.yml file
 {% assign edition = site.data.var.ece %} -->
 
 {% include release-notes/packages.md %}
