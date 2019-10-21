@@ -460,11 +460,11 @@ class AddBodyClassToProductPagePlugin
         $params
     ): array {
         $pageConfig = $resultPage->getConfig();
-        
+
         if (/*add your logic here*/) {
             $pageConfig->addBodyClass('my-new-body-class');
         }
-        
+
         return [$resultPage, $product, $params];
     }
 }
