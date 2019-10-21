@@ -77,8 +77,8 @@ Every Javascript component should extend the core Element class in some way (map
 
 The properties Magento will parse are:
 
-- `imports`
-- `exports`
+-  `imports`
+-  `exports`
 -  `links`
 
 The `links` property is the same as duplicating a value in both `imports` and `exports`. Each of those properties expect an object that contains key/value pairs to bind the expression to. In the example above, it would appear in the `defaults` property like this:

@@ -32,9 +32,9 @@ To increase your PHP memory limit:
 
    Examples follow:
 
-   * CentOS: `service httpd restart`
-   * Ubuntu: `service apache2 restart`
-   * nginx (both CentOS and Ubuntu): `service nginx restart`
+   *  CentOS: `service httpd restart`
+   *  Ubuntu: `service apache2 restart`
+   *  nginx (both CentOS and Ubuntu): `service nginx restart`
 
 1. Try the installation again.
 

@@ -11,11 +11,11 @@ Well, you are on the way to install the Functional Testing Framework!
 
 Follow the next three steps:
 
-- <a href="#mtf_install_pre">Check pre-installation conditions</a>
+-  <a href="#mtf_install_pre">Check pre-installation conditions</a>
 
-- <a href="#mtf_install_perform">Perform the installation</a>
+-  <a href="#mtf_install_perform">Perform the installation</a>
 
-- <a href="#mtf_install_check">Check the installation</a>
+-  <a href="#mtf_install_check">Check the installation</a>
 
 ## Check pre-installation conditions {#mtf_install_pre}
 

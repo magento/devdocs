@@ -31,7 +31,7 @@ In this tutorial, we'll create the infrastructure needed to implement a US and a
 
    Click **Save Web Site**.
 
-2. Click **Create Store** and assign the following values:
+1. Click **Create Store** and assign the following values:
 
    Field | Value
    --- | ---
@@ -42,7 +42,7 @@ In this tutorial, we'll create the infrastructure needed to implement a US and a
 
    Click **Save Store**.
 
-3. Click **Create Store View** and assign the following values:
+1. Click **Create Store View** and assign the following values:
 
    Field | Value
    --- | ---
@@ -64,7 +64,7 @@ In this tutorial, we'll create the infrastructure needed to implement a US and a
 
    Click **Save Web Site**.
 
-2. Click **Create Store** and assign the following values:
+1. Click **Create Store** and assign the following values:
 
    Field | Value
    --- | ---
@@ -75,7 +75,7 @@ In this tutorial, we'll create the infrastructure needed to implement a US and a
 
    Click **Save Store**.
 
-3. Click **Create Store View** and assign the following values:
+1. Click **Create Store View** and assign the following values:
 
    Field | Value
    --- | ---
@@ -91,8 +91,8 @@ In this tutorial, we'll create the infrastructure needed to implement a US and a
 To make it easier to locate products and log in as a customer later in this tutorial, configure Magento to add the store code to the URL.
 
 1. Click **Stores** > Setting* > **Configuration** > **Web** and expand the **Url Options** section.
-2. Change the value of **Add Store Code to Urls** to **Yes**.
-3. Click **Save Config**.
+1. Change the value of **Add Store Code to Urls** to **Yes**.
+1. Click **Save Config**.
 
 ## Configure payment and shipping methods
 

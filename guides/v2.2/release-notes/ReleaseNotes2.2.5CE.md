@@ -14,15 +14,15 @@ See [Magento Security Center](https://magento.com/security/patches/magento-2.2.5
 
 Look for the following highlights in this release:
 
-* Enhancements that help close stored XSS, SQL injection, and cross-site request forgery (CSRF) vulnerabilities. See [Magento Security Center](https://magento.com/security/patches/magento-2.2.5-and-2.1.14-security-update) for more information.
+*  Enhancements that help close stored XSS, SQL injection, and cross-site request forgery (CSRF) vulnerabilities. See [Magento Security Center](https://magento.com/security/patches/magento-2.2.5-and-2.1.14-security-update) for more information.
 
-* Resolution of issues that customers were experiencing when upgrading to Magento 2.2.4 in deployments that span multiple websites. Magento multi-store installations were not using the store view-specific values from the store configuration settings if these settings differed from the global default configuration settings. Instead, Magento used the default configuration for all store views. See  [GitHub-15205](https://github.com/magento/magento2/issues/15205) and [GitHub-15245](https://github.com/magento/magento2/issues/15245) for more detailed discussions of the problems some customers encountered. *Fix submitted by Francesco Marangi in pull request 15929*.
+*  Resolution of issues that customers were experiencing when upgrading to Magento 2.2.4 in deployments that span multiple websites. Magento multi-store installations were not using the store view-specific values from the store configuration settings if these settings differed from the global default configuration settings. Instead, Magento used the default configuration for all store views. See  [GitHub-15205](https://github.com/magento/magento2/issues/15205) and [GitHub-15245](https://github.com/magento/magento2/issues/15245) for more detailed discussions of the problems some customers encountered. *Fix submitted by Francesco Marangi in pull request 15929*.
 
-* Substantial improvements to indexing performance.
+*  Substantial improvements to indexing performance.
 
-* Over 150 **community contributions**.
+*  Over 150 **community contributions**.
 
-* Improvements to our core bundled extensions.
+*  Improvements to our core bundled extensions.
 
 Looking for more information on these new features as well as many others? Check out [Magento 2.2.x Developer Documentation]({{ site.baseurl }}/guides/v2.2/) and the [Magento Open Source User Guide](http://docs.magento.com/m2/ce/user_guide/getting-started.html).
 
@@ -30,33 +30,33 @@ Looking for more information on these new features as well as many others? Check
 
 This release includes significant performance improvements to the core Magento code:
 
-* <!--- MAGETWO-80789  MAGETWO-88808  MAGETWO-89545 -->  Merchants can now  run the catalog search full text indexer and category product indexer in parallel mode by store view, which can significantly decrease  `indexer:reindex` execution time when running Magento with multiple store views and shared catalogs.
+*  <!--- MAGETWO-80789  MAGETWO-88808  MAGETWO-89545 -->Merchants can now  run the catalog search full text indexer and category product indexer in parallel mode by store view, which can significantly decrease  `indexer:reindex` execution time when running Magento with multiple store views and shared catalogs.
 
-* <!--- MAGETWO-74154 --> Refactoring of the catalog full text indexer has improved indexing performance up to 15% for very large profiles (600,000 products) and product catalogs with many configurable options (5,000 configurable products and 500 options).
+*  <!--- MAGETWO-74154 --> Refactoring of the catalog full text indexer has improved indexing performance up to 15% for very large profiles (600,000 products) and product catalogs with many configurable options (5,000 configurable products and 500 options).
 
-* <!--- MAGETWO-88775 -->  Improving the behavior of swatch product attributes has improved search result page performance up to 31% for catalogs with many configurable product options (for example, 5,000 configurable products and 500 options).
+*  <!--- MAGETWO-88775 -->Improving the behavior of swatch product attributes has improved search result page performance up to 31% for catalogs with many configurable product options (for example, 5,000 configurable products and 500 options).
 
 ### Community contribution highlights
 
 Highlights of community contributions include  fixes that improve checkout flow and the sorting of simple products:
 
-* <!--- MAGETWO-87115 --> Customers can now create an account from the Order Confirmation page. Previously, a customer could not populate the required fields to create an account from this page, and Magento displayed an error.
+*  <!--- MAGETWO-87115 -->Customers can now create an account from the Order Confirmation page. Previously, a customer could not populate the required fields to create an account from this page, and Magento displayed an error.
 
-* <!--- MAGETWO-73479 --> Magento now correctly applies coupon codes that exclude bundle products. Previously, Magento applied these coupons but did not exclude bundle products as expected.
+*  <!--- MAGETWO-73479 -->Magento now correctly applies coupon codes that exclude bundle products. Previously, Magento applied these coupons but did not exclude bundle products as expected.
 
-* <!-- MAGETWO-86227 --> When sorting simple products, which catalog promo price rule is applied for, these products are sorted by a regular price instead disregarding the applied promo price.
+*  <!-- MAGETWO-86227 --> When sorting simple products, which catalog promo price rule is applied for, these products are sorted by a regular price instead disregarding the applied promo price.
 
-* <!-- MAGETWO-73419 --> When sorting simple products with a required custom option, which catalog promo price rule is applied for, these products are sorted by a regular price instead disregarding the applied promo price.
+*  <!-- MAGETWO-73419 --> When sorting simple products with a required custom option, which catalog promo price rule is applied for, these products are sorted by a regular price instead disregarding the applied promo price.
 
 ### Highlights (Magento Shipping)
 
 This release of Magento Shipping adds the following new capabilities:
 
-* With core returns, merchants can select carriers to use for returns and send a return label along with forward fulfillment.
+*  With core returns, merchants can select carriers to use for returns and send a return label along with forward fulfillment.
 
-* Batch processing increases automation and merchant efficiency by making it easier to process a large volume of shipments in batches.
+*  Batch processing increases automation and merchant efficiency by making it easier to process a large volume of shipments in batches.
 
-* Collection points provide the ability for customers to designate a drop point rather than residence for delivery by carrier.
+*  Collection points provide the ability for customers to designate a drop point rather than residence for delivery by carrier.
 
 This release of Magento Shipping also includes additional minor enhancements, such as pagination to improve the Admin experience and multiversion API.
 
@@ -190,7 +190,7 @@ You can find Magento Shipping-specific release notes in [Magento Shipping Releas
 ### Swatches
 
 <!--- MAGETWO-86332  -->
-*   You can now use JavaScript mixins to extend swatch functionality in all supported browsers. *Fix submitted by Renon Stewart in pull request 12929*. [GitHub-10559](https://github.com/magento/magento2/issues/10559)
+*  You can now use JavaScript mixins to extend swatch functionality in all supported browsers. *Fix submitted by Renon Stewart in pull request 12929*. [GitHub-10559](https://github.com/magento/magento2/issues/10559)
 
 ### Testing
 
@@ -252,16 +252,16 @@ The Amazon Pay, Magento Shipping, and Vertex extensions have the following known
 
 ### Amazon Pay known issues
 
-* Clicking **Save Config** on the Payment Methods page while configuring your Amazon Pay settings can result in a JavaScript error. **Workaround**: Refresh the page.
+*  Clicking **Save Config** on the Payment Methods page while configuring your Amazon Pay settings can result in a JavaScript error. **Workaround**: Refresh the page.
 
 <!-- BUNDLE--1480  -->
-*   Magento throws the following exception during checkout if you disable Amazon Pay when installing Magento using the web wizard:  `Exception #0 (UnexpectedValueException): Payment model name is not provided in config!`.  Note that this error occurs only if one or two of the three Amazon modules shipped with Magento are disabled. If all three Amazon modules are disabled, this problem does not occur. [GitHub-16167](https://github.com/magento/magento2/issues/16167) <!--- BUNDLE-1480 -->
+*  Magento throws the following exception during checkout if you disable Amazon Pay when installing Magento using the web wizard:  `Exception #0 (UnexpectedValueException): Payment model name is not provided in config!`.  Note that this error occurs only if one or two of the three Amazon modules shipped with Magento are disabled. If all three Amazon modules are disabled, this problem does not occur. [GitHub-16167](https://github.com/magento/magento2/issues/16167) <!--- BUNDLE-1480 -->
 
 <!-- BUNDLE--15453  -->
-*   Magento displays the Amazon Pay option during checkout with multiple addresses even though multi shipping is not supported with Amazon Pay.
+*  Magento displays the Amazon Pay option during checkout with multiple addresses even though multi shipping is not supported with Amazon Pay.
 
 <!-- BUNDLE--1450  -->
-*   Magento does not display the Amazon Pay button during checkout when the customer selects Klarna or PayPal as a payment method for an order containing a virtual product.
+*  Magento does not display the Amazon Pay button during checkout when the customer selects Klarna or PayPal as a payment method for an order containing a virtual product.
 
 <!-- BUNDLE--1427  -->
 *  Magento does not display the Amazon Pay button on the Checkout page if an order contains a virtual product.
@@ -297,7 +297,7 @@ The following Dotmailer behaviors have been observed when Magento Commerce for B
 ### Magento Shipping known issues
 
 <!-- BUNDLE--1448  -->
-*   A merchant can create multiple return shipments for an already shipped return.
+*  A merchant can create multiple return shipments for an already shipped return.
 
 ### Vertex known issues
 
@@ -311,13 +311,13 @@ The following Dotmailer behaviors have been observed when Magento Commerce for B
 *  Magento displays an inaccurate Vertex API Status message when  the **Vertex Address Validation API Url** and **Vertex Validation Function** fields contain invalid values.
 
 <!-- BUNDLE--1399  -->
-*   The Transaction Details reports and Transaction Summary reports have slight irregularities.  Magento does not include product price and taxes in the Transaction Details Report "Gross Amount" and "Tax Amount" columns, and does not include product price in the Transaction Summary Report.
+*  The Transaction Details reports and Transaction Summary reports have slight irregularities.  Magento does not include product price and taxes in the Transaction Details Report "Gross Amount" and "Tax Amount" columns, and does not include product price in the Transaction Summary Report.
 
 <!-- BUNDLE--1405  -->
-*   The **Vertex invoice has been sent** message appears momentarily on the Review and Payments page, but not as expected on the Success page.
+*  The **Vertex invoice has been sent** message appears momentarily on the Review and Payments page, but not as expected on the Success page.
 
 <!-- BUNDLE--1410  -->
-*   When a customer places an order, Magento calculates the amount of tax and sends a Vertex invoice even when the Company Information tab is missing  the company street, company city, and company postal code.
+*  When a customer places an order, Magento calculates the amount of tax and sends a Vertex invoice even when the Company Information tab is missing  the company street, company city, and company postal code.
 
 <!-- BUNDLE--1457  -->
 *  Magento does not display the Vertex invoice has been sent message as expected when the payment method is Authorize.net and  the order status is Suspect Fraud.

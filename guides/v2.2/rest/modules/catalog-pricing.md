@@ -15,10 +15,10 @@ The  `SpecialPriceStorageInterface` service provides the means to efficiently sc
 
 The `POST /V1/products/special-price` call sets special prices for the following product types:
 
-* Simple
-* Bundle
-* Virtual
-* Downloadable
+*  Simple
+*  Bundle
+*  Virtual
+*  Downloadable
 
 **Service Name**
 
@@ -417,10 +417,10 @@ Name | Description | Format | Requirements
 
 The `POST /V1/products/base-price` call can set base prices for the following types of products:
 
-* Simple
-* Virtual
-* Downloadable
-* Bundle (fixed price type only)
+*  Simple
+*  Virtual
+*  Downloadable
+*  Bundle (fixed price type only)
 
 The following example sets the base price for a simple and a downloadable product.
 
@@ -511,9 +511,9 @@ Name | Description | Format | Requirements
 
 The `POST /V1/products/cost` call can set the cost values for the following types of products:
 
-* Simple
-* Virtual
-* Downloadable
+*  Simple
+*  Virtual
+*  Downloadable
 
 The following example sets the cost value for a simple and a downloadable product.
 

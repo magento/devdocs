@@ -80,9 +80,9 @@ For more information on configurations, see [Enabling Inventory Management](http
 
 You may need to disable {{site.data.var.im}} modules to:
 
-* Speed up the upgrade process for merchants migrating from 2.0.x, 2.1.x, or 2.2.x to 2.3.x.
-* Use custom or third party inventory and order management modules.
-* Use [Magento Order Management](https://omsdocs.magento.com) for inventory and order management. The current Order Management connector does not support {{site.data.var.im}} interfaces. We plan to support this integration in a later release.
+*  Speed up the upgrade process for merchants migrating from 2.0.x, 2.1.x, or 2.2.x to 2.3.x.
+*  Use custom or third party inventory and order management modules.
+*  Use [Magento Order Management](https://omsdocs.magento.com) for inventory and order management. The current Order Management connector does not support {{site.data.var.im}} interfaces. We plan to support this integration in a later release.
 
 To disable {{site.data.var.im}}, see the instructions for [Enable or disable modules]({{site.baseurl}}/guides/v2.3/install-gde/install/cli/install-cli-subcommands-enable.html). When complete, you should see the following modules and values in `<Magento_installation_directory>/app/etc/config.php` (v1.1.2 Beta):
 
@@ -172,13 +172,13 @@ For the latest, update your metapackage version:
 
 See the following guides for more information on upgrades:
 
-* [Software Update Guide]({{site.baseurl}}/guides/v2.3/comp-mgr/bk-compman-upgrade-guide.html)
-* [Enable or disable modules]({{site.baseurl}}/guides/v2.3/install-gde/install/cli/install-cli-subcommands-enable.html)
+*  [Software Update Guide]({{site.baseurl}}/guides/v2.3/comp-mgr/bk-compman-upgrade-guide.html)
+*  [Enable or disable modules]({{site.baseurl}}/guides/v2.3/install-gde/install/cli/install-cli-subcommands-enable.html)
 
 ## Additional information
 
 See the following guides for more information on {{site.data.var.im}}:
 
-* [Release Notes]({{site.baseurl}}/guides/v2.3/inventory/release-notes.html)
-* [Inventory Management]({{site.baseurl}}/guides/v2.3/inventory/index.html) overview for developer resources
-* [Managing Inventory](https://docs.magento.com/m2/ce/user_guide/catalog/inventory-management.html) in the Magento 2 User Guides for merchant information
+*  [Release Notes]({{site.baseurl}}/guides/v2.3/inventory/release-notes.html)
+*  [Inventory Management]({{site.baseurl}}/guides/v2.3/inventory/index.html) overview for developer resources
+*  [Managing Inventory](https://docs.magento.com/m2/ce/user_guide/catalog/inventory-management.html) in the Magento 2 User Guides for merchant information

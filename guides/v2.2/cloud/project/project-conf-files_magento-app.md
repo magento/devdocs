@@ -96,8 +96,8 @@ Contrary to standard `.htaccess` approaches that accept a _blacklist_ and allow 
 
 Our default configuration allows the following:
 
-- From the root (`/`) path, only web and media can be accessed
-- From the `~/pub/static` and `~/pub/media` paths, any file can be accessed
+-  From the root (`/`) path, only web and media can be accessed
+-  From the `~/pub/static` and `~/pub/media` paths, any file can be accessed
 
 The following example shows the default configuration for a set of web-accessible locations associated with an entry in the  [`mounts` property](#mounts):
 
