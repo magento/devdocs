@@ -83,7 +83,7 @@ The directories and files structure described below is the most extended one. It
         optional
       </td>
       <td colspan="1">
-          Module-specific styles (<code>.css</code> and/or <code>.less</code> files). General styles for the module are in the <code>_module.less</code> file, and styles for widgets are in <code>_widgets.less</code>
+          Module-specific styles (<code>.css</code> and/or <code>.less</code> files). General styles for the module are in the <code>_module.less</code> file, and styles for widgets are in <code>_widgets.less</code>.
       </td>
     </tr>
     <tr>
