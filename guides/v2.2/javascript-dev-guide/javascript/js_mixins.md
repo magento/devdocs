@@ -105,6 +105,29 @@ define(['jquery'], function ($) {
 });
 ```
 
+#### Extend JS Object
+
+Another use-case for the JS mixin is when the base Javascript file returns an object. In this case, a wrapper is necessary. The following example mixin extends the `setHash` function of [step navigator object][]. Here, `_super()` is the base method that can be called if needed.
+
+**File:** `OrangeCompany/Sample/view/frontend/web/js/model/step-navigator-mixin.js`
+
+```javascript
+define([
+    'mage/utils/wrapper'
+], function (wrapper) {
+    'use strict';
+
+    return function (stepNavigator) {
+        stepNavigator.setHash = wrapper.wrap(stepNavigator.setHash, function (_super) {
+            window.location.hash = hash;
+            // add extended functionality here or modify method logic altogether
+        });
+
+        return stepNavigator;
+    };
+});
+```
+
 ## Declaring a mixin
 
 Mixins are declared in the `mixins` property in the `requirejs-config.js` configuration file.
@@ -114,7 +137,7 @@ The mixins configuration in the `requirejs-config.js` associates a target compon
 
 ### Example
 
-The following is an example of a `requirejs-config.js` file that adds the `columns-mixin` and `modal-widget-mixin` mixins, defined in the previous examples, to the [grid column component][] and [modal widget][].
+The following is an example of a `requirejs-config.js` file that adds the `columns-mixin`, `modal-widget-mixin`, and `step-navigator-mixin` mixins, which were defined in the previous examples, to the [grid column component][], [modal widget][], and [step navigator object][].
 
 **File:** `OrangeCompany/Sample/view/base/requirejs-config.js`
 
@@ -127,6 +150,9 @@ var config = {
          },
          "Magento_Ui/js/modal/modal": {
              "OrangeCompany_Sample/js/modal-widget-mixin": true
+         },
+         'Magento_Checkout/js/model/step-navigator': {
+             'OrangeCompany_Sample/js/model/step-navigator-mixin': true
          }
      }
  }
@@ -150,6 +176,7 @@ The following is a list of files in the [`Magento_CheckoutAgreement`] module tha
 [application area]: {{ page.baseurl }}/architecture/archi_perspectives/components/modules/mod_and_areas.html
 [AMD module]: https://en.wikipedia.org/wiki/Asynchronous_module_definition
 [grid column component]: {{ site.mage2bloburl }}/{{page.guide_version}}/app/code/Magento/Ui/view/base/web/js/grid/controls/columns.js
+[step navigator object]: {{ site.mage2bloburl }}/{{page.guide_version}}/app/code/Magento/Checkout/view/frontend/web/js/model/step-navigator.js
 [`view/frontend/requirejs-config.js`]: {{ site.mage2bloburl }}/{{page.guide_version}}/app/code/Magento/CheckoutAgreements/view/frontend/requirejs-config.js
 [`view/frontend/web/js/model/place-order-mixin.js`]: {{ site.mage2bloburl }}/{{page.guide_version}}/app/code/Magento/CheckoutAgreements/view/frontend/web/js/model/place-order-mixin.js
 [`view/frontend/web/js/model/set-payment-information-mixin.js`]: {{ site.mage2bloburl }}/{{page.guide_version}}/app/code/Magento/CheckoutAgreements/view/frontend/web/js/model/set-payment-information-mixin.js
