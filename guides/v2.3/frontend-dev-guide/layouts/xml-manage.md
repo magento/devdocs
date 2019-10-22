@@ -410,101 +410,67 @@ class Class implements \Magento\Framework\View\Element\Block\ArgumentInterface
 }
 ```
 
-## Modify functionality with plugins (interceptors) {#layout_markup_modify_with_plugins}
+## Modify layout with plugins (interceptors) {#layout_markup_modify_with_plugins}
 
-To substitute or extend the behavior of original, public methods for any class or interface, we can make use of plugins, or interceptors, which are classes that modify the behavior of public class functions by intercepting a function call and running code before, after, or around that function call in the form of listeners.
+Plugins can be also useful, when we need to make some layout updates.
+Here is an example of how a css class can be added to `<body>` tag on product view page.
 
-This interception approach reduces conflicts among extensions that change the behavior of the same class or method, with a Plugin class implementation changing only the behavior of a class function, rather than overriding the entire class.
-
-In order to use plugins (interceptors), we must first define them in the di.xml of the module:
+> `etc/frontend/di.xml`
 
 ```xml
-<config>
-  <type name="{ObservedType}">
-    <plugin name="{pluginName}" type="{PluginClassName}" />
-  </type>
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Catalog\Helper\Product\View">
+        <plugin name="add_custom_body_class_to_product_page"
+                type="OrangeCompany\Learning\Plugin\AddBodyClassToProductPagePlugin"/>
+    </type>
 </config>
 ```
 
-Before listeners are used whenever we want to change the arguments of an original method or wish to add additional behavior before an original method is called. They do not need a return value.
-
-Around listeners are used when we want to change both the arguments and the returned values of an original method or add new behavior before and after an original method is called. Because of this, return values are required.
-
-After listeners are used when we want to change the values returned by an original method or want to add some behavior after an original method is called. As such, they also require return values.
-
-Let us say we want to change the behavior of an addProduct method in the Magento\Checkout\Model\Cart module by adding plugins. We first define the di.xml of this module as the following:
-
-```xml
-<config>
-  <type name="Magento\Checkout\Model\Cart">
-    <plugin name="MagentoCart" type="Company\Sample\Model\Cart" />
-  </type>
-</config>
-```
-
-Now in the Company\Sample\Model\Cart directory, we will create our plugin in a file we will call Cart.php. To call the before listener, it is customary to add the prefix 'before' to the method name, meaning we can call something like the following:
+> `OrangeCompany/Learning/Plugin/AddBodyClassToProductPagePlugin.php`
 
 ```php
 <?php
 
-namespace Company\Sample\Model;
+namespace OrangeCompany\Learning\Plugin;
 
-class Cart
+use Magento\Catalog\Helper\Product\View as ProductViewHelper;
+use Magento\Framework\View\Result\Page;
+
+/**
+ * Class AddBodyClassToProductPagePlugin
+ */
+class AddBodyClassToProductPagePlugin
 {
-    public function beforeAddProduct(
-        \Magento\Checkout\Model\Cart $subject,
-        $productInfo,
-        $requestInfo = null
-    ) {
-        $requestInfo['qty'] = 10; // increasing quantity to 10
-        return array($productInfo, $requestInfo);
+    /**
+     * Adding a custom class to body
+     *
+     * @param ProductViewHelper $subject
+     * @param Page $resultPage
+     * @param $product
+     * @param $params
+     *
+     * @return array
+     */
+    public function beforeInitProductLayout(
+        ProductViewHelper $subject,
+        Page $resultPage,
+        $product,
+        $params
+    ): array {
+        $pageConfig = $resultPage->getConfig();
+
+        if (/*add your logic here*/) {
+            $pageConfig->addBodyClass('my-new-body-class');
+        }
+
+        return [$resultPage, $product, $params];
     }
 }
 ```
 
-Often we use before listeners when we want to change parameters of a method. In this case, we are setting the quantity to 10, meaning it will now always add 10 of a product whenever a product is added to the cart.
-
-If we wanted to add an around listener to the same addProduct method, we could use the same file. Since we want to call an around listener, we would want to add the prefix 'around' to the method name, giving us the following:
-
-```php
-<?php
-
-namespace Company\Sample\Model;
-
-class Cart
-{
-    public function aroundAddProduct(
-        \Magento\Checkout\Model\Cart $subject,
-        \Closure $proceed,
-        $productInfo,
-        $requestInfo = null
-    ) {
-        $requestInfo['qty'] = 10; // setting quantity to 10
-        $result = $proceed($productInfo, $requestInfo);
-        // change result here
-        return $result;
-    }
-}
-```
-
-For an around listener, the return value is formed in such way that the parameters following the $closure parameter in the around listener method definition are passed to the $closure function call in a sequential order.
-
-Finally, let us say that we want to change the behavior of the getName method of Magento\Catalog\Model\Product with an after listener. Assuming we have properly set the di.xml file of the Magento\Catalog\Model\Product module with the plugin, we can create a file called Product.php in the Company\Sample\Model.
-
-Similar to the other listeners, an after listener is usually called by adding a designated prefix, which is ‘after’ in this case, to the method name. We can then get the corresponding after listener for our getName method:
-
-```php
-<?php
-
-namespace Company\Sample\Model;
-
-class Product
-{
-    public function afterGetName(\Magento\Catalog\Model\Product $subject, $result) {
-        return "Apple ".$result; // Adding Apple in product name
-    }
-}
-```
+As result, the `<body>` tag has a new `my-new-body-class` class on all product pages.
 
 ## Manage the 'My Account' dashboard navigation links
 

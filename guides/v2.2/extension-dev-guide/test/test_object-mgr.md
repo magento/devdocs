@@ -28,7 +28,7 @@ The ObjectManager public interface methods are:
 <p><b>Syntax:</b></p>
 <pre>
 public function getObject($className,
-     array $arguments = array());
+     array $arguments = []);
 </pre>
 <p><b>Example:</b></p>
 <pre>
@@ -61,7 +61,7 @@ $objectManagerHelper = new \Magento\TestFramework\Helper\ObjectManager($this);
 $option = $this->getMock(
     'Magento\Bundle\Model\Option',
     array('getSelections', '__wakeup', 'getData'),
-    array(),
+    [],
     '',
     false
 );
@@ -76,7 +76,7 @@ $optionCollection =
 <p><b>Syntax:</b></p>
 <pre>
 public function getConstructArguments($className,
-     array $arguments = array());
+     array $arguments = []);
 </pre>
 <p>In the Magento system, several tests introduced mocks for abstract models and blocks.</p>
 <p><b>Example:</b></p>
