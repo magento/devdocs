@@ -7,7 +7,7 @@ functional_areas:
   - Setup
 ---
 
-We include a base .gitignore file with the Magento Community Edition project repository. See the latest [link to the latest Magento `.gitignore`](https://raw.githubusercontent.com/magento/magento2/2.2/.gitignore). 
+We include a base `.gitignore` file with the {{site.data.var.ce}} project repository. See [the latest Magento `.gitignore`](https://raw.githubusercontent.com/magento/magento2/2.2/.gitignore) file. 
 If you need to add a file that is in the `.gitignore` list, you can use the -f (force) option when staging a commit:
 
 ```bash
