@@ -19,14 +19,14 @@ Before you use this command, you must [install the Magento software]({{ page.bas
 
 Anytime you perform an action that causes the Magento [database schema](https://glossary.magento.com/database-schema) or data to change, you must update them by running the command discussed in this section. A partial list of reasons follows:
 
-* You upgraded the Magento software using the command line
-* You installed or updated a component using the command line
-* You enabled or disabled a component using the command line
+*  You upgraded the Magento software using the command line
+*  You installed or updated a component using the command line
+*  You enabled or disabled a component using the command line
 
 Note the following:
 
-* If you used the Web Setup Wizard to do any of the preceding, you don't have to use the command discussed in this topic.
-* A Magento *component* can be a module, theme, or language pack; it doesn't matter whether the component comes from the Magento Marketplace or not
+*  If you used the Web Setup Wizard to do any of the preceding, you don't have to use the command discussed in this topic.
+*  A Magento *component* can be a module, theme, or language pack; it doesn't matter whether the component comes from the Magento Marketplace or not
 
 1. Start the upgrade:
 

@@ -12,9 +12,9 @@ The Magento application uses [Composer](https://glossary.magento.com/composer) p
 
 To package a component, you must:
 
-*   Create a Magento Composer file (`composer.json`).
-*   Register the component using `registration.php`
-*   Package and publish your component.
+*  Create a Magento Composer file (`composer.json`).
+*  Register the component using `registration.php`
+*  Package and publish your component.
 
     Use our [validation tool](https://github.com/magento/marketplace-tools){:target="_blank"} to check your package before you distribute it.
 

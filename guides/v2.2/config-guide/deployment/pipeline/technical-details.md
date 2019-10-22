@@ -70,7 +70,7 @@ We changed the following behavior in the Magento Admin in production mode:
    *  Merge CSS and JavaScript
    *  Server-side or client-side LESS compilation
    *  Inline translations
-   * As discussed previously, any configuration setting in `config.php` or `env.php` is locked and cannot be edited in the Admin.
+   *  As discussed previously, any configuration setting in `config.php` or `env.php` is locked and cannot be edited in the Admin.
    *  You can change the Admin locale only to languages used by deployed themes
 
    The following figure shows an example of the **Account Setting**> **Interface Locale** list in the Admin showing only two deployed locales:

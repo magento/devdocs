@@ -41,5 +41,5 @@ Backward compatibility can be indicated by the use of `@api`. For more informati
 {:.ref-header}
 Related topics
 
-- [Service contract design patterns]({{ page.baseurl }}/extension-dev-guide/service-contracts/design-patterns.html)
-- [Configure services as webAPIs]({{ page.baseurl }}/extension-dev-guide/service-contracts/service-to-web-service.html)
+-  [Service contract design patterns]({{ page.baseurl }}/extension-dev-guide/service-contracts/design-patterns.html)
+-  [Configure services as webAPIs]({{ page.baseurl }}/extension-dev-guide/service-contracts/service-to-web-service.html)

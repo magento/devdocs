@@ -22,7 +22,7 @@ Attribute | Data type | Description
 --- | --- | ---
 `attribute_set_id` | Int | The attribute set assigned to the product
 `canonical_url` | String  | The canonical URL for the product
-`categories` | [CategoryInterface] | The categories assigned to the product. See [categories query]({{ page.baseurl }}/graphql/queries/category.html) for more information
+`categories` | [[CategoryInterface]]({{ page.baseurl }}/graphql/product/category-interface.html) | The categories assigned to the product. See [CategoryInterface attributes]({{ page.baseurl }}/graphql/product/category-interface.html) for more information
 `country_of_manufacture` | String | The product's country of origin
 `created_at` | String | Timestamp indicating when the product was created
 `crosssell_products` | [ProductInterface] | An array of cross-sell products

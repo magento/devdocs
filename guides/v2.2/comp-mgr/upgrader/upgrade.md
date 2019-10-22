@@ -63,11 +63,11 @@ Then access your [storefront](https://glossary.magento.com/storefront) and verif
 
 After you finish your upgrade, errors might display.
 
-* On the main storefront page, the following error might display.
+*  On the main storefront page, the following error might display.
 
    _We're sorry, an error has occurred while generating this email._
 
-* On a [category](https://glossary.magento.com/category) page, the following error might display:
+*  On a [category](https://glossary.magento.com/category) page, the following error might display:
 
    _We can't find products matching the selection._
 

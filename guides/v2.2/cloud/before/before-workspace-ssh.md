@@ -17,8 +17,8 @@ The [SSH protocol](https://en.wikipedia.org/wiki/Secure_Shell) is designed to ma
 
 When initially setting up your local environment, you need to add the SSH keys to the following specific environments:
 
-* Starter: Add to Master (Production) and any environments you create by branching from Master
-* Pro: Add to Master Integration environment. After your Staging and Production environments are provisioned, you can add the SSH keys to those environments through the Project Web Interface or via SSH and CLI commands.
+*  Starter: Add to Master (Production) and any environments you create by branching from Master
+*  Pro: Add to Master Integration environment. After your Staging and Production environments are provisioned, you can add the SSH keys to those environments through the Project Web Interface or via SSH and CLI commands.
 
 {% include cloud/enable-ssh.md %}
 

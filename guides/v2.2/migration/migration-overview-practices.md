@@ -15,15 +15,15 @@ This section provides our best information about how to speed up and simplify yo
 
 ## Best practices and recommendations
 
-* **Use a copy of the database from Magento 1 instance** when performing migration testing. Do not involve the main instance of your Magento 1 store database so that your production environment is not affected.
+*  **Use a copy of the database from Magento 1 instance** when performing migration testing. Do not involve the main instance of your Magento 1 store database so that your production environment is not affected.
 
-* **Remove outdated and redundant data** from your Magento 1 database before migration.
+*  **Remove outdated and redundant data** from your Magento 1 database before migration.
 
   Such data may include logs, order quotes, recently viewed or compared products, visitors, event-specific categories, promotional rules, etc.
 
-* **Follow our [General Rules for Successful Migration]({{ page.baseurl }}/migration/migration-migrate.html)** to avoid issues or conflicts.
+*  **Follow our [General Rules for Successful Migration]({{ page.baseurl }}/migration/migration-migrate.html)** to avoid issues or conflicts.
 
-* To boost performance, you may **enable the `direct_document_copy` option** in your `config.xml`:
+*  To boost performance, you may **enable the `direct_document_copy` option** in your `config.xml`:
 
         <direct_document_copy>1</direct_document_copy>
 
@@ -33,14 +33,14 @@ This section provides our best information about how to speed up and simplify yo
 
 We tested migration on the following system:
 
-* Environment: Virtual Box VM, CentOS 6, 2.5Gb RAM, CPU 1 core 2.6GHz
+*  Environment: Virtual Box VM, CentOS 6, 2.5Gb RAM, CPU 1 core 2.6GHz
 
-* Database had 177k products, 355k orders, 214k customers
+*  Database had 177k products, 355k orders, 214k customers
 
 ## Performance results
 
-* Settings migration time: ~10 mins
+*  Settings migration time: ~10 mins
 
-* Data migration time: ~9 hrs (all data except [URL](https://glossary.magento.com/url) Rewrites, ~85% of total data)
+*  Data migration time: ~9 hrs (all data except [URL](https://glossary.magento.com/url) Rewrites, ~85% of total data)
 
-* Site downtime estimate: a few minutes to reindex and change DNS settings. Additional time required to "warm up" the page [cache](https://glossary.magento.com/cache)
+*  Site downtime estimate: a few minutes to reindex and change DNS settings. Additional time required to "warm up" the page [cache](https://glossary.magento.com/cache)

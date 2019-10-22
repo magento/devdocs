@@ -53,20 +53,20 @@ For details about how to initialize a widget in a `.phtml` template, refer to th
 
 ## Options {#prompt_options}
 
-- [actions](#prompt_actions)
-- [autoOpen](#prompt_autoopen)
-- [clickableOverlay](#prompt_clickableOverlay)
-- [content](#prompt_content)
-- [focus](#prompt_focus)
-- [title](#prompt_title)
-- [modalClass](#prompt_modalClass)
-- [promptContentTmpl](#prompt_promptContentTmpl)
-- [value](#prompt_value)
-- [promptField](#prompt_promptField)
-- [attributesForm](#prompt_attributesForm)
-- [attributesField](#prompt_attributesField)
-- [validation](#prompt_validation)
-- [validationRules](#prompt_validationRules)
+-  [actions](#prompt_actions)
+-  [autoOpen](#prompt_autoopen)
+-  [clickableOverlay](#prompt_clickableOverlay)
+-  [content](#prompt_content)
+-  [focus](#prompt_focus)
+-  [title](#prompt_title)
+-  [modalClass](#prompt_modalClass)
+-  [promptContentTmpl](#prompt_promptContentTmpl)
+-  [value](#prompt_value)
+-  [promptField](#prompt_promptField)
+-  [attributesForm](#prompt_attributesForm)
+-  [attributesField](#prompt_attributesField)
+-  [validation](#prompt_validation)
+-  [validationRules](#prompt_validationRules)
 
 ### `actions` {#prompt_actions}
 Widget callbacks.
@@ -199,9 +199,9 @@ The array of validation classes which will be added to prompt field.
 
 The prompt widget implements the following events:
 
-- `confirm` callback: called when the confirmation button is clicked. The first argument is the value of the input field.
-- `cancel` callback: called when the cancel button is clicked.
-- `always` callback: called when the popup is closed.
+-  `confirm` callback: called when the confirmation button is clicked. The first argument is the value of the input field.
+-  `cancel` callback: called when the cancel button is clicked.
+-  `always` callback: called when the popup is closed.
 
 ## Keyboard navigation {#prompt_key_navigation}
 
