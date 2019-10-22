@@ -14,9 +14,9 @@ The `Magento_RequisitionList` module allows a customer to create multiple lists 
 
 `RequisitionList` functionality is similar to wish lists, but it has the following differences:
 
-* A requisition list is not purged after sending items to the shopping cart. It can be used to place multiple orders.
+*  A requisition list is not purged after sending items to the shopping cart. It can be used to place multiple orders.
 
-* The UI for requisition lists has been modified to a compact view in order to display large number of items.
+*  The UI for requisition lists has been modified to a compact view in order to display large number of items.
 
 The merchant can configure maximum number of requisition lists per customer.
 
@@ -44,7 +44,7 @@ For more information about layouts, see the [Layout documentation]({{ page.baseu
 
 The following directories contain extensible UI components:
 
-* `Magento\RequisitionList\view\frontend\ui_component` - requisition list listing
+*  `Magento\RequisitionList\view\frontend\ui_component` - requisition list listing
 
 For more information, see [UI Listing/Grid Component]({{ page.baseurl }}/ui_comp_guide/components/ui-listing-grid.html).
 

@@ -18,8 +18,8 @@ For merchant instructions, see [Instant Purchase] in the user guide.
 
 The logic found in the [Instant Purchase module] is divided into two parts:
 
-* [Instant Purchase logic]
-* [Order placement]
+*  [Instant Purchase logic]
+*  [Order placement]
 
 ### Instant Purchase logic
 
@@ -30,29 +30,29 @@ This data is updated when the relevant customer data changes, such as adding or 
 
 #### Important interfaces
 
-* [`InstantPurchaseInterface`]
+*  [`InstantPurchaseInterface`]
 
   The implementation for this interface defines Instant Purchase calculations.
   The default implementation uses several interfaces to choose the appropriate payment method, billing and shipping addresses, and shipping method.
 
-* [`PaymentTokenChooserInterface`]
+*  [`PaymentTokenChooserInterface`]
 
   Responsible for choosing the stored payment method.
   The default value is the last created and saved payment method used.
 
   Instant Purchase will not use payment methods that were used but not saved.
 
-* [`ShippingAddressChooserInterface`]
+*  [`ShippingAddressChooserInterface`]
 
   Responsible for choosing the shipping address.
   The default implementation chooses the default shipping address set by the customer.
 
-* [`BillingAddressChooserInterface`]
+*  [`BillingAddressChooserInterface`]
 
   Responsible for choosing the billing address.
   The default implementation chooses the default billing address set by the customer.
 
-* [`ShippingMethodChooserInterface`]
+*  [`ShippingMethodChooserInterface`]
 
   Responsible for choosing the shipping method.
   The default implementation chooses the cheapest shipping method.
@@ -105,14 +105,14 @@ To address this issue, the Instant Purchase module allows you to postpone the fi
 Use the following steps to help you implement a custom deferred shipping method:
 
 1. Create an implementation of the [`ShippingMethodChooserInterface`] with a `choose()` method that returns a `ShippingMethodInterface` with the following properties:
-   * Returns [`DeferredShippingMethodChooserInterface::CARRIER`] when `getCarrierCode()` is called.
-   * Returns a unique string when `getMethodCode()` is called.
+   *  Returns [`DeferredShippingMethodChooserInterface::CARRIER`] when `getCarrierCode()` is called.
+   *  Returns a unique string when `getMethodCode()` is called.
 
      This string is used as a key to determine the corresponding logic during order placement.
-   * Returns a translated phrase when `getCarrierTitle()` is called.
+   *  Returns a translated phrase when `getCarrierTitle()` is called.
 
      This phrase is shown as the shipping method description in the Instant Purchase confirmation pop-up.
-   * Returns `true` when `getAvailable()` is called.
+   *  Returns `true` when `getAvailable()` is called.
 1. Create an implementation of the [`DeferredShippingMethodChooserInterface`].
    Unlike the `ShippingMethodChooserInterface`, this interface retrieves the [`Quote\Address`] instead of the customer's address, so it has access to the necessary data.
 
@@ -148,9 +148,9 @@ The format of the payment method can also be customized for [specific payments].
 
 A payment method implementation can be integrated with Instant Purchase if it meets the following requirements:
 
-* It implements the [payment provider gateway] mechanism.
-* It implements [vault integration].
-* The payment along with the stored payment token is processed on the server side
+*  It implements the [payment provider gateway] mechanism.
+*  It implements [vault integration].
+*  The payment along with the stored payment token is processed on the server side
 
 The framework for payment method integration is provided in the [`Magento\InstantPurchase\PaymentMethodIntegration`] namespace.
 

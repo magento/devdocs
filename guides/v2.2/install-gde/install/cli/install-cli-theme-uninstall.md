@@ -21,8 +21,8 @@ This section discusses how to uninstall one or more themes, optionally including
 
 This command uninstalls *only* themes that are specified in `composer.json`; in other words, themes that are provided as [Composer](https://glossary.magento.com/composer) packages. If your theme is not a Composer package, you must uninstall it manually by:
 
-* Updating the `parent` node information in `theme.xml` to remove references to the theme.
-* Removing theme code from the file system.
+*  Updating the `parent` node information in `theme.xml` to remove references to the theme.
+*  Removing theme code from the file system.
 
    [More information about theme inheritance]({{ page.baseurl }}/frontend-dev-guide/themes/theme-inherit.html).
 
@@ -40,9 +40,9 @@ magento theme:uninstall [--backup-code] [-c|--clear-static-content] {theme path}
 
 where
 
-* `{theme path}` is the relative path to the theme, starting with the area name. For example, the path to the Blank theme supplied with Magento 2 is `frontend/Magento/blank`.
-* `--backup-code` backs up the Magento 2 codebase as discussed in the paragraphs that follow.
-* `--clear-static-content` cleans generated [static view files]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html#config-cli-static-overview), which is necessary to cause static view files to display properly.
+*  `{theme path}` is the relative path to the theme, starting with the area name. For example, the path to the Blank theme supplied with Magento 2 is `frontend/Magento/blank`.
+*  `--backup-code` backs up the Magento 2 codebase as discussed in the paragraphs that follow.
+*  `--clear-static-content` cleans generated [static view files]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html#config-cli-static-overview), which is necessary to cause static view files to display properly.
 
 The command performs the following tasks:
 

@@ -72,11 +72,11 @@ catalog_product_attribute (Product Attribute)| `Magento/Catalog/etc/di.xml` | `M
 
 Changing the batch size can help you optimize indexer running time. For example, for a store with the following characteristics:
 
-* 10 websites
-* 10 store groups
-* 20 store views
-* 300 tier prices
-* About 40,000 products (of which 254 are configurable)
+*  10 websites
+*  10 store groups
+*  20 store views
+*  300 tier prices
+*  About 40,000 products (of which 254 are configurable)
 
 Reducing the batch size for `catalog_product_price` indexer from 5000 to 1000 decreases the execution time from about 4 hours to less than 2 hours. You can experiment to determine the ideal batch size. In general, halving the batch size can decrease the indexer execution time.
 
@@ -131,9 +131,9 @@ As of Magento 2.3, under certain circumstances, you can disable this indexer to 
 
 The following conditions must apply to disable Product EAV indexer:
 
-* You are using a search engine other than MySQL (such as Elasticsearch). If you are using MySQL as the search engine, you cannot disable the Product EAV indexer.
+*  You are using a search engine other than MySQL (such as Elasticsearch). If you are using MySQL as the search engine, you cannot disable the Product EAV indexer.
 
-* You have not installed any 3rd-party extensions that rely on the Product EAV indexer.
+*  You have not installed any 3rd-party extensions that rely on the Product EAV indexer.
 
 {:.bs-callout .bs-callout-info}
 To determine whether any 3rd-party extensions are using the Product EAV indexer, check the `catalog_product_index_eav` table for reading/writing activity.
@@ -143,5 +143,5 @@ To disable the Product EAV indexer in the Admin, go to **Stores** > Settings > *
 {:.ref-header}
 Related topics
 
-* [Indexing overview]({{ page.baseurl }}/extension-dev-guide/indexing.html)
-* [Adding a custom indexer]({{ page.baseurl }}/extension-dev-guide/indexing-custom.html)
+*  [Indexing overview]({{ page.baseurl }}/extension-dev-guide/indexing.html)
+*  [Adding a custom indexer]({{ page.baseurl }}/extension-dev-guide/indexing-custom.html)

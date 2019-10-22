@@ -258,8 +258,8 @@ The directories and files structure described below is the most extended one. It
 
 Apart from the configuration file and theme [metadata](https://glossary.magento.com/metadata) file, all theme files fall into the following two categories:
 
-* Static view files
-* Dynamic view files
+*  Static view files
+*  Dynamic view files
 
 ### Static view files {#theme-structure-pub}
 

@@ -16,8 +16,8 @@ You have up to **7 days** to _restore_ a snapshot.
 
 We provide two methods for creating and managing snapshots:
 
-- Magento Web Interface
-- Magento CLI
+-  Magento Web Interface
+-  Magento CLI
 
 ## Create a snapshot {#create-snapshot}
 
@@ -123,9 +123,9 @@ To create a database dump:
 
 1. [SSH into the environment]({{ page.baseurl }}/cloud/env/environments-ssh.html) that contains the database you want to copy:
 
-   - **Staging:** `ssh -A <project ID>_stg@<project ID>.ent.magento.cloud`
-   - **Production:** `ssh -A <project ID>@<project ID>.ent.magento.cloud`
-   - To SSH into the `master` branch of your Integration environment:
+   -  **Staging:** `ssh -A <project ID>_stg@<project ID>.ent.magento.cloud`
+   -  **Production:** `ssh -A <project ID>@<project ID>.ent.magento.cloud`
+   -  To SSH into the `master` branch of your Integration environment:
 
       ```bash
       magento-cloud environment:ssh
@@ -139,10 +139,10 @@ To create a database dump:
 
 {: .bs-callout-info }
 
-- We recommend putting the application in maintenance mode before doing a database dump in Production environments.
-- The command creates an archive in your local project directory called  `dump-<timestamp>.sql.gz`.
-- If an error occurs during the dump, the command deletes the dump file to conserve disk space. Review the logs for details (`var/log/cloud.log`).
-- For Pro Production environments, this command dumps only from one of three high-availability nodes, so production data written to a different node during the dump may not be copied. It generates a `var/dbdump.lock` file to prevent running the command on more than one node.
+-  We recommend putting the application in maintenance mode before doing a database dump in Production environments.
+-  The command creates an archive in your local project directory called  `dump-<timestamp>.sql.gz`.
+-  If an error occurs during the dump, the command deletes the dump file to conserve disk space. Review the logs for details (`var/log/cloud.log`).
+-  For Pro Production environments, this command dumps only from one of three high-availability nodes, so production data written to a different node during the dump may not be copied. It generates a `var/dbdump.lock` file to prevent running the command on more than one node.
 
 {: .bs-callout-tip }
 If you want to push this data into an environment, see [Migrate data and static files]({{ page.baseurl }}/cloud/live/stage-prod-migrate.html).

@@ -29,8 +29,8 @@ To transfer the Magento software archive to your server:
 
     There are many ways to configure FTP and SCP. Following are a few packages you can use. Magento does not recommend particular software.
 
-    * Windows: [WinSCP](https://winscp.net/eng/download.php) or [Filezilla](https://filezilla-project.org/download.php)
-    * Mac OS: [CyberDuck](https://cyberduck.io/?l=en) or [Filezilla](https://filezilla-project.org/download.php)
+    *  Windows: [WinSCP](https://winscp.net/eng/download.php) or [Filezilla](https://filezilla-project.org/download.php)
+    *  Mac OS: [CyberDuck](https://cyberduck.io/?l=en) or [Filezilla](https://filezilla-project.org/download.php)
 
 1. Create a connection to your Magento server.
 
@@ -91,5 +91,5 @@ Related topics
 
 Install the Magento software:
 
-* [Command line]({{ page.baseurl }}/install-gde/install/cli/install-cli.html)
-* [Setup Wizard]({{ page.baseurl }}/install-gde/install/web/install-web.html)
+*  [Command line]({{ page.baseurl }}/install-gde/install/cli/install-cli.html)
+*  [Setup Wizard]({{ page.baseurl }}/install-gde/install/web/install-web.html)

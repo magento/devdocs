@@ -23,14 +23,14 @@ This **13-step tutorial** generally takes **1 hour**.
 
 ### Complete these prerequisites
 
-* Install Magento 2.3.0 or later.
+*  Install Magento 2.3.0 or later.
 
-* Install a REST client. You can use any REST client to send calls to Magento. [Postman](https://www.getpostman.com/) is recommended.
+*  Install a REST client. You can use any REST client to send calls to Magento. [Postman](https://www.getpostman.com/) is recommended.
 
-* Know how to construct a REST call in Magento. See [Construct a request]({{ page.baseurl }}/get-started/gs-web-api-request.html) for details.
+*  Know how to construct a REST call in Magento. See [Construct a request]({{ page.baseurl }}/get-started/gs-web-api-request.html) for details.
 
-* Obtain an admin authorization token. Multiple calls in this tutorial require administrator privileges. See [Generate the admin token]({{ page.baseurl }}/rest/tutorials/prerequisite-tasks/create-admin-token.html) for more information.
+*  Obtain an admin authorization token. Multiple calls in this tutorial require administrator privileges. See [Generate the admin token]({{ page.baseurl }}/rest/tutorials/prerequisite-tasks/create-admin-token.html) for more information.
 
 ### Other resources
 
-* Magento uses [Swagger](https://swagger.io) to provide REST API documentation on local instances of Magento. See [Generate a local API reference]({{ page.baseurl }}/rest/generate-local.html) for more information. You can view the [static REST API documentation]({{site.baseurl}}/redoc/{{page.guide_version}}/), which displays reference information using ReDoc.
+*  Magento uses [Swagger](https://swagger.io) to provide REST API documentation on local instances of Magento. See [Generate a local API reference]({{ page.baseurl }}/rest/generate-local.html) for more information. You can view the [static REST API documentation]({{site.baseurl}}/redoc/{{page.guide_version}}/), which displays reference information using ReDoc.

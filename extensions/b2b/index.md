@@ -91,7 +91,7 @@ The {{site.data.var.b2b}} extension uses MySQL for message queue management. If 
     bin/magento queue:consumers:start sharedCatalogUpdatePrice
     ```
 
-{: .bs-callout .bs-callout-tip }
+{: .bs-callout-tip }
 Append `&` to the command to run it in the background, return to a prompt, and continue running commands. For example: `bin/magento queue:consumers:start sharedCatalogUpdatePrice &`.
 
 Refer to [Manage message queues]({{ site.baseurl }}/guides/v2.3/config-guide/mq/manage-message-queues.html) for more information.
