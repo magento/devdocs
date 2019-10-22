@@ -149,7 +149,7 @@ Continue launching your Docker environment in the default _production_ mode.
 
    ```bash
    docker-compose run deploy magento-command config:set system/full_page_cache/caching_application 2 --lock-env &&
-    \ 
+    \
    docker-compose run deploy magento-command setup:config:set --http-cache-hosts=varnish
    ```
 
@@ -245,7 +245,7 @@ The `{{site.data.var.ct}}` version 2002.0.18 and later supports developer mode.
 1. Configure and connect Varnish.
 
    ```bash
-   docker-compose run deploy magento-command config:set system/full_page_cache/caching_application 2 --lock-env && \ 
+   docker-compose run deploy magento-command config:set system/full_page_cache/caching_application 2 --lock-env && \
    docker-compose run deploy magento-command setup:config:set --http-cache-hosts=varnish
    ```
 
