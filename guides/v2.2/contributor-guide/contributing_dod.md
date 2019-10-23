@@ -83,7 +83,7 @@ High level testing policy:
  
 * Before committing code changes, author must ensure successful execution of all tests by running all tests or at least those which might be affected by code changes.
   Continuous integration enforces execution of all tests and author is accountable for broken builds.
-* Any code that is added or changed must have explicit tests to validate the behavior. To clarify, this policy is intended to prove that the integrity of the code is verified regardless of which implementations are loaded in a black-box environment. This may be done through unit or integration testing as appropriate. 
+* Any code that is added or changed must have explicit tests to validate the behavior. To clarify, this policy is intended to prove that the integrity of the code is verified regardless of which implementations are loaded in a blackbox environment. This may be done through unit or integration testing as appropriate. 
 * Code must be also shown to work with known collaborators. This must be done through integration tests and ideally should involve as few components as possible per test case. This level of tests ensures that the code will work with its known associates. Specific examples can be subject but such associates would include composites, chains, pools, etc. but also include cases like a Template filter working with a specific processor loaded.
 * In addition, regardless of the interpretation of the testing strategy below: Any class marked with an `@api` annotation MUST be covered with explicit test coverage via integration or unit tests. 
   
@@ -109,7 +109,7 @@ Integration test policy:
 * Consumers of default SPI's implementations should have at least basic coverage that ensures the default implementations of the SPI are correctly configured and loaded.  
   
   For example, `Magento\Framework\SomeClassFilter` may contain a `FilterPool` that comes with default `FilterInterface`'s from `Magento\Framework`. Each of these implementations would have their own coverage pursuant to this document. However, there should also be some basic assertions within the test coverage for `Magento\Framework\SomeClassFilter` that ensure each of the default filters are loaded correctly.     
-  This shouldn't be explicitly coverage such as `$filter->isLoaded('someDefaultFilter')` 
+  This shouldn't be explicit coverage such as `$filter->isLoaded('someDefaultFilter')` 
 
 See: [Running Integration Tests][3].
 
