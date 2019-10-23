@@ -59,17 +59,17 @@ Any backward-incompatible changes must also be recorded in the accompanying docu
 
 ### Understanding Black, White, and Gray tests
 
-- A blackbox test doesn't have any knowledge of how the subject of the test is built.
-- A whitebox has knowledge of how the subject of the test is built. The test logic is usually coupled to the implementation and will typically be sensitive to changes. 
-- A graybox is similar to blackbox testing where the test isn't directly coupled to the subject's implementation but the test cases may be designed in a way to assert sensitive portions of the implementation will work correctly.
+- A black box test doesn't have any knowledge of how the subject of the test is built.
+- A white box has knowledge of how the subject of the test is built. The test logic is usually coupled to the implementation and will typically be sensitive to changes. 
+- A gray box is similar to black box testing where the test isn't directly coupled to the subject's implementation but the test cases may be designed in a way to assert sensitive portions of the implementation will work correctly.
 
 For example:
 
 Assuming there is a method with the signature `function removeLetterFromString(string $letter, string $string): string`
 
-- A blackbox test would test the obvious cases both normal cases such as `removeLetterFromString('a', 'fooabar') === 'foobr'` and edge cases such as when `$letter` or `$string` are empty or `$letter` contains multiple or multibyte characters. It would probably test several variations of string lengths. Notice there is no knowledge of how this function is written.
-- A whitebox test would look into the implementation of the method and see that it calls a microservice API and make sure that each condition of the code has test coverage. For example, this test may force the microservice client to return an error and have a test for the expected handling of that scenario. This wouldn't be a reusable test and it's directly coupled to the implementation. 
-- A graybox test would look at the implementation of the method and see that it calls a microservice API and injects the `$string` into the URL so it may add some extra test coverage for strings that contain unsafe URL characters such as `&?=%/`. This isn't coupled to the implementation as the implementation could be changed and the test should still pass.   
+- A black box test would test the obvious cases both normal cases such as `removeLetterFromString('a', 'fooabar') === 'foobr'` and edge cases such as when `$letter` or `$string` are empty or `$letter` contains multiple or multibyte characters. It would probably test several variations of string lengths. Notice there is no knowledge of how this function is written.
+- A white box test would look into the implementation of the method and see that it calls a microservice API and make sure that each condition of the code has test coverage. For example, this test may force the microservice client to return an error and have a test for the expected handling of that scenario. This wouldn't be a reusable test and it's directly coupled to the implementation. 
+- A gray box test would look at the implementation of the method and see that it calls a microservice API and injects the `$string` into the URL so it may add some extra test coverage for strings that contain unsafe URL characters such as `&?=%/`. This isn't coupled to the implementation as the implementation could be changed and the test should still pass.   
 
 ### Automated Tests
 
@@ -83,7 +83,7 @@ High level testing policy:
  
 * Before committing code changes, author must ensure successful execution of all tests by running all tests or at least those which might be affected by code changes.
   Continuous integration enforces execution of all tests and author is accountable for broken builds.
-* Any code that is added or changed must have explicit tests to validate the behavior. To clarify, this policy is intended to prove that the integrity of the code is verified regardless of which implementations are loaded in a blackbox environment. This may be done through unit or integration testing as appropriate. 
+* Any code that is added or changed must have explicit tests to validate the behavior. To clarify, this policy is intended to prove that the integrity of the code is verified regardless of which implementations are loaded in a black box environment. This may be done through unit or integration testing as appropriate. 
 * Code must be also shown to work with known collaborators. This must be done through integration tests and ideally should involve as few components as possible per test case. This level of tests ensures that the code will work with its known associates. Specific examples can be subject but such associates would include composites, chains, pools, etc. but also include cases like a Template filter working with a specific processor loaded.
 * In addition, regardless of the interpretation of the testing strategy below: Any class marked with an `@api` annotation MUST be covered with explicit test coverage via integration or unit tests. 
   
@@ -103,7 +103,7 @@ For the purpose of Magento testing, there are essentially two broad categories o
 
 Integration test policy:
 
-* Methods and classes must have blackbox or graybox test coverage making sure to include all variations for normal use as well as corner-cases. 
+* Methods and classes must have black box or gray box test coverage making sure to include all variations for normal use as well as corner-cases. 
 * SPI's must have test coverage. Often times Magento has extension points that may only be utilized by extension developers. Use TestModule's to implement those SPI extension points and verify they are used correctly. 
 * As mentioned above, classes marked with `@api` must contain coverage. Integration tests must be used cover these classes unless a unit test is more appropriate. This includes JS modules and components. 
 * Consumers of default SPI's implementations should have at least basic coverage that ensures the default implementations of the SPI are correctly configured and loaded.  
@@ -138,7 +138,7 @@ Classes and methods that:
 * Have little to no dependencies. 
   - The test must not be directly coupled to the collaborators of the test subject. If the collaborators are solely responsible for the behavior of the tested subject, it won't be a good unit test. 
 * Do not interact with resources like database, file system, 3rd party systems etc. 
-* Can be covered by a blackbox test
+* Can be covered by a black box test
   - The test must not be a mirror of the code. Instead the test must validate the contract of the method or class is upheld by the implementation. Specific implementations may be weak in certain areas so specific corner cases could cover that logic while still being a black box test.  
 * Would not be easily foreseen to have dependencies in the future.
   - This can be hard to predict but a good example of when it would be unlikely is a simple utility class that performs some standalone operation. By contrast, a helper would be very likely to have dependencies by nature. 
