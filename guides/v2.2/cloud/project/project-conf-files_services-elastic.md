@@ -30,6 +30,9 @@ To enable Elasticsearch:
        disk: 1024
    ```
 
+   {:.bs-callout-info}
+   For details on determining the correct version to install, see [Elasticsearch software compatibility](#elasticsearch-software-compatibility)
+
 1. Set the `relationships` property in the `.magento.app.yaml` file.
 
    ```yaml
@@ -58,6 +61,110 @@ To enable Elasticsearch:
    ```bash
    bin/magento cache:clean
    ```
+
+   {.bs-callout-tip}
+   You can use the `SEARCH_CONFIGURATION` deploy variable to retain customized search service settings between deployments.
+
+## Elasticsearch software compatibility
+
+When you install or upgrade your {{ site.data.var.ece }} project, ensure that the Elasticsearch service version you specify in the `services.yaml` file is compatible with the [Elasticsearch PHP](https://github.com/elastic/elasticsearch-php) client for {{ site.data.var.ee }}.
+
+-  **First time setup**–Confirm that the Elasticsearch version specified in the `services.yaml` file is compatible with the Elasticsearch PHP client configured for {{ site.data.var.ee }}.
+
+-  **Project upgrade**–Verify that the Elasticsearch PHP client in the new Magento version is compatible with the Elasticsearch service version installed on the Cloud infrastructure.
+
+{% include cloud/cloud-elasticsearch-client-compatibility.md %}
+
+{:.procedure}
+To check Elasticsearch software compatibility:
+
+1. Use SSH to log in to the remote environment.
+
+1. Check the Composer package version for `elasticsearch/elasticsearch`.
+
+   ```bash
+   composer show elasticsearch/elasticsearch
+   ```
+
+   In the response, check the installed version in the `versions` property.
+
+   ```terminal
+   name     : elasticsearch/elasticsearch
+   descrip. : PHP Client for Elasticsearch
+   keywords : client, elasticsearch, search
+   versions : * v6.7.1
+   type     : library
+   license  : Apache License 2.0 (Apache-2.0) (OSI approved) https://spdx.org    licensesApache-2.0.html#licenseText
+   source   : [git] https://github.com/elastic    elasticsearch-php.git7be453dd36d1b141b779f2cb956715f8e04ac2f4
+   dist     : [zip] https://api.github.com/repos/elastic/elasticsearch-php/zipball/     7be453dd36d1b141b779f2cb956715f8e04ac2f4 7be453dd36d1b141b779f2cb956715f8e04ac2f4
+   path     : /app/vendor/elasticsearch/elasticsearch
+   names    : elasticsearch/elasticsearch
+   ```
+
+   You can also find the Elasticsearch PHP client version in the  `composer.lock` file in the  environment root directory.
+
+1. From the command line, retrieve the Elasticsearch service connection details.
+
+   ```bash
+   echo $MAGENTO_CLOUD_RELATIONSHIPS | base64 -d | json_pp
+   ```
+
+   In the response, find the IP address for the Elasticsearch service endpoint:
+
+   ```terminal
+   "elasticsearch" : [
+     {
+        "cluster" : "fo3qdoxtla4j4-master-7rqtwti",
+        "public" : false,
+        "service" : "elasticsearch",
+        "port" : 9200,
+        "query" : {},
+        "scheme" : "http",
+        "fragment" : null,
+        "host" : "elasticsearch.internal",
+        "username" : null,
+        "rel" : "elasticsearch",
+        "password" : null,
+        "ip" : "169.254.220.11",
+        "path" : null,
+        "hostname"  "dzggu33f75wi3sd24lgwtoupxm.elasticsearch.service._.magentosite.cloud",
+        "type" : "elasticsearch:6.5"
+     }
+   ```
+
+1. Retrieve the installed Elasticsearch service `version:number` from the service endpoint.
+
+   ```bash
+   curl -XGET <elasticsearch-service-endopint-ip-address>:9200/
+   ```
+
+   ```terminal
+   {
+      "name" : "-AqGi9D",
+      "cluster_name" : "elasticsearch",
+      "cluster_uuid" : "_yze6-ywSEW1MaAF8ZPWyQ",
+      "version" : {
+        "number" : "6.5.4",
+        "build_flavor" : "default",
+        "build_type" : "deb",
+        "build_hash" : "82a8aa7",
+        "build_date" : "2019-01-23T12:07:18.760675Z",
+        "build_snapshot" : false,
+        "lucene_version" : "7.5.0",
+        "minimum_wire_compatibility_version" : "5.6.0",
+        "minimum_index_compatibility_version" : "5.0.0"
+   },
+   "  tagline" : "You Know, for Search"
+   }
+   ```
+
+1. Check version compatibility between the Elasticsearch service and the PHP client.
+
+   If the versions are incompatible, make one of the following updates to your environment configuration:
+
+   -  Change the Elasticsearch service version in the `services.yaml` file to a version that is compatible with the Elasticsearch PHP client. On Pro Staging and Production environments, you must submit a support ticket to change the Elasticsearch service version.
+
+   -  [Change the Elasticsearch PHP client]({{ page.baseurl }}/config-guide/elasticsearch/es-downgrade.html) to a version that is compatible with the Elasticsearch service version.
 
 ## Restart the Elasticsearch service
 
