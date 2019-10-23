@@ -9,8 +9,8 @@ functional_areas:
 
 There are two possible ways to customize page layout in Magento:
 
-* Changing [layout](https://glossary.magento.com/layout) files.
-* Altering templates.
+*  Changing [layout](https://glossary.magento.com/layout) files.
+*  Altering templates.
 
 To change the page wireframe, modify the [page layout] files; all other customizations are performed in the [page configuration] or [generic layout] files.
 
@@ -34,16 +34,16 @@ The basic set of instructions is the same for all types of layout files. This to
 
 Use the following layout instructions to customize your layout:
 
-* [`<block>`](#fedg_layout_xml-instruc_ex_block)
-* [`<container>`](#fedg_layout_xml-instruc_ex_cont)
-* [`before` and `after` attributes](#fedg_xml-instrux_before-after)
-* [`<action>`](#fedg_layout_xml-instruc_ex_act)
-* [`<referenceBlock>` and `<referenceContainer>`](#fedg_layout_xml-instruc_ex_ref)
-* [`<move>`](#fedg_layout_xml-instruc_ex_mv)
-* [`<remove>`](#fedg_layout_xml-instruc_ex_rmv)
-* [`<update>`](#fedg_layout_xml-instruc_ex_upd)
-* [`<argument>`](#argument)
-* [`<block> vs <container>`](#block_vs_container)
+*  [`<block>`](#fedg_layout_xml-instruc_ex_block)
+*  [`<container>`](#fedg_layout_xml-instruc_ex_cont)
+*  [`before` and `after` attributes](#fedg_xml-instrux_before-after)
+*  [`<action>`](#fedg_layout_xml-instruc_ex_act)
+*  [`<referenceBlock>` and `<referenceContainer>`](#fedg_layout_xml-instruc_ex_ref)
+*  [`<move>`](#fedg_layout_xml-instruc_ex_mv)
+*  [`<remove>`](#fedg_layout_xml-instruc_ex_rmv)
+*  [`<update>`](#fedg_layout_xml-instruc_ex_upd)
+*  [`<argument>`](#argument)
+*  [`<block> vs <container>`](#block_vs_container)
 
 ### block {#fedg_layout_xml-instruc_ex_block}
 
@@ -115,9 +115,9 @@ Use this feature to make temporary changes to a store, such as disabling a secti
 
 ### block vs. container {#block_vs_container}
 
-* Blocks represents the end of the chain in rendering HTML for Magento.
-* Containers contain blocks and can wrap them in an HTML tag.
-* Containers do not render any output if there are no children assigned to them.
+*  Blocks represents the end of the chain in rendering HTML for Magento.
+*  Containers contain blocks and can wrap them in an HTML tag.
+*  Containers do not render any output if there are no children assigned to them.
 
 ### before and after attributes {#fedg_xml-instrux_before-after}
 

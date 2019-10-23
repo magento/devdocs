@@ -16,8 +16,8 @@ A report name is the same as the `name` attribute in the `<report>` node as desc
 Report XML does not support the asterisk statement.
 All columns must be declared:
 
-* for the main table — inside the `<source>` node
-* for join tables — inside the `<link-source>` node
+*  for the main table — inside the `<source>` node
+*  for join tables — inside the `<link-source>` node
 
 Columns are added using the `<attribute>` node.
 

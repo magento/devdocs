@@ -79,13 +79,13 @@ composer require magento/product-enterprise-edition={{ page.guide_version }}.2 -
 <div class="bs-callout-tip" markdown="1">
 To see a full list of available {{ page.guide_version }} versions:
 
-_Magento Open Source_:
+_{{ ce }}_:
 
 ```bash
 composer show magento/product-community-edition {{ page.guide_version }}.* --all | grep -m 1 versions
 ```
 
-_Magento Commerce_:
+_{{ ee }}_:
 
 ```bash
 composer show magento/product-enterprise-edition {{ page.guide_version }}.* --all | grep -m 1 versions

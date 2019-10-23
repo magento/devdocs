@@ -103,59 +103,59 @@ Deprecated method | Use instead | Subsequent calls
 **Class:** [`Magento\Paypal\Cron\FetchReports`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Paypal/Cron/FetchReports.php){:target="_blank"}<br/>
 **Action:**
 
-- Method `execute` has been reworked and now throws an `\Exception` instead of logging it
-- Method `__construction` no longer has the `\Psr\Log\LoggerInterface` dependency
-- The `report_date` column from the `paypal_settlement_report` table has been changed from `timestamp` format to `date`.
+-  Method `execute` has been reworked and now throws an `\Exception` instead of logging it
+-  Method `__construction` no longer has the `\Psr\Log\LoggerInterface` dependency
+-  The `report_date` column from the `paypal_settlement_report` table has been changed from `timestamp` format to `date`.
 
 ## Changes in repositories
 
 In Magento 2.2 the behavior of repositories regarding the Filters added to Search Criteria  was unified:
 
-- The boolean OR statement joins Filters inside a single Filter Group.
-- The boolean AND statement joins Filter Groups inside a Search Criteria.
+-  The boolean OR statement joins Filters inside a single Filter Group.
+-  The boolean AND statement joins Filter Groups inside a Search Criteria.
 
  In the scope of this work, the following repositories were affected.
 
 ### Affected {{site.data.var.ce}} repositories
 
-- `\Magento\Catalog\Api\AttributeSetRepositoryInterface`
-- `\Magento\Catalog\Api\CategoryAttributeRepositoryInterface`
-- `\Magento\Catalog\Api\ProductAttributeGroupRepositoryInterface`
-- `\Magento\Catalog\Api\ProductAttributeRepositoryInterface`
-- `\Magento\Cms\Api\BlockRepositoryInterface`
-- `\Magento\Cms\Api\PageRepositoryInterface`
-- `\Magento\Eav\Api\AttributeGroupRepositoryInterface`
-- `\Magento\Eav\Api\AttributeRepositoryInterface`
-- `\Magento\Eav\Api\AttributeSetRepositoryInterface`
-- `\Magento\Sales\Api\CreditmemoCommentRepositoryInterface`
-- `\Magento\Sales\Api\CreditmemoItemRepositoryInterface`
-- `\Magento\Sales\Api\CreditmemoRepositoryInterface`
-- `\Magento\Sales\Api\InvoiceCommentRepositoryInterface`
-- `\Magento\Sales\Api\InvoiceItemRepositoryInterface`
-- `\Magento\Sales\Api\InvoiceRepositoryInterface`
-- `\Magento\Sales\Api\OrderAddressRepositoryInterface`
-- `\Magento\Sales\Api\OrderItemRepositoryInterface`
-- `\Magento\Sales\Api\OrderPaymentRepositoryInterface`
-- `\Magento\Sales\Api\OrderStatusHistoryRepositoryInterface`
-- `\Magento\Sales\Api\ShipmentCommentRepositoryInterface`
-- `\Magento\Sales\Api\ShipmentItemRepositoryInterface`
-- `\Magento\Sales\Api\ShipmentRepositoryInterface`
-- `\Magento\Sales\Api\ShipmentTrackRepositoryInterface`
-- `\Magento\Sales\Api\TransactionRepositoryInterface`
-- `\Magento\Ui\Api\BookmarkRepositoryInterface`
-- `\Magento\Vault\Api\PaymentTokenRepositoryInterface`
+-  `\Magento\Catalog\Api\AttributeSetRepositoryInterface`
+-  `\Magento\Catalog\Api\CategoryAttributeRepositoryInterface`
+-  `\Magento\Catalog\Api\ProductAttributeGroupRepositoryInterface`
+-  `\Magento\Catalog\Api\ProductAttributeRepositoryInterface`
+-  `\Magento\Cms\Api\BlockRepositoryInterface`
+-  `\Magento\Cms\Api\PageRepositoryInterface`
+-  `\Magento\Eav\Api\AttributeGroupRepositoryInterface`
+-  `\Magento\Eav\Api\AttributeRepositoryInterface`
+-  `\Magento\Eav\Api\AttributeSetRepositoryInterface`
+-  `\Magento\Sales\Api\CreditmemoCommentRepositoryInterface`
+-  `\Magento\Sales\Api\CreditmemoItemRepositoryInterface`
+-  `\Magento\Sales\Api\CreditmemoRepositoryInterface`
+-  `\Magento\Sales\Api\InvoiceCommentRepositoryInterface`
+-  `\Magento\Sales\Api\InvoiceItemRepositoryInterface`
+-  `\Magento\Sales\Api\InvoiceRepositoryInterface`
+-  `\Magento\Sales\Api\OrderAddressRepositoryInterface`
+-  `\Magento\Sales\Api\OrderItemRepositoryInterface`
+-  `\Magento\Sales\Api\OrderPaymentRepositoryInterface`
+-  `\Magento\Sales\Api\OrderStatusHistoryRepositoryInterface`
+-  `\Magento\Sales\Api\ShipmentCommentRepositoryInterface`
+-  `\Magento\Sales\Api\ShipmentItemRepositoryInterface`
+-  `\Magento\Sales\Api\ShipmentRepositoryInterface`
+-  `\Magento\Sales\Api\ShipmentTrackRepositoryInterface`
+-  `\Magento\Sales\Api\TransactionRepositoryInterface`
+-  `\Magento\Ui\Api\BookmarkRepositoryInterface`
+-  `\Magento\Vault\Api\PaymentTokenRepositoryInterface`
 
 ### Affected {{site.data.var.ee}} repositories
 
-- `\Magento\GiftCardAccount\Api\GiftCardAccountRepositoryInterface`
-- `\Magento\GiftWrapping\Api\WrappingRepositoryInterface`
-- `\Magento\Rma\Api\CommentRepositoryInterface`
-- `\Magento\Rma\Model\RmaRepository`
-- `\Magento\Rma\Model\Service\RmaManagement`
-- `\Magento\Rma\Model\Rma\Status\HistoryRepository`
-- `\Magento\Rma\Api\RmaRepositoryInterface`
-- `\Magento\Staging\Api\UpdateRepositoryInterface`
-- `\Magento\VersionsCms\Api\HierarchyNodeRepositoryInterface`
+-  `\Magento\GiftCardAccount\Api\GiftCardAccountRepositoryInterface`
+-  `\Magento\GiftWrapping\Api\WrappingRepositoryInterface`
+-  `\Magento\Rma\Api\CommentRepositoryInterface`
+-  `\Magento\Rma\Model\RmaRepository`
+-  `\Magento\Rma\Model\Service\RmaManagement`
+-  `\Magento\Rma\Model\Rma\Status\HistoryRepository`
+-  `\Magento\Rma\Api\RmaRepositoryInterface`
+-  `\Magento\Staging\Api\UpdateRepositoryInterface`
+-  `\Magento\VersionsCms\Api\HierarchyNodeRepositoryInterface`
 
 For details about repositories see the [Searching with repositories]({{ page.baseurl }}/extension-dev-guide/searching-with-repositories.html) topic.
 
@@ -172,49 +172,49 @@ In order to adopt custom implementations of these interfaces, please, change met
 
 ### Affected {{site.data.var.ce}} repositories
 
-- `\Magento\Vault\Api\PaymentTokenRepositoryInterface::getList`
-- `\Magento\Tax\Api\TaxRuleRepositoryInterface::getList`
-- `\Magento\Sales\Api\CreditmemoCommentRepositoryInterface::getList`
-- `\Magento\Sales\Api\CreditmemoItemRepositoryInterface::getList`
-- `\Magento\Sales\Api\CreditmemoRepositoryInterface::getList`
-- `\Magento\Sales\Api\InvoiceCommentRepositoryInterface::getList`
-- `\Magento\Sales\Api\InvoiceItemRepositoryInterface::getList`
-- `\Magento\Sales\Api\InvoiceRepositoryInterface::getList`
-- `\Magento\Sales\Api\OrderAddressRepositoryInterface::getList`
-- `\Magento\Sales\Api\OrderItemRepositoryInterface::getList`
-- `\Magento\Sales\Api\OrderPaymentRepositoryInterface::getList`
-- `\Magento\Sales\Api\OrderRepositoryInterface::getList`
-- `\Magento\Sales\Api\OrderStatusHistoryRepositoryInterface::getList`
-- `\Magento\Sales\Api\ShipmentCommentRepositoryInterface::getList`
-- `\Magento\Sales\Api\ShipmentItemRepositoryInterface::getList`
-- `\Magento\Sales\Api\ShipmentRepositoryInterface::getList`
-- `\Magento\Sales\Api\ShipmentTrackRepositoryInterface::getList`
-- `\Magento\Sales\Api\TransactionRepositoryInterface::getList`
-- `\Magento\Quote\Api\CartRepositoryInterface::getList`
-- `\Magento\Vault\Model\PaymentTokenRepository::getList`
-- `\Magento\Tax\Model\TaxRuleRepository::getList`
-- `\Magento\Sales\Model\OrderRepository::getList`
-- `\Magento\Sales\Model\Order\AddressRepository::getList`
-- `\Magento\Sales\Model\Order\CreditmemoRepository::getList`
-- `\Magento\Sales\Model\Order\InvoiceRepository::getList`
-- `\Magento\Sales\Model\Order\ItemRepository::getList`
-- `\Magento\Sales\Model\Order\ShipmentRepository::getList`
-- `\Magento\Sales\Model\Order\Payment\Repository::getList`
-- `\Magento\Sales\Model\Order\Payment\Transaction\Repository::getList`
-- `\Magento\Quote\Model\QuoteRepository::getList`
+-  `\Magento\Vault\Api\PaymentTokenRepositoryInterface::getList`
+-  `\Magento\Tax\Api\TaxRuleRepositoryInterface::getList`
+-  `\Magento\Sales\Api\CreditmemoCommentRepositoryInterface::getList`
+-  `\Magento\Sales\Api\CreditmemoItemRepositoryInterface::getList`
+-  `\Magento\Sales\Api\CreditmemoRepositoryInterface::getList`
+-  `\Magento\Sales\Api\InvoiceCommentRepositoryInterface::getList`
+-  `\Magento\Sales\Api\InvoiceItemRepositoryInterface::getList`
+-  `\Magento\Sales\Api\InvoiceRepositoryInterface::getList`
+-  `\Magento\Sales\Api\OrderAddressRepositoryInterface::getList`
+-  `\Magento\Sales\Api\OrderItemRepositoryInterface::getList`
+-  `\Magento\Sales\Api\OrderPaymentRepositoryInterface::getList`
+-  `\Magento\Sales\Api\OrderRepositoryInterface::getList`
+-  `\Magento\Sales\Api\OrderStatusHistoryRepositoryInterface::getList`
+-  `\Magento\Sales\Api\ShipmentCommentRepositoryInterface::getList`
+-  `\Magento\Sales\Api\ShipmentItemRepositoryInterface::getList`
+-  `\Magento\Sales\Api\ShipmentRepositoryInterface::getList`
+-  `\Magento\Sales\Api\ShipmentTrackRepositoryInterface::getList`
+-  `\Magento\Sales\Api\TransactionRepositoryInterface::getList`
+-  `\Magento\Quote\Api\CartRepositoryInterface::getList`
+-  `\Magento\Vault\Model\PaymentTokenRepository::getList`
+-  `\Magento\Tax\Model\TaxRuleRepository::getList`
+-  `\Magento\Sales\Model\OrderRepository::getList`
+-  `\Magento\Sales\Model\Order\AddressRepository::getList`
+-  `\Magento\Sales\Model\Order\CreditmemoRepository::getList`
+-  `\Magento\Sales\Model\Order\InvoiceRepository::getList`
+-  `\Magento\Sales\Model\Order\ItemRepository::getList`
+-  `\Magento\Sales\Model\Order\ShipmentRepository::getList`
+-  `\Magento\Sales\Model\Order\Payment\Repository::getList`
+-  `\Magento\Sales\Model\Order\Payment\Transaction\Repository::getList`
+-  `\Magento\Quote\Model\QuoteRepository::getList`
 
 ### Affected {{site.data.var.ee}} repositories
 
-- `\Magento\Signifyd\Api\CaseRepositoryInterface::getList`
-- `\Magento\Rma\Api\CommentRepositoryInterface::getList`
-- `\Magento\Rma\Api\RmaManagementInterface::search`
-- `\Magento\Rma\Api\RmaRepositoryInterface::getList`
-- `\Magento\Rma\Api\TrackRepositoryInterface::getList`
-- `\Magento\GiftWrapping\Api\WrappingRepositoryInterface::getList`
-- `\Magento\GiftCardAccount\Api\GiftCardAccountRepositoryInterface::getList`
-- `\Magento\Signifyd\Model\CaseRepository::getList`
-- `\Magento\Rma\Model\Service\RmaManagement::search`
-- `\Magento\GiftWrapping\Model\WrappingRepository::getList`
+-  `\Magento\Signifyd\Api\CaseRepositoryInterface::getList`
+-  `\Magento\Rma\Api\CommentRepositoryInterface::getList`
+-  `\Magento\Rma\Api\RmaManagementInterface::search`
+-  `\Magento\Rma\Api\RmaRepositoryInterface::getList`
+-  `\Magento\Rma\Api\TrackRepositoryInterface::getList`
+-  `\Magento\GiftWrapping\Api\WrappingRepositoryInterface::getList`
+-  `\Magento\GiftCardAccount\Api\GiftCardAccountRepositoryInterface::getList`
+-  `\Magento\Signifyd\Model\CaseRepository::getList`
+-  `\Magento\Rma\Model\Service\RmaManagement::search`
+-  `\Magento\GiftWrapping\Model\WrappingRepository::getList`
 
 ## Compiler changes
 
@@ -222,11 +222,11 @@ This release removes the multi-tenant compiler option and support of the definit
 
 The following classes are no longer available:
 
-- `Magento\Setup\Console\Command\DiCompileMultiTenantCommand`
-- `Magento\Framework\ObjectManager\Relations\Compiled`
-- `Magento\Framework\ObjectManager\Definition\Compiled\Serialized`
-- `Magento\Framework\ObjectManager\Definition\Compiled\Binary`
-- `Magento\Framework\Interception\Definition\Compiled`
+-  `Magento\Setup\Console\Command\DiCompileMultiTenantCommand`
+-  `Magento\Framework\ObjectManager\Relations\Compiled`
+-  `Magento\Framework\ObjectManager\Definition\Compiled\Serialized`
+-  `Magento\Framework\ObjectManager\Definition\Compiled\Binary`
+-  `Magento\Framework\Interception\Definition\Compiled`
 
 The `bin/magento setup:config:set` command no longer has the `--definition-format` option.
 
@@ -277,11 +277,11 @@ You also need to write an upgrade script for the data in the database.
 **Case 5:**
 Your extension accesses values in the `core_config_data` table using the following paths:
 
-- `payment/braintree/countrycreditcard`
-- `design/theme/ua_regexp`
-- `cataloginventory/item_options/min_sale_qty`
-- `currency/options/customsymbol`
-- `admin/magento_logging/actions`
+-  `payment/braintree/countrycreditcard`
+-  `design/theme/ua_regexp`
+-  `cataloginventory/item_options/min_sale_qty`
+-  `currency/options/customsymbol`
+-  `admin/magento_logging/actions`
 
 **Solution:**
 Update your extension to use `\Magento\Framework\Serialize\Serializer\Json` for serializing/unserializing data instead of the native [PHP](https://glossary.magento.com/php) serialize/unserialize functions.
@@ -294,8 +294,8 @@ Write an [upgrade script]({{ page.baseurl }}/ext-best-practices/tutorials/serial
 
 **See:**
 
-- [Serialize to JSON data upgrade]({{ page.baseurl }}/ext-best-practices/tutorials/serialized-to-json-data-upgrade.html)
-- [Serialize Library]({{ page.baseurl }}/extension-dev-guide/framework/serializer.html)
+-  [Serialize to JSON data upgrade]({{ page.baseurl }}/ext-best-practices/tutorials/serialized-to-json-data-upgrade.html)
+-  [Serialize Library]({{ page.baseurl }}/extension-dev-guide/framework/serializer.html)
 
 ## Database field changes
 
@@ -362,12 +362,12 @@ It can be used to upgrade data in upgrade scripts.
 
 #### Features
 
-- Ability to process records in batches
-- Can use the `where` condition
-- Update multiple fields in a table at once
-- Update records in multiple threads
-- Convert nested serialized data
-- Update duplicate records at once
+-  Ability to process records in batches
+-  Can use the `where` condition
+-  Update multiple fields in a table at once
+-  Update records in multiple threads
+-  Convert nested serialized data
+-  Update duplicate records at once
 
 ## Input/Output format of methods
 

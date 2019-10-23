@@ -17,11 +17,11 @@ The `develop` branch is the default branch, which means you get it by default wh
 
 You have the following options:
 
-* *(Easier)*. If you have not done any customizations, you should uninstall the Magento software and reinstall it with the released version. Uninstalling not only drops the database tables, it also clears the Magento `var` directory, enabling you to start over with no issues.
+*  *(Easier)*. If you have not done any customizations, you should uninstall the Magento software and reinstall it with the released version. Uninstalling not only drops the database tables, it also clears the Magento `var` directory, enabling you to start over with no issues.
 
    For more information, see [Change versions by uninstalling the Magento software](#downgrade-uninstall)
 
-* If you have done customizations and do not want to lose them, back up the Magento system, switch to the released branch, and install in a new database instance.
+*  If you have done customizations and do not want to lose them, back up the Magento system, switch to the released branch, and install in a new database instance.
 
    For more information, see [Change versions by installing the Magento software in a new database instance](#downgrade-db)
 

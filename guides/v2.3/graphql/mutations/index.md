@@ -11,11 +11,11 @@ While GraphQL queries perform read operations, mutations change the data. A muta
 
 A mutation contains the following elements:
 
-* The keyword `mutation`
-* An operation name for your local implementation. This name is required if you include variables. Otherwise, it is optional.
-* The mutation name
-* The input object or attributes. Most mutations require an input object that contains data or individual attributes for the Magento server to process. However, some mutations, such as `createEmptyCart`, do not require an input object. In this particular case, the authorization token passed with the request provides the needed context.
-* The output object, which specifies which data the mutation returns.
+*  The keyword `mutation`
+*  An operation name for your local implementation. This name is required if you include variables. Otherwise, it is optional.
+*  The mutation name
+*  The input object or attributes. Most mutations require an input object that contains data or individual attributes for the Magento server to process. However, some mutations, such as `createEmptyCart`, do not require an input object. In this particular case, the authorization token passed with the request provides the needed context.
+*  The output object, which specifies which data the mutation returns.
 
 The following example shows the structure of the `createCustomer` mutation:
 
@@ -83,9 +83,9 @@ mutation myGenerateCustomerToken{
 
 Specifying variables in a mutation can help increase code re-use. Consider the following requirements when generating a mutation that contains one or more variables:
 
-* All variables must be declared up-front, immediately after the operation name.
-* Variables are typed: they can be scalar or an object.
-* You must use all declared variables. Object variables are defined in JSON.
+*  All variables must be declared up-front, immediately after the operation name.
+*  Variables are typed: they can be scalar or an object.
+*  You must use all declared variables. Object variables are defined in JSON.
 
 The following example declares the `$CustomerInput` variable. It is referenced in the `input` statement.
 

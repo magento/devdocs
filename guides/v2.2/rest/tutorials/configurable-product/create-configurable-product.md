@@ -205,8 +205,8 @@ Before you using this code sample, verify that the attribute values are the same
 
 ## Verify this step
 
-* Log in to the Luma website and select **Catalog > Products**. The product appears in the grid.
+*  Log in to the Luma website and select **Catalog > Products**. The product appears in the grid.
 
   ![Product page with configurable product]({{ page.baseurl }}/rest/images/products-page.png)
 
-* On the Luma storefront page, search for `Champ`. No results are returned.
+*  On the Luma storefront page, search for `Champ`. No results are returned.

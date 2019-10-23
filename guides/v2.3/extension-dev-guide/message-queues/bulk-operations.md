@@ -20,9 +20,9 @@ OperationManagementInterface | Changes the status of an operation
 
 Three clients call bulk operation APIs:
 
-* A publisher, which pushes messages to the message queue
-* A consumer, which handles each specific operation
-* A client that gets the status of the bulk operation and shows the list of failed operations
+*  A publisher, which pushes messages to the message queue
+*  A consumer, which handles each specific operation
+*  A client that gets the status of the bulk operation and shows the list of failed operations
 
 ### Publish bulk operations
 
@@ -104,5 +104,5 @@ Value | Constant
 
 #### Related Topic
 
-* [Message Queues Overview]( {{page.baseurl}}/config-guide/mq/rabbitmq-overview.html)
-* [Example bulk operations implementation]({{page.baseurl}}/extension-dev-guide/message-queues/implement-bulk.html)
+*  [Message Queues Overview]( {{page.baseurl}}/config-guide/mq/rabbitmq-overview.html)
+*  [Example bulk operations implementation]({{page.baseurl}}/extension-dev-guide/message-queues/implement-bulk.html)

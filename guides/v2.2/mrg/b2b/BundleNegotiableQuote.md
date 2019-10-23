@@ -11,9 +11,9 @@ The `Magento_BundleNegotiableQuote` module enables bundle products to be display
 
 The `Magento_BundleNegotiableQuote` module provides the following features:
 
-* Display bundle products in a negotiable quote.
+*  Display bundle products in a negotiable quote.
 
-* Order bundle products from a negotiable quote.
+*  Order bundle products from a negotiable quote.
 
 ## Installation details
 

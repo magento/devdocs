@@ -14,10 +14,10 @@ Magento_Sales [module](https://glossary.magento.com/module) is responsible for o
 
 Magento_Sales module manages next system entities and flows:
 
-* order management
-* [invoice](https://glossary.magento.com/invoice) management
-* [shipment](https://glossary.magento.com/shipment) management (including track management)
-* credit memos management
+*  order management
+*  [invoice](https://glossary.magento.com/invoice) management
+*  [shipment](https://glossary.magento.com/shipment) management (including track management)
+*  credit memos management
 
 Magento_Sales module is required for Magento_Checkout module to perform [checkout](https://glossary.magento.com/checkout) operations.
 
@@ -29,10 +29,10 @@ The InvoiceOrder service introduces a capability to execute Magento native busin
 
 With this service you can:
 
-* create an [invoice](https://glossary.magento.com/invoice) document (full or partial)
-* capture money placed with order payment
-* notify a customer about document creation
-* change [order status](https://glossary.magento.com/order-status) and state
+*  create an [invoice](https://glossary.magento.com/invoice) document (full or partial)
+*  capture money placed with order payment
+*  notify a customer about document creation
+*  change [order status](https://glossary.magento.com/order-status) and state
 
 ### Parameters
 
@@ -216,10 +216,10 @@ Please note, that current service is available only for invoices created using o
 
 With this service you can:
 
-* create a [Credit Memo](https://glossary.magento.com/credit-memo) (complete or partial) for particular Invoice
-* add details about refunded items to an Order
-* change status and state of an Order according to performed actions
-* notify a customer about performed refund operation
+*  create a [Credit Memo](https://glossary.magento.com/credit-memo) (complete or partial) for particular Invoice
+*  add details about refunded items to an Order
+*  change status and state of an Order according to performed actions
+*  notify a customer about performed refund operation
 
 ### Service parameters
 
@@ -521,10 +521,10 @@ The service contains extension points marked with `@api` annotation. Extension d
 
 With the RefundOrder service you can:
 
-* create a Credit Memo (complete or partial) for a particular Order
-* add details about refunded items to an Order
-* change status and state of an Order according to performed actions
-* notify a customer about performed refund operation
+*  create a Credit Memo (complete or partial) for a particular Order
+*  add details about refunded items to an Order
+*  change status and state of an Order according to performed actions
+*  notify a customer about performed refund operation
 
 ### Service parameters
 
@@ -800,10 +800,10 @@ The service contains extension points marked with `@api` annotation. Extension d
 
 With the ShipOrder service you can:
 
-* create a [shipment](https://glossary.magento.com/shipment) document (full or partial)
-* add details about shipped items into an order
-* change status and state of an order according to performed actions
-* notify the customer of a new [shipment document](https://glossary.magento.com/shipment-document)
+*  create a [shipment](https://glossary.magento.com/shipment) document (full or partial)
+*  add details about shipped items into an order
+*  change status and state of an order according to performed actions
+*  notify the customer of a new [shipment document](https://glossary.magento.com/shipment-document)
 
 ### Service parameters
 

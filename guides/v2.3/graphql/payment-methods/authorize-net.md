@@ -9,7 +9,7 @@ Accept.js is a JavaScript-based solution for sending secure payment data directl
 
 The following diagram shows the workflow for placing an order when Authorize.Net is the selected payment method.
 
-![Authorize.Net sequence diagram]({{page.baseurl}}/graphql/images/authorize-net.svg)
+![Authorize.Net sequence diagram]({{site.baseurl}}/common/images/graphql/authorize-net.svg)
 
 1. The customer clicks on the **Place order** button. The embedded `Accept.js` library captures the payment data and submits it directly to Authorize.Net.
 
