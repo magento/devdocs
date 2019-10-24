@@ -62,9 +62,6 @@ To enable Elasticsearch:
    bin/magento cache:clean
    ```
 
-   {.bs-callout-tip}
-   By default, the search configuration is regenerated each time you deploy to a remote environment.  You can use the `SEARCH_CONFIGURATION` deploy variable to retain custom search settings between deployments. See [Deploy variables]({{ page.baseurl }}/cloud/env/working-with-variables.html#search).
-
 ## Elasticsearch software compatibility
 
 When you install or upgrade your {{ site.data.var.ece }} project, always check for compatibility between the Elasticsearch service version and the [Elasticsearch PHP](https://github.com/elastic/elasticsearch-php) client for {{ site.data.var.ee }}.
