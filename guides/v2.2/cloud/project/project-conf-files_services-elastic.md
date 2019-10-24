@@ -16,8 +16,8 @@ functional_areas:
 
 {% include cloud/service-config-integration-starter.md %}
 
-{: .bs-callout-warning}
-Staging and Production environments that are in the same cluster share a single Elasticsearch instance, so you must specify a unique Elasticsearch prefix for each of these environments.
+{:.bs-callout-tip}
+Magento recommends that you always set up Elasticsearch for your {{ site.data.var.ece }} project even if you plan to configure a third-party search tool for your {{ site.data.var.ee }} application. Setting up Elasticsearch provides a fallback option in the event that the third-party search tool fails.
 
 {:.procedure}
 To enable Elasticsearch:
@@ -63,11 +63,11 @@ To enable Elasticsearch:
    ```
 
    {.bs-callout-tip}
-   You can use the `SEARCH_CONFIGURATION` deploy variable to retain customized search service settings between deployments.
+   By default, the search configuration is regenerated each time you deploy to a remote environment.  You can use the `SEARCH_CONFIGURATION` deploy variable to retain custom search settings between deployments. See [Deploy variables]({{ page.baseurl }}/cloud/env/working-with-variables.html#search).
 
 ## Elasticsearch software compatibility
 
-When you install or upgrade your {{ site.data.var.ece }} project, ensure that the Elasticsearch service version you specify in the `services.yaml` file is compatible with the [Elasticsearch PHP](https://github.com/elastic/elasticsearch-php) client for {{ site.data.var.ee }}.
+When you install or upgrade your {{ site.data.var.ece }} project, always check for compatibility between the Elasticsearch service version and the [Elasticsearch PHP](https://github.com/elastic/elasticsearch-php) client for {{ site.data.var.ee }}.
 
 -  **First time setup**–Confirm that the Elasticsearch version specified in the `services.yaml` file is compatible with the Elasticsearch PHP client configured for {{ site.data.var.ee }}.
 
@@ -170,7 +170,13 @@ To check Elasticsearch software compatibility:
 
 If you need to restart the [Elasticsearch](https://www.elastic.co) service, you must contact Magento support.
 
-## Elasticsearch plugins
+## Additional search configuration
+
+By default, the search configuration is regenerated each time you deploy. You can use the `SEARCH_CONFIGURATION` deploy variable to retain custom search settings between deployments. See [Deploy variables]({{ page.baseurl }}/cloud/env/working-with-variables.html#search_configuration).
+
+{{ site.data.var.ece }} projects provisioned with a shared Production and Staging environment share a single Elasticsearch instance, so you must specify a unique _Elasticsearch Index prefix_ for each of these environments. See [Configure Magento to use Elasticsearch]({{ page.baseurl}}/config-guide/elasticsearch/configure-magento.html) in the _Configuration Guide_.
+
+### Elasticsearch plugins
 
 Optionally, you can add Elasticsearch plugins by adding the `configuration:plugins` section to the `.magento/services.yaml` file. For example, the following code enables the ICU analysis plugin and Python script support plugins.
 

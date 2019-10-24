@@ -105,7 +105,7 @@ Follow best practices for builds and deployment, and use the [Upgrades and patch
    -  Test your database to address any issues introduced by the updates to the Magento version and extensions.
 
    -  Make any required updates to environment-specific settings before deploying to the remote environment.
-   
+
    -  Ensure that the Elasticsearch service version is compatible with the Elasticsearch PHP client version. See [Set up Elasticsearch]({{ page.baseurl }}/cloud/project/project-conf-files_services-elastic.html).
 
 -  **Check database connectivity and available storage in remote environments**–
