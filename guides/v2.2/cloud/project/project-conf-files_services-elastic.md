@@ -31,7 +31,7 @@ To enable Elasticsearch:
    ```
 
    {:.bs-callout-info}
-   For details on determining the correct version to install, see [Elasticsearch software compatibility](#elasticsearch-software-compatibility)
+   For details on determining the correct version to install, see [Elasticsearch software compatibility](#elasticsearch-software-compatibility).
 
 1. Set the `relationships` property in the `.magento.app.yaml` file.
 
@@ -98,12 +98,12 @@ To check Elasticsearch software compatibility:
    names    : elasticsearch/elasticsearch
    ```
 
-   You can also find the Elasticsearch PHP client version in the  `composer.lock` file in the  environment root directory.
+   Also, you can find the Elasticsearch PHP client version in the  `composer.lock` file in the environment root directory.
 
 1. From the command line, retrieve the Elasticsearch service connection details.
 
    ```bash
-   echo $MAGENTO_CLOUD_RELATIONSHIPS | base64 -d | json_pp
+   magento-cloud relationships -P elasticsearch
    ```
 
    In the response, find the IP address for the Elasticsearch service endpoint:
@@ -169,9 +169,9 @@ If you need to restart the [Elasticsearch](https://www.elastic.co) service, you 
 
 ## Additional search configuration
 
--  By default, the search configuration for Cloud environments is regenerated each time you deploy. You can use the `SEARCH_CONFIGURATION` deploy variable to retain custom search settings between deployments. See [Deploy variables]({{ page.baseurl }}/cloud/env/variables-deploy.html#search_configuration).
+-  By default, the search configuration for Cloud environments regenerates each time you deploy. You can use the `SEARCH_CONFIGURATION` deploy variable to retain custom search settings between deployments. See [Deploy variables]({{ page.baseurl }}/cloud/env/variables-deploy.html#search_configuration).
 
--  {{ site.data.var.ece }} projects provisioned with a shared Production and Staging environment share a single Elasticsearch instance, so you must specify a unique _Elasticsearch Index prefix_ for each of these environments. See [Configure Magento to use Elasticsearch]({{ page.baseurl}}/config-guide/elasticsearch/configure-magento.html) in the _Configuration Guide_.
+-  {{ site.data.var.ece }} projects provisioned with a shared Production and Staging environment use a single Elasticsearch instance, so you must specify a unique _Elasticsearch Index prefix_ for each of these environments. See [Configure Magento to use Elasticsearch]({{ page.baseurl}}/config-guide/elasticsearch/configure-magento.html) in the _Configuration Guide_.
 
 -  After you set up the Elasticsearch service for your project, use the Magento Admin UI to test the Elasticsearch connection and customize Elasticsearch settings for {{ site.data.var.ee }}.
 
