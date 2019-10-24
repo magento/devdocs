@@ -82,9 +82,9 @@ Icons should always be placed on the left of the icon label and Icons should NOT
 
 Select All is the default state for tree with multi select functionality. When this functionality is triggered:
 
-* All checkboxes are checked
-* Complete tree DOESN’T highlight
-* "Select All" link changes to "Clear All".
+*  All checkboxes are checked
+*  Complete tree DOESN’T highlight
+*  "Select All" link changes to "Clear All".
 
 When Clear All functionality is triggered – All the checkboxes are deselected. The "Clear All" link is only shown when everything is selected.
 
@@ -96,25 +96,25 @@ _Note:_ The "Expand All/Collapse All" control can appear simultaneously with the
 
 #### Select Indicators
 
-* Partial Selection – this appears when a parent has items BOTH in checked and unchecked states. Partial selection only occurs at anchor level
-* Unchecked State – Item not selected and can be clicked for selection
-* Checked State – item selected and can be unchecked for de-selection
-* Unchecked and Inactive – this state appears when the item is unselected and not active
-* Checked and Inactive – this state appears when the item is selected and not active.
+*  Partial Selection – this appears when a parent has items BOTH in checked and unchecked states. Partial selection only occurs at anchor level
+*  Unchecked State – Item not selected and can be clicked for selection
+*  Checked State – item selected and can be unchecked for de-selection
+*  Unchecked and Inactive – this state appears when the item is unselected and not active
+*  Checked and Inactive – this state appears when the item is selected and not active.
 
 ![](img/states.jpg)
 
 *3. Checking a checkbox for a child item should automatically change its parent state to:*
 
-* Partially selected – if parent also contains unchecked children
-* Checked – if all checkboxes for all children are in "checked" state
-* Unchecked – if all children are in "unchecked" state.
+*  Partially selected – if parent also contains unchecked children
+*  Checked – if all checkboxes for all children are in "checked" state
+*  Unchecked – if all children are in "unchecked" state.
 
 *4. Checking a checkbox for a Parent item should automatically change its child state to:*
 
-* Checked – if the parent state is changed from "unchecked" to "checked" state
-* Unchecked – if the parent state is changed from "checked" to "unchecked" state
-* Partial Selection – if parent has a partial selection state, clicking on it will deselect all the child items.
+*  Checked – if the parent state is changed from "unchecked" to "checked" state
+*  Unchecked – if the parent state is changed from "checked" to "unchecked" state
+*  Partial Selection – if parent has a partial selection state, clicking on it will deselect all the child items.
 
 ## Drag and Arrange
 
@@ -172,7 +172,7 @@ The 'Add' triggers should be placed above the tree container area. (Note: the ou
 There are two types of items that can be added:
 
 1. *A Group item* This is the parent item, which means there can be children. Example: a folder for the media [library](https://glossary.magento.com/library) or a new [category](https://glossary.magento.com/category). The group item can also be added to another parent group. This allows for n-level tree.
-2. *An item* This is the child. Example: a media item or a sub-category. The child item will be added to whichever parent is selected or to the same parent as sibling.
+1. *An item* This is the child. Example: a media item or a sub-category. The child item will be added to whichever parent is selected or to the same parent as sibling.
 
 The "add child" button should always have more importance than the "add parent" button.
 

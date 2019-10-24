@@ -1,19 +1,24 @@
 Unless you have DNS set up for your stores' URLs, you must add a static route to the host in your `hosts` file:
 
 1. Locate your operating system's [`hosts` file](https://en.wikipedia.org/wiki/Hosts_(file)#Location_in_the_file_system).
-2. Add the static route in the format:
+1. Add the static route in the format:
 
-        <ip address> french.mysite.mg
-        <ip address> german.mysite.mg
-3. Go to one of the following URLs in your browser:
+   ```conf
+   <ip address> french.mysite.mg
+   <ip address> german.mysite.mg
+   ```
 
-        http://mysite.mg/admin
-        http://french.mysite.mg/frenchstoreview
-        http://german.mysite.mg/germanstoreview
+1. Go to one of the following URLs in your browser:
+
+   ```http
+   http://mysite.mg/admin
+   http://french.mysite.mg/frenchstoreview
+   http://german.mysite.mg/germanstoreview
+   ```
 
 You're done!
 
-{:.bs-callout .bs-callout-info}
+{: .bs-callout-info }
 
 *  Additional tasks might be required to deploy multiple websites in a hosted environment; check with your hosting provider for more information.
 *  Additional tasks are required to set up {{site.data.var.ece}}; for more information, see [Set up multiple Cloud websites or stores]({{ page.baseurl }}/cloud/project/project-multi-sites.html)

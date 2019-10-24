@@ -1066,7 +1066,7 @@ Our community contributors have made many helpful, minor corrections to spelling
 *  The timestamp field now includes indexes, which reduces the chances of deadlocks that can occur while  erasing old records.  *Fix submitted by Carlos Lizaga in pull request [13328](https://github.com/magento/magento2/pull/13328)*. [GitHub-10346](https://github.com/magento/magento2/issues/10346)
 
 <!-- ENGCOM-1767  -->
-*   `setCateroryIds([])` has been corrected to `setCategoryIds([])` throughout the test suites. *Fix submitted by Neeta Kangiya in pull request [15621](https://github.com/magento/magento2/pull/15621)*. [GitHub-15590](https://github.com/magento/magento2/issues/15590)
+*  `setCateroryIds([])` has been corrected to `setCategoryIds([])` throughout the test suites. *Fix submitted by Neeta Kangiya in pull request [15621](https://github.com/magento/magento2/pull/15621)*. [GitHub-15590](https://github.com/magento/magento2/issues/15590)
 
 <!-- ENGCOM-1762  -->
 *  Menus with nested elements now align correctly. *Fix submitted by hitesh-wagento in pull request [15645](https://github.com/magento/magento2/pull/15645)*. [GitHub-7897](https://github.com/magento/magento2/issues/7897)

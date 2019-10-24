@@ -33,7 +33,7 @@ $("#folder-tree").folderTree({
 
 Where:
 
-- `#folder-tree` is the selector of the element which will display FolderTree.
+-  `#folder-tree` is the selector of the element which will display FolderTree.
 
 The following example shows a [PHTML](https://glossary.magento.com/phtml) file using the script:
 
@@ -56,11 +56,11 @@ The following example shows a [PHTML](https://glossary.magento.com/phtml) file u
 
 ## Options
 
-- [currentPath](#currentpath)
-- [root](#root)
-- [rootName](#rootname)
-- [tree](#tree)
-- [url](#url)
+-  [currentPath](#currentpath)
+-  [root](#root)
+-  [rootName](#rootname)
+-  [tree](#tree)
+-  [url](#url)
 
 ### `currentPath`
 

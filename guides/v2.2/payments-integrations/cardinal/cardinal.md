@@ -17,8 +17,8 @@ The following diagram shows a simplified 3-D Secure verification flow using Card
 
 The *Magento_CardinalCommerce* [module][] allows you to:
 
-- Start `Cardinal Consumer Authentication` for enabling card network programs including Verified by Visa®, MasterCard SecureCode® and Identity Check®, American Express SafeKey®, Discover ProtectBuy® and Diners International® and JCB J-Secure®.
-- Handle specific return values for `Cardinal Consumer Authentication` on backend and storefront
+-  Start `Cardinal Consumer Authentication` for enabling card network programs including Verified by Visa®, MasterCard SecureCode® and Identity Check®, American Express SafeKey®, Discover ProtectBuy® and Diners International® and JCB J-Secure®.
+-  Handle specific return values for `Cardinal Consumer Authentication` on backend and storefront
 
 ## Payment method module integration with Magento_CardinalCommerce
 
@@ -28,7 +28,7 @@ CardinalCommerce maintains a [list of compatible payment gateways][].
 
 You need to add configuration parameter that will enable `Cardinal Consumer Authentication` in the `config.xml` and `system.xml` files  of your [payment method][] module:
 
-- `enabled_{payment_method_code}` - enables CCA for custom payment method.
+-  `enabled_{payment_method_code}` - enables CCA for custom payment method.
 
 The following example is the `config.xml` file of the AuthorizenetAcceptjs payment method:
 

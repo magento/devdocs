@@ -240,7 +240,7 @@ Attribute |  Data Type | Description
 
 ## Related topics
 
-* [isEmailAvailable query]({{page.baseurl}}/graphql/queries/is-email-available.html)
-* [generateCustomerToken mutation]({{page.baseurl}}/graphql/mutations/generate-customer-token.html)
-* [createCustomer mutation]({{page.baseurl}}/graphql/mutations/create-customer.html)
-* [createCustomerAddress mutation]({{page.baseurl}}/graphql/mutations/create-customer-address.html)
+*  [isEmailAvailable query]({{page.baseurl}}/graphql/queries/is-email-available.html)
+*  [generateCustomerToken mutation]({{page.baseurl}}/graphql/mutations/generate-customer-token.html)
+*  [createCustomer mutation]({{page.baseurl}}/graphql/mutations/create-customer.html)
+*  [createCustomerAddress mutation]({{page.baseurl}}/graphql/mutations/create-customer-address.html)

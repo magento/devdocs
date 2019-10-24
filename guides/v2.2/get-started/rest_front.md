@@ -10,10 +10,10 @@ The Magento REST [API](https://glossary.magento.com/api) defines a set of functi
 
 The caller issues an HTTP request, which contains the following elements:
 
-* An HTTP header that provides authentication and other instructions
-* A verb, which can be one of GET, POST, PUT, or DELETE.
-* An endpoint, which is a Uniform Resource Indicator (URI) that identifies the server, the web service, and the resource being acted on.
-* The call payload, which is set of input parameters and attributes that you supply with the request.
+*  An HTTP header that provides authentication and other instructions
+*  A verb, which can be one of GET, POST, PUT, or DELETE.
+*  An endpoint, which is a Uniform Resource Indicator (URI) that identifies the server, the web service, and the resource being acted on.
+*  The call payload, which is set of input parameters and attributes that you supply with the request.
 
 Magento returns a response payload as well as an HTTP status code.
 

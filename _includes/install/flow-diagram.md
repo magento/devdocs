@@ -9,7 +9,7 @@ The diagram shows the following:
    *  [2.2.x system requirements]({{ site.gdeurl22 }}install-gde/system-requirements-tech.html)
    *  [2.3.x system requirements]({{ site.gdeurl23 }}install-gde/system-requirements-tech.html)
 
-2. Get the Magento software.
+1. Get the Magento software.
 
    *  For simplicity, get a compressed {{site.data.var.ce}} or {{site.data.var.ee}} [archive]({{ page.baseurl }}/install-gde/prereq/zip_install.html), extract it on your Magento server, and start your installation.
 
@@ -20,7 +20,7 @@ The diagram shows the following:
    {:.bs-callout .bs-callout-info}
    To be able to use the Web Setup Wizard to install or upgrade the Magento software, or to manage extensions you get from Magento Marketplace, you must either get a compressed archive or a Composer metapackage. If you clone the GitHub repository, you *cannot* use the Web Setup Wizard to upgrade the Magento software and extensions. You must upgrade using [Composer and Git commands]({{ page.baseurl }}/install-gde/install/cli/dev_options.html).
 
-3. Install the Magento software using either the Web Setup Wizard or command line.
+1. Install the Magento software using either the Web Setup Wizard or command line.
 
    For simplicity, only the Web Setup Wizard is shown in the diagram.
 
@@ -28,4 +28,4 @@ The diagram shows the following:
 
    If the step fails because prerequisite software isn't set up correctly, review our [Prerequisites]({{ page.baseurl }}/install-gde/prereq/prereq-overview.html).
 
-4. Verify the installation by viewing your storefront and the Magento Admin.
+1. Verify the installation by viewing your storefront and the Magento Admin.

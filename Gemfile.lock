@@ -1,8 +1,8 @@
 GIT
   remote: https://github.com/magento-devdocs/devdocs-theme.git
-  revision: 84a3ed7f0df264a2c2086167efbd7d0545d329c4
+  revision: 5e99a84dd5692d3ee4c1985b9f48824eeede8cfd
   specs:
-    devdocs (4)
+    devdocs (5)
       jekyll (>= 3.3)
 
 GEM
@@ -95,10 +95,9 @@ GEM
     launchy (2.4.3)
       addressable (~> 2.3)
     liquid (4.0.3)
-    listen (3.1.5)
-      rb-fsevent (~> 0.9, >= 0.9.4)
-      rb-inotify (~> 0.9, >= 0.9.7)
-      ruby_dep (~> 1.2)
+    listen (3.2.0)
+      rb-fsevent (~> 0.10, >= 0.10.3)
+      rb-inotify (~> 0.9, >= 0.9.10)
     mdl (0.5.0)
       kramdown (~> 1.12, >= 1.12.0)
       mixlib-cli (~> 1.7, >= 1.7.0)
@@ -124,8 +123,7 @@ GEM
     rb-fsevent (0.10.3)
     rb-inotify (0.10.0)
       ffi (~> 1.0)
-    rouge (3.11.0)
-    ruby_dep (1.5.0)
+    rouge (3.12.0)
     safe_yaml (1.0.5)
     sass (3.7.4)
       sass-listen (~> 4.0.0)

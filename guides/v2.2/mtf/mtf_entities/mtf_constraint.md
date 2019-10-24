@@ -26,7 +26,7 @@ The constraint [PHP](https://glossary.magento.com/php) class must:
    *  `AssertOrderPlaced` corresponds to `Assert{entityName}{action}`
    *  `AssertProductForm` corresponds to `Assert{entityName}{place}`
 
-* Extend the [Magento\Mtf\Constraint\AbstractConstraint](https://github.com/magento/mtf/blob/develop/Magento/Mtf/Constraint/AbstractConstraint.php) class.
+*  Extend the [Magento\Mtf\Constraint\AbstractConstraint](https://github.com/magento/mtf/blob/develop/Magento/Mtf/Constraint/AbstractConstraint.php) class.
 
 *  Contain the following methods:
 

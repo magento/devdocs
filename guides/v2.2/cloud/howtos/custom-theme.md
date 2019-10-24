@@ -51,8 +51,8 @@ To install a theme manually:
 
 1. Confirm the theme copied to the correct place.
 
-   * Storefront theme: `ls <Magento root dir>/app/design/frontend`
-   * Admin theme: `ls <Magento root dir>/app/design/adminhtml`
+   *  Storefront theme: `ls <Magento root dir>/app/design/frontend`
+   *  Admin theme: `ls <Magento root dir>/app/design/adminhtml`
 
    A sample follows:
 

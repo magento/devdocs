@@ -9,4 +9,4 @@
    |New Password|Enter the administrator's password.|
    |Confirm Password|Enter the password again for verification.|
 
-2. Click **Next**.
+1. Click **Next**.

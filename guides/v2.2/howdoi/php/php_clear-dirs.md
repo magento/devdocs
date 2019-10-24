@@ -9,9 +9,9 @@ menu_order: 200
 
 #### Contents
 
-* [Overview of directory clearing](#howdoi-clear-over)
-* [What directories to clear](#howdoi-clear-what)
-* [How to clear the directories](#howdoi-clear-how)
+*  [Overview of directory clearing](#howdoi-clear-over)
+*  [What directories to clear](#howdoi-clear-what)
+*  [How to clear the directories](#howdoi-clear-how)
 
 ## Overview of directory clearing {#howdoi-clear-over}
 
