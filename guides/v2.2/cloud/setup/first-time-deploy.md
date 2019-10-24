@@ -21,10 +21,10 @@ After fully setting up your local workspace, for **Pro** you should have the clo
 
 This initial push provides the following benefits:
 
-* Fully installs Magento in each environment
-* Allows the build/deploy scripts to use the `setup:upgrade` command instead of `setup:install` (important for adding extensions)
-* Pushes the Magento encryption key across all environments
-* Protects against errors and failures when installing with added modules and extensions
+*  Fully installs Magento in each environment
+*  Allows the build/deploy scripts to use the `setup:upgrade` command instead of `setup:install` (important for adding extensions)
+*  Pushes the Magento encryption key across all environments
+*  Protects against errors and failures when installing with added modules and extensions
 
   Not all extensions are correctly tested with the setup:install command and application modes. If you initially install Magento code with added 3rd party extensions or custom code, you may receive errors and build/deploy failures. By deploying the unmodified Magento template, all future deployments to Staging and Production typically do not encounter installation issues from 3rd party and custom code.
 
@@ -32,9 +32,9 @@ This initial push provides the following benefits:
 
 To deploy, you need the following:
 
-* A project with an unmodified {{site.data.var.ee}} template `master` branch (projects created using the import option may encounter issues)
-* Staging and Production environments provisioned
-* SSH access to Staging and Production environments
+*  A project with an unmodified {{site.data.var.ee}} template `master` branch (projects created using the import option may encounter issues)
+*  Staging and Production environments provisioned
+*  SSH access to Staging and Production environments
 
 ## Enter a ticket {#ticket}
 
@@ -64,20 +64,20 @@ If you prefer to use CLI for deploying, you will need to configure additional SS
 
 You'll need the SSH and Git with your project ID. The formats are as follows:
 
-* Git URL format:
+*  Git URL format:
 
-   * Staging: `git@git.ent.magento.cloud:<project ID>_stg.git`
-   * Production: `git@git.ent.magento.cloud:<project ID>.git`
+   *  Staging: `git@git.ent.magento.cloud:<project ID>_stg.git`
+   *  Production: `git@git.ent.magento.cloud:<project ID>.git`
 
-* SSH URL format:
+*  SSH URL format:
 
-   * Staging: `<project ID>_stg@<project ID>.ent.magento.cloud`
-   * Production: `<project ID>@<project ID>.ent.magento.cloud`
+   *  Staging: `<project ID>_stg@<project ID>.ent.magento.cloud`
+   *  Production: `<project ID>@<project ID>.ent.magento.cloud`
 
 As part of pushing the code, you may need to:
 
-* [Set up remote Git repos](#cloud-live-migrate-git)
-* [Set up the SSH agent](#cloud-live-migrate-agent) on environments
+*  [Set up remote Git repos](#cloud-live-migrate-git)
+*  [Set up the SSH agent](#cloud-live-migrate-agent) on environments
 
 After that is set up, you can SSH into the environment and use Git commands to push the branches.
 
@@ -118,11 +118,11 @@ To set up an SSH agent:
 
    One of the following messages displays:
 
-   * Working SSH agent: `2048 ab:de:56:94:e3:1e:71:c3:4f:df:e1:62:8d:29:a5:c0 /home/magento_user/.ssh/id_rsa (RSA)`
+   *  Working SSH agent: `2048 ab:de:56:94:e3:1e:71:c3:4f:df:e1:62:8d:29:a5:c0 /home/magento_user/.ssh/id_rsa (RSA)`
 
       Skip the next step and continue with step 4.
 
-   * SSH agent not started: `Could not open a connection to your authentication agent.`
+   *  SSH agent not started: `Could not open a connection to your authentication agent.`
 
       Continue with step 3.
 
@@ -152,8 +152,8 @@ For more information on setting up SSH, see [Enable SSH keys]({{ page.baseurl }}
 
 1. Open an SSH connection to your Staging or Production environment:
 
-   * Staging: `ssh -A <project ID>_stg@<project ID>.ent.magento.cloud`
-   * Production: `ssh -A <project ID>@<project ID>.ent.magento.cloud`
+   *  Staging: `ssh -A <project ID>_stg@<project ID>.ent.magento.cloud`
+   *  Production: `ssh -A <project ID>@<project ID>.ent.magento.cloud`
 
 1. Pull the `master` branch to the server.
 

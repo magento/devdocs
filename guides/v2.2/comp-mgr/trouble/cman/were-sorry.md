@@ -15,9 +15,9 @@ The following error might display at the start of your upgrade:
 
 See one of the following sections for possible solutions:
 
-* [Problem: you're not authenticated](#not-auth)
-* [Problem: the updater application isn't initialized](#updater)
-* [Problem: you cloned the Magento GitHub repository](#git-clone)
+*  [Problem: you're not authenticated](#not-auth)
+*  [Problem: the updater application isn't initialized](#updater)
+*  [Problem: you cloned the Magento GitHub repository](#git-clone)
 
 ### Problem: you're not authenticated {#not-auth}
 

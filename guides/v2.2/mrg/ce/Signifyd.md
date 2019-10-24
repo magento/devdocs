@@ -10,9 +10,9 @@ The Magento_Signifyd module provides integration with the [Signifyd](https://www
 
 The module implementation allows you to:
 
- - create a [Signifyd case](https://www.signifyd.com/docs/api/#/reference/cases) for a placed order
- - automatically receive a [Signifyd guarantee](https://www.signifyd.com/docs/api/#/reference/guarantees) for a created case
- - automatically cancel a guarantee when the order is canceled
+-  create a [Signifyd case](https://www.signifyd.com/docs/api/#/reference/cases) for a placed order
+-  automatically receive a [Signifyd guarantee](https://www.signifyd.com/docs/api/#/reference/guarantees) for a created case
+-  automatically cancel a guarantee when the order is canceled
 
 ## Extensibility
 
@@ -24,32 +24,32 @@ The following interfaces (marked with the `@api` annotation) extend the Signifyd
 
 `Magento\Signifyd\Api\Data\CaseInterface` (common abstraction for the Signifyd case entity):
 
-- set or retrieve all case data fields
+-  set or retrieve all case data fields
 
 `Magento\Signifyd\Api\CaseManagementInterface`:
 
-- create a new case entity
-- retrieve the existing case entity for a specified order
+-  create a new case entity
+-  retrieve the existing case entity for a specified order
 
 `Magento\Signifyd\Api\CaseCreationServiceInterface`:
 
-- create a case entity for a specified order
-- send a request through the Signifyd API to create a new case
+-  create a case entity for a specified order
+-  send a request through the Signifyd API to create a new case
 
 `Magento\Signifyd\Api\CaseRepositoryInterface`:
 
-- describe methods to work with a case entity
+-  describe methods to work with a case entity
 
 `Magento\Signifyd\Api\GuaranteeCreationServiceInterface`:
 
-- send a request through the Signifyd API to create a new case guarantee
+-  send a request through the Signifyd API to create a new case guarantee
 
 `Magento\Signifyd\Api\GuaranteeCancelingServiceInterface`:
-- send a request through the Signifyd API to cancel the Signifyd case guarantee
+-  send a request through the Signifyd API to cancel the Signifyd case guarantee
 
 `Magento\Signifyd\Api\Data\CaseSearchResultsInterface`:
 
-- might be used by `Magento\Signifyd\Api\CaseRepositoryInterface` to retrieve a list of case entities by specific conditions
+-  might be used by `Magento\Signifyd\Api\CaseRepositoryInterface` to retrieve a list of case entities by specific conditions
 
 For information about a public API in Magento 2, see [Public interfaces & APIs]({{ page.baseurl }}/extension-dev-guide/api-concepts.html).
 
@@ -77,6 +77,6 @@ You can track [backward incompatible changes in patch releases]({{ site.baseurl 
 
 To improve the accuracy of Signifyd's transaction estimation, you may perform these operations (links lead to the Magento Developer Documentation Portal):
 
-- [Provide custom AVS/CVV mapping]({{ page.baseurl }}/payments-integrations/signifyd/signifyd.html#provide-avscvv-response-codes)
+-  [Provide custom AVS/CVV mapping]({{ page.baseurl }}/payments-integrations/signifyd/signifyd.html#provide-avscvv-response-codes)
 
-- [Retrieve payment method for a placed order]({{ page.baseurl }}/payments-integrations/signifyd/signifyd.html#retrieve-payment-method-for-a-placed-order)
+-  [Retrieve payment method for a placed order]({{ page.baseurl }}/payments-integrations/signifyd/signifyd.html#retrieve-payment-method-for-a-placed-order)

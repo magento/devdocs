@@ -10,15 +10,15 @@ Understanding how one [module](https://glossary.magento.com/module) relates to a
 
 A single module can have the following types of relationships with another module:
 
-* **uses**: module A uses module B if it invokes behavior of module B
+*  **uses**: module A uses module B if it invokes behavior of module B
 
-* **reacts to**: module A reacts to module B if its behavior is triggered by an [event](https://glossary.magento.com/event) in module B without module B knowing about module A
+*  **reacts to**: module A reacts to module B if its behavior is triggered by an [event](https://glossary.magento.com/event) in module B without module B knowing about module A
 
-* **customizes**: module A customizes module B if it modifies the behavior of module B
+*  **customizes**: module A customizes module B if it modifies the behavior of module B
 
-* **implements**: module A implements module B if it implements some, not necessarily all, behavior that is defined in module B
+*  **implements**: module A implements module B if it implements some, not necessarily all, behavior that is defined in module B
 
-* **replaces**: module A replaces module B if it provides its own version of the [API](https://glossary.magento.com/api) exposed and implemented by module B
+*  **replaces**: module A replaces module B if it provides its own version of the [API](https://glossary.magento.com/api) exposed and implemented by module B
 
 ## Relationship types and scenarios
 

@@ -82,10 +82,10 @@ Your custom handlers must implement the [Value Handler interface]({{ site.mage2b
 
 You can configure the pool of validators, which allows processing various payment method validations. Below are the examples of such validators:
 
- - `country` — checks if billing country is allowed for the payment method
- - `currency` — checks if the selected currency is allowed for the payment method
- - `availability` — checks if the payment method is available
- - `global` — the validation that is called before placing an order
+-  `country` — checks if billing country is allowed for the payment method
+-  `currency` — checks if the selected currency is allowed for the payment method
+-  `availability` — checks if the payment method is available
+-  `global` — the validation that is called before placing an order
 
 A custom validator should implement the `\Magento\Payment\Gateway\Validator\ValidatorInterface`. In the most cases, it is enough
 to extend the `\Magento\Payment\Gateway\Validator\AbstractValidator` and create an implementation of the `validate` method:
@@ -131,5 +131,5 @@ Then, the newly created validator needs to be added to the global pool of valida
 
 ## What's next
 
-- [Payment info rendering in Admin checkout]({{ page.baseurl }}/payments-integrations/base-integration/formblocktype.html)
-- [Add a gateway command]({{ page.baseurl }}/payments-integrations/base-integration/payment-action.html)
+-  [Payment info rendering in Admin checkout]({{ page.baseurl }}/payments-integrations/base-integration/formblocktype.html)
+-  [Add a gateway command]({{ page.baseurl }}/payments-integrations/base-integration/payment-action.html)

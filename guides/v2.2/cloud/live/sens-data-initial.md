@@ -16,19 +16,19 @@ This example shows how to use the [recommended procedure]({{ page.baseurl }}/clo
 1. Verify your settings are not editable in the Admin panel. Any configurations exported to `config.php` make those fields in the Admin panel read-only and disabled for edits.
 1. Update and modify configurations again in Integration, update the file, and check it into Git:
 
-   * Change configuration settings on the Integration environment.
-   * To add new configurations, run the command to create `config.php` again. New configurations are appended to the file.
-   * To remove or edit existing configurations, manually edit the file.
-   * Commit and push to Git.
+   *  Change configuration settings on the Integration environment.
+   *  To add new configurations, run the command to create `config.php` again. New configurations are appended to the file.
+   *  To remove or edit existing configurations, manually edit the file.
+   *  Commit and push to Git.
 
 <!-- {:.bs-callout .bs-callout-info}
 This example shows how you can set and lock configuration values for everything _except_ sensitive settings. You must set sensitive settings either as configuration variables or in the [Magento Admin](https://glossary.magento.com/magento-admin). For more information, see [Sensitive and system-specific]({{ page.baseurl }}/config-guide/prod/config-reference-sens.html).
 -->
 For example, you may want to set the following settings:
 
-* Disable [locale](https://glossary.magento.com/locale) and static file optimization settings in your Integration environment
-* Enable static file optimization in Staging and Production environments
-* Configure Fastly in Staging and Production with specific credentials for each
+*  Disable [locale](https://glossary.magento.com/locale) and static file optimization settings in your Integration environment
+*  Enable static file optimization in Staging and Production environments
+*  Configure Fastly in Staging and Production with specific credentials for each
 
 _Static file optimization_ means merging and minifying [JavaScript](https://glossary.magento.com/javascript) and Cascading Style Sheets, and minifying [HTML](https://glossary.magento.com/html) templates.
 
@@ -36,12 +36,12 @@ _Static file optimization_ means merging and minifying [JavaScript](https://glos
 
 To complete these configuration management tasks, you need the following:
 
-* Minimum a project reader role with [environment administrator]({{ page.baseurl }}/cloud/project/user-admin.html#cloud-role-env) privileges
-* Magento Admin panel URL and credentials for Integration, Staging, and Production environments
-* Push all updated code to your Integration environment:
+*  Minimum a project reader role with [environment administrator]({{ page.baseurl }}/cloud/project/user-admin.html#cloud-role-env) privileges
+*  Magento Admin panel URL and credentials for Integration, Staging, and Production environments
+*  Push all updated code to your Integration environment:
 
-   * For Starter: To an Integration branch and environment
-   * For Pro: To the Integration `master` branch and environment
+   *  For Starter: To an Integration branch and environment
+   *  For Pro: To the Integration `master` branch and environment
 
 ## Configure Magento through the Integration Admin panel {#configure}
 
