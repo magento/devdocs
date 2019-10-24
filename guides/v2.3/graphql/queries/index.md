@@ -8,10 +8,10 @@ redirect_from:
 
 A GraphQL query retrieves data from the Magento server in a similar manner as a REST GET call. The current set of Magento GraphQL queries allow a mobile app or browser to render a wide variety of information, including the following:
 
-* A set of products to be displayed. This can include the entire catalog or those that match customer-specified criteria.
-* Customer data. With a customer token, a query can retrieve basic information about a customer as well as billing and shipping addresses, wish lists, order history, and other sensitive data.
-* Shopping cart contents. GraphQL supports both guest and logged-in customer carts.
-* Store configuration values, including theme and CMS settings, the currency code, and supported countries.
+*  A set of products to be displayed. This can include the entire catalog or those that match customer-specified criteria.
+*  Customer data. With a customer token, a query can retrieve basic information about a customer as well as billing and shipping addresses, wish lists, order history, and other sensitive data.
+*  Shopping cart contents. GraphQL supports both guest and logged-in customer carts.
+*  Store configuration values, including theme and CMS settings, the currency code, and supported countries.
 
 The Magento REST GET endpoints retrieve a wide variety of information on behalf of the merchant. Many of these endpoints are for retrieving backend information. For example, the `GET /V1/customers/search` endpoint can be used to find a subset of customers that meet certain criteria, such as those that live in a particular state or have a birthday this month.  Likewise, the `GET /V1/invoices` endpoint can return all the recently-generated invoices. This type of functionality is not required for the frontend, so it is not available in GraphQL queries. The queries are designed to improve the customer's user experience by quickly retrieving the data needed to render pages.
 
@@ -21,11 +21,11 @@ Over time, the Magento GraphQL queries will duplicate the functionality of all s
 
 A query contains the following elements:
 
-* The optional keyword `query`. If no keyword is specified at the beginning of a request, the processor assumes the request is a query.
-* An operation name for your local implementation. This name is required if you include variables. Otherwise, it is optional.
-* The query name
-* The terms to search for. The terms can be in the form of objects, attributes, or a combination. Queries that don't require search terms obtain their context from the customer's authorization token or store ID, both of which are specified in the header of the call.
-* The output object, which specifies which data the query returns.
+*  The optional keyword `query`. If no keyword is specified at the beginning of a request, the processor assumes the request is a query.
+*  An operation name for your local implementation. This name is required if you include variables. Otherwise, it is optional.
+*  The query name
+*  The terms to search for. The terms can be in the form of objects, attributes, or a combination. Queries that don't require search terms obtain their context from the customer's authorization token or store ID, both of which are specified in the header of the call.
+*  The output object, which specifies which data the query returns.
 
 The following example shows the structure of the `cart` query:
 
@@ -98,9 +98,9 @@ Magento will not run a query that is too complex. The number of fields, objects,
 
 Specifying variables in a query can help increase code re-use. Consider the following requirements when generating a query that contains one or more variables:
 
-* All variables must be declared up-front, immediately after the operation name.
-* Variables are typed: they can be scalar or an object.
-* You must use all declared variables. Object variables are defined in JSON.
+*  All variables must be declared up-front, immediately after the operation name.
+*  Variables are typed: they can be scalar or an object.
+*  You must use all declared variables. Object variables are defined in JSON.
 
 The following example declares the `$cart_id` variable. It is referenced in the `input` statement.
 

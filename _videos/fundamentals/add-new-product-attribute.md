@@ -14,18 +14,18 @@ This is quite a broad topic, but in this video we will discuss the simple proces
 
 For this exercise, assume that the sample data set is installed.
 
-* We will add an attribute called clothing_material with the possible values: Cotton, Leather, Silk, Denim, Fur, and Wool.
-* We will make this attribute visible on the product view page, in bold text.
-* We will assign it to the Default attribute set and add a restriction that any “bottom” clothing, like slacks, cannot be the material Fur.
+*  We will add an attribute called clothing_material with the possible values: Cotton, Leather, Silk, Denim, Fur, and Wool.
+*  We will make this attribute visible on the product view page, in bold text.
+*  We will assign it to the Default attribute set and add a restriction that any “bottom” clothing, like slacks, cannot be the material Fur.
 
 We will need to take the following steps to add the new attribute:
 
 1. Create a new module.
-2. Add an InstallData script.
-3. Add a source model.
-4. Add a backend model.
-5. Add a frontend model.
-6. Execute the InstallData script and verify that it works.
+1. Add an InstallData script.
+1. Add a source model.
+1. Add a backend model.
+1. Add a frontend model.
+1. Execute the InstallData script and verify that it works.
 
 Let’s go through each step.
 
@@ -35,7 +35,13 @@ As Magento is modular based, we start the process by creating a new module calle
 
 ```bash
 cd <magento2_root>/app/code
+```
+
+```bash
 mkdir Learning
+```
+
+```bash
 mkdir Learning/ClothingMaterial
 ```
 
@@ -313,6 +319,9 @@ Now we can run our code and check the results:
 
 ```bash
 cd <magento2_root>
+```
+
+```bash
 php bin/magento setup:upgrade
 ```
 

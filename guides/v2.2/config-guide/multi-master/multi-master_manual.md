@@ -205,7 +205,7 @@ Run the preceding script:
    mysql -u root -p
    ```
 
-2. At the `mysql>` prompt, run the script as follows:
+1. At the `mysql>` prompt, run the script as follows:
 
    ```shell
    source <path>/<script>.sql
@@ -217,7 +217,7 @@ Run the preceding script:
    source /root/sql-scripts/1_foreign-sales.sql
    ```
 
-3. After the script run, enter `exit`.
+1. After the script run, enter `exit`.
 
 {% endcollapsible %}
 
@@ -375,7 +375,7 @@ If you are using a [Network Database (NDB)](http://dev.mysql.com/doc/refman/5.6/
    sed -ei 's/InnoDb/NDB/' <file name>.sql
    ```
 
-2. Remove rows with a FULLTEXT key from dumps because NDB tables do not support FULLTEXT.
+1. Remove rows with a FULLTEXT key from dumps because NDB tables do not support FULLTEXT.
 
 ### Restore tables to the quote database
 
@@ -471,7 +471,7 @@ Run the script as follows:
    mysql -u root -p
    ```
 
-2. At the `mysql>` prompt, run the script as follows:
+1. At the `mysql>` prompt, run the script as follows:
 
    ```shell
    source <path>/<script>.sql
@@ -483,7 +483,7 @@ Run the script as follows:
    source /root/sql-scripts/3_drop-tables.sql
    ```
 
-3. After the script runs, enter `exit`.
+1. After the script runs, enter `exit`.
 
 {% endcollapsible %}
 

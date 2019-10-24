@@ -6,4 +6,4 @@
 
    Click **More detail** if available to see more information about each check.
 
-2. Click **Next**.
+1. Click **Next**.

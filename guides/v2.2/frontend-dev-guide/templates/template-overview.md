@@ -22,7 +22,7 @@ The best practice is [creating a new design theme]({{ page.baseurl }}/frontend-d
 
 This chapter contains the following topics:
 
-* [Template customization walkthrough]({{ page.baseurl }}/frontend-dev-guide/templates/template-walkthrough.html)
-* [Templates basic concepts]({{ page.baseurl }}/frontend-dev-guide/templates/template-override.html)
-* [Illustration of customizing templates]({{ page.baseurl }}/frontend-dev-guide/templates/template-sample.html)
-* [Customizing email templates]({{ page.baseurl }}/frontend-dev-guide/templates/template-email.html)
+*  [Template customization walkthrough]({{ page.baseurl }}/frontend-dev-guide/templates/template-walkthrough.html)
+*  [Templates basic concepts]({{ page.baseurl }}/frontend-dev-guide/templates/template-override.html)
+*  [Illustration of customizing templates]({{ page.baseurl }}/frontend-dev-guide/templates/template-sample.html)
+*  [Customizing email templates]({{ page.baseurl }}/frontend-dev-guide/templates/template-email.html)

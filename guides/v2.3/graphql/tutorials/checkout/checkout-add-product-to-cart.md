@@ -146,4 +146,4 @@ Use the `updateCartItems` mutation to update shopping cart items and `removeItem
 
 1. Sign in as a customer to the website using the email `john.doe@example.com` and password `b1b2b3l@w+`.
 
-2. Go to the shopping cart. All the items you added are displayed.
+1. Go to the shopping cart. All the items you added are displayed.

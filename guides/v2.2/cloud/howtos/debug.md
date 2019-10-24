@@ -24,10 +24,10 @@ To run and use Xdebug, you will need the environment's SSH URL. You can locate t
 
 To configure Xdebug, you need to do the following:
 
-* [Work in a branch](#branch) to push file updates
-* [Enable Xdebug for environments](#enable)
-* Configure your IDE, like [PhpStorm](#phpstorm)
-* [Set up port forwarding](#port)
+*  [Work in a branch](#branch) to push file updates
+*  [Enable Xdebug for environments](#enable)
+*  Configure your IDE, like [PhpStorm](#phpstorm)
+*  [Set up port forwarding](#port)
 
 For configuring on Pro plan Staging and Production, you need to enter a [ticket for Staging and Production](#pro).
 
@@ -60,7 +60,7 @@ You can enable Xdebug directly to all Starter environments and Pro Integration e
            - xdebug
    ```
 
-3. Optionally, modify the timeout. A default timeout of 300 seconds (5 minutes) is set in `php-fpm` and will end your session. To avoid the timeout, add the following lines to the `web:` section of `.magento.app.yaml`:
+1. Optionally, modify the timeout. A default timeout of 300 seconds (5 minutes) is set in `php-fpm` and will end your session. To avoid the timeout, add the following lines to the `web:` section of `.magento.app.yaml`:
 
    ```yaml
    web:
@@ -97,26 +97,26 @@ You need to configure [PhpStorm](https://www.jetbrains.com/phpstorm/) to properl
 1. Open your PhpStorm project.
 1. Open the settings for PhpStorm.
 
-   * On Mac, select **File** > **Preferences**.
-   * On Windows/Linux, select **File** > **Settings**.
+   *  On Mac, select **File** > **Preferences**.
+   *  On Windows/Linux, select **File** > **Settings**.
 
 1. Expand and locate **Languages & Frameworks** > **PHP** > **Servers** section in settings.
 1. Add a server configuration. Click the + to add a server. Notice at the top, it will show the project name in grey, just for reference. This will create a "server" configuration. This will be used to listen to port 9000 locally, which will be [forwarded](#port).
 1. Configure settings for the new server:
 
-   * **Name**: enter the same as the hostname. This value is used in and must match the value for `PHP_IDE_CONFIG` variable in [Debug CLI commands](#debugcli).
-   * **Host**: enter `localhost`
-   * **Port**: enter 80
-   * **Debugger**: set to Xdebug in the drop-down
+   *  **Name**: enter the same as the hostname. This value is used in and must match the value for `PHP_IDE_CONFIG` variable in [Debug CLI commands](#debugcli).
+   *  **Host**: enter `localhost`
+   *  **Port**: enter 80
+   *  **Debugger**: set to Xdebug in the drop-down
 
 1. Select the **Use path mappings** option. In the files/directories, the root of the project displays that you opened for the added server.
 1. In the **Absolute path on the server** column, click ![Edit]({{ site.baseurl }}/common/images/install_docker_php-storm-edit.png){:width="15px"} (**Edit**) and add a setting based on the environment:
 
-   * For all Starter environments and Pro Integration environments, the remote path is `/app`.
-   * For Pro Staging and Production environments:
+   *  For all Starter environments and Pro Integration environments, the remote path is `/app`.
+   *  For Pro Staging and Production environments:
 
-      * Production: `/app/<project_code>/`
-      * Staging:  `/app/<project_code>_stg/`
+      *  Production: `/app/<project_code>/`
+      *  Staging:  `/app/<project_code>_stg/`
 
 ### Set up port forwarding {#port}
 
@@ -124,8 +124,8 @@ You need to set up port forwarding. This is necessary to map the XDEBUG connecti
 
 To do any type of debugging, you must forward port 9000 from your {{site.data.var.ece}} server to your local machine. See one of the following sections:
 
-* [Port forwarding on Mac or UNIX](#portmac)
-* [Port forwarding on Windows](#portwindows)
+*  [Port forwarding on Mac or UNIX](#portmac)
+*  [Port forwarding on Windows](#portwindows)
 
 #### Port forwarding on Mac or UNIX {#portmac}
 
@@ -148,9 +148,9 @@ To troubleshoot the connection:
 1. Enter `who` to view a list of SSH sessions.
 1. View existing SSH sessions by user. Be careful to not affect a user other than yourself!
 
-   * Integration: usernames are similar to `dd2q5ct7mhgus`
-   * Staging: usernames are similar to `dd2q5ct7mhgus_stg`
-   * Production: usernames are similar to `dd2q5ct7mhgus`
+   *  Integration: usernames are similar to `dd2q5ct7mhgus`
+   *  Staging: usernames are similar to `dd2q5ct7mhgus_stg`
+   *  Production: usernames are similar to `dd2q5ct7mhgus`
 
 1. For a user session that is older than yours, find the pseudo-terminal (PTS) value. For example, `pts/0`.
 1. Kill the process ID (PID) corresponding to the PTS value using the following commands:
@@ -183,17 +183,17 @@ To set up an SSH tunnel on Windows using Putty:
 1. In the Category pane, click **Session**.
 1. Enter the following information:
 
-   * **Hostname (or IP address)** field: Enter your Cloud server's [SSH URL]({{ page.baseurl }}/cloud/env/environments-ssh.html)
-   * **Port** field: Enter `22`
+   *  **Hostname (or IP address)** field: Enter your Cloud server's [SSH URL]({{ page.baseurl }}/cloud/env/environments-ssh.html)
+   *  **Port** field: Enter `22`
 
    ![Set up Putty]({{ site.baseurl }}/common/images/cloud-xdebug_putty-session.png){:width="350px"}
 
 1. In the Category pane, click **Connection** > **SSH** > **Tunnels**.
 1. Enter the following information:
 
-   * **Source port** field: Enter `9000`
-   * **Destination** field: Enter `127.0.0.1:9000`
-   * Click **Remote**
+   *  **Source port** field: Enter `9000`
+   *  **Destination** field: Enter `127.0.0.1:9000`
+   *  Click **Remote**
 
 1. Click **Add**.
 
@@ -209,8 +209,8 @@ To set up an SSH tunnel on Windows using Putty:
 
 If an "unable to connect" error displays, verify all of the following:
 
-* All Putty settings are correct
-* You are running Putty on the machine on which your private {{site.data.var.ece}} SSH keys are located
+*  All Putty settings are correct
+*  You are running Putty on the machine on which your private {{site.data.var.ece}} SSH keys are located
 
 ### Configure Pro Staging and Production {#pro}
 
@@ -246,8 +246,8 @@ To use Xdebug specifically on Pro plan Staging and Production environment, you c
 
 You need the following:
 
-* SSH commands for accessing the environments. You can get this information, through the [Project Web Interface]({{ page.baseurl }}/cloud/project/projects.html) and your project spreadsheet.
-* The `xdebug_key` value we set when configuring the Staging and Pro environments
+*  SSH commands for accessing the environments. You can get this information, through the [Project Web Interface]({{ page.baseurl }}/cloud/project/projects.html) and your project spreadsheet.
+*  The `xdebug_key` value we set when configuring the Staging and Pro environments
 
 Set up an SSH tunnel to Staging or Production environment:
 
@@ -344,15 +344,15 @@ Due to your environments being read-only, you need to pull code locally from an 
 
 The method you choose is up to you. You have the following options:
 
-* Check out code from Git and run `composer install`
+*  Check out code from Git and run `composer install`
 
    This method works unless `composer.json` references packages in private repositories to which you do not have access. This method results in getting the entire Magento codebase.
 
-* Copy the `vendor`, `app`, `pub`, `lib`, and `setup` directories
+*  Copy the `vendor`, `app`, `pub`, `lib`, and `setup` directories
 
    This method results in your having all code you can possibly test. Depending on how many static assets you have, it could result in a long transfer with a large volume of files.
 
-* Copy the `vendor` directory only
+*  Copy the `vendor` directory only
 
    Because most Magento and third-party code is in the `vendor` directory, this method is likely to result in good testing although you won't be testing the entire codebase.
 
@@ -395,9 +395,9 @@ Due to not having access to manually restart the nginx server, you need to locat
 1. Enter `who` to view a list of SSH sessions.
 1. View existing SSH sessions by user. Be careful to not affect a user other than yourself!
 
-   * Integration: usernames are similar to `dd2q5ct7mhgus`
-   * Staging: usernames are similar to `dd2q5ct7mhgus_stg`
-   * Production: usernames are similar to `dd2q5ct7mhgus`
+   *  Integration: usernames are similar to `dd2q5ct7mhgus`
+   *  Staging: usernames are similar to `dd2q5ct7mhgus_stg`
+   *  Production: usernames are similar to `dd2q5ct7mhgus`
 
 1. For a user session that is older than yours, find the pseudo-terminal (PTS) value. For example, `pts/0`.
 1. Kill the process ID (PID) corresponding to the PTS value using the following commands:

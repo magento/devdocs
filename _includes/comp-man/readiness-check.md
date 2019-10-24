@@ -5,7 +5,7 @@ After the readiness check completes, see one of the following:
 
 ### Readiness check success {#compman-readiness-success}
 
-The following figure shows an example of a successful readiness check. If all tests passed, click **Next** and continue with the next step.
+The following figure shows an example of a successful readiness check. If all tests passed, click **Next**and continue with the next step.
 
 ![If all readiness checks pass, click Next and continue with the next step]({{ site.baseurl }}/common/images/extensman_readiness-success.png)
 

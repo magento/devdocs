@@ -62,16 +62,16 @@ This component has a dependency on the Column component, `<Magento_Ui_module_dir
 
 ## Source files
 
-- [`<Magento_Ui_module_dir>/view/base/web/js/grid/columns/expandable.js`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/grid/columns/expandable.js)
-- [`<Magento_Ui_module_dir>/view/base/web/templates/grid/cells/expandable.html`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/templates/grid/cells/expandable.html)
-- [`<Magento_Ui_module_dir>/view/base/web/templates/grid/cells/expandable/content.html`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/templates/grid/cells/expandable/content.html)
+-  [`<Magento_Ui_module_dir>/view/base/web/js/grid/columns/expandable.js`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/grid/columns/expandable.js)
+-  [`<Magento_Ui_module_dir>/view/base/web/templates/grid/cells/expandable.html`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/templates/grid/cells/expandable.html)
+-  [`<Magento_Ui_module_dir>/view/base/web/templates/grid/cells/expandable/content.html`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/templates/grid/cells/expandable/content.html)
 
 ### Methods and events
 
 The following [API](https://glossary.magento.com/api) methods are available:
 
-- `getFullLabel()` - gets a label from a full list of options.
-- `getShortLabel()` - gets a label from a list of options limited by `visibeItemsLimit` value.
-- `getLabelsArray()` - extracts an array of labels associated with provided values and sorts these labels alphabetically.
-- `isExpandable()` - checks if the amount of options associated with a record is greater than a `visibeItemsLimit` value.
-- `flatOptions()` - transforms the tree options structure to a linear array.
+-  `getFullLabel()` - gets a label from a full list of options.
+-  `getShortLabel()` - gets a label from a list of options limited by `visibeItemsLimit` value.
+-  `getLabelsArray()` - extracts an array of labels associated with provided values and sorts these labels alphabetically.
+-  `isExpandable()` - checks if the amount of options associated with a record is greater than a `visibeItemsLimit` value.
+-  `flatOptions()` - transforms the tree options structure to a linear array.

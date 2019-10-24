@@ -22,7 +22,7 @@ To back up:
    {:.bs-callout .bs-callout-info}
    We strongly recommend you <em>do</em> back up in the event of issues.
 
-2. Wait while backups are created and continue with any of the following:
+1. Wait while backups are created and continue with any of the following:
 
 The following page displays to confirm a successful backup.
 

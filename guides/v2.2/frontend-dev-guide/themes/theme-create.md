@@ -14,18 +14,18 @@ A new theme you create is not applied for your store automatically. You need to 
 ## Prerequisites
 
 1. For the sake of compatibility, upgradability, and easy maintenance, do not modify the out of the box Magento themes. To customize the design of your Magento store, create a new custom [theme](https://glossary.magento.com/theme).
-2. [Set]({{page.baseurl}}/config-guide/cli/config-cli-subcommands-mode.html) your Magento application to the developer [mode]({{page.baseurl}}/config-guide/bootstrap/magento-modes.html). The application mode influences the way [static files](https://glossary.magento.com/static-files) are cached by Magento. The recommendations about theme development we provide in this chapter are developer/default-mode specific.
+1. [Set]({{page.baseurl}}/config-guide/cli/config-cli-subcommands-mode.html) your Magento application to the developer [mode]({{page.baseurl}}/config-guide/bootstrap/magento-modes.html). The application mode influences the way [static files](https://glossary.magento.com/static-files) are cached by Magento. The recommendations about theme development we provide in this chapter are developer/default-mode specific.
 
 ## Create a storefront theme: walkthrough {#theme-gen-walkthrough}
 
 The high-level steps required to add a new theme in the Magento system are the following:
 
 1. Create a directory for the theme under `app/design/frontend/<your_vendor_name>/<your_theme_name>`.
-2. Add a declaration file `theme.xml` and optionally create `etc` directory and create a file named `view.xml` to the theme directory.
-3. Add a `composer.json` file.
-4. Add `registration.php`.
-3. Create directories for CSS, JavaScript, images, and fonts.
-4. Configure your theme in the [Admin](https://glossary.magento.com/admin) panel.
+1. Add a declaration file `theme.xml` and optionally create `etc` directory and create a file named `view.xml` to the theme directory.
+1. Add a `composer.json` file.
+1. Add `registration.php`.
+1. Create directories for CSS, JavaScript, images, and fonts.
+1. Configure your theme in the [Admin](https://glossary.magento.com/admin) panel.
 
 ## Recommended reading
 
@@ -38,9 +38,9 @@ To create the directory for your theme:
 
 1. Go to `<magento_root>/app/design/frontend`.
 
-3. Create a new directory named according to your vendor name: `/app/design/frontend/<Vendor>`.
+1. Create a new directory named according to your vendor name: `/app/design/frontend/<Vendor>`.
 
-4. Under the `<vendor>` directory, create a directory named according to your theme.
+1. Under the `<vendor>` directory, create a directory named according to your theme.
 
     <pre>
     app/design/frontend/
@@ -58,26 +58,26 @@ After you create a directory for your theme, you must create `theme.xml` contain
 
 1. Add or copy from an existing `theme.xml` file to your theme directory `app/design/frontend/<Vendor>/<theme>`.
 
-2. Configure it using the following example:
+1. Configure it using the following example:
 
-    ```xml
-    <theme xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Config/etc/theme.xsd">
-         <title>New theme</title> <!-- your theme's name -->
-         <parent>Magento/blank</parent> <!-- the parent theme, in case your theme inherits from an existing theme -->
-         <media>
-             <preview_image>media/preview.jpg</preview_image> <!-- the path to your theme's preview image -->
-         </media>
-    </theme>
-    ```
+   ```xml
+   <theme xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Config/etc/theme.xsd">
+        <title>New theme</title> <!-- your theme's name -->
+        <parent>Magento/blank</parent> <!-- the parent theme, in case your theme inherits from an existing theme -->
+        <media>
+            <preview_image>media/preview.jpg</preview_image> <!-- the path to your theme's preview image -->
+        </media>
+   </theme>
+   ```
 
-    If you do not have a preview image for your theme, remove the `<media>` node:
+   If you do not have a preview image for your theme, remove the `<media>` node:
 
-    ```xml
-    <theme xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Config/etc/theme.xsd">
-         <title>New theme</title> <!-- your theme's name -->
-         <parent>Magento/blank</parent> <!-- the parent theme, in case your theme inherits from an existing theme -->
-    </theme>
-    ```
+   ```xml
+   <theme xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Config/etc/theme.xsd">
+        <title>New theme</title> <!-- your theme's name -->
+        <parent>Magento/blank</parent> <!-- the parent theme, in case your theme inherits from an existing theme -->
+   </theme>
+   ```
 
 If you change the theme title or parent theme information in `theme.xml` after a theme was already [registered](#register_theme), you need to open or reload any [Magento Admin](https://glossary.magento.com/magento-admin) page for your changes to be saved in the database.
 
@@ -260,7 +260,10 @@ To learn more about theme layouts, refer to the [Layout section]({{page.baseurl}
 
 ## Troubleshooting {#trouble}
 
-When your theme changes are not visible even after clearing the cache, try redeploying your static files using `magento setup:static-content:deploy en_US` (replacing the language/locale as appropriate).
+When your theme changes are not visible even after clearing the cache, try redeploying your static files using the `magento setup:static-content:deploy` command, or add the `-f` argument to force deploy static content in any deployment mode in case you are not in production mode.
+
+{: .bs-callout-info }
+Running this command with the `-f` argument can fix issues regarding deployment of static content, but it removes **all** symlinks and deploys the actual static content files.
 
 ## What's next {#next}
 

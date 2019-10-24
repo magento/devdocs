@@ -43,19 +43,19 @@ To upgrade your project to use the `{{site.data.var.ct}}` package, you need to u
 {:.procedure}
 To upgrade project to use ece-tools:
 
-1.  Update the `magento/magento-cloud-metapackage` version constraint in the `composer.json` file.
+1. Update the `magento/magento-cloud-metapackage` version constraint in the `composer.json` file.
 
     ```bash
     composer require "magento/magento-cloud-metapackage":">=2.2.0 <2.2.1" --no-update
     ```
 
-1.  Update the metapackage.
+1. Update the metapackage.
 
     ```bash
     composer update magento/magento-cloud-metapackage
     ```
 
-1.  Modify the hook commands in the `magento.app.yaml` file.
+1. Modify the hook commands in the `magento.app.yaml` file.
 
     ```yaml
     hooks:
@@ -70,7 +70,7 @@ To upgrade project to use ece-tools:
             php ./vendor/bin/ece-tools post-deploy
     ```
 
-1.  Check for and remove the [deprecated packages](#remove-deprecated-packages). The deprecated packages can prevent a successful upgrade.
+1. Check for and remove the [deprecated packages](#remove-deprecated-packages). The deprecated packages can prevent a successful upgrade.
 
     ```bash
     composer remove magento/magento-cloud-configuration
@@ -80,13 +80,13 @@ To upgrade project to use ece-tools:
     composer remove magento/ece-patches
     ```
 
-1.  It may be necessary to update the `{{site.data.var.ct}}` package.
+1. It may be necessary to update the `{{site.data.var.ct}}` package.
 
     ```bash
     composer update magento/ece-tools
     ```
 
-1.  Add and commit the code changes. In this example, the following files were updated:
+1. Add and commit the code changes. In this example, the following files were updated:
 
     ```terminal
     .magento.app.yaml
@@ -95,7 +95,7 @@ To upgrade project to use ece-tools:
     ```
     {:.no-copy}
 
-1.  Push your code changes to the remote server and merge this branch with the `integration` branch.
+1. Push your code changes to the remote server and merge this branch with the `integration` branch.
 
     ```bash
     git push origin <branch-name>

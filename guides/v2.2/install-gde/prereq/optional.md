@@ -68,7 +68,7 @@ Selecting pool servers is up to you. If you use NTP pool servers, ntp.org recomm
 
 1. Open `/etc/ntp.conf` in a text editor.
 
-2. Look for lines similar to the following:
+1. Look for lines similar to the following:
 
    ```conf
    server 0.centos.pool.ntp.org
@@ -76,9 +76,9 @@ Selecting pool servers is up to you. If you use NTP pool servers, ntp.org recomm
    server 2.centos.pool.ntp.org
    ```
 
-3. Replace those lines or add additional lines that specify your NTP pool server or other NTP servers. It's a good idea to specify more than one.
+1. Replace those lines or add additional lines that specify your NTP pool server or other NTP servers. It's a good idea to specify more than one.
 
-4. An example of using three United States-based NTP servers follows:
+1. An example of using three United States-based NTP servers follows:
 
    ```conf
    server 0.us.pool.ntp.org
@@ -86,15 +86,15 @@ Selecting pool servers is up to you. If you use NTP pool servers, ntp.org recomm
    server 2.us.pool.ntp.org
    ```
 
-5. Save your changes to `/etc/ntp.conf` and exit the text editor.
+1. Save your changes to `/etc/ntp.conf` and exit the text editor.
 
-4. Restart the service.
+1. Restart the service.
 
-   * Ubuntu: `service ntp restart`
+   *  Ubuntu: `service ntp restart`
 
-   * CentOS: `service ntpd restart`
+   *  CentOS: `service ntpd restart`
 
-4. Enter `date` to check the server's date.
+1. Enter `date` to check the server's date.
 
    If the date is incorrect, make sure the NTP client port (typically, UDP 123) is open in your firewall.
 
@@ -103,6 +103,7 @@ Selecting pool servers is up to you. If you use NTP pool servers, ntp.org recomm
    If all else fails, try rebooting the server.
 
 ## Create phpinfo.php {#install-optional-phpinfo}
+
 [`phpinfo.php`](http://php.net/manual/en/function.phpinfo.php){:target="_blank"} displays a large amount of information about [PHP](https://glossary.magento.com/php) and its extensions.
 
 {:.bs-callout .bs-callout-info}
@@ -154,15 +155,15 @@ To install phpmyadmin on Ubuntu:
    apt-get install phpmyadmin
    ```
 
-2. Follow the prompts on your screen to complete the installation.
+1. Follow the prompts on your screen to complete the installation.
 
-3. To use phpmyadmin, enter the following URL in your browser's address or location field:
+1. To use phpmyadmin, enter the following URL in your browser's address or location field:
 
    ```http
    http://<web server host or IP>/phpmyadmin
    ```
 
-4. When prompted, log in using your MySQL database `root` or administrative user's username and password.
+1. When prompted, log in using your MySQL database `root` or administrative user's username and password.
 
 ## Install phpmyadmin on CentOS {#install-optional-phpmyadmin-centos}
 

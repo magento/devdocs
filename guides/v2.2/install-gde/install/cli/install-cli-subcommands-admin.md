@@ -16,9 +16,9 @@ In addition to the command arguments discussed here, see [Common arguments]({{ p
 
 Before you can use this command, you must do all of the following:
 
--   [Create the deployment configuration]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-deployment.html)
--   [Enable at minimum the Magento_Authorization and Magento_User modules]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-enable.html)
--   Create the Magento [database schema](https://glossary.magento.com/database-schema)
+-  [Create the deployment configuration]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-deployment.html)
+-  [Enable at minimum the Magento_Authorization and Magento_User modules]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-enable.html)
+-  Create the Magento [database schema](https://glossary.magento.com/database-schema)
 
 {:.bs-callout .bs-callout-info}
 The simplest way to create the database is to use the command `magento setup:upgrade`.

@@ -13,9 +13,9 @@ The `Magento_ConfigurableNegotiableQuote` module enables configurable products t
 
 The `Magento_ConfigurableNegotiableQuote` module provides the following features:
 
-* Display configurable products in a negotiable quote.
+*  Display configurable products in a negotiable quote.
 
-* Order configurable products from a negotiable quote.
+*  Order configurable products from a negotiable quote.
 
 ## Installation details
 

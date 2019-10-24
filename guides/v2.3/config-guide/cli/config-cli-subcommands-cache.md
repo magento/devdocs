@@ -109,14 +109,14 @@ Enabling a [cache type](https://glossary.magento.com/cache-type) automatically c
 
 To purge out-of-date items from the cache, you can *clean* or *flush* cache types:
 
-- Cleaning a cache type deletes all items from enabled Magento cache types only. In other words, this option does not affect other processes or applications because it cleans only the cache that Magento uses.
+-  Cleaning a cache type deletes all items from enabled Magento cache types only. In other words, this option does not affect other processes or applications because it cleans only the cache that Magento uses.
 
     Disabled cache types are not cleaned.
 
     {:.bs-callout .bs-callout-tip}
     Always clean the cache after upgrading versions of {{site.data.var.ce}} or {{site.data.var.ee}}, upgrading from {{site.data.var.ce}} to {{site.data.var.ee}}, or installing {{site.data.var.b2b}} or any module.
 
-- Flushing a cache type purges the cache storage, which might affect other processes applications that are using the same storage.
+-  Flushing a cache type purges the cache storage, which might affect other processes applications that are using the same storage.
 
 Flush cache types if you've already tried cleaning the cache and you're still having issues that you cannot isolate.
 

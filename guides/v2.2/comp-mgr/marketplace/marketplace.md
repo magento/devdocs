@@ -21,7 +21,7 @@ If you don't have an account yet:
 
    ![Sign in to Marketplace]({{ site.baseurl }}/common/images/marketplace_sign-in.png){:width="600px"}
 
-2. In the right pane, click **Create an account**.
+1. In the right pane, click **Create an account**.
 
    ![Create a Marketplace account]({{ site.baseurl }}/common/images/marketplace_create-acct.png){:width="300px"}
 
@@ -44,4 +44,3 @@ When you're ready, click **Go to Checkout** and follow the prompts on your scree
 ### Install your new purchases
 
 Use the [Component Manager]({{ page.baseurl }}/comp-mgr/module-man/compman-checklist.html) to install your purchases.
-

@@ -53,4 +53,4 @@ An invoice `id`, such as `3`.
 
 1. Click **Sales** > **Invoices**. The invoice displays in the grid with a status of Paid. Then click **Sales** > **Orders**. The status is Processing.
 
-2. Click **Catalog** > **Products**. For `vp1`, Magento adjusted the value of **Quantity per Source** and **Salable Quantity** to 9998 for all sources and stocks.
+1. Click **Catalog** > **Products**. For `vp1`, Magento adjusted the value of **Quantity per Source** and **Salable Quantity** to 9998 for all sources and stocks.

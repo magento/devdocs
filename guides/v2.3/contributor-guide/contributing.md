@@ -41,7 +41,7 @@ We also recommend creating a personal access token for your account to use when 
 
 ## Questions or enhancement requests? {#question}
 
-We capture code-related issues in the the [Magento 2 repo](https://github.com/magento/magento2) and documentation-related issues in the [Magento DevDocs repo](https://github.com/magento/devdocs). If you have questions about Magento functionality or processes, we recommend posting them to a question-and-answer site, such as [Stack Exchange](https://magento.stackexchange.com/) and the [Magento Forums](https://community.magento.com/), where Magento community members can quickly provide recommendations and advice.
+We capture code-related issues in the [Magento 2 repo](https://github.com/magento/magento2) and documentation-related issues in the [Magento DevDocs repo](https://github.com/magento/devdocs). If you have questions about Magento functionality or processes, we recommend posting them to a question-and-answer site, such as [Stack Exchange](https://magento.stackexchange.com/) and the [Magento Forums](https://community.magento.com/), where Magento community members can quickly provide recommendations and advice.
 
 Submit feature requests or enhancement suggestions to the [Magento 2 Feature Requests and Improvements forum](https://community.magento.com/t5/Magento-2-Feature-Requests-and/idb-p/feature-requests). For details about how requests are managed, see [Improvements to GitHub Management](https://community.magento.com/t5/News-Announcements/Improvements-to-GitHub-Management/m-p/44572#M96).
 
@@ -196,10 +196,10 @@ This tool ports fixes automatically across versions with a few simple steps. It 
 Access the tool at [porting.engcom.dev.magento.com](https://porting.engcom.dev.magento.com/). The first time you visit, you must log in and authorize with GitHub credentials. The tool performs all actions using your token.
 
 1. Visit [porting.engcom.dev.magento.com](https://porting.engcom.dev.magento.com/) and **Login with GitHub**.
-2. Copy and paste the pull request URL in **Select Pull Request for porting** and click **Next**.
-3. Select the target version for your port: **Up Port** or **Back Port**.
-4. Verify the summary of changes in **Port information**.
-5. Click **Create Job**. A job is created and started shortly after.
+1. Copy and paste the pull request URL in **Select Pull Request for porting** and click **Next**.
+1. Select the target version for your port: **Up Port** or **Back Port**.
+1. Verify the summary of changes in **Port information**.
+1. Click **Create Job**. A job is created and started shortly after.
 
 ![Magento Porting Tool]({{ site.baseurl }}/common/images/porting-tool-steps.png)
 
