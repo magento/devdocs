@@ -99,7 +99,7 @@ public function afterGetList(
 ```
 
 {: .bs-callout-info }
-To add extension attributes to entity without plugins use the `extensionActions` argument of `\Magento\Framework\EntityManager\Operation\ExtensionPool`. See [\Magento\Catalog\Model\ProductRepository::getList()]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/Model/ProductRepository.php) as an example of such implementation.
+To add extension attributes to an entity without plugins, use the `extensionActions` argument of `\Magento\Framework\EntityManager\Operation\ExtensionPool`. See [\Magento\Catalog\Model\ProductRepository::getList()]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/Model/ProductRepository.php) as an example of an implementation.
 
 Likewise, the `afterSave` plugin should manipulate the entity data before returning it:
 
