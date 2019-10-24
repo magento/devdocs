@@ -172,11 +172,11 @@ If you need to restart the [Elasticsearch](https://www.elastic.co) service, you 
 
 ## Additional search configuration
 
-- By default, the search configuration for Cloud environments is regenerated each time you deploy. You can use the `SEARCH_CONFIGURATION` deploy variable to retain custom search settings between deployments. See [Deploy variables]({{ page.baseurl }}/cloud/env/working-with-variables.html#search_configuration).
+-  By default, the search configuration for Cloud environments is regenerated each time you deploy. You can use the `SEARCH_CONFIGURATION` deploy variable to retain custom search settings between deployments. See [Deploy variables]({{ page.baseurl }}/cloud/env/working-with-variables.html#search_configuration).
 
-- {{ site.data.var.ece }} projects provisioned with a shared Production and Staging environment share a single Elasticsearch instance, so you must specify a unique _Elasticsearch Index prefix_ for each of these environments. See [Configure Magento to use Elasticsearch]({{ page.baseurl}}/config-guide/elasticsearch/configure-magento.html) in the _Configuration Guide_.
+-  {{ site.data.var.ece }} projects provisioned with a shared Production and Staging environment share a single Elasticsearch instance, so you must specify a unique _Elasticsearch Index prefix_ for each of these environments. See [Configure Magento to use Elasticsearch]({{ page.baseurl}}/config-guide/elasticsearch/configure-magento.html) in the _Configuration Guide_.
 
-- After you set up the Elasticsearch service for your project, use the Magento Admin UI to test the Elasticsearch connection and customize Elasticsearch settings for {{ site.data.var.ee }}.
+-  After you set up the Elasticsearch service for your project, use the Magento Admin UI to test the Elasticsearch connection and customize Elasticsearch settings for {{ site.data.var.ee }}.
 
 ### Elasticsearch plugins
 
