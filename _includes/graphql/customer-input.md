@@ -2,9 +2,10 @@ Attribute |  Data Type | Description
 --- | --- | ---
 `addresses` | [CustomerAddress](#customerAddressInput) | An array containing the customer's shipping and billing addresses
 `created_at` | String | Timestamp indicating when the account was created
+`date_of_birth` | String | The customer's date of birth
 `default_billing` | String | The ID assigned to the billing address
 `default_shipping` | String | The ID assigned to the shipping address
-`dob` | String | The customer's date of birth
+`dob` | String | Deprecated. Use `date_of_birth` instead. The customer's date of birth
 `email` | String | The customer's email address
 `firstname` | String | The customer's first name
 `gender` | Int | The customer's gender (Male - 1, Female - 2)

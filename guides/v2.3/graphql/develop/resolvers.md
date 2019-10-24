@@ -158,7 +158,7 @@ input CustomerInput {
     lastname: String @doc(description: "The customer's family name")
     suffix: String @doc(description: "A value such as Sr., Jr., or III")
     email: String @doc(description: "The customer's email address. Required")
-    dob: String @doc(description: "The customer's date of birth")
+    date_of_birth: String @doc(description: "The customer's date of birth")
     taxvat: String @doc(description: "The customer's Tax/VAT number (for corporate customers)")
     gender: Int @doc(description: "The customer's gender(Male - 1, Female - 2)")
     password: String @doc(description: "The customer's password")
@@ -179,7 +179,6 @@ The `customer` parameter of the `CustomerOutput` object is a type of `Customer` 
 ```text
 type Customer @doc(description: "Customer defines the customer name and address and other details") {
     created_at: String @doc(description: "Timestamp indicating when the account was created")
-    group_id: Int @doc(description: "The group assigned to the user. Default values are 0 (Not logged in), 1 (General), 2 (Wholesale), and 3 (Retailer)")
     prefix: String @doc(description: "An honorific, such as Dr., Mr., or Mrs.")
     firstname: String @doc(description: "The customer's first name")
     middlename: String @doc(description: "The customer's middle name")
@@ -188,7 +187,7 @@ type Customer @doc(description: "Customer defines the customer name and address 
     email: String @doc(description: "The customer's email address. Required")
     default_billing: String @doc(description: "The ID assigned to the billing address")
     default_shipping: String @doc(description: "The ID assigned to the shipping address")
-    dob: String @doc(description: "The customer's date of birth")
+    date_of_birth: String @doc(description: "The customer's date of birth")
     taxvat: String @doc(description: "The customer's Tax/VAT number (for corporate customers)")
     id: Int @doc(description: "The ID assigned to the customer")
     is_subscribed: Boolean @doc(description: "Indicates whether the customer is subscribed to the company's newsletter") @resolver(class: "\\Magento\\CustomerGraphQl\\Model\\Resolver\\IsSubscribed")

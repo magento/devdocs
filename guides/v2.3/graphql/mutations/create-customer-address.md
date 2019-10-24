@@ -24,7 +24,7 @@ mutation {
       region: "Arizona"
       region_code: "AZ"
     }
-    country_id: US
+    country_code: US
     street: ["123 Main Street"]
     telephone: "7777777777"
     postcode: "77777"
@@ -41,7 +41,7 @@ mutation {
       region_id
       region_code
     }
-    country_id
+    country_code
     street
     telephone
     postcode
@@ -64,7 +64,7 @@ mutation {
         "region": "Arizona",
         "region_code": "AZ"
       },
-      "country_id": "US",
+      "country_code": "US",
       "street": [
         "123 Main Street"
       ],

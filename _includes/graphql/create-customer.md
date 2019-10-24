@@ -1,6 +1,7 @@
 Attribute |  Data Type | Description
 --- | --- | ---
-`dob` | String | The customer’s date of birth
+`date_of_birth` | String | The customer’s date of birth
+`dob` | String | Deprecated. Use `date_of_birth` instead. The customer’s date of birth
 `email` | String | The customer’s email address. Required to create a customer
 `firstname` | String | The customer’s first name. Required to create a customer
 `gender` | Int | The customer's gender (Male - 1, Female - 2)

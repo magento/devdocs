@@ -6,7 +6,8 @@ Attribute |  Data Type | Description
 --- | --- | ---
 `city` | String | The city or town
 `company` | String | The customer's company
-`country_id` | String | The customer's country
+`country_code` | String | The customer's country
+`country_id` | String | Deprecated. Use `country_code` instead. The customer's country
 `custom_attributes` | [CustomerAddressAttributeInput](#customerAddressAttributeInput) | Deprecated. Not applicable for GraphQL
 `customer_id` | Int | The customer ID
 `default_billing` | Boolean | Indicates whether the address is the default billing address

@@ -40,7 +40,7 @@ The following call returns information about the logged-in customer. Provide the
         region_id
       }
       postcode
-      country_id
+      country_code
       telephone
     }
   }
@@ -72,7 +72,7 @@ The following call returns information about the logged-in customer. Provide the
            "region_id": 33
          }
          "postcode": "78758",
-         "country_id": "US",
+         "country_code": "US",
          "telephone": "512 555-1212"
         }
       ]
