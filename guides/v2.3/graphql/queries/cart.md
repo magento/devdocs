@@ -474,7 +474,7 @@ Attribute |  Data Type | Description
 
 ### BillingCartAddress object {#BillingCartAddress}
 
-The `BillingCartAddress` object implements [`CartAdderessInterface`](#CartAdderessInterface). It does not define any additional attributes.
+The `BillingCartAddress` object implements [`CartAddressInterface`](#CartAddressInterface). It does not define any additional attributes.
 
 ### CartAddressCountry object {#CartAddressCountry}
 
@@ -586,7 +586,7 @@ Attribute |  Data Type | Description
 
 ### ShippingCartAddress object {#ShippingCartAddress}
 
-The `ShippingCartAddress` object implements [`CartAdderessInterface`](#CartAdderessInterface). It can also contain the following attributes.
+The `ShippingCartAddress` object implements [`CartAddressInterface`](#CartAddressInterface). It can also contain the following attributes.
 
 Attribute |  Data Type | Description
 --- | --- | ---
