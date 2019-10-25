@@ -21,7 +21,7 @@ The following table defines the `ProductInterface` attributes and objects.
 Attribute | Data type | Description
 --- | --- | ---
 `attribute_set_id` | Int | The attribute set assigned to the product
-`canonical_url` | String  | The canonical URL for the product
+`canonical_url` | String  | The relative canonical URL. This value is returned only if the system setting **Use Canonical Link Meta Tag For Products** is enabled
 `categories` | [[CategoryInterface]]({{ page.baseurl }}/graphql/product/category-interface.html) | The categories assigned to the product. See [CategoryInterface attributes]({{ page.baseurl }}/graphql/product/category-interface.html) for more information
 `country_of_manufacture` | String | The product's country of origin
 `created_at` | String | Timestamp indicating when the product was created
