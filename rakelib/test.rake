@@ -5,6 +5,13 @@ namespace :test do
   desc 'Build devdocs and check for broken links'
   task links: %w[build links_no_build]
 
+  # Run htmlproofer to check for broken external links
+  desc 'Check the existing _site for broken EXTERNAL links'
+  task :external_links do
+    puts 'Testing external links'
+    system 'bundle exec htmlproofer _site/ --external_only'
+  end
+
   desc 'Check the entire _site for broken links and invalid HTML'
   task :html do
     puts 'Checking links with html-proofer...'.magenta
