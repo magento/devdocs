@@ -103,30 +103,30 @@ To check Elasticsearch software compatibility:
 1. From the command line, retrieve the Elasticsearch service connection details.
 
    ```bash
-   magento-cloud relationships -P elasticsearch
+   vendor/bin/ece-tools env:config:show services
    ```
-
+   
    In the response, find the IP address for the Elasticsearch service endpoint:
 
    ```terminal
-   "elasticsearch" : [
-     {
-        "cluster" : "fo3qdoxtla4j4-master-7rqtwti",
-        "public" : false,
-        "service" : "elasticsearch",
-        "port" : 9200,
-        "query" : {},
-        "scheme" : "http",
-        "fragment" : null,
-        "host" : "elasticsearch.internal",
-        "username" : null,
-        "rel" : "elasticsearch",
-        "password" : null,
-        "ip" : "169.254.220.11",
-        "path" : null,
-        "hostname"  "dzggu33f75wi3sd24lgwtoupxm.elasticsearch.service._.magentosite.cloud",
-        "type" : "elasticsearch:6.5"
-     }
+   | elasticsearch:                                                                                                  |
+   +------------------------------------------+----------------------------------------------------------------------+
+   | username                                 | null                                                                 |
+   | scheme                                   | http                                                                 |
+   | service                                  | elasticsearch                                                        |
+   | fragment                                 | null                                                                 |
+   | ip                                       | 169.254.220.11                                                       |
+   | hostname                                 | dzggu33f75wi3sd24lgwtoupxm.elasticsearch.service._.magentosite.cloud |
+   | public                                   | false                                                                |
+   | cluster                                  | fo3qdoxtla4j4-master-7rqtwti                                         |
+   | host                                     | elasticsearch.internal                                               |
+   | rel                                      | elasticsearch                                                        |
+   | query                                    |                                                                      |
+   | path                                     | null                                                                 |
+   | password                                 | null                                                                 |
+   | type                                     | elasticsearch:6.5                                                    |
+   | port                                     | 9200                                                                 |
+   +------------------------------------------+----------------------------------------------------------------------+
    ```
 
 1. Retrieve the installed Elasticsearch service `version:number` from the service endpoint.
