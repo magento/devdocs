@@ -105,7 +105,7 @@ To check Elasticsearch software compatibility:
    ```bash
    vendor/bin/ece-tools env:config:show services
    ```
-   
+
    In the response, find the IP address for the Elasticsearch service endpoint:
 
    ```terminal
