@@ -18,16 +18,16 @@ You must perform the tasks in this section as a user with `root` privileges.
 
 See one of the following sections for more information:
 
-* [Create the custom maintenance page](#compman-trouble-maint-create)
-* [Custom maintenance page for Apache](#compman-trouble-maint-apache)
-* [Custom maintenance page for nginx](#compman-trouble-maint-nginx)
+*  [Create the custom maintenance page](#compman-trouble-maint-create)
+*  [Custom maintenance page for Apache](#compman-trouble-maint-apache)
+*  [Custom maintenance page for nginx](#compman-trouble-maint-nginx)
 
 ## Create the custom maintenance page {#compman-trouble-maint-create}
 
 To create a maintenance page and redirect to it, first create a maintenance page named:
 
-* Apache: `<web server docroot>/maintenance.html`
-* nginx: `<magento_root>/maintenance.html`
+*  Apache: `<web server docroot>/maintenance.html`
+*  nginx: `<magento_root>/maintenance.html`
 
 Add to it the following contents:
 
@@ -61,15 +61,15 @@ This section discusses how to create a custom maintenance page and how to redire
 
 The example in this section shows how to modify the following files, which is one way to set up your maintenance page:
 
-* Apache 2.4: `/etc/apache2/sites-available/000-default.conf`
-* Apache 2.2: `/etc/apache2/sites-available/default` (Ubuntu), `/etc/httpd/conf/httpd.conf` (CentOS)
+*  Apache 2.4: `/etc/apache2/sites-available/000-default.conf`
+*  Apache 2.2: `/etc/apache2/sites-available/default` (Ubuntu), `/etc/httpd/conf/httpd.conf` (CentOS)
 
 To redirect traffic to a custom maintenance page:
 
 1. Update your Apache configuration to do the following:
 
-   * Redirect all traffic to the maintenance page
-   * Whitelist certain IPs so an administrator can run the System Upgrade utility to upgrade the Magento software.
+   *  Redirect all traffic to the maintenance page
+   *  Whitelist certain IPs so an administrator can run the System Upgrade utility to upgrade the Magento software.
 
     The following example whitelists 192.0.2.110.
 
@@ -88,8 +88,8 @@ To redirect traffic to a custom maintenance page:
 
 1. Restart Apache:
 
-   * CentOS: `service httpd restart`
-   * Ubuntu: `service apache2 restart`
+   *  CentOS: `service httpd restart`
+   *  Ubuntu: `service apache2 restart`
 
 1. Enter the following command:
 

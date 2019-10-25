@@ -14,9 +14,9 @@ Use the `bin/magento queue:consumers:start async.operations.all` command to star
 
 Magento supports the following types of asynchronous requests:
 
-* POST
-* PUT
-* PATCH
+*  POST
+*  PUT
+*  PATCH
 
 {:.bs-callout .bs-callout-info}
 GET and DELETE requests are not supported. Although Magento does not currently implement any PATCH requests, they are supported in custom extensions.
@@ -101,7 +101,7 @@ PUT /all/async/V1/products/:sku
 
 The following rules apply when you create or update an object, such as a product.
 
-* If you do not set the store code while creating a new product, Magento creates a new object with all values set globally for each scope.
-* If you do not set the store code while updating a product, then by fallback, Magento updates values for the default store only.
-* If you include the `all` parameter, then Magento updates values for all store scopes (in case a particular store doesn't yet have its own value set).
-* If `<store_code>` parameter is set, then values for only defined store will be updated.
+*  If you do not set the store code while creating a new product, Magento creates a new object with all values set globally for each scope.
+*  If you do not set the store code while updating a product, then by fallback, Magento updates values for the default store only.
+*  If you include the `all` parameter, then Magento updates values for all store scopes (in case a particular store doesn't yet have its own value set).
+*  If `<store_code>` parameter is set, then values for only defined store will be updated.

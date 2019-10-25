@@ -19,7 +19,7 @@ The Magento file system owner is sometimes referred to as the *command-line user
 
 The Magento file system owner is any of the following:
 
-* A single user, which is typical of shared hosting.
+*  A single user, which is typical of shared hosting.
 
    Shared hosting providers enable you to log in to the Magento server as one user. This user can log in, transfer files using FTP, and this user also runs the web server.
 

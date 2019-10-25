@@ -58,13 +58,13 @@ After the upgrade completes:
 
 ### Errors
 
-* The following error can indicate one of several issues, including that you haven't entered your [authentication keys] in the Magento Admin:
+*  The following error can indicate one of several issues, including that you haven't entered your [authentication keys] in the Magento Admin:
 
    ![Sorry we can't take that action right now]
 
    For suggested solutions to other causes indicated by this message, see [troubleshooting].
 
-* The following error might display:
+*  The following error might display:
 
    ```terminal
    [2016-01-19 23:33:24 UTC] An error occurred while executing job

@@ -20,23 +20,23 @@ You can update your {{ site.var.data.ee }} store configuration to replace some d
 
 Currently, you can customize the following Fastly response pages for your {{ site.data.var.ece }} project through the Magento Admin UI.
 
-- [Timeout or site maintenance outages (503 Service Unavailable)](#customize-the-503-error-page)
-- [WAF blocking events that occur when the WAF detects suspicious request traffic (403 Forbidden)](#customize-the-waf-error-page)
+-  [Timeout or site maintenance outages (503 Service Unavailable)](#customize-the-503-error-page)
+-  [WAF blocking events that occur when the WAF detects suspicious request traffic (403 Forbidden)](#customize-the-waf-error-page)
 
 **HTML coding requirements:**
 
 The HTML code for the custom page must meet the following requirements:
 
-- Content can contain up to 65,535 characters.
-- Specify all CSS inline in the HTML source.
-- Bundle images in the HTML page using base64 so that they display even if Fastly is offline. See [Data URIs on the css-tricks site](https://css-tricks.com/data-uris/).
+-  Content can contain up to 65,535 characters.
+-  Specify all CSS inline in the HTML source.
+-  Bundle images in the HTML page using base64 so that they display even if Fastly is offline. See [Data URIs on the css-tricks site](https://css-tricks.com/data-uris/).
 
 ## Customize the 503 error page
 
 Customers see the default 503 error page in the following cases:
 
-- When a request to the Fastly origin returns a response status great than 500.
-- When the Fastly origin is down, for example due to a timeout, maintenance activity, or health issues.
+-  When a request to the Fastly origin returns a response status great than 500.
+-  When the Fastly origin is down, for example due to a timeout, maintenance activity, or health issues.
 
 You can customize the default page by adapting the following HTML code to include styling to match your {{ site.data.var.ee }} store theme and modifying the title and messaging as needed.
 
@@ -77,9 +77,9 @@ To add the custom response page to the Fastly configuration:
 
 1. Refresh the cache.
 
-   - In the notification at the top of the page, click the *Cache Management* link.
+   -  In the notification at the top of the page, click the *Cache Management* link.
 
-   - On the Cache Management page, click **Flush Magento Cache**.
+   -  On the Cache Management page, click **Flush Magento Cache**.
 
 ## Customize the WAF error page
 
@@ -139,9 +139,9 @@ To edit the WAF error page:
 
 1. Refresh the cache.
 
-   - In the notification at the top of the page, click the **Cache Management** link.
+   -  In the notification at the top of the page, click the **Cache Management** link.
 
-   - On the Cache Management page, click **Flush Magento Cache**.
+   -  On the Cache Management page, click **Flush Magento Cache**.
 
 <!-- Link definitions -->
 

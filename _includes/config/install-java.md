@@ -10,8 +10,8 @@ If the message `java: command not found` displays, you must install the Java SDK
 
 See one of the following sections:
 
-* [Install the latest JDK on CentOS](#install-prereq-java-centos)
-* [Install the latest JDK on Ubuntu](#install-prereq-java-ubuntu)
+*  [Install the latest JDK on CentOS](#install-prereq-java-centos)
+*  [Install the latest JDK on Ubuntu](#install-prereq-java-ubuntu)
 
 #### Install the JDK on CentOS {#install-prereq-java-centos}
 
@@ -23,7 +23,7 @@ Be sure to install the JDK and *not* the JRE.
 yum -y install java-1.7.0-openjdk
 ```
 
-{:.bs-callout .bs-callout-info}
+{: .bs-callout-info }
 Java version 7 might not be available for all operating systems. For example, you can [search the list of available packages for Ubuntu](http://packages.ubuntu.com/).
 
 #### Install the JDK on Ubuntu {#install-prereq-java-ubuntu}

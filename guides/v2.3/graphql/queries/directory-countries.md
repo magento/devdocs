@@ -139,5 +139,5 @@ The query returns an array of `Country` objects.
 
 ## Related topics
 
-* [country query]({{page.baseurl}}/graphql/queries/directory-country.html)
-* [currency query]({{page.baseurl}}/graphql/queries/directory-currency.html)
+*  [country query]({{page.baseurl}}/graphql/queries/directory-country.html)
+*  [currency query]({{page.baseurl}}/graphql/queries/directory-currency.html)
