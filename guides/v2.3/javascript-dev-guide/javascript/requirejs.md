@@ -79,9 +79,9 @@ In the below snippet, dependencies can be added directly in an array, or it can 
 ```javascript
 'shim': {
     '3rd-party-library': ['myJSFile'],
-    '3rd-party-library': {
+    'another-3rd-party-library': {
         deps: ['myJSFile'],
-        exports: '3rdPartyLibrary'
+        exports: 'another3rdPartyLibrary'
     }
 }
 ```
@@ -102,4 +102,4 @@ In the below snippet, `Vendor_Module/js/module-mixin` will overwrite with the sp
 }
 ```
 
-The concept of Javascript mixins itself is explained in depth in [Using Javascript Mixins](https://devdocs.magento.com/guides/v2.3/javascript-dev-guide/javascript/js_mixins.html).
+The concept of Javascript mixins itself is explained in depth in [Using Javascript Mixins]({{ site.baseurl }}/javascript-dev-guide/javascript/js_mixins.html).
