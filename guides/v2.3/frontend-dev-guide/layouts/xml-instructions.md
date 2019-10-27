@@ -436,7 +436,6 @@ $shoppingCartUrl = $block->getShoppingCartUrl();
 $helperMethodResult = $block->getHelperMethodResult();
 ```
 
-
 ### arguments {#arguments}
 
 `<arguments>` is a required container for `<argument>`. It does not have its own attributes.
