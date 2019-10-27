@@ -141,7 +141,7 @@ Below is an example of how to assign observers to watch certain events:
 In the preceding example, we assign the observer `MyObserver` to the custom event `my_module_event_before` and `AnotherObserver` to `my_module_event_after`.
 
 Observer names must be unique per event definition. This means that you cannot have two observers with the same name in the same event definition. In the example, both observers have the name `myObserverName`. This is acceptable because each of those observers belong to different event definitions.
-If you declare an observer with a name already in use in the same event, so Magento will merge these declarations nodes respecting the module load order as defined in app/etc/config.php file. This is very useful as you can see bellow. 
+If you declare an observer with a name already in use in the same event, so Magento will merge these declarations nodes respecting the module load order as defined in app/etc/config.php file. This is very useful as you can see below.
 
 ### Disabling an observer
 
