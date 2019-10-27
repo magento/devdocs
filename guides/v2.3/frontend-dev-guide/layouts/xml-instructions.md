@@ -300,19 +300,19 @@ There are examples of all argument types.
 -  The *string* type:
 
 ```xml
-<argument name="some_string" xsi:type="string" >Some String</argument>
+<argument name="some_string" xsi:type="string">Some String</argument>
 ```
 
 -  The *boolean* type:
 
 ```xml
-<argument name="is_active" xsi:type="boolean" >true</argument>
+<argument name="is_active" xsi:type="boolean">true</argument>
 ```
 
 -  The *object* type:
 
 ```xml
-<argument name="viewModel" xsi:type="object" >Vendor\CustomModule\ViewModel\Class</argument>
+<argument name="viewModel" xsi:type="object">Vendor\CustomModule\ViewModel\Class</argument>
 ```
 
 The `Vendor\CustomModule\ViewModel\Class` class should implement the `\Magento\Framework\View\Element\Block\ArgumentInterface` interface.
@@ -320,7 +320,7 @@ The `Vendor\CustomModule\ViewModel\Class` class should implement the `\Magento\F
 -  The *number* type:
 
 ```xml
-<argument name="some_number" xsi:type="number" >100</argument>
+<argument name="some_number" xsi:type="number">100</argument>
 ```
 
 -  The *null* type:
@@ -342,7 +342,7 @@ The `Vendor\CustomModule\ViewModel\Class` class should implement the `\Magento\F
 -  The *options* type:
 
 ```xml
-<argument name="options" xsi:type="options" >Vendor\CustomModule\Source\Options\Class</argument>
+<argument name="options" xsi:type="options">Vendor\CustomModule\Source\Options\Class</argument>
 ```
 
 The `Vendor\CustomModule\Source\Options\Class` class should implement the `\Magento\Framework\Data\OptionSourceInterface` interface.
@@ -356,8 +356,9 @@ The `Vendor\CustomModule\Source\Options\Class` class should implement the `\Mage
 -  The *helper* type:
 
 ```xml
-<argument name="helper_method_result" xsi:type="helper" helper="Vendor\CustomModule\Helper\Class::someMethod" >
-  <param name="paramName">paramName</param>
+<argument name="helper_method_result" xsi:type="helper" helper="Vendor\CustomModule\Helper\Class::someMethod">
+  <param name="firstParam">firstValue</param>
+  <param name="secondParam">secondValue</param>
     ...
 </argument>
 ```
@@ -375,23 +376,66 @@ These argument examples can be taken in the template like in the following examp
 
 /** @var string $someString */
 $someString = $block->getData('some_string');
+
 /** @var bool $isActive */
 $isActive = $block->getData('is_active');
+
 /** @var Vendor\CustomModule\ViewModel\Class|\Magento\Framework\View\Element\Block\ArgumentInterface $viewModel */
 $viewModel = $block->getData('viewModel');
+
 /** @var string|int|float $someNumber */
 $someNumber = $block->getData('some_number');
+
 /** @var null $nullValue */
 $nullValue = $block->getData('null_value');
+
 /** @var array $customArray */
 $customArray = $block->getData('custom_array');
+
 /** @var array $options */
 $options = $block->getData('options');
+
 /** @var string $shoppingCartUrl */
 $shoppingCartUrl = $block->getData('shopping_cart_url');
+
 /** @var mixed $helperMethodResult */
 $helperMethodResult = $block->getData('helper_method_result');
 ```
+
+Another way to take these arguments in template file is using the magic method *get* followed by the name of argument in CamelCase format. In this case the syntax would be:
+
+```php
+<?php
+/** @var \Magento\Framework\View\Element\Template $block */
+
+/** @var string $someString */
+$someString = $block->getSomeString();
+
+/** @var bool $isActive */
+$isActive = $block->getIsActive();
+
+/** @var Vendor\CustomModule\ViewModel\Class|\Magento\Framework\View\Element\Block\ArgumentInterface $viewModel */
+$viewModel = $block->getViewModel();
+
+/** @var string|int|float $someNumber */
+$someNumber = $block->getSomeNumber();
+
+/** @var null $nullValue */
+$nullValue = $block->getNullValue();
+
+/** @var array $customArray */
+$customArray = $block->getCustomArray();
+
+/** @var array $options */
+$options = $block->getOptions();
+
+/** @var string $shoppingCartUrl */
+$shoppingCartUrl = $block->getShoppingCartUrl();
+
+/** @var mixed $helperMethodResult */
+$helperMethodResult = $block->getHelperMethodResult();
+```
+
 
 ### arguments {#arguments}
 
