@@ -467,7 +467,7 @@ none
 
         </ul>
       </td>
-      <td colspan="1"> Mandatory element</td>
+      <td colspan="1">Mandatory element</td>
     </tr>
   </tbody>
 </table>
