@@ -4,7 +4,7 @@ title: Introduction
 ---
 
 {: .bs-callout .bs-callout-info}
-These APIs are not yet public. This is a preview of version 1.0. Please send all feedback to <marketplace-eqp-apis@magento.com>.
+These APIs are not yet public. This is a preview of version 1.0. Please send all feedback to <magento-marketplace-eqp-apis@adobe.com>.
 
 The Magento Extension Quality Program (EQP) REST APIs provide access to the [Magento Developer Portal](https://developer.magento.com).
 
