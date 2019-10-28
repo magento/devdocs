@@ -54,7 +54,7 @@ The folder name conventionally matches naming used in the theme's code: any alph
 
 ## Declare your theme {#fedg_create_theme_how-to_declare}
 
-After you create a directory for your theme, you must create `theme.xml` containing at least the theme name and the parent theme name (if the theme [inherits]({{page.baseurl}}/frontend-dev-guide/themes/theme-inherit.html) from one). Optionally you can specify where the theme preview image is stored.
+After you create a directory for your theme, you must create `theme.xml` containing at least the theme name. Optionally, you can specifiy the parent theme name (if the theme [inherits]({{page.baseurl}}/frontend-dev-guide/themes/theme-inherit.html) from one) and, if necessary, where the theme preview image is stored.
 
 1. Add or copy from an existing `theme.xml` file to your theme directory `app/design/frontend/<Vendor>/<theme>`.
 
