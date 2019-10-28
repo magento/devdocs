@@ -199,9 +199,9 @@ Max number of rows.
 
 The message selector of an element which appears when the max number of rows has been exceeded.
 
-**Type**: Integer
+**Type**: String
 
-**Default value**: `1000`
+**Default value**: `#max-registrant-message`
 
 ## Code sample
 
