@@ -223,6 +223,9 @@ The `{{site.data.var.ct}}` version 2002.0.18 and later supports developer mode.
     ```bash
     bash ./mutagen.sh
     ```
+    
+    {: .bs-callout-info}
+    If you running docker on Windows and session start was failed, change `--symlink-mode` to `portable` in the `mutagen.sh` file.
 
     {: .bs-callout-info}
     If you use `docker-sync` for file synchronization, skip this step.
