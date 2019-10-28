@@ -108,15 +108,15 @@ Layout validations and error handling depends on the [application mode] in which
 
 *  production or default modes: syntax is validated in `.xml` and `.xsd` files. If validation fails, errors are logged to the `var/log` directory without throwing an exception. The validation according to the xsd schema is not performed.
 
-## Chapter Contents
+## Guide Contents
 
-*  [Layout instructions]
-*  [Layout file types]
-*  [Product layouts]
+*  [Layout instructions][]
+*  [Layout file types][]
+*  [Product layouts][]
 *  [Extend a layout][extend]
 *  [Override a layout][override]
-*  [Common layout customization tasks]
-*  [Customizing layout - step-by-step illustration]
+*  [Common layout customization tasks][]
+*  [Customizing layout - step-by-step illustration][]
 
 <!-- Link definitions -->
 [extend]: {{ page.baseurl }}/frontend-dev-guide/layouts/layout-extend.html
