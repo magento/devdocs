@@ -9,6 +9,12 @@ functional_areas:
 
 Bulk API endpoints differ from other REST endpoints in that they combine multiple calls of the same type into an array and execute them as a single request. The endpoint handler splits the array into individual entities and writes them as separate messages to the message queue.
 
+{: .bs-callout .bs-callout-warning}
+By default, Magento uses RabbitMQ (AMQP) for processing message queues. Before using Bulk operations, you should see [RabbitMQ]({{ page.baseurl }}/install-gde/prereq/install-rabbitmq.html).
+
+{:.bs-callout .bs-callout-info}
+Alternatively you can use CRON for processing message queues without RabbitMQ installed, see [Manage message queues]({{ page.baseurl }}/config-guide/mq/manage-message-queues.html).
+
 {:.bs-callout .bs-callout-tip}
 Use the `bin/magento queue:consumers:start async.operations.all` command to enable bulk endpoint processing.
 
