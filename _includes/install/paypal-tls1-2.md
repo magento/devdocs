@@ -5,7 +5,7 @@ PayPal recently announced they will require Transport Layer Security (TLS) versi
 More information:
 
 *  [Details (PayPal security bulletin)](https://www.paypal.com/uk/webapps/mpp/ssl-security-update)
-*  [PayPal live payments switching in June 2016 (PayPal technical blog)](https://devblog.paypal.com/upcoming-security-changes-notice/#tls)
+*  [PayPal live payments switching in June 2016 (PayPal technical blog)](https://medium.com/paypal-engineering/security-related-changes-required-to-avoid-service-disruption-82caf7778328#0422)
 
 ### Symptom
 
