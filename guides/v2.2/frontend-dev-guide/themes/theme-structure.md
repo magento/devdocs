@@ -83,7 +83,7 @@ The directories and files structure described below is the most extended one. It
         optional
       </td>
       <td colspan="1">
-          Module-specific styles (<code>.css</code> and/or <code>.less</code> files). General styles for the module are in the <code>_module.less</code> file, and styles for widgets are in <code>_widgets.less</code><br/><br/>Ex: [Module_Theme]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Theme/view/frontend/web/css) or description field should be corrected.
+          Module-specific styles (<code>.css</code> and/or <code>.less</code> files). General styles for the module are in the <code>_module.less</code> file, and styles for widgets are in <code>_widgets.less</code>.
       </td>
     </tr>
     <tr>
@@ -150,7 +150,7 @@ The directories and files structure described below is the most extended one. It
       <td colspan="1">
         <code>/media</code>
       </td>
-      <td colspan="1">Optional</td>
+      <td colspan="1">optional</td>
       <td colspan="1">
         This directory contains a theme preview (a screenshot of your theme).
       </td>
