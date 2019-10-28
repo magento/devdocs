@@ -65,11 +65,13 @@ Arguments values set in a layout file are accessed in templates using the block'
 
 For example, set an argument in the block: `<argument name="store_name" xsi:type="string">OrangeCompany</argument>`.
 
-*  Then, get the argument value, in the template by either of the two ways:
+*  Get the argument value, in the template:
+
    *  `$block->getData('store_name')`
    *  `$block->getStoreName()`
 
-*  Or, check if the argument exists, in the template by either of the two ways:
+*  Check if the argument exists:
+
    *  `$block->hasData('store_name')`
    *  `$block->hasStoreName()`
 
