@@ -9,7 +9,7 @@ Use this resource to initiate and manage all aspects of submitting a package to 
 
 *  **Marketing information**—Includes package descriptions, image assets for logos and galleries, pricing information, support and installation services offered, and various guides—user, installation, and reference in PDF.
 
-Before submitting a package, you must first [upload your files]({{ page.baseurl }}/marketplace/eqp/files.html) and associate the ID returned by the `/rest/v1/files/uploads` endpoint with your package using JSON parameters in the request body.
+Before submitting a package, you must first [upload your files](files.html) and associate the ID returned by the `/rest/v1/files/uploads` endpoint with your package using JSON parameters in the request body.
 
 You can also check package submission status and retrieve reports about technical and marketing issues discovered during the EQP process.
 

@@ -11,7 +11,7 @@ profile. You must create a new profile on the [Developer Portal](https://develop
 
 ## Profile
 
-You must use the `mage_id` associated with the client application in your developer account when making request to these endpoints. You can get this ID when obtaining a [session token]({{ page.baseurl }}/marketplace/eqp/auth.html#session-token).
+You must use the `mage_id` associated with the client application in your developer account when making request to these endpoints. You can get this ID when obtaining a [session token](auth.html#session-token).
 
 ```http
 GET /rest/v1/users/:mage_id

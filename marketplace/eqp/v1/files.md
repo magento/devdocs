@@ -11,7 +11,7 @@ Use `files` resources to manage all code artifacts and assets associated with an
 *  Product Icons
 *  PDF documents for User Guides, Installation Guides, and Reference Guides
 
-Each file upload receives a unique ID. You must associate these IDs with your submission later using the [packages API]({{ page.baseurl }}/marketplace/eqp/packages.html).
+Each file upload receives a unique ID. You must associate these IDs with your submission later using the [packages API](packages.html).
 
 You can associate a file with multiple products. This allows for asset sharing across different packages. For example, you can share an image file for a gallery with different packages by associating it with the same file upload ID.
 
