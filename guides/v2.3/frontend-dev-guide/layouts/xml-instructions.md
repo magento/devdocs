@@ -137,7 +137,7 @@ The following tables give a detailed description of the results you can get usin
 | Situation | Result |
 |:------- |:------ |
 | Both `before` and `after` attributes are present | `after` takes precedence. |
-| Both `before` and `after` attributes are absent or empty | The element is considered as non-positioned. All other elements are positioned at their specified locations. The missing element displays at a random position that doesn't violate requirements for the positioned elements. |
+| Both `before` and `after` attributes are absent or empty | The element is considered as non-positioned. All other elements are positioned at their specified locations. The non-positioned element displays at a random position that doesn't violate requirements for the positioned elements. |
 | Several elements have `before` or `after` set to dash (-) | All elements display at the top (or bottom, in case of the after attribute), but the ordering of group of these elements is undefined. |
 | The `before` or `after` attribute's value refers to an element that is not located in the parent node of the element being defined. | The element displays at a random location that doesn't violate requirements for the correctly positioned elements. |
 
