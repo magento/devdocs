@@ -355,7 +355,8 @@ There are examples of all argument types.
 
    ```xml
    <argument name="helper_method_result" xsi:type="helper" helper="Vendor\CustomModule\Helper\Class::someMethod" >
-     <param name="paramName">paramName</param>
+     <param name="firstParam">firstValue</param>
+     <param name="secondParam">secondValue</param>
     ...
    </argument>
    ```
@@ -373,22 +374,64 @@ These argument examples can be taken in the template like in the following examp
 
 /** @var string $someString */
 $someString = $block->getData('some_string');
+
 /** @var bool $isActive */
 $isActive = $block->getData('is_active');
+
 /** @var Vendor\CustomModule\ViewModel\Class|\Magento\Framework\View\Element\Block\ArgumentInterface $viewModel */
 $viewModel = $block->getData('viewModel');
+
 /** @var string|int|float $someNumber */
 $someNumber = $block->getData('some_number');
+
 /** @var null $nullValue */
 $nullValue = $block->getData('null_value');
+
 /** @var array $customArray */
 $customArray = $block->getData('custom_array');
+
 /** @var array $options */
 $options = $block->getData('options');
+
 /** @var string $shoppingCartUrl */
 $shoppingCartUrl = $block->getData('shopping_cart_url');
+
 /** @var mixed $helperMethodResult */
 $helperMethodResult = $block->getData('helper_method_result');
+```
+
+Another way to take these arguments in template file is using the magic method *get* followed by the name of argument in CamelCase format. In this case the syntax would be:
+
+```php
+<?php
+/** @var \Magento\Framework\View\Element\Template $block */
+
+/** @var string $someString */
+$someString = $block->getSomeString();
+
+/** @var bool $isActive */
+$isActive = $block->getIsActive();
+
+/** @var Vendor\CustomModule\ViewModel\Class|\Magento\Framework\View\Element\Block\ArgumentInterface $viewModel */
+$viewModel = $block->getViewModel();
+
+/** @var string|int|float $someNumber */
+$someNumber = $block->getSomeNumber();
+
+/** @var null $nullValue */
+$nullValue = $block->getNullValue();
+
+/** @var array $customArray */
+$customArray = $block->getCustomArray();
+
+/** @var array $options */
+$options = $block->getOptions();
+
+/** @var string $shoppingCartUrl */
+$shoppingCartUrl = $block->getShoppingCartUrl();
+
+/** @var mixed $helperMethodResult */
+$helperMethodResult = $block->getHelperMethodResult();
 ```
 
 ### arguments {#arguments}
