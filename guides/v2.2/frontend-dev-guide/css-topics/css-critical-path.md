@@ -27,7 +27,7 @@ Make sure that there is a `critical.css` file for your theme. Other non-critical
 The 'critical' CSS file should be located in `app/design/frontend/<your_vendor_name>/<your_theme_name>/web/css/critical.css`
 The default Luma theme critical CSS file is located in `app/design/frontend/Magento/luma/web/css/critical.css`
 If there is not a `critical.css` file for the custom theme, but there is one for the Luma theme, Luma's `critical.css` will be used.
-THe critical css file path can also be configured in `di.xml` as a constructor `filePath` argument in the `Magento\Theme\Block\Html\Header\CriticalCss` block.
+The critical css file path can also be configured in `di.xml` as a constructor `filePath` argument in the `Magento\Theme\Block\Html\Header\CriticalCss` block.
 
 To generate a critical CSS for your theme, critical path CSS generators like [Penthouse](https://www.npmjs.com/package/penthouse) or [Critical](https://www.npmjs.com/package/critical) can be used, or you can create it yourself. While creating critical CSS, adhere to the following principles:
 
