@@ -13,7 +13,7 @@ To avoid compromising passwords that have been hashed with outdated algorithms l
 password_hash:salt:version0:versionn
 ```
 
-where `version0`...`versionn` represents all the hash algorithms versions used on the password. Also, the salt always stored together with the password hash so we can restore the entire chain of algorithms. An example looks like:
+where `version0`...`versionn` represents all the hash algorithms versions used on the password. Also, the salt is always stored together with the password hash, so we can restore the entire chain of algorithms. An example looks like:
 
 ```text
 a853b06f077b686f8a3af80c98acfca763cf10c0e03597c67e756f1c782d1ab0:8qnyO4H1OYIfGCUb:1:2
