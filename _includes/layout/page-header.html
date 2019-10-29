@@ -15,5 +15,11 @@
 <h1 class="page-subtitle">{{ page.subtitle }}</h1>
 {% endif %}
 
+{% if page.title == "How to Add a New Table to a Database" %}
+  <div class="message-banner">
+    This tutorial applies to Magento 2.2.x only. For Magento 2.3.x, see <a href="https://devdocs.magento.com/guides/v2.3/extension-dev-guide/declarative-schema">Declarative Schema</a>.
+  </div>
+{% endif %}
+
 <h1 class="page-heading">{{ page.title }}</h1>
 </section>
