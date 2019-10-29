@@ -237,7 +237,7 @@ In second, non-scalar one:
 ```
 
 In third, array one (in JSON for a change):
-```xml
+```json
 {
   id: 1,
   sku: "some-sku",
