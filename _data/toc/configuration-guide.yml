@@ -5,27 +5,28 @@ pages:
 
     - label: Security settings
       children:
-        - label: Secure cron.php to run in a browser
-          url: /config-guide/secy/secy-cron.html
-
-        - label: X-Frame-Options header
-          url: /config-guide/secy/secy-xframe.html
-
-        - label: Prevent cache poisoning
-          url: /config-guide/secy/secy-headers.html
-
-        - label: Two-Factor Authentication
-          url: /security/two-factor-authentication.html
 
         - label: Google reCAPTCHA
           url: /security/google-recaptcha.html
 
+        - label: Password hashing
+          url: /config-guide/secy/hashing.html
+
+        - label: Prevent cache poisoning
+          url: /config-guide/secy/secy-headers.html
+
+        - label: Secure cron.php to run in a browser
+          url: /config-guide/secy/secy-cron.html
+
+        - label: Two-Factor Authentication
+          url: /security/two-factor-authentication.html
+
+        - label: X-Frame-Options header
+          url: /config-guide/secy/secy-xframe.html
+
     - label: Magento application initialization and bootstrap
       url: /config-guide/bootstrap/magento-bootstrap.html
       children:
-
-        - label: Set the value of bootstrap parameters
-          url: /config-guide/bootstrap/magento-how-to-set.html
 
         - label: About Magento modes
           url: /config-guide/bootstrap/magento-modes.html
@@ -35,6 +36,9 @@ pages:
 
         - label: Enable profiling (MAGE_PROFILER)
           url: /config-guide/bootstrap/mage-profiler.html
+
+        - label: Set the value of bootstrap parameters
+          url: /config-guide/bootstrap/magento-how-to-set.html
 
     - label: Pipeline Deployment
       include_versions: ["2.2", "2.3"]
