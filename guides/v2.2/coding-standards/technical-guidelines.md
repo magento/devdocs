@@ -574,7 +574,7 @@ You need to read configuration from different sources (like database or filesyst
 
 6.4.3.8. Data objects returned by service contracts SHOULD be fully loaded to ensure consistency.
 
-6.4.3.9. Service contracts SHOULD allow client side generated IDs. A service SHOULD accept an ID instead of generating it. A service SHOULD use `string` as a type for ID, so that it is compatible with common algorithms for client side generated IDs.
+6.4.3.9. Service contracts SHOULD allow client side generated IDs. A service SHOULD accept an ID instead of generating it. See [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier) as an example of client side generated ID.
 
 6.4.4. Service Implementation
 
