@@ -218,7 +218,7 @@ The `{{site.data.var.ct}}` version 2002.0.18 and later supports developer mode.
     docker-compose up -d
     ```
 
-1.  Start the file synchronization with `mutagen.io`.
+1.  Start the file synchronization with mutagen.io. If you use docker-sync for file synchronization, skip this step.
 
     ```bash
     bash ./mutagen.sh
@@ -226,9 +226,6 @@ The `{{site.data.var.ct}}` version 2002.0.18 and later supports developer mode.
     
     {: .bs-callout-info}
     If you running docker on Windows and session start was failed, change `--symlink-mode` to `portable` in the `mutagen.sh` file.
-
-    {: .bs-callout-info}
-    If you use `docker-sync` for file synchronization, skip this step.
 
 1. Install Magento in your Docker environment.
 
