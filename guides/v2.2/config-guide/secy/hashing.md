@@ -21,7 +21,7 @@ a853b06f077b686f8a3af80c98acfca763cf10c0e03597c67e756f1c782d1ab0:8qnyO4H1OYIfGCU
 
 The first part represents the password hash. The second, `8qnyO4H1OYIfGCUb` is the salt. The last two are the different hash algorithms: 1 is `SHA256` and  2 is `Argon 2ID13`. This means that the customer's password was originally hashed with `SHA256` and after that, the algorithm was updated with `Argon 2ID13` and the hash was re-hashed with Argon.
 
-## Upgrade Hash Strategy
+## Upgrade hash strategy
 
 Consider what the hash upgrade mechanism looks like. Assume that originally, a password was hashed with `MD5` and then the algorithm was updated multiple times with Argon 2ID13. The following diagram shows the hash upgrade flow.
 
