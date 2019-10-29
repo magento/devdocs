@@ -225,7 +225,7 @@ The `{{site.data.var.ct}}` version 2002.0.18 and later supports developer mode.
     ```
     
     {: .bs-callout-info}
-    If you running docker on Windows and session start was failed, change `--symlink-mode` to `portable` in the `mutagen.sh` file.
+If you host your Docker environment on Windows and the session start fails, update the `mutagen.sh` file to change the  `--symlink-mode` to `portable`.
 
 1. Install Magento in your Docker environment.
 
