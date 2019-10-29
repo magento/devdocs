@@ -225,10 +225,10 @@ The `{{site.data.var.ct}}` version 2002.0.18 and later supports developer mode.
 
    ```bash
    bash ./mutagen.sh
-  ```
+   ```
 
-  {:.bs-callout-info}
-  If you host your Docker environment on Windows and the session start fails, update the `mutagen.sh` file to change the value for the `--symlink-mode` option to `portable`.
+   {:.bs-callout-info}
+   If you host your Docker environment on Windows and the session start fails, update the `mutagen.sh` file to change the value for the `--symlink-mode` option to `portable`.
 
 1. Deploy Magento in the Docker container:
 
