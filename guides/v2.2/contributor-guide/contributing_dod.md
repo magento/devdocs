@@ -81,8 +81,6 @@ Be aware that while high-level tests may provide coverage to code, it is only in
 
 High level testing policy:
  
-* Before committing code changes, author must ensure successful execution of all tests by running all tests or at least those which might be affected by code changes.
-  Continuous integration enforces execution of all tests and author is accountable for broken builds.
 * Any code that is added or changed must have explicit tests to validate the behavior. To clarify, this policy is intended to prove that the integrity of the code is verified regardless of which implementations are loaded in a black box environment. This may be done through unit or integration testing as appropriate. 
 * Code must be also shown to work with known collaborators. This must be done through integration tests and ideally should involve as few components as possible per test case. This level of tests ensures that the code will work with its known associates. Specific examples can be subject but such associates would include composites, chains, pools, etc. but also include cases like a Template filter working with a specific processor loaded.
 * In addition, regardless of the interpretation of the testing strategy below: Any class marked with an `@api` annotation MUST be covered with explicit test coverage via integration or unit tests. 
@@ -128,7 +126,7 @@ See [Functional Tests][2].
 
 ### Unit Tests
 
-There are a small number of use cases for unit tests in Magento. The nature of our code and backwards compatibility practices make it increasingly hard to write and maintain high-quality unit tests.
+There are a small number of use cases for unit tests in Magento. The nature of our code and development practices make it increasingly hard to write and maintain high-quality unit tests.
 Many of them end up being replaced by integration tests or are practically useless from the beginning due to how much mocking is needed to make them pass.
 
 For these reasons, most of the time an integration test is likely the preferred test type but here are some cases when you would still want to use them:  
@@ -147,7 +145,6 @@ Examples:
 
 * Utility classes (like `\Magento\Framework\Math\Random`).
 * Simple classes that can also be used independently (like `\Magento\Framework\Api\SortOrder`).
-* Simple logic within a Data Transfer Object.
 * Algorithms that perform calculation or parsing.
 
 And by explicit contrast here are some things NOT to cover:
