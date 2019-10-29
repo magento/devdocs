@@ -130,17 +130,17 @@ Continue launching your Docker environment in the default _production_ mode.
 
 1. Install Magento in your Docker environment.
 
-   Build Magento in the Docker container:
+   -  Build Magento in the Docker container:
 
-   ```bash
-   docker-compose run build cloud-build
-   ```
+     ```bash
+     docker-compose run build cloud-build
+     ```
 
-   Deploy Magento in the Docker container:
+   -  Deploy Magento in the Docker container:
 
-   ```bash
-   docker-compose run deploy cloud-deploy
-   ```
+      ```bash
+      docker-compose run deploy cloud-deploy
+      ```
 
    {:.bs-callout-info }
    For `{{site.data.var.ct}}` v2002.0.12, install Magento with the `docker-compose run cli magento-installer` command.
