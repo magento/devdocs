@@ -14,8 +14,8 @@ Magento out-of-the-box provides mechanisms for adding this ability, but you stil
 These modifications are the following:
 
 1. Adding vault enabling controls.
-2. Modifying the payment component (updating of the `additional_data` property must be added).
-3. Creating a request data builder.
+1. Modifying the payment component (updating of the `additional_data` property must be added).
+1. Creating a request data builder.
 
 The following paragraphs describe these points in details.
 
@@ -51,16 +51,16 @@ Example ([Magento/Braintree/view/frontend/web/template/payment/form.html]({{ sit
 
 ## Modifying the payment component
 
-The payment component must process the state of the vault-enabling control and update payment `additional_data` before it is sent to the [backend](https://glossary.magento.com/backend). 
+The payment component must process the state of the vault-enabling control and update payment `additional_data` before it is sent to the [backend](https://glossary.magento.com/backend).
 
 Magento has a default vault enabler [UI component](https://glossary.magento.com/ui-component) (`Magento_Vault/js/view/payment/vault-enabler`). In the payment component, you just need to call its `visitAdditionalData` to update the `additional_data` property. The rest is done by the [`\Magento\Vault\Observer\VaultEnableAssigner`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Vault/Observer/VaultEnableAssigner.php) observer.
 
-Example: [the Braintree payment UI component]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Braintree/view/frontend/web/js/view/payment/method-renderer/hosted-fields.js)
+Example: [the Braintree payment UI component]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Braintree/view/frontend/web/js/view/payment/method-renderer/cc-form.js)
 
 ```javascript
 define([
     ...
-    'Magento_Braintree/js/view/payment/method-renderer/cc-form',
+    'Magento_Payment/js/view/payment/cc-form',
     'Magento_Vault/js/view/payment/vault-enabler'
 ], function (... Component, VaultEnabler) {
     'use strict';
@@ -71,46 +71,55 @@ define([
          * @returns {exports.initialize}
          */
         initialize: function () {
-            this._super();
+            var self = this;
 
-            ...
+            self._super();
             this.vaultEnabler = new VaultEnabler();
             this.vaultEnabler.setPaymentCode(this.getVaultCode());
-
-            return this;
+            ...
+            return self;
         },
 
         /**
          * @returns {Object}
          */
         getData: function () {
-            var data = this._super();
+            var data = {
+                'method': this.getCode(),
+                'additional_data': {
+                    'payment_method_nonce': this.paymentPayload.nonce
+                }
+            };
 
+            data['additional_data'] = _.extend(data['additional_data'], this.additionalData);
             this.vaultEnabler.visitAdditionalData(data);
 
             return data;
         },
 
         /**
-         * @returns {Bool}
+         * @returns {Boolean}
          */
         isVaultEnabled: function () {
             return this.vaultEnabler.isVaultEnabled();
         },
 
+
         /**
+         * Returns vault code.
+         *
          * @returns {String}
          */
         getVaultCode: function () {
-            return window.checkoutConfig.payment[this.getCode()].vaultCode;
-        }
+            return window.checkoutConfig.payment[this.getCode()].ccVaultCode;
+        },
     });
 });
 ```
 
 ## Add request data builder
 
-Now when we have information about enabling or disabling vault, the payment must send it to the payment processor. This is done in the [request builder]({{ page.baseurl }}/payments-integrations/payment-gateway/request-builder.html). 
+Now when we have information about enabling or disabling vault, the payment must send it to the payment processor. This is done in the [request builder]({{ page.baseurl }}/payments-integrations/payment-gateway/request-builder.html).
 
 You can create a new request builder, or update the existing request builder of the payment method.
 
@@ -144,7 +153,7 @@ class VaultDataBuilder implements BuilderInterface
 }
 ```
 
-The builder must be added to the payment authorize request in the DI configuration. 
+The builder must be added to the payment authorize request in the DI configuration.
 Example from the Braintree `di.xml`:
 
 ```xml
@@ -161,5 +170,3 @@ Example from the Braintree `di.xml`:
 ## What's next
 
 [Storing and processing the payment related data]({{ page.baseurl }}/payments-integrations/vault/payment-token.html)
-
-

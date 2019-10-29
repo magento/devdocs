@@ -13,15 +13,16 @@ The ColorPicker component must be a child of the [Listing]({{ page.baseurl }}/ui
 |`colorFormat`|Defines the color format displayed in the selection tool and input field. Valid formats: `hex`, `rgb`, `hsl`, `hsv`, `name`, `none`|`string`|`-`|
 |`colorPickerMode`|Defines the mode that affects the available color picker functionality. Valid modes: `simple`, `full`, `noalpha`, `palette`|`string`|`-`|
 |`elementTmpl`|The path to the `.html` template of the particular field type (color-picker).|`string`|`ui/form/element/color-picker`|
+|`label`|Option's label.|`string`|`-`|
 
 ## Sources files
 
-- [app/code/Magento/Ui/view/base/ui_component/etc/definition/colorPicker.xsd]({{ site.mage2bloburl }}/{{page.guide_version}}/app/code/Magento/Ui/view/base/ui_component/etc/definition/colorPicker.xsd)
-- [app/code/Magento/Ui/view/base/web/js/form/element/colorPicker.js]({{ site.mage2bloburl }}/{{page.guide_version}}/app/code/Magento/Ui/view/base/web/js/form/element/color-picker.js)
-- [app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/colorPicker.js]({{ site.mage2bloburl }}/{{page.guide_version}}/app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/color-picker.js)
-- [app/code/Magento/Ui/view/base/web/templates/form/element/colorPicker.html]({{ site.mage2bloburl }}/{{page.guide_version}}/app/code/Magento/Ui/view/base/web/templates/form/element/color-picker.html)
-- [lib/web/jquery/spectrum/spectrum.js]({{ site.mage2bloburl }}/{{page.guide_version}}/lib/web/jquery/spectrum/spectrum.js)
-- [lib/web/jquery/spectrum/tinycolor.js]({{ site.mage2bloburl }}/{{page.guide_version}}/lib/web/jquery/spectrum/tinycolor.js)
+-  [app/code/Magento/Ui/view/base/ui_component/etc/definition/colorPicker.xsd]({{ site.mage2bloburl }}/{{page.guide_version}}/app/code/Magento/Ui/view/base/ui_component/etc/definition/colorPicker.xsd)
+-  [app/code/Magento/Ui/view/base/web/js/form/element/colorPicker.js]({{ site.mage2bloburl }}/{{page.guide_version}}/app/code/Magento/Ui/view/base/web/js/form/element/color-picker.js)
+-  [app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/colorPicker.js]({{ site.mage2bloburl }}/{{page.guide_version}}/app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/color-picker.js)
+-  [app/code/Magento/Ui/view/base/web/templates/form/element/colorPicker.html]({{ site.mage2bloburl }}/{{page.guide_version}}/app/code/Magento/Ui/view/base/web/templates/form/element/color-picker.html)
+-  [lib/web/jquery/spectrum/spectrum.js]({{ site.mage2bloburl }}/{{page.guide_version}}/lib/web/jquery/spectrum/spectrum.js)
+-  [lib/web/jquery/spectrum/tinycolor.js]({{ site.mage2bloburl }}/{{page.guide_version}}/lib/web/jquery/spectrum/tinycolor.js)
 
 ## Examples
 
@@ -40,3 +41,7 @@ The ColorPicker component must be a child of the [Listing]({{ page.baseurl }}/ui
     ...
     </form>
 ```
+
+## Result
+
+![Color Picker Component]({{ site.baseurl }}/common/images/ui_comps/color_picker_result.png)

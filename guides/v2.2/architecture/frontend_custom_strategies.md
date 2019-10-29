@@ -16,11 +16,11 @@ Merchants are encouraged to use Magento components and themes to extend and tran
 
 Magento provides several tools to help you significantly jumpstart the storefront customization process:
 
-* Magento Blank [Theme](https://glossary.magento.com/theme)
+*  Magento Blank [Theme](https://glossary.magento.com/theme)
 
-* [Overview of UI components][]
+*  [Overview of UI components][]
 
-* [Magento Admin Pattern Library][]
+*  [Magento Admin Pattern Library][]
 
 See the [Frontend Developer Guide][] for information on creating your themes.
 
@@ -32,8 +32,8 @@ The Magento blank theme template provides a launchpad for storefront customizati
 
 Using Magento standard coding and styling tools can help:
 
-* enforce for consistency in design across your storefronts
-* simplify (and speed up) the design process
+*  enforce for consistency in design across your storefronts
+*  simplify (and speed up) the design process
 
 This component [library](https://glossary.magento.com/library) contains standard reusable components for form features, such as fields and buttons, and navigation elements. The Magento UI library is a set of generic web components and Magento-specific patterns, which simplifies the process of Magento theme creation and customization.
 
@@ -45,11 +45,11 @@ A *pattern library* is a collection of user interface (UI) design patterns that 
 
 Form elements included in the [Magento Admin](https://glossary.magento.com/magento-admin) pattern library include:
 
-* address form
-* button bar
-* container
-* tabs
-* sign-in form
+*  address form
+*  button bar
+*  container
+*  tabs
+*  sign-in form
 
 Users of the default Magento storefront encounter examples of these form elements throughout the product. These patterns provide a valuable language of software components (and indirectly, user experiences) for [extension](https://glossary.magento.com/extension) developers and administrators.
 
@@ -63,15 +63,15 @@ These four levels of potential storefront customization are listed in order to i
 
 ### Extend Magento-Provided CSS
 
-Magento supplies a default {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} and a Less-based CSS. You can substantially change a storefront using CSS only. This uncomplicated strategy might suit projects with a limited budget, or might interest developers who create different skins for a site. A small business enter this process of storefront customization by buying a third-party developed theme from Magento Marketplace to extend the default values.
+Magento supplies a default [theme](https://glossary.magento.com/theme) and a Less-based CSS. You can substantially change a storefront using CSS only. This uncomplicated strategy might suit projects with a limited budget, or might interest developers who create different skins for a site. A small business enter this process of storefront customization by buying a third-party developed theme from Magento Marketplace to extend the default values.
 
 ### Replace PHTML template files
 
-In addition to extending the default CSS, you can generate different HTML {% glossarytooltip 8f407f13-4350-449b-9dc5-217dcf01bc42 %}markup{% endglossarytooltip %}. For example, you might need to add a missing CSS class name, or an add an extra `<div>` tag to achieve some visual effect. You might also need to tweak some {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} to cope with different HTML markup. This change is more demanding than simply extending Magento CSS, but is still within the grasp of smaller projects and leaner teams.
+In addition to extending the default CSS, you can generate different HTML [markup](https://glossary.magento.com/markup). For example, you might need to add a missing CSS class name, or add an extra `<div>` tag to achieve some visual effect. You might also need to tweak some [JavaScript](https://glossary.magento.com/javascript/) to cope with different HTML markup. This change is more demanding than simply extending Magento CSS, but is still within the grasp of smaller projects and leaner teams.
 
 ### Replace Magento-Provided CSS
 
-Rather than edit the default CSS provided by Magento, you might decide to replace all the default storefront CSS code with your own. This strategy avoids tying a project to the Magento-provided CSS, but puts a greater burden on project development and integration. It also allows use of different CSS tools or technologies not provided with Magento. Partners who build their own set of CSS libraries could reuse these libraries on different customer projects. (These unique CSS libraries may help differentiate a partner from others in the market.)
+Rather than edit the default CSS provided by Magento, you might decide to replace all the default storefront CSS code with your own. This strategy avoids tying a project to the Magento-provided CSS, but puts a greater burden on project development and integration. It also allows the use of different CSS tools or technologies not provided with Magento. Partners who build their own set of CSS libraries could reuse these libraries on different customer projects. (These unique CSS libraries may help differentiate a partner from others in the market.)
 
 In addition to replacing CSS files, you might need to replace small amounts of HTML and JavaScript.
 
@@ -80,9 +80,10 @@ In addition to replacing CSS files, you might need to replace small amounts of H
 Delivering a sharply different shopping experience than the default Magento installation provides is a more substantial task. However, the tradeoff might be a more complicated experience integrating additional extensions into your installation in the future.
 
 {:.bs-callout .bs-callout-tip}
- Any customization of your storefront will work optimally, and provide the easiest path for later upgrades, if you follow the best practice of consistently compartmentalizing code by type. For example, keep all HTML in {% glossarytooltip ae0f1f68-c466-4189-88fd-6cd8b23c804f %}PHTML{% endglossarytooltip %} files; keep all JavaScript in JavaScript files.
+ Any customization of your storefront will work optimally, and provide the easiest path for later upgrades, if you follow the best practice of consistently compartmentalizing code by type. For example, keep all HTML in [PHTML](https://glossary.magento.com/phtml) files; keep all JavaScript in JavaScript files.
 
-## Related topics {#m2arch-related}
+{:.ref-header}
+Related topics
 
 [Extensibility and modularity][]
 

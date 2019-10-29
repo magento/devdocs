@@ -59,7 +59,7 @@ The call to link a simple (child) product to the configurable product accepts on
 
 ```json
 {
-	"childSku": "MS-Champ-S"
+  "childSku": "MS-Champ-S"
 }
 ```
 
@@ -69,15 +69,15 @@ The call to link a simple (child) product to the configurable product accepts on
 
 ## Verify this step
 
-* Log in to the Luma website and select **Catalog > Products**. Click on the **Champ Tee** configurable product and expand the **Configurations** section.
+*  Log in to the Luma website and select **Catalog > Products**. Click on the **Champ Tee** configurable product and expand the **Configurations** section.
 
 ![Product page with configurable and simple products]({{ page.baseurl }}/rest/images/configurations-section.png)
 
-* On the Luma storefront page, search for `Champ`.
+*  On the Luma storefront page, search for `Champ`.
 
 ![Search results]({{ page.baseurl }}/rest/images/search-results.png)
 
-* Call `GET /V1/products/MS-Champ`. The response includes the `configurable_product_options` and `configurable_product_links` arrays.
+*  Call `GET /V1/products/MS-Champ`. The response includes the `configurable_product_options` and `configurable_product_links` arrays.
 
 ```json
 ...

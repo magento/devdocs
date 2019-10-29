@@ -12,7 +12,7 @@ return_to:
 functional_areas:
   - Integration
 contributor_name: comwrap GmbH
-contributor_link: http://comwrap.com/  
+contributor_link: http://comwrap.com/
 ---
 
  Now that we've created all the Champ Tee products, we need to assign `size` as the configurable attribute and link the simple products to the configurable product.
@@ -121,15 +121,15 @@ Bulk endpoint routes cannot contain input parameters, such as a `sku` value.  Yo
 
 ## Verify this step
 
- * Log in to the Luma website and select **Catalog > Products**. Click on the **Champ Tee** configurable product and expand the **Configurations** section.
+*  Log in to the Luma website and select **Catalog > Products**. Click on the **Champ Tee** configurable product and expand the **Configurations** section.
 
- ![Product page with configurable and simple products]({{ page.baseurl }}/rest/images/configurations-section.png)
+   ![Product page with configurable and simple products]({{ page.baseurl }}/rest/images/configurations-section.png)
 
- * On the Luma storefront page, search for `Champ`.
+*  On the Luma storefront page, search for `Champ`.
 
- ![Search results]({{ page.baseurl }}/rest/images/search-results.png)
+   ![Search results]({{ page.baseurl }}/rest/images/search-results.png)
 
- * Call `GET <host>/rest/default/V1/products/MS-Champ`. The response includes the `configurable_product_options` and `configurable_product_links` arrays.
+*  Call `GET <host>/rest/default/V1/products/MS-Champ`. The response includes the `configurable_product_options` and `configurable_product_links` arrays.
 
  ```json
 ...

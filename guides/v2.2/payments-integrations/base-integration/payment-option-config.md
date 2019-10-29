@@ -31,7 +31,7 @@ In the `config.xml` file in your `%Vendor_Module%/etc` directory, configure the 
 | `sort_order`           | payment method order position on checkout/system configuration pages                                                                                                                                                           | integer                               |
 | `title`                | default title for a payment method                                                                                                                                                                                             | string                                |
 
-Additionally to the default option, a payment method configuration can contain any other custom options. 
+Additionally to the default option, a payment method configuration can contain any other custom options.
 
 ## Example
 
@@ -84,5 +84,5 @@ Following is the illustration of such configuration (`config.xml` of the Braintr
 
 ## What's next
 
-- [Payment  method facade]({{ page.baseurl }}/payments-integrations/base-integration/facade-configuration.html)
-- [Payment info rendering in Admin checkout]({{ page.baseurl }}/payments-integrations/base-integration/formblocktype.html)
+-  [Payment  method facade]({{ page.baseurl }}/payments-integrations/base-integration/facade-configuration.html)
+-  [Payment info rendering in Admin checkout]({{ page.baseurl }}/payments-integrations/base-integration/formblocktype.html)

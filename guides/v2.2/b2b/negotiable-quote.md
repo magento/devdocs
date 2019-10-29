@@ -20,10 +20,10 @@ The negotiable quote lifecycle includes a number of stages, as shown on the diag
 
 The quoting process itself can be a continuous process, with a number of repeating cycles until the agreement is reached.
 
-* The buyer creates and submits a negotiable quote
-* The seller reviews and modifies or declines the quote
-* The buyer reviews the seller's counteroffer
-* Upon agreement, the buyer begins the checkout process and the system converts the negotiable quote into an order
+*  The buyer creates and submits a negotiable quote
+*  The seller reviews and modifies or declines the quote
+*  The buyer reviews the seller's counteroffer
+*  Upon agreement, the buyer begins the checkout process and the system converts the negotiable quote into an order
 
 {:.bs-callout .bs-callout-info}
 You cannot negotiate prices on individual items.
@@ -46,7 +46,6 @@ Closed | The buyer has cancelled the quote and thus stopped the negotiation proc
 Declined | The seller has declined the quote. All custom pricing (if any) is removed from the quote. In admin panel, the quote is locked for editing. | View
 Expired | The quote is on the buyer's side, and the quote's expiration date has passed. | View
 
-
 The following table maps the internal Magento system state to the statuses displayed on the Storefront and Admin.
 
 System state | Buyer status | Seller status
@@ -61,14 +60,13 @@ Expired | Expired | Expired
 Declined | Declined | Declined
 Closed | Closed | Closed
 
-
 The following diagram shows the negotiable quote lifecycle from the perspective of statuses.
 
 ![Negotiable quote status]({{ site.baseurl }}/common/images/b2b/quote-statuses.png)
 
 ## Related information
 
-* [Manage negotiable quotes]({{ page.baseurl }}/b2b/negotiable-manage.html)
-* [Update a negotiable quote]({{ page.baseurl }}/b2b/negotiable-update.html)
-* [Negotiable quote checkout]({{ page.baseurl }}/b2b/negotiable-checkout.html)
-* [Place a negotiable quote order]({{ page.baseurl }}/b2b/negotiable-order-workflow.html)
+*  [Manage negotiable quotes]({{ page.baseurl }}/b2b/negotiable-manage.html)
+*  [Update a negotiable quote]({{ page.baseurl }}/b2b/negotiable-update.html)
+*  [Negotiable quote checkout]({{ page.baseurl }}/b2b/negotiable-checkout.html)
+*  [Place a negotiable quote order]({{ page.baseurl }}/b2b/negotiable-order-workflow.html)

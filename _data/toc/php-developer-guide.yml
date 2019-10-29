@@ -211,6 +211,10 @@ pages:
             - label: Message queues overview
               url: /extension-dev-guide/message-queues/message-queues.html
 
+            - label: Message queues and stores
+              include_versions: ["2.3"]
+              url: /extension-dev-guide/message-queues/message-queues-stores.html
+
             - label: Configure message Queues
               url: /extension-dev-guide/message-queues/config-mq.html
 
@@ -251,6 +255,10 @@ pages:
 
         - label: Adapters
           url: /extension-dev-guide/adapters.html
+
+        - label: View models
+          include_versions: ["2.2", "2.3"]
+          url: /extension-dev-guide/view-models.html
 
         - label: Variable Pool
           include_versions: ["2.3"]

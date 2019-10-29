@@ -14,11 +14,11 @@ After you have built the component and are ready to enable it in your Magento en
    ```bash
    bin/magento module:enable --clear-static-content Component_Name
    ```
-   
+
    ```bash
    bin/magento setup:upgrade
    ```
-   
+
    ```bash
    bin/magento cache:clean
    ```
@@ -31,9 +31,9 @@ After you have built the component and are ready to enable it in your Magento en
 
 The general order of operations for `setup:upgrade` is:
 
-1.  **Schema install/upgrade.**
-2.  **Schema post-upgrade**— handles any additional updates. These recurring upgrades occur independently and regardless of any changes to the schema.
-3.  **Data install/upgrade** — installs the data. Taken from `setup/InstallData.php`.
+1. **Schema install/upgrade.**
+1. **Schema post-upgrade**— handles any additional updates. These recurring upgrades occur independently and regardless of any changes to the schema.
+1. **Data install/upgrade** — installs the data. Taken from `setup/InstallData.php`.
 
 ## Disable a component
 

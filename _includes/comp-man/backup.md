@@ -1,8 +1,8 @@
 After you pass all readiness checks, you can back up:
 
-*	The Magento 2 file system (excluding `var` and `pub/static` directories)
-*	The `pub/media` directory
-*	The Magento 2 database
+*  The Magento 2 file system (excluding `var` and `pub/static` directories)
+*  The `pub/media` directory
+*  The Magento 2 database
 
 Backups are stored in the `var/backups` directory and can be restored at any time using the [`magento setup:rollback`]({{ page.baseurl }}/install-gde/install/cli/install-cli-uninstall-mods.html#instgde-cli-uninst-mod-roll) or using the Magento Admin.
 
@@ -11,18 +11,18 @@ Magento backup features must be enabled. For more information and commands, see 
 
 To back up:
 
-1.	Select the checkbox of each item to back up and click **Create Backup**.
+1. Select the checkbox of each item to back up and click **Create Backup**.
 
-	The following figure shows an example of backing up everything.
+   The following figure shows an example of backing up everything.
 
-	![You can back up the Magento 2 file system, media directory, and database]({{ site.baseurl }}/common/images/modman_create-backup.png){:width="550px"}
+   ![You can back up the Magento 2 file system, media directory, and database]({{ site.baseurl }}/common/images/modman_create-backup.png){:width="550px"}
 
-	(If you choose not to back up, clear all checkboxes and click **Next**.)
+   (If you choose not to back up, clear all checkboxes and click **Next**.)
 
-	{:.bs-callout .bs-callout-info}
-  We strongly recommend you <em>do</em> back up in the event of issues.
+   {:.bs-callout .bs-callout-info}
+   We strongly recommend you <em>do</em> back up in the event of issues.
 
-2. 	Wait while backups are created and continue with any of the following:
+1. Wait while backups are created and continue with any of the following:
 
 The following page displays to confirm a successful backup.
 

@@ -57,9 +57,9 @@ Configure the output in your Magento application boostrap file; this might be `<
 
 The following example displays results in a three-column table:
 
-*	Total time (displays the total amount of time to run all queries on the page)
-*	SQL (displays all SQL queries; the row header displays the count of queries)
-*	Query Params (displays the parameters for each SQL query)
+*  Total time (displays the total amount of time to run all queries on the page)
+*  SQL (displays all SQL queries; the row header displays the count of queries)
+*  Query Params (displays the parameters for each SQL query)
 
 To configure the output, add the following after the `$bootstrap->run($app);` line in your bootstrap file:
 

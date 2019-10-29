@@ -8,9 +8,9 @@ functional_areas:
   - Integration
 ---
 
-The payment information form rendering in [Admin](https://glossary.magento.com/admin) order creation is defined by the block class, its template and [layout](https://glossary.magento.com/layout). 
+The payment information form rendering in [Admin](https://glossary.magento.com/admin) order creation is defined by the block class, its template and [layout](https://glossary.magento.com/layout).
 
-`formBlockType` is one of the arguments you must [configure for the payment method facade]({{ page.baseurl }}/payments-integrations/base-integration/facade-configuration.html). 
+`formBlockType` is one of the arguments you must [configure for the payment method facade]({{ page.baseurl }}/payments-integrations/base-integration/facade-configuration.html).
 
 This block is used to display payment form on billing form in Admin panel. In
 most cases it is enough to use the `\Magento\Payment\Block\Form\Cc`. All payments details are displayed according to specified keys in `paymentInfoKeys` option in [module](https://glossary.magento.com/module) configuration.
@@ -76,7 +76,7 @@ The following example adds the Braintree-specific template [`app/code/Magento/Pa
     <body>
         <referenceBlock name="order_create_billing_form">
             <action method="setMethodFormTemplate">
-				<!-- your method code and template -->
+                <!-- your method code and template -->
                 <argument name="method" xsi:type="string">braintree</argument>
                 <argument name="template" xsi:type="string">Magento_Braintree::form/cc.phtml</argument>
             </action>
@@ -87,5 +87,5 @@ The following example adds the Braintree-specific template [`app/code/Magento/Pa
 
 ## What's next
 
-- [Payment method facade]({{ page.baseurl }}/payments-integrations/base-integration/facade-configuration.html)
-- [Add a gateway command]({{ page.baseurl }}/payments-integrations/base-integration/payment-action.html) 
+-  [Payment method facade]({{ page.baseurl }}/payments-integrations/base-integration/facade-configuration.html)
+-  [Add a gateway command]({{ page.baseurl }}/payments-integrations/base-integration/payment-action.html)

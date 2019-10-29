@@ -28,7 +28,7 @@ The procedure for instantiating a consumer differs, depending on which message q
 
 ### RabbitMQ
 
-This instantiates a consumer that is defined in a `queue.xml` file. The consumer (`customer_created_listener`) listens to the queue and receives all new messages. For every message, it invokes `Magento\Some\Class::processMessage($message)`
+This instantiates a consumer that is defined in a [`queue_consumer.xml`]({{page.baseurl}}/extension-dev-guide/message-queues/config-mq.html#queueconsumerxml) file. The consumer (`customer_created_listener`) listens to the queue and receives all new messages. For every message, it invokes `Magento\Some\Class::processMessage($message)`
 
 ```php
 $this->consumerFactory->get('customer_created_listener')
@@ -42,9 +42,9 @@ Implement `\Magento\Framework\MessageQueue\ConsumerInterface::process($maxNumber
 Perform the following actions:
 
 1. Define the queue name associated with current consumer using `\Magento\Framework\MessageQueue\ConsumerConfigurationInterface::getQueueName`.
-2. Select `$maxNumberOfMessages` message records, filtering on the  `queue_name` field. You must join on all 3 tables. To accomplish this, you may want to extract fewer records at a time to improve load distribution between multiple consumers.
-3. Decode the message using topic name taken from the `\Magento\Framework\MessageQueue\ConsumerConfigurationInterface`.
-4. Invoke callback  `Magento\Framework\MessageQueue\ConsumerConfigurationInterface::getCallback` and pass the decoded data as an argument.
+1. Select `$maxNumberOfMessages` message records, filtering on the  `queue_name` field. You must join on all 3 tables. To accomplish this, you may want to extract fewer records at a time to improve load distribution between multiple consumers.
+1. Decode the message using topic name taken from the `\Magento\Framework\MessageQueue\ConsumerConfigurationInterface`.
+1. Invoke callback  `Magento\Framework\MessageQueue\ConsumerConfigurationInterface::getCallback` and pass the decoded data as an argument.
 
 ## Override topic configuration
 
@@ -60,11 +60,11 @@ The following sample introduces a runtime configuration that allows you to redef
 ),
 ```
 
-#### Related Topics
+### Related Topics
 
-* [Message Queues Overview]
-* [Configure message queues]
-* [Install RabbitMQ]
+*  [Message Queues Overview]
+*  [Configure message queues]
+*  [Install RabbitMQ]
 
 <!-- Link definitions -->
 [RabbitMQ]: http://www.rabbitmq.com

@@ -14,19 +14,19 @@ For example, if you are invoking a REST web service call, rather than load all t
 
 Magento is organized into these main areas:
 
-* **Magento Admin** (`adminhtml`): entry point for this area is `index.php` or `pub/index.php`. The [Admin](https://glossary.magento.com/admin) panel area includes the code needed for store management. The /app/design/adminhtml directory contains all the code for components you'll see while working in the Admin panel.
+*  **Magento Admin** (`adminhtml`): entry point for this area is `index.php` or `pub/index.php`. The [Admin](https://glossary.magento.com/admin) panel area includes the code needed for store management. The /app/design/adminhtml directory contains all the code for components you'll see while working in the Admin panel.
 
-* **Storefront** (`frontend`): entry point for this area is `index.php` or `pub/index.php`. The storefront (or `frontend`)  contains template and [layout](https://glossary.magento.com/layout) files that define the appearance of your [storefront](https://glossary.magento.com/storefront).
+*  **Storefront** (`frontend`): entry point for this area is `index.php` or `pub/index.php`. The storefront (or `frontend`)  contains template and [layout](https://glossary.magento.com/layout) files that define the appearance of your [storefront](https://glossary.magento.com/storefront).
 
-* **Basic** (`base`): used as a fallback for files absent in `adminhtml` and `frontend` areas.
+*  **Basic** (`base`): used as a fallback for files absent in `adminhtml` and `frontend` areas.
 
-* **Cron** (`crontab`): In `cron.php`, the [`\Magento\Framework\App\Cron`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/App/Cron.php#L68-L70){:target="_blank"} class always loads the 'crontab' area.
+*  **Cron** (`crontab`): In `pub/cron.php`, the [`\Magento\Framework\App\Cron`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/App/Cron.php#L68-L70){:target="_blank"} class always loads the 'crontab' area.
 
 You can also send requests to Magento using the SOAP and REST APIs. These two areas
 
-* **Web API REST** (`webapi_rest`): entry point for this area is `index.php` or `pub/index.php`. The REST area has a front controller that understands how to do [URL](https://glossary.magento.com/url) lookups for REST-based URLs.
+*  **Web API REST** (`webapi_rest`): entry point for this area is `index.php` or `pub/index.php`. The REST area has a front controller that understands how to do [URL](https://glossary.magento.com/url) lookups for REST-based URLs.
 
-* **Web API SOAP** (`webapi_soap`): entry point for this area is `index.php` or `pub/index.php`.
+*  **Web API SOAP** (`webapi_soap`): entry point for this area is `index.php` or `pub/index.php`.
 
 ## How areas work with modules {#m2arch-module-using}
 
@@ -40,11 +40,11 @@ You can enable or disable an area within a module. If this module is enabled, it
 
 ### Module/area interaction guidelines
 
-* Modules should not depend on other modules' areas.
+*  Modules should not depend on other modules' areas.
 
-* Disabling an area does not result in disabling the modules related to it.
+*  Disabling an area does not result in disabling the modules related to it.
 
-* Areas are registered in the [Dependency Injection](https://glossary.magento.com/dependency-injection) framework `di.xml` file.
+*  Areas are registered in the [Dependency Injection](https://glossary.magento.com/dependency-injection) framework `di.xml` file.
 
 ### Note about Magento request processing
 
@@ -54,6 +54,7 @@ After the area name, the URI segment specifies the *frontname*. When an HTTP req
 
 Note that only the **execute()** method of any given controller is executed.
 
-## Related topics {#m2arch-module-related}
+{:.ref-header}
+Related topics
 
 [Module overview]({{page.baseurl}}/architecture/archi_perspectives/components/modules/mod_intro.html)

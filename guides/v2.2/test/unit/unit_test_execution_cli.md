@@ -28,11 +28,11 @@ The following example tells PHPUnit to look for any file ending with `Test.php` 
 
 #### Explanation
 
-The `phpunit` executable is installed by `composer` and linked into the directory `vendor/bin`.  
+The `phpunit` executable is installed by `composer` and linked into the directory `vendor/bin`.
 
-The option `-c dev/tests/unit/phpunit.xml.dist` specifies the configuration file for PHPUnit.  
+The option `-c dev/tests/unit/phpunit.xml.dist` specifies the configuration file for PHPUnit.
 
-If custom configuration settings are required (more on that later), the file `dev/tests/unit/phpunit.xml.dist` can be copied to `dev/tests/unit/phpunit.xml` and adjusted as needed. In that case modify the `-c` flag accordingly.  
+If custom configuration settings are required (more on that later), the file `dev/tests/unit/phpunit.xml.dist` can be copied to `dev/tests/unit/phpunit.xml` and adjusted as needed. In that case modify the `-c` flag accordingly.
 
 PHPUnit has many additional command line options. Please refer to the [PHPUnit documentation](https://phpunit.de/manual/4.1/en/textui.html#textui.clioptions) for more information (currently Magento 2 uses PHPUnit version 4.1.0, Magento 2.2.x uses PHPUnit vesrsion 6.x).
 
@@ -42,7 +42,7 @@ PHPUnit has many additional command line options. Please refer to the [PHPUnit d
 
 One possible reason for this to happen might be if you are trying to execute PHPUnit inside a Virtual Box VM with shared folders that don't allow modifying permissions.
 
-Whatever the reason, if you encounter the `permission denied: vendor/bin/phpunit` error, you can prefix the command with the [PHP](https://glossary.magento.com/php) interpreter, so your system knows what binary to use to run the tests.  
+Whatever the reason, if you encounter the `permission denied: vendor/bin/phpunit` error, you can prefix the command with the [PHP](https://glossary.magento.com/php) interpreter, so your system knows what binary to use to run the tests.
 
 ```bash
 php -f vendor/bin/phpunit -- -c dev/tests/unit/phpunit.xml.dist
@@ -54,13 +54,13 @@ On many development systems, you might have more one PHP version installed. You 
 
 Some examples follow:
 
-*	Ubuntu: `/usr/bin/php`
-*	CentOS: `/usr/bin/php`
-*	OS X:
+*  Ubuntu: `/usr/bin/php`
+*  CentOS: `/usr/bin/php`
+*  OS X:
 
-	* System: `/usr/bin/php`
-	* Homebrew: `/usr/local/Cellar/php56/5.6.19/bin/php`
-	* MAMP: `/Applications/MAMP/bin/php/php5.6.19/bin/php`
+   *  System: `/usr/bin/php`
+   *  Homebrew: `/usr/local/Cellar/php56/5.6.19/bin/php`
+   *  MAMP: `/Applications/MAMP/bin/php/php5.6.19/bin/php`
 
 You can either fix your `$PATH` (please refer to your system documentation on how to do that), or specify the full path to the PHP interpreter. For example:
 

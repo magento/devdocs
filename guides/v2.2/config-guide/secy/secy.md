@@ -9,11 +9,12 @@ functional_areas:
 
 ## Enhanced password management
 
-Magento has strengthened the hashing algorithms (SHA-256) used in password management.
+Magento has strengthened the hashing algorithms used in password management.
+Read more about [Password Hashing][].
 
 ## Improved prevention of cross-site scripting (XSS) attacks by making escaped data the default
 
-The Magento Framework has adopted conventions that regulate the escaping of data in output. These conventions include the ability to escape  output for {% glossarytooltip a2aff425-07dd-4bd6-9671-29b7edefa871 %}HTML{% endglossarytooltip %} pages (HTML, JSON, and JavaScript) and email. Where possible, escaping is transparent to client code. See [Security measures against XSS attacks][] in the {% glossarytooltip b00459e5-a793-44dd-98d5-852ab33fc344 %}Frontend{% endglossarytooltip %} Developer Guide.
+The Magento Framework has adopted conventions that regulate the escaping of data in output. These conventions include the ability to escape  output for [HTML](https://glossary.magento.com/html) pages (HTML, JSON, and JavaScript) and email. Where possible, escaping is transparent to client code. See [Security measures against XSS attacks][] in the [Frontend](https://glossary.magento.com/frontend) Developer Guide.
 
 ## More flexible file system ownership and permissions
 
@@ -31,14 +32,15 @@ Magento safeguards your store from clickjacking attacks by using an X-Frame-Opti
 
 ## Use of non-default Magento Admin URL
 
-A simple {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} (like `admin` or `backend`) makes it easy to target attacks on specific locations using automated password guessing. To prevent against this type of attack, Magento by default creates a random Admin URI when you install the product. The CLI command `php bin/magento info:adminuri` is provided so that you can  see the URI if you forget it. You can also use the CLI to change this URI.  Although the use of a non-default admin URL will not secure the site, its use will help prevent large-scale automated attacks. See [Display or change the Admin URI][] in Configuration Guide for more information.
+A simple [Magento Admin](https://glossary.magento.com/magento-admin) [URL](https://glossary.magento.com/url) (like `admin` or `backend`) makes it easy to target attacks on specific locations using automated password guessing. To prevent against this type of attack, Magento by default creates a random Admin URI when you install the product. The CLI command `php bin/magento info:adminuri` is provided so that you can  see the URI if you forget it. You can also use the CLI to change this URI.  Although the use of a non-default admin URL will not secure the site, its use will help prevent large-scale automated attacks. See [Display or change the Admin URI][] in Configuration Guide for more information.
 
 ## Security settings
 
-*	[Secure cron.php][]
-*	[X-Frame-Options header][]
+*  [Secure cron.php][]
+*  [X-Frame-Options header][]
 
-## Related topics
+{:.ref-header}
+Related topics
 
 [Configuration Guide][]
 
@@ -48,5 +50,6 @@ A simple {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin
 [Secure cron.php]: {{page.baseurl}}/config-guide/secy/secy-cron.html
 [Overview of ownership and permissions]: {{page.baseurl}}/install-gde/prereq/file-sys-perms-over.html
 [umask]: http://www.cyberciti.biz/tips/understanding-linux-unix-umask-value-usage.html
-[Security measures against XSS attacks]: {{page.baseurl}}/frontend-dev-guide/templates/template-security.html
+[Security measures against XSS attacks]: {{page.baseurl}}/extension-dev-guide/xss-protection.html
 [Configuration Guide]: {{page.baseurl}}/config-guide/bk-config-guide.html
+[Password Hashing]: ./hashing.html

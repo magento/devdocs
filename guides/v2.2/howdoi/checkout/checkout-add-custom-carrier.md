@@ -17,9 +17,9 @@ This topic describes how to add a custom shipping carrier.
 To add a new shipping carrier to the Magento checkout:
 
 1. [Create a new module](#create-module)
-2. [Add the carrier configuration](#create-configuration)
-3. [Create the carrier model](#carrier-model)
-4. [Enable the module](#enable-module)
+1. [Add the carrier configuration](#create-configuration)
+1. [Create the carrier model](#carrier-model)
+1. [Enable the module](#enable-module)
 
 ## Step 1: Create a new module {#create-module}
 
@@ -99,14 +99,15 @@ To add a module configuration use the following source code snippets.
 ### Source code of `app/code/Vendor/CustomShipping/etc/adminhtml/system.xml`
 
 The `system.xml` source code declares custom shipping module options:
-- Enabled
-- Title
-- Method Name
-- Shipping Cost
-- Ship to Applicable Countries
-- Ship to Specific Countries
-- Show Method if Not Applicable
-- Sort Order
+
+-  Enabled
+-  Title
+-  Method Name
+-  Shipping Cost
+-  Ship to Applicable Countries
+-  Ship to Specific Countries
+-  Show Method if Not Applicable
+-  Sort Order
 
 ```xml
 <?xml version="1.0"?>
@@ -178,7 +179,7 @@ The `config.xml` file specifies default values for custom shipping module option
 
 ## Step 3: Create the carrier model {#carrier-model}
 
-In this example, the `Vendor\CustomShipping\Model\Carrier\Customshipping` class is a skeleton of a carrier model. You can extend it to fit your needs. 
+In this example, the `Vendor\CustomShipping\Model\Carrier\Customshipping` class is a skeleton of a carrier model. You can extend it to fit your needs.
 
 The carrier class implements the `CarrierInterface` interface and retrieves all available shipping methods in the `getAllowedMethods` function. The `collectRates` function returns the `\Magento\Shipping\Model\Rate\Result` object if the carrier method is available on checkout. Otherwise, it returns `false`---the carrier method is not applicable to the shopping cart.
 

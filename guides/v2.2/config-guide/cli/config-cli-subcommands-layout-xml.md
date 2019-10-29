@@ -15,17 +15,19 @@ Use this command to update your [layout](https://glossary.magento.com/layout) [X
 
 For more information about layout XML files, see:
 
--   [Layout instructions]({{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html)
--   [Layout file types]({{ page.baseurl }}/frontend-dev-guide/layouts/layout-types.html)
+-  [Layout instructions]({{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html)
+-  [Layout file types]({{ page.baseurl }}/frontend-dev-guide/layouts/layout-types.html)
 
 ## Convert layout XML files
 
 Command options:
 
-	bin/magento dev:xml:convert [-o|--overwrite] {xml file} {xslt stylesheet}
+```bash
+bin/magento dev:xml:convert [-o|--overwrite] {xml file} {xslt stylesheet}
+```
 
 here:
 
--   **`{xml file}`** is the full path and file name of a layout XML file to convert (required)
--   **`{xslt stylesheet}`** is the full path and file name of an XSLT stylesheet file to use for [conversion](https://glossary.magento.com/conversion) (required)
--   **`-o|--overwrite`** include this option to overwrite the existing XML file
+-  **`{xml file}`** is the full path and file name of a layout XML file to convert (required)
+-  **`{xslt stylesheet}`** is the full path and file name of an XSLT stylesheet file to use for [conversion](https://glossary.magento.com/conversion) (required)
+-  **`-o|--overwrite`** include this option to overwrite the existing XML file

@@ -19,7 +19,6 @@ To do this, they need to wrap the list of header links with a container and add 
 
 The Orange theme [inherits]({{ page.baseurl }}/frontend-dev-guide/themes/theme-inherit.html) from Blank, so by default the rendered header links look like following:
 
-
 ```html
 <div class="panel header">
     ...
@@ -62,7 +61,7 @@ The markup required for the drop-down is the following:
                     <li>...</li>
                     <li class="link wishlist" data-bind="scope: 'wishlist'">...</li>
                     <li class="authorization-link" data-label="or">...</li>
-                </ul>        
+                </ul>
             </div>
         </li>
         <li class="authorization-link" data-label="or">...</li>
@@ -92,7 +91,7 @@ OrangeCo [applies the Luma theme]({{ page.baseurl }}/frontend-dev-guide/themes/t
 
 Other modules use this block to add their specific links to the header using the [referenceBlock]({{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_ref) instruction. For example, see how links are added in the Customer module: [app/code/Magento/Customer/view/frontend/layout/default.xml#L10-L23]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Customer/view/frontend/layout/default.xml#L10-L23)
 
-The Luma theme [moves]({{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_mv) the `top.links` block to the new `customer` block in the extending layout file.  
+The Luma theme [moves]({{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_mv) the `top.links` block to the new `customer` block in the extending layout file.
 
     <Magento_luma_theme_dir>/Magento_Customer/layout/default.xml
 
@@ -217,12 +216,12 @@ Clicking the **Change** button toggles the `active` CSS class:
 
 To add quick basic styling and visual behavior to the "dropdown" menu, OrangeCo added  [_extend.less]({{ page.baseurl }}/frontend-dev-guide/css-guide/css_quick_guide_approach.html#simple_extend) to their theme with the following customizations:
 
-* Redundant elements are hidden with CSS.
-* The `.lib-dropdown()` mixin from [Magento UI library]({{ page.baseurl }}/frontend-dev-guide/css-topics/theme-ui-lib.html) was applied to the corresponding element.
+*  Redundant elements are hidden with CSS.
+*  The `.lib-dropdown()` mixin from [Magento UI library]({{ page.baseurl }}/frontend-dev-guide/css-topics/theme-ui-lib.html) was applied to the corresponding element.
 
 `app/design/frontend/OrangeCo/orange/web/css/source/_extend.less`
 
-```
+```css
 //
 //  Common
 //  _____________________________________________
@@ -289,7 +288,6 @@ To add quick basic styling and visual behavior to the "dropdown" menu, OrangeCo 
 As a result, the customer links look like following:
 
 ![layout screen2]
-
 
 [layout transform]: {{site.baseurl}}/common/images/layout_transform21.png
 [layout screen1]: {{site.baseurl}}/common/images/layout_screen221.png

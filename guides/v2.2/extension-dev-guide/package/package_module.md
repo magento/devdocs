@@ -12,9 +12,9 @@ The Magento application uses [Composer](https://glossary.magento.com/composer) p
 
 To package a component, you must:
 
-*   Create a Magento Composer file (`composer.json`).
-*   Register the component using `registration.php`
-*   Package and publish your component.
+*  Create a Magento Composer file (`composer.json`).
+*  Register the component using `registration.php`
+*  Package and publish your component.
 
     Use our [validation tool](https://github.com/magento/marketplace-tools){:target="_blank"} to check your package before you distribute it.
 
@@ -24,13 +24,11 @@ The Magento `composer.json` file defines the name, requirements, version, and ot
 
 The `composer.json` uses [Composer's generic schema](https://getcomposer.org/doc/04-schema.md), with the following restrictions:
 
-
 Element | Description
 --- | ---
 `name` | A fully-qualified component name, in the format `<vendor-name>/<component-name>`. All letters must be in lowercase. Use dashes in the `<component-name>` to separate words. Themes must use the format `<vendor-name>/theme-<area>-<theme-name>`.
 `type` | For modules, this value must be set to `magento2-module`. Other possible types are `metapackage`, `magento2-theme`, and `magento2-language`.
 `autoload` | Specify necessary information to be loaded, such as [registration.php]({{ page.baseurl }}/extension-dev-guide/build/component-registration.html). For more information, see [Autoloading](https://getcomposer.org/doc/01-basic-usage.md#autoloading) from Composer.
-
 
 {% include php-dev/composer-types.md %}
 
@@ -45,7 +43,6 @@ We recommend metapackages refer to specific component versions. Do not use wildc
 
 The following example is a `composer.json` for a metapackage:
 
-
 ```json
 
 {
@@ -54,7 +51,7 @@ The following example is a `composer.json` for a metapackage:
     "version": "2.0.0",
     "type": "metapackage",
     "require": {
-        "php": "~5.5.0|~5.6.0|~7.0.0",
+        "php": "~7.0.13|~7.1.0",
         "zendframework/zend-stdlib": "~2.4.6",
         "zendframework/zend-code": "~2.4.6",
         "zendframework/zend-server": "~2.4.6",
@@ -87,7 +84,6 @@ The following example is a `composer.json` for a metapackage:
     ]
 }
 
-
 ```
 
 ### Sample composer.json file
@@ -105,7 +101,7 @@ The following example is a `composer.json` file for a module:
     "AFL-3.0"
   ],
   "require": {
-    "php": "~5.5.0|~5.6.0|~7.0.0",
+    "php": "~7.0.13|~7.1.0",
     "magento/framework": "~100.0.4"
   },
   "autoload": {
@@ -128,12 +124,7 @@ Use alphanumeric characters for the package filename with dashes to separate wor
 
 Magento can retrieve your extension package from any valid GitHub [URL](https://glossary.magento.com/url).
 
-
-
-
 <!-- After you have created the module's `composer.json` file in the root directory of the module, Composer can recognize your package as compatible with its deployment strategy. Such packages can be published to a code repository (GitHub, SVN, etc.), packagist.org, or on your own private package repository. -->
-
-
 
 {: .bs-callout-info }
 Third party repositories are supported.
@@ -143,11 +134,11 @@ Third party repositories are supported.
 Prerequisite: Git must be set up on your machine.
 
 1. Navigate to your component directory, with the `composer.json` file in the root, and make it a new Git repository. See the [GitHub documentation](https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/) for details.
-2. When you have committed and pushed your component to your GitHub repository, you can either:
-  * Use [Composer to refer to it directly](https://getcomposer.org/doc/05-repositories.md#vcs), or
-  * Use the following steps to refer to the package through Packagist.
-    1. Register an account at [packagist.org](https://packagist.org/).
-    2. Click the Submit Package button and paste your GitHub repository link. Packagist automatically gathers the information from the component's `composer.json` file and link it to the GitHub repository, allowing you to reference the package as `vendor/module` without any additional repository information, because this is required solely using GitHub.
+1. When you have committed and pushed your component to your GitHub repository, you can either:
+   *  Use [Composer to refer to it directly](https://getcomposer.org/doc/05-repositories.md#vcs), or
+   *  Use the following steps to refer to the package through Packagist.
+      1. Register an account at [packagist.org](https://packagist.org/).
+      1. Click the Submit Package button and paste your GitHub repository link. Packagist automatically gathers the information from the component's `composer.json` file and link it to the GitHub repository, allowing you to reference the package as `vendor/module` without any additional repository information, because this is required solely using GitHub.
 
 ### Hosting on a private repository {#private_repos}
 
@@ -155,21 +146,20 @@ Prerequisite: Git must be set up on your machine.
 If you use the Setup Wizard, you must use the Magento Marketplace repository. A private repository can be used for development or private code but installation must be done with a command line interface (you can install a package that specifies a private repository only with a command line installation).
 
 1. Set up your own Composer packaging repository using a system such as [Satis](https://getcomposer.org/doc/articles/handling-private-packages-with-satis.md) or [Private Packagist](https://packagist.com/).
-2. Create the package in a way similar to the described above.
-3. Submit/register the package on your own repository. For example, it can be hosted as a reference to a code repository or submitted as a zip-archive.
-4. To use the private packaging repository in a project, add the following to your `composer.json`file:
+1. Create the package in a way similar to the described above.
+1. Submit/register the package on your own repository. For example, it can be hosted as a reference to a code repository or submitted as a zip-archive.
+1. To use the private packaging repository in a project, add the following to your `composer.json`file:
 
-```json
-
-{
-    "repositories": [
-        {
-            "type": "composer",
-            "url": [repository url here]
-        }
-    ]
-}
-```
+   ```json
+   {
+     "repositories": [
+         {
+             "type": "composer",
+             "url": [repository url here]
+         }
+     ]
+   }
+   ```
 
 All packages on the private repository can now be referenced within the `require` field.
 

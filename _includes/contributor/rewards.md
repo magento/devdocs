@@ -11,12 +11,12 @@ Due to the level of work required for developing and reviewing a PR, Contributor
 
 See the following examples for calculated reward points:
 
-- Contributor submits PR with complex code contributions: Improvement(base) 10 points + Complex(additional) 20 points = 30 points
-- Contributor submits PR with complex code and tests: Improvement(base) 10 points + Complex(additional) 20 points + Test coverage(additional) 10 points = 40 points
-- Contributor submits PR port of existing merged PR:
-  - Original contributor: (Improvement(base) 10 points + Complex(additional) 20 points) + Author of Ported Issue 5 points = 35 points
-  - Porting contributor: Port(base) 5 points
-- Maintainer reviews and approves PR with complex code and tests: Improvement(base) 10 points + Complex(additional) 20 points + Test coverage(additional) 10 points = 40 points
+-  Contributor submits PR with complex code contributions: Improvement(base) 10 points + Complex(additional) 20 points = 30 points
+-  Contributor submits PR with complex code and tests: Improvement(base) 10 points + Complex(additional) 20 points + Test coverage(additional) 10 points = 40 points
+-  Contributor submits PR port of existing merged PR:
+   -  Original contributor: (Improvement(base) 10 points + Complex(additional) 20 points) + Author of Ported Issue 5 points = 35 points
+   -  Porting contributor: Port(base) 5 points
+-  Maintainer reviews and approves PR with complex code and tests: Improvement(base) 10 points + Complex(additional) 20 points + Test coverage(additional) 10 points = 40 points
 
 Earned achievements display as labels on GitHub PRs and for each Magento Contributor, Partner, and Maintainer on [magento.com](https://magento.com/magento-contributors).
 
@@ -30,7 +30,6 @@ Achievement | Points | Description
 Improvement| 10 | Contribution contains code improvements, refactoring, or a bug fix.
 Port | 5 | Contribution ports an existing solution between release lines. The author of the original PR receives an additional **5 points** when another person contributes the ported Pull Request.
 Code Cleanup | 1 | Contribution contains code cleanup such as typos, inline documentation, coding style, remove unused code, minor style/design fixes, and so on.
-
 
 ### Additional achievements
 {:.no_toc}
@@ -46,8 +45,8 @@ Test coverage | 10 | Contribution contains fix or improvement and new tests or t
 MFTF test coverage| 10 | Contribution contains MFTF tests
 Bug fix | 10 | Contribution fixes one or more known issues from GitHub
 Author of Ported Issue | 5 | Additional points for a contribution that ports (up or back port) a previous PR across release lines by another contributor
-Issue Triage | 3 | Public issue report is verified and confirmed
-
+Issue Triage: Confirmed | 5 | A public issue report is verified and confirmed. The description contains all the required information needed to easily reproduce the issue with the provided steps
+Issue Triage: Rejected/Closed | 4 | A public issue report is verified and closed/rejected because it is "not a bug" or "cannot be reproduced" using the provided steps in the description on the supported Magento versions
 
 ## DevDocs awards and points
 
@@ -55,8 +54,8 @@ Contributors and Maintainers can also earn rewards for merged submissions to the
 
 See the following examples for calculated reward points:
 
-- Contributor submits PR with HTML formatting and typos fixes: Editorial(base) 1 point
-- Contributor submits PR with code sample update and new parameter descriptions: Improvement(base) 10 points + Major update(additional) 20 points = 30 points
+-  Contributor submits PR with HTML formatting and typos fixes: Editorial(base) 1 point
+-  Contributor submits PR with code sample update and new parameter descriptions: Improvement(base) 10 points + Major update(additional) 20 points = 30 points
 
 ### Base achievements
 {:.no_toc}
@@ -68,7 +67,6 @@ Achievement | Points | Description
 Improvement | 10 | Contribution contains document improvements, adding missing features of inconsistency between code base and documentation, and so on.
 Editorial | 1 | Contribution contains fixes only for typos, grammatical inconsistencies, or minor rewrites to correct inaccuracies.
 
-
 ### Additional achievements
 {:.no_toc}
 
@@ -76,7 +74,8 @@ Each PR can earn one of the following additional achievements. If you entered an
 
 Achievement | Points | Description
 | ------------ | --- | --- |
-New topic | 30 | New file submissions for content that has never existed on devdocs
-Major update | 20 | Significant updates to existing content, such as a new section or example
-Technical | 10 | Updates to code or processes that alter the technical content of the document
+New topic | 30 | New topic submissions for content that has never existed in DevDocs, such as tutorials, references, instructions, and other relevant content
+Major update | 20 | Significant updates to existing content
+Technical | 10 | Updates to code or processes that alter the technical content of the document, such as code snippets, reference documentation, parameter names and values, and other relevant content
 
+If the PR earns recognition for significant updates and additions to the documentation, it may also receive a Special Achievement label, which garners an additional 20 points.

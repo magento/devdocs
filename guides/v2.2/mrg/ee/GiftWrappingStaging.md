@@ -8,15 +8,14 @@ menu_order: 2
 ee_only: true
 ---
 
-
 The Magento_GiftWrappingStaging [module](https://glossary.magento.com/module) is a part of the staging functionality in {{site.data.var.ee}}. It allows to stage value of 'Allow Gift Wrapping' flag and price of the wrapping for each product update.
 
 ## Implementation details
 
 The Magento_GiftWrappingStaging module adds to the Schedule Update form of a product the following functionality:
 
-- Enable/disable gift wrapping ("Allow Gift Wrapping" field)
-- Set a price for the gift wrapping ("Price for Gift Wrapping" field).
+-  Enable/disable gift wrapping ("Allow Gift Wrapping" field)
+-  Set a price for the gift wrapping ("Price for Gift Wrapping" field).
 
 ## Dependencies
 

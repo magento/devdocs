@@ -25,59 +25,71 @@ This section summarizes the permissions Magento uses when creating files in the 
 
 In developer mode, Magento sets permissions as follows:
 
-*	Directories: 770
+*  Directories: 770
 
-	770 permissions give full control to the owner and to the group, and no permissions to anyone else.
-*	Files: 660
+   770 permissions give full control to the owner and to the group, and no permissions to anyone else.
 
-	660 permissions give read-write permissions to the owner and to the group, and no permissions to anyone else.
+*  Files: 660
+
+   660 permissions give read-write permissions to the owner and to the group, and no permissions to anyone else.
 
 ### Production mode permissions
 
 Changing modes affects permissions and ownership the following subdirectories in your Magento installation:
 
-	var/view_preprocessed
-	var/generation
-	var/di
+```text
+var/view_preprocessed
+var/generation
+var/di
+```
 
 When you change to production mode, we set the following permissions on these directories and subdirectories:
 
-*	Directories: 750
+*  Directories: 750
 
-	750 permissions give full control to the owner, read and execute permissions to the group, and no permissions to anyone else.
-*	Files: 640
+   750 permissions give full control to the owner, read and execute permissions to the group, and no permissions to anyone else.
 
-	640 permissions give read-write permissions to the owner, read-only permissions to the group, and no permissions to anyone else.
+*  Files: 640
+
+   640 permissions give read-write permissions to the owner, read-only permissions to the group, and no permissions to anyone else.
 
 ## Set permissions before installing the Magento software {#appendix-install}
 
 Use the following steps:
 
-1.	If you haven't already done so, log in to your Magento server as, or switch to, the [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html).
-2.	Change to the Magento installation directory:
+1. If you haven't already done so, log in to your Magento server as, or switch to, the [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html).
+1. Change to the Magento installation directory:
 
-		cd <web server docroot>/<magento2 base dir>
+   ```bash
+   cd <web server docroot>/<magento2 base dir>
+   ```
 
-	The base directory is typically a subdirectory named `magento2` under your web server's docroot. Need help locating the docroot? Click [here]({{ page.baseurl }}/install-gde/basics/basics_docroot.html).<br>
+   The base directory is typically a subdirectory named `magento2` under your web server's docroot. Need help locating the docroot? Click [here]({{ page.baseurl }}/install-gde/basics/basics_docroot.html).<br>
 
-	Examples:
+   Examples:
 
-	*	Ubuntu: `/var/www/magento2`
-	*	CentOS: `/var/www/html/magento2`
+   *  Ubuntu: `/var/www/magento2`
+   *  CentOS: `/var/www/html/magento2`
 
-2.	Set ownership:
+1. Set ownership:
 
-		chown -R :<your web server group name> .
+   ```bash
+   chown -R :<your web server group name> .
+   ```
 
-	Typical examples:
+   Typical examples:
 
-	*	CentOS: `chown -R :apache .`
-	*	Ubuntu: `chown -R :www-data .`
+   *  CentOS: `chown -R :apache .`
+   *  Ubuntu: `chown -R :www-data .`
 
-3.	Set permissions:
+1. Set permissions:
 
-		find . -type d -exec chmod 770 {} + && find . -type f -exec chmod 660 {} + && chmod u+x bin/magento
+   ```bash
+   find . -type d -exec chmod 770 {} + && find . -type f -exec chmod 660 {} + && chmod u+x bin/magento
+   ```
 
-	If you must enter the commands as `sudo`, use:
+   If you must enter the commands as `sudo`, use:
 
-		sudo find . -type d -exec chmod 770 {} + && sudo find . -type f -exec chmod 660 {} + && sudo chmod u+x bin/magento
+   ```bash
+   sudo find . -type d -exec chmod 770 {} + && sudo find . -type f -exec chmod 660 {} + && sudo chmod u+x bin/magento
+   ```

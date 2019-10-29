@@ -15,10 +15,10 @@ You can add new fields to default [checkout](https://glossary.magento.com/checko
 To add your custom field to the checkout address form and access its value on the client side:
 
 1. [Add the field to layout](#add).
-2. [Add a JS mixin to modify data submission](#mixin).
-3. [Load your mixin](#load_mixin).
-4. [Add the field to address model](#field).
-5. [Access the value of the custom field on server side](#access).
+1. [Add a JS mixin to modify data submission](#mixin).
+1. [Load your mixin](#load_mixin).
+1. [Add the field to address model](#field).
+1. [Access the value of the custom field on server side](#access).
 
 ## Step 1: Add the field to layout {#add}
 
@@ -154,7 +154,7 @@ Clear the `generated/code` directory when you run the `setup:di:compile` command
 
 If you completed all the steps described in the previous sections, Magento will generate the interface that includes your custom attribute and you can access your field value.
 
-You can set/get these attributes values by creating an instance of the  `Magento/Quote/Api/Data/AddressInterface.php interface`.
+You can set/get these attributes values by creating an instance of the  `Magento/Quote/Api/Data/AddressInterface.php` interface.
 
 ```php
 <?php
@@ -199,6 +199,7 @@ class MyBlock extends Template {
 }
 ```
 
-### Related topics
+{:.ref-header}
+Related topic
 
-- [EAV and extension attributes]({{ page.baseurl }}/extension-dev-guide/attributes.html)
+[EAV and extension attributes]({{ page.baseurl }}/extension-dev-guide/attributes.html)

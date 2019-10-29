@@ -7,8 +7,9 @@ menu_node:
 ---
 
 The UI-select component is a single select/multiple select component that enables the selection of a collection of items. It extends all `abstract` configuration and can be configured in two modes:
-* Single - checkbox isn't displayed
-* Multiple - checkboxes are displayed
+
+*  Single - checkbox isn't displayed
+*  Multiple - checkboxes are displayed
 
 ## Configuration options
 
@@ -50,7 +51,7 @@ actions: [
     {
         value: 'deselectAll',
         label: $t('Deselect all')
-    }, 
+    },
     {
         value: 'selectPage',
         label: $t('Select all on this page')
@@ -63,10 +64,10 @@ actions: [
 ```
 </td>
     <td>Yes</td>
-  </tr>  
+  </tr>
 </table>
 
-### Optional configuration 
+### Optional configuration
 
 |Option|Description|Type|Default|Required|
 |--- |--- |--- |--- |--- |
@@ -94,36 +95,36 @@ actions: [
 |`showTree`|--- |Boolean|False|Optional|
 |`validationLoading`|Displays a loading icon to show that the chosen option is loading; icon will show if the display is set to true|Boolean|False|Optional|
 
-
-
 The following configuration can be passed in as arguments:
 
-* Link to any of the UI component templates
-* Link to the constructor
-* Label to ui-select
-* Default caption
-* Caption if more than one element is selected
-    
+*  Link to any of the UI component templates
+*  Link to the constructor
+*  Label to ui-select
+*  Default caption
+*  Caption if more than one element is selected
+
 ## Modes
 
 ### **`simple` mode**
 
 `simple` mode sets the following values to `false`:
-* `showCheckbox`
-* `chipsEnabled`
-* `closeBtn`
+
+*  `showCheckbox`
+*  `chipsEnabled`
+*  `closeBtn`
 
 ### **`optgroup` mode**
 
 `optgroup` mode sets the following values to `false`:
-* `showCheckbox`
-* `openLevelsAction`
+
+*  `showCheckbox`
+*  `openLevelsAction`
 
 `optgroup` sets the following values to `true`:
-* `lastSelectable`
-* `optgroupLabels`
-* `labelsDecoration`
 
+*  `lastSelectable`
+*  `optgroupLabels`
+*  `labelsDecoration`
 
 ## Examples
 
@@ -155,21 +156,20 @@ The following is an example of the configuration of a select component. It is us
 
 ![view the configuration]({{site.baseurl}}/common/images/ui-select21.jpg)
 
-
 ## Navigation
 
 The UI-select component supports keyboard navigation.
 
 Navigation keys:
 
-* **`Enter`**: if focus is on the caption a list of options opens; if focus is on the same option it will select or deselect the current option
-* **`Space`**: copies the `Enter` key functionality
-* **`Escape`**: closes the list of options
-* **`PageUp`**: sets focus to the previous option
-* **`PageDown`**: sets focus to the next option
+*  **`Enter`**: if focus is on the caption a list of options opens; if focus is on the same option it will select or deselect the current option
+*  **`Space`**: copies the `Enter` key functionality
+*  **`Escape`**: closes the list of options
+*  **`PageUp`**: sets focus to the previous option
+*  **`PageDown`**: sets focus to the next option
 
 ## Source files
 
-- [app/code/Magento/Ui/view/base/web/js/form/element/ui-select.js]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/form/element/ui-select.js)
-- [Magento/Ui/view/base/web/js/form/element/abstract.js]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/form/element/abstract.js)
-- [app/code/Magento/Ui/view/base/web/templates/grid/filters/elements/ui-select.html]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/templates/grid/filters/elements/ui-select.html)
+*  [app/code/Magento/Ui/view/base/web/js/form/element/ui-select.js]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/form/element/ui-select.js)
+*  [Magento/Ui/view/base/web/js/form/element/abstract.js]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/form/element/abstract.js)
+*  [app/code/Magento/Ui/view/base/web/templates/grid/filters/elements/ui-select.html]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/templates/grid/filters/elements/ui-select.html)

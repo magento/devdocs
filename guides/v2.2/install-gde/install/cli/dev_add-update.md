@@ -18,12 +18,12 @@ To update components if you're *not* a contributing developer, see [Updating the
 You can either add a `require` section to `composer.json` or you can use the `composer require` command as follows:
 
 1. Log in to the Magento server, or switch to, the [Magento file system owner](https://glossary.magento.com/magento-file-system-owner).
-2. Change to the directory to which you cloned the Magento application. For example,
+1. Change to the directory to which you cloned the Magento application. For example,
 
     ```bash
     cd /var/www/magento2
     ```
-    
+
 You have the following options:
 
 ### Get available module versions
@@ -71,7 +71,8 @@ Add a `require` section like the following:
 
 Save your changes to `composer.json`, exit the text editor, and enter `composer update`
 
-### For more information
+{:.ref-header}
+Related topics
 
 If you have issues, see [Composer troubleshooting](https://getcomposer.org/doc/articles/troubleshooting.md){:target="_blank"}.
 

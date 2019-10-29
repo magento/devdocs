@@ -13,15 +13,12 @@ The following topics discuss Component Manager and System Upgrade errors and sug
 
 ### Both Component Manager and System Upgrade
 
-*	[Troubleshoot cron]({{ page.baseurl }}/comp-mgr/trouble/cman/cron.html)
-*	[Troubleshoot component dependencies]({{ page.baseurl }}/comp-mgr/trouble/cman/component-depend.html)
-*	[Troubleshoot the updater application]({{ page.baseurl }}/comp-mgr/trouble/cman/updater.html)
-*	[Troubleshoot backup]({{ page.baseurl }}/comp-mgr/trouble/cman/tshoot_backup.html)
+*  [Troubleshoot cron]({{ page.baseurl }}/comp-mgr/trouble/cman/cron.html)
+*  [Troubleshoot component dependencies]({{ page.baseurl }}/comp-mgr/trouble/cman/component-depend.html)
+*  [Troubleshoot the updater application]({{ page.baseurl }}/comp-mgr/trouble/cman/updater.html)
+*  [Troubleshoot backup]({{ page.baseurl }}/comp-mgr/trouble/cman/tshoot_backup.html)
 
 ### System Upgrade only
 
-*	["Sorry, we can't take that action right now"]({{ page.baseurl }}/comp-mgr/trouble/cman/were-sorry.html)
-*	[Missing .gitignore files]({{ page.baseurl }}/comp-mgr/trouble/cman/gitignore.html)
-*	[Roll back after upgrade failure]({{ page.baseurl }}/comp-mgr/trouble/cman/update-fail.html)
-*	[CE to EE upgrade failure]({{ page.baseurl }}/comp-mgr/trouble/cman/ce-ee-upgrade.html)
-
+*  ["Sorry, we can't take that action right now"]({{ page.baseurl }}/comp-mgr/trouble/cman/were-sorry.html)
+*  [Roll back after upgrade failure]({{ page.baseurl }}/comp-mgr/trouble/cman/update-fail.html)

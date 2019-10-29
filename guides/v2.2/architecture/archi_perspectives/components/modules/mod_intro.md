@@ -24,9 +24,9 @@ A module is a directory that contains the PHP and [XML](https://glossary.magento
 
 Modules typically live in the `vendor` directory of a Magento installation, in a directory with the following PSR-0 compliant format: `vendor/<vendor>/<type>-<module-name>`, where `<type>` can be one of the following values:
 
-- **`module`** - for modules (`module-customer-import-export`)
-- **`theme`** - for frontend and admin themes (`theme-frontend-luma` or `theme-adminhtml-backend`)
-- **`language`** - for language packs (`language-de_de`)
+-  **`module`** - for modules (`module-customer-import-export`)
+-  **`theme`** - for frontend and admin themes (`theme-frontend-luma` or `theme-adminhtml-backend`)
+-  **`language`** - for language packs (`language-de_de`)
 
 For example, the Customer Import/Export module of Magento can be found at `vendor/magento/module-customer-import-export`.
 
@@ -38,7 +38,7 @@ Inside this folder, you will find all the code related to this module, including
 
 The following table shows the *recommended* location within the Magento file system for specific components.
 
-(A {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} must include a `registration.php` file in its root folder.)
+(A [module](https://glossary.magento.com/module) must include a `registration.php` file in its root folder.)
 
 We refer to a component's root directory as the top-level directory in which you develop component code. Typically, this directory is located in one of the following directories relative to the Magento root directory:
 
@@ -57,7 +57,8 @@ See [PHP Developer Guide][] for specific instructions on extending modules.
 
 See [Frontend Developer Guide][] for information on implementing themes and other components.
 
-## Related topics {#arch-modules-related}
+{:.ref-header}
+Related topics
 
 [Module dependencies][]
 

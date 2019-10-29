@@ -11,10 +11,10 @@ functional_areas:
   - Setup
 ---
 
-
 {% include install/get-software_zip.md %}
 
-#### Related topics
+{:.ref-header}
+Related topics
 
--   [Clone the Magento repository]({{page.baseurl }}/install-gde/prereq/dev_install.html)
--   [Get the Composer metapackage]({{page.baseurl }}/install-gde/composer.html)
+-  [Clone the Magento repository]({{page.baseurl }}/install-gde/prereq/dev_install.html)
+-  [Get the Composer metapackage]({{page.baseurl }}/install-gde/composer.html)

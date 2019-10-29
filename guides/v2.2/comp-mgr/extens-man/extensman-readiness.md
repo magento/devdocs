@@ -1,12 +1,6 @@
 ---
 group: software-update-guide
-subgroup: 06_UseExtMan
 title: Step 1. Readiness check
-menu_title: Step 1. Readiness check
-menu_node:
-menu_order: 5
-level3_menu_node: level3parent
-level3_subgroup: readiness
 functional_areas:
   - Upgrade
 ---
@@ -21,7 +15,6 @@ To start, click either **Start Readiness Check** or **Next**. A sample follows.
 
 After the readiness check completes, see one of the following:
 
-*	[Readiness check success]({{ page.baseurl }}/comp-mgr/extens-man/extensman-readiness-success.html)
-*	[Readiness check failure]({{ page.baseurl }}/comp-mgr/extens-man/extensman-readiness-fail.html)
-*	[Readiness check with multiple extension updates]({{ page.baseurl }}/comp-mgr/extens-man/extensman-readiness-multi.html)
-
+*  [Readiness check success]({{ page.baseurl }}/comp-mgr/extens-man/extensman-readiness-success.html)
+*  [Readiness check failure]({{ page.baseurl }}/comp-mgr/extens-man/extensman-readiness-fail.html)
+*  [Readiness check with multiple extension updates]({{ page.baseurl }}/comp-mgr/extens-man/extensman-readiness-multi.html)

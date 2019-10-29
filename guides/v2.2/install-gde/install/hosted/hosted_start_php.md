@@ -15,25 +15,26 @@ functional_areas:
 
 To configure PHP:
 
-1.	If necessary, start the cPanel and click **Home** to return to the [home page](https://glossary.magento.com/home-page).
-2.	In the Software section, click **Select PHP Version**.
+1. If necessary, start the cPanel and click **Home** to return to the [home page](https://glossary.magento.com/home-page).
+1. In the Software section, click **Select PHP Version**.
 
-    ![Start out configuring PHP]({{ site.baseurl }}/common/images/install-merch_php.png){:width="550px"}
+   ![Start out configuring PHP]({{ site.baseurl }}/common/images/install-merch_php.png){:width="550px"}
 
-3.	From the **PHP Version** list at the top of the page, click either **5.5** or **5.6**.
+1. From the **PHP Version** list at the top of the page, click either **5.5** or **5.6**.
 
-4.	Click **Set as current**.
+1. Click **Set as current**.
 
-    The checkboxes following the PHP version are referred to as *PHP extensions*.
+   The checkboxes following the PHP version are referred to as *PHP extensions*.
 
-4.	Select all of the following checkboxes: **gd**, **intl**, **mbstring**, **mcrypt**, **opcache**, **pdo**, **pdo_mysql**, and **xsl**.
+1. Select all of the following checkboxes: **gd**, **intl**, **mbstring**, **mcrypt**, **opcache**, **pdo**, **pdo_mysql**, and **xsl**.
 
-    You can optionally select other PHP extensions if you want.
+   You can optionally select other PHP extensions if you want.
 
-    ![Select PHP extensions]({{ site.baseurl }}/common/images/install-merch_php-ext.png){:width="750px"}
+   ![Select PHP extensions]({{ site.baseurl }}/common/images/install-merch_php-ext.png){:width="750px"}
 
-5.	Click **Save**.
+1. Click **Save**.
 
-#### Next step
+{:.ref-header}
+Related topics
 
 [Transfer the Magento software to your hosted system]({{ page.baseurl }}/install-gde/install/hosted/hosted_get-ftp.html)

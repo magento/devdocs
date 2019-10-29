@@ -17,7 +17,7 @@ To manage the branches and environments with the Project Web Interface, see [Man
 Magento Cloud CLI commands are very similar to Git commands. You can use them to connect to your {{site.data.var.ece}} project and manage your  {{site.data.var.ece}} environments. Although you can run the commands from any directory, we recommend that you run them from a project directory. When run from a project directory, you can omit the `-p <project-ID>` parameter.
 
 The following list of commonly used Magento Cloud CLI commands includes required options only. Use the ``--help``
-option with any command to get more detailed information. 
+option with any command to get more detailed information.
 
 Command | Description
 --- | ---
@@ -47,15 +47,15 @@ To begin, create a new branch.
 
 After completing development, you can merge this branch to the parent:
 
-1.  Complete code in your local branch.
+1. Complete code in your local branch.
 
-1.  Add, commit, and push changes to the environment.
+1. Add, commit, and push changes to the environment.
 
     ```bash
     git add -A && git commit -m "Commit message" && git push origin <branch-name>
     ```
 
-1.  Merge with the parent environment:
+1. Merge with the parent environment:
 
     ```bash
     magento-cloud environment:merge <environment-ID>
@@ -72,23 +72,30 @@ You must be a [project administrator]({{ page.baseurl }}/cloud/project/user-admi
 
 When you delete an environment, the environment is set to _inactive_. The code is still available in the Git branch, but no longer contains the services or the database. To delete the environment completely, you must also delete the corresponding remote Git branch.
 
-#### To delete an environment:
+{:.procedure}
+To delete an environment:
 
-1.  Open a terminal and navigate to your project.
+1. Open a terminal and navigate to your project.
 
-1.  Fetch updates from the remote server.
+1. Fetch updates from the remote server.
 
     ```bash
     git fetch
     ```
 
-1.  Checkout the environment branch.
+1. Delete the environment branch.
 
     ```bash
-    magento-cloud environment:checkout <environment-ID>
+    magento-cloud environment:delete <environment-ID>
     ```
 
-1.  Respond to the prompts to delete the local environment and the corresponding remote environment.
+    Optionally, you can delete more than one environment at a time by adding multiple environment IDs to the delete command.
+
+    ```bash
+    magento-cloud environment:delete <environment-1-ID> <environment-2-ID>
+    ```
+
+1. Respond to the prompts to delete the local environment and the corresponding remote environment.
 
     ```terminal
     The environment <environment-ID> is currently active: deleting it will delete all associated data.
@@ -104,27 +111,19 @@ When you delete an environment, the environment is set to _inactive_. The code i
 
     Deleting the remote Git branch removes the environment from the project.
 
-1.  Wait for the environment to delete.
+1. Wait for the environment to delete.
 
     ```terminal
     Deleting environment <environment-ID>
     Waiting for the activity...
       Deleting environment <project-id>-<environment-ID>-xxxxxx
-    
+
       [============================]  1 min (complete)
     Activity ID succeeded
     Deleted remote Git branch <environment-ID>
     Run git fetch --prune to remove deleted branches from your local cache.
     ```
     {: .no-copy}
-
-#### To delete more than one environment:
-
-You can delete more than one environment at a time by adding multiple environment IDs to the delete command.
-
-```bash
-magento-cloud environment:delete <environment-1-ID> <environment-2-ID>
-```
 
 {:.bs-callout .bs-callout-info}
 To activate an inactive environment, use the `magento-cloud environment:activate` command.
@@ -226,7 +225,6 @@ If you have a corporate firewall that blocks outgoing SSH connections, you can a
 </td>
 </tr>
 </table>
-
 
 ## Interact with environments via the Magento Cloud CLI {#commands}
 

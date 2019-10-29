@@ -13,7 +13,7 @@ profile. You must create a new profile on the [Developer Portal](https://develop
 
 You must use the `mage_id` associated with the client application in your developer account when making request to these endpoints. You can get this ID when obtaining a [session token]({{ page.baseurl }}/marketplace/eqp/auth.html#session-token).
 
-```
+```http
 GET /rest/v1/users/:mage_id
 GET /rest/v1/users/:mage_id?style=summary
 PUT /rest/v1/users/:mage_id
@@ -27,7 +27,7 @@ The following example shows the request/response body for retrieving all profile
 
 **Request**
 
-```shell
+```bash
 curl -X GET \
      -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
      https://developer-api.magento.com/rest/v1/users/MAG123456789
@@ -132,7 +132,7 @@ The following example shows the request/response body for retrieving a subset of
 
 **Request**
 
-```shell
+```bash
 curl -X GET \
      -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
      https://developer-api.magento.com/rest/v1/users/MAG123456789?style=summary
@@ -178,12 +178,12 @@ The following example shows a request to update the personal profile bio field:
 
 The `action` field specifies which update operation to perform:
 
-* `publish`—The default if not specified. Publishes the profile to the relevant [Marketplace Store Partners page](https://marketplace.magento.com/partners.html).
-* `draft`—The update is saved on the Developer Portal, but not published.
+*  `publish`—The default if not specified. Publishes the profile to the relevant [Marketplace Store Partners page](https://marketplace.magento.com/partners.html).
+*  `draft`—The update is saved on the Developer Portal, but not published.
 
 **Request**
 
-```shell
+```bash
 curl -X PUT \
      -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
      -H 'Content-Type: application/json' \
@@ -197,7 +197,7 @@ A 200 OK HTTP response code indicates a successful update.
 
 Use these APIs to manage Magento 1 and Magento 2 package access keys.
 
-```
+```http
 GET     /rest/v1/users/:mage_id/keys
 POST    /rest/v1/users/:mage_id/keys
 PUT     /rest/v1/users/:mage_id/keys/:url_encoded_label_of_m2_key
@@ -208,7 +208,7 @@ DELETE  /rest/v1/users/:mage_id/keys/:url_encoded_label_of_m2_key
 
 Use this API to return the keys associated with the specified `mage_id`.
 
-```
+```http
 GET /rest/v1/users/:mage_id/keys
 ```
 
@@ -224,7 +224,7 @@ The following example shows the request/response body for retrieving keys withou
 
 **Request**
 
-```shell
+```bash
 curl -X GET \
      -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
      https://developer-api.magento.com/rest/v1/users/MAG123456789/keys
@@ -260,19 +260,19 @@ curl -X GET \
 
 #### Magento 2 keys
 
-* Each Composer key-pair has unique `label` and `is_enabled` flags to indicate whether the key is enabled.
-* A Composer key-pair is identified by `user_key` (username) and `password_key` (password) when prompted for Composer credentials.
+*  Each Composer key-pair has unique `label` and `is_enabled` flags to indicate whether the key is enabled.
+*  A Composer key-pair is identified by `user_key` (username) and `password_key` (password) when prompted for Composer credentials.
 
 #### Magento 1 keys
 
-* Provides a list of product names and associated product keys, which can be used in the Magento Connect Manager to install extensions.
-* You cannot create, update, or delete these keys.
+*  Provides a list of product names and associated product keys, which can be used in the Magento Connect Manager to install extensions.
+*  You cannot create, update, or delete these keys.
 
 ### Create keys
 
 Use this API to create new Magento 2 Composer key-pairs. You must specify a unique label for each key. You can create multiple key-pairs in a single request.
 
-```
+```http
 POST /rest/v1/users/:mage_id/keys
 ```
 
@@ -291,7 +291,7 @@ POST /rest/v1/users/:mage_id/keys
 
 **Request**
 
-```shell
+```bash
 curl -X POST \
      -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
      -H 'Content-Type: application/json' \
@@ -324,21 +324,21 @@ curl -X POST \
 }
 ```
 
-* The API returns a batch response for each label.
-* A 200 OK HTTP response code indicates a successful update.
-* Any non-200 HTTP response code indicates an error. See the `message` field for details.
+*  The API returns a batch response for each label.
+*  A 200 OK HTTP response code indicates a successful update.
+*  Any non-200 HTTP response code indicates an error. See the `message` field for details.
 
 ### Update keys
 
 Use this API to enable or disable a Magento 2 Composer key-pair. You must specify the key-pair in the request using a URL-encoded string.
 
-```
+```http
 PUT /rest/v1/users/:mage_id/keys/:url_encoded_label_of_m2_key
 ```
 
 **Request**
 
-```shell
+```bash
 curl -X PUT \
      -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
      -H 'Content-Type: application/json' \
@@ -365,7 +365,7 @@ curl -X PUT \
 
 This API can be used to remove a Magento 2 composer key-pair identified by the given url-encoded label.
 
-```
+```http
 DELETE /rest/v1/users/:mage_id/keys/:url_encoded_label_of_m2_key
 ```
 
@@ -373,7 +373,7 @@ The following curl example illustrates the call to be made:
 
 **Request**
 
-```shell
+```bash
 curl -X DELETE \
      -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
      https://developer-api.magento.com/rest/v1/users/MAG123456789/keys/key_for_charlie
@@ -385,7 +385,7 @@ A 204 No Content HTTP response code indicates a successful update.
 
 Use this API to retrieve reports owned by a specific user. Reports contain information about extensions sales, payout status, aggregate sales, refund data, and more.
 
-```
+```http
 GET /rest/v1/users/:mage_id/reports/pageviews
 GET /rest/v1/users/:mage_id/reports/totals
 GET /rest/v1/users/:mage_id/reports/sales

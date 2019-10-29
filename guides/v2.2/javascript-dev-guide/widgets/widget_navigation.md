@@ -4,14 +4,13 @@ subgroup: 3_Widgets
 title: Navigation widget
 ---
 
-## Overview
-
 Magento navigation widget is a customized [jQuery UI Menu widget]. Magento navigation extends the default functionality with the following:
--   Expanding all layers of the menu tree past the second layer.
--   Limiting the maximum number of list items contained within the main
-    navigation (overflow items are placed into a secondary navigation
-    level).
--   Method for handling the responsive layout of the menu.
+
+-  Expanding all layers of the menu tree past the second layer.
+-  Limiting the maximum number of list items contained within the main
+   navigation (overflow items are placed into a secondary navigation
+   level).
+-  Method for handling the responsive layout of the menu.
 
 The navigation widget source is [lib/web/mage/menu.js].
 
@@ -22,11 +21,12 @@ For information about how to initialize a widget in a JS component or `.phtml` t
 ## Options {#navigation_options}
 
 The navigation widget has the following options:
--   [breakpoint](#n_breakpoint)
--   [container](#n_container)
--   [maxItems](#n_maxItems)
--   [moreText](#n_moreText)
--   [responsiveAction](#n_responsiveAction)
+
+-  [breakpoint](#n_breakpoint)
+-  [container](#n_container)
+-  [maxItems](#n_maxItems)
+-  [moreText](#n_moreText)
+-  [responsiveAction](#n_responsiveAction)
 
 ### `breakpoint` {#n_breakpoint}
 
@@ -72,8 +72,8 @@ The default responsive handler for the navigation widget.
 
 ## Methods {#navigation_methods}
 
--   [setMaxItems()](#nav_setMaxItems)
--   [setupMoreMenu()](#nav_setupMoreMenu)
+-  [setMaxItems()](#nav_setMaxItems)
+-  [setupMoreMenu()](#nav_setupMoreMenu)
 
 ### `setMaxItems()` {#nav_setMaxItems}
 Moves the list items that are more than the total max item number set by the user option.

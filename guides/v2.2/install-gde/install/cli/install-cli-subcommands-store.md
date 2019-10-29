@@ -15,8 +15,8 @@ In addition to the command arguments discussed here, see [Common arguments]({{ p
 
 Before you run this command, you must do all of the following *or* you must [install the Magento software]({{ page.baseurl }}/install-gde/install/cli/install-cli-install.html):
 
-*	[Create or update the deployment configuration]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-deployment.html)
-*	[Create the Magento database schema]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-db.html)
+*  [Create or update the deployment configuration]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-deployment.html)
+*  [Create the Magento database schema]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-db.html)
 
 {% include install/fully-secure.md %}
 
@@ -24,7 +24,9 @@ Before you run this command, you must do all of the following *or* you must [ins
 
 Command usage:
 
-	magento setup:store-config:set [--<parameter_name>=<value>, ...]
+```bash
+magento setup:store-config:set [--<parameter_name>=<value>, ...]
+```
 
 where the following table defines parameters and values.
 

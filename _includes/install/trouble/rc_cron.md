@@ -1,46 +1,46 @@
 
-
 ### Check your existing crontab
 
 This section discusses how to see if cron is currently running and to verify whether it's set up properly.
 
 To verify whether or not your crontab is set up:
 
-1.	Log in to your Magento server as, or switch to, the [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html).
-2.	See if the following file exists:
-    
-    ```bash
-	ls -al <magento_root>/var/.setup_cronjob_status
-	```
+1. Log in to your Magento server as, or switch to, the [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html).
+1. See if the following file exists:
 
-	If the file exists, cron has run successfully in the past. If the file _does not_ exist, either you haven't yet installed Magento or cron isn't running. In either case, continue with the next step.
-3.	Get more detail about cron.
+   ```bash
+   ls -al <magento_root>/var/.setup_cronjob_status
+   ```
 
-	As a user with `root` privileges, enter the following command:
+   If the file exists, cron has run successfully in the past. If the file _does not_ exist, either you haven't yet installed Magento or cron isn't running. In either case, continue with the next step.
 
-	```bash
-	crontab -u <Magento file system owner name> -l
-	```
+1. Get more detail about cron.
 
-	For example, on CentOS
+   As a user with `root` privileges, enter the following command:
 
-	```bash
-	crontab -u magento_user -l
-	```
+   ```bash
+   crontab -u <Magento file system owner name> -l
+   ```
 
-	If no crontab has been set up for the user, the following message displays:
+   For example, on CentOS
 
-	```terminal
-	no crontab for magento_user
-	```
+   ```bash
+   crontab -u magento_user -l
+   ```
 
-	Your crontab tells you the following:
+   If no crontab has been set up for the user, the following message displays:
 
-	*	What PHP binary you're using (in some cases, you have more than one)
-	*	What Magento cron scripts you're running (in particular, the paths to those scripts)
-	*	Where your cron logs are located
+   ```terminal
+   no crontab for magento_user
+   ```
 
-	See one of the following sections for a solution to your issue.
+   Your crontab tells you the following:
+
+   *  What PHP binary you're using (in some cases, you have more than one)
+   *  What Magento cron scripts you're running (in particular, the paths to those scripts)
+   *  Where your cron logs are located
+
+   See one of the following sections for a solution to your issue.
 
 ### Solution: crontab not set up
 

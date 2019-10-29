@@ -8,7 +8,6 @@ menu_order: 2
 ee_only: true
 ---
 
-
 The Magento_RmaStaging [module](https://glossary.magento.com/module) is a part of the staging functionality in {{site.data.var.ee}}. It enables you to create updates for the parameters of the Autosettings field set of a product.
 
 RMA stands for a return merchandise [authorization](https://glossary.magento.com/authorization).
@@ -17,7 +16,7 @@ RMA stands for a return merchandise [authorization](https://glossary.magento.com
 
 The Magento_RmaStaging module extends the following Magento_Rma module functionality to be used in staging mode:
 
-- Adds the Autosettings field set to the Schedule update form of a product.
+-  Adds the Autosettings field set to the Schedule update form of a product.
 
 ## Dependencies
 

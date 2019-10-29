@@ -17,13 +17,13 @@ A payment provider integration can have multiple response validators, that shoul
 
 ## Useful implementations
 
-* [\Magento\Payment\Gateway\Validator\AbstractValidator]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Payment/Gateway/Validator/AbstractValidator.php): an abstract class with ability to create a Result object. Can be inherited from by particular response validator implementations.
-* [\Magento\Payment\Gateway\Validator\ValidatorComposite]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Payment/Gateway/Validator/ValidatorComposite.php): a chain of Validator objects, which are executed one by one and the result gets aggregated into one Result object. This chain can be configured to stop when certain validators fail.
-* [\Magento\Payment\Gateway\Validator\Result]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Payment/Gateway/Validator/Result.php): base class for Result object. You still have an ability to create a Result of your own, but the default one covers the most amount of cases.
+*  [\Magento\Payment\Gateway\Validator\AbstractValidator]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Payment/Gateway/Validator/AbstractValidator.php): an abstract class with ability to create a Result object. Can be inherited from by particular response validator implementations.
+*  [\Magento\Payment\Gateway\Validator\ValidatorComposite]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Payment/Gateway/Validator/ValidatorComposite.php): a chain of Validator objects, which are executed one by one and the result gets aggregated into one Result object. This chain can be configured to stop when certain validators fail.
+*  [\Magento\Payment\Gateway\Validator\Result]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Payment/Gateway/Validator/Result.php): base class for Result object. You still have an ability to create a Result of your own, but the default one covers the most amount of cases.
 
 ## Example
 
-In the following example a response validator is implemented and added to the pool of the Braintree payment provider request validators.  
+In the following example a response validator is implemented and added to the pool of the Braintree payment provider request validators.
 
 ```php
 class AcceptValidator extends AbstractValidator

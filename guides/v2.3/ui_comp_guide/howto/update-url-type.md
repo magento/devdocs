@@ -12,16 +12,16 @@ This topic describes how to extend the existing [`UrlInput` component](../compon
 To update a page URL type, you must:
 
 1. [Create the link class](#link-class).
-2. [Add the link to the di.xml file](#di-xml).
-3. [Create the component's JavaScript implementation](#js-implementation).
-4. [Create a controller to search the page](#search-page).
-5. [Create a controller to return the page or array by `cmsPageId`](#return-page).
+1. [Add the link to the di.xml file](#di-xml).
+1. [Create the component's JavaScript implementation](#js-implementation).
+1. [Create a controller to search the page](#search-page).
+1. [Create a controller to return the page or array by `cmsPageId`](#return-page).
 
 ## Create the link class {#link-class}
 
 Create a `.php` file implementing the new link class in the module directory containing the applicable UI component, such as `<your-module>/Ui/Component/UrlInput/`.
 
-```
+```php
 <?php
 /**
  * Copyright © Magento, Inc. All rights reserved.
@@ -82,7 +82,7 @@ class Page implements \Magento\Ui\Model\UrlInput\ConfigInterface
 
 Add the link class you just created to the `di.xml` file.
 
-```
+```xml
 <type name="Magento\Ui\Model\UrlInput\LinksConfigProvider">
     <arguments>
         <argument name="linksConfiguration" xsi:type="array">
@@ -98,7 +98,7 @@ Create the JavaScript implementation for the applicable UI component in your mod
 
 `<area>` would be `adminhtml`, `frontend`, or `base` depending on where you are applying the component implementation.
 
-```
+```js
 /**
  * Copyright © Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
@@ -194,11 +194,12 @@ define([
     });
 });
 ```
+
 ## Create a controller to search the page {#search-page}
 
 Create a controller to search the page using a search key.
 
-```
+```php
 <?php
 /**
  * Copyright © Magento, Inc. All rights reserved.
@@ -273,11 +274,12 @@ class Search extends \Magento\Backend\App\Action
     }
 }
 ```
+
 ## Create a controller to return the page or array {#return-page}
 
 Create a controller to return the page, or empty array if the option doesn't exist, by the `cmsPageId`.
 
-```
+```php
 <?php
 /**
  * Copyright © Magento, Inc. All rights reserved.

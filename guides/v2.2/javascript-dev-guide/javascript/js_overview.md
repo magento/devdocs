@@ -14,21 +14,20 @@ For information about how JS resources are located and configured, see [Configur
 
 Topics of this chapter describe the following:
 
-- [JavaScript initialization]({{ page.baseurl }}/javascript-dev-guide/javascript/js_init.html): how to initialize JavaScript components and widgets in JavaScript files and `.phtml` templates
-- [Use custom JavaScript]({{ page.baseurl }}/javascript-dev-guide/javascript/custom_js.html): how to extend or replace default JavaScript components/widgets.
-- [Locate JavaScript]({{ page.baseurl }}/javascript-dev-guide/javascript/js_debug.html) components: how to define which components (scripts) are used on a particular store page.
-- [Magento jQuery widgets]({{ page.baseurl }}/javascript-dev-guide/widgets/jquery-widgets-about.html): Magento [jQuery](https://glossary.magento.com/jquery) [widget](https://glossary.magento.com/widget) [API](https://glossary.magento.com/api) documentation.
-- [Customizing JavaScript illustration]({{ page.baseurl }}/javascript-dev-guide/javascript/js_practice.html): practical illustration of custom widgets related tasks.
+-  [JavaScript initialization]({{ page.baseurl }}/javascript-dev-guide/javascript/js_init.html): how to initialize JavaScript components and widgets in JavaScript files and `.phtml` templates
+-  [Use custom JavaScript]({{ page.baseurl }}/javascript-dev-guide/javascript/custom_js.html): how to extend or replace default JavaScript components/widgets.
+-  [Locate JavaScript]({{ page.baseurl }}/javascript-dev-guide/javascript/js_debug.html) components: how to define which components (scripts) are used on a particular store page.
+-  [Magento jQuery widgets]({{ page.baseurl }}/javascript-dev-guide/widgets/jquery-widgets-about.html): Magento [jQuery](https://glossary.magento.com/jquery) [widget](https://glossary.magento.com/widget) [API](https://glossary.magento.com/api) documentation.
+-  [Customizing JavaScript illustration]({{ page.baseurl }}/javascript-dev-guide/javascript/js_practice.html): practical illustration of custom widgets related tasks.
 
 ## Terms used {#js_terms}
 
 | Term                                  | Description                                        |
-| ------------------------------------- |--------------------------------------------------- | 
+| ------------------------------------- |--------------------------------------------------- |
 | *JavaScript component (JS component)* | Any separate `.js` file decorated as [AMD module]. |
 | *Ui component*                        | JS component located in the `Magento_Ui` module, in the [app/code/Magento/Ui/view] directory. |
 | *jQuery UI widget*                    | A JS component/widget provided by [jQuery UI library used in Magento]. |
 | *jQuery widget*                       | Custom widget created using jQuery UI Widget Factory and decorated as AMD module. Many Magento JS components are jQuery widget. |
-
 
 [RequireJS file and module loader]: http://requirejs.org/
 [disable all the default scripts and their load by RequireJS]: {{page.baseurl}}/javascript-dev-guide/javascript/custom_js.html#disable_default_js

@@ -23,10 +23,10 @@ _Sensitive_ configuration values hold restricted or confidential information.
 
 Examples of sensitive information include:
 
-*	Keys (such as API keys)
-*	Usernames and passwords
-*	E-mail addresses
-*	Any personally identifiable information (e.g., address, phone number, date of birth, government identification number, etc.)
+*  Keys (such as API keys)
+*  Usernames and passwords
+*  E-mail addresses
+*  Any personally identifiable information (e.g., address, phone number, date of birth, government identification number, etc.)
 
 ### Environment or system-specific values
 
@@ -34,16 +34,16 @@ _Environment_ or _system-specific_ values are unique to the system where Magento
 
 Examples of environment or system-specific values include:
 
-*	URLs
-*	IP addresses
-*	Ports
-*	Hostnames
-*	Domain names
-*	Paths (e.g., custom paths, proxy host, proxy port)
-*	"modes" (e.g, sandbox mode, debug mode, test mode)
-*	SSL (only for non-payment)
-*	E-mail recipients
-*	Administrative settings between systems (e.g., password expiration limits)
+*  URLs
+*  IP addresses
+*  Ports
+*  Hostnames
+*  Domain names
+*  Paths (e.g., custom paths, proxy host, proxy port)
+*  "modes" (e.g, sandbox mode, debug mode, test mode)
+*  SSL (only for non-payment)
+*  E-mail recipients
+*  Administrative settings between systems (e.g., password expiration limits)
 
 ## How to specify values as sensitive or system-specific
 
@@ -93,12 +93,13 @@ A message similar to the following is displayed:
 
 To set a configuration setting as both sensitive and system-specific, create two entries with the `name` property for `argument` set to `sensitive` for one entry and `environment` for the other.
 
-#### Related topics
+{:.ref-header}
+Related topics
 
-* [Configuration importers][config-importers]
-*	[The di.xml file][di-xml]
-*	[Developer roadmap]({{ page.baseurl }}/extension-dev-guide/intro/developers_roadmap.html)
-*	[Dependency injection]({{ page.baseurl }}/extension-dev-guide/depend-inj.html)
+*  [Configuration importers][config-importers]
+*  [The di.xml file][di-xml]
+*  [Developer roadmap]({{ page.baseurl }}/extension-dev-guide/intro/developers_roadmap.html)
+*  [Dependency injection]({{ page.baseurl }}/extension-dev-guide/depend-inj.html)
 
 [typepool]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Config/Model/Config/TypePool.php
 [di-xml]: {{ page.baseurl }}/extension-dev-guide/build/di-xml-file.html

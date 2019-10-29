@@ -4,7 +4,7 @@ group: release-notes
 title: Contact Information for Third-Party Extensions
 
 ---
-The Magento platform core code contains several extensions that have been developed by external vendors. You can find contact information for these third-party extensions below. 
+The Magento platform core code contains several extensions that have been developed by external vendors. You can find contact information for these third-party extensions below.
 
 | Third-party extension | Contact information                                                 | GitHub repository                                                                            |
 |-----------------------|---------------------------------------------------------------------|----------------------------------------------------------------------------------------------|

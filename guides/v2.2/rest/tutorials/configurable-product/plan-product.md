@@ -15,9 +15,9 @@ functional_areas:
 
 To create a configurable product programmatically, you'll need to know the following:
 
-* The attribute names and values defined in the attribute set assigned to the configurable product.
-* The categories numbers assigned to the configurable product.
-* Which attributes to use as the configuration options.
+*  The attribute names and values defined in the attribute set assigned to the configurable product.
+*  The categories numbers assigned to the configurable product.
+*  Which attributes to use as the configuration options.
 
 Since this tutorial uses the sample data, we can take advantage of the options that the Top attribute set provides. This attribute set contains attributes that describe the fabric, sleeve length, and other characteristics that are specific to clothing. It also includes EAV attributes such as size and color, which are commonly available to all types of physical products.
 
@@ -42,7 +42,6 @@ Pattern | Graphic Print
 Color | Gray
 Size | Configurable in small, medium, or large
 Description | The Champ Tee keeps you cool and dry while you do your thing. Let everyone know who you are by adding your name on the back for only $10.
-
 
 A merchant typically provides the product name, SKU, price, weight, and description. The other characteristics are defined by the system.
 
@@ -117,7 +116,6 @@ Pattern | Graphic Print | 152 | `pattern` | 196
 Color | Gray | 93 | `color` | 52
 Size | Not applicable | 141 | `size` | 168 (small), 169 (medium), 170 (large)
 
-
 {:.bs-callout .bs-callout-warning}
 The attribute ID and value numbers might be different on your installation. Check the values carefully before using them in your calls.
 
@@ -136,9 +134,9 @@ searchCriteria[filter_groups][0][filters][0][condition_type]=gte
 
 Note that women's tops and tees have different ids than men's tops and tees. The values for men's clothing are:
 
-* Men - `11`
-* Tops - `12`
-* Tees - `16`
+*  Men - `11`
+*  Tops - `12`
+*  Tees - `16`
 
 ## Verify this step
 

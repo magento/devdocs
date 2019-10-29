@@ -1,7 +1,6 @@
 ---
 group: architecture-guide
 title: Presentation Layer
-menu_title: Presentation layer
 ---
 
 ## What is the Magento Presentation layer?
@@ -14,11 +13,11 @@ The presentation layer contains both view elements **(layouts, blocks, templates
 
 Magento uses *areas* to efficiently make web service calls, loading only the dependent code that is required for the particular type of user. Three types of Magento users interact with presentation layer code:
 
-* **Web users** interact with the storefront, where they can see the View model of data displayed by Magento and interact with product UI elements to request data for view and manipulation. These users work within the `frontend` area.
+*  **Web users** interact with the storefront, where they can see the View model of data displayed by Magento and interact with product UI elements to request data for view and manipulation. These users work within the `frontend` area.
 
-* **System administrators** customizing a [storefront](https://glossary.magento.com/storefront) can indirectly manipulate the presentation layer by, for example, adding themes or widgets to the frontend.
+*  **System administrators** customizing a [storefront](https://glossary.magento.com/storefront) can indirectly manipulate the presentation layer by, for example, adding themes or widgets to the frontend.
 
-* **Web [API](https://glossary.magento.com/api) calls** can be made through HTTP just like browser requests, and can be made via AJAX calls from the user interface.
+*  **Web [API](https://glossary.magento.com/api) calls** can be made through HTTP just like browser requests, and can be made via AJAX calls from the user interface.
 
 ## Presentation layer components
 
@@ -29,30 +28,15 @@ Each [theme](https://glossary.magento.com/theme) resides in a unique directory a
 
 For an extensive introduction to theme elements and an overview of how to extend and override the default Magento themes, see the [Frontend Developer Guide][].
 
-## GraphQL
-
-GraphQL is a data query language developed internally by Facebook in 2012 before being publicly released in 2015. Magento implements GraphQL to provide an alternative to REST and SOAP web APIs for frontend development.
-
-GraphQL allows you to define the structure of the data that you need, and the server returns only the data you request. Each GraphQL-capable module contains a declarative schema that defines the syntax for queries that the module supports, as well as the attributes that can be returned. If you run a REST call such as GET /V1/products/:sku on a simple product, the system might fetch more than 100 lines of data. If all you need is the current price, the call has returned significantly more information than you need. With GraphQL, a query against the same SKU could return just the price.
-
-More information can be found in the [GraphQL Developer Guide][]
-
-## Progressive Web Apps
-
-The Magento Progressive Web App (PWA) Studio project is a set of developer tools that allow you to develop, deploy, and maintain a PWA storefront on top of Magento 2.
-
-You can read more about how PWA works with Magento in the [PWA Studio docs][]
-
 ## View model
 
 Magento generates the [HTML](https://glossary.magento.com/html) for a page to display to a user from a tree of view elements.
 
 View elements fall into two main categories: blocks and containers.
 
-* **Blocks** can generate [dynamic content](https://glossary.magento.com/dynamic-content) and can contain named child view elements that are similar to arguments being passed in.
-(The `as` attribute holds the child view element names for the parent block to reference them)
+*  **Blocks** can generate [dynamic content](https://glossary.magento.com/dynamic-content) and can contain named child view elements that are similar to arguments being passed in. (The `as` attribute holds the child view element names for the parent block to reference them)
 
-* **Containers** collect an ordered group of children view elements.
+*  **Containers** collect an ordered group of children view elements.
 
 The browser forms a product web page by asking the view element tree to render itself into HTML.
 Containers and blocks emit HTML that encloses their children appropriately.
@@ -66,19 +50,13 @@ For example, the [Admin](https://glossary.magento.com/admin) UI screens are ofte
 
 The View layer calls code from the Model to get information about the state of the application (for example, the price of a product). Typically, the way it accesses the Model is through service contracts.
 
-## Progressive web apps
-
-Progressive Web Apps (PWA) is a way to present a Magento storefront via a set of React javascript components.
-Using Magento as a headless backend, you can use PWA components to make mobile friendly frontends.
-
-Read more about [Magento PWA][].
-
 ## Presentation layer flow
 
 Web users interact with components of the presentation layer to select actions that initiate calls to the underlying layers.
 Presentation layer components make calls to the service layer, which in turn sends requests to the [domain](https://glossary.magento.com/domain) layer.
 
-## Related topics {#related}
+{:.ref-header}
+Related topics
 
 [Architectural diagrams]({{page.baseurl}}/architecture/archi_perspectives/arch_diagrams.html)
 
@@ -86,6 +64,3 @@ Presentation layer components make calls to the service layer, which in turn sen
 
 <!-- Link definitions -->
 [Frontend Developer Guide]: {{page.baseurl}}/frontend-dev-guide/bk-frontend-dev-guide.html
-[GraphQL Developer Guide]: https://devdocs.magento.com/guides/v2.3/graphql/
-[Magento PWA]: https://magento-research.github.io/pwa-studio/technologies/overview/
-[PWA Studio docs]: https://magento-research.github.io/pwa-studio/

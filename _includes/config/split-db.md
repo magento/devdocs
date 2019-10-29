@@ -2,35 +2,57 @@
 
 Create checkout and OMS master databases as follows:
 
-1.	Log in to your database server as any user.
-2.	Enter the following command to get to a MySQL command prompt:
+1. Log in to your database server as any user.
+1. Enter the following command to get to a MySQL command prompt:
 
-		mysql -u root -p
+   ```bash
+   mysql -u root -p
+   ```
 
-3.	Enter the MySQL `root` user's password when prompted.
-4.	Enter the following commands in the order shown to create database instances named `magento_quote` and `magento_sales` with the same usernames and passwords:
+1. Enter the MySQL `root` user's password when prompted.
+1. Enter the following commands in the order shown to create database instances named `magento_quote` and `magento_sales` with the same usernames and passwords:
 
-		create database magento_quote;
-		GRANT ALL ON magento_quote.* TO magento_quote@localhost IDENTIFIED BY 'magento_quote';
+   ```shell
+   create database magento_quote;
+    ```
 
-		create database magento_sales;
-		GRANT ALL ON magento_sales.* TO magento_sales@localhost IDENTIFIED BY 'magento_sales';
+   ```shell
+   GRANT ALL ON magento_quote.* TO magento_quote@localhost IDENTIFIED BY 'magento_quote';
+   ```
 
-5.	Enter `exit` to quit the command prompt.
+   ```shell
+   create database magento_sales;
+   ```
 
-6.	Verify the databases, one at a time:
+   ```shell
+   GRANT ALL ON magento_sales.* TO magento_sales@localhost IDENTIFIED BY 'magento_sales';
+   ```
 
-	Checkout database:
+1. Enter `exit` to quit the command prompt.
 
-		mysql -u magento_quote -p
-		exit
+1. Verify the databases, one at a time:
 
-	Order management database:
+   Checkout database:
 
-		mysql -u magento_sales -p
-		exit
+   ```bash
+   mysql -u magento_quote -p
+   ```
 
-	If the MySQL monitor displays, you created the database properly. If an error displays, repeat the preceding commands.
+   ```shell
+   exit
+   ```
+
+   Order management database:
+
+   ```bash
+   mysql -u magento_sales -p
+   ```
+
+   ```shell
+   exit
+   ```
+
+   If the MySQL monitor displays, you created the database properly. If an error displays, repeat the preceding commands.
 
 ## Configure {{site.data.var.ee}} to use the master databases {#config-ee-multidb-master-cli}
 
@@ -44,26 +66,38 @@ After setting up a total of three master databases, use the Magento command line
 
 Command syntax:
 
-	magento setup:db-schema:split-quote --host="<checkout db host or ip>" --dbname="<name>" --username="<checkout db username>" --password="<password>"
+```bash
+magento setup:db-schema:split-quote --host="<checkout db host or ip>" --dbname="<name>" --username="<checkout db username>" --password="<password>"
+```
 
 For example,
 
-	magento setup:db-schema:split-quote --host="localhost" --dbname="magento_quote" --username="magento_quote" --password="magento_quote"
+```bash
+magento setup:db-schema:split-quote --host="localhost" --dbname="magento_quote" --username="magento_quote" --password="magento_quote"
+```
 
 The following message displays to confirm a successful setup:
 
-	Migration has been finished successfully!
+```terminal
+Migration has been finished successfully!
+```
 
 ### Configure the OMS database   {#config-ee-multidb-master-cli-oms}
 
 Command syntax:
 
-	magento setup:db-schema:split-sales --host="<checkout db host or ip>" --dbname="<name>" --username="<checkout db username>" --password="<password>"
+```bash
+magento setup:db-schema:split-sales --host="<checkout db host or ip>" --dbname="<name>" --username="<checkout db username>" --password="<password>"
+```
 
 For example,
 
-	magento setup:db-schema:split-sales --host="localhost" --dbname="magento_sales" --username="magento_sales" --password="magento_sales"
+```bash
+magento setup:db-schema:split-sales --host="localhost" --dbname="magento_sales" --username="magento_sales" --password="magento_sales"
+```
 
 The following message displays to confirm a successful setup:
 
-	Migration has been finished successfully!
+```terminal
+Migration has been finished successfully!
+```

@@ -8,27 +8,27 @@ functional_areas:
   - Setup
 ---
 
-* [Configure nginx and Elasticsearch][]
-* [Configure Apache and Elasticsearch][]
-* [Configure Elasticsearch stopwords][]
+*  [Configure nginx and Elasticsearch][]
+*  [Configure Apache and Elasticsearch][]
+*  [Configure Elasticsearch stopwords][]
 
 ## Elasticsearch overview {#overview}
 
 Using [Elasticsearch][] as your [catalog](https://glossary.magento.com/catalog) search solution provides the following benefits:
 
-* Quick and advanced searches on products in the catalog
-* Support for multiple languages
-* Support for stop words and synonyms
-* Indexing does not impact customers until reindex is completed
+*  Quick and advanced searches on products in the catalog
+*  Support for multiple languages
+*  Support for stop words and synonyms
+*  Indexing does not impact customers until reindex is completed
 
   Elasticsearch returns search results based on the last generated index until the new one has been completely indexed so there is no disruption to customers.
 
-* Accurate, performant, and scalable
-* Works well out of the box
-* Easy to horizontally scale
-* Supports real-time data and analysis
-* Can be used as a document-oriented data store
-* Applications in framework beyond search, including reporting, personalization, performance, and storage
+*  Accurate, performant, and scalable
+*  Works well out of the box
+*  Easy to horizontally scale
+*  Supports real-time data and analysis
+*  Can be used as a document-oriented data store
+*  Applications in framework beyond search, including reporting, personalization, performance, and storage
 
 ### Supported versions {#es-spt-versions}
 
@@ -41,7 +41,7 @@ Follow the instructions in [Change Elasticsearch Client][].
 
 {{site.data.var.ee}} version 2.3.x supports the following Elasticsearch versions:
 
-* Elasticsearch [6.x](https://www.elastic.co/downloads/past-releases/elasticsearch-6-1-1)
+*  Elasticsearch [6.x](https://www.elastic.co/downloads/past-releases/elasticsearch-6-1-1)
 
 Magento 2.3.1 uses [Elasticsearch PHP client][] version 6. (Before version 2.3.1, Magento used PHP client version 5.2.)
 
@@ -53,13 +53,13 @@ The following figure shows our recommended configuration. All of the tasks we di
 
 The preceding diagram shows:
 
-* The Magento application and Elasticsearch are installed on different hosts.
+*  The Magento application and Elasticsearch are installed on different hosts.
 
   Running on separate hosts is secure, enables Elasticsearch to be scaled, and is necessary for proxying to work. (Clustering Elasticsearch is beyond the scope of this guide but you can find more information in the [Elasticsearch clustering documentation][].)
-* Each host has its own web server; the web servers do not have to be the same.
+*  Each host has its own web server; the web servers do not have to be the same.
 
   For example, the Magento application can run Apache and Elasticsearch can run nginx.
-* Both web servers use Transport Layer Security (TLS).
+*  Both web servers use Transport Layer Security (TLS).
 
   Setting up TLS is beyond the scope of our documentation.
 
@@ -84,11 +84,11 @@ Search requests are processed as follows:
 
 The tasks discussed in this section require the following:
 
-* [Firewall and SELinux](#firewall-selinux)
-* [Install the Java Software Development Kit (JDK)](#prereq-java)
-* [Install Elasticsearch 6.6](#es-install-es6)
-* [Upgrade from Elasticsearch 2.x/5.2](#es-upgrade6)
-* [Configure Magento to use Elasticsearch][]
+*  [Firewall and SELinux](#firewall-selinux)
+*  [Install the Java Software Development Kit (JDK)](#prereq-java)
+*  [Install Elasticsearch 6.x](#es-install-es6)
+*  [Upgrade from Elasticsearch 2.x/5.2](#es-upgrade6)
+*  [Configure Magento to use Elasticsearch][]
 
 {% include config/solr-elastic-selinux.md %}
 
@@ -138,9 +138,9 @@ For additional information, see [Elasticsearch documentation][]{:target="_blank"
 
 ### Next
 
-* [Configure nginx and Elasticsearch]({{page.baseurl}}/config-guide/elasticsearch/es-config-nginx.html)
-* [Configure Apache and Elasticsearch]({{page.baseurl}}/config-guide/elasticsearch/es-config-apache.html)
-* [Configure Magento to use Elasticsearch]({{page.baseurl}}/config-guide/elasticsearch/configure-magento.html)
+*  [Configure nginx and Elasticsearch]({{page.baseurl}}/config-guide/elasticsearch/es-config-nginx.html)
+*  [Configure Apache and Elasticsearch]({{page.baseurl}}/config-guide/elasticsearch/es-config-apache.html)
+*  [Configure Magento to use Elasticsearch]({{page.baseurl}}/config-guide/elasticsearch/configure-magento.html)
 
 <!-- Link Definitions -->
 [Configure nginx and Elasticsearch]: {{page.baseurl}}/config-guide/elasticsearch/es-config-nginx.html

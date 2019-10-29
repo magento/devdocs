@@ -15,8 +15,8 @@ In their Orange theme, OrangeCo wants to remove the "Click on image to view it f
 The high-level steps for this task are the following:
 
 1. Define how the message is output.
-2. Add the custom script extending the default one.
-3. Update RequireJS configuration to use the custom script instead of the default one.
+1. Add the custom script extending the default one.
+1. Update RequireJS configuration to use the custom script instead of the default one.
 
 Let's look at each step in more detail.
 
@@ -24,10 +24,10 @@ Let's look at each step in more detail.
 
 OrangeCo needs to define how the message is output. To do this, they take the following steps:
 
-1.  Open a product page.
-2.  Select to view the page source.
-3.  Search for the "Click on image to view it full sized" string. The illustration of the search result follows: ![Page source search result]
-4.  View that it is output by [`gallery.js`].
+1. Open a product page.
+1. Select to view the page source.
+1. Search for the "Click on image to view it full sized" string. The illustration of the search result follows: ![Page source search result]
+1. View that it is output by [`gallery.js`].
 
 We see that the script which OrangeCo needs to alter is `gallery.js`.
 
@@ -38,6 +38,7 @@ To be able to extend `gallery.js`, OrangeCo needs to know the path to it. To get
 ### Step 2: Add the custom widget extending the gallery widget {#add_code1}
 
 In the `app/design/OrangeCo/orange/web/js` OrangeCo adds `orange-gallery.js` with the following content:
+
 ```javascript
 define([
   'jquery',
@@ -58,6 +59,7 @@ define([
 ### Step 3: Update the RequireJS configuration {#config1}
 
 OrangeCo adds the custom `app/design/OrangeCo/orange/requirejs-config.js` with the following content:
+
 ```javascript
 var config = {
   "map": {
@@ -75,8 +77,8 @@ The new behavior is applied once the store pages are reloaded.
 OrangeCo wants to use the [jCarousel widget] to display product images on product pages. The high level steps for this task are the following:
 
 1. Define how product images are displayed by default.
-2. Add the custom script to the file system.
-3. Update RequireJS configuration to use the custom script instead of the default one.
+1. Add the custom script to the file system.
+1. Update RequireJS configuration to use the custom script instead of the default one.
 
 Let's look at each step in more detail.
 
@@ -91,22 +93,23 @@ OrangeCo needs to add a "wrapper" script.
 
 To do this, OrangeCo adds the following files in the `app/design/OrangeCo/orange/web/js` directory:
 
--   The jCarousel widget source file: `jquery.jcarousel.js`
--   A \"wrapper\" `orange-carousel.js` with the following content:
-    ```javascript
-        define([
-          'jquery',
-          'js/jquery.jcarousel'
-        ], function($){
+-  The jCarousel widget source file: `jquery.jcarousel.js`
+-  A \"wrapper\" `orange-carousel.js` with the following content:
 
-          return function (config, element) {
-           var jCarouselConfig = {
-             list: '.items.thumbs',
-             items: '.item.thumb'
-           };
-           $(element).jcarousel(jCarouselConfig);
-          }
-        });
+   ```javascript
+       define([
+         'jquery',
+         'js/jquery.jcarousel'
+       ], function($){
+
+         return function (config, element) {
+          var jCarouselConfig = {
+            list: '.items.thumbs',
+            items: '.item.thumb'
+          };
+          $(element).jcarousel(jCarouselConfig);
+         }
+       });
     ```
 
 ### Step 3: Update RequireJS configuration
@@ -126,9 +129,9 @@ var config = {
 };
 ```
 
-## Recommended reading ##
-[Use custom JavaScript]
+## Recommended reading
 
+[Use custom JavaScript]
 
 [Page source search result]: {{site.baseurl}}/common/images/fdg_js_pr1.png
 [`gallery.js`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/lib/web/mage/gallery/gallery.js

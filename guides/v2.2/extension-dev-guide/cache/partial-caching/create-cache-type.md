@@ -14,7 +14,7 @@ class %Namespace%\%Module%\Model\Cache\Type extends \Magento\Framework\Cache\Fro
 {
   const TYPE_IDENTIFIER = '%cache_type_id%';
   const CACHE_TAG = '%CACHE_TYPE_TAG%';
-  
+
   public function __construct(\Magento\Framework\App\Cache\Type\FrontendPool $cacheFrontendPool)
   {
     parent::__construct($cacheFrontendPool->get(self::TYPE_IDENTIFIER), self::CACHE_TAG);
@@ -24,9 +24,9 @@ class %Namespace%\%Module%\Model\Cache\Type extends \Magento\Framework\Cache\Fro
 
 You must specify the following parameters:
 
-*	`Namespace\Module` defines the name of a [module](https://glossary.magento.com/module) that uses a cache type. A module can use several cache types and a cache type can be used in several modules.
-*	`%cache_type_id%` defines unique identifier of a cache type.
-*	`%CACHE_TYPE_TAG%` defines unique tag to be used in the cache type scoping.
+*  `Namespace\Module` defines the name of a [module](https://glossary.magento.com/module) that uses a cache type. A module can use several cache types and a cache type can be used in several modules.
+*  `%cache_type_id%` defines unique identifier of a cache type.
+*  `%CACHE_TYPE_TAG%` defines unique tag to be used in the cache type scoping.
 
 ## More information about caching
 

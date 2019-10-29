@@ -20,20 +20,20 @@ Outdated software often contains exploits we protect against by partially blocki
 
 We analyze the code of your application:
 
-* When you push new code to Git
-* When new vulnerabilities are added to our database
+*  When you push new code to Git
+*  When new vulnerabilities are added to our database
 
 If a critical vulnerability is detected in your application, it rejects the Git push.
 
 We run two types of blocks:
 
-*	For development websites, we run complete blocks.
+*  For development websites, we run complete blocks.
 
-	The error message accompanying `git push` provides detailed information about the vulnerability.
+   The error message accompanying `git push` provides detailed information about the vulnerability.
 
-*	For production websites, we run a "partial block" that allows the site to stay mostly online.
+*  For production websites, we run a "partial block" that allows the site to stay mostly online.
 
-	Depending on the nature of the vulnerability, parts of a request, such as a query string, cookies or any additional headers, might be removed from GET requests. All other requests may be blocked entirely&mdash;this could apply to logging in, form submission, or product [checkout](https://glossary.magento.com/checkout).
+   Depending on the nature of the vulnerability, parts of a request, such as a query string, cookies or any additional headers, might be removed from GET requests. All other requests may be blocked entirely&mdash;this could apply to logging in, form submission, or product [checkout](https://glossary.magento.com/checkout).
 
 Unblocking is automated upon resolution of the security risk. The block is removed soon after you apply a security upgrade that removes the vulnerability.
 
@@ -43,11 +43,11 @@ The protective block is there to protect you against known vulnerabilities in th
 
 However, you can opt out of the protective block by adding the following to [`.magento.app.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_magento-app.html):
 
-    preflight:
-       enabled: false
+   preflight:
+      enabled: false
 
 You can also explicitly opt-out of some specific check as follows:
 
-    preflight:
-       enabled: true
-       ignore_rules: [ "drupal:SA-CORE-2014-005" ]
+   preflight:
+      enabled: true
+      ignore_rules: [ "drupal:SA-CORE-2014-005" ]

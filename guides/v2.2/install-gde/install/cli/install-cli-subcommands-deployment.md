@@ -28,13 +28,15 @@ There are no prerequisites for using this command.
 
 You can use this command if:
 
-*	You previously installed the Magento software and you want to modify the deployment configuration
-*	If you want to create only the deployment configuration and continue the Magento installation some other way
-*	To update the deployment configuration without affecting anything else
+*  You previously installed the Magento software and you want to modify the deployment configuration
+*  If you want to create only the deployment configuration and continue the Magento installation some other way
+*  To update the deployment configuration without affecting anything else
 
 Command options:
 
-	magento setup:config:set [--<parameter>=<value>, ...]
+```bash
+magento setup:config:set [--<parameter>=<value>, ...]
+```
 
 The following table discusses the meanings of installation parameters and values.
 
@@ -51,29 +53,29 @@ The following table discusses the meanings of installation parameters and values
 |`--db-init-statements`|Advanced MySQL configuration parameter. Uses database initialization statements to run when connecting to the MySQL database.<br><br>Default is `SET NAMES utf8;`.<br><br>Consult a reference similar to [this one](http://dev.mysql.com/doc/refman/5.6/en/server-options.html) before you set any values.|No|
 |`--http-cache-hosts`|Comma-separated list of HTTP cache gateway hosts to which to send purge requests. (For example, Varnish servers.) Use this parameter to specify the host or hosts to purge in the same request. (It doesn't matter if you have only one host or many hosts.)<br><br>Format must be `<hostname or ip>:<listen port>`, where you can omit `<listen port>` if it's port 80. For example, `--http-cache-hosts=192.0.2.100,192.0.2.155:6081`. Do not separate hosts with a space character.|No|
 
-
 {% include install/sens-data.md %}
 
 If applicable, continue your Magento software installation:
 
-*	[Command line installation]({{ page.baseurl }}/install-gde/install/cli/install-cli-install.html)
-*	[Setup Wizard installation]({{ page.baseurl }}/install-gde/install/web/install-web.html)
+*  [Command line installation]({{ page.baseurl }}/install-gde/install/cli/install-cli-install.html)
+*  [Setup Wizard installation]({{ page.baseurl }}/install-gde/install/web/install-web.html)
 
-#### Related topics
+{:.ref-header}
+Related topics
 
-*	[Installing the Magento software using the command line]({{ page.baseurl }}/install-gde/install/cli/install-cli-install.html)
-*	[Remove sample data modules or update sample data]({{ page.baseurl }}/install-gde/install/cli/install-cli-sample-data-other.html)
-*	[Enable or disable modules]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-enable.html)
-*	[Display or change the Admin URI]({{ page.baseurl }}/install-gde/install/cli/install-cli-adminurl.html)
-*	[Uninstall modules]({{ page.baseurl }}/install-gde/install/cli/install-cli-uninstall-mods.html)
-*	[Enable or disable maintenance mode]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-maint.html)
-*	[Create the Magento database schema]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-db.html)
-*	[Update the Magento database schema and data]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-db-upgr.html)
-*	[Configure the store]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-store.html)
-*	[Create or unlock a Magento administrator]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-admin.html)
-*	[Back up and roll back the file system, media, and database]({{ page.baseurl }}/install-gde/install/cli/install-cli-backup.html)
-*	[Uninstall themes]({{ page.baseurl }}/install-gde/install/cli/install-cli-theme-uninstall.html)
-*	[Uninstall language packages]({{ page.baseurl }}/install-gde/install/cli/install-cli-uninstall-langpk.html)
-*	[Uninstall the Magento software]({{ page.baseurl }}/install-gde/install/cli/install-cli-uninstall.html#instgde-install-uninstall)
-*	[Update the Magento software]({{ page.baseurl }}/install-gde/install/cli/install-cli-uninstall.html#instgde-install-magento-update)
-*	[Reinstall the Magento software]({{ page.baseurl }}/install-gde/install/cli/install-cli-uninstall.html#instgde-install-magento-reinstall)
+*  [Installing the Magento software using the command line]({{ page.baseurl }}/install-gde/install/cli/install-cli-install.html)
+*  [Remove sample data modules or update sample data]({{ page.baseurl }}/install-gde/install/cli/install-cli-sample-data-other.html)
+*  [Enable or disable modules]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-enable.html)
+*  [Display or change the Admin URI]({{ page.baseurl }}/install-gde/install/cli/install-cli-adminurl.html)
+*  [Uninstall modules]({{ page.baseurl }}/install-gde/install/cli/install-cli-uninstall-mods.html)
+*  [Enable or disable maintenance mode]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-maint.html)
+*  [Create the Magento database schema]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-db.html)
+*  [Update the Magento database schema and data]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-db-upgr.html)
+*  [Configure the store]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-store.html)
+*  [Create or unlock a Magento administrator]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-admin.html)
+*  [Back up and roll back the file system, media, and database]({{ page.baseurl }}/install-gde/install/cli/install-cli-backup.html)
+*  [Uninstall themes]({{ page.baseurl }}/install-gde/install/cli/install-cli-theme-uninstall.html)
+*  [Uninstall language packages]({{ page.baseurl }}/install-gde/install/cli/install-cli-uninstall-langpk.html)
+*  [Uninstall the Magento software]({{ page.baseurl }}/install-gde/install/cli/install-cli-uninstall.html#instgde-install-uninstall)
+*  [Update the Magento software]({{ page.baseurl }}/install-gde/install/cli/install-cli-uninstall.html#instgde-install-magento-update)
+*  [Reinstall the Magento software]({{ page.baseurl }}/install-gde/install/cli/install-cli-uninstall.html#instgde-install-magento-reinstall)

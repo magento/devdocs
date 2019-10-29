@@ -1,9 +1,6 @@
 ---
 group: php-developer-guide
-subgroup: 03_Build
 title: The composer.json file
-menu_title: The composer.json file
-menu_order: 1000
 ---
 
 ## Overview
@@ -14,8 +11,8 @@ Composer reads a `composer.json` file in Magento's root directory to download th
 
 The [Component Manager][1] uses the `composer.json` file in an extension's root directory to perform the following actions:
 
-*	The Component Manager can update, uninstall, enable, or disable an [extension](https://glossary.magento.com/extension) if installed using Composer (including from [Packagist][2]{:target="_blank"}, [Magento Marketplace][6]{:target="_blank"}, or other source) *and* it has a `composer.json` file.
-*	The Component Manager can still enable or disable an extension *not* installed using Composer (e.g. custom code) if it has a `composer.json` file.
+*  The Component Manager can update, uninstall, enable, or disable an [extension](https://glossary.magento.com/extension) if installed using Composer (including from [Packagist][2]{:target="_blank"}, [Magento Marketplace][6]{:target="_blank"}, or other source) *and* it has a `composer.json` file.
+*  The Component Manager can still enable or disable an extension *not* installed using Composer (e.g. custom code) if it has a `composer.json` file.
 
 We recommend you include `composer.json` in your component's root directory even if you do not intend to distribute it to other merchants using Magento.
 
@@ -33,7 +30,7 @@ Keep this in mind while customizing, updating, or troubleshooting composer while
 In Composer, a "project" package is a template used by the [`composer create-project`][9]{:target="_blank"} to set up the project structure.
 The [installation instructions for system integrators][10] use the {{site.data.var.ce}} and {{site.data.var.ee}} project packages to set up the Magento directory structure.
 
-A "product" package is the actual application pointed to by the `composer.json` file after you download and install the project package using `composer create-project`.  
+A "product" package is the actual application pointed to by the `composer.json` file after you download and install the project package using `composer create-project`.
 
 ## Descriptions of different composer.json files {#composerjson-overview}
 
@@ -51,7 +48,7 @@ This is Magento's main `composer.json` file which declares dependencies and thir
 
 Other root `composer.json` files use this file as a template.
 
-----
+---
 
 ### {{site.data.var.ce}} project
 **Location:** `composer.json`
@@ -62,7 +59,7 @@ Other root `composer.json` files use this file as a template.
 
 Magento system integrators use this `composer.json` file to deploy the {{site.data.var.ce}} product and its dependencies.
 
-----
+---
 
 ### {{site.data.var.ee}} project
 **Location:** `composer.json`
@@ -73,7 +70,7 @@ Magento system integrators use this `composer.json` file to deploy the {{site.da
 
 Magento system integrators use this `composer.json` file to deploy the {{site.data.var.ee}} product and its dependencies.
 
-----
+---
 
 ### Magento Framework
 
@@ -85,14 +82,14 @@ Magento system integrators use this `composer.json` file to deploy the {{site.da
 
 The Magento application uses this `composer.json` file for its framework packages.
 
-----
+---
 
 ### Module
 
 **Locations:**
 
-* `app/code/<vendor-name>/<module-name>/composer.json`
-* `vendor/<vendor-name>/<module-name>/composer.json`
+*  `app/code/<vendor-name>/<module-name>/composer.json`
+*  `vendor/<vendor-name>/<module-name>/composer.json`
 
 **Name:** `<vendor-name>/<package-name>`
 
@@ -100,14 +97,14 @@ The Magento application uses this `composer.json` file for its framework package
 
 The `composer.json` file for a [module](https://glossary.magento.com/module) extension declares external dependencies that it needs to function.
 
-----
+---
 
 ### Theme
 
 **Locations:**
 
-* `app/design/frontend/<vendor-name>/<theme-name>/composer.json`
-* `app/design/adminhtml/<vendor-name>/<theme-name>/composer.json`
+*  `app/design/frontend/<vendor-name>/<theme-name>/composer.json`
+*  `app/design/adminhtml/<vendor-name>/<theme-name>/composer.json`
 
 **Name:** `<vendor-name>/<package-name>`
 
@@ -115,7 +112,7 @@ The `composer.json` file for a [module](https://glossary.magento.com/module) ext
 
 The `composer.json` file for a [theme](https://glossary.magento.com/theme) component contains parent theme dependencies the extension needs to inherit.
 
-----
+---
 
 ### Language Package
 
@@ -175,12 +172,12 @@ The convention for Magento package names is the following
 
 Where:
 
-: `type-prefix` is any of the Magento extension types:
+:`type-prefix` is any of the Magento extension types:
 
-  * `module-` for module extensions
-  * `theme-` for theme extensions
-  * `language-` for language extensions
-  * `product-` for [metapackages][8] such as {{site.data.var.ce}} or {{site.data.var.ee}}
+*  `module-` for module extensions
+*  `theme-` for theme extensions
+*  `language-` for language extensions
+*  `product-` for [metapackages][8] such as {{site.data.var.ce}} or {{site.data.var.ee}}
 
 : `suffix` is a unique identifier for extensions of that type.
 

@@ -19,31 +19,31 @@ Identify the data you need to convert to JSON in the database.
 Your extension *must* convert data in the following cases:
 
 1. The extension stores serialized data provided by a core [module](https://glossary.magento.com/module) that now uses the JSON format.
-2. The extension uses the automatic serializing mechanism provided by the Magento framework (i.e. the extension declares `\Magento\Framework\Model\ResourceModel\Db\AbstractDb::$_serializableFields`).
+1. The extension uses the automatic serializing mechanism provided by the Magento framework (i.e. the extension declares `\Magento\Framework\Model\ResourceModel\Db\AbstractDb::$_serializableFields`).
 
 Your extension will continue working in Magento 2.2 and above in the following cases, but we recommend you switch to using the JSON format for security reasons:
 
 1. The extension stores its own serialized data.
-2. The extension is responsible for serializing and unserializing data stored in core tables.
+1. The extension is responsible for serializing and unserializing data stored in core tables.
 
 ### API Overview
 
 This tutorial uses the following framework [API](https://glossary.magento.com/api) in the following ways:
 
-* `\Magento\Framework\DB\FieldDataConverter` - This class converts values for a field in a table from one format to another.
-   * `\Magento\Framework\DB\FieldDataConverterFactory` - This class creates instances of the `FieldDataConverter` with the appropriate data converter implementation.
-   * `\Magento\Framework\DB\AggregatedFieldDataConverter` - This is a service class that allows specifying multiple fields from different tables at once. This class creates instances of the `FieldDataConverter` class and accepts a list of `\Magento\Framework\DB\FieldToConvert` value objects with field information. A single `convert()` method call is limited to one DB connection.
-* `\Magento\Framework\DB\DataConverter\DataConverterInterface` - This interface is for classes that convert data between different formats or types of data.
-* `\Magento\Framework\DB\FieldDataConverter` - This class accepts query modifiers for updating specific rows. Here is API for the query modifiers part:
-   * `\Magento\Framework\DB\Select\QueryModifierInterface` - Interface for classes that add a condition to the database query to target specific entries.
-   * `\Magento\Framework\DB\Select\QueryModifierFactory` - This class creates instances of specific implementations of `QueryModifierInterface`.
-   * `\Magento\Framework\DB\Select\InQueryModifier` - An implementation of the `QueryModifierInterface` that adds an IN condition to a query.
-   * `\Magento\Framework\DB\Select\LikeQueryModifier` - An implementation of the `QueryModifierInterface` that adds a LIKE condition to a query.
-   * `\Magento\Framework\DB\Select\CompositeQueryModifier` - An implementation of the `QueryModifierInterface` that allows the application of multiple query modifiers.
+*  `\Magento\Framework\DB\FieldDataConverter` - This class converts values for a field in a table from one format to another.
+   *  `\Magento\Framework\DB\FieldDataConverterFactory` - This class creates instances of the `FieldDataConverter` with the appropriate data converter implementation.
+   *  `\Magento\Framework\DB\AggregatedFieldDataConverter` - This is a service class that allows specifying multiple fields from different tables at once. This class creates instances of the `FieldDataConverter` class and accepts a list of `\Magento\Framework\DB\FieldToConvert` value objects with field information. A single `convert()` method call is limited to one DB connection.
+*  `\Magento\Framework\DB\DataConverter\DataConverterInterface` - This interface is for classes that convert data between different formats or types of data.
+*  `\Magento\Framework\DB\FieldDataConverter` - This class accepts query modifiers for updating specific rows. Here is API for the query modifiers part:
+   *  `\Magento\Framework\DB\Select\QueryModifierInterface` - Interface for classes that add a condition to the database query to target specific entries.
+   *  `\Magento\Framework\DB\Select\QueryModifierFactory` - This class creates instances of specific implementations of `QueryModifierInterface`.
+   *  `\Magento\Framework\DB\Select\InQueryModifier` - An implementation of the `QueryModifierInterface` that adds an IN condition to a query.
+   *  `\Magento\Framework\DB\Select\LikeQueryModifier` - An implementation of the `QueryModifierInterface` that adds a LIKE condition to a query.
+   *  `\Magento\Framework\DB\Select\CompositeQueryModifier` - An implementation of the `QueryModifierInterface` that allows the application of multiple query modifiers.
 
   You can create your own query modifier or use any of the ones listed in the `app/etc/di.xml` file.
 
-* `\Magento\Framework\Module\Manager` - This class checks the status of a module.
+*  `\Magento\Framework\Module\Manager` - This class checks the status of a module.
 
 ## Step 1: Create the basic upgrade script
 {:#step-1}
@@ -207,7 +207,7 @@ $fieldDataConverter->convert(
 
 #### Use values from another table in the condition
 
-The following tables show how the `type` and `option_id` columns from the `catalog_product_option` table form the unique `code` value for custom options in the `quote_item_option` table.  
+The following tables show how the `type` and `option_id` columns from the `catalog_product_option` table form the unique `code` value for custom options in the `quote_item_option` table.
 
 > `catalog_product_option` table
 
@@ -216,7 +216,6 @@ The following tables show how the `type` and `option_id` columns from the `catal
 | 1001      | 1          | my_custom_option |
 | 1002      | 2          | my_custom_option |
 | 1003      | 5          | my_custom_option |
-
 
 > `quote_item_option` table
 
@@ -279,7 +278,6 @@ The following example is a custom data converter class that converts data in the
 This field contains nested serialized data that needs conversion.
 
 Since you cannot assume the format of the data when initially converted, the following example also checks the format and uses the appropriate methods to unserialize and serialize the data using the original format.
-
 
 {% collapsible Show code %}
 ```php
@@ -366,7 +364,6 @@ class SerializedToJsonDataConverter implements \Magento\Framework\DB\DataConvert
 ```
 {% endcollapsible %}
 
-
 After creating your custom data converter class, use the `FieldDataConverterFactory` to create a `FieldDataConverter` instance with your custom converter:
 
 {% collapsible Show code %}
@@ -439,9 +436,8 @@ $this->aggregatedFieldConverter->convert($fieldsToUpdate, $salesSetup->getConnec
 
 ## Related Topics
 
-* [Serialize Library][0]
-* [Extension Lifecycle][1]
-
+*  [Serialize Library][0]
+*  [Extension Lifecycle][1]
 
 [0]: {{ page.baseurl }}/extension-dev-guide/framework/serializer.html "Serialize Library"
 [1]: {{ page.baseurl }}/extension-dev-guide/prepare/lifecycle.html "Extension Lifecycle"

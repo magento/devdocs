@@ -22,9 +22,9 @@ However, many terms use lowercase including: merchant, developer, home page, sta
 
 ### Use For ...
 
-* **Headings.** See more Headings guidance.
+*  **Headings.** See more Headings guidance.
 
-* **Button labels and links.** ONLY use title case when a link are used as a call to action. See more Buttons and Links Usage guidance.
+*  **Button labels and links.** ONLY use title case when a link are used as a call to action. See more Buttons and Links Usage guidance.
 
 ### Capitalize ...
 
@@ -35,13 +35,13 @@ However, many terms use lowercase including: merchant, developer, home page, sta
     <ul style="list-style-type:none">
       <li><strong>No</strong> – "Best-rated Platform Software"</li>
       <li>Yes – "Best-Rated Platform Software"</li>
-    </ul>  
+    </ul>
     <ul style="list-style-type:none">
       <li><strong>No</strong> – "Post-Launch Instructions"</li>
       <li>Yes – "Post-launch Instructions"</li>
-    </ul>  
+    </ul>
   </li>
-  <li><strong>All verbs.</strong> 
+  <li><strong>All verbs.</strong>
     <ul>
       <li><em>Capitalize even the little ones.</em></li>
       <li><em>Correct examples:</em> Is, Am, Are, Was, Were, Be, Being, and Been.</li>
@@ -72,13 +72,13 @@ However, many terms use lowercase including: merchant, developer, home page, sta
     <ul style="list-style-type:none">
       <li><strong>No</strong> – “The Key To Customer Service In An Omnichannel World"</li>
       <li>Yes – “The Key to Customer Service in an Omnichannel World”</li>
-    </ul>  
+    </ul>
     </li>
   <li><strong>Brand or company names that use a lowercase initial letter.</strong> ... <em>Tip:</em> Rephrase a heading or sentence to avoid starting with a lowercase letter. <em>See example:</em>
     <ul style="list-style-type:none">
       <li><strong>No</strong> – “EBay, IPod, IPhone"</li>
       <li>Yes – “eBay, iPod, iPhone”</li>
-    </ul>  
+    </ul>
   </li>
 </ul>
 
@@ -86,9 +86,9 @@ However, many terms use lowercase including: merchant, developer, home page, sta
 
 Use only in and acronyms and address formats. For more details, see:
 
-* The [Acronyms]({{ page.baseurl }}/design-styleguide/content-formats/content-formats.html#acronyms) section in Content Formats.
+*  The [Acronyms]({{ page.baseurl }}/design-styleguide/content-formats/content-formats.html#acronyms) section in Content Formats.
 
-* The [Address]({{ page.baseurl }}/design-styleguide/content-formats/content-formats.html#addresses) section in Number Formats.
+*  The [Address]({{ page.baseurl }}/design-styleguide/content-formats/content-formats.html#addresses) section in Number Formats.
 
 ## Terms to Remember
 
@@ -96,16 +96,16 @@ Use capitalization standards, as specified in the Magento Glossary and Word U
 
 ### Capitalize ...
 
-* **Numbered items.** Capitalize when referring to a numbered object. ... *Correct examples:* Slide 5, Exercise 3, Table 4.2, Figure 9
+*  **Numbered items.** Capitalize when referring to a numbered object. ... *Correct examples:* Slide 5, Exercise 3, Table 4.2, Figure 9
 
-* **Admin panel.** Capitalize the word "Admin" in the term “Admin panel” — but panel remains lowercase.
+*  **Admin panel.** Capitalize the word "Admin" in the term “Admin panel” — but panel remains lowercase.
 
-* **UI names.** Use initial caps, where the Magento Glossary and Word Usage Bank specify.
+*  **UI names.** Use initial caps, where the Magento Glossary and Word Usage Bank specify.
 
-* **Lists' first word, initial capped.** See more “Lists” for guidance in Content Formats.
+*  **Lists' first word, initial capped.** See more “Lists” for guidance in Content Formats.
 
 ### Do Not Capitalize ...
 
-* **Steps.** Lowercase “page” or “step” when referring to pages in a document or steps in a procedure.
+*  **Steps.** Lowercase “page” or “step” when referring to pages in a document or steps in a procedure.
 
-* **Global internet terms.** ... *Correct examples:* website, internet, online, email
+*  **Global internet terms.** ... *Correct examples:* website, internet, online, email

@@ -8,18 +8,18 @@ The use of progress indicator should follow this guideline.
 
 ## When to Use
 
-* Use when needing to provide feedback to the user that a process is running, especially when user initiate the process.
-* When a percentage of completion can be shown and the process , use a progress bar.
-* When a percentage of completion cannot be shown or the process is relatively short, use a spinner.
+*  Use when needing to provide feedback to the user that a process is running, especially when user initiate the process.
+*  When a percentage of completion can be shown and the process , use a progress bar.
+*  When a percentage of completion cannot be shown or the process is relatively short, use a spinner.
 
 ## When Not to Use
 
-* When process' progress communicates well enough on its own.
-* When process completes so quickly that it is distracting to show progress. If the task takes less than 500ms.
-* When the process waits for the user to complete the task.
-* When the user doesn't need to know something is happening
-* When the process operates in the background and doesn't block user activity, progress indicator can be used but is not necessary.
-* When you can use content from the operation to visualize progress.
+*  When process' progress communicates well enough on its own.
+*  When process completes so quickly that it is distracting to show progress. If the task takes less than 500ms.
+*  When the process waits for the user to complete the task.
+*  When the user doesn't need to know something is happening
+*  When the process operates in the background and doesn't block user activity, progress indicator can be used but is not necessary.
+*  When you can use content from the operation to visualize progress.
 
 ## Behavior
 
@@ -32,8 +32,8 @@ Spinner is a gif image.
 ![](img/Spinner-lg.gif)
 
 1. Process is triggered
-2. Show spinner - To avoid flickering, if a process generally takes 2 seconds to complete, but can be completed under 500ms. Delay 500ms before showing the spinner.
-3. Once process is completed, the spinner disappear along with other indicative elements depending on the context.
+1. Show spinner - To avoid flickering, if a process generally takes 2 seconds to complete, but can be completed under 500ms. Delay 500ms before showing the spinner.
+1. Once process is completed, the spinner disappear along with other indicative elements depending on the context.
 
 ### Progress Bar
 
@@ -44,23 +44,26 @@ In general, it is not recommended to use the progress bar if the process can be 
 ![](img/progressbar-behavior-diagram.png)
 
 1. **Process Trigger**
-This process trigger is what the user tell system to start process. It can be anything depending on the context such as a button or a drop action.
 
-2. **Starting State**
+   This process trigger is what the user tell system to start process. It can be anything depending on the context such as a button or a drop action.
 
-![](img/progressbar-starting-state.png)
+1. **Starting State**
 
-3. **Progressing**
+   ![](img/progressbar-starting-state.png)
 
-![](img/progressbar-progressing.png)
+1. **Progressing**
 
-4. **Success**
-Once success, the page should refresh to show success status. The success status and behavior will depend on context of the scenario. (ie. open new page, stay on the same page, success message, etc.)
+   ![](img/progressbar-progressing.png)
 
-5. **Failed**
-The progress bar will disappeared and is replaced with this error message.
+1. **Success**
 
-![](img/progressbar-failed.png)
+   Once success, the page should refresh to show success status. The success status and behavior will depend on context of the scenario. (ie. open new page, stay on the same page, success message, etc.)
+
+1. **Failed**
+
+   The progress bar will disappeared and is replaced with this error message.
+
+   ![](img/progressbar-failed.png)
 
 ## Variations
 

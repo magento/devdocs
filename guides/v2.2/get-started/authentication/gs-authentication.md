@@ -22,13 +22,11 @@ The list of resources that you can access depends on your user type. All custome
 Each administrator or integration user can have a unique set of permissions which is configured in the [Magento Admin](https://glossary.magento.com/magento-admin).
 Permissions required to access particular resource are configured in the `webapi.xml` file. This table lists the resources that each user type can access:
 
-
 User type | Accessible resources (defined in webapi.xml)
 --- | ---
 Administrator or Integration | Resources for which administrators or integrators are authorized. For example, if administrators are authorized for the `Magento_Customer::group` resource, they can make a `GET /V1/customerGroups/:id` call.
 Customer | Resources with `anonymous` or `self` permission
 Guest user | Resources with `anonymous` permission
-
 
 ### Relation between acl.xml and webapi.xml
 
@@ -167,16 +165,17 @@ Each type of client has a preferred authentication method. To authenticate, use 
    </tr>
 </table>
 
-## Related topics
+{:.ref-header}
+Related topics
 
 Proceed to the authentication method for your preferred client:
 
-* Mobile application. [Token-based authentication]({{ page.baseurl }}/get-started/authentication/gs-authentication-token.html).
+*  Mobile application. [Token-based authentication]({{ page.baseurl }}/get-started/authentication/gs-authentication-token.html).
 
-* Third-party application. [OAuth-based authentication]({{ page.baseurl }}/get-started/authentication/gs-authentication-oauth.html).
+*  Third-party application. [OAuth-based authentication]({{ page.baseurl }}/get-started/authentication/gs-authentication-oauth.html).
 
-* JavaScript [widget](https://glossary.magento.com/widget) on the Magento Admin or [storefront](https://glossary.magento.com/storefront). [Session-based authentication]({{ page.baseurl }}/get-started/authentication/gs-authentication-session.html).
+*  JavaScript [widget](https://glossary.magento.com/widget) on the Magento Admin or [storefront](https://glossary.magento.com/storefront). [Session-based authentication]({{ page.baseurl }}/get-started/authentication/gs-authentication-session.html).
 
-* [Extension attribute authentication]({{ page.baseurl }}/extension-dev-guide/attributes.html)
+*  [Extension attribute authentication]({{ page.baseurl }}/extension-dev-guide/attributes.html)
 
-* [Configure services as web APIs]({{ page.baseurl }}/extension-dev-guide/service-contracts/service-to-web-service.html)
+*  [Configure services as web APIs]({{ page.baseurl }}/extension-dev-guide/service-contracts/service-to-web-service.html)

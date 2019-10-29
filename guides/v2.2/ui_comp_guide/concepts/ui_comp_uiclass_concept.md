@@ -17,7 +17,7 @@ The uiClass class introduces the architecture of UI components through the follo
    As an example:
     %componentName%.extend(%JavaScript_extender_object%);
 
-* The `initConfig()` method processes the UI component's configurations. The `initConfig()` method gets as a parameter the JavaScript configuration object, which is then merged with the default configuration (declared in the UI Component that calls the `initConfig()` method) and in the parent [UI component](https://glossary.magento.com/ui-component). This resulting configuration is then set as first level properties in the current UI component instance.
+*  The `initConfig()` method processes the UI component's configurations. The `initConfig()` method gets as a parameter the JavaScript configuration object, which is then merged with the default configuration (declared in the UI Component that calls the `initConfig()` method) and in the parent [UI component](https://glossary.magento.com/ui-component). This resulting configuration is then set as first level properties in the current UI component instance.
 
   As an example:
 
@@ -36,7 +36,7 @@ console.log(this.myFirstProperty) // 0
 console.log(this.mySecondProperty) // 1
 ```
 
-* The `initialize()` method is called during instantiation. It can be used to add custom functionality executed only once, during component instance creation.
+*  The `initialize()` method is called during instantiation. It can be used to add custom functionality executed only once, during component instance creation.
 
 As an example:
 
@@ -48,7 +48,8 @@ initialize: function () {
 }
 ```
 
-* The `_super()` method calls the parent UI component method with the same name as the `_super()` method's caller; if that method does not exists in the parent UI component, then the method tries to find it higher in the inheritance chain.
+*  The `_super()` method calls the parent UI component method with the same name as the `_super()` method's caller; if that method does not exists in the parent UI component, then the method tries to find it higher in the inheritance chain.
+
 As an example:
 
 ```js

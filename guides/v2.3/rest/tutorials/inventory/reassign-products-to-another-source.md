@@ -13,8 +13,7 @@ functional_areas:
   - Integration
 ---
 
-
-When you install or upgrade Magento, the system assigns all existing products to the default source. Magento also assigns all subsequently-created products to the default source. For this tutorial, we want to unassign three products from the default source and assign them to custom sources. 
+When you install or upgrade Magento, the system assigns all existing products to the default source. Magento also assigns all subsequently-created products to the default source. For this tutorial, we want to unassign three products from the default source and assign them to custom sources.
 
 The following table describes the products we'll use in this tutorial.
 
@@ -23,7 +22,6 @@ Name | Type | SKU | Quantity
 Voyage Yoga Bag | Simple | 24-WB01 | 100
 Driven Backpack | Simple | 24-WB03 | 100
 Yoga Adventure | Downloadable | 240-LV06 | Not applicable
-
 
 ## Unassign products from the default source
 
@@ -50,18 +48,18 @@ When you unassign a source from a product, all source data including inventory a
 
 ```json
 {
-	"sourceItems": [{
-		"sku": "24-WB01",
-		"source_code": "default"
-	},
-	{
-		"sku": "24-WB03",
-		"source_code": "default"
-	},
-	{
-		"sku": "240-LV06",
-		"source_code": "default"
-	}]
+  "sourceItems": [{
+    "sku": "24-WB01",
+    "source_code": "default"
+  },
+  {
+    "sku": "24-WB03",
+    "source_code": "default"
+  },
+  {
+    "sku": "240-LV06",
+    "source_code": "default"
+  }]
 }
 ```
 
@@ -93,70 +91,70 @@ Now we can assign each product to one or more sources. The `POST V1/inventory/so
 ```json
 {
   "sourceItems": [{
-  	"sku": "24-WB01",
-  	"source_code": "baltimore_wh",
-  	"quantity": 35,
-  	"status": 1
+    "sku": "24-WB01",
+    "source_code": "baltimore_wh",
+    "quantity": 35,
+    "status": 1
   },
   {
-  	"sku": "24-WB01",
-  	"source_code": "austin_wh",
-  	"quantity": 10,
-  	"status": 1
+    "sku": "24-WB01",
+    "source_code": "austin_wh",
+    "quantity": 10,
+    "status": 1
   },
   {
-  	"sku": "24-WB01",
-  	"source_code": "reno_wh",
-  	"quantity": 25,
-  	"status": 1
+    "sku": "24-WB01",
+    "source_code": "reno_wh",
+    "quantity": 25,
+    "status": 1
   },
   {
-  	"sku": "24-WB01",
-  	"source_code": "berlin_wh",
-  	"quantity": 15,
-  	"status": 1
+    "sku": "24-WB01",
+    "source_code": "berlin_wh",
+    "quantity": 15,
+    "status": 1
   },
   {
-  	"sku": "24-WB01",
-  	"source_code": "frankfurt_wh",
-  	"quantity": 15,
-  	"status": 1
+    "sku": "24-WB01",
+    "source_code": "frankfurt_wh",
+    "quantity": 15,
+    "status": 1
   },
   {
-  	"sku": "24-WB03",
-  	"source_code": "baltimore_wh",
-  	"quantity": 19,
-  	"status": 1
+    "sku": "24-WB03",
+    "source_code": "baltimore_wh",
+    "quantity": 19,
+    "status": 1
   },
   {
-  	"sku": "24-WB03",
-  	"source_code": "austin_wh",
-  	"quantity": 0,
-  	"status": 1
+    "sku": "24-WB03",
+    "source_code": "austin_wh",
+    "quantity": 0,
+    "status": 1
   },
   {
-  	"sku": "24-WB03",
-  	"source_code": "reno_wh",
-  	"quantity": 42,
-  	"status": 1
+    "sku": "24-WB03",
+    "source_code": "reno_wh",
+    "quantity": 42,
+    "status": 1
   },
   {
-  	"sku": "24-WB03",
-  	"source_code": "berlin_wh",
-  	"quantity": 32,
-  	"status": 1
+    "sku": "24-WB03",
+    "source_code": "berlin_wh",
+    "quantity": 32,
+    "status": 1
   },
   {
-  	"sku": "24-WB03",
-  	"source_code": "frankfurt_wh",
-  	"quantity": 7,
-  	"status": 1
+    "sku": "24-WB03",
+    "source_code": "frankfurt_wh",
+    "quantity": 7,
+    "status": 1
   },
   {
-  	"sku": "240-LV06",
-  	"source_code": "hq",
-  	"quantity": 9999,
-  	"status": 1
+    "sku": "240-LV06",
+    "source_code": "hq",
+    "quantity": 9999,
+    "status": 1
   }]
 }
 ```

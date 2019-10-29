@@ -4,13 +4,13 @@ title: Link and unlink stocks and sources
 
 ---
 
-In Admin, you can assign (link) sources to a stock when you create the stock. In REST, creating a stock and assigning sources to it are separate steps.  
+In Admin, you can assign (link) sources to a stock when you create the stock. In REST, creating a stock and assigning sources to it are separate steps.
 
 To link a source to a stock, you must specify the `source_code`, `stock_id`, and `priority` attributes. The `priority` value indicates where the source ranks in descending order. The Source Selection Algorithm uses this priority order when recommending order fulfillment. All sources linked to a stock are displayed in prioritized order in the Admin.
 
 **Service names**
 
-```
+```http
 inventoryApiStockSourceLinksSaveV1
 inventoryApiStockSourceLinksDeleteV1
 InventoryApiGetStockSourceLinksV1
@@ -19,7 +19,7 @@ inventoryApiGetSourcesAssignedToStockOrderedByPriorityV1
 
 **REST endpoints**
 
-```
+```http
 POST /V1/inventory/stock-source-links
 POST /V1/inventory/stock-source-links-delete
 GET /V1/inventory/stock-source-links
@@ -29,10 +29,9 @@ GET /V1/inventory/stock-source-links
 
 Name | Description | Type | Requirements
 --- | --- | --- | ---
-`stock_id`	| Stock ID | Integer | Required for POST operations
-`source_code`	| Source code of the link | String | Required for POST operations
-`priority`	| Priority of the link | Integer | Required when linking a stock to a source
-
+`stock_id` | Stock ID | Integer | Required for POST operations
+`source_code` | Source code of the link | String | Required for POST operations
+`priority` | Priority of the link | Integer | Required when linking a stock to a source
 
 ## Link stocks and sources
 
@@ -44,7 +43,7 @@ If you specify a sales channel that is already assigned to another stock, Magent
 
 **Payload**
 
-```
+```json
 {
    "links" : [
       {
@@ -77,7 +76,7 @@ The `POST /V1/inventory/stock-source-links-delete` endpoint breaks the link betw
 
 **Payload**
 
-```
+```json
 {
    "links" : [
       {
@@ -111,6 +110,7 @@ None
 **Response**
 
 {% collapsible Show code sample %}
+
 ```json
 {
     "items": [
@@ -141,6 +141,7 @@ None
     "total_count": 2
 }
 ```
+
 {% endcollapsible %}
 
 ## Get sources assigned to a stock
@@ -158,6 +159,7 @@ None
 **Response**
 
 {% collapsible Show code sample %}
+
 ```json
 [
     {
@@ -196,4 +198,5 @@ None
     }
 ]
 ```
+
 {% endcollapsible %}

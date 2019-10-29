@@ -59,17 +59,17 @@ Any backward-incompatible changes must also be recorded in the accompanying docu
 
 ### Understanding Black, White, and Gray tests
 
-- A black box test doesn't have any knowledge of how the subject of the test is built.
-- A white box has knowledge of how the subject of the test is built. The test logic is usually coupled to the implementation and will typically be sensitive to changes. 
-- A gray box is similar to black box testing where the test isn't directly coupled to the subject's implementation but the test cases may be designed in a way to assert sensitive portions of the implementation will work correctly.
+*  A black box test doesn't have any knowledge of how the subject of the test is built.
+*  A white box has knowledge of how the subject of the test is built. The test logic is usually coupled to the implementation and will typically be sensitive to changes. 
+*  A gray box is similar to black box testing where the test isn't directly coupled to the subject's implementation but the test cases may be designed in a way to assert sensitive portions of the implementation will work correctly.
 
 For example:
 
 Assuming there is a method with the signature `function removeLetterFromString(string $letter, string $string): string`
 
-- A black box test would test the obvious cases both normal cases such as `removeLetterFromString('a', 'fooabar') === 'foobr'` and edge cases such as when `$letter` or `$string` are empty or `$letter` contains multiple or multibyte characters. It would probably test several variations of string lengths. Notice there is no knowledge of how this function is written.
-- A white box test would look into the implementation of the method and see that it calls a microservice API and make sure that each condition of the code has test coverage. For example, this test may force the microservice client to return an error and have a test for the expected handling of that scenario. This wouldn't be a reusable test and it's directly coupled to the implementation. 
-- A gray box test would look at the implementation of the method and see that it calls a microservice API and injects the `$string` into the URL so it may add some extra test coverage for strings that contain unsafe URL characters such as `&?=%/`. This isn't coupled to the implementation as the implementation could be changed and the test should still pass.   
+*  A black box test would test the obvious cases both normal cases such as `removeLetterFromString('a', 'fooabar') === 'foobr'` and edge cases such as when `$letter` or `$string` are empty or `$letter` contains multiple or multibyte characters. It would probably test several variations of string lengths. Notice there is no knowledge of how this function is written.
+*  A white box test would look into the implementation of the method and see that it calls a microservice API and make sure that each condition of the code has test coverage. For example, this test may force the microservice client to return an error and have a test for the expected handling of that scenario. This wouldn't be a reusable test and it's directly coupled to the implementation. 
+*  A gray box test would look at the implementation of the method and see that it calls a microservice API and injects the `$string` into the URL so it may add some extra test coverage for strings that contain unsafe URL characters such as `&?=%/`. This isn't coupled to the implementation as the implementation could be changed and the test should still pass.   
 
 ### Automated Tests
 
@@ -81,9 +81,9 @@ Be aware that while high-level tests may provide coverage to code, it is only in
 
 High level testing policy:
  
-* Any code that is added or changed must have explicit tests to validate the behavior. To clarify, this policy is intended to prove that the integrity of the code is verified regardless of which implementations are loaded in a black box environment. This may be done through unit or integration testing as appropriate. 
-* Code must be also shown to work with known collaborators. This must be done through integration tests and ideally should involve as few components as possible per test case. This level of tests ensures that the code will work with its known associates. Specific examples can be subject but such associates would include composites, chains, pools, etc. but also include cases like a Template filter working with a specific processor loaded.
-* In addition, regardless of the interpretation of the testing strategy below: Any class marked with an `@api` annotation MUST be covered with explicit test coverage via integration or unit tests. 
+*  Any code that is added or changed must have explicit tests to validate the behavior. To clarify, this policy is intended to prove that the integrity of the code is verified regardless of which implementations are loaded in a black box environment. This may be done through unit or integration testing as appropriate. 
+*  Code must be also shown to work with known collaborators. This must be done through integration tests and ideally should involve as few components as possible per test case. This level of tests ensures that the code will work with its known associates. Specific examples can be subject but such associates would include composites, chains, pools, etc. but also include cases like a Template filter working with a specific processor loaded.
+*  In addition, regardless of the interpretation of the testing strategy below: Any class marked with an `@api` annotation MUST be covered with explicit test coverage via integration or unit tests. 
   
   These tests must test the concrete implementation's behavior in a way that can not be inadvertently changed outside of the test itself. 
   
@@ -96,15 +96,15 @@ An integration test should be used to cover any code that doesn't meet the requi
 Integration tests come in many forms and can drastically vary in definition depending on what the intention of the test is. Generally speaking an integration test verifies that two or more things work together correctly. i.e. We are testing the _integration_ of one thing with another thing. 
 For the purpose of Magento testing, there are essentially two broad categories of integration tests: narrow-form and broad-form.
 
-* Narrow-form integration tests focus on testing something mostly in isolation an can be as simple as a unit test as described in this guide except without mocked dependencies.
-* Broad-form integration tests focus on testing something with less isolation and will involve multiple components explicitly collaborating. (compared to narrow-form where the dependencies are implicit collaborating)
+*  Narrow-form integration tests focus on testing something mostly in isolation an can be as simple as a unit test as described in this guide except without mocked dependencies.
+*  Broad-form integration tests focus on testing something with less isolation and will involve multiple components explicitly collaborating. (compared to narrow-form where the dependencies are implicit collaborating)
 
 Integration test policy:
 
-* Methods and classes must have black box or gray box test coverage making sure to include all variations for normal use as well as corner-cases. 
-* SPI's must have test coverage. Often times Magento has extension points that may only be utilized by extension developers. Use TestModule's to implement those SPI extension points and verify they are used correctly. 
-* As mentioned above, classes marked with `@api` must contain coverage. Integration tests must be used cover these classes unless a unit test is more appropriate. This includes JS modules and components. 
-* Consumers of default SPI's implementations should have at least basic coverage that ensures the default implementations of the SPI are correctly configured and loaded.  
+*  Methods and classes must have black box or gray box test coverage making sure to include all variations for normal use as well as corner-cases. 
+*  SPI's must have test coverage. Often times Magento has extension points that may only be utilized by extension developers. Use TestModule's to implement those SPI extension points and verify they are used correctly. 
+*  As mentioned above, classes marked with `@api` must contain coverage. Integration tests must be used cover these classes unless a unit test is more appropriate. This includes JS modules and components. 
+*  Consumers of default SPI's implementations should have at least basic coverage that ensures the default implementations of the SPI are correctly configured and loaded.  
   
   For example, `Magento\Framework\SomeClassFilter` may contain a `FilterPool` that comes with default `FilterInterface`'s from `Magento\Framework`. Each of these implementations would have their own coverage pursuant to this document. However, there should also be some basic assertions within the test coverage for `Magento\Framework\SomeClassFilter` that ensure each of the default filters are loaded correctly.     
   This shouldn't be explicit coverage such as `$filter->isLoaded('someDefaultFilter')` 
@@ -133,56 +133,56 @@ For these reasons, most of the time an integration test is likely the preferred 
 
 Classes and methods that:
 
-* Have little to no dependencies. 
-  - The test must not be directly coupled to the collaborators of the test subject. If the collaborators are solely responsible for the behavior of the tested subject, it won't be a good unit test. 
-* Do not interact with resources like database, file system, 3rd party systems etc. 
-* Can be covered by a black box test
-  - The test must not be a mirror of the code. Instead the test must validate the contract of the method or class is upheld by the implementation. Specific implementations may be weak in certain areas so specific corner cases could cover that logic while still being a black box test.  
-* Would not be easily foreseen to have dependencies in the future.
-  - This can be hard to predict but a good example of when it would be unlikely is a simple utility class that performs some standalone operation. By contrast, a helper would be very likely to have dependencies by nature. 
+*  Have little to no dependencies. 
+  *  The test must not be directly coupled to the collaborators of the test subject. If the collaborators are solely responsible for the behavior of the tested subject, it won't be a good unit test. 
+*  Do not interact with resources like database, file system, 3rd party systems etc. 
+*  Can be covered by a black box test
+  *  The test must not be a mirror of the code. Instead the test must validate the contract of the method or class is upheld by the implementation. Specific implementations may be weak in certain areas so specific corner cases could cover that logic while still being a black box test.  
+*  Would not be easily foreseen to have dependencies in the future.
+  *  This can be hard to predict but a good example of when it would be unlikely is a simple utility class that performs some standalone operation. By contrast, a helper would be very likely to have dependencies by nature. 
 
 Examples:
 
-* Utility classes (like `\Magento\Framework\Math\Random`).
-* Simple classes that can also be used independently (like `\Magento\Framework\Api\SortOrder`).
-* Algorithms that perform calculation or parsing.
+*  Utility classes (like `\Magento\Framework\Math\Random`).
+*  Simple classes that can also be used independently (like `\Magento\Framework\Api\SortOrder`).
+*  Algorithms that perform calculation or parsing.
 
 And by explicit contrast here are some things NOT to cover:
 
-* Classes/methods with numerous dependencies.
-  - Creation of Unit tests for such classes will result in creation of a lot of mocks and writing complex test logic (that most likely follows code to large extend and as a result we will have fragile and hard to maintain tests)
-* Classes/methods interacting with resources directly or indirectly.
-* Glue/wiring.
-  - Mostly passing data between collaborators and has no or small amount of logic so it can be covered indirectly by integration/functional tests.
+*  Classes/methods with numerous dependencies.
+  *  Creation of Unit tests for such classes will result in creation of a lot of mocks and writing complex test logic (that most likely follows code to large extend and as a result we will have fragile and hard to maintain tests)
+*  Classes/methods interacting with resources directly or indirectly.
+*  Glue/wiring.
+  *  Mostly passing data between collaborators and has no or small amount of logic so it can be covered indirectly by integration/functional tests.
 
 Examples:
 
-* Controllers
-  - They are the "glue" that connects different app layers. They shouldn't contain any business logic and should only be responsible for directing request/response information to/from services. They can be tested via integration or functional tests. Also, controller-specific tests will likely be rendered useless and ultimately deleted at some point in the context of the service isolation initiative which makes this idea much more important.  
+*  Controllers
+  *  They are the "glue" that connects different app layers. They shouldn't contain any business logic and should only be responsible for directing request/response information to/from services. They can be tested via integration or functional tests. Also, controller-specific tests will likely be rendered useless and ultimately deleted at some point in the context of the service isolation initiative which makes this idea much more important.  
 * Model triad classes (Model/Resource Model/Collection)
-  - They have many dependencies and interact with resources.
-* Factories
+  *  They have many dependencies and interact with resources.
+*  Factories
 
 ### Integrity Tests
 
 Code to cover:
 
-* Must cover any code which introduces convention in scope of a particular implementation, violation of which would lead to runtime error.
+*  Must cover any code which introduces convention in scope of a particular implementation, violation of which would lead to runtime error.
 
 Expected code coverage:
 
-* Must cover all files applicable to this convention.
+*  Must cover all files applicable to this convention.
 
 For example:
 
-* Scan for all XML-files of certain type and validate them using appropriate XML-schema.
-* Scan for declarations of templates and invoke "fallback" mechanism to ensure they resolve.
+*  Scan for all XML-files of certain type and validate them using appropriate XML-schema.
+*  Scan for declarations of templates and invoke "fallback" mechanism to ensure they resolve.
 
 **Static Code Analysis**
 
 Code to cover:
 
-* Must cover all new code files (or whatever qualifies as "new").
+*  Must cover all new code files (or whatever qualifies as "new").
 
 Expected code coverage: must cover all applicable files in entire code base.
 
@@ -190,7 +190,7 @@ Expected code coverage: must cover all applicable files in entire code base.
 
 Code to cover:
 
-* Must cover any formal backward-incompatible changes on code level.
+*  Must cover any formal backward-incompatible changes on code level.
 For more information, see
 [Magento's backward compatibility policy]({{ page.baseurl }}/contributor-guide/backward-compatible-development/).
 
@@ -198,8 +198,8 @@ A failure in a legacy test must provide comprehensive explanation of an alternat
 
 Expected code coverage:
 
-* Must cover majority of occurrences of the backward-incompatible change
-* Should cover 100% of occurrences
+*  Must cover majority of occurrences of the backward-incompatible change
+*  Should cover 100% of occurrences
 
 Not all changes can be covered.
 For example, it is possible to scan a file for literals, but it is unfeasible to analyze string concatenation or any other dynamic way of building variable.

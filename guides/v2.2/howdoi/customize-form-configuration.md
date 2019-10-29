@@ -15,7 +15,7 @@ To customize the product creation form, take the following steps:
 
 1. In your custom module, add an empty `product_form.xml` in the `<your_module_dir>/view/adminhtml/ui_component/` directory.
 
-2. In this file, add content similar to the following:
+1. In this file, add content similar to the following:
 
 ```xml
 <form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
@@ -36,9 +36,9 @@ To customize the product creation form, take the following steps:
                     <item name="label" xsi:type="string" translate="true">%Nested fieldset Label as displayed in UI%</item>
                     <item name="collapsible" xsi:type="boolean">true</item>
                 </item>
-            </argument>  
+            </argument>
             <field name="%field_name%">
-    			<argument name="data" xsi:type="array">
+                <argument name="data" xsi:type="array">
                     <item name="config" xsi:type="array">
                         <item name="%field_option1%" xsi:type="%option_type%">%value%</item>
                         <item name="%field_option2%" xsi:type="%option_type%">%value%</item>
@@ -78,6 +78,6 @@ To delete an existing field, or field set, in your `product_form.xml` use the fo
 
 For reference, view the product form configuration files of the Magento modules:
 
-* `<Magento_Catalog_module_dir>/view/adminhtml/ui_component/product_form.xml`
-* `<Magento_CatalogInventory_module_dir>/view/adminhtml/ui_component/product_form.xml`
-* `<Magento_ConfigurableProduct_module_dir>view/adminhtml/ui_component/product_form.xml`
+*  `<Magento_Catalog_module_dir>/view/adminhtml/ui_component/product_form.xml`
+*  `<Magento_CatalogInventory_module_dir>/view/adminhtml/ui_component/product_form.xml`
+*  `<Magento_ConfigurableProduct_module_dir>/view/adminhtml/ui_component/product_form.xml`

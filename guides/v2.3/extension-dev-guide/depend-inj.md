@@ -1,7 +1,6 @@
 ---
 group: php-developer-guide
 title: Dependency injection
-menu_title: Dependency injection
 ---
 
 Magento 2 uses [Dependency Injection] to replace functionality provided by the `Mage` class in Magento 1.x.
@@ -26,7 +25,7 @@ Since the Magento codebase follows this principle, you can map your own implemen
 
 ## Object manager
 
-The [`ObjectManager`] is a Magento service class that instantiates objects at the beginning of the bootstrapping process.  
+The [`ObjectManager`] is a Magento service class that instantiates objects at the beginning of the bootstrapping process.
 
 Magento uses class constructor signatures to retrieve information about an object's constructor dependencies.
 When a class is constructed, the object manager injects the class's dependencies, defined in the `di.xml` file, into the class constructor.
@@ -101,20 +100,21 @@ They are obtained by creating a new class instance every time they are needed.
 Transient objects, such as those that require external input from the user or database, fall into this category.
 If you attempt to inject these objects, you will either receive an incomplete, incorrect object or an error that the object could not be created.
 
-For example, you cannot depend on a model object, such as [`Product`], because you need to provide a product id or explicitly request a new, empty instance to get a `Product` object. 
+For example, you cannot depend on a model object, such as [`Product`], because you need to provide a product id or explicitly request a new, empty instance to get a `Product` object.
 Since you cannot specify this data in the constructor signature, Magento cannot inject this object.
 
 To get around this limitation, injectable objects can depend on [factories] that produce newable objects.
 
-**Related topics**
+{:.ref-header}
+Related topics
 
-*	[The `di.xml` file]({{ page.baseurl }}/extension-dev-guide/build/di-xml-file.html)
-*	[ObjectManager]({{ page.baseurl }}/extension-dev-guide/object-manager.html)
-*	[Plugins]({{ page.baseurl }}/extension-dev-guide/plugins.html)
-*	[Routing]({{ page.baseurl }}/extension-dev-guide/routing.html)
-*	[Magento application initialization and bootstrap]({{ page.baseurl }}/config-guide/bootstrap/magento-bootstrap.html)
-* [Module Dependencies]({{ page.baseurl }}/architecture/archi_perspectives/components/modules/mod_depend.html)
-*	[Programming concepts]({{ page.baseurl }}/extension-dev-guide/api-concepts.html)
+*  [The `di.xml` file]({{ page.baseurl }}/extension-dev-guide/build/di-xml-file.html)
+*  [ObjectManager]({{ page.baseurl }}/extension-dev-guide/object-manager.html)
+*  [Plugins]({{ page.baseurl }}/extension-dev-guide/plugins.html)
+*  [Routing]({{ page.baseurl }}/extension-dev-guide/routing.html)
+*  [Magento application initialization and bootstrap]({{ page.baseurl }}/config-guide/bootstrap/magento-bootstrap.html)
+*  [Module Dependencies]({{ page.baseurl }}/architecture/archi_perspectives/components/modules/mod_depend.html)
+*  [Programming concepts]({{ page.baseurl }}/extension-dev-guide/api-concepts.html)
 
 [Dependency Injection]: https://en.wikipedia.org/wiki/Dependency_injection
 [dependency inversion principle]: http://www.oodesign.com/dependency-inversion-principle.html

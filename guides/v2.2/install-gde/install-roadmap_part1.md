@@ -19,34 +19,34 @@ Do you know what a "terminal" application is? Do you know what operating system 
 
 Topics include:
 
-*	[Choose how to get the Magento software]({{ page.baseurl }}/install-gde/bk-install-guide.html)
-*	[System requirements]({{ page.baseurl }}/install-gde/system-requirements.html)
-*	[Prerequisites]({{ page.baseurl }}/install-gde/prereq/prereq-overview.html)
-*	[The Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html)
+*  [Choose how to get the Magento software]({{ page.baseurl }}/install-gde/bk-install-guide.html)
+*  [System requirements]({{ page.baseurl }}/install-gde/system-requirements.html)
+*  [Prerequisites]({{ page.baseurl }}/install-gde/prereq/prereq-overview.html)
+*  [The Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html)
 
 ## Installation part 2: Installing
 
 Topics include:
 
-*	[Command line installation]({{ page.baseurl }}/install-gde/install/cli/install-cli.html)
-*	[Setup Wizard installation]({{ page.baseurl }}/install-gde/install/web/install-web.html)
-*	[Optional sample data]({{ page.baseurl }}/install-gde/install/web/install-web-sample-data.html)
+*  [Command line installation]({{ page.baseurl }}/install-gde/install/cli/install-cli.html)
+*  [Setup Wizard installation]({{ page.baseurl }}/install-gde/install/web/install-web.html)
+*  [Optional sample data]({{ page.baseurl }}/install-gde/install/web/install-web-sample-data.html)
 
 ## Installation part 3: Post-installation
 
 Topics include:
 
-*	[Verifying]({{ page.baseurl }}/install-gde/install/verify.html)
-*	[Configuring]({{ page.baseurl }}/install-gde/install/post-install-config.html)
-*	[Optional sample data (after installing Magento)]({{ page.baseurl }}/install-gde/install/sample-data-after-magento.html)
+*  [Verifying]({{ page.baseurl }}/install-gde/install/verify.html)
+*  [Configuring]({{ page.baseurl }}/install-gde/install/post-install-config.html)
+*  [Optional sample data (after installing Magento)]({{ page.baseurl }}/install-gde/install/sample-data-after-magento.html)
 
 ## Upgrade, update
 
 Topics include:
 
-*	[Upgrading (or *patching* the Magento application)]({{ page.baseurl }}/comp-mgr/bk-compman-upgrade-guide.html)
-*	[Updating components (including install, uninstall, update, enable, disable)]({{ page.baseurl }}/comp-mgr/bk-compman-upgrade-guide.html)
-*	*Contributing developers only*: [Contributing developers&mdash;update, reinstall Magento]({{ page.baseurl }}/install-gde/install/cli/dev_options.html)
+*  [Upgrading (or *patching* the Magento application)]({{ page.baseurl }}/comp-mgr/bk-compman-upgrade-guide.html)
+*  [Updating components (including install, uninstall, update, enable, disable)]({{ page.baseurl }}/comp-mgr/bk-compman-upgrade-guide.html)
+*  *Contributing developers only*: [Contributing developers&mdash;update, reinstall Magento]({{ page.baseurl }}/install-gde/install/cli/dev_options.html)
 
 ## Deploy to production
 

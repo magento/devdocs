@@ -13,18 +13,18 @@ functional_areas:
 
 To run the [Module](https://glossary.magento.com/module) Manager:
 
-1.	Log in to the [Magento Admin](https://glossary.magento.com/magento-admin) as an administrator.
-2.	Click **System** > **Web Setup Wizard**.
-3.	Click **Module Manager**.
+1. Log in to the [Magento Admin](https://glossary.magento.com/magento-admin) as an administrator.
+1. Click **System** > **Web Setup Wizard**.
+1. Click **Module Manager**.
 
-	![]({{ site.baseurl }}/common/images/modman_select.png){:width="550px"}
+   ![]({{ site.baseurl }}/common/images/modman_select.png){:width="550px"}
 
 To upgrade Magento system software instead, see [Run System Upgrade]({{ page.baseurl }}/comp-mgr/upgrader/upgrade-start.html).
 
 See one of the following sections:
 
-*	[About the Module Manager](#modman-about)
-*	[Enable or disable a module](#modman-about-endis)
+*  [About the Module Manager](#modman-about)
+*  [Enable or disable a module](#modman-about-endis)
 
 ## About the Module Manager {#modman-about}
 
@@ -61,7 +61,8 @@ This example shows how to disable a currently enabled module. You can use the sa
 
 To disable a module:
 
-1.	Click **Disable** from the **Action** column, as the following figure shows.
+1. Click **Disable** from the **Action** column, as the following figure shows.
 
-	![Disable a module]({{ site.baseurl }}/common/images/modman_disable.png)
-2.	Continue with [Step 1. Readiness check]({{ page.baseurl }}/comp-mgr/module-man/compman-readiness.html).
+   ![Disable a module]({{ site.baseurl }}/common/images/modman_disable.png)
+
+1. Continue with [Step 1. Readiness check]({{ page.baseurl }}/comp-mgr/module-man/compman-readiness.html).

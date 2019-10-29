@@ -105,8 +105,6 @@ Product | Source | Quantity
 `24-WB03` | Baltimore | 19
 `24-WB03` | Reno | 31
 
-
-
 ```json
 {
     "source_selection_items": [
@@ -148,6 +146,6 @@ Product | Source | Quantity
 ## Verify this step {#verify-step}
 
 1. Click **Sales** > **Orders**.
-2. Click the **View** link in the Action column for the order.
-3. Click **Ship**.
-4. Select different sources from the **Sources** menu.
+1. Click the **View** link in the Action column for the order.
+1. Click **Ship**.
+1. Select different sources from the **Sources** menu.

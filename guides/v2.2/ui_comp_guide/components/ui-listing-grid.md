@@ -38,7 +38,7 @@ Example configuration of Listing component instance:
 
 ## Configure DataSource
 
-DataSource is another [UI component](https://glossary.magento.com/ui-component) that provides data in specific format which is shared among all UI components. 
+DataSource is another [UI component](https://glossary.magento.com/ui-component) that provides data in specific format which is shared among all UI components.
 
 The listing component requires the data source to be properly configured and associated with it:
 
@@ -61,9 +61,9 @@ The listing component requires the data source to be properly configured and ass
             </settings>
         </dataProvider>
     </dataSource>
-</listing>    
+</listing>
 ```
 
 ## Source files
 
-- [app/code/Magento/Ui/view/base/web/js/lib/core/collection.js]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/lib/core/collection.js)
+-  [app/code/Magento/Ui/view/base/web/js/lib/core/collection.js]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/lib/core/collection.js)

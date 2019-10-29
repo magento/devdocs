@@ -12,63 +12,63 @@ Buttons should be used anywhere a call to action(CTA) is needed. Discretion shou
 
 ## When Not to Use
 
-* Do not use buttons to indicate actions that are better suited as hyperlinks such as "Cancel". Some exceptions may apply.
-* Do not use more than one primary page level action on a single page for different actions. Some exceptions may apply.
-* Do not use buttons to indicate a link to more information or to a task not related to primary flow.
+*  Do not use buttons to indicate actions that are better suited as hyperlinks such as "Cancel". Some exceptions may apply.
+*  Do not use more than one primary page level action on a single page for different actions. Some exceptions may apply.
+*  Do not use buttons to indicate a link to more information or to a task not related to primary flow.
 
 ## Variations
 
 Variations of this pattern are as follows, and will be detailed in the section on Appearance and behavior:
 
-* Page level buttons are to be used for calls to action on pages.
-* Form level buttons are to be used on forms.
-* Table level buttons are to be used within tables or data grids
+*  Page level buttons are to be used for calls to action on pages.
+*  Form level buttons are to be used on forms.
+*  Table level buttons are to be used within tables or data grids
 
 Buttons will be take on one of the below variations.
 
 <table>
-	<thead>
-		<th> Page Level </th>
-		<th> Form Level </th>
-		<th> Table Level </th>
-	</thead>
-	<tbody>
-		<tr>
-			<td>Primary</td>
-			<td>Primary</td>
-			<td>Regular</td>
-		</tr>
-		<tr>
-			<td>Secondary</td>
-			<td>Secondary</td>
-			<td>Icon</td>
-		</tr>
-		<tr>
-			<td>Toggle</td>
-			<td>Toggle</td>
-			<td>Toggle</td>
-		</tr>
-		<tr>
-			<td>Tertiary</td>
-			<td>Tertiary</td>
-			<td>Tertiary</td>
-		</tr>
-		<tr>
-			<td>Table Button</td>
-			<td>Table Button</td>
-			<td>Table Button</td>
-		</tr>
-		<tr>
-			<td>Primary Dropdown</td>
-			<td>Primary Dropdown</td>
-			<td>Primary Dropdown</td>
-		</tr>
-		<tr>
-			<td>Secondary Dropdown</td>
-			<td>Secondary Dropdown</td>
-			<td>Secondary Dropdown</td>
-		</tr>
-	</tbody>
+  <thead>
+    <th> Page Level </th>
+    <th> Form Level </th>
+    <th> Table Level </th>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Primary</td>
+      <td>Primary</td>
+      <td>Regular</td>
+    </tr>
+    <tr>
+      <td>Secondary</td>
+      <td>Secondary</td>
+      <td>Icon</td>
+    </tr>
+    <tr>
+      <td>Toggle</td>
+      <td>Toggle</td>
+      <td>Toggle</td>
+    </tr>
+    <tr>
+      <td>Tertiary</td>
+      <td>Tertiary</td>
+      <td>Tertiary</td>
+    </tr>
+    <tr>
+      <td>Table Button</td>
+      <td>Table Button</td>
+      <td>Table Button</td>
+    </tr>
+    <tr>
+      <td>Primary Dropdown</td>
+      <td>Primary Dropdown</td>
+      <td>Primary Dropdown</td>
+    </tr>
+    <tr>
+      <td>Secondary Dropdown</td>
+      <td>Secondary Dropdown</td>
+      <td>Secondary Dropdown</td>
+    </tr>
+  </tbody>
 </table>
 
 [CSS](https://glossary.magento.com/css) style classes will need to be established for any buttons that require a custom
@@ -257,12 +257,13 @@ The toggle button acts like a checkbox. When you touch/click on it, the state to
 
 Use toggle for:
 
-* Binary selection (true/false) when only a single option can be set
-* When multiple non-required selections can be set
-* In relation to other form elements when needed
+*  Binary selection (true/false) when only a single option can be set
+*  When multiple non-required selections can be set
+*  In relation to other form elements when needed
 
 Do not use checkboxes if:
-* Multiple options need visibility
+
+*  Multiple options need visibility
 
 #### Variations
 
@@ -318,8 +319,8 @@ Left/Right margin spacing should not be less than 10px
 
 ## Accessibility
 
-* [Keyboard shortcuts in Windows](https://support.microsoft.com/en-us/help/12445/windows-keyboard-shortcuts)
-* [Mac keyboard shortcuts](http://support.apple.com/en-us/HT201236)
+*  [Keyboard shortcuts in Windows](https://support.microsoft.com/en-us/help/12445/windows-keyboard-shortcuts)
+*  [Mac keyboard shortcuts](http://support.apple.com/en-us/HT201236)
 
 (Keyboard shortcut same as checkbox)
 

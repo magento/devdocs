@@ -30,7 +30,6 @@ Magento 2 has the following [cache](https://glossary.magento.com/cache) types:
 |Web services configuration|config_webservice|Caching the Web API Structure.|
 |Customer Notification|customer_notification|Temporary notifications that appear in the user interface.|
 
-
 ## View the cache status
 
 To view the status of the cache, enter
@@ -66,7 +65,6 @@ This command enables you to enable or disable all cache types or only the ones y
 
 {:.bs-callout .bs-callout-info}
 Starting in version 2.2, you can only enable or disable cache types using the command line while running Magento in production mode. If running Magento in developer mode, you can enable or disable cache types using the command line or manually. Before doing so, you must manually make `<magento_root>/app/etc/env.php` writeable by the [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-system-perms.html).
-
 
 You can clean (also referred to as _flush_ or _refresh_) cache types using either the command line or the [Magento Admin](https://glossary.magento.com/magento-admin).
 
@@ -111,14 +109,14 @@ Enabling a [cache type](https://glossary.magento.com/cache-type) automatically c
 
 To purge out-of-date items from the cache, you can *clean* or *flush* cache types:
 
-- Cleaning a cache type deletes all items from enabled Magento cache types only. In other words, this option does not affect other processes or applications because it cleans only the cache that Magento uses.
+-  Cleaning a cache type deletes all items from enabled Magento cache types only. In other words, this option does not affect other processes or applications because it cleans only the cache that Magento uses.
 
     Disabled cache types are not cleaned.
 
     {:.bs-callout .bs-callout-tip}
     Always clean the cache after upgrading versions of {{site.data.var.ce}} or {{site.data.var.ee}}, upgrading from {{site.data.var.ce}} to {{site.data.var.ee}}, or installing {{site.data.var.b2b}} or any module.
 
-- Flushing a cache type purges the cache storage, which might affect other processes applications that are using the same storage.
+-  Flushing a cache type purges the cache storage, which might affect other processes applications that are using the same storage.
 
 Flush cache types if you've already tried cleaning the cache and you're still having issues that you cannot isolate.
 

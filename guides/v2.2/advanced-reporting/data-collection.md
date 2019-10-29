@@ -9,9 +9,9 @@ A Magento instance collects data that the Magento Business Intelligence (MBI) se
 All the data are stored in an encrypted archive file which is securely transferred to the MBI.
 Data collection is declared in a configuration file `etc/analytics.xml`. It declares:
 
-- Which report files must be included into the archive file.
-- Which provider classes must collect data for each report file.
-- Which report data configuration must be applied to collected data.
+-  Which report files must be included into the archive file.
+-  Which provider classes must collect data for each report file.
+-  Which report data configuration must be applied to collected data.
 
 {: .bs-callout .bs-callout-warning }
 This topic serves to provide better understanding of how data collection works. Any changes in configuration files will cause issues, because the MBI service doesn't expect any changes of configuration in the current version.
@@ -53,11 +53,11 @@ An example of the `etc/analytics.xml` file:
 
 The example configuration file declares the following:
 
-*   The `modules.csv`, `store_config.csv`, and `stores.csv` report files must be included in the archive file prepared for the MBI service.
-*   `modules.csv` must contain data provided by the `\Magento\Analytics\ReportXml\ReportProvider` class.
+-  The `modules.csv`, `store_config.csv`, and `stores.csv` report files must be included in the archive file prepared for the MBI service.
+-  `modules.csv` must contain data provided by the `\Magento\Analytics\ReportXml\ReportProvider` class.
  Provided data must be configured according to the `modules` report declarations defined in the `etc/reports.xml` file.
-*   `store_config.csv` must contain data provided by the `Magento\Analytics\Model\StoreConfigurationProvider` class.
-*   `stores.csv` must contain data provided by the `\Magento\Analytics\ReportXml\ReportProvider` class.
+-  `store_config.csv` must contain data provided by the `Magento\Analytics\Model\StoreConfigurationProvider` class.
+-  `stores.csv` must contain data provided by the `\Magento\Analytics\ReportXml\ReportProvider` class.
  Provided data is configured according to the `store_config` report declarations defined in the `etc/reports.xml` file.
  Also, the report file must contain data provided by the `Magento\Analytics\Model\StoreConfigurationProvider` class.
 
@@ -94,15 +94,15 @@ The `\Magento\Analytics\Model\ReportWriter` class is responsible for a decision 
 <config ...>
 
     <!-- Adds a report file `module.csv` to the archive file -->
-    <file name="modules"> 
+    <file name="modules">
         ...
     </file>
-    
+
     <!-- Adds a report file `stores.csv` to the archive file -->
     <file name="stores">
         ...
     </file>
-    
+
 </config>
 ```
 
@@ -112,25 +112,25 @@ The node must contain a `<reportProvider>` node, or a `<customProvider>` node, o
 
 ```xml
 ...
-    <file ...>    
+    <file ...>
         <!-- A report provider adds data to the report file  -->
         <providers>
-            <reportProvider ...>   
+            <reportProvider ...>
         </providers>
     </file>
-    
+
     <file ...>
         <!-- A custom provider adds data to the report file  -->
         <providers>
-            <customProvider ...>        
+            <customProvider ...>
         </providers>
     </file>
-    
+
     <file ...>
         <providers>
             <!-- A report provider and a custom provider add data to the report file  -->
             <reportProvider ...>
-            <customProvider ...>        
+            <customProvider ...>
         </providers>
     </file>
 ...
@@ -171,7 +171,7 @@ Currently there is only one parameter is available. It is declared in `<name>`.
         <parameters>
             <name>store_report</name>
         </parameters>
-    </reportProvider>            
+    </reportProvider>
 ...
 ```
 
@@ -196,10 +196,10 @@ It cannot contain any parameters.
 ...
 ```
 
-## Related topics
+{:.ref-header}
+Related topics
 
  [Modules providing advanced reporting][modules]
- 
 
 <!-- LINK DEFINITIONS -->
 

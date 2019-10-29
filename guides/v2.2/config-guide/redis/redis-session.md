@@ -48,7 +48,6 @@ where
 |session-save-redis-min-lifetime|min_lifetime|Minimum session lifetime, in seconds.|60|
 |session-save-redis-max-lifetime|max_lifetime|Maximum session lifetime, in seconds.|2592000 (720 hours)|
 
-
 ### Example command
 
 The following example sets Redis as the session data store, sets the host to `127.0.0.1`, sets the log level to 3, and sets the database number to 2. All other parameters are set to the default value.
@@ -96,7 +95,8 @@ TTL for session records use the value for Cookie Lifetime, which is configured i
 
 {% include config/redis-verify.md %}
 
-## Related topics
+{:.ref-header}
+Related topics
 
-* [Create or extend configuration types]({{ page.baseurl }}/config-guide/config/config-create.html)
-* [Magento's deployment configuration]({{ page.baseurl }}/config-guide/config/config-php.html)
+*  [Create or extend configuration types]({{ page.baseurl }}/config-guide/config/config-create.html)
+*  [Magento's deployment configuration]({{ page.baseurl }}/config-guide/config/config-php.html)

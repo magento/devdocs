@@ -8,16 +8,14 @@ menu_order: 2
 ee_only: true
 ---
 
-
-
 The Magento_MsrpStaging [module](https://glossary.magento.com/module) is a part of the staging functionality in {{site.data.var.ee}}. It enables you to stage the manufacturer's suggested retail price.
 
 ## Implementation details
 
 The Magento_MsrpStaging module extends the Magento_Msrp module to be used in staging. It adds the following fields in the Advice Pricing form:
 
-- Manufacturer's Suggested Retail Price
-- Display Actual Price
+-  Manufacturer's Suggested Retail Price
+-  Display Actual Price
 
 ## Dependencies
 

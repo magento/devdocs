@@ -13,16 +13,17 @@ This topic provides a simple example of getting free extensions for {{site.data.
 
 ### Log in to Magento Marketplace
 
-To get started, log in to [Magento Marketplace](https://marketplace.magento.com){:target="_blank"} using your `magento.com` credentials. 
+To get started, log in to [Magento Marketplace](https://marketplace.magento.com){:target="_blank"} using your `magento.com` credentials.
 
 If you don't have an account yet:
 
-1.	Click **Sign In** and the top right of the page as the following figure shows:
+1. Click **Sign In** and the top right of the page as the following figure shows:
 
-	![Sign in to Marketplace]({{ site.baseurl }}/common/images/marketplace_sign-in.png){:width="600px"}
-2.	In the right pane, click **Create an account**.
+   ![Sign in to Marketplace]({{ site.baseurl }}/common/images/marketplace_sign-in.png){:width="600px"}
 
-	![Create a Marketplace account]({{ site.baseurl }}/common/images/marketplace_create-acct.png){:width="300px"}
+1. In the right pane, click **Create an account**.
+
+   ![Create a Marketplace account]({{ site.baseurl }}/common/images/marketplace_create-acct.png){:width="300px"}
 
 ### Find an extension or theme
 
@@ -43,4 +44,3 @@ When you're ready, click **Go to Checkout** and follow the prompts on your scree
 ### Install your new purchases
 
 Use the [Component Manager]({{ page.baseurl }}/comp-mgr/module-man/compman-checklist.html) to install your purchases.
-

@@ -83,19 +83,19 @@ QUERY;
 
 The `\Magento\GraphQl\TestModule\GraphQlQueryTest.php` test case uses two test modules to determine whether the mechanisms for GraphQL extensibility work as expected. It illustrates best practices for extending an existing GraphQL endpoint.
 
-* `TestModuleGraphQlQuery` - This bare-bones module defines a `testItem` endpoint with the queryable attributes `item_id` and `name`. It's located at `<installdir>/dev/tests/api-functional/_files/TestModuleGraphQlQuery`.
-* `TestModuleGraphQlQueryExtension` - This module extends `TestModuleGraphQlQuery`, adding the `integer_list` extension attribute. It's located at `<installdir>/dev/tests/api-functional/_files/TestModuleGraphQlQueryExtension`.
+*  `TestModuleGraphQlQuery` - This bare-bones module defines a `testItem` endpoint with the queryable attributes `item_id` and `name`. It's located at `<installdir>/dev/tests/api-functional/_files/TestModuleGraphQlQuery`.
+*  `TestModuleGraphQlQueryExtension` - This module extends `TestModuleGraphQlQuery`, adding the `integer_list` extension attribute. It's located at `<installdir>/dev/tests/api-functional/_files/TestModuleGraphQlQueryExtension`.
 
 ## Creating fixtures
 
-Fixtures, which are part of the testing framework, prepare preconditions in the system for further testing. For example, when you test the ability to add a product to the shopping cart, the precondition is that a product must be available for testing. 
+Fixtures, which are part of the testing framework, prepare preconditions in the system for further testing. For example, when you test the ability to add a product to the shopping cart, the precondition is that a product must be available for testing.
 
 A fixture consists of two files:
 
-- The fixture file, which defines the test
-- A rollback file, which reverts the system to the state before the test was run
+*  The fixture file, which defines the test
+*  A rollback file, which reverts the system to the state before the test was run
 
-{:.bs-callout .bs-callout-info}
+{: .bs-callout-info }
 Each fixture should have a corresponding rollback file.
 
 Magento provides fixtures in the `dev/tests/integration/testsuite/Magento/<ModuleName>/_files` directory. Use these fixtures whenever possible. When you create your own fixture, also create a proper rollback.
@@ -159,13 +159,13 @@ You can also invoke multiple fixtures:
     }
 ```
 
-The specified fixtures will now execute on every test run. 
+The specified fixtures will now execute on every test run.
 
-### Rollback files 
+### Rollback files
 
-Every fixture should have a rollback file. A rollback is a set of operations that remove changes introduced by the fixture from the system once the test is completed. 
+Every fixture should have a rollback file. A rollback is a set of operations that remove changes introduced by the fixture from the system once the test is completed.
 
-The rollback filename should correspond to the original fixture filename postfixed by `_rollback` keyword. For example, if the fixture file name is `virtual_product.php`, name the rollback file `virtual_product_rollback.php`. 
+The rollback filename should correspond to the original fixture filename postfixed by `_rollback` keyword. For example, if the fixture file name is `virtual_product.php`, name the rollback file `virtual_product_rollback.php`.
 
 The following fixture rollback removes the newly-created product from the database.
 
@@ -196,11 +196,56 @@ $registry->unregister('isSecureArea');
 $registry->register('isSecureArea', false);
 ```
 
+### Fixture configs
+
+Use the `@magentoConfigFixture` annotation to set a custom config value. It supports a `store` scope only.
+
+#### Syntax
+
+```php
+/**
+ * @magentoConfigFixture <store_code>_store <config_key> <config_value>
+ */
+```
+
+where
+- `<store_code>` - Store code. See the `store`.`code` database field value.
+- `<config_key>` - Config key. See `core_config_data`.`path`
+- `<config_value>` - Config value. See `core_config_data`.`value`
+
+{: .bs-callout-info }
+`@magentoConfigFixture` does not require a roll-back.
+
+#### Example usage
+
+The following example sets a store-scoped value `1` for the config key `checkout/options/enable_agreements` for the `default` store in the `GetActiveAgreement()` test:
+
+```php
+    /**
+     * @magentoConfigFixture default_store checkout/options/enable_agreements 1
+     */
+    public function testGetActiveAgreement()
+    {
+        ...
+    }
+```
+
+`@magentoConfigFixture` performs the following action as a background process before test execution:
+
+```sql
+INSERT INTO `core_config_data` (scope`, `scope_id`, `path`, `value`)
+VALUES
+  ('stores', 1, 'checkout/options/enable_agreements', '1');
+```
+
+The fixture automatically removes the `checkout/options/enable_agreements` config key from the database after the test has been completed.
+
 ## Defining expected exceptions
 
 Your functional tests should include events that cause exceptions. Since your tests expect an exception to occur, set up your tests so that they elicit the proper responses. You can define expected exception messages either in:
-- The body of the test
-- The test function annotation
+
+*  The body of the test
+*  The test function annotation
 
 {: .bs-callout .bs-callout-tip }
 We recommend that you declare expected exceptions in the test method body, as declaring expected exceptions with annotations has been deprecated in PHPUnit 8. Existing tests that use annotations will have to be updated when Magento requires that version of PHPUnit or higher.
@@ -213,23 +258,23 @@ The following examples show two ways you can use the `expectExceptionMessage` fu
 public function testMyExceptionTest()
 {
     ...
-    
+
     self::expectExceptionMessage("Expected exception message goes here...");
-    
+
     ...
 }
 
 ```
 
-or 
+or
 
 ```php
 public function testMyExceptionTest()
 {
     ...
-    
+
     $this->expectExceptionMessage("Expected exception message goes here...");
-    
+
     ...
 }
 ```
@@ -240,8 +285,8 @@ Define the exception message before invoking logic that generates the exception.
 As an example, consider the case where Customer A tries to retrieve information about Customer B's cart. In this situation, Customer A gets this error:
 
     The current user cannot perform operations on cart "XXXXX"
-  
-`XXXXX` is the unique ID of Customer B's cart. 
+
+`XXXXX` is the unique ID of Customer B's cart.
 
 The following sample shows how to cover this scenario using an `expectExceptionMessage` function:
 
@@ -261,7 +306,7 @@ The following sample shows how to cover this scenario using an `expectExceptionM
         $query = $this->prepareGetCartQuery($maskedQuoteId);
         self::expectExceptionMessage("The current user cannot perform operations on cart \"$maskedQuoteId\"");
         $this->graphQlQuery($query);
-    } 
+    }
 ```
 
 ### Exception messages in the annotation of a test function
@@ -327,18 +372,18 @@ The `@expectExceptionMessage` annotation provides the text for the exception in 
     {
         $maskedQuoteId = 'non_existent_masked_id';
         $query = $this->prepareGetCartQuery($maskedQuoteId);
-        
+
         $this->graphQlQuery($query);
     }
 ```
 
 Use the following functions to cover expected exceptions:
 
-- `expectException`
-- `expectExceptionCode`
-- `expectExceptionMessage`
-- `expectExceptionMessageRegExp`
-- `expectExceptionObject`
+*  `expectException`
+*  `expectExceptionCode`
+*  `expectExceptionMessage`
+*  `expectExceptionMessageRegExp`
+*  `expectExceptionObject`
 
 ## Run functional tests
 
@@ -346,24 +391,24 @@ Use the following functions to cover expected exceptions:
 
 1. Change directories to `dev/tests/api-functional/` and copy the `phpunit_graphql.xml.dist` file to `phpunit_graphql.xml`.
 
-    ```bash
-    cp phpunit_graphql.xml.dist phpunit_graphql.xml
-    ```
+   ```bash
+   cp phpunit_graphql.xml.dist phpunit_graphql.xml
+   ```
 
-2. Edit `phpunit_graphql.xml` to set values for the TESTS_BASE_URL, TESTS_WEBSERVICE_USER, TESTS_WEBSERVICE_APIKEY options:
+1. Edit `phpunit_graphql.xml` to set values for the TESTS_BASE_URL, TESTS_WEBSERVICE_USER, TESTS_WEBSERVICE_APIKEY options:
 
-    ```xml
-    ...
-    <!-- Webserver URL -->
-    <const name="TESTS_BASE_URL" value="http://magento.url"/>
-    <!-- Webserver API user -->
-    <const name="TESTS_WEBSERVICE_USER" value="admin"/>
-    <!-- Webserver API key -->
-    <const name="TESTS_WEBSERVICE_APIKEY" value="123123q"/>
-    ...
-    ```    
+   ```xml
+   ...
+   <!-- Webserver URL -->
+   <const name="TESTS_BASE_URL" value="http://magento.url"/>
+   <!-- Webserver API user -->
+   <const name="TESTS_WEBSERVICE_USER" value="admin"/>
+   <!-- Webserver API key -->
+   <const name="TESTS_WEBSERVICE_APIKEY" value="123123q"/>
+   ...
+   ```
 
-### Run all tests in a API functional test suite 
+### Run all tests in a API functional test suite
 
 **Syntax**
 
@@ -374,7 +419,7 @@ vendor/bin/phpunit -c dev/tests/api-functional/phpunit_graphql.xml dev/tests/api
 **Example**
 
 To run all tests from [dev/tests/api-functional/testsuite/Magento/GraphQl/Customer/GenerateCustomerTokenTest.php]({{ site.mage2bloburl }}/2.3.1/dev/tests/api-functional/testsuite/Magento/GraphQl/Customer/GenerateCustomerTokenTest.php), run the following command:
- 
+
 ```bash
 vendor/bin/phpunit -c dev/tests/api-functional/phpunit_graphql.xml dev/tests/api-functional/testsuite/Magento/GraphQl/Customer/GenerateCustomerTokenTest.php
 ```
@@ -382,29 +427,29 @@ vendor/bin/phpunit -c dev/tests/api-functional/phpunit_graphql.xml dev/tests/api
 ### Run a single test in a API functional test suite
 
 **Syntax**
- 
+
 ```bash
 vendor/bin/phpunit -c dev/tests/api-functional/phpunit_graphql.xml --filter <testFunctionName> dev/tests/api-functional/testsuite/<Vendor>/<Module>/<TestFile>.php
 ```
- 
+
 **Example**
 
 To run `testGenerateCustomerValidToken` test from [dev/tests/api-functional/testsuite/Magento/GraphQl/Customer/GenerateCustomerTokenTest.php]({{ site.mage2bloburl }}/2.3.1/dev/tests/api-functional/testsuite/Magento/GraphQl/Customer/GenerateCustomerTokenTest.php), run the following command:
- 
+
 ```bash
 vendor/bin/phpunit -c dev/tests/api-functional/phpunit_graphql.xml --filter testGenerateCustomerValidToken dev/tests/api-functional/testsuite/Magento/GraphQl/Customer/GenerateCustomerTokenTest.php
 ```
- 
+
 ### Run a selected group of tests in an API functional test suite
 
-Use the `@group` directive in the test annotation to add the ability to run a group tests. 
+Use the `@group` directive in the test annotation to add the ability to run a group tests.
 
 **Syntax**
- 
+
 ```bash
 vendor/bin/phpunit -c dev/tests/api-functional/phpunit_graphql.xml --group <TEST_GROUP_ALIAS> dev/tests/api-functional/testsuite/<Vendor>/<Module>/<TestFile>.php
 ```
- 
+
 **Example**
 
 The `testGetCartTotalsWithNoAddressSet` test is marked with `@group recent`:
@@ -431,15 +476,15 @@ class MyTest extends \Magento\TestFramework\TestCase\GraphQlAbstract
     {
         ...
     }
-    
+
     /**
-     * 
+     *
      */
     public function testFunction3()
     {
         ...
     }
-}    
+}
 ```
 
 To run the `testFunction1` and `testFunction2` tests, which are part of the `my_test_group` group, use the following command:

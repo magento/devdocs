@@ -12,16 +12,17 @@ functional_areas:
 The Magento core development team uses the [Magento Coding Standard](https://github.com/magento/magento-coding-standard){:target="_blank"}. We recommend that developers who create Magento extensions and customizations also use this standard.
 
 The Magento Coding Standard provides a set of rules that covers the following:
-* [PSR-1]{:target="_blank"} and [PSR-2]{:target="_blank"} compliance
-* The use of insecure functions
-* Unescaped output
-* The use of deprecated PHP functions
-* PHP code syntax
-* Naming convention
-* The use of PHP superglobals
-* Empty code blocks
-* Improper exception handling
-* Raw SQL queries and many other general PHP and Magento-specific code issues.
+
+*  [PSR-1]{:target="_blank"} and [PSR-2]{:target="_blank"} compliance
+*  The use of insecure functions
+*  Unescaped output
+*  The use of deprecated PHP functions
+*  PHP code syntax
+*  Naming convention
+*  The use of PHP superglobals
+*  Empty code blocks
+*  Improper exception handling
+*  Raw SQL queries and many other general PHP and Magento-specific code issues.
 
 ### Coding standard compliance
 
@@ -37,10 +38,10 @@ Learn more about using rule sets with PHP CodeSniffer [ruleset]{:target="_blank"
 For class name resolution, use the [`::class`](http://php.net/manual/en/language.oop5.basic.php#language.oop5.basic.class.class){:target="_blank"} [keyword](https://glossary.magento.com/keyword) instead of a string literal for every class name reference outside of that class.
 This includes references to:
 
-* Fully qualified class name
-* Imported/non-imported class name
-* [Namespace](https://glossary.magento.com/namespace) relative class name
-* Import relative class name
+*  Fully qualified class name
+*  Imported/non-imported class name
+*  [Namespace](https://glossary.magento.com/namespace) relative class name
+*  Import relative class name
 
 Examples:
 

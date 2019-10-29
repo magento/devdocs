@@ -1,4 +1,4 @@
 ---
 group: msi
-title: 
+title:
 ---

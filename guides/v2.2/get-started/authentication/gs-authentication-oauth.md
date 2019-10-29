@@ -16,26 +16,25 @@ As the process of registering the integration proceeds, Magento creates the toke
 The following diagram shows the OAuth authentication process. Each step is described further.
 ![OAuth flow]({{ page.baseurl }}/get-started/authentication/images/oauthflow.png)
 
-
 1. **Create an integration**.  The merchant creates an integration from [Admin](https://glossary.magento.com/admin). Magento generates a consumer key and a consumer secret.
 
-2. **Activate the integration**. The OAuth process begins when the merchant activates the integration. Magento sends the OAuth consumer key and secret, an OAuth verifier, and the store [URL](https://glossary.magento.com/url) to the external application via HTTPS post to the page defined in the **Callback Link** field in Admin. See [Activate an integration](#activate) for more information.
+1. **Activate the integration**. The OAuth process begins when the merchant activates the integration. Magento sends the OAuth consumer key and secret, an OAuth verifier, and the store [URL](https://glossary.magento.com/url) to the external application via HTTPS post to the page defined in the **Callback Link** field in Admin. See [Activate an integration](#activate) for more information.
 
-3. **Process activation information**. The integrator must store the activation information received in step 2. These parameters will be used to ask for  tokens.
+1. **Process activation information**. The integrator must store the activation information received in step 2. These parameters will be used to ask for  tokens.
 
-3. **Call the application's login page**. Magento calls the page defined in the **Identity Link** field in Admin.
+1. **Call the application's login page**. Magento calls the page defined in the **Identity Link** field in Admin.
 
-4. **Merchant logs in to the external application.** If the login is successful, the application returns to the location specified in the call. The login page is dismissed.
+1. **Merchant logs in to the external application.** If the login is successful, the application returns to the location specified in the call. The login page is dismissed.
 
-5. **Ask for a request token**. The application uses the `POST /oauth/token/request` REST API to ask for a request token. The `Authorization` header includes the consumer key and other information. See [Get a request token](#pre-auth-token) for details about this token request.
+1. **Ask for a request token**. The application uses the `POST /oauth/token/request` REST API to ask for a request token. The `Authorization` header includes the consumer key and other information. See [Get a request token](#pre-auth-token) for details about this token request.
 
-6. **Send the request token**. Magento returns a request token and request token secret.
+1. **Send the request token**. Magento returns a request token and request token secret.
 
-7. **Ask for an access token**. The application uses the `POST /oauth/token/access` REST API to ask for an access token. The `Authorization` header includes the request token and other information. See [Get an access token](#get-access-token) for details about this token request.
+1. **Ask for an access token**. The application uses the `POST /oauth/token/access` REST API to ask for an access token. The `Authorization` header includes the request token and other information. See [Get an access token](#get-access-token) for details about this token request.
 
-8. **Magento sends the access token**. If this request is successful, Magento returns an access token and access token secret.
+1. **Magento sends the access token**. If this request is successful, Magento returns an access token and access token secret.
 
-9. **The application can access Magento resources.** All requests sent to Magento must use the full set of request parameters in `Authorization` header. See [Access the web APIs](#web-api-access) for more information.
+1. **The application can access Magento resources.** All requests sent to Magento must use the full set of request parameters in `Authorization` header. See [Access the web APIs](#web-api-access) for more information.
 
 ## Activate an integration {#activate}
 
@@ -47,10 +46,10 @@ When the integration is created, Magento generates a consumer key and a consumer
 
 Activating the integration submits the credentials to the endpoint specified when creating the Integration. An HTTP POST from Magento to the Integration endpoint will contain these attributes:
 
-* `store_base_url` For example, `http://my-magento-store.com/`.
-* `oauth_verifier`
-* `oauth_consumer_key`
-* `oauth_consumer_secret`
+*  `store_base_url` For example, `http://my-magento-store.com/`.
+*  `oauth_verifier`
+*  `oauth_consumer_key`
+*  `oauth_consumer_secret`
 
 Integrations use the `oauth_consumer_key` key to get a request token and the `oauth_verifier` to get an access token.
 
@@ -58,8 +57,8 @@ Integrations use the `oauth_consumer_key` key to get a request token and the `oa
 
 The process of completing the OAuth handshake requires that you
 
-* [Get a request token](#pre-auth-token)
-* [Get an access token](#get-access-token)
+*  [Get a request token](#pre-auth-token)
+*  [Get an access token](#get-access-token)
 
 This process is known as a 2-legged OAuth handshake.
 
@@ -71,7 +70,6 @@ A request token is a temporary token that the user exchanges for an access token
 
 You must include these request parameters in the `Authorization`  header in the call:
 
-
 Parameter | Description
 --- | ---
 `oauth_consumer_key` | The consumer key is generated when you create the integration.
@@ -81,11 +79,10 @@ Parameter | Description
 `oauth_timestamp` | A positive integer, expressed in the number of seconds since January 1, 1970 00:00:00 GMT.
 `oauth_version` | The OAuth version.
 
-
 The response contains these fields:
 
-* `oauth_token`. The token to be used when requesting an access token.
-* `oauth_token_secret`.  A secret value that establishes ownership of the token.
+*  `oauth_token`. The token to be used when requesting an access token.
+*  `oauth_token_secret`.  A secret value that establishes ownership of the token.
 
 A valid response looks like this:
 
@@ -110,14 +107,13 @@ Parameter | Description
 `oauth_token` | The `oauth_token` value, or request token, obtained in [Get a request token](#pre-auth-token).
 `oauth_verifier` | The verification code that is tied to the consumer and request token. It is sent as part of the initial POST operation when the integration is activated.
 
-
 A valid response looks like this:
 `oauth_token=0lnuajnuzeei2o8xcddii5us77xnb6v0&oauth_token_secret=1c6d2hycnir5ygf39fycs6zhtaagx8pd`
 
 The response contains these fields:
 
-* `oauth_token`. The access token that provides access to protected resources.
-* `oauth_token_secret`. The secret that is associated with the access token.
+*  `oauth_token`. The access token that provides access to protected resources.
+*  `oauth_token_secret`. The secret that is associated with the access token.
 
 ## Access the web APIs {#web-api-access}
 
@@ -129,12 +125,12 @@ To use the access token to make [web API](https://glossary.magento.com/web-api) 
 
 You must include these request parameters in the `Authorization` request header in the call:
 
-* `oauth_consumer_key`. The customer key value provided after the registration of the extension.
-* `oauth_nonce`. A random value, uniquely generated by the application.
-* `oauth_signature_method`. The name of the signature method used to sign the request. Valid values are: `HMAC-SHA1`, `RSA-SHA1`, and `PLAINTEXT`.
-* `oauth_signature`. A generated value (signature).
-* `oauth_timestamp`. A positive integer, expressed in the number of seconds since January 1, 1970 00:00:00 GMT.
-* `oauth_token`. The `oauth_token`, or access token, value obtained in [Get an access token](#get-access-token).
+*  `oauth_consumer_key`. The customer key value provided after the registration of the extension.
+*  `oauth_nonce`. A random value, uniquely generated by the application.
+*  `oauth_signature_method`. The name of the signature method used to sign the request. Valid values are: `HMAC-SHA1`, `RSA-SHA1`, and `PLAINTEXT`.
+*  `oauth_signature`. A generated value (signature).
+*  `oauth_timestamp`. A positive integer, expressed in the number of seconds since January 1, 1970 00:00:00 GMT.
+*  `oauth_token`. The `oauth_token`, or access token, value obtained in [Get an access token](#get-access-token).
 
 ## The OAuth signature {#oauth-signature}
 
@@ -144,15 +140,14 @@ You concatenate a set of URL-encoded attributes and parameters to construct the 
 
 Use the ampersand (`&`) character to concatenate these attributes and parameters:
 
-
 1. HTTP method
-2. URL
-3. `oauth_nonce`
-4. `oauth_signature_method`
-5. `oauth_timestamp`
-6. `oauth_version`
-7. `oauth_consumer_key`
-8. `oauth_token`
+1. URL
+1. `oauth_nonce`
+1. `oauth_signature_method`
+1. `oauth_timestamp`
+1. `oauth_version`
+1. `oauth_consumer_key`
+1. `oauth_token`
 
 To generate the signature, you must use the HMAC-SHA1 signature method. The signing key is the concatenated values of the consumer secret and token secret separated by the ampersand (`&`) character (ASCII code 38), even if empty. You must use parameter encoding to encode each value.
 
@@ -165,18 +160,17 @@ The OAuth client is extended from and attributed to [PHPoAuthLib](https://github
 To simulate the OAuth 1.0a token exchange flow:
 
 1. Login to your Magento Admin and navigate to **System > Extensions > Integrations**
-2. Click on **Add New Integration**.
-3. Complete all details in the Integration Info tab:
-    * **Name** : SomeUniqueIntegrationName
-    * **Callback URL** : http://your_app_host/endpoint.php
-    * **Identity link URL** : http://your_app_host/login.php
-    * Add permissions as desired on the **API** tab
-4. Select the **Save and Activate** option from the drop down menu.
-5. A pop-up window displays, confirming API permissions. Click **Allow**. (Make sure your browser allows pop-up windows.)
-The credentials are posted to `endpoint.php`. You should also see another pop-up for the identity linking step that opens the script from `login.php`.
-6. Click **Login**. (There is no actual login check since this is a simulation.). The `checklogin.php` script is called. It uses the posted credentials to complete the token exchange.
-7. When the token exchange completes successfully, the user is redirected back to the Integrations grid. The newly-created integration should be in the Active state.
-8. Click on the edit icon of the integration and check the Integration Details on the Integration Info tab. It should show all the credentials that can be used to make an authenticated API request using OAuth 1.0.
+1. Click on **Add New Integration**.
+1. Complete all details in the Integration Info tab:
+   *  **Name** : SomeUniqueIntegrationName
+   *  **Callback URL** : http://your_app_host/endpoint.php
+   *  **Identity link URL** : http://your_app_host/login.php
+   *  Add permissions as desired on the **API** tab
+1. Select the **Save and Activate** option from the drop down menu.
+1. A pop-up window displays, confirming API permissions. Click **Allow**. (Make sure your browser allows pop-up windows.) The credentials are posted to `endpoint.php`. You should also see another pop-up for the identity linking step that opens the script from `login.php`.
+1. Click **Login**. (There is no actual login check since this is a simulation.). The `checklogin.php` script is called. It uses the posted credentials to complete the token exchange.
+1. When the token exchange completes successfully, the user is redirected back to the Integrations grid. The newly-created integration should be in the Active state.
+1. Click on the edit icon of the integration and check the Integration Details on the Integration Info tab. It should show all the credentials that can be used to make an authenticated API request using OAuth 1.0.
 
 ### checklogin.php
 
@@ -459,7 +453,8 @@ class OauthClient extends AbstractService
 ```
 {% endcollapsible %}
 
-## Related topics
+{:.ref-header}
+Related topics
 
 [Create an integration]( {{ page.baseurl }}/get-started/create-integration.html )
 

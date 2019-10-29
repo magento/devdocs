@@ -3,7 +3,6 @@ group: javascript-developer-guide
 subgroup: 3_Widgets
 title: Alert widget
 ---
-## Overview {#alert_overview}
 
 The Magento alert widget implements a modal pop-up window with a confirmation button. It extends the [Magento modal widget].
 
@@ -33,7 +32,7 @@ $('#init_element').alert({
 require([
     'Magento_Ui/js/modal/alert'
 ], function(alert) { // Variable that represents the `alert` function
- 
+
     alert({
         title: $.mage.__('Some title'),
         content: $.mage.__('Some content'),
@@ -41,7 +40,7 @@ require([
             always: function(){}
         }
     });
- 
+
 });
 ```
 
@@ -51,14 +50,14 @@ For details about how to initialize a widget in a`.phtml` template, refer to the
 
 The alert widget has the following options:
 
-- [actions]
-- [autoOpen]
-- [clickableOverlay]
-- [content]
-- [focus]
-- [title]
-- [modalClass]
-- [buttons]
+-  [actions]
+-  [autoOpen]
+-  [clickableOverlay]
+-  [content]
+-  [focus]
+-  [title]
+-  [modalClass]
+-  [buttons]
 
 ### `actions` {#alert_actions}
 
@@ -66,7 +65,7 @@ Widget callbacks.
 
 **Type**: Object.
 
-**Default value**: 
+**Default value**:
 
 ```javascript
 actions: {
@@ -78,7 +77,7 @@ actions: {
 
 Automatically open the alert window when the widget is initialized.
 
-**Type**: Boolean 
+**Type**: Boolean
 
 **Default value**: `false`
 
@@ -88,7 +87,7 @@ The buttons list.
 
 **Type**: Array of Objects.
 
-**Default value**: 
+**Default value**:
 
 ```javascript
 buttons: [{
@@ -104,7 +103,7 @@ buttons: [{
 
 Close the alert window when a user clicks on the overlay.
 
-**Type**: Boolean 
+**Type**: Boolean
 
 **Default value**: `true`
 
@@ -162,7 +161,7 @@ require([
     'Magento_Ui/js/modal/alert'
 ], function ($, alert) {
     'use strict';
-    
+
     alert({
         title: 'Alert Title',
         content: $('.alert-modal-content'),
@@ -175,7 +174,7 @@ require([
         buttons: [{
             text: $.mage.__('Accept'),
             class: 'action primary accept',
-    
+
             /**
              * Click handler.
              */
@@ -185,7 +184,7 @@ require([
         }, {
             text: $.mage.__('New Action'),
             class: 'action',
-    
+
             /**
              * Click handler.
              */
@@ -211,7 +210,7 @@ require([
     'Magento_Ui/js/modal/alert'
 ], function ($) {
     'use strict';
-    
+
     $('.alert-modal-content').alert({
         title: 'Alert Title',
         modalClass: 'alert',
@@ -223,7 +222,7 @@ require([
         buttons: [{
             text: $.mage.__('Accept'),
             class: 'action primary accept',
-    
+
             /**
              * Click handler.
              */
@@ -233,7 +232,7 @@ require([
         }, {
             text: $.mage.__('New Action'),
             class: 'action',
-    
+
             /**
              * Click handler.
              */

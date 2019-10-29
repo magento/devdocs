@@ -14,8 +14,8 @@ functional_areas:
 
 Now that all the items have been added to the cart, we can prepare the quote for [checkout](https://glossary.magento.com/checkout). This process includes the following steps:
 
-* Estimate shipping costs
-* Set shipping and billing information
+*  Estimate shipping costs
+*  Set shipping and billing information
 
 ### Estimate shipping costs {#estimate-shipping}
 
@@ -147,7 +147,6 @@ Magento returns a list of payment options and calculates the order totals.
 The subtotal of the order is $2462, and shipping charges are $350. The grand total is $2812.
 
 The available payment methods are `banktransfer` and `checkmo`. The customer will specify a [payment method](https://glossary.magento.com/payment-method) in the next step.
-
 
 ```json
 {

@@ -4,8 +4,6 @@ subgroup: 3_Widgets
 title: Gallery widget
 ---
 
-## Overview
-
 The gallery jQuery widget implements a content area with images organized into preview and thumbnails blocks.
 
 The following picture is an illustration of image displaying on the product page using the gallery widget:
@@ -95,10 +93,10 @@ Example of declarative initialization:
 
 The following option groups are available for the gallery widget:
 
-* [`data`](#data)
-* [`options`](#options)
-* [`fullscreen`](#fullscreen)
-* [`breakpoints`](#breakpoints)
+*  [`data`](#data)
+*  [`options`](#options)
+*  [`fullscreen`](#fullscreen)
+*  [`breakpoints`](#breakpoints)
 
 All options for each group are described further.
 
@@ -213,9 +211,9 @@ Variation of thumbnails in navigation.
 
 **Possible values**:
 
-- `dots`: iPhone-style dots
-- `thumbs`: thumbnails
-- `false`: nothing
+*  `dots`: iPhone-style dots
+*  `thumbs`: thumbnails
+*  `false`: nothing
 
 **Default**: `dots`
 
@@ -225,8 +223,8 @@ Sliding direction of thumbnails.
 
 **Possible values**:
 
-- `vertical`
-- `horizontal`
+*  `vertical`
+*  `horizontal`
 
 #### `options/navarrows` {#gallery_navarrows}
 
@@ -240,8 +238,8 @@ Sliding type of thumbnails.
 
 **Possible values**:
 
-- `slides`: on the arrow button click the thumbs ribbon shifts over several thumbs
-- `thumb`: on the arrow button click the thumbs ribbon shifts over one thumb
+*  `slides`: on the arrow button click the thumbs ribbon shifts over several thumbs
+*  `thumb`: on the arrow button click the thumbs ribbon shifts over one thumb
 
 #### `options/ratio` {#gallery_ratio}
 
@@ -279,7 +277,7 @@ Width of thumbnails.
 
 **Type**: Number, String
 
-#### `options/thumbheight` {#gallery_thumbwidth}
+#### `options/thumbheight` {#gallery_thumbheight}
 
 Height of thumbnails.
 
@@ -291,9 +289,9 @@ Sets the transition effect for slides changing.
 
 **Possible values**:
 
-* `slide`
-* `crossfade`
-* `dissolve`
+*  `slide`
+*  `crossfade`
+*  `dissolve`
 
 #### `options/transitionduration` {#gallery_transitionduration}
 Sets transition duration in milliseconds.
@@ -345,9 +343,9 @@ Variation of thumbnails in navigation in the fullscreen view.
 
 **Possible values**:
 
-- `dots`: iPhone-style dots
-- `thumbs`: thumbnails
-- `false`: nothing
+*  `dots`: iPhone-style dots
+*  `thumbs`: thumbnails
+*  `false`: nothing
 
 #### `fullscreen/navdir` {#full_navdir}
 
@@ -355,8 +353,8 @@ Sliding direction of thumbnails in the fullscreen view.
 
 **Possible values**:
 
-- `vertical`
-- `horizontal`
+*  `vertical`
+*  `horizontal`
 
 #### `fullscreen/navarrows` {#full_navarrows}
 
@@ -372,8 +370,8 @@ Type of navigation.
 
 **Possible values**:
 
-- `thumbs`
-- `slides`
+*  `thumbs`
+*  `slides`
 
 **Default value**: `thumbs`
 
@@ -407,9 +405,9 @@ Sets the transition effect for slides changing in the fullscreen view.
 
 **Possible values**:
 
-* `slide`
-* `crossfade`
-* `dissolve`
+*  `slide`
+*  `crossfade`
+*  `dissolve`
 
 #### `fullscreen/transitionduration` {#fullscreen_transitionduration}
 Sets transition duration in milliseconds in the fullscreen view.
@@ -434,8 +432,8 @@ Set as follows:
 
 Where the options are as follows:
 
- - `conditions`: compiled in [media query](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries) through and operand. For example: `"max-width": "767px"`
- - `options` - object of options that are applied
+*  `conditions`: compiled in [media query](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries) through and operand. For example: `"max-width": "767px"`
+*  `options` - object of options that are applied
 
 ## Configure gallery options in `view.xml`
 
@@ -499,43 +497,43 @@ api.%method_name%();
 
 All available methods are listed in the following paragraph.
 
-### Methods {#gallery_methods}
+## Methods {#gallery_methods}
 
-* [first](#gallery_first)
-* [last](#gallery_last)
-* [next](#gallery_next)
-* [prev](#gallery_prev)
-* [seek](#gallery_seek)
-* [updateData](#gallery_updateData)
-* [updateOptions](#gallery_updateData)
+*  [first()](#gallery_first)
+*  [last()](#gallery_last)
+*  [next()](#gallery_next)
+*  [prev()](#gallery_prev)
+*  [seek()](#gallery_seek)
+*  [updateData()](#gallery_updateData)
+*  [updateOptions()](#gallery_updateData)
 
-#### `first()` {#gallery_first}
+### `first()` {#gallery_first}
 
 Displays the first preview image.
 
-#### `last()` {#gallery_last}
+### `last()` {#gallery_last}
 
 Displays the last preview image.
 
-#### `next()` {#gallery_next}
+### `next()` {#gallery_next}
 
 Image ID is passed as an argument. Displays the next preview image.
 
 If the last image ID is passed, the behavior depends on whether [loop](#gallery_loop) is enabled:
 
-* if loop is enabled, the first image is displayed.
-* if loop is disabled, does not change the displayed image.
+*  if loop is enabled, the first image is displayed.
+*  if loop is disabled, does not change the displayed image.
 
-#### `prev()` {#gallery_prev}
+### `prev()` {#gallery_prev}
 
 Displays the previous preview image.
 
 If the first image ID is passed, the behavior depends on whether [loop](#gallery_loop) is enabled:
 
-* if loop is enabled, the last image is displayed.
-* if loop is disabled, does not change the displayed image.
+*  if loop is enabled, the last image is displayed.
+*  if loop is disabled, does not change the displayed image.
 
-#### `seek()` {#gallery_seek}
+### `seek()` {#gallery_seek}
 
 Displays the image with the specified `index`.
 
@@ -543,16 +541,17 @@ Doesn't update preview if the argument is not valid.
 
 Behavior:
 
-* `seek(0)` does not display any preview
-* `seek(1)` displays the first image.
-* `seek(-1)` displays the last image.
-* If the argument is a number bigger than the number of items, or less than "-(number of items)" the gallery shows the modulus of the following division: total images number divided by the argument number.  
+*  `seek(0)` does not display any preview
+*  `seek(1)` displays the first image.
+*  `seek(-1)` displays the last image.
+*  If the argument is a number bigger than the number of items, or less than "-(number of items)" the gallery shows the modulus of the following division: total images number divided by the argument number.
 
-#### `updateData()` {#gallery_updateData}
+### `updateData()` {#gallery_updateData}
 
 Add new items to the gallery.
 
 Example:
+
 ```php
 api.updateData([{
     img: 'image1.jpg',
@@ -561,10 +560,11 @@ api.updateData([{
 }]);
 ```
 
-#### `updateOptions()` {#gallery_updateOptions}
+### `updateOptions()` {#gallery_updateOptions}
 Updates options of active breakpoint or default gallery options, if there is no active breakpoint.
 
 Example:
+
 ```php
 api.updateOptions([{
     nav: 'dots'

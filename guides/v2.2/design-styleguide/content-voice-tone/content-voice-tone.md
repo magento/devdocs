@@ -8,15 +8,16 @@ menu_node:
 functional_areas:
   - Content
 ---
+
 Our priority is to help users perform administrative tasks with ease and manage their stores effectively.
 
 Magento’s voice is:
 
-* Instructional and clear. The content is concise but informational, guiding the user to successfully perform tasks.
+*  Instructional and clear. The content is concise but informational, guiding the user to successfully perform tasks.
 
-* Casual but professional and direct.
+*  Casual but professional and direct.
 
-* Empowering.
+*  Empowering.
 
 ## Guidelines
 
@@ -33,7 +34,7 @@ Content should be gender neutral. To avoid “his” or “her” pronouns, chan
 <ul style="list-style-type:none">
   <li><strong>No</strong> – "A merchant can update his extensions."</li>
   <li>Yes – "Merchants can update their extensions."</li>
-</ul>  
+</ul>
 <br>
 
 **Follow accessibility and readability standards.**
@@ -50,19 +51,19 @@ In all contexts, strive for accuracy and consistency to inspire and build confid
 
 When uncertain about using a correct term or style, consult the following documents:
 
-* The [Magento Glossary](https://glossary.magento.com/)
+*  The [Magento Glossary](https://glossary.magento.com/)
 
-* [Admin Design Pattern Library]({{ page.baseurl }}/pattern-library/bk-pattern.html)
+*  [Admin Design Pattern Library]({{ page.baseurl }}/pattern-library/bk-pattern.html)
 
 For standards not included in those documents, we use the following stylebooks:
 
-* *First reference:* The Associated Press (AP) Stylebook
+*  *First reference:* The Associated Press (AP) Stylebook
 
-* *Second reference:* Microsoft Manual of Style, specifically these chapters:
+*  *Second reference:* Microsoft Manual of Style, specifically these chapters:
 
-  * Content for a worldwide audience (Ch. 3)
-  * Accessible content (Ch. 4)
-  * Procedures and technical content (Ch. 6)
+   *  Content for a worldwide audience (Ch. 3)
+   *  Accessible content (Ch. 4)
+   *  Procedures and technical content (Ch. 6)
 
 **Avoid jargon, slang, and acronyms.**
 
@@ -84,7 +85,7 @@ When introducing a term that may be unfamiliar to merchants, apply a glossary te
 <ul style="list-style-type:none">
   <li><strong>No</strong> – “This SaaS feature is only available in Magento Commerce.”</li>
   <li>Yes – “This [software as a service](https://glossary.magento.com/software-as-a-service) (SaaS) feature is only available in Magento Commerce.”</li>
-</ul>  
+</ul>
 <br>
 
 **Empower the merchant with positive tone and sentence structure.**
@@ -96,7 +97,7 @@ Avoid negative sentence constructions using words like "no", "never", "don't" to
 <ul style="list-style-type:none">
   <li><strong>No</strong> – Don’t use negative sentence construction.</li>
   <li>Yes – Use positive, instead of negative, sentence construction.</li>
-</ul>  
+</ul>
 <br>
 
 **Use active voice.**
@@ -112,7 +113,7 @@ Use the "zombie test" – if you can put the words “by zombies” after a subj
 <ul style="list-style-type:none">
   <li><strong>No</strong> – “The store address is used to calculate ...”</li>
   <li>Yes – “The system uses the store address to calculate ...”</li>
-</ul>  
+</ul>
 <br>
 
 **Write in present tense.**
@@ -128,7 +129,7 @@ Use future tense only to emphasize that something, from the user’s perspective
 <ul style="list-style-type:none">
   <li><strong>No</strong> – A customer will receive an email confirmation after purchase.</li>
   <li>Yes – A customer receives an email confirmation after purchase.</li>
-</ul>  
+</ul>
 <br>
 
 **Avoid personal pronouns.**
@@ -149,7 +150,7 @@ Most websites have eliminated personal pronouns because using pronouns like “y
 <ul style="list-style-type:none">
   <li><strong>No</strong> – We will send a confirmation, and you will receive it in 2-3 days.</li>
   <li>Yes – You will receive a confirmation in 2-3 days.</li>
-</ul>  
+</ul>
 <br>
 
 **Use consistent labels in user-interface (UI) content.**
@@ -164,7 +165,7 @@ Consistency is critical. For example, wherever content is displayed in [Data Tab
 <ul style="list-style-type:none">
   <li>Yes – “Continue” button in “Catalog” pages</li>
   <li>Yes – “Continue” button in “Reports” pages</li>
-</ul>  
+</ul>
 
 *Incorrect example of button-label consistency, in a task flow:*
 
@@ -181,13 +182,13 @@ Consistency is critical. For example, wherever content is displayed in [Data Tab
 Take a neutral tone – don’t blame a merchant or in any way indicate that the merchant made a mistake. Use “business casual” and easy-to-understand language. Avoid personal pronouns and technical jargon. Content structure and formatting should follow this order:
 
 1. Tell merchants what went wrong, in specific terms.
-2. Instruct how to fix the problem and continue the current task. If the error can’t be resolved online, try to give merchants an appropriate offline contact option and a timeframe when they should try again.
+1. Instruct how to fix the problem and continue the current task. If the error can’t be resolved online, try to give merchants an appropriate offline contact option and a timeframe when they should try again.
 
 *Example:*
 
 <ul style="list-style-type:none">
   <li><strong>No</strong> – “You didn’t enter your email address.”</li>
   <li>Yes – “An email address is required. Enter the email address and click “Continue”.”</li>
-</ul>  
+</ul>
 
 *For more details,* see [Errors and Messages Writing standards]({{ page.baseurl }}/design-styleguide/errors-and-messages/errors-and-messages.html).

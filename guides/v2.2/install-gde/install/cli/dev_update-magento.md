@@ -15,41 +15,41 @@ This topic discusses how a contributing developer can update the Magento applica
 
 To update the Magento software if you're a contributing developer:
 
-1.	Log in to your Magento server as, or switch to, the [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html).
-3. Save any changes you made to `composer.json` because the following steps will overwrite it:
+1. Log in to your Magento server as, or switch to, the [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html).
+1. Save any changes you made to `composer.json` because the following steps will overwrite it:
 
-    ```bash
-    cd <magento_root>
-    ```
-    
-    ```bash
-    cp composer.json composer.json.old
-    ```
+   ```bash
+   cd <magento_root>
+   ```
 
-3.	Update your local repository to get the latest code:
+   ```bash
+   cp composer.json composer.json.old
+   ```
 
-    ```bash
-    git pull origin develop
-    ```
+1. Update your local repository to get the latest code:
 
-	{:.bs-callout .bs-callout-info}
-    If `git pull origin develop` fails, see [troubleshooting]({{ page.baseurl }}/install-gde/trouble/git/tshoot_git-pull-origin.html).
+   ```bash
+   git pull origin develop
+   ```
 
-3.	Diff and merge your `composer.json.old` with `composer.json` installed with the Magento software.
-4.	Enter the following command:
+   {: .bs-callout-info }
+   If `git pull origin develop` fails, see [troubleshooting]({{ page.baseurl }}/install-gde/trouble/git/tshoot_git-pull-origin.html).
 
-    ```bash
-    composer update
-    ```
+1. Diff and merge your `composer.json.old` with `composer.json` installed with the Magento software.
+1. Enter the following command:
 
-5.	Update the Magento database:
+   ```bash
+   composer update
+   ```
 
-    ```bash
-    <magento_root>/bin/magento setup:upgrade
-    ```
+1. Update the Magento database:
 
-6.  Clean the cache:
+   ```bash
+   <magento_root>/bin/magento setup:upgrade
+   ```
 
-    ```bash
-    bin/magento cache:clean
-    ```
+1. Clean the cache:
+
+   ```bash
+   bin/magento cache:clean
+   ```

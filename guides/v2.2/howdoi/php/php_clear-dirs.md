@@ -3,15 +3,15 @@ group: php-developer-guide
 subgroup: 99_Module Development
 title: Clear directories during development
 menu_title: Clear directories during development
-menu_node: 
+menu_node:
 menu_order: 200
 ---
 
 #### Contents
 
-*	<a href="#howdoi-clear-over">Overview of directory clearing</a>
-*	<a href="#howdoi-clear-what">What directories to clear</a>
-*	<a href="#howdoi-clear-how">How to clear the directories</a>
+*  [Overview of directory clearing](#howdoi-clear-over)
+*  [What directories to clear](#howdoi-clear-what)
+*  [How to clear the directories](#howdoi-clear-how)
 
 ## Overview of directory clearing {#howdoi-clear-over}
 

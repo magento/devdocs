@@ -9,22 +9,22 @@ functional_areas:
   - Deploy
 ---
 
----
+{:.ref-header}
+Previous step
 
-#### Previous step:
 [Install Magento]({{ page.baseurl }}/cloud/before/before-setup-env-install.html)
 
-{:.bs-callout .bs-callout-info}
+{: .bs-callout-info }
 You only need to complete this step one time for a new **Pro project**. This code is already on `master` for the Starter project. As a best practice, you need to have the template {{site.data.var.ee}} project (or `master` branch) fully deployed across all environments to ensure all future code pushes correctly deploy.
 
 After fully setting up your local workspace, for **Pro** you should have the cloned Integration `master` branch on your local. To finish your initial setup, we **strongly recommend fully deploying** `master` branch to Staging and Production environments. You only need to push this branch from Integration to Staging and Production once without any changes. This fully installs the base {{site.data.var.ee}} application into those environments.
 
 This initial push provides the following benefits:
 
-* Fully installs Magento in each environment
-* Allows the build/deploy scripts to use the `setup:upgrade` command instead of `setup:install` (important for adding extensions)
-* Pushes the Magento encryption key across all environments
-* Protects against errors and failures when installing with added modules and extensions
+*  Fully installs Magento in each environment
+*  Allows the build/deploy scripts to use the `setup:upgrade` command instead of `setup:install` (important for adding extensions)
+*  Pushes the Magento encryption key across all environments
+*  Protects against errors and failures when installing with added modules and extensions
 
   Not all extensions are correctly tested with the setup:install command and application modes. If you initially install Magento code with added 3rd party extensions or custom code, you may receive errors and build/deploy failures. By deploying the unmodified Magento template, all future deployments to Staging and Production typically do not encounter installation issues from 3rd party and custom code.
 
@@ -32,9 +32,9 @@ This initial push provides the following benefits:
 
 To deploy, you need the following:
 
-* A project with an unmodified {{site.data.var.ee}} template `master` branch (projects created using the import option may encounter issues)
-* Staging and Production environments provisioned
-* SSH access to Staging and Production environments
+*  A project with an unmodified {{site.data.var.ee}} template `master` branch (projects created using the import option may encounter issues)
+*  Staging and Production environments provisioned
+*  SSH access to Staging and Production environments
 
 ## Enter a ticket {#ticket}
 
@@ -51,10 +51,10 @@ The Project Web Interface provides full features to create, manage, and deploy c
 For the Pro plan, deploy the branch you created to Staging and Production.
 
 1. [Log in](https://accounts.magento.cloud) to your project.
-2. Select the branch you created.
-3. Select the **Merge** option to deploy to Staging.
-4. Select the Staging branch.
-5. Select the **Merge** option to deploy to Production.
+1. Select the branch you created.
+1. Select the **Merge** option to deploy to Staging.
+1. Select the Staging branch.
+1. Select the **Merge** option to deploy to Production.
 
 ![Use the merge option to deploy]({{ site.baseurl }}/common/images/cloud_project-merge.png)
 
@@ -64,20 +64,20 @@ If you prefer to use CLI for deploying, you will need to configure additional SS
 
 You'll need the SSH and Git with your project ID. The formats are as follows:
 
-*	Git URL format:
+*  Git URL format:
 
-	*	Staging: `git@git.ent.magento.cloud:<project ID>_stg.git`
-	*	Production: `git@git.ent.magento.cloud:<project ID>.git`
+   *  Staging: `git@git.ent.magento.cloud:<project ID>_stg.git`
+   *  Production: `git@git.ent.magento.cloud:<project ID>.git`
 
-*	SSH URL format:
+*  SSH URL format:
 
-	*	Staging: `<project ID>_stg@<project ID>.ent.magento.cloud`
-	*	Production: `<project ID>@<project ID>.ent.magento.cloud`
+   *  Staging: `<project ID>_stg@<project ID>.ent.magento.cloud`
+   *  Production: `<project ID>@<project ID>.ent.magento.cloud`
 
 As part of pushing the code, you may need to:
 
-* [Set up remote Git repos](#cloud-live-migrate-git)
-* [Set up the SSH agent](#cloud-live-migrate-agent) on environments
+*  [Set up remote Git repos](#cloud-live-migrate-git)
+*  [Set up the SSH agent](#cloud-live-migrate-agent) on environments
 
 After that is set up, you can SSH into the environment and use Git commands to push the branches.
 
@@ -87,12 +87,19 @@ When you know your Git URLs, you must set them up as remote upstream repositorie
 
 Command syntax:
 
-	git remote add <remote repository name> <remote repository URL>
+```bash
+git remote add <remote repository name> <remote repository URL>
+```
 
 For example,
 
-	git remote add staging git@git.ent.magento.cloud:dr5q6no7mhqip_stg.git
-	git remote add prod git@git.ent.magento.cloud:dr5q6no7mhqip.git
+```bash
+git remote add staging git@git.ent.magento.cloud:dr5q6no7mhqip_stg.git
+```
+
+```bash
+git remote add prod git@git.ent.magento.cloud:dr5q6no7mhqip.git
+```
 
 ### Set up your SSH agent {#cloud-live-migrate-agent}
 
@@ -102,32 +109,42 @@ The SSH agent forwards authentication requests from Staging or Production to you
 
 To set up an SSH agent:
 
-1.	Log in to local development machine.
-2.	Enter the following command:
+1. Log in to local development machine.
+1. Enter the following command:
 
-		ssh-add -l
+   ```bash
+   ssh-add -l
+   ```
 
-	One of the following messages displays:
+   One of the following messages displays:
 
-	*	Working SSH agent: `2048 ab:de:56:94:e3:1e:71:c3:4f:df:e1:62:8d:29:a5:c0 /home/magento_user/.ssh/id_rsa (RSA)`
+   *  Working SSH agent: `2048 ab:de:56:94:e3:1e:71:c3:4f:df:e1:62:8d:29:a5:c0 /home/magento_user/.ssh/id_rsa (RSA)`
 
-		Skip the next step and continue with step 4.
-	*	SSH agent not started: `Could not open a connection to your authentication agent.`
+      Skip the next step and continue with step 4.
 
-		Continue with step 3.
+   *  SSH agent not started: `Could not open a connection to your authentication agent.`
 
-3.	To start the SSH agent, enter the following command:
+      Continue with step 3.
 
-		  eval $(ssh-agent -s)
+1. To start the SSH agent, enter the following command:
 
-	The agent's process ID (PID) displays.
-4.	Add your SSH key to the agent:
+   ```bash
+   eval $(ssh-agent -s)
+   ```
 
-		  ssh-add ~/.ssh/id_rsa
+   The agent's process ID (PID) displays.
 
-	A message similar to the following displays:
+1. Add your SSH key to the agent:
 
-		  Identity added: /home/magento_user/.ssh/id_rsa (/home/magento_user/.ssh/id_rsa)
+   ```bash
+   ssh-add ~/.ssh/id_rsa
+   ```
+
+   A message similar to the following displays:
+
+   ```terminal
+   Identity added: /home/magento_user/.ssh/id_rsa (/home/magento_user/.ssh/id_rsa)
+   ```
 
 For more information on setting up SSH, see [Enable SSH keys]({{ page.baseurl }}/cloud/before/before-workspace-ssh.html) as part of your local setup.
 
@@ -135,11 +152,14 @@ For more information on setting up SSH, see [Enable SSH keys]({{ page.baseurl }}
 
 1. Open an SSH connection to your Staging or Production environment:
 
-    * Staging: `ssh -A <project ID>_stg@<project ID>.ent.magento.cloud`
-    * Production: `ssh -A <project ID>@<project ID>.ent.magento.cloud`
-2. Pull the `master` branch to the server.
+   *  Staging: `ssh -A <project ID>_stg@<project ID>.ent.magento.cloud`
+   *  Production: `ssh -A <project ID>@<project ID>.ent.magento.cloud`
 
-        git pull origin master
+1. Pull the `master` branch to the server.
+
+   ```bash
+   git pull origin master
+   ```
 
 ## You're ready to code! {#code}
 

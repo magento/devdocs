@@ -52,7 +52,6 @@ where
 |session-save-redis-sentinel-verify-master|sentinel_verify_master|Verify Redis Sentinel master status flag|0 (false)|
 |session-save-redis-sentinel-connect-retires|sentinel_connect_retries|Connection retries for sentinels|5|
 
-
 ### Example command
 
 The following example sets Redis as the session data store, sets the host to `127.0.0.1`, sets the log level to 3, and sets the database number to 2. All other parameters are set to the default value.
@@ -100,7 +99,8 @@ TTL for session records use the value for Cookie Lifetime, which is configured i
 
 {% include config/redis-verify.md %}
 
-## Related topics
+{:.ref-header}
+Related topics
 
-* [Create or extend configuration types]({{ page.baseurl }}/config-guide/config/config-create.html)
-* [Magento's deployment configuration]({{ page.baseurl }}/config-guide/config/config-php.html)
+*  [Create or extend configuration types]({{ page.baseurl }}/config-guide/config/config-create.html)
+*  [Magento's deployment configuration]({{ page.baseurl }}/config-guide/config/config-php.html)

@@ -5,7 +5,7 @@ title: Array Manager
 
 ## Overview
 
-The [`Magento\Framework\Stdlib\ArrayManager`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Stdlib/ArrayManager.php){:target="_blank"} library provides the ability to manage deeply nested associative arrays. 
+The [`Magento\Framework\Stdlib\ArrayManager`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Stdlib/ArrayManager.php){:target="_blank"} library provides the ability to manage deeply nested associative arrays.
 The library is primarily used to handle data from UI components within [DataProviders]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_data_source.html) and [Modifiers]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_modifier_concept.html), which are actually part of a complicated process of parsing XML files in associative arrays.
 
 ## Usage
@@ -19,7 +19,7 @@ The library is primarily used to handle data from UI components within [DataProv
 | `replace` | Updates the existing nodes and returns the modified array |
 | `set` | Set value into node and returns modified data |
 
-#### Example 1
+### Example 1
 
 The following example shows how to add a custom field to the checkout billing address using the [LayoutProcessor implementation]({{ site.mage2bloburl }}/1f9186c3b9a96c5e642fd5d3d31ac5c7e1877d2b/app/code/Magento/Checkout/Block/Checkout/LayoutProcessor.php#L143){:target="_blank"}.
 
@@ -35,7 +35,7 @@ The following example shows how to add a custom field to the checkout billing ad
 public function process($jsLayout)
 {
     ...
-    
+
     if (isset($jsLayout['components']['checkout']['children']['steps']['children']['shipping-step']
         ['children']['shippingAddress']['children']['shipping-address-fieldset']['children'])
     ) {
@@ -44,7 +44,7 @@ public function process($jsLayout)
 
         ...
     }
-    
+
     ...
 }
 ```
@@ -94,7 +94,7 @@ use Magento\Framework\Stdlib\ArrayManager;
 
 ```
 
-#### Example 2
+### Example 2
 
 Suppose you have the following nested array:
 

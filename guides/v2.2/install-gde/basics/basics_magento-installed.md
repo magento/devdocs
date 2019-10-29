@@ -19,9 +19,11 @@ To determine if the Magento software is installed already, you can access the [M
 
 Then open a web browser and go to the URL you were provided. Some examples follow:
 
-	http://www.example.com/magento2/admin
-	https://www.example.com/admin
-	http://www.example.com
+```http
+http://www.example.com/magento2/admin
+https://www.example.com/admin
+http://www.example.com
+```
 
 If a 404 (Not Found) error displays, Magento probably isn't installed. You should confirm that with your system administrator or hosting provider.
 
@@ -31,7 +33,6 @@ Magento Admin:
 
 ![Magento Admin which verifies a successful installation]({{ site.baseurl }}/common/images/install_success_admin.png)
 
-
 Magento storefront:
 
 ![Magento storefront which verifies a successful installation]({{ site.baseurl }}/common/images/install-success_store.png)
@@ -40,9 +41,10 @@ Magento storefront:
 
 If Magento *is* installed and you want to manage or upgrade components, see the following guides instead:
 
-*	[Component Manager Guide]({{ page.baseurl }}/comp-mgr/bk-compman-upgrade-guide.html)
+*  [Component Manager Guide]({{ page.baseurl }}/comp-mgr/bk-compman-upgrade-guide.html)
 
-	A Magento *component* is an extension, language package, or theme. The Component Manager installs, uninstalls, updates, enables, or disables components.
-*	[Upgrade Guide]({{ page.baseurl }}/comp-mgr/upgrader/upgrade-start.html)
+   A Magento *component* is an extension, language package, or theme. The Component Manager installs, uninstalls, updates, enables, or disables components.
 
-	Upgrade the Magento software or components.
+*  [Upgrade Guide]({{ page.baseurl }}/comp-mgr/upgrader/upgrade-start.html)
+
+   Upgrade the Magento software or components.

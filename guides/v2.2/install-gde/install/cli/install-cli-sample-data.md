@@ -13,8 +13,7 @@ functional_areas:
 
 {% include install/sampledata/sample-data-intro.md %}
 
+For more detail about these options, see:
 
-For more detail about these options, see: 
-
-*	[Install using Composer]({{ page.baseurl }}/install-gde/install/cli/install-cli-sample-data-composer.html)
-*	[Install by cloning repositories]({{ page.baseurl }}/install-gde/install/cli/install-cli-sample-data-clone.html)
+*  [Install using Composer]({{ page.baseurl }}/install-gde/install/cli/install-cli-sample-data-composer.html)
+*  [Install by cloning repositories]({{ page.baseurl }}/install-gde/install/cli/install-cli-sample-data-clone.html)

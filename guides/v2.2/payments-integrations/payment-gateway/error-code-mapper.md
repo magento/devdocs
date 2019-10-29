@@ -40,10 +40,10 @@ The  [braintree_error_mapping.xml]({{ site.mage2bloburl }}/{{ page.guide_version
 
 The message definitions are based on the [error_mapping.xsd]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Payment/etc/error_mapping.xsd) schema. Messages must comply with the following structure:
 
- - `message_list` &mdash; the root node. It can contain a list of specific messages
- - `message` &mdash; the node, which contains the customized message and two attributes
-     - `code` &mdash; the error code returned from the payment gateway. The value can be numeric or string
-     - `translate` &mdash; a boolean attribute that determines whether to collect all message translations
+-  `message_list` &mdash; the root node. It can contain a list of specific messages
+-  `message` &mdash; the node, which contains the customized message and two attributes
+   -  `code` &mdash; the error code returned from the payment gateway. The value can be numeric or string
+   -  `translate` &mdash; a boolean attribute that determines whether to collect all message translations
 
 ### Configure dependency injection
 
@@ -102,7 +102,6 @@ A response validator verifies response codes from the payment gateway.
 It has different responsibilities and should not map messages, because it works on the lower layer of communication between Magento and the payment gateway.
 It is the responsibility of a gateway command to call an appropriate service.
 
-
 For example, Magento provides a response validator for Braintree: [`\Magento\Braintree\Gateway\Validator\GeneralResponseValidator`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Braintree/Gateway/Validator/GeneralResponseValidator.php).
 Its implementation allows to add additional validators.
 
@@ -127,7 +126,6 @@ class ErrorCodeValidator
     }
 }
 ```
-
 
 Then add the created validator to a list of validators in the `GeneralResponseValidator` class:
 

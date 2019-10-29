@@ -22,8 +22,7 @@ redirect_from:
 
 ## {{ group.name }}
 
-
-Description |	Versions |	Type	| Date
+Description | Versions | Type | Date
 ---|---|---|---{% for item in group.items %}
 {{ item.description }} | {{ item.versions }} | {{ item.type }} |
 {%- if item.link -%}

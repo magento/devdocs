@@ -17,13 +17,12 @@ For more details, see [Title Case standards]({{ page.baseurl }}/design-styleguid
 <ul style="list-style-type:none">
   <li><strong>No</strong> – “Free Demo”</li>
   <li>Yes – “Sign Up for Free Demo”</li>
-</ul>  
-
+</ul>
 
 <ul style="list-style-type:none">
   <li><strong>No</strong> – “New Rule”</li>
   <li>Yes – “Add Rule”</li>
-</ul>  
+</ul>
 
 ## Buttons
 
@@ -31,9 +30,9 @@ Buttons are calls to action, and their labels should be limited to three words (
 
 Buttons can be used for:
 
-* Calls to action for task flows: to begin, continue, or submit a task
+*  Calls to action for task flows: to begin, continue, or submit a task
 
-* Navigation in featured modules of content, like banners and content teasers
+*  Navigation in featured modules of content, like banners and content teasers
 
 Button types are primary, secondary, and tertiary. Each page should have a maximum limit of one primary button. Split buttons include multiple actions. Button counts in a Button Bar or any array of buttons should be limited to four buttons, maximum.
 
@@ -45,9 +44,9 @@ Minimize the amount of words — within 2-5 words, ideally — in a link label a
 
 Other links guidance includes:
 
-* **Avoid spawning new windows / tabs.** As a general rule, new tabs and windows can confuse users and cause them to close their browser windows. However, exceptions for usage do exist.
+*  **Avoid spawning new windows / tabs.** As a general rule, new tabs and windows can confuse users and cause them to close their browser windows. However, exceptions for usage do exist.
 
-* **External-link icon.** Only use when linking to a non-Magento page. ... *Correct example:* Go to [Wikipedia](https://www.wikipedia.org/)
+*  **External-link icon.** Only use when linking to a non-Magento page. ... *Correct example:* Go to [Wikipedia](https://www.wikipedia.org/)
 
 Links can be used as content links (for site navigation) and non-primary CTAs. When used as CTAs, link labels should be long enough to be understood, but as short as possible. However, a link CTA's label may sometimes stretch a few words longer than a button label.
 
@@ -55,15 +54,15 @@ Links can be used as content links (for site navigation) and non-primary CTAs. W
 
 ## Accessibility
 
-* **Never use “click here” as a label.** Labels should identify and describe the target of the link.
+*  **Never use “click here” as a label.** Labels should identify and describe the target of the link.
 
-* **Avoid using file names or URLs as link labels.**
+*  **Avoid using file names or URLs as link labels.**
 
-* **Clearly identify file download links.** Indicate in the label that the user is about to "download" a file.
+*  **Clearly identify file download links.** Indicate in the label that the user is about to "download" a file.
 
-* **For anchor links, use "Jump to" before the link.** This identifies the link as an anchor and that it won't navigate users to another page.
+*  **For anchor links, use "Jump to" before the link.** This identifies the link as an anchor and that it won't navigate users to another page.
 
-* **Use linked icons with care.** Users may not know what the icon means, so for icons that aren't globally recognized, pair a linked label with a linked icon. See [Iconography standards]({{ page.baseurl }}/design-styleguide/iconography/iconography.html).
+*  **Use linked icons with care.** Users may not know what the icon means, so for icons that aren't globally recognized, pair a linked label with a linked icon. See [Iconography standards]({{ page.baseurl }}/design-styleguide/iconography/iconography.html).
 
 ## Labels Best Practices
 
@@ -95,13 +94,13 @@ If the user will lose a lot of work — or if the user's task is not easily reco
 
 Use the following template to create content for a verify step:
 
-* **Title:** Before you [ Task Label ]
+*  **Title:** Before you [ Task Label ]
 
-* **Explainer content:** [ Specify the full implications for the action the user wants to take. ]
+*  **Explainer content:** [ Specify the full implications for the action the user wants to take. ]
 
-* **Verification content:** Are you sure you want to continue?
+*  **Verification content:** Are you sure you want to continue?
 
-* **Calls to action:** [ Task Label ], Cancel ... *Note:* The "Task Label" is the primary call to action and matches the Title's Task Label.
+*  **Calls to action:** [ Task Label ], Cancel ... *Note:* The "Task Label" is the primary call to action and matches the Title's Task Label.
 
 ## Button Labels Used in Admin
 
@@ -121,7 +120,7 @@ The following labels are the standards for Admin labels. Refer to these footnote
     </tr>
     <tr>
       <td>Add<strong>*</strong><br />Add [ + Label ]<strong>*</strong></td>
-      <td>Use to create a new object or to add an existing object. As a primary call to action, the label usually matches the page title.<br /><br />   
+      <td>Use to create a new object or to add an existing object. As a primary call to action, the label usually matches the page title.<br /><br />
       “Create [ + Label ]” is also used, but only as an action for creating a new object, not adding an existing one.</td>
     </tr>
     <tr>

@@ -19,7 +19,6 @@ In this step, we will create a customer account that is tied to the `us` web vie
 
 The `GET /V1/store/storeViews` endpoint returns an array of store view IDs, along with the corresponding website and store group IDs. When you create a customer, change the `id` parameter to the `store_id` parameter
 
-
 **Endpoint**
 
 `GET <host>/rest/all/V1/store/storeViews`
@@ -81,7 +80,7 @@ The value of the `id` and `website_id` parameters for the US Store View is `2`.
 
 ## Create a customer
 
-We can use the same customer definition presented in [Step 3. Create a customer]({{ page.baseurl }}/rest/tutorials/orders/order-create-customer.html), with the only differences being the scope of the call (`us` instead of `default`) and inserting the `store_id` and `website_id` parameters into the payload. 
+We can use the same customer definition presented in [Step 3. Create a customer]({{ page.baseurl }}/rest/tutorials/orders/order-create-customer.html), with the only differences being the scope of the call (`us` instead of `default`) and inserting the `store_id` and `website_id` parameters into the payload.
 
 **Endpoint**
 
@@ -186,7 +185,6 @@ To generate a customer's access token, you must specify the customer's username 
 
 By default, a customer token is valid for 1 hour. To change this value, click **Stores** > Settings > **Configuration** > **Services** > **OAuth** > **Access Token Expiration**. Then enter a new value for **Customer Token Lifetime (hours)**.
 
-
 **Endpoint**
 
 `POST <host>/rest/us/V1/integration/customer/token`
@@ -207,6 +205,7 @@ By default, a customer token is valid for 1 hour. To change this value, click **
 "password": "Password1"
 }
 ```
+
 **Response**
 
 Magento returns the customer's access token. Your integration must specify a customer token in the authorization header of every call customers make on their own behalf.
@@ -216,5 +215,5 @@ Magento returns the customer's access token. Your integration must specify a cus
 ## Verify this step {#verify-step}
 
 1. Log in to the Test website using the email `jdoe@example.com` and password `Password1`.
-2. Click the account name (Jane) in the upper right corner and select **My Account**.
-3. Click **Address Book** to view the default billing and shipping addresses.
+1. Click the account name (Jane) in the upper right corner and select **My Account**.
+1. Click **Address Book** to view the default billing and shipping addresses.

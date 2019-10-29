@@ -21,15 +21,14 @@ When dealing with large amounts of data, re-indexing can become a concern. The M
 
 To manage this setting, edit the `batchRowsCount` parameter in the `di.xml` file of the corresponding module. The following indexes support this feature:
 
-* Category Product Index (Catalog Module)
-* Price Index (Catalog Module)
-* EAV Index (Catalog Module)
-* Stock Index (CatalogInventory Module)
+*  Category Product Index (Catalog Module)
+*  Price Index (Catalog Module)
+*  EAV Index (Catalog Module)
+*  Stock Index (CatalogInventory Module)
 
 You can tune indexer performance by adjusting the index batching size variables. This controls how many entities are processed at a time by the indexer. In some situations, we have seen significant decreases in indexing time.
 
 For example, if you are running a profile similar to B2B Medium, you can override the configuration value `batchRowsCount` in `app/code/Magento/catalog/etc/di.xml` and override the default value of `5000` to `1000`. This reduces the full indexing time from 4 hours down to 2 hours with a default MySQL configuration.
-
 
 {: .bs-callout-info }
 We have not enabled batching for the catalog rules indexer. Merchants with a large number of catalog rules need to adjust their MySQL configuration to optimize indexing time. In this case, editing your MySQL configuration file and allocating more memory to the TMP_TABLE_SIZE and MAX_HEAP_TABLE_SIZE configuration values (the default is 16M for both) will improve performance for this indexer, but will result in MySQL consuming more RAM.
@@ -52,9 +51,9 @@ You could also use a Redis cluster that performs parallel read/write operations 
 
 {{site.data.var.ee}} allows you to configure scalable database storage to meet the needs of a growing business. You can set up three separate master databases that serve specific domains:
 
-* Main (Catalog) Database
-* Checkout Database
-* Order Management System (OMS) Database
+*  Main (Catalog) Database
+*  Checkout Database
+*  Order Management System (OMS) Database
 
 To configure additional databases, you must create an empty database and run one of the following commands:
 
@@ -67,7 +66,6 @@ These commands migrate specific domain tables from the main database to a domain
 By having separate databases for checkout and Order Management, you can distribute the load between your database servers. You can serve more checkouts and process more orders per second without affecting the availability of your catalog and other operations. We recommend splitting databases for periods of flash or active sales, or using them permanently for naturally high-load projects. Migration of present data between databases should be executed under the supervision of your system administrator.  Do not split databases while in Production mode.
 
 In addition to master databases, Magento allows you to configure a number of slave databases (one for each data resource declared in the system). A slave database serves as a full replica of your main database, or one of your domain master databases. It is issued for read operations on a specific resource.
-
 
 You can add a slave database by running the following command:
 

@@ -8,16 +8,15 @@ menu_order: 2
 ee_only: true
 ---
 
-
 The Magento_GoogleOptimizerStaging [module](https://glossary.magento.com/module) is a part of the staging functionality in {{site.data.var.ee}}. It enables you to stage values of the product [metadata](https://glossary.magento.com/metadata).
 
 ## Implementation details
 
 The Magento_GoogleOptimizerStaging module enables you to stage parameters added by the Magento_GoogleOptimizer module in the [Search Engine Optimization](https://glossary.magento.com/search-engine-optimization) field set:
 
-- Meta Title
-- Meta Keywords
-- Meta Description
+-  Meta Title
+-  Meta Keywords
+-  Meta Description
 
 ## Dependencies
 

@@ -13,9 +13,9 @@ functional_areas:
 
 The solution to this issue depends on how your operating system packages TLS. See one of the following sections for more information:
 
-*	[Ubuntu](#solution-ubuntu)
-*	[CentOS](#solution-centos)
-*	[Mac OS](#solution-macos)
+*  [Ubuntu](#solution-ubuntu)
+*  [CentOS](#solution-centos)
+*  [Mac OS](#solution-macos)
 
 #### Ubuntu {#solution-ubuntu}
 
@@ -29,7 +29,7 @@ curl --version
 
 #### CentOS {#solution-centos}
 
-The source of the issue is that the [`libcurl`](https://curl.haxx.se/libcurl/c/CURLOPT_SSLVERSION.html){:target="_blank"} [library](https://glossary.magento.com/library) packaged with CentOS 6.6 and earlier use TLS 1.1 or earlier by default. 
+The source of the issue is that the [`libcurl`](https://curl.haxx.se/libcurl/c/CURLOPT_SSLVERSION.html){:target="_blank"} [library](https://glossary.magento.com/library) packaged with CentOS 6.6 and earlier use TLS 1.1 or earlier by default.
 
 To determine the version of CentOS your server runs, enter the following command:
 

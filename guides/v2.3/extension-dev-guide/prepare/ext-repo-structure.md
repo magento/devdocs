@@ -7,15 +7,15 @@ title: Extension Repository Structure
 
 For Magento 2.3 module, theme, and language pack extension repositories, we recommend five best practices:
 
-* Flatter hierarchy
-* One *extension type* (module, theme, or language pack) per repository
-* Multiple components per repository
-* One component per repository
-* One functional test suite per module component
+*  Flatter hierarchy
+*  One *extension type* (module, theme, or language pack) per repository
+*  Multiple components per repository
+*  One component per repository
+*  One functional test suite per module component
 
 ### Flatter hierarchy
 
-Your repository structure should no longer include `app/code/<Vendor>/` directories. 
+Your repository structure should no longer include `app/code/<Vendor>/` directories.
 
 *Before:*
 
@@ -92,7 +92,7 @@ If your extension requires only one component, your `<component_root>` directory
 
 ### Test Suites
 
-Function tests can be added to a `Test` directory within each module of your extension. 
+Function tests can be added to a `Test` directory within each module of your extension.
 
 Note: Currently, only Unit and MFTF tests can be run from within a `<Module>` directory.
 

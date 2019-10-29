@@ -100,6 +100,7 @@ $searchCriteria->setSortOrders([$sortOrder]);
 #### Pagination
 
 The `setPageSize` function paginates the Search Criteria by limiting the amount of entities it retrieves:
+
 ```php
 $searchCriteria->setPageSize(20); //retrieve 20 or less entities
 
@@ -136,6 +137,7 @@ Below is the code that applies filters to a collection.
 The method applies custom filters for some fields, otherwise it applies `$collection->addFieldToFilter($fields, $conditions)`.
 
 {% collapsible Show Code for addFilterGroupToCollection %}
+
 ```php
     /**
      * Add FilterGroup to the collection
@@ -168,6 +170,7 @@ The method applies custom filters for some fields, otherwise it applies `$collec
         }
     }
 ```
+
 {% endcollapsible %}
 
 You can configure this class to use a specific custom field mapping and custom filter in the `di.xml` file.
@@ -189,6 +192,7 @@ The example below uses [dependency injection](https://glossary.magento.com/depen
 ```
 
 {% collapsible Show code for ProductCategoryFilter %}
+
 ```php
 namespace Magento\Catalog\Model\Api\SearchCriteria\CollectionProcessor\FilterProcessor;
 
@@ -225,6 +229,7 @@ class ProductCategoryFilter implements CustomFilterInterface
 }
 
 ```
+
 {% endcollapsible %}
 
 | Argument | Description |

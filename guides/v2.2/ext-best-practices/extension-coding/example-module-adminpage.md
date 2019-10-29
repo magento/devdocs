@@ -36,6 +36,7 @@ In the module's root directory, create the file `composer.json`. This file gives
 For more information see: [`composer.json`]({{ page.baseurl }}/extension-dev-guide/build/composer-integration.html).
 
 {% collapsible File content for composer.json %}
+
  ```json
     {
       "name": "mycompany/sample-module-minimal",
@@ -57,6 +58,7 @@ For more information see: [`composer.json`]({{ page.baseurl }}/extension-dev-gui
       }
     }
  ```
+
 {% endcollapsible %}
 
 #### `registration.php`
@@ -66,6 +68,7 @@ In the module's root directory, create the file `registration.php`. This file re
 For more information see: [registering your component]({{ page.baseurl }}/extension-dev-guide/build/component-registration.html).
 
 {% collapsible File content for registration.php %}
+
   ```php
     <?php
     \Magento\Framework\Component\ComponentRegistrar::register(
@@ -74,6 +77,7 @@ For more information see: [registering your component]({{ page.baseurl }}/extens
         __DIR__
     );
  ```
+
 {% endcollapsible %}
 
 #### `etc/module.xml`
@@ -83,6 +87,7 @@ In the module's root directory, create a new directory called `etc`. Under that 
 For more information see: [naming your component]({{ page.baseurl }}/extension-dev-guide/build/create_component.html).
 
 {% collapsible File content for module.xml %}
+
  ```xml
     <?xml version="1.0"?>
     <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
@@ -90,6 +95,7 @@ For more information see: [naming your component]({{ page.baseurl }}/extension-d
       </module>
     </config>
  ```
+
 {% endcollapsible %}
 
 ### Routing and navigation
@@ -105,18 +111,19 @@ Under the created `etc` directory, create a new directory called `adminhtml`. Un
 The `menu.xml` file provided below adds two items in the Content section of the left navigation:
 
 1. A new separate section with the title **Greetings** under Content.
-2. A link with the label **Hello World** that leads to a page request for `exampleadminnewpage/helloworld/index` underneath that new section.
+1. A link with the label **Hello World** that leads to a page request for `exampleadminnewpage/helloworld/index` underneath that new section.
 
 ![Hello World menu item]({{ site.baseurl }}/common/images/ext-best-practices/hello-world-menu-item.png){:width="322px" height="400px"}
 
 The following parts make up the generated page request link to the **Hello World** page:
 
-* `exampleadminnewpage` - This is the `frontName`. Because its purpose is to help route requests to the correct module, we give it the same name as the module, but this is not required.
-* `helloworld` - This specifies the name of the controller to use.
-* `index` - In the XML file, since the action for the controller is not specified, Magento uses the default value `index`.
+*  `exampleadminnewpage` - This is the `frontName`. Because its purpose is to help route requests to the correct module, we give it the same name as the module, but this is not required.
+*  `helloworld` - This specifies the name of the controller to use.
+*  `index` - In the XML file, since the action for the controller is not specified, Magento uses the default value `index`.
 
 [//]: # (Stop list rendering before collapsible, see: https://github.com/magento/devdocs/issues/2655)
 {% collapsible File content for menu.xml %}
+
  ```xml
     <?xml version="1.0"?>
     <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
@@ -126,6 +133,7 @@ The following parts make up the generated page request link to the **Hello World
         </menu>
     </config>
  ```
+
 {% endcollapsible %}
 
 #### `etc/adminhtml/routes.xml`
@@ -133,6 +141,7 @@ The following parts make up the generated page request link to the **Hello World
 Under `etc/adminhtml` create the file `routes.xml`. The contents of this  XML file tells Magento to route requests that use the `frontName` `exampleadminnewpage` to this module.
 
 {% collapsible File content for routes.xml %}
+
  ```xml
   <?xml version="1.0"?>
   <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
@@ -143,6 +152,7 @@ Under `etc/adminhtml` create the file `routes.xml`. The contents of this  XML fi
       </router>
   </config>
  ```
+
 {% endcollapsible %}
 
 ### Page controller
@@ -159,6 +169,7 @@ mkdir -p Controller/Adminhtml/HelloWorld
 
 Inside `Controller/Adminhtml/HelloWorld` directory, create the file `Index.php`. This file is the class assigned to the default Index action for the `HelloWorld` controller. Since the admin area serves this page, the file belongs in the `Adminhtml` directory, and the class itself extends [`\Magento\Backend\App\Action`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Backend/App/Action.php){:target="_blank"}.
 {% collapsible File content for Index.php %}
+
  ```php
     <?php
       namespace MyCompany\ExampleAdminNewPage\Controller\Adminhtml\HelloWorld;
@@ -196,6 +207,7 @@ Inside `Controller/Adminhtml/HelloWorld` directory, create the file `Index.php`.
       }
     ?>
  ```
+
 {% endcollapsible %}
 
 ### Page view
@@ -206,6 +218,9 @@ Create the necessary directories for the files by running the following commands
 
 ```bash
 mkdir -pm view/adminhtml/layout
+```
+
+```bash
 mkdir -pm view/adminhtml/templates
 ```
 
@@ -219,6 +234,7 @@ This file defines the [layout](https://glossary.magento.com/layout) and structur
 The name of this file uses the following pattern: *routeId*\_*controller*\_*action*.xml
 
 {% collapsible File content for exampleadminnewpage_helloworld_index.xml %}
+
  ```xml
     <?xml version="1.0"?>
     <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
@@ -234,6 +250,7 @@ The name of this file uses the following pattern: *routeId*\_*controller*\_*acti
         </body>
     </page>
  ```
+
 {% endcollapsible %}
 
 #### `view/adminhtml/templates/helloworld.phtml`
@@ -242,9 +259,11 @@ The name of this file uses the following pattern: *routeId*\_*controller*\_*acti
 This template file contains the actual page content for the **Hello World** page.
 
 {% collapsible File content for helloworld.phtml %}
+
 ```html
     <p>Hello World!</p>
- ```
+```
+
 {% endcollapsible %}
 
 ### Full module directory structure
@@ -295,10 +314,10 @@ The module is now complete. Your module's directory structure under `app/code` s
 Now that the module is code-complete, run the following commands to install it:
 
 1. `bin/magento module:status` - This command shows a list of enabled/disabled modules.
-2. `bin/magento module:enable MyCompany_ExampleAdminNewPage` - If necessary, run this to enable the disabled module.
-3. `bin/magento setup:upgrade` - This command will properly register the module with Magento.
-4. `bin/magento setup:di:compile` - This command compiles classes used in dependency injections.
-5. `bin/magento cache:clean` - This command cleans the cache.
+1. `bin/magento module:enable MyCompany_ExampleAdminNewPage` - If necessary, run this to enable the disabled module.
+1. `bin/magento setup:upgrade` - This command will properly register the module with Magento.
+1. `bin/magento setup:di:compile` - This command compiles classes used in dependency injections.
+1. `bin/magento cache:clean` - This command cleans the cache.
 
 Once the module installation has completed, the link to the **Hello World** page should appear in the **Greetings** section under **Content** in the left navigation in the admin area. Clicking this link will take you to a page that looks like the one pictured below.
 

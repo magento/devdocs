@@ -7,24 +7,23 @@ Magento uses _reservations_ to calculate and keep track of the salable quantity 
 
 Reservations prevent the merchant from overselling products, even in cases where the latency between order placement and order processing is high. In addition, reservations are append-only operations that help prevent blocking operations and race conditions at the time of checkout.
 
-
 ## Reservation calculations
 
 Magento creates a reservation for each product when the following events occur:
 
-* A customer or merchant places an order.
-* A customer or merchant fully or partially cancels an order.
-* The merchant creates a shipment for a physical product.
-* The merchant creates an invoice for a virtual or downloadable product.
-* The merchant issues a credit memo.
+*  A customer or merchant places an order.
+*  A customer or merchant fully or partially cancels an order.
+*  The merchant creates a shipment for a physical product.
+*  The merchant creates an invoice for a virtual or downloadable product.
+*  The merchant issues a credit memo.
 
 Reservations are append-only operations, similar to a log of events. The initial reservation is assigned a negative quantity value. All subsequent reservations created while processing the order are positive values. When the order is complete, the sum of all reservations for the product is 0.
 
 Before Magento can issue a reservation in response to a new order, it determines whether there are enough salable items to fulfill the order. The following quantities factor into the calculation:
 
-* **StockItem quantity**. The StockItem quantity is the aggregated amount of inventory from all the physical sources for the current sales channel. If the Baltimore source has 20 units of a product, the Austin source has 25 units of the same product, while the Reno source has 10, and all these sources are linked to Stock A, then the StockItem count for thus product is 55 (20 + 25 + 10). (When items are shipped, the Inventory indexer updates the quantities available at each source.)
+*  **StockItem quantity**. The StockItem quantity is the aggregated amount of inventory from all the physical sources for the current sales channel. If the Baltimore source has 20 units of a product, the Austin source has 25 units of the same product, while the Reno source has 10, and all these sources are linked to Stock A, then the StockItem count for thus product is 55 (20 + 25 + 10). (When items are shipped, the Inventory indexer updates the quantities available at each source.)
 
-* **Outstanding reservations**. Magento totals all the initial reservations that have not been compensated. This number will always be negative. If customer A has a reservation for 10 items, and customer B has a reservation 5 for items, then outstanding reservations for the product total -15.
+*  **Outstanding reservations**. Magento totals all the initial reservations that have not been compensated. This number will always be negative. If customer A has a reservation for 10 items, and customer B has a reservation 5 for items, then outstanding reservations for the product total -15.
 
 Therefore, the merchant can fulfill an incoming order as long as the customer orders less than 40 (55 + -15) units.
 
@@ -43,16 +42,15 @@ Parameter | Data type | Description
 `stock_id` | Integer | The ID of the stock the product is assigned to
 `sku` | String | The SKU of the product
 `quantity` | Float | The number of items in this reservation
-`metadata` | String | The event type, object type, and object ID for this reservation. For example, `{"event_type":"order_placed","object_type":"order","object_id":"8"} `
-
+`metadata` | String | The event type, object type, and object ID for this reservation. For example, `{"event_type":"order_placed","object_type":"order","object_id":"8"}`
 
 The metadata `event_type` can have the following values:
 
-* `order_placed`
-* `order_canceled`
-* `shipment_created`
-* `creditmemo_created`
-* `invoice_created`
+*  `order_placed`
+*  `order_canceled`
+*  `shipment_created`
+*  `creditmemo_created`
+*  `invoice_created`
 
 Currently, the metadata object type must be `order`, and the object ID is the order ID.
 
@@ -64,17 +62,17 @@ The following example shows the sequence of reservations generated for a simple 
 
 1. The customer makes a purchase order for 25 units of product `SKU-1`. The reservation contains the following information:
 
-   ```
+   ```text
    reservation_id = 1
    stock_id = 1
    sku = SKU-1
    quantity = -25
    event_type = order_placed
-```
+    ```
 
-2. The customer sends an invoice for 20 items, essentially canceling 5 of the units ordered.
+1. The customer sends an invoice for 20 items, essentially canceling 5 of the units ordered.
 
-   ```
+   ```text
    reservation_id = 2
    stock_id = 1
    sku = SKU-1
@@ -82,9 +80,9 @@ The following example shows the sequence of reservations generated for a simple 
    event_type = order_canceled
    ```
 
-3. The merchant ships the purchased 20 units.
+1. The merchant ships the purchased 20 units.
 
-   ```
+   ```text
    reservation_id = 3
    stock_id = 1
    sku = `SKU-1`
@@ -171,7 +169,6 @@ Interface | Description
 `GetProductSalableQtyInterface` | Returns the salable product quantity for the specified stock ID
 `IsProductSalableInterface` | Checks whether the product is salable
 `IsProductSalableForRequestedQtyInterface` |  Checks whether there is enough salable quantity to fulfill an order or place the product into a shopping cart
-
 
 ## Web API support
 

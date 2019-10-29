@@ -20,18 +20,18 @@ As a general rule, the area specific `di.xml` files should configure dependencie
 Magento loads the configuration in the following stages:
 
 1. Initial (`app/etc/di.xml`)
-2. Global (`<moduleDir>/etc/di.xml`)
-3. Area-specific (`<moduleDir>/etc/<area>/di.xml`)
+1. Global (`<moduleDir>/etc/di.xml`)
+1. Area-specific (`<moduleDir>/etc/<area>/di.xml`)
 
 During [bootstrapping]({{ page.baseurl }}/config-guide/bootstrap/magento-bootstrap.html), each application entry point loads the appropriate `di.xml` files for the requested [area]({{ page.baseurl }}/architecture/archi_perspectives/components/modules/mod_and_areas.html).
 
 **Examples:**
 
-* In `index.php`, the [`\Magento\Framework\App\Http`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/App/Http.php#L130-L132){:target="_blank"} class loads the area based on the front-name provided in the [URL](https://glossary.magento.com/url).
+*  In `index.php`, the [`\Magento\Framework\App\Http`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/App/Http.php#L130-L132){:target="_blank"} class loads the area based on the front-name provided in the [URL](https://glossary.magento.com/url).
 
-* In `static.php`, the [`\Magento\Framework\App\StaticResource`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/App/StaticResource.php#L101-L104){:target="_blank"} class also loads the area based on the URL in the request.
+*  In `static.php`, the [`\Magento\Framework\App\StaticResource`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/App/StaticResource.php#L101-L104){:target="_blank"} class also loads the area based on the URL in the request.
 
-* In `cron.php`, the [`\Magento\Framework\App\Cron`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/App/Cron.php#L68-L70){:target="_blank"} class always loads the `crontab` area.
+*  In `cron.php`, the [`\Magento\Framework\App\Cron`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/App/Cron.php#L68-L70){:target="_blank"} class always loads the `crontab` area.
 
 ## Type configuration
 
@@ -56,8 +56,8 @@ You can configure the type in your `di.xml` configuration node in the following 
 
 The preceding example declares the following types:
 
-*	`moduleConfig`: A virtual type that extends the type `Magento\Core\Model\Config`.
-*	`Magento\Core\Model\App`: All instances of this type receive an instance of `moduleConfig` as a dependency.
+*  `moduleConfig`: A virtual type that extends the type `Magento\Core\Model\Config`.
+*  `Magento\Core\Model\App`: All instances of this type receive an instance of `moduleConfig` as a dependency.
 
 ### Virtual types
 
@@ -190,11 +190,11 @@ Node Format:
 
   Magento builds an array with elements corresponding to the items and passes it as the argument.
   The array can contain an infinite number of items, and each array item can be of any object type including an array itself.
-  
+
   When Magento merges the configuration files for a given scope, array arguments with the same name get merged into a new array.
-  
+
   When Magento loads a new configuration at a later time, either by a more specific scope or through code, then any array definitions in the new configuration will replace the loaded config instead of merging.
-  
+
 ---
 
 **Argument Examples:**
@@ -299,10 +299,8 @@ The lifestyle of an object determines the number of instances that can exist of 
 
 You can configure dependencies in Magento to have the following lifestyles:
 
-*	**Singleton**(default) - One instance of this class exists. The object manager creates it at the first request.
-Requesting the class again returns the same instance.
-Disposing or ending the container registered to it releases the instance.
-*	**Transient** - The object manager creates a new instance of the class for every request.
+*  **Singleton**(default) - One instance of this class exists. The object manager creates it at the first request. Requesting the class again returns the same instance. Disposing or ending the container registered to it releases the instance.
+*  **Transient** - The object manager creates a new instance of the class for every request.
 
 The `shared` property determines the lifestyle of both `argument` and `type` configurations.
 
@@ -317,7 +315,7 @@ The `shared` property determines the lifestyle of both `argument` and `type` con
 ```
 
 In this example `Magento\Filesystem` is not shared, so all clients will retrieve separate instances of `Magento\Filesystem`.
-Also, every instance of `Magento\Filesystem` will get separate instance of `$adapter`, because it too is non-shared.
+Also, every instance of `Magento\Filesystem` will get separate instance of `$adapter`, because it is non-shared too.
 
 ## Sensitive and system-specific configuration settings {#ext-di-sens}
 
@@ -349,12 +347,56 @@ See [sensitive and environment settings]({{ page.baseurl }}/extension-dev-guide/
 
 ### Information related to pipeline deployment
 
-*   [Guidelines for specifying system-specific and sensitive configuration values]({{ page.baseurl }}/extension-dev-guide/configuration/sensitive-and-environment-settings.html)
-*   [Sensitive and system-specific configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-sens.html)
-*   [Magento Enterprise B2B Extension configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-b2b.html)
+*  [Guidelines for specifying system-specific and sensitive configuration values]({{ page.baseurl }}/extension-dev-guide/configuration/sensitive-and-environment-settings.html)
+*  [Sensitive and system-specific configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-sens.html)
+*  [Magento Enterprise B2B Extension configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-b2b.html)
 
-## Related topics
+## Get dependency injection configuration information for a class
 
-* [ObjectManager]({{ page.baseurl }}/extension-dev-guide/object-manager.html)
-* [Dependency injection]({{ page.baseurl }}/extension-dev-guide/depend-inj.html)
-* [Sensitive and environment settings]({{ page.baseurl }}/extension-dev-guide/configuration/sensitive-and-environment-settings.html)
+Use the [dev:di:info]({{ page.baseurl }}/reference/cli/magento.html#devdiinfo) command to retrieve information about dependency injection configuration for a class. The following example retrieves the dependency injection configuration information for the `Magento\Quote\Model\Quote\Item\ToOrderItem` class:
+
+```bash
+bin/magento dev:di:info "Magento\Quote\Model\Quote\Item\ToOrderItem"
+```
+
+```terminal
+DI configuration for the class Magento\Quote\Model\Quote\Item\ToOrderItem in the GLOBAL area
+
+Preference: Magento\Quote\Model\Quote\Item\ToOrderItem
+
+Constructor Parameters:
++-------------------+--------------------------------------------------+------------------+
+| Name              | Requested Type                                   | Configured Value |
++-------------------+--------------------------------------------------+------------------+
+| orderItemFactory  | Magento\Sales\Api\Data\OrderItemInterfaceFactory |                  |
+| objectCopyService | Magento\Framework\DataObject\Copy                |                  |
+| dataObjectHelper  | Magento\Framework\Api\DataObjectHelper           |                  |
++-------------------+--------------------------------------------------+------------------+
+
+
+Plugins:
++-----------------------------------------------------+---------+--------+
+| Plugin                                              | Method  | Type   |
++-----------------------------------------------------+---------+--------+
+| Magento\Catalog\Model\Plugin\QuoteItemProductOption | convert | before |
+| Magento\GiftMessage\Model\Plugin\QuoteItem          | convert | after  |
+| Magento\Bundle\Model\Plugin\QuoteItem               | convert | after  |
++-----------------------------------------------------+---------+--------+
+
+
+Plugins for the Preference:
++-----------------------------------------------------+---------+--------+
+| Plugin                                              | Method  | Type   |
++-----------------------------------------------------+---------+--------+
+| Magento\Catalog\Model\Plugin\QuoteItemProductOption | convert | before |
+| Magento\GiftMessage\Model\Plugin\QuoteItem          | convert | after  |
+| Magento\Bundle\Model\Plugin\QuoteItem               | convert | after  |
++-----------------------------------------------------+---------+--------+
+```
+
+{:.ref-header}
+Related topics
+
+*  [ObjectManager]({{ page.baseurl }}/extension-dev-guide/object-manager.html)
+*  [Dependency injection]({{ page.baseurl }}/extension-dev-guide/depend-inj.html)
+*  [Sensitive and environment settings]({{ page.baseurl }}/extension-dev-guide/configuration/sensitive-and-environment-settings.html)

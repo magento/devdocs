@@ -12,17 +12,17 @@ functional_areas:
 
 Out of the box, Magento [checkout](https://glossary.magento.com/checkout) consists of two steps:
 
-- Shipping Information
-- Review and Payment Information
+-  Shipping Information
+-  Review and Payment Information
 
 On the Review and Payment Information step the enabled payment methods are rendered. This topic describes how to add your custom [payment method](https://glossary.magento.com/payment-method) to this list.
 
 To implement a payment method rendering in checkout, you need to take the following steps:
 
 1. [Create the `.js` file implementing the component (payment method renderer).](#create)
-2. [Create the `.js` component registering the payment method renderer.](#register)
-3. [Create a template for the payment method renderer.](#template)
-4. [Declare the new payment in the checkout page layout.](#layout)
+1. [Create the `.js` component registering the payment method renderer.](#register)
+1. [Create a template for the payment method renderer.](#template)
+1. [Declare the new payment in the checkout page layout.](#layout)
 
 ## Step 1: Create the .js component file {#create}
 
@@ -84,7 +84,6 @@ Usually, your component will extend the default payment method component (defaul
    </tbody>
 </table>
 
-
 The general view of the payment method renderer is the following:
 
 ```js
@@ -105,7 +104,6 @@ define(
 ```
 
 If your payment method requires credit cards information, you might use the Magento renderer implementing a credit card form: [`<Magento_Payment_module_dir>/view/frontend/web/js/view/payment/cc-form.js`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Payment/view/frontend/web/js/view/payment/cc-form.js). It also extends the default payment renderer, but has the following own methods:
-
 
 <table>
    <tr>
@@ -281,19 +279,20 @@ In your custom module directory, create a new `<your_module_dir>/view/frontend/l
                                                                     </item>
                                                                 </item>
                                                             </item>
-                                                            <!-- Declare the payment method (the component that registrates in the list). END -->
-                                                            <!-- Declare additional after payment components. START -->
-                                                            <item name="afterMethods" xsi:type="array">
-                                                                <item name="component" xsi:type="string">uiComponent</item>
-                                                                <item name="displayArea" xsi:type="string">afterMethods</item>
-                                                                <item name="children" xsi:type="array">
-                                                                    <item name="%your_feature_name%" xsi:type="array">
-                                                                        <item name="component" xsi:type="string">%path/to/your/feature_js_component%</item>
-                                                                    </item>
+                                                        </item>
+                                                        <!-- Declare the payment method (the component that registrates in the list). END -->
+
+                                                        <!-- Declare additional after payment components. START -->
+                                                        <item name="afterMethods" xsi:type="array">
+                                                            <item name="component" xsi:type="string">uiComponent</item>
+                                                            <item name="displayArea" xsi:type="string">afterMethods</item>
+                                                            <item name="children" xsi:type="array">
+                                                                <item name="%your_feature_name%" xsi:type="array">
+                                                                    <item name="component" xsi:type="string">%path/to/your/feature_js_component%</item>
                                                                 </item>
                                                             </item>
-                                                            <!-- Declare additional after payment components. END -->
                                                         </item>
+                                                        <!-- Declare additional after payment components. END -->
                                                     </item>
                                                 </item>
                                             </item>

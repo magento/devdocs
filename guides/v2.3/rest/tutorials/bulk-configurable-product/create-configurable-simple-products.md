@@ -12,7 +12,7 @@ return_to:
 functional_areas:
   - Integration
 contributor_name: comwrap GmbH
-contributor_link: http://comwrap.com/ 
+contributor_link: http://comwrap.com/
 ---
 
 By providing configurable and simple product information, you can use the bulk API to create all necessary products with a single call.
@@ -21,20 +21,19 @@ By providing configurable and simple product information, you can use the bulk A
 
 Some notes about the configurable product payload example:
 
-* We have the information we need to create the Champ Tee configurable product.
-* The sample payload does not contain the price or the size, as these are defined in the simple products section.
-* The `visibility` attribute is set to 4, which allows customers to find the product by browsing or searching. Each simple product defined in the payload can override the `visibility` attribute.
+*  We have the information we need to create the Champ Tee configurable product.
+*  The sample payload does not contain the price or the size, as these are defined in the simple products section.
+*  The `visibility` attribute is set to 4, which allows customers to find the product by browsing or searching. Each simple product defined in the payload can override the `visibility` attribute.
 
-
-### Simple products 
+### Simple products
 
  The payloads for creating a simple product and a configurable product are identical, with the following exceptions:
 
-* The simple product `sku` appends the configurable option (the size in this tutorial) to the configurable product `sku`.
-* The `name` indicates the size.
-* The `type_id` is set to `simple`.
-* The `visibility` is set to `1`, indicating the simple product should not be displayed on the store.
-* The `price` and `size` attributes are specified.
+*  The simple product `sku` appends the configurable option (the size in this tutorial) to the configurable product `sku`.
+*  The `name` indicates the size.
+*  The `type_id` is set to `simple`.
+*  The `visibility` is set to `1`, indicating the simple product should not be displayed on the store.
+*  The `price` and `size` attributes are specified.
 
  Although it's not required, the simple product payload also includes `stock_item` information. By default, the Luma store hides out-of-stock items, so adding stock will make the Champ Tee visible on the website.
 
@@ -63,42 +62,42 @@ The payload contains both the configurable product and the simple products.
     "type_id": "configurable",
     "weight": "0.5",
     "extension_attributes": {
-    	"category_links": [
-    		{
-    			"position": 0,
-    			"category_id": "11"
-    		},
-    		{
-    			"position": 1,
-    			"category_id": "12"
-    		},
-    		{
-    			"position": 2,
-    			"category_id": "16"
-    		}
-    	]
+      "category_links": [
+        {
+          "position": 0,
+          "category_id": "11"
+        },
+        {
+          "position": 1,
+          "category_id": "12"
+        },
+        {
+          "position": 2,
+          "category_id": "16"
+        }
+      ]
     },
     "custom_attributes": [
-    	{
-    		"attribute_code": "description",
-    		"value": "The Champ Tee keeps you cool and dry while you do your thing. Let everyone know who you are by adding your name on the back for only $10."
-    	},
-    	{
-    		"attribute_code": "tax_class_id",
-    		"value": "2"
-    	},
-    	{
-    		"attribute_code": "material",
-    		"value": "148"
-    	},
-    	{
-    		"attribute_code": "pattern",
-    		"value": "196"
-    	},
-    	{
-    		"attribute_code": "color",
-    		"value": "52"
-    	}
+      {
+        "attribute_code": "description",
+        "value": "The Champ Tee keeps you cool and dry while you do your thing. Let everyone know who you are by adding your name on the back for only $10."
+      },
+      {
+        "attribute_code": "tax_class_id",
+        "value": "2"
+      },
+      {
+        "attribute_code": "material",
+        "value": "148"
+      },
+      {
+        "attribute_code": "pattern",
+        "value": "196"
+      },
+      {
+        "attribute_code": "color",
+        "value": "52"
+      }
     ]
   }
 },
@@ -113,50 +112,50 @@ The payload contains both the configurable product and the simple products.
     "type_id": "simple",
     "weight": "0.5",
     "extension_attributes": {
-    	"category_links": [
-    		{
-    			"position": 0,
-    			"category_id": "11"
-    		},
-    		{
-    			"position": 1,
-    			"category_id": "12"
-    		},
-    		{
-    			"position": 2,
-    			"category_id": "16"
-    		}
-    	],
-    	"stock_item": {
-    		"qty": "10",
-    		"is_in_stock": true
-    	}
+      "category_links": [
+        {
+          "position": 0,
+          "category_id": "11"
+        },
+        {
+          "position": 1,
+          "category_id": "12"
+        },
+        {
+          "position": 2,
+          "category_id": "16"
+        }
+      ],
+      "stock_item": {
+        "qty": "10",
+        "is_in_stock": true
+      }
     },
     "custom_attributes": [
-    	{
-    		"attribute_code": "description",
-    		"value": "The Champ Tee keeps you cool and dry while you do your thing. Let everyone know who you are by adding your name on the back for only $10."
-    	},
-    	{
-    		"attribute_code": "tax_class_id",
-    		"value": "2"
-    	},
-    	{
-    		"attribute_code": "material",
-    		"value": "148"
-    	},
-    	{
-    		"attribute_code": "pattern",
-    		"value": "196"
-    	},
-    	{
-    		"attribute_code": "color",
-    		"value": "52"
-    	},
-    	{
-    		"attribute_code": "size",
-    		"value": "168"
-    	}
+      {
+        "attribute_code": "description",
+        "value": "The Champ Tee keeps you cool and dry while you do your thing. Let everyone know who you are by adding your name on the back for only $10."
+      },
+      {
+        "attribute_code": "tax_class_id",
+        "value": "2"
+      },
+      {
+        "attribute_code": "material",
+        "value": "148"
+      },
+      {
+        "attribute_code": "pattern",
+        "value": "196"
+      },
+      {
+        "attribute_code": "color",
+        "value": "52"
+      },
+      {
+        "attribute_code": "size",
+        "value": "168"
+      }
     ]
   }
 },
@@ -171,50 +170,50 @@ The payload contains both the configurable product and the simple products.
     "type_id": "simple",
     "weight": "0.5",
     "extension_attributes": {
-    	"category_links": [
-    		{
-    			"position": 0,
-    			"category_id": "11"
-    		},
-    		{
-    			"position": 1,
-    			"category_id": "12"
-    		},
-    		{
-    			"position": 2,
-    			"category_id": "16"
-    		}
-    	],
-    	"stock_item": {
-    		"qty": "10",
-    		"is_in_stock": true
-    	}
+      "category_links": [
+        {
+          "position": 0,
+          "category_id": "11"
+        },
+        {
+          "position": 1,
+          "category_id": "12"
+        },
+        {
+          "position": 2,
+          "category_id": "16"
+        }
+      ],
+      "stock_item": {
+        "qty": "10",
+        "is_in_stock": true
+      }
     },
     "custom_attributes": [
-    	{
-    		"attribute_code": "description",
-    		"value": "The Champ Tee keeps you cool and dry while you do your thing. Let everyone know who you are by adding your name on the back for only $10."
-    	},
-    	{
-    		"attribute_code": "tax_class_id",
-    		"value": "2"
-    	},
-    	{
-    		"attribute_code": "material",
-    		"value": "148"
-    	},
-    	{
-    		"attribute_code": "pattern",
-    		"value": "196"
-    	},
-    	{
-    		"attribute_code": "color",
-    		"value": "52"
-    	},
-    	{
-    		"attribute_code": "size",
-    		"value": "169"
-    	}
+      {
+        "attribute_code": "description",
+        "value": "The Champ Tee keeps you cool and dry while you do your thing. Let everyone know who you are by adding your name on the back for only $10."
+      },
+      {
+        "attribute_code": "tax_class_id",
+        "value": "2"
+      },
+      {
+        "attribute_code": "material",
+        "value": "148"
+      },
+      {
+        "attribute_code": "pattern",
+        "value": "196"
+      },
+      {
+        "attribute_code": "color",
+        "value": "52"
+      },
+      {
+        "attribute_code": "size",
+        "value": "169"
+      }
     ]
   }
 },
@@ -229,57 +228,57 @@ The payload contains both the configurable product and the simple products.
     "type_id": "simple",
     "weight": "0.5",
     "extension_attributes": {
-    	"category_links": [
-    		{
-    			"position": 0,
-    			"category_id": "11"
-    		},
-    		{
-    			"position": 1,
-    			"category_id": "12"
-    		},
-    		{
-    			"position": 2,
-    			"category_id": "16"
-    		}
-    	],
-    	"stock_item": {
-    		"qty": "10",
-    		"is_in_stock": true
-    	}
+      "category_links": [
+        {
+          "position": 0,
+          "category_id": "11"
+        },
+        {
+          "position": 1,
+          "category_id": "12"
+        },
+        {
+          "position": 2,
+          "category_id": "16"
+        }
+      ],
+      "stock_item": {
+        "qty": "10",
+        "is_in_stock": true
+      }
     },
     "custom_attributes": [
-    	{
-    		"attribute_code": "description",
-    		"value": "The Champ Tee keeps you cool and dry while you do your thing. Let everyone know who you are by adding your name on the back for only $10."
-    	},
-    	{
-    		"attribute_code": "tax_class_id",
-    		"value": "2"
-    	},
-    	{
-    		"attribute_code": "material",
-    		"value": "148"
-    	},
-    	{
-    		"attribute_code": "pattern",
-    		"value": "196"
-    	},
-    	{
-    		"attribute_code": "color",
-    		"value": "52"
-    	},
-    	{
-    		"attribute_code": "size",
-    		"value": "170"
-    	}
+      {
+        "attribute_code": "description",
+        "value": "The Champ Tee keeps you cool and dry while you do your thing. Let everyone know who you are by adding your name on the back for only $10."
+      },
+      {
+        "attribute_code": "tax_class_id",
+        "value": "2"
+      },
+      {
+        "attribute_code": "material",
+        "value": "148"
+      },
+      {
+        "attribute_code": "pattern",
+        "value": "196"
+      },
+      {
+        "attribute_code": "color",
+        "value": "52"
+      },
+      {
+        "attribute_code": "size",
+        "value": "170"
+      }
     ]
   }
 },
 ]
 ```
-{% endcollapsible %}
 
+{% endcollapsible %}
 
  **Response**
 
@@ -310,11 +309,10 @@ The payload contains both the configurable product and the simple products.
  {:.bs-callout .bs-callout-info}
 For information about response fields, see the [Bulk API]({{ page.baseurl }}/rest/bulk-endpoints.html) section. To check the status of operations, see the API for [Bulk operation status endpoints]({{ page.baseurl }}/rest/operation-status-endpoints.html).
 
-
 ## Verify this step
 
- * Log in to the Luma website and select **Catalog > Products**. The product appears in the grid.
+*  Log in to the Luma website and select **Catalog > Products**. The product appears in the grid.
 
    ![Product page with configurable product]({{ page.baseurl }}/rest/images/products-page.png)
 
- * On the Luma storefront page, search for `Champ`. No results are returned.
+*  On the Luma storefront page, search for `Champ`. No results are returned.

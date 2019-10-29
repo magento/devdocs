@@ -40,10 +40,10 @@ The  [braintree_error_mapping.xml]({{ site.mage2bloburl }}/{{ page.guide_version
 
 The message definitions are based on the [error_mapping.xsd]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Payment/etc/error_mapping.xsd) schema. Messages must comply with the following structure:
 
- - `message_list` &mdash; the root node. It can contain a list of specific messages
- - `message` &mdash; the node, which contains the customized message and two attributes
-     - `code` &mdash; the error code returned from the payment gateway. The value can be numeric or string
-     - `translate` &mdash; a boolean attribute that determines whether to collect all message translations
+-  `message_list` &mdash; the root node. It can contain a list of specific messages
+-  `message` &mdash; the node, which contains the customized message and two attributes
+   -  `code` &mdash; the error code returned from the payment gateway. The value can be numeric or string
+   -  `translate` &mdash; a boolean attribute that determines whether to collect all message translations
 
 ### Configure dependency injection
 
@@ -102,7 +102,6 @@ A response validator verifies response codes from the payment gateway.
 It has different responsibilities and should not map messages, because it works on the lower layer of communication between Magento and the payment gateway.
 It is the responsibility of a gateway command to call an appropriate service.
 
-
 For example, Magento provides a response validator for Braintree: [`\Magento\Braintree\Gateway\Validator\GeneralResponseValidator`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Braintree/Gateway/Validator/GeneralResponseValidator.php).
 Its implementation allows to retrieve errors codes from a response.
 
@@ -137,7 +136,6 @@ class ErrorCodeProvider
 }
 ```
 
-
 Then add the created provider as a dependency to the `GeneralResponseValidator` class:
 
 ```php
@@ -157,7 +155,7 @@ class GeneralResponseValidator extends AbstractValidator
     {
         /** @var Successful|Error $response */
         $response = $this->subjectReader->readResponseObject($validationSubject);
-    
+
         $isValid = true;
         $errorMessages = [];
 
@@ -170,7 +168,7 @@ class GeneralResponseValidator extends AbstractValidator
             }
         }
         $errorCodes = $this->errorCodeProvider->getErrorCodes($response);
-    
+
         return $this->createResult($isValid, $errorMessages, $errorCodes);
     }
 }

@@ -5,7 +5,7 @@ title: Conventional notations used in this Guide
 
 ## Conventional notations for paths to modules and themes
 
-Magento application components, including modules, themes, and language packages technically can be located anywhere under the Magento root directory. This refers to both Magento default and custom components. 
+Magento application components, including modules, themes, and language packages technically can be located anywhere under the Magento root directory. This refers to both Magento default and custom components.
 
 The following relative paths are used for modules and themes:
 
@@ -15,8 +15,8 @@ The following relative paths are used for modules and themes:
 
 For Magento out of the box [frontend](https://glossary.magento.com/frontend) themes, usually one of the following:
 
- - `app/design/frontend/<Vendor>/<theme>`
- - `vendor/magento/theme-frontend-<theme>`
+-  `app/design/frontend/<Vendor>/<theme>`
+-  `vendor/magento/theme-frontend-<theme>`
 
 **- `<module_dir>`**
 
@@ -24,5 +24,5 @@ Module directory. When talking about a particular Magento module, also notation 
 
 For Magento modules, the absolute path is usually one of the following:
 
- - `app/code/<Vendor>/<Module>`
- - `vendor/magento/module-<module>-<name>`
+-  `app/code/<Vendor>/<Module>`
+-  `vendor/magento/module-<module>-<name>`

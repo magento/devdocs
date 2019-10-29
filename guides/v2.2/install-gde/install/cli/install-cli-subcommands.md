@@ -16,12 +16,12 @@ functional_areas:
 
 The installer is designed to be run multiple times if necessary so you can:
 
-*	Provide different values
+*  Provide different values
 
-	For example, after you configure your web server for Secure Sockets Layer (SSL), you can run the installer to set SSL options.
+   For example, after you configure your web server for Secure Sockets Layer (SSL), you can run the installer to set SSL options.
 
-*	Correct mistakes in previous installations
-*	Install Magento in a different database instance
+*  Correct mistakes in previous installations
+*  Install Magento in a different database instance
 
 ## First steps {#instgde-cli-before}
 {% include install/first-steps-cli.md %}
@@ -47,7 +47,6 @@ Database (simplest way is to use magento setup:upgrade)|
 |`magento admin:user:create`|Creates a Magento administrator.|All of the following:<br><br>Deployment configuration<br><br>Enable at minimum the Magento_User and Magento_Authorization modules<br><br>Database (simplest way is to use magento setup:upgrade)|
 |`magento list`|Lists all available commands.|None|
 |`magento help`|Provides help for the specified command.|None|
-
 
 ## Help commands {#instgde-cli-help}
 {% include install/cli_help-commands.md %}

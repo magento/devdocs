@@ -19,10 +19,10 @@ For the jQuery widget coding standard, see [jQuery widget coding standard][jquer
 Use [ESLint][eslint] and [JSCS][jscs] to ensure the quality of your JavaScript code.
 
 ESLint is a community-driven tool that detects errors and potential problems in JavaScript code.
-It can use custom rules to enforce specific coding standards. 
+It can use custom rules to enforce specific coding standards.
 
-* [Magento ESLint Rules][eslint-rules]
-* [Magento JSCS Rules][jscs-rules]
+*  [Magento ESLint Rules][eslint-rules]
+*  [Magento JSCS Rules][jscs-rules]
 
 ## Additional formatting standards
 
@@ -90,9 +90,9 @@ Use sparingly and in general where required by the syntax and semantics.
 
 Never use parentheses for:
 
-* Unary operators (e.g. `delete`, `typeof`, and `void`)
-* After keywords such as `return`, `throw`
-* For `case`, `in`, or `new`, and others keywords like them
+*  Unary operators (e.g. `delete`, `typeof`, and `void`)
+*  After keywords such as `return`, `throw`
+*  For `case`, `in`, or `new`, and others keywords like them
 
 ### Blocks
 
@@ -187,21 +187,21 @@ var msg = '<span class="text">Hello World!</div>';
 
 ### General naming conventions
 
-* Avoid underscores and numbers in names.
-* Variables or methods should have names that accurately describe their purpose or behavior.
-* Object methods or variables that are declared `private` or `protected` should start with an underscore(`_`).
+*  Avoid underscores and numbers in names.
+*  Variables or methods should have names that accurately describe their purpose or behavior.
+*  Object methods or variables that are declared `private` or `protected` should start with an underscore(`_`).
 
 ### Functions and methods
 
-* Class method names should start with an English verb in its infinitive form that describes the method.
-* Names for accessors for instance or static variables should always have the `get` or `set` prefix.
-* In [design pattern](https://glossary.magento.com/design-pattern) classes, implementation method names should contain the pattern name where practical to provide better behavior description.
-* Methods that return status flags or Boolean values should have the `has` or `is` prefix.
+*  Class method names should start with an English verb in its infinitive form that describes the method.
+*  Names for accessors for instance or static variables should always have the `get` or `set` prefix.
+*  In [design pattern](https://glossary.magento.com/design-pattern) classes, implementation method names should contain the pattern name where practical to provide better behavior description.
+*  Methods that return status flags or Boolean values should have the `has` or `is` prefix.
 
 ### Variables and properties
 
-* Do not use short variable names such as `i` or `n` except in small loop contexts
-* If a loop contains more than 20 lines of code, the index variables should have more descriptive names.
+*  Do not use short variable names such as `i` or `n` except in small loop contexts
+*  If a loop contains more than 20 lines of code, the index variables should have more descriptive names.
 
 ## Additional coding construct standards
 
@@ -310,7 +310,7 @@ Single-line array and object initializers are allowed when they fit on a line as
 
 ```javascript
     var arr = [1, 2, 3];  // No space after [ or before ].
-    var obj = {a: 1, b: 2, c: 3};  // No space after { or before }.  
+    var obj = {a: 1, b: 2, c: 3};  // No space after { or before }.
 ```
 
 Long identifiers or values present problems for aligned initialization lists, so always prefer non-aligned initialization.

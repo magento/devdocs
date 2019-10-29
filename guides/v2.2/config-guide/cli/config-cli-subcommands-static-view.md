@@ -15,15 +15,15 @@ The static view files deployment command enables you to write [static files](htt
 
 The term *static view file* refers to the following:
 
--   "Static" means it can be cached for a site (that is, the file is not dynamically generated). Examples include images and [CSS](https://glossary.magento.com/css) generated from LESS.
--   "View" refers to presentation layer (from MVC).
+-  "Static" means it can be cached for a site (that is, the file is not dynamically generated). Examples include images and [CSS](https://glossary.magento.com/css) generated from LESS.
+-  "View" refers to presentation layer (from MVC).
 
 Static view files are located in the `<magento_root>/pub/static` directory, and some are cached in the `<magento_root>/var/view_preprocessed` directory as well.
 
 Static view files deployment is affected by Magento modes as follows:
 
--   **[Default]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html#default-mode)** and **[developer]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html#developer-mode)** modes: Magento generates them on demand, but the rest are cached in a file for speed of access.
--   **[Production]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html#production-mode)** mode: Static files are *not* generated or cached.
+-  **[Default]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html#default-mode)** and **[developer]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html#developer-mode)** modes: Magento generates them on demand, but the rest are cached in a file for speed of access.
+-  **[Production]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html#production-mode)** mode: Static files are *not* generated or cached.
 
 You must write static view files to the Magento file system manually using the command discussed in this topic; after that, you can restrict permissions to limit your vulnerabilities and to prevent accidental or malicious overwriting of files.
 
@@ -34,17 +34,18 @@ You must write static view files to the Magento file system manually using the c
 
 To deploy static view files:
 
-1.  Log in to the Magento server as, or [switch to]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html), the [Magento file system owner](https://glossary.magento.com/magento-file-system-owner).
-2.  Delete the contents of `<magento_root>/pub/static`, except for the `.htaccess` file. Do not delete this file.
-3.  Run the static view files deployment tool `<magento_root>/bin/magento setup:static-content:deploy`.
-<!-- 4.	Set read-only file permissions for the `pub/static` directory, its subdirectories, and files. -->
+1. Log in to the Magento server as, or [switch to]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html), the [Magento file system owner](https://glossary.magento.com/magento-file-system-owner).
+1. Delete the contents of `<magento_root>/pub/static`, except for the `.htaccess` file. Do not delete this file.
+1. Run the static view files deployment tool `<magento_root>/bin/magento setup:static-content:deploy`.
 
-	{:.bs-callout .bs-callout-info}
-  If you enable static view file merging in the Magento Admin, the `pub/static` directory system must be writable.
+   {:.bs-callout .bs-callout-info}
+   If you enable static view file merging in the Magento Admin, the `pub/static` directory system must be writable.
 
 Command options:
 
-	bin/magento setup:static-content:deploy [<languages>] [-t|--theme[="<theme>"]] [--exclude-theme[="<theme>"]] [-l|--language[="<language>"]] [--exclude-language[="<language>"]] [-a|--area[="<area>"]] [--exclude-area[="<area>"]] [-j|--jobs[="<number>"]]  [--no-javascript] [--no-css] [--no-less] [--no-images] [--no-fonts] [--no-html] [--no-misc] [--no-html-minify] [-f|--force]
+```bash
+bin/magento setup:static-content:deploy [<languages>] [-t|--theme[="<theme>"]] [--exclude-theme[="<theme>"]] [-l|--language[="<language>"]] [--exclude-language[="<language>"]] [-a|--area[="<area>"]] [--exclude-area[="<area>"]] [-j|--jobs[="<number>"]]  [--no-javascript] [--no-css] [--no-less] [--no-images] [--no-fonts] [--no-html] [--no-misc] [--no-html-minify] [-f|--force]
+```
 
 The following table explains this command's parameters and values.
 
@@ -274,44 +275,52 @@ Following are some example commands.
 
 The following command deploys [static content](https://glossary.magento.com/static-content) for the US English (`en_US`) language, excludes the Luma [theme](https://glossary.magento.com/theme) provided with Magento, and does not minify [HTML](https://glossary.magento.com/html) files.
 
-    bin/magento setup:static-content:deploy en_US --exclude-theme Magento/luma --no-html-minify
+```bash
+bin/magento setup:static-content:deploy en_US --exclude-theme Magento/luma --no-html-minify
+```
 
 Sample output:
 
-    Requested languages: en_US
-    Requested areas: frontend, adminhtml
-    Requested themes: Magento/blank, Magento/backend
-    === frontend -> Magento/blank -> en_US ===
-    === adminhtml -> Magento/backend -> en_US ===
-    ...........................................................
-    ... more ...
-    Successful: 2055 files; errors: 0
-    ---
+```terminal
+Requested languages: en_US
+Requested areas: frontend, adminhtml
+Requested themes: Magento/blank, Magento/backend
+=== frontend -> Magento/blank -> en_US ===
+=== adminhtml -> Magento/backend -> en_US ===
+...........................................................
+... more ...
+Successful: 2055 files; errors: 0
+---
 
-    New version of deployed files: 1466710645
-    ............
-    Successful: 1993 files; errors: 0
-    ---
+New version of deployed files: 1466710645
+............
+Successful: 1993 files; errors: 0
+---
+```
 
 #### Generating static view files for one theme and one area
 
 The following command generates static view files for all languages, the [frontend](https://glossary.magento.com/frontend) area only, the Magento Luma theme only, without generating fonts:
 
-    bin/magento setup:static-content:deploy --area frontend --no-fonts --theme Magento/luma
+```bash
+bin/magento setup:static-content:deploy --area frontend --no-fonts --theme Magento/luma
+```
 
 Sample output:
 
-    Requested languages: en_US
-    Requested areas: frontend
-    Requested themes: Magento/luma
-    === frontend -> Magento/luma -> en_US ===
-    ...........................................................
-    ... more ...
-    ........................................................................
-    Successful: 2092 files; errors: 0
-    ---
+```terminal
+Requested languages: en_US
+Requested areas: frontend
+Requested themes: Magento/luma
+=== frontend -> Magento/luma -> en_US ===
+...........................................................
+... more ...
+........................................................................
+Successful: 2092 files; errors: 0
+---
 
-    New version of deployed files: 1466711110
+New version of deployed files: 1466711110
+```
 
 ### Deploy static view files without installing Magento {#deploy_without_db}
 
@@ -319,9 +328,9 @@ You might want to run the deployment process in a separate, non-production, envi
 
 To do this, take the following steps:
 
-1.  Run [`bin/magento app:config:dump`]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-config-mgmt-export.html) to export the configuration from your production system.
-2.  Copy the exported files to the non-production code base.
-3.  Run [`bin/magento setup:static-content:deploy`](#config-cli-subcommands-staticview).
+1. Run [`bin/magento app:config:dump`]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-config-mgmt-export.html) to export the configuration from your production system.
+1. Copy the exported files to the non-production code base.
+1. Run [`bin/magento setup:static-content:deploy`](#config-cli-subcommands-staticview).
 
 ## Troubleshooting the static view files deployment tool {#view-file-trouble}
 
@@ -329,20 +338,22 @@ To do this, take the following steps:
 
 **Symptom**: The following error is displayed when you run the static view files deployment tool:
 
-	ERROR: You need to install the Magento application before running this utility.
+```terminal
+ERROR: You need to install the Magento application before running this utility.
+```
 
 **Solution**:
 
 Use the following steps:
 
-1.  Install the Magento software in any of the following ways:
+1. Install the Magento software in any of the following ways:
 
-    -   [Command line]({{ page.baseurl }}/install-gde/install/cli/install-cli.html)
-    -   [Setup wizard]({{ page.baseurl }}/install-gde/install/web/install-web.html)
+   -  [Command line]({{ page.baseurl }}/install-gde/install/cli/install-cli.html)
+   -  [Setup wizard]({{ page.baseurl }}/install-gde/install/web/install-web.html)
 
-2.  Log in to the Magento server as, or [switch to]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html), the Magento file system owner.
-3.  Delete the contents of `<magento_root>/pub/static` directory, except for the `.htaccess` file. Do not delete this file.
-4.  [Run the static view files deployment tool](#config-cli-subcommands-staticview).
+1. Log in to the Magento server as, or [switch to]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html), the Magento file system owner.
+1. Delete the contents of `<magento_root>/pub/static` directory, except for the `.htaccess` file. Do not delete this file.
+1. [Run the static view files deployment tool](#config-cli-subcommands-staticview).
 
 ## Tip for developers customizing the static content deployment tool
 

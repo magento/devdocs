@@ -18,8 +18,8 @@ A gateway client receives a called [`Transfer`](#transfer_factory) object. The c
 
 The following gateway client implementations can be used out-of-the-box:
 
-* [\Magento\Payment\Gateway\Http\Client\Zend]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Payment/Gateway/Http/Client/Zend.php)
-* [\Magento\Payment\Gateway\Http\Client\Soap]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Payment/Gateway/Http/Client/Soap.php)
+*  [\Magento\Payment\Gateway\Http\Client\Zend]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Payment/Gateway/Http/Client/Zend.php)
+*  [\Magento\Payment\Gateway\Http\Client\Soap]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Payment/Gateway/Http/Client/Soap.php)
 
 ## Example
 
@@ -40,7 +40,7 @@ Following is the illustration of how a Zend client can be added in `di.xml`:
 
 Transfer Factory allows to create transfer object with all data from [request builders]({{ page.baseurl }}/payments-integrations/payment-gateway/request-builder.html). This object is then used by Gateway Client to process requests to payment processor.
 
-Transfer Factory uses [Transfer Builder]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Payment/Gateway/Http/TransferBuilder.php) to set required request parameters. 
+Transfer Factory uses [Transfer Builder]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Payment/Gateway/Http/TransferBuilder.php) to set required request parameters.
 
 The basic Transfer Factory interface is [Magento\Payment\Gateway\Http\TransferFactoryInterface]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Payment/Gateway/Http/TransferFactoryInterface.php).
 

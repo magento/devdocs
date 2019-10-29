@@ -20,4 +20,4 @@ If you still require technical support, you can create a Support ticket through 
 1. Fill out the support ticket form and attach any helpful documentation, such as screenshots or notes.
 1. Click **Submit**.
 
-See the [Submit a support ticket](https://support.magento.com/hc/en-us/articles/360000913794#submit-ticket) article for detailed instructions.
+See the [Submit a support ticket](https://support.magento.com/hc/en-us/articles/360000913794#submit-ticket) article in the Magento Help Center for detailed instructions.

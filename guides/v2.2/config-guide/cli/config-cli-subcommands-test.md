@@ -17,13 +17,13 @@ This command runs a set of tests defined in the Magento 2 code base. You can eit
 
 Before you run this command, all of the following must be true:
 
--   The `Magento_Developer` [module](https://glossary.magento.com/module) must be enabled. You can enable it as follows:
+-  The `Magento_Developer` [module](https://glossary.magento.com/module) must be enabled. You can enable it as follows:
 
         bin/magento module:enable [--force] Magento_Developer
 
     Use the `--force` option only if it's necessary.
 
--   Your system must be set up to run the desired tests.
+-  Your system must be set up to run the desired tests.
 
 For example, to run integration tests, you should copy `dev/tests/integration/etc/install-config-mysql.php.dist` to `dev/tests/integration/etc/install-config-mysql.php` and modify it to suit your environment.
 
@@ -31,16 +31,24 @@ For example, to run integration tests, you should copy `dev/tests/integration/et
 
 Command usage:
 
-	bin/magento dev:tests:run <test>
+```bash
+bin/magento dev:tests:run <test>
+```
 
 To list the available test types:
 
-	bin/magento dev:tests:run --help
+```bash
+bin/magento dev:tests:run --help
+```
 
 This gives you a list similar to the following:
 
-    all, unit, integration, integration-all, static, static-all, integrity, legacy, default
+```terminal
+all, unit, integration, integration-all, static, static-all, integrity, legacy, default
+```
 
 For example, to run integration tests:
 
-	bin/magento dev:tests:run integration
+```bash
+bin/magento dev:tests:run integration
+```

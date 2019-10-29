@@ -20,19 +20,19 @@ These guidelines came from many years of hard work, experience, and discussions.
 
 Use [RFC2119] to interpret keywords like:
 
-* MUST and MUST NOT
+*  MUST and MUST NOT
 
-* REQUIRED
+*  REQUIRED
 
-* SHALL and SHALL NOT
+*  SHALL and SHALL NOT
 
-* SHOULD and SHOULD NOT
+*  SHOULD and SHOULD NOT
 
-* RECOMMENDED
+*  RECOMMENDED
 
-* MAY
+*  MAY
 
-* OPTIONAL
+*  OPTIONAL
 
 ## 1. Basic programming principles
 
@@ -54,7 +54,7 @@ Use [RFC2119] to interpret keywords like:
 
 {% collapsible Examples: %}
 
-### Not recommended
+__Not recommended:__
 
 ```php
 class Config
@@ -73,7 +73,7 @@ class Config
 }
 ```
 
-### Recommended
+__Recommended:__
 
 ```php
 class Config
@@ -97,7 +97,7 @@ class Config
 
 2.2.2. Factories SHOULD be used for object instantiation instead of `new` keyword. An object SHOULD be replaceable for testing or extensibility purposes.
 Exception: [DTOs](https://en.wikipedia.org/wiki/Data_transfer_object). There is no behavior in DTOs, so there is no reason for its replaceability.
-Tests can create real DTOs for stubs. 
+Tests can create real DTOs for stubs.
 Data interfaces,  Exceptions and `Zend_Db_Expr` are examples of DTOs.
 
 {:start="2.3"}
@@ -142,7 +142,7 @@ class Composite
 
 {% collapsible Examples: %}
 
-### Not recommended
+__Not recommended:__
 
 ```php
 class Config
@@ -157,7 +157,7 @@ class Config
 }
 ```
 
-### Recommended
+__Recommended:__
 
 ```php
 class Config
@@ -192,7 +192,7 @@ class Config
 
 {% collapsible Examples: %}
 
-### Not recommended
+__Not recommended:__
 
 ```php
 interface SessionAdapterInterface
@@ -210,7 +210,7 @@ class SessionManager
 // Breaks polymorphism principle, restricts what types can be passed at the runtime.
 ```
 
-### Recommended
+__Recommended:__
 
 ```php
 interface SessionAdapterInterface
@@ -235,7 +235,7 @@ class SessionManager
 2.6. Inheritance SHOULD NOT be used. Composition SHOULD be used for code reuse.
 {% collapsible Examples: %}
 
-### Not Recommended
+__Not recommended:__
 
 ```php
 class AbstractController extends Action
@@ -270,7 +270,7 @@ class Edit extends AbstractController
 // Smaller classes, one responsibility, more flexible, easy to understand, more testable.
 ```
 
-### Recommended
+__Recommended:__
 
 ```php
 class Edit extends Action
@@ -310,7 +310,7 @@ class Edit extends Action
 2.14. [Temporal coupling] MUST be avoided
 {% collapsible Example #1: %}
 
-### Not recommended
+__Not recommended:__
 
 ```php
 $url = new Url();
@@ -324,7 +324,7 @@ echo $url->get('custom/path'); // Throws exception, which makes issue smaller. I
 // Method with out parameters that does not return anything could be sign of temporal coupling.
 ```
 
-### Recommended
+__Recommended:__
 
 ```php
 $url = new Url($baseUrl);
@@ -343,7 +343,7 @@ echo $url->get($baseUrl, 'custom/path');
 
 {% collapsible Example #2: %}
 
-### Not recommended
+__Not recommended:__
 
 ```php
 class Edit extends Action
@@ -366,7 +366,7 @@ class View extends Template
 }
 ```
 
-### Recommended
+__Recommended:__
 
 ```php
 class Edit extends Action
@@ -439,11 +439,11 @@ You need to read configuration from different sources (like database or filesyst
 
 5.1. All exceptions that are surfaced to the end user MUST produce error messages in the following format:
 
-* Symptom
+*  Symptom
 
-* Details
+*  Details
 
-* Solution or workaround
+*  Solution or workaround
 
 {:start="5.2"}
 5.2. Exceptions MUST NOT be handled in the same function where they are thrown.
@@ -480,6 +480,10 @@ You need to read configuration from different sources (like database or filesyst
 
 5.18. `LocalizedException`s SHOULD be thrown in the presentation layer only.
 
+5.19. Each module or component MUST declare its own exceptions. Exceptions declared in other components SHOULD NOT be thrown.
+
+5.20. Plugin MUST only throw exceptions declared by the method to which the plugin is added or derived exceptions. Observer MUST only throw exceptions declared by the method that triggers an event or derived exceptions.
+
 ## 6. Application layers
 
 ### 6.1. All layers
@@ -496,9 +500,9 @@ You need to read configuration from different sources (like database or filesyst
 
 6.2.1. According to CQRS, the Presentation layer hosts the Command and the Query Infrastructures:
 
-* **Command** for Actions
+*  **Command** for Actions
 
-* **Query** for [Layout](https://glossary.magento.com/layout) and its elements (Blocks and UI Components)
+*  **Query** for [Layout](https://glossary.magento.com/layout) and its elements (Blocks and UI Components)
 
 6.2.2. Request, Response, Session, Store Manager and Cookie objects MUST be used only in the Presentation layer.
 
@@ -508,7 +512,7 @@ You need to read configuration from different sources (like database or filesyst
 
 6.2.5 Blocks MUST NOT assume that a specific, or any, controller has been invoked for current request.
 
-###  6.3. Data Access (Persistence) layer
+### 6.3. Data Access (Persistence) layer
 
 6.3.1. Entities MAY have fields scoped differently (in product, EAV --- per store, options --- per website).
 
@@ -540,15 +544,15 @@ You need to read configuration from different sources (like database or filesyst
 
 6.4.3.1. Strict typing is enforced for Service and Data interfaces located under `MyCompany/MyModuleApi/Api`. Only the following types are allowed:
 
-* Scalar types: `string` (including Date and DateTime); `int`; `float`; `boolean`
+*  Scalar types: `string` (including Date and DateTime); `int`; `float`; `boolean`
 
-* Data interfaces
+*  Data interfaces
 
-* One-dimensional indexed arrays of scalars or data interfaces: for example `string[]`, `\MyCompany\MyModuleApi\Api\Data\SomeInterface[]`. Hash maps (associative arrays) are not supported.
+*  One-dimensional indexed arrays of scalars or data interfaces: for example `string[]`, `\MyCompany\MyModuleApi\Api\Data\SomeInterface[]`. Hash maps (associative arrays) are not supported.
 
-* Nullable scalars or data interfaces: for example `string|null`. Using just `null` is prohibited.
+*  Nullable scalars or data interfaces: for example `string|null`. Using just `null` is prohibited.
 
-* `void`
+*  `void`
 
 6.4.3.2. Service contracts SHOULD support batch data processing. For example, an entity persisting method SHOULD accept an array of entities to persist instead of a single entity. Customizations implemented through plugins SHOULD be adjusted respectively.
 
@@ -556,11 +560,11 @@ You need to read configuration from different sources (like database or filesyst
 
 6.4.3.4. Batch operations that modify state MUST accept an array of entities and return a response object that contains:
 
-* An array of successfully processed items
+*  An array of successfully processed items
 
-* An array of items with retriable errors
+*  An array of items with retriable errors
 
-* An array of items with non-retriable errors
+*  An array of items with non-retriable errors
 
 6.4.3.5. Batch operations that modify state SHOULD be implemented in the most performant manner and SHOULD NOT load modified entities to generate response.
 
@@ -604,27 +608,27 @@ You need to read configuration from different sources (like database or filesyst
 
 7.1. An Application Instance consists of:
 
-* Code
+*  Code
 
-* Environment Configuration
+*  Environment Configuration
 
-* Data
+*  Data
 
 7.2. Code includes:
 
-* application codebase
+*  application codebase
 
-* [XML](https://glossary.magento.com/xml) configuration
+*  [XML](https://glossary.magento.com/xml) configuration
 
-* generated code and [static files](https://glossary.magento.com/static-files)
+*  generated code and [static files](https://glossary.magento.com/static-files)
 
-* database structure
+*  database structure
 
-* system configuration values
+*  system configuration values
 
-* configuration scopes (stores/store groups/websites)
+*  configuration scopes (stores/store groups/websites)
 
-* [CMS](https://glossary.magento.com/cms) entities
+*  [CMS](https://glossary.magento.com/cms) entities
 
 7.3. Environment Configuration includes information about application services connection.
 
@@ -726,16 +730,16 @@ You need to read configuration from different sources (like database or filesyst
 
 11.3.1.1. Page file names MUST follow this pattern:
 
-* `{Admin or Storefront}{Description}Page.xml`, where `{Description}` briefly describes the page under test.
-* Use [PascalCase](http://wiki.c2.com/?PascalCase).
-* Example: `AdminProductAttributeGridPage.xml`
+*  `{Admin or Storefront}{Description}Page.xml`, where `{Description}` briefly describes the page under test.
+*  Use [PascalCase](http://wiki.c2.com/?PascalCase).
+*  Example: `AdminProductAttributeGridPage.xml`
 
 11.3.1.2. Page `name` attribute MUST be the same as the file name.
 
 11.3.1.3. Page `module` attribute MUST follow this pattern:
 
-* `{VendorName}_{ModuleName}`
-* Example: `Magento_Backend`
+*  `{VendorName}_{ModuleName}`
+*  Example: `Magento_Backend`
 
 11.3.1.4. There MUST be only one `<page>` entity per file.
 
@@ -743,9 +747,9 @@ You need to read configuration from different sources (like database or filesyst
 
 11.3.2.1. Section file names MUST follow this pattern:
 
-* `{Admin or Storefront}{Description}Section.xml`, where `{Description}` briefly describes the section under test.
-* Use [PascalCase](http://wiki.c2.com/?PascalCase).
-* Example: `StorefrontCheckoutCartSummarySection.xml`
+*  `{Admin or Storefront}{Description}Section.xml`, where `{Description}` briefly describes the section under test.
+*  Use [PascalCase](http://wiki.c2.com/?PascalCase).
+*  Example: `StorefrontCheckoutCartSummarySection.xml`
 
 11.3.2.2. Section `name` attribute MUST be the same as the file name.
 
@@ -767,9 +771,9 @@ You need to read configuration from different sources (like database or filesyst
 
 11.3.4.1. Data entity file names MUST follow this pattern:
 
-* `{Type}Data.xml`, where `{Type}` describes the type of entities.
-* Use [PascalCase](http://wiki.c2.com/?PascalCase).
-* Examples: `ProductData.xml` or `CustomerData.xml`
+*  `{Type}Data.xml`, where `{Type}` describes the type of entities.
+*  Use [PascalCase](http://wiki.c2.com/?PascalCase).
+*  Examples: `ProductData.xml` or `CustomerData.xml`
 
 11.3.4.2. Data entities SHOULD make use of `unique="suffix"` or `unique="prefix"` to ensure that tests using the entity can be repeatedly ran against the same environment.
 
@@ -779,9 +783,9 @@ You need to read configuration from different sources (like database or filesyst
 
 11.3.5.1. Action group file names MUST follow this pattern:
 
-- If the action group is making an assertion, then use the following format: `Assert{Admin or Storefront}{Functionality}ActionGroup.xml` where `{Functionality}` briefly describes what the action group is doing.
-- Otherwise use this format: `{Admin or Storefront}{Functionality}ActionGroup.xml`
-- Example: `AssertStorefrontMinicartContainsProductActionGroup.xml`
+*  If the action group is making an assertion, then use the following format: `Assert{Admin or Storefront}{Functionality}ActionGroup.xml` where `{Functionality}` briefly describes what the action group is doing.
+*  Otherwise use this format: `{Admin or Storefront}{Functionality}ActionGroup.xml`
+*  Example: `AssertStorefrontMinicartContainsProductActionGroup.xml`
 
 11.3.5.2. Action group arguments MUST specify the `type` attribute.
 
@@ -872,7 +876,7 @@ class SampleEventObserverThatModifiesInputs implements ObserverInterface
 
 15.3.1. Sanitize input; escape output.
 
-15.3.2. Follow [templates XSS security guidelines]({{ page.baseurl }}/frontend-dev-guide/templates/template-security.html) for escaping output.
+15.3.2. Follow [XSS prevention strategies guidelines]({{ page.baseurl }}/extension-dev-guide/xss-protection.html) for escaping output.
 
 15.3.3. Incoming data should be casted to the expected type. String data should be validated/sanitized.
 
@@ -923,7 +927,7 @@ class SampleEventObserverThatModifiesInputs implements ObserverInterface
 15.11. Security capabilities SHOULD be implemented either on the Magento Framework level or in a dedicated module(s) and utilized by the entire application in a centralize manner.
 
 15.12. Files MUST be secured by a web server configuration (e.g., `.htaccess` or `nginx.conf`), except files that are intended to be publicly accessible.
- 
+
 15.13 Presentation layer classes that access user input directly MUST NOT assume it has been validated.
 
 ## 16. Cron

@@ -40,23 +40,25 @@ Developing code for {{site.data.var.ee}} requires working in Git branches. Not e
 
 Have the following prepared to complete your initial workspace and project setup:
 
- * {{site.data.var.ece}} account with an added user account
- * Magento authentication keys from Magento Marketplace. If the Project Owner or Technical Lead created the project according to these instructions, the [Magento authentication keys]({{ page.baseurl }}/install-gde/prereq/connect-auth.html) should already be installed and available in the auth.json file in the code repository.
+*  {{site.data.var.ece}} account with an added user account
+*  Magento authentication keys from Magento Marketplace. If the Project Owner or Technical Lead created the project according to these instructions, the [Magento authentication keys]({{ page.baseurl }}/install-gde/prereq/connect-auth.html) should already be installed and available in the auth.json file in the code repository.
 
 ## Get started
 
 You should be ready to go! The following sections provide a link to the previous step, instructions, and a link to the next step to start developing:
 
-* Install all prerequisite software and tools on your host system (laptop, desktop, etc) and local workspace (VM)
-* Install Magento Cloud CLI
-* Set up SSH keys
-* Configure the Magento file system owner (optional)
-* Clone and branch the project
-* Install Magento
-* Complete configurations and file/folder permissions
-* Verify install, branches, and get to coding!
+*  Install all prerequisite software and tools on your host system (laptop, desktop, etc) and local workspace (VM)
+*  Install Magento Cloud CLI
+*  Set up SSH keys
+*  Configure the Magento file system owner (optional)
+*  Clone and branch the project
+*  Install Magento
+*  Complete configurations and file/folder permissions
+*  Verify install, branches, and get to coding!
 
 For Pro projects, you also should deploy across to Staging and Production as part of your set up.
 
-#### Next step:
+{:.ref-header}
+Next step
+
 [Install Magento prerequisites]({{ page.baseurl }}/cloud/before/before-workspace-magento-prereqs.html)
