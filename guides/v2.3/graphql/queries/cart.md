@@ -781,8 +781,8 @@ The `CartAddressCountry` object can contain the following attributes.
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`code` | String | The country code
-`label` | String | The display label for the country
+`code` | String! | The country code
+`label` | String! | The display label for the country
 
 ### CartAddressInterface {#CartAddressInterface}
 
@@ -790,16 +790,16 @@ The `CartAddressInterface` contains the following attributes.
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`city` | String | The city specified for the billing address
+`city` | String! | The city specified for the billing address
 `company` | String | The company specified for the billing address
-`country` | [CartAddressCountry](#CartAddressCountry) | The country code and label for the billing address
+`country` | [CartAddressCountry!](#CartAddressCountry) | The country code and label for the billing address
 `customer_notes` | String | Comments made to the customer that accompanies the order
-`firstname` | String | The customer's first name
-`lastname` | String | The customer's last name
+`firstname` | String! | The customer's first name
+`lastname` | String! | The customer's last name
 `postcode` | String | The postal code for the billing address
 `region` | [CartAddressRegion](#CartAddressRegion) | An object containing the region label and code
-`street` | [String] | The street for the billing address
-`telephone` | String | The telephone number for the billing address
+`street` | [String!]! | The street for the billing address
+`telephone` | String! | The telephone number for the billing address
 
 ### CartAddressRegion object {#CartAddressRegion}
 
@@ -807,8 +807,8 @@ The `CartAddressRegion` object can contain the following attributes.
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`code` | String | The state or province code
-`label` | String | The display label for the region
+`code` | String! | The state or province code
+`label` | String! | The display label for the region
 
 ### CartDiscount object {#CartDiscount}
 
