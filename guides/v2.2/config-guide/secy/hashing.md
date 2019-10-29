@@ -3,17 +3,15 @@ group: configuration-guide
 title: Password hashing
 ---
 
-## Overview
-
 Currently Magento uses its own strategy for password hashing, based on different native PHP hashing algorithms. Magento supports multiple algorithms like `MD5`, `SHA256`, or `Argon 2ID13`. If the Sodium extension is installed (installed by default in PHP 7.2), then `Argon 2ID13` will be chosen as the default hashing algorithm. Otherwise, `SHA256` will be as default. As Magento still supports PHP 7.1.x, we cannot use the native PHP `password_hash` function with Argon 2i algorithm support, which was added in the PHP 7.2 release.
 
-To avoid compromising passwords that have been hashed with outdated algorithms like `MD5` and have not been updated in a while, the current implementation provides a method to upgrade the hash without changing the original password. In general, the password hash has the following format:
+To avoid compromising older passwords that have been hashed with outdated algorithms like `MD5`, the current implementation provides a method to upgrade the hash without changing the original password. In general, the password hash has the following format:
 
 ```text
-password_hash:salt:version0:versionn
+password_hash:salt:version<n>:version<n>
 ```
 
-where `version0`...`versionn` represents all the hash algorithms versions used on the password. Also, the salt is always stored together with the password hash, so we can restore the entire chain of algorithms. An example looks like:
+where `version<n>`...`version<n>` represents all the hash algorithms versions used on the password. Also, the salt is always stored together with the password hash, so we can restore the entire chain of algorithms. An example looks like:
 
 ```text
 a853b06f077b686f8a3af80c98acfca763cf10c0e03597c67e756f1c782d1ab0:8qnyO4H1OYIfGCUb:1:2
@@ -54,4 +52,4 @@ Since Magento stores all used password hashes versions together with the passwor
 
 ## Implementation
 
-The `\Magento\Framework\Encryption\Encryptor` is responsible for password hash generation and verification. The `bin/magento customer:hash:upgrade` command upgrades a customer password hash to the latest hash algorithm.
+The `\Magento\Framework\Encryption\Encryptor` class is responsible for password hash generation and verification. The [`bin/magento customer:hash:upgrade`](https://devdocs.magento.com/guides/v2.3/reference/cli/magento.html#customerhashupgrade) command upgrades a customer password hash to the latest hash algorithm.
