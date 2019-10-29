@@ -25,6 +25,8 @@ This **5-step tutorial** generally takes **45 minutes**.
 
 *  Install a REST client. You can use any REST client to send calls to Magento. [Postman](https://www.getpostman.com/) is recommended.
 
+*  [Install and configure RabbitMQ]({{ page.baseurl }}/install-gde/prereq/install-rabbitmq.html), which is the default message broker for bulk API endpoints.
+
 *  Obtain an admin authorization token. All calls in this tutorial require administrator privileges. See [Generate the admin token]({{ page.baseurl }}/rest/tutorials/prerequisite-tasks/create-admin-token.html) for more information.
 
 ### Other resources
