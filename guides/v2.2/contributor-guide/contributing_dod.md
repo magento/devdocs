@@ -6,7 +6,7 @@ title: Magento Definition of Done
 ## Overview
 
 The "Definition of Done" (DoD) is a collective term for a set of acceptance criteria that is applied to any changes in the product code base.
-The requirements that result from our DoD are applied by default to all user stories and to each task within this user story as well as for bug fixes.
+The requirements that result from our DoD are applied by default to all Magento-owned repositories.
 
 Internally, the Magento development teams follow the DoD to ensure that all work meets consistent release criteria.
 We encourage our community contributors to also follow the Magento DoD.
