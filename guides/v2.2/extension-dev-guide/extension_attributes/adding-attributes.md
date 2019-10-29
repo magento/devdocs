@@ -237,13 +237,13 @@ In second, non-scalar one:
 ```
 
 In third, array one (in JSON for a change):
-```json
+```js
 {
-  id: 1,
-  sku: "some-sku",
-  custom_attributes: {... custom attribute data ...},
-  extension_attributes: {
-    some_custom_data: ["value1", "value2", "value3"]
+  "id": 1,
+  "sku": "some-sku",
+  "custom_attributes": { /* ... custom attribute data ... */ },
+  "extension_attributes": {
+    "some_custom_data": ["value1", "value2", "value3"]
   }
 }
 ```
