@@ -67,20 +67,20 @@ To enable maintenance mode:
    composer update
    ```
 
-   For example, to upgrade to {{ site.data.var.ce }} version {{ page.guide_version }}.4, enter:
+   For example, to upgrade to {{ site.data.var.ce }} version {{ page.guide_version }}.10, enter:
 
    ```bash
-   composer require magento/product-community-edition {{ page.guide_version }}.4 --no-update
+   composer require magento/product-community-edition {{ page.guide_version }}.10 --no-update
    ```
 
    ```bash
    composer update
    ```
 
-   To upgrade to Magento EE version {{ page.guide_version }}.4, enter:
+   To upgrade to Magento EE version {{ page.guide_version }}.10, enter:
 
    ```bash
-   composer require magento/product-enterprise-edition {{ page.guide_version }}.4 --no-update
+   composer require magento/product-enterprise-edition {{ page.guide_version }}.10 --no-update
    ```
 
    ```bash
