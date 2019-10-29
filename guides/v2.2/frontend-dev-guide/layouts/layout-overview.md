@@ -108,14 +108,15 @@ Layout validations and error handling depends on the [application mode] in which
 
 *  production or default modes: syntax is validated in `.xml` and `.xsd` files. If validation fails, errors are logged to the `var/log` directory without throwing an exception. The validation according to the xsd schema is not performed.
 
-{:.ref-header}
-Related topics
+## Guide contents
 
-*  [Layout instructions]
-*  [Common layout customization tasks]
+*  [Layout instructions][]
+*  [Layout file types][]
+*  [Product layouts][]
 *  [Extend a layout][extend]
 *  [Override a layout][override]
-*  [Customizing layout - step-by-step illustration]
+*  [Common layout customization tasks][]
+*  [Customizing layout - step-by-step illustration][]
 
 <!-- Link definitions -->
 [extend]: {{ page.baseurl }}/frontend-dev-guide/layouts/layout-extend.html
@@ -124,6 +125,7 @@ Related topics
 [inherited]: {{ page.baseurl }}/frontend-dev-guide/themes/theme-inherit.html
 [application mode]: {{ page.baseurl }}/config-guide/bootstrap/magento-modes.html
 [Layout instructions]: {{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html
+[Product layouts]: {{ page.baseurl }}/frontend-dev-guide/layouts/product-layouts.html
 [Common layout customization tasks]: {{ page.baseurl }}/frontend-dev-guide/layouts/xml-manage.html
 [Customizing layout - step-by-step illustration]: {{ page.baseurl }}/frontend-dev-guide/layouts/layout-practice.html
 
