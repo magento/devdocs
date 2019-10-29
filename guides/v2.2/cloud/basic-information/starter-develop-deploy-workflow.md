@@ -7,9 +7,9 @@ The {{site.data.var.ece}} includes a single Git repository with a master branch 
 
 For your environments, we recommend following a Development > Staging > Production workflow to develop and deploy your site.
 
-* **Production environment (live site)**—Provides a full Production environment with all services built and deployed from the code on the `master` branch.
-* **Staging environment**—Provides a full Staging environment that matches the Production environment with all services built and deployed from a `staging` branch that you create by cloning from `master`.
-* **Integration environments**—Provides up to two active development environments that you create from the `staging` branch. The Integration environment does not support third-party services like Fastly and New Relic.
+*  **Production environment (live site)**—Provides a full Production environment with all services built and deployed from the code on the `master` branch.
+*  **Staging environment**—Provides a full Staging environment that matches the Production environment with all services built and deployed from a `staging` branch that you create by cloning from `master`.
+*  **Integration environments**—Provides up to two active development environments that you create from the `staging` branch. The Integration environment does not support third-party services like Fastly and New Relic.
 
 For your branches, you can follow any development methodology. For example, you can follow an Agile methodology such as scrum to create branches for every sprint.
 
@@ -21,18 +21,18 @@ Development and deployment on Starter plans begin with your initial project. You
 
 The development workflow uses the following process:
 
-* [Clone and branch](#clone-branch) from the `master` to create `staging` and development branches
-* [Develop code](#dev-code) and install extensions locally in a development branch
-* [Configure](#configure-store) your store and extension settings
-* [Generate configuration](#config-management) management files
-* [Push code](#push-code) and configuration to build and deploy to the Staging and Production environments
+*  [Clone and branch](#clone-branch) from the `master` to create `staging` and development branches
+*  [Develop code](#dev-code) and install extensions locally in a development branch
+*  [Configure](#configure-store) your store and extension settings
+*  [Generate configuration](#config-management) management files
+*  [Push code](#push-code) and configuration to build and deploy to the Staging and Production environments
 
 ![Develop and deploy workflow]({{ site.baseurl }}/common/images/cloud_workflow-starter.png)
 
 You also have a few optional steps to help develop and test your code and your store data:
 
-* [Install sample data](#sample-data) to your store
-* [Pull production store data](#prod-data) down to environments
+*  [Install sample data](#sample-data) to your store
+*  [Pull production store data](#prod-data) down to environments
 
 This process assumes that you have set up your [local developer workspace]({{ page.baseurl }}/cloud/setup/first-time-setup.html).
 
@@ -71,12 +71,12 @@ It's the time you have been waiting for...writing code. Using this base branch o
 
 We recommend using a branching strategy with your development work. Using one branch to do all of your work all at once might make testing difficult. For example, you could follow continuous integration and sprint methodologies to work:
 
-* Add a few extensions and configure them with your first branch
-* Push this code, test, and merge to Staging then Production
-* Fully configure your services in `services.yaml` and add a theme
-* Push this code, test, and merge to Staging then Production
-* Integrate with a 3rd party service
-* Push this code, test, and merge to Staging then Production
+*  Add a few extensions and configure them with your first branch
+*  Push this code, test, and merge to Staging then Production
+*  Fully configure your services in `services.yaml` and add a theme
+*  Push this code, test, and merge to Staging then Production
+*  Integrate with a 3rd party service
+*  Push this code, test, and merge to Staging then Production
 
 And so on until you have your store fully built, configured, and ready to go live. But keep reading, we have even better options for your store and code configuration!
 
@@ -92,11 +92,11 @@ Configure your store settings from the Magento Admin panel for the Integration e
 
 For the best information on configurations, review the documentation for {{site.data.var.ee}} and the installed extensions. Here are some links and ideas to help you get kickstarted:
 
-* [Best practices for store configuration]({{ page.baseurl }}/cloud/configure/configure-best-practices.html) for specific best practices in the cloud
-* [Basic configuration](http://docs.magento.com/m2/ee/user_guide/configuration/configuration-basic.html) for store admin access, name, languages, currencies, branding, sites, store views and more
-* [Theme](http://docs.magento.com/m2/ee/user_guide/design/design-theme.html) for your look and feel of the site and stores including CSS and layouts
-* [System configuration](http://docs.magento.com/m2/ee/user_guide/system/system.html) for roles, tools, notifications, and your encryption key for your database
-* Extension settings using their documentation
+*  [Best practices for store configuration]({{ page.baseurl }}/cloud/configure/configure-best-practices.html) for specific best practices in the cloud
+*  [Basic configuration](http://docs.magento.com/m2/ee/user_guide/configuration/configuration-basic.html) for store admin access, name, languages, currencies, branding, sites, store views and more
+*  [Theme](http://docs.magento.com/m2/ee/user_guide/design/design-theme.html) for your look and feel of the site and stores including CSS and layouts
+*  [System configuration](http://docs.magento.com/m2/ee/user_guide/system/system.html) for roles, tools, notifications, and your encryption key for your database
+*  Extension settings using their documentation
 
 Beyond just store settings, you can further configure multiple sites and stores, configured services, and more. See [Configure Magento Commerce]({{ page.baseurl }}/cloud/configure/configuration-overview.html).
 
@@ -108,8 +108,8 @@ If you are familiar with Magento, you may be concerned about how to get your con
 
 {{site.data.var.ece}} provides a set of two [Configuration Management]({{ page.baseurl }}/cloud/live/sens-data-over.html) commands that export configuration settings from your environment into a file. These commands are only available for **{{site.data.var.ece}} 2.2 and later**.
 
-* `php .vendor/bin/m2-ece-scd-dump`: Recommended. Exports only the configuration settings you have entered or modified from defaults into a configuration file.
-* `php bin/magento app:config:dump`: Exports every configuration setting, including modified and default, into a configuration file.
+*  `php .vendor/bin/m2-ece-scd-dump`: Recommended. Exports only the configuration settings you have entered or modified from defaults into a configuration file.
+*  `php bin/magento app:config:dump`: Exports every configuration setting, including modified and default, into a configuration file.
 
 The generated file is `app/etc/config.php`.
 
@@ -117,11 +117,11 @@ You generate the file in the Integration environment where you configured Magent
 
 **Important notes** on Configuration Management:
 
-* Any configuration setting included in the file generated from the `app:config:dump` command is locked from editing, or read-only, in the deployed environment. This is one reason we recommend using the `.vendor/bin/m2-ece-scd-dump` command.
+*  Any configuration setting included in the file generated from the `app:config:dump` command is locked from editing, or read-only, in the deployed environment. This is one reason we recommend using the `.vendor/bin/m2-ece-scd-dump` command.
 
-  For example, we will have you install a module for Fastly in your development environment. You can only configure this module in the Staging and Production environment. Using the `.vendor/bin/m2-ece-scd-dump` command keeps those default fields editable when you deploy your development changes to the Staging and Production environment.
+   For example, we will have you install a module for Fastly in your development environment. You can only configure this module in the Staging and Production environment. Using the `.vendor/bin/m2-ece-scd-dump` command keeps those default fields editable when you deploy your development changes to the Staging and Production environment.
 
-* The generated file can be long depending on the size of your deployment. The `.vendor/bin/m2-ece-scd-dump` command generates a much smaller file than the file generated by the `app:config:dump` command.
+*  The generated file can be long depending on the size of your deployment. The `.vendor/bin/m2-ece-scd-dump` command generates a much smaller file than the file generated by the `app:config:dump` command.
 
 ![Generate configuration management file]({{ site.baseurl }}/common/images/cloud_workflow-config-mgmt.png)
 
@@ -175,19 +175,19 @@ When you push branched code from your local environment to the remote branch, a 
 
 Build scripts:
 
-* Your site on the target environment continue running during a build
-* Check and run {{site.data.var.ece}} patches and hotfixes
-* Compile your code with a build and deploy log
-* Check for Configuration Management, if there static content deploy occurs during this phase
-* Create or use a slug of unchanged code to speed up the process
-* Provision all backend services and applications
+*  Your site on the target environment continue running during a build
+*  Check and run {{site.data.var.ece}} patches and hotfixes
+*  Compile your code with a build and deploy log
+*  Check for Configuration Management, if there static content deploy occurs during this phase
+*  Create or use a slug of unchanged code to speed up the process
+*  Provision all backend services and applications
 
 Deploy scripts:
 
-* Puts your site on the target environment in Maintenance mode
-* Deploys static content if not completed during Build
-* Installs or updates {{site.data.var.ece}}
-* Configure routing for traffic
+*  Puts your site on the target environment in Maintenance mode
+*  Deploys static content if not completed during Build
+*  Installs or updates {{site.data.var.ece}}
+*  Configure routing for traffic
 
 When fully completed, your store comes back online, live, with all of your updated code and configurations.
 
@@ -218,9 +218,9 @@ Following your branching and development methodologies, you can easily develop n
 
 {{site.data.var.ece}} environments support continuous integration for constant updates. This workflow supports releases multiple times a day or on a set schedule according to your business needs.
 
-* Create development branches with future features and changes
-* Test the code in your development environments
-* Deploy and test in Staging
-* Deploy to Production
+*  Create development branches with future features and changes
+*  Test the code in your development environments
+*  Deploy and test in Staging
+*  Deploy to Production
 
 For more information, see [Continuous integration]({{ page.baseurl }}/cloud/deploy/continuous-deployment.html).

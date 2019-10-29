@@ -60,8 +60,8 @@ Before installing, make sure you have:
 To install the Data Migration Tool, you must update `composer.json` in the Magento root installation directory to provide the location of the Data Migration Tool package.
 
 1. Log in to your Magento server as, or switch to, <a href="{{ page.baseurl }}/install-gde/prereq/apache-user.html">the Magento file system owner</a>.
-2. Change to Magento 2 root directory.
-3. Enter the following commands:
+1. Change to Magento 2 root directory.
+1. Enter the following commands:
 
    ```bash
    composer config repositories.magento composer https://repo.magento.com
@@ -83,15 +83,15 @@ To install the Data Migration Tool, you must update `composer.json` in the Magen
    composer require magento/data-migration-tool:2.2.0
    ```
 
-4. When prompted, enter your <a href="{{ page.baseurl }}/install-gde/prereq/connect-auth.html">authentication keys</a>. Your public key is your username; your private key is your password.
+1. When prompted, enter your <a href="{{ page.baseurl }}/install-gde/prereq/connect-auth.html">authentication keys</a>. Your public key is your username; your private key is your password.
 
 ### Install from GitHub {#install-github}
 
 If you've cloned Magento 2 from the GitHub repository, follow the steps below to install the Data Migration Tool.
 
 1. Log in to your Magento server as, or switch to, <a href="{{ page.baseurl }}/install-gde/prereq/apache-user.html">the Magento file system owner</a>.
-2. Change to Magento 2 root directory.
-3. Enter the following commands:
+1. Change to Magento 2 root directory.
+1. Enter the following commands:
 
    ```bash
    composer config repositories.data-migration-tool git https://github.com/magento/data-migration-tool
@@ -117,9 +117,9 @@ If you've cloned Magento 2 from the GitHub repository, follow the steps below to
 
 1. Change to your Data Migration Tool directory: `<vendor>/magento/data-migration-tool`.
 
-2. Open [`composer.json`][composer-json] in a text editor.
+1. Open [`composer.json`][composer-json] in a text editor.
 
-3. The `version` entry in that file is the version of the Data Migration Tool.
+1. The `version` entry in that file is the version of the Data Migration Tool.
 
 {:.ref-header}
 Related topics

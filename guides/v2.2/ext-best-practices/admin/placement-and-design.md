@@ -50,8 +50,8 @@ All required settings for this connector type should appear in the **Stores** > 
 
 **Style**
 
-* The style of the listing for your settings should match the look of Magento's listed settings.
-* Icons or images should not be used in the navigation listing for your settings.
+*  The style of the listing for your settings should match the look of Magento's listed settings.
+*  Icons or images should not be used in the navigation listing for your settings.
 
 ---
 
@@ -84,8 +84,8 @@ For example, if your extension is related to the "Reports" functionality then it
 
 **Style**
 
-* The styles of the links in the admin should follow the same styles of the default Magento Navigation Links.
-* Do not introduce custom icons in the navigation submenus.
+*  The styles of the links in the admin should follow the same styles of the default Magento Navigation Links.
+*  Do not introduce custom icons in the navigation submenus.
 
 ---
 

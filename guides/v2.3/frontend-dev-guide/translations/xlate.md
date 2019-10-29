@@ -57,13 +57,6 @@ Depending on your needs, you can use the existing [language packages](#m2devgde-
 *  The [language package](https://glossary.magento.com/language-package) (`i18n` directory) can be saved to any directory of your [extension](https://glossary.magento.com/extension).
 *  The phrases for translations are enabled in the [Phrase] class.
 
-### More information
-
-*  [Theme dictionaries](#m2devgde-xlate-themes)
-*  [Manually translate words and phrases](#m2devgde-xlate-translating)
-*  [Translation dictionaries](#m2devgde-xlate-dictionaries)
-*  [Language packages](#m2devgde-xlate-languagepack)
-
 ## Theme dictionaries {#m2devgde-xlate-themes}
 
 You might need to add a dictionary for the default language (en_US) in the following cases:
@@ -110,6 +103,9 @@ Assembling the preceding `pt_BR.csv` files across all modules and the current th
 You can generate a translation dictionary to use by itself (for example, to translate words and phrases in a custom module) or for use by a [language package](https://glossary.magento.com/language-package). For more information, see [dictionary generator tool - We intend to publish more information on this technique at a later time].
 
 ## Language packages {#m2devgde-xlate-languagepack}
+
+{: .bs-callout-tip }
+Existing language packages can be installed using the [Extension Manager]({{ page.baseurl}}/comp-mgr/extens-man/extensman-main-pg.html) or [Composer]({{ page.baseurl }}/cloud/howtos/install-components.html) like any other extension. You can search for package names on Packagist.
 
 Magento enables you to create the following types of language packages:
 

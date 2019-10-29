@@ -105,21 +105,21 @@ The following list will help you make a distinction between the actual meaning o
 
 **Content (Semantics)** includes:
 
-- logic
-- information
-- data
-- model
-- outline
-- message
+-  logic
+-  information
+-  data
+-  model
+-  outline
+-  message
 
 **Presentation** includes:
 
-- aesthetic
-- graphics
-- design
-- style
-- visualization
-- view
+-  aesthetic
+-  graphics
+-  design
+-  style
+-  visualization
+-  view
 
 ### You must use semantic HTML markup only, and must not use presentation markup.
 
@@ -180,9 +180,9 @@ include note.html
 type='info'
 content='Exception: CSS attributes where values must be calculated beyond the css-topics/LESS code.
 
-- Simplifies change of the default look and feel by adding CSS classes to and removing them from elements.
-- Improves style extensibility.
-- Reduces long-term maintenance efforts by containing CSS styles in a single place.'
+-  Simplifies change of the default look and feel by adding CSS classes to and removing them from elements.
+-  Improves style extensibility.
+-  Reduces long-term maintenance efforts by containing CSS styles in a single place.'
 
 %}
 
@@ -362,7 +362,7 @@ $fieldset->addField('new_category_parent', 'text', array(
 ### You must not hard-code inline JavaScript in PHP classes
 
 -  Reduces long term maintenance by having frontend business logic stored in one place.
-- Reduces the number of files to be modified.
+-  Reduces the number of files to be modified.
 
 **Acceptable PHP file**
 

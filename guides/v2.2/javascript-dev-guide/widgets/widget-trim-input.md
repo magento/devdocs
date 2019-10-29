@@ -22,7 +22,7 @@ $('#element').trimInput();
 
 Where:
 
-- `#element` is the selector of the input element to be trimmed.
+-  `#element` is the selector of the input element to be trimmed.
 
 The following example shows a PHTML file using the script:
 

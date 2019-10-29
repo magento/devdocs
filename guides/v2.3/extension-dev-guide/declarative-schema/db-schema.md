@@ -192,6 +192,9 @@ Attribute | Description
 `referenceColumn`| A column in the `referenceTable`
 `onDelete` | Foreign key trigger. The value must be `CASCADE`, `SET NULL`, or `NO ACTION`
 
+{: .bs-callout-info }
+To keep entity identifiers as immutable values, the declarative schema does not support `ON UPDATE` action for `constraint`.
+
 Example:
 
 ```xml
@@ -437,7 +440,7 @@ It is possible to drop a foreign key only if it exists in the `db_schema_whiteli
 In this example, Module A defines a new table with primary key `id_column`. Module B declares its own schema, in which it creates a new column (`new_id_column`) and changes the primary index to this column.
 Module B disables the original primary key and sets a new primary key with a `referenceId` value that is different from PRIMARY. Although this value is different, the real name of the primary key in the database remains PRIMARY.
 
- **Module A declaration**
+**Module A declaration**
 
 ```xml
 <schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -451,7 +454,7 @@ Module B disables the original primary key and sets a new primary key with a `re
 </schema>
 ```
 
- **Module B declaration**
+**Module B declaration**
 
 ```xml
 <schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -473,6 +476,7 @@ Module B disables the original primary key and sets a new primary key with a `re
 
 When a module is disabled in `app/etc/config.php`, its database schema configuration is no longer read on upgrade or install. As a result, subsequent system upgrades rebuild the database schema without the module's tables, columns, or other elements.
 Please note that the `db_schema_whitelist.json` file of disabled modules is still read during upgrades of installs, so the declarative schema system can perform the necessary operations.
+Practically, this means that if you disable a module which uses declarative schema and run `bin/magento setup:upgrade`, *its database tables will be dropped* (see more details and discussion at  https://github.com/magento/magento2/issues/24926). Please consider using `setup:upgrade --safe-mode=1` in order to create a database backup after disabling a module and then eventually `setup:upgrade --data-restore=1` if you enable the module back and wish to restore from that backup.
 
 [How to generate urns?]:{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-urn.html
 [Db Schema Autocomplete]:{{ page.baseurl }}/extension-dev-guide/declarative-schema/images/db-schema-autocomplete.png

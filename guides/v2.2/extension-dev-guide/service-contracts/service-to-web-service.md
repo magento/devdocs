@@ -17,15 +17,15 @@ Users can make REST or SOAP calls to access the [web API](https://glossary.magen
 
 To configure a web API, read these topics:
 
-- [Configure a web API](#configure-webapi)
+-  [Configure a web API](#configure-webapi)
 
-- [webapi.xml configuration options](#configuration-options)
+-  [webapi.xml configuration options](#configuration-options)
 
-- [Sample webapi.xml file](#sample-webapi)
+-  [Sample webapi.xml file](#sample-webapi)
 
-- [webapi.xsd XML schema file](#validate-webapi)
+-  [webapi.xsd XML schema file](#validate-webapi)
 
-- [Forcing Request Parameters](#forced-parameters)
+-  [Forcing Request Parameters](#forced-parameters)
 
 ## Configure a web API {#configure-webapi}
 
@@ -43,39 +43,39 @@ To do this conversion, the Magento application must know information about both 
 
 For SOAP and REST to work correctly, the following rules must be followed by the service interface's doc block:
 
-- All methods exposed by the web API must follow these rules
-- All methods on objects expected as parameters or returned must follow these rules
-- Parameters must be defined in the doc block as
+-  All methods exposed by the web API must follow these rules
+-  All methods on objects expected as parameters or returned must follow these rules
+-  Parameters must be defined in the doc block as
 
-  - @param type $paramName
+   -  @param type $paramName
 
-- Return type must be defined in the doc block as
+-  Return type must be defined in the doc block as
 
-  - @return type
+   -  @return type
 
-- Valid scalar types include: `mixed` (or `anyType`), `bool` (or `boolean`), `str` (or `string`), `integer` (or `int`), `float`, and `double`.
-- Valid object types include a fully qualified class name or a fully qualified interface name.
-- Any parameters or return values of type array can be denoted by following any of the previous types by an empty set of square brackets `[]`
+-  Valid scalar types include: `mixed` (or `anyType`), `bool` (or `boolean`), `str` (or `string`), `integer` (or `int`), `float`, and `double`.
+-  Valid object types include a fully qualified class name or a fully qualified interface name.
+-  Any parameters or return values of type array can be denoted by following any of the previous types by an empty set of square brackets `[]`
 
 Following are some examples of various types and what they would look like in the doc block:
 
-- A parameter $types which can be an array of strings:
+-  A parameter $types which can be an array of strings:
 
-  - @param string[] $types
+   -  @param string[] $types
 
-- A parameter $id which can be an integer:
+-  A parameter $id which can be an integer:
 
-  - @param int $id
+   -  @param int $id
 
-- A parameter $customer which is an object of class `\Magento\Customer\Api\Data\CustomerInterface`:
+-  A parameter $customer which is an object of class `\Magento\Customer\Api\Data\CustomerInterface`:
 
-  - @param \Magento\Customer\Api\Data\CustomerInterface $customer
+   -  @param \Magento\Customer\Api\Data\CustomerInterface $customer
 
-    Note that even if the class `\Magento\Customer\Api\Data\CustomerInterface` is in the same namespace (or a sub-namespace) of the current class or a use statement has exists at the top of the class, the fully qualified namespace must be used or the web API throws an exception.
+      Note that even if the class `\Magento\Customer\Api\Data\CustomerInterface` is in the same namespace (or a sub-namespace) of the current class or a use statement has exists at the top of the class, the fully qualified namespace must be used or the web API throws an exception.
 
-- A return which is an array of objects of type `\Magento\Customer\Api\Data\CustomerInterface`:
+-  A return which is an array of objects of type `\Magento\Customer\Api\Data\CustomerInterface`:
 
-  - @return \Magento\Customer\Api\Data\CustomerInterface[]
+   -  @return \Magento\Customer\Api\Data\CustomerInterface[]
 
 {: .bs-callout-info }
 If a service method argument is called `item`, there will be a problem during SOAP processing. All item nodes are removed during SOAP request processing. This is done to unwrap array items that are wrapped by the SOAP server into an `item` element.

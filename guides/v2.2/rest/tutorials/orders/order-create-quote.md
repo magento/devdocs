@@ -19,20 +19,20 @@ functional_areas:
 
 When a customer adds an item to their [shopping cart](https://glossary.magento.com/shopping-cart) for the first time, Magento creates a [quote](https://glossary.magento.com/quote). Magento uses a quote to perform tasks such as
 
-* Track each item the customer wants to buy, including the quantity and base cost
-* Gather information about the customer, including billing and shipping addresses
-* Determine shipping costs
-* Calculate the subtotal, add costs (shipping fees, taxes, etc.) and apply coupons to determine the grand total
-* Determine the [payment method](https://glossary.magento.com/payment-method)
-* Place the order so that the merchant can fulfill it.
+*  Track each item the customer wants to buy, including the quantity and base cost
+*  Gather information about the customer, including billing and shipping addresses
+*  Determine shipping costs
+*  Calculate the subtotal, add costs (shipping fees, taxes, etc.) and apply coupons to determine the grand total
+*  Determine the [payment method](https://glossary.magento.com/payment-method)
+*  Place the order so that the merchant can fulfill it.
 
 ### Types of carts {#cart-types}
 
 Magento identifies three types of users that can create a shopping cart:
 
-* An [admin](https://glossary.magento.com/admin) user can create a cart on behalf of a customer. For all admin requests, you must provide an admin [authorization](https://glossary.magento.com/authorization) token in the call's authorization header.
-* A logged-in customer. Calls to create a cart and add items must contain the customer's authorization token in the authorization header.
-* A guest user. These users could be customers who haven't logged in yet, or they could be users who have no intention of creating an account. An anonymous user's cart is called a guest cart.
+*  An [admin](https://glossary.magento.com/admin) user can create a cart on behalf of a customer. For all admin requests, you must provide an admin [authorization](https://glossary.magento.com/authorization) token in the call's authorization header.
+*  A logged-in customer. Calls to create a cart and add items must contain the customer's authorization token in the authorization header.
+*  A guest user. These users could be customers who haven't logged in yet, or they could be users who have no intention of creating an account. An anonymous user's cart is called a guest cart.
 
 ### Create a cart for a logged-in customer {#create-cart}
 

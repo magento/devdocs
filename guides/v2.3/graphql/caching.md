@@ -11,25 +11,25 @@ The definitions for some queries include cache tags. Full page caching uses thes
 
 Magento caches the following queries:
 
-* `category`
-* `cmsBlocks`
-* `cmsPage`
-* `products`
-* `urlResolver`
+*  `category`
+*  `cmsBlocks`
+*  `cmsPage`
+*  `products`
+*  `urlResolver`
 
 Magento explicitly disallows caching the following queries.
 
-* `cart`
-* `country`
-* `countries`
-* `currency`
-* `customAttributeMetadata`
-* `customer`
-* `customerDownloadableProducts`
-* `customerOrders`
-* `customerPaymentTokens`
-* `storeConfig`
-* `wishlist`
+*  `cart`
+*  `country`
+*  `countries`
+*  `currency`
+*  `customAttributeMetadata`
+*  `customer`
+*  `customerDownloadableProducts`
+*  `customerOrders`
+*  `customerPaymentTokens`
+*  `storeConfig`
+*  `wishlist`
 
 [Define the GraphQL schema for a module]({{page.baseurl}}/graphql/develop/create-graphqls-file.html) describes the syntax of a valid query.
 
@@ -96,6 +96,6 @@ Header | Description
 
 Magento invalidates the cache when any of the following events occur:
 
-* When a change occurs to a specific entity or entities in aggregate. An increase in a product's price is a direct and obvious change. Applying a new tax class tax to products changes a set of products in aggregate.
-* When system configuration changes
-* When an administrator flushes or disables the cache from the Admin or with the `bin/magento cache` command
+*  When a change occurs to a specific entity or entities in aggregate. An increase in a product's price is a direct and obvious change. Applying a new tax class tax to products changes a set of products in aggregate.
+*  When system configuration changes
+*  When an administrator flushes or disables the cache from the Admin or with the `bin/magento cache` command

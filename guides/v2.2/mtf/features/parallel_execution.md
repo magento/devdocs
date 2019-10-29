@@ -10,8 +10,8 @@ Parallel execution is applicable for [test suites] only. It decreases the time o
 A general mechanism is:
 
 1. The FTF creates the list of all test cases in a test suite.
-2. The FTF creates the required quantity of sessions corresponding to the quantity of threads defined in `<magento2_root_dir>/dev/tests/functional/phpunit.xml`.
-3. The FTF distributes test cases between sessions. When a sessions is free, a new test case from the queue runs.
+1. The FTF creates the required quantity of sessions corresponding to the quantity of threads defined in `<magento2_root_dir>/dev/tests/functional/phpunit.xml`.
+1. The FTF distributes test cases between sessions. When a sessions is free, a new test case from the queue runs.
 
 Comparatively to the common testing flow
 
