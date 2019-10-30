@@ -171,7 +171,7 @@ Example of using `listens` in a component's configuration `.xml` file:
 </argument>
 ```
 
-For example of `listens` usage in Magento code see [`new_category_form.xml`, line 92]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/view/adminhtml/ui_component/new_category_form.xml#L92)
+For example of `listens` usage in Magento code see [`new_category_form.xml`, line 84]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/view/adminhtml/ui_component/new_category_form.xml#L84)
 
 ## Template strings usage {#string_templ}
 
