@@ -4,7 +4,7 @@ title: Introduction
 ---
 
 {: .bs-callout-info }
-These APIs are not yet public. This is a preview of version 1.0. Please send all feedback to <marketplace-eqp-apis@magento.com>.
+These APIs are not yet public. This is a preview of version 1.0. Please send all feedback to <magento-marketplace-eqp-apis@adobe.com>.
 
 The Magento Extension Quality Program (EQP) REST APIs provide access to the [Magento Developer Portal](https://developer.magento.com).
 
@@ -36,9 +36,27 @@ All HTTP 4xx errors contain a JSON payload with the following structure:
 
 ```json
 {
-  “code” : 1208
-  “message” : “Insufficient information for Technical Submission”
+  "code" : 1208,
+  "message" : "Insufficient information for Technical Submission"
 }
 ```
 
-Batch responses return a HTTP 200 response code, but each item in the batch contains the `code` and `message` pair indicating an error. A `code` of 200 indicates success.
+Batch responses return a HTTP 200 response code, but each item in the batch array contains the `code` and `message` pair indicating an error. A `code` of 200 indicates success.
+
+```json
+[
+    {
+      "code" : 1208,
+      "message" : "Insufficient information for Technical Submission"
+    },
+    {
+      "code" : 1210,
+      "message" : "Invalid SKU given. SKU must be of the form 'vendor_name/package_name'"
+    },
+    {
+      "code" : 200,
+      "message" : "Success",
+      // ... etc. Successful batch submissions also have all the fields from a successful result.
+    }
+]
+```
