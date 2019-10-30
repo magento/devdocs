@@ -1,9 +1,9 @@
 | Contributing community member | Related GitHub Issues | Pull Requests |
 | ------- | ------- | ------- |
 | Vitaliy Boyko | [#533](https://github.com/magento/magento2/issues/533) | [magento/graphql-ce#578](https://github.com/magento/graphql-ce/pull/578) |
-| Marius Strajeru | [#601](https://github.com/magento/magento2/issues/601) | [magento/graphql-ce#632](https://github.com/magento/graphql-ce/pull/632) |
-| Patrick McLain | [#631](https://github.com/magento/magento2/issues/631) | [magento/graphql-ce#634](https://github.com/magento/graphql-ce/pull/634) |
-| Dipti | [#20124](https://github.com/magento/magento2/issues/20124) | [magento/magento2#20135](https://github.com/magento/magento2/pull/20135) |
+| Patrick McLain | [#601](https://github.com/magento/magento2/issues/601) | [magento/graphql-ce#632](https://github.com/magento/graphql-ce/pull/632) |
+| Oscar Recio | [#631](https://github.com/magento/magento2/issues/631) | [magento/graphql-ce#634](https://github.com/magento/graphql-ce/pull/634) |
+| Arvinda Kumar | [#20124](https://github.com/magento/magento2/issues/20124) | [magento/magento2#20135](https://github.com/magento/magento2/pull/20135) |
 | Walter Smulders | [#21978](https://github.com/magento/magento2/issues/21978) | [magento/magento2#22020](https://github.com/magento/magento2/pull/22020) |
 | Alessandro | [#22045](https://github.com/magento/magento2/issues/22045) | [magento/magento2#22260](https://github.com/magento/magento2/pull/22260) |
 | Userr017 | [#22134](https://github.com/magento/magento2/issues/22134) | [magento/magento2#22260](https://github.com/magento/magento2/pull/22260) |
