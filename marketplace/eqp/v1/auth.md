@@ -100,9 +100,9 @@ Field details:
 |expires_in|int|Number of seconds the session token will be valid.|
 {:.style="table-layout: auto;"}
 
-Once the session token expires, a new token must be obtained as described above.
+Once the User Session Token expires, a new token must be obtained as described above.
 
-Multiple user session tokens may be valid at the same time, so you can find cool stuff.
+Multiple User Session Tokens may be valid at the same time, so you can, eg run multiple scripts at the same time.
 
 ## Authorization Bearer
 
