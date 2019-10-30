@@ -14,7 +14,7 @@ RequireJS is a JavaScript file and module loader. It improves perceived page loa
 
 ### Configuration {#requirejs-config}
 
-All configuration is done in the `requirejs-config.js` file. It has a single root object `config` which contains the configuration options described below. All the configuration settings are optional and are used only when required. The following snippet is a sample `requirejs-config.js` describing the structure of the file.
+All configuration is done in the `requirejs-config.js` file. It has a single root object `config` which contains the configuration options described below. All the configuration settings are optional and are used only when required. The following snippet is a sample `requirejs-config.js` describing the structure of the file. Example [`requirejs-config.js` file]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Theme/view/base/requirejs-config.js)
 
 ```javascript
 var config = {
@@ -32,21 +32,29 @@ var config = {
 The `map` configuration maps (connects) any real AMD modules that calls `define()`, to the specified alias. In the snippet below, `*` means all loaded RequireJS modules can use the specified alias.
 
 ```javascript
-'map': {
+map: {
     '*': {
-        'alias': 'Vendor_Module/js/complex/path/amd-module'
+        alias: 'Vendor_Module/js/complex/path/amd-module'
     }
 }
 ```
 
-Now we can use our `Vendor_Module/js/complex/path/module` using `alias` in any RequireJS module or config file without needing to type the entire path.
+Now we can use our `Vendor_Module/js/complex/path/module` using `alias` in any RequireJS module or config file without needing to type the entire path. For example, in Magento, `catalogAddToCart` is mapped to `Magento_Catalog/js/catalog-add-to-cart` and can be used anywhere as a RequireJS module name.
+
+```javascript
+map: {
+    '*': {
+        catalogAddToCart: 'Magento_Catalog/js/catalog-add-to-cart'
+    }
+}
+```
 
 #### paths {#requirejs-config-paths}
 
 The `paths` configuration, similar to `map`, is used for aliasing not just any real AMD module that calls `define()`, but also any JS file (event from a URL), HTML templates, etc. Magento uses this to alias URLs and third party libraries.
 
 ```javascript
-'paths': {
+paths: {
     'alias': 'library/file',
     'another-alias': 'https://some-library.com/file'
 }
@@ -59,7 +67,7 @@ The `deps` configuration is used to add a dependency. It can either be used dire
 In this snippet, the custom `Vendor_Module/js/module` will be loaded in all pages.
 
 ```javascript
-'deps': ['Vendor_Module/js/module']
+deps: ['Vendor_Module/js/module']
 ```
 
 #### shim {#requirejs-config-shim}
@@ -75,7 +83,7 @@ When to use the `shim` configuration:
 In this snippet, dependencies are added directly in an array, or it can be specified as an array under the `deps` key. The `exports` key is used to specify under what identifier the module is exported into. This export identifier can be used to access it.
 
 ```javascript
-'shim': {
+shim: {
     '3rd-party-library': ['myJSFile'],
     'another-3rd-party-library': {
         deps: ['myJSFile'],
