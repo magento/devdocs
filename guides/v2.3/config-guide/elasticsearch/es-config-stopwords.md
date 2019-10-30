@@ -46,7 +46,7 @@ To edit stopwords:
 
 1. Add words, remove words, or change words in the file.
 
-    (Each stopword in a file starts on a new line.)
+   (Each stopword in a file starts on a new line.)
 
 1. Save your changes and exit the text editor.
 1. Clean the Magento configuration cache.
