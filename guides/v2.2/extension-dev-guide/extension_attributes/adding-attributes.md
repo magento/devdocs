@@ -223,6 +223,7 @@ In first - scalar - case we will get the next result:
 ```
 
 In second, non-scalar one:
+
 ```xml
 <product>
     <id>1</id>
@@ -237,6 +238,7 @@ In second, non-scalar one:
 ```
 
 In third, array one (in JSON for a change):
+
 ```js
 {
   "id": 1,
