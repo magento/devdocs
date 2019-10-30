@@ -49,11 +49,7 @@ When submitting either code or documentation, a brief summary of the work should
 
 Additionally, the code itself should follow our [DocBlock standard][0] and contain high-quality comments and descriptions for all classes and methods.
 
-Any backward-incompatible changes must also be recorded in the accompanying documentation, using the following format:
-
-| Change      | Was in Magento 1.x | Became in Magento 2.x |
-| ----------- | ------------------ | --------------------- |
-| description | example            | example               |
+For documenting backward-incompatible changes, please see [Backwards Compatible Development][8].
 
 ## Tests
 
@@ -129,14 +125,13 @@ See [Functional Tests][2].
 
 There are a small number of use cases for unit tests in Magento. The nature of our code and development practices make it increasingly hard to write and maintain high-quality unit tests.
 Many of them end up being replaced by integration tests or are practically useless from the beginning due to how much mocking is needed to make them pass.
+Generally, an integration test is the preferred test type.
 
-For these reasons, most of the time an integration test is likely the preferred test type but below are some cases when you would still want to use unit tests.
-
-Classes and methods that:
+A unit test may be preferred when you have classes or methods that:
 
 *  Have few or no dependencies.
    *  The test must not be directly coupled to the collaborators of the test subject. If the collaborators are solely responsible for the behavior of the tested subject, it will not be a good unit test.
-*  Do not interact with resources like databases, the file system, 3rd party systems, etc.
+*  Do not interact with resources such as databases, the file system, 3rd party systems, etc.
 *  Can be covered by a black box test.
    *  The test must not be a mirror of the code. Instead, the test must validate that the contract of the method or class is upheld by the implementation. Specific implementations may be weak in certain areas so specific corner cases could cover that logic while still being a black box test.
 *  Would not be easily foreseen to have dependencies in the future.
@@ -224,3 +219,4 @@ The work cannot be considered as complete unless all the criteria are verified.
 [5]:{{ page.baseurl }}/extension-dev-guide/versioning/index.html
 [6]:{{ page.baseurl }}/extension-dev-guide/versioning/codebase-changes.html
 [7]:{{ page.baseurl }}/extension-dev-guide/versioning/dependencies.html
+[8]:{{ page.baseurl }}/contributor-guide/backward-compatible-development/index.html#where-to-document
