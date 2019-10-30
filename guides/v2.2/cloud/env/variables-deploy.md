@@ -598,6 +598,11 @@ If you generate static content during the build phase, it creates a symlink to t
 If you generate static content during the deploy phase, it writes directly to the content folder.
 Generating static content on demand disables this variable.
 
+{: .bs-callout .bs-callout-warning }
+If this variable is managed from Cloud interface, then values have to be "enabled" or "disabled".
+
+![STATIC_CONTENT_SYMLINK Cloud Interface]
+
 ```yaml
 stage:
   deploy:
@@ -631,3 +636,6 @@ stage:
   deploy:
     VERBOSE_COMMANDS: "-vv"
 ```
+
+[STATIC_CONTENT_SYMLINK Cloud Interface]: {{site.baseurl}}/common/images/cloud/cloud-static-content-deploy-cloud-interface.png
+{: width="500px"}
