@@ -55,6 +55,8 @@ The table below shows examples of how the Knockout bindings map to their Magento
 |               |`<!-- ko ifnot: getCartParam('summary_count') -->`                                        | `<ifnot args="getCartParam('summary_count')">`                                       |
 |text           |`<!-- ko text: 'Some text' --><!-- /ko -->`                                    | `<text args="'Some text'">`                                           |
 |               |`<div data-bind="text: 'Some text'"></div>`                                    | `<div text="'Some text'"></div>`                                      |
+|i18n           |`<!-- ko i18n: 'Sign In' --><!-- /ko -->`                                    | `<translate args="'Sign In'"/>`                                  |
+|               |`<span data-bind="i18n: 'Sign In'"></span>`                                        | `<span translate="'Sign In'"></span>`                                      |
 |with           |`<!-- ko with: element --><!-- /ko -->`                                        | `<with args="element">`                                               |
 |               |`<div data-bind="with: element"></div>`                                        | `<div with="element"></div>`                                          |
 |foreach        |`<!-- ko foreach: elements --><!-- /ko -->`                                    | `<each args="elements">`                                              |
