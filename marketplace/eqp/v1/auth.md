@@ -28,7 +28,7 @@ simply use the production Base URL instead of the sandbox one, and your Producti
 |sandbox|`https://developer-stg-api.magento.com`|
 |production|`https://developer-api.magento.com`|
 
-## Application ID and Secret
+## Application ID and secret
 
 You must use an application ID and secret to obtain a session token.
 See the following list for examples of an application ID and secret:
@@ -36,7 +36,7 @@ See the following list for examples of an application ID and secret:
 *  **id** — `AQ17NZ49WC`
 *  **secret** — `8820c99614d65f923df7660276f20e029d73e2ca`
 
-## Session Token
+## Session token
 
 The following endpoint grants an application session token:
 
@@ -97,7 +97,7 @@ Field details:
 Once the User Session Token expires, a new token must be obtained as described above.
 Multiple User Session Tokens may be valid at the same time, so you can run multiple scripts at the same time.
 
-## Authorization Bearer
+## Authorization bearer
 
 After obtaining a valid User Session Token, you must use it as a bearer token in all subsequent API calls.
 For example, to access a user profile with a User Session Token:
