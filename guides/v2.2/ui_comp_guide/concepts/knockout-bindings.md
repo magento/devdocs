@@ -167,6 +167,19 @@ Binding's configuration that may include the following properties:
 
 **Aliases**: `[collapsible]`
 
+**Usage example**:
+
+```html
+<div data-mage-init='{"collapsible":{"openedState": "active", "saveState": true}}'>
+    <div data-role="title">
+        Title
+    </div>
+    <div data-role="content">
+        Collapsible content
+    </div>
+</div>
+```
+
 ### `datepicker`
 
 The `datepicker` binding is an adapter for the [mage/calendar.js]({{ page.baseurl }}/javascript-dev-guide/widgets/widget_calendar.html) widget.

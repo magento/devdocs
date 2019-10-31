@@ -86,7 +86,7 @@ To develop a module, you must:
          "name": "Vendor1_Module1",
          "description": "create integration from config",
          "require": {
-            "php": "~5.5.0|~5.6.0|~7.0.0",
+            "php": "~7.1.3|~7.2.0|~7.3.0",
             "magento/framework": "2.0.0",
             "magento/module-integration": "2.0.0"
          },
@@ -164,7 +164,19 @@ To develop a module, you must:
 
     `$this->integrationManager->processIntegrationConfig(['testIntegration']);`
 
-    `testIntegration` must refer to your `etc/integrations/config.xml` file, and the integration name value must be the same.
+    `testIntegration` must refer to your `etc/integration/config.xml` file, and the integration name value must be the same.
+
+    The following example demonstrates a minimal `config.xml` file.
+
+    ```xml
+   <integrations>
+      <integration name="TestIntegration">
+         <email>someone@example.com</email>
+         <endpoint_url>https://example.com</endpoint_url>
+         <identity_link_url>https://example.com/identity_link_url</identity_link_url>
+      </integration>
+   </integrations>
+    ```
 
     Also, be sure to change the path after `namespace` for your vendor and module names.
 
@@ -211,7 +223,7 @@ In the following example, the test integration requires access to the following 
 
 ### Pre-configure the integration {#preconfig}
 
-Your module can optionally provide a configuration file `config.xml` so that the integration can be automatically pre-configured with default values. To enable this feature, create the `config.xml` file in the `etc/integration` directory.
+Your module can optionally provide values in configuration file `config.xml`, so that the integration can be automatically pre-configured with default values. To enable this feature, update the `config.xml` file in the `etc/integration` directory.
 
 {: .bs-callout-info }
 If you pre-configure the integration, the values cannot be edited from the [admin](https://glossary.magento.com/admin) panel.
