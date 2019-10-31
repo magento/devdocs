@@ -5,14 +5,13 @@ title: Files
 
 Use `files` resources to manage all code artifacts and assets associated with an extension or a theme:
 
-*  Magento 1 tarball (.tgz)
-*  Magento 2 ZIP files
-*  Image files for logos and galleries
-*  Product Icons
-*  PDF documents for User Guides, Installation Guides, and Reference Guides
+-  Magento 1 tarball (.tgz)
+-  Magento 2 ZIP files
+-  Image files for logos and galleries
+-  Product Icons
+-  PDF documents for User Guides, Installation Guides, and Reference Guides
 
-Each file upload receives a unique ID. You must associate these IDs with your submission later using the
-[packages API](packages.html).
+Each file upload receives a unique ID. You must associate these IDs with your submission later using the [packages API](packages.html).
 
 You can associate a file with multiple products. This allows for asset sharing across different packages.
 For example, you can share an image file for a gallery with different packages by associating it with the same file upload ID.
@@ -44,12 +43,11 @@ GET /rest/v1/files/uploads/:file_upload_id
 |file_upload_id|URL element|The `file_upload_id` string that was returned when uploading or listing the file.|
 |offset|int|The `file_upload_id` string that was returned when uploading or listing the file.|
 |limit|int|The `file_upload_id` string that was returned when uploading or listing the file.|
-{:.style="table-layout: auto;"}
 
-Sorting and filtering parameters are not currently available for this endpoint.
+Sorting and filtering parameters are currently not available for this endpoint.
 
-If the file_upload_id parameter is specified, a single file record will be returned.
-If it is omitted, then a batch response will be returned, an array of records for all files uploaded by the current user. 
+If the `file_upload_id` parameter is specified, a single file record will be returned.
+If it is omitted, then a batch response will be returned: an array of records for all files uploaded by the current user. 
 
 **Request**
 
@@ -88,15 +86,13 @@ Response field details:
 |file_hash|string|Hash of the file; currently md5. Only set if malware_status is `pass`.|
 |url|string|The URL from which the file may be downloaded, if applicable.|
 |submission_ids|array|The list of package submissions associated with this file, if any.|
-{:.style="table-layout: auto;"}
 
 The order of fields may differ, and additional fields may also be returned.
 
 ### Upload files
 
-You upload files in bulk upload using the **multipart/form-data** encoding type.
-With this approach, binary files can be uploaded without the need for additional encoding,
-which could otherwise result in an increase in overall upload size.
+Upload files in bulk using the **multipart/form-data** encoding type.
+With this approach, binary files can be uploaded without the need for additional encoding, which could otherwise result in an increase in overall upload size.
 
 ```http
 POST /rest/v1/files/uploads
@@ -133,9 +129,9 @@ Content-Type: application/pdf
 ------------287032381131322--
 ```
 
-* Each part has a header and body.
-* The body of each part is the full contents of the raw file.
-* The header has the following required elements:
+-  Each part has a header and body.
+-  The body of each part is the full contents of the raw file.
+-  The header has the following required elements:
 
 |Element|Type|Description|
 |-----|--------|-----------|
@@ -143,12 +139,11 @@ Content-Type: application/pdf
 |name|string|MUST be `file[]` for all parts.|
 |filename|string|Should be the original name of the file.|
 |Content-Type|string|Should be the correct mime-type for the file.|
-{:.style="table-layout: auto;"}
 
 **Request**
 
 If the request body given above was saved into a temporary file at `/tmp/files-payload`,
-you could use it in your POST request to upload the files:
+you may use it in your POST request to upload the files:
 
 ```bash
 curl -X POST \
@@ -160,7 +155,7 @@ curl -X POST \
 
 **Response**
 
-The above request could give output similar to:
+The above request gives an output similar to:
 
 ```json
 [
@@ -205,6 +200,5 @@ Each record in the list has the following fields:
 |content-type|string|The mime-type of the uploaded file.|
 |size|integer|The size of the file in bytes.|
 |file_upload_id|string|A unique identifier for the file.|
-{:.style="table-layout: auto;"}
 
 The `file_upload_id` must be tracked for subsequent package submission APIs.
