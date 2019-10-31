@@ -68,7 +68,7 @@ mutation {
 Attribute |  Data Type | Description
 --- | --- | ---
 `destination_cart_id` | String! | The ID of the logged-in customer's cart
-`source_cart_id` | String! | The ID of the guest cart 
+`source_cart_id` | String! | The ID of the guest cart
 
 ## Output attributes
 
