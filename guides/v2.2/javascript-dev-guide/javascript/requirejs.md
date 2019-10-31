@@ -108,4 +108,4 @@ In this snippet, `Vendor_Module/js/module-mixin` will overwrite the existing com
 }
 ```
 
-The concept of Javascript mixins itself is explained in depth in [Using Javascript Mixins]({{ site.baseurl }}/javascript-dev-guide/javascript/js_mixins.html).
+The concept of Javascript mixins itself is explained in depth in [Using Javascript Mixins]({{ page.baseurl }}/javascript-dev-guide/javascript/js_mixins.html).
