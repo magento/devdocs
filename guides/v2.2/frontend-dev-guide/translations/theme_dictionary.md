@@ -20,9 +20,9 @@ When the [locale](https://glossary.magento.com/locale) is changed for a store, M
 1. Magento database (translations located in this database take precedence and override translations stored in other locations.)  Refer to the [user guide](https://docs.magento.com/m2/ce/user_guide/system/translate-inline.html) for more information.
 
 {:.bs-callout .bs-callout-info}
-The priority follows the inverse sequence, being that "module translations" with the lowest priority and the "magento database" with the most priority.
+Translation priority follows the inverse sequence, with "module translations" having the lowest priority and "magento database" having the hightest priority.
 
-If there are different translations for one string, the theme dictionary translations have priority over the [module](https://glossary.magento.com/module) translations, and child theme translations have priority over parent theme translations.
+If there are competing translations for one string, the theme dictionary translations have priority over the [module](https://glossary.magento.com/module) translations, and child theme translations have priority over parent theme translations.
 
 ## Creating a theme dictionary to override parent strings for default locale
 
