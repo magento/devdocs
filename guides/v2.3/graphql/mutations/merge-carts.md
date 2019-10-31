@@ -3,15 +3,19 @@ group: graphql
 title: mergeCarts mutation
 ---
 
-The `mergeCarts` mutation transfers the contents of a guest cart into the cart of a logged-in customer. 
+The `mergeCarts` mutation transfers the contents of a guest cart into the cart of a logged-in customer. This mutation must be run on behalf of a logged-in customer.
 
-Once a customer logs in (uses it's token), an existing guest cart needs to be transferred/merged/imported to the customer cart. Also the registered customer should be able to work with the same shopping cart on multiple devices that we use that token once we 'login', for example, add products to cart using a laptop and complete checkout using a smartphone using the same customer. We used the term 'login' in quotes, because there's really no state/session in graphql.
+The mutation retains any items that were already in the logged-in custmer's cart. If both the guest and customer carts contain the same item, adds the quantities. Upon success, the mutation deletes the original guest cart.
+
+Use the `customerCart` query to determine the value of the `destination_cart_id` attribute.
 
 ## Syntax
 
 `mergeCarts(source_cart_id: String, destination_cart_id: String): Cart!`
 
 ## Example usage
+
+In the following example, the customer had one Overnight Duffle in the cart (`CYmiiQRjPVc2gJUc5r7IsBmwegVIFO43`) before a guest cart (`mPKE05OOtcxErbk1Toej6gw6tcuxvT9O`) containing a Radiant Tee and another Overnight Duffle was merged. The cart now includes three items, including two Overnight Duffles.
 
 **Request**
 
@@ -38,26 +42,18 @@ mutation {
     "mergeCarts": {
       "items": [
         {
-          "id": "11",
+          "id": "14",
           "product": {
-            "name": "Strive Shoulder Pack",
-            "sku": "24-MB04"
+            "name": "Overnight Duffle",
+            "sku": "24-WB07"
           },
-          "quantity": 1
+          "quantity": 2
         },
         {
-          "id": "12",
+          "id": "17",
           "product": {
             "name": "Radiant Tee",
             "sku": "WS12"
-          },
-          "quantity": 1
-        },
-        {
-          "id": "14",
-          "product": {
-            "name": "Strive Shoulder Pack",
-            "sku": "24-MB04"
           },
           "quantity": 1
         }
