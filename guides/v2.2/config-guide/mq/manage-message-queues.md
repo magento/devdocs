@@ -36,9 +36,9 @@ You can also use a process manager such as [Supervisor](http://supervisord.org/i
 
 #### Behavior by default
 
-* Cron job `consumers_runner` is enabled
-* Cron job `consumers_runner` runs all defined consumers
-* Each consumer processes 1000 messages and then terminates
+*  Cron job `consumers_runner` is enabled
+*  Cron job `consumers_runner` runs all defined consumers
+*  Each consumer processes 10000 messages and then terminates
 
 #### Specific configuration
 
@@ -57,9 +57,9 @@ Edit */app/etc/env.php* file for configure cron job `consumers_runner`
 ...
 ```
 
-* `cron_run` - the option for enabling/disabling cron job `consumers_runner`, by default is true.
-* `max_messages` - the maximum number of messages for each consumer that must be processed before consumer terminate, by default is 1000. If it is 0, then the consumer never stops working.
-* `consumers` - the list of consumers which will be run, by default is empty array (all consumers are allowed to be run).
+*  `cron_run` - A boolean value that enables or disables the `consumers_runner` cron job (default = `true`).
+*  `max_messages` - The maximum number of messages each consumer must process before terminating (default = `10000`). Although we do not recommend it, you can use 0 to prevent the consumer from terminating.
+*  `consumers` - An array of strings specifying which consumer(s) to run. An empty array runs *all* consumers.
 
 ## Command line interface
 
@@ -71,15 +71,15 @@ Use the `magento` command to start message queue consumers. You can start multip
 
 Where:
 
-*   `<consumer_name>` is the consumer to start.
+*  `<consumer_name>` is the consumer to start.
 
-*   `--max-messages=<value>` specifies the maximum number of messages to consume per invocation. If the number of queued messages is less than the specified max, the consumer polls for new messages until it has processed the max. If you don't specify `--max-messages`, the process runs continuously.
+*  `--max-messages=<value>` specifies the maximum number of messages to consume per invocation. If the number of queued messages is less than the specified max, the consumer polls for new messages until it has processed the max. If you don't specify `--max-messages`, the process runs continuously.
 
-*   `--batch-size=<value>` specifies the number of messages to consume per batch. If specified, messages in a queue are consumed in batches of `<value>` each. This option is applicable for the batch consumer only. If `--batch-size` is not defined, the batch consumer receives all available messages in a queue.
+*  `--batch-size=<value>` specifies the number of messages to consume per batch. If specified, messages in a queue are consumed in batches of `<value>` each. This option is applicable for the batch consumer only. If `--batch-size` is not defined, the batch consumer receives all available messages in a queue.
 
-*   `--pid-file-path=<value>` the file path for saving PID of consumer process.
+*  `--pid-file-path=<value>` the file path for saving PID of consumer process.
 
-*   `--area-code=<value>` the area code preferred for consumer process.
+*  `--area-code=<value>` the area code preferred for consumer process.
 
 After consuming all available messages, the command terminates. You can run the command again manually or with a cron job. You can also run multiple instances of the `magento queue:consumers:start` command to process large message queues. For example, you can append `&` to the command to run it in the background, return to a prompt, and continue running commands (e.g., `bin/magento queue:consumers:start <consumer_name> &`).
 
@@ -91,7 +91,7 @@ Use the following command to return a list of message queue consumers:
 
 #### Related Topics
 
-*   [Message Queues Overview]({{ page.baseurl }}/config-guide/mq/rabbitmq-overview.html)
-*   [Configure and run cron]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cron.html)
-*   [Command-line configuration]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands.html)
-*   [Message Queues]({{ page.baseurl }}/extension-dev-guide/message-queues/message-queues.html)
+*  [Message Queues Overview]({{ page.baseurl }}/config-guide/mq/rabbitmq-overview.html)
+*  [Configure and run cron]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cron.html)
+*  [Command-line configuration]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands.html)
+*  [Message Queues]({{ page.baseurl }}/extension-dev-guide/message-queues/message-queues.html)

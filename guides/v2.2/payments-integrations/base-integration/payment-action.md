@@ -10,10 +10,10 @@ functional_areas:
 
 For each payment action available for the payment method, you must implement the following:
 
-- Creating a request with payment details. Described in [Get payment information from frontend to backend]({{ page.baseurl }}/payments-integrations/base-integration/get-payment-info.html).
-- Request processing using [response handler]({{ page.baseurl }}/payments-integrations/payment-gateway/response-handler.html) and [response validator]({{ page.baseurl }}/payments-integrations/payment-gateway/response-validator.html).
-- Specify and configure the gateway command. Described in the [Gateway Command]({{ page.baseurl }}/payments-integrations/payment-gateway/gateway-command.html#adding-gateway-commands) topic.
-- Add the command to the commands pool, as described in [Command Pool]({{ page.baseurl }}/payments-integrations/payment-gateway/command-pool.html#command-pool-configuration-for-a-particular-provider).
+-  Creating a request with payment details. Described in [Get payment information from frontend to backend]({{ page.baseurl }}/payments-integrations/base-integration/get-payment-info.html).
+-  Request processing using [response handler]({{ page.baseurl }}/payments-integrations/payment-gateway/response-handler.html) and [response validator]({{ page.baseurl }}/payments-integrations/payment-gateway/response-validator.html).
+-  Specify and configure the gateway command. Described in the [Gateway Command]({{ page.baseurl }}/payments-integrations/payment-gateway/gateway-command.html#adding-gateway-commands) topic.
+-  Add the command to the commands pool, as described in [Command Pool]({{ page.baseurl }}/payments-integrations/payment-gateway/command-pool.html#command-pool-configuration-for-a-particular-provider).
 
 ## Configure the command
 
@@ -73,6 +73,7 @@ The most important builder in this pool is `Magento\Braintree\Gateway\Request\Pa
 
 Please see the [Get payment information from frontend to backend]({{ page.baseurl }}/payments-integrations/base-integration/get-payment-info.html) for details about how payment information can be handled.
 
-## Related topics
+{:.ref-header}
+Related topics
 
-- [Add a custom payment method to checkout]({{ page.baseurl }}/howdoi/checkout/checkout_payment.html): how to add a custom payment integration to [checkout](https://glossary.magento.com/checkout) page.
+-  [Add a custom payment method to checkout]({{ page.baseurl }}/howdoi/checkout/checkout_payment.html): how to add a custom payment integration to [checkout](https://glossary.magento.com/checkout) page.

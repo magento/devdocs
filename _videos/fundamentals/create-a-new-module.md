@@ -12,20 +12,20 @@ Module is a structural element of Magento 2 – the whole system is built upon m
 To create a module, you need to complete the following high-level steps:
 
 1. Create the module folder.
-2. Create the `etc/module.xml` file.
-3. Create the `registration.php` file.
-4. Run the `bin/magento setup:upgrade` script to install the new module.
-5. Check that the module is working.
+1. Create the `etc/module.xml` file.
+1. Create the `registration.php` file.
+1. Run the `bin/magento setup:upgrade` script to install the new module.
+1. Check that the module is working.
 
 Let’s go through each of these steps in detail.
 
 ## Create the module folder
 
-#### There are two possible locations for modules in Magento 2: the app/code folder and the vendor folder
+### There are two possible locations for modules in Magento 2: the app/code folder and the vendor folder
 
 Depending on how Magento 2 has been installed, core modules can either be located in the `vendor/magento/magento-*`folders (for composer installation) or in the `app/code/Magento/` folder (for cloning GitHub).
 
-#### Which of these locations should you choose for your new module?
+### Which of these locations should you choose for your new module?
 
 If you build a module for a specific project, it is best to choose the app/code folder and commit to the project's repository.
 
@@ -36,8 +36,8 @@ Each module name in Magento 2 consists of two parts – the vendor and the modul
 Let’s create the folder app/code/Learning and inside this folder place another folder: FirstUnit. If you're using the command line, the code would be:
 
 1. `cd` to the root folder
-2. `mkdir app/code/Learning`
-3. `mkdir app/code/Learning/FirstUnit`
+1. `mkdir app/code/Learning`
+1. `mkdir app/code/Learning/FirstUnit`
 
 ## Make sure you have permission to create files and folders in your installation
 
@@ -45,9 +45,9 @@ Next, you need to create an `etc/module.xml` file. This file is required for the
 
 This file contains the following information:
 
-* Module name
-* Module version
-* Dependencies
+*  Module name
+*  Module version
+*  Dependencies
 
 Module name is defined by the folders we just created, because in Magento 2, class names must follow the folder structure. Because we created the folders `Learning/FirstUnit`, our module name will be `Learning_FirstUnit` and all classes that belong to this module will begin with `Learning\FirstUnit` – for example: `Learning\FirstUnit\Observer\Test`.
 
@@ -74,9 +74,9 @@ Then put the following code into it:
 
 Note that in the XML file we specified:
 
-* Module name: `Learning_FirstUnit` (based on the folders we created)
-* Version: 0.0.1 (initial version of our module)
-* Dependency: Magento_Catalog. We could have multiple dependencies. In this case, we would put `<module name=”..” />` nodes under the sequence node.
+*  Module name: `Learning_FirstUnit` (based on the folders we created)
+*  Version: 0.0.1 (initial version of our module)
+*  Dependency: Magento_Catalog. We could have multiple dependencies. In this case, we would put `<module name=”..” />` nodes under the sequence node.
 
 ## Create the registration.php file
 

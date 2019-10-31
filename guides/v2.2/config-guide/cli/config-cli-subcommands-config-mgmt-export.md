@@ -23,8 +23,8 @@ bin/magento app:config:dump scopes themes
 
 As a result of the command execution, the following configuration files are updated:
 
--   [`app/etc/config.php`](#app-etc-config-php)
--   [`app/etc/env.php`](#app-etc-env-php)
+-  [`app/etc/config.php`](#app-etc-config-php)
+-  [`app/etc/env.php`](#app-etc-env-php)
 
 ## `app/etc/config.php` {#app-etc-config-php}
 

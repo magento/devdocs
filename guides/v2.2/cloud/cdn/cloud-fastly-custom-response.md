@@ -109,8 +109,8 @@ You can use the **Custom Synthetic Pages** > **Edit WAF page** option in the Fas
 <p>"} req.http.x-request-id {"</p>
 ```
 
-{:.bs-callout .bs-callout-info}
-The Edit WAF option is available only if the WAF service is enabled for your {{ site.var.data.ece }} project.
+{: .bs-callout-info }
+The Edit WAF option is available only if the Managed Cloud WAF service is enabled for your {{ site.var.data.ece }} project.
 
 {:.procedure}
 To edit the WAF error page:
@@ -129,9 +129,9 @@ To edit the WAF error page:
 
    ![Update WAF error page]
 
-   -  **Status**—Select the `403 Forbidden` status.
-   -  **MIME type**—Type `text/html`.
-   -  **Content**—Edit the default HTML response to add custom CSS and update the title and messaging as needed.
+   -  **Status** — Select the `403 Forbidden` status.
+   -  **MIME type** — Type `text/html`.
+   -  **Content** — Edit the default HTML response to add custom CSS and update the title and messaging as needed.
 
 1. Click **Upload** at the top of the page to upload the customized HTML source to the Fastly server.
 

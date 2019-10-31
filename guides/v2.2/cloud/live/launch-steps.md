@@ -10,7 +10,9 @@ functional_areas:
   - Testing
 ---
 
-**Previous step:**
+{:.ref-header}
+Previous step
+
 [Go live checklist]({{ page.baseurl }}/cloud/live/go-live-checklist.html)
 
 After testing and completing your launch checklist, you can start the final steps to launch. These steps include entering tickets, cutting over access, and finally testing your store(s) when live.
@@ -29,9 +31,9 @@ The Time-to-Live changed value is important for checking your changed domain. Wh
 To cut over to the new site:
 
 1. Access your DNS service.
-2. Update your A and CNAME records for your domains and hostnames.
-3. Wait for the TTL time to pass and restart your web browser.
-4. Access your store using the storefront domain.
+1. Update your A and CNAME records for your domains and hostnames.
+1. Wait for the TTL time to pass and restart your web browser.
+1. Access your store using the storefront domain.
 
 ## Test the live store {#test}
 

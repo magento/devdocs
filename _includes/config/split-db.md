@@ -2,57 +2,57 @@
 
 Create checkout and OMS master databases as follows:
 
-1.	Log in to your database server as any user.
-2.	Enter the following command to get to a MySQL command prompt:
+1. Log in to your database server as any user.
+1. Enter the following command to get to a MySQL command prompt:
 
-    ```bash
-    mysql -u root -p
+   ```bash
+   mysql -u root -p
+   ```
+
+1. Enter the MySQL `root` user's password when prompted.
+1. Enter the following commands in the order shown to create database instances named `magento_quote` and `magento_sales` with the same usernames and passwords:
+
+   ```shell
+   create database magento_quote;
     ```
 
-3.	Enter the MySQL `root` user's password when prompted.
-4.	Enter the following commands in the order shown to create database instances named `magento_quote` and `magento_sales` with the same usernames and passwords:
+   ```shell
+   GRANT ALL ON magento_quote.* TO magento_quote@localhost IDENTIFIED BY 'magento_quote';
+   ```
 
-    ```shell
-    create database magento_quote;
-    ```
+   ```shell
+   create database magento_sales;
+   ```
 
-    ```shell
-    GRANT ALL ON magento_quote.* TO magento_quote@localhost IDENTIFIED BY 'magento_quote';
-    ```
+   ```shell
+   GRANT ALL ON magento_sales.* TO magento_sales@localhost IDENTIFIED BY 'magento_sales';
+   ```
 
-    ```shell
-    create database magento_sales;
-    ```
+1. Enter `exit` to quit the command prompt.
 
-    ```shell
-    GRANT ALL ON magento_sales.* TO magento_sales@localhost IDENTIFIED BY 'magento_sales';
-    ```
+1. Verify the databases, one at a time:
 
-5.	Enter `exit` to quit the command prompt.
+   Checkout database:
 
-6.	Verify the databases, one at a time:
+   ```bash
+   mysql -u magento_quote -p
+   ```
 
-    Checkout database:
+   ```shell
+   exit
+   ```
 
-    ```bash
-    mysql -u magento_quote -p
-    ```
+   Order management database:
 
-    ```shell
-    exit
-    ```
+   ```bash
+   mysql -u magento_sales -p
+   ```
 
-    Order management database:
+   ```shell
+   exit
+   ```
 
-    ```bash
-    mysql -u magento_sales -p
-    ```
-
-    ```shell
-    exit
-    ```
-
-    If the MySQL monitor displays, you created the database properly. If an error displays, repeat the preceding commands.
+   If the MySQL monitor displays, you created the database properly. If an error displays, repeat the preceding commands.
 
 ## Configure {{site.data.var.ee}} to use the master databases {#config-ee-multidb-master-cli}
 

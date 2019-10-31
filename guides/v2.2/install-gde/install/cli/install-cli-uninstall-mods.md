@@ -17,7 +17,7 @@ This section discusses how to uninstall one or more modules. During uninstallati
 
 You should uninstall a module only if you're certain you won't use it. Instead of uninstalling a module, you can disable it as discussed in [Enable or disable modules]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-enable.html).
 
-{:.bs-callout .bs-callout-info}
+{: .bs-callout-info }
 This command checks _only_ dependencies declared in the `composer.json` file. If you uninstall a [module](https://glossary.magento.com/module) that is _not_ defined in the `composer.json` file, this command uninstalls the module without checking for dependencies. This command does _not_, however, remove the module's code from the Magento file system. You must use file system tools to remove the module's code (for example, `rm -rf <path to module>`). As an alternative, you can [disable]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-enable.html) non-Composer modules.
 
 ## First steps {#instgde-cli-before}
@@ -37,16 +37,17 @@ where `{ModuleName}` specifies the module name in `<VendorName>_<ModuleName>` fo
 
 The module uninstall command performs the following tasks:
 
-1.	Verifies that the specified modules exist in the code base and are packages installed by [Composer](https://glossary.magento.com/composer).
+1. Verifies that the specified modules exist in the code base and are packages installed by [Composer](https://glossary.magento.com/composer).
 
-	This command works *only* with modules defined as Composer packages.
+   This command works *only* with modules defined as Composer packages.
 
-2.	Checks for dependencies with other modules; if there are any, the command terminates..
+1. Checks for dependencies with other modules; if there are any, the command terminates..
 
-	To work around this, you can either uninstall all modules at the same time or you can uninstall the depending modules first.
-4.	Requests confirmation to proceed.
-3.	Puts the store in maintenance mode.
-4.	Processes the following command options.
+   To work around this, you can either uninstall all modules at the same time or you can uninstall the depending modules first.
+
+1. Requests confirmation to proceed.
+1. Puts the store in maintenance mode.
+1. Processes the following command options.
 
 | Option           | Meaning                                                                          | Backup file name and location                |
 | ---------------- | -------------------------------------------------------------------------------- | -------------------------------------------- |
@@ -54,21 +55,21 @@ The module uninstall command performs the following tasks:
 | `--backup-media` | Backs up the pub/media directory.                                                | var/backups/<timestamp>_filesystem_media.tgz |
 | `--backup-db`    | Backs up the Magento 2 database.                                                 | var/backups/<timestamp>_db.gz                |
 
-3.	If `--remove-data` is specified, removes the database schema and data defined in the module's `Uninstall` classes.
+1. If `--remove-data` is specified, removes the database schema and data defined in the module's `Uninstall` classes.
 
-	For each specified module to uninstall, invokes the `uninstall` method in its `Uninstall` class. This class must inherit from [Magento\Framework\Setup\UninstallInterface]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Setup/UninstallInterface.php){:target="_blank"}.
+   For each specified module to uninstall, invokes the `uninstall` method in its `Uninstall` class. This class must inherit from [Magento\Framework\Setup\UninstallInterface]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Setup/UninstallInterface.php){:target="_blank"}.
 
-4.	Removes the specified modules from the `setup_module` database table.
-4.	Removes the specified modules from the module list in the [deployment configuration]({{ page.baseurl }}/config-guide/config/config-php.html).
-5.	Removes code from the codebase using `composer remove`.
+1. Removes the specified modules from the `setup_module` database table.
+1. Removes the specified modules from the module list in the [deployment configuration]({{ page.baseurl }}/config-guide/config/config-php.html).
+1. Removes code from the codebase using `composer remove`.
 
-	{:.bs-callout .bs-callout-info}
-  Uninstalling a module _always_ runs `composer remove`. The `--remove-data` option removes database data and schema defined by the module's `Uninstall` class.
+   {: .bs-callout-info }
+   Uninstalling a module _always_ runs `composer remove`. The `--remove-data` option removes database data and schema defined by the module's `Uninstall` class.
 
-5.	Cleans the [cache](https://glossary.magento.com/cache).
-6.	Updates generated classes.
-6.	If `--clear-static-content` is specified, cleans [generated static view files]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html#config-cli-static-overview).
-7.	Takes the store out of maintenance mode.
+1. Cleans the [cache](https://glossary.magento.com/cache).
+1. Updates generated classes.
+1. If `--clear-static-content` is specified, cleans [generated static view files]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html#config-cli-static-overview).
+1. Takes the store out of maintenance mode.
 
 For example, if you attempt to uninstall a module that another module depends on, the following message displays:
 
@@ -119,7 +120,7 @@ Alert: Generated static view files were not cleared. You can clear them using th
 Disabling maintenance mode
 ```
 
-{:.bs-callout .bs-callout-info}
+{: .bs-callout-info }
 Errors display if you attempt to uninstall a module with a dependency on another module. In that case, you cannot uninstall one module; you must uninstall both.
 
 ## Roll back the file system, database, or media files {#instgde-cli-uninst-mod-roll}
@@ -132,47 +133,49 @@ magento setup:rollback [-c|--code-file="<filename>"] [-m|--media-file="<filename
 
 where `<filename>` is the name of the backup file located in `<magento_root>/var/backups`. To display a list of backup files, enter `magento info:backups:list`
 
-{:.bs-callout .bs-callout-warning}
+{: .bs-callout-warning }
 This command deletes the specified files or the database before restoring them. (For example, the <code>--media-file</code> option deletes media assets under  `pub/media` before restoring from the specified rollback file.) Make sure you have made no changes to the file system or database that you want to keep before using this command.
 
-{:.bs-callout .bs-callout-info}
+{: .bs-callout-info }
 To display a list of available backup files, enter `magento info:backups:list`
 
 This command performs the following tasks:
 
-1.	Puts the store in maintenance mode.
-1.	Verifies the backup file name.
-4.	If you specify a code rollback file:
+1. Puts the store in maintenance mode.
+1. Verifies the backup file name.
+1. If you specify a code rollback file:
 
-	a.	Verifies the rollback destination locations are writable (note that the `pub/static` and `var` folders are ignored).
+   a. Verifies the rollback destination locations are writable (note that the `pub/static` and `var` folders are ignored).
 
-	b.	Deletes all files and directories under your Magento 2 installation directory.
+   b. Deletes all files and directories under your Magento 2 installation directory.
 
-	c.	Extracts the archive file to the destination locations.
-5.	If you specify a database rollback file:
+   c. Extracts the archive file to the destination locations.
 
-	a.	Drops the entire Magento database.
+1. If you specify a database rollback file:
 
-	b.	Restores the database using the database backup.
-5.	If you specify a media rollback file:
+   a. Drops the entire Magento database.
 
-	a.	Verifies the rollback destination locations are writable.
+   b. Restores the database using the database backup.
 
-	b.	Deletes all files and directories under `pub/media`
+1. If you specify a media rollback file:
 
-	c.	Extracts the archive file to the destination locations.
+   a. Verifies the rollback destination locations are writable.
 
-5.	Takes the store out of maintenance mode.
+   b. Deletes all files and directories under `pub/media`
+
+   c. Extracts the archive file to the destination locations.
+
+1. Takes the store out of maintenance mode.
 
 For example, to restore a code (that is, file system) backup, enter the following commands in the order shown:
 
-*	Display a list of backups:
+*  Display a list of backups:
 
     ```bash
     magento info:backups:list
     ```
 
-*	Restore a file backup named `1433876616_filesystem.tgz`:
+*  Restore a file backup named `1433876616_filesystem.tgz`:
 
     ```bash
     magento setup:rollback --code-file="1433876616_filesystem.tgz"
@@ -189,5 +192,5 @@ For example, to restore a code (that is, file system) backup, enter the followin
     Disabling maintenance mode
     ```
 
-{:.bs-callout .bs-callout-info}
+{: .bs-callout-info }
 To run the `magento` command again without changing directories, you might need to enter `cd pwd`.

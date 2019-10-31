@@ -19,10 +19,10 @@ RequireJS improves the perceived page load time because it allows JavaScript to 
 
 In Magento, you can find Javascript components on the following levels:
 
-*   [Library](https://glossary.magento.com/library) level (`lib/web`). Resources located here are available in any place within Magento.
-*	Module level (`<module_dir>/view/<areaname>/web`). If the [module](https://glossary.magento.com/module) is enabled, resources added here are available in other modules and themes.
-*	Theme level, for a particular module (`<theme_dir>/<VendorName>_<ModuleName>/web`). Resources added here are available for [inheriting] themes.
-*	Theme level  (`<theme_dir>/web`). Resources added here are available for [inheriting] themes.
+*  [Library](https://glossary.magento.com/library) level (`lib/web`). Resources located here are available in any place within Magento.
+*  Module level (`<module_dir>/view/<areaname>/web`). If the [module](https://glossary.magento.com/module) is enabled, resources added here are available in other modules and themes.
+*  Theme level, for a particular module (`<theme_dir>/<VendorName>_<ModuleName>/web`). Resources added here are available for [inheriting] themes.
+*  Theme level  (`<theme_dir>/web`). Resources added here are available for [inheriting] themes.
 
 {:.bs-callout .bs-callout-info}
 The library level can only contain core Magento resources. Do not put custom JS files in the \`lib/web\` directory.
@@ -37,33 +37,36 @@ JS resources are accessed using relative paths.
 
 **Example 1**
 
--  File actual location: `app/code/Magento/ConfigurableProduct/view/frontend/web/js/configurable.js`
--  File published to `pub/static`: `pub/static/frontend/Magento/<theme>/<locale>/Magento_ConfigurableProduct/js/configurable.js`. Here `<theme>` and `<locale>` are the currently applied in your instance [theme](https://glossary.magento.com/theme) and [locale](https://glossary.magento.com/locale).
--  Called in script:
-   ```javascript
+*  File actual location: `app/code/Magento/ConfigurableProduct/view/frontend/web/js/configurable.js`
+*  File published to `pub/static`: `pub/static/frontend/Magento/<theme>/<locale>/Magento_ConfigurableProduct/js/configurable.js`. Here `<theme>` and `<locale>` are the currently applied in your instance [theme](https://glossary.magento.com/theme) and [locale](https://glossary.magento.com/locale).
+*  Called in script:
+
+    ```javascript
     require(["Magento_ConfigurableProduct/js/configurable"], function(Configurable){
     });
-   ```
+    ```
 
 **Example 2**
 
--  File actual location: `app/design/frontend/Magento/blank/Magento_Theme/web/js/theme.js`
--  File published to `pub/static`: `pub/static/frontend/Magento/<theme>/<locale>/js/theme.js`
--  Called in script:
-  ```javascript
-    require(["js/theme.js"], function(){
-    });
-  ```
+*  File actual location: `app/design/frontend/Magento/blank/Magento_Theme/web/js/theme.js`
+*  File published to `pub/static`: `pub/static/frontend/Magento/<theme>/<locale>/js/theme.js`
+*  Called in script:
+
+   ```javascript
+   require(["js/theme.js"], function(){
+   });
+   ```
 
 **Example 3**
 
--  File actual location: `lib/web/jquery.js`
--  File published to `pub/static`: `pub/static/<area>/Magento/<theme>/<locale>/jquery.js`
--  Called in script:
-   ```javascript
+*  File actual location: `lib/web/jquery.js`
+*  File published to `pub/static`: `pub/static/<area>/Magento/<theme>/<locale>/jquery.js`
+*  Called in script:
+
+    ```javascript
     require(["jquery"], function($){
     });
-   ```
+    ```
 
 Relative paths are also used in for [mapping and setting `paths` in requirejs-config.js configuration files]({{ page.baseurl }}/javascript-dev-guide/javascript/js-resources.html).
 
@@ -71,7 +74,8 @@ Relative paths are also used in for [mapping and setting `paths` in requirejs-co
 
 To build a dependency on the third-party plugin, specify a [shim] in the following configuration files:
 
- - `requirejs-config.js`
+*  `requirejs-config.js`
+
     ```javascript
     var config = {
         "shim": {
@@ -80,7 +84,8 @@ To build a dependency on the third-party plugin, specify a [shim] in the followi
     };
     ```
 
- - `<third-party-plugin>.js`
+*  `<third-party-plugin>.js`
+
     ```javascript
     !(function($){
         // plugin code
@@ -94,7 +99,7 @@ To build a dependency on the third-party plugin, specify a [shim] in the followi
 
 To be available for the entire Magento instance, RequireJS library is included in the following layout files:
 
- * For the `adminhtml` [area]({{ page.baseurl }}/architecture/archi_perspectives/components/modules/mod_and_areas.html):
+*  For the `adminhtml` [area]({{ page.baseurl }}/architecture/archi_perspectives/components/modules/mod_and_areas.html):
 
    [app/code/Magento/Backend/view/adminhtml/layout/default.xml]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Backend/view/adminhtml/layout/default.xml)
 
@@ -131,7 +136,7 @@ To be available for the entire Magento instance, RequireJS library is included i
     </page>
    ```
 
-* For the `frontend` area, the equivalent configuration is located in [`app/code/Magento/Theme/view/frontend/layout/default.xml`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Theme/view/frontend/layout/default.xml).
+*  For the `frontend` area, the equivalent configuration is located in [`app/code/Magento/Theme/view/frontend/layout/default.xml`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Theme/view/frontend/layout/default.xml).
 
 ### Including third-party JavaScript libraries
 
@@ -139,14 +144,14 @@ To include a 3rd party library and use it within the entire website (using the [
 
 1. Download the library and copy `slick.min.js` to the `<theme_path>/web/js` folder
 
-2. Copy `slick.less` and `slick-theme.less` to the `<theme_path>/web/css/source` folder. Also add both files to `<theme_path>/web/css/source/_extend.less`.
+1. Copy `slick.less` and `slick-theme.less` to the `<theme_path>/web/css/source` folder. Also add both files to `<theme_path>/web/css/source/_extend.less`.
 
    ```less
    @import "slick.less";
    @import "slick-theme.less";
    ```
 
-3. Create or update the theme's `requirejs-config.js` file.
+1. Create or update the theme's `requirejs-config.js` file.
 
    `<theme_path>/requirejs-config.js`
 
@@ -207,21 +212,22 @@ To make configurations more precise and specific to different modules and themes
 
 All configurations are collected and executed in the following order:
 
-1.  Library configurations.
-2.  Configurations at the module level.
-3.  Configurations at the theme module level for the ancestor themes.
-4.  Configurations at the theme module level for a current theme.
-5.  Configurations at the theme level for the ancestor themes.
-6.  Configurations at the theme level for the current theme.
+1. Library configurations.
+1. Configurations at the module level.
+1. Configurations at the theme module level for the ancestor themes.
+1. Configurations at the theme module level for a current theme.
+1. Configurations at the theme level for the ancestor themes.
+1. Configurations at the theme level for the current theme.
 
 The `baseUrl` parameter for RequireJS is specified in the following files:
 
-* For the `frontend` area: [app/code/Magento/Theme/view/frontend/templates/page/js/require_js.phtml]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Theme/view/frontend/templates/page/js/require_js.phtml)
-* For the `adminhtml` area: [app/code/Magento/Backend/view/adminhtml/templates/page/js/require_js.phtml]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Backend/view/adminhtml/templates/page/js/require_js.phtml)
+*  For the `frontend` area: [app/code/Magento/Theme/view/frontend/templates/page/js/require_js.phtml]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Theme/view/frontend/templates/page/js/require_js.phtml)
+*  For the `adminhtml` area: [app/code/Magento/Backend/view/adminhtml/templates/page/js/require_js.phtml]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Backend/view/adminhtml/templates/page/js/require_js.phtml)
 
-## Related reading
+{:.ref-header}
+Related reading
 
-[About AMD modules and RequireJS]({{ page.baseurl }}/javascript-dev-guide/javascript/js-resources.html)
-[RequireJS library](http://requirejs.org)
-[inheriting]({{ page.baseurl }}/frontend-dev-guide/themes/theme-inherit.html)
-[shim](http://requirejs.org/docs/api.html#config-shim)
+*  [About AMD modules and RequireJS]({{ page.baseurl }}/javascript-dev-guide/javascript/js-resources.html)
+*  [RequireJS library](http://requirejs.org)
+*  [inheriting]({{ page.baseurl }}/frontend-dev-guide/themes/theme-inherit.html)
+*  [shim](http://requirejs.org/docs/api.html#config-shim)

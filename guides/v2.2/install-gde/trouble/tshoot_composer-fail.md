@@ -42,24 +42,24 @@ Note the date is 2015-11-25, which indicates Composer has this issue.
 
 To work around it:
 
-1.	Change your version of Composer to enable you to download the Magento software by doing any of the following:
+1. Change your version of Composer to enable you to download the Magento software by doing any of the following:
 
-    *	Downgrade Composer using the following command:
+   *  Downgrade Composer using the following command:
 
-        ```bash
-        composer self-update 1.0.0-alpha11
-        ```
+       ```bash
+       composer self-update 1.0.0-alpha11
+       ```
 
-    *	Upgrade Composer to a version later than November 26, 2015:
+   *  Upgrade Composer to a version later than November 26, 2015:
 
-        ```bash
-        composer self-update
-        ```
+       ```bash
+       composer self-update
+       ```
 
-2.	Delete your Magento 2 directory and subdirectories.
-3.	Try the download again using either [`composer create-project`]({{ page.baseurl }}/install-gde/composer.html) or [`git clone`]({{ page.baseurl }}/install-gde/prereq/dev_install.html).
-4.	After successfully downloading the Magento software, update Composer:
+1. Delete your Magento 2 directory and subdirectories.
+1. Try the download again using either [`composer create-project`]({{ page.baseurl }}/install-gde/composer.html) or [`git clone`]({{ page.baseurl }}/install-gde/prereq/dev_install.html).
+1. After successfully downloading the Magento software, update Composer:
 
-    ```bash
-    composer self-update
-    ```
+   ```bash
+   composer self-update
+   ```

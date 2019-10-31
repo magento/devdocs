@@ -15,9 +15,9 @@ This topic focuses on file-based logging, although Magento provides the flexibil
 
 We recommend using centralized application logging for the following reasons:
 
-*	It allows storage of logs on a server other than the application server and decreases disk I/O operations, simplifying support of the application server.
+*  It allows storage of logs on a server other than the application server and decreases disk I/O operations, simplifying support of the application server.
 
-*	It makes processing of logs data more effective by using special tools without impact to a production server (for example, [logstash](https://www.elastic.co/products/logstash), [logplex](https://devcenter.heroku.com/articles/logplex), or [fluentd](http://www.fluentd.org)).
+*  It makes processing of logs data more effective by using special tools without impact to a production server (for example, [logstash](https://www.elastic.co/products/logstash), [logplex](https://devcenter.heroku.com/articles/logplex), or [fluentd](http://www.fluentd.org)).
 
 {:.bs-callout .bs-callout-info}
 Magento does not recommend or endorse any particular logging solution.
@@ -28,5 +28,7 @@ The [PSR-3 standard](https://zendframework.github.io/zend-log/psr3) defines a co
 
 This provides the ability for the implementation to be replaced easily without worry that such replacement may break the application code. It also guarantees a custom component will work even when the Magento log implementation is changed in a future version of the system.
 
-#### Next
+{:.ref-header}
+Next step
+
 [Magento logging in more detail]({{ page.baseurl }}/config-guide/log/log-magento.html)

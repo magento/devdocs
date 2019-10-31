@@ -14,9 +14,9 @@ For more information about managing environments using the CLI, see [Manage bran
 
 This topic discusses how to use the Project Web Interface to:
 
-- Add or delete an environment. You cannot add or delete the `master` branch for Pro plan Staging and Production. You can branch from Start plan Master.
-- Sync (`git pull`) from the environment's parent
-- Merge (`git push`) to the environment's parent
+-  Add or delete an environment. You cannot add or delete the `master` branch for Pro plan Staging and Production. You can branch from Start plan Master.
+-  Sync (`git pull`) from the environment's parent
+-  Merge (`git push`) to the environment's parent
 
 {:.bs-callout .bs-callout-info}
 You cannot create branches from Pro plan Staging and Production `master`. These environments include `master` branches that you deploy updated Git code to from Integration `master`.
@@ -25,8 +25,8 @@ You cannot create branches from Pro plan Staging and Production `master`. These 
 
 Complete development of code and added extensions in a branch and, when complete, merge (`git push`) the branch with its parent or master.
 
-- For Starter, we recommend you create a `staging` branch from Master, then branch from `staging` for development.
-- For Pro, create a development branch from the Integration environment.
+-  For Starter, we recommend you create a `staging` branch from Master, then branch from `staging` for development.
+-  For Pro, create a development branch from the Integration environment.
 
 For branching strategies, review [Starter]({{ page.baseurl }}/cloud/basic-information/starter-architecture.html) and [Pro]({{ page.baseurl }}/cloud/basic-information/starter-develop-deploy-workflow.html) architecture overviews.
 
@@ -42,6 +42,7 @@ To add a branch:
 1. In the left navigation bar, click the name of the parent environment.
 
    Your new branch is cloned from this environment. Choose a parent environment that is similar to the environment you're about to create.
+
 1. Click ![Create a branch]({{ site.baseurl }}/common/images/cloud_branch-icon.png){:width="30px"}.
 1. In the provided field, enter a branch name. In many cases, the environment name is the same as its ID.
 
@@ -62,8 +63,8 @@ To add a branch:
 
 1. Continue with one of the following:
 
-   - [Get started with an environment]({{ page.baseurl }}/cloud/env/environments-start.html)
-   - [How tos and tutorials]({{ page.baseurl }}/cloud/howtos/how-to.html)
+   -  [Get started with an environment]({{ page.baseurl }}/cloud/env/environments-start.html)
+   -  [How tos and tutorials]({{ page.baseurl }}/cloud/howtos/how-to.html)
 
 ## Delete to make a branch inactive {#inactive}
 
@@ -109,9 +110,9 @@ Merging an environment is the same as `git push origin`. You merge to push updat
 To merge an environment with its parent:
 
 1. [Log in to your project]({{ page.baseurl }}/cloud/project/project-webint-basic.html#project-access).
-2. In the left pane, click the name of the branch you want to merge.
-3. Click ![Merge an environment]({{ site.baseurl }}/common/images/cloud_environment-merge.png){:width="30px"} (merge).
-4. Click **Merge** to confirm the action.
+1. In the left pane, click the name of the branch you want to merge.
+1. Click ![Merge an environment]({{ site.baseurl }}/common/images/cloud_environment-merge.png){:width="30px"} (merge).
+1. Click **Merge** to confirm the action.
 
 ## View logs {#logs}
 
@@ -121,14 +122,14 @@ For **Starter** environments, you can review build and deploy logs and the deplo
 
 For **Pro** environments, you can review the following logs per environment:
 
-- Integration–Build and deploy and deployment history
-- Staging–Build logs and deployment history. You need to SSH into the server to view deploy logs.
-- Production–Build logs and deployment history. You need to SSH into the server to view deploy logs.
+-  Integration–Build and deploy and deployment history
+-  Staging–Build logs and deployment history. You need to SSH into the server to view deploy logs.
+-  Production–Build logs and deployment history. You need to SSH into the server to view deploy logs.
 
 1. [Log in to your project]({{ page.baseurl }}/cloud/project/project-webint-basic.html#project-access).
-2. In the left pane, click an environment to review logs for.
-3. The right pane provides a deployment history of one entry per action attempted including syncs, merges, branches, snapshots, and more.
-4. To view the build log, select the Success or Failure link per deployment record on the account.
+1. In the left pane, click an environment to review logs for.
+1. The right pane provides a deployment history of one entry per action attempted including syncs, merges, branches, snapshots, and more.
+1. To view the build log, select the Success or Failure link per deployment record on the account.
 
 ## Pull code from a private Git repository {#private}
 

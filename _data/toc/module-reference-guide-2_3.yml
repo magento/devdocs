@@ -7,6 +7,9 @@ pages:
     include_versions: ["2.3"]
     children:
     
+      - label: AdminAnalytics
+        url: /mrg/ce/AdminAnalytics.html
+    
       - label: AdminNotification
         url: /mrg/ce/AdminNotification.html
     
@@ -18,6 +21,9 @@ pages:
     
       - label: Amqp
         url: /mrg/ce/Amqp.html
+    
+      - label: AmqpStore
+        url: /mrg/ce/AmqpStore.html
     
       - label: Analytics
         url: /mrg/ce/Analytics.html
@@ -34,6 +40,12 @@ pages:
       - label: AuthorizenetAcceptjs
         url: /mrg/ce/AuthorizenetAcceptjs.html
     
+      - label: AuthorizenetCardinal
+        url: /mrg/ce/AuthorizenetCardinal.html
+    
+      - label: AuthorizenetGraphQl
+        url: /mrg/ce/AuthorizenetGraphQl.html
+    
       - label: Backend
         url: /mrg/ce/Backend.html
     
@@ -42,6 +54,9 @@ pages:
     
       - label: Braintree
         url: /mrg/ce/Braintree.html
+    
+      - label: BraintreeGraphQl
+        url: /mrg/ce/BraintreeGraphQl.html
     
       - label: Bundle
         url: /mrg/ce/Bundle.html
@@ -57,6 +72,9 @@ pages:
     
       - label: Captcha
         url: /mrg/ce/Captcha.html
+    
+      - label: CardinalCommerce
+        url: /mrg/ce/CardinalCommerce.html
     
       - label: Catalog
         url: /mrg/ce/Catalog.html
@@ -93,6 +111,9 @@ pages:
     
       - label: CheckoutAgreements
         url: /mrg/ce/CheckoutAgreements.html
+    
+      - label: CheckoutAgreementsGraphQl
+        url: /mrg/ce/CheckoutAgreementsGraphQl.html
     
       - label: Cms
         url: /mrg/ce/Cms.html
@@ -274,6 +295,9 @@ pages:
       - label: PaypalCaptcha
         url: /mrg/ce/PaypalCaptcha.html
     
+      - label: PaypalGraphQl
+        url: /mrg/ce/PaypalGraphQl.html
+    
       - label: Persistent
         url: /mrg/ce/Persistent.html
     
@@ -291,6 +315,9 @@ pages:
     
       - label: QuoteGraphQl
         url: /mrg/ce/QuoteGraphQl.html
+    
+      - label: RelatedProductGraphQl
+        url: /mrg/ce/RelatedProductGraphQl.html
     
       - label: ReleaseNotification
         url: /mrg/ce/ReleaseNotification.html
@@ -531,6 +558,9 @@ pages:
       - label: CustomerBalance
         url: /mrg/ee/CustomerBalance.html
     
+      - label: CustomerBalanceGraphQl
+        url: /mrg/ee/CustomerBalanceGraphQl.html
+    
       - label: CustomerCustomAttributes
         url: /mrg/ee/CustomerCustomAttributes.html
     
@@ -560,6 +590,9 @@ pages:
     
       - label: GiftCardAccount
         url: /mrg/ee/GiftCardAccount.html
+    
+      - label: GiftCardAccountGraphQl
+        url: /mrg/ee/GiftCardAccountGraphQl.html
     
       - label: GiftCardGraphQl
         url: /mrg/ee/GiftCardGraphQl.html
@@ -778,6 +811,9 @@ pages:
       - label: InventoryAdminUi
         url: /mrg/msi/InventoryAdminUi.html
     
+      - label: InventoryAdvancedCheckout
+        url: /mrg/msi/InventoryAdvancedCheckout.html
+    
       - label: InventoryApi
         url: /mrg/msi/InventoryApi.html
     
@@ -867,6 +903,9 @@ pages:
     
       - label: InventoryProductAlert
         url: /mrg/msi/InventoryProductAlert.html
+    
+      - label: InventoryRequisitionList
+        url: /mrg/msi/InventoryRequisitionList.html
     
       - label: InventoryReservationCli
         url: /mrg/msi/InventoryReservationCli.html

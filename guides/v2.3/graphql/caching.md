@@ -11,25 +11,25 @@ The definitions for some queries include cache tags. Full page caching uses thes
 
 Magento caches the following queries:
 
-* `category`
-* `cmsBlocks`
-* `cmsPage`
-* `products`
-* `urlResolver`
+*  `category`
+*  `cmsBlocks`
+*  `cmsPage`
+*  `products`
+*  `urlResolver`
 
 Magento explicitly disallows caching the following queries.
 
-* `cart`
-* `country`
-* `countries`
-* `currency`
-* `customAttributeMetadata`
-* `customer`
-* `customerDownloadableProducts`
-* `customerOrders`
-* `customerPaymentTokens`
-* `storeConfig`
-* `wishlist`
+*  `cart`
+*  `country`
+*  `countries`
+*  `currency`
+*  `customAttributeMetadata`
+*  `customer`
+*  `customerDownloadableProducts`
+*  `customerOrders`
+*  `customerPaymentTokens`
+*  `storeConfig`
+*  `wishlist`
 
 [Define the GraphQL schema for a module]({{page.baseurl}}/graphql/develop/create-graphqls-file.html) describes the syntax of a valid query.
 
@@ -37,7 +37,7 @@ Magento explicitly disallows caching the following queries.
 
 We recommend setting up Varnish as a reverse proxy to serve the full page cache in a production environment. See [Configure and use Varnish]({{page.baseurl}}/config-guide/varnish/config-varnish.html) for more information.
 
-Magento 2.3.2 updates the `vcl_hash` subroutine in the template `varnish.vcl` file and creates the `process_graphql_headers` subroutine for both Varnish 4.x and 5.x. To enable GraphQL caching, either generate a new template file, or edit the `default.vcl` file on your system to match the current default template.
+As of Magento 2.3.2, Magento supports GraphQL caching with Varnish. If you have upgraded from a previous version, you can enable GraphQL caching by generating a new template file, or by editing the `default.vcl` file on your system to match the current default template for your version of Varnish.
 
 If you choose to edit an existing `default.vcl` file, update the `vcl_hash` subroutine to check whether the request URL contains `graphql`, as follows:
 
@@ -96,6 +96,6 @@ Header | Description
 
 Magento invalidates the cache when any of the following events occur:
 
-* When a change occurs to a specific entity or entities in aggregate. An increase in a product's price is a direct and obvious change. Applying a new tax class tax to products changes a set of products in aggregate.
-* When system configuration changes
-* When an administrator flushes or disables the cache from the Admin or with the `bin/magento cache` command
+*  When a change occurs to a specific entity or entities in aggregate. An increase in a product's price is a direct and obvious change. Applying a new tax class tax to products changes a set of products in aggregate.
+*  When system configuration changes
+*  When an administrator flushes or disables the cache from the Admin or with the `bin/magento cache` command

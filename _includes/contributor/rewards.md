@@ -11,12 +11,12 @@ Due to the level of work required for developing and reviewing a PR, Contributor
 
 See the following examples for calculated reward points:
 
-- Contributor submits PR with complex code contributions: Improvement(base) 10 points + Complex(additional) 20 points = 30 points
-- Contributor submits PR with complex code and tests: Improvement(base) 10 points + Complex(additional) 20 points + Test coverage(additional) 10 points = 40 points
-- Contributor submits PR port of existing merged PR:
-  - Original contributor: (Improvement(base) 10 points + Complex(additional) 20 points) + Author of Ported Issue 5 points = 35 points
-  - Porting contributor: Port(base) 5 points
-- Maintainer reviews and approves PR with complex code and tests: Improvement(base) 10 points + Complex(additional) 20 points + Test coverage(additional) 10 points = 40 points
+-  Contributor submits PR with complex code contributions: Improvement(base) 10 points + Complex(additional) 20 points = 30 points
+-  Contributor submits PR with complex code and tests: Improvement(base) 10 points + Complex(additional) 20 points + Test coverage(additional) 10 points = 40 points
+-  Contributor submits PR port of existing merged PR:
+   -  Original contributor: (Improvement(base) 10 points + Complex(additional) 20 points) + Author of Ported Issue 5 points = 35 points
+   -  Porting contributor: Port(base) 5 points
+-  Maintainer reviews and approves PR with complex code and tests: Improvement(base) 10 points + Complex(additional) 20 points + Test coverage(additional) 10 points = 40 points
 
 Earned achievements display as labels on GitHub PRs and for each Magento Contributor, Partner, and Maintainer on [magento.com](https://magento.com/magento-contributors).
 
@@ -45,7 +45,8 @@ Test coverage | 10 | Contribution contains fix or improvement and new tests or t
 MFTF test coverage| 10 | Contribution contains MFTF tests
 Bug fix | 10 | Contribution fixes one or more known issues from GitHub
 Author of Ported Issue | 5 | Additional points for a contribution that ports (up or back port) a previous PR across release lines by another contributor
-Issue Triage | 3 | Public issue report is verified and confirmed
+Issue Triage: Confirmed | 5 | A public issue report is verified and confirmed. The description contains all the required information needed to easily reproduce the issue with the provided steps
+Issue Triage: Rejected/Closed | 4 | A public issue report is verified and closed/rejected because it is "not a bug" or "cannot be reproduced" using the provided steps in the description on the supported Magento versions
 
 ## DevDocs awards and points
 
@@ -53,8 +54,8 @@ Contributors and Maintainers can also earn rewards for merged submissions to the
 
 See the following examples for calculated reward points:
 
-- Contributor submits PR with HTML formatting and typos fixes: Editorial(base) 1 point
-- Contributor submits PR with code sample update and new parameter descriptions: Improvement(base) 10 points + Major update(additional) 20 points = 30 points
+-  Contributor submits PR with HTML formatting and typos fixes: Editorial(base) 1 point
+-  Contributor submits PR with code sample update and new parameter descriptions: Improvement(base) 10 points + Major update(additional) 20 points = 30 points
 
 ### Base achievements
 {:.no_toc}

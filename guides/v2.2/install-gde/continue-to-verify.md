@@ -15,7 +15,7 @@ functional_areas:
 
 We suggest the following:
 
-*	[Verify the installation]({{ page.baseurl }}/install-gde/install/verify.html)
+*  [Verify the installation]({{ page.baseurl }}/install-gde/install/verify.html)
 
 ## Other options
 
@@ -27,9 +27,9 @@ If you haven't already installed optional sample data, you can [install it now](
 
 ### Manage and upgrade components
 
-*	[Component management (install, uninstall, enable, disable, update)]({{ page.baseurl }}/comp-mgr/module-man/compman-start.html)
-*	[System upgrade (upgrade the Magento software)]({{ page.baseurl }}/comp-mgr/upgrader/upgrade-start.html)
-*	*Contributing developers only*: [Contributing developers&mdash;update, reinstall Magento]({{ page.baseurl }}/install-gde/install/cli/dev_options.html)
+*  [Component management (install, uninstall, enable, disable, update)]({{ page.baseurl }}/comp-mgr/module-man/compman-start.html)
+*  [System upgrade (upgrade the Magento software)]({{ page.baseurl }}/comp-mgr/upgrader/upgrade-start.html)
+*  *Contributing developers only*: [Contributing developers&mdash;update, reinstall Magento]({{ page.baseurl }}/install-gde/install/cli/dev_options.html)
 
 ### Configure
 [Configure the Magento application]({{ page.baseurl }}/install-gde/install/post-install-config.html).

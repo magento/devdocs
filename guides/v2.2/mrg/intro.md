@@ -9,14 +9,15 @@ The [Module](https://glossary.magento.com/module) Reference Guide contains infor
 
 The information includes:
 
-- module description
-- API description
+-  module description
+-  API description
 
 Information is being published gradually, until we complete work on automation of the process.
 
-## Related topics
+{:.ref-header}
+Related topics
 
-* [Building a new Magento module]({{ page.baseurl }}/extension-dev-guide/bk-extension-dev-guide.html)
-* [How to enable/disable a Magento module]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-enable.html)
-* [SOAP Reference]({{ page.baseurl }}/soap/bk-soap.html)
-* [REST Reference]({{ page.baseurl }}/rest/bk-rest.html)
+-  [Building a new Magento module]({{ page.baseurl }}/extension-dev-guide/bk-extension-dev-guide.html)
+-  [How to enable/disable a Magento module]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-enable.html)
+-  [SOAP Reference]({{ page.baseurl }}/soap/bk-soap.html)
+-  [REST Reference]({{ page.baseurl }}/rest/bk-rest.html)

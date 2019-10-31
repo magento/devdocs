@@ -19,19 +19,19 @@ The message queue topology is a {{site.data.var.ee}} feature. It can be included
 
 Configuring the message queue topology involves creating and modifying the following configuration files in the `<module>/etc` directory:
 
-* [`communication.xml`](#communicationxml) - Defines aspects of the message queue system that all communication types have in common.
-* [`queue_consumer.xml`](#queueconsumerxml) - Defines the relationship between an existing queue and its consumer.
-* [`queue_topology.xml`](#queuetopologyxml) - Defines the message routing rules and declares queues and exchanges.
-* [`queue_publisher.xml`](#queuepublisherxml) - Defines the exchange where a topic is published.
+*  [`communication.xml`](#communicationxml) - Defines aspects of the message queue system that all communication types have in common.
+*  [`queue_consumer.xml`](#queueconsumerxml) - Defines the relationship between an existing queue and its consumer.
+*  [`queue_topology.xml`](#queuetopologyxml) - Defines the message routing rules and declares queues and exchanges.
+*  [`queue_publisher.xml`](#queuepublisherxml) - Defines the exchange where a topic is published.
 
 ### Use Cases
 
 Depending on your needs, you may only need to create and configure `communication.xml` and one or two of these files.
 
-* If you only want to publish to an existing queue created by a 3rd party system, you will only need the `queue_publisher.xml` file.
-* If you only want to consume from an existing queue,  you will only need the `queue_consumer.xml` config file.
-* In cases where you want to configure the local queue and publish to it for 3rd party systems to consume, you will need the `queue_publisher.xml` and `queue_topology.xml` files.
-* When you want to configure the local queue and consume messages published by 3rd party system, you will need the `queue_topology.xml` and `queue_consumer.xml` files.
+*  If you only want to publish to an existing queue created by a 3rd party system, you will only need the `queue_publisher.xml` file.
+*  If you only want to consume from an existing queue,  you will only need the `queue_consumer.xml` config file.
+*  In cases where you want to configure the local queue and publish to it for 3rd party systems to consume, you will need the `queue_publisher.xml` and `queue_topology.xml` files.
+*  When you want to configure the local queue and consume messages published by 3rd party system, you will need the `queue_topology.xml` and `queue_consumer.xml` files.
 
 ### `communication.xml` {#communicationxml}
 
@@ -109,10 +109,10 @@ The `queue_consumer.xml` file contains one or more `consumer` elements:
 
 The `queue_topology.xml` file defines the message routing rules and declares queues and exchanges. It contains the following elements:
 
-* `exchange`
-* `exchange/binding`(optional)
-* `exchange/arguments` (optional)
-* `exchange/binding/arguments` (optional)
+*  `exchange`
+*  `exchange/binding`(optional)
+*  `exchange/arguments` (optional)
+*  `exchange/binding/arguments` (optional)
 
 #### Example `queue_topology.xml` file
 {:.no_toc}
@@ -199,8 +199,8 @@ The following illustrates an `arguments` block:
 
 The `queue_publisher.xml` file defines which connection and exchange to use to publish messages for a specific topic. It contains the following elements:
 
-* [publisher](https://glossary.magento.com/publisher-subscriber-pattern)
-* publisher/connection
+*  [publisher](https://glossary.magento.com/publisher-subscriber-pattern)
+*  publisher/connection
 
 #### Example `queue_publisher.xml` file
 {:.no_toc}
@@ -244,6 +244,6 @@ See [Migrate message queue configuration]({{ page.baseurl }}/extension-dev-guide
 
 ### Related Topics
 
-*   [Message Queues Overview]({{ page.baseurl }}/config-guide/mq/rabbitmq-overview.html)
-*   [Manage message queues with MySQL]({{ page.baseurl }}/config-guide/mq/manage-mysql.html)
-*   [Install RabbitMQ]({{ page.baseurl }}/install-gde/prereq/install-rabbitmq.html)
+*  [Message Queues Overview]({{ page.baseurl }}/config-guide/mq/rabbitmq-overview.html)
+*  [Manage message queues with MySQL]({{ page.baseurl }}/config-guide/mq/manage-mysql.html)
+*  [Install RabbitMQ]({{ page.baseurl }}/install-gde/prereq/install-rabbitmq.html)

@@ -13,7 +13,8 @@ You must start a message queue consumer to enable asynchronous operations such a
 
 {% include config/message-queue-consumers.md %}
 
-## Related topics
+{:.ref-header}
+Related topics
 
-* [Message queues overview]({{ page.baseurl }}/config-guide/mq/rabbitmq-overview.html)
-* [Manage message queues]({{ page.baseurl }}/config-guide/mq/manage-mysql.html)
+*  [Message queues overview]({{ page.baseurl }}/config-guide/mq/rabbitmq-overview.html)
+*  [Manage message queues]({{ page.baseurl }}/config-guide/mq/manage-mysql.html)

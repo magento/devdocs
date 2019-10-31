@@ -1,10 +1,10 @@
 Before you continue, to avoid errors during your installation or update, make sure you verify *all* of the following:
 
-*	You set up a [Magento file system owner](#magento-owner-group) and shared that owner's group with the web server user group
-*	Your [cron jobs](#magento-cron) are set up and running
-*	[File system permissions](#perms) are set properly
+*  You set up a [Magento file system owner](#magento-owner-group) and shared that owner's group with the web server user group
+*  Your [cron jobs](#magento-cron) are set up and running
+*  [File system permissions](#perms) are set properly
 
-{:.bs-callout .bs-callout-warning}
+{: .bs-callout-warning }
 Do not continue without performing these checks. Failure to do so could result in errors.
 
 ### Magento file system owner and group {#magento-owner-group}

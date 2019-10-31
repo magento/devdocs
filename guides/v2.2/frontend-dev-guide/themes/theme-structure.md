@@ -30,21 +30,21 @@ The structure of a Magento theme directory typically would be like following:
 ```tree
 <theme_dir>/
 ├── <Vendor>_<Module>/
-│	├── web/
-│	│	├── css/
-│	│	│	├── source/
-│	├── layout/
-│	│	├── override/
-│	├── templates/
+│   ├── web/
+│   │   ├── css/
+│   │   │   ├── source/
+│   ├── layout/
+│   │   ├── override/
+│   ├── templates/
 ├── etc/
 ├── i18n/
 ├── media/
 ├── web/
-│	├── css/
-│	│	├── source/
-│	├── fonts/
-│	├── images/
-│	├── js/
+│   ├── css/
+│   │   ├── source/
+│   ├── fonts/
+│   ├── images/
+│   ├── js/
 ├── composer.json
 ├── registration.php
 ├── theme.xml
@@ -83,7 +83,7 @@ The directories and files structure described below is the most extended one. It
         optional
       </td>
       <td colspan="1">
-          Module-specific styles (<code>.css</code> and/or <code>.less</code> files). General styles for the module are in the <code>_module.less</code> file, and styles for widgets are in <code>_widgets.less</code><br/><br/>Ex: [Module_Theme]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Theme/view/frontend/web/css) or description field should be corrected.
+          Module-specific styles (<code>.css</code> and/or <code>.less</code> files). General styles for the module are in the <code>_module.less</code> file, and styles for widgets are in <code>_widgets.less</code>.
       </td>
     </tr>
     <tr>
@@ -150,7 +150,7 @@ The directories and files structure described below is the most extended one. It
       <td colspan="1">
         <code>/media</code>
       </td>
-      <td colspan="1">Optional</td>
+      <td colspan="1">optional</td>
       <td colspan="1">
         This directory contains a theme preview (a screenshot of your theme).
       </td>
@@ -258,8 +258,8 @@ The directories and files structure described below is the most extended one. It
 
 Apart from the configuration file and theme [metadata](https://glossary.magento.com/metadata) file, all theme files fall into the following two categories:
 
-* Static view files
-* Dynamic view files
+*  Static view files
+*  Dynamic view files
 
 ### Static view files {#theme-structure-pub}
 
@@ -271,10 +271,10 @@ A set of theme files that are returned by the server to a browser as is, without
 <theme_dir>/
 ├── media/
 ├── web
-│	├── css/ (except the "source" sub-directory)
-│	├── fonts/
-│	├── images/
-│	├── js/
+│   ├── css/ (except the "source" sub-directory)
+│   ├── fonts/
+│   ├── images/
+│   ├── js/
 ```
 
 The key difference between static files and other theme files is that static files appear on a web page as references to the files, while other theme files take part in the page generation, but are not explicitly referenced on a web page as files.
@@ -293,13 +293,13 @@ Dynamic view files are located in a theme directory as follows:
 ```tree
 <theme_dir>/
 ├── Magento_<module>/
-│	├── web/
-│	│	├── css/
-│	│	│	├── source/
-│	├── layout/
-│	│	├── override/
-│	├── templates/
+│   ├── web/
+│   │   ├── css/
+│   │   │   ├── source/
+│   ├── layout/
+│   │   ├── override/
+│   ├── templates/
 ├── web/
-│	├── css/
-│	│	├── source/
+│   ├── css/
+│   │   ├── source/
 ```

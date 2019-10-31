@@ -4,8 +4,8 @@ PayPal recently announced they will require Transport Layer Security (TLS) versi
 
 More information:
 
-*	[Details (PayPal security bulletin)](https://www.paypal.com/uk/webapps/mpp/ssl-security-update)
-*	[PayPal live payments switching in June 2016 (PayPal technical blog)](https://devblog.paypal.com/upcoming-security-changes-notice/#tls)
+*  [Details (PayPal security bulletin)](https://www.paypal.com/uk/webapps/mpp/ssl-security-update)
+*  [PayPal live payments switching in June 2016 (PayPal technical blog)](https://medium.com/paypal-engineering/security-related-changes-required-to-avoid-service-disruption-82caf7778328#0422)
 
 ### Symptom
 
@@ -60,15 +60,15 @@ If you're already running CentOS 6.8 or later, no action is necessary. According
 
 You have the following options:
 
-*	(Recommended). Upgrade your Magento server to CentOS 6.8 or later.
+*  (Recommended). Upgrade your Magento server to CentOS 6.8 or later.
 
-	Its recommended repositories support current versions of TLS with `libcurl`. Using CentOS 6.8 or later is the most secure way to continue operating your store and accepting PayPal.
+   Its recommended repositories support current versions of TLS with `libcurl`. Using CentOS 6.8 or later is the most secure way to continue operating your store and accepting PayPal.
 
-	CentOS 6.8 has a `libcurl` version that defaults to TLS 1.2.
+   CentOS 6.8 has a `libcurl` version that defaults to TLS 1.2.
 
-*	(Less secure, *not recommended*). Upgrade to `libcurl` 7.34 or later on CentOS 6 using a non-recommended third-party repository.
+*  (Less secure, *not recommended*). Upgrade to `libcurl` 7.34 or later on CentOS 6 using a non-recommended third-party repository.
 
-	One possible solution is to use the information on [serverfault](http://serverfault.com/questions/321321/upgrade-curl-to-latest-on-centos).
+   One possible solution is to use the information on [serverfault](http://serverfault.com/questions/321321/upgrade-curl-to-latest-on-centos).
 
-  {:.bs-callout .bs-callout-info}
-  Installing software from non-recommended repositories can change other system packages and can result in issues. We strongly recommend you upgrade `libcurl` in a development environment and *thoroughly test* all payment processors you use as well as any other critical software before putting this into production.
+   {:.bs-callout .bs-callout-info}
+   Installing software from non-recommended repositories can change other system packages and can result in issues. We strongly recommend you upgrade `libcurl` in a development environment and *thoroughly test* all payment processors you use as well as any other critical software before putting this into production.

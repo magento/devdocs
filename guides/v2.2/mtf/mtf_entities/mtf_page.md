@@ -10,9 +10,9 @@ In the functional tests, Page Object [Design Pattern](https://glossary.magento.c
 
 Benefit of this approach is that tests don’t need to be changed after changes in the UI. Only code in corresponding block must be changed. This approach provides the following advantages:
 
-- Clean separation between test code and page specific code like locator.
-- Single repository for the services or operations provided by the page.
-- Decreased duplication of the code.
+-  Clean separation between test code and page specific code like locator.
+-  Single repository for the services or operations provided by the page.
+-  Decreased duplication of the code.
 
 You can learn from this topic how to create new page, add blocks to the page. Furthermore, it discusses mechanism of extending the page in another [module](https://glossary.magento.com/module).
 
@@ -22,9 +22,9 @@ The general flow is the following:
 
 1. Create an [XML](https://glossary.magento.com/xml) file in the Page directory of the module to which it belongs
 
-2. Add the previously created blocks presented on this page to the `<page>` node
+1. Add the previously created blocks presented on this page to the `<page>` node
 
-3. Run the page generator
+1. Run the page generator
 
 Let's see an example of the Magento [Widget](https://glossary.magento.com/widget) page:
 
@@ -33,7 +33,6 @@ Let's see an example of the Magento [Widget](https://glossary.magento.com/widget
 where four blocks have been added:
 
 ```xml
-
 <?xml version="1.0" encoding="utf-8"?>
 <!--
 /**
@@ -49,7 +48,6 @@ where four blocks have been added:
         <block name="systemMessageDialog" class="Magento\AdminNotification\Test\Block\System\Messages" locator='[role="dialog"].ui-popup-message' strategy="css selector" />
     </page>
 </config>
-
 ```
 
 The following table explains `<page>` attributes.
@@ -72,9 +70,9 @@ Also, block can contain a `render` node. [Read about renders in the Block topic]
 
 Depending on `area` and `mca` attributes, page can be of one of the following types:
 
-* [Admin](https://glossary.magento.com/admin) page is extended from [Magento\Mtf\Page\BackendPage][] class
-* [Storefront](https://glossary.magento.com/storefront) page is extended from [Magento\Mtf\Page\FrontendPage][] class
-* External page is extended from [Magento\Mtf\Page\ExternalPage][] class
+-  [Admin](https://glossary.magento.com/admin) page is extended from [Magento\Mtf\Page\BackendPage][] class
+-  [Storefront](https://glossary.magento.com/storefront) page is extended from [Magento\Mtf\Page\FrontendPage][] class
+-  External page is extended from [Magento\Mtf\Page\ExternalPage][] class
 
 ### Admin page {#mtf_page_admin}
 
@@ -110,9 +108,9 @@ To add blocks from different modules to the page, you can merge pages by followi
 
 **Step 2.** Assign [page attributes](#mtf_page_attributes)
 
-* with the same name as the page you want to merge
-* with the same `mca`
-* the `module` and `area` attributes can be omitted
+-  with the same name as the page you want to merge
+-  with the same `mca`
+-  the `module` and `area` attributes can be omitted
 
 **Step 3.** Add blocks to the page
 
@@ -163,7 +161,9 @@ We should create `dev/tests/functional/tests/app/Magento/Review/Test/Page/Produc
 
 And generate the updated page:
 
-    php <magento2_root_dir>/dev/tests/functional/utils/generate.php
+```bash
+php <magento2_root_dir>/dev/tests/functional/utils/generate.php
+```
 
 The result is in the `<magento2_root_dir>/dev/tests/functional/generated/Magento/Catalog/Test/Page/Product/CatalogProductView.php` with the following code:
 
@@ -297,9 +297,9 @@ To override blocks, follow:
 
 **Step 2.** Assign [page attributes](#mtf_page_attributes)
 
-* with the same name as the page you want to merge
-* with the same `mca`
-* without `module` and `area` attributes
+-  with the same name as the page you want to merge
+-  with the same `mca`
+-  without `module` and `area` attributes
 
 **Step 3.** Add blocks that you want to override (indicating a block class with new behavior)
 
@@ -307,8 +307,8 @@ To override blocks, follow:
 
 Let's see an example with the following use case:
 
-- A Magento_NewModule changes the [category](https://glossary.magento.com/category) creation behavior of a Magento_Catalog module.
-- `editForm` block from page `\Magento\Catalog\Test\Page\Adminhtml\CatalogCategoryEdit` must be changed according to new functionality.
+-  A Magento_NewModule changes the [category](https://glossary.magento.com/category) creation behavior of a Magento_Catalog module.
+-  `editForm` block from page `\Magento\Catalog\Test\Page\Adminhtml\CatalogCategoryEdit` must be changed according to new functionality.
 
 Let us see page `\Magento\Catalog\Test\Page\Adminhtml\CatalogCategoryEdit`:
 
@@ -348,18 +348,16 @@ To use the `editForm` block from the Magento_NewModule, we must follow:
 
 **Step 2.** Assign page attributes
 
- * with the same name as the page you want to merge
- * with the same `mca`
- * without `module` and `area` attributes
+-  with the same name as the page you want to merge
+-  with the same `mca`
+-  without `module` and `area` attributes
 
 ```xml
-
 <?xml version="1.0" encoding="utf-8"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../../vendor/magento/mtf/etc/pages.xsd">
     <page name="CatalogCategoryEdit" mca="catalog/category/edit">
     </page>
 </config>
-
 ```
 
 **Step 3.** Add blocks that you want to redirect.
@@ -377,7 +375,9 @@ To use the `editForm` block from the Magento_NewModule, we must follow:
 
 Enter in terminal:
 
-    php <magento2_root_dir>/dev/tests/functional/utils/generate.php
+```bash
+php <magento2_root_dir>/dev/tests/functional/utils/generate.php
+```
 
 Now when you call `editForm` block from the `CatalogCategoryEdit` page, class `\Magento\NewModule\Test\Block\Adminhtml\Category\Edit\CategoryForm` will be used.
 

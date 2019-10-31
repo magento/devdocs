@@ -34,13 +34,14 @@ A simple [Magento Admin](https://glossary.magento.com/magento-admin) [URL](https
 
 You can change this Admin URI in three ways:
 
-- The `bin/magento setup:config:set --backend-frontname=<value>` command
-- The `env.php` file
-- The Admin panel
+-  The `bin/magento setup:config:set --backend-frontname=<value>` command
+-  The `env.php` file
+-  The Admin panel
 
 Although the use of a non-default admin URL will not secure the site, its use will help prevent large-scale automated attacks. See [Display or change the Admin URI]({{page.baseurl}}/install-gde/install/cli/install-cli-adminurl.html) in Configuration Guide for more information.
 
-## Related topics
+{:.ref-header}
+Related topics
 
 [Configuration Guide][]
 

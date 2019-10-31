@@ -3,19 +3,10 @@ versions:
   - 2.3.0
   - 2.3.1
   - 2.3.2
+  - 2.3.3
 extension:
   -
     name: Amazon Sales Channel
-    versions:
-      -
-        name: 2.0.0
-        support:
-          2.2.4+: general availability
-          2.3.0: general availability
-          2.3.1: general availability
-          2.3.2: general availability
-  -
-    name: Google Shopping ads Channel
     versions:
       -
         name: 3.0.0
@@ -24,20 +15,7 @@ extension:
           2.3.0: general availability
           2.3.1: general availability
           2.3.2: general availability
-      -
-        name: 2.0.2
-        support:
-          2.2.4+: general availability
-          2.3.0: general availability
-          2.3.1: general availability
-          2.3.2: general availability
-      -
-        name: 2.0.1
-        support:
-          2.2.4+: general availability
-          2.3.0: general availability
-          2.3.1: general availability
-          2.3.2: general availability
+          2.3.3: general availability
       -
         name: 2.0.0
         support:
@@ -45,6 +23,50 @@ extension:
           2.3.0: general availability
           2.3.1: general availability
           2.3.2: general availability
+          2.3.3: general availability
+  -
+    name: Google Shopping ads Channel
+    versions:
+      -
+        name: 3.0.1
+        support:
+          2.2.4+: general availability
+          2.3.0: general availability
+          2.3.1: general availability
+          2.3.2: general availability
+          2.3.3: general availability
+      -
+        name: 3.0.0
+        support:
+          2.2.4+: general availability
+          2.3.0: general availability
+          2.3.1: general availability
+          2.3.2: general availability
+          2.3.3: general availability
+      -
+        name: 2.0.2
+        support:
+          2.2.4+: general availability
+          2.3.0: general availability
+          2.3.1: general availability
+          2.3.2: general availability
+          2.3.3: general availability
+      -
+        name: 2.0.1
+        support:
+          2.2.4+: general availability
+          2.3.0: general availability
+          2.3.1: general availability
+          2.3.2: general availability
+          2.3.3: general availability
+      -
+        name: 2.0.0
+        support:
+          2.2.4+: general availability
+          2.3.0: general availability
+          2.3.1: general availability
+          2.3.2: general availability
+          2.3.3: general availability
       -
         name: 1.1.2
         support:
@@ -52,6 +74,7 @@ extension:
           2.3.0: general availability
           2.3.1: general availability
           2.3.2: general availability
+          2.3.3: general availability
       - 
         name: 1.1.1
         support:
@@ -59,6 +82,7 @@ extension:
           2.3.0: general availability
           2.3.1: general availability
           2.3.2: general availability
+          2.3.3: general availability
   -
     name: Magento Shipping
     versions:
@@ -86,6 +110,14 @@ extension:
   -
     name: Magento Inventory
     versions:
+      -
+        name: 1.6.1
+        support:
+          2.2.4+: not supported
+          2.3.0: general availability
+          2.3.1: general availability
+          2.3.2: general availability
+          2.3.3: general availability
       -
         name: 1.1.2
         support:
@@ -117,3 +149,4 @@ extension:
           2.3.0: open beta
           2.3.1: general availability
           2.3.2: general availability
+          2.3.3: general availability

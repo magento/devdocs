@@ -6,7 +6,7 @@ title: Authentication
 All API requests must be authenticated using [HTTP Basic Authentication](https://en.wikipedia.org/wiki/Basic_access_authentication). The REST APIs use a two-step process to authenticate a client application and authorize access to resources:
 
 1. Obtain a session token using an application ID and secret.
-2. Provide the session token as an HTTP Authorization Bearer header to access a resource.
+1. Provide the session token as an HTTP Authorization Bearer header to access a resource.
 
 First, you must create an application on the [Developer Portal](https://developer.magento.com) to obtain an application ID and secret for sandbox and production endpoints.
 
@@ -17,8 +17,8 @@ Information about how to create applications will be announced when the EQP REST
 
 You must use an application ID and secret to obtain a session token. See the following list for examples of an application ID and secret:
 
-* **id**—AQ17NZ49WC
-* **secret**—8820c99614d65f923df7660276f20e029d73e2ca
+*  **id**—AQ17NZ49WC
+*  **secret**—8820c99614d65f923df7660276f20e029d73e2ca
 
 The following endpoint grants an application session token:
 
@@ -61,10 +61,10 @@ A successful HTTP 200 OK response will be sent for a valid application ID and se
 }
 ```
 
-* The `mage_id` value will identify the user account associated with the client application.
-* The `ust` value (user session token) must be used as the `Authorization Bearer` header for all subsequent API calls.
-* The session token is valid only for the time specified in `expires_in` (seconds).
-* When session token expires, a new token must be obtained as described above.
+*  The `mage_id` value will identify the user account associated with the client application.
+*  The `ust` value (user session token) must be used as the `Authorization Bearer` header for all subsequent API calls.
+*  The session token is valid only for the time specified in `expires_in` (seconds).
+*  When session token expires, a new token must be obtained as described above.
 
 ## Authorization Bearer
 
