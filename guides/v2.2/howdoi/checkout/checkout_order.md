@@ -36,7 +36,7 @@ define(
                 const isValid = false; //Put your validation logic here
 
                 if (!isValid) {
-                    messageList.addErrorMessage({ message: $t('a possibile failure message ...  ') });
+                    messageList.addErrorMessage({ message: $t('a possible failure message ...  ') });
                 }
 
                 return isValid;
