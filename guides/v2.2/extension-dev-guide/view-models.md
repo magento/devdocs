@@ -46,11 +46,16 @@ class MyClass implements \Magento\Framework\View\Element\Block\ArgumentInterface
 
 Finally, in the `cart/item/default.phtml` template, you can access the public methods of your view model:
 
-```php
-/**  @var $viewModel \Vendor\CustomModule\ViewModel\MyClass */
+```html
+<?php
+
+/** @var $viewModel \Vendor\CustomModule\ViewModel\MyClass */
+
 $viewModel = $block->getViewModel();
 
-echo $block->escapeHtml($viewModel->getTitle());
+?>
+<h1><?= $block->escapeHtml($viewModel->getTitle()); ?></h1>
+
 ```
 
 ## Examples of View models in Magento
