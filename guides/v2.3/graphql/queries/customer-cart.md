@@ -3,14 +3,14 @@ group: graphql
 title: customerCart query
 ---
 
-The `customerCart` query returns the active cart for the logged-in customer. If the cart does not exist, the query  creates one. The customer's authorization token must be specified in the header of the call.
+The `customerCart` query returns the active cart for the logged-in customer. If the cart does not exist, the query creates one. The customer's authorization token must be specified in the header of the call.
 
-The `customerCart` query differs from the `cart` query in the following ways:
+The `customerCart` query differs from the `cart` query in that it must be run on behalf of a logged-in customer. You cannot run this query on behalf of a guest.
+ 
+You can define the query to return the `cart_id` attribute. You can use the value of the `cart_id` attribute as the `destination_cart_id` input parameter in the `mergeCarts` mutation. (The `mergeCarts` mutation provides the ability to merge a guest cart with the logged-in customer's cart.)
 
--  It must be run on behalf of a logged-in customer. You cannot run this query on behalf of a guest.
--  It returns the `cart_id` attribute. You can use the value of the `cart_id` attribute as the `destination_cart_id` input parameter in the `mergeCarts` mutation. The `mergeCarts` mutation provides the ability to merge a guest cart with the logged-in customer's cart.
-
-By knowing the value of the logged-in customer's cart ID, you can support the use case of allowing the customer to start an order on one device and complete it on another.
+{: .bs-callout-tip }
+If you know the value of the logged-in customer's cart ID, you can allow the customer to start an order on one device and complete it on another.
 
 ## Syntax
 
