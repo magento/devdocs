@@ -65,4 +65,4 @@ curl -X GET \
 
 **Response**
 
-A list of theme packages can be returned in the same way as described in [Get package details](#get-package-details).
+A list of theme packages can be returned in the same way as described in [Get package details](packages.html#get-package-details).
