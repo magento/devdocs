@@ -54,7 +54,7 @@ For comparison, each plan includes the following infrastructure features and sup
       <td>
         <ul>
           <li>Continuous cloud integration tools with unlimited users</li>
-          <li>Fastly Content Delivery Network (CDN), Image Optimization (IO), and added security with generous bandwidth allowances. The Web Application Firewall (WAF) service is available only on Production environments.</li>
+          <li>Fastly Content Delivery Network (CDN), Image Optimization (IO), and added security with generous bandwidth allowances. The Web Application Firewall (WAF) service is available on Production environments only.</li>
           <li>
             <a href="{{ page.baseurl }}/cloud/project/new-relic.html">New Relic</a> Infrastructure on Production + APM (Performance Monitoring) on Staging and Production
           </li>
