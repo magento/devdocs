@@ -5,24 +5,21 @@ title: Packages
 
 Use this resource to initiate and manage all aspects of submitting a package to the
 [Magento Extension Quality Program (EQP)](http://docs.magento.com/marketplace/user_guide/extensions/extension-quality-program.html).
-You can provide all metadata associated with a package &mdash; both the technical and the marketing information &mdash; 
-in a single step, or in several steps using incremental updates.
+You can provide all metadata associated with a package, both the technical and the marketing information, in a single step, or in several steps, using incremental updates.
 
-* **Technical information** &mdash; References to code artifacts, such as Magento 1 TGZ files or Composer-compliant
+* **Technical information** - References to code artifacts, such as Magento 1 TGZ files or Composer-compliant
   Magento 2 ZIP files, version compatibility, and release notes.
 
-* **Marketing information** &mdash; Includes package descriptions, image assets for logos and galleries,
+* **Marketing information** - Includes package descriptions, image assets for logos and galleries,
   pricing information, support and installation services offered, and various guides (user, installation,
   and reference) in PDF.
 
 Before submitting a package, you must first [upload your files](files.html) and associate the ID returned by the
 `/rest/v1/files/uploads` endpoint with your package using JSON parameters in the request body.
 
-You can also check package submission status and retrieve reports about technical and marketing issues discovered
-during the EQP process.
+You can also check package submission status and retrieve reports about technical and marketing issues discovered during the EQP process.
 
-A successful submission results in a package being published on the
-[Magento Marketplace](https://marketplace.magento.com/).
+A successful submission results in a package being published on the [Magento Marketplace](https://marketplace.magento.com/).
 
 ## EQP review process
 
@@ -130,15 +127,13 @@ Both `POST` and `PUT` requests support a batch model where multiple packages can
 |version_compatibility[N].edition|string|GET, POST, PUT|technical|no|Magento edition for the accompanying versions list|`M1`, `M2`|
 |version_compatibility[N].versions|array|GET, POST, PUT|technical|no|List of Magento versions that this package supports in the given edition.|Array of version strings, eg ["2.0","2.1"]
 |version|substring|GET|-|yes|The version of this package.|`major.minor.patch`, eg `2.5.3`.|
-{:.style="table-layout: auto;"}
 
 ### Additional notes
 
 *  For required fields in a POST or PUT operation, see the [Required Parameters](#required-parameters) section.
-*  The Review Type column indicates which part of the EQP review pipeline reviews the field values.
-*  The Filter column indicates whether a field can be used for filtering and sorting in GET requests.
-*  The Type column value "substring" means a string which, when filtered,
-   searches for a substring match rather than an exact match.
+*  The `Review Type` column indicates which part of the EQP review pipeline reviews the field values.
+*  The `Filter` column indicates whether a field can be used for filtering and sorting in GET requests.
+*  The `Type` column value "substring" means a string which, when filtered, searches for a substring match rather than an exact match.
 *  The list of valid values for `license_type` are:
    *  `afl`—Academic Free License 3.0 (AFL)
    *  `apache`—Apache License 2.0
@@ -152,7 +147,7 @@ Both `POST` and `PUT` requests support a batch model where multiple packages can
 
 ### Object details
 
-{% collapsible JSON Structure%}
+{% collapsible JSON Structure %}
 
 Listing the JSON structure of objects described above:
 
@@ -382,7 +377,7 @@ These options are relevant to the technical review:
 
 #### action
 
-During the EQP process, it can take the following fields, to control the parallel technical and marketing review flows:
+During the EQP process, it can take the following fields to control the parallel technical and marketing review flows:
 
 ```json
 "action" : {
@@ -421,10 +416,10 @@ Once a package has been published to the store, this takes the following field:
 }
 ```
 
-* The *overall* value indicates where the package is in the EQP pipeline.
-* Additional details are provided in the two main EQP areas:
-   * **technical** &mdash; Provides the current technical status.
-   * **marketing** &mdash; Provides the current marketing status.
+*  The *overall* value indicates where the package is in the EQP pipeline.
+*  Additional details are provided in the two main EQP areas:
+   *  **technical** - Provides the current technical status.
+   *  **marketing** - Provides the current marketing status.
 
 ##### Overall Status
 
