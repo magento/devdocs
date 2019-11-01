@@ -38,17 +38,17 @@ curl -X GET \
 ```json
 {
         "mage_id": "MAG123456789",
-        "first_name": “Chuck”,
-        "last_name": “Norris”,
+        "first_name": "Chuck",
+        "last_name": "Norris",
         "email": cnorris@example.com",
-        "screen_name": “ninjachuck”,
+        "screen_name": "ninjachuck",
         "has_completed_profile": true,
         "has_accepted_tos": true,
         "profile_image_artifact": {
             "file_upload_id": "uuid-001-234567-123.461",
-            "filename": “chuck.png",
+            "filename": "chuck.png",
             "content_type": "image.png",
-            "url": “https://static-mp.magento.com/user/68/f3/68f360d3516f594fc957c4179ed4a7a872911f07/pub/d9/c2/d9c23dd795a5faaab603b6b5965eca8a6d9430f2/chuck.png”,
+            "url": "https://static-mp.magento.com/user/68/f3/68f360d3516f594fc957c4179ed4a7a872911f07/pub/d9/c2/d9c23dd795a5faaab603b6b5965eca8a6d9430f2/chuck.png",
             "size": 1234,
             "file_hash": "d5db29cd03a2ed055086cef9c31c252b4587ffff",
             "malware_status": "pass"
@@ -57,12 +57,12 @@ curl -X GET \
         "tos_accepted_version": "1.0",
         "tos_accepted_date": "2017-11-16 01:23:45",
         "is_company": false,
-        "vendor_name": “chucknorris”,
+        "vendor_name": "chucknorris",
         "partner_level": 4,
         "locale": "en-US",
         "timezone": "UTC",
         "payment_type": 1,
-        "payment_info": {"paypal_email“ : “cnorris@example.com"},
+        "payment_info": {"paypal_email" : "cnorris@example.com"},
         "taxpayer_type": 2,
         "tax_review_status": 3;
         "tax_withhold_percent": 0.00,
@@ -72,12 +72,12 @@ curl -X GET \
         "support_share_percent": 0,
 
         "personal_profile": {
-            "bio", “Sets ants on fire using a magnifying glass. At night.”,
+            "bio", "Sets ants on fire using a magnifying glass. At night.",
             "last_logged_in": "2017-09-30 8:09:10",
             "created_at": "2016-02-29 14:04:59",
             "modified_at": "2017-11-16 01:23:45",
             "social_media_info": {
-                "twitter": “@chucknorrismagento”,
+                "twitter": "@chucknorrismagento",
                 "stackexchange_url": "",
                 "facebook_url": "",
                 "linkedin_url": "",
@@ -86,11 +86,11 @@ curl -X GET \
             "addresses": [
                 {
                     "address_key": 1,
-                    "address_line_1": "123 Lonestar Way”,
-                    "state": “Texas”,
-                    "country": “USA”,
-                    "postal_code": “77777”,
-                    "phone": “555-1234-5678”,
+                    "address_line_1": "123 Lonestar Way",
+                    "state": "Texas",
+                    "country": "USA",
+                    "postal_code": "77777",
+                    "phone": "555-1234-5678",
                     "country_code": "+1",
                     "is_primary": true
                 }
@@ -98,15 +98,15 @@ curl -X GET \
         },
 
         "company_profile": {
-            "name": “Ninja Norris Inc.”,
-            "bio": “Ninja Extension Builder.”,
-            "website_url": "https://www.example.com/”,
+            "name": "Ninja Norris Inc.",
+            "bio": "Ninja Extension Builder.",
+            "website_url": "https://www.example.com/",
             "primary_email": "cnorris@example.com",
-            "support_email": "support@example.com”,
+            "support_email": "support@example.com",
             "created_at": "2016-02-29 14:04:59",
             "modified_at": "2017-09-30 01:23:45",
             "social_media_info": {
-                "twitter": “@chucknorrismagento”,
+                "twitter": "@chucknorrismagento",
                 "stackexchange_url": "",
                 "facebook_url": "",
                 "linkedin_url": "",
@@ -115,11 +115,11 @@ curl -X GET \
             "addresses": [
                 {
                     "address_key": 1,
-                    "address_line_1": "123 Lonestar Way”,
-                    "state": “Texas”,
-                    "country": “USA”,
-                    "postal_code": “77777”,
-                    "phone": “555-1234-5678”,
+                    "address_line_1": "123 Lonestar Way",
+                    "state": "Texas",
+                    "country": "USA",
+                    "postal_code": "77777",
+                    "phone": "555-1234-5678",
                     "country_code": "+1",
                     "is_primary": true
                 }
@@ -143,17 +143,17 @@ curl -X GET \
 ```json
 {
         "mage_id": "MAG123456789",
-        "first_name": “Chuck”,
-        "last_name": “Norris”,
-        "email": “cnorris@example.com",
-        "screen_name": “ninjachuck”,
+        "first_name": "Chuck",
+        "last_name": "Norris",
+        "email": "cnorris@example.com",
+        "screen_name": "ninjachuck",
         "has_completed_profile": true,
         "has_accepted_tos": true,
         "profile_image_artifact": {
             "file_upload_id": "uuid-001-234567-123.461",
-            "filename": “chuck.png",
+            "filename": "chuck.png",
             "content_type": "image.png",
-            "url": “https://static-mp.magento.com/user/68/f3/68f360d3516f594fc957c4179ed4a7a872911f07/pub/d9/c2/d9c23dd795a5faaab603b6b5965eca8a6d9430f2/chuck.png”,
+            "url": "https://static-mp.magento.com/user/68/f3/68f360d3516f594fc957c4179ed4a7a872911f07/pub/d9/c2/d9c23dd795a5faaab603b6b5965eca8a6d9430f2/chuck.png",
             "size": 1234,
             "file_hash": "d5db29cd03a2ed055086cef9c31c252b4587ffff",
             "malware_status": "pass"
@@ -169,9 +169,9 @@ The following example shows a request to update the personal profile bio field:
 
 ```json
 {
-  “action” : “publish”,
-  “personal_profile” : {
-     “bio” : “I can make a fire by rubbing two ice cubes.”
+  "action" : "publish",
+  "personal_profile" : {
+     "bio" : "I can make a fire by rubbing two ice cubes."
   }
 }
 ```
@@ -187,7 +187,7 @@ The `action` field specifies which update operation to perform:
 curl -X PUT \
      -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
      -H 'Content-Type: application/json' \
-     -d ‘{ “action: “publish”, “personal_profile” : { “bio” : “I can make a fire by rubbing two ice cubes.“ } }’ \
+     -d '{ 'action: "publish", "personal_profile" : { "bio" : "I can make a fire by rubbing two ice cubes." } }' \
      https://developer-api.magento.com/rest/v1/users/MAG123456789
 ```
 
@@ -236,7 +236,7 @@ curl -X GET \
 {
     "m2": [
             {
-                "label": “main_key”,
+                "label": "main_key",
                 "user_key": "d41d8cd98f00b204e9800998ecf8427e",
                 "password_key": "12cbdcd3332eb8f166f62ee1a9bd33d0",
                 "is_enabled": true
@@ -251,8 +251,8 @@ curl -X GET \
 
     "m1": [
             {
-                “product_name” : “acme/one-click-checkout-1.0.0”,
-                “product_key” : “https://connect20.magentocommerce.com/e8c258702e443c509b42fc44a49b83b0/acme+one-click-checkout-1.0.0”
+                "product_name" : "acme/one-click-checkout-1.0.0",
+                "product_key" : "https://connect20.magentocommerce.com/e8c258702e443c509b42fc44a49b83b0/acme+one-click-checkout-1.0.0"
             }
         ]
 }
@@ -295,7 +295,7 @@ POST /rest/v1/users/:mage_id/keys
 curl -X POST \
      -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
      -H 'Content-Type: application/json' \
-     -d ‘{ “m2”: [ { “label” : “key_for_alice” }, { “label” : “key_for_charlie” } ] }’ \
+     -d '{ "m2": [ { "label" : "key_for_alice" }, { "label" : "key_for_charlie" } ] }' \
      https://developer-api.magento.com/rest/v1/users/MAG123456789/keys
 ```
 
@@ -305,20 +305,20 @@ curl -X POST \
 {
     "m2": [
             {
-                "label": “key_for_alice”,
+                "label": "key_for_alice",
                 "user_key": "5c75f32248bdd335dc8d8d5a3e5cb52e",
                 "password_key": "44db283cbb5fdf2c25cbc9352c2a75eb",
                 "is_enabled": true,
-                “code” : 200,
-                “message” : “Success”
+                "code" : 200,
+                "message" : "Success"
             },
             {
-                "label": "key_for_charlie”,
+                "label": "key_for_charlie",
                 "user_key": "19ba9488ff99a9346bdeb39ad4ab1a26",
                 "password_key": "82167d38238911d212cc02a96f3f66f9",
                 "is_enabled": true,
-                “code” : 200,
-                “message” : “Success”
+                "code" : 200,
+                "message" : "Success"
             }
         ]
 }
@@ -342,7 +342,7 @@ PUT /rest/v1/users/:mage_id/keys/:url_encoded_label_of_m2_key
 curl -X PUT \
      -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
      -H 'Content-Type: application/json' \
-     -d ‘{ “m2” : [ { “is_enabled” :  true } ] }’ \
+     -d '{ "m2" : [ { "is_enabled" :  true } ] }' \
      https://developer-api.magento.com/rest/v1/users/MAG123456789/keys/key_for_bob
 ```
 
