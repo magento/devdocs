@@ -74,7 +74,7 @@ curl -X GET \
         "support_share_percent": 0,
 
         "personal_profile": {
-            "bio", "Sets ants on fire using a magnifying glass. At night.",
+            "bio": "Sets ants on fire using a magnifying glass. At night.",
             "last_logged_in": "2017-09-30 8:09:10",
             "created_at": "2016-02-29 14:04:59",
             "modified_at": "2017-11-16 01:23:45",
