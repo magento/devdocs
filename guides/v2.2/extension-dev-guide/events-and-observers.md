@@ -142,7 +142,7 @@ In the preceding example, we assign the observer `MyObserver` to the custom even
 
 Observer names must be unique per event definition. This means that you cannot have two observers with the same name in the same event definition. In the example, both observers have the name `myObserverName`. This is acceptable because each of those observers belong to different event definitions.
 
-If you declare an observer with a name that is already in use within the same event, Magento merges these declaration nodes into a single observer declaration, respecting the module load order as defined in app/etc/config.php file. This is useful when disabling an observer declared in another module.
+If you declare an observer with a name that is already in use within the same event, Magento merges these declaration nodes into a single observer declaration, respecting the module load order as defined in the `app/etc/config.php` file. This is useful when disabling an observer declared in another module.
 
 ### Disabling an observer
 
