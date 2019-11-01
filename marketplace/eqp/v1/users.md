@@ -66,7 +66,7 @@ curl -X GET \
         "payment_type": 1,
         "payment_info": {"paypal_email" : "cnorris@example.com"},
         "taxpayer_type": 2,
-        "tax_review_status": 3;
+        "tax_review_status": 3,
         "tax_withhold_percent": 0.00,
         "extension_share_percent": 0.7,
         "theme_share_percent": 0.7,
