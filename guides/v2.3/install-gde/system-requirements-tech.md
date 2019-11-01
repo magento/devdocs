@@ -119,7 +119,7 @@ Mail Transfer Agent (MTA) or an SMTP server
 
       Follow the instructions in [Change Elasticsearch Module][].
 
-*  RabbitMQ 3.7.x (compatible with 2.0 and later)
+*  RabbitMQ 3.8.x (compatible with 2.0 and later)
 
    [RabbitMQ][]{:target="_blank"} can be used to publish messages to queue and to define the consumers that receive the messages asynchronously.
 
