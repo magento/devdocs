@@ -17,9 +17,11 @@ Production mode also has better performance because static view files are popula
 
 {:.bs-callout .bs-callout-info}
 
--  In version 2.0.6 and later, Magento does not explicitly set file or directory permissions when you switch between default, develop, and production modes.
--  Unlike other Magento modes, developer and production modes are set in `env.php`.
--  [{{site.data.var.ece}}]({{ page.baseurl }}/cloud/bk-cloud.html) supports production and maintenance modes only.
+In version 2.0.6 and later, Magento does not explicitly set file or directory permissions when you switch between default, develop, and production modes.
+
+Unlike other Magento modes, developer and production modes are set in `env.php`.
+
+[{{site.data.var.ece}}]({{ page.baseurl }}/cloud/bk-cloud.html) supports production and maintenance modes only.
 
 Refer to [Magento ownership and permissions in development and production]({{ page.baseurl }}/config-guide/prod/prod_file-sys-perms.html) for more information.
 
