@@ -11,7 +11,8 @@ profile. You must create a new profile on the [Developer Portal](https://develop
 
 ## Profile
 
-You must use the `mage_id` associated with the client application in your developer account when making request to these endpoints. You can get this ID when obtaining a [session token](auth.html#session-token).
+You must use the `mage_id` associated with the client application in your developer account when making
+requests to these endpoints. You can get this ID when obtaining a [session token](auth.html#session-token).
 
 ```http
 GET /rest/v1/users/:mage_id
@@ -21,7 +22,8 @@ PUT /rest/v1/users/:mage_id
 
 ### Get profile data
 
-By default, requests for profile data return all fields. You can limit the amount of data that the request returns by using the `style=summary` option.
+By default, requests for profile data return all fields.
+You can limit the amount of data that the request returns by using the `style=summary` option.
 
 The following example shows the request/response body for retrieving all profile data:
 
@@ -178,8 +180,9 @@ The following example shows a request to update the personal profile bio field:
 
 The `action` field specifies which update operation to perform:
 
-*  `publish`—The default if not specified. Publishes the profile to the relevant [Marketplace Store Partners page](https://marketplace.magento.com/partners.html).
-*  `draft`—The update is saved on the Developer Portal, but not published.
+*  `publish` &mdash; The default if not specified. Publishes the profile to the relevant
+   [Marketplace Store Partners page](https://marketplace.magento.com/partners.html).
+*  `draft` &mdash; The update is saved on the Developer Portal, but not published.
 
 **Request**
 
@@ -216,7 +219,7 @@ The following table lists available query parameters, all of which are optional:
 
 | Parameter |  Type  | Required | Description                            |
 |-----------|--------|----------|----------------------------------------|
-| type      | string |   no     | Type of keys requested: 'm1'  - Magento 1 product keys, 'm2'  - Magento 2 composer repo keys, 'all' - Both M1 and M2 keys (default) |
+| type      | string |   no     | Type of keys requested:<br>'m1' &mdash; Magento 1 product keys<br>'m2' &mdash; Magento 2 composer repo keys<br>'all' &mdash; Both M1 and M2 keys (default) 
 | label     | string |   no     | The url encoded value of the key label; only valid for 'm2' type.|
 {:.style="table-layout: auto;"}
 
@@ -261,16 +264,19 @@ curl -X GET \
 #### Magento 2 keys
 
 *  Each Composer key-pair has unique `label` and `is_enabled` flags to indicate whether the key is enabled.
-*  A Composer key-pair is identified by `user_key` (username) and `password_key` (password) when prompted for Composer credentials.
+*  A Composer key-pair is identified by `user_key` (username) and
+   `password_key` (password) when prompted for Composer credentials.
 
 #### Magento 1 keys
 
-*  Provides a list of product names and associated product keys, which can be used in the Magento Connect Manager to install extensions.
+*  Provides a list of product names and associated product keys,
+   which can be used in the Magento Connect Manager to install extensions.
 *  You cannot create, update, or delete these keys.
 
 ### Create keys
 
-Use this API to create new Magento 2 Composer key-pairs. You must specify a unique label for each key. You can create multiple key-pairs in a single request.
+Use this API to create new Magento 2 Composer key-pairs. You must specify a unique label for each key.
+You can create multiple key-pairs in a single request.
 
 ```http
 POST /rest/v1/users/:mage_id/keys
@@ -330,7 +336,8 @@ curl -X POST \
 
 ### Update keys
 
-Use this API to enable or disable a Magento 2 Composer key-pair. You must specify the key-pair in the request using a URL-encoded string.
+Use this API to enable or disable a Magento 2 Composer key-pair.
+You must specify the key-pair in the request using a URL-encoded string.
 
 ```http
 PUT /rest/v1/users/:mage_id/keys/:url_encoded_label_of_m2_key
@@ -383,7 +390,8 @@ A 204 No Content HTTP response code indicates a successful update.
 
 ## Reports
 
-Use this API to retrieve reports owned by a specific user. Reports contain information about extensions sales, payout status, aggregate sales, refund data, and more.
+Use this API to retrieve reports owned by a specific user.
+Reports contain information about extensions sales, payout status, aggregate sales, refund data, and more.
 
 ```http
 GET /rest/v1/users/:mage_id/reports/pageviews
@@ -393,4 +401,4 @@ GET /rest/v1/users/:mage_id/reports/refunds
 ```
 
 {: .bs-callout-info }
-The Reports API specification is under design review. More details will be announced in the future..
+The Reports API specification is under design review. More details will be announced in the future.
