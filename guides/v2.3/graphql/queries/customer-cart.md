@@ -7,7 +7,7 @@ The `customerCart` query returns the active cart for the logged-in customer. If 
 
 The `customerCart` query differs from the `cart` query in the following ways:
 
--  The `customerCart` qeury must be run on behalf of a logged-in customer. If you run this query on behalf of a guest, an exception will be thrown.
+-  The `customerCart` query must be run on behalf of a logged-in customer. If you run this query on behalf of a guest, an exception will be thrown.
 -  The `cart` query requires a `cart_id` value as input. The `customerCart` query does not take any input parameters.
 
 You can define the query to return the `cart_id` attribute. You can use the value of the `cart_id` attribute as the `destination_cart_id` input parameter in the `mergeCarts` mutation. (The `mergeCarts` mutation provides the ability to merge a guest cart with the logged-in customer's cart.)
