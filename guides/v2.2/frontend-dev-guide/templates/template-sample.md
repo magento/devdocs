@@ -1,11 +1,11 @@
 ---
 group: frontend-developer-guide
-title: Illustration of customizing templates
+title: Templates customization sample
 functional_areas:
   - Frontend
 ---
 
-This topic contains a step-by-step illustration of solving a typical design customization task using templates.
+This topic contains a step-by-step guide on solving a typical design customization task using templates.
 
 ## Sample template customization: changing a layout of the mini shopping cart
 
