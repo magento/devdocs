@@ -6,7 +6,7 @@ functional_areas:
   - Install
 ---
 
-Powered by Fastly, the web application firewall (WAF) service for {{ site.data.var.ece }} detects, logs, and blocks malicious request traffic before it can damage your sites or network. The WAF service is available only on production environments.
+Powered by Fastly, the web application firewall (WAF) service for {{ site.data.var.ece }} detects, logs, and blocks malicious request traffic before it can damage your sites or network. The WAF service is available on production environments only.
 
 The WAF service provides the following benefits:
 
