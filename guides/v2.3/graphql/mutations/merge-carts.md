@@ -11,7 +11,7 @@ Use the `customerCart` query to determine the value of the `destination_cart_id`
 
 ## Syntax
 
-`mergeCarts(source_cart_id: String, destination_cart_id: String): Cart!`
+`mergeCarts(source_cart_id: String!, destination_cart_id: String!): Cart!`
 
 ## Example usage
 
