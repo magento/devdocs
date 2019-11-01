@@ -80,6 +80,9 @@ pages:
         - label: customer query
           url: /graphql/queries/customer.html
 
+        - label: customerCart query
+          url: /graphql/queries/customer-cart.html
+
         - label: customerDownloadableProducts query
           url: /graphql/queries/customer-downloadable-products.html
 
