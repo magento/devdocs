@@ -24,3 +24,8 @@ pages:
     - label: Reports
       url: /marketplace/eqp/v1/reports.html
       versionless: true
+
+    - label: Filtering
+      url: /marketplace/eqp/v1/filtering.html
+      versionless: true
+
