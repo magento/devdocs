@@ -513,7 +513,7 @@ curl -X POST \
 
 *  The API returns a HTTP 200 batch response listing items in the same order as they were provided in the request.
 *  Each item contains a `code` and `message` indicating success or failure. Any non-200 code indicates an error. Refer to the message for more details.
-*  A unique `submission_id` is returned for each successful item, which must be used for any GET, PUT, or DELETE methods.
+*  A unique `submission_id` is returned for each successful item, which must be used for any GET or PUT methods.
 *  Optionally, if a user-defined `item_id` was supplied during the POST, the response will echo back the same `item_id` for each item in the batch. The resource can be retrieved via GET using the `item_id`.
 *  Any non-200 HTTP response code indicates an error for the entire batch request.
 
@@ -888,23 +888,3 @@ curl -X GET \
 
 A list of theme packages can be returned in the same way as described in [Get package details](#get-package-details).
 
-## Delete a package
-
-You can delete a package only if you specify a `submission_id` or `item_id` as a query parameter. Deleting a package is risky operation, and as a result, you cannot delete them in a batch.
-
-```http
-DELETE /rest/v1/products/packages/:submission_id
-DELETE /rest/v1/products/packages/items/:item_id
-```
-
-The following example deletes the package with `submission_id` `6fd7eaacbc`:
-
-**Request**
-
-```bash
-curl -X DELETE \
-     -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
-     https://developer-api.magento.com/rest/v1/products/packages/6fd7eaacbc
-```
-
-A 200 HTTP Response code indicates a successful operation.
