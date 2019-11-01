@@ -7,7 +7,7 @@ The `mergeCarts` mutation transfers the contents of a guest cart into the cart o
 
 The mutation retains any items that were already in the logged-in customer's cart. If both the guest and customer carts contain the same item, adds the quantities. Upon success, the mutation deletes the original guest cart.
 
-Use the `customerCart` query to determine the value of the `destination_cart_id` attribute.
+Use the [`customerCart` query]({{page.baseurl}}/graphql/queries/customer-cart.html) to determine the value of the `destination_cart_id` attribute.
 
 ## Syntax
 
