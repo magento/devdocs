@@ -6,7 +6,7 @@ Attribute |  Data Type | Description
 `applied_store_credit` | [`AppliedStoreCredit`][AppliedStoreCredit] | Contains store credit information applied to the cart. `applied_store_credit` is a Commerce-only attribute, defined in the CustomerBalanceGraphQl module
 `available_payment_methods` | [[AvailablePaymentMethod]][AvailablePaymentMethod] | Available payment methods
 `billing_address` | [BillingCartAddress][BillingCartAddress] | Contains the billing address specified in the customer's cart
-`cart_id` | ID! | The ID of the cart. The value can be an Int or String
+`cart_id` | ID! | The ID of the cart
 `email` | String | The customer's email address
 `is_virtual` | Boolean | Indicates whether the cart contains only virtual products
 `items` | [[CartItemInterface]][CartItemInterface] | Contains the items in the customer's cart
