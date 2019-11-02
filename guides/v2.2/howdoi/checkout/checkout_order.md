@@ -28,18 +28,18 @@ Following is a sample of the validator `.js` file. It must necessarily implement
 
 ```js
 define(
-    [],
-    function () {
+    ['mage/translate', 'Magento_Ui/js/model/messageList'],
+    function ($t, messageList) {
         'use strict';
         return {
-            /**
-             * Validate something
-             *
-             * @returns {boolean}
-             */
-            validate: function() {
-                //Put your validation logic here
-                return true;
+            validate: function () {
+                const isValid = false; //Put your validation logic here
+
+                if (!isValid) {
+                    messageList.addErrorMessage({ message: $t('a possible failure message ...  ') });
+                }
+
+                return isValid;
             }
         }
     }

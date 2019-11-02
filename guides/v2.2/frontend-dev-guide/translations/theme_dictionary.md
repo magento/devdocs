@@ -10,16 +10,19 @@ Modify default strings in your custom [theme](https://glossary.magento.com/theme
 
 ## How Magento applies locales
 
-When the [locale](https://glossary.magento.com/locale) is changed for a store, Magento searches for and applies translations in the corresponding dictionaries:
+When the [locale](https://glossary.magento.com/locale) is changed for a store, Magento searches and applies translations in the corresponding dictionaries in the following sequence:
 
 1. Module translations: `<module_dir>/i18n/`
+1. Translation package: `app/i18n/`
 1. Theme translations:
    1. `<parent_theme_dir>/i18n/` (iterated through all ancestor themes)
    1. `<current_theme_dir>/i18n/`
-1. Translation package: `app/i18n/`
 1. Magento database (translations located in this database take precedence and override translations stored in other locations.)  Refer to the [user guide](https://docs.magento.com/m2/ce/user_guide/system/translate-inline.html) for more information.
 
-If there are different translations for one string, the theme dictionary translations have priority over the [module](https://glossary.magento.com/module) translations, and child theme translations have priority over parent theme translations.
+{:.bs-callout .bs-callout-info}
+Translation priority follows the inverse sequence, with "module translations" having the lowest priority and "magento database" having the hightest priority.
+
+If there are competing translations for one string, the theme dictionary translations have priority over the [module](https://glossary.magento.com/module) translations, and child theme translations have priority over parent theme translations.
 
 ## Creating a theme dictionary to override parent strings for default locale
 
