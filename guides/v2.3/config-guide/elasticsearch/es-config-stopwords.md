@@ -128,7 +128,7 @@ To change the directory:
 
 Save your changes to `di.xml` and exit the text editor.
 
-### To change the directory from your module {#to-change-directory-stopwords}
+## To change the directory from your module {#to-change-directory-stopwords}
 
 1. [Create a new module](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/build/module-file-structure.html){:target="_blank"}
 
