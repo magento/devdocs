@@ -33,6 +33,7 @@ See one of the following topics for more information:
 
 *  [Edit stopwords for an existing locale](#config-edit-stopwords)
 *  [Create stopwords for a new locale](#config-create-stopwords)
+*  [To change the directory from your module](#to-change-directory-stopwords)
 
 ### Edit stopwords for an existing locale {#config-edit-stopwords}
 
@@ -127,7 +128,7 @@ To change the directory:
 
 Save your changes to `di.xml` and exit the text editor.
 
-To change the directory from your module
+### To change the directory from your module {#to-change-directory-stopwords}
 
 1. [Create a new module](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/build/module-file-structure.html){:target="_blank"}
 
@@ -137,11 +138,13 @@ To change the directory from your module
 
 <type name="Magento\Elasticsearch\SearchAdapter\Query\Preprocessor\Stopwords">
 	<arguments>
-		<argument name="stopwordsModule" xsi:type="string">(Your_Module)</argument>
+		<argument name="stopwordsModule" xsi:type="string">Your_Module</argument>
 		<argument name="stopwordsDirectory" xsi:type="string">stopwords</argument>
 	</arguments>
 </type>
 ```
-3. In your module, create the directory `etc/stopwords`, inside add files .csv
+3. In your module, create the directory `etc/stopwords`, with the corresponding `.csv` 
+[files inside.](https://github.com/magento/magento2/tree/2.3-develop/app/code/Magento/Elasticsearch/etc/stopwords){:target="_blank"}
+
 
 Save your changes to `di.xml` and exit the text editor.
