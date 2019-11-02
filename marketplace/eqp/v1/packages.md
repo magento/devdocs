@@ -7,10 +7,10 @@ Use this resource to initiate and manage all aspects of submitting a package to 
 [Magento Extension Quality Program (EQP)](http://docs.magento.com/marketplace/user_guide/extensions/extension-quality-program.html).
 You can provide all metadata associated with a package, both the technical and the marketing information, in a single step, or in several steps, using incremental updates.
 
-* **Technical information** - References to code artifacts, such as Magento 1 TGZ files or Composer-compliant
+*  **Technical information** - References to code artifacts, such as Magento 1 TGZ files or Composer-compliant
   Magento 2 ZIP files, version compatibility, and release notes.
 
-* **Marketing information** - Includes package descriptions, image assets for logos and galleries,
+*  **Marketing information** - Includes package descriptions, image assets for logos and galleries,
   pricing information, support and installation services offered, and various guides (user, installation,
   and reference) in PDF.
 
@@ -25,9 +25,9 @@ A successful submission results in a package being published on the [Magento Mar
 
 The EQP review process includes two steps:
 
-* In **technical review**, we perform all automated testing.
+*  In **technical review**, we perform all automated testing.
   This step also involves manual testing after all automated tests run.
-* In **marketing review**, we manually review all marketing content associated with your package
+*  In **marketing review**, we manually review all marketing content associated with your package
   before you can publish it on the Magento Marketplace.
 
 These review steps occur in parallel when you submit a package.
