@@ -13,11 +13,11 @@ functional_areas:
 
 The [Extension](https://glossary.magento.com/extension) Manager enables you to install, uninstall, and update extensions, including those you purchase from Magento Marketplace. The term *extension* means:
 
-*	Modules (extend Magento capabilities)
-*	Themes (change the look and feel of your [storefront](https://glossary.magento.com/storefront) and Admin)
-*	Language packages (localize the storefront and Admin)
+*  Modules (extend Magento capabilities)
+*  Themes (change the look and feel of your [storefront](https://glossary.magento.com/storefront) and Admin)
+*  Language packages (localize the storefront and Admin)
 
-{: .bs-callout .bs-callout-warning }
+{: .bs-callout-warning }
 If you installed the Magento application by [cloning the GitHub repository]({{ page.baseurl }}/install-gde/prereq/dev_install.html), you *cannot* use the Extension Manager to update components. Instead, you must [update them manually]({{ page.baseurl }}/install-gde/install/cli/dev_options.html).
 
 ## Prerequisites
@@ -27,5 +27,7 @@ Before continuing, complete all tasks discussed in [Prerequisites]({{ page.baseu
 ## Extension Manager checklist
 {% include comp-man/checklist_2.2.md %}
 
-#### Next step
+{:.ref-header}
+Related topics
+
 [Start the Extension Manager]({{ page.baseurl }}/comp-mgr/extens-man/extensman-main-pg.html)

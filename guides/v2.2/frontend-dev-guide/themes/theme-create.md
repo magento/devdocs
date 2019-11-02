@@ -14,33 +14,33 @@ A new theme you create is not applied for your store automatically. You need to 
 ## Prerequisites
 
 1. For the sake of compatibility, upgradability, and easy maintenance, do not modify the out of the box Magento themes. To customize the design of your Magento store, create a new custom [theme](https://glossary.magento.com/theme).
-2. [Set]({{page.baseurl}}/config-guide/cli/config-cli-subcommands-mode.html) your Magento application to the developer [mode]({{page.baseurl}}/config-guide/bootstrap/magento-modes.html). The application mode influences the way [static files](https://glossary.magento.com/static-files) are cached by Magento. The recommendations about theme development we provide in this chapter are developer/default-mode specific.
+1. [Set]({{page.baseurl}}/config-guide/cli/config-cli-subcommands-mode.html) your Magento application to the developer [mode]({{page.baseurl}}/config-guide/bootstrap/magento-modes.html). The application mode influences the way [static files](https://glossary.magento.com/static-files) are cached by Magento. The recommendations about theme development we provide in this chapter are developer/default-mode specific.
 
 ## Create a storefront theme: walkthrough {#theme-gen-walkthrough}
 
 The high-level steps required to add a new theme in the Magento system are the following:
 
 1. Create a directory for the theme under `app/design/frontend/<your_vendor_name>/<your_theme_name>`.
-2. Add a declaration file `theme.xml` and optionally create `etc` directory and create a file named `view.xml` to the theme directory.
-3. Add a `composer.json` file.
-4. Add `registration.php`.
-3. Create directories for CSS, JavaScript, images, and fonts.
-4. Configure your theme in the [Admin](https://glossary.magento.com/admin) panel.
+1. Add a declaration file `theme.xml` and optionally create `etc` directory and create a file named `view.xml` to the theme directory.
+1. Add a `composer.json` file.
+1. Add `registration.php`.
+1. Create directories for CSS, JavaScript, images, and fonts.
+1. Configure your theme in the [Admin](https://glossary.magento.com/admin) panel.
 
 ## Recommended reading
 
-* [Checklist of modules]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento){:target="_blank"}
-* [Static view files processing]({{page.baseurl}}/config-guide/cli/config-cli-subcommands-static-view.html)
+*  [Checklist of modules]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento){:target="_blank"}
+*  [Static view files processing]({{page.baseurl}}/config-guide/cli/config-cli-subcommands-static-view.html)
 
 ## Create a theme directory
 
 To create the directory for your theme:
 
-1.	Go to `<magento_root>/app/design/frontend`.
+1. Go to `<magento_root>/app/design/frontend`.
 
-3.	Create a new directory named according to your vendor name: `/app/design/frontend/<Vendor>`.
+1. Create a new directory named according to your vendor name: `/app/design/frontend/<Vendor>`.
 
-4.	Under the `<vendor>` directory, create a directory named according to your theme.
+1. Under the `<vendor>` directory, create a directory named according to your theme.
 
     <pre>
     app/design/frontend/
@@ -54,30 +54,30 @@ The folder name conventionally matches naming used in the theme's code: any alph
 
 ## Declare your theme {#fedg_create_theme_how-to_declare}
 
-After you create a directory for your theme, you must create `theme.xml` containing at least the theme name and the parent theme name (if the theme [inherits]({{page.baseurl}}/frontend-dev-guide/themes/theme-inherit.html) from one). Optionally you can specify where the theme preview image is stored.
+After you create a directory for your theme, you must create `theme.xml` containing at least the theme name. Optionally, you can specifiy the parent theme name (if the theme [inherits]({{page.baseurl}}/frontend-dev-guide/themes/theme-inherit.html) from one) and, if necessary, where the theme preview image is stored.
 
 1. Add or copy from an existing `theme.xml` file to your theme directory `app/design/frontend/<Vendor>/<theme>`.
 
-2. Configure it using the following example:
+1. Configure it using the following example:
 
-    ```xml
-    <theme xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Config/etc/theme.xsd">
-         <title>New theme</title> <!-- your theme's name -->
-         <parent>Magento/blank</parent> <!-- the parent theme, in case your theme inherits from an existing theme -->
-         <media>
-             <preview_image>media/preview.jpg</preview_image> <!-- the path to your theme's preview image -->
-         </media>
-    </theme>
-    ```
+   ```xml
+   <theme xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Config/etc/theme.xsd">
+        <title>New theme</title> <!-- your theme's name -->
+        <parent>Magento/blank</parent> <!-- the parent theme, in case your theme inherits from an existing theme -->
+        <media>
+            <preview_image>media/preview.jpg</preview_image> <!-- the path to your theme's preview image -->
+        </media>
+   </theme>
+   ```
 
-    If you do not have a preview image for your theme, remove the `<media>` node:
+   If you do not have a preview image for your theme, remove the `<media>` node:
 
-    ```xml
-    <theme xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Config/etc/theme.xsd">
-         <title>New theme</title> <!-- your theme's name -->
-         <parent>Magento/blank</parent> <!-- the parent theme, in case your theme inherits from an existing theme -->
-    </theme>
-    ```
+   ```xml
+   <theme xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Config/etc/theme.xsd">
+        <title>New theme</title> <!-- your theme's name -->
+        <parent>Magento/blank</parent> <!-- the parent theme, in case your theme inherits from an existing theme -->
+   </theme>
+   ```
 
 If you change the theme title or parent theme information in `theme.xml` after a theme was already [registered](#register_theme), you need to open or reload any [Magento Admin](https://glossary.magento.com/magento-admin) page for your changes to be saved in the database.
 
@@ -143,22 +143,22 @@ Product image sizes and other properties used on the [storefront](https://glossa
 
 If the product image sizes of your theme differ from those of the parent theme, or if your theme does not inherit from any theme, add `view.xml` using the following steps:
 
-1.	Log in to your Magento server as a user with permissions to create directories and files in the Magento installation directory. (Typically, this is the [Magento file system owner]({{page.baseurl}}/install-gde/prereq/apache.html).)
+1. Log in to your Magento server as a user with permissions to create directories and files in the Magento installation directory. (Typically, this is the [Magento file system owner]({{page.baseurl}}/install-gde/prereq/apache.html).)
 
-1.	Create the `etc` directory in your theme folder.
+1. Create the `etc` directory in your theme folder.
 
-2.	Copy the `view.xml` file from the `etc` directory of an existing theme (for example, from the Blank theme) to your theme's `etc` directory.
+1. Copy the `view.xml` file from the `etc` directory of an existing theme (for example, from the Blank theme) to your theme's `etc` directory.
 
-3.	Configure all storefront product image sizes in the `view.xml` file. For example, you can make the [category](https://glossary.magento.com/category) grid view product images square by specifying a size of 250 x 250 pixels:
+1. Configure all storefront product image sizes in the `view.xml` file. For example, you can make the [category](https://glossary.magento.com/category) grid view product images square by specifying a size of 250 x 250 pixels:
 
-    ```xml
-    ...
-        <image id="category_page_grid" type="small_image">
-            <width>250</width>
-            <height>250</height>
-        </image>
-    ...
-    ```
+   ```xml
+   ...
+       <image id="category_page_grid" type="small_image">
+           <width>250</width>
+           <height>250</height>
+       </image>
+   ...
+   ```
 
 For details about images configuration in the `view.xml` file, see the [Configure images properties for a theme]({{page.baseurl}}/frontend-dev-guide/themes/theme-images.html) topic.
 
@@ -166,10 +166,10 @@ For details about images configuration in the `view.xml` file, see the [Configur
 
 Your theme will likely contain several types of static files:
 
-* Styles
-* Fonts
-* [JavaScript](https://glossary.magento.com/javascript)
-* Images
+*  Styles
+*  Fonts
+*  [JavaScript](https://glossary.magento.com/javascript)
+*  Images
 
 Each type should be stored in a separate sub-directory of `web` in your theme folder:
 
@@ -190,13 +190,13 @@ It is likely that your theme will also contain module-specific files, which are 
 {:.bs-callout .bs-callout-info}
 When you change files stored here during theme development, you need to clear the `pub/static` and `var/view_preprocessed` directories, and then reload the pages. Otherwise, the old versions of files are displayed on the storefront.
 
-#### To clear the `pub/static` directory:
+### To clear the `pub/static` directory:
 
 ```bash
 rm -rf <magento_root>/pub/static/*
 ```
 
-#### To clear the `var/view_preprocessed` directory:
+### To clear the `var/view_preprocessed` directory:
 
 ```bash
 rm -rf <magento_root>/var/view_preprocessed/*
@@ -227,12 +227,12 @@ In your custom theme, you can use a logo file with a different name and format, 
 
 The necessity of declaration depends on whether your theme has a [parent]({{page.baseurl}}/frontend-dev-guide/themes/theme-inherit.html) theme and its logo image. The following cases are possible:
 
-* Your theme does not have a parent theme:
-  - If your logo image name and format uses the default naming convention (`logo.svg`), there is no need to declare it.
-  - If your logo image name or format does not use the default naming convention, you need to [declare it in layout](#logo_declare).
-* Your theme has a parent theme:
-  - If your theme logo image has the same name and format as the parent's theme logo, there is no need to declare it.
-  - If your logo image has a different name or format, declare it in the [layout](https://glossary.magento.com/layout).
+*  Your theme does not have a parent theme:
+   *  If your logo image name and format uses the default naming convention (`logo.svg`), there is no need to declare it.
+   *  If your logo image name or format does not use the default naming convention, you need to [declare it in layout](#logo_declare).
+*  Your theme has a parent theme:
+   *  If your theme logo image has the same name and format as the parent's theme logo, there is no need to declare it.
+   *  If your logo image has a different name or format, declare it in the [layout](https://glossary.magento.com/layout).
 
 ## Declaring theme logo {#logo_declare}
 
@@ -260,7 +260,10 @@ To learn more about theme layouts, refer to the [Layout section]({{page.baseurl}
 
 ## Troubleshooting {#trouble}
 
-When your theme changes are not visible even after clearing the cache, try redeploying your static files using `magento setup:static-content:deploy en_US` (replacing the language/locale as appropriate).
+When your theme changes are not visible even after clearing the cache, try redeploying your static files using the `magento setup:static-content:deploy` command, or add the `-f` argument to force deploy static content in any deployment mode in case you are not in production mode.
+
+{: .bs-callout-info }
+Running this command with the `-f` argument can fix issues regarding deployment of static content, but it removes **all** symlinks and deploys the actual static content files.
 
 ## What's next {#next}
 
@@ -274,4 +277,4 @@ For information on how to apply the theme for the storefront, see the [Apply and
 
 ## See also
 
- * [Uninstall a theme]({{ page.baseurl }}/install-gde/install/cli/install-cli-theme-uninstall.html)
+*  [Uninstall a theme]({{ page.baseurl }}/install-gde/install/cli/install-cli-theme-uninstall.html)

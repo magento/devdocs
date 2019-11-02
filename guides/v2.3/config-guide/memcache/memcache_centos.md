@@ -164,6 +164,7 @@ Flush the memcache storage and quit Telnet:
 
 [Additional information about the Telnet test](http://www.darkcoding.net/software/memcached-list-all-keys/)
 
-## Next step
+{:.ref-header}
+Related topics
 
 [Configure Magento to use memcached]({{ page.baseurl }}/config-guide/memcache/memcache_magento.html)

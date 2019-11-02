@@ -37,8 +37,8 @@ For more information, see the [Varnish health checks](https://varnish-cache.org/
 
 Grace mode enables Varnish to keep an object in [cache](https://glossary.magento.com/cache) beyond its TTL value. Varnish can then serve the expired (stale) content while it fetches a new version. This improves the flow of traffic and decreases load times. It's used in the following situations:
 
-* When the Magento backend is healthy, but a request is taking longer than normal
-* When the Magento backend is not healthy.
+*  When the Magento backend is healthy, but a request is taking longer than normal
+*  When the Magento backend is not healthy.
 
 The `vcl_hit` subroutine defines how Varnish responds to a request for objects that have been cached.
 
@@ -50,7 +50,9 @@ The maximum amount of time that Varnish serves a stale object is the sum of the 
 
 To change the default grace period from within the `default.vcl` file, edit the following line in the `vcl_hit` subroutine:
 
-    if (obj.ttl + 300s > 0s) {
+```conf
+if (obj.ttl + 300s > 0s) {
+```
 
 ### When the Magento backend is not healthy {#grace-unhealthy}
 
@@ -72,19 +74,22 @@ Alternatively, [static files](https://glossary.magento.com/static-files) version
 
 Finally, all Magento instances must be in production mode. Before Varnish starts, clear the cache on each instance. In Admin, go to **System** > Tools > **Cache Management** and click **Flush Magento Cache**. You can also run the following command to clear the cache:
 
-    bin/magento cache:flush
+```bash
+bin/magento cache:flush
+```
 
 ### Installation {#saint-install}
 
 Saint mode is not part of the main Varnish package. It is a separately-versioned vmod that must be downloaded and installed. As a result, you should re-compile Varnish from source, as described in the following articles:
 
-* [Installing Varnish 5.1](https://varnish-cache.org/docs/5.1/installation/index.html)
-* [Installing Varnish 4.1](https://varnish-cache.org/docs/4.1/installation/install.html) (Stable)
+*  [Installing Varnish 5.1](https://varnish-cache.org/docs/5.1/installation/index.html)
+*  [Installing Varnish 4.1](https://varnish-cache.org/docs/4.1/installation/install.html) (Stable)
 
 After you've recompiled, you can install the Saint mode [module](https://glossary.magento.com/module). In general, follow these steps:
 
 1. Obtain the source code from [Varnish modules](https://github.com/varnish/varnish-modules) . Clone the Git version (master version) since the 0.9.x versions contain a source code error.
-2. Build the source code with autotools:
+1. Build the source code with autotools:
+
 ```bash
 sudo apt-get install libvarnishapi-dev || sudo yum install varnish-libs-devel
 ./bootstrap   # If running from git.
@@ -168,6 +173,7 @@ sub vcl_backend_response {
 
 {% endcollapsible %}
 
-#### Final step
+{:.ref-header}
+Final step
 
 [Final verification]({{ page.baseurl }}/config-guide/varnish/config-varnish-final.html)

@@ -15,10 +15,10 @@ The  `SpecialPriceStorageInterface` service provides the means to efficiently sc
 
 The `POST /V1/products/special-price` call sets special prices for the following product types:
 
-* Simple
-* Bundle
-* Virtual
-* Downloadable
+*  Simple
+*  Bundle
+*  Virtual
+*  Downloadable
 
 **Service Name**
 
@@ -26,7 +26,7 @@ The `POST /V1/products/special-price` call sets special prices for the following
 
 **REST Endpoints**
 
-```
+```http
 POST /V1/products/special-price
 POST /V1/products/special-price-information
 POST /V1/products/special-price-delete
@@ -199,7 +199,7 @@ Downloadable | fixed, discount
 
 **REST Endpoints**
 
-```
+```http
 POST /V1/products/tier-prices
 PUT /V1/products/tier-prices
 POST /V1/products/tier-prices-information
@@ -399,7 +399,7 @@ You cannot delete a base price. It can only be changed to another value (0 or gr
 
 **REST Endpoints**
 
-```
+```http
 POST /V1/products/base-prices
 POST /V1/products/base-prices-information
 ```
@@ -417,10 +417,10 @@ Name | Description | Format | Requirements
 
 The `POST /V1/products/base-price` call can set base prices for the following types of products:
 
-* Simple
-* Virtual
-* Downloadable
-* Bundle (fixed price type only)
+*  Simple
+*  Virtual
+*  Downloadable
+*  Bundle (fixed price type only)
 
 The following example sets the base price for a simple and a downloadable product.
 
@@ -492,7 +492,7 @@ The cost is the actual cost of a product. Tracking costs is optional, but having
 
 **REST Endpoints**
 
-```
+```http
 POST /V1/products/cost
 POST /V1/products/cost-information
 POST /V1/products/cost-delete
@@ -511,9 +511,9 @@ Name | Description | Format | Requirements
 
 The `POST /V1/products/cost` call can set the cost values for the following types of products:
 
-* Simple
-* Virtual
-* Downloadable
+*  Simple
+*  Virtual
+*  Downloadable
 
 The following example sets the cost value for a simple and a downloadable product.
 

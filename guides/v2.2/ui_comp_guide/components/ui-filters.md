@@ -55,13 +55,12 @@ See the [Admin Design Pattern Library (Filters)]({{ page.baseurl }}/pattern-libr
 To add a new customer attribute to the customer grid and make it filterable, you need to follow these steps:
 
 1. Create view/adminhtml/ui_component/customer_listing.xml to add a column component
-2. Create the column component [PHP](https://glossary.magento.com/php) class which extends Magento\Ui\Component\Listing\Columns\Column
-3. Create etc/indexer.xml to add the attribute to the customer_grid index and define it as filterable
-4. Set is_used_in_grid to true for the attribute
+1. Create the column component [PHP](https://glossary.magento.com/php) class which extends Magento\Ui\Component\Listing\Columns\Column
+1. Create etc/indexer.xml to add the attribute to the customer_grid index and define it as filterable
+1. Set is_used_in_grid to true for the attribute
 
 ## Source files
 
 Extends [`uiCollection`]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uicollection_concept.html):
 
-- [app/code/Magento/Ui/view/base/web/js/grid/filters/filters.js]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/grid/filters/filters.js)
-
+-  [app/code/Magento/Ui/view/base/web/js/grid/filters/filters.js]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/grid/filters/filters.js)

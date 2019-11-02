@@ -9,8 +9,8 @@ functional_areas:
 
 There are two possible ways to customize page layout in Magento:
 
-- Changing [layout](https://glossary.magento.com/layout) files.
-- Altering templates.
+-  Changing [layout](https://glossary.magento.com/layout) files.
+-  Altering templates.
 
 To change the page wireframe, modify the [page layout] files; all other customizations are performed in the [page configuration] or [generic layout] files.
 
@@ -23,10 +23,10 @@ For example, changes to the `app/code/Vendor/Module/view/frontend/layout/catalog
 
 Use these [layout instructions](https://glossary.magento.com/layout-instructions) to:
 
-- Move a page element to another parent element.
-- Add content.
-- Remove a page element.
-- Arrange the element position.
+-  Move a page element to another parent element.
+-  Add content.
+-  Remove a page element.
+-  Arrange the element position.
 
 The basic set of instructions is the same for all types of layout files. This topic describes these basic instructions. For details about how they are used in a particular layout file type, please refer to the [Layout file types] topic.
 
@@ -34,16 +34,16 @@ The basic set of instructions is the same for all types of layout files. This to
 
 Use the following layout instructions to customize your layout:
 
-- [`<block>`](#fedg_layout_xml-instruc_ex_block)
-- [`<container>`](#fedg_layout_xml-instruc_ex_cont)
-- [`before` and `after` attributes](#fedg_xml-instrux_before-after)
-- [`<action>`](#fedg_layout_xml-instruc_ex_act)
-- [`<referenceBlock>` and `<referenceContainer>`](#fedg_layout_xml-instruc_ex_ref)
-- [`<move>`](#fedg_layout_xml-instruc_ex_mv)
-- [`<remove>`](#fedg_layout_xml-instruc_ex_rmv)
-- [`<update>`](#fedg_layout_xml-instruc_ex_upd)
-- [`<argument>`](#argument)
-- [`<block> vs <container>`](#block_vs_container)
+-  [`<block>`](#fedg_layout_xml-instruc_ex_block)
+-  [`<container>`](#fedg_layout_xml-instruc_ex_cont)
+-  [`before` and `after` attributes](#fedg_xml-instrux_before-after)
+-  [`<action>`](#fedg_layout_xml-instruc_ex_act)
+-  [`<referenceBlock>` and `<referenceContainer>`](#fedg_layout_xml-instruc_ex_ref)
+-  [`<move>`](#fedg_layout_xml-instruc_ex_mv)
+-  [`<remove>`](#fedg_layout_xml-instruc_ex_rmv)
+-  [`<update>`](#fedg_layout_xml-instruc_ex_upd)
+-  [`<argument>`](#argument)
+-  [`<block> vs <container>`](#block_vs_container)
 
 ### block {#fedg_layout_xml-instruc_ex_block}
 
@@ -60,13 +60,14 @@ We recommend always adding a `name` to blocks. Otherwise, it is given a random n
 
 | Attribute | Description | Values | Required? |
 |:------- |:------ |:------ |:------ |
-| `class` | Name of a class that implements rendering of a particular block. An object of this class is responsible for actual rendering of block output. | class name | no |
+| `class` | Name of a class that implements rendering of a particular block. An object of this class is responsible for actual rendering of block output. | A fully-qualified class name, such as `Vendor\Module\Block\Class` | no |
 |`name` | Name that can be used to address the block to which this attribute is assigned. The name must be unique per generated page. If not specified, an automatic name will be assigned in the format <code>ANONYMOUS_<em>n</em></code> | 0-9, A-Z, a-z, underscore (_), period (.), dash (-). Should start with a letter. Case-sensitive. | no |
-| `before` | Used to position the block before an element under the same parent. The element name or alias name is specified in the value. Use dash (-) to position the block before all other elements of its level of nesting. See [before and after attributes](#fedg_xml-instrux_before-after) for details. | Possible values: element name or dash (-) | no |
-| `after` | Used to position the block after an element under the same parent. The element name or alias name is specified in the value. Use dash (-) to position the block after all other elements of its level of nesting. See [before and after attributes](#fedg_xml-instrux_before-after) for details. | Possible values: element name or dash (-) | no |
-| `template` | A template that represents the functionality of the block to which this attribute is assigned. | template file name | no |
+| `before` | Used to position the block before an element under the same parent. The element name or alias name is specified in the value. Use dash (-) to position the block before all other elements of its level of nesting. See [before and after attributes](#fedg_xml-instrux_before-after) for details. | Element name or dash (-) | no |
+| `after` | Used to position the block after an element under the same parent. The element name or alias name is specified in the value. Use dash (-) to position the block after all other elements of its level of nesting. See [before and after attributes](#fedg_xml-instrux_before-after) for details. | Element name or dash (-) | no |
+| `template` | A template that represents the functionality of the block to which this attribute is assigned. | `Vendor_Module::path/to/template.phtml` (Scope is already in the `templates` directory of the module) | no |
 | `as` | An alias name that serves as identifier in the scope of the parent element. | 0-9, A-Z, a-z, underscore (_), period (.), dash (-). Case-sensitive. | no |
 | `cacheable` | Defines whether a block element is cacheable. This can be used for development purposes and to make needed elements of the page dynamic. | `true` or `false` | no |
+| `ifconfig` | Makes the block's visibility dependent on a system configuration field. | XPath to the system configuration field. E.g. `contact/contact/enabled` | no |
 
 To pass parameters use the [`<argument></argument>`](#argument) instruction.
 
@@ -83,9 +84,9 @@ We recommend always adding a `name` to containers. Otherwise, it is given a rand
 | Attribute | Description | Values | Required? |
 |:------- |:------ |:------ |:------ |
 | `name` | A name that can be used to address the container in which this attribute is assigned. The name must be unique per generated page. | A-Z, a-z, 0-9, underscore (_), period (.), dash (-). Should start with a letter. Case-sensitive. | no |
-| `label` | An arbitrary name to display in the web browser. | any| no |
-| `before` | Used to position the container before an element under the same parent. The element name or alias name is specified in the value. Use dash (-) to position the block before all other elements of its level of nesting. See [before and after attributes](#fedg_xml-instrux_before-after) for details. | Possible values: element name or dash (-). | no |
-| `after` | Used to position the container after an element under the same parent. The element name or alias name is specified in the value. Use dash (-) to position the block after all other elements of its level of nesting. See [before and after attributes](#fedg_xml-instrux_before-after) for details. | Possible values: element name or dash (-). | no |
+| `label` | An arbitrary name to display in the web browser. | Any | no |
+| `before` | Used to position the container before an element under the same parent. The element name or alias name is specified in the value. Use dash (-) to position the block before all other elements of its level of nesting. See [before and after attributes](#fedg_xml-instrux_before-after) for details. | Element name or dash (`-`) | no |
+| `after` | Used to position the container after an element under the same parent. The element name or alias name is specified in the value. Use dash (-) to position the block after all other elements of its level of nesting. See [before and after attributes](#fedg_xml-instrux_before-after) for details. | Element name or dash (-). | no |
 | `as` | An alias name that serves as identifier in the scope of the parent element. | 0-9, A-Z, a-z, underscore (_), period (.), dash (-). Case-sensitive. | no |
 | `output` | Defines whether to output the root element. If specified, the element will be added to output list. (If not specified, the parent element is responsible for rendering its children.) | Any value except the obsolete `toHtml`. Recommended value is `1`. | no |
 | `htmlTag` | Output parameter. If specified, the output is wrapped into specified HTML tag. | Any valid HTML 5 tag. | no |
@@ -102,11 +103,18 @@ Sample of usage in layout:
 
 This would add a new column to the page layout.
 
+#### Controlling children visibility
+
+The `output` attribute controls the visibility of the container's children elements.
+Set this value to `1` to render children content or `0` to disable the output of the entire container.
+
+Use this feature to make temporary changes to a store, such as disabling a section of the page for a sales event and re-enabling it after the event ends.
+
 ### block vs. container {#block_vs_container}
 
-- Blocks represents the end of the chain in rendering HTML for Magento.
-- Containers contain blocks and can wrap them in an HTML tag.
-- Containers do not render any output if there are no children assigned to them.
+-  Blocks represents the end of the chain in rendering HTML for Magento.
+-  Containers contain blocks and can wrap them in an HTML tag.
+-  Containers do not render any output if there are no children assigned to them.
 
 ### before and after attributes {#fedg_xml-instrux_before-after}
 
@@ -119,17 +127,17 @@ The following tables give a detailed description of the results you can get usin
 |:------- |:------ |:------ |
 | `before` | Dash (-) | The block displays before all other elements in its parent node. |
 | `before` | [element name] | The block displays before the named element. |
-| `before` | empty value or [element name] is absent | Use the value of `after`. If that value is empty or absent as well, the element is considered as non-positioned. |
+| `before` | Empty value or [element name] is absent | Use the value of `after`. If that value is empty or absent as well, the element is considered as non-positioned. |
 | `after` | Dash (-) | The block displays after all other elements in its parent node. |
 | `after` | [element name] | The block displays after the named element. |
-| `after` | empty value or [element name] is absent | Use the value of `before`. If that value is empty or absent as well, the block is considered as non-positioned. |
+| `after` | Empty value or [element name] is absent | Use the value of `before`. If that value is empty or absent as well, the block is considered as non-positioned. |
 
 #### Examples {#examples}
 
 | Situation | Result |
 |:------- |:------ |
 | Both `before` and `after` attributes are present | `after` takes precedence. |
-| Both `before` and `after` attributes are absent or empty | The element is considered as non-positioned. All other elements are positioned at their specified locations. The missing element displays at a random position that doesn't violate requirements for the positioned elements. |
+| Both `before` and `after` attributes are absent or empty | The element is considered as non-positioned. All other elements are positioned at their specified locations. The non-positioned element displays at a random position that doesn't violate requirements for the positioned elements. |
 | Several elements have `before` or `after` set to dash (-) | All elements display at the top (or bottom, in case of the after attribute), but the ordering of group of these elements is undefined. |
 | The `before` or `after` attribute's value refers to an element that is not located in the parent node of the element being defined. | The element displays at a random location that doesn't violate requirements for the correctly positioned elements. |
 
@@ -157,7 +165,7 @@ Calls public methods on the block API.
 
 | Attribute | Description | Values | Required? |
 |:------- |:------ |:------ |:------ |
-| `method` | Name of the public method of the block class this tag is located in that is called during block generation. | block method name | yes |
+| `method` | The public method that is called during block generation. | The method name in the block | yes |
 
 To pass parameters, use the [`<argument></argument>`](#argument) instruction.
 
@@ -171,10 +179,10 @@ To pass parameters to a block use the [`<argument></argument>`](#argument) instr
 
 | Attribute | Description | Values | Required? |
 |:------- |:------ |:------ |:------ |
-| `remove` | Allows to remove or cancel the removal of the element. When a container is removed, its child elements are removed as well. | true/false | no |
-| `display` | Allows you to disable rendering of specific block or container with all its children (both set directly and by reference). The block's/container's and its children' respective PHP objects are still generated and available for manipulation. | true/false | no |
+| `remove` | Allows to remove or cancel the removal of the element. When a container is removed, its child elements are removed as well. | `true` or `false` | no |
+| `display` | Allows you to disable rendering of specific block or container with all its children (both set directly and by reference). The PHP objects of the block or container and its children are still generated and available for manipulation. | `true` or `false` | no |
 
-- The `remove` attribute is optional and its default value is `false`.
+-  The `remove` attribute is optional and its default value is `false`.
 
     This implementation allows you to remove a block or container in your layout by setting the remove attribute value to `true`, or to cancel the removal of a block or container by setting the value to `false`.
 
@@ -182,7 +190,7 @@ To pass parameters to a block use the [`<argument></argument>`](#argument) instr
     <referenceBlock name="block.name" remove="true" />
     ```
 
-- The `display` attribute is optional and its default value is true.
+-  The `display` attribute is optional and its default value is true.
 
     You are always able to overwrite this value in your layout.
     In situation when remove value is true, the display attribute is ignored.
@@ -199,16 +207,16 @@ Sets the declared block or container element as a child of another element in th
 <move element="name.of.an.element" destination="name.of.destination.element" as="new_alias" after="name.of.element.after" before="name.of.element.before"/>
 ```
 
-- `<move>` is skipped if the element to be moved is not defined.
-- If the `as` attribute is not defined, the current value of the element alias is used. If that is not possible, the value of the `name` attribute is used instead.
-- During layout generation, the `<move>` instruction is processed before the removal (set using the `remove` attribute). This means if any elements are moved to the element scheduled for removal, they will be removed as well.
+-  `<move>` is skipped if the element to be moved is not defined.
+-  If the `as` attribute is not defined, the current value of the element alias is used. If that is not possible, the value of the `name` attribute is used instead.
+-  During layout generation, the `<move>` instruction is processed before the removal (set using the `remove` attribute). This means if any elements are moved to the element scheduled for removal, they will be removed as well.
 
 | Attribute | Description | Values | Required? |
 |:------- |:------ |:------ |:------ |
-| `element` | Name of the element to move. | element name | yes |
-| `destination` | Name of the target parent element. | element name | yes |
+| `element` | Name of the element to move. | Element name | yes |
+| `destination` | Name of the target parent element. | Element name | yes |
 | `as` | Alias name for the element in the new location. | 0-9, A-Z, a-z, underscore (_), period (.), dash (-). Case-sensitive. | no |
-| `after` or `before` | Specifies the element's position relative to siblings. Use dash (-) to position the block before or after all other siblings of its level of nesting. If the attribute is omitted, the element is placed after all siblings. | element name | no |
+| `after` or `before` | Specifies the element's position relative to siblings. Use dash (-) to position the block before or after all other siblings of its level of nesting. If the attribute is omitted, the element is placed after all siblings. | Element name | no |
 
 ### remove {#fedg_layout_xml-instruc_ex_rmv}
 
@@ -252,8 +260,8 @@ Used to pass an argument. Must be always enclosed in [`<arguments>`](#arguments)
 |:------- |:------ |:------ |:------ |
 | `name` | Argument name. | unique | yes |
 | `shared` | If false, creates a new instance of the block. | `false` | no |
-| `translate` | | `true|false` | no |
-| `xsi:type` | Argument type. | `string|boolean|object|number|null|array|options|url|helper` | yes |
+| `translate` | | `true` or `false` | no |
+| `xsi:type` | Argument type. | `string`, `boolean`, `object`, `number`, `null`, `array`, `options`, `url`, `helper` | yes |
 
 To pass multiple arguments use the following construction:
 
@@ -289,19 +297,19 @@ $cssClass = $this->hasCssClass() ? ' ' . $this->getCssClass() : '';
 As was described above the argument attribute can be added with different types.
 There are examples of all argument types.
 
-- The *string* type:
+-  The *string* type:
 
 ```xml
 <argument name="some_string" xsi:type="string" >Some String</argument>
 ```
 
-- The *boolean* type:
+-  The *boolean* type:
 
 ```xml
 <argument name="is_active" xsi:type="boolean" >true</argument>
 ```
 
-- The *object* type:
+-  The *object* type:
 
 ```xml
 <argument name="viewModel" xsi:type="object" >Vendor\CustomModule\ViewModel\Class</argument>
@@ -309,19 +317,19 @@ There are examples of all argument types.
 
 The `Vendor\CustomModule\ViewModel\Class` class should implement the `\Magento\Framework\View\Element\Block\ArgumentInterface` interface.
 
-- The *number* type:
+-  The *number* type:
 
 ```xml
 <argument name="some_number" xsi:type="number" >100</argument>
 ```
 
-- The *null* type:
+-  The *null* type:
 
 ```xml
 <argument name="null_value" xsi:type="null" />
 ```
 
-- The *array* type:
+-  The *array* type:
 
 ```xml
 <argument name="custom_array" xsi:type="array">
@@ -331,7 +339,7 @@ The `Vendor\CustomModule\ViewModel\Class` class should implement the `\Magento\F
 </argument>
 ```
 
-- The *options* type:
+-  The *options* type:
 
 ```xml
 <argument name="options" xsi:type="options" >Vendor\CustomModule\Source\Options\Class</argument>
@@ -339,13 +347,13 @@ The `Vendor\CustomModule\ViewModel\Class` class should implement the `\Magento\F
 
 The `Vendor\CustomModule\Source\Options\Class` class should implement the `\Magento\Framework\Data\OptionSourceInterface` interface.
 
-- The *url* type:
+-  The *url* type:
 
 ```xml
 <argument name="shopping_cart_url" xsi:type="url" path="checkout/cart/index" />
 ```
 
-- The *helper* type:
+-  The *helper* type:
 
 ```xml
 <argument name="helper_method_result" xsi:type="helper" helper="Vendor\CustomModule\Helper\Class::someMethod" >

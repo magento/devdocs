@@ -17,7 +17,7 @@ The following example removes cart item 14 from the cart.
 
 **Request**
 
-```text
+```graphql
 mutation {
   removeItemFromCart(
     input: {

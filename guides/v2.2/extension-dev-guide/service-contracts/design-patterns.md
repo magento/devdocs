@@ -45,9 +45,9 @@ In `GroupSearchResultsInterface`, the `getItems()` function returns an array of 
 
 Service interfaces include several interface subtypes:
 
-- Repository interfaces
-- Management interfaces
-- Metadata interfaces
+-  Repository interfaces
+-  Management interfaces
+-  Metadata interfaces
 
 For file names and coding standards, follow the defined [PHP coding standards]({{ page.baseurl }}/coding-standards/code-standard-php.html).
 
@@ -59,9 +59,9 @@ Repository interfaces provide access to persistent data entities.
 
 For example, persistent data entities for the Customer module include Customer, Address, and Group. Consequently, repository interfaces for the Customer module are:
 
-- `CustomerRepositoryInterface`
-- `AddressRepositoryInterface`
-- `GroupRepositoryInterface`
+-  `CustomerRepositoryInterface`
+-  `AddressRepositoryInterface`
+-  `GroupRepositoryInterface`
 
 Repository interfaces must provide these functions:
 
@@ -144,7 +144,8 @@ Management interfaces provide management functions that are not related to repos
    </tr>
 </table>
 
-### Related topics {#related-topics}
+{:.ref-header}
+Related topics
 
-- [Service contracts]({{ page.baseurl }}/extension-dev-guide/service-contracts/service-contracts.html)
-- [Configure services as web APIs]({{ page.baseurl }}/extension-dev-guide/service-contracts/service-to-web-service.html)
+-  [Service contracts]({{ page.baseurl }}/extension-dev-guide/service-contracts/service-contracts.html)
+-  [Configure services as web APIs]({{ page.baseurl }}/extension-dev-guide/service-contracts/service-to-web-service.html)

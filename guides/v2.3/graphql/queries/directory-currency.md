@@ -15,7 +15,7 @@ The following query returns the currency for the current instance of Magento:
 
 **Request**
 
-```text
+```graphql
 query {
     currency {
         base_currency_code
@@ -79,5 +79,5 @@ Attribute | Data type | Description
 
 ## Related topics
 
-* [countries query]({{page.baseurl}}/graphql/queries/directory-countries.html)
-* [country query]({{page.baseurl}}/graphql/queries/directory-country.html)
+*  [countries query]({{page.baseurl}}/graphql/queries/directory-countries.html)
+*  [country query]({{page.baseurl}}/graphql/queries/directory-country.html)

@@ -8,8 +8,8 @@ The European Union (EU) enacted [General Data Protection Regulation](https://www
 
 We are publishing this GDPR compliance information to help our merchants and their system integrators with GDPR compliance. A system integrator can use the data flow diagrams and database information to build scripts to resolve use cases similar to the following:
 
-* A shopper asks for a copy of the data the merchant has stored about her
-* A shopper requests that all information about him be deleted
+*  A shopper asks for a copy of the data the merchant has stored about her
+*  A shopper requests that all information about him be deleted
 
 See the corporate [Magento website](https://magento.com/gdpr) for more information about how Magento helps merchants comply with GDPR.
 
@@ -49,14 +49,14 @@ Magento 2 primarily stores customer-specific information in customer, address, o
 
 Magento 2 stores these customer attributes:
 
-* Date of Birth
-* Email
-* First Name
-* Gender
-* Last Name
-* Middle Name/Initial
-* Name Prefix
-* Name Suffix
+*  Date of Birth
+*  Email
+*  First Name
+*  Gender
+*  Last Name
+*  Middle Name/Initial
+*  Name Prefix
+*  Name Suffix
 
 #### `customer_entity` and reference tables
 
@@ -110,21 +110,21 @@ Column | Data type
 
 Magento 2 stores these customer attributes:
 
-* City
-* Company
-* Country
-* Fax
-* First Name
-* Last Name
-* Middle Name/Initial
-* Name Prefix
-* Name Suffix
-* Phone Number
-* State/Province
-* State/Province ID
-* Street Address
-* VAT Number
-* Zip/Postal Code
+*  City
+*  Company
+*  Country
+*  Fax
+*  First Name
+*  Last Name
+*  Middle Name/Initial
+*  Name Prefix
+*  Name Suffix
+*  Phone Number
+*  State/Province
+*  State/Province ID
+*  Street Address
+*  VAT Number
+*  Zip/Postal Code
 
 #### `customer_address_entity` and reference tables
 
@@ -309,21 +309,21 @@ Column | Data type
 
 The following tables contain a `customer_id` column:
 
-* `catalog_compare_item`
-* `catalog_product_frontend_action`
-* `downloadable_link_purchased`
-* `magento_customerbalance`
-* `magento_customersegment_customer`
-* `magento_reward`
-* `magento_rma`
-* `oauth_token`
-* `paypal_billing_agreement`
-* `persistent_session`
-* `product_alert_price`
-* `product_stock_alert`
-* `report_compared_product_index`
-* `report_viewed_product_index`
-* `review_detail`
-* `salesrule_coupon_usage`
-* `salesrule_customer`
-* `wishlist`
+*  `catalog_compare_item`
+*  `catalog_product_frontend_action`
+*  `downloadable_link_purchased`
+*  `magento_customerbalance`
+*  `magento_customersegment_customer`
+*  `magento_reward`
+*  `magento_rma`
+*  `oauth_token`
+*  `paypal_billing_agreement`
+*  `persistent_session`
+*  `product_alert_price`
+*  `product_stock_alert`
+*  `report_compared_product_index`
+*  `report_viewed_product_index`
+*  `review_detail`
+*  `salesrule_coupon_usage`
+*  `salesrule_customer`
+*  `wishlist`

@@ -15,7 +15,9 @@ functional_areas:
 
 During the installation, a  message similar to the following displays:
 
-	PHP Fatal error: Maximum function nesting level of '100' reached, aborting! in <path>/ClassLoader.php
+```text
+PHP Fatal error: Maximum function nesting level of '100' reached, aborting! in <path>/ClassLoader.php
+```
 
 ### Solution
 

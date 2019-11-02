@@ -9,51 +9,65 @@ The topic describes how to install, configure, and use [Grunt JavaScript task ru
 
 ## Prerequisites
 
-- Make sure that you [set]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html) your Magento application to the developer or default [mode]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html). The default mode sets the Less compilation mode to Server-side Less compilation.
-- Install and configure Grunt as described in [Using Grunt for Magento tasks]({{ page.baseurl }}/frontend-dev-guide/tools/using_grunt.html)
+-  Make sure that you [set]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html) your Magento application to the developer or default [mode]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html). The default mode sets the Less compilation mode to Server-side Less compilation.
+-  Install and configure Grunt as described in [Using Grunt for Magento tasks]({{ page.baseurl }}/frontend-dev-guide/tools/using_grunt.html)
 
 ## Adding themes to Grunt configuration {#add_theme}
 
-To compile `.less` files, add your theme to `module.exports` in the Grunt configuration, either in the default `dev/tools/grunt/configs/themes.js` or in the [custom configuration file]({{ page.baseurl }}/frontend-dev-guide/tools/using_grunt.html#grunt_config). For example:
+To compile `.less` files, add your theme to `module.exports` in the Grunt configuration, either in the default `dev/tools/grunt/configs/local-themes.js` or in the [custom configuration file]({{ page.baseurl }}/frontend-dev-guide/tools/using_grunt.html#grunt_config). For example:
 
 1. Install [node.js] to any location on your machine.
 
-2. Install the Grunt CLI globally:
-    ```bash
-    npm install -g grunt-cli
-    ```
-3. Rename the following files in your Magento root directory:
-    -   `package.json.sample` to `package.json`
-    -   `Gruntfile.js.sample` to `Gruntfile.js`
+1. Install the Grunt CLI globally. To do this, run the following command in a command prompt:
 
-4. Install (or refresh) the `node.js` project dependency, including Grunt, for your Magento instance. To do this, run the following commands in a command prompt:
-    ```
-    cd <your_Magento_instance_directory>
-    npm install
-    npm update
-    ```
-5. Add your [theme](https://glossary.magento.com/theme) to Grunt configuration. To do this, in the `dev/tools/grunt/configs/themes.js` file, add your theme to `module.exports` like following:
-    ```javascript
-    module.exports = {
+   ```bash
+   npm install -g grunt-cli
+   ```
 
-        <theme>: {
-            area: 'frontend',
-            name: '<Vendor>/<theme>',
-            locale: '<language>',
-            files: [
-                '<path_to_file1>', //path to root source file
-                '<path_to_file2>'
-            ],
-            dsl: 'less'
-        },
-    ```
+1. From the `<Magento_root>` directory, copy and paste the contents of the following files:
 
-    Where the following notation is used:
-    - `<theme>`: your theme code, conventionally should correspond to the theme directory name.
-    - `<language>`: specified in the `code_subtag` format, for example `en_US`. Only one locale can be specified here. To debug the theme with another locale, create one more theme declaration, having specified another value for `language`
-    - `<path_to_file>`: path to the root source file, relative to the `app/design/frontend/<Vendor>/<theme>/web` directory. You need to specify all [root source files of the theme]({{ page.baseurl }}/frontend-dev-guide/css-topics/css-preprocess.html#css_preprocess_terms). If your theme [inherits] from a certain theme, and does not contain its own root source files, specify the root source files of the parent theme.
+   -  `package.json.sample` to `package.json`
+   -  `Gruntfile.js.sample` to `Gruntfile.js`
+   -  `grunt-config.json.sample` into `grunt-config.json`
 
-6. (Optional) If you want to use Grunt for "watching" changes automatically, without reloading pages in a browser each time, install the [LiveReload extension] in your browser.
+1. Install (or refresh) the `node.js` project dependency, including Grunt, for your Magento instance. To do this, run the following commands in a command prompt:
+
+   ```bash
+   cd <your_Magento_instance_directory>
+   ```
+
+   ```bash
+   npm install
+   ```
+
+   ```bash
+   npm update
+   ```
+
+1. Add your [theme](https://glossary.magento.com/theme) to Grunt configuration. To do this, in the `dev/tools/grunt/configs/local-themes.js` file, add your theme to `module.exports` like following:
+
+   ```javascript
+   <theme>: {
+       area: '<area>',
+       name: '<Vendor>/<theme>',
+       locale: '<language>',
+       files: [
+           '<path_to_file1>', //path to root source file
+           '<path_to_file2>'
+       ],
+       dsl: 'less'
+   }
+   ```
+
+   Where the following notation is used:
+
+   -  `<Vendor>`: vendor name.
+   -  `<theme>`: your theme code, conventionally should correspond to the theme directory name.
+   -  `<language>`: specified in the `code_subtag` format, for example `en_US`. Only one locale can be specified here. To debug the theme with another locale, create one more theme declaration, having specified another value for `language`.
+   -  `<area>`: area code, can be either `frontend` or `adminhtml`.
+   -  `<path_to_file>`: path to the root source file, relative to the `app/design/frontend/<Vendor>/<theme>/web` directory. You need to specify all [root source files of the theme]({{ page.baseurl }}/frontend-dev-guide/css-topics/css-preprocess.html#css_preprocess_terms). If your theme [inherits] from a certain theme, and does not contain its own root source files, specify the root source files of the parent theme.
+
+1. (Optional) If you want to use Grunt for "watching" changes automatically, without reloading pages in a browser each time, install the [LiveReload extension] in your browser.
 
 ## Grunt commands {#grunt_commands}
 
@@ -69,16 +83,17 @@ grunt watch | Tracks the changes in the source files, recompiles `.css` files, a
 ## Use cases of tracking changes using Grunt {#use_cases}
 
 The following shows which Grunt tasks to use for debugging:
--   After you switch the compilation mode from client-side to server-side, run the `exec` command.
--   After you customize the content of any `.less` file, except the root source files, run the `less` task and reload the page.
--   After you [customize the root source files or move the files included to the root files]({{ page.baseurl }}/frontend-dev-guide/css-topics/css-preprocess.html#css_exception), run the `exec` command and reload the page.
--   After you run `php bin/magento setup:upgrade`, run `exec` command.
--   After you run the `exec` command, run the `clear` command to `clear` the Magento cache, then run the `watch` command. Running the commands in this order will ensure that any custom jQuery attributes like product sliders, banners, etc are loaded correctly.
+
+-  After you switch the compilation mode from client-side to server-side, run the `exec` command.
+-  After you customize the content of any `.less` file, except the root source files, run the `less` task and reload the page.
+-  After you [customize the root source files or move the files included to the root files]({{ page.baseurl }}/frontend-dev-guide/css-topics/css-preprocess.html#css_exception), run the `exec` command and reload the page.
+-  After you run `php bin/magento setup:upgrade`, run `exec` command.
+-  After you run the `exec` command, run the `clear` command to `clear` the Magento cache, then run the `watch` command. Running the commands in this order will ensure that any custom jQuery attributes like product sliders, banners, etc are loaded correctly.
 
 If you have LiveReload installed, run the `grunt watch` command, and the flow is even simpler:
 
--   After you customize the content of any `.less` file, changes are applied and the page reloads automatically. No additional changes
--   After you [customize the root source files or move the files included to the root files]({{ page.baseurl }}/frontend-dev-guide/css-topics/css-preprocess.html#css_exception), run the `clean` and `exec` commands, which reloads the page in the browser.
+-  After you customize the content of any `.less` file, changes are applied and the page reloads automatically. No additional changes
+-  After you [customize the root source files or move the files included to the root files]({{ page.baseurl }}/frontend-dev-guide/css-topics/css-preprocess.html#css_exception), run the `clean` and `exec` commands, which reloads the page in the browser.
 
 ## CSS source maps {#source_maps}
 
@@ -102,11 +117,11 @@ To change or override any of these variables, simply create a file in `<theme-di
 
 ![node declaration autocomplete]({{ site.baseurl }}/common/images/fdg/lib-map.png){:width="610px"}
 
-```
+```css
 @navigation__background: @secondary__color__light;
 @font-family__sans-serif: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 ```
 
 [inherits]: {{page.baseurl}}/frontend-dev-guide/themes/theme-inherit.html
 [LiveReload extension]: http://livereload.com/extensions/
-[node.js]: https://github.com/nodejs/node/wiki
+[node.js]: https://nodejs.org/en/download/package-manager/

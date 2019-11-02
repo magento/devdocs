@@ -19,9 +19,9 @@ The Tool operates in three modes:
 
 1. **Settings**: migrates configuration settings
 
-2. **Data**: bulk migrates main data in the database
+1. **Data**: bulk migrates main data in the database
 
-3. **Delta**: transfers incremental data updates, added to Magento 1 [storefront](https://glossary.magento.com/storefront) and [Admin](https://glossary.magento.com/admin) Panel while running previous migration modes
+1. **Delta**: transfers incremental data updates, added to Magento 1 [storefront](https://glossary.magento.com/storefront) and [Admin](https://glossary.magento.com/admin) Panel while running previous migration modes
 
 ## Steps
 

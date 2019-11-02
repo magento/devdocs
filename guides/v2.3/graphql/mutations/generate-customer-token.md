@@ -42,14 +42,22 @@ mutation {
 
 ## Input attributes
 
-The `generateCustomerToken` object requires the following inputs:
+The `generateCustomerToken` mutation requires the following inputs:
 
 Attribute |  Data Type | Description
 --- | --- | ---
 `email` | String | The customer's email address
 `password` | String | The customer's password
 
+## Output attributes
+
+The `generateCustomerToken` mutation returns a valid token for the customer.
+
+Attribute |  Data Type | Description
+--- | --- | ---
+`token` | String | The customer token
+
 ## Related topics
 
-* [customer query]({{page.baseurl}}/graphql/queries/customer.html)
-* [revokeCustomerToken mutation]({{page.baseurl}}/graphql/mutations/revoke-customer-token.html)
+*  [customer query]({{page.baseurl}}/graphql/queries/customer.html)
+*  [revokeCustomerToken mutation]({{page.baseurl}}/graphql/mutations/revoke-customer-token.html)

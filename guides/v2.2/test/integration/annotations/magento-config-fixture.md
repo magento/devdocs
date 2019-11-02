@@ -13,18 +13,17 @@ To set the Magento configuration values for individual tests and revert them aft
  */
 ```
 
-- `<store_code>` is a code of the store to be configured.
-  By default, the configuration option is applied globally.
-  To specify the current store, use `current`.
-- `<config_path>` is an XPath to the configuration option.
-  See [configuration reference][] for available options.
-- `<config_value>` is a fixture value for the configuration option.
+-  `<store_code>` is a code of the store to be configured.
+
+   By default, the configuration option is applied globally. To specify the current store, use `current`.
+-  `<config_path>` is an XPath to the configuration option. See [configuration reference][] for available options.
+-  `<config_value>` is a fixture value for the configuration option.
 
 ## Principles
 
 1. The `@magentoConfigFixture` is available at the test method level only.
    It is not available on the test case level.
-2. A test can contain several configuration options.
+1. A test can contain several configuration options.
 
 ## Example
 
@@ -195,7 +194,6 @@ class ConfigFixtureTest extends \PHPUnit\Framework\TestCase
         $this->_object->initStoreAfter();
     }
 }
-
 ```
 
 <!-- Link definitions -->

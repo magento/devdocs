@@ -72,6 +72,7 @@ It also instantiates all bindings defined for the rendered elements in the scope
 **Aliases**: `[bindHtml]`
 
 **Usage example**:
+
 ```html
 <div bindHtml="
     <div data-bind='text: \'String from the text binding\''></div>
@@ -166,6 +167,19 @@ Binding's configuration that may include the following properties:
 
 **Aliases**: `[collapsible]`
 
+**Usage example**:
+
+```html
+<div data-mage-init='{"collapsible":{"openedState": "active", "saveState": true}}'>
+    <div data-role="title">
+        Title
+    </div>
+    <div data-role="content">
+        Collapsible content
+    </div>
+</div>
+```
+
 ### `datepicker`
 
 The `datepicker` binding is an adapter for the [mage/calendar.js]({{ page.baseurl }}/javascript-dev-guide/widgets/widget_calendar.html) widget.
@@ -209,6 +223,7 @@ The `i18n` binding is used to translate a string according to the currently enab
 **Aliases**: `[translate]`, `<translate>`
 
 **Usage example**:
+
 ```html
 <div data-bind="i18n: 'Translate as a standard knockout binding'"></div>
 
@@ -217,19 +232,20 @@ The `i18n` binding is used to translate a string according to the currently enab
 <translate args="'Translate using the tag'"></translate>
 ```
 
-### keyboard
+### `keyboard`
 
 The keyboard binding allows setting up listeners for the `keypress` event of a specific key.
 
 **Source**: `<Magento_Ui_module_dir>/view/base/web/js/lib/knockout/bindings/keyboard.js`. [See on GitHub]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/keyboard.js).
 
-**Value type**:` [name: number]: (e: KeyboardEvent) => void`
+**Value type**:`[name: number]: (e: KeyboardEvent) => void`
 
 A collection in which keys represent keyboard keys codes and values are callback functions invoked when the associated key is pressed.
 
 **Aliases**: `[keyboard]`
 
 **Usage example**:
+
 ```html
 <input type="text" keyboard="{
     13: function (e) {
@@ -238,7 +254,7 @@ A collection in which keys represent keyboard keys codes and values are callback
 }"/>
 ```
 
-### mageInit
+### `mageInit`
 
 The `mageInit` binding is an adapter for the `[data-mage-init]` attribute that is used to initialize jQuery widgets on the associated element.
 
@@ -249,6 +265,7 @@ The `mageInit` binding is an adapter for the `[data-mage-init]` attribute that i
 **Aliases**: -
 
 **Usage example**: creating modal window
+
 ```html
 <div mageInit="{
     'Magento_Ui/js/modal/modal': {
@@ -260,7 +277,7 @@ The `mageInit` binding is an adapter for the `[data-mage-init]` attribute that i
 }"></div>
 ```
 
-### optgroup
+### `optgroup`
 
 The `optgroup` binding is a decorator for the standard Knockout's options binding which adds the support of nested options, and renders them as the `<optgroup>` element.
 
@@ -271,6 +288,7 @@ The `optgroup` binding is a decorator for the standard Knockout's options bindin
 **Aliases**: -
 
 **Usage example**:
+
 ```html
 <select data-bind="
     optionsValue: 'value',
@@ -293,7 +311,7 @@ The `optgroup` binding is a decorator for the standard Knockout's options bindin
     }]"></select>
 ```
 
-### outerClick
+### `outerClick`
 
 The `outerClick` binding allows to subscribe for the "click" event that happens outside of the boundaries of the associated element.
 
@@ -306,6 +324,7 @@ Callback that is invoked when user clicks outside of the element.
 **Aliases**: `[outerClick]`
 
 **Usage example**:
+
 ```html
 <div id="target" outerClick="function () {
     console.log('Clicked outside of the "target" node.');
@@ -313,7 +332,7 @@ Callback that is invoked when user clicks outside of the element.
 </div>
 ```
 
-### range
+### `range`
 
 The `range` binding is an adapter for the [jQuery UI Slider widget](https://jqueryui.com/slider/). It also implements necessary handlers to work with mobile devices.
 
@@ -326,6 +345,7 @@ Configuration that is passed to the Slider widget.
 **Aliases**: `[range]`
 
 **Usage example**:
+
 ```html
 <div
     class="data-slider"
@@ -337,7 +357,7 @@ Configuration that is passed to the Slider widget.
 }"></div>
 ```
 
-### resizable
+### `resizable`
 
 The `resizable` binding is an adapter for the [jQuery UI Resizable](http://api.jqueryui.com/resizable/) widget.
 
@@ -356,6 +376,7 @@ Configuration for the Resizable widget.
 ```
 
 ### `scope`
+
 A binding that allows evaluating descendant nodes in the scope of an object found in the UiRegistry by provided string.
 
 **Source**: `<Magento_Ui_module_dir>/view/base/web/js/lib/knockout/bindings/scope.js`. [See on Github]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/scope.js).
@@ -367,6 +388,7 @@ Component's name by which to perform a lookup in the registry.
 **Aliases**: `[ko-scope]`, `<scope>`
 
 **Usage example**:
+
 ```html
 <!-- as an attribute -->
 <div ko-scope="'name.of.component'"></div>
@@ -378,7 +400,7 @@ Component's name by which to perform a lookup in the registry.
 <scope args="'name.of.component'"></scope>
 ```
 
-### staticChecked
+### `staticChecked`
 
 The `staticChecked` binding implements the behavior similar to the standard [`checked`](http://knockoutjs.com/documentation/checked-binding.html) binding. The difference is that `staticChecked` doesn't change the array of the already selected elements if the value of the associated DOM element changes.
 
@@ -392,7 +414,7 @@ The `staticChecked` binding implements the behavior similar to the standard [`ch
 <input type="checkbox" data-bind="staticChecked: observable"/>
 ```
 
-### template
+### `template`
 
 Magento `template` binding is a customization of the existing Knockout [`template` binding](http://knockoutjs.com/documentation/template-binding.html). It is used to render a template inside of the associated element. The original Knockout's  implementation was overridden to support asynchronous loading of templates by the provided path, instead of searching for them on the page.
 
@@ -405,11 +427,12 @@ Configuration for the `template` binding. If the provided value is a string, it 
 **Aliases:** `[render]`, `<render>`
 
 **Usage example**:
+
 ```html
 <div data-bind="template: 'path/to/the/template'"></div>
 ```
 
-### tooltip
+### `tooltip`
 
 Magento custom knockout binding for displaying a tooltip.
 

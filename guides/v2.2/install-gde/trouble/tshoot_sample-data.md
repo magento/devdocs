@@ -17,14 +17,16 @@ This topic discusses solutions to errors you might encounter installing optional
 
 Error in the console log during sample data installation using the Setup Wizard:
 
-	Module 'Magento_CatalogRuleSampleData':
-	[ERROR] exception 'Magento\Framework\Exception\LocalizedException' with message 'Can't create directory /var/www/html/magento2/generated/code/Magento/CatalogRule/Model/.' in /var/www/html/magento2/lib/internal/Magento/Framework/Code/Generator.php:103
+```text
+Module 'Magento_CatalogRuleSampleData':
+[ERROR] exception 'Magento\Framework\Exception\LocalizedException' with message 'Can't create directory /var/www/html/magento2/generated/code/Magento/CatalogRule/Model/.' in /var/www/html/magento2/lib/internal/Magento/Framework/Code/Generator.php:103
 
-	(more)
+(more)
 
-	Next exception 'ReflectionException' with message 'Class Magento\CatalogRule\Model\RuleFactory does not exist' in /var/www/html/magento2/lib/internal/Magento/Framework/Code/Reader/ClassReader.php:29
+Next exception 'ReflectionException' with message 'Class Magento\CatalogRule\Model\RuleFactory does not exist' in /var/www/html/magento2/lib/internal/Magento/Framework/Code/Reader/ClassReader.php:29
 
-	(more)
+(more)
+```
 
 These exceptions result from file system permissions settings.
 
@@ -35,7 +37,9 @@ These exceptions result from file system permissions settings.
 
 If you're currently set for [production mode]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html#production-mode), sample data installation fails if you use the [`magento sampledata:deploy`]({{ page.baseurl }}/install-gde/install/cli/install-cli-sample-data-composer.html) command:
 
-	PHP Fatal error: Uncaught TypeError: Argument 1 passed to Symfony\Component\Console\Input\ArrayInput::__construct() must be of the type array, object given, called in /<path>/vendor/magento/framework/ObjectManager/Factory/AbstractFactory.php on line 97 and defined in /<path>/vendor/symfony/console/Symfony/Component/Console/Input/ArrayInput.php:37
+```text
+PHP Fatal error: Uncaught TypeError: Argument 1 passed to Symfony\Component\Console\Input\ArrayInput::__construct() must be of the type array, object given, called in /<path>/vendor/magento/framework/ObjectManager/Factory/AbstractFactory.php on line 97 and defined in /<path>/vendor/symfony/console/Symfony/Component/Console/Input/ArrayInput.php:37
+```
 
 #### Solution
 
@@ -43,46 +47,71 @@ Don't install sample data in production mode. Switch to developer mode and clear
 
 Enter the following commands in the order shown as the [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html):
 
-	cd <magento_root>
-	bin/magento deploy:mode:set developer
-	rm -rf generated/code/* generated/metadata/*
-	bin/magento sampledata:deploy
+```bash
+cd <magento_root>
+```
+
+```bash
+bin/magento deploy:mode:set developer
+```
+
+```bash
+rm -rf generated/code/* generated/metadata/*
+```
+
+```bash
+bin/magento sampledata:deploy
+```
 
 ### Symptom (security) {#trouble-samp-secy}
 
 During installation of optional sample data, a  message similar to the following displays:
 
-	PHP Fatal error: Call to undefined method Magento\Catalog\Model\Resource\Product\Interceptor::getWriteConnection() in /var/www/magento2/app/code/Magento/SampleData/Module/Catalog/Setup/Product/Gallery.php on line 144
+```text
+PHP Fatal error: Call to undefined method Magento\Catalog\Model\Resource\Product\Interceptor::getWriteConnection() in /var/www/magento2/app/code/Magento/SampleData/Module/Catalog/Setup/Product/Gallery.php on line 144
+```
 
 #### Solution
 
 During sample data installation, disable SELinux using a resource such as:
 
-*	[crypt.gen.nz](http://www.crypt.gen.nz/selinux/disable_selinux.html#DIS2)
-*	[CentOS documentation](https://docs.centos.org/en-US/docs/)
+*  [crypt.gen.nz](http://www.crypt.gen.nz/selinux/disable_selinux.html#DIS2)
+*  [CentOS documentation](https://docs.centos.org/en-US/docs/)
 
 ### Symptom (develop branch) {#trouble-samp-dev}
 
 Other errors display, such as:
 
-	[Magento\Setup\SampleDataException] Error during sample data installation: Class Magento\Sales\Model\Service\OrderFactory does not exist
+```text
+[Magento\Setup\SampleDataException] Error during sample data installation: Class Magento\Sales\Model\Service\OrderFactory does not exist
+```
 
 #### Solution
 
 There are known issues with using sample data with the Magento 2 develop branch. Use the master branch instead. You can switch to the master branch as follows:
 
-	cd <magento_root>
-	git checkout master
-	git pull origin master
+```bash
+cd <magento_root>
+```
+
+```bash
+git checkout master
+```
+
+```bash
+git pull origin master
+```
 
 ### Symptom (max_execution_time) {#trouble-samp-max}
 
 The installation stops before the sample data installation finishes. An example follows:
 
-	(more)
+```text
+(more)
 
-	Module 'Magento_CustomerSampleData':
-	Installing data...
+Module 'Magento_CustomerSampleData':
+Installing data...
+```
 
 Sample data installation does not finish.
 
@@ -94,6 +123,8 @@ As a user with `root` privileges, modify `php.ini` to increase the value of `max
 
 If you're not sure where `php.ini` is located, enter the following command:
 
-	php --ini
+```bash
+php --ini
+```
 
 The value of `Loaded Configuration File` is the `php.ini` you must modify.

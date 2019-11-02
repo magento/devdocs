@@ -75,6 +75,6 @@ mutation {
 
 ## Related topics
 
-- [`createPaypalExpressToken` mutation]({{page.baseurl}}/graphql/mutations/create-paypal-express-token.html)
-- [`placeOrder` mutation]({{page.baseurl}}/graphql/mutations/place-order.html)
-- [`setPaymentMethodOnCart` mutation]({{page.baseurl}}/graphql/mutations/set-payment-method.html)
+-  [`createPaypalExpressToken` mutation]({{page.baseurl}}/graphql/mutations/create-paypal-express-token.html)
+-  [`placeOrder` mutation]({{page.baseurl}}/graphql/mutations/place-order.html)
+-  [`setPaymentMethodOnCart` mutation]({{page.baseurl}}/graphql/mutations/set-payment-method.html)

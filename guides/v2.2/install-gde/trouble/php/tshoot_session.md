@@ -28,30 +28,36 @@ This happens when your `session.save_handler` PHP parameter is set to some anoth
 
 Solutions:
 
-*	[Upgrade your Magento 2 code]({{ page.baseurl }}/install-gde/install/cli/install-cli-uninstall.html#instgde-install-magento-update)
-*	Use the following workaround with existing code.
+*  [Upgrade your Magento 2 code]({{ page.baseurl }}/install-gde/install/cli/install-cli-uninstall.html#instgde-install-magento-update)
+*  Use the following workaround with existing code.
 
 ### Locate `php.ini`
 
 Locate `php.ini` by entering the following command:
 
-	php -i | grep "Loaded Configuration File"
+```bash
+php -i | grep "Loaded Configuration File"
+```
 
 Typical locations follow:
 
-*	Ubuntu: `/etc/php5/cli/php.ini`
-*	CentOS: `/etc/php.ini`
+*  Ubuntu: `/etc/php5/cli/php.ini`
+*  CentOS: `/etc/php.ini`
 
 ### Workaround
 
-1.	As a user with `root` privileges, open `php.ini` in a text editor.
-2.	Locate `session.save_handler`
-3.	Set it in any of the following ways:
+1. As a user with `root` privileges, open `php.ini` in a text editor.
+1. Locate `session.save_handler`
+1. Set it in any of the following ways:
 
-	*	To comment it out:
+   *  To comment it out:
 
-			;session.save_path = <path>
+        ```conf
+        ;session.save_path = <path>
+        ```
 
-	*	To set it to a file system path:
+   *  To set it to a file system path:
 
-			session.save_handler = files
+        ```conf
+        session.save_handler = files
+        ```

@@ -8,7 +8,7 @@ functional_areas:
 
 The `services.yaml` file defines the services supported and used by {{site.data.var.ece}}, such as MySQL, Redis, and ElasticSearch. You do not need to subscribe to external service providers. This file is in the `.magento` directory of your project.
 
-The deploy script uses the configuration files in the `.magento` directory to provision the environment with the configured services. A service becomes available to your application if it is included in the `relationships` property of the `.magento.app.yaml` file. The `services.yaml` file contains the service _name_, _type_, and _disk_ values. Changing a service configuration causes a deployment to provision the environment with the updated services.
+The deploy script uses the configuration files in the `.magento` directory to provision the environment with the configured services. A service becomes available to your application if it is included in the `relationships` property of the `.magento.app.yaml` file. The `services.yaml` file contains the _type_ and _disk_ values. Service type defines the service _name_ and _version_. Changing a service configuration causes a deployment to provision the environment with the updated services.
 
 This affects the following environments:
 
@@ -44,7 +44,7 @@ elasticsearch:
 
 ## Service values
 
-Minimally, you must provide a `name` and `type` value for each service. If the service uses persistent storage, then you must provide a `disk` value. Use the following format:
+You must provide the _type_ values: service _name_ and _version_. If the service uses persistent storage, then you must provide a _disk_ value. Use the following format:
 
 ```yaml
 <name>:
@@ -80,7 +80,7 @@ Renaming a service in the `services.yaml` file **permanently removes** the follo
 
 ### `type`
 
-The `type` value specifies the version of the service. For example:
+The `type` value specifies the service name and version. For example:
 
 ```yaml
 mysql:
@@ -101,48 +101,74 @@ The current default storage amount per project is 5GB, or 5120MB. You can distri
 
 ## Service relationships
 
-{{site.data.var.ece}} uses the [`$MAGENTO_CLOUD_RELATIONSHIPS`]({{page.baseurl}}/cloud/env/environment-vars_cloud.html) environment variable to retrieve environment-related relationships. For services to be available to an application in your project, you must specify [*relationships*]({{ page.baseurl }}/cloud/project/project-conf-files_magento-app.html#relationships) between applications and services in the `.magento.app.yaml` file.
+In {{ site.data.var.ece }} projects, service [*relationships*]({{ page.baseurl }}/cloud/project/project-conf-files_magento-app.html#relationships) configured in the `.magento.app.yaml` file determine which services are available to your application.
 
-#### To verify relationships in local environment:
+You can retrieve the configuration data for all service relationships from the [`$MAGENTO_CLOUD_RELATIONSHIPS`]({{page.baseurl}}/cloud/env/environment-vars_cloud.html) environment variable. The configuration data includes service name, type, and version along with any required connection details such as port number and login credentials.
+
+{:.procedure}
+To verify relationships in local environment:
 
 1. In your local environment, show the relationships for the active environment.
 
-    ```bash
-    magento-cloud relationships
-    ```
+   ```bash
+   magento-cloud relationships
+   ```
 
 1. Confirm the `service` and `type` from the response. The response provides connection information, such as the IP address and port number.
 
-    **Abbreviated sample response**:
+   **Abbreviated sample response**:
 
-    ```terminal
-    redis:
-        -
-    ...
-            type: 'redis:3.2'
-            port: 6379
-    elasticsearch:
-        -
-    ...
-            type: 'elasticsearch:6.5'
-            port: 9200
-    database:
-        -
-    ...
-            type: 'mysql:10.0'
-            port: 3306
+   ```terminal
+   redis:
+       -
+   ...
+           type: 'redis:3.2'
+           port: 6379
+   elasticsearch:
+       -
+   ...
+           type: 'elasticsearch:6.5'
+           port: 9200
+   database:
+       -
+   ...
+           type: 'mysql:10.0'
+           port: 3306
+   ```
 
-    ```
-    {:.no-copy}
-
-#### To verify relationships in remote environments:
+{:.procedure}
+To verify relationships in remote environments:
 
 1. Use SSH to log in to the remote environment.
 
-1. Create `pretty-print` to show all relationships for services and configuration data for that environment.
+1. List the relationships configuration data for all services configured in the environment.
 
-    ```bash
-    php -r 'print_r(json_decode(base64_decode($_ENV["MAGENTO_CLOUD_RELATIONSHIPS"])));'
-    ```
+   ```bash
+   echo $MAGENTO_CLOUD_RELATIONSHIPS | base64 -d | json_pp
+   ```
 
-1. Confirm the `service` and `type` from the response. The response provides connection information, such as the IP address and port number.
+   or
+
+   ```bash
+   php -r 'print_r(json_decode(base64_decode($_ENV["MAGENTO_CLOUD_RELATIONSHIPS"])));'
+   ```
+
+1. Confirm the `service` and `type` from the response. The response provides connection information, such as the IP address and port number and any required username and password credentials.
+
+## Service versions
+
+The following table lists the services used in {{site.data.var.ece}} and their version compatibility with the [Magento Cloud template](https://github.com/magento/magento-cloud).
+
+Service   |  Magento 2.3  | Magento 2.2
+--------- | ------------- | ------------
+`elasticsearch` | Magento 2.3.1 and later—1.7, 2.4, 5.2, 6.5<br>Magento 2.3.0—1.7, 2.4, 5.2 | Magento versions 2.2.8 and later—1.7, 2.4, 5.2, 6.5<br>Magento 2.2.0 to 2.2.7—1.7, 2.4, 5.2
+`mariadb` | 10.0 to 10.2  | 10.0 to 10.2
+`nginx`   | 1.9           | 1.9
+`node`    | 6, 8, 10, 11  | 6, 8, 10, 11
+`php`     | Magento 2.3.3 and later—7.1, 7.2, 7.3<br>Magento 2.3.0 to 2.3.2—7.1, 7.2 | Magento 2.2.10 and later—7.1, 7.2<br>Magento 2.2.5 to 2.2.9—7.0, 7.1<br>Magento 2.2.4 and earlier—7.0.2, 7.0.4, ~7.0.6, 7.1
+`rabbitmq`| 3.5, 3.7      | 3.5
+`redis`   | 3.2, 4.0, 5.0 | 3.2, 4.0, 5.0
+`varnish` | Magento 2.3.3 and later—4.0, 5.0, 6.2<br>Magento 2.3.0 to 2.3.2—4.0, 5.0 | 4.0, 5.0
+
+{:.bs-callout-info}
+When you set up the Elasticsearch service, check to ensure that you use a version that is compatible with the installed [Elasticsearch PHP](https://github.com/elastic/elasticsearch-php) client. See [Check Elasticsearch software compatibility]({{ page.baseurl }}/cloud/project/project-conf-files_services-elastic.html#elasticsearch-software-compatibility).

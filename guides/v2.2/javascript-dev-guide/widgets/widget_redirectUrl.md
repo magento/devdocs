@@ -6,8 +6,6 @@ contributor_name: Atwix
 contributor_link: https://www.atwix.com/
 ---
 
-## Overview
-
 The RedirectUrl [widget](https://glossary.magento.com/widget) allows redirecting to an URL when an event triggers.
 
 The RedirectUrl widget source is [lib/web/mage/redirect-url.js][].
@@ -24,9 +22,9 @@ $("#element").redirectUrl({url: 'http://example.com'});
 
 Where:
 
-- `#element` is the selector of the element for which RedirectUrl is initialized.
+-  `#element` is the selector of the element for which RedirectUrl is initialized.
 
-Phtml template file examples using script:
+The following example shows a PHTML file using the script:
 
 ```html
 <script>
@@ -45,8 +43,8 @@ Phtml template file examples using script:
 
 The RedirectUrl widget has the following options:
 
-- [event]
-- [url]
+-  [event](#event)
+-  [url](#url)
 
 ### `event`
 

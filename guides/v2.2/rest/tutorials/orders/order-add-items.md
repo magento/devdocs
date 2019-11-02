@@ -204,10 +204,10 @@ We now know the values for `option_value` for `size` and `color` are `168` and `
 
 The sample data provides one bundled product, the Sprite Yoga Companion Kit (`sku`: `24-WG080`). The kit contains the following items:
 
-* Sprite Statis Ball in sizes 55 cm (`sku`: `24-WG081-blue`), 65 cm (`sku`: `24-WG082-blue`), or 75 cm (`sku`: `24-WG083-blue`)
-* Sprite Foam Yoga brick (`sku`: `24-WG084`)
-* Sprite Yoga Strap in lengths 6 ft (`sku`: `24-WG085`), 8 ft (`sku`: `24-WG086`), or 10 ft (`sku`: `24-WG087`)
-* Sprite Foam Roller (`sku`: `24-WG088`)
+*  Sprite Statis Ball in sizes 55 cm (`sku`: `24-WG081-blue`), 65 cm (`sku`: `24-WG082-blue`), or 75 cm (`sku`: `24-WG083-blue`)
+*  Sprite Foam Yoga brick (`sku`: `24-WG084`)
+*  Sprite Yoga Strap in lengths 6 ft (`sku`: `24-WG085`), 8 ft (`sku`: `24-WG086`), or 10 ft (`sku`: `24-WG087`)
+*  Sprite Foam Roller (`sku`: `24-WG088`)
 
 To add a bundle product to a cart, you must specify the `sku` of the bundle product, but not the individual items. You add individual items to the bundle product by specifying the `id` defined in the item's `product_links` object. The `product_links` object primarily describes the ordering and placement of options on the customization page, but it also links an item's `sku` and `id` to the `sku` of the bundle product.
 
@@ -312,10 +312,10 @@ The `GET <host>/rest/<store_code>/V1/bundle-products/24-WG080/options/all` call 
 
 For this example, we'll configure the Sprite Yoga Companion Kit as follows:
 
-* 65 cm Sprite Stasis Ball (`id`: `2`)
-* Sprite Foam Yoga Brick (`id`: `4`)
-* 8 ft Sprite Yoga strap (`id`: `6`)
-* Sprite Foam Roller (`id`: `8`)
+*  65 cm Sprite Stasis Ball (`id`: `2`)
+*  Sprite Foam Yoga Brick (`id`: `4`)
+*  8 ft Sprite Yoga strap (`id`: `6`)
+*  Sprite Foam Roller (`id`: `8`)
 
 **Endpoint**
 

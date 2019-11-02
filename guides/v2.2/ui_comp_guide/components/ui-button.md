@@ -29,8 +29,42 @@ Option | Description | Type | Required |
 `actionName` | Name of the component's method to be invoked. | String | Required |
 `params` | A list of arguments that will be passed to the method. | Array | Optional |
 
+## Examples
+
+### Configure component
+
+Here is an example of a Button component ("Test Button") added below a Listing component:
+
+```xml
+...
+<button name="my_new_button">
+    <argument name="data" xsi:type="array">
+        <item name="config" xsi:type="array">
+            <item name="actions" xsi:type="array">
+                <!-- Add your button's actions here -->
+                <item name="0" xsi:type="array">
+                    <item name="targetName" xsi:type="string">TARGET_NAME</item>
+                    <item name="actionName" xsi:type="string">ACTION_NAME</item>
+                </item>
+            </item>
+        </item>
+    </argument>
+    <settings>
+        <displayAsLink>false</displayAsLink>
+        <title><![CDATA[Test Button]]></title>
+    </settings>
+</button>
+...
+```
+
+### Result
+
+The Button component appears below a Listing component on the page, as follows:
+
+![Listing button]({{ site.baseurl }}/common/images/ui_comps/listing_button.png)
+
 ## Source files
 
 Extends [`UiElement`]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uielement_concept.html):
 
-- [`Magento/Ui/view/base/web/js/form/components/button.js`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/form/components/button.js)
+-  [`Magento/Ui/view/base/web/js/form/components/button.js`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/form/components/button.js)

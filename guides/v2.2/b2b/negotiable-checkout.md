@@ -134,37 +134,38 @@ In this call, you specify the shipping and billing addresses, as well as the sel
 **Payload**
 
 ```json
-{  "addressInformation": {
-	  "shipping_address": {
-       "region": "California",
-       "region_id": 12,
-       "country_id": "US",
-       "street": [
-      "100 Big Tree Avenue"
+{
+  "addressInformation": {
+    "shipping_address": {
+      "region": "California",
+      "region_id": 12,
+      "country_id": "US",
+      "street": [
+        "100 Big Tree Avenue"
       ],
       "postcode": "99999",
       "city": "San Francisco",
       "telephone": "512-555-1111",
       "firstname": "Jane",
       "lastname": "Doe"
-  },
-  "billing_address": {
-  	"region": "New York",
-    "region_id": 43,
-    "region_code": "NY",
-    "country_id": "US",
-    "street": [
-      "123 Oak Ave"
-    ],
-    "postcode": "10577",
-    "city": "Purchase",
-    "firstname": "Jane",
-    "lastname": "Doe",
-    "email": "jdoe@example.com",
-    "telephone": "512-555-1111"
-  },
-  "shipping_carrier_code": "flatrate",
-  "shipping_method_code": "flatrate"
+    },
+    "billing_address": {
+      "region": "New York",
+      "region_id": 43,
+      "region_code": "NY",
+      "country_id": "US",
+      "street": [
+        "123 Oak Ave"
+      ],
+      "postcode": "10577",
+      "city": "Purchase",
+      "firstname": "Jane",
+      "lastname": "Doe",
+      "email": "jdoe@example.com",
+      "telephone": "512-555-1111"
+    },
+    "shipping_carrier_code": "flatrate",
+    "shipping_method_code": "flatrate"
   }
 }
 ```
@@ -540,7 +541,7 @@ This call sets payment information and the billing address for the negotiable qu
    "method": "checkmo"
   },
   "billing_address": {
-  	"region": "New York",
+   "region": "New York",
     "region_id": 43,
     "region_code": "NY",
     "country_id": "US",
@@ -577,7 +578,7 @@ This call sets payment information and the billing address for the negotiable qu
     "method": "checkmo"
   },
   "billing_address": {
-  	"region": "New York",
+   "region": "New York",
     "region_id": 43,
     "region_code": "NY",
     "country_id": "US",
@@ -962,7 +963,7 @@ Not applicable
 
 ## Related information
 
-* [Integrate with the NegotiableQuote module]({{ page.baseurl }}/b2b/negotiable-quote.html)
-* [Manage negotiable quotes]({{ page.baseurl }}/b2b/negotiable-manage.html)
-* [Update a negotiable quote]({{ page.baseurl }}/b2b/negotiable-update.html)
-* [Place a negotiable quote order]({{ page.baseurl }}/b2b/negotiable-order-workflow.html)
+*  [Integrate with the NegotiableQuote module]({{ page.baseurl }}/b2b/negotiable-quote.html)
+*  [Manage negotiable quotes]({{ page.baseurl }}/b2b/negotiable-manage.html)
+*  [Update a negotiable quote]({{ page.baseurl }}/b2b/negotiable-update.html)
+*  [Place a negotiable quote order]({{ page.baseurl }}/b2b/negotiable-order-workflow.html)

@@ -8,15 +8,16 @@ menu_node:
 functional_areas:
   - Content
 ---
+
 Our priority is to help users perform administrative tasks with ease and manage their stores effectively.
 
 Magento’s voice is:
 
-* Instructional and clear. The content is concise but informational, guiding the user to successfully perform tasks.
+*  Instructional and clear. The content is concise but informational, guiding the user to successfully perform tasks.
 
-* Casual but professional and direct.
+*  Casual but professional and direct.
 
-* Empowering.
+*  Empowering.
 
 ## Guidelines
 
@@ -50,19 +51,19 @@ In all contexts, strive for accuracy and consistency to inspire and build confid
 
 When uncertain about using a correct term or style, consult the following documents:
 
-* The [Magento Glossary](https://glossary.magento.com/)
+*  The [Magento Glossary](https://glossary.magento.com/)
 
-* [Admin Design Pattern Library]({{ page.baseurl }}/pattern-library/bk-pattern.html)
+*  [Admin Design Pattern Library]({{ page.baseurl }}/pattern-library/bk-pattern.html)
 
 For standards not included in those documents, we use the following stylebooks:
 
-* *First reference:* The Associated Press (AP) Stylebook
+*  *First reference:* The Associated Press (AP) Stylebook
 
-* *Second reference:* Microsoft Manual of Style, specifically these chapters:
+*  *Second reference:* Microsoft Manual of Style, specifically these chapters:
 
-  * Content for a worldwide audience (Ch. 3)
-  * Accessible content (Ch. 4)
-  * Procedures and technical content (Ch. 6)
+   *  Content for a worldwide audience (Ch. 3)
+   *  Accessible content (Ch. 4)
+   *  Procedures and technical content (Ch. 6)
 
 **Avoid jargon, slang, and acronyms.**
 
@@ -181,7 +182,7 @@ Consistency is critical. For example, wherever content is displayed in [Data Tab
 Take a neutral tone – don’t blame a merchant or in any way indicate that the merchant made a mistake. Use “business casual” and easy-to-understand language. Avoid personal pronouns and technical jargon. Content structure and formatting should follow this order:
 
 1. Tell merchants what went wrong, in specific terms.
-2. Instruct how to fix the problem and continue the current task. If the error can’t be resolved online, try to give merchants an appropriate offline contact option and a timeframe when they should try again.
+1. Instruct how to fix the problem and continue the current task. If the error can’t be resolved online, try to give merchants an appropriate offline contact option and a timeframe when they should try again.
 
 *Example:*
 

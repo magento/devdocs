@@ -21,10 +21,10 @@ The APIs only accept encrypted communications using HTTPS at the following base 
 
 EQP APIs are based on REST concepts and use standard HTTP verbs:
 
-- GET
-- POST
-- PUT
-- DELETE
+-  GET
+-  POST
+-  PUT
+-  DELETE
 
 All endpoints start with **/rest/v1**, which supports API versioning. The initial release is version 1 (v1).
 

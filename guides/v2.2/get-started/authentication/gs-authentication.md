@@ -165,16 +165,17 @@ Each type of client has a preferred authentication method. To authenticate, use 
    </tr>
 </table>
 
-## Related topics
+{:.ref-header}
+Related topics
 
 Proceed to the authentication method for your preferred client:
 
-* Mobile application. [Token-based authentication]({{ page.baseurl }}/get-started/authentication/gs-authentication-token.html).
+*  Mobile application. [Token-based authentication]({{ page.baseurl }}/get-started/authentication/gs-authentication-token.html).
 
-* Third-party application. [OAuth-based authentication]({{ page.baseurl }}/get-started/authentication/gs-authentication-oauth.html).
+*  Third-party application. [OAuth-based authentication]({{ page.baseurl }}/get-started/authentication/gs-authentication-oauth.html).
 
-* JavaScript [widget](https://glossary.magento.com/widget) on the Magento Admin or [storefront](https://glossary.magento.com/storefront). [Session-based authentication]({{ page.baseurl }}/get-started/authentication/gs-authentication-session.html).
+*  JavaScript [widget](https://glossary.magento.com/widget) on the Magento Admin or [storefront](https://glossary.magento.com/storefront). [Session-based authentication]({{ page.baseurl }}/get-started/authentication/gs-authentication-session.html).
 
-* [Extension attribute authentication]({{ page.baseurl }}/extension-dev-guide/attributes.html)
+*  [Extension attribute authentication]({{ page.baseurl }}/extension-dev-guide/attributes.html)
 
-* [Configure services as web APIs]({{ page.baseurl }}/extension-dev-guide/service-contracts/service-to-web-service.html)
+*  [Configure services as web APIs]({{ page.baseurl }}/extension-dev-guide/service-contracts/service-to-web-service.html)

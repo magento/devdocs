@@ -31,39 +31,44 @@ This topic provides a high level description of how indexing is implemented from
 The following components are involved in the indexing process:
 
 <table>
-  <tbody>
-    <tr>
-      <th>Component</th>
-      <th>Description</th>
-    </tr>
-     <tr>
-       <td><a href="{{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Indexer" target="_blank">Magento_Indexer</a></td>
-       <td>Implements:<ul>
-<li>indexer declaration</li>
-<li>indexer running</li>
-<li>indexer running mode configuration</li>
-<li>indexer status</li></ul></td>
-	</tr>
-	<tr>
-		<td><a href="{{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Mview" target="_blank">Magento\Framework\Mview</a></td>
-		<td><ul>
-<li>Allows tracking database changes for a certain [entity](https://glossary.magento.com/entity) (product, [category](https://glossary.magento.com/category), etc.) and running change handler.</li>
-<li>Emulates the <a href="http://en.wikipedia.org/wiki/Materialized_view" target="_blank">materialized view</a> technology for MySQL using triggers and separate materialization process (provides executing [PHP](https://glossary.magento.com/php) code instead of SQL queries, which allows materializing multiple queries).</li></ul></td>
-	</tr>
-</tbody></table>
+    <tbody>
+        <tr>
+            <th>Component</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td><a href="{{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Indexer" target="_blank">Magento_Indexer</a></td>
+            <td>Implements:
+                <ul>
+                    <li>indexer declaration</li>
+                    <li>indexer running</li>
+                    <li>indexer running mode configuration</li>
+                    <li>indexer status</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td><a href="{{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Mview" target="_blank">Magento\Framework\Mview</a></td>
+            <td>
+                <ul>
+                    <li>Allows tracking database changes for a certain <a href="https://glossary.magento.com/entity" target="_blank">entity</a> (product, <a href="https://glossary.magento.com/category" target="_blank">category</a>, etc.) and running change handler.</li>
+                    <li>Emulates the <a href="http://en.wikipedia.org/wiki/Materialized_view" target="_blank">materialized view</a> technology for MySQL using triggers and separate materialization process (provides executing <a href="https://glossary.magento.com/php" target="_blank">PHP</a> code instead of SQL queries, which allows materializing multiple queries).</li>
+                </ul>
+            </td>
+        </tr>
+    </tbody>
+</table>
 
- {: .bs-callout .bs-callout-warning }
+{: .bs-callout-warning }
 `Magento_Indexer` replaces the Magento 1.x `Magento_Index` module. Use `Magento_Indexer` for all new development.
 
 ### Indexing types
 
 Each index can perform the following types of reindex operations:
 
-* Full reindex, which means rebuilding all the indexing-related database tables
-  Full reindexing can be caused by a variety of things, including creating a new web store or new customer group.
-  You can optionally fully reindex at any time using the [command line]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-index.html).
+*  Full reindex, which means rebuilding all the indexing-related database tables. Full reindexing can be caused by a variety of things, including creating a new web store or new customer group. You can optionally fully reindex at any time using the [command line]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-index.html).
 
-* Partial reindex, which means rebuilding the database tables only for the things that changed (like changing a single product attribute or price)
+*  Partial reindex, which means rebuilding the database tables only for the things that changed (like changing a single product attribute or price)
 
 The type of reindex performed in each particular case depends on the type of changes made in the dictionary or in the system. This dependency is specific for [each indexer](#m2devgde-indexing-outofbox).
 
@@ -75,9 +80,9 @@ The following figure shows the logic for partial reindexing.
 
 Depending on whether an index data is up to date, an indexer status value is one of the following:
 
-* valid - data is synchronized, no reindex required
-* invalid - the original data was changed, the index should be updated
-* working - indexing is in progress
+*  valid - data is synchronized, no reindex required
+*  invalid - the original data was changed, the index should be updated
+*  working - indexing is in progress
 
 The Magento indexing mechanism uses the status value in reindex triggering process. You can check the status of an indexer in the [Admin](https://glossary.magento.com/admin) panel in **System >** Tools **> Index Management** or manually using the [command line]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-index.html#view-indexer-status).
 
@@ -85,19 +90,19 @@ The Magento indexing mechanism uses the status value in reindex triggering proce
 
 Reindexing can be performed in two modes:
 
-* Update on Save - index tables are updated immediately after the dictionary data is changed.
-* Update by Schedule - index tables are updated by cron job according to the configured schedule.
+*  Update on Save - index tables are updated immediately after the dictionary data is changed.
+*  Update by Schedule - index tables are updated by cron job according to the configured schedule.
 
-{:.bs-callout .bs-callout-info}
+{: .bs-callout-info }
 **Update by Schedule** does not support the `customer_grid` indexer. You must either use **Update on Save** or reindex the customer grid manually (`bin/magento indexer:reindex customer_grid`). See the [Help Center article](https://support.magento.com/hc/en-us/articles/360025481892-New-customer-records-are-not-displayed-in-the-Customers-grid-after-importing-them-from-CSV).
 
 To set these options:
 
-1.	Log in to the [Magento Admin](https://glossary.magento.com/magento-admin).
-2.	Click **System >** Tools **> Index Management**.
-3.	Select the checkbox next to each type of indexer to change.
-4.	From the **Actions** list, click the indexing mode.
-5.	Click **Submit**.
+1. Log in to the [Magento Admin](https://glossary.magento.com/magento-admin).
+1. Click **System >** Tools **> Index Management**.
+1. Select the checkbox next to each type of indexer to change.
+1. From the **Actions** list, click the indexing mode.
+1. Click **Submit**.
 
 You can also reindex from the [command line]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-index.html#configure-indexers)
 
@@ -124,14 +129,9 @@ For example part of `Magento/Catalog/etc/mview.xml` is tracking category to prod
 
 Explanation of nodes:
 
-* The `view` node defines an indexer. The `id` attribute is a name of the indexer table, the `class` attribute is indexer executor, the `group` attribute defines
-the indexer group.
-* The `subscriptions` node is a list of tables for tracking changes.
-* The `table` node defines the certain table to observe and track changes. The attribute `name` is a name of an observable table, the attribute `entity_column`
-is an identifier column of entity to be re-indexed. So, in case of `catalog_category_product`, whenever one or more categories is saved, updated or deleted in `catalog_category_entity`
-the `execute` method of `Magento\Catalog\Model\Indexer\Category\Product` will be called with argument `ids` containing ids of entities from column defined
-under `entity_column` attribute. If indexer type is set to "Update on Save" the method is called right away after the operation. If it set to "Update by Schedule"
-the mechanism creates a record in the change log table using MYSQL triggers.
+*  The `view` node defines an indexer. The `id` attribute is a name of the indexer table, the `class` attribute is indexer executor, the `group` attribute defines the indexer group.
+*  The `subscriptions` node is a list of tables for tracking changes.
+*  The `table` node defines the certain table to observe and track changes. The attribute `name` is a name of an observable table, the attribute `entity_column` is an identifier column of entity to be re-indexed. So, in case of `catalog_category_product`, whenever one or more categories is saved, updated or deleted in `catalog_category_entity` the `execute` method of `Magento\Catalog\Model\Indexer\Category\Product` will be called with argument `ids` containing ids of entities from column defined under `entity_column` attribute. If indexer type is set to "Update on Save" the method is called right away after the operation. If it set to "Update by Schedule" the mechanism creates a record in the change log table using MYSQL triggers.
 
 A change log table is created according to the naming rule - INDEXER_TABLE_NAME + '_cl', in case of `catalog_category_product` it will be `catalog_category_product_cl`.
 The table contains the `version_id` auto-increment column and `entity_id` column that contains identifiers of entities to be re-indexed.
@@ -178,81 +178,30 @@ it defines IDs to be re-indexed from the change log by last applied `version_id`
 
 You can reindex by:
 
-* Using a [cron job]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cron.html), which is preferred because indexing runs every minute.
-* Using the [`magento indexer:reindex [indexer]`]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-index.html#config-cli-subcommands-index-reindex) command, which reindexes selected indexers, or all indexers, one time only.
+*  Using a [cron job]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cron.html), which is preferred because indexing runs every minute.
+*  Using the [`magento indexer:reindex [indexer]`]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-index.html#config-cli-subcommands-index-reindex) command, which reindexes selected indexers, or all indexers, one time only.
 
 ## Magento indexers {#m2devgde-indexing-outofbox}
 
-The Magento application implements the following indexers:
+The {{site.data.var.ce}} application implements the following indexers (use [bin/magento indexer:info]({{ page.baseurl }}/reference/cli/magento.html#indexerinfo) to list the indexers):
 
-<table>
-<tbody>
-<tr>
-<th>Indexer name</th>
-<th>Indexer method name</th>
-<th>Indexer class</th>
-<th>Description</th>
-</tr>
-<tr>
-<td>Design Config Grid</td>
-<td><code>design_config_grid</code></td>
-<td><a href="{{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Theme/Model/Indexer/Design/Config.php" target="_blank">Magento\Theme\Model\Indexer\Design\Config</a></td>
-<td />
-</tr>
-<tr>
-<td>Customer Grid</td>
-<td><code>customer_grid</code></td>
-<td><a href="{{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Indexer/Action/Entity.php" target="_blank">Magento\Framework\Indexer\Action\Entity</a></td>
-<td>Rebuilds the customer grid index.<br><br>Not supported by the <strong>Update by Schedule</strong> indexing mode. See the <a href="https://support.magento.com/hc/en-us/articles/360025481892-New-customer-records-are-not-displayed-in-the-Customers-grid-after-importing-them-from-CSV)">Help Center article</a>.</td>
-<td />
-</tr>
-<tr>
-<td>Category products</td>
-<td><code>catalog_category_product</code></td>
-<td><a href="{{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/Model/Indexer/Category/Product.php" target="_blank">Magento\Catalog\Model\Indexer\Category\Product</a></td>
-<td>Creates category/products association</td>
-</tr>
-<tr>
-<td>Product categories</td>
-<td><code>catalog_product_category</code></td>
-<td><a href="{{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/Model/Indexer/Product/Category.php" target="_blank">Magento\Catalog\Model\Indexer\Product\Category</a></td>
-<td>Creates category/products association</td>
-</tr>
-<tr>
-<td>Product price</td>
-<td><code>catalog_product_price</code></td>
-<td><a href="{{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/Model/Indexer/Product/Price.php" target="_blank">Magento\Catalog\Model\Indexer\Product\Price</a></td>
-<td>Pre-calculates product prices</td>
-</tr>
-<tr>
-<td>Product entity attribute value</td>
-<td><code>catalog_product_attribute</code></td>
-<td><a href="{{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/Model/Indexer/Product/Eav.php" target="_blank">Magento\Catalog\Model\Indexer\Product\Eav</a></td>
-<td>Reorganizes the EAV product structure to flat structure</td>
-</tr>
-<tr>
-<td>Stock</td>
-<td><code>cataloginventory_stock</code></td>
-<td><a href="{{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/CatalogInventory/Model/Indexer/Stock.php" target="_blank">Magento\CatalogInventory\Model\Indexer\Stock</a></td>
-<td />
-</tr>
-<tr>
-<td>Catalog rule product</td>
-<td><code>catalogrule_rule</code></td>
-<td><a href="{{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/CatalogRule/Model/Indexer/Rule/RuleProductIndexer.php" target="_blank">Magento\CatalogRule\Model\Indexer\Rule\RuleProductIndexer</a></td>
-<td />
-</tr>
-<tr>
-<td>Catalog product rule</td>
-<td><code>catalogrule_product</code></td>
-<td><a href="{{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/CatalogRule/Model/Indexer/Product/ProductRuleIndexer.php" target="_blank">Magento\CatalogRule\Model\Indexer\Product\ProductRuleIndexer</a></td>
-<td />
-</tr>
-<tr>
-<td>Catalog search</td>
-<td><code>catalogsearch_fulltext</code></td>
-<td><a href="{{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/CatalogSearch/Model/Indexer/Fulltext.php" target="_blank">Magento\CatalogSearch\Model\Indexer\Fulltext</a></td>
-<td />
-</tr>
-</tbody>
-</table>
+| Indexer name | Indexer method name | Indexer class | Description |
+| --- | --- | --- | --- |
+| Design Config Grid | `design_config_grid` | [Magento\Theme\Model\Indexer\Design\Config]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Theme/Model/Indexer/Design/Config.php) | |
+| Customer Grid | `customer_grid` | [Magento\Framework\Indexer\Action\Entity]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Indexer/Action/Entity.php) | Rebuilds the customer grid index. Not supported by the `Update by Schedule` indexing mode. See the [Help Center article](https://support.magento.com/hc/en-us/articles/360025481892-New-customer-records-are-not-displayed-in-the-Customers-grid-after-importing-them-from-CSV). |
+| Category products | `catalog_category_product` | [Magento\Catalog\Model\Indexer\Category\Product]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/Model/Indexer/Category/Product.php) | Creates category/products association |
+| Product categories | `catalog_product_category` | [Magento\Catalog\Model\Indexer\Product\Category]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/Model/Indexer/Product/Category.php) | Creates category/products association |
+| Product price | `catalog_product_price` | [Magento\Catalog\Model\Indexer\Product\Price]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/Model/Indexer/Product/Price.php) | Pre-calculates product prices |
+| Product entity attribute value | `catalog_product_attribute` | [Magento\Catalog\Model\Indexer\Product\Eav]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/Model/Indexer/Product/Eav.php) | Reorganizes the EAV product structure to flat structure |
+| Stock | `cataloginventory_stock` | [Magento\CatalogInventory\Model\Indexer\Stock]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/CatalogInventory/Model/Indexer/Stock.php) |  |
+| Catalog rule product | `catalogrule_rule` | [Magento\CatalogRule\Model\Indexer\Rule\RuleProductIndexer]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/CatalogRule/Model/Indexer/Rule/RuleProductIndexer.php) |  |
+| Catalog product rule | `catalogrule_product` | [Magento\CatalogRule\Model\Indexer\Product\ProductRuleIndexer]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/CatalogRule/Model/Indexer/Product/ProductRuleIndexer.php) |  |
+| Catalog search | `catalogsearch_fulltext` | [Magento\CatalogSearch\Model\Indexer\Fulltext]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/CatalogSearch/Model/Indexer/Fulltext.php) |  |
+
+Magento Commerce Edition contains all indexers of Magento Open Source Edition and the following ones:
+
+| Indexer name | Indexer method name | Indexer class | Description |
+| --- | --- | --- | --- |
+| Product/Target Rule | `targetrule_product_rule` | `Magento\TargetRule\Model\Indexer\TargetRule\Product\Rule` | Indexes product/rule association |
+| Target Rule/Product | `targetrule_rule_product` | `Magento\TargetRule\Model\Indexer\TargetRule\Rule\Product` | Indexes rule/product association |
+| Sales Rule | `salesrule_rule` | `Magento\AdvancedSalesRule\Model\Indexer\SalesRule` | Indexes sales rule |

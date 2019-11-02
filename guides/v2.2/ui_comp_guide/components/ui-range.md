@@ -32,4 +32,4 @@ The Range component implements the range for filtering rows in a grid. Visually,
 
 Extends [`Multiline`]({{ page.baseurl }}/ui_comp_guide/components/ui-multiline.html):
 
-- [app/code/Magento/Ui/view/base/web/js/grid/filters/range.js]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/grid/filters/range.js)
+-  [app/code/Magento/Ui/view/base/web/js/grid/filters/range.js]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/grid/filters/range.js)

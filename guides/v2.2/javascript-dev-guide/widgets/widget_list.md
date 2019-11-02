@@ -3,7 +3,6 @@ group: javascript-developer-guide
 subgroup: 3_Widgets
 title: List widget
 ---
-## Overview
 
 {%
 include note.html
@@ -23,16 +22,17 @@ For information about how to initialize a widget in a JS component or `.phtml` t
 ## Options {#list_options}
 
 The list widget has the following options:
--   [addButton](#l_addButton)
--   [destinationSelector](#l_destinationSelector)
--   [itemCount](#l_itemCount)
--   [itemIndex](#l_itemIndex)
--   [maxItems](#l_maxItems)
--   [maxItemsAlert](#l_maxItemsAlert)
--   [removeButton](#l_removeButton)
--   [template](#l_template)
--   [templateClass](#l_templateClass)
--   [templateWrapper](#l_templateWrapper)
+
+-  [addButton](#l_addButton)
+-  [destinationSelector](#l_destinationSelector)
+-  [itemCount](#l_itemCount)
+-  [itemIndex](#l_itemIndex)
+-  [maxItems](#l_maxItems)
+-  [maxItemsAlert](#l_maxItemsAlert)
+-  [removeButton](#l_removeButton)
+-  [template](#l_template)
+-  [templateClass](#l_templateClass)
+-  [templateWrapper](#l_templateWrapper)
 
 Detailed description of each option follows.
 
@@ -109,10 +109,11 @@ Element holding the template.
 ## Methods {#list_methods}
 
 The list widget has the following methods:
--   [addItem()](#list_addItem)
--   [checkLimit()](#list_checkLimit)
--   [handleAdd()](#list_handleAdd)
--   [removeItem()](#list_removeItem)
+
+-  [addItem()](#list_addItem)
+-  [checkLimit()](#list_checkLimit)
+-  [handleAdd()](#list_handleAdd)
+-  [removeItem()](#list_removeItem)
 
 ### `addItem()` {#list_addItem}
 Adds item to the list in the specified order (defined by the index parameter).

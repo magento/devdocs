@@ -10,9 +10,9 @@ functional_areas:
 
 The shared catalog configuration process includes assigning categories and products to the shared catalog. To assign these items to a shared catalog, the following conditions must be met:
 
-* The category structure must already be defined. You cannot create a new category to be included in a shared catalog. Use endpoints like `POST /V1/categories` to create a new category.
+*  The category structure must already be defined. You cannot create a new category to be included in a shared catalog. Use endpoints like `POST /V1/categories` to create a new category.
 
-* Each category must already be populated with products. You cannot add a new product to a category to be included in a shared catalog. Use endpoints like `POST /V1/products` to create a new product.
+*  Each category must already be populated with products. You cannot add a new product to a category to be included in a shared catalog. Use endpoints like `POST /V1/products` to create a new product.
 
 ## Assign categories
 
@@ -27,7 +27,7 @@ Products that are defined within a category are not included when you assign a c
 
 **REST Endpoints**
 
-```
+```terminal
 POST /V1/sharedCatalog/:id/assignCategories
 POST /V1/sharedCatalog/:id/unassignCategories
 GET  /V1/sharedCatalog/:id/categories
@@ -138,7 +138,7 @@ The `sharedCatalogProductManagementV1` service is based on `catalogProductManage
 
 **REST endpoints**
 
-```
+```terminal
 POST  /V1/sharedCatalog/:id/assignProducts
 POST  /V1/sharedCatalog/:id/unassignProducts
 GET  /V1/sharedCatalog/:id/products
@@ -165,26 +165,26 @@ The following example adds two products each in the Bags, Fitness Equipment, and
 
 ```json
 {
-	"products": [
-    	{
-        	"sku": "24-MB01"
-    	},
-    	{
-        	"sku": "24-MB04"
-    	},
-    	{
-        	"sku": "24-UG06"
-    	},
-    	{
-        	"sku": "24-UG07"
-    	},
-    	{
-        	"sku": "24-MG04"
-    	},
-    	{
-        	"sku": "24-MG01"
-    	}
-	]
+ "products": [
+     {
+         "sku": "24-MB01"
+     },
+     {
+         "sku": "24-MB04"
+     },
+     {
+         "sku": "24-UG06"
+     },
+     {
+         "sku": "24-UG07"
+     },
+     {
+         "sku": "24-MG04"
+     },
+     {
+         "sku": "24-MG01"
+     }
+ ]
 }
 ```
 
@@ -205,9 +205,9 @@ Unassigning a product does not remove it from its category or categories.
 ```json
 {
   "products": [
-  	{
-  		"sku": "24-MG01"
-  	}
+   {
+     "sku": "24-MG01"
+   }
   ]
 }
 ```
@@ -216,7 +216,7 @@ Unassigning a product does not remove it from its category or categories.
 
 `true`, indicating the operation was successful
 
-### List the shared catalog categories
+### List the shared catalog products
 
 The `GET` call returns an array of SKUs.
 
@@ -242,6 +242,6 @@ Not applicable
 
 ## Related information
 
-* [Integrate with the SharedCatalog module]({{ page.baseurl }}/b2b/shared-catalog.html)
-* [Manage shared catalogs]({{ page.baseurl }}/b2b/shared-cat-manage.html)
-* [Assign companies]({{ page.baseurl }}/b2b/shared-cat-company.html)
+*  [Integrate with the SharedCatalog module]({{ page.baseurl }}/b2b/shared-catalog.html)
+*  [Manage shared catalogs]({{ page.baseurl }}/b2b/shared-cat-manage.html)
+*  [Assign companies]({{ page.baseurl }}/b2b/shared-cat-company.html)

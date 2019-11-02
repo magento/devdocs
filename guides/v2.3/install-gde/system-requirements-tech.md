@@ -12,8 +12,8 @@ functional_areas:
 Linux distributions, such as RedHat Enterprise Linux (RHEL), CentOS, Ubuntu, Debian, and similar.
 Magento is not supported on:
 
-* Windows OS
-* Mac OS
+*  Windows OS
+*  Mac OS
 
 ## Memory requirement
 
@@ -25,11 +25,11 @@ Upgrading the Magento applications and extensions you obtain from Magento Market
 
 ## Web servers
 
-* [Apache 2.4][]
+*  [Apache 2.4][]
 
    In addition, you must enable the Apache `mod_rewrite` and `mod_version` modules. The [`mod_rewrite`][] module enables the server to perform URL rewriting. The [`mod_version`][] module provides flexible version checking for different `httpd` versions. For more information, see [our Apache documentation][].
 
-* [nginx 1.x][]
+*  [nginx 1.x][]
 
 ## Database
 
@@ -76,25 +76,25 @@ For more information, see [Required PHP settings][].
 
 ## SSL
 
-* A valid [security certificate][] is required for HTTPS.
-* Self-signed SSL certificates are not supported.
-* Transport Layer Security (TLS) requirement - PayPal and `repo.magento.com` both require TLS 1.1 or later:
+*  A valid [security certificate][] is required for HTTPS.
+*  Self-signed SSL certificates are not supported.
+*  Transport Layer Security (TLS) requirement - PayPal and `repo.magento.com` both require TLS 1.2 or later:
 
-  * [More information about PayPal][]
+   *  [More information about PayPal][]
 
 ### Required system dependencies
 
 Magento requires the following system tools for some of its operations:
 
-* [bash][]
-* [gzip][]
-* [lsof][]
-* [mysql][]
-* [mysqldump][]
-* [nice][]
-* [php][]
-* [sed][]
-* [tar][]
+*  [bash][]
+*  [gzip][]
+*  [lsof][]
+*  [mysql][]
+*  [mysqldump][]
+*  [nice][]
+*  [php][]
+*  [sed][]
+*  [tar][]
 
 ### Mail server
 
@@ -102,41 +102,42 @@ Mail Transfer Agent (MTA) or an SMTP server
 
 ## Technologies Magento can use
 
-* [Redis][] versions 3.2, 4.0, 5.0 (compatible with 2.4+) for page caching and session storage.
-  Version 5.0 is highly recommended.
-* [Varnish]({{page.baseurl}}/config-guide/varnish/config-varnish.html) version 4.x, 5.2 or 6.2
-* [Elasticsearch]({{page.baseurl}}/config-guide/elasticsearch/es-overview.html)
+*  [Redis][] versions 3.2, 4.0, 5.0 (compatible with 2.4+) for page caching and session storage. Version 5.0 is highly recommended.
+*  [Varnish]({{page.baseurl}}/config-guide/varnish/config-varnish.html) version 4.x, 5.2 or 6.2
+*  [Elasticsearch]({{page.baseurl}}/config-guide/elasticsearch/es-overview.html)
 
-  {{site.data.var.ee}} version 2.3.x supports the following Elasticsearch versions:
+   {{site.data.var.ee}} version 2.3.x supports the following Elasticsearch versions:
 
-  * Elasticsearch [6.x][]{:target="_blank"}
+   *  Elasticsearch [6.x][]{:target="_blank"}
 
-    Magento 2.3 uses [Elasticsearch PHP client][]{:target="_blank"} version 6.1.
+      Magento 2.3 uses [Elasticsearch PHP client][]{:target="_blank"} version 6.1.
 
-    {: .bs-callout .bs-callout-warning}
-    Magento still provides support for but does not recommend Elasticsearch [2.x and 5.x][].
-    If you must run Elasticsearch 2.x or 5.x with Magento 2.3.1, you must change the Elasticsearch client version.
-    Follow the instructions in [Change Elasticsearch Module][].
+      {: .bs-callout .bs-callout-warning}
+      Magento still provides support for but does not recommend Elasticsearch [2.x and 5.x][].
 
-* RabbitMQ 3.7.x (compatible with 2.0 and later)
+      If you must run Elasticsearch 2.x or 5.x with Magento 2.3.1, you must change the Elasticsearch client version.
 
-  [RabbitMQ][]{:target="_blank"} can be used to publish messages to queue and to define the consumers that receive the messages asynchronously.
+      Follow the instructions in [Change Elasticsearch Module][].
+
+*  RabbitMQ 3.7.x (compatible with 2.0 and later)
+
+   [RabbitMQ][]{:target="_blank"} can be used to publish messages to queue and to define the consumers that receive the messages asynchronously.
 
 ### {{site.data.var.ee}} only
 
-* Three master databases
+*  Three master databases
 
-  These [master databases][] provide scalability advantages for different functional areas of the Magento application such as checkout, orders, and all remaining Magento2 application tables.
+   These [master databases][] provide scalability advantages for different functional areas of the Magento application such as checkout, orders, and all remaining Magento2 application tables.
 
 ### Optional but recommended
 
-* [php_xdebug 2.5.x][]{:target="_blank"} or later (development environments only; can have an adverse effect on performance)
+*  [php_xdebug 2.5.x][]{:target="_blank"} or later (development environments only; can have an adverse effect on performance)
 
 {:.bs-callout .bs-callout-info}
 There is a known issue with `xdebug` that can affect Magento installations or access to the storefront or Magento Admin after installation. For details, see [Known issue with xdebug][].
 
-* [`mcrypt`][]{:target="_blank"}
-* PHPUnit (as a command-line tool) 6.2.0
+*  [`mcrypt`](http://php.net/manual/en/book.mcrypt.php){:target="_blank"} (for PHP < 7.2)
+*  PHPUnit (as a command-line tool) 6.2.0
 
 <!-- Link Definitions -->
 [`mcrypt`]: http://php.net/manual/en/book.mcrypt.php

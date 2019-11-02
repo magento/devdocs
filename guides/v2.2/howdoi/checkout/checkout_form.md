@@ -17,8 +17,8 @@ Most of the elements, including the default forms on the Checkout page are imple
 Magento provides the ability to add a custom form to any of the checkout steps: Shipping Information, Review and Payment Information, or custom. In order to add a custom form that is a UI component, take the following steps:
 
 1. [Create the JS implementation of the form UI component](#component).
-2. [Create the knockout.js HTML template for rendering the form](#template).
-3. [Declare the form in the checkout page layout](#layout).
+1. [Create the knockout.js HTML template for rendering the form](#template).
+1. [Declare the form in the checkout page layout](#layout).
 
 ## Prerequisites
 
@@ -154,7 +154,7 @@ It should be similar to the following:
 If you modify your custom `.html` template after it was applied on the store pages, the changes will not apply until you do the following:
 
 1. Delete all files in the `pub/static/frontend` and `var/view_preprocessed` directories.
-2. Reload the pages.
+1. Reload the pages.
 
 ### Static forms {#static_form}
 
@@ -291,4 +291,3 @@ $textField = [
 If you use the code samples provided as examples in this topic, this would result in adding the following form to the Shipping Information step:
 
 ![The input form with four fields]({{ site.baseurl }}/common/images/how_checkout_form.png)
-

@@ -5,15 +5,17 @@ functional_areas:
   - Install
   - System
   - Setup
+redirect_from:
+  - guides/v2.2/install-gde/trouble/tshoot_segfault.html
 ---
 
 ## Overview of backup {#instgde-cli-uninst-back-over}
 
 This command enables you to back up:
 
-*	The Magento file system (excluding `var` and `pub/static` directories)
-*	The `pub/media` directory
-*	The Magento 2 database
+*  The Magento file system (excluding `var` and `pub/static` directories)
+*  The `pub/media` directory
+*  The Magento 2 database
 
 Backups are stored in the `var/backups` directory and can be restored at any time using the [magento setup:rollback]({{ page.baseurl }}/install-gde/install/cli/install-cli-uninstall-mods.html#instgde-cli-uninst-mod-roll) command.
 
@@ -48,8 +50,8 @@ bin/magento setup:backup [--code] [--media] [--db]
 
 The command performs the following tasks:
 
-1.	Puts the store in maintenance mode.
-2.	Executes one of the following command options.
+1. Puts the store in maintenance mode.
+1. Executes one of the following command options.
 
     |Option|Meaning|Backup file name and location|
     |--- |--- |--- |
@@ -57,7 +59,7 @@ The command performs the following tasks:
     |`--media`|Back up the pub/media directory.|var/backups/<timestamp>\_filesystem_media.tgz|
     |`--db`|Back up the Magento 2 database.|var/backups/<timestamp>\_db.sql|
 
-3.	Takes the store out of maintenance mode.
+1. Takes the store out of maintenance mode.
 
 For example, to back up the file system and database,
 
@@ -111,6 +113,3 @@ Messages similar to the following display:
 Please set file permission of bin/magento to executable
 Disabling maintenance mode
 ```
-
-{: .bs-callout-info }
-If the command results in a `Segmentation fault` message, see [Segmentation fault during rollback]({{ page.baseurl }}/install-gde/trouble/tshoot_segfault.html).

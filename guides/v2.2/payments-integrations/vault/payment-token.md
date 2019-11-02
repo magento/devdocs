@@ -70,8 +70,8 @@ class VaultDetailsHandler implements HandlerInterface
 
 There are two available types of payment tokens:
 
- * `\Magento\Vault\Api\Data\PaymentTokenFactoryInterface::TOKEN_TYPE_CREDIT_CARD` is used for credit cards
- * `\Magento\Vault\Api\Data\PaymentTokenFactoryInterface::TOKEN_TYPE_ACCOUNT` is used for payment accounts like PayPal
+*  `\Magento\Vault\Api\Data\PaymentTokenFactoryInterface::TOKEN_TYPE_CREDIT_CARD` is used for credit cards
+*  `\Magento\Vault\Api\Data\PaymentTokenFactoryInterface::TOKEN_TYPE_ACCOUNT` is used for payment accounts like PayPal
 
 Depending on your payment integration, you need to specify one of them to create a payment token.
 
@@ -100,4 +100,5 @@ Example of the Braintree `di.xml`:
 The persistence layer for Payment Token is implemented in the [Vault Module]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Vault).
 
 ## What's next
+
 [Adding and using  UI_Vault component to place orders on the storefront]({{ page.baseurl }}/payments-integrations/vault/token-ui-component-provider.html).

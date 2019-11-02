@@ -7,22 +7,22 @@ Inventory Management uses the Source Selection Algorithm (SSA) to track the sala
 
 The SSA uses stocks and sources to check the sales channel for incoming product requests and determines the available inventory. The algorithm:
 
-* Calculates the aggregated virtual salable quantity of all assigned sources per stock
-* Subtracts the Out-of-Stock Threshold amount from salable quantity to protect against overselling and support concurrent checkout
-* Reserves inventory quantities at checkout, deducting from in-stock inventory at order processing and shipment
-* Supports backorders with enhanced options for negative thresholds
+*  Calculates the aggregated virtual salable quantity of all assigned sources per stock
+*  Subtracts the Out-of-Stock Threshold amount from salable quantity to protect against overselling and support concurrent checkout
+*  Reserves inventory quantities at checkout, deducting from in-stock inventory at order processing and shipment
+*  Supports backorders with enhanced options for negative thresholds
 
 The SSA also manages shipments by providing recommendations for the best sources to ship partial or all products or override the selections to:
 
-* Ship partial shipments, sending only a few products from specific sources and completing the full order at a later date.
-* Ship the entire order from one source.
-* Break the order into partial shipments across multiple sources in different amounts to keep a balanced stock across all warehouses and stores.
+*  Ship partial shipments, sending only a few products from specific sources and completing the full order at a later date.
+*  Ship the entire order from one source.
+*  Break the order into partial shipments across multiple sources in different amounts to keep a balanced stock across all warehouses and stores.
 
 Third parties can also extend SSA to create customized algorithms for recommending cost-effective shipments.
 
 **Service names**
 
-```
+```http
 inventorySourceSelectionApiGetSourceSelectionAlgorithmListV1
 inventorySourceSelectionApiSourceSelectionServiceV1
 inventoryDistanceBasedSourceSelectionApiGetDistanceProviderCodeV1
@@ -32,7 +32,7 @@ inventoryDistanceBasedSourceSelectionApiGetLatLngFromAddressV1
 
 **REST endpoints**
 
-```
+```http
 GET /V1/inventory/source-selection-algorithm-list
 POST /V1/inventory/source-selection-algorithm-result
 ```
@@ -170,13 +170,13 @@ Name | Description | Type | Requirements
             "qty": 50
         }],
         "extension_attributes": {
-        	"destination_address": {
-        		"country": "US",
-        		"postcode": "10577",
-        		"street": "3003 Purchase St",
-        		"region": "43",
-        		"city": "Purchase"
-        	}
+            "destination_address": {
+                "country": "US",
+                "postcode": "10577",
+                "street": "3003 Purchase St",
+                "region": "43",
+                "city": "Purchase"
+            }
         }
     },
     "algorithmCode": "distance"

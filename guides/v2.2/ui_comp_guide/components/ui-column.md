@@ -139,4 +139,4 @@ The Column component implements a basic column in [Listing]({{ page.baseurl }}/u
 
 Extends [`UiElement`]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uielement_concept.html):
 
-- [`Magento/Ui/view/base/web/js/grid/columns/column.js`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/grid/columns/column.js)
+-  [`Magento/Ui/view/base/web/js/grid/columns/column.js`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/grid/columns/column.js)

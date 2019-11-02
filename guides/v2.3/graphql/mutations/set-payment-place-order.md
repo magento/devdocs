@@ -7,6 +7,9 @@ redirect from:
   - /guides/v2.3/graphql/reference/quote-set-payment-place-order.html
 ---
 
+{: .bs-callout-info }
+The `setPaymentMethodAndPlaceOrder` mutation will be deprecated in the next patch release. Use the `setPaymentMethodOnCart` and `placeOrder` mutations instead. You can run the two methods in the same call if your use case allows it.
+
 The `setPaymentMethodAndPlaceOrder` mutation sets the cart payment method and converts the cart into an order. The
 mutation returns the resulting order ID. You cannot manage orders with GraphQL, because orders are part of the backend.
 You can use REST or SOAP calls to manage orders to their completion.
@@ -28,7 +31,7 @@ Perform the following actions before using the `setPaymentMethodAndPlaceOrder` m
 
 **Request**
 
-``` text
+```graphql
 mutation {
   setPaymentMethodAndPlaceOrder(
     input: {

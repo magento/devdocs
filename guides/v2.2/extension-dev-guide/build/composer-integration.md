@@ -11,8 +11,8 @@ Composer reads a `composer.json` file in Magento's root directory to download th
 
 The [Component Manager][1] uses the `composer.json` file in an extension's root directory to perform the following actions:
 
-*	The Component Manager can update, uninstall, enable, or disable an [extension](https://glossary.magento.com/extension) if installed using Composer (including from [Packagist][2]{:target="_blank"}, [Magento Marketplace][6]{:target="_blank"}, or other source) *and* it has a `composer.json` file.
-*	The Component Manager can still enable or disable an extension *not* installed using Composer (e.g. custom code) if it has a `composer.json` file.
+*  The Component Manager can update, uninstall, enable, or disable an [extension](https://glossary.magento.com/extension) if installed using Composer (including from [Packagist][2]{:target="_blank"}, [Magento Marketplace][6]{:target="_blank"}, or other source) *and* it has a `composer.json` file.
+*  The Component Manager can still enable or disable an extension *not* installed using Composer (e.g. custom code) if it has a `composer.json` file.
 
 We recommend you include `composer.json` in your component's root directory even if you do not intend to distribute it to other merchants using Magento.
 
@@ -88,8 +88,8 @@ The Magento application uses this `composer.json` file for its framework package
 
 **Locations:**
 
-* `app/code/<vendor-name>/<module-name>/composer.json`
-* `vendor/<vendor-name>/<module-name>/composer.json`
+*  `app/code/<vendor-name>/<module-name>/composer.json`
+*  `vendor/<vendor-name>/<module-name>/composer.json`
 
 **Name:** `<vendor-name>/<package-name>`
 
@@ -103,8 +103,8 @@ The `composer.json` file for a [module](https://glossary.magento.com/module) ext
 
 **Locations:**
 
-* `app/design/frontend/<vendor-name>/<theme-name>/composer.json`
-* `app/design/adminhtml/<vendor-name>/<theme-name>/composer.json`
+*  `app/design/frontend/<vendor-name>/<theme-name>/composer.json`
+*  `app/design/adminhtml/<vendor-name>/<theme-name>/composer.json`
 
 **Name:** `<vendor-name>/<package-name>`
 
@@ -172,12 +172,12 @@ The convention for Magento package names is the following
 
 Where:
 
-: `type-prefix` is any of the Magento extension types:
+:`type-prefix` is any of the Magento extension types:
 
-  * `module-` for module extensions
-  * `theme-` for theme extensions
-  * `language-` for language extensions
-  * `product-` for [metapackages][8] such as {{site.data.var.ce}} or {{site.data.var.ee}}
+*  `module-` for module extensions
+*  `theme-` for theme extensions
+*  `language-` for language extensions
+*  `product-` for [metapackages][8] such as {{site.data.var.ce}} or {{site.data.var.ee}}
 
 : `suffix` is a unique identifier for extensions of that type.
 

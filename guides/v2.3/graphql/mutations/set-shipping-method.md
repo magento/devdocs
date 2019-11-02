@@ -27,7 +27,7 @@ The following example sets the shipping method to Best Way.
 
 **Request**
 
-``` text
+```graphql
 mutation {
   setShippingMethodsOnCart(
     input: {

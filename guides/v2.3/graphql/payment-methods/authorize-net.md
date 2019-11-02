@@ -9,24 +9,24 @@ Accept.js is a JavaScript-based solution for sending secure payment data directl
 
 The following diagram shows the workflow for placing an order when Authorize.Net is the selected payment method.
 
-![Authorize.Net sequence diagram]({{page.baseurl}}/graphql/images/authorize-net.svg)
+![Authorize.Net sequence diagram]({{site.baseurl}}/common/images/graphql/authorize-net.svg)
 
 1. The customer clicks on the **Place order** button. The embedded `Accept.js` library captures the payment data and submits it directly to Authorize.Net.
 
-2. Authorize.Net returns a payment nonce and order details.
+1. Authorize.Net returns a payment nonce and order details.
 The client's browser then posts the nonce to the Magento server along with all the other order information. The payment nonce expires after 24 hours.
 
-3. The client uses the [`setPaymentMethodOnCart`]({{page.baseurl}}/graphql/mutations/set-payment-method.html) mutation to send the payment nonce and the last four digits of the card to Magento.
+1. The client uses the [`setPaymentMethodOnCart`]({{page.baseurl}}/graphql/mutations/set-payment-method.html) mutation to send the payment nonce and the last four digits of the card to Magento.
 
-4. Magento returns a `Cart` object.
+1. Magento returns a `Cart` object.
 
-5. The client runs the [`placeOrder`]({{page.baseurl}}/graphql/mutations/place-order.html) mutation, which creates an order in Magento and begins the authorization process.
+1. The client runs the [`placeOrder`]({{page.baseurl}}/graphql/mutations/place-order.html) mutation, which creates an order in Magento and begins the authorization process.
 
-6. Magento sends a transaction request that includes the payment nonce. The nonce replaces the payment details provided in standard Authorize.Net API calls.
+1. Magento sends a transaction request that includes the payment nonce. The nonce replaces the payment details provided in standard Authorize.Net API calls.
 
-7. Authorize.Net sends a transaction response.
+1. Authorize.Net sends a transaction response.
 
-8. Magento creates an order and sends an order ID in response to the `placeOrder` mutation.
+1. Magento creates an order and sends an order ID in response to the `placeOrder` mutation.
 
 ## Additional payment information
 

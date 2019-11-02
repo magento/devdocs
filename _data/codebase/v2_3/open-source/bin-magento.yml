@@ -1,7 +1,7 @@
 ---
 application:
   name: Magento CLI
-  version: 2.3.2
+  version: 2.3.3
 commands:
 - name: help
   usage:
@@ -1178,7 +1178,7 @@ commands:
   hidden: false
 - name: config:set
   usage:
-  - config:set [--scope SCOPE] [--scope-code SCOPE-CODE] [-le|--lock-env] [-lc|--lock-config]
+  - config:set [--scope SCOPE] [--scope-code SCOPE-CODE] [-e|--lock-env] [-c|--lock-config]
     [-l|--lock] [--] <path> <value>
   description: Change system configuration
   help: Change system configuration
@@ -1215,7 +1215,7 @@ commands:
         default: 
       lock-env:
         name: "--lock-env"
-        shortcut: "-le"
+        shortcut: "-e"
         accept_value: false
         is_value_required: false
         is_multiple: false
@@ -1224,7 +1224,7 @@ commands:
         default: false
       lock-config:
         name: "--lock-config"
-        shortcut: "-lc"
+        shortcut: "-c"
         accept_value: false
         is_value_required: false
         is_multiple: false
@@ -2622,6 +2622,365 @@ commands:
         is_multiple: false
         description: Overwrite XML file
         default: false
+      help:
+        name: "--help"
+        shortcut: "-h"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this help message
+        default: false
+      quiet:
+        name: "--quiet"
+        shortcut: "-q"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not output any message
+        default: false
+      verbose:
+        name: "--verbose"
+        shortcut: "-v|-vv|-vvv"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: 'Increase the verbosity of messages: 1 for normal output, 2 for
+          more verbose output and 3 for debug'
+        default: false
+      version:
+        name: "--version"
+        shortcut: "-V"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this application version
+        default: false
+      ansi:
+        name: "--ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Force ANSI output
+        default: false
+      no-ansi:
+        name: "--no-ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Disable ANSI output
+        default: false
+      no-interaction:
+        name: "--no-interaction"
+        shortcut: "-n"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not ask any interactive question
+        default: false
+  hidden: false
+- name: dotdigital:migrate
+  usage:
+  - dotdigital:migrate
+  description: Migrate data into email_ tables to sync with Engagement Cloud
+  help: Migrate data into email_ tables to sync with Engagement Cloud
+  definition:
+    arguments: []
+    options:
+      help:
+        name: "--help"
+        shortcut: "-h"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this help message
+        default: false
+      quiet:
+        name: "--quiet"
+        shortcut: "-q"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not output any message
+        default: false
+      verbose:
+        name: "--verbose"
+        shortcut: "-v|-vv|-vvv"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: 'Increase the verbosity of messages: 1 for normal output, 2 for
+          more verbose output and 3 for debug'
+        default: false
+      version:
+        name: "--version"
+        shortcut: "-V"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this application version
+        default: false
+      ansi:
+        name: "--ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Force ANSI output
+        default: false
+      no-ansi:
+        name: "--no-ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Disable ANSI output
+        default: false
+      no-interaction:
+        name: "--no-interaction"
+        shortcut: "-n"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not ask any interactive question
+        default: false
+  hidden: false
+- name: dotdigital:sync
+  usage:
+  - dotdigital:sync [--from [FROM]] [--] [<sync>]
+  description: Run syncs to populate email_ tables before importing to Engagement
+    Cloud
+  help: Run syncs to populate email_ tables before importing to Engagement Cloud
+  definition:
+    arguments:
+      sync:
+        name: sync
+        is_required: false
+        is_array: false
+        description: The name of the sync to run (Automation; Campaign; Catalog; Contact;
+          Order; Subscriber; Template; AbandonedCart; Importer)
+        default: 
+    options:
+      from:
+        name: "--from"
+        shortcut: ''
+        accept_value: true
+        is_value_required: false
+        is_multiple: false
+        description: Specify a date/time (parsable by \DateTime) to run a sync from
+          (if supported)
+        default: 
+      help:
+        name: "--help"
+        shortcut: "-h"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this help message
+        default: false
+      quiet:
+        name: "--quiet"
+        shortcut: "-q"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not output any message
+        default: false
+      verbose:
+        name: "--verbose"
+        shortcut: "-v|-vv|-vvv"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: 'Increase the verbosity of messages: 1 for normal output, 2 for
+          more verbose output and 3 for debug'
+        default: false
+      version:
+        name: "--version"
+        shortcut: "-V"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this application version
+        default: false
+      ansi:
+        name: "--ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Force ANSI output
+        default: false
+      no-ansi:
+        name: "--no-ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Disable ANSI output
+        default: false
+      no-interaction:
+        name: "--no-interaction"
+        shortcut: "-n"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not ask any interactive question
+        default: false
+  hidden: false
+- name: downloadable:domains:add
+  usage:
+  - downloadable:domains:add [<domains>...]
+  description: Add domains to the downloadable domains whitelist
+  help: Add domains to the downloadable domains whitelist
+  definition:
+    arguments:
+      domains:
+        name: domains
+        is_required: false
+        is_array: true
+        description: Domains name
+        default: []
+    options:
+      help:
+        name: "--help"
+        shortcut: "-h"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this help message
+        default: false
+      quiet:
+        name: "--quiet"
+        shortcut: "-q"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not output any message
+        default: false
+      verbose:
+        name: "--verbose"
+        shortcut: "-v|-vv|-vvv"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: 'Increase the verbosity of messages: 1 for normal output, 2 for
+          more verbose output and 3 for debug'
+        default: false
+      version:
+        name: "--version"
+        shortcut: "-V"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this application version
+        default: false
+      ansi:
+        name: "--ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Force ANSI output
+        default: false
+      no-ansi:
+        name: "--no-ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Disable ANSI output
+        default: false
+      no-interaction:
+        name: "--no-interaction"
+        shortcut: "-n"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not ask any interactive question
+        default: false
+  hidden: false
+- name: downloadable:domains:remove
+  usage:
+  - downloadable:domains:remove [<domains>...]
+  description: Remove domains from the downloadable domains whitelist
+  help: Remove domains from the downloadable domains whitelist
+  definition:
+    arguments:
+      domains:
+        name: domains
+        is_required: false
+        is_array: true
+        description: Domain names
+        default: []
+    options:
+      help:
+        name: "--help"
+        shortcut: "-h"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this help message
+        default: false
+      quiet:
+        name: "--quiet"
+        shortcut: "-q"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not output any message
+        default: false
+      verbose:
+        name: "--verbose"
+        shortcut: "-v|-vv|-vvv"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: 'Increase the verbosity of messages: 1 for normal output, 2 for
+          more verbose output and 3 for debug'
+        default: false
+      version:
+        name: "--version"
+        shortcut: "-V"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this application version
+        default: false
+      ansi:
+        name: "--ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Force ANSI output
+        default: false
+      no-ansi:
+        name: "--no-ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Disable ANSI output
+        default: false
+      no-interaction:
+        name: "--no-interaction"
+        shortcut: "-n"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not ask any interactive question
+        default: false
+  hidden: false
+- name: downloadable:domains:show
+  usage:
+  - downloadable:domains:show
+  description: Display downloadable domains whitelist
+  help: Display downloadable domains whitelist
+  definition:
+    arguments: []
+    options:
       help:
         name: "--help"
         shortcut: "-h"
@@ -4148,6 +4507,249 @@ commands:
         description: Do not ask any interactive question
         default: false
   hidden: false
+- name: inventory:reservation:create-compensations
+  usage:
+  - inventory:reservation:create-compensations [-r|--raw] [--] [<compensations>...]
+  description: Create reservations by provided compensation arguments
+  help: Create reservations by provided compensation arguments
+  definition:
+    arguments:
+      compensations:
+        name: compensations
+        is_required: false
+        is_array: true
+        description: List of compensation arguments in format "<ORDER_INCREMENT_ID>:<SKU>:<QUANTITY>:<STOCK-ID>"
+        default: []
+    options:
+      raw:
+        name: "--raw"
+        shortcut: "-r"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Raw output
+        default: false
+      help:
+        name: "--help"
+        shortcut: "-h"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this help message
+        default: false
+      quiet:
+        name: "--quiet"
+        shortcut: "-q"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not output any message
+        default: false
+      verbose:
+        name: "--verbose"
+        shortcut: "-v|-vv|-vvv"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: 'Increase the verbosity of messages: 1 for normal output, 2 for
+          more verbose output and 3 for debug'
+        default: false
+      version:
+        name: "--version"
+        shortcut: "-V"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this application version
+        default: false
+      ansi:
+        name: "--ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Force ANSI output
+        default: false
+      no-ansi:
+        name: "--no-ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Disable ANSI output
+        default: false
+      no-interaction:
+        name: "--no-interaction"
+        shortcut: "-n"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not ask any interactive question
+        default: false
+  hidden: false
+- name: inventory:reservation:list-inconsistencies
+  usage:
+  - inventory:reservation:list-inconsistencies [-c|--complete-orders] [-i|--incomplete-orders]
+    [-r|--raw]
+  description: Show all orders and products with salable quantity inconsistencies
+  help: Show all orders and products with salable quantity inconsistencies
+  definition:
+    arguments: []
+    options:
+      complete-orders:
+        name: "--complete-orders"
+        shortcut: "-c"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Show only inconsistencies for complete orders
+        default: false
+      incomplete-orders:
+        name: "--incomplete-orders"
+        shortcut: "-i"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Show only inconsistencies for incomplete orders
+        default: false
+      raw:
+        name: "--raw"
+        shortcut: "-r"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Raw output
+        default: false
+      help:
+        name: "--help"
+        shortcut: "-h"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this help message
+        default: false
+      quiet:
+        name: "--quiet"
+        shortcut: "-q"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not output any message
+        default: false
+      verbose:
+        name: "--verbose"
+        shortcut: "-v|-vv|-vvv"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: 'Increase the verbosity of messages: 1 for normal output, 2 for
+          more verbose output and 3 for debug'
+        default: false
+      version:
+        name: "--version"
+        shortcut: "-V"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this application version
+        default: false
+      ansi:
+        name: "--ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Force ANSI output
+        default: false
+      no-ansi:
+        name: "--no-ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Disable ANSI output
+        default: false
+      no-interaction:
+        name: "--no-interaction"
+        shortcut: "-n"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not ask any interactive question
+        default: false
+  hidden: false
+- name: inventory-geonames:import
+  usage:
+  - inventory-geonames:import <countries>...
+  description: Download and import geo names for source selection algorithm
+  help: Download and import geo names for source selection algorithm
+  definition:
+    arguments:
+      countries:
+        name: countries
+        is_required: true
+        is_array: true
+        description: List of country codes to import
+        default: []
+    options:
+      help:
+        name: "--help"
+        shortcut: "-h"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this help message
+        default: false
+      quiet:
+        name: "--quiet"
+        shortcut: "-q"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not output any message
+        default: false
+      verbose:
+        name: "--verbose"
+        shortcut: "-v|-vv|-vvv"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: 'Increase the verbosity of messages: 1 for normal output, 2 for
+          more verbose output and 3 for debug'
+        default: false
+      version:
+        name: "--version"
+        shortcut: "-V"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this application version
+        default: false
+      ansi:
+        name: "--ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Force ANSI output
+        default: false
+      no-ansi:
+        name: "--no-ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Disable ANSI output
+        default: false
+      no-interaction:
+        name: "--no-interaction"
+        shortcut: "-n"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not ask any interactive question
+        default: false
+  hidden: false
 - name: maintenance:allow-ips
   usage:
   - maintenance:allow-ips [--none] [--add] [--magento-init-params MAGENTO-INIT-PARAMS]
@@ -4429,6 +5031,74 @@ commands:
         description: 'Add to any command to customize Magento initialization parameters
           For example: "MAGE_MODE=developer&MAGE_DIRS[base][path]=/var/www/example.com&MAGE_DIRS[cache][path]=/var/tmp/cache"'
         default: 
+      help:
+        name: "--help"
+        shortcut: "-h"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this help message
+        default: false
+      quiet:
+        name: "--quiet"
+        shortcut: "-q"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not output any message
+        default: false
+      verbose:
+        name: "--verbose"
+        shortcut: "-v|-vv|-vvv"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: 'Increase the verbosity of messages: 1 for normal output, 2 for
+          more verbose output and 3 for debug'
+        default: false
+      version:
+        name: "--version"
+        shortcut: "-V"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this application version
+        default: false
+      ansi:
+        name: "--ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Force ANSI output
+        default: false
+      no-ansi:
+        name: "--no-ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Disable ANSI output
+        default: false
+      no-interaction:
+        name: "--no-interaction"
+        shortcut: "-n"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not ask any interactive question
+        default: false
+  hidden: false
+- name: module:config:status
+  usage:
+  - module:config:status
+  description: Checks the modules configuration in the 'app/etc/config.php' file and
+    reports if they are up to date or not
+  help: Checks the modules configuration in the 'app/etc/config.php' file and reports
+    if they are up to date or not
+  definition:
+    arguments: []
+    options:
       help:
         name: "--help"
         shortcut: "-h"
@@ -4932,6 +5602,282 @@ commands:
         description: Do not ask any interactive question
         default: false
   hidden: false
+- name: msp:security:recaptcha:disable
+  usage:
+  - msp:security:recaptcha:disable
+  description: Disable backend reCaptcha
+  help: Disable backend reCaptcha
+  definition:
+    arguments: []
+    options:
+      help:
+        name: "--help"
+        shortcut: "-h"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this help message
+        default: false
+      quiet:
+        name: "--quiet"
+        shortcut: "-q"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not output any message
+        default: false
+      verbose:
+        name: "--verbose"
+        shortcut: "-v|-vv|-vvv"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: 'Increase the verbosity of messages: 1 for normal output, 2 for
+          more verbose output and 3 for debug'
+        default: false
+      version:
+        name: "--version"
+        shortcut: "-V"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this application version
+        default: false
+      ansi:
+        name: "--ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Force ANSI output
+        default: false
+      no-ansi:
+        name: "--no-ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Disable ANSI output
+        default: false
+      no-interaction:
+        name: "--no-interaction"
+        shortcut: "-n"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not ask any interactive question
+        default: false
+  hidden: false
+- name: msp:security:tfa:disable
+  usage:
+  - msp:security:tfa:disable
+  description: Globally disable two factor auth
+  help: Globally disable two factor auth
+  definition:
+    arguments: []
+    options:
+      help:
+        name: "--help"
+        shortcut: "-h"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this help message
+        default: false
+      quiet:
+        name: "--quiet"
+        shortcut: "-q"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not output any message
+        default: false
+      verbose:
+        name: "--verbose"
+        shortcut: "-v|-vv|-vvv"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: 'Increase the verbosity of messages: 1 for normal output, 2 for
+          more verbose output and 3 for debug'
+        default: false
+      version:
+        name: "--version"
+        shortcut: "-V"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this application version
+        default: false
+      ansi:
+        name: "--ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Force ANSI output
+        default: false
+      no-ansi:
+        name: "--no-ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Disable ANSI output
+        default: false
+      no-interaction:
+        name: "--no-interaction"
+        shortcut: "-n"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not ask any interactive question
+        default: false
+  hidden: false
+- name: msp:security:tfa:providers
+  usage:
+  - msp:security:tfa:providers
+  description: List all available providers
+  help: List all available providers
+  definition:
+    arguments: []
+    options:
+      help:
+        name: "--help"
+        shortcut: "-h"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this help message
+        default: false
+      quiet:
+        name: "--quiet"
+        shortcut: "-q"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not output any message
+        default: false
+      verbose:
+        name: "--verbose"
+        shortcut: "-v|-vv|-vvv"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: 'Increase the verbosity of messages: 1 for normal output, 2 for
+          more verbose output and 3 for debug'
+        default: false
+      version:
+        name: "--version"
+        shortcut: "-V"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this application version
+        default: false
+      ansi:
+        name: "--ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Force ANSI output
+        default: false
+      no-ansi:
+        name: "--no-ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Disable ANSI output
+        default: false
+      no-interaction:
+        name: "--no-interaction"
+        shortcut: "-n"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not ask any interactive question
+        default: false
+  hidden: false
+- name: msp:security:tfa:reset
+  usage:
+  - msp:security:tfa:reset <user> <provider>
+  description: Reset configuration for one user
+  help: Reset configuration for one user
+  definition:
+    arguments:
+      user:
+        name: user
+        is_required: true
+        is_array: false
+        description: Username
+        default: 
+      provider:
+        name: provider
+        is_required: true
+        is_array: false
+        description: Provider code
+        default: 
+    options:
+      help:
+        name: "--help"
+        shortcut: "-h"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this help message
+        default: false
+      quiet:
+        name: "--quiet"
+        shortcut: "-q"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not output any message
+        default: false
+      verbose:
+        name: "--verbose"
+        shortcut: "-v|-vv|-vvv"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: 'Increase the verbosity of messages: 1 for normal output, 2 for
+          more verbose output and 3 for debug'
+        default: false
+      version:
+        name: "--version"
+        shortcut: "-V"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this application version
+        default: false
+      ansi:
+        name: "--ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Force ANSI output
+        default: false
+      no-ansi:
+        name: "--no-ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Disable ANSI output
+        default: false
+      no-interaction:
+        name: "--no-interaction"
+        shortcut: "-n"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not ask any interactive question
+        default: false
+  hidden: false
 - name: newrelic:create:deploy-marker
   usage:
   - newrelic:create:deploy-marker <message> <change_log> [<user>]
@@ -5086,30 +6032,22 @@ commands:
 - name: queue:consumers:start
   usage:
   - queue:consumers:start [--max-messages MAX-MESSAGES] [--batch-size BATCH-SIZE]
-    [--area-code AREA-CODE] [--pid-file-path PID-FILE-PATH] [--] <consumer>
+    [--area-code AREA-CODE] [--single-thread] [--pid-file-path PID-FILE-PATH] [--]
+    <consumer>
   description: Start MessageQueue consumer
-  help: |-
-    This command starts MessageQueue consumer by its name.
-
-    To start consumer which will process all queued messages and terminate execution:
-
-        <comment>bin/magento queue:consumers:start someConsumer</comment>
-
-    To specify the number of messages which should be processed by consumer before its termination:
-
-        <comment>bin/magento queue:consumers:start someConsumer --max-messages=50</comment>
-
-    To specify the number of messages per batch for the batch consumer:
-
-        <comment>bin/magento queue:consumers:start someConsumer --batch-size=500</comment>
-
-    To specify the preferred area:
-
-        <comment>bin/magento queue:consumers:start someConsumer --area-code='adminhtml'</comment>
-
-    To save PID enter path:
-
-        <comment>bin/magento queue:consumers:start someConsumer --pid-file-path='/var/someConsumer.pid'</comment>
+  help: "This command starts MessageQueue consumer by its name.\n\nTo start consumer
+    which will process all queued messages and terminate execution:\n\n    <comment>bin/magento
+    queue:consumers:start someConsumer</comment>\n\nTo specify the number of messages
+    which should be processed by consumer before its termination:\n\n    <comment>bin/magento
+    queue:consumers:start someConsumer --max-messages=50</comment>\n\nTo specify the
+    number of messages per batch for the batch consumer:\n\n    <comment>bin/magento
+    queue:consumers:start someConsumer --batch-size=500</comment>\n\nTo specify the
+    preferred area:\n\n    <comment>bin/magento queue:consumers:start someConsumer
+    --area-code='adminhtml'</comment>\n    \nTo do not run multiple copies of one
+    consumer simultaneously:\n\n    <comment>bin/magento queue:consumers:start someConsumer
+    --single-thread'</comment>\n\nTo save PID enter path (This option is deprecated,
+    use --single-thread instead):\n\n    <comment>bin/magento queue:consumers:start
+    someConsumer --pid-file-path='/var/someConsumer.pid'</comment>"
   definition:
     arguments:
       consumer:
@@ -5146,13 +6084,23 @@ commands:
         is_multiple: false
         description: The preferred area (global, adminhtml, etc...) default is global.
         default: 
+      single-thread:
+        name: "--single-thread"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: This option prevents running multiple copies of one consumer
+          simultaneously.
+        default: false
       pid-file-path:
         name: "--pid-file-path"
         shortcut: ''
         accept_value: true
         is_value_required: true
         is_multiple: false
-        description: The file path for saving PID
+        description: The file path for saving PID (This option is deprecated, use
+          --single-thread instead)
         default: 
       help:
         name: "--help"
@@ -5688,7 +6636,7 @@ commands:
         is_value_required: true
         is_multiple: false
         description: Database server engine
-        default: innodb
+        default: 
       db-password:
         name: "--db-password"
         shortcut: ''
@@ -5712,7 +6660,7 @@ commands:
         is_value_required: true
         is_multiple: false
         description: Database type
-        default: mysql4
+        default: 
       db-init-statements:
         name: "--db-init-statements"
         shortcut: ''
@@ -5720,7 +6668,7 @@ commands:
         is_value_required: true
         is_multiple: false
         description: Database  initial set of commands
-        default: SET NAMES utf8;
+        default: 
       skip-db-validation:
         name: "--skip-db-validation"
         shortcut: "-s"
@@ -6064,7 +7012,7 @@ commands:
         is_value_required: true
         is_multiple: false
         description: Lock provider name
-        default: db
+        default: 
       lock-db-prefix:
         name: "--lock-db-prefix"
         shortcut: ''
@@ -6884,7 +7832,7 @@ commands:
         is_value_required: true
         is_multiple: false
         description: Database server engine
-        default: innodb
+        default: 
       db-password:
         name: "--db-password"
         shortcut: ''
@@ -6908,7 +7856,7 @@ commands:
         is_value_required: true
         is_multiple: false
         description: Database type
-        default: mysql4
+        default: 
       db-init-statements:
         name: "--db-init-statements"
         shortcut: ''
@@ -6916,7 +7864,7 @@ commands:
         is_value_required: true
         is_multiple: false
         description: Database  initial set of commands
-        default: SET NAMES utf8;
+        default: 
       skip-db-validation:
         name: "--skip-db-validation"
         shortcut: "-s"
@@ -7260,7 +8208,7 @@ commands:
         is_value_required: true
         is_multiple: false
         description: Lock provider name
-        default: db
+        default: 
       lock-db-prefix:
         name: "--lock-db-prefix"
         shortcut: ''
@@ -8695,6 +9643,229 @@ commands:
         description: Do not ask any interactive question
         default: false
   hidden: false
+- name: yotpo:reset
+  usage:
+  - yotpo:reset [-e|--entity [ENTITY]]
+  description: Reset Yotpo sync flags &/or configurations
+  help: Reset Yotpo sync flags &/or configurations
+  definition:
+    arguments: []
+    options:
+      entity:
+        name: "--entity"
+        shortcut: "-e"
+        accept_value: true
+        is_value_required: false
+        is_multiple: false
+        description: Entity type (orders)
+        default: orders
+      help:
+        name: "--help"
+        shortcut: "-h"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this help message
+        default: false
+      quiet:
+        name: "--quiet"
+        shortcut: "-q"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not output any message
+        default: false
+      verbose:
+        name: "--verbose"
+        shortcut: "-v|-vv|-vvv"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: 'Increase the verbosity of messages: 1 for normal output, 2 for
+          more verbose output and 3 for debug'
+        default: false
+      version:
+        name: "--version"
+        shortcut: "-V"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this application version
+        default: false
+      ansi:
+        name: "--ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Force ANSI output
+        default: false
+      no-ansi:
+        name: "--no-ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Disable ANSI output
+        default: false
+      no-interaction:
+        name: "--no-interaction"
+        shortcut: "-n"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not ask any interactive question
+        default: false
+  hidden: false
+- name: yotpo:sync
+  usage:
+  - yotpo:sync [-e|--entity ENTITY] [-l|--limit [LIMIT]]
+  description: Sync Yotpo manually (reviews module)
+  help: Sync Yotpo manually (reviews module)
+  definition:
+    arguments: []
+    options:
+      entity:
+        name: "--entity"
+        shortcut: "-e"
+        accept_value: true
+        is_value_required: true
+        is_multiple: false
+        description: 'Entity type (allowed options: orders)'
+        default: orders
+      limit:
+        name: "--limit"
+        shortcut: "-l"
+        accept_value: true
+        is_value_required: false
+        is_multiple: false
+        description: 'Max entity items to sync. WARNING: Setting a high sync limit
+          (or no limit) may result in a high server load (0=no limit).'
+        default: 
+      help:
+        name: "--help"
+        shortcut: "-h"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this help message
+        default: false
+      quiet:
+        name: "--quiet"
+        shortcut: "-q"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not output any message
+        default: false
+      verbose:
+        name: "--verbose"
+        shortcut: "-v|-vv|-vvv"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: 'Increase the verbosity of messages: 1 for normal output, 2 for
+          more verbose output and 3 for debug'
+        default: false
+      version:
+        name: "--version"
+        shortcut: "-V"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this application version
+        default: false
+      ansi:
+        name: "--ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Force ANSI output
+        default: false
+      no-ansi:
+        name: "--no-ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Disable ANSI output
+        default: false
+      no-interaction:
+        name: "--no-interaction"
+        shortcut: "-n"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not ask any interactive question
+        default: false
+  hidden: false
+- name: yotpo:update-metadata
+  usage:
+  - yotpo:update-metadata
+  description: Manually send platform metadata to Yotpo
+  help: Manually send platform metadata to Yotpo
+  definition:
+    arguments: []
+    options:
+      help:
+        name: "--help"
+        shortcut: "-h"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this help message
+        default: false
+      quiet:
+        name: "--quiet"
+        shortcut: "-q"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not output any message
+        default: false
+      verbose:
+        name: "--verbose"
+        shortcut: "-v|-vv|-vvv"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: 'Increase the verbosity of messages: 1 for normal output, 2 for
+          more verbose output and 3 for debug'
+        default: false
+      version:
+        name: "--version"
+        shortcut: "-V"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Display this application version
+        default: false
+      ansi:
+        name: "--ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Force ANSI output
+        default: false
+      no-ansi:
+        name: "--no-ansi"
+        shortcut: ''
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Disable ANSI output
+        default: false
+      no-interaction:
+        name: "--no-interaction"
+        shortcut: "-n"
+        accept_value: false
+        is_value_required: false
+        is_multiple: false
+        description: Do not ask any interactive question
+        default: false
+  hidden: false
 namespaces:
 - id: _global
   commands:
@@ -8750,6 +9921,15 @@ namespaces:
   - dev:tests:run
   - dev:urn-catalog:generate
   - dev:xml:convert
+- id: dotdigital
+  commands:
+  - dotdigital:migrate
+  - dotdigital:sync
+- id: downloadable
+  commands:
+  - downloadable:domains:add
+  - downloadable:domains:remove
+  - downloadable:domains:show
 - id: encryption
   commands:
   - encryption:payment-data:update
@@ -8778,6 +9958,13 @@ namespaces:
   - info:dependencies:show-modules-circular
   - info:language:list
   - info:timezone:list
+- id: inventory
+  commands:
+  - inventory:reservation:create-compensations
+  - inventory:reservation:list-inconsistencies
+- id: inventory-geonames
+  commands:
+  - inventory-geonames:import
 - id: maintenance
   commands:
   - maintenance:allow-ips
@@ -8786,10 +9973,17 @@ namespaces:
   - maintenance:status
 - id: module
   commands:
+  - module:config:status
   - module:disable
   - module:enable
   - module:status
   - module:uninstall
+- id: msp
+  commands:
+  - msp:security:recaptcha:disable
+  - msp:security:tfa:disable
+  - msp:security:tfa:providers
+  - msp:security:tfa:reset
 - id: newrelic
   commands:
   - newrelic:create:deploy-marker
@@ -8830,3 +10024,8 @@ namespaces:
 - id: varnish
   commands:
   - varnish:vcl:generate
+- id: yotpo
+  commands:
+  - yotpo:reset
+  - yotpo:sync
+  - yotpo:update-metadata

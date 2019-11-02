@@ -351,6 +351,77 @@ class Courses extends AbstractEntity
 
 {% endcollapsible %}
 
+### Data validation
+
+Sometimes, there is a need to validate data before inserting it into table. To do that, we have to add all our validation rules to `validateRow` method.
+
+```php
+/**
+ * Row validation
+ *
+ * @param array $rowData
+ * @param int $rowNum
+ *
+ * @return bool
+ */
+public function validateRow(array $rowData, $rowNum): bool
+{
+    $name = $rowData['name'] ?? '';
+    $duration = (int) $rowData['duration'] ?? 0;
+
+    if (!$name) {
+        $this->addRowError('NameIsRequired', $rowNum);
+    }
+
+    if (!$duration) {
+        $this->addRowError('DurationIsRequired', $rowNum);
+    }
+
+    if (isset($this->_validatedRows[$rowNum])) {
+        return !$this->getErrorAggregator()->isRowInvalid($rowNum);
+    }
+
+    $this->_validatedRows[$rowNum] = true;
+
+    return !$this->getErrorAggregator()->isRowInvalid($rowNum);
+}
+```
+
+We need to instantiate our new validation rules:
+
+```php
+/**
+ * Init Error Messages
+ */
+private function initMessageTemplates()
+{
+    $this->addMessageTemplate(
+        'NameIsRequired',
+        __('The name cannot be empty.')
+    );
+    $this->addMessageTemplate(
+        'DurationIsRequired',
+        __('Duration should be greater than 0.')
+    );
+}
+```
+
+And finally, call the `initMessageTemplates` method within `__construct` method:
+
+```php
+public function __construct(
+    ...
+) {
+    ...
+
+    $this->initMessageTemplates();
+}
+```
+
+The validation rules will be checking for a required **name** and a greater than 0 **duration**.
+
+![Validating Data]({{ site.baseurl }}/common/images/ext-best-practices/import-validation.png)
+
 ## Step 3. Providing the sample file
 
 To add the ability to download a sample csv file for our new entity, create the following file:

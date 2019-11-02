@@ -17,10 +17,10 @@ Some parts of Magento code might not comply with the standard, but we are workin
 
 The standard was developed in the scope of our efforts to ensure the following:
 
-- Decouple visual (CSS) layer from the functional (JavaScript) layer.
-- Decouple functional (JavaScript) layer from the [markup](https://glossary.magento.com/markup) (HTML).
-- Reinstate emphasis on using of [jQuery](https://glossary.magento.com/jquery) templates.
-- Reinstate emphasis on decoupling HTML, [CSS](https://glossary.magento.com/css) and JS from [PHP](https://glossary.magento.com/php) classes.
+-  Decouple visual (CSS) layer from the functional (JavaScript) layer.
+-  Decouple functional (JavaScript) layer from the [markup](https://glossary.magento.com/markup) (HTML).
+-  Reinstate emphasis on using of [jQuery](https://glossary.magento.com/jquery) templates.
+-  Reinstate emphasis on decoupling HTML, [CSS](https://glossary.magento.com/css) and JS from [PHP](https://glossary.magento.com/php) classes.
 
 Use [RFC 2119](http://www.ietf.org/rfc/rfc2119.txt) to interpret the "MUST," "MUST NOT," "REQUIRED," "SHALL," "SHALL NOT," "SHOULD," "SHOULD NOT," "RECOMMENDED," "MAY," and "OPTIONAL" keywords.
 
@@ -28,7 +28,7 @@ Use [RFC 2119](http://www.ietf.org/rfc/rfc2119.txt) to interpret the "MUST," "MU
 
 ### For attribute names and values you must use meaningful unabbreviated lowercase words comprised of Latin characters concatenated with a hyphen (`-`)
 
-- Helps simplify and unify naming conventions that are used to apply visual styles to page elements.
+-  Helps simplify and unify naming conventions that are used to apply visual styles to page elements.
 
 **Acceptable**
 
@@ -56,8 +56,8 @@ Use [RFC 2119](http://www.ietf.org/rfc/rfc2119.txt) to interpret the "MUST," "MU
 
 ### Semantic representation may rely on ID attribute
 
-- Forces engineers to think about reusable page components instead of unique singleton components.
-- Reduces long-term maintenance efforts.
+-  Forces engineers to think about reusable page components instead of unique singleton components.
+-  Reduces long-term maintenance efforts.
 
 **Acceptable [PHTML](https://glossary.magento.com/phtml) template**
 
@@ -109,21 +109,21 @@ The following list will help you make a distinction between the actual meaning o
 
 **Content (Semantics)** includes:
 
-- logic
-- information
-- data
-- model
-- outline
-- message
+-  logic
+-  information
+-  data
+-  model
+-  outline
+-  message
 
 **Presentation** includes:
 
-- aesthetic
-- graphics
-- design
-- style
-- visualization
-- view
+-  aesthetic
+-  graphics
+-  design
+-  style
+-  visualization
+-  view
 
 ### You must use semantic HTML markup only, and must not use presentation markup
 
@@ -147,10 +147,10 @@ The following list will help you make a distinction between the actual meaning o
 
 As the first option, you are required to use [HTML](https://glossary.magento.com/html) class attributes. In case this option is not applicable then it is recommended to use HTML tags and form element's type attribute.
 
-- Enforces clean, strict separation between visual and business logic layers.
-- Allows [frontend](https://glossary.magento.com/frontend) and [backend](https://glossary.magento.com/backend) teams to work independently.
-- Allows changing look and feel without affecting business functionality, and vice versa.
-- Enables frontend teams to clean up old styles quickly and easily when refactoring.
+-  Enforces clean, strict separation between visual and business logic layers.
+-  Allows [frontend](https://glossary.magento.com/frontend) and [backend](https://glossary.magento.com/backend) teams to work independently.
+-  Allows changing look and feel without affecting business functionality, and vice versa.
+-  Enables frontend teams to clean up old styles quickly and easily when refactoring.
 
 **Acceptable CSS selectors**
 
@@ -179,11 +179,16 @@ section[role="main"] { ... }
 
 ### You must not hard-code CSS styles in JavaScript files
 
-{: .bs-callout-info }
-Exception: CSS attributes where values must be calculated beyond the css-topics/LESS code.
-   - Simplifies change of the default look and feel by adding CSS classes to and removing them from elements.
-   - Improves style extensibility.
-   - Reduces long-term maintenance efforts by containing CSS styles in a single place.
+{%
+include note.html
+type='info'
+content='Exception: CSS attributes where values must be calculated beyond the css-topics/LESS code.
+
+-  Simplifies change of the default look and feel by adding CSS classes to and removing them from elements.
+-  Improves style extensibility.
+-  Reduces long-term maintenance efforts by containing CSS styles in a single place.'
+
+%}
 
 **Acceptable [JavaScript](https://glossary.magento.com/javascript) [widget](https://glossary.magento.com/widget) file**
 
@@ -216,9 +221,9 @@ this.element.on('click', function() {
 
 ### You must not use inline CSS styles inside HTML tags
 
-- Improves style extensibility allowing engineers to overload styles easier by toggling classes.
-- Enforces clean, strict separation between visual presentation and markup.
-- Enables frontend teams quickly and easily clean up old styles.
+-  Improves style extensibility allowing engineers to overload styles easier by toggling classes.
+-  Enforces clean, strict separation between visual presentation and markup.
+-  Enables frontend teams quickly and easily clean up old styles.
 
 **Acceptable PHTML template**
 
@@ -236,9 +241,9 @@ this.element.on('click', function() {
 
 ### Business logic must rely on only the form, form element name attributes, or data attributes
 
-- Enforces clean, strict separation between visual and business logic layers.
-- Allows frontend and backend teams to work independently.
-- Allows changing business logic without affecting styling and vice versa.
+-  Enforces clean, strict separation between visual and business logic layers.
+-  Allows frontend and backend teams to work independently.
+-  Allows changing business logic without affecting styling and vice versa.
 
 **Acceptable PHTML template**
 
@@ -302,7 +307,7 @@ HTML helper class names added in JavaScript REQUIRE underscore symbol ("_") at t
 
 ### You must not select DOM elements based on HTML structure
 
-- Allows frontend teams to modify markup and themes without affecting business logic.
+-  Allows frontend teams to modify markup and themes without affecting business logic.
 
 **Acceptable JavaScript file**
 
@@ -320,14 +325,48 @@ this.element.parent().find('[data-action="edit"]').data('entity_id');
 
 ### You must use jQuery templates to insert recurring markup into DOM structure
 
-- Reinstates emphasis on jQuery templates. For more information, see JavaScript Coding Best Practices.
-- Reduces long-term maintenance efforts by having markup code stored in one place.
-- Simplifies frontend debugging efforts.
+-  Reinstates emphasis on jQuery templates. For more information, see JavaScript Coding Best Practices.
+-  Reduces long-term maintenance efforts by having markup code stored in one place.
+-  Simplifies frontend debugging efforts.
+
+## PHTML templates and PHP files
+
+### You must not hard-code inline CSS styles in PHP classes
+
+-  Reduces long-term maintenance efforts by having styles stored in one place.
+-  Simplifies debugging and reduces number of files to be modified.
+-  Makes styles more extensible and easier to override when needed.
+
+**Acceptable PHP file**
+
+```php
+...
+$fieldset->addField('new_category_parent', 'text', array(
+    'label'    => __('Parent Category'),
+    'title'    => __('Parent Category'),
+    'required' => true,
+    'class'    => 'parent category',
+));
+...
+```
+
+**Unacceptable PHP file**
+
+```php
+...
+$fieldset->addField('new_category_parent', 'text', array(
+    'label'    => __('Parent Category'),
+    'title'    => __('Parent Category'),
+    'required' => true,
+    'style'    => 'border: 1px solid #ccc;',
+));
+...
+```
 
 ### You must not hard-code inline JavaScript in PHP classes
 
-- Reduces long term maintenance by having frontend business logic stored in one place.
-- Reduces the number of files to be modified.
+-  Reduces long term maintenance by having frontend business logic stored in one place.
+-  Reduces the number of files to be modified.
 
 **Acceptable PHP file**
 
@@ -384,87 +423,10 @@ jQuery('#{$htmlId}-suggest').treeSuggest({$selectorOptions});
 <?php echo $this->getAfterElementHtml(); ?>
 ```
 
-## PHTML templates and PHP files
-
-### You must not hard-code inline CSS styles in PHP classes
-
-- Reduces long-term maintenance efforts by having styles stored in one place.
-- Simplifies debugging and reduces number of files to be modified.
-- Makes styles more extensible and easier to override when needed.
-
-**Acceptable PHP file**
-
-```php
-...
-$fieldset->addField('new_category_parent', 'text', array(
-    'label'    => __('Parent Category'),
-    'title'    => __('Parent Category'),
-    'required' => true,
-    'class'    => 'parent category',
-));
-...
-```
-
-**Unacceptable PHP file**
-
-```php
-...
-$fieldset->addField('new_category_parent', 'text', array(
-    'label'    => __('Parent Category'),
-    'title'    => __('Parent Category'),
-    'required' => true,
-    'style'    => 'border: 1px solid #ccc;',
-));
-...
-```
-
-### You must not hard-code inline JavaScript in PHP classes
-
-- Reduces long term maintenance by having frontend business logic stored in one place.
-- Reduces the number of files to be modified.
-
-**Acceptable PHP file**
-
-```php
-...
-public function getSelectorOptions()
-{
-    return $selectorOptions;
-}
-...
-```
-
-**Acceptable PHTML template**
-
-```php
-...
-<div data-mage-init="{treeSuggest: [<?php echo $this->getSelectorOptions(); ?>]}"></div>
-...
-```
-
-**Unacceptable PHP file**
-
-```php
-...
-public function getAfterElementHtml()
-{
-    return <<<HTML
-<script>
-jQuery('#{$htmlId}-suggest').treeSuggest({$selectorOptions});
-</script>
-...
-```
-
-**Unacceptable PHTML template**
-
-```php
-<?php echo $this->getAfterElementHtml(); ?>
-```
-
 ### You must not hard-code HTML markup (used in the `<body>` tag) in PHP classes
 
-- Reduces long-term maintenance efforts by having markup stored in one place.
-- Reduces the number of files to be modified.
+-  Reduces long-term maintenance efforts by having markup stored in one place.
+-  Reduces the number of files to be modified.
 
 **Acceptable PHP file**
 
@@ -512,10 +474,10 @@ public function getCheckbox($elementName){
 
 ```php
 <span class="attribute-change-checkbox">
-	<label>
-		<?php echo $this->getCheckbox($element)?>
-		<?php echo __('Change'); ?>
-	</label>
+   <label>
+      <?php echo $this->getCheckbox($element)?>
+      <?php echo __('Change'); ?>
+   </label>
 </span>
 <!-- jQuery.hide() code can be either located in the widget itself OR can ask PHP Block class whether or not 'weight_and_type_switcher' should be visible. Based on this condition CSS can be applied to hide/show those elements. -->
 ```

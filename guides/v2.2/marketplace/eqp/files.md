@@ -5,11 +5,11 @@ title: Files
 
 Use `files` resources to manage all code artifacts and assets associated with an extension or a theme:
 
-* Magento 1 tarball (.tgz)
-* Magento 2 ZIP files
-* Image files for logos and galleries
-* Product Icons
-* PDF documents for User Guides, Installation Guides, and Reference Guides
+*  Magento 1 tarball (.tgz)
+*  Magento 2 ZIP files
+*  Image files for logos and galleries
+*  Product Icons
+*  PDF documents for User Guides, Installation Guides, and Reference Guides
 
 Each file upload receives a unique ID. You must associate these IDs with your submission later using the [packages API]({{ page.baseurl }}/marketplace/eqp/packages.html).
 
@@ -21,7 +21,7 @@ All files that you upload are inspected for malware. We only accept packages if 
 
 Use this API to upload files, retrieve file upload status, and remove files.
 
-```
+```http
 GET /rest/v1/files/uploads/:file_upload_id
 POST /rest/v1/files/uploads
 DELETE /rest/v1/files/uploads/:file_upload_id
@@ -31,13 +31,13 @@ DELETE /rest/v1/files/uploads/:file_upload_id
 
 Use the upload ID to retrieve details about a file upload.
 
-```
+```http
 GET /rest/v1/files/uploads/:file_upload_id
 ```
 
 **Request**
 
-```shell
+```bash
 curl -X GET \
      -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
      https://developer-api.magento.com/rest/v1/files/uploads/dhsiXjdksW17623
@@ -75,14 +75,14 @@ Details on the response fields:
 
 You upload files in bulk upload using the **multipart/form-data** encoding type. With this approach, binary files can be uploaded without the need for additional encoding, which can result in an increase in overall upload size.
 
-```
+```http
 POST /rest/v1/files/uploads
 ```
 
 A sample request body of mime type, [multipart/form-data](https://www.w3.org/TR/html401/interact/forms.html#h-17.13.4.2) with a boundary string of `----------287032381131322`
 is shown below:
 
-```shell
+```text
 ------------287032381131322
 Content-Disposition: form-data; name="file[]"; filename=“acme_one-click-checkout.zip"
 Content-Type: application/zip
@@ -110,17 +110,17 @@ Content-Type: application/pdf
 ------------287032381131322--
 ```
 
-* Each part has a header and body with `Content-Disposition` header always set to `form-data`.
-* The `name` value must be set to `file[]` for all parts.
-* The original filename must be supplied in the `filename` parameter.
-* The `Content-Type` header must be set to the appropriate mime-type for the file.
-* The body of each part is the full contents of the raw file.
+*  Each part has a header and body with `Content-Disposition` header always set to `form-data`.
+*  The `name` value must be set to `file[]` for all parts.
+*  The original filename must be supplied in the `filename` parameter.
+*  The `Content-Type` header must be set to the appropriate mime-type for the file.
+*  The body of each part is the full contents of the raw file.
 
 For example, if you save the previous request body is saved to a temporary file at `/tmp/files-payload`, you can use it in your POST request to upload the file:
 
 **Request**
 
-```shell
+```bash
 curl -X POST \
      -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
      -H "Content-Type: multipart/form-data; boundary=----------287032381131322" \
@@ -181,7 +181,7 @@ The `file_upload_id` must be tracked for subsequent package submission APIs.
 
 You can only dissociate files from packages that have not been published on the Magento Marketplace. Removing a file without the optional `submission_ids` parameter disassociates it from all linked packages. If no packages are associated with a file, it will be removed.
 
-```
+```http
 DELETE /rest/v1/files/uploads/:file_upload_id
 ```
 
@@ -194,7 +194,7 @@ Available parameters:
 
 **Request**
 
-```shell
+```bash
 curl -X DELETE \
      -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
      https://developer-api.magento.com/rest/v1/files/uploads/fur7284XcgdcV
@@ -224,7 +224,7 @@ curl -X DELETE \
 ]
 ```
 
-* The API returns a batch response for each item, which includes a `code` and `message`.
-* A 200 OK HTTP response code indicates a successful upload.
-* Any non-200 HTTP response code indicates an error.
-* If no packages are associated with a file, the API returns an empty list and the file is removed.
+*  The API returns a batch response for each item, which includes a `code` and `message`.
+*  A 200 OK HTTP response code indicates a successful upload.
+*  Any non-200 HTTP response code indicates an error.
+*  If no packages are associated with a file, the API returns an empty list and the file is removed.

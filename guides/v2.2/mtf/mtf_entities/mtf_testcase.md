@@ -5,8 +5,8 @@ title: Test case
 
 The Magento Functional Testing Framework supports two types of functional tests:
 
-- Injectable test: the main type of the FTF test that uses [XML](https://glossary.magento.com/xml) [data set][] files as inputs
-- [Scenario test][]: supports a Magento modularity and enables you to inject one step into another test
+-  Injectable test: the main type of the FTF test that uses [XML](https://glossary.magento.com/xml) [data set][] files as inputs
+-  [Scenario test][]: supports a Magento modularity and enables you to inject one step into another test
 
 This topic discusses the injectable test only.
 
@@ -57,10 +57,10 @@ The `test()` method must contain the test steps described in a [docblock](#docbl
 
 In the following example, the test includes preconditions and test steps. Preconditions contain a logic of different scenarios about creating a product (depending on the [category](https://glossary.magento.com/category) state). Test steps are the following:
 
-- opening of the product creation grid page
-- searching by the `sku` parameter and opening of the product
-- editing of the found product
-- saving of the edited product
+-  opening of the product creation grid page
+-  searching by the `sku` parameter and opening of the product
+-  editing of the found product
+-  saving of the edited product
 
 ```php
 
@@ -142,8 +142,8 @@ __Step 3.__ Give it a name using the following format:
 
 For example:
 
-- <span style="color:blue">Create</span><span style="color:red">ConfigurableProduct</span>EntityTest
-- <span style="color:blue">Create</span><span style="color:red">CatalogEvent</span>Entity<span style="color:green">FromCategoryPage</span>Test
+-  <span style="color:blue">Create</span><span style="color:red">ConfigurableProduct</span>EntityTest
+-  <span style="color:blue">Create</span><span style="color:red">CatalogEvent</span>Entity<span style="color:green">FromCategoryPage</span>Test
 
 __Step 4.__ If you have preconditions, prepare the data using a [__prepare()](#prepare-method) method
 

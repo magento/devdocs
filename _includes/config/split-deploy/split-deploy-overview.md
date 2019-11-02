@@ -23,13 +23,14 @@ Staging system
 
 Production system
 : Your live store. You should make minimal configuration changes here and no changes to:
-   - websites
-   - stores
-   - store views
-   - products
-   - product view settings
-   - catalog
-   - categories
-   - category view settings.
+
+   -  websites
+   -  stores
+   -  store views
+   -  products
+   -  product view settings
+   -  catalog
+   -  categories
+   -  category view settings.
 
  You should make all those types of changes in your development system.

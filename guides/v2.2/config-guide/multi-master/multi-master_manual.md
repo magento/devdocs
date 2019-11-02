@@ -14,25 +14,26 @@ If the Magento application is already in production or if you've already install
 
 Manually splitting databases involves:
 
-* Create the [checkout](https://glossary.magento.com/checkout) and order management system (OMS) databases
-* Run a series of SQL scripts that:
+*  Create the [checkout](https://glossary.magento.com/checkout) and order management system (OMS) databases
+*  Run a series of SQL scripts that:
 
-  * Drop foreign keys
-  * Back up sales and quote database tables
-  * Move tables from your main Magento database to the sales and quote databases
+   *  Drop foreign keys
+   *  Back up sales and quote database tables
+   *  Move tables from your main Magento database to the sales and quote databases
 
 {:.bs-callout .bs-callout-warning}
 If any custom code uses JOINs with tables in the sales and quote databases, you _cannot_ use split databases. If in doubt, contact the authors of any custom code or extensions to make sure their code does not use JOINs.
 
 This topic uses the following naming conventions:
 
-* The main Magento database name is `magento` and its username and password are both `magento`
-* The quote database name is `magento_quote` and its username and password are both `magento_quote`
+*  The main Magento database name is `magento` and its username and password are both `magento`
+*  The quote database name is `magento_quote` and its username and password are both `magento_quote`
 
-    The quote database is also referred to as the *checkout* database.
-* The sales database name is `magento_sales` and its username and password are both `magento_sales`
+   The quote database is also referred to as the *checkout* database.
 
-    The sales database is also referred to as the order management system (*OMS*) database.
+*  The sales database name is `magento_sales` and its username and password are both `magento_sales`
+
+   The sales database is also referred to as the order management system (*OMS*) database.
 
 {:.bs-callout .bs-callout-info}
 This guide assumes all three databases are on the same host as the Magento application. However, the choice of where to locate the databases and what they're named is up to you. We hope our examples make the instructions easier to follow.
@@ -48,9 +49,9 @@ To back up your system:
 1. Log in to your Magento server as, or switch to, the [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/apache-user.html).
 1. Enter the following commands:
 
-    ```bash
-    magento setup:backup --code --media --db
-    ```
+   ```bash
+   magento setup:backup --code --media --db
+   ```
 
 1. Continue with the next section.
 
@@ -66,46 +67,50 @@ Create sales and OMS quote databases as follows:
 1. Log in to your database server as any user.
 1. Enter the following command to get to a MySQL command prompt:
 
-    ```bash
-    mysql -u root -p
-    ```
+   ```bash
+   mysql -u root -p
+   ```
 
 1. Enter the MySQL `root` user's password when prompted.
 1. Enter the following commands in the order shown to create database instances named `magento_quote` and `magento_sales` with the same usernames and passwords:
 
-        create database magento_quote;
-        GRANT ALL ON magento_quote.* TO magento_quote@localhost IDENTIFIED BY 'magento_quote';
+   ```shell
+   create database magento_quote;
+   GRANT ALL ON magento_quote.* TO magento_quote@localhost IDENTIFIED BY 'magento_quote';
+   ```
 
-        create database magento_sales;
-        GRANT ALL ON magento_sales.* TO magento_sales@localhost IDENTIFIED BY 'magento_sales';
+   ```shell
+   create database magento_sales;
+   GRANT ALL ON magento_sales.* TO magento_sales@localhost IDENTIFIED BY 'magento_sales';
+   ```
 
 1. Enter `exit` to quit the command prompt.
 
 1. Verify the databases, one at a time:
 
-    quote database:
+   quote database:
 
-    ```bash
-    mysql -u magento_quote -p
-    ```
+   ```bash
+   mysql -u magento_quote -p
+   ```
 
-    ```bash
-    exit
-    ```
+   ```shell
+   exit
+   ```
 
-    ```bash
-    mysql -u magento_quote -p
-    ```
+   ```bash
+   mysql -u magento_quote -p
+   ```
 
-    ```bash
-    mysql -u magento_sales -p
-    ```
+   ```bash
+   mysql -u magento_sales -p
+   ```
 
-    ```bash
-    exit
-    ```
+   ```shell
+   exit
+   ```
 
-    If the MySQL monitor displays, you created the database properly. If an error displays, repeat the preceding commands.
+   If the MySQL monitor displays, you created the database properly. If an error displays, repeat the preceding commands.
 
 1. Continue with the next section.
 
@@ -117,18 +122,18 @@ This section discusses how to create and run SQL scripts that alter quote databa
 
 Sales database table names start with:
 
-* `salesrule_`
-* `sales_`
-* `magento_sales_`
-* The `magento_customercustomattributes_sales_flat_order` table is also affected
+*  `salesrule_`
+*  `sales_`
+*  `magento_sales_`
+*  The `magento_customercustomattributes_sales_flat_order` table is also affected
 
 {:.bs-callout .bs-callout-info}
 This section contains scripts with specific database table names. If you've performed customizations or if you want to see a complete list of tables before you perform actions on them, see [Reference scripts](#split-db-ref).
 
 For more information, see:
 
-* [Create sales database SQL scripts](#config-ee-multidb-sql-oms)
-* [Back up sales data](#sales-backup)
+*  [Create sales database SQL scripts](#config-ee-multidb-sql-oms)
+*  [Back up sales data](#sales-backup)
 
 ### Create sales database SQL scripts {#config-ee-multidb-sql-oms}
 
@@ -196,23 +201,24 @@ Run the preceding script:
 
 1. Log in to your MySQL database as the `root` or administrative user:
 
-    ```bash
-    mysql -u root -p
-    ```
+   ```bash
+   mysql -u root -p
+   ```
 
-2. At the `mysql>` prompt, run the script as follows:
+1. At the `mysql>` prompt, run the script as follows:
 
-    ```bash
-    source <path>/<script>.sql
-    ```
+   ```shell
+   source <path>/<script>.sql
+   ```
 
-    For example,
+   For example,
 
-    ```bash
-    source /root/sql-scripts/1_foreign-sales.sql
-    ```
+   ```shell
+   source /root/sql-scripts/1_foreign-sales.sql
+   ```
 
-3. After the script run, enter `exit`.
+1. After the script run, enter `exit`.
+
 {% endcollapsible %}
 
 ### Back up sales data {#sales-backup}
@@ -225,10 +231,10 @@ If you're currently at the `mysql>` prompt, enter `exit` to return to the comman
 
 Run the following `mysqldump` commands, one at a time, from the command shell. In each, substitute the following:
 
-* `<your database root username>` with the name of your database root user
-* `<your database root user password>` with the user's password
-* `<your main magento DB name>` with the name of your Magento database
-* `<path>` with a writable file system path
+*  `<your database root username>` with the name of your database root user
+*  `<your database root user password>` with the user's password
+*  `<your main magento DB name>` with the name of your Magento database
+*  `<path>` with a writable file system path
 
 #### Script 1
 
@@ -264,9 +270,9 @@ If you are using a [Network Database (NDB)](http://dev.mysql.com/doc/refman/5.6/
 
 1. Convert tables from InnoDb to NDB type in dump files:
 
-    ```bash
-    sed -ei 's/InnoDb/NDB/' <file name>.sql
-    ```
+   ```bash
+   sed -ei 's/InnoDb/NDB/' <file name>.sql
+   ```
 
 1. Remove rows with a FULLTEXT key from dumps because NDB tables do not support FULLTEXT.
 
@@ -292,13 +298,13 @@ mysql -u <root username> -p <your sales DB name> < /<path>/customercustomattribu
 
 where
 
-* `<your sales DB name>` with the name of your sales database.
+*  `<your sales DB name>` with the name of your sales database.
 
-    In this topic, the sample database name is `magento_sales`.
+   In this topic, the sample database name is `magento_sales`.
 
-* `<root username>` with your MySQL root username
-* `<root user password>` with the user's password
-* Verify the location of the backup files you created earlier (for example, `/var/sales.sql`)
+*  `<root username>` with your MySQL root username
+*  `<root user password>` with the user's password
+*  Verify the location of the backup files you created earlier (for example, `/var/sales.sql`)
 
 {% endcollapsible %}
 
@@ -330,17 +336,21 @@ Run the script as follows:
 
 1. Log in to your MySQL database as the root or administrative user:
 
-    ```bash
-    mysql -u root -p
-    ```
+   ```bash
+   mysql -u root -p
+   ```
 
 1. At the `mysql >` prompt, run the script as follows:
   `source <path>/<script>.sql`
-    For example,
 
-       source /root/sql-scripts/2_foreign-key-quote.sql
+   For example,
+
+   ```shell
+   source /root/sql-scripts/2_foreign-key-quote.sql
+   ```
 
 1. After the script runs, enter `exit`.
+
 {% endcollapsible %}
 
 ### Back up quote tables
@@ -361,11 +371,11 @@ If you are using a [Network Database (NDB)](http://dev.mysql.com/doc/refman/5.6/
 
 1. Convert tables from InnoDb to NDB type in dump files:
 
-    ```bash
-    sed -ei 's/InnoDb/NDB/' <file name>.sql
-    ```
+   ```bash
+   sed -ei 's/InnoDb/NDB/' <file name>.sql
+   ```
 
-2. Remove rows with a FULLTEXT key from dumps because NDB tables do not support FULLTEXT.
+1. Remove rows with a FULLTEXT key from dumps because NDB tables do not support FULLTEXT.
 
 ### Restore tables to the quote database
 
@@ -457,23 +467,24 @@ Run the script as follows:
 
 1. Log in to your MySQL database as the root or administrative user:
 
-    ```bash
-    mysql -u root -p
-    ```
+   ```bash
+   mysql -u root -p
+   ```
 
-2. At the `mysql>` prompt, run the script as follows:
+1. At the `mysql>` prompt, run the script as follows:
 
-    ```bash
-    source <path>/<script>.sql
-    ```
+   ```shell
+   source <path>/<script>.sql
+   ```
 
-    For example,
+   For example,
 
-    ```bash
-    source /root/sql-scripts/3_drop-tables.sql
-    ```
+   ```shell
+   source /root/sql-scripts/3_drop-tables.sql
+   ```
 
-3. After the script runs, enter `exit`.
+1. After the script runs, enter `exit`.
+
 {% endcollapsible %}
 
 ## Update your deployment configuration {#config-ee-multidb-config}
@@ -485,9 +496,9 @@ The final step in manually splitting databases is to add connection and resource
 1. Log in to your Magento server as, or switch to, the [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html).
 1. Back up your deployment configuration:
 
-    ```bash
-    cp <magento_root>/app/etc/env.php <magento_root>/app/etc/env.php.orig
-    ```
+   ```bash
+   cp <magento_root>/app/etc/env.php <magento_root>/app/etc/env.php.orig
+   ```
 
 1. Open `<magento_root>/app/etc/env.php` in a text editor and update it using the guidelines discussed in the following sections.
 
@@ -566,14 +577,14 @@ To use these scripts:
 1. Create a `.sql` script with the contents of each script in this section.
 1. In each script, replace `<your main magento DB name>` with the name of your Magento database.
 
-    In this topic, the sample database name is `magento`.
+   In this topic, the sample database name is `magento`.
 
 1. Run each script from the `mysql>` prompt as `source <script name>`
 1. Examine the output.
 1. Copy the result of each script to another `.sql` script, removing the pipe characters (`|`).
-5.Run each script from the `mysql>` prompt as `source <script name>`.
+1. Run each script from the `mysql>` prompt as `source <script name>`.
 
-    Running this second script performs the actions in your main Magento database.
+   Running this second script performs the actions in your main Magento database.
 
 ### Remove foreign keys (sales tables)
 
@@ -684,6 +695,7 @@ select 'SET foreign_key_checks = 1;';
 Drop all tables that start with `quote_`.
 {% endcollapsible %}
 
-#### Next step
+{:.ref-header}
+Related topics
 
 [Verify split databases]({{ page.baseurl }}/config-guide/multi-master/multi-master_verify.html)

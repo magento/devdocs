@@ -37,9 +37,9 @@ Refer to [Running Integration Tests in PhpStorm][phpstorm run] for further infor
 Before the Magento integration test framework can be used, the test environment must be prepared.
 These prerequisites are required:
 
-- A dedicated integration test database
-- The test framework database configuration
-- The PHPUnit configuration matches the purpose of the integration test execution
+-  A dedicated integration test database
+-  The test framework database configuration
+-  The PHPUnit configuration matches the purpose of the integration test execution
 
 ## Integration test database
 
@@ -308,14 +308,14 @@ The root folder for the Magento integration tests suite —`<magento_root>/dev/t
 
 This folder contains the following sub-folders and files:
 
-- `framework/` – Integration testing framework scripts, configuration files and classes.
-- `Magento/` – A set of classes that implement the Magento integration tests framework.
-- `bootstrap.php` – The PHPUnit bootstrap script.
-- `etc/install-config-<db_vendor>.php` – A configuration file that provides values for installing the Magento application.
-- `testsuite/` – The test suite.
-- `tmp/` – A writable directory for storing temporary data during test execution.
-- `sandbox-<hash>/` – The folder where each Magento instance stores temporary and configuration data.
-- `phpunit.xml.dist` – A PHPUnit configuration file.
+-  `framework/` – Integration testing framework scripts, configuration files and classes.
+-  `Magento/` – A set of classes that implement the Magento integration tests framework.
+-  `bootstrap.php` – The PHPUnit bootstrap script.
+-  `etc/install-config-<db_vendor>.php` – A configuration file that provides values for installing the Magento application.
+-  `testsuite/` – The test suite.
+-  `tmp/` – A writable directory for storing temporary data during test execution.
+-  `sandbox-<hash>/` – The folder where each Magento instance stores temporary and configuration data.
+-  `phpunit.xml.dist` – A PHPUnit configuration file.
 
 <!-- LINK DEFINITIONS -->
 

@@ -1,0 +1,8 @@
+---
+title: Magento_Braintree
+source_repo: magento2ce
+release: 2.3.3
+github_path: app/code/Magento/Braintree/README.md
+last_modified_at: '2015-07-08 12:41:28 -0500'
+content: Module Magento\Braintree implements integration with the Braintree payment
+  system.

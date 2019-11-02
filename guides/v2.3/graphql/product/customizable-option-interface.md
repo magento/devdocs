@@ -9,14 +9,14 @@ Customizable options for a product provide a way to offer customers a selection 
 
 `CustomizableOptionInterface` is defined in the `CatalogGraphQl` module, and its attributes can be used in any `products` query. This interface returns basic information about a customizable option and can be implemented by several types of configurable options:
 
-* Text area
-* Checkbox
-* Date picker
-* Drop-down menu
-* Text field
-* File picker
-* Multiple select box
-* Radio buttons
+*  Text area
+*  Checkbox
+*  Date picker
+*  Drop-down menu
+*  Text field
+*  File picker
+*  Multiple select box
+*  Radio buttons
 
 {: .bs-callout-info }
 Magento has not implemented all possible customizable product options for GraphQL.

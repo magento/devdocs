@@ -216,12 +216,12 @@ Clicking the **Change** button toggles the `active` CSS class:
 
 To add quick basic styling and visual behavior to the "dropdown" menu, OrangeCo added  [_extend.less]({{ page.baseurl }}/frontend-dev-guide/css-guide/css_quick_guide_approach.html#simple_extend) to their theme with the following customizations:
 
-* Redundant elements are hidden with CSS.
-* The `.lib-dropdown()` mixin from [Magento UI library]({{ page.baseurl }}/frontend-dev-guide/css-topics/theme-ui-lib.html) was applied to the corresponding element.
+*  Redundant elements are hidden with CSS.
+*  The `.lib-dropdown()` mixin from [Magento UI library]({{ page.baseurl }}/frontend-dev-guide/css-topics/theme-ui-lib.html) was applied to the corresponding element.
 
 `app/design/frontend/OrangeCo/orange/web/css/source/_extend.less`
 
-```
+```css
 //
 //  Common
 //  _____________________________________________

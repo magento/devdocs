@@ -62,8 +62,8 @@ The `updateCustomer` mutation returns the `CustomerOutput` object.
 
 ## Related topics
 
-* [customer query]({{page.baseurl}}/graphql/queries/customer.html)
-* [createCustomer mutation]({{page.baseurl}}/graphql/mutations/create-customer.html)
-* [createCustomerAddress mutation]({{page.baseurl}}/graphql/mutations/create-customer-address.html)
-* [updateCustomerAddress mutation]({{page.baseurl}}/graphql/mutations/update-customer-address.html)
-* [deleteCustomerAddress mutation]({{page.baseurl}}/graphql/mutations/delete-customer-address.html)
+*  [customer query]({{page.baseurl}}/graphql/queries/customer.html)
+*  [createCustomer mutation]({{page.baseurl}}/graphql/mutations/create-customer.html)
+*  [createCustomerAddress mutation]({{page.baseurl}}/graphql/mutations/create-customer-address.html)
+*  [updateCustomerAddress mutation]({{page.baseurl}}/graphql/mutations/update-customer-address.html)
+*  [deleteCustomerAddress mutation]({{page.baseurl}}/graphql/mutations/delete-customer-address.html)

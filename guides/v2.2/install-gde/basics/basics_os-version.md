@@ -23,27 +23,34 @@ If you already know you're running Ubuntu or CentOS but don't know the version, 
 
 To find the CentOS version, enter the following command in Terminal:
 
-	cat /etc/*release*
+```bash
+cat /etc/*release*
+```
 
 The following sample output shows you're running CentOS 6.5 (you can ignore most of the output):
 
-	CentOS release 6.5 (Final)
-	LSB_VERSION=base-4.0-amd64:base-4.0-noarch:core-4.0-amd64:core-4.0-noarch:graphics-4.0-amd64:graphics-4.0-noarch:printing-4.0-amd64:printing-4.0-noarch
-	cat: /etc/lsb-release.d: Is a directory
-	CentOS release 6.5 (Final)
-	CentOS release 6.5 (Final)
+```terminal
+CentOS release 6.5 (Final)
+LSB_VERSION=base-4.0-amd64:base-4.0-noarch:core-4.0-amd64:core-4.0-noarch:graphics-4.0-amd64:graphics-4.0-noarch:printing-4.0-amd64:printing-4.0-noarch
+cat: /etc/lsb-release.d: Is a directory
+CentOS release 6.5 (Final)
+CentOS release 6.5 (Final)
+```
 
 ### Ubuntu
 
 To find the Ubuntu version, enter the following command in Terminal:
 
-	lsb_release -a
+```bash
+lsb_release -a
+```
 
 The following sample output shows you're running Ubuntu 14:
 
-	No LSB modules are available.
-	Distributor ID: Ubuntu
-	Description:    Ubuntu 14.04.1 LTS
-	Release:        14.04
-	Codename:       trusty
-
+```terminal
+No LSB modules are available.
+Distributor ID: Ubuntu
+Description:    Ubuntu 14.04.1 LTS
+Release:        14.04
+Codename:       trusty
+```

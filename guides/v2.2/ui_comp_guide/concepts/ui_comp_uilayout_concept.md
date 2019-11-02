@@ -64,8 +64,8 @@ The example module referenced in the following examples uses `OrangeCo` as its c
 
 It also assumes the existence of the following files:
 
-* `app/code/OrangeCo/Sample/view/base/web/js/my-new-component.js`
-* `app/code/OrangeCo/Sample/view/base/web/templates/my-new-component/main-template.html`
+*  `app/code/OrangeCo/Sample/view/base/web/js/my-new-component.js`
+*  `app/code/OrangeCo/Sample/view/base/web/templates/my-new-component/main-template.html`
 
 ### Create a child component
 

@@ -9,9 +9,9 @@ Magento Two-Factor Authentication (2FA) improves security by requiring two-step 
 
 Two-Factor Authentication gives you the ability to:
 
-- Enable authenticator support for the Admin.
-- Manage and configure authenticator settings globally or per user account.
-- Reset authenticators and manage trusted devices for users.
+-  Enable authenticator support for the Admin.
+-  Manage and configure authenticator settings globally or per user account.
+-  Reset authenticators and manage trusted devices for users.
 
 At this time, Two-Factor Authentication can be installed only from the command line.
 
@@ -46,10 +46,10 @@ See the Magento Admin User Guide to [configure](https://docs.magento.com/m2/ee/u
 
 Administrators have options to:
 
-* Review existing authenticators configured per user account
-* Require specific authenticators
-* Reset or remove authenticators to resolve access issues
-* Revoke access for devices to resolve access issues
+-  Review existing authenticators configured per user account
+-  Require specific authenticators
+-  Reset or remove authenticators to resolve access issues
+-  Revoke access for devices to resolve access issues
 
 ## Install authenticator
 
@@ -93,9 +93,9 @@ In your database, you can modify the following tables and values to affect and o
 
 Table: `core_config_data`
 
-- `msp/twofactorauth/enabled` - Set to zero to disable 2FA globally.
-- `msp/twofactorauth/force_providers` - Delete this entry to remove forced providers option.
+-  `msp/twofactorauth/enabled` - Set to zero to disable 2FA globally.
+-  `msp/twofactorauth/force_providers` - Delete this entry to remove forced providers option.
 
 Table: `msp_tfa_user_config`
 
-- Delete one user row to reset the user's 2FA preference and configuration.
+-  Delete one user row to reset the user's 2FA preference and configuration.

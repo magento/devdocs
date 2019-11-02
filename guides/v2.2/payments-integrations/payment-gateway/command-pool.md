@@ -33,7 +33,7 @@ Following is an example of the command pool configuring for the Braintree paymen
             <item name="authorize" xsi:type="string">BraintreeAuthorizeCommand</item>
             <item name="sale" xsi:type="string">BraintreeSaleCommand</item>
             <item name="capture" xsi:type="string">BraintreeCaptureStrategyCommand</item>
-			...
+            ...
         </argument>
     </arguments>
 </virtualType>

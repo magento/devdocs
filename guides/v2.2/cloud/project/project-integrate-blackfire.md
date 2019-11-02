@@ -35,15 +35,15 @@ After you access your Blackfire account, you can [add additional collaborator ac
 
 We recommend adding at least one account through Blackfire to manage all access, integrations, and usage of the tool. We also recommend promoting one of the added members to Admin, to manage all Blackfire access and integrations.
 
-1.  Using your Project Owner Blackfire credentials, log in to [Blackfire](https://blackfire.io/login).
+1. Using your Project Owner Blackfire credentials, log in to [Blackfire](https://blackfire.io/login).
 
-1.  Navigate to the _Environments_ tab and select an environment.
+1. Navigate to the _Environments_ tab and select an environment.
 
-1.  Click the **Settings** tab.
+1. Click the **Settings** tab.
 
-1.  Enter an e-mail address and click **Add Member**.
+1. Enter an e-mail address and click **Add Member**.
 
-1.  In the _Revoke_ drop-down list of an account, click **Promote as an admin**.
+1. In the _Revoke_ drop-down list of an account, click **Promote as an admin**.
 
     ![Promote an admin]({{ site.baseurl }}/common/images/cloud_blackfire-member.png){:width="550px"}
 
@@ -67,14 +67,14 @@ If you do not meet all requirements, contact your {{site.data.var.ece}} account 
 
 ### Setup Blackfire
 
-1.  From the terminal, log in to your {{site.data.var.ece}} project.
-1.  Configure Blackfire using the `magento-cloud` CLI.
+1. From the terminal, log in to your {{site.data.var.ece}} project.
+1. Configure Blackfire using the `magento-cloud` CLI.
 
-    ```bash
-    magento-cloud blackfire:setup
-    ```
+   ```bash
+   magento-cloud blackfire:setup
+   ```
 
-    The `blackfire:setup` command automatically configures Blackfire on all environments and activates automated profiling each time you apply and commit changes to an environment. If prompted, provide the {{site.data.var.ece}} project ID and your [Blackfire client credentials](https://blackfire.io/my/settings/credentials).
+   The `blackfire:setup` command automatically configures Blackfire on all environments and activates automated profiling each time you apply and commit changes to an environment. If prompted, provide the {{site.data.var.ece}} project ID and your [Blackfire client credentials](https://blackfire.io/my/settings/credentials).
 
 ### Enable Blackfire on local workstation
 
@@ -82,13 +82,13 @@ You can install and use Blackfire on your local workstation with your {{site.dat
 
 We recommend using the Blackfire installation guide to walk you through the process:
 
-1.  Log in to [Blackfire](https://blackfire.io/login).
+1. Log in to [Blackfire](https://blackfire.io/login).
 
-1.  On the _Environments_ tab, select the **Integration** environment.
+1. On the _Environments_ tab, select the **Integration** environment.
 
-1.  Click the **Settings** tab.
+1. Click the **Settings** tab.
 
-1.  Scroll to the bottom and locate the _Server ID_ and _Server Token_ for the environment. You need these values for the instructions.
+1. Scroll to the bottom and locate the _Server ID_ and _Server Token_ for the environment. You need these values for the instructions.
 
 1. Open the [Blackfire installation guide](https://blackfire.io/docs/up-and-running/installation), select the Operating System, and follow the instructions.
 
@@ -119,72 +119,74 @@ By default, the `.magento.app.yaml` file includes the Blackfire module. If the m
 
 We recommend working in a branch and creating a snapshot prior to installing. If you have a branch already created, you can skip down to the steps for modifying the `.magento.app.yaml` file.
 
-#### To create a snapshot in a new branch:
+{:.procedure}
+To create a snapshot in a new branch:
 
-1.  Log in to your {{site.data.var.ece}} project.
+1. Log in to your {{site.data.var.ece}} project.
 
-    ```bash
-    magento-cloud login
-    ```
+   ```bash
+   magento-cloud login
+   ```
 
-1.  List projects.
+1. List projects.
 
-    ```bash
-    magento-cloud project:list
-    ```
+   ```bash
+   magento-cloud project:list
+   ```
 
-1.  List environments in the project.
+1. List environments in the project.
 
-    ```bash
-    magento-cloud environment:list -p <project-ID>
-    ```
+   ```bash
+   magento-cloud environment:list -p <project-ID>
+   ```
 
-1.  Verify current branch.
+1. Verify current branch.
 
-    ```bash
-    git branch
-    ```
+   ```bash
+   git branch
+   ```
 
-1.  If necessary, check out an existing branch.
+1. If necessary, check out an existing branch.
 
-    ```bash
-    magento-cloud environment:checkout <environment-ID>
-    ```
+   ```bash
+   magento-cloud environment:checkout <environment-ID>
+   ```
 
-    Also, you can create a new branch using the `magento-cloud environment:branch` command.
+   Also, you can create a new branch using the `magento-cloud environment:branch` command.
 
-1.  Back up the environment using a snapshot.
+1. Back up the environment using a snapshot.
 
-    ```bash
-    magento-cloud snapshot:create -e <environment-ID>
-    ```
+   ```bash
+   magento-cloud snapshot:create -e <environment-ID>
+   ```
 
-#### Modify the `.magento.app.yaml` file:
+{:.procedure}
+To modify the `.magento.app.yaml` file:
 
-1.  Use a text editor to locate and edit the `<project root dir>/.magento.app.yaml` file in your branch.
+1. Use a text editor to locate and edit the `<project root dir>/.magento.app.yaml` file in your branch.
 
-1.  Enter `- name: blackfire` in the `extensions` block under `runtime`.
+1. Enter `- name: blackfire` in the `extensions` block under `runtime`.
 
-    ```yaml
-    # .magento.app.yaml
-    runtime:
-       extensions:
-         - mcrypt
-         - redis
-         - xsl
-         - json
-         - blackfire
-    ```
+   ```yaml
+   # .magento.app.yaml
+   runtime:
+      extensions:
+        - mcrypt
+        - redis
+        - xsl
+        - json
+        - blackfire
+   ```
 
-1.  Save your changes and exit the text editor.
+1. Save your changes and exit the text editor.
 
-1.  Add, commit, and push your changes to the environment.
+1. Add, commit, and push your changes to the environment.
 
-    ```bash
-    git add -A && git commit -m "<message>" && git push magento
-    ```
+   ```bash
+   git add -A && git commit -m "<message>" && git push magento
+   ```
 
-    If errors display during deployment, open the `.magento.app.yaml` file and check the syntax, such as indentation and spelling, and try again.
+If errors display during deployment, open the `.magento.app.yaml` file and check the syntax, such as indentation and spelling, and try again.
 
 ### Changing from the default route {#route}
 
@@ -196,27 +198,32 @@ You can verify that Blackfire works using a browser extension or the CLI. For ex
 
 {% include note.html type="info" content="You can only use the CLI in your local development environment." %}
 
-#### To profile using the browser:
+{:.procedure}
+To profile using the browser:
 
-1.  Install the Blackfire browser extension in [Chrome](https://blackfire.io/docs/integrations/chrome#installing-the-companion) or [Firefox](https://blackfire.io/docs/integrations/firefox#installing-the-companion). A Blackfire icon displays in your browser next to the address location. If you do not see it, you may need to display the bar.
-1.  Visit the store or site URL for your specific environment, such as the URL for your Integration environment. If you need this URL, you can find it through the Project Web Interface. Select the environment branch and copy the link from the _Access_ section.
-1.  Click the Blackfire icon.
+1. Install the Blackfire browser extension in [Chrome](https://blackfire.io/docs/integrations/chrome#installing-the-companion) or [Firefox](https://blackfire.io/docs/integrations/firefox#installing-the-companion). A Blackfire icon displays in your browser next to the address location. If you do not see it, you may need to display the bar.
 
-    ![Start profiling]({{ site.baseurl }}/common/images/cloud_blackfire.png)
+1. Visit the store or site URL for your specific environment, such as the URL for your Integration environment. If you need this URL, you can find it through the Project Web Interface. Select the environment branch and copy the link from the _Access_ section.
 
-1.  Click **Profile** to start.
+1. Click the Blackfire icon.
 
-    {:.bs-callout-info}
+   ![Start profiling]({{ site.baseurl }}/common/images/cloud_blackfire.png)
+
+1. Click **Profile** to start.
+
+   {:.bs-callout-info}
    The browser extension also enables you to profile all requests while you browse. For more information about this, see [Blackfire resources](#blackfire-resources).
 
-#### To profile using the CLI:
+{:.procedure}
+To profile using the CLI:
 
-1.  Install the Blackfire [CLI Tool](https://blackfire.io/docs/up-and-running/installation). Click on your preferred Platform tab and scroll down to **Installing the Blackfire CLI tool**.
+1. Install the Blackfire [CLI Tool](https://blackfire.io/docs/up-and-running/installation). Click on your preferred Platform tab and scroll down to **Installing the Blackfire CLI tool**.
 
-1.  Depending on the type of code, profile using the `blackfire curl` or `blackfire run` command.
+1. Depending on the type of code, profile using the `blackfire curl` or `blackfire run` command.
 
-    -  [Profiling HTTP Requests](https://blackfire.io/docs/cookbooks/profiling-http)
-    -  [Profiling CLI Commands](https://blackfire.io/docs/cookbooks/profiling-cli)
+   -  [Profiling HTTP Requests](https://blackfire.io/docs/cookbooks/profiling-http)
+
+   -  [Profiling CLI Commands](https://blackfire.io/docs/cookbooks/profiling-cli)
 
 ## Automate performance testing
 
@@ -253,7 +260,9 @@ See the Blackfire documentation on [Writing tests](https://blackfire.io/docs/coo
 Once you create and deploy your `.blackfire.yml` file, you can enable Blackfire to run your tests automatically in various ways:
 
 -  **Automated builds on Integration**—Whenever you push code on an Integration, Staging, or Production branch, Blackfire automatically runs your tests. You can receive a notification of the results in various ways, such as a commit status level when using GitHub or Bitbucket. See Blackfire notifications.
+
 -  **Automated builds using a webhook**—Blackfire offers a very flexible way to start builds using a webhook, which can target any endpoint. See [Start building a webhook](https://blackfire.io/docs/reference-guide/builds-and-integrations#start-build-using-a-webhook).
+
 -  **Automated builds with the Blackfire/New Relic integration**—Blackfire and New Relic are very complementary. New Relic monitors the overall traffic performance, and Blackfire profiles much deeper into the PHP code. See [What is the difference between Blackfire and New Relic](https://support.blackfire.io/questions-about-blackfire/what-is-blackfire/what-is-the-difference-between-blackfire-and-new-relic-and-other-apms). You can configure New Relic to fire Blackfire builds whenever relevant. See [New Relic](https://blackfire.io/docs/integrations/new-relic).
 
 ### Blackfire notifications
@@ -276,37 +285,39 @@ You cannot contact Blackfire directly to change the account owner. To maintain t
 
 Blackfire provides [Enterprise support for Pro](https://support.blackfire.io/blackfire-on-magento-cloud/blackfire-enterprise-for-magento-cloud-pro) and [Premium support for Starter](https://support.blackfire.io/blackfire-on-magento-cloud/blackfire-premium-for-magento-cloud-starter).
 
-#### To prepare log output for Blackfire support:
-
 If you continue to experience problems, prepare your log files and contact Blackfire support.
 
-1.  Display startup errors and save the output.
+{:.procedure}
+To prepare log output for Blackfire support:
 
-    ```bash
-    magento-cloud ssh "php -d display_startup_errors=on --ri blackfire"
-    ```
+1. Display startup errors and save the output.
 
-1.  Create a temporary log file.
+   ```bash
+   magento-cloud ssh "php -d display_startup_errors=on --riblackfire"
+   ```
 
-     ```bash
-     magento-cloud variable:create --name php:blackfire.log_file --value /tmp/blackfire.log
-     ```
+1. Create a temporary log file.
 
-1.  Set the logging level.
+   ```bash
+   magento-cloud variable:create --name php:blackfire.log_fil --value /tmp/blackfire.log
+   ```
 
-    ```bash
-    magento-cloud variable:create --name php:blackfire.log_level --value 4
-    ```
+1. Set the logging level.
 
-1.  Start a profile/build again and collect the logs.
+   ```bash
+   magento-cloud variable:create --name php:blackfire.log_level --value 4
+   ```
 
-    ```bash
-    magento-cloud ssh "cat /tmp/blackfire.log" > blackfire.log
-    ```
+1. Start a profile/build again and collect the logs.
 
-1.  Send output and logs to support@blackfire.io.
+   ```bash
+   magento-cloud ssh "cat /tmp/blackfire.log" > blackfire.log
+   ```
 
-#### To disable the Blackfire logs:
+1. Send output and logs to support@blackfire.io.
+
+{:.procedure}
+To disable the Blackfire logs:
 
 You can disable logging by cleaning the temporary log file and removing the log level:
 

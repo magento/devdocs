@@ -17,7 +17,7 @@ This topic contains the basic information about how to customize the view of an 
 To change the `.js` implementation and template used for components rendering, you need to declare the new files in the checkout page [layout](https://glossary.magento.com/layout). To do this, take the following steps:
 
 1. In your custom module directory, create the following new file: `<your_module_dir>/view/frontend/layout/checkout_index_index.xml`. (For your checkout customization to be applied correctly, your custom [module](https://glossary.magento.com/module) should depend on the Magento_Checkout module.)
-2. In this file, add the following:
+1. In this file, add the following:
 
 ```xml
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
@@ -34,9 +34,9 @@ To change the `.js` implementation and template used for components rendering, y
 </page>
 ```
 
-3. In the `<Magento_Checkout_module_dir>/view/frontend/layout/checkout_index_index.xml` file, find the component that you need to customize. Copy the corresponding node and all parent nodes up to `<argument>`. There is no need to leave all the attributes and values of parent nodes, as you are not going to change them.
+1. In the `<Magento_Checkout_module_dir>/view/frontend/layout/checkout_index_index.xml` file, find the component that you need to customize. Copy the corresponding node and all parent nodes up to `<argument>`. There is no need to leave all the attributes and values of parent nodes, as you are not going to change them.
 
-4. Change the path to the component's `.js` file, template or any other property.
+1. Change the path to the component's `.js` file, template or any other property.
 
 Example:
 

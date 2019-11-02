@@ -13,13 +13,13 @@ functional_areas:
 
 There are four kinds of data that need to be migrated manually:
 
-*	Media
+*  Media
 
-*	[Storefront](https://glossary.magento.com/storefront) design
+*  [Storefront](https://glossary.magento.com/storefront) design
 
-*	[Admin](https://glossary.magento.com/admin) user accounts
+*  [Admin](https://glossary.magento.com/admin) user accounts
 
-*	Access Control Lists (ACLs)
+*  Access Control Lists (ACLs)
 
 ## Media
 
@@ -29,15 +29,15 @@ This section discusses how to manually migrate media files.
 
 This section applies to you *only* if you store media files in the Magento database. This step should be performed before <a href="{{ page.baseurl }}/migration/migration-migrate-data.html">migration of data</a>:
 
-1.	Log in to the Magento 1 Admin Panel as an administrator.
+1. Log in to the Magento 1 Admin Panel as an administrator.
 
-2.	Click **System** > **Configuration** > ADVANCED > **System**.
+1. Click **System** > **Configuration** > ADVANCED > **System**.
 
-3.	In the right pane, scroll to **Storage Configuration for Media**.
+1. In the right pane, scroll to **Storage Configuration for Media**.
 
-4.	From the **Select Media Database** list, click the name of your [media storage](https://glossary.magento.com/media-storage) database.
+1. From the **Select Media Database** list, click the name of your [media storage](https://glossary.magento.com/media-storage) database.
 
-5.	Click **Synchronize**.
+1. Click **Synchronize**.
 
 Then, repeat the same steps in your Magento 2 Admin panel.
 
@@ -49,21 +49,22 @@ However, do *not* copy the `.htaccess` files located in the Magento 1 `media` fo
 
 ## Storefront design
 
-* Design in files (CSS, JS, templates, [XML](https://glossary.magento.com/xml) layouts) changed its location and format
+*  Design in files (CSS, JS, templates, [XML](https://glossary.magento.com/xml) layouts) changed its location and format
 
-* [Layout](https://glossary.magento.com/layout) Updates stored in database. Placed through Magento 1 Admin in [CMS](https://glossary.magento.com/cms) Pages, CMS Widgets, [Category](https://glossary.magento.com/category) Pages and Product Pages
+*  [Layout](https://glossary.magento.com/layout) Updates stored in database. Placed through Magento 1 Admin in [CMS](https://glossary.magento.com/cms) Pages, CMS Widgets, [Category](https://glossary.magento.com/category) Pages and Product Pages
 
 ## Access Control Lists (ACLs)
 
 You must manually re-create all:
 
-*	credentials for web service APIs (SOAP, XML-RPC, and REST)
+*  credentials for web service APIs (SOAP, XML-RPC, and REST)
 
-*	administrative user accounts and associate them with access privileges
+*  administrative user accounts and associate them with access privileges
 
 {: .bs-callout-info }
 You may adjust the time zone for a database entity using the `\Migration\Handler\Timezone` handler. See the [Follow-up]({{ page.baseurl }}/migration/migration-migrate-follow-up.html) section for more details.
 
-## Related topics
+{:.ref-header}
+Related topics
 
-* <a href="{{ page.baseurl }}/migration/migration-migrate-after.html">After migration</a>
+*  <a href="{{ page.baseurl }}/migration/migration-migrate-after.html">After migration</a>

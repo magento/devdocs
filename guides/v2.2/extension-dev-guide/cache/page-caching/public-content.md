@@ -67,16 +67,16 @@ class DynamicController extends \Magento\Framework\App\Action\Action
 
 Most caching servers and proxies use a [URL](https://glossary.magento.com/url) as a key for cache records. However, Magento URLs are not unique *enough* to allow caching by URL only. Cookie and session data in the URL can also lead to undesirable side effects,  including:
 
--   Collisions in cache storage
--   Unwanted information leaks (e.g., French language website partially visible on an English language website, prices for customer group visible in public, etc.)
+-  Collisions in cache storage
+-  Unwanted information leaks (e.g., French language website partially visible on an English language website, prices for customer group visible in public, etc.)
 
 To make each cached URL totally unique, we use *HTTP context variables*. Context variables enable the Magento application to serve different content on the same URL based on:
 
--   Customer group
--   Selected language
--   Selected store
--   Selected currency
--   Whether a customer is logged in or not
+-  Customer group
+-  Selected language
+-  Selected store
+-  Selected currency
+-  Whether a customer is logged in or not
 
 Context variables should not be specific to individual users because variables are used in cache keys for public content. In other words, a context variable per user results in a separate copy of content cached on the server for each user.
 
@@ -117,7 +117,7 @@ For another example of a context class, see [Magento/Framework/App/Http/Context]
 
 Use the `X-Magento-Vary` cookie to transfer context on the HTTP layer. HTTP proxies can be configured to calculate a unique identifier for cache based on the cookie and URL. For example, [our sample Varnish 4 configuration]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/PageCache/etc/varnish4.vcl#L63-L68){:target="_blank"} uses the following:
 
-```
+```conf
 sub vcl_hash {
     if (req.http.cookie ~ "X-Magento-Vary=") {
         hash_data(regsub(req.http.cookie, "^.*?X-Magento-Vary=([^;]+);*.*$", "\1"));

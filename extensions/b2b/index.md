@@ -7,7 +7,7 @@ redirect_from:
  - guides/v2.3/comp-mgr/install-extensions/b2b-installation.html
 ---
 
-{: .bs-callout .bs-callout-warning }
+{: .bs-callout-warning }
 The {{site.data.var.b2b}} extension is only available for {{site.data.var.ee}} v2.2.0 or later. You must install it after installing {{site.data.var.ee}}.
 
 1. Change to your Magento installation directory and enter the following command to update your `composer.json` file and install the {{site.data.var.b2b}} extension:
@@ -49,10 +49,10 @@ The {{site.data.var.b2b}} extension is only available for {{site.data.var.ee}} v
     bin/magento cache:clean
     ```
 
-{: .bs-callout .bs-callout-info }
+{: .bs-callout-info }
   Note: In Production mode, you may receive a message to 'Please rerun Magento compile command'.  Enter the commands above. Magento does not prompt you to run the compile command in Developer mode.
 
-{: .bs-callout .bs-callout-info }
+{: .bs-callout-info }
 After completing the installation, you must follow the [post-installation steps](#configure-b2b).
 
 ## Configure {#configure-b2b}
@@ -91,7 +91,7 @@ The {{site.data.var.b2b}} extension uses MySQL for message queue management. If 
     bin/magento queue:consumers:start sharedCatalogUpdatePrice
     ```
 
-{: .bs-callout .bs-callout-tip }
+{: .bs-callout-tip }
 Append `&` to the command to run it in the background, return to a prompt, and continue running commands. For example: `bin/magento queue:consumers:start sharedCatalogUpdatePrice &`.
 
 Refer to [Manage message queues]({{ site.baseurl }}/guides/v2.3/config-guide/mq/manage-message-queues.html) for more information.
@@ -109,18 +109,18 @@ You may also add these two message consumers to the cron job (optional). For thi
 
 Depending on your system configuration, to prevent possible issues, you may also need to specify the following parameters when starting the services:
 
-- `--max-messages`: manages the consumer's lifetime and allows you to specify the maximum number of messages processed by the consumer. The best practice for a PHP application is to restart long-running processes to prevent possible memory leaks.
+-  `--max-messages`: manages the consumer's lifetime and allows you to specify the maximum number of messages processed by the consumer. The best practice for a PHP application is to restart long-running processes to prevent possible memory leaks.
 
-- `--batch-size`: allows you to limit the system resources consumed by the consumers (CPU, memory). Using smaller batches reduces resource usage and, thus, leads to slower processing.
+-  `--batch-size`: allows you to limit the system resources consumed by the consumers (CPU, memory). Using smaller batches reduces resource usage and, thus, leads to slower processing.
 
 ### Enable B2B features in Magento Admin
 
 After installing the {{site.data.var.b2b}} extension and starting message consumers (if you want to enable the **Shared Catalog** module), you must also enable B2B modules in Magento Admin.
 
-{: .bs-callout .bs-callout-info }
+{: .bs-callout-info }
 If you enable the **Shared Catalog** module, you must also enable the **Company** module. The **Quick Order** and **Requisition Lists** modules can be enabled/disabled independently.
 
-1. Access the Magento Admin and click **Stores** > **Settings** > **Configuration** > **General** > **B2B Features**.
+1. Access the Magento Admin and click **Stores** > Settings > **Configuration** > General > **B2B Features**.
 
 1. Select **Yes** from the drop-down menus to enable B2B features:
 

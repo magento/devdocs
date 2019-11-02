@@ -23,16 +23,16 @@ The `composer.lock` file stores a set of exact version dependencies that satisfy
 **Common commands**
 
 Command | Description
---- | +---
+--- | ---
 `composer update` | Updates to the latest versions of the dependencies. You must update every time you edit dependencies in the `composer.json` file. This updates the `composer.lock` file.
 `composer install` | Reads the `composer.lock` file to download dependencies. You must keep an up-to-date copy of `composer.lock` in your {{site.data.var.ece}} repository.
 
 The workflow is as follows:
 
-1.	Make a change to `composer.json`. For example, edit this file when installing an extension or module.
-2.	Run `composer update`.
-3.	Add `composer.lock` to or update it in your Cloud Git repository.
-4.	Push the changes to the Cloud environment, which causes Cloud to build and deploy the environment.
+1. Make a change to `composer.json`. For example, edit this file when installing an extension or module.
+1. Run `composer update`.
+1. Add `composer.lock` to or update it in your Cloud Git repository.
+1. Push the changes to the Cloud environment, which causes Cloud to build and deploy the environment.
 
 During the [build phase]({{ page.baseurl }}/cloud/reference/discover-deploy.html), the Cloud environment runs `composer install` on a fresh clone of your Git branch to retrieve the latest dependencies.
 
@@ -62,14 +62,14 @@ One way in which {{site.data.var.ece}} deploys differently than other Magento in
 
 When upgrading to a new {{site.data.var.ece}} version or adding, removing, or changing any packages that rely on file marshaling, you must:
 
-1.	Run `composer update` locally.
+1. Run `composer update` locally.
 
-	The new version of the base packages are marshalled out into the Cloud project root directory, which means files are added, removed, and changed.
+   The new version of the base packages are marshalled out into the Cloud project root directory, which means files are added, removed, and changed.
 
-	File marshalling works on your local system but _not_ on the Cloud server.
+   File marshalling works on your local system but _not_ on the Cloud server.
 
-2.	Add and commit these updated files to your Cloud Git repository.
-3.	Push the changes to your Cloud Integration environment.
+1. Add and commit these updated files to your Cloud Git repository.
+1. Push the changes to your Cloud Integration environment.
 
 See [Patch {{site.data.var.ece}}]({{ page.baseurl }}/cloud/project/project-patch.html).
 

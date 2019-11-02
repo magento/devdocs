@@ -13,10 +13,10 @@ functional_areas:
 
 ## Magento installation overview {#newbie-ftp-overview}
 
-1.	Download the software to your computer.
-2.	Set up the File Transfer Protocol (FTP) to your hosted system.
-3.	Upload the archive to your system using FTP.
-4.	Extract the archive.
+1. Download the software to your computer.
+1. Set up the File Transfer Protocol (FTP) to your hosted system.
+1. Upload the archive to your system using FTP.
+1. Extract the archive.
 
 {% include install/archives-php-issue.md %}
 
@@ -30,24 +30,24 @@ FTP is a way to transfer files from your computer to your managed server. To tra
 
 To transfer the Magento archive:
 
-1.	Start your FTP client software.
-2.	Create a connection to your managed server.
+1. Start your FTP client software.
+1. Create a connection to your managed server.
 
-    Follow the prompts on your screen or consult the documentation provided with your FTP software for more information.
+   Follow the prompts on your screen or consult the documentation provided with your FTP software for more information.
 
-3.	After you log in to your managed server, browse to locate the Magento archive on your local system.
+1. After you log in to your managed server, browse to locate the Magento archive on your local system.
 
-    On the remote system, browse to locate the `public_html` directory.
+   On the remote system, browse to locate the `public_html` directory.
 
-    The following figure shows an example.
+   The following figure shows an example.
 
-    ![]({{ site.baseurl }}/common/images/install-merch_ftp-transfer.png)
+   ![]({{ site.baseurl }}/common/images/install-merch_ftp-transfer.png)
 
-4.	Transfer the archive from your local system to the `public_html` directory.
+1. Transfer the archive from your local system to the `public_html` directory.
 
-    On some FTP client software, you do this by dragging and dropping.
+   On some FTP client software, you do this by dragging and dropping.
 
-5.	Wait while the transfer completes.
+1. Wait while the transfer completes.
 
 ## Extract the archive {#extract-perms}
 
@@ -55,29 +55,30 @@ After transferring the Magento archive to your hosted system, you can use the cP
 
 To extract the archive:
 
-1.	If necessary, log in to the cPanel.
-2.	In the Files section, click **File Manager**.
+1. If necessary, log in to the cPanel.
+1. In the Files section, click **File Manager**.
 
-3.	Click **Web Root**.
+1. Click **Web Root**.
 
-    ![]({{ site.baseurl }}/common/images/install-merch_file-manager-setup.png){:width="550px"}
+   ![]({{ site.baseurl }}/common/images/install-merch_file-manager-setup.png){:width="550px"}
 
-4.	Click **Go**.
+1. Click **Go**.
 
-    The File Manager displays in a separate browser window or tab page.
+   The File Manager displays in a separate browser window or tab page.
 
-3.	Right-click the Magento archive in the **public_html** directory.
-4.	From the pop-up menu, click **Extract** as the following figure shows.
+1. Right-click the Magento archive in the **public_html** directory.
+1. From the pop-up menu, click **Extract** as the following figure shows.
 
-    ![]({{ site.baseurl }}/common/images/install-merch_file-manager-window.png){:width="750px"}
+   ![]({{ site.baseurl }}/common/images/install-merch_file-manager-window.png){:width="750px"}
 
-5.	Click **Extract Files**.
-5.	Wait while the archive extracts.
+1. Click **Extract Files**.
+1. Wait while the archive extracts.
 
-    The following figure shows an example of an extracted archive.
+   The following figure shows an example of an extracted archive.
 
-    ![]({{ site.baseurl }}/common/images/install-merch_file-manager-after.png){:width="750px"}
+   ![]({{ site.baseurl }}/common/images/install-merch_file-manager-after.png){:width="750px"}
 
-#### Next step
+{:.ref-header}
+Related topics
 
 [Install the Magento software]({{page.baseurl }}/install-gde/install/hosted/hosted_install.html)

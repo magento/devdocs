@@ -10,16 +10,16 @@ functional_areas:
 
 This example shows how to change the following settings in your development system, update the shared configuration file, `config.php`, in your build system, and implement the same settings in your production system:
 
-*	Timezone
-*	Weight unit
+*  Timezone
+*  Weight unit
 
 These settings are available in the Magento Admin in **Stores** > Settings > **Configuration** > General > **General**.
 
 You can use the same procedure to configure any non-sensitive, non-system-specific settings in the following references:
 
-*	[Other configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-most.html)
-*	[Payment configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-payment.html)
-*	[Magento Enterprise B2B Extension configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-b2b.html)
+*  [Other configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-most.html)
+*  [Payment configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-payment.html)
+*  [Magento Enterprise B2B Extension configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-b2b.html)
 
 ## Before you begin
 
@@ -31,26 +31,27 @@ This topic provides an example of modifying the production system configuration.
 
 For the purposes of this example, we assume the following:
 
-*	You use Git source control
-*	The development system is available in a Git remote repository named `mconfig`
-*	Your Git working branch is named `m2.2_deploy`
+*  You use Git source control
+*  The development system is available in a Git remote repository named `mconfig`
+*  Your Git working branch is named `m2.2_deploy`
 
 ## Step 1: Set the configuration in the development system
 
 To set the timezone and weight units in your development system:
 
-1.	Log in to the Magento Admin.
-2.	Click **Stores** > Settings > **Configuration** > General > **General**.
-3.	In the right pane, expand **Locale Options**.
+1. Log in to the Magento Admin.
+1. Click **Stores** > Settings > **Configuration** > General > **General**.
+1. In the right pane, expand **Locale Options**.
 
-	The following figure shows an example.
+   The following figure shows an example.
 
-	![Set locale options in the development system]({{ site.baseurl }}/common/images/config_split-deploy_simple_set-locale.png){:width="550px"}
-4.	From the **Timezone** list, click **GMT+00:00 (UTC)**.
-6.	Clear the **Use system value** checkbox next to the **Weight Unit** field.
-7.	From the **Weight Unit** list, click **kgs**.
-8.	Click **Save Config**.
-9.	If prompted, flush the Magento cache.
+   ![Set locale options in the development system]({{ site.baseurl }}/common/images/config_split-deploy_simple_set-locale.png){:width="550px"}
+
+1. From the **Timezone** list, click **GMT+00:00 (UTC)**.
+1. Clear the **Use system value** checkbox next to the **Weight Unit** field.
+1. From the **Weight Unit** list, click **kgs**.
+1. Click **Save Config**.
+1. If prompted, flush the Magento cache.
 
 ## Step 2: Update the shared configuration
 
@@ -74,13 +75,13 @@ The last step in the process is to update your production system from source con
 
 To verify these settings are not editable in the Magento Admin:
 
-1.	Log in to the Magento Admin.
-2.	Click **Stores** > Settings > **Configuration** > General > **General**.
-3.	In the right pane, expand **Locale Options**.
+1. Log in to the Magento Admin.
+1. Click **Stores** > Settings > **Configuration** > General > **General**.
+1. In the right pane, expand **Locale Options**.
 
-	The options you just set are displayed as follows:
+   The options you just set are displayed as follows:
 
-	![Configuration options not editable in the Admin]({{ site.baseurl }}/common/images/config_split-deploy_not-editable.png){:width="650px"}
+   ![Configuration options not editable in the Admin]({{ site.baseurl }}/common/images/config_split-deploy_not-editable.png){:width="650px"}
 
-{:.bs-callout .bs-callout-info}
+{: .bs-callout-info }
 To change a setting that is locked in the Admin, use the [`magento config:set --lock` command]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-config-mgmt-set.html).

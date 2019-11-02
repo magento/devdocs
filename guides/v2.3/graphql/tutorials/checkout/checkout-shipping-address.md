@@ -16,9 +16,9 @@ contributor_link: https://www.atwix.com/
 
 Use the [setShippingAddressesOnCart]({{ page.baseurl }}/graphql/mutations/set-shipping-method.html) mutation to set a shipping address. You can set the shipping address in the following ways:
 
-* Add a new shipping address
-* Assign the shipping address to be the same as the billing address
-* Use an address already defined in the logged-in customer's address book
+*  Add a new shipping address
+*  Assign the shipping address to be the same as the billing address
+*  Use an address already defined in the logged-in customer's address book
 
 ## Create a new shipping address
 
@@ -35,7 +35,7 @@ For logged-in customers, send the customer's authorization token in the `Authori
 mutation {
   setShippingAddressesOnCart(
     input: {
-      cart_id: "A7jCcOmUjjCh7MxDIzu1SeqdqETqEa5h"
+      cart_id: "{ CART_ID }"
       shipping_addresses: [
         {
           address: {
@@ -240,6 +240,6 @@ mutation {
 
 1. Sign in as a customer to the website using the email `john.doe@example.com` and password `b1b2b3l@w+`.
 
-2. Go to Checkout.
+1. Go to Checkout.
 
-3. On the Shipping step, the Shipping Address form contains the address details you entered.
+1. On the Shipping step, the Shipping Address form contains the address details you entered.

@@ -20,20 +20,21 @@ To increase your PHP memory limit:
 1. Log in to your Magento server.
 1. Locate your `php.ini` file using the following command:
 
-    ```bash
-    php --ini
-    ```
+   ```bash
+   php --ini
+   ```
 
 1. As a user with `root` privileges, use a text editor to open the `php.ini` specified by `Loaded Configuration File`.
 1. Locate `memory_limit`.
 1. Change it to a value of `2GB` for normal use and debugging.
 1. Save your changes to `php.ini` and exit the text editor.
 1. Restart your web server.
-   Examples:
 
-   * CentOS: `service httpd restart`
-   * Ubuntu: `service apache2 restart`
-   * nginx (both CentOS and Ubuntu): `service nginx restart`
+   Examples follow:
+
+   *  CentOS: `service httpd restart`
+   *  Ubuntu: `service apache2 restart`
+   *  nginx (both CentOS and Ubuntu): `service nginx restart`
 
 1. Try the installation again.
 
@@ -43,11 +44,11 @@ Configurations with a high number of storeviews, products, attributes, or option
 If the number of values sent surpasses the `max-input-vars` limit set within `php.ini` (default is 1000), the remaining data is not transferred and those database values do not get updated.
 When this occurs, a warning appears in the PHP log:
 
-```bash
+```terminal
 PHP message: PHP Warning: Unknown: Input variables exceeded 1000. To increase the limit change max_input_vars in php.ini.
 ```
 
- There is no 'proper' value for `max-input-vars`; it depends on the size and complexity of your configuration. Modify the value in the `php.ini` file as needed. See [Required PHP settings][].
+There is no 'proper' value for `max-input-vars`; it depends on the size and complexity of your configuration. Modify the value in the `php.ini` file as needed. See [Required PHP settings][].
 
 ## xdebug maximum function nesting level error {#trouble-php-xdebug}
 
@@ -57,11 +58,9 @@ See [During installation, xdebug maximum function nesting level error]({{ page.b
 
 Error text is typically:
 
-```php
+```terminal
 Parse error: syntax error, unexpected 'data' (T_STRING)
 ```
-
-### Solution: Set asp_tags = off in php.ini
 
 Multiple templates have syntax for support abstract level on templates (use different templates engines like Twig) wrapped in `<% %>` tags, like this [template][]{:target="_blank"} for displaying a product image:
 

@@ -12,8 +12,8 @@ functional_areas:
 
 You can upgrade your Magento application from the command line if you installed the software by:
 
-- Downloading the [metapackage][] using `composer create-project`.
-- Installing the compressed archive.
+-  Downloading the [metapackage][] using `composer create-project`.
+-  Installing the compressed archive.
 
 Do not use this method to upgrade if you cloned the Magento 2 GitHub repository.
 Instead, see [Update the Magento application][] for upgrade instructions.
@@ -22,10 +22,10 @@ Instead, see [Update the Magento application][] for upgrade instructions.
 
 Complete the following prerequisites to prepare your environment before starting the upgrade process:
 
-- **Complete the Update and upgrade checklist**— To avoid possible errors during installation or upgrading, complete the [Update and upgrade checklist].
-- **Set the `pub/` directory root**— If you set the Magento root directory to `pub/`, create another subdomain or docroot that uses the Magento installation directory as its root, and run the [System Upgrade utility][] using that subdomain.
-- **Check PHP and environment settings**— Verify that your PHP and other environment settings are compatible with the [system requirements].
-- **Switch to maintenance mode**— To prevent access to your store while it is being upgraded, switch your store to maintenance mode:
+-  **Complete the Update and upgrade checklist**—To avoid possible errors during installation or upgrading, complete the [Update and upgrade checklist].
+-  **Set the `pub/` directory root**—See [Modify docroot to improve security][] for more details.
+-  **Check PHP and environment settings**—Verify that your PHP and other environment settings are compatible with the [system requirements].
+-  **Switch to maintenance mode**—To prevent access to your store while it's being upgraded, switch your store to maintenance mode:
 
     ```bash
     bin/magento maintenance:enable
@@ -41,7 +41,7 @@ Using the more manual process of upgrading via the command line allows you to tr
 ## Manage packages
 
 {:.bs-callout-info}
-See the examples at the end of this section for help specifying different release levels. For example, minor release, quality patch, and security patch. {{site.data.var.ee}} customers can access 2.3.x patches two weeks before the General Availability (GA) date.
+See the examples at the end of this section for help specifying different release levels. For example, minor release, quality patch, and security patch. {{site.data.var.ee}} customers can access 2.3.x patches two weeks before the General Availability (GA) date. Pre-release packages are available through Composer only. You cannot find them on the Magento Portal or GitHub until GA. If you cannot find these packages in Composer, contact Magento Support.
 
 1. Backup the `composer.json` file.
 
@@ -72,13 +72,13 @@ See the examples at the end of this section for help specifying different releas
    <div class="bs-callout-tip" markdown="1">
    To see the full list of available {{ page.guide_version }} versions:
 
-   _{{site.data.var.ce}}_:
+   _{{ ce }}_:
 
    ```bash
    composer show magento/product-community-edition {{ page.guide_version }}.* --all | grep -m 1 versions
    ```
 
-   _{{site.data.var.ce}}_:
+   _{{ ee }}_:
 
    ```bash
    composer show magento/product-enterprise-edition {{ page.guide_version }}.* --all | grep -m 1 versions
@@ -89,7 +89,7 @@ See the examples at the end of this section for help specifying different releas
 1. Specify additional packages.
 
    ```bash
-   composer require --dev allure-framework/allure-phpunit:~1.2.0 friendsofphp/php-cs-fixer:~2.14.0 lusitanian/oauth:~0.8.10 magento/magento-coding-standard:~3.0.0 magento/magento2-functional-testing-framework:2.4.3 pdepend/pdepend:2.5.2 phpmd/phpmd:@stable phpunit/phpunit:~6.5.0 sebastian/phpcpd:~3.0.0 squizlabs/php_codesniffer:~3.4.0 --sort-packages --no-update
+   composer require --dev allure-framework/allure-phpunit:~1.2.0 friendsofphp/php-cs-fixer:~2.14.0 lusitanian/oauth:~0.8.10 magento/magento-coding-standard:~3.0.0 magento/magento2-functional-testing-framework:2.4.5 pdepend/pdepend:2.5.2 phpmd/phpmd:@stable phpunit/phpunit:~6.5.0 sebastian/phpcpd:~3.0.0 squizlabs/php_codesniffer:~3.4.0 --sort-packages --no-update
    ```
 
 1. Remove unused packages.
@@ -126,7 +126,7 @@ Security patches use the Composer naming convention `2.3.2-px`. Use Composer to 
 composer require magento/product-community-edition=2.3.2-p1 --no-update
 ```
 
-## (_Optional)_ Recreate the Magento updater
+## (_Optional)_ Recreate the Magento updater {#recreate-magento-updater}
 
 If the Magento updater is installed, remove and recreate it. It is located in the `update/` directory.
 
@@ -230,11 +230,11 @@ Open your storefront URL in a web browser to check whether the upgrade was succe
 If the application fails with a  `We're sorry, an error has occurred while generating this email.` error:
 
 1. Reset [file system ownership and permissions] as a user with `root` privileges.
-2. Clear the following directories:
-   - `var/cache/`
-   - `var/page_cache/`
-   - `generated/code/`
-3. Check your storefront in your web browser again.
+1. Clear the following directories:
+   -  `var/cache/`
+   -  `var/page_cache/`
+   -  `generated/code/`
+1. Check your storefront in your web browser again.
 
 ## Alternatives
 
@@ -243,7 +243,7 @@ There are alternatives methods that automate parts of the upgrade process:
 1. [Upgrade using the script][] (semi-automated process)
    Upgrading using the script process is a bit easier and less intensive if you have not made updates to values that the script affects.
    If you previously made updates, do not upgrade using the script. The script will override your updates.
-2. EXPERIMENTAL: [Upgrade using the custom Composer plugin][]
+1. EXPERIMENTAL: [Upgrade using the custom Composer plugin][]
    We are developing a [custom Composer plugin][] that enhances the semi-automated upgrade process.
 
 The upgrading scenario is the same for each of these options. Both use Composer and a command line interface.
@@ -265,3 +265,4 @@ All scenarios require that you comply with the [Prerequisites].
 [Update the Magento application]: {{ page.baseurl }}/install-gde/install/cli/dev_update-magento.html
 [Upgrade using the custom composer plugin]: upgrade-with-plugin.html
 [Upgrade using the script]: upgrade-with-script.html
+[Modify docroot to improve security]: {{ page.baseurl }}/install-gde/tutorials/change-docroot-to-pub.html

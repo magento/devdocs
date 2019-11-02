@@ -5,8 +5,8 @@ title: Functional Testing Framework Configuration
 
 The Functional Testing Framework configuration settings are located in two [XML](https://glossary.magento.com/xml) files:
 
-- `phpunit.xml`
-- `config.xml`
+-  `phpunit.xml`
+-  `config.xml`
 
 ## `phpunit.xml` {#phpunit_xml}
 
@@ -68,16 +68,16 @@ Figure 2. - XML Schema for the `<magento2_root_dir>dev/tests/functional/vendor/m
 
 The FTF merges settings from both files with the following priority:
 
-- `config.xml` in Magento has higher priority then `config.xml` in the Framework
-- `config.xml.dist` is omitted if `config.xml` exists
+-  `config.xml` in Magento has higher priority then `config.xml` in the Framework
+-  `config.xml.dist` is omitted if `config.xml` exists
 
 Settings are grouped into the following blocks:
 
-- [`<application>`]
-- [`<isolation>`]
-- [`<server>`]
-- [`<handler>`]
-- [`<install>`] (set in Magento functional tests only)
+-  [`<application>`]
+-  [`<isolation>`]
+-  [`<server>`]
+-  [`<handler>`]
+-  [`<install>`] (set in Magento functional tests only)
 
 ### `<application>` {#application}
 
@@ -106,10 +106,10 @@ Settings are grouped into the following blocks:
 
 Values description:
 
-- `none` - never run
-- `before` - run before the entity to which it concerns
-- `after` - run after the entity to which it concerns
-- `both` - run before and after the entity to which it concerns
+-  `none` - never run
+-  `before` - run before the entity to which it concerns
+-  `after` - run after the entity to which it concerns
+-  `both` - run before and after the entity to which it concerns
 
 ### `<server>` {#server}
 

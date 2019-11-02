@@ -32,9 +32,10 @@ The following XSD file contains rules and limitations shared between all compone
 In Magento 2 there are basic and secondary UI components.
 
 Basic components are:
-* [Listing component]({{ page.baseurl }}/ui_comp_guide/components/ui-listing-grid.html)
 
-* [Form component]({{ page.baseurl }}/ui_comp_guide/components/ui-form.html)
+*  [Listing component]({{ page.baseurl }}/ui_comp_guide/components/ui-listing-grid.html)
+
+*  [Form component]({{ page.baseurl }}/ui_comp_guide/components/ui-form.html)
 
 All other UI components are secondary.
 
@@ -49,13 +50,13 @@ You need to configure styles manually for components on storefront.
 
 With Magento, you may apply different approaches to implementing a UI element, and use:
 
-* [PHTML](https://glossary.magento.com/phtml) template with inline JavaScript
+*  [PHTML](https://glossary.magento.com/phtml) template with inline JavaScript
 
-* PHTML template with declaration of related JavaScript file via [XML](https://glossary.magento.com/xml) [layout](https://glossary.magento.com/layout)
+*  PHTML template with declaration of related JavaScript file via [XML](https://glossary.magento.com/xml) [layout](https://glossary.magento.com/layout)
 
-* [jQuery](https://glossary.magento.com/jquery) [widget](https://glossary.magento.com/widget)
+*  [jQuery](https://glossary.magento.com/jquery) [widget](https://glossary.magento.com/widget)
 
-* Magento 2 [UI component](https://glossary.magento.com/ui-component)
+*  Magento 2 [UI component](https://glossary.magento.com/ui-component)
 
 We recommend using UI components as much as possible and tend to do the same in Magento core.
 
@@ -67,9 +68,9 @@ UI component is a combination of:
 
 1. **XML declaration** that specifies the component's configuration settings and inner structure.
 
-2. **JavaScript** class inherited from one of the Magento JavaScript framework UI components base classes (such as [UIElement]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uielement_concept.html), [UIClass]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uiclass_concept.html) or [UICollection]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uicollection_concept.html)).
+1. **JavaScript** class inherited from one of the Magento JavaScript framework UI components base classes (such as [UIElement]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uielement_concept.html), [UIClass]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uiclass_concept.html) or [UICollection]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uicollection_concept.html)).
 
-3. **Related template(s)**
+1. **Related template(s)**
 
 ### XML Declaration
 
@@ -79,9 +80,9 @@ Comparing to XML layouts, UI components use more semantical approach to declare 
 
 An instance of UI component is usually based on the hierarchy of child UI components. For example:
 
-* the Form component has Fieldsets, Tabs, and inner fields
+*  the Form component has Fieldsets, Tabs, and inner fields
 
-* the Listing component has Filters, Columns, Bookmark component, and others
+*  the Listing component has Filters, Columns, Bookmark component, and others
 
 ### JavaScript class
 
@@ -98,15 +99,15 @@ A UI component can be bound to one or more [HTML](https://glossary.magento.com/h
 A particular instance of a UI component is defined primarily by the following:
 
 1. [definition.xml]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/ui_component/etc/definition.xml): default component configuration. Can be extended in custom modules.
-2. [UI component's XML declaration]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_xmldeclaration_concept.html).
-3. [Backend/PHP modifiers]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_modifier_concept.html).
-4. Configuration inside the JavaScript classes.
+1. [UI component's XML declaration]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_xmldeclaration_concept.html).
+1. [Backend/PHP modifiers]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_modifier_concept.html).
+1. Configuration inside the JavaScript classes.
 
 ## UI component used in the frontend design area
 
-* Configured through layout XML.
+*  Configured through layout XML.
 
-* The `jsLayout` argument is used to specify information.
+*  The `jsLayout` argument is used to specify information.
 
 ```xml
 <block name="block-name" template="Magento_Module::path_to_template.phtml">
@@ -122,9 +123,9 @@ A particular instance of a UI component is defined primarily by the following:
 
 ## UI component used in the Adminhtml area
 
-* Configured through dedicated XML file (view/.../ui_component/[ui_component_name.xml])
+*  Configured through dedicated XML file (view/.../ui_component/[ui_component_name.xml])
 
-* Included in layout XML with uiComponent tag
+*  Included in layout XML with uiComponent tag
 
 ## Things to remember when working with UI components
 

@@ -38,10 +38,10 @@ We highly recommend testing every merchant and customer interaction in the Stagi
 
 Developers use the Integration environment to develop, deploy, and test:
 
--   Magento application code
--   Custom code
--   Extensions
--   Services
+-  Magento application code
+-  Custom code
+-  Extensions
+-  Services
 
 You can have up to **two** active Integration environments on a grid for **two** active branches. Each Integration environment matches the name of the branch and includes a web server, database, and configured services to fully test your site.
 
@@ -52,10 +52,10 @@ The Integration environment does not support all services. For example, Fastly C
 
 The process for developing in Integration requires the following process:
 
-* Branch and develop off of the `staging` branch
-* Develop all work on your local workspace in these branches
-* Push code to Git to build and deploy on an Integration environment for testing
-* As work is completed, merge to the `staging` branch
+-  Branch and develop off of the `staging` branch
+-  Develop all work on your local workspace in these branches
+-  Push code to Git to build and deploy on an Integration environment for testing
+-  As work is completed, merge to the `staging` branch
 
 Additional sections in this guide provide instructions and walk-throughs for setting up your [local workspace]({{ page.baseurl }}/cloud/before/before-workspace.html), working with branches, and [deploying code]({{ page.baseurl }}/cloud/live/stage-prod-live.html).
 
@@ -63,10 +63,10 @@ Additional sections in this guide provide instructions and walk-throughs for set
 
 The Production and Staging environments include the following technologies. You can modify and configure these technologies through the [.magento.app.yaml file]({{ page.baseurl }}/cloud/project/project-conf-files_magento-app.html).
 
-* Fastly for HTTP caching and CDN
-* Nginx web server speaking to PHP-FPM, one instance with multiple workers
-* Redis server
-* Elasticsearch for searching for {{site.data.var.ece}} 2.1 and later
+-  Fastly for HTTP caching and CDN
+-  Nginx web server speaking to PHP-FPM, one instance with multiple workers
+-  Redis server
+-  Elasticsearch for searching for {{site.data.var.ece}} 2.1 and later
 
 ### Services {#cloud-arch-services}
 
@@ -74,10 +74,10 @@ The Production and Staging environments include the following technologies. You 
 
 Each service runs in its own secure container. Containers are managed together in the project. Some services are built-in, such as the following:
 
-*	HTTP router (handling incoming requests, but also caching and redirects)
-*	PHP application server
-*	Git
-*	Secure Shell (SSH)
+-  HTTP router (handling incoming requests, but also caching and redirects)
+-  PHP application server
+-  Git
+-  Secure Shell (SSH)
 
 You can even have multiple applications running in the same project. Building a microservice oriented architecture with {{site.data.var.ee}} is as easy as managing a monolithic application.
 
@@ -85,24 +85,24 @@ You can even have multiple applications running in the same project. Building a 
 
 {{site.data.var.ece}} uses:
 
-*	Operating system: Debian GNU/Linux 8 (jessie)
-*	Web server: [nginx](https://glossary.magento.com/nginx) 1.8
+-  Operating system: Debian GNU/Linux 8 (jessie)
+-  Web server: [nginx](https://glossary.magento.com/nginx) 1.8
 
 You cannot upgrade the operating system and web server software to a new version, but you can configure versions for the following software:
 
-* [PHP]({{ page.baseurl }}/cloud/project/project-conf-files_magento-app.html)
-* [MySQL]({{ page.baseurl }}/cloud/project/project-conf-files_services-mysql.html)
-* [Redis]({{ page.baseurl }}/cloud/project/project-conf-files_services-redis.html)
-* [RabbitMQ]({{ page.baseurl }}/cloud/project/project-conf-files_services-rabbit.html)
-* [Elasticsearch]({{ page.baseurl }}/cloud/project/project-conf-files_services-elastic.html)
+-  [PHP]({{ page.baseurl }}/cloud/project/project-conf-files_magento-app.html)
+-  [MySQL]({{ page.baseurl }}/cloud/project/project-conf-files_services-mysql.html)
+-  [Redis]({{ page.baseurl }}/cloud/project/project-conf-files_services-redis.html)
+-  [RabbitMQ]({{ page.baseurl }}/cloud/project/project-conf-files_services-rabbit.html)
+-  [Elasticsearch]({{ page.baseurl }}/cloud/project/project-conf-files_services-elastic.html)
 
 In the Staging and Production environments, you use Fastly for CDN and caching. When your environment is initially provisioned, we install the latest version of the Fastly CDN extension for Magento. You can upgrade the extension to get the latest bug fixes and improvements. See [Fastly CDN module for Magento 2]({{ page.baseurl }}/cloud/cdn/cloud-fastly.html#fastly-cdn-module-for-magento-2).
 
 You use the following files to configure the software versions that you want to use in your implementation.
 
-*	[`.magento.app.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_magento-app.html)
-*	[`routes.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_routes.html)
-*	[`services.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_services.html)
+-  [`.magento.app.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_magento-app.html)
+-  [`routes.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_routes.html)
+-  [`services.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_services.html)
 
 ### Backup and disaster recovery {#backup}
 
@@ -110,12 +110,13 @@ You can create a snapshot of your database and file system using the Project Web
 
 ## Prepare for development {#develop}
 
+{:.procedure}
 To branch and develop your Magento store:
 
-* Set up your local environment
-* Clone the `master` branch from the Project to your local environment
-* Create a `staging` branch from `master`
-* Create branches for development from `staging`
-* Push code to Git that builds and deploys to an environment for testing
+-  Set up your local environment
+-  Clone the `master` branch from the Project to your local environment
+-  Create a `staging` branch from `master`
+-  Create branches for development from `staging`
+-  Push code to Git that builds and deploys to an environment for testing
 
 Additional sections in this guide provide instructions and walk-throughs for setting up your [local workspace]({{ page.baseurl }}/cloud/before/before-workspace.html), working with branches, [deploying code]({{ page.baseurl }}/cloud/live/stage-prod-live.html), and [going live]({{ page.baseurl }}/cloud/live/live.html).

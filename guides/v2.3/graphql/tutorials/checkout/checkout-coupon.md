@@ -14,7 +14,7 @@ contributor_name: Atwix
 contributor_link: https://www.atwix.com/
 ---
 
-Use [applyCouponToCart]({{ page.baseurl }}/graphql/mutations/apply-coupon.html) to apply a discount coupon to the the specified `cart_id`.
+Use [applyCouponToCart]({{ page.baseurl }}/graphql/mutations/apply-coupon.html) to apply a discount coupon to the specified `cart_id`.
 
 `{ CART_ID }` is the unique shopping cart ID from [Step 2. Create empty cart]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-add-product-to-cart.html).
 
@@ -97,6 +97,6 @@ mutation {
 
 1. Sign in as a customer to the website using the email `john.doe@example.com` and password `b1b2b3l@w+`.
 
-2. Go to Checkout.
+1. Go to Checkout.
 
-3. The discount is displayed in the Order Summary block.
+1. The discount is displayed in the Order Summary block.

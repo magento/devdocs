@@ -19,7 +19,7 @@ bin/magento indexer:info
 
 The list displays as follows:
 
-```
+```terminal
 design_config_grid                       Design Config Grid
 customer_grid                            Customer Grid
 catalog_category_product                 Category Products
@@ -59,7 +59,7 @@ bin/magento indexer:status
 
 Sample result:
 
-```
+```terminal
 +----------------------+------------------+-----------+---------------------+---------------------+
 | Title                | Status           | Update On | Schedule Status     | Schedule Updated    |
 +----------------------+------------------+-----------+---------------------+---------------------+
@@ -106,7 +106,7 @@ bin/magento indexer:reindex
 
 Sample result:
 
-```
+```terminal
 Design Config Grid index has been rebuilt successfully in <time>
 Customer Grid index has been rebuilt successfully in <time>
 Category Products index has been rebuilt successfully in <time>
@@ -121,35 +121,14 @@ Catalog Search index has been rebuilt successfully in <time>
 ```
 
 {:.bs-callout .bs-callout-info}
-Reindexing all indexers can take a long time for stores with large numbers of products, customers, categories, and promotional rules. <!-- Add to docs in 2.3.1 - MAGEDOC-3020:  To reduce processing time, see the next section for reindexing in parallel mode. -->
-
-<!-- Add to docs in 2.3.1 - MAGEDOC-3020
-### Reindex in parallel mode {#config-cli-subcommands-index-reindex-parallel}
-
-Indexers are scoped and multi-threaded to support reindexing in parallel mode. This feature reduces processing time. It parallelizes by the indexer's dimension and executes across multiple threads.
-
-The following indexes can be run in parallel mode:
-- Catalog Search Fulltext can be paralleled by store views.
-- Category Product can be paralleled by store views.
-
-To reindex in parallel mode, run the reindex command using the environment variable `MAGE_INDEXER_THREADS_COUNT`. This variable sets the number of threads for the reindex processing.
-
-For example, the following command runs the Catalog Search Fulltext indexer across three threads:
-
-```bash
-MAGE_INDEXER_THREADS_COUNT=3 php -f bin/magento indexer:reindex catalogsearch_fulltext
-```
-
-{:.bs-callout .bs-callout-info}
-Only use the environment variable in the indexer command. Do not save the variable to your environment or your Magento installs and updates may have errors.
--->
+Reindexing all indexers can take a long time for stores with large numbers of products, customers, categories, and promotional rules.
 
 ## Configure indexers
 
 Use this command to set the following indexer options:
 
-*  **Update on save (`realtime`):** Indexed data is updated as soon as a change is made in the [Admin](https://glossary.magento.com/admin). (For example, the [category](https://glossary.magento.com/category) products index is reindex after products are added to a category in the Admin.) This is the default.
-* **Update by schedule (`schedule`):** Data is indexed according to the schedule set by your Magento cron job.
+-  **Update on save (`realtime`):** Indexed data is updated as soon as a change is made in the [Admin](https://glossary.magento.com/admin). (For example, the [category](https://glossary.magento.com/category) products index is reindex after products are added to a category in the Admin.) This is the default.
+-  **Update by schedule (`schedule`):** Data is indexed according to the schedule set by your Magento cron job.
 
 [Learn more about indexing]({{ page.baseurl }}/extension-dev-guide/indexing.html)
 
@@ -169,7 +148,7 @@ bin/magento indexer:show-mode
 
 Sample result:
 
-```
+```terminal
 Design Config Grid:                                Update on Save
 Customer Grid:                                     Update on Save
 Category Products:                                 Update on Save
@@ -193,9 +172,9 @@ bin/magento indexer:set-mode {realtime|schedule} [indexer]
 
 Where:
 
--   **`realtime`** - Sets the selected indexers to update on save.
--   **`schedule`** - Sets the specified indexers to save according to the cron schedule.
--   **`indexer`** - Is a space-separated list of indexers. Omit `indexer` to configure all indexers the same way.
+-  **`realtime`** - Sets the selected indexers to update on save.
+-  **`schedule`** - Sets the specified indexers to save according to the cron schedule.
+-  **`indexer`** - Is a space-separated list of indexers. Omit `indexer` to configure all indexers the same way.
 
 To view the list of indexers:
 
@@ -211,22 +190,25 @@ bin/magento indexer:set-mode schedule catalog_category_product catalog_product_c
 
 Sample result:
 
-```
+```terminal
 Index mode for Indexer Category Products was changed from 'Update on Save' to 'Update by Schedule'
 Index mode for Indexer Product Categories was changed from 'Update on Save' to 'Update by Schedule'
 ```
 
-#### Related topics
+The indexers-related database triggers are added when the indexer mode is set to `schedule` and removed when the indexer mode is set to `realtime`. If the triggers are missing from your database while the indexers are set to `schedule`, change the indexers to `realtime` and then change them back to `schedule`. This resets the triggers.
 
-* [Manage the cache]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cache.html)
-* [Configure and run cron]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cron.html)
-* [Code compiler]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-compiler.html)
-* [Set the Magento mode]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html)
-* [URN highlighter]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-urn.html)
-* [Dependency reports]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-depen.html)
-* [Translation dictionaries and language packages]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-i18n.html)
-* [Deploy static view files]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html)
-* [Create symlinks to LESS files]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-less-sass.html)
-* [Run unit tests]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-test.html)
-* [Convert layout XML files]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-layout-xml.html)
-* [Generate data for performance testing]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-perf-data.html)
+{:.ref-header}
+Related topics
+
+-  [Manage the cache]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cache.html)
+-  [Configure and run cron]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cron.html)
+-  [Code compiler]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-compiler.html)
+-  [Set the Magento mode]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html)
+-  [URN highlighter]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-urn.html)
+-  [Dependency reports]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-depen.html)
+-  [Translation dictionaries and language packages]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-i18n.html)
+-  [Deploy static view files]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html)
+-  [Create symlinks to LESS files]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-less-sass.html)
+-  [Run unit tests]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-test.html)
+-  [Convert layout XML files]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-layout-xml.html)
+-  [Generate data for performance testing]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-perf-data.html)

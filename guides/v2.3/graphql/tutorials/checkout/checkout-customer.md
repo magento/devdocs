@@ -16,8 +16,8 @@ contributor_link: https://www.atwix.com/
 
 Customers can make purchases in two ways:
 
-* As a logged-in user
-* As a guest user who does not create an account
+*  As a logged-in user
+*  As a guest user who does not create an account
 
 To place order as a new customer, use the `createCustomer` mutation to register the new customer account in the store.
 

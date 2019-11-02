@@ -6,30 +6,30 @@ The "row pattern" (also referred to as _table light_ and _mini grid_) is used in
 
 The pattern supports following actions:
 
-* Add new row
-* Remove row
-* Rearrange/drag the rows
-* Edit fields in a row
-* Pagination (for 20 > more rows)
+*  Add new row
+*  Remove row
+*  Rearrange/drag the rows
+*  Edit fields in a row
+*  Pagination (for 20 > more rows)
 
 The pattern does _not_ support:
 
-* Filtering, sorting, searching the table
-* Adding, removing, rearranging of _columns_
+*  Filtering, sorting, searching the table
+*  Adding, removing, rearranging of _columns_
 
 ## Anatomy of a Row Pattern
 
 May include any of the following elements:
 
-* Table Body
-* Table heading
-* Row
-* Text in the row
-* Form elements inside the row
-* Drag handle
-* "Add row" button
-* "Remove row" icon
-* Pagination (for more than 20 rows)
+*  Table Body
+*  Table heading
+*  Row
+*  Text in the row
+*  Form elements inside the row
+*  Drag handle
+*  "Add row" button
+*  "Remove row" icon
+*  Pagination (for more than 20 rows)
 
 All these elements are optional, depending on the functions needed.
 

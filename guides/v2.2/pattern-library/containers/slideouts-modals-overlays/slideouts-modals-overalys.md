@@ -32,12 +32,12 @@ _Example of panel animation_
 
 The active panel should include the following elements:
 
-* Content container (Panel)
-* A Page title
-* Close control "×" (ESC-key via keyboard)
-* Button bar for actions, including a "Cancel" (ESC-key is Cancel via keyboard)
-* Page content
-* "Shade" to disable lower level page
+*  Content container (Panel)
+*  A Page title
+*  Close control "×" (ESC-key via keyboard)
+*  Button bar for actions, including a "Cancel" (ESC-key is Cancel via keyboard)
+*  Page content
+*  "Shade" to disable lower level page
 
 ![Example of active panel positioned over "parent"](img/slideout-panel2.png)
 
@@ -82,7 +82,7 @@ If the form in slide-in panel creates new entities, or changes existing ones (Cr
 Clicking that button will:
 
 1. Validate the form in Slideout. If form has errors, it will show the error messages following the Error Messaging Pattern. If no errors found, it will:
-2. Close the Slideout and apply changes immediately (entity will be created in the database, for example).
+1. Close the Slideout and apply changes immediately (entity will be created in the database, for example).
 
 ### Extend Form
 
@@ -91,7 +91,7 @@ Clicking that button will:
 If the Slideout panel is a part of the form, extending it (like Advanced Inventory, or Advanced Pricing), primary action should be labeled as "Done". Clicking it will:
 
 1. Validate the form in Slideout. If form has errors, it will show the error messages following the Error Messaging Pattern. If no errors found, it will:
-2. Close the Slideout and save the contents of its form. User still has to click "Save" button on the main form to apply changes.
+1. Close the Slideout and save the contents of its form. User still has to click "Save" button on the main form to apply changes.
 
 Clicking "Cancel" or clicking "&times;" or clicking outside of the panel (passive close) in both cases should reset contents of the current level Slideout form to default state.
 If user made changes to a form, he is presented with the modal window to confirm Cancellation:
@@ -133,12 +133,12 @@ _Example of a Confirmation Modal_
 
 The active modal should include the following elements:
 
-* Content container (Modal Window)
-* A Title
-* Close control "×" (ESC-key via keyboard)
-* Page content
-* Call to action(s), including "Cancel" (ESC-key is Cancel via keyboard)
-* "Shade" to disable lower level page
+*  Content container (Modal Window)
+*  A Title
+*  Close control "×" (ESC-key via keyboard)
+*  Page content
+*  Call to action(s), including "Cancel" (ESC-key is Cancel via keyboard)
+*  "Shade" to disable lower level page
 
 ### Cancel and Close controls
 
@@ -168,10 +168,10 @@ _Sample of progress bar in modal_
 
 Modal windows are implemented by the following Magento [jQuery](https://glossary.magento.com/jquery) widgets:
 
-* [modal]({{ page.baseurl }}/javascript-dev-guide/widgets/widget_modal.html)
-* [alert]({{ page.baseurl }}/javascript-dev-guide/widgets/widget_alert.html) (extends modal)
-* [confirm]({{ page.baseurl }}/javascript-dev-guide/widgets/widget_confirm.html) (extends modal)
-* [prompt]({{ page.baseurl }}/javascript-dev-guide/widgets/widget_prompt.html) (extends modal)
+*  [modal]({{ page.baseurl }}/javascript-dev-guide/widgets/widget_modal.html)
+*  [alert]({{ page.baseurl }}/javascript-dev-guide/widgets/widget_alert.html) (extends modal)
+*  [confirm]({{ page.baseurl }}/javascript-dev-guide/widgets/widget_confirm.html) (extends modal)
+*  [prompt]({{ page.baseurl }}/javascript-dev-guide/widgets/widget_prompt.html) (extends modal)
 
 ## Overlays
 
@@ -223,8 +223,8 @@ _Data-table with Confirmation Message_
 
 ## Assets
 
-* [Download Slide-out Panels PSD source](src/Slide-out-Panels.psd)
-* [Download Modal PSD source](src/Modal.psd)
+*  [Download Slide-out Panels PSD source](src/Slide-out-Panels.psd)
+*  [Download Modal PSD source](src/Modal.psd)
 
 ## Technical Implementation
 

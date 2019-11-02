@@ -11,12 +11,12 @@ functional_areas:
 
 Code compilation includes the following (in no particular order):
 
--   Application code generation (factories, proxies)
--   Area configuration aggregation (optimized [dependency injection](https://glossary.magento.com/dependency-injection) configurations per area)
--   Interceptor generation (optimized code generation of interceptors)
--   Interception [cache](https://glossary.magento.com/cache) generation
--   Repositories code generation (generated code for APIs)
--   Service data attributes generation (generated [extension](https://glossary.magento.com/extension) classes for data objects)
+-  Application code generation (factories, proxies)
+-  Area configuration aggregation (optimized [dependency injection](https://glossary.magento.com/dependency-injection) configurations per area)
+-  Interceptor generation (optimized code generation of interceptors)
+-  Interception [cache](https://glossary.magento.com/cache) generation
+-  Repositories code generation (generated code for APIs)
+-  Service data attributes generation (generated [extension](https://glossary.magento.com/extension) classes for data objects)
 
 You can find code compilation classes in the [\Magento\Setup\Module\Di\App\Task\Operation]({{ site.mage2bloburl }}/{{ page.guide_version }}/setup/src/Magento/Setup/Module/Di/App/Task/Operation) [namespace](https://glossary.magento.com/namespace).
 
@@ -37,7 +37,7 @@ Generated code and dependency injection configuration successfully.
 
 In some cases, you might want to compile code before you install the Magento application.
 
-1.  Enable the modules.
+1. Enable the modules.
 
     ```bash
     bin/magento module:enable --all [-c|--clear-static-content]
@@ -47,7 +47,7 @@ In some cases, you might want to compile code before you install the Magento app
 
     See [Enable modules]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-enable.html).
 
-1.  Compile the code.
+1. Compile the code.
 
     ```bash
     bin/magento setup:di:compile

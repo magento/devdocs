@@ -1,0 +1,7 @@
+---
+title: Magento_Amqp
+source_repo: magento2ce
+release: 2.3.3
+github_path: app/code/Magento/Amqp/README.md
+last_modified_at: '2018-02-21 14:28:14 +0200'
+content: "**Amqp** provides functionality to publish/consume messages with Amqp.\n"

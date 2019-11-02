@@ -14,23 +14,24 @@ This topic describes how the library is organized, and how to use it. For more i
 ## Components provided by the UI library {#library_elements}
 
 The Magento UI library provides the ability to customize and reuse the following user interface elements and properties:
-*	actions-toolbar
-*	breadcrumbs
-*	buttons
-*	drop-downs
-*	forms
-*	icons
-*	[layout](https://glossary.magento.com/layout)
-*	loaders
-*	messages
-*	pagination
-*	popups
-*	ratings
-*	sections - tabs and accordions
-*	tables
-*	tooltips
-*	typography
-*	list of theme variables
+
+*  actions-toolbar
+*  breadcrumbs
+*  buttons
+*  drop-downs
+*  forms
+*  icons
+*  [layout](https://glossary.magento.com/layout)
+*  loaders
+*  messages
+*  pagination
+*  popups
+*  ratings
+*  sections - tabs and accordions
+*  tables
+*  tooltips
+*  typography
+*  list of theme variables
 
 The following illustration shows a [storefront](https://glossary.magento.com/storefront) product page containing some of the preceding elements:
 
@@ -182,8 +183,9 @@ To set navigation using breakpoints, see the following example:
 ## Embedded documentation {#docs}
 
 The detailed information about the Magento UI library is embedded in the code repository:
-* [`lib/web/css/docs/source/README.md`] describes the Magento UI library structure, naming conventions, and code style.
-* [`lib/web/css/docs`] contains a set of `.html` files with detailed information about the library mixins.
+
+*  [`lib/web/css/docs/source/README.md`] describes the Magento UI library structure, naming conventions, and code style.
+*  [`lib/web/css/docs`] contains a set of `.html` files with detailed information about the library mixins.
 
 Each file is named after the mixin it describes, and contains detailed mixin description and navigation controls to access documentation for other mixins.
 The documentation is available in a convenient [HTML](https://glossary.magento.com/html) view in the following location in your Magento installation: `pub/static/frontend/Magento/blank/en_US/css/docs/index.html`.

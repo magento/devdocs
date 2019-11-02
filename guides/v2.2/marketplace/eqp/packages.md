@@ -3,11 +3,11 @@ group: marketplace-api
 title: Packages
 ---
 
-Use this resource to initiate and manage all aspects of submitting a package to the [Magento Extension Quality Program (EQP)](http://docs.magento.com/marketplace/user_guide/extensions/extension-quality-program.html). You can provide all metadata associated with a package—both the technical and the marketing information—in a single step or in several steps using incremental updates.
+Use this resource to initiate and manage all aspects of submitting a package to the [Magento Extension Quality Program (EQP)](https://docs.magento.com/marketplace/user_guide/sellers/extension-quality-program.html). You can provide all metadata associated with a package—both the technical and the marketing information—in a single step or in several steps using incremental updates.
 
-* **Technical information**—References to code artifacts, such as Magento 1 TGZ files or Composer-compliant Magento 2 ZIP files, version compatibility, and release notes.
+*  **Technical information**—References to code artifacts, such as Magento 1 TGZ files or Composer-compliant Magento 2 ZIP files, version compatibility, and release notes.
 
-* **Marketing information**—Includes package descriptions, image assets for logos and galleries, pricing information, support and installation services offered, and various guides—user, installation, and reference in PDF.
+*  **Marketing information**—Includes package descriptions, image assets for logos and galleries, pricing information, support and installation services offered, and various guides—user, installation, and reference in PDF.
 
 Before submitting a package, you must first [upload your files]({{ page.baseurl }}/marketplace/eqp/files.html) and associate the ID returned by the `/rest/v1/files/uploads` endpoint with your package using JSON parameters in the request body.
 
@@ -19,8 +19,8 @@ A successful submission results in a package being published on the [Magento Mar
 
 The EQP review process includes two steps:
 
-* In **technical review**, we perform all automated testing. This step also involves manual testing after all automated tests run.
-* In **marketing review**, we manually review all marketing content associated with your package before you can publish it on the Magento Marketplace.
+*  In **technical review**, we perform all automated testing. This step also involves manual testing after all automated tests run.
+*  In **marketing review**, we manually review all marketing content associated with your package before you can publish it on the Magento Marketplace.
 
 These review steps occur in parallel when you submit a package. If both steps are successful, the package can be published to the Magento Marketplace. If there is a failure, you can iteratively fix issues until they are resolved.
 
@@ -70,18 +70,18 @@ Both `POST` and `PUT` requests support a batch model where multiple packages can
 
 ### Additional notes
 
-* For required fields in a POST or PUT operation, refer to the [Package submissions](#package-submissions) section.
-* The EQP Kind column indicates which part of the EQP pipeline will need to use or review the field values.
-* The list of valid values for `license_type` are:
-    * `afl`—Academic Free License 3.0 (AFL)
-    * `apache`—Apache License 2.0
-    * `bsd`—BSD 2-Clause License
-    * `gnu-gpl`—GNU General Public License 3.0 (GPL-3.0)
-    * `gnu-lgpl`–GNU Lesser General Public License 3.0 (LGPL-3.0)
-    * `mit`—MIT License (MIT)
-    * `mozilla`—Mozilla Public License 1.1 (MPL-1.1)
-    * `osl`—Open Software License 3.0 (OSL-3.0)
-    * `custom`—Custom License
+*  For required fields in a POST or PUT operation, refer to the [Package submissions](#package-submissions) section.
+*  The EQP Kind column indicates which part of the EQP pipeline will need to use or review the field values.
+*  The list of valid values for `license_type` are:
+   *  `afl`—Academic Free License 3.0 (AFL)
+   *  `apache`—Apache License 2.0
+   *  `bsd`—BSD 2-Clause License
+   *  `gnu-gpl`—GNU General Public License 3.0 (GPL-3.0)
+   *  `gnu-lgpl`–GNU Lesser General Public License 3.0 (LGPL-3.0)
+   *  `mit`—MIT License (MIT)
+   *  `mozilla`—Mozilla Public License 1.1 (MPL-1.1)
+   *  `osl`—Open Software License 3.0 (OSL-3.0)
+   *  `custom`—Custom License
 
 ### Object details
 
@@ -255,16 +255,18 @@ Sample structure for a package supporting only Chrome and Firefox:
 ```
 
 The list of valid values for the `browser_os_compatibility` are:
-  * Browsers:
-      * `chrome`
-      * `firefox`
-      * `safari`
-      * `opera`
-      * `edge`
-  * OS:
-      * `linux`
-      * `mac`
-      * `windows`
+
+*  Browsers:
+   *  `chrome`
+   *  `firefox`
+   *  `safari`
+   *  `opera`
+   *  `edge`
+
+*  OS:
+   *  `linux`
+   *  `mac`
+   *  `windows`
 
 #### options
 
@@ -323,12 +325,12 @@ Once a package is published to the store, it can have the following field:
 }
 ```
 
-* The *overall* value indicates where the package is in the EQP pipeline.
-* Additional details are provided in the two main EQP areas:
-  * **technical**—Provides the current technical status.
-  * **marketing**—Provides the current marketing status.
+*  The *overall* value indicates where the package is in the EQP pipeline.
+*  Additional details are provided in the two main EQP areas:
+   *  **technical**—Provides the current technical status.
+   *  **marketing**—Provides the current marketing status.
 
-###### Overall Status
+##### Overall Status
 
 |Value|Type|Description|
 |-----|----|-----------|
@@ -339,7 +341,7 @@ Once a package is published to the store, it can have the following field:
 |developer_removed_from_store|string|The developer has removed the package from the store.|
 |admin_removed_from_store|string|The EQP admin has removed the package from the store.|
 
-###### Technical Status
+##### Technical Status
 
 |Value|Type|Description|
 |-----|----|-----------|
@@ -351,7 +353,7 @@ Once a package is published to the store, it can have the following field:
 |rejected|string|The package has failed automation or manual tests.|
 |recalled|string|The developer has recalled the package.|
 
-###### Marketing Status
+##### Marketing Status
 
 |Value|Type|Description|
 |-----|----|-----------|
@@ -366,7 +368,7 @@ Once a package is published to the store, it can have the following field:
 
 ## Package submissions
 
-```
+```http
 POST /rest/v1/products/packages
 PUT /rest/v1/products/packages
 PUT /rest/v1/products/packages/:submission_id
@@ -377,11 +379,11 @@ PUT /rest/v1/products/packages/:item_id
 
 You can submit a package in either of the following ways:
 
-* A single POST request with all required fields set. You must explicitly indicate that you are for technical and marketing review using the `action` parameter.
-* A series of requests, typically in the following order:
+*  A single POST request with all required fields set. You must explicitly indicate that you are for technical and marketing review using the `action` parameter.
+*  A series of requests, typically in the following order:
    1. A single POST request with the minimum required fields set and `action` set to `draft` in either `technical`, `marketing`, or both. This request accepts the new package and saves it on the Developer Portal for further updates. It returns a unique `submission_id` for subsequent PUT operations.
-   2. One or more PUT requests in which you configure the package parameters. In these requests, set `action` to `draft` in `technical`, `marketing`, or both.
-   3. A final PUT request indicating submission for `technical`, `marketing`, or both.
+   1. One or more PUT requests in which you configure the package parameters. In these requests, set `action` to `draft` in `technical`, `marketing`, or both.
+   1. A final PUT request indicating submission for `technical`, `marketing`, or both.
 
 You can update one or more parameters in `draft` mode, but the API does not check for validation errors.
 
@@ -482,7 +484,7 @@ If you save the request body to a file, for example, `/tmp/one-click-submission-
 
 **Request**
 
-```shell
+```bash
 curl -X POST \
      -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
      -H 'Content-Type: application/json' \
@@ -509,22 +511,22 @@ curl -X POST \
 ]
 ```
 
-* The API returns a HTTP 200 batch response listing items in the same order as they were provided in the request.
-* Each item contains a `code` and `message` indicating success or failure. Any non-200 code indicates an error. Refer to the message for more details.
-* A unique `submission_id` is returned for each successful item, which must be used for any GET, PUT, or DELETE methods.
-* Optionally, if a user-defined `item_id` was supplied during the POST, the response will echo back the same `item_id` for each item in the batch. The resource can be retrieved via GET using the `item_id`.
-* Any non-200 HTTP response code indicates an error for the entire batch request.
+*  The API returns a HTTP 200 batch response listing items in the same order as they were provided in the request.
+*  Each item contains a `code` and `message` indicating success or failure. Any non-200 code indicates an error. Refer to the message for more details.
+*  A unique `submission_id` is returned for each successful item, which must be used for any GET, PUT, or DELETE methods.
+*  Optionally, if a user-defined `item_id` was supplied during the POST, the response will echo back the same `item_id` for each item in the batch. The resource can be retrieved via GET using the `item_id`.
+*  Any non-200 HTTP response code indicates an error for the entire batch request.
 
 ### Update a package
 
 The PUT method can be used to update packages in the following states:
 
-* The package is in draft mode for the technical or marketing review; or both.
-* The package has been rejected in either the technical or marketing review; or both. You must fix these issues and re-submit the package.
-* The package has been released to the Magento Marketplace.
-* The package was removed from the store by the developer and needs to be re-published.
-* The package can be recalled while in the EQP pipeline.
-* After a package has been released to the Magento Marketplace, you can update marketing information only. Changing marketing information causes the package to be placed in marketing review. The package continues to be live on the marketplace, and after the marketing approval, the updated fields will be published to the store.
+*  The package is in draft mode for the technical or marketing review; or both.
+*  The package has been rejected in either the technical or marketing review; or both. You must fix these issues and re-submit the package.
+*  The package has been released to the Magento Marketplace.
+*  The package was removed from the store by the developer and needs to be re-published.
+*  The package can be recalled while in the EQP pipeline.
+*  After a package has been released to the Magento Marketplace, you can update marketing information only. Changing marketing information causes the package to be placed in marketing review. The package continues to be live on the marketplace, and after the marketing approval, the updated fields will be published to the store.
 
 You cannot modify a package during the EQP process, except to recall the package.
 
@@ -534,7 +536,7 @@ The PUT method also allows for updating a single package with `submission_id` as
 
 **Request**
 
-```shell
+```bash
 curl -X PUT \
      -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
      -H 'Content-Type: application/json' \
@@ -591,7 +593,7 @@ With the returned  `submission_id`, the remaining required parameters can be sup
 
 ## Get package details
 
-```
+```http
 GET /rest/v1/products/packages
 GET /rest/v1/products/packages/:submission_id
 GET /rest/v1/products/packages/skus
@@ -608,11 +610,11 @@ There are various ways to retrieve package details, most of which are convenient
 The alternative ways provided are:
 
 *  `skus`: Retrieves all versions of a particular package sku. An additional `version` filter is available to retrieve a specific sku and version.
-* `item_id`: Retrieves package details by specifying a user-defined unique `item_id` if one was supplied during the POST call.
+*  `item_id`: Retrieves package details by specifying a user-defined unique `item_id` if one was supplied during the POST call.
 
 The following basic endpoints retrieve all package details (every version of every package submitted):
 
-```
+```http
 GET /rest/v1/products/packages
 GET /rest/v1/products/packages/skus
 GET /rest/v1/products/packages/items
@@ -620,7 +622,7 @@ GET /rest/v1/products/packages/items
 
 The following status endpoints provide a detailed EQP status report of a packages:
 
-```
+```http
 GET /rest/v1/products/packages/:submission_id/status
 GET /rest/v1/products/packages/sku/:url_encoded_sku/status
 GET /rest/v1/products/packages/item/:item_id/status
@@ -630,7 +632,7 @@ This sample call lists all packages belonging to a user:
 
 **Request**
 
-```shell
+```bash
 curl -X GET \
      -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
      https://developer-api.magento.com/rest/v1/products/packages
@@ -778,10 +780,10 @@ curl -X GET \
 ]
 ```
 
-* The previous example shows one product only, but an array of products can be returned.
-* The `sku` and version will be determined from the code artifact (M1 tarball or M2 zip file) meta-information (M1 `packages.xml` or M2 `composer.json`), once it passes the malware checks.
-* The code, documentation, and media artifact files have additional info indicating meta-information on these files, including their current malware status.
-* The `eqp_status` field will indicate the current state of the package in the EQP process.
+*  The previous example shows one product only, but an array of products can be returned.
+*  The `sku` and version will be determined from the code artifact (M1 tarball or M2 zip file) meta-information (M1 `packages.xml` or M2 `composer.json`), once it passes the malware checks.
+*  The code, documentation, and media artifact files have additional info indicating meta-information on these files, including their current malware status.
+*  The `eqp_status` field will indicate the current state of the package in the EQP process.
 
 ### Get EQP status details
 
@@ -789,7 +791,7 @@ In the previous example, submission `f4eacd72be` failed. Specify the submission_
 
 **Request**
 
-```shell
+```bash
 curl -X GET \
      -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
      https://developer-api.magento.com/rest/v1/products/packages/f4eacd72be/status
@@ -843,10 +845,10 @@ curl -X GET \
 }
 ```
 
-* Technical reports include the Magento edition, version, and PHP version used to run tests.
-* The top-level `code` indicates the overall result, which can be `pass`, `fail`, or `in_progress`.
-* Each EQP review step, `technical` and `marketing` have their own overall status indicated by the `code` value, which can be `pass`, `fail` or `in_progress`.
-* The `results` list contains details for each tool and their respective outcome via the `status` field, which can be `pass` or `fail`.
+*  Technical reports include the Magento edition, version, and PHP version used to run tests.
+*  The top-level `code` indicates the overall result, which can be `pass`, `fail`, or `in_progress`.
+*  Each EQP review step, `technical` and `marketing` have their own overall status indicated by the `code` value, which can be `pass`, `fail` or `in_progress`.
+*  The `results` list contains details for each tool and their respective outcome via the `status` field, which can be `pass` or `fail`.
 
 ### Sorting and Filtering
 
@@ -876,7 +878,7 @@ A sample cURL request filtering all `themes` sorted by `platform` in ascending o
 
 **Request**
 
-```curl
+```bash
 curl -X GET \
      -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
      https://developer-api.magento.com/rest/v1/products/packages?type=theme&sort=+platform,-created_time
@@ -890,7 +892,7 @@ A list of theme packages can be returned in the same way as described in [Get pa
 
 You can delete a package only if you specify a `submission_id` or `item_id` as a query parameter. Deleting a package is risky operation, and as a result, you cannot delete them in a batch.
 
-```
+```http
 DELETE /rest/v1/products/packages/:submission_id
 DELETE /rest/v1/products/packages/items/:item_id
 ```
@@ -899,7 +901,7 @@ The following example deletes the package with `submission_id` `6fd7eaacbc`:
 
 **Request**
 
-```curl
+```bash
 curl -X DELETE \
      -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
      https://developer-api.magento.com/rest/v1/products/packages/6fd7eaacbc

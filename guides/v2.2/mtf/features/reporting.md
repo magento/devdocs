@@ -11,18 +11,18 @@ The following image demonstrates example of a general flow.
 
 The [event](https://glossary.magento.com/event) manager is a core component which:
 
-- dispatches events
-- gets a list of observers
-- notifies observers depending on read [configuration] and [preset]
+-  dispatches events
+-  gets a list of observers
+-  notifies observers depending on read [configuration] and [preset]
 
 ### Event manager {#event-manger}
 
 The event manager is defined in the [`\Magento\Mtf\System\Event\EventManager`][EventManager] class that:
 
-- is an entry point to the event management system
-- fetches configuration and observers
-- handles events and passes them to observers
-- notifies selected observers according to an event tags array and configuration
+-  is an entry point to the event management system
+-  fetches configuration and observers
+-  handles events and passes them to observers
+-  notifies selected observers according to an event tags array and configuration
 
 ## `phpunit.xml` configuration {#configuration}
 
@@ -114,7 +114,7 @@ The list of ready-to-use observers is the following:
 A tag contains name of an event. When you want to process any event by a particular [observer], you need to:
 
 1. [Dispatch][dispatch] the event.
-2. Add a tag with name of the event to required observer in corresponding [event preset].
+1. Add a tag with name of the event to required observer in corresponding [event preset].
 
 In terms of XML, it is represented as an element `<tag />` in `events.xml`. `<tag />` is a child element of an `<observer>` element. See the following example:
 
@@ -152,8 +152,8 @@ $this->eventManager->dispatchEvent(['your_event_tag'], [$your_input_parameters])
 
 It has two arguments:
 
-- Array of event tags. Event tags specify the name of event that is dispatched. It is used as a [tag] in [event preset].
-- Input parameters. The parameters used by observers as input parameters. For example, a cURL response.
+-  Array of event tags. Event tags specify the name of event that is dispatched. It is used as a [tag] in [event preset].
+-  Input parameters. The parameters used by observers as input parameters. For example, a cURL response.
 
 Example of use:
 
@@ -170,9 +170,9 @@ if (!strpos($response, 'data-ui-id="messages-message-success"')) {
 
 The following examples explain how to use the reporting tool on practice.
 
-* [Create a preset][create preset]
-* [Edit a preset][edit preset]
-* [Create and apply a custom observer][add custom observer]
+-  [Create a preset][create preset]
+-  [Edit a preset][edit preset]
+-  [Create and apply a custom observer][add custom observer]
 
 ### Create a preset {#create-preset}
 
@@ -182,16 +182,16 @@ The following example shows how to add a `custom` preset.
 
 **Reports**:
 
-- HTML code
-- screenshots
+-  HTML code
+-  screenshots
 
 **What is needed**:
 
-- [observers][observer]:
-  - `\Magento\Mtf\System\Observer\SourceCode`
-  - `\Magento\Mtf\System\Observer\Screenshot`
-- [events][event]:
-  - `failure`
+-  [observers][observer]:
+   -  `\Magento\Mtf\System\Observer\SourceCode`
+   -  `\Magento\Mtf\System\Observer\Screenshot`
+-  [events][event]:
+   -  `failure`
 
 **Solution**:
 
@@ -220,18 +220,18 @@ The following example shows how to edit the `base` preset.
 
 **Reports**:
 
-- screenshots
+-  screenshots
 
 **What is needed**:
 
-- [preset]:
-  - `base`
-- [observers][observer]:
-  - [`\Magento\Mtf\System\Observer\Screenshot`][Screenshot]
-- [events][event]:
-  - `click_before`
-  - `click_after`
-  - `set_value`
+-  [preset]:
+   -  `base`
+-  [observers][observer]:
+   -  [`\Magento\Mtf\System\Observer\Screenshot`][Screenshot]
+-  [events][event]:
+   -  `click_before`
+   -  `click_after`
+   -  `set_value`
 
 {: .bs-callout .bs-callout-warning }
 The `base` preset is stored in the FTF `<magento2>/dev/tests/functional/vendor/magento/mtf/etc/events.xml`.
@@ -261,8 +261,8 @@ You can create your own observer using existing examples.
 
 General implementation rules:
 
-- An observer must implement [`ObserverInterface`].
-- Put the class in `<magento_2_root_dir>/dev/tests/functional/lib/Magento/Mtf/System/Observer`.
+-  An observer must implement [`ObserverInterface`].
+-  Put the class in `<magento_2_root_dir>/dev/tests/functional/lib/Magento/Mtf/System/Observer`.
 
 The following example shows how to use a custom observer in the example with the `\Magento\Mtf\System\Observer\WebapiResponse` observer.
 
@@ -270,16 +270,16 @@ The following example shows how to use a custom observer in the example with the
 
 **Reports**:
 
-- Log in JSON
+-  Log in JSON
 
 **What is needed**:
 
-- [preset]:
-  - `base`
-- [observer]:
-  - `\Magento\Mtf\System\Observer\WebapiResponse`
-- [event]:
-  - `webapi_failed`
+-  [preset]:
+   -  `base`
+-  [observer]:
+   -  `\Magento\Mtf\System\Observer\WebapiResponse`
+-  [event]:
+   -  `webapi_failed`
 
 **Solution**:
 

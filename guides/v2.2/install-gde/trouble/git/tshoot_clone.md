@@ -15,7 +15,7 @@ functional_areas:
 
 Error is similar to the following:
 
-```
+```terminal
 Cloning into 'magento2'...
 Permission denied (publickey).
 fatal: The remote end hung up unexpectedly

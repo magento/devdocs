@@ -25,8 +25,8 @@ The database contains default configurations for your Magento store. When you up
 
 To generate the file, use one of the following:
 
-* `php vendor/bin/m2-ece-scd-dump`—**Recommended** Exports only modified configuration settings
-* `php ./vendor/bin/ece-tools config:dump`—Exports every configuration setting, including modified and default settings
+*  `php vendor/bin/m2-ece-scd-dump`—**Recommended** Exports only modified configuration settings
+*  `php ./vendor/bin/ece-tools config:dump`—Exports every configuration setting, including modified and default settings
 
 {:.bs-callout .bs-callout-warning}
 For {{site.data.var.ece}}, we **do not recommend** using the `app:config:dump` command. This command pulls and locks all values in a read-only state. This affects Fastly and other important modules.
@@ -81,9 +81,9 @@ The following table shows the configuration settings affected by the `php vendor
 
 The `config.php` file includes the following settings and configuration values:
 
-* Configured values for settings entered through the Magento Admin (see the table below)
-* Configured extension settings
-* Scopes value for static content deployment (default is [`quick`]({{ site.baseurl }}/guides/v2.2/config-guide/cli/config-cli-subcommands-static-deploy-strategies.html#static-file-quick))
+*  Configured values for settings entered through the Magento Admin (see the table below)
+*  Configured extension settings
+*  Scopes value for static content deployment (default is [`quick`]({{ site.baseurl }}/guides/v2.2/config-guide/cli/config-cli-subcommands-static-deploy-strategies.html#static-file-quick))
 
 <table>
 <tbody>
@@ -144,13 +144,15 @@ Complete all configurations for your stores in the Admin console:
 
 1. Log in to the Magento Admin for one of the environments:
 
-    * Starter: An active development branch
-    * Pro: Integration environment
+   *  Starter: An active development branch
+   *  Pro: Integration environment
 
-2. Create and configure all store settings. These configurations do not include the actual products unless you plan on dumping the database from this environment to Staging and Production. Typically development databases do not include your full store data.
-3. Open a terminal on your local and generate `/app/etc/config.php` on the environment:
+1. Create and configure all store settings. These configurations do not include the actual products unless you plan on dumping the database from this environment to Staging and Production. Typically development databases do not include your full store data.
+1. Open a terminal on your local and generate `/app/etc/config.php` on the environment:
 
-    `ssh <SSH URL> "php vendor/bin/m2-ece-scd-dump"`
+   ```bash
+   ssh <SSH URL> "php vendor/bin/m2-ece-scd-dump"
+   ```
 
 ### Step 2: Transfer and add the file to Git {#transfer-file}
 
@@ -158,11 +160,15 @@ Push the `config.php` file to Git. To push this file to the `master` Git branch,
 
 1. Transfer the `config.php` file to your local system using `rsync` or `scp`. You can only add this file to the Git branch through your local.
 
-    `rsync <SSH URL>:app/etc/config.php ./app/etc/config.php`
+   ```bash
+   rsync <SSH URL>:app/etc/config.php ./app/etc/config.php
+   ```
 
-2. Add and push the `config.php` file to the Git master branch.
+1. Add and push the `config.php` file to the Git master branch.
 
-    `git add app/etc/config.php && git commit -m "Add system-specific configuration" && git push origin master`
+   ```bash
+   git add app/etc/config.php && git commit -m "Add system-specific configuration" && git push origin master
+   ```
 
 When you add the `config.php` file to Git, all build and deploy processes move static content deployment (SCD) to the _build_ phase. The method for the deployment uses the scope. The default option is [`quick`]({{ site.baseurl }}/guides/v2.2/config-guide/cli/config-cli-subcommands-static-deploy-strategies.html#static-file-quick). You can change the strategy by setting an environment variable for [`SCD_STRATEGY`]({{ site.baseurl }}/guides/v2.2/cloud/env/variables-deploy.html).
 
@@ -193,10 +199,10 @@ If you upgrade to {{site.data.var.ece}} 2.2 or later, you may want to migrate se
 If they differ, you can append content from the `config.local.php` file to your new `config.php` file:
 
 1. Follow instructions to generate the `config.php` file using the [recommended method](#cloud-config-specific-recomm).
-2. Open the `config.php` file and delete the last line.
-3. Open the `config.local.php` file and copy the contents.
-4. Paste the contents into the `config.php` file, save, and complete adding it to Git.
-5. Deploy across your environments.
+1. Open the `config.php` file and delete the last line.
+1. Open the `config.local.php` file and copy the contents.
+1. Paste the contents into the `config.php` file, save, and complete adding it to Git.
+1. Deploy across your environments.
 
 You only need to complete this migration once. When you need to update the file, always update the `config.php` file.
 
@@ -209,21 +215,21 @@ You can add another locale to the Staging or Production environment by enabling 
 {: .bs-callout .bs-callout-warning}
 This process **overwrites** the store configuration; only do the following if the environments contain the same stores.
 
-1.  From your Integration environment, enable the `SCD_ON_DEMAND` variable.
-1.  Add the necessary locales using your Admin panel.
-1.  Generate the `app/etc/config.php` file containing all locales.
+1. From your Integration environment, enable the `SCD_ON_DEMAND` variable.
+1. Add the necessary locales using your Admin panel.
+1. Generate the `app/etc/config.php` file containing all locales.
 
-    ```bash
-    php ./vendor/bin/ece-tools config:dump
-    ```
+   ```bash
+   php ./vendor/bin/ece-tools config:dump
+   ```
 
-1.  Copy the new configuration file from your Integration environment to your local Staging environment directory.
+1. Copy the new configuration file from your Integration environment to your local Staging environment directory.
 
-    ```bash
-    rsync <SSH URL>:app/etc/config.php ./app/etc/config.php
-    ```
+   ```bash
+   rsync <SSH URL>:app/etc/config.php ./app/etc/config.php
+   ```
 
-1.  Push code changes to the remote.
+1. Push code changes to the remote.
 
 {:.bs-callout .bs-callout-warning}
 While you can manually edit the `config.php` file in the Staging and Production environments, we do not recommend it. The file helps to keep all configurations consistent across all environments. Never delete the `config.php` file to rebuild it. Deleting the file can remove specific configurations and settings required for build and deploy processes.

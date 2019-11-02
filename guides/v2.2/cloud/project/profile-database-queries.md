@@ -9,7 +9,8 @@ functional_areas:
 
 When making changes to a database, you may find it helpful to run profiling to identify the impact of those changes. Profiling maintains a log of database queries and increases run-time precision.
 
-#### To enable database query profiling:
+{:.procedure}
+To enable database query profiling:
 
 1. [Log in to the database]({{page.baseurl}}/cloud/env/environments-start.html#commands).
 
@@ -35,7 +36,7 @@ When making changes to a database, you may find it helpful to run profiling to i
     SET @@profiling = 1;
     ```
 
-#### Example log
+## Example log
 
 {: .no-copy}
 ```sql

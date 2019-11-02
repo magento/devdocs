@@ -11,14 +11,14 @@ This configuration is set in the CMS module's `di.xml` file and injected into th
 
 By default, Magento allows Media Library access to all directories under `/pub/media` except the following:
 
-* `captcha`
-* `catalog/product`
-* `customer`
-* `downloadable`
-* `import`
-* `theme`
-* `theme_customization`
-* `tmp`
+*  `captcha`
+*  `catalog/product`
+*  `customer`
+*  `downloadable`
+*  `import`
+*  `theme`
+*  `theme_customization`
+*  `tmp`
 
 In this tutorial, you will learn how to specify Media Library view permissions for folders using the `di.xml` file.
 

@@ -4,6 +4,7 @@ subgroup: Security
 title: XSS prevention strategies
 menu_title: XSS prevention strategies
 menu_order: 1100
+redirect_from: guides/v2.2/frontend-dev-guide/templates/template-security.html
 ---
 
 ## Overview
@@ -113,6 +114,16 @@ Certain attributes like `a.href` accept URIs of various types and must be saniti
 ```php
 <a href="<?= $block->escapeUrl($myUrl) ?>">Click me</a>
 <div attr-js-extracts="<?= $block->escapeHtmlAttribute($myOtherUrl) ?>"></div>
+```
+
+**Case**: All JavaScript inside attributes must be escaped by escapeJs before escapeHtmlAttr:
+**Escaper method**: escapeJS
+
+```php
+<div
+    onclick="<?= $block->escapeHtmlAttr('handler("' .$block->escapeJs($aString) .'", ' .$block->escapeJs($aVar) .')') ?>">
+    My DIV
+</div>
 ```
 
 **Case**: JavaScript string that must not contain JS/HTML

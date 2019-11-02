@@ -11,19 +11,19 @@ An **integration** enables third-party services to call the Magento web APIs. Th
 
 Implementing a simple integration requires little knowledge of [PHP](https://glossary.magento.com/php) or Magento internal processes. However, you will need a working knowledge of
 
-* [Magento REST or SOAP Web APIs]({{ page.baseurl }}/get-started/bk-get-started-api.html)
-* [Web API authentication]({{ page.baseurl }}/get-started/authentication/gs-authentication.html)
-* [OAuth-based authentication]( {{ page.baseurl }}/get-started/authentication/gs-authentication-oauth.html )
+*  [Magento REST or SOAP Web APIs]({{ page.baseurl }}/get-started/bk-get-started-api.html)
+*  [Web API authentication]({{ page.baseurl }}/get-started/authentication/gs-authentication.html)
+*  [OAuth-based authentication]( {{ page.baseurl }}/get-started/authentication/gs-authentication-oauth.html )
 
 Before you begin creating a module, make sure that you have a working installation of Magento 2.0, and the [Magento System Requirements]({{ page.baseurl }}/install-gde/system-requirements.html).
 
 To create an integration, follow these general steps:
 
 1. [Create a module with the minimal structure and configuration.](#skeletal)
-2. [Add files specific to the integration.](#files)
-3. [Install the module.](#install)
-4. [Check the integration.](#check)
-5. [Integrate with your application.](#integrate)
+1. [Add files specific to the integration.](#files)
+1. [Install the module.](#install)
+1. [Check the integration.](#check)
+1. [Integrate with your application.](#integrate)
 
 ## Create a skeletal module {#skeletal}
 
@@ -33,14 +33,21 @@ To develop a module, you must:
 
    Also create  `etc`, `etc/integration`, and `Setup` subdirectories under `module-<module_name>`, as shown in the following example:
 
-    ```bash
-    cd <magento_base_dir>
-    mkdir -p vendor/<vendor_name>/module-<module_name>/etc/integration
-    mkdir -p vendor/<vendor_name>/module-<module_name>/Setup
-    ```
+   ```bash
+   cd <magento_base_dir>
+   ```
+
+   ```bash
+   mkdir -p vendor/<vendor_name>/module-<module_name>/etc/integration
+   ```
+
+   ```bash
+   mkdir -p vendor/<vendor_name>/module-<module_name>/Setup
+   ```
+
    For more detailed information, see [Create your component file structure]({{ page.baseurl }}/extension-dev-guide/build/module-file-structure.html).
 
-2. **Define your module configuration file.** The `etc/module.xml` file provides basic information about the module. Change directories to the `etc` directory and create the `module.xml` file. You must specify values for the following attributes:
+1. **Define your module configuration file.** The `etc/module.xml` file provides basic information about the module. Change directories to the `etc` directory and create the `module.xml` file. You must specify values for the following attributes:
 
    <table>
    <tr>
@@ -76,7 +83,7 @@ To develop a module, you must:
 
    Module `Magento_Integration` is added to "sequence" to be loaded first. It helps to avoid the issue, when a module with integration config loaded, that leads to a malfunction.
 
-3. **Add your module's `composer.json` file.** Composer is a dependency manager for PHP. You must create a `composer.json` file for your module so that Composer can install and update the libraries your module relies on. Place the `composer.json` file in the `module-<module_name>` directory.
+1. **Add your module's `composer.json` file.** Composer is a dependency manager for PHP. You must create a `composer.json` file for your module so that Composer can install and update the libraries your module relies on. Place the `composer.json` file in the `module-<module_name>` directory.
 
     The following example demonstrates a minimal `composer.json` file.
 
@@ -85,7 +92,7 @@ To develop a module, you must:
          "name": "Vendor1_Module1",
          "description": "create integration from config",
          "require": {
-            "php": "~5.5.0|~5.6.0|~7.0.0",
+            "php": "~7.0.13|~7.1.0|~7.2.0",
             "magento/framework": "2.0.0",
             "magento/module-integration": "2.0.0"
          },
@@ -102,7 +109,7 @@ To develop a module, you must:
 
     For more information, see [Create a component]({{ page.baseurl }}/extension-dev-guide/build/create_component.html).
 
-4. **Create a `registration.php` file** The `registration.php` registers the module with the Magento system. It must be placed in the module's root directory.
+1. **Create a `registration.php` file** The `registration.php` registers the module with the Magento system. It must be placed in the module's root directory.
 
       ```php
       <?php
@@ -118,8 +125,7 @@ To develop a module, you must:
         );
       ```
 
-5. **Create an install class.**
-Change directories to your `Setup` directory. Create a `InstallData.php` file that installs the integration configuration data into the Magento integration table.
+1. **Create an install class.** Change directories to your `Setup` directory. Create a `InstallData.php` file that installs the integration configuration data into the Magento integration table.
 
     The following sample is boilerplate and requires minor changes to make your integration work.
 
@@ -164,7 +170,19 @@ Change directories to your `Setup` directory. Create a `InstallData.php` file th
 
     `$this->integrationManager->processIntegrationConfig(['TestIntegration']);`
 
-    `testIntegration` must refer to your `etc/integration.xml` file, and the integration name value must be the same.
+    `testIntegration` must refer to your `etc/integration/config.xml` file, and the integration name value must be the same.
+
+    The following example demonstrates a minimal 'config.xml' file.
+
+    ```xml
+    <integrations>
+      <integration name="TestIntegration">
+         <email>someone@example.com</email>
+         <endpoint_url>https://example.com</endpoint_url>
+         <identity_link_url>https://example.com/identity_link_url</identity_link_url>
+      </integration>
+    </integrations>
+    ``
 
     Also, be sure to change the path after `namespace` for your vendor and module names.
 
@@ -172,16 +190,16 @@ Change directories to your `Setup` directory. Create a `InstallData.php` file th
 
 Magento provides the Integration module, which simplifies the process of defining your integration. This module automatically performs functions such as:
 
-* Managing the third-party account that connects to Magento.
-* Maintaining OAuth authorizations and user data.
-* Managing security tokens and requests.
+*  Managing the third-party account that connects to Magento.
+*  Maintaining OAuth authorizations and user data.
+*  Managing security tokens and requests.
 
 To customize your module, you must create multiple [XML](https://glossary.magento.com/xml) files and read through others files to determine what resources existing Magento modules have access to.
 
 The process for customizing your module includes
 
-* [Define the required resources](#resources)
-* [Pre-configure the integration](#preconfig)
+*  [Define the required resources](#resources)
+*  [Pre-configure the integration](#preconfig)
 
 ### Define the required resources {#resources}
 
@@ -269,18 +287,24 @@ Use the following steps to install your module:
 
 1. Run the following command to update the Magento [database schema](https://glossary.magento.com/database-schema) and data.
 
-    <code>bin/magento setup:upgrade</code>
+   ```bash
+   bin/magento setup:upgrade
+   ```
 
-2. Run the following command to generate the new code.
+1. Run the following command to generate the new code.
 
    {: .bs-callout-info }
    In Production mode, you may receive a message to 'Please rerun Magento compile command'.  Enter the command below. Magento does not prompt you to run the compile command in Developer mode.
 
-    <code>bin/magento setup:di:compile</code>
+   ```bash
+   bin/magento setup:di:compile
+   ```
 
-3. Run the following command to clean the cache.
+1. Run the following command to clean the cache.
 
-    <code>bin/magento cache:clean</code>
+   ```bash
+   bin/magento cache:clean
+   ```
 
 ## Check your integration {#check}
 
@@ -290,9 +314,9 @@ Log in to Magento and navigate to **System > Extensions > Integrations**. The in
 
 Before you can activate your integration in Magento, you must create two pages on your application to handle OAuth communications.
 
-* The location specified in the `identity_link_url` parameter must point to a page that can handle login requests.
+*  The location specified in the `identity_link_url` parameter must point to a page that can handle login requests.
 
-* The location specified in the `endpoint_url` parameter (**Callback URL** in Admin) must be able to process OAuth token exchanges.
+*  The location specified in the `endpoint_url` parameter (**Callback URL** in Admin) must be able to process OAuth token exchanges.
 
 ### Login page {#login}
 
@@ -302,30 +326,30 @@ When a merchant clicks the **Activate** button in Admin, a pop-up login page for
 
 The callback page must be able to perform the following tasks:
 
-* Receive an initial HTTPS POST that Magento sends when the merchant activates integration. This post contains the Magento store URL, an `oauth_verifier`, the OAuth consumer key, and the OAuth consumer secret. The consumer key and secret are generated when the integration is created.
+*  Receive an initial HTTPS POST that Magento sends when the merchant activates integration. This post contains the Magento store URL, an `oauth_verifier`, the OAuth consumer key, and the OAuth consumer secret. The consumer key and secret are generated when the integration is created.
 
-* Ask for a request token. A request token is a temporary token that the user exchanges for an access token. Use the following API to get a request token from Magento:
+*  Ask for a request token. A request token is a temporary token that the user exchanges for an access token. Use the following API to get a request token from Magento:
 
-  `POST /oauth/token/request`
+   `POST /oauth/token/request`
 
-  See [Get a request token]( {{ page.baseurl }}/get-started/authentication/gs-authentication-oauth.html#pre-auth-token ) for more details about this call.
+   See [Get a request token]( {{ page.baseurl }}/get-started/authentication/gs-authentication-oauth.html#pre-auth-token ) for more details about this call.
 
-* Parse the request token response. The response contains an `oauth_token` and `oauth_token_secret`.
+*  Parse the request token response. The response contains an `oauth_token` and `oauth_token_secret`.
 
-* Ask for a access token. The request token must be exchanged for an access token. Use the following API to get a request token from Magento:
+*  Ask for a access token. The request token must be exchanged for an access token. Use the following API to get a request token from Magento:
 
-  `POST /oauth/token/access`
+   `POST /oauth/token/access`
 
-  See [Get an access token]( {{ page.baseurl }}/get-started/authentication/gs-authentication-oauth.html#get-access-token ) for more details about this call.
+   See [Get an access token]( {{ page.baseurl }}/get-started/authentication/gs-authentication-oauth.html#get-access-token ) for more details about this call.
 
-* Parse the access token response. The response contains an `oauth_token` and `oauth_token_secret`. These values will be different than those provided in the request token response.
+*  Parse the access token response. The response contains an `oauth_token` and `oauth_token_secret`. These values will be different than those provided in the request token response.
 
-* Save the access token and other OAuth parameters. The access token and OAuth parameters must be specified in the `Authorization` header in each call to Magento.
+*  Save the access token and other OAuth parameters. The access token and OAuth parameters must be specified in the `Authorization` header in each call to Magento.
 
 ## Related Topics
 
-- [Web API authentication]({{ page.baseurl }}/get-started/authentication/gs-authentication.html)
-- [OAuth-based authentication]( {{ page.baseurl }}/get-started/authentication/gs-authentication-oauth.html )
-- [Magento System Requirements]({{ page.baseurl }}/install-gde/system-requirements.html)
-- [Create the module file structure]({{ page.baseurl }}/extension-dev-guide/build/module-file-structure.html)
-- [Create a component]({{ page.baseurl }}/extension-dev-guide/build/create_component.html)
+*  [Web API authentication]({{ page.baseurl }}/get-started/authentication/gs-authentication.html)
+*  [OAuth-based authentication]( {{ page.baseurl }}/get-started/authentication/gs-authentication-oauth.html )
+*  [Magento System Requirements]({{ page.baseurl }}/install-gde/system-requirements.html)
+*  [Create the module file structure]({{ page.baseurl }}/extension-dev-guide/build/module-file-structure.html)
+*  [Create a component]({{ page.baseurl }}/extension-dev-guide/build/create_component.html)

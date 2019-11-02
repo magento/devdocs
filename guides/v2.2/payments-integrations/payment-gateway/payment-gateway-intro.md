@@ -17,23 +17,23 @@ The following diagram shows a simplified interaction flow between Magento sales 
 
 Magento payment provider supports the following payment operations:
 
- * authorize: process [authorization](https://glossary.magento.com/authorization) transaction; funds are blocked on customer account, but not withdrawn
- * sale: process authorization transaction and capture automatically, funds are withdrawn
- * capture: withdraw previously authorized amount
- * refund: return previously withdrawn customer funds
- * void: cancel transfer of funds from customer account
+*  authorize: process [authorization](https://glossary.magento.com/authorization) transaction; funds are blocked on customer account, but not withdrawn
+*  sale: process authorization transaction and capture automatically, funds are withdrawn
+*  capture: withdraw previously authorized amount
+*  refund: return previously withdrawn customer funds
+*  void: cancel transfer of funds from customer account
 
 ### What's in this chapter
 
 The topics of this chapter are conceptual and describe the components of the Magento payment provider gateway:
 
-* [Payment provider gateway structure]({{ page.baseurl }}/payments-integrations/payment-gateway/payment-gateway-structure.html)
-* [Gateway Command]({{ page.baseurl }}/payments-integrations/payment-gateway/gateway-command.html)
-* [Gateway Command Pool]({{ page.baseurl }}/payments-integrations/payment-gateway/command-pool.html)
-* [Request Builder]({{ page.baseurl }}/payments-integrations/payment-gateway/request-builder.html)
-* [Gateway Client]({{ page.baseurl }}/payments-integrations/payment-gateway/gateway-client.html)
-* [Response Validator]({{ page.baseurl }}/payments-integrations/payment-gateway/response-validator.html)
-* [Response Handler]({{ page.baseurl }}/payments-integrations/payment-gateway/response-handler.html)
+*  [Payment provider gateway structure]({{ page.baseurl }}/payments-integrations/payment-gateway/payment-gateway-structure.html)
+*  [Gateway Command]({{ page.baseurl }}/payments-integrations/payment-gateway/gateway-command.html)
+*  [Gateway Command Pool]({{ page.baseurl }}/payments-integrations/payment-gateway/command-pool.html)
+*  [Request Builder]({{ page.baseurl }}/payments-integrations/payment-gateway/request-builder.html)
+*  [Gateway Client]({{ page.baseurl }}/payments-integrations/payment-gateway/gateway-client.html)
+*  [Response Validator]({{ page.baseurl }}/payments-integrations/payment-gateway/response-validator.html)
+*  [Response Handler]({{ page.baseurl }}/payments-integrations/payment-gateway/response-handler.html)
 
 #### Terms used {#terms}
 
@@ -80,4 +80,3 @@ Data used for a transaction. Might include the following:
 </td>
 </tr>
 </table>
-

@@ -19,7 +19,7 @@ The following query returns information about the "404 Not Found" CMS page:
 
 **Request**
 
-```text
+```graphql
 {
   cmsPage(identifier: 1) {
     url_key
@@ -66,8 +66,9 @@ The `CmsPage` object can contain the following attributes:
 
 Attribute | Data type | Description
 --- | --- | ---
-`content_heading` | String | The heading that displays at the top of the CMS page
 `content` | String | The content of the CMS page in raw HTML
+`content_heading` | String | The heading that displays at the top of the CMS page
+`identifier` | String | The identifier of the CMS page
 `meta_description` | String | A brief description of the page for search results listings
 `meta_keywords` | String | A set of keywords that search engines can use to index the page
 `meta_title` | String | A page title that is indexed by search engines and appears in search results listings
@@ -77,4 +78,4 @@ Attribute | Data type | Description
 
 ## Related topics
 
-[cmsBlock query]({{page.baseurl}}/graphql/queries/cms-block.html)
+[cmsBlocks query]({{page.baseurl}}/graphql/queries/cms-blocks.html)

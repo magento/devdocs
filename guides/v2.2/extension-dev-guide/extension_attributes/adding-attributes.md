@@ -70,11 +70,36 @@ public function afterGet
 ```
 
 This is the simplest way to add extension attributes without causing a conflict:
-- We get the [entity's](https://glossary.magento.com/entity) extension attributes, if they are already set.
- - We add our [extension attribute](https://glossary.magento.com/extension-attribute).
-- Finally set the extension attribute on the entity with ours included.
 
-AfterGetList is similar to afterGet.
+-  We get the [entity's](https://glossary.magento.com/entity) extension attributes, if they are already set.
+-  We add our [extension attribute](https://glossary.magento.com/extension-attribute).
+-  Finally set the extension attribute on the entity with ours included.
+
+Function `afterGetList` is similar to `afterGet`:
+
+```php
+public function afterGetList(
+    \Magento\Catalog\Api\ProductRepositoryInterface $subject,
+    \Magento\Catalog\Api\Data\ProductSearchResultsInterface $searchCriteria
+) : \Magento\Catalog\Api\Data\ProductSearchResultsInterface
+{
+    $products = [];
+    foreach ($searchCriteria->getItems() as $entity) {
+        $ourCustomData = $this->customDataRepository->get($entity->getId());
+
+        $extensionAttributes = $entity->getExtensionAttributes();
+        $extensionAttributes->setOurCustomData($ourCustomData);
+        $entity->setExtensionAttributes($extensionAttributes);
+
+        $products[] = $entity;
+    }
+    $searchCriteria->setItems($products);
+    return $searchCriteria;
+}
+```
+
+{: .bs-callout-info }
+To add extension attributes to an entity without plugins, use the `extensionActions` argument of `\Magento\Framework\EntityManager\Operation\ExtensionPool`. See [\Magento\Catalog\Model\ProductRepository::getList()]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/Model/ProductRepository.php) as an example of an implementation.
 
 Likewise, the `afterSave` plugin should manipulate the entity data before returning it:
 
@@ -151,6 +176,7 @@ Now we need to bind our plugin to `ProductInterface`:
 ## Extension Attributes Configuration:
 
 For scalar attributes we can use next configuration:
+
 ```xml
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Api/etc/extension_attributes.xsd">
     <extension_attributes for="Magento\Catalog\Api\Data\ProductInterface">
@@ -161,6 +187,7 @@ For scalar attributes we can use next configuration:
 ```
 
 For non-scalar attributes:
+
 ```xml
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Api/etc/extension_attributes.xsd">
     <extension_attributes for="Magento\Catalog\Api\Data\ProductInterface">

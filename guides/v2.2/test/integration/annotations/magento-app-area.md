@@ -16,8 +16,8 @@ Configure a test environment in scope of the particular [application area][] wit
 ## Fallback sequence
 
 1. Test annotation
-2. Test case annotation
-3. Default application area, which is `global`
+1. Test case annotation
+1. Default application area, which is `global`
 
 ## Test case annotation
 

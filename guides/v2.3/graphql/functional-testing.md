@@ -83,8 +83,8 @@ QUERY;
 
 The `\Magento\GraphQl\TestModule\GraphQlQueryTest.php` test case uses two test modules to determine whether the mechanisms for GraphQL extensibility work as expected. It illustrates best practices for extending an existing GraphQL endpoint.
 
-* `TestModuleGraphQlQuery` - This bare-bones module defines a `testItem` endpoint with the queryable attributes `item_id` and `name`. It's located at `<installdir>/dev/tests/api-functional/_files/TestModuleGraphQlQuery`.
-* `TestModuleGraphQlQueryExtension` - This module extends `TestModuleGraphQlQuery`, adding the `integer_list` extension attribute. It's located at `<installdir>/dev/tests/api-functional/_files/TestModuleGraphQlQueryExtension`.
+*  `TestModuleGraphQlQuery` - This bare-bones module defines a `testItem` endpoint with the queryable attributes `item_id` and `name`. It's located at `<installdir>/dev/tests/api-functional/_files/TestModuleGraphQlQuery`.
+*  `TestModuleGraphQlQueryExtension` - This module extends `TestModuleGraphQlQuery`, adding the `integer_list` extension attribute. It's located at `<installdir>/dev/tests/api-functional/_files/TestModuleGraphQlQueryExtension`.
 
 ## Creating fixtures
 
@@ -92,8 +92,8 @@ Fixtures, which are part of the testing framework, prepare preconditions in the 
 
 A fixture consists of two files:
 
-- The fixture file, which defines the test
-- A rollback file, which reverts the system to the state before the test was run
+*  The fixture file, which defines the test
+*  A rollback file, which reverts the system to the state before the test was run
 
 {: .bs-callout-info }
 Each fixture should have a corresponding rollback file.
@@ -235,7 +235,7 @@ The following example sets a store-scoped value `1` for the config key `checkout
 ```sql
 INSERT INTO `core_config_data` (scope`, `scope_id`, `path`, `value`)
 VALUES
-	('stores', 1, 'checkout/options/enable_agreements', '1');
+  ('stores', 1, 'checkout/options/enable_agreements', '1');
 ```
 
 The fixture automatically removes the `checkout/options/enable_agreements` config key from the database after the test has been completed.
@@ -243,8 +243,9 @@ The fixture automatically removes the `checkout/options/enable_agreements` confi
 ## Defining expected exceptions
 
 Your functional tests should include events that cause exceptions. Since your tests expect an exception to occur, set up your tests so that they elicit the proper responses. You can define expected exception messages either in:
-- The body of the test
-- The test function annotation
+
+*  The body of the test
+*  The test function annotation
 
 {: .bs-callout .bs-callout-tip }
 We recommend that you declare expected exceptions in the test method body, as declaring expected exceptions with annotations has been deprecated in PHPUnit 8. Existing tests that use annotations will have to be updated when Magento requires that version of PHPUnit or higher.
@@ -378,11 +379,11 @@ The `@expectExceptionMessage` annotation provides the text for the exception in 
 
 Use the following functions to cover expected exceptions:
 
-- `expectException`
-- `expectExceptionCode`
-- `expectExceptionMessage`
-- `expectExceptionMessageRegExp`
-- `expectExceptionObject`
+*  `expectException`
+*  `expectExceptionCode`
+*  `expectExceptionMessage`
+*  `expectExceptionMessageRegExp`
+*  `expectExceptionObject`
 
 ## Run functional tests
 
@@ -390,22 +391,22 @@ Use the following functions to cover expected exceptions:
 
 1. Change directories to `dev/tests/api-functional/` and copy the `phpunit_graphql.xml.dist` file to `phpunit_graphql.xml`.
 
-    ```bash
-    cp phpunit_graphql.xml.dist phpunit_graphql.xml
-    ```
+   ```bash
+   cp phpunit_graphql.xml.dist phpunit_graphql.xml
+   ```
 
-2. Edit `phpunit_graphql.xml` to set values for the TESTS_BASE_URL, TESTS_WEBSERVICE_USER, TESTS_WEBSERVICE_APIKEY options:
+1. Edit `phpunit_graphql.xml` to set values for the TESTS_BASE_URL, TESTS_WEBSERVICE_USER, TESTS_WEBSERVICE_APIKEY options:
 
-    ```xml
-    ...
-    <!-- Webserver URL -->
-    <const name="TESTS_BASE_URL" value="http://magento.url"/>
-    <!-- Webserver API user -->
-    <const name="TESTS_WEBSERVICE_USER" value="admin"/>
-    <!-- Webserver API key -->
-    <const name="TESTS_WEBSERVICE_APIKEY" value="123123q"/>
-    ...
-    ```
+   ```xml
+   ...
+   <!-- Webserver URL -->
+   <const name="TESTS_BASE_URL" value="http://magento.url"/>
+   <!-- Webserver API user -->
+   <const name="TESTS_WEBSERVICE_USER" value="admin"/>
+   <!-- Webserver API key -->
+   <const name="TESTS_WEBSERVICE_APIKEY" value="123123q"/>
+   ...
+   ```
 
 ### Run all tests in a API functional test suite
 

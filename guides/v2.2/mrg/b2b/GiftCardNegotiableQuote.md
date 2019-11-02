@@ -14,9 +14,9 @@ The `Magento_GiftCardNegotiableQuote` module enables gift cards to be displayed 
 
 The `Magento_GiftCardNegotiableQuote` module provides the following features:
 
-* Display gift cards in a negotiable quote.
+*  Display gift cards in a negotiable quote.
 
-* Order gift cards from a negotiable quote.
+*  Order gift cards from a negotiable quote.
 
 ## Installation details
 

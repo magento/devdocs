@@ -15,33 +15,39 @@ functional_areas:
 
 Before you install Magento, you must do all of the following:
 
-* Set up one or more hosts that meet the [Magento system requirements]({{ page.baseurl }}/install-gde/system-requirements.html).
-* If you are setting up more than one web node with load balancing, set up and test that part of your system _before_ you install Magento.
-* Make sure you can back up your entire system at various points during the installation so you can roll back in the [event](https://glossary.magento.com/event) of issues.
+*  Set up one or more hosts that meet the [Magento system requirements]({{ page.baseurl }}/install-gde/system-requirements.html).
+*  If you are setting up more than one web node with load balancing, set up and test that part of your system _before_ you install Magento.
+*  Make sure you can back up your entire system at various points during the installation so you can roll back in the [event](https://glossary.magento.com/event) of issues.
 
 {:.bs-callout .bs-callout-info}
 We assume you're installing the Magento 2 software in a _development environment_, which means you have [root user](http://www.linfo.org/root.html){:target="_blank"} access to the machine _and_ that the machine does not need to be highly secure. If you're setting up a more secure machine, we strongly recommend you consult a network administrator for additional assistance.
 
 We strongly recommend you update and upgrade your operating system software. These upgrades can provide security and software fixes that might prevent future problems.
 
-{:.bs-callout .bs-callout-info}
+{: .bs-callout-info }
 Don't know what any of this means? Check out our [installation overview page]({{ page.baseurl }}/install-gde/bk-install-guide.html).
 
 Enter the following commands as a user with `root` privileges:
 
-* Ubuntu
+*  Ubuntu
 
-    ```bash
-    apt-get update
-    apt-get upgrade
-    ```
+   ```bash
+   apt-get update
+   ```
 
-* CentOS
+   ```bash
+   apt-get upgrade
+   ```
 
-    ```bash
-    yum -y update
-    yum -y upgrade
-    ```
+*  CentOS
+
+   ```bash
+   yum -y update
+   ```
+
+   ```bash
+   yum -y upgrade
+   ```
 
 ## Prerequisite check {#instgde-prereq-check}
 
@@ -58,8 +64,8 @@ Ubuntu: `apache2 -v`
 as the following result indicates:
 
 ```terminal
-Server version: Apache/2.4.1 (Unix)
-Server built: Jul 23 2017 14:17:29
+Server version: Apache/2.2.15 (Unix)
+Server built: Jul 23 2014 14:17:29
 ```
 
 To install or upgrade Apache, see [Apache]({{ page.baseurl }}/install-gde/prereq/apache.html).
@@ -98,32 +104,34 @@ mysql -u magento -p
 
 You must run MySQL version 5.6 or later as the following result indicates:
 
-    ```terminal
-    Welcome to the MySQL monitor. Commands end with ; or \g.
-    Your MySQL connection id is 871
-    Server version: 5.6.21 MySQL Community Server (GPL)
+```terminal
+Welcome to the MySQL monitor. Commands end with ; or \g.
+Your MySQL connection id is 871
+Server version: 5.6.21 MySQL Community Server (GPL)
 
-    Copyright (c) 2000, 2014, Oracle and/or its affiliates. All rights reserved.
+Copyright (c) 2000, 2014, Oracle and/or its affiliates. All rights reserved.
 
-    Oracle is a registered trademark of Oracle Corporation and/or its
-    affiliates. Other names may be trademarks of their respective
-    owners.
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
 
-    Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
-    ```
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+```
 
 Enter `exit` at the `mysql>` prompt to exit.
 
 To install or upgrade MySQL, see [MySQL]({{ page.baseurl }}/install-gde/prereq/mysql.html).
 
-## Next step
+{:.ref-header}
+Next step
 
 [Choose how to install the Magento software]({{ page.baseurl }}/install-gde/bk-install-guide.html)
 
-## Related topics
+{:.ref-header}
+Related topics
 
-* [MySQL]({{ page.baseurl }}/install-gde/prereq/mysql.html)
-* [Apache]({{ page.baseurl }}/install-gde/prereq/apache.html)
-* [PHP]({{ page.baseurl }}/install-gde/prereq/php-settings.html)
-* [Installing optional software]({{ page.baseurl }}/install-gde/prereq/optional.html)
-* [How to get the Magento software]({{ page.baseurl }}/install-gde/bk-install-guide.html)
+*  [MySQL]({{ page.baseurl }}/install-gde/prereq/mysql.html)
+*  [Apache]({{ page.baseurl }}/install-gde/prereq/apache.html)
+*  [PHP]({{ page.baseurl }}/install-gde/prereq/php-settings.html)
+*  [Installing optional software]({{ page.baseurl }}/install-gde/prereq/optional.html)
+*  [How to get the Magento software]({{ page.baseurl }}/install-gde/bk-install-guide.html)

@@ -13,10 +13,10 @@ These executable classes can perform tasks that set up the database, update data
 
 Follow these guidelines when developing your executable classes to have them run during specific lifecycle stages:
 
-* Put your executable class in the `Setup` directory inside your module's root directory.
-* Use the specific file and class name for your class's target lifecycle stage.
-* Implement the specific class interface and function for your class's target stage.
-* Follow Magento's [versioning policy] when changing your module's version.
+*  Put your executable class in the `Setup` directory inside your module's root directory.
+*  Use the specific file and class name for your class's target lifecycle stage.
+*  Implement the specific class interface and function for your class's target stage.
+*  Follow Magento's [versioning policy] when changing your module's version.
 
 ## Schema initialization stages
 
@@ -208,7 +208,7 @@ class InstallData implements InstallDataInterface
         $customerSetup->installCustomerForms();
         $disableAGCAttribute = $customerSetup->getEavConfig()->getAttribute('customer', 'disable_auto_group_change');
         ...
-	$setup->endSetup();
+    $setup->endSetup();
     }
 }
 ```
@@ -283,7 +283,7 @@ Avoid this situation by not including dependencies in your uninstall event class
 
 **Related Topics**
 
-* Magento's [versioning policy]
+*  Magento's [versioning policy]
 
 [versioning policy]: {{ page.baseurl }}/extension-dev-guide/versioning/
 [schema upgrade]: #schema-upgrade

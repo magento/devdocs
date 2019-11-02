@@ -11,47 +11,48 @@ functional_areas:
 
 This topic discusses advanced configuration commands you can use to:
 
-*   Set any configuration option from the command line
-*   Optionally lock any configuration option so its value cannot be changed in the Magento Admin
-*   Change a configuration option that is locked in the Magento Admin
+*  Set any configuration option from the command line
+*  Optionally lock any configuration option so its value cannot be changed in the Magento Admin
+*  Change a configuration option that is locked in the Magento Admin
 
 You can use these commands to set the Magento configuration manually or using scripts. You set configuration options using a _configuration path_, which is a `/`-delimited string that uniquely identifies that configuration option. You can find configuration paths in the following references:
 
-*   [Sensitive and system-specific configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-sens.html)
-*   [Payment configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-payment.html)
-*   [Other configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-most.html)
-*   [Magento Enterprise B2B Extension configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-b2b.html)
+*  [Sensitive and system-specific configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-sens.html)
+*  [Payment configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-payment.html)
+*  [Other configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-most.html)
+*  [Magento Enterprise B2B Extension configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-b2b.html)
 
 You can set values at the following times:
 
-*   Before you install Magento, you can set configuration values for the default scope only.
+*  Before you install Magento, you can set configuration values for the default scope only.
 
-    That's because before you install Magento, the default scope is the only valid scope.
-*   After you install Magento, you can set configuration values for any [website](https://glossary.magento.com/website) or [store view](https://glossary.magento.com/store-view) scope.
+   That's because before you install Magento, the default scope is the only valid scope.
+
+*  After you install Magento, you can set configuration values for any [website](https://glossary.magento.com/website) or [store view](https://glossary.magento.com/store-view) scope.
 
 Use the following commands:
 
-*   `bin/magento config:set` sets any non-sensitive configuration value by its configuration path
-*   `bin/magento config:sensitive:set` sets any sensitive configuration value by its configuration path
-*   `bin/magento config:show` shows saved configuration values; values of encrypted settings are displayed as asterisks
+*  `bin/magento config:set` sets any non-sensitive configuration value by its configuration path
+*  `bin/magento config:sensitive:set` sets any sensitive configuration value by its configuration path
+*  `bin/magento config:show` shows saved configuration values; values of encrypted settings are displayed as asterisks
 
 ## Prerequisites
 
 To set a configuration value, you must know at least one of the following:
 
-*   The configuration path
-*   To set a configuration value for a particular scope, you must know the scope code.
+*  The configuration path
+*  To set a configuration value for a particular scope, you must know the scope code.
 
-    To set a configuration value for the default scope, you don't need to do anything.
+   To set a configuration value for the default scope, you don't need to do anything.
 
 ### Find the configuration path
 
 See the following references:
 
-*   [Sensitive and system-specific configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-sens.html)
-*   [Payment configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-payment.html)
-*   [Other configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-most.html)
-*   [Magento Enterprise B2B Extension configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-b2b.html)
+*  [Sensitive and system-specific configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-sens.html)
+*  [Payment configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-payment.html)
+*  [Other configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-most.html)
+*  [Magento Enterprise B2B Extension configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-b2b.html)
 
 ### Find the scope code
 
@@ -61,14 +62,15 @@ You can find the scope code either in the Magento database or in the Magento [Ad
 
 {% collapsible To find the scope code in the Admin: %}
 
-1.  Log in to the Admin as a user who can view websites and store views.
-2.  Click **Stores** > Settings > **All Stores**.
-3.  In the right pane, click the name of the website or store view to see its code.
+1. Log in to the Admin as a user who can view websites and store views.
+1. Click **Stores** > Settings > **All Stores**.
+1. In the right pane, click the name of the website or store view to see its code.
 
-    The following figure shows a sample website code.
+   The following figure shows a sample website code.
 
-    ![Get a website or store view code from the Admin]({{ site.baseurl }}/common/images/config_configset_website-code.png){:width="450px"}
-4.  Continue with [Set configuration values](#config-cli-config-set).
+   ![Get a website or store view code from the Admin]({{ site.baseurl }}/common/images/config_configset_website-code.png){:width="450px"}
+
+1. Continue with [Set configuration values](#config-cli-config-set).
 
 {% endcollapsible %}
 
@@ -80,29 +82,42 @@ Scope codes for websites and store views are stored in the Magento database in t
 
 To find the values in the database:
 
-1.  Connect to the Magento database.
+1. Connect to the Magento database.
 
-        mysql -u <magento database username> -p
-2.  Enter the following commands:
+   ```bash
+   mysql -u <magento database username> -p
+   ```
 
-        use <magento database name>;
-        SELECT * FROM store;
-        SELECT * FROM store_website;
+1. Enter the following commands:
 
-    A sample result follows:
+   ```shell
+   use <magento database name>;
+   ```
 
-        [mysql]> SELECT * FROM store_website;
-        +------------+-------+--------------+------------+------------------+------------+
-        | website_id | code  | name         | sort_order | default_group_id | is_default |
-        +------------+-------+--------------+------------+------------------+------------+
-        |          0 | admin | Admin        |          0 |                0 |          0 |
-        |          1 | base  | Main Website |          0 |                1 |          1 |
-        |          2 | test1 | Test Website |          0 |                3 |          0 |
-        +------------+-------+--------------+------------+------------------+------------+
+   ```shell
+   SELECT * FROM store;
+   ```
 
-    Use the value in the `code` column.
+   ```shell
+   SELECT * FROM store_website;
+   ```
 
-3.  Continue with the next section.
+   A sample result follows:
+
+   ```terminal
+   [mysql]> SELECT * FROM store_website;
+   +------------+-------+--------------+------------+------------------+------------+
+   | website_id | code  | name         | sort_order | default_group_id | is_default |
+   +------------+-------+--------------+------------+------------------+------------+
+   |          0 | admin | Admin        |          0 |                0 |          0 |
+   |          1 | base  | Main Website |          0 |                1 |          1 |
+   |          2 | test1 | Test Website |          0 |                3 |          0 |
+   +------------+-------+--------------+------------+------------------+------------+
+   ```
+
+   Use the value in the `code` column.
+
+1. Continue with the next section.
 
 {% endcollapsible %}
 
@@ -132,17 +147,20 @@ Parameter | Description
 `value` | *Required*. The value of the configuration
 
 {:.bs-callout .bs-callout-info}
-* As of Magento 2.2.4, the `--lock-env` and `--lock-config` options replace the `--lock` option.
-* If you use the `--lock-env` or `--lock-config` option to set or change a value, you must use the [`bin/magento app:config:import` command]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-config-mgmt-import.html) to import the setting before you access the Admin or storefront.
+
+*  As of Magento 2.2.4, the `--lock-env` and `--lock-config` options replace the `--lock` option.
+*  If you use the `--lock-env` or `--lock-config` option to set or change a value, you must use the [`bin/magento app:config:import` command]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-config-mgmt-import.html) to import the setting before you access the Admin or storefront.
 
 If you enter an incorrect configuration path, this command returns an error
 
-    The "wrong/config/path" does not exist
+```text
+The "wrong/config/path" does not exist
+```
 
 See one of the following sections for more information:
 
-*   [Set configuration values that can be edited in the Magento Admin](#config-cli-config-set-edit)
-*   [Set configuration values that cannot be edited in the Magento Admin](#config-cli-config-file)
+*  [Set configuration values that can be edited in the Magento Admin](#config-cli-config-set-edit)
+*  [Set configuration values that cannot be edited in the Magento Admin](#config-cli-config-file)
 
 ### Set configuration values that can be edited in the Magento Admin {#config-cli-config-set-edit}
 
@@ -202,9 +220,9 @@ bin/magento config:show [--scope[="..."]] [--scope-code[="..."]] path
 
 where
 
-* `--scope` is the scope of configuration (default, website, store). The default value is `default`
-* `--scope-code` is the scope code of configuration (website code or store view code)
-* `path` is the configuration path in format first_part/second_part/third_part/etc *(required)*
+*  `--scope` is the scope of configuration (default, website, store). The default value is `default`
+*  `--scope-code` is the scope code of configuration (website code or store view code)
+*  `path` is the configuration path in format first_part/second_part/third_part/etc *(required)*
 
 {:.bs-callout .bs-callout-info}
 The `bin/magento config:show` command displays the values of any [encrypted values]({{ page.baseurl }}/config-guide/prod/config-reference-sens.html) as a series of asterisks: `******`.
@@ -266,5 +284,7 @@ Result:
 
 <pre class="no-copy">web/unsecure/base_url - http://example-for-store.com/</pre>
 
-#### Related topic
+{:.ref-header}
+Related topic
+
 [Deployment general overview]({{ page.baseurl }}/config-guide/deployment/pipeline/)

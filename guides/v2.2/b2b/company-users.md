@@ -22,7 +22,7 @@ This section describes the REST endpoints used to manage company users.
 
 **REST Endpoints**
 
-```
+```terminal
 POST /V1/customers/
 PUT /V1/customers/:customerId
 ```
@@ -66,19 +66,19 @@ Full example:
 
 ```json
 {
-	"customer": {
-		"email": "mshaw@example.com",
-		"firstname": "Melanie",
-		"lastname": "Shaw",
-		"extension_attributes": {
-    		"company_attributes": {
-    		"company_id": 2,
-    		"status": 1,
-    		"job_title": "Sales Rep",
-    		"telephone": "512-555-3322"
-    		}
-		}
-	}
+  "customer": {
+    "email": "mshaw@example.com",
+    "firstname": "Melanie",
+    "lastname": "Shaw",
+    "extension_attributes": {
+      "company_attributes": {
+        "company_id": 2,
+        "status": 1,
+        "job_title": "Sales Rep",
+        "telephone": "512-555-3322"
+      }
+    }
+  }
 }
 ```
 
@@ -186,7 +186,7 @@ Not applicable
 
 ## Related information
 
-* [Integrate with the Company module]({{ page.baseurl }}/b2b/company.html)
-* [Manage company objects]({{ page.baseurl }}/b2b/company-object.html)
-* [Manage company roles]({{ page.baseurl }}/b2b/roles.html)
-* [Manage company structures]({{ page.baseurl }}/b2b/company-structures.html)
+*  [Integrate with the Company module]({{ page.baseurl }}/b2b/company.html)
+*  [Manage company objects]({{ page.baseurl }}/b2b/company-object.html)
+*  [Manage company roles]({{ page.baseurl }}/b2b/roles.html)
+*  [Manage company structures]({{ page.baseurl }}/b2b/company-structures.html)

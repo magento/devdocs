@@ -5,35 +5,45 @@ Magento uses server rewrites and `.htaccess` to provide directory-level instruct
 {:.bs-callout .bs-callout-info}
 Failure to enable these settings typically results in no styles displaying on your storefront or Admin.
 
-1.	Open the following file for editing.
+1. Open the following file for editing.
 
-	*	Ubuntu: `vim /etc/apache2/sites-available/default`
-	*	CentOS: `vim /etc/httpd/conf/httpd.conf`
+   *  Ubuntu: `vim /etc/apache2/sites-available/default`
+   *  CentOS: `vim /etc/httpd/conf/httpd.conf`
 
-2.	Locate the block that starts with:
+1. Locate the block that starts with:
 
-	*	Ubuntu 12: `<Directory /var/www/>`
-	*	Ubuntu 14 or CentOS: `<Directory /var/www/html>`
+   *  Ubuntu 12: `<Directory /var/www/>`
+   *  Ubuntu 14 or CentOS: `<Directory /var/www/html>`
 
-3.	Change the value of `AllowOverride` to `<value from Apache site>`.
+1. Change the value of `AllowOverride` to `<value from Apache site>`.
 
-	An example for Ubuntu 12 follows.
+   An example for Ubuntu 12 follows.
 
-		<Directory /var/www/>
-		Options Indexes FollowSymLinks MultiViews
-		AllowOverride <value from Apache site>
-		Order allow,deny
-		Allow from all
-		<Directory>
+   ```conf
+   <Directory /var/www/>
+   Options Indexes FollowSymLinks MultiViews
+   AllowOverride <value from Apache site>
+   Order allow,deny
+   Allow from all
+   <Directory>
+   ```
 
-	{:.bs-callout .bs-callout-info}
-	The preceding values for `Order` might not work in all cases. For more information, see the Apache documentation ([2.2](https://httpd.apache.org/docs/2.2/mod/mod_authz_host.html#order)), [2.4](https://httpd.apache.org/docs/2.4/mod/mod_authz_host.html#order)).
+   {:.bs-callout .bs-callout-info}
+   The preceding values for `Order` might not work in all cases. For more information, see the Apache documentation ([2.2](https://httpd.apache.org/docs/2.2/mod/mod_authz_host.html#order)), [2.4](https://httpd.apache.org/docs/2.4/mod/mod_authz_host.html#order)).
 
-4.	Save the file and exit the text editor.
-5.	*Ubuntu only*. Configure Apache to use the `mod_rewrite` module.
+1. Save the file and exit the text editor.
+1. *Ubuntu only*. Configure Apache to use the `mod_rewrite` module.
 
-			cd /etc/apache2/mods-enabled
-			ln -s ../mods-available/rewrite.load
-6.	If you changed Apache settings, restart Apache.
+   ```bash
+   cd /etc/apache2/mods-enabled
+   ```
 
-		service apache2 restart
+   ```bash
+   ln -s ../mods-available/rewrite.load
+   ```
+
+1. If you changed Apache settings, restart Apache.
+
+   ```bash
+   service apache2 restart
+   ```

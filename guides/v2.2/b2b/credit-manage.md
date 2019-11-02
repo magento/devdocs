@@ -9,9 +9,9 @@ functional_areas:
 
 The company credit entity operates with the following attributes:
 
-* Credit limit
-* Available credit
-* Outstanding balance
+*  Credit limit
+*  Available credit
+*  Outstanding balance
 
 The credit limit is allocated by seller, while available credit and outstanding balance are automatically calculated by the system based on the buyer transactions (place an order, return) and seller's transactions (refund, reimburse, update credit limit, cancel order).
 
@@ -21,7 +21,7 @@ When you create a company, the credit limit is set to 0. Use the `PUT /V1/compan
 
 **REST Endpoints**
 
-```
+```terminal
 PUT /V1/companyCredits/:id
 GET /V1/companyCredits/:creditId
 GET /V1/companyCredits/company/:companyId
@@ -217,7 +217,7 @@ The company's outstanding balance can be updated as the buyer makes payments, pu
 
 **REST Endpoints**
 
-```
+```terminal
 POST /V1/companyCredits/:creditId/decreaseBalance
 POST /V1/companyCredits/:creditId/increaseBalance
 ```

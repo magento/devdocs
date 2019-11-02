@@ -10,17 +10,20 @@ The `routes.yaml` file in the `.magento/routes.yaml` directory defines routes fo
 
 {% include cloud/note-pro-missing-self-service-options.md %}
 
-The default `routes.yaml` file contains the following code:
+The default `routes.yaml` file specifies the route templates for processing HTTP requests on projects that have a single default domain and on projects configured for multiple domains:
 
 ```yaml
 "http://{default}/":
-  type: upstream
-    upstream: "mymagento:php"
+    type: upstream
+    upstream: "mymagento:http"
+"http://{all}/":
+    type: upstream
+    upstream: "mymagento:http"
 ```
 
 If you do not create a custom `routes.yaml` file, the automated deployment uses the default file.
 
-#### To list the configured routes:
+Use the `magento-cloud` CLI to view a list of the configured routes:
 
 ```bash
 magento-cloud environment:routes
@@ -37,33 +40,33 @@ magento-cloud environment:routes
 
 The `routes.yaml` file is a list of templated routes and their configurations. You can use the following placeholders in route templates:
 
-- `{default}` represents the qualified domain name configured as the default for the project. For example, if you have a project with the default domain `example.com`, the route templates `http://www.{default}/` and `https://{default}/blog` resolve to the following URLs in a production environment:
+-  `{default}` represents the qualified domain name configured as the default for the project. For example, if you have a project with the default domain `example.com`, the route templates `http://www.{default}/` and `https://{default}/blog` resolve to the following URLs in a production environment:
 
-  ```text
-  http://www.example.com/
+   ```text
+   http://www.example.com/
 
-  https://www.example.com/blog
-  ```
-  {: .no-copy}
+   https://www.example.com/blog
+   ```
+   {: .no-copy}
 
-  In a non-production branch, the project ID and environment ID replace the `{default}` placeholder when the project is deployed.
+   In a non-production branch, the project ID and environment ID replace the `{default}` placeholder when the project is deployed.
 
-- `{all}` represents all the domain names configured for the project. For example, if you have a project with `example.com` and `example1.com` domains, the route templates `http://www.{all}/` and `https://{all}/blog` resolve to routes for all domains in the project:
+-  `{all}` represents all the domain names configured for the project. For example, if you have a project with `example.com` and `example1.com` domains, the route templates `http://www.{all}/` and `https://{all}/blog` resolve to routes for all domains in the project:
 
-  ```text
-  http://www.example.com/
+   ```text
+   http://www.example.com/
 
-  http://www.example.com/blog
+   http://www.example.com/blog
 
-  https://www.example1.com/
+   https://www.example1.com/
 
-  https://www.example1.com/blog
-  ```
-  {: .no-copy}
+   https://www.example1.com/blog
+   ```
+   {: .no-copy}
 
-  The `{all}` placeholder is useful for projects configured for multiple domains. In a non-production branch `{all}` is replaced with the project ID and environment ID for each domain.
+   The `{all}` placeholder is useful for projects configured for multiple domains. In a non-production branch `{all}` is replaced with the project ID and environment ID for each domain.
 
-  If a project does not have any domains configured, which is common during development, the `{all}` placeholder behaves in the same way as the `{default}` placeholder.
+   If a project does not have any domains configured, which is common during development, the `{all}` placeholder behaves in the same way as the `{default}` placeholder.
 
 {{site.data.var.ee}} also generates routes for every active Integration environment. For Integration environments, `{default}` is replaced with the following domain name:
 
@@ -98,7 +101,7 @@ Property         | Description
 
 ## Simple routes
 
-The following sample routes the apex domain and the `www` subdomain to the `frontend`application. This route does not redirect HTTPS requests:
+The following sample routes the apex domain and the `www` subdomain to the `frontend` application. This route does not redirect HTTPS requests:
 
 ```yaml
 "http://{default}/":
@@ -125,6 +128,7 @@ The following sample route does not redirect from the `www` to the apex domain; 
 In the first sample, the server responds directly to a request of the form `http://example.com/hello`, but it issues a _301 redirect_ for `http://www.example.com/mypath` (to `http://example.com/mypath`).
 
 ## Wildcard routes
+
 {{site.data.var.ece}} supports wildcard routes, so you can map multiple subdomains to the same application. This works for redirect and upstream routes. You prefix the route with an asterisk (\*). For example, the following routes to the same application:
 
 -  `*.example.com`
@@ -157,22 +161,19 @@ https://*.add-theme-projectID.us.magentosite.cloud/
 ```
 {: .no-copy}
 
-{: .bs-callout-info }
-Some projects provisioned before December 8, 2017, use the triple dash (\-\-\-) as a separator for the subdomain.
-
 See more information about [caching]({{ page.baseurl }}/cloud/project/project-routes-more-cache.html).
 
-## Redirects
+## Redirects and caching
 
-As discussed in more detail in [Redirects]({{ page.baseurl }}/cloud/project/project-routes-more-redir.html), you can manage complex redirection rules, such as *partial redirects*:
+As discussed in more detail in [Redirects]({{ page.baseurl }}/cloud/project/project-routes-more-redir.html), you can manage complex redirection rules, such as *partial redirects*, and specify rules for route-based [caching]({{ page.baseurl }}/cloud/project/project-routes-more-cache.html):
 
 ```yaml
 http://www.{default}/:
-    to: https://{default}/
     type: redirect
+    to: https://{default}/
 http://{default}/:
-    to: https://{default}/
     type: redirect
+    to: https://{default}/
 https://{default}/:
     cache:
         cookies: [""]

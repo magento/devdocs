@@ -22,7 +22,7 @@ Message queues provide an asynchronous communications mechanism in which the sen
 The message queue system must be established before you install Magento. The basic sequence is
 
 1. Install RabbitMQ and any prerequisites.
-2. Connect RabbitMQ and Magento.
+1. Connect RabbitMQ and Magento.
 
 {:.bs-callout .bs-callout-info}
 A basic message queue system can be implemented on {{site.data.var.ee}} using cron instead of RabbitMQ. See [Configure message queues]({{ page.baseurl }}/config-guide/mq/manage-mysql.html) for more information.
@@ -30,6 +30,7 @@ A basic message queue system can be implemented on {{site.data.var.ee}} using cr
 ## Install RabbitMQ on Ubuntu {#ubuntu-install}
 
 To install RabbitMQ on Ubuntu 16 enter the following command:
+
 ```bash
 sudo apt install -y rabbitmq-server
 ```
@@ -39,7 +40,7 @@ This command also installs the required Erlang packages.
 If you have an older version of Ubuntu, RabbitMQ recommends installing the package from their [website](https://glossary.magento.com/website).
 
 1. Download [rabbitmq-server_3.6.6-1_all.deb](https://www.rabbitmq.com/releases/rabbitmq-server/v3.6.6/rabbitmq-server_3.6.6-1_all.deb).
-2. Install the package with `dpkg`.
+1. Install the package with `dpkg`.
 
 Refer to [Installing on Debian/Ubuntu](https://www.rabbitmq.com/install-debian.html) for more information.
 
@@ -52,9 +53,11 @@ RabbitMQ was written using the Erlang programming language, which must be instal
 See [Manual installation](https://www.erlang-solutions.com/resources/download.html) for more information.
 
 Run the following commands to install this feature.
+
 ```bash
 wget http://packages.erlang-solutions.com/erlang-solutions-1.0-1.noarch.rpm
 ```
+
 ```bash
 rpm -Uvh erlang-solutions-1.0-1.noarch.rpm
 ```
@@ -64,11 +67,12 @@ rpm -Uvh erlang-solutions-1.0-1.noarch.rpm
 The RabbitMQ server is included on CentOS, but the version is often old. RabbitMQ recommends installing the package from their website.
 
 1. Download [rabbitmq-server-3.5.6-1.noarch.rpm](https://www.rabbitmq.com/releases/rabbitmq-server/v3.5.6/rabbitmq-server-3.5.6-1.noarch.rpm).
-2. Run the following commands as a user with root permissions:
+1. Run the following commands as a user with root permissions:
 
 ```bash
 rpm --import https://www.rabbitmq.com/rabbitmq-signing-key-public.asc
 ```
+
 ```bash
 yum install rabbitmq-server-3.5.6-1.noarch.rpm
 ```
@@ -79,11 +83,11 @@ Refer to [Installing on RPM-based Linux](https://www.rabbitmq.com/install-rpm.ht
 
 Review the official RabbitMQ documentation to configure and manage RabbitMQ. Pay attention to the following items:
 
-* Environment variables
-* Port access
-* Default user accounts
-* Starting and stopping the broker
-* System limits
+*  Environment variables
+*  Port access
+*  Default user accounts
+*  Starting and stopping the broker
+*  System limits
 
 ## Connect RabbitMQ to {{site.data.var.ee}}
 
@@ -131,12 +135,13 @@ To configure support for SSL, edit the `ssl` and `ssl_options` parameters in the
 
 After you have connected {{site.data.var.ee}} and RabbitMQ, you must start the message queue consumers. See [Configure message queues]({{ page.baseurl }}/config-guide/mq/manage-mysql.html) for details.
 
-## Related topics
+{:.ref-header}
+Related topics
 
-* [Installing optional software]({{ page.baseurl }}/install-gde/prereq/optional.html)
-* [Apache]({{ page.baseurl }}/install-gde/prereq/apache.html)
-* [PHP]({{ page.baseurl }}/install-gde/prereq/php-settings.html)
-* [Configuring security options]({{ page.baseurl }}/install-gde/prereq/security.html)
-* [How to get the Magento software]({{ page.baseurl }}/install-gde/bk-install-guide.html)
-* [Message queue overview]({{ page.baseurl }}/config-guide/mq/rabbitmq-overview.html)
-* [Manage message queues]({{ page.baseurl }}/config-guide/mq/manage-mysql.html)
+*  [Installing optional software]({{ page.baseurl }}/install-gde/prereq/optional.html)
+*  [Apache]({{ page.baseurl }}/install-gde/prereq/apache.html)
+*  [PHP]({{ page.baseurl }}/install-gde/prereq/php-settings.html)
+*  [Configuring security options]({{ page.baseurl }}/install-gde/prereq/security.html)
+*  [How to get the Magento software]({{ page.baseurl }}/install-gde/bk-install-guide.html)
+*  [Message queue overview]({{ page.baseurl }}/config-guide/mq/rabbitmq-overview.html)
+*  [Manage message queues]({{ page.baseurl }}/config-guide/mq/manage-mysql.html)

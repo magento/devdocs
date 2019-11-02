@@ -17,7 +17,7 @@ The following example creates a new billing address for a specific cart.
 
 **Request**
 
-``` text
+```graphql
 mutation {
   setBillingAddressOnCart(
     input: {

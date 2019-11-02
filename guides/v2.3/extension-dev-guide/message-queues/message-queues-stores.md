@@ -123,9 +123,9 @@ The plugin checks the message headers and sets the current store value in `store
 
 #### Related Topics
 
-* [Message Queues Overview]
-* [Configure message queues]
-* [Install RabbitMQ]
+*  [Message Queues Overview]
+*  [Configure message queues]
+*  [Install RabbitMQ]
 
 <!-- Link definitions -->
 [RabbitMQ]: http://www.rabbitmq.com

@@ -11,6 +11,6 @@ This section tracks and provides installation guides and release notes for Magen
 
 ## Additional information
 
-* [Run the Module Manager]({{ site.baseurl }}/guides/v2.3/comp-mgr/module-man/compman-checklist.html)
-* [Run the Extension Manager]({{ site.baseurl }}/guides/v2.3/comp-mgr/extens-man/extensman-checklist.html)
-* [Magento Marketplace Support](https://marketplacesupport.magento.com/hc/en-us)
+*  [Run the Module Manager]({{ site.baseurl }}/guides/v2.3/comp-mgr/module-man/compman-checklist.html)
+*  [Run the Extension Manager]({{ site.baseurl }}/guides/v2.3/comp-mgr/extens-man/extensman-checklist.html)
+*  [Magento Marketplace Support](https://marketplacesupport.magento.com/hc/en-us)

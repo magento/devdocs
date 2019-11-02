@@ -16,7 +16,7 @@ Store credit must be enabled on the store to run this mutation.
 
 **Request**
 
-```text
+```graphql
 mutation {
   removeStoreCreditFromCart(
     input: {

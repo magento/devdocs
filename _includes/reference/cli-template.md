@@ -15,7 +15,7 @@ The initial list is auto generated using the `{{ tool }} list` command at the {{
 ## Reference
 
 {: .bs-callout-info }
-This reference is generated from the Magento codebase. To add or update the content, you must update the source code for the corresponding CLI command in the [Magento 2 codebase](https://github.com/magento/magento2) repository and submit your changes for review.  For contribution guidelines, see [Magento Code Contributions]({{ page.baseurl] }}/contributor-guide/contributing.html).
+This reference is generated from the Magento codebase. To change the content, you can update the source code for the corresponding command implementation in [Magento codebase](https://github.com/magento) repository and submit your changes for review. Another way is to _Give us feedback_ (find the link at the upper right). For contribution guidelines, see [Magento Code Contributions]({{ page.baseurl] }}/contributor-guide/contributing.html).
 
 {% for command in commands %}
   {% assign arguments = command.definition.arguments %}
@@ -25,9 +25,21 @@ This reference is generated from the Magento codebase. To add or update the cont
 
 {{ command.description }}
 
+{% for usage in command.usage %}
+{% if app.name contains 'Cloud' %}
+
 ```bash
-{{ tool }} {{ command.usage }}
+{{ usage }}
 ```
+
+{% else %}
+
+```bash
+{{ tool }} {{ usage }}
+```
+
+{% endif %}
+{% endfor %}
 
 {% unless arguments.size == 0 %}
 
@@ -70,7 +82,7 @@ This reference is generated from the Magento codebase. To add or update the cont
    {% if opt.shortcut contains '-' %}
 -  Shortcut: `{{ opt.shortcut }}`
    {% endif %}
--  Description: {{ opt.description }}
+-  Description: {{ opt.description | replace: '|', '\|'}}
    {% unless opt.default == nil %}
    {% if opt.default == false or (opt.default == empty and opt.default != '') %}
 -  Default: `{{ opt.default | inspect }}`

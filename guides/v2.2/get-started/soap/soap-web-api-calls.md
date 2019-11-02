@@ -54,11 +54,11 @@ If you want an overview to all the available Web Services, use the following URL
 
 Service names use the following conventions:
 
-* CamelCase is used for service naming.
-* The string `Service` is omitted.
-* The `Magento` prefix is omitted.
-* The `Interface` suffix is omitted.
-* If the service name is the same as the [module](https://glossary.magento.com/module) name, the module name is omitted. For example, if there is a customer service interface in the customer module, the word `customer` will be used in the service name only once.
+*  CamelCase is used for service naming.
+*  The string `Service` is omitted.
+*  The `Magento` prefix is omitted.
+*  The `Interface` suffix is omitted.
+*  If the service name is the same as the [module](https://glossary.magento.com/module) name, the module name is omitted. For example, if there is a customer service interface in the customer module, the word `customer` will be used in the service name only once.
 
 | Original Service Interface Name | Service Name |
 |----------
@@ -88,8 +88,9 @@ $soapClient = new SoapClient($wsdlUrl, ['version' => SOAP_1_2, 'stream_context' 
 $soapResponse = $soapClient->testModule1AllSoapAndRestV1Item($serviceArgs); ?>
 ```
 
-## Related topics {#related}
+{:.ref-header}
+Related topics
 
-* [OAuth-based authentication]({{ page.baseurl }}/get-started/authentication/gs-authentication-oauth.html)
-* [Service contracts]({{ page.baseurl }}/extension-dev-guide/service-contracts/service-contracts.html)
-* [SOAP Reference]({{ page.baseurl }}/soap/bk-soap.html)
+*  [OAuth-based authentication]({{ page.baseurl }}/get-started/authentication/gs-authentication-oauth.html)
+*  [Service contracts]({{ page.baseurl }}/extension-dev-guide/service-contracts/service-contracts.html)
+*  [SOAP Reference]({{ page.baseurl }}/soap/bk-soap.html)

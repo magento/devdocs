@@ -17,23 +17,23 @@ In fact, as discussed in this section, when you clean, flush, or refresh the Mag
 
 After you've installed and configured Varnish to work with Magento, the following actions can result in a Varnish purge:
 
-*	Maintaining a [website](https://glossary.magento.com/website).
+*  Maintaining a [website](https://glossary.magento.com/website).
 
-	For example, anything you do in the Admin in:
+   For example, anything you do in the Admin in:
 
-	*	**STORES** > **Settings** > **Configuration** > GENERAL > **General**
-	*	**STORES** > **Settings** > **Configuration** > GENERAL > **Currency Setup**
-	*	**STORES** > **Settings** > **Configuration** > GENERAL > **Store Email Addresses**
+   *  **STORES** > **Settings** > **Configuration** > GENERAL > **General**
+   *  **STORES** > **Settings** > **Configuration** > GENERAL > **Currency Setup**
+   *  **STORES** > **Settings** > **Configuration** > GENERAL > **Store Email Addresses**
 
-	When Magento detects such a change, a message displays informing you to refresh the cache. To do this, see [Refresh the Magento cache](#use-varnish-magento-purge).
+   When Magento detects such a change, a message displays informing you to refresh the cache. To do this, see [Refresh the Magento cache](#use-varnish-magento-purge).
 
-*	Maintaining a store (for example, adding or editing categories, prices, products, and promotional pricing rules).
+*  Maintaining a store (for example, adding or editing categories, prices, products, and promotional pricing rules).
 
-	Varnish is purged automatically when you perform any of these tasks.
+   Varnish is purged automatically when you perform any of these tasks.
 
-*	Maintaining source code.
+*  Maintaining source code.
 
-	You should refresh the cache and also periodically delete everything in the `generated/code` and `generated/metadata` directories. For information on refreshing the cache, see the next section.
+   You should refresh the cache and also periodically delete everything in the `generated/code` and `generated/metadata` directories. For information on refreshing the cache, see the next section.
 
 ## Configure Magento to purge Varnish
 
@@ -45,7 +45,9 @@ The parameter format must be `<hostname or ip>:<listen port>`, where you can omi
 
 For example,
 
-	magento setup:config:set --http-cache-hosts=192.0.2.100,192.0.2.155:6081
+```bash
+magento setup:config:set --http-cache-hosts=192.0.2.100,192.0.2.155:6081
+```
 
 You can then purge Varnish hosts when you refresh the Magento cache (also referred to as *cleaning* the cache) in the [Magento Admin](https://glossary.magento.com/magento-admin) or using the command line.
 

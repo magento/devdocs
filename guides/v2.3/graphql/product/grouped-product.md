@@ -22,7 +22,7 @@ The `GroupedProductItem` object contains the following attributes:
 Attribute | Type | Description
 --- | --- | ---
 `position` | Int | The relative position of this item compared to the other group items
-`product` | [ProductInterface]{{ page.baseurl }}/graphql/queries/products.html#ProductInterface | The ProductInterface contains attributes that are common to all types of products. Note that descriptions may not be available for custom and EAV attributes
+`product` | [ProductInterface]({{ page.baseurl }}/graphql/product/product-interface.html) | The ProductInterface contains attributes that are common to all types of products. Note that descriptions may not be available for custom and EAV attributes
 `qty` | Float | The quantity of this grouped product item
 
 ## Sample Query

@@ -80,11 +80,11 @@ For a description of these configuration parameters, see [Configuration file for
 
 Parameters are the following:
 
-* **server**. The default location of the JsTestDriver server in the form: `http://<hostname>:<port>`
-* **proxy**. Sets the JsTestDriver to behave as a proxy. The proxy parameter is an array of arrays that enables you to specify multiple matcher and server proxies.
-* **load**. Defines the list of files to load in the browser before any tests run.
-* **test**. Defines the list of test sources to run.
-* **serve**. Defines the list of [static files](https://glossary.magento.com/static-files) to load by using the same [domain](https://glossary.magento.com/domain) as the JsTestDriver.
+*  **server**. The default location of the JsTestDriver server in the form: `http://<hostname>:<port>`
+*  **proxy**. Sets the JsTestDriver to behave as a proxy. The proxy parameter is an array of arrays that enables you to specify multiple matcher and server proxies.
+*  **load**. Defines the list of files to load in the browser before any tests run.
+*  **test**. Defines the list of test sources to run.
+*  **serve**. Defines the list of [static files](https://glossary.magento.com/static-files) to load by using the same [domain](https://glossary.magento.com/domain) as the JsTestDriver.
 
 ### `jsTestDriverOrder.php` file {#jstestdriverorderphp}
 
@@ -113,25 +113,29 @@ To complete the unit tests, the PHP script completes this processing:
 
    Otherwise, the script uses the default `jsTestDriver.php.dist` configuration file.
 
-2. The script looks for the `Browser` parameter value in the `jsTestDriver` configuration file that it found.
+1. The script looks for the `Browser` parameter value in the `jsTestDriver` configuration file that it found.
+
    If the parameter is not set in the configuration file, the script uses to the default browser location, as follows:
-   * **64-bit Windows**. The location is `C:\Program Files (x86)\Mozilla Firefox\firefox.exe`.
-   * **Linux**. The script runs the `which firefox` command to determine the location of the Firefox executable in your PATH.
-3. If the script finds the browser executable and the `JsTestDriver.jar` file, it proceeds with the next step. Otherwise, the script fails.
-4. The script determines the order in which the JsTestDriver loads certain JavaScript files through the `jsTestDriverOrder.php` configuration file in the `<magento2_root_dir>/dev/tests/js` directory.
+
+   *  **64-bit Windows**. The location is `C:\Program Files (x86)\Mozilla Firefox\firefox.exe`.
+
+   *  **Linux**. The script runs the `which firefox` command to determine the location of the Firefox executable in your PATH.
+
+1. If the script finds the browser executable and the `JsTestDriver.jar` file, it proceeds with the next step. Otherwise, the script fails.
+1. The script determines the order in which the JsTestDriver loads certain JavaScript files through the `jsTestDriverOrder.php` configuration file in the `<magento2_root_dir>/dev/tests/js` directory.
 
 ## Step 1. Before you begin {#test-prereqs}
 
 On the system where you plan to run the unit tests, install the following prerequisite software:
 
-* **PHP**
-* **The Firefox browser**
+*  **PHP**
+*  **The Firefox browser**
 
-  On 64-bit Windows machines, the default installation directory is `C:\Program Files (x86)\Mozilla Firefox\firefox.exe`.
+   On 64-bit Windows machines, the default installation directory is `C:\Program Files (x86)\Mozilla Firefox\firefox.exe`.
 
-  On Linux machines, locate the browser executable in your PATH.
+   On Linux machines, locate the browser executable in your PATH.
 
-* **`JsTestDriver.jar`**
+*  **`JsTestDriver.jar`**
 
 ## Step 2. Configure unit tests {#main-api}
 
@@ -142,9 +146,10 @@ In a custom `jsTestDriver.php` configuration file or the default `jsTestDriver.p
 Browser
 : Defines the file path to the executable for the browser.
 
-  If you do not set this value, the script uses to the default browser location, as follows:
-  * **64-bit Windows**. The location is `C:\Program Files (x86)\Mozilla Firefox\firefox.exe`.
-  * **Linux**. The script runs the `which firefox` command to determine the location of the Firefox executable in your PATH.
+If you do not set this value, the script uses to the default browser location, as follows:
+
+*  **64-bit Windows**. The location is `C:\Program Files (x86)\Mozilla Firefox\firefox.exe`.
+*  **Linux**. The script runs the `which firefox` command to determine the location of the Firefox executable in your PATH.
 
 JsTestDriver
 : Required. Defines the file path to the `JsTestDriver.jar` file.
@@ -153,7 +158,9 @@ JsTestDriver
 
 To run the automated JavaScript tests, run the `run_js_tests.php` script inside the PHP interpreter from the command line:
 
-    php <magento2_root_dir>/dev/tests/js/run_js_tests.php
+```bash
+php <magento2_root_dir>/dev/tests/js/run_js_tests.php
+```
 
 Find the test results in individual `.xml` files in the `<magento2_root_dir>/dev/tests/js/test-output` directory.
 
@@ -161,18 +168,28 @@ The output of the PHP command resembles this output:
 
 **JsTestDriver output:**
 
-    $ php <magento2_root_dir>dev/tests/js/run_js_tests.php
-    java -jar C:\Users\mchiocca\lib\JsTestDriver.jar --config C:\git\magento2\dev\tests\js/jsTestDriver.conf --port 9876 --browser "C:\Program Files (x86)\Mozilla Firefox\firefox.exe" --tests all --testOutput C:\git\magento2\dev\tests\js/test-output
-    setting runnermode QUIET
-    ....................................
-    Total 36 tests (Passed: 36; Fails: 0; Errors: 0) (138.00 ms)
-      Firefox 15.0 Windows: Run 36 tests (Passed: 36; Fails: 0; Errors 0) (138.00 ms)
+```bash
+php <magento2_root_dir>dev/tests/js/run_js_tests.php
+```
+
+```bash
+java -jar C:\Users\mchiocca\lib\JsTestDriver.jar --config C:\git\magento2\dev\tests\js/jsTestDriver.conf --port 9876 --browser "C:\Program Files (x86)\Mozilla Firefox\firefox.exe" --tests all --testOutput C:\git\magento2\dev\tests\js/test-output
+```
+
+```terminal
+setting runnermode QUIET
+....................................
+Total 36 tests (Passed: 36; Fails: 0; Errors: 0) (138.00 ms)
+  Firefox 15.0 Windows: Run 36 tests (Passed: 36; Fails: 0; Errors 0) (138.00 ms)
+```
 
 On Linux, the X Server might generate one or more warning messages in the output:
 
 **X Server warning messages on Linux:**
 
-    FreeFontPath: FPE "unix/:7100" refcount is 2, should be 1; fixing.
+```terminal
+FreeFontPath: FPE "unix/:7100" refcount is 2, should be 1; fixing.
+```
 
 An X Server bug causes these benign messages, which you can ignore.
 
@@ -205,30 +222,30 @@ After the PHP interpreter runs for the first time, you can [run the JavaScript u
 Complete these steps to use PhpStorm to run unit tests:
 
 1. [Install the JsTestDriver plugin]
-2. [Start the JsTestDriver server]
-3. [Create a run configuration]
-4. [Capture a browser]
+1. [Start the JsTestDriver server]
+1. [Create a run configuration]
+1. [Capture a browser]
 
 ### Install the JsTestDriver plugin {#install-plugin}
 
 1. In PhpStorm, open **Settings** and select **Plugins**.
-2. Click **Browse Repositories...**.
-3. Right click **JSTestDriver Plugin** and select **Download and Install**.
-4. Restart PhpStorm.
+1. Click **Browse Repositories...**.
+1. Right click **JSTestDriver Plugin** and select **Download and Install**.
+1. Restart PhpStorm.
 
 ### Start the JsTestDriver server {#start-jstestdriver-server}
 
 1. At the bottom of the IDE, click **JsTestDriver Server**.
-2. In the **JsTestDriver Server** panel, click the green right arrow to start the server.
+1. In the **JsTestDriver Server** panel, click the green right arrow to start the server.
 
    The bar changes to yellow and reads `There are no captured browsers`.
 
 ### Create a run configuration {#run-configuration}
 
 1. Enter a name for the run configuration.
-2. Select **Configuration File** and provide the location of the `jsTestDriver.conf` file generated by PHP.
-3. Select **Running in IDE**.
-4. Click **Test Connection**.
+1. Select **Configuration File** and provide the location of the `jsTestDriver.conf` file generated by PHP.
+1. Select **Running in IDE**.
+1. Click **Test Connection**.
    The `Connection to http://localhost:9876 is OK, no captured browsers` message appears.
 
 ### Capture a browser {#capture-browser}
@@ -241,15 +258,15 @@ Complete these steps to use PhpStorm to run unit tests:
 
    The `Ready to run tests` message appears.
 
-2. To run the unit tests, select **Run Configuration** and click the **Run** icon.
+1. To run the unit tests, select **Run Configuration** and click the **Run** icon.
 
    A panel at the bottom of the IDE shows the test results.
 
-3. Depending on whether you have changed one or more configuration files, complete the appropriate step to run the tests:
-   * **No changed configuration files**
+1. Depending on whether you have changed one or more configuration files, complete the appropriate step to run the tests:
+   *  **No changed configuration files**
      Use PhpStorm to run the tests.
      Before you can run the tests, click the red square icon in the **JsTestDriver Server** panel to stop the JsTestDriver server that runs in PhpStorm. You must also close the captured browser.
-   * **One or more changed configuration files**
+   *  **One or more changed configuration files**
      Use the PHP interpreter at the command line to regenerate the `jsTestDriver.conf` file and run the tests.
 
 <!-- LINK DEFINITIONS -->

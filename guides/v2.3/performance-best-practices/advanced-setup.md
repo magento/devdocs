@@ -21,10 +21,10 @@ When dealing with large amounts of data, re-indexing can become a concern. The M
 
 To manage this setting, edit the `batchRowsCount` parameter in the `di.xml` file of the corresponding module. The following indexes support this feature:
 
-* Category Product Index (Catalog Module)
-* Price Index (Catalog Module)
-* EAV Index (Catalog Module)
-* Stock Index (CatalogInventory Module)
+*  Category Product Index (Catalog Module)
+*  Price Index (Catalog Module)
+*  EAV Index (Catalog Module)
+*  Stock Index (CatalogInventory Module)
 
 You can tune indexer performance by adjusting the index batching size variables. This controls how many entities are processed at a time by the indexer. In some situations, we have seen significant decreases in indexing time.
 
@@ -45,15 +45,15 @@ You could also use a Redis cluster that performs parallel read/write operations 
 
 ## Set up RabbitMQ
 
-{{site.data.var.ee}} and {{site.data.var.ee}} support message queues implemented through RabbitMQ. Magento uses this service for executing numerous asynchronous operations, including B2B catalog operations and asynchronous stock updates. All interfaces for adding more jobs to the job server are distributed with the product and are available for custom asynchronous logic implementation in the scope of third-party extensions. As with any other integration, Magento provides a sample configuration file for RabbitMQ that contains all recommended settings and is fully ready for production usage.
+{{site.data.var.ce}} and {{site.data.var.ee}} support message queues implemented through RabbitMQ. Magento uses this service for executing numerous asynchronous operations, including B2B catalog operations and asynchronous stock updates. All interfaces for adding more jobs to the job server are distributed with the product and are available for custom asynchronous logic implementation in the scope of third-party extensions. As with any other integration, Magento provides a sample configuration file for RabbitMQ that contains all recommended settings and is fully ready for production usage.
 
 ## Split the database
 
 {{site.data.var.ee}} allows you to configure scalable database storage to meet the needs of a growing business. You can set up three separate master databases that serve specific domains:
 
-* Main (Catalog) Database
-* Checkout Database
-* Order Management System (OMS) Database
+*  Main (Catalog) Database
+*  Checkout Database
+*  Order Management System (OMS) Database
 
 To configure additional databases, you must create an empty database and run one of the following commands:
 

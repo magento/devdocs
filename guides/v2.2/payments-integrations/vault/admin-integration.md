@@ -11,8 +11,8 @@ functional_areas:
 To be able to use vault in [Admin](https://glossary.magento.com/admin) order creation, you need to take at least the following steps:
 
 1. Create a token component provider and specify it in the `<your_module_dir>/etc/di.xml`.
-2. Create a custom vault JS component and specify it in the component provider.
-3. Create a `.phtml` template, specify it in the component provider and the corresponding [layout](https://glossary.magento.com/layout) file.
+1. Create a custom vault JS component and specify it in the component provider.
+1. Create a `.phtml` template, specify it in the component provider and the corresponding [layout](https://glossary.magento.com/layout) file.
 
 There are more details about these steps in the following sections.
 

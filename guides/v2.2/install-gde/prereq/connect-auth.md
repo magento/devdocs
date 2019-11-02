@@ -13,11 +13,12 @@ functional_areas:
 
 {% include install/auth-tokens-get.md %}
 
-#### Related topics:
+{:.ref-header}
+Related topics
 
-*	Use your authentication keys to:
+*  Use your authentication keys to:
 
-	*	[Get the {{site.data.var.ce}} or {{site.data.var.ee}} metapackage (integrators, packagers)]({{ page.baseurl }}/install-gde/composer.html)
-	*	[Clone the Magento 2 GitHub]({{ page.baseurl }}/install-gde/prereq/dev_install.html) (contributing developers only)
-	*	[Start the Component Manager]({{ page.baseurl }}/comp-mgr/module-man/compman-checklist.html)
-	*	[Upgrade Magento]({{ page.baseurl }}/comp-mgr/upgrader/upgrade-checklist.html)
+   *  [Get the {{site.data.var.ce}} or {{site.data.var.ee}} metapackage (integrators, packagers)]({{ page.baseurl }}/install-gde/composer.html)
+   *  [Clone the Magento 2 GitHub]({{ page.baseurl }}/install-gde/prereq/dev_install.html) (contributing developers only)
+   *  [Start the Component Manager]({{ page.baseurl }}/comp-mgr/module-man/compman-checklist.html)
+   *  [Upgrade Magento]({{ page.baseurl }}/comp-mgr/upgrader/upgrade-checklist.html)

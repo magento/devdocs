@@ -22,13 +22,14 @@ When a merchant creates and activates an integration, Magento generates a consum
 Use the following steps to generate an access token:
 
 1. Log in to Admin and click **System** > **Extensions** > **Integrations** to display the Integrations page.
-2. Click **Add New Integration** to display the New Integration page.
-3. Enter a unique name for the integration in the **Name** field. Then enter your admin password in the **Your Password** field. Leave all other fields blank.
-4. Click the API tab. Select the Magento resources the integration can access. You can select all resources, or select a custom list.
-5. Click **Save** to save your changes and return to the Integrations page.
-6. Click the **Activate** link in the grid that corresponds to the newly-created integration.
-7. Click **Allow** . A dialog similar to the following displays:
-![REST client]({{ page.baseurl }}/get-started/authentication/images/integration-tokens.png)
+1. Click **Add New Integration** to display the New Integration page.
+1. Enter a unique name for the integration in the **Name** field. Then enter your admin password in the **Your Password** field. Leave all other fields blank.
+1. Click the API tab. Select the Magento resources the integration can access. You can select all resources, or select a custom list.
+1. Click **Save** to save your changes and return to the Integrations page.
+1. Click the **Activate** link in the grid that corresponds to the newly-created integration.
+1. Click **Allow** . A dialog similar to the following displays:
+
+   ![REST client]({{ page.baseurl }}/get-started/authentication/images/integration-tokens.png)
 
 The access token can be used in all calls made on behalf of the integration.
 
@@ -59,7 +60,7 @@ Endpoint |  A combination of the _server_ that fulfills the request, the web ser
 Content type | The content type of the request body. Set this value to either `"Content-Type:application/json"` or `"Content-Type:application/xml"`.
 Credentials | The username and password for a Magento account.<br/><br/>To specify these credentials in a JSON request body, include code similar to the following in the call: <br/><br/>`{"username":"<USER-NAME>;", "password":"<PASSWORD>"}`<br/><br/>To specify these credentials in XML, include code similar to the following in the call:<br/><br/>`<login><username>customer1</username><password>customer1pw</password></login>`
 
-#### Examples {#token-example}
+### Examples {#token-example}
 
 The following image shows a token request for the [admin](https://glossary.magento.com/admin) account using a REST client:
 
@@ -67,7 +68,7 @@ The following image shows a token request for the [admin](https://glossary.magen
 
 The following example uses the `curl` command to request a token for a customer account:
 
-```
+```bash
 curl -X POST "https://magento.host/index.php/rest/V1/integration/customer/token" \
      -H "Content-Type:application/json" \
      -d "{"username":"customer1", "password":"customer1pw"}"
@@ -75,7 +76,7 @@ curl -X POST "https://magento.host/index.php/rest/V1/integration/customer/token"
 
 The following example makes the same request with [XML](https://glossary.magento.com/xml) for a customer account token:
 
-```
+```bash
 curl -X POST "http://magento.vg/index.php/rest/V1/integration/customer/token" \
      -H "Content-Type:application/xml"  \
      -d "<login><username>customer1</username><password>customer1pw</password></login>"
@@ -110,7 +111,9 @@ Customers can access only resources with `self` permissions.
 For example, to make a web API call with a customer token:
 `curl -X GET "http://magento.ll/index.php/rest/V1/customers/me" -H "Authorization: Bearer asdf3hjklp5iuytre"`
 
-## Related topics
+{:.ref-header}
+Related topics
+
 [Construct a request]({{ page.baseurl }}/get-started/gs-web-api-request.html)
 
 [Configure services as web APIs]({{ page.baseurl }}/extension-dev-guide/service-contracts/service-to-web-service.html)

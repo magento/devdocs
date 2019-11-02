@@ -21,8 +21,8 @@ To define custom routes, create an `etc/webapi_async.xml` file in your module th
 
 This example redefines two routes:
 
-* All requests made on endpoint `POST /createWidget` will be forwarded to `POST V1/widgets`
-* All requests made on endpoint `PUT /asyncBulkUpdateWidgets` will be forwarded to `PUT async/bulk/V1/widget`
+*  All requests made on endpoint `POST /createWidget` will be forwarded to `POST V1/widgets`
+*  All requests made on endpoint `PUT /asyncBulkUpdateWidgets` will be forwarded to `PUT async/bulk/V1/widget`
 
 The following table defines the `route` node attributes:
 

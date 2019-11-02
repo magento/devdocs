@@ -15,20 +15,20 @@ We know it is challenging to install the Magento software. We would like to help
 
 This topic assumes:
 
-* You have your own Magento server (you are not using a shared hosting provider).
-* You are starting the installation using `composer create-project`, which enables you to get the most recent Magento software and to add your own customizations to it, if desired.
-* Everything is installed on one host (database, web server, and so on).
-* The host you are installing on is either Ubuntu or CentOS.
+*  You have your own Magento server (you are not using a shared hosting provider).
+*  You are starting the installation using `composer create-project`, which enables you to get the most recent Magento software and to add your own customizations to it, if desired.
+*  Everything is installed on one host (database, web server, and so on).
+*  The host you are installing on is either Ubuntu or CentOS.
 
-  (You can use the same instructions to install on other UNIX distributions like RedHat Enterprise Linux or Debian, but Magento is not supported on Mac or Windows.)
+   (You can use the same instructions to install on other UNIX distributions like RedHat Enterprise Linux or Debian, but Magento is not supported on Mac or Windows.)
 
-* Your host's IP address is `192.0.2.5`.
+*  Your host's IP address is `192.0.2.5`.
 
   This is just an example IP address that you will see in detailed examples throughout this topic. You can substitute it with whatever internal/external IP address matches your server.
 
-* You are installing to the `magento2` subdirectory under your web server's docroot (full path is `/var/www/html/magento2`)
+*  You are installing to the `magento2` subdirectory under your web server's docroot (full path is `/var/www/html/magento2`)
 
-  You can optionally set up static routing or a virtual host to install to a hostname instead of an IP but that is beyond the scope of this topic.
+   You can optionally set up static routing or a virtual host to install to a hostname instead of an IP but that is beyond the scope of this topic.
 
 We have broken the installation process into three main parts: getting started, installing, and post-installation. We hope that what follows helps you; if you would like to suggest improvements, click **Edit this page on GitHub** at the top of this page and let us know.
 
@@ -41,14 +41,14 @@ If not, see the [Installation overview][].
 ## Installation part 1: Getting started
 
 1. See the [system requirements][].
-2. If your system lacks any requirements, see the prerequisites documentation:
+1. If your system lacks any requirements, see the prerequisites documentation:
 
-   * [Apache][]
-   * [PHP][]
-   * [MySQL][]
+   *  [Apache][]
+   *  [PHP][]
+   *  [MySQL][]
 
-3. Just as importantly, set up the [Magento file system owner][]on the server.
-4. Switch to the [Magento file system owner][].
+1. Just as importantly, set up the [Magento file system owner][]on the server.
+1. Switch to the [Magento file system owner][].
 
 ### Get the Magento software
 
@@ -56,6 +56,9 @@ When all prerequisites have been met, get the Magento software using [Composer][
 
 ```bash
 cd <web server docroot directory>
+```
+
+```bash
 composer create-project --repository=https://repo.magento.com/ magento/project-community-edition magento2
 ```
 
@@ -76,21 +79,21 @@ You can choose to install the Magento software using either a [web-based Setup W
 
 The following example shows how to install using the command line with the following options:
 
-* The Magento software is installed in the `/var/www/html/magento2` directory, which means your storefront URL is `http://192.0.2.5/magento2/`
-* The database server is on the same host as the web server.
+*  The Magento software is installed in the `/var/www/html/magento2` directory, which means your storefront URL is `http://192.0.2.5/magento2/`
+*  The database server is on the same host as the web server.
 
-  The database name is `magento`, and the username and password are both `magento`
+   The database name is `magento`, and the username and password are both `magento`
 
-* Uses server rewrites
-* The Magento administrator has the following properties:
+*  Uses server rewrites
+*  The Magento administrator has the following properties:
 
-  * First and last name are `Magento User`
-  * Username is `admin` and the password is `admin123`
-  * E-mail address is `user@example.com`
+   *  First and last name are `Magento User`
+   *  Username is `admin` and the password is `admin123`
+   *  E-mail address is `user@example.com`
 
-* Default language is `en_US` (U.S. English)
-* Default currency is U.S. dollars
-* Default time zone is U.S. Central (America/Chicago)
+*  Default language is `en_US` (U.S. English)
+*  Default currency is U.S. dollars
+*  Default time zone is U.S. Central (America/Chicago)
 
     ```bash
     bin/magento setup:install --base-url=http://192.0.2.5/magento2/ \
@@ -98,36 +101,39 @@ The following example shows how to install using the command line with the follo
     --admin-firstname=Magento --admin-lastname=User --admin-email=user@example.com \
     --admin-user=admin --admin-password=admin123 --language=en_US \
     --currency=USD --timezone=America/Chicago --use-rewrites=1
-    ```
+   ```
 
 Optionally switch to [developer mode]({{page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html).
 
 ```bash
 cd <magento_root>/bin
+```
+
+```bash
 php magento deploy:mode:set developer
 ```
 
 {% endcollapsible %}
 
-#### Web Setup Wizard
+### Web Setup Wizard
 
 {% collapsible Click to view the Web Setup Wizard installation %}
 
 The following example shows how to install using the Web Setup Wizard with the following options:
 
-* The Magento software is installed in the `magento2` directory relative to the web server docroot, which means your storefront URL is `http://192.0.2.5/magento2/`
-* The database server is on the same host as the web server.
+*  The Magento software is installed in the `magento2` directory relative to the web server docroot, which means your storefront URL is `http://192.0.2.5/magento2/`
+*  The database server is on the same host as the web server.
 
-  The database name is `magento`, and the username and password are both `magento`
+   The database name is `magento`, and the username and password are both `magento`
 
-* The Magento administrator has the following properties:
+*  The Magento administrator has the following properties:
 
-  * Username is `admin` and the password is `admin123`
-  * E-mail address is `user@example.com`
+   *  Username is `admin` and the password is `admin123`
+   *  E-mail address is `user@example.com`
 
-* Default language is `en_US` (U.S. English)
-* Default currency is U.S. dollars
-* Default time zone is U.S. Central (America/Chicago)
+*  Default language is `en_US` (U.S. English)
+*  Default currency is U.S. dollars
+*  Default time zone is U.S. Central (America/Chicago)
 
 To run the Web Setup Wizard:
 
@@ -137,43 +143,45 @@ To run the Web Setup Wizard:
 
 1. At the welcome page, click **Agree and Setup Magento**.
 
-  ![You must accept the license agreement to install the Magento software]({{ site.baseurl }}/common/images/install_qr_wizard-welcome.png){:width="200px"}
+   [You must accept the license agreement to install the Magento software]({{ site.baseurl }}/common/images/install_qr_wizard-welcome.png){:width="200px"}
 
 1. Readiness Check verifies your system is ready to install the Magento software.
 
-  Click **Start Readiness Check**
+   Click **Start Readiness Check**
 
-  ![The Readiness Check makes sure your system is ready for the Magento software]({{ site.baseurl }}/common/images/install_qr_readiness.png){:width="400px"}
+   ![The Readiness Check makes sure your system is ready for the Magento software]({{ site.baseurl }}/common/images/install_qr_readiness.png){:width="400px"}
 
-    * If the readiness check passes, click **Next** and continue with the next step.
-    * If the readiness check fails, see [Readiness check issues][]
+   *  If the readiness check passes, click **Next** and continue with the next step.
+   *  If the readiness check fails, see [Readiness check issues][]
+   *  If the readiness check passes, click **Next** and continue with the next step.
+   *  If the readiness check fails, see [Readiness check issues]({{ page.baseurl }}/install-gde/trouble/readiness/tshoot_rc_main.html)
 
-1. Add a Database enables you to set up your Magento database.
+1. Step 2: Add a Database enables you to set up your Magento database.
 
-  ![Set up your Magento database]({{ site.baseurl }}/common/images/install_qr_database.png){:width="400px"}
+   ![Set up your Magento database]({{ site.baseurl }}/common/images/install_qr_database.png){:width="400px"}
 
 1. Web Configuration enables you to enter the storefront and Magento Admin URLs.
 
-  ![Enter your storefront and Magento Admin URLs]({{ site.baseurl }}/common/images/install_qr_web.png){:width="400px"}
+   ![Enter your storefront and Magento Admin URLs]({{ site.baseurl }}/common/images/install_qr_web.png){:width="400px"}
 
 1. Customize Your Store enables you to enter a default store currency, time zone, and language.
 
-  ![Customize the store's language, time zone, currency]({{ site.baseurl }}/common/images/install_qr_store.png){:width="400px"}
+   ![Customize the store's language, time zone, currency]({{ site.baseurl }}/common/images/install_qr_store.png){:width="400px"}
 
 1. Create Admin Account enables you to set up a Magento administrator. This user can perform all actions in the Magento Admin.
 
-  ![Create a Magento administrator account]({{ site.baseurl }}/common/images/install_qr_admin.png){:width="400px"}
+   ![Create a Magento administrator account]({{ site.baseurl }}/common/images/install_qr_admin.png){:width="400px"}
 
 1. Install starts the installation when you click **Install Now**.
 
-  You can optionally expand **Console Log** to see installation messages while the installation is in progress.
+   You can optionally expand **Console Log** to see installation messages while the installation is in progress.
 
 {% endcollapsible %}
 
 ## Installation part 3: Post-installation
 
-* [Verify the installation][] was successful.
-* Learn about the [Component Manager and System Upgrade][] for future updates.
+*  [Verify the installation][] was successful.
+*  Learn about the [Component Manager and System Upgrade][] for future updates.
 
 <!-- Link Definitions -->
 [Installation overview]: {{page.baseurl }}/install-gde/bk-install-guide.html

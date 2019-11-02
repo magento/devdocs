@@ -6,29 +6,30 @@ title: "Create a New Page"
 thumbnail: "fundamentals/thumbs/create-new-page.png"
 menu_order: 1
 ---
+
 In this video on how to create a new page, we’ll create a page which returns JSON with one parameter: the message “HELLO WORLD!”
 
 To add a new page in Magento 2, you need to create a new controller. In Magento 2, a controller is a file located at a specific place which responds to a specific route. A route in Magento 2 is a standard URL that consists of three parts:
 
-* frontName
-* controllerName
-* actionName
+*  frontName
+*  controllerName
+*  actionName
 
 We’ll look at how those three parts of a route correspond to a certain file.
 
 So the steps we need to take to add a new page are:
 
 1. Create a new module.
-2. Add a routes.xml file.
-3. Add a controller (action) file.
+1. Add a routes.xml file.
+1. Add a controller (action) file.
 
 To create a module, you need to complete the following high-level steps:
 
 1. Create the module folder.
-2. Create the etc/module.xml file.
-3. Create the registration.php file.
-4. Run the “bin/magento setup:upgrade” script to install the new module.
-5. Check that the module is working.
+1. Create the etc/module.xml file.
+1. Create the registration.php file.
+1. Run the “bin/magento setup:upgrade” script to install the new module.
+1. Check that the module is working.
 
 Let’s go through each step.
 
@@ -38,7 +39,13 @@ We will create a new module called `Learning_HelloPage`
 
 ```bash
 cd <magento2_root>/app/code
+```
+
+```bash
 mkdir Learning
+```
+
+```bash
 mkdir Learning/HelloPage
 ```
 
@@ -49,7 +56,8 @@ Learning/HelloPage/registration.php
 Learning/HelloPage/etc/module.xml
 ```
 
-#### registration.php
+### registration.php
+
 ```php
 <?php /**
 * Copyright © 2016 Magento. All rights reserved. * See COPYING.txt for license details.
@@ -59,7 +67,8 @@ __DIR__
 );
 ```
 
-#### module.xml
+### module.xml
+
 ```xml
 <?xml version="1.0"?>
 <!--
@@ -108,7 +117,13 @@ Let’s add the controller now.
 
 ```bash
 cd <magento2_root>/app/code/Learning/HelloPage
+```
+
+```bash
 mkdir Controller
+```
+
+```bash
 mkdir Controller/Page
 ```
 
@@ -155,6 +170,9 @@ Note we created a JSON-type page. This can be seen in the results factory that w
 
 ```bash
 cd <magento2_root>
+```
+
+```bash
 php bin/magento setup:upgrade
 ```
 

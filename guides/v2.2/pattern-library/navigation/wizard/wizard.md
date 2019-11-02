@@ -12,17 +12,17 @@ Use this pattern when the user needs to go through a process to accomplish a tas
 
 ## When Not to Use
 
-* The wizard bar should not co-exist with a button bar. Only one can be present per page/modal.
-* Be careful when using this pattern. Wizard is a bad choice when users are experts and/or the task is done often, because Wizard has negative effect on efficiency and user control.
+*  The wizard bar should not co-exist with a button bar. Only one can be present per page/modal.
+*  Be careful when using this pattern. Wizard is a bad choice when users are experts and/or the task is done often, because Wizard has negative effect on efficiency and user control.
 
 ## How to Use
 
-* Break up a task into logical, titled steps.
-* Keep the number of steps at the minimum.
-* Remove or hide unnecessary interface elements that are not necessary for completing the task.
-* If possible, allow some freedom for the experts.
-* Show a sequence map of all the steps in the Wizard at the top of each page.
-* Show a summary on the last page (if necessary).
+*  Break up a task into logical, titled steps.
+*  Keep the number of steps at the minimum.
+*  Remove or hide unnecessary interface elements that are not necessary for completing the task.
+*  If possible, allow some freedom for the experts.
+*  Show a sequence map of all the steps in the Wizard at the top of each page.
+*  Show a summary on the last page (if necessary).
 
 ## Structure
 
@@ -127,10 +127,10 @@ It is not recommended to have too many steps for a wizard. But if a use case ari
 
 ## Assets
 
-* [Download Wizard Style - PSD source](src/wizard-pattern-styles.psd)
-* [Download Variation 1 - PSD source](src/Variation1.psd)
-* [Download Variation 2 - PSD source](src/Variation2.psd)
-* [Download Variation 3 - PSD source](src/Variation3.psd)
-* [Download Variation 4 - PSD source](src/Variation4.psd)
+*  [Download Wizard Style - PSD source](src/wizard-pattern-styles.psd)
+*  [Download Variation 1 - PSD source](src/Variation1.psd)
+*  [Download Variation 2 - PSD source](src/Variation2.psd)
+*  [Download Variation 3 - PSD source](src/Variation3.psd)
+*  [Download Variation 4 - PSD source](src/Variation4.psd)
 
 Please reach out to the Magento UX Design team if you need anything else.

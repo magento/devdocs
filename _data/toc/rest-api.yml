@@ -127,6 +127,12 @@ pages:
             - label: Manage prices for multiple products
               url: /rest/modules/catalog-pricing.html
               include_versions: ["2.2", "2.3"]
+        
+        - label: Sales
+          children:
+
+            - label: Refunds
+              url: /rest/modules/sales/refunds.html
 
         - label: Inventory
           include_versions: ["2.3"]

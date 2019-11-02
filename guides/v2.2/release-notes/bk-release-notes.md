@@ -16,41 +16,44 @@ Quarterly patch releases do not introduce backward-incompatible changes, archite
 
 ## Magento 2.2.x Release Notes
 
-* [{{site.data.var.ce}} 2.2.9 Release Notes]({{page.baseurl}}/release-notes/ReleaseNotes2.2.9CE.html)
-* [{{site.data.var.ee}} 2.2.9 Release Notes]({{page.baseurl}}/release-notes/ReleaseNotes2.2.9EE.html)
+*  [{{site.data.var.ce}} 2.2.10 Release Notes]({{page.baseurl}}/release-notes/release-notes-2-2-10-open-source.html)
+*  [{{site.data.var.ee}} 2.2.10 Release Notes]({{page.baseurl}}/release-notes/release-notes-2-2-10-commerce.html)
 
-* [{{site.data.var.ce}} 2.2.8 Release Notes]({{page.baseurl}}/release-notes/ReleaseNotes2.2.8CE.html)
-* [{{site.data.var.ee}} 2.2.8 Release Notes]({{page.baseurl}}/release-notes/ReleaseNotes2.2.8EE.html)
+*  [{{site.data.var.ce}} 2.2.9 Release Notes]({{page.baseurl}}/release-notes/ReleaseNotes2.2.9CE.html)
+*  [{{site.data.var.ee}} 2.2.9 Release Notes]({{page.baseurl}}/release-notes/ReleaseNotes2.2.9EE.html)
 
-* [{{site.data.var.ce}} 2.2.7 Release Notes]({{page.baseurl}}/release-notes/ReleaseNotes2.2.7CE.html)
-* [{{site.data.var.ee}} 2.2.7 Release Notes]({{page.baseurl}}/release-notes/ReleaseNotes2.2.7EE.html)
+*  [{{site.data.var.ce}} 2.2.8 Release Notes]({{page.baseurl}}/release-notes/ReleaseNotes2.2.8CE.html)
+*  [{{site.data.var.ee}} 2.2.8 Release Notes]({{page.baseurl}}/release-notes/ReleaseNotes2.2.8EE.html)
 
-* [{{site.data.var.ce}} 2.2.6 Release Notes]({{page.baseurl}}/release-notes/ReleaseNotes2.2.6CE.html)
-* [{{site.data.var.ee}} 2.2.6 Release Notes]({{page.baseurl}}/release-notes/ReleaseNotes2.2.6EE.html)
+*  [{{site.data.var.ce}} 2.2.7 Release Notes]({{page.baseurl}}/release-notes/ReleaseNotes2.2.7CE.html)
+*  [{{site.data.var.ee}} 2.2.7 Release Notes]({{page.baseurl}}/release-notes/ReleaseNotes2.2.7EE.html)
 
-* [{{site.data.var.ce}} 2.2.5 Release Notes]({{page.baseurl}}/release-notes/ReleaseNotes2.2.5CE.html)
-* [{{site.data.var.ee}} 2.2.5 Release Notes]({{page.baseurl}}/release-notes/ReleaseNotes2.2.5EE.html)
+*  [{{site.data.var.ce}} 2.2.6 Release Notes]({{page.baseurl}}/release-notes/ReleaseNotes2.2.6CE.html)
+*  [{{site.data.var.ee}} 2.2.6 Release Notes]({{page.baseurl}}/release-notes/ReleaseNotes2.2.6EE.html)
 
-* [{{site.data.var.ce}} 2.2.4 Release Notes]({{page.baseurl}}/release-notes/ReleaseNotes2.2.4CE.html)
-* [{{site.data.var.ee}} 2.2.4 Release Notes]({{page.baseurl}}/release-notes/ReleaseNotes2.2.4EE.html)
+*  [{{site.data.var.ce}} 2.2.5 Release Notes]({{page.baseurl}}/release-notes/ReleaseNotes2.2.5CE.html)
+*  [{{site.data.var.ee}} 2.2.5 Release Notes]({{page.baseurl}}/release-notes/ReleaseNotes2.2.5EE.html)
 
-* [{{site.data.var.ce}} 2.2.3 Release Notes]({{page.baseurl}}/release-notes/ReleaseNotes2.2.3CE.html)
-* [{{site.data.var.ee}} 2.2.3 Release Notes]({{page.baseurl}}/release-notes/ReleaseNotes2.2.3EE.html)
+*  [{{site.data.var.ce}} 2.2.4 Release Notes]({{page.baseurl}}/release-notes/ReleaseNotes2.2.4CE.html)
+*  [{{site.data.var.ee}} 2.2.4 Release Notes]({{page.baseurl}}/release-notes/ReleaseNotes2.2.4EE.html)
 
-* [{{site.data.var.ce}} 2.2.2 Release Notes]({{page.baseurl}}/release-notes/ReleaseNotes2.2.2CE.html)
-* [{{site.data.var.ee}} 2.2.2 Release Notes]({{page.baseurl}}/release-notes/ReleaseNotes2.2.2EE.html)
+*  [{{site.data.var.ce}} 2.2.3 Release Notes]({{page.baseurl}}/release-notes/ReleaseNotes2.2.3CE.html)
+*  [{{site.data.var.ee}} 2.2.3 Release Notes]({{page.baseurl}}/release-notes/ReleaseNotes2.2.3EE.html)
 
-* [{{site.data.var.ce}} 2.2.1 Release Notes]({{page.baseurl}}/release-notes/ReleaseNotes2.2.1CE.html)
-* [{{site.data.var.ee}} 2.2.1 Release Notes]({{page.baseurl}}/release-notes/ReleaseNotes2.2.1EE.html)
-* [{{site.data.var.ece}} 2.2.1 Release Notes]({{page.baseurl}}/cloud/release-notes/CloudReleaseNotes2.2.1.html)
+*  [{{site.data.var.ce}} 2.2.2 Release Notes]({{page.baseurl}}/release-notes/ReleaseNotes2.2.2CE.html)
+*  [{{site.data.var.ee}} 2.2.2 Release Notes]({{page.baseurl}}/release-notes/ReleaseNotes2.2.2EE.html)
 
-* [{{site.data.var.ce}} 2.2.0 Release Notes]({{page.baseurl}}/release-notes/ReleaseNotes2.2.0CE.html)
-* [{{site.data.var.ee}} 2.2.0 Release Notes]({{page.baseurl}}/release-notes/ReleaseNotes2.2.0EE.html)
-* [{{site.data.var.ece}} 2.2.0 Release Notes]({{page.baseurl}}/cloud/release-notes/CloudReleaseNotes2.2.html)
+*  [{{site.data.var.ce}} 2.2.1 Release Notes]({{page.baseurl}}/release-notes/ReleaseNotes2.2.1CE.html)
+*  [{{site.data.var.ee}} 2.2.1 Release Notes]({{page.baseurl}}/release-notes/ReleaseNotes2.2.1EE.html)
+*  [{{site.data.var.ece}} 2.2.1 Release Notes]({{page.baseurl}}/cloud/release-notes/CloudReleaseNotes2.2.1.html)
+
+*  [{{site.data.var.ce}} 2.2.0 Release Notes]({{page.baseurl}}/release-notes/ReleaseNotes2.2.0CE.html)
+*  [{{site.data.var.ee}} 2.2.0 Release Notes]({{page.baseurl}}/release-notes/ReleaseNotes2.2.0EE.html)
+*  [{{site.data.var.ece}} 2.2.0 Release Notes]({{page.baseurl}}/cloud/release-notes/CloudReleaseNotes2.2.html)
 
 ## Backward-incompatible changes
 
-*	Overview of [backward-incompatible changes]({{page.baseurl}}/release-notes/backward-incompatible-changes/index.html) between the 2.1 and 2.2 releases
+*  Overview of [backward-incompatible changes]({{page.baseurl}}/release-notes/backward-incompatible-changes/index.html) between the 2.1 and 2.2 releases
 
 ## {{site.data.var.ece}} {#cloud-updates}
 
@@ -71,6 +74,6 @@ We provide a list of current fixes and enhancements to the Magento Shipping exte
 
 ## Third-party license agreements
 
-*	[{{site.data.var.ce}} third-party licenses]({{page.baseurl}}/release-notes/packages-open-source.html)
-*	[{{site.data.var.ee}} third-party licenses]({{page.baseurl}}/release-notes/packages-commerce.html)
-*	[{{site.data.var.ece}} third-party licenses]({{page.baseurl}}/release-notes/packages-cloud.html)
+*  [{{site.data.var.ce}} third-party licenses]({{page.baseurl}}/release-notes/packages-open-source.html)
+*  [{{site.data.var.ee}} third-party licenses]({{page.baseurl}}/release-notes/packages-commerce.html)
+*  [{{site.data.var.ece}} third-party licenses]({{page.baseurl}}/release-notes/packages-cloud.html)

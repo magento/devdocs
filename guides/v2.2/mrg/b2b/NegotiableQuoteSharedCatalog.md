@@ -14,7 +14,7 @@ The `Magento_NegotiableQuoteSharedCatalog` module enables the `NegotiableQuote` 
 
 The `Magento_NegotiableQuoteSharedCatalog` module provides the following features:
 
-* Remove items from a negotiable quote if corresponding products were removed from this company's shared catalog.
+*  Remove items from a negotiable quote if corresponding products were removed from this company's shared catalog.
 
 ## Installation details
 

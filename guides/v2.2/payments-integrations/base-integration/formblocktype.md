@@ -76,7 +76,7 @@ The following example adds the Braintree-specific template [`app/code/Magento/Pa
     <body>
         <referenceBlock name="order_create_billing_form">
             <action method="setMethodFormTemplate">
-				<!-- your method code and template -->
+                <!-- your method code and template -->
                 <argument name="method" xsi:type="string">braintree</argument>
                 <argument name="template" xsi:type="string">Magento_Braintree::form/cc.phtml</argument>
             </action>
@@ -87,5 +87,5 @@ The following example adds the Braintree-specific template [`app/code/Magento/Pa
 
 ## What's next
 
-- [Payment method facade]({{ page.baseurl }}/payments-integrations/base-integration/facade-configuration.html)
-- [Add a gateway command]({{ page.baseurl }}/payments-integrations/base-integration/payment-action.html)
+-  [Payment method facade]({{ page.baseurl }}/payments-integrations/base-integration/facade-configuration.html)
+-  [Add a gateway command]({{ page.baseurl }}/payments-integrations/base-integration/payment-action.html)

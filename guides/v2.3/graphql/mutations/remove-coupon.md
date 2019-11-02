@@ -80,11 +80,7 @@ mutation {
 
 ## Input attributes
 
-The `removeCouponFromCart` mutation requires the `cart_id` attribute.
-
-### removeCouponFromCart object {#removeCouponFromCart}
-
-The `removeCouponFromCart` object must contain the following attributes:
+The `removeCouponFromCart` mutation must contain the following attribute:
 
 Attribute |  Data Type | Description
 --- | --- | ---
@@ -92,7 +88,7 @@ Attribute |  Data Type | Description
 
 ## Output attributes
 
-The `removeCouponFromCart` object contains the `Cart` object.
+The `removeCouponFromCart` mutation returns the `Cart` object.
 
 Attribute |  Data Type | Description
 --- | --- | ---

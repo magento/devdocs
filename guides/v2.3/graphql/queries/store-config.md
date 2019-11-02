@@ -215,8 +215,8 @@ Attribute |  Data Type | Description
 `default_title` | String | The title that appears at the title bar of each page when viewed in a browser
 `demonotice` | Int | Controls the display of the demo store notice at the top of the page. Options: `0` (No) or `1` (Yes)
 `head_includes` | String | Contains scripts that must be included in the HTML before the closing `<head>` tag
-`header_logo_src` | String | The path to the logo that appears in the header
 `head_shortcut_icon` | String | Uploads the small graphic image that appears in the address bar and tab of the browser
+`header_logo_src` | String | The path to the logo that appears in the header
 `logo_alt` | String | The Alt text that is associated with the logo
 `logo_height` | Int | The height of your logo image in pixels
 `logo_width` | Int | The width of your logo image in pixels
@@ -246,7 +246,7 @@ Attribute |  Data Type | Description | Example
 `catalog_default_sort_by` | String | The default sort order of the search results list | `position`
 `category_url_suffix` | String | The suffix applied to category pages, such as `.htm` or `.html` | `.html`
 `grid_per_page` | Integer | The default number of products per page in Grid View | `9`
-`grid_per_page_values` | A list of numbers that define how many products can be displayed in List View  | `9,15,30`
+`grid_per_page_values` | String | A list of numbers that define how many products can be displayed in List View  | `9,15,30`
 `list_mode` | String  | The format of the search results list | `grid-list`
 `list_per_page` | Integer | The default number of products per page in List View | `10`
 `list_per_page_values` | String | A list of numbers that define how many products can be displayed in List View | `5,10,15,20,25`
@@ -264,13 +264,13 @@ The following example adds an array-item to the `extendedConfigData` array withi
 ```xml
 <?xml version="1.0" ?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
-	<type name="Magento\StoreGraphQl\Model\Resolver\Store\StoreConfigDataProvider">
-		<arguments xsi:type="array">
-			<argument name="extendedConfigData">
-				<item name="section_group_field" xsi:type="string">section/group/field</item>
-			</argument>
-		</arguments>
-	</type>
+  <type name="Magento\StoreGraphQl\Model\Resolver\Store\StoreConfigDataProvider">
+    <arguments xsi:type="array">
+      <argument name="extendedConfigData">
+        <item name="section_group_field" xsi:type="string">section/group/field</item>
+      </argument>
+    </arguments>
+  </type>
 </config>
 ```
 

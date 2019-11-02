@@ -10,7 +10,7 @@ To link a source to a stock, you must specify the `source_code`, `stock_id`, and
 
 **Service names**
 
-```
+```http
 inventoryApiStockSourceLinksSaveV1
 inventoryApiStockSourceLinksDeleteV1
 InventoryApiGetStockSourceLinksV1
@@ -19,7 +19,7 @@ inventoryApiGetSourcesAssignedToStockOrderedByPriorityV1
 
 **REST endpoints**
 
-```
+```http
 POST /V1/inventory/stock-source-links
 POST /V1/inventory/stock-source-links-delete
 GET /V1/inventory/stock-source-links
@@ -29,9 +29,9 @@ GET /V1/inventory/stock-source-links
 
 Name | Description | Type | Requirements
 --- | --- | --- | ---
-`stock_id`	| Stock ID | Integer | Required for POST operations
-`source_code`	| Source code of the link | String | Required for POST operations
-`priority`	| Priority of the link | Integer | Required when linking a stock to a source
+`stock_id` | Stock ID | Integer | Required for POST operations
+`source_code` | Source code of the link | String | Required for POST operations
+`priority` | Priority of the link | Integer | Required when linking a stock to a source
 
 ## Link stocks and sources
 
@@ -43,7 +43,7 @@ If you specify a sales channel that is already assigned to another stock, Magent
 
 **Payload**
 
-```
+```json
 {
    "links" : [
       {
@@ -76,7 +76,7 @@ The `POST /V1/inventory/stock-source-links-delete` endpoint breaks the link betw
 
 **Payload**
 
-```
+```json
 {
    "links" : [
       {
@@ -110,6 +110,7 @@ None
 **Response**
 
 {% collapsible Show code sample %}
+
 ```json
 {
     "items": [
@@ -140,6 +141,7 @@ None
     "total_count": 2
 }
 ```
+
 {% endcollapsible %}
 
 ## Get sources assigned to a stock
@@ -157,6 +159,7 @@ None
 **Response**
 
 {% collapsible Show code sample %}
+
 ```json
 [
     {
@@ -195,4 +198,5 @@ None
     }
 ]
 ```
+
 {% endcollapsible %}

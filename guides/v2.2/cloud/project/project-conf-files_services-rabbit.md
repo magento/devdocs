@@ -10,31 +10,38 @@ The [Message Queue Framework (MQF)]({{ page.baseurl }}/config-guide/mq/rabbitmq-
 
 The MQF uses [RabbitMQ](http://www.rabbitmq.com) as the messaging broker, which provides a scalable platform for sending and receiving messages. It also includes a mechanism for storing undelivered messages. RabbitMQ is based on the Advanced Message Queuing Protocol (AMQP) 0.9.1 specification.
 
-We support RabbitMQ version 3.5.
-
 {:.bs-callout .bs-callout-warning}
 If you prefer using an existing AMQP-based service, like RabbitMQ, instead of relying on {{site.data.var.ece}} to create it for you, use the [`QUEUE_CONFIGURATION`]({{ page.baseurl }}/cloud/env/variables-deploy.html#queue_configuration) environment variable to connect it to your site.
 
 {% include cloud/service-config-integration-starter.md %}
 
-## Add RabbitMQ in services.yaml and .magento.app.yaml {#settings}
+{:.procedure}
+To enable RabbitMQ:
 
-To enable RabbitMQ, add the following code with your installed version and allocated disk space in MB to the `.magento/services.yaml` file.
+1. Add the required name, type, and disk value (in MB) to the `.magento/services.yaml` file along with the the installed RabbitMQ version.
 
-```yaml
-rabbitmq:
-    type: rabbitmq:<version>
-    disk: 1024
-```
+   ```yaml
+   rabbitmq:
+       type: rabbitmq:<version>
+       disk: 1024
+   ```
 
-To configure the relationships for the environment variable, set a relationship in your `.magento.app.yaml` file. For example:
+1. Configure the relationships in the `.magento.app.yaml` file.
 
-```yaml
-relationships:
-    rabbitmq: "rabbitmq:rabbitmq"
-```
+   ```yaml
+   relationships:
+       rabbitmq: "rabbitmq:rabbitmq"
+   ```
 
-Merge and deploy the code to set the configurations for RabbitMQ. For information on how these changes affect your environments, see [`services.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_services.html).
+1. Add, commit, and push your code changes.
+
+   ```bash
+   git add -A && git commit -m "Enable RabbitMQ service" && git push origin <branch-name>
+   ```
+
+1. [Verify the service relationships]({{page.baseurl}}/cloud/project/project-conf-files_services.html#service-relationships).
+
+For information on how these changes affect your environments, see [`services.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_services.html).
 
 ## Connect to RabbitMQ for debugging {#connect}
 
@@ -46,31 +53,61 @@ For debugging purposes, it is useful to directly connect to a service instance i
 
 ### Connect from your local development environment {#cloud-rabbitmq-conn-loc}
 
-You can do this using [SSH tunneling]({{ page.baseurl }}/cloud/env/environments-start.html#env-start-tunn):
+1. Log in to the Magento Cloud CLI and project:
 
-1.  Use SSH to log in to the Integration environment with RabbitMQ installed and configured.
+   ```bash
+   magento-cloud login
+   ```
 
-1.  Log in to the Magento Cloud CLI and project:
+1. Checkout the environment with RabbitMQ installed and configured.
 
-    ```bash
-    magento-cloud login
-    ```
+   ```bash
+   magento-cloud environment:checkout <environment-id>
+   ```
 
-1.  Open a tunnel to the application.
+1. Use SSH to connect to the Cloud environment:
 
-    ```bash
-    magento-cloud tunnel:open
-    ```
+   ```bash
+   magento-cloud ssh
+   ```
 
-1.  [Verify the relationships]({{page.baseurl}}/cloud/project/project-conf-files_services.html#service-relationships).
+1. Retrieve the RabbitMQ connection details and login credentials from the [$MAGENTO_CLOUD_RELATIONSHIPS]({{ page.baseurl }}/cloud/project/project-conf-files_magento-app.html#relationships) variable:
 
-1.  Enable local port forwarding to RabbitMQ.
+   ```bash
+   echo $MAGENTO_CLOUD_RELATIONSHIPS | base64 -d | json_pp
+   ```
 
-    ```bash
-    ssh -L <port-number>:mq.internal:<port-number> <project-ID>-<branch-ID>@ssh.us.magentosite.cloud
-    ```
+      or
 
-1.  While the session is open, you can start a RabbitMQ client of your choice from your local workstation, configured to connect to the `localhost:<portnumber` using the username and password you found in the relationship variable. For this example, you would use `localhost:5672`.
+   ```bash
+   php -r 'print_r(json_decode(base64_decode($_ENV["MAGENTO_CLOUD_RELATIONSHIPS"])));'
+   ```
+
+   In the response, find the RabbitMQ information, for example:
+
+   ```json
+   {
+      "rabbitmq" : [
+         {
+            "password" : "guest",
+            "ip" : "246.0.129.2",
+            "scheme" : "amqp",
+            "port" : 5672,
+            "host" : "rabbitmq.internal",
+            "username" : "guest"
+         }
+      ]
+   }
+   ```
+   {: .no-copy}
+
+1. Enable local port forwarding to RabbitMQ.
+
+   ```bash
+   ssh -L <port-number>:mq.internal:<port-number> <project-ID>-<branch-ID>@ssh.us.magentosite.cloud
+   ```
+
+1. While the session is open, you can start a RabbitMQ client of your choice from your local workstation, configured to connect to the `localhost:<portnumber>` using the port number, username, and password information from the MAGENTO_CLOUD_RELATIONSHIP variable.
 
 ### Connect from the application {#cloud-rabbitmq-conn-cont}
 

@@ -15,7 +15,7 @@ The following query returns all countries listed for the current instance of Mag
 
 **Request**
 
-```text
+```graphql
 query {
     countries {
         id
@@ -139,5 +139,5 @@ The query returns an array of `Country` objects.
 
 ## Related topics
 
-* [country query]({{page.baseurl}}/graphql/queries/directory-country.html)
-* [currency query]({{page.baseurl}}/graphql/queries/directory-currency.html)
+*  [country query]({{page.baseurl}}/graphql/queries/directory-country.html)
+*  [currency query]({{page.baseurl}}/graphql/queries/directory-currency.html)

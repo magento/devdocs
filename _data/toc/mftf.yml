@@ -9,32 +9,6 @@ pages:
     url: /mftf/docs/getting-started.html
     versionless: true
 
-  - label: Action group reference
-    url: /mftf/docs/actiongroup-list.html
-    versionless: true
-
-  - label: Best practices
-    versionless: true
-    children:
-
-      - label: Best practices
-        url: /mftf/docs/best-practices.html
-        versionless: true
-      - label: Tips and tricks
-        url: /mftf/docs/tips-tricks.html
-        versionless: true
-
-  - label: CLI Commands
-    versionless: true
-    children:
-
-      - label: mftf
-        url: /mftf/docs/commands/mftf.html
-        versionless: true
-      - label: codecept
-        url: /mftf/docs/commands/codeception.html
-        versionless: true
-
   - label: Configuration
     url: /mftf/docs/configuration.html
     versionless: true
@@ -55,8 +29,8 @@ pages:
     url: /mftf/docs/extending.html
     versionless: true
 
-  - label: MFTF functional test reference
-    url: /mftf/docs/mftf-tests.html
+  - label: Git vs. Composer installation
+    url: /mftf/docs/guides/git-vs-composer-install.html
     versionless: true
 
   - label: Merge points for extensions
@@ -108,9 +82,25 @@ pages:
     url: /mftf/docs/page.html
     versionless: true
 
-  - label: Preparing a test for MFTF
-    url: /mftf/docs/test-prep.html
+  - label: Reference
     versionless: true
+    children:
+
+      - label: Action group reference
+        url: /mftf/docs/actiongroup-list.html
+        versionless: true
+
+      - label: Codecept
+        url: /mftf/docs/commands/codeception.html
+        versionless: true
+
+      - label: MFTF
+        url: /mftf/docs/commands/mftf.html
+        versionless: true
+      
+      - label: MFTF functional test reference
+        url: /mftf/docs/mftf-tests.html
+        versionless: true
 
   - label: Reporting
     url: /mftf/docs/reporting.html
@@ -133,7 +123,7 @@ pages:
     url: /mftf/docs/suite.html
     versionless: true
 
-  - label: Test
+  - label: Test basics
     url: /mftf/docs/test.html
     versionless: true
     children:
@@ -154,15 +144,43 @@ pages:
         url: /mftf/docs/test/assertions.html
         versionless: true
 
-      - label: MFTF functional test reference
-        url: /mftf/docs/mftf-tests.html
+  - label: Test writing
+    versionless: true
+    children:
+
+      - label: Best practices
+        url: /mftf/docs/best-practices.html
+        versionless: true
+
+      - label: Preparing a test for MFTF
+        url: /mftf/docs/test-prep.html
+        versionless: true
+
+      - label: Selectors
+        url: /mftf/docs/guides/selectors.html
+        versionless: true
+      
+      - label: Test isolation
+        url: /mftf/docs/guides/test-isolation.html
+        versionless: true
+
+      - label: Test modularity
+        url: /mftf/docs/guides/test-modularity.html
+        versionless: true
+
+      - label: Tips and tricks
+        url: /mftf/docs/tips-tricks.html
+        versionless: true
+
+      - label: Using suites
+        url: /mftf/docs/guides/using-suites.html
         versionless: true
 
   - label: Troubleshooting
     url: /mftf/docs/troubleshooting.html
     versionless: true 
 
-  - label: Update
+  - label: Update MFTF
     url: /mftf/docs/update.html
     versionless: true
 

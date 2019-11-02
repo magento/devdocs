@@ -16,8 +16,8 @@ Unlike the standard business-to-consumer model, {{site.data.var.b2b}} (Business 
 
 There are two basic actors in B2B model:
 
-* A **seller** is an admin user that accesses the system from the Magento Admin panel.
-* A **buyer** is any customer associated with a company account who accesses the system from the storefront.
+*  A **seller** is an admin user that accesses the system from the Magento Admin panel.
+*  A **buyer** is any customer associated with a company account who accesses the system from the storefront.
 
 The Company component is the key entity within B2B on which all other features are in some way dependent. It allows joining multiple buyers that belong to the same company into a single company account (or corporate account). The company admin is able to build the company structure (divisions, subdivisions and users) in the appropriate hierarchy and provide different user roles and permissions to the company members. Such a hierarchy allows the company admin to control user activity within an account: ordering, quoting, purchasing, access to company credit info or profile, etc. In addition, a seller can configure how the buying company operates at the website: including the payment methods, pricing levels, the ability to negotiate over prices, and the ability to create requisition lists.
 
@@ -55,5 +55,5 @@ SharedCatalog | Defines the visibility of products and prices in the catalog and
 
 ## Related information
 
-* [Install the B2B extension]({{ site.baseurl }}/extensions/b2b/)
-* [Getting started with {{site.data.var.b2b}}](http://docs.magento.com/m2/b2b/user_guide/getting-started.html)
+*  [Install the B2B extension]({{ site.baseurl }}/extensions/b2b/)
+*  [Getting started with {{site.data.var.b2b}}](http://docs.magento.com/m2/b2b/user_guide/getting-started.html)

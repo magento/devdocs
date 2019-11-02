@@ -17,7 +17,7 @@ You can manage your cache in the [Admin](https://glossary.magento.com/admin) sec
 
 **Recommended Reading**
 
-* [Clear directories during development]({{ page.baseurl }}/howdoi/php/php_clear-dirs.html)
+*  [Clear directories during development]({{ page.baseurl }}/howdoi/php/php_clear-dirs.html)
 
 ### Consider different resolutions/devices
 
@@ -25,7 +25,7 @@ When developing your theme extension, you should check how it looks using differ
 
 **Recommended Reading**
 
-* [How to make your theme responsive and mobile]({{ page.baseurl }}/frontend-dev-guide/responsive-web-design/rwd_overview.html)
+*  [How to make your theme responsive and mobile]({{ page.baseurl }}/frontend-dev-guide/responsive-web-design/rwd_overview.html)
 
 ### Inherit and customize
 
@@ -33,4 +33,4 @@ There is a lot of work in building a theme extension for Magento from scratch. T
 
 **Recommended Reading**
 
-* [Theme inheritance]({{ page.baseurl }}/frontend-dev-guide/themes/theme-inherit.html)
+*  [Theme inheritance]({{ page.baseurl }}/frontend-dev-guide/themes/theme-inherit.html)

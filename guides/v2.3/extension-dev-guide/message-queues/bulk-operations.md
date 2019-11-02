@@ -20,9 +20,9 @@ OperationManagementInterface | Changes the status of an operation
 
 Three clients call bulk operation APIs:
 
-* A publisher, which pushes messages to the message queue
-* A consumer, which handles each specific operation
-* A client that gets the status of the bulk operation and shows the list of failed operations
+*  A publisher, which pushes messages to the message queue
+*  A consumer, which handles each specific operation
+*  A client that gets the status of the bulk operation and shows the list of failed operations
 
 ### Publish bulk operations
 
@@ -70,9 +70,9 @@ Magento provides database exception classes to simplify the process of identifyi
 
 Exception class | Description of database error(s)
 --- | ---
-ConnectionException	| SQLSTATE[HY000]: General error: 2006 MySQL server has gone away <BR>SQLSTATE[HY000]: General error: 2013 Lost connection to MySQL server during query
+ConnectionException | SQLSTATE[HY000]: General error: 2006 MySQL server has gone away <BR>SQLSTATE[HY000]: General error: 2013 Lost connection to MySQL server during query
 LockWaitException | SQLSTATE[HY000]: General error: 1205 Lock wait timeout exceeded
-DeadlockException	| SQLSTATE[40001]: Serialization failure: 1213 Deadlock found when trying to get lock
+DeadlockException | SQLSTATE[40001]: Serialization failure: 1213 Deadlock found when trying to get lock
 
 The following pseudocode illustrates how to recover from database-related errors.
 
@@ -104,5 +104,5 @@ Value | Constant
 
 #### Related Topic
 
-* [Message Queues Overview]( {{page.baseurl}}/config-guide/mq/rabbitmq-overview.html)
-* [Example bulk operations implementation]({{page.baseurl}}/extension-dev-guide/message-queues/implement-bulk.html)
+*  [Message Queues Overview]( {{page.baseurl}}/config-guide/mq/rabbitmq-overview.html)
+*  [Example bulk operations implementation]({{page.baseurl}}/extension-dev-guide/message-queues/implement-bulk.html)

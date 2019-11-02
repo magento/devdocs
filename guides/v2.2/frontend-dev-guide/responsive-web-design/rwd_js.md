@@ -12,9 +12,10 @@ This topic describes the JavaScript used in Magento out-of-the-box Blank and Lum
 ## Scripts general overview
 
 The Blank and Luma themes use the following scripts to responsively relocate page elements by breakpoint:
-- [`responsive.js`]
-- [`menu.js`]
-- [`matchMedia.js`], used by `responsive.js` and `menu.js`
+
+-  [`responsive.js`]
+-  [`menu.js`]
+-  [`matchMedia.js`], used by `responsive.js` and `menu.js`
 
 The script files are located in the file system as follows:
 
@@ -24,12 +25,13 @@ The script files are located in the file system as follows:
 ├── lib/web/
     ├── matchMedia.js
     ├── mage/
-	    ├── menu.js
+       ├── menu.js
 ```
 
 See one of the following sections for more information:
-- [responsive.js](#fedg_rwd_js_resp)
-- [menu.js](#fedg_rwd_js_nav)
+
+-  [responsive.js](#fedg_rwd_js_resp)
+-  [menu.js](#fedg_rwd_js_nav)
 
 ## responsive.js {#fedg_rwd_js_resp}
 
@@ -54,9 +56,9 @@ The `mediaCheck` call looks as follows:
 
 For example, `responsive.js` changes the view of the [checkout](https://glossary.magento.com/checkout) progress block on the checkout page:
 
--   For the desktop view, the checkout progress block is permanently
+-  For the desktop view, the checkout progress block is permanently
     displayed on the left-hand side.
--   For the mobile view, it is moved by [CSS](https://glossary.magento.com/css)
+-  For the mobile view, it is moved by [CSS](https://glossary.magento.com/css)
     to be displayed under the checkout steps. `responsive.js` makes it
     a toggled block: by default, the checkout progress information is
     hidden in the **Your Checkout Progress** section and it is visible
@@ -65,15 +67,11 @@ For example, `responsive.js` changes the view of the [checkout](https://glossary
 ## menu.js {#fedg_rwd_js_nav}
 
 In a mobile view, on the 768px breakpoint, `menu.js` changes the navigation menu look and behavior the following way:
--   Category menu items are not displayed, but are accessible after
-    clicking the menu icon.
--   The behavior of a [category](https://glossary.magento.com/category) link depends on whether the category has sub-categories:
-    -   If sub-categories exist, the category link behaves as
-        collapsible block. Clicking a category link does not redirect to the category page
-        immediately. Instead it opens a list of sub-categories,
-        including the **All category products** option.
-    -   If there are no sub-categories, the category link behaves as
-        usual.
+
+-  Category menu items are not displayed, but are accessible after clicking the menu icon.
+-  The behavior of a [category](https://glossary.magento.com/category) link depends on whether the category has sub-categories:
+   -  If sub-categories exist, the category link behaves as collapsible block. Clicking a category link does not redirect to the category page immediately. Instead it opens a list of sub-categories, including the **All category products** option.
+   -  If there are no sub-categories, the category link behaves as usual.
 
 The following image illustrates the mobile-view navigation menu.
 

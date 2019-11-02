@@ -17,26 +17,26 @@ Specify an associative array where keys are constants from [\\Magento\\App\\File
 
 You can set `MAGE_DIRS` in any of the following ways:
 
-*	[Set the value of bootstrap parameters]({{ page.baseurl }}/config-guide/bootstrap/magento-how-to-set.html)
-*	Use a custom entry point script such as the following:
+*  [Set the value of bootstrap parameters]({{ page.baseurl }}/config-guide/bootstrap/magento-how-to-set.html)
+*  Use a custom entry point script such as the following:
 
-	```php?start_inline=1
-	use Magento\Framework\App\Filesystem\DirectoryList;
-	use Magento\Framework\App\Bootstrap;
+   ```php
+   use Magento\Framework\App\Filesystem\DirectoryList;
+   use Magento\Framework\App\Bootstrap;
 
-	require __DIR__ . '/app/bootstrap.php';
-	$params = $_SERVER;
-	$params[Bootstrap::INIT_PARAM_FILESYSTEM_DIR_PATHS] = [
- 	    DirectoryList::PUB => [DirectoryList::URL_PATH => '',
- 	    DirectoryList::MEDIA => [DirectoryList::PATH => '/mnt/nfs/media', DirectoryList::URL_PATH => ''],
- 	    DirectoryList::STATIC_VIEW => [DirectoryList::URL_PATH => 'static'],
- 	    DirectoryList::UPLOAD => [DirectoryList::URL_PATH => '/mnt/nfs/media/upload'],
- 	    DirectoryList::CACHE => [DirectoryList::PATH => '/mnt/nfs/cache'],
-	];
-	$bootstrap = \Magento\Framework\App\Bootstrap::create(BP, $params);
-	/** @var \Magento\Framework\App\Http $app */
-	$app = $bootstrap->createApplication('Magento\Framework\App\Http');
-	$bootstrap->run($app);
-	```
+   require __DIR__ . '/app/bootstrap.php';
+   $params = $_SERVER;
+   $params[Bootstrap::INIT_PARAM_FILESYSTEM_DIR_PATHS] = [
+        DirectoryList::PUB => [DirectoryList::URL_PATH => '',
+        DirectoryList::MEDIA => [DirectoryList::PATH => '/mnt/nfs/media', DirectoryList::URL_PATH => ''],
+        DirectoryList::STATIC_VIEW => [DirectoryList::URL_PATH => 'static'],
+        DirectoryList::UPLOAD => [DirectoryList::URL_PATH => '/mnt/nfs/media/upload'],
+        DirectoryList::CACHE => [DirectoryList::PATH => '/mnt/nfs/cache'],
+   ];
+   $bootstrap = \Magento\Framework\App\Bootstrap::create(BP, $params);
+   /** @var \Magento\Framework\App\Http $app */
+   $app = $bootstrap->createApplication('Magento\Framework\App\Http');
+   $bootstrap->run($app);
+   ```
 
 The preceding example sets paths for `[cache]` and `[media]` directories to `/mnt/nfs/cache` and `/mnt/nfs/media`, respectively.

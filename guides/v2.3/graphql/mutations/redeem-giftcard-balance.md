@@ -19,7 +19,7 @@ The following example redeems the gift card with code `“056MHP57TJ5C”`.
 
 **Request**
 
-``` text
+```graphql
 mutation {
   redeemGiftCardBalanceAsStoreCredit(
     input : { gift_card_code: “056MHP57TJ5C”}

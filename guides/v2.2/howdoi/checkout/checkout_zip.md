@@ -58,14 +58,14 @@ The content of the file should be similar to the following sample:
 
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Directory:etc/zip_codes.xsd">
 
-	<!-- Specify the country ISO code-->
-	<zip countryCode="US">
-		<!-- You can specify several patterns for one country -->
-    	<codes>
-	        <code id="pattern_1" active="true" example="12345-6789">^[0-9]{5}\-[0-9]{4}$</code>
-    	    <code id="pattern_2" active="true" example="12345">^[0-9]{5}$</code>
-    	</codes>
-	</zip>
+    <!-- Specify the country ISO code-->
+    <zip countryCode="US">
+        <!-- You can specify several patterns for one country -->
+        <codes>
+            <code id="pattern_1" active="true" example="12345-6789">^[0-9]{5}\-[0-9]{4}$</code>
+            <code id="pattern_2" active="true" example="12345">^[0-9]{5}$</code>
+        </codes>
+    </zip>
 </config>
 ```
 
@@ -86,7 +86,7 @@ In the default `<Magento_Directory_module_dir>/etc/zip_codes.xml` the following 
 
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Directory:etc/zip_codes.xsd">
 ...
-	<zip countryCode="FR">
+    <zip countryCode="FR">
         <codes>
             <code id="pattern_1" active="true" example="12345">^[0-9]{5}$</code>
         </codes>
@@ -102,7 +102,7 @@ To change this mask, add the following code in your `zip_codes.xml`:
 
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Directory:etc/zip_codes.xsd">
 ...
-	<zip countryCode="FR">
+    <zip countryCode="FR">
         <codes>
             <!-- Changed the regexp defining the mask, and the value of "example" -->
             <code id="pattern_1" active="true" example="A123">^[a-zA-Z]{1}[0-9]{3}$</code>

@@ -21,27 +21,27 @@ Your new `events.xml` is automatically collected from your module and merged wit
 
 To create new configuration type, you must add at minimum:
 
-* [XML](https://glossary.magento.com/xml) configuration files
-* XSD validation schema
-* A loader
+*  [XML](https://glossary.magento.com/xml) configuration files
+*  XSD validation schema
+*  A loader
 
 For example, to introduce an [adapter](https://glossary.magento.com/adapter) for a new search server that enables extensions to configure how its entities are indexed in that server, create:
 
-* A loader.
-* An XSD schema.
-* Any other classes required for your new type to work.
-* An appropriately named configuration file. For example, `search.xml`. This file is read and validated against your schema.
+*  A loader.
+*  An XSD schema.
+*  Any other classes required for your new type to work.
+*  An appropriately named configuration file. For example, `search.xml`. This file is read and validated against your schema.
 
    If other modules have a `search.xml` file, they are merged with your file when it loads.
 
 To create a new configuration type, extend the `\Magento\Framework\Config\ReaderInterface`, which is [Magento\Framework\Config\Reader\Filesystem]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Config/Reader/Filesystem.php) to provide the following parameters:
 
-* `$fileResolver`. Implements [\Magento\Framework\Config\FileResolverInterface]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Config/FileResolverInterface.php). This parameter lists the files containing the configurations of your custom type.
-* `$converter`. Implements [\Magento\Framework\Config\ConverterInterface]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Config/ConverterInterface.php). This parameter converts the XML into the internal array representation of the configurations.
-* `$schemaLocator`. Implements [\Magento\Framework\Config\SchemaLocatorInterface]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Config/SchemaLocatorInterface.php). This parameter provides the full path to file(s) containing schema(s) for validation of the individual and merged configuration files.
-* `$validationState`. Implements [\Magento\Framework\Config\ValidationStateInterface]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Config/ValidationStateInterface.php). This parameter defines whether a configuration file should be validated.
-* `$fileName`. Name of a configuration file. The Reader looks for the file names specified by this parameter in modules' `etc` directories.
-* `$idAttributes`. Array of node attribute IDs.
+*  `$fileResolver`. Implements [\Magento\Framework\Config\FileResolverInterface]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Config/FileResolverInterface.php). This parameter lists the files containing the configurations of your custom type.
+*  `$converter`. Implements [\Magento\Framework\Config\ConverterInterface]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Config/ConverterInterface.php). This parameter converts the XML into the internal array representation of the configurations.
+*  `$schemaLocator`. Implements [\Magento\Framework\Config\SchemaLocatorInterface]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Config/SchemaLocatorInterface.php). This parameter provides the full path to file(s) containing schema(s) for validation of the individual and merged configuration files.
+*  `$validationState`. Implements [\Magento\Framework\Config\ValidationStateInterface]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Config/ValidationStateInterface.php). This parameter defines whether a configuration file should be validated.
+*  `$fileName`. Name of a configuration file. The Reader looks for the file names specified by this parameter in modules' `etc` directories.
+*  `$idAttributes`. Array of node attribute IDs.
 
     For example, to merge the XML files:
 
@@ -50,7 +50,7 @@ To create a new configuration type, extend the `\Magento\Framework\Config\Reader
          '</path/to/other/node>' => '<identifierAttributeName>',
        }
 
-* `$defaultScope`. Defines the configuration scope to be read by default. The default value for this parameter is global scope.
+*  `$defaultScope`. Defines the configuration scope to be read by default. The default value for this parameter is global scope.
 
  After you customize `ReaderInterface`, you can use it to collect, merge, validate, and convert the configuration files to an internal array representation.
 
@@ -60,8 +60,8 @@ Each configuration file is validated against a schema specific to its configurat
 
 Configuration files can be validated both before (optional) and after any merge of multiple files affecting the same configuration type. Unless the validation rules for the individual and merged files are identical, you should provide two schemas for validating the configuration files:
 
-* Schema to validate an individual
-* Schema to validate a merged file
+*  Schema to validate an individual
+*  Schema to validate a merged file
 
 New configuration files must be accompanied by XSD validation schemas. An XML configuration file and its XSD validation file must have the same name.
 
@@ -75,7 +75,8 @@ To ensure validation of an XML file by appropriate XSD file, you must add the Un
 
 Your IDE can validate your configuration files at both runtime and during development.
 
-### Related topics
+{:.ref-header}
+Related topics
 
-* [Module configuration files]({{ page.baseurl }}/config-guide/config/config-php.html)
-* [Magento's deployment configuration]({{ page.baseurl }}/config-guide/config/config-php.html)
+*  [Module configuration files]({{ page.baseurl }}/config-guide/config/config-php.html)
+*  [Magento's deployment configuration]({{ page.baseurl }}/config-guide/config/config-php.html)

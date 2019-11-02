@@ -6,8 +6,6 @@ contributor_name: Atwix
 contributor_link: https://www.atwix.com/
 ---
 
-## Overview
-
 The PopupWindow [widget](https://glossary.magento.com/widget/) allows you to open a popup window with content from any URL.
 
 The PopupWindow widget source is [lib/web/mage/popup-window.js][].
@@ -33,9 +31,9 @@ $("#element").popupWindow({
 
 Where:
 
-- `#element` is the selector of the element which will be the PopupWindow.
+-  `#element` is the selector of the element which will be the PopupWindow.
 
-Phtml template file examples using script:
+The following example shows a PHTML file using the script:
 
 ```html
 <script>

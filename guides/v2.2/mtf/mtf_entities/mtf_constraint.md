@@ -20,18 +20,18 @@ A module in functional tests (`<magento2_root_dir>/dev/tests/app/Magento/`) stor
 
 The constraint [PHP](https://glossary.magento.com/php) class must:
 
-* Have unique name created using the following template `Assert{MagentoEntityName}{verification|action|place}`. For example:
+*  Have unique name created using the following template `Assert{MagentoEntityName}{verification|action|place}`. For example:
 
-  * `AssertUserSuccessDeleteMessage` corresponds to `Assert{entityName}{verification}`
-  * `AssertOrderPlaced` corresponds to `Assert{entityName}{action}`
-  * `AssertProductForm` corresponds to `Assert{entityName}{place}`
+   *  `AssertUserSuccessDeleteMessage` corresponds to `Assert{entityName}{verification}`
+   *  `AssertOrderPlaced` corresponds to `Assert{entityName}{action}`
+   *  `AssertProductForm` corresponds to `Assert{entityName}{place}`
 
-* Extend the [Magento\Mtf\Constraint\AbstractConstraint](https://github.com/magento/mtf/blob/develop/Magento/Mtf/Constraint/AbstractConstraint.php) class.
+*  Extend the [Magento\Mtf\Constraint\AbstractConstraint](https://github.com/magento/mtf/blob/develop/Magento/Mtf/Constraint/AbstractConstraint.php) class.
 
-* Contain the following methods:
+*  Contain the following methods:
 
-  * `processAssert()` which contains assertions. A `PHPUnit_Framework_Assert` class (`<magento2_root_dir>/dev/tests/functional/vendor/phpunit/phpunit/src/Framework/Assert.php`) can be used to simplify assertions.
-  * `toString()` which returns a success message if the assertion is performed successfully
+   *  `processAssert()` which contains assertions. A `PHPUnit_Framework_Assert` class (`<magento2_root_dir>/dev/tests/functional/vendor/phpunit/phpunit/src/Framework/Assert.php`) can be used to simplify assertions.
+   *  `toString()` which returns a success message if the assertion is performed successfully
 
 ### Constraint arguments
 
@@ -108,14 +108,14 @@ You can tag constraints in `<module>/Test/etc/di.xml` using a `severity` argumen
 
 You can use the following severity tags:
 
-- `high`
-- `middle`
-- `low`
+*  `high`
+*  `middle`
+*  `low`
 
 To assign severity tags do the following:
 
-* Create `di.xml` file in `Test/etc` of the module.
-* Assign `severity` to constraints in the following format:
+*  Create `di.xml` file in `Test/etc` of the module.
+*  Assign `severity` to constraints in the following format:
 
 ```xml
 <type name="Magento\[Module_name]\Test\Constraint\Assert...">

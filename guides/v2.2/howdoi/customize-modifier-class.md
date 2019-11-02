@@ -18,7 +18,7 @@ The `Magento\Catalog\Ui\DataProvider\Product\Form\ProductDataProvider` data prov
 To add your custom modifier, you need to do the following:
 
 1. [Add the modifier code.](#modifier)
-2. [Add it to the modifiers' pool in `di.xml`](#pool)
+1. [Add it to the modifiers' pool in `di.xml`](#pool)
 
 ## Add your modifier {#modifier}
 
@@ -119,9 +119,9 @@ To access product model within your modifier, it's recommended to use an instanc
 
 For reference, view the modifier classes in the Magento modules, for example:
 
-- [`Magento/Catalog/Ui/DataProvider/Product/Form/Modifier/AdvancedPricing`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/Ui/DataProvider/Product/Form/Modifier/AdvancedPricing.php)
-- [`Magento/Catalog/Ui/DataProvider/Product/Form/Modifier/AttributeSet`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/Ui/DataProvider/Product/Form/Modifier/AttributeSet.php)
-- [`Magento/Catalog/Ui/DataProvider/Product/Form/Modifier/Eav`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/Ui/DataProvider/Product/Form/Modifier/Eav.php)
-- [`Magento/ConfigurableProduct/Ui/DataProvider/Product/Form/Modifier/Data/AssociatedProducts`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/ConfigurableProduct/Ui/DataProvider/Product/Form/Modifier/Data/AssociatedProducts.php)
+-  [`Magento/Catalog/Ui/DataProvider/Product/Form/Modifier/AdvancedPricing`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/Ui/DataProvider/Product/Form/Modifier/AdvancedPricing.php)
+-  [`Magento/Catalog/Ui/DataProvider/Product/Form/Modifier/AttributeSet`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/Ui/DataProvider/Product/Form/Modifier/AttributeSet.php)
+-  [`Magento/Catalog/Ui/DataProvider/Product/Form/Modifier/Eav`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/Ui/DataProvider/Product/Form/Modifier/Eav.php)
+-  [`Magento/ConfigurableProduct/Ui/DataProvider/Product/Form/Modifier/Data/AssociatedProducts`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/ConfigurableProduct/Ui/DataProvider/Product/Form/Modifier/Data/AssociatedProducts.php)
 
 For reference about setting conditions for displaying certain elements for certain product types, view `<Magento_Catalog_module_dir>/Ui/DataProvider/Product/Form/Modifier/Eav.php#L476`.

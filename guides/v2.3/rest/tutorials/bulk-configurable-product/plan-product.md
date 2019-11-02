@@ -17,9 +17,9 @@ contributor_link: http://comwrap.com/
 
  To create a configurable product programmatically, you'll need to know the following:
 
-* The attribute names and values defined in the attribute set assigned to the configurable product.
-* The category numbers assigned to the configurable product.
-* Which attributes to use as the configuration options.
+*  The attribute names and values defined in the attribute set assigned to the configurable product.
+*  The category numbers assigned to the configurable product.
+*  Which attributes to use as the configuration options.
 
  Since this tutorial uses the sample data, we can take advantage of the options that the Top attribute set provides. This attribute set contains attributes that describe the fabric, sleeve length, and other characteristics that are specific to clothing. It also includes EAV attributes such as size and color, which are commonly available to all types of physical products.
 
@@ -136,9 +136,9 @@ searchCriteria[filter_groups][0][filters][0][condition_type]=gte
 
  Note that women's tops and tees have different ids than men's tops and tees. The values for men's clothing are:
 
-* Men - `11`
-* Tops - `12`
-* Tees - `16`
+*  Men - `11`
+*  Tops - `12`
+*  Tees - `16`
 
 ## Verify this step
 

@@ -35,16 +35,20 @@ mutation {
 
 ## Input attributes
 
-The `deleteCustomerAddress` object requires the following input:
+The `deleteCustomerAddress` mutation requires the following input:
 
 Attribute |  Data Type | Description
 --- | --- | ---
 `id` | Int! | The ID assigned to the address object
 
+## Output attributes
+
+The `deleteCustomerAddress` mutation returns a Boolean value that indicates whether the operation was successful.
+
 ## Related topics
 
-* [customer query]({{page.baseurl}}/graphql/queries/customer.html)
-* [createCustomer mutation]({{page.baseurl}}/graphql/mutations/create-customer.html)
-* [updateCustomer mutation]({{page.baseurl}}/graphql/mutations/update-customer.html)
-* [createCustomerAddress mutation]({{page.baseurl}}/graphql/mutations/create-customer-address.html)
-* [updateCustomerAddress mutation]({{page.baseurl}}/graphql/mutations/update-customer-address.html)
+*  [customer query]({{page.baseurl}}/graphql/queries/customer.html)
+*  [createCustomer mutation]({{page.baseurl}}/graphql/mutations/create-customer.html)
+*  [updateCustomer mutation]({{page.baseurl}}/graphql/mutations/update-customer.html)
+*  [createCustomerAddress mutation]({{page.baseurl}}/graphql/mutations/create-customer-address.html)
+*  [updateCustomerAddress mutation]({{page.baseurl}}/graphql/mutations/update-customer-address.html)

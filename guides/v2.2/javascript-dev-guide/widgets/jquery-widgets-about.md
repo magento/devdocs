@@ -7,30 +7,36 @@ title: Magento jQuery widgets
 The Magento system uses a jQuery JavaScript library to implement client functionality. This includes a wide usage of standard, customized, and custom jQuery widgets.
 
 This guide discusses the following widgets:
--   [Accordion widget]
--   [Alert widget]
--   [Breadcrumb widget]
--   [Calendar widget]
--   [Collapsible widget]
--   [Confirm widget]
--   [Dropdown widget]
--   [DropdownDialog widget]
--   [Gallery widget]
--   [List widget]
--   [Loader widget]
--   [Menu widget]
--   [Modal widget]
--   [Multiselect widget]
--   [Navigation widget]
--   [PasswordStrengthIndicator widget]
--   [PopupWindow widget]
--   [Prompt widget]
--   [QuickSearch widget]
--   [RedirectUrl widget]
--   [RowBuilder widget]
--   [Tabs widget]
--   [ToggleAdvanced widget]
--   [TrimInput widget]
+
+-  [Accordion widget]
+-  [Alert widget]
+-  [Breadcrumb widget]
+-  [Calendar widget]
+-  [Collapsible widget]
+-  [Confirm widget]
+-  [Dropdown widget]
+-  [DropdownDialog widget]
+-  [FolderTree widget]
+-  [Gallery widget]
+-  [List widget]
+-  [Loader widget]
+-  [MediaUploader widget]
+-  [Menu widget]
+-  [Modal widget]
+-  [Multiselect widget]
+-  [Navigation widget]
+-  [PasswordStrengthIndicator widget]
+-  [PopupWindow widget]
+-  [Prompt widget]
+-  [QuickSearch widget]
+-  [RedirectUrl widget]
+-  [RemainingCharacters widget]
+-  [RowBuilder widget]
+-  [Sortable widget]
+-  [Sticky widget]
+-  [Tabs widget]
+-  [ToggleAdvanced widget]
+-  [TrimInput widget]
 
 {:.bs-callout .bs-callout-info}
 Magento 2 supports [jQuery UI 1.9.2], widget options added in later versions might be unavailable.
@@ -46,9 +52,11 @@ Magento out of the box does not contain jQuery UI styles. Also, it is not recomm
 [Confirm widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_confirm.html
 [Dropdown widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_dropdown.html
 [DropdownDialog widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_dialog.html
+[FolderTree widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget-folder-tree.html
 [Gallery widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_gallery.html
 [List widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_list.html
 [Loader widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_loader.html
+[MediaUploader widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget-media-uploader.html
 [Menu widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_menu.html
 [Modal widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_modal.html
 [Multiselect widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget-multiselect.html
@@ -58,8 +66,11 @@ Magento out of the box does not contain jQuery UI styles. Also, it is not recomm
 [Prompt widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_prompt.html
 [QuickSearch widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_quickSearch.html
 [RedirectUrl widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_redirectUrl.html
+[RemainingCharacters widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget-remaining-characters.html
 [RowBuilder widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget-row-builder.html
+[Sortable widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget-sortable.html
 [Tabs widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_tabs.html
 [ToggleAdvanced widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_toggle.html
 [TrimInput widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget-trim-input.html
 [jQuery UI 1.9.2]: http://blog.jqueryui.com/2012/11/jquery-ui-1-9-2/
+[Sticky widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_sticky.html

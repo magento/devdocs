@@ -14,13 +14,13 @@ This is the first of many new options for expanding documentation for developers
 
 You get to:
 
-- Keep your doc files in the same repo as your code.
-- Manage doc updates by following the same GitHub processes you use for your code.
+-  Keep your doc files in the same repo as your code.
+-  Manage doc updates by following the same GitHub processes you use for your code.
 
 The DevDocs team :
 
-- Reviews, edits, and formats your docs.
-- Automates content publishing using our CI/CD process, without moving your files.
+-  Reviews, edits, and formats your docs.
+-  Automates content publishing using our CI/CD process, without moving your files.
 
 ## How does it work?
 
@@ -29,10 +29,10 @@ The DevDocs team :
 1. Create a `docs` directory in the root of your public repository. If you have images, add an `images` sudirectory.
 1. Write simple markdown (`.md`) files using [kramdown](https://kramdown.gettalong.org/syntax.html).
 1. Contact [Lori Krell](mailto:lkrell@adobe.com) in Community Engineering with the following details:
-    - Project name or feature
-    - GitHub Repository link
-    - Contact for your project
-    - Any additional information such as type of content, labels used for doc issues, if you need diagrams, and so on
+   -  Project name or feature
+   -  GitHub Repository link
+   -  Contact for your project
+   -  Any additional information such as type of content, labels used for doc issues, if you need diagrams, and so on
 
 ## What happens next?
 

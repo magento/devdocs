@@ -12,7 +12,7 @@ functional_areas:
 
 ## Set up caching {#cloud-cache-setup}
 
-Enable caching in your Magento application's `.magento/routes.yaml` as follows:
+Enable caching for your Magento application by configuring cache rules in the `.magento/routes.yaml` file as follows:
 
 ```yaml
 http://{default}/:
@@ -27,7 +27,7 @@ http://{default}/:
 
 ## Route-based caching {#cloud-cache-route}
 
-If you need fine-grained caching, you can set up caching rules for several routes separately as the following example shows:
+You can enable fine-grained caching by setting up caching rules for several routes separately as the following example shows:
 
 ```yaml
 http://{default}/:
@@ -51,16 +51,16 @@ http://{default}/path/more/:
 
 The preceding example caches the following routes:
 
--   `http://{default}/`
--   `http://{default}/path/more/`
--   `http://{default}/path/more/etc/`
+-  `http://{default}/`
+-  `http://{default}/path/more/`
+-  `http://{default}/path/more/etc/`
 
 And the following routes are **not** cached:
 
--   `http://{default}/path/`
--   `http://{default}/path/etc/`
+-  `http://{default}/path/`
+-  `http://{default}/path/etc/`
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 Regular expressions in routes are **not** supported.
 
 ## Cache duration {#cloud-cache-ttl}
@@ -126,13 +126,13 @@ The cache key depends on the value of the `value` cookie in the request.
 
 A special case exists if the `cookies` key has the `["*"]` value. This value means that any request with a cookie will bypass the cache. This is the default value.
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 You can't use wildcards in the cookie name. You must either use a precise cookie name, or match all cookies with asterisk (`*`). `SESS*` or `~SESS` are currently **not** valid values.
 
 Magento cookies have the following restrictions:
 
-* You can set maximum of **50 cookies** in the system. Otherwise, Magento will throw an `Unable to send the cookie. Maximum number of cookies would be exceeded` exception.
-* A maximum cookie size is **4096 bytes**. Otherwise, Magento will throw an `Unable to send the cookie. Size of '%name' is %size bytes` exception.
+-  You can set maximum of **50 cookies** in the system. Otherwise, Magento will throw an `Unable to send the cookie. Maximum number of cookies would be exceeded` exception.
+-  A maximum cookie size is **4096 bytes**. Otherwise, Magento will throw an `Unable to send the cookie. Size of '%name' is %size bytes` exception.
 
 ### `default_ttl` {#cloud-cache-attrib-ttl}
 

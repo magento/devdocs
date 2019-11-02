@@ -18,8 +18,8 @@ A gateway client receives a called [`Transfer`](#transfer_factory) object. The c
 
 The following gateway client implementations can be used out-of-the-box:
 
-* [\Magento\Payment\Gateway\Http\Client\Zend]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Payment/Gateway/Http/Client/Zend.php)
-* [\Magento\Payment\Gateway\Http\Client\Soap]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Payment/Gateway/Http/Client/Soap.php)
+*  [\Magento\Payment\Gateway\Http\Client\Zend]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Payment/Gateway/Http/Client/Zend.php)
+*  [\Magento\Payment\Gateway\Http\Client\Soap]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Payment/Gateway/Http/Client/Soap.php)
 
 ## Example
 

@@ -13,6 +13,7 @@ functional_areas:
 
 {% include install/web/install-web_2-db.md %}
 
-#### Next step
+{:.ref-header}
+Related topics
 
 [Step 3. Web configuration]({{ page.baseurl }}/install-gde/install/hosted/hosted_install_3_web-conf.html)

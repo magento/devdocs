@@ -15,11 +15,11 @@ functional_areas:
 
 The payloads for creating a simple product and a configurable product are identical, with the following exceptions:
 
-* The simple product `sku` appends the configurable option (the size in this tutorial) to the configurable product `sku`.
-* The `name` indicates the size.
-* The `type_id` is set to `simple`.
-* The `visibility` is set to `1`, indicating the simple product should not be displayed on the store.
-* The `price` and `size` attributes are specified.
+*  The simple product `sku` appends the configurable option (the size in this tutorial) to the configurable product `sku`.
+*  The `name` indicates the size.
+*  The `type_id` is set to `simple`.
+*  The `visibility` is set to `1`, indicating the simple product should not be displayed on the store.
+*  The `price` and `size` attributes are specified.
 
 Although it's not required, the simple product payload also includes `stock_item` information. By default, the Luma store hides out-of-stock items, so adding stock will make the Champ Tee visible on the website.
 
@@ -46,50 +46,50 @@ Before you using this code sample, verify that the attribute values are the same
     "type_id": "simple",
     "weight": "0.5",
     "extension_attributes": {
-    	"category_links": [
-    		{
-    			"position": 0,
-    			"category_id": "11"
-    		},
-    		{
-    			"position": 1,
-    			"category_id": "12"
-    		},
-    		{
-    			"position": 2,
-    			"category_id": "16"
-    		}
-    	],
-    	"stock_item": {
-    		"qty": "10",
-    		"is_in_stock": true
-    	}
+        "category_links": [
+            {
+                "position": 0,
+                "category_id": "11"
+            },
+            {
+                "position": 1,
+                "category_id": "12"
+            },
+            {
+                "position": 2,
+                "category_id": "16"
+            }
+        ],
+        "stock_item": {
+            "qty": "10",
+            "is_in_stock": true
+        }
     },
     "custom_attributes": [
-    	{
-    		"attribute_code": "description",
-    		"value": "The Champ Tee keeps you cool and dry while you do your thing. Let everyone know who you are by adding your name on the back for only $10."
-    	},
-    	{
-    		"attribute_code": "tax_class_id",
-    		"value": "2"
-    	},
-    	{
-    		"attribute_code": "material",
-    		"value": "148"
-    	},
-    	{
-    		"attribute_code": "pattern",
-    		"value": "196"
-    	},
-    	{
-    		"attribute_code": "color",
-    		"value": "52"
-    	},
-    	{
-    		"attribute_code": "size",
-    		"value": "168"
-    	}
+        {
+            "attribute_code": "description",
+            "value": "The Champ Tee keeps you cool and dry while you do your thing. Let everyone know who you are by adding your name on the back for only $10."
+        },
+        {
+            "attribute_code": "tax_class_id",
+            "value": "2"
+        },
+        {
+            "attribute_code": "material",
+            "value": "148"
+        },
+        {
+            "attribute_code": "pattern",
+            "value": "196"
+        },
+        {
+            "attribute_code": "color",
+            "value": "52"
+        },
+        {
+            "attribute_code": "size",
+            "value": "168"
+        }
     ]
   }
 }
@@ -230,8 +230,8 @@ Attribute | Medium Value | Large Value
 
 ## Verify this step
 
-* Log in to the Luma website and select <b>Catalog > Products</b>. The product appears in the grid.
+*  Log in to the Luma website and select <b>Catalog > Products</b>. The product appears in the grid.
 
   ![Product page with configurable and simple products]({{ page.baseurl }}/rest/images/products-page-all.png)
 
-* On the Luma storefront page, search for `Champ`. No results are returned.
+*  On the Luma storefront page, search for `Champ`. No results are returned.

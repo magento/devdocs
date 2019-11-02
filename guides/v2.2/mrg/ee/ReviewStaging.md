@@ -14,7 +14,7 @@ The Magento_ReviewStaging [module](https://glossary.magento.com/module) is a par
 
 The Magento_ReviewStaging module extends the following Magento_Review module functionality to be used in staging mode:
 
-- Adds Product Reviews grid on the Schedule Update form.
+-  Adds Product Reviews grid on the Schedule Update form.
 
 NOTE You cannot create an update for a product review.
 

@@ -11,8 +11,8 @@ This topic lists payment-related configuration paths that are neither sensitive 
 
 For a list of other configuration paths, see:
 
-*	[All configuration paths except payments]({{ page.baseurl }}/config-guide/prod/config-reference-most.html)
-*	[Sensitive and system-specific configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-sens.html)
+*  [All configuration paths except payments]({{ page.baseurl }}/config-guide/prod/config-reference-most.html)
+*  [Sensitive and system-specific configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-sens.html)
 
 To optionally override any configuration settings or to set sensitive settings, see [Use environment variables to override configuration settings]({{ page.baseurl }}/config-guide/prod/config-reference-var-name.html).
 

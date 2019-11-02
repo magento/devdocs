@@ -54,13 +54,13 @@ On many development systems, you might have more one PHP version installed. You 
 
 Some examples follow:
 
-*	Ubuntu: `/usr/bin/php`
-*	CentOS: `/usr/bin/php`
-*	OS X:
+*  Ubuntu: `/usr/bin/php`
+*  CentOS: `/usr/bin/php`
+*  OS X:
 
-	* System: `/usr/bin/php`
-	* Homebrew: `/usr/local/Cellar/php56/5.6.19/bin/php`
-	* MAMP: `/Applications/MAMP/bin/php/php5.6.19/bin/php`
+   *  System: `/usr/bin/php`
+   *  Homebrew: `/usr/local/Cellar/php56/5.6.19/bin/php`
+   *  MAMP: `/Applications/MAMP/bin/php/php5.6.19/bin/php`
 
 You can either fix your `$PATH` (please refer to your system documentation on how to do that), or specify the full path to the PHP interpreter. For example:
 

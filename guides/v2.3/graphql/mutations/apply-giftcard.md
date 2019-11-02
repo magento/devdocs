@@ -18,7 +18,7 @@ The following example adds a gift card with the code `0330CEIVTLB4` to the cart.
 
 **Request**
 
-``` text
+```graphql
 mutation {
   applyGiftCardToCart(
     input: {

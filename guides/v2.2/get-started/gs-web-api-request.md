@@ -20,10 +20,10 @@ Element | Specifies
 
 Specify one of these HTTP verbs in the request:
 
-* `GET`. Requests transfer of a current representation of the target resource. If you omit the verb, `GET` is the default.
-* `PUT`. Requests that the state of the target resource be created or replaced with the state defined by the representation enclosed in the request message payload.
-* `POST`. Requests that the origin server accept the representation enclosed in the request as data to be processed by the target resource.
-* `DELETE`. Requests that the origin server delete the target resource.
+*  `GET`. Requests transfer of a current representation of the target resource. If you omit the verb, `GET` is the default.
+*  `PUT`. Requests that the state of the target resource be created or replaced with the state defined by the representation enclosed in the request message payload.
+*  `POST`. Requests that the origin server accept the representation enclosed in the request as data to be processed by the target resource.
+*  `DELETE`. Requests that the origin server delete the target resource.
 
 ### Endpoint {#endpoints}
 
@@ -33,9 +33,9 @@ For example, in the `http://magento.ll/index.php/rest/default/V1/customerGroups/
 
 A store code can have one of the following values.
 
-* The store's assigned store code.
-* `default`. This is the default value when no store code is provided.
-* `all`. This value only applies to endpoints defined in the [CMS](https://glossary.magento.com/cms) and Product modules. If this value is specified, the [API](https://glossary.magento.com/api) call affects all of the merchant's stores.
+*  The store's assigned store code.
+*  `default`. This is the default value when no store code is provided.
+*  `all`. This value only applies to endpoints defined in the [CMS](https://glossary.magento.com/cms) and Product modules. If this value is specified, the [API](https://glossary.magento.com/api) call affects all of the merchant's stores.
 
 ### HTTP headers {#http-headers}
 
@@ -94,7 +94,7 @@ This example shows you how to construct a REST web API call to create an account
 
 1. Open the [Magento/Customer/etc/webapi.xml]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Customer/etc/webapi.xml)
 
-2. Find the route element that defines the `createAccount` call:
+1. Find the route element that defines the `createAccount` call:
 
    ```xml
    <route url="/V1/customers" method="POST">
@@ -103,11 +103,11 @@ This example shows you how to construct a REST web API call to create an account
          <resource ref="anonymous"/>
       </resources>
    </route>
-  ```
+   ```
 
-3. Use the <code>method</code> and `url` values on the `route` element to construct the URI. In this example, the URI is POST `/V1/customers`.
+1. Use the <code>method</code> and `url` values on the `route` element to construct the URI. In this example, the URI is POST `/V1/customers`.
 
-4. Use the `class` attribute on the `service` element to identify the service interface. In this example, the service interface is the `AccountManagementInterface` [PHP](https://glossary.magento.com/php) file.
+1. Use the `class` attribute on the `service` element to identify the service interface. In this example, the service interface is the `AccountManagementInterface` [PHP](https://glossary.magento.com/php) file.
 
    Open the [AccountManagementInterface.php]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Customer/Api/AccountManagementInterface.php) file and find the <code>createAccount</code> method, as follows:
 
@@ -121,7 +121,7 @@ This example shows you how to construct a REST web API call to create an account
 
     The `createAccount` call requires a `customer` data object. The `password` and `redirectUrl` values are optional. The default `password` value is `null` and the default `redirectUrl` value is blank.
 
-5. To pass the <code>customer</code> data object in the POST call payload, specify [JSON](http://www.json.com/) or [XML](https://glossary.magento.com/xml) request body on the call.
+1. To pass the <code>customer</code> data object in the POST call payload, specify [JSON](http://www.json.com/) or [XML](https://glossary.magento.com/xml) request body on the call.
 
 ### Customers Search API request example {#customers-search-api-request-example}
 
@@ -137,11 +137,11 @@ The following example builds a Customers Search request based on search criteria
       'Accept' => 'application/json',
       'Content-Type' => 'application/json'
    ]);
-```
+   ```
 
-2. Open the [Magento/Customer/etc/webapi.xml]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Customer/etc/webapi.xml)  configuration file and find the [CustomerRepositoryInterface]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Customer/Api/CustomerRepositoryInterface.php) interface with the `getList` method.
+1. Open the [Magento/Customer/etc/webapi.xml]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Customer/etc/webapi.xml)  configuration file and find the [CustomerRepositoryInterface]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Customer/Api/CustomerRepositoryInterface.php) interface with the `getList` method.
 
-3. Set the headers, URI and method to a request object. Use URI `/V1/customers/search` and method `GET` values. Use the `searchCriteria` parameter to complete the Customer Search query. See [searchCriteria usage]({{ page.baseurl }}/rest/performing-searches.html). Also check [List of REST endpoints by module]({{ page.baseurl }}/rest/list.html).
+1. Set the headers, URI and method to a request object. Use URI `/V1/customers/search` and method `GET` values. Use the `searchCriteria` parameter to complete the Customer Search query. See [searchCriteria usage]({{ page.baseurl }}/rest/performing-searches.html). Also check [List of REST endpoints by module]({{ page.baseurl }}/rest/list.html).
 
    The following example finds customers whose first name contains "ver" or whose last name contains "Costello".
 
@@ -175,8 +175,9 @@ The following example builds a Customers Search request based on search criteria
     ]);
 
     $request->setQuery($params);
-      ```
-4. Prepare a HTTP Curl client object and pass the request object to `Client::send()` method.
+    ```
+
+1. Prepare a HTTP Curl client object and pass the request object to `Client::send()` method.
 
    ```php?start_inline=1
    $client = new \Zend\Http\Client();
@@ -273,6 +274,7 @@ This request returns a list of all customers in JSON format, as shown below. You
 }
 ```
 
-## Next step
+{:.ref-header}
+Related topics
 
 Run the web API call through a [cURL command]({{ page.baseurl }}/get-started/gs-curl.html) or a REST client.

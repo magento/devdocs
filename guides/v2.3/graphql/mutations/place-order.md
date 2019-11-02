@@ -63,8 +63,14 @@ Attribute |  Data Type | Description
 
 ## Output attributes
 
-The `placeOrderOutput` object contains the `order` object, which contains the following attribute:
+The `placeOrderOutput` object returns an `order` object.
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`order_id` | String! | The unique ID that identifies the order
+`order` | Order! | The unique ID that identifies the order
+
+### Order object
+
+Attribute |  Data Type | Description
+--- | --- | ---
+`order_id` | String | The unique ID that identifies the order

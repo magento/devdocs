@@ -17,7 +17,7 @@ The following query returns information about Australia.
 
 **Request**
 
-```text
+```graphql
 query {
     country(id: "AU") {
         id
@@ -108,5 +108,5 @@ The query returns a single `Country` object.
 
 ## Related topics
 
-* [countries query]({{page.baseurl}}/graphql/queries/directory-countries.html)
-* [currency query]({{page.baseurl}}/graphql/queries/directory-currency.html)
+*  [countries query]({{page.baseurl}}/graphql/queries/directory-countries.html)
+*  [currency query]({{page.baseurl}}/graphql/queries/directory-currency.html)

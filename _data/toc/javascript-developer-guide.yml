@@ -13,9 +13,8 @@ pages:
         - label: JavaScript resources in Magento
           url: /javascript-dev-guide/javascript/js-resources.html
 
-        - label: About AMD modules and RequireJS
-          include_versions: ["2.0", "2.1"]
-          url: /javascript-dev-guide/javascript/requirejs_concept.html
+        - label: RequireJS in Magento
+          url: /javascript-dev-guide/javascript/requirejs.html
 
         - label: Calling and initializing JavaScript
           url: /javascript-dev-guide/javascript/js_init.html
@@ -64,6 +63,9 @@ pages:
         - label: DropdownDialog widget
           url: /javascript-dev-guide/widgets/widget_dialog.html
 
+        - label: FolderTree widget
+          url: /javascript-dev-guide/widgets/widget-folder-tree.html
+
         - label: Gallery widget
           url: /javascript-dev-guide/widgets/widget_gallery.html
 
@@ -75,6 +77,9 @@ pages:
 
         - label: Loader widget
           url: /javascript-dev-guide/widgets/widget_loader.html
+
+        - label: MediaUploader widget
+          url: /javascript-dev-guide/widgets/widget-media-uploader.html
 
         - label: Menu widget
           url: /javascript-dev-guide/widgets/widget_menu.html
@@ -103,8 +108,17 @@ pages:
         - label: RedirectUrl widget
           url: /javascript-dev-guide/widgets/widget_redirectUrl.html
 
+        - label: RemainingCharacters widget
+          url: /javascript-dev-guide/widgets/widget-remaining-characters.html
+
         - label: RowBuilder widget
           url: /javascript-dev-guide/widgets/widget-row-builder.html
+
+        - label: Sortable widget
+          url: /javascript-dev-guide/widgets/widget-sortable.html
+
+        - label: Sticky widget
+          url: /javascript-dev-guide/widgets/widget_sticky.html
 
         - label: Tabs widget
           url: /javascript-dev-guide/widgets/widget_tabs.html

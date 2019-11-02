@@ -3,7 +3,6 @@ group: javascript-developer-guide
 subgroup: 3_Widgets
 title: Alert widget
 ---
-## Overview {#alert_overview}
 
 The Magento alert widget implements a modal pop-up window with a confirmation button. It extends the [Magento modal widget].
 
@@ -51,14 +50,14 @@ For details about how to initialize a widget in a`.phtml` template, refer to the
 
 The alert widget has the following options:
 
-- [actions]
-- [autoOpen]
-- [clickableOverlay]
-- [content]
-- [focus]
-- [title]
-- [modalClass]
-- [buttons]
+-  [actions]
+-  [autoOpen]
+-  [clickableOverlay]
+-  [content]
+-  [focus]
+-  [title]
+-  [modalClass]
+-  [buttons]
 
 ### `actions` {#alert_actions}
 

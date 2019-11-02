@@ -21,11 +21,11 @@ We recommend creating a Staging branch from the `master` to best support your St
 Now you are ready to develop and deploy:
 
 1. Create development branches from the `staging` branch. This allows you to merge up through Staging and Production.
-2. Develop on local: custom modules, Magento extensions, 3rd party integrations, and configurations.
-3. Push your local branch to the Git remote branch to test in a full environment.
-4. To fully test in a near-production level environment, push code to a Staging branch.
-5. Fully test in the Staging environment including payment gateways, shipping, price rules, various products, and full customer and admin interactions.
-6. Finally, deploy to the Production `master` to complete testing, go live steps, and start selling.
+1. Develop on local: custom modules, Magento extensions, 3rd party integrations, and configurations.
+1. Push your local branch to the Git remote branch to test in a full environment.
+1. To fully test in a near-production level environment, push code to a Staging branch.
+1. Fully test in the Staging environment including payment gateways, shipping, price rules, various products, and full customer and admin interactions.
+1. Finally, deploy to the Production `master` to complete testing, go live steps, and start selling.
 
 For detailed information of the process, see [Starter Develop and Deploy Workflow]({{ page.baseurl }}/cloud/basic-information/starter-develop-deploy-workflow.html).
 
@@ -34,12 +34,12 @@ For detailed information of the process, see [Starter Develop and Deploy Workflo
 Pro comes with a large Integration environment with eight active branches and environments including `master`, Staging, and Production. When you create your project, code is ready to branch, develop, and push for building and deploying your site. Although the Integration environment can have many branches, Staging and Production have only one branch: the deployed Git `master`.
 
 1. Create development branches from the Integration `master` branch.
-2. Develop on local: custom modules, Magento extensions, 3rd party integrations, and configurations.
-3. Push your local branch to the Git remote branch to test in a full environment.
-4. Merge final code to the Integration `master` branch.
-5. To fully test in a near-production level environment, push code to the Staging environment.
-6. Fully test in the Staging environment including payment gateways, shipping, price rules, various products, and full customer and admin interactions.
-7. Finally, deploy to the Production environment to complete testing, go live steps, and start selling.
+1. Develop on local: custom modules, Magento extensions, 3rd party integrations, and configurations.
+1. Push your local branch to the Git remote branch to test in a full environment.
+1. Merge final code to the Integration `master` branch.
+1. To fully test in a near-production level environment, push code to the Staging environment.
+1. Fully test in the Staging environment including payment gateways, shipping, price rules, various products, and full customer and admin interactions.
+1. Finally, deploy to the Production environment to complete testing, go live steps, and start selling.
 
 For detailed information of the process, see [Pro Develop and Deploy Workflow]({{ page.baseurl }}/cloud/architecture/pro-develop-deploy-workflow.html).
 
@@ -52,9 +52,9 @@ For Pro, locate your Git and SSH URLs from the OneDrive onboarding document you 
 
 After you know these URLs, you can access those environments without further intervention.
 
-* Use the URLs to access the store as a customer.
-* Use the URL /admin to access the Admin panel.
-* (Pro) Use SSH access and Git CLI commands to deploy updated code to Staging or Production. Magento Cloud CLI commands are not available in Staging and Production.
+*  Use the URLs to access the store as a customer.
+*  Use the URL /admin to access the Admin panel.
+*  (Pro) Use SSH access and Git CLI commands to deploy updated code to Staging or Production. Magento Cloud CLI commands are not available in Staging and Production.
 
 For more information, see [SSH and sFTP]({{ page.baseurl }}/cloud/env/environments-ssh.html).
 
@@ -64,19 +64,20 @@ You should always deploy code by pushing your local Git branch to your environme
 
 Always update your code in a branch on your local environment, push to Git, and complete the full deployment when you need to do the following:
 
-* Add extensions
-* Add 3rd party integrations
-* Fix issues and check errors
+*  Add extensions
+*  Add 3rd party integrations
+*  Fix issues and check errors
 
-## Next steps
+{:.ref-header}
+Related topics
 
 To learn more, check the following:
 
-* [Deployment process]({{ page.baseurl }}/cloud/reference/discover-deploy.html)
-* [Continuous integration]({{ page.baseurl }}/cloud/deploy/continuous-deployment.html)
-* [Protective block]({{ page.baseurl }}/cloud/live/live-prot.html)
-*	[Build and deploy to your local]({{ page.baseurl }}/cloud/live/live-sanity-check.html)
-*	[Prepare to deploy]({{ page.baseurl }}/cloud/live/stage-prod-migrate-prereq.html)
-*	[Migrate and deploy]({{ page.baseurl }}/cloud/live/stage-prod-migrate.html)
-*	[Test deployment]({{ page.baseurl }}/cloud/live/stage-prod-test.html)
-* [Go live and launch]({{ page.baseurl }}/cloud/live/live.html)
+*  [Deployment process]({{ page.baseurl }}/cloud/reference/discover-deploy.html)
+*  [Continuous integration]({{ page.baseurl }}/cloud/deploy/continuous-deployment.html)
+*  [Protective block]({{ page.baseurl }}/cloud/live/live-prot.html)
+*  [Build and deploy to your local]({{ page.baseurl }}/cloud/live/live-sanity-check.html)
+*  [Prepare to deploy]({{ page.baseurl }}/cloud/live/stage-prod-migrate-prereq.html)
+*  [Migrate and deploy]({{ page.baseurl }}/cloud/live/stage-prod-migrate.html)
+*  [Test deployment]({{ page.baseurl }}/cloud/live/stage-prod-test.html)
+*  [Go live and launch]({{ page.baseurl }}/cloud/live/live.html)

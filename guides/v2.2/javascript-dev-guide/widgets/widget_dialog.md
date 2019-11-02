@@ -4,12 +4,11 @@ subgroup: 3_Widgets
 title: DropdownDialog widget
 ---
 
-## Overview
 Magento dropdownDialog [widget](https://glossary.magento.com/widget) is a customization of the standard [jQuery UI Dialog](http://api.jqueryui.com/dialog/){:target="_blank"}. As extra functionality it implements the following:
 
--   triggering [event](https://glossary.magento.com/event) for opening
--   delaying to automatically close the drop-down on mouse out
--   clicking outside the area closes the drop-down
+-  triggering [event](https://glossary.magento.com/event) for opening
+-  delaying to automatically close the drop-down on mouse out
+-  clicking outside the area closes the drop-down
 
 The dropdownDialog widget source is located in [lib/web/mage/dropdown.js].
 
@@ -20,19 +19,20 @@ For information about how to initialize a widget in a JS component or `.phtml` t
 ## Options {#dialog_options}
 
 Magento customized Dialog widget has default [jQuery UI Dialog widget](http://api.jqueryui.com/dialog/){:target="_blank"} options, plus several custom options:
--   [autoPosition](#d_autoPosition)
--   [autoSize](#d_autoSize)
--   [autoOpen](#d_autoOpen)
--   [closeOnClickOutside](#d_closeOnClickOutside)
--   [closeOnMouseLeave](#d_closeOnMouseLeave)
--   [createTitleBar](#d_createTitleBar)
--   [defaultDialogClass](#d_defaultDialogClass)
--   [dialogContentClass](#d_dialogContentClass)
--   [parentClass](#d_parentClass)
--   [timeout](#d_timeout)
--   [triggerClass](#d_triggerClass)
--   [triggerEvent](#d_triggerEvent)
--   [triggerTarget](#d_triggerTarget)
+
+-  [autoPosition](#d_autoPosition)
+-  [autoSize](#d_autoSize)
+-  [autoOpen](#d_autoOpen)
+-  [closeOnClickOutside](#d_closeOnClickOutside)
+-  [closeOnMouseLeave](#d_closeOnMouseLeave)
+-  [createTitleBar](#d_createTitleBar)
+-  [defaultDialogClass](#d_defaultDialogClass)
+-  [dialogContentClass](#d_dialogContentClass)
+-  [parentClass](#d_parentClass)
+-  [timeout](#d_timeout)
+-  [triggerClass](#d_triggerClass)
+-  [triggerEvent](#d_triggerEvent)
+-  [triggerTarget](#d_triggerTarget)
 
 Description of each option as follows below location.
 
@@ -123,8 +123,8 @@ Element that triggers the drop-down.
 
 **Type**:
 
-- String
-- jQuery object
+-  String
+-  jQuery object
 
 **Default value**: `null`
 
@@ -140,8 +140,9 @@ The number of milliseconds until the dropdown is closed after mouse pointer move
 Magento customized dropdownDialog widget has default [jQuery UI Dialog widget] methods, though some of them are customized.
 
 Customized public methods:
--   [open()](#d_open)
--   [close()](#d_close)
+
+-  [open()](#d_open)
+-  [close()](#d_close)
 
 ### `open()` {#d_open}
 

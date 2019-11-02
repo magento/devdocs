@@ -9,7 +9,7 @@ To return or modify information about a customer, Magento recommends you use cus
 
 ## Syntax
 
-`mutation: {changeCustomerPassword(currentPassword: String!newPassword: String!) {Customer}}`
+`mutation: {changeCustomerPassword(currentPassword: String! newPassword: String!) {Customer}}`
 
 ## Example usage
 
@@ -44,7 +44,7 @@ mutation {
 
 ## Input attributes
 
-The `changeCustomerPassword` object requires the following inputs:
+The `changeCustomerPassword` mutation requires the following inputs:
 
 Attribute |  Data Type | Description
 --- | --- | ---
@@ -57,8 +57,18 @@ The `changeCustomerPassword` mutation returns the `customer` object.
 
 {% include graphql/customer-output.md %}
 
+## Errors
+
+Error | Description
+--- | ---
+`The current customer isn't authorized.` | The customer's token does not exist in the `oauth_token` table.
+`Invalid login or password.` | The password specified in the `currentPassword` attribute is not valid.
+`Specify the "currentPassword" value.` | The password specified in the `currentPassword` attribute is empty.
+`Specify the "newPassword" value.` | The password specified in the `newPassword` attribute is empty.
+`The account is locked.` | The customer's password cannot be changed because the account is locked.
+
 ## Related topics
 
-* [customer query]({{page.baseurl}}/graphql/queries/customer.html)
-* [createCustomer mutation]({{page.baseurl}}/graphql/mutations/create-customer.html)
-* [updateCustomer mutation]({{page.baseurl}}/graphql/mutations/update-customer.html)
+*  [customer query]({{page.baseurl}}/graphql/queries/customer.html)
+*  [createCustomer mutation]({{page.baseurl}}/graphql/mutations/create-customer.html)
+*  [updateCustomer mutation]({{page.baseurl}}/graphql/mutations/update-customer.html)

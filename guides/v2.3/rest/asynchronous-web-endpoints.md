@@ -14,16 +14,16 @@ Use the `bin/magento queue:consumers:start async.operations.all` command to star
 
 Magento supports the following types of asynchronous requests:
 
-* POST
-* PUT
-* PATCH
+*  POST
+*  PUT
+*  PATCH
 
 {:.bs-callout .bs-callout-info}
 GET and DELETE requests are not supported. Although Magento does not currently implement any PATCH requests, they are supported in custom extensions.
 
 The route to all asynchronous calls contains the prefix `/async`, added before `/V1` of a standard synchronous endpoint. For example:
 
-```
+```http
 POST /async/V1/products
 PUT /async/V1/products/:sku
 ```
@@ -47,7 +47,9 @@ Field name | Data type | Description
 
 The following call asynchronously changes the price of the product that has a `sku` of `24-MB01`:
 
+```http
 PUT <host>/rest/<store_code>/async/V1/products/24-MB01
+```
 
 ## Payload
 
@@ -81,7 +83,7 @@ Magento generates a `bulk_uuid` for each asynchronous request. Use the `bulk_uui
 
 You can specify a store code in the route of an asynchronous endpoint so that it operates on a specific store, as shown below:
 
-```
+```http
 POST /<store_code>/async/V1/products
 PUT /<store_code>/async/V1/products/:sku
 ```
@@ -90,7 +92,7 @@ As a result, the asynchronous calls update the products on the specific store, i
 
 You can specify the `all` store code to perform operations on all existing stores:
 
-```
+```http
 POST /all/async/V1/products
 PUT /all/async/V1/products/:sku
 ```
@@ -99,7 +101,7 @@ PUT /all/async/V1/products/:sku
 
 The following rules apply when you create or update an object, such as a product.
 
-* If you do not set the store code while creating a new product, Magento creates a new object with all values set globally for each scope.
-* If you do not set the store code while updating a product, then by fallback, Magento updates values for the default store only.
-* If you include the `all` parameter, then Magento updates values for all store scopes (in case a particular store doesn't yet have its own value set).
-* If `<store_code>` parameter is set, then values for only defined store will be updated.
+*  If you do not set the store code while creating a new product, Magento creates a new object with all values set globally for each scope.
+*  If you do not set the store code while updating a product, then by fallback, Magento updates values for the default store only.
+*  If you include the `all` parameter, then Magento updates values for all store scopes (in case a particular store doesn't yet have its own value set).
+*  If `<store_code>` parameter is set, then values for only defined store will be updated.

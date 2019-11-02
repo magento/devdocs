@@ -13,12 +13,6 @@ pages:
         - label: Get customer authorization token
           url: /graphql/get-customer-authorization-token.html
 
-        - label: Queries
-          url: /graphql/queries.html
-
-        - label: Mutations
-          url: /graphql/mutations.html
-
         - label: GraphQL Caching
           url: /graphql/caching.html
 
@@ -47,6 +41,9 @@ pages:
 
     - label: Queries
       children:
+        - label: Using queries
+          url: /graphql/queries/index.html
+
         - label: cart query
           url: /graphql/queries/cart.html
 
@@ -56,8 +53,8 @@ pages:
         - label: checkoutAgreements query
           url: /graphql/queries/checkout-agreements.html
 
-        - label: cmsBlock query
-          url: /graphql/queries/cms-block.html
+        - label: cmsBlocks query
+          url: /graphql/queries/cms-blocks.html
 
         - label: cmsPage query
           url: /graphql/queries/cms-page.html
@@ -77,11 +74,11 @@ pages:
         - label: customer query
           url: /graphql/queries/customer.html
 
-        - label: customerOrders query
-          url: /graphql/queries/customer-orders.html
-
         - label: customerDownloadableProducts query
           url: /graphql/queries/customer-downloadable-products.html
+
+        - label: customerOrders query
+          url: /graphql/queries/customer-orders.html
 
         - label: customerPaymentTokens query
           url: /graphql/queries/customer-payment-tokens.html
@@ -112,6 +109,9 @@ pages:
         
     - label: Mutations
       children:
+        - label: Using mutations
+          url: /graphql/mutations/index.html
+
         - label: addConfigurableProductsToCart mutation
           url: /graphql/mutations/add-configurable-products.html
 
@@ -133,17 +133,23 @@ pages:
         - label: changeCustomerPassword mutation
           url: /graphql/mutations/change-customer-password.html
 
-        - label: createCustomerAddress mutation
-          url: /graphql/mutations/create-customer-address.html
+        - label: createBraintreeClientToken mutation
+          url: /graphql/mutations/create-braintree-client-token.html
 
         - label: createCustomer mutation
           url: /graphql/mutations/create-customer.html
+
+        - label: createCustomerAddress mutation
+          url: /graphql/mutations/create-customer-address.html
 
         - label: createEmptyCart mutation
           url: /graphql/mutations/create-empty-cart.html
 
         - label: createPayflowProToken mutation
           url: /graphql/mutations/create-payflow-pro-token.html
+
+        - label: createPayPalExpressToken mutation
+          url: /graphql/mutations/create-paypal-express-token.html
 
         - label: deleteCustomerAddress mutation
           url: /graphql/mutations/delete-customer-address.html
@@ -178,17 +184,20 @@ pages:
         - label: revokeCustomerToken mutation
           url: /graphql/mutations/revoke-customer-token.html
 
+        - label: sendEmailToFriend mutation
+          url: /graphql/mutations/send-email-to-friend.html
+
         - label: setBillingAddressesOnCart mutation
           url: /graphql/mutations/set-billing-address.html
 
         - label: setGuestEmailOnCart mutation
           url: /graphql/mutations/set-guest-email.html
 
-        - label: setPaymentMethodOnCart mutation
-          url: /graphql/mutations/set-payment-method.html
-
         - label: setPaymentMethodAndPlaceOrder mutation
           url: /graphql/mutations/set-payment-place-order.html
+
+        - label: setPaymentMethodOnCart mutation
+          url: /graphql/mutations/set-payment-method.html
 
         - label: setShippingAddressesOnCart mutation
           url: /graphql/mutations/set-shipping-address.html
@@ -196,19 +205,25 @@ pages:
         - label: setShippingMethodsOnCart mutation
           url: /graphql/mutations/set-shipping-method.html
 
-        - label: updateCustomerAddress mutation
-          url: /graphql/mutations/update-customer-address.html
-
         - label: updateCartItems mutation
           url: /graphql/mutations/update-cart-items.html
 
         - label: updateCustomer mutation
           url: /graphql/mutations/update-customer.html
 
-    - label: Product data types and interfaces
+        - label: updateCustomerAddress mutation
+          url: /graphql/mutations/update-customer-address.html
+
+    - label: Catalog data types and interfaces
       children:
         - label: Product interface implementations
           url: /graphql/product/product-interface-implementations.html
+
+        - label: ProductInterface attributes
+          url: /graphql/product/product-interface.html
+
+        - label: CategoryInterface attributes
+          url: /graphql/product/category-interface.html
 
         - label: CustomizableOptionInterface
           url: /graphql/product/customizable-option-interface.html

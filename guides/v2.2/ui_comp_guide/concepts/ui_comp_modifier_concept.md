@@ -21,8 +21,8 @@ To add a PHP modifier for a UI component, take the following steps:
 
 In your custom module, add a class that implements [`\Magento\Ui\DataProvider\Modifier\ModifierInterface`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/DataProvider/Modifier/ModifierInterface.php) with the following methods:
 
-- `modifyData()`: for modifying UI component's data (for example, the list of options for a select element)
-- `modifyMeta()`: for modifying UI component's [metadata](https://glossary.magento.com/metadata) (for example, name, label, description, type)
+-  `modifyData()`: for modifying UI component's data (for example, the list of options for a select element)
+-  `modifyMeta()`: for modifying UI component's [metadata](https://glossary.magento.com/metadata) (for example, name, label, description, type)
 
 Sample modifier:
 
@@ -107,5 +107,5 @@ To use your modifier, add a dependency on [`\Magento\Ui\DataProvider\Modifier\Po
 
 ## Related reading
 
-- [Dependency injection]( {{ page.baseurl }}/extension-dev-guide/depend-inj.html)
-- [How Do I: Customize product creation form]({{ page.baseurl }}/howdoi/customize_product.html)
+-  [Dependency injection]( {{ page.baseurl }}/extension-dev-guide/depend-inj.html)
+-  [How Do I: Customize product creation form]({{ page.baseurl }}/howdoi/customize_product.html)

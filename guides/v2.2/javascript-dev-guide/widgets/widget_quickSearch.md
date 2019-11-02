@@ -6,8 +6,6 @@ functional_areas:
   - Search
 ---
 
-## Overview
-
 The quickSearch [widget](https://glossary.magento.com/widget) is an autocomplete widget that populates a list of suggested search terms for a given field.
 
 The suggest widget source is [`<Magento_Search_module_dir>/view/frontend/web/js/form-mini.js`].
@@ -18,18 +16,18 @@ For information about how to initialize a widget in a JS component or `.phtml` t
 
 ## Options {#quicksearch_options}
 
--   [autocomplete](#q_autocomplete)
--   [destinationSelector](#q_destinationSelector)
--   [isExpandable](#q_isExpandable)
--   [formSelector](#q_formSelector)
--   [minSearchLength](#q_minSearchLength)
--   [responseFieldElements](#q_responseFieldElements)
--   [searchLabel](#q_searchLabel)
--   [selectClass](#q_selectClass)
--   [submitBtn](#q_submitBtn)
--   [suggestionDelay](#q_suggestionDelay)
--   [template](#q_template)
--   [url](#q_url)
+-  [autocomplete](#q_autocomplete)
+-  [destinationSelector](#q_destinationSelector)
+-  [isExpandable](#q_isExpandable)
+-  [formSelector](#q_formSelector)
+-  [minSearchLength](#q_minSearchLength)
+-  [responseFieldElements](#q_responseFieldElements)
+-  [searchLabel](#q_searchLabel)
+-  [selectClass](#q_selectClass)
+-  [submitBtn](#q_submitBtn)
+-  [suggestionDelay](#q_suggestionDelay)
+-  [template](#q_template)
+-  [url](#q_url)
 
 ### `autocomplete` {#q_autocomplete}
 

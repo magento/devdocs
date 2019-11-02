@@ -18,11 +18,11 @@ Magento supplies a default [theme](https://glossary.magento.com/theme) and a Les
 
 ### Replace PHTML template files
 
-In addition to extending the default CSS, you can generate different HTML [markup](https://glossary.magento.com/markup). For example, you might need to add a missing CSS class name, or an add an extra `<div>` tag to achieve some visual effect. You might also need to tweak some [JavaScript](https://glossary.magento.com/javascript) to cope with different HTML markup. This change is more demanding than simply extending Magento CSS, but is still within the grasp of smaller projects and leaner teams.
+In addition to extending the default CSS, you can generate different HTML [markup](https://glossary.magento.com/markup). For example, you might need to add a missing CSS class name, or add an extra `<div>` tag to achieve some visual effect. You might also need to tweak some [JavaScript](https://glossary.magento.com/javascript) to cope with different HTML markup. This change is more demanding than simply extending Magento CSS, but is still within the grasp of smaller projects and leaner teams.
 
 ### Replace Magento-Provided CSS
 
-Rather than edit the default CSS provided by Magento, you might decide to replace all the default storefront CSS code with your own. This strategy avoids tying a project to the Magento-provided CSS, but puts a greater burden on project development and integration. It also allows use of different CSS tools or technologies not provided with Magento. Partners who build their own set of CSS libraries could reuse these libraries on different customer projects. (These unique CSS libraries may help differentiate a partner from others in the market.)
+Rather than edit the default CSS provided by Magento, you might decide to replace all the default storefront CSS code with your own. This strategy avoids tying a project to the Magento-provided CSS, but puts a greater burden on project development and integration. It also allows the use of different CSS tools or technologies not provided with Magento. Partners who build their own set of CSS libraries could reuse these libraries on different customer projects. (These unique CSS libraries may help differentiate a partner from others in the market.)
 
 In addition to replacing CSS files, you might need to replace small amounts of HTML and JavaScript.
 
@@ -33,7 +33,8 @@ Delivering a sharply different shopping experience than the default Magento inst
 {:.bs-callout .bs-callout-tip}
  Any customization of your storefront will work optimally, and provide the easiest path for later upgrades, if you follow the best practice of consistently compartmentalizing code by type. For example, keep all HTML in [PHTML](https://glossary.magento.com/phtml) files; keep all JavaScript in JavaScript files.
 
-### Related topics
+{:.ref-header}
+Related topics
 
 [Frontend Developer Guide]({{page.baseurl}}/frontend-dev-guide/bk-frontend-dev-guide.html)
 

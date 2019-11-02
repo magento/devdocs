@@ -31,23 +31,24 @@ By default, the [STATIC_CONTENT_SYMLINK environment variable]({{page.baseurl}}/c
 
 Generating static content requires access to themes and locales. Magento stores themes in the file system, which is accessible during the build phase; however, Magento stores locales in the database. The database is _not_ available during the build phase. In order to generate the static content during the build phase, you must use the `config:dump` command in the {{site.data.var.ct}} package to move locales to the file system. It reads the locales and saves them in the `app/etc/config.php` file.
 
-#### To configure your project to generate SCD on build:
+{:.procedure}
+To configure your project to generate SCD on build:
 
-1.  Log in to your Cloud environment using SSH and move locales to the file system, then update the [`config.php` file]({{site.baseurl}}/guides/v2.2/cloud/project/project-upgrade.html#create-a-new-configphp-file).
+1. Log in to your Cloud environment using SSH and move locales to the file system, then update the [`config.php` file]({{site.baseurl}}/guides/v2.2/cloud/project/project-upgrade.html#create-a-new-configphp-file).
 
-1.  The `.magento.env.yaml` configuration file should contain the following values:
+1. The `.magento.env.yaml` configuration file should contain the following values:
 
-    -  [SKIP_HTML_MINIFICATION]({{page.baseurl}}/cloud/env/variables-global.html#skip_html_minification) is `true`
-    -  [SKIP_SCD]({{page.baseurl}}/cloud/env/variables-build.html#skip_scd) on build stage is `false`
-    -  [SCD_STRATEGY]({{site.baseurl}}/guides/v2.2/cloud/env/variables-build.html#scd_strategy) is `compact`
+   -  [SKIP_HTML_MINIFICATION]({{page.baseurl}}/cloud/env/variables-global.html#skip_html_minification) is `true`
+   -  [SKIP_SCD]({{page.baseurl}}/cloud/env/variables-build.html#skip_scd) on build stage is `false`
+   -  [SCD_STRATEGY]({{site.baseurl}}/guides/v2.2/cloud/env/variables-build.html#scd_strategy) is `compact`
 
-1.  Verify configuration of the [Post-deploy hook]({{page.baseurl}}/cloud/project/project-conf-files_magento-app.html#hooks) in the `.magento.app.yaml` file.
+1. Verify configuration of the [Post-deploy hook]({{page.baseurl}}/cloud/project/project-conf-files_magento-app.html#hooks) in the `.magento.app.yaml` file.
 
-1.  Verify your settings by running the [Smart wizard for the ideal state]({{page.baseurl}}/cloud/deploy/smart-wizards.html).
+1. Verify your settings by running the [Smart wizard for the ideal state]({{page.baseurl}}/cloud/deploy/smart-wizards.html).
 
-    ```bash
-    php ./vendor/bin/ece-tools wizard:ideal-state
-    ```
+   ```bash
+   php ./vendor/bin/ece-tools wizard:ideal-state
+   ```
 
 ### Setting the SCD on demand
 

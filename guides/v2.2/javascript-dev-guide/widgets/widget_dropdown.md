@@ -7,16 +7,15 @@ functional_areas:
  - Theme
 ---
 
-## Overview
-
 Use the dropdown widget to display custom content on the storefront.
 
 Widget source file is [lib/web/mage/dropdowns.js].
 
 **Usages:**
-- [Shipping policy]
-- [Customer menu]
-- [UI tooltip]
+
+-  [Shipping policy]
+-  [Customer menu]
+-  [UI tooltip]
 
 [lib/web/mage/dropdowns.js]: {{ site.mage2bloburl }}/{{ page.guide_version }}/lib/web/mage/dropdowns.js
 [Shipping policy]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Shipping/view/frontend/web/template/checkout/shipping/shipping-policy.html
@@ -138,9 +137,9 @@ The parent element that initialized the widget. If not specified, the widget loc
 
 **Type**:
 
-- jQuery object
-- HTML
-- String
+-  jQuery object
+-  HTML
+-  String
 
 **Default value**: `null`
 

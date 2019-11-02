@@ -18,8 +18,8 @@ The `Logger` class provides logging functionality for an application. It can be 
 
 **Parameters**
 
-- `outputHandler: LogOutputHandler`: An instance of `LogOutputHandler` used to display log entries.
-- `entryFactory: LogEntryFactory`: A factory of the `LogEntry` instances.
+-  `outputHandler: LogOutputHandler`: An instance of `LogOutputHandler` used to display log entries.
+-  `entryFactory: LogEntryFactory`: A factory of the `LogEntry` instances.
 
 ### `setDisplayLevel(level)`
 Sets the boundary entry level. The entries whose level is lower, than the specified one, are not passed to the output.
@@ -102,20 +102,21 @@ Returns all available log entries. It can additionally filter out the entries th
 
 **Parameters**
 
-- `message: string`: Entry's message.
-- `level: number`: Entry's level.
-- `data?: Object`: Additional data associated with the entry.
+-  `message: string`: Entry's message.
+-  `level: number`: Entry's level.
+-  `data?: Object`: Additional data associated with the entry.
 
 **Properties**
-- `message: string`: Entry's message.
 
-- `timestamp: number`: The time of entry creation.
+-  `message: string`: Entry's message.
 
-- `level: number`: Entry's level.
+-  `timestamp: number`: The time of entry creation.
 
-- `levelName: string`: Name of the entry's level.
+-  `level: number`: Entry's level.
 
-- `data?: Object`: Additional data associated with the entry.
+-  `levelName: string`: Name of the entry's level.
+
+-  `data?: Object`: Additional data associated with the entry.
 
 ## `LogOutputHandler`
 
@@ -161,8 +162,8 @@ The `LogFormatter` class is responsible for processing the message of the provid
 
 **Parameters**
 
-- `dateFormat = "YYYY-MM-DD hh:mm:ss"`: Date format that is applied to display the entry creation time.
-- `template = "[${ $.date }] [${ $.entry.levelName }] ${ $.message }`: Template used to create the resulting message of an entry.
+-  `dateFormat = "YYYY-MM-DD hh:mm:ss"`: Date format that is applied to display the entry creation time.
+-  `template = "[${ $.date }] [${ $.entry.levelName }] ${ $.message }`: Template used to create the resulting message of an entry.
 
 ### `process(entry)`
 Creates a text representation of the provided entry. If default settings are used, the resulting string looks like following: `[2017-04-07 01:36:24] [DEBUG] Log message`.
@@ -177,12 +178,12 @@ Creates a text representation of the provided entry. If default settings are use
 
 The following log levels are available (sorted by priority in the descending order):
 
- - `NONE` (used to block all log entries from being passed to the output)
- - `ERROR`
- - `WARN`
- - `INFO`
- - `DEBUG`
- - `ALL` (allows to display all log entries, unless any other display criteria is present)
+-  `NONE` (used to block all log entries from being passed to the output)
+-  `ERROR`
+-  `WARN`
+-  `INFO`
+-  `DEBUG`
+-  `ALL` (allows to display all log entries, unless any other display criteria is present)
 
 **Path:** `Magento_Ui_module_dir>/view/base/web/js/lib/logger/levels-pool.js` ([See on GitHub]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/lib/logger/levels-pool.js))
 
@@ -241,8 +242,9 @@ An instance of the `Logger` class that is configured to display messages in the 
 **Path:** `<Magento_Ui_module_dir>/view/base/web/js/lib/logger/console-logger.js` ([See on GitHub]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/lib/logger/console-logger.js))
 
 ### Properties
- - `levels: {[name: string]: number}`: Reference to the available log levels.
- - `messages: messagePool`: Reference to `messagePool` that allows working with a list of predefined messages.
+
+-  `levels: {[name: string]: number}`: Reference to the available log levels.
+-  `messages: messagePool`: Reference to `messagePool` that allows working with a list of predefined messages.
 
 ### Usages in Magento
 
@@ -256,19 +258,19 @@ The default level of logs that Magento displays in the console starts from the `
 
 ### Types of logged information
 
-- `Templates loading:`
-    - Logging when a template's loading starts.
-    - Logging when a template is loaded. (from cache or from server)
-    - Logging error if a template's loading failed.
-- `UI Components loading:`
-    - Logging when a component's loading starts.
-    - Logging when a component is loaded.
-    - Logging error if a component loading failed.
-- `Requests for UI Components dependencies:`
-    - Logging when a component sends request for dependencies.
-    - Logging when a component's dependencies are successfully received.
-    - Logging when a component's receiving is failed.
-- `Requests for UI Components by scope binding:`
-    - Logging when a component sends request for dependencies.
-    - Logging when dependencies are successfully received.
-    - Logging when dependencies receiving failed.
+-  `Templates loading:`
+   -  Logging when a template's loading starts.
+   -  Logging when a template is loaded. (from cache or from server)
+   -  Logging error if a template's loading failed.
+-  `UI Components loading:`
+   -  Logging when a component's loading starts.
+   -  Logging when a component is loaded.
+   -  Logging error if a component loading failed.
+-  `Requests for UI Components dependencies:`
+   -  Logging when a component sends request for dependencies.
+   -  Logging when a component's dependencies are successfully received.
+   -  Logging when a component's receiving is failed.
+-  `Requests for UI Components by scope binding:`
+   -  Logging when a component sends request for dependencies.
+   -  Logging when dependencies are successfully received.
+   -  Logging when dependencies receiving failed.

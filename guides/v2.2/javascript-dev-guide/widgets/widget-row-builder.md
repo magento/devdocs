@@ -30,7 +30,7 @@ $("#row-builder").rowBuilder({
 
 Where:
 
-- `#row-builder` is the selector of the element which will be the RowBuilder.
+-  `#row-builder` is the selector of the element which will be the RowBuilder.
 
 The following example shows a PHTML file using the script:
 
@@ -199,9 +199,9 @@ Max number of rows.
 
 The message selector of an element which appears when the max number of rows has been exceeded.
 
-**Type**: Integer
+**Type**: String
 
-**Default value**: `1000`
+**Default value**: `#max-registrant-message`
 
 ## Code sample
 
@@ -260,5 +260,5 @@ As a result, we see the RowBuilder widget example with 5 rows as max.
 ![RowBuilder widget with warning message Example]({{ site.baseurl }}/common/images/widget/row-builder-widget-warning-message-result.png)
 
 <!-- Link Definitions -->
-[lib/web/mage/row-builder.js]: {{ site.mage2bloburl }}/{{ page.guide_version }}/lib/web/mage/row-builder.js
+[lib/web/mage/row-builder.js]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Theme/view/frontend/web/js/row-builder.js
 [Initialize JavaScript]: {{page.baseurl}}/javascript-dev-guide/javascript/js_init.html

@@ -170,7 +170,7 @@ pages:
             - label: Customize error pages
               url: /cloud/cdn/cloud-fastly-custom-response.html
 
-        - label: Managed Cloud WAF
+        - label: Web Application Firewall
           url: /cloud/cdn/fastly-waf-service.html
           exclude_versions: ["2.0"]
 
@@ -295,6 +295,9 @@ pages:
         - label: Project structure
           url: /cloud/project/project-start.html
 
+        - label: Log locations
+          url: /cloud/project/log-locations.html
+
         - label: Create and manage users
           url: /cloud/project/user-admin.html
 
@@ -306,6 +309,9 @@ pages:
 
         - label: Profile database queries
           url: /cloud/project/profile-database-queries.html
+
+        - label: Manage disk space
+          url: /cloud/project/manage-disk-space.html
 
         - label: Snapshots and backup management
           url: /cloud/project/project-webint-snap.html
@@ -364,9 +370,6 @@ pages:
         - label: Troubleshoot deployment
           url: /cloud/trouble/troubleshoot-deployment.html
 
-        - label: View logs for troubleshooting
-          url: /cloud/trouble/environments-logs.html
-
         - label: Incorrect credentials
           url: /cloud/trouble/trouble_ce-creds.html
 
@@ -375,9 +378,6 @@ pages:
 
         - label: Component deployment failure
           url: /cloud/trouble/trouble_comp-deploy-fail.html
-
-        - label: Redis troubleshooting
-          url: /cloud/trouble/redis-troubleshooting.html
 
         - label: Reset cron jobs
           url: /cloud/trouble/reset-cron-jobs.html
@@ -404,10 +404,6 @@ pages:
 
         - label: Theme troubleshooting
           url: /cloud/trouble/theme-troubleshooting.html
-
-        - label: Message queues
-          url: /cloud/trouble/message-queues.html
-          exclude_versions: ["2.0"]
 
     - label: Upgrades and patches
       url: /cloud/project/project-upgrade-parent.html

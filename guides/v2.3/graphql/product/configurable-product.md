@@ -7,9 +7,9 @@ redirect_from:
 
 The `ConfigurableProduct` data type implements the following interfaces:
 
--   `ProductInterface`
--   `PhysicalProductInterface`
--   `CustomizableProductInterface`
+-  `ProductInterface`
+-  `PhysicalProductInterface`
+-  `CustomizableProductInterface`
 
 Attributes that are specific to configurable products can be used when performing a [`products`]({{page.baseurl}}/graphql/queries/products.html) query.
 

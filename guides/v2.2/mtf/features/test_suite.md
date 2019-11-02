@@ -11,8 +11,8 @@ You can group the [test cases][test case], [variations][variation] or [constrain
 
 There are two rule types available:
 
-- **allow**, specifying what must be included during the test run
-- **deny**, specifying what must be excluded during the test run
+-  **allow**, specifying what must be included during the test run
+-  **deny**, specifying what must be excluded during the test run
 
 The rules for a test case are defined in a separate `.xml` file. (Recommended naming: use lowercase letters and underscore as a separator). One file contains rules for one test suite. All files are stored in the `<magento2>/dev/tests/functional/testsuites/Magento/Mtf/TestSuite/InjectableTests` directory by default. Only one test suite can be run at a time.
 
@@ -51,13 +51,13 @@ The example of the default test suite:
 
 This set of rules selects functional tests that accepts the following criteria:
 
- - WITH the tag `const test_type = 'acceptance_test'`
- - EXCEPT test cases with the tag `const stable = 'no'`
+-  WITH the tag `const test_type = 'acceptance_test'`
+-  EXCEPT test cases with the tag `const stable = 'no'`
 
- AND runs variations
+AND runs variations
 
- - WITH the tag `test_type:acceptance_test`
- - EXCEPT variations with the tag `stable:no`".
+-  WITH the tag `test_type:acceptance_test`
+-  EXCEPT variations with the tag `stable:no`".
 
 Learn more details in next topics.
 
@@ -86,6 +86,7 @@ To run a test suite enter the following commands from your terminal:
 ```bash
 cd <magento2>/dev/tests/functional
 ```
+
 ```bash
 vendor/bin/phpunit testsuites/Magento/Mtf/TestSuite/InjectableTests.php
 ```
@@ -96,10 +97,10 @@ Each test suite can be defined by the rules that **allow** or **deny** running o
 
 The only attribute of a rule node is the `scope`, which enables you to use the following options:
 
- - [`scope = "testsuite"`][]. Enables you to filter the test cases by a namespace, a module, a class.
- - [`scope = "testcase"`][]. Enables you to select the test cases with a specified tag.
- - [`scope = "variation"`][]. Enables you to use in a test run only variations with a specified tag.
- - [`scope = "constraint"`][]. Enables you to run only assertions with a specified tag.
+-  [`scope = "testsuite"`][]. Enables you to filter the test cases by a namespace, a module, a class.
+-  [`scope = "testcase"`][]. Enables you to select the test cases with a specified tag.
+-  [`scope = "variation"`][]. Enables you to use in a test run only variations with a specified tag.
+-  [`scope = "constraint"`][]. Enables you to run only assertions with a specified tag.
 
 ### `scope = "testsuite"` {#scope-testsuite}
 
@@ -182,7 +183,7 @@ In this scope, you can group test cases using tags.
 
 You can use `group` and `value` parameters in the test case scope. In a test case, they are provided as a constant name and its value respectively. See the following example:
 
-- Any tags that are used in the test case should be added to the beginning of a class definition:
+-  Any tags that are used in the test case should be added to the beginning of a class definition:
 
 ```php
 
@@ -192,7 +193,7 @@ const TEST_TYPE = '3rd_party_test_deprecated';
 
 ```
 
-- The tag in the rule:
+-  The tag in the rule:
 
 ```xml
 
@@ -316,7 +317,7 @@ You can select constraints from the variation that will be run after a test flow
 
 A tag has two parameters: `group` and `value`. In a constraint, they are provided as a constant name and its value respectively. See the following example:
 
-- Any tags that are used in the constraint should be added to the beginning of a class definition:
+-  Any tags that are used in the constraint should be added to the beginning of a class definition:
 
 ```php
 
@@ -331,7 +332,7 @@ class AssertProductView extends AbstractConstraint
 
 ```
 
-- The rule that allows constraints with this tag only:
+-  The rule that allows constraints with this tag only:
 
 ```xml
 <rule scope="testcase">
@@ -341,7 +342,7 @@ class AssertProductView extends AbstractConstraint
 </rule>
 ```
 
-- The rule that allows all constraints except those having this tag:
+-  The rule that allows all constraints except those having this tag:
 
 ```xml
 <rule scope="testcase">

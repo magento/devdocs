@@ -22,7 +22,7 @@ mutation {
       cart_id: "4JQaNVJokOpFxrykGVvYrjhiNv9qt31C"
       cart_items: [
         {
-          variant_sku: "MH02"
+          parent_sku: "MH02"
           data: {
             quantity: 2
             sku: "MH02-XS-Black"
@@ -59,12 +59,20 @@ mutation {
       "cart": {
         "items": [
           {
-            "id": "26",
+            "id": "5",
             "quantity": 2,
             "product": {
-              "name": "Teton Pullover Hoodie-XS-Black",
-              "sku": "MH02-XS-Black"
-            }
+              "name": "Teton Pullover Hoodie",
+              "sku": "MH02"
+            },
+            "configurable_options": [
+              {
+                "option_label": "Color"
+              },
+              {
+                "option_label": "Size"
+              }
+            ]
           }
         ]
       }
@@ -81,8 +89,8 @@ The `AddConfigurableProductsToCartInput` object contains the following attribute
 
 Attribute | Type | Description
 --- | --- | ---
-`cart_items` | [[ConfigurableProductCartItemInput]](#configProdCartItemInput) | An array of configurable items to add to the cart
 `cart_id` | String | The unique ID that identifies the customer's cart
+`cart_items` | [[ConfigurableProductCartItemInput]](#configProdCartItemInput) | An array of configurable items to add to the cart
 
 ### ConfigurableProductCartItemInput object {#configProdCartItemInput}
 
@@ -91,8 +99,9 @@ The `ConfigurableProductCartItemInput` object contains the following attributes:
 Attribute | Type | Description
 --- | --- | ---
 `customizable_options` | [CustomizableOptionInput](#customOptionInput) | An object that contains the ID and value of the product
-`data` | [CartItemInput](#cartItemInput) | An object that contains the quantity and SKU of the configurable product
-`variant_sku` | String | The SKU of the simple product
+`data` | [CartItemInput!](#cartItemInput) | An object that contains the quantity and SKU of the configurable product
+`parent_sku` | String | The SKU of the simple product's parent configurable product
+`variant_sku` | String | Deprecated. Use `CartItemInput.sku` instead. The SKU of the simple product
 
 ### CustomizableOptionInput object {#customOptionInput}
 
@@ -109,8 +118,8 @@ The `CartItemInput` object contains the following attributes:
 
 Attribute | Type | Description
 --- | --- | ---
-`quantity` | Float | The number of configurable items to add to the cart
-`sku` | String | The SKU of the configurable product
+`quantity` | Float! | The number of items to add to the cart
+`sku` | String! | The SKU of the simple product
 
 ## Output attributes
 

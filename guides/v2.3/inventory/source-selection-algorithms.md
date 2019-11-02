@@ -5,15 +5,15 @@ title: Source selection algorithms
 
 The **Source Selection Algorithm (SSA)** recommends how to fulfill partial and full shipments. The merchant decides which business needs take precedence when deciding which shipping method to use:
 
-* Should the products be delivered from the sources designated as having the highest priority?
-* Should the total shipment cost be the primary factor in choosing a shipment method?
-* Should the shipments originate from the closest source?
-* Should the fastest shipping method with the shortest delivery time be used, even if it's not the cheapest?
+*  Should the products be delivered from the sources designated as having the highest priority?
+*  Should the total shipment cost be the primary factor in choosing a shipment method?
+*  Should the shipments originate from the closest source?
+*  Should the fastest shipping method with the shortest delivery time be used, even if it's not the cheapest?
 
 Magento provides the following algorithms:
 
-* Source priority
-* Distance priority
+*  Source priority
+*  Distance priority
 
 Third party developers can create additional algorithms to help merchants decide which shipping option best meets their needs.
 
@@ -25,10 +25,10 @@ Custom stocks include an assigned list of sources to sell and ship available pro
 
 When run, the algorithm:
 
-* Works through the configured order of sources at the stock level starting at the top
-* Skips any disabled sources
-* Continues down the list until the order shipment is filled
-* Recommends a quantity to ship and source per product based on the order in the list, available quantity, and quantity ordered
+*  Works through the configured order of sources at the stock level starting at the top
+*  Skips any disabled sources
+*  Continues down the list until the order shipment is filled
+*  Recommends a quantity to ship and source per product based on the order in the list, available quantity, and quantity ordered
 
 ## Distance Priority algorithm
 
@@ -58,22 +58,21 @@ Taking into account that there are at least two valid business cases when to lau
 
 Use these interfaces to create your own SSA:
 
-* [InventoryRequestInterface](https://github.com/magento-engcom/msi/blob/2.3.0-release/app/code/Magento/InventorySourceSelectionApi/Api/Data/InventoryRequestInterface.php) requests products for a given quantity and stock ID
-* [ItemRequestInterface](https://github.com/magento-engcom/msi/blob/2.3.0-release/app/code/Magento/InventorySourceSelectionApi/Api/Data/ItemRequestInterface.php) represents the requested quantity for a specific SKU
-* [SourceSelectionServiceInterface](https://github.com/magento-engcom/msi/blob/2.3.0-release/app/code/Magento/InventorySourceSelectionApi/Api/SourceSelectionServiceInterface.php) returns the source selection algorithm result for the specified `inventoryRequest`
-* [GetSourceSelectionAlgorithmListInterface](https://github.com/magento-engcom/msi/blob/2.3.0-release/app/code/Magento/InventorySourceSelectionApi/Api/GetSourceSelectionAlgorithmListInterface.php) returns the list of data interfaces that represent registered SSAs
-* [SourceSelectionAlgorithmInterface](https://github.com/magento-engcom/msi/blob/2.3.0-release/app/code/Magento/InventorySourceSelectionApi/Api/Data/SourceSelectionAlgorithmInterface.php) represents a single SSA
-* [SourceSelectionInterface](https://github.com/magento-engcom/msi/blob/2.3.0-release/app/code/Magento/InventorySourceSelectionApi/Model/SourceSelectionInterface.php) returns the SSA result for the specified `inventoryRequest`
-* [GetDistanceInterface](https://github.com/magento-engcom/msi/blob/2.3-develop/app/code/Magento/InventoryDistanceBasedSourceSelectionApi/Api/GetDistanceInterface.php)  - returns the distance between the source and the shipping address in kilometers without specifying the units. To change this behavior, provide your own implementation for
-`\Magento\InventoryDistanceBasedSourceSelection\Model\DistanceProvider\GoogleMap\GetDistance`.
+*  [InventoryRequestInterface](https://github.com/magento-engcom/msi/blob/2.3.0-release/app/code/Magento/InventorySourceSelectionApi/Api/Data/InventoryRequestInterface.php) requests products for a given quantity and stock ID
+*  [ItemRequestInterface](https://github.com/magento-engcom/msi/blob/2.3.0-release/app/code/Magento/InventorySourceSelectionApi/Api/Data/ItemRequestInterface.php) represents the requested quantity for a specific SKU
+*  [SourceSelectionServiceInterface](https://github.com/magento-engcom/msi/blob/2.3.0-release/app/code/Magento/InventorySourceSelectionApi/Api/SourceSelectionServiceInterface.php) returns the source selection algorithm result for the specified `inventoryRequest`
+*  [GetSourceSelectionAlgorithmListInterface](https://github.com/magento-engcom/msi/blob/2.3.0-release/app/code/Magento/InventorySourceSelectionApi/Api/GetSourceSelectionAlgorithmListInterface.php) returns the list of data interfaces that represent registered SSAs
+*  [SourceSelectionAlgorithmInterface](https://github.com/magento-engcom/msi/blob/2.3.0-release/app/code/Magento/InventorySourceSelectionApi/Api/Data/SourceSelectionAlgorithmInterface.php) represents a single SSA
+*  [SourceSelectionInterface](https://github.com/magento-engcom/msi/blob/2.3.0-release/app/code/Magento/InventorySourceSelectionApi/Model/SourceSelectionInterface.php) returns the SSA result for the specified `inventoryRequest`
+*  [GetDistanceInterface](https://github.com/magento-engcom/msi/blob/2.3-develop/app/code/Magento/InventoryDistanceBasedSourceSelectionApi/Api/GetDistanceInterface.php)  - returns the distance between the source and the shipping address in kilometers without specifying the units. To change this behavior, provide your own implementation for `\Magento\InventoryDistanceBasedSourceSelection\Model\DistanceProvider\GoogleMap\GetDistance`.
 
 ## Develop a custom algorithm
 
 As you develop your custom Source Selection Algorithm, keep these design considerations in mind:
 
-* Implement `SourceSelectionInterface`
-* If your module provides an SSA on quotes, introduce your own `InventoryRequestFactory`
-* Register your SSA within a `di.xml` file
+*  Implement `SourceSelectionInterface`
+*  If your module provides an SSA on quotes, introduce your own `InventoryRequestFactory`
+*  Register your SSA within a `di.xml` file
 
 ### Implement  `SourceSelectionInterface`
 

@@ -15,9 +15,9 @@ functional_areas:
 
 Before you install Magento, you must do all of the following:
 
-* Set up one or more hosts that meet the [Magento system requirements]({{page.baseurl}}/install-gde/system-requirements.html).
-* If you are setting up more than one web node with load balancing, set up and test that part of your system _before_ you install Magento.
-* Make sure you can back up your entire system at various points during the installation so you can roll back in the [event](https://glossary.magento.com/event) of issues.
+*  Set up one or more hosts that meet the [Magento system requirements]({{page.baseurl}}/install-gde/system-requirements.html).
+*  If you are setting up more than one web node with load balancing, set up and test that part of your system _before_ you install Magento.
+*  Make sure you can back up your entire system at various points during the installation so you can roll back in the [event](https://glossary.magento.com/event) of issues.
 
 {:.bs-callout .bs-callout-info}
 We assume you're installing the Magento 2 software in a **development environment**, which means you have [root user](http://www.linfo.org/root.html) access to the machine **and** that the machine does not need to be highly secure. If you're setting up a more secure machine, we strongly recommend you consult a network administrator for additional assistance.
@@ -26,7 +26,7 @@ We strongly recommend you update and upgrade your operating system software. The
 
 Enter the following commands as a user with `root` privileges:
 
-* Ubuntu
+*  Ubuntu
 
 ```bash
 apt-get update
@@ -36,7 +36,7 @@ apt-get update
 apt-get upgrade
 ```
 
-* CentOS
+*  CentOS
 
 ```bash
 yum -y update
@@ -120,14 +120,16 @@ Enter `exit` at the `mysql>` prompt to exit.
 
 To install or upgrade MySQL, see [MySQL]({{page.baseurl}}/install-gde/prereq/mysql.html).
 
-#### Next step
+{:.ref-header}
+Next step
 
 [Choose how to install the Magento software]({{page.baseurl}}/install-gde/bk-install-guide.html)
 
-#### Related topics
+{:.ref-header}
+Related topics
 
-* [MySQL]({{page.baseurl}}/install-gde/prereq/mysql.html)
-* [Apache]({{page.baseurl}}/install-gde/prereq/apache.html)
-* [PHP]({{page.baseurl}}/install-gde/prereq/php-settings.html)
-* [Installing optional software]({{page.baseurl}}/install-gde/prereq/optional.html)
-* [How to get the Magento software]({{ page.baseurl }}/install-gde/bk-install-guide.html)
+*  [MySQL]({{page.baseurl}}/install-gde/prereq/mysql.html)
+*  [Apache]({{page.baseurl}}/install-gde/prereq/apache.html)
+*  [PHP]({{page.baseurl}}/install-gde/prereq/php-settings.html)
+*  [Installing optional software]({{page.baseurl}}/install-gde/prereq/optional.html)
+*  [How to get the Magento software]({{ page.baseurl }}/install-gde/bk-install-guide.html)

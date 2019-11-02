@@ -20,21 +20,21 @@ FTF does not contain tests. All functional tests are located in `<magento2 root 
 
 ### What tools should I use to run tests with FTF? {#mtf_intro_extratools}
 
--   [PHPUnit][] (downloaded via [composer](https://glossary.magento.com/composer) during installation)
+-  [PHPUnit][] (downloaded via [composer](https://glossary.magento.com/composer) during installation)
 
--   [Selenium Standalone Server][]
+-  [Selenium Standalone Server][]
 
--   Web browser
+-  Web browser
 
 ### What do I have as output after running tests with FTF? {#mtf_intro_mtf-output}
 
--   Tested application
+-  Tested application
 
--   Basic PHPUnit results
+-  Basic PHPUnit results
 
--   Screenshots of failures
+-  Screenshots of failures
 
--   Logs of failures
+-  Logs of failures
 
 ## Audience {#mtf_intro_audi}
 
@@ -58,15 +58,15 @@ can be tested using customized tests, created with FTF.
 
 Relative to your software development lifecycle, the FTF can help you:
 
-1.    During the development phase, test any changes of functionality (new modules, update modules, fix bugs).
+1. During the development phase, test any changes of functionality (new modules, update modules, fix bugs).
 
-1.    During the maintenance phase, for periodic automated regression testing.
+1. During the maintenance phase, for periodic automated regression testing.
 
 ### FTF use cases examples {#mtf_intro_scope_use-case-ex}
 
-1.    As Magento developer I want to cover implemented functionality with new tests (for example, added attribute on Customer Form, extended Search functionality, added tags for Products etc).
+1. As Magento developer I want to cover implemented functionality with new tests (for example, added attribute on Customer Form, extended Search functionality, added tags for Products etc).
 
-1.    As a software engineer I want to perform regression testing before release to be confident that Magento works as expected with new functionality.
+1. As a software engineer I want to perform regression testing before release to be confident that Magento works as expected with new functionality.
 
 ### Non-functional testing {#mtf_intro_scope_non-func-test}
 
@@ -74,13 +74,13 @@ FTF works with tests from `<magento2_root_dir>/dev/tests/functional` only.
 
 For other tests please see the following topics:
 
-- [How to run unit tests during development on the command line or PhpStorm.]({{ page.baseurl }}/test/unit/unit_test_execution.html)
+-  [How to run unit tests during development on the command line or PhpStorm.]({{ page.baseurl }}/test/unit/unit_test_execution.html)
 
-- [How to run unit and integration tests using `bin/magento` in continuous integration.]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-test.html)
+-  [How to run unit and integration tests using `bin/magento` in continuous integration.]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-test.html)
 
-- [More information about JavaScript unit tests.]({{ page.baseurl }}/test/js/jasmine.html)
+-  [More information about JavaScript unit tests.]({{ page.baseurl }}/test/js/jasmine.html)
 
-- [More information about performance testing.]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-perf-data.html)
+-  [More information about performance testing.]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-perf-data.html)
 
 ## FTF on GitHub {#mtf_intro_github-link}
 

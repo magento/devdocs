@@ -12,9 +12,9 @@ functional_areas:
 
 When [deploying static view files]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html), you can choose one of the three available strategies. Each of them provides optimal deployment results for different use cases:
 
-*   [Standard](#static-file-standard): the regular deployment process.
-*   [Quick](#static-file-quick) (_default_): minimizes the time required for deployment when files for more than one [locale](https://glossary.magento.com/locale) are deployed.
-*   [Compact](#static-file-compact): minimizes the space taken by the published view files.
+*  [Standard](#static-file-standard): the regular deployment process.
+*  [Quick](#static-file-quick) (_default_): minimizes the time required for deployment when files for more than one [locale](https://glossary.magento.com/locale) are deployed.
+*  [Compact](#static-file-compact): minimizes the space taken by the published view files.
 
 The following sections describe the implementation details and features of each strategy.
 
@@ -29,11 +29,12 @@ For more information, see [Deploy static view files]({{ page.baseurl }}/config-g
 The quick strategy performs the following actions:
 
 1. For each theme, one arbitrary locale is chosen and all files for this locale are deployed, like in the standard strategy.
-2. For all other locales of the theme:
-	1. Files that override the deployed locale are defined and deployed.
-	2.  All other files are considered similar for all locales, and are copied from the deployed locale.
+1. For all other locales of the theme:
 
-{:.bs-callout .bs-callout-info}
+   1. Files that override the deployed locale are defined and deployed.
+   1. All other files are considered similar for all locales, and are copied from the deployed locale.
+
+{: .bs-callout-info }
 By _similar_, we mean files that are independent of the locale, theme, or area. These files might include CSS, images, and fonts.
 
 This approach minimizes the deployment time required for multiple locales although a lot of files are duplicated.
@@ -121,8 +122,8 @@ The files are deployed to these subdirectories according to the following patter
 
 The approach to deployment used in the compact strategy means that files are inherited from base themes and locales. This inheritance relations are stored in the map files for each combination of area, [theme](https://glossary.magento.com/theme) and locale. There are separate map files for [PHP](https://glossary.magento.com/php) and JS:
 
-* `map.php`
-* `requirejs-map.js`
+*  `map.php`
+*  `requirejs-map.js`
 
 `map.php` is used by [`Magento\Framework\View\Asset\Repository`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/View/Asset/Repository.php) to build correct URLs.
 

@@ -9,9 +9,9 @@ Use the `cart` query to retrieve information about a particular cart.
 
 Cart functionality is defined in the `Quote` module. A Quote represents the contents of a customer's shopping cart. It is responsible for performing tasks such as:
 
-* Tracking each item in the cart, including the quantity and base cost
-* Determining estimated shipping costs
-* Calculating subtotals, computing additional costs, applying coupons, and determining the payment method
+*  Tracking each item in the cart, including the quantity and base cost
+*  Determining estimated shipping costs
+*  Calculating subtotals, computing additional costs, applying coupons, and determining the payment method
 
 ## Syntax
 
@@ -409,7 +409,7 @@ Attribute |  Data Type | Description
 
 ## Output attributes {#cart-output}
 
-The top-level `Cart` object is listed first. All child objects are listed in alphabetical order.
+The top-level `Cart` object is listed first. All interfaces and child objects are listed in alphabetical order.
 
 ### Cart object
 
@@ -474,7 +474,20 @@ Attribute |  Data Type | Description
 
 ### BillingCartAddress object {#BillingCartAddress}
 
-The `BillingCartAddress` object can contain the following attributes.
+The `BillingCartAddress` object implements [`CartAddressInterface`](#CartAddressInterface). It does not define any additional attributes.
+
+### CartAddressCountry object {#CartAddressCountry}
+
+The `CartAddressCountry` object can contain the following attributes.
+
+Attribute |  Data Type | Description
+--- | --- | ---
+`code` | String | The country code
+`label` | String | The display label for the country
+
+### CartAddressInterface {#CartAddressInterface}
+
+The `CartAddressInterface` contains the following attributes.
 
 Attribute |  Data Type | Description
 --- | --- | ---
@@ -488,15 +501,6 @@ Attribute |  Data Type | Description
 `region` | [CartAddressRegion](#CartAddressRegion) | An object containing the region label and code
 `street` | [String] | The street for the billing address
 `telephone` | String | The telephone number for the billing address
-
-### CartAddressCountry object {#CartAddressCountry}
-
-The `CartAddressCountry` object can contain the following attributes.
-
-Attribute |  Data Type | Description
---- | --- | ---
-`code` | String | The country code
-`label` | String | The display label for the country
 
 ### CartAddressRegion object {#CartAddressRegion}
 
@@ -516,14 +520,14 @@ Attribute |  Data Type | Description
 `amount` | Money | The amount of all discounts applied to the cart
 `label` | [String!]! | A concatenated list of strings that describe each applied discount
 
-### CartItemInterface object {#CartItemInterface}
+### CartItemInterface {#CartItemInterface}
 
-The `CartItemInterface` object can contain the following attributes.
+The `CartItemInterface` can contain the following attributes.
 
 Attribute |  Data Type | Description
 --- | --- | ---
 `id` | String | ID of the item
-`product` | [ProductInterface]({{ page.baseurl }}/graphql/product/product-interface-implementations.html) | Contains attributes that are common to all types of products
+`product` | [ProductInterface]({{ page.baseurl }}/graphql/product/product-interface.html) | Contains attributes that are common to all types of products
 `quantity` | Float | The number of items in the cart
 
 ### CartItemQuantity object {#CartItemQuantity}
@@ -582,28 +586,18 @@ Attribute |  Data Type | Description
 
 ### ShippingCartAddress object {#ShippingCartAddress}
 
-The `ShippingCartAddress` object can contain the following attributes.
+The `ShippingCartAddress` object implements [`CartAddressInterface`](#CartAddressInterface). It can also contain the following attributes.
 
 Attribute |  Data Type | Description
 --- | --- | ---
 `available_shipping_methods` | [[AvailableShippingMethod]](#AvailableShippingMethod) | An array that lists the shipping methods that can be applied to the cart
 `cart_items` | [[CartItemQuantity]](#CartItemQuantity) | An array that lists the items in the cart
-`city` | String | The city specified for the shipping address
-`company` | String | The company specified for the shipping address
-`country` | [CartAddressCountry](#CartAddressCountry) | The country code and label for the shipping address
-`customer_notes` | String | Comments made to the customer that will accompany the order
-`firstname` | String | The recipient's first name
 `items_weight` | Float | The weight of all items in the cart
-`lastname` | String | The recipient's last name
-`postcode` | String | The postal code for the shipping address
-`region` | [CartAddressRegion](#CartAddressRegion) | An object containing the region label and code
 `selected_shipping_method` | [SelectedShippingMethod](#SelectedShippingMethod) | An object that describes the selected shipping method
-`street` | [String] | The street for the shipping address
-`telephone` | String | The telephone number for the shipping address
 
 ## Related topics
 
--  [createEmptyCart mutation]({{page.baseurl}}/graphql/mutations/create-empty-cart.html)
--  [addSimpleProductsToCart mutation]({{page.baseurl}}/graphql/mutations/add-simple-products.html)
--  [setBillingAddressOnCart mutation]({{page.baseurl}}/graphql/mutations/set-billing-address.html)
--  [setPaymentMethodOnCart mutation]({{page.baseurl}}/graphql/mutations/set-payment-method.html)
+*  [createEmptyCart mutation]({{page.baseurl}}/graphql/mutations/create-empty-cart.html)
+*  [addSimpleProductsToCart mutation]({{page.baseurl}}/graphql/mutations/add-simple-products.html)
+*  [setBillingAddressOnCart mutation]({{page.baseurl}}/graphql/mutations/set-billing-address.html)
+*  [setPaymentMethodOnCart mutation]({{page.baseurl}}/graphql/mutations/set-payment-method.html)
