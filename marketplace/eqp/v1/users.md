@@ -40,17 +40,17 @@ curl -X GET \
 ```json
 {
         "mage_id": "MAG123456789",
-        "first_name": "Chuck",
-        "last_name": "Norris",
-        "email": "cnorris@example.com",
-        "screen_name": "ninjachuck",
+        "first_name": "John",
+        "last_name": "Smith",
+        "email": "jsmith@example.com",
+        "screen_name": "Agent Smith",
         "has_completed_profile": true,
         "has_accepted_tos": true,
         "profile_image_artifact": {
             "file_upload_id": "uuid-001-234567-123.461",
-            "filename": "chuck.png",
-            "content_type": "image.png",
-            "url": "https://static-mp.magento.com/user/68/f3/68f360d3516f594fc957c4179ed4a7a872911f07/pub/d9/c2/d9c23dd795a5faaab603b6b5965eca8a6d9430f2/chuck.png",
+            "filename": "portrait.png",
+            "content_type": "image/png",
+            "url": "https://static-mp.magento.com/user/68/f3/68f360d3516f594fc957c4179ed4a7a872911f07/pub/d9/c2/d9c23dd795a5faaab603b6b5965eca8a6d9430f2/portrait.png",
             "size": 1234,
             "file_hash": "d5db29cd03a2ed055086cef9c31c252b4587ffff",
             "malware_status": "pass"
@@ -59,12 +59,12 @@ curl -X GET \
         "tos_accepted_version": "1.0",
         "tos_accepted_date": "2017-11-16 01:23:45",
         "is_company": false,
-        "vendor_name": "chucknorris",
+        "vendor_name": "johnsmith",
         "partner_level": 4,
         "locale": "en-US",
         "timezone": "UTC",
         "payment_type": 1,
-        "payment_info": {"paypal_email" : "cnorris@example.com"},
+        "payment_info": {"paypal_email" : "jsmith@example.com"},
         "taxpayer_type": 2,
         "tax_review_status": 3,
         "tax_withhold_percent": 0.00,
@@ -74,12 +74,12 @@ curl -X GET \
         "support_share_percent": 0,
 
         "personal_profile": {
-            "bio": "Sets ants on fire using a magnifying glass. At night.",
+            "bio": "Writes extensions that pass review first time. Blindfolded.",
             "last_logged_in": "2017-09-30 8:09:10",
             "created_at": "2016-02-29 14:04:59",
             "modified_at": "2017-11-16 01:23:45",
             "social_media_info": {
-                "twitter": "@chucknorrismagento",
+                "twitter": "@magento",
                 "stackexchange_url": "",
                 "facebook_url": "",
                 "linkedin_url": "",
@@ -88,7 +88,7 @@ curl -X GET \
             "addresses": [
                 {
                     "address_key": 1,
-                    "address_line_1": "123 Lonestar Way",
+                    "address_line_1": "123 Magento Way",
                     "state": "Texas",
                     "country": "USA",
                     "postal_code": "77777",
@@ -100,15 +100,15 @@ curl -X GET \
         },
 
         "company_profile": {
-            "name": "Ninja Norris Inc.",
-            "bio": "Ninja Extension Builder.",
+            "name": "Agent Smith Inc.",
+            "bio": "Vendors of bespoke Magento Extensions.",
             "website_url": "https://www.example.com/",
-            "primary_email": "cnorris@example.com",
+            "primary_email": "jsmith@example.com",
             "support_email": "support@example.com",
             "created_at": "2016-02-29 14:04:59",
             "modified_at": "2017-09-30 01:23:45",
             "social_media_info": {
-                "twitter": "@chucknorrismagento",
+                "twitter": "@magento",
                 "stackexchange_url": "",
                 "facebook_url": "",
                 "linkedin_url": "",
@@ -117,7 +117,7 @@ curl -X GET \
             "addresses": [
                 {
                     "address_key": 1,
-                    "address_line_1": "123 Lonestar Way",
+                    "address_line_1": "123 Magento Way",
                     "state": "Texas",
                     "country": "USA",
                     "postal_code": "77777",
@@ -145,21 +145,21 @@ curl -X GET \
 ```json
 {
         "mage_id": "MAG123456789",
-        "first_name": "Chuck",
-        "last_name": "Norris",
-        "email": "cnorris@example.com",
-        "screen_name": "ninjachuck",
+        "first_name": "John",
+        "last_name": "Smith",
+        "email": "jsmith@example.com",
+        "screen_name": "Agent Smith",
         "has_completed_profile": true,
         "has_accepted_tos": true,
         "profile_image_artifact": {
             "file_upload_id": "uuid-001-234567-123.461",
-            "filename": "chuck.png",
+            "filename": "portrait.png",
             "content_type": "image.png",
-            "url": "https://static-mp.magento.com/user/68/f3/68f360d3516f594fc957c4179ed4a7a872911f07/pub/d9/c2/d9c23dd795a5faaab603b6b5965eca8a6d9430f2/chuck.png",
+            "url": "https://static-mp.magento.com/user/68/f3/68f360d3516f594fc957c4179ed4a7a872911f07/pub/d9/c2/d9c23dd795a5faaab603b6b5965eca8a6d9430f2/portrait.png",
             "size": 1234,
             "file_hash": "d5db29cd03a2ed055086cef9c31c252b4587ffff",
             "malware_status": "pass"
-        },
+        }
 }
 ```
 
@@ -173,7 +173,7 @@ The following example shows a request to update the personal profile bio field:
 {
   "action" : "publish",
   "personal_profile" : {
-     "bio" : "I can make a fire by rubbing two ice cubes."
+     "bio" : "My extensions have won Nobel Prizes in both literature and physics."
   }
 }
 ```
@@ -190,7 +190,7 @@ The `action` field specifies which update operation to perform:
 curl -X PUT \
      -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
      -H 'Content-Type: application/json' \
-     -d '{ 'action: "publish", "personal_profile" : { "bio" : "I can make a fire by rubbing two ice cubes." } }' \
+     -d '{ "action" : "publish", "personal_profile" : { "bio" : "My extensions have won Nobel Prizes in both literature and physics." } }' \
      https://developer-api.magento.com/rest/v1/users/MAG123456789
 ```
 
@@ -221,7 +221,6 @@ The following table lists available query parameters, all of which are optional:
 |-----------|--------|----------|----------------------------------------|
 | type      | string |   no     | Type of keys requested:<br>`m1` &mdash; Magento 1 product keys<br>`m2` &mdash; Magento 2 composer repo keys<br>`all` &mdash; Both M1 and M2 keys (default) 
 | label     | string |   no     | The url encoded value of the key label; only valid for `m2` type.|
-{:.style="table-layout: auto;"}
 
 The following example shows the request/response body for retrieving keys without any query parameters:
 

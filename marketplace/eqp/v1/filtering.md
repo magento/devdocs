@@ -24,12 +24,12 @@ If a field is listed as filterable, it is also sortable. To sort, pass in the `s
 
 |Field|Type|Description|
 |-----|----|-----------|
-|sort|string|Comma-separated list of field names to sort by. Fields may be prefixed with '-' to sort in descending order, or '+' for ascending.|
+|sort|string|Comma-separated list of field names to sort by. Fields may be prefixed with `-` to sort in descending order, or `+` for ascending.|
 
 For example, to sort all versions of all packages, M2 packages first, then M1,
 grouped alphabetically by name, with newest packages first: 
 
-```HTTP
+```http
 GET /rest/v1/products/packages/?sort=-platform,+name,-version
 ```
 
@@ -40,14 +40,14 @@ You can use multiple response fields as filters in batch GET requests.
 For example, to get a package with the submission_id "12345", one way is
 to call the single-object convenience endpoint, without using filters:
 
-```HTTP
+```http
 GET /rest/v1/products/packages/12345/
 ```
 
 Or alternatively, call the batch endpoint to return a list and filter it by `submission_id`,
 so that the list contains only one item:
 
-```HTTP
+```http
 GET /rest/v1/products/packages/?submission_id=12345
 ```
 
