@@ -115,3 +115,22 @@ To change the directory:
 ```
 
 Save your changes to `di.xml` and exit the text editor.
+
+To change the directory from your module
+
+1. [Create a new module](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/build/module-file-structure.html){:target="_blank"}
+
+2.	In your module `etc/di.xml` add instructions:
+
+```xml
+
+<type name="Magento\Elasticsearch\SearchAdapter\Query\Preprocessor\Stopwords">
+	<arguments>
+		<argument name="stopwordsModule" xsi:type="string">(Your_Module)</argument>
+		<argument name="stopwordsDirectory" xsi:type="string">stopwords</argument>
+	</arguments>
+</type>
+```
+3. In your module, create the directory `etc/stopwords`, inside add files .csv
+
+Save your changes to `di.xml` and exit the text editor.
