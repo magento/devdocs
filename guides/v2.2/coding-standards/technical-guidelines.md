@@ -574,6 +574,8 @@ You need to read configuration from different sources (like database or filesyst
 
 6.4.3.8. Data objects returned by service contracts SHOULD be fully loaded to ensure consistency.
 
+6.4.3.9. Service contracts SHOULD allow client side generated IDs. A service SHOULD accept an ID instead of generating it. See [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier) as an example of client side generated ID.
+
 6.4.4. Service Implementation
 
 6.4.4.1. Service data interfaces SHOULD extend from `Magento\Framework\Api\ExtensibleDataInterface`. The only exception is when extensibility is not desired, such as in case of value-objects.
@@ -584,7 +586,7 @@ You need to read configuration from different sources (like database or filesyst
 
 6.4.4.4. Replacement strategy SHOULD be used to persist main entity fields/attributes, child entities, and relation links.
 
-6.4.4.5. During update operations, web APIs using the`PATCH` HTTP method and all action controllers that accept entities SHOULD pre-load them first, then merge the request data, and provide the full data to the service.
+6.4.4.5. During update operations, web APIs using the `PATCH` HTTP method and all action controllers that accept entities SHOULD pre-load them first, then merge the request data, and provide the full data to the service.
 
 6.4.4.6. If a service method needs to modify the argument, the original argument object MUST NOT be modified and its copy SHOULD be modified instead.
 
