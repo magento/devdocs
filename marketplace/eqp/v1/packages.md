@@ -7,12 +7,9 @@ Use this resource to initiate and manage all aspects of submitting a package to 
 [Magento Extension Quality Program (EQP)](http://docs.magento.com/marketplace/user_guide/extensions/extension-quality-program.html).
 You can provide all metadata associated with a package, both the technical and the marketing information, in a single step, or in several steps, using incremental updates.
 
-* **Technical information** - References to code artifacts, such as Magento 1 TGZ files or Composer-compliant
-  Magento 2 ZIP files, version compatibility, and release notes.
+*  **Technical information** - References to code artifacts, such as Magento 1 TGZ files or Composer-compliant Magento 2 ZIP files, version compatibility, and release notes.
 
-* **Marketing information** - Includes package descriptions, image assets for logos and galleries,
-  pricing information, support and installation services offered, and various guides (user, installation,
-  and reference) in PDF.
+*  **Marketing information** - Includes package descriptions, image assets for logos and galleries, pricing information, support and installation services offered, and various guides (user, installation, and reference) in PDF.
 
 Before submitting a package, you must first [upload your files](files.html) and associate the ID returned by the
 `/rest/v1/files/uploads` endpoint with your package using JSON parameters in the request body.
@@ -25,10 +22,8 @@ A successful submission results in a package being published on the [Magento Mar
 
 The EQP review process includes two steps:
 
-* In **technical review**, we perform all automated testing.
-  This step also involves manual testing after all automated tests run.
-* In **marketing review**, we manually review all marketing content associated with your package
-  before you can publish it on the Magento Marketplace.
+*  In **technical review**, we perform all automated testing. This step also involves manual testing after all automated tests run.
+*  In **marketing review**, we manually review all marketing content associated with your package before you can publish it on the Magento Marketplace.
 
 These review steps occur in parallel when you submit a package.
 If both steps are successful, the package can be published to the Magento Marketplace.
@@ -476,7 +471,7 @@ You can submit a package in either of the following ways:
    1. One or more PUT requests in which you configure the package parameters. In these requests, set `action` to `draft` in `technical`, `marketing`, or both.
    1. A final PUT request indicating submission for `technical`, `marketing`, or both.
 
-You can update one or more parameters in `draft` mode. 
+You can update one or more parameters in `draft` mode.
 In this mode, the API checks only for basic type-validation issues.
 
 When the `action` field is set to `publish`, the API validates fields to ensure all

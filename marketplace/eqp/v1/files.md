@@ -47,7 +47,7 @@ GET /rest/v1/files/uploads/:file_upload_id
 Sorting and filtering parameters are currently not available for this endpoint.
 
 If the `file_upload_id` parameter is specified, a single file record will be returned.
-If it is omitted, then a batch response will be returned: an array of records for all files uploaded by the current user. 
+If it is omitted, then a batch response will be returned: an array of records for all files uploaded by the current user.
 
 **Request**
 

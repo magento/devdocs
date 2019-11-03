@@ -27,7 +27,7 @@ If a field is listed as filterable, it is also sortable. To sort, pass in the `s
 |sort|string|Comma-separated list of field names to sort by. Fields may be prefixed with `-` to sort in descending order, or `+` for ascending.|
 
 For example, to sort all versions of all packages, M2 packages first, then M1,
-grouped alphabetically by name, with newest packages first: 
+grouped alphabetically by name, with newest packages first:
 
 ```http
 GET /rest/v1/products/packages/?sort=-platform,+name,-version

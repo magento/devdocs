@@ -219,7 +219,7 @@ The following table lists available query parameters, all of which are optional:
 
 | Parameter |  Type  | Required | Description                            |
 |-----------|--------|----------|----------------------------------------|
-| type      | string |   no     | Type of keys requested:<br>`m1` &mdash; Magento 1 product keys<br>`m2` &mdash; Magento 2 composer repo keys<br>`all` &mdash; Both M1 and M2 keys (default) 
+| type      | string |   no     | Type of keys requested:<br>`m1` &mdash; Magento 1 product keys<br>`m2` &mdash; Magento 2 composer repo keys<br>`all` &mdash; Both M1 and M2 keys (default)
 | label     | string |   no     | The url encoded value of the key label; only valid for `m2` type.|
 
 The following example shows the request/response body for retrieving keys without any query parameters:
