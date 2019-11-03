@@ -141,7 +141,7 @@ Save your changes to `di.xml` and exit the text editor.
         </arguments>
     </type>
     ```
-   
-1. In your module, create the directory `etc/stopwords`, with the corresponding `.csv` 
+
+1. In your module, create the directory `etc/stopwords`, with the corresponding `.csv`.
 [files inside.](https://github.com/magento/magento2/tree/2.3-develop/app/code/Magento/Elasticsearch/etc/stopwords){:target="_blank"}
 Save your changes to `di.xml` and exit the text editor.
