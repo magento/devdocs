@@ -19,7 +19,6 @@ module Jekyll
       # Data from '_data/codebase/mrg' as a Hash where
       # the filename is a key and its content is a value.
       mrg_data = @site.data['codebase']['mrg']
-
       # Loop through the hash where a key is assigned to a 'mod' (module is a
       # special token in Ruby and should not be used) and value is assigned to
       # 'metadata'.
