@@ -13,9 +13,8 @@ pages:
         - label: JavaScript resources in Magento
           url: /javascript-dev-guide/javascript/js-resources.html
 
-        - label: About AMD modules and RequireJS
-          include_versions: ["2.0", "2.1"]
-          url: /javascript-dev-guide/javascript/requirejs_concept.html
+        - label: RequireJS in Magento
+          url: /javascript-dev-guide/javascript/requirejs.html
 
         - label: Calling and initializing JavaScript
           url: /javascript-dev-guide/javascript/js_init.html
