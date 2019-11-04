@@ -390,7 +390,7 @@ A 204 No Content HTTP response code indicates a successful update.
 ## Reports
 
 Use this API to retrieve reports owned by a specific user.
-Reports contain information about extensions sales, payout status, aggregate sales, refund data, and more.
+Reports contain information about extension sales, payout status, aggregate sales, refund data, and more.
 
 ```http
 GET /rest/v1/users/:mage_id/reports/pageviews
