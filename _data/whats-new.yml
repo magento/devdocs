@@ -31,7 +31,7 @@ entries:
   type: New topic
   date: October 29, 2019
   link: https://github.com/magento/devdocs/pull/5874
-- description: Added the following information to the [Elasticsearch set up](https://devdocs.magento.com/guides/v2.3/cloud/project/project-conf-files_services-elastic.html)<br/>topic
+- description: Added the following information to the [Set up Elasticsearch](https://devdocs.magento.com/guides/v2.3/cloud/project/project-conf-files_services-elastic.html)<br/>topic
     in the _Cloud Guide_–<br/>- Recommendation to always set up<br/>Elasticsearch
     as a fallback option if using a third-party search tool<br/>- Instructions for
     checking Elasticsearch software compatibility<br/>- "Additional Search Configuration"<br/>section
@@ -157,8 +157,7 @@ entries:
   type: New topic
   date: October 10, 2019
   link: https://github.com/magento/devdocs/pull/5642
-- description: Amazon Sales Channel version 3.0.0 is available in the [Marketplace](https://marketplace.magento.com/magento-module-amazon.html).
-    Check out the [Release Notes](https://devdocs.magento.com/extensions/amazon-sales/release-notes/).
+- description: Added Amazon Sales Channel version 3.0.0 [Release Notes](https://devdocs.magento.com/extensions/amazon-sales/release-notes/).
   versions: 3.0.0 Amazon Sales Channel
   type: Major update
   date: October 9, 2019
