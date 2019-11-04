@@ -39,14 +39,13 @@ See one of the following topics for more information:
 To edit stopwords:
 
 1. Log in to your Magento server, or switch to, the [Magento file system owner]({{page.baseurl}}/install-gde/prereq/apache-user.html).
-
 1. Use a text editor to open a stopword file in the `<magento_root>/vendor/magento/module-elasticsearch/etc/stopwords` directory.
 
- `.csv` files use the naming convention `stopwords_<locale_code>.csv`. For example, the German stopword file is named `stopwords_de_DE.csv`.
+   `.csv` files use the naming convention `stopwords_<locale_code>.csv`. For example, the German stopword file is named `stopwords_de_DE.csv`.
 
 1. Add words, remove words, or change words in the file.
 
- (Each stopword in a file starts on a new line.)
+   (Each stopword in a file starts on a new line.)
 
 1. Save your changes and exit the text editor.
 1. Clean the Magento configuration cache.
