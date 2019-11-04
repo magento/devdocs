@@ -175,6 +175,9 @@ pages:
         - label: handlePayflowProResponse mutation
           url: /graphql/mutations/handle-payflow-pro-response.html
 
+        - label: mergeCarts mutation
+          url: /graphql/mutations/merge-carts.html
+
         - label: placeOrder mutation
           url: /graphql/mutations/place-order.html
 
