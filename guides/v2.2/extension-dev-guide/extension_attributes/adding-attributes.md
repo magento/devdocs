@@ -47,7 +47,7 @@ The response to these requests will return objects with the following structure:
 ## Add plugin to product repository
 
 In order to add extension attributes, we need to use an after plugin on Product Repository.
-The plugin should follow the methods: save, get, getList.
+The plugin should be declared for the methods: `save`, `get` and `getList`.
 
 We can add scalar and non-scalar extension attributes.
 Scalar is a simple attribute.
@@ -117,7 +117,7 @@ public function afterSave
 }
 ```
 
-But if some entity doesn't have implementation to fetch extension attributes, we will always retrieve `null` and each time when we fetch extension attributes we need to check if they are `null`. If so, then we need to create them. To avoid such code duplication, we need to create `afterGet` plugin for our entity with extension attributes.
+But if some entity doesn't have implementation to fetch extension attributes, we will always retrieve `null` and each time when we fetch extension attributes we need to check if they are `null`. If so, then we need to create them. To avoid such code duplication, we need to create `afterGetExtensionAttributes` plugin for our entity with extension attributes.
 
 Let's assume the product entity doesn't have any implementation of extension attributes, so our plugin might look like this:
 
@@ -180,8 +180,8 @@ For scalar attributes we can use next configuration:
 ```xml
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Api/etc/extension_attributes.xsd">
     <extension_attributes for="Magento\Catalog\Api\Data\ProductInterface">
-        <attribute code="first_custom_attribute" type="Magento\SomeModule\Api\Data\CustomDataInterface" />
-        <attribute code="second_custom_attribute" type="Magento\SomeModule\Api\Data\CustomDataInterface" />
+        <attribute code="first_custom_attribute" type="number" />
+        <attribute code="second_custom_attribute" type="string" />
     </extension_attributes>
 </config>
 ```
@@ -191,12 +191,24 @@ For non-scalar attributes:
 ```xml
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Api/etc/extension_attributes.xsd">
     <extension_attributes for="Magento\Catalog\Api\Data\ProductInterface">
-        <attribute code="our_custom_data" type="Magento\SomeModule\Api\Data\CustomDataInterface[]" />
+        <attribute code="our_custom_data" type="Magento\SomeModule\Api\Data\CustomDataInterface" />
     </extension_attributes>
 </config>
 ```
 
-In first case we will get the next result:
+For array extension attributes:
+
+```xml
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Api/etc/extension_attributes.xsd">
+    <extension_attributes for="Magento\Catalog\Api\Data\ProductInterface">
+        <attribute code="some_custom_data" type="string[]" />
+    </extension_attributes>
+</config>
+```
+
+The array indicator `[]` can also be appended to non-scalar types.
+
+In first - scalar - case we will get the next result:
 
 ```xml
 <product>
@@ -205,12 +217,13 @@ In first case we will get the next result:
     <custom_attributes><!-- Custom Attributes Data --></custom_attributes>
     <extension_attributes>
         <first_custom_attribute>1</first_custom_attribute>
-        <second_custom_attribute>2</second_custom_attribute>
+        <second_custom_attribute>foo</second_custom_attribute>
     </extension_attributes>
 </product>
 ```
 
-In second one:
+In second, non-scalar one:
+
 ```xml
 <product>
     <id>1</id>
@@ -218,11 +231,23 @@ In second one:
     <custom_attributes><!-- Custom Attributes Data --></custom_attributes>
     <extension_attributes>
         <our_custom_data>
-            <first_custom_attribute>1</first_custom_attribute>
-            <second_custom_attribute>2</second_custom_attribute>
+            <!-- fields defined in CustomDataInterface are here -->
         </our_custom_data>
     </extension_attributes>
 </product>
+```
+
+In third, array one (in JSON for a change):
+
+```js
+{
+  "id": 1,
+  "sku": "some-sku",
+  "custom_attributes": { /* ... custom attribute data ... */ },
+  "extension_attributes": {
+    "some_custom_data": ["value1", "value2", "value3"]
+  }
+}
 ```
 
 [Sample module on GitHub](https://github.com/magento/magento2-samples/tree/master/sample-external-links)
