@@ -199,6 +199,7 @@ githuburl22: https://github.com/magento/devdocs/tree/master/guides/v2.2/
 # 2.3 variables
 gdeurl23: /guides/v2.3/
 githuburl23: https://github.com/magento/devdocs/tree/master/guides/v2.3/
+githuburl23tree: https://github.com/magento/magento2/tree/
 
 
 ##########
