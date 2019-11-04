@@ -340,7 +340,7 @@ It is possible to drop a column only if it exists in the `db_schema_whitelist.js
 
 ### Change the column type
 
-The following example changes the `type` of the `title` column from `varchar` to  `tinytext`.
+The following example changes the `type` of the `title` column from `varchar` to  `text`.
 
 ```diff
 <schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -349,7 +349,7 @@ The following example changes the `type` of the `title` column from `varchar` to
         <column xsi:type="int" name="id_column" padding="10" unsigned="true" nullable="false" comment="Entity Id"/>
         <column xsi:type="int" name="severity" padding="10" unsigned="true" nullable="false" comment="Severity code"/>
 -       <column xsi:type="varchar" name="title" nullable="false" length="255" comment="Title"/>
-+       <column xsi:type="tinytext" name="title" nullable="false" length="255" comment="Title"/>
++       <column xsi:type="text" name="title" nullable="false" length="255" comment="Title"/>
         <column xsi:type="timestamp" name="time_occurred" padding="10" comment="Time of event"/>
         <constraint xsi:type="primary" referenceId="PRIMARY">
             <column name="id_column"/>
@@ -377,7 +377,7 @@ The following example adds the `INDEX_SEVERITY` index to the `declarative_table`
     <table name="declarative_table">
         <column xsi:type="int" name="id_column" padding="10" unsigned="true" nullable="false" comment="Entity Id"/>
         <column xsi:type="int" name="severity" padding="10" unsigned="true" nullable="false" comment="Severity code"/>
-        <column xsi:type="tinytext" name="title" nullable="false" length="255" comment="Title"/>
+        <column xsi:type="text" name="title" nullable="false" length="255" comment="Title"/>
         <column xsi:type="timestamp" name="time_occurred" padding="10" comment="Time of event"/>
         <constraint xsi:type="primary" referenceId="PRIMARY">
             <column name="id_column"/>

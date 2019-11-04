@@ -1,20 +1,31 @@
 label: Marketplace EQP API
-include_versions: ["2.1","2.2","2.3"]
+versionless: true
 pages:
     - label: Introduction
-      url: /marketplace/eqp/api.html
+      url: /marketplace/eqp/v1/api.html
+      versionless: true
 
     - label: Authentication
-      url: /marketplace/eqp/auth.html
+      url: /marketplace/eqp/v1/auth.html
+      versionless: true
 
     - label: Users
-      url: /marketplace/eqp/users.html
+      url: /marketplace/eqp/v1/users.html
+      versionless: true
 
     - label: Files
-      url: /marketplace/eqp/files.html
+      url: /marketplace/eqp/v1/files.html
+      versionless: true
 
     - label: Packages
-      url: /marketplace/eqp/packages.html
+      url: /marketplace/eqp/v1/packages.html
+      versionless: true
 
     - label: Reports
-      url: /marketplace/eqp/reports.html
+      url: /marketplace/eqp/v1/reports.html
+      versionless: true
+
+    - label: Filtering
+      url: /marketplace/eqp/v1/filtering.html
+      versionless: true
+
