@@ -41,7 +41,7 @@ You can also use a process manager such as [Supervisor](http://supervisord.org/i
 *  Each consumer processes 10000 messages and then terminates
 
 {:.bs-callout-info}
-If your {{ site.data.var.ee }} store is hosted on the Cloud platform, use the [`CRON_CONSUMERS_RUNNER`]({{ page.baseurl }}/cloud/env/variables-deploy.html#cron_consumers_runner) to configure the `consumers_runner` cron job.
+If your {{ site.data.var.ee }} store is hosted on the Cloud platform, use the [`CRON_CONSUMERS_RUNNER`]({{ page.baseurl }}/cloud/env/variables-deploy.html#cron_consumers_runner) deploy variable to configure the `consumers_runner` cron job.
 
 #### Specific configuration
 
