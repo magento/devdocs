@@ -61,6 +61,8 @@ These files override the following layouts:
 *  `<module_dir>/view/frontend/layout/<layout1>.xml`
 *  `<module_dir>/view/frontend/layout/<layout2>.xml`
 
+For example, `<theme_dir>/Magento_Checkout/layout/override/base/checkout_cart_index.xml` will override `Magento_Checkout/view/frontend/layout/checkout_cart_index.xml`.
+
 ### Override theme layouts {#fedg_layout_override_theme}
 
 To add an overriding theme file (to override a parent theme layout):
@@ -83,6 +85,8 @@ These files override the following layouts:
 
 *  `<parent_theme_dir>/<Namespace>_<Module>/layout/<layout1>.xml`
 *  `<parent_theme_dir>/<Namespace>_<Module>/layout/<layout2>.xml`
+
+For example, `<theme_dir>/Magento_Checkout/layout/override/theme/Magento/luma/checkout_cart_index.xml` will override `app/design/frontend/Magento/luma/Magento_Checkout/layout/checkout_cart_index.xml`.
 
 {:.bs-callout .bs-callout-info}
 To override page layout files, use the `page_layout` directory name instead of `layout`.

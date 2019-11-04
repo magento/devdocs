@@ -6,7 +6,7 @@ functional_areas:
   - Install
 ---
 
-Powered by Fastly, the web application firewall (WAF) service for {{ site.data.var.ece }} detects, logs, and blocks malicious request traffic before it can damage your sites or network.
+Powered by Fastly, the web application firewall (WAF) service for {{ site.data.var.ece }} detects, logs, and blocks malicious request traffic before it can damage your sites or network. The WAF service is available on production environments only.
 
 The WAF service provides the following benefits:
 
@@ -18,9 +18,7 @@ The WAF service provides the following benefits:
    -  Magento triages customer support tickets related to WAF service issues that block legitimate traffic as Priority 1 issues.
    -  Automated upgrades to the WAF service version ensure immediate coverage for new or evolving exploits. See [WAF maintenance and upgrades](#waf-maintenance-and-updates).
 
-The WAF service is available on Production environments for all {{ site.data.var.ece }} Pro and Starter plans at no additional cost.
-
-{:.bs-callout .bs-callout-tip}
+{:.bs-callout-tip}
 For additional information about maintaining PCI compliance for your {{ site.var.data.ece }} stores, see [Magento Approach to PCI compliance](https://magento.com/pci-compliance).
 
 ### Enabling the WAF
