@@ -1,22 +1,19 @@
 ---
 group: javascript-developer-guide
-subgroup: 1_Javascript
 title: Use custom JavaScript
 ---
 
-## Overview {#custom_js_overview}
+This topic discusses how to use custom [JavaScript](https://glossary.magento.com/javascript) components with the components provided by Magento or custom replacement implementations.
 
-This topic discusses how to use custom [JavaScript](https://glossary.magento.com/javascript) components with the components provided by Magento or having replaced them with custom implementations.
+We strongly recommend that you do not change the source code of default Magento components and widgets. All customizations must be implemented in custom modules or themes.
 
-We strongly recommend not changing the source code of default Magento components and widgets. All customizations must be implemented in custom modules or themes.
-
-## Add a custom JS component
+## Add a custom JS component {#custom_js_overview}
 
 To add a custom JS component (module), take the following steps:
 
 1. Place the custom component source file in one of the following locations:
    -  Your theme JS files: `<theme_dir>/web/js` or `<theme_dir>/<VendorName>_<ModuleName>/web/js`. In this case the component is available in your theme and its [child themes]({{ page.baseurl }}/frontend-dev-guide/themes/theme-inherit.html).
-   -  Your module view JS files: `<module_dir>/view/frontend/web/js`. In this case the component is available in all modules and themes (if your module is enabled).
+   -  Your module view JS files: `<module_dir>/view/frontend/web/js`. In this case, the component is available in all modules and themes (if your module is enabled).
 
 1. Optionally, in the corresponding [module](https://glossary.magento.com/module) or theme, create a `requirejs-config.js` configuration file, if it does not yet exist there and set path for your resource. The RequireJS configuration file can be placed in one of the following locations:
 
@@ -27,14 +24,13 @@ To add a custom JS component (module), take the following steps:
 ## Replace a default JS component {#js_replace}
 
 To use a custom implementation of an existing Magento JS component:
-Place the custom component source file in one of the following
-locations:
+
+Place the custom component source file in one of the following locations:
 
 -  Your theme JS files: `/web/js`
 -  Your module view JS files: `<module_dir>/view/frontend/web/js`
 
-Create a RequireJS configuration file `requirejs-config.js`, having
-specified the following:
+Create a RequireJS configuration file `requirejs-config.js`, having specified the following:
 
 ```javascript
 var config = {
@@ -49,7 +45,7 @@ var config = {
 -  `<default_component>`: the name of the default component you replace
 -  `<custom_component>`: the name of the custom component
 
-For example, if you want to use custom `navigation-menu.js` script instead of the default menu widgets, your `requirejs-config.js` should contain the following:
+For example, if you want to use a custom `navigation-menu.js` script instead of the default menu widgets, your `requirejs-config.js` should contain the following:
 
 ```javascript
 var config = {
@@ -62,14 +58,12 @@ var config = {
 };
 ```
 
-Place your `requirejs-config.js` file in one of the following
-directories (according to the location of your custom script, see step 1
-of this procedure):
+Place your `requirejs-config.js` file in one of the following directories (according to the location of your custom script, see step 1 of this procedure):
 
 -  Your [theme](https://glossary.magento.com/theme) files: `<theme_dir>`
 -  Your module view files: `<module_dir>/view/frontend`
 
-This way your custom JS component is used instead of the [Magento component](https://glossary.magento.com/magento-component) in all entries all over the [frontend](https://glossary.magento.com/frontend) area.
+This way, your custom JS component is used instead of the [Magento component](https://glossary.magento.com/magento-component) in all entries all over the [frontend](https://glossary.magento.com/frontend) area.
 
 ## Extend a default JS component {#extend_js}
 
@@ -77,7 +71,7 @@ You can add a custom JS component/widget, which will extend a default Magento co
 
 ### Extend Magento widget {#extend_js_widget}
 
-To extend a default Magento [jQuery](https://glossary.magento.com/jquery) widget, create `<your_widget_name>.js` with the following contents:
+To extend a default Magento [jQuery](https://glossary.magento.com/jquery) widget, create `<your_widget_name>.js` with contents similar to the following:
 
 ```javascript
 define([
@@ -95,16 +89,14 @@ define([
 
 Where the following notation is used:
 
--  `<your_namespace>.<your_widget_name>` - the name of your custom [widget](https://glossary.magento.com/widget). According to the jQuery widgets naming
-    convention, must contain a [namespace](https://glossary.magento.com/namespace) and name.
--  `mage.<widget.name>` - the name of the Magento widget that you
-    extend.
+-  `<your_namespace>.<your_widget_name>` - the name of your custom [widget](https://glossary.magento.com/widget). According to the jQuery widgets naming convention, this value must contain a [namespace](https://glossary.magento.com/namespace) and name.
+-  `mage.<widget.name>` - the name of the Magento widget that you extend.
     
 {:.bs-callout .bs-callout-tip}
-All jQuery UI components for frontend and base areas are located in `lib/web/jquery/ui-modules` dir. They can be used in JS widgets by `jquery-ui-modules` path mapping like `jquery-ui-modules/widget`, `jquery-ui-modules/slider` etc.
-Usage of individual jQuery UI components instead of monolith jQuery UI library improves storefront performance.
+All jQuery UI components for frontend and base areas are located in `lib/web/jquery/ui-modules` dir. They can be used in JS widgets by `jquery-ui-modules` path mapping like `jquery-ui-modules/widget` and `jquery-ui-modules/slider`.
+Using individual jQuery UI components instead of the monolithic jQuery UI library improves storefront performance.
 
-For information about how to initialize your custom widget in a `.phtml` template, see the [JavaScript initialization]({{ page.baseurl }}/javascript-dev-guide/javascript/js_init.html){:target="_blank"} topic.
+For information about initializing your custom widget in a `.phtml` template, see the [JavaScript initialization]({{ page.baseurl }}/javascript-dev-guide/javascript/js_init.html) topic.
 
 ### Extend a default Ui component {#extend_js_component}
 
@@ -143,7 +135,7 @@ define([
 });
 ```
 
-For information about how to initialize your custom JS component in a `.phtml` template, see the [JavaScript initialization] topic.
+For information about initializing your custom JS component in a `.phtml` template, see the [JavaScript initialization] topic.
 
 ## Disable default Magento JS {#disable_default_js}
 
