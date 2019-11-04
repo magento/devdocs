@@ -1,10 +1,7 @@
 ---
 group: javascript-developer-guide
-subgroup: 1_Javascript
 title: Customizing JavaScript illustration
 ---
-
-## Overview {#practice_overview}
 
 This topic features a step-by-step illustration of how to customize a [jQuery](https://glossary.magento.com/jquery) [widget](https://glossary.magento.com/widget) and how to use a custom widget instead the default Magento one.
 
@@ -129,7 +126,8 @@ var config = {
 };
 ```
 
-## Recommended reading
+{:.ref-header}
+Recommended reading
 
 [Use custom JavaScript]
 
