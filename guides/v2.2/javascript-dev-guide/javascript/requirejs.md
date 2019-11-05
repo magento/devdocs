@@ -1,7 +1,8 @@
 ---
 group: javascript-developer-guide
-subgroup: 1_Javascript
 title: RequireJS in Magento
+contributor_name: Adarsh Manickam
+contributor_link: https://github.com/drpayyne
 ---
 
 This topic describes general concepts of how the [RequireJS library](http://requirejs.org){: target="_blank"} is used in Magento, with examples. Please refer to official RequireJS documentation for in-depth explanation.
