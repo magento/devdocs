@@ -551,11 +551,10 @@ You can remove navigation links from the 'My Account' dashboard on the storefron
 <!-- "My Returns" link -->
 <referenceBlock name="customer-account-navigation-return-history-link" remove="true"/>
 ```
- 
-## Create cms-page/product/category-specific layouts
-  _since Magento 2.3.4/2.2.11_
 
-Merchants can select layout updates to be applied to specific Category/Product/CMS Page pages on the frontend. These layout
+## Create cms-page/product/category-specific layouts
+
+As of Magento 2.3.4/2.2.11, merchants can select layout updates to be applied to specific Category/Product/CMS Page pages on the frontend. These layout
 updates are made by creating layout XML files following specific naming conventions.
 
 For Categories:
@@ -588,7 +587,7 @@ where:
   section on _CMS Page Edit_ page
 
 These files must be placed in the appropriate folders for layout XML files. They will be available as __Custom Layout Update__ options for Merchants after flushing the cache.
- 
+
 {:.ref-header}
 Related topics
 
