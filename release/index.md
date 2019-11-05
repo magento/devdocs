@@ -17,7 +17,7 @@ The following table describes the status of Magento software availability and wh
 | **PWA Studio**                                    | Available now (including support for {{site.data.var.ece}})                                                                            | [Documentation](http://pwastudio.io) and [GitHub](https://github.com/magento-research/pwa-studio) |
 | **Magento Shipping**                              | Available now                                                                                                                          | <https://magento.com/products/shipping>                                                           |
 | **Page Builder**                                  | Available now                                                                                                                          | Bundled with {{site.data.var.ee}} 2.3.x                                                           |
-| **Amazon Sales Channel 3.0.0**                    | Available now for {{site.data.var.ece}} 2.2.4+ and 2.3.x (US, Canada, Mexico, UK)| [Magento Marketplace](https://marketplace.magento.com/magento-module-amazon.html)                 |
+| **Amazon Sales Channel 3.0.1**                    | Available now for {{site.data.var.ece}} 2.2.4+ and 2.3.x (US, Canada, Mexico, UK)| [Magento Marketplace](https://marketplace.magento.com/magento-module-amazon.html)                 |
 | **Google Shopping ads Channel 3.0.1**             | Available now for {{site.data.var.ece}} 2.2.4+ and 2.3.x                                                                               | [Magento Marketplace](http://marketplace.magento.com/magento-google-shopping-ads.html)            |
 
 ## Compatibility
