@@ -132,9 +132,9 @@ Continue launching your Docker environment in the default _production_ mode.
 
    -  Build Magento in the Docker container:
 
-      ```bash
-      docker-compose run build cloud-build
-      ```
+     ```bash
+     docker-compose run build cloud-build
+     ```
 
    -  Deploy Magento in the Docker container:
 
@@ -142,8 +142,8 @@ Continue launching your Docker environment in the default _production_ mode.
       docker-compose run deploy cloud-deploy
       ```
 
-    {: .bs-callout-info }
-    For `{{site.data.var.ct}}` v2002.0.12, install Magento with the `docker-compose run cli magento-installer` command.
+   {:.bs-callout-info }
+   For `{{site.data.var.ct}}` v2002.0.12, install Magento with the `docker-compose run cli magento-installer` command.
 
 1. Configure and connect Varnish.
 
@@ -221,23 +221,21 @@ The `{{site.data.var.ct}}` version 2002.0.18 and later supports developer mode.
    docker-compose up -d
    ```
 
-1. Start the file synchronization with `mutagen.io`.
+1. Start the file synchronization with mutagen.io. If you use docker-sync for file synchronization, skip this step.
 
    ```bash
    bash ./mutagen.sh
    ```
 
-   {: .bs-callout-info}
-   If you use `docker-sync` for file synchronization, skip this step.
+   {:.bs-callout-info}
+   If you host your Docker environment on Windows and the session start fails, update the `mutagen.sh` file to change the value for the `--symlink-mode` option to `portable`.
 
-1. Install Magento in your Docker environment.
+1. Deploy Magento in the Docker container:
 
-   -  Deploy Magento in the Docker container:
-
-      ```bash
-      docker-compose run deploy cloud-deploy && \
-      docker-compose run deploy magento-command deploy:mode:set developer
-      ```
+   ```bash
+   docker-compose run deploy cloud-deploy && \
+   docker-compose run deploy magento-command deploy:mode:set developer
+   ```
 
     {: .bs-callout-info }
     Developer mode does not require the `build` operation.

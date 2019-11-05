@@ -3,13 +3,16 @@ group: marketplace-api
 title: Packages
 ---
 
-Use this resource to initiate and manage all aspects of submitting a package to the [Magento Extension Quality Program (EQP)](http://docs.magento.com/marketplace/user_guide/extensions/extension-quality-program.html). You can provide all metadata associated with a package—both the technical and the marketing information—in a single step or in several steps using incremental updates.
+Use this resource to initiate and manage all aspects of submitting a package to the
+[Magento Extension Quality Program (EQP)](http://docs.magento.com/marketplace/user_guide/extensions/extension-quality-program.html).
+You can provide all metadata associated with a package, both the technical and the marketing information, in a single step, or in several steps, using incremental updates.
 
-*  **Technical information**—References to code artifacts, such as Magento 1 TGZ files or Composer-compliant Magento 2 ZIP files, version compatibility, and release notes.
+*  **Technical information** - References to code artifacts, such as Magento 1 TGZ files or Composer-compliant Magento 2 ZIP files, version compatibility, and release notes.
 
-*  **Marketing information**—Includes package descriptions, image assets for logos and galleries, pricing information, support and installation services offered, and various guides—user, installation, and reference in PDF.
+*  **Marketing information** - Includes package descriptions, image assets for logos and galleries, pricing information, support and installation services offered, and various guides (user, installation, and reference) in PDF.
 
-Before submitting a package, you must first [upload your files]({{ page.baseurl }}/marketplace/eqp/files.html) and associate the ID returned by the `/rest/v1/files/uploads` endpoint with your package using JSON parameters in the request body.
+Before submitting a package, you must first [upload your files](files.html) and associate the ID returned by the
+`/rest/v1/files/uploads` endpoint with your package using JSON parameters in the request body.
 
 You can also check package submission status and retrieve reports about technical and marketing issues discovered during the EQP process.
 
@@ -22,56 +25,110 @@ The EQP review process includes two steps:
 *  In **technical review**, we perform all automated testing. This step also involves manual testing after all automated tests run.
 *  In **marketing review**, we manually review all marketing content associated with your package before you can publish it on the Magento Marketplace.
 
-These review steps occur in parallel when you submit a package. If both steps are successful, the package can be published to the Magento Marketplace. If there is a failure, you can iteratively fix issues until they are resolved.
+These review steps occur in parallel when you submit a package.
+If both steps are successful, the package can be published to the Magento Marketplace.
+If there is a failure, you can iteratively fix issues until they are resolved.
 
 ## Package fields
 
-The following table describes all package object properties:
+The following table describes all package object properties.
+Unknown and readonly properties will be ignored in submissions.
 
 {: .bs-callout-info }
 Both `POST` and `PUT` requests support a batch model where multiple packages can be created or updated.
 
-|Field/Parameter|Type|Applicable HTTP Command|EQP Review Type|Description|
-|---------------|----|-----------------------|--------|-----------|
-|name|string|GET, POST, PUT|marketing|The name or title of the package. Duplicate names are not allowed.|
-|type|string|GET, POST, PUT|technical|Type of package. Valid values include `extension`, `theme`, `shared_package` or `all`. Shared packages are only applicable for Magento 2 extensions. Default is `all`|
-|platform|string|GET, POST, PUT|technical|The Magento platform compatibility of this package. Valid values include  `M1` for Magento 1 or `M2` for Magento 2.|
-|version_compatibility|array|GET, POST, PUT|technical|List of Magento versions that this package supports.|
-|sku|string|GET|-|The SKU generated from metadata in the code artifact.|
-|version|string|GET|-|The package version in the format `major.minor.patch`. For example, `2.5.3`.|
-|short_description|string|GET, POST, PUT|marketing|The short description for the package.|
-|long_description|string|GET, POST, PUT|marketing|The long description for the package.|
-|release_notes|string|GET, POST, PUT|technical|The release notes for the package submission.|
-|is_patch|boolean|GET, POST, PUT|technical|A flag to indicate the submission should follow the [expedited process for patch releases.](https://community.magento.com/t5/Magento-DevBlog/New-Expedited-Marketplace-Submission-Path/ba-p/77303)|
-|requested_launch_date|DateTime|POST, PUT|marketing|The UTC date and time (`YYYY-MM-DD HH:MM:SS`) when the package should be released to the store. If not supplied, it will be released to the store after all checks have passed.|
-|artifact|object|GET, POST, PUT|technical|This is the package code artifact (TGZ file for Magento 1 or ZIP file for Magento 2) that can be referenced in a file upload ID obtained from the Files API.|
-|documentation_artifacts|object|GET, POST, PUT|marketing, technical|The user, installation, and reference PDF manuals referenced in a file upload ID obtained from the Files API.|
-|shared_packages|array|GET, POST, PUT|technical|The list of artifact objects, each a Magento 2 shared package being referenced in a file upload ID obtained from the Files API. Listing it here implies that the seller is enabling  the "access rights" to these shared packages when a buyer purchases it.|
-|categories|array|GET, POST, PUT|marketing|The list of categories expressed as a `path` for the package. For example, `//Extension//Marketing//SEO/SEM`. Note that the path separator is `//` which allows for a single slash like `SEO/SEM` in the path name. Refer to the [Marketplace Store](https://marketplace.magento.com) for a list of valid categories.|
-|media_artifacts|object|GET, POST, PUT|marketing|The sub-object that holds the package icon, gallery images, and optional video URLs referenced in a file upload ID obtained from the Files API.|
-|prices|array|GET, POST, PUT|marketing|The list of prices in USD set for this package by edition, and its respective installation price (if any).|
-|support_tiers|array|GET, POST, PUT|marketing|List of support tiers, each specifying the edition, the monthly period, descriptions, and prices in USD.|
-|license_type|string|GET, POST, PUT|marketing|License type supported by the package. Refer to [Additional notes](#additional-notes) for a list of valid license types.|
-|custom_license_name|string|GET, POST, PUT|marketing|The name of the license if `license_type` is set to `custom`.|
-|custom_license_url|string|GET, POST, PUT|marketing|The URL of the license if `license_type` is set to `custom`.|
-|external_services|object|GET, POST, PUT|marketing|The list of services—name and URL—that the extension integrates with (if applicable).|
-|browser_os_compatibility|object|GET, POST, PUT|marketing|The browser and its associated OS capabilities this package supports. Refer to [Additional notes](#additional-notes) for a list of browsers and OS values.|
-|options|object|GET, POST, PUT|marketing|A set of options this package supports. Refer to [Additional notes](#additional-notes).|
-|submission_id|string|GET, PUT|-|A globally unique ID assigned to a package when it is submitted in a POST request. All further references to this package using GET or PUT requests can be made supplying this identifier.|
-|item_id|string|GET, POST, PUT|-|A developer-defined unique ID assigned to the package (if available). If it is being supplied, it must be unique for every POST request.|
-|action|object|POST, PUT|-|The action to be taken during a package submission (POST or PUT). Refer to [Package submission](#package-submissions).|
-|eqp_status|object|GET|-|The current status of the package in the EQP process. Refer to [Get package details](#get-package-details).|
-|offset|integer|GET|-|In combination with the `limit` parameter, it can be used for paging the collection of packages. Refer to [Get package details](#get-package-details). Default value is 0.|
-|limit|integer|GET|-|Along with `offset`, it can be used for paging the collection of packages. Default value is 20. Specifying -1 implies unlimited.|
-|sort|string|GET|-|A comma-separated list of fields to sort the list, each field prefixed by `-` for descending order, or `+` for ascending order. Refer to [Get package details](#get-package-details).|
-|created_time|DateTime|GET|-|The UTC date and time (`YYYY-MM-DD HH:MM:SS`) the package was first submitted.|
-|modified_time|DateTime|GET|-|The UTC date and time (`YYYY-MM-DD HH:MM:SS`) the package was last updated.|
-{:.style="table-layout: auto;"}
+|Field/Parameter|Type|HTTP Commands|Review Type|Filter|Description|Valid values|
+|---------------|----|-------------|-----------|------|-----------|------------|
+|action|object|POST, PUT|-|no|The actions to be taken towards technical or marketing review during a package POST or PUT submission.|See [Object Details](#object-details)|
+|action.overall|string|POST, PUT|-|no|General actions to be taken.|`remove`(...from store), `cancel` (abandon this version)|
+|action.technical|string|POST, PUT|-|no|Actions to be taken towards technical review.|`draft` (default), `submit` (...to review), `recall` (...from review)|
+|action.marketing|string|POST, PUT|-|no|The actions to be taken towards marketing review.|`draft` (default), `submit` (...to review), `recall` (...from review)|
+|actions_now_available|string|GET, POST, PUT|-|no|The list of values currently valid in the `action` field for this package|Comma-separated list.|
+|artifact|object|GET, POST, PUT|technical|no|This is the package code artifact (TGZ file for Magento 1 or ZIP file for Magento 2) associated with this version.|See [Object Details](#object-details)|
+|artifact.file_upload_id|string|GET, POST, PUT|technical|no|The only writable field of this sub-object, used to associate a file with this package version.|Unique file upload ID obtained from the Files API.|
+|artifact.filename|string|GET, POST, PUT|technical|no|The filename given when uploading the file.|Any valid filename|
+|artifact.content_type|string|GET, POST, PUT|-|no|The mime-type given when uploading the file.|Any valid mime-type|
+|artifact.url|string|GET, POST, PUT|-|no|The link to download the file, if applicable|A URL|
+|artifact.size|int|GET, POST, PUT|-|no|The size of the file in bytes|Any int|
+|artifact.file_hash|string|GET, POST, PUT|-|no|Hash of the file|A hash: currently MD5|
+|artifact.malware_status|string|GET, POST, PUT|-|no|Status of the malware check on the file.|`pass`, `fail`, `in-progress`|
+|browsers|object|GET, POST, PUT|marketing|no|Shorthand form of `browser_os_compatibility`.|See [Object Details](#object-details)|
+|browser_os_compatibility|object|GET, POST, PUT|marketing|no|The browser and its associated OS capabilities this package supports.|See [Object Details](#object-details)|
+|categories|array|GET, POST, PUT|marketing|no|1-3 categories, all from the same main category, expressed as a `path` for the package. For example, `//Extension//Marketing//SEO/SEM`. Note that the path separator is `//` which allows for a single slash like `SEO/SEM` in the path name.|Refer to the [Marketplace Store](https://marketplace.magento.com) for the current list of categories.|
+|created_at|DateTime|GET|-|yes|The UTC date and time the package was first submitted.|`YYYY-MM-DD HH:MM:SS`|
+|custom_license_name|substring|GET, POST, PUT|technical|yes|The name of the license, only required if `license_type` is set to `custom`.|Your license name|
+|custom_license_url|substring|GET, POST, PUT|technical|yes|The URL of the license, only required if `license_type` is set to `custom`.|Any URL|
+|documentation_artifacts|object|GET, POST, PUT|both|no|The user, installation, and reference PDF manuals. At least one required for extensions, but not for shared packages.|See [Object Details](#object-details)|
+|documentation_artifacts.user.file_upload_id|string|GET, POST, PUT|both|no|The user manual PDF|Unique file upload ID obtained from the Files API.|
+|documentation_artifacts.installation.file_upload_id|string|GET, POST, PUT|both|no|The installation manual PDF|Unique file upload ID obtained from the Files API.|
+|documentation_artifacts.reference.file_upload_id|string|GET, POST, PUT|both|no|The reference manual PDF|Unique file upload ID obtained from the Files API.|
+|eqp_status|object|GET, POST, PUT|-|no|Sub-object describing the current status of the package in the EQP review process.|See [Object Details](#object-details)|
+|eqp_status.overall|string|GET, POST, PUT|-|yes|The current status of the package in the overall EQP process.|`draft`, `in_progress`, `approved`, `released_to_store`, `developer_removed_from_store`, `admin_removed_from_store`, `canceled_by_developer`,  `canceled_by_admin`|
+|eqp_status.marketing|string|GET, POST, PUT|-|yes|The current status of the package in the EQP marketing review process.|`draft`, `awaiting_marketing_review`, `in_marketing_review`, `approved`, `approved_with_modifications_pending`, `recalled`, `rejected`|
+|eqp_status.technical|string|GET, POST, PUT|-|yes|The current status of the package in the EQP technical review process.|`draft`, `in_automation`, `awaiting_manual_qa`, `in_manual_qa`, `approved`, `recalled`, `rejected`|
+|external_services|object|GET, POST, PUT|marketing|no|The list of services that the extension integrates with.|A sub-object|
+|external_services.is_saas|boolean|GET, POST, PUT|marketing|no|Whether this integration is a gateway to a SaaS service.|`true`, `false`|
+|external_services.items|string|GET, POST, PUT|marketing|no|Description of the site(s) integrated with.|An array. Only zero or one items are currently supported.|
+|external_services.items[0].name|string|GET, POST, PUT|marketing|no|The name of the integrated site.|A name.|
+|external_services.items[0].url|string|GET, POST, PUT|marketing|no|The URL of the integrated site.|A valid URL.|
+|external_services.items[0].owner|string|GET, POST, PUT|marketing|no|Who owns the service.|`self`, `3rd_party`, `unknown`|
+|external_services.items[0].pay_to|string|GET, POST, PUT|marketing|no|Who the |`self`, `3rd_party`, `both`, `none`, `unknown`|
+|item_id|substring|GET, POST, PUT|-|yes|A developer-defined unique ID assigned to the package (if available).|If supplied, must be unique for every POST request.|
+|latest_launch_date|DateTime|GET|-|yes|The UTC date and time this version of the package was last released to the store.|`YYYY-MM-DD HH:MM:SS`|
+|launch_on_approval|boolean|GET, POST, PUT|marketing|no|Whether to publish to the store as soon as all tests are passed. Effectively, sets requested_launch_date to a point in the past.|`true`, `false`|
+|license_type|string|GET, POST, PUT|technical|yes|License type supported by the package.|See [Additional notes](#additional-notes) for a list of valid license types.|
+|limit|integer|GET|-|no|Along with `offset`, used for paging the collection of packages.|Positive integer, or -1 for unlimited. Default is 20.|
+|long_description|substring|GET, POST, PUT|marketing|yes|The long description for the package.|Any string.|
+|max_version_launched|object|GET, POST, PUT|marketing|no|Sub-object that describes the highest version of this package that has been released to the store.|Contains fields `submission_id`, `version`, `eqp_status`, with the same meanings as the similarly named fields in this table.|
+|media_artifacts|object|GET, POST, PUT|marketing|no|The sub-object that holds the package icon, gallery images, and optional video URLs.|Sub-object with 0-3 fields.|
+|media_artifacts.icon_image|object|GET, POST, PUT|marketing|no|The sub-object that holds the package icon.|Same structure as the `artifacts` field in this object.|
+|media_artifacts.gallery_images|array|GET, POST, PUT|marketing|no|Array of sub-objects describing the gallery images. Not required for shared packages.|Each array element has the same structure as the `artifacts` field in this object.|
+|media_artifacts.video_urls|array|GET, POST, PUT|marketing|no|A list of Youtube video URLs listed in order of appearance in the gallery.|Array of Youtube URLs.|
+|marketing_options|object|GET, POST, PUT|marketing|no|A set of marketing options this package supports.|See [Additional notes](#additional-notes).|
+|modified_at|DateTime|GET|-|yes|The UTC date and time the package was last updated.|`YYYY-MM-DD HH:MM:SS`|
+|name|substring|GET, POST, PUT|marketing|yes|The name or title of the package.|Short free text. Duplicate names are not allowed.|
+|original_launch_date|DateTime|GET|-|yes|The UTC date and time this version of the package was first released to the store.|`YYYY-MM-DD HH:MM:SS`|
+|offset|integer|GET|-|no|In combination with the `limit` parameter, it can be used for paging the collection of packages.|See [Get package details](#get-package-details). Default value is 0.|
+|platform|string|GET, POST, PUT|technical|yes|The Magento platform compatibility of this package.|`M1`, `M2`|
+|prices|array|GET, POST, PUT|marketing|no|The list of prices in USD set for this package by edition, and the respective installation prices (if any). Editions must match `version_compatibility`.|Array of sub-objects.|
+|prices[N].currency_code|string|GET, POST, PUT|marketing|no|The currency code for this price|Currently only `USD`|
+|prices[N].edition|string|GET, POST, PUT|marketing|no|The magento edition for this price|`CE`, `EE`, `ECE`|
+|prices[N].price|number|GET, POST, PUT|marketing|no|The value for the purchase price of this package|A number, with up to two decimal places, eg 123.45|
+|prices[N].installation_price|string|GET, POST, PUT|marketing|no|The value for the installation price of this package|A number, with up to two decimal places, eg 123.45|
+|prices[N].currency_code|string|GET, POST, PUT|marketing|no|The currency code for this price|Currently only `USD`|
+|priority|string|GET, POST, PUT|-|no|The priority for this submission|`high`, `medium`, `low`|
+|process_as_patch|boolean|GET, POST, PUT|technical|yes|A flag to indicate the submission should follow the [expedited process for patch releases.](https://community.magento.com/t5/Magento-DevBlog/New-Expedited-Marketplace-Submission-Path/ba-p/77303)|`true`, `false`|
+|release_notes|substring|GET, POST, PUT|technical|yes|The release notes for the package submission.|Free text|
+|requested_launch_date|DateTime|POST, PUT|marketing|yes|When the package should be released to the store. If not supplied, it will be released to the store after all checks have passed.|`YYYY-MM-DD HH:MM:SS`|
+|shared_packages|array|GET, POST, PUT|technical|no|The list of artifact objects. Listing here enables the "access rights" to these shared packages when a buyer purchases this package.|Each shared package is specified by file_upload_id, or sku and version. See [Object Details](#object-details)|
+|shared_packages[N].artifact.file_upload_id|string|GET, POST, PUT|both|no|The shared package file|Unique file upload ID obtained from the Files API.|
+|shared_packages[N].artifact.sku|string|GET, POST, PUT|both|no|The shared package file|Unique file upload ID obtained from the Files API.|
+|shared_packages[N].artifact.version|string|GET, POST, PUT|both|no|The shared package file|Unique file upload ID obtained from the Files API.|
+|short_description|substring|GET, POST, PUT|marketing|yes|The short description for the package.|Short free text|
+|sku|substring|GET|-|yes|The SKU generated from metadata in the code artifact.|A SKU|
+|stability|string|GET, POST, PUT|marketing|yes|The version's build stability|`stable`, `beta`|
+|sort|string|GET|-|no|A comma-separated list of fields to sort the list, each field prefixed by `-` for descending order, or `+` for ascending order.|See [Get package details](#get-package-details).|
+|submission_id|substring|GET, PUT|-|yes|A globally unique ID assigned to a package when it is submitted in a POST request. All further references to this package using GET or PUT requests can be made supplying this identifier.|A generated string|
+|support_tiers|array|GET, POST, PUT|marketing|no|List of up to three support tiers per edition|See [Object Details](#object-details)|
+|support_tiers[N].tier|int|GET, POST, PUT|marketing|no|Which of the three support tiers (numbered 0-2 or 1-3)|`0`, `1`, `2`, `3`|
+|support_tiers[N].edition|string|GET, POST, PUT|marketing|no|Which Magento edition this support is for|`CE`, `EE`, `ECE`|
+|support_tiers[N].monthly_period|int|GET, POST, PUT|marketing|no|How many months the support lasts.|`1`, `3`, `6`, `9`, `12`|
+|support_tiers[N].prices|array|GET, POST, PUT|marketing|no|Array of prices for this support level|An array of one item per currency code.|
+|support_tiers[N].prices[0].currency_code|array|GET, POST, PUT|marketing|no|The currency code for this price|Currently only `USD` is supported.|
+|support_tiers[N].prices[0].price|array|GET, POST, PUT|marketing|no|The cost of this support level|A number, with up to two decimal places, eg 123.45|
+|technical_options|object|GET, POST, PUT|marketing|no|A set of technical options this package supports.|See [Additional notes](#additional-notes).|
+|type|string|GET, POST, PUT|technical|yes|Type of package.|`extension`, `theme`, `shared_package` (valid for M2 extensions only) or `all` (default).|
+|version_compatibility|array|GET, POST, PUT|technical|no|List of Magento versions that this package supports. Must match the editions in `prices`|Array of objects|
+|version_compatibility[N].edition|string|GET, POST, PUT|technical|no|Magento edition for the accompanying versions list|`M1`, `M2`|
+|version_compatibility[N].versions|array|GET, POST, PUT|technical|no|List of Magento versions that this package supports in the given edition.|Array of version strings, eg ["2.0","2.1"]
+|version|substring|GET|-|yes|The version of this package.|`major.minor.patch`, eg `2.5.3`.|
 
 ### Additional notes
 
-*  For required fields in a POST or PUT operation, refer to the [Package submissions](#package-submissions) section.
-*  The EQP Kind column indicates which part of the EQP pipeline will need to use or review the field values.
+*  For required fields in a POST or PUT operation, see the [Required Parameters](#required-parameters) section.
+*  The `Review Type` column indicates which part of the EQP review pipeline reviews the field values.
+*  The `Filter` column indicates whether a field can be used for filtering and sorting in GET requests.
+*  The `Type` column value "substring" means a string which, when filtered, searches for a substring match rather than an exact match.
 *  The list of valid values for `license_type` are:
    *  `afl`—Academic Free License 3.0 (AFL)
    *  `apache`—Apache License 2.0
@@ -85,7 +142,7 @@ Both `POST` and `PUT` requests support a batch model where multiple packages can
 
 ### Object details
 
-{% collapsible JSON Structure%}
+{% collapsible JSON Structure %}
 
 Listing the JSON structure of objects described above:
 
@@ -97,11 +154,11 @@ Assuming a Magento 2 package:
 "version_compatibility" : [
   {
     "edition" : "CE",
-    "versions" : [“2.0”, ”2.1”, "2.2"]
+    "versions" : ["2.0", "2.1", "2.2"]
   },
   {
     "edition" : "EE",
-    "versions" : [“2.0”,”2.1”, "2.2"]
+    "versions" : ["2.0","2.1", "2.2"]
   }
 ]
 ```
@@ -114,7 +171,7 @@ Assuming a Magento 2 package:
 }
 ```
 
-#### document_artifacts
+#### documentation_artifacts
 
 ```json
 "documentation_artifacts" : {
@@ -133,15 +190,15 @@ Assuming a Magento 2 package:
 #### shared_packages
 
 ```json
-“shared_packages” : [
+"shared_packages" : [
   {
-    “artifact” : {
-      “file_upload_id” : “sfRh72Mx9d”
+    "artifact" : {
+      "file_upload_id" : "sfRh72Mx9d"
     }
   },
   {
-    “artifact” : {
-      “file_upload_id” : “Gh893dCxak”
+    "artifact" : {
+      "file_upload_id" : "Gh893dCxak"
     }
   }
 ]
@@ -203,13 +260,13 @@ The **video_urls** property is optional.
 Up to three tiers per edition (`CE` (Open Source) and `EE` (Commerce)) can be supported:
 
 ```json
-“suppport_tiers” : [
+"support_tiers" : [
   {
-    “tier” : 1,
-    “edition” : “CE”,
+    "tier" : 1,
+    "edition" : "CE",
     "monthly_period" : 1,
-    "short_description" : “<Short description goes here.>”,
-    “long_description” “ “<Long description goes here.>”,
+    "short_description" : "<Short description goes here.>",
+    "long_description" : "<Long description goes here.>",
     "prices" : [
       {
         "currency_code" : "USD",
@@ -219,11 +276,11 @@ Up to three tiers per edition (`CE` (Open Source) and `EE` (Commerce)) can be su
 
   },
   {
-    “tier” : 1,
-    “edition” : “EE”,
+    "tier" : 1,
+    "edition" : "EE",
     "monthly_period" : 1,
-    "short_description" : “<Short description goes here.>”,
-    “long_description” “ “<Long description goes here.>”,
+    "short_description" : "<Short description goes here.>",
+    "long_description" : "<Long description goes here.>",
     "prices" : [
       {
         "currency_code" : "USD",
@@ -242,14 +299,14 @@ Sample structure for a package supporting only Chrome and Firefox:
 ```json
 "browser_os_compatibility" : {
   "chrome" : {
-    "mac" : [ “39”, "44”],
-    "windows" : [“43”, "44”],
-    "linux" : [“43”, "44”]
+    "mac" : [ "39", "44"],
+    "windows" : ["43", "44"],
+    "linux" : ["43", "44"]
   },
   "firefox" : {
-    "mac" : [ "40”, "41”],
-    "windows" : [“40”, “41”],
-    "linux" : [“40”, “41”]
+    "mac" : [ "40", "41"],
+    "windows" : ["40", "41"],
+    "linux" : ["40", "41"]
   }
 }
 ```
@@ -268,9 +325,25 @@ The list of valid values for the `browser_os_compatibility` are:
    *  `mac`
    *  `windows`
 
-#### options
+#### browsers
 
-Additional options that apply this package can be provided if applicable:
+A simplified way to specify browser compatibility: it is assumed that each browser listed is compatible on all platforms.
+If `browser_os_compatibility` is also present, this field is ignored.
+Otherwise, if present, this field overwrites all previously stored compatibility rules for this package version.
+The list of valid browsers is the same as for `browser_os_compatibility`.
+
+```json
+"browsers" : [
+  "chrome",
+  "firefox",
+]
+```
+
+#### marketing_options
+
+Additional marketing options that apply to this package can be provided if applicable.
+While this information is not currently used, it may become searchable for buyers in the future,
+so is potentially worth filling out if relevant:
 
 ```json
 "options" : {
@@ -284,9 +357,22 @@ Additional options that apply this package can be provided if applicable:
 }
 ```
 
+#### technical_options
+
+Additional technical options that apply to this package can be provided if applicable.
+These options are relevant to the technical review:
+
+```json
+"options" : {
+  "page_builder_new_content_type"          : true,
+  "page_builder_extends_content_type"      : false,
+  "page_builder_used_for_content_creation" : true
+}
+```
+
 #### action
 
-During EQP process, it can take the following fields:
+During the EQP process, it can take the following fields to control the parallel technical and marketing review flows:
 
 ```json
 "action" : {
@@ -301,11 +387,11 @@ During EQP process, it can take the following fields:
 |submit|string|Submit to the EQP process.|
 |recall|string|Recall the earlier submission from the EQP process.|
 
-Once a package is published to the store, it can have the following field:
+Once a package has been published to the store, this takes the following field:
 
 ```json
-“action” : {
-  “overall” : “publish”
+"action" : {
+  "overall" : "publish"
 }
 ```
 
@@ -327,8 +413,8 @@ Once a package is published to the store, it can have the following field:
 
 *  The *overall* value indicates where the package is in the EQP pipeline.
 *  Additional details are provided in the two main EQP areas:
-   *  **technical**—Provides the current technical status.
-   *  **marketing**—Provides the current marketing status.
+   *  **technical** - Provides the current technical status.
+   *  **marketing** - Provides the current marketing status.
 
 ##### Overall Status
 
@@ -379,15 +465,18 @@ PUT /rest/v1/products/packages/:item_id
 
 You can submit a package in either of the following ways:
 
-*  A single POST request with all required fields set. You must explicitly indicate that you are for technical and marketing review using the `action` parameter.
+*  A single POST request with all required fields set. You must explicitly indicate that you are submitting for technical and marketing review using the `action` parameter.
 *  A series of requests, typically in the following order:
    1. A single POST request with the minimum required fields set and `action` set to `draft` in either `technical`, `marketing`, or both. This request accepts the new package and saves it on the Developer Portal for further updates. It returns a unique `submission_id` for subsequent PUT operations.
    1. One or more PUT requests in which you configure the package parameters. In these requests, set `action` to `draft` in `technical`, `marketing`, or both.
    1. A final PUT request indicating submission for `technical`, `marketing`, or both.
 
-You can update one or more parameters in `draft` mode, but the API does not check for validation errors.
+You can update one or more parameters in `draft` mode.
+In this mode, the API checks only for basic type-validation issues.
 
-When the `action` field is set to `publish`, the API validates fields to ensure all required parameters are available on the Developer Portal to initiate the EQP process.
+When the `action` field is set to `publish`, the API validates fields to ensure all
+required parameters are available on the Developer Portal to initiate the EQP process,
+and that parameters which depend upon each other match up correctly.
 
 {: .bs-callout-info }
 All `action` fields are optional. If not specified, `draft` is the default value.
@@ -478,9 +567,11 @@ The following example shows a POST request with all required parameters set for 
 ]
 ```
 
-Since the API accepts batch requests for both POST and PUT operations, send a single submission as an array with one item.
+Since the API accepts batch requests for both POST and PUT operations,
+single submissions must be sent as an array containing one item.
 
-If you save the request body to a file, for example, `/tmp/one-click-submission-1.0.0.json`, the following example shows the package submission process:
+If you save the request body to a file, for example, `/tmp/one-click-submission-1.0.0.json`,
+the following example shows the package submission process:
 
 **Request**
 
@@ -512,9 +603,12 @@ curl -X POST \
 ```
 
 *  The API returns a HTTP 200 batch response listing items in the same order as they were provided in the request.
-*  Each item contains a `code` and `message` indicating success or failure. Any non-200 code indicates an error. Refer to the message for more details.
-*  A unique `submission_id` is returned for each successful item, which must be used for any GET, PUT, or DELETE methods.
-*  Optionally, if a user-defined `item_id` was supplied during the POST, the response will echo back the same `item_id` for each item in the batch. The resource can be retrieved via GET using the `item_id`.
+*  Each item contains a `code` and `message` indicating success or failure. Any non-200 code indicates an error.
+   Refer to the message for more details.
+*  A unique `submission_id` is returned for each successful item, which must be used for any GET or PUT methods.
+*  Optionally, if a user-defined `item_id` was supplied during the POST,
+   the response will echo back the same `item_id` for each item in the batch.
+   The resource can be retrieved via GET using the `item_id`.
 *  Any non-200 HTTP response code indicates an error for the entire batch request.
 
 ### Update a package
@@ -522,15 +616,20 @@ curl -X POST \
 The PUT method can be used to update packages in the following states:
 
 *  The package is in draft mode for the technical or marketing review; or both.
-*  The package has been rejected in either the technical or marketing review; or both. You must fix these issues and re-submit the package.
+*  The package has been rejected in either the technical or marketing review; or both.
+   You must fix these issues and re-submit the package.
 *  The package has been released to the Magento Marketplace.
 *  The package was removed from the store by the developer and needs to be re-published.
 *  The package can be recalled while in the EQP pipeline.
-*  After a package has been released to the Magento Marketplace, you can update marketing information only. Changing marketing information causes the package to be placed in marketing review. The package continues to be live on the marketplace, and after the marketing approval, the updated fields will be published to the store.
+*  After a package has been released to the Magento Marketplace, you can update marketing information only.
+   Changing marketing information causes the package to be placed in marketing review.
+   The package continues to be live on the marketplace, and after the marketing approval,
+   the updated fields will be published to the store.
 
 You cannot modify a package during the EQP process, except to recall the package.
 
-Updating several packages in a batch request is similar to the POST version above. The only difference is to supply `submission_id` for each item obtained from the POST request.
+Updating several packages in a batch request is similar to the POST version above.
+The only difference is to supply `submission_id` for each item obtained from the POST request.
 
 The PUT method also allows for updating a single package with `submission_id` as shown in the following example:
 
@@ -540,7 +639,7 @@ The PUT method also allows for updating a single package with `submission_id` as
 curl -X PUT \
      -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
      -H 'Content-Type: application/json' \
-     -d { “action” : { “overall” : “publish”} } \
+     -d '{ "action" : { "overall" : "publish"} }' \
      https://developer-api.magento.com/rest/v1/products/packages/f4eacd72be
 ```
 
@@ -548,7 +647,8 @@ The HTTP response code will indicate success or failure.
 
 #### Required parameters
 
-If the **action** parameter indicates `submit` value for technical, or marketing or both, the required parameters are listed below by their respective parallel EQP pipelines:
+If the **action** parameter gives a `submit` value for technical, marketing or both,
+the required parameters are listed below by their respective parallel EQP pipelines:
 
 ##### Technical
 
@@ -556,7 +656,7 @@ If the **action** parameter indicates `submit` value for technical, or marketing
 ----------|--------|
 |type||
 |platform||
-|version_compatibilty||
+|version_compatibility||
 |release_notes||
 |artifact||
 |documentation_artifacts|At least the `user` guide must be supplied.|
@@ -887,24 +987,3 @@ curl -X GET \
 **Response**
 
 A list of theme packages can be returned in the same way as described in [Get package details](#get-package-details).
-
-## Delete a package
-
-You can delete a package only if you specify a `submission_id` or `item_id` as a query parameter. Deleting a package is risky operation, and as a result, you cannot delete them in a batch.
-
-```http
-DELETE /rest/v1/products/packages/:submission_id
-DELETE /rest/v1/products/packages/items/:item_id
-```
-
-The following example deletes the package with `submission_id` `6fd7eaacbc`:
-
-**Request**
-
-```bash
-curl -X DELETE \
-     -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
-     https://developer-api.magento.com/rest/v1/products/packages/6fd7eaacbc
-```
-
-A 200 HTTP Response code indicates a successful operation.
