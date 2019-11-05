@@ -127,18 +127,18 @@ We use symbolic links for topics that are the same across versions of Magento. A
 
 When you create a new topic (create a new `.md` file) and its content is the same for 2.2 and 2.3 versions, create a symbolic link.
 
-For example, if you created a new file for v.2.2---`guides/v2.2/install-gde/new-doc-topic.md`---and its content is the same for v.2.3, use the command below to create the symbolic link.
+For example, if you created a new file for v.2.2: `guides/v2.2/install-gde/new-doc-topic.md` and its content is the same for v.2.3, use the command below to create the symbolic link.
 
 ```bash
-cd <DEVDOCS_REPOSITORY_ROOT_DIR>
+cd <DEVDOCS_REPOSITORY_ROOT_DIR>/guides/v2.3/install-gde
 ```
 
 ```bash
-ln -s guides/v2.2/install-gde/new-doc-topic.md guides/v2.3/install-gde/new-doc-topic.md
+ln -s ../../v2.2/install-gde/new-doc-topic.md new-doc-topic.md
 ```
 
 If you have an image that is identical between versions, it should placed in `/common/images`. Please optimize images before committing them to the repository.
-If done correctly, the symbolic link path will start with 3 or 4 instances of `../`, as the above example shows.
+If done correctly, the symbolic link path will start with 2-4 instances of `../`, as the above example shows. If possible, check a symlinked file within the same folder to ensure the proper pathing.
 
 ### Remove a symbolic link
 
@@ -149,11 +149,15 @@ The removal should use the `git rm` command specifically. Deleting the file thro
 For example:
 
 ```bash
-git rm guides/v2.3/install-gde/composer.md
+cd <DEVDOCS_REPOSITORY_ROOT_DIR>
 ```
 
 ```bash
-cp guides/v2.2/install-gde/composer.md guides/v2.3/install-gde/composer.md
+git rm guides/v2.3/install-gde/new-doc-topic.md
+```
+
+```bash
+cp guides/v2.2/install-gde/new-doc-topic.md guides/v2.3/install-gde/new-doc-topic.md
 ```
 
 Once you have the copy in place, you can edit it with the version-specific information.
