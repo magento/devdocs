@@ -554,7 +554,7 @@ You can remove navigation links from the 'My Account' dashboard on the storefron
 
 ## Create cms-page/product/category-specific layouts
 
-As of Magento 2.3.4/2.2.11, merchants can select layout updates to be applied to specific Category/Product/CMS Page pages on the frontend. These layout
+As of Magento 2.3.4, merchants can select layout updates to be applied to specific Category/Product/CMS Page pages on the frontend. These layout
 updates are made by creating layout XML files following specific naming conventions.
 
 For Categories:
