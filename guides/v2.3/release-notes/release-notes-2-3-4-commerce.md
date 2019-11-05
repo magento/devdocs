@@ -3,17 +3,17 @@ group: release-notes
 title: Magento Commerce 2.3.4 Release Notes
 ---
 
-*Patch code and release notes published , 201920*
+*Patch code and release notes published , 2020*
 
-Magento Commerce 2.3.4 offers significant platform upgrades, substantial security changes, and PSD2-compliant core payment methods.
+Magento Commerce 2.3.4 offers significant platform upgrades, substantial security changes, and performance improvements.
 
-This release includes over 170 functional fixes to the core product and  over 75 security enhancements. It includes over 200 contributions from our community members. These contributions range from minor clean-up of core code to significant enhancements to Inventory Management and GraphQL.
+This release includes over 220 functional fixes to the core product and  over 30 security enhancements. It includes resolution of over 275 contributions by our community members. These community contributions range from minor clean-up of core code to significant enhancements to Inventory Management and GraphQL.
 
 {% include install/pre-release.md %}
 
 ## Security-only patch available
 
-Merchants can now install time-sensitive security fixes without applying the hundreds of functional fixes and enhancements that a full quarterly release (for example, Magento 2.3.3) provides. Patch 2.3.2.1 (Composer package 2.3.2-p1) is a security-only patch that provides fixes for vulnerabilities that have been identified in our previous quarterly release, Magento 2.3.2.  For general information about security-only patches, see the Magento DevBlog post [Introducing the New Security-only Patch Release](https://community.magento.com/t5/Magento-DevBlog/Introducing-the-New-Security-only-Patch-Release/ba-p/141287). For instructions on downloading and applying security-only patches (including patch 2.3.2-p1), see [Install Magento using Composer](https://devdocs-beta.magento.com/guides/v2.3/install-gde/composer.html#get-the-metapackage).
+Merchants can now install time-sensitive security fixes without applying the hundreds of functional fixes and enhancements that a full quarterly release (for example, Magento 2.3.4) provides. Patch 2.3.2.2 (Composer package 2.3.2-2) is a security-only patch that provides fixes for vulnerabilities that have been identified in our previous quarterly release, Magento 2.3.3.  For general information about security-only patches, see the Magento DevBlog post [Introducing the New Security-only Patch Release](https://community.magento.com/t5/Magento-DevBlog/Introducing-the-New-Security-only-Patch-Release/ba-p/141287). For instructions on downloading and applying security-only patches (including patch 2.3.2-p2), see [Install Magento using Composer](https://devdocs-beta.magento.com/guides/v2.3/install-gde/composer.html#get-the-metapackage).
 
 ## Other release information
 
@@ -27,93 +27,94 @@ Look for the following highlights in this release:
 
 This release includes the following security enhancements:
 
-
-
+* **Over 30 security enhancements** that help close cross-site scripting (XSS) and remote code execution (RCE) vulnerabilities as well as other security issues. No confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. Most of these issues require that an attacker first obtains access to the Admin. As a result, we remind you to take all necessary steps to protect your Admin, including but not limited to these efforts: IP whitelisting, [two-factor authentication](https://devdocs.magento.com/guides/v2.3/security/two-factor-authentication.html), use of a VPN, the use of a unique location rather than `/admin`, and good password hygiene. See [Magento Security Center](https://magento.com/security/patches/magento-2.3.4-2.2.11-security-update) for a comprehensive discussion of these issues. All known exploitable security issues fixed in this release (2.3.3) have been ported to 2.2.11, 1.14.4.4, and 1.9.4.4, as appropriate.
 
 #### Security enhancements and fixes to core code
 
-*  **75 security enhancements**  that help close cross-site scripting (XSS) and remote code execution (RCE) vulnerabilities as well as other security issues. No confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. Most of these issues require that an attacker first obtains access to the Admin. As a result, we remind you to take all necessary steps to protect your Admin, including but not limited to these efforts: IP whitelisting, [two-factor authentication](https://devdocs.magento.com/guides/v2.3/security/two-factor-authentication.html), use of a VPN, the use of a unique location rather than `/admin`, and good password hygiene. See [Magento Security Center](https://magento.com/security/patches/magento-2.3.3-2.2.10-security-update) for a comprehensive discussion of these issues. All known exploitable security issues fixed in this release (2.3.3) have been ported to 2.2.10, 1.14.4.3, and 1.9.4.3, as appropriate.
+Additional security enhancements include:
+
+* **Removal of custom layout updates and the deprecation of layout updates to remove the opportunity for Remote Code Execution (RCE)**.  The **Custom Layout Update** field on the CMS Page Edit, Category Edit, and Product Edit pages has now been converted to a selector. You can no longer specify an entity-specific layout update with text but instead must create a physical file that  contains the layout updates and select it for use. The name of the file containing an update must follow the  conventions described here. <!--- MC-16129-->
+
+* **Redesigned  content template features so that only whitelisted variables can be added to templates**. This avoids the situation where administrator-defined templates such as email, newsletters, and CMS content can include variables and directives that can directly call PHP functions on objects.
 
 {:.bs-callout-info}
 Starting with the release of Magento Commerce 2.3.2, Magento will assign and publish indexed Common Vulnerabilities and Exposures (CVE) numbers with each security bug reported to us by external parties. This allows users of Magento Commerce to more easily identify unaddressed vulnerabilities in their deployment.
 
 ### Platform upgrades
 
+The following platform upgrades help enhance website security and PCI compliance.
+
+* **Enhancements to the message queue framework**. Magento now supports the latest release of RabbitMQ v3.8, which is the third-party technology that underlies the Magento message queue framework. <!--- MC-14871-->
+  
+* **Improved page caching and session storage**. This release has been tested on the latest stable release of Redis v5.0.5. <!--- MC-14877-->
+
+* **Enhanced support for Maria DB 10.2**. This release introduces a new abstraction layer that permits retrieval of information about tables and columns in deployments that implement declarative schema and MariaDB 10.2. Previously, when you ran `setup:upgrade` in a deployment with those features,  Magento threw an error indicating that the the schema was out-of-date. <!--- MC-16319 MC-17633-->
+
+* The core integration of the Authorize.net payment method has been deprecated. Please use the official payment integration that is available on Marketplace.
 
 ### Performance boosts
 
+Merchants and customers will see performance improvements as a result of these enhancements:
 
+* Redundant non-cached requests to the server have been reduced by refactoring customer section invalidation and banner cache logic. <!--- MC-19107 MC-19249-->
+
+* PHTML files have been refactored for better parsing. Our new bundling mechanism now identifies all dependencies. <!--- MC-19242-->
+
+* Added the ability to disable statistic collecting for Reports module by default. A new configuration setting (**System Configuration** > **General** > **Reports** > **General Options**)  allows merchants to completely or partially disable Magento Reports. (Magento recommends disabling Reports functionality for performance reasons when this capability is not required.)  <!--- MC-20322-->
 
 ### Infrastructure improvements
 
-This release contains  enhancements to core quality, which improve the quality of the Framework and these modules:  Here are some additional core enhancements:
-
+This release contains over 220 enhancements to core quality, which improve the quality of the Framework and these modules:  catalog, sales, PayPal, Elasticsearch, import, CMS, and B2B.
 
 ### Merchant tool enhancements
 
+* **Integration with Adobe Stock image galleries**. The new bundled Adobe stock integration extension opens the collection  of Adobe stock photos to merchants. This extension supports searching for images in the Adobe Stock gallery, programmatically saving animate preview to Magento Media, and licensing images from Adobe Stock.
 
 ### Page Builder
 
 Page Builder enhancements for this release include:
 
+* Improved product sorting. Merchants can now sort by product position in category or list of product SKUs, and sort by defined parameters such as name or stock status.
 
-### Inventory Management enhancements
+* Improved product carousel. Merchants can choose how to showcase products in their content by selecting from predefined options in Page Builder Products content type.
 
-*  Fixes to multiple  bugs. See [Inventory Management release notes](https://devdocs.magento.com/guides/v2.3/inventory/release-notes.html).
+### Inventory Management
+
+Inventory Management enhancements for this release include:
+
+* New in-store pickup feature
+* Support for bundle products on non-default stocks
+* Performance optimizations
+
+See [Inventory Management release notes](https://devdocs.magento.com/guides/v2.3/inventory/release-notes.html) for a more detailed discussion of recent GraphQL bug fixes.
 
 ### GraphQL
 
-Expanded GraphQL functionality and improved coverage for PayPal payment integrations, gift cards, and store credit features. Added mutations and queries that support these tasks:
+Expanded GraphQL functionality and improvements include the following:
 
-
+* StoreFront API coverage for Catalog and Checkout
+* Pricing schema
+* Performance
+  
 See [Release notes](https://devdocs.magento.com/guides/v2.3/graphql/release-notes.html) for a more detailed discussion of recent GraphQL bug fixes.
 
 ### PWA Studio
 
- For information on these enhancements plus other improvements, see [PWA Studio releases](https://github.com/magento/pwa-studio/releases).
+For information on these enhancements plus other improvements, see [PWA Studio releases](https://github.com/magento/pwa-studio/releases)
 
 ### Google Shopping ads Channel
 
- [Google Shopping ads Channel Release Notes](https://devdocs.magento.com/extensions/google-shopping-ads/release-notes/)  describes all changes to this feature for Magento 2.3.x.
-
-### Magento Shipping
-
+[Google Shopping ads Channel Release Notes](https://devdocs.magento.com/extensions/google-shopping-ads/release-notes/)  describes all changes to this feature for Magento 2.3.x.
 
 ### Vendor-developed extension enhancements
 
-This release of Magento includes extensions developed by third-party vendors. 
-
-#### Amazon Pay
-
-
-#### dotdigital
-
-
-
-#### Klarna
-
-
-
-See [Klarna](https://docs.magento.com/m2/ee/user_guide/payment/klarna.html).
-
-#### Vertex
-
-
-<!--- BUNDLE--->
-
-
-#### Yotpo
-
-
+This release of Magento includes extensions developed by third-party vendors. It includes both quality and UX improvements to these extensions.
 
 ## Backward-incompatible Changes
 
-
-
 ## Fixed issues
 
-We have fixed hundreds of issues in the Magento 2.3.3 core code.
-
+We have fixed hundreds of issues in the Magento 2.3.4 core code.
 
 ### Installation, upgrade, deployment
 
@@ -133,7 +134,6 @@ We have fixed hundreds of issues in the Magento 2.3.3 core code.
 <!--- ENGCOM-6040-->
 * Magento no longer disables the cache when you run `composer update`. *Fix submitted by adrian-martinez-interactiv4 in pull request [24892](https://github.com/magento/magento2/pull/24892)*. [GitHub-17634](https://github.com/magento/magento2/issues/17634)
 
-
 ### AdminGWS
 
 <!--- MC-18702-->
@@ -143,8 +143,6 @@ We have fixed hundreds of issues in the Magento 2.3.3 core code.
 <!--- ENGCOM-5978-->
 *Fix submitted by Adarsh Manickam in pull request [24773](https://github.com/magento/magento2/pull/24773)*. [GitHub-24708](https://github.com/magento/magento2/issues/24708)
 
-
-
 ### Backend
 
 <!--- MC-20622-->
@@ -152,6 +150,8 @@ We have fixed hundreds of issues in the Magento 2.3.3 core code.
 ### Banner
 
 <!--- MC-13951-->
+
+<!--- MC-19738--> ee only
 
 ### Bundle products
 
@@ -167,7 +167,6 @@ We have fixed hundreds of issues in the Magento 2.3.3 core code.
 
 <!--- ENGCOM-5953-->
 *Fix submitted by Pieter Hoste in pull request [24703](https://github.com/magento/magento2/pull/24703)*. [GitHub-13126](https://github.com/magento/magento2/issues/13126), [GitHub-14112](https://github.com/magento/magento2/issues/14112)
-
 
 ### B2B
 
@@ -209,12 +208,13 @@ We have fixed hundreds of issues in the Magento 2.3.3 core code.
 
 <!--- MC-21662-->
 
+<!--- MC-21688-->
+
+<!--- MC-16052-->
 
 ### Cache
 
 <!--- MC-19712-->
-
-
 
 ### Cart and checkout
 
@@ -241,10 +241,10 @@ We have fixed hundreds of issues in the Magento 2.3.3 core code.
 <!--- MC-21756-->
 
 <!--- ENGCOM-5525-->
- *Fix submitted by Denis Kopylov in pull request [23871](https://github.com/magento/magento2/pull/23871)*. [GitHub-23863](https://github.com/magento/magento2/issues/23863)
+*Fix submitted by Denis Kopylov in pull request [23871](https://github.com/magento/magento2/pull/23871)*. [GitHub-23863](https://github.com/magento/magento2/issues/23863)
 
 <!--- ENGCOM-5513-->
- *Fix submitted by Eden Duong in pull request [23896](https://github.com/magento/magento2/pull/23896)*. [GitHub-23895](https://github.com/magento/magento2/issues/23895)
+*Fix submitted by Eden Duong in pull request [23896](https://github.com/magento/magento2/pull/23896)*. [GitHub-23895](https://github.com/magento/magento2/issues/23895)
 
 <!--- ENGCOM-5511-->
 * Magento now displays correct product quantities on the Items Ordered  tab of the order page when the price includes a decimal value.  *Fix submitted by Eden Duong in pull request [23943](https://github.com/magento/magento2/pull/23943)*. [GitHub-23940](https://github.com/magento/magento2/issues/23940)
@@ -297,10 +297,13 @@ We have fixed hundreds of issues in the Magento 2.3.3 core code.
 <!--- ENGCOM-6151-->
 *Fix submitted by Ivan Koliadynskyy in pull request [24862](https://github.com/magento/magento2/pull/24862)*. [GitHub-24808](https://github.com/magento/magento2/issues/24808)
 
+<!--- MC-21906-->
+
+<!--- MC-20881-->
+
+<!--- MC-21706-->
 
 ### Cart Price rules
-
-
 
 ### Catalog
 
@@ -356,21 +359,19 @@ gh 23951
 <!--- ENGCOM-6065-->
 *Fix submitted by Mahesh Singh in pull request [24973](https://github.com/magento/magento2/pull/24973)*. [GitHub-24964](https://github.com/magento/magento2/issues/24964)
 
-
+<!--- MC-21933-->
 
 ### CatalogInventory
 
 <!--- MC-17524-->
 
-
 ### Catalog rule
 
 <!--- MC-10974-->
 
+<!--- MC-22135-->ee only
 
 ### Cleanup and simple code refactoring
-
-
 
 <!--- ENGCOM-5549-->
 * The **Are you sure you want to delete this category?** message is now translatable. *Fix submitted by Eden Duong in pull request [24039](https://github.com/magento/magento2/pull/24039)*. [GitHub-24038](https://github.com/magento/magento2/issues/24038)
@@ -417,7 +418,6 @@ gh 23951
 <!--- ENGCOM-5550-->
 * Duplicate labels in the Admin **Sales** > **Transactions** Payment Method table have been removed. *Fix submitted by Eden Duong in pull request [24041](https://github.com/magento/magento2/pull/24041)*. [GitHub-24040](https://github.com/magento/magento2/issues/24040)
 
-
 ### CMS content
 
 <!--- MC-20709-->
@@ -437,7 +437,6 @@ gh 23951
 <!--- ENGCOM-5970-->
 *Fix submitted by Ivan Koliadynskyy in pull request [24755](https://github.com/magento/magento2/pull/24755)*. [GitHub-13218](https://github.com/magento/magento2/issues/13218)
 
-
 ### Configurable products
 
 <!--- MC-18810-->
@@ -454,10 +453,7 @@ gh 23951
 <!--- ENGCOM-6015-->
 *Fix submitted by Laura Folco in pull request [24875](https://github.com/magento/magento2/pull/24875)*. [GitHub-24483](https://github.com/magento/magento2/issues/24483)
 
-
 ### Coupon
-
-
 
 ### Cron
 
@@ -466,7 +462,6 @@ gh 23951
 
 <!--- ENGCOM-5934-->
 *Fix submitted by Bruno Roeder in pull request [24590](https://github.com/magento/magento2/pull/24590)*. [GitHub-23846](https://github.com/magento/magento2/issues/23846)
-
 
 ### Customer
 
@@ -492,15 +487,12 @@ gh 23951
 
 *Fix submitted by Christos Stergianos in pull request [25184](https://github.com/magento/magento2/pull/25184)*. [GitHub-21592](https://github.com/magento/magento2/issues/21592)
 
-
-
 ### Custom customer attributes
 
 <!--- MC-19696-->
 ee only
 
 <!--- MAGETWO-99838-->
-
 
 ### Database media storage
 
@@ -515,11 +507,6 @@ ee only
 <!--- ENGCOM-6166-->
 *Fix submitted by korostii in pull request [25265](https://github.com/magento/magento2/pull/25265)*. [GitHub-23031](https://github.com/magento/magento2/issues/23031)
 
-
-### Directory
-
-
-
 ### Downloadable products
 
 <!--- ENGCOM-5865-->
@@ -528,17 +515,11 @@ ee only
 <!--- ENGCOM-6047-->
 *Fix submitted by Adarsh Manickam in pull request [24800](https://github.com/magento/magento2/pull/24800)*. [GitHub-24785](https://github.com/magento/magento2/issues/24785)
 
-
-
 ### Dynamic block
 
 <!--- MC-19851-->
 
 <!--- MC-19000-->
-
-
-
-
 
 ### EAV
 
@@ -560,6 +541,7 @@ ee only
 <!--- ENGCOM-5367-->
 *Fix submitted by Thomas Klein in pull request [23452](https://github.com/magento/magento2/pull/23452)*. [GitHub-23451](https://github.com/magento/magento2/issues/23451)
 
+<!--- MC-19031-->
 
 ### Email
 
@@ -578,7 +560,6 @@ ee only
 <!--- ENGCOM-6034-->
 *Fix submitted by elvinristi in pull request [24906](https://github.com/magento/magento2/pull/24906)*. [GitHub-24902](https://github.com/magento/magento2/issues/24902)
 
-
 ### Frameworks
 
 <!--- MC-19701-->
@@ -591,7 +572,6 @@ ee only
 
 <!--- MC-21481-->
 
-
 #### JavaScript framework
 
 <!--- ENGCOM-5815-->
@@ -599,7 +579,6 @@ ee only
 
 <!--- ENGCOM-5994-->
 *Fix submitted by Bartłomiej Szubert in pull request [24833](https://github.com/magento/magento2/pull/24833)*. [GitHub-22747](https://github.com/magento/magento2/issues/22747)
-
 
 ### General fixes
 
@@ -703,7 +682,6 @@ ee only
 <!--- ENGCOM-6158-->
 *Fix submitted by Mateusz Krzeszowiak in pull request [25233](https://github.com/magento/magento2/pull/25233)*. [GitHub-25231](https://github.com/magento/magento2/issues/25231)
 
-
 ### Gift card
 
 <!--- MC-16375-->
@@ -713,18 +691,14 @@ ee only
 
 ### Gift registry
 
-
 ### Gift wrapping
 
 <!--- MC-18005-->
-
 
 ### Google Tag Manager
 
 <!--- ENGCOM-4731-->
 *Fix submitted by Raul E Watson in pull request [14](https://github.com/magento/partners-magento2ee/pull/14)*. [GitHub-20164](https://github.com/magento/magento2/issues/20164)
-
-
 
 ### Image
 
@@ -736,7 +710,6 @@ ee only
 
 <!--- ENGCOM-5639-->
 *Fix submitted by Sergey Solo in pull request [23820](https://github.com/magento/magento2/pull/23820)*. [GitHub-3993](https://github.com/magento/magento2/issues/3993)
-
 
 ### Import/export
 
@@ -760,7 +733,7 @@ ee only
 *Fix submitted by Eden Duong in pull request [24008](https://github.com/magento/magento2/pull/24008)*. [GitHub-24007](https://github.com/magento/magento2/issues/24007)
 
 <!--- ENGCOM-5799 5751-->
-*Fix submitted by Alexander Taranovsky in pull request [24420](https://github.com/magento/magento2/pull/24420)*. [GitHub-5246](https://github.com/magento/magento2/issues/5246), 
+*Fix submitted by Alexander Taranovsky in pull request [24420](https://github.com/magento/magento2/pull/24420)*. [GitHub-5246](https://github.com/magento/magento2/issues/5246)
 
 <!--- ENGCOM-5702-->
 *Fix submitted by kristiancharb in pull request [24053](https://github.com/magento/magento2/pull/24053)*. [GitHub-23042](https://github.com/magento/magento2/issues/23042)
@@ -777,8 +750,7 @@ ee only
 <!--- ENGCOM-6079-->
 *Fix submitted by Alexander Lukyanov in pull request [24969](https://github.com/magento/magento2/pull/24969)*. [GitHub-23465](https://github.com/magento/magento2/issues/23465)
 
-
-
+<!--- MC-22390-->
 
 ### Index
 
@@ -792,7 +764,7 @@ ee only
 <!--- ENGCOM-5910-->
 *Fix submitted by Bruce in pull request [24415](https://github.com/magento/magento2/pull/24415)*. [GitHub-24414](https://github.com/magento/magento2/issues/24414)
 
-
+<!--- MC-22021--> ee only
 
 ### Infrastructure
 
@@ -825,7 +797,6 @@ ee only
 <!--- ENGCOM-6186-->
 *Fix submitted by Cristian Sanclemente in pull request [25317](https://github.com/magento/magento2/pull/25317)*. [GitHub-23920](https://github.com/magento/magento2/issues/23920)
 
-
 ### Inventory
 
 <!--- MC-17916-->
@@ -842,8 +813,6 @@ ee only
 
 <!--- ENGCOM-5802-->
 *Fix submitted by Mahesh Singh in pull request [24497](https://github.com/magento/magento2/pull/24497)*. [GitHub-24031](https://github.com/magento/magento2/issues/24031)
-
-
 
 ### Media storage
 
@@ -867,6 +836,7 @@ ee only
 <!--- ENGCOM-6148-->
 Corrected alignment of the Newsletter label and associated checkbox on the Admin customer edit page. *Fix submitted by Arvinda Kumar in pull request [25208](https://github.com/magento/magento2/pull/25208)*. [GitHub-25207](https://github.com/magento/magento2/issues/25207)
 
+<!--- MC-17948-->
 
 ### Orders
 
@@ -894,11 +864,9 @@ Corrected alignment of the Newsletter label and associated checkbox on the Admin
 <!--- ENGCOM-6112-->
 *Fix submitted by Eden Duong in pull request [25085](https://github.com/magento/magento2/pull/25085)*. [GitHub-25072](https://github.com/magento/magento2/issues/25072)
 
-
 ### Page Builder
 
 <!--- MC-18071-->
-
 
 ### Payment methods
 
@@ -943,6 +911,9 @@ Corrected alignment of the Newsletter label and associated checkbox on the Admin
 <!--- ENGCOM-5925-->
 *Fix submitted by yupik in pull request [24694](https://github.com/magento/magento2/pull/24694)*. [GitHub-23880](https://github.com/magento/magento2/issues/23880)
 
+<!--- MC-22006-->
+
+<!--- MC-22114-->
 
 ### Performance
 
@@ -950,10 +921,7 @@ Corrected alignment of the Newsletter label and associated checkbox on the Admin
 
 <!--- MC-20173-->
 
-
 ### Pricing
-
-
 
 ### Reports
 
@@ -965,7 +933,6 @@ Corrected alignment of the Newsletter label and associated checkbox on the Admin
 
 <!--- ENGCOM-6104-->
 *Fix submitted by Eden Duong in pull request [25034](https://github.com/magento/magento2/pull/25034)*. [GitHub-25033](https://github.com/magento/magento2/issues/25033)
-
 
 ### Reviews
 
@@ -979,8 +946,6 @@ Corrected alignment of the Newsletter label and associated checkbox on the Admin
 
 <!--- ENGCOM-6113-->
 *Fix submitted by Gaurav Agarwal in pull request [25051](https://github.com/magento/magento2/pull/25051)*. [GitHub-25039](https://github.com/magento/magento2/issues/25039)
-
-
 
 ### Return Merchandise Authorizations (RMA)
 
@@ -996,17 +961,17 @@ Corrected alignment of the Newsletter label and associated checkbox on the Admin
 
 <!--- MC-19433-->
 
+<!--- MC-20986-->
 
 ### Reward ee only
 
-<!--- MC-19017--> 
+<!--- MC-19017-->
 
 <!--- MC-19428-->
 
 <!--- MC-19189-->
 
 <!--- MC-19430-->
-
 
 ### Sales
 
@@ -1025,7 +990,12 @@ Corrected alignment of the Newsletter label and associated checkbox on the Admin
 <!--- ENGCOM-5516-->
  *Fix submitted by kcnariya in pull request [23898](https://github.com/magento/magento2/pull/23898)*. [GitHub-23897](https://github.com/magento/magento2/issues/23897)
 
+<!--- MC-20193-->
+gh 13466
 
+<!--- MC-20387-->
+
+<!--- MAGETWO-72172-->
 
 ### SalesRule
 
@@ -1041,9 +1011,9 @@ gh  24526
 
 <!--- MC-19238-->
 
-
 ### Search
 
+<!--- MC-21808-->
 
 <!--- MC-20381-->
 
@@ -1082,7 +1052,6 @@ gh  24526
 <!--- ENGCOM-6106-->
 *Fix submitted by Pavel Bystritsky in pull request [24974](https://github.com/magento/magento2/pull/24974)*. [GitHub-24781](https://github.com/magento/magento2/issues/24781)
 
-
 ### Shipping
 
 <!--- MC-18366-->
@@ -1104,7 +1073,7 @@ gh  24526
 *Fix submitted by wbeltranc in pull request [24265](https://github.com/magento/magento2/pull/24265)*. [GitHub-19853](https://github.com/magento/magento2/issues/19853)
 
 <!--- ENGCOM-5674-->
- *Fix submitted by Eden Duong in pull request [24213](https://github.com/magento/magento2/pull/24213)*. [GitHub-24212](https://github.com/magento/magento2/issues/24212)
+*Fix submitted by Eden Duong in pull request [24213](https://github.com/magento/magento2/pull/24213)*. [GitHub-24212](https://github.com/magento/magento2/issues/24212)
 
 <!--- ENGCOM-5703-->
 *Fix submitted by Eden Duong in pull request [24296](https://github.com/magento/magento2/pull/24296)*. [GitHub-24295](https://github.com/magento/magento2/issues/24295)
@@ -1114,8 +1083,6 @@ gh  24526
 
 <!--- ENGCOM-5993-->
 *Fix submitted by Max Souza in pull request [24827](https://github.com/magento/magento2/pull/24827)*. [GitHub-24701](https://github.com/magento/magento2/issues/24701)
-
-
 
 ### Sitemap
 
@@ -1127,8 +1094,6 @@ gh  24526
 
 <!--- ENGCOM-5917-->
 *Fix submitted by Hailong in pull request [24675](https://github.com/magento/magento2/pull/24675)*. [GitHub-24623](https://github.com/magento/magento2/issues/24623)
-
-
 
 ### Staging
 
@@ -1159,7 +1124,6 @@ gh  24526
 <!--- ENGCOM-5853-->
 *Fix submitted by Oleksandr Kravchuk in pull request [24627](https://github.com/magento/magento2/pull/24627)*. [GitHub-24626](https://github.com/magento/magento2/issues/24626)
 
-
 ### Swatches
 
 <!--- MC-19739-->
@@ -1171,12 +1135,9 @@ gh  24526
 <!--- ENGCOM-5716-->
 *Fix submitted by Rani Priya in pull request [24308](https://github.com/magento/magento2/pull/24308)*. [GitHub-24306](https://github.com/magento/magento2/issues/24306)
 
-
-
 ### Target Rule ee only
 
 <!--- MC-21900-->
-
 
 ### Tax
 
@@ -1185,17 +1146,13 @@ gh  24526
 <!--- ENGCOM-5545-->
 *Fix submitted by Eden Duong in pull request [23968](https://github.com/magento/magento2/pull/23968)*. [GitHub-23967](https://github.com/magento/magento2/issues/23967)
 
-
 <!--- ENGCOM-5558-->
  *Fix submitted by Eden Duong in pull request [23739](https://github.com/magento/magento2/pull/23739)*. [GitHub-23738](https://github.com/magento/magento2/issues/23738)
 
 <!--- ENGCOM-6004-->
 *Fix submitted by Bruno Roeder in pull request [24737](https://github.com/magento/magento2/pull/24737)*. [GitHub-23116](https://github.com/magento/magento2/issues/23116)
 
-
 ### Templates
-
-
 
 ### Testing
 
@@ -1203,8 +1160,6 @@ gh  24526
 
 <!--- ENGCOM-5940-->
 *Fix submitted by Yurii in pull request [24291](https://github.com/magento/magento2/pull/24291)*. [GitHub-23279](https://github.com/magento/magento2/issues/23279)
-
-
 
 ### Translation and locales
 
@@ -1215,9 +1170,6 @@ gh  24526
 
 <!--- ENGCOM-5972-->
 *Fix submitted by Bartłomiej Szubert in pull request [22293](https://github.com/magento/magento2/pull/22293)*. [GitHub-12256](https://github.com/magento/magento2/issues/12256), [GitHub-13263](https://github.com/magento/magento2/issues/13263)
-
-
-
 
 ### UI
 
@@ -1232,7 +1184,6 @@ gh  24526
 <!--- ENGCOM-5536-->
 *Fix submitted by Nick de Kleijn in pull request [23884](https://github.com/magento/magento2/pull/23884)*. [GitHub-23877](https://github.com/magento/magento2/issues/23877)
 
-
 <!--- ENGCOM-5533-->
 * The tax amount in  sales order emails is now displayed before the row that displays the order’s grand total. *Fix submitted by Nazar Klovanych in pull request [23406](https://github.com/magento/magento2/pull/23406)*. [GitHub-21768](https://github.com/magento/magento2/issues/21768)
 
@@ -1243,7 +1194,7 @@ gh  24526
 *Fix submitted by Syed Imtiyaz Hasan in pull request [23699](https://github.com/magento/magento2/pull/23699)*. [GitHub-23575](https://github.com/magento/magento2/issues/23575)
 
 <!--- ENGCOM-5535-->
- *Fix submitted by Eden Duong in pull request [23747](https://github.com/magento/magento2/pull/23747)*. [GitHub-23746](https://github.com/magento/magento2/issues/23746)
+*Fix submitted by Eden Duong in pull request [23747](https://github.com/magento/magento2/pull/23747)*. [GitHub-23746](https://github.com/magento/magento2/issues/23746)
 
 <!--- ENGCOM-5586-->
 * A missing header label has been  added to the Admin **System** > **Integrations** table. *Fix submitted by Eden Duong in pull request [24097](https://github.com/magento/magento2/pull/24097)*. [GitHub-24096](https://github.com/magento/magento2/issues/24096)
@@ -1335,7 +1286,9 @@ gh  24526
 <!--- ENGCOM-6152-->
 *Fix submitted by Rahul Mahto in pull request [25168](https://github.com/magento/magento2/pull/25168)*. [GitHub-25167](https://github.com/magento/magento2/issues/25167)
 
+<!--- MC-17149-->
 
+<!--- MC-19783-->
 
 ### URL rewrites
 
@@ -1352,10 +1305,9 @@ gh  24526
 <!--- ENGCOM-5446-->
 *Fix submitted by Stanislav Ilnytskyi in pull request [23430](https://github.com/magento/magento2/pull/23430)*. [GitHub-23429](https://github.com/magento/magento2/issues/23429)
 
+<!--- MC-21716-->
 
 ### Vertex
-
-
 
 ### Visual Merchandiser ee only
 
@@ -1365,6 +1317,7 @@ gh  24526
 
 <!--- MC-21033-->
 
+<!--- MC-21033-->
 
 ### Web API framework
 
@@ -1380,7 +1333,6 @@ gh  24526
 
 <!--- ENGCOM-5987-->
 *Fix submitted by Ivan Koliadynskyy in pull request [24769](https://github.com/magento/magento2/pull/24769)*. [GitHub-24716](https://github.com/magento/magento2/issues/24716)
-
 
 ### Widget
 
@@ -1402,8 +1354,6 @@ gh  24526
 <!--- ENGCOM-5760-->
 *Fix submitted by Rus0 in pull request [24300](https://github.com/magento/magento2/pull/24300)*. [GitHub-21519](https://github.com/magento/magento2/issues/21519)
 
-
-
 ### WYSIWYG
 
 <!--- MC-19602-->
@@ -1417,14 +1367,13 @@ gh  24526
 <!--- ENGCOM-5727-->
 *Fix submitted by Pavel Bystritsky in pull request [24333](https://github.com/magento/magento2/pull/24333)*. [GitHub-23966](https://github.com/magento/magento2/issues/23966)
 
-
 ## Community contributions
 
  We are grateful to the wider Magento community and would like to acknowledge their contributions to this release. Check out the following ways you can learn about the community contributions to our current releases:
 
-*  If a community member has provided a fix for this release, we identify the fix in the Fixed Issue section of these notes with the phrase, "*Fix provided by community member*".
+* If a community member has provided a fix for this release, we identify the fix in the Fixed Issue section of these notes with the phrase, "*Fix provided by community member*".
 
-*  The Magento Community Engineering team [Magento Contributors](https://magento.com/magento-contributors) maintains a list of top contributing individuals and partners by month, quarter, and year. From that Contributors page, you can follow links to their merged PRs on GitHub.
+* The Magento Community Engineering team [Magento Contributors](https://magento.com/magento-contributors) maintains a list of top contributing individuals and partners by month, quarter, and year. From that Contributors page, you can follow links to their merged PRs on GitHub.
 
 ### Partner contributions
 
