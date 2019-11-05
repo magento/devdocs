@@ -24,7 +24,7 @@ namespace :check do
       abort 'Cannot find any modified .md files.'.magenta if modified_md_files.empty?
       path = modified_md_files.join(' ')
     end
-    report = `bin/mdl #{path}`
+    report = `mdl #{path}`
     puts report.yellow
     puts 'The rules are defined in _checks/styles/style-rules-dev'.magenta
   end

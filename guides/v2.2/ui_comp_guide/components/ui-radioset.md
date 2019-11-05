@@ -7,78 +7,9 @@ The Radioset component is a shortcut for [Checkboxset]({{ page.baseurl }}/ui_com
 
 ## Configuration options
 
-<table>
-  <tr>
-    <th>
-      Option
-    </th>
-    <th>
-      Description
-    </th>
-    <th>
-      Type
-    </th>
-    <th>
-      Default
-    </th>
-  </tr>
-  <tr>
-    <td>
-      <code>component&lt;code&gt;</code>
-    </td>
-    <td>
-      The path to the component’s <code>.js</code> file in terms of
-      RequireJS.
-    </td>
-    <td>
-      String
-    </td>
-    <td>
-      <code>Magento_Ui/js/form/element/checkbox-set</code>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>multiple</code>
-    </td>
-    <td>
-      Set the input type in the UI: true for checkbox, false for
-      radio button.
-    </td>
-    <td>
-      Boolean
-    </td>
-    <td>
-      <code>false</code>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>options</code>
-    </td>
-    <td>
-      The array of the options to be displayed in the list for
-      selection.
-    </td>
-    <td>
-      Array
-    </td>
-    <td>
-      <code>[]</code>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>template</code>
-    </td>
-    <td>
-      The path to the component’s <code>.html</code> template.
-    </td>
-    <td>
-      String
-    </td>
-    <td>
-      <code>ui/form/element/checkbox-set</code>
-    </td>
-  </tr>
-</table>
+|Option|Description|Type|Default|
+|--- |--- |--- |--- |
+|`component`|The path to the component’s `.js` file in terms of RequireJS.|String|`Magento_Ui/js/form/element/checkbox-set`|
+|`multiple`|Set the input type in the UI: true for checkbox, false for radio button.|Boolean|`false`|
+|`options`|The array of the options to be displayed in the list for selection.|Array|`[]`|
+|`template`|The path to the component’s `.html` template.|String|`ui/form/element/checkbox-set`|

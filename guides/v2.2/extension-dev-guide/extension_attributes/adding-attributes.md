@@ -47,7 +47,7 @@ The response to these requests will return objects with the following structure:
 ## Add plugin to product repository
 
 In order to add extension attributes, we need to use an after plugin on Product Repository.
-The plugin should follow the methods: save, get, getList.
+The plugin should be declared for the methods: `save`, `get` and `getList`.
 
 We can add scalar and non-scalar extension attributes.
 Scalar is a simple attribute.
@@ -75,7 +75,31 @@ This is the simplest way to add extension attributes without causing a conflict:
 -  We add our [extension attribute](https://glossary.magento.com/extension-attribute).
 -  Finally set the extension attribute on the entity with ours included.
 
-AfterGetList is similar to afterGet.
+Function `afterGetList` is similar to `afterGet`:
+
+```php
+public function afterGetList(
+    \Magento\Catalog\Api\ProductRepositoryInterface $subject,
+    \Magento\Catalog\Api\Data\ProductSearchResultsInterface $searchCriteria
+) : \Magento\Catalog\Api\Data\ProductSearchResultsInterface
+{
+    $products = [];
+    foreach ($searchCriteria->getItems() as $entity) {
+        $ourCustomData = $this->customDataRepository->get($entity->getId());
+
+        $extensionAttributes = $entity->getExtensionAttributes();
+        $extensionAttributes->setOurCustomData($ourCustomData);
+        $entity->setExtensionAttributes($extensionAttributes);
+
+        $products[] = $entity;
+    }
+    $searchCriteria->setItems($products);
+    return $searchCriteria;
+}
+```
+
+{: .bs-callout-info }
+To add extension attributes to an entity without plugins, use the `extensionActions` argument of `\Magento\Framework\EntityManager\Operation\ExtensionPool`. See [\Magento\Catalog\Model\ProductRepository::getList()]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/Model/ProductRepository.php) as an example of an implementation.
 
 Likewise, the `afterSave` plugin should manipulate the entity data before returning it:
 
@@ -93,7 +117,7 @@ public function afterSave
 }
 ```
 
-But if some entity doesn't have implementation to fetch extension attributes, we will always retrieve `null` and each time when we fetch extension attributes we need to check if they are `null`. If so, then we need to create them. To avoid such code duplication, we need to create `afterGet` plugin for our entity with extension attributes.
+But if some entity doesn't have implementation to fetch extension attributes, we will always retrieve `null` and each time when we fetch extension attributes we need to check if they are `null`. If so, then we need to create them. To avoid such code duplication, we need to create `afterGetExtensionAttributes` plugin for our entity with extension attributes.
 
 Let's assume the product entity doesn't have any implementation of extension attributes, so our plugin might look like this:
 
@@ -156,8 +180,8 @@ For scalar attributes we can use next configuration:
 ```xml
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Api/etc/extension_attributes.xsd">
     <extension_attributes for="Magento\Catalog\Api\Data\ProductInterface">
-        <attribute code="first_custom_attribute" type="Magento\SomeModule\Api\Data\CustomDataInterface" />
-        <attribute code="second_custom_attribute" type="Magento\SomeModule\Api\Data\CustomDataInterface" />
+        <attribute code="first_custom_attribute" type="number" />
+        <attribute code="second_custom_attribute" type="string" />
     </extension_attributes>
 </config>
 ```
@@ -167,12 +191,24 @@ For non-scalar attributes:
 ```xml
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Api/etc/extension_attributes.xsd">
     <extension_attributes for="Magento\Catalog\Api\Data\ProductInterface">
-        <attribute code="our_custom_data" type="Magento\SomeModule\Api\Data\CustomDataInterface[]" />
+        <attribute code="our_custom_data" type="Magento\SomeModule\Api\Data\CustomDataInterface" />
     </extension_attributes>
 </config>
 ```
 
-In first case we will get the next result:
+For array extension attributes:
+
+```xml
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Api/etc/extension_attributes.xsd">
+    <extension_attributes for="Magento\Catalog\Api\Data\ProductInterface">
+        <attribute code="some_custom_data" type="string[]" />
+    </extension_attributes>
+</config>
+```
+
+The array indicator `[]` can also be appended to non-scalar types.
+
+In first - scalar - case we will get the next result:
 
 ```xml
 <product>
@@ -181,12 +217,13 @@ In first case we will get the next result:
     <custom_attributes><!-- Custom Attributes Data --></custom_attributes>
     <extension_attributes>
         <first_custom_attribute>1</first_custom_attribute>
-        <second_custom_attribute>2</second_custom_attribute>
+        <second_custom_attribute>foo</second_custom_attribute>
     </extension_attributes>
 </product>
 ```
 
-In second one:
+In second, non-scalar one:
+
 ```xml
 <product>
     <id>1</id>
@@ -194,11 +231,23 @@ In second one:
     <custom_attributes><!-- Custom Attributes Data --></custom_attributes>
     <extension_attributes>
         <our_custom_data>
-            <first_custom_attribute>1</first_custom_attribute>
-            <second_custom_attribute>2</second_custom_attribute>
+            <!-- fields defined in CustomDataInterface are here -->
         </our_custom_data>
     </extension_attributes>
 </product>
+```
+
+In third, array one (in JSON for a change):
+
+```js
+{
+  "id": 1,
+  "sku": "some-sku",
+  "custom_attributes": { /* ... custom attribute data ... */ },
+  "extension_attributes": {
+    "some_custom_data": ["value1", "value2", "value3"]
+  }
+}
 ```
 
 [Sample module on GitHub](https://github.com/magento/magento2-samples/tree/master/sample-external-links)

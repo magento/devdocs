@@ -29,6 +29,10 @@ pages:
     url: /mftf/docs/extending.html
     versionless: true
 
+  - label: Git vs. Composer installation
+    url: /mftf/docs/guides/git-vs-composer-install.html
+    versionless: true
+
   - label: Merge points for extensions
     url: /mftf/docs/merge_points/introduction.html
     versionless: true

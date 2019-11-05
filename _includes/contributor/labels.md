@@ -48,7 +48,7 @@ Example labels:
 ### Components
 {:.no_toc}
 
-Component labels indicate the components affected by the Pull Request. To learn more about available components and assigned architects, see [Magento Components Assignment](https://github.com/magento/magento2/wiki/Magento-Components-Assignment).
+Component labels indicate the components affected by the Pull Request. To learn more about available components and assigned architects, see [Magento Components Assignment](https://github.com/magento/architecture/wiki/Component-Assignments).
 
 Example labels:
 

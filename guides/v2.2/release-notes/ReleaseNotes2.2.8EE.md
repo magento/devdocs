@@ -63,7 +63,7 @@ These releases include security enhancements that help close cross-site scriptin
 
 ### Infrastructure improvements
 
-*  **Magento now supports Elasticsearch 6.x**. (Elasticsearch 5.x  reached end-of-life on March 11, 2019. For more information, see [Elastic Product End of Life Dates](https://www.elastic.co/support/eol). *Fix submitted by community member  [Romain Ruaud](https://github.com/romainruaud)*. Thank you, Romain!
+*  **Magento now supports Elasticsearch 6.x**. (Elasticsearch 5.x  reached end-of-life on March 11, 2019. For more information, see [Elastic Product End of Life Dates](https://www.elastic.co/support/eol). *Fix submitted by community member Romain Ruaud*. Thank you, Romain!
 
 *  Magento’s implementation of the Authorize.Net Direct Post payment method currently uses MD5 based hash for all M1 and M2 installations. As of June 28, 2019, Authorize.Net will stop supporting MD5 based hash usage. See [Authorize.Net Direct Post](https://docs.magento.com/m2/2.2/ee/user_guide/payment/authorize-net-direct-post.html) for a discussion of this deprecation and the steps you need to take to add the new key you’ll need after deprecation.  <!-- MAGETWO-98129-->*
 
@@ -108,28 +108,28 @@ In addition to security enhancements, this release contains the following functi
 *  The storefront now  uses HTTPS exclusively and the Admin  uses HTTP without resulting in excessive redirects.
 
 <!-- ENGCOM-2958 -->
-*  Controllers with different route IDs and front names  no longer redirect users  to the dashboard when a user clicks on a menu link. *Fix submitted by [Laura Folco](https://github.com/lfolco) in pull request [18018](https://github.com/magento/magento2/pull/18018)*. [GitHub-7557](https://github.com/magento/magento2/issues/7557)
+*  Controllers with different route IDs and front names  no longer redirect users  to the dashboard when a user clicks on a menu link. *Fix submitted by Laura Folco in pull request [18018](https://github.com/magento/magento2/pull/18018)*. [GitHub-7557](https://github.com/magento/magento2/issues/7557)
 
 <!-- ENGCOM-2723  -->
-*  Integrations are no longer reset after running the `bin/magento setup:upgrade` command. *Fix submitted by [Pratik Oza](https://github.com/mage2pratik) in pull request [18273](https://github.com/magento/magento2/pull/18273)*. [GitHub-12095](https://github.com/magento/magento2/issues/12095)
+*  Integrations are no longer reset after running the `bin/magento setup:upgrade` command. *Fix submitted by Pratik Oza in pull request [18273](https://github.com/magento/magento2/pull/18273)*. [GitHub-12095](https://github.com/magento/magento2/issues/12095)
 
 <!-- ENGCOM-3001  -->
-*  The `./bin/magento config:show` command no longer fails with a fatal error after you run `./bin/magento app:config:dump`. *Fix submitted by [Keyur Shah](https://github.com/keyurshah070) in pull request [17993](https://github.com/magento/magento2/pull/17993)*. [GitHub-17582](https://github.com/magento/magento2/issues/17582)
+*  The `./bin/magento config:show` command no longer fails with a fatal error after you run `./bin/magento app:config:dump`. *Fix submitted by Keyur Shah in pull request [17993](https://github.com/magento/magento2/pull/17993)*. [GitHub-17582](https://github.com/magento/magento2/issues/17582)
 
 <!-- ENGCOM-3104  -->
-*  A new `cron.log` file dedicated to logging cron-related information has been added to Magento. This new log file reduces output previously sent to the `system.log` file, making it easier to find non-cron-related information in the `system.log` file. *Fix submitted by [Pieter Hoste](https://github.com/hostep) in pull request [18389](https://github.com/magento/magento2/pull/18389)*. [GitHub-17190](https://github.com/magento/magento2/issues/17190)
+*  A new `cron.log` file dedicated to logging cron-related information has been added to Magento. This new log file reduces output previously sent to the `system.log` file, making it easier to find non-cron-related information in the `system.log` file. *Fix submitted by Pieter Hoste in pull request [18389](https://github.com/magento/magento2/pull/18389)*. [GitHub-17190](https://github.com/magento/magento2/issues/17190)
 
 <!-- ENGCOM-3207  -->
-*  The `getHostUrl()` method has been updated to reference `HTTP_HOST` rather than `SERVER_PORT`. *Fix submitted by [Vishal Gelani](https://github.com/gelanivishal) in pull request [18659](https://github.com/magento/magento2/pull/18659)*. [GitHub-12969](https://github.com/magento/magento2/issues/12969)
+*  The `getHostUrl()` method has been updated to reference `HTTP_HOST` rather than `SERVER_PORT`. *Fix submitted by Vishal Gelani in pull request [18659](https://github.com/magento/magento2/pull/18659)*. [GitHub-12969](https://github.com/magento/magento2/issues/12969)
 
 <!-- MAGETWO-95411  -->
 *  You can now install Magento without first creating an administrator account.
 
 <!-- ENGCOM-3756 -->
-*  Magento now skips disabled modules  when compiling static content. *Fix submitted by [Shikha Mishra](https://github.com/shikhamis11) in pull request [19989](https://github.com/magento/magento2/pull/19989)*. [GitHub-19605](https://github.com/magento/magento2/issues/19605)
+*  Magento now skips disabled modules  when compiling static content. *Fix submitted by Shikha Mishra in pull request [19989](https://github.com/magento/magento2/pull/19989)*. [GitHub-19605](https://github.com/magento/magento2/issues/19605)
 
 <!-- ENGCOM-3881  -->
-*  The `config:set --lock-config` command  now acts as expected on all scopes. Previously, after this command was run, admin users were not able to change the configuration for the default store, but could still change it for other scopes. *Fix submitted by [Mahesh Singh](https://github.com/maheshWebkul721) in pull request [20322](https://github.com/magento/magento2/pull/20322)*. [GitHub-19609](https://github.com/magento/magento2/issues/19609)
+*  The `config:set --lock-config` command  now acts as expected on all scopes. Previously, after this command was run, admin users were not able to change the configuration for the default store, but could still change it for other scopes. *Fix submitted by Mahesh Singh in pull request [20322](https://github.com/magento/magento2/pull/20322)*. [GitHub-19609](https://github.com/magento/magento2/issues/19609)
 
 ### Backend
 
@@ -137,10 +137,10 @@ In addition to security enhancements, this release contains the following functi
 *  The address form in the Admin order creation workflow has been refactored to improve performance.
 
 <!-- ENGCOM-3777 -->
-*  Calling `getCurrentUrl` on a store no longer adds the  `___store` parameter when **store code in URL** is set to **yes** and the current store is not the same store requested in the URL. *Fix submitted by [Shikha Mishra](https://github.com/shikhamis11) in pull request [19910](https://github.com/magento/magento2/pull/19910)*. [GitHub-19285](https://github.com/magento/magento2/issues/19285)
+*  Calling `getCurrentUrl` on a store no longer adds the  `___store` parameter when **store code in URL** is set to **yes** and the current store is not the same store requested in the URL. *Fix submitted by Shikha Mishra in pull request [19910](https://github.com/magento/magento2/pull/19910)*. [GitHub-19285](https://github.com/magento/magento2/issues/19285)
 
 <!-- ENGCOM-3868  -->
-*  `CustomerRepository::getList()` now loads custom attributes named `company`. *Fix submitted by [Govind Sharma](https://github.com/GovindaSharma) in pull request [20284](https://github.com/magento/magento2/pull/20284)*. [GitHub-17759](https://github.com/magento/magento2/issues/17759)
+*  `CustomerRepository::getList()` now loads custom attributes named `company`. *Fix submitted by Govind Sharma in pull request [20284](https://github.com/magento/magento2/pull/20284)*. [GitHub-17759](https://github.com/magento/magento2/issues/17759)
 
 ### B2B
 
@@ -174,10 +174,10 @@ In addition to security enhancements, this release contains the following functi
 *  Bundle product SKUs are now built based on the order of the associated (selected) product ID numbers in ascending order. Previously, SKUs were built based on the order of the selected product ID numbers in ascending order instead of the order in which the option is added to the bundle product.
 
 <!-- ENGCOM-2997  -->
-*  Magento no longer overwrites user-defined option quantities with default values when a customer edits a bundle product from a shopping cart. *Fix submitted by [Joseph Maxwell](https://github.com/JosephMaxwell) in pull request [15905](https://github.com/magento/magento2/pull/15905)*. [GitHub-4942](https://github.com/magento/magento2/issues/4942)
+*  Magento no longer overwrites user-defined option quantities with default values when a customer edits a bundle product from a shopping cart. *Fix submitted by Joseph Maxwell in pull request [15905](https://github.com/magento/magento2/pull/15905)*. [GitHub-4942](https://github.com/magento/magento2/issues/4942)
 
 <!-- ENGCOM-3275  -->
-*  Bundle special prices are now correctly rounded when you load and resave a bundle product. Previously, when you reloaded a bundle with a special price that requires four positions after the decimal (for example, 78,9473), Magento rounded the price to two decimal places. *Fix submitted by [magently](https://github.com/magently) in pull request [17971](https://github.com/magento/magento2/pull/17971)*. [GitHub-17638](https://github.com/magento/magento2/issues/17638)
+*  Bundle special prices are now correctly rounded when you load and resave a bundle product. Previously, when you reloaded a bundle with a special price that requires four positions after the decimal (for example, 78,9473), Magento rounded the price to two decimal places. *Fix submitted by magently in pull request [17971](https://github.com/magento/magento2/pull/17971)*. [GitHub-17638](https://github.com/magento/magento2/issues/17638)
 
 <!-- MAGETWO-90381  -->
 *  Magento now maintains the correct base price for a bundle product when you add a bundle product in one currency and then add the same bundle product option in a different currency. Previously, when you added the same bundle product option in a different currency, Magento doubled the base price.
@@ -190,7 +190,7 @@ In addition to security enhancements, this release contains the following functi
 ### Catalog
 
 <!-- ENGCOM-3392  -->
-*  Magento now correctly calculates fixed tier price discount for products with special prices. *Fix submitted by [Vishal Gelani](https://github.com/gelanivishal) in pull request [18743](https://github.com/magento/magento2/pull/18743)*. [GitHub-18652](https://github.com/magento/magento2/issues/18652)
+*  Magento now correctly calculates fixed tier price discount for products with special prices. *Fix submitted by Vishal Gelani in pull request [18743](https://github.com/magento/magento2/pull/18743)*. [GitHub-18652](https://github.com/magento/magento2/issues/18652)
 
 <!-- MAGETWO-69650  -->
 *  Products no longer display discounted prices in the shopping cart unless discounts have been applied or special or tiered prices are in effect.
@@ -223,53 +223,52 @@ In addition to security enhancements, this release contains the following functi
 *  Category pages now display products  when swatch images are missing. Previously, Magento did not display these products, and the console displayed this error message, `Error: [object Object]`.
 
 <!-- ENGCOM-4089  -->
-*  Removed unnecessary slash from `app/code/Magento/CatalogInventory/etc/di.xml`. This extraneous slash had previously resulted in `Magento\Catalog\Api\ProductRenderListInterface` returning products regardless of visibility. *Fix submitted by [Milind Singh](https://github.com/milindsingh) in pull request [20886](https://github.com/magento/magento2/pull/20886)*. [GitHub-20409](https://github.com/magento/magento2/issues/20409)
+*  Removed unnecessary slash from `app/code/Magento/CatalogInventory/etc/di.xml`. This extraneous slash had previously resulted in `Magento\Catalog\Api\ProductRenderListInterface` returning products regardless of visibility. *Fix submitted by Milind Singh in pull request [20886](https://github.com/magento/magento2/pull/20886)*. [GitHub-20409](https://github.com/magento/magento2/issues/20409)
 
 <!-- MAGETWO-73342  -->
 *  Customers can change product status by clicking on the toggle element or by clicking on label text, but not by clicking the area around a toggle element. Previously, if a customer  clicked on the area around a toggle element, Magento changed the state of the element. Unintended results could occur if a customer mistakenly clicked on the area around the element and didn't realize that the status had  changed.
 
 <!-- ENGCOM-2930  -->
-*  Updates to related products now appear as expected in both the storefront product page and the Admin product edit page. Previously, the storefront displayed product updates, but not all related product updates showed up in the Admin. *Fix submitted by [Pieter Hoste](https://github.com/hostep) in pull request [17885](https://github.com/magento/magento2/pull/17885)*. [GitHub-14050](https://github.com/magento/magento2/issues/14050)
+*  Updates to related products now appear as expected in both the storefront product page and the Admin product edit page. Previously, the storefront displayed product updates, but not all related product updates showed up in the Admin. *Fix submitted by Pieter Hoste in pull request [17885](https://github.com/magento/magento2/pull/17885)*. [GitHub-14050](https://github.com/magento/magento2/issues/14050)
 
 <!-- ENGCOM-2943  -->
-*  You can now save a product on deployments in single-store mode when the default website has been removed and a new website has been added. *Fix submitted by [Eduard Chitoraga](https://github.com/eduard13) in pull request [18001](https://github.com/magento/magento2/pull/18001)*. [GitHub-13405](https://github.com/magento/magento2/issues/13405)
+*  You can now save a product on deployments in single-store mode when the default website has been removed and a new website has been added. *Fix submitted by Eduard Chitoraga in pull request [18001](https://github.com/magento/magento2/pull/18001)*. [GitHub-13405](https://github.com/magento/magento2/issues/13405)
 
 <!-- ENGCOM-3047  -->
-*  `getStoreId()` now consistently returns `int`. *Fix submitted by [sv3n](https://github.com/sreichel) in pull request [18086](https://github.com/magento/magento2/pull/18086)*. [GitHub-18079](https://github.com/magento/magento2/issues/18079)
+*  `getStoreId()` now consistently returns `int`. *Fix submitted by sv3n in pull request [18086](https://github.com/magento/magento2/pull/18086)*. [GitHub-18079](https://github.com/magento/magento2/issues/18079)
 
 <!-- ENGCOM-3097  -->
-*  You can now set a Boolean attribute to `is_filterable`, which allows them to be included in layered navigation. *Fix submitted by [Mr. Lewis](https://github.com/lewisvoncken) in pull request [17823](https://github.com/magento/magento2/pull/17823)*. [GitHub-3283](https://github.com/magento/magento2/issues/3283)
+*  You can now set a Boolean attribute to `is_filterable`, which allows them to be included in layered navigation. *Fix submitted by Mr. Lewis in pull request [17823](https://github.com/magento/magento2/pull/17823)*. [GitHub-3283](https://github.com/magento/magento2/issues/3283)
 
 <!-- ENGCOM-3050  -->
-*  If you create a catalog price rule based on categories with a nesting level 4 or higher, these categories now maintain the status of their checkboxes when you re-open Category Chooser.
-Previously, when you reopened these categories, no checkboxes were checked.  *Fix submitted by [magently](https://github.com/magently) in pull request [18175](https://github.com/magento/magento2/pull/18175)*. [GitHub-17493](https://github.com/magento/magento2/issues/17493)
+*  If you create a catalog price rule based on categories with a nesting level 4 or higher, these categories now maintain the status of their checkboxes when you re-open Category Chooser. Previously, when you reopened these categories, no checkboxes were checked.  *Fix submitted by magently in pull request [18175](https://github.com/magento/magento2/pull/18175)*. [GitHub-17493](https://github.com/magento/magento2/issues/17493)
 
 <!-- ENGCOM-3133  -->
-*  An incorrect return type in the `StockRegistryInterface` API has been corrected. *Fix submitted by [Mr. Lewis](https://github.com/lewisvoncken) in pull request [18427](https://github.com/magento/magento2/pull/18427)*. [GitHub-15085](https://github.com/magento/magento2/issues/15085)
+*  An incorrect return type in the `StockRegistryInterface` API has been corrected. *Fix submitted by Mr. Lewis in pull request [18427](https://github.com/magento/magento2/pull/18427)*. [GitHub-15085](https://github.com/magento/magento2/issues/15085)
 
 <!-- ENGCOM-3158  -->
-*  Magento no longer changes the attribute type of `backend_type` from `varchar` to `int` when the product associated with the attribute is saved or updated in the Admin. *Fix submitted by [Bartosz Kubicki](https://github.com/bartoszkubicki) in pull request [18196](https://github.com/magento/magento2/pull/18196)*. [GitHub-9219](https://github.com/magento/magento2/issues/9219)
+*  Magento no longer changes the attribute type of `backend_type` from `varchar` to `int` when the product associated with the attribute is saved or updated in the Admin. *Fix submitted by Bartosz Kubicki in pull request [18196](https://github.com/magento/magento2/pull/18196)*. [GitHub-9219](https://github.com/magento/magento2/issues/9219)
 
 <!-- ENGCOM-3171  -->
-*  Magento now validates the quantity of items in the shopping cart against the **Maximum Qty Allowed in Shopping Cart** setting. *Fix submitted by [Vishal Gelani](https://github.com/gelanivishal) in pull request [18552](https://github.com/magento/magento2/pull/18552)*. [GitHub-18477](https://github.com/magento/magento2/issues/18477)
+*  Magento now validates the quantity of items in the shopping cart against the **Maximum Qty Allowed in Shopping Cart** setting. *Fix submitted by Vishal Gelani in pull request [18552](https://github.com/magento/magento2/pull/18552)*. [GitHub-18477](https://github.com/magento/magento2/issues/18477)
 
 <!-- ENGCOM-3193  -->
-*  When a new customer is created, Magento sets a value of zero for any custom attribute if no other value is explicitly provided. Previously, if no value was explicitly assigned, Magento did not save the custom attribute with any value. *Fix submitted by [Oleksandr Kravchuk](https://github.com/swnsma) in pull request [16915](https://github.com/magento/magento2/pull/16915)*. [GitHub-14510](https://github.com/magento/magento2/issues/14510)
+*  When a new customer is created, Magento sets a value of zero for any custom attribute if no other value is explicitly provided. Previously, if no value was explicitly assigned, Magento did not save the custom attribute with any value. *Fix submitted by Oleksandr Kravchuk in pull request [16915](https://github.com/magento/magento2/pull/16915)*. [GitHub-14510](https://github.com/magento/magento2/issues/14510)
 
 <!-- ENGCOM-3230  -->
-*  `\Magento\Catalog\Model\Product::getQty()` now consistently returns float/double. *Fix submitted by [Mr. Lewis](https://github.com/lewisvoncken) in pull request [18424](https://github.com/magento/magento2/pull/18424)*. [GitHub-18094](https://github.com/magento/magento2/issues/18094)
+*  `\Magento\Catalog\Model\Product::getQty()` now consistently returns float/double. *Fix submitted by Mr. Lewis in pull request [18424](https://github.com/magento/magento2/pull/18424)*. [GitHub-18094](https://github.com/magento/magento2/issues/18094)
 
 <!-- ENGCOM-3254  -->
-*  Magento no longer resets data entered from one WYSIWYG editor when you switch to a second editor when editing catalog categories. *Fix submitted by [m.matrafailo](https://github.com/k1las) in pull request [18535](https://github.com/magento/magento2/pull/18535)*. [GitHub-18534](https://github.com/magento/magento2/issues/18534)
+*  Magento no longer resets data entered from one WYSIWYG editor when you switch to a second editor when editing catalog categories. *Fix submitted by m.matrafailo in pull request [18535](https://github.com/magento/magento2/pull/18535)*. [GitHub-18534](https://github.com/magento/magento2/issues/18534)
 
 <!-- ENGCOM-3261  -->
-*  The **order by price** option for product listings on category pages now works as expected. *Fix submitted by [Giel Berkers](https://github.com/kanduvisla) in pull request [18737](https://github.com/magento/magento2/pull/18737)*. [GitHub-18264](https://github.com/magento/magento2/issues/18264)
+*  The **order by price** option for product listings on category pages now works as expected. *Fix submitted by Giel Berkers in pull request [18737](https://github.com/magento/magento2/pull/18737)*. [GitHub-18264](https://github.com/magento/magento2/issues/18264)
 
 <!-- ENGCOM-2930  -->
-*  Updates to related products now appear as expected in both the storefront product page and the Admin product edit page. Previously, the storefront displayed product updates, but not all related product updates showed up in the Admin. *Fix submitted by [Pieter Hoste](https://github.com/hostep) in pull request [17885](https://github.com/magento/magento2/pull/17885)*. [GitHub-13720](https://github.com/magento/magento2/issues/13720), [GitHub-14050](https://github.com/magento/magento2/issues/14050)
+*  Updates to related products now appear as expected in both the storefront product page and the Admin product edit page. Previously, the storefront displayed product updates, but not all related product updates showed up in the Admin. *Fix submitted by Pieter Hoste in pull request [17885](https://github.com/magento/magento2/pull/17885)*. [GitHub-13720](https://github.com/magento/magento2/issues/13720), [GitHub-14050](https://github.com/magento/magento2/issues/14050)
 
 <!-- ENGCOM-3317  -->
-*  Magento now provides a white-space trimming function for SKUs on the Admin. *Fix submitted by [Vishal Gelani](https://github.com/gelanivishal) in pull request [18862](https://github.com/magento/magento2/pull/18862)*. [GitHub-16572](https://github.com/magento/magento2/issues/16572), [GitHub-12300](https://github.com/magento/magento2/issues/12300)
+*  Magento now provides a white-space trimming function for SKUs on the Admin. *Fix submitted by Vishal Gelani in pull request [18862](https://github.com/magento/magento2/pull/18862)*. [GitHub-16572](https://github.com/magento/magento2/issues/16572), [GitHub-12300](https://github.com/magento/magento2/issues/12300)
 
 <!-- MAGETWO-93673  -->
 *  You can now use an attribute set on the product create page after moving the attributes from one attribute group to another.
@@ -287,7 +286,7 @@ Previously, when you reopened these categories, no checkboxes were checked.  *Fi
 *  You can now insert multiple catalog product list widgets in a CMS page.
 
 <!-- ENGCOM-3373  -->
-*  Performance has improved for sessions where  customers browse many product pages. (This performance boost is a result of replacing the jQuery `localStorage` API  with native `localStorage` in `app/code/Magento/Catalog/view/frontend/web/js/product/storage/data-storage.js` and  `app/code/Magento/Catalog/view/frontend/web/js/product/storage/ids-storage.js`.) *Fix submitted by [Oleksandr Miroshnichenko](https://github.com/omiroshnichenko) in pull request [19014](https://github.com/magento/magento2/pull/19014)*. [GitHub-17813](https://github.com/magento/magento2/issues/17813)
+*  Performance has improved for sessions where  customers browse many product pages. (This performance boost is a result of replacing the jQuery `localStorage` API  with native `localStorage` in `app/code/Magento/Catalog/view/frontend/web/js/product/storage/data-storage.js` and  `app/code/Magento/Catalog/view/frontend/web/js/product/storage/ids-storage.js`.) *Fix submitted by Oleksandr Miroshnichenko in pull request [19014](https://github.com/magento/magento2/pull/19014)*. [GitHub-17813](https://github.com/magento/magento2/issues/17813)
 
 <!-- ENGCOM-3790  -->
 *  Magento now correctly imports  `product_type` drop-down attributes. Previously, Magento displayed an error message indicating that values for these attributes were incorrect during import.
@@ -311,7 +310,7 @@ Previously, when you reopened these categories, no checkboxes were checked.  *Fi
 *  Magento no longer displays a negative value on the product list page when a product's stock falls below the product's `OutOfStock` threshold value.
 
 <!-- ENGCOM-3826  -->
-*  Deleting an image from **Admin** > **Catalog** > **Categories** now deletes the image as expected. Previously, the deleted image remained in `pub\media\catalog\category`. *Fix submitted by [p-bystritsky](https://github.com/p-bystritsky) in pull request [20178](https://github.com/magento/magento2/pull/20178)*. [GitHub-16198](https://github.com/magento/magento2/issues/16198)
+*  Deleting an image from **Admin** > **Catalog** > **Categories** now deletes the image as expected. Previously, the deleted image remained in `pub\media\catalog\category`. *Fix submitted by p-bystritsky in pull request [20178](https://github.com/magento/magento2/pull/20178)*. [GitHub-16198](https://github.com/magento/magento2/issues/16198)
 
 <!-- MAGETWO-95898  -->
 *  Magento now successfully updates product quantities in the mini-shopping cart for a product that has **Qty Uses Decimals** and **Enable Qty Increments** are enabled. Previously, Magento did not update the product quantity, but displayed this error, `You can buy this product only in quantities of 1.1 at a time`.
@@ -372,25 +371,25 @@ Previously, when you reopened these categories, no checkboxes were checked.  *Fi
 *  `\Magento\Checkout\Observer\SalesQuoteSaveAfterObserver` now updates the checkout session quote ID as needed.
 
 <!-- ENGCOM-3348  -->
-*  You can now select a payment method during check for an order placed in a deployment where different payment methods are configured for different countries. *Fix submitted by [Rahul Mahto](https://github.com/rahulwebkul) in pull request [18908](https://github.com/magento/magento2/pull/18908)*. [GitHub-18907](https://github.com/magento/magento2/issues/18907)
+*  You can now select a payment method during check for an order placed in a deployment where different payment methods are configured for different countries. *Fix submitted by Rahul Mahto in pull request [18908](https://github.com/magento/magento2/pull/18908)*. [GitHub-18907](https://github.com/magento/magento2/issues/18907)
 
 <!-- ENGCOM-3315  -->
 *  Custom shipping methods in custom carrier code can now include underscores.
 
 <!-- ENGCOM-3322  -->
-*  The global search icon on the Admin is now correctly aligned. *Fix submitted by [Kajal Solanki](https://github.com/speedy008) in pull request [18917](https://github.com/magento/magento2/pull/18917)*. [GitHub-18913](https://github.com/magento/magento2/issues/18913)
+*  The global search icon on the Admin is now correctly aligned. *Fix submitted by Kajal Solanki in pull request [18917](https://github.com/magento/magento2/pull/18917)*. [GitHub-18913](https://github.com/magento/magento2/issues/18913)
 
 <!-- ENGCOM-3088  -->
-*  Magento no longer displays the infinite loading indicator when an error occurs during check out. *Fix submitted by [Ihor Sviziev](https://github.com/ihor-sviziev) in pull request [18369](https://github.com/magento/magento2/pull/18369)*. [GitHub-18330](https://github.com/magento/magento2/issues/18330)
+*  Magento no longer displays the infinite loading indicator when an error occurs during check out. *Fix submitted by Ihor Sviziev in pull request [18369](https://github.com/magento/magento2/pull/18369)*. [GitHub-18330](https://github.com/magento/magento2/issues/18330)
 
 <!-- ENGCOM-3154  -->
-*  One-step checkout now works as expected. Previously, Magento displayed this console error when you tried to complete an order using one-step checkout, `Uncaught TypeError: Cannot read property 'code' of undefined at UiClass.initialize (/en_US/Magento_Checkout/js/view/progress-bar.js:31:93)`. *Fix submitted by [Ihor Sviziev](https://github.com/ihor-sviziev) in pull request [18495](https://github.com/magento/magento2/pull/18495)*. [GitHub-18164](https://github.com/magento/magento2/issues/18164)
+*  One-step checkout now works as expected. Previously, Magento displayed this console error when you tried to complete an order using one-step checkout, `Uncaught TypeError: Cannot read property 'code' of undefined at UiClass.initialize (/en_US/Magento_Checkout/js/view/progress-bar.js:31:93)`. *Fix submitted by Ihor Sviziev in pull request [18495](https://github.com/magento/magento2/pull/18495)*. [GitHub-18164](https://github.com/magento/magento2/issues/18164)
 
 <!-- ENGCOM-3251  -->
-*  The **Clear shopping cart** button now works as expected. Previously, the page reloaded, but the shopping cart was not cleared. *Fix submitted by [Luuk Schakenraad](https://github.com/luukschakenraad) in pull request [18597](https://github.com/magento/magento2/pull/18597)*.
+*  The **Clear shopping cart** button now works as expected. Previously, the page reloaded, but the shopping cart was not cleared. *Fix submitted by Luuk Schakenraad in pull request [18597](https://github.com/magento/magento2/pull/18597)*.
 
 <!-- ENGCOM-3195  -->
-*  Magento now displays a product's special price on the storefront, product listings, and product detail page as expected when the special price is 0.00. Previously, Magento displayed the regular price, but used the special price for sorting and quote calculations. *Fix submitted by [Mahesh Singh](https://github.com/maheshWebkul721) in pull request [18604](https://github.com/magento/magento2/pull/18604)*. [GitHub-18268](https://github.com/magento/magento2/issues/18268)
+*  Magento now displays a product's special price on the storefront, product listings, and product detail page as expected when the special price is 0.00. Previously, Magento displayed the regular price, but used the special price for sorting and quote calculations. *Fix submitted by Mahesh Singh in pull request [18604](https://github.com/magento/magento2/pull/18604)*. [GitHub-18268](https://github.com/magento/magento2/issues/18268)
 
 <!-- MAGETWO-86120  -->
 *  You can now add gift wrapping to the shopping cart to an already  added product without having to add to additional product.
@@ -398,7 +397,7 @@ Previously, when you reopened these categories, no checkboxes were checked.  *Fi
 ### Clean up and minor refactoring
 
 <!-- ENGCOM-3935  -->
-*  Fixed checkbox alignment on the account information page. *Fix submitted by [suryakant-krish](https://github.com/suryakant-krish) in pull request [19646](https://github.com/magento/magento2/pull/19646)*. [GitHub-19645](https://github.com/magento/magento2/issues/19645)
+*  Fixed checkbox alignment on the account information page. *Fix submitted by suryakant-krish in pull request [19646](https://github.com/magento/magento2/pull/19646)*. [GitHub-19645](https://github.com/magento/magento2/issues/19645)
 
 <!-- ENGCOM-3738  -->
 *  Corrected misspelled argument name `allowDrug` to `allowDrag` in `vendor/magento/module-catalog/view/adminhtml/templates/catalog/product/attribute/set/main.phtml`.
@@ -407,84 +406,84 @@ Previously, when you reopened these categories, no checkboxes were checked.  *Fi
 *  Corrected formatting issue on **Catalog** > **Category** > **Product** > **Assign products** page.
 
 <!-- ENGCOM-3903  -->
-*  Corrected alignment of the **Detailed Rating** field on the Edit Review page. *Fix submitted by [Amol Chaudhari](https://github.com/amol2jcommerce) in pull request [20272](https://github.com/magento/magento2/pull/20272)*. [GitHub-20120](https://github.com/magento/magento2/issues/20120)
+*  Corrected alignment of the **Detailed Rating** field on the Edit Review page. *Fix submitted by Amol Chaudhari in pull request [20272](https://github.com/magento/magento2/pull/20272)*. [GitHub-20120](https://github.com/magento/magento2/issues/20120)
 
 <!-- ENGCOM-3540  -->
-*  Corrected the logic in JavaScript for the **Add to cart** button  and `last-order-items.js`. *Fix submitted by [Vishal Gelani](https://github.com/gelanivishal) in pull request [19357](https://github.com/magento/magento2/pull/19357)*. [GitHub-13157](https://github.com/magento/magento2/issues/13157)
+*  Corrected the logic in JavaScript for the **Add to cart** button  and `last-order-items.js`. *Fix submitted by Vishal Gelani in pull request [19357](https://github.com/magento/magento2/pull/19357)*. [GitHub-13157](https://github.com/magento/magento2/issues/13157)
 
 <!-- ENGCOM-4014  -->
-*  Fixed misalignment of logo on the Admin home page. *Fix submitted by [Rajneesh Gupta](https://github.com/irajneeshgupta) in pull request [20544](https://github.com/magento/magento2/pull/20544)*. [GitHub-20399](https://github.com/magento/magento2/issues/20399)
+*  Fixed misalignment of logo on the Admin home page. *Fix submitted by Rajneesh Gupta in pull request [20544](https://github.com/magento/magento2/pull/20544)*. [GitHub-20399](https://github.com/magento/magento2/issues/20399)
 
 <!-- ENGCOM-3933  -->
-*  Fixed misalignment of logo on Admin home page. *Fix submitted by [suryakant-krish](https://github.com/suryakant-krish) in pull request [20456](https://github.com/magento/magento2/pull/20456)*. [GitHub-19791](https://github.com/magento/magento2/issues/19791)
+*  Fixed misalignment of logo on Admin home page. *Fix submitted by suryakant-krish in pull request [20456](https://github.com/magento/magento2/pull/20456)*. [GitHub-19791](https://github.com/magento/magento2/issues/19791)
 
 <!-- ENGCOM-3853  -->
-*  Magento no longer displays a hamburger menu on a page where no menus are present. *Fix submitted by [Amol Chaudhari](https://github.com/amol2jcommerce) in pull request [20219](https://github.com/magento/magento2/pull/20219)*. [GitHub-20210](https://github.com/magento/magento2/issues/20210)
+*  Magento no longer displays a hamburger menu on a page where no menus are present. *Fix submitted by Amol Chaudhari in pull request [20219](https://github.com/magento/magento2/pull/20219)*. [GitHub-20210](https://github.com/magento/magento2/issues/20210)
 
 <!-- ENGCOM-3895  -->
-*  Fixed display issue with the customer login page input field length in tablet view. *Fix submitted by [Nainesh Waghale](https://github.com/nainesh2jcommerce) in pull request [20369](https://github.com/magento/magento2/pull/20369)*. [GitHub-20172](https://github.com/magento/magento2/issues/20172)
+*  Fixed display issue with the customer login page input field length in tablet view. *Fix submitted by Nainesh Waghale in pull request [20369](https://github.com/magento/magento2/pull/20369)*. [GitHub-20172](https://github.com/magento/magento2/issues/20172)
 
 <!-- ENGCOM-3970  -->
-*  The email confirmation popup's  **Close** button no longer overlaps with page content. *Fix submitted by [Arvinda Kumar](https://github.com/cedarvinda) in pull request [19986](https://github.com/magento/magento2/pull/19986)*. [GitHub-19985](https://github.com/magento/magento2/issues/19985)
+*  The email confirmation popup's  **Close** button no longer overlaps with page content. *Fix submitted by Arvinda Kumar in pull request [19986](https://github.com/magento/magento2/pull/19986)*. [GitHub-19985](https://github.com/magento/magento2/issues/19985)
 
 <!-- ENGCOM-3322  -->
-*  The global search icon on the Admin is now correctly aligned. *Fix submitted by [Kajal Solanki](https://github.com/speedy008) in pull request [18917](https://github.com/magento/magento2/pull/18917)*. [GitHub-18913](https://github.com/magento/magento2/issues/18913)
+*  The global search icon on the Admin is now correctly aligned. *Fix submitted by Kajal Solanki in pull request [18917](https://github.com/magento/magento2/pull/18917)*. [GitHub-18913](https://github.com/magento/magento2/issues/18913)
 
 <!-- ENGCOM-3324  -->
-*  Removed redundant asterix on **Admin** > **Catalog** > **Display Settings**. *Fix submitted by [suryakant-krish](https://github.com/suryakant-krish) in pull request [18922](https://github.com/magento/magento2/pull/18922)*. [GitHub-18918](https://github.com/magento/magento2/issues/18918)
+*  Removed redundant asterix on **Admin** > **Catalog** > **Display Settings**. *Fix submitted by suryakant-krish in pull request [18922](https://github.com/magento/magento2/pull/18922)*. [GitHub-18918](https://github.com/magento/magento2/issues/18918)
 
 <!-- ENGCOM-3327  -->
-*  Corrected typo in  name of event (`catalogsearch_searchable_attributes_load_after`) dispatched by `Magento\CatalogSearch\Model\Indexer\Fulltext\Action\DataProvider::getSearchableAttributes`. *Fix submitted by [Neeta Kangiya](https://github.com/neeta-wagento) in pull request [18372](https://github.com/magento/magento2/pull/18372)*. [GitHub-18355](https://github.com/magento/magento2/issues/18355)
+*  Corrected typo in  name of event (`catalogsearch_searchable_attributes_load_after`) dispatched by `Magento\CatalogSearch\Model\Indexer\Fulltext\Action\DataProvider::getSearchableAttributes`. *Fix submitted by Neeta Kangiya in pull request [18372](https://github.com/magento/magento2/pull/18372)*. [GitHub-18355](https://github.com/magento/magento2/issues/18355)
 
 <!-- ENGCOM-3534  -->
-*  Content in  confirmation popups on the Admin no longer overlap the **Close** button. *Fix submitted by [Vishal Gelani](https://github.com/gelanivishal) in pull request [19340](https://github.com/magento/magento2/pull/19340)*. [GitHub-19263](https://github.com/magento/magento2/issues/19263)
+*  Content in  confirmation popups on the Admin no longer overlap the **Close** button. *Fix submitted by Vishal Gelani in pull request [19340](https://github.com/magento/magento2/pull/19340)*. [GitHub-19263](https://github.com/magento/magento2/issues/19263)
 
 <!-- ENGCOM-3527  -->
-*  The **Add to Cart** button in the Recently Ordered block now works as expected. *Fix submitted by [Vladyslav Podorozhnyi](https://github.com/vpodorozh) in pull request [19023](https://github.com/magento/magento2/pull/19023)*. [GitHub-17833](https://github.com/magento/magento2/issues/17833)
+*  The **Add to Cart** button in the Recently Ordered block now works as expected. *Fix submitted by Vladyslav Podorozhnyi in pull request [19023](https://github.com/magento/magento2/pull/19023)*. [GitHub-17833](https://github.com/magento/magento2/issues/17833)
 
 <!-- ENGCOM-3541  -->
-*  Fixed the rendering of the check notifications counters icon on the Admin. *Fix submitted by [Vishal Gelani](https://github.com/gelanivishal) in pull request [19356](https://github.com/magento/magento2/pull/19356)*. [GitHub-18887](https://github.com/magento/magento2/issues/18887)
+*  Fixed the rendering of the check notifications counters icon on the Admin. *Fix submitted by Vishal Gelani in pull request [19356](https://github.com/magento/magento2/pull/19356)*. [GitHub-18887](https://github.com/magento/magento2/issues/18887)
 
 <!-- ENGCOM-3618  -->
-*  You can now add a custom field to a newsletter in the position of your choice by editing  the newsletter configuration file (`app/code/Magento/Newsletter/etc/adminhtml/system.xml`).  Previously, you could add a new field but could not select where it would appear in the newsletter. *Fix submitted by [Burlacu Vasilii](https://github.com/vasilii-b) in pull request [19568](https://github.com/magento/magento2/pull/19568)*. [GitHub-19418](https://github.com/magento/magento2/issues/19418)
+*  You can now add a custom field to a newsletter in the position of your choice by editing  the newsletter configuration file (`app/code/Magento/Newsletter/etc/adminhtml/system.xml`).  Previously, you could add a new field but could not select where it would appear in the newsletter. *Fix submitted by Burlacu Vasilii in pull request [19568](https://github.com/magento/magento2/pull/19568)*. [GitHub-19418](https://github.com/magento/magento2/issues/19418)
 
 <!-- ENGCOM-3748  -->
-*  Corrected typo in `SalesRule/Model/ResourceModel/Coupon/Usage.php`. *Fix submitted by [Milind Singh](https://github.com/milindsingh) in pull request [19968](https://github.com/magento/magento2/pull/19968)*. [GitHub-19721](https://github.com/magento/magento2/issues/19721)
+*  Corrected typo in `SalesRule/Model/ResourceModel/Coupon/Usage.php`. *Fix submitted by Milind Singh] in pull request [19968](https://github.com/magento/magento2/pull/19968)*. [GitHub-19721](https://github.com/magento/magento2/issues/19721)
 
 <!-- ENGCOM-4010  -->
-*  Added a missing space between the title of the workflow step and the saved address on the first page of the checkout process. *Fix submitted by [Shikha Mishra](https://github.com/shikhamis11) in pull request [20418](https://github.com/magento/magento2/pull/20418)*. [GitHub-20304](https://github.com/magento/magento2/issues/20304)
+*  Added a missing space between the title of the workflow step and the saved address on the first page of the checkout process. *Fix submitted by Shikha Mishra in pull request [20418](https://github.com/magento/magento2/pull/20418)*. [GitHub-20304](https://github.com/magento/magento2/issues/20304)
 
 <!-- ENGCOM-4040  -->
-*  Fixed misalignment of the title of the order page accessed when you check a recent order in the sidebar of listing pages or account pages. *Fix submitted by [Amol Chaudhari](https://github.com/amol2jcommerce) in pull request [20744](https://github.com/magento/magento2/pull/20744)*. [GitHub-20500](https://github.com/magento/magento2/issues/20500)
+*  Fixed misalignment of the title of the order page accessed when you check a recent order in the sidebar of listing pages or account pages. *Fix submitted by Amol Chaudhari in pull request [20744](https://github.com/magento/magento2/pull/20744)*. [GitHub-20500](https://github.com/magento/magento2/issues/20500)
 
 <!-- ENGCOM-4058  -->
-*  Fixed misalignment of the **Edit** and **Remove** buttons on the gift option popup that Magento displays when a customer adds a product to the shopping cart. *Fix submitted by [Ajay Ajabale](https://github.com/ajay2jcommerce) in pull request [20784](https://github.com/magento/magento2/pull/20784)*. [GitHub-20604](https://github.com/magento/magento2/issues/20604)
+*  Fixed misalignment of the **Edit** and **Remove** buttons on the gift option popup that Magento displays when a customer adds a product to the shopping cart. *Fix submitted by Ajay Ajabale in pull request [20784](https://github.com/magento/magento2/pull/20784)*. [GitHub-20604](https://github.com/magento/magento2/issues/20604)
 
 <!-- ENGCOM-4090  -->
-*  Fixed the alignment of the **Apply discount** button  on the checkout page. *Fix submitted by [Amol Chaudhari](https://github.com/amol2jcommerce) in pull request [20837](https://github.com/magento/magento2/pull/20837)*. [GitHub-20137](https://github.com/magento/magento2/issues/20137)
+*  Fixed the alignment of the **Apply discount** button  on the checkout page. *Fix submitted by Amol Chaudhari in pull request [20837](https://github.com/magento/magento2/pull/20837)*. [GitHub-20137](https://github.com/magento/magento2/issues/20137)
 
 <!-- ENGCOM-3882  -->
-*  Corrected alignment of the store switcher in Tab view. *Fix submitted by [Shikha Mishra](https://github.com/shikhamis11) in pull request [20325](https://github.com/magento/magento2/pull/20325)*. [GitHub-20158](https://github.com/magento/magento2/issues/20158)
+*  Corrected alignment of the store switcher in Tab view. *Fix submitted by Shikha Mishra in pull request [20325](https://github.com/magento/magento2/pull/20325)*. [GitHub-20158](https://github.com/magento/magento2/issues/20158)
 
 <!-- ENGCOM-3934  -->
-*  Corrected the alignment of Contact us area accessed from the storefront page footers. *Fix submitted by [suryakant-krish](https://github.com/suryakant-krish) in pull request [20455](https://github.com/magento/magento2/pull/20455)*. [GitHub-19800](https://github.com/magento/magento2/issues/19800)
+*  Corrected the alignment of Contact us area accessed from the storefront page footers. *Fix submitted by suryakant-krish in pull request [20455](https://github.com/magento/magento2/pull/20455)*. [GitHub-19800](https://github.com/magento/magento2/issues/19800)
 
 <!-- ENGCOM-3734  -->
-*  Fixed alignment of the **Update Qty** button on the sales order invoice. *Fix submitted by [Kajal Solanki](https://github.com/speedy008) in pull request [19804](https://github.com/magento/magento2/pull/19804)*. [GitHub-19796](https://github.com/magento/magento2/issues/19796)
+*  Fixed alignment of the **Update Qty** button on the sales order invoice. *Fix submitted by Kajal Solanki( in pull request [19804](https://github.com/magento/magento2/pull/19804)*. [GitHub-19796](https://github.com/magento/magento2/issues/19796)
 
 <!-- ENGCOM-4017  -->
-*  Fixed alignment of the currency value rate field on credit memos created from the Admin. *Fix submitted by [Dipti](https://github.com/dipti2jcommerce) in pull request [20613](https://github.com/magento/magento2/pull/20613)*. [GitHub-20609](https://github.com/magento/magento2/issues/20609)
+*  Fixed alignment of the currency value rate field on credit memos created from the Admin. *Fix submitted by Dipti in pull request [20613](https://github.com/magento/magento2/pull/20613)*. [GitHub-20609](https://github.com/magento/magento2/issues/20609)
 
 ### Configurable products
 
 <!-- ENGCOM-3554  -->
-*  Translations for `tier_price.phtml` now works as expected. Previously, these translations were not included in `js-translation.json`, and not visible on the storefront. *Fix submitted by [Oleksii Gorbulin](https://github.com/agorbulin) in pull request [19377](https://github.com/magento/magento2/pull/19377)*. [GitHub-19085](https://github.com/magento/magento2/issues/19085)
+*  Translations for `tier_price.phtml` now works as expected. Previously, these translations were not included in `js-translation.json`, and not visible on the storefront. *Fix submitted by Oleksii Gorbulin in pull request [19377](https://github.com/magento/magento2/pull/19377)*. [GitHub-19085](https://github.com/magento/magento2/issues/19085)
 
 <!-- MAGETWO-89230  -->
 *  You can now add a configurable product with no options  to a gift registry from a wishlist.
 
 <!-- ENGCOM-3135  -->
-*  Magento no longer throws a fatal error when you try to save a configurable product with an SKU equal to or less than 64 digits. *Fix submitted by [Thiago](https://github.com/thiagolima-bm) in pull request [18461](https://github.com/magento/magento2/pull/18461)*. [GitHub-18082](https://github.com/magento/magento2/issues/18082)
+*  Magento no longer throws a fatal error when you try to save a configurable product with an SKU equal to or less than 64 digits. *Fix submitted by Thiago in pull request [18461](https://github.com/magento/magento2/pull/18461)*. [GitHub-18082](https://github.com/magento/magento2/issues/18082)
 
 ### CMS
 
@@ -512,13 +511,13 @@ Previously, when you reopened these categories, no checkboxes were checked.  *Fi
 *  Magento now loads customer private data only once when system state changes. Previously, Directory Data and Cart were loaded twice after a user logged in to the system, which caused additional server load and traffic.
 
 <!-- ENGCOM-3052  -->
-*  Magento now maintains alphabetical order for customer groups when you filter customers by group in the Admin.  Previously, groups were sorted by ID. *Fix submitted by [Dmytro Cheshun](https://github.com/dmytro-ch) in pull request [18280](https://github.com/magento/magento2/pull/18280)*. [GitHub-18101](https://github.com/magento/magento2/issues/18101)
+*  Magento now maintains alphabetical order for customer groups when you filter customers by group in the Admin.  Previously, groups were sorted by ID. *Fix submitted by Dmytro Cheshun in pull request [18280](https://github.com/magento/magento2/pull/18280)*. [GitHub-18101](https://github.com/magento/magento2/issues/18101)
 
 <!-- ENGCOM-3107  -->
-*  Merchants can now edit a customer account if the customer's password has expired. *Fix submitted by [Dmytro Cheshun](https://github.com/dmytro-ch) in pull request [18414](https://github.com/magento/magento2/pull/18414)*. [GitHub-18162](https://github.com/magento/magento2/issues/18162)
+*  Merchants can now edit a customer account if the customer's password has expired. *Fix submitted by Dmytro Cheshun in pull request [18414](https://github.com/magento/magento2/pull/18414)*. [GitHub-18162](https://github.com/magento/magento2/issues/18162)
 
 <!-- ENGCOM-3082  -->
-*  Magento now saves customer custom attributes as expected when  EAV caching is disabled.  Previously, directly saving customer information resulted in data loss. *Fix submitted by [Francesco Haymar d'Ettory](https://github.com/Thundar) in pull request [17968](https://github.com/magento/magento2/pull/17968)*. [GitHub-12479](https://github.com/magento/magento2/issues/12479)
+*  Magento now saves customer custom attributes as expected when  EAV caching is disabled.  Previously, directly saving customer information resulted in data loss. *Fix submitted by Francesco Haymar d'Ettory in pull request [17968](https://github.com/magento/magento2/pull/17968)*. [GitHub-12479](https://github.com/magento/magento2/issues/12479)
 
 <!-- MAGETWO-96079  -->
 *  You can now successfully update your password from the link provided in the email sent when you click **Reset Password** on the Admin.  Previously, Magento did not update the password and displayed this message, `Something went wrong while saving the new password`.
@@ -549,32 +548,32 @@ Previously, when you reopened these categories, no checkboxes were checked.  *Fi
 ### Developer
 
 <!-- ENGCOM-2940  -->
-*  You can now print order information from the customer dashboard. Previously, when you tried to print  order information from the customer dashboard, Magento displayed this error, `Fatal error: Call to a member function getRealOrderId() on null in /vendor/magento/module-sales/Block/Order/PrintShipment.php`. *Fix submitted by [passtet](https://github.com/passtet) in pull request [17984](https://github.com/magento/magento2/pull/17984)*. [GitHub-10440](https://github.com/magento/magento2/issues/10440)
+*  You can now print order information from the customer dashboard. Previously, when you tried to print  order information from the customer dashboard, Magento displayed this error, `Fatal error: Call to a member function getRealOrderId() on null in /vendor/magento/module-sales/Block/Order/PrintShipment.php`. *Fix submitted by passtet in pull request [17984](https://github.com/magento/magento2/pull/17984)*. [GitHub-10440](https://github.com/magento/magento2/issues/10440)
 
 ### Directory
 
 <!-- ENGCOM-2747  -->
-*  Australian country regions are now available from the drop-down menu that Magento displays during the checkout address population steps. *Fix submitted by [Maxim Baibakov](https://github.com/maximbaibakov) in pull request [17516](https://github.com/magento/magento2/pull/17516)*. [GitHub-17514](https://github.com/magento/magento2/issues/17514)
+*  Australian country regions are now available from the drop-down menu that Magento displays during the checkout address population steps. *Fix submitted by Maxim Baibakov in pull request [17516](https://github.com/magento/magento2/pull/17516)*. [GitHub-17514](https://github.com/magento/magento2/issues/17514)
 
 ### Downloadable
 
 <!-- ENGCOM-3385  -->
-*  The order confirmation email sent to the customer during  guest checkout now includes download links for purchased downloadable products as expected. *Fix submitted by [Oleksandr Kravchuk](https://github.com/swnsma) in pull request [19036](https://github.com/magento/magento2/pull/19036)*. [GitHub-10934](https://github.com/magento/magento2/issues/10934),
+*  The order confirmation email sent to the customer during  guest checkout now includes download links for purchased downloadable products as expected. *Fix submitted by Oleksandr Kravchuk in pull request [19036](https://github.com/magento/magento2/pull/19036)*. [GitHub-10934](https://github.com/magento/magento2/issues/10934),
  [GitHub-19003](https://github.com/magento/magento2/issues/19003),  [GitHub-18323](https://github.com/magento/magento2/issues/18323)
 
 <!-- ENGCOM-3584  -->
-*  You can now delete a sample link from a downloadable product. Previously, Magento restored a deleted link after you saved the downloadable product. *Fix submitted by [Ansari](https://github.com/ansari-krish) in pull request [19431](https://github.com/magento/magento2/pull/19431)*. [GitHub-19344](https://github.com/magento/magento2/issues/19344)
+*  You can now delete a sample link from a downloadable product. Previously, Magento restored a deleted link after you saved the downloadable product. *Fix submitted by Ansari in pull request [19431](https://github.com/magento/magento2/pull/19431)*. [GitHub-19344](https://github.com/magento/magento2/issues/19344)
 
 ### EAV
 
 <!-- ENGCOM-3128  -->
-*  Magento no longer changes the ute source_model when you create an attribute option through the API. Previously, the `source_model` of an EAV attribute was set to `Magento\Eav\Model\Entity\Attribute\Source\Table` when updating an EAV attribute's options through the API. This eliminated the ability to update this attribute's options through the Admin. *Fix submitted by [Pieter Hoste](https://github.com/hostep) in pull request [18390](https://github.com/magento/magento2/pull/18390)*. [GitHub-13156](https://github.com/magento/magento2/issues/13156)
+*  Magento no longer changes the ute source_model when you create an attribute option through the API. Previously, the `source_model` of an EAV attribute was set to `Magento\Eav\Model\Entity\Attribute\Source\Table` when updating an EAV attribute's options through the API. This eliminated the ability to update this attribute's options through the Admin. *Fix submitted by Pieter Hoste in pull request [18390](https://github.com/magento/magento2/pull/18390)*. [GitHub-13156](https://github.com/magento/magento2/issues/13156)
 
 <!-- ENGCOM-3215  -->
-*  Magento no longer throws an SQL Join error when you use a custom EAV entity  with the `standard eav_entity` entity table. Previously, this usage resulted in an integrity constraint violation. *Fix submitted by [Oleksii Lisovyi](https://github.com/oleksii-lisovyi) in pull request [18566](https://github.com/magento/magento2/pull/18566)*. [GitHub-18532](https://github.com/magento/magento2/issues/18532)
+*  Magento no longer throws an SQL Join error when you use a custom EAV entity  with the `standard eav_entity` entity table. Previously, this usage resulted in an integrity constraint violation. *Fix submitted by Oleksii Lisovyi in pull request [18566](https://github.com/magento/magento2/pull/18566)*. [GitHub-18532](https://github.com/magento/magento2/issues/18532)
 
 <!-- ENGCOM-3732  -->
-*  You can now retrieve the  product attribute value for store-view scope types in the product collection that is loaded for a specific store. *Fix submitted by [Shikha Mishra](https://github.com/shikhamis11) in pull request [19911](https://github.com/magento/magento2/pull/19911)*. [GitHub-18374](https://github.com/magento/magento2/issues/18374)
+*  You can now retrieve the  product attribute value for store-view scope types in the product collection that is loaded for a specific store. *Fix submitted by Shikha Mishra in pull request [19911](https://github.com/magento/magento2/pull/19911)*. [GitHub-18374](https://github.com/magento/magento2/issues/18374)
 
 ### Email
 
@@ -584,19 +583,19 @@ Previously, when you reopened these categories, no checkboxes were checked.  *Fi
 ### Frameworks
 
 <!-- ENGCOM-3921  -->
-*  Fixed icon behavior on product customization page. *Fix submitted by [Kajal Solanki](https://github.com/speedy008) in pull request [19400](https://github.com/magento/magento2/pull/19400)*. [GitHub-19399](https://github.com/magento/magento2/issues/19399)
+*  Fixed icon behavior on product customization page. *Fix submitted by Kajal Solanki in pull request [19400](https://github.com/magento/magento2/pull/19400)*. [GitHub-19399](https://github.com/magento/magento2/issues/19399)
 
 <!-- ENGCOM-3740  -->
-*  Newly added links on the customer dashboard are now shown as current as expected when the link path has been constructed from both default and new elements. Previously, the link was added, but not shown in the current state as expected. *Fix submitted by [Eduard Chitoraga](https://github.com/eduard13) in pull request [19927](https://github.com/magento/magento2/pull/19927)*. [GitHub-19099](https://github.com/magento/magento2/issues/19099)
+*  Newly added links on the customer dashboard are now shown as current as expected when the link path has been constructed from both default and new elements. Previously, the link was added, but not shown in the current state as expected. *Fix submitted by Eduard Chitoraga in pull request [19927](https://github.com/magento/magento2/pull/19927)*. [GitHub-19099](https://github.com/magento/magento2/issues/19099)
 
 <!-- ENGCOM-3359  -->
-*  Class `\Magento\Framework\Data\Form\Element\Fieldset` now calls the `getBeforeElementHtml` method. *Fix submitted by [Burlacu Vasilii](https://github.com/vasilii-b) in pull request [18985](https://github.com/magento/magento2/pull/18985)*. [GitHub-2618](https://github.com/magento/magento2/issues/2618)
+*  Class `\Magento\Framework\Data\Form\Element\Fieldset` now calls the `getBeforeElementHtml` method. *Fix submitted by Burlacu Vasilii in pull request [18985](https://github.com/magento/magento2/pull/18985)*. [GitHub-2618](https://github.com/magento/magento2/issues/2618)
 
 <!-- ENGCOM-2942  -->
-*  The `bin/magento module:uninstall` command  now works as expected with Composer. Previously, there was a discrepancy between `composer.lock` and `composer.json` when this command was used to remove a module. *Fix submitted by [Francesco Haymar d'Ettory](https://github.com/Thundar) in pull request [18002](https://github.com/magento/magento2/pull/18002)*. [GitHub-5797](https://github.com/magento/magento2/issues/5797)
+*  The `bin/magento module:uninstall` command  now works as expected with Composer. Previously, there was a discrepancy between `composer.lock` and `composer.json` when this command was used to remove a module. *Fix submitted by Francesco Haymar d'Ettory in pull request [18002](https://github.com/magento/magento2/pull/18002)*. [GitHub-5797](https://github.com/magento/magento2/issues/5797)
 
 <!-- ENGCOM-3172  -->
-*  Magento now throws `LogicException($message, 0, $e)` instead of `LogicException($message)` as needed when running validation for communication configuration (`communication.xml`).  Previously, the  validator in `Magento\Framework\Communication\Config\Validator` did not propagate exceptions, which obscured the cause of the error. *Fix submitted by [Vishal Gelani](https://github.com/gelanivishal) in pull request [18554](https://github.com/magento/magento2/pull/18554)*. [GitHub-14555](https://github.com/magento/magento2/issues/14555)
+*  Magento now throws `LogicException($message, 0, $e)` instead of `LogicException($message)` as needed when running validation for communication configuration (`communication.xml`).  Previously, the  validator in `Magento\Framework\Communication\Config\Validator` did not propagate exceptions, which obscured the cause of the error. *Fix submitted by Vishal Gelani in pull request [18554](https://github.com/magento/magento2/pull/18554)*. [GitHub-14555](https://github.com/magento/magento2/issues/14555)
 
 <!-- MAGETWO-87297  -->
 *  Module names can now contain numbers. Previously, `magento/framework-message-queue/etc/queue_base.xml` contained a pattern that did not allow numbers to be used in `instanceType`, which resulted in the invalidation of custom message consumers in this file.
@@ -611,13 +610,13 @@ Previously, when you reopened these categories, no checkboxes were checked.  *Fi
 *  Images can now by default be successfully imported from HTTP and redirected to HTTPS. Previously, the image could not be uploaded.
 
 <!-- ENGCOM-3568  -->
-*  Interceptor class methods now support nullable return types. *Fix submitted by [Oleksandr Kravchuk](https://github.com/swnsma) in pull request [19398](https://github.com/magento/magento2/pull/19398)*. [GitHub-15505](https://github.com/magento/magento2/issues/15505)
+*  Interceptor class methods now support nullable return types. *Fix submitted by Oleksandr Kravchuk in pull request [19398](https://github.com/magento/magento2/pull/19398)*. [GitHub-15505](https://github.com/magento/magento2/issues/15505)
 
 <!-- ENGCOM-3479  -->
-*  Magento can now read responses from third-party servers that use HTTP/2 if your server also uses HTTP/2. Previously, this inability to read requests from third-party servers that use HTTP/2 prevented access to Magento Marketplace. *Fix submitted by [Vishal Gelani](https://github.com/gelanivishal) in pull request [19239](https://github.com/magento/magento2/pull/19239)*. [GitHub-19127](https://github.com/magento/magento2/issues/19127)
+*  Magento can now read responses from third-party servers that use HTTP/2 if your server also uses HTTP/2. Previously, this inability to read requests from third-party servers that use HTTP/2 prevented access to Magento Marketplace. *Fix submitted by Vishal Gelani in pull request [19239](https://github.com/magento/magento2/pull/19239)*. [GitHub-19127](https://github.com/magento/magento2/issues/19127)
 
 <!-- ENGCOM-3424  -->
-*  The node in `events.xml`  can now have child nodes. Previously, a cache flush triggered an exception. *Fix submitted by [Lisovyi Yevhenii](https://github.com/lisovyievhenii) in pull request [19145](https://github.com/magento/magento2/pull/19145)*. [GitHub-15931](https://github.com/magento/magento2/issues/15931)
+*  The node in `events.xml`  can now have child nodes. Previously, a cache flush triggered an exception. *Fix submitted by Lisovyi Yevhenii in pull request [19145](https://github.com/magento/magento2/pull/19145)*. [GitHub-15931](https://github.com/magento/magento2/issues/15931)
 
 #### Cache framework
 
@@ -638,25 +637,25 @@ Previously, when you reopened these categories, no checkboxes were checked.  *Fi
 *  You can now create a customer without a phone number when **Show Telephone** is set to optional. Previously, Magento displayed an informative error message and did not let you create the customer.
 
 <!-- ENGCOM-3507  -->
-*  Resolved issues with pager style. *Fix submitted by [Kajal Solanki](https://github.com/speedy008) in pull request [19296](https://github.com/magento/magento2/pull/19296)*. [GitHub-19286](https://github.com/magento/magento2/issues/19286)
+*  Resolved issues with pager style. *Fix submitted by Kajal Solanki in pull request [19296](https://github.com/magento/magento2/pull/19296)*. [GitHub-19286](https://github.com/magento/magento2/issues/19286)
 
 <!-- ENGCOM-3301  -->
-*  Removed use of `escapeJS` method in  `app/code/Magento/SendFriend/view/frontend/templates/send.phtml`. *Fix submitted by [Rahul Mahto](https://github.com/rahulwebkul) in pull request [18886](https://github.com/magento/magento2/pull/18886)*. [GitHub-18779](https://github.com/magento/magento2/issues/18779)
+*  Removed use of `escapeJS` method in  `app/code/Magento/SendFriend/view/frontend/templates/send.phtml`. *Fix submitted by Rahul Mahto in pull request [18886](https://github.com/magento/magento2/pull/18886)*. [GitHub-18779](https://github.com/magento/magento2/issues/18779)
 
 <!-- ENGCOM-2937  -->
-*  Merchants can now change the currency symbol back to its default value from the Admin in Single-store mode. Previously, when a merchant tried to change this symbol back to its default value, Magento displayed a success message, but did not change the currency symbol back to the default value. *Fix submitted by [magently](https://github.com/magently) in pull request [17966](https://github.com/magento/magento2/pull/17966)*. [GitHub-17567](https://github.com/magento/magento2/issues/17567)
+*  Merchants can now change the currency symbol back to its default value from the Admin in Single-store mode. Previously, when a merchant tried to change this symbol back to its default value, Magento displayed a success message, but did not change the currency symbol back to the default value. *Fix submitted by magently in pull request [17966](https://github.com/magento/magento2/pull/17966)*. [GitHub-17567](https://github.com/magento/magento2/issues/17567)
 
 <!-- ENGCOM-2938  -->
-*  The menu on category pages accessed from the Admin now work as expected when you change from mobile to desktop view. *Fix submitted by [Emanuel Arcos](https://github.com/emanuelarcos) in pull request [17990](https://github.com/magento/magento2/pull/17990)*. [GitHub-5402](https://github.com/magento/magento2/issues/5402)
+*  The menu on category pages accessed from the Admin now work as expected when you change from mobile to desktop view. *Fix submitted by Emanuel Arcos in pull request [17990](https://github.com/magento/magento2/pull/17990)*. [GitHub-5402](https://github.com/magento/magento2/issues/5402)
 
 <!-- ENGCOM-3054  -->
-*  The WYSIWYG editor now correctly parses directives of files that contain special characters in their URLs. Previously, the editor did not decode base64 special chars. *Fix submitted by [adammada](https://github.com/adammada) in pull request [18215](https://github.com/magento/magento2/pull/18215)*. [GitHub-18138](https://github.com/magento/magento2/issues/18138)
+*  The WYSIWYG editor now correctly parses directives of files that contain special characters in their URLs. Previously, the editor did not decode base64 special chars. *Fix submitted by adammada in pull request [18215](https://github.com/magento/magento2/pull/18215)*. [GitHub-18138](https://github.com/magento/magento2/issues/18138)
 
 <!-- ENGCOM-3200  -->
-*  Navigation arrows in the fotorama zoom now work as expected. *Fix submitted by [Luuk Schakenraad](https://github.com/luukschakenraad) in pull request [18595](https://github.com/magento/magento2/pull/18595)*. [GitHub-18585](https://github.com/magento/magento2/issues/18585)
+*  Navigation arrows in the fotorama zoom now work as expected. *Fix submitted by Luuk Schakenraad in pull request [18595](https://github.com/magento/magento2/pull/18595)*. [GitHub-18585](https://github.com/magento/magento2/issues/18585)
 
 <!-- ENGCOM-3311  -->
-*  You can now customize the view of tab and accordion components by using mixins to redefine the default variables in the scope of a custom theme. *Fix submitted by [Vishal Gelani](https://github.com/gelanivishal) in pull request [18875](https://github.com/magento/magento2/pull/18875)*. [GitHub-18729](https://github.com/magento/magento2/issues/18729)
+*  You can now customize the view of tab and accordion components by using mixins to redefine the default variables in the scope of a custom theme. *Fix submitted by Vishal Gelani in pull request [18875](https://github.com/magento/magento2/pull/18875)*. [GitHub-18729](https://github.com/magento/magento2/issues/18729)
 
 <!-- MAGETWO-87734  -->
 *  You can now pause product videos on YouTube on storefronts that are running on Internet Explorer 11.x.
@@ -698,10 +697,10 @@ Previously, when you reopened these categories, no checkboxes were checked.  *Fi
 ### Google Analytics
 
 <!-- ENGCOM-3091  -->
-*  Google Analytics JavaScript is now loaded correctly on the frontend. *Fix submitted by [Petar Sambolek](https://github.com/sambolek) in pull request [18375](https://github.com/magento/magento2/pull/18375)*. [GitHub-16497](https://github.com/magento/magento2/issues/16497)
+*  Google Analytics JavaScript is now loaded correctly on the frontend. *Fix submitted by Petar Sambolek in pull request [18375](https://github.com/magento/magento2/pull/18375)*. [GitHub-16497](https://github.com/magento/magento2/issues/16497)
 
 <!-- ENGCOM-2271  -->
-*  You can now save configuration from the **Admin**  > **Stores** > **Configuration** > **General** > **Advanced Reporting** without providing an industry value. Previously, Magento did not save configuration settings, and displayed this error:  `Please select a vertical.` *Fix submitted by [Sunil](https://github.com/sunilit42) in pull request [15366](https://github.com/magento/magento2/pull/15366)*. [GitHub-15259](https://github.com/magento/magento2/issues/15259)
+*  You can now save configuration from the **Admin**  > **Stores** > **Configuration** > **General** > **Advanced Reporting** without providing an industry value. Previously, Magento did not save configuration settings, and displayed this error:  `Please select a vertical.` *Fix submitted by Sunil in pull request [15366](https://github.com/magento/magento2/pull/15366)*. [GitHub-15259](https://github.com/magento/magento2/issues/15259)
 
 ### Image
 
@@ -717,16 +716,16 @@ Previously, when you reopened these categories, no checkboxes were checked.  *Fi
 *  We've resolved multiple issues that users previously encountered when importing configurable products with images and virtual products. Previously, image import failed under certain circumstances, and Magento displayed these messages:  `Imported resource (image) could not be downloaded from external resource due to timeout or access permissions in row(s)` and `Products are imported but configurable product has no image in Magento`.
 
 <!-- ENGCOM-3827  -->
-*  Magento now indicates correct stock status (in stock/out-of-stock) after importing products that have an indicated quantity but a status of out-of-stock from a CSV file. Previously, Magento imported the product quantity correctly, but not the stock status. *Fix submitted by [p-bystritsky](https://github.com/p-bystritsky) in pull request [20177](https://github.com/magento/magento2/pull/20177)*. [GitHub-15950](https://github.com/magento/magento2/issues/15950)
+*  Magento now indicates correct stock status (in stock/out-of-stock) after importing products that have an indicated quantity but a status of out-of-stock from a CSV file. Previously, Magento imported the product quantity correctly, but not the stock status. *Fix submitted by p-bystritsky in pull request [20177](https://github.com/magento/magento2/pull/20177)*. [GitHub-15950](https://github.com/magento/magento2/issues/15950)
 
 <!-- ENGCOM-2930  -->
-*  Magento now correctly displays all linked products in the correct order in the Admin tables. Previously, Magento displayed all products correctly on the storefront, but products were missing from the Admin display. *Fix submitted by [Pieter Hoste](https://github.com/hostep) in pull request [17885](https://github.com/magento/magento2/pull/17885)*. [GitHub-13720](https://github.com/magento/magento2/issues/13720), [GitHub-14050](https://github.com/magento/magento2/issues/14050)
+*  Magento now correctly displays all linked products in the correct order in the Admin tables. Previously, Magento displayed all products correctly on the storefront, but products were missing from the Admin display. *Fix submitted by Pieter Hoste in pull request [17885](https://github.com/magento/magento2/pull/17885)*. [GitHub-13720](https://github.com/magento/magento2/issues/13720), [GitHub-14050](https://github.com/magento/magento2/issues/14050)
 
 <!-- ENGCOM-2916  -->
-*  Magento does not change or overwrite  `url_key` values when updating product data during import if no values are provided in the import data.  *Fix submitted by [Joseph McDermott](https://github.com/josephmcdermott) in pull request [17882](https://github.com/magento/magento2/pull/17882)*. [GitHub-17023](https://github.com/magento/magento2/issues/17023)
+*  Magento does not change or overwrite  `url_key` values when updating product data during import if no values are provided in the import data.  *Fix submitted by Joseph McDermott in pull request [17882](https://github.com/magento/magento2/pull/17882)*. [GitHub-17023](https://github.com/magento/magento2/issues/17023)
 
 <!-- ENGCOM-3321  -->
-*  Magento now displays an error message after you run check data when importing new products with SKUs that exceed the maximum permitted length. *Fix submitted by [Ravi Chandra](https://github.com/ravi-chandra3197) in pull request [18591](https://github.com/magento/magento2/pull/18591)*. [GitHub-17865](https://github.com/magento/magento2/issues/17865)
+*  Magento now displays an error message after you run check data when importing new products with SKUs that exceed the maximum permitted length. *Fix submitted by Ravi Chandra in pull request [18591](https://github.com/magento/magento2/pull/18591)*. [GitHub-17865](https://github.com/magento/magento2/issues/17865)
 
 <!-- MAGETWO-93222  -->
 *  Magento no longer deletes  `url-key` values for existing products when updating these products with imported data that does not contain `url-key` values.
@@ -759,7 +758,7 @@ Previously, when you reopened these categories, no checkboxes were checked.  *Fi
 *  Imported images that were removed through the Admin before import remain absent after import. Magento now displays an informative error message if images are not imported as expected.
 
 <!-- ENGCOM-4075  -->
-*  The `\Magento\ImportExport\Block\Adminhtml\Export\Filter::_getSelectHtmlWithValue()` method no longer overwrites `$value` arguments. Previously, Magento used the same name for different `$value` variables. *Fix submitted by [Rajneesh Gupta](https://github.com/irajneeshgupta) in pull request [20863](https://github.com/magento/magento2/pull/20863)*. [GitHub-20624](https://github.com/magento/magento2/issues/20624)
+*  The `\Magento\ImportExport\Block\Adminhtml\Export\Filter::_getSelectHtmlWithValue()` method no longer overwrites `$value` arguments. Previously, Magento used the same name for different `$value` variables. *Fix submitted by Rajneesh Gupta in pull request [20863](https://github.com/magento/magento2/pull/20863)*. [GitHub-20624](https://github.com/magento/magento2/issues/20624)
 
 <!-- MAGETWO-74044  -->
 *  The import process now supports `add_update` along with the default behavior `append`.  [GitHub-6193](https://github.com/magento/magento2/issues/6193)
@@ -770,17 +769,17 @@ Previously, when you reopened these categories, no checkboxes were checked.  *Fi
 ### Infrastructure
 
 <!-- ENGCOM-3025  -->
-*  Magento no longer throws an error when you send an email from the command line. Previously, Magento threw an exception because `$debugHintsPath` was missing. *Fix submitted by [passtet](https://github.com/passtet) in pull request [17984](https://github.com/magento/magento2/pull/17984)*. [GitHub-10440](https://github.com/magento/magento2/issues/10440)
+*  Magento no longer throws an error when you send an email from the command line. Previously, Magento threw an exception because `$debugHintsPath` was missing. *Fix submitted by passtet in pull request [17984](https://github.com/magento/magento2/pull/17984)*. [GitHub-10440](https://github.com/magento/magento2/issues/10440)
 
 ### Integration
 
 <!-- ENGCOM-3102  -->
-*  The Last logged In value displayed on the customer account page on the Admin is now updated as expected when a customer is authenticated through REST. *Fix submitted by [Prakash](https://github.com/prakashpatel07) in pull request [17978](https://github.com/magento/magento2/pull/17978)*. [GitHub-17488](https://github.com/magento/magento2/issues/17488)
+*  The Last logged In value displayed on the customer account page on the Admin is now updated as expected when a customer is authenticated through REST. *Fix submitted by Prakash in pull request [17978](https://github.com/magento/magento2/pull/17978)*. [GitHub-17488](https://github.com/magento/magento2/issues/17488)
 
 ### Layered navigation
 
 <!-- ENGCOM-3388  -->
-*  The code comment that describes the `Use in Layered Navigation: Filterable (no results)` property for the price filter has been made more informative. *Fix submitted by [Vladyslav Podorozhnyi](https://github.com/vpodorozh) in pull request [19044](https://github.com/magento/magento2/pull/19044)*. [GitHub-14007](https://github.com/magento/magento2/issues/14007)
+*  The code comment that describes the `Use in Layered Navigation: Filterable (no results)` property for the price filter has been made more informative. *Fix submitted by Vladyslav Podorozhnyi in pull request [19044](https://github.com/magento/magento2/pull/19044)*. [GitHub-14007](https://github.com/magento/magento2/issues/14007)
 
 <!-- MAGETWO-97000 -->
 *  Layered navigation for Elasticsearch now includes all product sizes. If the **Filterable (with results)** option is set for a product attribute, then:
@@ -803,7 +802,7 @@ Previously, when you reopened these categories, no checkboxes were checked.  *Fi
 ### Newsletter
 
 <!-- ENGCOM-3253  -->
-*  Customers are no longer unsubscribed to a newsletter as a result of a password reset email request when **Newsletter Need to Confirm** is set to **yes** on the Admin. *Fix submitted by [Janak Bhimani](https://github.com/janakbhimani) in pull request [18643](https://github.com/magento/magento2/pull/18643)*. [GitHub-17954](https://github.com/magento/magento2/issues/17954)
+*  Customers are no longer unsubscribed to a newsletter as a result of a password reset email request when **Newsletter Need to Confirm** is set to **yes** on the Admin. *Fix submitted by Janak Bhimani in pull request [18643](https://github.com/magento/magento2/pull/18643)*. [GitHub-17954](https://github.com/magento/magento2/issues/17954)
 
 <!-- MAGETWO-88736  -->
 *  Magento now permits only one newsletter subscription per email address. Previously, when a website had multiple store views, a customer could subscribe multiple times to a newsletter with one email address.
@@ -812,15 +811,15 @@ Previously, when you reopened these categories, no checkboxes were checked.  *Fi
 *  Magento now displays an informative `You have unsubscribed` message when you click the unsubscribe link in the newsletter email.
 
 <!-- ENGCOM-3680  -->
-*  A logged-in user who already has an account can now use the footer to sign up for a newsletter subscription. Previously, this user received an error message, and Magento did not subscribed her to the newsletter. *Fix submitted by [Ravi chandra](https://github.com/ravi-chandra3197) in pull request [18912](https://github.com/magento/magento2/pull/18912)*. [GitHub-8952](https://github.com/magento/magento2/issues/8952)
+*  A logged-in user who already has an account can now use the footer to sign up for a newsletter subscription. Previously, this user received an error message, and Magento did not subscribed her to the newsletter. *Fix submitted by Ravi Chandra in pull request [18912](https://github.com/magento/magento2/pull/18912)*. [GitHub-8952](https://github.com/magento/magento2/issues/8952)
 
 ### Offline shipping
 
 <!-- ENGCOM-3079  -->
-*  Magento now displays the appropriate error message when free shipping is not available for an order during check out. *Fix submitted by [vaibhavahalpara](https://github.com/vaibhavahalpara) in pull request [17982](https://github.com/magento/magento2/pull/17982)*. [GitHub-17977](https://github.com/magento/magento2/issues/17977)
+*  Magento now displays the appropriate error message when free shipping is not available for an order during check out. *Fix submitted by vaibhavahalpara in pull request [17982](https://github.com/magento/magento2/pull/17982)*. [GitHub-17977](https://github.com/magento/magento2/issues/17977)
 
 <!-- ENGCOM-3057  -->
-*  The table rate shipping method no longer fails to return a quote when a customer uses an American  post code in the form of *five-digit zip - four-digit* extension (for example, 44444-1234). *Fix submitted by [magently](https://github.com/magently) in pull request [18166](https://github.com/magento/magento2/pull/18166)*. [GitHub-17770](https://github.com/magento/magento2/issues/17770)
+*  The table rate shipping method no longer fails to return a quote when a customer uses an American  post code in the form of *five-digit zip - four-digit* extension (for example, 44444-1234). *Fix submitted by magently in pull request [18166](https://github.com/magento/magento2/pull/18166)*. [GitHub-17770](https://github.com/magento/magento2/issues/17770)
 
 ### Payment methods
 
@@ -834,16 +833,16 @@ Previously, when you reopened these categories, no checkboxes were checked.  *Fi
 *  When an order placed with PayPal fails during checkout, Magento no longer processes payment for the order. Previously, orders that failed during the checkout when being processed through PayPal were processed.
 
 <!-- ENGCOM-3997  -->
-*  Magento now identifies shipping method in the Shipping section of the order review page for orders that are paid with using PayPal Express. *Fix submitted by [Nirav Kadiya](https://github.com/ssp58bleuciel) in pull request [19655](https://github.com/magento/magento2/pull/19655)*. [GitHub-14712](https://github.com/magento/magento2/issues/14712)
+*  Magento now identifies shipping method in the Shipping section of the order review page for orders that are paid with using PayPal Express. *Fix submitted by Nirav Kadiya in pull request [19655](https://github.com/magento/magento2/pull/19655)*. [GitHub-14712](https://github.com/magento/magento2/issues/14712)
 
 <!-- ENGCOM-3691  -->
-*  Magento now correctly handles attribute options that begin with zero. Previously, these attribute options  did not work if an option with the same number but lacking the zero already existed. *Fix submitted by [SikailoISM](https://github.com/SikailoISM) in pull request [19612](https://github.com/magento/magento2/pull/19612)*. [GitHub-19436](https://github.com/magento/magento2/issues/19436)
+*  Magento now correctly handles attribute options that begin with zero. Previously, these attribute options  did not work if an option with the same number but lacking the zero already existed. *Fix submitted by SikailoISM in pull request [19612](https://github.com/magento/magento2/pull/19612)*. [GitHub-19436](https://github.com/magento/magento2/issues/19436)
 
 <!-- ENGCOM-3316  -->
-*  Magento now populates the estimated billing address  field  on the checkout page with the default billing address as expected when the cart contains virtual products only. Previously, when a signed-in customer with different default shipping and billing addresses had a cart containing only virtual products, the cart estimation field was populated with the default shipping address information  instead of the default billing address information. *Fix submitted by [Vishal Gelani](https://github.com/gelanivishal) in pull request [18863](https://github.com/magento/magento2/pull/18863)*. [GitHub-17744](https://github.com/magento/magento2/issues/17744)
+*  Magento now populates the estimated billing address  field  on the checkout page with the default billing address as expected when the cart contains virtual products only. Previously, when a signed-in customer with different default shipping and billing addresses had a cart containing only virtual products, the cart estimation field was populated with the default shipping address information  instead of the default billing address information. *Fix submitted by Vishal Gelani in pull request [18863](https://github.com/magento/magento2/pull/18863)*. [GitHub-17744](https://github.com/magento/magento2/issues/17744)
 
 <!-- ENGCOM-2629  -->
-*  You can now use REST to create an order without payment. Previously, when using REST to submit an order without a payment, Magento threw an error. *Fix submitted by [Michiel Gerritsen](https://github.com/michielgerritsen) in pull request [15683](https://github.com/magento/magento2/pull/15683)*. [GitHub-15652](https://github.com/magento/magento2/issues/15652)
+*  You can now use REST to create an order without payment. Previously, when using REST to submit an order without a payment, Magento threw an error. *Fix submitted by Michiel Gerritsen in pull request [15683](https://github.com/magento/magento2/pull/15683)*. [GitHub-15652](https://github.com/magento/magento2/issues/15652)
 
 <!-- MAGETWO-96289  -->
 *  A popup no longer blocks completion of check out using Braintree PayPal on a mobile device.
@@ -871,13 +870,13 @@ Previously, when you reopened these categories, no checkboxes were checked.  *Fi
 *  Merchants can now create new user roles that do not have  access to quotes.
 
 <!-- ENGCOM-3314  -->
-*  You can now use REST to set billing information for a customer (`customerId`) with an existing address. Previously, Magento threw an exception during address validation. *Fix submitted by [Vishal Gelani](https://github.com/gelanivishal) in pull request [18872](https://github.com/magento/magento2/pull/18872)*. [GitHub-17485](https://github.com/magento/magento2/issues/17485)
+*  You can now use REST to set billing information for a customer (`customerId`) with an existing address. Previously, Magento threw an exception during address validation. *Fix submitted by Vishal Gelani in pull request [18872](https://github.com/magento/magento2/pull/18872)*. [GitHub-17485](https://github.com/magento/magento2/issues/17485)
 
 <!-- ENGCOM-3839  -->
-*  You can now update a shopping cart that contains a reserved order number (for example, 000000651). *Fix submitted by [Saphal Jha](https://github.com/saphaljha) in pull request [20208](https://github.com/magento/magento2/pull/20208)*. [GitHub-19101](https://github.com/magento/magento2/issues/19101)
+*  You can now update a shopping cart that contains a reserved order number (for example, 000000651). *Fix submitted by Saphal Jha in pull request [20208](https://github.com/magento/magento2/pull/20208)*. [GitHub-19101](https://github.com/magento/magento2/issues/19101)
 
 <!-- ENGCOM-3975  -->
-*  We fixed an issue with inaccurate floating point calculations during checkout. *Fix submitted by [Shikha Mishra](https://github.com/shikhamis11) in pull request [20638](https://github.com/magento/magento2/pull/20638)*. [GitHub-18027](https://github.com/magento/magento2/issues/18027)
+*  We fixed an issue with inaccurate floating point calculations during checkout. *Fix submitted by Shikha Mishra in pull request [20638](https://github.com/magento/magento2/pull/20638)*. [GitHub-18027](https://github.com/magento/magento2/issues/18027)
 
 ### Reports
 
@@ -887,7 +886,7 @@ Previously, when you reopened these categories, no checkboxes were checked.  *Fi
 ### Review
 
 <!-- ENGCOM-3833  -->
-*  Administrators can now access product ratings in deployments with multiple websites running different locales. *Fix submitted by [Saphal Jha](https://github.com/saphaljha) in pull request [20183](https://github.com/magento/magento2/pull/20183)*. [GitHub-18192](https://github.com/magento/magento2/issues/18192)
+*  Administrators can now access product ratings in deployments with multiple websites running different locales. *Fix submitted by Saphal Jha in pull request [20183](https://github.com/magento/magento2/pull/20183)*. [GitHub-18192](https://github.com/magento/magento2/issues/18192)
 
 <!-- MAGETWO-93988  -->
 *  The  **Save and Next** and **Save and Previous** buttons in **Marketing** > **Reviews** now work as expected.
@@ -920,22 +919,22 @@ Previously, when you reopened these categories, no checkboxes were checked.  *Fi
 ### Sales
 
 <!-- ENGCOM-1429  -->
-*  The order status label on the  customer order status page  can now be translated. *Fix submitted by [Riccardo Tempesta](https://github.com/phoenix128) in pull request [14914](https://github.com/magento/magento2/pull/14914)*. [GitHub-14849](https://github.com/magento/magento2/issues/14849)
+*  The order status label on the  customer order status page  can now be translated. *Fix submitted by Riccardo Tempesta in pull request [14914](https://github.com/magento/magento2/pull/14914)*. [GitHub-14849](https://github.com/magento/magento2/issues/14849)
 
 <!-- MAGETWO-93155  -->
 *  You can now filter orders by customer email. Previously, Magento threw an error when you tried to filter orders by customer email from **Sales** > **Orders**.
 
 <!-- ENGCOM-3791  -->
-*  Fixed an incorrect class name on orders and returns pages on the Admin. *Fix submitted by [Shikha Mishra](https://github.com/shikhamis11) in pull request [20080](https://github.com/magento/magento2/pull/20080)*. [GitHub-19780](https://github.com/magento/magento2/issues/19780)
+*  Fixed an incorrect class name on orders and returns pages on the Admin. *Fix submitted by Shikha Mishra in pull request [20080](https://github.com/magento/magento2/pull/20080)*. [GitHub-19780](https://github.com/magento/magento2/issues/19780)
 
 <!-- ENGCOM-3494  -->
-*  The `last_trans_id` column of the `sales_order_payment` table has been updated to handle the full order reference values for Amazon and Klarna extensions. *Fix submitted by [Ian cassidy](https://github.com/iancassidyweb) in pull request [18621](https://github.com/magento/magento2/pull/18621)*. [GitHub-18615](https://github.com/magento/magento2/issues/18615)
+*  The `last_trans_id` column of the `sales_order_payment` table has been updated to handle the full order reference values for Amazon and Klarna extensions. *Fix submitted by Ian Cassidy in pull request [18621](https://github.com/magento/magento2/pull/18621)*. [GitHub-18615](https://github.com/magento/magento2/issues/18615)
 
 <!-- ENGCOM-2940  -->
-*  You can now print order information from the customer dashboard. Previously, when you tried to print  order information from the customer dashboard, Magento displayed this error, `Fatal error: Call to a member function getRealOrderId() on null in /vendor/magento/module-sales/Block/Order/PrintShipment.php`. *Fix submitted by [MateuszChrapek](https://github.com/MateuszChrapek) in pull request [17998](https://github.com/magento/magento2/pull/17998)*. [GitHub-9830](https://github.com/magento/magento2/issues/9830) [GitHub-10530](https://github.com/magento/magento2/issues/10530)
+*  You can now print order information from the customer dashboard. Previously, when you tried to print  order information from the customer dashboard, Magento displayed this error, `Fatal error: Call to a member function getRealOrderId() on null in /vendor/magento/module-sales/Block/Order/PrintShipment.php`. *Fix submitted by Mateusz Chrapek in pull request [17998](https://github.com/magento/magento2/pull/17998)*. [GitHub-9830](https://github.com/magento/magento2/issues/9830) [GitHub-10530](https://github.com/magento/magento2/issues/10530)
 
 <!-- ENGCOM-3092  -->
-*  Magento no longer marks email as **not sent** when the email copy fails due to exception. Previously, Magento marked this email as not sent, and subsequently continued to resend the email. *Fix submitted by [Petar Sambolek](https://github.com/sambolek) in pull request [18376](https://github.com/magento/magento2/pull/18376)*. [GitHub-17152](https://github.com/magento/magento2/issues/17152)
+*  Magento no longer marks email as **not sent** when the email copy fails due to exception. Previously, Magento marked this email as not sent, and subsequently continued to resend the email. *Fix submitted by Petar Sambolek in pull request [18376](https://github.com/magento/magento2/pull/18376)*. [GitHub-17152](https://github.com/magento/magento2/issues/17152)
 
 <!-- MAGETWO-96976  -->
 *  Magento no longer adds gift wrap tax to the credit memo twice.
@@ -971,19 +970,19 @@ Previously, when you reopened these categories, no checkboxes were checked.  *Fi
 *  You can now remove a custom price from a product during order creation from the Admin.
 
 <!-- ENGCOM-3998  -->
-*  The order view invoice template is now displayed properly on the ipad. *Fix submitted by [Rajneesh Gupta](https://github.com/irajneeshgupta) in pull request [20546](https://github.com/magento/magento2/pull/20546)*. [GitHub-20373](https://github.com/magento/magento2/issues/20373)
+*  The order view invoice template is now displayed properly on the ipad. *Fix submitted by Rajneesh Gupta in pull request [20546](https://github.com/magento/magento2/pull/20546)*. [GitHub-20373](https://github.com/magento/magento2/issues/20373)
 
 <!-- ENGCOM-3999  -->
-*  Access restrictions on the order API are now enforced as expected. Previously, administrators with restricted privileges had complete access to orders. *Fix submitted by [Rajneesh Gupta](https://github.com/irajneeshgupta) in pull request [20542](https://github.com/magento/magento2/pull/20542)*. [GitHub-20169](https://github.com/magento/magento2/issues/20169)
+*  Access restrictions on the order API are now enforced as expected. Previously, administrators with restricted privileges had complete access to orders. *Fix submitted by Rajneesh Gupta in pull request [20542](https://github.com/magento/magento2/pull/20542)*. [GitHub-20169](https://github.com/magento/magento2/issues/20169)
 
 <!-- ENGCOM-3939  -->
-*  Updates to related products now appear as expected in both the storefront product page and the Admin product edit page. Previously, the storefront displayed product updates, but not all related product updates showed up in the Admin. *Fix submitted by [Prince Patel](https://github.com/mageprince) in pull request [20508](https://github.com/magento/magento2/pull/20508)*. [GitHub-19899](https://github.com/magento/magento2/issues/19899)
+*  Updates to related products now appear as expected in both the storefront product page and the Admin product edit page. Previously, the storefront displayed product updates, but not all related product updates showed up in the Admin. *Fix submitted by Prince Patel in pull request [20508](https://github.com/magento/magento2/pull/20508)*. [GitHub-19899](https://github.com/magento/magento2/issues/19899)
 
 <!-- ENGCOM-3874  -->
-*  The email that customers receive after completing an order now contains tracking information for only their order. Previously, Magento included tracking information for other orders, too. *Fix submitted by [Pratik Oza](https://github.com/mage2pratik) in pull request [20184](https://github.com/magento/magento2/pull/20184)*. [GitHub-19887](https://github.com/magento/magento2/issues/19887)
+*  The email that customers receive after completing an order now contains tracking information for only their order. Previously, Magento included tracking information for other orders, too. *Fix submitted by Pratik Oza in pull request [20184](https://github.com/magento/magento2/pull/20184)*. [GitHub-19887](https://github.com/magento/magento2/issues/19887)
 
 <!-- ENGCOM-3880  -->
-*  Product option values are now rendered correctly as links when  you view an order that contains a product with a file type option. *Fix submitted by [Mahesh Singh](https://github.com/maheshWebkul721) in pull request [20353](https://github.com/magento/magento2/pull/20353)*. [GitHub-20352](https://github.com/magento/magento2/issues/20352)
+*  Product option values are now rendered correctly as links when  you view an order that contains a product with a file type option. *Fix submitted by Mahesh Singh in pull request [20353](https://github.com/magento/magento2/pull/20353)*. [GitHub-20352](https://github.com/magento/magento2/issues/20352)
 
 <!-- MAGETWO-73883  -->
 *  The Items Ordered list now updates as expected when the user clicks **OK** when changing the options of a configurable product during creation of an order from the Admin. Previously, the update did not occur until the user clicked **Update Items and Quantities**.
@@ -997,7 +996,7 @@ Previously, when you reopened these categories, no checkboxes were checked.  *Fi
 *  The sales rule indexer now runs without error. Previously, the sales rule indexer returned an error during reindexing because of the Magento_AdvancedSalesRule module.
 
 <!-- ENGCOM-3784  -->
-*  Magento no longer throws an exception upon cancelation of an order that was placed with a coupon by a guest who, after checkout, created a customer account. *Fix submitted by [Andriy Kravets](https://github.com/Winfle) in pull request [19423](https://github.com/magento/magento2/pull/19423)*. [GitHub-19230](https://github.com/magento/magento2/issues/19230)
+*  Magento no longer throws an exception upon cancelation of an order that was placed with a coupon by a guest who, after checkout, created a customer account. *Fix submitted by Andriy Kravets in pull request [19423](https://github.com/magento/magento2/pull/19423)*. [GitHub-19230](https://github.com/magento/magento2/issues/19230)
 
 <!-- MAGETWO-95993  -->
 *  Archived orders no longer reappear in the Order Management table after cron runs.
@@ -1014,7 +1013,7 @@ Previously, when you reopened these categories, no checkboxes were checked.  *Fi
 *  Searching for a synonym that contains a hyphen and number now returns the same results as any other search term in the group
 
 <!-- ENGCOM-3811  -->
-*  A mistyped `saveHandler` has been removed from the CatalogSearch indexer declaration. *Fix submitted by [Dmytro Cheshun](https://github.com/dmytro-ch) in pull request [19984](https://github.com/magento/magento2/pull/19984)*. [GitHub-19982](https://github.com/magento/magento2/issues/19982)
+*  A mistyped `saveHandler` has been removed from the CatalogSearch indexer declaration. *Fix submitted by Dmytro Cheshun in pull request [19984](https://github.com/magento/magento2/pull/19984)*. [GitHub-19982](https://github.com/magento/magento2/issues/19982)
 
 ### Shipping
 
@@ -1034,10 +1033,10 @@ Previously, when you reopened these categories, no checkboxes were checked.  *Fi
 *  Magento now correctly handles U.K. shipping addresses in multisite deployments where the default store's  **Allowed Countries** setting is US only but the store from which the order is placed supports U. K. shipping. Previously, Magento did not complete the order set to ship to a U.K. address, and  displayed this error, `Please check the shipping address information. Invalid value of "GB" provided for the countryId field`.
 
 <!-- ENGCOM-4042  -->
-*  Fixed misalignment of elements on the shipping information page that Magento displays when you click **Check Out with Multiple Addresses** from the shopping cart. *Fix submitted by [Amol Chaudhari](https://github.com/amol2jcommerce) in pull request [20739](https://github.com/magento/magento2/pull/20739)*. [GitHub-20563](https://github.com/magento/magento2/issues/20563)
+*  Fixed misalignment of elements on the shipping information page that Magento displays when you click **Check Out with Multiple Addresses** from the shopping cart. *Fix submitted by Amol Chaudhari in pull request [20739](https://github.com/magento/magento2/pull/20739)*. [GitHub-20563](https://github.com/magento/magento2/issues/20563)
 
 <!-- ENGCOM-3008  -->
-*  Sitemaps now display correct base URLs for deployments with  multiple stores. *Fix submitted by [Toan Nguyen](https://github.com/nntoan) in pull request [18000](https://github.com/magento/magento2/pull/18000)*. [GitHub-17999](https://github.com/magento/magento2/issues/17999)
+*  Sitemaps now display correct base URLs for deployments with  multiple stores. *Fix submitted by Toan Nguyen in pull request [18000](https://github.com/magento/magento2/pull/18000)*. [GitHub-17999](https://github.com/magento/magento2/issues/17999)
 
 ### Staging
 
@@ -1056,15 +1055,15 @@ Previously, when you reopened these categories, no checkboxes were checked.  *Fi
 ### Store
 
 <!-- ENGCOM-3737  -->
-*  Calling `getCurrentUrl` on a store no longer adds the  `___store` parameter when **store code in URL** is set to **yes** and the current store is not the same store requested in the URL. *Fix submitted by [Nazar](https://github.com/Nazar65) in pull request [19945](https://github.com/magento/magento2/pull/19945)*. [GitHub-18941](https://github.com/magento/magento2/issues/18941)
+*  Calling `getCurrentUrl` on a store no longer adds the  `___store` parameter when **store code in URL** is set to **yes** and the current store is not the same store requested in the URL. *Fix submitted by Nazar in pull request [19945](https://github.com/magento/magento2/pull/19945)*. [GitHub-18941](https://github.com/magento/magento2/issues/18941)
 
 ### Swatches
 
 <!-- ENGCOM-3383  -->
-*  An administrator with appropriate permissions  can now change a product's default swatch option from the Admin. *Fix submitted by [Rostislav Sabischenko](https://github.com/RostislavS) in pull request [19012](https://github.com/magento/magento2/pull/19012)*. [GitHub-8348](https://github.com/magento/magento2/issues/8348)
+*  An administrator with appropriate permissions  can now change a product's default swatch option from the Admin. *Fix submitted by Rostislav Sabischenko in pull request [19012](https://github.com/magento/magento2/pull/19012)*. [GitHub-8348](https://github.com/magento/magento2/issues/8348)
 
 <!-- ENGCOM-2912  -->
-*  Store views now show the correct swatch values. *Fix submitted by [Misha Medzhytov](https://github.com/magicaner) in pull request [17891](https://github.com/magento/magento2/pull/17891)*. [GitHub-17890](https://github.com/magento/magento2/issues/17890)
+*  Store views now show the correct swatch values. *Fix submitted by Misha Medzhytov in pull request [17891](https://github.com/magento/magento2/pull/17891)*. [GitHub-17890](https://github.com/magento/magento2/issues/17890)
 
 <!-- MAGETWO-73862  -->
 *  You can now change the size of a swatch image as expected. [GitHub-6382](https://github.com/magento/magento2/issues/6382)
@@ -1083,18 +1082,18 @@ Previously, when you reopened these categories, no checkboxes were checked.  *Fi
 *  Tax is now calculated as expected for virtual products when PayPal is used as a payment method.
 
 <!-- ENGCOM-3319  -->
-*  Magento no longer uses the default tax information set in **Stores** > **Configuration** > **Sales** > **Tax** customer, quote, and order data.  *Fix submitted by [Nirav Kadiya](https://github.com/ssp58bleuciel) in pull request [18857](https://github.com/magento/magento2/pull/18857)*. [GitHub-16684](https://github.com/magento/magento2/issues/16684)
+*  Magento no longer uses the default tax information set in **Stores** > **Configuration** > **Sales** > **Tax** customer, quote, and order data.  *Fix submitted by Nirav Kadiya in pull request [18857](https://github.com/magento/magento2/pull/18857)*. [GitHub-16684](https://github.com/magento/magento2/issues/16684)
 
 ### Testing
 
 <!-- ENGCOM-3410  -->
-*  Unit test annotations now assert exception messages correctly. *Fix submitted by [Oleksandr Kravchuk](https://github.com/swnsma) in pull request [19105](https://github.com/magento/magento2/pull/19105)*. [GitHub-18840](https://github.com/magento/magento2/issues/18840)
+*  Unit test annotations now assert exception messages correctly. *Fix submitted by Oleksandr Kravchuk in pull request [19105](https://github.com/magento/magento2/pull/19105)*. [GitHub-18840](https://github.com/magento/magento2/issues/18840)
 
 <!-- ENGCOM-3875  -->
-*  `magentoDataIsolation` has been replaced with `magentoDbIsolation` as needed in several integration tests. *Fix submitted by [p-bystritsky](https://github.com/p-bystritsky) in pull request [20298](https://github.com/magento/magento2/pull/20298)*. [GitHub-20296](https://github.com/magento/magento2/issues/20296)
+*  `magentoDataIsolation` has been replaced with `magentoDbIsolation` as needed in several integration tests. *Fix submitted by p-bystritsky in pull request [20298](https://github.com/magento/magento2/pull/20298)*. [GitHub-20296](https://github.com/magento/magento2/issues/20296)
 
 <!-- ENGCOM-3021  -->
-*  Integration tests now respect module status as defined in `config-global.php`.  This permits you to enable only the modules you typically keep enabled while still saving system resources. *Fix submitted by [Jisse Reitsma](https://github.com/jissereitsma) in pull request [16361](https://github.com/magento/magento2/pull/16361)*. [GitHub-15196](https://github.com/magento/magento2/issues/15196)
+*  Integration tests now respect module status as defined in `config-global.php`.  This permits you to enable only the modules you typically keep enabled while still saving system resources. *Fix submitted by Jisse Reitsma in pull request [16361](https://github.com/magento/magento2/pull/16361)*. [GitHub-15196](https://github.com/magento/magento2/issues/15196)
 
 ### Theme
 
@@ -1122,25 +1121,25 @@ Previously, when you reopened these categories, no checkboxes were checked.  *Fi
 ### UI
 
 <!-- ENGCOM-3973  -->
-*  Image files can no longer be uploaded to Admin category pages  by dragging when the upload field has been disabled. *Fix submitted by [Serhiy Zhovnir](https://github.com/serhiyzhovnir) in pull request [20636](https://github.com/magento/magento2/pull/20636)*. [GitHub-20376](https://github.com/magento/magento2/issues/20376)
+*  Image files can no longer be uploaded to Admin category pages  by dragging when the upload field has been disabled. *Fix submitted by Serhiy Zhovnir in pull request [20636](https://github.com/magento/magento2/pull/20636)*. [GitHub-20376](https://github.com/magento/magento2/issues/20376)
 
 <!-- ENGCOM-4012  -->
-*  Store switcher now works correctly on mobile devices. *Fix submitted by [Rajneesh Gupta](https://github.com/irajneeshgupta) in pull request [20540](https://github.com/magento/magento2/pull/20540)*. [GitHub-20259](https://github.com/magento/magento2/issues/20259)
+*  Store switcher now works correctly on mobile devices. *Fix submitted by Rajneesh Gupta in pull request [20540](https://github.com/magento/magento2/pull/20540)*. [GitHub-20259](https://github.com/magento/magento2/issues/20259)
 
 <!-- ENGCOM-3308  -->
-*  Missing asterisks have been added where needed on the Admin. *Fix submitted by [Dmytro Cheshun](https://github.com/dmytro-ch) in pull request [18905](https://github.com/magento/magento2/pull/18905)*. [GitHub-18904](https://github.com/magento/magento2/issues/18904)
+*  Missing asterisks have been added where needed on the Admin. *Fix submitted by Dmytro Cheshun in pull request [18905](https://github.com/magento/magento2/pull/18905)*. [GitHub-18904](https://github.com/magento/magento2/issues/18904)
 
 <!-- ENGCOM-3306  -->
-*  The delete product confirmation popup now closes only when you click the **OK** button. *Fix submitted by [Shubham Sharma](https://github.com/Shubham-Webkul) in pull request [18865](https://github.com/magento/magento2/pull/18865)*. [GitHub-18458](https://github.com/magento/magento2/issues/18458)
+*  The delete product confirmation popup now closes only when you click the **OK** button. *Fix submitted by Shubham Sharma in pull request [18865](https://github.com/magento/magento2/pull/18865)*. [GitHub-18458](https://github.com/magento/magento2/issues/18458)
 
 <!-- ENGCOM-3174  -->
-*  Admin tables now work as expected when single store mode is set to **on**. Previously, column positioning in these tables was not preserved when the page was refreshed. *Fix submitted by [Vishal Gelani](https://github.com/gelanivishal) in pull request [18561](https://github.com/magento/magento2/pull/18561)*. [GitHub-12070](https://github.com/magento/magento2/issues/12070)
+*  Admin tables now work as expected when single store mode is set to **on**. Previously, column positioning in these tables was not preserved when the page was refreshed. *Fix submitted by Vishal Gelani in pull request [18561](https://github.com/magento/magento2/pull/18561)*. [GitHub-12070](https://github.com/magento/magento2/issues/12070)
 
 <!-- ENGCOM-3177  -->
-*  Magento now regenerates product URL rewrites as expected after an administrator changes a product URL key from the Admin and subsequently saves the product attribute URL path value. Previously, product URL rewrites could not be generated after this attribute value was changed. *Fix submitted by [Oleksii Lisovyi](https://github.com/oleksii-lisovyi) in pull request [18566](https://github.com/magento/magento2/pull/18566)*. [GitHub-5929](https://github.com/magento/magento2/issues/5929)
+*  Magento now regenerates product URL rewrites as expected after an administrator changes a product URL key from the Admin and subsequently saves the product attribute URL path value. Previously, product URL rewrites could not be generated after this attribute value was changed. *Fix submitted by Oleksii Lisovyi in pull request [18566](https://github.com/magento/magento2/pull/18566)*. [GitHub-5929](https://github.com/magento/magento2/issues/5929)
 
 <!-- ENGCOM-3313  -->
-*  You can now use the `OptionManagement.delete` method to programmatically delete a product attribute that converts to false. Previously, Magento threw an exception. *Fix submitted by [Vishal Gelani](https://github.com/gelanivishal) in pull request [18873](https://github.com/magento/magento2/pull/18873)*. [GitHub-13083](https://github.com/magento/magento2/issues/13083)
+*  You can now use the `OptionManagement.delete` method to programmatically delete a product attribute that converts to false. Previously, Magento threw an exception. *Fix submitted by Vishal Gelani in pull request [18873](https://github.com/magento/magento2/pull/18873)*. [GitHub-13083](https://github.com/magento/magento2/issues/13083)
 
 <!-- MAGETWO-91403  -->
 *  WYSIWYG editor functionality is now available in all rows of the dynamic rows UI component. Previously, this functionality was available in the first row only.
@@ -1163,7 +1162,7 @@ Previously, when you reopened these categories, no checkboxes were checked.  *Fi
 *  Magento now correctly updates existing product URLs during import. Previously, Magento updated existing URLs with the new URLs, but displayed a 404 error if you tried to access the product from the new URL.
 
 <!-- ENGCOM-3175  -->
-*  The upsert category process during product import now generates freshly created category URL rewrites globally and not just for the default scope. Previously, Magento created URL rewrites for the default website scope only. *Fix submitted by [Vishal Gelani](https://github.com/gelanivishal) in pull request [18563](https://github.com/magento/magento2/pull/18563)*. [GitHub-18234](https://github.com/magento/magento2/issues/18234)
+*  The upsert category process during product import now generates freshly created category URL rewrites globally and not just for the default scope. Previously, Magento created URL rewrites for the default website scope only. *Fix submitted by Vishal Gelani in pull request [18563](https://github.com/magento/magento2/pull/18563)*. [GitHub-18234](https://github.com/magento/magento2/issues/18234)
 
 ### Visual Merchandiser
 
@@ -1193,12 +1192,12 @@ Previously, when you reopened these categories, no checkboxes were checked.  *Fi
 *  The product page's Recently Viewed section no longer displays the name of the current product.
 
 <!-- ENGCOM-4037  -->
-*  Fixed alignment of options on the Admin edit widget page. *Fix submitted by [Amol Chaudhari](https://github.com/amol2jcommerce) in pull request [20270](https://github.com/magento/magento2/pull/20270)*. [GitHub-20113](https://github.com/magento/magento2/issues/20113)
+*  Fixed alignment of options on the Admin edit widget page. *Fix submitted by Amol Chaudhari in pull request [20270](https://github.com/magento/magento2/pull/20270)*. [GitHub-20113](https://github.com/magento/magento2/issues/20113)
 
 ### Wishlist
 
 <!-- ENGCOM-3344  -->
-*  Default configured values are now rendering on the wishlist product edit page. *Fix submitted by [Ratnesh Kumar](https://github.com/webkul-ratnesh) in pull request [18967](https://github.com/magento/magento2/pull/18967)*. [GitHub-18555](https://github.com/magento/magento2/issues/18555)
+*  Default configured values are now rendering on the wishlist product edit page. *Fix submitted by Ratnesh Kumar in pull request [18967](https://github.com/magento/magento2/pull/18967)*. [GitHub-18555](https://github.com/magento/magento2/issues/18555)
 
 <!-- MAGETWO-90812  -->
 *  Registered users can now create new wishlists as expected when multiple wishlists are enabled. Previously, Magento displayed an error.

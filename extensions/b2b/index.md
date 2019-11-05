@@ -120,7 +120,7 @@ After installing the {{site.data.var.b2b}} extension and starting message consum
 {: .bs-callout-info }
 If you enable the **Shared Catalog** module, you must also enable the **Company** module. The **Quick Order** and **Requisition Lists** modules can be enabled/disabled independently.
 
-1. Access the Magento Admin and click **Stores** > **Settings** > **Configuration** > **General** > **B2B Features**.
+1. Access the Magento Admin and click **Stores** > Settings > **Configuration** > General > **B2B Features**.
 
 1. Select **Yes** from the drop-down menus to enable B2B features:
 
