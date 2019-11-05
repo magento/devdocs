@@ -66,7 +66,7 @@ Edit */app/etc/env.php* file for configure cron job `consumers_runner`
 
 ## Command line interface
 
-### Start consumers
+### Start message queue consumers
 
 Use the `magento` command to start message queue consumers. You can start multiple consumers simultaneously.
 
