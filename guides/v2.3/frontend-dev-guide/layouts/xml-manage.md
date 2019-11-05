@@ -551,7 +551,49 @@ You can remove navigation links from the 'My Account' dashboard on the storefron
 <!-- "My Returns" link -->
 <referenceBlock name="customer-account-navigation-return-history-link" remove="true"/>
 ```
-
+ 
+ 
+## Create cms-page/product/category-specific layouts
+  _since Magento 2.3.4/2.2.11_
+ 
+Merchants can select layout updates to be applied to specific Category/Product/CMS Page pages on frontend. These layout
+updates are being made available to select by creating layout XML files following naming conventions.
+ 
+For Categories:
+ 
+* `catalog_category_view_selectable_<Category ID>_<Layout Update Name>.xml`
+ 
+Where:
+ 
+* _Category ID_ is desired category ID
+* _Layout Update Name_ is what's going to be shown as the option for __Custom layout update__ field of __Design__
+  section on _Category Edit_ page
+ 
+For Products:
+ 
+* `catalog_product_view_selectable_<Product SKU>_<Layout Update Name>.xml`
+ 
+Where:
+ 
+* _Product SKU_ is desired product's SKU encoded as URI
+  _example_: "My Product SKU" -> "My%20Product%20SKU"
+* _Layout Update Name_ is what's going to be shown as the option for __Custom layout update__ field of __Design__
+  section on _Product Edit_ page
+ 
+For CMS Pages:
+ 
+* `cms_page_view_selectable_<CMS Page Identifier>_<Layout Update Name>.xml`
+ 
+Where:
+ 
+* _CMS Page Identifier_ is desired page's _URL Key_ with "/" symbols replaces as "_"
+* _Layout Update Name_ is what's going to be shown as the option for __Custom layout update__ field of __Design__
+  section on _CMS Page Edit_ page
+ 
+These files must be placed in folders appropriate for layout XML files. They will be available as
+__Custom Layout Update__ options for Merchants after cache flush.
+ 
+ 
 {:.ref-header}
 Related topics
 
