@@ -121,6 +121,9 @@ pages:
         - label: Using mutations
           url: /graphql/mutations/index.html
 
+        - label: addBundleProductsToCart mutation
+          url: /graphql/mutations/add-bundle-products.html
+
         - label: addConfigurableProductsToCart mutation
           url: /graphql/mutations/add-configurable-products.html
 
