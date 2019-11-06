@@ -50,7 +50,7 @@ Extends [`Abstract`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/M
                 </actionDelete>
             </container>
         </dynamicRows>
-    ...    
+    ...
 </form>
 ```
 
