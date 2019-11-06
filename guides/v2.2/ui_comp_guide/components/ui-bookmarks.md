@@ -23,7 +23,7 @@ Extends [`uiCollection`]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uicol
 -  [`app/code/Magento/Ui/view/base/web/js/grid/controls/bookmarks/bookmarks.js`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/grid/controls/bookmarks/bookmarks.js)
 -  [`app/code/Magento/Ui/view/base/web/templates/grid/controls/bookmarks/view.html`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/templates/grid/controls/bookmarks/view.html)
 
-## Example
+## Examples
 
 ### Integrate Bookmarks component with Listing component
 
