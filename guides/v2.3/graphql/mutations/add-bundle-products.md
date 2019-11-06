@@ -1,6 +1,8 @@
 ---
 group: graphql
 title: addBundleProductsToCart mutation
+contributor_name: Atwix
+contributor_link: https://www.atwix.com/
 ---
 
 Use the `addBundleProductsToCart` mutation to add bundle products to a specific cart.
