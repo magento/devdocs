@@ -11,7 +11,7 @@ functional_areas:
 Bulk API endpoints differ from other REST endpoints in that they combine multiple calls of the same type into an array and execute them as a single request. The endpoint handler splits the array into individual entities and writes them as separate messages to the message queue.
 
 {:.bs-callout-info}
-Use the [`bin/magento queue:consumers:start async.operations.all`]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-queue.html) command to start the consumer that handles asynchronous and bulk API messages. Also, before using the Bulk API to process messages, you must install and configure RabbitMQ, which is the default message broker. See [RabbitMQ]({{ page.baseurl }}/install-gde/prereq/install-rabbitmq.html).
+Use the `bin/magento queue:consumers:start async.operations.all` command to start the consumer that handles asynchronous and bulk API messages. Also, before using the Bulk API to process messages, you must install and configure RabbitMQ, which is the default message broker. See [RabbitMQ]({{ page.baseurl }}/install-gde/prereq/install-rabbitmq.html).
 
 ### Routes
 
