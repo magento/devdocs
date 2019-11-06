@@ -26,7 +26,7 @@ Extends [`Abstract`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/M
 
 ### Integrate ActionDelete component with DynamicRows component
 
-Here is an example of how ActionDelete component integrates with [DynamicRows]({{ page.baseurl }}/ui_comp_guide/components/ui-dynamicrows.html) component:
+This is an example of how ActionDelete component integrates with [DynamicRows]({{ page.baseurl }}/ui_comp_guide/components/ui-dynamicrows.html) component:
 
 ```xml
 <form>
