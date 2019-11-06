@@ -16,19 +16,17 @@ SKU of this product is: **24-WG080**
 
 This example adds one bundle product with following children to the specified shopping cart:
 
-- Sprite Stasis Ball 65 cm (x1)
-- Sprite Foam Yoga Brick (x2)
-- Sprite Yoga Strap 10 foot (x1)
-- Sprite Foam Roller (x1)
-
+-  Sprite Stasis Ball 65 cm (x1)
+-  Sprite Foam Yoga Brick (x2)
+-  Sprite Yoga Strap 10 foot (x1)
+-  Sprite Foam Roller (x1)
 
 The `cart_id` used in this example was [generated]({{ page.baseurl }}/graphql/mutations/create-empty-cart.html) by creating an empty cart.
-
 
 **Request**
 
 ```graphql
-mutation {  
+mutation {
   addBundleProductsToCart(
     input: {
       cart_id: "wARFaDnHva0tgzuforUYR4rvXincj5eu"
@@ -218,8 +216,6 @@ Attribute | Type | Description
 The `CustomizableOptionInput` object must contain the following attributes:
 
 {% include graphql/customizable-option-input.md %}
-
-
 
 ## Output attributes
 
