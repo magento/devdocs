@@ -25,6 +25,10 @@ Extends [`uiCollection`]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uicol
 
 ## Example
 
+### Integrate Bookmarks component with Listing component
+
+Here is an example of how Bookmarks component integrates with [Listing]({{ page.baseurl }}/ui_comp_guide/components/ui-listing-grid.html) component:
+
 ```xml
 <listing>
     ...
@@ -36,6 +40,6 @@ Extends [`uiCollection`]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uicol
 </listing>
 ```
 
-## Result
+#### Result
 
 ![Bookmarks Component example]({{ site.baseurl }}/common/images/ui_comps/bookmarks-result.png)
