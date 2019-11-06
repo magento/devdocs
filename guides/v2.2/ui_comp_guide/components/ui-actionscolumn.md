@@ -35,6 +35,8 @@ Extends [`Column`]({{ page.baseurl }}/ui_comp_guide/components/ui-column.html):
 
 ## Example
 
+### Integrate ActionsColumns component with Listing component
+
 ```xml
 <listing>
     ...
@@ -50,7 +52,7 @@ Extends [`Column`]({{ page.baseurl }}/ui_comp_guide/components/ui-column.html):
 </listing>
 ```
 
-The `Vendor\Module\Ui\Component\Listing\Column\Actions` class need to extend the [`Magento\Ui\Component\Listing\Columns\Column`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/Component/Listing/Columns/Column.php) class and add actions data via `prepareDataSource()` method.
+The `Vendor\Module\Ui\Component\Listing\Column\Actions` class needs to extend the [`Magento\Ui\Component\Listing\Columns\Column`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/Component/Listing/Columns/Column.php) class and add actions data via `prepareDataSource()` method.
 
 ```php
 <?php
@@ -97,6 +99,6 @@ class Actions extends Column
 }
 ```
 
-## Result
+#### Result
 
 ![ActionsColumn Component example]({{ site.baseurl }}/common/images/ui_comps/actions-column-result.png)
