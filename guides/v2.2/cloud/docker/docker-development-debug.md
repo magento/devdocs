@@ -33,7 +33,7 @@ runtime:
 
 ## Configure Xdebug
 
-1. Rebuild the `docker-compose.yml` file by continuing to configure your local workstation to [launch the Docker environment]({{ page.baseurl }}/cloud/docker/docker-config.html). The following is an excerpt from the `docker-compose.yml` file that shows Docker global variables.
+1. Rebuild the `docker-compose.yml` file by continuing to configure your local workstation to [launch the Docker environment][docker-config]. The following is an excerpt from the `docker-compose.yml` file that shows Docker global variables.
 
    ```yaml
    generic:
@@ -139,7 +139,7 @@ You can install and use the Xdebug Helper Chrome extension to debug your PhP cod
 {:.procedure}
 To use Xdebug Helper with Chrome:
 
-1. Install the [Xdebug Helper extension](https://chrome.google.com/webstore/detail/xdebug-helper/eadndfjplgieldjbigjakmdgkmoaaaoc?hl=en) from the Chrome store.
+1. Install the [Xdebug Helper extension] from the Chrome store.
 
 1. Enable the extension in Chrome as shown in the following figure.
 
@@ -154,3 +154,6 @@ To use Xdebug Helper with Chrome:
 1. Click **Save**.
 
    ![Xdebug Helper options]({{ site.baseurl }}/common/images/cloud-xdebug_helper-options.png){:width="400px"}
+
+[docker-config]: {{page.baseurl}}/cloud/docker/docker-config.html
+[Xdebug Helper extension]: https://chrome.google.com/webstore/detail/xdebug-helper/eadndfjplgieldjbigjakmdgkmoaaaoc?hl=en

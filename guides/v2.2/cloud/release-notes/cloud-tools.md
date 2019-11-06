@@ -122,7 +122,7 @@ The release notes include:
 
    -  {:.new}<!-- MAGECLOUD-3150 -->Now, the Docker environment supports the cron configuration defined in the [crons property of the .magento.app.yaml file]({{page.baseurl}}/cloud/project/project-conf-files_magento-app.html#crons).
 
-   -  {:.new}<!-- MAGECLOUD-2890 -->**New Docker Container**—Added a [TLS termination proxy container]({{page.baseurl}}/cloud/docker/docker-development.html#varnish-container) to facilitate the Varnish SSL termination over HTTPS.
+   -  {:.new}<!-- MAGECLOUD-2890 -->**New Docker Container**—Added a [TLS termination proxy container]({{page.baseurl}}/cloud/docker/docker-php.html#varnish-container) to facilitate the Varnish SSL termination over HTTPS.
 
       -  {:.new}<!-- MAGECLOUD-3345 -->**New Docker Image**—Added a Node.js image to support Gulp and other capabilities, such as Jasmine JS Unit Testing.
 
@@ -130,7 +130,7 @@ The release notes include:
 
    -  {:.fix}<!-- MAGECLOUD-3369 -->Fixed an issue that caused Docker deploy to fail with a `Name or service not known` error if the cache is configured for a service that is not available. Now, you can remove a service from the [`.magento/services.yaml` file]({{page.baseurl}}/cloud/project/project-conf-files_services.html). The Docker configuration generator updates the service in the `docker/config.php.dist` file automatically.
 
-   -  {:.new}<!-- MAGECLOUD-3251 -->Added interactive validations for service compatibility. Now, if a requested service is incompatible with the Magento version or other services, the _interactive mode_ prompts the user with a message and a choice to continue. See the [Service versions]({{page.baseurl}}/cloud/docker/docker-config.html#service-versions) available for Docker. Use the `-n` option to skip the interactivity for CICD purposes.
+   -  {:.new}<!-- MAGECLOUD-3251 -->Added interactive validations for service compatibility. Now, if a requested service is incompatible with the Magento version or other services, the _interactive mode_ prompts the user with a message and a choice to continue. See the [Service versions]({{page.baseurl}}/cloud/docker/docker-services.html#service-versions) available for Docker. Use the `-n` option to skip the interactivity for CICD purposes.
 
    -  {:.fix}<!-- MAGECLOUD-3366 -->Fixed an issue with the Docker compose `db-dump` command that erased existing dumps.
 
@@ -185,7 +185,7 @@ The `{{site.data.var.ct}}` version 2002.0.17 includes an important security patc
 
    -  <!-- MAGECLOUD-3025 -->Now, the default service configuration generated in the Docker environment is the same as the default configuration in the Cloud template.
 
-   -  <!-- MAGECLOUD-2907 -->You can send mail from your Docker environment using the [`sendmail` service]({{page.baseurl}}/cloud/docker/docker-development.html#sendmail-service).
+   -  <!-- MAGECLOUD-2907 -->You can send mail from your Docker environment using the [`sendmail` service]({{page.baseurl}}/cloud/docker/docker-config.html#sendmail-service).
 
    -  <!-- MAGECLOUD-2891 -->Added the ability to [configure Xdebug]({{page.baseurl}}/cloud/docker/docker-development-debug.html) to debug in the Cloud Docker environment.
 
@@ -245,7 +245,7 @@ The `{{site.data.var.ct}}` version 2002.0.17 includes an important security patc
 
    -  <!-- MAGECLOUD-2799 -->Added PHP 7.2 image—Added support for PHP 7.2 in Cloud Docker; updated the [Launch Docker configuration]({{ page.baseurl }}/cloud/docker/docker-config.html) to include the `docker:build --php` option to specify the version of PHP compatible with your Magento Commerce version.
 
-   -  <!-- MAGECLOUD-2565 -->Added a [Cron container]({{page.baseurl}}/cloud/docker/docker-development.html#cron-container) based on the PHP-CLI image.
+   -  <!-- MAGECLOUD-2565 -->Added a [Cron container]({{page.baseurl}}/cloud/docker/docker-cli.html#cron-container) based on the PHP-CLI image.
 
       -  Added the following services to the Docker build:
 
@@ -255,7 +255,7 @@ The `{{site.data.var.ct}}` version 2002.0.17 includes an important security patc
 
          -  <!-- MAGECLOUD-2886 -->Redis 3.2 and 4.0
 
-   -  <!-- MAGECLOUD-2577 -->Now you have the DB dump capability when using the Cloud Docker [database container]({{page.baseurl}}/cloud/docker/docker-development.html#database-container). Also, you can [share files]({{page.baseurl}}/cloud/docker/docker-development.html#sharing-data-between-host-machine-and-container) between a host machine and a container using the `docker/mnt` directory.
+   -  <!-- MAGECLOUD-2577 -->Now you have the DB dump capability when using the Cloud Docker [database container]({{page.baseurl}}/cloud/docker/docker-database.html). Also, you can [share files]({{page.baseurl}}/cloud/docker/docker-containers.html#sharing-data-between-host-machine-and-container) between a host machine and a container using the `docker/mnt` directory.
 
 -  {:.new}<!-- MAGECLOUD- 2575 -->**Configure with PHP constants**—Added support for [PHP constants]({{page.baseurl}}/cloud/project/magento-env-yaml.html#php-constants) in the `.magento.env.yaml` configuration file.
 
@@ -335,11 +335,11 @@ The `{{site.data.var.ct}}` version 2002.0.17 includes an important security patc
 
    You can resolve the incompatibility by [submitting a Support ticket]({{ page.baseurl }}/cloud/trouble/trouble.html) to upgrade Elasticsearch to a compatible version, or change the {{site.data.var.ee}} configuration to specify a compatible version of the Elasticsearch PHP client.
 
-       -  For {{site.data.var.ee}} version 2.1.x to 2.2.2, upgrade Elasticsearch to version 2.4.
+      -  For {{site.data.var.ee}} version 2.1.x to 2.2.2, upgrade Elasticsearch to version 2.4.
 
-       -  For {{site.data.var.ee}} version 2.2.3 and later, upgrade Elasticsearch to version 5.2.
+      -  For {{site.data.var.ee}} version 2.2.3 and later, upgrade Elasticsearch to version 5.2.
 
-       -  If you have Elasticsearch 1.x or 2.x and do not want to upgrade, update the {{site.data.var.ee}} Elasticsearch PHP client version requirement in composer.json to `"elasticsearch/elasticsearch": "~2.0"`.
+      -  If you have Elasticsearch 1.x or 2.x and do not want to upgrade, update the {{site.data.var.ee}} Elasticsearch PHP client version requirement in composer.json to `"elasticsearch/elasticsearch": "~2.0"`.
 
    -  <!--MAGECLOUD-2156-->Improved validation of environment variables to identify configuration settings that can cause conflicts during the build, deploy, and post-deploy phases. For example, a warning message displays during the install and upgrade process if the global setting for static content deployment conflicts with settings on the build or deploy phase.
 

@@ -13,8 +13,8 @@ The `{{site.data.var.ct}}` package (version 2002.0.13 or later) deploys to a rea
 
 1. You must have the following software installed on your local workstation:
    -  PHP version 7.1 or later
-      -  [php@7.1](https://formulae.brew.sh/formula/php@7.1)
-      -  [php@7.2](https://formulae.brew.sh/formula/php@7.2)
+      -  [php@7.1][php71]
+      -  [php@7.2][php72]
    -  [Composer](https://getcomposer.org)
    -  [Docker](https://www.docker.com/get-started)
    -  File synchronization required for developer mode—use one of the following:
@@ -46,7 +46,7 @@ The `{{site.data.var.ct}}` package (version 2002.0.13 or later) deploys to a rea
    sudo apachectl stop
    ```
 
-1. Optionally, [enable Xdebug]({{page.baseurl}}/cloud/docker/docker-development-debug.html#enable-xdebug).
+1. Optionally, [enable Xdebug].
 
 ## Launch modes
 
@@ -54,8 +54,8 @@ _Mode_ is an additional configuration option for the Docker configuration genera
 
 You can launch your Docker environment in one of the following modes:
 
--  [**production**](prod-mode)—Production mode is the default configuration setting for launching the Docker environment with read-only filesystem permissions. This option builds the Docker environment in production mode and verifies configured service versions.
--  [**developer**](dev-mode)—Developer mode supports an active development environment with full, writable filesystem permissions. This option builds the Docker environment in developer mode and verifies configured service versions. System performance is slower in developer mode because of additional file synchronization operations.
+-  [**production**][prod-mode]—Production mode is the default configuration setting for launching the Docker environment with read-only filesystem permissions. This option builds the Docker environment in production mode and verifies configured service versions.
+-  [**developer**][dev-mode]—Developer mode supports an active development environment with full, writable filesystem permissions. This option builds the Docker environment in developer mode and verifies configured service versions. System performance is slower in developer mode because of additional file synchronization operations.
 
 For example, the following command starts the Docker configuration generator for the developer mode:
 
@@ -85,27 +85,16 @@ Use the following command to stop and remove the Docker configuration:
 {: .bs-callout-warning}
 This removes all components of your local Docker instance including containers, networks, volumes, and images.
 
-## Advanced usage
+## Sendmail service
 
-### Extend the Docker configuration
+You can send emails from your Docker environment when you enable `sendmail` in the `docker-compose.yml` configuration file:
 
-You can use the built-in extension mechanism of Docker to [specify multiple compose files](https://docs.docker.com/compose/reference/overview/#specifying-multiple-compose-files). The following example replaces the default value of the `ENABLE_SENDMAIL` environment variable.
+```yaml
+ENABLE_SENDMAIL=true
+```
 
-1. Create a `docker-compose-dev.yml` file inside your project root directory and add the following content:
-
-   ```yaml
-   version: '2'
-   services:
-     deploy:
-       environment:
-         - ENABLE_SENDMAIL=true
-   ```
-
-1. Pass both configuration files while executing your commands. For example:
-
-   ```bash
-   docker-compose -f docker-compose.yml -f docker-compose-dev.yml run deploy bash
-   ```
-
+[php71]: https://formulae.brew.sh/formula/php@7.1
+[php72]: https://formulae.brew.sh/formula/php@7.2
 [prod-mode]: {{page.baseurl}}/cloud/docker/docker-mode-production.html
 [dev-mode]: {{page.baseurl}}/cloud/docker/docker-mode-developer.html
+[enable-xdebug]: {{page.baseurl}}/cloud/docker/docker-development-debug.html#enable-xdebug

@@ -1,11 +1,25 @@
 ---
 group: cloud-guide
-title: Connect to the database
+title: Database container
 functional_areas:
   - Cloud
   - Docker
   - Configuration
 ---
+The database container is based on the [mariadb][db-image] image.
+
+-  Port: 3306
+-  Volumes:
+   -  `/var/lib/mysql`
+   -  `./docker/mysql`
+
+To import a database dump, place the SQL file into the `.docker/mysql/docker-entrypoint-initdb.d` folder.
+
+The `{{site.data.var.ct}}` package imports and processes the SQL file the next time you build and start the Docker environment using the `docker-compose up` command.
+
+Although it is a more complex approach, you can use GZIP by _sharing_ the `.sql.gz` file using the `.docker/mnt` directory and importing it inside the Docker container.
+
+## Connect to the database
 
 There are two ways to connect to the database. Before you begin, you can find the database credentials in the `database` section of the `.docker/config.php` file. The examples use the following default credentials:
 
@@ -31,9 +45,9 @@ To connect to the database using Docker commands:
 
 1. Connect to the CLI container.
 
-    ```bash
-    docker-compose run deploy bash
-    ```
+   ```bash
+   docker-compose run deploy bash
+   ```
 
 1. Connect to the database with a username and password.
 
@@ -88,3 +102,5 @@ To connect to the database:
    +--------------------------+
    ```
    {: .no-copy}
+
+[db-image]: https://hub.docker.com/_/mariadb

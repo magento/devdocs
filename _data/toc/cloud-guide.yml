@@ -93,14 +93,35 @@ pages:
       url: /cloud/docker/docker-development.html
       exclude_versions: ["2.0"]
       children:
-        - label: Launch Docker
+        - label: Docker container architecture
+          url: /cloud/docker/docker-containers.html
+          children:
+            - label: Database container
+              url: /cloud/docker/docker-database.html
+
+            - label: CLI containers
+              url: /cloud/docker/docker-cli.html
+
+            - label: PHP container
+              url: /cloud/docker/docker-php.html
+
+            - label: Service containers
+              url: /cloud/docker/docker-services.html
+
+        - label: Configure Docker
           url: /cloud/docker/docker-config.html
+          children:
+            - label: Configure Xdebug for Docker
+              url: /cloud/docker/docker-development-debug.html
 
-        - label: Configure Xdebug for Docker
-          url: /cloud/docker/docker-development-debug.html
+            - label: Developer mode
+              url: /cloud/docker/docker-mode-developer.html
 
-        - label: Connect to the database
-          url: /cloud/docker/docker-database.html
+            - label: Production mode
+              url: /cloud/docker/docker-mode-production.html
+
+            - label: Extend Docker
+              url: /cloud/docker/docker-extend.html
 
         - label: Functional testing in Docker
           url: /cloud/docker/docker-development-testing.html
