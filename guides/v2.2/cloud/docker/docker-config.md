@@ -38,7 +38,7 @@ The `{{site.data.var.ct}}` package (version 2002.0.13 or later) deploys to a rea
    {: .bs-callout-tip }
    To change the `magento2.docker` hostname for your project, you must update the host in three files: `.docker/config.php`, `docker-compose.yml`, and `/etc/hosts`
 
-1. Stop the default Apache instance on Mac OS.
+1. Stop the default Apache instance on macOS.
 
    Because Mac OS provides built-in Apache service, and may occupy port `80`, you must stop the service with the following command:
 
