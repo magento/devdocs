@@ -7,86 +7,37 @@ The Search component allows searching through the grid records. It is a generic 
 
 ## Configuration options
 
-<table>
-  <tr>
-    <th>
-      Option
-    </th>
-    <th>
-      Description
-    </th>
-    <th>
-      Type
-    </th>
-    <th>
-      Default Value
-    </th>
-  </tr>
-  <tr>
-    <td>
-      <code>label</code>
-    </td>
-    <td>
-      The search field label.
-    </td>
-    <td>
-      String
-    </td>
-    <td>
-      <code>'Keyword'</code>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>placeholder</code>
-    </td>
-    <td>
-      Value displayed when the search field is empty.
-    </td>
-    <td>
-      String
-    </td>
-    <td>
-      <code>'Search by keyword'</code>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>statefull</code>
-    </td>
-    <td>
-      Defines a list of component properties whose values are
-      automatically saved in the configured storage if they change.
-      <code>key</code> is the property's name and the value defines
-      whether its saved.
-    </td>
-    <td>
-      {<br />
-      [name: string]: boolean<br />
-      }
-    </td>
-    <td>
-      <code>{value: true}</code>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>template</code>
-    </td>
-    <td>
-      Path to the component’s <code>.html</code> template.
-    </td>
-    <td>
-      String
-    </td>
-    <td>
-      <code>ui/grid/search/search</code>
-    </td>
-  </tr>
-</table>
+| Option | Description | Type | Default Value |
+| --- | --- | --- | --- |
+| `label` | The search field label. | String | `$t('Keyword')` |
+| `placeholder` | Value displayed when the search field is empty. | String | `'Search by keyword'` |
+| `statefull`.`value` | Defines that `value` property is automatically saved in the configured storage if a change. | Boolean | `true` |
+| `template` | Path to the component’s `.html` template. | String | `ui/grid/search/search` |
 
 ## Source files
 
 Extends [`UiElement`]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uielement_concept.html):
 
 -  [app/code/Magento/Ui/view/base/web/js/grid/search/search.js]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/grid/search/search.js)
+-  [app/code/Magento/Ui/view/base/web/templates/grid/search/search.html]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/templates/grid/search/search.html)
+
+## Examples
+
+### Integrate Search component with Listing component
+
+This is an example of how Search component integrates with [Listing]({{ page.baseurl }}/ui_comp_guide/components/ui-listing-grid.html) component:
+
+```xml
+<listing>
+    ...
+    <listingToolbar>
+        ...
+        <filterSearch name="fulltext"/>
+    </listingToolbar>
+    ...
+</listing>
+```
+
+#### Result
+
+![Search Component Example]({{ site.baseurl }}/common/images/ui_comps/ui-search-result.png)
