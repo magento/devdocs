@@ -22,7 +22,11 @@ Extends [`Abstract`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/M
 -  [`app/code/Magento/Ui/view/base/web/js/dynamic-rows/action-delete.js`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/dynamic-rows/action-delete.js)
 -  [`app/code/Magento/Ui/view/base/web/templates/dynamic-rows/cells/action-delete.html`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/templates/dynamic-rows/cells/action-delete.html)
 
-## Example
+## Examples
+
+### Integrate ActionDelete component with DynamicRows component
+
+Here is an example of how ActionDelete component integrates with [DynamicRows]({{ page.baseurl }}/ui_comp_guide/components/ui-dynamicrows.html) component:
 
 ```xml
 <form>
@@ -54,6 +58,6 @@ Extends [`Abstract`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/M
 </form>
 ```
 
-## Result
+#### Result
 
 ![ActionDelete Component with Record Component example]({{ site.baseurl }}/common/images/ui_comps/action-delete-result.png)
