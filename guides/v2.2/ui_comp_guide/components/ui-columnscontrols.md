@@ -23,7 +23,7 @@ Extends [`uiCollection`]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uicol
 *  [`app/code/Magento/Ui/view/base/web/js/grid/controls/columns.js`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/grid/controls/columns.js)
 *  [`app/code/Magento/Ui/view/base/web/templates/grid/controls/columns.html`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/templates/grid/controls/columns.html)
 
-## Example
+## Examples
 
 ### Add ColumnsControls component to Listing basic component
 
