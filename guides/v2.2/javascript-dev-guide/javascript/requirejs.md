@@ -6,11 +6,9 @@ title: RequireJS in Magento
 
 This topic describes general concepts of how the [RequireJS library](http://requirejs.org){: target="_blank"} is used in Magento, with examples. Please refer to official RequireJS documentation for in-depth explanation.
 
-## RequireJS introduction {#requirejs-intro}
-
 RequireJS is a JavaScript file and module loader. It improves perceived page load times because it allows JavaScript to load in the background. In particular, it enables asynchronous JavaScript loading.
 
-## RequireJS Configuration in Magento {#requirejs-config}
+## RequireJS configuration in Magento {#requirejs-config}
 
 All configuration is done in the `requirejs-config.js` file. It has a single root object `config` which contains the configuration options described below. All the configuration settings are optional and are used only when required. The following snippet is a sample `requirejs-config.js` describing the structure of the file. Example [`requirejs-config.js` file]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Theme/view/base/requirejs-config.js)
 
