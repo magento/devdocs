@@ -12,7 +12,7 @@ Use the `addBundleProductsToCart` mutation to add bundle products to a specific 
 ## Example usage
 
 The following example uses a bundle product "Sprite Yoga Companion Kit" from Magento sample data.
-SKU of this product is: **24-WG080**
+The SKU of this product is: **24-WG080**
 
 This example adds one bundle product with following children to the specified shopping cart:
 
@@ -173,14 +173,16 @@ mutation {
 
 ## Input attributes
 
+The top-level `AddBundleProductsToCartInput` object is listed first. All interfaces and child objects are listed in alphabetical order.
+
 ### AddBundleProductsToCartInput object
 
 The `AddBundleProductsToCartInput` object contains the following attributes:
 
 Attribute | Type | Description
 --- | --- | ---
-`cart_id` | String | The unique ID that identifies the customer's cart.
-`cart_items` | [[BundleProductCartItemInput]](#bundleProductCartItemInput) | An array of bundle items to add to the cart.
+`cart_id` | String! | The unique ID that identifies the customer's cart
+`cart_items` | [[BundleProductCartItemInput!]](#bundleProductCartItemInput) | An array of bundle items to add to the cart
 
 ### BundleProductCartItemInput object {#bundleProductCartItemInput}
 
@@ -188,18 +190,9 @@ The `BundleProductCartItemInput` object contains the following attributes:
 
 Attribute | Type | Description
 --- | --- | ---
-`data` | [CartItemInput!](#cartItemInput) | An object that contains the quantity and SKU of the bundle product.
-`bundle_options` | [BundleOptionInput](#bundleOptionInput) | An object that contains an array of options of the bundle product with chosen value and quantity of each option.
-`customizable_options` | [CustomizableOptionInput](#customOptionInput) | An object that contains the ID and value of the product.
-
-### CartItemInput object {#cartItemInput}
-
-The `CartItemInput` object contains the following attributes:
-
-Attribute | Type | Description
---- | --- | ---
-`quantity` | Float! | The number of items to add to the cart.
-`sku` | String! | The SKU of the product.
+`bundle_options` | [[BundleOptionInput!]](#bundleOptionInput) | An object that contains an array of options of the bundle product with the chosen value and quantity of each option
+`customizable_options` | [[CustomizableOptionInput]](#customOptionInput) | An object that contains the ID and value of the product
+`data` | [CartItemInput!](#cartItemInput) | An object that contains the quantity and SKU of the bundle product
 
 ### BundleOptionInput object {#bundleOptionInput}
 
@@ -207,9 +200,18 @@ The `BundleOptionInput` object contains the following attributes:
 
 Attribute | Type | Description
 --- | --- | ---
-`id` | Int! | ID of the option.
-`quantity` | Float! | The number of items to add to the cart (i.e. what number of the particular child product we need to add).
-`value` | [String!]! | An array with the chosen value of the option.
+`id` | Int! | ID of the option
+`quantity` | Float! | The number of a specific child item to add to the cart
+`value` | [String!]! | An array with the chosen value of the option
+
+### CartItemInput object {#cartItemInput}
+
+The `CartItemInput` object contains the following attributes:
+
+Attribute | Type | Description
+--- | --- | ---
+`quantity` | Float! | The number of items to add to the cart
+`sku` | String! | The SKU of the product
 
 ### CustomizableOptionInput object {#customOptionInput}
 
@@ -223,7 +225,7 @@ The `AddBundleProductsToCartOutput` object contains the `Cart` object.
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`cart` |[Cart!](#CartObject) | Describes the contents of the specified shopping cart.
+`cart` |[Cart!](#CartObject) | Describes the contents of the specified shopping cart
 
 ### Cart object {#CartObject}
 
