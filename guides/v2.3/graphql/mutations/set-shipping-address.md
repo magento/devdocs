@@ -92,7 +92,7 @@ The top-level `SetShippingAddressesOnCartInput` object is listed first. All chil
 Attribute |  Data Type | Description
 --- | --- | ---
 `cart_id` | String! | The unique ID that identifies the customer's cart
-`billing_address` | [ShippingAddressInput!](#ShippingAddressInput) | The billing address for a specific cart
+`shipping_addresses` | [ShippingAddressInput!](#ShippingAddressInput) | The shipping address for a specific cart
 
 ### CartAddressInput object {#CartAddressInputShip}
 
