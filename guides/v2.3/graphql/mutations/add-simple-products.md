@@ -192,3 +192,14 @@ Attribute |  Data Type | Description
 {% include graphql/cart-object.md %}
 
 [Cart query output]({{page.baseurl}}/graphql/queries/cart.html#cart-output) provides more information about the `Cart` object.
+
+## Errors
+
+Error | Description
+--- | ---
+`Could not find a cart with ID "XXX"` | Specified `cart_id` value does not exist in `quote_id_mask` table.
+`Could not find a product with SKU "YYY"` | Simple product with SKU specified in the `data`.`sku` does not exist.
+`Required parameter "cart_id" is missing` | The `cart_id` attribute was omitted or contains an empty value.
+`Required parameter "cart_items" is missing` | The `cart_items` attribute was omitted or contains an empty value.
+`The current user cannot perform operations on cart XXX` | An unauthorized user (guest) tried to add the product into the customer's cart or an authorized user (customer) tried to add the product into the cart of another customer.
+`The product's required option(s) weren't entered. Make sure the options are entered and try again.` | Simple product has customizable options which were not specified in the `mutation` but required for adding product into cart.
