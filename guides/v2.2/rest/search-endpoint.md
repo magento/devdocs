@@ -1,6 +1,6 @@
 ---
 group: rest-api
-title: Search using the /search endpoint
+title: Search with the /search endpoint
 contributor_name: 
 contributor_link: 
 ---
