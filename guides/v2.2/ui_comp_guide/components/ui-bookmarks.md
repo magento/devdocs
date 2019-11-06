@@ -21,3 +21,21 @@ Option | Description | Type | Default Value
 Extends [`uiCollection`]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uicollection_concept.html):
 
 -  [`app/code/Magento/Ui/view/base/web/js/grid/controls/bookmarks/bookmarks.js`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/grid/controls/bookmarks/bookmarks.js)
+-  [`app/code/Magento/Ui/view/base/web/templates/grid/controls/bookmarks/view.html`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/templates/grid/controls/bookmarks/view.html)
+
+## Example
+
+```xml
+<listing>
+    ...
+    <listingToolbar>
+        ...
+        <bookmark name="bookmarks"/>
+    </listingToolbar>
+    ...
+</listing>
+```
+
+## Result
+
+![Bookmarks Component example]({{ site.baseurl }}/common/images/ui_comps/bookmarks-result.png)
