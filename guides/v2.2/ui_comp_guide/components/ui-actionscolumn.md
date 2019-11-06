@@ -33,7 +33,7 @@ Extends [`Column`]({{ page.baseurl }}/ui_comp_guide/components/ui-column.html):
 -  [`app/code/Magento/Ui/view/base/web/js/grid/columns/actions.js`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/grid/columns/actions.js)
 -  [`app/code/Magento/Ui/view/base/web/templates/grid/cells/actions.html`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/templates/grid/cells/actions.html)
 
-## Example
+## Examples
 
 ### Integrate ActionsColumns component with Listing component
 
