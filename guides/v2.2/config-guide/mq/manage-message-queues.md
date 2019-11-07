@@ -9,15 +9,15 @@ functional_areas:
   - Setup
 ---
 
-If you don't want to implement the RabbitMQ solution, you can manage message queues with cron jobs (or an external process manager) and the command line to ensure that consumers are retrieving messages.
+You can manage message queues from the command line using cron jobs or an external process manager to ensure that consumers are retrieving messages.
 
 ## Process management
 
 Cron jobs are the default mechanism to restart consumers. Processes started by `cron` consume the specified number of messages and then terminate. Re-running `cron` restarts the consumer.
 
-The following shows a `crontab` configuration for running consumers in our implementation, it is the example for understanding how it works:
+The following example shows the Magento `crontab` configuration for running consumers:
 
-*/app/code/Magento/MessageQueue/etc/crontab.xml*
+> /app/code/Magento/MessageQueue/etc/crontab.xml
 
 ```xml
 ...
@@ -39,6 +39,9 @@ You can also use a process manager such as [Supervisor](http://supervisord.org/i
 *  Cron job `consumers_runner` is enabled
 *  Cron job `consumers_runner` runs all defined consumers
 *  Each consumer processes 10000 messages and then terminates
+
+{:.bs-callout-info}
+If your {{ site.data.var.ee }} store is hosted on the Cloud platform, use the [`CRON_CONSUMERS_RUNNER`]({{ page.baseurl }}/cloud/env/variables-deploy.html#cron_consumers_runner) deploy variable to configure the `consumers_runner` cron job.
 
 #### Specific configuration
 
@@ -63,7 +66,7 @@ Edit */app/etc/env.php* file for configure cron job `consumers_runner`
 
 ## Command line interface
 
-### Start consumers
+### Start message queue consumers
 
 Use the `magento` command to start message queue consumers. You can start multiple consumers simultaneously.
 

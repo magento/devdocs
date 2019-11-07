@@ -182,7 +182,7 @@ pages:
           url: /cloud/cdn/cloud-vcl-custom-snippets.html
           exclude_versions: ["2.0"]
           children:
-            - label: Set up redirects to WordPress
+            - label: Reroute requests to a CMS backend
               url: /cloud/cdn/fastly-vcl-wordpress.html
 
             - label: Block referral spam
